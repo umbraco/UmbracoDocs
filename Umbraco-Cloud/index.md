@@ -25,13 +25,19 @@ An explanation of the Umbraco Cloud product upgrade process.
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
 
-## [Headless](Headless)
-Documentation on Umbraco Headless.
-
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.
+
+## [Security](Security/)
+Everything you need to know about the security on Umbraco Cloud.
 
 ---
 
 ## [Cloud API](Cloud-API/)
 Learn how to use the Umbraco Cloud REST API to automate project creation and team management.
+
+---
+
+## [Umbraco Heartcore](../Umbraco-Heartcore/)
+Documentation on Umbraco Heartcore.
+

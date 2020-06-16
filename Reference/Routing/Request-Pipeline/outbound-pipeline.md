@@ -73,6 +73,7 @@ For our "swibble" product in our example content tree the  `ProductPageUrlSegmen
 
 Register the custom UrlSegmentProvider with Umbraco:
 
+```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco8.Routing;
@@ -87,6 +88,7 @@ namespace Umbraco8.Composers
         }
     }
 }
+```
 
 ### The Default Url Segment Provider
 
@@ -185,7 +187,7 @@ Umbraco ships with a DefaultUrlProvider, which provides the implementation for t
 // That one is initialized by default
 public class DefaultUrlProvider : IUrlProvider
 {
-    public virtual UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
+    public virtual UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
     {…}
 
     public virtual IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current)
@@ -225,7 +227,7 @@ Create a custom Url Provider by implementing `IUrlProvider` interface
 ```csharp
 public interface IUrlProvider
 {
-    UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current);
+    UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current);
 
     IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current);
 }
@@ -264,11 +266,7 @@ namespace UmbracoV8.Routing.UrlProviders
 
     public class ProductPageUrlProvider : DefaultUrlProvider
     {
-        private readonly ISiteDomainHelper _siteDomainHelper;
-        public ProductPageUrlProvider(IRequestHandlerSection requestSettings, ILogger logger, IGlobalSettings globalSettings, ISiteDomainHelper siteDomainHelper) : base(requestSettings,logger,globalSettings,siteDomainHelper)
-        {
-            _siteDomainHelper = siteDomainHelper;
-        }
+        public ProductPageUrlProvider(IRequestHandlerSection requestSettings, ILogger logger, IGlobalSettings globalSettings, ISiteDomainHelper siteDomainHelper) : base(requestSettings,logger,globalSettings,siteDomainHelper) { }
         public override IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current)
         {
             //add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
@@ -278,7 +276,7 @@ namespace UmbracoV8.Routing.UrlProviders
         public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
         {
             //only apply this to product pages
-        if (content != null && content.ContentType.Alias == "productPage)
+        if (content != null && content.ContentType.Alias == "productPage")
             {
             // get the original base url that the DefaultUrlProvider would have returned, it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
                 UrlInfo defaultUrlInfo = base.GetUrl(umbracoContext, content, mode, culture,current);
@@ -333,21 +331,33 @@ Specifies the type of urls that the url provider should produce, eg. absolute vs
 These are the different modes:
 
 ```csharp
-public enum UrlProviderMode
+public enum UrlMode
 {
-  // Produce relative Urls exclusively
+  /// <summary>
+  /// Indicates that the url provider should do what it has been configured to do.
+  /// </summary>
+  Default = 0,
+
+  /// <summary>
+  /// Indicates that the url provider should produce relative urls exclusively.
+  /// </summary>
   Relative,
-  // Produce absolute Urls exclusively
+
+  /// <summary>
+  /// Indicates that the url provider should produce absolute urls exclusively.
+  /// </summary>
   Absolute,
-  // Produce relative Urls when possible, else absolute when required
+
+  /// <summary>
+  /// Indicates that the url provider should determine automatically whether to return relative or absolute urls.
+  /// </summary>
   Auto
 }
 ```
-Auto is the default. The setting can be changed in /config/umbracoSettings.config web.routing section:
+Default setting can be changed in /config/umbracoSettings.config web.routing section:
 
-```
-  <web.routing
-    urlProviderMode="Relative">
+```xml
+  <web.routing urlProviderMode="Relative">
   </web.routing>
 ```
 

@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 
@@ -38,14 +37,14 @@ A quick example of a content item that has a template that renders out a partial
 The MVC template markup for the document:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
 }
 
 <html>
 <body>
-    @foreach(var page in Model.Content.Children.Where(x => x.IsVisible())){
+    @foreach(var page in Model.Children.Where(x => x.IsVisible())){
         <div>
             @Html.Partial("ChildItem", page)
         </div>
@@ -71,27 +70,14 @@ Normally you would create a partial view by using the `@model MyModel` syntax. H
 
 By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
 
-Another case you might have is that you want your Partial View to be strongly typed with the same model type (`RenderModel`) as a normal template if you are passing around instances of IPublishedContent. To do this, have your partial view inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` (like your normal templates).  When you render your partial, a neat trick is that you can pass it an instance of `IPublishedContent` instead of a new instance of `RenderModel`. For example:
+Another case you might have is that you want your Partial View to be strongly typed with the same model type (`IPublishedContent`) as a normal template if you are passing around instances of IPublishedContent. To do this, have your partial view inherit from `Umbraco.Web.Mvc.UmbracoViewPage` (like your normal templates).  When you render your partial, a neat trick is that you can pass it an instance of `IPublishedContent`. For example:
 
 ```csharp
-@foreach(var child in Model.Content.Children())
+@foreach(var child in Model.Children())
 {
     @Html.Partial("MyPartialName", child)
 }
 ```
-
-The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, which has a model of `RenderModel`, but you can still pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. Of course you can always create your own `RenderModel` too:
-
-```csharp
-@foreach(var child in Model.Content.Children())
-{
-    @Html.Partial("MyPartialName",
-        new global::Umbraco.Web.Models.RenderModel(child, Model.CurrentCulture))
-}
-```
-
-Both of these will achieve the same result.
-
 ## Caching
 
 You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
@@ -128,10 +114,10 @@ public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper h
 {
     return (model, viewData) => String.Join("", keys.Select(s => viewData[s].ToString()));
 }
-@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
+@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("year", "Parameter2") )
 ```
 
-Or even based off the Model, though Model is the current page then cacheByPage should be used instead:
+Or even based on a property on the Model (though if Model is the current page then `cacheByPage` should be used instead):
 
 ```csharp
 @Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
@@ -139,4 +125,4 @@ Or even based off the Model, though Model is the current page then cacheByPage s
 
 Regardless of the complexity here the contextualKeyBuilder function needs to return a single string value.
 
-Caching is only enabled when your application has debug="false". When debug="true" caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.
+Caching is only enabled when your application has `debug="false"`. When `debug="true"` caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.

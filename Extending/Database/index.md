@@ -1,10 +1,12 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Database"
+meta.Description: "A guide to creating a custom Database table in Umbraco"
 ---
 
 # Creating a custom Database table
 
-In Umbraco it is possible to add custom database tables to your site if you want to store additional data. Below you will find an example that sets up a table using by registering a [component in a composer](../../Implementation/Composing/index.md), and then creating a migration plan and running the plan to add a database table. The end result looks like this:
+In Umbraco it is possible to add custom database tables to your site if you want to store additional data. Below you will find an example that sets up a database table by registering a [component in a composer](../../Implementation/Composing/index.md) and then creating a migration plan and running the plan to add the database table to the database. The end result looks like this:
 
 ![Database result of a migration](images/db-table.png)
 
@@ -20,6 +22,7 @@ using Umbraco.Core.Persistence.DatabaseAnnotations;
 
 namespace Umbraco.Web.UI
 {
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
     {
     }
@@ -113,7 +116,7 @@ namespace Umbraco.Web.UI
 
 ## Schema class and migrations
 
-**Important!** It is important to note that the `BlogCommentSchema` class is purely used as a database schema representation and should not be used as a DTO to access the table data. Equally, you shouldn't use your DTOs to define the schema used by your migration, instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating your database table.
+**Important!** It is important to note that the `BlogCommentSchema` class is purely used as a database schema representation and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTOs to define the schema used by your migration, instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating your database table.
 
 Whilst this adds a level of duplication, it is important that migrations remain immutable. If the DTO was to be used for both, it could cause unexpected behaviour should you later modify your DTO but you have previous migrations that expect the DTO to be in its unmodified state.
 

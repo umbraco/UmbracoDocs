@@ -16,12 +16,10 @@ In the [Quick Start](Quick-Start/index.md) documentation you can see how to perf
 
 However, what if you want to search through several different node types and search across many different fields, you will typically need to have a query that looks like this:
 
-```cs
-var results = searcher.CreateQuery("content").Field("nodeName", searchTerm)
-                    Or().Field("bodyText", searchTerm)
-                    Or().Field("description", searchTerm)
-                    Or().Field("about", searchTerm)
-                    Or().Field("otherText", searchTerm)
+```c#
+var textFields = new[] { "title", "description",  "content", .... };
+var results = searcher.CreateQuery("content")
+                    .GroupedOr(textFields, searchTerm)
                     .Execute();
 ```
 
@@ -35,7 +33,7 @@ This example will build upon the Umbraco Starterkit as it is a good starting poi
 
 So to add a TransformingIndexValues event we will add a controller that inherits from `IComponent`. Something like this:
 
-```cs
+```c#
 public class ExamineEvents : IComponent
 {
     private readonly IExamineManager _examineManager;
@@ -47,8 +45,8 @@ public class ExamineEvents : IComponent
 
     public void Initialize()
     {
-        if (!_examineManager.TryGetIndex("ExternalIndex", out IIndex index))
-            throw new InvalidOperationException("No index found by name ExternalIndex");
+        if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+           throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
 
         //we need to cast because BaseIndexProvider contains the TransformingIndexValues event
         if (!(index is BaseIndexProvider indexProvider))
@@ -70,7 +68,7 @@ public class ExamineEvents : IComponent
 
 You can read more about this [syntax and Components here](../../../Implementation/Composing/index.md). We can now add the logic to combine fields in the `IndexProviderTransformingIndexValues` method:
 
-```cs
+```c#
 if (e.ValueSet.Category == IndexTypes.Content)
 {
     var combinedFields = new StringBuilder();
@@ -97,7 +95,7 @@ So at this point we have done something along the lines of:
 
 Before this works the component will have to be registered in a composer. If you already have a composer you can add it to that one, but for this example we will make a new composer:
 
-```cs
+```c#
 //This is a composer which automatically appends the ExamineEvents component
 public class ExamineComposer : ComponentComposer<ExamineEvents>, IUserComposer
 {
@@ -111,6 +109,6 @@ We append it so it runs as the last one. Now if you start up your website and [r
 
 At this point you can create a query for only that field:
 
-```cs
+```c#
 var results = searcher.CreateQuery("content").Field("combinedField", searchTerm).Execute();
 ```

@@ -12,7 +12,7 @@ If you are interested in more general and easy-to-understand information about t
 
 ### Can I try before I pay?
 
-Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/) and test it for 14 days with no obligation to buy.
+Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/try-umbraco-cms/) and test it for 14 days with no obligation to buy.
 
 ### Is it a special version of Umbraco that’s used?
 
@@ -144,9 +144,11 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
+Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation. 
+
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
-Yes, we have now launched [Umbraco Latch](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encrypt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
+Yes. And our own service [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) automates the process of installing and renewing Let's Encrypt certificates. All new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
 
 ### Does Umbraco Cloud support http/2?
 
@@ -158,11 +160,7 @@ As a workaround, you could consider setting up a product like CloudFlare, which 
 
 No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
-There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
-
-In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
-
-For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
+You can learn much more about this in our [Security section](../Security/#cookies-and-security).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
 
@@ -174,41 +172,9 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will need to be able to talk to the different environments in your Cloud website and you should of course still be able to use the site locally.
+Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should of course still be able to use the site locally.
 
-The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
-
-```xml
-<rule name="Backoffice IP Filter" enabled="true">
-    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-    <conditions logicalGrouping="MatchAll">
-
-        <!-- Umbraco Cloud to Cloud connections should be allowed -->
-        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-
-        <!-- Don't apply rules on localhost so your local environment still works -->
-        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-
-        <!-- Add other client IPs that need access to the backoffice -->
-        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-
-    </conditions>
-    <action type="CustomResponse" statusCode="403"/>
-</rule>
-```
-
-What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this.
-
-All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 4 IP addresses, they're specific to the servers we use on Cloud.
-
-You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco (because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`).
-
-Then the last IP address is an example, you can add the addresses that your organization uses as new items to this list.
-
-*Note*: It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
+Learn more about this and how to set it up in our [Security section](../Security/#cookies-and-security).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -294,4 +260,12 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 ### What backup and restore options are available on Umbraco Cloud?
 
-Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script (Umbraco Cloud support can provide you with instructions). By default 14 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
+#### Database
+
+Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
+
+You can read more about database backups and how to perform these on Umbraco Cloud in the [Databases/Backups section](../Databases/Backups)
+
+#### Filesystem
+
+Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.

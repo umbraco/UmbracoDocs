@@ -58,12 +58,15 @@ Now you should have a content tree that looks like the image below (obviously wi
 
 *Figure 40 - Content Tree With Articles*
 
+<!-- vale valeStyle.Hyperbolic = NO -->
 
 Copy the template content from the **_Simple Content Page_**  template and paste this into both the Articles Item and Articles Main (you may need to refresh the nodes again to see these. Set the Master template to be "Master" and then replace the Page field tags with the relevant  properties e.g. **_articlesTitle_** and **_articlesBodyText_** for the **_Articles Main_** and the **_articleTitle_** and **_articleContents_** for **_Article Item_**.
 
+<!-- vale valeStyle.Hyperbolic = YES -->
+
 >Take care when copying not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesMain>` - if get an exception when loading the page about not being able to bind to source ensure the last part in < > brackets matches your Document Type Alias.
 
-If we now go and check our Articles Main page in the browser we should see our content. We'd like to list the child article items under the intro content so that our visitors can see a list of our articles. Umbraco makes this easy for us but we need to use a bit of Razor.
+If we now go and check our Articles Main page in the browser we should see our content. We'd like to list the child article items under the intro content so that our visitors can see a list of our articles. Umbraco makes this possible for us, we need to use a bit of Razor.
 
 
 Click on the **_Developer_** menu from the left-hand side menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then **_click + Create_**. Name this "_listArticles_" and select the "_List Child Pages Ordered By Date_" in the **_Choose a snippet_** field and click **_Create_**.

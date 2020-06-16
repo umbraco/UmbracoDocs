@@ -1,13 +1,12 @@
 ---
-versionFrom: 7.9.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # ConsentService
 
 **Applies to Umbraco 7.9 and newer**
 
-[Browse the API documentation for ConsentService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.IConsentService.html).
+[Browse the API documentation for ConsentService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IConsentService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -23,7 +22,7 @@ Consent can be given or revoked or changed via the `RegisterConsent` method, whi
 creates a new `Consent` entity to track the consent.
 
 ## Get the current state
-Getter methods of this service return the current state of a consent, i.e. the latest [IConsent](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Models.IConsent.html)
+Getter methods of this service return the current state of a consent, i.e. the latest [IConsent](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.IConsent.html)
 entity that was created.
 
 ## Revoking a consent
@@ -35,14 +34,14 @@ A consent *cannot be deleted*.  It can only be revoked by registering a "revoked
 
 ```c#
 // store a new consent
-var newConsent = Services.ConsentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
+var newConsent = ServiceContext.ConsentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
 
 // lookup a consent
-var consents = Services.ConsentService.LookupConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", sourceStartsWith : true);
+var consents = ServiceContext.ConsentService.LookupConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", sourceStartsWith : true);
 if (consents != null && consents.Any())
 {
     var currentConsent = consents.First(c => c.Current == true);
-    if(currentConsent.State  == Consent​State.Granted)
+    if(currentConsent.State  == ConsentState.Granted)
     {
         // Do what you need
     }

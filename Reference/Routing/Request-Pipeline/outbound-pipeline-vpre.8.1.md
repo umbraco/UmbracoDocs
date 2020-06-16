@@ -74,6 +74,7 @@ For our "swibble" product in our example content tree the  `ProductPageUrlSegmen
 
 Register the custom UrlSegmentProvider with Umbraco:
 
+```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco8.Routing;
@@ -88,6 +89,7 @@ namespace Umbraco8.Composers
         }
     }
 }
+```
 
 ### The Default Url Segment Provider
 
@@ -391,7 +393,7 @@ namespace Umbraco8.Composers
 ### Default SiteDomainHelper
 
 Umbraco ships with a default `SiteDomainHelper`. This has some useful functionality for grouping sets of domains together.
-With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
+With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a separate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
 
 ![Culture and Hostnames multiple domains](images/culture-and-hostnames-v8.png)
 

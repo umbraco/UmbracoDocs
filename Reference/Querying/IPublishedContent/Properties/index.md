@@ -97,7 +97,7 @@ Returns the id of the default Template object used with this content item.
 @Model.TemplateId
 ```
 
-There are extension methods to retrieve templage alias (Model.GetTemplateAlias())
+There are extension methods to retrieve template alias (Model.GetTemplateAlias())
 
 ### .SortOrder
 
@@ -182,7 +182,7 @@ Returns the DateTime the page was modified
 ## Custom properties
 
 All content and media items contain a reference to all the data defined by their document type.
-Custom property access is achieved using varitions of the method: `Value`
+Custom property access is achieved using variations of the method: `Value`
 
 ### Model.Value(string)
 

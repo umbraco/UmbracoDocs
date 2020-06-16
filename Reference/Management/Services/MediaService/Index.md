@@ -1,22 +1,17 @@
 ---
-versionFrom: 6.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # MediaService
 
-:::note
-Applies to Umbraco 6.0.0+
-:::
+The MediaService acts as a "gateway" to Umbraco data for operations which are related to media.
 
-The MediaService acts as a "gateway" to Umbraco data for operations which are related to Media.
+[Browse the API documentation for IMediaService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IMediaService.html).
 
-[Browse the API documentation for MediaService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MediaService.html).
-
- * **Namespace:** `Umbraco.Core.Services`
+ * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 
-All samples in this document will require references to the following dll:
+ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
@@ -29,100 +24,132 @@ using Umbraco.Core.Services;
 ```
 
 ## Getting the service
-The MediaService is available through the `ApplicationContext`, but if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
+
+### Services property
+
+If you wish to use use the media service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the media service through a local `Services` property:
 
 ```csharp
-Services.MediaService
+IMediaService mediaService = Services.MediaService;
 ```
 
-Getting the service through the `ApplicationContext`:
+### Dependency Injection
+
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IMediaService` interface in your constructor:
 
 ```csharp
-ApplicationContext.Current.Services.MediaService
-```
-
-## Methods
-
-### .CreateMedia(string name, int parentId, string mediaTypeAlias, [int userId = 0])
-Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
-
-Example for methods **CreateMedia** and **Save**, creating a new `Media` object (as a child of `Media` rootnode -1);
-
-```csharp
-if (ApplicationContext.Current != null)
+public class MyClass
 {
-    var ms = ApplicationContext.Current.Services.MediaService;
-    //Use the MediaService to create a new Media object (-1 is Id of root Media object, "Folder" is the MediaType)
-    var mediaMap = ms.CreateMedia("Test", -1, "Folder");
-    //Use the MediaService to Save the new Media object
-    ms.Save(mediaMap);
+
+    private IMediaService _mediaService;
+    
+    public MyClass(IMediaService mediaService)
+    {
+        _mediaService = mediaService;
+    }
+
 }
 ```
 
-### .CreateMedia(string name, Umbraco.Core.Models.IMedia parent, string mediaTypeAlias, [int userId = 0])
-Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
+### Static accessor
 
-### .GetById(int id)
-Gets an `Media` object by Id.
+If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
 
-### .GetById(Guid key)
-Gets an `Media` object by its 'UniqueId'.
+```csharp
+IMediaService mediaService = Umbraco.Core.Composing.Current.Services.MediaService;
+```
 
-### .GetChildren(int parentId)
-Gets a `Enumerable` list of `Media` objects by parent Id.
+## Samples
 
-### .GetDescendants(int parentId)
-Gets `Enumerable` list descendants of a `Media` object by its parent Id.
+### Creating a new folder
 
-### .GetMediaOfMediaType(int id)
-Gets a `Enumerable` list of `Media` objects by the Id of the `MediaType`.
+To create a new folder at the root of the media archive, your code could look like the following:
 
-### .GetRootMedia()
-Gets a `Enumerable` list of `Media` objects, which reside at the first level / root.
+```csharp
+// Initialize a new media at the root of the media archive
+IMedia folder = Services.MediaService.CreateMedia("My Folder", Constants.System.Root, Constants.Conventions.MediaTypes.Folder);
 
-### .GetMediaInRecycleBin()
-Gets a `Enumerable` list of `Media` objects, which reside in the Recycle Bin.
+// Save the folder
+Services.MediaService.Save(folder);
+```
 
-### .Move(Umbraco.Core.Models.IMedia media, int parentId, int userId)
-Moves an `Media` object to a new location, determined by (location of) parentId.
+For the `CreateMedia` method, the first parameter is the name of the folder to be created.
 
-### .MoveToRecycleBin(Umbraco.Core.Models.IMedia media, int userId)
-Deletes an `Media` object by moving it to the Recycle Bin.
+The second parameter is the ID of the parent media item. `Constants.System.Root` is a constant defined in Umbraco with the value of `-1`, which is used for indicating the root of the media archive. Instead of specifying the numeric ID of the parent, you may instead specify either a `Guid` ID or an `IMedia` instance representing the parent media.
 
-### .EmptyRecycleBin()
-Empties the Recycle Bin by deleting all `Media` that resides in the Recycle Bin.
+The third parameter is the alias of the Media Type. As Umbraco comes with a Folder Type by default, we can use the `Constants.Conventions.MediaTypes.Folder` constant to specify that the alias of the Media Type is `Folder`.
 
-### .DeleteMediaOfType(int mediaTypeId, [int userId = 0])
-Deletes all media of specified type. All children of deleted media is moved to Recycle Bin.
+In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`.
 
-### .Delete(Umbraco.Core.Models.IMedia media, [int userId = 0])
-Permanently deletes an `Media` object.
-Please note that this method will completely remove the Media from the database, but not from the file system!
 
-### .Save(Umbraco.Core.Models.IMedia media, int userId, [bool raiseEvents = true])
-Saves a single `Media` object.
+### Creating a new media from an uploaded file
 
-### .Save(IEnumerable<Umbraco.Core.Models.IMedia> medias, int userId, [bool raiseEvents = true])
-Saves a `Enumerable` list of `Media` objects.
+The example below shows how to create a new file (in this case, an image) from a HTTP upload. For illustrative purposes the example is a Razor view.
 
-### .GetByLevel(int level)
-Gets a `Enumerable` list of <see cref="T:Umbraco.Core.Models.IMedia"/> objects by Level.
 
-### .GetByVersion(Guid versionId)
-Gets a specific version of an `Media` item.
 
-### .GetVersions(int id)
-Gets a `Enumerable` list of an `Media` objects versions by Id.
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 
-### .HasChildren(int id)
-Checks whether an `Media` item has any children.
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="Upload Image" name="submit" />
+</form>
 
-### .DeleteVersions(int id, DateTime versionDate, [int userId = 0])
-Permanently deletes versions from an `Media` object prior to a specific date.
+@if (IsPost)
+{
 
-### .DeleteVersion(int id, Guid versionId, bool deletePriorVersions, [int userId = 0])
-Permanently deletes specific version(s) from an `Media` object.
+    // Get a reference to the uploaded file
+    HttpPostedFileBase file = Request.Files["file"];
 
-### .GetMediaByPath(string mediaPath)
-Gets an `Media` object from the path stored in the 'umbracoFile' property.
-Parameter mediaPath being for example /media/1024/koala_403x328.jpg.
+    // Did the user actually select a file?
+    if (file != null)
+    {
+
+        // TODO: Add validation to prevent malicious file uploads
+        
+        // Initialize a new image at the root of the media archive
+        IMedia media = Services.MediaService.CreateMedia("Hello", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
+        
+        // Set the property value (Umbraco will automatically update related properties)
+        media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, "hello.jpg", file);
+        
+        // Save the media
+        Services.MediaService.Save(media);
+
+    }
+
+}
+```
+
+:::note
+When creating a new media from a file (eg. of the types **Image** or **File**), you must specify an instance of `IContentTypeBaseServiceProvider` (here accessed via `Services.ContentTypeBaseServices`) when setting the property value with the file reference.
+
+Umbraco uses this instance to determine the type of the media you're creating, as well as handling a few things "under the hood" so you don't have to. For instance Umbraco will automatically set other properties related to the file - such as file size and image dimensions.
+:::
+
+
+### Creating a new media item from a stream
+
+Similar to specifying a `HttpPostedFileBase` as shown in the example above, you can instead specify a `Stream` for the contents of the file that should be created.
+
+As an example, if you have a file on disk, you can open a new stream for a file on the disk, and then create a new media for that file in Umbraco:
+
+```csharp
+// Open a new stream to the file
+using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
+{
+
+    // Initialize a new image at the root of the media archive
+    IMedia media = Services.MediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
+
+    // Set the property value (Umbraco will handle the underlying magic)
+    media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, "my-image.jpg", stream);
+
+    // Save the media
+    Services.MediaService.Save(media);
+
+}
+```
+
+Again Umbraco will make sure the necessary properties are updated.

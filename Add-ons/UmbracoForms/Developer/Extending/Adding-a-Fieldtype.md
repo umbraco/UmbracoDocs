@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Adding a field type to Umbraco Forms"
 ---
 
 # Adding a field type to Umbraco Forms #
@@ -27,7 +28,7 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
     // You can do custom validation in here which will occur when the form is submitted.
     // Any strings returned will cause the submit to be invalid!
     // Where as returning an empty ienumerable of strings will say that it's okay.
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context, IFormStorage formStorage)
     {
         var returnStrings = new List<string>();
 
@@ -36,7 +37,7 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
         }
 
         // Also validate it against the original default method.
-        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
+        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context, formStorage));
 
         return returnStrings;
     }
@@ -63,6 +64,21 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
 The view takes care of generating the UI control and setting its value.
 
 On the view, it is important to note that the ID attribute is fetched from `@Model.Id`. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+
+### Partial view for themes
+
+We will also add a file for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 
+
+```csharp
+@model Umbraco.Forms.Mvc.Models.FieldViewModel
+<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.ValueAsHtmlString" maxlength="500"
+        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
+        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
+        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
+        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+```
+
+This will be rendered when the default theme is used. For example purposes, it can be identical to the previous partial view.
 
 ## Umbraco backoffice view
 

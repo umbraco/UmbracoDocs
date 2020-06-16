@@ -1,44 +1,24 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Templating
 
-_Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macros. Templates are used for the HTML layout of your pages, whereas macros are reusable dynamic components used for embedding navigation, forms, lists, and so-on in your templates._
+_Templating in Umbraco consists of 3 larger concepts, namely Templates (Views), Partials (Partial Views) and Macros (Macro Partials). Templates are used for the HTML layout of your pages. Partials can be included in your templates for shared functionality across different page templates. Macros can be used for reusable dynamic components that can be controlled by editors to embed functionality into the grid or rich text areas._
 
-## Templates
+## Templating technology
 
-There are 2 types of templating technologies in Umbraco:
+Umbraco V8 uses ASP.Net MVC Views for implementing templates.
 
-* MVC (views)
-* WebForms (masterpages)
+:::note
+ The WebForms (masterpages) and Dynamic Razor approaches to templating are still available in Umbraco V7, but have been completely removed in Umbraco V8.
+:::
 
-By default Umbraco uses MVC templates.
+
 
 #### [Working with MVC (views, razor, etc...)](Mvc/index.md)
 
-Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
-
-
-
-#### [Working with WebForms (masterpages, usercontrols, etc...)](Masterpages/index.md)
-
-Describes how to work with WebForms (masterpages) templating syntax and its various components like UserControls, etc...
-
-If you prefer to work with Webforms, you can change the default template engine in the */Config/umbracoSettings.config* file, find this section and set the type you'd like to use (*Mvc* or *WebForms*):
-
-```xml
-<templates>
-    <defaultRenderingEngine>WebForms</defaultRenderingEngine>
-</templates>
-```
-
-#### Hybrid templates
-
-Umbraco can work with both MVC and Webforms templates at the same time, however there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the backoffice called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
-
-~/Views/Home.cshtml
-~/Masterpages/Home.master
+Describes how to work with MVC views, the razor syntax and APIs available. It also describes how to create forms, has some step-by-step guides and other advanced techniques.
 
 ## [Macros](Macros/index.md)
 

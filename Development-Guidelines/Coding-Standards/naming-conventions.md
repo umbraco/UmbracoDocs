@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Naming Conventions in Umbraco CMS codebase"
+meta.Description: "A guide to coding naming conventions in Umbraco."
 ---
 
 # Naming conventions
@@ -23,6 +25,6 @@ versionFrom: 7.0.0
 ## C&#35;
 When developing new Class Libraries we will be adhering as closely as possible to the official guidelines as proposed by Microsoft [https://msdn.microsoft.com/en-us/library/ms229042.aspx](https://msdn.microsoft.com/en-us/library/ms229042.aspx)
 
-Another good reference is the [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries]( https://www.oreilly.com/library/view/framework-design-guidelines/9780321545671) book by Krzysztof Cwalina and Brad Abrams.
+Another good reference is the [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries](https://www.oreilly.com/library/view/framework-design-guidelines/9780321545671) book by Krzysztof Cwalina and Brad Abrams.
 
 Resharper settings are included with the solution, so developers can cleanup code in a consistent manner.

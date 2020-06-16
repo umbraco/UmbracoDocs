@@ -60,7 +60,7 @@ By changing the key of the setting you can modify the `<div>` element's attribut
 - `number`
 - `multivalues`
 
-Alternatively you can also pass in a path to a custom view like "/app_plugins/grid/editors/view.html"
+Alternatively you can also pass in a path to a custom view like "/App_Plugins/grid/editors/view.html"
 
 **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view. Prevalues are defined as strings in an array:
 

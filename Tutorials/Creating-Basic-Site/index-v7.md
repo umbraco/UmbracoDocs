@@ -47,5 +47,5 @@ A solution for the template in the menu.
 How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible/infinite number of articles - useful for Blogs or News pages).
 
 
-## [Conclusions and Where Next?](Conclusions-Where-Next)
+## [Conclusions and Where Next?](Conclusions-Where-Next/index-v7.md)
 By this point you'll have a basic working site - but where next?  You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!

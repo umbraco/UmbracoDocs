@@ -32,7 +32,7 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 </rule>
 ```
 
-2. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be ‘213.3.10.8|88.4.43.108”.
+2. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be "213.3.10.8|88.4.43.108".
 
 3. Lock down the folders App_Plugins, Config and Umbraco (or the renamed version of this folder) by putting this rule into your IISRewrite-rules
 
@@ -40,11 +40,13 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 <rule name="Allowed IPs" stopProcessing="true">
     <match url="^(?:app_plugins|config|umbraco)(?:/|$)" />
     <conditions>
-        <add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108”>
+        <add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108" />
     </conditions>
-    <action type=”AbortRequest” />
+    <action type="AbortRequest" />
 </rule>
 ```
+
+If your server is behind a load balancer, you should use `{HTTP_X_FORWARDED_FOR}` instead of `{REMOTE_ADDR}` as the input for the rule.
 
 If you now go to /umbraco/ for example from a different IP-address the login screen will not be rendered.
 

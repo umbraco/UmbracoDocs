@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Coding Standards"
+meta.Description: "A guide to Javascript coding standards in Umbraco."
 ---
 
 # JavaScript coding standards and guidelines
@@ -145,7 +147,7 @@ MyProject.MyNamespace.NamePrinterManager.getInstance().registerPrinter(printer);
 
 ## Static classes
 
-Sometimes its useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
+Sometimes it's useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
 
 An example of static classes:
 

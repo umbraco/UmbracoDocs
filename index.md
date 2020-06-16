@@ -1,9 +1,11 @@
+---
+meta.Title: "Umbraco Documentation"
+---
+
 :::note
 Have some questions about **Umbraco 8**?
 
 We've put together some answers to the most frequently asked questions - you can find it in the [Umbraco 8 - FAQ](Umbraco8FAQ.md) article.
-
-For a list of all the Umbraco 8 Documentation that's already live as well as get an overview of upcoming documentation head over to the [Umbraco 8 Documentation Statuspage](v8documentation.md).
 :::
 
 <div class="docs-overview">
@@ -64,9 +66,16 @@ Cheatsheets for overview of different areas like the Razor API and Views syntax.
 ### [Umbraco Cloud](Umbraco-Cloud/)
 How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy and troubleshoot issues.
 
+### [Umbraco Heartcore](Umbraco-Heartcore/) 
+How to use Umbraco Heartcore: Getting started, API Documentation and client libraries.
+
+
 ---
 
 ### Contributing
-*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
+*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. 
+
+[Getting Started](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) contributing to the documentation. 
+[Guidelines](https://our.umbraco.com/documentation/Contribute/) for Umbraco documentation*
 
 ----------------

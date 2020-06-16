@@ -81,7 +81,7 @@ Now that we have created a tab we can start adding properties. Let's add a Rich 
 
 Click the __Add property__ link in the Content tab. This opens the property settings dialog. Here you can set the meta data for each property (name, alias, description), choose which data type/property editor to use and add validation if needed.
 
-Give the property a name, the name will be shown to the editor so make relevant and easy to understand. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
+Give the property a name, the name will be shown to the editor so make relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
 

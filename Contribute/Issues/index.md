@@ -1,3 +1,7 @@
+---
+meta.Title: "How to raise a question, start a discussion or report an issue on the Umbraco Documentation Issue Tracker."
+meta.Description: "Explanation on how to raise a question, start a discussion or report an issue on the Umbraco Documentation Issue Tracker."
+---
 # What is an Issue?
 
 The [Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) is a way to keep track of ideas for new documentation, issues on wrong or outdated documentation and it's also a place where you can discuss the documentation with other contributors.

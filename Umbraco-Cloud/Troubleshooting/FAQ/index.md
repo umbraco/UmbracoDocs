@@ -18,7 +18,7 @@ Probably not! In most cases including the custom files (and configuration) is en
 
 Umbraco Cloud uses web sockets to communicate between your browser session and the remote environment.
 
-For the following scenarios you may find that deployments (and other operations) do not complete succesfully. At this time there is not a workaround to this requirement.
+For the following scenarios you may find that deployments (and other operations) do not complete successfully. At this time there is not a workaround to this requirement.
 * If your connection to the internet doesn’t support web sockets
 * You are behind a proxy server or firewall that blocks web sockets, or
 * If the web socket connection is in any other way not supported

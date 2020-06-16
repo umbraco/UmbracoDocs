@@ -8,6 +8,12 @@ _The services layer of the Umbraco API is used to interact with persisted data, 
 
 The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
+## [AuditService](AuditService)
+A service for handling audit.
+
+## [ApplicationTreeService](TreeService)
+The ApplicationTreeService is used to control/query the storage for tree registrations.
+
 ## [ConsentService](ConsentService)
 A service for handling lawful data processing requirements.
 

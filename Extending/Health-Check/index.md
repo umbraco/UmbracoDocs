@@ -1,14 +1,15 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
+meta.Title: "Umbraco Healthcheck"
+meta.Description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
 ---
 
 # Health Check
 
-The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.
+The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.
 This feature has been available since Umbraco version 7.5.
 
-For inspiration when building your own checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web/HealthCheck/Checks). Some examples will follow in this document.
+For inspiration when building your own checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Web/HealthCheck/Checks). Some examples will follow in this document.
 
 ## Built-in checks
 
@@ -16,22 +17,22 @@ Umbraco comes with the following checks by default:
 
 * Category **Configuration**
   * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
-  * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from its default value
+  * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the "from" email address used for email notifications has been changed from its default value
   * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true`
-* Category **Data Integrity**
-  * **Data integrity (id: `D999EB2B-64C2-400F-B50C-334D41F8589A`)** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
 * Category **Live environment**
   * **Custom errors (id: `4090C0A1-2C52-4124-92DD-F028FD066A64`)** - should be set to `RemoteOnly` or `On` on your live site
   * **Trace mode (id: `9BED6EF4-A7F3-457A-8935-B64E9AA8BAB3`)** - should be set to `enabled="false"` on your live site
-  * **Compilation debug mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
+  * **Debug compilation mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
 * Category **Permissions**
-  * **File & folder permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
+  * **Folder & file permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
 * Category **Security**
   * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
+  * **Content/MIME Sniffing Protection (id: `1CF27DB3-EFC0-41D7-A1BB-EA912064E071`)** - checks that your site contains a header used to protect against MIME sniffing vulnerabilities
+  * **Cookie hijacking and protocol downgrade attacks Protection (HSTS) (id: `E2048C48-21C5-4BE1-A80B-8062162DF124`)** - checks if your HTTPS site contains the Strict-Transport-Security Header (HSTS). If not - adds with a default of 18 weeks
+  * **Cross-site scripting Protection (id: `F4D2B02E-28C5-4999-8463-05759FA15C3A`)** - checks for the presence of the X-XSS-Protection-header
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS check (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
-  * **UmbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
-  * **HTTPS connectivity check** - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
+  * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Core.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `appSettings` in the `web.config` file
 * Category **Services**
   * **SMTP settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an SMTP server is configured and is accepting requests for sending emails
 
@@ -41,7 +42,7 @@ Some of them can also be rectified via the dashboard, by clicking the **Fix** bu
 
 ## Configuring and scheduling checks
 
-As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
+As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more on this see the [Reference > Config > Health checks page](../../Reference/Config/HealthChecks/index.md).
 
@@ -86,12 +87,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
         Group = "Configuration")]
     public class MacroErrorsCheck : AbstractConfigCheck
     {
-        private readonly ILocalizedTextService _textService;
-
-        public MacroErrorsCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
-        {
-            _textService = healthCheckContext.ApplicationContext.Services.TextService;
-        }
+        public MacroErrorsCheck(ILocalizedTextService textService) : base(textService) { }
 
         public override string FilePath
         {
@@ -134,7 +130,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
         {
             get
             {
-                return _textService.Localize("healthcheck/macroErrorModeCheckSuccessMessage",
+                return TextService.Localize("healthcheck/macroErrorModeCheckSuccessMessage",
                     new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
             }
         }
@@ -143,7 +139,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
         {
             get
             {
-                return _textService.Localize("healthcheck/macroErrorModeCheckErrorMessage",
+                return TextService.Localize("healthcheck/macroErrorModeCheckErrorMessage",
                     new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
             }
         }
@@ -152,7 +148,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
         {
             get
             {
-                return _textService.Localize("healthcheck/macroErrorModeCheckRectifySuccessMessage",
+                return TextService.Localize("healthcheck/macroErrorModeCheckRectifySuccessMessage",
                     new[] { Values.First(v => v.IsRecommended).Value });
             }
         }
@@ -163,7 +159,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
 ### General checks
 This can be anything you can think of, the results and the rectify action are completely under your control.
 
-* A general check needs to inherit from `Umbraco.Web.HealthCheck.HealthCheck`
+* A general check needs to inherit from `Umbraco.Web.HealthCheck`
 * A general check needs the `HealthCheck` attribute as noted at the start of this document
 * All checks run when the dashboard is loaded, this means that the `GetStatus()` method gets executed
   * You can return multiple status checks from `GetStatus()`
@@ -182,12 +178,13 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Hosting;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 
@@ -200,9 +197,9 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
     {
         private readonly ILocalizedTextService _textService;
 
-        public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+        public RobotsTxt(ILocalizedTextService textService)
         {
-            _textService = healthCheckContext.ApplicationContext.Services.TextService;
+            _textService = textService;
         }
 
         public override IEnumerable<HealthCheckStatus> GetStatus()
@@ -259,7 +256,7 @@ Disallow: /umbraco/";
             }
             catch (Exception exception)
             {
-                LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
+                Current.Logger.Error<RobotsTxt>(exception, "Could not write robots.txt to the root of the site");
             }
 
             return
@@ -274,47 +271,45 @@ Disallow: /umbraco/";
 ```
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
 The following example shows how the core method for sending notification via email is implemented:
 
 ```csharp
 using System;
 using System.Net.Mail;
+using System.Threading;
 using System.Threading.Tasks;
 using Umbraco.Core;
-using Umbraco.Core.Configuration;
-using Umbraco.Core.Configuration.HealthChecks;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Services;
 
 namespace Umbraco.Web.HealthCheck.NotificationMethods
 {
     [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
+    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificationMethod
     {
         private readonly ILocalizedTextService _textService;
 
-        public EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
-                string recipientEmail)
-            : this(enabled, failureOnly, verbosity, recipientEmail, ApplicationContext.Current.Services.TextService)
+        public EmailNotificationMethod(ILocalizedTextService textService)
         {
-        }
+            var recipientEmail = Settings["recipientEmail"]?.Value;
+            if (string.IsNullOrWhiteSpace(recipientEmail))
+            {
+                Enabled = false;
+                return;
+            }
 
-        internal EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
-            string recipientEmail, ILocalizedTextService textService)
-            : base(enabled, failureOnly, verbosity)
-        {
-            if (textService == null) throw new ArgumentNullException("textService");
-            _textService = textService;
             RecipientEmail = recipientEmail;
-            Verbosity = verbosity;
+
+            _textService = textService ?? throw new ArgumentNullException(nameof(textService));
         }
 
-        public string RecipientEmail { get; private set; }
+        public string RecipientEmail { get; }
 
-        public async Task SendAsync(HealthCheckResults results)
+        public override async Task SendAsync(HealthCheckResults results, CancellationToken token)
         {
             if (ShouldSend(results) == false)
             {
@@ -336,17 +331,23 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
             var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
 
             var mailSender = new EmailSender();
-            using (var mailMessage = new MailMessage(UmbracoConfig.For.UmbracoSettings().Content.NotificationEmailAddress,
-                RecipientEmail,
-                string.IsNullOrEmpty(subject) ? "Umbraco Health Check Status" : subject,
-                message)
-            {
-                IsBodyHtml = message.IsNullOrWhiteSpace() == false
-                                && message.Contains("<") && message.Contains("</")
-            })
+            using (var mailMessage = CreateMailMessage(subject, message))
             {
                 await mailSender.SendAsync(mailMessage);
             }
+        }
+
+        private MailMessage CreateMailMessage(string subject, string message)
+        {
+            var to = Current.Configs.Settings().Content.NotificationEmailAddress;
+
+            if (string.IsNullOrWhiteSpace(subject))
+                subject = "Umbraco Health Check Status";
+
+            return new MailMessage(to, RecipientEmail, subject, message)
+            {
+                IsBodyHtml = message.IsNullOrWhiteSpace() == false && message.Contains("<") && message.Contains("</")
+            };
         }
     }
 }
