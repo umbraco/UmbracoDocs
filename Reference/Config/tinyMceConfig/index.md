@@ -20,7 +20,7 @@ Inside the `<commands>` section of the configuration file you will find multiple
 
 `name` defines the name that will be seen in the list of Toolbar configuration options in the backoffice for the rich text editor 
 
-`mode` this can be set to be either 'Insert', 'Selection' or 'All'. In 'distraction free' mode, there are two 'quick menus' that appear - one when you are about to 'insert' text, and one when you 'select' existing text. This setting determines which 'quick menu' the icon should appear on or whether it should appear on both!
+`mode` - This can be set to be either 'Insert', 'Selection' or 'All'. In 'distraction free' mode, there are two 'quick menus' that appear - one when you are about to 'insert' text, and one when you 'select' existing text. This setting determines which 'quick menu' the icon should appear on or whether it should appear on both.
 
 :::note
 The order of the commands in this configuration file influences the order of the buttons in the toolbar.
