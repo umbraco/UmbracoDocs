@@ -284,7 +284,7 @@ Adding the following custom configuration:
   ]
     </config>
 ```
-Will add two additional options in the format dropdown, the difference with this approach is they will ONLY be applicable IF an img element is selected in the editor...
+Will add two additional options in the format dropdown, the difference with this approach is they will ONLY be applicable IF an img element is selected in the editor.
 
 ... otherwise they will be greyed out.
 
