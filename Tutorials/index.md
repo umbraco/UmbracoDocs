@@ -48,3 +48,5 @@ A working document, that gives tips & pointers on how to port an Umbraco V7 pack
 
 Learn how to create a content app (v8 only)
 
+### [Connecting Umbraco Forms and Zapier](Connecting-Umbraco-Forms-and-Zapier/index.md)
+Learn how to connect Umbraco Forms and Zapier to send form entry data to other web apps without any code.
