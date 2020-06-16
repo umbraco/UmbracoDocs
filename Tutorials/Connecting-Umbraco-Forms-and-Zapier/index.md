@@ -17,6 +17,7 @@ This guide takes you through the steps of connecting your Umbraco Forms to Zapie
 ### Why use Zapier for your Umbraco Forms data?
 
 Umbraco Forms stores entries in the backoffice and has a set of default workflow types that you can use when a new form entry is submitted. If you want to use this data in other applications, such as your CRM or marketing automation platform, you need integrations to those platforms. Zapier makes that integration easy and can be done using the default workflows in Umbraco Forms. All without having to write any additional code.
+
 This enables marketers and editors to make automated workflows that pass data between the web apps they use without having to involve a developer.
 
 ### Who is this tutorial for?
