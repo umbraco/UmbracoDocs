@@ -296,7 +296,7 @@ Will add two additional options in the format dropdown, the difference with this
 
 You can apply the 'Image Left' or 'Image Right' style formats. This approach can provide a better editor experience, making it easy to see which formats can be applied in which contexts.
 
-Additionally adding the configuration option:
+Additionally adding the configuration option, means any 'greyed' out options will not appear at all in the dropdown, only appearing in the list when they can be successfully applied:
 ```xml
 <config key="style_formats_autohide">true</config>
 ```
