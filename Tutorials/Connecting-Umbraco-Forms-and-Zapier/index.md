@@ -107,6 +107,7 @@ After clicking “continue” you are now starting on the “Do this…” actio
 ## Choose an action for your Zap
 
 Up until now, the steps will be the same for everyone. Now that you have connected Umbraco Forms and Zapier it is up to you to decide where you want to send the data.
+
 In this tutorial you will get an example of how you can send your data to Google Sheets. This allows you to see how a finalized Zap looks like.
 
 ## Example: Sending data to Google Sheets
