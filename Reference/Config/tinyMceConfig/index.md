@@ -300,7 +300,7 @@ Additionally adding the configuration option:
 ```xml
 <config key="style_formats_autohide">true</config>
 ```
-means any 'greyed' out options will not appear at all in the dropdown, only appearing in the list when the can be successfully applied. This is useful if there is a large number of style formats, but can prevent discoverability of options for editors.
+This is useful if there is a large number of style formats, but can prevent discoverability of options for editors.
 
 ##### Organising style formats into sub menus
 
