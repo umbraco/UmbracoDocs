@@ -155,6 +155,7 @@ Tada! Now your Zap is ready and can be activated to automatically add form entri
 
 If you want to connect multiple forms to Zapier you can follow the above steps to do so.
 Be sure to add individual Zaps to each form if the data being sent is different or if you want to use different actions for the data.
+
 You can reuse the same Zap and webhook URL if all data sent to Zapier is formatted in the same way. Otherwise errors will occur.
 
 That’s it. Now you are ready to connect Umbraco Forms to Zapier and can use it to send data to the tools you choose.
