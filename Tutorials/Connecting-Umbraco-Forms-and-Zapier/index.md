@@ -80,6 +80,7 @@ Now your workflow is ready. Submit your changes and save your form.
 ## Submit an entry to the form
 
 Now your form is ready to send data to Zapier and any entry submitted will be posted to the Zapier webhook URL.
+
 To set up field mapping and actions in Zapier your form needs an entry. If this is a completely new form, add it to a page and submit an entry ([guide to adding your form to a page](../Add-ons/UmbracoForms/Editor/Creating-a-Form/#adding-the-form-to-the-umbraco-site)).
 
 Here is the form and the fields that were submitted for this tutorial.
