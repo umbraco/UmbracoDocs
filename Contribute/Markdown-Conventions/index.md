@@ -41,14 +41,14 @@ By default, all images added to an article in the documentation will be left-ali
 
 ```markdown
 :::center
-![Example of the load indicator](images/arm_with_u_logo.png)
+![Example of the load indicator](images/arm_with_u_logo-SMALL.png)
 :::
 ```
 
 The example above will render the image in the center of the page.
 
 :::center
-![Example of the load indicator](images/arm_with_u_logo.png)
+![Example of the load indicator](images/arm_with_u_logo-SMALL.png)
 :::
 
 ## Links
