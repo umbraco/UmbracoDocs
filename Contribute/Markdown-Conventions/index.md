@@ -98,7 +98,7 @@ When you have multiple links that you want to add below an article we recommend 
 The example above, will render like the following:
 
 :::links
-## Related articles
+### Related articles
 
 - [Styled links](/)
 - [You can also add `inline code` to links](/)
