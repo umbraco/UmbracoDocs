@@ -100,8 +100,8 @@ The example above, will render like the following:
 :::links
 ### Related articles
 
-- [Styled links](/)
-- [You can also add `inline code` to links](/)
+- [Styled links](#)
+- [You can also add `inline code` to links](#)
 :::
 
 ## Formatting code
