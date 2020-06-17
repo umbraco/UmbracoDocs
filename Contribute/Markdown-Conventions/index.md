@@ -16,7 +16,7 @@ Each folder must have an `index.md` file which links to the individual sub-pages
 
 * `topic`
   * `images`
-    * `images.jpg`
+    * `images.png`
   * `Subtopic`
     * `images`
     * `index.md`
@@ -28,14 +28,34 @@ Each folder must have an `index.md` file which links to the individual sub-pages
 Images are stored and linked relatively to .md pages, and should by convention always be in an `images` folder. So to add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
 ```markdown
-![My Image Alt Text](images/img.jpg)
+![My Image Alt Text](images/img.png)
 ```
 
-And store the image as `/documentation/reference/partials/images/img.jpg`
+And store the image as `/documentation/reference/partials/images/img.png`
 
-Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash).
+Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif` or `png`. No `bmp`, `tiff` or `swf` (Flash).
 
-## External links
+### Center images
+
+By default, all images added to an article in the documentation will be left-aligned. If you want to ensure that the image you add to an article will be center-aligned, use the following formatting:
+
+```markdown
+:::center
+![Example of the load indicator](images/arm_with_u_logo.png)
+:::
+```
+
+The example above will render the image in the center of the page.
+
+:::center
+![Example of the load indicator](images/arm_with_u_logo.png)
+:::
+
+## Links
+
+In the following you'll find a few examples of different links.
+
+### External links
 
 Include either the complete URL, or link using a specific syntax:
 
@@ -49,7 +69,7 @@ or
 [yahoo something](https://yahoo.com/something)
 ```
 
-## Internal links
+### Internal links
 
 If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example if you need to provide hyperlink to an `index.md` file which is in the current folder then only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder then only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
 
@@ -62,6 +82,27 @@ or
 ```markdown
 [Umbraco.Helpers](../../Reference/Umbraco.Helpers)
 ```
+
+### Styled links
+
+When you have multiple links that you want to add below an article we recommend using the styled links options. Let's say you've written a guide and want to direct the user to more related articles afterwards, you can do that by using the following formatting.
+
+```markdown
+:::links
+## Related articles
+- [Styled links](/)
+- [You can also add `inline code` to links](/)
+:::
+```
+
+The example above, will render like the following:
+
+:::links
+## Related articles
+
+- [Styled links](/)
+- [You can also add `inline code` to links](/)
+:::
 
 ## Formatting code
 
@@ -88,13 +129,6 @@ This is a warning, it contains useful information and also a link: https://thisi
 :::tip
 This is a tip, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
 :::
-
-:::checklist
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-:::
 ```
 
 Will render like this:
@@ -111,6 +145,21 @@ This is a warning, it contains useful information and also [a link](https://this
 This is a tip, it contains useful information and also [a link](https://thisisalink.com/useful/resource), please make sure it looks nice on Our!
 :::
 
+## Styled checklists
+
+Instead of using the classic bullet for lists, the Umbraco documentation provides an option to use checkmarks for lists.
+
+```markdown
+:::checklist
+* Item 1
+* Item 2
+* Item 3
+* Item 4
+:::
+```
+
+The list in the snippet above, will give the following checklist on the frontend:
+
 :::checklist
 
 * Item 1
@@ -119,3 +168,5 @@ This is a tip, it contains useful information and also [a link](https://thisisal
 * Item 4
 
 :::
+
+
