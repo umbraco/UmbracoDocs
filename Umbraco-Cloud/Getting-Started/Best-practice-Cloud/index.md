@@ -15,7 +15,7 @@ In this article we will take a look at some of the best practices and recommenda
 
 - Set up a Development environment
 
-    We highly recommend that you use a Development environment when you are working in teams. With the Development environment several members of a team can work on their own local version of the project, which they can then push back up to the development environment to be tested and approved before being deployed to either the staging or the live environment.
+    We highly recommend that you use a Development environment when you are working in teams. With the Development environment, several members of a team can work on their own local version of the project. They can then push back up to the development environment to be tested and approved before being deployed to either the staging or the live environment.
 
 - Set up a staging environment
 
