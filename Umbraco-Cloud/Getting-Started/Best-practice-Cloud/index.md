@@ -13,7 +13,7 @@ In this article we will take a look at some of the best practices and recommenda
 
     Umbraco Cloud is build on top of GIT meaning that you can create branches locally as either a feature or developer branch. You can then work on the project and test out the new features before merging it into the master branch which can then be pushed up to your cloud environments.
 
-- Set up a Development
+- Set up a Development environment
 
     We highly recommend that you use a Development environment when you are working in teams. With the Development environment several members of a team can work on their own local version of the project, which they can then push back up to the development environment to be tested and approved before being deployed to either the staging or the live environment.
 
