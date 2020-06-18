@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 ---
-# Best practice working in teams on Umbraco Cloud
+# Best practice for working in teams on Umbraco Cloud
 
 In this article we will take a look at some of the best practices and recommendations when you are working in teams on your Umbraco Cloud projects.
 
