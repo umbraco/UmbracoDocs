@@ -1,5 +1,5 @@
 ---
-versionFrom: 
+versionFrom: 7.0.0
 ---
 # Best practice working in teams on Umbraco Cloud
 
