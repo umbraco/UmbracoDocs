@@ -23,6 +23,6 @@ In this article we will take a look at some of the best practices and recommenda
 
 ## Team development workflow On Cloud
 
-Our lovely Gold Partner ProWorks have created an article where they go into depths on how they have setup a Team development workflow on Umbraco Cloud [here](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/)
+For a more in-depth example of how to work in team our Cloud, Our Gold Partner ProWorks have created an article about how they have set up a [Team development workflow on Umbraco Cloud](https://skrift.io/issues/integrating-umbraco-cloud-with-team-development-workflow/).
 
 This article can serve as inspiration if you are an agency and are looking into setting up a bigger project where several people will be working on Umbraco Cloud.
