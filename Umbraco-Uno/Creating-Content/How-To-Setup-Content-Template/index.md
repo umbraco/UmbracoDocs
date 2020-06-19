@@ -31,6 +31,6 @@ Now that we have a page that we want to use for our template.
 
 1. Click the button in the three ... at the page, you created in the steps above
 2. Select ***Do something else***
-3. on the list choose ***Create Content Template***
+3. On the list choose ***Create Content Template***
 4. Choose the name you want for your template and click ***Create***
 5. Now if you go to create a new page the template you just made will be there as an option
