@@ -16,7 +16,7 @@ Folders can be used to help organize the Media section and to keep similar items
 
 Folders are purely for sorting within the media section. They will not be part of the image URL nor will they create a folder on the server with the given name.
 
-![createMedia.png](images/createMedia-v8.PNG)
+![createMedia.png](images/createMedia-v8.png)
 
 ## Editing a Folder
 
@@ -40,7 +40,7 @@ Note that the contents of the folder are also moved to the Recycle Bin. You can 
 
 The Recycle Bin is a separate tree structure within the Media panel and you can recognise it by the recycling symbol to the left. If you click the triangle in front of the Recycle Bin, you will see its contents. To restore a folder, move the item to the part of the tree where you want the item to be. Read more about how to do this in the section entitled ***Moving a Folder***.
 
-![mediaRecycle.png](images/mediaRecycle-v8.PNG)
+![mediaRecycle.png](images/mediaRecycle-v8.png)
 
 ## Moving a Folder
 
@@ -50,7 +50,7 @@ You can move folders within the Media section using the Move function.
 2. Right click the folder and click ***Move*** from the context menu.
 3. Select the parent folder you want to move the folder below.
 
-![moveMedia.png](images/moveMedia-v8.PNG)
+![moveMedia.png](images/moveMedia-v8.png)
 
 ## Sorting the Contents of a Folder
 
