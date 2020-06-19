@@ -17,7 +17,7 @@ Setting up your template comes in two parts, first you need to make a page that 
 
 ### Setting up the widgets of the page
 
-Let's start by setting up the page with some widgets, you can read more about [Widgets](../../Uno-pedia/Widgets/Hero/index.md) in the Uno-pedia section.
+Let's start by setting up the page with some widgets, you can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-pedia section.
 
 1. Click the  button in the three ... at your home node and select page
 2. Name the page
