@@ -1,3 +1,3 @@
 # Directives
 
-- [Load indicator](./umbLoadIndicator/) (`<umbLoadIndicator />`)
+- [Load indicator](umbLoadIndicator/) (`<umbLoadIndicator />`)
