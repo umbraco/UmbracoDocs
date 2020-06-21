@@ -96,6 +96,49 @@ namespace Umbraco.Web.UI
 }
 
 ```
+### RecurringTaskBase
+
+This class provides the base class for any recurring task. You can override the *PerformRun* method to implement the class. Tasks can also be run asynchronously. In this case the property *IsAsync* must be overridden and set to false and the *PerformRunAsync* must be overridden to implement the class.
+
+### BackgroundTaskRunner Events
+
+Background tasks can also trigger events
+
+<table>
+    <tr>
+        <th>Event</th>
+        <th>Signature</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>TaskStarting</td>
+        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>
+        Raised when a task starts
+        </td>
+    </tr>
+    <tr>
+        <td>TaskCompleted</td>
+        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>
+        Raised when a task has completed
+        </td>
+    </tr>
+    <tr>
+        <td>TaskError</td>
+        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>
+        Raised when a task throws error
+        </td>
+    </tr>
+    <tr>
+        <td>TaskCancelled</td>
+        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>
+        Raised when a task is cancelled
+        </td>
+    </tr>
+</table>
 
 ### Using RuntimeState
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
