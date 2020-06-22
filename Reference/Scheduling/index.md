@@ -119,7 +119,7 @@ Background tasks can also trigger events
     </tr>
     <tr>
         <td>TaskCompleted</td>
-        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>`(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)`</td>
         <td>
         Raised when a task has completed
         </td>
