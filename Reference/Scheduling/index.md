@@ -126,7 +126,7 @@ Background tasks can also trigger events
     </tr>
     <tr>
         <td>TaskError</td>
-        <td>(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)</td>
+        <td>`(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)`</td>
         <td>
         Raised when a task throws error
         </td>
