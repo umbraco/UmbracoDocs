@@ -14,9 +14,7 @@ By default, all Umbraco Cloud projects are automatically upgraded when we releas
 
 We always recommend using the automatic and *semi-automatic* upgrade options provided to you as part of your Umbraco Cloud project. With that said, it's also possible to upgrade your Umbraco Cloud project manually - this can be done with both patches and minor and major versions.
 
-Common reasons for doing manual upgrades on Umbraco Cloud
-
-* You've opted out of the automatic upgrades, and now you want to upgrade your project
+Main reason for doing manual upgrades on Umbraco Cloud
 * You want to test the newest minor or major version locally before deploying to the Cloud environments
 
 ## Product dependencies
