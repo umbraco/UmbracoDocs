@@ -19,6 +19,7 @@ The settings are set on the deploy element in the file. All settings are in seco
   <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200"/>
 </settings>
 ```
+Do note that those settings have to be added on both the source and target environments to work.
 
 ### Large media libraries
 If you are often hitting the timeouts on content transfer or restores it is likely because your media library is too large. It is recommended that you switch to Blob storage if you have a media library larger than 1gb. See how [here!](../../../Set-Up/Media)
