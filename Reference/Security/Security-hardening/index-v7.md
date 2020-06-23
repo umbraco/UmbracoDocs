@@ -40,7 +40,7 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 <rule name="Allowed IPs" stopProcessing="true">
     <match url="^(?:app_plugins|config|umbraco|umbraco_client)(?:/|$)" />
     <conditions>
-        <add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108">
+        <add input="{REMOTE_ADDR}" negate="true" pattern="213.3.10.8|88.4.43.108">
     </conditions>
     <action type="AbortRequest" />
 </rule>
