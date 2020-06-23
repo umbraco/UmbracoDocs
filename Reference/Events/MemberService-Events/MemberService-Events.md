@@ -26,16 +26,26 @@ namespace Umbraco8.Components
     
     public class SubscribeToSavedEventComponent : IComponent
     {
+        private readonly ILogger _logger;
+
+        public SubscribeToSavedEventComponent(ILogger logger)
+        {
+            this._logger = logger;
+        }
+       
         public void Initialize()
         {
+            //specify my event handler
             MemberService.Saved += MemberService_Saved;
         }
 
         private void MemberService_Saved(IMemberService sender, SaveEventArgs<IMember> e)
         {
-             foreach (var member in e.SavedEntities)
+            foreach (var member in e.SavedEntities)
             {
-               //do your processing here
+                
+              //write to the logs every time a member is saved
+              this._logger.Info<MyPublishEventComponent>("member {member} has been saved and event fired!", member.Name);
             }
         }
         public void Terminate()
