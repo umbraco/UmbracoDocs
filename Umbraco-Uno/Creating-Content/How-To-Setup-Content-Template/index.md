@@ -30,7 +30,10 @@ You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-p
 
 Now that we have a page that we want to use for our template.
 
-1. Click the (***...***) button in the three at the page, you created in the steps above
+1. Click the (***...***) button in the tree at the page, you created in the steps above
+
+![Three dots icon](images/Three-Dots.png)
+
 2. Select ***Do something else***
 3. On the list choose ***Create Content Template***
 4. Choose the name you want for your template and click ***Create***
