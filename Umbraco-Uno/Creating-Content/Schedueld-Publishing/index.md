@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Scheduled Publishing
 
-Scheduled publishing lets you set a time and a date for when your page should be published, for example, if you have a deadline then you can set the publishing for the deadline and then work on your page until then and then the site will be automatically published at the time and date of when it was scheduled to.
+Scheduled publishing lets you set a time and a date for when your page should be published. An example, could be if you have a deadline then you can set the publishing for the deadline. Then work on your page until then and then the site will be automatically published at the time and date of when it was scheduled to.
 
 ## How to setup Scheduled publishing
 
