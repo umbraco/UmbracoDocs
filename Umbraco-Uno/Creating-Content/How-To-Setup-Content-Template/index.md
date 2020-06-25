@@ -20,7 +20,7 @@ Setting up your template comes in two parts - first you need to make a page that
 Start by setting up the page with some widgets.
 You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-pedia.
 
-1. Click the context menu on your home node (***...***) and select the page
+1. Click the context menu on your home node (**...**) and select Page
 2. Name the page
 3. Add the Widgets you want in your template and set it up how you like it
 
