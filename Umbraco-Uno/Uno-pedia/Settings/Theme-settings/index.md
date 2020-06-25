@@ -102,7 +102,7 @@ This group contains configuration options for the header of your website, hich b
 
 ### Header Theme
 
-For the header background you can choose either black or white.
+For the header background you can choose either dark or light.
 
 ### Header Layout
 
