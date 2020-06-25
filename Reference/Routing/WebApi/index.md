@@ -119,6 +119,47 @@ E.g
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
 
+## Using MVC Attribute Routing in Umbraco Web API Controllers
+
+*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application. 
+
+To enable *attribute routing* in Umbraco Web API controllers you need to write a *Component* and register that using a *Composer*. The most important part in the Component is the *MapHttpAttributeRoutes* which enables attribute routing. This below example ensures your Web API controller can be accessed at *products/getallproducts*.
+
+```csharp
+
+public class AttributeRoutingComponent :IComponent
+{
+    public void Initialize()
+    {
+        GlobalConfiguration.Configuration.MapHttpAttributeRoutes();        
+        
+    }
+
+    public void Terminate()
+    {
+        
+    }
+}
+
+public class AttributeRoutingComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+       composition.Components().Append<AttributeRoutingComponent>(); ;
+    }
+}
+
+public class ProductsController : UmbracoApiController
+{
+    [Route("products/getallproducts")]
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+```
+
 
 ### More Information
 
