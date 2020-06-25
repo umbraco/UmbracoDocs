@@ -32,6 +32,6 @@ You might want a page to be unpublished at a certain time and date, like for exa
 
 1. Navigate to the page you want to unpublish at a certain date and time
 2. Follow steps 2-4 from the guide to schedule publishing above
-7. Select ***Set date*** in the ***Unpublish at*** section
-8. Pick a date in the calendar and a time in the bottom in of the calendar
-9. The page will be unpublished at the date and time that you set
+3. Select ***Set date*** in the ***Unpublish at*** section
+4. Pick a date in the calendar and a time in the bottom in of the calendar
+5. The page will be unpublished at the date and time that you set
