@@ -13,8 +13,7 @@ An example, could be if you have a deadline then you can set the publishing for 
 To set up scheduled publishing you will need to follow these steps:
 
 1. Navigate to the page you want to publish at a predefined date and time
-2. At the bottom of this page find the green button that says ***Save and Publish***
-3. Next to the ***Save and Publish*** button there's an extra button with an arrow in
+2. At the bottom of this page select the arrow-button next to the ***Save and Publish*** button - this will reveal a set of additional options
 
 ![Green arrow button and schedule menu](images/schedule.png)
 
