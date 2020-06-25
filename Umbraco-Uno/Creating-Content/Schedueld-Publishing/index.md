@@ -17,7 +17,6 @@ To set up scheduled publishing you will need to follow these steps:
 
 ![Green arrow button and schedule menu](images/schedule.png)
 
-4. Click the arrow button and a menu shows up
 5. Select ***Schedule***
 6. After selecting ***Schedule*** a window shows up with two options
 
