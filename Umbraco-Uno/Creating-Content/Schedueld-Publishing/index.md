@@ -24,7 +24,7 @@ To set up scheduled publishing you will need to follow these steps:
 
 7. Select ***Set date*** in the ***Publish at*** section
 8. Pick a date in the calendar and a time in the bottom in of the calendar
-9. The page will be published at the date and time that you set
+9. Select ***Schedule*** and the page will be published at the date and time that you set
 
 ## How to setup Scheduled Unpublishing
 
