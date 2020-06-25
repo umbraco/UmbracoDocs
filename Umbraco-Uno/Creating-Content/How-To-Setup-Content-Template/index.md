@@ -38,3 +38,7 @@ Now that we have a page that we want to use, follow the steps below to create th
 3. On the list choose ***Create Content Template***
 4. Choose the name you want for your template and click ***Create***
 5. Now if you go to create a new page, the template you made earlier in this guide will be there as an option
+
+When you have set up some content templates, it will look something like this when you create a new page.
+
+![Multiple content templates](images/Content-Templates.png)
