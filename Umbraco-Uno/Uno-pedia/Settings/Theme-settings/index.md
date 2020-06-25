@@ -34,7 +34,7 @@ Upload a square image in `.png` format, that will be used as the website favicon
 
 ### App Icon
 
-Upload a square image, preferably with a background color. This image will be used ...
+Upload a square image, preferably with a background color.
 
 ### Icon Background Color
 
