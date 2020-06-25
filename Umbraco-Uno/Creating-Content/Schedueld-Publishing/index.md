@@ -35,3 +35,7 @@ You might want a page to be unpublished at a certain time and date, like for exa
 3. Select ***Set date*** in the ***Unpublish at*** section
 4. Pick a date in the calendar and a time in the bottom in of the calendar
 5. The page will be unpublished at the date and time that you set
+
+:::tip
+By Clicking the Info tab ***i*** button in the top right corner, you get taken to the info dashboard and in the general section of this, line three shows what time the changes will be (un)Published.
+:::
