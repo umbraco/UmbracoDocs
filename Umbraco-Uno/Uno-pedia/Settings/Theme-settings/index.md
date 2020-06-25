@@ -34,7 +34,7 @@ Upload a square image in `.png` format, that will be used as the website favicon
 
 ### App Icon
 
-Upload a square image, preferably with a background color.
+Upload a square image, preferably with a background color. The App Icon is used when the website is added to the homescreen of an iPhone.
 
 ### Icon Background Color
 
