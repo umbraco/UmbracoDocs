@@ -8,7 +8,7 @@ Umbraco Uno offers the option to make a template of your page, to get a nice wor
 
 ## What is a Content Template
 
-A Content Template, lets you create a page containing a set up of widgets.
+A Content Template lets you create a page containing a complete set of widgets.
 This is a very useful feature as it allows you to have some predefined templates to choose from.
 
 ## How to set it up
