@@ -123,7 +123,7 @@ E.g
 
 *Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application. 
 
-To enable *attribute routing* in Umbraco Web API controllers you need to write a *Component* and register that using a *Composer*. The most important part in the Component is the *MapHttpAttributeRoutes* which enables attribute routing. This below example ensures your Web API controller can be accessed at *products/getallproducts*.
+To enable attribute routing in Umbraco Web API controllers you need to write a *Component* and register that using a *Composer*. The most important part in the Component is the `MapHttpAttributeRoutes` which enables attribute routing. This below example ensures your Web API controller can be accessed at `products/getallproducts`.
 
 ```csharp
 
