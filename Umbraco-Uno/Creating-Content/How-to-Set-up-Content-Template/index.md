@@ -24,7 +24,7 @@ You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-p
 2. Name the page
 3. Add the Widgets you want in your template and set it up how you like it
 
-:::note It is recommended to not fill out the widgets, because if you do, then you will have to delete the content you don't want each time you use the template.:::
+:::note It is recommended to not fill out the widgets, because if you do, then you will have to delete the content you don't want each time you use the template:::
 
 ### Making the Content Template
 
