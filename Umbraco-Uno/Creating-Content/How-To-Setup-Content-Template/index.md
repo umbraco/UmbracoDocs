@@ -34,7 +34,7 @@ Now that we have a page that we want to use, follow the steps below to create th
 
 ![Three dots icon](images/Three-Dots.png)
 
-2. Select ***Do something else***
+2. Select ***Do something else*** - which is at the bottom of the menu
 3. On the list choose ***Create Content Template***
 4. Choose the name you want for your template and click ***Create***
 5. Now if you go to create a new page, the template you made earlier in this guide will be there as an option
