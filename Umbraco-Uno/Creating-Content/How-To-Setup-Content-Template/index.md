@@ -8,7 +8,7 @@ Umbraco Uno offers the option to make a template of your page, to get a nice wor
 
 ## What is a Content Template
 
-A Content Template, lets you create a page containing a set up of widgets.
+A Content Template lets you create a page containing a complete set of widgets.
 This is a very useful feature as it allows you to have some predefined templates to choose from.
 
 ## How to set it up
@@ -18,9 +18,9 @@ Setting up your template comes in two parts - first you need to make a page that
 ### Setting up the widgets of the page
 
 Start by setting up the page with some widgets.
-You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-pedia section.
+You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-pedia.
 
-1. Click the context menu on your home node (***...***) and select the page
+1. Click the context menu on your home node (**...**) and select Page
 2. Name the page
 3. Add the Widgets you want in your template and set it up how you like it
 
@@ -28,13 +28,13 @@ You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-p
 
 ### Making the Content Template
 
-Now that we have a page that we want to use for our template.
+Now that we have a page that we want to use, follow the steps below to create the Content Template.
 
-1. Click the (***...***) button in the tree at the page, you created in the steps above
+1. In the content tree, click the three dots on the page you created in the steps above
 
 ![Three dots icon](images/Three-Dots.png)
 
-2. Select ***Do something else***
+2. Select ***Do something else*** - which is at the bottom of the menu
 3. On the list choose ***Create Content Template***
 4. Choose the name you want for your template and click ***Create***
 5. Now if you go to create a new page, the template you made earlier in this guide will be there as an option
