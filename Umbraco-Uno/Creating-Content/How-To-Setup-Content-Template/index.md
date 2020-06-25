@@ -30,7 +30,7 @@ You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-p
 
 Now that we have a page that we want to use, follow the steps below to create the Content Template.
 
-1. Click the (***...***) button in the tree at the page, you created in the steps above
+1. In the content tree, click the three dots on the page you created in the steps above
 
 ![Three dots icon](images/Three-Dots.png)
 
