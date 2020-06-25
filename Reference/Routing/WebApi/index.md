@@ -160,6 +160,21 @@ public class ProductsController : UmbracoApiController
 
 ```
 
+You can also *Insert* the Component to avoid clashes with other packages if they use the configuration.
+
+```csharp
+
+[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+public class AttributeRoutingComposer : IComposer
+{
+    public void Compose(Composition composition)
+    {
+       composition.Components().Insert<AttributeRoutingComponent>(); ;
+    }
+}
+
+```
+
 
 ### More Information
 
