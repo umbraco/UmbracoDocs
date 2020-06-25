@@ -119,6 +119,10 @@ E.g
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
 
+### More Information
+
+* [Authenticating & Authorizing controllers](../Authorized/index.md)
+
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
 *Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application. 
@@ -174,8 +178,3 @@ public class AttributeRoutingComposer : IComposer
 }
 
 ```
-
-
-### More Information
-
-* [Authenticating & Authorizing controllers](../Authorized/index.md)
