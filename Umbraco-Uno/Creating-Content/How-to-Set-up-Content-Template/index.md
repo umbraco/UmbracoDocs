@@ -34,7 +34,9 @@ Now that we have a page that we want to use, follow the steps below to create th
 
 1. In the content tree, click the three dots on the page you created in the steps above
 
+:::center
 ![Three dots icon](images/Three-Dots.png)
+:::
 
 2. Select ***Do something else*** - which is at the bottom of the menu
 3. On the list choose ***Create Content Template***
@@ -43,4 +45,6 @@ Now that we have a page that we want to use, follow the steps below to create th
 
 When you have set up some content templates, it will look something like this when you create a new page.
 
+:::center
 ![Multiple content templates](images/Content-Templates.png)
+:::
