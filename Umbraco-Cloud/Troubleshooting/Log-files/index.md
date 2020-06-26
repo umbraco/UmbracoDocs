@@ -45,3 +45,7 @@ You can enable the logging from the **Advanced** menu found under *Settings* in 
 Please be aware when you are enabling IIS logging for the environment the site will have to restart.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+
+:::note
+IIS Loggin is only available if your project is on a professional plan.
+:::
