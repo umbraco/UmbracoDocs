@@ -47,5 +47,7 @@ Please be aware when you are enabling IIS logging for the environment the site w
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
 :::note
-IIS Loggin is only available if your project is on a professional plan.
+IIS Logging is only available if your project is on a Professional plan.
+
+See our [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/) for more details on various tiers.
 :::
