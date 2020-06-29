@@ -9,9 +9,6 @@ Welcome to the Umbraco Cloud documentation. Here you can read all about how to s
 
 This is some test content because we're testing how to create pull requests.
 
-Lala.
-
-These are some more lines.
 
 ## [Getting Started](Getting-Started/)
 
