@@ -38,6 +38,9 @@ Service for doing CRUD type operations for `Script`, `Stylesheet` and `Template`
 ## [LocalizationService](LocalizationService)
 Service for doing CRUD type operations for `Dictionary` and `Language` objects.
 
+## [MacroService](MacroService)
+Defines the MacroService, which is an easy access to operations involving `IMacro`.
+
 ## [MediaService](MediaService)
 Service for doing CRUD type operations for `Media` objects.
 
