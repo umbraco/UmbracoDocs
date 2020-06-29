@@ -17,7 +17,7 @@ Create a 'TreeController' class in C#. A new mvc controller which inherits from 
 * GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure.
 * GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
 
-Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section. The Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
+Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
 
 **For example**
