@@ -29,6 +29,9 @@ Service for doing CRUD type operations for `DataTypeDefinition` and `DataType` o
 ## [DomainService](DomainService)
 Service for doing CRUD type operations for domains.
 
+## [EntityService](EntityService)
+Service for doing CRUD type operations for entities.
+
 ## [FileService](FileService)
 Service for doing CRUD type operations for `Script`, `Stylesheet` and `Template` objects.
 
