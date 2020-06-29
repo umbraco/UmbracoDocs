@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 
 Welcome to the Umbraco Cloud documentation. Here you can read all about how to set up and work with Umbraco Cloud. You can find articles about the deployment workflow, how to work locally and all the features that comes with your Umbraco Cloud project. You can also find articles about troubleshooting various issues.
 
-This is some tet, because we're testing how to create Pull Requests.
+This is some test content because we're testing how to create pull requests.
 
 Lala.
 
@@ -56,4 +56,3 @@ Learn how to use the Umbraco Cloud REST API to automate project creation and tea
 ## [Umbraco Heartcore](../Umbraco-Heartcore/)
 
 Documentation on Umbraco Heartcore.
-
