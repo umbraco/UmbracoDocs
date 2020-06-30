@@ -32,6 +32,9 @@ Service for doing CRUD type operations for domains.
 ## [EntityService](EntityService)
 Service for doing CRUD type operations for entities.
 
+## [ExternalLoginService](ExternalLoginService)
+Service used to store the external login info.
+
 ## [FileService](FileService)
 Service for doing CRUD type operations for `Script`, `Stylesheet` and `Template` objects.
 
