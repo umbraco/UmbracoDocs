@@ -8,7 +8,7 @@ Your theme lets you add your touch to your page, meaning the colors you want, th
 
 ## How to customize your theme through the theme editor
 
-We will be working with the theme editor, you can access this by going to the preview section of the unicorn hotel page.
+We will be working with the theme editor, , which you can access by going to the preview section of the _Unicorn Hotel_ page.
 
 ### Picking the colors and text of the theme
 
