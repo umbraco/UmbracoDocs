@@ -12,7 +12,7 @@ We will be working with the theme editor, , which you can access by going to the
 
 ### Picking the colors and text of the theme
 
-First what we will need to do is click the green button that looks like a paintbrush, then the theme editor will show up.
+First what we will need to do, is click the green button that looks like a paintbrush - then the theme editor will show up.
 The theme we will be setting up will be a watermelon theme, and it will look like this:
 
 ![watermelon theme](images/theme.gif)
