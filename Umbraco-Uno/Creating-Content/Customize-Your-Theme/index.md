@@ -51,5 +51,5 @@ Then navigate to the footer tab:
 
 ## Logo
 
-To set up the logo we will have to go back to the backoffice and got into settings and find Theme.
+To set up the logo we will have to go back to the backoffice, go into settings and find Theme.
 In the General tab, you will be able to set the logo you want to show on the respective themes.
