@@ -9,7 +9,7 @@ Welcome to the Umbraco Cloud documentation. Here you can read all about how to s
 
 Test
 
-This is a newbafs
+This is a newbies.
 
 lkjdsflkef
 
@@ -49,4 +49,3 @@ Learn how to use the Umbraco Cloud REST API to automate project creation and tea
 
 ## [Umbraco Heartcore](../Umbraco-Heartcore/)
 Documentation on Umbraco Heartcore.
-
