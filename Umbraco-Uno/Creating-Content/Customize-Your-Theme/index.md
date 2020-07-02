@@ -30,7 +30,7 @@ If you want to use colorful background colors it is recommended that you do not 
 
 ### Setting up Header and Footer
 
-Firstly navigate to the header tab in the theme editor, then follow the process below:
+Firstly navigate to the Header tab in the theme editor, then follow the process below:
 
 1. Set Theme Dark
 2. Set Nav Position Left
