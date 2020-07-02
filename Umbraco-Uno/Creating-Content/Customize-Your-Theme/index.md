@@ -25,10 +25,8 @@ If you want to use colorful background colors it is recommended that you do not 
 
     ![watermelon theme color](images/Color-settings.png)
 
-2. Do this for all the fields and press ***Save***
-3. This will result in the color Scheme for the dark theme to be set up like intended.
-4. Select ***Text*** in the menu bar at the top of the theme editor.
-5. Choose Roboto as both Heading and Body Font
+2. Select ***Text*** in the menu bar at the top of the theme editor.
+3. Choose Roboto as both Heading and Body Font
 
 ### Setting up Header and Footer
 
