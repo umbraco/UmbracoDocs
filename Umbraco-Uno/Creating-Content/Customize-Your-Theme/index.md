@@ -18,7 +18,7 @@ The theme we will be setting up will be a watermelon theme, and it will look lik
 ![watermelon theme](images/theme.gif)
 
 :::note
-If you want a colored theme you will have to go to the Hero Widget and set the overlay to 0 otherwise the color you choose for background color will be put on top of your hero image
+If you want to use colorful background colors it is recommended that you do not configure the *Overlay Strength* feature on your widgets, as the colors will be used for the overlay.
 ::::
 
 1. Select ***Theme*** and press in the field and type in the value you see on this image:
