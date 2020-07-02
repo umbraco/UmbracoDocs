@@ -42,7 +42,7 @@ Firstly navigate to the Header tab in the theme editor, then follow the process 
 8. Nav Padding set to 30
 9. Nav Padding Small Screen 15
 
-Then navigate to the footer tab:
+Then navigate to the Footer tab:
 
 1. Choose Dark Theme
 2. Select Container Big
