@@ -21,7 +21,7 @@ The theme we will be setting up will be a watermelon theme, and it will look lik
 If you want to use colorful background colors it is recommended that you do not configure the *Overlay Strength* feature on your widgets, as the colors will be used for the overlay.
 ::::
 
-1. Select ***Theme*** and press in the field and type in the value you see on this image:
+1. Type in the values you see on this image below or choose your own color scheme.
 
     ![watermelon theme color](images/Color-settings.png)
 
