@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Customize Your theme
 
-A custom theme lets you add a little personal touch to your page - the colors you want, the font, and all that. If you are new to working with Umbraco Uno and do not yet know how to work with the theme then it is recommended that you [take a look.](../../Getting-Started/Themes/index.md)
+A custom theme lets you add a little personal touch to your page - the colors you want, the font, and all that. If you are new to working with Umbraco Uno and do not yet know how to work with the theme then it is recommended that you [checkout the Theme Editor.](../../Getting-Started/Themes/index.md)
 
 ## How to customize your theme through the theme editor
 
