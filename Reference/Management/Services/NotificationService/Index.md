@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # NotificationService
 
-The NotificationServices is used to perform operations related to back office notifications.
+The NotificationServices is used to perform operations related to backoffice notifications.
 
 [Browse the API documentation for INotificationService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.INotificationService.html).
 
