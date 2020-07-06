@@ -9,5 +9,7 @@ swap:
   app_plugins: "'App_Plugins'"
   blacklist: "'deny list'"
   whitelist: "'allow list'"
+  black list: "'deny list'"
+  white list: "'allow list'"  
   master: "'primary'"
   slave: "'secondary'"
