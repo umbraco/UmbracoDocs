@@ -56,6 +56,9 @@ Service for doing CRUD type operations for `MemberType` objects.
 ## [MemberGroupService](MemberGroupService)
 Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 
+## [NotificationService](NotificationService)
+The NotificationServices is used to perform operations related to backoffice notifications.
+
 ## [RelationService](RelationService)
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
