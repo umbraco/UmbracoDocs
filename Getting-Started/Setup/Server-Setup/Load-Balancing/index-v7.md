@@ -27,7 +27,7 @@ It is highly recommended that you setup your staging environment to also be load
 With Umbraco version 7.3.0, load balancing is easier than ever before.
 Setting up a load balanced environment is achievable with a few configuration file changes.
 
-[Full documentation is available here](flexible.md)
+[Full documentation is available here](flexible-v7.md)
 
 ## Legacy load balancing
 
