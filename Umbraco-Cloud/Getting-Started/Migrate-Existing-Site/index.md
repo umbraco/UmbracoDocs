@@ -95,7 +95,7 @@ If you need help upgrading your project, we have some excellent [Upgrade instruc
 
 :::note
 #### Upgrading from a version prior to Umbraco 7.6.0
-With Umbraco 7.6.0 the property editors for pickers for content, media, members and related links has been updated to store UDI instead of node ID. If you're upgrading your site from a version prior to v7.6.0 or it has been upgraded earlier you might be using these pickers even though they have been marked as obsolete. 
+With Umbraco 7.6.0 the property editors for pickers for content, media, members, and related links have been updated to store UDI instead of node ID. If you're upgrading your site from a version prior to v7.6.0 or it has been upgraded earlier you might be using these pickers even though they have been marked as obsolete. 
 This can cause issues when transfering content to your Cloud project a bit down the road from here. 
 
 If you're using these obsolete pickers in the project you want on Umbraco Cloud, you will need to migrate to the newest versions of these pickers. This will include the need for a database migration. Benjamin Carleski, from ProWorks has made [this guide that take you through the process of migrating your database to use UDIs instead of IDs](https://skrift.io/issues/umbraco-migrations-made-easy/)
