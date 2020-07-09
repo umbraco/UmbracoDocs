@@ -27,7 +27,7 @@ The grid widget gives you all the tools you would need to create a good looking 
 If you already have a predefined design you need to achieve, the grid widget is a good option. 
 
 To get started it would be a good choice, to start by setting up the grid structure in a global content node. Doing so will allow you to keep a consistent structure throughout your pages.
-Keeping the grid in a global conetent node is both time efficient and structure efficient as you will only have to set up the core structure once.
+Keeping the grid in a global content node is both time efficient and structure efficient as you will only have to set up the core structure once.
 
 ## [Working With Content](Work-With-content/index.md)
 
