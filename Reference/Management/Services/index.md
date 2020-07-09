@@ -59,6 +59,9 @@ Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 ## [NotificationService](NotificationService)
 The NotificationServices is used to perform operations related to backoffice notifications.
 
+## [PackagingService](PackagingService)
+The PackagingService provides import/export functionality for the Core models of the API.
+
 ## [RelationService](RelationService)
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
