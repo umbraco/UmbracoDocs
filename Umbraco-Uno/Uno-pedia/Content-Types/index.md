@@ -4,13 +4,13 @@ versionFrom: 8.0.0
 
 # Content Types
 
-Umbraco Uno ships with a total of 11 Content Types. 5 of these you will be set up and expanding on as your build your website. 4 of them are pages concerning settings or other basic website functionality, 1 acts as a folder and the final Content Type is used for the search functionality on the website.
+Umbraco Uno ships with a total of 11 Content Types. 5 of these you will set up and expand on as you build your website. 4 of them are pages concerning settings or other basic website functionality, 1 acts as a folder and the final Content Type is used for the search functionality on the website.
 
 In this section you can learn more about the available Content Types in the Starter Kit, where to find them and the recommended way of using them.
 
 ## [Site (Start)](Site-Start)
 
-The Site Content Type is the frontpage of your website, and is build using widgets. Site contains a lot of configuration options that will apply to the entire website, such as customizable option for the Navigation, Header and Footer of the website.
+The Site content type is the frontpage of your website, and is built using widgets. Site contains a lot of configuration options that will apply to the entire website, such as customizable options for the Navigation, Header and Footer of the website.
 
 [Learn more about how to configure the frontpage on your website.](Site-Start)
 
@@ -20,7 +20,7 @@ The Page content type is the default type for creating landingpages.
 
 ## [Feed](Feed)
 
-The Feed Content Type provides you with an option to setup a feed on your website. This could be a blog or a section section. Once you've setup a feed page you can start adding posts/articles into the feed.
+The Feed content type provides you with an option to setup a feed on your website. This could be a blog or a section section. Once you've setup a feed page you can start adding posts/articles into the feed.
 
 [More about how to setup a feed.](Feed)
 
@@ -52,7 +52,7 @@ A sitemap content item will be excluded from the default navigation menu.
 
 ## Settings
 
-When building an Umbraco Uno website the Settings Content Type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
+When building an Umbraco Uno website the Settings content type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
 
 ### [General settings](../Settings/General-Settings)
 
