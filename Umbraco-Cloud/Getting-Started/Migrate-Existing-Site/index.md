@@ -93,6 +93,20 @@ You can download the latest version of Umbraco from [Our](https://our.umbraco.co
 
 If you need help upgrading your project, we have some excellent [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
+:::note
+#### Upgrading from a version prior to Umbraco 7.6.0
+With Umbraco 7.6.0 the following property editors have been updated to store UDI instead of node ID:
+1. Content Picker
+2. Media Picker
+3. Member Picker
+4. Related Links
+
+If you're upgrading your site from a version prior to v7.6.0 or it has been upgraded earlier you might be using these pickers even though they have been marked as obsolete. 
+This can cause issues when transfering content to your Cloud project a bit down the road from here. 
+
+If you're using these obsolete pickers in the project you want on Umbraco Cloud, you will need to migrate to the newest versions of these pickers. This will include the need for a database migration. [This guide will take you through the process of migrating your database to use UDIs instead of IDs](https://skrift.io/issues/umbraco-migrations-made-easy/).
+:::
+
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
 After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
