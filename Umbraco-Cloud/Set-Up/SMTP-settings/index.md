@@ -18,6 +18,12 @@ When you are working with Umbraco Forms you have the option to setup email workf
 
 Before this email workflow will send out emails you will need to configure an SMTP service.
 
+:::note
+In some cases, you might also experience that you need to configure a sender-email for notifications.
+
+This can be done in the `<notifications>` section of the `web.config` file. Find more details on this in the [`umbracoSettings`](../../../reference/config/umbracosettings/#notifications) article.
+:::
+
 ### Backoffice users
 
 There are two scenarios regarding backoffice users where configuring an SMTP service is needed.
