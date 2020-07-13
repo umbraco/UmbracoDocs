@@ -125,7 +125,9 @@ private string GetBreadcrumb(string id)
 }
 ```
 
+:::note
 This example is here to highlight the user of the Scope Provider. A Scope is required for many things in Umbraco, from controlling database transactions to how service level events are handled to how nucache manages it's snapshots (and more). Although Umbraco tries to ensure there is a Scope available, this is not always the case, especially when working in background threads / events. As such, it is important to wrap calls to Umbraco Services/Contexts in a Scope, as without this unusual errors can occur, including the disposal of objects still required. *For more information on this, please see the answer to this [forum question](https://our.umbraco.com/forum/using-umbraco-and-getting-started/102676-triggering-index-rebuild-via-hangfire-causes-objectdisposedexception-in-nucache)*
+:::
 
 Before this works the component will have to be registered in a composer. If you already have a composer you can add it to that one, but for this example we will make a new composer:
 
