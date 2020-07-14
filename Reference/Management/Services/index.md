@@ -62,6 +62,9 @@ The NotificationServices is used to perform operations related to backoffice not
 ## [PackagingService](PackagingService)
 The PackagingService provides import/export functionality for the Core models of the API.
 
+## [RedirectUrlService](RedirectUrlService)
+The RedirectUrlService is used for CRUD operations related to Redirects.
+
 ## [RelationService](RelationService)
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
