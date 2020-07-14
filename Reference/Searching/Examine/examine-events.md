@@ -37,10 +37,14 @@ So to add a TransformingIndexValues event we will add a controller that inherits
 public class ExamineEvents : IComponent
 {
     private readonly IExamineManager _examineManager;
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
+    private readonly IScopeProvider _scopeProvider;
 
-    public ExamineEvents(IExamineManager examineManager)
+    public ExamineEvents(IExamineManager examineManager, IUmbracoContextFactory umbracoContextFactory, IScopeProvider scopeProvider)
     {
         _examineManager = examineManager;
+        _umbracoContextFactory = umbracoContextFactory;
+        _scopeProvider = scopeProvider;
     }
 
     public void Initialize()
@@ -84,7 +88,12 @@ if (e.ValueSet.Category == IndexTypes.Content)
         }
     }
 
+    //Accessing the Umbraco Cache code will be added in the next step.
+    //combinedFields.AppendLine(GetBreadcrumb(e.ValueSet.Values["id"].FirstOrDefault()?.ToString()));
+
     e.ValueSet.TryAdd("combinedField", combinedFields.ToString());
+
+    
 }
 ```
 
@@ -92,6 +101,31 @@ So at this point we have done something along the lines of:
 - Get the ExternalIndex
 - Get the valueset for the ExternalIndex
 - For each field, add the content to a new field called `combinedField`
+
+Next is an optional step to highlight how you can access the Umbraco published cache during an indexing event. In this example, we will be adding the breadcrumb values to our combined field.
+
+```cs
+private string GetBreadcrumb(string id)
+{
+    if (int.TryParse(idString, out var id))
+    {
+        using(var scope = _scopeProvider.Create(autocomplete: true))
+        {
+            using (var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            {
+                var nodeBeingIndexed = umbracoContextReference.UmbracoContext.Content.GetById(id);
+                return nodeBeingIndexed.Ancestor != null ?  
+                    string.Join(" ", nodeBeingIndexed.AncestorsOrSelf().Select(n => n.Name)) :
+                    string.Empty;
+            }
+        }
+    }
+}
+```
+
+:::note
+This example is here to highlight the user of the Scope Provider. A Scope is required for many things in Umbraco, from controlling database transactions to how service level events are handled to how nucache manages it's snapshots (and more). Although Umbraco tries to ensure there is a Scope available, this is not always the case, especially when working in background threads / events. As such, it is important to wrap calls to Umbraco Services/Contexts in a Scope, as without this unusual errors can occur, including the disposal of objects still required. *For more information on this, please see the answer to this [forum question](https://our.umbraco.com/forum/using-umbraco-and-getting-started/102676-triggering-index-rebuild-via-hangfire-causes-objectdisposedexception-in-nucache)*
+:::
 
 Before this works the component will have to be registered in a composer. If you already have a composer you can add it to that one, but for this example we will make a new composer:
 
