@@ -15,7 +15,7 @@ The way you activate this feature is very straight forward:
 
 ![this image shows what the menu looks like](images/Enable-Custom-Code.png)
 
-4. You will be taken to a new page with a disclaimer, telling you that once you enable custom code cannot turn it off again.
+4. You will be taken to a new page with a disclaimer, telling you that once you enable custom code you cannot turn it off again.
 
 5. If you are sure you want to enable custom code then go ahead and click the green button saying ***Enable Custom Code***
 
