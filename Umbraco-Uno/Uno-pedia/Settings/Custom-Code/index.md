@@ -13,9 +13,13 @@ The way you activate this feature is very straight forward:
 
 3. Select ***Enable Custom Code***
 
+![this image shows what the menu looks like](images/Enable-Custom-Code.png)
+
 4. You will be taken to a new page with a disclaimer, telling you that once you enable custom code cannot turn it off again.
 
 5. If you are sure you want to enable custom code then go ahead and click the green button saying ***Enable Custom Code***
+
+![this image shows what the disclimer page looks like](images/Warning-Page.png)
 
 After Enabling Custom code, you will be able to enter the settings section and the packages section on your Development and Staging environments(not on live).
 Furthermore, you will gain access to Git for Development and Staging.
