@@ -9,7 +9,7 @@ The way you activate this feature is very straight forward:
 
 1. Navigate to your project in the portal
 
-2. Then go to settings
+2. Go to settings
 
 3. Select ***Enable Custom Code***
 
