@@ -25,5 +25,5 @@ After Enabling Custom code, you will be able to enter the settings section and t
 Furthermore, you will gain access to Git for Development and Staging.
 
 :::warning
-Please be aware that you will lose all updates for Umbraco Uno, should you choose to enable custom code, and the decision is irreversible once you click enable custom code.
+Please be aware that you will stop getting updates for Umbraco Uno, should you choose to enable custom code, and the decision is irreversible once you click enable custom code.
 :::
