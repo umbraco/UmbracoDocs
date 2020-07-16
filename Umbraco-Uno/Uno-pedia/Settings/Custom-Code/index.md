@@ -4,18 +4,18 @@ versionFrom: 8.0.0
 
 # Custom Code
 
-In Umbraco Uno, it is possible to enable Custom Code, if you are on a Standard/Professional plan.
+In Umbraco Uno, it is possible to enable Custom Code, if you are on a Standard or Professional plan.
 The way you activate this feature is very straight forward:
 
 1. Navigate to your project in the portal
 
-2. Then go to settings
+2. Go to settings
 
 3. Select ***Enable Custom Code***
 
 ![this image shows what the menu looks like](images/Enable-Custom-Code.png)
 
-4. You will be taken to a new page with a disclaimer, telling you that once you enable custom code cannot turn it off again.
+4. You will be taken to a new page with a disclaimer, telling you that once you enable custom code you cannot turn it off again.
 
 5. If you are sure you want to enable custom code then go ahead and click the green button saying ***Enable Custom Code***
 
