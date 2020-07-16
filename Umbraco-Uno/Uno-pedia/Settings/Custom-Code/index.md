@@ -26,5 +26,5 @@ Furthermore, you will gain access to Git for Development and Staging which will 
 
 :::warning
 Please be aware that you will stop getting updates for Umbraco Uno, should you choose to enable custom code, and the decision is irreversible once you click enable custom code.
-Upgrading to Custom Code, also removes your sendgrid implimentation, meaning that you will have to [manually set up your mail integration](../../../../Umbraco-Cloud/Set-Up/SMTP-settings/) 
+Upgrading to Custom Code, also removes your sendgrid implimentation, meaning that you will have to [manually set up your mail integration](../../../../Umbraco-Cloud/Set-Up/SMTP-settings/index.md) 
 :::
