@@ -22,7 +22,7 @@ The way you activate this feature is very straight forward:
 ![this image shows what the disclimer page looks like](images/warning-page.png)
 
 After Enabling Custom code, you will be able to enter the settings section and the packages section on your Development and Staging environments(not on live).
-Furthermore, you will gain access to Git for Development and Staging.
+Furthermore, you will gain access to Git for Development and Staging which will enable you to clone the environments to your local machine.
 
 :::warning
 Please be aware that you will stop getting updates for Umbraco Uno, should you choose to enable custom code, and the decision is irreversible once you click enable custom code.
