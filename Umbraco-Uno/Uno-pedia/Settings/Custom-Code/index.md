@@ -19,7 +19,7 @@ The way you activate this feature is very straight forward:
 
 5. If you are sure you want to enable custom code then go ahead and click the green button saying ***Enable Custom Code***
 
-![this image shows what the disclimer page looks like](images/Warning-page.png)
+![this image shows what the disclimer page looks like](images/warning-page.png)
 
 After Enabling Custom code, you will be able to enter the settings section and the packages section on your Development and Staging environments(not on live).
 Furthermore, you will gain access to Git for Development and Staging.
