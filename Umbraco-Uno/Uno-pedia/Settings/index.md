@@ -29,3 +29,7 @@ You can manage the theme settings for your website on the *Theme* content node, 
 ## [Content Type specific settings](Specific-Settings)
 
 On each content item you create in the content section, you will have a set of settings and configuration options specific to the content type the item is based on. These are split up into groups and includes settings related to SEO and options for the navigation bar.
+
+## [Custom Code](Custom-Code)
+
+If you have a standard or professional plan with Umbraco Uno then you will gain access to the [Custom Code](Custom-Code/index.md) option.
