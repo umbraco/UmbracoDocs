@@ -138,9 +138,9 @@ or
 In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
 
 ```csharp
-public class MyProductViewModel : PublishContentWrapped
+public class MyProductViewModel : PublishedContentWrapped
 {
-    // The PublishContentWrapped accepts an IPublishedContent item as a constructor
+    // The PublishedContentWrapped accepts an IPublishedContent item as a constructor
     public MyProductViewModel(IPublishedContent content) : base(content) { }
 
     // Custom properties here...
