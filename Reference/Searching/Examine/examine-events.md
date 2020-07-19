@@ -109,7 +109,7 @@ private string GetBreadcrumb(string id)
 {
     if (int.TryParse(idString, out var id))
     {
-        using(var scope = _scopeProvider.Create(autocomplete: true))
+        using(var scope = _scopeProvider.CreateScope(autoComplete: true))
         {
             using (var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
