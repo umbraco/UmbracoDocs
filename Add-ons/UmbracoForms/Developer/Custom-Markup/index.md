@@ -21,7 +21,7 @@ The way the razor macro works is that it uses some razor views to output the for
 
 You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder if you are using Forms 6+, or in the `~\Views\Partials\Forms\`folder if you are using Forms 4.
 
-To avoid that your custom changes to the default views are overwritten you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit it there.
+To avoid your custom changes to the default views from being overwritten, you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit it there.
 
 ### Form.cshtml
 
