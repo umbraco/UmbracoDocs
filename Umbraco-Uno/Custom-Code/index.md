@@ -23,8 +23,9 @@ The way you activate this feature is very straight forward:
 
 After Enabling Custom code, you will be able to enter the settings section and the packages section on your Development and Staging environments(not on live).
 Furthermore, you will gain access to Git for Development and Staging which will enable you to clone the environments to your local machine.
+If you decide to clone your Umbraco Uno Project down locally, it is important that you keep the domain as it is (localhost:), because if you change it, that will potentially lead to issues with our license checker.
 
 :::warning
 Please be aware that you will stop getting updates for Umbraco Uno, should you choose to enable custom code, and the decision is irreversible once you click enable custom code.
-Upgrading to Custom Code, also removes your sendgrid implimentation, meaning that you will have to [manually set up your mail integration](../../../../Umbraco-Cloud/Set-Up/SMTP-settings/index.md) 
+Upgrading to Custom Code, also removes your sendgrid implimentation, meaning that you will have to [manually set up your mail integration](../../Umbraco-Cloud/Set-Up/SMTP-settings/index.md) 
 :::
