@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 # The Blog
 In this guide you will learn, to set up a blog with a feed that contains the blog posts. 
 
-When you are done with this guid you will have a blog that looks something like this:
+When you are done with this guide you will have a blog that looks something like this:
 
 ![final blog](images/Final-blog.png)
 
