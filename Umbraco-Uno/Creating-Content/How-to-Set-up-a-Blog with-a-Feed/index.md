@@ -31,7 +31,7 @@ In this part, we will set up the feed for our blog, so that we will have some po
 3. Give the post a name
 4. Fill out the content section with what you want the blog post to be about
 5. Head to the Meta section
-6. In the date section you will select the publishing date for the post
+6. In the date section select the publishing date for the post
 7. The image here is a thumbnail for the post
 8. Finalize by writing a short description of the post and hit ***save** or ***save and publish***
 
