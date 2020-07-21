@@ -14,7 +14,7 @@ When you are done with this guide you will have a blog that looks something like
 
 We will start by making the blog page, which will contain the posts we will create in the feed.
 
-1. First, we will navigate to the content tree on the left
+1. First, navigate to the content tree on the left
 2. In the content tree hover over Unicorn Hotel and click ... button
 3. After clicking the ... button select feed from the menu that shows up
 4. Name this what you would like it to be called in this case we will name it Blog(if there's already a blog page you might have to delete that first)
