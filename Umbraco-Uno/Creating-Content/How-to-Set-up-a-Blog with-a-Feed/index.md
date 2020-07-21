@@ -6,6 +6,10 @@ versionFrom: 8.0.0
 # The Blog
 In this guide you will learn, to set up a blog with a feed that contains the blog posts. 
 
+When you are done with this guid you will have a blog that looks something like this:
+
+![final blog](images/Final-blog.png)
+
 ## How to set up the blog
 
 We will start by making the blog page, which will contain the posts we will create in the feed.
@@ -39,6 +43,8 @@ A blog usually consists of multiple posts, so this is how you add more blog post
 2. Now you should see a window showing the first post you made
 3. From here click ***Create Post***
 4. From there it is the same approach as explained above
+
+![to create additional blog post](images/create-new-blog.png)
 
 :::note
 What if you want to edit the blog page itself? well, you can do this by clicking the blog page and navigating to the top right corner and clicking the ***Content*** button, and to switch back to the post overview Click ***Child items***
