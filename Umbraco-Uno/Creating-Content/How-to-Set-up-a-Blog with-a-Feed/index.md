@@ -18,7 +18,7 @@ We will start by making the blog page, which will contain the posts we will crea
 2. In the content tree hover over Unicorn Hotel and click ... button
 3. After clicking the ... button select feed from the menu that shows up
 4. Name this what you would like it to be called in this case we will name it Blog(if there's already a blog page you might have to delete that first)
-5. After naming the blog page, go to widgets and select hero widget
+5. After naming the blog page, go to widgets and select the hero widget
 6. Set up the hero widget as you would like it and hit ***save*** or ***save and publish***
 7. After doing this the Blog page itself is done
 
