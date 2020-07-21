@@ -4,8 +4,8 @@ versionFrom: 8.0.0
 ---
 
 # The Blog
-In this guide you will learn, to set up a blog with a feed that contains the blog posts. 
 
+In this guide you will learn how to set up a blog with a feed that contains the blog's posts.
 When you are done with this guide you will have a blog that looks something like this:
 
 ![final blog](images/Final-blog.png)
@@ -24,7 +24,8 @@ We will start by making the blog page, which will contain the posts we will crea
 
 ## How to set up the feed
 
-In this part, we will set up the feed for our blog, so that we will have some posts on our blog page.
+In this part, we will set up the feed for our blog, so that we can fetch some posts for our blog page.
+
 
 1. Click the ... button next to the Blog node in the tree
 2. Select Post
@@ -37,7 +38,7 @@ In this part, we will set up the feed for our blog, so that we will have some po
 
 ## How to add more blog posts to the feed
 
-A blog usually consists of multiple posts, so this is how you add more blog posts after you have created the first blog post.
+A blog usually consists of multiple posts, you can add however many blog pages you like by following the steps below.
 
 1. Click the blog node
 2. Now you should see a window showing the first post you made
