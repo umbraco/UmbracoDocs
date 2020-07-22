@@ -36,6 +36,20 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 - `log.log` shows you the same output you will have seen when pushing your changes using Git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
 
+## Cleaning up the environment logs viewer
+
+The logs viewer can sometimes timeout indifinitely due to too many logs which makes it impossible to view and read them.
+
+The only way to resolve the issue is to open the database for the environment you want to delete logs from by using this guide - https://our.umbraco.com/Documentation/Umbraco-Cloud/Databases/Cloud-Database/
+
+If you want to delete logs from your development environment log viewer then you will have to connect to the dev environment DB and run the following query:
+```
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+This will delete 90% of the oldest logs that are unread and leave you with 10% of the newest ones. It is, of course, up to you to decide how many % of logs you want to delete.
+
 ## IIS Logging
 
 It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
