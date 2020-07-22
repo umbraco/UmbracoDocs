@@ -34,8 +34,9 @@ window.localStorage['maxViewItems'] = 999
 Where 999 will be the new limit. You can, of course, set it to anything you like.
 
 3. Hit enter.
-4. You should now be able to view the folders/files up to the limit you've set it to.
- 
+4. Navigate out and back in to the folder you want to view the files in.
+5. You should now be able to view the folders/files up to the limit you've set it to.
+
 :::note
 If you refresh the page, the limit will go back to the standard 199.
 :::
