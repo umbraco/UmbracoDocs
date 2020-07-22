@@ -20,6 +20,26 @@ The power tools can be used for various things, we often refer to the tools in o
 * [Run an extraction manually](Manual-extractions)
 * [Generate UDA files](generating-uda-files)
 
+## Showing more than 199 items in Kudu
+ 
+Larger sites can often have more than 199 items in various folders, and you only have to view 199 files/folders by default.
+ 
+That can be increased by doing the following:
+ 
+1. Open the browser console while you're in Kudu.
+2. Type 
+```
+window.localStorage['maxViewItems'] = 999
+```
+Where 999 will be the new limit. You can, of course, set it to anything you like.
+
+3. Hit enter.
+4. You should now be able to view the folders/files up to the limit you've set it to.
+ 
+:::note
+If you refresh the page, the limit will go back to the standard 199.
+:::
+
 ## Important notes
 
 Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git([Local to Cloud](../../Deployment/Local-to-Cloud)) and the Deploy engine([Cloud to Cloud](../../Deployment/Cloud-to-Cloud)).
