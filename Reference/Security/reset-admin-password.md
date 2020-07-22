@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Reset admin password
 
-There is one admin user in any Umbraco installation. This is the first user of the system.
+There is one default admin user in any Umbraco installation. This is the first user of the system.
 
 While there are multiple blogposts and even a [package](https://our.umbraco.com/packages/developer-tools/umbraco-admin-reset/) to reset the password of the admin user. There is an [official way](https://twitter.com/Shazwazza/status/1141594930550206464) to reset credentials from your lost admin password.
 
@@ -33,4 +33,7 @@ If you now open your browser and surf to the website, you will see that the inst
 
 :::warning
 Make sure you protect a production websites from being highjacked as anyone will be able to reset the password during the last step.
+
+This does not work if your site is in an upgrading state.
+If you remove the version number from the web.config the migrations are checked against the DB. If any migrations are found to have not run Umbraco assumes an upgrade is in progress and requires (real) authentication.
 :::
