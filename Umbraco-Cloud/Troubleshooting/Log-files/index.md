@@ -44,7 +44,7 @@ Since these errors are stored in your database you can go clean them up by [acce
 
 The only way to resolve the issue is to open the database for the environment you want to delete logs from by using this guide - https://our.umbraco.com/Documentation/Umbraco-Cloud/Databases/Cloud-Database/
 
-If you want to delete logs from your development environment log viewer then you will have to connect to the dev environment DB and run the following query:
+If you want to delete logs from one of your environments' log viewer then you will have to connect to the environment DB and run the following query:
 ```
 DELETE TOP(90) PERCENT
   FROM [dbo].[UCErrorLog]
