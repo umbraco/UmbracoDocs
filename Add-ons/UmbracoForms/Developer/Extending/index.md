@@ -24,3 +24,6 @@ A workflow can be executed each time a form changes state (when it is submitted 
 
 ## [Export Types](Adding-a-Exporttype.md)
 Export types are responsible for turning form records into any other data format, which is then returned as a file.
+
+## [Validation](Adding-an-Event-Handler.md)
+Form events are raised during the submission life cycle and can be handled for executing custom logic.
