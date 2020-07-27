@@ -44,6 +44,13 @@ Since the errors are stored in your database it is possible to clean them up. To
 
 If you want to delete logs from one of your environments' log viewer then you will have to connect to the environment DB and run the following query:
 
+```
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+
+This will delete 90% of the oldest logs that are unread and leave you with 10% of the newest ones. It is, of course, up to you to decide how many % of logs you want to delete.
 
 ## IIS Logging
 
