@@ -71,5 +71,8 @@ Service for doing CRUD type operations for `Section` objects
 ## [TagService](TagService)
 Tag service to query for tags in the tags db table.
 
+## [TextService](TextService)
+The TextService is the entry point to localize any key in the text storage source for a given culture.
+
 ## [UserService](UserService)
 Service for managing users, user groups and permissions.
