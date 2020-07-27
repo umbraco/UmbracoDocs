@@ -40,9 +40,7 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 On Cloud environments all errors are logged to a database table, which is what is seen in the portal under each environment. If you leave too many unread log messages it can cause timeouts when you go to see your errors. 
 
-Since these errors are stored in your database you can go clean them up by [accessing the environment database](../../Databases/Cloud-Database).
-
-The only way to resolve the issue is to open the database for the environment you want to delete logs from by using this guide - https://our.umbraco.com/Documentation/Umbraco-Cloud/Databases/Cloud-Database/
+Since the errors are stored in your database it is possible to clean them up. To do this, start by [accessing the database](../../Databases/Cloud-Database) for the environment where you want to run the cleanup.
 
 If you want to delete logs from one of your environments' log viewer then you will have to connect to the environment DB and run the following query:
 
