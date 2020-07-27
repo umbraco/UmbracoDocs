@@ -65,6 +65,8 @@ The PackagingService provides import/export functionality for the Core models of
 ## [PublicAccessService](PublicAccessService)
 Service to handle public access.
 
+## [RedirectUrlService](RedirectUrlService)
+The RedirectUrlService is used for CRUD operations related to Redirects.
 ## [RelationService](RelationService)
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
@@ -73,6 +75,9 @@ Service for doing CRUD type operations for `Section` objects
 
 ## [TagService](TagService)
 Tag service to query for tags in the tags db table.
+
+## [TextService](TextService)
+The TextService is the entry point to localize any key in the text storage source for a given culture.
 
 ## [UserService](UserService)
 Service for managing users, user groups and permissions.
