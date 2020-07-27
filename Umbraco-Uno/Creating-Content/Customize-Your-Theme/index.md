@@ -49,6 +49,6 @@ Then navigate to the Footer tab:
 
 ## Logo
 
-To set up the logo we will have to go back to the backoffice, go into settings and find Theme.
+To set up the logo we will have to go back to the backoffice, navigate to settings and find Theme.
 In the General tab, you will be able to set the logo you want to show on the respective themes.
-The Logo will be displayed in the the header of the page, and hvae two differnet logos for the dark and the light theme is recomended, it is also recommended that you use png files for the logo.
+The Logo will be displayed in the the header of the page, and have two differnet logos for the dark and the light theme is recomended. it is also recommended that you use png files for the logo.
