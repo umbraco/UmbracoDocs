@@ -51,7 +51,7 @@ In some cases you might need to delete page or entire sections of your website. 
 3. From the dialog, choose "Delete..."
 4. Select "OK" to confirm the deletion
 
-Once a piece of content or a section has been deleted, it will be moved to the **Recycle Bin** which is accessible from the Content tree. It is possible to **restore** deleted content by either moving the item back under the start node or by right-clicking it in the Content tree and choose "Restore".
+Once a piece of content or a section has been deleted, it will be moved to the **Recycle Bin** which is accessible from the Content tree. It is possible to **restore** deleted content by either moving the item back under the start node or by right-clicking it in the Content tree and choosing "Restore".
 
 ## Publishing content
 
