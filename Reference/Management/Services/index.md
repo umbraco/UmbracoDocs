@@ -73,6 +73,9 @@ Service for doing CRUD type operations for `Relation` and `RelationType` objects
 ## [SectionService](SectionService)
 Service for doing CRUD type operations for `Section` objects
 
+## [ServerRegistrationService](ServerRegistrationService)
+The ServerRegistrationService manages server registrations in the database.
+
 ## [TagService](TagService)
 Tag service to query for tags in the tags db table.
 
