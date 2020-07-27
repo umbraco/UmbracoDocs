@@ -45,12 +45,7 @@ Since these errors are stored in your database you can go clean them up by [acce
 The only way to resolve the issue is to open the database for the environment you want to delete logs from by using this guide - https://our.umbraco.com/Documentation/Umbraco-Cloud/Databases/Cloud-Database/
 
 If you want to delete logs from one of your environments' log viewer then you will have to connect to the environment DB and run the following query:
-```
-DELETE TOP(90) PERCENT
-  FROM [dbo].[UCErrorLog]
-  WHERE [Read] = 0
-```
-This will delete 90% of the oldest logs that are unread and leave you with 10% of the newest ones. It is, of course, up to you to decide how many % of logs you want to delete.
+
 
 ## IIS Logging
 
