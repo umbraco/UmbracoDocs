@@ -33,7 +33,7 @@ Umb-Project-Alias: {project-alias}
 ### Access via Query String parameter
 
 ```http
-GET https://graphql.umbraco.io/?Umb-Project-Alias={project-alias}
+POST https://graphql.umbraco.io/?Umb-Project-Alias={project-alias}
 ```
 
 ## Authorization
@@ -45,6 +45,6 @@ To access the GraphQL API the user must have access to the `Content` section and
 ### Access via an Api-Key header
 
 ```http
-GET https://api.umbraco.io/
+POST https://graphql.umbraco.io/
 Api-Key: {api-key}
 ```
