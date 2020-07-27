@@ -27,14 +27,9 @@ Larger sites can often have more than 199 items in various folders and by defaul
 That can be increased by doing the following:
  
 1. Open the browser console while you're in Kudu.
-2. Type 
-```
-window.localStorage['maxViewItems'] = 999
-```
-Where 999 will be the new limit. You can, of course, set it to anything you like.
-
+2. Type `window.localStorage['maxViewItems'] = 999` - Where 999 will be the new limit. This can be set to anything you like.
 3. Hit enter.
-4. Navigate out and back in to the folder you want to view the files in.
+4. Navigate out of and back into the folder you want to view the files in.
 5. You should now be able to view the folders/files up to the limit you've set it to.
 
 :::note
