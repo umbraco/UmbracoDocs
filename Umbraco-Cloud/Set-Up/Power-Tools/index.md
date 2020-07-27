@@ -22,7 +22,7 @@ The power tools can be used for various things, we often refer to the tools in o
 
 ## Showing more than 199 items in Kudu
  
-Larger sites can often have more than 199 items in various folders, and you only have to view 199 files/folders by default.
+Larger sites can often have more than 199 items in various folders and by default, you can only view 199 files/folders.
  
 That can be increased by doing the following:
  
