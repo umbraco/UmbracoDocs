@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL schema generation
 
 # Schema Generation
 
-The GraphQL schema is generated from the Content Types, it is generated when a Content Type or a Data Type is changed.
+The GraphQL schema is generated from the Content Types upon creation, and it is generated when a Content Type or a Data Type is changed.
 
 The type name is the Content Type's alias in Pascal Case, e.g. a Content Type's alias is `product` it's GraphQL type name would be `Product`.
 
