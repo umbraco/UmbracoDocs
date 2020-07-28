@@ -27,7 +27,7 @@ Here are the steps to clone your site (**We'll use Fork in this example.**):
 
 3. From Fork select Clone
 
-    ![Fork Clone UI](images/Fork-clone.png)
+    ![Fork Clone UI](images/Fork-Clone.png)
 
 4. Set your destination path to where you keep your local work
 5. Paste the URL in to the URL box
