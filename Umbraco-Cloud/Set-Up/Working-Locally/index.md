@@ -37,7 +37,7 @@ Here are the steps to clone your site (**We'll use Fork in this example.**):
     ![Fork Clone UI](images/Fork-clone-2.png)
 8. You’ll be prompted to log in - Use the same credentials as you use for Umbraco Cloud.
 
-![Clone to local machine](images/clone-to-local.gif) 
+![Clone to local machine](images/clone-to-local.gif)
 
 Now you have an exact copy of your Umbraco Cloud environment locally.
 
