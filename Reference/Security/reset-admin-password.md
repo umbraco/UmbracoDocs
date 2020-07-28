@@ -10,7 +10,7 @@ While there are multiple blogposts and even a [package](https://our.umbraco.com/
 
 ## Step one: Clear the configuration status in the web.config
 
-This is done to trigger the installation wizard.
+The first step is to clear the configuration status in the `web.config` file. This is done to trigger the installation wizard.
 
 That means that in your web.config file the appsettings should look like this:
 
