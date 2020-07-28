@@ -14,7 +14,7 @@ This is done to trigger the installation wizard.
 
 That means that in your web.config file the appsettings should look like this:
 
-``` csharp
+```csharp
 <appSettings>
     <add key="Umbraco.Core.ConfigurationStatus" value="" />
 </appSettings>
