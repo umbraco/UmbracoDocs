@@ -20,7 +20,7 @@ That means that in your web.config file the appsettings should look like this:
 </appSettings>
 ```
 
-## Step two: update the database
+## Step two: Update the database
 
 Open the database and go to the `umbracoUser` database table.
 Search the user where the column id equals `-1`.
