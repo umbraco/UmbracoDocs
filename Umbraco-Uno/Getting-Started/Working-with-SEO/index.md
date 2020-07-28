@@ -12,7 +12,7 @@ It is a method to make your website as visible as possible by trying to meet sea
 
 ### How to set up SEO in the settings section
 
-In the settings section, you will be setting up your company information for SEO, so that when someone searches for something related to your company your page will appear in the search results. You can set this up by following the guide below:
+In the settings section, you will be setting up your company information for SEO, so that when someone searches for something related to your company your page will appear at a higher rank in the search results. You can set this up by following the guide below:
 
 1. Click your home node in this case that would be Unicorn Hotel
 2. Then go to ***settings***
