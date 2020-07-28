@@ -17,6 +17,9 @@ In the settings section, you will be setting up your company information for SEO
 1. Click your home node in this case that would be Unicorn Hotel
 2. Then go to ***settings***
 3. When you are in the settings node scroll until you are at the SEO section
+
+    ![this shows what the SEO seetings looks like in the general settings](images/SEO-in-settings.png)
+
 4. Fill out the fields, the more fields you have filled out the more optimized your website is.
 5 Finalize by saving
 
@@ -27,6 +30,9 @@ You can get tips on how to set it up in the following guide:
 
 1. Go to one of your pages, for this guide we will use Accommodation
 2. When you are there scroll until you reach the SEO section
+
+    ![this shows what the SEO seetings looks like on each page](images/SEO-on-each-page.png)
+
 3. Fill out Title and Description
 4. Add an image you want to show up in the search engine
 5. Chose if you want to show this page in the sitemap, in this case, we will leave it on
