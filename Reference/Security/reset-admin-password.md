@@ -22,7 +22,7 @@ That means that in your web.config file the appsettings should look like this:
 
 ## Step two: update the database
 
-Open de database and go to the `umbracoUser` database table.
+Open the database and go to the `umbracoUser` database table.
 Search the user where the column id equals `-1`.
 
 Clear the field, and change the content of the `userpassword` field to `default`.
