@@ -27,7 +27,7 @@ Search the user where the column id equals `-1`.
 
 Clear the field, and change the content of the `userpassword` field to `default`.
 
-## Step one: run the installer
+## Step Three: Run the installer
 
 If you now open your browser and surf to the website, you will see that the installer launches. Enter your new details, and you are good to go.  
 
