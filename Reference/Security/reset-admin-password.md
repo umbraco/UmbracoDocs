@@ -8,7 +8,7 @@ There is one default admin user in any Umbraco installation. This is the first u
 
 While there are multiple blogposts and even a [package](https://our.umbraco.com/packages/developer-tools/umbraco-admin-reset/) to reset the password of the admin user. There is an [official way](https://twitter.com/Shazwazza/status/1141594930550206464) to reset credentials from your lost admin password.
 
-## Step one: clear the configuration status in the web.config
+## Step one: Clear the configuration status in the web.config
 
 This is done to trigger the installation wizard.
 
