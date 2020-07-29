@@ -4,6 +4,8 @@ The events service allows different components in Umbraco to broadcast and liste
 
 https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/services/events.service.js
 
+## Using the events service in your custom code
+
 ### Broadcasting an event
 
 To broadcast an event, you can use the `emit` function. It takes two arguments, where the first is the name of the event - eg. `featured.updated`, and the second argument is an object or similar describing the event.
@@ -18,7 +20,7 @@ angular.module('umbraco').controller("MyController", function($scope, eventsServ
     $scope.updated = function() {
         $scope.model.value++;
         eventsService.emit("feature.updated", { value: $scope.model.value });
-	};
+    };
 
 });
 ```
@@ -33,12 +35,12 @@ Then in the callback function, the first argument is the event it self, and the 
 angular.module('umbraco').controller("MyOtherController", function($scope, eventsService) {
 
     $scope.count = 0;
-    
+
     // Subscribe to the event
     var unsubscribe = eventsService.on("feature.updated", function(event, args) {
         $scope.count = args.value;
     });
-    
+
     // When the scope is destroyed we need to unsubscribe
     $scope.$on("$destroy", function () {
         unsubscribe();
@@ -468,4 +470,3 @@ https://github.com/umbraco/Umbraco-CMS/blob/1347b973f1c8617d372592236eab101507dd
 https://github.com/umbraco/Umbraco-CMS/blob/dc39faeb5ecc51992eeb1dcdf901b7ffc11be486/src/Umbraco.Web.UI.Client/src/views/common/infiniteeditors/treepicker/treepicker.controller.js#L344
 
 https://github.com/umbraco/Umbraco-CMS/blob/e8bb3b01aacc50fc096d726a83d3bd6a914749bd/src/Umbraco.Web.UI.Client/src/views/common/infiniteeditors/mediapicker/mediapicker.controller.js#L287
-
