@@ -70,8 +70,8 @@ HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 - Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users.
-- IP based whitelist allowing access to Frontend & Backoffice
-- IP based whitelist allowing access to website database
+- IP based list allowing access to Frontend & Backoffice
+- IP based list allowing access to website database
 
 ## Cookies and security
 
