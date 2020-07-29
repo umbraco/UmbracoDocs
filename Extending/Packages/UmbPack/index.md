@@ -147,6 +147,12 @@ umbpack pack .\package.xml -o ../MyCustomPackageVersions
 umbpack pack .\package.xml -v 1.9.9
 ```
 
+`-n` - specifies a name override for the package. By default the package will automatically generate a name based on the info in your package.xml file. This option allows you to override it yourself though. It will not affect the package.xml info, only the zip file name.
+
+```
+umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
+```
+
 ## The push command
 
 The `push` command requires an API key and a path to your package zip file, so will look something like this:
@@ -172,3 +178,30 @@ You can also specify the compatible DotNetVersion if you would like, it defaults
 ```
 umbpack push --DotNetVersion=4.5.2 -k [APIKEY] .\UmbPackTest_1.0.0.zip
 ```
+
+Finally you can specify whether you want any older versions to be listed as archived on Our when you push, this is done using the `-a` flag. By default it will not archive anything, and you can either pass a regex string along or the word `current` to only archive the one that is set to current before your push. You can pass in several space seperated strings, and also use wildcards:
+
+Will only archive the current package:
+
+```
+umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current
+```
+
+Will archive all other packages:
+
+```
+umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a *
+```
+
+Will archive all packages based on a partial match:
+
+```
+umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a UmbPackTest_0*
+```
+
+Combining several archive patterns:
+
+```
+umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current UmbPackTest_0* UmbPackTest-Assets_0*
+```
+
