@@ -52,6 +52,10 @@ From the *Settings* menu you can upgrade your project to a standard or a Profess
 
 The option will not be available if you are already on the specific plan or if you are running in Trial mode.
 
+## [Usage](../Usage/)
+
+On your Umbraco Cloud project you now have the possibility from the *settings* menu to see the usage of content nodes, custom hostnames and media storage that your project is using and whether you are above or below the allowed amount for the plan that you are on.
+
 ## Advanced settings
 
 In the *Settings* menu you have the option to enable advanced settings for your project.
