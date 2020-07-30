@@ -20,9 +20,9 @@ This is also where you need to go, to add a [Technical contact](../Team-Members/
 
 This is where you go to find connection details to your Umbraco Cloud databases.
 
-You will need to whitelist your IP in order to connect to the databases with your local machine - this can also be done from this page.
+You will need to allow your IP in order to connect to the databases with your local machine - this can also be done from this page.
 
-## [Hostnames](../Manage-Hostnames) 
+## [Hostnames](../Manage-Hostnames)
 
 Binding hostnames to your Umbraco Cloud project is done from the Umbraco Cloud Portal - the page is called **Hostnames**.
 
@@ -40,7 +40,7 @@ All Staging and Development environments on Umbraco Cloud projects are by defaul
 On **Trial** projects the basic authentication is enabled on the Live environment. This cannot be removed before setting up a subscription for the Cloud project.
 :::
 
-On the **Public access** page you can also whitelist IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the whitelisted IPs.
+On the **Public access** page you can also allow IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the allowed IPs.
 
 ## [Webhooks](../../Deployment/Deployment-webhook)
 

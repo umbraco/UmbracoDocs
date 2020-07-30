@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Usage on your Umbraco Cloud project
 
-In the Umbraco Cloud settings tab, we recently introduced a new setting called Usage.
+In the Umbraco Cloud settings tab, we have a setting called Usage.
 
 From here you can see your current usage of Content nodes, Custom hostnames, and Media storage. You can also get an overview of the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
 
