@@ -132,6 +132,96 @@ type Query {
 }
 ```
 
+## Reserved Type Names and Property Aliases
+
+GraphQL requires that type names are unique, if a Content Type will collide with one of the reserved names the type will be excluded from generation.
+
+The same applies to Properties, if a Property alias is a reserved one it will also be excluded from generation.
+
+### Reserved Type Names
+
+List of reserved type names, these cannot be used as an `alias` for Content Types.
+
+:::note
+The GraphQL type name is the Content Type `alias` converted to Pascal Case.
+:::
+
+* BigInt
+* Byte
+* Content
+* Date
+* DateTime
+* DateTimeOffset
+* Decimal
+* DecimalRange
+* Element
+* Guid
+* HTML
+* ImageCropAnchor
+* ImageCropFormat
+* ImageCropMode
+* ImageCropper
+* ImageCropperCrop
+* ImageCropperCropCoordinates
+* ImageCropperFocalPoint
+* ImageCropRatioMode
+* JSON
+* Link
+* LinkType
+* Long
+* Media
+* Milliseconds
+* PageInfo
+* PickedColor
+* Query
+* SByte
+* Seconds
+* Short
+* UInt
+* ULong
+* Uri
+* UShort
+
+### Reserved Element Type Property Names
+
+List of reserved Element Type Property names, these cannot be used as a Property `alias` on an Element Type.
+
+* contentTypeAlias
+
+### Reserved Content Type Property Names
+
+List of reserved Content Type Property names, these cannot be used as a Property `alias` on a Content Type.
+
+* ancestors
+* children
+* contentTypeAlias
+* createDate
+* descendants
+* id
+* level
+* name
+* parent
+* sortOrder
+* updateDate
+* url
+
+### Reserved Media Type Property Names
+
+List of reserved Media Type Property names, these cannot be used as a Property `alias` on a Media Type.
+
+* ancestors
+* children
+* createDate
+* descendants
+* id
+* level
+* mediaTypeAlias
+* name
+* parent
+* sortOrder
+* updateDate
+* url
+
 ## Built-in Custom Types
 
 The Umbraco Heartcore GraphQL schema contains some default types, below you can find a list of these types.
