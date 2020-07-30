@@ -14,7 +14,7 @@ From here you can see your current usage of Content nodes, Custom hostnames, and
 
 On the image below you can see the Usage limitatons for the specific plans on Umbraco Cloud.
 
-![Usage limits on a starter plan](images/plan_limitations.png)
+![Usage limits on a starter plan](images/Plan_limitations.png)
 
 On Umbraco Cloud you can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project.
 
