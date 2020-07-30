@@ -8,8 +8,6 @@ versionFrom: 8.0.0
 
 ## [Audit Trail](Audit-Trail)
 
-## [Changing Document Types](Changing-Document-Types)
-
 ## [Notifications](Notifications)
 
 ## [Preview Pane Responsive View](Preview-Pane-Responsive-View)
