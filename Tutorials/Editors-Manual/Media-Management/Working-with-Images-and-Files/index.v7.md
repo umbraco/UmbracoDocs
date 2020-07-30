@@ -9,8 +9,8 @@ versionFrom: 7.0.0
 1. Select the folder where you would like to create your new image or file.
 2. Right-click the folder or click the Actions button in the top right-hand corner. 
 3. Click Create from the context menu and click Image. Alternatively you can select the Click to upload button above the assets in the folder or drag the file from your computer and drop it onto the upload area.
-3. Select the image.
-4. You can click the image to view its properties and rename.
+4. Select the image.
+5. You can click the image to view its properties and rename.
 
 ![mediaUpload.jpg](images/mediaUpload.jpg)
 
