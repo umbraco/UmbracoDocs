@@ -9,9 +9,6 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/rZCwfH7CsTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-:::note
- To use Gitkraken with umbraco Cloud you need to have a license since the free version does not work with Private repositories.
-:::
 ## Step-by-step
 
 From the Umbraco Cloud portal copy your development environments git repository endpoint using the *How to connect my machine* option and then clone the site using your favorite Git client. We like [Fork](https://git-fork.com/),  [SourceTree](https://www.sourcetreeapp.com/), [Git Extensions](https://gitextensions.github.io), or [GitKraken](https://www.gitkraken.com/).
