@@ -1,10 +1,10 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Working with Content
 
-## [Rich Text Editor](Rich-Text-Editor.md)
+## [Rich Text Editor](Rich-Text-Editor)
 
 ### [Editor Buttons](Rich-Text-Editor#editor-buttons)
 

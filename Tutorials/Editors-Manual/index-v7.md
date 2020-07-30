@@ -1,7 +1,7 @@
 ---
-meta.Title: "Editors Manual for Umbraco 8"
+meta.Title: "Editors Manual for Umbraco 7"
 meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Editor's Manual
@@ -20,23 +20,23 @@ Umbraco is designed to be intuitive and straight-forward so the aim of this manu
 
 Happy editing!
 
-## [Getting Started With Umbraco](Getting-Started-With-Umbraco/)
+## [Getting Started With Umbraco](Getting-Started-With-Umbraco/index-v7.md)
 
 Showing you the ropes on getting started with Umbraco. A walk through on how to log-in, create and publish content, working with pages.
 
-## [Working With Content](Working-With-Content/)
+## [Working With Content](Working-With-Content/index-v7.md)
 
 How to use the Rich Text Editor.
 
-## [Version Management](Version-Management/)
+## [Version Management](Version-Management/index-v7.md)
 
 How to roll back different versions of content.
 
-## [Media Management](Media-Management/)
+## [Media Management](Media-Management/index-v7.md)
 
 How to work with media, organise folders and image editing.
 
-## [Tips and Tricks](Tips-and-Tricks/)
+## [Tips and Tricks](Tips-and-Tricks/index-v7.md)
 
 Providing a few tips and tricks on how to work with Content using Umbraco.
 
