@@ -1,18 +1,21 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Working with Images and Files
 
 ## Uploading an Image or File
 
-1. Select the folder where you would like to create your new image or file.
-2. Right click the folder or click the Actions button in the top right-hand corner. Click Create from the context menu and click Image. Alternatively you can select the Click to upload button above the assets in the folder or drag the file from your computer and drop it onto the upload area.
-3. Select the image.
-4. You can click the image to view its properties and rename.
+In the Media Library there are multiple different ways to upload media items. These are the two most commonly used ones:
 
-![mediaUpload.jpg](images/mediaUpload.jpg)
+Drag and drop files or folders directly into the upload field on the Media dashboard
+
+* Use the "Create" button in the top-left corner to create a new File, Folder or Media item and then upload directly from your machine
+* The "drag and drop" area is available in every folder in the Media section, which enables you to upload media items exactly where you need them.
+
+We highly recommend that you use folders to organize your images and other media items. This is especially relevant, if you're going to add a lot of media to your website.
+
+![mediaUpload.jpg](images/upload-images.png)
 
 ## Deleting an Image or File
 
@@ -24,7 +27,9 @@ If you wish to tidy up the Media section of your site, you can delete existing m
 
 ## Restoring an Image or File from the Recycle Bin
 
-The Recycle Bin is a separate tree structure within the Media section and you can recognize it by the recycling symbol to the left. If you click the triangle in front of the Recycle Bin you will see its contents. To restore an image or file, move the item to the part of the tree where you want the item.
+The Recycle Bin is a separate tree structure within the Media section and you can recognize it by the recycling symbol to the left.
+
+If you click the triangle in front of the Recycle Bin you will see its contents. To restore an image or file, move the item to the part of the tree where you want the item.
 
 ## Moving an Image or File
 
@@ -35,4 +40,4 @@ You can move media between folders within the Media section using the Move funct
 3. Select the parent folder you want to move the image to.
 4. Click ***Move.***
 
-![mediMoveSlideout.jpg](images/mediMoveSlideout.jpg)
+![mediMoveSlideout.jpg](images/move-images.png)

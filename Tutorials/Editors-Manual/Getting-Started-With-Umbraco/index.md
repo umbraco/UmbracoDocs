@@ -10,7 +10,6 @@ versionFrom: 8.0.0
 
 ### [Initial View](Umbraco-Interface/index.md/#initial-view)
 
-
 ## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index.md)
 
 ### [Creating a New Page](Creating-Saving-and-Publishing-Content/index.md/#creating-a-new-page)

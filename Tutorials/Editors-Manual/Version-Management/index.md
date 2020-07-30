@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Version Management

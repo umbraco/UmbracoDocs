@@ -15,7 +15,6 @@ Step by step guide of everything you need to get a basic site up and running in 
 
 Custom dashboards are a great way to help editors maintain a site by providing useful information. This guide takes you through the steps to setup a custom dashboard in Umbraco.
 
-
 ## [Creating a Property Editor](Creating-a-Property-Editor/)
 
 This guide explains how to setup a property editor for the backoffice.
@@ -48,5 +47,6 @@ A working document, that gives tips & pointers on how to port an Umbraco V7 pack
 
 Learn how to create a content app (v8 only)
 
-### [Connecting Umbraco Forms and Zapier](Connecting-Umbraco-Forms-and-Zapier/index.md)
+## [Connecting Umbraco Forms and Zapier](Connecting-Umbraco-Forms-and-Zapier)
+
 Learn how to connect Umbraco Forms and Zapier to send form entry data to other web apps without any code.
