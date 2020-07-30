@@ -54,7 +54,7 @@ The option will not be available if you are already on the specific plan or if y
 
 ## [Usage](../Usage/)
 
-On your Umbraco Cloud project you now have the possibility from the *settings* menu to see the usage of content nodes, custom hostnames and media storage that your project is using and whether you are above or below the allowed amount for the plan that you are on.
+On your Umbraco Cloud project we've made it possible to see the usage of content nodes, custom hostnames and media storage for your project and if it is using above or below the allowed amount for the plan that your project is on.
 
 ## Advanced settings
 
