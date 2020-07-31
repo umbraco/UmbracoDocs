@@ -158,25 +158,25 @@ umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
 The `push` command requires an API key and a path to your package zip file, so will look something like this:
 
 ```
-umbpack push -k [APIKEY] .\UmbPackTest_1.0.0.zip
+umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] 
 ```
 
 However it also contains a few extra options. By default the pushed version will be set as the new current package version. You can change that by via the `-c` flag:
 
 ```
-umbpack push -c false -k [APIKEY] .\UmbPackTest_1.0.0.zip
+umbpack push .\UmbPackTest_1.0.0.zip -c false -k [APIKEY]
 ```
 
 Also when you upload a new package you need to specify which versions it works with. It will default to the latest, but you can specify more with the `-w` flag:
 
 ```
-umbpack push -w v860,v850,v840,v830,v820,v810,v800 -k [APIKEY] .\UmbPackTest_1.0.0.zip
+umbpack push .\UmbPackTest_1.0.0.zip -w v860,v850,v840,v830,v820,v810,v800 -k [APIKEY]
 ```
 
 You can also specify the compatible DotNetVersion if you would like, it defaults to 4.7.2:
 
 ```
-umbpack push --DotNetVersion=4.5.2 -k [APIKEY] .\UmbPackTest_1.0.0.zip
+umbpack push .\UmbPackTest_1.0.0.zip --DotNetVersion=4.5.2 -k [APIKEY]
 ```
 
 Finally you can specify whether you want any older versions to be listed as archived on Our when you push, this is done using the `-a` flag. By default it will not archive anything, and you can either pass a regex string along or the word `current` to only archive the one that is set to current before your push. You can pass in several space seperated strings, and also use wildcards:
