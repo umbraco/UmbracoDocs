@@ -35,7 +35,7 @@ The documentation tab grants a quick overview of how content is structured using
 
 ![Documentation Tab in the Playground](images/docs-helper.png)
 
-The documentation will be automatically updated as you add new document types to match the schema you have on your project.
+The documentation will be automatically updated as you add new Document Types to match the schema you have on your project.
 
 ## Schema
 
