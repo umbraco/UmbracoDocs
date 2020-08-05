@@ -23,7 +23,7 @@ The Playground comes with basic features such as real-time error highlighting, s
 
 ![Where to find GraphQL Playground](images/where-to-find-graphql-playground.png)
 
-From there, you can start querying as soon as you have some content set up!
+From there, you can start querying as soon as you have some content set up.
 
 # Features
 
