@@ -10,7 +10,7 @@ With GraphQL query language, you will be able to limit the amount of data transf
 
 You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground IDE.
 
-In the Settings section in the Umbraco Backoffice, you will find the Headless tree. From there you can use the GraphQL playground to test your queries against your project's schema.
+In the Settings section in the Umbraco Backoffice, you will find the Headless tree. From there you can use the GraphQL Playground to test your queries against your project's schema.
 
 The Playground comes with basic features such as real-time error highlighting, syntax highlighting, formatting, query history and more.
 
