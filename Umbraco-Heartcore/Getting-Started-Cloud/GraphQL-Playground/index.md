@@ -47,7 +47,7 @@ The Schema menu explains the relationships between specific objets and propertie
 
 ## Running GraphQL queries
 
-To run a query, on the left side of the IDE type your query - could be something as basic as getting the names of all your content pages:
+To run a query use the left side of the IDE to type in your query - could be something as basic as getting the names of all your content pages:
 
 ```json
 {
