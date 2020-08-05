@@ -59,6 +59,8 @@ To run a query, on the left side of the IDE type your query - could be something
 }
 ```
 
+To learn more about querying, visit our [API documentation for GraphQL](../../API-Documentation/GraphQL/index.md).
+
 :::note
 At the moment, the Backoffice GraphQL Playground allows only for queries - other operation types, that is mutations and subscriptions, are not supported.
 :::
