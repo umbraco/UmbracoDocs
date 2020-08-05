@@ -8,7 +8,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL Playground"
 
 With GraphQL query language, you will be able to limit the amount of data transferred to and between your Heartcore instance and the client by specifying exactly what kind of information you would like to get in your API calls.
 
-You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground IDE.
+You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground.
 
 In the Settings section in the Umbraco Backoffice, you will find the Headless tree. From there you can use the GraphQL Playground to test your queries against your project's schema.
 
