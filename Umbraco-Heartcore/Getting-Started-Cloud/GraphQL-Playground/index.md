@@ -23,11 +23,11 @@ The Playground comes with basic features such as real-time error highlighting, s
 
 ![Where to find GraphQL Playground](images/where-to-find-graphql-playground.png)
 
-From there, you can start querying as soon as you have some content set up!
+From there, you can start querying as soon as you have some content set up.
 
-# Features
+## Features
 
-## Documentation
+### Documentation
 
 GraphQL Playground's built-in documentation can be found on the right side of the IDE, under the "Docs" tab.
 
@@ -47,7 +47,7 @@ The Schema menu explains the relationships between specific objets and propertie
 
 ## Running GraphQL queries
 
-To run a query, on the left side of the IDE type your query - could be something as basic as getting the names of all your content pages:
+To run a query use the left side of the IDE to type in your query - could be something as basic as getting the names of all your content pages:
 
 ```json
 {
@@ -69,7 +69,7 @@ After that, press the "Play" button sitting in the center of the Playground. If 
 
 ![Schema Tab in the Playground](images/sample-query.png)
 
-If you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
+When you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
 
 ## Sending HTTP headers
 
