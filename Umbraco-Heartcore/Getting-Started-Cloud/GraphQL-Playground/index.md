@@ -19,7 +19,7 @@ The Playground comes with basic features such as real-time error highlighting, s
 1. Log into the project backoffice
 2. Navigate to the Settings dashboard
 3. Find the Headless tree near the bottom of the navigation list
-4. Click on GraphQL Playground to open the IDE
+4. Click on GraphQL Playground
 
 ![Where to find GraphQL Playground](images/where-to-find-graphql-playground.png)
 
