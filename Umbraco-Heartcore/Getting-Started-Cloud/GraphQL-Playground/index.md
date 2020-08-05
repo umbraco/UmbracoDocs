@@ -67,7 +67,7 @@ After that, press the "Play" button sitting in the center of the Playground. If 
 
 ![Schema Tab in the Playground](images/sample-query.png)
 
-If you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
+When you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
 
 ## Sending HTTP headers
 
