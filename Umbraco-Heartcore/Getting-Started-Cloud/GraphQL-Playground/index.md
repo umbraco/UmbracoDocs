@@ -4,12 +4,11 @@ meta.Title: "Umbraco Heartcore GraphQL Playground"
 meta.Description: "Documentation for Umbraco Heartcore GraphQL Playground"
 ---
 
+# GraphQL Playground
 
 With GraphQL query language, you will be able to limit the amount of data transferred to and from your Heartcore instance by specifying exactly what kind of information you would like to get in your API calls.
 
 You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground IDE.
-
-# GraphQL Playground
 
 In the Settings section in the Umbraco Backoffice, you will find the Headless tree. From there you can use the GraphQL playground to test your queries against your project's schema.
 
@@ -40,7 +39,7 @@ The documentation will be automatically updated as you add new document types to
 
 ## Schema
 
-The Schema tab also can be found on the right side of the IDE. It is located just below the "Docs" tab.
+The Schema tab also can be found on the right side of the IDE. It is located below the "Docs" tab.
 
 The Schema menu explains the relationships between specific objets and properties in your solution, and will be updated automatically as you make changes to the project's schema - document types, datatypes, and so on.
 
@@ -48,7 +47,7 @@ The Schema menu explains the relationships between specific objets and propertie
 
 ## Running GraphQL queries
 
-To run a query, on the left side of the IDE type your query - could be something as simple as getting the names of all your content pages:
+To run a query, on the left side of the IDE type your query - could be something as basic as getting the names of all your content pages:
 
 ```json
 {
@@ -60,11 +59,15 @@ To run a query, on the left side of the IDE type your query - could be something
 }
 ```
 
+:::note
+At the moment, the Backoffice GraphQL Playground allows only for queries - other operation types, that is mutations and subscriptions, are not supported.
+:::
+
 After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section of the IDE.
 
 ![Schema Tab in the Playground](images/sample-query.png)
 
-If you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, just next to the address bar.
+If you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
 
 ## Sending HTTP headers
 
@@ -81,7 +84,7 @@ It is also possible to define variables for queries - such variables's values ca
 ## History
 
 If you happened to make an amazing query and afterwards erased it by accident, you would be able to re-use it by finding it in the History.
-The History menu can be found in the top part of the Playground, just above the query input section.
+The History menu can be found in the top part of the Playground, above the query input section.
 
 ## Prettify
 
