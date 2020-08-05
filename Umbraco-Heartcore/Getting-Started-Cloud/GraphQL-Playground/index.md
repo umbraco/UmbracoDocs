@@ -65,7 +65,7 @@ To learn more about querying, visit our [API documentation for GraphQL](../../AP
 The Heartcore GraphQL endpoint only supports queries - other operation types, that is mutations and subscriptions, are not supported.
 :::
 
-After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section of the IDE.
+After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section.
 
 ![Schema Tab in the Playground](images/sample-query.png)
 
