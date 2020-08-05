@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL Playground"
 
 # GraphQL Playground
 
-With GraphQL query language, you will be able to limit the amount of data transferred to and from your Heartcore instance by specifying exactly what kind of information you would like to get in your API calls.
+With GraphQL query language, you will be able to limit the amount of data transferred to and between your Heartcore instance and the client by specifying exactly what kind of information you would like to get in your API calls.
 
 You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground IDE.
 
