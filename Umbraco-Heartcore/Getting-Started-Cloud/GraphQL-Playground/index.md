@@ -25,9 +25,9 @@ The Playground comes with basic features such as real-time error highlighting, s
 
 From there, you can start querying as soon as you have some content set up.
 
-# Features
+## Features
 
-## Documentation
+### Documentation
 
 GraphQL Playground's built-in documentation can be found on the right side of the IDE, under the "Docs" tab.
 
