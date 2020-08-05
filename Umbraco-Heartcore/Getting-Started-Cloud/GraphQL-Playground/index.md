@@ -39,7 +39,7 @@ The documentation will be automatically updated as you add new document types to
 
 ## Schema
 
-The Schema tab also can be found on the right side of the IDE. It is located below the "Docs" tab.
+The Schema tab also can be found on the right side of the GraphQL Playground. It is located below the "Docs" tab.
 
 The Schema menu explains the relationships between specific objets and properties in your solution, and will be updated automatically as you make changes to the project's schema - document types, datatypes, and so on.
 
