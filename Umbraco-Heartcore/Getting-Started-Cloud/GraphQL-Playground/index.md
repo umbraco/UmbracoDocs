@@ -50,7 +50,7 @@ The Schema menu explains the relationships between specific objets and propertie
 
 To run a query, on the left side of the IDE type your query - could be something as simple as getting the names of all your content pages:
 
-``
+```json
 {
   allContent {
     items {
@@ -58,7 +58,7 @@ To run a query, on the left side of the IDE type your query - could be something
     }
   }
 }
-``
+```
 
 After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section of the IDE.
 
