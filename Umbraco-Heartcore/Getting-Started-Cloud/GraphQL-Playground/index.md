@@ -29,7 +29,7 @@ From there, you can start querying as soon as you have some content set up.
 
 ### Documentation
 
-GraphQL Playground's built-in documentation can be found on the right side of the IDE, under the "Docs" tab.
+GraphQL Playground's built-in documentation can be found on the right side, under the "Docs" tab.
 
 The documentation tab grants a quick overview of how content is structured using the Document Types in your solution. It also gives an idea on how to access specific properties each Document Type has, as well as their properties.
 
