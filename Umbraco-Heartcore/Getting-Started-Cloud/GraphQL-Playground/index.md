@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL Playground"
 
 # GraphQL Playground
 
-With GraphQL query language, you will be able to limit the amount of data transferred to and between your Heartcore instance and the client by specifying exactly what kind of information you would like to get in your API calls.
+With the GraphQL query language, you will be able to limit the amount of data transferred to and from your Heartcore instance and the client by specifying exactly what kind of information you would like to get in your API calls.
 
 You can test and build GraphQL queries directly in the backoffice-integrated GraphQL Playground.
 
@@ -23,15 +23,15 @@ The Playground comes with basic features such as real-time error highlighting, s
 
 ![Where to find GraphQL Playground](images/where-to-find-graphql-playground.png)
 
-From there, you can start querying as soon as you have some content set up.
+From there, you can start querying as soon as your content is published.
 
 ## Features
 
 ### Documentation
 
-GraphQL Playground's built-in documentation can be found on the right side, under the "Docs" tab.
+The GraphQL Playground's built-in documentation can be found on the right side, under the "Docs" tab.
 
-The documentation tab grants a quick overview of how content is structured using the Document Types in your solution. It also gives an idea on how to access specific properties each Document Type has, as well as their properties.
+The documentation tab grants a quick overview of how content is structured using the Document Types in your solution. It also gives an idea of how to access specific properties on each of the Document Types as well as nested properties and properties from Compositions.
 
 ![Documentation Tab in the Playground](images/docs-helper.png)
 
@@ -41,7 +41,7 @@ The documentation will be automatically updated as you add new Document Types to
 
 The Schema tab also can be found on the right side of the GraphQL Playground. It is located below the "Docs" tab.
 
-The Schema menu explains the relationships between specific objets and properties in your solution, and will be updated automatically as you make changes to the project's schema - Document Types, Data Types, and so on.
+The Schema menu explains the relationships between specific objets and properties in your solution, and will be updated automatically as you make changes to the project's schema meaning Document Types, Data Types, Document Type Compositions and Document Type Elements.
 
 ![Schema Tab in the Playground](images/schema-helper.png)
 
