@@ -105,9 +105,14 @@ Add this in the file as seen here:
 
 The ConfigurationManager is missing a dependency so add the following at the top: `using System.Configuration;`
 
-Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says
-`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to
-`<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
+Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. 
+
+But first locate the code that says
+`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` 
+and change the value to:
+```xml
+<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
+```
 
 Then add the following in the appSettings as well:
 
