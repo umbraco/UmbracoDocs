@@ -105,27 +105,15 @@ Add this in the file as seen here:
 
 The ConfigurationManager is missing a dependency so add the following at the top: `using System.Configuration;`
 
-Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api.
+Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says
+`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to
+`<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
 
 Then add the following in the appSettings as well:
 
 ```xml
 <add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>
 <add key="GoogleOAuthSecret" value="this is where you paste in the client secret"/>
-```
-
-Also locate this line in Web.config and change it:
-
-from:
-
-```xml
-<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />
-```
-
-to:
-
-```xml
-<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
 ```
 
 And of course fill in the relevant information as the value fields - you can copy paste this from your Google API.
@@ -135,4 +123,3 @@ Build and run the website one final time. Now when you have logged into your bac
 ![link Google](images/linkGoogle.png)
 
 If you do that, then in all future backoffice logins you will have a button like at the top of this guide that you can click and you are logged in!
-
