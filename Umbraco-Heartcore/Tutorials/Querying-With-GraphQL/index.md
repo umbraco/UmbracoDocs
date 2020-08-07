@@ -20,7 +20,7 @@ Start by creating a folder named **Elements** under the **Document Types** folde
 
 In that folder create the following Document Types:
 
-**Name**: Text and Image
+### Text and Image
 
 **Alias**: textAndImage
 
@@ -40,9 +40,7 @@ Add a new group called **Content** with the following properties:
 
 Then under permissions check **Element Type**
 
----
-
-**Name**: Unique Selling Point
+### Unique Selling Point
 
 **Alias**: uniqueSellingPoint
 
@@ -66,7 +64,7 @@ Then under permissions check **Element Type**
 
 Then create another folder called **Compositions** and create the following Document Types in that folder:
 
-**Name**: Elements Composition
+### Elements Composition
 
 **Alias**: elementsComposition
 
@@ -87,9 +85,7 @@ Then click the **Reorder** button and change the value for **Elements** from `0`
 
 ![Elements Composition Reorder](images/elements-composition-reorder.png)
 
----
-
-**Name**: Hero Composition
+### Hero Composition
 
 **Alias**: heroCompositio
 
@@ -106,9 +102,7 @@ Add a new group called **Hero** with the following properties:
 <tr valign=top><td>Subtitle</td><td>heroSubtitle</td><td>Textstring</td><td>Use defaults</td></tr>
 </table>
 
----
-
-**Name**: Unique Selling Points Composition
+### Unique Selling Points Composition
 
 **Alias**: uniqueSellingPointsComposition
 
@@ -134,7 +128,7 @@ Then click the **Reorder** button and change the value for **Elements** from `0`
 
 At the root create the following Document Types:
 
-**Name**: Textpage
+### Textpage
 
 **Alias**: textpage
 
@@ -144,9 +138,7 @@ Click on **Compositions** and select **Elements Composition** and **Hero Composi
 
 ![Textpage Compositions](images/textpage-compositions.png)
 
----
-
-**Name**: Frontpage
+### Frontpage
 
 **Alias**: frontpage
 
