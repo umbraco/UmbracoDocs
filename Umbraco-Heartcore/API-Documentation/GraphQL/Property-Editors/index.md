@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL property editors 
 
 # Property Editors
 
-This page contains a list of all the built-in Umbraco Property Editors and their GraphQL types. The type may depend on the confiugration of the specific Property Editor.
+This page contains a list of all the built-in Umbraco Property Editors and their GraphQL types. The type may depend on the configuration of the specific Property Editor.
 
 ## Checkbox
 

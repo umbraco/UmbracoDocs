@@ -38,7 +38,7 @@ POST https://graphql.umbraco.io/?Umb-Project-Alias={project-alias}
 
 ## Authorization
 
-By default the GraphQL API is not protected, it can be enabled through the Backoffice, API keys is also managed for each user in the Backoffice.
+By default the GraphQL API is not protected. This can be enabled through the Backoffice, where API keys for each user in the Backoffice is also managed.
 
 To access the GraphQL API the user must have access to the `Content` section and have the `Browse Node` permission.
 

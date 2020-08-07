@@ -10,13 +10,13 @@ In this tutorial we will be looking at how we can fetch data from Umbraco Heartc
 
 We will be using https://demo.heartcore.dev/ as a reference.
 
-At the end of the tutorial we should be able to use the Umbraco Heartcore GraphQL API and be able to fetch all the content needed to render the page in with single query.
+At the end of the tutorial we should be able to use the Umbraco Heartcore GraphQL API and be able to fetch all the content needed to render the page in with a single query.
 
 ## Creating the Document Types
 
-First we will need to create some Document Types, we will start with creating some element types.
+First, we will need to create some Document Types, and as a start, we will create some element types.
 
-Start by creating a folder named **Elements**.
+Start by creating a folder named **Elements** under the **Document Types** folder in the Settings section of the Backoffice.
 
 In that folder create the following Document Types:
 
@@ -144,7 +144,7 @@ Click on **Compositions** and select **Elements Composition** and **Hero Composi
 
 ![Textpage Compositions](images/textpage-compositions.png)
 
---
+---
 
 **Name**: Frontpage
 
@@ -184,7 +184,7 @@ The GraphQL endpoint accepts `POST` requests with the content type `application/
 
 For the rest of this tutorial the GraphQL queries are written in plain text that can be executed with the [GraphQL Playground](../../Getting-Started-Cloud/GraphQL-Playground/).
 
-Lets start with a simple query that fetches the `name`, `url` and `heroTitle` properties from the Frontpage.
+Lets start with a basic query that fetches the `name`, `url`, and `heroTitle` properties from the Frontpage.
 
 ```graphql
 {
@@ -212,11 +212,11 @@ Result:
 
 ### Making the Query Generic
 
-Up until now we have been working on a single document type which in most cases is fine, but since we want to dynamicly fetch content based on the url we can us the `content` field.
+Up until now, we have been working on a single document type which in most cases is fine, but since we want to dynamically fetch content based on the url we can use the `content` field.
 
-The `content` field returns the Content interface type that contains the default fields. To allow us to query the fields on the derived types we can fragments.
+The `content` field returns the Content interface type that contains the default fields. To allow us to query the fields on the derived types we can use fragments.
 
-A fragment allows us to query data on a the underlying concrete type.
+A fragment allows us to query data on the underlying concrete type.
 
 ```graphql
 {
@@ -257,9 +257,9 @@ Since the `heroImage` is a Media picker we can pass arguments to the `url` field
 
 ### Querying Composition Fields
 
-There is one problem with our query though, try changing the `url` argument to a subpage and see whats happening.
+There is one problem with our query though. Try changing the `url` argument to a subpage and see whats happening.
 
-As you can see we don't get any data back for the hero fields, even though our Document Type have those fields. This is because we telling GraphQL we only want them on the `Frontpage` type. You might be tempted to fix this by adding another fragment on the `Textpage` type which would work, but remember we created a Document Type that only contains hero fields which we have added as a Composition to both the `Frontpage` and `Textpage` Document Types, we can change the `... on Frontpage` fragment to `... on HeroComposition` and we will now get the expected data back.
+As you can see we don't get any data back for the hero fields, even though our Document Type has those fields. This is because we are telling GraphQL that we only want them on the `Frontpage` type. You might be tempted to fix this by adding another fragment on the `Textpage` type which would work, but remember we created a Document Type that only contains hero fields which we have added as a Composition to both the `Frontpage` and `Textpage` Document Types. We can change the `... on Frontpage` fragment to `... on HeroComposition` and we will now get the expected data back.
 
 Now our query looks like this:
 
@@ -410,7 +410,7 @@ In the query above we are also using field aliases, this means that in the respo
 
 ### Using Variables
 
-You might have noticed that the `url` argument is hardcoded in the query, this means that we will always get back the Content for that url. What we want is to pass the argument to the query dynamically.
+You might have noticed that the `url` argument is hardcoded in the query. This means that we will always get back the Content for that url. What we want is to pass the argument to the query dynamically.
 
 We can do this by altering the query to include a variable instead of the hardcoded value, this can be done by replacing the argument with `$url` and wrapping the query with `query($url: String)`.
 
@@ -443,7 +443,7 @@ And then we pass the variable in a separate JSON property called `variables`
 
 ### Putting it all together
 
-Now that we have all the individual parts we can combin it all into a single query that fetches all the data needed to display the pages on our site:
+Now that we have all the individual parts we can combine it all into a single query that fetches all the data needed to display the pages on our site:
 
 ```graphql
 query($url: String!) {

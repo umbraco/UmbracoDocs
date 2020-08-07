@@ -79,7 +79,7 @@ type ProductEdge {
 
 All properties on a Content Type is generated as a field on the GraphQL type. See the [Property Editors](../Property-Editors) page for which types the editors are returning.
 
-If a property is marked as [Allow varying by culture](../../../../Getting-Started/Backoffice/Variants/), a `culture` argument is added to that field, the argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
+If a property is marked as [Allow varying by culture](../../../../Getting-Started/Backoffice/Variants/), a `culture` argument is added to that field. The argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
 
 ```graphql
 type Product implements Content & NavigationBase {
@@ -134,9 +134,9 @@ type Query {
 
 ## Reserved Type Names and Property Aliases
 
-GraphQL requires that type names are unique, if a Content Type will collide with one of the reserved names the type will be excluded from generation.
+GraphQL requires that type names are unique. If a Content Type will collide with one of the reserved names the type will be excluded from generation.
 
-The same applies to Properties, if a Property alias is a reserved one it will also be excluded from generation.
+The same applies to Properties. If a Property alias is a reserved one it will also be excluded from generation.
 
 ### Reserved Type Names
 
