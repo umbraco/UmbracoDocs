@@ -87,7 +87,7 @@ Then click the **Reorder** button and change the value for **Elements** from `0`
 
 ### Hero Composition
 
-**Alias**: heroCompositio
+**Alias**: heroComposition
 
 ![Hero Composition Document Type](images/hero-composition.png)
 
