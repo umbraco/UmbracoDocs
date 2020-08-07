@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Querying Umbraco Heartcore with GraphQL"
-meta.Description: ""
+meta.Description: "Learn how to query Umbraco Heartcore with GraphQL."
 ---
 
 # Querying Umbraco Heartcore with GraphQL
@@ -182,7 +182,7 @@ The GraphQL endpoint accepts `POST` requests with the content type `application/
 }
 ```
 
-For the rest of this tutorial the GraphQL queries are written in plain text that can be executed with the [GraphQL Playground](link to the GraphQL Playground docs).
+For the rest of this tutorial the GraphQL queries are written in plain text that can be executed with the [GraphQL Playground](../../Getting-Started-Cloud/GraphQL-Playground/).
 
 Lets start with a simple query that fetches the `name`, `url` and `heroTitle` properties from the Frontpage.
 
@@ -253,7 +253,7 @@ This returns the following JSON:
 
 The query is fetching the `name` field which exists on the `Content` interface, it also fetches the `heroTitle`, `heroSubtitle` and `heroImage` on the `Frontpage` type.
 
-Since the `heroImage` is a Media picker we can pass arguments to the `url` field telling the server to generate an url with the [Image Cropper](../../../API-Documentation/GraphQL/Schema-Generation/#ImageCropper) query string parameters.
+Since the `heroImage` is a Media picker we can pass arguments to the `url` field telling the server to generate an url with the [Image Cropper](../../API-Documentation/GraphQL/Schema-Generation/#ImageCropper) query string parameters.
 
 ### Querying Composition Fields
 
