@@ -45,6 +45,7 @@ using System.Web;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.Editors;
 using Umbraco.Core.Persistence;
+using Umbraco.Core.Scoping;
 
 namespace My.Controllers
 {
