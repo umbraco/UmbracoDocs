@@ -9,7 +9,7 @@ In Umbraco Uno, it is possible to enable Custom Code, if you are on a Standard o
 :::warning
 Please be aware that by enabling custom code you also agree to the following changes in your project and subscription:
 
-* You will **no longer be entitled to support** through your Umbraco Uno subscription
+* You will **no longer be entitled to Umbraco Uno support** but Umbraco Cloud support according to the subscription plan instead
 * The project will **no longer receive Umbraco Uno related updates**
 * The Sendgrid implementation will be removed, meaning that you will have to [manually set up your own mail integration](../../Umbraco-Cloud/Set-Up/SMTP-settings/index.md) 
 :::
