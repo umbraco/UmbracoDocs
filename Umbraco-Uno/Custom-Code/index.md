@@ -14,6 +14,8 @@ Please be aware that by enabling custom code you also agree to the following cha
 * The Sendgrid implementation will be removed, meaning that you will have to [manually set up your own mail integration](../../Umbraco-Cloud/Set-Up/SMTP-settings/index.md) 
 :::
 
+## Enable custom code
+
 The way you activate this feature is very straight forward:
 
 1. Navigate to your project in the portal
