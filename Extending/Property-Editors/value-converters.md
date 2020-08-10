@@ -42,7 +42,7 @@ public class Startup : IUserComposer
 
         //If the type is not accessible you will need to locate the instance and then remove it:
         var contentPickerValueConverter = composition.PropertyValueConverters().GetTypes().FirstOrDefault(x => x.Name == "ContentPickerValueConverter");
-        if (contentPickerValueConnector != null)
+        if (contentPickerValueConverter != null)
         {
             composition.PropertyValueConverters().Remove(contentPickerValueConverter);
         }
@@ -50,7 +50,7 @@ public class Startup : IUserComposer
 }
 ```
 
-The built-in PropertyValueConverters included with Umbraco, are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of the namespace. In order to remove such PropertyValueConnectors, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other PropertyValueConnectors included by packages as well, depending on the implementation details.
+The built-in PropertyValueConverters included with Umbraco, are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of the namespace. In order to remove such PropertyValueConverters, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other PropertyValueConverters included by packages as well, depending on the implementation details.
 
 ## Implementing the Interface
 
