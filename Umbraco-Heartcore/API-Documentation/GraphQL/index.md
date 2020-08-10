@@ -48,3 +48,11 @@ To access the GraphQL API the user must have access to the `Content` section and
 POST https://graphql.umbraco.io/
 Api-Key: {api-key}
 ```
+
+## [Schema Generation](Schema-Generation/)
+
+Information on how the GraphQL schema is generated, reserved names and built in custom types.
+
+## [Property Editors](Property-Editors/)
+
+A list of all the built-in Umbraco Property Editors and their GraphQL types.
