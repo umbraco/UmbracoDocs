@@ -6,7 +6,9 @@ meta.Description: "Documentation for Umbraco Heartcore REST APIs"
 
 # API Documentation
 
-This page contains documentation for the REST API endpoints for Umbraco Heartcore. It is divided into two main areas: Content Delivery and Content Mangement.
+This page contains documentation for the available API endpoints for Umbraco Heartcore. It includes endpoints for the GraphQL API as well as for the REST API which is divided into two main areas: Content Delivery and Content Mangement.
+
+The [GraphQL API](GraphQL) can be used to query the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
 
 The [Content Delivery API](Content-Delivery) is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
