@@ -34,7 +34,7 @@ When your project is hosted on Umbraco Cloud, you might be interested in more de
 
 Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extendable framework for authentication.
 
-Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized. 
+Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
 ASP.NET Identity can be extended and it is also possible to override/replace any part of the process of authentication.
 
@@ -73,6 +73,12 @@ Learn more about this in the [Sensitive Data](sensitive-data.md) article.
 ## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
+
+## [Reset admin password](reset-admin-password.md)
+
+Use this guide to [reset the password of the "admin" user](reset-admin-password.md).
+
+If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
 
 ## Other articles related to security
 
