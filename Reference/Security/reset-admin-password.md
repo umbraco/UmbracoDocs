@@ -33,7 +33,5 @@ If you now open your browser and surf to the website, you will see that the inst
 
 :::warning
 Make sure you protect a production websites from being highjacked as anyone will be able to reset the password during the last step.
-
-This does not work if your site is in an upgrading state.
-If you remove the version number from the web.config the migrations are checked against the DB. If any migrations are found to have not run Umbraco assumes an upgrade is in progress and requires (real) authentication.
+This does also work if your site is in an upgrading state.
 :::
