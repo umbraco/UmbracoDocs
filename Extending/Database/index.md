@@ -11,6 +11,7 @@ In Umbraco it is possible to add custom database tables to your site if you want
 ![Database result of a migration](images/db-table.png)
 
 ```csharp
+using Umbraco.Core
 using Umbraco.Core.Logging;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Migrations;
