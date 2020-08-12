@@ -34,22 +34,6 @@ Fill in your Twitter handle, which will be used ...
 
 When using the *Content Form* widget, you can use these to define the email that should receive the forms submissions and the subject of the mails sent to that receiver.
 
-## SEO
-
-The SEO (Search Engine Optimization) group on the General settings node lets you manage all the general SEO settings on your website.
-
-### Company Name
-
-Will be added as the `alt` value on the company logo, whenever it's displayed on the website.
-
-### Company Logo
-
-These will be used main in the right side of the top navigation of the website.
-
-### Site Name, Phone Number, Email, Latitude and Longitude
-
-These are all used in Open Graph meta tags in the website `<head>` tag, which will help improve SEO on your website.
-
 ## Newsletter
 
 When you have a Newsletter service setup using either MailChimp or Campaign Monitor, make sure to configure it here. It will enable you to use the *Newsletter* widget.

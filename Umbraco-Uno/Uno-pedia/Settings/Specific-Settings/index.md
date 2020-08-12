@@ -46,6 +46,10 @@ Provides the option to hide the current page from the sitemap.
 
 the final two options in the SEO group gives you the option to configure the sitemap priority for the current page, as well as how often the page is likely to change.
 
+### NoIndex / NoFollow
+
+### Canonical Url
+
 ## Settings
 
 Available on the following Content Types: `Site`, `Page`, `Feed`, `Post` and `Search`.
