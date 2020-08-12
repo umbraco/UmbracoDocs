@@ -446,27 +446,9 @@ namespace Umbraco8.Services
 The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and its use outside of controllers and views.
 
 :::tip
-Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with   third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).  In this situation, you can request a lazy version of the dependency so it won't evaluate during boot, and would only be evaluated when accessed:
+Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with   third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
 
-```csharp
-public class SiteService : ISiteService
-{
-    private readonly Lazy<IUmbracoContextFactory> _umbracoContextFactory;
-
-    public SiteService(Lazy<IUmbracoContextFactory> umbracoContextFactory)
-    {
-        _umbracoContextFactory = umbracoContextFactory;
-    }
-
-     public IPublishedContent GetNewsSection()
-    {
-         using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.Value.EnsureUmbracoContext()) 
-         {
-             // Do your thing
-         }
-    }
-}
-```
+See the [Circular Dependencies](Circular-Depndencies) article for an example on how to get around this.
 :::
 
 ###### Aside: What is the IUmbracoContextAccessor then?
