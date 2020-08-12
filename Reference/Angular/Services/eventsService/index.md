@@ -81,7 +81,7 @@ Below you'll find a list of events broadcasted by the Umbraco codebase. The list
 eventsService.emit("app.ready", data);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/init.js#L65
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/init.js#L65 -->
 
 #### Security interceptor
 
@@ -93,7 +93,7 @@ if (headers["x-umb-user-modified"]) {
 }
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/interceptors/security.interceptor.js#L31
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/interceptors/security.interceptor.js#L31 -->
 
 
 ### Services
@@ -106,7 +106,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("clipboardService.storageUpdate");
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/clipboard.service.js#L49
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/clipboard.service.js#L49 -->
 
 #### Editor service
 
@@ -121,7 +121,7 @@ var args = {
 eventsService.emit("appState.editors.open", args);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L274
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L274 -->
 
 **When an editor is closed**
 
@@ -135,7 +135,7 @@ var args = {
 eventsService.emit("appState.editors.close", args);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L297
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L297 -->
 
 **When all editors are closed**
 
@@ -148,7 +148,7 @@ var args = {
 eventsService.emit("appState.editors.close", args);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L325
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editor.service.js#L325 -->
 
 #### Editor State service
 
@@ -156,7 +156,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("editorState.changed", { entity: entity });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editorstate.service.js#L33
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/editorstate.service.js#L33 -->
 
 #### Localization service
 
@@ -166,7 +166,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("localizationService.updated", response.data);
 ````
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/localization.service.js#L95
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/localization.service.js#L95 -->
 
 #### Overlay service
 
@@ -176,7 +176,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.overlay", overlay);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/overlay.service.js#L48
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/overlay.service.js#L48 -->
 
 **When an overlay is closed**
 
@@ -184,7 +184,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.overlay", null);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/overlay.service.js#L54
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/overlay.service.js#L54 -->
 
 #### TinyMCE service
 
@@ -194,7 +194,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("rte.file.uploading");
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L172
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L172 -->
 
 **When upload of a file ends**
 
@@ -202,7 +202,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("rte.file.uploaded");
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.0/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L178
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.0/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L178 -->
 
 **When the user presses CTRL + S**
 
@@ -210,7 +210,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.0/src/Umbraco.Web.UI.Cli
 eventsService.emit("rte.shortcut.save");
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L1155
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js#L1155 -->
 
 #### Tours
 
@@ -220,7 +220,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.tour.updatedTours", tours);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L29
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L29 -->
 
 **When user starts a tour**
 
@@ -228,7 +228,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.tour.start", tour);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L51
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L51 -->
 
 **When user ends a tour**
 
@@ -236,7 +236,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.tour.end", tour);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L64
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L64 -->
 
 **When a tour is disabled**
 
@@ -244,7 +244,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.tour.end", tour);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L78
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L78 -->
 
 **When user completes a tour**
 
@@ -252,7 +252,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("appState.tour.complete", tour);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L100
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tour.service.js#L100 -->
 
 #### Tree service
 
@@ -262,7 +262,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("treeService.treeNodeLoadError", { error: reason });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tree.service.js#L328
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tree.service.js#L328 -->
 
 **When a tree node is removed**
 
@@ -270,7 +270,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("treeService.removeNode", { node: treeNode });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tree.service.js#L366
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/tree.service.js#L366 -->
 
 #### User service
 
@@ -281,7 +281,7 @@ const args = { isTimedOut: isTimedOut };
 eventsService.emit("app.notAuthenticated", args);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L13,L14
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L13,L14 -->
 
 **When user is trying to log in, but have not start nodes**
 
@@ -297,7 +297,7 @@ var result = { user: data, authenticated: true, lastUserId: lastUserId, loginTyp
 eventsService.emit("app.authenticated", result);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L195,L198
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L195,L198 -->
 
 **When user data is refetched from the server**
 
@@ -308,7 +308,7 @@ if (args && args.broadcastEvent) {
 }
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L243,L246
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/user.service.js#L243,L246 -->
 
 #### Util service
 
@@ -318,7 +318,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("app.reInitialize");
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/util.service.js#L137
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/services/util.service.js#L137 -->
 
 
 
@@ -337,7 +337,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("toggleValue", { value: scope.checked });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/buttons/umbtoggle.directive.js#L84
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/buttons/umbtoggle.directive.js#L84 -->
 
 **When the toggle is clicked**
 
@@ -345,8 +345,9 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("toggleValue", { value: !scope.checked });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/buttons/umbtoggle.directive.js#L112
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/buttons/umbtoggle.directive.js#L112 -->
 
+<!--
 #### Other directives
 
 https://github.com/umbraco/Umbraco-CMS/blob/b81bd6645634e8fc99eb6ced403b7de3dac73108/src/Umbraco.Web.UI.Client/src/common/directives/components/tabs/umbtabsnav.directive.js
@@ -364,6 +365,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/34749ec2339731fb3d81101a9720cbcc1dbd
 https://github.com/umbraco/Umbraco-CMS/blob/99a3dec4bac7d98ab9424ad6a70019fd5f62d56a/src/Umbraco.Web.UI.Client/src/common/directives/components/content/umbvariantcontenteditors.directive.js#L113
 
 https://github.com/umbraco/Umbraco-CMS/blob/7634b376769b1965f5425129f3f3865bab23d301/src/Umbraco.Web.UI.Client/src/common/directives/components/content/umbcontentnodeinfo.directive.js#L191
+-->
 
 
 
@@ -395,7 +397,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/7634b376769b1965f5425129f3f3865bab23
 eventsService.emit("grid.rowAdded", { scope: $scope, element: $element, row: row });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L403
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L403 -->
 
 **When a new control is added**
 
@@ -403,7 +405,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("grid.itemAdded", { scope: $scope, element: $element, cell: cell, item: newControl });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L663
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L663 -->
 
 **When the grid is initializing**
 
@@ -411,7 +413,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("grid.initializing", { scope: $scope, element: $element });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L971
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L971 -->
 
 **When the grid is initialized**
 
@@ -419,7 +421,7 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("grid.initialized", { scope: $scope, element: $element });
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L975
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/propertyeditors/grid/grid.controller.js#L975 -->
 
 #### Languages overview controller
 
@@ -429,8 +431,9 @@ https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Cli
 eventsService.emit("editors.languages.languageDeleted", args);
 ```
 
-https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/languages/overview.controller.js#L99
+<!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/views/languages/overview.controller.js#L99 -->
 
+<!-- 
 #### content - edit.controller.js
 
 https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/content/edit.controller.js#L235
@@ -474,3 +477,5 @@ https://github.com/umbraco/Umbraco-CMS/blob/1347b973f1c8617d372592236eab101507dd
 https://github.com/umbraco/Umbraco-CMS/blob/dc39faeb5ecc51992eeb1dcdf901b7ffc11be486/src/Umbraco.Web.UI.Client/src/views/common/infiniteeditors/treepicker/treepicker.controller.js#L344
 
 https://github.com/umbraco/Umbraco-CMS/blob/e8bb3b01aacc50fc096d726a83d3bd6a914749bd/src/Umbraco.Web.UI.Client/src/views/common/infiniteeditors/mediapicker/mediapicker.controller.js#L287
+
+-->
