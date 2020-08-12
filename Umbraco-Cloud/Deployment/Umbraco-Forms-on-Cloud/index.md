@@ -50,19 +50,45 @@ We highly recommend that you switch to persisting all definitions for Umbraco Fo
 
 Follow these steps to make the switch:
 
-1. Clone down you Development/Live environment
-2. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from you local clone
-3. In the `<settings>` section of the configuration, add
+1. Make sure your forms are in sync between all your Cloud environments
+2. Clone down you Development/Live environment
+3. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from you local clone
+4. In the `<settings>` section of the configuration, add
 
     ```code
     <setting key=“StoreUmbracoFormsInDb” value=“True” />
     ```
 
-4. Save the file
-5. Spin up your local clone and verify that everything works as expected
-6. Push the change back to the Cloud environments
+5. Save the file
+6. Spin up your local clone and verify that everything works as expected
+7. Push the change back to the Cloud environments
 
 Please note that the change here is made to a config file, which means that the environments will restart as the changes are applied. This can take a few minutes, depending on the scale of your project.
+
+:::note
+**Did you create your project before June 2018?**
+
+Then your Umbraco Forms data might still be handled as meta data.
+
+This means that you will need to follow the steps below, in order to persist Umbraco Forms data in the Umbraco database.
+
+1. Find and open `Config\UmbracoDeploy.settings.config` on your local machine
+2. Update the `transferFormsAsContent` value to `true`
+
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <settings xmlns="urn:umbracodeploy-settings">
+      <forms transferFormsAsContent="true" />
+   </settings>
+   ```
+
+3. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert back to this state (removing `UDA` files won't remove the actual form on deploy)
+4. Push the change back to the Cloud environment
+   * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
+5. You are now able to queue your forms for transfer between the Cloud environments, like content and media
+
+If you do not have the `transferFormsAsContent` setting in the `UmbracoDeploy.settings.config` file, you do not need to make any further changes.
+:::
 
 ## Common issues with Umbraco Forms on Cloud
 
