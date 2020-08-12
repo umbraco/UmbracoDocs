@@ -6,18 +6,17 @@ meta.Description: "Information about Surface Controller Actions Result Helpers i
 
 # Surface controller actions
 
-A surface controller can return a few Umbraco specific actions. 
+A surface controller can return a few Umbraco specific actions.
 
 ## CurrentUmbracoPage
 
-Returns the current umbraco page
+Returns the current Umbraco page.
 
 ```csharp
 namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-      
         [HttpPost]
         public ActionResult PostMethod()
         {
@@ -41,7 +40,6 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-      
         [HttpPost]
         public ActionResult PostMethod()
         {
@@ -55,6 +53,7 @@ namespace TestWebsite.Core.Controllers
     }
 }
 ```
+
 This action can also take in a `string` value for a querystring parameter in the url or a `NameValueCollection` for multiple querystring parameters in the url.
 
 ### Querystring parameter using a string value
@@ -73,6 +72,7 @@ namespace TestWebsite.Core.Controllers
     }
 }
 ```
+
 ### Querystring parameter using a NameValueCollection
 
 ```csharp
@@ -94,7 +94,7 @@ namespace TestWebsite.Core.Controllers
 
 ## RedirectToCurrentUmbracoUrl
 
-Redirects to the currently rendered Umbraco url
+Redirects to the currently rendered Umbraco url.
 
 ```csharp
 namespace TestWebsite.Core.Controllers
@@ -112,7 +112,7 @@ namespace TestWebsite.Core.Controllers
 
 ## RedirectToUmbracoPage
 
-Redirects to a given Umbraco page
+Redirects to a given Umbraco page.
 
 ```csharp
 namespace TestWebsite.Core.Controllers
