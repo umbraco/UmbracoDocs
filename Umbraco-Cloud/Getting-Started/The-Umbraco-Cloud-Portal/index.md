@@ -25,7 +25,7 @@ e.g if your project have been automatically updated or if an upgrade has failed.
 
 ## Organization
 
-On Umbraco Cloud it is possible to get an organization to manage the projects that you and members of your company creates.
+On Umbraco Cloud it is possible to get an organization to manage the projects that you and members of your company creates to get an overview of your projects.
 
 Find out more in the [Organization article](Organizations).
 
