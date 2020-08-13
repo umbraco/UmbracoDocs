@@ -16,7 +16,7 @@ In the following section we will go over the different options that you will get
 
 ## Information
 
-From the information section in your organisation you can find information about your organization and if there are any changes to your information, you can change it from this section.
+From the information section in your organization you can find information about your organization and if there are any changes to your information, you can change it from this section.
 
 ![Information](images/Information.png)
 
