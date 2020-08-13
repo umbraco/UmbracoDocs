@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Surface Controllers"
+meta.Description: "Information about Surface Controllers in Umbraco"
 ---
 
 # Surface controllers
@@ -135,3 +137,7 @@ This concept is similair to ASP.NET Web Form's view state, but only stores the r
 :::note
 Encryption/decryption is done using the machine key (configured in the `Web.config` file), so make sure this is unique for every website. The current Umbraco installer will thankfully allow you to automatically generate a unique machine key for you, so make sure to do so!
 :::
+
+### Surface Controller Actions
+
+You can read more about the surface controller [action result helpers](surface-controllers-actions.md).
