@@ -30,7 +30,7 @@ It is also possible from here to setup different permissions for your members, i
 
 ## Projects
 
-In the projects section, you can get an overview of all the project that have been created in your organization, this makes it easier for you to see which projects your organization has.
+In the projects section, you can get an overview of all the projects that have been created in your organization. This makes it easier for you to see which projects your organization has.
 
 It is also possible to see which user from your organization that have created which project and edit the team on the different project if you are an super-admin in the organization.
 
