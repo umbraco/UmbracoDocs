@@ -21,5 +21,6 @@ If you want to re-use a page or structure you have created previously you can co
 
 
 :::info
-When you select **Relate to original** Umbraco will create a relationship between the original and copies page. This relationship can be used to programmatically link the pages: For example linking between pages in a multilingual setup. It is important to note that this relationship **does not** keep the content between the master original and copied page in sync.:::
+When you select **Relate to original** Umbraco will create a relationship between the original and copies page. This relationship can be used to programmatically link the pages: For example linking between pages in a multilingual setup. It is important to note that this relationship **does not** keep the content between the master original and copied page in sync. 
+:::
 
