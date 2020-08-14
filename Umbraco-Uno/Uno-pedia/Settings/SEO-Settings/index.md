@@ -14,6 +14,8 @@ Will be added as the `alt` value on the company logo, whenever it's displayed on
 
 ## Site name
 
+Set the name of the website.
+
 ## Company Logo
 
 These will be used main in the right side of the top navigation of the website.
