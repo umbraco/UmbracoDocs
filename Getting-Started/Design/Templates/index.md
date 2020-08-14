@@ -143,4 +143,4 @@ the created partial can now be injected into any template by using the `@Html.Pa
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
 ### [Umbraco.TV](https://umbraco.tv)
-- [Chapter: Templating](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)
+- [Series: Templating](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/templating/what-is-a-template/)
