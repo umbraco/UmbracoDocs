@@ -26,7 +26,7 @@ By default, the Content Delivery API is public, if you would like to protect it 
 ![Protect API](images/heartcoreAPIprotect.png)
 
 
-If your Content Delivery API is protected or you want to use Content Management APIs, your user will need to have an API Key assinged. When you have navigated to the Users section mentioned above you can create the API Key by clicking the "Create API Key" button.
+If your Content Delivery API is protected or you want to use Content Management APIs, your user will need to have an API Key assigned. When you have navigated to the Users section mentioned above you can create the API Key by clicking the "Create API Key" button.
 
 A modal will pop up where you enter the name of the key and set a date for when it should expire. If there is no expire data, the API Key will be valid until you delete it manually.
 
