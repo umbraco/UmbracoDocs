@@ -104,7 +104,7 @@ This class provides the base class for any recurring task. You can override the 
 
 Background tasks can also trigger events. [Browse the API documentation for BackgroundTaskRunner events.](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Scheduling.BackgroundTaskRunner-1.html#events)
 
-You can declared the events in the `Initialize` method of your `Component`. The events are declared on the `BackgroundTaskRunner` object, in this case `_cleanUpYourRoomRunner`.
+You can subscribe to the events in the `Initialize` method of your `CleanUpYourRoomComponent`. The events are registered on the `BackgroundTaskRunner` object, in this case `_cleanUpYourRoomRunner`.
 
 ```csharp
 
