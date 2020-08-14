@@ -16,9 +16,11 @@ Custom certificates can be used with all custom domains. Please refer to our [Ma
 
 ### TLS support
 
-As of April 2020, we've deprecated support for TLS1.0 & TLS 1.1. TLS1.2 is now the default supported TLS protocol going forward.
+As of April 2020, we've deprecated support for TLS 1.0 & TLS 1.1.
 
-Umbraco 8 sites are using TLS 1.2 as a prefert TLS protocol by default. Umbraco 7 sites, due to running on an older .NET framework 4.5.2, have been updated to default to TLS 1.2.
+TLS 1.2 is now the default supported TLS protocol going forward.
+
+Umbraco 8 sites are using the TLS 1.2 protocol by default. Umbraco 7 sites, due to running on an older .NET framework 4.5.2, have been updated to TLS 1.2.
 
 ### TLS Ciphers support
 
@@ -68,8 +70,8 @@ HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 - Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users.
-- IP based whitelist allowing access to Frontend & Backoffice
-- IP based whitelist allowing access to website database
+- IP based list allowing access to Frontend & Backoffice
+- IP based list allowing access to website database
 
 ## Cookies and security
 

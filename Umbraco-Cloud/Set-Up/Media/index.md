@@ -4,6 +4,10 @@ versionFrom: 7.0.0
 
 # Azure Blob Storage on Umbraco Cloud
 
+:::note
+**Important**: All Umbraco 8 projects created after May 6th 2020 will have Azure Blob Storage by default. That means that this guide only applies to you, if your project was created before May 6th 2020 or if you are using Umbraco 7.
+:::
+
 As Umbraco Cloud deployments are done using a web connection, large media deployments can be slow and are subject to timeouts and other restrictions associated with large uploads over a web connection.
 
 If this sounds like you, you should evaluate the Azure Blob Storage provider. It has very few limitations and can result in better site performance as well as faster media loading times - especially if your media takes advantage of an Azure CDN.

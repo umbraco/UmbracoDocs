@@ -28,7 +28,7 @@ There are lots of different possible variations within your working environment 
 
 This documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](images/v8-files.PNG)
+![Typical set of Umbraco Project Folders](images/app-data-folders-version8.png)
 
 #### The Umbraco Folder
 
@@ -41,7 +41,7 @@ If you are working with Visual Studio and a Build Server, it's NuGet's job to re
 
 #### App_Data Folders
 
-![App_Data Folders](images/v8-app-data.PNG)
+![App_Data Folders](images/typical-umbraco-project-folders-version8.png)
 
 When Umbraco is running it will generate and update some files on disk:
 

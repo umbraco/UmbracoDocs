@@ -22,12 +22,14 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
         {
             "alias": "myCustomDashboard",
             "view":  "/App_Plugins/myCustom/dashboard.html",
-            "sections":  [ "content", "settings" ],
+            "sections":  [ "content", "member", "settings" ],
             "weight": -10
         }
     ]
 }
 ```
+
+The section aliases can be found in the C# developer reference for [Umbraco.Core.Constants.Applications](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Applications.html).
 
 ### Registering with C# Type
 By creating a C# class that implements `IDashboard` from `Umbraco.Core.Dashboards` then this will automatically be discovered by Umbraco at application startup time.
@@ -47,6 +49,7 @@ namespace My.Website
         public string[] Sections => new[]
         {
             Umbraco.Core.Constants.Applications.Content,
+            Umbraco.Core.Constants.Applications.Members,
             Umbraco.Core.Constants.Applications.Settings
         };
 

@@ -34,7 +34,7 @@ Upload a square image in `.png` format, that will be used as the website favicon
 
 ### App Icon
 
-Upload a square image, preferably with a background color. This image will be used ...
+Upload a square image, preferably with a background color. The App Icon is used when the website is added to the homescreen of an iPhone.
 
 ### Icon Background Color
 
@@ -102,7 +102,11 @@ This group contains configuration options for the header of your website, hich b
 
 ### Header Theme
 
-For the header background you can choose either black or white.
+For the header background you can choose either dark or light.
+
+### Header Layout
+
+You can choose between 4 different layouts for the Header of your website.
 
 ### Header Layout
 
