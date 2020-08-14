@@ -96,6 +96,81 @@ namespace Umbraco.Web.UI
 }
 
 ```
+## RecurringTaskBase
+
+This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to false and the `PerformRunAsync` must be overridden to implement the class.
+
+## BackgroundTaskRunner Events
+
+Background tasks can also trigger events. [Browse the API documentation for BackgroundTaskRunner events.](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Scheduling.BackgroundTaskRunner-1.html#events)
+
+You can declared the events in the `Initialize` method of your `Component`. The events are declared on the `BackgroundTaskRunner` object, in this case `_cleanUpYourRoomRunner`.
+
+```csharp
+
+public class CleanUpYourRoomComponent : IComponent
+{
+    private IProfilingLogger _logger;
+    private IRuntimeState _runtime;
+    private IContentService _contentService;
+    private BackgroundTaskRunner<IBackgroundTask> _cleanUpYourRoomRunner;
+
+    public CleanUpYourRoomComponent(IProfilingLogger logger, IRuntimeState runtime, IContentService contentService)
+    {
+        _logger = logger;
+        _runtime = runtime;
+        _contentService = contentService;
+        _cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
+    }
+
+    public void Initialize()
+    {
+        int delayBeforeWeStart = 60000; // 60000ms = 1min
+        int howOftenWeRepeat = 300000; //300000ms = 5mins
+
+        var task = new CleanRoom(_cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
+
+        //declare the events
+        _cleanUpYourRoomRunner.TaskCompleted += Task_Completed;
+
+        _cleanUpYourRoomRunner.TaskStarting += this.Task_Starting;
+
+        _cleanUpYourRoomRunner.TaskCancelled += this.Task_Cancelled;
+
+        _cleanUpYourRoomRunner.TaskError += this.Task_Error;
+
+        //As soon as we add our task to the runner it will start to run (after its delay period)
+        _cleanUpYourRoomRunner.TryAdd(task);
+    }
+
+    private void Task_Error(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
+    {
+        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom error");
+    }
+
+    private void Task_Cancelled(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
+    {
+        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom cancelled");
+    }
+
+    private void Task_Starting(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
+    {
+        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom starting");
+    }
+
+    private void Task_Completed(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
+    {
+        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom run finished");
+    }
+
+    public void Terminate()
+    {
+    }
+}
+
+```
+
+
 
 ### Using RuntimeState
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
