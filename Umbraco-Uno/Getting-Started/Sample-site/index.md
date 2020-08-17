@@ -22,16 +22,16 @@ When you're ready to build your own website, you can take to roads:
 To delete the sample website, follow these steps:
 
 * Navigate to the Content section in the Umbraco Backoffice
-* Select and open the "Unicorn Hotel" node
+* Select and open the "Unicorn Hotel" page
 * Delete all widgets from the Content group
 
-![Where to click in order to delete all widgets from the Unicorn Hotel node](images/Delete-all-widgets.png)
+![Where to click in order to delete all widgets from the Unicorn Hotel page](images/Delete-all-widgets.png)
 
-* Remove any unwanted content nodes
-  * To delete a node, right-click it and select "Delete"
+* Remove any unwanted pages
+  * To delete a page, right-click it and select "Delete"
 
 :::warning
-**Important**: Do not delete the following content nodes:
+**Important**: Do not delete the following pages:
 
 * Settings
 * General
@@ -40,14 +40,14 @@ To delete the sample website, follow these steps:
 * Sitemap
 :::
 
-All deleted nodes will be moved to the "Recycle bin" at the bottom of the Content tree. It's recommended that you empty the recycle bin, before you start working on your own website.
+All deleted pages will be moved to the "Recycle bin" at the bottom of the Content tree. It's recommended that you empty the recycle bin, before you start working on your own website.
 
 To empty the recycle bin, follow these steps:
 
 1. Right-click the "Recycle bin" at the bottom of the Content tree
 2. Select "Empty recycle bin..." and click "OK" to confirm the deletion
 
-Once you've deleted all unwanted content and widgets, you can start building your own site. Start by renaming the start node from "Unicorn Hotel" to the name of your company or whatever else you want to call it.
+Once you've deleted all unwanted content and widgets, you can start building your own site. Start by renaming the start page from "Unicorn Hotel" to the name of your company or whatever else you want to call it.
 
 :::note
 If you want to do a more thorough cleanup, you can also head over to the Media section in the Backoffice to delete any images and media files that you do not need on your own website.

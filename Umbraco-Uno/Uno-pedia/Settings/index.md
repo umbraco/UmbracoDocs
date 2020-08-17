@@ -18,13 +18,13 @@ There are **three primary areas** you need to know about, when setting up and co
 
 These are usually settings that has an effect on the entire site, and include things like setting up tracking for Google and managing the cookie consent.
 
-You can manage the general settings for your website on the *General* content node, which you can find as a child node to *Settings*.
+You can manage the general settings for your website on the *General* page, which you can find as a child page to *Settings*.
 
 ## [Theme settings](Theme-settings)
 
 As the name indicates, theme settings is where you go to manage the theme of your website. This includes matching the colors and logos to your company identity and defining various sizes and spaces around the website.
 
-You can manage the theme settings for your website on the *Theme* content node, which you can find as a child node to *Settings*.
+You can manage the theme settings for your website on the *Theme* page, which you can find as a child page to *Settings*.
 
 ## [Page specific settings](Specific-Settings)
 

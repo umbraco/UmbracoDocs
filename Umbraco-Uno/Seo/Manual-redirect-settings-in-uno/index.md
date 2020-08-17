@@ -10,7 +10,7 @@ The settings to add manual redirects are not automatically created for you with 
 
 ## Adding the manual redirects settings
 
-1. In the **Content** section, expand the home node (in this case that would be ***Unicorn Hotel***)
+1. In the **Content** section, expand the home page (in this case that would be ***Unicorn Hotel***)
 2. Now select the ellipses next to **Settings** to create a new item
 
     ![Manual redirects setup](images/Manual-redirects-setup.png)

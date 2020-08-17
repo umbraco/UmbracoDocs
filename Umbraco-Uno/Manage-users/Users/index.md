@@ -39,7 +39,7 @@ The way you do this is to:
 - When on their profile, you scroll down until you see, assign access
 - In this section the first option is groups 
 - Here you can add or remove the user to/from any group you would like
-- You can also choose a media and a content start node for the user, to limit the tree for the users.
+- You can also choose a media and a content start page for the user, to limit the tree for the users.
 
 Another and perhaps more efficient way to add users to groups is to:
 

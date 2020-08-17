@@ -58,19 +58,19 @@ When building an Umbraco Uno website the Settings content type and subpages are 
 
 These are usually settings that has an effect on the entire site, and include things like connecting your SMTP service, setting up tracking for Google and managing the cookie consent.
 
-You can manage the general settings for your website on the *General* content node, which you can find as a child node to *Settings*.
+You can manage the general settings for your website on the *General* page, which you can find as a child page to *Settings*.
 
 ### [Theme settings](../Settings/Theme-settings)
 
 As the name indicates, theme settings is where you go to manage the theme of your website. This includes matching the colors and logos to your company identity and defining various sizes and spaces around the website.
 
-You can manage the theme settings for your website on the *Theme* content node, which you can find as a child node to *Settings*.
+You can manage the theme settings for your website on the *Theme* page, which you can find as a child page to *Settings*.
 
 ### [SEO settings](../Settings/SEO-settings)
 
 In order for your website to perform well in various search results, Umbraco Uno ships with a set of configuration SEO settings that we highly recommend using.
 
-Most SEO settings are managed from the *SEO* content node, which you can find as a child node to *Settings*.
+Most SEO settings are managed from the *SEO* page, which you can find as a child page to *Settings*.
 
 ### Manual Redirects
 

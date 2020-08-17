@@ -4,14 +4,13 @@ versionFrom: 8.0.0
 
 # General Settings
 
-As a child node under *Settings* you'll find the *General* node. Here you will find a long list of settings and configuration options for your website. The general settings will apply to the entire website.
+As a child page under *Settings* you'll find *General*. Here you will find a long list of settings and configuration options for your website. The general settings will apply to the entire website.
 
 In this article you can learn more about the various options as well as get an idea of what the settings will affect.
 
-The general settings node is divided into 7 different groups:
+The General settings are divided into 6 different groups:
 
 * [General](#general)
-* [SEO](#seo)
 * [Newsletter](#newsletter)
 * [Instagram](#instagram)
 * [Cookie Consent](#cookie-consent)
@@ -110,7 +109,7 @@ The default search view is a traditional list view.
 
 ## Tracking and Access
 
-As the final group on the General settings node, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
+As the final group on the General settings, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
 
 None of these are required, but we do recommend adding a Google Maps API Key, as they will enable you to use the *Map* widget.
 

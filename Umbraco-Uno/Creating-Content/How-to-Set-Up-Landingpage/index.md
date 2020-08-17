@@ -13,7 +13,7 @@ The Result should look somewhat like this:
 
 ## First Step
 
-- Start by right-clicking the Umbraco Hotel node
+- Start by right-clicking the Umbraco Hotel page in the Content tree
 - Choose Create and select **Page**
 - Name your landing page and you are ready to start creating your new landing page
 - In the Content group of your page, navigate to the Widget section and click ***Add content***

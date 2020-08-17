@@ -107,4 +107,4 @@ This does not stop search engine crawlers from crawling your content. Instead it
 This field is not found in the “SEO” section, but is instead found in the “Settings” below.
 :::
 
-This field is used to set a custom URL for the page. When this is not set the URL of a page is determined by the name of the content node. If the URL is a child of another page it will always keep the page path.
+This field is used to set a custom URL for the page. When this is not set the URL of a page is determined by the name of the page. If the URL is a child of another page it will always keep the page path.

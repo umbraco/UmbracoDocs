@@ -18,9 +18,9 @@ Essentially the backoffice works as your main workspace when creating and managi
 
 The tree is a list of multiple items, it could be media items or content items. The tree is always located to the left of the Dashboard.
 
-### Node
+### Page
 
-A node is an item in the tree list. What a node is changes depending on what section you are in. For example, in the Content section a node would be a piece of content or a page, and in media, it would be an image or a folder.
+A page is an item in the tree list. What a page is changes depending on what section you are in. For example, in the Content section a page would be a piece of content or a page, and in media, it would be an image or a folder.
 
 ### Dashboards/Workspaces
 
@@ -28,7 +28,7 @@ The dashboard is located in the middle of the screen for each of the sections. T
 
 It is worth noting that the dashboard will be transformed into your workspace when working with content and media.
 
-To switch between workspace and dashboard you can select nodes for workspace and the top of the Section tree for Dashboards.
+To switch between workspace and dashboard you can select pages for workspace and the top of the Section tree for Dashboards.
 
 ## The Sections
 
@@ -50,7 +50,7 @@ You will do the majority of your work from the Content sections, however, some t
 
 ### Content
 
-The Content section is where you work with your content. It utilizes a Content Tree which can be found on the left side of the screen. The Content Tree is built from your content nodes, these nodes are items in your tree and in most cases, pages on your website.
+The Content section is where you work with your content. It utilizes a Content Tree which can be found on the left side of the screen. The Content Tree is built from your pages. These pages are items in your tree and in most cases, pages on your website.
 
 ### Media
 

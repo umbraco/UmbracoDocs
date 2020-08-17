@@ -4,19 +4,19 @@ versionFrom: 8.0.0
 
 # Start (Site)
 
-The Start node is based on a Content Type called "Site". It serves as the main page of the website, also called the frontpage or root page. When visitors visits the website, the Start node is the first this they will see.
+The Start page is based on a Content Type called "Site". It serves as the main page of the website, also called the frontpage or root page. When visitors visits the website, the Start page is the first this they will see.
 
-As with most content types in Umbraco Uno, [widgets](../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start node.
+As with most content types in Umbraco Uno, [widgets](../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start page.
 
 :::note
-The Start node also contains the SEO and the Settings groups for configuring various options around the page like whether or not to hide the footer content and what title should be used for SEO.
+The Start page also contains the SEO and the Settings groups for configuring various options around the page like whether or not to hide the footer content and what title should be used for SEO.
 
 Learn more about these options in the [Specific Settings](../../Settings/Specific-Settings) article.
 :::
 
 ## Navigation
 
-The Start node also provides options for customizing the websites navigation menu. These can be found in the "Navigation" group, and any configuration set in that group will apply to all pages on the website.
+The Start page also provides options for customizing the websites navigation menu. These can be found in the "Navigation" group, and any configuration set in that group will apply to all pages on the website.
 
 The following provides details for each of the configuration option in the Navigation group.
 
@@ -65,7 +65,7 @@ Check this if the language picker should be hidden. This is only relevant for we
 
 ## Footer
 
-As with the Navigation group, the Footer group on the Start node, provides configuration options to customize the footer of the website. All options in this group will apply to the footer on each page on the website.
+As with the Navigation group, the Footer group on the Start page, provides configuration options to customize the footer of the website. All options in this group will apply to the footer on each page on the website.
 
 ### Footer Columns
 

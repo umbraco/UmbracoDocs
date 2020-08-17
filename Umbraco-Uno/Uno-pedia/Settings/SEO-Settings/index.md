@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # SEO Settings
 
-The SEO (Search Engine Optimization) settings node lets you manage all the general SEO settings on your website. This article aims to give an overview of the various configurable general settings.
+The SEO (Search Engine Optimization) settings lets you manage all the general SEO settings on your website. This article aims to give an overview of the various configurable general settings.
 
 Read the [SEO](../../../SEO) article for more details and recommendations on how to manage SEO on your Umbraco Uno project.
 

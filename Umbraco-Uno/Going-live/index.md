@@ -56,7 +56,7 @@ Setting up SEO should be part of your general workflow when you create content. 
 - Latitude
 - Longitude
 
-You can reach the general SEO under your home node > Settings > General.
+You can reach the general SEO under your home page > Settings > General.
 
 There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings](../Uno-pedia/Settings/Specific-Settings/#SEO)
 
@@ -69,7 +69,7 @@ To have a newsletter function on your website it will need to be set up through 
 
 ## Tracking and Access
 
-The Tracking and Access group can be found in the General section node in the Content section. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
+The Tracking and Access group can be found in the *General* settings in the Content tree. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
 
 :::note
 In order to your to get the most out of the Google Maps API, then the API Key should be changed to your own API Key

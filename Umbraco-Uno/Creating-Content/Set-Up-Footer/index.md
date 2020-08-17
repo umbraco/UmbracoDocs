@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 It can be challenging to set-up a footer if you never tried it before. This guide will help step-by-step, to get a nice looking and informative footer for your website.
 In this guide you will be introduced, to some of the features you can add to your footer, namely Navigation. Opening Hours, Contact, and Social Links.
 
-You can set the theme for your footer by navigating to the "Theme" settings node under "Settings" in the Content section. Here you'll find a "Footer" group, where you can choose between dark or light theme, and you can change the container width.
+You can set the theme for your footer by navigating to "Theme" settings under "Settings" in the Content section. Here you'll find a "Footer" group, where you can choose between dark or light theme, and you can change the container width.
 
 This is how the footer should look after you have gone through the guide:
 
@@ -18,7 +18,7 @@ This is how the footer should look after you have gone through the guide:
 Start by doing the following:
 
 1. Go to the Umbraco Backoffice
-2. Click your home node - the first item in the Content tree
+2. Click your home page - the first item in the Content tree
 3. In the workspace scroll to the bottom and find the group called Footer
 4. In the field saying “Footer Columns” click “Add Content” which will give you 7 options for content to add
 
@@ -34,7 +34,7 @@ Let’s start by adding Navigation.
 - Choose an item from the tree - in this case, we'll choose "Unicorn Hotel"
 - Click "Submit" to add the link
 - Next, we get the option to select children, which is another layer of links. We won't need this for now.
-- The final button here is "Only Render Children" which would make the node only display links to the child pages, instead of the selected one
+- The final button here is "Only Render Children" which would make the page only display links to the child pages, instead of the selected one
 
 ![The finished footer](images/Navigatio-Footer.png)
 

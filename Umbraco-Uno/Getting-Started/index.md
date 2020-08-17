@@ -31,7 +31,7 @@ The portal is a general thing when working with Umbraco on the cloud, it is used
 ### [Umbraco Backoffice](Tour-of-the-backoffice)
 
 The Umbraco Backoffice is where you will be working when editing and creating content. It is divided into sections in the top of the page.
-In the content section of the backoffice, you will have a content tree on the left side of the screen. This content tree is where your content nodes will be when you start making content.
+In the content section of the backoffice, you will have a content tree on the left side of the screen. This content tree is where your pages will be when you start making content.
 We will continue to refer to this as the Backoffice throughout the rest of the documentation.
 
 ### The Frontend

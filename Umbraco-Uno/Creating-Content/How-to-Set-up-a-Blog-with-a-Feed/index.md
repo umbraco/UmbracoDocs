@@ -25,8 +25,7 @@ We will start by making the blog page, which will contain the posts we will crea
 
 In this part, we will set up the feed for our blog, so that we can fetch some posts for our blog page.
 
-
-1. Click the ... button next to the Blog node in the tree
+1. Click the ... button next to the Blog in the tree
 2. Select Post
 3. Give the post a name
 4. Fill out the content section with what you want the blog post to be about
@@ -39,7 +38,7 @@ In this part, we will set up the feed for our blog, so that we can fetch some po
 
 A blog usually consists of multiple posts, you can add however many blog pages you like by following the steps below.
 
-1. Click the blog node
+1. Select the Blog page in the content tree
 2. Now you should see a window showing the first post you made
 3. From here click ***Create Post***
 4. From there it is the same approach as explained above

@@ -12,7 +12,7 @@ In this article you will find a quick guide on how to setup the SEO settings pag
 
 ## How to manage the general SEO
 
-1. In the **Content** section, expand the home node (in this case that would be ***Unicorn Hotel***)
+1. In the **Content** section, expand the home page (in this case that would be ***Unicorn Hotel***)
 2. Expand **Settings** and select **SEO**
 
     ![SEO settings in your Uno project](images/Seo-settings-in-your-uno-project.png)

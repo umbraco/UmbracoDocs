@@ -29,11 +29,11 @@ The Theme Editor contains the following sections:
 * **Grid**: Define various size-dimensions for the Grid widget
 * **Forms**: Set the border radius for buttons in forms on the website
 
-Any changes made and saved through the Theme Editor will automatically be saved to the *Theme* settings node.
+Any changes made and saved through the Theme Editor will automatically be saved to the *Theme* settings.
 
 ## Theme Settings
 
-All available options in the Theme Editor is also available from the *Theme* settings node which can be found under *Settings* in the Content tree.
+All available options in the Theme Editor is also available from the *Theme* settings which can be found under *Settings* in the Content tree.
 
 In the Uno-pedia you will find a thorough list of all available [Theme settings](../../Uno-pedia/Settings/Theme-settings)
 
@@ -41,7 +41,7 @@ In the Uno-pedia you will find a thorough list of all available [Theme settings]
 
 Umbraco Uno provides a set of different options for you to add your company logo to your website.
 
-On the Theme settings node, you can define logos for both dark and light backgrounds, upload a favicon as well as choose an app icon for your website.
+On Theme settings, you can define logos for both dark and light backgrounds, upload a favicon as well as choose an app icon for your website.
 
 :::tip
 We recommend that you upload `SVG` files for the logos and `PNG` files for both the favicon and the app icon.
