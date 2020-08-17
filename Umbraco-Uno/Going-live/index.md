@@ -56,9 +56,9 @@ Setting up SEO should be part of your general workflow when you create content. 
 - Latitude
 - Longitude
 
-You can reach the general SEO under your home page > Settings > General.
+You can reach the general SEO under your home page > Settings > SEO.
 
-There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings](../Uno-pedia/Settings/Specific-Settings/#SEO)
+Learn much more about how to reap all the benefits of the SEO configuration on your Umbraco Uno project on the [SEO](../SEO) articles.
 
 ## Newsletter
 
