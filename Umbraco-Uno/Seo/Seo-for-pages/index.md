@@ -2,23 +2,30 @@
 versionFrom: 8.0.0
 ---
 
-# How to set up SEO on each of your pages
-Besides the sitewide SEO settings you also have an SEO section on each of your content pages.
+# SEO for specific pages
 
-To access the SEO section of a content page, you have to navigate to the page. We’ll use the default “Accommodation” page as an example in this guide:
+Besides the [sitewide SEO settings](../Seo-settings-in-uno) you also have an SEO section on each of your content pages.
+
+These settings are specific to each of the pages, and we highly recommend that you carefully fill out each of the fields in order get the best SEO score for your Umbraco Uno website.
+
+Find more details on each of the fields, how to fill them in and where on your website they are added, in the [Uno-Pedia](../../Uno-pedia/Settings/Specific-Settings#SEO).
+
+In this article you will find a guide on how to find and setup the page specific SEO settings that are available.
+
+## How to setup SEO for your pages
+
+To access the SEO section of a content page, you have to navigate to the page. We will use the default **Accommodatio** page as an example in this guide:
 
 1. Go to one of your pages, for this guide we will use ***Accommodation***
 2. When you are there scroll until you reach the SEO section
 
-![SEO section on a page](images/Seo-section-on-a-page.png)
+    ![SEO section on a page](images/Seo-section-on-a-page.png)
 
 3. Now you are presented with a list of SEO settings specific for this page that you can fill out. Fill out all relevant fields with information for your project.
 
 4. Finalize by clicking “Save”
 
-Below we’ll go through each one individually to show you what it does.
-
-### SEO section on each content page
+## SEO section on each content page
 
 ***Title***
 This field is used to define the title of a page. For Google to properly display it in the search results it should be kept below 50-60 characters. If it is too long Google will only display the first part of it and truncate the rest.

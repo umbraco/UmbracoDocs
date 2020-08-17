@@ -12,7 +12,7 @@ Search Engine Optimization (SEO) is a method to increase the visibility and traf
 
 ## [SEO settings in Uno](Seo-settings-in-uno)
 
-The SEO settings section of your project is used for sitewide features. Learn more about the SEO settings in your Uno project and what each of these do.
+The SEO settings section of your project is used for sitewide features. Learn more about how to configure the SEO settings in your Uno project.
 
 ## [Manual redirect settings in Uno](Manual-redirect-settings-in-uno)
 
@@ -25,3 +25,5 @@ On each page that you create in your project you will have a SEO section. Here y
 ## [SEO for images in the media library](Seo-for-images)
 
 To improve accessibility on your website and follow SEO best practices for images, you can add an ALT text to your images. Learn more about how you do it here.
+
+## Uno-pedia: SEO Settings
