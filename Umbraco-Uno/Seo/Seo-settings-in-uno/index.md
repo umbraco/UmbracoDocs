@@ -8,7 +8,7 @@ In the SEO Settings, you will be setting up your company information for SEO, wh
 
 In order to receive the best possible SEO score for your Umbraco Uno website, we recommend that you carefully fill out each of the fields on the SEO settings page..
 
-In this article you will find a quick guide on how to setup the SEO settings page. You will also find a complete detailed list about each of the fields, how to fill them in and where on your website each of them are used.
+In this article you will find a quick guide on how to setup the SEO settings page. You will also find a complete and detailed list about each of the fields, how to fill them in and where on your website each of them are used.
 
 ## How to manage the general SEO
 
