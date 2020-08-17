@@ -118,7 +118,7 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 ```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.Value("searchEngineChangeFrequency", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue),defaultValue:"monthly");
+    var changeFreq = node.HasValue("searchEngineChangeFrequency") && node.Value<string>("searchEngineChangeFrequency") != "" ? node.Value<string>("searchEngineChangeFrequency") : "monthly";
     // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't set Fallback.ToAncestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
@@ -341,7 +341,7 @@ string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList
 
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.Value("searchEngineChangeFrequency", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue),defaultValue:"monthly");
+    var changeFreq = node.HasValue("searchEngineChangeFrequency") && node.Value<string>("searchEngineChangeFrequency") != "" ? node.Value<string>("searchEngineChangeFrequency") : "monthly";
     // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't fallback to ancestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
