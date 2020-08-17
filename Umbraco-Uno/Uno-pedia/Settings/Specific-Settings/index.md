@@ -22,6 +22,8 @@ Available on the following Content Types: `Site`, `Page`, `Feed`, `Post` and `Se
 
 The SEO (Search Engine Optimization) group contains configuration options related to the SEO on your website.
 
+Read the [SEO](../../../SEO/Seo-for-pages) article for more details and recommendations on how to manage the page specific SEO on your Umbraco Uno project.
+
 ### Title
 
 Aside from being used as the main title for the page along with the [Title Signature](../General-Settings/#title-signature), the Title will also be used in various other meta tags on the website. This includes Open Graph and Twitter.
@@ -48,7 +50,11 @@ the final two options in the SEO group gives you the option to configure the sit
 
 ### NoIndex / NoFollow
 
+Various options for deciding how search engine crawlers should crawl the specific page on your website.
+
 ### Canonical Url
+
+Use this, if the current page is a copy/duplicate of another piece of content on the website.
 
 ## Settings
 

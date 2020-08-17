@@ -26,7 +26,6 @@ As the name indicates, theme settings is where you go to manage the theme of you
 
 You can manage the theme settings for your website on the *Theme* content node, which you can find as a child node to *Settings*.
 
-## [Content Type specific settings](Specific-Settings)
+## [Page specific settings](Specific-Settings)
 
 On each content item you create in the content section, you will have a set of settings and configuration options specific to the content type the item is based on. These are split up into groups and includes settings related to SEO and options for the navigation bar.
-

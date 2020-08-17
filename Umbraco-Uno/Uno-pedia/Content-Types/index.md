@@ -65,3 +65,17 @@ You can manage the general settings for your website on the *General* content no
 As the name indicates, theme settings is where you go to manage the theme of your website. This includes matching the colors and logos to your company identity and defining various sizes and spaces around the website.
 
 You can manage the theme settings for your website on the *Theme* content node, which you can find as a child node to *Settings*.
+
+### [SEO settings](../Settings/SEO-settings)
+
+In order for your website to perform well in various search results, Umbraco Uno ships with a set of configuration SEO settings that we highly recommend using.
+
+Most SEO settings are managed from the *SEO* content node, which you can find as a child node to *Settings*.
+
+### Manual Redirects
+
+When you rename a page on your website or move a page below another page, Umbraco Uno will automatically create a redirect based on the change. This means, than if your visitors use the old path to an article that was moved, they will still be showed the correct content.
+
+It is possible to create custom redirects as well, by adding the *Manual Redirects* page as a child page to *Settings*. Once this has been setup, redirects are created as items from the *Manual Redirects* page.
+
+Learn more about how to configure and work with manual redirects in the [Manual Redirects settings](../../../Seo/Manual-redirects-settings-in-uno) article.
