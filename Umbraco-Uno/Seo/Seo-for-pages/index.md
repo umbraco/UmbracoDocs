@@ -23,7 +23,7 @@ To access the SEO section of a content page, you have to navigate to the page. W
 
 4. Finalize by clicking “Save”
 
-## Page specific SEO setting explained
+## Page specific SEO settings explained
 
 ### Title
 
