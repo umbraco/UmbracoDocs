@@ -3,41 +3,47 @@ versionFrom: 8.0.0
 ---
 
 # SEO settings in Uno
-In the settings section, you will be setting up your company information for SEO, which increases your visibility in search results when someone searches for something related to your company.
+
+In the SEO Settings, you will be setting up your company information for SEO, which increases your visibility in search results when someone searches for something related to your company.
 
 You can set this up by following the guide below:
 
-1. In the ***Content*** section, expand the home node (in this case that would be ***Unicorn Hotel***)
-2. Expand ***Settings*** and click on ***SEO***
+1. In the **Content** section, expand the home node (in this case that would be ***Unicorn Hotel***)
+2. Expand **Settings** and select **SEO**
 
-![SEO settings in your Uno project](images/Seo-settings-in-your-uno-project.png)
+    ![SEO settings in your Uno project](images/Seo-settings-in-your-uno-project.png)
 
 3. Now you are presented with a list of general SEO settings that you can fill out. Fill out all relevant fields with information for your project.
+4. Finalize and publish the changes by clicking **Save and publish** in the bottom-right corner
 
-4. Finalize by clicking “Save”
+Below we will go through each of the SEO options individually to show you what it does.
 
-Below we’ll go through each one individually to show you what it does.
+## General SEO settings explained
 
-### General SEO settings explained
+### Company name
 
-***Company name***
 This field is used to input the name of your company.
 
-***Company name*** is added as the “name” property in the schema markup type “Organization” that is added to the front page of your website.
-It is also added as the “name” property for “publisher” in the schema markup type “BlogPosting” that is added to your blog posts.
+Company name is added as the “name” property in the schema markup type “Organization” that is added to the front page of your website. It is also added as the “name” property for “publisher” in the schema markup type “BlogPosting” that is added to your blog posts.
 
-[Read more about “Organization” schema markup here](https://schema.org/Organization) and [read more “BlogPosting” schema markup here](https://schema.org/BlogPosting).
+If you want to learn more about this, checkout the following resurces:
 
-***Site name***
+* [“Organization” schema markup](https://schema.org/Organization) and
+* [“BlogPosting” schema markup](https://schema.org/BlogPosting)
+
+### Site name
+
 This field is used to input the name of your website. This can be the same as your company name or a name that you want to use for your website.
 
-***Site name*** is added as a value to the Open Graph property "OG:site_name"
-[Read more about Open Graph properties here](https://ogp.me/).
+Site name is added as a value to the Open Graph property "OG:site_name". Learn more about these properties on [Open Graph website](https://ogp.me/).
 
-***Site name*** is also added as the link title for the logo used in the top navigation bar.
+Site name is also added as the link title for the logo used in the top navigation bar.
 
-***Company logo***
-This field is used to upload your company logo. Please note that this logo will not be visible on your website. To set the visible logo on your website you will need to go to ***Theme*** under ***Settings*** and add your logo.
+### Company logo
+
+This field is used to upload your company logo. Please note that this logo will not be visible on your website.
+
+To set the visible logo on your website you will need to go to **Theme** under **Settings** and add your logo.
 
 ***Company logo*** is added as the "logo" property in the schema markup type "Organization" that is added to the front page of your website.
 It is also added as the “logo” property for “publisher” in the schema markup type “BlogPosting” that is added to your blog posts.
