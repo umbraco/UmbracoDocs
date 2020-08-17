@@ -233,7 +233,7 @@ public interface IUrlProvider
     IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current);
 }
 ```
-The url returned in the 'UrlInfo' object by GetUrl can be completely cusom.
+The url returned in the 'UrlInfo' object by GetUrl can be completely custom.
 
 If implementing a custom Url Provider, consider following things:
 
