@@ -66,7 +66,7 @@ As the name indicates, theme settings is where you go to manage the theme of you
 
 You can manage the theme settings for your website on the *Theme* page, which you can find as a child page to *Settings*.
 
-### [SEO settings](../Settings/SEO-settings)
+### [SEO settings](../Settings/SEO-Settings)
 
 In order for your website to perform well in various search results, Umbraco Uno ships with a set of configuration SEO settings that we highly recommend using.
 

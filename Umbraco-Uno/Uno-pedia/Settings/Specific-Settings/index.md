@@ -22,7 +22,7 @@ Available on the following Content Types: `Site`, `Page`, `Feed`, `Post` and `Se
 
 The SEO (Search Engine Optimization) group contains configuration options related to the SEO on your website.
 
-Read the [SEO](../../../SEO/Seo-for-pages) article for more details and recommendations on how to manage the page specific SEO on your Umbraco Uno project.
+Read the [SEO](../../../SEO/Page-specific-SEO) article for more details and recommendations on how to manage the page specific SEO on your Umbraco Uno project.
 
 ### Title
 

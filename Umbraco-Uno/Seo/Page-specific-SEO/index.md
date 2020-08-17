@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # SEO for specific pages
 
-Besides the [sitewide SEO settings](../Seo-settings-in-uno) you also have an SEO section on each of your content pages.
+Besides the [sitewide SEO settings](../General-SEO) you also have an SEO section on each of your content pages.
 
 These settings are specific to each of the pages, and we highly recommend that you carefully fill out each of the fields in order get the best SEO score for your Umbraco Uno website.
 
