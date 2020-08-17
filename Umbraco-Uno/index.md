@@ -20,7 +20,7 @@ Learn more about how to get your hands on an Umbraco Uno project, how to configu
 
 Looking to learn more about how to work with content in Umbraco Uno or are you brand new and need a place to start? In the Creating Content section you will find a guides for the most common scenarios when working with Umbraco Uno.
 
-## [Custom-Code](Custom-Code)
+## [Custom Code](Custom-Code)
 
 Do you want to extend on the features in your Umbraco Uno project? By enabled the option to add custom code you get full access to the source code and get the option to add even more flexibility to your project.
 
