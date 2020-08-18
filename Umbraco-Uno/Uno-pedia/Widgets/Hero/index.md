@@ -10,7 +10,7 @@ This widget is ideal for content on your homepage or more primary landing pages.
 
 ## Sample
 
-Below you can see an example of how a Hero widget might look. This contains the *Pre Header*, *Heading*, *Text* and a *Button*.
+Below you can see an example of how a Hero widget might look. This contains the *Pre Heading*, *Heading*, *Text* and a *Button*.
 
 ![Frontend example of the Hero widget](images/hero-widget-frontend.png)
 
