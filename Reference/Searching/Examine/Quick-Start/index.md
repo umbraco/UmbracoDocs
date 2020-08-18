@@ -242,6 +242,9 @@ To search through **all child nodes of a specific node** by their **bodyText pro
 ```csharp
 var results = searcher.CreateQuery("content").ParentId(1105).Field("bodyText", searchTerm).Execute();
 ```
+### Search descendants of a specific home node
+To search through **all descendants of a specific node** by their **bodyText property**, refer [here](../examine-events#Adding-the-path-of-the-node-as-a-searchable-field-into-the-index).
+
 :::tip
 If you are familiar with the MVC pattern of working with forms, then have a look at `SurfaceController` documentation. There you can learn how to create a strongly typed form that posts back to a SurfaceController, which then handles the validation of the form post with a custom ViewModel in an MVC-like pattern in Umbraco.
 :::
