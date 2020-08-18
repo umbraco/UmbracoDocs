@@ -184,6 +184,16 @@ Get a collection of Media by tag, and you can optionally filter by tag group as 
 }
 ```
 
+### .TagQuery.GetMediaByTagGroup(string tag, [string tagGroup])
+
+Get a collection of Media by tag group
+
+```csharp
+@{
+    var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
+}
+```
+
 ### .TagQuery.GetTagsForEntity(int contentId, [string tagGroup])
 
 Get a collection of tags by entity id (queries content, media and members), and you can optionally filter by tag group as well
