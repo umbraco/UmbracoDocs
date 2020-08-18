@@ -16,6 +16,7 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 * [Publishing content](#publishing-content)
 * [Unpublishing content](#unpublishing-content)
 * [Other options](#other-options)
+* [Forms](#forms)
 
 ## Creating content
 
@@ -116,3 +117,19 @@ This option will reload the sub pages for the selected piece of content.
 :::tip
 Use this option on the start page to reload the entire Content tree.
 :::
+
+## Forms
+
+Nothing special differs, except for using [Recaptcha](#recaptcha), when working with forms, in regards to the CMS what can be found in the CMS, so head over to [Umbraco Forms Documentation](https://our.umbraco.com/documentation/add-ons/umbracoforms/), to start working with Umbraco Forms.
+
+### Recaptcha
+
+In order to use Recaptcha in Umbraco Forms, you should perform the following steps
+
+- Open a browser and navigate to https://www.google.com/recaptcha/admin/create
+- Fill the form and submit it
+- Copy the site key and secret key
+- Open your Uno site and navigate to Settings and Forms
+- Copy and paste, your site key, into the mandatory field, "Recaptcha public key"
+- Save and publish the Forms settings content node
+- Forms Recaptcha field is now usable
