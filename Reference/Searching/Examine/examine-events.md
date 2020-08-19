@@ -149,7 +149,7 @@ var results = searcher.CreateQuery("content").Field("combinedField", searchTerm)
 
 ### Adding the path of the node as a searchable field into the index
 
-Sometimes you might want to search descendants of a node rather than just immediate children for a particular search term. In this instance we need to right out the `path` property as a searchable field into the index. The `path` property is a comma separated string. Due to presence of the comma in the path, the field is not tokenized therefore it is not searchable. We will inject new
+Sometimes you might want to search descendants of a node rather than immediate children for a particular search term. In this instance, we need to write out the `path` property as a searchable field into the index. The `path` property is a comma-separated string. Due to the presence of the comma in the path, the field is not tokenized therefore it is not searchable. We will inject new
 field with path that has comma removed this making it searchable. This can be done by adding the new field using `IndexProviderTransformingIndexValues` method. So continuing from the above example the method will look like below.
 
 ```csharp
