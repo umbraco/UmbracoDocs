@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "tinyMce Configuration in Umbraco"
+meta.Description: "Reference on tinyMce Configuration in Umbraco"
 ---
 
 # tinyMceConfig - Rich Text Editor Configuration

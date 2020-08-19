@@ -20,7 +20,7 @@ When you log in to the Umbraco Backoffice, the first thing you will see if the C
 
 Content in Umbraco is based on **Document Types** which will define what type of data we can put into our content. A Document Type consists of a set of **Properties** - also called fields. A Property is made up of a **Data Type** which is a custom configuration of a **Property Editor**. Umbraco comes with a set of Property Editors, including a *Text Area*, a *Date Picker*, a picker for media items and many more.
 
-As we go through this tutorial and start builing the content for our Umbraco Heartcore project, you will learn more about each of these concepts and how they all work together.
+As we go through this tutorial and start building the content for our Umbraco Heartcore project, you will learn more about each of these concepts and how they all work together.
 
 :::note
 **New to Umbraco?**

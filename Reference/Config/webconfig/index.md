@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "web.config settings in Umbraco"
+meta.Description: "Reference on web.config settings in Umbraco"
 ---
 
 # Web.config
@@ -178,4 +180,4 @@ The default value is: `false`
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.

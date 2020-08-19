@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+meta.Title: "umbracoSettings.config options in Umbraco"
+meta.Description: "Reference on umbracoSettings.config options in Umbraco"
 ---
 
 # umbracoSettings

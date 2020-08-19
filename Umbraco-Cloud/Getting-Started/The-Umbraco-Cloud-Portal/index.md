@@ -23,6 +23,12 @@ Choose the plan you want and a project will be ready for you within a few minute
 You can also see notifications for your different projects in the top-right corner,
 e.g if your project have been automatically updated or if an upgrade has failed.
 
+## Organization
+
+On Umbraco Cloud it is possible to get an organization to manage the projects that you and members of your company creates to get an overview of all of your projects.
+
+Find out more in the [Organization article](Organizations).
+
 ## Project Management
 
 Managing your individual projects has been made even simpler with Umbraco Cloud.
@@ -84,3 +90,5 @@ From your profile settings you can set your time zone. This applies to the displ
 #### Experimental Features
 
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
+
+

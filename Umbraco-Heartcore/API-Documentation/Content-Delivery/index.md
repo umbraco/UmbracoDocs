@@ -31,7 +31,7 @@ GET https://cdn.umbraco.io/content?culture=en-US
 
 ## [Content endpoints](content/)
 
-Content endpoints for retrieving specific content by ID or URL. It is also possible to retrieve children, descendants and anscestors structured according to the Content tree structure.
+Content endpoints for retrieving specific content by ID or URL. It is also possible to retrieve children, descendants and ancestors structured according to the Content tree structure.
 
 ## [Media endpoints](media/)
 

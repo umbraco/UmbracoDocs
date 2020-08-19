@@ -88,9 +88,9 @@ This code will output a list of all the **_Article Items_** as links using the n
 
 ```csharp
 <article class="special">
-    <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-    <div class="articlepreview">@item.Value("articleContent").ToString().Truncate(100) <a href="@item.Url">Read More..</a></div>
-</article>
+        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url">Read More..</a></div>
+    </article>
 <hr/>
 ```
 
