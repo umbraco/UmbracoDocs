@@ -18,7 +18,7 @@ Below is an example of a *small* image with the caption: "The bar.".
 
 The Image widget comes with a set of configurable settings.
 
-![Image on the Backoffice](images/image-content-and-settings.png)
+![Image on the Backoffice](images/image-content-and-setting.png)
 
 ### Content
 

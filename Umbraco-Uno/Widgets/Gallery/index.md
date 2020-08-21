@@ -14,16 +14,23 @@ You can click the image to zoom in, where you can browse through the images in t
 
 Below you can see how the gallery would look with image width at 20%, and a blue background color.
 
-![Example of Gallery with 3 images and the theme color used as background](images/The-Gallery.png)
+![Example of Gallery with 3 images and the theme color used as background](images/gallery-frontend.png)
 
 ## Configuration options
 
+Below is an overview of the configuration used on the gallery in the sample.
+
+![Overview of Content and Settings config options](images/gallery-content-and-settings.png)
+
+### Content
+
 - Media
+
+### Settings
+
 - Container Width
-- Image Width
+- Image Width (same size for all images in the gallery)
 - Remove Image Boarder
 - Disable Gallery Zoom
 - Background Color
 - Animate
-
-![Gallery Backoffice](images/Gallery-Backoffice.png)
