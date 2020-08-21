@@ -18,6 +18,7 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 ![A visual sample of all three sidebar widgets](images/sidebarwidgets-samples.png)
 
 ## Configuration options
+
 ### Text
 
 * Heading

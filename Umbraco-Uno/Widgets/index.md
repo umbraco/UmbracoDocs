@@ -14,7 +14,7 @@ This article gives an overview of the available widgets, along with resources on
 
 Widgets are the building blocks of Umbraco Uno and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
 
-## [Working with widgets](../../Creating-Content/Working-with-widgets)
+## [Working with widgets](../Creating-Content/Working-with-widgets)
 
 Learn how and when to add widgets to pages, how to sort and arrange them as well as how to get a copy of already configured widgets.
 
