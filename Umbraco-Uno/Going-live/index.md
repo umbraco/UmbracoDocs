@@ -65,7 +65,7 @@ Learn much more about how to reap all the benefits of the SEO configuration on y
 You will need to choose between Mailchimp or Campaign Monitor, and then after that fill out your API Key and Default Subscriber ID.
 This is necessary, otherwise your newsletter won't work.
 
-To have a newsletter function on your website it will need to be set up through the [Newsletter Widget](../Uno-pedia/Widgets/Newsletter).
+To have a newsletter function on your website it will need to be set up through the [Newsletter Widget](../Widgets/Newsletter).
 
 ## Tracking and Access
 

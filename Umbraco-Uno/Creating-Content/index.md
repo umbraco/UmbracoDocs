@@ -14,7 +14,7 @@ An example of this could be choosing between the Image widget and the Gallery wi
 
 Which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
 
-There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Uno-pedia/Widgets/Grid) feature.
+There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Widgets/Grid) feature.
 
 ### Widget based design and structure
 
@@ -57,4 +57,4 @@ The Rich Text Editor or RTE as people call it is a great way to create content. 
 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
-For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Uno-pedia/Widgets) section in the Uno-pedia.
+For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Widgets) section in the Uno-pedia.

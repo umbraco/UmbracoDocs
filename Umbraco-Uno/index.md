@@ -52,7 +52,7 @@ An Umbraco Uno project can be configured in many different way. In this section 
 
 A set of content types will be available to you. This section will give you more information about each of these types.
 
-### [Widgets](Uno-pedia/Widgets)
+### [Widgets](Widgets)
 
 Widgets are the *building blocks* of Umbraco Uno. In this section you can learn more about each of the widgets, to learn how they can be used.
 

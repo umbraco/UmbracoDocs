@@ -48,12 +48,12 @@ This is a bit different, from adding a link to the navigation. Instead we will a
 
 #### Big Navigation items and grids
 
-To add this, we're going to use a Grid, which uses all the standard [Grid widgets](../../Uno-pedia/Widgets/Grid).
+To add this, we're going to use a Grid, which uses all the standard [Grid widgets](../../Widgets/Grid).
 
 We'll be adding a total of **3 columns** to the Accommodation navigation item.
 
 13. Select **Add Content** next to *Columns*
-14. Choose the [Pod widget](../../Uno-pedia/Widgets/Grid/Pod)
+14. Choose the [Pod widget](../../Widgets/Grid/Pod)
 15. Set the *Column width* to 33%
 16. Choose a heading - *Executive suites*
 17. Add a bit of text - for this guide, I'll be adding a bit of *Lorem Ipsum* text

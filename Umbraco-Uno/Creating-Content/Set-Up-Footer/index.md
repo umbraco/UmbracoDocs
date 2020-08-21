@@ -22,7 +22,7 @@ Start by doing the following:
 3. In the workspace scroll to the bottom and find the group called Footer
 4. In the field saying “Footer Columns” click “Add Content” which will give you 7 options for content to add
 
-## [Navigation](../../Uno-pedia/Widgets/Grid/Navigation)
+## [Navigation](../../Widgets/Grid/Navigation)
 
 Let’s start by adding Navigation.
 
@@ -38,7 +38,7 @@ Let’s start by adding Navigation.
 
 ![The finished footer](images/Navigatio-Footer.png)
 
-## [Opening Hours](../../Uno-pedia/Widgets/Opening-hours)
+## [Opening Hours](../../Widgets/Opening-hours)
 
 Now we click "Add content" again. To add your opening hours click "Opening Hours"
 
@@ -51,7 +51,7 @@ Now we click "Add content" again. To add your opening hours click "Opening Hours
 
 ![The finished footer](images/Opening-Hours-Footer.png)
 
-## [Contact](../../Uno-pedia/Widgets/Contact)
+## [Contact](../../Widgets/Contact)
 
 The next step is to add Contact to your footer.
 
@@ -65,7 +65,7 @@ The next step is to add Contact to your footer.
 
 ![The finished footer](images/Contact-Footer.png)
 
-## [Social Links](../../Uno-pedia/Widgets/Social-links)
+## [Social Links](../../Widgets/Social-links)
 
  For our final piece of content in the footer choose "Social Links".
 

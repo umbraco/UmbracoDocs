@@ -18,7 +18,7 @@ Setting up your template comes in two parts - first you need to make a page that
 ### Setting up the widgets of the page
 
 Start by setting up the page with some widgets.
-You can read more about [Widgets](../../Uno-pedia/Widgets/index.md) in the Uno-pedia.
+You can read more about [Widgets](../../Widgets) in the Uno-pedia.
 
 1. Click the three dots on your home page (**...**) and select Page
 2. Name the page
@@ -34,9 +34,9 @@ Now that we have a page that we want to use, follow the steps below to create th
 
 1. In the content tree, click the three dots on the page you created in the steps above
 
-:::center
-![Three dots icon](images/Three-Dots.png)
-:::
+    :::center
+    ![Three dots icon](images/Three-Dots.png)
+    :::
 
 2. Select ***Do something else*** - which is at the bottom of the menu
 3. On the list choose ***Create Content Template***

@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Working with widgets
 
-Widgets are the building blocks used to create and customize Umbraco Uno websites. There is [a long list of available widgets](../../Uno-pedia/Widgets), all tailored to specific purposes ranging from static text fields to elaborate grid structures.
+Widgets are the building blocks used to create and customize Umbraco Uno websites. There is [a long list of available widgets](../../Widgets), all tailored to specific purposes ranging from static text fields to elaborate grid structures.
 
 Being the main way to add content to pages, widgets are available on the following content types:
 
@@ -37,7 +37,7 @@ To add a widget, follow these steps:
 * Save and/or publish the page in order for the changes to be reflected
 
 :::tip
-Find links to articles describing each available widget in the [Widgets](../../Uno-pedia/Widgets) article.
+Find links to articles describing each available widget in the [Widgets](../../Widgets) article.
 :::
 
 ## Copying widgets

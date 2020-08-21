@@ -154,10 +154,9 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
 
-- [Hero](../../Uno-pedia/Widgets/Hero/index.md)
-- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text/index.md)
-- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image/index.md)
-- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video/index.md)
-- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List/index.md)
-- [Slider Widget](../../Uno-pedia/Widgets/Slider/index.md)
-
+- [Hero](../../Widgets/Hero)
+- [Grid Text Widget](../../Widgets/Grid/Text)
+- [Grid Image Widget](../../Widgets/Grid/Image)
+- [Grid Video Widget](../../Widgets/Grid/Video)
+- [Grid Price List Widget](../../Widgets/Grid/Price-List)
+- [Slider Widget](../../Widgets/Slider)
