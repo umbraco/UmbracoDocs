@@ -18,7 +18,7 @@ Below you can see an example of how a Hero widget might look. This contains the 
 
 You will have a lot of settings for your Hero widget, letting you customize the widget to your liking.
 
-![Content and Setting options for the Hero widget](images/hero-content-and-settings.png)
+![Content and Setting options for the Hero widget](images/hero-content-and-settings2.png)
 
 ### Content
 
