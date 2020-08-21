@@ -4,36 +4,37 @@ versionFrom: 8.0.0
 
 # Logos
 
-![Logos widget icon](images/The-Logos-Widget.png)
+The Logos widget lets you add a set of logos to your website. You can choose what images you will use for logos, and what pages they need to link to.
 
-The Logos Widget does what the name implies, and lets you add a set of logos to your website.
-You can choose what images you will use for logos, and what pages they need to link to and/or you can add text to it.
+The widget also includes the option to add a Pre Heading, a Heading and more text if needed.
 
-The configuration for this widget is divided into two parts:
+Use this widget when you want to reference or highlight your partners or special cases your company has worked with or for.
 
 ## Sample
 
-![Frontend example of the Logos widget with 2 widgets added in black and white on a dark background](images/Logos.png)
+![Frontend examples with 3 logos and a Pre Heading](images/logos-frontend.png)
 
 ## Configuration Options
+
+![Configuration options for Content and Settings on the Gallery widget](images/logos-content-and-settings.png)
+
+### Content
 
 - Pre Heading
 - Heading
 - Text
+- Logos
+
+You can add multiple logos, and for each there is a set of configuration options:
+
+- Image
+- (Optional) Link
+- Width (default: 120px)
+
+### Settings
+
 - Container Width
 - Compact (removes the extra padding over and under this widget)
 - Black & White (images will be shown in black & white)
-- Add content (you need to do this to get the second section)
 - Background Color
 - Text Color
-
-![Logos Backoffice part 1](images/Logos-part1.png)
-
-Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
-
-- Alias (the name of the logos)
-- Image
-- Link (links the logo to another page on your site or a different site)
-- Width
-
-![Logos Backoffice part 2](images/Logos-part2.png)
