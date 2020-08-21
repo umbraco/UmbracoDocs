@@ -19,7 +19,7 @@ The single instance backoffice Web App should be set to use [SyncTempEnvDirector
 The multi instance front end Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 ### Umbraco TEMP files
-When an instance of Umbraco starts up it generates some 'temporary' files on disk... in a normal IIS environment these would be created within the folders of the Web Application. In an Azure Web App we want these to be created in the local storage of the actual server that Azure happens to be using for the Web App. So we set this configuration setting to 'true' and the temporary files will be located in the environment temporary folder. This is great for 'speed' of access for Umbraco operation however, the downside is it's  difficult on Azure to manually browse to this temporary location if you are troubleshooting for any reason.
+When an instance of Umbraco starts up it generates some 'temporary' files on disk... in a normal IIS environment these would be created within the folders of the Web Application. In an Azure Web App we want these to be created in the local storage of the actual server that Azure happens to be using for the Web App. So we set this configuration setting and the temporary files will be located in the environment temporary folder. This is great for 'speed' of access for Umbraco operation however, the downside is it's  difficult on Azure to manually browse to this temporary location if you are troubleshooting for any reason.
 			
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
