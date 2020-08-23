@@ -404,6 +404,7 @@ namespace Umbraco8.Services
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
+using Umbraco.Web.PublishedCache;
 
 namespace Umbraco8.Services
 {
