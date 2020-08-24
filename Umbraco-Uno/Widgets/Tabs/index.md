@@ -4,18 +4,21 @@ versionFrom: 8.0.0
 
 # Tabs
 
-![Tabs widget icon](images/The-Tabs-Widget.png)
+The Tabs widget allows you to create tabs like the ones you find in your browser. Each tab can contain any widgets you desire.
+You can even add multiple widgets within one ***Tabs widget***. This means you could have the ***Text widget*** and the ***Image widget*** on one tab and a ***Forms widget*** on another tab.
 
-The Tabs Widget allows you to create tabs like the ones you find in your browser. Each tab can contain any widgets you desire.
-You can even add multiple widgets within one ***Tabs Widget***. This means you could have the ***Text Widget*** and the ***Image Widget*** on one tab and a ***Forms Widget*** on another tab.
+## Sample
 
-## Samples
+![First frontend examble with 2 tabs - an image in the first tab](images/Tabs-front.png)
 
-![First frontend examble with 2 tabs - an image in the first tab](images/tab1.png)
-![Second frontend example with 2 tabs - a forms in the second tab](images/tab2.png)
 
 ## Configuration options
 
-- Theme Color
+In the tabs widget, you dont have a lot of options in the settings tab, this is because your configuration will be individual for each tab you add to the tab and as such you will have to set them up individually for each item.
+You can get to the configurations options for each item by hovering over the item row and then clicking the cog that will appear.
 
-![Tab Backoffice](images/Tabs-Backoffice.png)
+![Tab Backoffice](images/Tabs-settings.png)
+
+### Settings
+
+- Theme Color
