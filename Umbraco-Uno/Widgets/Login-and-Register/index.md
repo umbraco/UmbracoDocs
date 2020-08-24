@@ -19,17 +19,20 @@ In the backoffice you will be able to see your registerd members by clicking ont
 
 ![Example of a Register form on the frontend](images/Regiseter-element.png)
 
-### Configuration Options
+### Content
 
 - Header
 - Text
 - Image
-- Background Color
-- Text Color
 - Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
-![Register Backoffice](images/Register-Backoffice.png)
+### Settings
+
+- Background Color
+- Text Color
+
+![Register Backoffice](images/Register-final.png)
 
 ## Login
 
@@ -43,16 +46,19 @@ It is worth to note that The Login Widget, also works for members that were crea
 
 ![Frontend example of a Login form](images/login-prompt.png)
 
-### Configuration Options
+### Content
 
 - Heading
 - Text
 - Image
-- Background Color
-- Text Color
 - Redirect URL (This is where you decide where the members are redirected to after they log in)
 
-![Login Backoffice](images/Login-Backoffice.png)
+### Settings
+
+- Background Color
+- Text Color
+
+![Login Backoffice](images/Login-final.png)
 
 :::note
 When the Login widget is added to a page, whenever that page is loaded it will default to show the login form.
