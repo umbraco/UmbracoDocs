@@ -12,15 +12,19 @@ The Latest From Feed Widget, is used to show posts from a ***Feed*** that you al
 
 ![Feed Frontend](images/Feed-frontend.png)
 
-## Configuation Options
+### Content
 
 - Pre Header - text above the Heading.
 - Heading
 - Intro box, lets you give the reader a short intro text to what the articles in the feed is about.
 - Feed Page, where you pick which feed you want displayed
 - Number Of Posts, gives you the option to select the amount of posts the widget will show
-- Background Color
-- Text Color
 - Buttons
 
-![Feed Backoffice](images/Feed-Backoffice.png)
+### Settings
+
+- Background Color
+- Text Color
+
+![Feed Backoffice](images/Latest-from-feed-final.png)
+
