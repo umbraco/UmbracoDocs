@@ -4,21 +4,32 @@ versionFrom: 8.0.0
 
 # Text and images
 
-![Text and Images widget icon](images/The-Text-And-Images-Widget1.png)
-
 This Widget allows you to create a collage of images and text.
 You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it.
 
+An example could be that you had an event so the event text would be on the right side, with some of the images on the left, the link button could then link to the full gallery.
+
 ## Sample
 
-![Frontend example of the Text and Images widget - images to the right, text to the left](images/Example-text-images.png)
+![Frontend example of the Text and Images widget - images to the right, text to the left](images/Text-image-front.png)
 
 ## Configuration Options
+
+In these configurations, you will have a lot of options to customize both text and images.
+
+
+![Text and Images Backoffice](images/Text-images-final.png)
+
+### Content
 
 - Pre Heading
 - Heading
 - Text
 - Images
+- Buttons
+
+### Settings
+
 - Remove Image Borders
 - Contain Image
 - Container Width
@@ -27,6 +38,4 @@ You can have ***six*** images in total, You can add a ***Pre Heading*** and a **
 - Background Color
 - Text Color
 - Animate
-- Buttons
 
-![Text and Images Backoffice](images/Text-Image-Backoffice.png)
