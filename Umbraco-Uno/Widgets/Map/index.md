@@ -16,11 +16,10 @@ The way it works is that you type in the ***Latitude*** and ***Longitude*** and 
 
 When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
 
-## Configuration Options
+## Content
 
-- Height
+
 - Custom Map Pin Icon
-- Show Content Next To Map
 - Pre Heading
 - Heading
 - Text
@@ -28,9 +27,13 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 - Phone Number
 - Email
 - Opening Hours
-- Background Color
-- Text Color
 - Buttons
 
-![Part 1 of the map backoffice](images/Map-backoffice1.png)
-![Part 2 of the map backoffice](images/Map-backoffice2.png)
+### Settings
+
+- Height
+- Show Content Next To Map
+- Background Color
+- Text Color
+
+![the map backoffice](images/Map-final.png)
