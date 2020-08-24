@@ -93,19 +93,17 @@ To reorder the Blocks, click and drag a Block up or down to place in the decired
 
 To delete a Block click the trash-bin icon appearing on hover.
 
-
-
-
 ## Rendering Block List Content
 
-To render the stored value of your **Block List** property can be done in two ways.
+Rendering the stored value of your **Block List** property can be done in two ways.
 
-### Default rendering
-Use the build-in rendering machinsme for rendering block by a Partial View for each block.
+### 1. Default rendering
+Use the build-in rendering machinsm for rendering blocks via a Partial View for each block.
+
 To make this work you will need to create a Partial View for each block, named by the alias of the ElementType thats begin used as Content Model.
-These partial views must be placed in this folder `Views/Partials/BlockList/Components/`
+These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
 
-A Partial View will recive the model of `Umbraco.Core.Models.Blocks.BlockListLayoutReference` This gives you the option to access properties of the Content Section and Settings Section of your Block.
+A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListLayoutReference`. This gives you the option to access properties of the Content and Settings section of your Block.
 
 Example:
 
@@ -118,8 +116,8 @@ Example:
 }
 ```
 
-### Build your own rendering
-A built in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListLayoutReference>` and the stored value will be returned as a list of `BlockListLayoutReference` entities.
+### 2. Build your own rendering
+A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListLayoutReference>` and the stored value will be returned as a list of `BlockListLayoutReference` entities.
 
 Example:
 
