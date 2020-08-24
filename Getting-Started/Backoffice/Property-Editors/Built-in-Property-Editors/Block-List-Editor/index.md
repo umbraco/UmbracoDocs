@@ -25,7 +25,7 @@ The Data Type editor allows you to configure the following properties:
 - **Available Blocks** - Here you will define the Block Types to be available for use in the propety. Read more on how to set up Block Types below.
 - **Amount** - Sets the minimum and/or maximum number of items that should be allowed in the list.
 - **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens item deletions to require a confirmation before being deleted. Defaults to `true`.
-- **Property editor width** - Overwrite the width of the property editor, this field takes any valid css value for "max-width".
+- **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
 
 
 ## Setup Block Types
@@ -37,17 +37,17 @@ Each Block has a set of properties that are optional to configure:
 **Editor apperance**
 
 - **Label** - Define a label for the apperance of the Block in the editor. The label can use angularJS template string syntax to display values of properties. Example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar"
-- **Custom view** - Overwrite the angularJS view for thing block presentation in the content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own angularJS controller to the view.
-- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the content editor. By adding a stylesheet the styling of this block will become scope. Meaning that BackOffice styles are no longer present for the view of this block.
-- **Overlay editor size** - Set the size for the content editor overlay for editing this block.
+- **Custom view** - Overwrite the angularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own angularJS controller to the view.
+- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scope. Meaning that backoffice styles are no longer present for the view of this block.
+- **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 **Data models**
 
-- **Content model** - This presents the ElementType used as model for the content section of this Block. This cannot be changed, but you canopen the ElementType to performe edits or just view the properties available. Usefull when writting your Label.
+- **Content model** - This presents the ElementType used as model for the content section of this Block. This cannot be changed, but you can open the ElementType to perform edits or just view the properties available. Usefull when writing your Label.
 - **Settings model** - Add a Settings section to your Block based on the given ElementType. When picked you can open the ElementType or choose to remove the settings section again.
 
 **Catalogue apperance**
-These properties referess to how the Block is presented in the Block catelogue, when editors choose which Blocks to create for their content.
+These properties refers to how the Block is presented in the Block catelogue, when editors choose which Blocks to use for their content.
 
 - **Background color** - Define a background color to be displayed beneath the icon or thumbnail.
 - **Icon color** - Change the color of the ElementType icon.
@@ -56,7 +56,7 @@ These properties referess to how the Block is presented in the Block catelogue, 
 **Advanced**
 These properties are relevant when you work with custom views.
 
-- **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block. And you are using default editing mode(not inline) you might want to hide the content-editor from the block editor overlay.
+- **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode(not inline) you might want to hide the content-editor from the block editor overlay.
 
 
 ## Editing Blocks
