@@ -14,15 +14,15 @@ versionFrom: 8.7.0
 
 ## Configure Block List
 
-The **Block List** property editor is configured in the same way as any standard property editor, via the *Data Types* admin interface. To set-up your Block List Editor property, create a new *Data Type* and select **Block List** from the list of available property editors.
+The **Block List** property editor is configured in the same way as any standard property editor, via the *Data Types* admin interface. To set up your Block List Editor property, create a new *Data Type* and select **Block List** from the list of available property editors.
 
 Then you will see the configuration options for a **Block List** as shown below.
 
 ![Block List - Data Type Definition](images/BlockListEditor_DataType.png)
 
-The data-type editor allows you to configure the following properties:
+The Data Type editor allows you to configure the following properties:
 
-- **Available Blocks** - Here you will define the Block Types to be available for use in the propety, read more on setup block types below.
+- **Available Blocks** - Here you will define the Block Types to be available for use in the propety. Read more on how to set up Block Types below.
 - **Amount** - Sets the minimum and/or maximum number of items that should be allowed in the list.
 - **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens item deletions to require a confirmation before being deleted. Defaults to `true`.
 - **Property editor width** - Overwrite the width of the property editor, this field takes any valid css value for "max-width".
