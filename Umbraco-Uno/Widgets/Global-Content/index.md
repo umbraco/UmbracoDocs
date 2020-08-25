@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 What this widget does for you, is that it allows you to pick pre-made widgets, also called Global Content.
 
-To learn more about how to create Global Content, you can read the [Global Content](../Content-Types/Global-Content/index.md) article.
+To learn more about how to create Global Content, you can read the [Global Content](../Uno-pedia/Content-Types/Global-Content/index.md) article.
 
 Once you've added the Global Content Widget to your page, follow these steps to select which Global Content you want to use:
 
@@ -14,7 +14,7 @@ Once you've added the Global Content Widget to your page, follow these steps to 
 - From the dialog in the right-hand side, expand the folder containing your Global Content (click the arrow next to it)
 - Finally, select which of your pre-made widgets you want to add to your page
 
-Keep in mind that in order for there to be anything to select, you will have to have set-up some widgets using the [Global Content](../../Content-Types/Global-Content/index.md) feature.
+Keep in mind that in order for there to be anything to select, you will have to have set-up some widgets using the [Global Content](../../Uno-pedia/Content-Types/Global-Content/index.md) feature.
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
