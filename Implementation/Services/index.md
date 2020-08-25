@@ -446,6 +446,12 @@ namespace Umbraco8.Services
 
 The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and its use outside of controllers and views.
 
+:::tip
+Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with   third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
+
+See the [Circular Dependencies](Circular-Depndencies) article for an example on how to get around this.
+:::
+
 ###### Aside: What is the IUmbracoContextAccessor then?
 
 The `IUmbracoContextFactory` will obtain an `UmbracoContext` by first checking to see if one exists on the current thread using the `IUmbracoContextAccessor`. This is a singleton that can be injected anywhere and whose function is to provide access to the current UmbracoContext. On a 'non request' thread the IUmbracoContextAccessor's UmbracoContext property will be null and the IUmbracoContextFactory will create a new instance of the UmbracoContext.
