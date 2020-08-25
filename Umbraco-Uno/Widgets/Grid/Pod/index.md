@@ -9,9 +9,13 @@ You can also add a link and a background image.
 
 ## Sample
 
-![Pod Frontend](images/Pod-frontend.png)
+![Pod Frontend](images/Pod-front.png)
 
 ## Configuration options
+
+For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. when in the menu click the widget you want to change the settings for.
+
+![Pod Backoffice](images/Pod-content.png)
 
 - Column Width
 - Heading
@@ -23,5 +27,3 @@ You can also add a link and a background image.
 - Pod Media Left - This will allow you to let the image and icon float to the left of your text.
 - Link
 - Button
-
-![Pod Backoffice](images/Pod-backoffice1.png)![Pod Backoffice](images/Pod-backoffice2.png)
