@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # The Grid
 
-The Grid Widget lets you set up a framework of widgets and you will have the ability to make it look the way you want. 
+The Grid Widget lets you set up a framework of widgets and you will have the ability to make it look the way you want.
 
 When you add the Grid widget you get to set up the general look of the grid, and choose what widgets you want it  to contain.
 
@@ -34,7 +34,8 @@ The best way to learn about how to customize the grid is to create a few widgets
 
 These are the options you will have to customize your grid, each of these options plays an important part in making your grid exactly how you like it.
 
-- Alias
+![Grid Settings](images/Grid-Settings.png)
+
 - Container Width
 - Remove Column Gutter
 - Compact
@@ -45,7 +46,7 @@ These are the options you will have to customize your grid, each of these option
 - Text Color - This lets you change the text color in your grid.
 - Animate - This gives your grid an animation that makes it fade into view when the user arrives at the grid.
 
-![Grid Settings](images/Grid-Settings.png)
+
 
 ## Presentation widgets
 

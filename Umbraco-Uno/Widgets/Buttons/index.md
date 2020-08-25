@@ -23,6 +23,3 @@ The settings for buttons can be found by clicking the *** Add Content *** button
 * Color (dark, light or theme color)
 * Transparency
 * Button size (small, default or big)
-
-
-
