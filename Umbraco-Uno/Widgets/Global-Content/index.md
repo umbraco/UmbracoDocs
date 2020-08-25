@@ -4,8 +4,6 @@ versionFrom: 8.0.0
 
 # Global Content
 
-![Global Content widget icon](images/The-Global-Content-Widget.png)
-
 What this widget does for you, is that it allows you to pick pre-made widgets, also called Global Content.
 
 To learn more about how to create Global Content, you can read the [Global Content](../../Content-Types/Global-Content/index.md) article.
@@ -22,8 +20,13 @@ This is a very useful tool if you have a widget that you use a lot and want to l
 
 See below an example, of what it might look like. In this example, there is a Hero Widget which have been created as Global Content and can therefore by selected with The Global Content Widget.
 
+## Sample
+
+![Configuration options for the Global Content widget](images/Hero-global.png)
+
 ## Configuration Options
 
+The global widget is a way to set up templates for the design so you wont have to set up the widgets for each page, that is why the global content it self dont have any options for settings, because you will be configuring the settings for each widget you add to the global content.
 
 
-![Configuration options for the Global Content widget](images/hero-standard.png)
+![Configuration options for the Global Content widget](images/Global-widget.png)
