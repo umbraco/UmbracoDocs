@@ -30,3 +30,7 @@ The global widget is a way to set up templates for the design so you wont have t
 
 
 ![Configuration options for the Global Content widget](images/Global-widget.png)
+
+:::Note
+Please be aware that you won't be able to see the preview for this in the backoffice.
+:::
