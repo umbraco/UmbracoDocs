@@ -10,7 +10,6 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 
 ![The three sidebar widgets available](images/sidebarwidgets-options.png)
 
-
 * Text (heading and text)
 * Navigation (external or internal links, with option to include child/sub pages)
 * Button (learn more about the various option in the [Buttons widget](../Buttons) article)

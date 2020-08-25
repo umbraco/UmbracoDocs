@@ -1,6 +1,6 @@
 # Login and Register
 
-Umbraco Uno offers a couple of widgets to setup member registration and access. This article presents an overview of the two widgets, Register and Login. To learn more about how to set-up and restrict member access on an Umbraco Uno website, read the [Members](../../../../Manage-Users/Members) article.
+Umbraco Uno offers a couple of widgets to setup member registration and access. This article presents an overview of the two widgets, Register and Login. To learn more about how to set-up and restrict member access on an Umbraco Uno website, read the [Members](../../Manage-Users/Members) article.
 
 If you want to be able to have members on your page then setting up register and login widgets is your best option, the register widget will let you have a page where the visitors of your page can register for an account and with the login widget, you will have a page where they can login with the account they created on the register page.
 
@@ -15,13 +15,13 @@ In the backoffice, you will be able to see your registered members by clicking o
 
 ![Example of a Register form on the frontend](images/Register-Front.png)
 
-## Confifuration Options
+### Configuration Options
 
 You will have a couple of options to make the registration window look how you want it to look.
 
-![Register Backoffice](images/Register-Final.png)
+![Register Backoffice](images/Register-final.png)
 
-### Content
+#### Content
 
 - Header
 - Text
@@ -29,7 +29,7 @@ You will have a couple of options to make the registration window look how you w
 - Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
-### Settings
+#### Settings
 
 - Background Color
 - Text Color
@@ -44,20 +44,20 @@ It is worth noting that The Login widget, also works for members that were creat
 
 ![Frontend example of a Login form](images/Login-Front.png)
 
-## Configuration Options
+### Configuration Options
 
 You will have some options to choose from when you set up your login widget, such as the background and text color.
 
-![Login Backoffice](images/Login-Final.png)
+![Login Backoffice](images/Login-final.png)
 
-### Content
+#### Content
 
 - Heading
 - Text
 - Image
 - Redirect URL (This is where you decide where the members are redirected to after they log in)
 
-### Settings
+#### Settings
 
 - Background Color
 - Text Color
