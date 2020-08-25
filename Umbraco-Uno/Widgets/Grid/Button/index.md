@@ -36,3 +36,7 @@ The options in Buttons are:
 ![Button Backoffice](images/Button-Backoffice.png)
 
 ![Button Options Backoffice](images/Button-Options-Backoffice.png)
+
+:::Note
+Please be aware that this is only for buttons in the grid widget.
+:::

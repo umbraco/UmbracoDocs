@@ -10,9 +10,13 @@ Buttons can customized to match the general layout and theme of the website and 
 
 ## Samples
 
-![Button examples](images/buttons-samples.png)
+![Button examples](images/Buttons-all.png)
 
 ## Configuration options
+
+The settings for buttons can be found by clicking the *** Add Content *** button inside another widget for example hero widget and when you add a button then you will have all the settings there.
+
+![Configuration options for buttons](images/Button-big.png)
 
 * Text
 * Link (external or internal)
@@ -20,4 +24,5 @@ Buttons can customized to match the general layout and theme of the website and 
 * Transparency
 * Button size (small, default or big)
 
-![Configuration options for buttons](images/buttons-config.png)
+
+
