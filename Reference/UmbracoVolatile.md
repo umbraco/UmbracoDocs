@@ -46,7 +46,7 @@ namespace VolatileDemo
 
 ## Defining your own UmbracoSuppressVolatileAttribute
 
-If you for some reason don't have access to the `Umbraco.Core.CodeAnnotations` namespace you can easily define your own attribute and it should do the trick as well. Simply create a class called `UmbracoSuppressVolatileAttribute` containing the following code: 
+If you for some reason don't have access to the `Umbraco.Core.CodeAnnotations` namespace you can define your own attribute and it should do the trick as well. Create a class called `UmbracoSuppressVolatileAttribute` containing the following code: 
 
 ```c#
 [AttributeUsage(AttributeTargets.Assembly)]
