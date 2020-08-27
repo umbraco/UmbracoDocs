@@ -59,13 +59,17 @@ In order to use the *Instagram Feed* widget, you will need to configure the foll
 
 Your Instagram username, without `@`.
 
-### User ID
+### User ID (optional)
 
-Your Instragram User ID which you can find by using this tool: [Find your User ID](https://codeofaninja.com/tools/find-instagram-user-id)
+Your Instragram User ID.
 
-### Access Token
+### Access Token (required)
 
-You will need to add your access token as well, in order for your Umbraco Uno project to connect.
+You will need to add your access token as well, in order for your Umbraco Uno project to connect to your Instagram profile.
+
+In order to generate an access token you will need to create a Facebook app and add your Instagram account as a test user.
+
+This can all be done by following steps 1-3 in the [Facebook Basic Display API Guide](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started).
 
 ## Cookie Consent
 

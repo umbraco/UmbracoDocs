@@ -41,6 +41,7 @@ The following widgets provides the option to pull in content from other sections
 
 The following list of widgets provides options to add images and other media items to your website.
 
+* [Instagram](Instagram)
 * [Image (single)](Image)
 * [Text and Images](Text-and-Images)
 * [Gallery (Media)](Gallery)
