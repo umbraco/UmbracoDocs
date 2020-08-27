@@ -13,7 +13,7 @@ will do the trick, if you don't have access to that specific namespace.
 
 ## Example of suppresing Umbraco Volatile Error
 
-~~~c#
+```c#
     public class DemoClass
     {
 	    [UmbracoVolatile]
@@ -22,14 +22,14 @@ will do the trick, if you don't have access to that specific namespace.
            // Volatile things here...
         }
     }
-~~~
+```
 
 Assume you're trying to use the VolatileMethod which is marked as Volatile. This will throw an Umbraco Volatile Error, 
 however you're only using it in a test and want to suppress the error to a warning.
 
 To supress the error to a warning, add the assembly level attribute by adding `[assembly: UmbracoSuppressVolatile]` above the namespace in any file within your assembly.
 
-~~~c#
+```c#
 [assembly: UmbracoSuppressVolatile]
 namespace VolatileDemo
 {
@@ -42,17 +42,17 @@ namespace VolatileDemo
         }
     }
 }
-~~~
+```
 
 ## Defining your own UmbracoSuppressVolatileAttribute
 
 If you for some reason don't have access to the `Umbraco.Core.CodeAnnotations` namespace you can easily define your own attribute and it should do the trick as well. Simply create a class called `UmbracoSuppressVolatileAttribute` containing the following code: 
 
-~~~c#
+```c#
 [AttributeUsage(AttributeTargets.Assembly)]
 public class UmbracoSuppressVolatileAttribute : Attribute
 {
 }
-~~~
+```
 
 Use it as described in the previous section and your project will build again.
