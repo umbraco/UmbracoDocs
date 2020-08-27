@@ -5,11 +5,11 @@ public since it's useful when testing.
 
 Methods marked with UmbracoVolatile may break in the future, however if you want to use the method for testing, 
 you can use an assembly level attribute called ```UmbracoSuppressVolatile```, when the attribute is applied to an assembly 
-any occurrences of Umbraco Volatiel Error will be suppressed to a warning. 
+any occurrences of Umbraco Volatile Error will be suppressed to a warning. 
 
 
 ```UmbracoSuppressVolatile``` is located in the ```Umbraco.Core.CodeAnnotations```, however any attribute named UmbracoSuppressVolatile 
-will do the trick if you don't have access to that specific namespace. 
+will do the trick, if you don't have access to that specific namespace. 
 
 ## Example of suppresing Umbraco Volatile Error
 
