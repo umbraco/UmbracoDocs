@@ -24,7 +24,7 @@ will do the trick, if you don't have access to that specific namespace.
     }
 ~~~
 
-Assume you're trying to use the VolatileMethod which is marked as Volatile, this will throw an Umbraco Volatile Error, 
+Assume you're trying to use the VolatileMethod which is marked as Volatile. This will throw an Umbraco Volatile Error, 
 however you're only using it in a test and want to suppress the error to a warning.
 
 To supress the error to a warning, add the assembly level attribute by adding ```[assembly: UmbracoSuppressVolatile]``` above the namespace in any file within your assembly.
