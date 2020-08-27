@@ -176,12 +176,7 @@ if (e.ValueSet.Category == IndexTypes.Content)
         {
             if (value != null)
             {
-                var path = value.ToString().Split(',');
-                
-                foreach (var p in path)
-                {
-                    pathBuilder.Append(" " + p + " ");  
-                }
+                var path = value.ToString().Replace(",", " ");
             }
         }
     }
