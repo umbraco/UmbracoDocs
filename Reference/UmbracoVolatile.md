@@ -1,3 +1,7 @@
+---
+meta.Title: "Umbraco Volatile Error"
+meta.Description: "Explanation of Umbraco Volatile Error, why it occurs, and what to do about it."
+---
 # Umbraco Volatile Error
 
 Umbraco Volatile Errors occurs when you are trying to use a method which *should* be internal, but is left 
