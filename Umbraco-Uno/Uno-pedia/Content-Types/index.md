@@ -50,7 +50,7 @@ All content added to the website will by default be added to the sitemap as well
 
 A sitemap content item will be excluded from the default navigation menu.
 
-## Settings
+## [Settings](../Settings)
 
 When building an Umbraco Uno website the Settings content type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
 
@@ -79,3 +79,9 @@ When you rename a page on your website or move a page below another page, Umbrac
 It is possible to create custom redirects as well, by adding the *Manual Redirects* page as a child page to *Settings*. Once this has been setup, redirects are created as items from the *Manual Redirects* page.
 
 Learn more about how to configure and work with manual redirects in the [Manual Redirects settings](../../../Seo/Manual-redirects-settings-in-uno) article.
+
+### Forms
+
+When you are working with Umbraco Forms in your Umbraco Uno project, you might want to use *Google Recatpcha* which is a field you can add to your forms.
+
+In order for the Recaptcha field to work properly, you will need to configure a key. Learn more about how this works and how to set it up in the [Creating Content](../../Creating-Content/#working-with-forms) article.
