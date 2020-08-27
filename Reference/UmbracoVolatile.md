@@ -8,7 +8,7 @@ you can use an assembly level attribute called ```UmbracoSuppressVolatile```, wh
 any occurrences of Umbraco Volatile Error will be suppressed to a warning. 
 
 
-```UmbracoSuppressVolatile``` is located in the ```Umbraco.Core.CodeAnnotations```, however any attribute named UmbracoSuppressVolatile 
+`UmbracoSuppressVolatile` is located in the `Umbraco.Core.CodeAnnotations`, however, any attribute named UmbracoSuppressVolatile 
 will do the trick, if you don't have access to that specific namespace. 
 
 ## Example of suppresing Umbraco Volatile Error
