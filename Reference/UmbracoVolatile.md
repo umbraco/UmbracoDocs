@@ -2,14 +2,18 @@
 meta.Title: "Umbraco Volatile Error"
 meta.Description: "Explanation of Umbraco Volatile Error, why it occurs, and what to do about it."
 ---
+
 # Umbraco Volatile Error
 
-Umbraco Volatile Errors occurs when you are trying to use a method which *should* be internal, but is left 
-public since it's useful when testing. 
+:::note
+This article is intended for the .NET Core release of Umbraco CMS.
 
-Methods marked with UmbracoVolatile may break in the future, however if you want to use the method for testing, 
-you can use an assembly level attribute called `UmbracoSuppressVolatile`, when the attribute is applied to an assembly 
-any occurrences of Umbraco Volatile Error will be suppressed to a warning. 
+If you are using Umbraco 7 or 8, this article is not for you.
+:::
+
+Umbraco Volatile Errors occurs when you are trying to use a method which *should* be internal, but is left public since it's useful when testing. 
+
+Methods marked with UmbracoVolatile may break in the future, however if you want to use the method for testing, you can use an assembly level attribute called `UmbracoSuppressVolatile`. When the attribute is applied to an assembly any occurrences of Umbraco Volatile Error will be suppressed to a warning. 
 
 
 `UmbracoSuppressVolatile` is located in the `Umbraco.Core.CodeAnnotations`, however, any attribute named UmbracoSuppressVolatile 
