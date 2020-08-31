@@ -19,19 +19,41 @@ You might want to base an entire article on one code sample, or perhaps you're d
 
 As a basis, we're working with 3 types of code samples in the Umbraco Documentation.
 
-#### Inline code
+#### 1. Inline code
 
-Use inline code when you are referrencing methods or names.
+Use inline code when you are referrencing methods, using names of various elements or highlighting a certain value.
 
 Example:
 
 ```markdown
-I am using inline code, to reference a `name` of a method.
+Each item is treated as a standard `IPublishedElement entity`, which means you can use all the value converters you are used to using.
 ```
 
-#### Smaller code snippets
+The markdown above will output the following:
 
-#### Large code samples
+:::center
+![Example of inline code](images/inline-sample.png)
+:::
+
+#### 2. Smaller code snippets
+
+As part of a longer articles or tutorial we recommend using smaller code snippets to highlight the various bits of code that needs to be implemented.
+
+These snippets can be added between sections anywhere in an article without breaking focus from the main topic. Keep in mind that adding too many snippets in quick succession can be confusing to the flow of the article.
+
+Example:
+
+```csharp
+@{
+    // Perform an null-check on the field with alias 'pageTitle'
+    if (Model.HasValue("pageTitle")){
+        // Print the value of the field with alias 'pageTitle'
+        <p>@(Model.Value("pageTitle"))</p>
+    }
+}
+```
+
+#### 3. Large code samples
 
 ## Best practices
 
