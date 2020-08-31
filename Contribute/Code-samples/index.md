@@ -9,6 +9,14 @@ The articles in the Umbraco Documentation can in most cases benefit from relevan
 
 In this article you will find some tips and tricks for adding code samples to articles as well as some best practices which outline how we recommend formatting and using code samples.
 
+## Best practices
+
+* Add a clear description
+* Use code-comments
+* Use real-life samples
+* Add only compilable samples
+* Check for syntax errors
+
 ## When to use code samples
 
 Code samples are relevant for most types of articles in the Umbraco Documentation. Potentially, any topic covered could benefit from a real-life code sample to support the surrounding contents of the article.
@@ -53,12 +61,18 @@ Example:
 }
 ```
 
+The Razor snippet above will output the following:
+
+:::center
+![Example of smaller code snippet](images/codesnippet-sample.png)
+:::
+
 #### 3. Large code samples
 
-## Best practices
+As part of tutorials and longer articles explaining a certain workflow, it might make sense to add a full code sample of the topic covered.
 
-* Add a clear description
-* Use code-comments
-* Use real-life samples
-* Add only compilable samples
-* Check for syntax errors
+An example of this could be the tutorial on [creating a custom Dashboard](../../Tutorials/Creating-a-Custom-Dashboard) for your Umbraco project. This article uses various smaller code snippets mixed in with the steps and text sections. At the bottom of the article, you will notice a full example of the file that has been build on through the tutorial - this is an example of a large code sample.
+
+We recommend creating separate articles for these large code samples and using the as references instead of adding them as part of the actual article. Having long snippets in an article which already contains multiple sections and steps, can make the article confusing.
+
+When adding these large code samples, make sure to link to the sample from the relevant tutorial(s) as well as linking from the article containing to sample, to the tutorial where the sample is referenced.
