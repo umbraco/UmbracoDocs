@@ -12,7 +12,7 @@ You can click the image to zoom in, where you can browse through the images in t
 
 ## Sample
 
-Below you can see how the gallery would look with image width at 20%, and a blue background color.
+Below you can see how the gallery would look with image width at 20%, and a grey background color.
 
 ![Example of Gallery with 3 images and the theme color used as background](images/gallery-frontend.png)
 
