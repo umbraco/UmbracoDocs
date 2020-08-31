@@ -50,11 +50,11 @@ You can load in as many fonts as you would like. Keep in mind that loading in to
 
 ### Body Font
 
-Define the font used for all text on the website that isn't defined as a heading.
+Define the font(s) used for all text on the website that isn't defined as a heading. If you are defining multiple fonts, make sure that you seperate each with a comma (,)
 
 ### Heading Font
 
-Define the font used for all headings on the website.
+Define the font used for all headings on the website. If you are defining multiple fonts, make sure that you seperate each with a comma (,)
 
 ### Button Border Radius
 

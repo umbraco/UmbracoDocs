@@ -43,7 +43,7 @@ __If you are load balancing or require the scaling ("scale out") ability of Azur
 
 ## Storage
 
-It is important to know that Azure Web Apps uses a remote file share to host the files files to run your website (i.e. the files running your website do not exist on the machine running your website). In many cases this isn't an issue but it can become an issue if you have a large amount of IO operations running over remote file share.
+It is important to know that Azure Web Apps uses a remote file share to host the files to run your website (i.e. the files running your website do not exist on the machine running your website). In many cases this isn't an issue but it can become one if you have a large amount of IO operations running over remote file share.
 
 ## Scaling
 

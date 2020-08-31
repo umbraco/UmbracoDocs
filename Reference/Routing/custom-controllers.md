@@ -81,11 +81,16 @@ The page in Umbraco will have a single 'template' selected as it's default templ
 
 `/products/superfancyproduct/?altTemplate=ProductAmpPage`
 
-This would request the 'Super Fancy Product' page but force it to be loaded with the 'ProductAmpPage template'. This can be simplified further:
+This would request the 'Super Fancy Product' page but force it to be loaded with the 'ProductAmpPage template'. This can be simplified further to use a convention:
 
 `/products/superfancyproduct/ProductAmpPage/`
 
 The final part of this url is assumed to be the 'altTemplate' querystring value.
+
+:::note
+In Umbraco 8 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IUserComposer` (see an example on the [IContentFinder documentation page](Request-Pipeline/IContentFinder.md)).
+:::
+
 
 ### Summary - How the route hijacking convention works
 
