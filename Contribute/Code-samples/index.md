@@ -7,7 +7,7 @@ meta.Description: "We highly recommend supporting your documentation articles wi
 
 The articles in the Umbraco Documentation can in most cases benefit from relevant code samples to support the written text.
 
-In this article you will find some tips and tricks for adding code samples to articles as well as some best practices which outline how we recommend formatting and using code samples.
+In this article you will find some best practices which outline how we recommend formatting and using code samples, and you will also find definitions and examples of the 3 most often used sample types in the Umbraco Documentation.
 
 ## Best practices
 
