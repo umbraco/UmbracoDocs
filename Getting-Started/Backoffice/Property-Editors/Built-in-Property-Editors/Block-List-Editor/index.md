@@ -6,7 +6,7 @@ versionFrom: 8.7.0
 
 `Alias: Umbraco.BlockList`
 
-`Returns: TODO: Jet-To-Be-Written-`
+`Returns: IEnumerable<BlockListItem>`
 
 
 **Block List** is a list editing property editor, using Element Types to define the list item schema.
@@ -125,8 +125,7 @@ Example:
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Core.Models.Blocks;
 @{
-	// TODO: Someone check that this is right?
-    var blocks = Model.Value<IEnumerable<BlockListLayoutReference>>("myBlocksProperty");
+    var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
     foreach (var block in blocks)
     {
     
@@ -137,12 +136,23 @@ Example:
 }
 ```
 
-Each item is a `BlockListLayoutReference` entity that contains two properties: `Content` and `Settings`. Each of these is a `IPublishedElement` which means you can use all the value converters you are used to using.
+Each item is a `BlockListItem` entity that contains two main properties `Content` and `Settings`. Each of these is a `IPublishedElement` which means you can use all the value converters you are used to using.
 
 Example:
 
 ```csharp
-	
-	
-	
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
+    foreach (var block in blocks)
+    {
+    
+        var content = (ContentModels.MyAliasOfContentElementType)block.Content;
+        var settings = (ContentModels.MyAliasOfSettingsElementType)block.Settings;
+
+        <h1>@content.MyExampleHeadlinePropertyAlias</h1>
+    }
+}
 ```
