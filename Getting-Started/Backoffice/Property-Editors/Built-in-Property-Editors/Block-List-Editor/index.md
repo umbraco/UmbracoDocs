@@ -103,21 +103,23 @@ Use the build-in rendering machinsm for rendering blocks via a Partial View for 
 To make this work you will need to create a Partial View for each block, named by the alias of the ElementType thats begin used as Content Model.
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
 
-A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListLayoutReference`. This gives you the option to access properties of the Content and Settings section of your Block.
+A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
+
+In the following exmalpe please note that the `ElementTypeAliasOfContent`and `ElementTypeAliasOfSettings` should corrospond with the selected ElementType Alias for the given model in your case.
 
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Core.Models.Blocks.BlockListLayoutReference>
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Core.Models.Blocks.BlockListItem>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = (ContentModels.BlockGallery)Model.Content;
-    var settings = (ContentModels.BlockGallerySettings)Model.Settings;
+    var content = (ContentModels.ElementTypeAliasOfContent)Model.Content;
+    var settings = (ContentModels.ElementTypeAliasOfSettings)Model.Settings;
 }
 ```
 
 ### 2. Build your own rendering
-A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListLayoutReference>` and the stored value will be returned as a list of `BlockListLayoutReference` entities.
+A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListItem>` and the stored value will be returned as a list of `BlockListLayoutReference` entities.
 
 Example:
 
