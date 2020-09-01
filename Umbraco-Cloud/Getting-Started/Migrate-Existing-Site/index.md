@@ -232,7 +232,7 @@ For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/
 * Add an *export* marker by typing `echo > deploy-export`
   * Generating the UDA files may take a while, depending on the extent of your project
   * You will see a `deploy-complete` marker once the export is done
-  * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
+  * Run `echo > deploy` to check that the UDA files have been generated correctly
   * When you see a `deploy-complete` marker, it means everything is working as expected
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
