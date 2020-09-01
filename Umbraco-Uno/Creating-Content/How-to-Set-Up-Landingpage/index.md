@@ -187,8 +187,9 @@ Once you've added the quotes you want to add, click **Confirm** in the bottom-ri
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
 
 - [Hero](../../Widgets/Hero)
-- [Grid Text Widget](../../Widgets/Grid/Text)
-- [Grid Image Widget](../../Widgets/Grid/Image)
-- [Grid Video Widget](../../Widgets/Grid/Video)
-- [Grid Price List Widget](../../Widgets/Grid/Price-List)
+- [Grid](../../Widgets/Grid)
+- [Grid: Text Widget](../../Widgets/Grid/Text)
+- [Grid: Image Widget](../../Widgets/Grid/Image)
+- [Grid: Pod](../../Widgets/Grid/Pod)
 - [Slider Widget](../../Widgets/Slider)
+- [Grid: Quote](../../Widgets/Grid/Quote)
