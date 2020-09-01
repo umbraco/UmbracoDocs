@@ -11,11 +11,21 @@ In this article you will find some best practices which outline how we recommend
 
 ## Best practices
 
+In order to ensure the quality and consistence of all the various code samples in the Umbraco Documentation, we have outlined a set of best practices that we highly recommend that you follow, when writing articles.
+
 * Add a clear description
 * Use code-comments
 * Use real-life samples
 * Add only compilable samples
 * Check for syntax errors
+
+Each of these best practices are explained in more details below.
+
+### Add a clear description
+
+Having a code sample in an article without explaining what the code does and how it can be used, could leave the reader confused and potentially running into issues when using the snippet.
+
+Make sure to **always** add a clear
 
 ## When to use code samples
 
