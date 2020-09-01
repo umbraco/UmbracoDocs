@@ -14,7 +14,7 @@ In this article you will find some best practices which outline how we recommend
 In order to ensure the quality and consistence of all the various code samples in the Umbraco Documentation, we have outlined a set of best practices that we highly recommend that you follow, when writing articles.
 
 * Add a clear description
-* Use code-comments
+* Use code comments
 * Use real-life samples
 * Add only compilable samples
 * Check for syntax errors
@@ -25,7 +25,31 @@ Each of these best practices are explained in more details below.
 
 Having a code sample in an article without explaining what the code does and how it can be used, could leave the reader confused and potentially running into issues when using the snippet.
 
-Make sure to **always** add a clear
+Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where the snippet can be used.
+
+### Use code comments
+
+When you are adding code samples that contain more than a single feature or a single method, it is highly recommended that you add inline-comments directly in the code.
+
+By adding comments directly in the code you can avoid having too much text surrounding the code sample, and you also help readers understand each section or part of the code snippet in detail.
+
+Note that the use of code comments does not eliminate the need for a description of the code sample in the surrounding text.
+
+### Use real-life samples
+
+The documentation often aims to explain complex scenarios and constructs within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* examples, meaning that is should be something that would make sense to add on a production site.
+
+With Umbraco, there are often many ways to acheive the same results, which means that is also makes sense to have more code samples on the same topic.
+
+### Add only compilable samples
+
+As a reader of the Umbraco Documentation you should be able to grab to code samples in the articles and apply them somewhat directly to your own code base. Of course there might be a need for some minor alterations, but the code in the sample should as a rule of thumb be combilable.
+
+### Check for syntax errors
+
+When reading any piece of text be it documentation or a novel, there is nothing more frustrating that running into spelling and syntax errors. This also applies for code samples.
+
+Any code that is added to articles in the documentation should be double-checked for syntax errors.
 
 ## When to use code samples
 
