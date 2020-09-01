@@ -7,11 +7,11 @@ meta.Description: "We highly recommend supporting your documentation articles wi
 
 The articles in the Umbraco Documentation can in most cases benefit from relevant code samples to support the written text.
 
-In this article you will find some best practices which outline how we recommend formatting and using code samples, and you will also find definitions and examples of the 3 most often used sample types in the Umbraco Documentation.
+In this article you will find some best practices which outline how we recommend formatting and using code samples, and you will also find definitions and examples of the most used types of code samples in the Umbraco Documentation.
 
 ## Best practices
 
-In order to ensure the quality and consistence of all the various code samples in the Umbraco Documentation, we have outlined a set of best practices that we highly recommend that you follow, when writing articles.
+In order to ensure the quality and consistence of all the various code samples in the Umbraco Documentation, we have outlined a set of best practices that we highly recommend that you follow, when adding code snippets to articles.
 
 * Add a clear description
 * Use code comments
@@ -23,9 +23,9 @@ Each of these best practices are explained in more details below.
 
 ### Add a clear description
 
-Having a code sample in an article without explaining what the code does and how it can be used, could leave the reader confused and potentially running into issues when using the snippet.
+Having a code sample in an article without explaining what the code does and how it can be used, could leave the reader confused and potentially they could end up running into issues when using the snippet.
 
-Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where the snippet can be used.
+Make sure to **always** add a clear description of what the code sample showcases before or after adding the snippet to the article. It should be clear where and when the snippet can be used.
 
 ### Use code comments
 
@@ -37,9 +37,11 @@ Note that the use of code comments does not eliminate the need for a description
 
 ### Use real-life samples
 
-The documentation often aims to explain complex scenarios and constructs within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* examples, meaning that is should be something that would make sense to add on a production site.
+The documentation often aims to explain complex scenarios and constructs within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* examples, meaning that is should be something that would make sense to add to a production site.
 
-With Umbraco, there are often many ways to acheive the same results, which means that is also makes sense to have more code samples on the same topic.
+It can be a good idea to use *placeholders* for names, methods and other things, in order to keep the code samples as neutral and general as possible, althought that is not a requirement.
+
+With Umbraco, there are often more than one way to achieve a result, which means that is also makes sense to have more code samples on the same topic.
 
 ### Add only compilable samples
 
@@ -61,7 +63,7 @@ You might want to base an entire article on one code sample, or perhaps you're d
 
 As a basis, we're working with 3 types of code samples in the Umbraco Documentation.
 
-#### 1. Inline code
+#### Inline code
 
 Use inline code when you are referrencing methods, using names of various elements or highlighting a certain value.
 
@@ -77,7 +79,7 @@ The markdown above will output the following:
 ![Example of inline code](images/inline-sample.png)
 :::
 
-#### 2. Smaller code snippets
+#### Smaller code snippets
 
 As part of a longer articles or tutorial we recommend using smaller code snippets to highlight the various bits of code that needs to be implemented.
 
@@ -101,12 +103,12 @@ The Razor snippet above will output the following:
 ![Example of smaller code snippet](images/codesnippet-sample.png)
 :::
 
-#### 3. Large code samples
+#### Large code samples
 
 As part of tutorials and longer articles explaining a certain workflow, it might make sense to add a full code sample of the topic covered.
 
 An example of this could be the tutorial on [creating a custom Dashboard](../../Tutorials/Creating-a-Custom-Dashboard) for your Umbraco project. This article uses various smaller code snippets mixed in with the steps and text sections. At the bottom of the article, you will notice a full example of the file that has been build on through the tutorial - this is an example of a large code sample.
 
-We recommend creating separate articles for these large code samples and using the as references instead of adding them as part of the actual article. Having long snippets in an article which already contains multiple sections and steps, can make the article confusing.
+We recommend creating separate articles for these large code samples and using them as references instead of adding them as part of the actual article. Having long snippets in an article which already contains multiple sections and steps, can make the article confusing.
 
 When adding these large code samples, make sure to link to the sample from the relevant tutorial(s) as well as linking from the article containing to sample, to the tutorial where the sample is referenced.
