@@ -12,6 +12,13 @@ The Price Table is a great tool for when you want to list multiple products and 
 
 ## Configuration options
 
+For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. when in the menu click the widget you want to change the settings for.
+
+![Price Table Backoffice](images/Price-Table-backoffice.png)
+
+
+### Content
+
 - Column Width (This decides how large the column containing the Price Table is)
 
 - Boxed Column (This switch adds a box around the entire Price Table columns width)
@@ -29,5 +36,3 @@ The Price Table is a great tool for when you want to list multiple products and 
 - Buttons (This lets you add buttons)
 
 - Disclaimer (this lets your write the disclaimer for the product)
-
-![Price Table Backoffice](images/Price-Table-backoffice.png)
