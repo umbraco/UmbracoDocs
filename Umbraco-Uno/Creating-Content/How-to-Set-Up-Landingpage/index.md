@@ -182,6 +182,8 @@ Use the **copy** feature to quickly add similar widgets without having to config
 
 Once you've added the quotes you want to add, click **Confirm** in the bottom-right corner to add the slider to the grid, and again to add the grid to the page.
 
+![Preview of the slider in the third grid](images/slider-grid.png)
+
 ## The widgets we used
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
