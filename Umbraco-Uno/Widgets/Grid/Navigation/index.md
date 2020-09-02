@@ -8,9 +8,15 @@ Navigation is a tool that allows you to create a menu, that links to your other 
 
 ## Sample
 
-![Navigation Frontend](images/Navigation-frontend.png)
+![Navigation Frontend](images/Nav-front.png)
 
 ## Configuration options
+
+In the links section add the pages you want to add to the navigation box.
+
+![Navigation Backoffice](images/Nav-back.png)
+
+### Content
 
 - Column Width
 - Heading
@@ -18,5 +24,3 @@ Navigation is a tool that allows you to create a menu, that links to your other 
 - Levels of Children - This will allow you to add links under one of the existing links.
 - Only Render Children -This will make it so that only the child links appear.
 - Boxed Column
-
-![Navigation Backoffice](images/Navigation-backoffice.png)
