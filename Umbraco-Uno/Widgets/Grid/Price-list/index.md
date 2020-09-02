@@ -13,6 +13,13 @@ The way it works is that you click the add content button next to items, then fi
 
 ## Configuration options
 
+In the price list widget you will have a content section for your customization and you can add to this by adding items to the price list.
+
+![Price List Backoffice](images/Price-List-Backoffice.png)
+
+
+### Content
+
 - Column Width (This is mandatory because it decides how large the column containing the Price list is)
 
 - Heading (This lets you create a heading for your Price List)
@@ -20,5 +27,3 @@ The way it works is that you click the add content button next to items, then fi
 - Boxed Column (This switch adds a box around the entire Price List columns width)
 
 - Items (This is where you create the items in your Price List)
-
-![Price List Backoffice](images/Price-List-Backoffice.png)
