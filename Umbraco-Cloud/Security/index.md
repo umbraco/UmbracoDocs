@@ -85,7 +85,7 @@ In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform 
 
 For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
-## Blacklist specific IPs from accessing you website
+## Deny specific IPs from accessing you website
 
 You can block people and bots(e.g. a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
 
