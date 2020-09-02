@@ -2,81 +2,93 @@
 versionFrom: 8.0.0
 ---
 
-# How to set-up your Footer
+# How to set up a custom Footer
 
 It can be challenging to set up a footer if you have never tried it before. This guide will help you set up a structured and informative footer for your website.
-
-In this guide you will be introduced to some of the features you can add to your footer, namely the Navigation, Opening Hours, Contact, and Social Links.
 
 You can set the theme for your footer by navigating to **Theme** settings under **Settings** in the Content menu. Here you'll find a **Footer** group, where you can set a color theme and change the container width.
 
 This is how the footer should look after you have gone through the guide:
 
-![The finished footer](images/Footer-example.png)
+![The finished footer](images/custom-footer-result.png)
 
 ## Locating the Footer settings
 
-Start by doing the following:
+The Footer settings for your Umbraco Uno website are located in a group on the home page.
 
-1. Go to the Umbraco Backoffice
-2. Click your home page - the first item in the Content tree
-3. In the workspace scroll to the bottom and find the group called Footer
-4. In the field saying “Footer Columns” click “Add Content” which will give you 7 options for content to add
+- Go to the Umbraco Backoffice
+- Select your home page - the first item in the Content tree
+- In the workspace, scroll to the bottom and find the group called **Footer**
+
+## Remove existing Footer content
+
+As the *Unicorn Hotel* site already has a Footer set up, we will start this guide by deleting the existing element.
+
+To do this, hover the **Footer Columns** text and select the elipses (...). From the menu that pops up, select **Remove all items** and click **Delete** to confirm.
+
+We now have a clean slate, where we can start setting up our own custom Footer.
+
+In order to add content to the footer, click on “Add Content”. This will give us 7 options for content to add to the footer. In this guide, we will go through 4 of these.
 
 ## [Navigation](../../Widgets/Grid/Navigation)
 
-Let’s start by adding Navigation.
+Let’s start by adding a Navigation with some links.
 
-- Click Navigation in the list
-- Set column width to 25% as 100% would be the entire width of the page.
-- Choose a heading for your navigation list, let’s call it links for now.
-- Next go to the field called “Links” and select “Add” - a window pops out on the right-hand side.
-- Navigate to the part of the window that says “ Link to page”, where you will see your entire Content tree.
+- Click on **Add content** and select **Navigation** from the list
+- Set column width to 25%
+- Choose a heading for your navigation list
+- Next go to the field called “Links” and select **Add** - a window will pop out in the right-hand side
+- Navigate to the part of the window that says **Link to page** where you will see a replica of your content tree
 - Choose an item from the tree - in this case, we'll choose "Unicorn Hotel"
-- Click "Submit" to add the link
-- Next, we get the option to select children, which is another layer of links. We won't need this for now.
-- The final button here is "Only Render Children" which would make the page only display links to the child pages, instead of the selected one
+- Click **Submit** to add the link
+- Repeat the steps above to add a few more links to the navigation
 
-![The finished footer](images/Navigatio-Footer.png)
+![The finished footer](images/navigation-widget.png)
 
 ## [Opening Hours](../../Widgets/Opening-hours)
 
-Now we click "Add content" again. To add your opening hours click "Opening Hours"
+Now we select "Add content" again. This time, we will be adding some opening hours.
 
-- Choose "Column Width" 25%.
-- Align Content Center.
-- Choose a Heading.
-- Under opening hours click "Add Content".
-- Write down your open days like so: Mon-Fri
-- Fill in the time slots fx 08:00-20:00
+- Select the **Opening Hours** widget
+- Set the Column width to 25% again
+- Align Content Center
+- Choose a Heading
+- Next to where it says "Opening hours", click **Add Content**
+- Add a **Day** and a **Time slot** into the two fields - this can be any format, eg. numbers or words
+- Add as many instances of the "Opening hours" as you need
 
-![The finished footer](images/Opening-Hours-Footer.png)
+![The finished footer](images/opening-hours-widget.png)
 
 ## [Contact](../../Widgets/Contact)
 
-The next step is to add Contact to your footer.
+The next step is to add some contact info to our footer.
 
-- Click "Add Content" and choose "Contact"
-- Set the "Column Width" to 25%.
-- Choose Align "Left".
-- The Heading could be Contact us.
-- Then you can add your Address in the text field.
+- Click **Add Content** and choose the **Contact** widget
+- Set the "Column Width" to 25%
+- Choose Align "Right"
+- The Heading could be "Contact us"
+- Add your address in the text field
 - The next option is to add your phone number
-- Lastly is the option to add your email.
+- Lastly is the option to add your email
 
-![The finished footer](images/Contact-Footer.png)
+![The finished footer](images/contact-widget.png)
 
 ## [Social Links](../../Widgets/Social-links)
 
- For our final piece of content in the footer choose "Social Links".
+For our final piece of content in the footer we will go with some links to social media.
 
-- Click "Add content"
-- Set "Column Width" to 25%.
+- Click **Add content** and select the **Social Links** widget
+- Set the Column width to 25%
 - Align Content Left
 - Heading could be something like "Find us at:"
-- Add the URLs for your Social media pages
+- Add the URLs for your social media pages
 
-![The finished footer](images/Social-Links-Footer.png)
+![The finished footer](images/social-link-widget.png)
 
-The last option is to add some bottom text. This could be a copyright text or something along those lines.
+The last option is to add some text to the very bottom of the page using the **Bottom Text** field. This could be a copyright text or something along those lines.
+
 Finalize the footer by clicking "Save" or "Save and publish".
+
+We have now created a custom footer for our website.
+
+There are many more ways to costumize the footer section and make it fit the website you're creating.
