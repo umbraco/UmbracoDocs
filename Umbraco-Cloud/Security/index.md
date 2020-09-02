@@ -100,7 +100,7 @@ The following rule can be added to your web.config file in the `system.webServer
     <action type="AbortRequest"/>
 </rule>
 ```
-This will result with anyone using the 123.123.123.123 IP getting a 502 error but you can, of course, choose you own error.
+For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can, of course, choose your own error.
 
 :::note
 You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
