@@ -8,7 +8,7 @@ _This section describes best practices with running Umbraco on Azure Web Apps_
 
 ## What are Azure Web Apps
 
-They has been called a few names in the past, many people still know Azure Web Apps as Azure Web Sites.
+They have been called a few names in the past, many people still know Azure Web Apps as Azure Web Sites.
 
 > App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web Apps that scale with your business by using Azure App Service.
 
