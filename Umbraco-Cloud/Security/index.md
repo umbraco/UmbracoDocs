@@ -87,7 +87,7 @@ For more information see [the related GitHub issue](https://github.com/Azure/app
 
 ## Blacklist specific IPs from accessing you website
 
-You can block people and bots(e.g. a malicious scanning bot) from accessing you website by blacklisting their IPs.
+You can block people and bots(e.g. a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 
