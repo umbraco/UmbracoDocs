@@ -4,16 +4,17 @@ versionFrom: 8.0.0
 
 # How to set-up your Footer
 
-It can be challenging to set-up a footer if you never tried it before. This guide will help step-by-step, to get a nice looking and informative footer for your website.
-In this guide you will be introduced, to some of the features you can add to your footer, namely Navigation. Opening Hours, Contact, and Social Links.
+It can be challenging to set up a footer if you have never tried it before. This guide will help you set up a structured and informative footer for your website.
 
-You can set the theme for your footer by navigating to "Theme" settings under "Settings" in the Content section. Here you'll find a "Footer" group, where you can choose between dark or light theme, and you can change the container width.
+In this guide you will be introduced to some of the features you can add to your footer, namely the Navigation, Opening Hours, Contact, and Social Links.
+
+You can set the theme for your footer by navigating to **Theme** settings under **Settings** in the Content menu. Here you'll find a **Footer** group, where you can set a color theme and change the container width.
 
 This is how the footer should look after you have gone through the guide:
 
 ![The finished footer](images/Footer-example.png)
 
-## The Footer
+## Locating the Footer settings
 
 Start by doing the following:
 
