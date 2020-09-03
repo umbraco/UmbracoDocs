@@ -22,7 +22,7 @@ Your configuration is now considered a standard configuration and you are able t
 
 ## How to enable storing Forms definitions in the database
 
-Follow these steps, in order to perstist Umbraco Forms definitions in the database:
+Follow these steps, in order to persist Umbraco Forms definitions in the database:
 
 1. [Upgrade to at least Umbraco Forms version 8.5.2](../../Installation/ManualUpgrade)
 2. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config`
