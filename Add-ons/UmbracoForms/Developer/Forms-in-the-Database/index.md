@@ -6,6 +6,18 @@ versionFrom: 8.0.0
 
 As of Umbraco Forms version 8.5.0 it is possible to persist all forms data in the Umbraco database. This includes definitions for each form and their fields, as well as workflow definitions and prevalues.
 
+:::note
+**Custom file system providers**
+
+If custom fileproviders are used on your project for storing Umbraco Forms data, the migration will not be able to run.
+
+In order to be able to persist your Umbraco Forms data in the database, you will need to revert back to a **standard Umbraco Forms configuration** using the default provider storing the Forms definition files in the default location.
+
+Then you need to ensure that your Forms definition files are moved from their previous location (this being a non-default file path, blob storage or similar) to the default location, `App_Data/UmbracoForms`, that Forms will now be using.
+
+Your configuration is now considered a standard configuration and you are able to perform the steps required for a normal migration.
+:::
+
 In this article you will find instructions on how to migrate your Umbraco Forms data to the database.
 
 ## How to enable storing Forms definitions in the database
@@ -16,13 +28,14 @@ Please be aware that enabling the persistance of Umbraco Forms in the database i
 
 Follow these steps, in order to perstist Umbraco Forms definitions in the database:
 
-1. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config`
-2. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
+1. [Upgrade to at least Umbraco Forms version 8.5.2](../../Installation/ManualUpgrade)
+2. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config`
+3. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
 
     ```code
     <setting key=“StoreUmbracoFormsInDb” value=“True” />
     ```
 
-3. Save the file
+4. Save the file
 
 When you save the file, the site will restart and run a migration step, migrating the files to the Umbraco database.
