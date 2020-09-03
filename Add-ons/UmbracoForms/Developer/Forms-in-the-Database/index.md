@@ -9,7 +9,7 @@ As of Umbraco Forms version 8.5.0 it is possible to persist all forms data in th
 :::note
 **Custom file system providers**
 
-If custom fileproviders are used on your project for storing Umbraco Forms data, the migration will not be able to run.
+If custom file system providers are used on your project for storing Umbraco Forms data, the migration will not be able to run.
 
 In order to be able to persist your Umbraco Forms data in the database, you will need to revert back to a **standard Umbraco Forms configuration** using the default provider storing the Forms definition files in the default location.
 
