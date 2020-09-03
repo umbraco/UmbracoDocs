@@ -38,32 +38,34 @@ Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../../Upgrades). W
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../../Set-Up/Config-Transforms) when you need custom configuration, and [Themes](../../../Add-ons/UmbracoForms/Developer/Themes) when you need to customize your forms.
 
+Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will get the option to apply the upgrade to your project. When your project is elligible to receive the new version, you will see an "*Upgrade available!*" label on your Development environment.
+
 ### Version specific changes
 
 In this section you can find information about version specific changes that might affect the way Umbraco Forms works on your project.
 
 #### Version 8.5.0
 
-Prior to Umbraco 8.5.0 all forms data was saved to both `.UDA` files in the `data/revision` directive as well as `.json` files in the `App_Data/UmbracoFormsData` directive.
+Prior to Umbraco 8.5.0 all forms data was saved as `.json` files in the `App_Data/UmbracoForms` directive in the file system.
 
-We highly recommend that you switch to persisting all definitions for Umbraco Forms data in the Umbraco database.
+As of Umbraco 8.5.0 you have the option to persist all Forms data directly in the database. This behavious is default to all new sites created on Umbraco Cloud since September 2020. Was your Cloud project created before, you will need to upgrade the Umbraco Forms version as well as applying a setting in order to perform the migration of the Umbraco Forms data.
 
-Follow these steps to make the switch:
+In order to switch to persisting all definitions for Umbraco Forms data in the Umbraco database, follow these steps:
 
-1. Make sure your forms are in sync between all your Cloud environments
-2. Clone down you Development/Live environment
-3. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from you local clone
-4. In the `<settings>` section of the configuration, add
+1. Make sure all environments are upgraded to **at least Umbraco Forms version 8.5.2 and Deploy 3.5.0**
+2. Make sure your forms are in sync between all your Cloud environments
+3. Clone down you Development environment
+4. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from you local clone
+5. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
 
     ```code
     <setting key=“StoreUmbracoFormsInDb” value=“True” />
     ```
 
-5. Save the file
-6. Spin up your local clone and verify that everything works as expected
-7. Push the change back to the Cloud environments
-
-Please note that the change here is made to a config file, which means that the environments will restart as the changes are applied. This can take a few minutes, depending on the scale of your project.
+6. Save the file
+7. Spin up your local clone and verify that everything works as expected
+8. Push the change back to the Development evironment
+9. In order to run the migration, **restart the Development environment** from the Cloud portal
 
 :::note
 **Did you create your project before June 2018?**
