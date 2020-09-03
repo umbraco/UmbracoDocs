@@ -66,6 +66,7 @@ In order to switch to persisting all definitions for Umbraco Forms data in the U
 7. Spin up your local clone and verify that everything works as expected
 8. Push the change back to the Development evironment
 9. In order to run the migration, **restart the Development environment** from the Cloud portal
+10. After verifying that everythin works as expected, push the setting to the remaining Cloud environment - remember to restart each environment in orderto run the migration.
 
 :::note
 **Did you create your project before June 2018?**
