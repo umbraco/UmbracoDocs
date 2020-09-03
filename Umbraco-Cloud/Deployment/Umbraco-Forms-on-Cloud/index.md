@@ -64,9 +64,17 @@ In order to switch to persisting all definitions for Umbraco Forms data in the U
 
 6. Save the file
 7. Spin up your local clone and verify that everything works as expected
-8. Push the change back to the Development evironment
-9. In order to run the migration, **restart the Development environment** from the Cloud portal
-10. After verifying that everythin works as expected, push the setting to the remaining Cloud environment - remember to restart each environment in orderto run the migration.
+
+Now it is time to deploy the setting to your Cloud environments.
+
+Follow the steps outlined below **for each environment** in order for the migration to run on each of them.
+
+1. Access **KUDU**
+2. Navigate to `site/wwwroot/App_Data`
+3. Delete the `UmbracoForms` directive
+4. Push/Deploy the updated setting to the environment
+5. In order to run the migration, **restart the environment** from the Cloud portal
+6. Repeat steps 1-5 for each of your Cloud environments
 
 :::note
 **Did you create your project before June 2018?**
