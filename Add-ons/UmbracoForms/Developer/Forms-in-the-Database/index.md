@@ -35,7 +35,7 @@ Follow these steps, in order to persist Umbraco Forms definitions in the databas
 4. Save the file
 
 :::warning
-Please be aware that enabling the persistance of Umbraco Forms in the database is irreversable. Once you've made the change, reverting to the file approach will not be an option.
+Please be aware that enabling the persisting of Umbraco Forms in the database is irreversable. Once you've made the change, reverting to the file approach will not be an option.
 :::
 
 When you save the file, the site will restart and run a migration step, migrating the files to the Umbraco database.
