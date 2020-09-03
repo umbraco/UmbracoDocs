@@ -24,7 +24,7 @@ Your configuration is now considered a standard configuration and you are able t
 
 Follow these steps, in order to persist Umbraco Forms definitions in the database:
 
-1. [Upgrade to at least Umbraco Forms version 8.5.2](../../Installation/ManualUpgrade)
+1. [Upgrade to at least Umbraco Forms version 8.5.2](../../Installation/ManualUpgrade.md)
 2. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config`
 3. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
 
