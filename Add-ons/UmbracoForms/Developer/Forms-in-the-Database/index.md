@@ -6,6 +6,8 @@ versionFrom: 8.0.0
 
 As of Umbraco Forms version 8.5.0 it is possible to persist all forms data in the Umbraco database. This includes definitions for each form and their fields, as well as workflow definitions and prevalues.
 
+In this article you will find instructions on how to migrate your Umbraco Forms data to the database.
+
 :::note
 **Custom file system providers**
 
@@ -18,13 +20,7 @@ Then you need to ensure that your Forms definition files are moved from their pr
 Your configuration is now considered a standard configuration and you are able to perform the steps required for a normal migration.
 :::
 
-In this article you will find instructions on how to migrate your Umbraco Forms data to the database.
-
 ## How to enable storing Forms definitions in the database
-
-:::warning
-Please be aware that enabling the persistance of Umbraco Forms in the database is irreversable. Once you've made the change, reverting to the file approach will not be an option.
-:::
 
 Follow these steps, in order to perstist Umbraco Forms definitions in the database:
 
@@ -37,5 +33,9 @@ Follow these steps, in order to perstist Umbraco Forms definitions in the databa
     ```
 
 4. Save the file
+
+:::warning
+Please be aware that enabling the persistance of Umbraco Forms in the database is irreversable. Once you've made the change, reverting to the file approach will not be an option.
+:::
 
 When you save the file, the site will restart and run a migration step, migrating the files to the Umbraco database.
