@@ -46,16 +46,16 @@ In this section you can find information about version specific changes that mig
 
 #### Version 8.5.0
 
-Prior to Umbraco 8.5.0 all forms data was saved as `.json` files in the `App_Data/UmbracoForms` directive in the file system.
+Prior to Umbraco 8.5.0 all forms data was saved as `.json` files in the `App_Data/UmbracoForms` directory in the file system.
 
-As of Umbraco 8.5.0 you have the option to persist all Forms data directly in the database. This behavious is default to all new sites created on Umbraco Cloud since September 2020. Was your Cloud project created before, you will need to upgrade the Umbraco Forms version as well as applying a setting in order to perform the migration of the Umbraco Forms data.
+As of Umbraco 8.5.0 you have the option to persist all Forms data directly in the database. This behaviour is default to all new sites created on Umbraco Cloud since September 2020. Was your Cloud project created before, you will need to upgrade the Umbraco Forms version as well as applying a setting in order to perform the migration of the Umbraco Forms data.
 
 In order to switch to persisting all definitions for Umbraco Forms data in the Umbraco database, follow these steps:
 
 1. Make sure all environments are upgraded to **at least Umbraco Forms version 8.5.2 and Deploy 3.5.0**
 2. Make sure your forms are in sync between all your Cloud environments
 3. Clone down you Development environment
-4. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from you local clone
+4. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone
 5. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
 
     ```code
@@ -71,7 +71,7 @@ Follow the steps outlined below **for each environment** in order for the migrat
 
 1. Access **KUDU**
 2. Navigate to `site/wwwroot/App_Data`
-3. Delete the `UmbracoForms` directive
+3. Delete the `UmbracoForms` directory
 4. Push/Deploy the updated setting to the environment
 5. In order to run the migration, **restart the environment** from the Cloud portal
 6. Repeat steps 1-5 for each of your Cloud environments
