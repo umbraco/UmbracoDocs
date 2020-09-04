@@ -263,6 +263,11 @@ void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRen
         e.Node.Title = "My new title";
     }
 }
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
+}
 ```
 
 ### TreeNodesRendering
@@ -295,6 +300,11 @@ void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesR
     {
         e.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
     }
+}
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
 }
 ```
 
@@ -342,6 +352,11 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
         // insert at index 5
         e.Menu.Items.Insert(5, i);
     }
+}
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
 }
 ```
 

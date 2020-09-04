@@ -50,7 +50,8 @@ namespace Umbraco8.Components
         }
         public void Terminate()
         {
-            // Nothing to terminate
+            //unsubscribe during shutdown
+             MemberService.Saved -= MemberService_Saved;
         }
     }
 }

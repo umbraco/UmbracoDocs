@@ -122,7 +122,10 @@ namespace My.Website
 
         // terminate: runs once when Umbraco stops
         public void Terminate()
-        { }
+        {
+            //unsubscribe during shutdown
+            ContentService.Saving -= ContentService_Saving;
+        }
 
         private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
         {

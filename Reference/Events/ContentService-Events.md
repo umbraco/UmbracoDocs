@@ -51,7 +51,8 @@ namespace Umbraco8.Components
         }
         public void Terminate()
         {
-            // Nothing to terminate
+            //unsubscribe during shutdown
+             ContentService.Publishing -= ContentService_Publishing;
         }
     }
 }

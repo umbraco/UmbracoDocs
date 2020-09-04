@@ -66,6 +66,7 @@ public class ExamineEvents : IComponent
 
     public void Terminate()
     {
+ indexProvider.TransformingIndexValues -= IndexProviderTransformingIndexValues;
     }
 }
 ```
