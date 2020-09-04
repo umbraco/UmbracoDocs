@@ -24,6 +24,10 @@ There is some documentation about this in the [Examine documentation](https://sh
 The easiest way to modify how a field is configured is using a custom component, for example:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
 // register the component
 public class CustomizeIndexComposer : ComponentComposer<CustomizeIndexComponent> { }
 
@@ -62,6 +66,12 @@ An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it 
 Starting in Umbraco 8.4.0 it is easy to change the `IValueSetValidator` implementation for the built in indexes, for example:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+
 public class CustomizeIndexComposer : IUserComposer
 {
     public void Compose(Composition composition)
@@ -112,6 +122,14 @@ A few examples of why you might want to override the index creation:
 As an example, to change the `IValueSetValidator` for the MemberIndex in the above example:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 public class CustomizeIndexComposer : IUserComposer
 {
     public void Compose(Composition composition)
@@ -145,6 +163,15 @@ public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
 Another example could be to replace the default Lucene analyzer for the ExternalIndex:
 
 ```c#
+using System.Collections.Generic;
+using Examine;
+using Lucene.Net.Analysis;
+using Umbraco.Core;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 // override the default creator
 public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
 {
@@ -213,6 +240,13 @@ In order to create this index we need three things:
 ### ProductIndexCreator
 
 ```c#
+using System.Collections.Generic;
+using Examine;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 {
     private readonly IProfilingLogger _profilingLogger;
@@ -254,6 +288,9 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 ### ProductComponent
 
 ```c#
+using Examine;
+using Umbraco.Core.Composing;
+
 public class ProductComponent : IComponent
 {
     private readonly IExamineManager _examineManager;
@@ -282,6 +319,9 @@ public class ProductComponent : IComponent
 ### ProductComposer
 
 ```c#
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
 public class ProductComposer : IUserComposer
 {
     public void Compose(Composition composition)
