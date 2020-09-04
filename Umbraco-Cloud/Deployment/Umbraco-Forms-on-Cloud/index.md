@@ -72,9 +72,10 @@ Follow the steps outlined below **for each environment** in order for the migrat
 1. Access **KUDU**
 2. Navigate to `site/wwwroot/App_Data`
 3. Delete the `UmbracoForms` directory
-4. Push/Deploy the updated setting to the environment
+4. Push the updated setting to the environment
 5. In order to run the migration, **restart the environment** from the Cloud portal
-6. Repeat steps 1-5 for each of your Cloud environments
+6. From the Umbraco Backoffice transfer, queue and transfer the forms to the environment
+7. Repeat steps 1-5 for each of your Cloud environments
 
 :::note
 **Did you create your project before June 2018?**

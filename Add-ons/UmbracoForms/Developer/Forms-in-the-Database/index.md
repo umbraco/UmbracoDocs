@@ -34,6 +34,8 @@ Follow these steps, in order to persist Umbraco Forms definitions in the databas
 
 4. Save the file
 
+If you are working with an Umbraco Cloud project, make sure you follow the migration steps outlined in the [Umbraco Forms on Cloud](../../../Umbraco-Cloud/Deployment/Umbraco-Forms-on-Cloud) article.
+
 :::warning
 Please be aware that enabling the persisting of Umbraco Forms in the database is irreversable. Once you've made the change, reverting to the file approach will not be an option.
 :::
