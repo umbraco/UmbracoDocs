@@ -98,7 +98,12 @@ To delete a Block click the trash-bin icon appearing on hover.
 Rendering the stored value of your **Block List** property can be done in two ways.
 
 ### 1. Default rendering
-Use the build-in rendering machinsm for rendering blocks via a Partial View for each block.
+You can choose to use the build-in rendering machinsm for rendering blocks via a Partial View for each block.
+The default rendering method is named GetBlockListHtml() and comes with a few options to go with it, the typical use could be
+
+```csharp
+	@Html.GetBlockListHtml(Model, "Dates")
+```
 
 To make this work you will need to create a Partial View for each block, named by the alias of the ElementType thats begin used as Content Model.
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
