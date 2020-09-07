@@ -66,7 +66,8 @@ public class ExamineEvents : IComponent
 
     public void Terminate()
     {
- indexProvider.TransformingIndexValues -= IndexProviderTransformingIndexValues;
+        //unsubscribe during shutdown
+       indexProvider.TransformingIndexValues -= IndexProviderTransformingIndexValues;
     }
 }
 ```
