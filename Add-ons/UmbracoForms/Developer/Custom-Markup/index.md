@@ -52,11 +52,11 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
     @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
     @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
     @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
-    @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
+    @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)"</text>}}
 />
 ```
 
-By default the form makes use of jQuery validate and jQuery validate unobtrusive which is why you see attributes like `data-val` and `data-val-required`.
+Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
