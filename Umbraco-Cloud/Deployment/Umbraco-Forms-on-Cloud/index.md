@@ -77,15 +77,14 @@ Follow the steps outlined below **for each environment** in order for the migrat
 6. From the Umbraco Backoffice transfer, queue and transfer the forms to the environment
 7. Repeat steps 1-5 for each of your Cloud environments
 
-:::note
 **Did you create your project before June 2018?**
 
 Then your Umbraco Forms data might still be handled as meta data.
 
 This means that you will need to follow the steps below, in order to persist Umbraco Forms data in the Umbraco database.
 
-* Find and open `Config\UmbracoDeploy.settings.config` on your local machine
-* Update the `transferFormsAsContent` value to `true`
+1. Find and open `Config\UmbracoDeploy.settings.config` on your local machine
+2. Update the `transferFormsAsContent` value to `true`
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -94,13 +93,12 @@ This means that you will need to follow the steps below, in order to persist Umb
    </settings>
    ```
 
-* Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert back to this state (removing `UDA` files won't remove the actual form on deploy)
-* Push the change back to the Cloud environment
+3. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert back to this state (removing `UDA` files won't remove the actual form on deploy)
+4. Push the change back to the Cloud environment
    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
-* You are now able to queue your forms for transfer between the Cloud environments, like content and media
+5. You are now able to queue your forms for transfer between the Cloud environments, like content and media
 
 If you do not have the `transferFormsAsContent` setting in the `UmbracoDeploy.settings.config` file, you do not need to make any further changes.
-:::
 
 ## Common issues with Umbraco Forms on Cloud
 
