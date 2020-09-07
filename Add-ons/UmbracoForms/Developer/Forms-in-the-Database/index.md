@@ -29,7 +29,7 @@ Follow these steps, in order to persist Umbraco Forms definitions in the databas
 3. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the following value:
 
     ```xml
-    <setting key=“StoreUmbracoFormsInDb” value=“True” />
+    <setting key="StoreUmbracoFormsInDb" value="True" />
     ```
 
 4. Save the file
