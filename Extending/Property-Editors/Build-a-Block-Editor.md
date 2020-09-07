@@ -13,11 +13,12 @@ To read this document you must make your self confident with the basics of devel
 In order for your editor to become a Block Editor you must setup your property editor through C#
 
 ```csharp
+using System;
 using ClientDependency.Core;
 using Umbraco.Core.Logging;
 using Umbraco.Core.PropertyEditors;
+using Umbraco.Core.Services;
 using Umbraco.Web.PropertyEditors;
-// TODO: Make sure we dont miss some dependencies?
 
 namespace UmbracoEightExamples.PropertyEditors
 {
@@ -25,17 +26,17 @@ namespace UmbracoEightExamples.PropertyEditors
     
     [DataEditor(
         "MyOwn.UnicornBlocksEditor",
-        "Unicorn Blocks,
+        "Unicorn Blocks",
         "unicornblocks",
         ValueType = ValueTypes.Json,
-        Group = Constants.PropertyEditors.Groups.Lists,
+        Group = Umbraco.Core.Constants.PropertyEditors.Groups.Lists,
         Icon = "icon-thumbnail-list")]
     [PropertyEditorAsset(ClientDependencyType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
     public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
     {
     	
-    	public UnicornBlocksPropertyEditor(ILogger logger, Lazy<PropertyEditorCollection> propertyEditors, IDataTypeService dataTypeService, IContentTypeService contentTypeService)
-            : base(logger, propertyEditors, dataTypeService, contentTypeService, new DataHelper())
+    	public UnicornBlocksPropertyEditor(ILogger logger, Lazy<PropertyEditorCollection> propertyEditors, IDataTypeService dataTypeService, IContentTypeService contentTypeService, ILocalizedTextService localizedTextService)
+            : base(logger, propertyEditors, dataTypeService, contentTypeService, localizedTextService)
         { }
     	
     }
