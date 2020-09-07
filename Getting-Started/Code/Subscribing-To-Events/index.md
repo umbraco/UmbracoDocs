@@ -83,7 +83,15 @@ private void ContentService_Published(Umbraco.Core.Services.IContentService send
 {
     // the custom code to fire everytime content is published goes here!
 }
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    ContentService.Published -= ContentService_Published;
+}
 ```
+:::note
+When you subscribe to static events you should also unsubscribe from them when Umbraco shuts down, see the Terminate() method in the example using the -+ syntax to achieve the unsubscribing.
+:::
 
 Let's check if this works by adding a message to the log every time the publish event occurs.
 
@@ -186,7 +194,8 @@ namespace MyProjectName.Web.Components
         // terminate: runs once when Umbraco stops
         public void Terminate()
         {
-            // do something when Umbraco terminates
+            // unsubscribe on shutdown
+            ContentService.Published -= ContentService_Published;
         }
     }
 }

@@ -73,6 +73,11 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 }
 ```
 
+:::note
+Umbraco backoffice uses the Helveticons icon pack by default 
+:::
+
+
 ### Creating the View and the Controller
 
 Add 2 additional files to the `/App_Plugins/WordCounter/` folder:
@@ -195,6 +200,7 @@ When a role restriction is given in the manifest, it overrides any other restric
 ## Creating a Content App in C#
 
 This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
+Create a `WordCounter.cs` file in `/App_Code/` to register the dashboard this way.
 
 ```csharp
 using System;

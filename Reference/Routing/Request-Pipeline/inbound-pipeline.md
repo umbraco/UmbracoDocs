@@ -58,14 +58,19 @@ namespace Umbraco8.Components
     {
         public void Initialize()
         {
-            PublishedRequest.Prepared += (sender, args) =>
-            {
-                var request = sender as PublishedRequest;
-                // do something…
-            };
+            PublishedRequest.Prepared += PublishedRequest_Prepared;
         }
 
-        public void Terminate() {}
+        private void PublishedRequest_Prepared(object sender, EventArgs e)
+        {
+             var request = sender as PublishedRequest;
+             // do something…
+        }
+
+        public void Terminate() {
+            //unsubscribe during shutdown
+            PublishedRequest.Prepared -= PublishedRequest_Prepared;
+        }
     }
 }
 ```

@@ -39,6 +39,8 @@ namespace My.Website
         // terminate: runs once when Umbraco stops
         public void Terminate()
         {
+            //unsubscribe during shutdown
+            EditorModelEventManager.SendingContentModel -= EditorModelEventManager_SendingContentModel;
         }
 
     private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)

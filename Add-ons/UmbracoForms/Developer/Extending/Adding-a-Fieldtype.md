@@ -64,7 +64,7 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
         @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
         @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
         @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
-        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
 ```
 
 The view takes care of generating the UI control and setting its value.
@@ -81,7 +81,7 @@ We will also add a file for the default theme of the form at `Views\Partials\For
         @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
         @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
         @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
-        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
 ```
 
 This will be rendered when the default theme is used. For example purposes, it can be identical to the previous partial view.

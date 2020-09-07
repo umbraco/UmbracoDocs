@@ -136,6 +136,8 @@ namespace MyProject.Components
 
         public void Terminate()
         {
+            //unsubscribe during shutdown
+            ContentService.Saving -= this.ContentService_Saving;
         }
 
         /// <summary>
