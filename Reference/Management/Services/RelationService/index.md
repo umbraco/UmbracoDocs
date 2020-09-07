@@ -358,7 +358,10 @@ namespace Doccers.Core.Components
             }
         }
 
-        public void Terminate() { }
+        public void Terminate() {
+          //unsubscribe during shutdown
+          ContentService.Published -= ContentService_Published;
+        }
     }
 }
 ```
