@@ -28,7 +28,7 @@ Follow these steps, in order to persist Umbraco Forms definitions in the databas
 2. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config`
 3. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the following value:
 
-    ```code
+    ```<code>
     <setting key=“StoreUmbracoFormsInDb” value=“True” />
     ```
 
