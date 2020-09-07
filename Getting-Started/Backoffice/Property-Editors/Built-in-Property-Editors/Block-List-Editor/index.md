@@ -163,3 +163,23 @@ Example:
     }
 }
 ```
+
+## Build a custom backOffice view
+
+You can choose to customize your editing experience by implementing a custom view for each Block.
+By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated.
+
+### Write your own HTML view
+Currently you can only pick HTML files for a custom view.
+These views are powered by AngularJS and therefor you can write any AngularJS logic.
+Your HTML can be anything, but if you like to just use it as a representation of the content. Then you propaly want the full view to be clickable, which when opens the default editor for editing of your content.
+The following example displays the property with the alias `headline` together with the `description` inside a button to edit your block.
+
+```html
+<button type="button" ng-click="block.edit()">
+	<h2 ng-bind="block.data.headline"></h2>
+	<p ng-bind="block.data.description"></p>
+</button>
+```
+
+If you like to display properties of `settings`, you can access these by `block.settingsData.myPropertyAlias`.
