@@ -25,6 +25,9 @@ Write your forms your way. You have full control over your form's HTML markup an
 ## [Working with Record data](Working-With-Data/index.md)
 See how you can fetch and display record data from your Razor macros.
 
+## [Persist Forms data in the Umbraco Database](Forms-in-the-Database)
+As of Umbraco 8.5.2 it is possible to persist all data from Umbraco Forms in the database. Learn more about how to configure your Umbraco Forms installation to migrate all forms data into the Umbraco database.
+
 ## [Extending](Extending/index.md)
 Learn how you can extend Umbraco Forms with your own custom providers.
 
