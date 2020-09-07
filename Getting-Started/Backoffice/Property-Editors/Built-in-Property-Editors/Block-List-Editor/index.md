@@ -18,13 +18,14 @@ The **Block List** property editor is configured in the same way as any standard
 
 Then you will see the configuration options for a **Block List** as shown below.
 
-![Block List - Data Type Definition](images/BlockListEditor_DataType.png)
+![Block List - Data Type Definition](images/BlockListEditor_DataType.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
 - **Available Blocks** - Here you will define the Block Types to be available for use in the propety. Read more on how to set up Block Types below.
 - **Amount** - Sets the minimum and/or maximum number of items that should be allowed in the list.
-- **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens item deletions to require a confirmation before being deleted. Defaults to `true`.
+- **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
+- **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordians.
 - **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
 
 
@@ -107,10 +108,11 @@ The default rendering method is named GetBlockListHtml() and comes with a few op
 
 To make this work you will need to create a Partial View for each block, named by the alias of the ElementType thats begin used as Content Model.
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
+Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`
 
 A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
 
-In the following exmalpe please note that the `ElementTypeAliasOfContent`and `ElementTypeAliasOfSettings` should corrospond with the selected ElementType Alias for the given model in your case.
+In the following example please note that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should corrospond with the selected ElementType Alias for the given model in your case.
 
 Example:
 
@@ -118,8 +120,8 @@ Example:
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Core.Models.Blocks.BlockListItem>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = (ContentModels.ElementTypeAliasOfContent)Model.Content;
-    var settings = (ContentModels.ElementTypeAliasOfSettings)Model.Settings;
+    var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
+    var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
 }
 ```
 
