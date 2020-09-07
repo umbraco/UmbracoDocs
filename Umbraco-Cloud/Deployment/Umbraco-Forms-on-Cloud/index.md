@@ -58,7 +58,7 @@ In order to switch to persisting all definitions for Umbraco Forms data in the U
 4. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone
 5. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
 
-    ```code
+    ```xml
     <setting key=“StoreUmbracoFormsInDb” value=“True” />
     ```
 
