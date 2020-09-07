@@ -85,6 +85,27 @@ In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform 
 
 For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
+## Deny specific IPs from accessing your website
+
+You can block people and bots(e.g. a malicious scanning bot) from accessing your website by adding their IP addresses to a deny-list.
+
+The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
+
+```xml
+<rule name="RequestBlockByIP" patternSyntax="Wildcard" stopProcessing="true">
+    <match url="*"/>
+    <conditions>
+    <add input="{REMOTE_ADDR}" negate="false" pattern="123.123.123.123"/>
+    </conditions>
+    <action type="AbortRequest"/>
+</rule>
+```
+For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can, of course, choose your own error.
+
+:::note
+You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
+:::
+
 ## Restrict backoffice access using IP filtering
 
 It is possible to restrict who can access the Umbraco backoffice by applying an IP filter. When doing this on an Umbraco Cloud site, there are a few things to pay attention to as the backoffice URL is used in the deployment workflow.

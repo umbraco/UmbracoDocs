@@ -101,7 +101,8 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            // Nothing to terminate
+            //unsubscribe during shutdown
+            ContentService.Saved -= ContentService_Saved;
         }
     }
 }

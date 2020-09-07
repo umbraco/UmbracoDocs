@@ -165,6 +165,14 @@ public class CleanUpYourRoomComponent : IComponent
 
     public void Terminate()
     {
+        //unsubscribe during shutdown
+        _cleanUpYourRoomRunner.TaskCompleted -= Task_Completed;
+
+        _cleanUpYourRoomRunner.TaskStarting -= this.Task_Starting;
+
+        _cleanUpYourRoomRunner.TaskCancelled -= this.Task_Cancelled;
+
+        _cleanUpYourRoomRunner.TaskError -= this.Task_Error;
     }
 }
 

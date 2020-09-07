@@ -130,7 +130,8 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-        // called when the Umbraco application shuts down.
+            // called when the Umbraco application shuts down.
+            ContentService.Saved -= ContentService_Saved;
         }
     }
 }
@@ -205,6 +206,7 @@ namespace Umbraco8.Components
         public void Terminate()
         {
             // called when the Umbraco application shuts down.
+            ContentService.Unpublishing -= ContentService_Unpublishing;
         }
     }
 }
