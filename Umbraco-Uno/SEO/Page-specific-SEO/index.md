@@ -108,3 +108,41 @@ This field is not found in the “SEO” section, but is instead found in the �
 :::
 
 This field is used to set a custom URL for the page. When this is not set the URL of a page is determined by the name of the page. If the URL is a child of another page it will always keep the page path.
+
+## Post specific SEO settings explained
+
+Blog posts are slightly different than normal content pages. They have different fields and also have an additional section called "Meta" that is relevant for SEO. Below we’ll go through the different fields that have an impact on SEO.
+​
+### Page name
+
+The name of the blog post is used in the backoffice blog post overview and is also used to generate the URL.
+​
+Page name is also added as the “name” property in the schema markup type “WebPage” that is added to the blog post.
+​
+### Heading
+
+This field is used as the headline for your blog post and is shown on the blog post itself and on the blog overview page.
+​
+Heading is also added as the “headline” property in the schema markup type “BlogPosting” that is added to the blog post.
+​
+### Image (in the "Content" section)
+
+The image you upload here is used as the top image shown on the blog post page.
+​
+Image is also added as the “url” property for "image" in the schema markup type “BlogPosting” that is added to the blog post.
+​
+### Date
+
+The date is used to show the publishing date on the blog overview page and on the blog post itself. It is also used to sort the blog posts on the blog overview page (most recent blog posts are shown first).
+​
+Date is also added as the “datePublished” property in the schema markup type “BlogPosting” that is added to the blog post.
+​
+### Description (in the "Meta" section)
+
+This description is shown when listing the blog post on the blog post overview page.
+​
+Description is also added as the “description” property in the schema markup type “BlogPosting” that is added to the blog post.
+​
+### Author
+
+This field is added as the “author” property in the schema markup type “BlogPosting” that is added to the blog post.
