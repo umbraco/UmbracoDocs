@@ -55,15 +55,16 @@ In order to switch to persisting all definitions for Umbraco Forms data in the U
 1. Make sure all environments are upgraded to **at least Umbraco Forms version 8.5.2 and Deploy 3.5.0**
 2. Make sure your forms are in sync between all your Cloud environments
 3. Clone down you Development environment
-4. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone
-5. Locate the `StoreUmbracoFormsInDb` key in the `<settings>` section, and make sure it has the follow value:
+4. Restore content and forms to the local clone
+5. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone
+6. Add the follow key in the `<settings>` section, and make sure the value is set to `True`:
 
     ```xml
     <setting key="StoreUmbracoFormsInDb" value="True" />
     ```
 
-6. Save the file
-7. Spin up your local clone and verify that everything works as expected
+7. Save the file
+8. Spin up your local clone and verify that everything works as expected
 
 Now it is time to deploy the setting to your Cloud environments.
 
