@@ -120,6 +120,8 @@ The default rendering method is named `GetBlockListHtml()` and comes with a few 
 @Html.GetBlockListHtml(Model, "Dates")
 ```
 
+"Dates" above is the alias for the Block List editor.
+
 To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
 
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
