@@ -80,7 +80,7 @@ When viewing a **Block List** editor in the Content section for the first time, 
 
 Clicking the Add content button brings up the Block Catalogue.
 
-![Block List - Simple setup](images/BlockListEditor_BlockPicker_simplesetup.jpg)
+![Block List - Setup](images/BlockListEditor_BlockPicker_simplesetup.jpg)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue apperance.
 
@@ -92,11 +92,11 @@ Depending on wether your Block List Editor is setup to use default or inline edi
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - simple overlay editing](images/BlockListEditor_EditingOverlay.jpg)
+![Block List - Overlay editing](images/BlockListEditor_EditingOverlay.jpg)
 
 In inline editing mode the new Blocks inline editor will expand:
 
-![Block List - simple inline editing](images/BlockListEditor_InlineEditing.jpg)
+![Block List - Inline editing](images/BlockListEditor_InlineEditing.jpg)
 
 More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
 
@@ -159,7 +159,6 @@ Example:
     var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
     foreach (var block in blocks)
     {
-    
         var content = block.Content;
 
         @Html.Partial("MyFolderOfBlocks/" + content.ContentType.Alias, block)
@@ -179,7 +178,6 @@ Example:
     var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
     foreach (var block in blocks)
     {
-    
         var content = (ContentModels.MyAliasOfContentElementType)block.Content;
         var settings = (ContentModels.MyAliasOfSettingsElementType)block.Settings;
 
@@ -188,21 +186,24 @@ Example:
 }
 ```
 
-## Build a custom backOffice view
+## Build a custom backoffice view
 
 You can choose to customize your editing experience by implementing a custom view for each Block.
+
 By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated.
 
 ### Write your own HTML view
-Currently you can only pick HTML files for a custom view.
-These views are powered by AngularJS and therefor you can write any AngularJS logic.
-Your HTML can be anything, but if you like to just use it as a representation of the content. Then you propaly want the full view to be clickable, which when opens the default editor for editing of your content.
+
+Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and therefor you can write any AngularJS logic.
+
+Your HTML can be anything, but if you like to use it as a representation of the content then you would also want the full view to be clickable, which then opens the default editor for editing of your content.
+
 The following example displays the property with the alias `headline` together with the `description` inside a button to edit your block.
 
 ```html
 <button type="button" ng-click="block.edit()">
-	<h2 ng-bind="block.data.headline"></h2>
-	<p ng-bind="block.data.description"></p>
+  <h2 ng-bind="block.data.headline"></h2>
+  <p ng-bind="block.data.description"></p>
 </button>
 ```
 
