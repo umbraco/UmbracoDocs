@@ -48,12 +48,12 @@ By configuring the propertyes in the group you can customize the user experience
 
 - **Label** - Define a label for the apperance of the Block in the editor. The label can use angularJS template string syntax to display values of properties. Example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar"
 - **Custom view** - Overwrite the angularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own angularJS controller to the view.
-- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scope. Meaning that backoffice styles are no longer present for the view of this block.
+- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
 - **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Data models
 
-It is possible to use two separate Element Types for your Block Types. Choose one to use for Content and one to use for configuration options or Settings.
+It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
 
 - **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Usefull when writing your Label.
 - **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
@@ -94,7 +94,7 @@ In default mode you will enter the editing overlay of that Block:
 
 ![Block List - Overlay editing](images/BlockListEditor_EditingOverlay.jpg)
 
-In inline editing mode the new Blocks inline editor will expand:
+In inline editing mode the new Blocks will expand to show its inline editor:
 
 ![Block List - Inline editing](images/BlockListEditor_InlineEditing.jpg)
 
@@ -117,10 +117,10 @@ You can choose to use the build-in rendering machinsm for rendering blocks via a
 The default rendering method is named `GetBlockListHtml()` and comes with a few options to go with it. The typical use could be:
 
 ```csharp
-@Html.GetBlockListHtml(Model, "Dates")
+@Html.GetBlockListHtml(Model, "MyBlocks")
 ```
 
-"Dates" above is the alias for the Block List editor.
+"MyBlocks" above is the alias for the Block List editor.
 
 To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
 
@@ -141,14 +141,14 @@ Example:
     var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
 }
 
-// Output the value of field with alias heading from the Element Type selected as Content section
+// Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Value("heading")
 
 ```
 
 ### 2. Build your own rendering
 
-A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListItem>` and the stored value will be returned as a list of `BlockListLayoutReference` entities.
+A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListItem>` and the stored value will be returned as a list of `BlockListItem` entities.
 
 Example:
 
