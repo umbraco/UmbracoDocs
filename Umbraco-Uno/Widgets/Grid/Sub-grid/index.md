@@ -8,12 +8,16 @@ The Sub-grid, adds another grid within the original grid. You have the same opti
 
 ## Sample
 
-![Sub-grid Frontend](images/Sub-grid-frontend.png)
+![Sub-grid Frontend](images/Sub-front.png)
 
 ## Configuration options
+
+You add items to a sub-grid just like you would add them to the grid, it is a grid within a grid so the setings for a sub-grid is the same as for a regular grid.
+
+![Sub-grid Backoffice](images/Sub-back.png)
+
+### Content
 
 - Column Width - The Sub-grid is one of the only grid widgets that do dont require you to fill out Column Width.
 - Alias
 - Columns - This is where you select what your Sub-grid needs to contain various other grid widgets.
-
-![Sub-grid Backoffice](images/Sub-grid-backoffice.png)
