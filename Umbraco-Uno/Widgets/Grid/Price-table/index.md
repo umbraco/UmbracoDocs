@@ -33,6 +33,6 @@ For the grid widgets, you will have the configurable settings if you hover over 
 
 - Features (This lets you list the features of the project, and this will be displayed with a checkmark next to it on the front end)
 
-- Buttons (This lets you add buttons)
+- [Buttons](../../Buttons/index.md) (This lets you add buttons)
 
 - Disclaimer (this lets your write the disclaimer for the product)

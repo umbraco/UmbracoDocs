@@ -11,7 +11,7 @@ If you want to be able to have members on your page then setting up register and
 ## Register
 
 This widget lets you create an element on your page, where people can register for an account on your website.
-They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register button. After doing that they will get a message saying that their sign up was successful.
+They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register [buttons](../../Buttons/index.md). After doing that they will get a message saying that their sign up was successful.
 
 In the backoffice, you will be able to see your registered members by clicking onto the Members tab. Here you can edit members and view how many members you have.
 

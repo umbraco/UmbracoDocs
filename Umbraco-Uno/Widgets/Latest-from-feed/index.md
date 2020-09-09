@@ -25,7 +25,7 @@ There will be a few options for you to make you feed work the way you want it to
 - Intro box, lets you give the reader a short intro text to what the articles in the feed is about.
 - Feed Page, where you pick which feed you want displayed
 - Number Of Posts, gives you the option to select the amount of posts the widget will show
-- Buttons
+- [Buttons](../../Buttons/index.md)
 
 ### Settings
 

@@ -26,5 +26,5 @@ Please note that you will have to choose between either having a button on the c
 - Vertical Text Alignment
 - Text Color
 - Overlay Strength
-- Buttons
+- [Buttons](../../Buttons/index.md)
 - Link
