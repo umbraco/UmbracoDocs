@@ -58,7 +58,7 @@ These widgets are tools to make your grid as nice look as possible, each of them
 - [Line break](Line-break/index.md)
 - [Sub grid](Sub-grid/index.md)
 - [Slider](Slider/index.md)
-- [Button](Button/index.md)
+- [Button](../Buttons/index.md)
 
 ## Content widgets
 

@@ -9,10 +9,13 @@ Please note that you will have to choose between either having a button on the c
 
 ## Sample
 
-![Card Frontend](images/Card-frontend.png)
+![Card Frontend](images/Card-front.png)
 
 ## Configuration options
 
+![Card Backoffice part 1 ](images/Card-back.png)
+
+### Content
 - Column Width
 - Heading
 - Text
@@ -25,5 +28,3 @@ Please note that you will have to choose between either having a button on the c
 - Overlay Strength
 - Buttons
 - Link
-
-![Card Backoffice part 1 ](images/Card-backoffice1.png)![Card Backoffice part 2 ](images/Card-backoffice2.png)
