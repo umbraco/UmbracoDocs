@@ -8,10 +8,15 @@ This lets you create multiple boxes containing a header and an arrow down, which
 
 ## Sample
 
-![Accordion Frontend](images/Accordion-fold.png) ![Accordion unfolded Frontend](images/Accordion-unfolded.png)
+![Accordion Frontend](images/Accordion-front.png)
 
 ## Configuration options
 
+You will have to set up each Accordion item, within the Accordion widget.
+
+![Accordion Backoffice](images/Accordion-back.png)
+
+### Content
 - Column Width
 - Boxed Column
 
@@ -19,5 +24,3 @@ In the separate Accorcions you have the following options:
 
 - Header
 - Text
-
-![Accordion Backoffice](images/Accordion-options.png)
