@@ -39,7 +39,11 @@ In the following we will use the information you have gathered, and Azure Storag
     
     ![Use a shared access signature (SAS) URI](images/select-connection.png)
 
-3. In the URI field, input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]` like the following `https://ucmediastoragewelive.blob.core.windows.net/0e6ee123-5q22-1234-8618-ae7d0043710f?sv=2017-04-17&sr=c&si=umbraco&sig=f84%2F%2FRPPirgdzn15a%2BA12345678901%2FXA%3D&spr=https`
+3. In the URI field, input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]` like the following 
+
+```
+https://ucmediastoragewelive.blob.core.windows.net/0e6ee123-5q22-1234-8618-ae7d0043710f?sv=2017-04-17&sr=c&si=umbraco&sig=f84%2F%2FRPPirgdzn15a%2BA12345678901%2FXA%3D&spr=https
+```
 
     ![Attach with SAS URI](images/attach-blob.png)
 
