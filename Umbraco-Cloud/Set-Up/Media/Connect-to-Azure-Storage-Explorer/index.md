@@ -16,7 +16,14 @@ In case you want to manually upload files to the blob storage provided to your s
 
 ## Getting the credentials
 The first thing to sort out, if you want to connect to the blob storage of your site is the credentials of your site. You can find the credentials in KUDU (Power Tools) - under the "Environment" section.
-In the environment section, we want to locate the "Environment Variables" and find the following three variables: `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.ContainerName`, `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.Endpoint` and `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.SharedAccessSignature`. Note these down, as we will use them in the upcoming steps.
+
+In the environment section, we want to locate the "Environment Variables" and find the following three variables: 
+
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.ContainerName`
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.Endpoint` and 
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.SharedAccessSignature`. 
+
+Note these down, as we will use them in the upcoming steps.
 
 ## Installing Azure Storage Explorer
 Next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and install it on your local machine.
