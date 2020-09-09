@@ -10,7 +10,7 @@ versionFrom: 8.0.0
 
 In case you want to manually upload files to the blob storage provided to your site, you can take advantage of the software "Microsoft Azure Storage Explorer".
 
-:::note
+:::warning
 **Important**: If you upload your media files manually using this method, they will not be available in the backoffice.
 :::
 
