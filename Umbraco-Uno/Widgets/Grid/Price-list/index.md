@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Price List
 
 The Price List lets you create a list of items with a title, description, and price of the items.
-The way it works is that you click the add content button next to items, then fill out all the fields, and then you will have the items for your price list.
+The way it works is that you click the add content [button](../../Buttons/index.md) next to items, then fill out all the fields, and then you will have the items for your price list.
 
 ## Samples
 

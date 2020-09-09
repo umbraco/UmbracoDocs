@@ -26,4 +26,4 @@ For the grid widgets, you will have the configurable settings if you hover over 
 - Image
 - Pod Media Left - This will allow you to let the image and icon float to the left of your text.
 - Link
-- Button
+- [Buttons](../../Buttons/index.md)

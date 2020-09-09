@@ -26,7 +26,7 @@ In these configurations, you will have a lot of options to customize both text a
 - Heading
 - Text
 - Images
-- Buttons
+- [Buttons](../Buttons/index.md)
 
 ### Settings
 

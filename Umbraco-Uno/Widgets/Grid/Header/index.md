@@ -21,4 +21,4 @@ For the grid widgets, you will have the configurable settings if you hover over 
 - Pre Heading (This option lets you make a text above the main heading)
 - Heading (This is the main heading)
 - Text (This option let you create a text field under your heading)
-- Buttons (This final option let you create buttons)
+- [Buttons](../../Buttons/index.md) (This final option let you create buttons)
