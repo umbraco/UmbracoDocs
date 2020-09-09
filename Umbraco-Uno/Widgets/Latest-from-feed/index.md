@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The Latest From Feed widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type.
 
-Let us say that you want to have a blog on your page, where you can share all your latest articles, a feed would be perfect for this, because a feed will let you have article thumbnails on this page and by clicking those you will be taken straight to the article of your choice. After the feed has been set-up it will automatically add any new blog posts to the feed whenever you create a new one.
+Let us say that you want to have a blog on your page to share all your latest articles. A feed would be perfect for this because a feed will let you have article thumbnails on this page, and by clicking those, you will be taken straight to the article of your choice. After the feed has been set-up, it will automatically add any new blog posts to the feed whenever you create a new one.
 
 ## Sample
 
