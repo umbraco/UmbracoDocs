@@ -6,6 +6,10 @@ versionFrom: 8.0.0
 
 This is a guide designed to help you make a set up and configure a landing page for your website.
 
+Below is a preview of how the completed landingpage will look.
+
+![Preview of landing page](images/landing-page-preview.gif)
+
 In each step, one feature will be covered. It is important to note that this guide will not cover all options you will have in terms of features.
 
 ## Creating the page
