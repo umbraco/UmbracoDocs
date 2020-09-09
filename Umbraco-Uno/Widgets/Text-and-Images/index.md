@@ -38,4 +38,3 @@ In these configurations, you will have a lot of options to customize both text a
 - Background Color
 - Text Color
 - Animate
-
