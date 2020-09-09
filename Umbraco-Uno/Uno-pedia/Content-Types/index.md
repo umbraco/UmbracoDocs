@@ -78,7 +78,7 @@ When you rename a page on your website or move a page below another page, Umbrac
 
 It is possible to create custom redirects as well, by adding the *Manual Redirects* page as a child page to *Settings*. Once this has been setup, redirects are created as items from the *Manual Redirects* page.
 
-Learn more about how to configure and work with manual redirects in the [Manual Redirects settings](../../../Seo/Manual-redirects-settings-in-uno) article.
+Learn more about how to configure and work with manual redirects in the [Manual Redirects settings](../../../SEO/Manual-redirects-settings-in-uno) article.
 
 ### Forms
 
