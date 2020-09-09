@@ -18,7 +18,7 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 
 There are quite a few options to make your map work and look the best possible, you will, for example, be able to choose how zoomed in it needs to be.
 
-![the map backoffice](images/Map-Final.png)
+![the map backoffice](images/Map-final.png)
 
 ## Content
 
