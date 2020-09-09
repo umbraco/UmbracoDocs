@@ -151,7 +151,7 @@ We will do this by using a copy of the first grid we made, and then removing all
 
 - Copy the first grid on the page
 - Select **Add Content** and navigate to the **Clipboard** tab
-- Select the grid we just copied
+- Select the grid we copied in the first step
 - Start by **deleting all Text and Image widgets from the grid**
 
 Now you should be left with an empty grid, and we can start adding a Slider.
