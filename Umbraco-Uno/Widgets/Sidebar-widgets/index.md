@@ -8,25 +8,27 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 
 ## Sample
 
-![The three sidebar widgets available](images/sidebarwidgets-options.png)
+![The three sidebar widgets available](images/Sidebar-back.png)
 
 * Text (heading and text)
 * Navigation (external or internal links, with option to include child/sub pages)
 * Button (learn more about the various option in the [Buttons widget](../Buttons) article)
 
-![A visual sample of all three sidebar widgets](images/sidebarwidgets-samples.png)
+![A visual sample of all three sidebar widgets](images/Sidebar-front.png)
 
 ## Configuration options
 
 ### Text
 
+![Config options for the text sidebar](images/Sidebar-text.png)
+
 * Heading
 * Text
 * Boxed (puts content in a grey box)
 
-![Config options for the text sidebar](images/sidebarwidgets-text-config.png)
-
 ### Navigation
+
+![Config options for the navigation sidebar](images/Sidebar-nav.png)
 
 * Heading
 * Links (external or internal)
@@ -34,6 +36,6 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 * Only render Children (option to only show sub pages)
 * Boxed (puts content in a grey box)
 
-![Config options for the navigation sidebar](images/sidebarwidgets-nav-config.png)
+
 
 ### [Button](../Buttons)
