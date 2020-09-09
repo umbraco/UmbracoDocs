@@ -160,7 +160,7 @@ Before starting to add content, use the following configuration:
 |Setting                |Value           |
 |-----------------------|----------------|
 |Show Next/Prev Arrows  |Checked         |
-|Show Page Dots         |Checked         |
+|Show Page Dots         |Unchecked       |
 |Wrap Around            |Checked         |
 |Autoplay               |7000            |
 |Pause Autoplay On Hover|Unchecked       |
@@ -183,6 +183,8 @@ Use the **copy** feature to quickly add similar widgets without having to config
 Once you've added the quotes you want to add, click **Confirm** in the bottom-right corner to add the slider to the grid, and again to add the grid to the page.
 
 ![Preview of the slider in the third grid](images/slider-grid.png)
+
+This was the final step of this guide. You have now setup a new landing page for your project. Feel free to play around with it and try adding other widgets to it, for a more personalized look.
 
 ## The widgets we used
 
