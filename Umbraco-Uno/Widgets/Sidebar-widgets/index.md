@@ -38,4 +38,4 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 
 
 
-### [Button](../Buttons)
+### [Button](../Buttons/index.md)

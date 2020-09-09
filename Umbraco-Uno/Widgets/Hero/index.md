@@ -26,7 +26,7 @@ You will have a lot of settings for your Hero widget, letting you customize the 
 - Heading
 - Text (Rich Text Editor)
 - Background (image or video)
-- [Buttons](../../Buttons/index.md)
+- [Buttons](../Buttons/index.md)
 
 ### Settings
 

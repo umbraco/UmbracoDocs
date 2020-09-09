@@ -30,7 +30,7 @@ There are quite a few options to make your map work and look the best possible, 
 - Phone Number
 - Email
 - Opening Hours
-- [Buttons](../../Buttons/index.md)
+- [Buttons](../Buttons/index.md)
 
 ### Settings
 
