@@ -14,6 +14,8 @@ In the Settings section in the Umbraco Backoffice, you will find the Headless tr
 
 The Playground comes with basic features such as real-time error highlighting, syntax highlighting, formatting, query history and more.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/8jp-HGtA0vM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Accessing GraphQL Playground
 
 1. Log into the project backoffice
