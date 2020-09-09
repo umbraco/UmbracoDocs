@@ -23,20 +23,20 @@ using Umbraco.Web.PropertyEditors;
 namespace UmbracoEightExamples.PropertyEditors
 {
 
-    [DataEditor(
-        "MyOwn.UnicornBlocksEditor",
-        "Unicorn Blocks",
-        "unicornblocks",
-        ValueType = ValueTypes.Json,
-        Group = Umbraco.Core.Constants.PropertyEditors.Groups.Lists,
-        Icon = "icon-thumbnail-list")]
-    [PropertyEditorAsset(ClientDependencyType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
-    public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
-    {
-		public UnicornBlocksPropertyEditor(ILogger logger, Lazy<PropertyEditorCollection> propertyEditors, IDataTypeService dataTypeService, IContentTypeService contentTypeService, ILocalizedTextService localizedTextService)
-			: base(logger, propertyEditors, dataTypeService, contentTypeService, localizedTextService)
-		{ }
-    }
+  [DataEditor(
+      "MyOwn.UnicornBlocksEditor",
+      "Unicorn Blocks",
+      "unicornblocks",
+      ValueType = ValueTypes.Json,
+      Group = Umbraco.Core.Constants.PropertyEditors.Groups.Lists,
+      Icon = "icon-thumbnail-list")]
+  [PropertyEditorAsset(ClientDependencyType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
+  public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
+  {
+  public UnicornBlocksPropertyEditor(ILogger logger, Lazy<PropertyEditorCollection> propertyEditors, IDataTypeService dataTypeService, IContentTypeService contentTypeService, ILocalizedTextService localizedTextService)
+    : base(logger, propertyEditors, dataTypeService, contentTypeService, localizedTextService)
+  { }
+  }
 
 }
 ```
@@ -45,7 +45,7 @@ Notice how the `PropertyEditorAsset` attribute is used to load the `UnicornBlock
 
 Your Property Editor will need a `PropertyValueConverter`. Read more about [Property Value Converters](our.umbraco.com/Documentation/Extending/Property-Editors/value-converters).
 
-### Data structure of Block Editors
+## Data structure of Block Editors
 
 The data of Block Editors consist of three main parts:
 
@@ -94,15 +94,15 @@ In the following example the layout object "MyOwn.UnicornBlocksEditor" is of typ
 }
 ```
 
-### Client side code
+## Client side code
 
-#### Basic knowledge for understanding how to work with Block Editor data
+### Basic knowledge for understanding how to work with Block Editor data
 
 To help your Block Editor manage the Data Structure presented above we have made a Model Object called BlockEditorModelObject which helps manage the basic parts of a Block Editor.
 
 To get a better understanding of what the Model Object does for you, we need to look at some usages of the Model Object.
 
-#### Maintain and work with the Layout of a Block Editor
+### Maintain and work with the Layout of a Block Editor
 
 The `layout` of a Block Editor can be of any structure. Therefor the Model Object(BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we offen will be giving the Model Object a reference to an entry of the `layout` for then to performe an action and if what went well we might have to reflect this change back to the `layout`.
 
@@ -110,7 +110,7 @@ Since the origin of blocks is in the `layout` the Model Object only can serve as
 
 To give an unstanding of what that means please read the following documentation of how to create a block.
 
-#### The basic setup for a Block Editor
+### The basic setup for a Block Editor
 
 Instantiate a Model Object and load dependencies. Provide the basic structure for the `layout` property when reciving the reference to it:
 
@@ -141,7 +141,7 @@ function onLoaded() {
 }
 ```
 
-#### Create a Block
+### Create a Block
 
 Use the Model Object to create a Block and append the returned layout-entry to the `layout`.
 
@@ -246,7 +246,7 @@ if (vm.layout.length > 0) {
 }
 ```
 
-### Manage Block Objects for general use through out your Property Editor
+## Manage Block Objects for general use through out your Property Editor
 
 We use the Block Objects for almost anything, these Block Objects should not be created for each action but instead be available through out the run time of your Block Editor.
 
