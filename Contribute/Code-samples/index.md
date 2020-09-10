@@ -16,6 +16,7 @@ In order to ensure the quality and consistence of all the various code samples i
 * Add a clear description
 * Use code comments
 * Use real-life samples
+* Add correct syntax highlighting
 * Add only compilable samples
 * Check for syntax errors
 
@@ -42,6 +43,20 @@ The documentation often aims to explain complex scenarios and constructs within 
 It can be a good idea to use *placeholders* for names, methods and other things, in order to keep the code samples as neutral and general as possible, althought that is not a requirement.
 
 With Umbraco, there are often more than one way to achieve a result, which means that is also makes sense to have more code samples on the same topic.
+
+### Add correct syntax highlighting
+
+When you add code blocks to an Umbraco Docs article make sure that you add the correct syntax highlighting. This will "prettify" the code in the sample, based on which language is used. In the Umbraco Documentation most commonly used languages are supported for syntax highlighting.
+
+To add syntax highlightning, add the name of the language in lower case directly after the first three backticks: <code>```csharp</code>.
+
+Code sample without syntax highlighting:
+
+![Code sample without syntax highlighting](images/snippet-without-syntaxhighlighting.png)
+
+The same code sample with syntax highlighting:
+
+![The same code sample with syntax highlighting](images/snippet-with-syntaxhighlighting.png)
 
 ### Add only compilable samples
 
