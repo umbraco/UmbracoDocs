@@ -112,7 +112,7 @@ Rendering the stored value of your **Block List** property can be done in two wa
 
 ### 1. Default rendering
 
-You can choose to use the build-in rendering machinsm for rendering blocks via a Partial View for each block.
+You can choose to use the built-in rendering mechanism for rendering blocks via a Partial View for each block.
 
 The default rendering method is named `GetBlockListHtml()` and comes with a few options to go with it. The typical use could be:
 
