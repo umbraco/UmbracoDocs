@@ -48,7 +48,9 @@ With Umbraco, there are often more than one way to achieve a result, which means
 
 When you add code blocks to an Umbraco Docs article make sure that you add the correct syntax highlighting. This will "prettify" the code in the sample, based on which language is used. In the Umbraco Documentation most commonly used languages are supported for syntax highlighting.
 
-To add syntax highlightning, add the name of the language in lower case directly after the first three backticks: "```csharp".
+To add syntax highlightning, add the name of the language in lower case directly after the first three backticks:
+
+![Where to add syntax highlighting](images/add-syntax-highlighting.png)
 
 Code sample without syntax highlighting:
 
