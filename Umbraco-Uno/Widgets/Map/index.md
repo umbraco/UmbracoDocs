@@ -4,15 +4,17 @@ versionFrom: 8.0.0
 
 # Map (Google)
 
-The Map widget is a feature that lets you use Google Maps to show the location of your choice. This could be if you need to show where your company is located. The map widget is a handy widget for this as it will display a map, and if you choose to, then the information can be displayed next to the map. The map will have a pointer set to the ***Latitude*** and ***Longitude*** of your choice.
+The Map widget is a feature that lets you use Google Maps to show the location of your choice. This could be if you need to show where your company is located.
 
-The way it works is that you type in the ***Latitude*** and ***Longitude*** and select how zoomed in you want the map to be on a scale from 0 - 20 it is recommended to set it to 7.
+The map widget is a handy widget for this as it will display a map, and if you choose to, then the information can be displayed next to the map. The map will have a pointer set to the **Latitude** and **Longitude** of your choice.
+
+The way it works is that you type in the **Latitude** and **Longitude** and select how zoomed in you want the map to be on a scale from 0 - 20 it is recommended to set it to 7.
 
 ## Sample
 
 ![Frontend example of the Map widget with default details added to info fields](images/Map-Front.png)
 
-When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
+When **Show Content Next To Map** is disabled the white section on the left will not appear and the map will take up all the space.
 
 ## Configuration Options
 

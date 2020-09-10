@@ -27,7 +27,3 @@ You will have the options to choose the size of your text box and to add a sideb
 
 - Container Width
 - Sidebar Left
-
-::: Note
-The Text widget is the *standard* width per default. This can be changed by going to the settings and select the size that you want.
-:::

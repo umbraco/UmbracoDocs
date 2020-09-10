@@ -36,6 +36,4 @@ Some widgets in Umbraco Uno provides the option to create more widgets. This is 
 * Only render Children (option to only show sub pages)
 * Boxed (puts content in a grey box)
 
-
-
 ### [Button](../Buttons/index.md)

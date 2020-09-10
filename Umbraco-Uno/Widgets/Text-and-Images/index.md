@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Text and images
 
 This Widget allows you to create a collage of images and text.
-You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it.
+You can have 6 images in total, and you can add a **Pre Heading** and a **Heading** to it.
 
 An example could be that you had an event so the event text would be on the right side, with some of the images on the left, the link button could then link to the full gallery.
 
@@ -16,7 +16,6 @@ An example could be that you had an event so the event text would be on the righ
 ## Configuration Options
 
 In these configurations, you will have a lot of options to customize both text and images.
-
 
 ![Text and Images Backoffice](images/Text-images-final.png)
 

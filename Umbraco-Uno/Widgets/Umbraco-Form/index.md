@@ -5,7 +5,8 @@ versionFrom: 8.0.0
 # Umbraco Form
 
 The Umbraco Form widget, gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
-You can create a form by selecting the Forms section in the top menu in your backoffice.
+
+You can create a form by selecting the Forms section in the top menu in your backoffice. Learn more about how to create forms in the [Umbraco Forms](../../../Add-ons/UmbracoForms/Editor/Creating-a-Form) section.
 
 ## Sample
 
@@ -13,10 +14,9 @@ You can create a form by selecting the Forms section in the top menu in your bac
 
 ## Configuration options
 
-You will multiple options to customize your form, and chose which form should be displayed on your page.
+You will have multiple options to customize your form, and choose which form should be displayed on your page.
 
 ![Umbraco Form Backffce](images/Umbraco-forms-final.png)
-
 
 ### Content
 
