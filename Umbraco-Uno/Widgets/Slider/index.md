@@ -14,7 +14,7 @@ This could be used to promote multiple events, by adding an image to the slider 
 
 ## Configuration options
 
-There is rich opportunity to set up a slider just how you want it by using the various options you have here.
+There is rich opportunity to set up a slider exactly how you want it by using the various options you have here.
 
 ![Slider Backoffice](images/Slider-final.png)
 
