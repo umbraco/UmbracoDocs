@@ -13,7 +13,7 @@ You can also add a link and a background image.
 
 ## Configuration options
 
-For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. when in the menu click the widget you want to change the settings for.
+For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. When in the menu click the widget you want to change the settings for.
 
 ![Pod Backoffice](images/Pod-content.png)
 

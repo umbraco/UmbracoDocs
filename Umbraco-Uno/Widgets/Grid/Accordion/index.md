@@ -17,10 +17,11 @@ You will have to set up each Accordion item, within the Accordion widget.
 ![Accordion Backoffice](images/Accordion-back.png)
 
 ### Content
+
 - Column Width
 - Boxed Column
 
-In the separate Accorcions you have the following options:
+In the separate accordions you have the following options:
 
 - Header
 - Text

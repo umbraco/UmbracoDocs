@@ -26,11 +26,10 @@ See below an example, of what it might look like. In this example, there is a He
 
 ## Configuration Options
 
-The global widget is a way to set up templates for the design so you wont have to set up the widgets for each page. That is why the global content it self dont have any options for settings, because you will be configuring the settings for each widget you add to the global content.
-
+The global widget is a way to set up templates for the design so you wont have to set up the widgets for each page. That is why the global content it self doesn't have any options for settings, because you will be configuring the settings for each widget you add to the global content.
 
 ![Configuration options for the Global Content widget](images/Global-widget.png)
 
 :::Note
-Please be aware that you won't be able to see the preview for this in the backoffice.
+Please be aware that you will not be able to see the preview for this in the backoffice.
 :::

@@ -15,6 +15,7 @@ The Line Break is a very useful tool, that allows you to create a space between 
 ![Line Break Backoffice](images/LB-back.png)
 
 ### Content
+
 - Draw Line (This will add a line that will separate the column above from the column below)
 
 - Custom Height (This allows you to decide how much space there should be between the columns)

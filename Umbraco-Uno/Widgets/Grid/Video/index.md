@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Video
 
-If you want a video on your site this is one way to go about it. This lets you upload an MP4 file, with various options such as autoplay or loop.
+If you want a video on your site you will want to use the Video widget inside a grid. This lets you upload an MP4 file, with various options such as autoplay or loop.
 
 ## Sample
 
@@ -12,7 +12,7 @@ If you want a video on your site this is one way to go about it. This lets you u
 
 ## Configuration options
 
-For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. when in the menu click the widget you want to change the settings for.
+For the grid widgets, you will have the configurable settings if you hover over the preview of your grid and then click the small cog in the top right corner. When in the menu click the widget you want to change the settings for.
 
 ![Video Backoffice](images/Video-content.png)
 
@@ -24,5 +24,3 @@ For the grid widgets, you will have the configurable settings if you hover over 
 - Loop (This option will loop the video if turned on)
 - Poster (This is an image that is shown until the video is loaded or the user press play if there is no poster selected this will display the first frame of the video)
 - Video Shadow (If turned on This will create a shadow under the video frame)
-
-

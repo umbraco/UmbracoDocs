@@ -26,8 +26,11 @@ The grid is good for multiple reasons. It keeps your page-aligned beautifully an
 ## Customizing the grid
 
 The grid widget comes with a set of configuration options that can be used to customize how the grid is presented on the frontend.
+
 It includes options such as deciding the alignment of the content, how close the columns should be placed together as well as a few options to change colors or adding a background image.
+
 Finally, there is also an option called "animate". When this is checked, the content in the grid will appear with a "fade-in" animation as the visitor scrolls down the page.
+
 The best way to learn about how to customize the grid is to create a few widgets and then test out the various configuration settings. In the section below, you can find a complete list of the options available.
 
 ## Configuration options
@@ -46,8 +49,6 @@ These are the options you will have to customize your grid, each of these option
 - Text Color - This lets you change the text color in your grid.
 - Animate - This gives your grid an animation that makes it fade into view when the user arrives at the grid.
 
-
-
 ## Presentation widgets
 
 These widgets are tools to make your grid as nice look as possible, each of them offers unique functionality, that in some way has the potential to improve the overall look of your grid.
@@ -57,7 +58,7 @@ These widgets are tools to make your grid as nice look as possible, each of them
 - [Navigation](Navigation/index.md)
 - [Line break](Line-break/index.md)
 - [Sub grid](Sub-grid/index.md)
-- [Slider](Slider/index.md)
+- [Slider](../Slider/index.md)
 - [Button](../Buttons/index.md)
 
 ## Content widgets
@@ -69,7 +70,7 @@ These widgets are tools to help you get your desired content shown in the best p
 - [Code](Code/index.md)
 - [Price list](Price-list/index.md)
 - [Price table](Price-table/index.md)
-- [Umbraco Form](Umbraco-Form/index.md)
+- [Umbraco Form](../Umbraco-Form/index.md)
 - [Pod](Pod/index.md)
 - [Card](Card/index.md)
 
