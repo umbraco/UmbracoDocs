@@ -6,17 +6,19 @@ versionFrom: 8.0.0
 
 This will allow you to add an image to your grid. It's possible to add a link and a caption to the image.
 
-By clicking this link you can find more information on how the [Images](../../Image/index.md) widget works in general.
-
 ## Sample
 
-![Image Frontend](images/Image-frontend.png)
+Below is a sample of an image added to a grid.
+
+![Image Frontend](images/frontend-image.png)
 
 ## Configuration options
+
+Below is an overview of the various configuration options you have when adding images to your grid.
+
+![Image Backoffice](images/backoffice-image.png)
 
 - Column Width
 - Image
 - Caption
 - Link
-
-![Image Backoffice](images/Image-backoffice.png)
