@@ -4,14 +4,13 @@ versionFrom: 8.0.0
 
 # General Settings
 
-As a child node under *Settings* you'll find the *General* node. Here you will find a long list of settings and configuration options for your website. The general settings will apply to the entire website.
+As a child page under *Settings* you'll find *General*. Here you will find a long list of settings and configuration options for your website. The general settings will apply to the entire website.
 
 In this article you can learn more about the various options as well as get an idea of what the settings will affect.
 
-The general settings node is divided into 7 different groups:
+The General settings are divided into 6 different groups:
 
 * [General](#general)
-* [SEO](#seo)
 * [Newsletter](#newsletter)
 * [Instagram](#instagram)
 * [Cookie Consent](#cookie-consent)
@@ -33,22 +32,6 @@ Fill in your Twitter handle, which will be used ...
 ### Contact Form Email and Contact Form Subject
 
 When using the *Content Form* widget, you can use these to define the email that should receive the forms submissions and the subject of the mails sent to that receiver.
-
-## SEO
-
-The SEO (Search Engine Optimization) group on the General settings node lets you manage all the general SEO settings on your website.
-
-### Company Name
-
-Will be added as the `alt` value on the company logo, whenever it's displayed on the website.
-
-### Company Logo
-
-These will be used main in the right side of the top navigation of the website.
-
-### Site Name, Phone Number, Email, Latitude and Longitude
-
-These are all used in Open Graph meta tags in the website `<head>` tag, which will help improve SEO on your website.
 
 ## Newsletter
 
@@ -76,13 +59,17 @@ In order to use the *Instagram Feed* widget, you will need to configure the foll
 
 Your Instagram username, without `@`.
 
-### User ID
+### User ID (optional)
 
-Your Instragram User ID which you can find by using this tool: [Find your User ID](https://codeofaninja.com/tools/find-instagram-user-id)
+Your Instragram User ID.
 
-### Access Token
+### Access Token (required)
 
-You will need to add your access token as well, in order for your Umbraco Uno project to connect.
+You will need to add your access token as well, in order for your Umbraco Uno project to connect to your Instagram profile.
+
+In order to generate an access token you will need to create a Facebook app and add your Instagram account as a test user.
+
+This can all be done by following steps 1-3 in the [Facebook Basic Display API Guide](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started).
 
 ## Cookie Consent
 
@@ -126,7 +113,7 @@ The default search view is a traditional list view.
 
 ## Tracking and Access
 
-As the final group on the General settings node, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
+As the final group on the General settings, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
 
 None of these are required, but we do recommend adding a Google Maps API Key, as they will enable you to use the *Map* widget.
 

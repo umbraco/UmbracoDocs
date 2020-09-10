@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Working with widgets
 
-Widgets are the building blocks used to create and customize Umbraco Uno websites. There is [a long list of available widgets](../../Uno-pedia/Widgets), all tailored to specific purposes ranging from static text fields to elaborate grid structures.
+Widgets are the building blocks used to create and customize Umbraco Uno websites. There is [a long list of available widgets](../../Widgets), all tailored to specific purposes ranging from static text fields to elaborate grid structures.
 
 Being the main way to add content to pages, widgets are available on the following content types:
 
@@ -27,18 +27,25 @@ Widgets are added in the *Content* group which can be found on the *Content tab*
 
 To add a widget, follow these steps:
 
-* Click "Add Content"
-* Select a widget from the pop-up dialog
+* Click **Add Content**
+* Select a widget from dialog opening on the right-hand side
 
-  ![Dialog with available widgets](images/available-widgets.png)
+  ![Dialog with available widgets](images/available-widgets-dialog.png)
 
-* An empty widget of the type selected in the dialog will be added to the page
-* Fill in data and choose configuration options
-* Save and/or publish the page in order for the changes to be reflected
+* This will open a new window with configuration options
+* Add your content and data to the fields on the **Content** tab
+* Choose configuration options on the **Settings** tab
+* Click **Confirm** in the bottom right to add the widget to your page
+
+When you are using a larger screen, you will see that a preview of the widget you are creating will update as you add content and configuration. This preview will show you how the widget will look on your frontend once you save the page.
+
+![Preview of a Hero widget](images/widgets-preview.png)
 
 :::tip
-Find links to articles describing each available widget in the [Widgets](../../Uno-pedia/Widgets) article.
+Find links to articles describing each available widget in the [Widgets](../../Widgets) article.
 :::
+
+To edit a widget after it has been configured and added to a page, click on it directly in the dashboard or select the little cog wheel that will appear in the top-right corner once you hover the widget.
 
 ## Copying widgets
 
@@ -47,14 +54,12 @@ Once a widget has been added and configured, it becomes possible to create a cop
 To **copy a widget**, follow these steps:
 
 * Use the mouse to hover over the widget that needs to be copied
-* Click on the *copy* icon in the right side of the widget (this will add the widget to the *clipboard*)
+* Click on the **copy** icon in the top-right corner of the widget - this will add the widget to the **clipboard**
 * Navigate to the page where you want a copy of the widget
-* Select "Add content"
-* The dialog will now be divided into two section:
-  1. "Paste from clipboard" containing all copies made of other widgets and
-  2. "Create new"
+* Select **Add content**
+* In the dialog, navigate to the **Clipboard** tab in the top-right corner
 
-  ![Widgets clipboard with available widget copies](images/widgets-clipboard.png)
+  ![Widgets clipboard with available widget copies](images/clipboard-widgets.png)
 
 * Select the widget copied from the other page
 * A copy of the widget (including data and configuration) will be added to the current page
@@ -62,20 +67,20 @@ To **copy a widget**, follow these steps:
 To **copy multiple widgets**, follow these steps:
 
 * Hover over the Widgets section of the page from where the widgets should be copied
-* Click on the little three dots
-* Select "Copy widgets" - this will add all widgets from the page to the *clipboard*
+* Click on the elipses (...)
+* Select **Copy widgets** - this will add all widgets from the page to the clipboard
 * Navigate to the page where you want a copy of the widgets
-* Select "Add content"
+* Select **Add content**
 
-  ![All widgets from a page grouped together in clipboard](images/widgets-multiple.png)
+  ![All widgets from a page grouped together in clipboard](images/widgets-from-page.png)
 
-* The clipboard will now show a group of widgets containing a copy of all widgets from the specific page (in this case "Widgets from Start")
+* The clipboard will now show a group of widgets containing a copy of all widgets from the specific page (in this case "Widgets from Unicorn Hotel")
 * Select the group of widgets
 * All widgets (including data and configuration) will be pasted into the current page
 
 It is possible to have multiple copies and groups in the clipboard at the same time.
 
-In order to clear the clipboard, click on the "trashcan" icon in the top-right corner of the section.
+In order to clear the clipboard, click on the **Clear clipboard** icon in the top-right corner of the section.
 
 :::note
 Widgets that are copied in this way, will have no relation to each other. This means that once a widget has been copied, and the original is changed, the copies will not be updated to reflect those changes.
@@ -99,17 +104,17 @@ In some cases it might be needed to remove one or more widgets from a page. This
 To **remove a single widget**, follow these steps:
 
 * Use the mouse to hover over the widget that needs to be removed
-* Select the *trashcan* icon in the right side
-* Confirm the action by selecting "Yes, delete" in the pop-up dialog
+* Select the *trashcan* icon in the top-right corner
+* Confirm the action by selecting **Delete** in the pop-up dialog
 * The widget will be removed from the page
 * Save and/or publish the page in order for the changes to be reflected
 
 To **remove all widgets on a page**, follow these steps:
 
 * Use the mouse to over the Widgets section on the page where all widgets needs to be removed
-* Click on the little three dots
-* Select "Remove all items"
-* Confirm the action by selecting "Yes, delete" in the pop-up dialog
+* Click on the elipses (...)
+* Select **Remove all items**
+* Confirm the action by selecting **Delete** in the pop-up dialog
 * All widgets will be cleared from the page
 * Save and/or publish the page in order for the changes to be reflected
 
