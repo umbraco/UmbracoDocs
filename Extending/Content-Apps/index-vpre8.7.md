@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.7.0
+versionFrom: 8.6.0
+versionTo: 8.6.4
 meta.Title: "Content Apps"
 meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
@@ -73,17 +74,12 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 }
 ```
 
-:::note
-Umbraco backoffice uses the Helveticons icon pack by default 
-:::
-
-
 ### Creating the View and the Controller
 
 Add 2 additional files to the `/App_Plugins/WordCounter/` folder:
 
-* `wordcounter.html`
-* `wordcounter.controller.js`
+*-* `wordcounter.html`
+*-* `wordcounter.controller.js`
 
 These 2 files will be our main files for the app, with the `.html` file handling the view and the `.js` file handling the functionality.
 
@@ -151,7 +147,7 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
 
-This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
+This can be done for both **Content/Media Types** and for **Member types**.
 
 Here is an example where all types are taken intro consideration when limiting access to a Content App:
 
@@ -164,9 +160,7 @@ Here is an example where all types are taken intro consideration when limiting a
                 "+content/*", // show for all other content types
                 "+media/*", // show for all media types
                 "-member/premiumMembers", // hide for Member type 'premiumMembers'
-                "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "+member/*" // show for all other Member types
             ]
         }
     ]
@@ -202,7 +196,6 @@ When a role restriction is given in the manifest, it overrides any other restric
 ## C#: Creating a Content App
 
 This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
-Create a `WordCounter.cs` file in `/App_Code/` to register the dashboard this way.
 
 ```csharp
 using System;
