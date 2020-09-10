@@ -38,7 +38,7 @@ To create a locally declared surface controller:
 
 For example:
 
-```csharp
+```
 namespace TestWebsite.Core.Controllers
 {
     public class MyController : Umbraco.Web.Mvc.SurfaceController
