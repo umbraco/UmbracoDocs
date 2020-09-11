@@ -28,9 +28,9 @@ Widgets are added in the *Content* group which can be found on the *Content tab*
 To add a widget, follow these steps:
 
 * Click **Add Content**
-* Select a widget from dialog opening on the right-hand side
+* Select a widget from Widgets Catalogue opening on the right-hand side
 
-  ![Dialog with available widgets](images/available-widgets-dialog.png)
+  ![Catalogue with available widgets](images/widgets-catalogue.png)
 
 * This will open a new window with configuration options
 * Add your content and data to the fields on the **Content** tab
@@ -59,7 +59,7 @@ To **copy a widget**, follow these steps:
 * Select **Add content**
 * In the dialog, navigate to the **Clipboard** tab in the top-right corner
 
-  ![Widgets clipboard with available widget copies](images/clipboard-widgets.png)
+  ![Widgets clipboard with available widget copies](images/hero-in-clipboard.png)
 
 * Select the widget copied from the other page
 * A copy of the widget (including data and configuration) will be added to the current page
