@@ -34,6 +34,16 @@ There are quite a few options to make your map work and look the best possible, 
 - Opening Hours
 - [Buttons](../Buttons/index.md)
 
+## API key settings
+
+Your maps widget might say something like "Oops! Something went wrong." or "for development purposes only".
+
+This means that you're missing a Google Maps API key. Every Uno project comes with an API key by default, however, if you would like to use your own then check out this link for more information - https://developers.google.com/maps/documentation/javascript/error-messages
+
+Once you have the API key, you can add it by opening the settings content page and then navigating to "General".
+
+There's a section called "Tracking & Access" at the very bottom of that page. That's where you can add your API key.
+
 ### Settings
 
 - Height
