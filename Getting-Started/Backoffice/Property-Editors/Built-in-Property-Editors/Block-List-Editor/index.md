@@ -142,7 +142,7 @@ Example:
 }
 
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
-<h1>@content.Value("heading")
+<h1>@content.Value("heading")</h1>
 
 ```
 
