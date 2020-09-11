@@ -9,7 +9,7 @@ The articles in the Umbraco Documentation can in most cases benefit from relevan
 
 In this article, you will find some guidelines which outline how we recommend formatting and using code samples for consistency in the documentation pages. We provide definitions and examples of the most used types of code samples in the Umbraco Documentation.
 
-## Best practices
+## Good practices
 
 In order to ensure the quality and consistency of all the various code samples in the Umbraco Documentation, we have outlined a set of good practices that we highly recommend that you follow, when adding code snippets to articles.
 
