@@ -12,7 +12,7 @@ We will start by setting up a Register widget.
 
 To set-up register widget:
 
-1. Select the page where you what the register widget to be 
+1. Select the page where you want the register widget to be 
 2. Add the register widget
 3. Fill out the settings for register widget
 
