@@ -98,7 +98,7 @@ The markdown above will output the following:
 
 #### Smaller code snippets
 
-As part of a longer articles or tutorial we recommend using smaller code snippets to highlight the various bits of code that needs to be implemented.
+As part of longer articles or tutorials, we recommend using smaller code snippets within the text to highlight the various bits of code that need to be implemented at each step.
 
 These snippets can be added between sections anywhere in an article without breaking focus from the main topic. Keep in mind that adding too many snippets in quick succession can be confusing to the flow of the article.
 
