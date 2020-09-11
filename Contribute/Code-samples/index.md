@@ -11,7 +11,7 @@ In this article, you will find some guidelines which outline how we recommend fo
 
 ## Best practices
 
-In order to ensure the quality and consistence of all the various code samples in the Umbraco Documentation, we have outlined a set of best practices that we highly recommend that you follow, when adding code snippets to articles.
+In order to ensure the quality and consistency of all the various code samples in the Umbraco Documentation, we have outlined a set of good practices that we highly recommend that you follow, when adding code snippets to articles.
 
 * Add a clear description
 * Use code comments
@@ -20,7 +20,7 @@ In order to ensure the quality and consistence of all the various code samples i
 * Add only compilable samples
 * Check for syntax errors
 
-Each of these best practices are explained in more details below.
+Each of these guidelines is explained in more detail below.
 
 ### Add a clear description
 
@@ -38,11 +38,11 @@ Note that the use of code comments does not eliminate the need for a description
 
 ### Use real-life samples
 
-The documentation often aims to explain complex scenarios and constructs within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* examples, meaning that is should be something that would make sense to add to a production site.
+The documentation often aims to explain complex scenarios and concepts within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* clear examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
 
 It can be a good idea to use *placeholders* for names, methods and other things, in order to keep the code samples as neutral and general as possible, althought that is not a requirement.
 
-With Umbraco, there are often more than one way to achieve a result, which means that is also makes sense to have more code samples on the same topic.
+With Umbraco, depending on the context of the implementation and the skillset of the development team - often there is more than one way to achieve a result. Having multiple examples, eg a Modelsbuilder version, a non-Modelsbuilder version etc - can help prevent readers from mixing techniques in their solution, so try to consider the context of alternative approaches, and its fine to provide multiple examples.
 
 ### Add correct syntax highlighting
 
@@ -62,13 +62,13 @@ The same code sample with syntax highlighting:
 
 ### Add only compilable samples
 
-As a reader of the Umbraco Documentation you should be able to grab to code samples in the articles and apply them somewhat directly to your own code base. Of course there might be a need for some minor alterations, but the code in the sample should as a rule of thumb be combilable.
+As a reader of the Umbraco Documentation, you should be able to grab code samples in the articles and apply them directly to your own code solution. Of course, this is an aspiration and there might be a need for some minor alterations, but on the most basic level, the code in the sample should at the very least be compilable. Including any relevant Using statements for namespaces that might provide that 'extension' method or key functionality.
 
 ### Check for syntax errors
 
 When reading any piece of text be it documentation or a novel, there is nothing more frustrating that running into spelling and syntax errors. This also applies for code samples.
 
-Any code that is added to articles in the documentation should be double-checked for syntax errors.
+Any code that is added to articles in the documentation should be double-checked for syntax errors and typos.
 
 ## When to use code samples
 
@@ -124,7 +124,7 @@ The Razor snippet above will output the following:
 
 As part of tutorials and longer articles explaining a certain workflow, it might make sense to add a full code sample of the topic covered.
 
-An example of this could be the tutorial on [creating a custom Dashboard](../../Tutorials/Creating-a-Custom-Dashboard) for your Umbraco project. This article uses various smaller code snippets mixed in with the steps and text sections. At the bottom of the article, you will notice a full example of the file that has been build on through the tutorial - this is an example of a large code sample.
+An example of this could be the tutorial on [creating a custom Dashboard](../../Tutorials/Creating-a-Custom-Dashboard) for your Umbraco project. This article uses various smaller code snippets mixed in with the steps and text sections. At the bottom of the article, you will notice a full example of the file that has been built on throughout the tutorial - this is an example of a large code sample.
 
 We recommend creating separate articles for these large code samples and using them as references instead of adding them as part of the actual article. Having long snippets in an article which already contains multiple sections and steps, can make the article confusing.
 
