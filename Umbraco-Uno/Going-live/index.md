@@ -34,6 +34,10 @@ Check with your DNS host or hostname provider for details on how to configure th
 - Add your hostname to the field and select add
 - To keep track of the process, you can refresh the page when it is done sucessfully it will say: Protected by LATCH  
 
+#### Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/eOgQKJ1nQbw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Umbraco Latch
 
 Every Umbraco Uno project is protected by Umbraco Latch witch means that a TLS Certificate will be applied automatically.
