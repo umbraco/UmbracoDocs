@@ -18,6 +18,14 @@ In this article you will find detailed instructions on how to try out and test t
 
 As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core. More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
+:::warning
+As this is an **alpha release** bugs and minor issues are to be expected. 
+
+You can find a list of known issues in the [release blog post](https://umbraco.com/blog/net-core-alpha-release/) and see [already reported issues on the Issue tracker](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aopen+is%3Aissue+label%3Aproject%2Fnet-core+).
+
+Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
+:::
+
 To get started, follow the steps outlined below.
 
 ### Prerequisites
