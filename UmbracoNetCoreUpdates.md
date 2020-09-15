@@ -40,7 +40,9 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ## .NET Core Alpha
 
-As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core. More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
+As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
+
+More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
 :::warning
 As this is an **alpha release** bugs and minor issues are to be expected.
@@ -106,4 +108,4 @@ Even though you will not be able to see it from the CLI, the project is now runn
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
-Once the installation process is complete you might need to **restart the application** using IIS/IIS Express in order to start the application again.
+Once the installation process is complete you might need to **restart the application** using IIS/IIS Express in order to start the application again and get access to the Umbraco backoffice.
