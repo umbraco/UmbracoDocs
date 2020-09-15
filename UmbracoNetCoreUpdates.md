@@ -12,9 +12,74 @@ Are you aware of some information about Umbraco .Net Core that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
+In this article you will find detailed instructions on how to try out and test the current alpha version of Umbraco .Net Core. You will also find a [list of relevant links to official as well as unofficial resources on the upcoming release](#news-and-updates-from-umbraco-hq).
+
 ## .NET Core Alpha
 
-Instructions on how to try out and test the .NET Core alpha.
+As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core. More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
+
+To get started, follow the steps outlined below.
+
+### Prerequisites
+
+* [.Net Core 3.1 SDK](https://dotnet.microsoft.com/download)
+* SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
+
+### Steps to install
+
+1. Use a command prompt of your choice to insert this custom NuGet feed:
+
+    ```none
+    dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
+    ```
+
+2. Install the new Umbraco dotnet template:
+
+    ```none
+    dotnet new -i Umbraco.Templates::0.5.0-alpha001
+    ```
+
+3. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
+
+    ```none
+    dotnet new umbraco -n MyCustomUmbracoSolution
+    ```
+
+    ```none
+    dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
+    ```
+
+You will now have a new project with the name `MyCcustomUmbracoSolution` or whichever name you chose.
+
+The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
+
+### Steps to build and run
+
+The following steps, will continue using CLI based on the steps above.
+
+1. Navigate to the newly created project folder:
+
+    ```none
+    cd MyCustomUmbracoSolution
+    ```
+
+2. Build the new Umbraco .Net Core project:
+
+    ```none
+    dotnet build
+    ```
+
+3. Once the project has been build, it's time to run it:
+
+    ```none
+    dotnet run
+    ```
+
+Even though you will not be able to see it from the CLI, the project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and be available on the default ports: http://localhost:5000 and https://localhost:5001.
+
+The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
+
+Once the installation process is complete you might need to **restart the application** using IIS/IIS Express in order to start the application again.
 
 ## News and updates from Umbraco HQ
 
