@@ -10,6 +10,14 @@ The map widget is a handy widget for this as it will display a map, and if you c
 
 The way it works is that you type in the **Latitude** and **Longitude** and select how zoomed in you want the map to be on a scale from 0 - 20 it is recommended to set it to 7.
 
+## API key settings
+
+Your maps widget might say something like "Oops! Something went wrong." or "for development purposes only". This means that you're missing a Google Maps API key. 
+
+Every Uno project comes with an API key by default, however, if you would like to use your own, follow the instruction in [Google's Documentation](https://developers.google.com/maps/gmp-get-started).
+
+Once you have the API key, you need to add it in the "Tracking & Access" group of the "General" settings page found under "Settings". Learn more about the [General settings in the Uno-pedia](../Uno-Pedia/Settings/General-Settings/).
+
 ## Sample
 
 ![Frontend example of the Map widget with default details added to info fields](images/Map-Front.png)
@@ -22,7 +30,7 @@ There are quite a few options to make your map work and look the best possible, 
 
 ![the map backoffice](images/Map-final.png)
 
-## Content
+### Content
 
 - Custom Map Pin Icon
 - Pre Heading
@@ -33,16 +41,6 @@ There are quite a few options to make your map work and look the best possible, 
 - Email
 - Opening Hours
 - [Buttons](../Buttons/index.md)
-
-## API key settings
-
-Your maps widget might say something like "Oops! Something went wrong." or "for development purposes only".
-
-This means that you're missing a Google Maps API key. Every Uno project comes with an API key by default, however, if you would like to use your own then check out this link for more information - https://developers.google.com/maps/documentation/javascript/error-messages
-
-Once you have the API key, you can add it by opening the settings content page and then navigating to "General".
-
-There's a section called "Tracking & Access" at the very bottom of that page. That's where you can add your API key.
 
 ### Settings
 
