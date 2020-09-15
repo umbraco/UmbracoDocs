@@ -6,7 +6,7 @@ meta.Description: "Updates and information related to the upcoming release of Um
 # Umbraco .Net Core
 
 :::note
-This article is intended for keeping an overview of all the information, offiiual as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
 
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
