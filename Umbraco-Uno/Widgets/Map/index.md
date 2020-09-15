@@ -18,6 +18,8 @@ Every Uno project comes with an API key by default, however, if you would like t
 
 Once you have the API key, you need to add it in the "Tracking & Access" group of the "General" settings page found under "Settings". Learn more about the [General settings in the Uno-pedia](../Uno-Pedia/Settings/General-Settings/).
 
+![Image showing where to enter the API key](images/Api-key.png)
+
 ## Sample
 
 ![Frontend example of the Map widget with default details added to info fields](images/Map-Front.png)
