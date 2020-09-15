@@ -36,7 +36,8 @@ In this section you will find links to news and updates from the .Net Core team 
 
 In this section you will find a list of Umbraco .Net Core resources provided by the Umbraco Community.
 
-* [Youtube: umbraCoffee #141](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
+* [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
+* [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 
 ## .NET Core Alpha
 
