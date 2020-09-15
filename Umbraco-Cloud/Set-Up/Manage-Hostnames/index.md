@@ -17,7 +17,7 @@ To access the backoffice add `/umbraco` to the end of the Live, Development or S
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/eOgQKJ1nQbw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4x3DPwQMTr0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Domains
 
