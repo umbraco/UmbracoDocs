@@ -1,12 +1,12 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco running on .Net Core."
+meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
 ---
 
 # Umbraco .Net Core
 
 :::note
-This article is intended for keeping an overview of all the information, officual as well as unofficial, currently available on the upcoming release of Umbraco on .Net Core.
+This article is intended for keeping an overview of all the information, offiiual as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
 
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
@@ -45,7 +45,7 @@ As of September 3rd 2020 it is possible to try out and test the latest alpha rel
 More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
 :::warning
-As this is an **alpha release** bugs and minor issues are to be expected.
+As this is an **alpha release**, bugs and minor issues are to be expected.
 
 You can find a list of known issues in the [release blog post](https://umbraco.com/blog/net-core-alpha-release/) and see [already reported issues on the Issue tracker](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aopen+is%3Aissue+label%3Aproject%2Fnet-core+).
 
@@ -83,7 +83,7 @@ To get started, follow the steps outlined below.
     dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
     ```
 
-You will now have a new project with the name `MyCcustomUmbracoSolution` or whichever name you chose.
+You will now have a new project with the name `MyCcustomUmbracoSolution`, or whichever name you chose.
 
 The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
 
