@@ -12,14 +12,38 @@ Are you aware of some information about Umbraco .Net Core that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on how to try out and test the current alpha version of Umbraco .Net Core. You will also find a [list of relevant links to official as well as unofficial resources on the upcoming release](#news-and-updates-from-umbraco-hq).
+In this article you will find detailed instructions on [how to try out and test the current alpha version of Umbraco .Net Core](#net-core-alpha). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+
+## News and updates from Umbraco HQ
+
+In this section you will find links to news and updates from the .Net Core team at Umbraco HQ, as well as from the UniCore community team.
+
+### Blog posts
+
+* [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
+* [.NET Core in the Unicorner](https://umbraco.com/blog/the-unicorner-returns-net-core-alpha-release/)
+* [Automated testing in Umbraco](https://umbraco.com/blog/automated-testing-in-umbraco/)
+* [Status of migrating to .NET Core](https://umbraco.com/blog/status-of-migration-to-net-core/)
+* [Unicore team visit at Umbraco HQ](https://umbraco.com/blog/unicore-team-visit-at-umbraco-hq/)
+* [The Unicore Team](https://umbraco.com/blog/the-unicore-team/)
+
+### Other resources
+
+* [The Umbraco Roadmap](https://umbraco.com/products/roadmap/)
+* [Community: The UniCore team](https://our.umbraco.com/get-involved/the-unicore-team/)
+
+## Community resources
+
+In this section you will find a list of Umbraco .Net Core resources provided by the Umbraco Community.
+
+* [Youtube: umbraCoffee #141](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 
 ## .NET Core Alpha
 
 As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core. More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
 :::warning
-As this is an **alpha release** bugs and minor issues are to be expected. 
+As this is an **alpha release** bugs and minor issues are to be expected.
 
 You can find a list of known issues in the [release blog post](https://umbraco.com/blog/net-core-alpha-release/) and see [already reported issues on the Issue tracker](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aopen+is%3Aissue+label%3Aproject%2Fnet-core+).
 
@@ -71,15 +95,10 @@ The following steps, will continue using CLI based on the steps above.
     cd MyCustomUmbracoSolution
     ```
 
-2. Build the new Umbraco .Net Core project:
+2. Build and run the new Umbraco .Net Core project:
 
     ```none
     dotnet build
-    ```
-
-3. Once the project has been build, it's time to run it:
-
-    ```none
     dotnet run
     ```
 
@@ -88,22 +107,3 @@ Even though you will not be able to see it from the CLI, the project is now runn
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
 Once the installation process is complete you might need to **restart the application** using IIS/IIS Express in order to start the application again.
-
-## News and updates from Umbraco HQ
-
-In this section you will find links to news and updates from the .Net Core team at Umbraco HQ, as well as from the UniCore community team.
-
-### Blog posts
-
-* [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
-* [.NET Core in the Unicorner](https://umbraco.com/blog/the-unicorner-returns-net-core-alpha-release/)
-* [Automated testing in Umbraco](https://umbraco.com/blog/automated-testing-in-umbraco/)
-* [Status of migrating to .NET Core](https://umbraco.com/blog/status-of-migration-to-net-core/)
-* [Unicore team visit at Umbraco HQ](https://umbraco.com/blog/unicore-team-visit-at-umbraco-hq/)
-* [The Unicore Team](https://umbraco.com/blog/the-unicore-team/)
-
-Also links to
-Roadmap
-Community pages for the UniCore team
-
-## Community resources
