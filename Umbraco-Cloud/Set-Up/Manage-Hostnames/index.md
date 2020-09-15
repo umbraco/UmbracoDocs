@@ -17,7 +17,7 @@ To access the backoffice add `/umbraco` to the end of the Live, Development or S
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/eOgQKJ1nQbw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4x3DPwQMTr0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Domains
 
@@ -26,8 +26,6 @@ Under *Settings* in the Umbraco Cloud Portal, you'll find **Hostnames**. This is
 ![Hostnames](images/manage-hostnames.png)
 
 You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
-
-You can bind a total of 15 hostnames to each Umbraco Cloud environments.
 
 Once you add a hostname to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root hostname (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address - 23.100.15.180. Check with your DNS host or hostname registrar for details on how to configure this for your hostnames.
 

@@ -8,8 +8,8 @@ This section contains information on each feature and functionality in an Umbrac
 
 ## [Umbraco Backoffice](Umbraco-Backoffice)
 
-## [Content Types](Content-Types)
+## [Page Types](Content-Types)
 
-## [Overview of widgets](Widgets)
+## [Overview of widgets](../Widgets)
 
 ## [Available settings](Settings)

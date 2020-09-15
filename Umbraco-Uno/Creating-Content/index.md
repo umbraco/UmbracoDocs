@@ -14,7 +14,7 @@ An example of this could be choosing between the Image widget and the Gallery wi
 
 Which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
 
-There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Uno-pedia/Widgets/Grid) feature.
+There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Widgets/Grid) feature.
 
 ### Widget based design and structure
 
@@ -24,10 +24,10 @@ The grid widget gives you all the tools you would need to create a good looking 
 
 ### Fitting widgets to your already existing design and structure
 
-If you already have a predefined design you need to achieve, the grid widget is a good option. 
+If you already have a predefined design you need to achieve, the grid widget is a good option.
 
-To get started it would be a good choice, to start by setting up the grid structure in a global content node. Doing so will allow you to keep a consistent structure throughout your pages.
-Keeping the grid in a global content node is both time efficient and structure efficient as you will only have to set up the core structure once.
+To get started it would be a good choice, to start by setting up the grid structure in a global content page. Doing so will allow you to keep a consistent structure throughout your pages.
+Keeping the grid in a global content page is both time efficient and structure efficient as you will only have to set up the core structure once.
 
 ## [Working With Content](Work-With-content/index.md)
 
@@ -57,4 +57,27 @@ The Rich Text Editor or RTE as people call it is a great way to create content. 
 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
-For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Uno-pedia/Widgets) section in the Uno-pedia.
+For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Widgets) section in the Uno-pedia.
+
+## Working with Forms
+
+Umbraco Uno ships with Umbraco Forms, which is an addon product that enables you to create forms that fit right into your existing design. You can customize the forms as you like, and depending on which type of form you're setting up, you can attach a workflow that fits.
+
+To learn more about how to work with Umbraco Forms head over to [Umbraco Forms Documentation](https://our.umbraco.com/documentation/add-ons/umbracoforms/) to get started.
+
+### Recaptcha and Umbraco Uno
+
+When you're using the *Recaptcha* forms option in Umbraco Uno, you will need to follow a few extra steps, in order to configure the feature.
+
+The steps are outlined below:
+
+1. Open a browser and navigate to https://www.google.com/recaptcha/admin/create
+2. Fill the form and submit it
+3. Copy the **site key** and **secret key**
+4. Head into the backoffice of your Umbraco Uno site
+5. Locate the Settings page
+6. Click the elipsies and choose to create an instance of **Forms**
+7. Copy and paste your site key into the field called "Recaptcha public key"
+8. Save and publish the Forms settings content node
+
+![How to find a create a Forms page under Settings](images/forms-recaptcha.png)

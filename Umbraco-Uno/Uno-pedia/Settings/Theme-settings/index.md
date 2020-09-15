@@ -4,13 +4,13 @@ versionFrom: 8.0.0
 
 # Theme Settings
 
-As a child node under *Settings* you'll find the *Theme* node. Here you will find a long list of settings and configuration options for your website. The theme settings will apply to the entire website.
+As a child page under *Settings* you'll find the *Theme* page. Here you will find a long list of settings and configuration options for your website. The theme settings will apply to the entire website.
 
 Most of the options found here, are also available through the [Theme Editor](../../../Getting-Started/Themes).
 
 In this article you can learn more about the various options as well as get an idea of what the settings will affect.
 
-The general settings node is divided into 7 different groups:
+The Theme settings are divided into 5 different groups:
 
 * [General](#general)
 * [Colors](#colors)

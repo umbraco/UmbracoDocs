@@ -5,7 +5,9 @@ versionFrom: 7.0.0
 # Azure Blob Storage on Umbraco Cloud
 
 :::note
-**Important**: All Umbraco 8 projects created after May 6th 2020 will have Azure Blob Storage by default. That means that this guide only applies to you, if your project was created before May 6th 2020 or if you are using Umbraco 7.
+**Important**: All Umbraco 8 projects created after May 6th 2020 will have Azure Blob Storage by default. In case you want to connect to your Blob storage provided on Umbraco Cloud [you can follow this step-by-step guide on using Azure Storage Explorer with Umbraco Cloud.](Connect-to-Azure-Storage-Explorer)
+
+That means that this guide only applies to you, if your project was created before May 6th 2020 or if you are using Umbraco 7.
 :::
 
 As Umbraco Cloud deployments are done using a web connection, large media deployments can be slow and are subject to timeouts and other restrictions associated with large uploads over a web connection.

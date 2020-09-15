@@ -21,5 +21,5 @@ This in turn allows for a better overview of the page, because you in the backof
 
 ### Widgets for creating and logging in a user
 
-To make the creation of members a more smooth experience, using the [register widget](../../Uno-pedia/Widgets/Login-and-Register/index.md/#Register) might be your best solution, as this lets the people using your page set up their own member account.
-Then after creating a member they can use the [login widget](../../Uno-pedia/Widgets/Login-and-Register/index.md/#login) to login into their account.
+To make the creation of members a more smooth experience, using the [register widget](../../Widgets/Login-and-Register/#Register) might be your best solution, as this lets the people using your page set up their own member account.
+Then after creating a member they can use the [login widget](../../Widgets/Login-and-Register/#login) to login into their account.

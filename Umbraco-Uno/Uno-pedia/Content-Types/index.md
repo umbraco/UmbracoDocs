@@ -50,7 +50,7 @@ All content added to the website will by default be added to the sitemap as well
 
 A sitemap content item will be excluded from the default navigation menu.
 
-## Settings
+## [Settings](../Settings)
 
 When building an Umbraco Uno website the Settings content type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
 
@@ -58,10 +58,30 @@ When building an Umbraco Uno website the Settings content type and subpages are 
 
 These are usually settings that has an effect on the entire site, and include things like connecting your SMTP service, setting up tracking for Google and managing the cookie consent.
 
-You can manage the general settings for your website on the *General* content node, which you can find as a child node to *Settings*.
+You can manage the general settings for your website on the *General* page, which you can find as a child page to *Settings*.
 
 ### [Theme settings](../Settings/Theme-settings)
 
 As the name indicates, theme settings is where you go to manage the theme of your website. This includes matching the colors and logos to your company identity and defining various sizes and spaces around the website.
 
-You can manage the theme settings for your website on the *Theme* content node, which you can find as a child node to *Settings*.
+You can manage the theme settings for your website on the *Theme* page, which you can find as a child page to *Settings*.
+
+### [SEO settings](../Settings/SEO-Settings)
+
+In order for your website to perform well in various search results, Umbraco Uno ships with a set of configuration SEO settings that we highly recommend using.
+
+Most SEO settings are managed from the *SEO* page, which you can find as a child page to *Settings*.
+
+### Manual Redirects
+
+When you rename a page on your website or move a page below another page, Umbraco Uno will automatically create a redirect based on the change. This means, than if your visitors use the old path to an article that was moved, they will still be showed the correct content.
+
+It is possible to create custom redirects as well, by adding the *Manual Redirects* page as a child page to *Settings*. Once this has been setup, redirects are created as items from the *Manual Redirects* page.
+
+Learn more about how to configure and work with manual redirects in the [Manual Redirects settings](../../SEO/Manual-redirect-settings-in-uno) article.
+
+### Forms
+
+When you are working with Umbraco Forms in your Umbraco Uno project, you might want to use *Google Recatpcha* which is a field you can add to your forms.
+
+In order for the Recaptcha field to work properly, you will need to configure a key. Learn more about how this works and how to set it up in the [Creating Content](../../Creating-Content/#working-with-forms) article.

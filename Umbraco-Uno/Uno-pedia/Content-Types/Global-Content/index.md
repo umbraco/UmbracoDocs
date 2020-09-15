@@ -4,7 +4,8 @@ versionFrom: 8.0.0
 
 # The Global Content
 
-This node lets you create the widgets that you will then later be able to use in the [Global Content Widget](../../Widgets/Global-Content).
+Global Content is a way for you to create widgets that you will then later be able to use on other pages via the [Global Content Widget](../../Widgets/Global-Content).
+
 When you have created a widget here it will work as a template in the future, so that you will only have to set it up once, saving you a lot of time in the future.
 
 Setting your widgets up with this feature ensures that every time you make a new page, you can get the same design on each page.

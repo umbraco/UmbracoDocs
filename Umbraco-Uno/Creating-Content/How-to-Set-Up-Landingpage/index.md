@@ -2,162 +2,202 @@
 versionFrom: 8.0.0
 ---
 
-# How to set up a landingpage
+# How to set up a landing page
 
-This is a guide designed to help you make a nice landing page, for your website.
+This is a guide designed to help you make a set up and configure a landing page for your website.
+
+Below is a preview of how the completed landingpage will look.
+
+![Preview of landing page](images/landing-page-preview.gif)
+
 In each step, one feature will be covered. It is important to note that this guide will not cover all options you will have in terms of features.
 
-The Result should look somewhat like this:
+## Creating the page
 
-![What the page will somewhat look like](images/Frontend-landingpage.gif)
-
-## First Step
-
-- Start by right-clicking the Umbraco Hotel node
+- Start by right-clicking the Umbraco Hotel page in the Content tree
 - Choose Create and select **Page**
-- Name your landing page and you are ready to start creating your new landing page
+- Name your new page and and click **Save**
+
+The landing page has now been created, and you are ready to start adding content.
+
+## Adding a Hero widget
+
+We will start by adding a greeting to our page. This will be done using the Hero widget, as it allows for having text on top of an image.
+
 - In the Content group of your page, navigate to the Widget section and click ***Add content***
+- Select the **Hero** widget
+- Fill in the 3 text fields on the **Content** tab
+- Choose an image to be used as the background
+- Select the **Settings** tab in the top-right corner
 
-## Hero
+Use the following configuration:
 
-We will start by adding a greeting to our page. This will be done using the Hero widget, as it allows for having text on top of a background image in a good way.
+|Setting                |Value           |
+|-----------------------|----------------|
+|Text color             |White           |
+|Container width        |Full width      |
+|Text width             |50%             |
+|Height                 |50%             |
+|Overlay                |70%             |
+|Text alignment         |Center          |
+|Vertical Text Alignment|Center          |
+|Animate                |Checked         |
 
-- Pre heading: Add part of your heading here - it will be in a smaller font size above the actual Heading
-- Heading: This is the main part of the heading so this will be in a larger font size
-- The text will be below the heading and in a smaller font size
-- Add a background image
-- Choose a dark or light theme for the text depending on the colors of your image
-- Container Width: Full width
-- Text width: 50%
-- Height: 70%
-- Overlay: 60%
-- Text Align: Center
-- Vertical text-align: Top
-- Animate turned on
-- Click ***Save*** in the bottom of the page
-- Go to the top of the hero and click the hero tab to minimize it
+Click **Confirm** in the bottom-right corner to complete the setting up and add the widget to your page.
 
-![Settings for the Hero](images/Heo-Grid.gif)
+The result should look similar to this:
 
-## Grid
+![Preview of the Hero widget](images/hero-widget.png)
 
-Next, let's add a grid to be able to have a frame for how the widgets are structured.
-We will be adding multiple grids to this page because the grid provides a lot of options and flexibility.
+## Configuring grids
 
-### The Text and Image Grid
+Next, let's add a couple of grids which will serve as the structure for the next sections on the page.
 
-We will start by making the grid:
+- Click **Add content**
+- Select the **Grid** widget
+- Give the grid an alias - eg. "*Text and images*"
 
-- Click ***Add content***
-- Select Grid
+Before you start adding adding widgets to the grid, select the **Settings** tab and use the following configuration:
 
-***Text Widget***
+|Setting                |Value           |
+|-----------------------|----------------|
+|Container width        |Standard        |
+|Remove Column Gutter   |Unchecked       |
+|Compact                |Unchecked       |
+|Horizontal align       |Center          |
+|Vertical Align Columns |Center          |
+|Background image       |None            |
+|Background color       |White           |
+|Text color             |Black           |
+|Animate                |Checked         |
 
-- Select ***Add content*** next to *Columns*
-- Choose the Text widget
-- Column Width: 50%
-- Set a name for the item in Alias (this is for display purposes only, and will not show on the frontend)
-- Add the text you want
-- Toggle *Boxed* to on
+### Adding Text and Images
 
-***Image Widget***
+For this first grid we will be adding some text and images.
 
-- Click ***Add content***
-- Select Image
-- Name it in alias
-- Column Width: 50%
-- Select an image by clicking the +
+- Go back to the **Content** tab
+- Select **Add content**
+- Choose the **Text** widget
+- Set the Column Width to 50%
+- Add some text
+- Leave the **Boxed** option unchecked
+- Click **Confirm** to add the widget to the grid
 
-***Grid Settings***
+Once you've added the Text widget, select **Add Content** again.
 
-- Name the grid something in alias
-- Container Width: Standard
-- Leave these options off: Remove Column Gutter and Compact
-- Horizontal align: Left
-- Vertical align: Top
-- Select a light color for the background
-- Click ***Save*** in the bottom of the page
-- Go to the top of the grid and click the grid tab to minimize it
+- This time, we'll select the **Image** widget
+- Set the Column Width to 50%
+- Choose an image from the Media library or upload a new one
+- (Optional) Add a caption to the image
+- Click **Confirm to add the widget to the grid
 
-![Settings for the Text and Image Grid](images/Text-Image-grid.gif)
+Add another Text and another Image widget, but this time, start with the Image.
 
-### The Video and Price List Grid
+Once you're done, the first grid will look something like this:
 
-To get started on this grid:
+![Image of the first grid with text and images](images/first-grid.png)
 
-- Click ***Add content***
-- Select Grid
+### Adding Pod widgets
 
-***Video Widget***
+Follow the steps as outlined earlier when setting up the first grid. Use the same configuration as with the first grid, but select a different background color for a more dynamic look.
 
-- Select ***Add content*** next to *Columns*
-- Pick the Video widget
-- Column Width: 50%
-- Pick an MP4 video file
-- Hide controls: Off
-- Set Autoplay to On
-- Set Mute to On
-- Leave Loop off
-- Add a poster
-- Leave video shadow off
+In this second grid, we will be using multiple instances of the **Pod** widget.
 
-***Price List Widget***
+- Go to the **Content** tab
+- Click **Add content**
+- Select the **Pod** widget
+- Add some text to the Heading and the Text fields
 
-- Click ***Add content***
-- Select the Price List widget
-- Column Width: 50%
-- Choose a Heading
-- Leave Boxed off
-- Under Items click ***Add content*** to create the list items
-- Fill in the spaces of Title, Description, and Price for the item 
-- Repeat this process until you have the number of items you want
+Use the following configuration:
 
-***Grid Settings***
+|Setting                |Value           |
+|-----------------------|----------------|
+|Column width           |33%             |
+|Boxed Column           |Checked         |
+|Center Content         |Checked         |
+|Icon                   |Any             |
+|Image                  |None            |
+|Media Left             |Unchecked       |
+|Link                   |None            |
 
-- Name the grid something in alias
-- Container Width: Standard
-- Leave these options off: Remove Column Gutter and Compact
-- Horizontal align: Left
-- Vertical align: Top
-- Select a light color for the background
-- Click ***Save*** in the bottom of the page
-- Go to the top of the grid and click the grid tab to minimize it
+Finally, add a button to the widget as well.
 
-![Settings for the Video and Pricelist Grid](images/video-Pricelist-grid.gif)
+- Add some text and choose which page the button should link to
+- Use the *theme color* for the button
+- Make it transparent
+- Use the *default* size
 
-## Slider Widget
+Click **Confirm** in the bottom-right corner to add the first pod to the grid.
 
-Let's finalize by adding a slider element to the bottom of the page, to slide through products.
+We will want to add a total of 3 pods to this grid, and instead of having to set up each of these, we are going to **copy to pod we already created** and add to more. This can be done by following these steps:
 
-- In the Alias name the slider what you want to call it
-- Next click ***Add content*** to choose what kind of content you want in the slider 
-- Select the Image widget
-- Give the image a name in the alias field
-- Select the image you want to use by clicking +
-- Next, select a small size
-- Set compact to on
-- Write a caption if you want to add text to the image
-- Background color: Gray
-- Repeat the previous steps to add more images to the slider
-- Turn on Show next/prev Arrow
-- Turn off Show Page Dots
-- "Wrap-around" should be on for the best result
-- Set Autoplay to 3000
-- Pause AutoPlay should be on
-- Fade Animation: Off
-- Click ***Save*** in the bottom of the page
-- Go to the top of the slider and click the slider tab to minimize it
+- Hover the existing pod and select the **Copy** icon
+- Select **Add Content**
+- Navigate to the **Clipboard** tab
+- Select the Pod widget
+- Repeat the steps above until you have a total of **3 pod widgets** in the grid
 
-![Settings for the Slider](images/Slider.gif)
+Now you should have 3 identical pod widgets in your grid. Select each of them in turn and update the heading, text, icon and the contents of the buttons.
+
+This should leave you with a grid that looks similar to this:
+
+![Preview of the three pod widgets in the second grid](images/second-grid.png)
+
+## Adding a Slider widget
+
+Let's finalize the page by adding a more dynamic slider element to the bottom of the page, where we will slide through a set of quotes.
+
+We will do this by using a copy of the first grid we made, and then removing all widgets from it. Alternatively you can create a new grid and use the same configuration as we used on the first grid.
+
+- Copy the first grid on the page
+- Select **Add Content** and navigate to the **Clipboard** tab
+- Select the grid we copied in the first step
+- Start by **deleting all Text and Image widgets from the grid**
+
+Now you should be left with an empty grid, and we can start adding a Slider.
+
+- Click **Add Content**
+- Select the **Slider** widget
+
+Before starting to add content, use the following configuration:
+
+|Setting                |Value           |
+|-----------------------|----------------|
+|Show Next/Prev Arrows  |Checked         |
+|Show Page Dots         |Unchecked       |
+|Wrap Around            |Checked         |
+|Autoplay               |7000            |
+|Pause Autoplay On Hover|Unchecked       |
+|Fade Animation         |Unchecked       |
+
+Now, let's add some content to the slider.
+
+- Click **Add Content**
+- Select **Quote**
+- Set the Column width to 100%
+- Leave the **Boxed** option unchecked
+- Fill in the remaining fields
+
+Repeat the steps above at least a couple more times, to give the slider some items to run through.
+
+:::tip
+Use the **copy** feature to quickly add similar widgets without having to configure each of them every time.
+:::
+
+Once you've added the quotes you want to add, click **Confirm** in the bottom-right corner to add the slider to the grid, and again to add the grid to the page.
+
+![Preview of the slider in the third grid](images/slider-grid.png)
+
+This was the final step of this guide. You have now setup a new landing page for your project. Feel free to play around with it and try adding other widgets to it, for a more personalized look.
 
 ## The widgets we used
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
 
-- [Hero](../../Uno-pedia/Widgets/Hero/index.md)
-- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text/index.md)
-- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image/index.md)
-- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video/index.md)
-- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List/index.md)
-- [Slider Widget](../../Uno-pedia/Widgets/Slider/index.md)
-
+- [Hero](../../Widgets/Hero)
+- [Grid](../../Widgets/Grid)
+- [Grid: Text Widget](../../Widgets/Grid/Text)
+- [Grid: Image Widget](../../Widgets/Grid/Image)
+- [Grid: Pod](../../Widgets/Grid/Pod)
+- [Slider Widget](../../Widgets/Slider)
+- [Grid: Quote](../../Widgets/Grid/Quote)

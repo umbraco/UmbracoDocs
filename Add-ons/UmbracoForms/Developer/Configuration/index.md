@@ -47,6 +47,12 @@ This setting needs to be a `True` or `False` value and will enable the ASP.NET A
 
 If you do set this to `True` then you need to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and should have `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
 
+### StoreUmbracoFormsInDb
+
+This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.
+
+For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
+
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
 

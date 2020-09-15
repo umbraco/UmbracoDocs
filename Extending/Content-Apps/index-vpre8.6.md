@@ -7,7 +7,7 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 # Content Apps
 
-## What are Content Apps?
+## What are Content Apps
 
 Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
@@ -33,7 +33,7 @@ You can associate an icon and control the position of your custom Content App. T
 
 Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions.
 
-#### Read-Only?
+#### Read-Only
 
 Content Apps are designed to be companions to the Content Item. They should enhance the editor's experience by enabling quick access to contextual information for the particular content item they are editing. Content Apps are not intended to be used for the editing content.
 
@@ -78,8 +78,8 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 
 Add 2 additional files to the `/App_Plugins/WordCounter/` folder:
 
-- `wordcounter.html`
-- `wordcounter.controller.js`
+* `wordcounter.html`
+*-* `wordcounter.controller.js`
 
 These 2 files will be our main files for the app, with the `.html` file handling the view and the `.js` file handling the functionality.
 
@@ -145,7 +145,9 @@ After the above edits are done, restart your application. Go to any content node
 
 ### Limiting according to Content Type
 
-You can set your Content App to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition. For example:
+You can set your Content App to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
+
+Here is an example where all types are taken intro consideration when limiting access to a Content App:
 
 ```json5
 {
@@ -187,7 +189,7 @@ In a similar way, you can limit your Content App according to user roles (groups
 When a role restriction is given in the manifest, it overrides any other restrictions based on type.
 :::
 
-## Creating a Content App in C#
+## C#: Creating a Content App
 
 This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
 
@@ -220,7 +222,6 @@ namespace Umbraco.Web.UI
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
-			
             // only show app on content items
             if(source is IContent)
             {
@@ -230,14 +231,12 @@ namespace Umbraco.Web.UI
                     Name = "Word Counter",
                     Icon = "icon-calculator",
                     View = "/App_Plugins/WordCounter/wordcounter.html",
-                    Weight = 0                
+                    Weight = 0
                 };
-                
                 return wordCounterApp;
             }
-            
             return null;
-        }        
+        }
     }
 }
 ```
@@ -301,7 +300,6 @@ namespace Umbraco.Web.UI
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
-            
             // only show app on content items
             if(source is IContent)
             {
@@ -312,13 +310,10 @@ namespace Umbraco.Web.UI
                     Icon = "icon-calculator",
                     View = "/App_Plugins/WordCounter/wordcounter.html",
                     Weight = 0,
-                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }                
+                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
                 };
-                
-                return wordCounterApp;               
-            
+                return wordCounterApp;
             }
-            
             return null;
         }  
     }

@@ -22,6 +22,7 @@ You should then be presented with the **Nested Content** property editors data-t
 The data-type editor allows you to configure the following properties:
 
 - **Doc Types** - Defines a list of document-types to use as data blueprints for this **Nested Content** instance. For each document-type you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
+    - If you would like to include the document type name in the label, you can use `{{alias}}`.
     - If you would like to include the index position in the label, you can use `{{$index}}`.
     - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID.
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
