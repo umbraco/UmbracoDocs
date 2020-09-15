@@ -17,7 +17,7 @@ In order to ensure the quality and consistence of all the various code samples i
 * Use code comments
 * Use real-life samples
 * Add correct syntax highlighting
-* Add only compilable samples
+* Add only complete compilable samples (incl. `using` statements)
 * Check for syntax errors
 
 Each of these best practices are explained in more details below.
@@ -46,7 +46,15 @@ With Umbraco, there are often more than one way to achieve a result, which means
 
 ### Add correct syntax highlighting
 
-When you add code blocks to an Umbraco Docs article make sure that you add the correct syntax highlighting. This will "prettify" the code in the sample, based on which language is used. In the Umbraco Documentation most commonly used languages are supported for syntax highlighting.
+When you add code blocks to an Umbraco Docs article make sure that you add the correct syntax highlighting. This will "prettify" the code in the sample, based on which language is used. In the Umbraco Documentation the following languages are supported for syntax highlighting:
+
+* Csharp
+* Json
+* Javascript
+* Html
+* Xml
+
+The package used for the syntax highlighting can be found here: [Syntax Highligter](https://github.com/abjerner/Skybrud.SyntaxHighlighter/blob/master/src/Skybrud.SyntaxHighlighter/Language.cs).
 
 To add syntax highlightning, add the name of the language in lower case directly after the first three backticks:
 
@@ -59,6 +67,8 @@ Code sample without syntax highlighting:
 The same code sample with syntax highlighting:
 
 ![The same code sample with syntax highlighting](images/snippet-with-syntaxhighlighting.png)
+
+If you are adding a code sample using a language that isn't support, it is recommended that you add a `none` label instead.
 
 ### Add only compilable samples
 
