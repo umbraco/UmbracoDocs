@@ -64,7 +64,9 @@ The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for 
     <add key="ActiveDirectoryDomain" value="mydomain.local" />
 </appSettings>
 ```
-Note: one way to find your Active Directory Domain if you are logged into your domain is to open a command prompt and run "set logon" and use the value returned as the LOGONSERVER (not including any slashes).
+:::tip
+One way to find your Active Directory Domain if you are logged into your domain is to open a command prompt and run `set logon` and use the value returned as the `LOGONSERVER` (not including any slashes).
+:::
 
 Finally, to use your `UmbracoStandardOwinStartup` class during startup, update this setting to Web.config:
 
