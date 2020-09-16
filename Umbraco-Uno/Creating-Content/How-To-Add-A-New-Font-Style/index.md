@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 If you find yourself in need of a font that is not already included in Umbraco Uno, then you have the option to add one yourself. In this article, you will learn how to do that.
 
-What you will have to do is to go to https://fonts.google.com/ select a font you like and click the box.
+What you will have to do is to go to [Google Fonts](https://fonts.google.com/ select a font you like and click the box).
 
 ![The box with the font](images/Click-the-box.png)
 
