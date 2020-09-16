@@ -14,7 +14,7 @@ After clicking the box, you will be presented with a list of versions of the sty
 
 ![this lets you select style](images/The-select-style.png)
 
-Then a window will slide in from the right, and from here, you select embed. If you do not see the slide in the window, you can press the button in the top right looking like this.
+A window will slide in from the right, and from here, select embed. If you do not see the slide in the window, you can press the button in the top right looking like this:
 
 :::Center
 ![button to show slide window](images/If-missing-embed-menu.png)
