@@ -26,7 +26,7 @@ When you click embed, there will be two boxes. The fist box will be a link you h
 ![embed window with link](images/Embed-menu.png)
 :::
 
-Go to your Theme settings page in the Umbraco Uno backoffice, navigate to the **Embed Font** field and paste in the link. After this is done, then you can add the body font and the heading font, it is possible to choose a differnt font for header and body.
+Go to your Theme settings page in the Umbraco Uno backoffice, navigate to the **Embed Font** field and paste in the link. After this is done. Now you can add new fonts to the body font and the heading font fields. It is possible to choose a different font for the header and body.
 
 The way you add the header and body font is to type in the name of the font.
 
