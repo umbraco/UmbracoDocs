@@ -33,4 +33,4 @@ Go to your Theme settings page in the Umbraco Uno backoffice, navigate to the **
 ## How to change the font using the Theme Picker
 
 To change the font using the Theme Picker, you will have to go to a preview page of your site and click the green paintbrush button on the right side.
-from there, go to the text tab and select the fonts you want
+From there, go to the Text tab and select the fonts you want.
