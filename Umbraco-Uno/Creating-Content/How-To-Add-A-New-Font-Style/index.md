@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # How to add a new font style through the backoffice
 
-If you find your self in need of a font that is not already included in Umbraco Uno, then you have the option to add one your self. In this article, you will learn how to do that.
+If you find yourself in need of a font that is not already included in Umbraco Uno, then you have the option to add one yourself. In this article, you will learn how to do that.
 
 What you will have to do is to go to https://fonts.google.com/ select a font you like and click the box.
 
