@@ -4,7 +4,7 @@ versionFrom: 8.1.0
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
 
-You'll need to create a new file to override the existing owin configuration (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
+You'll need to create a new file to override the existing owin configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
 ```C#
 using Microsoft.Owin;
@@ -64,6 +64,9 @@ The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for 
     <add key="ActiveDirectoryDomain" value="mydomain.local" />
 </appSettings>
 ```
+:::tip
+One way to find your Active Directory Domain if you are logged into your domain is to open a command prompt and run `set logon` and use the value returned as the `LOGONSERVER` (not including any slashes).
+:::
 
 Finally, to use your `UmbracoStandardOwinStartup` class during startup, update this setting to Web.config:
 
