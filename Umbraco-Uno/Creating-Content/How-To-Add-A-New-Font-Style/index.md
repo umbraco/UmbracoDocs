@@ -16,13 +16,13 @@ After clicking the box, you will be presented with a list of versions of the sty
 
 A window will slide in from the right, and from here, select embed. If you do not see the slide in the window, you can press the button in the top right looking like this:
 
-:::Center
+:::center
 ![button to show slide window](images/If-missing-embed-menu.png)
 :::
 
 When you click embed, there will be two boxes. The fist box will be a link you have to copy.
 
-:::Center
+:::center
 ![embed window with link](images/Embed-menu.png)
 :::
 
