@@ -10,7 +10,7 @@ What you will have to do is to go to https://fonts.google.com/ select a font you
 
 ![The box with the font](images/Click-the-box.png)
 
-After clicking the box, you will be presented with a list of versions of the stile. You can select one of them or all of them. To select them, you click ***+ select this style*** on the style that you want.
+After clicking the box, you will be presented with a list of versions of the style. You can select one of them or all of them. To select them, you click **+ select this style** on the style that you want.
 
 ![this lets you select style](images/The-select-style.png)
 
