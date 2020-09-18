@@ -92,7 +92,7 @@ To get started, follow the steps outlined below.
     dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
     ```
 
-You will now have a new project with the name `MyCcustomUmbracoSolution`, or whichever name you chose.
+You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
 
 The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
 
