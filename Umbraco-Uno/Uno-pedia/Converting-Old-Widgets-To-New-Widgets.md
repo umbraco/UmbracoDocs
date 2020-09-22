@@ -11,7 +11,7 @@ In this guide, you will find everything you need to make that upgrade.
 
 The move from the old widget format to the new is manual. You will need to create the content of each widget again in the new format. And there’s a specific approach to it.
 
-How do you do it? When your project is flagged for an upgrade, you will have to go to each of your nodes. In the nodes, you will see that you have widgets precisely as you used to, except, if you scroll down, you will see a new field below widgets that say ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
+How do you do it? On each page of your Uno side, the list of your “old” widgets will still be here. In the nodes, if you scroll down, you will see a new field below widgets that say ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
 
 ![How it looks in the backoffice](images/Nested-to-Block.png)
 
