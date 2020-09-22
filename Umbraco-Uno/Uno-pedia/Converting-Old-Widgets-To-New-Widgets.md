@@ -15,7 +15,10 @@ How do you do it? On each page of your Uno side, the list of your “old” widg
 
 ![How it looks in the backoffice](images/Nested-to-Block.png)
 
-As an example, in the picture above, the newsletter is the lowest widget in the list. Therefore you need to create that one as the first in the ***Block Widgets*** (yes, the old and the new widgets are called the same, making it easy for you to find the new widget that matches the content and look of the old).
+As an example, in the picture above, the newsletter is the lowest widget in the list. Therefore you need to create that one as the first in the ***Block Widgets***. 
+:::tip
+The old and the new widgets are called the same, making it easy for you to find the new widget that matches the content and look of the old
+:::
 
 Like this:
 
