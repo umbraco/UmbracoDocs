@@ -79,7 +79,7 @@ To get started, follow the steps outlined below.
 * [.Net Core 3.1 SDK](https://dotnet.microsoft.com/download)
 * SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
 
-### Steps to install the umbraco `dotnet new` template
+### Steps to install the Umbraco `dotnet new` template
 
 1. Use a command prompt of your choice to insert this custom NuGet feed:
 
