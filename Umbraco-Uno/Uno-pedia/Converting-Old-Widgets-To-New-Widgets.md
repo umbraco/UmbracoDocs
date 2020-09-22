@@ -11,7 +11,7 @@ In this guide, you will find everything you need to make that upgrade.
 
 There is no button to let you convert your existing widgets into the new block widgets, so you will have to manually create the content on each node of the tree again. What's more, there's a specific approach to it.
 
-How do you do it? When your project is flagged for an upgrade, you will have to go to each of your nodes. In the nodes, you will see that you have widgets precisely as you used to, except, if you scroll down, you will see a new field below widgets that say ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
+How do you do it? When your project is flagged for an upgrade, you will have to go to each of your nodes. In the nodes, you will see that you have widgets precisely as you used to, except, if you scroll down, you will see a new field below widgets that is called ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
 
 ![How it looks in the backoffice](images/Nested-to-Block.png)
 
@@ -20,7 +20,7 @@ As an example, in the picture above, the newsletter is the lowest widget in the 
 Like this:
 
 1. Add the newsletter widget to the ***Block Widgets*** list
-2. Give it the same set-up as in the old widget list
+2. Give it the same set-up as in the old widget
 3. Delete the old newsletter widget 
 4. Move on to the next widget, in this case, that would be Grid: Call to action
 
