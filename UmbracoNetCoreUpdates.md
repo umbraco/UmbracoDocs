@@ -94,7 +94,7 @@ To get started, follow the steps outlined below.
     ```
     
 ### Steps to update the template from earlier alpha versions
-if you already has installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
+If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
