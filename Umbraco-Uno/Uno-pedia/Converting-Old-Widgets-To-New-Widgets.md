@@ -26,7 +26,7 @@ Like this:
 
 ## The new block widgets
 
-The new ***Block Widgets*** function a bit different then what you are used to in that you will have two options when setting them up. You will find these after selecting the widget. A window will then slide in from the right and in the top right corner of the window that slid in. You will have content and settings, as shown in the image below.
+The new ***Block Widgets*** function a bit different than what you are used to in that you will have two options when setting them up. You will find these after selecting the widget. A window will then slide in from the right and in the top right corner of the window that slid in. You will have content and settings, as shown in the image below.
 
 ![settings image](images/Block-widgets.png)
 
