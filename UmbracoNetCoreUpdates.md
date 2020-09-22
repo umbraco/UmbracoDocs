@@ -63,12 +63,23 @@ Found a bug that isn't already reported? Please report it on the [GitHub tracker
 
 To get started, follow the steps outlined below.
 
+### Known issues in current Alpha release
+
+ * Restarts during install
+    * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
+ * Previews do not work due to the missing website part
+ * Members can’t be created, as we’re still using MembershipProviders
+ * Case sensitive filesystems (Linux and sometimes Mac) creates folders in the project like “~” and “**”, and lots of paths are not requested in the correct casing, yet
+ * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
+ * External logins are not supported yet
+ * No support for Packages currently
+
 ### Prerequisites
 
 * [.Net Core 3.1 SDK](https://dotnet.microsoft.com/download)
 * SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
 
-### Steps to install
+### Steps to install the umbraco `dotnet new` template
 
 1. Use a command prompt of your choice to insert this custom NuGet feed:
 
@@ -76,13 +87,23 @@ To get started, follow the steps outlined below.
     dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
     ```
 
-2. Install the new Umbraco dotnet template:
+1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::0.5.0-alpha001
+    dotnet new -i Umbraco.Templates::0.5.0-alpha002
+    ```
+    
+### Steps to update the template from earlier alpha versions
+if you already has installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
+
+1. Use a command prompt of your choice to update the `dotnet new` templates
+
+    ```none
+    dotnet new --update-apply
     ```
 
-3. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
+### Steps to create an Umbraco solution using the `dotnet new` template
+1. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
 
     ```none
     dotnet new umbraco -n MyCustomUmbracoSolution
@@ -113,8 +134,8 @@ The following steps, will continue using CLI based on the steps above.
     dotnet run
     ```
 
-Even though you will not be able to see it from the CLI, the project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and be available on the default ports: http://localhost:5000 and https://localhost:5001.
+The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and be available on the default ports: http://localhost:5000 and https://localhost:5001.
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
-Once the installation process is complete you might need to **restart the application** using IIS/IIS Express in order to start the application again and get access to the Umbraco backoffice.
+Once the installation process is complete you might need to **manually restart the application** in order to start the application again and get access to the Umbraco backoffice.
