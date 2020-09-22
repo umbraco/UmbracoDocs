@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Converting to new widgets
 
-Suppose you have an Uno project that is an older version than 8.7. Then you will have to upgrade your widgets manually from the old widgets to the new widgets.
+Suppose you have an Uno project that your project was created before September 10th 2020. Then you will have to upgrade your widgets manually from the old widgets to the new widgets.
 In this guide, you will find everything you need to make that upgrade.
 
 ## How do you Convert from old to new
