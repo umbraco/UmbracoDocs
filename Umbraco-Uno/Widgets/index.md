@@ -15,8 +15,7 @@ This article gives an overview of the available widgets, along with resources on
 Widgets are the building blocks of Umbraco Uno and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
 
 :::Tip
-If your project is from before September 10th, 2020, you will recieve an email from us suggesting you to upgrade your old version of widgets to the new block widgets [the new block widgets](../Uno-pedia/Converting-Old-Widgets-To-New-Widgets)
-:::
+If your project is from before September 10th, 2020, you will recieve an email from us suggesting you to upgrade your old version of widgets to the new block widgets [the new block widgets](../Uno-pedia/Converting-Old-Widgets-To-New-Widgets):::
 
 ## [Working with widgets](../Creating-Content/Working-with-widgets)
 
