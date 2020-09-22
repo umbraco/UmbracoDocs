@@ -134,7 +134,7 @@ The following steps, will continue using CLI based on the steps above.
     dotnet run
     ```
 
-The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and be available on the default ports: http://localhost:5000 and https://localhost:5001.
+The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and is available on the default ports: http://localhost:5000 and https://localhost:5001.
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
