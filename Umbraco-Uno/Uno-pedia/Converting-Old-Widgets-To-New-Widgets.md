@@ -11,11 +11,15 @@ In this guide, you will find everything you need to make that upgrade.
 
 The move from the old widget format to the new is manual. You will need to create the content of each widget again in the new format. And there’s a specific approach to it.
 
-How do you do it? On each page of your Uno side, the list of your “old” widgets will still be here. if you scroll down on the page, you will see a new field below widgets that say ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
+How do you do it? On each page of your Uno side, the list of your “old” widgets will still be here. If you scroll down on the page, you will see a new field below widgets that say ***Block Widgets***. This is where you will be re-creating your widgets in the new block format. However, you will have to start from the bottom of your widget list, moving towards the top of the list to have everything look as it did before.
 
 ![How it looks in the backoffice](images/Nested-to-Block.png)
 
-As an example, in the picture above, the newsletter is the lowest widget in the list. Therefore you need to create that one as the first in the ***Block Widgets***.
+As an example, in the picture above, the newsletter is the lowest widget in the list. Therefore you need to create that one as the first in the ***Block Widgets***. 
+
+:::tip
+The old and the new widgets are called the same, making it easy for you to find the new widget that matches the content and look of the old
+:::
 
 Like this:
 
