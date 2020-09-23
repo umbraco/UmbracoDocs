@@ -99,7 +99,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new --update-apply
+    dotnet new -i Umbraco.Templates::0.5.0-alpha002
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
