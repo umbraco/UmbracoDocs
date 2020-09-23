@@ -73,6 +73,7 @@ To get started, follow the steps outlined below.
  * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
  * External logins are not supported yet
  * No support for Packages currently
+ * Errors in log "Index Population failed for populator ..."
 
 ### Prerequisites
 
