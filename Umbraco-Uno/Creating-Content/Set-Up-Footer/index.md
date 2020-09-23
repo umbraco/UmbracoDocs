@@ -12,6 +12,20 @@ This is how the footer should look after you have gone through the guide:
 
 ![The finished footer](images/custom-footer-result.png)
 
+## What widgets does footer have
+
+Here you will find a list over the widgets available to you when working with the footer.
+The list is as follows:
+
+* Contact
+* Navigate
+* Text
+* Opening Hours
+* Social Links
+* Logos
+* Line Breaker
+* Code
+
 ## Locating the Footer settings
 
 The Footer settings for your Umbraco Uno website are located in a group on the home page.
