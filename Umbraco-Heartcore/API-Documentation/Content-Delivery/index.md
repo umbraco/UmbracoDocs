@@ -14,7 +14,7 @@ It’s worth noting that the JSON output for both Content and Media vary dependi
 
 Specific to Content in the Content Delivery API.
 
-To request content in a specific language, a culture parameter can be specified. When no culture is specified its treated as invariant and the default lanuage will be returned.
+To request content in a specific language, a culture parameter can be specified. When no culture is specified its treated as invariant and the default language will be returned.
 
 ### Access via an Accept-Language header
 
