@@ -22,11 +22,11 @@ Here you'll get an overview of the preview urls created.
 
 ![Empty Preview Urls Overview](images/empty-preview-urls-overview.png)
 
-Right now the lit is empty, so go ahead and click on **Add Preview Url**
+Right now the list is empty, so go ahead and click on **Add Preview Url**
 
 ![Add Preview Urls](images/add-preview-url.png)
 
-This will open up a dialog in the right side of the backoffice, here you can select which **Root Content** the preview url should be assigned to and for which language it should be available for.
+This will open up a dialog on the right side of the backoffice, from where you can select which **Root Content** the preview url should be assigned to, and for which language it should be available for.
 
 The **Name** field is used when there are multiple Preview Urls for a Content item.
 
@@ -36,23 +36,23 @@ The **Name** field is used when there are multiple Preview Urls for a Content it
 * **Path in querystring**: this will add a querystring parameter to the url containing the path of the Content item.
 * **Id in querystring**: this will add a querystring parameter to the url containing the id of the Content item.
 
-**Default** controls wether this url is the default one when clicking the Preview button.
+**Default** controls whether this url is the default one when clicking the Preview button.
 
-After you click save you'll return to the overview where the configured urls is shows. From here you can edit or delete themp
+After you click save you'll return to the overview where the configured urls is shown. From here, you can edit or delete them.
 
 ![Preview Urls Overview](images/preview-urls-overview.png)
 
-Now if you go back to the **Content** section and click on the node you selected as the **Root node** or one of it's child items, you should now have a **Preview** button in the bottom right section of the screen.
+Now if you go back to the **Content** section and click on the node you selected as the **Root node** or one of its child items, you should now have a **Preview** button in the bottom right section of the screen.
 
-If multiple urls have been added for the Content item, there will be an arrow next to the button, when clicked it shows all the Preview Urls available.
+If multiple urls have been added for the Content item, there will be an arrow next to the button. When clicked, it will show all the Preview Urls available.
 
 ![Preview Content](images/preview-button.png)
 
 ## Accessing the Preview API
 
-Now that we have setup the backoffice we need to update our site to use the Prieview API.
+Now that we have setup the backoffice, we need to update our site to use the Preview API.
 
-The Preview API is available on `https://preview.umbraco.io` and its endpoints is identical to the [Content Delivery API](../../API-Documentation/Content-Delivery/content), meaning that you can swap the url out if you don't use one of our Client Libraries.
+The Preview API is available on `https://preview.umbraco.io` and its endpoints are identical to the [Content Delivery API](../../API-Documentation/Content-Delivery/content), meaning that you can swap the url out if you don't use one of our Client Libraries.
 
 :::note
 The Preview API is always protected and will require an API Key.
