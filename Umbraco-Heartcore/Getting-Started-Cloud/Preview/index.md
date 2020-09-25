@@ -71,7 +71,7 @@ const client = new Client({
 })
 ```
 
-For the [.NET Client](https://github.com/umbraco/Umbraco.Headless.Client.Net) you'll create a new instance of the `Umbraco.Headless.Client.Net.Delivery.ContentPreviewService`.
+For the [.NET Client](https://github.com/umbraco/Umbraco.Headless.Client.Net) you'll create a new instance of the `Umbraco.Headless.Client.Net.Delivery.ContentPreviewService`. Note that its based on the `IContentDeliveryService` interface, which the `ContentDeliveryService` also implements.
 
 ```csharp
 using Umbraco.Headless.Client.Net.Delivery;
