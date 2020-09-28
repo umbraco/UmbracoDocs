@@ -42,15 +42,16 @@ To ensure consistency with grammar and sentence, this rule will give an error if
 ### Long sentences
 
 This rule will give an error if you have a sentence with more than 40 words. The number of words may change in the future, generally 20-25 is the recommended amount per sentence in documentation.
+
 This is to improve readability.
 
 ### Double spacing
 
-This rule will warn you if you have more than 1 space in a row in your text.
+In order to ensure readability and consistency, this rule will warn you if you have more than 1 space in a row in your text.
 
 ### Terms
 
-This rule will suggest a different term if you use one we have deemed wrong, this is to ensure the same spelling of terms throughout the documentation.
+To ensure the consistency in the way terms are spelled throughout the documentation, this rule will suggest a different term if you use one we have deemed wrong.
 
 **Example**:
 The term `backoffice` has been seen spelled in many different ways, most commonly:
