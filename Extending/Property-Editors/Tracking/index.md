@@ -5,20 +5,25 @@ meta.Description: "Guide on how to implement tracking entity references for Prop
 ---
 
 # Tracking References
- Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors. A good example of this is the media picker where the CMS stores a reference to what media item was picked and thus allows to see what content nodes are using a media item to avoid it being accidently deleted if it is being used.
+
+Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors. 
+
+A good example of this is the Media Picker where the CMS stores a reference to what media item was picked and thus allows to see what content nodes are using a media item. This avoids it being accidentally deleted if it is being used.
 
 When a content node is saved it will save the entity references as relations.
 
 ## Viewing References
+
 For media items you can view the list of references by clicking the Info content app on a specific media item.
+
 ![Viewing media references](media-references.jpg)
 
-
 For content nodes you can view the list of references as relations in the Settings section under the Relation Types folder and viewing the Related Document relations.
+
 ![Viewing document references](document-references.jpg)
 
-
 ## Example
+
 ```csharp
 using System;
 using System.Collections.Generic;
