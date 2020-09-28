@@ -23,6 +23,7 @@ For content nodes you can view the list of references as relations in the Settin
 ![Viewing document references](document-references.jpg)
 
 ## Example
+The following example shows how to implement tracking for the inbuilt CMS property editor Content Picker, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
 
 ```csharp
 using System;
@@ -47,7 +48,7 @@ namespace Umbraco.Web.PropertyEditors
     {
         public IDataValueReference GetDataValueReference() => this;
 
-        // Which Data Editor (Data Type) does this apply to
+        // Which Data Editor (Data Type) does this apply to - in this example it is the built in content picker of Umbraco
         public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals(Constants.PropertyEditors.Aliases.ContentPicker);
 
 
