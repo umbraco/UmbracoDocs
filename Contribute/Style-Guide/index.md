@@ -11,7 +11,9 @@ To ensure that the documentation is readable and has a similar style throughout 
 
 ### Punctuation in headings
 
-This rule will give a warning if you end headings with either of these punctuation symbols:
+Try to not use any kind of punctuation in headings and headlines. These should act as titles, and no punctuation is necessary.
+
+For consistency, this rule will give a warning if you end headings with either of these punctuation symbols:
 
 - ?
 - :
@@ -19,7 +21,9 @@ This rule will give a warning if you end headings with either of these punctuati
 
 ### Use of Hyperbole
 
-This rule will give a warning if you use either of these words in your text:
+The words in the list below, will cause a warning when they are included in your contribution.
+
+Try not to use any of the mentioned words, as they are often oppinionated. What may be 'easy' for you, might not be easy another user reading the article.
 
 <!-- vale off -->
 
@@ -33,7 +37,7 @@ This rule will give a warning if you use either of these words in your text:
 
 ### Start lists with capital letters
 
-This rule will give an error if you have a list that starts with uncapitalized words.
+To ensure consistency with grammar and sentence, this rule will give an error if you have a list that starts with uncapitalized words.
 
 ### Long sentences
 
