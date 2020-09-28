@@ -35,3 +35,5 @@ The new ***Block Widgets*** function a bit different than what you are used to i
 ![settings image](images/Block-widgets.png)
 
 This is because all the settings used to be on the same page of a widget. However, in the new block widgets they have now been split up into two sections to give you a better overview.
+
+Learn more about how to work with the new widget format in the [Working with Widgets](../Creating-Content/Working-with-widgets) article.
