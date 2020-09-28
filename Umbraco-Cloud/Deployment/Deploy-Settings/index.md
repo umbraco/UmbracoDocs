@@ -57,12 +57,12 @@ Here is how it can look:
 
 ## SessionTimeout, HttpClientTimeout, DatabaseCommandTimeout & SourceDeployTimeout
 
-These timeout settings default to 8 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200" databaseCommandTimeout="1200" />
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
 </settings>
 ```
 
