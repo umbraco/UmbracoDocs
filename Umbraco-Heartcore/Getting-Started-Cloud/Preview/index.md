@@ -60,7 +60,7 @@ The Preview API is always protected and will require an API Key.
 
 If you are using the [Node JS Client](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) you set `preview: true`, set an `apiKey` as shown below, this switches all of the `client.delivery` functions to use the Preview API instead of the Content Delivery API.
 
-```typescript
+```javascript
 import {Client} from '@umbraco/headless-client'
 
 const client = new Client({
