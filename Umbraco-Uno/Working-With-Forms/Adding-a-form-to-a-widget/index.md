@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Adding a forms to a widget
+# Adding a form to a widget
 
 If you need to add forms to your website, there's multiple ways of doing this in Umbraco Uno.
 
