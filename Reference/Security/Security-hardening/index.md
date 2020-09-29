@@ -14,11 +14,13 @@ The prerequisite of this to work is that you’re using [IISRewrite](../../Routi
 
 If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco-folders. This can be down by following these three steps.
 
-1. We are going to lock down /Umbraco/, but because API-controllers and Surface-controller will use the path /umbraco/api/ and /umbraco/surface/ these will also be locked down. Our first rule in the IISRewrite.config will be used to make sure that these are not locked by IP-address.
+1. We are going to lock down /Umbraco/, but because API-controllers and Surface-controller will use the path /umbraco/api/ and /umbraco/surface/ these will also be locked down. Some internal methods also use the path /umbraco/backoffice/. 
+
+Our first rule in the IISRewrite.config will be used to make sure that these are not locked by IP-address.
 
 ```xml
 <rule name="Ignore" stopProcessing="true">
-    <match url="^(?:umbraco/api|umbraco/surface)/" />
+    <match url="^(?:umbraco/api|umbraco/surface|umbraco/backoffice)/" />
     <action type="None" />
 </rule>
 ```
@@ -27,7 +29,7 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 
 ```xml
 <rule name="Ignore" stopProcessing="true">
-    <match url="^(?:umbraco/api|umbraco/surface|umbraco/webservices)/" />
+    <match url="^(?:umbraco/api|umbraco/surface|umbraco/backoffice|umbraco/webservices)/" />
     <action type="None" />
 </rule>
 ```
