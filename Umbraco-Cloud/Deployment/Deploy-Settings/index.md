@@ -85,7 +85,7 @@ This only needs to be done if your Cloud project was created **before** June 18t
 ## ExportMemberGroups
 This is available in Deploy 3.4.0+ version and newer. This setting is to be enabled only if you are using an external membership provider for your members and thus it does not make sense to export member groups which would no longer be managed by Umbraco but by an external membership provider.
 
-Setting the `exportMemberGroups` to false will no longer export member groups to disk UDA entities, by default if this setting is not present its value will automatically be set to true as most sites use Umbraco's built in membership provider and thus will want the membership groups exported.
+Setting the `exportMemberGroups` to false will no longer export member groups to disk UDA entities. By default if this setting is not present its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
