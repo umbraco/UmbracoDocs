@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 Umbraco Forms lets you create forms for your site. They are fully customizable. This means that you can set them up exactly how you like.
 The Umbraco Forms can be set up in the forms section of the back office. They come included as a part of your Uno plan.
-And you will be able to check the replies in the backoffice. In these guides, you will learn how to set a form up, how to add it to a widget, and how you can check your replies.
+And you will be able to check the replies in the back office. In these guides, you will learn how to set a form up, how to add it to a widget, and how you can check your replies.
 It is possible to add Recaptcha to your Umbraco forms. Should you need this, there will also be a guide for that.
 
 ### [Setting up a form](Setting-up-a-form)
