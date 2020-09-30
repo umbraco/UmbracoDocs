@@ -10,7 +10,7 @@ The first option is to add the widget called Umbraco forms. In this widget, you 
 
 ![Regular Umbraco Forms](images/Regular-form.png)
 
-The second option is to add the form through the grid widget. This is not the same set up as in the regular widget. However, the way you add the form is the same as the first option go to the section of the widget that says ***Form*** and then press add and select the form you want.
+The second option is to add the form through a Grid widget. The setup here is slightly different than with the Umbraco Forms widget. However, the way you add the form is the same as the first option. Go to the section of the widget that says ***Form*** and then click "Add" to select the form you want.
 
 ![Grid Umbraco Forms](images/Grid-forms.png)
 
