@@ -190,11 +190,11 @@ Example:
 
 You can choose to customize your editing experience by implementing a custom view for each Block.
 
-By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated.
+By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated. Inline editing mode must be disabled for custom backoffice views to work.
 
 ### Write Your Own HTML View
 
-Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and therefor you can write any AngularJS logic.
+Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and therefore you can write any AngularJS logic.
 
 Your HTML can be anything, but if you like to use it as a representation of the content then you would also want the full view to be clickable, which then opens the default editor for editing of your content.
 
@@ -208,3 +208,5 @@ The following example displays the property with the alias `headline` together w
 ```
 
 If you'd like to display properties of `settings`, you can access these by `block.settingsData.myPropertyAlias`.
+
+See this forum post to [display an image or add other custom behaviour to your custom backoffice view](https://our.umbraco.com/forum/using-umbraco-and-getting-started/103560-image-in-custom-block-editor-view#comment-323696).
