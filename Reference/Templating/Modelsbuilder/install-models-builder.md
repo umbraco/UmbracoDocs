@@ -24,9 +24,9 @@ Install-Package Umbraco.ModelsBuilder
 
 [Umbraco.ModelsBuilder.Ui](https://www.nuget.org/packages/Umbraco.ModelsBuilder.Ui/)
 
-This package is optional and will add the "Models Builder" dashboard UI for the full version into the "Settings" section of the Umbraco back office.
+This package is optional and will add the "Models Builder" dashboard UI for the full version into the "Settings" section of the Umbraco backoffice.
 
-If you just install this, then `Umbraco.ModelsBuilder` will automatically get installed as a dependency.
+If you only install this, then `Umbraco.ModelsBuilder` will automatically get installed as a dependency.
 
 ```xml
 Install-Package Umbraco.ModelsBuilder.Ui
