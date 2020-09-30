@@ -8,7 +8,7 @@ needsV8Update: "true"
 _This section describes how you should be getting/adding/updating/inserting items in the cache._
 
 :::warning
-Please be aware that this article has not yet been verified and updated against Umbraco 8.
+Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
 
 The documentation currently available around caching in the current Umbraco version can be found here: [Caching](../Cache)
 :::
