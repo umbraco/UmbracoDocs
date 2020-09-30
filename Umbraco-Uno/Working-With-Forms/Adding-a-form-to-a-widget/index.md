@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Adding a form to a widget
 
-If you need to add forms to your website, there are multiple ways of doing this in Umbraco Uno.
+There are multiple ways of doing this in Umbraco Uno. In this guide you we get to know how to do both of the ways of adding forms to a site through the use of widgets.
 
 The first option is to add the widget called Umbraco forms. In this widget, you will get the option to select which form you want to add. You can read about this widget's settings in the [Umbraco Forms](../../Widgets/Umbraco-Form).
 
