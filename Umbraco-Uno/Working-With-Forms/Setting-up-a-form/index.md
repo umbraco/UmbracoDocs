@@ -14,7 +14,7 @@ When you get an Uno project, it comes with the Unicorn Hotel and Spa template, w
 
 ![This image shows the forms section and where to press for a new form](images/Forms-backoffice.png)
 
-## Adding the content of the form
+## Building the form
 
 Now we have taken the first step to creating our very own form. In the next steps, we will name the form and add the fields that it needs to contain.
 
