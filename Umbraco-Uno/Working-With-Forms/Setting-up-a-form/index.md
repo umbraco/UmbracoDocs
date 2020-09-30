@@ -8,9 +8,9 @@ In this guide, you will learn how to set up a form in the Umbraco Uno backoffice
 
 When you get an Uno project, it comes with the Unicorn Hotel and Spa template, which includes two forms. However, suppose those forms don't meet your needs, then you can create your own.
 
-* First, you will have to navigate to the forms section in the back office.
-* Then when in the forms section, in the tree on the left, there's a folder icon next to that it says ***Forms*** hover this and click the ***...*** button that shows up.
-* A list will show up. On that list, select Empty form.
+* Navigate to the Forms section in the backoffice.
+* In the tree on the left, hover ***Forms*** and select the ***...***
+* On the list that shows up, select "Empty form"
 
 ![This image shows the forms section and where to press for a new form](images/Forms-backoffice.png)
 
