@@ -30,7 +30,7 @@ You will see that the form already contains an item. This is the permission to s
 * Follow up by clicking ***Add Question***.
 * Name the first question, "Name" and chose a ***short answer*** for the answer type.
 * In the settings further down, put it to mandatory and add the text to show if this mandatory field is not filled in.
-* when that is done, hit the green submit button at the bottom.
+* When that is done, hit the green submit button at the bottom.
 
 ![This image shows Settings of the fields in the form](images/Settings-form.png)
 
