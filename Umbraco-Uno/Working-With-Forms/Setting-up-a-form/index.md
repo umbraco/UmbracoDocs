@@ -21,6 +21,10 @@ Now we have taken the first step to creating our very own form. In the next step
 
 ![An image showing the main view of the new form](images/Back-form.png)
 
+:::note
+You will see that the form already contains an item. This is the permission to store data, so if you need this for the form you are creating, you can go ahead and leave that. Otherwise, you can delete it by clicking the bin icon at the top of the field.
+:::
+
 * Give the new form a name where it says ***Enter Name***.
 * Now to adding a group Click where it says ***Add new group***.
 * Follow up by clicking ***Add Question***.
