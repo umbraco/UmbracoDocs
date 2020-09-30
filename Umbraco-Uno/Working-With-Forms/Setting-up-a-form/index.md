@@ -4,7 +4,9 @@ versionFrom: 8.0.0
 
 # Setting up a form
 
-In this guide, you will learn how to set up a form in the backoffice. When you get an Uno project, it comes with the unicorn hotel template, Which includes two forms. However, suppose those forms dont meet your needs, then you can create your own.
+In this guide, you will learn how to set up a form in the Umbraco Uno backoffice. 
+
+When you get an Uno project, it comes with the Unicorn Hotel and Spa template, which includes two forms. However, suppose those forms don't meet your needs, then you can create your own.
 
 * First, you will have to navigate to the forms section in the back office.
 * Then when in the forms section, in the tree on the left, there's a folder icon next to that it says ***Forms*** hover this and click the ***...*** button that shows up.
