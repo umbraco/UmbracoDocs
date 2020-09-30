@@ -20,3 +20,4 @@ The Models builder is a tool that can generate a complete set of strongly-typed 
 * [Understand And Extend Models](Understand-And-Extend.md)
 * [Using Interfaces](Using-Interfaces.md)
 * [Cool things to do with models](CoolThingsWithModels.md)
+* [Install the full version of Models Builder](install-models-builder.md)
