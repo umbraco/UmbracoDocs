@@ -11,8 +11,10 @@ The Umbraco Forms can be set up in the forms section of the back office. They co
 And you will be able to check the replies in the back office. In these guides, you will learn how to set a form up, how to add it to a widget, and how you can check your replies.
 It is possible to add Recaptcha to your Umbraco forms. Should you need this, there will also be a guide for that.
 
-### [Setting up a form](Setting-up-a-form)
+## [Setting up a form](Setting-up-a-form)
 
-### [Adding a form to a widget](Adding-a-form-to-a-widget)
+## [Adding a form to a widget](Adding-a-form-to-a-widget)
 
-### [How to check your replies from forms](How-to-check-your-replies-from-forms)
+## [How to check your replies from forms](How-to-check-your-replies-from-forms)
+
+## [How to add Recaptcha to forms](Recaptcha)

@@ -15,3 +15,4 @@ If you have more then one form, there will be a box for each of the forms. If yo
 
 You can also click the forms in the tree to see the entries for each of the forms.
 
+Next article is about [How you can add Recaptcha](../Recaptcha) to your forms.
