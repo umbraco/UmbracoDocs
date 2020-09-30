@@ -320,6 +320,5 @@ In conclusion Examine is awesome and with a little bit of information and a litt
 ## Examine Videos
 There are a few videos covering Examine available online:
 
-- [CodeGarden '10: Web Search With Examine](http://stream.umbraco.org/video/635188/codegarden-10-web-search-with) (Shannon Deminick)
 - [Umbraco Examine and Lucene.NET : Umbraco UK Festival 2012](https://www.youtube.com/watch?v=6AMb0rrSrJw) (Ismail Mayat)
 - [Searching - Let users find your content](https://www.youtube.com/watch?v=ShzdJm87hzM) (Casper Andersen)
