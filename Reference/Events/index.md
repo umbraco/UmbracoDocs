@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco events"
+meta.Description: "Information on various backofice events in Umbraco"
 ---
 
 # Using events
@@ -20,6 +22,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 * See [ContentService Events](ContentService-Events.md) for a listing of the ContentService object events.
 * See [MediaService Events](MediaService-Events.md) for a listing of the MediaService object events.
+* See [MemberService Events](MemberService-Events/index.md) for a listing of the MemberService object events.
 
 ## Other events
 * See [ContentTypeService Events](ContentTypeService-Events.md) for a listing of the ContentTypeService object events.

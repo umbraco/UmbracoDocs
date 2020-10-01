@@ -11,6 +11,7 @@ Most of the set up can be accomplished by using the options from your project's 
 
 Articles about configuring various settings on your project, as well as managing members, domains and certificates.
 
+ - [Going Live](Going-live/)
  - [Project settings](Project-settings/)
  - [Adding team members](Team-Members/)
  - [SMTP Settings](SMTP-settings/)

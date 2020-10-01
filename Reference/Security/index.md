@@ -1,42 +1,56 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 meta.Title: "Security in Umbraco"
 meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
 ---
 
 # Security
 
-_This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco_
+In this article you will find everything you need regarding security within Umbraco.
 
-## Umbraco Security overview
+## [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/)
 
-We have a dedicated security page on our main site which provides most of the details you may need to know about security within the Umbraco CMS including how to report a vulnerability: [https://umbraco.com/products/umbraco-cms/security/](https://umbraco.com/products/umbraco-cms/security/)
+On our main website we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-## SSL/HTTPS
+## [SSL/HTTPS](use-https.md)
 
 We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
 
-Don't forget to [configure your Umbraco when using HTTPS](use-https.md).
+In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
+
+## [Security settings](Security-settings)
+
+Learn which security settings that can be configured in Umbraco.
+
+## [Security Hardening](Security-hardening)
+
+Learm about how to can harden the security on your Umbraco website to secure it even further.
+
+## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
+
+When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
 
 ## Backoffice users
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication.
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extendable framework for authentication.
 
-Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.NET Identity can be extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace
-any part of the process of authentication.
+Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized. 
+
+ASP.NET Identity can be extended and it is also possible to override/replace any part of the process of authentication.
 
 ### Custom OAuth providers
 
-The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. For example: Any OpenIDConnect provider such as Azure Active Directory or Identity Server, Google, Facebook, Microsoft Account, etc...
+The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-To install and configure a custom OAuth provider you should use the Identity Extensions package: [https://github.com/umbraco/UmbracoIdentityExtensions](https://github.com/umbraco/UmbracoIdentityExtensions)
+To install and configure a custom OAuth provider, use the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions).
 
-The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to:
+The installation of these packages will install snippets of code with "readme" files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to this:
 
-![OAuth login screen](images/google-oauth.png)
+![OAuth login screen](images/google-oauth-v8.png)
+
+#### Authenticating with Active Directory credentials
+
+We have setup a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 #### Auto-linking accounts for custom OAuth providers
 
@@ -50,18 +64,18 @@ Read more about [auto linking](auto-linking.md)
 
 You are able [check the username and password against your own credentials store](custom-password-checker.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
 
-### Authenticating with Active Directory credentials
-
-You want to [connect the backoffice to Active Directory](authenticate-with-AD.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
-
 ### Sensitive data on members
 
-Marking fields as [sensitive](sensitive-data.md) will hide the data in those fields for backoffice users that have no business viewing personal data of members.
+Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
 
-### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+Learn more about this in the [Sensitive Data](sensitive-data.md) article.
+
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
-### [Security settings](Security-settings/index.md)
+## Other articles related to security
 
-Some security settings that can be used in Umbraco.
+* [Routing requirements for backoffice authentication](../Routing/Authorized/)
+* [Health Checks](../../Extending/Health-Check/)
+* [Consent Service](../Management/Services/ConsentService/)

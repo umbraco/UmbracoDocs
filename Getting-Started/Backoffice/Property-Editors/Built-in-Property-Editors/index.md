@@ -61,10 +61,10 @@ Gives editors a grid layout editor which allows them to insert different types o
 
 Used to crop and resize images to predefined sizes.
 
-## Label
+## [Label](Label.md)
 `Alias: Umbraco.Label`
 
-Label is a non-editable control and can only be used to display a pre-set text.
+Label is a non-editable control and can only be used to display a pre-set value.
 
 ## List View
 `Alias: Umbraco.ListView`
@@ -119,7 +119,7 @@ Pretty much like the name indicates this property editor enables editors to choo
 
 The Repeatable textstrings property editor enables a content editor to make a list of text items
 
-## Rich Text Editor
+## [Rich Text Editor](Rich-Text-Editor)
 `Alias: Umbraco.TinyMCE`
 
 A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
@@ -144,7 +144,7 @@ A textarea control to input text.
 
 A normal html input text field.
 
-## User picker
+## [ User picker ](User-Picker/index.md)
 `Alias: Umbraco.UserPicker`
 
 The easiest way to pick a person from user backend users.  See Members for front-end users.

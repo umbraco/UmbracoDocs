@@ -6,7 +6,8 @@ meta.Description: "A tutorial on getting started with Umbraco using the starter 
 ---
 
 # The Starter Kit
-The *Starter kit* is the name of the default starter kit for Umbraco. It is the perfect way to familiarize yourself with Umbraco CMS.
+
+The *Starter kit* is the name of one of the Starter kits build for Umbraco by Umbraco HQ. It is the great way to familiarize yourself with Umbraco CMS.
 
 Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 
@@ -15,9 +16,10 @@ Installing the Starter Kit will give you a basic site where you can:
 * Show the content creation and editing capabilities in Umbraco from a content editor's point of view.
 * Learn how to set up Umbraco by exploring the starter kit.
 * Enhance the Starter Kit by following the lessons provided.
-    * The lessons aim to give you a good understanding of how you can tailor the editing experience and add features to an Umbraco site.
+  The lessons aim to give you a good understanding of how you can tailor the editing experience and add features to an Umbraco site.
 
 ## Overview
+
 *The Starter kit* will install sample content for a small site. You can edit the content, or delete it and build your content from scratch.
 
 The sample content includes:

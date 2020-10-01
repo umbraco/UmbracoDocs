@@ -1,5 +1,8 @@
 ---
 versionFrom: 8.0.0
+product: "CMS"
+meta.Title: "Creating a Basic Website using Umbraco"
+meta.Description: "A guide to creating a Basic Website using Umbraco"
 ---
 # Creating a Basic Website using Umbraco
 
@@ -44,10 +47,10 @@ A solution for the template in the menu.
 
 
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items)
-How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible/infinite number of articles - useful for Blogs or News pages).
+How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing a flexible/infinite number of articles - useful for Blogs or News pages).
 
 ## [Adding Language Variants](Adding-Language-Variants.md)
-At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how easy it is with Language Variants!
+At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how to get started with Language Variants!
 
 ## [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - but where to next?  You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!

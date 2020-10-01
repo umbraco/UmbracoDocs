@@ -1,6 +1,8 @@
 ---
-keywords: EditorModelEventManager setting default values
+keywords: EditorModelEventManager setting default values defaultvalue
 versionFrom: 8.0.0
+meta.Title: "EditorModel Events - or how to set a default value"
+meta.Description: "Explanation of how handle the EditorModelEventManager SendingContent event to set an initial default value for a propery when the editor creates a new content item in the backoffice"
 ---
 
 # EditorModel Events
@@ -41,16 +43,25 @@ namespace My.Website
 
     private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
-            // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
+            // set a default value for a NewsArticle's PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
             {
-            //access the property you want to pre-populate
-            //note each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class, which has an IEnumerable of Tabs, and each Tab is an IEnumerable of `ContentPropertyDisplay` properties for each property in the document type
-                var pubDateProperty = e.Model.Variants.FirstOrDefault().Tabs.FirstOrDefault(f=>f.Alias=="Content").Properties.FirstOrDefault(f => f.Alias == "publishDate");
-                if (pubDateProperty.Value == null || String.IsNullOrEmpty(pubDateProperty.Value.ToString()))
-                {
-                    // set default value if the date property is null or empty
-                    pubDateProperty.Value = DateTime.UtcNow;
+                //access the property you want to pre-populate
+                //in V8 each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
+                //if your site uses variants, then you need to decide whether to set the default value for all variants or a specific variant
+                // eg. set by variant name:
+                // var variant = e.Model.Variants.FirstOrDefault(f => f.Name == "specificVariantName");
+                // OR loop through all the variants:
+                foreach (var variant in e.Model.Variants){
+                    //check if variant is a 'new variant' - we only want to set the default value when the content item is first created
+                    if (variant.State == ContentSavedState.NotCreated){
+                        // each variant has an IEnumerable of 'Tabs' (property groupings) and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
+                        var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties).FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
+                        if (pubDateProperty!=null){
+                            // set default value of the publish date property if it exists
+                            pubDateProperty.Value = DateTime.UtcNow;
+                        }
+                    }
                 }
             }
         }

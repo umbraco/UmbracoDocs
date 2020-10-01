@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Upgrading Umbraco Forms"
+meta.Description: "Documentation on how to upgrade Umbraco Forms"
 ---
 
 # Keeping Umbraco Forms up to date

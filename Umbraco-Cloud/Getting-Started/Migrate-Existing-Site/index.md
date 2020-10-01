@@ -33,16 +33,15 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
-    * Content items includes content nodes and media items
-    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
+* Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
+  * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
 * Contains no member data
-    * If you do have member data, these will need to be imported manually after the migration
+  * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
-    * Not all packages will work on Umbraco Cloud
-    * Read more about this in the section below
+  * Not all packages will work on Umbraco Cloud
+  * Read more about this in the section below
 * Isn’t a site that has been upgraded from versions below Umbraco 7
-    * Legacy code from older versions can potentially cause issues
+  * Legacy code from older versions can potentially cause issues
 
 If you have a site that does not meet the above requirements, feel free to contact us and we will help you find the best solution for your site.
 
@@ -72,7 +71,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+  * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
@@ -80,7 +79,7 @@ Aside from these tools you'll also need:
 
 * A local copy of your existing site
 * A new and clean Umbraco Cloud project
-    * We strongly recommend having a project with **at least 2 environments**
+  * We strongly recommend having a project with **at least 2 environments**
 
 ## 3. Prepare your site
 
@@ -94,6 +93,20 @@ You can download the latest version of Umbraco from [Our](https://our.umbraco.co
 
 If you need help upgrading your project, we have some excellent [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
+:::note
+#### Upgrading from a version prior to Umbraco 7.6.0
+With Umbraco 7.6.0 the following property editors have been updated to store UDI instead of node ID:
+1. Content Picker
+2. Media Picker
+3. Member Picker
+4. Related Links
+
+If you're upgrading your site from a version prior to v7.6.0 or it has been upgraded earlier you might be using these pickers even though they have been marked as obsolete. 
+This can cause issues when transfering content to your Cloud project a bit down the road from here. 
+
+If you're using these obsolete pickers in the project you want on Umbraco Cloud, you will need to migrate to the newest versions of these pickers. This will include the need for a database migration. [This guide will take you through the process of migrating your database to use UDIs instead of IDs](https://skrift.io/issues/umbraco-migrations-made-easy/).
+:::
+
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
 After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
@@ -106,18 +119,17 @@ Before moving on to the next step, you need to clean up the local clone of your 
 
 While the site is running you need to:
 
-  * Go the backoffice of your project
-  * Empty the recycle bins from both the Content and Media sections
+* Go the backoffice of your project
+* Empty the recycle bins from both the Content and Media sections
 
 Now, shut down the project, and delete the following files and folders from `/App_Data`
 
-  * `/TEMP`
-  * `/Logs`
-  * `/cache`
-  * `/preview`
-  * `umbraco.config`
+* `/TEMP`
+* `/Logs`
+* `/cache`
+* `/preview`
 
-![delete-from-app-data](images/App_Data-DELETE.png)
+![delete-from-app-data](images/App_Data-deleted.png)
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
@@ -137,26 +149,26 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 
 ![Manage environments](images/setup-dev-env.png)
 
-Before doing anything else, you need to delete the default **Media and Member types**:
+If you on your existing site have been working with members and made changes to the default Member Type, it is important that you follow these steps on the Umbraco Cloud environments:
 
 1. Head to the backoffice of the Development environment
 2. Navigate to the *Settings* section
-3. Open the *Media types* folder
-4. Delete **File**, **Folder** and **Image**
-5. Navigate to the *Member* section
-6. Open the *Member types* folder
-7. Delete **Member**
-8. Repeat these steps on all the Cloud environments
+3. Open the *Member types* folder
+4. Delete **Member**
+5. Repeat these steps on all the Cloud environments
 
-![Default media types](images/media-types.png)
+![Default media types](images/MemberType-delete.png)
 
 :::note
+
 ### Data types
+
 Have you been using _older_ data types on your project, you will need to go through a few steps in order to avoid running into collision errors when deploying your migrated sites to Umbraco Cloud.
 
 The data types in question are: Content Picker, Media Picker, Member picker, Multiple Media Picker (using Media Picker) and Related Links.
 
 You can either
+
 1. Rename the old data types on your existing site or
 2. Follow the steps in the [Colliding Data types](../../Troubleshooting/Deployments/Colliding-Datatypes) article
 :::
@@ -174,29 +186,19 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
 Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlined below it is important that you do not overwrite any settings and configuration related to Umbraco Deploy.
 
 1. Copy and replace all folders from your own project to the Umbraco Cloud project
-    * Excluding the following folders:
+    * **Do not copy and replace** the following folders:
         * `/Config`
         * `/App_Data`
     * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
 2. Merge the config files. Pay special attention to the following files:
-    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files.
-    * `/Config/dashboard.config` - make sure to keep the **Deploy dashboard**!
+    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files
     * `/Config/UmbracoDeploy.config` - *only relevant if you are migrating a Cloud project*
 3. Copy the rest of the files in the `/Config` folder from your own project to the Cloud project
 4. If you are using SQL CE
     * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
     * You can find it in `App_Data/umbraco.sdf`
 5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
-6. Copy the rest of the files / folder in the `/App_Data` folder from your own project to the Cloud project
-
-As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you need to do / be aware of depending on whether your existing site uses Umbraco Forms or not.
-
-* The existing site didn't use Umbraco Forms
-    * Locate the `installed` marker in `App_Plugins/UmbracoForms` in the Cloud project folder
-    * Delete the `installed` marker
-    * We are doing this to make sure the database from the migrated site is updated with the latest version of Umbraco Forms
-* The existing site uses Umbraco Forms
-    * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
+6. Copy the rest of the files/folders in the `/App_Data` folder from your own project to the Cloud project
 
 The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
@@ -224,14 +226,14 @@ In this next part, it is time to generate the so called UDA-files for all your p
 For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/Generating-UDA-files/#what-are-uda-files) article.
 
 * Make sure the folder `/data/revision` on your Umbraco Cloud project is empty
-    * If you have any files in the folder, you can safely remove those at this point
+  * If you have any files in the folder, you can safely remove those at this point
 * Open a command prompt
 * Navigate to the `/data` folder in your local Umbraco Cloud project files
 * Add an *export* marker by typing `echo > deploy-export`
-    * Generating the UDA files may take a while, depending on the extent of your project
-    * You will see a `deploy-complete` marker once the export is done
-    * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
-    * When you see a `deploy-complete` marker, it means everything is working as expected
+  * Generating the UDA files may take a while, depending on the extent of your project
+  * You will see a `deploy-complete` marker once the export is done
+  * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
+  * When you see a `deploy-complete` marker, it means everything is working as expected
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deploy-export.gif)

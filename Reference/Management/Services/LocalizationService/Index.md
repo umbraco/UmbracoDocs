@@ -1,17 +1,12 @@
 ---
-versionFrom: 6.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # LocalizationService
 
-:::note
-Applies to Umbraco 6.0.0+
-:::
-
 The LocalizationService acts as a "gateway" to Umbraco data for operations which are related to Dictionary items and Languages.
 
-[Browse the API documentation for LocalizationService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.LocalizationService.html).
+[Browse the API documentation for ILocalizationService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.ILocalizationService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -30,22 +25,35 @@ using Umbraco.Core.Services;
 
 ## Getting the service
 
+### Services property
 If you wish to use use the localization service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the localization service through a local `Services` property:
 
 ```csharp
 ILocalizationService localizationService = Services.LocalizationService;
 ```
 
-In Razor views, you can access the localization service through the `ApplicationContext` property:
+### Dependency Injection
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the ILocalizationService interface in your constructor:
 
-```csharp
-ILocalizationService localizationService = ApplicationContext.Services.LocalizationService;
+```c#
+public class MyClass
+{
+
+    private ILocalizationService _localizationService;
+    
+    public MyClass(ILocalizationService localizationService)
+    {
+        _localizationService = localizationService;
+    }
+
+}
 ```
 
-If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
+### Static accessor
+If neither a Services property or Dependency Injection is available, you can also reference the static Current class directly:
 
-```csharp
-ApplicationContext.Current.Services.LocalizationService
+```c#
+ILocalizationService localizationService = Umbraco.Core.Composing.Current.Services.LocalizationService;
 ```
 
 ## Samples

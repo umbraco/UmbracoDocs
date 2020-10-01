@@ -1,17 +1,12 @@
 ---
-versionFrom: 6.2.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # MemberTypeService
 
-:::note
-Applies to Umbraco 6.2 and 7.1 and newer
-:::
-
 The MemberTypeService acts as a "gateway" to Umbraco data for operations which are related to MemberTypes.
 
-[Browse the API documentation for MemberTypeService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MemberTypeService.html).
+[Browse the API documentation for IMemberTypeService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IMemberTypeService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -29,28 +24,37 @@ using Umbraco.Core.Services;
 ```
 
 ## Getting the service
-The MemberTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberTypeService is available through a local `Services` property.
+
+### Services property
+
+If you wish to use use the member type service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the member type service through a local `Services` property:
 
 ```csharp
-Services.MemberTypeService
+IMemberTypeService memberTypeService = Services.MemberTypeService;
 ```
 
-Getting the service through the `ApplicationContext`:
+### Dependency Injection
+
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberTypeService` interface in your constructor:
 
 ```csharp
-ApplicationContext.Current.Services.MemberTypeService
+public class MyClass
+{
+
+    private IMemberTypeService _memberTypeService;
+    
+    public MyClass(IMemberTypeService memberTypeService)
+    {
+        _memberTypeService = memberTypeService;
+    }
+
+}
 ```
 
-## Methods
+### Static accessor
 
-### .Delete(IMemberType memberType);
-Deletes a `MemberType`
+If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
 
-### .Get(string alias)
-Returns a `MemberType` with a given alias
-
-### .GetAll(int[] ids);
-Returns a collection of `MemberType` with the given ids
-
-### .Save(IMemberType memberType)
-Saves a `MemberType`
+```csharp
+IMemberTypeService memberTypeService = Umbraco.Core.Composing.Current.Services.MemberTypeService;
+```

@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.6.0
 meta.Title: "Content Apps"
 meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
@@ -8,25 +8,25 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 ## What are Content Apps?
 
-Content Apps are **companions** to the editing experience when working with content in the Umbraco backoffice.
+Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
-Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+Content Apps are a new concept in Umbraco 8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 ![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
 
-**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
+**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco 7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
 
 As an integrated part of Umbraco it is possible for you as a developer to create and provide your editors with helpful Content Apps.
 
-For example, you could create a Google Analytics integration within a Content App that displays to editors, the current 'page views' for the content item they are editing.
+For example, you could create a Google Analytics integration within a Content App that displays to editors the current 'page views' for the content item they are editing.
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number.
+You can associate an icon and control the position of your custom Content App. The position, for example between 'Content' and 'Info', is set via a 'weighting' number.
 
 #### Permissions
 
@@ -142,9 +142,13 @@ After the above edits are done, restart your application. Go to any content node
 
 ![Content App in action: Word Counter](images/content-app-2.png)
 
-### Limiting according to Content Type
+### Limiting according to type
 
-You can set your Content App to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition. For example:
+You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
+
+This can be done for both **Content/Media Types** and for **Member types**.
+
+ For example:
 
 ```json5
 {
@@ -153,7 +157,9 @@ You can set your Content App to only show for specific content types by updating
             "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
-                "+media/*" // show for all media types
+                "+media/*", // show for all media types
+                "-member/premiumMembers", // hide for Member type 'premiumMembers'
+                "+member/*" // show for all other Member types
             ]
         }
     ]
@@ -161,9 +167,9 @@ You can set your Content App to only show for specific content types by updating
 ```
 
 :::tip
-When the 'show' directive is omitted then the app will be shown for all content types.
+When the 'show' directive is omitted then the app will be shown for all types.
 
-Also, when you want to exclude content types, make sure to include all the rest using `"+content/*"`.
+Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
 :::
 
 ### Limiting according to User Role
@@ -215,40 +221,28 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-            // Some logic depending on the object type
-            // To show or hide WordCounterApp
-            switch (source)
-            {
-                // Do not show content app if doctype/content type is a container
-                case IContent content when content.ContentType.IsContainer:
-                    return null;
-
-                // Don't show for media items
-                case IMedia media:
-                    return null;
-
-                case IContent content:
-                    break;
-
-                default:
-                    throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
-            }
-
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
-
-            var wordCounterApp = new ContentApp
+			
+            // only show app on content items
+            if(source is IContent)
             {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0
-            };
-            return wordCounterApp;
-        }
+                var wordCounterApp = new ContentApp
+                {
+                    Alias = "wordCounter",
+                    Name = "Word Counter",
+                    Icon = "icon-calculator",
+                    View = "/App_Plugins/WordCounter/wordcounter.html",
+                    Weight = 0                
+                };
+                
+                return wordCounterApp;
+            }
+            
+            return null;
+        }        
     }
 }
 ```
@@ -263,3 +257,77 @@ You will still need to add all of the files you added above but, because your `C
     ]
 }
 ```
+
+## Notification badges
+
+There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
+
+When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
+
+![Content App badge](images/content-app-badge.png)
+
+You can enable a badge by using this code in the angular controller of your content app.
+
+```javascript
+$scope.model.badge = {
+  count: 5, // the number for the badge - anything non-zero triggers the badge
+  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = blue (matching the top-menu background color)
+};
+```
+
+From version 8.4.0 and up it is also possible to set a notification badge from an `IContentAppFactory`. This is achieved by setting the badge property on the ContentApp model.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.ContentEditing;
+using Umbraco.Core.Models.Membership;
+
+namespace Umbraco.Web.UI
+{
+
+    public class WordCounterAppComponent : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Add our word counter content app into the composition aka into the DI
+            composition.ContentApps().Append<WordCounterApp>();
+        }
+    }
+
+    public class WordCounterApp : IContentAppFactory
+    {
+        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        {
+            // Can implement some logic with userGroups if needed
+            // Allowing us to display the content app with some restrictions for certain groups
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
+                return null;
+            
+            // only show app on content items
+            if(source is IContent)
+            {
+                var wordCounterApp = new ContentApp
+                {
+                    Alias = "wordCounter",
+                    Name = "Word Counter",
+                    Icon = "icon-calculator",
+                    View = "/App_Plugins/WordCounter/wordcounter.html",
+                    Weight = 0,
+                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }                
+                };
+                
+                return wordCounterApp;               
+            
+            }
+            
+            return null;
+        }  
+    }
+}
+```
+
+Possible values for the `ContentAppBadge` Type are *Default*, *Alert* and *Warning*.

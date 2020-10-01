@@ -130,7 +130,7 @@ The actions on items in an Umbraco Tree will trigger a request to load an Angula
 
 For example 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
 
-If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the app_plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
+If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the App_Plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
@@ -138,7 +138,7 @@ If you're creating a custom tree as part of an Umbraco package/plugin, it's reco
 public class FavouriteThingsTreeController : TreeController
 ```
 
-The edit view in the example would now be loaded from the location: */app_plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
+The edit view in the example would now be loaded from the location: */App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
 
 #### Providing functionality in your Tree Action Views
 

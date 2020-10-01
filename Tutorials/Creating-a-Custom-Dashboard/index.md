@@ -1,11 +1,9 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
 product: "CMS"
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
+versionFrom: 8.0.0
 ---
-
 
 # Tutorial - Creating a Custom Dashboard
 
@@ -37,6 +35,7 @@ So all the steps we will go through:
 - You can do anything...
 
 ### Prerequisites
+
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
 - [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
@@ -70,68 +69,85 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Reference/Config/dashboard/index.md)
+Similar to a property editor you will now register the dashboard in a package.manifest file, so add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
 
-Add the following section:
-
-```xml
-<section alias="Custom Welcome Dashboard">
-    <access>
-        <deny>translator</deny>
-    </access>
-    <areas>
-        <area>content</area>
-    </areas>
-    <tab caption="Welcome">
-        <control>
-            /app_plugins/CustomWelcomeDashboard/WelcomeDashboard.html
-        </control>
-    </tab>
-</section>
+```json
+{
+    "dashboards":  [
+        {
+            "alias": "WelcomeDashboard",
+            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": -10,
+            "access": [
+                { "deny": "translator" },
+                { "grant": "admin" }
+            ]
+        }
+    ]
+}
 ```
-
-The terminology here gets a bit muddled but we're creating a 'Section'. This is not the same 'Section' as the 'Content Section', which inside this config file is referred to as an 'Area'. This is specifically a 'Dashboard Section' that you can use to group your dashboard tabs and controls together.
 
 The above configuration is effectively saying:
 
-> "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
+> "Add a tab called 'WelcomeDashboard' to the 'Content' section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators', but do allow 'admins' to see it!"
 
 :::note
-The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file. To make our custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
+The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see in the content section, make sure the weight is less than the default dashboards, [read more about the default weights](../../Extending/Dashboards).
 
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
-
-You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file.
 :::
+
+### Add Language Keys
+
+After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
+
+You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+  <area alias="dashboardTabs">
+    <key alias="WelcomeDashboard">Welcome</key>
+  </area>
+</language>
+```
+
+[Read more about language files](../../Extending/Language-Files/index.md)
 
 ### The Result
 
-![Custom Dashboard Welcome Message](images/welcomemessage.jpg)
+![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
+
+:::note
+If you don't see the brackets disappearing - you may need to recycle your app pool. Try adding a space at the end of a line in your web.config file and then reload.
+:::
 
 ## Adding a bit of style
 
-The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
-
-We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
-
-:::note
-This file allows Umbraco to load other resources to use with your HTML view, named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format.
-:::
-
-When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view. Remember that the dashboard config points to the html view. Then Umbraco uses the manifest to load the additional resources, eg. CSS and JavaScript files.
-
-This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
+Congratulations! Job well done - no unfortunately not, this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
 ```json
 {
-    "javascript":[
+    "dashboards":  [
+        {
+            "alias": "WelcomeDashboard",
+            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": -10,
+            "access": [
+                { "deny": "translator" },
+                { "grant": "admin" }
+            ]
+        }
+    ],
+	"javascript": [
         /*javascript files listed here*/
     ],
     "css": [
-        /*list of stylesheets appear here:*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
     ]
 }
 ```
@@ -147,7 +163,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
 
-![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
+![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v8.png)
 
 :::note
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
@@ -168,7 +184,7 @@ We register this AngularJS controller to the Umbraco Angular module:
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope) {
     var vm = this;
-    alert('hello world');
+    alert("hello world");
 });
 ```
 
@@ -179,20 +195,30 @@ In our html view, we update the outer div to wire up the controller to the view:
 ```
 
 :::note
-The use of vm (short for view model) to enable communication between the view and the controller.
+The use of vm (short for view model) is to enable communication between the view and the controller.
 :::
 
 Finally, we need to update the package.manifest file to load the additional controller JavaScript file when the dashboard is displayed:
 
 ```json
 {
-    "javascript":[
-        /*any comma delimited list of JavaScript files appear here*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
+    "dashboards":  [
+        {
+            "alias": "WelcomeDashboard",
+            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": -10,
+            "access": [
+                { "deny": "translator" },
+                { "grant": "admin" }
+            ]
+        }
+    ],
+	"javascript": [
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
     ],
     "css": [
-        /*a comma delimited list of stylesheets appear here:*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
     ]
 }
 ```
@@ -201,9 +227,9 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/v7/ui/#/api
+Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/v8/ui/#/api
 
-For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
+For this example it would be nice to welcome the editor by name, to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 
@@ -214,35 +240,28 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 and then we can use the userService's promise based **getCurrentUser()** method to get the details of the current logged in user:
 
 ```js
-var user = userService.getCurrentUser().then(function (user) {
-    console.log(user);
-    vm.UserName = user.name;
-});
-```
-
-*__Tip:__ Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.*
-
-Finally we can now update our view to incorporate the current user's name in our Welcome Message:
-
-```html
-<h1>Welcome {{vm.UserName}} ...to Umbraco</h1>
-```
-
-![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised.jpg)
-
-and for reference the full contents of /customwelcomedashboard.controller.js at this stage of the tutorial should look like this:
-
-```js
-angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService) {
+angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService) {
     var vm = this;
-    vm.UserName = 'guest';
+    vm.UserName = "guest";
 
-    var user = userService.getCurrentUser().then(function (user) {
+    var user = userService.getCurrentUser().then(function(user) {
         console.log(user);
         vm.UserName = user.name;
     });
 });
 ```
+
+:::tip
+Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.
+:::
+
+Finally we can now update our view to incorporate the current user's name in our Welcome Message:
+
+```html
+<h1>Welcome {{vm.UserName}} to Umbraco</h1>
+```
+
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v8.png)
 
 ## I know what you did last Tuesday
 
@@ -267,7 +286,7 @@ Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to
 ```html
 <h2>We know what you edited last week...</h2>
 <ul>
-    <li ng-repeat="logEntry in vm.UserLogHistory.items">{{logEntry.nodeId}} - {{logEntry.comment}} - {{logEntry.timestamp  | date:'medium'}}</li>
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">{{logEntry.nodeId}} - {{logEntry.logType}} - {{logEntry.timestamp  | date:'medium'}}</li>
 </ul>
 ```
 
@@ -287,7 +306,7 @@ These options should retrieve the last ten activities for the current user in de
 ```js
 logResource.getPagedUserLog(userLogOptions)
     .then(function (response) {
-        console.log(response)
+        console.log(response);
         vm.UserLogHistory = response;
     });
 ```
@@ -295,17 +314,23 @@ logResource.getPagedUserLog(userLogOptions)
 Take a look at the output of console.log of the response in your browser to see the kind of information retrieved  from the log:
 
 ```js
-{pageNumber: 2, pageSize: 10, totalPages: 6, totalItems: 60, items: Array(10)}
-    items: Array(10)
+{pageNumber: 1, pageSize: 10, totalPages: 1, totalItems: 1, items: Array(1)}
+    items: Array(1)
         0:
-            $$hashKey: "03L"
-            comment: "Save and Publish performed by user"
-            logType: "Publish"
-            nodeId: 1101
-            timestamp: "2018-11-25T13:40:11.137Z"
-            userAvatars: (5) ["https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=30", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=60", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=90", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=150", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=300"]
-            userId: 0
-            userName: "marc"
+            $$hashKey: "object:1289"
+            comment: "Published languages: English (United States)"
+            entityType: "Document"
+            logType: "PublishVariant"
+            nodeId: 1055
+            parameters: "English (United States)"
+            timestamp: "2019-10-10T14:49:55.223Z"
+            userAvatars: []
+            userId: 1
+            userName: "Jesper Christensen Mayntzhusen"
+    pageNumber: 1
+    pageSize: 10
+    totalItems: 1
+    totalPages: 1
 ```
 
 It's nearly all we need but missing information about the item that was saved and published!
@@ -326,42 +351,43 @@ Putting this together:
 
 ```js
 logResource.getPagedUserLog(userLogOptions)
-.then(function (response) {
-    console.log(response)
-    vm.UserLogHistory = response;
-    var filteredLogEntries = [];
-    // loop through the response, and filter out save log entries we are not interested in
-    angular.forEach(response.items, function (item) {
-        // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
-        if (item.nodeId > 0) {
-            //only interested here in 'saves'
-            if (item.logType == "Save") {
-                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
-                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
-                            if (item.comment.indexOf("Media") > -1) {
-                                // log entry is a media item
-                                item.editUrl = "media/media/edit/" + item.nodeId;
-                                item.entityType = "Media";
-                            }
-                            if (item.comment.indexOf("Content") > -1) {
-                                // log entry is a content item
-                                item.editUrl = "content/content/edit/" + item.nodeId;
-                                item.entityType = "Document";
-                            }
-                        }
-                    if (typeof item.entityType !== 'undefined') {
-                            // use entityResource to retrieve details of the content/media item
-                            entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                                console.log(ent);
-                                item.Content = ent;
-                            });
+    .then(function (response) {
+        console.log(response);
+        vm.UserLogHistory = response;
+        var filteredLogEntries = [];
+        // Loop through the response, and flter out save log entries we are not interested in
+        angular.forEach(response.items, function (item) {
+            // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
+            if (item.nodeId > 0) {
+                // check if we already grabbed this from the entityservice
+                var nodesWeKnowAbout = [];
+                if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
+                    return;
+                // find things the user saved
+                if (item.logType === "Save" || item.logType === "SaveVariant") {
+                    // check if it is media or content
+                    if (item.entityType === "Document") {
+                        item.editUrl = "content/content/edit/" + item.nodeId;
+                    }
+                    if (item.entityType === "Media") {
+                        item.editUrl = "media/media/edit/" + item.nodeId;
+                    }
 
-                            filteredLogEntries.push(item);
+                    if (typeof item.entityType !== 'undefined') {
+                        // use entityResource to retrieve details of the content/media item
+                        var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                            console.log(ent);
+                            item.Content = ent;
+                        });
+
+                        nodesWeKnowAbout.push(ent.id);
+                        filteredLogEntries.push(item);
                     }
                 }
             }
         });
-    vm.UserLogHistory.items = filteredLogEntries;
+        vm.UserLogHistory.items = filteredLogEntries;
+    });
 });
 ```
 
@@ -370,22 +396,20 @@ Finally update our view to use the additional retrieved entity information:
 ```js
 <h2>We know what you edited last week...</h2>
 <ul class="unstyled">
-    <li ng-repeat="logEntry in vm.UserLogHistory.items"><i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">
+        <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+    </li>
 </ul>
 ```
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek.jpg)
+![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v8.png)
 
 :::note
-The url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
+The url /umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
 
-The `logResource` has undergone a few breaking changes, including problems with SQLCE databases.
-
-* Prior to 7.6.4 the resource will 404
-* From 7.6.4 to 7.13 you can use `logResource.getUserLog("save", new Date()).then(function (response))`
-* After 7.13 you can use `getPagedUserLog` detailed above, which should work on SQLCE too
+The `logResource` has a few bugs prior to version 8.1.4, so if you are on a lower version this may not give the expected result.
 :::
 
 ## I know what you want to do today
@@ -407,16 +431,98 @@ Add the following to our view:
 
 Where 1075, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](images/CreateNewBlogPost.jpg)
+![Handy shortcut buttons](images/CreateNewBlogPost-v8.png)
+
+At this point we are done with the tutorial, your files should contain this:
+
+CustomWelcomeDashboardController:
+
+```js
+angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
+    var vm = this;
+    vm.UserName = "guest";
+    vm.UserLogHistory = [];
+
+    var user = userService.getCurrentUser().then(function (user) {
+        console.log(user);
+        vm.UserName = user.name;
+    });
+
+    var userLogOptions = {
+        pageSize: 10,
+        pageNumber: 1,
+        orderDirection: "Descending",
+        sinceDate: new Date(2018, 0, 1)
+    };
+
+    logResource.getPagedUserLog(userLogOptions)
+        .then(function (response) {
+            console.log(response);
+            vm.UserLogHistory = response;
+            var filteredLogEntries = [];
+            // Loop through the response, and flter out save log entries we are not interested in
+            angular.forEach(response.items, function (item) {
+                // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
+                if (item.nodeId > 0) {
+                    // check if we already grabbed this from the entityservice
+                    var nodesWeKnowAbout = [];
+                    if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
+                        return;
+                    // find things the user saved
+                    if (item.logType === "Save" || item.logType === "SaveVariant") {
+                        // check if it is media or content
+                        if (item.entityType === "Document") {
+                            item.editUrl = "content/content/edit/" + item.nodeId;
+                        }
+                        if (item.entityType === "Media") {
+                            item.editUrl = "media/media/edit/" + item.nodeId;
+                        }
+
+                        if (typeof item.entityType !== 'undefined') {
+                            // use entityResource to retrieve details of the content/media item
+                            var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                                console.log(ent);
+                                item.Content = ent;
+                            });
+
+                            nodesWeKnowAbout.push(ent.id);
+                            filteredLogEntries.push(item);
+                        }
+                    }
+                }
+            });
+            vm.UserLogHistory.items = filteredLogEntries;
+        });
+});
+```
+
+WelcomeDashboard.html:
+
+```html
+<div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
+    <h1>Welcome {{vm.UserName}} to Umbraco</h1>
+    <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
+
+<h2>We know what you edited last week...</h2>
+<ul class="unstyled">
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">
+        <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+    </li>
+</ul>
+
+    <div>
+        <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1075?doctype=BlogPost&create=true">
+            <i class="icon-edit"></i>
+            Create New Blog Post
+        </a>
+    </div>
+</div>
+```
 
 ## Custom External Data - creating your own angular resource
 
 You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
 
-## What else? What are you waiting for?
+## The end
 
-Perhaps the Dashboard is a gateway to a third party system or a tool to search specific content, or tools to help clean up existing content. extend extend extend
-
-Asteroids... ?
-
-![really you can put anything here](images/asteroids.jpg)
+Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/apidocs/v8/ui/#/api) for more info on all of the resources and services you can find for the backoffice!

@@ -15,7 +15,7 @@ In summary:
 
 1. Meta data such as Document Types, Templates, Forms, Views and config files are stored in a git repository and are **deployed** between environments using either a git client or the Umbraco Cloud Portal.
 
-2. Content and Media items are **not** stored in the git repository. These needs to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
+2. Content and Media items are **not** stored in the git repository. These need to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
 With this arrangement you don't need to grant Umbraco Cloud portal access to your content editors but can, instead, allow them access only to the required backoffice sections of your sites. This also allows developers to focus on deploying meta data which is stored in the site's git repository and content editors to focus on transferring content which is stored as Umbraco data.
 

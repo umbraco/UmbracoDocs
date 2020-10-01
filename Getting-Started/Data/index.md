@@ -1,4 +1,6 @@
 ---
+meta.Title: "Umbraco Data"
+meta.Description: "This section focuses on how to create data using the Umbraco backoffice"
 versionFrom: 7.0.0
 ---
 
@@ -20,3 +22,9 @@ Defining Member Types and creating members for authentication and user profiles.
 
 ## [Customizing Data Types](Data-Types/)
 Creating and editing Data Types.
+
+## [Scheduled Publishing](Scheduled-Publishing/)
+Schedule when content should be published / unpublished automatically.
+
+## [Users](Users/)
+Control who has access to the Umbraco backoffice and what permissions they have.

@@ -74,6 +74,7 @@ For our "swibble" product in our example content tree the  `ProductPageUrlSegmen
 
 Register the custom UrlSegmentProvider with Umbraco:
 
+```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco8.Routing;
@@ -88,6 +89,7 @@ namespace Umbraco8.Composers
         }
     }
 }
+```
 
 ### The Default Url Segment Provider
 

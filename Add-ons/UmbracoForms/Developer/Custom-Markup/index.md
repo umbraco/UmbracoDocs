@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Umbraco Forms custom markup"
+meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output."
 ---
 
 # Custom markup
@@ -19,7 +21,7 @@ The way the razor macro works is that it uses some razor views to output the for
 
 You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder if you are using Forms 6+, or in the `~\Views\Partials\Forms\`folder if you are using Forms 4.
 
-To avoid that your custom changes to the default views are overwritten you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit it there.
+To avoid your custom changes to the default views from being overwritten, you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit it there.
 
 ### Form.cshtml
 
@@ -56,7 +58,7 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 By default the form makes use of jQuery validate and jQuery validate unobtrusive which is why you see attributes like `data-val` and `data-val-required`.
 
-This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.
+This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
 ### Customizing for a specific form
 

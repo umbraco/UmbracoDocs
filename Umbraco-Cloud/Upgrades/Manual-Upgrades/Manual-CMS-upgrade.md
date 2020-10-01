@@ -61,6 +61,10 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
         <settings configSource="config\UmbracoDeploy.Settings.config" />
     </umbraco.deploy>
 
+:::note
+The following section with the `Dashboard.config` only applies to Umbraco 7 projects.
+:::
+
 ### Dashboard.config
 
 When merging the `Dashboard.config` file make sure that you **do not overwrite / remove** the following settings:
@@ -83,9 +87,9 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite /
         <area>forms</area>
         </areas>
         <tab caption="Dashboard">
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/activity.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/activity.html</control>
         </tab>
     </section>
 

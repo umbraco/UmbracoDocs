@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections & Trees

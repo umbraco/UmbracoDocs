@@ -16,7 +16,7 @@ The __Folder__ Media Type is a container for organizing media items in the media
 
 ## Creating a folder
 
-It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it easy for editors to upload files and images in the right place.
+It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload files and images in the right place.
 
 To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up a dialogue. Pick the __Folder__, enter a name and press __save__.
 

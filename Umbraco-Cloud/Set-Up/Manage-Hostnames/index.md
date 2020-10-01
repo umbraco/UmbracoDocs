@@ -49,7 +49,7 @@ All hostnames added to an Umbraco Cloud project will automatically be protected 
 
 ## [Upload certificates manually](Security-Certificates)
 
-You can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
+On the Professional and Enterprise plan, you can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
 

@@ -57,7 +57,7 @@ Here is an example of how that config transform would look:
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>
-        <rewrite>
+        <rewrite xdt:Transform="InsertIfMissing">
             <rules>
                 <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
                     <match url=".*" />
@@ -103,6 +103,9 @@ On all other Cloud environments:
 Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
 
 ![Toggle debug mode](images/toggle-debug.png)
+
+## Umbraco Latch transforms
+All sites created on Cloud since Umbraco v7.12 will contain a web.config transform called: `Latch.Web.live.xdt.config`. See the [Latch documentation](../Umbraco-Latch/index.md#https-by-default) for more information
 
 ## Baseline config transforms
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)

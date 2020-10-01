@@ -1,8 +1,6 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
-
 
 # Adding server-side data to a property editor
 
@@ -89,12 +87,24 @@ public IEnumerable<Person> GetAll()
 Inside the `GetAll()` method, we now write a bit of code, that connects to the database, creates a query and returns the data, mapped to the `Person` class above:
 
 ```csharp
-// get the database
-var db = UmbracoContext.Application.DatabaseContext.Database;
-// build a query to select everything the people table
-var query = new Sql().Select("*").From("people");
-// fetch data from DB with the query and map to Person object
-return db.Fetch<Person>(query);
+private readonly IScopeProvider scopeProvider;
+
+public PersonApiController(IScopeProvider scopeProvider)
+{
+    this.scopeProvider = scopeProvider;
+}
+
+public IEnumerable<Person> GetAll()
+{
+    using (var scope = scopeProvider.CreateScope(autoComplete: true))
+    {
+        // build a query to select everything the people table
+        var sql = scope.SqlContext.Sql().Select("*").From("people");
+
+        // fetch data from the database with the query and map to the Person class
+        return scope.Database.Fetch<Person>(sql);
+    }
+}
 ```
 
 We are now done with the server-side of things, with the file saved in App_Code you can now open the URL: `/umbraco/backoffice/My/PersonApi/GetAll`.

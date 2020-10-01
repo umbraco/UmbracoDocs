@@ -47,7 +47,7 @@ These language files are the ones shipped with Umbraco and should not be modifie
 ### Package language files
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
 
-    ~/app_plugins/mypackage/lang/{language}.xml
+    ~/App_Plugins/mypackage/lang/{language}.xml
 
 ### User language files
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:

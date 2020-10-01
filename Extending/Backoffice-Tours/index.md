@@ -1,17 +1,15 @@
 ---
 keywords: Backoffice tours
-versionFrom: 7.8.0
+versionFrom: 8.6.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
 
 # Backoffice tours
 
-:::note
-This feature has been introduced in Umbraco 7.8.0
-:::
+Backoffice tours are a way to create helpful guides for how to work in the Umbraco backoffice.
 
-Backoffice tours are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
+They are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
 
 ## Tour file locations
 
@@ -23,11 +21,11 @@ The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. T
 
 ### Plugin tours
 
-If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are creating a plugin.
+When you want to include a tour with your custom plugin/package you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package).
 
 ## The JSON format
 
-A tour file contains an array of tour configuration JSON objects. So it's possible to have multiple, (un)related tours in one file.
+A tour file contains an array of tour configuration JSON objects. It's possible to have multiple, (un)related tours in one file.
 
 ```json
 [
@@ -44,7 +42,7 @@ A tour file contains an array of tour configuration JSON objects. So it's possib
 
 A tour configuration JSON object contains all the data related to a tour.
 
-Example tour configuration object :
+Example tour configuration object:
 
 ```json
 {
@@ -54,6 +52,7 @@ Example tour configuration object :
     "groupOrder": 1,
     "allowDisable": true,
     "culture" : "en-US",
+    "contentType" : "homePage",
     "requiredSections": ["content","media"],
     "steps": []
 }
@@ -65,17 +64,17 @@ Below is an explanation of each of the properties on the tour configuration obje
 
 This is the name that is displayed in the help drawer for the tour.
 
-![Tour name highlighted](images/tourname.png)
+![Tour name highlighted](images/tourname-v8.png)
 
 ### alias
 
-The unique alias of your tour, this is used to track the progress a user has made while taking a tour. The progress information is stored in the TourData column of the UmbracoUsers table in the database.
+The unique alias of your tour. This is used to track the progress a user has made while taking a tour. The progress information is stored in the TourData column of the UmbracoUsers table in the database.
 
 ### group
 
 The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started).
 
-![Tour group highlighted](images/tourgroup.png)
+![Tour group highlighted](images/tourgroup-v8.png)
 
 ### groupOrder
 
@@ -85,15 +84,30 @@ This is used to control the order of the groups in the help drawer. This must be
 
 A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will no longer be shown in the help drawer.
 
-![Tour allow disable link highlighted](images/tourallowdisable.png)
+![Tour allow disable link highlighted](images/tourallowdisable-v8.png)
 
-### culture (introduced in v7.11)
+### culture
 
 You can set a culture (e.g. nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
 
-### sections
+### contentType
 
-This is an array of section aliases that a user needs to be able to access. If the user does not have access to all the sections the tour will not be shown in the help drawer. e.g. if a tour requires content, media and settings and the logged in user only has access to content and media, the tour will not be shown for this user.
+Use this property if you want to limit the tour to a specific content type. E.g. if you want to make a tour that's specific to content nodes using the Home Page Document Type, use the alias of the Document Type, `homePage`, to set the `contentType` property.
+
+The `contentType` property can also be used to limit the tours to content types that are using a specific composition. This will show the tour on all nodes that are using a specific composition.
+
+![Content Type specific tours](images/contentTypespecific.png)
+
+In the image above, two tours are avaibable on the *Welcome* node:
+
+1. "Setup the Welcome page" is available because the tour is limited to the `homePage` content type and
+2. "Setup the SEO" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
+
+When the `contentType` property is set, the tour will **not** show as part of any groups.
+
+### requiredSections
+
+This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. E.g. if a tour requires Content, Media and Settings and the logged in user only has access to Content and Media, the tour will not be shown for this user.
 
 ### steps
 
@@ -156,11 +170,21 @@ Setting this to true will prevent JavaScript events from being bound to the high
 
 As an example, it is very useful when you would like to highlight a button, but would like to prevent the user clicking it.
 
+### backdropOpacity
+
+A decimal value between 0 and 1 to indicate the transparency of the background overlay.
+
 ### event
 
 The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover, etc.
 
 If not set or omitted a "Next" button will be added to the tour.
+
+### view
+
+Here you can enter a path to your own custom angular view that will be used to display the tour step.
+
+This is useful if you would like to validate input from the user during the tour step.
 
 ###  eventElement
 A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
@@ -169,16 +193,42 @@ The image below shows the entire tree highlighted, but requires the user to clic
 
 ![Step eventElement highlighted](images/step-event-element.png)
 
-### backdropOpacity
-
-A decimal value between 0 and 1 to indicate the transparency of the background overlay.
-
-### view
-
-Here you can enter a path to your own custom angular view that will be used to display the tour step.
-
-This is useful if you would like to validate input from the user during the tour step.
-
 ### customProperties
 
-A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customProperties.
+A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
+
+## How to filter/disable tours being shown
+It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection.
+
+Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
+
+```cs
+using System.Text.RegularExpressions;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Tour;
+
+namespace Umbraco.Examples
+{
+    public class BackofficeComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Filter out all the CMS core tours by alias with a Regex that start with the umbIntro alias
+            composition.TourFilters()
+                .AddFilter(new BackOfficeTourFilter(pluginName: null, tourFileName: null, tourAlias: new Regex("^umbIntro", RegexOptions.IgnoreCase)));
+
+            // Filter any tours in the file that is custom-tours.json
+            // Found in App_plugins/MyAwesomePlugin/backoffice/tours/
+            // OR at /config/backofficetours/
+            composition.TourFilters()
+                .AddFilterByFile("custom-tours.json");
+
+            // Filter out one or more tour JSON files from a specific plugin/package
+            // Found in App_plugins/MyAwesomePlugin/backoffice/tours/tour-two.json
+            composition.TourFilters()
+                .AddFilterByPlugin("MyAwesomePlugin");
+        }
+    }
+}
+```

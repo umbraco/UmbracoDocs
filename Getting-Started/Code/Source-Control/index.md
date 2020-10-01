@@ -1,4 +1,6 @@
 ---
+meta.Title: "Source Control with Umbraco"
+meta.Description: "In this article you can learn more about how to effectively source control your Umbraco site."
 versionFrom: 8.0.0
 ---
 
@@ -26,7 +28,7 @@ There are lots of different possible variations within your working environment 
 
 This documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](images/v8-files.PNG)
+![Typical set of Umbraco Project Folders](images/app-data-folders-version8.png)
 
 #### The Umbraco Folder
 
@@ -39,7 +41,7 @@ If you are working with Visual Studio and a Build Server, it's NuGet's job to re
 
 #### App_Data Folders
 
-![App_Data Folders](images/v8-app-data.PNG)
+![App_Data Folders](images/typical-umbraco-project-folders-version8.png)
 
 When Umbraco is running it will generate and update some files on disk:
 
@@ -62,7 +64,7 @@ They include:
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
-There is a file `/App_Data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
+There is a file `/App_Data/packages/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
 :::
 
 #### Umbraco Models Builder
@@ -143,7 +145,7 @@ When you create and edit eg. Document Types, Media Types and Data Types in the U
 
 There are several add-on packages that can help add source control to these structure changes:
 
-- *[The uSync package (free)](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
+- *[The uSync package (free)](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
 
 - *[uSync Snapshots (licensed)](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 

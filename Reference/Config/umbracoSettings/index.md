@@ -345,7 +345,7 @@ This setting is used when you're running Umbraco in virtual directories.
 
 **`<DisallowedUploadFiles>`**
 
-This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the backoffice.
+This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
 ```xml
 <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
@@ -354,7 +354,7 @@ This setting consists of a "black list" of file extensions that editors shouldn'
 
 **`<AllowedUploadFiles>`**
 
-If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
+If greater control is required than available from the above, this setting can be used to store a list of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
 
 ```xml
 <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
@@ -386,7 +386,7 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
 ```xml
 <security>
     <!-- set to true to auto update login interval
-    (and there by disabling the lock screen -->
+    (and there by disabling the lock screen) -->
     <keepUserLoggedIn>true</keepUserLoggedIn>
 
     <!-- by default this is true and if not specified in config will be true.
@@ -414,15 +414,15 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
 Keep this setting to "true" to avoid the lock screen introduced in earlier version of Umbraco. If you like the lock screen feel free to set this
 option to "false" and thereby enabling it.
 
+**`<usernameIsEmail>`**
+This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set the "true" (the default value) the username is hidden and always the same as the email address.
+
 **`<hideDisabledUsersInBackoffice>`**
-As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
+As stated in the comment above, this setting was introduced in v4.8. If it's set to "true" it's not possible to see disabled users, which means it's
 not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
-**`<usernameIsEmail>`**
-This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
-
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. The feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to "false".
 
 **`<authCookieName>`**
 The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.

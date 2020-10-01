@@ -210,9 +210,9 @@ class UnityEvents : IApplicationEventHandler
 
         // The UmbracoContext must be registered so that the Umbraco backoffice controllers
         // can be successfully resolved.
-        container.RegisterType<UmbracoContext>(
-            new PerRequestLifetimeManager(),
-            new InjectionFactory(c => UmbracoContext.Current)
+        container.RegisterFactory<UmbracoContext>(
+          _ => UmbracoContext.Current,
+          new PerRequestLifetimeManager()
         );
 
         // Unity by default chooses the constructor with the most amount of arguments.
