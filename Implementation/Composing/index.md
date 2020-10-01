@@ -6,7 +6,7 @@ meta.Description: "Customising the behaviour of an Umbraco Application at start 
 ---
 
 # Composing
-Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
+Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
 
 ## Overview
 An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
@@ -90,7 +90,7 @@ See a list of collections below to determine which are 'type scanned' and which 
 
 This example shows how to create a component to listen and respond to  `ContentService.Saving` events, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
-We create a new C# class which implements `IUserComposer` and use it to add our new `IComponent` to the collection of Components. When Umbraco starts up, the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
+We create a new C# class that implements `IUserComposer` and use it to add our new `IComponent` to the collection of Components. When Umbraco starts up, the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
 
 ```csharp
 using System.Linq;
@@ -154,7 +154,7 @@ After the InitialComposer's there are two groups of composers that execute, they
 
 `ICoreComposer`
 
-After the WebInitialComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run. Some of the responsibilities covered by ICoreComposers include registering ModelsBuilder, registering the log viewer, registering the component responsible for writing into the audit logs etc.
+After the WebInitialComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run. Some of the responsibilities covered by ICoreComposers include registering ModelsBuilder, registering the log viewer, registering the component responsible for writing into the audit logs, etc.
 
 `IUserComposer`
 
@@ -173,7 +173,7 @@ public class SubscribeToContentServiceSavingComposer : ComponentComposer<Subscri
 ```
 
 ## Collections
->"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
+>"Collections of elements", for example, the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
 
@@ -286,10 +286,10 @@ namespace Umbraco.Web.Dashboards
 ```
 
 ### [HideFromTypeFinder]
-This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation. Type scanning would make this change automatically at start up if the custom implementation was detected via type scanning. This attribute could hide the class from the scanner.
+This is used to hide a type from being auto-scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation. Type scanning would make this change automatically at start up if the custom implementation was detected via type scanning. This attribute could hide the class from the scanner.
 
 ### [DisableComposer] & [Disable]
-These attributes allows you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
+These attributes allow you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
 
 ```csharp
 [Disable]
@@ -325,7 +325,7 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 ### [RuntimeLevel]
 The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
 
-By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explicitly add the attribute as shown in the example below.
+By default, any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus does not need to explicitly add the attribute as shown in the example below.
 
 ```csharp
 using Umbraco.Core;
@@ -459,7 +459,7 @@ namespace TestCollections.Code
 
 ## Example of using Lazy Collections with Type Scanning
 
-You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 
 :::warning
 Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco.
