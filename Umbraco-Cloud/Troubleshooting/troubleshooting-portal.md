@@ -25,7 +25,7 @@ We have some guides on how to fix the most common errors below:
 * [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items)
 * [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
 * [Colliding Data Types](Deployments/Colliding-Datatypes)
-* [Could not get content type with id](Deployments/Could-not-get-content-type-with-id)
+* [Type not found](Deployments/Type-Not-Found)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
