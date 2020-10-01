@@ -186,7 +186,7 @@ if (vm.layout.length > 0) {
 }
 ```
 
-This similar example uses the Block Object for settingsa value on the first property in the Blocks Content.
+This similar example uses the Block Object for setting a value on the first property in the Blocks Content.
 
 ```js
 // continuing from the basic setup example.
