@@ -148,3 +148,55 @@ At this point you can create a query for only that field:
 ```csharp
 var results = searcher.CreateQuery("content").Field("combinedField", searchTerm).Execute();
 ```
+
+### Adding the path of the node as a searchable field into the index
+
+Sometimes you might want to search descendants of a node rather than immediate children for a particular search term. In this instance, we need to write out the `path` property as a searchable field into the index. The `path` property is a comma-separated string. Due to the presence of the comma in the path, the field is not tokenized therefore it is not searchable. We will inject new
+field with the path that has a comma removed this making it searchable. This can be done by adding the new field using to `IndexProviderTransformingIndexValues` method. So continuing from the above example the method will look like below.
+
+```csharp
+if (e.ValueSet.Category == IndexTypes.Content)
+{
+    var combinedFields = new StringBuilder();
+
+    var pathBuilder = new StringBuilder();
+
+    foreach (var fieldValues in e.ValueSet.Values)
+    {
+        foreach (var value in fieldValues.Value)
+        {
+            if (value != null)
+            {
+                combinedFields.AppendLine(value.ToString());
+            }
+        }
+    }
+
+    if (fieldValues.Key == "path")
+    {
+        foreach (var value in fieldValues.Value)
+        {
+            if (value != null)
+            {
+                var path = value.ToString().Replace(",", " ");
+            }
+        }
+    }
+
+    //Accessing the Umbraco Cache code will be added in the next step.
+    //combinedFields.AppendLine(GetBreadcrumb(e.ValueSet.Values["id"].FirstOrDefault()?.ToString()));
+
+    e.ValueSet.TryAdd("combinedField", combinedFields.ToString());
+
+    e.ValueSet.TryAdd("searchPath", pathBuilder.ToString());
+    
+}
+```
+
+The path of a node usually follows the format -1,1066,1234,1236 as an example where 1236 is the current node. In the code we split the path, loop through them and append it to a stringbuilder object, inserting a whitespace before and after the value. Finally we add the value to the stringbuilder object into a new field in the index.
+
+Once this is done you can update your search query to search the descendants of a particular node. In this example the query searches all descendants of node id 1105 for the search term.
+
+```c#
+var results = searcher.CreateQuery("content").Field("searchPath","1105").And().Field("combinedField", searchTerm).Execute();
+```
