@@ -1,0 +1,75 @@
+---
+versionFrom: 8.0.0
+---
+
+# How to implement custom error pages
+
+Since Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET, you have several options when it comes to setting up custom error pages on your website.
+
+## In-code error page handling
+
+One way is to watch for error events and serve corresponding pages via C# code. Please refer to the following page for an example - [Custom 404 handlers](../404handlers/).
+
+## Config file handling
+
+A quicker implementation - you can specify a page that will be displayed whenever the application encounters a particular error.
+For this, you will need to create your error pages, and change the customErrors line in ```web.config.```
+
+For a generic error message:
+
+```html
+<customErrors mode="On" redirectMode="ResponseRewrite" defaultRedirect="error.aspx"/>
+```
+
+If you want to handle error code 500:
+
+```html
+<customErrors mode="On" redirectMode="ResponseRewrite" defaultRedirect="error.aspx">
+          <error statusCode="500" redirect="500.aspx" />
+</customErrors>
+```
+
+The above code would work nicely for error 500, which covers compilation errors in Umbraco.
+Please note the error.aspx and 500.aspx pages in above examples would be place in the root of the site - relative to web.config.
+
+The above approach for handling 404 errors would not work, however - for this, we need to change things up a bit.
+
+In this method we will use a 404 page created via the backoffice.
+
+### Create a 404 page in the backoffice
+
+First, create a new document type (though you could also use a more generic document type if you already have one) called Page404.
+Make sure the permissions are set to create it under Content.
+Properties on this document type are optional - in most cases, the 404 not found page would be static.
+Make sure to assign (and fill out) the template for your error page, and then create it in Content.`
+
+### Set a custom 404 page in umbracoSettings.config
+
+Once all of that is done, grab your published error page's ID, GUID or path and head on over to the config folder. In there, find umbracoSettings.config file and open it up.
+In the ``` <errors> ``` section, you can specify redirects for specific error codes as well!
+
+Let us look at the ``` <error404> ``` tag.
+As the config specifies in the example, the value for error pages can be:
+
+```html
+        * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+        * An XPath statement            (example: //errorPages[@nodeName='My cool error']
+        * A content item's integer ID   (example: 1234)
+```
+
+That is where the value you grabbed earlier comes in. Fill it out like so:
+```html
+      <error404>
+      <errorPage culture="default">81dbb860-a2e3-49df-9a1c-2e04a8012c03</errorPage>
+      </error404>
+```
+
+The above sample uses a GUID value.
+
+:::note
+With this approach, you can set different 404 pages for different languages (cultures) - such as ```en-us```, ```it``` etc.
+:::
+
+:::warning
+If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement - since content IDs might differ across Cloud environments.
+:::
