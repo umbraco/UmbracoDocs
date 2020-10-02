@@ -9,8 +9,8 @@ The following configuration option can be set in the application settings (in th
 * `Umbraco.ModelsBuilder.Enable` (bool, default it `false`) and acts as a kill-switch. When `false`, Models Builder behaves as if it were not installed at all, and all other settings are ignored.
 
 * `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
-    * `Nothing` (default): Do not generate models.
-    * `PureLive`: Generate models in a dynamic in-memory assembly.
+    * `Nothing`: Do not generate models.
+    * `PureLive`(default): Generate models in a dynamic in-memory assembly.
     * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
     * `LiveAppData`: Generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes.
 
