@@ -73,3 +73,9 @@ With this approach, you can set different 404 pages for different languages (cul
 :::warning
 If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement - since content IDs might differ across Cloud environments.
 :::
+
+### Why is the method different for error 404?
+
+In the first example, we set up a custom error 500 page in web.config. If you try setting it up in umbracoSettings.config it will not work. Although the 404 page sample we set up in the above section did work. Why is that?
+
+The 50* errors are all related to the hosting - they come from IIS. That means they are hit 1 layer above Umbraco itself, and as such you can't really manage them from Umbraco. It is possible to customize them through the web.config, though.
