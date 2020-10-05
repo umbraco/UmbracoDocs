@@ -102,7 +102,7 @@ To get a better understanding of what the Model Object does for you, we need to 
 
 ### Maintain and work with the Layout of a Block Editor
 
-The `layout` of a Block Editor can be any structure. Therefore the Model Object (BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we often will be giving the Model Object a reference to an entry of the `layout` to then perform an action, which may then need to reflect changes back to the `layout`.
+The `layout` of a Block Editor can be any structure. Therefore the Model Object (BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we often will be giving the Model Object a reference to an entry of the `layout` to then perform an action. This action may then need to reflect changes back to the `layout`.
 
 Since the origin of blocks is in the `layout` the Model Object only can serve as a helper to maintain and create data. Therefore the Property Editor code will be using the `layout` as origin, using the Model Object to help manage specific parts.
 
