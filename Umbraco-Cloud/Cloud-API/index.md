@@ -8,6 +8,12 @@ meta.Description: "A guide to using the public Umbraco Cloud REST API"
 
 Umbraco Cloud has a REST API that you can use to automatically create new projects. This can come in really handy if you are going to create a lot of projects within a short period of time or if you want to automate project creation or team management.
 
+:::note
+Do note that the /create endpoint can only be used for creating <b>v7</b> projects.
+
+It's currently not possible to create Heartcore or Uno projects using the Cloud API.
+:::
+
 In this article you'll learn how to setup Umbraco Cloud projects using the REST API, and also how to invite and add users to these projects.
 
 ## Authentication
@@ -53,14 +59,6 @@ To use this endpoint, make a request like this:
     
 :::note
 You'll notice the "plan" parameter takes either "Single", "Standard" or "Studio" as valid options. The terminology used for these plans has since changed for the "Single" and "Studio" plans. "Single" will create a "Starter" plan whereas "Studio" a "Professional" one.
-:::
-
-:::note
-Do note that the /create endpoint can only be used for creating <b>v7</b> projects.
-:::
-
-:::note
-It's currently not possible to create Heartcore or Uno projects using the Cloud API. The Cloud API has not been updated for a longer time now, however, we're looking into doing a major makeover of the Cloud API.
 :::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
