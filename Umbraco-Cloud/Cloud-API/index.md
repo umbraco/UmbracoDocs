@@ -46,13 +46,21 @@ To use this endpoint, make a request like this:
 
     {
         "projectName": "Name of the project", // Required
-        "plan": "Single", // Required. Options are: "Single or Studio"
+        "plan": "Single", // Required. Options are: "Single, Standard or Studio" Plan names are case sensitive!
         "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
     
 :::note
-You'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+You'll notice the "plan" parameter takes either "Single", "Standard" or "Studio" as valid options. The terminology used for these plans has since changed for the "Single" and "Studio" plans. "Single" will create a "Starter" plan whereas "Studio" a "Professional" one.
+:::
+
+:::note
+Do note that the /create endpoint can only be used for creating <b>v7</b> projects.
+:::
+
+:::note
+It's currently not possible to create Heartcore or Uno projects using the Cloud API. The Cloud API has not been updated for a longer time now, however, we're looking into doing a major makeover of the Cloud API.
 :::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
@@ -61,8 +69,8 @@ If everything went as expected, the endpoint will return a `HTTP 200` status cod
 
 ```json
 {
-    "url": "https://www.s1.umbraco.io/project/alias-of-project,
-    "alias": "alias-of-project",
+    "url": "https://www.s1.umbraco.io/project/alias-of-the-project,
+    "alias": "alias-of-the-project",
     "projectId: "2af1dc0e-a454-4956-ba26-59036ac4bb99",
     "projectIsReady": false,
     "creationStatus": "Creating",
@@ -99,10 +107,35 @@ In the example below the project creation is still under-way:
     "creationStatus": "Creating",
     "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
     "backofficeUrl": ""
+    "environments": null
 }
 ```
 
 You should keep polling this until the `creationStatus` changes to "Created" (or `projectIsReady=true`). The `backofficeUrl` will also be filled with the correct url to the backoffice once the project has been created.
+
+Here's how a responce for a created project would loo like:
+
+```json
+{
+    "projectIsReady": true,
+    "creationStatus": "Created",
+    "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
+    "backofficeUrl": "https://alias-of-the-project.s1.umbraco.io/umbraco/#/?dashboard=starter",
+    "environments": [
+        {
+            "environmentType": "Development",
+            "environmentId": "8027b915-425c-4e23-a7b2-ee1eb4e895f4",
+            "backofficeUrl": "https://alias-of-the-project.s1.umbraco.io/umbraco/"
+        },
+        {
+            "environmentType": "Live",
+            "environmentId": "0d4b0677-5a0d-4460-8f1e-24d6678ad188",
+            "backofficeUrl": "https://alias-of-the-project.s1.umbraco.io/umbraco/"
+        }
+    ]
+}
+```
+
 
 ### Invite to project
 
