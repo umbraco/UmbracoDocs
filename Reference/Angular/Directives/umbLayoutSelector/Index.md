@@ -63,4 +63,4 @@ angular.module("umbraco").controller("myController", function ($scope) {
 });
 ```
 
-For each layout, the `name` property indicates the visual name of the layout (eg. used when hovering over the layout in the selector), and `icon` is the CSS selector for the icon of the layout. `path` works a sort of alias, and is used internally for comparing the layouts. And while a bit misleading, each layout should also have a `selected` property indicating whether a particular layout is enabled, and thereby visible in the selector.
+For each layout, the `name` property indicates the visual name of the layout (eg. used when hovering over the layout in the selector), and `icon` is the CSS selector for the icon of the layout. The `path` attribute indicates a sort of alias, and is used internally for comparing the layouts. And while a bit misleading, each layout should also have a `selected` property indicating whether a particular layout is enabled, and thereby visible in the selector.
