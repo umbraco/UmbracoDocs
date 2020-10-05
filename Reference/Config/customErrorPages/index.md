@@ -29,8 +29,9 @@ If you want to handle error code 500:
 </customErrors>
 ```
 
-The above code would work nicely for error 500, which covers compilation errors in Umbraco.
-Please note the error.aspx and 500.aspx pages in above examples would be place in the root of the site - relative to web.config.
+The above code would work for error 500, which covers compilation errors in Umbraco.
+
+Please note the `error.aspx` and `500.aspx` pages in the above examples would be placed in the root of the site - relative to `web.config`.
 
 The above approach for handling 404 errors would not work, however - for this, we need to change things up a bit.
 
