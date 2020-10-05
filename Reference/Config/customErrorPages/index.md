@@ -6,6 +6,8 @@ versionFrom: 8.0.0
 
 Since Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET, you have several options when it comes to setting up custom error pages on your website.
 
+Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience - for example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
+
 ## In-code error page handling
 
 One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../404handlers/) article for an example.
