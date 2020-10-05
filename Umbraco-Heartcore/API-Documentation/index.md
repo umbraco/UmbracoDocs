@@ -112,6 +112,7 @@ Api-Key: {api-key}
 The endpoints implements OAuth 2.0.
 
 A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user.
+This corresponds to a user logging into the backoffice and is thus only meant to be used for the Content Management API.
 
 ```http
 POST https://api.umbraco.io/oauth/token
