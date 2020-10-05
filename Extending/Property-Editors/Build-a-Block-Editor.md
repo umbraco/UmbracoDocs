@@ -4,9 +4,7 @@ versionFrom: 8.7.0
 
 # Build a Block Editor
 
-To read this document you must make your self confident with the basics of developing a custom Property Editor for Umbraco.
-
-[Read more](https://our.umbraco.com/documentation/Extending/Property-Editors/).
+Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
 ## Setup your Property Editor as a Block Property Editor
 
@@ -47,13 +45,13 @@ Your Property Editor will need a `PropertyValueConverter`. Read more about [Prop
 
 ## Data structure of Block Editors
 
-The data of Block Editors consist of three main parts:
+The Block Editor data structure consists of three main parts:
 
-**Layout**: The Layout defines Blocks that each will reference a content item located in the list of data by it's UDI. The Layout object will be key/value pairs where the key is the Property Editor alias and the value type depends on your Property Editors setup.
+**Layout**: The Layout defines Blocks that each will reference (by UDI) a content item in the list of data. The Layout object will be key/value pairs where the key is the Property Editor alias and the value type depends on your Property Editor's setup.
 
-**ContentData**: A list of content items based on ElementTypes(IPublishedElement).
+**ContentData**: A list of content items based on ElementTypes (IPublishedElement).
 
-**SettingsData**: A list of content items based on ElementTypes(IPublishedElement).
+**SettingsData**: A list of content items based on ElementTypes (IPublishedElement).
 
 In the following example the layout object "MyOwn.UnicornBlocksEditor" is of type Array.
 
@@ -98,17 +96,17 @@ In the following example the layout object "MyOwn.UnicornBlocksEditor" is of typ
 
 ### Basic knowledge for understanding how to work with Block Editor data
 
-To help your Block Editor manage the Data Structure presented above we have made a Model Object called BlockEditorModelObject which helps manage the basic parts of a Block Editor.
+To help your Block Editor manage the Data Structure presented above, we have made a Model Object called BlockEditorModelObject which helps manage the basic parts of a Block Editor.
 
 To get a better understanding of what the Model Object does for you, we need to look at some usages of the Model Object.
 
 ### Maintain and work with the Layout of a Block Editor
 
-The `layout` of a Block Editor can be of any structure. Therefor the Model Object(BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we offen will be giving the Model Object a reference to an entry of the `layout` for then to performe an action and if what went well we might have to reflect this change back to the `layout`.
+The `layout` of a Block Editor can be any structure. Therefore the Model Object (BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we often will be giving the Model Object a reference to an entry of the `layout` to then perform an action. This action may then need to reflect changes back to the `layout`.
 
-Since the origin of blocks is in the `layout` the Model Object only can serve as a helper to maintain and create data. Therefor the Property Editor code will be using the `layout` as origin, using the Model Object help managing speicfic parts.
+Since the origin of blocks is in the `layout` the Model Object only can serve as a helper to maintain and create data. Therefore the Property Editor code will be using the `layout` as origin, using the Model Object to help manage specific parts.
 
-To give an unstanding of what that means please read the following documentation of how to create a block.
+This is explained in more detail below.
 
 ### The basic setup for a Block Editor
 
@@ -123,20 +121,20 @@ if(vm.umbVariantContentEditors && vm.umbVariantContentEditors.getScope) {
 } else if(vm.umbElementEditorContent && vm.umbElementEditorContent.getScope) {
     scopeOfExistence = vm.umbElementEditorContent.getScope();
 }
-// Define variables for layout and modelObject as you will be using these through out your property editor.
+// Define variables for layout and modelObject as you will be using these throughout your property editor.
 vm.layout;
 var modelObject;
 
-// When we are ready we can instantiate the Model Object can load the dependencies of it.
+// When we are ready we can instantiate the Model Object and load any dependencies.
 vm.$onInit = function() {
   modelObject = blockEditorService.createModelObject(vm.model.value, vm.model.editor, vm.model.config.blocks, scopeOfExistence);
   modelObject.load().then(onLoaded);
 }
 function onLoaded() {
-  // Define the default layout, this is used when there is no data jet stored for this property.
+  // Define the default layout, this is used when there is no data stored for this property.
   var defaultLayout = [];
   // We store a reference to layout as we have to maintain this.
-  // The getLayout method gives us a reference to the layout-object based on the property-editor alias. If not already existing the defaultLayout will be initialized.
+  // The getLayout method gives us a reference to the layout-object based on the property-editor alias. The defaultLayout will be initialized if it does not exist.
   vm.layout = modelObject.getLayout(defaultLayout);
 }
 ```
@@ -145,12 +143,12 @@ function onLoaded() {
 
 Use the Model Object to create a Block and append the returned layout-entry to the `layout`.
 
-In the following example we will create a new block and append it at the decidered location in the 'layout' object:
+In the following example we will create a new block and append it at the appropriate location in the 'layout' object:
 
 ```js
 // continuing from previous example.
 
-// Creates a block and returns a layout entry. The layout entry is not part of layout jet as its not managed by the Model Object.
+// Creates a block and returns a layout entry. The layout entry is not part of layout yet as its not managed by the Model Object.
 var layoutEntry = modelObject.create(contentTypeKey);
 if (layoutEntry === null) {
   // The creation was not successful, therefore exit and without appending anything to our 'layout' object.
@@ -163,11 +161,11 @@ vm.layout.push(layoutEntry);
 
 ### Working with Blocks
 
-The layout-entries them self does not provide much value when it comes to displaying or editing Blocks.
+The layout-entries alone do not provide much value when displaying or editing Blocks.
 
-Our Model Object provides the option to get a Block Object for a given Block, retrived by parsing the layout-entry of the block we would like.
+Our Model Object provides the option to get a Block Object for a given Block, retrieved by parsing the layout-entry of the block we would like.
 
-The Block Object provides data of interest. The most important of these properties are: Block configuration, a label and the Block content in the Element Type Data Model format. This Content-model is very usefull to make UI for editing the Content of a Block.
+The Block Object provides data of interest. The most important of these properties are: Block configuration, a label and the Block content in the Element Type Data Model format. This Content-model is very useful for building the UI for editing the Content of a Block.
 
 This example uses the Model Object to retrive a Block Object for outputting its label in the console.
 
@@ -188,7 +186,7 @@ if (vm.layout.length > 0) {
 }
 ```
 
-This similar example uses the Block Object for settings a value on the first property in the Blocks Content.
+This similar example uses the Block Object for setting a value on the first property in the Blocks Content.
 
 ```js
 // continuing from the basic setup example.
@@ -203,11 +201,11 @@ if (vm.layout.length > 0) {
   // Check if the Block Object creation went well. (If a block is supported by the configuration of the Property Editor)
   if (block !== null) {
   
-    // This line edits the value of 'myProp' directly, avaiable by 'block.data':
+    // This line edits the value of 'myProp' directly, available by 'block.data':
     block.data.myProp = "Hello world";
   
-    // Alternativly you can use this line, which edits the data throught the Element Type data model avaiable in 'block.content':
-    block.content.variants[0].tabs[0].properties[0].value = "Hello world";// This value will automaticly be synced to the Property Editors Data Model, in other words ´block.data.myProp´
+    // Alternatively you can use this line, which edits the data throught the Element Type data model avaiable in 'block.content':
+    block.content.variants[0].tabs[0].properties[0].value = "Hello world"; // This value will automatically be synced to the Property Editors Data Model, ´block.data.myProp´
   }
 }
 ```
@@ -216,11 +214,11 @@ See [blockEditorModelObject](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco
 
 ## Remove a Block
 
-Removing a Block and destroying the data of it is done by calling one method of the Model Object. We have remember that we need to maintain the 'layout' object and this case is a great example of how thats done.
+Removing a Block and destroying its data is done by calling the `removeDataAndDestroyModel` method of the Model Object, which allows us to maintain the 'layout' object.
 
-You will find that your code will very much be based on working with Block Objects and therefor removal of a Block is be done by refering a Block Object.
+Your code will be based on working with Block Objects and therefore removal of a Block is be done by referring to a Block Object.
 
-This example shows how to remove the first Block of our imaginary Block Editor and removing the block from our layout.
+This example shows how to remove the first Block of our imaginary Block Editor and remove the block from our layout.
 
 ```js
 // continuing from the basic setup example.
@@ -248,9 +246,9 @@ if (vm.layout.length > 0) {
 
 ## Manage Block Objects for general use through out your Property Editor
 
-We use the Block Objects for almost anything, these Block Objects should not be created for each action but instead be available through out the run time of your Block Editor.
+We use the Block Objects for almost anything, these Block Objects should not be created for each action but instead be available through out the runtime of your Block Editor.
 
-As you propaly would like to use these for your property-editor view, we will append the BlockObjects to our layout entries. Enabling you to use the layout object directly and access the BlockObjects as properties of those.
+As you probably would like to use these for your property-editor view, we will append the BlockObjects to our layout entries, enabling you to use the layout object directly and access the BlockObjects as properties of those.
 
 ```js
 // continuing from the basic setup example.
@@ -260,9 +258,9 @@ var invalidLayoutItems = [];
 // Append the blockObjects to our layout.
 vm.layout.forEach(entry => {
 
-	// As we might have the same property-editor displayed multiple times on screen (splitview) we only need to initialize a BLockObject if its not already in place.
+	// As we might have the same property-editor displayed multiple times on screen (splitview) we only need to initialize a BlockObject if its not already in place.
 	
-    // $block must have the 'data' property to be a valid BlockObject, if not its considered a destroyed blockObject.
+    // $block must have the 'data' property to be a valid BlockObject, if not it is considered a destroyed blockObject.
     if (entry.$block === undefined || entry.$block === null || entry.$block.data === undefined) {
         var block = modelObject.getBlockObject(entry);
 
@@ -270,7 +268,7 @@ vm.layout.forEach(entry => {
         if (block !== null) {
             entry.$block = block;
         } else {
-        	  // We didnt succeed initializing this Block, therefor we need to filter this out of 'layout'. This only happens if the content data of the block could'nt be found.
+        	  // We didnt succeed initializing this Block, therefore we need to filter this out of 'layout'. This only happens if the content data of the block couldn't be found.
             invalidLayoutItems.push(entry);
         }
     }
