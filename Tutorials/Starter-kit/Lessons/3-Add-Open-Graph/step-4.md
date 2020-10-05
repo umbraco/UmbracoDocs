@@ -75,9 +75,7 @@ var ogImage = Model.Value<IPublishedContent>("openGraphImage");
 
 :::note
 If you do not have Starter Kit installed, or experience issues with the properties not being picked up/showing up in HTML feel free to remove the fallback to siteName.
-:::
 
-:::note
 If your meta properties do not show up on social media, make sure to inspect source HMTL and make sure there are no inline HTML tags in `og:title`, `og:description` etc.
 :::
 
