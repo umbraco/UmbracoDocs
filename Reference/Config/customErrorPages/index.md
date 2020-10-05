@@ -52,11 +52,9 @@ In the ``` <errors> ``` section, you can specify redirects for specific error co
 Let us look at the `<error404>` tag.
 As the config specifies in the example, the value for error pages can be:
 
-```html
         * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
         * An XPath statement            (example: //errorPages[@nodeName='My cool error']
         * A content item's integer ID   (example: 1234)
-```
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
 ```html
@@ -79,4 +77,4 @@ If you are hosting your site on Umbraco Cloud, the best approach would be using 
 
 In the first example, we set up a custom error 500 page in web.config. If you try setting it up in umbracoSettings.config it will not work. Although the 404 page sample we set up in the above section did work. Why is that?
 
-The 50* errors are all related to the hosting - they come from IIS. That means they are hit 1 layer above Umbraco itself, and as such you can't really manage them from Umbraco. It is possible to customize them through the web.config, though.
+The 50* errors are all related to the hosting - they come from IIS. That means they are hit 1 layer above Umbraco itself, and as such you can't manage them from Umbraco. It is possible to customize them through the web.config, though.
