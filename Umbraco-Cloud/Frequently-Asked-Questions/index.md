@@ -174,7 +174,7 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should of course still be able to use the site locally.
 
-Learn more about this and how to set it up in our [Security section](../Security/#cookies-and-security).
+Learn more about this and how to set it up in our [Security section](../Security/#restrict-backoffice-access-using-ip-filtering).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
