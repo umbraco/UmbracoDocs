@@ -8,7 +8,7 @@ Since Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET, you
 
 ## In-code error page handling
 
-One way is to watch for error events and serve corresponding pages via C# code. Please refer to the following page for an example - [Custom 404 handlers](../404handlers/).
+One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../404handlers/) article for an example.
 
 ## Config file handling
 
