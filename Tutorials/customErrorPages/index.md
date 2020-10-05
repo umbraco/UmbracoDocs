@@ -10,7 +10,7 @@ Custom error handling might make your site look more on-brand and minimize the i
 
 ## In-code error page handling
 
-One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../404handlers/) article for an example.
+One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../../Reference/Config/404handlers/) article for an example.
 
 ## Config file handling
 
