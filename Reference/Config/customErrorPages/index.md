@@ -68,7 +68,7 @@ That is where the value you grabbed earlier comes in. Fill it out like so:
 The above sample uses a GUID value.
 
 :::note
-With this approach, you can set different 404 pages for different languages (cultures) - such as ```en-us```, ```it``` etc.
+With this approach, you can set different 404 pages for different languages (cultures) - such as `en-us`, `it` etc.
 :::
 
 :::warning
