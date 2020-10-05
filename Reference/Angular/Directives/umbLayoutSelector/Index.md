@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 
 # umbLayoutSelector
 
-When your have a list of items or similar, you can use the `umb-layout-selector` directive to let users toggle between different layouts. For instance in Umbraco's media archive, users can select between a grid based layout (thumbnails) and a list based layout (table).
+When you have a list of items or similar, you can use the `umb-layout-selector` directive to let users toggle between different layouts. For instance, in Umbraco's media archive, users can select between a grid-based layout (thumbnails) and a list-based layout (table).
 
 :::center
 ![Example of the layout selector](images/umbLayoutSelector.png)
