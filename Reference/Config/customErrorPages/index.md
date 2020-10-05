@@ -49,7 +49,7 @@ Make sure to assign (and fill out) the template for your error page, and then cr
 Once all of that is done, grab your published error page's ID, GUID or path and head on over to the config folder. In there, find umbracoSettings.config file and open it up.
 In the ``` <errors> ``` section, you can specify redirects for specific error codes as well!
 
-Let us look at the ``` <error404> ``` tag.
+Let us look at the `<error404>` tag.
 As the config specifies in the example, the value for error pages can be:
 
 ```html
