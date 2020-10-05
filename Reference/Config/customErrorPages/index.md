@@ -12,7 +12,7 @@ One way is to watch for error events and serve corresponding pages via C# code. 
 
 ## Config file handling
 
-A quicker implementation - you can specify a page that will be displayed whenever the application encounters a particular error.
+Another approach for implementing a custom error page would be to specify a page that will be displayed whenever the application encounters a particular error.
 For this, you will need to create your error pages, and change the customErrors line in ```web.config.```
 
 For a generic error message:
