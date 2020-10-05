@@ -4,7 +4,7 @@ versionFrom: 8.7.0
 
 # Build a Block Editor
 
-Before reading this document familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](https://our.umbraco.com/documentation/Extending/Property-Editors/).
+Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
 ## Setup your Property Editor as a Block Property Editor
 
