@@ -76,6 +76,12 @@ The updated properties are:
 You can see if your site is using the obsolete properties by the `(Obsolete)` prefix in their name.
 :::
 
+:::warning
+If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you will need to copy that over to the 8.1 web.config as well. Additionally you will need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
+This also includes the attribute `useLegacyEncoding` value. In some cases you need to go back to your **Umbraco 7.14 site** , disable it and run a password restore after that in order to login succeed in your **Umbraco 8.1 site**. 
+
+:::
+
 Once it is upgraded and you have verified everything is working, move on to step 2.
 
 ### Step 2: Migrating content to Umbraco 8
@@ -92,9 +98,6 @@ Once the connection string is set, the final step is to change the Umbraco versi
 
 As you can see in the screenshot, the version will be set to 8.1.0, and you will need to change it to the version you are currently migrating from.
 
-:::warning
-If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you will need to copy that over to the 8.1 web.config as well. Additionally you will need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
-:::
 
 When you start the site it will ask you to login and then show you this screen:
 
