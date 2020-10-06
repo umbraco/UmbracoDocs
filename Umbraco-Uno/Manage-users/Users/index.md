@@ -20,6 +20,8 @@ Creating a user, lets you create the user for the person and add the name and em
 
 The only major difference in these two options is that if you choose to invite a user they will have 72 hours to accept or the invitation becomes invalid.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/6WwrtptgSII?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## User groups
 
 Creating user groups can be a great way of keeping track of what users have access to in the backoffice.
