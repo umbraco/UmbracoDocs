@@ -28,6 +28,10 @@ You can find the interface for adding and removing environments from your projec
 
 On that page you will be able to add or remove an environment, if you wish to remove one you will be prompted to type in the environment alias, so either 'Development' or 'Staging'.
 
+Be aware that there is a specific order that the environments are being added in. You will need to have a Development environment before you can have a Staging environment.
+
+If you have both a Development and a Staging environment and need to remove the Development environment, then you will need to remove the Staging environment first before you can remove the Development environment. 
+
 ![Environment overview](images/Environments.png)
 
 Once you have added or removed the environment it will take a couple of minutes for the Cloud to set it all up, and then you will be ready to use it.
