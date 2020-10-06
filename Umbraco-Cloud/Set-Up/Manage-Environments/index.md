@@ -30,7 +30,7 @@ On that page you will be able to add or remove an environment, if you wish to re
 
 Be aware that there is a specific order that the environments are being added in. You will need to have a Development environment before you can have a Staging environment.
 
-If you have both development and staging environment and needs to remove the development environment, then you will need to remove the staging environment first before you can remove the developmentenvironment. 
+If you have both a Development and a Staging environment and need to remove the Development environment, then you will need to remove the Staging environment first before you can remove the Development environment. 
 
 ![Environment overview](images/Environments.png)
 
