@@ -31,6 +31,10 @@ Information about the basic Umbraco starter kit.
 
 The editors manual is a detailed yet easy to read user guide aimed at Umbraco editors for step-by-step instructions on performing every day tasks with Umbraco 7
 
+## [Custom Error pages](Custom-Error-Pages)
+
+Learn how to create custom error pages on your Umbraco website.
+
 ## [Add Google authentication to your backoffice](Add-Google-Authentication/index.md)
 
 Learn how you can use your Google user to log into the Umbraco backoffice.
@@ -45,7 +49,7 @@ A working document, that gives tips & pointers on how to port an Umbraco V7 pack
 
 ## [Creating a Content App](../Extending/Content-Apps/index.md#creating-a-custom-content-app)
 
-Learn how to create a content app (v8 only)
+Learn how to create a content app (v8 only).
 
 ## [Connecting Umbraco Forms and Zapier](Connecting-Umbraco-Forms-and-Zapier)
 
