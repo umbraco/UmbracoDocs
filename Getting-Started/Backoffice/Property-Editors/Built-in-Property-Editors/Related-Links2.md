@@ -23,6 +23,10 @@ This property has been replaced by [Multi URL Picker](Multi-Url-Picker) in Umbra
 
 ## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
+:::warning
+The RelatedLinks do not work without **Umbraco.Web.Models**. Don't forget to use it.
+:::
+
 ### Typed
 
 ```csharp
