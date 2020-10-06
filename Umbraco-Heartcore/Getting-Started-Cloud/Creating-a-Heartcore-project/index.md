@@ -16,7 +16,7 @@ This guide will assume that you have already [setup an Umbraco Heartcore project
 
 ## Introduction
 
-When you log in to the Umbraco Backoffice, the first thing you will see if the Content section. This is where you will be creating content for your Umbraco Heartcore project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
+When you log in to the Umbraco Backoffice, the first thing you will see is the Content section. This is where you will be creating content for your Umbraco Heartcore project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
 
 Content in Umbraco is based on **Document Types** which will define what type of data we can put into our content. A Document Type consists of a set of **Properties** - also called fields. A Property is made up of a **Data Type** which is a custom configuration of a **Property Editor**. Umbraco comes with a set of Property Editors, including a *Text Area*, a *Date Picker*, a picker for media items and many more.
 
