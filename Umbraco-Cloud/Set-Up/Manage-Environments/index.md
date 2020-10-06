@@ -28,7 +28,7 @@ You can find the interface for adding and removing environments from your projec
 
 On that page you will be able to add or remove an environment, if you wish to remove one you will be prompted to type in the environment alias, so either 'Development' or 'Staging'.
 
-Be aware that the order that the enviroments are being added in are as followed. You will need to have a development environment, before you can have a staging environment.
+Be aware that there is a specific order that the environments are being added in. You will need to have a Development environment before you can have a Staging environment.
 
 If you have both development and staging environment and needs to remove the development environment, then you will need to remove the staging environment first before you can remove the developmentenvironment. 
 
