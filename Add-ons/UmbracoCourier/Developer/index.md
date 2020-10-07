@@ -12,7 +12,7 @@ Overview of the different phases of a courier deployment, packaging changes, tra
 In some cases, data must be modified to be transfer correctly, data resolvers helps developers to temporarily modify deployed data.
 
 ## [Events](Events.md)
-Some events might be triggered on deployment, and overriden if necessary.
+Some events might be triggered on deployment, and overridden if necessary.
 
 ## [Included Resource resolvers](ResourceResolvers.md)
 Courier includes a number of resource resolvers to modify deployed files as they are packaged and extracted.

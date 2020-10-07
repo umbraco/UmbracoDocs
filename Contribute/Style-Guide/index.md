@@ -23,7 +23,7 @@ For consistency, this rule will give a warning if you end headings with either o
 
 The words in the list below, will cause a warning when they are included in your contribution.
 
-Try not to use any of the mentioned words, as they are often oppinionated. What may be 'easy' for you, might not be easy another user reading the article.
+Try not to use any of the mentioned words, as they are often opinionated. What may be 'easy' for you, might not be easy another user reading the article.
 
 <!-- vale off -->
 
