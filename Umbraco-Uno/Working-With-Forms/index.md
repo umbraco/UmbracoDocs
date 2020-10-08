@@ -2,13 +2,11 @@
 versionFrom: 8.0.0
 ---
 
-# Working with forms
+# Working with Forms
 
 ## How does Umbraco Forms work
 
-First of all, what is a form? A form is a formula where you can do various things, such as ask support questions. The Umbraco forms have a wide array of options and can be tailored to fill your exact needs, whether it be a form where the customers can support questions or it is a form that asks their preference in pets.
-
-Umbraco Forms lets you create forms for your site. They are fully customizable. This means that you can set them up exactly how you like.
+First of all, what is a form? A form is a formula where you can do various things, such as ask support questions. The Umbraco Forms have a wide array of options and can be tailored to fill your exact needs, whether it be a form where the customers can ask support questions or it is a form that asks their preference in pets.
 The Umbraco Forms can be set up in the forms section of the backoffice. They come included as a part of your Uno plan.
 And you will be able to check the replies in the backoffice. In these guides, you will learn how to set a form up, how to add it to a widget, and how you can check your replies.
 It is possible to add Recaptcha to your Umbraco forms. Should you need this, there will also be a guide for that.
