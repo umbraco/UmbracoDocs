@@ -47,4 +47,4 @@ It can be a good idea to name the groups to keep track of what each group does. 
 
 Now you can go ahead and add what you like to the form, and when you are done, hit save. Once that is done, you will have a new custom made form to add to your widgets.
 
-In the next article you can learn how to add forms to your website by using [he Umbraco Forms widget](../Umbraco-Forms-widget).
+In the next article you can learn how to add forms to your website by using [the Umbraco Forms widget](../Umbraco-Forms-widget).
