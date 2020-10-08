@@ -7,11 +7,14 @@ versionFrom: 8.0.0
 In this guide, you will learn how to set up a form in the Umbraco Uno backoffice. 
 
 When you get your Uno project, it will not have any forms, so you will have to make them yourself. In this guide, you will learn how to build a form from scratch.
-If this is your first form, you will have a green button in the middle of the screen that says ***Create form***. If this is not your first form, proceed to the next steps.
 
 * Navigate to the Forms section in the backoffice.
 * In the tree on the left, hover ***Forms*** and select the ***...***
 * On the list that shows up, select "Empty form."
+
+:::Tip
+If this is your first form, you will have a green button in the middle of the screen that says ***Create form***.
+:::
 
 ![This image shows the forms section and where to press for a new form](images/Forms-backoffice.png)
 
