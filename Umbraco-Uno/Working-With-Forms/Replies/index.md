@@ -9,7 +9,7 @@ What you will want to do is:
 
 * Go to the Forms section in the backoffice.
 * Then in the big window located in the middle of the screen, a box will show you how many replies you have.
-* Clicking this box will bring you to an overview of all the replies, and you can click the name of the replie to get into each of them to see them filled out.
+* Clicking this box will bring you to an overview of all the replies, and you can click the name of the reply to get into each of them to see them filled out.
 
 ![One form](images/One-form.png)
 
