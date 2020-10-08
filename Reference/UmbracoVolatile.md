@@ -19,7 +19,7 @@ Methods marked with UmbracoVolatile may break in the future, however if you want
 `UmbracoSuppressVolatile` is located in the `Umbraco.Core.CodeAnnotations`, however, any attribute named UmbracoSuppressVolatile 
 will do the trick, if you don't have access to that specific namespace. 
 
-## Example of suppresing Umbraco Volatile Error
+## Example of suppressing Umbraco Volatile Error
 
 ```c#
     public class DemoClass
@@ -35,7 +35,7 @@ will do the trick, if you don't have access to that specific namespace.
 Assume you're trying to use the VolatileMethod which is marked as Volatile. This will throw an Umbraco Volatile Error, 
 however you're only using it in a test and want to suppress the error to a warning.
 
-To supress the error to a warning, add the assembly level attribute by adding `[assembly: UmbracoSuppressVolatile]` above the namespace in any file within your assembly.
+To suppress the error to a warning, add the assembly level attribute by adding `[assembly: UmbracoSuppressVolatile]` above the namespace in any file within your assembly.
 
 ```c#
 [assembly: UmbracoSuppressVolatile]

@@ -40,7 +40,7 @@ Note that the use of code comments does not eliminate the need for a description
 
 The documentation often aims to explain complex scenarios and concepts within Umbraco, which means that code samples can be very useful to further the understanding. It is important that these code samples are *real-life* clear examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
 
-It can be a good idea to use *placeholders* for names, methods and other things, in order to keep the code samples as neutral and general as possible, althought that is not a requirement.
+It can be a good idea to use *placeholders* for names, methods and other things, in order to keep the code samples as neutral and general as possible, although that is not a requirement.
 
 With Umbraco, depending on the context of the implementation and the skillset of the development team - often there is more than one way to achieve a result. Having multiple examples, eg a Modelsbuilder version, a non-Modelsbuilder version etc - can help prevent readers from mixing techniques in their solution, so try to consider the context of alternative approaches, and its fine to provide multiple examples.
 
@@ -54,9 +54,9 @@ When you add code blocks to an Umbraco Docs article make sure that you add the c
 * Html
 * Xml
 
-The package used for the syntax highlighting can be found here: [Syntax Highligter](https://github.com/abjerner/Skybrud.SyntaxHighlighter/blob/master/src/Skybrud.SyntaxHighlighter/Language.cs).
+The package used for the syntax highlighting can be found here: [Syntax Highlighter](https://github.com/abjerner/Skybrud.SyntaxHighlighter/blob/master/src/Skybrud.SyntaxHighlighter/Language.cs).
 
-To add syntax highlightning, add the name of the language in lower case directly after the first three backticks:
+To add syntax highlighting, add the name of the language in lower case directly after the first three backticks:
 
 ![Where to add syntax highlighting](images/add-syntax-highlighting.png)
 
@@ -92,7 +92,7 @@ As a basis, we're working with 3 types of code samples in the Umbraco Documentat
 
 #### Inline code
 
-Use inline code when you are referrencing methods, using names of various elements or highlighting a certain value.
+Use inline code when you are referencing methods, using names of various elements or highlighting a certain value.
 
 Example:
 
