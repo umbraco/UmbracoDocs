@@ -36,7 +36,7 @@ You will see that the form already contains an item. This is the permission to s
 
 ## Finalizing the form
 
-Now that we have done this supposes, you have more than one group of items. However, you might want to rearrange them. This can be done by hitting the ***Reorder*** button and dragging the groups in the order you want.
+You will most likely have more than one item, and they might not be in the order you want. In that case, you will want to rearrange them. This can be done by hitting the ***Reorder*** button and dragging the groups in the order you want.
 
 :::tip
 It can be a good idea to name the groups to keep track of what each group does. This can be done by clicking where it says ***Untitled group***.
