@@ -17,11 +17,11 @@ It is possible to add Recaptcha to your Umbraco forms. Should you need this, the
 
 In this section, you can learn how to set-up a form in the backoffice in order to use that form in widgets later.
 
-## [Adding a form to a widget](Adding-a-form-to-a-widget)
+## [Adding a form to a widget](Umbraco-Forms-widget)
 
 In this section, you will learn how to add the form created in the previous section into a widget.
 
-## [How to check your replies from forms](How-to-check-your-replies-from-forms)
+## [How to check your replies from forms](Replies)
 
 In this section, you will learn to check the replies to the form you have added.
 

@@ -15,7 +15,7 @@ What you will want to do is:
 
 If you have more then one form, there will be a box for each of the forms. If you have more then four forms, you will have the option to ***show all*** as only four will be shown as default. 
 
-![multiple forms](images/Multiple-forms.png)
+![multiple forms](images/Forms-entries.png)
 
 You can also click the forms in the tree to see the entries for each of the forms.
 
