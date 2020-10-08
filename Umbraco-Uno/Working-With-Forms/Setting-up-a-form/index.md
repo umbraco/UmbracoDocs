@@ -28,7 +28,7 @@ You will see that the form already contains an item. This is the permission to s
 * Give the new form a name where it says ***Enter Name***.
 * Now to add a group click where it says ***Add new group***.
 * Follow up by clicking ***Add Question***.
-* Name the first question, "Name" and chose a ***short answer*** for the answer type.
+* Name the first question, "Name" and choose the ***Short Answer*** as the answer type.
 * In the settings further down, put it to mandatory and add the text to show if this mandatory field is not filled in.
 * When that is done, hit the green submit button at the bottom.
 
