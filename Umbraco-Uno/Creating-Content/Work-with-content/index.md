@@ -68,7 +68,7 @@ When you're done editing a piece of content you can choose to either publish the
 
 To **publish the content right away** select the green "Save and publish" button in the bottom-right corner.
 
-To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner.
+To schedule to content for another point in time select the "Schedule..." option, which can be found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner.
 
 ## Unpublishing content
 

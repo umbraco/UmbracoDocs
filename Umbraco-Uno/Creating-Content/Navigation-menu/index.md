@@ -12,7 +12,7 @@ The navigation menu will be visible at the top of the page as part of the **Head
 
 In some cases, you might want to make changes to the automatically created navigation menu. This can be done by using the **Custom navigation** feature. Get a more detailed introduction to the configuration options for both the navigation menu, and the Header in general, on the [Start page](../../Uno-pedia/Content-Types/Site-Start/#navigation) article.
 
-In this article you will get a guide on how you can costumize the default automatically generated navigation menu and add more elements, like buttons and icons.
+In this article you will get a guide on how you can customize the default automatically generated navigation menu and add more elements, like buttons and icons.
 
 ## Custom navigation and Header
 

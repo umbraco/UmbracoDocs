@@ -10,7 +10,7 @@ All images, video clips and files that are uploaded to your Umbraco Uno website,
 
 ## Uploading media items
 
-Media items can be [uploaded while working with content](../Work-with-content/index.md) in the Content section, or directly through the Media section, which is also often refered to as the **Media Library**.
+Media items can be [uploaded while working with content](../Work-with-content/index.md) in the Content section, or directly through the Media section, which is also often referred to as the **Media Library**.
 
 In the Media Library there are multiple different ways to upload media items. These are the two most commonly used ones:
 
