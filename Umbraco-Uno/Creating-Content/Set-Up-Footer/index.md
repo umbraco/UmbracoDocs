@@ -38,7 +38,7 @@ The Footer settings for your Umbraco Uno website are located in a group on the h
 
 As the *Unicorn Hotel* site already has a Footer set up, we will start this guide by deleting the existing element.
 
-To do this, hover the **Footer Columns** text and select the elipses (...). From the menu that pops up, select **Remove all items** and click **Delete** to confirm.
+To do this, hover the **Footer Columns** text and select the ellipses (...). From the menu that pops up, select **Remove all items** and click **Delete** to confirm.
 
 We now have a clean slate, where we can start setting up our own custom Footer.
 
@@ -105,4 +105,4 @@ Finalize the footer by clicking "Save" or "Save and publish".
 
 We have now created a custom footer for our website.
 
-There are many more ways to costumize the footer section and make it fit the website you're creating.
+There are many more ways to customize the footer section and make it fit the website you're creating.
