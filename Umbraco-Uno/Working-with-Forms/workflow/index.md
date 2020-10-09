@@ -33,3 +33,5 @@ In this section we will make the workflow send to your email of choice.
 3. Include Sensitive Data - Set this depending if you want sensitive data or not.
 4. Email - set this to the email where you want the replies to the form sent to.
 5. Sender Email - 
+
+As a standerd a workflow is made for you in this workflow all you need to do is add the sender mail and it should work for you.
