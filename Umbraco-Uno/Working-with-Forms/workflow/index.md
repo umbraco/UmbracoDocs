@@ -32,7 +32,7 @@ This is how you get into the configuration of your workflow:
 
 ### Filling in the Workflow
 
-In this section, we will make the workflow send to your email of choice. Please note that this is for a workflow that contains a template. To set up the one without a template, it is the same except the 8th step.
+In this section, we will make the workflow send an email to your inbox of choice. Please note that this is for a workflow that contains a template. To set up the one without a template, it is the same except the 8th step.
 
 1. Workflow Name - give the workflow the name you want
 2. Active - make sure this is checked because it enables/disables the workflow.
