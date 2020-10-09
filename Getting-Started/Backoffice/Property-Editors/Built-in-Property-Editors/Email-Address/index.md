@@ -2,9 +2,9 @@
 versionFrom: 8.0.0
 ---
 
-# Dropdown
+# Email Address
 
-`Alias: Umbraco.DropDown.Flexible`
+`Alias: Umbraco.EmailAddress`
 
 `Returns: String`
 
@@ -14,11 +14,7 @@ Displays an email address.
 
 ### Enable required checkbox (8.7.0 and below)
 
-If you type an email thats not correct the Umbraco will display a warning label under the property editor. When you publish the page that this editor is located on, Umbraco will clean the input.
-
-If enabled, umbraco will display a warning label under the property editor when you publish the page this editor is located on and clean the input.
-
-This functionality has been deprecated in `8.8.0` and above. You simply select the mandatory checkbox when adding the property editor to a document type.
+If the property is set to mandatory, Umbraco will display a warning label under the property editor when you publish the page this editor is located on and clean the input. This functionality has been deprecated in `8.8.0` and above. Instead, you select the mandatory checkbox when adding the property editor to a Document Type.
 
 ## Data Type Definition Example
 
