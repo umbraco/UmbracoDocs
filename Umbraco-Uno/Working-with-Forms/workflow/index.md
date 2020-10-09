@@ -23,7 +23,7 @@ We will be working with a form that contains the following:
 
 This is how you get into the configuration of your workflow:
 
-1. In the Forms section of the backoffice.
+1. Navigate to the Forms section of the backoffice.
 2. Here, select the form you want to add a workflow to.
 3. In the bottom of the page, you will find a section containing a checkmark saying ***on submit***
 4. Click ***Configure workflow ***
