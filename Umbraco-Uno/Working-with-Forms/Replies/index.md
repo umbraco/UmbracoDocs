@@ -13,7 +13,7 @@ What you will want to do is:
 
 ![One form](images/Replies-amount.png)
 
-If you have more then one form, there will be a box for each of the forms. If you have more then four forms, you will have the option to ***show all*** as only four will be shown as default. 
+If you have more than one form, there will be a box for each of the forms. If you have more than four forms, you will have the option to ***show all*** as only four will be shown as default. 
 
 ![multiple forms](images/Replies-entries.png)
 
