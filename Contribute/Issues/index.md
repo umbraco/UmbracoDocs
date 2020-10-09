@@ -25,4 +25,4 @@ You can also add an issue directly from the [Issue Tracker on GitHub](https://gi
 
 ![New issue on GitHub](images/new-issue.png)
 
-We've setup a template that we recommend using when creating an Issue on the tracker. The template gives you a few questions to answer, in order to give the best explanation of what you are reporting / want to discuss.
+We've setup a template that we recommend using when creating an Issue on the tracker. The template gives you a few questions to answer, in order to give the best explanation of what you are reporting / want to discuss!
