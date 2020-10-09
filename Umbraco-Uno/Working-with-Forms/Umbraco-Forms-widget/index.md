@@ -17,4 +17,4 @@ The second option is to add the form through a Grid widget. The setup here is sl
 
 ![Grid Umbraco Forms](images/Grid-form-filled.png)
 
-Now that you know how to add forms the last thing you need to know is [how to check the replies](../Replies) from your form which is the next article.
+Now that you know how to add forms the last thing you need to know is [how to check the replies](../Replies).
