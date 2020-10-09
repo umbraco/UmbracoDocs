@@ -19,7 +19,7 @@ From here you are able to log in with the credentials used when the project was 
 
 ## Sections
 
-The backoffice is devided in specefic sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
+The backoffice is divided into specific sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
 
 ![Sections of the backoffice](images/sections.png)
 
@@ -83,7 +83,7 @@ What differs from Document Types is that Media Types are specifically made for m
 
 ### Member Types
 
-When you have a website with a login you might want to create Member Types. Umbraco comes with a standard Member Type. You can extend of this, but you can also create your own type for more costumized members.
+When you have a website with a login you might want to create Member Types. Umbraco comes with a standard Member Type. You can extend of this, but you can also create your own type for more customized members.
 
 ### Data Type
 
