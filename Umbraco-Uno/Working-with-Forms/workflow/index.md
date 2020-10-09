@@ -6,10 +6,10 @@ versionFrom: 8.0.0
 
 A workflow, in this case, is the flow that starts when you press the "submit form" button on the frontend, and ends with the form reply being sent to your email (or wherever you assigned it to arrive)
 
-The most common workflow is to have the user press the submit button, then a thank you message pops up, and then the email is sent to a designated mail inbox. However, you could choose to have it sent to, for example, slack if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
+The most common workflow is to have the user press the submit button, which will present a thank you message pops up, and then send the email to a designated mail inbox. However, you could choose to have it sent to, for example, a slack channel if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
 
 :::tip
-This requires you to have set up a form. If you dont have a form set-up yet, you can learn how to do that in the [Setting up a form](../Setting-up-a-form/index.md) section.
+This requires you to have set up a form. If you don't have a form set-up yet, you can learn how to do that in the [Setting up a form](../Setting-up-a-form/index.md) section.
 :::
 
 ## How do you set up a workflow
