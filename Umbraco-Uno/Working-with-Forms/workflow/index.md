@@ -41,7 +41,7 @@ In this section, we will make the Workflow send to your email of choice.
 9. Attachments - this if you want the email to contain logos or other kinds of attachments.
 
 :::note
-The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms of templates coming with the basic install of Umbraco Uno.
+The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms templates coming with the basic install of Umbraco Uno.
 :::
 
 If you choose to create a new form without a template, all this has been done for you except the ***Sender Email***, which you will have to fill in yourself.
