@@ -44,7 +44,7 @@ If you choose to create a new form without a template, all this has been done fo
 6. ReplyToEmail- here, you can add this {email}. It will take what the customer answered in the field called email.
 7. Subject - this is going to be the subject of the email you receive from the website.
 8. Template - as a standard, make sure this is set to ***Igloo-template.cshtml***.
-9. Attachments - This is for if you want to allow users to attach files to your form.
+9. Attachments - This is for if you want to allow users to attach files to your form, by ticking this you allow the files to be sent to your email.
 
 ![this is the workflow settings](images/Workflow3.png)
 
