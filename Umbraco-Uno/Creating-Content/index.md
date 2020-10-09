@@ -61,4 +61,4 @@ For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](.
 
 ## [Working with Forms](../Working-with-Forms)
 
-If you are new to Umbraco Forms and want to learn more about how to work with them then you can read more about them in the Working with Forms section.
+If you are new to Umbraco Forms, and want to learn more about how to work with them, you can read more about the workflow in the Working with Forms section.
