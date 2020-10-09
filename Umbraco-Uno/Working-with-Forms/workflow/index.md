@@ -21,6 +21,8 @@ We will be working with a form that contains the following:
 * An Email field using a short answer
 * A Question using a long answer
 
+This is how you get into the configuration of your workflow:
+
 1. In the Forms section of the backoffice.
 2. Here, select the form you want to add a workflow to.
 3. In the bottom of the page, you will find a section containing a checkmark saying ***on submit***
@@ -45,7 +47,7 @@ In this section, we will make the Workflow send to your email of choice.
 ![this is the workflow settings](images/workflow3.png)
 
 :::note
-The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms of templates coming with the basic install of Umbraco Uno.
+The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms templates coming with the basic install of Umbraco Uno.
 :::
 
 If you choose to create a new form without a template, all this has been done for you except the ***Sender Email***, which you will have to fill in yourself.
