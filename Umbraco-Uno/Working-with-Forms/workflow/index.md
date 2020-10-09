@@ -30,9 +30,11 @@ This is how you get into the configuration of your workflow:
 5. The pop op window will contain the workflow that currently exists
 6. Select the one that says *Sending template email to*
 
-### Filling in the Workflow
+### Filling in the workflow
 
 In this section, we will make the workflow send an email to your inbox of choice. Please note that this is for a workflow that contains a template. To set up the one without a template, it is the same except the 8th step.
+
+If you choose to create a new form without a template, all this has been done for you except the ***Sender Email***, which you will have to fill in yourself.
 
 1. Workflow Name - give the workflow the name you want
 2. Active - make sure this is checked because it enables/disables the workflow.
@@ -49,5 +51,3 @@ In this section, we will make the workflow send an email to your inbox of choice
 :::note
 The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms templates coming with the basic install of Umbraco Uno.
 :::
-
-If you choose to create a new form without a template, all this has been done for you except the ***Sender Email***, which you will have to fill in yourself.
