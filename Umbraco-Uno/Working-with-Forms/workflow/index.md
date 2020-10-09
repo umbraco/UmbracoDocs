@@ -14,7 +14,7 @@ This requires you to have set up a form if you dont have a form set-up yet you c
 
 ## How do you set up a workflow
 
-In this part, we will set-up a workflow that uses a template for how the email will look in your inbox. And make it send to your email in box.
+In this part, we will learn how to enter the configuration menu for workflows.
 We will be working with a form that contains the following:
 
 * A Name field using a short answer
@@ -32,7 +32,7 @@ This is how you get into the configuration of your workflow:
 
 ### Filling in the Workflow
 
-In this section, we will make the Workflow send to your email of choice.
+In this section, we will make the Workflow send to your email of choice. Please note that this is for a workflow that contains a template. To set up the one without a template, it is the same except the 8th step.
 
 1. Workflow Name - give the Workflow the name you want
 2. Active - make sure this is checked because it enables/disables the Workflow.
