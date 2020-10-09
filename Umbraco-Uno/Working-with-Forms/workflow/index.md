@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # What is a workflow
 
-A workflow, in this case, is the flow that happens from you press the submit form button on the frontend until it ends in your email (or wherever you assigned it to arrive)
+A workflow, in this case, is the flow that starts when you press the "submit form" button on the frontend, and ends with the form reply being sent to your email (or wherever you assigned it to arrive)
 
 The most common workflow is to have the user press the submit button, then a thank you message pops up, and then the email is sent to a designated mail inbox. However, you could choose to have it sent to, for example, slack if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
 
