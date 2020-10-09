@@ -38,13 +38,13 @@ If you choose to create a new form without a template, all this has been done fo
 
 1. Workflow Name - give the workflow the name you want
 2. Active - make sure this is checked because it enables/disables the workflow.
-3. Include Sensitive Data - Set this depending on if you want sensitive data or not.
+3. Include Sensitive Data - This will let you include alle the fields that in the form has been marked as sensitive data.
 4. Email - set this to the email where you want the replies to the form sent to.
 5. Sender Email - This should be something like Noreply@something.com.
 6. ReplyToEmail- here, you can add this {email}. It will take what the customer answered in the field called email.
 7. Subject - this is going to be the subject of the email you receive from the website.
 8. Template - as a standard, make sure this is set to ***Igloo-template.cshtml***.
-9. Attachments - this if you want the email to contain logos or other kinds of attachments.
+9. Attachments - This is for if you want to allow users to attach files to your form.
 
 ![this is the workflow settings](images/Workflow3.png)
 
