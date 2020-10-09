@@ -8,6 +8,10 @@ A workflow, in this case, is the flow that happens from you press the submit for
 
 The most common Workflow is to have the user press the submit button, then a thank you message pops up, and then the email is sent to a designated mail inbox. However, you could choose to have it sent to, for example, slack if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
 
+:::tip
+This requires you to have set up a form if you dont have a form set-up yet you can learn how to do that in the [Setting up a form](../Setting-up-a-form/index.md) setion.
+:::
+
 ## How do you set up a workflow
 
 In this part, we will set-up a workflow that uses a template for how the email will look in your inbox. And make it send to your email in box.
@@ -37,6 +41,8 @@ In this section, we will make the Workflow send to your email of choice.
 7. Subject - this is going to be the subject of the email you receive from the website.
 8. Template - as a standard, make sure this is set to ***Igloo-template.cshtml***.
 9. Attachments - this if you want the email to contain logos or other kinds of attachments.
+
+![this is the workflow settings](images/workflow3.png)
 
 :::note
 The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms of templates coming with the basic install of Umbraco Uno.
