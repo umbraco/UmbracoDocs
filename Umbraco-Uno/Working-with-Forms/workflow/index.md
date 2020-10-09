@@ -46,7 +46,7 @@ If you choose to create a new form without a template, all this has been done fo
 8. Template - as a standard, make sure this is set to ***Igloo-template.cshtml***.
 9. Attachments - this if you want the email to contain logos or other kinds of attachments.
 
-![this is the workflow settings](images/workflow3.png)
+![this is the workflow settings](images/Workflow3.png)
 
 :::note
 The above is for setting up a workflow from scratch. This will be needed if you choose any of the two forms templates coming with the basic install of Umbraco Uno.
