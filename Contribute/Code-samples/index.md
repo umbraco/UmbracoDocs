@@ -102,9 +102,9 @@ Each item is treated as a standard `IPublishedElement entity`, which means you c
 
 The markdown above will output the following:
 
-:::center
-![Example of inline code](images/inline-sample.png)
-:::
+<p align="center">
+<img alt="Example of inline code" src="images/inline-sample.png">
+</p>
 
 #### Smaller code snippets
 
@@ -126,9 +126,9 @@ Example:
 
 The Razor snippet above will output the following:
 
-:::center
-![Example of smaller code snippet](images/codesnippet-sample.png)
-:::
+<p align="center">
+<img alt="Example of smaller code snippet" src="images/codesnippet-sample.png">
+</p>
 
 #### Large code samples
 
