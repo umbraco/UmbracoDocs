@@ -16,20 +16,20 @@ In Umbraco Forms v.8.5.0+ you can use the following Razor method to output scrip
 
 For older version of Umbraco Forms you should go for the jQuery option, please read the 'use jQuery' section below.
 
-All dependencies originates from your Umbraco Forms installation, which means that no external references are needed.
+All dependencies originate from your Umbraco Forms installation, which means that no external references are needed.
 
-If you like to use jQuery instead, you can manually add those. Without using the above, jump to the 'Use jQuery' section below to learn more.
+If you'd like to use jQuery instead, you can manually add them without using the above Razor method. Follow the instructions in the 'Use jQuery' section below to learn more.
 
 
 ## Use jQuery
 
-If you like to use jQuery as your validation framework for Umbraco Forms you will need to manually include three client dependencies:
+If you'd like to use jQuery as your validation framework for Umbraco Forms you will need to manually include three client dependencies:
 
 - `jQuery` (JavaScript library)
 - `jQuery validate` (jQuery plugin that provides client side form validation)
 - `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
 
-Easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use, we've included references for [Microsoft CDN](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview). Other CDN services you might want to look at include https://www.jsdelivr.com/ and https://cdnjs.com/about, which may offer better performance and more reliable service.
+The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use, we've included references for [Microsoft CDN](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview). Other CDN services you might want to look at include https://www.jsdelivr.com/ and https://cdnjs.com/about, which may offer better performance and a more reliable service.
 
 Here's how to add the three (3) client dependencies below to your template within the head tags or at the bottom of the page.
 
