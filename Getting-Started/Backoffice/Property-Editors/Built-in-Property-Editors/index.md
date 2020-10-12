@@ -54,7 +54,7 @@ A configurable number control allowing only numbers including decimals.
 
 Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## Email address
+## [Email address](Email-Address)
 
 `Alias: Umbraco.EmailAddress`
 
