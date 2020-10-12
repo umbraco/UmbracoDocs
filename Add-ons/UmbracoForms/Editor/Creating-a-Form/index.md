@@ -10,7 +10,7 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-If you do not see it, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give access to your individual account or the user group your account belongs to from within the Users section of the backoffice. 
+If you do not see it, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give permission to view the Forms section to your individual account or the user group your account belongs to from within the Users section of the backoffice. 
 
 ![Forms Section](images/FormsSectionV8.png)
 
