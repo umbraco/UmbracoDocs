@@ -40,6 +40,6 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 {
     var emailAddress = Model.Value<string>("email");
 
-    <p>@email</p>
+    <p>@emailAddess</p>
 }
 ```
