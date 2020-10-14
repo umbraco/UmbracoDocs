@@ -60,9 +60,14 @@ Each site runs in an isolated environment next to other websites on the same ser
 
 We do have some limitations:
 
-- If your Cloud site is using over 80% CPU for more than 3 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 80% CPU per 3 minutes
-- Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 15 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
+- For a starter it is 20% CPU / 10 minutes / 5 times a day.
+- For a Standard it is 35% CPU / 10 minutes / 3 times a day.
+- For a Pro it is 50% CPU / 10 minutes / 2 times a day.
+
+The VMs these sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
+E.g.: A starter project can use up to 20% CPU over a period of 10 minutes. Every time it exceeds that it's flagged. A project can be flagged only 5 times a day.
+
+We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
