@@ -95,7 +95,7 @@ Check what we have on our **_Articles_** page now - we're really getting somewhe
 {
 <div class="article">
         <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-        <div class="articlepreview">@(Umbraco.Truncate(item.GetPropertyValue<string>("articleContent"), 100) <a href="@item.Url">Read More..</a></div>
+        <div class="articlepreview">@(Umbraco.Truncate(item.GetPropertyValue<string>("articleContents"), 100)) <a href="@item.Url">Read More..</a></div>
     </div>
     <hr/>
 }
