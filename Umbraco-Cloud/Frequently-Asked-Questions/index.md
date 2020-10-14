@@ -58,13 +58,17 @@ No. All services currently run in the Azure West Europe region.
 
 Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
 
-We do have some limitations:
+We do have some limitations.
+
+If your Cloud site is using a set amount of CPU for more than a set time, the priority for your CPU will be throttled down for each time you consecutively use more than the allowed amount within the given time.
+
+The amount of CPU and the set time, is defined by the plan you are on:
 
 - For a starter it is 20% CPU / 10 minutes / 5 times a day.
 - For a Standard it is 35% CPU / 10 minutes / 3 times a day.
 - For a Pro it is 50% CPU / 10 minutes / 2 times a day.
 
-The VMs these sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
+The VMs the sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
 E.g.: A starter project can use up to 20% CPU over a period of 10 minutes. Every time it exceeds that it's flagged. A project can be flagged only 5 times a day.
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
