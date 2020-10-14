@@ -24,7 +24,7 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
 * [Schema mismatch](Schema-Mismatches)
-* [SQL Timeouts](../../Deployment/Deploy-Settings/#Timeout-issues)
+* [SQL Timeouts](../../Deployment/Deploy-Settings/#timeout-issues)
 * [Dependency Exception](Dependency-Exceptions)
 * [Media path too long](Path-too-long-exception)
 
