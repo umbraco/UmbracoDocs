@@ -87,7 +87,8 @@ First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all wor
 
 :::warning
 If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you will need to copy that over to the 8.1 web.config as well. Additionally you will need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
-This also includes the attribute `useLegacyEncoding` value. In some cases you need to go back to your **Umbraco 7.14 site** , disable it and run a password restore after that in order to login succeed in your **Umbraco 8.1 site**. 
+
+This also includes the attribute `useLegacyEncoding` value. Make sure that this setting is copied into your new Umbraco 8 site, as it is needed in order for you to be able to log in.
 
 :::
 
