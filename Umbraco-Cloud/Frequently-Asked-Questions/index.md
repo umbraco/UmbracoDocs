@@ -76,7 +76,7 @@ We also have a limitation for hostnames on the different plans on Umbraco Cloud.
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
 :::note
-If you have questions about how many resources your site is using, then please reach out to our lovely support team.
+If you have questions about how many resources your site is using, then please reach out to our friendly support team.
 :::
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
