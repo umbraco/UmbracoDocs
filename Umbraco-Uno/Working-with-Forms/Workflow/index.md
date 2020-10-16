@@ -38,7 +38,7 @@ If you choose an ***empty form*** when setting up a new form, it will come with 
 This can be done in the configuration menu for workflows.
 
 1. Click the box ***Send template email to***
-2. In the field called ***Sender email***, you should add something like Noreply@something.something.
+2. In the field called ***Sender email***, you should add something like Noreply@something.something
 3. It is recommended to choose ***Igloo template***
 4. Hit submit and then hit submit in the next menu as well
 
