@@ -54,7 +54,7 @@ In this section, you will learn how to make a custom workflow that sends an emai
 6. If you want to reply directly to the customer from the forms reply, you can add {email} to the ***ReplyToEmail*** this will fetch the email from the field called email in the form.
 7. Next, you have the option to choose the subject of the email.
 8. In the next field, you can pick a template. It is recommended to use ***Igloo-template.cshtml***.
-9. Finally, leave ***Attachments*** unchecked unless you need the users to send attachments to your inbox.
+9. Finally, leave ***Attachments*** unchecked, unless you have an upload-field in the form, and want to receive the uploaded files through the workflow.
 
 ![this is the workflow settings](images/Workflow3.png)
 
