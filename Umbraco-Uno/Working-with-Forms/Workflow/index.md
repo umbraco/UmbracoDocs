@@ -50,7 +50,7 @@ In this section, you will learn how to make a custom workflow that sends an emai
 2. Put a checkmark in the ***Active**** so that the workflow is active.
 3. The ***Include Sensitive Data*** will be left unchecked.
 4. Ensure that the ***Email*** is set to the email which should receive replies from forms.
-5. Next up is the ***Sender Email*** here. You can add something like Noreply@something.com.
+5. Next up is the ***Sender Email***. Here you can add something like Noreply@something.com.
 6. If you want to reply directly to the customer from the forms reply, you can add {email} to the ***ReplyToEmail*** this will fetch the email from the field called email in the form.
 7. Next, you have the option to choose the subject of the email.
 8. In the next field, you can pick a template. It is recommended to use ***Igloo-template.cshtml***.
