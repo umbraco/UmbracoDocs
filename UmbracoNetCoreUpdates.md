@@ -35,6 +35,7 @@ In this section you will find links to news and updates from the .Net Core team 
 ## Community resources
 
 In this section you will find a list of Umbraco .Net Core resources provided by the Umbraco Community.
+* [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 
 ### Community blog posts
 
