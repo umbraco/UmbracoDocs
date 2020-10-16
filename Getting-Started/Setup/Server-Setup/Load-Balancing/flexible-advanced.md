@@ -1,20 +1,20 @@
 ---
-versionFrom: 8.0.2
+versionFrom: 8.10.0
 ---
 
 # Advanced techniques with Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_
 
-## Explicit Master Scheduling server
+## Explicit Primary Scheduling server
 
-It is recommended to configure an explicit master scheduling server since this reduces the amount
-complexity that the [master election](flexible.md#scheduling-and-master-election) process performs.
+It is recommended to configure an explicit primary scheduling server since this reduces the amount
+complexity that the [primary election](flexible.md#scheduling-and-master-election) process performs.
 
-The first thing to do is create a couple classes for your front-end servers and master server to use:
+The first thing to do is create a couple classes for your front-end servers and primary server to use:
 
 ```csharp
-public class MasterServerRegistrar : IServerRegistrar
+public class PrimaryServerRegistrar : IServerRegistrar
 {
     public IEnumerable<IServerAddress> Registrations
     {
@@ -22,7 +22,7 @@ public class MasterServerRegistrar : IServerRegistrar
     }
     public ServerRole GetCurrentServerRole()
     {
-        return ServerRole.Master;
+        return ServerRole.Primary;
     }
     public string GetCurrentServerUmbracoApplicationUrl()
     {
@@ -56,10 +56,10 @@ then you'll need to replace the default `DatabaseServerRegistrar` for the your c
 You'll need to create an [Composer](../../../../Implementation/Composing/index.md) to set the server registrar
 
 ```csharp
-// This should be executed on your master server
+// This should be executed on your primary server
 public void Compose(Composition composition)
 {
-    composition.SetServerRegistrar(new MasterServerRegistrar());
+    composition.SetServerRegistrar(new PrimaryServerRegistrar());
 }
 
 // This should be executed on your replica servers
@@ -69,9 +69,9 @@ public void Compose(Composition composition)
 }
 ```
 
-Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any primary election or task scheduling.
 
-By setting your master server to use your custom `MasterServerRegistrar` class, it will always be deemed the 'Master' and will always be the one that executes all task scheduling.
+By setting your primary server to use your custom `PrimaryServerRegistrar` class, it will always be deemed the 'Primary' and will always be the one that executes all task scheduling.
 
 ## Front-end servers - Read-only database access
 
@@ -87,13 +87,13 @@ By default front-end servers will require write full access to the following tab
 
 This is because by default each server will inform the database that they are active and more importantly it is
 used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers
-to use a master server election process without the need for any configuration. So in the case that a front-end
-server becomes the master task scheduler, **it will require write access to all of the Umbraco tables**.
+to use a primary server election process without the need for any configuration. So in the case that a front-end
+server becomes the primary task scheduler, **it will require write access to all of the Umbraco tables**.
 
 In order to have read-only database access configured for your front-end servers, you need to implement
-the [Explicit master scheduling server](#explicit-master-scheduling-server) configuration mentioned above.
+the [Explicit primary scheduling server](#explicit-primary-scheduling-server) configuration mentioned above.
 
-Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any primary election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
 
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 
