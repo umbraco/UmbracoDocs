@@ -9,7 +9,7 @@ This will let you import a ton of excellent features. The way you do so is very 
 
 There are several great third-party websites that offer a wide array of things you can implement using this method. These are a few of those sites:
 
--tidio live chat
+-Tidio live chat
 -Calenderly
 -Bookeo
 
@@ -21,5 +21,5 @@ If you need support for one of these third-party websites nitration on your site
 2. Then, you add the code widget in the grid widget.
 3. Set column width.
 4. Go to the website of choice and find the code snippet that you will need.
-5. then, you add the code snippet to the text field in the code widget.
+5. Then, you add the code snippet to the text field in the code widget.
 6. Hit save.
