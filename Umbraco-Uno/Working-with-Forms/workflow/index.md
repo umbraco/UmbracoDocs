@@ -4,9 +4,11 @@ versionFrom: 8.0.0
 
 # What is a workflow
 
-A workflow, in this case, is the flow that starts when you press the "submit form" button on the frontend, and ends with the form reply being sent to your email (or wherever you assigned it to arrive)
+A workflow, in this case, is the flow that starts when you press the "submit form" button on the frontend and ends with the form reply being sent to your email (or wherever you assigned it to arrive)
 
-The most common workflow is to have the user press the submit button, which will present a thank you message pops up, and then send the email to a designated mail inbox. However, you could choose to have it sent to, for example, a slack channel if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
+The most common workflow is to have the user press the submit button, which will present a thank you message, and then send the email to a designated mail inbox. However, you could choose to have it sent to, for example, a slack channel if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
+
+Please be aware that you will need to go to the content section > Settings > General and fill out the Contact form email field with your email.
 
 :::tip
 This requires you to have set up a form. If you don't have a form set-up yet, you can learn how to do that in the [Setting up a form](../Setting-up-a-form/index.md) section.
@@ -25,26 +27,34 @@ This is how you get into the configuration of your workflow:
 
 1. Navigate to the Forms section of the backoffice.
 2. Here, select the form you want to add a workflow to.
-3. In the bottom of the page, you will find a section containing a checkmark saying ***on submit***
-4. Click ***Configure workflow ***
+3. At the bottom of the page, you will find a section containing a checkmark saying ***on submit***
+4. Click ***Configure workflow***
 5. The pop op window will contain the workflow that currently exists
 6. Select the one that says *Sending template email to*
 
-### Filling in the workflow
+### Editing the existing workflow
 
-In this section, we will make the workflow send an email to your inbox of choice. Please note that this is for a workflow that contains a template. To set up the one without a template, it is the same except the 8th step.
+If you choose an ***empty form*** when setting up a new form, it will come with a Working workflow. However, you will have to make a slight change to it before it functions optimally.
+This can be done in the configuration menu for workflows.
 
-If you choose to create a new form without a template, all this has been done for you except the ***Sender Email***, which you will have to fill in yourself.
+1. Click the box ***Send template email to***
+2. In the field called ***Sender email***, you should add something like Noreply@something.something.
+3. It is recommended to choose ***Igloo template***
+4. Hit submit and then hit submit in the next menu as well
 
-1. Workflow Name - give the workflow the name you want
-2. Active - make sure this is checked because it enables/disables the workflow.
-3. Include Sensitive Data - This will let you include alle the fields that in the form has been marked as sensitive data.
-4. Email - set this to the email where you want the replies to the form sent to.
-5. Sender Email - This should be something like Noreply@something.com.
-6. ReplyToEmail- here, you can add this {email}. It will take what the customer answered in the field called email.
-7. Subject - this is going to be the subject of the email you receive from the website.
-8. Template - as a standard, make sure this is set to ***Igloo-template.cshtml***.
-9. Attachments - specify whether file uploads should be attached to the email.
+### Creating a custom workflow
+
+In this section, you will learn how to make a custom workflow that sends an email to your inbox of choice. 
+
+1. First, give the workflow the name you want it to have in the ***Workflow Name*** field.
+2. Put a checkmark in the ***Active**** so that the workflow is active.
+3. The ***Include Sensitive Data*** will be left unchecked.
+4. Ensure that the ***Email*** is set to the email which should receive replies from forms.
+5. Next up is the ***Sender Email*** here. You can add something like Noreply@something.com.
+6. If you want to reply directly to the customer from the forms reply, you can add {email} to the ***ReplyToEmail*** this will fetch the email from the field called email in the form.
+7. Next, you have the option to choose the subject of the email.
+8. In the next field, you can pick a template. It is recommended to use ***Igloo-template.cshtml***.
+9. Finally, leave ***Attachments*** unchecked unless you need the users to send attachments to your inbox.
 
 ![this is the workflow settings](images/Workflow3.png)
 

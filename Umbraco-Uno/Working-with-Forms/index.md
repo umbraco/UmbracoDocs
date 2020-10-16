@@ -27,3 +27,7 @@ In this section, you will learn to check the replies to the form you have added.
 ## [Recaptcha](Recaptcha)
 
 In this section, you can learn how to add Recaptcha to your forms.
+
+## [Workflows](Workflows)
+
+Here you can learn how to work with the excisting workflow or create your own.
