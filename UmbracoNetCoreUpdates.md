@@ -35,7 +35,6 @@ In this section you will find links to news and updates from the .Net Core team 
 ## Community resources
 
 In this section you will find a list of Umbraco .Net Core resources provided by the Umbraco Community.
-* [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 
 ### Community blog posts
 
@@ -44,6 +43,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Other
 
+* [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
