@@ -48,7 +48,7 @@ In this section, you will learn how to make a custom workflow that sends an emai
 
 1. First, give the workflow the name you want it to have in the ***Workflow Name*** field.
 2. Put a checkmark in the ***Active**** so that the workflow is active.
-3. The ***Include Sensitive Data*** will be left unchecked.
+3. The ***Include Sensitive Data*** will be left unchecked unless your form contains sensitive data.
 4. Ensure that the ***Email*** is set to the email which should receive replies from forms.
 5. Next up is the ***Sender Email***. Here you can add something like Noreply@something.com.
 6. If you want to reply directly to the customer from the forms reply, you can add {email} to the ***ReplyToEmail*** this will fetch the email from the field called email in the form.
