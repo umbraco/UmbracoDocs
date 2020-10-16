@@ -30,4 +30,4 @@ In this section, you can learn how to add Recaptcha to your forms.
 
 ## [Workflows](Workflows)
 
-Here you can learn how to work with the excisting workflow or create your own.
+Here you can learn how to work with workflows, and decide what should happen once visitors on your site fill in a form.
