@@ -2,22 +2,25 @@
 versionFrom: 8.0.0
 ---
 
-# What is a workflow
+# Workflows
 
-A workflow, in this case, is the flow that starts when you press the "submit form" button on the frontend and ends with the form reply being sent to your email (or wherever you assigned it to arrive)
+A workflow is what you use to define what should happen when a form on your website is submitted. This could be sending an email with the information from the form or it could be setting up a notification in a tool like Slack.
 
-The most common workflow is to have the user press the submit button, which will present a thank you message, and then send the email to a designated mail inbox. However, you could choose to have it sent to, for example, a slack channel if you wanted. In this guide, you will learn to set-up a basic workflow for your forms.
+The most common workflow is present a "Thank you" message when a form is submitted, and then also send the email to a designated mail inbox.
 
-Please be aware that you will need to go to the content section > Settings > General and fill out the Contact form email field with your email.
+In your Umbraco Uno website a workflow has already been set up for you, and you only need to choose which email you want to notify, when a form has been submitted.
+
+In this article you will learn how to start using the default workflow, and you will also find information on how to set up your own custom workflows.
+
+Please be aware that you will need to fill out the Contact form email field, in the **General** settings page found under **Settings** in the Content section.
 
 :::tip
 This requires you to have set up a form. If you don't have a form set-up yet, you can learn how to do that in the [Setting up a form](../Setting-up-a-form/index.md) section.
 :::
 
-## How do you set up a workflow
+## Finding the workflows
 
-In this part, we will learn how to enter the configuration menu for workflows.
-We will be working with a form that contains the following:
+In this part, we will learn how to enter the configuration menu for workflows. We will be working with a form that contains the following:
 
 * A Name field using a short answer
 * An Email field using a short answer
@@ -31,10 +34,9 @@ This is how you get into the configuration of your workflow:
 4. Click ***Configure workflow***.
 5. The pop op window will contain the workflow that currently exists.
 
-
 ### Editing the existing workflow
 
-If you choose an ***empty form*** when setting up a new form, it will come with a Working workflow. However, you will have to make a slight change to it before it functions optimally.
+If you choose an ***empty form*** when setting up a new form, it will come with a working workflow. You will have to make a slight update to it before it functions optimally.
 This can be done in the configuration menu for workflows.
 
 1. Click the box ***Send template email to***.
