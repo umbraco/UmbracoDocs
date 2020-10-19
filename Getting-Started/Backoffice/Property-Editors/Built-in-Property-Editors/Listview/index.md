@@ -8,7 +8,7 @@ versionFrom: 8.4.0
 
 `Returns: IEnumerable<IPublishedContent>`
 
-**List View** display a list of category when it is enabled on a documentype that has children.
+**List View** display a list of categories when it is enabled on a Document Type that has children.
 
 ![List view example](images/listview.png)
 
