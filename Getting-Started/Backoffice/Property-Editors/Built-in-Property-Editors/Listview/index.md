@@ -29,7 +29,7 @@ Defines how many child content nodes you want to see per page. This will limit h
 
 ### Order By
 
-Will sort your list by the selection you choose in the dropdown. By default it selects "Last edited". By default you get the following three:
+Will sort your list by the selection you choose in the dropdown. By default it selects "Last edited" and you get the following three columns:
 
 - **Last edited** - When the content node was last edited and saved.
 - **Name** - Name of the content node(s).
