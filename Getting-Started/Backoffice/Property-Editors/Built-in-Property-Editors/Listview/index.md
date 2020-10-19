@@ -55,7 +55,7 @@ The template section is where you define what kind of value you want to display.
 ### Layouts
 
 The list view comes with two layouts by default. A list and a grid view.
-These views can be disable if you are not interested in any of them.
+These views can be disabled if you are not interested in any of them.
 
 :::note
 A minimum of one layout needs to be enable for the list view to work.
