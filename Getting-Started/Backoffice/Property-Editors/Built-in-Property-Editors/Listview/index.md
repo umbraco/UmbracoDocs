@@ -14,7 +14,7 @@ versionFrom: 8.4.0
 
 ## Enable list view
 
-If enabled, editors will be able to see multiple children from a list on a content node that has children otherwise no list will be shown and all children will be shown in content tree.
+If enabled, editors will be able to see multiple children from a list on a content node that has children. When not enabled, no list will be shown and all children will be shown in the Content Tree.
 
 ![Enable List view example](images/enable-listview.png)
 
