@@ -26,7 +26,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
     var typedMultiMediaPicker = Model.Value<IEnumerable<IPublishedContent>>("sliders");
     foreach (var item in typedMultiMediaPicker)
     {
-        <img src="@item.Url" style="width:200px"/>
+        <img src="@item.Url()" style="width:200px"/>
     }
 }
 ```
@@ -38,8 +38,8 @@ This property editors returns a single item if the "Pick multiple items" data ty
     var typedMediaPickerSingle = Model.Value<IPublishedContent>("featuredBanner");
     if (typedMediaPickerSingle != null)
     {
-        <p>@typedMediaPickerSingle.Url</p>
-        <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+        <p>@typedMediaPickerSingle.Url()</p>
+        <img src="@typedMediaPickerSingle.Url()" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
     }
 }
 ```

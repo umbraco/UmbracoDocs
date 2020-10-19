@@ -12,7 +12,7 @@ Common Examples
 
 ```csharp
 @* gets the current page Url *@
-@Model.Url
+@Model.Url()
 
 @* gets the Creation date, and formats it to a short date *@
 @Model.CreateDate.ToString("D")
@@ -61,7 +61,7 @@ Returns a strongly typed 'PublishedContentType' object representing the content 
 Returns a culture from a configured domain in the content tree.
 
 ```csharp
-@Model.GetCultureFromDomains(Model.Url)
+@Model.GetCultureFromDomains(Model.Url())
 ```
 
 ### .Parent
@@ -112,7 +112,7 @@ Returns the index the page is on, compared to its siblings
 Returns the complete Url to the page in the current culture
 
 ```csharp
-@Model.Url
+@Model.Url()
 ```
 
 ### .Url(string culture = null)

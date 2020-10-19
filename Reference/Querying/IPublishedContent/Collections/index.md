@@ -17,7 +17,7 @@ Returns a collection of child items available in the current culture, below the 
 <ul>
     @foreach(var item in Model.Children)
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -30,7 +30,7 @@ Returns a collection of child items for all cultures, below the current content 
 <ul>
     @foreach(var item in Model.ChildrenForAllCultures)
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -43,7 +43,7 @@ Returns a collection of child items available in the specified culture with a de
 <ul>
     @foreach(var item in Model.Children())
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -57,7 +57,7 @@ Returns all ancestors of the current page (parent page, grandparent and so on)
     @*Order items by their Level*@
     @foreach(var item in Model.Ancestors().OrderBy(x => x.Level))
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -92,7 +92,7 @@ Returns all descendants of the current page (children, grandchildren etc)
     @* Filter collection by content that has a template assigned *@
     @foreach(var item in Model.Descendants().Where(x => x.TemplateId > 0))
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -106,7 +106,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
     @* Filter collection by content that has a template assigned *@
     @foreach(var item in Model.DescendantsOrSelf().Where(x => x.TemplateId > 0))
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
@@ -120,7 +120,7 @@ Filters a collection of content by content type alias
     @* Filter collection by content type alias (you can pass in any number of aliases) *@
     @foreach(var item in Model.DescendantsOrSelf().OfTypes("widget1", "widget2"))
     {
-        <li><a href="@item.Url">@item.Name</a></li>
+        <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```

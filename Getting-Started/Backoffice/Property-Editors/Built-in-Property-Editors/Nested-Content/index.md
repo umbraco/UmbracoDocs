@@ -117,7 +117,7 @@ Example:
 
         if (image != null)
         {
-            <img src="@image.Url" alt="" />
+            <img src="@image.Url()" alt="" />
         }
     }
 }
