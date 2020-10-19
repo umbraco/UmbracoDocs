@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 A workflow is what you use to define what should happen when a form on your website is submitted. This could be sending an email with the information from the form or it could be setting up a notification in a tool like Slack.
 
-The most common workflow is present a "Thank you" message when a form is submitted, and then also send the email to a designated mail inbox.
+The most common workflow is to present a "Thank you" message when a form is submitted, and then also send the email to a designated mail inbox.
 
 In your Umbraco Uno website a workflow has already been set up for you, and you only need to choose which email you want to notify, when a form has been submitted.
 
