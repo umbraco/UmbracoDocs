@@ -95,7 +95,7 @@ The ```{{ value }}``` will take the value of the Email property and display it i
 
 ### Member name
 
-First a member picker needs to be present on the content item. In this example the ```child item``` has gotten a member picker datatype with the alias of ```isAuthor```. 
+First, a Member Picker property needs to be present on the content item. In this example, the ```child item``` has gotten a Member Picker Data Type with the alias of ```isAuthor```. 
 
 ![List view member picker](images/member-picker.png)
 
