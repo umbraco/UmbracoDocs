@@ -24,6 +24,7 @@ The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore
 * [SQL Timeouts](Deploy-Settings)
 * [Dependency Exception](Dependency-Exceptions)
 * [Media path too long](Path-too-long-exception)
+* [An existing connection was forcibly closed by the remote host](Connection-Forcibly)
 
 
 ### Issues when using third party packages
