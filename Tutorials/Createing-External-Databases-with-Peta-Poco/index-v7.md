@@ -175,4 +175,5 @@ namespace Recipes.Models
 ```
 
 ## In conclusion:
-This is a simple way to implement external tables into Umbraco Website
+This is a one of the ways to implement a new external table into an Umbraco website.
+
