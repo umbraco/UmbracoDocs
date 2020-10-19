@@ -61,7 +61,7 @@ These views can be disabled if you are not interested in any of them.
 A minimum of one layout needs to be enabled for the list view to work.
 :::
 
-You can also make your own layout and add it to the settings. For example if you wanted to change the width or lenght of the grid, you will be able to do so. 
+You can also make your own layout and add it to the settings. For example, if you wanted to change the width or length of the grid, you will be able to do so. 
 
 ### Bulk Action Permissions
 Select what kind of action is available on the list view.
