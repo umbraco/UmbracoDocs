@@ -19,7 +19,7 @@ PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dep
 
 ## Steps to Create Your First Table
 - [Setting up the folders](#setting-up-the-folders)
-- [Creatung our first table](#creating-our-first-table)
+- [Creating our first table](#creating-our-first-table)
 - [Implementing new table](#implementing-new-table)
 - [Accessing the new table](#accessing-the-new-table)
 
@@ -28,7 +28,7 @@ PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dep
 
 ## Setting up the folders 
 First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes`.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
-[Here is example of the folder structure](images/folderlocation.png)
+![Here is example of the folder structure](images/folderlocation.png)
 
 ## Creating our first table
 Next, we need to create a table, we are going to call it `Recipe`. In the sample code, line 4 and 5 are needed in order to set the database. They contaion the methods Umbraco uses for Databases. The line after that is the path to the poco file.
