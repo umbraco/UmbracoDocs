@@ -78,7 +78,7 @@ Changes the icon in the backoffice of the listview. By default it will look like
 ![List icon example](images/list-icon.png)
 
 ### Content app name
-You can change the name of the listview itself. Default if empty: 'Child Items'
+You can change the name of the listview itself. Default if empty: 'Child Items'.
 
 ### Show Content App First
 Enable this to show the content app by default instead of the list view
