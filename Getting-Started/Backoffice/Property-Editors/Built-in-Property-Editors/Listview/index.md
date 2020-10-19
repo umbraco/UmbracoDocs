@@ -43,7 +43,7 @@ You can select order of the content nodes displayed, "Acsending" or "Descending"
 
 ### Columns Displayed
 
-It is possible to add more columns to the list, via adding the properties through the dropdown. These properties are based on the datatypes which are used by the document-type. It will show up in the dropdown by its alias and not the name on the property.
+It is possible to add more columns to the list, via adding the properties through the dropdown. These properties are based on the Data Types which are used by the Document Type. It will show up in the dropdown by its alias and not the name on the property.
 
 ![List view property example](images/listview-property.png)
 ![List view property example](images/listview-property-dropdown.png)
