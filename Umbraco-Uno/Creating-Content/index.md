@@ -58,3 +58,7 @@ The Rich Text Editor or RTE as people call it is a great way to create content. 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
 For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Widgets) section in the Uno-pedia.
+
+## [Working with Forms](../Working-with-Forms)
+
+If you are new to Umbraco Forms, and want to learn more about how to work with them, you can read more about the workflow in the Working with Forms section.
