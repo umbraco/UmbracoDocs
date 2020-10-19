@@ -12,7 +12,7 @@ versionFrom: 8.4.0
 
 ![List view example](images/listview.png)
 
-### Enable list view
+## Enable list view
 
 If enabled, editors will be able to see multiple children from a list on a content node that has children otherwise no list will be shown and all children will be shown in content tree.
 
