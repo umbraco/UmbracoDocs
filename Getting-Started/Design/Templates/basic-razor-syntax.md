@@ -18,7 +18,7 @@ The @ symbol is used in Razor to initiate code, and tell the compiler where to s
 <p>@Model.Name</p>
 
 @* Inside an attribute *@
-<a href="@Model.Url">@Model.Name</a>
+<a href="@Model.Url()">@Model.Name</a>
 
 @* Using it to start logical structures *@
 @if (somethingIsTrue)

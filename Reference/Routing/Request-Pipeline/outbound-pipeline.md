@@ -173,13 +173,13 @@ In our example the "swibble" node could have the following URL: "http://example.
 Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url (e.g.):
 
 ```csharp
-@Model.Url
+@Model.Url()
 @Umbraco.Url(1234)
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
 
 The 'Current Composition' of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlProvider' - but custom implementations can be added to the collection.
-When .Url is called each UrlProvider registered in the collection is executed in 'collection order' until a particular UrlProvider returns a value. (and no further UrlProviders in the collection will be executed.)
+When `.Url()` is called each UrlProvider registered in the collection is executed in 'collection order' until a particular UrlProvider returns a value. (and no further UrlProviders in the collection will be executed.)
 ### DefaultUrlProvider
 Umbraco ships with a DefaultUrlProvider, which provides the implementation for the out of the box mapping of the structure of the content tree to the url.
 

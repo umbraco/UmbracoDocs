@@ -163,7 +163,7 @@ public class TextPageViewModel
 One can also extend Umbraco's views to provide a special view helper that would give access to important elements of the website, so that views could contain code such as:
 
 ```csharp
-<a href="@MySite.HomePage.Url">@MySite.HomePage.Title</a>
+<a href="@MySite.HomePage.Url()">@MySite.HomePage.Title</a>
 ```
 
 ### Example of ugly practice

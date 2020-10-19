@@ -52,7 +52,7 @@ If you want to convert a type and it's possible, you can do that by typing a var
 ```csharp
 @foreach (TeamMember person in Model.TeamMembers)
    {
-     <a href="@person.Url">
+     <a href="@person.Url()">
         <p>@person.Name</p>
      </a>
    }
