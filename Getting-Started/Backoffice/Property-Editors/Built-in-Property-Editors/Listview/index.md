@@ -58,7 +58,7 @@ The list view comes with two layouts by default. A list and a grid view.
 These views can be disabled if you are not interested in any of them.
 
 :::note
-A minimum of one layout needs to be enable for the list view to work.
+A minimum of one layout needs to be enabled for the list view to work.
 :::
 
 You can also make your own layout and add it to the settings. For example if you wanted to change the width or lenght of the grid, you will be able to do so. 
