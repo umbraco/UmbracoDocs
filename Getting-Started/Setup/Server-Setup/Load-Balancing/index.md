@@ -157,4 +157,4 @@ office servers, you may choose to not do this.
 
 __Question>__ _Whatever happened to Master?_
 
-Master, along with its less favorable sibling, is being removed from tech language. It's called Primary now. Move along.
+Master, along with its less favorable sibling, is being removed from tech language. The terms did not accurately describe the relationship between Umbraco instances in a Load Balancing scenario. We prefer to use Primary and Replica now. 

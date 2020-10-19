@@ -8,10 +8,10 @@ _This describes some more advanced techniques that you could achieve with flexib
 
 ## Explicit Primary Scheduling server
 
-It is recommended to configure an explicit primary scheduling server since this reduces the amount
+It is recommended to configure an explicit primary scheduling server since this reduces the amount of
 complexity that the [primary election](flexible.md#scheduling-and-master-election) process performs.
 
-The first thing to do is create a couple classes for your front-end servers and primary server to use:
+The first thing to do is create a couple of classes for your front-end servers and primary server to use:
 
 ```csharp
 public class PrimaryServerRegistrar : IServerRegistrar
