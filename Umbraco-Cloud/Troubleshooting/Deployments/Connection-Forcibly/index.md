@@ -16,4 +16,10 @@ This error indicates that your local environment can not connect to your Umbraco
 
 ## How to fix your connection error
 
-To resolve the issue, locate the two `targetFramework` properties in your `web.config` file. Update these to a .Net version higher than 4.6 - preferably 4.7.2. Note that you will need to have the runtime of your new .Net version, installed on your computer in order to run the project locally. [You can download all .Net run times from Microsoft right here](https://dotnet.microsoft.com/download).
+To resolve the issue, please follow the following two steps:
+1. Locate the two `targetFramework` properties in your `Web.config` file.
+2. Update these to a .Net version higher than 4.6 - preferably 4.7.2. 
+
+:::note
+You will need to have the runtime of your new .Net version, installed on your computer in order to run the project locally. [You can download all .Net run times from Microsoft right here](https://dotnet.microsoft.com/download).
+:::
