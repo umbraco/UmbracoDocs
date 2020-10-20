@@ -231,7 +231,7 @@ Inside this folder create two files,. The first file should be called package.ma
 ```
 Umbraco will parse all package.manifest files and load any resources they reference into the backoffice during startup.
 
-and secondly add a javascript file called
+The second file should be a javascript file called
 
 **customBlock.controller.js**
 
@@ -288,5 +288,4 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
-
 
