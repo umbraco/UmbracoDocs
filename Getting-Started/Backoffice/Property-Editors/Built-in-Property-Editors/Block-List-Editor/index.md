@@ -273,7 +273,7 @@ Update the View to use the 'imageUrl' property to display the image:
 </div>
 ```
 If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
-```
+```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
 
     //your property is called image so the following will contain the udi:
