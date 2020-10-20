@@ -28,11 +28,11 @@ PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dep
 
 ## Setting up the folders 
 First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes`.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
-[Here is example of the folder structure](images/folderlocation.png)
+
+![Folder structure example](images/folderlocation.png)
 
 ## Creating our first table
-Next, we need to create a table, we are going to call it `Recipe`. In the sample code, line 4 and 5 are needed in order to set the database. They contaion the methods Umbraco uses for Databases. The line after that is the path to the poco file.
-Here is some sample code, and we will explain it as well:
+Next, we need to create a table, we are going to call it `Recipe`. Next, we need to create a table, we are going to call it `Recipe`. In the sample code, line 4 and 5 are needed in order to set up the table in the database. `Umbraco.Core.Persistence` and  `Umbraco.Core.Persistence.DatabaseAnnotations` contain the methods Umbraco uses for databases and table. The line after that is the path to the poco file. Here is some sample code, and we will explain it as well: 
 
 ```csharp
 using System;
@@ -92,7 +92,11 @@ namespace Recipes.Models.pocos
 ```
 
 ## Implementing new table
-Next we want to implement the table to Umbraco website and database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder. This file will help us create the new table `Recipe` for our site. Thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The fisrt line is neccessary to access the table code:
+Next we want to implement the table to Umbraco website and database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder. 
+
+![Here is the location of the file](images/folderlocation2.png)
+
+This file will help us create the new table `Recipe` for our site. Thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The fisrt line is neccessary to access the table code:
 
 ```csharp
 using Recipes.Models.pocos;
