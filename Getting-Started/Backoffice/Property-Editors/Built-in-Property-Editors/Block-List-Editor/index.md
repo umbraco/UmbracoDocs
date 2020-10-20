@@ -221,7 +221,7 @@ To achieve this you need to add a custom angularJS controller to your custom vie
 
 Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
 
-Inside this folder create two files, one called package.manifest that contains the following:
+Inside this folder create two files,. The first file should be called package.manifest that contain the following:
 ```
 {
   "javascript": [
@@ -288,6 +288,5 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
-
 
 
