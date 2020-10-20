@@ -33,7 +33,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
         <ul>
             @foreach (var link in links)
             {
-                <li><a href="@link.Url()" target="@link.Target">@link.Name</a></li>
+                <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
             }
         </ul>
     }
@@ -46,7 +46,7 @@ If `Max number of items` is configured to `1`
     var link = Model.Value<Link>("link");
     if (link != null)
     {
-    <li><a href="@link.Url()" target="@link.Target">@link.Name</a></li>
+    <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
     }
 }
 ```
