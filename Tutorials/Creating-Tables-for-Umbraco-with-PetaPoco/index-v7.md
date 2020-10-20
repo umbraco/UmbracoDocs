@@ -1,11 +1,11 @@
 ---
 versionFrom: 7.0.0
 ---
-# Tutorial - Creating Exernal Tables in Umbraco with PetaPoco
+# Tutorial - Creating Tables in Umbraco with PetaPoco
 
 ## Overview
 
-This guide will take you steps to create external databases in Umbraco using Peta Pocos
+This guide will take you steps to create tables in Umbraco using Peta Pocos and the ability to access that data in that table
 
 ## What is Peta Poco?
 
@@ -177,6 +177,72 @@ namespace Recipes.Models
     }
 }    
 ```
+Now once, we built our methods to access the data, we can use them in either `Template`, `Partial View` or a `Macro`. When any of those files are being built, you must have the path to poco in your file. Here is an example of accessing the data in a `Partial View Macro`:
+
+``` csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Recipes.Models.pocos
+@using Recipes.Models
+<div class="page-header clearfix">
+    <h2 class="page-title pull-left">
+        Recipes <span id="spinner" class="loaded"><i class="fa fa-spinner fa-spin fa-sm"></i></span>
+    </h2>
+</div>
+
+<div class="toolbar-grid clearfix">
+
+</div>
+
+<table class="table table-bordered table-striped table-hover table-responsive" id="results">
+    
+            <thead>
+                <tr>
+
+                    <th>Name</th>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Date Submitted</th>
+
+                </tr>
+            </thead>
+
+
+
+            @{
+            foreach (var Allrecs in Recipes.GetAdminRecipes())
+            {
+
+            <tr>
+                <td><a href="/recipe-update-form.aspx?id=@Allrecs.RecipeId">@Allrecs.RecipeName</a></td>
+                <td><a href="/recipe-page?id=@Allrecs.RecipeId&@Allrecs.RecipeName">View</a></td>
+                <td>
+                    @switch (@Allrecs.StatusId)
+                    {
+                    case 1:
+                    <div>Submitted</div>
+                    break;
+                    case 2:
+                    <div>Approved</div>
+                    break;
+                    case 3:
+                    <div>Rejected</div>
+                    break;
+                    case 4:
+                    <div>Deleted</div>
+                    break;
+
+                    }
+                </td>
+                <td>@Allrecs.DateSubmitted</td>
+            </tr>
+
+            }
+
+            }
+
+        </table>
+```
+
 
 ## In conclusion:
 This is a simple way to implement external tables into Umbraco Website
