@@ -222,7 +222,7 @@ To achieve this you need to add a custom angularJS controller to your custom vie
 Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
 
 Inside this folder create two files,. The first file should be called package.manifest that contain the following:
-```
+```json
 {
   "javascript": [
     "~/App_Plugins/CustomBlockView/customBlock.controller.js"    
