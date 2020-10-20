@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 ---
-# Tutorial - Creating Exernal Tables in Umbraco with PetaPocos
+# Tutorial - Creating Exernal Tables in Umbraco with PetaPoco
 
 ## Overview
 
