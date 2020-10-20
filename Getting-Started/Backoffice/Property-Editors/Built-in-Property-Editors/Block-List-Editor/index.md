@@ -244,7 +244,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope) 
 }
 ```
 #### Example: Displaying an image from a Media Picker
-Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout, but if you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
+Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
 
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
 
