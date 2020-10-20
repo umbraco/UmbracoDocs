@@ -28,6 +28,7 @@ PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dep
 
 ## Setting up the folders 
 First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes`.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
+
 ![Here is example of the folder structure](images/folderlocation.png)
 
 ## Creating our first table
@@ -91,7 +92,11 @@ namespace Recipes.Models.pocos
 ```
 
 ## Implementing new table
-Next we want to implement the table to Umbraco website and database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder. This file will help us create the new table `Recipe` for our site. Thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The fisrt line is neccessary to access the table code:
+Next we want to implement the table to Umbraco website and database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder. 
+
+![Here is the location of the file](images/folderlocation2.png)
+
+This file will help us create the new table `Recipe` for our site. Thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The fisrt line is neccessary to access the table code:
 
 ```csharp
 using Recipes.Models.pocos;
