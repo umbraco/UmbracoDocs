@@ -236,7 +236,7 @@ If you are creating a package in order to share it with others it is a great ide
 
 To share it, and make it easier to manage and deploy updates we will set up a Github repository for the package. This tutorial assumes you know what Github is, and that you have an account. 
 
-Create a fresh repo, with no readme, gitignore nor based on a template. On the second screen it will give you a command to push an existing repository to the new Github repo, should look like this but with your own user in the link:
+Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new Github repo, should look like this but with your own user in the link:
 
 ```
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
@@ -339,13 +339,17 @@ So the XML above will turn into this, which is compatible with the Umbraco packa
 
 Before we try it out using UmbPack, try to run this command in the root of your site:
 
-```umbpack pack -h```
+```
+umbpack pack -h
+```
 
 The commandline tool will tell you all the options you have when packing up your package. You can a find much more in-depth explanation of the options in the [UmbPack documentation][umbpack-pack].
 
 For now we don't need to worry about the output directory option, we will let UmbPack save it in the current folder. Likewise, with the name and version override, we will let UmbPack use the name and version we specified in the package.xml file. For the package.xml path we will specify the one in the root we used in the previous step, that points to both the dll file and the App_Plugins folder in the website project.
 
-```umbpack pack .\package.xml```
+```
+umbpack pack .\package.xml
+```
 
 And now we have a zipped version of our package with any new additions in App_Plugins automatically added and listed in the package.xml of the zip. Now you can make changes and run the above command to have an updated version of the package within seconds!
 
@@ -355,7 +359,9 @@ Next up - let's push this package update to Our from the commandline!
 
 To push a package update to Our with UmbPack we need to use the `push` command, so let's have a quick look at the options for that by running:
 
-```umbpack push -h```
+```
+umbpack push -h
+```
 
 You will see there are 2 necessary options, an API key and a path to the package zip. Then it is also possible for you to specify the Umbraco versions and dotnet version the package is compatible with, and also to archive old packages and set this as the new current package.
 
@@ -376,7 +382,9 @@ Once you created your key, make sure to copy and paste it somewhere. We will nee
 
 Now that we have an API key we can try to push our package update to Our Umbraco. This can be done like this:
 
-```umbpack push .\PackageWorkshopDashboard_1.0.0.zip -k [Api key here]```
+```
+umbpack push .\PackageWorkshopDashboard_1.0.0.zip -k [Api key here]
+```
 
 :::note 
 If a package with the same name already exists it may give an error. In that case you can run `umbpack pack .\package.xml -v 1.0.1` to create a new version of the package then push it with the above command after editing the path to the new package.
