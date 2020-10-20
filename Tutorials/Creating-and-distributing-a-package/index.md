@@ -4,15 +4,15 @@ This tutorial will take you through creating a brand new package in Umbraco, dis
 
 ## Overview
 
-- Prerequisites
-- Creating a test site locally
-- Creating a package from the backoffice
-- Creating a draft package on Our
-- Pushing your package to Github
-- Pack up your package locally using UmbPack 
-- Pushing your package to Our using UmbPack
-- Deploy your package using Github Actions
-- Archive older versions on push
+- [Prerequisites](#prerequisites)
+- [Creating a test site locally](#creating-a-test-site-locally)
+- [Creating a package from the backoffice](#creating-a-package-from-the-backoffice)
+- [Creating a draft package on Our](#creating-a-draft-package-on-our)
+- [Pushing your package to Github](#pushing-your-package-to-github)
+- [Pack up your package locally using UmbPack ](#pack-up-your-package-locally-using-umbpack)
+- [Pushing your package to Our using UmbPack](#pushing-your-package-to-our-using-umbpack)
+- [Deploy your package using Github Actions](#deploy-your-package-using-github-actions)
+- [Archive older versions on push](#archive-older-versions-on-push)
 
 ## Prerequisites
 
