@@ -212,7 +212,7 @@ If you'd like to display properties of `settings`, you can access these by `bloc
 ### Adding custom implementation to your View
 
 To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
-```
+```html
 <div ng-controller="customBlockController" ng-click="block.edit()"> 
     <h2 ng-bind="block.data.headline"></h2>
     <p ng-bind="block.data.description"></p>
@@ -288,7 +288,6 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
-
 
 
 
