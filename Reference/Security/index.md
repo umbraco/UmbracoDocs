@@ -18,9 +18,9 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 
 In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
-## [Security settings](Security-settings)
+## [Password settings](Security-settings)
 
-Learn which security settings that can be configured in Umbraco.
+Learn which password settings that can be configured in Umbraco.
 
 ## [Security Hardening](Security-hardening)
 
@@ -32,39 +32,29 @@ When your project is hosted on Umbraco Cloud, you might be interested in more de
 
 ## Backoffice users
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extendable framework for authentication.
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a flexible and extendable framework for authentication.
 
 Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
-ASP.NET Identity can be extended and it is also possible to override/replace any part of the process of authentication.
+The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers.md).
 
-### Custom OAuth providers
+### [External login providers](external-login-providers.md)
 
-The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
-
-To install and configure a custom OAuth provider, use the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions).
-
-The installation of these packages will install snippets of code with "readme" files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to this:
-
-![OAuth login screen](images/google-oauth-v8.png)
-
-#### Authenticating with Active Directory credentials
-
-We have setup a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
-
-#### Auto-linking accounts for custom OAuth providers
-
-Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice. In many cases however, the identity server you choose will be the source of truth for all of your users.
-
-In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
-
-Read more about [auto linking](auto-linking.md)
+The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
 ### Custom password check
 
-You are able [check the username and password against your own credentials store](custom-password-checker.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
+In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
 
-### Sensitive data on members
+This is typically a legacy approach to validating credentials with external resources but it is possible.
+
+You are able check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
+
+#### Authenticating with Active Directory credentials
+
+If you are using a network based Azure Directory (not Azure Active Directory), we have setup a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
+
+## Sensitive data on members
 
 Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
 

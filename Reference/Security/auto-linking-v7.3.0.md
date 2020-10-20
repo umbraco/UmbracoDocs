@@ -5,26 +5,31 @@ keywords: oauth, security
 
 # Auto Linking accounts
 
-:::note
-This article contains information from the old issue tracker [U4-6753 - Identity support must have an option to enable auto-linked accounts](https://issues.umbraco.org/issue/U4-6753)
-:::
+Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
-For some providers it doesn't make sense to have to link external accounts after a local account has been created. These providers would be OAuth providers such as Active Directory providers where the admin knows that only their user's with auth against the end-point.
+In many cases however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the back office. This is called Auto Linking.
 
-For public providers such as Google or Facebook, this doesn't make any sense, we cannot auto-link public providers.
+## Configure External Login provider
 
-The auto-linking should be enabled by a startup option and when activated, when a user that doesn't have a local account is auth-ed. On the reply we will create a local user with a generated password and create their account as per the specified options of the provider. With a generated password it means they cannot log in 'offline' but that is ok, if that functionality is required then the administrator can log in to the backoffice to reset their local password.
+To enable auto linking there is an extension method on `Microsoft.Owin.Security.AuthenticationOptions` called `SetExternalSignInAutoLinkOptions` which you can pass in an instance of: `Umbraco.Web.Security.Identity.ExternalSignInAutoLinkOptions`
 
-To do this there is an extension method on `Microsoft.Owin.Security.AuthenticationOptions` called `SetExternalSignInAutoLinkOptions` which you can pass in an instance of: `Umbraco.Web.Security.Identity.ExternalSignInAutoLinkOptions`
+_Example:_
 
-This is done during the configuration of the OAuth provider. The options class allows you to dynamically return data for each of its methods if required. Alternatively, you can specify what the methods will return based on its ctor arguments. Generally, there would be very little to configure and if you wanted to auto-link/create local accounts based on your external OAuth provider, you can do (for example):
+If you have installed the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) and are using the Google provider, it will create a file: `UmbracoADAuthExtensions.cs` which configures the Google options (`GoogleOAuth2AuthenticationOptions`). You can extend these options like:
 
-```C#
+```cs
 googleOptions.SetExternalSignInAutoLinkOptions(
   new ExternalSignInAutoLinkOptions(autoLinkExternalAccount: true));
 ```
 
-The custom options also have a field to display a custom angular view after the linking has taken place, this view can be used to gather further user information such as their name, a local login name or password, etc... This hasn't been implemented yet, will do soon.
+:::note
+For some providers it doesn't make sense to use auto-linking especially public providers such as Google or Facebook because in those cases it would mean that anyone can log into your site that has a Google or Facebook account. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
+:::
+
+## Local logins
+
+If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to login locally (via username and password). In order to login locally they will have to assign a password to their account in the back office.
+
 
 ## Example
 
@@ -46,5 +51,5 @@ autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo 
     // so you can modify the user before it's persisted
 };
 
-identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
+googleOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
 ```
