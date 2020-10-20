@@ -238,7 +238,7 @@ The second file should be a javascript file called
 (to match the file referenced in your package.manifest file)
 
 This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
-```
+```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
 // you can do your custom functionality here!
 }
