@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# "An existing connection was forcibly closed by the remote host" error
+# Error: "An existing connection was forcibly closed by the remote host"
 
 Sometimes you will get an error that looks like this:
 
