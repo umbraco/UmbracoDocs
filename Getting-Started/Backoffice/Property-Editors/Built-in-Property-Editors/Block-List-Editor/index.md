@@ -249,7 +249,7 @@ Your block may enable you to 'pick' an image for use as the background for a par
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
 
 With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
-```
+```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
     //your property is called image so the following will contain the udi:
