@@ -193,7 +193,7 @@ namespace Umbraco8.Components
                         IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
                         if (soonToBeUnPublishedItem != null)
                         {
-                            string previouslyPublishedUrl = soonToBeUnPublishedItem.Url();
+                            string previouslyPublishedUrl = soonToBeUnPublishedItem.Url;
                             if (!String.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
                             {
                                 _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);

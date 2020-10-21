@@ -159,7 +159,7 @@ namespace Umbraco8.Components
 
                         // Custom route to Product Listing Controller which will use a node as the
                         // IPublishedContent for the current rendering page
-                        RouteTable.Routes.MapUmbracoRoute("ResourceSlugs-" + i, ((root.Url() + filter.Name.ToLower().Replace(" ", "-")).TrimStart('/')), new
+                        RouteTable.Routes.MapUmbracoRoute("ResourceSlugs-" + i, ((root.Url + filter.Name.ToLower().Replace(" ", "-")).TrimStart('/')), new
                         {
                             controller = "ProductListing",
                             action = "Index",
