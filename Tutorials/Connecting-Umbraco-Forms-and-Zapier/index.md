@@ -8,22 +8,24 @@ needsV8Update: "false"
 
 This guide takes you through the steps of connecting your Umbraco Forms to Zapier.
 
-## What is Zapier?
+## What is Zapier
 
 [Zapier](https://zapier.com/) is an “if this, then that” tool that allows you to automate workflows between the different web apps you use. Zapier has integrations to more than 2,000 web apps and lets you connect to your accounts with a few clicks without any code.
 
-## Why use Zapier for your Umbraco Forms data?
+## Why use Zapier for your Umbraco Forms data
 
-Umbraco Forms stores entries in the backoffice and has a set of default workflow types that you can use when a new form entry is submitted. If you want to use this data in other applications, such as your CRM or marketing automation platform, you need integrations to those platforms. Zapier makes that integration easy and can be done using the default workflows in Umbraco Forms. All without having to write any additional code.
+Umbraco Forms stores entries in the backoffice and has a set of default workflow types that you can use when a new form entry is submitted. If you want to use this data in other applications, such as your CRM or marketing automation platform, you need integrations to those platforms. Integration with Zapier can be done using the default workflows in Umbraco Forms. All without having to write any additional code.
 
 This enables marketers and editors to make automated workflows that pass data between the web apps they use without having to involve a developer.
 
-## Who is this tutorial for?
+## Who is this tutorial for
 
 This tutorial is for all users of Umbraco and does not require any particular skills to be performed. It is especially useful for marketers who get the freedom to make integrations and automate tasks in a simpler and faster way.
 
 ## Prerequisites
+
 Here is what you will need for this tutorial:
+
 - A paid Zapier account (Premium apps are unavailable in the free plan)
 - Umbraco Forms
 - A Google account (only necessary if you want to follow the last example in the guide)

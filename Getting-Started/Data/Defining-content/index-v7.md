@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
-## What is a Document Type?
+## What is a Document Type
 
 In its most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
 
@@ -42,7 +42,7 @@ First we're prompted to give the Document Type a name. This first Document Type 
 ![Naming a Document Type](images/Document-Type-Name.jpg)
 _Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias click the "lock" icon._
 
-Having a root node makes it easy to query content as you know everything will be under the root node.
+Having a root node let's you quickly query content as you know everything will be under the root node.
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
@@ -87,7 +87,7 @@ Give the property a name, the name will be shown to the editor so make relevant 
 
 ##### Keyboard Shortcuts
 
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available click **ALT + SHIFT + K**:
 
 ![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg?width=400)
 
@@ -135,19 +135,19 @@ Document Types are very flexible and can be used in a myriad of ways from defini
 
 ### More information
 
-- [Rendering Content](../../Design/Rendering-Content/)
-- [Customizing Data Types](../Data-Types/index.md)
+* [Rendering Content](../../Design/Rendering-Content/)
+* [Customizing Data Types](../Data-Types/index.md)
 
 ### Related Services
 
-- [ContentService](../../../Reference/Management/Services/ContentService/index.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
+* [ContentService](../../../Reference/Management/Services/ContentService/index.md)
+* [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
 
 ### Tutorials
 
-- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
+* [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
 ### [Umbraco TV](https://umbraco.tv)
 
-- [Chapter: Document Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
-- [Chapter: Creating content](https://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)
+* [Chapter: Document Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
+* [Chapter: Creating content](https://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)

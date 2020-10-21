@@ -99,6 +99,6 @@ Which prompts **rule number 2**: Content models must *not* keep references to ot
 * Cache the IDs in a field and re-get the content objects each time
 * Implement your own caching mechanism
 
-The idea is that such a cache would provide easy-to-use infrastructure for you to cache values either at the request's level, or "for as long as no other content is changed". The same that would be used internally for the cache to manage the converted values.
+The idea is that such a cache would provide an infrastructure for you to cache values either at the request's level, or "for as long as no other content is changed". The same that would be used internally for the cache to manage the converted values.
 
 This is not an issue *today* but it will become an issue if/when a new cache comes. Better understand what's going on before creating models that would *not* work with a new cache.

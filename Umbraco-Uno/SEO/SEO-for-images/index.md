@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # SEO for images
 
-In Umbraco you have a media library for all of your images, videos and files. To make it easy for you to follow accessibility and SEO best practices you can add an **alternative text** to all images you upload.
+In Umbraco you have a media library for all of your images, videos and files. To follow accessibility and SEO best practices you can add an **alternative text** to all images you upload.
 
 Adding an alternative text will give website visitors using screen readers as well as search engine crawlers a description of what is on the image. This makes your website accessible as well as improve your image SEO.
 

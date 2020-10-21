@@ -262,7 +262,7 @@ Character encoding for Tidy.
 **`<ForceSafeAliases>`**
 
 This setting allows you to disable the safe aliases, when you're creating properties on your document types. As the comment below states you really
-should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see http://issues.umbraco.org/issue/U4-867
+should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see [http://issues.umbraco.org/issue/U4-867](http://issues.umbraco.org/issue/U4-867)
 
 ```xml
 <!-- Whether to force safe aliases (no spaces, no special characters) at businesslogic level on contenttypes and propertytypes -->
@@ -586,7 +586,7 @@ In this section you can add multiple scheduled tasks that should run at certain 
 
 The scheduledTasks element consist of the following attributes:
 
-**baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
+**baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: [http://issues.umbraco.org/issue/U4-5391](http://issues.umbraco.org/issue/U4-5391).
 
 Note: this setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
 

@@ -17,7 +17,7 @@ The settings to add manual redirects are not automatically created for you with 
 
 3. Select **Manual Redirects**
 4. Give the new settings a name - In our example we will call it **Manual Redirects**
-    * The name will only be visible in the backoffice so pick a name that is easy for you to understand
+    * The name will only be visible in the backoffice so pick a name that is relevant
 5. Click *Save and publish*
 
 Now you have created a new section for manual redircts and you can start creating manual redirects.
@@ -26,7 +26,7 @@ Now you have created a new section for manual redircts and you can start creatin
 
 1. Click on the ellipses next to the newly created settings sectiob - **Manual Redirects**
 2. Select **Redirect**
-3. Give the redirect a name - This will only be visible in the backoffice so pick a name that is easy for you to understand
+3. Give the redirect a name - This will only be visible in the backoffice so pick a name that is relevant
 4. Choose the URL to **Redirect From** - This field **must** be the absolute URL of the page (ie. `https://domain.com/the-old-url/`)
 5. Choose where on your site to **Redirect To** - This field works as a content picker and lets you navigate to the content page that you want to redirect to.
 6. (Optional) Give the redirect a **Description** - can be helpful to remember why you added this redirect

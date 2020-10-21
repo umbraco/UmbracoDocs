@@ -36,6 +36,7 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
     // var relationService = Services.RelationService;
 }
 ```
+
 ## Accessing Core Services and Helpers in a Controller
 
 Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
@@ -136,6 +137,7 @@ namespace Umbraco8.Components
     }
 }
 ```
+
 See documentation on [Composing](../Composing/) for further examples and information on Components and Composition.
 
 ### Accessing Published Content outside of a Http Request
@@ -241,15 +243,16 @@ It is still possible to inject services into IContentFinder's. IContentFinders a
 Also note that UrlMode was renamed from UrlProviderMode in Umbraco v8.1.
 :::
 
-## Custom Services and Helpers
+## Customizing Services and Helpers
 
 When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the core management Services or Umbraco Helpers.
 
-For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. It's easy to repeat this kind of logic in multiple places, Views, Partial Views / Controllers etc, which is fine, but it's generally considered good practice to consolidate this logic into a single place.
+For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. Repeating this kind of logic in multiple places, Views, Partial Views / Controllers etc, is fine. It's generally considered good practice to consolidate this logic into a single place.
 
 ### Extension methods
 
 One option is to add 'Extension Methods' to the `UmbracoHelper` class.
+
 ```csharp
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
@@ -351,15 +354,19 @@ namespace Umbraco8.Composers
     }
 }
 ```
+
 #### Lifespans
 
 **"Transient"** services can be injected into "Transient" and below ⤵. (i.e. "Transient" services can be injected anywhere)
+
 - "Transient" means that anytime this type is needed a brand new instance of this type will be created.
 
 **"Singleton"** services can be injected into "Singletons" and below ⤵.
+
 - "Singleton" means that only a single instance of this type will ever be created for the lifetime of the application.
 
 **"Request"** services can be injected into "Request" based lifespans only
+
 - "Request" based lifetime means anytime this type is needed one new instance of this type will be created for the duration of the current HttpRequest. The object will be disposed of at the end of the current HttpRequest.
 
 #### Implementing the service
@@ -522,6 +529,7 @@ namespace Umbraco8.Controllers
     }
 }
 ```
+
 :::warning
 This isn't truly 'best practice' when using DI. This 'only works' in Umbraco because when a dependency for the base RenderMvcController isn't supplied via a constructor, Umbraco 'falls back' and uses the Service Locator pattern to inject the missing elements. This enables developers to choose to ignore DI, but if trying to following DI best practice, and to make the controller 'unit testable' - use the following example instead which supplies all constructor parameters for the base class.
 :::
@@ -650,6 +658,7 @@ namespace Umbraco8.ViewPages
     }
 }
 ```
+
 with this in place all views inheriting from CustomViewPage or CustomViewPage&lt;T&gt; would have access to the SiteService:
 
 ```csharp

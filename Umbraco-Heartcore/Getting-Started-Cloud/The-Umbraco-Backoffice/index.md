@@ -7,6 +7,7 @@ meta.Description: "Tour of Umbraco Heartcore backoffice"
 # Tour of the Umbraco Backoffice
 
 In this article you will get an introduction to the different sections in the Umbraco Backoffice.
+
 <iframe width="800" height="450" src="https://www.youtube.com/embed/IYPRMCVCH9g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Login screen
@@ -39,7 +40,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 ## Dashboard
 
-Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project. 
+Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project.
 
 ![Getting Started](images/dashboard.png)
 
@@ -106,6 +107,7 @@ In the Languages section you can manage your language variants. Depending on wha
 The headless dashboard has some information about your Heartcore project. Depending on what plan you are on, you will have access to more languages and user groups.
 
 The dashboard shows you:
+
 - What plan you are on
 - How many available languages you have
 - How many user groups you have
@@ -116,9 +118,9 @@ In addition you are able to set the Content Delivery API to either Public or Pri
 
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
--   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
+- API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
 
--   Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
+- Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
 
 ## Users
 
@@ -130,7 +132,7 @@ For each user on your project you can generate a unique API key. This key will b
 
 ## Members
 
-The Members section is where you manage your members who are able to log into your projects frontend. You can create Member Groups for easy management if you have multiple types of memberships.
+The Members section is where you manage your members who are able to log into your projects frontend. You can create Member Groups for management if you have multiple types of memberships.
 
 ## Forms
 

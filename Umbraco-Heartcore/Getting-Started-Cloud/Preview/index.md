@@ -12,7 +12,7 @@ The Preview API is always protected, this means it requires an API Key with **Br
 
 You will also need a client consuming the Content Delivery API. If you don't already have one you can use one of the samples included with the Client Libraries.
 
-## Enabling easy preview for editors
+## Enabling preview for editors
 
 To make it easier for your editors to access the preview version of you website, you can add a Preview button to content nodes in the backoffice.
 

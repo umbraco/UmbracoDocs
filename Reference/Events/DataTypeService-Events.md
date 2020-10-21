@@ -6,7 +6,7 @@ meta.Description: "Information on the various events available in the DataTypeSe
 
 # DataTypeService Events#
 
-The DataTypeService class implements IDataTypeService. It provides easy access to operations involving IDataType.
+The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 
 <table>
     <tr>

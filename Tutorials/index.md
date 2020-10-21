@@ -29,7 +29,7 @@ Information about the basic Umbraco starter kit.
 
 ## [Editor's Manual](Editors-Manual/)
 
-The editors manual is a detailed yet easy to read user guide aimed at Umbraco editors for step-by-step instructions on performing every day tasks with Umbraco 7
+The editors manual is a detailed user guide aimed at Umbraco editors for step-by-step instructions on performing every day tasks with Umbraco.
 
 ## [Custom Error pages](Custom-Error-Pages)
 

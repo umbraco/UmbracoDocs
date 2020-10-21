@@ -43,4 +43,4 @@ Learn more about how to setup webhooks for various actions in the Umbraco backof
 
 ## [Preview](Preview)
 
-Learn more about how to access the Preview API and how to make it easy for your editors to access your preview site.
+Learn more about how to access the Preview API and how to enable your editors to access your preview site.

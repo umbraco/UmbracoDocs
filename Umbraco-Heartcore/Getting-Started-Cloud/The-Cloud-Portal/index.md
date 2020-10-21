@@ -30,7 +30,7 @@ When you are done you can go ahead and click on 'Done, take me back' in the top-
 
 ## Invite member
 
-In the top-right corner you will find the **invite member** option. This will allow you to quickly invite new team members to your project from a modal that pops up. This makes it very fast and easy to invite new team members. Depending on your chosen plan, you might be charged an extra €5 euros per added team member.
+In the top-right corner you will find the **invite member** option. This will allow you to quickly invite new team members to your project from a modal that pops up. This makes it very fast to invite new team members. Depending on your chosen plan, you might be charged an extra €5 euros per added team member.
 
 ![Invite Team Member Modal](images/inviteModal.png)
 

@@ -5,7 +5,7 @@ versionTo: 7.0.0
 
 # Cheatsheets
 
-_Easy to print cheatsheets covering different areas of Umbraco_
+_Easy-to-print cheatsheets covering different areas of Umbraco._
 
 ## [Umbraco v6 MVC Razor](https://our.umbraco.com/projects/developer-tools/umbraco-v6-mvc-razor-cheatsheets)
 

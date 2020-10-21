@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
 
-If you are interested in more general and easy-to-understand information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
+If you are interested in more general and information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
 ## General
 
@@ -216,7 +216,7 @@ If you have any experience with Azure Web Apps, Cloud works in the same way. So 
 
 ### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. It's really easy to get the site running locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
+Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. You can run your site locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 

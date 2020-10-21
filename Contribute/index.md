@@ -20,7 +20,7 @@ There are many ways in which you can contribute to the Umbraco Documentation. Wh
 
 ## [Style guide](Style-Guide/index.md)
 
-We have a few rules to follow when writing documentation, don't worry they are quite easy to follow and we have some tools you can use to help.
+We have a few rules to follow when writing documentation and we have some tools you can use to help.
 
 ## [Format, naming conventions and files](Markdown-Conventions)
 
@@ -45,11 +45,11 @@ On both Issues and Pull Requests we use labels to categories the various request
 
 Here's a quick explanation of the labels groups (colors) we use:
 
-- **Category** (e.g. `category/missing-documentation`, `category/umbraco-cloud`, `category/pending-release`)
-- **Community** (e.g. `community/pr`, `help wanted`)
-- **State** (e.g. `state/hq-discussion`)
-- **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
-- **Type** (e.g. `type/bug`)
+* **Category** (e.g. `category/missing-documentation`, `category/umbraco-cloud`, `category/pending-release`)
+* **Community** (e.g. `community/pr`, `help wanted`)
+* **State** (e.g. `state/hq-discussion`)
+* **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
+* **Type** (e.g. `type/bug`)
 
 Labels will be added to your Pull Request or Issue once it has been reviewed.
 
