@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Sample site in Unbraco UNO
+# Sample site in Unbraco UNO fisk
 
 Most unbraco UNO projects ships with a sample website for the imaginary **Unikorn Hotel and Spa**.
 
