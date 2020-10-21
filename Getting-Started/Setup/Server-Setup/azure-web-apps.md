@@ -6,6 +6,11 @@ versionFrom: 8.0.0
 
 _This section describes best practices with running Umbraco on Azure Web Apps_
 
+:::warn
+__If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
+[Load Balancing documentation](Load-Balancing/index.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
+:::
+
 ## What are Azure Web Apps
 
 They have been called a few names in the past, many people still know Azure Web Apps as Azure Web Sites.
@@ -37,9 +42,6 @@ The `Umbraco.Core.MainDom.Lock` setting is for Umbraco 8.6+. Having this setting
 :::
 
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
-
-__If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](Load-Balancing/index.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
 
 ## Storage
 
