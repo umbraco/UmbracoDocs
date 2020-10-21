@@ -78,7 +78,7 @@ It will look similar to this:
     @foreach (var item in selection)
     {
         <li>
-            <a href="@item.Url()">@item.Name</a>
+            <a href="@item.Url">@item.Name</a>
         </li>
     }
 </ul>
@@ -88,8 +88,8 @@ This code will output a list of all the **_Article Items_** as links using the n
 
 ```csharp
 <article class="special">
-        <div class="articletitle"><a href="@item.Url()">@item.Name</a></div>
-        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
+        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url">Read More..</a></div>
     </article>
 <hr/>
 ```

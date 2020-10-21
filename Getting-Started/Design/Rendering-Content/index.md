@@ -98,7 +98,7 @@ You can do this by querying content relative to your current page in template vi
 <ul>
     @foreach (var child in Model.Children())
     {
-        <li><a href="@child.Url()">@child.Name</a></li>
+        <li><a href="@child.Url">@child.Name</a></li>
     }
 </ul>
 ```

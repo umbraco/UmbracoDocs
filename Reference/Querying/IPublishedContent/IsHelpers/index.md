@@ -18,7 +18,7 @@ An IsHelper can be invoked as a method of an `IPublishedContent`.
 @{
 if(item.IsVisible())
 {
-<a href="@item.Url()">@item.Name</a>
+<a href="@item.Url">@item.Name</a>
 }
 }
 ```

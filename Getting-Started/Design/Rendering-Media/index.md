@@ -68,7 +68,7 @@ As with example one, we are accessing a MediaType `image` using the same ID assu
     // you could add this as an extension method to the Umbraco.Web.PublishedModels.Image class
     var orientationCssClass = mediaItem.UmbracoWidth > mediaItem.UmbracoHeight ? "img-landscape" : "img-portrait";
 
-    <img src="@mediaItem.Url()" alt="@mediaItem.Name" class="@orientationCssClass" />
+    <img src="@mediaItem.Url" alt="@mediaItem.Name" class="@orientationCssClass" />
 }
 ```
 
@@ -106,7 +106,7 @@ This example assumes that you have set up a crop called **myCropAlias** on your 
 If you want the original, uncropped image, you can ignore the GetCropUrl extension method and use one of the previously discussed approaches as shown below.
 
 ```html
-<img src="@mediaItem.Url()" />
+<img src="@mediaItem.Url" />
 ```
 
 ### More information
