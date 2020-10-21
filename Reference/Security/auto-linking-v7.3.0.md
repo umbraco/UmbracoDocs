@@ -7,19 +7,19 @@ keywords: oauth, security
 
 Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
-In many cases however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the back office. This is called Auto Linking.
+In many cases however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the backoffice. This is called Auto Linking.
 
 :::note
-Until v8.9.0 the auto-linking logic will __not__ execute if the local user already exists which means if you need to auto-link an existing account you will need to do a lot of manual work within your external login provider callbacks to manually link the user.
+Until v8.9.0 the auto-linking logic will __not__ execute if the local user already exists. This means if you need to auto-link an existing account you will need to do a lot of manual work within your external login provider callbacks to manually link the user.
 :::
 
 ## Configure External Login provider
 
 To enable auto linking there is an extension method on `Microsoft.Owin.Security.AuthenticationOptions` called `SetExternalSignInAutoLinkOptions` which you can pass in an instance of: `Umbraco.Web.Security.Identity.ExternalSignInAutoLinkOptions`
 
-### Simple Example
+### Basic example
 
-If you have installed the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) and are using the Google provider, it will create a file: `UmbracoADAuthExtensions.cs` which configures the Google options (`GoogleOAuth2AuthenticationOptions`). You can extend these options like:
+If you have installed the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) and are using the Google provider, it will create a `UmbracoADAuthExtensions.cs` file which configures the Google options (`GoogleOAuth2AuthenticationOptions`). You can extend these options like:
 
 ```cs
 googleOptions.SetExternalSignInAutoLinkOptions(
@@ -60,9 +60,9 @@ googleOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
 ```
 
 :::note
-For some providers it doesn't make sense to use auto-linking especially public providers such as Google or Facebook because in those cases it would mean that anyone can log into your site that has a Google or Facebook account. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
+For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
 :::
 
 ## Local logins
 
-If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to login locally (via username and password). In order to login locally they will have to assign a password to their account in the back office.
+If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally they will have to assign a password to their account in the backoffice.

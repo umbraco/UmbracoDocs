@@ -11,16 +11,17 @@ The `BackOfficeUserManager` is the ASP.NET Identity [UserManager](https://docs.m
 
 ## Extending
 
-The BackOfficeUserManager can be extended during OWIN startup in order to replace it's implementation with your own. This may be required if you want to extend the functionality of the BackOfficeUserManager for things like supporting 2FA.
+The BackOfficeUserManager can be extended during OWIN startup in order to replace its implementation with your own. This may be required if you want to extend the functionality of the BackOfficeUserManager for things like supporting two-factor authentication (2FA).
 
 :::note
 A 2FA implementation example is part of the community package ["Umbraco 2FA"](https://our.umbraco.com/packages/backoffice-extensions/umbraco-2fa/) and the source code can be found [here](https://github.com/Offroadcode/Umbraco-2FA).
-In this case it is required to extend the BackOfficeUserManager in order to implement the ASP.NET Identity `SupportsUserTwoFactor` property and the underlying User Store implementations: `IUserTwoFactorStore`, `IUserPhoneNumberStore`.
+
+In this case, it is required to extend the BackOfficeUserManager in order to implement the ASP.NET Identity `SupportsUserTwoFactor` property and the underlying User Store implementations: `IUserTwoFactorStore`, `IUserPhoneNumberStore`.
 :::
 
 ### Example
 
-You can create a custom OWIN startup class (or if you you install the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) it will add a custom OWIN startup class for you to use) then you can override `ConfigureUmbracoUserManager` to create a custom implementation.
+You can create a custom OWIN startup class (or if you install the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) it will add a custom OWIN startup class for you to use) then you can override `ConfigureUmbracoUserManager` to create a custom implementation.
 
 ```cs
 public class UmbracoCustomOwinStartup : UmbracoDefaultOwinStartup
@@ -48,5 +49,4 @@ The overloads of `ConfigureUmbracoUserManager` [are listed here](https://our.umb
 
 ## Events
 
-There are [several static events](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.BackOfficeUserManager-1.html#events) you can subscribe to on the `BackOfficeUserManager`. Internally this are mostly used for auditing.
-
+There are [several static events](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.BackOfficeUserManager-1.html#events) you can subscribe to on the `BackOfficeUserManager`. Internally these are mostly used for auditing.

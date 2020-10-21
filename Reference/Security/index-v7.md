@@ -32,7 +32,7 @@ The Umbraco backoffice supports external login providers (OAuth) for performing 
 
 ### [BackOfficeUserManager](backoffice-user-manager-v7.3.0.md) and Events
 
-The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling.
+The [`BackOfficeUserManager`](backoffice-user-manager-v7.3.0.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling.
 
 ### Custom password check
 
@@ -40,11 +40,11 @@ In most cases [External login providers (OAuth)](external-login-providers.md) wi
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
-You are able check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker-v7.3.0.md).
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker-v7.3.0.md).
 
 #### Authenticating with Active Directory credentials
 
-If you are using a network based Azure Directory (not Azure Active Directory), we have setup a guide on how to [connect the backoffice to Active Directory](Authenticate-With-AD-vpre8.md). It should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
+If you are using a network-based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-With-AD-vpre8.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data on members
 
