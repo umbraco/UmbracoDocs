@@ -6,15 +6,15 @@ meta.Description: "This section includes information on Umbraco security, its va
 
 # Security
 
-In this article you will find everything you need regarding security within Umbraco.
+In this article, you will find everything you need regarding security within Umbraco.
 
 ## [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/)
 
-On our main website we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
+On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
 ## [SSL/HTTPS](use-https.md)
 
-We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
+We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
@@ -24,7 +24,7 @@ Learn which password settings that can be configured in Umbraco.
 
 ## [Security Hardening](Security-hardening)
 
-Learm about how to can harden the security on your Umbraco website to secure it even further.
+Learn about how to can harden the security on your Umbraco website to secure it even further.
 
 ## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
 
@@ -44,7 +44,7 @@ The Umbraco backoffice supports external login providers (OAuth) for performing 
 
 ### [BackOfficeUserManager](backoffice-user-manager.md) and Events
 
-The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling.
+The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
 
 ### Custom password check
 
@@ -52,7 +52,7 @@ In most cases [External login providers (OAuth)](external-login-providers.md) wi
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
-You are able check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
 
 #### Authenticating with Active Directory credentials
 

@@ -6,7 +6,7 @@ meta.Description: "The BackOfficeUserManager is the ASP.NET Identity UserManager
 
 # BackOfficeUserManager and Events
 
-The `BackOfficeUserManager` is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling.
+The `BackOfficeUserManager` is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
 
 ## Extending
 
@@ -14,12 +14,12 @@ The BackOfficeUserManager can be extended during OWIN startup in order to replac
 
 :::note
 A 2FA implementation example is part of the community package ["Umbraco 2FA"](https://our.umbraco.com/packages/backoffice-extensions/umbraco-2fa/) and the source code can be found [here](https://github.com/Offroadcode/Umbraco-2FA).
-In this case it is required to extend the BackOfficeUserManager in order to implement the ASP.NET Identity `SupportsUserTwoFactor` property and the underlying User Store implementations: `IUserTwoFactorStore`, `IUserPhoneNumberStore`.
+In this case, it is required to extend the BackOfficeUserManager in order to implement the ASP.NET Identity `SupportsUserTwoFactor` property and the underlying User Store implementations: `IUserTwoFactorStore`, `IUserPhoneNumberStore`.
 :::
 
 ### Example
 
-You can create a custom OWIN startup class (or if you you install the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) it will add a custom OWIN startup class for you to use) then you can override `ConfigureUmbracoUserManager` to create a custom implementation.
+You can create a custom OWIN startup class (or if you install the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) it will add a custom OWIN startup class for you to use) then you can override `ConfigureUmbracoUserManager` to create a custom implementation.
 
 ```cs
 public class UmbracoCustomOwinStartup : UmbracoDefaultOwinStartup
