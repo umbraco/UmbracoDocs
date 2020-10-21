@@ -117,7 +117,7 @@ namespace Umbraco.Web.UI
 
 ## Schema class and migrations
 
-**Important!** It is important to note that the `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration, instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute, so choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
+**Important!** It is important to note that the `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration. Instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute. So you should choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
 
 Whilst this adds a level of duplication, it is important that migrations and the code/classes within a migration remain immutable. If the DTO was to be used for both, it could cause unexpected behaviour should you later modify your DTO used in your application but you have previous migrations expecting the DTO to be in its unmodified state.
 
@@ -127,9 +127,9 @@ When adding further migrations it is also important to note that if you need to 
 
 ## Data stored in custom database tables
 
-When storing data in custom database tables, this is by default not manageable by Umbraco at all. This can be great for many purposes such as storing massive amounts of data that you do not need to edit from inside the Umbraco backoffice. Decoupling part of your data from being managed by Umbraco as content can be a way of achieving better performance for your site, as it will no longer take up space in indexes, caches and the Umbraco database which may not have the best structure for your type of data.
+When storing data in custom database tables, this is by default not manageable by Umbraco at all. This can be great for many purposes such as storing massive amounts of data that you do not need to edit from inside the Umbraco backoffice. Decoupling part of your data from being managed by Umbraco as content can be a way of achieving better performance for your site. That way, it will no longer take up space in indexes and caches, and the Umbraco database which may not have the best structure for your type of data.
 
-This however also means that if you actually do need to edit or display this data, it is up to you to implement the underlying functionality supporting this.
+This however also means that if you do need to edit or display this data, it is up to you to implement the underlying functionality supporting this.
 
 It also means that if you need this data to be transferred or kept synchronized between multiple sites or environments, it is up to you to handle this. Data stored in custom tables are not supported out of the box by add-ons such as Umbraco Deploy or Umbraco Courier and therefore will not be deployable by default.
 
