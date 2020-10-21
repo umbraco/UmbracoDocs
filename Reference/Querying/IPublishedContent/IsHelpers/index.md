@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
-IsHelper methods are basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
+IsHelper methods are ternary operators, however they work a little nicer in that they can be embedded in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
 ---
 

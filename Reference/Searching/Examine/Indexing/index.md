@@ -63,7 +63,7 @@ public class CustomizeIndexComponent : IComponent
 
 An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index and/or filtering the data in the `ValueSet`. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
-Starting in Umbraco 8.4.0 it is easy to change the `IValueSetValidator` implementation for the built in indexes, for example:
+Starting in Umbraco 8.4.0, the `IValueSetValidator` implementation for the built in indexes, can be changed like this:
 
 ```c#
 using Examine;
@@ -109,14 +109,14 @@ If you are using a version of Umbraco before 8.4.0 then to do this you will need
 
 ### Overriding index creation
 
-You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`. 
+You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`.
 
 A few examples of why you might want to override the index creation:
 
 * To customize the default analyzer used in the built in indexes
 * Change the `IValueSetValidator`
 * Modify field definitions
-* Change the location of where the indexes are stored, or 
+* Change the location of where the indexes are stored, or
 * Completely replace the indexes with your own entirely custom implementation
 
 As an example, to change the `IValueSetValidator` for the MemberIndex in the above example:
@@ -231,11 +231,12 @@ Take a look at our [Examine Quick Start](../quick-start/index.md) to see some ex
 :::
 
 In order to create this index we need three things:
+
 1. An IndexCreator to create a definition for the configuration of the index(s)
 2. A Component to register the created index(s) with Examine
 3. A Composer to append this Component to the list of Components Umbraco initializes during start up and to register our IndexCreator service with the underlying dependency injection framework, so it can be injected into our Component constructor.
 
-(Read more about [using Composition and Components to modify Umbraco's default behaviour](../../../../Implementation/Composing/) and [Registering dependencies with Umbraco's underlying IoC framework](../../../Using-Ioc/)) 
+(Read more about [using Composition and Components to modify Umbraco's default behaviour](../../../../Implementation/Composing/) and [Registering dependencies with Umbraco's underlying IoC framework](../../../Using-Ioc/)).
 
 ### ProductIndexCreator
 

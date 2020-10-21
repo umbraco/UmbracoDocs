@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # File Storage on SAN/NAS/Clustered File Server/Network Share
 
-_documentation about setting up load balanced environments using shared file systems_
+_Documentation about setting up load balanced environments using shared file systems._
 
 ## Overview
 
@@ -12,13 +12,13 @@ Configuring your servers to work using a centrally located file system that is s
 
 A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](https://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](https://en.wikipedia.org/wiki/ISCSI) if your SAN supports it. There are also many other ways to connect to a SAN to share folders. Otherwise you should be able to connect to a NAS via a UNC path but you must ensure that it is a windows/NTFS file system - IIS will not work properly using a linux shared file system.
 
-There's a lot of work required to get this working, but once it's done it's fairly easy to maintain. We've this same setup working for many websites so hopefully these notes help you get started:
+There's a lot of work required to get this working, but once it's done it will improve the following maintenance process. We've this same setup working for many websites so hopefully these notes help you get started:
 
 ### Umbraco XML cache file
 
 One important configuration option that **must** be set when using a centralized storage is to store the umbraco.config file in a folder that is local to the individual server.
 
-For **Umbraco v7.7.3+**
+For **Umbraco v7.7.3+**:
 
 The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. This setting can be configured in the [Web.config](../../../../Reference/Config/webconfig/#umbracolocaltempstorage-umbraco-v773).
 
@@ -28,7 +28,7 @@ The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and th
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder.
 
-**Or**
+Or:
 
 ```xml
 <add key="umbracoLocalTempStorage" value="AspNetTemp" />
@@ -36,7 +36,7 @@ This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the ASP.NET temporary folder
 
-For **Umbraco v7.6+**
+For **Umbraco v7.6+**:
 
 ```xml
 <add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
@@ -44,7 +44,7 @@ For **Umbraco v7.6+**
 
 This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
-**Or**
+Or:
 
 ```xml
 <add key="umbracoContentXMLStorage" value="AspNetTemp" />
@@ -52,7 +52,7 @@ This will set Umbraco to store `umbraco.config` in the environment temporary fol
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
-For **Umbraco Pre v7.6**
+For **Umbraco Pre v7.6**:
 
 ```xml
 <add key="umbracoContentXMLUseLocalTemp" value="true" />
@@ -60,12 +60,11 @@ For **Umbraco Pre v7.6**
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
-
 ## Lucene/Examine configuration
 
 You cannot share indexes between servers, therefore when using a shared file server, Examine settings are a little bit tricky.
 
-#### Examine v0.1.83+ ####
+### Examine v0.1.83+
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
@@ -75,7 +74,7 @@ directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Exami
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
 
-#### Pre Examine v0.1.83 ####
+### Pre Examine v0.1.83
 
 * In ExamineIndex.config, you can tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
 * In ExamineSettings.config, you can add this attribute to all of your indexers and searchers: `useTempStorage="Sync"`

@@ -8,8 +8,7 @@ versionFrom: 7.0.0
 
 ## Bundling & Minification for JavaScript and CSS
 
-You can of course use whatever tools you are comfortable with for bundling & minification but it's worth
-noting that Umbraco ships with the ClientDependency Framework which offers runtime bundling & minification.
+You can use whichever tools you are comfortable with for bundling & minification but it's worth noting that Umbraco ships with the ClientDependency Framework which offers runtime bundling & minification.
 
 You can bundle and minify as follows in a view template file.
 

@@ -9,14 +9,14 @@ needsV8Update: "true"
 Applies to Umbraco 6.0.0+
 :::
 
-A MediaType is basically the same as a [ContentType](ContentType.md). I.e. a model / data definition for your media nodes.
+A MediaType is almost the same as a [ContentType](ContentType.md). I.e. a model / data definition for your media nodes.
 
 You can set icon, thumbnail and description. It is also possible to add tabs and properties.
 
 A Media Type differs from a Document Type in that it has no templates.
 
- * **Namespace:** `Umbraco.Core.Models`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -32,14 +32,17 @@ using Umbraco.Core.Services;
 ## Constructors
 
 ### new MediaType(int parentId)
+
 Constructor for creating a new `MediaType` object where the necessary parameter is the Id of the parent `MediaType` as an `Int`.
 
 ### new MediaType(IMediaType parent)
+
 Constructor for creating a new `MediaType` object where the necessary parameter is the parent `MediaType` as an `IMediaType` object.
 
 ## Properties
 
 ### .Alias
+
 Gets or Sets the Alias as a `String` of the MediaType.
 
 ```csharp
@@ -49,6 +52,7 @@ return mediaType.Alias;
 ```
 
 ### .AllowedContentTypes
+
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the MediaTypes allowed under the current MediaType.
 
 The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
@@ -60,6 +64,7 @@ return mediaType.AllowedContentTypes;
 ```
 
 ### .ContentTypeComposition
+
 Gets a list of `MediaTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current MediaType.
 
 The ContentTypeComposition provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
@@ -71,6 +76,7 @@ return mediaType.ContentTypeComposition;
 ```
 
 ### .CompositionPropertyGroups
+
 Gets a list of all 'PropertyGroup` objects from the composition including PropertyGroups from the current MediaType.
 
 ```csharp
@@ -80,6 +86,7 @@ return mediaType.CompositionPropertyGroups;
 ```
 
 ### .CompositionPropertyTypes
+
 Gets a list of all `PropertyType` objects from the composition including PropertyTypes from the current MediaType.
 
 ```csharp
@@ -89,6 +96,7 @@ return mediaType.CompositionPropertyTypes;
 ```
 
 ### .CreateDate
+
 Gets or Sets a `DateTime` object, indicating then the given MediaType was created.
 
 ```csharp
@@ -98,6 +106,7 @@ return mediaType.CreateDate;
 ```
 
 ### .CreatorId
+
 Gets or Sets the Id of the `User` who created the MediaType.
 
 ```csharp
@@ -107,6 +116,7 @@ return mediaType.CreatorId;
 ```
 
 ### .Description
+
 Gets or Sets the Description as a `String` for the MediaType.
 
 ```csharp
@@ -116,6 +126,7 @@ return mediaType.Description;
 ```
 
 ### .Icon
+
 Gets or Sets the Icon as a `String` for the MediaType.
 
 ```csharp
@@ -125,9 +136,11 @@ return mediaType.Icon;
 ```
 
 ### .Id
+
 Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
+
 Gets the `Guid` assigned to the MediaType during creation. This value is unique, and should never change, even if the content is moved between instances.
 
 ```csharp
@@ -137,6 +150,7 @@ return mediaType.Key;
 ```
 
 ### .Level
+
 Gets or Sets the given `MediaType` level in the site hierarchy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
@@ -155,6 +169,7 @@ return mediaType.Name;
 ```
 
 ### .ParentId
+
 Gets or Sets the parent `MediaType` Id as an `Int`.
 
 ```csharp
@@ -164,6 +179,7 @@ return mediaType.ParentId;
 ```
 
 ### .Path
+
 Gets or Sets the path of the MediaType as a `String`. This string contains a comma separated list of the ancestor Ids including the current MediaTypes own id at the end of the string.
 
 ```csharp
@@ -173,6 +189,7 @@ return mediaType.Path;
 ```
 
 ### .PropertyGroups
+
 Gets or Sets a `PropertyGroupCollection` containing a list of PropertyGroups for the current MediaType.
 
 ```csharp
@@ -182,6 +199,7 @@ return mediaType.PropertyGroups;
 ```
 
 ### .PropertyTypes
+
 Gets an `Enumerable` list of PropertyTypes aggregated for all groups within the current MediaType, as well as PropertyTypes not within a group.
 
 ```csharp
@@ -191,6 +209,7 @@ return mediaType.PropertyTypes;
 ```
 
 ### .SortOrder
+
 Gets the given `MediaType` index, compared to sibling content.
 
 ```csharp
@@ -200,6 +219,7 @@ return mediaType.SortOrder;
 ```
 
 ### .Thumbnail
+
 Gets or Sets the Thumbnail as a `String` for the MediaType.
 
 ```csharp
@@ -211,6 +231,7 @@ return mediaType.Thumbnail;
 ## Methods
 
 ### .AddContentType(IContentTypeComposition mediaType)
+
 Adds a new `MediaType` to the list of composite MediaTypes.
 
 ```csharp
@@ -225,6 +246,7 @@ contentTypeService.Save(videoContentType);
 ```
 
 ### .CompositionAliases()
+
 Returns an `Enumerable` list of MediaType aliases as `String` from the current composition.
 
 ```csharp
@@ -237,6 +259,7 @@ foreach(var alias in aliases){
 ```
 
 ### .CompositionIds()
+
 Returns an `Enumerable` list of MediaType Ids as `Int` from the current composition.
 
 ```csharp
@@ -249,6 +272,7 @@ foreach(var id in ids){
 ```
 
 ### .ContentTypeCompositionExists(string alias)
+
 Checks if a `MediaType` with the supplied alias exists in the list of composite MediaTypes.
 
 ```csharp
@@ -259,6 +283,7 @@ bool result = mediaType.ContentTypeCompositionExists("meta");
 ```
 
 ### .RemoveContentType(string alias)
+
 Removes a `MediaType` with the supplied alias from the list of composite MediaTypes.
 
 ```csharp
@@ -271,6 +296,7 @@ if(success)
 ```
 
 ### .RemovePropertyType(string propertyTypeAlias)
+
 Removes a `PropertyType` from the current `MediaType`.
 
 ```csharp

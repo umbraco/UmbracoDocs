@@ -198,7 +198,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/v7/ui/#/api
 
-For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
+For this example it would be nice to welcome the editor by name. To achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 

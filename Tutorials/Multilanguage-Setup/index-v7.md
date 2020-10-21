@@ -69,7 +69,7 @@ Final result:
 ![final result en](images/13.png)
 ![final result dk](images/14.png)
 
-There is of course a lot more you can do to customize this, but here are the fundamentals.
+There is a lot more you can do to customize this, but here are the fundamentals.
 
 ## Multilanguage backoffice
 
@@ -77,8 +77,10 @@ To be able to translate the labels of tabs, names and descriptions on your docum
 
 Consider the following text on a document type:
 
-**Tab**: Content<br/>
-**Name**: Header<br/>
+**Tab**: Content
+
+**Name**: Header
+
 **Description**: This is the header of the page.
 
 The name of document type is "Document".
@@ -86,8 +88,10 @@ The name of document type is "Document".
 If you create dictionary items for these fields with translations to other languages you can reference these, and then have these labels translated so the text appears in the language of the editor logged into Umbraco.
 You use a special syntax to reference the name of the dictionary items as shown below:
 
-**Tab**: #Content<br/>
-**Name**: #Header<br/>
+**Tab**: #Content
+
+**Name**: #Header
+
 **Description**: #HeaderDescription
 
 Likewise, the name of the document type can be referenced with #Document.

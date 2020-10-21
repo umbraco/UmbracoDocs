@@ -117,7 +117,7 @@ Extending models should be used to add stateless, local features to models, and 
 
 #### Good
 
-A customer has "posts" that has two "release date" properties. One is a true date picker property and is used to specify an actual date and to order the posts. The other is a string that's used to specify dates such as "Summer 2015" or "Q1 2016". Alongside the title of the post, the customer wants to display the text date, if present, else the actual date, if any. If none of those are present, the Umbraco update date should be used. Of course, each view can contain code to deal with the situation, but it is much more efficient to extend the `Post` model:
+A customer has "posts" that has two "release date" properties. One is a true date picker property and is used to specify an actual date and to order the posts. The other is a string that's used to specify dates such as "Summer 2015" or "Q1 2016". Alongside the title of the post, the customer wants to display the text date, if present, else the actual date, if any. If none of those are present, the Umbraco update date should be used. Keep in mind that each view can contain code to deal with the situation, but it is much more efficient to extend the `Post` model:
 
 ```csharp
 public partial class Post

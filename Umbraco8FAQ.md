@@ -40,6 +40,7 @@ If you are using Umbraco Cloud we have a [Cloud specific migration guide](Umbrac
 :::
 
 ## For how long will Umbraco 7 be supported outside of Umbraco Cloud?
+
 As Umbraco 7 is open source, you'll be able to use it, well, forever. You should though be aware that Umbraco HQ is only committed to supporting this version up until a specific date.
 
 We will continue to provide necessary updates in regard to bug and security fixes for Umbraco 7 up until the September 30th 2023.
@@ -50,6 +51,6 @@ If you are an Umbraco Gold Partner or have a support plan with Umbraco HQ, we wi
 
 ## What are the highlights of Umbraco 8?
 
-The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco even simpler, smoother and basically, more enjoyable. For everyone involved!
+The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco more enjoyable for everyone involved.
 
 Also, if you are a developer and currently have projects on Umbraco 7 (or previous versions) you will notice a big difference in the codebase. In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.

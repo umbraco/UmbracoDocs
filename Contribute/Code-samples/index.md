@@ -72,7 +72,7 @@ If you are adding a code sample using a language that isn't support, it is recom
 
 ### Add only complete compilable samples (incl. `using` statements)
 
-As a reader of the Umbraco Documentation, you should be able to grab code samples in the articles and apply them directly to your own code solution. Of course, this is an aspiration and there might be a need for some minor alterations, but on the most basic level, the code in the sample should at the very least be compilable. Including any relevant Using statements for namespaces that might provide that 'extension' method or key functionality.
+As a reader of the Umbraco Documentation, you should be able to grab code samples in the articles and apply them directly to your own code solution. Keep in mind that his is an aspiration and there might be a need for some minor alterations, but on the most basic level, the code in the sample should at the very least be compilable. Including any relevant Using statements for namespaces that might provide that 'extension' method or key functionality.
 
 ### Check for syntax errors
 

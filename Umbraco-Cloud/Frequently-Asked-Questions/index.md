@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
 
-If you are interested in more general and easy-to-understand information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
+If you are interested in more general and information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
 ## General
 
@@ -32,7 +32,7 @@ Not currently.
 
 ### Can I move my site from Umbraco Cloud?
 
-Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
+Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 
 ### Can I move my existing site to Umbraco Cloud?
 
@@ -185,7 +185,7 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should of course still be able to use the site locally.
+Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
 
 Learn more about this and how to set it up in our [Security section](../Security/#restrict-backoffice-access-using-ip-filtering).
 
@@ -216,7 +216,7 @@ If you have any experience with Azure Web Apps, Cloud works in the same way. So 
 
 ### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. It's really easy to get the site running locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
+Yes, an Umbraco Cloud project is similar to a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. You can run your site locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 

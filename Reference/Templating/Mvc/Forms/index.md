@@ -79,7 +79,7 @@ Lastly we need to render the HTML form to ensure that it posts to the surface co
 
 The above code snippet is a PartialView to render the form. Because the Model for the view is the ViewModel we want to scaffold the form, we can do an `@Html.EditorFor(x => Model)` to automatically create all of the input fields.
 
-#### BeginUmbracoForm Overloads
+### BeginUmbracoForm Overloads
 
 This lists the different overloads available for BeginUmbracoForm:
 
@@ -108,41 +108,42 @@ This lists the different overloads available for BeginUmbracoForm:
 
 ## Understanding the Routing Process
 
-There's been numerous cases of people attempting to return a PartialView directly from their [HttpPost] action due to not fully understanding the routing process of POSTing data to the server. This will explain the sequence of events. For this example we'll assume that the page that is rendering is at the address: http://mysite.com/feedback
+There's been numerous cases of people attempting to return a PartialView directly from their [HttpPost] action due to not fully understanding the routing process of POSTing data to the server. This will explain the sequence of events. For this example we'll assume that the page that is rendering is at the address: `http://mysite.com/feedback`.
 
 ### 1. Umbraco page requested
 
-1. A user visits the page http://mysite.com/feedback
+1. A user visits the page `http://mysite.com/feedback`
 2. Umbraco finds this content page
 
 ### 2. Umbraco page rendered
+
 1. The RenderMvcController executes the request for the current page
 2. An MVC view is rendered which contains a partial view with an html form created with `BeginUmbracoForm`
 
 ### 3. User submits the form
 
 1. The user fills out the form and submits it
-2. An http POST is made (you'll notice to the same URL that is currently rendering: http://mysite.com/feedback)
+2. An http POST is made (you'll notice to the same URL that is currently rendering: `http://mysite.com/feedback`)
 3. Umbraco finds the content page
 4. Umbraco detects that a POST has been made
 5. Umbraco decrypts a special hidden value injected into the POST by the BeginUmbracoForm
 6. Using this decrypted data it routes the request directly to the SurfaceController's [HttpPost] action
 7. The [HttpPost] action executes returning "CurrentUmbracoPage()" if the data is invalid or "RedirectToCurrentUmbracoPage()" if the data is valid...
 
-    #### 3.1 RedirectToCurrentUmbracoPage()
+#### 3.1 RedirectToCurrentUmbracoPage()
 
-    1. The request is completely redirected, the process starts back over again at **1. Umbraco page requested**
+1. The request is completely redirected, the process starts back over again at **1. Umbraco page requested**
 
-    #### 3.2 CurrentUmbracoPage()
+#### 3.2 CurrentUmbracoPage()
 
-    1. Since the request is not valid any model errors will be automatically added to the ModelState dictionary. You can also manually add any errors to the ModelState dictionary.
-    2. The call to `return CurrentUmbracoPage()` sends the request back through the Umbraco pipeline and maintains the current ModelState and ViewData
-    3. The process starts again at **2. Umbraco page rendered**
+1. Since the request is not valid any model errors will be automatically added to the ModelState dictionary. You can also manually add any errors to the ModelState dictionary.
+2. The call to `return CurrentUmbracoPage()` sends the request back through the Umbraco pipeline and maintains the current ModelState and ViewData
+3. The process starts again at **2. Umbraco page rendered**
 
 You can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user. This is because you are not sending the request back to Umbraco.
 
 ## Display success messages
 
-Displaying a success message is easy. You can either send the user to a totally different page. For example you could use `return RedirectToUmbracoPage(nodeId)`. This page would typically be a child of the page where the form is located in, which is hidden in the navigation.
+One way to display a success message to would be to send the user to a totally different page. For example you could use `return RedirectToUmbracoPage(nodeId)`. This page would typically be a child of the page where the form is located in, which is hidden in the navigation.
 
 The other way is to add a message or something to the TempData. For example you could use `TempData.Add("Success", "your form was successfully submitted");` in your SurfaceController action, and then display the message using `@TempData["Success"]` in the page where the form is located in.

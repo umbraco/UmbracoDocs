@@ -5,9 +5,10 @@ versionRemoved: 8.0.0
 
 # MediaService Events
 
-The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.
+The MediaService class implements IMediaService. It provides access to operations involving IMedia.
 
 ## Usage
+
 Example usage of the MediaService events:
 
 ```csharp
@@ -38,6 +39,7 @@ namespace My.Namespace
 ```
 
 ## Events
+
 <table>
     <tr>
         <th>Event</th>
