@@ -16,6 +16,7 @@ Be sure you read the [Overview](index.md) before you begin!
 :::
 
 ## Design
+
 These instructions make the following assumptions:
 
 * All servers are part of the same domain
@@ -30,9 +31,10 @@ There are two design alternatives you can use to effectively load balance server
 1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__
 2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share).
 
-And you'll obviously need a load balancer to do your load balancing!
+And you will need a load balancer to do your load balancing.
 
 ## DNS
+
 Each server in your cluster will require a custom unique DNS name assigned to the host header for the IIS install for this website. This is so Umbraco knows which server nodes to replicate its cached content with.
 
 An example of how to setup DNS and host headers between 3 load balanced servers:

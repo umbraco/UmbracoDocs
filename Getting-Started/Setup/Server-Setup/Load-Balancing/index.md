@@ -24,8 +24,8 @@ This document assumes that you have a fair amount of knowledge about:
 It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.
 :::
 
-
 ## Design
+
 These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
@@ -38,7 +38,7 @@ There are three design alternatives you can use to effectively load balance serv
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
 3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
-You will obviously need a load balancer to do your load balancing!
+You will need a load balancer to do your load balancing.
 
 ## How Umbraco load balancing works
 
@@ -101,11 +101,11 @@ This section describes the various configuration options depending on your hosti
 ### Machine Key
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
-    * Here are a couple of tools that can be used to generate machine keys:
-		* 	[Machine key generator on betterbuilt.com](http://www.betterbuilt.com/machinekey/)
-		* 	[Machine key generator on developerfusion.com](https://www.developerfusion.com/tools/generatemachinekey/)
+  * Here are a couple of tools that can be used to generate machine keys:
+    * [Machine key generator on betterbuilt.com](http://www.betterbuilt.com/machinekey/)
+    * [Machine key generator on developerfusion.com](https://www.developerfusion.com/tools/generatemachinekey/)
 * You need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
-* 	Umbraco offers the opportunity to auto generate a machine key during the installation steps so this may already exist
+* Umbraco offers the opportunity to auto generate a machine key during the installation steps so this may already exist
 
 ```xml
 <configuration>
