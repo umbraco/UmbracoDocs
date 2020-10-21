@@ -66,7 +66,7 @@ Go to the __Settings__ section. On the __Media Types__ node click the menu icon 
 Having different folders for different media types makes it possible to restrict where media items can be created. Only allowing PDF uploads in a certain folder or employee images in another makes it easier for editors to keep the Media section organized.
 :::
 
-Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
+Choose __New Media Type__. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
 ![Creating a Media Type](images/create-new-media-type.png)
 

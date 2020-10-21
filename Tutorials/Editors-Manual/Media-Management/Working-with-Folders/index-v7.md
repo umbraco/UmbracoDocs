@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Working with Folders
 
-All media within your site first needs to be loaded into the Media section. The Media section is basically a media library for the site. Within the Media section you can create folders and files in a similar manner to that of your desktop computer.
+All media within your site first needs to be loaded into the Media section. The Media section is a media library for the site. Within the Media section you can create folders and files in a similar manner to that of your desktop computer.
 
 Folders can be used to help organize the Media section and to keep similar items in a logical structure. It is highly recommended to ensure you use folders to organize your media. When your media library starts to grow folders they become essential in locating media quickly and easily.
 

@@ -56,7 +56,7 @@ Save the manifest, **restart the app pool** and have a look at the markdown data
 
 The next step is to gain access to our new configuration options. For this, open the `markdowneditor.controller.js` file.
 
-Let's first add the default value functionality. Basically, when the `$scope.model.value` is empty or *undefined*, we want to use the default value, to do that, we add the following to the very beginning of the controller:
+Let's first add the default value functionality. When the `$scope.model.value` is empty or *undefined*, we want to use the default value, to do that, we add the following to the very beginning of the controller:
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){

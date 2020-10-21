@@ -66,7 +66,7 @@ This is where we define which of the standard properties (not user defined prope
 These are the properties that we have defined against our DocumentTypes that we want to index.  Use the property aliases.
 
 **`<IncludeNodeTypes>` & `<ExcludeNodeTypes>`**
-I like to think of these as the white list and the black list. Basically figure out if you have to include more or exclude more nodeTypes. Generally which ever one requires less configuration is the one that you should use but that is completely up to you and how much you like typing.
+I like to think of these as the white list and the black list. Figure out if you have to include more or exclude more nodeTypes. Generally which ever one requires less configuration is the one that you should use but that is completely up to you and how much you like typing.
 
 Remember that creating errors in index configuration can be done for if you make spelling mistakes. You will know if you have made errors as your index will either not create or not include the features you expect.  We will look at how to check your index content later with Luke, a Java based tool that allows us to look into our index and run queries against the index directly.
 
@@ -273,11 +273,11 @@ When this converts it looks like this:
 
 `nodeName:"paging in XSLT"`
 
-The problem becomes apparent straight away as you can see it quotes the phrase which basically means the term is the whole phrase. What we want from Lucene is the following:
+The problem becomes apparent straight away as you can see it quotes the phrase which means the term is the whole phrase. What we want from Lucene is the following:
 
 `nodeName:paging in XSLT`
 
-What this basically means is that field nodeName needs to contain either paging, in, or XLST.
+What this means, is that field nodeName needs to contain either paging, in, or XLST.
 
 So to achieve this we need to build our custom Lucene query and then pass it to Examine as a Raw query.
 
