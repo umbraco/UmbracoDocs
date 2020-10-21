@@ -3,11 +3,16 @@ versionFrom: 8.9.0
 keywords: oauth, security
 ---
 
-# Auto Linking accounts
+# Linking External Login Provider accounts
 
 Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
 In many cases however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the back office. This is called Auto Linking.
+
+:::note
+From v8.9.0 the auto-linking logic will execute even if the local user already exists which means you can easily auto-link an already existing account which was much more difficult before.
+:::
+
 
 ## Configure External Login provider
 
@@ -27,12 +32,13 @@ adOptions.SetBackOfficeExternalLoginProviderOptions(
 
             // Optionally specify default user group, else
             // assign in the OnAutoLinking callback
+            // (default is editor)
             defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
 
             // Optionally specify the default culture to create
             // the user as. If null it will use the default
             // culture defined in the web.config, or it can
-            // be dyanmically assigned in the OnAutoLinking
+            // be dynamically assigned in the OnAutoLinking
             // callback.
             defaultCulture: null)
         {
@@ -45,7 +51,7 @@ adOptions.SetBackOfficeExternalLoginProviderOptions(
             // Optional callback
             OnAutoLinking = (user, externalLogin) =>
             {
-                // You can customize the user before it's created.
+                // You can customize the user before it's linked.
                 // i.e. Modify the user's groups based on the Claims returned
                 // in the externalLogin info
             },
@@ -94,3 +100,70 @@ For some providers it doesn't make sense to use auto-linking especially public p
 If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to login locally (via username and password). In order to login locally they will have to assign a password to their account in the back office.
 
 If the `DenyLocalLogin` option is enabled, then all password changing functionality in the back office is also disabled and local login is not possible.
+
+## Transfering Claims from External identities
+
+:::note
+This was not easily possible before v8.9.0
+:::
+
+In some cases you may want to flow a Claim returned in your external login provider to the Umbraco back office identity's Claims (the authentication cookie). This can be done during the `OnAutoLinking` and `OnExternalLogin`.
+
+Reasons for this could be to store the external login provider user ID into the back office identity cookie so it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
+
+:::warning
+Do not flow large amounts of data into the back office identity because this information is stored into the back office authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the back office identity itself.
+:::
+
+### Example
+
+_This is a very simplistic example for brevity, no null checks, etc..._
+
+```cs
+adOptions.SetBackOfficeExternalLoginProviderOptions(
+    new BackOfficeExternalLoginProviderOptions
+    {
+        AutoLinkOptions = new ExternalSignInAutoLinkOptions(
+            autoLinkExternalAccount: true)
+        {
+            OnAutoLinking = (user, loginInfo) =>
+            {
+                // flow the MyClaim claim to the umbraco
+                // back office identity cookie authentication
+                var extClaim = loginInfo
+                    .ExternalIdentity
+                    .FindFirst("MyClaim");
+                user.Claims.Add(new IdentityUserClaim<int>
+                {
+                    ClaimType = extClaim.Type,
+                    ClaimValue = extClaim.Value,
+                    UserId = user.Id
+                });
+            },
+            OnExternalLogin = (user, loginInfo) =>
+            {
+                // flow the MyClaim claim to the umbraco
+                // back office identity cookie authentication
+                var extClaim = loginInfo
+                    .ExternalIdentity
+                    .FindFirst("MyClaim");
+                user.Claims.Add(new IdentityUserClaim<int>
+                {
+                    ClaimType = extClaim.Type,
+                    ClaimValue = extClaim.Value,
+                    UserId = user.Id
+                });
+            }
+        }
+    });
+```
+
+## Storing external login provider data
+
+In some cases you may need to persist data from your external login provider like Access Tokens, etc... You can persist this data to the affiliated user's external login data via the `IExternalLoginService`.
+
+The `void Save(IIdentityUserLoginExtended login)` overload takes a new model of type `IIdentityUserLoginExtended` that contains property called `UserData`. This is a blob text column so can store any arbitrary data for the external login provider.
+
+:::note
+Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the back office user isn't yet created you will most likely need to store this data in memory first during auto-linking and then persist this data to the service once the user is linked and created.
+:::

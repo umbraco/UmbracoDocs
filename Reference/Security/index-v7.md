@@ -30,6 +30,10 @@ The Umbraco ASP.NET Identity implementation can be extended by using the [Umbrac
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
+### [BackOfficeUserManager](backoffice-user-manager-v7.3.0.md) and Events
+
+The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling.
+
 ### Custom password check
 
 In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
