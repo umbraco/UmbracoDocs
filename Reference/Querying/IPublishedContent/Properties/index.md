@@ -107,7 +107,7 @@ Returns the index the page is on, compared to its siblings
 @Model.SortOrder
 ```
 
-### .Url
+### .Url - (Obsolete)
 
 Returns the complete Url to the page in the current culture
 
@@ -115,12 +115,30 @@ Returns the complete Url to the page in the current culture
 @Model.Url
 ```
 
-### .Url(string culture = null)
+:::note
+This property (as of v8.8) has been marked as obsolete. This means it should no longer be used to retrieve the url of the current page and could be removed in a future version of Umbraco. Instead the extension method `.Url()`, found in the `Umbraco.Web` namespace, should be used.
+:::
 
-Returns the complete Url to the page in the specified culture
+### .Url(string culture = null, UrlMode mode = UrlMode.Default) - (Extension method)
+
+Returns the Url to the page. 
+
+This can be used to get the Url for a specific culture, and for getting the Url in a specific (mode)[https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.PublishedContent.UrlMode.html].
 
 ```csharp
 @Model.Url()
+```
+
+**Example:** Getting a Danish Url for a site where a Danish language has been set up.
+
+```csharp
+@Model.Url("dk")
+```
+
+**Example:** Getting an Absolute Danish Url for a site where a Danish language has been set up.
+
+```csharp
+@Model.Url("dk", UrlMode.Absolute)
 ```
 
 ### .UrlSegment
