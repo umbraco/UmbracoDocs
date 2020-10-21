@@ -37,7 +37,7 @@ Given a node ID, returns a `IPublishedContent`
 </h3>
 
 @foreach (var child in page.Children) {
-    <a href="@child.Url">@child.Name</a>
+    <a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -48,7 +48,7 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 ```csharp
 // Get the children of the first content item found in the root
 @foreach (var child in Umbraco.ContentAtRoot().First().Children) {
-    <a href="@child.Url">@child.Name</a>
+    <a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -83,7 +83,7 @@ Given a node ID, returns an `IPublishedContent` Media entity
 ```csharp
 @{
     var media = Umbraco.Media(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
-    var image = media.Url;
+    var image = media.Url();
     var height = media.Value<int>("umbracoHeight");
 }
 ```
@@ -94,7 +94,7 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ```csharp
 @foreach (var child in Umbraco.MediaAtRoot()) {
-    <img src="@child.Url" />
+    <img src="@child.Url()" />
 }
 ```
 
@@ -288,7 +288,7 @@ By default, Umbraco searches it's 'External' search index for any published cont
     <ul>
         @foreach (var result in Umbraco.ContentQuery.Search("ipsum"))
         {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+            <li><a href="@result.Content.Url()">@result.Content.Name</a></li>
         }
     </ul>
 }
@@ -307,7 +307,7 @@ Specifying the number of records 'to skip', and the number of records 'to take' 
             <ul>
                 @foreach (var result in search)
                 {
-                    <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+                    <li><a href="@result.Content.Url()">@result.Content.Name</a></li>
                 }
             </ul>
         </li>
@@ -334,7 +334,7 @@ For more complex searching you can construct an Examine QueryExecutor. In the ex
     foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
     {
         {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+            <li><a href="@result.Content.Url()">@result.Content.Name</a></li>
         }
     }
 }

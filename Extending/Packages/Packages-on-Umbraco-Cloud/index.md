@@ -54,7 +54,7 @@ So you have a property editor with a textarea input, that saves an ID as a strin
 Then in the template you have something like this:
 
 ```csharp
-<img src="@Umbraco.Media(Model.Value("BadMedia")).Url" />
+<img src="@Umbraco.Media(Model.Value("BadMedia")).Url()" />
 ```
 
 Renders the image perfectly! 

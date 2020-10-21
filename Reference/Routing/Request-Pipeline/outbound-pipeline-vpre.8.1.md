@@ -174,7 +174,7 @@ In our example the "swibble" node could have the following URL: "http://example.
 Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url (e.g.):
 
 ```csharp
-@Model.Url
+@Model.Url()
 @Umbraco.Url(1234)
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
