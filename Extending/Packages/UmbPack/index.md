@@ -166,7 +166,7 @@ umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
 umbpack pack .\package.xml -p Name=MyPackage;Version=1.0.0
 ```
 
-This would pack your package and update your package.xml - note this happens before the automatic naming based on name and version as well. This is especially useful in CI/CD deployments where you may not know all your values before the run!
+This would pack your package and update your package.xml - note this happens before the automatic naming based on name and version as well. This is especially useful in CI/CD deployments where you may not know all your values before the run.
 
 ## The push command
 
@@ -219,4 +219,3 @@ Combining several archive patterns:
 ```
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current UmbPackTest_0* UmbPackTest-Assets_0*
 ```
-
