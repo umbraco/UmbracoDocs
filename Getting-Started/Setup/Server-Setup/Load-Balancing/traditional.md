@@ -57,7 +57,7 @@ Server 3
 * Internal website DNS name: server3.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.12
 
-Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: `http://www.mywebsite.com` then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
+Keep in mind that you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: `http://www.mywebsite.com` then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
 
 ### Backoffice server
 

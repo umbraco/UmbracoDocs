@@ -119,7 +119,7 @@ namespace MyNamespace
 }
 ```
 
-You will, of course, need to register your ContentFinder [using a Composer](../../../Implementation/Composing/index.md)
+You will need to register your ContentFinder [using a Composer](../../../Implementation/Composing/index.md)
 
 ## Log Levels
 

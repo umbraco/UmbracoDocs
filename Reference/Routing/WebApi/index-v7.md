@@ -55,7 +55,7 @@ public class ScoresController : UmbracoApiController
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
 
 Example:
 

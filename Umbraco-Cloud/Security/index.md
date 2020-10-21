@@ -100,7 +100,7 @@ The following rule can be added to your web.config file in the `system.webServer
     <action type="AbortRequest"/>
 </rule>
 ```
-For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can, of course, choose your own error.
+For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
 :::note
 You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
@@ -126,14 +126,14 @@ The following rule can be added to your web.config file in the `system.webServer
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-        
+
         <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
          <add input="{REMOTE_ADDR}" pattern="52.232.105.169" negate="true" />
          <add input="{REMOTE_ADDR}" pattern="52.174.66.30" negate="true" />
 
         <!-- Add other client IPs that need access to the backoffice -->
         <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-       
+
     </conditions>
     <action type="CustomResponse" statusCode="403"/>
 </rule>

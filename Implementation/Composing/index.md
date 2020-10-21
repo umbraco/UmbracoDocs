@@ -286,10 +286,12 @@ namespace Umbraco.Web.Dashboards
 ```
 
 ### [HideFromTypeFinder]
+
 This is used to hide a type from being auto-scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation. Type scanning would make this change automatically at start up if the custom implementation was detected via type scanning. This attribute could hide the class from the scanner.
 
 ### [DisableComposer] & [Disable]
-These attributes allow you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
+
+These attributes allow you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Keep in mind that if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
 
 ```csharp
 [Disable]
@@ -313,6 +315,7 @@ public class MyComposer : IComposer
 ```
 
 But maybe they want to swap our two "something" implementations? In this case, assembly-level attributes can be used:
+
 ```csharp
 [assembly:DisableComposer(typeof(Way1Composer))]
 [assembly:EnableComposer(typeof(Way2Composer))]
@@ -323,6 +326,7 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 :::
 
 ### [RuntimeLevel]
+
 The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
 
 By default, any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus does not need to explicitly add the attribute as shown in the example below.
@@ -349,25 +353,31 @@ If you wish to see the order of components when Umbraco boots, then you can see 
 
 ## Runtime Levels
 
-The `Umbraco.Core.RuntimeLevel` enum contains the following values:<br/>
-`BootFailed`<br/>
+The `Umbraco.Core.RuntimeLevel` enum contains the following values:
+
+`BootFailed`
+
 The runtime has failed to boot and cannot run.
 
-`Unknown`<br/>
+`Unknown`
+
 The level is unknown.
 
-`Boot`<br/>
+`Boot`
+
 The runtime is booting.
 
-`Install`<br/>
+`Install`
+
 The runtime has detected that Umbraco is not installed at all, ie. there is no database, and is currently installing Umbraco.
 
-`Upgrade`<br/>
+`Upgrade`
+
 The runtime has detected an Umbraco install which needed to be upgraded, and is currently upgrading Umbraco.
 
-`Run`<br/>
-The runtime has detected an up-to-date Umbraco install and is running.
+`Run`
 
+The runtime has detected an up-to-date Umbraco install and is running.
 
 ## Example of using Ordered Collections and adding types explicitly
 

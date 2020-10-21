@@ -56,7 +56,7 @@ The process of creating a Child Project is rather involved. While you don't have
 
 Between most of these steps we send updates to the Project page in the Portal, so the progress bar, progress updates and the Activity Stream are updated.
 
-The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the Git repository to the other environments and everything will be up to date, and the Child project is ready for business.
+The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy) the content of the Git repository to the other environments and everything will be up to date, and the Child project is ready for business.
 
 ### Upgrading Child projects
 

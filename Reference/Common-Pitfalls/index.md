@@ -321,7 +321,7 @@ being indexed and if you are rebuilding an index, this will mean this logic will
 going into each index ... That could mean a tremendous number of lookups and performance drain.
 
 Similarly, if you are executing other logic in these events that perform poorly, then anytime you save or publish content or media
-it will slow that process down. And, of course, if you rebuild an index then any slow code running in these events will cause the indexing
+it will slow that process down. And if you rebuild an index then any slow code running in these events will cause the indexing
 to go ultra slow.
 
 ## RenderTemplate
@@ -493,7 +493,7 @@ to perform almost any content filtering you want.
 ## XPathNodeIterator - for when you need direct XML support
 
 Using the `GetXPathNavigator` method is a little more advanced but can come in very handy to solve some performance problems when
-dealing with a ton of content. Of course, when you use this method you'll now be working directly with XML.
+dealing with a ton of content. Keep in mind that when you use this method you'll now be working directly with XML.
 
 For example, here's how to turn the above recipe query into a much more efficient query
 without allocating any `IPublishedContent` instances:

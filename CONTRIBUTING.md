@@ -2,12 +2,12 @@
 
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.com/documentation](https://our.umbraco.com/documentation).
 
-#### Getting started with Git and GitHub
+## Getting started with Git and GitHub
 
- * [Download GitHub Desktop](https://desktop.github.com)
- * [Configuring GitHub Desktop](https://help.github.com/desktop/guides/)
- * [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
- * [The basic guide to Git](https://rogerdudler.github.io/git-guide/)
+* [Download GitHub Desktop](https://desktop.github.com)
+* [Configuring GitHub Desktop](https://help.github.com/desktop/guides/)
+* [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
+* [The basic guide to Git](https://rogerdudler.github.io/git-guide/)
 
 ## Repository organisation
 
@@ -30,7 +30,7 @@ git fetch upstream
 git rebase upstream/main
 ```
 
-In this command, we're syncing with the `main` branch, but you can, of course choose another one if needed.
+In this command, we're syncing with the `main` branch. You can choose another one if needed.
 
 ### Contributing documentation
 

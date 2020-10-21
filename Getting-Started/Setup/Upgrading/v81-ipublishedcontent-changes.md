@@ -10,7 +10,7 @@ In the excitement of the version 8 release, we assumed that `IPublishedContent` 
 
 ## What
 
-Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes.
+Fixing the bugs is a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes.
 
 At that point, we had decided to give `IPublishedContent` some love: fix the bugs, make it clean, friendly, discoverable and predictable, for the entire life of version 8.
 

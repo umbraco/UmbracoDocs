@@ -80,8 +80,7 @@ As the comment above states, this is a comma separated list of those attributes 
 
 **`<autoFillImageProperties>`**
 As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you, for some odd reason, decide
-to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** of course need to
-be updated with the new property aliases in order to automatically populate the values when the image is being uploaded.
+to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** need to be updated with the new property aliases in order to automatically populate the values when the image is being uploaded.
 
 If you need to create a custom media document type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
 **`<uploadField>`** element where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
@@ -179,9 +178,11 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter an XPath to find the node (`<error404>/root/Home//TextPage[@urlName = 'error404']</error404>`)
 
 :::note
+
 - Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 - When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
+
 :::
 
 :::warning
