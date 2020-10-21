@@ -1,23 +1,24 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.0.0
+
 ---
 # Tutorial - Creating Tables in Umbraco with PetaPoco
 
 ## Overview
 
-This guide will take you steps to create tables in Umbraco using Peta Pocos and the ability to access that data in that table
+This guide will take you through the steps needed to create tables in Umbraco using PetaPoco and the ability to access data in those tables.
 
 ## What is Peta Poco?
 
-PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dependencies
+PetaPoco is a tiny & fast micro-ORM for .NET. It is tiny with no dependencies.
 
-## Requirements Needed to Use PetaPoco
+## Requirements needed to use PetaPoco
 
-- Umbraco 7+ with a SQL Database
-- Umbraco 8+ does not support Peta Poco
+- Umbraco 7+ with an SQL Database
 - Nuget Peta Poco Package - Optional (https://www.nuget.org/packages/PetaPoco/)
 
-## Steps to Create Your First Table
+## Steps to create your first table
 - [Setting up the folders](#setting-up-the-folders)
 - [Creatung our first table](#creating-our-first-table)
 - [Implementing new table](#implementing-new-table)
@@ -27,7 +28,7 @@ PetaPoco is a tiny & fast micro-ORM for . NET. It is tiny with abosoutely no dep
 [CollaboratingPlatypus/PetaPoco](https://github.com/CollaboratingPlatypus/PetaPoco)
 
 ## Setting up the folders 
-First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes`.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
+First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes` folder.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
 
 ![Folder structure example](images/folderlocation.png)
 
@@ -92,11 +93,11 @@ namespace Recipes.Models.pocos
 ```
 
 ## Implementing new table
-Next we want to implement the table to Umbraco website and database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder. 
+Next we want to implement the table in the Umbraco website as well as the database. First we will create a `PetaPocoApplicationEventHandler.cs` file under the `Recipes` folder.  
 
 ![Here is the location of the file](images/folderlocation2.png)
 
-This file will help us create the new table `Recipe` for our site. Thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The fisrt line is neccessary to access the table code:
+This file will help us create the new table `Recipe` for our site. One thing to note in the sample code, `ApplicationEevntHandler` and `Umbraco.Core.Persistence` are required to create the table. The first line is necessary to access the table code:
 
 ```csharp
 using Recipes.Models.pocos;
@@ -123,10 +124,11 @@ namespace Recipes
 
 ```
 Once you restart the site, the table will be created. You will be thrown errors for any code issues before the table is created.
-If you have access to the database, you can use `Microsoft SQL Server Manaagement Studio` to check for the table.
+
+If you have access to the database, you can use `Microsoft SQL Server Management Studio` to check for the table.
 
 ## Accessing the new table
-Now we are ready to access the new table. We can insert, select, delete, and update data. We create a new call `Recipes` outside of the `PetaPoco` or `Pocos` folder. Lines 4 and 5 are key accessing data, one is for acccessing Umbraco Database Methods and the next one is used to access the table code. Here is a sample of the code.
+Now, once we built our methods to access the data, we can use them in either `Template`, `Partial View`, or a `Macro`. When any of those files are being built, you must have the path to poco in your file. Here is an example of accessing the data in a `Partial View Macro`:
 
 ```csharp
 using System.Collections.Generic;
@@ -179,7 +181,7 @@ namespace Recipes.Models
 ```
 Now once, we built our methods to access the data, we can use them in either `Template`, `Partial View` or a `Macro`. When any of those files are being built, you must have the path to poco in your file. Here is an example of accessing the data in a `Partial View Macro`:
 
-``` csharp
+```csharp
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 @using Recipes.Models.pocos
 @using Recipes.Models
@@ -244,5 +246,5 @@ Now once, we built our methods to access the data, we can use them in either `Te
 ```
 
 
-## In conclusion:
-This is a simple way to implement external tables into Umbraco Website
+## Conclusion:
+This is a way of implementing external database tables into your Umbraco website.
