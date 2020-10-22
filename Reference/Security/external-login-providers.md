@@ -18,6 +18,6 @@ The installation of these packages will install snippets of code with "readme" f
 
 Traditionally a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice. In many cases however, the external login provider you install will be the source of truth for all of your users.
 
-In this case you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
+In this case, you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
 Read more about [auto linking](auto-linking.md).

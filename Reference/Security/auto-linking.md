@@ -7,7 +7,7 @@ keywords: oauth, security
 
 Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
-In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the backoffice. This is called Auto Linking.
+In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a single sign-on (SSO) approach to the backoffice. This is called Auto Linking.
 
 :::note
 From v8.9.0 the auto-linking logic will execute even if the local user already exists which means you can auto-link an already existing account.
@@ -82,7 +82,7 @@ adOptions.SetBackOfficeExternalLoginProviderOptions(
 Additionally, there are more advanced properties for `BackOfficeExternalLoginProviderOptions`:
 
 * `BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
-  * Allows for specifying a custom angular html view that will render in place of the default external login button. The purpose of this is in case you want to completely change the UI but also in these circumstance:
+  * Allows for specifying a custom angular HTML view that will render in place of the default external login button. The purpose of this is in case you want to completely change the UI but also in these circumstances:
     * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
     * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
   * The path is a virtual path, for example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`
@@ -97,7 +97,7 @@ For some providers, it doesn't make sense to use auto-linking. This is especiall
 
 ## Local logins
 
-If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally they will have to assign a password to their account in the backoffice.
+If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice.
 
 If the `DenyLocalLogin` option is enabled, then all password changing functionality in the backoffice is also disabled and local login is not possible.
 
