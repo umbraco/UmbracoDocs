@@ -250,7 +250,7 @@ Now once, we built our methods to access the data, we can use them in either `Te
 ```
 
 
-## Conclusion:
+## Conclusion
 This is a way of implementing external database tables into your Umbraco website.
 
 
