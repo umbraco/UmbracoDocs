@@ -1,0 +1,33 @@
+---
+versionFrom: 8.4.0
+---
+
+
+# changeTitle
+
+Setting the title of the page the user is working on is important for accessibility purposes; where people using assistive technology need to know what they are maintaining. 
+By setting the page title, people who work with multiple tabs will also find the page they were working on easily.
+
+To use the directive use:
+
+```
+$scope.$emit("$changeTitle", title);
+```
+
+When the user navigates through the site there is some logic which sets the default page title this is based on:
+* The current section the user is in
+* The deployment environment 
+
+:::center
+![Example of the default title](images/defaultview.png)
+:::
+
+
+The original title of the page is based on the section being edited and the host name.
+
+:::center
+![Example of the page title showing edit blo](images/editblog.png)
+:::
+The title to use will then be prefixed to the original title of the page.
+
+To remove the title displayed and revert to the default title, pass in an empty string.
