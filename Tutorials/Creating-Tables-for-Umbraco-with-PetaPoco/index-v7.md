@@ -25,7 +25,11 @@ PetaPoco is a tiny & fast micro-ORM for .NET. It is tiny with no dependencies.
 - [Accessing the new table](#accessing-the-new-table)
 
 ## Related Links
-[CollaboratingPlatypus/PetaPoco](https://github.com/CollaboratingPlatypus/PetaPoco)
+[PetaPoco Git Hub Link](https://github.com/CollaboratingPlatypus/PetaPoco)
+[PetaPoco Example - Custom tables with PetaPoco](http://www.computermagic.gr/en-US/tutorials/umbraco-7/custom-tables-with-petapoco/introduction)
+[Information of PetaPoco](https://discoverdot.net/projects/peta-poco)
+[PetaPoco Example - Playing with PetaPoco](http://www.tiernok.com/posts/playing-with-petapoco.html)
+[Creative Web Specialist PetaPoco Example](https://creativewebspecialist.co.uk/2013/07/16/umbraco-petapoco-to-store-blog-comments/)
 
 ## Setting up the folders 
 First, we need set up structure for our data and tables. Under the `App_Code` folder, create a `Recipes` folder.  Next under `Recipes` create a folder called `Models` and under that folder create a folder called `pocos` or `PetaPocos`. In the `pocos` or `PetaPocos` folder the table will be created.
@@ -248,3 +252,5 @@ Now once, we built our methods to access the data, we can use them in either `Te
 
 ## Conclusion:
 This is a way of implementing external database tables into your Umbraco website.
+
+
