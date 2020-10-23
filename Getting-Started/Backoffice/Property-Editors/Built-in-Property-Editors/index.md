@@ -60,7 +60,7 @@ Displays a list of preset values. The content editor can select either a single 
 
 A single line textbox only allowing valid email addresses.
 
-## File upload
+## [File upload](File-Upload/index.md)
 
 `Alias: Umbraco.UploadField`
 
