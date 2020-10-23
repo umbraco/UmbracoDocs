@@ -42,7 +42,7 @@ The content picker allows the content editor to pick a specific node from the co
 
 Displays a calendar UI for selecting dates and time.
 
-## Decimal
+## [Decimal](Decimal/index.md)
 
 `Alias: Umbraco.Decimal`
 
