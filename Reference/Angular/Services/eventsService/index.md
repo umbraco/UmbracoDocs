@@ -19,7 +19,7 @@ The second argument is optional, so if your use case doesn't need this, feel fre
 The illustrate this function, you could have a controller with an `updated` function that is triggered by the view. In this dummy example, the function will increment the value of a property editor, and then use the events service to broadcast that the value was updated:
 
 ```javascript
-angular.module('umbraco').controller("MyController", function($scope, eventsService) {
+angular.module("umbraco").controller("MyController", function($scope, eventsService) {
 
     $scope.updated = function() {
         $scope.model.value++;
@@ -36,7 +36,7 @@ Another controller could then listen for broadcasts of your `feature.updated` ev
 Then in the callback function, the first argument is the event it self, and the second argument is the object we pass on to the `emit` function when we're broadcasting:
 
 ```javascript
-angular.module('umbraco').controller("MyOtherController", function($scope, eventsService) {
+angular.module("umbraco").controller("MyOtherController", function($scope, eventsService) {
 
     $scope.count = 0;
 
@@ -48,6 +48,23 @@ angular.module('umbraco').controller("MyOtherController", function($scope, event
     // When the scope is destroyed we need to unsubscribe
     $scope.$on("$destroy", function () {
         unsubscribe();
+    });
+
+});
+```
+
+Controllers are typically used by a specific component, so the controller will only be executed when such a component is inserted into the DOM. The controller will be executed for each component, so you may end of with multiple instances listening for the same event.
+
+If you need to listen for events on a more global level, you can hook into the application startup using `app.run(...)`:
+
+```javascript
+app.run(function (eventsService) {
+
+    $scope.count = 0;
+
+    // Subscribe to the event
+    var unsubscribe = eventsService.on("feature.updated", function(event, args) {
+        $scope.count = args.value;
     });
 
 });
