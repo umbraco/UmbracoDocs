@@ -90,7 +90,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
-## Markdown editor
+## [Markdown editor](Markdown-Editor/index.md)
 
 `Alias: Umbraco.MarkdownEditor`
 
