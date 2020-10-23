@@ -121,6 +121,6 @@ A model representing a member to be displayed in the backoffice
 
 ## Samples
 
-The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experience. You can can find inspiration from the various samples provided below:
+The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experience. You can find inspiration from the various samples provided below:
 
 * [Customizing the "Links" box](Customizing-the-links-box)
