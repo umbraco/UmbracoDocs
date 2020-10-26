@@ -43,6 +43,14 @@ Each property editor that does not allow variants will be greyed out and have th
 
 To read about how you render variant content in templates, check out the [rendering content section](../../Design/Rendering-Content/).
 
+## Test your language variants
+
+Culture and hostnames must be added to your language sites before the content can be tested for variants.
+
+1. Right-click the Home node and select Culture and Hostnames.
+2. Add a specific url per language and save. For eg: An English language variant with English (United States) as the language can be given a specific url *https://yourwebsite.com/en-us* and a Danish language variant can be given a specific url *https://yourwebsite.com/dk*.
+3. The Info content app should now show specific urls for your language variants.
+
 ## Read more
 
 - [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
