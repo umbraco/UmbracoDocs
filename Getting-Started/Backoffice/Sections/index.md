@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 ---
 
 # Sections
-A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is at the top of the Backoffice.
+A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
 
 ![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located in the top of the Backoffice.")
 *The __Section menu__ is the horizontal menu located at the top in the Backoffice.*
