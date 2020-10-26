@@ -33,13 +33,22 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("email"))
 {
     var emailAddress = Model.Value<string>("email");
+    <p>@emailAddess</p>
+}
+```
 
+### With Modelsbuilder
+
+```csharp
+@if (Model.HasValue("email"))
+{
+    var emailAddress = Model.Email;
     <p>@emailAddess</p>
 }
 ```
