@@ -69,7 +69,7 @@ public enum Lifetime
     * Purely used to dispose objects created during a request at the end of the request, this does **not** mean they'll only be created once per web request.
 * `Lifetime.Scope` - one unique instance per web request (or "scope"):
     * Only creates one instance per web request.  Instances will get disposed at the end of a web request.
-    * e.g. if you wanted to create a single instance of a database context to be used in multiple places within a single web request.
+    * E.g. if you wanted to create a single instance of a database context to be used in multiple places within a single web request.
 * `Lifetime.Singleton` - one unique instance for the whole web application:
     * The single instance will be shared across all web requests.
 
