@@ -48,20 +48,30 @@ The `Lifetime` supports:
 ```csharp
 public enum Lifetime
 {
-    // Always get a new instance.
-    // This is the default lifetime.
+    // Always creates a new instance
+    // This is the default lifetime
     Transient = 0,
 
-    //One unique instance per request.
+    // One unique instance per request (or per "injection")
     Request = 1,
 
-    // One unique instance per scope.
+    // One unique instance per scope (or per "web request")
     Scope = 2,
 
-    // One unique instance per container.
+    // One unique instance per container (or per "application")
     Singleton = 3
 }
 ```
+* `Lifetime.Transient` - always creates a new instance:
+    * A new instance will get created each time it is injected.
+* `Lifetime.Request` - always creates a new instance:
+    * A new instance will get created each time it is injected.  Instances will get disposed at the end of a web request.
+    * Purely used to dispose objects created during a request at the end of the request, this does **not** mean they'll only be created once per web request.
+* `Lifetime.Scope` - one unique instance per web request (or "scope"):
+    * Only creates one instance per web request.  Instances will get disposed at the end of a web request.
+    * e.g. if you wanted to create a single instance of a database context to be used in multiple places within a single web request.
+* `Lifetime.Singleton` - one unique instance for the whole web application:
+    * The single instance will be shared across all web requests.
 
 ## Injecting dependencies
 
