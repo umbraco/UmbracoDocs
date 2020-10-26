@@ -48,8 +48,6 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 
 If your server is behind a load balancer, you should use `{HTTP_X_FORWARDED_FOR}` instead of `{REMOTE_ADDR}` as the input for the rule.
 
-In some server configurations you will need to allow the server that is running the Umbraco backoffice to be able to make internal requests to the /umbraco folder. To do that, you will need to add the servers IP address to the rewrite rule as negations.
-
 If you now go to /umbraco/ for example from a different IP-address the login screen will not be rendered.
 
 ## Rename your Umbraco-folder
