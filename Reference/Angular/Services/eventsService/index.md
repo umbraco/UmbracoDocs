@@ -53,6 +53,7 @@ angular.module("umbraco").controller("MyOtherController", function($scope, event
 });
 ```
 
+#### Listening for events globally
 Controllers are typically used by a specific component, so the controller will only be executed when such a component is inserted into the DOM. The controller will be executed for each component, so you may end of with multiple instances listening for the same event.
 
 If you need to listen for events on a more global level, you can hook into the application startup using `app.run(...)`:
