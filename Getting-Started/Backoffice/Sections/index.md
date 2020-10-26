@@ -66,7 +66,7 @@ In the top-right corner you'll find a search tool, which is also accessible by h
 
 Next to the search tool, there is a help section, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
 
-There's also a small user section with shortcuts to edit the user that's currently logged in, and view most recent activities.
+There is also a small 'user section' with shortcuts to edit the currently logged in user, and view their most recent activities.
 
 ## Custom Sections
 As well as the default sections that come with Umbraco, you can create your own [Custom Sections](../../../Extending/Section-Trees/index.md)
