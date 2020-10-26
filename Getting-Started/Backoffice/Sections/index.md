@@ -74,4 +74,4 @@ As well as the default sections that come with Umbraco, you can create your own 
 ## Access based on User Group
 Access to the section is based on which User Group a user is added to.
 
-Learn more about how to configure the permissions in the the article about [backoffice users](../../Data/Users).
+Learn more about how to configure the permissions in the article about [backoffice users](../../Data/Users).
