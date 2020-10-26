@@ -3,9 +3,10 @@ versionFrom: 7.0.0
 ---
 
 # Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
+
 For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
 
-Setup consists of adding several packages to your site and setting the correct configuration.  Of course, before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is “media” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
+Setup consists of adding several packages to your site and setting the correct configuration. Before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is “media” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
 
 ## Packages
 
@@ -81,6 +82,7 @@ To install ImageProcessor.Web.Config:
 ```PM> Install-Package ImageProcessor.Web.Config```
 
 ### Configuration
+
 Once the package(s) have been installed you need to set your configuration as below.
 
 **Update `~web.config`**

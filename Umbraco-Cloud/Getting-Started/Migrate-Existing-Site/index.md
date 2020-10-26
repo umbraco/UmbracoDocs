@@ -94,8 +94,11 @@ You can download the latest version of Umbraco from [Our](https://our.umbraco.co
 If you need help upgrading your project, we have some excellent [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 :::note
+
 #### Upgrading from a version prior to Umbraco 7.6.0
+
 With Umbraco 7.6.0 the following property editors have been updated to store UDI instead of node ID:
+
 1. Content Picker
 2. Media Picker
 3. Member Picker

@@ -30,7 +30,7 @@ For SEO reasons it is not necessary to change a file name when a feature becomes
 
 ## Adding meta data
 
-It is the [YAML meta data](adding-metadata.md) in the document itself, that will be used as the "point of truth" for when a version applies from and to.
+It is the [YAML meta data](../Adding-Metadata) in the document itself, that will be used as the "point of truth" for when a version applies from and to.
 The YAML will be added to an examine index, along with the filename and is used later on for searching on (major) version, or to show the information to the user.
 
 For versioning we use 3 YAML attributes:

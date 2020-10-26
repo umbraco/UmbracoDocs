@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like.
 If you are using file based logs you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks. *(See below for details on how to do this)*
 
-Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
+Other options include changing your log4net setup to log to a centralized database - keep in mind that if your database cannot be accessed then no logging will occur.
 
 ## Log4net file logging with machine name
 

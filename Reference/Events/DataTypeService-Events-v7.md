@@ -5,7 +5,7 @@ versionRemoved: 8.0.0
 
 # DataTypeService Events#
 
-The DataTypeService class implements IDataTypeService. It provides easy access to operations involving IDataType and IDataTypeDefinition.
+The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType and IDataTypeDefinition.
 
 <table>
     <tr>

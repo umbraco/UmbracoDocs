@@ -10,13 +10,13 @@ The Rich Text Editor provides the option to add additional formatting and stylin
 
 ![Rich Text Editor with sample content](images/RTE-samplecontent.png)
 
-The image above provides an example of how the Rich Text Editor looks in the Umbraco backoffice. One of the main benefits with using the Rich Text Editor is that the formatting and styles added to text using the editor, will also be applied to the text on the frontend. An editor like this is also often refered to as a "What you see is what you get (WYSIWYG)" editor.
+The image above provides an example of how the Rich Text Editor looks in the Umbraco backoffice. One of the main benefits with using the Rich Text Editor is that the formatting and styles added to text using the editor, will also be applied to the text on the frontend. An editor like this is also often referred to as a "What you see is what you get (WYSIWYG)" editor.
 
 This article provides an overview of the various formatting and styling options provided by the Rich Text Editor.
 
 ## Formats
 
-Each Rich Text Editor in Umbraco Uno provides a set of pre-defined text formats. These can be accesed by selecting the "Formats" dropdown in the Rich Text Editor toolbar.
+Each Rich Text Editor in Umbraco Uno provides a set of pre-defined text formats. These can be accessed by selecting the "Formats" dropdown in the Rich Text Editor toolbar.
 
 ![List of formatting options in the Rich Text Editor](images/RTE-formatoptions.png)
 
@@ -54,14 +54,14 @@ Besides the options to create ordered and unordered lists, it is also possible t
 
 ## Multi-media options
 
-Along with plain text, a few other elements can be added to content throught the Rich Text Editor:
+Along with plain text, a few other elements can be added to content through the Rich Text Editor:
 
 * Convert pieces of text to **links**
 * Add **images and media** from the Media library
-* **Embed** external resourcdes such as videos
+* **Embed** external resources such as videos
 * Mark the ending of a section by **drawing a horizontal line**
 
-## Shortcuts / key-bindings / Easy access
+## Shortcuts / key-bindings / Access
 
 As with many other text editors, it's possible to use general keyboard shortcuts when editing text through the Rich Text Editors.
 
@@ -71,4 +71,4 @@ Here's a few examples of the shortcuts available in Umbraco Uno:
 * Ctrl+i to toggle *italics*
 * Ctrl+u to toggle underline
 * Ctrl+k to open the links dialog
-* Ctrl+f to searh within the active Rich Text Editor
+* Ctrl+f to search within the active Rich Text Editor

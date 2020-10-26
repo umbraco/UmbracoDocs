@@ -20,7 +20,7 @@ Clicking on a project will take you to the project where you will get an overvie
 
 ## Manage Environments
 
-From here you are able to create multiple environments so you might have a Development environment as well. Depending on what plan you have chosen, you will have acces to one or more environment on your project.
+From here you are able to create multiple environments so you might have a Development environment as well. Depending on what plan you have chosen, you will have access to one or more environment on your project.
 
 ![Manage the environments](images/manageEnvironments.png)
 
@@ -30,7 +30,7 @@ When you are done you can go ahead and click on 'Done, take me back' in the top-
 
 ## Invite member
 
-In the top-right corner you will find the **invite member** option. This will allow you to quickly invite new team members to your project from a modal that pops up. This makes it very fast and easy to invite new team members. Depending on your chosen plan, you might be charged an extra €5 euros per added team member.
+In the top-right corner you will find the **invite member** option. This will allow you to quickly invite new team members to your project from a modal that pops up. This makes it very fast to invite new team members. Depending on your chosen plan, you might be charged an extra €5 euros per added team member.
 
 ![Invite Team Member Modal](images/inviteModal.png)
 
@@ -49,12 +49,12 @@ It is also here you are able to add or edit the Technical Contact information su
 :::note
 When you invite a Team Member to your Heartcore project, they will automatically get access to the backoffice of the project as well.
 
-You can add as many members to your proejct as you wont.
+You can add as many members to your project as you wont.
 :::
 
 ### Webhooks
 
-Here you are able to set up a webhook that will gather all the information related to deployments. This information is very useful if you har set up something like Slack integration so every time a deployment has been made a message will be posted.
+Here you are able to set up a webhook that will gather all the information related to deployments. This information is very useful if you have set up something like Slack integration so every time a deployment has been made a message will be posted.
 
 ### Upgrade plan
 

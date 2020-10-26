@@ -59,25 +59,6 @@ When you're creating content in Umbraco Uno you will primarily be working with W
 
 For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Widgets) section in the Uno-pedia.
 
-## Working with Forms
+## [Working with Forms](../Working-with-Forms)
 
-Umbraco Uno ships with Umbraco Forms, which is an addon product that enables you to create forms that fit right into your existing design. You can customize the forms as you like, and depending on which type of form you're setting up, you can attach a workflow that fits.
-
-To learn more about how to work with Umbraco Forms head over to [Umbraco Forms Documentation](https://our.umbraco.com/documentation/add-ons/umbracoforms/) to get started.
-
-### Recaptcha and Umbraco Uno
-
-When you're using the *Recaptcha* forms option in Umbraco Uno, you will need to follow a few extra steps, in order to configure the feature.
-
-The steps are outlined below:
-
-1. Open a browser and navigate to https://www.google.com/recaptcha/admin/create
-2. Fill the form and submit it
-3. Copy the **site key** and **secret key**
-4. Head into the backoffice of your Umbraco Uno site
-5. Locate the Settings page
-6. Click the elipsies and choose to create an instance of **Forms**
-7. Copy and paste your site key into the field called "Recaptcha public key"
-8. Save and publish the Forms settings content node
-
-![How to find a create a Forms page under Settings](images/forms-recaptcha.png)
+If you are new to Umbraco Forms, and want to learn more about how to work with them, you can read more about the workflow in the Working with Forms section.

@@ -6,9 +6,10 @@ meta.Description: "Information on the various events available in the MediaServi
 
 # MediaService Events
 
-The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.
+The MediaService class implements IMediaService. It provides access to operations involving IMedia.
 
 ## Usage
+
 Example usage of the MediaService events:
 
 ```csharp

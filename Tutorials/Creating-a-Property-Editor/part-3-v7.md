@@ -6,9 +6,11 @@ versionFrom: 7.0.0
 # Integrating services with a property editor
 
 ## Overview
+
 This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
 
 ## Injecting the service
+
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
 
 ```javascript
@@ -21,6 +23,7 @@ angular.module("umbraco")
 this works the same way as with the *assetsService* we added in step 1.
 
 ## Hooking into pagedown
+
 The pagedown editor we are using, has a nice event system in place, so we can hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 
 ```javascript
@@ -53,7 +56,8 @@ dialogService.mediaPicker({callback: function(data){
 ```
 
 ## Getting to the image data
-Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is basically an array of properties, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
+
+Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is an array of properties, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
 
 For cases like this, a helper service is available: `imageHelper`. This utility has useful methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as dialogService and assetsService).
 
@@ -65,6 +69,7 @@ callback(imagePropVal);
 ```
 
 At this point your controller should look like this:
+
 ```javascript
 angular.module("umbraco")
     .controller("My.MarkdownEditorController",
@@ -114,14 +119,14 @@ Now when we run the markdown editor and click the image button, we are presented
 
 Clicking an image and choosing select returns the image to the editor which then renders it as:
 
-    ![Koala picture][1]
+![Koala picture][1]
 
-    [1]: /media/1005/Koala.jpg
+[1]: /media/1005/Koala.jpg
 
 The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
 
-
 ## Wrap up
+
 So over the 3 previous steps, we've:
 
 - Created a plugin

@@ -14,7 +14,7 @@ The databases are environment specific. When you deploy from one environment to 
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
 
-The main reason we do not delete schema and content on deployments, is because it could lead to loss of data. Image that you delete a Document Type on your Development environment, and push this deletion to your Live environment. On the Live environment you have a lot of content nodes using the deleted Document Type, so when the deployments goes through all of those content nodes will be deleted along with the Document Type.
+The main reason we do not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Live environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
 
 ## Example scenario
 
@@ -38,9 +38,11 @@ Once the deployment is complete, you will notice the following:
 * The template is correctly updated
 * The Document Type you deleted on Development is still present in the backoffice on the Live environment
 
-You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type.
+You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file, and not the actual Document Type in the database.
 
-In order to completely delete the Document Type from your project, you need to delete it from the backoffice of the Live environment as well. This will delete the reference to the Document Type in the Live database, and you will be rid of it completely.
+In order to completely delete the Document Type from your entire project, you need to delete it from the backoffice of any of the other environments you have as well. When the Document Type has been deleted from the backoffice of all environments and no UDA file exists, you can consider it completely gone.
+
+You should however keep in mind that if you at any point during the process, save your Document Type again, a UDA file will be regenerated and when you start deploying changes between environments, this will likely end up recreating your deleted Document Type.
 
 ## Which deletions are deployed?
 

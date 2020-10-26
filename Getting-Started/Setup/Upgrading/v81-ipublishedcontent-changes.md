@@ -10,13 +10,14 @@ In the excitement of the version 8 release, we assumed that `IPublishedContent` 
 
 ## What
 
-Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes.
+Fixing the bugs is a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes.
 
 At that point, we had decided to give `IPublishedContent` some love: fix the bugs, make it clean, friendly, discoverable and predictable, for the entire life of version 8.
 
 Breaking changes to such a central interface is not something we take lightly. Even though they do not impact the "concepts" nor require heavy refactoring, they may demand an amount of small fixes here and there.
 
 The general idea underlying these changes is that:
+
 * The proper way to retrieve "something" from an `IPublishedContent` instance is always through a method, for example: `Children()`. And, when that method can be multilingual, the method accepts a `culture` parameter, which can be left `null` to get the "current" culture value.
 * To reduce the amount of breaking changes, and to simplify things for non-multilingual sites, existing properties such as `document.Name` and `document.Children` (and others) still exist, and return the value for the current culture. In other words, these properties are now implemented as `document.Name => document.Name()` or `document.Children => document.Children()`.
 
@@ -28,9 +29,9 @@ In Umbraco version 8.1.
 
 ## How
 
-### More interfaces!
+### More interfaces
 
-The `IPublishedContent` interface was not easy to mock and test in version 7. It is better in version 8, but it still relies on concrete `PublishedContentType` and `PublishedPropertyType` classes to represent the content types, which complicates things.
+It was possible to mock and test the `IPublishedContent` interface in version 7. It has been improved in version 8, but it still relies on concrete `PublishedContentType` and `PublishedPropertyType` classes to represent the content types, which complicates things.
 
 In version 8.1, these two classes are abstracted as `IPublishedContentType` and `IPublishedPropertyType`, thus making `IPublishedContent` easier to mock and test.
 

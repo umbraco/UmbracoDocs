@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 # Update user information
 
 ### Getting the user
-With the user service, we can programatically update the information of a backoffice user. We first need to get a reference to the user, which we can do in a a few different ways - eg. by an email address:
+With the user service, we can programatically update the information of a backoffice user. We first need to get a reference to the user, which we can do in a few different ways - eg. by an email address:
 
 ```csharp
 IUser user = us.GetByEmail("john-doe@xample.org");

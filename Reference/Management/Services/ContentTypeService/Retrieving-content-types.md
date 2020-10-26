@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.4.0
+versionFrom: 8.7.0
 ---
 
 # Retrieving content types
@@ -55,10 +55,15 @@ IEnumerable<IContentType> contentTypes = contentTypeService.GetAll(new[] {
 IEnumerable<IContentType> contentTypes = contentTypeService.GetAll(1234, 1235);
 ```
 
-To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specyfing the numeric ID of the folder:
+To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specifying the numeric ID or the GUID:
 
 ```C#
 // Get a collection of content types of a specific content type
 IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(1232);
+```
+
+```C#
+IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(Guid.Parse("4f89dd28-d038-4209-aaa1-06109b7946a7"));
+
 ```
 

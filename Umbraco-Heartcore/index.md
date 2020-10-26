@@ -41,6 +41,7 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
 - [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
+- [GraphQL API](API-Documentation/GraphQL)
 - [Content Delivery API](API-Documentation/Content-Delivery)
 - [Content Management API](API-Documentation/Content-Management)
 

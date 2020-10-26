@@ -30,7 +30,7 @@ The **Properties** will show you all the available properties on the object / pi
 
 Below the properties, is a section with a list of **Links**. These are links that you can use to make various GET requests from the endpoint you are already using. 
 
-The final section in the explorer is the **Embedded resources**. Here you can see the properties for each embedded resource on the endpoint you are callin, as well as links to continue browser the API based on each of those resources.
+The final section in the explorer is the **Embedded resources**. Here you can see the properties for each embedded resource on the endpoint you are calling, as well as links to continue browser the API based on each of those resources.
 
 ### Inspector
 

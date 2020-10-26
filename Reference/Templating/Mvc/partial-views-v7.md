@@ -17,18 +17,18 @@ Partial views allow you to re-use components between your views (templates).
 
 The locations to store Partial Views when rendering in the Umbraco pipeline is:
 
-    ~/Views/Partials
+- `~/Views/Partials`
 
 The standard MVC partial view locations will also work:
 
-    ~/Views/Shared
-    ~/Views/RenderMvc
+- `~/Views/Shared`
+- `~/Views/RenderMvc`
 
 The ~/Views/RenderMvc location is valid because the controller that performs the rendering in the Umbraco codebase is the: `Umbraco.Web.Mvc.RenderMvcController`
 
 If however you are [Hijacking an Umbraco route](../../Routing/custom-controllers.md) and specifying your own controller to do the execution, then your partial view location can also be:
 
-    ~/Views/{YourControllerName}
+~/Views/{YourControllerName}
 
 ## Example
 
@@ -79,7 +79,7 @@ Another case you might have is that you want your Partial View to be strongly ty
 }
 ```
 
-The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, which has a model of `RenderModel`, but you can still pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. Of course you can always create your own `RenderModel` too:
+The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, which has a model of `RenderModel`, but you can still pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. You can always create your own `RenderModel` too:
 
 ```csharp
 @foreach(var child in Model.Content.Children())

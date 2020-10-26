@@ -6,6 +6,12 @@ versionFrom: 8.0.0
 
 A custom theme lets you add a little personal touch to your page - the colors you want, the font, and all that. If you are new to working with Umbraco Uno and do not yet know how to work with the theme then it is recommended that you [checkout the Theme Editor.](../../Getting-Started/Themes/index.md)
 
+## Video tutorial
+
+In this video you will get a quick walk-through of the basics when customizing your Umbraco Uno website.
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/3IkyyaZPo0M?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## How to customize your theme through the theme editor
 
 We will be working with the theme editor, which you can access by **previewing** any page on your website.
@@ -51,4 +57,4 @@ Then navigate to the Footer tab:
 
 To set up the logo we will have to go back to the backoffice, navigate to settings and find Theme.
 In the General tab, you will be able to set the logo you want to show on the respective themes.
-The Logo will be displayed in the the header of the page, and have two differnet logos for the dark and the light theme is recomended. it is also recommended that you use png files for the logo.
+The Logo will be displayed in the header of the page, and have two different logos for the dark and the light theme is recommended. it is also recommended that you use png files for the logo.

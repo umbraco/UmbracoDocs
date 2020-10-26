@@ -6,7 +6,6 @@ ignorecase: true
 swap:
   back office: "'backoffice'"
   back-office: "'backoffice'" 
-  app_plugins: "'App_Plugins'"
   blacklist: "'deny list'"
   whitelist: "'allow list'"
   black list: "'deny list'"

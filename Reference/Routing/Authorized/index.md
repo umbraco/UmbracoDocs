@@ -44,12 +44,14 @@ Defining a route is done with the standard ASP.NET MVC routing practices. In Umb
 
         public void Initialize()
         {
-            RouteTable.Routes.MapRoute("cats", _globalSettings.GetUmbracoMvcArea() + "/backoffice/cats/{action}/{id}", new
-            {
-                controller = "cats",
-                action = "meow",
-                id = UrlParameter.Optional
-            });
+            RouteTable.Routes.MapRoute("[yourPluginName]", 
+                _globalSettings.GetUmbracoMvcArea() + "/backoffice/[yourpluginname]/{controller}/{action}/{id}", 
+                new
+                {
+                    controller = "[yourpluginname]",
+                    action = "Index",
+                    id = UrlParameter.Optional },
+                constraints: new { controller="[yourcontrollername]" });
         }
 
         public void Terminate()

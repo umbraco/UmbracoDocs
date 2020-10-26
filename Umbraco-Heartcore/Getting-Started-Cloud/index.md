@@ -40,3 +40,7 @@ Want to know more about the API keys and how to add them to your users in Umbrac
 ## [Webhooks](Webhooks)
 
 Learn more about how to setup webhooks for various actions in the Umbraco backoffice.
+
+## [Preview](Preview)
+
+Learn more about how to access the Preview API and how to enable your editors to access your preview site.

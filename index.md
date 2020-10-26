@@ -3,9 +3,9 @@ meta.Title: "Umbraco Documentation"
 ---
 
 :::note
-Have some questions about **Umbraco 8**?
+Want to know more about **the upcoming Umbraco .Net Core version**?
 
-We've put together some answers to the most frequently asked questions - you can find it in the [Umbraco 8 - FAQ](Umbraco8FAQ.md) article.
+We've put together a list of links to resources both from Umbraco HQ and from the community. You can find the list in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
 :::
 
 <div class="docs-overview">

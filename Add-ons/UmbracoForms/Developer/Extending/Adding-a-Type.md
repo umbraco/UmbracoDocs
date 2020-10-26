@@ -78,6 +78,12 @@ For all types that use the provider model, settings work this way. By adding the
 
 ## Validate type settings with ValidateSettings()
 
+:::warning
+Currently, there is a bug with using this specific code snippet.
+
+The bug has been reported, and you can follow the process here: [UmbracoForms.Issues](https://github.com/umbraco/Umbraco.Forms.Issues/issues/433). As long as the issue is open, this code snippet below will not be triggered when applied to your application.
+:::
+
 The ValidateSettings() method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
 
 ```csharp

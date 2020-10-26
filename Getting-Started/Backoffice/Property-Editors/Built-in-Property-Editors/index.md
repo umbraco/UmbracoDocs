@@ -42,7 +42,7 @@ The content picker allows the content editor to pick a specific node from the co
 
 Displays a calendar UI for selecting dates and time.
 
-## Decimal
+## [Decimal](Decimal/index.md)
 
 `Alias: Umbraco.Decimal`
 
@@ -54,13 +54,13 @@ A configurable number control allowing only numbers including decimals.
 
 Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## Email address
+## [Email address](Email-Address)
 
 `Alias: Umbraco.EmailAddress`
 
 A single line textbox only allowing valid email addresses.
 
-## File upload
+## [File upload](File-Upload/index.md)
 
 `Alias: Umbraco.UploadField`
 
@@ -84,13 +84,13 @@ Used to crop and resize images to predefined sizes.
 
 Label is a non-editable control and can only be used to display a pre-set value.
 
-## List View
+## [List View](Listview/index.md)
 
 `Alias: Umbraco.ListView`
 
 This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
-## Markdown editor
+## [Markdown editor](Markdown-Editor/index.md)
 
 `Alias: Umbraco.MarkdownEditor`
 

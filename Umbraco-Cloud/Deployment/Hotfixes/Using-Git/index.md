@@ -82,5 +82,6 @@ Make sure that you merge and remove the branch you've created on the Development
 When you are ready building on your Development environment, follow the [normal workflow of Cloud](../../) to deploy the changes to the Live environment.
 
 ## Important notes
+
 * This guide can also be used for applying a hotfix to a _Staging_ environment.
-* The above describes the workflow in GitKraken, you can of course use a git client of your choice or Git terminal/command prompt if you are comfortable with that.
+* The above describes the workflow in GitKraken. You can use a git client of your choice or Git terminal/command prompt if you are comfortable with that.

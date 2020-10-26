@@ -6,7 +6,7 @@ meta.Description: "Information on the various events available in the MemberServ
 
 # MemberService Events
 
-The MemberService implements IMemberService and provides easy access to operations involving IMember.
+The MemberService implements IMemberService and provides access to operations involving IMember.
 
 ## Usage
 

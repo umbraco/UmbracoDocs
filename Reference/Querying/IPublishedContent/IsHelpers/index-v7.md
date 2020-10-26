@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
-IsHelper methods all work the same, and have 3 overloads. They're basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
+IsHelper methods all work the same, and have 3 overloads. They are ternary operators, but work a little nicer in that they can be embedded in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
 The general use IsHelper is to allow you to dynamically inject class names and style attributes onto your HTML elements, based on their position within the collection you are iterating. You can use this for a variety of things such as alternating row colours or fixing the margin/padding on the first/last item etc.
 
@@ -74,7 +74,6 @@ Test if the current node's position is evenly divisible by a given number.
 ### .IsNotModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
 Test if the current node's position is not evenly divisible by a given number.
-
 
 ### .IsEven([string valueIfTrue][,string valueIfFalse])
 

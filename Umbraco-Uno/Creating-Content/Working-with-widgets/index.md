@@ -67,7 +67,7 @@ To **copy a widget**, follow these steps:
 To **copy multiple widgets**, follow these steps:
 
 * Hover over the Widgets section of the page from where the widgets should be copied
-* Click on the elipses (...)
+* Click on the ellipses (...)
 * Select **Copy widgets** - this will add all widgets from the page to the clipboard
 * Navigate to the page where you want a copy of the widgets
 * Select **Add content**

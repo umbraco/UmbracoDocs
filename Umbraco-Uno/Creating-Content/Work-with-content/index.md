@@ -10,6 +10,7 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 
 ## Overview
 
+* [Videos](#video-tutorials)
 * [Creating content](#creating-content)
 * [Updating content](#updating-content)
 * [Deleting content](#deleting-content)
@@ -17,6 +18,13 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 * [Unpublishing content](#unpublishing-content)
 * [Other options](#other-options)
 * [Forms](#forms)
+
+## Video tutorials
+
+On the [Umbraco HQ Youtube channel](https://www.youtube.com/channel/UCcltXlJQ-U553MoOsP9p4wg) you can find a series of video tutorials on how to work with and use Umbraco Uno.
+
+* [Creating new content](https://www.youtube.com/watch?v=frE2jl6e18c&ab_channel=UmbracoHQ)
+* [Updating content](https://www.youtube.com/watch?v=wamxLGnb4Ok&ab_channel=UmbracoHQ)
 
 ## Creating content
 
@@ -60,7 +68,7 @@ When you're done editing a piece of content you can choose to either publish the
 
 To **publish the content right away** select the green "Save and publish" button in the bottom-right corner.
 
-To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner.
+To schedule to content for another point in time select the "Schedule..." option, which can be found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner.
 
 ## Unpublishing content
 

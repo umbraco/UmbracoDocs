@@ -5,13 +5,15 @@ versionFrom: 8.0.0
 ---
 
 # Members
+
 Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth).
 
 This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document.
 
-There is a default Member Type that can be used to create members. You can, of course, customize it to fit your needs or create your own Member Type from scratch.
+There is a default Member Type that can be used to create members. You can customize this to fit your needs or create your own Member Type from scratch.
 
 ## Creating a Member
+
 Go to the __Members__ section, right-click __Members__ in the member tree, click __Create__ and choose Member.
 
 Members have a number of mandatory properties. So aside from filling out the name, you will need to fill out  __Login__, __Email__ and the two __Password fields__ in the __Properties__ group before a member can be saved.
@@ -56,13 +58,13 @@ To assign a member to a specific group find the member you wish to assign and fi
 
 ![Assigning a Member Group](images/assign-member-group.png)
 
-# Sensitive data
+## Sensitive data
 
 You will have the option to mark member properties as sensitive. Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions.
 
 More information can be found under [security](../../../Reference/Security/#sensitive-data).
 
-# Technical
+## Technical
 
 As a developer you are able to leverage your website when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
@@ -70,13 +72,15 @@ Members come from a custom ASP.NET membership provider, while Member Groups come
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
 ### More information
+
 - [Customizing Data Types](../Data-Types/)
 
 ### Related Services
+
 - [MemberService](../../../Reference/Management/Services/MemberService/index.md)
 - [MemberType Service](../../../Reference/Management/Services/MemberTypeService/index.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService/index.md)
 
 ### [Umbraco.TV](https://umbraco.tv)
+
 - [Chapter: Members](https://umbraco.tv/videos/umbraco-v8/content-editor/administrative-content/members/what-is-a-member/)
-- Member API chapter *(Coming soon)*

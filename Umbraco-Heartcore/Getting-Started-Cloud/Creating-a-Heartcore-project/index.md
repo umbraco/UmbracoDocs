@@ -16,7 +16,7 @@ This guide will assume that you have already [setup an Umbraco Heartcore project
 
 ## Introduction
 
-When you log in to the Umbraco Backoffice, the first thing you will see if the Content section. This is where you will be creating content for your Umbraco Heartcore project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
+When you log in to the Umbraco Backoffice, the first thing you will see is the Content section. This is where you will be creating content for your Umbraco Heartcore project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
 
 Content in Umbraco is based on **Document Types** which will define what type of data we can put into our content. A Document Type consists of a set of **Properties** - also called fields. A Property is made up of a **Data Type** which is a custom configuration of a **Property Editor**. Umbraco comes with a set of Property Editors, including a *Text Area*, a *Date Picker*, a picker for media items and many more.
 
@@ -49,7 +49,7 @@ Document Types are managed from the **Settings** section in the Umbraco backoffi
 In order to get started with our first Document Type, follow these steps:
 
 1. Right-click on the Document Types folder and choose **+ Create...**.
-    * Or select the three elipses on the right, when hovering the folder.
+    * Or select the three ellipses on the right, when hovering the folder.
 2. Choose the first option: **Document Type**.
 3. Give the new Document Type a name like *Home Page*.
 4. Save the Document Type by selecting the green **Save** button in the bottom-right corner.
@@ -94,7 +94,7 @@ In this dialog you choose which editor to add to the Property. The editor you ch
 7. Use the search field to find and select the pre-defined *Textstring* Data Type.
 8. **Submit** the Property settings
 
-We have now added the first Propery to our Document Type.
+We have now added the first Property to our Document Type.
 
 Following the same steps, let's add a few more properties to the *Content* group:
 
@@ -198,7 +198,7 @@ In this next step of the tutorial, we will start creating content. The content w
 
 1. Go to the **Content** section.
 2. Right-click on the Content tree and choose **+ Create...**.
-    * Or select the three elipses on the right, when hoverin*g the tree.
+    * Or select the three elipses on the right, when hovering the tree.
 
 ![Creating our first content node](images/Create-First-Content.png)
 

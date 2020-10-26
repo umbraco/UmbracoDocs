@@ -16,6 +16,6 @@ This will add the tab and properties you created to the Home document type. Foll
 
 ## Reviewing the changes
 
-If you go to the content section and select Home you can now see your changes (the same of course goes for the blog posts).
+If you go to the content section and select Home you can now see your changes (the same goes for the blog posts).
 
 [Previous](step-1-v7.md) - [Next](step-3-v7.md)

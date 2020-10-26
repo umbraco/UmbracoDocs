@@ -6,15 +6,17 @@ versionFrom: 8.0.0
 # Adding configuration to a property editor
 
 ## Overview
+
 This is step 2 in our guide to building a property editor. This step continues work on the markdown editor we built in [step 1](index.md), but goes further to show how to add configuration options to our editor.
 
+## Configuration
 
-## Configuration?
 An important part of building good property editors is to build something relatively flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
 ## package.manifest
+
 To add configuration options to our markdown editor, open the `package.manifest` file. Right below the editor definition, paste in the prevalues block:
 
 ```javascript
@@ -51,9 +53,10 @@ Save the manifest, **restart the app pool** and have a look at the markdown data
 ![An example of how the configuration will look](images/editor-config.png)
 
 ## Using the configuration
+
 The next step is to gain access to our new configuration options. For this, open the `markdowneditor.controller.js` file.
 
-Let's first add the default value functionality. Basically, when the `$scope.model.value` is empty or *undefined*, we want to use the default value. To do that, we add the following to the very beginning of the controller:
+Let's first add the default value functionality. When the `$scope.model.value` is empty or *undefined*, we want to use the default value. To do that, we add the following to the very beginning of the controller:
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
