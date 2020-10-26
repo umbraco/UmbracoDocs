@@ -72,6 +72,6 @@ There is also a small 'user section' with shortcuts to edit the currently logged
 As well as the default sections that come with Umbraco, you can create your own [Custom Sections](../../../Extending/Section-Trees/index.md)
 
 ## Access based on User Group
-Access to the section is based on which User Group a user is added to.
+Access to the section is based on which User Group a particular User belongs to.
 
 Learn more about how to configure the permissions in the article about [backoffice users](../../Data/Users).
