@@ -42,7 +42,7 @@ The content picker allows the content editor to pick a specific node from the co
 
 Displays a calendar UI for selecting dates and time.
 
-## Decimal
+## [Decimal](Decimal/index.md)
 
 `Alias: Umbraco.Decimal`
 
@@ -60,7 +60,7 @@ Displays a list of preset values. The content editor can select either a single 
 
 A single line textbox only allowing valid email addresses.
 
-## File upload
+## [File upload](File-Upload/index.md)
 
 `Alias: Umbraco.UploadField`
 
