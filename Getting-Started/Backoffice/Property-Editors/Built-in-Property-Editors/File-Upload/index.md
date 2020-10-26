@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 `Returns: string`
 
-Adds an upload field, which allows documents or images to be uploaded to Umbraco
+Adds an upload field, which allows documents or images to be uploaded to Umbraco.
 
 ## Data Type Definition Example
 
@@ -24,8 +24,7 @@ In code, the property is a string, which references the location of the file.
 Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ## MVC View Example
-### A simple link that would open a pdf-file
+### A link that would open a pdf-file
 ```csharp
 <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
 ```
-
