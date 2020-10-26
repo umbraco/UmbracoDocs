@@ -10,6 +10,16 @@ The GraphQL schema is generated from the Content Types upon creation, and it is 
 
 The type name is the Content Type's alias in Pascal Case, e.g. if a Content Type has an alias of `product` it's GraphQL type name would be `Product`.
 
+## Table of Contents
+
+* [Types](#types)
+* [Fields](#fields)
+* [Root Query](#root-query)
+* [Reserved Type Names and Property Aliases](#reserved-type-names-and-property-aliases)
+* [Built-in Custom Types](#built-in-custom-types)
+* [Filtering](#filtering)
+* [Ordering](#ordering)
+
 ## Types
 
 The types generated depends on how the Content Types are configured.
@@ -93,7 +103,6 @@ type Product implements Content & NavigationBase {
 
 The `Query` type is the entry to the GraphQL API. By default it contains two fields, one to get a single Content item by `ID` or `url` and one to get all Content.
 
-
 ```graphql
 type Query {
   # Get Content by its unique identifier or url. Either id or url must be specified but not both.
@@ -117,6 +126,10 @@ type Query {
     before: String,
     # The culture to fetch the value in. If empty the default culture will be used.
     culture: String,
+    # Filter the returned data.
+    where: ContentFilterInput,
+    # Sort the returned data.
+    orderBy: [ContentOrderByInput]
   ): ContentConnection!
 }
 ```
@@ -126,7 +139,7 @@ For each Document Type that is not used as a Composition or marked as an Element
 ```graphql
 type Query {
   ...
-  allProduct(first: Int, after: String, last: Int, before: String, culture: String): ProductConnection!
+  allProduct(first: Int, after: String, last: Int, before: String, culture: String, where: ProductFilterInput, orderBy: [ProductOrderByInput]): ProductConnection!
   product(culture: String, id: ID, url: String): Product
   ...
 }
@@ -935,6 +948,10 @@ interface Content {
     before: String
     #  The culture to fetch the value in. If empty the contents culture will be used.
     culture: String
+    # Filter the returned data.
+    where: ContentFilterInput,
+    # Sort the returned data.
+    orderBy: [ContentOrderByInput]
   ): ContentConnection!
   #  The children.
   children(
@@ -948,6 +965,10 @@ interface Content {
     before: String
     #  The culture to fetch the value in. If empty the contents culture will be used.
     culture: String
+    # Filter the returned data.
+    where: ContentFilterInput,
+    # Sort the returned data.
+    orderBy: [ContentOrderByInput]
   ): ContentConnection!
   #  The Content Type alias.
   contentTypeAlias: String!
@@ -965,6 +986,10 @@ interface Content {
     before: String
     #  The culture to fetch the value in. If empty the contents culture will be used.
     culture: String
+    # Filter the returned data.
+    where: ContentFilterInput,
+    # Sort the returned data.
+    orderBy: [ContentOrderByInput],
   ): ContentConnection!
   #  The unique identifier.
   id: ID!
@@ -1131,3 +1156,378 @@ type MediaEdge {
   node: Media
 }
 ```
+
+## Filtering
+
+For all Document Types a `FilterInput` type is generated. The name is the type name postfixed by `FilterInput` e.g. given a type named `Product` the name will be `ProductFilterInput`.
+
+### Default Filter Fields
+
+To filter the `allContent` field, `ancestors`, `children` and `descendants` connections the `ContentFilterInput` is used.
+
+:::note
+All filter inputs for Content Types will also have the default fields.
+:::
+
+```graphql
+# A filter input for the type `Content`.
+input ContentFilterInput {
+  # All of the filters must match.
+  AND: [ContentFilterInput]
+  # Some of the filters must match.
+  OR: [ContentFilterInput]
+  # None of the filters must match.
+  NOT: [ContentFilterInput]
+  # Field must equal value.
+  contentTypeAlias: String
+  # Field must match any of the values.
+  contentTypeAlias_any: [String]
+  # Field must start with the value.
+  contentTypeAlias_starts_with: String
+  # Field must end with the value.
+  contentTypeAlias_ends_with: String
+  # Field must contain the value.
+  contentTypeAlias_contains: String
+  # Field must equal value.
+  createDate: DateTime
+  # Field must be greater than the value.
+  createDate_gt: DateTime
+  # Field must be greater than or equal the value.
+  createDate_gte: DateTime
+  # Field must be less than the value.
+  createDate_lt: DateTime
+  # Field must be less than or equal the value.
+  createDate_lte: DateTime
+  # Field must equal value.
+  level: Int
+  # Field must be greater than the value.
+  level_gt: Int
+  # Field must be greater than or equal the value.
+  level_gte: Int
+  # Field must be less than the value.
+  level_lt: Int
+  # Field must be less than or equal the value.
+  level_lte: Int
+  # Field must match any of the values.
+  level_any: [Int]
+  # Field must equal value.
+  name: String
+  # Field must match any of the values.
+  name_any: [String]
+  # Field must start with the value.
+  name_starts_with: String
+  # Field must end with the value.
+  name_ends_with: String
+  # Field must contain the value.
+  name_contains: String
+  # Field must equal value.
+  sortOrder: Int
+  # Field must be greater than the value.
+  sortOrder_gt: Int
+  # Field must be greater than or equal the value.
+  sortOrder_gte: Int
+  # Field must be less than the value.
+  sortOrder_lt: Int
+  # Field must be less than or equal the value.
+  sortOrder_lte: Int
+  # Field must match any of the values.
+  sortOrder_any: [Int]
+  # Field must equal value.
+  updateDate: DateTime
+  # Field must be greater than the value.
+  updateDate_gt: DateTime
+  # Field must be greater than or equal the value.
+  updateDate_gte: DateTime
+  # Field must be less than the value.
+  updateDate_lt: DateTime
+  # Field must be less than or equal the value.
+  updateDate_lte: DateTime
+}
+```
+
+### Strings
+
+For fields returning `String` the following filter fields are generated.
+
+Given the following type:
+
+```graphql
+Product implements Content {
+...
+  sku: String
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentFilterInput`.
+
+```graphql
+# A filter input for the type `Product`.
+input ProductFilterInput {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+...
+  # Field must equal value.
+  sku: String
+  # Field must match any of the values.
+  sku_any: [String]
+  # Field must start with the value.
+  sku_starts_with: String
+  # Field must end with the value.
+  sku_ends_with: String
+  # Field must contain the value.
+  sku_contains: String
+...
+}
+```
+
+### Ints
+
+For fields returning `Int` or `Decimal` the following filters are generated.
+
+:::note
+The type is either `Int` or `Decimal` depending on the output type.
+:::
+
+Given the following type:
+
+```graphql
+Product implements Content {
+...
+  price: Decimal
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentFilterInput`.
+
+```graphql
+# A filter input for the type `Product`.
+input ProductFilterInput {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+...
+  # Field must equal value.
+  price: Decimal
+  # Field must be greater than the value.
+  price_gt: Decimal
+  # Field must be greater than or equal the value.
+  price_gte: Decimal
+  # Field must be less than the value.
+  price_lt: Decimal
+  # Field must be less than or equal the value.
+  price_lte: Decimal
+  # Field must match any of the values.
+  price_any: [Decimal]
+...
+}
+```
+
+### Boolean
+
+For types returning `Boolean` the following filters are generated.
+
+Given the following type:
+
+```graphql
+Product implements Content {
+...
+  purchase: Boolean
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentFilterInput`.
+
+```graphql
+# A filter input for the type `Product`.
+input ProductFilterInput {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+....
+  # Field must equal value.
+  purchase: Boolean
+...
+}
+```
+
+### Dates
+
+For types returning `DateTime` the following filters are generated.
+
+Given the following type:
+
+```graphql
+Product implements Content {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+....
+  availableDate: DateTime
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentFilterInput`.
+
+```graphql
+# A filter input for the type `Product`.
+input ProductFilterInput {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+...
+  # Field must equal value.
+  availableDate: DateTime
+  # Field must be greater than the value.
+  availableDate_gt: DateTime
+  # Field must be greater than or equal the value.
+  availableDate_gte: DateTime
+  # Field must be less than the value.
+  availableDate_lt: DateTime
+  # Field must be less than or equal the value.
+  availableDate_lte: DateTime
+...
+}
+```
+
+### Lists
+
+For types returning `[Decimal]`, `[Int]` or `[String]` the following filters are generated.
+
+:::note
+The type is `[Decimal]`, `[Int]` or `[String]` depending on the output type
+:::
+
+Given the following type:
+
+```graphql
+Product implements Content {
+...
+  tags: [String]
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentFilterInput`.
+
+```graphql
+# A filter input for the type `Product`.
+input ProductFilterInput {
+  # All of the filters must match.
+  AND: [ProductFilterInput]
+  # Some of the filters must match.
+  OR: [ProductFilterInput]
+  # None of the filters must match.
+  NOT: [ProductFilterInput]
+...
+  # Field must match all of the values.
+  tags_all: [String]
+  # Field must match any of the values.
+  tags_some: [String]
+...
+}
+```
+
+## Ordering
+
+The result can be ordered by specifying a value for the `orderBy` argument.
+
+An `OrderBy` type is generated for all Document Types. The name is the type name postfixed by `OrderByInput` e.g. given a type named `Product` the name will be `ProductOrderByInput`.
+
+Fields returning `DateTime`, `Decimal`, `Boolean`, `Int` or `String` can be used to order by.
+
+### Default OrderBy Fields
+
+To filter the `allContent` field, `ancestors`, `children` and `descendants` connections the `ContentOrderBy` is used.
+
+:::note
+All order by inputs for Content Types will also have the default fields.
+:::
+
+```graphql
+# An order input for the type `Content`.
+enum ContentOrderByInput {
+  # Order by `contentTypeAlias` in ascending order.
+  contentTypeAlias_ASC
+  # Order by `contentTypeAlias` in descending order.
+  contentTypeAlias_DESC
+  # Order by `createDate` in ascending order.
+  createDate_ASC
+  # Order by `createDate` in descending order.
+  createDate_DESC
+  # Order by `level` in ascending order.
+  level_ASC
+  # Order by `level` in descending order.
+  level_DESC
+  # Order by `name` in ascending order.
+  name_ASC
+  # Order by `name` in descending order.
+  name_DESC
+  # Order by `path` in ascending order.
+  path_ASC
+  # Order by `path` in descending order.
+  path_DESC
+  # Order by `sortOrder` in ascending order.
+  sortOrder_ASC
+  # Order by `sortOrder` in descending order.
+  sortOrder_DESC
+  # Order by `updateDate` in ascending order.
+  updateDate_ASC
+  # Order by `updateDate` in descending order.
+  updateDate_DESC
+}
+```
+
+### Custom OrderBy Fields
+
+Given the following type:
+
+```graphql
+Product implements Content {
+...
+  price: Decimal
+  sku: String
+...
+}
+```
+
+The following type will be generated, incl. the fields from the `ContentOrderByInput`.
+
+```graphql
+# An order by input for the type `Product`.
+enum ProductOrderByInput {
+...
+  # Order by `price` in ascending order.
+  price_ASC
+  # Order by `price` in descending order.
+  price_DESC
+  # Order by `sku` in ascending order.
+  sku_ASC
+  # Order by `sku` in descending order.
+  sku_DESC
+...
+}
+```
+
+### Default ordering
+
+If you don't specify any order the data returned will be ordered by the path they appear in the Umbraco Backoffice tree.

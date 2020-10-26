@@ -51,7 +51,7 @@ Api-Key: {api-key}
 
 ## [Schema Generation](Schema-Generation/)
 
-Information on how the GraphQL schema is generated, reserved names and built in custom types.
+Information on how the GraphQL schema is generated, reserved names and built-in custom types.
 
 ## [Property Editors](Property-Editors/)
 
