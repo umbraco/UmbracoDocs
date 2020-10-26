@@ -19,7 +19,7 @@ The Content section contains the content of the website. Content is displayed as
 * <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> Nodes have unpublished versions (but are currently published)
 * <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (requires logging in)
 * <img src="images/locked.svg" width="12px" style="margin: 0;"> Nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (such as List Views)
+* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (a List View for example)
 
 In order to create content you must define it using Document Types.
 
