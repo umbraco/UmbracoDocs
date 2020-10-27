@@ -1192,21 +1192,21 @@ input ContentFilterInput {
   createDate: DateTime
   # Field must be greater than the value.
   createDate_gt: DateTime
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   createDate_gte: DateTime
   # Field must be less than the value.
   createDate_lt: DateTime
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   createDate_lte: DateTime
   # Field must equal value.
   level: Int
   # Field must be greater than the value.
   level_gt: Int
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   level_gte: Int
   # Field must be less than the value.
   level_lt: Int
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   level_lte: Int
   # Field must match any of the values.
   level_any: [Int]
@@ -1224,11 +1224,11 @@ input ContentFilterInput {
   sortOrder: Int
   # Field must be greater than the value.
   sortOrder_gt: Int
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   sortOrder_gte: Int
   # Field must be less than the value.
   sortOrder_lt: Int
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   sortOrder_lte: Int
   # Field must match any of the values.
   sortOrder_any: [Int]
@@ -1236,11 +1236,11 @@ input ContentFilterInput {
   updateDate: DateTime
   # Field must be greater than the value.
   updateDate_gt: DateTime
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   updateDate_gte: DateTime
   # Field must be less than the value.
   updateDate_lt: DateTime
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   updateDate_lte: DateTime
 }
 ```
@@ -1319,11 +1319,11 @@ input ProductFilterInput {
   price: Decimal
   # Field must be greater than the value.
   price_gt: Decimal
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   price_gte: Decimal
   # Field must be less than the value.
   price_lt: Decimal
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   price_lte: Decimal
   # Field must match any of the values.
   price_any: [Decimal]
@@ -1399,11 +1399,11 @@ input ProductFilterInput {
   availableDate: DateTime
   # Field must be greater than the value.
   availableDate_gt: DateTime
-  # Field must be greater than or equal the value.
+  # Field must be greater than or equal to the value.
   availableDate_gte: DateTime
   # Field must be less than the value.
   availableDate_lt: DateTime
-  # Field must be less than or equal the value.
+  # Field must be less than or equal to the value.
   availableDate_lte: DateTime
 ...
 }
@@ -1530,4 +1530,4 @@ enum ProductOrderByInput {
 
 ### Default ordering
 
-If you don't specify any order the data returned will be ordered by the path they appear in the Umbraco Backoffice tree.
+If you don't specify any order the data returned will be ordered by the path they appear in, in the Umbraco Backoffice tree.
