@@ -238,17 +238,20 @@ The second file should be a javascript file called
 (to match the file referenced in your package.manifest file)
 
 This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
 // you can do your custom functionality here!
 }
 ```
+
 #### Example: Displaying an image from a Media Picker
 Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
 
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
 
 With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
@@ -263,16 +266,19 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
+
 Update the View to use the 'imageUrl' property to display the image:
 
-```
+```html
 <div ng-controller="customBlockController" ng-click="block.edit()">
     <h2 ng-bind="block.data.headline"></h2>
     <img src="{{imageUrl}}" />
     <p ng-bind="block.data.description"></p>
 </div>
 ```
+
 If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
 
