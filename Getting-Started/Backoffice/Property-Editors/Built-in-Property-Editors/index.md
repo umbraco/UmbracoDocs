@@ -104,7 +104,7 @@ The markdown editor will be interpreted by the Models Builder. Behind the scenes
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
-## Member Group Picker
+## Member Group Picker (Member-Group-Picker/index.md)
 
 `Alias: Umbraco.MemberGroupPicker`
 
