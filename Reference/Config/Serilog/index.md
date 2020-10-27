@@ -85,10 +85,12 @@ For example you could install the Nuget package `PM> Install-Package Serilog.Sin
 
 You may wish to add a log property to all log messages. A good example could be a log property for the `environment` to determine if the log message came from `development` or `production`.
 
-This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as Elasticsearch. This would allow you to search and filter for a specific project and its environment to see the log messages.
+This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as Elasticsearch. This would allow you to search and filter for a specific project and its environment to see the log messages.  You can also reference environment variables in the property values.
 
 In the `/config/serilog.user.config` file you can add the following lines, which the values could be changed or transformed as needed.
 
 ```xml
 <add key="serilog:enrich:with-property:customer" value="Super Customer" />
 <add key="serilog:enrich:with-property:environment" value="Production" />
+<add key="serilog:enrich:with-property:deploymentId" value="%WEBSITE_DEPLOYMENT_ID%" />
+```
