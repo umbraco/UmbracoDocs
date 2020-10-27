@@ -4,6 +4,8 @@ In `/samples/Umbraco.Headless.Client.Samples.Web/` you will find a .NET Core 2.2
 
 The sample is built up around a sample project with the alias `demo-headless`. You can choose to test the sample with the sample project or connect the sample to your own project.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/yTB-tXi3Ldg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Prerequisites
 
 - [.NET Core SDK 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
