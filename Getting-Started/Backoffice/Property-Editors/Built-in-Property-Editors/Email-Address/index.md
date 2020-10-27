@@ -19,7 +19,7 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 ## Data Type Definition Example
 
 ### 8.8.0 and higher
-![Email Data Type Definition 8.8.0](images/EmailAddress-DataType-v8.8.png)
+![Email Data Type Definition 8.8.0](images/EmailAddress-DataType-v88.png)
 
 ### Mandatory checkbox example
 ![Mandatory Checkbox Example](images/mandatory-checkbox.png)
@@ -33,13 +33,22 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("email"))
 {
     var emailAddress = Model.Value<string>("email");
+    <p>@emailAddess</p>
+}
+```
 
+### With Modelsbuilder
+
+```csharp
+@if (Model.HasValue("email"))
+{
+    var emailAddress = Model.Email;
     <p>@emailAddess</p>
 }
 ```
