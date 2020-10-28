@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 `Returns: string`
 
-The member group picker opens a panel to pick one or more member groups from the member section. The value saved is of type string (comma separated ids).
+The Member Group Picker opens a panel to pick one or more member groups from the Member section. The value saved is of type string (comma separated IDs).
 
 ## Data Type Definition Example
 
