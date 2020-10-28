@@ -23,7 +23,7 @@ Each **_Property_** has a **_Data Type_** - e.g. maybe a text string, a number o
 
 Right, let’s get busy. Go to the **_Settings Menu_** in Umbraco. This is the third button on the top navigation menu. Then you’ll see a long list of settings – don’t worry about these yet, we’ll introduce them as we need them.
 
-**_Document Types_** is positioned as the first option in the list and is always the starting point for any Umbraco build.  Hover over the **[Document Types]** item and you’ll see three dots **[...]** , click this to see the menu. Then you'll see four options, click the [Document Type] option - we want a template automatically created for us.
+**_Document Types_** is positioned as the first option in the list and is always the starting point for any Umbraco build.  Hover over the **[Document Types]** item and you’ll see three dots **[...]** , click this to see the menu. Then you'll see four options, click the **[Document Type]** option - we want a template automatically created for us.
 
 :::tip
 Using folders can help you organise your **_Document Types_**.
@@ -35,7 +35,7 @@ Enter "_HomePage_" as the **[Name]** of our new **_Document Type_** - you'll see
 
 Enter in the **[Description]** field "_This is our homepage template_".  This text is used to help the editors choose the correct **_Document Type_** when creating new **_Content Nodes_** back in the **Content Section**.
 
-Click [Save] to store our new **_Document Type_**.
+Click **[Save]** to store our new **_Document Type_**.
 
 ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
