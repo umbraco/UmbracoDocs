@@ -8,7 +8,7 @@ The `contentPicker` function opens a Content Picker in infinite editing. Dependi
 
 | Alias           | Description |
 |-----------------|-------------|
-| **multiPicker** | Indicates a boolean value for whether the editor should work as a single content picker (`false`) or a multi content picker (`true`). |
+| **multiPicker** | Indicates a boolean value for whether the editor should work as a single Content Picker (`false`) or a Multi Content Picker (`true`). |
 | **submit**      | Is a callback function for then the user selects and submits one or more content items.  |
 | **close**       | Is a callback function when the close button is clicked. |
 
