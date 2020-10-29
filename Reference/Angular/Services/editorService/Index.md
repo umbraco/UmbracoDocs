@@ -1,6 +1,6 @@
 # Editor Service
 
-In Umbraco 8, the Angular `editorService` service is the primary resource used for opening overlays and handling infinite editing. Besides the `open` and `close` functions, the service also contains functions for opening specialized overlays/editors - eg. `contentPicker` or `mediaPicker`.
+The Angular `editorService` service is the primary resource used for opening overlays and handling infinite editing. Besides the `open` and `close` functions, the service also contains functions for opening specialized overlays/editors - eg. `contentPicker` or `mediaPicker`.
 
 ### Content Picker
 
