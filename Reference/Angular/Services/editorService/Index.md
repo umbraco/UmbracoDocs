@@ -4,7 +4,7 @@ The Angular `editorService` service is the primary resource used for opening ove
 
 ### Content Picker
 
-The `contentPicker` function opens a content picker in infinite editing. Depending on the options, it may be used for picking a single content item or a set of content items. Options for the function is as following:
+The `contentPicker` function opens a Content Picker in infinite editing. Depending on the options, it may be used for picking a single content item or a set of content items. Options for the function is as following:
 
 | Alias           | Description |
 |-----------------|-------------|
