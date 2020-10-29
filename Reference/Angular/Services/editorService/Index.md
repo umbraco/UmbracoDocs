@@ -29,7 +29,7 @@ editorService.contentPicker({
 });
 ```
 
-This example snippet will open a new multi content picker. If the user submits one or more content items, the name of each content item will be printed to to the console. The user may also close the content picker without selecting any content items, in which case the `close` callback function is invoked.
+This example snippet will open a new Multi Content Picker. If the user submits one or more content items, the name of each content item will be printed to the console. The user may also close the Content Picker without selecting any content items, in which case the `close` callback function is invoked.
 
 
 
