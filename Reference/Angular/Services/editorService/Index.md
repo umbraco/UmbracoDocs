@@ -43,10 +43,10 @@ The function supports the following options:
 
 | Alias          | Description |
 |----------------|-------------|
-| **id**         | Indicates the numeric ID of the document type which should be opened for editing.  |
-| **create**     | A boolean value indicating whether the overlay should be used for creating a new document type (opposed to editing an existing document type). |
-| **noTemplate** | When part of a create overlay, this option specifies whether the document type should be created without a corresponding template. |
-| **submit**     | A callback function for when the user submits/saves the document type. |
+| **id**         | Indicates the numeric ID of the Document Type which should be opened for editing.  |
+| **create**     | A boolean value indicating whether the overlay should be used for creating a new Document Type (opposed to editing an existing Document Type). |
+| **noTemplate** | When part of a create-overlay, this option specifies whether the Document Type should be created without a corresponding Template. |
+| **submit**     | A callback function for when the user submits/saves the Document Type. |
 | **close**      | A callback function for when the close button is clicked. |
 
 An overlay for creating a new document type may be opened as:
