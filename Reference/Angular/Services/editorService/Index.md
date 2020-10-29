@@ -65,9 +65,9 @@ editorService.documentTypeEditor({
 });
 ```
 
-Notice that both the `id` and `create` options must be specified. When the overlay submits, you'll be able to get the alias of the created document type through `model.documentTypeAlias`.
+Notice that both the `id` and `create` options must be specified. When the overlay submits, you'll be able to get the alias of the created Document Type through `model.documentTypeAlias`.
 
-Opening an overlay for editing an existing document type can be opened as:
+Opening an overlay for editing an existing Document Type can be opened as:
 
 ```javascript
 editorService.documentTypeEditor({
