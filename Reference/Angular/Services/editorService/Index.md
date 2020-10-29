@@ -37,7 +37,7 @@ This example snippet will open a new Multi Content Picker. If the user submits o
 
 ### Document Type Editor
 
-The `documentTypeEditor` function of the editor service can be used for opening a new overlay for either creating a new document type or editing an existing document type.
+The `documentTypeEditor` function of the editor service can be used for opening a new overlay for either creating a new Document Type or editing an existing Document Type.
 
 The function supports the following options:
 
