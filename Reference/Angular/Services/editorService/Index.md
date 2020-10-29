@@ -49,7 +49,7 @@ The function supports the following options:
 | **submit**     | A callback function for when the user submits/saves the Document Type. |
 | **close**      | A callback function for when the close button is clicked. |
 
-An overlay for creating a new document type may be opened as:
+An overlay for creating a new Document Type may be opened as:
 
 ```javascript
 editorService.documentTypeEditor({
