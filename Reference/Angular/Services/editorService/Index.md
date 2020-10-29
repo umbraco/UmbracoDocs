@@ -12,7 +12,7 @@ The `contentPicker` function opens a Content Picker in infinite editing. Dependi
 | **submit**      | Is a callback function for then the user selects and submits one or more content items.  |
 | **close**       | Is a callback function when the close button is clicked. |
 
-The content picker could be opened as:
+The Content Picker could be opened as:
 
 ```js
 editorService.contentPicker({
