@@ -365,6 +365,13 @@ eventsService.emit("toggleValue", { value: !scope.checked });
 
 <!-- https://github.com/umbraco/Umbraco-CMS/blob/release-8.6.3/src/Umbraco.Web.UI.Client/src/common/directives/components/buttons/umbtoggle.directive.js#L112 -->
 
+**Setting the page title**
+
+```
+$scope.$emit("$changeTitle", title);
+```
+For more information see [Change title](changeTitle)
+
 <!--
 #### Other directives
 
