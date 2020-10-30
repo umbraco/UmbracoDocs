@@ -22,9 +22,22 @@ It is also possible to define a label, that will be displayed next to the checkb
 
 ## MVC View Example
 
+### Without Modelsbuilder
+
 ```csharp
 @{
     if (!Model.Value<bool>("myCheckBox"))
+    {
+        <p>The Checkbox is not checked!</p>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (!Model.MyCheckbox)
     {
         <p>The Checkbox is not checked!</p>
     }
