@@ -43,8 +43,6 @@ It is also possible to define a label, that will be displayed next to the checkb
     }
 }
 ```
-```
-
 
 ## Add value
 
