@@ -10,6 +10,26 @@ In this section you will find documentation on how to work with Umbraco Heartcor
 
 It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
+## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
+
+Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
+
+- [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
+- [Content Delivery API](API-Documentation/Content-Delivery)
+- [Content Management API](API-Documentation/Content-Management)
+- [GraphQL API](API-Documentation/GraphQL)
+
+## GraphQL
+
+Reference documentation and tutorials for the GraphQL API.
+
+- [GraphQL API Documentation](API-Documentation/GraphQL)
+- [GraphQL Filter and Ordering Documentation](API-Documentation/GraphQL/Filtering-and-Ordering)
+
+### Tutorials
+
+- [Querying With GraphQL](Tutorials/Querying-With-GraphQL) - Learn how to query Umbraco Heartcore with GraphQL
+
 ## What is Umbraco Heartcore?
 
 Umbraco Heartcore is a headless SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content.
@@ -35,15 +55,6 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 ### Setup a Trial project
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/VL87NCz5Dwg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
-
-Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
-
-- [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
-- [GraphQL API](API-Documentation/GraphQL)
-- [Content Delivery API](API-Documentation/Content-Delivery)
-- [Content Management API](API-Documentation/Content-Management)
 
 ## [Client libraries](Client-Libraries)
 
