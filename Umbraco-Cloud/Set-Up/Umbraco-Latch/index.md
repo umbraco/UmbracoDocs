@@ -13,7 +13,7 @@ Certificates last 3 months and are automatically renewed, as long as the prerequ
 ## Prerequisites
 In order for Latch to work and the certificate to be applied to the root of the site that the domain is pointing to cannot have the status of 404 whether it's a custom 404 or one caused by an error.
 
-Latch needs the site to have a status of 200 in order for the certificate to be applied and renewed. This means that every 3 months Latch will go through the renewal process and the prerequisites have to be met each time in order for it to work.
+Latch needs the site to have a status of 200 in order for the certificate to be applied and renewed. This means that every 3 months Latch will go through the renewal process, and the prerequisites have to be met each time in order for it to work.
 
 If you wish to have a custom 404 page on the root of your website then you will need to purchase and apply a custom certificate instead.
 
