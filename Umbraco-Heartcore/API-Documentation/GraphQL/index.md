@@ -56,3 +56,7 @@ Information on how the GraphQL schema is generated, reserved names and built-in 
 ## [Property Editors](Property-Editors/)
 
 A list of all the built-in Umbraco Property Editors and their GraphQL types.
+
+## [Filtering and Ordering](Filtering-and-Ordering/)
+
+Documentation on how to filter and order collections with the GraphQL API.
