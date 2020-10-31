@@ -49,6 +49,23 @@ Aside from these features, it's also from the project view that changes are depl
 
 From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll find a lot more options to configure your project.
 
+## Environment error log
+
+Each environment has an error log that appears only if you have any unread errors for that specific environment. You can view them by clicking on "View errors" in the environment menu.
+
+Once you're there you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
+
+During development, you can happen to gather a quite impressive number of errors which might cause the error page to load very slowly. A simple fix for that would be to locally connect to the database for that specific environment and delete those errors. You can read more about connecting to the environment database locally [here](../../Databases/Cloud-Database).
+
+Environment errors are stored in the UCErrorLog table.
+
+```
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+The query above will delete 90% of errors. It always begins deleting the oldest errors first. You can tweak the query to delete any % of errors you like by changing the number in the first row.
+
 ## The chat
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you have any questions regarding your Umbraco Cloud projects.
