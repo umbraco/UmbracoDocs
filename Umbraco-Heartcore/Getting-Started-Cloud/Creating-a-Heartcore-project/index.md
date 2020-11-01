@@ -87,7 +87,7 @@ Now, let's add our first property to the Document Type.
 
 In this dialog you choose which editor to add to the Property. The editor you choose defines the type of data that can be added to the property.
 
-**Create New** let's you create your own Data Types based on the editors in Umbraco.
+**Create New** lets you create your own Data Types based on the editors in Umbraco.
 **Use existing** provides you with the option to select on the pre-defined Data Types.
 :::
 
@@ -106,14 +106,14 @@ Following the same steps, let's add a few more properties to the *Content* group
 :::tip
 **Media Picker**
 
-This editor let's you upload or select an existing media item from the Media section, and add it to your content.
+This editor lets you upload or select an existing media item from the Media section and add it to your content.
 :::
 
 With these properties added our Document Type now looks something like this:
 
 ![More properties added to Document Type](images/DocType-More-Properties.png)
 
-Remember to save the Document Type by selecting the green **Save** button in the bottom-right.
+Remember to save the Document Type by clicking the green **Save** button in the bottom-right.
 
 This is a very simplified version of a Document Type, and you are welcome to add more groups and properties.
 
@@ -151,7 +151,7 @@ For our Umbraco Heartcore project, we will want it to be possible to create blog
 
 Once the Document Types have been created you will be redirected to the Item Document Type - in our case the *Blog Post*.
 
-Following the steps outlined earlier in this tutorial, add a *Content* group and a few properties to both the *Blog Post* and the *Blog Area* Document Types.
+Following the steps outlined earlier in this tutorial, add a *Content* group and the following properties to both the *Blog Post* and the *Blog Area* Document Types.
 
 **Blog Post**
 
@@ -166,13 +166,13 @@ Following the steps outlined earlier in this tutorial, add a *Content* group and
 | --------------- | ------------------------ |
 | BlogDescription | *Textarea* Data Type     |
 
-We should now have the following three Document Types in our Document Types tree:
+We should now have the three following Document Types in our Document Types tree:
 
 ![Document Types in the tree](images/Document-Types.png)
 
 ## Setting permissions on Document Types
 
-The final thing we need to do before we start creating content, is check that our Document Types have the correct permissions.
+The final thing we need to do before we start creating content is to check that our Document Types have the correct permissions.
 
 1. Select the *Home Page* Document Type in the tree.
 2. Navigate to the **Permissions** tab in the top-right corner.
@@ -194,11 +194,11 @@ With the permissions set, we are now ready to start working on the content for t
 
 ## Creating content
 
-In this next step of the tutorial, we will start creating content. The content we're going to create will be defined by the Document Types we've created, and you will see how the choices we've made impacts the editing experience one we start working with the content.
+In this next step of the tutorial, we will start creating content. The content we're going to create will be defined by the Document Types we've created, and you will see how the choices we've made impact the editing experience one we start working with the content.
 
 1. Go to the **Content** section.
 2. Right-click on the Content tree and choose **+ Create...**.
-    * Or select the three elipses on the right, when hovering the tree.
+    * Or select the three elipses on the right, when hovering the Content tree.
 
 ![Creating our first content node](images/Create-First-Content.png)
 
@@ -208,22 +208,22 @@ We now have the option to create a content item based on our Home Page Document 
 4. Give the content item a name: *Welcome to Umbraco Heartcore*.
 5. Add some text to both the *Heading* and the *Intro text* properties.
 6. To choose an image for the *PromoImage* property, select the plus-sign.
-7. In the dialog you can do either of the following the choose an image:
+7. In the dialog, you can do either of the following the choose an image:
     * Select the **Upload** button to choose an image from your file explorer or
     * Drag an image directly into the dialog.
-8. Once you've chosen an image, select it in the dialog and click the green **Select** button in the bottom of the dialog.
+8. Once you've chosen an image, select it at the dialog and click the green **Select** button in the bottom of the dialog.
 
 :::tip
 **Media items and images**
 
 When you add media and images to your content using the default Media Picker Data Type, the items will automatically be added to the media library you can find in the **Media** section of the backoffice.
 
-Select the **Media** section in the top navigation bar, and you can browse all the media items that has been uploaded on the project.
+Select the **Media**  section in the top navigation bar, and you can browse all the media items that have been uploaded to the project.
 :::
 
 9. When you're happy with the content in the properties, select the **Save and publish** button in the bottom right.
 
-So far, our Content section looks like this:
+So far, our Content section should look like this:
 
 ![Welcome to Umbraco Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
 
@@ -251,13 +251,13 @@ It gives us a lot of flexibility when writing text, as there are multiple format
 
 ![Blog area - Grid view](images/Blog-grid.png)
 
-You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by selecting the **Create Blog Post** in the top-left corner.
+You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by clicking on the **Create Blog Post** button in the top-left corner.
 
 We have now covered the very basics of how to create content in the Umbraco backoffice.
 
 ## What now?
 
-Now you have some content on your Umbraco Heartcore project that you can start using.
+Now you have some content in your Umbraco Heartcore project that you can start using.
 
 You can use the Umbraco Heartcore REST API endpoints to fetch this content to where you need it. 
 
