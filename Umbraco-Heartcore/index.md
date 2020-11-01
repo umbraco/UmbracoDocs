@@ -12,7 +12,7 @@ It includes REST API documentation, the basics on how to get started and how to 
 
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
 
-Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
+Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
 - [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
 - [Content Delivery API](API-Documentation/Content-Delivery)
@@ -36,7 +36,7 @@ Umbraco Heartcore is a headless SaaS (Software as a Service) offered by Umbraco.
 
 The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
 
-All Umbraco Heartcore projects includes a Content Delivery Network (CDN) using CloudFlare. This CDN is used for caching content and media fetched through the Content Delivery API. Additionally, the media CDN (media.umbraco.io) ensures resizing and cropping options, which improves both performance and stability.
+All Umbraco Heartcore projects includes a Content Delivery Network (CDN) using CloudFlare. This CDN is used for caching content and media fetched through the Content Delivery API. Additionally, the media CDN (media.umbraco.io) allows for resizing and cropping options, which improves both performance and stability.
 
 You can read more about all the features and benefits on the [Umbraco Heartcore product page](https://umbraco.com/products/umbraco-heartcore/).
 
@@ -58,7 +58,7 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 
 ## [Client libraries](Client-Libraries)
 
-In order to test your Umbraco Heartcore project against the REST API endpoints, you can use one of the samples we provide with the client libraries for .NET Core and Node JS.
+In order to test your Umbraco Heartcore project against the REST API endpoints, you can use one of the samples we provided with the client libraries for .NET Core and Node JS.
 
 ## [Versions and updates](Versions-and-updates)
 
@@ -66,4 +66,4 @@ Learn more about how we handle versioning and updates of Heartcore projects.
 
 ## [Frequently asked questions](https://umbraco.com/products/umbraco-heartcore/faq/)
 
-Have questions that is not covered by this documentation? Please create an issue on our [Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) or get in touch with Umbraco Support using the chat in the portal or write support@umbraco.com.
+Do you have questions that are not covered by this documentation? Please create an issue on our [Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) or get in touch with Umbraco Support using the chat in the portal or write a mail to support@umbraco.com.
