@@ -44,7 +44,7 @@ As mentioned it is also possible to set Granular permissions for a specific cont
 
 You can set the permission when you are creating or editing an existing user group.
 
-In the bottom of the user group, you can add the setting for Granular permission for your content nodes.
+In the bottom of the User Group, you can add the setting for Granular permission for your content nodes.
 
 ![Granular permission](images/Granular.png)
 
