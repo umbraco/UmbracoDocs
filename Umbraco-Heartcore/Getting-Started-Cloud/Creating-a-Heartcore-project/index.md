@@ -218,7 +218,7 @@ We now have the option to create a content item based on our Home Page Document 
 
 When you add media and images to your content using the default Media Picker Data Type, the items will automatically be added to the media library you can find in the **Media** section of the backoffice.
 
-Select the **Media**  section in the top navigation bar, and you can browse all the media items that have been uploaded to the project.
+Select the **Media** section in the top navigation bar, and you can browse all the media items that have been uploaded to the project.
 :::
 
 9. When you're happy with the content in the properties, select the **Save and publish** button in the bottom right.
