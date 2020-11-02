@@ -20,7 +20,7 @@ Clicking on a project will take you to the project page where you will get an ov
 
 ## Manage Environments
 
-From here, you are able to create multiple environments, so that you can have a Development and eventually also a Staging environment.. Depending on what plan you have chosen, you will have access to one or more environment on your project.
+From here, you are able to create multiple environments, so that you can have a Development and eventually also a Staging environment. Depending on what plan you have chosen, you will have access to one or more environments on your project.
 
 ![Manage the environments](images/manageEnvironments.png)
 
