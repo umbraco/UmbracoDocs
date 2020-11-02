@@ -10,7 +10,7 @@ Having multiple environments on your Umbraco Heartcore project can be a great as
 
 When working with multiple environments, it is very important to follow the correct workflow. In this article, you can learn more about the workflow and the best practices for using it.
 
-The workflow uses a classic "left to right" deployment model, meaning that changes are first made on the Development environment and then deployed to the Staging or Live environment - depending on whether you have a Staging environment which further depends on the plan your project is on.
+The workflow uses a classic "left to right" deployment model, meaning that changes are first made on the Development environment and then deployed to the Staging or Live environment. The workflow depends on whether you have a Staging environment which further depends on the plan your project is on.
 
 ![Left-to-right deployment model](images/left-to-right.png)
 
