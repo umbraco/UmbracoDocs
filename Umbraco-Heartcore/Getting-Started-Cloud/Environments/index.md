@@ -10,7 +10,7 @@ Having multiple environments means that you have a place to test both your conte
 
 ## What is an environment?
 
-An environment on a Heartcore project can be defined as a *workspace* and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the master repository.
+An environment on a Heartcore project can be defined as a *workspace* and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
 
 Umbraco Heartcore uses a deployment model that relies on Git and other core technology, which gives you an option to move both content and structure files from one environment to another. 
 
