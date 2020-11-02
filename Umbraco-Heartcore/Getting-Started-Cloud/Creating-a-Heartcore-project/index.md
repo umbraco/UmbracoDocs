@@ -113,7 +113,7 @@ With these properties added our Document Type now looks something like this:
 
 ![More properties added to Document Type](images/DocType-More-Properties.png)
 
-Remember to save the Document Type by clicking the green **Save** button in the bottom-right.
+Remember to save the Document Type by selecting the green **Save** button in the bottom-right corner.
 
 This is a very simplified version of a Document Type, and you are welcome to add more groups and properties.
 
