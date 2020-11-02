@@ -18,11 +18,25 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ![Content Picker Content](images/Content-Picker-Content-v8.png)
 
-## Typed Example
+## MVC View Example
+
+### Without Modelsbuilder
 
 ```csharp
 @{
     IPublishedContent typedContentPicker = Model.Value<IPublishedContent>("featurePicker");
+    if (typedContentPicker != null)
+    {
+        <p>@typedContentPicker.Name</p>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    IPublishedContent typedContentPicker = Model.FeaturePicker;
     if (typedContentPicker != null)
     {
         <p>@typedContentPicker.Name</p>
