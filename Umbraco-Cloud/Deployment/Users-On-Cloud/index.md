@@ -14,7 +14,7 @@ A feature on Umbraco Cloud is the possibility to control which users has access 
 
 This can be done when creating a new User Group or when editing an existing group.
 
-You have the option to decide whether a specific User Group have permission to do a restore, partial restore or if they can queue content for transfer to the next environment.
+You have the option to decide whether a specific User Group has permission to do a restore, partial restore or if they can queue content for transfer to the next environment.
 
 It is also possible to get Granular control on a per node basis, so that you can disable restore and transfer for specific content on your site, which can help avoid mistakes and ensure proper workflows are followed.
 
