@@ -251,7 +251,7 @@ It gives us a lot of flexibility when writing text, as there are multiple format
 
 ![Blog area - Grid view](images/Blog-grid.png)
 
-You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by clicking on the **Create Blog Post** button in the top-left corner.
+You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by selecting the **Create Blog Post** button in the top-left corner.
 
 We have now covered the very basics of how to create content in the Umbraco backoffice.
 
