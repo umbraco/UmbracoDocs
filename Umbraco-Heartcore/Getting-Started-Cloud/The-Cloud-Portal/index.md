@@ -40,7 +40,7 @@ Right next to the invite member option, you will find the **Settings** dropdown 
 
 ### Edit Team
 
-As with the **invite member** option, you are able to add new team members to your project. It is also possible to change the roles of your fellow team members here, provided that you have sufficient permissions. You can remove team members from this page as well as see any pending invitations you might have sent.
+As with the **invite member** option, you are able to add new team members to your project. It is also possible to change the roles of your team members here, provided that you have sufficient permissions. You can remove team members from this page as well as see any pending invitations you might have sent.
 
 It is also here, that you are able to add or edit the Technical Contact information such as Name, Email and a telephone number.
 
