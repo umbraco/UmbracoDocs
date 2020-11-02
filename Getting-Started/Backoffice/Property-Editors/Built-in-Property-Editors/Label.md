@@ -26,6 +26,8 @@ There is also a Value Type: Long string if you need to set a very long string va
 
 ## MVC View Example
 
+### Without ModelsBuilder
+
 ```csharp
 @{
     if (Model.HasValue("pageLabel")){
@@ -33,3 +35,15 @@ There is also a Value Type: Long string if you need to set a very long string va
     }
 }
 ```
+
+### With ModelsBuilder
+
+```csharp
+@{
+    if (!string.IsNullOrEmpty(Model.PageLabel))
+    {
+        <p>@Model.PageLabel</p>
+    }
+}
+```
+
