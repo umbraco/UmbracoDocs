@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Users on Umbraco Cloud
 
-On Umbraco Cloud users work almost identical as they do on a normal installation of Umbraco however you have a few more settings available on Umbraco Cloud.
+On Umbraco Cloud, users work almost identical as they do on a normal installation of Umbraco. However, you have a few more settings available on Umbraco Cloud.
 
 In this article, we will show what these settings is and how you can use them.
 
