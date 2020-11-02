@@ -26,7 +26,7 @@ You can either create a new User Group and set the permissions there or you can 
 To create or edit a user group, go to the user section of the backoffice.
 
 In the right corner, you need to click on "Groups".
-From here you are able to either create a new or edit an existing User Group.
+From here you are able to either create a new User Group, or edit an existing one.
 
 ![User Groups](images/Users.png)
 
@@ -55,4 +55,3 @@ When you click add, you can choose which content node on your project that you w
 When you have choosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore and queueing content for transfer.
 
 ![Granular permission](images/Granular_permission.png)
-
