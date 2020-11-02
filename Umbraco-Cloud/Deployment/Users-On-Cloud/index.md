@@ -52,6 +52,6 @@ When you click "add", you can choose which content node on your project that you
 
 ![Granular content node](images/Granular_node.png)
 
-When you have choosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore and queueing content for transfer.
+When you have chosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore, and queueing content for transfer.
 
 ![Granular permission](images/Granular_permission.png)
