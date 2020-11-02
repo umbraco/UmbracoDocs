@@ -34,7 +34,7 @@ Click on "Create group" and scroll down and look under "Default permissions" whe
 
 ![User Groups](images/default_permisions.png)
 
-You can decide whether the users in the new User Group can restore, restore partial or transfer content.
+You can decide whether the users in the new User Group can restore, partially restore, or transfer content.
 
 To edit an already existing user group go to the User group you want to edit, e.g Editors or Writers and set the permissions from there.
 
