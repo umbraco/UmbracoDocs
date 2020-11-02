@@ -4,17 +4,17 @@ versionFrom: 7.0.0
 
 # Users on Umbraco Cloud
 
-On Umbraco Cloud users work almost identical as they do on a normal installation of Umbraco however you have a few more settings available when working on Umbraco Cloud.
+On Umbraco Cloud users work almost identical as they do on a normal installation of Umbraco however you have a few more settings available on Umbraco Cloud.
 
 In this article, we will show what these settings is and how you can use them.
 
 ## User group permissions for transfers and restores
 
-A feature on Umbraco Cloud is the possibility to control who has access to transferring and restoring content and media on your Umbraco Cloud project.
+A feature on Umbraco Cloud is the possibility to control which users has access to transferring and restoring content and media on your Umbraco Cloud project.
 
-This can be done when creating a new User Group or when editing an existing one.
+This can be done when creating a new User Group or when editing an existing group.
 
-You have the option to decide whether a specific User Group can do a restore, partial restore or if they can queue content for transfer to the next environment.
+You have the option to decide whether a specific User Group have permission to do a restore, partial restore or if they can queue content for transfer to the next environment.
 
 It is also possible to get Granular control on a per node basis, so that you can disable restore and transfer for specific content on your site, which can help avoid mistakes and ensure proper workflows are followed.
 
@@ -23,7 +23,7 @@ It is also possible to get Granular control on a per node basis, so that you can
 There is two ways that you can set up these permissions.
 You can either create a new User Group and set the permissions there or you can edit an existing group.
 
-To create a new User group, go to the User section of the backoffice.
+To create or edit a user group, go to the user section of the backoffice.
 
 In the right corner, you need to click on "Groups".
 From here you are able to either create a new or edit an existing User Group.
@@ -34,13 +34,13 @@ Click on "Create group" and scroll down and look under "Default permissions" whe
 
 ![User Groups](images/default_permisions.png)
 
-You can then decide whether the users in the new User Group can restore, restore partial or transfer content.
+You can decide whether the users in the new User Group can restore, restore partial or transfer content.
 
 To edit an already existing user group go to the User group you want to edit, e.g Editors or Writers and set the permissions from there.
 
 ### Granular Permissions
 
-As mentioned it is also possible to set Granular permissions for a specific content node in your user groups on your cloud project.
+As mentioned it is also possible to set Granular permissions for a specific content node on your cloud project.
 
 You can set the permission when you are creating or editing an existing user group.
 
