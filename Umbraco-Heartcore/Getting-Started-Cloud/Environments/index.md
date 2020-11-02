@@ -27,7 +27,7 @@ How many environments you can work with depends on [the plan your Umbraco Heartc
 * Mini: 1 environment (Live)
 * Starter: 2 environments (Development and Live)
 * Professional: 3 environments (Development, Staging, and Live)
-* Enterprise: Custom number of environments. You can contact us by [using this form](https://umbraco.com/umbraco-heartcore-pricing/buy-umbraco-heartcore-enterprise/) if you're interested in the Enterprise plan.
+* Enterprise: Flexible number of environments. You can contact us by [using the Umbraco Heartcore Enterprise form](https://umbraco.com/umbraco-heartcore-pricing/buy-umbraco-heartcore-enterprise/) if you're interested in more information about the Enterprise plan.
 
 When you upgrade your Heartcore project from the Mini to the Starter plan, the Development environment will be added automatically. Once you've upgraded to the Professional plan, you will be able to add the Staging environment as well.
 
