@@ -23,7 +23,7 @@ It is also possible to get Granular control on a per-node basis so that you can 
 There are two ways that you can set up these permissions.
 You can either create a new User Group and set the permissions there or you can edit an existing group.
 
-To create or edit a user group, go to the user section of the backoffice.
+To create or edit a User Group, go to the User section of the backoffice.
 
 In the right corner, you need to click on "Groups".
 From here you are able to either create a new User Group, or edit an existing one.
