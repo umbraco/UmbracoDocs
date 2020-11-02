@@ -177,15 +177,6 @@ The final thing we need to do before we start creating content is to check that 
 1. Select the *Home Page* Document Type in the tree.
 2. Navigate to the **Permissions** tab in the top-right corner.
 3. We will want to allow that Home Page Document Type can be used to create content at *root level*, so make sure the **Allow as root** is checked.
-
-:::tip
-**Allow as root**
-
-By default it is possible to use any type of Document Type for creating content at the root of the Content tree in Umbraco.
-
-However, once you've checked this permission setting on one Document Type, it will be the **only one** that can be used to create content at the root.
-:::
-
 4. Next to **Allowed child node types** select **Add child**, and in the dialog select our *Blog Area* Document Type.
     * Doing this, will allow us to create content of the Blog Area type under our Home Page.
 5. **Save** the Document Type.
