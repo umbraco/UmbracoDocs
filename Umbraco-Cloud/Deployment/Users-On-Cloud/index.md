@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 On Umbraco Cloud, users work almost identical as they do on a normal installation of Umbraco. However, you have a few more settings available on Umbraco Cloud.
 
-In this article, we will show what these settings is and how you can use them.
+In this article, we will show what these settings are and how you can use them.
 
 ## User group permissions for transfers and restores
 
