@@ -90,7 +90,9 @@ and this is then displayed in the editor:
 ![Code Sample Option in Rich Text Editor Configuration](images/highlighted-code.png)
 
 :::note
-You will need prism.js loaded in the public facing part of your website to display the code highlighting on the published page.
+To display the same formatted code on the public-facing part of your website you will need to include `prism.js` and `prism.css` in your view. You can get both of these files from the [Prism JS website](https://prismjs.com/) and customise the output styling.
+
+You will need to add `code[*]` to the end of the `validElements` section of the tinyMceConfig.config file too. More details about this are below.
 :::
 
 ## validElements
