@@ -211,7 +211,7 @@ We now have the option to create a content item based on our Home Page Document 
 7. In the dialog, you can do either of the following the choose an image:
     * Select the **Upload** button to choose an image from your file explorer or
     * Drag an image directly into the dialog.
-8. Once you've chosen an image, select it at the dialog and click the green **Select** button in the bottom of the dialog.
+8. Once you've chosen an image, select it from the dialog and select the green **Select** button at the bottom of the dialog.
 
 :::tip
 **Media items and images**
