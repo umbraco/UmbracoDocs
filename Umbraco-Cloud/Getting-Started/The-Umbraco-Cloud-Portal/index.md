@@ -51,7 +51,7 @@ From [Settings](../../Set-up/project-settings) - in the top-right corner - you'l
 
 ## Environment error log
 
-Each environment has an error log that appears only if you have any unread errors for that specific environment. You can view them by clicking on "View errors" in the environment menu.
+Each environment has an error log that appears only if you have any unread errors on that specific environment. You can view the errors by clicking on "View errors" in the environment menu.
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
@@ -107,4 +107,3 @@ From your profile settings you can set your time zone. This applies to the displ
 #### Experimental Features
 
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
-
