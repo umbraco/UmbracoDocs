@@ -53,7 +53,7 @@ From [Settings](../../Set-up/project-settings) - in the top-right corner - you'l
 
 Each environment has an error log that appears only if you have any unread errors for that specific environment. You can view them by clicking on "View errors" in the environment menu.
 
-Once you're there you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
+Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
 During development, you can happen to gather a quite impressive number of errors which might cause the error page to load very slowly. A simple fix for that would be to locally connect to the database for that specific environment and delete those errors. You can read more about connecting to the environment database locally [here](../../Databases/Cloud-Database).
 
@@ -107,5 +107,4 @@ From your profile settings you can set your time zone. This applies to the displ
 #### Experimental Features
 
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
-
 
