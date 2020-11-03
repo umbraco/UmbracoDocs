@@ -64,7 +64,7 @@ DELETE TOP(90) PERCENT
   FROM [dbo].[UCErrorLog]
   WHERE [Read] = 0
 ```
-The query above will delete 90% of errors. It always begins deleting the oldest errors first. You can tweak the query to delete any % of errors you like by changing the number in the first row.
+The query above will delete 90% of errors. The query will always delete the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
 
 ## The chat
 
