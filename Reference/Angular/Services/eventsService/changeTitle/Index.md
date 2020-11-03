@@ -8,7 +8,7 @@ versionFrom: 8.4.0
 Setting the title of the page the user is working on is important for accessibility purposes; where people using assistive technology need to know what they are maintaining. 
 By setting the page title, people who work with multiple tabs will also find the page they were working on easily.
 
-To use the directive use:
+To use the directive call:
 
 ```
 $scope.$emit("$changeTitle", title);

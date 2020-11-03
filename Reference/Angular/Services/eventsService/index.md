@@ -497,3 +497,14 @@ https://github.com/umbraco/Umbraco-CMS/blob/dc39faeb5ecc51992eeb1dcdf901b7ffc11b
 https://github.com/umbraco/Umbraco-CMS/blob/e8bb3b01aacc50fc096d726a83d3bd6a914749bd/src/Umbraco.Web.UI.Client/src/views/common/infiniteeditors/mediapicker/mediapicker.controller.js#L287
 
 -->
+
+
+### Other
+
+**Setting the page title**
+
+Available from 8.4.0
+```
+$scope.$emit("$changeTitle", title);
+```
+For more information see [Change title](changeTitle)
