@@ -262,7 +262,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
             .then(function (media) {
                 console.log(media);
                 //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
-                $scope.imageUrl = media.MediaLink;
+                $scope.imageUrl = media.mediaLink;
     });    
 });
 ```
