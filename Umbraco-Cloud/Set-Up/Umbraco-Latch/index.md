@@ -6,6 +6,19 @@ versionFrom: 7.0.0
 
 All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
 
+:::note
+Certificates last 3 months and are automatically renewed, as long as the prerequisites below are met.
+:::
+
+## Prerequisites
+In order for Latch to work and the security certificate to be applied to the site, you need to fulfill some criteria. First of all, the content node that the domain is pointing to cannot have the status of 404 whether it's a custom 404 page or one caused by an error.
+
+Latch needs the site to have a status of 200 in order for the certificate to be applied and renewed. This means that every 3 months Latch will go through the renewal process, and the prerequisites have to be met each time in order for it to work.
+
+If you wish to have a custom 404 page on the root of your website then you will need to purchase and apply a [custom certificate instead](../Manage-Hostnames/Security-Certificates/).
+
+
+
 ![Adding a hostname](images/adding-hostname-to-cloud.gif)
 
 In order for Umbraco Latch to be applied to your hostname, you need to make sure that your DNS has been setup one of these ways:
