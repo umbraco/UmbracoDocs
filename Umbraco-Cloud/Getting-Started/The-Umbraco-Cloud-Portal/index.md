@@ -59,12 +59,13 @@ During development, you can happen to gather a large number of errors which migh
 
 Environment errors are stored in the `UCErrorLog` table.
 
+The query below will delete 90% of errors. The query will always delete the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
+
 ```
 DELETE TOP(90) PERCENT
   FROM [dbo].[UCErrorLog]
   WHERE [Read] = 0
 ```
-The query above will delete 90% of errors. The query will always delete the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
 
 ## The chat
 
