@@ -18,7 +18,9 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ![Media Picker Content](images/Media-Picker-Content-v8.png)
 
-## Typed Example (multiple enabled)
+## MVC View Example
+
+### Multiple enabled without Modelsbuilder
 
 ```csharp
 @{
@@ -30,7 +32,19 @@ This property editors returns a single item if the "Pick multiple items" data ty
 }
 ```
 
-## Typed Example (multiple disabled)
+### Multiple enabled with Modelsbuilder
+
+```csharp
+@{
+    var typedMultiMediaPicker = Model.Sliders;
+    foreach (var item in typedMultiMediaPicker)
+    {
+        <img src="@item.Url" style="width:200px" />
+    }
+}
+```
+
+## Multiple disabled without Modelsbuilder
 
 ```csharp
 @{
@@ -39,6 +53,19 @@ This property editors returns a single item if the "Pick multiple items" data ty
     {
         <p>@typedMediaPickerSingle.Url</p>
         <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+    }
+}
+```
+
+## Multiple disabled with Modelsbuilder
+
+```csharp
+@{
+    var typedMediaPickerSingle = Model.FeaturedBanner;
+    if (typedMediaPickerSingle is Image image)
+    {
+        <p>@image.Url</p>
+        <img src="@image.Url" style="width:200px"/>
     }
 }
 ```
