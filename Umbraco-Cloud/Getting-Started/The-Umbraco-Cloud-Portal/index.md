@@ -55,7 +55,7 @@ Each environment has an error log that appears only if you have any unread error
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
-During development, you can happen to gather a quite impressive number of errors which might cause the error page to load very slowly. A simple fix for that would be to locally connect to the database for that specific environment and delete those errors. You can read more about connecting to the environment database locally [here](../../Databases/Cloud-Database).
+During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the [section about databases on Umbraco Cloud](../../Databases/Cloud-Database).
 
 Environment errors are stored in the UCErrorLog table.
 
