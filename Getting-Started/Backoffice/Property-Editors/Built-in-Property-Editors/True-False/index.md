@@ -51,7 +51,7 @@ See the example below to see how a value can be added or changed programmaticall
 ```csharp
 var contentService = Services.ContentService;
 
-var content = _contentService.GetById(1234); // ID of your page
+var content = contentService.GetById(1234); // ID of your page
 content.SetValue("myCheckBox", true);
             
 contentService.SaveAndPublish(content);
