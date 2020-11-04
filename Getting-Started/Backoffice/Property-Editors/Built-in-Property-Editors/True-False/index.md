@@ -49,10 +49,24 @@ It is also possible to define a label, that will be displayed next to the checkb
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-var contentService = Services.ContentService;
+@{
+    var contentService = Services.ContentService;
 
-var content = contentService.GetById(1234); // ID of your page
-content.SetValue("myCheckBox", true);
+    var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
+    
+    var content = contentService.GetById(guid); // ID of your page
+    content.SetValue("myCheckBox", true);
             
-contentService.SaveAndPublish(content);
+    contentService.SaveAndPublish(content);
+}
 ```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    var content = contentService.GetById(1234); 
+}
+```
+
+
