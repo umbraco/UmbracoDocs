@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL API"
 
 # GraphQL API
 
-The GraphQL API accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
+The GraphQL API can be accessed on `https://graphql.umbraco.io`, it accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
 
 ```json
 {
