@@ -39,7 +39,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## Date/Time
 
-**Editor Alias**: `Umbrace.DateTime`<br>
+**Editor Alias**: `Umbraco.DateTime`<br>
 **GraphQL Type**: `DateTime`<br>
 **Can be used for filtering**: `true`
 
