@@ -16,5 +16,8 @@ The steps are outlined below:
 7. Copy and paste your site key into the field called "Recaptcha public key"
 8. Save and publish the Forms settings content node
 
-(Friendly note, the "Contact Form Recaptcha" is not shown under Settings by default, you will have to create it manually, as illustrated here)
 ![How to find a create a Forms page under Settings](images/forms-recaptcha.png)
+
+:::note
+The "Contact Form Recaptcha" is not shown under Settings by default, you will have to create it manually, as illustrated above.
+:::
