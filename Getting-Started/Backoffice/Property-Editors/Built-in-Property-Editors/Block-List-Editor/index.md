@@ -186,6 +186,49 @@ Example:
 }
 ```
 
+## Extract Block List Content data
+
+In some cases you might want to use the block list editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
+An example could be a product page with variants stored in block list editor.
+
+In this case you can extract the variants data using the following, which returns `IEnumerable<IPublishedElement>`.
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Value<IEnumerable<BlockListItem>>("variants").Select(x => x.Content);
+    foreach (var variant in variants)
+    {
+        <h4>@variant.Value("variantName")</h4>
+        <p>@variant..Value("description")</p>
+    }
+}
+```
+
+If using ModelsBuilder the example can be simplified:
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Variants.Select(x => x.Content).OfType<ProductVariant>();
+    foreach (var variant in variants)
+    {
+        <h4>@variant.VariantName</h4>
+        <p>@variant.Description</h4>
+    }
+}
+```
+
+If you know the block list editor only use a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value willl be `IEnumerable<IPublishedElement>`.
+
+
 ## Build a Custom Backoffice View
 
 You can choose to customize your editing experience by implementing a custom view for each Block.
