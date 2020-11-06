@@ -30,7 +30,7 @@ There are many third-party services to choose between, here are a few samples:
 * Let visitors on your website book a time with you through [Calendly](https://help.calendly.com/hc/en-us/articles/223147027-Embed-options-overview).
 * Show your most recent reviews using [TrustPilot](https://support.trustpilot.com/hc/en-us/articles/203840826-Add-a-TrustBox-widget-to-a-webpage).
 
-[More available services](https://elfsight.com/widgets/).
+[More available services.](https://elfsight.com/widgets/)
 
 ### How to use the Code widget
 
