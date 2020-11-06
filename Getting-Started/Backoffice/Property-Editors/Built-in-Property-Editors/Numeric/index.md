@@ -32,7 +32,7 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ## MVC View Examples
 
-### Rendering the output casting to an int
+### Rendering the output casting to an int (without Modelsbuilder)
 By casting the output as an int it's possible for you to do mathematical operations with the value.
 
 ```csharp
@@ -45,7 +45,7 @@ By casting the output as an int it's possible for you to do mathematical operati
 }
 ```
 
-### Rendering the output casting to a string
+### Rendering the output casting to a string (Without Modelsbuilder)
 You can also render the output by casting it to a string, which means you will not be able to do mathematical operations
 
 ```csharp
@@ -53,5 +53,17 @@ You can also render the output by casting it to a string, which means you will n
     if(Model.HasValue("students")){
         <p>@(Model.Value<string>("students"))</p>
     }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    int students = Model.Students;
+    int teachers = Model.Teachers;
+    int totalTravellers = students + teachers;
+
+    <p>@totalTravellers</p>
 }
 ```
