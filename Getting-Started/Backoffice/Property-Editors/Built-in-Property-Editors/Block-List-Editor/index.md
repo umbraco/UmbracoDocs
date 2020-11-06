@@ -188,8 +188,8 @@ Example:
 
 ## Extract Block List Content data
 
-In some cases you might want to use the block list editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
-An example could be a product page with variants stored in block list editor.
+In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
+An example could be a product page with variants stored in a Block List Editor.
 
 In this case you can extract the variants data using the following, which returns `IEnumerable<IPublishedElement>`.
 
