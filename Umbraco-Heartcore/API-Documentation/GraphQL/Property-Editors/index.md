@@ -45,7 +45,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## Decimal
 
-**Editor Alias**: `Umbrace.Decimal`<br>
+**Editor Alias**: `Umbraco.Decimal`<br>
 **GraphQL Type**: `Decimal`<br>
 **Can be used for filtering**: `true`
 
