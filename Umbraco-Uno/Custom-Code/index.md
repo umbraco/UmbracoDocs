@@ -35,3 +35,10 @@ The way you activate this feature is very straight forward:
 After Enabling Custom code, you will be able to enter the settings section and the packages section on your Development and Staging environments(not on live).
 Furthermore, you will gain access to Git for Development and Staging which will enable you to clone the environments to your local machine.
 If you decide to clone your Umbraco Uno Project down locally, it is important that you keep the domain as it is (localhost:), because if you change it, that will potentially lead to issues with our license checker.
+
+:::links
+## Related articles
+
+- [Extending Uno](../Creating-Content/Extending-Uno)
+
+:::
