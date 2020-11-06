@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Extending uno
+# Extending Uno
 
 There are a couple of ways to extend your Umbraco Uno website with custom code and external services.
 
