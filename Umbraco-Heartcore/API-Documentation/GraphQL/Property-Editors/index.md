@@ -177,7 +177,7 @@ This editor configuration is not supported and will not be present in the genera
 
 ## Numeric
 
-**Editor Alias**: `Umbraco.Numeric`<br>
+**Editor Alias**: `Umbraco.Integer`<br>
 **GraphQL Type**: `Int`
 
 ## Radio button List
