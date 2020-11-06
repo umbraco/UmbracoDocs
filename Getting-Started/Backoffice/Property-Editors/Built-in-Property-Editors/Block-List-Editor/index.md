@@ -226,7 +226,7 @@ Example:
 }
 ```
 
-If you know the block list editor only use a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value willl be `IEnumerable<IPublishedElement>`.
+If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
 
 
 ## Build a Custom Backoffice View
