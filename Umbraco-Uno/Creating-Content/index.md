@@ -42,6 +42,10 @@ Create a brand new landingpage fra scratch following our "How to create a landin
 
 On some website the bottom is where you would go for all sorts of different information. With Umbraco Uno you can create a Footer exactly like that; with all sorts of different information.
 
+## [Extending Uno](Extending-Uno)
+
+Learn how you can extend Uno by enabling Custom Code or by embedding external services through widgets.
+
 ## [Navigation-menu](Navigation-menu)
 
 The navigation menu is an essential part of any website. With Umbraco Uno you can choose to go with the default, auto-generated one or created a custom navigation where you have full control over the contents.
