@@ -204,7 +204,7 @@ Example:
     foreach (var variant in variants)
     {
         <h4>@variant.Value("variantName")</h4>
-        <p>@variant..Value("description")</p>
+        <p>@variant.Value("description")</p>
     }
 }
 ```
