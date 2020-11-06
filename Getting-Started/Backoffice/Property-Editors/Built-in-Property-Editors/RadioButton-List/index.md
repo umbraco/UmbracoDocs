@@ -33,7 +33,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 #### With Modelsbuilder
 ```csharp
-@if (Model.HasValue("colorTheme"))
+@if (Model.ColorTheme.HasValue())
 {
     var value = Model.ColorTheme;
     <p>@value</p>
