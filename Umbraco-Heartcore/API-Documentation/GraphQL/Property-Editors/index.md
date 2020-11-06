@@ -16,7 +16,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## Checkbox list
 
-**Editor Alias**: `Umbraco.ChecxBoxList`<br>
+**Editor Alias**: `Umbraco.CheckBoxList`<br>
 **GraphQL Type**: `[String]`<br>
 **Can be used for filtering**: `false`
 
