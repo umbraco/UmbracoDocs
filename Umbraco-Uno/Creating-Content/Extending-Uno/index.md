@@ -26,9 +26,11 @@ Using the Code widget to embed and integrate third-party services with your Umbr
 
 There are many third-party services to choose between, here are a few samples:
 
-* Add a chat service to your website by using [Tidio live chat](https://www.tidio.com/).
-* Let visistors on your website book a time with you through [Calendly](https://calendly.com/).
-* Use the booking system, [Bookeo](https://www.bookeo.com/) to add a booking feature to your Uno website.
+* Add a chat service to your website by using [Tidio live chat](https://www.tidio.com/knowledge/getting-started/how-to-install-chat-on-your-website/).
+* Let visistors on your website book a time with you through [Calendly](https://help.calendly.com/hc/en-us/articles/223147027-Embed-options-overview).
+* Show your most recent reviews using [TrustPilot](https://support.trustpilot.com/hc/en-us/articles/203840826-Add-a-TrustBox-widget-to-a-webpage).
+
+[More available services](https://elfsight.com/widgets/).
 
 ### How to use the Code widget
 
