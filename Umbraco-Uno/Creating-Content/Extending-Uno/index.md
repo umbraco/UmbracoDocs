@@ -52,10 +52,13 @@ In the image below, the Calendly service has been integrated into a Umbraco Uno 
 It is important to note that we do not support the functionality of any third-party services that are integrated into your Umbraco Uno website.
 :::
 
+:::links
 ## Related articles
 
-* [Custom Code](../../Custom-Code)
-* [Widgets](../../Widgets)
-* [Code widget](../../Widgets/Grid/Code)
-* [Grid widget](../../Widget/Grid)
-* [Working with Widgets](../Working-with-widgets)
+- [Custom Code](../../Custom-Code)
+- [Widgets](../../Widgets)
+- [Code widget](../../Widgets/Grid/Code)
+- [Grid widget](../../Widget/Grid)
+- [Working with Widgets](../Working-with-widgets)
+
+:::
