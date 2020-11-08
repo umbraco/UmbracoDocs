@@ -123,8 +123,7 @@ And in the `.html` file:
 ```csharp
 <div  ng-controller="My.WordCounterApp as vm">
     <umb-box>
-        <umb-box-header
-            title="Amount of words for each property" />
+        <umb-box-header title="Amount of words for each property"></umb-box-header>
         <umb-box-content>
             <div ng-repeat="(key, value) in vm.propertyWordCount">
                 <p>Property: <span style="font-style:italic">{{key}}</span>, amount of words: <span style="font-style:italic">{{value}}</span> </p>
