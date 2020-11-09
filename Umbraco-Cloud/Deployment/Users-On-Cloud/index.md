@@ -61,7 +61,7 @@ In the bottom of the User Group, you can add the setting for Granular permission
 
 ![Granular permission](images/Granular.png)
 
-When you click "Add", you can choose which content node on your project that you want to set the Granular settings for.
+When you click "Add", you can choose the content node which you want to set the Granular settings for.
 
 ![Granular content node](images/Granular_node.png)
 
