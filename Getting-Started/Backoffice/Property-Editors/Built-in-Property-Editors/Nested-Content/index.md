@@ -136,3 +136,35 @@ Example:
 }
 <h3>@item.Value("heading")</h3>
 ```
+
+## Creating Nested Content programmatically
+
+For the sake of this example, let us assume we have a nested content property with alias `attendeeList`, where the element document type has an alias of `attendee`.
+It has the properties: `user_name`, `user_email`, `join_time`, `leave_time`, `duration`, `phone`.
+
+To save data in nested content, we need to create a new List containing a `Dictionary` of type `<string, object>`. `Dictionary<string, string>` would also work.
+The first dictionary item we should specify for each nested content element is `ncContentTypeAlias`, which is the alias of the document type that is the element in nested content.
+
+Afterwards, the entire dictionary needs to be serialized to Json via JsonConvert.
+
+After injecting After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and creating a new content node, we can do the following:
+
+```csharp
+ IContent request = ContentService.Create("new node", guid, "mydoctype", -1); //here we create a new node, and fill out attendeeList afterwards
+ var attendees = new List<Dictionary<string, string>>(); //our list which will contain nested content
+ foreach (var person in participants) //participants is our list of attendees - multiple items, perfect for nested content!
+            attendees.Add(new Dictionary<string, string>() {
+            {"ncContentTypeAlias","attendee"}, //this is the only "default" value we need to fill for nested item
+            {"user_name", person.name},
+            {"user_email",person.user_email},
+            {"join_time",person.join_time.ToString()},
+            {"leave_time",person.leave_time.ToString()},
+            {"duration",person.duration.ToString()},
+            {"phone",person.phone.ToString()}
+            });
+            }
+            request.SetValue("attendeeList", JsonConvert.SerializeObject(attendees)); //bind the attendees List to attendeeList property on the newly created content node
+            ContentService.SaveAndPublish(request); //Save the entire node via ContentService
+```
+
+Where we iterate through a list of participants (the data could be coming from an API, for example) and add a new `Dictionary` item for each person in the list.
