@@ -22,11 +22,27 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @{
     if (Model.HasValue("superHeros"))
+    {
+        <ul>
+            @foreach (var item in Model.Value<IEnumerable<string>>("superHeros"))
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.SuperHeros.Any())
     {
         <ul>
             @foreach (var item in Model.SuperHeros)
