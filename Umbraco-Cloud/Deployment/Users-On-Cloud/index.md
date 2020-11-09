@@ -17,7 +17,7 @@ Users can also be invited directly from the backoffice of your Umbraco Cloud pro
 Check out the [Users article](/Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
-users are environment-specific on Umbraco Cloud, this means that they will not be transferred over when doing a deployment to the next environment, this means that they will need to be added on the different environments on Umbraco Cloud.
+Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
 :::
 
 ## User group permissions for transfers and restores
