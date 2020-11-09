@@ -2,7 +2,7 @@
 
 On Umbraco Cloud, users work in almost the same way as on a normal installation of Umbraco; however, there are a few more settings available for the backoffice users on Umbraco Cloud.
 
-In this article, we will show how users work and the different settings on Umbraco Cloud.
+In this article, we will show how users work, as well as explain the different settings for users on Umbraco Cloud.
 
 ## Adding users on Umbraco Cloud
 
