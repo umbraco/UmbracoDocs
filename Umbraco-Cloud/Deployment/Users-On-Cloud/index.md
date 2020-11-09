@@ -12,7 +12,7 @@ You can add them as a [Team member](/Umbraco-Cloud/Set-Up/Team-Members/) from th
 
 By default, when added to the project as a team member, they will be added to the backoffice as administrators.
 
-users can also be invited directly from the backoffice of your Umbraco Cloud project where you can give them different user permissions.
+Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
 Check out the [Users article](/Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
