@@ -22,7 +22,7 @@ users are environment-specific on Umbraco Cloud, this means that they will not b
 
 ## User group permissions for transfers and restores
 
-A feature on Umbraco Cloud is the possibility to control which users have access to transferring and restoring content and media on your Umbraco Cloud project.
+On Umbraco Cloud, it is possible to control which users have access to transferring and restoring content and media on your Umbraco Cloud project.
 
 This can be done when creating a new User Group or when editing an existing group.
 
