@@ -10,7 +10,7 @@ There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
 You can add them as a [Team member](/Umbraco-Cloud/Set-Up/Team-Members/) from the project portal on Umbraco Cloud.
 
-They will by default when added to the project as a team member be added to the backoffice as administrators.
+By default, when added to the project as a team member, they will be added to the backoffice as administrators.
 
 users can also be invited directly from the backoffice of your Umbraco Cloud project where you can give them different user permissions.
 
