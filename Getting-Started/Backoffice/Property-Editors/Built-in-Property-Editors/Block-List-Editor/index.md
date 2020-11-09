@@ -319,8 +319,8 @@ The JSON object we will pass into the `People` property will look like this:
       {
          "contentTypeKey":"68075bd7-bd89-4614-9157-1979dba05768",
          "udi":"umb://element/e28d73b5b9394631b7184c5cd6065fed",
-         "user_name":"Test user",
-         "user_email":"test@test.com"
+         "user_name":"Janice",
+         "user_email":"janice@janiceindustries.com"
       },
       {
          "contentTypeKey":"68075bd7-bd89-4614-9157-1979dba05768",
@@ -380,7 +380,7 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
             GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());  //we are creating two people to be added to Blocklist, which means we need two new Guids
             GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());  //Since these will be BLocklist items the Guids need to mention the "element" keyword
             IContent request = contentService.Create("Home", -1, "home", -1);  //using Content Service, we create a new root node with the name Home and Document Type home
-            Person person1 = new Person("Janice", "Janice@janiceindustries.com"); 
+            Person person1 = new Person("Janice", "janice@janiceindustries.com"); 
             Person person2 = new Person("John", "john@johnindustries.com");  //we create some dummy users
             Blocklist blocklistNew = new Blocklist();  //initialize our new empty model to mimic proper JSON structure
             var personList = new List<Dictionary<string, string>>();  //initialize empty person list where we will add our users
