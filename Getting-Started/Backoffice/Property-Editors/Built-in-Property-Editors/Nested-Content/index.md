@@ -143,7 +143,7 @@ For the sake of this example, let us assume we have a nested content property wi
 It has the properties: `user_name`, `user_email`, `join_time`, `leave_time`, `duration`, `phone`.
 
 To save data in nested content, we need to create a new List containing a `Dictionary` of type `<string, object>`. `Dictionary<string, string>` would also work.
-The first dictionary item we should specify for each nested content element is `ncContentTypeAlias`, which is the alias of the document type that is the element in nested content.
+The first dictionary item property/parameter we should specify for each nested content element is `ncContentTypeAlias`, which is the alias of the document type that is the element in nested content.
 
 Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 
