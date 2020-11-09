@@ -294,3 +294,126 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
+
+## Creating Blocklist programmatically
+
+In this example we are creating some Blocklist objects under the `People` property in `Home` Document Type. The `People` property implements a Blocklist datatype where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
+
+The approach to saving Blocklist content programmatically is similar to Nested Content - though the JSON schema is a bit different.
+
+The JSON object we will pass into the `People` property will look like this:
+
+```json
+{
+   "layout":{
+      "Umbraco.BlockList":[
+         {
+            "contentUdi":"umb://element/e28d73b5b9394631b7184c5cd6065fed"
+         },
+         {
+            "contentUdi":"umb://element/e51a247138594f6ca48f541d1bc1e09f"
+         }
+      ]
+   },
+   "contentData":[
+      {
+         "contentTypeKey":"68075bd7-bd89-4614-9157-1979dba05768",
+         "udi":"umb://element/e28d73b5b9394631b7184c5cd6065fed",
+         "user_name":"Test user",
+         "user_email":"test@test.com"
+      },
+      {
+         "contentTypeKey":"68075bd7-bd89-4614-9157-1979dba05768",
+         "udi":"umb://element/e51a247138594f6ca48f541d1bc1e09f",
+         "user_name":"John",
+         "user_email":"john@johnindustries.com"
+      }
+   ],
+   "settingsData":[
+      
+   ]
+}
+```
+
+We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
+`contentTypeKey` in this context is the Key value of the Document Type we are using in the Blocklist (`Person`), and the `udi` we will generate manually.
+
+To make things easier, we can make a basic model which we will later serialize into JSON:
+
+```csharp
+using Newtonsoft.Json;
+using System.Collections.Generic;
+
+    public class Blocklist //this class is to mock the correct JSON structure when the object is serialized
+    {
+        public BlockListUdi layout { get; set; }
+        public List<Dictionary<string, string>> contentData { get; set; }
+        public List<Dictionary<string, string>> settingsData { get; set; }
+    }
+    public class BlockListUdi //this is a subclass which corresponds to the "Umbraco.BlockList" section in JSON
+    {
+        [JsonProperty("Umbraco.BlockList")]  //we mock the Umbraco.BlockList name with JsonPropertyAttribute to match the requested JSON structure
+        public List<Dictionary<string, string>> contentUdi { get; set; }
+
+        public BlockListUdi(List<Dictionary<string, string>> items)
+        {
+            this.contentUdi = items;
+        }
+    }
+    public class Person //this is our Blocklist's allowed nested element. We make a model for it so we can create some dummy data
+    {
+        public string user_name { get; set; }
+        public string user_email { get; set; }
+        public Person(string user_name, string user_email)
+        {
+            this.user_name = user_name;
+            this.user_email = user_email;
+        }
+    }
+```
+
+After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
+
+```csharp
+            var contentService = Services.ContentService; //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
+            IContentTypeService contentTypeService = Services.ContentTypeService;  //not to be confused with ContentService, this service will be useful for getting some Document Type IDs
+            GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());  //we are creating two people to be added to Blocklist, which means we need two new Guids
+            GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());  //Since these will be BLocklist items the Guids need to mention the "element" keyword
+            IContent request = contentService.Create("Home", -1, "home", -1);  //using Content Service, we create a new root node with the name Home and Document Type home
+            Person person1 = new Person("Janice", "Janice@janiceindustries.com"); 
+            Person person2 = new Person("John", "john@johnindustries.com");  //we create some dummy users
+            Blocklist blocklistNew = new Blocklist();  //initialize our new empty model to mimic proper JSON structure
+            var personList = new List<Dictionary<string, string>>();  //initialize empty person list where we will add our users
+            var contentTypes = contentTypeService.GetAll();  //we get the content types to later get the Person Document Type key from
+            var personType = contentTypes.Where(n => n.Alias == "person").FirstOrDefault();  //using the above types, we locate the one that corresponds to Person Document Type
+            var dictionaryUdi = new List<Dictionary<string, string>>();  //the dictionaryUdi list here will be passed in the first section of our final JSON object
+
+
+            personList.Add(new Dictionary<string, string> //add person1
+            {
+                {"contentTypeKey", personType.Key.ToString()},  //we need to pass the key of the Blocklist item type, we used ContentTypeService to obtain it.
+                {"udi", contentUdi1.ToString()},  //each item should also have a unique udi. We are passing the one we generated before
+                {"user_name", person1.user_name},  //document type custom property
+                {"user_email", person1.user_email}  //document type custom property
+            });
+            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi1.ToString() } });  //with person 1 added to the contentData section of our JSON, we also add a reference to layout section
+            personList.Add(new Dictionary<string, string> //add person2
+            {
+                {"contentTypeKey", personType.Key.ToString()},
+                {"udi", contentUdi2.ToString()},
+                {"user_name", person2.user_name},
+                {"user_email", person2.user_email}
+            });
+            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi2.ToString() } });
+
+
+            blocklistNew.layout = new BlockListUdi(dictionaryUdi);  //first section of JSON must contain udi references to whatever is in contentData
+            blocklistNew.contentData = personList;  //contentData is a list of our Person objects
+            blocklistNew.settingsData = new List<Dictionary<string, string>>();  //we initialize settingsData with a new empty List so it does not return null
+
+
+            request.SetValue("people", JsonConvert.SerializeObject(blocklistNew));  //bind the serialized JSON data to our property alias, "people"
+            contentService.SaveAndPublish(request);  //save and publish the node
+```
+
+When adding several items, it is important that each item added in `contentData` section has the corresponding Udi mentioned in the `layout` section as well - otherwise the item will not show.
