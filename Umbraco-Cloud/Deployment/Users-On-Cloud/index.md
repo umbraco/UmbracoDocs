@@ -20,8 +20,9 @@ It is also possible to get Granular control on a per-node basis so that you can 
 
 ### Set up Permissions for transfers and restores
 
-There are two ways that you can set up these permissions.
-You can either create a new User Group and set the permissions there or you can edit an existing group.
+There are two ways that you can set up these permissions
+- Create a new User Group
+- Edit an existing group
 
 To create or edit a User Group, go to the User section of the backoffice.
 
