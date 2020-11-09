@@ -66,6 +66,8 @@ These properties refers to how the Block is presented in the Block catalogue, wh
 - **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
 - **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
+The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+
 ### Advanced
 
 These properties are relevant when you work with custom views.
