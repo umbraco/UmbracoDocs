@@ -409,7 +409,7 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
 
             blocklistNew.layout = new BlockListUdi(dictionaryUdi);  //first section of JSON must contain udi references to whatever is in contentData
             blocklistNew.contentData = personList;  //contentData is a list of our Person objects
-            blocklistNew.settingsData = new List<Dictionary<string, string>>();  //we initialize settingsData with a new empty List so it does not return null
+            blocklistNew.settingsData = new List<Dictionary<string, string>>();  //If your Block List Item has settings, you would use the same technique as for contentData to set the setting values here, based on the underlying settings Document Type. If there are no settings for the item, we still need to set an empty list here to avoid a null error.
 
 
             request.SetValue("people", JsonConvert.SerializeObject(blocklistNew));  //bind the serialized JSON data to our property alias, "people"
