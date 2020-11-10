@@ -391,7 +391,7 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
 
             personList.Add(new Dictionary<string, string> //add person1
             {
-                {"contentTypeKey", personType.Key.ToString()},  //we need to pass the key of the Blocklist item type, we used ContentTypeService to obtain it.
+                {"contentTypeKey", personType.Key.ToString()},  //we need to pass the key of the Block List item type, we used ContentTypeService to obtain it
                 {"udi", contentUdi1.ToString()},  //each item should also have a unique udi. We are passing the one we generated before
                 {"user_name", person1.user_name},  //document type custom property
                 {"user_email", person1.user_email}  //document type custom property
