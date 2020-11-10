@@ -393,8 +393,8 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
             {
                 {"contentTypeKey", personType.Key.ToString()},  //we need to pass the key of the Block List item type, we used ContentTypeService to obtain it
                 {"udi", contentUdi1.ToString()},  //each item should also have a unique udi. We are passing the one we generated before
-                {"user_name", person1.user_name},  //document type custom property
-                {"user_email", person1.user_email}  //document type custom property
+                {"user_name", person1.user_name},  //Document Type custom property
+                {"user_email", person1.user_email}  //Document Type custom property
             });
             dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi1.ToString() } });  //with person 1 added to the contentData section of our JSON, we also add a reference to layout section
             personList.Add(new Dictionary<string, string> //add person2
