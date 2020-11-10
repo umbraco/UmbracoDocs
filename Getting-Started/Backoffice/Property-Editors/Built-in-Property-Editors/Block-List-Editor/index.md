@@ -336,7 +336,7 @@ The JSON object we will pass into the `People` property will look like this:
 ```
 
 We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
-`contentTypeKey` in this context is the Key value of the Document Type we are using in the Blocklist (`Person`), and the `udi` we will generate manually.
+The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
 
 To make things easier, we can make a basic model which we will later serialize into JSON:
 
