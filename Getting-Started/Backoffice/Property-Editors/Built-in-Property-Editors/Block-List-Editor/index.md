@@ -384,7 +384,7 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
             Person person2 = new Person("John", "john@johnindustries.com");  //we create some dummy users
             Blocklist blocklistNew = new Blocklist();  //initialize our new empty model to mimic proper JSON structure
             var personList = new List<Dictionary<string, string>>();  //initialize empty person list where we will add our users
-            var contentTypes = contentTypeService.GetAll();  //we get the content types to later get the Person Document Type key from
+            var contentTypes = contentTypeService.GetAll();  //we get the Content Types to later get the Person Document Type key from
             var personType = contentTypes.Where(n => n.Alias == "person").FirstOrDefault();  //using the above types, we locate the one that corresponds to Person Document Type
             var dictionaryUdi = new List<Dictionary<string, string>>();  //the dictionaryUdi list here will be passed in the first section of our final JSON object
 
