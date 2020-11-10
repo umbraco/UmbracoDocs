@@ -297,7 +297,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
 
 ## Creating Blocklist programmatically
 
-In this example we are creating some Blocklist objects under the `People` property in `Home` Document Type. The `People` property implements a Blocklist datatype where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
+In this example, we will be creating some Block List objects under the `People` property in the `Home` Document Type. The `People` property implements a Block List Data Type where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
 
 The approach to saving Blocklist content programmatically is similar to Nested Content - though the JSON schema is a bit different.
 
