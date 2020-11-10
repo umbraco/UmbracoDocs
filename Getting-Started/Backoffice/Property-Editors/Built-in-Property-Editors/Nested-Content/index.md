@@ -143,7 +143,8 @@ For the sake of this example, let us assume we have a Nested Content property wi
 It has the Properties: `user_name`, `user_email`, `join_time`, `leave_time`, `duration`, `phone`.
 
 To save data in Nested Content, we need to create a new C# List containing a `Dictionary` of type `<string, object>`. `Dictionary<string, string>` would also work.
-The first dictionary item property/parameter we should specify for each Nested Content element is `ncContentTypeAlias`, which is the alias of the Document Type that is the embed element in Nested Content.
+
+The first dictionary item property/parameter we should specify for each Nested Content element is `ncContentTypeAlias`, which is the alias of the Document Type that is the embedded element in Nested Content.
 
 Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 
