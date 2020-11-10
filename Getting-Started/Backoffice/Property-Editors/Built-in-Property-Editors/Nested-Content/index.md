@@ -139,7 +139,7 @@ Example:
 
 ## Creating Nested Content programmatically
 
-For the sake of this example, let us assume we have a Nested Content property with alias `attendeeList`, where the element Document Type has an alias of `attendee`.
+For the sake of this example, let us assume we have a Nested Content property with alias `attendeeList`, where the Element Document Type has an alias of `attendee`.
 It has the Properties: `user_name`, `user_email`, `join_time`, `leave_time`, `duration`, `phone`.
 
 To save data in Nested Content, we need to create a new C# List containing a `Dictionary` of type `<string, object>`. `Dictionary<string, string>` would also work.
