@@ -378,7 +378,7 @@ After injecting [ContentService](../../../../../Reference/Management/Services/Co
             var contentService = Services.ContentService; //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
             IContentTypeService contentTypeService = Services.ContentTypeService;  //not to be confused with ContentService, this service will be useful for getting some Document Type IDs
             GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());  //we are creating two people to be added to Blocklist, which means we need two new Guids
-            GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());  //Since these will be BLocklist items the Guids need to mention the "element" keyword
+            GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());  //Since these will be BLock List objects the Guids need to mention the "element" keyword
             IContent request = contentService.Create("Home", -1, "home", -1);  //using Content Service, we create a new root node with the name Home and Document Type home
             Person person1 = new Person("Janice", "janice@janiceindustries.com"); 
             Person person2 = new Person("John", "john@johnindustries.com");  //we create some dummy users
