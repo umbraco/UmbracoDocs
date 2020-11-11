@@ -26,7 +26,7 @@ Displays a single checkbox that can be checked or not.
 
 ![Checkbox](images/checkbox.png)
 
-## File upload
+## [File upload](FileUpload)
 Allows user to select and upload a local file.
 
 ![File upload](images/fileupload.png)
