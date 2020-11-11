@@ -1,18 +1,37 @@
-# How to set-up member area
+---
+versionFrom: 8.0.0
+---
 
-Suppose you need an area for only select users of your page. In that case, a member area will give you exactly that, so follow this guide. You will learn everything you need to know to set up a member area that is not accessible for users that aren't registered as members.
+# Creating an area for members
 
-There's going to be three parts in this guide, one to set-up register and one to set-up login, and finally one for the member's area.
+One of the many features provided with an Umbraco Uno project is the option to create an area on your website which is only accessible to people who are logged in an members.
 
-## Register
+Creating an area for members requires a few components and involves several steps.
 
-We will start by setting up a Register widget.
+In this article you will find all the information needed, in order to allow people to register as members on your website and have access to an exclusive area when they are logged in.
 
-To set-up register widget:
+The article will cover:
 
-1. Select the page where you want the register widget to be 
-2. Add the register widget
-3. Fill out the settings for register widget
+* Creating a register form,
+* Creating a login form,
+* Setting up the member-area, and
+* Adding a "Logout" button.
+
+This article will not cover how to add and manage members on your website. For more details on these topics, read the [Members](../../Manage-users/Members) article.
+
+## Creating a register form
+
+The very first thing that needs to be set up is a form where people can register to become members on your website. This can be done using the [Register widget](../../Widgets/Login-and-register/#register).
+
+1. Select the page where you want to place the Register widget - or create a new page and add the widget.
+2. Find a select the Register widget from the Widgets calatogue.
+3. (Optional) Add a heading and some text that will be displayed above the Register form.
+4. Write a message to be diplayed once a member has successfully registered - "Success Message Heading" and "Success Message Text".
+5. Select "Confirm" to add the Register widget to the page.
+
+:::center
+![Example of a Register widget with heading and a short message about benefits of the membership](images/register-widget-example.png)
+:::
 
 ![Reister sample](images/Register-members.png)
 
@@ -40,7 +59,7 @@ Finally, we will end this guide by adding the login page.
 To add the login page:
 
 1. Select the page you want to have your login page on
-2. Add the login widget and fill out every field how you like
+2. Add the login widget and fill out every field how you likeW
 3. In the field that says redirect URL choose the members page that you made in the previous chapter.
 
 ![Login sample](images/Login-members.png)
