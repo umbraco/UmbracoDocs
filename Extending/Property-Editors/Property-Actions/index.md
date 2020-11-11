@@ -31,7 +31,7 @@ We use `labelKey` and `labelTokens` to retrieve a localized string that is displ
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 
 ## Implementation
-The implementation of Property Actions vary depending on wether your Property Editor is impemented with a Controller or as a Component.
+The implementation of Property Actions vary depending on wether your Property Editor is implemented with a Controller or as a Component.
 
 ### Controller Implementation
 
