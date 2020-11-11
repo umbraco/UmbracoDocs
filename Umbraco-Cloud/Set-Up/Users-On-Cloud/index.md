@@ -1,3 +1,9 @@
+---
+meta.Title: "Users on Umbraco Cloud"
+meta.Description: "An article explaining how Umbraco Users are working on Umbraco Cloud."
+versionFrom: 7.0.0
+---
+
 # Users on Umbraco Cloud
 
 On Umbraco Cloud, users work in almost the same way as on a normal installation of Umbraco; however, there are a few more settings available for the backoffice users on Umbraco Cloud.
@@ -10,7 +16,7 @@ There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
 You can add them as a [Team member](/Umbraco-Cloud/Set-Up/Team-Members/) from the project portal on Umbraco Cloud.
 
-By default, when added to the project as a team member, they will be added to the backoffice as administrators.
+By default, when added to the project as a Team member, they will be added as users to the backoffice of all the environments as administrators.
 
 Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
@@ -39,32 +45,32 @@ There are two ways that you can set up these permissions:
 
 To create or edit a User Group, go to the User section of the backoffice.
 
-In the right corner, you need to click on "Groups", from here you are able to either create a new User Group or edit an existing one.
+1. click on "Groups" in the right corner from, and here you are able to either create a new User Group or edit an existing one.
 
-![User Groups](images/Users.png)
+    ![User Groups](images/Users.png)
 
-Click on "Create group" and scroll down and look under "Default permissions" here you can see three options:
+2. Click on "Create group" and scroll down and look under "Default permissions" here you can see three options:
 
-![User Groups](images/default_permisions.png)
+    ![User Groups](images/default_permisions.png)
 
-You can decide whether the users in the new User Group can restore, partially restore, or transfer content.
+3. From here you can decide whether the users in the new User Group can restore, partially restore, or transfer content.
 
-To edit an already existing User Group, go to the User Group you want to edit, e.g Editors or Writers, and set the permissions from there.
+4. To edit an already existing User Group, go to the User Group you want to edit, e.g Editors or Writers, and set the permissions from there.
 
 ### Granular Permissions
 
 As mentioned it is also possible to set Granular permissions for a specific content node on your cloud project.
 
-You can set the permission when you are creating or editing an existing user group.
+You can set the permission when you are creating or editing an existing User Group.
 
-At the bottom of the User Group, you can add the setting for Granular permission for your content nodes.
+1. At the bottom of the User Group, you can add the setting for Granular permission for your content nodes.
 
-![Granular permission](images/Granular.png)
+    ![Granular permission](images/Granular.png)
 
-When you click "Add", you can choose the content node which you want to set the Granular settings for.
+2. When you click "Add", you can choose the content node which you want to set the Granular settings for.
 
-![Granular content node](images/Granular_node.png)
+    ![Granular content node](images/Granular_node.png)
 
-When you have chosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore, and queueing content for transfer.
+3. When you have chosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore, and queueing content for transfer.
 
-![Granular permission](images/Granular_permission.png)
+    ![Granular permission](images/Granular_permission.png)
