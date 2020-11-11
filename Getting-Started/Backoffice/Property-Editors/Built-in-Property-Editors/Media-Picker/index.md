@@ -14,6 +14,9 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
 
+### Ignorer user start nodes
+Choose this to overrule user permissions, to enable any user of this property to pick any Media Item of the choosen Start node. If no Start node has been defined for this property any content can be viewed and selected of this property.
+
 ## Content Example
 
 ![Media Picker Content](images/Media-Picker-Content-v8.png)
