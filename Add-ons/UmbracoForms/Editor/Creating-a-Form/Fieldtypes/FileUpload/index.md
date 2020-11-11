@@ -4,6 +4,10 @@ versionFrom: 8.5.4
 
 # File upload
 
+The File Upload field allows you to give users the option to upload a file along with the form on your website.
+
+In this article, you will find details about the configuration options you have for the File Upload field.
+
 ![fileupload](images/fileupload.png)
 
 ## Allow predefined file types
