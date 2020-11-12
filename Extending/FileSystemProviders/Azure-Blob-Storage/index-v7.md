@@ -80,7 +80,7 @@ To configure Umbraco forms data its very similar to how media is setup above. Yo
 <FileSystemProviders>
   <!-- Media -->
   <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure"></Provider>
-  <!-- Forms -- >
+  <!-- Forms -->
 	<Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
     <Parameters>
     <add key="containerName" value="forms"/>
