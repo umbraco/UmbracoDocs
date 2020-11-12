@@ -2,11 +2,11 @@
 versionFrom: 7.0.0
 ---
 
-# Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
+# Setup Your Site to use Azure Blob Storage for Media, Forms data and Image Processor Cache
 
-For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
+For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media and forms.  Particularly if your site contains large amounts of media.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN. Moving your forms data to Azure Storage allows you to have multiple environments share the same forms data folder. This particularly useful when using Web App Slots in Azure App Service.
 
-Setup consists of adding several packages to your site and setting the correct configuration. Before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is “media” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
+The setup consists of adding several packages to your site and setting the correct configuration. Before you begin you’ll need to create an Azure Storage Account and a container for your media, forms and your ImageProcessor cache as well.  In this example we assume your media container is “media”, your forms is “forms” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below. It is assumed that you have made your “forms” container private.
 
 ## Packages
 
@@ -14,7 +14,7 @@ These packages are only available via NuGet, so ideally you’ll have your site 
 
 ### File System Provider for Azure Blob Storage
 
-You’ll replace the default FileSystemProvider with the `UmbracoFileSystemProviders.Azure` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
+You’ll replace the default FileSystemProvider with the `UmbracoFileSystemProviders.Azure` provider when you install the Nuget package.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
 ```PM> Install-Package UmbracoFileSystemProviders.Azure```
 
@@ -22,6 +22,8 @@ The package is also available on [Our Umbraco](https://our.umbraco.com/projects/
 The project source can be found here [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
+
+### Media
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
 
@@ -68,10 +70,44 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
     </location>
   </configuration>
 ```
+### Forms
+To clarify we are not storing form submissions into Azure storage but the JSON files used to map the layout of the forms such as the templates used and workflows. Forms submissions are stored in the database.
+
+To configure Umbraco forms data its very similar to how media is setup above. You just need to provide another provider as a sibling to the media provider. In the snippet below I have added a provider with the alias of forms along side with the media provider.
+
+```xml
+<?xml version="1.0"?>
+<FileSystemProviders>
+  <!-- Media -->
+  <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure"></Provider>
+  <!-- Forms -- >
+	<Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
+    <Parameters>
+    <add key="containerName" value="forms"/>
+    <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/"/>
+    <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
+    <!--
+        Optional configuration value determining the maximum number of days to cache items in the browser.
+        Defaults to 365 days.
+    -->
+    <add key="maxDays" value="365"/>
+    <!--
+        When true this allows the VirtualPathProvider to use the default "media" route prefix regardless
+        of the container name.
+    -->
+    <add key="useDefaultRoute" value="true"/>
+    <!--
+        When true blob containers will be private instead of public what means that you can't access the original blob file directly from its blob url.
+    -->
+    <add key="usePrivateContainer" value="true"/>
+    </Parameters>
+  </Provider>
+</FileSystemProviders>
+```
 
 ### ImageProcessor
 
-The ImageProcessor is already a part of Umbraco.
+ImageProcessor is already a part of Umbraco.
 
 Are you using a version of Umbraco older than v7.6, installing the FileSystemProvider will give you a warning and you will need to update ImageProcessor.Web and install ImageProcessor.Web.Config from NuGet.
 
@@ -146,6 +182,10 @@ You have now successfully setup Azure Blob Storage with your Umbraco site.
 Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/Media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `/Media` folder locally, as it is no longer needed.
 
 Any new media files you upload to the site, will automatically be added to the Blob Storage.
+
+## Exisiting Forms files
+
+Any Umbraco forms data files will not automatically be added to blob storage. You will need to upload the **contents** of the Umbraco forms data folder to storage. This can be found in `~/App_Plugins/UmbracoForms/Data`. Again you need the **contents** of the data folder so the **forms**, **templates** and **workflows** folders should be the only folders in the container. Do not upload the whole data folder! 
 
 ## Using Azure Blob Cache
 
