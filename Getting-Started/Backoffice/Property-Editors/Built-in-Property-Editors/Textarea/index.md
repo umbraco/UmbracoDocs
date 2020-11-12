@@ -35,10 +35,23 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ## MVC View Example
 
+### Without Modelsbuilder
+
 ```csharp
 @{
     if (Model.HasValue("description")){
         <p>@(Model.Value<string>("description"))</p>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.Description.HasValue())
+    {
+        <p>@Model.Description</p>
     }
 }
 ```
