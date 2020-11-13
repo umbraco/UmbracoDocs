@@ -26,7 +26,7 @@ Please note that getting the Value of the property will return the user ID - pro
 
 ```csharp
 @{
-    if (Model.UserPicker != null)
+    if (Model.Value("userPicker") != null)
     {
         var us = Services.UserService;
         var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
@@ -39,4 +39,17 @@ Please note that getting the Value of the property will return the user ID - pro
 
 ### With Modelsbuilder
 
+```csharp
+@{
+    if (Model.UserPicker != null)
+    {
+
+        var us = Services.UserService;
+        var user = us.GetUserById((int)Model.UserPicker);
+
+        <p>This is the chosen person: @user.Name</p>
+        <p>This returns the id value of chosen person: @user.Id)</p>
+    }
+}
+```
 
