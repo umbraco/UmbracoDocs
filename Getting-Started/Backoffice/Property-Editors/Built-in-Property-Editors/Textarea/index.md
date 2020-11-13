@@ -59,8 +59,6 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
-Version 1:
-
 ```csharp
 @{
     // Get access to ContentService
