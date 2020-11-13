@@ -12,11 +12,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-### Without a character limit
-
 ![Textbox Data Type Definition](images/Textbox-Setup-v8.png)
-
-## Settings
 
 ## Content Example
 
@@ -29,7 +25,6 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 ![Textbox Content Example Without a Character Limit](images/Textbox-Content-Limit-v8.png)
 
 ## MVC View Example
-
 
 ### Without Modelsbuilder
 
@@ -53,5 +48,27 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
         // Print the value of the field with alias 'pageTitle'
         <p>@Model.PageTitle</p>
     }
+}
+```
+
+## Add value programmatically
+
+See the example below to learn how a value can be added or changed programmatically to a TextBox property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+    // Get access to ContentService
+    var contentService = Services.ContentService;
+
+    // Create a variable for the GUID of your page
+    var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
+
+    // Get the page using the GUID you've just defined
+    var content = contentService.GetById(guid);
+    // Set the value of the property with alias 'description'
+    content.SetValue("pageTitle", "text for the text box/string.");
+
+    // Save and publish the change
+    contentService.SaveAndPublish(content);
 }
 ```
