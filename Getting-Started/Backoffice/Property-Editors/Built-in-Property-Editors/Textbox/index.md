@@ -30,12 +30,28 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## MVC View Example
 
+
+### Without Modelsbuilder
+
 ```csharp
 @{
     // Perform an null-check on the field with alias 'pageTitle'
     if (Model.HasValue("pageTitle")){
         // Print the value of the field with alias 'pageTitle'
         <p>@(Model.Value("pageTitle"))</p>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    // Perform an null-check on the field with alias 'pageTitle'
+    if (Model.PageTitle.HasValue())
+    {
+        // Print the value of the field with alias 'pageTitle'
+        <p>@Model.PageTitle</p>
     }
 }
 ```
