@@ -53,10 +53,10 @@ See the example below to see how a value can be added or changed programmaticall
     var contentService = Services.ContentService;
 
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
-    
+
     var content = contentService.GetById(guid); // ID of your page
     content.SetValue("myCheckBox", true);
-            
+
     contentService.SaveAndPublish(content);
 }
 ```
@@ -65,8 +65,6 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 
 ```csharp
 @{
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
-
-
