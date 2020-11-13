@@ -65,7 +65,7 @@ See the example below to learn how a value can be added or changed programmatica
 
     // Get the page using the GUID you've just defined
     var content = contentService.GetById(guid);
-    // Set the value of the property with alias 'description'
+    // Set the value of the property with alias 'pageTitle'
     content.SetValue("pageTitle", "text for the text box/string.");
 
     // Save and publish the change

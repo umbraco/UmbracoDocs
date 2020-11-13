@@ -15,12 +15,15 @@ Numeric is an HTML input control for entering numbers. Since it's a standard HTM
 ![Numeric Data Type Definition](images/numeric-datatype.png)
 
 ### Minimum
+
 This allows you to set up a minimum value. If you will always need a minimum value of 10 this is where you set it up and whenever you use the datatype the value will always start at 10. It's not possible to change the value to anything lower than 10. Only higher values will be accepted.
 
 ### Step Size
+
 This allows you to control by how much value should be allowed to increase/decrease when clicking the up/down arrows. If you try to enter a value that does not match with the step setting then it will not be accepted.
 
 ### Maximum
+
 This allows you to set up a maximum value. If you will always need a maximum value of 100 this is where you set it up. It's not possible to change the value to anything higher than 100. Only lower values will be accepted.
 
 ## Settings
@@ -29,10 +32,10 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ![Numeric Content Definition](images/numeric-content.png)
 
-
 ## MVC View Examples
 
 ### Rendering the output casting to an int (without Modelsbuilder)
+
 By casting the output as an int it's possible for you to do mathematical operations with the value.
 
 ```csharp
@@ -46,6 +49,7 @@ By casting the output as an int it's possible for you to do mathematical operati
 ```
 
 ### Rendering the output casting to a string (Without Modelsbuilder)
+
 You can also render the output by casting it to a string, which means you will not be able to do mathematical operations
 
 ```csharp
@@ -65,5 +69,27 @@ You can also render the output by casting it to a string, which means you will n
     int totalTravellers = students + teachers;
 
     <p>@totalTravellers</p>
+}
+```
+
+## Add value programmatically
+
+See the example below to learn how a value can be added or changed programmatically to a Numeric property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+    // Get access to ContentService
+    var contentService = Services.ContentService;
+
+    // Create a variable for the GUID of your page
+    var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
+
+    // Get the page using the GUID you've just defined
+    var content = contentService.GetById(guid);
+    // Set the value of the property with alias 'number'
+    content.SetValue("number", 31);
+
+    // Save and publish the change
+    contentService.SaveAndPublish(content);
 }
 ```
