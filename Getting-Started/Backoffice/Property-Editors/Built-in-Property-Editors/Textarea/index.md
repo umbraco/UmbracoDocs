@@ -63,15 +63,18 @@ Version 1:
 
 ```csharp
 @{
+    // Get access to ContentService
     var contentService = Services.ContentService;
 
+    // Create a variable for the GUID of your page
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
 
-    // GUID of your page
+    // Get the page using the GUID you've just defined
     var content = contentService.GetById(guid);
-    // Set the value of property with alias 'description'
+    // Set the value of the property with alias 'description'
     content.SetValue("description", "This is some text for the text area!");
 
+    // Save and publish the change
     contentService.SaveAndPublish(content);
 }
 ```
