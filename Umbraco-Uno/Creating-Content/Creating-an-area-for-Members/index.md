@@ -14,8 +14,8 @@ The article will cover:
 
 * [Creating a registrations form](#creating-a-registration-form)
 * [Creating a login form](#creating-a-login-form)
-* Setting up the member-area
-* Adding a "Logout" button
+* [Setting up the member-area](#setting-up-a-member-area)
+* [Adding a "Logout" button](#adding-a-logout-button)
 
 This article will not cover how to add and manage members on your website. For more details on these topics, read the [Members](../../Manage-users/Members) article.
 
