@@ -71,7 +71,7 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
   </configuration>
 ```
 ### Forms
-To clarify we are not storing form submissions into Azure storage but the JSON files used to map the layout of the forms such as the templates used and workflows. Forms submissions are stored in the database.
+We are not storing form submissions into Azure Blob Storage but the JSON files used to map the layout of the forms such as the templates used and workflows. Forms submissions are stored in the database.
 
 To configure Umbraco forms data its very similar to how media is setup above. You just need to provide another provider as a sibling to the media provider. In the snippet below I have added a provider with the alias of forms along side with the media provider.
 
