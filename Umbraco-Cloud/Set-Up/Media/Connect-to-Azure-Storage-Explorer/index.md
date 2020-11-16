@@ -28,11 +28,11 @@ Note these down, as we will use them in the upcoming steps.
 
 ## Installing Azure Storage Explorer
 
-Next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and run through the installer.
+The next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and run through the installer.
 
 ## Connecting to your Azure Blob Storage
 
-In the following we will use the information you have gathered, and Azure Storage Explorer to get you connected to your Blob storage container.
+In the following, we will use the information you have gathered, and Azure Storage Explorer to get you connected to your Blob storage container.
 
 1. Click the "Open connect dialogue" button to get the Connect dialogue.
 
