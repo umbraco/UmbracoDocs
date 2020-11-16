@@ -59,7 +59,7 @@ To create or edit a User Group, go to the User section of the backoffice.
 
 ### Granular Permissions
 
-As mentioned it is also possible to set Granular permissions for a specific content node on your cloud project.
+As mentioned it is also possible to set Granular permissions for a specific content node on your Cloud project.
 
 You can set the permission when you are creating or editing an existing User Group.
 
