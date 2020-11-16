@@ -20,7 +20,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @{
@@ -28,6 +28,22 @@ The Repeatable textstrings property editor enables a content editor to make a li
     {
         <ul>
             @foreach (var item in Model.Value<string[]>("keyFeatureList"))
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.KeyFeatureList.Any())
+    {
+        <ul>
+            @foreach (var item in Model.KeyFeatureList)
             {
                 <li>@item</li>
             }
