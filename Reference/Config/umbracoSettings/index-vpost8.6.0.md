@@ -18,6 +18,7 @@ Here's the default configuration of the `keepAlive` node:
 ```
 
 :::note
-There is an `[OnlyLocalRequests]` attribute which verifies if the request to the KeepAliveController.Ping action came from the local machine.
-If the request is made from an external source, Umbraco will return a HTTP 404 response.
+There is an `[OnlyLocalRequests]` attribute which verifies if the request to the `KeepAliveController.Ping` action came from the local machine.
+
+If the request is made from an external source, Umbraco will return an HTTP 404 response.
 :::
