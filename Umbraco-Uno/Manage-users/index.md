@@ -16,14 +16,11 @@ The reason for this is that, if the user were deleted then everything they creat
 
 Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
 
-:::note 
-You will find that your project has a user named themeowner. It is there because this is what implements the entire theme on your project. 
+:::note
+You will find that your project has a user named themeowner. It is there because this is what implements the entire theme on your project.
 :::
-
 
 ## What is a Member
 
-A member is someone who is strictly limited to the front end and typically these members will be customers, clients, or users of your page's front end.
+A member is someone who is strictly limited to the frontend and typically these members will be customers, clients, or users of your page's frontend.
 If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) There's an entire article about it.
-
- 
