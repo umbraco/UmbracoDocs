@@ -43,7 +43,7 @@ As an example, imagine that you are transferring new content changes from your D
 
 ## Media folder
 
-You will notice that there is a Media (`/media`) folder in the root of your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with the Azure Blob Storage, the media files are not in this media folder.
+You will notice that there is a Media (`/media`) folder in the root of your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with Azure Blob Storage, the media files are not in this media folder.
 
 Instead, you will find a `web.config` file in the folder. This file is used to connect the Media library on your Cloud environment to an Azure Blob Storage container.
 
@@ -64,6 +64,12 @@ Below is an example of how the `/media/web.config` file should look by default.
 ## Environment variables
 
 In some cases, you might want to connect to your Azure Blob Storage container for the environments on your Umbraco Cloud project. This could be to clean up unwanted media files or to download the current contents of the library.
+
+:::note
+Instead of connecting to your Azure Blob Storage container using the following approach, you can clone your Cloud environment to your local machine and access the files from there.
+
+You should only use the following approach, when you do not have the option to clone down the environment to your local machine.
+:::
 
 In order to do this, you need to know some details about the connection between the environment and the Azure Blob Storage containers. Below are the steps you need to follow, in order to locate the necessary variables:
 
