@@ -75,15 +75,15 @@ We are not storing form submissions into Azure Blob Storage but the JSON files u
 
 Configuring Umbraco Forms data is very similar to how media is setup above. You need to provide another provider as a sibling to the media provider. In the snippet below I have added a provider with the alias of "forms" alongside the media provider.
 
+:::warning
+The Media provider XML code has been removed to keep this snippet short and to provide context for the forms provider below. Copy the forms provider only!
+:::
+
 ```xml
 <?xml version="1.0"?>
 <FileSystemProviders>
   <!-- Media -->
-  <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
-    <!-- The Media provider XML code has been removed to keep this snippet short and to provide context for the forms provider below 
-        You only need to copy the forms provider!
-    -->
-    </Provider>
+  <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure"></Provider>
   <!-- Forms -->
 	<Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
     <Parameters>
