@@ -45,7 +45,7 @@ There are two ways that you can set up these permissions:
 
 To create or edit a User Group, go to the User section of the backoffice.
 
-1. Click on "Groups" in the right corner from, and here you are able to either create a new User Group or edit an existing one.
+1. Click on "Groups" in the right corner, and from here you are able to either create a new User Group or edit an existing one.
 
     ![User Groups](images/Users.png)
 
