@@ -50,7 +50,7 @@ In the following, we will use the information you have gathered, and Azure Stora
 
     ![Attach with SAS URI](images/attach-blob.png)
 
-4. ensure that the credentials are correctly set in the "Connection Summary" prompt.
+4. Ensure that the credentials are correctly set in the "Connection Summary" prompt.
 
 5. Select "Connect".
 
