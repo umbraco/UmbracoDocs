@@ -41,8 +41,6 @@ When you deploy between two environments on your Umbraco Cloud project the media
 
 As an example, imagine that you are transferring new content changes from your Development environment to your Live environment. When you initiate the transfer, all media files from the Azure Blog Storage container connected to your Development environment will be copied and pasted into the container connected to your Live environment. Once all content changes have also been transferred, and the transfer is complete, your Media libraries on the two environments will now be in sync.
 
-This way, the media library on your environments are kept in sync.
-
 ## Media folder
 
 You will notice that there is a Media (`/media`) folder in the root of your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with the Azure Blob Storage, the media files are not in this media folder.
