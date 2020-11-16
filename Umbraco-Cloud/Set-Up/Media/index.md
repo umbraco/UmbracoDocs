@@ -9,7 +9,7 @@ meta.Description: "All Media files for Umbraco Cloud projects are stored in Azur
 :::warning
 We are currently migrating all media libraries on Umbraco Cloud projects to Azure Blob Storage. This is being done to optimize the performance of Umbraco Cloud sites, and as a part of the continuous improvements added to the service.
 
-You can follow the process here on the [Umbraco Cloud Statuspage](https://status.umbraco.io/incidents/hfnq16mq7l1k).
+You can follow the process on the [Umbraco Cloud Statuspage](https://status.umbraco.io/incidents/hfnq16mq7l1k).
 
 In the article below, you can find more information about Azure Blob Storage and how it works with your Umbraco Cloud project.
 :::
@@ -18,7 +18,7 @@ All media files on your Umbraco Cloud projects are stored using Azure Blob Stora
 
 In order to access the media files on your Umbraco Cloud project you can either
 
-* Recommended: [Clone your Cloud environment to your local machine](../Working-Locally)
+* [Clone your Cloud environment to your local machine](../Working-Locally) (**Recommended**)
 * [Connect using Azure Storage Explorer](Connect-to-Azure-Storage-Explorer)
 
 ## About Azure Blob Storage
