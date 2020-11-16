@@ -11,6 +11,8 @@ In case you want to manually upload files to the Azure Blob Storage container pr
 This article provides the steps you need, in order to connect to your Azure Blob Storage containers using Azure Storage Explorer.
 
 :::warning
+We strongly recommend that you add all media items to your Cloud environments through the backoffice. Clone your environment to your local machine in order to manage the files of your media library.
+
 **Important**: If you upload your media files manually using this method, they will not be available in the backoffice.
 
 All media needs to be added through the Umbraco backoffice.
