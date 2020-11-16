@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+meta.Title: "Using Azure Storage Explorer with Umbraco Cloud"
+meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
 ---
 
 # Connect to Azure Storage Explorer to upload files manually

@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Azure Blob Storage on Umbraco Cloud"
+meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
 ---
 
 # Media on Umbraco Cloud
@@ -21,6 +23,10 @@ In order to access the media files on your Umbraco Cloud project [you can connec
 Azure Blob Storage is an external storage system, that the Umbraco Cloud service uses to store all media files on Umbraco Cloud projects. This includes everything that is added to the Media library through the Umbraco backoffice, eg. images, PDFs, and other document formats.
 
 You can learn more about what Azure Blob Storage is in [the official documentation on Microsoft Docs](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-overview).
+
+## Working with media locally
+
+
 
 ## One storage per environment
 
