@@ -185,7 +185,7 @@ Any new media files you upload to the site, will automatically be added to the B
 
 ## Exisiting Forms files
 
-Any Umbraco forms data files will not automatically be added to blob storage. You will need to upload the **contents** of the Umbraco forms data folder to storage. This can be found in `~/App_Plugins/UmbracoForms/Data`. Again you need the **contents** of the data folder so the **forms**, **templates** and **workflows** folders should be the only folders in the container. Do not upload the whole data folder! 
+Any existing Umbraco Forms data files will not automatically be added to Azure Blob storage. You will need to upload the **contents** of the Umbraco Forms data folder manually. This can be found in `~/App_Plugins/UmbracoForms/Data`. Again you need the **contents** of the Data folder so the **forms**, **templates** and **workflows** folders should be the only folders in the container. Do not upload the whole Data folder. 
 
 ## Using Azure Blob Cache
 
