@@ -16,3 +16,8 @@ Here's the default configuration of the `keepAlive` node:
 ```xml
 <keepAlive disableKeepAliveTask="false" keepAlivePingUrl="{umbracoApplicationUrl}/api/keepalive/ping" />
 ```
+
+:::note
+There is an `[OnlyLocalRequests]` attribute which verifies if the request to the KeepAliveController.Ping action came from the local machine.
+If the request is made from an external source, Umbraco will return a HTTP 404 response.
+:::
