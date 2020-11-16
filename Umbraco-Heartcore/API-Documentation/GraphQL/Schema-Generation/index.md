@@ -113,6 +113,8 @@ type Query {
     url: String,
     # The culture to fetch the content in. If empty the default culture will be used.
     culture: String
+    # Specifies if draft content should be returned. Requires the request to be authenticated.
+    preview: Boolean
   ): Content
   # Get all Content.
   allContent(
@@ -126,6 +128,8 @@ type Query {
     before: String,
     # The culture to fetch the value in. If empty the default culture will be used.
     culture: String,
+    # Specifies if draft content should be returned. Requires the request to be authenticated.
+    preview: Boolean
     # Filter the returned data.
     where: ContentFilterInput,
     # Sort the returned data.
@@ -139,8 +143,8 @@ For each Document Type that is not used as a Composition or marked as an Element
 ```graphql
 type Query {
   ...
-  allProduct(first: Int, after: String, last: Int, before: String, culture: String, where: ProductFilterInput, orderBy: [ProductOrderByInput]): ProductConnection!
-  product(culture: String, id: ID, url: String): Product
+  allProduct(first: Int, after: String, last: Int, before: String, culture: String, preview: Boolean, where: ProductFilterInput, orderBy: [ProductOrderByInput]): ProductConnection!
+  product(culture: String, id: ID, url: String, preview: Boolean): Product
   ...
 }
 ```
