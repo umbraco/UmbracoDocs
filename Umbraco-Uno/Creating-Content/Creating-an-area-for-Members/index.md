@@ -141,5 +141,5 @@ There needs to be an option for logged-in members to logout again. This will be 
 When a member is logged into your website, they will now see an option on the right side of the navigation menu to logout.
 
 :::center
-![Navigation bar with a Logout option on the right side, just before the Search icon.](images/example-of-logout-button.png)
+![Navigation bar with a Logout option on the right side before the Search icon.](images/example-of-logout-button.png)
 :::
