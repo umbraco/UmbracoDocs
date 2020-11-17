@@ -37,3 +37,14 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 }
 ```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.MyFile.HasValue())
+    {
+        <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
+    }
+}
+```
