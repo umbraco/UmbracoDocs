@@ -30,7 +30,7 @@ Once you copy the key one more step is needed in order to start using it: you mu
 To install the latest version of the tool locally you need to run the following command in a commandline:
 
 ```
-dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
+dotnet tool install --global Umbraco.Tools.Packages --version "1.0.*"
 ```
 
 You will then be able to use it by running `umbpack [command]` in the command line afterwards. More on the commands of the tool below.
@@ -147,10 +147,18 @@ umbpack pack .\package.xml -o ../MyCustomPackageVersions
 umbpack pack .\package.xml -v 1.9.9
 ```
 
-`-n` - specifies a name override for the package. By default the package will automatically generate a name based on the info in your package.xml file. This option allows you to override it yourself though. It will not affect the package.xml info, only the zip file name.
+`-n` - specifies a name override for the package. By default the package will automatically generate a name based on the info in your package.xml file. This option allows you to override it yourself with either a full name or using a template. It will not affect the package.xml info, only the zip file name. The template options are:
 
+`{name}` - replaced with the name of the package declared in the package.xml  
+`{version}` - replaced with the version of the release declared in the package.xml
+
+Fixed naming:
 ```
 umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
+```
+Template naming:
+```
+umbpack pack .\package.xml -n {name}_{version}.zip
 ```
 
 ## The push command
