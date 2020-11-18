@@ -30,7 +30,7 @@ Once you copy the key one more step is needed in order to start using it: you mu
 To install the latest version of the tool locally you need to run the following command in a commandline:
 
 ```
-dotnet tool install --global Umbraco.Tools.Packages --version "1.0.*"
+dotnet tool install --global Umbraco.Tools.Packages
 ```
 
 You will then be able to use it by running `umbpack [command]` in the command line afterwards. More on the commands of the tool below.
