@@ -4,17 +4,17 @@ versionFrom: 8.0.0
 
 # Creating content
 
-When you are creating content in Umbraco Uno, you will have many tools at your disposal. This page is designed to help you get started on utilizing these tools.
+When you are creating content in Umbraco Uno, you will have many tools to choose from. This page is designed to help you get started with these tools.
 
 ## Choosing the correct tools
 
-When you want to create content, it is a good idea to think about what tools to use for the job.
+When you want to create content it is a good idea to think about what tools to use for the job.
 
-An example of this could be choosing between the Image widget and the Gallery widget. The Image widget only allows you to add one image, whereas the Gallery widget will allow you to set up a gallery of images and you can also choose to only select one image with that widget
+An example of this could be choosing between the Image widget and the Gallery widget. The Image widget only lets you add one image whereas the Gallery widget lets you set up a gallery of images and you can also choose to only select one image with that widget
 
-Which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
+Which of these two widgets you choose depends on what you need for your design of the website.
 
-There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Widgets/Grid) feature.
+There is multiple ways to approach content creation, two of these ways are explained below. Both ways use the [Grid](../Widgets/Grid) feature:
 
 ### Widget based design and structure
 
@@ -26,8 +26,9 @@ The grid widget gives you all the tools you would need to create a good looking 
 
 If you already have a predefined design you need to achieve, the grid widget is a good option.
 
-To get started it would be a good choice, to start by setting up the grid structure in a global content page. Doing so will allow you to keep a consistent structure throughout your pages.
-Keeping the grid in a global content page is both time efficient and structure efficient as you will only have to set up the core structure once.
+To get started it would be a good choice to start by setting up the grid structure in a global content page. Doing so will allow you to keep a consistent structure throughout your pages.
+
+Using the grid in a global content page means you only have to set up the core structure for the page once, making your work more time efficient as you don't have to re-create the same page structure again and again - it's almost like copy/paste! 
 
 ## [Working With Content](Work-With-content/index.md)
 
@@ -40,6 +41,10 @@ Create a brand new landingpage fra scratch following our "How to create a landin
 ## [Set-up a Footer](Set-Up-Footer)
 
 On some website the bottom is where you would go for all sorts of different information. With Umbraco Uno you can create a Footer exactly like that; with all sorts of different information.
+
+## [Extending Uno](Extending-Uno)
+
+Learn how you can extend Uno by enabling Custom Code or by embedding external services through widgets.
 
 ## [Navigation-menu](Navigation-menu)
 
@@ -59,25 +64,6 @@ When you're creating content in Umbraco Uno you will primarily be working with W
 
 For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Widgets) section in the Uno-pedia.
 
-## Working with Forms
+## [Working with Forms](../Working-with-Forms)
 
-Umbraco Uno ships with Umbraco Forms, which is an addon product that enables you to create forms that fit right into your existing design. You can customize the forms as you like, and depending on which type of form you're setting up, you can attach a workflow that fits.
-
-To learn more about how to work with Umbraco Forms head over to [Umbraco Forms Documentation](https://our.umbraco.com/documentation/add-ons/umbracoforms/) to get started.
-
-### Recaptcha and Umbraco Uno
-
-When you're using the *Recaptcha* forms option in Umbraco Uno, you will need to follow a few extra steps, in order to configure the feature.
-
-The steps are outlined below:
-
-1. Open a browser and navigate to https://www.google.com/recaptcha/admin/create
-2. Fill the form and submit it
-3. Copy the **site key** and **secret key**
-4. Head into the backoffice of your Umbraco Uno site
-5. Locate the Settings page
-6. Click the elipsies and choose to create an instance of **Forms**
-7. Copy and paste your site key into the field called "Recaptcha public key"
-8. Save and publish the Forms settings content node
-
-![How to find a create a Forms page under Settings](images/forms-recaptcha.png)
+If you are new to Umbraco Forms, and want to learn more about how to work with them, you can read more about the workflow in the Working with Forms section.

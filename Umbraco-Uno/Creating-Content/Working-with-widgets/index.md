@@ -16,10 +16,17 @@ Being the main way to add content to pages, widgets are available on the followi
 
 Contents of this article:
 
+* [Video tutorial: Widgets](#video-tutorial-widgets)
 * [Adding a widget](#adding-a-widget)
 * [Copying widgets](#copying-widgets)
 * [Re-ordering widgets](#re-ordering-widgets)
 * [Remove widgets](#remove-widgets)
+
+## Video tutorial: Widgets
+
+In the video below, you can learn the basics of working with and customizing widgets in Umbraco Uno.
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/hu_jJqV2uTw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Adding a widget
 

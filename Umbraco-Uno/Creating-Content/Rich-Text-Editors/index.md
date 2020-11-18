@@ -61,7 +61,7 @@ Along with plain text, a few other elements can be added to content through the 
 * **Embed** external resources such as videos
 * Mark the ending of a section by **drawing a horizontal line**
 
-## Shortcuts / key-bindings / Easy access
+## Shortcuts / key-bindings / Access
 
 As with many other text editors, it's possible to use general keyboard shortcuts when editing text through the Rich Text Editors.
 

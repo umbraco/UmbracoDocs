@@ -20,7 +20,7 @@ Inside the `<commands>` section of the configuration file you will find multiple
 
 `alias` defines a unique alias within Umbraco for the command. This alias should not contain any spaces.
 
-`name` defines the name that will be seen in the list of Toolbar configuration options in the backoffice for the rich text editor 
+`name` defines the name that will be seen in the list of Toolbar configuration options in the backoffice for the rich text editor.
 
 `mode` - This can be set to be either 'Insert', 'Selection' or 'All'. In 'distraction free' mode, there are two 'quick menus' that appear - one when you are about to 'insert' text, and one when you 'select' existing text. This setting determines which 'quick menu' the icon should appear on or whether it should appear on both.
 
@@ -30,7 +30,7 @@ The order of the commands in this configuration file influences the order of the
 
 ## Plugins
 
-TinyMCE follows a 'plugin' architecture, making it easy to add additional functionality to the rich text editor, either from the [library of existing TinyMCE plugins](https://www.tiny.cloud/docs-4x/plugins/) or by [implementing your own custom plugin](https://www.tiny.cloud/docs-4x/advanced/creating-a-plugin/). 
+TinyMCE follows a 'plugin' architecture, allowing you to add additional functionality to the rich text editor, either from the [library of existing TinyMCE plugins](https://www.tiny.cloud/docs-4x/plugins/) or by [implementing your own custom plugin](https://www.tiny.cloud/docs-4x/advanced/creating-a-plugin/).
 Below you will find the standard tinyMCE plugins configured in a clean install of Umbraco v8.x.
 
 ```xml
@@ -49,20 +49,26 @@ Below you will find the standard tinyMCE plugins configured in a clean install o
         <plugin>fullscreen</plugin>
     </plugins>
 ```
+
 Umbraco has it's own custom TinyMce plugins to handle inserting Media + Macros and these are implemented in the [tinyMceService](/apidocs/v8/ui/#/api/umbraco.services.tinyMceService).
 
 ### Example - Adding the TinyMce Code Sample plugin
+
 TinyMce has a 'code highlighting' plugin that works with [prism.js](https://prismjs.com/) called [Code Sample](https://www.tiny.cloud/docs-4x/plugins/codesample/).
 For most Umbraco site's this perhaps wouldn't be that useful for editors, but a blog about coding? Let's add it in.
 
 First we need to update the **/config/tinyMceConfig.config** file and add the alias for the plugin: 'codesample' to the list of Commands:
+
 ```xml
  <command alias="codesample" name="Code Sample" mode="Insert" />
 ```
+
 Next we add a reference to the plugin itself:
+
 ```xml
         <plugin>codesample</plugin>
 ```
+
 :::note
 The plugin implementation for 'code sample' is already shipped with TinyMce inside Umbraco. It is loaded 'by convention' from the location **/umbraco/lib/tinymce/plugins/codesample/plugin.min.js**. The convention here is the 'codesample' folder matches the plugin alias, and the plugin.min.js contains the actual implementation. (NB: this is where the toolbar icon is set for the plugin).
 :::
@@ -84,14 +90,16 @@ and this is then displayed in the editor:
 ![Code Sample Option in Rich Text Editor Configuration](images/highlighted-code.png)
 
 :::note
-You will need prism.js loaded in the public facing part of your website to display the code highlighting on the published page.
+To display the same formatted code on the public-facing part of your website you will need to include `prism.js` and `prism.css` in your view. You can get both of these files from the [Prism JS website](https://prismjs.com/) and customise the output styling.
+
+You will need to add `code[*]` to the end of the `validElements` section of the tinyMceConfig.config file too. More details about this are below.
 :::
 
 ## validElements
 
 The `validElements` section defines which HTML elements and attributes are allowed to be used in the rich text editor, non valid elements and attributes will be removed from the markup when the page being edited is saved. (for example pasting text from an external source, that might contain 'inline styles').
 
-This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. 
+This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated.
 
 Here is an example of the standard valid elements that come with a clean install of Umbraco v8.x.
 
@@ -193,6 +201,7 @@ This option should contain a comma separated list of element names to exclude fr
 ```xml
 <invalidElements>font</invalidElements>
 ```
+
 This option doesn't accept attributes.
 
 ## Extended Valid Elements
@@ -214,9 +223,10 @@ The `customConfig` node contains any custom configuration you would like applied
 ```xml
 <customConfig>
     <!--    <config key="myKey">mySetting</config>-->
-    <config key="entity_encoding">raw</config>   
+    <config key="entity_encoding">raw</config>
 </customConfig>
 ```
+
 ### Common Custom Configuration Examples
 
 By default, Umbraco doesn't provide any custom configurations for TinyMce other than setting the `entity_encoding` value to be raw. However there are some common configurations worth considering making for improving the editor experience for most sites. (Or at least here are some examples for inspiration of how to extend TinyMce in Umbraco via configuration).
@@ -228,11 +238,12 @@ There is a paid for extension for TinyMCE called [Spell Checker Pro](https://www
 ```xml
 <customConfig>
     <config key="entity_encoding">raw</config>
-    <config key="browser_spellcheck">true</config>    
+    <config key="browser_spellcheck">true</config>
 </customConfig>
 ```
 
 #### Responsive Tables
+
 When you insert a table into the rich text area, by default the columns and rows will be defined by 'pixels' and not stretch full-width across the page container. Additionally you might want to provide styling options for 'striped' rows, or set a default border size, or at least make sure the table has a css class so you can target it with tablesaw or similar plugin. The following configuration will make inserted tables more responsive:
 
 ```xml
@@ -253,6 +264,7 @@ When you insert a table into the rich text area, by default the columns and rows
     <!-- (there are also options in the same format as the table_class_list for table_row_class_list (row css classes) and table_cell_class_list (cell css classes)) but these become a bit klunky for editors to apply -->
 </customConfig>
 ```
+
 #### Style Formats
 
 Umbraco provides a mechanism for using a CSS stylesheet + comments, updated via a nice backoffice UI to set custom style formats for a Rich Text Editor configuration:
@@ -270,6 +282,7 @@ However, TinyMce has a couple of further options for customising this menu that 
 Not all formats should be applicable to ALL HTML elements - in the example above we created a 'Center Image' rule, but with the backoffice approach, this rule will apply to all HTML elements within the page.
 
 Adding the following custom configuration:
+
 ```xml
  <config key="style_formats">
        [
@@ -286,6 +299,7 @@ Adding the following custom configuration:
   ]
     </config>
 ```
+
 Will add two additional options in the format dropdown, the difference with this approach is they will ONLY be applicable IF an img element is selected in the editor.
 
 ... otherwise they will be greyed out.
@@ -296,12 +310,14 @@ Will add two additional options in the format dropdown, the difference with this
 
 ![With an image selected](images/image-selected.png)
 
-You can apply the 'Image Left' or 'Image Right' style formats. This approach can provide a better editor experience, making it easy to see which formats can be applied in which contexts.
+You can apply the 'Image Left' or 'Image Right' style formats. This approach can provide a better editor experience, allowing you to see which formats can be applied in which contexts.
 
 Additionally adding the configuration option, means any 'greyed' out options will not appear at all in the dropdown, only appearing in the list when they can be successfully applied:
+
 ```xml
 <config key="style_formats_autohide">true</config>
 ```
+
 This is useful if there is a large number of style formats, but can prevent discoverability of options for editors.
 
 ##### Organising style formats into sub menus
@@ -311,6 +327,7 @@ For a large number of style formats, instead of hiding those that cannot be appl
 ![Organised into folders](images/with-folders.png)
 
 To achieve this you group your style formats under a title + items array grouping
+
 ```xml
  "title":"sub menu name",
       "items":[
@@ -319,6 +336,7 @@ To achieve this you group your style formats under a title + items array groupin
 <!-- list your items here -->
 }]
 ```
+
 For example a really complicated set of style formats might look like the below:
 
 ```xml
@@ -620,7 +638,8 @@ For example a really complicated set of style formats might look like the below:
       "title":"Small List",
       "selector":"ul",
       "classes":"small"
-      },		 {
+      },
+      {
       "title":"Smallest List",
       "selector":"ul",
       "classes":"smallest"
@@ -635,7 +654,9 @@ For example a really complicated set of style formats might look like the below:
       ]
     </config>
 ```
+
 #### Format Parameters
+
 For each format you can specify some additional parameters to determine how they will be applied:
 
 <table>

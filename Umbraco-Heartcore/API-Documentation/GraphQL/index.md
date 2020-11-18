@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL API"
 
 # GraphQL API
 
-The GraphQL API accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
+The GraphQL API can be accessed on `https://graphql.umbraco.io`, it accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
 
 ```json
 {
@@ -51,8 +51,12 @@ Api-Key: {api-key}
 
 ## [Schema Generation](Schema-Generation/)
 
-Information on how the GraphQL schema is generated, reserved names and built in custom types.
+Information on how the GraphQL schema is generated, reserved names and built-in custom types.
 
 ## [Property Editors](Property-Editors/)
 
 A list of all the built-in Umbraco Property Editors and their GraphQL types.
+
+## [Filtering and Ordering](Filtering-and-Ordering/)
+
+Documentation on how to filter and order collections with the GraphQL API.

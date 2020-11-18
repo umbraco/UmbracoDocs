@@ -20,13 +20,26 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @{
-    if(Model.HasValue("author")){
+    if (Model.HasValue("author"))
+    {
+        var member = Model.Value<IPublishedContent>("author");
+        @member.Name
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.Author != null)
+    {
         var member = Model.Author;
-            @member.Name
+        @member.Name
     }
 }
 ```

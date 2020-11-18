@@ -16,7 +16,7 @@ The __Folder__ Media Type is a container for organizing media items in the media
 
 ## Creating a folder
 
-It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it easy for editors to upload files and images in the right place.
+It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload files and images in the right place.
 
 To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up a dialogue. Pick the __Folder__, enter a name and press __save__.
 
@@ -66,7 +66,7 @@ Go to the __Settings__ section. On the __Media Types__ node click the menu icon 
 Having different folders for different media types makes it possible to restrict where media items can be created. Only allowing PDF uploads in a certain folder or employee images in another makes it easier for editors to keep the Media section organized.
 :::
 
-Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
+Choose __New Media Type__. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
 ![Creating a Media Type](images/create-new-media-type.png)
 
@@ -101,9 +101,11 @@ Name the remaining four properties "Width", "Height", "Size" and "Type" and give
 ![Adding properties](images/finished-new-media-type.png)
 
 ## Defining a Media Type folder
+
 Next up we'll create a folder to hold the employee images. We could use the existing __Folder__ Media Type but that would mean editors can upload employee images to any folder of that type. If we create a folder specifically for employee images there is only one place to put them thus making it easier to have an organized Media section.
 
 ### Structure and inheritance
+
 Go back to the __Settings__ and create a new Media Type and name it "Employee Images". Select the folder icon by clicking the icon to the left of the name.
 
 We want the same basic functionality (same properties and tabs) as the __Folder__ Media type and that can be achieved by clicking __Compositions__ and selecting the __Folder__ Media Type. Now Employee images will inherit tabs and properties from the Folder Media Type.
@@ -117,6 +119,7 @@ Finally we need to allow the Employee Image Media Type in our new folder. Go to 
 All that is left to do is to define where the folder can be created. We want to create the folder in the root of the Media section so select the __Allow at root__ option at the top of the Permission tab.
 
 ### Creating the folder and media items
+
 Go to the __Media__ section and click the menu icon next to Media and select the __Employee images__ folder. Name it "Employee Images" and click create.
 
 There are four options to add a new media items to the folder, as you can see here:
@@ -128,13 +131,16 @@ Remember you can uncheck the __Allow at root__ option on the __Employee images__
 :::
 
 ### Cropping the images
+
 ![Cropping images](images/crops-and-focal-point.png)
 
 If you select an image that has been uploaded to this folder you'll see the full image and the two crops we have defined below. Moving the pink focal point on the on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
 
 ## More information
+
 - [Rendering Media](../../Design/Rendering-Media)
 - [Customizing Data Types](../Data-Types)
 
 ## Related Services
+
 - [MediaService](../../../Reference/Management/Services/MediaService/index.md)

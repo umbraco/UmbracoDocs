@@ -66,6 +66,10 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Umbraco LATCH documentation](../Set-Up/Umbraco-Latch)
 
+### Ports
+
+By default, all ports are closed to secure them against external attacks. This is done for all ports apart from 80 (HTTP) and 443 (HTTPS).
+
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
@@ -100,7 +104,7 @@ The following rule can be added to your web.config file in the `system.webServer
     <action type="AbortRequest"/>
 </rule>
 ```
-For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can, of course, choose your own error.
+For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
 :::note
 You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
@@ -126,14 +130,14 @@ The following rule can be added to your web.config file in the `system.webServer
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-        
+
         <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
          <add input="{REMOTE_ADDR}" pattern="52.232.105.169" negate="true" />
          <add input="{REMOTE_ADDR}" pattern="52.174.66.30" negate="true" />
 
         <!-- Add other client IPs that need access to the backoffice -->
         <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-       
+
     </conditions>
     <action type="CustomResponse" statusCode="403"/>
 </rule>

@@ -16,6 +16,7 @@ Be sure you read the [Overview](index.md) before you begin!
 :::
 
 ## Design
+
 These instructions make the following assumptions:
 
 * All servers are part of the same domain
@@ -30,9 +31,10 @@ There are two design alternatives you can use to effectively load balance server
 1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__
 2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share).
 
-And you'll obviously need a load balancer to do your load balancing!
+And you will need a load balancer to do your load balancing.
 
 ## DNS
+
 Each server in your cluster will require a custom unique DNS name assigned to the host header for the IIS install for this website. This is so Umbraco knows which server nodes to replicate its cached content with.
 
 An example of how to setup DNS and host headers between 3 load balanced servers:
@@ -55,7 +57,7 @@ Server 3
 * Internal website DNS name: server3.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.12
 
-Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
+Keep in mind that you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: `http://www.mywebsite.com` then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
 
 ### Backoffice server
 
@@ -66,18 +68,19 @@ As an example, you could assign Server 1 as the designated backoffice server. In
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be achieved by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be achieved based on your firewall and the configuration that it supports.
 
 ## Load Balancer
-A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](https://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
+
+A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](https://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx).
 
 Some important notes on NLB:
 
 * [Load balancing with VMWare & NLB](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/implmenting_ms_network_load_balancing.pdf)
 * Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a client for Microsoft Networks and have Netbios over TCP/IP disabled
 * Windows Server 2008 changed the way that TCP-IP works and have disabled forwarding. In order for NLB to work with 2 network cards (the recommended way), you have to enable forwarding for the private NIC:
-    * [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
+  * [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
 
 ## Option #1 : File Storage with File Replication
 
-*This is the recommended setup*
+*This is the recommended setup.*
 
 [See here for specific details about using Option #1: File Storage with Replication](files-replicated.md)
 
@@ -140,9 +143,10 @@ Example:
 ## Testing
 
 The normal testing practices should be done (See [Common load balancing setup information](index.md)) with a traditional load balancing setup but specific testing can be done to ensure
-that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx). 
-Then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content).
+that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. `http://server1.mywebsite.com/umbraco/umbraco.aspx`).
+Then browse to the front end content on another server (i.e. `http://server2.mywebsite.com/public/page1.aspx` if page1 was the newly published content).
 If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
 ## Conclusion
+
 Though this is somewhat detailed, this is still a basic overview since all environments are different in some way. Hopefully this guide will point you in the right direction!

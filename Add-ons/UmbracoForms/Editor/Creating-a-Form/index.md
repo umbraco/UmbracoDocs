@@ -10,6 +10,8 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
+If you do not see it, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give permission to view the Forms section to your individual account or the user group your account belongs to from within the Users section of the backoffice. 
+
 ![Forms Section](images/FormsSectionV8.png)
 
 ## Click the forms tree
@@ -64,7 +66,7 @@ To add another group to your form, click **Add new group** which you can find at
 
 ### Adding fields
 
-To add a new field hit the Add Question button
+To add a new field click the Add Question button
 
 ![Forms designer add field](images/FormDesignerAddFieldV8.png)
 
@@ -87,9 +89,9 @@ Once the type has been selected, there are a number of additional settings that 
     * There are a number of predefined validation, and it is possible to add your own custom validation as well
 * Set **Conditions** for the field (read more: [Conditional logic](Conditional-Logic))
 
-Some of the additional settings is dependent on which answer type was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder).
+Some of the additional settings are dependent on which answer type was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder).
 
-Once the type has been selected, and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
+Once the type has been selected and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
 
 ![Forms field added](images/FormDesignerFieldAddedV8.png)
 
@@ -99,11 +101,11 @@ To edit a field that has already been added to the form, click the little *cog* 
 
 Once you've added a few fields to your form, you might want to change the order of questions. This can be done by clicking **Reorder** in the top-right corner of the form designer.
 
-When reordering your form, you can drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
+When reordering your form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the form designer.
 
 ## Saving the form
 
-Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
+Once you are satisfied with the form, you can save the design by clicking the save button in the toolbar
 
 ![Form save form](images/FormDesignerSaveV8.png)
 
@@ -117,7 +119,7 @@ Navigate to the Content section of the Umbraco Backoffice and select the content
 
 ### Add Form macro
 
-* Hit the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
+* Click the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
 * Under 'Choose a Form' click **Add** and select the form you want to insert
 
     ![Content page add macro](images/ContentPageAddMacroDialog.png)
@@ -125,6 +127,6 @@ Navigate to the Content section of the Umbraco Backoffice and select the content
 * (Optional) Click **Add** under 'Theme' to choose which theme the form should use
 * Finally you have an option to **exclude scripts**
 
-The form should be inserted now and all that's needed to put it on your site is a *Save and publish* of the content page!
+The form should be inserted on to your page and all that's left to do is click of the *Save and publish* button.
 
 ![Content page with form](images/ContentExamplesWithForm.png)

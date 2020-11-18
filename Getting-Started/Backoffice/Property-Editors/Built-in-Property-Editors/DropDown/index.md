@@ -36,7 +36,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## MVC View Example
 
-### Typed - single item
+### Single item - without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("category"))
@@ -45,7 +45,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 }
 ```
 
-### Typed - multiple items
+### Multiple items - without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("categories"))
@@ -53,6 +53,29 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
     var categories = Model.Value<IEnumerable<string>>("categories");
     <ul>
         @foreach (var category in categories)
+        {
+            <li>@category</li>
+        }
+    </ul>
+}
+```
+
+### Single item - with Modelsbuilder
+
+```csharp
+@if (Model.Category.HasValue())
+{
+    <p>@Model.Category</p>
+}
+```
+
+### Multiple items - with Modelsbuilder
+
+```csharp
+@if (Model.Categories.Any())
+{
+    <ul>
+        @foreach (var category in Model.Categories)
         {
             <li>@category</li>
         }

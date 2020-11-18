@@ -5,10 +5,10 @@ versionFrom: 8.0.0
 ---
 
 # Sections
-A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is in the top of the Backoffice.
+A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
 
-![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located in the top of the Backoffice.")
-*The __Section menu__ is the horizontal menu located in the top of the Backoffice.*
+![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.")
+*The __Section menu__ is the horizontal menu located at the top of the Umbraco Backoffice.*
 
 There are seven default sections that come with Umbraco:
 
@@ -17,9 +17,9 @@ The Content section contains the content of the website. Content is displayed as
 
 * Grayed out nodes have not been published
 * <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> Nodes have unpublished versions (but are currently published)
-* <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (require logging in)
+* <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (can only be accessed by a logged in Member)
 * <img src="images/locked.svg" width="12px" style="margin: 0;"> Nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (such as List Views)
+* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (a List View for example)
 
 In order to create content you must define it using Document Types.
 
@@ -64,14 +64,14 @@ This is the section where you create and manage your dictionary items.
 ## Help sections
 In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
 
-Next to the search tool, there's a help sections, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
+Next to the search tool, there is a help section, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
 
-There's also a small user section with shortcuts to edit the user that's currently logged in, and view most recent activities.
+There is also a small 'user section' with shortcuts to edit the currently logged in user, and view their most recent activities.
 
 ## Custom Sections
 As well as the default sections that come with Umbraco, you can create your own [Custom Sections](../../../Extending/Section-Trees/index.md)
 
 ## Access based on User Group
-Access to the section is based on which User Group a user is added to.
+Access to the section is based on which User Group a particular User belongs to.
 
-Learn more about how to configure the permissions in the the article about [backoffice users](../../Data/Users).
+Learn more about how to configure the permissions in the article about [backoffice users](../../Data/Users).

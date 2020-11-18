@@ -79,9 +79,7 @@ As the comment above states, this is a comma separated list of accepted image fo
 As the comment above states, this is a comma separated list of those attributes you want to allow on the image tag.
 
 **`<autoFillImageProperties>`**
-As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you, for some odd reason, decide
-to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** of course need to
-be updated with the new property aliases in order to automatically populate the values when the image is being uploaded.
+As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** need to be updated with the new property aliases. This needs to happen in order to automatically populate the values when the image is being uploaded.
 
 If you need to create a custom media document type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
 **`<uploadField>`** element where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
@@ -179,9 +177,11 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter an XPath to find the node (`<error404>/root/Home//TextPage[@urlName = 'error404']</error404>`)
 
 :::note
+
 - Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 - When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
+
 :::
 
 :::warning
@@ -262,7 +262,7 @@ Character encoding for Tidy.
 **`<ForceSafeAliases>`**
 
 This setting allows you to disable the safe aliases, when you're creating properties on your document types. As the comment below states you really
-should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see http://issues.umbraco.org/issue/U4-867
+should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see [http://issues.umbraco.org/issue/U4-867](http://issues.umbraco.org/issue/U4-867)
 
 ```xml
 <!-- Whether to force safe aliases (no spaces, no special characters) at businesslogic level on contenttypes and propertytypes -->
@@ -586,7 +586,7 @@ In this section you can add multiple scheduled tasks that should run at certain 
 
 The scheduledTasks element consist of the following attributes:
 
-**baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
+**baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: [http://issues.umbraco.org/issue/U4-5391](http://issues.umbraco.org/issue/U4-5391).
 
 Note: this setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
 

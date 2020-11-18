@@ -12,6 +12,7 @@ details to consider when setting up Umbraco for load balancing._
 **Be sure you read the [Overview](index.md) before you begin!**
 
 ## Design
+
 These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
@@ -24,7 +25,7 @@ There are three design alternatives you can use to effectively load balance serv
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
 3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
-For options #2 and #3 you will obviously need a load balancer to do your load balancing!
+For options #2 and #3 you will need a load balancer to do your load balancing.
 
 ## How flexible load balancing works
 
@@ -90,7 +91,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Lucene/Examine configuration
 
-#### Examine v0.1.80+ ####
+#### Examine v0.1.80+
 
 Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers
 
@@ -100,7 +101,7 @@ directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,E
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
 
-#### Pre Examine v0.1.80 ####
+#### Pre Examine v0.1.80
 
 * In ExamineSettings.config, you can add these properties to all of your indexers and searchers: `useTempStorage="Sync" tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"`
 * The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps'
@@ -110,7 +111,7 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 **Important!** Your Examine path settings need to be updated! Azure Web Apps uses a shared file system which means that if you increase your front-end environment scale setting to more than one worker your Lucene index files will be shared by more than one process. This will not work!
 
-#### Examine v0.1.83+ ####
+#### Examine v0.1.83+
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
@@ -120,7 +121,7 @@ directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Exami
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
 
-#### Pre Examine v0.1.83 ####
+#### Pre Examine v0.1.83
 
 In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`. This however has some drawbacks for two reasons:
 

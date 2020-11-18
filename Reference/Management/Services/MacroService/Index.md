@@ -4,12 +4,12 @@ versionFrom: 8.0.0
 
 # IMacroService
 
-Defines the MacroService, which is an easy access to operations involving `IMacro`.
+Defines the MacroService, which is an access to operations involving `IMacro`.
 
 [Browse the API documentation for IMacroService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IMacroService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
  All samples in this document will require references to the following dll:
 
@@ -43,10 +43,10 @@ public class MyClass
 
     private IMacroService _macroService;
 
-	public MyClass(IMacroService macroService)
-	{
-		_macroService = macroService;
-	}
+    public MyClass(IMacroService macroService)
+    {
+        _macroService = macroService;
+    }
 
 }
 ```

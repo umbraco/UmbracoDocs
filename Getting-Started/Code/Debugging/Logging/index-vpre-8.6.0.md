@@ -11,13 +11,14 @@ In Umbraco v8.0+ we have changed the underlying logging framework from [Log4Net]
 Out of the box for v8.0+ we will write a JSON log file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
 
 The default location of this file is written to `App_Data/Logs` and contains the Machine name, along with the date too:
+
 * `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.json`
 
 ## Structured logging
 
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This basically allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
-```
+```xml
 2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
 ```
 
@@ -102,15 +103,12 @@ namespace MyNamespace
 {
     public class MyContentFinder : IContentFinder
     {
-    
         private readonly ILogger _logger;
 
         public MyContentFinder(ILogger logger)
         {
             _logger = logger;
         }
-    
-    
         public bool TryFindContent(PublishedRequest frequest)
         {
             _logger.Info<MyContentFinder>("Trying to find content for url {RequestUrl}", frequest.Uri);
@@ -121,7 +119,8 @@ namespace MyNamespace
 }
 ```
 
-You will, of course, need to register your ContentFinder [using a Composer](../../../Implementation/Composing/index.md)
+You will need to register your ContentFinder [using a Composer](../../../Implementation/Composing/index.md)
+
 ## Log Levels
 
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
@@ -134,6 +133,7 @@ Serilog uses levels as the primary means for assigning importance to log events.
 1. **Fatal** - critical errors causing complete failure of the application
 
 The default log levels we ship with in Umbraco v8.0+ are:
+
 * .txt file **Debug**
 * .json file **Verbose**
 
@@ -206,7 +206,7 @@ namespace MyNamespace
 
 You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
 
-```
+```xml
 <%@ Application Inherits="MyNamespace.FineTuneLoggingApplication" Language="C#" %>
 ```
 
@@ -220,10 +220,10 @@ This is a tool for viewing & querying JSON log files from disk in the same way a
 
 <a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
 
-
 ## Serilog project/references shipped
 
 Umbraco v8.0+ ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
+
 * [Serilog](https://github.com/serilog/serilog)
 * [Serilog.Enrichers.Process](https://github.com/serilog/serilog-enrichers-process)
 * [Serilog.Enrichers.Thread](https://github.com/serilog/serilog-enrichers-thread)

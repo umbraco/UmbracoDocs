@@ -21,7 +21,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 </nav>
 -->
 <div>
-    <form action="@Model.Url" method="get">
+    <form action="@Model.Url()" method="get">
         <input type="text" placeholder="Search" id="query" name="query" />
         <button>Search</button>
     </form>
@@ -91,7 +91,7 @@ else
                     {
                         var node = Umbraco.Content(result.Id);
                         <li>
-                            <a href="@node.Url">@node.Name</a>
+                            <a href="@node.Url()">@node.Name</a>
                         </li>
                     }
                 }
@@ -154,7 +154,7 @@ The final template looks like this:
         </nav>
         -->
         <div>
-            <form action="@Model.Url" method="get">
+            <form action="@Model.Url()" method="get">
                 <input type="text" placeholder="Search" id="query" name="query" />
                 <button>Search</button>
             </form>

@@ -15,7 +15,7 @@ The documentation currently available around caching in the current Umbraco vers
 
 ## Adding and retrieving items in the cache
 
-Putting data in and getting data out of the cache is easy; The easiest way is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
+The recommended way to put data in and get data out is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
 
 ```csharp
 MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache

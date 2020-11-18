@@ -111,6 +111,10 @@ We're going to start at the site homepage, and since our XmlSiteMap page is crea
 
 ### Rendering a site map entry
 
+:::warning
+A bug present in v8.0.x to v8.6.x, stops a dropdown 'falling back' to its ancestor if it has been set as a value, published, and then reverted back to having no value selected. This could break the inheritance of change frequency in this tutorial and this is fixed in v8.7.x and above. 
+:::
+
 We will retrieve each page in the site as **IPublishedContent**, and read in the SearchEngineChangeFrequency(recursively), SearchEngineRelativePriority, Url, when it was last modified etc...
 
 This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/asp-net-mvc-3-and-the-helper-syntax-within-razor). These helpers are a great way to organise your razor view implementation, to stop yourself repeating code and html in multiple places. Here we will have one place to write out the logic for our Url entry:
@@ -134,9 +138,7 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 :::note
 We're using `IPublishedContent` in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `Value` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
 :::
-:::warning
-A bug present in v8.0.x to v8.6.x, stops a dropdown 'falling back' to its ancestor if it has been set as a value, published, and then reverted back to having no value selected. This could break the inheritance of change frequency in this tutorial and this is fixed in v8.7.x and above. 
-:::
+
 #### EnsureUrlStartsWithDomain - Razor Function
 
 [Razor Functions](https://blogs.msdn.microsoft.com/timlee/2010/07/30/using-functions-in-an-asp-net-page-with-razor-syntax/) are similar to Razor Helpers, but instead of writing out html, they can return a value, again enabling you to write key functionality in a single place in your views - [you can also share functions across multiple razor views!](https://farm-fresh-code.blogspot.com/2011/05/sharing-razor-functions-across-views.html)  - We'll create a Razor Function to ensure the urls we display on our sitemap have the correct domain (you aren't meant to have relative urls on an Xml Sitemap - citation needed),

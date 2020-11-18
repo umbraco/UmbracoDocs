@@ -49,6 +49,24 @@ Aside from these features, it's also from the project view that changes are depl
 
 From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll find a lot more options to configure your project.
 
+## Environment error log
+
+Each environment has an error log that appears only if you have any unread errors on that specific environment. You can view the errors by clicking on "View errors" in the environment menu.
+
+Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
+
+During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the [section about databases on Umbraco Cloud](../../Databases/Cloud-Database).
+
+Environment errors are stored in the `UCErrorLog` table.
+
+The query below will delete 90% of errors. The query will always delete the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
+
+```
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+
 ## The chat
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you have any questions regarding your Umbraco Cloud projects.
@@ -90,5 +108,3 @@ From your profile settings you can set your time zone. This applies to the displ
 #### Experimental Features
 
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
-
-

@@ -48,7 +48,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## MVC View Example
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @{
@@ -59,3 +59,16 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
     }
 }
 ```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    var typedMultiNodeTreePicker = Model.FeaturedArticles;
+    foreach (var item in typedMultiNodeTreePicker)
+    {
+        <p>@item.Name</p>
+    }
+}
+```
+

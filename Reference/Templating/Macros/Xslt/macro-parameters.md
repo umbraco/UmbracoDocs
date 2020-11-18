@@ -59,7 +59,8 @@ The `<xsl:copy-of select="/macro/contentTree" />` returns:
 So as you can see: the text parameter sends the text string we entered to the macro and the contentTree parameter sends a big chunk of xml describing the node we selected. If the node had any child nodes these would also be send to the xslt macro as xml.
 
 ## Explaining how the parameters are send to the macro
-When you set up a macro parameter for a xslt macro, you basically tell Umbraco to send some xml to the xslt script. This xml looks something like this:
+
+When you set up a macro parameter for a xslt macro, you tell Umbraco to send some xml to the xslt script. This xml looks something like this:
 
 ```xml
 <macro>

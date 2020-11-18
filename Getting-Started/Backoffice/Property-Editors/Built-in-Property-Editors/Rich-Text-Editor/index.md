@@ -28,10 +28,23 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## MVC View Example
 
+### Without Modelsbuilder
+
 ```csharp
 @{
     if (Model.HasValue("richText")){
         <p>@(Model.Value("richText"))</p>
+    }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (!string.IsNullOrEmpty(Model.RichText.ToString()))
+    {
+        <p>@Model.RichText</p>
     }
 }
 ```

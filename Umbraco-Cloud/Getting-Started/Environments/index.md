@@ -18,14 +18,13 @@ Both the Development and the Staging environments are protected with **basic aut
 Note when on a Starter plan you do not have the option to whitelist IP's to allow access to the Development environment.
 :::
 
-The final environment is the *Live* environment. This is your live site - the site that's visible to the public. When you are in trial mode the Live environment will be protected by basic authentication - this will, of course, be removed, as soon as you set up a subscription for the project.
+The final environment is the *Live* environment. This is your live site - the site that's visible to the public. When you are in trial mode the Live environment will be protected by basic authentication - this will be removed, as soon as you set up a subscription for the project.
 
 For more information about the workflow on Umbraco Cloud see the [Deployments](../../Deployment) article.
 
 Here's a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
 
 ![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
-
 
 ## Site and Git repository
 

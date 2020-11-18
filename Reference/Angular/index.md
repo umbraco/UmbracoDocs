@@ -11,4 +11,5 @@ Generally you can find information about these via the [Backoffice UI API docume
 
 ## Services
 
+- [Editor service](Services/editorService/)
 - [Events service](Services/eventsService/)

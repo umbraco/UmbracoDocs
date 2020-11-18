@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Version specific upgrades
 
-*This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version*
+*This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version.*
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
@@ -12,17 +12,17 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
 
-#### IPublishedContent
+### IPublishedContent
 
 Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.
 
-#### Models Builder
+### Models Builder
 
 If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
 
 If you're using ModelsBuilder in AppData mode and you have your generated models in your solution you will need to update them after upgrading: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
-#### AutoMapper
+### AutoMapper
 
 Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
@@ -51,17 +51,18 @@ Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you
 This version also ships with far less client files (i.e. js, css, images) that were only relevant for very old versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files so if you seen missing image references you may need to contact the vendor of the package in question to update their references.
 
 ## Version 7.6.3
+
 In short:
 
 In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in version 7.6.3. If you were having problems with querying the following data types in the frontend, then make sure to upgrade to 7.6.3:
 
- * Multi Node Tree Picker
- * Related Links
- * Member Picker
+* Multi Node Tree Picker
+* Related Links
+* Member Picker
 
 Depending on if you tried to fix problem with those data types you will might need to fix them again after you upgrade to 7.6.3.
 
-## Property Value Converters?
+## Property Value Converters
 
 Umbraco stores data for data types in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
 
@@ -92,7 +93,7 @@ This is possible since 7.6.0 using Models Builder and through the inclusion of [
 
 In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVCs to always be enabled for those pickers.
 
 Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
 
@@ -145,6 +146,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 </httpModules>
 <system.web>
 ```
+
 and
 
 ```xml
@@ -157,7 +159,6 @@ and
 </system.webServer>
 ```
 
-
 #### Forms
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6, it is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
@@ -169,6 +170,7 @@ There is **[important Forms upgrade documentation that you will need to read the
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0
 
 ## Version 7.4.0
+
 For manual upgrades:
 
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
@@ -177,6 +179,7 @@ For manual upgrades:
 * You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](http://issues.umbraco.org/issue/U4-8031)
 
 ## Version 7.3.0
+
 Make sure to manually clear your cookies after updating all the files, otherwise you might an error relating to `Umbraco.Core.Security.UmbracoBackOfficeIdentity.AddUserDataClaims()`. The error looks like: `Value cannot be null. Parameter name: value`.
 
 NuGet will do the following for you but if you're upgrading manually:
@@ -223,19 +226,19 @@ Other considerations:
 </nodeType>
 ```
 
-    * The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1
 
 * Remove all uGoLive dlls from /bin
- * These are not compatible with V7
+  * These are not compatible with V7
 * Move appSettings/connectionStrings back to web.config
- * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
- * The keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section.
- * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups)
+  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
+  * The keys in config/AppSettings.config need to be moved back to the web.config `<appSettings>` section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config `<connectionStrings>` section.
+  * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups)
 * Delete all files in ~/App_Data/TEMP/Razor/*
- * Related to issues with razor macros
+  * Related to issues with razor macros
 
 ## Version 6 to 7.0.0
 

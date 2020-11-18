@@ -37,4 +37,4 @@ internal static IEnumerable<Type> ResolveTrees(this PluginManager resolver)
 }
 ```
 
-The code calls the PluginManager's ResolveTypes method but this method is human readable and easy to distinguish.
+The code calls the PluginManager's ResolveTypes method but this method is human readable and distinguishable.
