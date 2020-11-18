@@ -287,7 +287,7 @@ This file then should register your 'customBlockController' mentioned in your vi
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
 // you can do your custom functionality here!
-}
+});
 ```
 
 #### Example: Displaying an image from a Media Picker
