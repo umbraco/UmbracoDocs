@@ -101,6 +101,25 @@ query {
   }
 }
 ```
+## Previewing
+
+The collection can also return draft content by passing the `preview` argument with a boolean to the query. Draft content is always protected and requires an Api-Key.
+
+Lets say we want to show all our products that haven't been published, we can write the following query.
+
+```graphql
+query {
+  allProduct(
+    preview: true
+  ) {
+    edges {
+      node {
+        name
+      }
+    }
+  }
+}
+```
 
 ## Ordering
 
