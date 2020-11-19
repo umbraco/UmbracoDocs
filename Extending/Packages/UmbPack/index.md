@@ -153,6 +153,21 @@ umbpack pack .\package.xml -v 1.9.9
 umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
 ```
 
+`-p` - specifies package.xml overrides. You can override any value in the package.xml with your own values when you pack the package. Can be a replacement for `-v` & `-n` as well. You can add any value in your package.xml enclosed by `$` to then replace it with UmbPack. Example:
+
+```xml
+<info>
+    <package>
+      <name>$Name$</name>
+      <version>$Version$</version>
+```
+
+```
+umbpack pack .\package.xml -p Name=MyPackage;Version=1.0.0
+```
+
+This would pack your package and update your package.xml - note this happens before the automatic naming based on name and version as well. This is especially useful in CI/CD deployments where you may not know all your values before the run.
+
 ## The push command
 
 The `push` command requires an API key and a path to your package zip file, so will look something like this:
@@ -204,4 +219,3 @@ Combining several archive patterns:
 ```
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current UmbPackTest_0* UmbPackTest-Assets_0*
 ```
-
