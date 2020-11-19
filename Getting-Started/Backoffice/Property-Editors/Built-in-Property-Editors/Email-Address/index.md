@@ -39,16 +39,16 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 @if (Model.HasValue("email"))
 {
     var emailAddress = Model.Value<string>("email");
-    <p>@emailAddess</p>
+    <p>@emailAddress</p>
 }
 ```
 
 ### With Modelsbuilder
 
 ```csharp
-@if (Model.HasValue("email"))
+@if (Model.Email.HasValue())
 {
     var emailAddress = Model.Email;
-    <p>@emailAddess</p>
+    <p>@emailAddress</p>
 }
 ```
