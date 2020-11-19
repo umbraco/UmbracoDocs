@@ -154,7 +154,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
 
-## Slider
+## [Slider](Slider/index.md)
 
 `Alias: Umbraco.Slider`
 
