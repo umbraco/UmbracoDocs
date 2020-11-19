@@ -18,8 +18,8 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Content Example
 
-![Radiobutton List Content](images/Slider-Content-Example-No-Range.png)
-![Radiobutton List Content](images/Slider-Content-Example-With-Range.png)
+![Slider Content](images/Slider-Content-Example-No-Range.png)
+![Slider Content](images/Slider-Content-Example-With-Range.png)
 
 ## MVC View Example
 
