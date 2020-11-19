@@ -23,6 +23,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ### Typed
 
 #### Without Modelsbuilder
+
 ```csharp
 @if (Model.HasValue("colorTheme"))
 {
@@ -32,6 +33,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ```
 
 #### With Modelsbuilder
+
 ```csharp
 @if (Model.ColorTheme.HasValue())
 {
