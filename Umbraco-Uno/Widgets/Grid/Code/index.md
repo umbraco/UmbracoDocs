@@ -8,6 +8,8 @@ With the code widget you can inject custom HTML or Javascript in to a specific p
 
 When you need a certain script to run on a specific page on your website, you can use the code widget to inject the code without it affecting the rest of the content. This also provides a way to add custom code to your website without having to access the files.
 
+In the [Extending Uno](../../../Creating-Content/Extending-Uno) article you can read more about different use cases for the Code widget, and see how it can be used to embed external services like Calendly or Trustpilot.
+
 ## Sample
 
 The image above shows a JS alert which pops up whenever someone visits the page. This alert is added using the code widget. See the section below, for configuration options.

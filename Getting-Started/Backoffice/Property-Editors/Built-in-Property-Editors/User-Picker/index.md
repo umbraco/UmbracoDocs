@@ -22,14 +22,34 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 Please note that getting the Value of the property will return the user ID - properties of the User can be accessed by referencing UserService.
 
-### Typed
+### Without Modelsbuilder
 
 ```csharp
 @{
-    var us = Services.UserService;
-    var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
-}
-    <p>This is the chosen person: @username</p>
-    <p>This returns the id value of chosen person: @Model.Value("userPicker")</p>
+    if (Model.Value("userPicker") != null)
+    {
+        var us = Services.UserService;
+        var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
+
+        <p>This is the chosen person: @username</p>
+        <p>This returns the id value of chosen person: @Model.Value("userPicker")</p>
+    }
 }
 ```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.UserPicker != null)
+    {
+
+        var us = Services.UserService;
+        var user = us.GetUserById((int)Model.UserPicker);
+
+        <p>This is the chosen person: @user.Name</p>
+        <p>This returns the id value of chosen person: @user.Id)</p>
+    }
+}
+```
+

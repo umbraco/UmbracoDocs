@@ -66,6 +66,8 @@ These properties refers to how the Block is presented in the Block catalogue, wh
 - **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
 - **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
+The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+
 ### Advanced
 
 These properties are relevant when you work with custom views.
@@ -186,6 +188,49 @@ Example:
 }
 ```
 
+## Extract Block List Content data
+
+In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
+An example could be a product page with variants stored in a Block List Editor.
+
+In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Value<IEnumerable<BlockListItem>>("variants").Select(x => x.Content);
+    foreach (var variant in variants)
+    {
+        <h4>@variant.Value("variantName")</h4>
+        <p>@variant.Value("description")</p>
+    }
+}
+```
+
+If using ModelsBuilder the example can be simplified:
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Variants.Select(x => x.Content).OfType<ProductVariant>();
+    foreach (var variant in variants)
+    {
+        <h4>@variant.VariantName</h4>
+        <p>@variant.Description</h4>
+    }
+}
+```
+
+If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+
+
 ## Build a Custom Backoffice View
 
 You can choose to customize your editing experience by implementing a custom view for each Block.
@@ -238,17 +283,20 @@ The second file should be a javascript file called
 (to match the file referenced in your package.manifest file)
 
 This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
 // you can do your custom functionality here!
-}
+});
 ```
+
 #### Example: Displaying an image from a Media Picker
 Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
 
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
 
 With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
@@ -259,20 +307,23 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
             .then(function (media) {
                 console.log(media);
                 //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
-                $scope.imageUrl = media.MediaLink;
+                $scope.imageUrl = media.mediaLink;
     });    
 });
 ```
+
 Update the View to use the 'imageUrl' property to display the image:
 
-```
+```html
 <div ng-controller="customBlockController" ng-click="block.edit()">
     <h2 ng-bind="block.data.headline"></h2>
     <img src="{{imageUrl}}" />
     <p ng-bind="block.data.description"></p>
 </div>
 ```
+
 If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
 

@@ -75,6 +75,10 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ``` 
 
+:::tip
+If you are load balancing with [Azure Web Apps](azure-web-apps.md) make sure to check out the article we have for that specific set-up.
+:::
+
 ## Advanced techniques
 
 Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).

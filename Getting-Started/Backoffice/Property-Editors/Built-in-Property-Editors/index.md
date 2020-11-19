@@ -42,7 +42,7 @@ The content picker allows the content editor to pick a specific node from the co
 
 Displays a calendar UI for selecting dates and time.
 
-## Decimal
+## [Decimal](Decimal/index.md)
 
 `Alias: Umbraco.Decimal`
 
@@ -60,7 +60,7 @@ Displays a list of preset values. The content editor can select either a single 
 
 A single line textbox only allowing valid email addresses.
 
-## File upload
+## [File upload](File-Upload/index.md)
 
 `Alias: Umbraco.UploadField`
 
@@ -90,11 +90,11 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
-## Markdown editor
+## [Markdown editor](Markdown-Editor/index.md)
 
 `Alias: Umbraco.MarkdownEditor`
 
-[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.
+[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML. The built-in editor allow the user to use the markdown formatting options.
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
@@ -104,7 +104,7 @@ The markdown editor will be interpreted by the Models Builder. Behind the scenes
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
-## Member Group Picker
+## [Member Group Picker](Member-Group-Picker/index.md)
 
 `Alias: Umbraco.MemberGroupPicker`
 
@@ -152,9 +152,9 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 `Alias: Umbraco.TinyMCE`
 
-A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
+A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable. Probably one of the most used controls in Umbraco projects.
 
-## Slider
+## [Slider](Slider/index.md)
 
 `Alias: Umbraco.Slider`
 
@@ -182,4 +182,4 @@ A normal html input text field.
 
 `Alias: Umbraco.UserPicker`
 
-The easiest way to pick a person from user backend users.  See Members for front-end users.
+The easiest way to pick a person from user backend users. See Members for front-end users.

@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 In order for Umbraco Forms to work correctly, you need to include some client dependencies.
 
-In Umbraco Forms v.8.5.0+ you can use the following Razor method to output script tags containing the dependencies:
+In Umbraco Forms v.8.6.0+ you can use the following Razor method to output script tags containing the dependencies:
 
 ```html
 <head>
@@ -14,7 +14,7 @@ In Umbraco Forms v.8.5.0+ you can use the following Razor method to output scrip
 </head>
 ```
 
-For older version of Umbraco Forms you should go for the jQuery option, please read the 'use jQuery' section below.
+For older version of Umbraco Forms you must go for the jQuery option, please read the 'use jQuery' section below.
 
 All dependencies originate from your Umbraco Forms installation, which means that no external references are needed.
 
