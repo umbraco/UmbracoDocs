@@ -111,6 +111,8 @@ Returns the index the page is on, compared to its siblings
 
 Returns the complete Url to the page in the current culture
 
+_deprecated_ Will be removed in future versions of Umbraco, use .Url() instead
+
 ```csharp
 @Model.Url
 ```
@@ -139,22 +141,56 @@ Returns the Url encoded name of the page (slug) of the specified culture
 @Model.UrlSegment()
 ```
 
-### .WriterName & .WriterId
+### .WriterId
 
-Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
+Returns the id of the Umbraco backoffice user that performed the last update operation on the content item.
 
 ```csharp
-@Model.WriterName
 @Model.WriterId
 ```
 
-### .CreatorName & .CreatorId
+### .WriterName 
+
+Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
+
+_deprecated_ Will be removed in future versions of Umbraco, use WriterName(IUserService) instead
+
+```csharp
+@Model.WriterName
+```
+
+### .WriterName(IUserService)
 
 Returns the name of the Umbraco backoffice user that initially created the content item.
 
 ```csharp
-@Model.CreatorName
+@Model.WriterName(IUserService)
+```
+
+### .CreatorId
+
+Returns the id of the Umbraco backoffice user that initially created the content item
+
+```csharp
 @Model.CreatorId
+```
+
+### .CreatorName
+
+Returns the name of the Umbraco backoffice user that initially created the content item.
+
+_deprecated_ Will be removed in future versions of Umbraco, use CreatorName(IUserService) instead
+
+```csharp
+@Model.CreatorName
+```
+
+### .CreatorName(IUserService)
+
+Returns the name of the Umbraco backoffice user that initially created the content item.
+
+```csharp
+@Model.CreatorName(IUserService)
 ```
 
 ### .CreateDate
