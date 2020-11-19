@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Radiobutton List
+# Slider
 
 `Alias: Umbraco.Slider`
 
