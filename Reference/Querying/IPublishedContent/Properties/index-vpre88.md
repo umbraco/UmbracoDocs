@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 8.9.0
+versionTo: 8.8.0
 ---
 
 # IPublishedContent Property Access
