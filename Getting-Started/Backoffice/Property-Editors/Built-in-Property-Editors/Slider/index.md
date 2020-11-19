@@ -14,7 +14,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](images/Slider-Data-Type-Definition-Example.png)
+![Slider Data Type Definition](images/Slider-Data-Type-Definition-Example.png)
 
 ## Content Example
 
