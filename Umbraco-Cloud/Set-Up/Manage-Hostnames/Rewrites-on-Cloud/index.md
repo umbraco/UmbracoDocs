@@ -81,7 +81,7 @@ This redirect rule will not apply when the request is already going to the secur
 
 It is possible to transform all of your URLs to use a trailing slash consistently for SEO.
 
-To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
+To accomplish this, add a rewrite rule to the Live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
 For example, the following rule will redirect all requests for the site https://mysite.com/page URL to the page https://mysite.com/page/ URL and respond with a permanent redirect status. This way you can ensure that you use the trailing slashes consistently on your site.
 
