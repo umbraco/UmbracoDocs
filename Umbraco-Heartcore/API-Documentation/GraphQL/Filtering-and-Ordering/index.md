@@ -101,6 +101,7 @@ query {
   }
 }
 ```
+
 ## Previewing
 
 The collection can also return draft content by passing the `preview` argument with a boolean to the query. Draft content is always protected and requires an Api-Key.
@@ -125,9 +126,9 @@ query {
 
 The collection can also be sorted by passing the `orderBy` argument to the query.
 
-If `orderBy` is not specified the collections are ordered by `path` which is the order they apear in, in the Umbraco Backoffice tree.
+If `orderBy` is not specified the collections are ordered by `path` which is the order they appear in, in the Umbraco Backoffice tree.
 
-Lets say we wan't to show all our products ordered by price in ascending order, we can write the following query.
+Lets say we want to show all our products ordered by price in ascending order, we can write the following query.
 
 ```graphql
 query {
@@ -162,7 +163,7 @@ query {
 
 ## Paging
 
-We can also limit the number of results returned by paging. To achive this one can use `first` and `after` to do forward paging and `last` and `before` to do backward paging.
+We can also limit the number of results returned by paging. To achieve this one can use `first` and `after` to do forward paging and `last` and `before` to do backward paging.
 
 The cursor can be obtained by including the `cursor` field on an edge e.g. to get the first `50` products we can write the following query.
 
@@ -210,9 +211,9 @@ query {
 }
 ```
 
-## Combining filter, order and paging
+## Combining filter, order, and paging
 
-Everything shown up untill now can be combined in a single query, the following query will get the first 50 products where the `price` is greater than `100` and order the result in ascending order by `price` and then by `name`.
+Everything shown up until now can be combined in a single query, the following query will get the first 50 products where the `price` is greater than `100` and order the result in ascending order by `price` and then by `name`.
 
 
 ```graphql
