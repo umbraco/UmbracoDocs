@@ -74,12 +74,12 @@ See the example below to learn how a value can be added or changed programmatica
     content.SetValue("email", "stk@umbraco.com");
 
     // Save and publish the change
-    contentService.SaveAndPublish(content);
+    contentService.Save(content);
 }
 ```
 
 :::note
 The value sent to an EmailAddress property needs to be a correct email address, e.g. name@domain.com.
 
-If the value isn't a correct email address, the value will not be updated.
+It is recommended that you set up validation on this property, in order to verify whether the value added is in the correct format.
 :::
