@@ -102,5 +102,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
 ```
 
 :::note
-Take note of the negates in the rewrite rule. Especially the negate for the media folder is important because your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/)
+Take note of the negates in the rewrite rule. 
+
+It is especially important to negate the path to the media folder because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
 :::
