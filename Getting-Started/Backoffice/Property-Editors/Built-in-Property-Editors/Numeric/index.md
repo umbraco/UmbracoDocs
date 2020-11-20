@@ -90,6 +90,6 @@ See the example below to learn how a value can be added or changed programmatica
     content.SetValue("number", 31);
 
     // Save and publish the change
-    contentService.SaveAndPublish(content);
+    contentService.Save(content);
 }
 ```
