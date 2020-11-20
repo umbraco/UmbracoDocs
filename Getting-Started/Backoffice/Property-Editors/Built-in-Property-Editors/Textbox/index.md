@@ -55,3 +55,36 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
     }
 }
 ```
+
+## Add value
+
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+    var contentService = Services.ContentService;
+
+    var guid = new Guid("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+    var content = contentService.GetById(guid); // ID of your page
+    content.SetValue("pageTitle", "Umbraco Demo");
+	
+    contentService.SaveAndPublish(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    content.SetValue(Home.GetModelPropertyType(x => x.PageTitle).Alias, "Umbraco Demo");
+}
+```
