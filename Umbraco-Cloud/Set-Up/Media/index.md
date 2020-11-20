@@ -86,3 +86,8 @@ There is a total of 5 variables related to the Azure Blob Storage container on y
 * `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.SharedAccessSignature`
 
 Once you have the variables, use the ["Connect to Azure Storage Explorer"](Connect-to-Azure-Storage-Explorer) guide to connect to your storage container. 
+
+:::links
+## Related articles
+- [Rewrites will impact your media rendering as well - read about the best practices in here](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/)
+:::
