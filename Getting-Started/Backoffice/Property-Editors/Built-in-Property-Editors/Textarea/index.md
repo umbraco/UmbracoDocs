@@ -73,6 +73,6 @@ See the example below to learn how a value can be added or changed programmatica
     content.SetValue("description", "This is some text for the text area!");
 
     // Save and publish the change
-    contentService.SaveAndPublish(content);
+    contentService.Save(content);
 }
 ```
