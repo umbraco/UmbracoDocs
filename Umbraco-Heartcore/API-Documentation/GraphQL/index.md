@@ -19,9 +19,9 @@ The GraphQL API can be accessed on `https://graphql.umbraco.io`, it accepts POST
 
 ## API Access
 
-In order to access the data for your Umbraco Heartcore project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
+In order to access the data for your Umbraco Heartcore project you need to provide a project identifier (Project Alias) via an HTTP Header or a Querystring parameter.
 
-The Project Alias is a HTTP friendly version of the Project Name under your Umbraco Cloud account.
+The Project Alias is an HTTP friendly version of the Project Name under your Umbraco Cloud account.
 
 ### Access via Umb-Project-Alias header
 
@@ -47,6 +47,22 @@ To access the GraphQL API the user must have access to the `Content` section and
 ```http
 POST https://graphql.umbraco.io/
 Api-Key: {api-key}
+```
+
+## Preview
+
+The GraphQL API supports fetching draft content, this can be done by passing a `preview` argument to the root query fields.
+
+:::note
+Fetching draft content requires an API Key to be passed with the request.
+:::
+
+```graphql
+query {
+  content(preview: true) {
+    name
+  }
+}
 ```
 
 ## [Schema Generation](Schema-Generation/)
