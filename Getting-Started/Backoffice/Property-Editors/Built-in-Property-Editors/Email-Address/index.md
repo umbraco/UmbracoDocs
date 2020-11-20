@@ -73,7 +73,7 @@ See the example below to learn how a value can be added or changed programmatica
     // Set the value of the property with alias 'email'
     content.SetValue("email", "stk@umbraco.com");
 
-    // Save and publish the change
+    // Save the change
     contentService.Save(content);
 }
 ```

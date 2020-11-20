@@ -68,7 +68,7 @@ See the example below to learn how a value can be added or changed programmatica
     // Set the value of the property with alias 'pageTitle'
     content.SetValue("pageTitle", "text for the text box/string.");
 
-    // Save and publish the change
-    contentService.SaveAndPublish(content);
+    // Save the change
+    contentService.Save(content);
 }
 ```

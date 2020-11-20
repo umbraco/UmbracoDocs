@@ -72,7 +72,7 @@ See the example below to learn how a value can be added or changed programmatica
     // Set the value of the property with alias 'description'
     content.SetValue("description", "This is some text for the text area!");
 
-    // Save and publish the change
+    // Save the change
     contentService.Save(content);
 }
 ```
