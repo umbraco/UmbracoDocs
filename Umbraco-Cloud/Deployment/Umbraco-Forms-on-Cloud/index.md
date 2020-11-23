@@ -89,7 +89,7 @@ If you are migrating an Umbraco Cloud project from Umbraco 7 to Umbraco 8, make 
 In this case, follow these steps before initiating the migration:
 
 * Set `transferFormsAsContent` to `false` in the `UmbracoDeploy.settings.config` file.
-* Run an [`export` command from the `/data` folder](../../Setup/Power-tools/generating-uda-files/#generate-uda-files-manually) to extract UDA files for your forms.
+* Run an [`export` command from the `/data` folder](../../Set-up/Power-tools/generating-uda-files/#generate-uda-files-manually) to extract UDA files for your forms.
 
 :::
 
