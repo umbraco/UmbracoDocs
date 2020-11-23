@@ -124,6 +124,14 @@ The default rendering method is named `GetBlockListHtml()` and comes with a few 
 
 "MyBlocks" above is the alias for the Block List editor.
 
+If using ModelsBuilder the example can be simplified:
+
+Example:
+
+```csharp
+@Html.GetBlockListHtml(Model.MyBlocks)
+```
+
 To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
 
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
@@ -145,6 +153,15 @@ Example:
 
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Value("heading")</h1>
+
+```
+
+With ModelsBuilder:
+
+```csharp
+
+// Output the value of field with alias 'heading' from the Element Type selected as Content section
+<h1>@content.Heading)</h1>
 
 ```
 
