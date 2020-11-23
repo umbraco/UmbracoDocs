@@ -91,7 +91,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
   <conditions>
     <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
     <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/media" negate="true" />
+    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z]{1,4}$" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />
@@ -104,5 +104,5 @@ For example, the following rule will redirect all requests for `https://mysite.c
 :::note
 Take note of the negates in the rewrite rule. 
 
-It is especially important to negate the path to the media folder because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
+It is especially important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
 :::
