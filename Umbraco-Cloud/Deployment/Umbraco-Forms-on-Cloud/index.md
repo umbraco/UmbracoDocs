@@ -78,9 +78,15 @@ Follow the steps outlined below **for each environment** in order for the migrat
 6. From the Umbraco Backoffice transfer, queue and transfer the forms to the environment
 7. Repeat steps 1-5 for each of your Cloud environments
 
-**Did you create your project before June 2018?**
+##### Did you create your project before June 2018?
 
 Then your Umbraco Forms data might still be handled as meta data.
+
+:::note
+If you are migrating an Umbraco Cloud project from Umbraco 7 to Umbraco 8, make sure that your Umbraco Forms data is **not** handled as content. 
+
+In this case, make sure that the `transferFormsAsContent` is set to `false` on your Umbraco 7 site before initiating the migration.
+:::
 
 This means that you will need to follow the steps below, in order to persist Umbraco Forms data in the Umbraco database.
 
