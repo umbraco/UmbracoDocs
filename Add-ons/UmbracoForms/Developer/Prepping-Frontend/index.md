@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 For Umbraco Forms to work correctly, you need to include some client dependencies.
 
-In Umbraco Forms v.8.6.0+ you can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a to reference `Umbraco.Forms.Mvc`:
+In Umbraco Forms v.8.6.0+ you can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Mvc`:
 
 ```html
 @using Umbraco.Forms.Mvc
