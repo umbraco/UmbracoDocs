@@ -40,7 +40,7 @@ In some cases, you might want to switch from using your own manual certificate, 
 By removing your own certificate from your Cloud project, Umbraco Latch will automatically assign a new security certificate to the hostname that was using the removed certificate.
 
 :::note
-Did you manually uploaded security certificate expire?
+Did your manually uploaded security certificate expire?
 
 You will need to remove the expired certificate in order for Latch to assign a new certificate to your hostname(s).
 :::
