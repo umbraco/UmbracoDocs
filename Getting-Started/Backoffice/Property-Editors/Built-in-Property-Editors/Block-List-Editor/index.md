@@ -161,7 +161,7 @@ With ModelsBuilder:
 ```csharp
 
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
-<h1>@content.Heading)</h1>
+<h1>@content.Heading</h1>
 
 ```
 
