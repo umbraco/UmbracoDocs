@@ -12,8 +12,8 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 * An Umbraco 7 Cloud project running **the latest version of Umbraco 7**
 
-* Make sure Umbraco Forms data is set to be handled as content
-    * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud) for more details on how to check the setting
+* Make sure Umbraco Forms data is not handled as content
+    * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud/#did-you-create-your-project-before-june-2018) for more details on how to check the setting
 
 * A clean Cloud project running the latest version of Umbraco 8 with **at least 2 environments**
 

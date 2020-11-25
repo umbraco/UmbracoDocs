@@ -51,24 +51,44 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 }
 ```
 
-## Add value programmatically
+## Add values programmatically
 
-See the example below to learn how a value can be added or changed programmatically to a TextBox property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
 @{
     // Get access to ContentService
     var contentService = Services.ContentService;
 
-    // Create a variable for the GUID of your page
-    var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
+    // Create a variable for the GUID of the page you want to update
+    var guid = new Guid("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-    // Get the page using the GUID you've just defined
-    var content = contentService.GetById(guid);
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
+	
+	// Set the value of the property with alias 'pageTitle'
+    content.SetValue("pageTitle", "Umbraco Demo");
+	
+	// Save the change
+    contentService.Save(content);	
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+
     // Set the value of the property with alias 'pageTitle'
-    content.SetValue("pageTitle", "text for the text box/string.");
-
-    // Save the change
-    contentService.Save(content);
+    content.SetValue(Home.GetModelPropertyType(x => x.PageTitle).Alias, "Umbraco Demo");
 }
 ```

@@ -24,7 +24,27 @@ In code, the property is a string, which references the location of the file.
 Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ## MVC View Example
-### A link that would open a pdf-file
+
+### Without Modelsbuilder
 ```csharp
-<a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
+@{
+    if (Model.Value<string>("myFile").HasValue())
+    {
+        var myFile = Model.Value<string>("myFile");
+
+        <a href="@myFile">@Path.GetFileName(myFile)</a>
+    }
+
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.MyFile.HasValue())
+    {
+        <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
+    }
+}
 ```

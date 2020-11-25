@@ -66,6 +66,10 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Umbraco LATCH documentation](../Set-Up/Umbraco-Latch)
 
+### Ports
+
+By default, all ports are closed to secure them against external attacks. This is done for all ports apart from 80 (HTTP) and 443 (HTTPS).
+
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
