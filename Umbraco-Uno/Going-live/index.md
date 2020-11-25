@@ -45,8 +45,9 @@ If you are interested in learning more about Umbraco Latch check out the [produc
 
 ## SMTP
 
-In Umbraco Uno projects we take care of SMTP(Simple Mail Transfer Protocol) so that you don't have to do anything.
-SMTP allows your features like Umbraco Forms to be connected to your email, making you recieve the emails when people answer your forms. if SMTP wasn't set up your forms replies would not be sent anywhere.
+In Umbraco Uno projects we take care of SMTP(Simple Mail Transfer Protocol) so you don't have to do anything to set this up.
+
+SMTP allows features like Umbraco Forms to be connected to your email, making you recieve the emails when people answer your forms.
 
 ## SEO
 
