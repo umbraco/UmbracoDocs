@@ -12,11 +12,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-### Without a character limit
-
 ![Textbox Data Type Definition](images/Textbox-Setup-v8.png)
-
-## Settings
 
 ## Content Example
 
@@ -29,7 +25,6 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 ![Textbox Content Example Without a Character Limit](images/Textbox-Content-Limit-v8.png)
 
 ## MVC View Example
-
 
 ### Without Modelsbuilder
 
