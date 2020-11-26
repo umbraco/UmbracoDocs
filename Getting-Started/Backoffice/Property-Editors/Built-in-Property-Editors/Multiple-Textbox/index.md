@@ -75,6 +75,10 @@ See the example below to see how a value can be added or changed programmaticall
 }
 ```
 
+:::note
+To add multiple values to the repeatable textstrings property editor you have to put each value on a new line. You can of course also use \r\n\ instead of Environment.NewLine.
+:::
+
 Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
 
 ```csharp
