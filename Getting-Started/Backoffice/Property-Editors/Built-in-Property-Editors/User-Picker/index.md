@@ -69,7 +69,7 @@ See the example below to see how a value can be added or changed programmaticall
     var content = contentService.GetById(guid); // ID of your page
 	
 	// Set the value of the property with alias 'userPicker'
-    content.SetValue("userPicker", true);
+    content.SetValue("userPicker", 1);
             
     // Save the change
     contentService.Save(content);
