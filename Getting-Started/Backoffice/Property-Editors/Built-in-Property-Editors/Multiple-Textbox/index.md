@@ -76,7 +76,7 @@ See the example below to see how a value can be added or changed programmaticall
 ```
 
 :::note
-To add multiple values to the repeatable textstrings property editor you have to put each value on a new line. You can of course also use \r\n\ instead of Environment.NewLine.
+To add multiple values to the repeatable text strings property editor you have to put each value on a new line. This can be achieved using either `\r\n\` or `Environment.NewLine`.
 :::
 
 Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
@@ -96,4 +96,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.KeyFeatureList).Alias, "Awesome" + Environment.NewLine + "Super");
 }
 ```
-
