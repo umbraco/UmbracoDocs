@@ -255,7 +255,7 @@ When you insert a table into the rich text area, by default the columns and rows
     <config key="table_default_attributes">{ "border" : "0", "class": "table"}</config>
     <!-- provide some default 'styles' for the table (if you are not using the css class to control this)-->
     <config key="table_default_styles">{ 'border-collapsed': 'collapse', 'width': '100%'}</config>
-    <!-- provide some styling choices for the editor to select when inserting the table.
+    <!-- provide some styling choices for the editor to select when inserting the table. -->
     <config key="table_class_list">
       [
       {"title": "Responsive", "value": "table"},{"title": "None", "value": ""},{"title": "Hover", "value": "table table-hover"},{"title": "Striped", "value": "table table-striped"},{"title": "Condensed", "value": "table table-condensed"},{"title": "Bordered", "value": "table table-bordered"}
