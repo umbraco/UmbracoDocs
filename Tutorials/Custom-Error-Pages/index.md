@@ -85,6 +85,6 @@ If you are hosting your site on Umbraco Cloud, the best approach would be using 
 ### Are the error pages not working?
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
-- custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution
-- any packages that allow you to customize redirects
-- rewrite rules in web.config that might interefere with custom error handling
+- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.
