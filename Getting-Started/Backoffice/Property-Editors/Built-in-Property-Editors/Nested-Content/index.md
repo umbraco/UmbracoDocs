@@ -139,34 +139,39 @@ Example:
 
 ## Creating Nested Content programmatically
 
-For the sake of this example, let us assume we have a Nested Content property with alias `attendeeList`, where the Element Document Type has an alias of `attendee`.
+For the sake of this example, let us assume we have a Nested Content property with alias `attendeeList`, where the element Document Type has an alias of `attendee`.
 It has the Properties: `user_name`, `user_email`, `join_time`, `leave_time`, `duration`, `phone`.
 
 To save data in Nested Content, we need to create a new C# List containing a `Dictionary` of type `<string, object>`. `Dictionary<string, string>` would also work.
-
-The first dictionary item property/parameter we should specify for each Nested Content element is `ncContentTypeAlias`, which is the alias of the Document Type that is the embedded element in Nested Content.
+The first dictionary item property/parameter we should specify for each Nested Content element is `ncContentTypeAlias`, which is the alias of the Document Type that we have nested.
 
 Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 
-After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and creating a new Content Node, we can do the following:
-
 ```csharp
- var contentService = Services.ContentService; //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
- IContent request = ContentService.Create("new node", guid, "mydoctype", -1); //here we create a new node, and fill out attendeeList afterwards
- var attendees = new List<Dictionary<string, string>>(); //our list which will contain nested content
- foreach (var person in participants) //participants is our list of attendees - multiple items, good use case for nested content
+ //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
+ var contentService = Services.ContentService; 
+//here we create a new node, and fill out attendeeList afterwards
+ IContent request = ContentService.Create("new node", guid, "mydoctype", -1); 
+ //our list which will contain nested content
+ var attendees = new List<Dictionary<string, string>>(); 
+//participants is our list of attendees - multiple items, good use case for nested content
+ foreach (var person in participants) 
             attendees.Add(new Dictionary<string, string>() {
-            {"ncContentTypeAlias","attendee"}, //this is the only "default" value we need to fill for nested item
+            //this is the only "default" value we need to fill for nested item
+            {"ncContentTypeAlias","attendee"}, 
             {"user_name", person.name},
             {"user_email",person.user_email},
-            {"join_time",person.join_time.ToString()}, //we convert some properties to String just to be on the safe side
+            {"join_time",person.join_time.ToString()}, 
+            //we convert some properties to String just to be on the safe side
             {"leave_time",person.leave_time.ToString()},
             {"duration",person.duration.ToString()},
             {"phone",person.phone.ToString()}
             });
             }
-            request.SetValue("attendeeList", JsonConvert.SerializeObject(attendees)); //bind the attendees List to attendeeList property on the newly created content node
-            ContentService.SaveAndPublish(request); //Save the entire node via ContentService
+            //bind the attendees List to attendeeList property on the newly created content node
+            request.SetValue("attendeeList", JsonConvert.SerializeObject(attendees)); 
+            //Save the entire node via ContentService
+            ContentService.SaveAndPublish(request); 
 ```
 
-Where we iterate through a list of participants (the data could be coming from an API, for example) and add a new `Dictionary` item for each person in the list.
+In the above sample we iterate through a list of participants (the data for such participants could be coming from an API, for example), and add a new `Dictionary` item for each person in the list.
