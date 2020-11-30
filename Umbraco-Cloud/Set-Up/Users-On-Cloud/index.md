@@ -45,17 +45,20 @@ There are two ways that you can set up these permissions:
 
 To create or edit a User Group, go to the User section of the backoffice.
 
-1. Click on "Groups" in the right corner, and from here you are able to either create a new User Group or edit an existing one.
+1. Click on "Groups" in the right corner, from here you are able to either create a new User Group or edit an existing one.
 
     ![User Groups](images/Users.png)
 
-2. Click on "Create group" and scroll down and look under "Default permissions" here you can see three options:
+2. Click "Create group"
+3. Scroll down and look under "Default permissions" here you can see three options:
 
     ![User Groups](images/default_permisions.png)
 
-3. From here you can decide whether the users in the new User Group can restore, partially restore, or transfer content.
+4. Decide whether the users in the new User Group can restore, partially restore, or transfer content.
 
-4. To edit an already existing User Group, go to the User Group you want to edit, e.g Editors or Writers, and set the permissions from there.
+5. Edit an already existing User Group.
+
+6. Go to the User Group you want to edit, e.g Editors or Writers, and set the permissions from there.
 
 ### Granular Permissions
 
@@ -63,14 +66,16 @@ As mentioned it is also possible to set Granular permissions for a specific cont
 
 You can set the permission when you are creating or editing an existing User Group.
 
-1. At the bottom of the User Group, you can add the setting for Granular permission for your content nodes.
+1. Add the setting for Granular permission for your content nodes at the bottom of the User Group.
 
     ![Granular permission](images/Granular.png)
 
-2. When you click "Add", you can choose the content node which you want to set the Granular settings for.
+2. Click "Add".
+
+3. Choose the content node which you want to set the Granular settings for.
 
     ![Granular content node](images/Granular_node.png)
 
-3. When you have chosen the node that you want to set the settings for, you can then set the permissions for restore, partial restore, and queueing content for transfer.
+4. Set permissions for restore, partial restore, and queueing content for transfer.
 
     ![Granular permission](images/Granular_permission.png)
