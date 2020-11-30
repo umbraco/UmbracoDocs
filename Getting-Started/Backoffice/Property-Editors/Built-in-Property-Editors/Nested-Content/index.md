@@ -148,7 +148,8 @@ The first dictionary item property/parameter we should specify for each Nested C
 Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 
 ```csharp
- //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
+ //if the class containing our code inherits SurfaceController, UmbracoApiController, 
+ //or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
  var contentService = Services.ContentService; 
 //here we create a new node, and fill out attendeeList afterwards
  IContent request = ContentService.Create("new node", guid, "mydoctype", -1); 
