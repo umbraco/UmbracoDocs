@@ -32,6 +32,7 @@ Below is a screenshot of our recommendation on how the projects should be config
 
 * Visual Studio 2017 v15.9.6 or later
 * Git and/or Git Credential Manager for Windows
+* If you're using GitKraken, SourceTree etc. you will still need to have Git CLI installed and available in the path
 
 ## Video tutorial
 
