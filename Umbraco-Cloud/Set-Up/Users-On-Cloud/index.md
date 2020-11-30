@@ -66,7 +66,7 @@ As mentioned it is also possible to set Granular permissions for a specific cont
 
 You can set the permission when you are creating or editing an existing User Group.
 
-1. Add the setting for Granular permission for your content nodes, at the bottom of the User Group.
+1. Add the setting for Granular permission for your content nodes at the bottom of the User Group.
 
     ![Granular permission](images/Granular.png)
 
@@ -76,7 +76,6 @@ You can set the permission when you are creating or editing an existing User Gro
 
     ![Granular content node](images/Granular_node.png)
 
-
-4. Set the permissions for restore, partial restore, and queueing content for transfer.
+4. Set permissions for restore, partial restore, and queueing content for transfer.
 
     ![Granular permission](images/Granular_permission.png)
