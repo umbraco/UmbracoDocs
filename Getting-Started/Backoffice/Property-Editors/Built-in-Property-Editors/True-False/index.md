@@ -81,6 +81,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 ```csharp
 @{
     // Set the value of the property with alias 'myCheckBox'
-    content.SetValue(Home.GetModelPropertyType(x => x.MyCheckBox).Alias, "Umbraco Demo");
+    content.SetValue(Home.GetModelPropertyType(x => x.MyCheckBox).Alias, true);
 }
 ```
