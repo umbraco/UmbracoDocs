@@ -262,6 +262,10 @@ You will still need to add all of the files you added above but, because your `C
 }
 ```
 
+:::tip
+You can also have a coloured icon for your content app by specifying the icon in the format *icon-name color-colorname*.
+:::
+
 ## Notification badges
 
 There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
