@@ -268,7 +268,12 @@ Go to the backoffice of your Development environment and make sure all your meta
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose *'Queue for transfer'*
     * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
-    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/Media/)
+    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/Media/).
+
+    :::note
+    Records from the Redirect URL Management are not transferred by deploy.
+    You will need to manually migrate them using SQL.
+    :::
 
 ![Queue for transfer](images/transfer.gif)
 
