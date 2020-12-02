@@ -8,7 +8,7 @@ In this section, you can find all the information and details you need in order 
 
 ## What is a User
 
-A user is someone who has access to the Umbraco backoffice and is not to be confused with Members. When you enter your Umbraco project you will find that a user allready excist made with the login (email) and password entered during creation of the project. Users can be created, edited, and managed in the User section.
+A user is someone who has access to the Umbraco backoffice and is not to be confused with Members. When you enter your Umbraco project you will find that a user already exist made with the login (email) and password entered during creation of the project. Users can be created, edited, and managed in the User section.
 You can manage your users so they can’t publish or edit only read, or you can disable someone from your project if they should not have access anymore.
 
 A user cannot be deleted, they can only be disabled
