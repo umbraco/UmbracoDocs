@@ -102,6 +102,7 @@ public class MyCustomModelTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
     }
 
     [Test]
@@ -116,6 +117,7 @@ public class MyCustomModelTests : UmbracoBaseTest
         var model = new MyCustomViewModel(publishedContent.Object);
         
         Assert.AreEqual(expected, model.Heading);
+        Current.Reset();
     }
 }
 ```
@@ -155,6 +157,7 @@ public class HomeControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new HomeController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
@@ -166,6 +169,7 @@ public class HomeControllerTests : UmbracoBaseTest
         var result = this.controller.Index(model);
 
         Assert.IsAssignableFrom<ViewResult>(result);
+        Current.Reset();
     }
 
     [Test]
@@ -176,6 +180,7 @@ public class HomeControllerTests : UmbracoBaseTest
         var result = (MyCustomModel)((ViewResult)this.controller.Index(model)).Model;
 
         Assert.AreEqual("Hello World", result.MyProperty1);
+        Current.Reset();
     }
 }
 ```
@@ -204,6 +209,7 @@ public class MySurfaceControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new MySurfaceController(Mock.Of<IUmbracoContextAccessor>(), Mock.Of<IUmbracoDatabaseFactory>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<ILogger>(), Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
@@ -213,6 +219,7 @@ public class MySurfaceControllerTests : UmbracoBaseTest
         var result = this.controller.Index();
 
         Assert.IsAssignableFrom<ContentResult>(result);
+        Current.Reset();
     }
 
     [Test]
@@ -221,6 +228,7 @@ public class MySurfaceControllerTests : UmbracoBaseTest
         var result = (ContentResult)this.controller.Index();
 
         Assert.AreEqual("Hello World", result.Content);
+        Current.Reset();
     }
 }
 ```
@@ -254,6 +262,7 @@ public class ProductsControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new ProductsController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), Mock.Of<ISqlContext>(), this.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), Mock.Of<IRuntimeState>(), base.UmbracoHelper, base.UmbracoMapper);
     }
 
@@ -265,6 +274,7 @@ public class ProductsControllerTests : UmbracoBaseTest
         var result = this.controller.GetAllProducts();
 
         Assert.AreEqual(expected, result);
+        Current.Reset();
     }
 }
 
@@ -299,6 +309,7 @@ public class HomeControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new HomeController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
@@ -312,6 +323,7 @@ public class HomeControllerTests : UmbracoBaseTest
         var result = (MyCustomModel)((ViewResult)this.controller.Index(model)).Model;
 
         Assert.AreEqual(expected, result.MyProperty1);
+        Current.Reset();
     }
 }
 ```
@@ -350,6 +362,7 @@ public class MyCustomControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new MyCustomController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
@@ -363,6 +376,7 @@ public class MyCustomControllerTests : UmbracoBaseTest
         var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
         Assert.AreEqual(otherContent, result.OtherContent);
+        Current.Reset();
     }
 }
 ```
@@ -401,6 +415,7 @@ public class MemberProfileControllerTests : UmbracoBaseTest
     public override void SetUp()
     {
         base.SetUp();
+        Current.Factory = new Mock<IFactory>().Object;
         this.controller = new MemberProfileController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
@@ -429,6 +444,7 @@ public class MemberProfileControllerTests : UmbracoBaseTest
         var actual = (MemberProfile)((ViewResult)this.controller.Index(new ContentModel(Mock.Of<IPublishedContent>()))).Model;
 
         Assert.AreEqual(expected, actual.Member);
+        Current.Reset();
     }
 
     [Test]
@@ -444,6 +460,7 @@ public class MemberProfileControllerTests : UmbracoBaseTest
         var actual = (MemberProfile)((ViewResult)this.controller.Index(new Umbraco.Web.Models.ContentModel(Mock.Of<IPublishedContent>()))).Model;
 
         Assert.Null(actual.Member);
+        Current.Reset();
     }
 }
 ```
