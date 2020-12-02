@@ -1,7 +1,7 @@
 ---
 meta.Title: "Umbraco in Load Balanced Environments"
 meta.Description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
-versionFrom: 8.0.0
+versionFrom: 8.6.4
 ---
 
 # Umbraco in Load Balanced Environments
@@ -29,7 +29,7 @@ It is highly recommended that you setup your staging environment to also be load
 These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
-* You are running Umbraco 8.1.0 or above
+* You are running Umbraco 8.6.4 or above
 * _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the backoffice is behind the load balancer.
 
 There are three design alternatives you can use to effectively load balance servers:
