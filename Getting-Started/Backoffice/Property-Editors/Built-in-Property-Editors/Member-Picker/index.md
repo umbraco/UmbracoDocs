@@ -60,10 +60,10 @@ See the example below to see how a value can be added or changed programmaticall
     var content = contentService.GetById(guid); // ID of your page
 
     // Create a variable for the GUID of the member ID
-    var author = Guid.Parse("ed944097281e4492bcdf783355219450");
+    var authorId = Guid.Parse("ed944097281e4492bcdf783355219450");
 
     // Set the value of the property with alias 'author'. 
-    content.SetValue("author", author);
+    content.SetValue("author", authorId);
 
     // Save the change
     contentService.Save(content);
