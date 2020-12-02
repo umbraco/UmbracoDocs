@@ -263,7 +263,7 @@ You will still need to add all of the files you added above but, because your `C
 ```
 
 :::tip
-You can also have a coloured icon for your content app by specifying the icon in the format *icon-[name of icon] color-[name of color]*.
+You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`.
 :::
 
 ## Notification badges
