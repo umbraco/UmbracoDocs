@@ -85,6 +85,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 @{
 
     // Set the value of the property with alias 'author'
-    content.SetValue(Home.GetModelPropertyType(x => x.Author).Alias, author);
+    content.SetValue(Home.GetModelPropertyType(x => x.Author).Alias, authorId);
 }
 ```
