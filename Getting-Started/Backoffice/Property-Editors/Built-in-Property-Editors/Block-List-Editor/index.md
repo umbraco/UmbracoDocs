@@ -349,7 +349,7 @@ The JSON object we will pass into the `People` property will look like this:
 We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
 The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
 
-To make things easier, we can make a basic model which we will later serialize into JSON:
+One of the approaches would be creating a basic model which we will later serialize into JSON:
 
 ```csharp
 using Newtonsoft.Json;
