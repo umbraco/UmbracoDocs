@@ -123,8 +123,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.SingleValueSlider).Alias, 10);
 	
 	// Set the value of the property with alias 'multiValueSlider'
-	content.SetValue(Home.GetModelPropertyType(x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});
-	
-	
+	content.SetValue(Home.GetModelPropertyType(x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});	
 }
 ```
