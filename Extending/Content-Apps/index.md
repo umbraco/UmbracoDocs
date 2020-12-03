@@ -262,6 +262,10 @@ You will still need to add all of the files you added above but, because your `C
 }
 ```
 
+:::tip
+You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as  `"icon-calculator color-indigo"` in your Content App C# class or *package.manifest* .
+:::
+
 ## Notification badges
 
 There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
