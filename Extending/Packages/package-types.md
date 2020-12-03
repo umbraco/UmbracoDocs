@@ -18,6 +18,7 @@ A package zip file can be installed through the Umbraco backoffice.
 
 Packages zip files can contain: 
 
+* Content
 * Solutions files (dlls, App_plugins files, etc)
 * Document Types
 * Templates
