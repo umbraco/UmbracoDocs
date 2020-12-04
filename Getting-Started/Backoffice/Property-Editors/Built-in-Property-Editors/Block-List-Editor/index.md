@@ -13,7 +13,7 @@ versionFrom: 8.7.0
 :::note
 A default Umbraco CMS installation does not ship with a defined *Data Type* using the Block List editor. In order to start using the property, follow the steps outlined below.
 
-<a href="https://umbraco.com/blog/deep-dive-the-block-list-editor/">Click here for an overview with a worked example and references back to the relevant documention.</a>
+[Click here for an overview with a worked example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
 :::
 
 ## Configure Block List
