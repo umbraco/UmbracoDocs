@@ -159,9 +159,13 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation. 
 
-### Does Umbraco Cloud support Let's Encrypt certificates?
+### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes. And our own service [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) automates the process of installing and renewing Let's Encrypt certificates. All new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
+Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+
+### Does Umbraco Cloud support custom certificates?
+
+Yes. Pro and Dedicated Cloud Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
 ### Does Umbraco Cloud support http/2?
 
