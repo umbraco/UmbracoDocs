@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 ---
 
 :::Warning
-Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. Hostnames added after set date is secured using Cloudflare. 
+Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. Hostnames added after set date is secured using Cloudflare. If your hostname was added after the mentioned date the documentation below does not apply.
 :::
 
 # Umbraco Latch
@@ -28,7 +28,7 @@ If you wish to have a custom 404 page on the root of your website then you will 
 In order for Umbraco Latch to be applied to your hostname, you need to make sure that your DNS has been setup one of these ways:
 
 * CNAME pointing at the Cloud URL mysite.s1.umbraco.io
-* A Record pointing at the Cloud IP: 23.100.15.180
+* A Record pointing at the Umbraco Cloud IP.
 
 Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
 
