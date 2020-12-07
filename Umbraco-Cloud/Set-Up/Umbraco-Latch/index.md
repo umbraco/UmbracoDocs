@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 ---
 
 :::Warning
-Umbraco Latch has been deprecated for hostnames added after 8/12/2020. Hostnames added after set date is secured using Cloudflare. 
+Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. Hostnames added after set date is secured using Cloudflare. 
 :::
 
 # Umbraco Latch
