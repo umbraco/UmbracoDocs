@@ -41,6 +41,14 @@ You will also have to specify the hostname for each root node if you are using a
 
 Once you've assigned a hostname to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article.
 
+### Automatic TLS (HTTPS)
+
+All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Basically everything is handled for you, so the only thing you need to worry about is updating the DNS records for your hostname.
+
+:::note
+Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above.
+:::
+
 ## [Upload certificates manually](Security-Certificates)
 
 On the Professional and Enterprise plan, you can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
