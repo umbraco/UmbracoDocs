@@ -45,7 +45,7 @@ On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible
 
 ## Latch and CDN
 
-You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
+You will not get an Umbraco Latch certificate if you are using a CDN service on your Umbraco Cloud project.
 
 In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
 
