@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 In this article you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be access through [umraco.com](https://umbraco.com) or by following the "Manage Subcriptions" link on the Profile dropdown on the Umbraco Cloud Portal.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be access through [umbraco.com](https://umbraco.com) or by following the "Manage Subcriptions" link on the Profile dropdown on the Umbraco Cloud Portal.
 
 ![Manage Subscriptions](images/manage-subscriptions.png)
 
