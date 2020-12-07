@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 :::note
 This feature is only available for Umbraco Cloud projects on a Professional or Enterprise plan.
 
-All projects on a Starter or Standard plan will automatically be assigned an [Umbraco Latch certificate](../../Umbraco-Latch).
+All projects on a Starter, Standard or Pro plans will automatically be assigned a TLS (HTTPS) certificate.
 
 See the full list of features including in the [Umbraco Cloud pricing plans on Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/).
 :::
@@ -33,11 +33,11 @@ Your certificates need to be **`.pfx`** format and must be set to use a password
 
 You've now successfully added your certificate to the Cloud project!
 
-## From manual certificate to Latch
+## From custom certificate to automatic TLS (HTTPS)
 
-In some cases, you might want to switch from using your own manual certificate, to use the ones provided by the Umbraco Cloud service, [Umbraco Latch](../../Umbraco-Latch).
+In some cases, you might want to switch from using your own custom certificate, to use the ones provided by the Umbraco Cloud service.
 
-By removing your own certificate from your Cloud project, Umbraco Latch will automatically assign a new security certificate to the hostname that was using the removed certificate.
+By removing your own certificate from your Cloud project, Umbraco will automatically assign a new TLS (HTTPS) certificate to the hostname that was using the removed certificate.
 
 :::note
 Did your manually uploaded security certificate expire?
@@ -47,5 +47,4 @@ You will need to remove the expired certificate in order for Latch to assign a n
 
 ## Read more
 
-* [Automatic certificates with Umbraco Latch](../../Umbraco-Latch)
 * [Redirect from HTTP to HTTPS](../Rewrites-on-Cloud#running-your-site-on-https-only)
