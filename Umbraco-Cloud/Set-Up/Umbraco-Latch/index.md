@@ -2,6 +2,10 @@
 versionFrom: 7.0.0
 ---
 
+:::Warning
+Umbraco Latch has been deprecated for hostnames added after 8/12/2020. Hostnames added after set date is secured using Cloudflare. 
+:::
+
 # Umbraco Latch
 
 All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
