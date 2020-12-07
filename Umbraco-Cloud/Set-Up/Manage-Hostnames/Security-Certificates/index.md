@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Upload certificates manually
+# Upload custom certificates manually
 
 :::note
 This feature is only available for Umbraco Cloud projects on a Professional or Enterprise plan.
@@ -15,8 +15,6 @@ See the full list of features including in the [Umbraco Cloud pricing plans on U
 Under **Certificates** you'll find an option to manually upload your own certificate and assign it to one of the hostnames you've added.
 
 Your certificates need to be **`.pfx`** format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/IM7mi7KuHpY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## 1. Upload certificate
 
@@ -42,7 +40,7 @@ By removing your own certificate from your Cloud project, Umbraco will automatic
 :::note
 Did your manually uploaded security certificate expire?
 
-You will need to remove the expired certificate in order for Latch to assign a new certificate to your hostname(s).
+You will need to remove the expired certificate in order for Umbraco Cloud to assign a new certificate to your hostname(s).
 :::
 
 ## Read more
