@@ -15,10 +15,6 @@ Let's say you have a project named `Snoopy`. These will be the default hostnames
 
 To access the backoffice add `/umbraco` to the end of the Live, Development or Staging URL.
 
-## Video tutorial
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/4x3DPwQMTr0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Domains
 
 Under *Settings* in the Umbraco Cloud Portal, you'll find **Hostnames**. This is where you go when you want to bind hostnames to your Cloud environments.
@@ -44,10 +40,6 @@ You will also have to specify the hostname for each root node if you are using a
 ![Culture and Hostnames](images/culture-and-hostnames.png)
 
 Once you've assigned a hostname to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article.
-
-## [Umbraco Latch](../Umbraco-Latch)
-
-All hostnames added to an Umbraco Cloud project will automatically be protected by **Umbraco Latch**: A TLS certificate will be assigned to your hostnames.
 
 ## [Upload certificates manually](Security-Certificates)
 
