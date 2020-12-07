@@ -28,7 +28,7 @@ Binding hostnames to your Umbraco Cloud project is done from the Umbraco Cloud P
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates)
 
-All hostnames added to your Umbraco Cloud environments will automatically be assigned a security certificate - we call this feature [Umbraco Latch](../Umbraco-Latch).
+All hostnames added to your Umbraco Cloud environments will have automatic TLS (HTTPS) certificates, meaning that the certificates issued by Cloudflare will be automatically renewed annually as part of the Umbraco Cloud service.
 
 Sometimes you might want to upload and bind your own security certificate to your hostnames. This can be  done from the **Certificates** page.
 
