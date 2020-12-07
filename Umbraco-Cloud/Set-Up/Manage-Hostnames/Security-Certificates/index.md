@@ -16,6 +16,8 @@ Under **Certificates** you'll find an option to manually upload your own certifi
 
 Your certificates need to be **`.pfx`** format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
 
+![Custom Certificates](images/custom-certificates.png)
+
 ## 1. Upload certificate
 
 * Upload your certificate from your local machine
