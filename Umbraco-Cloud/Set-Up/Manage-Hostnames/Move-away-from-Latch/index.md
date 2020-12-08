@@ -35,6 +35,12 @@ To follow the steps below, ensure that you have access to the DNS configuration 
 6. Remove the hostname for which you've just updated the DNS configuration.
 7. Add the hostname again.
 
+:::note
+If you for some reason cannot use a CNAME record, you can use an A-record which points to one of these IPs: `104.19.191.28` or `104.19.208.28`.
+
+As these static IPs a volatile towards change, this is something you should only do when using a CNAME record is not possible.
+:::
+
 Depending on your DNS provider, it might take some time before the changes kick in.
 
 Eventually, you should see that your hostname is now protected by a new TLS (HTTPS) certificate issues by CloudFlare.
