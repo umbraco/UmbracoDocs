@@ -171,7 +171,7 @@ Learn more about how to use your own certificates in the [Custom certificates](.
 
 ### How do I know if my site is still using a Latch certificate?
 
-To check whether your site is still using Latch follow this simple guide:
+To check whether your site is still using Latch follow this guide:
 
 1. Open your website URL.
 2. Select the "lock" icon to the left of the URL in the address bar in your browser.
