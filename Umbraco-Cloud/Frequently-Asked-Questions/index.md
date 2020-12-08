@@ -81,7 +81,7 @@ If you have questions about how many resources your site is using, then please r
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set. Please note that Umbraco Cloud uses Cloudflare for all custom hostnames with automatic TLS (HTTPS) certificates, so might be worth checking with our Support team if bringing your own Cloudflare setup is really necessary.
+Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set. Please note that Umbraco Cloud uses Cloudflare for all custom hostnames with automatic TLS (HTTPS) certificates. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### What versions of .NET does Cloud support?
 
