@@ -15,9 +15,8 @@ Articles about configuring various settings on your project, as well as managing
  - [Project settings](Project-settings/)
  - [Adding team members](Team-Members/)
  - [SMTP Settings](SMTP-settings/)
- - [Manage domains and certificates](Manage-domains/)
+ - [Manage domains and certificates](Manage-Hostnames/)
  - [Manage environments](Manage-Environments/)
- - [Apply SSL with Umbraco Latch](Umbraco-Latch/)
 
 ## Working with your Umbraco Cloud project
 

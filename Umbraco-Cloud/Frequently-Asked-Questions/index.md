@@ -81,7 +81,7 @@ If you have questions about how many resources your site is using, then please r
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set. Please note that Umbraco Cloud uses Cloudflare for all custom hostnames with automatic TLS (HTTPS) certificates. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### What versions of .NET does Cloud support?
 
@@ -159,9 +159,15 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation. 
 
-### Does Umbraco Cloud support Let's Encrypt certificates?
+### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes. And our own service [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) automates the process of installing and renewing Let's Encrypt certificates. All new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
+Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+
+### Does Umbraco Cloud support custom certificates?
+
+Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
+
+Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
 
 ### Does Umbraco Cloud support http/2?
 

@@ -4,6 +4,12 @@ versionFrom: 7.0.0
 
 # Umbraco Latch
 
+:::warning
+Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. 
+
+Hostnames added after December 8th, 2020 are automatically secured using Cloudflare. If your hostname was added after the mentioned date the documentation below does not apply. Instead, you should follow our recommendation outlined in the [Manage Hostnames](../Manage-Hostnames) article.
+:::
+
 All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
 
 :::note
@@ -24,7 +30,7 @@ If you wish to have a custom 404 page on the root of your website then you will 
 In order for Umbraco Latch to be applied to your hostname, you need to make sure that your DNS has been setup one of these ways:
 
 * CNAME pointing at the Cloud URL mysite.s1.umbraco.io
-* A Record pointing at the Cloud IP: 23.100.15.180
+* A Record pointing at the Umbraco Cloud IP.
 
 Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
 
@@ -41,7 +47,7 @@ On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible
 
 ## Latch and CDN
 
-You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
+You will not get an Umbraco Latch certificate if you are using a CDN service on your Umbraco Cloud project.
 
 In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
 
