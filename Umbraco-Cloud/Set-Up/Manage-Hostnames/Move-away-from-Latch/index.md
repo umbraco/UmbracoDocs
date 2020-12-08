@@ -27,4 +27,16 @@ If the certificate is issues by Let's Encrypt, follow the steps below to issue a
 
 To follow the steps below, ensure that you have access to the DNS configuration for your hostname as well as admin access to the Umbraco Cloud Portal.
 
-1. 
+1. Access the DNS configuration for your hostname.
+2. Update the DNS entry to a **CNAME** record pointing to `dns.umbraco.io`.
+3. Save the new configuration settings.
+4. Access the Umbraco Cloud Portal.
+5. Open the **Hostnames** page for your project.
+6. Remove the hostname for which you've just updated the DNS configuration.
+7. Add the hostname again.
+
+Depending on your DNS provider, it might take some time before the changes kick in.
+
+Eventually, you should see that your hostname is now protected by a new TLS (HTTPS) certificate issues by CloudFlare.
+
+This certificate will continue to be renewed on an annual basis.
