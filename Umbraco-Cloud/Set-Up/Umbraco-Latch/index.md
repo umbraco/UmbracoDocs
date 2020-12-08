@@ -8,6 +8,17 @@ versionFrom: 7.0.0
 Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. 
 
 Hostnames added after December 8th, 2020 are automatically secured using Cloudflare. If your hostname was added after the mentioned date the documentation below does not apply. Instead, you should follow our recommendation outlined in the [Manage Hostnames](../Manage-Hostnames) article.
+
+## How do I know if my site is still using a Latch certificate?
+
+To check whether your site is still using Latch follow this guide:
+
+1. Open your website URL.
+2. Select the "lock" icon to the left of the URL in the address bar in your browser.
+3. Click on Certificate.
+4. Identify the provider next to Issued by:.
+
+If the certificat issuer is Let's Encrypt, you are still using a Latch certificate.
 :::
 
 All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
