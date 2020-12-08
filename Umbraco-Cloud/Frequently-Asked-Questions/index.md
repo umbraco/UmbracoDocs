@@ -167,6 +167,8 @@ Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL h
 
 Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
+Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
+
 ### Does Umbraco Cloud support http/2?
 
 The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
