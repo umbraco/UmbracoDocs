@@ -48,7 +48,7 @@ All hostnames added to a Umbraco Cloud project's environment will get a TLS (HTT
 :::note
 Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare.
 
-Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Moving-away-from-Latch) article.
+Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Move-away-from-Latch) article.
 :::
 
 ## [Upload certificates manually](Security-Certificates)
