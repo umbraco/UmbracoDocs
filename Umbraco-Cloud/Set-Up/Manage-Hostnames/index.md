@@ -26,7 +26,7 @@ You can bind any hostname to your project environments. Keeping in mind that the
 Once you add a hostname to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting a CNAME record for your root hostname (e.g. mysite.s1.umbraco.io) pointing to **dns.umbraco.io** or an A record using an IP, either `104.19.191.28` or `104.19.208.28`. Check with your DNS host or hostname registrar for details on how to configure this for your hostnames.
 
 :::warning
-Adding an A-Record to the static ip is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such it may change.
+Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
 :::
 
 You will also have to specify the hostname for each root node if you are using a multisite setup.
