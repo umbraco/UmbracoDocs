@@ -37,7 +37,7 @@ You've now successfully added your certificate to the Cloud project!
 
 In some cases, you might want to switch from using your own custom certificate, to use the ones provided by the Umbraco Cloud service.
 
-By removing your own certificate from your Cloud project, Umbraco will automatically assign a new TLS (HTTPS) certificate to the hostname that was using the removed certificate.
+By removing your own certificate from your Cloud project, the Umbraco Cloud service will automatically assign a new TLS (HTTPS) certificate to the hostname that was using the removed certificate.
 
 :::note
 Did your manually uploaded security certificate expire?
