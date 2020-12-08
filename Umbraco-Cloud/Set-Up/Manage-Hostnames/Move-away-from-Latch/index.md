@@ -10,7 +10,7 @@ As of December 8th, 2020 the Umbraco Latch service used for issuing security cer
 
 All current certificates issued by the Umbraco Latch service, using Let's Encrypt, will continue to be renewed every three months.
 
-In this article you will find a detailed guide on how to move away from Umbraco Latch (Let's Encrypt) and instead ensure that all your hostnames are protected by TLS (HTTPS) certificates provided by our Umbraco Cloud service and CloudFlare.
+In this article you will find a guide on how to move away from Umbraco Latch (Let's Encrypt) and instead ensure that all your hostnames are protected by TLS (HTTPS) certificates provided by our Umbraco Cloud service and CloudFlare.
 
 ## Checking the certificate
 
@@ -34,7 +34,7 @@ To follow the steps below, ensure that you have access to the DNS configuration 
 3. Save the new configuration settings.
 4. Access the Umbraco Cloud Portal.
 5. Open the **Hostnames** page for your project.
-6. Remove the hostname for which you've just updated the DNS configuration.
+6. Remove the hostname for which you've updated the DNS configuration.
 7. Add the hostname again.
 
 :::note
@@ -48,3 +48,12 @@ Depending on your DNS provider, it might take some time before the changes kick 
 Eventually, you should see that your hostname is now protected by a new TLS (HTTPS) certificate issues by CloudFlare.
 
 This certificate will continue to be renewed on an annual basis.
+
+:::links
+
+## Related articles
+
+* [Manage Hostnames](../)
+* [Custom security certificates](../Security-Certificates)
+
+:::
