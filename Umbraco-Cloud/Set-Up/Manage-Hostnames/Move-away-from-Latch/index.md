@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+meta.Title: "How to move away from using Umbraco Latch"
+meta.Description: "The Umbraco Latch service has been deprecated and it instead being replaced by a new Umbraco Cloud service which uses CloudFlare as a provider for issueing TLS (HTTPS) certificates to hostnames added to Cloud environments. In this article you can learn how to move to use the new service."
 ---
 
 # How to move away from using Umbraco Latch
