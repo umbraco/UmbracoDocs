@@ -89,6 +89,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 ```csharp
 @{
     // Set the value of the property with alias 'richText'
-    content.SetValue(Home.GetModelPropertyType(x => x.RrichText).Alias, "Add some text <strong>here</strong>");
+    content.SetValue(Home.GetModelPropertyType(x => x.RichText).Alias, "Add some text <strong>here</strong>");
 }
 ```
