@@ -1,13 +1,17 @@
-#Design
+---
+versionFrom: 7.0.0
+---
 
-###[Templates](Templates/)
-Creating, managing and reusing templates in Umbraco
+# Design
 
-##[Rendering content](Rendering-Content/)
-How to query and render published content
+### [Templates](Templates/)
+Creating, managing and reusing templates in Umbraco.
 
-##[Rendering media](Rendering-Media/)
-How to query and render media items
+## [Rendering content](Rendering-Content/)
+How to query and render published content.
 
-##[Stylesheets and javascript](Stylesheets-Javascript/)
-Working with css and javascript in Umbraco's templates
+## [Rendering media](Rendering-Media/)
+How to query and render media items.
+
+## [Stylesheets and JavaScript](Stylesheets-JavaScript/)
+Working with css and JavaScript in Umbraco's templates.

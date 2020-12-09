@@ -1,0 +1,14 @@
+---
+extends: substitution
+message: Prefer %s over '%s.'
+level: warning
+ignorecase: true
+swap:
+  back office: "'backoffice'"
+  back-office: "'backoffice'" 
+  blacklist: "'deny list'"
+  whitelist: "'allow list'"
+  black list: "'deny list'"
+  white list: "'allow list'"  
+  master: "'primary'"
+  slave: "'secondary'"

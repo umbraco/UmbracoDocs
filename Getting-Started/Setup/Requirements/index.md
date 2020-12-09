@@ -1,18 +1,27 @@
-#System Requirements
+---
+versionFrom: 8.0.0
+---
 
-##Browsers
+# Minimum System Requirements
+
+## Browsers
 The Umbraco UI should work in all modern browsers:
 
 * Firefox (Latest)
 * Chrome (Latest)
-* IE10+ (will not always work correctly in lower versions)
+* Safari (Latest)
+* Edge
 
-##Local Development
+## Local Development
 * Microsoft Windows 7 SP1
-* Webmatrix 3
+* [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express) or [Microsoft Visual Studio](https://www.visualstudio.com/) 2017 **version 15.9.6 and higher**
+* ASP.NET 4.7.2
 
-##Hosting
-* IIS 7+
-* SQL CE, SQL Server 2008 and higher or MySQL
-* ASP.NET 4.5 Full-Trust
+## Hosting
+* IIS 8 and higher
+* SQL CE, SQL Server 2012 and higher
+* ASP.NET 4.7.2
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+
+## Note
+* Umbraco will not run on ASP.NET Core

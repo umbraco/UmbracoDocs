@@ -1,62 +1,59 @@
-#Setting up conditional logic on fields
+---
+versionFrom: 7.0.0
+---
 
-Only showing a field if the value of another field is ... That's what you can do with conditional logic.
+# Setting up conditional logic on fields
 
-##Example form
+Some times you might have a field in your form, that you only want to show if the user has entered a specific value in another field:
+
+*Only show this field if the value of that field is x*
+
+You can achieve this by setting up **conditional logic**.
+
+## Example
+
 Take a look at the following as an example
 
-![Example form](ExampleForm.png)
+![Example form](images/ExampleForm.png)
 
-It make sense to only show the email/phone field when that corresponds with the option chosen in the 'how should we contact you?' field.
+In this case it would make sense to **only show the email/phone field when that corresponds with the option chosen in the 'How should we contact you?' field**.
 
-##Enabling conditional logic
+To achieve that, we need to enable conditions for the **Email** and **Phone** fields. This can be done in the additional settings.
 
-Enabling conditions for a field can be done on the additional settings of a field.
+![Enable conditions](images/EnableConditions.png)
 
+Enabling conditions will give you more options:
 
-![Enable conditions](EnableConditions.png)
+![Conditions](images/conditions.png)
 
-Simply check the enable conditions box and you should then see more options
+### Action and Logic types
 
-![Conditions](Conditions.png)
-
-###Action type
-
-First thing that needs to be chosen is the action type this can be either show or hide
-
-![ActionType](ActionType.png)
+First thing that needs to be chosen is the **action type**:
 
 - Show: the field will be hidden unless the rules match
 - Hide: the field will be hidden if the rules match
 
-###Logic type
+Next up, you'll need to specify the **logic type**. This setting is only important if you have multiple rules.
 
-Then you'll need to specify if all rules need to match. This setting is only important if you have multple rules.
+- All: All of the rules must match
+- Any: Any of the rules may match
 
-![LogicType](LogicType.png)
+## Adding a new condition
 
-- All: all of the rules must match
-- Any: any of the rules may match
+When adding a new condition you'll need to select the field where you want to evaluate the value and then you can also select an operator.
 
-##Adding a new rule
+In this example we only want to show the *Email* field if the value of the *How should we contact you* field is `Email`. In the same way we only want to show the *Phone* field, if the value of the *How should we contact you* field is `Phone`.
 
-When adding a new rule you'll need to select the field where you want to evaluate the value and then you can also select an operator.
+![Setup rule](images/exampleConditions.png)
 
-In this example I only want to show the email field if the value of the 'how should we contact you' field is 'Email'
+You will also be able to see the conditions added to each file, from the forms designer:
 
-![Setup rule](SetupRule.png)
+![See conditions in the Forms designer](images/exampleBackoffice.png)
 
-Don't forget to hit the add icon so the new rule get's added
+## Result
 
-![Setup rule add](SetupRuleAdd.png)
+When both conditions have been set as shown above, this is how it will look on the frontend:
 
-##Result
+![Frontend Example](images/exampleFrontend.png)
 
-If I setup a similar rule for the phone field I get the following result
-
-![Form render](ExampleFormRender.png)
-
-By default the email and phone field are hidden but when I select the corresponding option from the 'how should we contact you' field it get's shown
-
-
-![Form render](ExampleFormRender2.png)
+As we in this little tutorial have chosen to use a `checkbox`, it's possible to choose both 'Email' and 'Phone' in the 'How should we contact you' field. In that case, both fields will be shown.

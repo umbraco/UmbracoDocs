@@ -1,75 +1,81 @@
+---
+versionFrom: 8.0.0
+meta.Title: "Security in Umbraco"
+meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
+---
+
 # Security
-**Applies to version 7.3.1 and newer**
 
-_This section describes how authentication & authorization works in Umbraco_
+In this article, you will find everything you need regarding security within Umbraco.
 
-## Back office users
+## [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/)
 
- Authentication for back office users in Umbraco uses [ASP.Net Identity](http://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
- 
-Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.Net identity is also flexible enough for you to override/replace 
-any part of the process of authentication.
+On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-### Replacing the basic username/password check
+## [SSL/HTTPS](use-https.md)
 
-Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
-would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. 
-Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
+We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
-Here are the steps to specify your own logic for validating a username and password for the back office:
+In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
-1. Install the UmbracoIdentityExtensions package https://github.com/umbraco/UmbracoIdentityExtensions 
+## [Password settings](Security-settings)
 
-1. Create an implementation of `Umbraco.Core.Security.IBackOfficeUserPasswordChecker`
+Learn which password settings that can be configured in Umbraco.
 
-	* There is one method in this interface: `Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password);`
-	* The result of this method can be 3 things:
-		* ValidCredentials = The credentials entered are valid and the authorization should proceed
-		* InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
-		* FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
+## [Security Hardening](Security-hardening)
 
-	For example, to always allow login when the user enters the password `test` you could do:
-	
-		using System.Threading.Tasks;
-		using Umbraco.Core.Models.Identity;
-		using Umbraco.Core.Security;
-		
-		namespace MyNamespace
-		{
-		    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
-		    {
-		        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
-		        {
-		            var result = (password == "test") 
-		                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
-		                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
-		
-		            return result;
-		        }
-		    }
-		}
+Learn about how to can harden the security on your Umbraco website to secure it even further.
 
-1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
+## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
 
-	* Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
+When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
 
-            var applicationContext = ApplicationContext.Current;
-            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-                applicationContext,
-                (options, context) =>
-                {
-                    var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-                    var userManager = BackOfficeUserManager.Create(options, 
-                        applicationContext.Services.UserService,
-                        applicationContext.Services.ExternalLoginService,
-                        membershipProvider);
-                    //Set your own custom IBackOfficeUserPasswordChecker   
-                    userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
-                    return userManager;
-                });	
-                
-1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
+## Backoffice users
 
-**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to it's internal checks (default Umbraco behavior).
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a flexible and extendable framework for authentication.
+
+Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
+
+The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers.md).
+
+### [External login providers](external-login-providers.md)
+
+The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+
+### [BackOfficeUserManager](backoffice-user-manager.md) and Events
+
+The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
+
+### Custom password check
+
+In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
+
+This is typically a legacy approach to validating credentials with external resources but it is possible.
+
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
+
+#### Authenticating with Active Directory credentials
+
+If you are using a network based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
+
+## Sensitive data on members
+
+Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
+
+Learn more about this in the [Sensitive Data](sensitive-data.md) article.
+
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+
+How to configure Umbraco to run on a FIPS compliant server.
+
+## [Reset admin password](reset-admin-password.md)
+
+Use this guide to [reset the password of the "admin" user](reset-admin-password.md).
+
+If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
+
+## Other articles related to security
+
+* [Routing requirements for backoffice authentication](../Routing/Authorized/)
+* [Health Checks](../../Extending/Health-Check/)
+* [Consent Service](../Management/Services/ConsentService/)

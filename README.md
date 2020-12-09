@@ -1,107 +1,43 @@
-#Umbraco Documentation project
+# Umbraco Documentation project
+ [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 
-#Reading & using the docs
+# Reading & using the docs
 This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
-We welcome valuable contributions from anyone willing to help. No matter if it is correcting spelling mistakes, raising an issue or writing a tutorial, everything counts and helps make Umbraco easier to use for everyone.
 
-For details on how to contribute, see further down this page.
+# What's in the documentation
 
-#What's in the documentation
+## Getting started
+[Getting started](Getting-Started/) is an introduction to Umbraco, containing explanations of basic concepts and short tutorials.
 
-##Getting started
-[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
+## Implementation
+[Implementation](Implementation/) is an overview of Umbraco's structure and pipeline.
 
-##Implementation
-[Implementation (available here)](Implementation/) is an overview of Umbracos structure and pipeline.
+## Developers Reference
+[Reference](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
-##Developers Reference
-[Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+## Extending
+[Extending](Extending/) is documentation on customizing and extending the backoffice.
 
-##Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
+## Tutorials
+[Tutorials](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
 
-##Tutorials
-[Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+# Markdown conventions
+The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
 
-#Contributing to the guides
-To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
+# Annotating a document
 
-####Getting started with Git and GitHub
- * [Setting up Git for Windows and connecting to GitHub](http://windows.github.com)
- * [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
- * [The simple guide to GIT](http://rogerdudler.github.io/git-guide/)
+To add version information and extra keywords, [every document can be annotated using YAML](Contribute/adding-metadata.md).
 
-##Repository organisation
-All active work done on the documentation is currently being done on the `master` branch.
+# Multi version documentation
+Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
 
-###Contributing documentation
-All documents are written in Markdown, using a simple structure and stored as .md files.
-These are then pulled to [our.umbraco.org/documentation](http://our.umbraco.org/documentation) for easy browsing.
+Therefore we introduced 2 different mechanisms:
+1. The [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
+2. The possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md).
 
-First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use GitHub to issue a "pull request", which means your edits will be reviewed, and once accepted, merged into the main repository.
-
-**Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to set up a remote repo and pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo).
-
-Everything in the main repository will make it onto the [our.umbraco.org/documentation](http://our.umbraco.org/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
-
-##Planning & discussions
-
-Use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for reporting and discussing issues.
-
-#Markdown conventions
-Keep custom HTML to a minimum. All script and style markup are cleaned by default.
-For reference, the [Markdown syntax guide](http://daringfireball.net/projects/markdown/syntax) is available.
-
-##Images
-Images are stored and linked relatively to .md pages, and should by convention always be in an
-`images` folder. So to add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
-
-	![My Image Alt Text](images/img.jpg?raw=true)
-
-And store the image as `/documentation/reference/partials/images/img.jpg`
-
-Images can have a maximum width of **800px**. Please always try to use
-the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash), please.
-
-NB: In order to get images to display correctly on GitHub, all image URLs must end with `?raw=true`.
-
-##External links
-Include either the complete URL, or link using Markdown:
-
-	http://yahoo.com/something
-
-	or
-
-	[yahoo something](http://yahoo.com/something)
-
-
-##Internal links
-If you need to link between pages, always link relatively, and include the .md extension.
-
-	[Umbraco.Helpers](Umbraco.Helpers.md)
-
-	or
-
-	[Umbraco.Helpers](../../Reference/Umbraco.Helpers.md)
-
-##Formatting code
-Indent your sample with a single tab, which will cause it to be rendered as `<pre><code>` tags.
-For inline code, wrap in ` (backtick) chars.
-
-Use # for the headline, ## for sub headers and ### for parameters (on code reference pages)
-
-For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`
-
-##Structure
-For the documentation project, each individual topic is contained in its own folder.
-Each folder must have an `index.md` file which links to the individual sub-pages, if images
-are used, these must be in `images` folders next to the .md file referencing them relatively.
-
-* topic
-	* images
-		* images.jpg
-	* Subtopic
-		* images
-		* index.md
-	* index.md
-	* otherpage.md
+# Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
+We :heart: valuable contributions from everyone who is willing to help. It does not matter to us if it's something trivial like correcting spelling mistakes, raising an issue or writing a tutorial! Every little bit of help counts and it all helps make Umbraco easier to use, for everyone.
+Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco are always appreciated.
+Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
+## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+This library is released under the [MIT License](LICENSE.md).

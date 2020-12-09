@@ -1,7 +1,7 @@
-#This section is waiting for content
+---
+versionFrom: 8.0.0
+---
 
-TODO: Fill out these docs (https://github.com/umbraco/UmbracoDocs/issues/215)
+# How to create custom dashboards
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+Custom dashboards can be registered [using a package.manifest](../../../Extending/Dashboards/#registering-with-packagemanifest) or using [code](../../../Extending/Dashboards/#registering-with-c-type).

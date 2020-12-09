@@ -1,0 +1,17 @@
+extends: existence
+message: Consider removing '%s'
+ignorecase: true
+level: warning
+tokens:
+  - simple
+  - just
+  - easily
+  - actually
+  - simply
+  - easy
+  - basically
+  - clearly
+  - everyone knows
+  - everybody knows
+  - obviously
+  - of course

@@ -1,37 +1,50 @@
-#Getting/Adding/Updating/Inserting Into Cache
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
 
-_This section describes how you should be getting/adding/updating/inserting items in the cache. You should always be doing this consistently with the best practices listed below. You shouldn't be using HttpRuntime.Cache or HttpContext.Current.Cache directly, you should always be accessing it via the ApplicationContext.ApplicationCache object (`Umbraco.Core.CacheHelper`)._ 
-## Cache types
+# Getting/Adding/Updating/Inserting Into Cache
 
-The `Umbraco.Core.CacheHelper` contains 3 types of cache: Runtime Cache, Request Cache and Static Cache. Runtime Cache is the most commonly used and is synonymous with HttpRuntime.Cache. Request cache is cache that exists only for the current request, this is synonymous with HttpContext.Current.Items and static cache is cache that exists globally and never expires. Static cache should be rarely used and should be used with caution since it can cause memory issues. The various cache types can be referenced on properties of the `Umbraco.Core.CacheHelper`:
+_This section describes how you should be getting/adding/updating/inserting items in the cache._
 
-      ApplicationContext.ApplicationCache.RuntimeCache
-      ApplicationContext.ApplicationCache.RequestCache
-      ApplicationContext.ApplicationCache.StaticCache
+:::warning
+Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
 
-##Adding and retrieving items in the cache
+The documentation currently available around caching in the current Umbraco version can be found here: [Caching](../Cache)
+:::
 
-Putting data in and getting data out of the cache is easy; The easiest way is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
+## Adding and retrieving items in the cache
 
-	MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-				.GetCacheItem<MyObject>("MyCacheKey",
-					() => new MyObject());
+The recommended way to put data in and get data out is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
 
-Notice 2 things: the `GetCacheItem` method is strongly typed and that we are supplying a callback method which is used to populate the cache if it doesn't exist. The example above is very simple, it will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
+```csharp
+MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
+    .GetCacheItem<MyObject>("MyCacheKey",
+        () => new MyObject());
+```
+
+Notice 2 things:
+
+* The `GetCacheItem` method is strongly typed and
+* We are supplying a callback method which is used to populate the cache if it doesn't exist.
+
+The example above will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
 
 There are many overloads of `GetCacheItem` allowing you to customize how your object is cached from cache dependencies to expiration times.
 
 To use this generic implementation, add the `Umbraco.Core.Cache` namespace to your code.
 
-###Retrieving an item from the cache without a callback
- 
-One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to simply retrieve an item from the cache without populating it if it doesn't exist.
+### Retrieving an item from the cache without a callback
 
-The usage is very simple:
+One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to retrieve an item from the cache without populating it if it doesn't exist.
 
-	MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-				.GetCacheItem<MyObject>("MyCacheKey");
+An example of usage:
 
-###Inserting an item into the cache without retrieval
+```csharp
+MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
+    .GetCacheItem<MyObject>("MyCacheKey");
+```
 
-Sometimes you might want to just put something in the cache without actually retrieving it. In this case there is an `InsertCacheItem<T>` method with a few overloads. This method will add or update the cache item specified by the key so if the item already exists in the cache, it will be replaced.
+### Inserting an item into the cache without retrieval
+
+Sometimes you might want to put something in the cache without retrieving it. In this case there is an `InsertCacheItem<T>` method with a few overloads. This method will add or update the cache item specified by the key so if the item already exists in the cache, it will be replaced.

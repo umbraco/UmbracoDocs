@@ -1,10 +1,17 @@
-#Installation and upgrading
+---
+versionFrom: 8.0.0
+---
 
-##[Extending Umbraco with the Forms section](Installation.md)
-Extend Umbraco with the form builder section in a few steps  
+# Installation and upgrading
 
-##[Configuring a license](license.md)
+## [Extending Umbraco with the Forms section](Install)
+Extend Umbraco with the form builder section in a few steps
+
+## [Configuring a license](../../The-Licensing-model)
 Getting Forms out of trial mode
 
-##[Keeping Forms up to date](Upgrade.md)
-Simple upgrade instructions
+## [Manually upgrading Forms](ManualUpgrade.md)
+Manual upgrade instructions
+
+## [Upgrading - version specific](Version-Specific.md)
+This contains version specific upgrade documentation, such as upgrading from V4 to V6

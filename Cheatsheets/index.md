@@ -1,13 +1,18 @@
-#Cheatsheets
+---
+versionFrom: 6.0.0
+versionTo: 7.0.0
+---
 
-_Easy to print cheatsheets covering different areas of Umbraco_
+# Cheatsheets
 
-## [Umbraco v6 MVC Razor](http://our.umbraco.org/projects/developer-tools/umbraco-v6-mvc-razor-cheatsheets)
+_Easy-to-print cheatsheets covering different areas of Umbraco._
 
-Covers: 
+## [Umbraco v6 MVC Razor](https://our.umbraco.com/projects/developer-tools/umbraco-v6-mvc-razor-cheatsheets)
 
-* DynamicPublishedContent for MVC Templates, Partials, MacroPartials
-* Strongly typed PublishedContent for MVC Templates, Partials, MacroPartials
+Covers:
+
+* `DynamicPublishedContent` for MVC Templates, Partials, MacroPartials
+* Strongly typed `PublishedContent` for MVC Templates, Partials, MacroPartials
 
 ## [Converting Masterpages to Views](masterpagestoviews.md)
 

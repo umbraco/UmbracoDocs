@@ -1,105 +1,308 @@
-#Custom controllers (Hijacking Umbraco Routes)
+---
+versionFrom: 8.0.0
+---
 
-_If you need complete control over how your pages are rendered then Hijacking Umbraco Routes is for you_
+# Custom MVC controllers (Umbraco Route Hijacking)
 
-##What is Hijacking Umbraco Routes?
+_Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type_
 
-By default all of the front end routing is executed via the `Umbraco.Web.Mvc.RenderMvcController` Index Action which should work fine for most people. However, in some cases people may want complete control over this execution and may  want their own Action to execute. Some reasons for this may be: to control exactly how views are rendered, custom/granular security for certain pages/templates or to be able to execute any custom code in the controller that renders the front end. The good news is that this is completely possible. This process is all about convention and it's really simple!
+## What is Umbraco Route Hijacking?
 
-##Creating a custom controller
+By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core MVC Controller: `Umbraco.Web.Mvc.RenderMvcController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View. 
 
- It's easiest to demonstrate with an example : let's say you have a Document Type called 'Home'.  You can create a custom locally declared controller in your MVC web project called 'HomeController' and ensure that it inherits from `Umbraco.Web.Mvc.RenderMvcController` and now all pages that are of document type 'Home' will be routed through your custom controller! Pretty easy right :-)
-OK so let's see how we can extend this concept. In order for you to run some code in your controller you'll need to override the Index Action. Here’s a quick example:
+It is however possible to implement a custom MVC Controller to replace this default implementation to give complete control over this execution.
 
-	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
-	{
-	    public override ActionResult Index(RenderModel model)
-	    {
-	        //Do some stuff here, then return the base method
-	        return base.Index(model);
-	    }
+For example:
+- to enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco) 
+- to implement serverside paging
+- to implement any custom/granular security
+- to return alternative templates depending on some custom business logic
 
-	}
-Now you can run any code that you want inside of that Action!
+This replacement of the default controller can either be made 'globally' for all requests (see last example) or by *'hijacking'* requests for types of pages based on their specific Document Type following a this controller naming convention: `[DocumentTypeAlias]Controller`. 
 
-##Routing via template
+## Creating a custom controller
 
-To further extend this, we've also allowed routing to different Actions based on the Template that is being rendered. By default only the Index Action exists which will execute for all requests of the corresponding document type. However, if the template being rendered is called 'HomePage' and you have an Action on your controller called 'HomePage' then it will execute instead of the Index Action. As an example, say we have a Home Document Type which has 2 allowed Templates: ‘HomePage’ and ‘MobileHomePage’ and we only want to do some custom stuff for when the ‘MobileHomePage’ Template is executed:
+### Example: Hijacking route requests to a 'product' page
 
-	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
-	{
-	    public ActionResult MobileHomePage(RenderModel model)
-	    {
-	        //Do some stuff here, the return the base Index method
-	        return base.Index(model);
-	    }
-	}
+In the following example, imagine an Umbraco site with a set of 'product' pages created from a Document Type called 'Product Page' with an alias 'productPage'.
 
-##How the mapping works
+Create a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
+
+Ensure that this controller inherits from the base controller `Umbraco.Web.Mvc.RenderMvcController`.
+
+eg:
+```csharp
+public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
+{
+    public override ActionResult Index(ContentModel model)
+    {
+        // you are in control here!
+
+        // return a 'model' to the selected template/view for this page.
+        return CurrentTemplate(model);
+    }
+}
+```
+ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
+
+This example shows the default behaviour that Umbraco's core RenderMvcController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view. 
+
+## Routing via template
+
+A further convention is that if an action on the controller has a name that matches the template name, this action will be executed instead of the default 'Index' action.
+
+### Example: Hijacking route requests to a 'product' for an alternative 'AMP' template
+
+In this example, the Product Page Document Type has two templates 'ProductPage' and 'ProductAmpPage'. We can hijack and handle the requests to the two templates differently.
+
+Create the Controller as before:
+
+```csharp
+public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
+{
+    // Any request for the 'ProductAmpPage' template will be handled by this Action
+    public ActionResult ProductAmpPage(ContentModel model)
+    {
+        // Create AMP specific content here...
+        return CurrentTemplate(model);
+    }
+    // All other request, eg the ProductPage template will be handled by the default 'Index' action
+    public override ActionResult Index(ContentModel model)
+    {
+        // you are in control here!
+
+        // return a 'model' to the selected template/view for this page.
+        return CurrentTemplate(model);
+    }
+}
+```
+#### How can a page be requested via two different templates?
+The page in Umbraco will have a single 'template' selected as it's default template, but it's possible to call this same page on a different template by adding `?altTemplate=othertemplatename` to the Url QueryString eg:
+
+`/products/superfancyproduct/?altTemplate=ProductAmpPage`
+
+This would request the 'Super Fancy Product' page but force it to be loaded with the 'ProductAmpPage template'. This can be simplified further to use a convention:
+
+`/products/superfancyproduct/ProductAmpPage/`
+
+The final part of this url is assumed to be the 'altTemplate' querystring value.
+
+:::note
+In Umbraco 8 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IUserComposer` (see an example on the [IContentFinder documentation page](Request-Pipeline/IContentFinder.md)).
+:::
+
+
+### Summary - How the route hijacking convention works
 
 * Document Type name = controller name
-*
-Template name = action name, but if no action matches or is not specified then the 'Index' action will be executed.
+* Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
+* Controller Inherits from `Umbraco.Web.Mvc.RenderMvcController`
 
-In the near future we will allow setting a custom default controller to execute for all requests instead of the standard UmbracoController. Currently you'd have to create a controller for every document type to have a custom controller execute for all requests.
+## Returning a view with a custom model
 
-##Returning a view with a custom model
+The steps to achieve this will differ, depending if your template views are using IPublishedContent or Modelsbuilder generated Models.
 
-If you want to return a custom model to a view then there are a few steps that need to be taken.
+### Changing the @inherits directive of your template
 
-###Changing the @inherits directive of your template
+By default, your Umbraco Template will be based on the `ContentModel` that the default `RenderMvcController` passes through to it. 
 
-First, the standard view that is created by Umbraco inherits from `Umbraco.Web.Mvc.UmbracoTemplatePage` which has a model defined of type `Umbraco.Web.Models.RenderModel`. You'll see the inherits directive at the top of the view as:
+:::note 
+`ContentModel` has one property called 'Content' of type `IPublishedContent`, and the @Model syntax in V8 is wired up to use this `IPublishedContent` item, to save having to type `@Model.Content.etc` as in V7.
+:::
 
-	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+The default inherits statement:
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+```
+or if you are using modelsbuilder:
 
-If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for example, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductPage>
+```
+`<>` contains a model generated for each document type to give strongly typed access to the Document Type properties in the template view.
 
-	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>
+To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
-Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.RenderModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
+So for example, if your custom model is of type 'MyProductModel' then your `@inherits` directive will look like:
 
-1. Break the dependency on `Umbraco.Web.Models.RenderModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<dynamic>` (this means `@Model` will be of type `dynamic` in the layout).
-2. Make your custom model inherit from `Umbraco.Web.Models.RenderModel` (this means `@Model...` will continue to work in the layouts used by your template).
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyProductModel>
+```
 
-###Returning the correct view from your controller
+:::note
+Views in MVC will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
+Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown.
+To avoid this you could:
+* Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
+or
+* Break the dependency on `Umbraco.Web.Models.ContentModel` in your master layout by having it instead inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
+or
+* Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
+:::
 
-In an example above we reference that you can use the following sytnax once you've hijacked a route:
+In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
 
-	//Do some stuff here, the return the base Index method
-    return base.Index(model);
+```csharp
+public class MyProductViewModel : PublishedContentWrapped
+{
+    // The PublishedContentWrapped accepts an IPublishedContent item as a constructor
+    public MyProductViewModel(IPublishedContent content) : base(content) { }
 
-This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model.
-So to return a custom model to the current Umbraco template, we need to use different syntax. Here's an example:
+    // Custom properties here...
+    public int StockLevel { get; set; }
+    public IEnumerable<Distributor> ProductDistributors { get; set; }
+}
+```
 
-	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
-	{
-	    public ActionResult MobileHomePage(RenderModel model)
-	    {
-	        //we will create a custom model
-			var myCustomModel = new MyCustomModel();
+`PublishedContentWrapped` will take care of populating all the usual underlying Umbraco properties and means the `@Model.` syntax will continue to work in the layouts used by your template.
 
-			//TODO: assign some values to the custom model...
+Using Modelsbuilder you will find that all the generated models have a constructor that takes an IPublishedContent item in a similar way:
 
-			return CurrentTemplate(myCustomModel);
-	    }
-	}
+```csharp
+public class MyProductViewModel : ProductPage
+{
+    // The generated modelsbuilder model: ProductPage  accepts an IPublishedContent item as a constructor
+    public MyProductViewModel(IPublishedContent content) : base(content) { }
 
-##Change the default controller
+    // Custom properties here...
+    public int StockLevel { get; set; }
+    public IEnumerable<Distributor> ProductDistributors { get; set; }
+}
+```
+:::note
+The models generated by Modelsbuilder are created as partial classes so it's possible to extend them by adding your own partial classes with matching signature.
+:::
 
-In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
+We can now populate our custom view model in our controller and use the values from the custom model in our template view:
 
-The code to do this is simple, an example to register a default controller of type 'MyCustomUmbracoController' :
-
-	DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
-
-You can execute this code during application startup before resolution is frozen. The most common way of doing this is using an `ApplicationEventHandler`.
-You can create an instance of `Umbraco.Core.ApplicationEventHandler` and override the method `ApplicationStarting`. Example:
-
-    public class CustomApplicationEventHandler : ApplicationEventHandler
+```csharp
+public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
+{
+    public override ActionResult Index(ContentModel model)
     {
-        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        // you are in control here!
+        // create our ViewModel based on the PublishedContent of the current request:
+        var productViewModel = new MyProductViewModel(model.Content);
+        // set our custom properties
+        productViewModel.StockLevel = _madeUpExternalProductInfoService.GetStockLevel(productViewModel.Id)
+        productViewModel.ProductDistributors = _madeUpExternalProductInfoService.GetDistributorsForProduct(productViewModel.Id)
+        // return our custom ViewModel
+        return CurrentTemplate(productViewModel);
+    }
+}
+```
+and in our template
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyProductModel>
+@{
+Layout = "Master";
+}
+<h1>@Model.Name</h1>
+
+@(Model.Value<IHtmlString>("productDescription"))
+// or using Modelsbuilder
+@Model.ProductDescription
+
+<dl>
+<dt>Stock Level</dt>
+<dd>@Model.StockLevel</dd>
+<dt>Distributors</dt>
+@foreach (var distributor in Model.Distributors){
+<dd>@distributor.Name</dd>
+}
+```
+
+## Processing QueryString values in the controller
+
+You can also pass values directly into the controller action using the query string. 
+
+    ?page=1&andanotherthing=umbraco
+
+The values in the querystring will be bound to the matching parameters defined in the controller's action:
+
+```csharp
+public class ProductListingPageController : Umbraco.Web.Mvc.RenderMvcController
+{
+//notice how we are no longer overriding the Index action because the signature is now different to the base signature.
+    public ActionResult Index(ContentModel model, int page, string andAnotherThing)
+    {
+       var products = _madeUpProductService.GetProductsByPage(page);
+       var productListingViewModel = new ProductListingViewModel(model.Content);
+       productListingViewModel.Products = products;
+       productListViewModel.Thing = andAnotherThing;
+
+       return CurrentTemplate(productListViewModel);
+    }
+}
+```
+## Controller Injection
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See (Services and Helpers)[../../Implementation/Services/#custom-services-and-helpers-1] for more info on this.
+
+For example:
+```csharp
+    public class ProductListingPageController : RenderMvcController
+    {
+    private readonly IMadeUpProductService _madeUpProductService;
+    public MyController(IMadeUpProductService madeUpProductService)
+    {
+        _madeUpProductService = madeUpProductService;
+    }
+
+    public override ActionResult Index(
+    ContentModel model)
+    {
+        var products = __madeUpProductService.GetProductsByPage(page);
+    ...
+    }
+```
+
+To wire up a concrete instance of IMadeUpProductService, use a composer:
+
+```csharp
+    using Umbraco.Core;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Composing;
+    namespace MyWebsite.Composers
+    {
+        public class RegisterSuperSiteServiceComposer : IUserComposer
         {
-            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
+            public void Compose(Composition composition)
+            {
+            // Register your service with different Lifetime options: Singleton, Request, Transient, Scope
+            composition.Register<IMadeUpProductService, MadeUpProductService>(Lifetime.Singleton);
+            }
         }
     }
+```
+See [Composing](../../Implementation/Composing/) for further information.
+
+## Replace Umbraco's default `RenderMVCController`
+
+You can replace Umbraco's default implementation of RenderMVCController with your own custom controller for all MVC requests. 
+This is possible by assigning your own default controller during initialization using a composer and the `SetDefaultRenderMvcController(T)` method.
+
+```csharp
+public class SetDefaultRenderMvcControllerComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+        composition.SetDefaultRenderMvcController(typeof(MyRenderMvcController));
+    }
+}
+```
+Your custom implementation of RenderMvcController should either inherit from the core `RenderMvcController` as in the examples above or implement the `IRenderMvcController` interface.
+
+```csharp
+public class MyRenderMvcController : IRenderMvcController
+{
+    public void Execute(RequestContext requestContext)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ActionResult Index(ContentModel model)
+    {
+        throw new NotImplementedException();
+    }
+}
+```

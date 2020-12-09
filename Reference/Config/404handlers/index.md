@@ -1,7 +1,7 @@
-#This section is waiting for content
+---
+versionFrom: 8.0.0
+---
 
-TODO: Fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/213)
+# How to implement a 404 Page
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/UmbracoDocs)
+To implement your own 404 finder, create a class which implements the interface *IContentLastChanceFinder* and registering it as the last chance content finder using an *IComposer*. A ContentLastChanceFinder will always return a 404 status code. - [Using an IContentFinder for Custom 404s](../../routing/request-pipeline/IContentFinder#notfoundhandlers)

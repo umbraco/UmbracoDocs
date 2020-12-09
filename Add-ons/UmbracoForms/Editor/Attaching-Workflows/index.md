@@ -1,73 +1,35 @@
-#Attaching workflows
-Submitting a form will result in the record data being stored in the database, if you wish to attach extra functionality to your form you can do so by assigning 1 or multiple workflows (like sending an email).
+---
+versionFrom: 7.0.0
+---
 
-##Adding a workflow
+# Attaching workflows
 
-###Navigate to the workflow page for your form
-You can either hit the workflow button on the form actions
+In this article you can learn how to add extra functionality to your form by attaching **workflows**.
 
-![Button](workflowbutton.png)
+Workflows are a way of defining what happens when a form is submitted. This could be sending an email, or creating a content node.
 
-or select the workflows node under your form in the tree
+Submitting a form will by default result in the record data being stored in the database. This can be configured in the Forms settings: [Store records](../Creating-a-form/Form-Settings/#store-records-version-7).
 
-![Workflow node](Workflownode.png)
+## Adding a workflow
 
-###Select the state to add a new workflow
+At the bottom of each of your forms, you can see which workflows are already attached to the form, as well as an option to configure the workflows.
 
-Once the page is loaded you should see an overview of the different basic record states
+![Button](images/configure-workflows.png)
 
-- Submitted
-- Approved
+Clicking **Configure workflow** will give you the option to configure existing workflows, as well as setup new ones.
 
-![Workflow page](WorkflowsPage.png)
+![Workflow add](images/WorkflowsPage.png)
 
-Typicaly workflows will be added on the submitted state, to start adding hit the 'add an action' button
+### Select the type
 
+A new workflow can be of different types, and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](Workflow-Types) article.
 
-![Workflow add](WorkflowsPageAdd.png)
+![Workflow add modal](images/WorkflowsAddModel.png)
 
-A new modal window should open
+### Fill in type specific settings
 
-![Workflow add modal](WorkflowsAddModal.png)
+Once the type has been selected you will need to configure the workflow. There are various settings depending on the type that has been selected.
 
-###Select the type
+To be able to use data from the submitted form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
-A new workflow can be of different types (an overview can be found [below](#Overviewofthedefaultworkflowtypes)). So first select the type
-
-![Workflow add select type](WorkflowsPageAddSelectType.png)
-
-
-###Fill in type specific settings
-Once the type has been selected you should see some additional settings (these depend on the type)
-
-![Workflow type settings](WorkflowsPageAddTypeSettings.png)
-
-Fill in the settings and hit add
-
-![Workflow add](WorkflowsPageAddAdd.png)
-
-###Overview
-You should now be back on the workflow page and get an overview of the attached workflows
-
-![Workflows overview](WorkflowOverview.png)
-
-
-
-##Overview of the default workflow types
-There are a couple of default workflow types that can be used to extend the functionality of your form, here is an overview:
-###Perform filtering
-Delete a record if it contains certain values
-###Post as Xml
-Posts the form as xml to a url
-###Post form to url
-Posts the form to a url, either as POST or GET
-###Save as file
-Saves the result of the form as a file
-
-###Save as Umbraco document
-Saves the form values as an Umbraco document node with a specific type
-###Send email
-Send the result of the form to an email address
-
-###Send xslt transformed email
-Send the result of the form to an email address (full control over the email contents by supplying an xslt file)
+Fill in the settings and hit *Submit*. The workflow will now have been added to your form, and it will be shown at the bottom of the page.

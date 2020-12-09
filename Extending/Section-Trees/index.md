@@ -1,13 +1,27 @@
-#Sections & Trees
+---
+versionFrom: 8.0.0
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
+---
 
-The Umbraco back office consists of sections (sometimes referred to as applications) which contain trees. For example, when you load the back office you'll see that the 'Content' section contains one tree: the content tree whereas the 'Settings' section contains a number of trees: Stylesheets, Content Types, Media Types, etc...
+# Sections & Trees
 
-Both sections and trees can be created to extend Umbraco.
+The Umbraco backoffice consists of sections (sometimes referred to as applications) which contain Trees.
 
-##[Sections](sections.md)
+Each section is identified by an icon in the top navigation ribbon of the Umbraco Backoffice.
 
-Describes Umbraco Sections, configuration and APIs
+For example, when you load the backoffice you'll see that the 'Content' section contains one tree: the content tree whereas the 'Settings' section contains a number of trees: Stylesheets, Content Types, Media Types, etc...
 
-##[Trees](trees.md)
+You can create your own sections and trees to extend Umbraco.
 
-Describes Umbraco Sections, configuration, APIs and events
+## [Sections](sections.md)
+
+Describes Umbraco Sections, configuration and APIs.
+
+## [Trees](trees.md)
+
+Describes Umbraco Trees, configuration, APIs and events.
+
+## [Searchable Trees (ISearchableTree)](Searchable-Trees)
+
+Explains how to customise the backoffice search of a Section Tree.

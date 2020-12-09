@@ -1,7 +1,6 @@
-#This section is waiting for content
+---
+versionFrom: 8.0.0
+---
+# How to implement a custom tree
 
-TODO: Fill out these docs (https://github.com/umbraco/UmbracoDocs/issues/219)
-
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/UmbracoDocs)
+You can implement a custom tree using code. Learn more about this approach in the [article about Section Trees](../../../Extending/Section-Trees/trees).

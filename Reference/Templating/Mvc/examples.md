@@ -1,52 +1,50 @@
-#View/Razor Examples
+---
+versionFrom: 8.0.0
+---
 
-_Lots of examples of using various techniques to render data in a view_ 
+# View/Razor Examples
 
-##Rendering a field with UmbracoHelper
+_Lots of examples of using various techniques to render data in a view_
 
-	@Umbraco.Field("bodyContent")
+## Rendering the raw value of a field from IPublishedContent
 
-##Rendering a field with UmbracoHelper with optional parameters
+```csharp
+@Model.Value("bodyContent")
+```
 
-	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
+## Rendering the converted value of a field from IPublishedContent
 
-##Rendering the raw value of a field from IPublishedContent
+```csharp
+@Model.Value<double>("amount")
+@Model.Value<IHtmlString>("bodyContent")
+```
 
-	@Model.Content.Properties["bodyContent"].Value
+## Rendering a macro
 
-Or alternatively:
+```csharp
+@Umbraco.RenderMacro("myMacroAlias")
+```
 
-	@Model.Content.GetPropertyValue("bodyContent")
+## Rendering a macro with parameters using an anonymous object
 
-##Rendering the converted value of a field from IPublishedContent
+```csharp
+@Umbraco.RenderMacro("myMacroAlias", new { name = "Ned", age = 28 })
+```
 
- 	@Model.Content.GetPropertyValue<double>("amount")
-	@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
+## Rendering a macro with parameters using a dictionary
 
-##Rendering a field using @CurrentPage (dynamically)
+```csharp
+@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
+```
 
-	@CurrentPage.bodyContent
+## Rendering some member data
 
-##Rendering a macro
+```csharp
+@if(Members.IsLoggedIn()){
+    var profile = Members.GetCurrentMemberProfileModel();
+    var umbracomember = Members.GetByUsername(profile.UserName);
 
-	@Umbraco.RenderMacro("myMacroAlias")
-
-##Rendering a macro with parameters using an anonymous object
-
-	@Umbraco.RenderMacro("myMacroAlias", new { name = "Ned", age = 28 })
-
-##Rendering a macro with parameters using a dictionary
-
-	@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
-
-##Rendering some member data
-
-	@if(Members.IsLoggedIn()){
-	   var profile = Members.GetCurrentMemberProfileModel();
-	   var umbracomember = Members.GetByUsername(profile.UserName);
-	   
-	    <h1>@umbracomember.Name</h1>
-	    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
-	}
-
-
+    <h1>@umbracomember.Name</h1>
+    <p>@umbracomember.Value<string>("bio")</p>
+}
+```

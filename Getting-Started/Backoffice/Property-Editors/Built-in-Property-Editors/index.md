@@ -1,94 +1,185 @@
-#Built-in Umbraco v7+ Property Editors
+---
+versionFrom: 8.0.0
+---
 
-This page contains a list of all the built-in Umbraco  v7+ property editors and a short description of what they do:
+# Built-in Umbraco Property Editors
 
-##[Checkbox list](CheckBox-List.md)
+This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
+
+## [Block List Editor](Block-List-Editor)
+
+`Alias: Umbraco.BlockList`
+
+Use Element Types to create a set of Blocks that your editors can use to create content.
+
+## [Checkbox (True/False)](True-False)
+
+`Alias: Umbraco.TrueFalse`
+
+A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+
+## [Checkbox list](CheckBox-List/index.md)
+
+`Alias: Umbraco.CheckBoxList`
+
 Displays a list of preset values as a list of checkbox controls
 
-##Color Picker
+## [Color Picker](Color-Picker/index.md)
+
+`Alias: Umbraco.ColorPicker`
+
 Adds a list of approved colours which can be selected by clicking.
 
-##[Content Picker](Content-Picker.md)
-The content picker opens a simple modal to pick a specific page from the content structure. 
+## [Content Picker](Content-Picker/index.md)
 
-##Date
-Displays a calendar UI for selecting dates
+`Alias: Umbraco.ContentPicker`
 
-##Date/Time
-Displays a calendar UI for selecting dates and time
+The content picker allows the content editor to pick a specific node from the content structure.
 
-##[Dropdown list](DropDown-List.md)
-Displays a list of preset values. The value saved is a text value.
+## [Date/Time](Date-Time/index.md)
 
-##[Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
-Displays a list of preset values as a list. The value saved is a prevalue ID
+`Alias: Umbraco.DateTime`
 
-##[Dropdown list multiple](DropDown-List-Multiple.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+Displays a calendar UI for selecting dates and time.
 
-##[Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
+## [Decimal](Decimal/index.md)
 
-##Email address
+`Alias: Umbraco.Decimal`
 
-##File upload
+A configurable number control allowing only numbers including decimals.
+
+## [Dropdown](DropDown/index.md)
+
+`Alias: Umbraco.DropDown.Flexible`
+
+Displays a list of preset values. The content editor can select either a single or multiple values.
+
+## [Email address](Email-Address)
+
+`Alias: Umbraco.EmailAddress`
+
+A single line textbox only allowing valid email addresses.
+
+## [File upload](File-Upload/index.md)
+
+`Alias: Umbraco.UploadField`
+
 Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
-##Folder Browser
-Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images.
+## [Grid Layout](Grid-Layout/index.md)
 
-##[Grid Layout](Grid-Layout.md)
-New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
+`Alias: Umbraco.Grid`
 
-##[Image Cropper](Image-Cropper.md)
-Used to crop and resize images to predefined sizes. Available from V7.1
+Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
-##Label
-Label is a non-editable control, can only be used to display a pre-set text.
+## [Image Cropper](Image-Cropper.md)
 
-##Legacy Media Picker
-The legacy media picker opens a simple dialogue to pick a specific media item from the media tree. The value saved is the selected media ID.
+`Alias: Umbraco.ImageCropper`
 
-##List View
+Used to crop and resize images to predefined sizes.
 
-##Macro container
+## [Label](Label.md)
 
-##Markdown editor
+`Alias: Umbraco.Label`
 
-##[Media Picker](Media-Picker.md)
+Label is a non-editable control and can only be used to display a pre-set value.
+
+## [List View](Listview/index.md)
+
+`Alias: Umbraco.ListView`
+
+This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
+
+## [Markdown editor](Markdown-Editor/index.md)
+
+`Alias: Umbraco.MarkdownEditor`
+
+[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML. The built-in editor allow the user to use the markdown formatting options.
+
+The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
+
+## [Media Picker](Media-Picker/index.md)
+
+`Alias: Umbraco.MediaPicker`
+
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
-##Member Group Picker
+## [Member Group Picker](Member-Group-Picker/index.md)
 
-##Member Picker
+`Alias: Umbraco.MemberGroupPicker`
 
-##[Multinode Treepicker](Multinode-Treepicker.md)
+## [Member Picker](Member-Picker/index.md)
+
+`Alias: Umbraco.MemberPicker`
+
+## [Multi Url Picker](Multi-Url-Picker/index.md)
+
+`Alias: Umbraco.MultiUrlPicker`
+
+New in Umbraco 8, used to be a package called RJP Multi Url Picker. Replaced Related Links.
+
+## [Multinode Treepicker](Multinode-Treepicker/index.md)
+
+`Alias: Umbraco.MultiNodeTreePicker`
+
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
-##[Multiple Textbox](Multiple-Textbox.md)
-The Multiple Textbox property editor enables a content editor to make a list of text items
+## [Nested Content](Nested-Content/index.md)
 
-##Numeric
+`Alias: Umbraco.NestedContent`
 
-##[Radio button list](RadioButton-List.md)
+The nested content property editor enables you to use Document Types as a schema for list items.
+
+## [Numeric](Numeric/index.md)
+
+`Alias: Umbraco.Integer`
+
+A configurable number control allowing only numbers.
+
+## [Radio button list](RadioButton-List/index.md)
+
+`Alias: Umbraco.RadioButtonList`
+
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-##[Related Links](Related-Links.md)
-Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+## [Repeatable textstrings](Multiple-Textbox)
 
-##Rich Text Editor
+`Alias: Umbraco.MultipleTextstring`
 
-##Slider
+The Repeatable textstrings property editor enables a content editor to make a list of text items
 
-##Tags
+## [Rich Text Editor](Rich-Text-Editor)
 
-##Textarea
-A simple textarea control to input text.
+`Alias: Umbraco.TinyMCE`
 
-##Textbox
+A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable. Probably one of the most used controls in Umbraco projects.
+
+## [Slider](Slider/index.md)
+
+`Alias: Umbraco.Slider`
+
+A slider with a number in a certain range.
+
+## [Tags](Tags/index.md)
+
+`Alias: Umbraco.Tags`
+
+A tag control which can be controlled by a certain group of tags.
+
+## [Textarea](Textarea/index.md)
+
+`Alias: Umbraco.TextArea`
+
+A textarea control to input text.
+
+## [Textbox](Textbox/index.md)
+
+`Alias: Umbraco.TextBox`
+
 A normal html input text field.
 
-##[True/False](True-False.md)
-A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+## [ User picker ](User-Picker/index.md)
 
-##User picker
+`Alias: Umbraco.UserPicker`
+
+The easiest way to pick a person from user backend users. See Members for front-end users.

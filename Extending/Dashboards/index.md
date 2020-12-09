@@ -1,105 +1,330 @@
-#Dashboard
+---
+keywords: dashboards dashboard extending v8 version8
+versionFrom: 8.0.0
+meta.Title: "Umbraco Custom Dashboards"
+meta.Description: "A guide to creating custom dashboards in Umbraco"
+---
 
-As with the other .config files in the /config directory the Dashboard.config file lets you customize a portion of the Umbraco experience.  In this case the Dashboard.config file controls what shows up in the Dashboard section of the UI when a section of the site loads.  The Dashboard is the area on the right side of the UI where most of the data entry and functional interaction takes place.
+# Dashboards
+Each section of the Umbraco backoffice has its own set of default dashboards.
 
-By default, Umbraco shows a blank Dashboard when a new section loads and only shows a form when you take action within the section (i.e. when you click on a node in the Content section, the Dashboard shows the form to update that node's data). But what if you wanted to present your UI users with some options even before they click on a node?  Well that is what the Dashboard.config allows you to do.
-Layout
+The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section 'first loads', then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
 
-Like the other .config files Dashboard.config is a simple XML file with a fairly straight-forward layout as seen below.
+## Registering your own Dashboard
+There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice:
 
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard> <!-- root of the dashboard xml tree -->
-	   <section>  <!-- defines a dashboard layout for a group of sections -->
-	        <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
-                <area>[area name]</area> <!-- A section to apply this to -->
-                ...
-	        </areas>
-	
-	        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned Caption -->
-                <control>[path]</control> <!-- What control to load in that tab -->
-	        </tab>
-	        ...
-	   </section>
-	   ...
-	</dashBoard>
+### Registering with package.manifest
+Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the following json configuration pointing to your dashboard view:
 
-## Section (different from a Umbraco UI Section) ##
+```json
+{
+    "dashboards":  [
+        {
+            "alias": "myCustomDashboard",
+            "view":  "/App_Plugins/myCustom/dashboard.html",
+            "sections":  [ "content", "member", "settings" ],
+            "weight": -10
+        }
+    ]
+}
+```
 
-Delimits dashboard information to apply to one or more sections.  The Dashboard.config may include multiple sections.
+The section aliases can be found in the C# developer reference for [Umbraco.Core.Constants.Applications](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Applications.html).
 
-## Areas ##
+### Registering with C# Type
+By creating a C# class that implements `IDashboard` from `Umbraco.Core.Dashboards` then this will automatically be discovered by Umbraco at application startup time.
 
-Defines to which sections of the Umbraco UI to apply the subset of dashboard information.
-area - Always lowercase!
+```csharp
+using System;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Dashboards;
 
-The name* of the Umbraco UI Section where you want your user control to be displayed (e.g. content, media, developer, settings, members or a custom section name). You can add your controls to more than one section by adding multiple <area> nodes.
+namespace My.Website
+{
+    [Weight(-10)]
+    public class MyDashboard : IDashboard
+    {
+        public string Alias => "myCustomDashboard";
 
-The area with the name 'default' is the first dashboard shown when a user login, no matter which sections the user have access to!
+        public string[] Sections => new[]
+        {
+            Umbraco.Core.Constants.Applications.Content,
+            Umbraco.Core.Constants.Applications.Members,
+            Umbraco.Core.Constants.Applications.Settings
+        };
 
-**A little gotcha**, make sure you include the name of your app in lowercase! 
+        public string View => "/App_Plugins/myCustom/dashboard.html";
 
-## Tab ##
+        public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
+    }
+}
+```
 
-Defines a page tab that you would like your user control to be added to. The attribute 'caption' defines the text displayed on the tab.  There can be multiple tabs for each Dashboard "page"
-control
+### Re-ordering / weighting
+Each dashboard, regardless of how it is registered (package.manifest or C# or default core dashboard) uses a *weight* property to assign the order that the dashboard should be displayed. The dashboard with the lowest weighting number will be displayed first in a collection where one or more dashboards are visible for a section/application.
 
-Defines the path to the user control you would like to be displayed on a tab.
+For reference, here is a list of the weighting values for the default Umbraco dashboards, so you can assign a weighting to your own custom dashboard with a higher or lower value to suit your custom ordering needs.
 
-The <access /> element makes it possible to set permissions on sections, tabs and controls and you can either grant or deny certain usertypes access.
+**Content**
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/contentIntro</td>
+    <td>Umbraco.Web.Dashboards.ContentDashboard</td>
+    </tr>
+    <tr>
+    <td>Redirect URL Management</td>
+    <td>20</td>
+    <td>dashboardTabs/contentRedirectManager</td>
+    <td>Umbraco.Web.Dashboards.RedirectUrlDashboard</td>
+    </tr>
+  </tbody>
+</table>
 
-It works by adding an `<access/>` node under either a `<section />`, `<tab/>` or `<control />` node. As children of <access /> you can either add
+**Media**
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Content</td>
+    <td>10</td>
+    <td>dashboardTabs/mediaFolderBrowser</td>
+    <td>Umbraco.Web.Dashboards.MediaDashboard</td>
+    </tr>
+  </tbody>
+</table>
 
-`<grant />` which grants permissions to those types of users (AND automatically deny access to those who're not there!)
+**Settings**
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Welcome</td>
+    <td>10</td>
+    <td>dashboardTabs/settingsWelcome</td>
+    <td>Umbraco.Web.Dashboards.SettingsDashboard</td>
+    </tr>
+    <tr>
+    <td>Examine Management</td>
+    <td>20</td>
+    <td>dashboardTabs/settingsExamine</td>
+    <td>Umbraco.Web.Dashboards.ExamineDashboard</td>
+    </tr>
+    <tr>
+    <td>Published Status</td>
+    <td>30</td>
+    <td>dashboardTabs/settingsPublishedStatus</td>
+    <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
+    </tr>
+    <tr>
+    <td>Models Builder</td>
+    <td>40</td>
+    <td>dashboardTabs/settingsModelsBuilder</td>
+    <td>Registered in ModelsBuilder package.manifest</td>
+    </tr>
+    <tr>
+    <td>Health Check</td>
+    <td>50</td>
+    <td>dashboardTabs/settingsHealthCheck</td>
+    <td>Umbraco.Web.Dashboards.HealthCheckDashboard</td>
+    </tr>
+  </tbody>
+</table>
 
-`<grantBySection />` which grants permissions to those users who got access to specific sections. This can be useful for more granular permissions
+**Members**
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/memberIntro</td>
+    <td>Umbraco.Web.Dashboards.MembersDashboard</td>
+    </tr>
+  </tbody>
+</table>
 
-`<deny />` which denies permissions to those types of users (AND automatically grants everyone else)
+**Forms**
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Install Umbraco Forms</td>
+    <td>10</td>
+    <td>dashboardTabs/formsInstall</td>
+    <td>Umbraco.Web.Dashboards.FormsDashboard</td>
+    </tr>
+  </tbody>
+</table>
 
-No matter the settings the root user (id:0) can see everything, so don't panic if you set deny permissions for administrators and still are able to see everything ;-)
+### Add Language Keys
+After registering your dashboard, it will appear in the backoffice - however, it will have its dashboard alias [mycustomdashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-Example on permissions:
+If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml`. If the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation, you will need to create a *lang* folder in your custom dashboard folder. You also need to create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`.
 
-	<tab caption="Last Edits">
-	    <access>
-            <grant>writer</grant>
-            <grant>editor</grant>
-            <grantBySection>content</grantBySection>
-	    </access>
-	    <control>/usercontrols/dashboard/latestEdits.ascx</control>
-	</tab>
+[Read more about language files](../Language-Files/index.md)
 
-## Customizing ##
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+    <area alias="dashboardTabs">
+        <key alias="myCustomDashboard">My Dashboard</key>
+    </area>
+</language>
+```
 
-In order to customize the dashboard in Umbraco, one needs to do a couple of things.
-Create one or more UserControls
+### Specifying permissions
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear.
 
-The Dashboard loads one or more UserControls and displays them on a series of tabs.  So in order to customize the control, one needs to first create the UserControls that are to be displayed on the page.  If these are for your own personal use you can just place the UserControls in a location on your site that can be accessed by Umbraco.  It is recommended that you place them in the /usercontrol directory, preferably in your own subfolder.  If you are creating a package for others to use, you should include the usercontrols in the package for install with the rest of the package contents.
-Update the Dashboard.config
+Further to this, within this section, you can control which users can see a particular dashboard based upon the *User Groups* they belong to. This is done by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
-Once you have created the UserControls that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your UserControls when a user enters a new section.  Again if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the controls.  However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install.  Click here for more information on Package Actions.
-Sample
+```json
+{
+    "dashboards":  [
+        {
+            "alias": "myCustomDashboard2",
+            "view":  "/App_Plugins/myCustom/dashboard.html",
+            "sections": [ "content", "settings" ],
+            "weight": -10,
+            "access": [
+                { "deny": "translator" },
+                { "grant": "admin" }
+            ]
+        }
+    ]
+}
+```
 
-Below is an example of a valid Dashboard.config:
+```csharp
+using Umbraco.Core.Composing;
+using Umbraco.Core.Dashboards;
 
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard>
-	    <section>
-		    <areas>
-		    	<area>content</area>
-		    </areas>		
-		    <tab caption="Last Edits">
-	            <access>
-	            	<deny>editor</deny>
-	            </access>
-		        <control>/usercontrols/dashboard/latestEdits.ascx</control>
-		    </tab>
-		    <tab caption="Latest Items">
-		    	<control>/usercontrols/dashboard/newestItems.ascx</control>
-		    </tab>
-		    <tab caption="Create blog post">
-		    	<control>/usercontrols/umbracoBlog/dashboardBlogPostCreate.ascx</control>
-		    </tab>
-		</section>
-	</dashBoard>
+namespace My.Website
+{
+    [Weight(-10)]
+    public class MyDashboard : IDashboard
+    {
+        public string Alias => "myCustomDashboard";
+		
+        public string[] Sections => new[]
+        {
+            Umbraco.Core.Constants.Applications.Content,
+            Umbraco.Core.Constants.Applications.Settings
+        };
+				
+        public string View => "/App_Plugins/myCustom/dashboard.html";
 
-What this does is every time a user clicks on the Content section of the Umbraco UI (the sections are in the lower left of the screen) it loads a page with three tabs called "Last Edits", "Latest Items" and "Create blog post".  For each tab a UserControl is loaded to provide the functionality that the developer created for those tabs.  The UI finds the UserControls via the paths provided.
+        public IAccessRule[] AccessRules
+        {
+            get
+            {
+                var rules = new IAccessRule[]
+                {
+                    new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Core.Constants.Security.TranslatorGroupAlias},
+                    new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Core.Constants.Security.AdminGroupAlias}
+                };
+                return rules;
+            }
+        }
+    }
+}
+```
+
+## Remove an Umbraco dashboard
+In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboard you would amend the `config/dashboards.config` file on disk.
+
+In Umbraco 8+ the configuration file approach has been removed and you need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organise and customise your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Dashboards;
+
+namespace My.Website
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class RemoveDashboard : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Dashboards().Remove<ContentDashboard>();
+        }
+    }
+}
+```
+
+## Override an Umbraco Dashboard
+In Umbraco 8+, to modify the order of a default dashboard or change its permissions, you must first remove the default dashboard (see above), then add an overridden instance of the default dashboard.  The overridden dashboard can then include your modifications.  For example, if you wanted to deny the Writers group access to the default Redirect URL Management dashboard, you would create an override of RedirectUrlDashboard to add after removing the default dashboard.
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Dashboards;
+using Umbraco.Web;
+using Umbraco.Web.Dashboards;
+
+namespace MyDashboardCustomization
+    {
+    public class MyComposer : IComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Dashboards()
+                // Remove the default
+                .Remove<RedirectUrlDashboard>()
+                // Add the overridden one
+                .Add<MyRedirectUrlDashboard>();
+        }
+    }
+
+    // overridden redirect dashboard with custom rules
+    public class MyRedirectUrlDashboard : RedirectUrlDashboard, IDashboard
+    {
+        // override explicit implementation
+        IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
+        {
+            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
+            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Core.Constants.Security.AdminGroupAlias}
+        };
+    }
+}
+```

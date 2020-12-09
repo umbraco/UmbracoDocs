@@ -1,41 +1,46 @@
-#Persistence Models reference
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
+# Persistence Models reference
 
 The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
 The links listed below are api references for Umbraco's public model.
 
-##[Content](Content.md)
-API refence for the Content class. 
+## [Content](Content.md)
+API reference for the Content class.
 
-##[ContentType](ContentType.md)
-API refence for the ContentType class. 
+## [ContentType](ContentType.md)
+API reference for the ContentType class.
 
-##[DataTypeDefinition](DataTypeDefinition.md)
-API refence for the DataTypeDefinition class.
+## [DataTypeDefinition](DataTypeDefinition.md)
+API reference for the DataTypeDefinition class.
 
-##DictionaryItem
-API refence for the DictionaryItem and DictionaryTranslation classes.
+## DictionaryItem
+API reference for the DictionaryItem and DictionaryTranslation classes.
 
-##Language
-API refence for the Language class.
+## Language
+API reference for the Language class.
 
-##[Media](Media.md)
-API refence for the Media class. 
+## [Media](Media.md)
+API reference for the Media class.
 
-##[MediaType](MediaType.md)
-API refence for the MediaType class.
+## [MediaType](MediaType.md)
+API reference for the MediaType class.
 
-##Relation
-API refence for the Relation class.
+## Relation
+API reference for the Relation class.
 
-##RelationType
-API refence for the RelationType class.
+## [RelationType](RelationType.md)
+API reference for the RelationType class.
 
-##Task
-API refence for the Task class.
+## Task
+API reference for the Task class.
 
-##TaskType
-API refence for the TaskType class.
+## TaskType
+API reference for the TaskType class.
 
-##Template
-API refence for the Template class.
+## Template
+API reference for the Template class.

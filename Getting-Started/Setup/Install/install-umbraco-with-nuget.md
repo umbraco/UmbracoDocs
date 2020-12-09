@@ -1,121 +1,81 @@
-#Install Umbraco with NuGet
+---
+versionFrom: 8.0.0
+---
+
+# Install Umbraco with NuGet
 
 _Follow these steps to do a full install of Umbraco with NuGet._
 
-##Abbreviated version
-- You will get the best results if you install Umbraco in a **blank** web application Visual Studio project using .net versions higher than 4.5.0 and lower than 5.0.0.
- - In VS12: use ASP.NET Empty Web Application
- - In VS13/15: use ASP.NET Web Application with an Empty template
-- Umbraco can in most cases **not** be installed in an existing MVC/Webforms project
-- When asked if you want to overwrite config files, choose **"Yes"** to overwrite them
-- ReSharper 8 (last released in 2014) might have problems, try suspending it or upgrading to ReSharper version 8.2.3
+## Abbreviated version
+- You will get the best results if you install Umbraco in a **blank** C# web application Visual Studio project
+- You will need Visual Studio 2017 updated to version **15.9.6 at least** or Visual Studio 2019.
+- Go to `File` > `New Project` > `ASP.NET Web application (.NET Framework)` using **.NET Framework 4.7.2** (important)
+- In the next screen choose an **Empty** project template and don't enable any of the checkboxes, leave them all unselected
+- Either use the NuGet Package explorer to install Umbraco 8 or the Package manager console (the command is: `Install-Package UmbracoCms`)
+- Use CTRL+F5 to run the project and start the Umbraco installer
 
-##Note for ReSharper users
-We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail (you can help getting this resolved by voting for [this issue][1]).  
-The advise for now is when you're installing Umbraco: suspend ReSharper through Tools > Options > ReSharper > Suspend Now.   
-After you're done installing or updating you can re-enable ReSharper in the same way.
+:::note
+The screenshots below are for Visual Studio 2017, but you should follow a similar journey for 2019.
+:::
 
-##NuGet version
-Before you start: make sure your NuGet version is up to date. We use the latest version while testing and can't guarantee that the install process works with older versions of NuGet.
+## New solution
+To install Umbraco we first need a Visual Studio solution.
 
-In Visual Studio, go to Tools > Extensions and Updates, then Updates > Visual Studio Gallery. Check if there's a NuGet Update available and install it.
+**Note:** Check that your Visual Studio version is at least 15.9.6 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.
 
-![](images/NuGet/nuget-update.png)
+![](images/NuGet/visual-studio-version-v8.png)
 
-Also make sure that the execution policy in the Package Manager Console is set to **RemoteSigned**. You can check this by going to Tools > NuGet Package Manager > Package Manager Console. Once that loads, type `Get-ExecutionPolicy` if it's set to "Restricted" then make sure to change that by typing the following command: `Set-ExecutionPolicy RemoteSigned`
+### Visual Studio 2017
+Go to **File > New Project** and pick an ASP.NET Web Application.
 
-##Install NuGet in Visual Studio
-If you don't already have NuGet installed, you can read all about the installation process here: [http://docs.nuget.org/docs/start-here/installing-nuget](http://docs.nuget.org/docs/start-here/installing-nuget).
+**Note:** Double check that in the "Framework" dropdown you've selected `.NET Framework 4.7.2`, Umbraco will not work with lower versions than 4.7.2. Similarly, refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
 
-##New solution
-To install Umbraco we need a Visual Studio solution to install it in. 
+![](images/NuGet/new-project-vs2017-1-v8.png)
 
-###.NET Version
-![](images/NuGet/new-project-dotnet4.png)
+On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).
 
-If you're installing Umbraco 7+ then you need to choose .NET Framework 4.5 or 4.5.1 here.  
-For Umbraco 6 you can still choose .NET Framework 4, but 4.5 and 4.5.1 also work.
+![](images/NuGet/new-project-vs2017-2-v8.png)
 
-###Visual Studio 2012
-Go to **File > New Project** and pick ASP.NET Web Application. Click **OK** and then choose one of the following:
-
-* ASP.NET Empty Web Application
-* ASP.NET Web Forms Application
-* ASP.NET MVC 3 Web Application (will be upgraded to an MVC 4 application)
-* ASP.NET MVC 4 Web Application
-
-Some of these have a second step, pick the **Empty** template on that second step.  
-It's important to pick only one of those as other templates cause errors beyond our control.
-
-![](images/NuGet/new-project-vs2012.png)
-
-###Visual Studio 2013/2015
-Go to **File > New Project** and pick an ASP.NET  Web Application.    
-
-![](images/NuGet/new-project-vs2013-1.png)
-
-On the next step, select the **Empty** template. It's important to to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
-
-![](images/NuGet/new-project-vs2013-2.png)
-
-Or you can use the VS2012/2013/2015 template:
-
-* ASP.NET Empty Web Application
-
-Again, if there's a next step, then choose **Empty** to prevent conflicts.
-
-![](images/NuGet/new-project-vs2013-3.png)
-
-##Finding and installing the Umbraco package
+## Finding and installing the Umbraco package
 The latest release of Umbraco is always available in the NuGet gallery. All you have to do is search for it and install.
 
-To install Umbraco from the Visual Studio interface, right-click on the new project you just made and choose **Manage NuGet Packages**.
+To install Umbraco from the Visual Studio interface, right-click on the new project you've made and choose **Manage NuGet Packages**.
 
-![](images/NuGet/manage-nuget-packages.png)
+![](images/NuGet/manage-nuget-packages-v8.png)
 
-You can then use the search function to find the package called **Umbraco CMS**. You'll also find the Umbraco CMS Core Binaries package, which will be included automatically when you choose Umbraco CMS. So make sure to pick Umbraco CMS (highlighted in the image below) and click **Install**.
+You can then use the search function to find the package called `UmbracoCMS`. You'll also find the Umbraco CMS Core Binaries package and the Umbraco CMS Web package, they will be included automatically when you choose Umbraco CMS. So make sure to pick Umbraco CMS (highlighted in the image below) and click the **Install** icon (arrow down).
 
-![](images/NuGet/nuget-search.png)
+![](images/NuGet/nuget-search-v8.png)
 
 NuGet will then download dependencies and will install all of Umbraco's files in your new solution.
 
-During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
-
-![](images/NuGet/nuget-overwrite-dialog.png)
-
-##Package manager console
+## Package manager console
 You can do the exact same thing from the package manager console, which is a bit quicker as you don't have to click through the menus and search.
 
-Enable the console by going to **Tools >  Library Package Manager >  Package Manager Console**.
+Enable the console by going to **Tools >  View > Other Windows >  Package Manager Console**.
 
-![](images/NuGet/enable-package-manager-console.png)
+![](images/NuGet/enable-package-manager-console-v8.png)
 
-Then simply type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
+Then type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
 
 ![](images/NuGet/package-manager-console.png)
 
-During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
-
-![](images/NuGet/package-manager-console-overwrite.png)
-
-##Running the site
+## Running the site
 You can now run the site like you would normally in Visual Studio (using **F5** or the **Debug** button).
 
-Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+Follow the installation wizard and after a few steps and choices you should get a message saying the installation was a success.
 
-##Post installation
-One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
+## Post installation
+Note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio. You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`.
 
-You should also note that the Umbraco nuget package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
-You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
-```
+```xml
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
-      <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
+    <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
     </ItemGroup>
   </Target>
 ```
 
-[1]: http://youtrack.jetbrains.com/issue/RSRP-419513
+[1]: https://youtrack.jetbrains.com/issue/RSRP-419513

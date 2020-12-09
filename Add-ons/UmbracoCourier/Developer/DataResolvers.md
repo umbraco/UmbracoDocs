@@ -1,294 +1,203 @@
-#Data Resolvers
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
 
-##Introduction
-This document outlines how 2 central components in Courier works:
+# Data Resolvers
 
-1. Its data resolvers and how they can change and process data
-2. Its item event providers which can trigger and queue events
+Data resolvers are used by Courier to understand and transfer your data.
 
-These concepts are useful for people who wish either extend or change the way Courier works with the website content. 
+## Intended audience
+Developers who understands .NET, C# and have a clear idea of how Umbraco works and what components in Umbraco do what.
 
-Data resolvers will show a developer how Courier can understand your data
-Item event handlers enables a developer to trigger and queue events, such as Lucene Indexing, triggering workflows and so on.
+These concepts are targeted at developers who wish to add support for 3rd party components such as data types, or change or extend the way Courier handles current built-in components.
 
-##Intended audience
-Developers who understands .net, c# and has a clear idea of how Umbraco works, and what components in Umbraco does what. 
+## What is a Data Resolver
 
-These concepts are targeted developers who wish to add support for 3rd party components such as Data Types, or change or extend the way Courier handles current built-in components.
+In short, a data resolver is a .NET class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
-###Revision History
-* Version 1,  25/9/2011 Outline 
+Out of the box Courier can understand all standard data types in Umbraco. This means that Courier knows that a content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a GUID which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning.
 
-##What is Data Resolvers
-
-A data resolver is a custom model built into Courier 2, to handle 3rd party data types, storing data in a custom way, or other custom components in your website, where Courier doesn’t understand the stored data.
-
-In short, a Data resolver is simply a .net class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
-
-Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains a ID, pointing at a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a a lot of other cases where data have a special meaning. 
-
-This is what dataresolvers do, add special meaning to specific data that matches certain criteria, for instance properties using a specific datatype, templates containing a certain keyword and so on.
+A data resolver adds special meaning to specific data that matches certain criteria. For instance properties using a specific data type, templates containing a certain keyword and so on.
 
 ## Sample Data Resolver
-To show some code as fast as possible here is a commented code sample which outlines a simple resolver:
+If you need to build your own data resolvers for Courier there are some great examples in the [Courier Contrib project](https://github.com/umbraco/Umbraco.Courier.Contrib). The project contains resolvers for both custom [property editors](https://github.com/umbraco/Umbraco.Courier.Contrib/tree/dev/src/Umbraco.Courier.Contrib.Resolvers/PropertyDataResolvers) and custom [grid editors](https://github.com/umbraco/Umbraco.Courier.Contrib/tree/dev/src/Umbraco.Courier.Contrib.Resolvers/GridCellDataResolvers).
 
-	//inherit from ItemDataResolver and implement ResolvableTypes and ShouldExecute
-	public class test : ItemDataResolverProvider
-	{
-	    //resolvableTypes are the types of content which can be processed by this resolver
-	    //all built-in classes are available under Umbraco.Courier.ItemProviders
-	    //this class handles all templates and nothing else
-	    public override List<Type> ResolvableTypes
-	    {
-	        get { return new List<Type> { typeof(Template) }; }
-	    }
-	 
-	    //ShouldExecute, a fast way to determine if the provider should trigger or not, under a specific event
-	    //in this case the resolver will only trigger during Packaging Event and if the template has any 
-	    //JavaScript resources packaged
-	    public override bool ShouldExecute(Item item, Core.Enums.ItemEvent itemEvent)
-	    {
-	        if (itemEvent == Core.Enums.ItemEvent.Packaging)
-	        {
-	            var t = (Template)item;
-	            return t.Resources.Where(x => x.ExtractToPath.EndsWith(".js")).Count() > 0;
-	        }
-	 
-	        return false;
-	    }
-	 
-	    //Implements the packaging event, here we can change the content of the item being processed 
-	    //we have access to all the data  and can replace anything, which will then be saved to the revision.
-	    public override void Packaging(Item item)
-	    {
-	        //here we simply just fetch the JavaScript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
-	        {
-	            //do something with that jsFile
-	        }
-	    }
-	}
-	
-The above data resolver simply hooks into Courier item providers and targets all items with type Template, and performs an action during the Packaging event.
+## Data resolvers in Courier
 
-##Where can I use a Data resolver?
-Data resolvers can hook into several events during the extraction, packaging and post-processing of any data:
-###Packaging
-Happens before data is packaged into the revision folder
-###Packaged
-Happens after data is packaged and values have been replaced
-###Extracting
-Happens before extraction starts
-###Extracted
-Happens when the item extraction has been completed
-###PostProcessing
-Only happens if the item is marked for Postprocessing, happens after extracted
-###PostProcessed
-Happens after postprocessing is completed
+### AscxFiles
+* **Full name:** `Umbraco.Courier.DataResolvers.ascxFiles`
+* **Triggers on:** Macros which have a .ascx file as its macro file
+* Collects resources for ascx files on macros, this can both be .dll or .cs files
 
-##Built-in item types the resolves can target
-Data resolvers filters by the types of items they can process, the list of built-in types are below:
+### ContentPicker
+* **Full name:** `Umbraco.Courier.DataResolvers.ContentPicker`
+* **Triggers on:** Propertydata, which have a contentpicker as data type (configured in courier.config)
+* If value is set, and is an int, courier will convert the value to the Node GUID, add the node as a dependency. On extraction the GUID will be converted back to the right ID.
 
-###ContentPropertyData
-`Umbraco.Courier.Core.ItemProviders.ContentPropetyData`
-Handles propertydata on both media and content
-###DataType
-`Umbraco.Courier.Core.ItemProviders.DataType`
-Handles datatypes
-###DictionaryItem
-`Umbraco.Courier.Core.ItemProviders.DictionaryItem`
-Handles dictionary items
-###Document
-`Umbraco.Courier.Core.ItemProviders.Document`
-Handles basic document data, structure and paths NOT the property itself
-###DocumentType
-`Umbraco.Courier.Core.ItemProviders.DocumentType`
-Handles document type and propert types
-###File
-`Umbraco.Courier.Core.ItemProviders.File`
-Handles individual files
-###Folder
-`Umbraco.Courier.Core.ItemProviders.Folder`
-Handles folders
-###Language
-`Umbraco.Courier.Core.ItemProviders.Language`
-Handles languages
-###Macro
-`Umbraco.Courier.Core.ItemProviders.Macro`
-Handles macros
-###MacroPropertyType
-`Umbraco.Courier.Core.ItemProviders.MacroPropertyType`
-Handles macro property types
-###Media
-`Umbraco.Courier.Core.ItemProviders.Media`
-Handles basic document data structure and paths, NOT the media property data
-###MediaType
-`Umbraco.Courier.Core.ItemProviders.MediaType`
-Handles media type and property types
-###StyleSheet
-`Umbraco.Courier.Core.ItemProviders.Stylesheet`
-Handles stylesheets and individual stylesheet properties
-###TagRelations
-`Umbraco.Courier.Core.ItemProviders.TagRelations`
-Handles tags and their relations
-###Template
-`Umbraco.Courier.Core.ItemProviders.Template`
-Handles tags and the .master files
+**Configuration**
 
-**Notice**: Courier 2 is not limited to use the classes in the Umbraco.Courier.Core namespace. It can use any type that inherites from Umbraco.Courier.Core.Item. 
-You can therefore without issues create your own Item provider and associate a custom Data Resolver to such a provider.
+```xml
+<contentPickers>
+    <!-- add new datatype elements for data types that stores page ids (ex: "1242" or "1726,2362,2323") -->
+    <add key="contentPicker">158aa029-24ed-4948-939e-c3da209e5fba</add>
+    <add key="ultimatePicker">cdbf0b5d-5cb2-445f-bc12-fcaaec07cf2c</add>
+            
+    <add key="Ucomponents-XpathCheckboxlist">d2d46927-f4f8-4b1b-add7-661cc09a0539</add>
+    <add key="Ucomponents-XpathDropdownlist">57a62843-c488-4c29-8125-52f51873613e</add>
+    <add key="Ucomponents-AutoComplete">31aa0d5c-f8e1-4cdc-a66e-c7f8c09498ef</add>
+</contentPickers>
+```
+
+### CSSResources
+* **Full name:** `Umbraco.Courier.DataResolvers.CssResources`
+* **Triggers on:** Stylesheets
+* Includes images included in the stylesheet as resources
+
+### DampResolver
+* **Full name:** `Umbraco.Courier.DataResolvers.DampResolver`
+* **Triggers on:** Propertydata, which have a DAMP pick as data type
+* If value is set, and is an `int`, Courier will convert the value to the media GUID and add the media item as a dependency
+* On extraction the GUID will be converted back to the right ID.
+
+### EmbeddedContent
+* **Full name:** `Umbraco.Courier.DataResolvers.EmbeddedContent`
+* **Triggers on:** Propertydata, which have a EmbeddedContent type as data type
+* Replaces node IDs in the embedded content with corresponding GUIDs and converts them back again on extraction
+
+### Images
+* **Full name:** `Umbraco.Courier.DataResolvers.Images`
+* **Triggers on:** Propertydata, which contains an RTE
+* Finds linked images in the RTE HTML and sorts out IDs, paths and resources
 
 
-#Syntactic sugar for data types
-Handling data types, their configuration and the stored data is a bit more complex as it involves several moving pieces:
+### KeyValuePrevalueEditor
+* **Full name:** `Umbraco.Courier.DataResolvers.KeyValuePrevalueEditor`
+* **Triggers on:** Propertydata, which contains a keyvalue editor like dropdownlist, radiobutton list or checkboxlist
+* Resolves prevalues from IDs to actual value, and back again on extraction
 
-* The data types item provider containing the data type and its configuration
-* The property data which contains the actual stored data from the data type
+**Configuration**
 
-So using the normal data resolver model, you would need to hook into 2 different providers and process the data.
-However, from version 2.5 Courier supports a data resolver specifically targeted at simplifying this: the `PropertyDataResolverProvider`.
+```xml
+<keyValuePrevalueEditors>
+    <!-- Prevalue editors that store values as a key value pair in the built-in umbracp prevalue storage, identified by their full class-name -->
+    <add key="KeyValuePrevalueEditor">umbraco.editorControls.KeyValuePrevalueEditor</add>
+</keyValuePrevalueEditors>
+```
 
-PropertyDataResolverProvider provides a more specialized event model to hook into:
+### LocalLinks
+* **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
+* **Triggers on:** Propertydata, which contains the string {locallink:
+* Resolves the ID to a GUID, and adds the linked document as a dependency
 
-###PackagingProperty
-Happens before property data is packaged into the revision folder
-###PackagedProperty
-Happens after property data is packaged and values have been replaced
-###ExtractingProperty
-Happens before property extraction starts
-###ExtractedProperty
-Happens when the property data extraction has been completed
-###PackagingDataType
-Happens before the datatype and its configuration is packaged into the revision folder
-###PackagedDataType
-Happens after datatype is packaged and values have been replaced
-###ExtractingDataType
-Happens before datatype extraction starts
-###ExtractedDatatype
-Happens when the datatype extraction has been completed
+**Configuration**
 
-Besides this simplified event model, the Resolver matching is purely done based on the datatype GUID, which is then able to match both data type and property data, based on this GUID.  Making the code much more transparent
+```xml
+<localLinks>
+    <!-- Propertytypes that CAN contain locallinks (like the ones inserted with TinyMCE) -->
+    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
+    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
+    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
+    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
+</localLinks>
+```
 
-##Sample PropertyDataResolverProvider
- This sample goes through processing a datatype which stores a list of images in a custom format like so: 
-“Name|image1.gif” “Name2|image2.gif “, “Nameshdshd|image45.png” in its configuration.
-It looks at that configuration and tells courier the files it can find so courier remembers to transfer them, and finally this sample changes some data on the media / document properties using this data type.
+### MacroParameters
+* **Full name:** `Umbraco.Courier.DataResolvers.MacroParameters`
+* **Triggers on:** Propertydata and Templates, which contains `<umbraco:macro/>` elements
+* Looks at each property and checks if it contains a node ID reference - If it does, the reference is changed to a GUID, and the node is added as a dependency
 
-	//inherit from PropertyDataResolverProvider
-	public class ImageDropdownlist : PropertyDataResolverProvider
-	{
-	    //the GUID of the datatype
-	    public override Guid DataTypeId
-	    {
-	        get { return new Guid("a4ca44c9-ebb6-48e8-8d39-96bfdf619825"); }
-	    }
-	    
-	    //happens while we package the data type and it's configuration
-	    //as well as prevalues
-	    public override void PackagingDataType(ItemProviders.DataType item)
-	    {
-	        //we go through the settings/prevaues and save references to images stored in the datatype
-	        foreach (var setting in item.Prevalues.Where(x => x.Value.Contains("|") ))
-	        {
-	            //split the settings on the | char
-	            var currentSetting = setting.Value.Split('|');
-	            var file = currentSetting[1];
-	 
-	            //simply add to the item.Resources to store and transfer as part of the revision
-	            item.Resources.Add(file);
-	        }
-	    }
-	 
-	    //here we intercept the actual data and replace any unicorn mention with "horse"
-	    public override void PackagingProperty(Core.Item item, ItemProviders.ContentProperty propertyData)
-	    {
-	        //get the refence to the property data object the data is part of
-	        var properties = (ContentPropertyData)item;
-	 
-	        if (propertyData.Value.ToString() == "unicorn")
-	            propertyData.Value = "Horse";
-	    }
-	}
+**Configuration**
+Configuring which data types can contain macro elements to resolve
 
+```xml
+<macros>
+    <!-- Propertytypes that CAN contain macro mark-up (like the ones inserted with TinyMCE) -->
+    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
+    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
+    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
+    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
+</macros>
+```
 
-#Helpers for working with custom XML data
-A common use-case is a data type storing node ID references in an xml structure. Due to Umbracos history and xml usage, this is a common road for data type developers to take. 
-For instance storing data like so:
-	
-	<nodes>
-	  <nodeid>1627</nodeid>
-	  <nodeid>27282</nodeid>
-	</nodes>
+Configuring which macro property types contains references to other nodes
 
-Courier can without issues transfer this, but does not know that the data contains node Ids, so on the other end, this data will break. 
+```xml
+<macroPropertyTypeResolvers>
+    <contentPickers>
+        <!-- Macro Property Types, that store Content IDs, to link to media or content -->
+        <add key="Media Current">mediaCurrent</add>
+        <add key="Content Subs">contentSubs</add>
+        <add key="Content Random">contentRandom</add>
+        <add key="Content picker">contentPicker</add>
+        <add key="Content tree">contentTree</add>
+        <add key="Content All">contentAll</add>
+    </contentPickers>
+</macroPropertyTypeResolvers>
+```
 
-To make it work, Courier needs to know what IDs the xml contains, convert these ids into GUIDs and finally convert those GUIDs back to the corresponding Node IDs when the item is extracted in another location
+### MediaPicker
+* **Full name:** `Umbraco.Courier.DataResolvers.MediaPicker`
+* **Triggers on:** Propertydata, which have a mediapicker as data type (configured in `courier.config`)
+* If value is set, and is an `int`, Courier will convert the value to the media GUID, add the node as a dependency
+* On extraction the GUID will be converted back to the right ID
 
-To solve this, Courier 2.5 comes with a couple of simple helpers which can help digest this xml
+**Configuration**
 
-##Umbraco.Courier.Core.Helpers.XmlDependencies.ReplaceIds
-This simply replace Node Ids with Guids, given a chunk of Valid Xml, and an Xpath Query it will go through the xml and replace ids.
+```xml
+<mediaPickers>
+    <!-- add new datatype elements for data types that stores media ids (ex: "1242" or "1726,2362,2323") -->
+    <add key="mediaPicker">EAD69342-F06D-4253-83AC-28000225583B</add>
+    <add key="damp2">ef94c406-9e83-4058-a780-0375624ba7ca</add>
+</mediaPickers>
+```
 
-	ReplaceIds(xml, xpath, attribute, direction, out replaceIds)
-	
-###Parameters
-
-* Xml: The xml to search for IDs
-* Xpath: the query to find the IDs
-* Attribute: optional, the name of an attribute on the found nodes which contains the ID
-* Direction; enum, can be either FromNodeIdToGuid, or FromGuidToNodeId
-* ReplacedIds: optional, returns a list of NodeIds replace by the method
-
-###Returns
-The Xml as a string with all IDs replaced
-
-###Sample
-	string dataXpath = "//nodeId";
-	List<string> replacedIds = new List<string>();
-	propertyData.Value = XmlDependencies.ReplaceIds(
-	                        propertyData.Value.ToString(),
-	                        dataXpath,  IdentifierReplaceDirection.FromNodeIdToGuid,
-	                        out replacedIds);
-	 
-	//these are the IDs we found in the picker, those documents are a dependency
-	foreach (string guid in replacedIds)
-	{
-	    item.Dependencies.Add(guid, ProviderIDCollection.documentItemProviderGuid);
-	}
+### RelatedLinks
+* **Full name:** `Umbraco.Courier.DataResolvers.RelatedLinks`
+* **Triggers on:** Propertydata, which have a RelatedLinks type as data type
+* If values are set, Courier will convert the values to the corresponding GUIDs, add the nodes as dependencies
+* On extraction the GUIDs will be converted back to the right IDs
 
 
-##Umbraco.Courier.Core.Helpers.XmlDependencies.FindResources
-Searches xml for resource paths, using an Xpath Query
+### RTEstylesheets
+* **Full name:** `Umbraco.Courier.DataResolvers.RTEstylesheets`
+* **Triggers on:** The Rich Text Editor data type
+* If the RTE have any stylesheets associated, these will be added as dependencies to the data type
 
-	FindResources(xml, xpath, attribute);
+### Tags
+* **Full name:** `Umbraco.Courier.DataResolvers.Tags`
+* **Triggers on:**  Propertydata, which have a Tags type as data type
+* Selected tags are included as separate dependencies and extracted along with the document
 
-###Parameters
+### TemplateResources
+* **Full name:** `Umbraco.Courier.DataResolvers.TemplateResources`
+* **Triggers on:**  Templates
+* Detects linked images, JavaScript files and stylesheets
+* These are added as resources and dependencies on packaging
+* It also detects locallinks in the template and adds the linked Node as a dependency
 
-* Xml: The xml to search for resource paths
-* Xpath: the query to find the resource paths
-* Attribute: optional, the name of an attribute on the found nodes which contains the path
+### UltimatePicker
+* **Full name:** `Umbraco.Courier.DataResolvers.UltimatePicker`
+* **Triggers on:**  Propertydata, which have a UltimatePicker type as data type
+* Selected node IDs are converted to GUIDs and the linked nodes are added as dependencies
 
-###Returns
-A `List<string>` containing paths to all found resources
 
-###Sample
-	string resourceXpath = "//url";
-	foreach (var resource in XmlDependencies.FindResources(propertyData.Value.ToString(), resourceXpath, null))
-	{
-	    item.Resources.Add(resource);
-	}
-	
-#PersistenceManager.Default.GetNodeId, GetUniqueId
-If the built-in replaces doesn’t work for your data, you can access node ids. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => Guid or Guid => Node ID.
+### Upload
+* **Full name:** `Umbraco.Courier.DataResolvers.Upload`
+* **Triggers on:**  Propertydata, which have a Upload type as data type
+* If upload field contains a file, the file is added as a resource on the document
 
-As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/guid of.
+**Configuration**
 
-A refence to all NodeObjectTypes is located in Umbraco.Courier.ItemProviders.NodeObjectTypes
+```xml
+<files>
+    <!-- add new datatype elements for data types that stores files as a path ex: /meda/223/file.png -->
+    <add key="Upload">5032a6e6-69e3-491d-bb28-cd31cd11086c</add>
+    <add key="Ucomponents-Filepicker">318a9c2e-3966-4979-8c1d-575c5d5f669b</add>
+</files>
+```
 
-	int nodeId = PersistenceManager.Default.GetNodeId(docGUID);
-	int nodeId2 = PersistenceManager.Default.GetNodeId(docGUID, NodeObjectTypes.Document);
-
-Or the other way around:
-
-	Guid nodeGuid = PersistenceManager.Default.GetUniqueId(docID, NodeObjectTypes.Media);
-	Guid nodeGuid = PersistenceManager.Default.GetUniqueId(docID);
-
+### UsercontrolWrapper
+* **Full name:** `Umbraco.Courier.DataResolvers.UsercontrolWrapper`
+* **Triggers on:**  The UsercontrolWrapper Data types
+* If the data type has a `.ascx` file selected as render, the file is added as a resource to ensure it is transferred with the data type
