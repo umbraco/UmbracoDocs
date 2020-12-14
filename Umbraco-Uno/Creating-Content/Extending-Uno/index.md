@@ -58,7 +58,7 @@ It is important to note that we do not support the functionality of any third-pa
 - [Custom Code](../../Custom-Code)
 - [Widgets](../../Widgets)
 - [Code widget](../../Widgets/Grid/Code)
-- [Grid widget](../../Widget/Grid)
+- [Grid widget](../../Widgets/Grid)
 - [Working with Widgets](../Working-with-widgets)
 
 :::

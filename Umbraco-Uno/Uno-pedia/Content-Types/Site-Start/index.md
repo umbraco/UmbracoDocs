@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The Start page is based on a Content Type called "Site". It serves as the main page of the website, also called the frontpage or root page. When visitors visits the website, the Start page is the first this they will see.
 
-As with most content types in Umbraco Uno, [widgets](../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start page.
+As with most content types in Umbraco Uno, [widgets](../../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start page.
 
 :::note
 The Start page also contains the SEO and the Settings groups for configuring various options around the page like whether or not to hide the footer content and what title should be used for SEO.
@@ -37,7 +37,7 @@ Learn more about the difference of these two as well as how to set them up in th
 
 Add one or more buttons to the right-hand side of the navigation menu.
 
-Read the [Buttons](../../Widgets/Buttons) article for more details on the various options for creating buttons.
+Read the [Buttons](../../../Widgets/Buttons) article for more details on the various options for creating buttons.
 
 ### Phone Number and Email
 
@@ -69,14 +69,14 @@ As with the Navigation group, the Footer group on the Start page, provides confi
 
 ### Footer Columns
 
-The footer section of the websites is setup much like the [Grid widget](../../Widgets/Grid), and provides a total of 7 different widgets:
+The footer section of the websites is setup much like the [Grid widget](../../../Widgets/Grid), and provides a total of 7 different widgets:
 
-* [Contact](../../Widgets/Contact)
+* [Contact](../../../Widgets/Contact)
 * Navigation
-* [Text](../../Widgets/Text)
-* [Opening Hours](../../Widgets/Opening-hours)
-* [Social Links](../../Widgets/Social-links)
-* [Logos](../../Widgets/Logos)
+* [Text](../../../Widgets/Text)
+* [Opening Hours](../../../Widgets/Opening-hours)
+* [Social Links](../../../Widgets/Social-links)
+* [Logos](../../../Widgets/Logos)
 * Line break
 
 :::tip
