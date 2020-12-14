@@ -29,6 +29,11 @@ Once you add a hostname to one of your environments make sure to update the host
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
 :::
 
+:::warning
+If you are using Cloudflare to manage your DNS, do not enable the Cloudflare proxy on CNAME records pointing at **dns.umbraco.io**.  Doing so will result in a Cloudflare ***CNAME Cross-User Banned*** error.
+:::
+
+
 You will also have to specify the hostname for each root node if you are using a multisite setup.
 
 * Go to the Umbraco Backoffice
