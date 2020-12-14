@@ -3,10 +3,12 @@ meta.Title: "Umbraco .Net Core Updates"
 meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
 ---
 
-# Umbraco .Net Core
+# Umbraco .NET Core
 
 :::note
 This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+
+We have created a separate repository for [articles and tutorials for Umbraco on .NET Core](https://github.com/umbraco/UmbracoCMSDocs). Please keep in mind, that this is still a work in progress.
 
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
@@ -67,15 +69,15 @@ To get started, follow the steps outlined below.
 
 ### Known issues in current Alpha release
 
- * Restarts during install
-    * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
- * Previews do not work due to the missing website part
- * Members can’t be created, as we’re still using MembershipProviders
- * Case sensitive filesystems (Linux and sometimes Mac) creates folders in the project like “~” and “**”, and lots of paths are not requested in the correct casing, yet
- * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
- * External logins are not supported yet
- * No support for Packages currently
- * Errors in log "Index Population failed for populator ..."
+* Restarts during install
+  * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
+* Previews do not work due to the missing website part
+* Members can’t be created, as we’re still using MembershipProviders
+* Case sensitive filesystems (Linux and sometimes Mac) creates folders in the project like “~” and “**”, and lots of paths are not requested in the correct casing, yet
+* Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
+* External logins are not supported yet
+* No support for Packages currently
+* Errors in log "Index Population failed for populator ..."
 
 ### Prerequisites
 
@@ -95,8 +97,9 @@ To get started, follow the steps outlined below.
     ```none
     dotnet new -i Umbraco.Templates::0.5.0-alpha002
     ```
-    
+
 ### Steps to update the template from earlier alpha versions
+
 If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
@@ -106,6 +109,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
+
 1. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
 
     ```none
