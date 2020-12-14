@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 With the Instagram widget you can add more branding to your website by displaying a set of posts from your Instagram profile.
 
-In order for this widget to work properly, you will need to configure a set of Instagram related settings on the [General settings](../Uno-pedia/Settings/General-Settings) page.
+In order for this widget to work properly, you will need to configure a set of Instagram related settings on the [General settings](../../Uno-pedia/Settings/General-Settings) page.
 
 ## Sample
 
