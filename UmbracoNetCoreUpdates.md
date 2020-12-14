@@ -20,6 +20,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
 * [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
 * [.NET Core in the Unicorner](https://umbraco.com/blog/the-unicorner-returns-net-core-alpha-release/)
 * [Automated testing in Umbraco](https://umbraco.com/blog/automated-testing-in-umbraco/)
