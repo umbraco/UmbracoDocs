@@ -17,7 +17,7 @@ When minor upgrades are available, you will need a Development environment on yo
 
 ## When do upgrades happen?
 
-* The status page will include all important roll out information: __[http://status.umbraco.io/](http://status.umbraco.io/)__
+* The status page will include all important roll out information: __[https://status.umbraco.io/](https://status.umbraco.io/)__
 * We will release product updates only on __Tuesday__
 * The decision to roll out an upgrade will be made no later than the __Thursday__ prior and that status page will be updated accordingly
 * A product upgrade will be rolled out if:
