@@ -11,7 +11,7 @@ Yes, as Archetype is a third-party created data type you’ll need to include th
 
 ## I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own data types - do I need to do anything special?
 
-Probably not! In most cases including the custom files (and configuration) is enough for Umbraco Cloud to understand how to deploy your site.  In some cases, namely where you’ve created a data type that serializes data or otherwise stores property data in a non-standard format, you’ll need to also create a corresponding data resolver.  Fortunately these are created using the guide and samples [here](https://github.com/umbraco/Umbraco.Courier.Contrib/blob/dev/README.md)
+Probably not! In most cases including the custom files (and configuration) is enough for Umbraco Cloud to understand how to deploy your site.  In some cases, namely where you’ve created a data type that serializes data or otherwise stores property data in a non-standard format, you’ll need to also create a corresponding value connector.  Fortunately these are created using the samples [here](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors)
 
 
 ## I press the “Deploy to Staging/Live” button, then nothing happens.  What’s going on?
