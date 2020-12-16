@@ -59,6 +59,7 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Newtonsoft.Json
 @{
 	// Get access to ContentService
 	var contentService = Services.ContentService;
