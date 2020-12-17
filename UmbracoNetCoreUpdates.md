@@ -146,3 +146,23 @@ The project is now running on the [Kestrel server](https://docs.microsoft.com/en
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
 Once the installation process is complete you might need to **manually restart the application** in order to start the application again and get access to the Umbraco backoffice.
+
+## .NET Core Nightly Builds
+To get the nightly builds, you will need to add another nuget source 
+
+1. Use a command prompt of your choice to insert this custom NuGet feed:
+
+```none
+dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
+```  
+
+1. Install the new Umbraco dotnet template:
+
+You will have to get the latest template from the new source. To do this, you will need to use a wildcard symbol
+
+
+    ```none
+    dotnet new -i Umbraco.Templates::0.5.0-*
+    ```
+    
+Now you can continue from as using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
