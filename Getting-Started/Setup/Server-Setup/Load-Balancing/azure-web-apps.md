@@ -36,7 +36,7 @@ Several file system based services in Umbraco such as the Published Cache and Lu
 ```xml
 <add key="Umbraco.Core.MainDom.Lock" value="SqlMainDomLock" />
 ```
-
+Apply this setting to both the __PRIMARY__ Administrative server and the __REPLICA__ scalable public facing servers.
 ##### v8.6.0 - v8.6.3
 
 The `Umbraco.Core.MainDom.Lock` should be applied to your __MASTER__ Administrative server only.
