@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.0.0 versionTo: 8.6.0
+versionFrom: 8.0.0
+versionTo: 8.6.0
 ---
 
 # Image Cropper
