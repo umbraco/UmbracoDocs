@@ -148,7 +148,8 @@ The next step is to run through the Umbraco CMS installation. If you chose to us
 Once the installation process is complete you might need to **manually restart the application** in order to start the application again and get access to the Umbraco backoffice.
 
 ## .NET Core Nightly Builds
-To get the nightly builds, you will need to add another nuget source 
+
+To get the latest nightly builds - the latest version of the Umbraco dotnet template, you will need to add another NuGet source. 
 
 1. Use a command prompt of your choice to insert this custom NuGet feed:
 
