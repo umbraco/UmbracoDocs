@@ -164,4 +164,4 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 
 In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
 
-Now you can continue from as using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
+Now you can continue in the same way as if you were using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
