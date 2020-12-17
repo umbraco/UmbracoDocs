@@ -84,7 +84,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 ```csharp
 @{
     // Set the value of the property with alias 'pageLabel'
-    content.SetValue(Home.GetModelPropertyType(x => x.PageLabel).Alias, A pre-set string value);
+    content.SetValue(Home.GetModelPropertyType(x => x.PageLabel).Alias, "A pre-set string value");
 }
 ```
 
