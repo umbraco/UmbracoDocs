@@ -157,13 +157,11 @@ To get the latest nightly builds - the latest version of the Umbraco dotnet temp
 dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
 ```  
 
-1. Install the new Umbraco dotnet template:
-
-You will have to get the latest template from the new source. To do this, you will need to use a wildcard symbol
-
-
+2. Install the new Umbraco dotnet template
     ```none
     dotnet new -i Umbraco.Templates::0.5.0-*
     ```
-    
+
+In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
+
 Now you can continue from as using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
