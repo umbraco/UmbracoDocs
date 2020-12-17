@@ -72,24 +72,12 @@ Or, alternatively:
 <img src="@(Model.Image.GetCropUrl("banner", Current.ImageUrlGenerator))" />
 ```
 
-This was obsoleted in 8.7.0:
-```html
-<img src="@(Model.Image.GetCropUrl("banner"))" />
-```
-
 ### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
+
 ```csharp
 @if (Model.HasValue("image"))
 {
     <img src="@Model.Image.GetCropUrl(height: 300, width: 400, imageUrlGenerator: Current.ImageUrlGenerator)" />
-}
-```
-
-This was obsoleted in 8.7.0:
-```csharp
-@if (Model.HasValue("image"))
-{
-    <img src="@Model.Image.GetCropUrl(height: 300, width: 400)" />
 }
 ```
 
