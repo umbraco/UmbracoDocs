@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.7.0
+versionFrom: 8.0.0
+versionTo: 8.6.0
 ---
 
 # Image Cropper
@@ -68,8 +69,9 @@ For rendering a cropped media item, the `.GetCropUrl` is used:
 ```
 
 Or, alternatively:
+
 ```html
-<img src="@(Model.Image.GetCropUrl("banner", Current.ImageUrlGenerator))" />
+<img src="@(Model.Image.GetCropUrl("banner"))" />
 ```
 
 ### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
@@ -77,7 +79,7 @@ Or, alternatively:
 ```csharp
 @if (Model.HasValue("image"))
 {
-    <img src="@Model.Image.GetCropUrl(height: 300, width: 400, imageUrlGenerator: Current.ImageUrlGenerator)" />
+    <img src="@Model.Image.GetCropUrl(height: 300, width: 400)" />
 }
 ```
 
