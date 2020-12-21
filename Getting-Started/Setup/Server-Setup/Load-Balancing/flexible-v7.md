@@ -201,4 +201,4 @@ Scaling will be a slightly manual process because it would involve you adding se
 
 ## Advanced techniques
 
-Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).
+Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced-v7.md).
