@@ -44,11 +44,14 @@ When you save the file, the site will restart and run a migration step, migratin
 
 ## Migrating forms in files into a site
 
-If you have a v8 site running that stores Forms in the database but you have forms in file format you need migrated from a different site, you can force Forms to run the migration of those files again.
+If you have a Umbraco 8 site running that stores Forms in the database but you have the forms in file-format, you can force Forms to run the migration of those files again.
 
-First of all you should ensure that you have forms in the db enabled as the migration requires it (StoreUmbracoFormsInDb). You should never do this on a live site, but test it locally so if things blow up you can revert!
+First of all, you should ensure that you have enabled the setting that persists forms in the database, as the migration requires this (`StoreUmbracoFormsInDb`). We highly recommend that you test this on a local setup before applying it to your live site.
 
-1. Copy over the Forms, workflows, prevaluesources and datasourcefiles to the site in the "normal" position (~\App_Data\UmbracoForms\Data)
-1. Go to the database and find the `[umbracoKeyValue]` table, find the forms row and check that the value is "1d084819-84ba-4ac7-b152-2c3d167d22bc" (if not you are not currently working with forms in the db and changing the setting should be enough!)
-1. Change that value to instead be "{forms-init-complete}"
-1. Restart the site, it will now try to migrate the forms files into the database, in the umbracoTraceLog you can follow the progress, it should throw errors if anything goes wrong and we'd expect it to log out "The Umbraco Forms DB table {TableName} already exists" for the 4 Forms tables prior to starting the migration.
+1. Copy over the Forms, workflows, prevaluesources, and datasource files to the site into `~\App_Data\UmbracoForms\Data`.
+1. Go to the database and find the `[umbracoKeyValue]` table.
+1. Find the forms row and check that the value is `1d084819-84ba-4ac7-b152-2c3d167d22bc` (if not you are not currently working with forms in the database, changing the setting should be enough).
+1. Change that value to `{forms-init-complete}`
+1. Restart the site.
+
+The site will now try to migrate the forms files into the database. In the umbracoTraceLog you can follow the progress. It will throw errors if anything goes wrong and it will log out "The Umbraco Forms DB table {TableName} already exists" for the 4 Forms tables prior to starting the migration.
