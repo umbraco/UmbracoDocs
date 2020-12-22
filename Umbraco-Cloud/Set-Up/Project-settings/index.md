@@ -36,6 +36,8 @@ All Staging and Development environments on Umbraco Cloud projects are by defaul
 
 :::note
 On **Trial** projects the basic authentication is enabled on the Live environment. This cannot be removed before setting up a subscription for the Cloud project.
+
+On **Paid projects** you will have access to the pubic access feature when you are on the Standard plan or higher.  
 :::
 
 On the **Public access** page you can also allow IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the allowed IPs.
