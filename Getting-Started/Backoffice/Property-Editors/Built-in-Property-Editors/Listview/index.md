@@ -113,3 +113,55 @@ And display it in the listview. Shown in the example below:
 
 ![List view other examples](images/others.png)
 ![List view other examples](images/others-result.png)
+
+## Add a child item programmatically
+
+See the example below to see how a child can be added to a list. To add a child to a listview you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+	// Get access to ContentService
+	var contentService = Services.ContentService;
+	
+	// Create a variable for the GUID of the parent where you want to add a child item
+	var parentId = Guid.Parse("b6fbbb31-a77f-4f9c-85f7-2dc4835c7f31");
+	
+	// Create a new child item of type person
+	var person = contentService.Create("James", parentId, "person"); 
+	
+	// Set the value of the property with alias 'email'
+	person.SetValue("email" , "james@contact.com");
+	
+	// Set the value of the property with alias 'isAuthor'
+	person.SetValue("isAuthor", false);
+
+	// Save the child item
+	contentService.Save(person);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the parent page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    
+	// Create a new child item of type person
+	var person = contentService.Create("James", parentId, Person.ModelTypeAlias); 
+	
+	// Set the value of the property with alias 'email'
+	person.SetValue(Person.GetModelPropertyType(x => x.Email).Alias , "james@contact.com");
+	
+	// Set the value of the property with alias 'isAuthor'
+	person.SetValue(Person.GetModelPropertyType(x => x.IsAuthor).Alias, false);
+}
+```
+
