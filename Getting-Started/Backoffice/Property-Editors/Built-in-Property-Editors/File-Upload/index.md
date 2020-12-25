@@ -57,6 +57,9 @@ See the example below to see how a value can be added or changed programmaticall
 @{
 	// Get access to ContentService
 	var contentService = Services.ContentService;
+	
+    // Get access to MediaService 
+    var mediaService = Services.MediaService;
 
 	// Create a variable for the GUID of the parent where you want to add a child item
 	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -77,7 +80,7 @@ See the example below to see how a value can be added or changed programmaticall
 	var filename = imageUrl.Substring(lastIndex, imageUrl.Length - lastIndex);
 
 	// Create a media file
-	var media = Services.MediaService.CreateMediaWithIdentity("myImage", -1, "File");
+	var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
 	media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
 
 	// Save the created media 
