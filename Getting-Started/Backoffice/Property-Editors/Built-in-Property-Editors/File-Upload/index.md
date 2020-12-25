@@ -84,7 +84,7 @@ See the example below to see how a value can be added or changed programmaticall
 	media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
 
 	// Save the created media 
-	Services.MediaService.Save(media);
+	mediaService.Save(media);
 
 	// Get the published version of the media (IPublishedContent)
 	var publishedMedia = Umbraco.Media(media.Id);
