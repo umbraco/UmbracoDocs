@@ -82,7 +82,3 @@ Although the use of a GUID is preferable, you can also use it's numeric ID:
 // Check if there are children
 var hasChildren = contentTypeService.HasChildren(1234);
 ```
-
-
-
-
