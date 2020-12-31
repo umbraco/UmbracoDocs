@@ -4,12 +4,6 @@ versionFrom: 7.0.0
 
 # Accessing the cache
 
-:::warning
-Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
-
-The documentation available around caching in the current Umbraco version can be found here: [Caching](../Cache).
-:::
-
 You should always be doing this consistently with the best practices listed below. You shouldn't be using HttpRuntime.Cache or HttpContext.Current.Cache directly, you should always be accessing it via the ApplicationContext.ApplicationCache object (`Umbraco.Core.CacheHelper`).
 
 ## Cache types
