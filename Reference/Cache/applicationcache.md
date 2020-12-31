@@ -33,7 +33,7 @@ public class MyClass
 
     private IAppPolicyCache _runtimeCache;
     private IAppCache _requestCache;
-	private IsolatedCaches _isolatedCaches;
+    private IsolatedCaches _isolatedCaches;
 	
     public MyClass(AppCaches appCaches)
     {
