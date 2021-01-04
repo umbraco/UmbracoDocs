@@ -78,7 +78,7 @@ var hasChildren = contentTypeService.HasChildren(Guid.Parse("2b54088e-d355-4b9e-
 
 Although the use of a GUID is preferable, you can also use it's numeric ID:
 
-```C#
+```csharp
 // Check if there are children
 var hasChildren = contentTypeService.HasChildren(1234);
 ```
