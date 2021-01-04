@@ -8,7 +8,7 @@ You should always be doing this consistently with the best practices listed belo
 
 ## Cache types
 
-The `AppCaches` which can be found in namespace `Umbraco.Core.Cache` contains servaral types of cache: Runtime Cache, Request Cache and Isolated Cache.
+The `AppCaches` which can be found in namespace `Umbraco.Core.Cache` contains several types of cache: Runtime Cache, Request Cache and Isolated Cache.
 
 **Runtime Cache** is the most commonly used and is synonymous with HttpRuntime.Cache.
 **Request cache** is cache that exists only for the current request. This is synonymous with HttpContext.Current.Items and **isolated caches** are used by e.g. repositories, to ensure that each cached entity type has its own cache. When they have their own cache lookups are fast and the repository does not need to search through all keys on a global scale.
