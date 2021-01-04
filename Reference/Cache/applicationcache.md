@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Accessing the cache
 
-You should always be doing this consistently with the best practices listed below. You shouldn't be using HttpRuntime.Cache or HttpContext.Current.Cache directly, you should always be accessing it via the ApplicationContext.ApplicationCache object (`Umbraco.Core.Cache.AppCaches`).
+You should always be doing this consistently with the best practices listed below. You shouldn't be using HttpRuntime.Cache or HttpContext.Current.Cache directly. Instead, you should always be accessing it via the ApplicationContext.ApplicationCache object (`Umbraco.Core.Cache.AppCaches`).
 
 ## Cache types
 
