@@ -73,12 +73,12 @@ In some cases it can be useful to check if a content type has children. The `Has
 
 ```csharp
 // Check if there are children
-var hasChildren = contentTypeService.HasChildren(Guid.Parse("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"));
+bool hasChildren = contentTypeService.HasChildren(Guid.Parse("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"));
 ```
 
 Although the use of a GUID is preferable, you can also use it's numeric ID:
 
 ```csharp
 // Check if there are children
-var hasChildren = contentTypeService.HasChildren(1234);
+bool hasChildren = contentTypeService.HasChildren(1234);
 ```
