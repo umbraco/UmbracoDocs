@@ -71,7 +71,7 @@ IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(Guid.Par
 
 In some cases it can be useful to check if a content type has children. The `HasChildren` method can be used to check whether a content type has children.
 
-```C#
+```csharp
 // Check if there are children
 var hasChildren = contentTypeService.HasChildren(Guid.Parse("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"));
 ```
