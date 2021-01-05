@@ -113,7 +113,7 @@ you will most likely see some errors in your templates / macros.
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Core.PropertyEditors.ValueConverters;
+@using Umbraco.Core.PropertyEditors.ValueConverters
 @using Newtonsoft.Json
 @{
 	// Get access to ContentService
