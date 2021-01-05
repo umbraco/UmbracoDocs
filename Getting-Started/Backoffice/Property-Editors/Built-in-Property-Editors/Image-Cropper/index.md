@@ -107,3 +107,57 @@ applied. The old image will even be available in the cropper, so you can modify 
 
 However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value,
 you will most likely see some errors in your templates / macros.
+
+## Add values programmatically
+
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@using Umbraco.Core.PropertyEditors.ValueConverters
+@using Newtonsoft.Json
+@{
+	// Get access to ContentService
+	var contentService = Services.ContentService;
+	
+	// Create a variable for the GUID of the page you want to update
+	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+	// Get the page using the GUID you've defined
+	var content = contentService.GetById(guid); // ID of your page
+
+	// Create a variable for the GUID of the media item you want to use
+	var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
+
+	// Get the desired media file
+	var media = Umbraco.Media(mediaKey);
+
+	// Create a variable for the image cropper and set the source 
+	var cropper = new ImageCropperValue {Src = media.Url()};
+
+	// Serialize the image cropper value 
+	var cropperValue = JsonConvert.SerializeObject(cropper);
+
+	// Set the value of the property with alias 'cropper'
+	content.SetValue("cropper", cropperValue);
+
+	contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    // Set the value of the property with alias 'cropper'
+    content.SetValue(Home.GetModelPropertyType(x => x.Cropper).Alias, cropperValue);
+}
+```
