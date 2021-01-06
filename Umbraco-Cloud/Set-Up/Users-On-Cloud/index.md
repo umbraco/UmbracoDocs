@@ -20,7 +20,7 @@ By default, when added to the project as a Team member, they will be added as us
 
 Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
-Check out the [Users article](../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
+Check out the [Users article](../../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
 Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
