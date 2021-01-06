@@ -113,4 +113,3 @@ And display it in the listview. Shown in the example below:
 
 ![List view other examples](images/others.png)
 ![List view other examples](images/others-result.png)
-
