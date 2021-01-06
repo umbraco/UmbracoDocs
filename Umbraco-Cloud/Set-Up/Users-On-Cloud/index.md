@@ -14,13 +14,13 @@ In this article, we will show how users work, as well as explain the different s
 
 There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
-You can add them as a [Team member](/Umbraco-Cloud/Set-Up/Team-Members/) from the project portal on Umbraco Cloud.
+You can add them as a [Team member](../Team-Members/) from the project portal on Umbraco Cloud.
 
 By default, when added to the project as a Team member, they will be added as users to the backoffice of all the environments as administrators.
 
 Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
-Check out the [Users article](/Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
+Check out the [Users article](../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
 Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
