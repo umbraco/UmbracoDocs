@@ -1249,6 +1249,10 @@ input ContentFilterInput {
 }
 ```
 
+:::note
+Filtering is possible only on simple types. Filtering on complex types like content picker, multi-node tree picker has to be done client side.
+:::
+
 ### Strings
 
 For fields returning `String` the following filter fields are generated.
