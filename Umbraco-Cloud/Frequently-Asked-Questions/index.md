@@ -81,7 +81,9 @@ If you have questions about how many resources your site is using, then please r
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes. Point the DNS for your hostname(s) to the CNAME (dns.umbraco.io) for Umbraco Cloud and set the hostname to 'DNS Only' for the hostname that you want to use on Umbraco Cloud. It is currently not possible to proxy a hostname to Umbraco Cloud, as that would result in a Cloudflare to Cloudflare setup, which is currently not supported.  You can continue to use Cloudflare's full feature set for other hostnames under your domain outside of Umbraco Cloud. Please note that Umbraco Cloud uses Cloudflare for all custom hostnames with automatic TLS (HTTPS) certificates. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
+Yes you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
+
+Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### What versions of .NET does Cloud support?
 
