@@ -30,3 +30,6 @@ Render content created with Grid Layouts in your templates.
 
 ## [Grid Layout Best Practices](Grid-Layout-Best-Practices.md)
 General guidelines when contemplating Grid Layout implementation.
+
+## [Add values programmatically](Add-Value-Programmatically.md)
+Example how to add values programmatically.
