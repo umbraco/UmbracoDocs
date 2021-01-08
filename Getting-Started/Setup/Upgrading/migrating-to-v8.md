@@ -91,7 +91,7 @@ Once it is upgraded and you have verified everything is working, move on to step
 
 First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all works and that no content is there (_hint:_ choose not to install starter kit).
 
-See 'Known Issue' (above) regarding upgrading directly to version 8.6 and above.
+See the [known issues](#known-issues) section above regarding migrating directly to version 8.6 and above.
 
 ![Fresh 8.1 site](images/fresh-8_1-site.png)
 
