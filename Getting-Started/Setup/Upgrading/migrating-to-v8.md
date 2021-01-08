@@ -83,7 +83,7 @@ The updated properties are:
 You can see if your site is using the obsolete properties by the `(Obsolete)` prefix in their name.
 :::
 
-Install (Pre-migration health checks plugin) https://our.umbraco.com/packages/developer-tools/pre-migration-health-checks/ - and run this healthcheck from the developer section of the backoffice to indentify and resolve some common database schema issues before migration.
+Install the [Pre-migration health checks plugin](https://our.umbraco.com/packages/developer-tools/pre-migration-health-checks/), and run this health check from the Developer section of the backoffice to identify and resolve some common database schema issues before migration.
 
 Once it is upgraded and you have verified everything is working, move on to step 2.
 
