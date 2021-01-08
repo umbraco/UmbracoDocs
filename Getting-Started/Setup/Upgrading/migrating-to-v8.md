@@ -25,7 +25,9 @@ The database types that are supported are SQL Server and SQL CE.
 Feedback from user testing has shown that some databases are harder to migrate than others.
 We are collecting [a list of these known issues on our GitHub Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues?utf8=%E2%9C%93&q=label%3Acategory%2Fcontent-migration+). There is a community package: [Pre-migration health checks](https://our.umbraco.com/packages/developer-tools/pre-migration-health-checks/) that you can install on your V7 site before migration to help identify and resolve some of these common issues before triggering the migration steps detailed below.
 
-A new migration was introduced in v8.6 which 'currently' breaks the migration process [Issue #7914](https://github.com/umbraco/Umbraco-CMS/issues/7914). The workaround is to either:
+A migration was introduced in v8.6 which 'currently' breaks the migration process. See [Issue #7914](https://github.com/umbraco/Umbraco-CMS/issues/7914) for more details. 
+
+As a workaround, you can either
 
 migrate to version 8.5 as a first step, and then post-migration carry out a normal Umbraco upgrade to V8.x latest version.
 
