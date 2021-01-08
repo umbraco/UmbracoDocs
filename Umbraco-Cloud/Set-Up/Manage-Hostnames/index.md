@@ -65,7 +65,7 @@ CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/h
 example.com. IN CAA 0 issue "digicert.com"
 ```
 
-This is necessary, because the certificates issed on Umbraco Cloud are issued by Digicert.
+This is necessary because the certificates issued on Umbraco Cloud are issued by DigiCert.
 
 It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated.
 
