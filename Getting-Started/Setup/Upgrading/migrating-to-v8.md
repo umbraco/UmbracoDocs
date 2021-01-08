@@ -29,7 +29,7 @@ A migration was introduced in v8.6 which 'currently' breaks the migration proces
 
 As a workaround, you can either
 
-migrate to version 8.5 as a first step, and then post-migration carry out a normal Umbraco upgrade to V8.x latest version.
+* Migrate to version 8.5 as a first step, and then post-migration, carry out a normal Umbraco upgrade to the latest version of Umbraco 8, or
 
 or:
 
