@@ -23,7 +23,7 @@ This guide will show you how to bind your hostname to your Umbraco Uno environme
 
 ### Configure DNS records
 
-It is recommended to set-up a CNAME record pointing at `dns.umbraco.io`. As alternative you can use an A-record pointing to one of the two Umbraco Cloud service IP addresses: `104.19.191.28` or `104.19.208.28`.
+It is recommended to set-up a CNAME record pointing at `dns.umbraco.io`. As alternative, you can use an A-record pointing to one of the two Umbraco Cloud service IP addresses: `104.19.191.28` or `104.19.208.28`.
 
 Check with your DNS host or hostname provider for details on how to configure this for your hostnames.
 
@@ -33,7 +33,7 @@ Check with your DNS host or hostname provider for details on how to configure th
 - Select Hostnames
 - Once inside Hostnames, click "Add new hostname"
 - Add your hostname to the field and select add
-- To keep track of the process, you can refresh the page when it is done sucessfully it will say: "Protected"
+- To keep track of the process, you can refresh the page when it is done successfully it will say: "Protected".
 
 ### Securing your site
 
