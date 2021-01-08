@@ -4,6 +4,14 @@ versionFrom: 8.0.0
 
 # Add values programmatically
 
+## 	Configuration
+
+For this example, the default grid configuration has been used.
+
+![Grid configuration](images/Grid-configuration.jpg)
+
+
+## Set value
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
