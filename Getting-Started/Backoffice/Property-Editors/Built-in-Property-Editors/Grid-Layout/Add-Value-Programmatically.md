@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 For this example, the default grid configuration has been used.
 
-![Grid configuration](images/Grid-configuration.jpg)
+![Grid configuration](Images/Grid-configuration.jpg)
 
 
 ## Set value
@@ -93,4 +93,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.Body).Alias, serializedGridValue);
 }
 ```
-
