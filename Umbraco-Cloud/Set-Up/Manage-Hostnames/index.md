@@ -59,7 +59,7 @@ When creating a CNAME or A-record for your hostname in Cloudflare you need to st
 
 ### Using Certificate Authority Authorization (CAA) for your domain?
 
-CAA is a new [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which CAs are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to add the following (or remove CAA entirely):
+CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which CAs are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following:
 
 ```
 example.com. IN CAA 0 issue "digicert.com"
