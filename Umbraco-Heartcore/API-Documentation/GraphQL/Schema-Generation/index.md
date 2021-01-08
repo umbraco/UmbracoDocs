@@ -1250,7 +1250,7 @@ input ContentFilterInput {
 ```
 
 :::note
-Filtering is possible only on simple types. Filtering on complex types like content picker, multi-node tree picker has to be done client side.
+Filtering is possible only on non-complex Property Editors like Text Area and Label. Filtering on more complex types like Content Picker and Multi-node Tree Picker has to be done client-side.
 :::
 
 ### Strings
