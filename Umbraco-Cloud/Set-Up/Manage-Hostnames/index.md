@@ -59,13 +59,13 @@ When creating a CNAME or A-record for your hostname in Cloudflare you need to st
 
 ### Using Certificate Authority Authorization (CAA) for your domain?
 
-CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which CAs are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following:
+CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which Certificate Authorities (CAs) are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
 
 ```
 example.com. IN CAA 0 issue "digicert.com"
 ```
 
-This is necessary because the certificates issued on Umbraco Cloud are issued by DigiCert.
+This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
 
 It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated.
 
