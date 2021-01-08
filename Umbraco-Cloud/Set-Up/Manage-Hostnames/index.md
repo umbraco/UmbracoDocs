@@ -46,10 +46,28 @@ Once you've assigned a hostname to your Umbraco Cloud environment, you may want 
 All hostnames added to a Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
 
 :::note
-Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare.
+Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
 
 Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Move-away-from-Latch) article.
 :::
+
+### Is your domain hosted on your own Cloudflare account?
+
+Cloudflare is a popular DNS provider, which offers a variety of different services to improve performance and security. We also use it for DNS and Hostnames on Umbraco Cloud. This means that when your own domain is also hosted with Cloudflare you need to enroll the hostname you want to add to your Umbraco Cloud project in a slightly different way.
+
+When creating a CNAME or A-record for your hostname in Cloudflare you need to start with Proxy Status set to 'DNS Only'. Once your hostname is marked with "Protected" under the Hostname page for your Umbraco Cloud project and you can access your website through the hostname, you can choose to change Proxy Status to 'Proxying'. This is mostly relevant when you need to use specific Cloudflare services like Page Rules, Workers, or the like. If you keep the Proxy Status set to 'DNS Only' Umbraco Cloud will handle the automatic TLS setup to ensure that your hostname is always protected with HTTPS.
+
+### Using Certificate Authority Authorization (CAA) for your domain?
+
+CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which Certificate Authorities (CAs) are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
+
+```
+example.com. IN CAA 0 issue "digicert.com"
+```
+
+This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
+
+It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated.
 
 ## [Upload certificates manually](Security-Certificates)
 
