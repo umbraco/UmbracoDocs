@@ -9,7 +9,7 @@ In this section, you can find all the information needed in order to publish you
 - [Domain/Hostname](#domain-hostname)
 - [Configure DNS records](#configure-dns-records)
 - [Add Hostnames from the portal](#add-hostname-from-the-portal)
-- [Umbraco Latch](#umbraco-latch)
+- [Securing your site](#securing-your-site)
 - [SMTP](#smtp)
 - [SEO](#seo)
 - [Newsletter](#newsletter)
@@ -23,7 +23,8 @@ This guide will show you how to bind your hostname to your Umbraco Uno environme
 
 ### Configure DNS records
 
-It is recommended to set-up an ALIAS record for your root hostname (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address - 23.100.15.180.
+It is recommended to set-up a CNAME record pointing at `dns.umbraco.io`. As alternative, you can use an A-record pointing to one of the two Umbraco Cloud service IP addresses: `104.19.191.28` or `104.19.208.28`.
+
 Check with your DNS host or hostname provider for details on how to configure this for your hostnames.
 
 ### Add Hostname from the portal
@@ -32,16 +33,13 @@ Check with your DNS host or hostname provider for details on how to configure th
 - Select Hostnames
 - Once inside Hostnames, click "Add new hostname"
 - Add your hostname to the field and select add
-- To keep track of the process, you can refresh the page when it is done sucessfully it will say: Protected by LATCH  
+- To keep track of the process, you can refresh the page when it is done successfully it will say: "Protected".
 
-#### Video tutorial
+### Securing your site
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/4x3DPwQMTr0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+Every Umbraco Uno project is automatically protected by a TLS (HTTPS) security certificate provided by the Umbraco Cloud service.
 
-### Umbraco Latch
-
-Every Umbraco Uno project is protected by Umbraco Latch witch means that a TLS Certificate will be applied automatically.
-If you are interested in learning more about Umbraco Latch check out the [product page on Umbraco.com](https://umbraco.com/products/umbraco-cloud/umbraco-latch/).
+If you are interested in learning more about this feature, check out the [Manage hostnames](../../../Umbraco-Cloud/Set-up/Manage-Hostnames) article in the Umbraco Cloud section.
 
 ## SMTP
 
