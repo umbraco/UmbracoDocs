@@ -30,10 +30,7 @@ A migration was introduced in v8.6 which 'currently' breaks the migration proces
 As a workaround, you can either
 
 * Migrate to version 8.5 as a first step, and then post-migration, carry out a normal Umbraco upgrade to the latest version of Umbraco 8, or
-
-or:
-
-Install the following community Nuget Package: https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations into your V8 project before running the migration (no configuration required). This package was created by the awesome Umbraco Gold Partner [ProWorks](https://www.proworks.com/) and patches the migration process so you can migrate directly from V7.latest to V8.6+ without encountering the above issue (and other issues too! #h5yr)
+* Install the following community Nuget Package: [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) into your V8 project before running the migration (no configuration required). This package was created by Umbraco Gold Partner [ProWorks](https://www.proworks.com/) and patches the migration process so you can migrate directly from the latest Umbraco 7 to V8.6+ without encountering the above issue (and other issues too #h5yr).
 
 ### Third party property editors
 
