@@ -26,6 +26,14 @@ Check out the [Users article](../../../Getting-Started/Data/Users/) for an in-de
 Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
 :::
 
+## Invite user through the Umbraco backoffice
+
+As mentioned, it is possible to invite new users to your Umbraco Cloud project through the backoffice.
+
+To do this you need to first navigate to the backoffice of your project and go to the User section.
+
+In the User section in the backoffice you can invite a new user to the Umbraco backoffice 
+
 ## User group permissions for transfers and restores
 
 On Umbraco Cloud, it is possible to control which users have access to transferring and restoring content and media on your Umbraco Cloud project.
