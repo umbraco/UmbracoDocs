@@ -37,9 +37,9 @@ public class MyClass
 	
     public MyClass(AppCaches appCaches)
     {
-        _runtimeCache = appCaches;
-        _requestCache = appCaches;
-        _isolatedCaches = appCaches;
+        _runtimeCache = appCaches.RuntimeCache;
+        _requestCache = appCaches.RequestCache;
+        _isolatedCaches = appCaches.IsolatedCaches;
     }
 
 }
