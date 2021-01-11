@@ -31,9 +31,9 @@ IsolatedCaches isolatedCaches = AppCaches.IsolatedCaches;
 public class MyClass
 {
 
-    private IAppPolicyCache _runtimeCache;
-    private IAppCache _requestCache;
-    private IsolatedCaches _isolatedCaches;
+    private readonly IAppPolicyCache _runtimeCache;
+    private readonly IAppCache _requestCache;
+    private readonly IsolatedCaches _isolatedCaches;
 	
     public MyClass(AppCaches appCaches)
     {
