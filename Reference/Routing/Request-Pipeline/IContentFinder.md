@@ -103,8 +103,7 @@ namespace My.Website.ContentFinders
         }
         public bool TryFindContent(PublishedRequest contentRequest)
         {
-            //find the root node with a matching domain to the incoming request
-            var url = contentRequest.Uri.ToString();
+            //find the root node with a matching domain to the incoming request            
             var allDomains = _domainService.GetAll(true);
             var domain = allDomains?.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : (allDomains.Any() ? allDomains.FirstOrDefault().RootContentId : null);
