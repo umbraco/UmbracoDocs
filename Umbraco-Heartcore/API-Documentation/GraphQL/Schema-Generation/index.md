@@ -1249,6 +1249,10 @@ input ContentFilterInput {
 }
 ```
 
+:::note
+Filtering is possible only on non-complex Property Editors like Text Area and Label. Filtering on more complex types like Content Picker and Multi-node Tree Picker has to be done client-side.
+:::
+
 ### Strings
 
 For fields returning `String` the following filter fields are generated.
