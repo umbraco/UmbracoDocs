@@ -23,7 +23,14 @@ The database types that are supported are SQL Server and SQL CE.
 ### Known issues
 
 Feedback from user testing has shown that some databases are harder to migrate than others.
-We are collecting [a list of these known issues on our GitHub Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues?utf8=%E2%9C%93&q=label%3Acategory%2Fcontent-migration+). We will work on these for the next upcoming releases.
+We are collecting [a list of these known issues on our GitHub Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues?utf8=%E2%9C%93&q=label%3Acategory%2Fcontent-migration+). There is a community package: [Pre-migration health checks](https://our.umbraco.com/packages/developer-tools/pre-migration-health-checks/) that you can install on your V7 site before migration to help identify and resolve some of these common issues before triggering the migration steps detailed below.
+
+A migration was introduced in v8.6 which 'currently' breaks the migration process. See [Issue #7914](https://github.com/umbraco/Umbraco-CMS/issues/7914) for more details. 
+
+As a workaround, you can either
+
+* Migrate to version 8.5 as a first step, and then post-migration, carry out a normal Umbraco upgrade to the latest version of Umbraco 8, or
+* Install the following community Nuget Package: [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) into your V8 project before running the migration (no configuration required). This package was created by Umbraco Gold Partner [ProWorks](https://www.proworks.com/) and patches the migration process so you can migrate directly from the latest Umbraco 7 to V8.6+ without encountering the above issue (and other issues too #h5yr).
 
 ### Third party property editors
 
@@ -76,12 +83,15 @@ The updated properties are:
 You can see if your site is using the obsolete properties by the `(Obsolete)` prefix in their name.
 :::
 
+Install the [Pre-migration health checks plugin](https://our.umbraco.com/packages/developer-tools/pre-migration-health-checks/), and run this health check from the Developer section of the backoffice to identify and resolve some common database schema issues before migration.
 
 Once it is upgraded and you have verified everything is working, move on to step 2.
 
 ### Step 2: Migrating content to Umbraco 8
 
 First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all works and that no content is there (_hint:_ choose not to install starter kit).
+
+See the [known issues](#known-issues) section above regarding migrating directly to version 8.6 and above.
 
 ![Fresh 8.1 site](images/fresh-8_1-site.png)
 

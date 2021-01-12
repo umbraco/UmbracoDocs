@@ -346,28 +346,30 @@ namespace Umbraco8.Composers
     {
         public void Compose(Composition composition)
         {
-            // if your service makes use of the current UmbracoContext, eg AssignedContentItem - register the service in Request scope
+            // if your service makes use of the current UmbracoContext, eg AssignedContentItem - register the service using the 'Request' or 'Scope' lifetimes
             // composition.Register<ISiteService, SiteService>(Lifetime.Request);
-            // if not then it is better to register in 'Singleton' Scope
+            // if not then it is better to register using the 'Singleton' lifetime
             composition.Register<ISiteService, SiteService>(Lifetime.Singleton);
         }
     }
 }
 ```
 
-#### Lifespans
+#### Lifetimes
 
 **"Transient"** services can be injected into "Transient" and below ⤵. (i.e. "Transient" services can be injected anywhere)
 
 - "Transient" means that anytime this type is needed a brand new instance of this type will be created.
 
+**"Request"** services can be injected into "Request"/"Scope" based lifetimes only
+- "Request" based lifetime is very similar to the "Transient" lifetime - anytime this type is needed a brand new instance of this type will be created. The difference between "Request" and "Transient" is that, with "Request", the instance will be disposed of at the end of the current HttpRequest.
+
+**"Scope"** services can be injected into "Request"/"Scope" based lifetimes only
+- "Scope" means that a single instance of this type will be created for the duration of the current HttpRequest. The instance will be disposed of at the end of the current HttpRequest.
+
 **"Singleton"** services can be injected into "Singletons" and below ⤵.
 
 - "Singleton" means that only a single instance of this type will ever be created for the lifetime of the application.
-
-**"Request"** services can be injected into "Request" based lifespans only
-
-- "Request" based lifetime means anytime this type is needed one new instance of this type will be created for the duration of the current HttpRequest. The object will be disposed of at the end of the current HttpRequest.
 
 #### Implementing the service
 

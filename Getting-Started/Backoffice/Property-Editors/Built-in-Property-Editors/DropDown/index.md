@@ -36,7 +36,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## MVC View Example
 
-### Typed - single item
+### Single item - without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("category"))
@@ -45,7 +45,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 }
 ```
 
-### Typed - multiple items
+### Multiple items - without Modelsbuilder
 
 ```csharp
 @if (Model.HasValue("categories"))
@@ -59,3 +59,71 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
     </ul>
 }
 ```
+
+### Single item - with Modelsbuilder
+
+```csharp
+@if (Model.Category.HasValue())
+{
+    <p>@Model.Category</p>
+}
+```
+
+### Multiple items - with Modelsbuilder
+
+```csharp
+@if (Model.Categories.Any())
+{
+    <ul>
+        @foreach (var category in Model.Categories)
+        {
+            <li>@category</li>
+        }
+    </ul>
+}
+```
+
+## Add values programmatically
+
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@using Newtonsoft.Json
+@{
+	// Get access to ContentService
+	var contentService = Services.ContentService;
+
+	// Create a variable for the GUID of the page you want to update
+	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+	// Get the page using the GUID you've defined
+	var content = contentService.GetById(guid); // ID of your page
+	
+	// Set the value of the property with alias 'categories'. 
+	content.SetValue("categories", JsonConvert.SerializeObject(new[] { "News" }));
+
+	// Save the change
+	contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    // Set the value of the property with alias 'categories'
+    content.SetValue(Home.GetModelPropertyType(x => x.Categories).Alias, JsonConvert.SerializeObject(new[] { "News" }));
+}
+```
+
+
+

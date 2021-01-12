@@ -94,7 +94,7 @@ This control gives the same functionality as the standard listview, but allows y
 
 `Alias: Umbraco.MarkdownEditor`
 
-[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.
+[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML. The built-in editor allow the user to use the markdown formatting options.
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
@@ -104,7 +104,7 @@ The markdown editor will be interpreted by the Models Builder. Behind the scenes
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
-## Member Group Picker
+## [Member Group Picker](Member-Group-Picker/index.md)
 
 `Alias: Umbraco.MemberGroupPicker`
 
@@ -152,9 +152,9 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 `Alias: Umbraco.TinyMCE`
 
-A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
+A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable. Probably one of the most used controls in Umbraco projects.
 
-## Slider
+## [Slider](Slider/index.md)
 
 `Alias: Umbraco.Slider`
 
@@ -182,4 +182,4 @@ A normal html input text field.
 
 `Alias: Umbraco.UserPicker`
 
-The easiest way to pick a person from user backend users.  See Members for front-end users.
+The easiest way to pick a person from user backend users. See Members for front-end users.

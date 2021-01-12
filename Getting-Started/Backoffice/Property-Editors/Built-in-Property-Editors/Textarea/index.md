@@ -32,13 +32,47 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ![Textbox Content Example With Limits](images/Textarea-Content-Limit-v8.png)
 
-
 ## MVC View Example
+
+### Without Modelsbuilder
 
 ```csharp
 @{
     if (Model.HasValue("description")){
         <p>@(Model.Value<string>("description"))</p>
     }
+}
+```
+
+### With Modelsbuilder
+
+```csharp
+@{
+    if (Model.Description.HasValue())
+    {
+        <p>@Model.Description</p>
+    }
+}
+```
+
+## Add value programmatically
+
+See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+    // Get access to ContentService
+    var contentService = Services.ContentService;
+
+    // Create a variable for the GUID of your page
+    var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
+
+    // Get the page using the GUID you've just defined
+    var content = contentService.GetById(guid);
+    // Set the value of the property with alias 'description'
+    content.SetValue("description", "This is some text for the text area!");
+
+    // Save the change
+    contentService.Save(content);
 }
 ```

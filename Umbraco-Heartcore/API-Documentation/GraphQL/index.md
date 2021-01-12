@@ -6,7 +6,7 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL API"
 
 # GraphQL API
 
-The GraphQL API accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
+The GraphQL API can be accessed on `https://graphql.umbraco.io`, it accepts POST requests with the content type `application/json`. The body must be JSON and contain a `query` field with the query as a string and an optional `variables` field containing the variables.
 
 ```json
 {
@@ -19,9 +19,9 @@ The GraphQL API accepts POST requests with the content type `application/json`. 
 
 ## API Access
 
-In order to access the data for your Umbraco Heartcore project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
+In order to access the data for your Umbraco Heartcore project you need to provide a project identifier (Project Alias) via an HTTP Header or a Querystring parameter.
 
-The Project Alias is a HTTP friendly version of the Project Name under your Umbraco Cloud account.
+The Project Alias is an HTTP friendly version of the Project Name under your Umbraco Cloud account.
 
 ### Access via Umb-Project-Alias header
 
@@ -49,10 +49,30 @@ POST https://graphql.umbraco.io/
 Api-Key: {api-key}
 ```
 
+## Preview
+
+The GraphQL API supports fetching draft content, this can be done by passing a `preview` argument to the root query fields.
+
+:::note
+Fetching draft content requires an API Key to be passed with the request.
+:::
+
+```graphql
+query {
+  content(preview: true) {
+    name
+  }
+}
+```
+
 ## [Schema Generation](Schema-Generation/)
 
-Information on how the GraphQL schema is generated, reserved names and built in custom types.
+Information on how the GraphQL schema is generated, reserved names and built-in custom types.
 
 ## [Property Editors](Property-Editors/)
 
 A list of all the built-in Umbraco Property Editors and their GraphQL types.
+
+## [Filtering and Ordering](Filtering-and-Ordering/)
+
+Documentation on how to filter and order collections with the GraphQL API.

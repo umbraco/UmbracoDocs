@@ -12,6 +12,8 @@ versionFrom: 8.7.0
 
 :::note
 A default Umbraco CMS installation does not ship with a defined *Data Type* using the Block List editor. In order to start using the property, follow the steps outlined below.
+
+[Click here for an overview with a worked example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
 :::
 
 ## Configure Block List
@@ -65,6 +67,8 @@ These properties refers to how the Block is presented in the Block catalogue, wh
 - **Background color** - Define a background color to be displayed beneath the icon or thumbnail.  Eg. `#424242`.
 - **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
 - **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
+
+The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
 ### Advanced
 
@@ -122,6 +126,14 @@ The default rendering method is named `GetBlockListHtml()` and comes with a few 
 
 "MyBlocks" above is the alias for the Block List editor.
 
+If using ModelsBuilder the example can be simplified:
+
+Example:
+
+```csharp
+@Html.GetBlockListHtml(Model.MyBlocks)
+```
+
 To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
 
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
@@ -143,6 +155,15 @@ Example:
 
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Value("heading")</h1>
+
+```
+
+With ModelsBuilder:
+
+```csharp
+
+// Output the value of field with alias 'heading' from the Element Type selected as Content section
+<h1>@content.Heading</h1>
 
 ```
 
@@ -185,6 +206,49 @@ Example:
     }
 }
 ```
+
+## Extract Block List Content data
+
+In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
+An example could be a product page with variants stored in a Block List Editor.
+
+In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Value<IEnumerable<BlockListItem>>("variants").Select(x => x.Content);
+    foreach (var variant in variants)
+    {
+        <h4>@variant.Value("variantName")</h4>
+        <p>@variant.Value("description")</p>
+    }
+}
+```
+
+If using ModelsBuilder the example can be simplified:
+
+Example:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var variants = Model.Variants.Select(x => x.Content).OfType<ProductVariant>();
+    foreach (var variant in variants)
+    {
+        <h4>@variant.VariantName</h4>
+        <p>@variant.Description</h4>
+    }
+}
+```
+
+If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+
 
 ## Build a Custom Backoffice View
 
@@ -238,17 +302,20 @@ The second file should be a javascript file called
 (to match the file referenced in your package.manifest file)
 
 This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
 // you can do your custom functionality here!
-}
+});
 ```
+
 #### Example: Displaying an image from a Media Picker
 Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
 
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
 
 With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
@@ -259,20 +326,23 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
             .then(function (media) {
                 console.log(media);
                 //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
-                $scope.imageUrl = media.MediaLink;
+                $scope.imageUrl = media.mediaLink;
     });    
 });
 ```
+
 Update the View to use the 'imageUrl' property to display the image:
 
-```
+```html
 <div ng-controller="customBlockController" ng-click="block.edit()">
     <h2 ng-bind="block.data.headline"></h2>
     <img src="{{imageUrl}}" />
     <p ng-bind="block.data.description"></p>
 </div>
 ```
+
 If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
+
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
 
@@ -288,3 +358,182 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
     });    
 });
 ```
+
+## Creating Blocklist programmatically
+
+In this example, we will be creating some Block List objects under the `People` property in the `Home` Document Type. The `People` property implements a Block List Data Type where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
+
+The approach to saving Blocklist content programmatically is similar to Nested Content - though the JSON schema is a bit different.
+
+The JSON object we will pass into the `People` property will look like this:
+
+```json
+{
+   "layout":{
+      "Umbraco.BlockList":[
+         {
+            "contentUdi":"umb://element/0da576e5fc7445bd9d789c5ee9fe9c54",
+            "settingsUdi":"umb://element/7073a102dbcc487986962a3d51820de7"
+         },
+         {
+            "contentUdi":"umb://element/c6e23e8137d24b409bb5ef41bdb705b9",
+            "settingsUdi":"umb://element/0467ceb158cc49a1acfd1516f63eccf6"
+         }
+      ]
+   },
+   "contentData":[
+      {
+         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
+         "udi":"umb://element/0da576e5fc7445bd9d789c5ee9fe9c54",
+         "user_name":"Janice",
+         "user_email":"janice@janiceindustries.com"
+      },
+      {
+         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
+         "udi":"umb://element/c6e23e8137d24b409bb5ef41bdb705b9",
+         "user_name":"John",
+         "user_email":"john@johnindustries.com"
+      }
+   ],
+   "settingsData":[
+      {
+         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
+         "udi":"umb://element/7073a102dbcc487986962a3d51820de7",
+         "role":"content editor"
+      },
+      {
+         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
+         "udi":"umb://element/0467ceb158cc49a1acfd1516f63eccf6",
+         "role":"admin"
+      }
+   ]
+}
+```
+
+We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
+The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
+
+One of the approaches would be creating a basic model which we will later serialize into JSON:
+
+```csharp
+using Newtonsoft.Json;
+using System.Collections.Generic;
+//this class is used to mock the correct JSON structure when the object is serialized
+public class Blocklist
+{
+    public BlockListUdi layout { get; set; }
+    public List<Dictionary<string, string>> contentData { get; set; }
+    public List<Dictionary<string, string>> settingsData { get; set; }
+}
+//this is a subclass which corresponds to the "Umbraco.BlockList" section in JSON
+public class BlockListUdi
+{
+    //we mock the Umbraco.BlockList name with JsonPropertyAttribute to match the requested JSON structure
+    [JsonProperty("Umbraco.BlockList")]
+    public List<Dictionary<string, string>> contentUdi { get; set; }
+    //we do not serialize settingsUdi
+    [JsonIgnore]
+    public List<Dictionary<string, string>> settingsUdi { get; set; }
+    public BlockListUdi(List<Dictionary<string, string>> items, List<Dictionary<string, string>> settings)
+    {
+        this.contentUdi = items;
+        this.settingsUdi = settings;
+    }
+}
+//this is our Blocklist's allowed nested element. We make a model for it so we can create some dummy data
+public class Person
+{
+    public string user_name { get; set; }
+    public string user_email { get; set; }
+    public Person(string user_name, string user_email)
+    {
+        this.user_name = user_name;
+        this.user_email = user_email;
+    }
+}
+```
+
+After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
+
+```csharp
+           //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
+            var contentService = Services.ContentService;
+            //not to be confused with ContentService, this service will be useful for getting some Document Type IDs
+            IContentTypeService contentTypeService = Services.ContentTypeService;
+            //we are creating two people to be added to Blocklist, which means we need two new Guids
+            GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());
+            //Since these will be BLock List objects the Guids need to mention the "element" keyword  
+            GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());
+            //We need to do something similar for the settings data
+            GuidUdi settingsUdi1 = new GuidUdi("element", System.Guid.NewGuid());
+            GuidUdi settingsUdi2 = new GuidUdi("element", System.Guid.NewGuid());
+            //using Content Service, we create a new root node with the name Home and Document Type home
+            IContent request = contentService.Create(nodeName, -1, "home", -1);
+            //we create some dummy users
+            Person person1 = new Person("Janice", "janice@janiceindustries.com");
+            Person person2 = new Person("John", "john@johnindustries.com");
+            //initialize our new empty model to mimic proper JSON structure
+            Blocklist blocklistNew = new Blocklist();
+            //initialize empty person list where we will add our users
+            var personList = new List<Dictionary<string, string>>();
+            //initalize empty settings list as well
+            var settingsList = new List<Dictionary<string, string>>();
+            //we get the Content Types to later get the Person Document Type key from
+            var contentTypes = contentTypeService.GetAll();
+            //using the above types, we locate the one that corresponds to the Person Document Type
+            var personType = contentTypes.Where(n => n.Alias == "person").FirstOrDefault();
+            //the dictionaryUdi list here will be passed in the first section of our final JSON object
+            var dictionaryUdi = new List<Dictionary<string, string>>();
+            //we also initialize a List for settings configuration
+            var settingUdi = new List<Dictionary<string, string>>();
+            //add person1
+            personList.Add(new Dictionary<string, string>
+            {
+                //we need to pass the key of the Block List item type, we used ContentTypeService to obtain it
+                {"contentTypeKey", personType.Key.ToString()},  
+                //each item should also have a unique udi. We are passing the one we generated before
+                {"udi", contentUdi1.ToString()},  
+                //Document Type custom property
+                {"user_name", person1.user_name},  
+                //Document Type custom property
+                {"user_email", person1.user_email}
+            });
+            settingsList.Add(new Dictionary<string, string>
+            {
+                //in this case the settings is set to use the contentTypeKey as the content - Person document type
+                {"contentTypeKey", personType.Key.ToString()},
+                {"udi", settingsUdi1.ToString()},
+                //role is our setting for this blocklist - not a property for the actual content
+                {"role", "content editor"}
+            });
+            //with person 1 added to the contentData section of our JSON, we also add a reference to layout section
+            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi1.ToString() }, { "settingsUdi", settingsUdi1.ToString() } });
+            //add person2
+            personList.Add(new Dictionary<string, string>
+            {
+                {"contentTypeKey", personType.Key.ToString()},
+                {"udi", contentUdi2.ToString()},
+                {"user_name", person2.user_name},
+                {"user_email", person2.user_email}
+            });
+            settingsList.Add(new Dictionary<string, string>
+            {
+                {"contentTypeKey", personType.Key.ToString()},
+                {"udi", settingsUdi2.ToString()},
+                {"role", "admin"}
+            });
+            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi2.ToString() }, { "settingsUdi", settingsUdi2.ToString() } });
+
+            //first section of JSON must contain udi references to whatever is in contentData
+            blocklistNew.layout = new BlockListUdi(dictionaryUdi, settingUdi);
+            //contentData is a list of our Person objects
+            blocklistNew.contentData = personList;
+            //we bind the previously made settings list to our model to be serialized
+            blocklistNew.settingsData = settingsList;
+            //bind the serialized JSON data to our property alias, "people"
+            request.SetValue("people", JsonConvert.SerializeObject(blocklistNew));
+            //save and publish the node
+            contentService.SaveAndPublish(request);
+```
+
+When adding several items, it is important that each item added in `contentData` section has the corresponding Udi mentioned in the `layout` section as well - otherwise the item will not show.

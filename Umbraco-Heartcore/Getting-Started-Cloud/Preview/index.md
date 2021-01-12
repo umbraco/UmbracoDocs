@@ -55,8 +55,24 @@ Now that we have setup the backoffice, we need to update our site to use the Pre
 The Preview API is available on `https://preview.umbraco.io` and its endpoints are identical to the [Content Delivery API](../../API-Documentation/Content-Delivery/content), meaning that you can swap the url out if you don't use one of our Client Libraries.
 
 :::note
-The Preview API is always protected and will require an API Key.
+The Preview API is always protected and requires an API Key to be passed with the request.
 :::
+
+If you are using the GraphQL API a `preview` argument can be passed to the root query fields.
+
+```graphql
+query {
+  allContent(
+    preview: true
+  ) {
+    edges {
+      node {
+        name
+      }
+    }
+  }
+}
+```
 
 If you are using the [Node JS Client](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) you set `preview: true`, set an `apiKey` as shown below, this switches all of the `client.delivery` functions to use the Preview API instead of the Content Delivery API.
 

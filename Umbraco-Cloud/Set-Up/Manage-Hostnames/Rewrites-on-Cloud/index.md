@@ -76,3 +76,33 @@ For example, the following rule will redirect all requests for the site http://m
 :::note
 This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply on your local copy of the site running on `localhost`.
 :::
+
+## Adding a trailing slash to your URLs
+
+It is possible to transform all of your URLs to use a trailing slash consistently for SEO.
+
+To accomplish this, add a rewrite rule to the Live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
+
+For example, the following rule will redirect all requests for `https://mysite.com/page` to `https://mysite.com/page/`, and respond with a permanent redirect status. This way you can ensure that you use the trailing slashes consistently on your site.
+
+```xml
+<rule name="Add trailing slash" stopProcessing="true">
+  <match url="(.*[^/])$" />
+  <conditions>
+    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z]{1,4}$" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge" negate="true" />
+  </conditions>
+  <action type="Redirect" url="{R:1}/" />
+</rule>
+```
+
+:::note
+Take note of the negates in the rewrite rule. 
+
+It is especially important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
+:::

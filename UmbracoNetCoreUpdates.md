@@ -3,10 +3,12 @@ meta.Title: "Umbraco .Net Core Updates"
 meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
 ---
 
-# Umbraco .Net Core
+# Umbraco .NET Core
 
 :::note
 This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+
+We have created a separate repository for [articles and tutorials for Umbraco on .NET Core](https://github.com/umbraco/UmbracoCMSDocs). Please keep in mind, that this is still a work in progress.
 
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
@@ -20,6 +22,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
 * [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
 * [.NET Core in the Unicorner](https://umbraco.com/blog/the-unicorner-returns-net-core-alpha-release/)
 * [Automated testing in Umbraco](https://umbraco.com/blog/automated-testing-in-umbraco/)
@@ -66,15 +69,15 @@ To get started, follow the steps outlined below.
 
 ### Known issues in current Alpha release
 
- * Restarts during install
-    * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
- * Previews do not work due to the missing website part
- * Members can’t be created, as we’re still using MembershipProviders
- * Case sensitive filesystems (Linux and sometimes Mac) creates folders in the project like “~” and “**”, and lots of paths are not requested in the correct casing, yet
- * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
- * External logins are not supported yet
- * No support for Packages currently
- * Errors in log "Index Population failed for populator ..."
+* Restarts during install
+  * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
+* Previews do not work due to the missing website part
+* Members can’t be created, as we’re still using MembershipProviders
+* Case sensitive filesystems (Linux and sometimes Mac) creates folders in the project like “~” and “**”, and lots of paths are not requested in the correct casing, yet
+* Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
+* External logins are not supported yet
+* No support for Packages currently
+* Errors in log "Index Population failed for populator ..."
 
 ### Prerequisites
 
@@ -94,8 +97,9 @@ To get started, follow the steps outlined below.
     ```none
     dotnet new -i Umbraco.Templates::0.5.0-alpha002
     ```
-    
+
 ### Steps to update the template from earlier alpha versions
+
 If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
@@ -105,6 +109,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
+
 1. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
 
     ```none
@@ -141,3 +146,22 @@ The project is now running on the [Kestrel server](https://docs.microsoft.com/en
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
 Once the installation process is complete you might need to **manually restart the application** in order to start the application again and get access to the Umbraco backoffice.
+
+## .NET Core Nightly Builds
+
+To get the latest nightly builds - the latest version of the Umbraco dotnet template, you will need to add another NuGet source. 
+
+1. Use a command prompt of your choice to insert this custom NuGet feed:
+
+```none
+dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
+```  
+
+2. Install the new Umbraco dotnet template
+    ```none
+    dotnet new -i Umbraco.Templates::0.5.0-*
+    ```
+
+In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
+
+Now you can continue in the same way as if you were using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)

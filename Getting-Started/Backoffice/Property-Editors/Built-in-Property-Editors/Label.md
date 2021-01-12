@@ -26,6 +26,8 @@ There is also a Value Type: Long string if you need to set a very long string va
 
 ## MVC View Example
 
+### Without ModelsBuilder
+
 ```csharp
 @{
     if (Model.HasValue("pageLabel")){
@@ -33,3 +35,57 @@ There is also a Value Type: Long string if you need to set a very long string va
     }
 }
 ```
+
+### With ModelsBuilder
+
+```csharp
+@{
+    if (!string.IsNullOrEmpty(Model.PageLabel))
+    {
+        <p>@Model.PageLabel</p>
+    }
+}
+```
+
+## Add values programmatically
+
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+
+```csharp
+@{
+	// Get access to ContentService
+	var contentService = Services.ContentService;
+
+	// Create a variable for the GUID of the page you want to update
+	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+	// Get the page using the GUID you've defined
+	var content = contentService.GetById(guid); // ID of your page
+
+	// Set the value of the property with alias 'pageLabel'. 
+	content.SetValue("pageLabel", "A pre-set string value");
+
+	// Save the change
+	contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    // Set the value of the property with alias 'pageLabel'
+    content.SetValue(Home.GetModelPropertyType(x => x.PageLabel).Alias, "A pre-set string value");
+}
+```
+
+

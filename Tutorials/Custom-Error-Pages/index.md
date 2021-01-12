@@ -81,3 +81,10 @@ With this approach, you can set different 404 pages for different languages (cul
 :::warning
 If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement - since content IDs might differ across Cloud environments.
 :::
+
+### Are the error pages not working?
+
+If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
+- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.

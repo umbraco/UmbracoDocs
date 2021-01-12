@@ -6,17 +6,13 @@ versionFrom: 8.0.0
 
 Umbraco Uno provides a lot of flexibility in terms of customizing the types of content as well as the content itself.
 
-This is made possible by a large array of different **widgets**, which acts like building blocks for creating, structuring and customizing websites.
+This is made possible by a large collection of **widgets**, which acts like building blocks for creating, structuring and customizing websites.
 
 This article gives an overview of the available widgets, along with resources on how to work with and configure each of them.
 
 ## What are widgets
 
 Widgets are the building blocks of Umbraco Uno and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
-
-:::tip
-If your project is from before September 10th, 2020, you have recieved an email from us suggesting you to upgrade your old version of widgets to  [the new block widgets - here's your how-to guide](../Uno-pedia/Converting-Old-Widgets-To-New-Widgets)
-:::
 
 ## [Working with widgets](../Creating-Content/Working-with-widgets)
 

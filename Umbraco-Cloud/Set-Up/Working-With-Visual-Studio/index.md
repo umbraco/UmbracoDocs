@@ -33,6 +33,10 @@ Below is a screenshot of our recommendation on how the projects should be config
 * Visual Studio 2017 v15.9.6 or later
 * Git and/or Git Credential Manager for Windows
 
+:::note 
+If you're used to using a Git client like GitKraken or SourceTree, you will still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
+:::
+
 ## Video tutorial
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/a3yUPq567nQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

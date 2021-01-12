@@ -123,8 +123,7 @@ And in the `.html` file:
 ```csharp
 <div  ng-controller="My.WordCounterApp as vm">
     <umb-box>
-        <umb-box-header
-            title="Amount of words for each property" />
+        <umb-box-header title="Amount of words for each property"></umb-box-header>
         <umb-box-content>
             <div ng-repeat="(key, value) in vm.propertyWordCount">
                 <p>Property: <span style="font-style:italic">{{key}}</span>, amount of words: <span style="font-style:italic">{{value}}</span> </p>
@@ -262,6 +261,10 @@ You will still need to add all of the files you added above but, because your `C
     ]
 }
 ```
+
+:::tip
+You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as  `"icon-calculator color-indigo"` in your Content App C# class or *package.manifest* .
+:::
 
 ## Notification badges
 

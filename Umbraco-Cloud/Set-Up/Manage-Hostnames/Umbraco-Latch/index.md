@@ -4,16 +4,46 @@ versionFrom: 7.0.0
 
 # Umbraco Latch
 
+:::warning
+Umbraco Latch has been deprecated for hostnames added after December 8th, 2020. 
+
+Hostnames added after December 8th, 2020 are automatically secured using Cloudflare. If your hostname was added after the mentioned date the documentation below does not apply. Instead, you should follow our recommendation outlined in the [Manage Hostnames](../) article.
+
+## How do I know if my site is still using a Latch certificate?
+
+To check whether your site is still using Latch follow this guide:
+
+1. Open your website URL.
+2. Select the "lock" icon to the left of the URL in the address bar in your browser.
+3. Click on Certificate.
+4. Identify the provider next to Issued by:.
+
+If the certificat issuer is Let's Encrypt, you are still using a Latch certificate.
+:::
+
 All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
+
+:::note
+Certificates last 3 months and are automatically renewed, as long as the prerequisites below are met.
+:::
+
+## Prerequisites
+In order for Latch to work and the security certificate to be applied to the site, you need to fulfill some criteria. First of all, the content node that the domain is pointing to cannot have the status of 404 whether it's a custom 404 page or one caused by an error.
+
+Latch needs the site to have a status of 200 in order for the certificate to be applied and renewed. This means that every 3 months Latch will go through the renewal process, and the prerequisites have to be met each time in order for it to work.
+
+If you wish to have a custom 404 page on the root of your website then you will need to purchase and apply a [custom certificate instead](../Security-Certificates/).
+
+
 
 ![Adding a hostname](images/adding-hostname-to-cloud.gif)
 
 In order for Umbraco Latch to be applied to your hostname, you need to make sure that your DNS has been setup one of these ways:
 
 * CNAME pointing at the Cloud URL mysite.s1.umbraco.io
-* A Record pointing at the Cloud IP: 23.100.15.180
+* A Record pointing at the Umbraco Cloud IP.
 
-Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
+Learn more about our recommendations for DNS records in the [Manage Hostnames](../) article.
 
 ## HTTPS by default
 
@@ -24,13 +54,13 @@ All new Live sites created on Cloud since version 7.12 will automaticallt have a
 All `*.umbraco.io` domains will serve a default wildcard certificate with a common name `*.umbraco.io`.
 Custom domains will automatically be secured by a Let's Encrypt certificate.
 
-On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible to [upload a custom certificate](../Manage-Hostnames/Security-Certificates/) that will overwrite the default certificates provided for the domains.
+On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible to [upload a custom certificate](../Security-Certificates/) that will overwrite the default certificates provided for the domains.
 
 ## Latch and CDN
 
-You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
+You will not get an Umbraco Latch certificate if you are using a CDN service on your Umbraco Cloud project.
 
-In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
+In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Security-Certificates/) article.
 
 :::note
 Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain.
@@ -66,7 +96,7 @@ If issuing a certificate to a hostname fails, it will end up in one of the follo
 
 This means that there is an issue with how the DNS for the provided hostname has been configured. Umbraco Latch will not be able to issue a certificate before the DNS configuration is fixed.
 
-Learn more about how the setup hostnames for Umbraco Cloud in the [Manage Hostnames](../Manage-Hostnames) article.
+Learn more about how the setup hostnames for Umbraco Cloud in the [Manage Hostnames](../) article.
 
 #### Rewrites Error
 
@@ -78,13 +108,13 @@ When redirecting all requests from HTTP to HTTPS, you will need to add the follo
 <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge" />
 ```
 
-Read more about best practices with rewrites on Umbraco Cloud in the [Rewrites on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud) article.
+Read more about best practices with rewrites on Umbraco Cloud in the [Rewrites on Umbraco Cloud](../Rewrites-on-Cloud) article.
 
 #### Special Characters
 
 There are some special characters that Umbraco Latch does not accept when issuing certificates. If you are seeing the **Special Characters** state next to your hostname, it means that you are using some special characters that are not allowed.
 
-Do you need to add the hostname, we recommend setting up CDN and [upload a manual certificate](../Manage-Hostnames/Security-Certificates/).
+Do you need to add the hostname, we recommend setting up CDN and [upload a manual certificate](../Security-Certificates/).
 
 #### Tried 5 times
 
@@ -95,8 +125,10 @@ If you see this state, you will need to wait a week, before Umbraco Latch can as
 ## CAA records and Umbraco Latch
 If you have CAA (Certification Authority Authorization) records configured for your domain, that does not allow the certificate provider of Umbraco Latch (Lets Encrypt) to issue a certificate, the hostname will be stuck in the 'Inital' phase. To make sure that Umbraco Latch can have a certificate issued for your hostname, you can either delete the CAA record preventing issuance, or you can add a record to allow LetsEncrypt to issue certificates for your domain. Let’s Encrypt’s identifying domain name for CAA is ```letsencrypt.org```. You can read more about CAA and LetsEncrypt in [the official LetsEncrypt documentation](https://letsencrypt.org/docs/caa/).
 
+:::links
 ## Read more
 
 * [Redirect from HTTP to HTTPS](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
 * [Blog post: Introducing Umbraco Latch](https://umbraco.com/blog/introducing-umbraco-latch/)
 * [Umbraco Latch on Umbraco.com](https://umbraco.com/products/umbraco-latch/)
+:::

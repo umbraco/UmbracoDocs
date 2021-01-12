@@ -28,16 +28,16 @@ Binding hostnames to your Umbraco Cloud project is done from the Umbraco Cloud P
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates)
 
-All hostnames added to your Umbraco Cloud environments will automatically be assigned a security certificate - we call this feature [Umbraco Latch](../Umbraco-Latch).
-
-Sometimes you might want to upload and bind your own security certificate to your hostnames. This can be  done from the **Certificates** page.
+Sometimes you might want to upload and bind your own custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service. This can be done from the **Certificates** page.
 
 ## Public access
 
 All Staging and Development environments on Umbraco Cloud projects are by default protected by *basic authentication* which require you to enter your Cloud credentials in order to view the frontend. You can disable / enable this authentication with one click on the **Public access** page.
 
 :::note
-On **Trial** projects the basic authentication is enabled on the Live environment. This cannot be removed before setting up a subscription for the Cloud project.
+Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher. 
+
+On **Trial** and **Starter** projects, the basic authentication is enabled on the Live environment and cannot be removed unless the project is upgraded to a higher plan.
 :::
 
 On the **Public access** page you can also allow IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the allowed IPs.

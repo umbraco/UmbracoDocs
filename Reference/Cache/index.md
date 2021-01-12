@@ -9,3 +9,5 @@ We're busy getting the documentation up to date for Umbraco 8. Below you can fin
 ## Getting and clearing cached content
 
 [See our example on how to cache tags](examples/tags.md).
+
+## [ApplicationCache](applicationcache.md)

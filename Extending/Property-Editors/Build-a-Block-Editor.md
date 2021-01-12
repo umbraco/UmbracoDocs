@@ -6,6 +6,10 @@ versionFrom: 8.7.0
 
 Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
+:::note
+[Click here for an overview with a worked example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
+:::
+
 ## Setup your Property Editor as a Block Property Editor
 
 In order for your editor to become a Block Editor you must setup your property editor through C#.

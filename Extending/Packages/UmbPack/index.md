@@ -30,7 +30,7 @@ Once you copy the key one more step is needed in order to start using it: you mu
 To install the latest version of the tool locally you need to run the following command in a commandline:
 
 ```
-dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
+dotnet tool install --global Umbraco.Tools.Packages
 ```
 
 You will then be able to use it by running `umbpack [command]` in the command line afterwards. More on the commands of the tool below.
@@ -147,11 +147,34 @@ umbpack pack .\package.xml -o ../MyCustomPackageVersions
 umbpack pack .\package.xml -v 1.9.9
 ```
 
-`-n` - specifies a name override for the package. By default the package will automatically generate a name based on the info in your package.xml file. This option allows you to override it yourself though. It will not affect the package.xml info, only the zip file name.
+`-n` - specifies a name override for the package. By default the package will automatically generate a name based on the info in your package.xml file. This option allows you to override it yourself with either a full name or using a template. It will not affect the package.xml info, only the zip file name. The template options are:
 
+`{name}` - replaced with the name of the package declared in the package.xml  
+`{version}` - replaced with the version of the release declared in the package.xml
+
+Fixed naming:
 ```
 umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
 ```
+Template naming:
+```
+umbpack pack .\package.xml -n {name}_{version}.zip
+```
+
+`-p` - specifies package.xml overrides. You can override any value in the package.xml with your own values when you pack the package. Can be a replacement for `-v` & `-n` as well. You can add any value in your package.xml enclosed by `$` to then replace it with UmbPack. Example:
+
+```xml
+<info>
+    <package>
+      <name>$Name$</name>
+      <version>$Version$</version>
+```
+
+```
+umbpack pack .\package.xml -p Name=MyPackage;Version=1.0.0
+```
+
+This would pack your package and update your package.xml - note this happens before the automatic naming based on name and version as well. This is especially useful in CI/CD deployments where you may not know all your values before the run.
 
 ## The push command
 
@@ -204,4 +227,3 @@ Combining several archive patterns:
 ```
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current UmbPackTest_0* UmbPackTest-Assets_0*
 ```
-

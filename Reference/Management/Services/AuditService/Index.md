@@ -27,7 +27,7 @@ using Umbraco.Core.Services;
 
 ### Services property
 
-If you wish to use use the audit service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the audit service through a local `Services` property:
+If you wish to use the audit service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the audit service through a local `Services` property:
 
 ```csharp
 IAuditService auditService = Services.AuditService;

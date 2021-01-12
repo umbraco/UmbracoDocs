@@ -6,6 +6,10 @@ meta.Description: "See an example of validating a form server-side"
 
 # Adding a server-side event handler to Umbraco Forms
 
+:::note
+The samples in this article applies to Umbraco Forms version 8 and later versions.
+:::
+
 Add a new class to your project and have it inherit from `IUserComposer`, implement the `Compose()` method. This method will contain a handler for the `FormValidate` event. 
 
 ```csharp

@@ -61,3 +61,7 @@ If neither a `Services` property or Dependency Injection is available, you can a
 ```csharp
 IContentService contentService = Umbraco.Core.Composing.Current.Services.ContentService;
 ```
+
+## Samples
+
+* [**Create content programmatically**](Create-content-programmatically.md)<br />See an example on how to create content programmatically.

@@ -75,6 +75,6 @@ To use the extensions add a using to `Umbraco.Web.Cache`;  You can then invoke t
 The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment.
 The server messenger ensures that the notification is processed on the local environment.
 
-## [ApplicationContext.Current.ApplicationCache](applicationcache.md)
+## [ApplicationContext.Current.ApplicationCache](applicationcache-v7.md)
 
 ApplicationCache is a container for the different cache types

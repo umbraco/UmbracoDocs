@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # The Global Content
 
-Global Content is a way for you to create widgets that you will then later be able to use on other pages via the [Global Content Widget](../../Widgets/Global-Content).
+Global Content is a way for you to create widgets that you will then later be able to use on other pages via the [Global Content Widget](../../../Widgets/Global-Content).
 
 When you have created a widget here it will work as a template in the future, so that you will only have to set it up once, saving you a lot of time in the future.
 
@@ -35,7 +35,7 @@ If you Selected Global Content, follow these steps to create widgets:
 
 Doing this, you will now have a set of pre-setup widgets, which you can then use on multiple pages of your site.
 
-Learn more about how to use the Global Content on your pages in the section about the [Global Content Widget](../../Widgets/Global-Content).
+Learn more about how to use the Global Content on your pages in the section about the [Global Content Widget](../../../Widgets/Global-Content).
 
 ### Global Content Holder
 
