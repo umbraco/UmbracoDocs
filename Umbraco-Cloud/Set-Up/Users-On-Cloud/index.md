@@ -28,11 +28,20 @@ Users are environment-specific on Umbraco Cloud. This means that they will not b
 
 ## Invite user through the Umbraco backoffice
 
-As mentioned, it is possible to invite new users to your Umbraco Cloud project through the backoffice.
+As mentioned it is possible to invite new users to your Umbraco Cloud project through the backoffice.
 
-To do this you need to first navigate to the backoffice of your project and go to the User section.
+To invite a user you need to do the following:
 
-In the User section in the backoffice you can invite a new user to the Umbraco backoffice 
+1. Go to the backoffice of your Umbraco Cloud project
+2. Go to the user section in the backoffice
+3. Invite new user to the project
+4. Enter name and email and add a User Group to assign access and permissions and optionaly enter a new message for the invitation
+
+Once the user have been invited the person will receive an invitation for the project.
+
+If you already have a user on Umbraco Cloud you will get a invitation in the project portal under "Project Invites".
+
+If a user being invited does not have a user, then they will receive a email to create a Umbraco Cloud user.
 
 ## User group permissions for transfers and restores
 
