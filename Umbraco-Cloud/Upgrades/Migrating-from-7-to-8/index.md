@@ -3,7 +3,7 @@
 This article will provide detailed steps on how to migrate an Umbraco 7 Cloud project to Umbraco 8.
 
 :::warning
-Due to [a known issue](https://github.com/umbraco/Umbraco-CMS/issues/7914) it is currently **not possible to perform a direct migration of your Umbraco 7 Cloud project to the latest Umbraco 8**.
+Due to [a known issue](https://github.com/umbraco/Umbraco-CMS/issues/7914), it is currently **not possible to perform a direct migration of your Umbraco 7 Cloud project to the latest Umbraco 8**.
 
 We are working on resolving the issue to make the migration possible again.
 
