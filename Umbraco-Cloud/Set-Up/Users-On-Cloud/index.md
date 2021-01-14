@@ -23,12 +23,12 @@ Users can also be invited directly from the backoffice of your Umbraco Cloud pro
 Check out the [Users article](../../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
-Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
+Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment they will need to be added on the different environments on Umbraco Cloud.
 :::
 
 ## Invite user through the Umbraco backoffice
 
-As mentioned it is possible to invite new users to your Umbraco Cloud project through the backoffice.
+As mentioned it is possible to invite new users to your Umbraco Cloud project through the backoffice as you would on a normal installation of Umbraco.
 
 To invite a user you need to do the following:
 
@@ -37,11 +37,24 @@ To invite a user you need to do the following:
 3. Invite new user to the project
 4. Enter name and email and add a User Group to assign access and permissions and optionaly enter a new message for the invitation
 
-Once the user have been invited the person will receive an invitation for the project.
+Once the user have been invited they will receive an invitation for the project.
 
 If you already have a user on Umbraco Cloud you will get a invitation in the project portal under "Project Invites".
 
-If a user being invited does not have a user, then they will receive a email to create a Umbraco Cloud user.
+If the user being invited does not have a user on Umbraco Cloud, they will receive a email to create one.
+
+ ![New User Invitation](images/New_user.png)
+
+ Once the User have been created, it is now possible to login to the Umbraco Cloud portal.
+
+ From here they will have a pending invitation to the project they have been invited to.
+
+ Once the invitation have been accepted, they can now access the project and go to the frontend and he backoffice of the project they have been invited to.
+
+:::note
+This only applies on project on version 8.9.1 and above.
+Users invited to projects on lower versions will not need an Umbraco Cloud User.
+:::
 
 ## User group permissions for transfers and restores
 
