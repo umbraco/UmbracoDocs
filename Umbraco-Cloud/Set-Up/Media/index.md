@@ -29,7 +29,9 @@ You can learn more about what Azure Blob Storage is in [the official documentati
 
 ## Working with media locally
 
-When you clone one of your Cloud environments to your local machine, you will automatically get a copy of all the media files from the Azure Blob Storage container connected to that environment.
+When you clone one of your Cloud environments to your local machine, you will need to run a content restore from the backoffice to get a copy of all the media files from the Azure Blob Storage container connected to that environment.
+
+You can learn more about how this works in the [Restoring content](../../Deployment/Restoring-content) article.
 
 When you add new media files to your project while working on a local clone, the files will automatically be added to the Azure Blob Storage container connected to the environment you deploy to.
 
