@@ -6,47 +6,45 @@ versionFrom: 8.0.0
 
 # Manual Upgrade of your cloud project cloned with UaaS.CMD tool
 
-Following the move to a new hosting platform for Umbraco Cloud every Umbraco 8 projects need to be on at least  8.5.1.
+Following the move to a new hosting platform for Umbraco Cloud every Umbraco 8 projects need to be on at least version 8.5.1.
 
-In this guide we will show you how you can manually upgrade your project if you are on 8.0.x and need to upgrade your project to 8.5.1  when you have used the UaaS.cmd tool.
+In this guide you will learn how you can manually upgrade your project from Umbraco 8.0.x to 8.5.1 when you are using [the UaaS.cmd tool and Visual Studio](../../Set-Up/Working-with-Visual-Studio).
 
 :::note
-The UaaS.cmd tool will provide you with visual studio solution with both a .web and a .core folder of the project.
+The UaaS.cmd tool will provide you with Visual Studio solution with both a .Web and a .Core folder of the project.
 
-This guide will only focus on upgrading the .web part of the project
+This guide will only focus on upgrading the .Web part of the project
 :::
 
 ## Upgrading the project
 
-The first step to upgrade the project is to update the version of the CMS from 8.0.x to Umbraco 8.1.0
+The first step to upgrade the project is to update the version of the CMS from 8.0.x to Umbraco 8.1.0.
 
-this can be done by doing the following:
+This can be done by following these steps:
 
-1. Open the visual studio solution locally
-2. Open the NuGet Package Manager
-3. Find the Umbraco CMS package
-4. Install version 8.1.0 on the .web part
-5. When prompted to overwrite the config file make sure to say no
+1. Open the Visual Studio solution locally.
+2. Open the NuGet Package Manager.
+3. Find the Umbraco CMS package.
+4. Install version 8.1.0 in the .Web part of the project.
+5. When prompted to overwrite the config file make sure to say "No".
 
-Once the new version is installed if you start up the site you will be meet with a YSOD error.
+Once the new version is installed you will meet an error if you start up the site. This is because we need to upgrade the Umbraco Forms package, the ModelsBuilder and Umbraco Deploy to the supported versions for it to work properly.
 
-This is because we need to upgrade the Umbraco Forms package the ModelsBuilder and Umbraco Deploy to the supported versions for it to work properly.
-
-See the [product dependencies](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/Product-Dependencies/) article for more details for which versions 8.1+ is compatible with.
+See the [product dependencies](../Product-Dependencies/) article for more details for which versions 8.1+ is compatible with.
 
 ### Update Umbraco Forms
 
 The first package that should be upgraded is the UmbracoForms package.
 
-This should be upgraded to version 8.5.3
+This should be upgraded to version 8.5.3.
 
-To upgrade UmbracoForms:
+To upgrade Umbraco Forms:
 
-1. Go to the NuGet Package Manager
-2. find the UmbracoForms package
+1. Go to the NuGet Package Manager.
+2. Find the UmbracoForms package.
 3. Install version 8.5.3 on the project.
 
-Once the forms package have been installed we can go ahead and update the ModelsBuilder.
+Once the package has been installed you can go ahead and update the ModelsBuilder.
 
 ### Update the Umbraco ModelsBuilder
 
@@ -54,41 +52,66 @@ We need to update the ModelsBuilder to version 8.1.6.
 
 To upgrade the ModelsBuilder you will need to:
 
-1. Go to the NuGet Package Manager
-2. find the  ModelsBuilder.UI and  ModelsBuilder  package
+1. Go to the NuGet Package Manager.
+2. Find the  ModelsBuilder.UI and  ModelsBuilder package.
 3. Install version 8.1.6 on the project.
 
-Upgrading the ModelsBuilder to 8.1.6 will also upgrade the project to Umbraco 8.5.1.
+:::tip
+Upgrading the ModelsBuilder to 8.1.6 will also **upgrade the entire Umbraco project to Umbraco 8.5.1**.
+
+This is important to keep in mind as you continue the upgrade process.
+:::
 
 When the ModelsBuilder.UI and ModelsBuilder is done installing, it is time for the next step, which is upgrade the Umbraco Deploy version.
 
 ### Update Umbraco Deploy
 
-Since the project is now on Umbraco 8.5.1 it also means that he version of deploy compatible with the project is 3.5.x.
+Since the project is now on Umbraco 8.5.1 it means that we need Umbraco Deploy version 3.5.x in order to ensure compatibility.
 
-Unlike the two other packages the Deploy package is not available through NuGet, instead you will need to download it from the [Umbraco Nightly page](http://nightly.umbraco.org/?container=umbraco-deploy-release)
+Unlike the two other packages the Umbraco Deploy package is not available through NuGet. Instead, you will need to download it from the [Umbraco Nightly page](http://nightly.umbraco.org/?container=umbraco-deploy-release).
 
-Make sure to download the latest version of deploy 3.5.x which in this case is 3.5.3.
+Make sure to download the latest version of Deploy 3.5.x which in this case is 3.5.3.
 
-Once the version have been downloaded you need to:
+Once the product has been downloaded you need to:
 
-1. Unzip the folder
-2. Copy the following folders to your projects .web folder
-    - App_plugins
-    - Bin
-
-3. From the config folder, only copy over the splash folder and the UmbracoDeploy.Settings.Config
+1. Unzip the folder.
+2. Copy the following folders to your projects .Web folder
+    - `/App_plugins`
+    - `/Bin`
+3. Copy only the `/splash` folder from the `/Config` folder.
+4. Use a merging tool to merge the `UmbracoDeploy.Settings.Config` in the `/Config` folder with the one from you project so you do not lose any settings you are currently using.
 
 :::note
-Do not copy the UmbracoDeploy.config over as it will overwrite the IDs for the cloud environments.
+**Do not** copy the UmbracoDeploy.config over as it will overwrite the IDs for the Cloud environments, and you will not be able to deploy any changes.
 :::
+
+## Finalizing the process
 
 Once the files have been copied over to the project, build and run it to verify that everything works on the project.
 
-If everything works as it should, go to the backoffice and login.
+If everything works as it should, login to the backoffice to initialize the upgrade of the internal components like the database.
 
-This will begin the upgrade of the internal components like the database.
+Once the upgrade is done, make sure to verify once again that everything looks as expected on the site by running the site and going through the frontend and the backoffice.
 
-Once the upgrade is done, commit the changes to git and push the changes up to Umbraco Cloud.
+Finally, commit the changes to git and push the changes up to your Umbraco Cloud environment.
 
-You should now be able to see on the project portal that the project is running on Umbraco 8.5.1, Umbraco forms 8.5.3 and Deploy 3.5.3.
+In the Umbraco Cloud Portal you will now see that the project is running on Umbraco 8.5.1, Umbraco Forms 8.5.3 and Umbraco Deploy 3.5.3.
+
+:::note
+This guide has shown you how to upgrade your Umbraco Cloud project to Umbraco 8.5.1 along with the compatible versions of Umbraco Forms, Umbraco Deploy and the ModelsBuilder.
+
+Umbraco 8.5.1 is the minimum version for hosting on our new upcoming Cloud service, however it is not the latest version of Umbraco.
+
+We highly recommend that you look into upgrading your Umbraco Cloud project(s) to the latest version of Umbraco CMS as this will ensure that you have the most secure and up-to-date website. Links to guides on how to keep your Umbraco Cloud project(s) up to date can be found in the "Related articles" section below.
+:::
+
+:::links
+## Related articles
+
+- [Upgrades](../)
+- [Product Dependencies](../Product-Dependencies)
+- [Minor Upgrades](../Minor-upgrades)
+- [Auto-magical Upgrades (Blog)](https://umbraco.com/blog/sofie-in-the-cloud-no-6-automagical-upgrades/)
+
+:::
+
