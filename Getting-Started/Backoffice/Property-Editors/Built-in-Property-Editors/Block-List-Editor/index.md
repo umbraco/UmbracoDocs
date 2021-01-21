@@ -277,11 +277,13 @@ If you'd like to display properties of `settings`, you can access these by `bloc
 
 To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
 ```html
-<div ng-controller="customBlockController" ng-click="block.edit()"> 
+<button  type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)"  class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" > 
     <h2 ng-bind="block.data.headline"></h2>
     <p ng-bind="block.data.description"></p>
-</div>
+</button>
 ```
+
+NB: the class declaration is necessary to allow the block to behave like the default blocks (i.e. drag-to-sort etc.)
 
 Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
 
