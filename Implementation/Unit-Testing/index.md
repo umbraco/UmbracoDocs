@@ -293,8 +293,7 @@ public class HomeController : RenderMvcController
 public class HomeControllerTests : UmbracoBaseTest
 {
     private HomeController controller;
-    private Mock<ICultureDictionary> cultureDictionary;
-
+    
     [SetUp]
     public override void SetUp()
     {
