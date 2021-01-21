@@ -283,7 +283,9 @@ To achieve this you need to add a custom angularJS controller to your custom vie
 </button>
 ```
 
-NB: the class declaration is necessary to allow the block to behave like the default blocks (i.e. drag-to-sort etc.)
+:::note
+The class declaration is necessary to allow the block to behave like the default blocks (i.e. drag-to-sort etc.)
+:::
 
 Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
 
