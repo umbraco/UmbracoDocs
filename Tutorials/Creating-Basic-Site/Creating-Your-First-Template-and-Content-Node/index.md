@@ -14,6 +14,11 @@ Clicking on the "Homepage" **_node_** will load the **_Template_** - which, exce
 
 Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in. Open up "index.html" from the "Retrospect" template in your favourite text editor.  Copy and paste the whole thing into this **_Template_** after the closing curly brace "}".  Your **_Template_** should now look like below:
 
+:::note
+Reminder - we are using files from the Retrospect template here: [https://templated.co/retrospect](https://templated.co/retrospect)
+:::
+
+
 :::warn
 Umbraco **_Templates_** use **_Razor_** which allows you to add code in your **_Template_** files. **_Razor_** reacts to `@` signs, so the `@` on line 10 should be deleted as below
 :::

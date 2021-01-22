@@ -20,11 +20,11 @@ As you can see there are several options, to add a fallback language, make it ma
 
 <!-- vale valeStyle.Hyperbolic = NO -->
 
-Now head on over to **_Document Types > Simple Content Page > Permissions_** and check the `Allow varying by culture` checkbox, now click save and go to the **_Design_** tab.
+Now head on over to **_Document Types > Simple Content Page > Permissions_** and check the `Allow vary by culture` checkbox, now click save and go to the **_Design_** tab.
 
 <!-- vale valeStyle.Hyperbolic = YES -->
 
-We will now edit the settings of our property editors, so click on the little gear icon ⚙ for the **_Page Title_** editor and again check the `Allow varying by culture` checkbox.
+We will now edit the settings of our property editors, so click on the little gear icon ⚙ for the **_Page Title_** editor and again check the `Allow vary by culture` checkbox.
 
 ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
 
@@ -52,7 +52,7 @@ When you click the dropdown you will get a list of all the languages you have en
 
 ![Open Language in Splitview](images/open-in-splitview.png)
 
-In this splitview we will be able to see the content node with each language side by side. You may notice that the bodytext is greyed out - this is because we haven't checked the `Allow varying by culture` checkbox for that property editor.
+In this splitview we will be able to see the content node with each language side by side. You may notice that the bodytext is greyed out - this is because we haven't checked the `Allow vary by culture` checkbox for that property editor.
 
 ![Splitview editing](images/splitview-editing.png)
 
