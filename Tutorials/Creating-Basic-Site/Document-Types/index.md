@@ -46,7 +46,7 @@ Our new **_Document Type_** is now visible as a new item in the **_Settings Tree
 Next, click the **[Permissions]** icon and check **[Allow as root]**.  This will allow us to create a homepage at the root of the **_Content Tree_**.
 
 :::note
-If none of your **_Document Types_** have the **[Allow as root]** checked, all of them will be allowed to be created at the root level.
+If none of your **_Document Types_** have the **[Allow as root]** checked, you will not be able to create any content on your site.
 :::
 
 ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
