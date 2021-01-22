@@ -74,7 +74,7 @@ Inside this package manifest, we add a bit of JSON to describe the property edit
 ```
 
 ## Setting up a property editor with C#
-You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `MarkdownEditor.cs` file  file in `/App_Code/` to register a editor this way.
+You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `MarkdownEditor.cs` file in `/App_Code/` to register the editor this way.
 
 ```csharp
 using Umbraco.Core.Logging;
