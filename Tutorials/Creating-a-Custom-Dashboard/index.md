@@ -347,6 +347,8 @@ We need to loop through the log items from the **logResource**. Since this inclu
 
 The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
 
+The `getById` method is supported on the following entity types: Document (content), Media, Member Type, Member Group, Media Type, Document Type, Member and Data Type. This needs to be defined before we loop through the entries.
+
 Putting this together:
 
 ```js
@@ -355,16 +357,23 @@ logResource.getPagedUserLog(userLogOptions)
         console.log(response);
         vm.UserLogHistory = response;
         var filteredLogEntries = [];
+        // Define supported entity types
+        var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
         // Loop through the response, and flter out save log entries we are not interested in
         angular.forEach(response.items, function (item) {
+            // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
+            if (!supportedEntityTypes.includes(item.entityType)) 
+                {
+                    return;
+                }
             // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
             if (item.nodeId > 0) {
                 // check if we already grabbed this from the entityservice
                 var nodesWeKnowAbout = [];
                 if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
                     return;
-                // find things the user saved
-                if (item.logType === "Save" || item.logType === "SaveVariant") {
+                // find things the user saved and/or published
+                if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
                     // check if it is media or content
                     if (item.entityType === "Document") {
                         item.editUrl = "content/content/edit/" + item.nodeId;
@@ -460,8 +469,15 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
             console.log(response);
             vm.UserLogHistory = response;
             var filteredLogEntries = [];
+            // Define supported entity types
+            var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
             // Loop through the response, and flter out save log entries we are not interested in
             angular.forEach(response.items, function (item) {
+                // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
+                if (!supportedEntityTypes.includes(item.entityType)) 
+                {
+                    return;
+                }
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
                     // check if we already grabbed this from the entityservice
@@ -469,7 +485,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
                     if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
                         return;
                     // find things the user saved
-                    if (item.logType === "Save" || item.logType === "SaveVariant") {
+                    if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
                         // check if it is media or content
                         if (item.entityType === "Document") {
                             item.editUrl = "content/content/edit/" + item.nodeId;
