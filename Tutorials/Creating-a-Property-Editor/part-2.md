@@ -42,6 +42,70 @@ prevalues: {
 }
 ```
 
+
+## C# 
+
+It is also possible to add configuration if you have chosen to create a property editor using C#. Create two new files in the `/App_Code/` folder and update the existing `MarkdownEditor.cs` file to add configuration to the property editor.
+
+First create a `MarkdownConfiguration.cs` file: 
+
+```csharp
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    public class MarkdownConfiguration
+    {
+        [ConfigurationField("preview", "Preview", "boolean", Description = "Display a live preview")]
+        public bool Preview { get; set; }
+
+        [ConfigurationField("defaultValue", "Default value", "textstring", Description = "Set the default value here")]
+        public string DefaultValue { get; set; }
+    }
+}
+```
+
+Then create a `MarkdownConfigurationEditor.cs` file: 
+
+```csharp
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    public class MarkdownConfigurationEditor : ConfigurationEditor<MarkdownConfiguration>
+    {
+    }
+}
+```
+Finally, edit the `MarkdownEditor.cs` file from step one until it looks like the example below:
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    [DataEditor(
+        alias:"My.MarkdownEditor",
+        name:"My markdown editor",
+        view:"~/App_Plugins/MarkDownEditor/markdowneditor.html",
+        Group = "Rich Content",
+        Icon = "icon-code")]
+    public class MarkdownEditor : DataEditor
+    {
+        public MarkdownEditor(ILogger logger)
+            : base(logger)
+        { }
+		
+		protected override IConfigurationEditor CreateConfigurationEditor()
+        {
+            return new MarkdownConfigurationEditor();
+        }
+
+    }
+}
+```
+
 So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
 
 So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
