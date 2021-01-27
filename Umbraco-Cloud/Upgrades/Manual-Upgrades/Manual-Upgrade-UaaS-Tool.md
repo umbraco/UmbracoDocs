@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 # Manual Upgrade of your cloud project cloned with UaaS.CMD tool
 
-Following the move to a new hosting platform for Umbraco Cloud every Umbraco 8 projects need to be on at least version 8.5.1.
-
 In this guide you will learn how you can manually upgrade your project from Umbraco 8.0.x to 8.5.1 when you are using [the UaaS.cmd tool and Visual Studio](../../Set-Up/Working-with-Visual-Studio).
 
 :::note
@@ -29,6 +27,12 @@ This can be done by following these steps:
 5. When prompted to overwrite the config file make sure to say "No".
 
 Once the new version is installed you will meet an error if you start up the site. This is because we need to upgrade the Umbraco Forms package, the ModelsBuilder and Umbraco Deploy to the supported versions for it to work properly.
+
+for version 8.1 we need:
+
+- Forms version 8.5.3
+- Modelsbuilder version 8.1.6
+- Umbraco Deploy version 3.5.3
 
 See the [product dependencies](../Product-Dependencies/) article for more details for which versions 8.1+ is compatible with.
 
