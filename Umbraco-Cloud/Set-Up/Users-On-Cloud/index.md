@@ -41,7 +41,7 @@ To invite a User you need to do the following:
 
 Once the User have been invited they will receive an invitation for the project.
 
-If you already have a User on Umbraco Cloud you will get a invitation in the project portal under "Project Invites".
+If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
 
 If the User being invited does not have a User on Umbraco Cloud, they will receive a email to create one.
 
