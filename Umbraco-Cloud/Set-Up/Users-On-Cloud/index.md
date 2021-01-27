@@ -49,7 +49,8 @@ If the user being invited does not have a user on Umbraco Cloud, they will recei
 
  From here they will have a pending invitation to the project they have been invited to.
 
- Once the invitation have been accepted, they can now access the project and go to the frontend and he backoffice of the project they have been invited to.
+ Once the invitation have been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
+
 
 :::note
 This only applies on project on version 8.9.1 and above.
