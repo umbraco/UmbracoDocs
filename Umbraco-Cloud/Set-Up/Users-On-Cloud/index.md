@@ -47,7 +47,7 @@ If the User being invited does not have a User on Umbraco Cloud, they will recei
 
  ![New User Invitation](images/New_user.png)
 
- Once the User have been created, it is now possible to login to the Umbraco Cloud portal.
+ Once the User has been created, it is now possible for them to login to the Umbraco Cloud portal.
 
  From here they will have a pending invitation to the project they have been invited to.
 
