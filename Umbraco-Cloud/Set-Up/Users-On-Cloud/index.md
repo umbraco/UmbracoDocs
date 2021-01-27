@@ -49,7 +49,7 @@ If the User being invited does not have a User on Umbraco Cloud, they will recei
 
  Once the User has been created, it is now possible for them to login to the Umbraco Cloud portal.
 
- From here they will have a pending invitation to the project they have been invited to.
+ From here they will be able to see a pending invitation to the project they have been invited to.
 
  Once the invitation have been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
 
