@@ -53,7 +53,7 @@ If the User being invited does not have a User on Umbraco Cloud, they will recei
 
  Once the invitation has been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
 
-  ![New User Invitation](images/project_overview.png)
+  ![New User Invitation](images/Project_overview.png)
 
 :::note
 This only applies on project on version 8.9.1 and above.
