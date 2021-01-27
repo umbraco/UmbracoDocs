@@ -35,7 +35,7 @@ To invite a User you need to do the following:
 1. Go to the backoffice of your Umbraco Cloud project
 2. Go to the User section in the backoffice
 3. Invite new User to the project
-4. Enter name and email and add a User Group to assign access and permissions and optionaly enter a new message for the invitation
+4. Enter name and email and add a User Group to assign access and permissions and optionally enter a new message for the invitation
 
 ![Invite User](images/invite_user.png)
 
