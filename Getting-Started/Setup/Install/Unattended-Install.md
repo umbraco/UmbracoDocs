@@ -1,4 +1,6 @@
 ---
+meta.Title: "Unattended installation of Umbraco CMS"
+meta.Description: "A guide on how to install Umbraco unattended including details about the feature."
 versionFrom: 8.11.0
 ---
 
