@@ -51,7 +51,7 @@ If the User being invited does not have a User on Umbraco Cloud, they will recei
 
  From here they will be able to see a pending invitation to the project they have been invited to.
 
- Once the invitation have been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
+ Once the invitation has been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
 
   ![New User Invitation](images/project_overview.png)
 
