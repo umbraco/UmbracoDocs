@@ -43,7 +43,7 @@ Once the User have been invited they will receive an invitation for the project.
 
 If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
 
-If the User being invited does not have a User on Umbraco Cloud, they will receive a email to create one.
+If the User being invited does not have a User on Umbraco Cloud, they will receive an email asking them to create one.
 
  ![New User Invitation](images/New_user.png)
 
