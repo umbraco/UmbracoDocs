@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 # Manual Upgrade of your cloud project cloned with UaaS.CMD tool
 
-Following the move to a new hosting platform for Umbraco Cloud every Umbraco 8 projects need to be on at least version 8.5.1.
-
 In this guide you will learn how you can manually upgrade your project from Umbraco 8.0.x to 8.5.1 when you are using [the UaaS.cmd tool and Visual Studio](../../Set-Up/Working-with-Visual-Studio).
 
 :::note
@@ -25,10 +23,20 @@ This can be done by following these steps:
 1. Open the Visual Studio solution locally.
 2. Open the NuGet Package Manager.
 3. Find the Umbraco CMS package.
+![Nuget package Manager](images/Nuget_Manager.png)
+
 4. Install version 8.1.0 in the .Web part of the project.
+![Version to install](images/Instal_version.png)
 5. When prompted to overwrite the config file make sure to say "No".
+![Comflicting files](images/file_conflict.png)
 
 Once the new version is installed you will meet an error if you start up the site. This is because we need to upgrade the Umbraco Forms package, the ModelsBuilder and Umbraco Deploy to the supported versions for it to work properly.
+
+for version 8.1 we need:
+
+- Forms version 8.5.3
+- Modelsbuilder version 8.1.6
+- Umbraco Deploy version 3.5.3
 
 See the [product dependencies](../Product-Dependencies/) article for more details for which versions 8.1+ is compatible with.
 
@@ -42,7 +50,9 @@ To upgrade Umbraco Forms:
 
 1. Go to the NuGet Package Manager.
 2. Find the UmbracoForms package.
+![Umbraco forms](images/UmbracoForms.png)
 3. Install version 8.5.3 on the project.
+![Umbraco forms Version upgrade](images/forms_version.png)
 
 Once the package has been installed you can go ahead and update the ModelsBuilder.
 
@@ -54,7 +64,9 @@ To upgrade the ModelsBuilder you will need to:
 
 1. Go to the NuGet Package Manager.
 2. Find the  ModelsBuilder.UI and  ModelsBuilder package.
+![Umbraco ModelsBuilder](images/modelsBuilder.png)
 3. Install version 8.1.6 on the project.
+![Umbraco ModelsBuilder version](images/modelsBuilderVersion.png)
 
 :::tip
 Upgrading the ModelsBuilder to 8.1.6 will also **upgrade the entire Umbraco project to Umbraco 8.5.1**.
@@ -85,6 +97,22 @@ Once the product has been downloaded you need to:
 **Do not** copy the UmbracoDeploy.config over as it will overwrite the IDs for the Cloud environments, and you will not be able to deploy any changes.
 :::
 
+## Troubleshooting
+
+After the upgrade is done you might encounter an issue with Newtonsoft.Json because the assembly's does not match.
+
+![Newtonsoft error](images/newtonsoft.png)
+
+To fix this do the following
+
+1. Go to NuGet Package Manager
+2. Go to "installed" packages and find Newtonsoft.Json
+![Newtonsoft error](images/newtonsoftJson.png)
+3. Install the latest stable version of Newtonsoft.Json
+![Newtonsoft error](images/newtonLatest.png)
+
+Once the installation is done you should be able to run the project without any errors and you can finalize the process.
+
 ## Finalizing the process
 
 Once the files have been copied over to the project, build and run it to verify that everything works on the project.
@@ -114,4 +142,3 @@ We highly recommend that you look into upgrading your Umbraco Cloud project(s) t
 - [Auto-magical Upgrades (Blog)](https://umbraco.com/blog/sofie-in-the-cloud-no-6-automagical-upgrades/)
 
 :::
-
