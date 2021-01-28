@@ -24,7 +24,6 @@ This can be done by following these steps:
 2. Open the NuGet Package Manager.
 3. Find the Umbraco CMS package.
 ![Nuget package Manager](images/Nuget_Manager.png)
-
 4. Install version 8.1.0 in the .Web part of the project.
 ![Version to install](images/Instal_version.png)
 5. When prompted to overwrite the config file make sure to say "No".
