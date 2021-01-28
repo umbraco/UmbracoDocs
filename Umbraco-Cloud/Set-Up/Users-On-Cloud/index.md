@@ -39,7 +39,7 @@ To invite a User you need to do the following:
 
 ![Invite User](images/invite_user.png)
 
-Once the User have been invited they will receive an invitation for the project.
+Once the User has been invited they will receive an invitation for the project.
 
 If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
 
