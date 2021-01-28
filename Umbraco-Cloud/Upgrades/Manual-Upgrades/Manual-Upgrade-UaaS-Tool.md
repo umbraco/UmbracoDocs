@@ -24,6 +24,7 @@ This can be done by following these steps:
 2. Open the NuGet Package Manager.
 3. Find the Umbraco CMS package.
 ![Nuget package Manager](images/Nuget_Manager.png)
+
 4. Install version 8.1.0 in the .Web part of the project.
 ![Version to install](images/Instal_version.png)
 5. When prompted to overwrite the config file make sure to say "No".
@@ -98,7 +99,7 @@ Once the product has been downloaded you need to:
 
 ## Troubleshooting
 
-After the upgrade is done you might encounter an issue with Newtonsoft.Json because the assemblies does not match.
+After the upgrade is done you might encounter an issue with Newtonsoft.Json because the assembly's does not match.
 
 ![Newtonsoft error](images/newtonsoft.png)
 
@@ -141,4 +142,3 @@ We highly recommend that you look into upgrading your Umbraco Cloud project(s) t
 - [Auto-magical Upgrades (Blog)](https://umbraco.com/blog/sofie-in-the-cloud-no-6-automagical-upgrades/)
 
 :::
-
