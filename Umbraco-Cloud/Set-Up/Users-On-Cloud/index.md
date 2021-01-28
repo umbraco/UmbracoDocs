@@ -23,8 +23,44 @@ Users can also be invited directly from the backoffice of your Umbraco Cloud pro
 Check out the [Users article](../../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
-Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment - they will need to be added on the different environments on Umbraco Cloud.
+Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment they will need to be added on the different environments on Umbraco Cloud.
 :::
+
+## Invite User through the Umbraco backoffice
+
+As mentioned it is possible to invite new Users to your Umbraco Cloud project through the backoffice as you would on a normal installation of Umbraco.
+
+To invite a User you need to do the following:
+
+1. Go to the backoffice of your Umbraco Cloud project
+2. Go to the User section in the backoffice
+3. Invite new User to the project
+4. Enter name and email and add a User Group to assign access and permissions and optionally enter a new message for the invitation
+
+![Invite User](images/invite_user.png)
+
+### Accept invitation
+
+:::note
+This only applies on new projects on version 8.9.1 and above.
+Users invited to projects on lower versions will not need an Umbraco Cloud User.
+:::
+
+Once the User has been invited they will receive an invitation for the project.
+
+If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
+
+If the User being invited does not have a User on Umbraco Cloud, they will receive an email asking them to create one.
+
+ ![New User Invitation](images/New_user.png)
+
+ Once the User has been created, it is now possible for them to login to the Umbraco Cloud portal.
+
+ From here they will be able to see a pending invitation to the project they have been invited to.
+
+ Once the invitation has been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
+
+  ![New User Invitation](images/Project_overview.png)
 
 ## User group permissions for transfers and restores
 
