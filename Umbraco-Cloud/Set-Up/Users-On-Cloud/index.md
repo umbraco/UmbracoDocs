@@ -39,6 +39,13 @@ To invite a User you need to do the following:
 
 ![Invite User](images/invite_user.png)
 
+### Accept invitation
+
+:::note
+This only applies on new projects on version 8.9.1 and above.
+Users invited to projects on lower versions will not need an Umbraco Cloud User.
+:::
+
 Once the User has been invited they will receive an invitation for the project.
 
 If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
@@ -54,11 +61,6 @@ If the User being invited does not have a User on Umbraco Cloud, they will recei
  Once the invitation has been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
 
   ![New User Invitation](images/Project_overview.png)
-
-:::note
-This only applies on project on version 8.9.1 and above.
-Users invited to projects on lower versions will not need an Umbraco Cloud User.
-:::
 
 ## User group permissions for transfers and restores
 
