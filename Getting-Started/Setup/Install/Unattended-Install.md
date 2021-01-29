@@ -73,3 +73,13 @@ After completing the 3 steps above you can now initialize the installation by bo
 Once it has completed, you should see the following when visiting the frontend of the site.
 
 ![Frontend of Umbraco site installed using the unattended installs feature](images/unattended/final-screen.png)
+
+## Configuration options
+
+|   	|  Configured Version 	|  With Conn String |  InstallUnattended 	|  
+|---	|---	|---	|---	|
+|  Default	|  false 	|  false 	|  false 	|
+|  Unattended (no installer, will just install without a user password)	|  true 	|  true 	|  true 	|
+|  Pre configured (will run installer without DB option)	|  false 	|  true 	|  false 	|
+|  Pre configured (will run installer without DB option) 	|  true 	|  true 	|  false 	|
+
