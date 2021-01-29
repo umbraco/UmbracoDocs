@@ -541,4 +541,8 @@ You can create your own custom angular services/resources, to interact with your
 
 ## The end
 
+With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
+
+Please note this sample also includes document type changes, which is something editors do not usually do. As a result they might not be able to navigate to the document type by clicking the link on the dashboard.
+
 Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/apidocs/v8/ui/#/api) for more info on all of the resources and services you can find for the backoffice!
