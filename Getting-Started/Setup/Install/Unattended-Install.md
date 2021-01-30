@@ -79,7 +79,7 @@ Once it has completed, you should see the following when visiting the frontend o
 |   	|  Configured Version 	|  With Conn String |  InstallUnattended 	|  
 |---	|---	|---	|---	|
 |  Default	|  false 	|  false 	|  false 	|
-|  Unattended (no installer, will just install without a user password)	|  true 	|  true 	|  true 	|
+|  Unattended (no installer, will install without a user password)	|  true 	|  true 	|  true 	|
 |  Pre configured (will run installer without DB option)	|  false 	|  true 	|  false 	|
 |  Pre configured (will run installer without DB option) 	|  true 	|  true 	|  false 	|
 
