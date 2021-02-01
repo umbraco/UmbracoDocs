@@ -112,11 +112,13 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
 
-1. Create a new empty Umbraco solution using MS SQL Azure/Server (first option) or SQL CE (second edition):
+1. Create a new empty Umbraco solution using MS SQL Azure/Server:
 
     ```none
     dotnet new umbraco -n MyCustomUmbracoSolution
     ```
+
+    Or if you prefer to using SQL CE:
 
     ```none
     dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
