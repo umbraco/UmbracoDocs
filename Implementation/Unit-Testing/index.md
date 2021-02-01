@@ -91,6 +91,7 @@ public class MyCustomViewModel : ContentModel
     public MyCustomViewModel(IPublishedContent content) : base(content) { }
 
     public string Heading => this.Content.Value<string>(nameof(Heading));
+    public string Url => this.Content.Url;
 }
 
 [TestFixture]
@@ -114,6 +115,20 @@ public class MyCustomModelTests : UmbracoBaseTest
         var model = new MyCustomViewModel(publishedContent.Object);
         
         Assert.AreEqual(expected, model.Heading);
+    }
+
+    [Test]
+    [TestCase("/", "/")]
+    [TestCase("/umbraco", "/umbraco")]
+    [TestCase("https://www.umbraco.com", "https://www.umbraco.com")]
+    public void GivenPublishedContent_WhenGetUrl_ThenReturnCustomViewModelWithUrlValue(string value, string expected)
+    {
+        var publishedContent = new Mock<IPublishedContent>();
+        publishedContent.Setup(x => x.Url).Returns(value);
+
+        var model = new MyCustomViewModel(content.Object);
+
+        Assert.AreEqual(expected, model.Url);
     }
 }
 ```
