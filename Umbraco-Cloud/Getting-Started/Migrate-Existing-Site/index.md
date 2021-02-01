@@ -205,18 +205,19 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 
 The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
-* Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
-* Rename your user file by removing the leading underscore
-![Update user-file](images/update-user-file.png)
-* Go back to the `data` folder
-* Delete the `deploy-complete` marker
-* Create a new file: `deploy` (with no extension)
-
 That's it! Now that you've merged your existing site with the local clone of the Cloud project, you need to make sure the project runs and verify that
 
-* You can login using your Cloud user
+* You can login using your Umbraco ID user
 * All the content is there
 * All Document Types, Templates, Stylesheets etc,  is in the backoffice
+
+:::note
+Umbraco ID is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
+
+Any users that you might have had on your existing Umbraco site will be migrated over to the local clone of the Cloud project along with the database. These users, however, will not be able to access the Cloud environments of the project or any of the backoffices associated with those environments.
+
+In order for the users to continue having access to the project, they will need to be re-invited either as a [Team Member](../../Set-Up/Team-Members) on a project level or as a [User](../../Set-Up/Users-on-Cloud) to the backoffice of one or more Cloud environments.
+:::
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
 
