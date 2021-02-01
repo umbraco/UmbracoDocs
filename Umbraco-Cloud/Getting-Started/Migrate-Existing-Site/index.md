@@ -194,7 +194,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
         * `/App_Data`
     * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
 2. Merge the config files. Pay special attention to the following files:
-    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files
+    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Umbraco Identity, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files
     * `/Config/UmbracoDeploy.config` - *only relevant if you are migrating a Cloud project*
 3. Copy the rest of the files in the `/Config` folder from your own project to the Cloud project
 4. If you are using SQL CE
@@ -210,7 +210,7 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All Document Types, Templates, Stylesheets etc,  is in the backoffice
 
 :::note
-Umbraco ID is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
+Umbraco Identity (Umbraco ID) is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
 
 Any users that you might have had on your existing Umbraco site will be migrated over to the local clone of the Cloud project along with the database. These users, however, will not be able to access the Cloud environments of the project or any of the backoffices associated with those environments.
 
