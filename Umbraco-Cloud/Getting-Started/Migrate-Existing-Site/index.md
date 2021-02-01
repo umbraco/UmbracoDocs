@@ -212,11 +212,11 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All Document Types, Templates, Stylesheets etc,  is in the backoffice
 
 :::note
-Umbraco ID is the single sign-on (SSO) feature across all Umbraco Cloud services, and is required to access any project pages as well as backoffices.
+Umbraco ID is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
 
 Any users that you might have had on your existing Umbraco site will be migrated over to the local clone of the Cloud project along with the database. These users, however, will not be able to access the Cloud environments of the project or any of the backoffices associated with those environments.
 
-In order for the users to continue having access to the project, they will need to be re-invited either as a [Team Member](../../Set-Up/Team-Members) on project level, or as a [User](../../Set-Up/Users-on-Cloud) to the backoffice of one or more Cloud environments.
+In order for the users to continue having access to the project, they will need to be re-invited either as a [Team Member](../../Set-Up/Team-Members) on a project level or as a [User](../../Set-Up/Users-on-Cloud) to the backoffice of one or more Cloud environments.
 :::
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
