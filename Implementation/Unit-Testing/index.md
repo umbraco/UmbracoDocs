@@ -256,6 +256,16 @@ public class ProductsController : UmbracoApiController
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
+
+    [HttpGet]
+    public JsonResult GetAllProductsJson()
+    {
+        return new JsonResult
+        {
+            Data = this.GetAllProducts(),
+            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+        };
+    }
 }
 
 [TestFixture]
@@ -278,6 +288,14 @@ public class ProductsControllerTests : UmbracoBaseTest
         var result = this.controller.GetAllProducts();
 
         Assert.AreEqual(expected, result);
+    }
+
+    [Test]
+    public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
+    {
+        var json = JsonConvert.SerializeObject(((JsonResult)this.controller.GetAllProductsJson()).Data);
+
+        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
     }
 }
 
