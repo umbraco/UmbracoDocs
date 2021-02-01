@@ -76,10 +76,9 @@ Once it has completed, you should see the following when visiting the frontend o
 
 ## Configuration options
 
-|   	|  Configured Version 	|  With Conn String |  InstallUnattended 	|  
+|   	|  Set ConfigurationStatus 	|  Include connectionstring |  InstallUnattended value 	|  
 |---	|---	|---	|---	|
 |  Default	|  false 	|  false 	|  false 	|
 |  Unattended (no installer, will install without a user password)	|  true 	|  true 	|  true 	|
 |  Pre configured (will run installer without DB option)	|  false 	|  true 	|  false 	|
 |  Pre configured (will run installer without DB option) 	|  true 	|  true 	|  false 	|
-
