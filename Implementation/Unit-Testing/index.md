@@ -359,7 +359,8 @@ public class MyCustomController : RenderMvcController
     {
         var myCustomModel = new MyOtherCustomModel(model.Content)
         {
-            OtherContent = this.Umbraco.Content(1062)
+            OtherContent = this.Umbraco.Content(1062),
+            ContentAtRoot = this.Umbraco.ContentAtRoot()
         };
 
         return View(myCustomModel);
@@ -370,6 +371,7 @@ public class MyOtherCustomModel : ContentModel
 {
     public MyOtherCustomModel(IPublishedContent content) : base(content) { }
     public IPublishedContent OtherContent { get; set; }
+    public IEnumerable<IPublishedContent> ContentAtRoot { get; set; }
 }
 
 [TestFixture]
@@ -394,6 +396,21 @@ public class MyCustomControllerTests : UmbracoBaseTest
         var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
         Assert.AreEqual(otherContent, result.OtherContent);
+    }
+
+    [Test]
+    public void GivenContentQueryReturnsContentAtRoot_WhenIndexAction_ThenReturnViewModelWithContentAtRoot()
+    {
+        var currentContent = new Umbraco.Web.Models.ContentModel(new Mock<IPublishedContent>().Object);
+        var contentAtRoot = new List<IPublishedContent>()
+        {
+            Mock.Of<IPublishedContent>()
+        };
+        base.PublishedContentQuery.Setup(x => x.ContentAtRoot()).Returns(contentAtRoot);
+
+        var result = (MemberProfileViewModel)((ViewResult)this.controller.Index(currentContent)).Model;
+
+        Assert.AreEqual(contentAtRoot, result.ContentAtRoot);
     }
 }
 ```
