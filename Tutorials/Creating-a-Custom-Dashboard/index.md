@@ -7,6 +7,8 @@ versionFrom: 8.0.0
 
 # Tutorial - Creating a Custom Dashboard
 
+_This tutorial was last tested on **Umbraco 8.11**_
+
 ## Overview
 
 This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
@@ -20,9 +22,11 @@ A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Ma
 ### Why provide a Custom Dashboard for your editors?
 
 It is generally considered good practice when you build an Umbraco site to provide a custom dashboard to welcome your editors and provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
-This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS...
+This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS.
 
-So all the steps we will go through:
+The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
+
+Here's an overview of the steps that will be covered:
 
 - Setting up the dashboard plugin
 - Writing a basic Welcome Message view
@@ -347,6 +351,8 @@ We need to loop through the log items from the **logResource**. Since this inclu
 
 The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
 
+The `getById` method is supported on the following entity types: Document (content), Media, Member Type, Member Group, Media Type, Document Type, Member and Data Type. This needs to be defined before we loop through the entries.
+
 Putting this together:
 
 ```js
@@ -355,16 +361,23 @@ logResource.getPagedUserLog(userLogOptions)
         console.log(response);
         vm.UserLogHistory = response;
         var filteredLogEntries = [];
+        // Define supported entity types
+        var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
         // Loop through the response, and flter out save log entries we are not interested in
         angular.forEach(response.items, function (item) {
+            // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
+            if (!supportedEntityTypes.includes(item.entityType)) 
+                {
+                    return;
+                }
             // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
             if (item.nodeId > 0) {
                 // check if we already grabbed this from the entityservice
                 var nodesWeKnowAbout = [];
                 if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
                     return;
-                // find things the user saved
-                if (item.logType === "Save" || item.logType === "SaveVariant") {
+                // find things the user saved and/or published
+                if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
                     // check if it is media or content
                     if (item.entityType === "Document") {
                         item.editUrl = "content/content/edit/" + item.nodeId;
@@ -460,8 +473,15 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
             console.log(response);
             vm.UserLogHistory = response;
             var filteredLogEntries = [];
+            // Define supported entity types
+            var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
             // Loop through the response, and flter out save log entries we are not interested in
             angular.forEach(response.items, function (item) {
+                // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
+                if (!supportedEntityTypes.includes(item.entityType)) 
+                {
+                    return;
+                }
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
                     // check if we already grabbed this from the entityservice
@@ -469,7 +489,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
                     if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
                         return;
                     // find things the user saved
-                    if (item.logType === "Save" || item.logType === "SaveVariant") {
+                    if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
                         // check if it is media or content
                         if (item.entityType === "Document") {
                             item.editUrl = "content/content/edit/" + item.nodeId;
@@ -524,5 +544,7 @@ WelcomeDashboard.html:
 You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
 
 ## The end
+
+With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
 
 Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/apidocs/v8/ui/#/api) for more info on all of the resources and services you can find for the backoffice!
