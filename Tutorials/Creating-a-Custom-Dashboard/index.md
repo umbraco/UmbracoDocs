@@ -7,6 +7,8 @@ versionFrom: 8.0.0
 
 # Tutorial - Creating a Custom Dashboard
 
+_This tutorial was last tested on **Umbraco 8.11**_
+
 ## Overview
 
 This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
@@ -20,9 +22,11 @@ A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Ma
 ### Why provide a Custom Dashboard for your editors?
 
 It is generally considered good practice when you build an Umbraco site to provide a custom dashboard to welcome your editors and provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
-This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS...
+This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS.
 
-So all the steps we will go through:
+The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
+
+Here's an overview of the steps that will be covered:
 
 - Setting up the dashboard plugin
 - Writing a basic Welcome Message view
@@ -542,7 +546,5 @@ You can create your own custom angular services/resources, to interact with your
 ## The end
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
-
-Please note this sample also includes document type changes, which is something editors do not usually do. As a result they might not be able to navigate to the document type by clicking the link on the dashboard.
 
 Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/apidocs/v8/ui/#/api) for more info on all of the resources and services you can find for the backoffice!
