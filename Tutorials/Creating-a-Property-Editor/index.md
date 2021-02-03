@@ -4,8 +4,9 @@ meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
 
-
 # Creating a property editor
+
+_This tutorial was last tested on **Umbraco 8.11**_
 
 ## Overview
 
