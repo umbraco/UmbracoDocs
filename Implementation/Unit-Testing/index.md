@@ -93,6 +93,7 @@ public class MyCustomViewModel : ContentModel
     public MyCustomViewModel(IPublishedContent content) : base(content) { }
 
     public string Heading => this.Content.Value<string>(nameof(Heading));
+    public string Url => this.Content.Url;
 }
 
 [TestFixture]
@@ -116,6 +117,20 @@ public class MyCustomModelTests : UmbracoBaseTest
         var model = new MyCustomViewModel(publishedContent.Object);
         
         Assert.AreEqual(expected, model.Heading);
+    }
+
+    [Test]
+    [TestCase("/", "/")]
+    [TestCase("/umbraco", "/umbraco")]
+    [TestCase("https://www.umbraco.com", "https://www.umbraco.com")]
+    public void GivenPublishedContent_WhenGetUrl_ThenReturnCustomViewModelWithUrlValue(string value, string expected)
+    {
+        var publishedContent = new Mock<IPublishedContent>();
+        publishedContent.Setup(x => x.Url).Returns(value);
+
+        var model = new MyCustomViewModel(content.Object);
+
+        Assert.AreEqual(expected, model.Url);
     }
 }
 ```
@@ -243,6 +258,16 @@ public class ProductsController : UmbracoApiController
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
     }
+
+    [HttpGet]
+    public JsonResult GetAllProductsJson()
+    {
+        return new JsonResult
+        {
+            Data = this.GetAllProducts(),
+            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+        };
+    }
 }
 
 [TestFixture]
@@ -265,6 +290,14 @@ public class ProductsControllerTests : UmbracoBaseTest
         var result = this.controller.GetAllProducts();
 
         Assert.AreEqual(expected, result);
+    }
+
+    [Test]
+    public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
+    {
+        var json = JsonConvert.SerializeObject(((JsonResult)this.controller.GetAllProductsJson()).Data);
+
+        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
     }
 }
 
@@ -327,7 +360,8 @@ public class MyCustomController : RenderMvcController
     {
         var myCustomModel = new MyOtherCustomModel(model.Content)
         {
-            OtherContent = this.Umbraco.Content(1062)
+            OtherContent = this.Umbraco.Content(1062),
+            ContentAtRoot = this.Umbraco.ContentAtRoot()
         };
 
         return View(myCustomModel);
@@ -338,6 +372,7 @@ public class MyOtherCustomModel : ContentModel
 {
     public MyOtherCustomModel(IPublishedContent content) : base(content) { }
     public IPublishedContent OtherContent { get; set; }
+    public IEnumerable<IPublishedContent> ContentAtRoot { get; set; }
 }
 
 [TestFixture]
@@ -362,6 +397,21 @@ public class MyCustomControllerTests : UmbracoBaseTest
         var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
         Assert.AreEqual(otherContent, result.OtherContent);
+    }
+
+    [Test]
+    public void GivenContentQueryReturnsContentAtRoot_WhenIndexAction_ThenReturnViewModelWithContentAtRoot()
+    {
+        var currentContent = new Umbraco.Web.Models.ContentModel(new Mock<IPublishedContent>().Object);
+        var contentAtRoot = new List<IPublishedContent>()
+        {
+            Mock.Of<IPublishedContent>()
+        };
+        base.PublishedContentQuery.Setup(x => x.ContentAtRoot()).Returns(contentAtRoot);
+
+        var result = (MemberProfileViewModel)((ViewResult)this.controller.Index(currentContent)).Model;
+
+        Assert.AreEqual(contentAtRoot, result.ContentAtRoot);
     }
 }
 ```
