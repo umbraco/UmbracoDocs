@@ -72,7 +72,7 @@ Found a bug that isn't already reported? Please report it on the [GitHub tracker
 To get started, follow the steps outlined below.
 
 ### Known issues in current Alpha release
-* Often when using the backoffice, a “Not the Ambian scope” exception is shown. Often you can just retry the operation.
+* Often when using the backoffice, a “Not the Ambian scope” exception is shown. Often you can retry the operation with success.
 * Restarts during install
   * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
 * Members are still an area with lots of missing functionality
