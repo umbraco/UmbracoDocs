@@ -10,7 +10,7 @@ We are working on resolving the issue to make the migration possible again.
 As a workaround, you can either
 
 * Migrate to **version 8.5** as a first step, and then post-migration, carry out a normal Umbraco upgrade to the latest version of Umbraco 8, or
-* Install the following community Nuget Package: [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) into your V8 project before running the migration (no configuration required). 
+* Install the following community Nuget Package: [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) into your V8 project before running the migration (no configuration required). [Learn more about how to use this package on Prowork's blog](https://www.proworks.com/blog/archive/how-to-upgrade-umbraco-version-7-to-version-8).
 
 The package mentioned above patches the migration process so you can migrate directly from the latest Umbraco 7 to the latest Umbraco 8 version without encountering issues. Do note that the package is currently **not tested on Umbraco Cloud**.
 :::
