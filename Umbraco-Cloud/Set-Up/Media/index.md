@@ -92,4 +92,5 @@ Once you have the variables, use the ["Connect to Azure Storage Explorer"](Conne
 :::links
 ## Related articles
 - [Rewrites will impact your media rendering as well - read about the best practices in here](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/)
+- [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface - read more about that here](https://our.umbraco.com/Documentation/Reference/Config/fileSystemProviders/#get-the-contents-of-a-file-as-a-stream)
 :::
