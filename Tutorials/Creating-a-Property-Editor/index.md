@@ -4,8 +4,9 @@ meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
 
-
 # Creating a property editor
+
+_This tutorial was last tested on **Umbraco 8.11**_
 
 ## Overview
 
@@ -69,6 +70,42 @@ Inside this package manifest, we add a bit of JSON to describe the property edit
     // array of files we want to inject into the application on app_start
     javascript: [
         '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
+    ]
+}
+```
+
+## Setting up a property editor with C#
+You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `MarkdownEditor.cs` file in `/App_Code/` to register the editor this way.
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    [DataEditor(
+        alias:"My.MarkdownEditor",
+        name:"My markdown editor",
+        view:"~/App_Plugins/MarkDownEditor/markdowneditor.html",
+        Group = "Rich Content",
+        Icon = "icon-code")]
+    public class MarkdownEditor : DataEditor
+    {
+        public MarkdownEditor(ILogger logger)
+            : base(logger)
+        { }
+
+    }
+}
+```
+
+You will still need to add all of the files you added above but, because your `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
+
+```json5
+{
+    // array of files we want to inject into the application on app_start
+    "javascript": [
+        "~/App_Plugins/MarkDownEditor/markdowneditor.controller.js"
     ]
 }
 ```

@@ -89,3 +89,41 @@ At the moment when a file is saved, its full url is stored as node property, so 
 
 If you want all your media files in the same location you have to copy all pre-existing files to the new path, and update the `path` property of the media item to the new url. This can be either directly inside the database or by using the `MediaService`.
 :::
+
+## Get the contents of a file as a stream
+To get the content of a file as a stream, the best practice is to use the `IMediaFileSystem` interface to do so, rather than reading the file from the server using something like `Server.MapPath`. This will ensure that, regardless of the file system provider, the stream will be returned correctly.
+This is an example of how you can, on one hand - use `IMediaFileSystem` to check whether the file exist, and on the other hand return the file as a stream in a controller.
+
+```csharp
+using System.IO;
+using System.Web;
+using System.Web.Mvc;
+using Umbraco.Web.Mvc;
+using Umbraco.Core.IO;
+
+public class MediaController : SurfaceController
+{
+    private readonly IMediaFileSystem _media;
+
+    public MediaController(IMediaFileSystem media)
+    {
+        _media = media;
+    }
+    public ActionResult Index(string id, string file)
+    {
+        string path = "/media/" + id + "/" + file;
+        if(_media.FileExists(path))
+        {
+            var stream = _media.OpenFile(path);
+            stream.Seek(0, SeekOrigin.Begin);
+
+            return new FileStreamResult(stream, MimeMapping.GetMimeMapping(file));
+        }
+        else
+        {
+            return HttpNotFound();
+        }
+
+    }
+}
+```

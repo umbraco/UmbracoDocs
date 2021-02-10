@@ -13,7 +13,9 @@ This is step 2 in our guide to building a property editor. This step continues w
 
 An important part of building good property editors is to build something relatively flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
-So an editor can be used several times, with different configurations, and that is what we will be working on now.
+So an editor can be used several times, with different configurations, and that is what we will be working on now. 
+
+There are two ways to add configuration to the property editor. If in the previous step you chose to create the property editor using a `package.manifest` file, read the `package.manifest` section below. If you have chosen the `c#` variant, read the `c#` part of the article.
 
 ## package.manifest
 
@@ -39,6 +41,70 @@ prevalues: {
             view: "textarea"
         }
     ]
+}
+```
+
+
+## C# 
+
+It is also possible to add configuration if you have chosen to create a property editor using C#. Create two new files in the `/App_Code/` folder and update the existing `MarkdownEditor.cs` file to add configuration to the property editor.
+
+First create a `MarkdownConfiguration.cs` file: 
+
+```csharp
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    public class MarkdownConfiguration
+    {
+        [ConfigurationField("preview", "Preview", "boolean", Description = "Display a live preview")]
+        public bool Preview { get; set; }
+
+        [ConfigurationField("defaultValue", "Default value", "textstring", Description = "Set the default value here")]
+        public string DefaultValue { get; set; }
+    }
+}
+```
+
+Then create a `MarkdownConfigurationEditor.cs` file: 
+
+```csharp
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    public class MarkdownConfigurationEditor : ConfigurationEditor<MarkdownConfiguration>
+    {
+    }
+}
+```
+Finally, edit the `MarkdownEditor.cs` file from step one until it looks like the example below:
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    [DataEditor(
+        alias:"My.MarkdownEditor",
+        name:"My markdown editor",
+        view:"~/App_Plugins/MarkDownEditor/markdowneditor.html",
+        Group = "Rich Content",
+        Icon = "icon-code")]
+    public class MarkdownEditor : DataEditor
+    {
+        public MarkdownEditor(ILogger logger)
+            : base(logger)
+        { }
+		
+		protected override IConfigurationEditor CreateConfigurationEditor()
+        {
+            return new MarkdownConfigurationEditor();
+        }
+
+    }
 }
 ```
 

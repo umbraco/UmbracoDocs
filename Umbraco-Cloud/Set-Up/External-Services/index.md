@@ -1,17 +1,17 @@
 ---
 versionFrom: 7.0.0
-keywords: whitelist ip internal 
+keywords: whitelist allow list allowlist ip internal
 ---
 
 # Using external services with Umbraco Cloud
 
 In some cases Umbraco Cloud might not be the only service you are working with. You might need to work with other services as well - this could be either internal or third party services. In either case, it will be services external to Umbraco Cloud.
 
-When you are working with an external service that is behind a firewall and that service needs to communicate with your Umbraco Cloud project you need to whitelist the Umbraco Cloud Server IPs.
+When you are working with an external service that is behind a firewall and that service needs to communicate with your Umbraco Cloud project, you need to make sure the Umbraco Cloud Server IPs are allowed to bypass the firewall.
 
-An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give your Umbraco Cloud project access to the external service you need to whitelist the IPs used by the Umbraco Cloud servers.
+An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give your Umbraco Cloud project access to the external service you need to add the IPs used by the Umbraco Cloud servers to an allow list (other services may refer to it as a "whitelist").
 
-These are the IPs you will need to whitelist:
+These are the IPs you will need to add:
 
 ```
 52.166.147.129
@@ -24,7 +24,7 @@ These are the IPs you will need to whitelist:
 These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs they will be updated here.
 
 :::note
-When new IPs are added we will also send the information directly to the [Technical Contacts](../Team-Members/Technical-Contact.md) for each Umbraco Cloud project. 
+When new IPs are added we will also send the information directly to the [Technical Contacts](../Team-Members/Technical-Contact.md) for each Umbraco Cloud project.
 :::
 
-If you are using an external service that is not behind a firewall, you do not need to whitelist the Umbraco Cloud IPs.
+If you are using an external service that is not behind a firewall, you do not need to include the Umbraco Cloud IPs in an allow list.
