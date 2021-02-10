@@ -6,6 +6,14 @@ versionFrom: 7.0.0
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
+:::
+We are currently in the process of improving the Umbraco Cloud platform. This includes making some big changes to some of the key features the platform provides.
+
+You will [**need to ensure that your project(s) meet the minimum requirements**](#minimum-project-requirements-for-the-future-of-umbraco-cloud) in order to keep hosting them on Umbraco Cloud.
+
+On our website you can [learn more about the 'Future of Umbraco Cloud'](https://umbraco.com/blog/the-future-of-umbraco-cloud/) and if you have any questions about the process reach out to our friendly support team.
+:::
+
 ## What products are auto upgraded?
 
 * Umbraco CMS patch updates
@@ -74,3 +82,21 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 No it´s not possible to opt out of product auto upgrades on Umbraco Cloud.
 
 In order for us to be able to support a site on Umbraco Cloud we must ensure that all sites are running the latest versions of our products. That way, we know the sites are running in the most stable state.
+
+## Minimum project requirements for the future of Umbraco Cloud
+
+### Umbraco 8
+
+|   |  Minimum required version |  
+|---|---|---|---|
+|  Umbraco CMS  |  8.6.7 |
+|  Umbraco Forms  |  8.5.3 |
+|  Umbraco Deploy  |  3.5.3 |
+
+### Umbraco 7
+
+|   |  Minimum required version |  
+|---|---|---|---|
+|  Umbraco CMS  |  7.7.6 |
+|  Umbraco Forms  |  6.0.8 |
+|  Umbraco Deploy |  1.0.0 |
