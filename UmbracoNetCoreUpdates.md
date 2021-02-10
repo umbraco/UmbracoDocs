@@ -22,6 +22,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Alpha 3 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-3-release-of-umbraco-on-net-core/)
 * [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
 * [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
 * [.NET Core in the Unicorner](https://umbraco.com/blog/the-unicorner-returns-net-core-alpha-release/)
@@ -34,6 +35,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 * [The Umbraco Roadmap](https://umbraco.com/products/roadmap/)
 * [Community: The UniCore team](https://our.umbraco.com/get-involved/the-unicore-team/)
+* [Overview of Project Unicore/Migrating Umbraco CMS to .NET Core](https://umbraco.com/products/umbraco-cms/migrating-umbraco-to-net-core/)
 
 ## Community resources
 
