@@ -99,4 +99,4 @@ In order for us to be able to support a site on Umbraco Cloud we must ensure tha
 |---|---|---|---|
 |  Umbraco CMS  |  7.7.6 |
 |  Umbraco Forms  |  6.0.8 |
-|  Umbraco Deploy |  1.0.0 |
+|  Umbraco Deploy |  2.0.0 |
