@@ -141,12 +141,13 @@ In the Umbraco Cloud Portal you will now see that the project is running on Umbr
 :::note
 This guide has shown you how to upgrade your Umbraco Cloud project to Umbraco 8.5.1 along with the compatible versions of Umbraco Forms, Umbraco Deploy and the ModelsBuilder.
 
-Umbraco 8.5.1 is the minimum version for hosting on our new upcoming Cloud service, however it is not the latest version of Umbraco.
+Umbraco 8.6.7 is the minimum version for hosting on our new upcoming Cloud service.
 
-We highly recommend that you look into upgrading your Umbraco Cloud project(s) to the latest version of Umbraco CMS as this will ensure that you have the most secure and up-to-date website. Links to guides on how to keep your Umbraco Cloud project(s) up to date can be found in the "Related articles" section below.
+We therefore highly recommend that you look into upgrading your Umbraco Cloud project(s) to the latest version of Umbraco CMS as this will ensure that you have the most secure and up-to-date website. Links to guides on how to keep your Umbraco Cloud project(s) up to date can be found in the "Related articles" section below.
 :::
 
 :::links
+
 ## Related articles
 
 - [Upgrades](../)
