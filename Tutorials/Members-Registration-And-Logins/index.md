@@ -6,7 +6,7 @@ meta.Description: "In this article you can learn about how to create Member regi
 
 # Member registration and login 
 
-Using tools available on a fresh install of Umbraco CMS, you are able to create a frontend-based registration and login functions, and restrict access to specific areas of your site based on on this system.
+Using tools available on a fresh install of Umbraco CMS, you are able to create a frontend-based registration and login functions, and restrict access to specific areas of your site based on this system.
 
 ## Create the necessary macros and partial files
 
