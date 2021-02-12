@@ -32,7 +32,7 @@ This view should be using the Login Status snippet.
 
 These three partials already contain all the necessary code to make the register, login and logout functionality work.
 
-Since Register and Login macro partials have been created from snippets, you should also have Macros with the same names available under Macros folder above Templating section.
+Since the Register and Login macro partials have been created from snippets, you should also have Macros with the same names available under the Macros folder above the Templating section.
 Make sure to expand the Macros view, and in Editor Settings enable Login and Register macros to be used in rich text editor and the grid.
 
 ![Create Button](images/v8-05-Macros-Settings.png)
