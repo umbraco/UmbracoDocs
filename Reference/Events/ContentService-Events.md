@@ -386,9 +386,9 @@ namespace Umbraco8.Components
 
 Umbraco V8 introduced the concept of Variants for Document Types, initially to allow different language variants of particular properties within a Document Type to be edited/translated based on the languages configured in your instance of Umbraco.
 
-These variants can be saved, published and unpublished independently of each other. (Although unpublishing a 'mandatory language' version of a content item - will trigger all culture variants to be unpublished).
+These variants can be saved, published and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
 
-This poses a problem when handling 'events' of the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save IF it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'.
+This poses a problem when handling 'events' of the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending which event you are handling there are helper methods you can call to find out:
 
 #### Saving
 
@@ -423,7 +423,7 @@ public bool HasSavedCulture(IContent content, string culture);
 
 When handling the Unpublishing event, this might not work how you would expect! If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur, then the Unpublishing event will be fired as expected. 
 
-However, if only one variant is being unpublished, the Unpublishing event will not be triggered, this is because the content item itself is not fully unpublished by the action and instead what occurs is a publish action ('without' the variant that has been unpublished).
+However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action'without' the variant that has been unpublished.
 
 You can therefore detect the Unpublishing of a variant, in the Publishing event - using the `IsUnpublishingCulture` helper of the `ContentPublishingEventArgs`
 ```csharp
@@ -474,13 +474,13 @@ For example you could check which cultures are being published and act according
 
 #### Published
 
-In the Published event you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or of course the UnPublish if it was only a single non mandatory variant that was unpublished.
+In the Published event you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non mandatory variant that was unpublished.
 ```csharp
 public bool HasPublishedCulture(IContent content, string culture);
 public bool HasUnpublishedCulture(IContent content, string culture);
 ```
 #### IContent Helpers
-In each of these events, the entities being Saved, Published and Unpublished are `IContent` entities and there are some useful helper methods to find out more about the status of the variant cultures for a particular entity in the context of these events.
+In each of these events, the entities being Saved, Published and Unpublished are `IContent` entities. There are some useful helper methods on IContent to discover the status of the content item's variant cultures:
 ```csharp
 bool IsCultureAvailable(string culture);
 bool IsCultureEdited(string culture);
