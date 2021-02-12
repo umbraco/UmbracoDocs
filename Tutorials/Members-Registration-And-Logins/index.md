@@ -44,7 +44,7 @@ Create a new page that is using this editor, give it a name (e.g. Login/Signup),
 
 ![New Content Template](images/v8-06-RTE-Macro.png)
 
-Choose the Macro you created. Depending on how you would like to structure your signup/login pages, you can include just one macro or both of them next to each other.
+Choose the Macro you created. Depending on how you would like to structure your signup/login pages, you can include one of the macros or place both of them next to each other.
 
 ![Settings Menu](images/v8-07-RTE-Macro-Insert.png)
 
