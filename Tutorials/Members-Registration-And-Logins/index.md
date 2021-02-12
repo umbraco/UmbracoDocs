@@ -95,11 +95,152 @@ On this menu, you will be able to select the group that will have access to the 
 
 ![Select Template](images/v8-15-Restrict-Public-Access-Details.png)
 
-Congratulations! With all of that set up, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in- they will be able to see the page's contents.
+Congratulations! With all of that set up, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
 
 :::note
 The above approach relies on two Macro partial views and a non-Macro partial view. It is also possible to achieve the same result by working entirely with plain Partial Views, three Macros, and even plain HTML/Razor code copied from the Snippets into your Templates.
 :::
 
+However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
 
-https://our.umbraco.com/forum/umbraco-7/using-umbraco-7/64185-Assign-new-members-to-member-group-upon-registration
+# Assigning new members to member groups on registration
+
+## Creating a new SurfaceController
+
+Since the member saving form is processed in a controller, we can copy the default UmbRegisterController and add a function to assign the newly created member to a group.
+
+```csharp
+using System;
+using System.Web.Mvc;
+using System.Web.Security;
+using Umbraco.Core;
+using Umbraco.Core.Cache;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Persistence;
+using Umbraco.Core.Services;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace Umbraco.Web.Controllers
+{
+    public class UmbAlternativeRegisterController : SurfaceController  //to avoid confusion we change the name of the class - in this example we changed it from UmbRegisterController to UmbAlternativeRegisterController
+    {
+        public UmbAlternativeRegisterController()    //the class name has to be changed in the constructors as well
+        {
+        }
+
+        public UmbAlternativeRegisterController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, ILogger logger, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper)
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, logger, profilingLogger, umbracoHelper)
+        {
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateUmbracoFormRouteString]
+        public ActionResult HandleRegisterMember([Bind(Prefix = "registerModel")] RegisterModel model, string memberGroup)  //on top of the original controller code we add the memberGroup parameter
+        {
+            if (ModelState.IsValid == false)
+            {
+                return CurrentUmbracoPage();
+            }
+
+            if (string.IsNullOrEmpty(model.Name) && string.IsNullOrEmpty(model.Email) == false)
+            {
+                model.Name = model.Email;
+            }
+
+            MembershipCreateStatus status;
+            var member = Members.RegisterMember(model, out status, model.LoginOnSuccess);
+
+            switch (status)
+            {
+                case MembershipCreateStatus.Success:
+
+                    TempData["FormSuccess"] = true;
+                    AssignMemberGroup(model.Email, memberGroup);
+                    if (model.RedirectUrl.IsNullOrWhiteSpace() == false)
+                    {
+                        return Redirect(model.RedirectUrl);
+                    }
+
+                    return RedirectToCurrentUmbracoPage();
+                case MembershipCreateStatus.InvalidUserName:
+                    ModelState.AddModelError((model.UsernameIsEmail || model.Username == null)
+                        ? "registerModel.Email"
+                        : "registerModel.Username",
+                        "Username is not valid");
+                    break;
+                case MembershipCreateStatus.InvalidPassword:
+                    ModelState.AddModelError("registerModel.Password", "The password is not strong enough");
+                    break;
+                case MembershipCreateStatus.InvalidQuestion:
+                case MembershipCreateStatus.InvalidAnswer:
+                    throw new NotImplementedException(status.ToString());
+                case MembershipCreateStatus.InvalidEmail:
+                    ModelState.AddModelError("registerModel.Email", "Email is invalid");
+                    break;
+                case MembershipCreateStatus.DuplicateUserName:
+                    ModelState.AddModelError((model.UsernameIsEmail || model.Username == null)
+                        ? "registerModel.Email"
+                        : "registerModel.Username",
+                        "A member with this username already exists.");
+                    break;
+                case MembershipCreateStatus.DuplicateEmail:
+                    ModelState.AddModelError("registerModel.Email", "A member with this e-mail address already exists");
+                    break;
+                case MembershipCreateStatus.UserRejected:
+                case MembershipCreateStatus.InvalidProviderUserKey:
+                case MembershipCreateStatus.DuplicateProviderUserKey:
+                case MembershipCreateStatus.ProviderError:
+                    ModelState.AddModelError("registerModel", "An error occurred creating the member: " + status);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return CurrentUmbracoPage();
+        }
+
+        //the below method will allow us to assign the member to an already existing group
+        private void AssignMemberGroup(string email, string group)
+        {
+            try
+            {
+                Services.MemberService.AssignRole(email, group);
+            }
+            catch (Exception ex)
+            {
+                //handle the exception
+            }
+
+        }
+
+    }
+}
+```
+
+For an easy implementation, you can copy the above code to a new .cs file and place it in the App_Code folder in your solution so that it will be compiled on application startup.
+
+With the above controller in place it is time to adjust the macro/view files as well.
+
+## Adjusting the Registration partial to use the new controller
+
+In the Backoffice, navigate to the Register partial you created before. Where we would normally be using
+```csharp
+    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+    {
+        //rest of the snippet code
+    }
+```
+
+we have to instead use the custom controller we just added, as well as include an anti-forgery token:
+
+```csharp
+ using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>("HandleRegisterMember", new { memberGroup = "Professionals" }))
+    {
+            @Html.AntiForgeryToken()
+        //rest of the snippet code
+    }
+```
+
+We are also passing a member group as a parameter - people who register with this form will be automatically assigned to the "Professionals" member group, assuming it already exists in the Backoffice.
