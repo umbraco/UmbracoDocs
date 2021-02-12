@@ -219,7 +219,7 @@ namespace Umbraco.Web.Controllers
 }
 ```
 
-For an easy implementation, you can copy the above code to a new .cs file and place it in the App_Code folder in your solution so that it will be compiled on application startup.
+For an easier implementation, you can copy the above code to a new .cs file and place it in the App_Code folder in your solution so that it will be compiled on application startup.
 
 With the above controller in place it is time to adjust the macro/view files as well.
 
@@ -233,7 +233,7 @@ In the Backoffice, navigate to the Register partial you created before. Where we
     }
 ```
 
-we have to instead use the custom controller we just added, as well as include an anti-forgery token:
+we have to instead use the custom controller we added, as well as include an anti-forgery token:
 
 ```csharp
  using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>("HandleRegisterMember", new { memberGroup = "Professionals" }))
