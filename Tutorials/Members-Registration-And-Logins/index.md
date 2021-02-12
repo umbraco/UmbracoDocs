@@ -25,7 +25,7 @@ Start with the Register Member snippet.
 Make sure to fill out the name of the partial view (you can call it "Register", for example).
 Afterwards, using the same approach, create a Macro Partial View using the Login snippet and name it "Login".
 
-With that done, navigate to Partial Views folder just above Partial View Macro Files, and create a New partial view from snippet.
+With that done, navigate to Partial Views folder above Partial View Macro Files, and create a New partial view from snippet.
 This view should be using the Login Status snippet.
 
 ![Create Button](images/v8-04-Partial-Snippets.png)
@@ -44,7 +44,7 @@ Create a new page that is using this editor, give it a name (e.g. Login/Signup),
 
 ![New Content Template](images/v8-06-RTE-Macro.png)
 
-Choose the Macro you created. Depending on how you would like to structure your signup/login pages, you can include just one macro or both next to each other.
+Choose the Macro you created. Depending on how you would like to structure your signup/login pages, you can include just one macro or both of them next to each other.
 
 ![Settings Menu](images/v8-07-RTE-Macro-Insert.png)
 
@@ -103,9 +103,7 @@ The above approach relies on two Macro partial views and a non-Macro partial vie
 
 However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
 
-# Assigning new members to member groups on registration
-
-## Creating a new SurfaceController
+## Going further - creating a new SurfaceController
 
 Since the member saving form is processed in a controller, we can copy the default UmbRegisterController and add a function to assign the newly created member to a group.
 
@@ -226,6 +224,7 @@ With the above controller in place it is time to adjust the macro/view files as 
 ## Adjusting the Registration partial to use the new controller
 
 In the Backoffice, navigate to the Register partial you created before. Where we would normally be using
+
 ```csharp
     using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
     {
