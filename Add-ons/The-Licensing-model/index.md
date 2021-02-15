@@ -85,3 +85,14 @@ Once you've configured your license with the correct domains, you are ready to i
 The `.lic` file must be placed in the `/bin` directory in order to be registered by Umbraco Courier or Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
 
 ![Installing Umbraco Forms license](images/install-forms-license.gif)
+
+## Alternative license location
+
+If you can't include the license file in the `/bin` directory for any reason, an alternative location can be provided in the Umbraco installation's `Web.config` file by adding the following AppSetting, where `value="~/Licenses/"` contains the path of your custom license directory, relative to the root of your Umbraco Installation. **Warning** this will also change the location for other Umbraco related licenses in this project.
+
+```
+<appSettings>
+    <add key="UmbracoLicensesDirectory" value="~/Licenses/" />
+    ...
+</appSettings>
+```
