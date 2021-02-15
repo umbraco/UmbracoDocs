@@ -96,7 +96,7 @@ It can be configured in the Umbraco installation's `Web.config` file by adding t
 This will also change the location for other Umbraco related licenses in this project.
 :::
 
-```
+```xml
 <appSettings>
     <add key="UmbracoLicensesDirectory" value="~/Licenses/" />
     ...
