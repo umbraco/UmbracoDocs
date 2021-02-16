@@ -134,6 +134,10 @@ The following rule can be added to your web.config file in the `system.webServer
         <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
          <add input="{REMOTE_ADDR}" pattern="52.232.105.169" negate="true" />
          <add input="{REMOTE_ADDR}" pattern="52.174.66.30" negate="true" />
+        
+        <!-- Allow Umbraco HQ IPs in case you'd need support -->
+        <add input="{REMOTE_ADDR}" pattern="2.109.65.126" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="165.22.124.72" negate="true" />
 
         <!-- Add other client IPs that need access to the backoffice -->
         <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
