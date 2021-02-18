@@ -8,6 +8,12 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 8.12.0
+
+In version 8.8.0, we introduced a sanitizer for SVG files. This relied on a library (`HtmlSanitizer`) that we were unable to upgrade to it's latest major version. Additionally, this version of `HtmlSanitizer` interefered with people's usage of a depending package named `AngleSharp`. We have decided to remove this dependency completely in version 8.12.0.
+
+When upgrading to 8.12.0 we'll leave the NuGet package behind, we can't automatically uninstall it. You're free to keep it or do a manual uninstall. All details are available in [the related pull request](https://github.com/umbraco/Umbraco-CMS/pull/9803).
+
 ## Version 8.1.0
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
