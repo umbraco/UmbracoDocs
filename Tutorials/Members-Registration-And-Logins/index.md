@@ -261,4 +261,8 @@ we have to instead use the custom controller we added, as well as include an ant
     }
 ```
 
+:::note
+Make sure to replace `UmbRegisterController` with the name of the controller you created in the earlier step - in our example, that is `UmbAlternativeRegisterController`.
+:::
+
 We are also passing a member group as a parameter - people who register with this form will be automatically assigned to the "Professionals" member group, assuming it already exists in the Backoffice.
