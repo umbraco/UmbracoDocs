@@ -14,7 +14,7 @@ See the full list of features including in the [Umbraco Cloud pricing plans on U
 
 Under **Certificates** you'll find an option to manually upload your own certificate and assign it to one of the hostnames you've added.
 
-Your certificates need to be **`.pfx`** format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
+Your certificates need to be **`.pfx`** format and must be set to use a password. The **`.pfx`** file can only contain one certificate. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
 
 ![Custom Certificates](images/custom-certificates.png)
 
