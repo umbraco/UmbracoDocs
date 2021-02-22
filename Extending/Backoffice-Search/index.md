@@ -3,6 +3,7 @@ keywords: Backoffice Search
 versionFrom: 8.6.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Backoffice-Search/extending.md"
 ---
 
 # Backoffice Search
