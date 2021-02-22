@@ -322,7 +322,7 @@ namespace MyDashboardCustomization
         // override explicit implementation
         IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
         {
-            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
+            new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Core.Constants.Security.WriterGroupAlias},
             new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Core.Constants.Security.AdminGroupAlias}
         };
     }
