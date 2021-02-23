@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.8.0
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/IPublishedContent/properties-extension-methods.md"
 ---
 
 # IPublishedContent Property Access
