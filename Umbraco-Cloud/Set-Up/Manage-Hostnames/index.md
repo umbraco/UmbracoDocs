@@ -67,7 +67,11 @@ example.com. IN CAA 0 issue "digicert.com"
 
 This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
 
-It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated.
+It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated. If you want to use wildcards and allow certificates for any subdomain the CAA record should look like this:
+
+```
+example.com. IN CAA 0 issuewild "digicert.com"
+```
 
 ## [Upload certificates manually](Security-Certificates)
 
