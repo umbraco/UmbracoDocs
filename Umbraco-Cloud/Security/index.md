@@ -116,6 +116,39 @@ It is possible to restrict who can access the Umbraco backoffice by applying an 
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 
+Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website:
+
+Reserve Proxy version, which gets the IP from the `X-Forwarded-For` header:
+
+```xml
+<rule name="Backoffice IP Filter" enabled="true">
+    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
+    <conditions logicalGrouping="MatchAll">
+
+        <!-- Umbraco Cloud to Cloud connections should be allowed -->
+        <add input="{HTTP_X_Forwarded_For}" pattern="52.166.147.129" negate="true" />
+        <add input="{HTTP_X_Forwarded_For}" pattern="13.95.93.29" negate="true" />
+        <add input="{HTTP_X_Forwarded_For}" pattern="40.68.36.142" negate="true" />
+        <add input="{HTTP_X_Forwarded_For}" pattern="13.94.247.45" negate="true" />
+        <add input="{HTTP_X_Forwarded_For}" pattern="52.157.96.229" negate="true" />
+
+        <!-- Don't apply rules on localhost so your local environment still works -->
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+
+        <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
+         <add input="{HTTP_X_Forwarded_For}" pattern="52.232.105.169" negate="true" />
+         <add input="{HTTP_X_Forwarded_For}" pattern="52.174.66.30" negate="true" />
+
+        <!-- Add other client IPs that need access to the backoffice -->
+        <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
+
+    </conditions>
+    <action type="CustomResponse" statusCode="403"/>
+</rule>
+```
+
+Standard version, which gets the Remote IP address of the website visitor:
+
 ```xml
 <rule name="Backoffice IP Filter" enabled="true">
     <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
