@@ -57,6 +57,9 @@ Cloudflare is a popular DNS provider, which offers a variety of different servic
 
 When creating a CNAME or A-record for your hostname in Cloudflare you need to start with Proxy Status set to 'DNS Only'. Once your hostname is marked with "Protected" under the Hostname page for your Umbraco Cloud project and you can access your website through the hostname, you can choose to change Proxy Status to 'Proxying'. This is mostly relevant when you need to use specific Cloudflare services like Page Rules, Workers, or the like. If you keep the Proxy Status set to 'DNS Only' Umbraco Cloud will handle the automatic TLS setup to ensure that your hostname is always protected with HTTPS.
 
+:::note
+Do note that if you've used our old TLS provider Latch/Let's Encrypt then you have to remove the old DNS records.
+
 ### Using Certificate Authority Authorization (CAA) for your domain?
 
 CAA is a [DNS resource record type defined in RFC 6844](https://tools.ietf.org/html/rfc6844) that allows a domain owner to indicate which Certificate Authorities (CAs) are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
