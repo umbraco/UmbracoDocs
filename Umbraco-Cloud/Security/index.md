@@ -116,9 +116,17 @@ It is possible to restrict who can access the Umbraco backoffice by applying an 
 
 The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
 
-Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website:
+Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website.
 
-Reserve Proxy version, which gets the IP from the `X-Forwarded-For` header:
+:::note
+Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the Reverse Proxy version.
+
+If you are ensure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
+:::
+
+**Reverse Proxy version (eg. Cloudflare)**
+
+When using Cloudflare, which is the default setup for all Cloud projects, the project will use reverse proxy which gets the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
 
 ```xml
 <rule name="Backoffice IP Filter" enabled="true">
@@ -147,7 +155,9 @@ Reserve Proxy version, which gets the IP from the `X-Forwarded-For` header:
 </rule>
 ```
 
-Standard version, which gets the Remote IP address of the website visitor:
+**Non-Reverse Proxy (eg. non-Cloudflare)**
+
+When your Cloud project is not using Cloudflare, your site gets the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
 
 ```xml
 <rule name="Backoffice IP Filter" enabled="true">
