@@ -126,7 +126,7 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 
 **Reverse Proxy version (eg. Cloudflare)**
 
-When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy which gets the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
 
 ```xml
 <rule name="Backoffice IP Filter" enabled="true">
