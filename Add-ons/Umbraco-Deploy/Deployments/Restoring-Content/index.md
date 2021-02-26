@@ -7,7 +7,7 @@ versionFrom: 0.0.0
 When you have content on your  environment and you clone down your Umbraco project to your local machine, you will need to do an extra step, in order to see your content locally.
 
 <!--Needs to be verified how it works-->
-The restore option also comes in really handy when you have content editors creating content on the Live or Staging environments. You will be able to restore and work with that content on your Development and local environments.
+The restore option also comes in really handy when you have content editors creating content on different environments. You will be able to restore and work with that content on your different environments and locally.
 
 ## Step-by-step
 

@@ -9,8 +9,6 @@ You can use Partial Restore on
 
 ## Empty environment
 
-**This is a feature only available with Umbraco Deploy 3.3+**
-
 In this scenario you've cloned down your environment to your local machine or setup a new environment. In both cases the new environment will have an empty Content section as well as an empty Media section.
 
 :::note
@@ -21,7 +19,7 @@ E.g. when you restore a content node which references media items as well as oth
 
 Follow these steps to perform a partial restore to get only the parts you need:
 
-1. Go to the Content section of the Umbraco backoffice on your new environment (local or other environment)
+1. Go to the Content section of the Umbraco backoffice on your environment or locally
 2. *Right-click* the Content Tree, or click the three dots an select *Do something else*
 3. Choose *Partial Restore*
 4. Select the environment that you would like to restore content from
@@ -41,7 +39,7 @@ Partial Restores on empty environments are especially helpful when you have a la
 
 It is also possible to use the Partial Restore feature on environments where you already have content in the Content tree.
 
-Imagine that you are working with your Umbraco project locally. One of your content editors updates a section in the content tree on the Live environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a Partial Restore of the updated content node:
+Imagine that you are working with your Umbraco project locally. One of your content editors updates a section in the content tree on the production environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a Partial Restore of the updated content node:
 
 1. Go to the Content section of your local Umbraco backoffice
 2. *Right-click* the content node which you know contains updates
