@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Property-Editors/Extending/package-manifest.md"
 ---
 
 # Package Manifest
