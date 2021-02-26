@@ -92,5 +92,5 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 ```xml
 <add key="serilog:enrich:with-property:customer" value="Super Customer" />
 <add key="serilog:enrich:with-property:environment" value="Production" />
-<add key="serilog:enrich:with-property:deploymentId" value="%WEBSITE_DEPLOYMENT_ID%" /> (if using Azure)
+<add key="serilog:enrich:with-property:deploymentId" value="%WEBSITE_DEPLOYMENT_ID%" /> <!-- reference your hosting server's environment variables, eg. if using Azure -->
 ```
