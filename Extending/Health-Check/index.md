@@ -185,15 +185,15 @@ using System.IO;
 using System.Web;
 using System.Web.Hosting;
 using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
+using Umbraco.Web.HealthCheck;
 
 namespace Umbraco.Web.HealthCheck.Checks.SEO
 {
     [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
     Description = "Create a robots.txt file to block access to system folders.",
     Group = "SEO")]
-    public class RobotsTxt : HealthCheck
+    public class RobotsTxt : HealthCheck.HealthCheck
     {
         private readonly ILocalizedTextService _textService;
 
@@ -230,8 +230,10 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
             if (success == false)
                 actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
                 // Override the "Rectify" button name and describe what this action will do
-                { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
-                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
+                {
+                    Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
+                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription")
+                });
 
             return
                 new HealthCheckStatus(message)
@@ -256,7 +258,7 @@ Disallow: /umbraco/";
             }
             catch (Exception exception)
             {
-                Current.Logger.Error<RobotsTxt>(exception, "Could not write robots.txt to the root of the site");
+                Current.Logger.Error(typeof(RobotsTxt), exception, "Could not write robots.txt to the root of the site");
             }
 
             return
@@ -284,18 +286,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 
 namespace Umbraco.Web.HealthCheck.NotificationMethods
 {
     [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificationMethod
+    public class EmailNotificationMethod : NotificationMethodBase
     {
         private readonly ILocalizedTextService _textService;
+        private readonly IRuntimeState _runtimeState;
+        private readonly ILogger _logger;
 
-        public EmailNotificationMethod(ILocalizedTextService textService)
+        public EmailNotificationMethod(ILocalizedTextService textService, IRuntimeState runtimeState, ILogger logger)
         {
-            var recipientEmail = Settings["recipientEmail"]?.Value;
+            var recipientEmail = Settings?["recipientEmail"]?.Value;
             if (string.IsNullOrWhiteSpace(recipientEmail))
             {
                 Enabled = false;
@@ -305,6 +310,8 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
             RecipientEmail = recipientEmail;
 
             _textService = textService ?? throw new ArgumentNullException(nameof(textService));
+            _runtimeState = runtimeState;
+            _logger = logger;
         }
 
         public string RecipientEmail { get; }
@@ -328,7 +335,11 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
                 results.ResultsAsHtml(Verbosity)
             });
 
-            var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
+            // Include the umbraco Application URL host in the message subject so that
+            // you can identify the site that these results are for.
+            var host = _runtimeState.ApplicationUrl;
+
+            var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject", new[] { host.ToString() });
 
             var mailSender = new EmailSender();
             using (var mailMessage = CreateMailMessage(subject, message))
