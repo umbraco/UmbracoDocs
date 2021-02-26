@@ -5,13 +5,17 @@ needsV8Update: "true"
 
 # Tag support for property editors
 
+:::note
+This article has not yet been updated against Umbraco 8.
+
+All content in this article is writting for Umbraco 7.
+:::
+
 ## What is tag support?
 
 This document will explain how to add tagging support to property editors and what tagging support means.
 
 When a property editor with tag support enabled is published (or saved in the case of media / members) its tags will be saved into the tag table in the database and associated with the corresponding document property. This then allows you to query or render content based on tags on the front-end.
-
-*NOTE: The documentation for querying tag data is coming soon....*
 
 ## Enabling tag support
 
