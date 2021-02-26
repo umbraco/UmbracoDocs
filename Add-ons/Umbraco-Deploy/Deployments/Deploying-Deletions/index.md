@@ -4,13 +4,13 @@ versionFrom: 0.0.0
 
 # Deploying deletions
 
-On Umbraco Cloud deletions are environment specific. This means that in order to delete something entirely from your project, you need to delete it on all environments.
+With Umbraco Deploy deletions are environment specific. This means that in order to delete something entirely from your project, you need to delete it on all environments.
 
-In this article you can read about the correct way of deleting files, schema and content from your Umbraco Cloud project.
+In this article you can read about the correct way of deleting files, schema and content when using Umbraco Deploy.
 
-When you have an Umbraco Cloud project, you might have several environments - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
+When you are using Umbraco Deploy., you might have several environments - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
 
-The databases are environment specific. When you deploy from one environment to another, the engine behind Umbraco Cloud will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting/Deployments).
+The databases are environment specific. When you deploy from one environment to another, Umbraco Deploy will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting).
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
 
@@ -18,12 +18,12 @@ The main reason we do not delete schema and content on deployments, is because i
 
 ## Example scenario
 
-Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the Live environment, along with some other changes you've made.
+Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment, along with some other changes you've made.
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
 ![Changes ready for deployment](images/deletions-of-doctype.png)
-
+<!--Needs to be re-written, not sure where to see the activity log with Deploy, maybe thebuild pipeline -->
 Following the **Activity log** in the browser, you'll see that the UDA file for the Document Type is deleted, and that other files containing changes are copied into the new environment.
 
 ```

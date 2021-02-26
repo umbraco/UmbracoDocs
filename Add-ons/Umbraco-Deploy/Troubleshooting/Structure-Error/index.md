@@ -1,14 +1,10 @@
 ---
 versionFrom: 0.0.0
 ---
-
+<!--This whole article needs to be verified with help from D-team-->
 # How to resolve collision errors
 
-:::note
-If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
-:::
-
-This guide is for solving collision errors on your Umbraco Cloud project. Use this guide when you encounter an error like this:
+This guide is for solving collision errors when working with Umbraco Deploy. Use this guide when you encounter an error like this:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
@@ -24,12 +20,7 @@ The error means that two (or more) `.uda` files have been created for the same e
 
 In this example, there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
-:::note
-Does the collision error involve **Dictionary items**?
-Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
-:::
-
-You can run into an error like this on all of your Cloud environment. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
+You can run into an error like this on all of your environment. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a production environment.
 
 ## Table of content
 
@@ -39,11 +30,11 @@ You can run into an error like this on all of your Cloud environment. Sometimes 
 * [Getting your environments in sync](#getting-your-environments-in-sync)
 
 :::tip
-When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+When you have two or more environments, we recommend that you never create or make schema changes directly on the production or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
 :::
 
 ## Video tutorial
-
+<!--Needs updating-->
 <iframe width="800" height="450" src="https://www.youtube.com/embed/S8tOVxKkqw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
@@ -54,7 +45,7 @@ In the example above the entity involved is a Document Type with "home" as the a
 
 ## Deciding which file you want to use
 
-In order to fix this problem, you will have to decide which of the colliding entities is the correct one and the one you want to use on your Live environment.
+In order to fix this problem, you will have to decide which of the colliding entities is the correct one and the one you want to use on your production environment.
 
 Let's use the example from the beginning of this article, where two `.uda` files for the Document Type "home" are colliding.
 
@@ -68,7 +59,7 @@ Let's use the example from the beginning of this article, where two `.uda` files
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-For this example, it’s decided that the Document Type currently used on the Live environment is the one we want to use going forward.
+For this example, it’s decided that the Document Type currently used on the production environment is the one we want to use going forward.
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
