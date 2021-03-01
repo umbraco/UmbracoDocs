@@ -38,6 +38,7 @@ The manifest can contain five root collections, none of them are mandatory:
     "propertyEditors": [],
     "gridEditors": [],
     "parameterEditors": [],
+    "contentApps": [],
     "javascript": [],
     "css": []
 }
@@ -171,6 +172,20 @@ However the default grid editors are already configured in `/config/grid.editors
 
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
+## Content Apps
+Here is a simple example of adding a content app, for see the [Content Apps](../Content-Apps/index.md) page for more information.
+```json
+ "contentApps": [
+    {
+        "name": "Word Counter", // required - the name that appears under the icon
+        "alias": "wordCounter", // required - unique alias for your app
+        "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
+        "icon": "icon-calculator", // required - the icon to use
+        "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+    }
+]
+```
+
 ## JavaScript
 `javascript` returns a string[] of JavaScript files to load on application start
 
@@ -194,9 +209,14 @@ The parameter editors array follows the same format as the property editors desc
 ## JSON Schema
 The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
-### Setting up Visual Studio 2015
+### Schema Files
+* https://json.schemastore.org/package.manifest
+* https://json.schemastore.org/package.manifest-7.0.0
+* https://json.schemastore.org/package.manifest-8.0.0
 
-To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+### Setting up Visual Studio
+
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio.
 
 * Tools -> Options
 * Browse down to Text Editor -> File Extension
