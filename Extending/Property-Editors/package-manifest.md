@@ -173,7 +173,7 @@ However the default grid editors are already configured in `/config/grid.editors
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## Content Apps
-Here is a simple example of adding a content app, for see the [Content Apps](../Content-Apps/index.md) page for more information.
+Here is an example of adding a content app. See the [Content Apps](../Content-Apps/index.md) article for more information and a full guide on how to create Content Apps.
 ```json
  "contentApps": [
     {
