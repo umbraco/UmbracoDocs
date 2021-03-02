@@ -210,9 +210,10 @@ Here is an example of adding a content app. See the [Content Apps](../Content-Ap
 The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
 ### Schema Files
-* https://json.schemastore.org/package.manifest
-* https://json.schemastore.org/package.manifest-7.0.0
-* https://json.schemastore.org/package.manifest-8.0.0
+
+* [Package.manifest](https://json.schemastore.org/package.manifest)
+* [Package.manifest 7.0.0](https://json.schemastore.org/package.manifest-7.0.0)
+* [Package.manifest 8.0.0](https://json.schemastore.org/package.manifest-8.0.0)
 
 ### Setting up Visual Studio
 
