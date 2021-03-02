@@ -23,7 +23,7 @@ Similar to most create actions in the Umbraco backoffice, you'll have to click t
 ## Select if you want to start from scratch
 You will see the following dialog
 
-![Forms create dialog](images/FormsCreateDialog.png)
+![Forms create dialog](images/FormsCreateDialogV8.png)
 
 You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
 
@@ -37,9 +37,8 @@ The next screen you will see is the form designer.
 
 There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI.
 
-
 :::note
-In Umbraco Forms version 7 or higher there will be a predefined *dataConsent* field added to all new forms.
+In Umbraco Forms version 7 or higher, unless the feature has been disabled via configuration, there will be a predefined *Consent for storing submitted data* field added to all new forms.
 See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https://umbraco.com/blog/umbraco-version-79-and-forms-70-is-out/)
 :::
 

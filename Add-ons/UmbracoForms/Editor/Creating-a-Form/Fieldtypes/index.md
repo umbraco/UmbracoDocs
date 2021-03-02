@@ -62,14 +62,13 @@ Outputs a title and description that are set as prevalues.
 
 ![Radiobuttonlist](images/titleanddescription.png)
 
-## [reCAPTCHA](Recaptcha)
-The field displays a single checkbox for the user to check in order for the form to be validated
+## [Recaptcha2](Recaptcha2)
+The field displays a single checkbox for the user to check in order for the form to be validated.
 
 ![reCAPTCHA v2](images/recaptcha2.png)
 
-:::tip
-As reCAPTCHA v1 is shut down, we **strongly** recommend that you use the reCAPTCHA v2 field type.
-:::
+## [recaptcha3 with Score](Recaptcha3)
+Available in Umbraco Forms from v8.7.0, this field renders the necessary scripts and functionality to implement the recaptcha3 technology from Google, to minimise the possibility of form completion by bots. There is no visible input for the person filling in the form.
 
 ## Hidden
 Hidden field, won't be visible to the user.

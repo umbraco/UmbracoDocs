@@ -26,6 +26,9 @@ This configuration value expects a `True/False` value and can be used to toggle 
 ### DisableDefaultWorkflow
 This configuration value expects a `True/False` value and can be used to toggle if new forms that are created adds an email workflow to send the result of the form to the current user who created the form.
 
+### DisableAutomaticAdditionOfDataConsentField
+This configuration value expects a `True/False` value and can be used to disable the feature where all new forms are provided with a default "Consent for storing submitted data" field on creation.
+
 ### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
 
@@ -34,10 +37,12 @@ Enable this feature ONLY if you do understand the security implications.
 :::
 
 ### RecaptchaPublicKey & RecaptchaPrivateKey
-Both of these configuration values are needed in order to use ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
+Both of these configuration values are needed in order to use the "*Recaptcha2*" field type implementing legacy ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
 
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
+### RecaptchaV3SiteKey & RecaptchaV3PrivateKey
+Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google, which is available in Umbraco Forms from v8.7.0. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
 
 ### DatePickerYearRange
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
@@ -48,10 +53,12 @@ This setting needs to be a `True` or `False` value and will enable the ASP.NET A
 If you do set this to `True` then you need to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and should have `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
 
 ### StoreUmbracoFormsInDb
-
 This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.
 
 For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
+
+### UseLegacyPageService 
+In version 8.7.0 an amend was made to improve performance of a service responsible for retrieving the content of the Umbraco page where a form is hosted, in order to allow for the population of string placeholders with the values of properties from the page.  It's expected that the newer implementation will be the best one to use in all scenarios, as, although there are subtle behaviour changes, they aren't expected to be of concern in how the service is used.  However, if there is any reason to use the old one, it can be reinstated by setting this configuration value to `True`.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
