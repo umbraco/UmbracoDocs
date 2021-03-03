@@ -33,7 +33,8 @@ The first scenario is when you want to add a user to your project directly from 
 The second scenario where you'd need to setup an SMTP service for your Umbraco Cloud project, is if one of your backoffice users have forgotten their password. To reset their password, they have to request a password reset which will be send to them by mail. This will only work once you've configured an SMTP service.
 
 :::note
-The option to request password resets for backoffice users is disabled by default on Umbraco Cloud projects. This is mainly due to the fact, that we recommend adding backoffice users as team members through the Umbraco Cloud Portal instead of directly through the Umbraco backoffice.
+The option to request password resets for backoffice users is disabled by default on Umbraco Cloud projects. This is mainly to ensure that your backoffice login stays in sync with your Umbraco ID.
+You can reset your Umbraco ID password from the Umbraco Cloud login page. ![reset password](images/Reset_password.png)
 :::
 
 ## How to configure SMTP settings
