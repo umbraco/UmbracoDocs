@@ -14,7 +14,7 @@ In this article you will find a guide on how to move away from Umbraco Latch (Le
 
 ## Checking the certificate
 
-The very first step, is to double-check which provider has issues the certificate which is currently protecting your hostname(s).
+The very first step, is to double-check which provider has issued the certificate which is currently protecting your hostname(s).
 
 1. Open your website URL.
 2. Select the "lock" icon to the left of the URL in the address bar in your browser.
