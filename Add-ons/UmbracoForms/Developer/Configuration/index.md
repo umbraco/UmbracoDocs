@@ -42,7 +42,9 @@ Both of these configuration values are needed in order to use the "*Recaptcha2*"
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
 ### RecaptchaV3SiteKey & RecaptchaV3PrivateKey
-Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google, which is available in Umbraco Forms from v8.7.0. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
+Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google. This field type is available in Umbraco Forms from v8.7+. 
+
+You can obtain both of these values after signing up to create a ReCaptcha key here:  https://www.google.com/recaptcha/admin.
 
 ### DatePickerYearRange
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
