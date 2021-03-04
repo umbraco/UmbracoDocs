@@ -12,19 +12,11 @@ In this article, we will show how users work, as well as explain the different s
 
 ## Umbraco ID
 
-On Umbraco CLoud project we use Umbraco ID for new projects and projects on 8.9.1 and above.
-
-Umbraco ID is a centralised login for all users on Umbraco Cloud, both team members and Umbraco Backoffice users.
-It is used when you log in to the Umbraco Cloud Portal, projects,
+On Umbraco Cloud project we use Umbraco ID for new projects and projects on 8.9.1 and above.
+Umbraco ID is a centralised login for all users on Umbraco Cloud, both team members and Umbraco Backoffice users. It is used when you log in to the Umbraco Cloud Portal, projects,
 as well as when you clone down a project to your local machine.
 
-Because of this there are no longer any user files added in the data folder when a user is invited to a specific project.
-
-Instead when login in to the Umbraco backoffice locally you will be promted to log in using Umbraco ID.
-
-:::note
-If you need to work offline with your project locally, you can still create local users from the user section in the backoffice to be able to do so.
-:::
+When working locally the initial login will go through Umbraco ID and the online login flow. After the intial login you can set a password on your user or create a new login for the backoffice, which can be used for local logins.
 
 ## Adding users on Umbraco Cloud
 
