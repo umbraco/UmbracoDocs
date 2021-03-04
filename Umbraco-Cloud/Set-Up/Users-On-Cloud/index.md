@@ -22,6 +22,10 @@ Because of this there are no longer any user files added in the data folder when
 
 Instead when login in to the Umbraco backoffice locally you will be promted to log in using Umbraco ID.
 
+:::note
+If you need to work offline with your project locally, you can still create local users from the user section in the backoffice to be able to do so.
+:::
+
 ## Adding users on Umbraco Cloud
 
 There are two ways of adding a user to your backoffice on Umbraco Cloud.

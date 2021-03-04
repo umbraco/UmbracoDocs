@@ -34,7 +34,11 @@ The second scenario where you'd need to setup an SMTP service for your Umbraco C
 
 :::note
 The option to request password resets for backoffice users is disabled by default on Umbraco Cloud projects. This is mainly to ensure that your backoffice login stays in sync with your Umbraco ID.
-You can reset your Umbraco ID password from the Umbraco Cloud login page. ![reset password](images/Reset_password.png)
+You can reset your Umbraco ID password from the Umbraco Cloud login page. 
+
+![reset password](images/Reset_password.png)
+
+Find more details about Umbraco ID in the ['Users on Cloud article'](..\Users-On-Cloud)
 :::
 
 ## How to configure SMTP settings
