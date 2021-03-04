@@ -2,12 +2,14 @@
 versionFrom: 8.0.0
 meta.Title: "Packages on Umbraco Cloud"
 meta.Description: "Things to consider for package development and usage in Umbraco Cloud"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/packages-on-Umbraco-Cloud.md"
 ---
 
 # Packages on Umbraco Cloud
 
 If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of.
 The two most important things to know about are
+
 - [How you should store data on Cloud](#storing-data)
 - [Using custom property editors with Deploy](#valueconnectors)
 

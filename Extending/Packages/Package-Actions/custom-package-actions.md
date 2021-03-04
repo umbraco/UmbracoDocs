@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Create custom package actions for your Umbraco package"
 meta.Description: "Tutorial on how to create custom package actions for your Umbraco package"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/custom-package-actions.md"
 ---
 
 # Creating custom package actions

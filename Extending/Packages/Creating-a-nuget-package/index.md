@@ -2,6 +2,7 @@
 versionFrom: 8.0
 meta.Title: "Creating a Nuget version of an Umbraco package"
 meta.Description: "A guide to creating a Nuget version of an Umbraco package"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/creating-a-nuget-package-todo.md"
 ---
 
 # Creating a NuGet version of a package
