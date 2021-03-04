@@ -37,7 +37,9 @@ All Staging and Development environments on Umbraco Cloud projects are by defaul
 :::note
 Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher. 
 
-On **Trial** and **Starter** projects, the basic authentication is enabled on the Live environment and cannot be removed unless the project is upgraded to a higher plan. On a **Starter** plan this means that your Live environment is accessible publicly and does not require a log in, however you cannot enable Basic Auth to require log in on the Live environment again.
+On **Trial** projects, the basic authentication is enabled on the Live environment and cannot be removed unless the project is upgraded to a paid plan.
+
+Should you for some reason still have basic authentication enabled on your Live environment after upgrading your Trial, please reach out to our friendly support team, who will be able to help you move forward.
 :::
 
 On the **Public access** page you can also allow IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the allowed IPs.
