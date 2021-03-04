@@ -6,9 +6,9 @@ versionFrom: 8.0.0
 
 Having an Articles Parent page, and a number of associated child articles which editors can freely edit, provides a good example of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages or any other collection of document types.
 
-For this you can create a **Document Type Collection**, go to **_Settings > Document Types > Create > Document Type Collection_** call the Parent Document Type `Articles Main` and the Child one `Articles Item`.
+Create two new Document Types "Articles Main" and "Articles Item" Document Types Settings > Document Types (hover) > ... > + Create Document type with template.
 
-![Articles Main Document Type Data Properties](images/figure-38a-articles-main-v8.png)
+![Document type with template](images/Document_type_with_template.png)
 
 Create the following **_Tabs_** and **_Data Properties_**:
 
@@ -22,15 +22,17 @@ Create the following **_Tabs_** and **_Data Properties_**:
 
 ## Articles Item
 
->Tab = Content
+>Group = Content
 >**"Article Title"** - Type = TextBox
 >**"Article Content"** - Type = Rich Text Editor**
 
 ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png)
 
-Now go to the **_Settings > Document Types >Articles Main node > Permissions screen_** and you will notice that **_Articles Item_** has already been added as an allowed child node, this is because we created it as a Document Collection.
+Now go to the **_Settings > Document Types >Articles Main node > Permissions screen > Allowed child nodetypes_** and add **_Articles Item_**.
 
 This allows us to create items under the main (which acts as a parent container). We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_**. Do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_**. Don't add the **_Articles Item_** only the main should be allowed at this level.
+
+Then go to **_Settings > Document Types >Articles Main node > List view screen** And enable List view.
 
 Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_Articles_" of type **_Articles Main_** (if you don't have this option go back and check your allowed child nodes - did you forget to click **_Save_**)?  Give the Articles node some content and a title.
 
