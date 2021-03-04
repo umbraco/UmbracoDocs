@@ -1,6 +1,7 @@
 ---
 versionFrom: 8.1.0
 ---
+
 # Migrating content to Umbraco 8
 
 Umbraco 8 contains a lot of breaking changes and a lot of code has been cleaned up compared to Umbraco 7. Due to this, it will not be possible to do a direct upgrade from Umbraco 7 to Umbraco 8. Instead, you will need to **migrate your content** from your Umbraco 7 site into your Umbraco 8 site and then recreate the rest in the new version.
@@ -8,6 +9,12 @@ Umbraco 8 contains a lot of breaking changes and a lot of code has been cleaned 
 A content migration tool has been implemented in Umbraco 8.1.0, to help you with the transition.
 
 In this guide you can read more about the tool, its limitations and how to use it in practice.
+
+:::note
+## Migrating Umbraco Cloud sites
+
+If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the [Migrate Cloud project from 7 to 8](../../../Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) instead.
+:::
 
 ## Limitations
 
@@ -134,7 +141,3 @@ As you are updating your template files and custom implementation to fit your ne
 Umbraco 8 contains a few changes regarding the Sections in the Umbraco Backoffice. Because of this, you should also check your User Groups and make sure they have access to the appropriate sections.
 
 Learn more about the Section changes in the [Sections article](../../Backoffice/Sections)
-
-## Migrating Umbraco Cloud sites
-
-If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the [Migrate Cloud project from 7 to 8](../../../Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) instead.
