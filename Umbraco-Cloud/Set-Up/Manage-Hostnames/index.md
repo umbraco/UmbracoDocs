@@ -49,6 +49,8 @@ All hostnames added to a Umbraco Cloud project's environment will get a TLS (HTT
 Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
 
 Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Move-away-from-Latch) article.
+
+Do note that you will need to **remove the old DNS entry** before the Cloudflare service will generate a new certificate for your hostname.
 :::
 
 ### Is your domain hosted on your own Cloudflare account?
@@ -56,9 +58,6 @@ Find instructions on how to change the certificate for your hostname in the [How
 Cloudflare is a popular DNS provider, which offers a variety of different services to improve performance and security. We also use it for DNS and Hostnames on Umbraco Cloud. This means that when your own domain is also hosted with Cloudflare you need to enroll the hostname you want to add to your Umbraco Cloud project in a slightly different way.
 
 When creating a CNAME or A-record for your hostname in Cloudflare you need to start with Proxy Status set to 'DNS Only'. Once your hostname is marked with "Protected" under the Hostname page for your Umbraco Cloud project and you can access your website through the hostname, you can choose to change Proxy Status to 'Proxying'. This is mostly relevant when you need to use specific Cloudflare services like Page Rules, Workers, or the like. If you keep the Proxy Status set to 'DNS Only' Umbraco Cloud will handle the automatic TLS setup to ensure that your hostname is always protected with HTTPS.
-
-:::note
-Do note that if you've used our old TLS provider Latch/Let's Encrypt then you have to remove the old DNS records.
 
 ### Using Certificate Authority Authorization (CAA) for your domain?
 
