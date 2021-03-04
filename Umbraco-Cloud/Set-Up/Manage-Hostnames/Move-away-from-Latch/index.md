@@ -45,6 +45,12 @@ As these static IPs a volatile towards change, this is something you should only
 
 Depending on your DNS provider, it might take some time before the changes kick in.
 
+:::tip
+In some cases you might not be able to update the DNS entry but will need to create a new entry instead. 
+
+In these cases you will need to **remove the old DNS entry** in order for Umbraco Cloud and the Cloudflare service to generate a new TLS certificate for your hostname.
+:::
+
 Eventually, you should see that your hostname is now protected by a new TLS (HTTPS) certificate issues by Cloudflare.
 
 This certificate will continue to be renewed on an annual basis.
