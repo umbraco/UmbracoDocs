@@ -30,12 +30,6 @@ POST https://graphql.umbraco.io/
 Umb-Project-Alias: {project-alias}
 ```
 
-### Access via Query String parameter
-
-```http
-POST https://graphql.umbraco.io/?Umb-Project-Alias={project-alias}
-```
-
 ## Authorization
 
 By default the GraphQL API is not protected. This can be enabled through the Backoffice, where API keys for each user in the Backoffice is also managed.
