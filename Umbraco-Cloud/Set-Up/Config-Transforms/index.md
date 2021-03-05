@@ -124,3 +124,7 @@ Again, these types of prefixed files can be placed next to any other file so if 
 - `~/config/AcmeEnvironmentColor.Dashboard.development.xdt.config`
 - `~/config/AcmeEnvironmentColor.Dashboard.staging.xdt.config`
 - `~/config/AcmeEnvironmentColor.Dashboard.live.xdt.config`
+
+:::note
+Keep in mind that a misconfigured config transform may block Data Extraction on your project. Please see [here](../../Troubleshooting/Deployments/Changes-Not-Being-Applied) for more details.
+:::

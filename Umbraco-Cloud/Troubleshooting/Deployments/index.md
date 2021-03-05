@@ -20,6 +20,7 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Colliding Data Types](Colliding-Datatypes)
 * [Type Not Found](Type-Not-Found)
 * [Language Mismatch](Language-Mismatch)
+* [Changes not being applied](Changes-Not-Being-Applied)  
 
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
