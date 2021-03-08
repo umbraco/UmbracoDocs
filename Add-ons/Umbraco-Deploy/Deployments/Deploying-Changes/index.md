@@ -1,8 +1,10 @@
 ---
-versionFrom: 0.0.0
+versionFrom: 8.0.0
 ---
 
-# Deploying changes from local to your environments
+# Deploying changes with Umbraco Deploy
+
+## Deploying from local to your environments
 
 When you are working with your Umbraco Deploy project locally all changes you make will automatically be identified and picked up by your local Git client.
 
@@ -46,3 +48,5 @@ If you had to pull down new commits, it is a good idea to see if any of these co
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
 **Pro Tip:** Check the timestamp on the `deploy-complete` marker to see if it has been updated.
+
+## Deploying between environments

@@ -1,5 +1,5 @@
 ---
-versionFrom: 0.0.0
+versionFrom: 8.0.0
 ---
 
 # Deploying deletions
@@ -14,16 +14,17 @@ The databases are environment specific. When you deploy from one environment to 
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
 
-The main reason we do not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Live environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
+The main reason we do not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
 
 ## Example scenario
 
 Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment, along with some other changes you've made.
 
-Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
+Before you deploy the changes, in GIT it will show that the following changes are ready to be committed and deployed:
 
-![Changes ready for deployment](images/deletions-of-doctype.png)
-<!--Needs to be re-written, not sure where to see the activity log with Deploy, maybe thebuild pipeline -->
+![Changes ready for deployment](images/deletions-of-doctype2.png)
+
+<!--Needs to be re-written, not sure where to see the activity log with Deploy, maybe the build pipeline 
 Following the **Activity log** in the browser, you'll see that the UDA file for the Document Type is deleted, and that other files containing changes are copied into the new environment.
 
 ```
@@ -31,12 +32,12 @@ Remote: Copying file: 'css\umbraco-starterkit-style.css'
 Remote: Deleting file: 'data\revision\document-type__79f0600e71ab45eba3ebc2e44f216a05.uda'
 Remote: Copying file: 'Views\ContentPage.cshtml'
 ```
+-->
+Commit the changes and push them to the GIT repository which will trigger a deployment to your environment.
 
 Once the deployment is complete, you will notice the following:
 
-* The css file is correctly updated
-* The template is correctly updated
-* The Document Type you deleted on Development is still present in the backoffice on the Live environment
+* The Document Type you deleted on Development is still present in the backoffice on the Production environment
 
 You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file, and not the actual Document Type in the database.
 
