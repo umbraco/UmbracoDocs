@@ -23,7 +23,9 @@ The environment overview on your project will most likely not mention anything, 
 2. Navigate to site > **deployments** folder in KUDU
 3. Find the latest deployment folder, either by date, or by ID of the deployment (you can find the latest active deployment ID by opening the **active** file in the folder)
 4. If the deployment folder with the latest ID contains only two items (`log.log` and `status.xml`), that means something went wrong as we would normally see two more files - `commits.uc` and `manifest`
-5. Open the `log.log` file and look for anything mentioned XmlTransform. An example of a faulty config transform not being applied could look something like this:
+5. Open the `log.log` file and look for anything mentioning `XmlTransform`. 
+
+An example of a faulty config transform not being applied could look something like this:
 
 ```log
 	2021-03-05T13:33:12.5380343Z,Handling custom config transforms for live,,0
@@ -49,5 +51,4 @@ The environment overview on your project will most likely not mention anything, 
 
 6. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
 7. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
-
 
