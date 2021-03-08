@@ -26,7 +26,7 @@ In this article you will find instruction of 3 different ways of upgrading:
 
 * [Upgrade using NuGet](#upgrade-using-nuget)
 * [Upgrade manually from a Zip file](#upgrade-manually-from-a-zip-file)
-* [Run an unattended upgrade](#run-an-unattended-upgrade)
+* [Run an unattended upgrade (v8.12+)](#run-an-unattended-upgrade)
 
 ## Upgrade using NuGet
 
@@ -97,6 +97,41 @@ The installer will do two things:
 We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be pre-filled with your existing details and the wording will be updated. So no need to be scared. Enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
 
 ## Run an unattended upgrade
+
+When upgrading your Umbraco project to Umbraco v8.12+ it is possible to enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
+
+Below you will find the steps you need to take in order to upgrade your project unattended.
+
+### Enable the feature
+
+1. Add the `Umbraco.Core.RuntimeState.UpgradeUnattended` key to `appSettings` in your web.config file.
+2. Set the value of the key to `true`.
+
+```xml
+    <add key="Umbraco.Core.RuntimeState.UpgradeUnattended" value="true" />
+</appSettings>
+```
+
+### Check the `ConfigurationStatus`
+
+In order to trigger the actual upgrade, the correct version number needs to be set.
+
+1. Locate the `ConfigurationStatus` key in the `appSettings` section in your web.config file.
+2. Update the value to match the Umbraco version that you are upgrading to.
+
+```xml
+<add key="Umbraco.Core.ConfigurationStatus" value="x.x.x"/>
+```
+
+### Run the upgrade
+
+With the correct configuration applied, the project will be upgraded on the next boot.
+
+The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run, instead of initiating the otherwise required restart.
+
+:::note
+The upgrade is run after Composers but before Components. This is because the migration requires services that are registered in Composers and Components requires that Umbraco and the database is ready.
+:::
 
 ## Post installation
 
