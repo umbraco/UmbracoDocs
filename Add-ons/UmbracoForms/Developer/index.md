@@ -36,3 +36,6 @@ Learn about some of the configuration options that are available to you to modif
 
 ## [Magic strings](Magic-Strings/index.md)
 Learn about the magic string formats that Umbraco Forms supports, that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.
+
+## [Health Checks](Healthchecks/index.md)
+Introducing the health checks provided to confirm your Umbraco Forms installation is running as intended. Understand how to handle any issues reported.
