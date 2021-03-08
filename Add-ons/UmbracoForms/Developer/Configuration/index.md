@@ -42,7 +42,9 @@ Both of these configuration values are needed in order to use the "*Recaptcha2*"
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
 ### RecaptchaV3SiteKey & RecaptchaV3PrivateKey
-Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google, which is available in Umbraco Forms from v8.7.0. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
+Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google. This field type is available in Umbraco Forms from v8.7+. 
+
+You can obtain both of these values after signing up to create a ReCaptcha key here:  https://www.google.com/recaptcha/admin.
 
 ### DatePickerYearRange
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
@@ -58,7 +60,9 @@ This setting needs to be set to `True` if you want your Forms data to be stored 
 For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
 
 ### UseLegacyPageService 
-In version 8.7.0 an amend was made to improve performance of a service responsible for retrieving the content of the Umbraco page where a form is hosted, in order to allow for the population of string placeholders with the values of properties from the page.  It's expected that the newer implementation will be the best one to use in all scenarios, as, although there are subtle behaviour changes, they aren't expected to be of concern in how the service is used.  However, if there is any reason to use the old one, it can be reinstated by setting this configuration value to `True`.
+In Umbraco Forms 8.7 an update was made to improve the performance of the service responsible for retrieving the content of the Umbraco page where a form is hosted. This service is used to populate the string placeholders - or "magic strings" - with the values of properties from the page.
+
+By setting the value of the `UseLegacyPageService` to `True` the old service can be reinstated.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
