@@ -98,7 +98,7 @@ namespace Umbraco.Web.UI
 ```
 ## RecurringTaskBase
 
-This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to false and the `PerformRunAsync` must be overridden to implement the class.
+This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to `true` and the `PerformRunAsync` must be overridden to implement the class.
 
 ## BackgroundTaskRunner Events
 
