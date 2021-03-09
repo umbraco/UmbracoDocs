@@ -8,7 +8,7 @@ The API Browser is located in the Settings section of the Umbraco backoffice. Ex
 
 ## The user interface
 
-Using the API Browser you can browse through the output for the various API endpoints. This is done from a UI where you in the left side are able to *explore* the endpoints and it the right side *inspect* the output.
+Using the API Browser you can browse through the output for the various API endpoints. This is done from a UI, where on the left side you are able to *explore* the endpoints and on the right side you are able to *inspect* the output.
 
 ![API Browser user interface](images/user-interface.png)
 
