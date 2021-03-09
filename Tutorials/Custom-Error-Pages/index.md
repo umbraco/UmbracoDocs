@@ -2,17 +2,25 @@
 versionFrom: 8.0.0
 ---
 
-# How to implement custom error pages
+# Implementing custom error pages
 
 Since Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET, you have several options when it comes to setting up custom error pages on your website.
 
 Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience - for example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
 
+## Contents
+
+This article contains guides on how to create custom error pages for the following types of errors:
+
+* [50* errors (hosting related)](#50-errors)
+* [404 errors ("Page note found")](#404-errors)
+* [Errors with booting a project](#errors-with-booting-a-project)
+
 ## In-code error page handling
 
 One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../../Reference/Config/404handlers/) article for an example.
 
-## Config file handling
+## 50* errors
 
 Another approach for implementing a custom error page would be to specify a page that will be displayed whenever the application encounters a particular error.
 For this, you will need to create `.aspx` files to use as error pages, and change the `customErrors` line in `web.config` file.
@@ -37,6 +45,8 @@ Please note the `error.aspx` and `500.aspx` pages in the above examples would be
 
 The above approach for handling 404 errors would not work, however - for this, we need to change things up a bit.
 
+## 404 errors
+
 In this method we will use a 404 page created via the backoffice.
 
 ### Why is the method different for error 404?
@@ -44,7 +54,6 @@ In this method we will use a 404 page created via the backoffice.
 In the first example, we set up a custom error 500 page in web.config. If you try setting it up in umbracoSettings.config it will not work. Although the 404 page sample we set up in the above section did work. Why is that?
 
 The 50* errors are all related to the hosting - they come from IIS. That means they are hit 1 layer above Umbraco itself, and as such you can't manage them from Umbraco. It is possible to customize them through the web.config, though.
-
 
 ### Create a 404 page in the backoffice
 
@@ -61,15 +70,16 @@ In the ``` <errors> ``` section, you can specify redirects for specific error co
 Let us look at the `<error404>` tag.
 As the config specifies in the example, the value for error pages can be:
 
-        * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
-        * An XPath statement            (example: //errorPages[@nodeName='My cool error']
-        * A content item's integer ID   (example: 1234)
+* A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+* An XPath statement            (example: //errorPages[@nodeName='My cool error']
+* A content item's integer ID   (example: 1234)
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
+
 ```html
-      <error404>
+<error404>
       <errorPage culture="default">81dbb860-a2e3-49df-9a1c-2e04a8012c03</errorPage>
-      </error404>
+</error404>
 ```
 
 The above sample uses a GUID value.
@@ -82,9 +92,22 @@ With this approach, you can set different 404 pages for different languages (cul
 If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement - since content IDs might differ across Cloud environments.
 :::
 
-### Are the error pages not working?
+## Errors with booting a project
+
+Sometimes you might experience issues with booting up your Umbraco project. This could be a brand new project, or it could be an existing project after an upgrade.
+
+When there is an error during boot you will presented with a generic error page.
+
+[IMAGE OF THE ERROR PAGE]
+
+The file used for rendering this error page can be found here `~/umbraco/views/errors/BootFailed.html`.
+
+In order to customize this error page it is recommend that you create a **new HTML file** in `~/config/errors/` using the name `BootFailed.html`.
+
+## Are the error pages not working?
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
-- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
-- Any packages that allow you to customize redirects, or
-- Rewrite rules in web.config that might interefere with custom error handling.
+
+* Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+* Any packages that allow you to customize redirects, or
+* Rewrite rules in web.config that might interefere with custom error handling.
