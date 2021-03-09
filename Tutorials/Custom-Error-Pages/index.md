@@ -98,7 +98,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 When there is an error during boot you will presented with a generic error page.
 
-[IMAGE OF THE ERROR PAGE]
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png "Screen shot of generic BootFailed page")
 
 The file used for rendering this error page can be found here `~/umbraco/views/errors/BootFailed.html`.
 
