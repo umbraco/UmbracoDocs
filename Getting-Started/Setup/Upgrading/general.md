@@ -116,6 +116,8 @@ Below you will find the steps you need to take in order to upgrade your project 
 
 In order to trigger the actual upgrade, the correct version number needs to be set.
 
+It is important to use the version number of the version that you are upgrading to. If this is not set, the upgrade will not run even if the `UpgradeUnattended` key has been set to `true`.
+
 1. Locate the `ConfigurationStatus` key in the `appSettings` section in your web.config file.
 2. Update the value to match the Umbraco version that you are upgrading to.
 
