@@ -96,7 +96,7 @@ the [Explicit master scheduling server](#explicit-master-scheduling-server) conf
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
 
 :::note
-If using [SqlMainDomLock](azure-web-apps.md#appdomain-synchronization) on Azure WebApps then write permissions are required for the following tables for all server roles including 'Replica'.
+If using [SqlMainDomLock](azure-web-apps.md#appdomain-synchronization) on Azure WebApps then write-permissions are required for the following tables for all server roles including 'Replica'.
 
 * `umbracoLock`
 * `umbracoKeyValue`
