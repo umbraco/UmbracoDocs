@@ -103,7 +103,9 @@ When there is an error during boot you will presented with a generic error page.
 The file used for rendering this error page can be found here `~/umbraco/views/errors/BootFailed.html`.
 
 In order to customize this error page it is recommend that you create a **new HTML file** in `~/config/errors/` using the name `BootFailed.html`.
-
+:::note
+The `BootFailed.html` page will only be shown if debugging is disabled in `web.config` i.e. `<compilation debug="false" />`.  The full error can always be found in the log file.
+:::
 ## Are the error pages not working?
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
