@@ -10,7 +10,7 @@ The client libraries provide you with a starting point where you do not need to 
 
 We recommend testing with these libraries if you are looking to explore the potential of Umbraco Heartcore.
 
-Both client libraries include samples that you can connect to you Heartcore project and start testing in no time.
+Both client libraries include samples that you can connect to your Heartcore project and start testing in no time.
 
 :::tip
 Our client libraries are open source and free to use.
