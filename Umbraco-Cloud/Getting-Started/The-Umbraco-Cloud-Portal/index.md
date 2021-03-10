@@ -97,14 +97,10 @@ Note that it is not possible to change this email at a later point.
 
 Change the password for your Umbraco Cloud account.
 
-### Advanced settings
+![change password](images/change-password.png)
 
-![Advanced settings](images/advanced.jpg)
+### Edit profile
 
-#### Time zones
+Update and make sure that your information is valid and up-to-date for your Umbraco Cloud profile
 
-From your profile settings you can set your time zone. This applies to the display of status messages in the Umbraco Cloud portal and makes it easier to determine the actual time a particular status was created.
-
-#### Experimental Features
-
-You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
+![Edit profile](images/change-profile-info.png)
