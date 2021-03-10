@@ -6,7 +6,9 @@ versionFrom: 8.0.0
 
 Having an Articles Parent page, and a number of associated child articles which editors can freely edit, provides a good example of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages or any other collection of document types.
 
-Create two new Document Types "Articles Main" and "Articles Item" Document Types Settings > Document Types (hover) > ... > + Create Document type with template.
+Create two new Document Types: "Articles Main" and "Articles Item". 
+
+Go to **Settings > Document Types (hover) > ...** and choose **Create Document type with template**.
 
 ![Document type with template](images/Document_type_with_template.png)
 
