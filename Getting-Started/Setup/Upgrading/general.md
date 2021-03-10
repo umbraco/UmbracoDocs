@@ -129,6 +129,12 @@ It is important to use the version number of the version that you are upgrading 
 
 With the correct configuration applied, the project will be upgraded on the next boot.
 
+:::note
+While the upgrade processes are running, any requests made to the site will be "put on hold", meaning that no content will be returned before the upgrade is complete.
+:::
+
+#### Boot order
+
 The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run, instead of initiating the otherwise required restart.
 
 :::note
