@@ -95,12 +95,12 @@ Note that it is not possible to change this email at a later point.
 
 ### Change password
 
-Change the password for your Umbraco Cloud account.
+Change the password for your Umbraco Cloud account from here.
 
 ![change password](images/change-password.png)
 
 ### Edit profile
 
-Update and make sure that your information is valid and up-to-date for your Umbraco Cloud profile
+Update and make sure that your information is valid and up to date for your Umbraco Cloud profile from here
 
 ![Edit profile](images/change-profile-info.png)
