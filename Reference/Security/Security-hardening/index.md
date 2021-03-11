@@ -50,12 +50,14 @@ If your server is behind a load balancer, you should use `{HTTP_X_FORWARDED_FOR}
 
 If you now go to /umbraco/ for example from a different IP-address the login screen will not be rendered.
 
-## Rename your Umbraco-folder 
+## Rename your Umbraco-folder
+
 :::Note
 *Important note*: Renaming your Umbraco folder is currently not supported on Umbraco Cloud.
 
 *Important note 2*: Not all packages will keep working if you rename your Umbraco folder. Please be aware of this risk and test it at your local environment first.
 :::
+
 By default the login page of Umbraco is available at the path /umbraco/. This page is the entrance to your installation and it’s considered a good practice to rename your path to a more secure path.
 This can be done by following these two steps.
 
