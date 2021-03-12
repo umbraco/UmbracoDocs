@@ -26,7 +26,7 @@ We have some guides on how to fix the most common errors below:
 * [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
 * [Colliding Data Types](Deployments/Colliding-Datatypes)
 * [Type not found](Deployments/Type-Not-Found)
-* [Deployent fails instantly with no message](Deployments/Deployment-Failed)
+* [Deployment fails instantly with no message](Deployments/Deployment-Failed)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
