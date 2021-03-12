@@ -61,6 +61,10 @@ directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,E
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
 
+:::note
+In Examine v0.1.80 and higher, you do not need to include `tempStorage` and `tempStorageDirectory` settings.
+:::
+
 ### Pre Examine v0.1.80
 
 * If you have a {machinename} token in your `~/Config/ExamineIndex.config` file remove this part of the path. Example, if you have path that looks like: `~/App_Data/TEMP/ExamineIndexes/{machinename}/External/` it should be `~/App_Data/TEMP/ExamineIndexes/External/`
