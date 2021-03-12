@@ -46,7 +46,20 @@ An example of a faulty config transform not being applied could look something l
 	2021-03-05T13:33:12.9443101Z,   at System.Xml.XmlDocument.LoadXml(String xml),,1
 	2021-03-05T13:33:12.9599000Z,   at Microsoft.Web.XmlTransform.XmlTransformation..ctor(String transform&comma; Boolean isTransformAFile&comma; IXmlTransformationLogger logger),,1
 	2021-03-05T13:33:12.9599000Z,   at OutcoldSolutions.ConfigTransformationTool.TransformationTask.Execute(String destinationFilePath&comma; Boolean forceParametersTask).,,1
-	2021-03-05T13:33:12.9911902Z,Exception while transforming: System.Xml.XmlException: 'xdt' is an undeclared prefix. Line 4&comma; position 18.\r\n   at System.Xml.XmlTextReaderImpl.Throw(Exception e)\r\n   at System.Xml.XmlTextReaderImpl.LookupNamespace(NodeData node)\r\n   at System.Xml.XmlTextReaderImpl.AttributeNamespaceLookup()\r\n   at System.Xml.XmlTextReaderImpl.ParseAttributes()\r\n   at System.Xml.XmlTextReaderImpl.ParseElement()\r\n   at System.Xml.XmlTextReaderImpl.ParseElementContent()\r\n   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)\r\n   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)\r\n   at System.Xml.XmlDocument.Load(XmlReader reader)\r\n   at Microsoft.Web.XmlTransform.XmlFileInfoDocument.Load(XmlReader reader)\r\n   at System.Xml.XmlDocument.LoadXml(String xml)\r\n   at Microsoft.Web.XmlTransform.XmlTransformation..ctor(String transform&comma; Boolean isTransformAFile&comma; IXmlTransformationLogger logger)\r\n   at OutcoldSolutions.ConfigTransformationTool.TransformationTask.Execute(String destinationFilePath&comma; Boolean forceParametersTask).\r\nC:\Program Files (x86)\SiteExtensions\Kudu\59.51212.2600\bin\Scripts\starter.cmd C:\KuduService\uaas-deploy\deploy.cmd,,2
+	2021-03-05T13:33:12.9911902Z, Exception while transforming: System.Xml.XmlException: 'xdt' is an undeclared prefix. Line 4&comma; position 18.
+	at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+	at System.Xml.XmlTextReaderImpl.LookupNamespace(NodeData node)
+	at System.Xml.XmlTextReaderImpl.AttributeNamespaceLookup()  
+	at System.Xml.XmlTextReaderImpl.ParseAttributes()   
+	at System.Xml.XmlTextReaderImpl.ParseElement()
+	at System.Xml.XmlTextReaderImpl.ParseElementContent()   
+	at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)   
+	at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)   
+	at System.Xml.XmlDocument.Load(XmlReader reader)  
+	at Microsoft.Web.XmlTransform.XmlFileInfoDocument.Load(XmlReader reader)  
+	at System.Xml.XmlDocument.LoadXml(String xml)  
+	at Microsoft.Web.XmlTransform.XmlTransformation..ctor(String transform&comma; Boolean isTransformAFile&comma; IXmlTransformationLogger logger)
+	at OutcoldSolutions.ConfigTransformationTool.TransformationTask.Execute(String destinationFilePath&comma; Boolean forceParametersTask).
 ```
 
 6. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
