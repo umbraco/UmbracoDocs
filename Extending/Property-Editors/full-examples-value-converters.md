@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Property-Editors/Extending/full-examples-value-converters.md"
 ---
 
 # Content Picker Value Converter Example #

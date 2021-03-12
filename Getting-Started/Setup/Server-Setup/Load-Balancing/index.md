@@ -136,6 +136,12 @@ You'll need to test this solution **a lot** before going to production. You need
 
 Ensure to analyze logs from all servers and check for any warnings and errors.
 
+## Unattended upgrades
+
+When upgrading to Umbraco 8.12+ it is possible to run the upgrades unattended. 
+
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general.md#unattended-upgrades-in-a-load-balanced-setup) article.
+
 ## FAQs
 
 _Here's some common questions that are asked regarding Load Balancing with Umbraco:_

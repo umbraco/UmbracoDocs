@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.8.0
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/IPublishedContent/properties-extension-methods.md"
 ---
 
 # IPublishedContent Property Access
@@ -255,12 +256,9 @@ For example, to return the `string` result of "siteName":
 ```csharp
 @(Model.Value<string>("siteName"))
 ```
-
-Some property value converters support multiple return value formats. For example if a property value normally returns a comma separated value list like: "5677,3456,8776", then the property value converter for the property editor might support converting directly to an enumerable list of integers, for example:
+Or to return a collection of `IPublishedContent` for a multiple media picker
 
 ```csharp
-var mediaIds = Model.Value<IEnumerable<int>>("mediaIds");
-@* or directly to IPublishedContent *@
 var mediaItems = Model.Value<IEnumerable<IPublishedContent>>("mediaIds");
 ```
 

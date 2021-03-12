@@ -3,6 +3,7 @@ keywords: Backoffice Search
 versionFrom: 8.6.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Backoffice-Search/extending.md"
 ---
 
 # Backoffice Search
@@ -25,14 +26,11 @@ Umbraco 8.6 introduced a new way to extend/override the default fields by implem
 ### All Node types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeFields()
-
+    public IEnumerable<string> GetBackOfficeFields()
     {
-        var list = base.GetBackOfficeFields();
-        list.Add("parentID");
-        return list;
+        return new List<string>(base.GetBackOfficeFields()) { "parentID" };
     }
 }
 ```
@@ -40,13 +38,11 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,    
 ### Documents types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IInternalSearchConstants
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IInternalSearchConstants
 {
-    public List<string> GetBackOfficeDocumentFields()
+    public IEnumerable<string> GetBackOfficeDocumentFields()
     {
-        var list = base.GetBackOfficeDocumentFields();
-        list.Add("parentID");
-        return list;
+        return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
     }
 }
 ```
@@ -54,13 +50,11 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,    
 ### Media Types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeMediaFields()
+    public IEnumerable<string> GetBackOfficeMediaFields()
     {
-        var list = base.GetBackOfficeMediaFields();
-        list.Add("parentID");
-        return list;
+       return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
     }
 }
 ```
@@ -68,13 +62,11 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,    
 ### Member Types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,  IUmbracoTreeSearcherFields
 {
-    public List<string> GetBackOfficeMembersFields()
+    public IEnumerable<string> GetBackOfficeMembersFields()
     {
-        var list = base.GetBackOfficeMembersFields();
-        list.Add("parentID");
-        return list;
+        return new List<string>(base.GetBackOfficeMembersFields()) { "parentID" };
     }
 }
 ```

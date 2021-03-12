@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.7.0
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Property-Editors/Extending/build-a-block-editor.md"
 ---
 
 # Build a Block Editor

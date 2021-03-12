@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Sections & Trees"
 meta.Description: "An explanation on sections and trees in Umbraco"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Section-Trees/extending.md"
 ---
 
 # Sections & Trees

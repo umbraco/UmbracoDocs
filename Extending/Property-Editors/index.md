@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 meta.Title: "Umbraco Property Editors"
 meta.Description: "Guide on how to work with and create Property Editors in Umbraco"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Property-Editors/Extending/index.md"
 ---
 
 # Property Editors

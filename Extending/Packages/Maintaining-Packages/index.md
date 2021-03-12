@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 keywords: packages 
 meta.Title: "Maintaining Umbraco Packages"
 meta.Description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/maintaining-packages.md"
 ---
 
 # Maintaining packages

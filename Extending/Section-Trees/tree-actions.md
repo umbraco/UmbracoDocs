@@ -2,6 +2,7 @@
 versionFrom: 7.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Section-Trees/tree-actions.md"
 ---
 
 # Tree Actions

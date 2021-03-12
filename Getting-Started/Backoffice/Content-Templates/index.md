@@ -6,6 +6,8 @@ meta.Description: "In this article you can learn about how to create and use Con
 
 # Content Templates
 
+_This tutorial was last tested on **Umbraco 8.11**_
+
 Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
 
 ## Create - Method 1

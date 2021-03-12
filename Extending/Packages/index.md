@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 keywords: packages 
 meta.Title: "Umbraco Packages"
 meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/index.md"
 ---
 
 # Packages

@@ -382,9 +382,114 @@ namespace Umbraco8.Components
     </tr>
 </table>
 
+### Variants and Events
+
+Umbraco V8 introduced the concept of Variants for Document Types, initially to allow different language variants of particular properties within a Document Type to be edited/translated based on the languages configured in your instance of Umbraco.
+
+These variants can be saved, published and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
+
+This poses a problem when handling 'events' of the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending which event you are handling there are helper methods you can call to find out:
+
+#### Saving
+
+When handling the 'ContentService.Saving' event this will be triggered whenever a variant is saved.
+You can tell 'which' variant has triggered the save using a helper method on the `ContentSavingEventArgs` called 'IsSavingCulture'
+
+```csharp
+public bool IsSavingCulture(IContent content, string culture);
+```
+For example you could check which cultures are being saved (it could be multiple, if multiple checkboxes are checked)
+```csharp
+   private void ContentService_Saving(IContentService sender, Events.ContentSavingEventArgs e)
+        {
+  foreach (var entity in e.SavedEntities)
+            {
+                    //cultures being saved
+                  var savingCultures = entity.AvailableCultures.Where(f => e.IsSavingCulture(entity, f)).ToList();
+                  //or
+                  if (e.IsSavingCulture(entity,"en-GB") {
+                  // do things differently if the UK version of the page is being saved!
+                  }
+           }
+```
+
+#### Saved
+
+In the Saved event you can similarly use the 'HasSavedCulture' method of the 'ContentSavedEventArgs' to detect which culture caused the Save.
+```csharp
+public bool HasSavedCulture(IContent content, string culture);
+```
+#### Unpublishing
+
+When handling the Unpublishing event, this might not work how you would expect! If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur, then the Unpublishing event will be fired as expected. 
+
+However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action'without' the variant that has been unpublished.
+
+You can therefore detect the Unpublishing of a variant, in the Publishing event - using the `IsUnpublishingCulture` helper of the `ContentPublishingEventArgs`
+```csharp
+     private void ContentService_Publishing(IContentService sender, Events.ContentPublishingEventArgs e)
+        {
+            foreach (var entity in e.PublishedEntities)
+            {
+                if (e.IsUnpublishingCulture(entity, "en-GB"))    
+                {
+                    // bye bye UK!
+                }
+            }
+        }
+```
+
+#### Unpublished
+
+Again the Unpublished event does not get fired when a single variant is Unpublished, instead the Published event can be used, and the 'HasUnpublishedCulture' method of the ContentPublishedEventArgs can determine which variant being unpublished triggered the publish.
+
+```csharp
+public bool HasUnpublishedCulture(IContent content, string culture);
+```
+
+#### Publishing
+
+When handling the 'ContentService.Publishing' event this will be triggered whenever a variant is published (or unpublished - see note in Unpublishing section).
+
+You can tell 'which' variant has triggered the publish using a helper method on the `ContentPublishingEventArgs` called IsPublishingCulture 
+```csharp
+public bool IsPublishingCulture(IContent content, string culture);
+```
+For example you could check which cultures are being published and act accordingly (it could be multiple, if multiple checkboxes are checked)
+```csharp
+     private void ContentService_Publishing(IContentService sender, Events.ContentPublishingEventArgs e)
+        {
+            foreach (var entity in e.PublishedEntities)
+            {
+                var publishingCultures = entity.AvailableCultures.Where(f => e.IsPublishingCulture(entity, f)).ToList();
+                var unPublishingCultures = entity.AvailableCultures.Where(f => e.IsUnpublishingCulture(entity, f)).ToList();
+                //or
+                if (e.IsPublishingCulture(entity,"en-GB"))
+                {
+                    // welcome back Britain!
+                }
+            }
+        }
+```
+
+#### Published
+
+In the Published event you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non mandatory variant that was unpublished.
+```csharp
+public bool HasPublishedCulture(IContent content, string culture);
+public bool HasUnpublishedCulture(IContent content, string culture);
+```
+#### IContent Helpers
+In each of these events, the entities being Saved, Published and Unpublished are `IContent` entities. There are some useful helper methods on IContent to discover the status of the content item's variant cultures:
+```csharp
+bool IsCultureAvailable(string culture);
+bool IsCultureEdited(string culture);
+bool IsCulturePublished(string culture);
+```
+
 ### What happened to Creating and Created events?
 
-Both the ContentService.Creating and ContentService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way.
+Both the ContentService.Creating and ContentService.Created events have been removed. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way.
 
 Further more, there's no reason to listen for the Creating/Created events. They are misleading since they don't trigger before and after the entity has been persisted. They trigger inside the CreateContent method which never persists the entity, it constructs a new content object.
 

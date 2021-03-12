@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Database"
 meta.Description: "A guide to creating a custom Database table in Umbraco"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Database/extending.md"
 ---
 
 # Creating a custom Database table

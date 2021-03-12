@@ -4,11 +4,13 @@ versionFrom: 7.0.0
 
 # Usage on your Umbraco Cloud project
 
-In the Umbraco Cloud settings tab, we have a setting called Usage.
+In the Umbraco Cloud Settings menu you can find a page called Usage.
 
-From here you can see your current usage of Content nodes, Custom hostnames, and Media storage. You can also get an overview of the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
+From here you can see your current usage of content nodes (published/unpublished pages on your website), custom domains added to the project, the size of the media library as well as the bandwidth usage of the project.
 
-![Usage on Cloud](images/Usage.png)
+You can also get an overview of the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
+
+![Usage on Cloud](images/Usage2.png)
 
 ## Usage limits
 

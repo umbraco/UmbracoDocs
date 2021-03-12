@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Embed Providers"
 meta.Description: "A guide to creating a custom embed providers in Umbraco"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Embed-Providers/extending.md"
 ---
 
 # Embed Providers

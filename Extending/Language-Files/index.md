@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 meta.Title: "Language Files & Localization"
 meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Language-Files/extending.md"
 ---
 
 # Language Files & Localization

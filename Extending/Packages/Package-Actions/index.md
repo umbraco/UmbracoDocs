@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Package actions"
 meta.Description: "Information on how to add actions to your Umbraco package"
+v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/package-actions.md"
 ---
 
 # What are package actions?

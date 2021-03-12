@@ -49,6 +49,8 @@ All hostnames added to a Umbraco Cloud project's environment will get a TLS (HTT
 Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
 
 Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Move-away-from-Latch) article.
+
+Do note that you will need to **remove the old DNS entry** before the Cloudflare service will generate a new certificate for your hostname.
 :::
 
 ### Is your domain hosted on your own Cloudflare account?
@@ -67,7 +69,11 @@ example.com. IN CAA 0 issue "digicert.com"
 
 This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
 
-It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated.
+It is possible for CAA records to be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need that removed or updated. If you want to use wildcards and allow certificates for any subdomain the CAA record should look like this:
+
+```
+example.com. IN CAA 0 issuewild "digicert.com"
+```
 
 ## [Upload certificates manually](Security-Certificates)
 
