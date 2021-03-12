@@ -52,3 +52,6 @@ An example of a faulty config transform not being applied could look something l
 6. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
 7. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
 
+:::note
+To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/
+:::
