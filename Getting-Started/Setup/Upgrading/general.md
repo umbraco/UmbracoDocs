@@ -102,6 +102,12 @@ When upgrading your Umbraco project to Umbraco v8.12+ it is possible to enable t
 
 Below you will find the steps you need to take in order to upgrade your project unattended.
 
+:::tip
+Are you running a load balanced setup with multiple servers and environments?
+
+Check out the section about [Unattended upgrades in a load balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
+:::
+
 ### Enable the feature
 
 1. Add the `Umbraco.Core.RuntimeState.UpgradeUnattended` key to `appSettings` in your web.config file.
@@ -140,6 +146,17 @@ The Runtime level will use `Run` instead of `Upgrade` in order to allow the webs
 :::note
 The upgrade is run after Composers but before Components. This is because the migration requires services that are registered in Composers and Components requires that Umbraco and the database is ready.
 :::
+
+### Unattended upgrades in a load balanced setup
+
+Follow the steps outlined below to use run unattended upgrades in a load balanced setup.
+
+1. Upgrade Umbraco via NuGet in Visual Studio. Make sure the `Umbraco.Core.ConfigurationStatus` key in `appSetting` in the `web.config` file is updated to match the **target version**.
+2. Deploy to all environments - be sure to include the `appSetting`.
+3. Set the `Umbraco.Core.RuntimeState.UpgradeUnattended` key in `appSetting` in the `web.config` to `true` for **only the Main server**.
+4. Request a page on the Main server and the upgrade will run automatically.
+5. Wait for the upgrade to complete.
+6. Browse the Read-Only servers and make sure they do not show the “upgrade required” screen.
 
 ## Post installation
 
