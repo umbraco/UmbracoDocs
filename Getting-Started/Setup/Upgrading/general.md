@@ -152,8 +152,8 @@ The upgrade is run after Composers but before Components. This is because the mi
 Follow the steps outlined below to use run unattended upgrades in a load balanced setup.
 
 1. Upgrade Umbraco via NuGet in Visual Studio. Make sure the `Umbraco.Core.ConfigurationStatus` key in `appSetting` in the `web.config` file is updated to match the **target version**.
-2. Deploy to all environments - be sure to include the `appSetting`.
-3. Set the `Umbraco.Core.RuntimeState.UpgradeUnattended` key in `appSetting` in the `web.config` to `true` for **only the Main server**.
+2. Deploy to all environments, including the updated `appSetting` for `Umbraco.Core.ConfigurationStatus`.
+3. Set the `Umbraco.Core.RuntimeState.UpgradeUnattended` key in `appSetting` in the `web.config` to `true` for **the Main server only**.
 4. Request a page on the Main server and the upgrade will run automatically.
 5. Wait for the upgrade to complete.
 6. Browse the Read-Only servers and make sure they do not show the “upgrade required” screen.
