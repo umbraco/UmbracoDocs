@@ -11,7 +11,7 @@ A quick guide to how you can set up Umbraco Deploy.
 
 ## [Set Up](Set-Up/)
 
-guides to how you can install Umbraco Deploy on your Umbraco projects set it up using a CI/CD build server.
+guides to how you can install Umbraco Deploy on your Umbraco projects and set it up using a CI/CD build server.
 
 ## [Deployments](Deployments/)
 
