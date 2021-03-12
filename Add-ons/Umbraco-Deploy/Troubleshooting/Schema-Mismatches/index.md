@@ -8,9 +8,9 @@ When transferring or restoring content between two Umbraco Deploy environments, 
 
 In this article you can learn how to resolve schema mismatch issues, and how you can avoid them in the future.
 
-## Video Tutorial
-<!--Needs update to V8 and Deploy-->
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!--## Video Tutorial
+Needs update to V8 and Deploy
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
 
 ## Step-by-step
 

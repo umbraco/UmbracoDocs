@@ -95,7 +95,7 @@ It's important that these settings are added to both the source and target envir
 
 ## Transfer Forms data as content
 
-In order for your Cloud project to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.Settings.config`:
+In order for deploy to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.Settings.config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -104,14 +104,7 @@ In order for your Cloud project to handle Forms data as content, you'll need to 
 </settings>
 ```
 
-:::note
-This only needs to be done if your Cloud project was created **before** June 18th 2019. Make sure to [follow the instructions](../Umbraco-Forms-on-Cloud/#did-you-create-your-cloud-project-before-june-18th-2019) to succesfully change this setting on all environments.
-:::
-
-
 ## ExportMemberGroups
-
-This is available in Deploy 3.4.0+ version and newer. 
 
 This setting is to be defined and set to false only if you are using an external membership provider for your members. You will not want to export member groups that would no longer be managed by Umbraco but by an external membership provider.
 
@@ -123,9 +116,3 @@ Setting the `exportMemberGroups` to false will no longer export member groups to
     <deploy exportMemberGroups="false" />
 </settings>
 ```
-
-
-
-
-### Large media libraries
-If you are often hitting the timeouts on content transfer or restores it is likely because your media library is too large. It is recommended that you switch to Blob storage if you have a media library larger than 1gb. See how [here!](../../../Set-Up/Media)
