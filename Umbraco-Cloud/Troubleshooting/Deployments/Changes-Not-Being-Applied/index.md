@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Extraction error: Config transforms failing
 
-Sometimes you might notice that even though your deployments are coming through without errors, no changes are actually being applied on the Cloud environments.
+Sometimes you might notice that even though your deployments are coming through without errors, no changes are being applied on the Cloud environments.
 This might be due to Config Transforms failing during the extraction process.
 
 This issue may occur if you have added custom [Config Transforms](../../../Set-up/Config-Transforms) to your project.
@@ -13,13 +13,13 @@ Since Config Transforms are applied on every data extraction, the behaviour will
 
 ## How do I know I have this issue?
 
-This problem is a bit tricky to spot, as the only indicator is that changes you made on the original environment are not being applied even though the deployment was complete (although when pushing from local you might get a warning message).
+This problem is a bit tricky to spot, as the only indicator is that changes you made on the source environment are not being applied - even though the deployment was complete (although when pushing from local you might get a warning message).
 
 The environment overview on your project will most likely not mention anything, which means you will have to delve into KUDU.
 
 ## How to check for and resolve the issue
 
-1. Access [KUDU](../../../Set-up/Power-Tools)  on the affected environment
+1. Access [KUDU](../../../Set-up/Power-Tools) on the environment where you expected to see your changes reflected
 2. Navigate to site > **deployments** folder in KUDU
 3. Find the latest deployment folder, either by date, or by ID of the deployment (you can find the latest active deployment ID by opening the **active** file in the folder)
 4. If the deployment folder with the latest ID contains only two items (`log.log` and `status.xml`), that means something went wrong as we would normally see two more files - `commits.uc` and `manifest`
