@@ -9,7 +9,7 @@ meta.Description: "A guide to using the public Umbraco Cloud REST API"
 Umbraco Cloud has a REST API that you can use to automatically create new projects. This can come in really handy if you are going to create a lot of projects within a short period of time or if you want to automate project creation or team management.
 
 :::note
-Do note that the /create endpoint can only be used for creating <b>v7</b> projects.
+Do note that the /create endpoint can only be used for creating <b>Umbraco Cloud</b> projects.
 
 It's currently not possible to create Heartcore or Uno projects using the Cloud API.
 :::
@@ -53,7 +53,8 @@ To use this endpoint, make a request like this:
     {
         "projectName": "Name of the project", // Required
         "plan": "Single", // Required. Options are: "Single, Standard or Studio". Plan names are case sensitive.
-        "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
+        "ownerId": "contact@umbraco.com", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with. Do note that the ownerID needs to match the auth token owner.
+        "SKU": "version8" // Remove this line if you wish to create a v7 project
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
     
