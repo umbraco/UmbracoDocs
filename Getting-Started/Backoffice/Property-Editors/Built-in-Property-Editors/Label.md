@@ -49,7 +49,7 @@ There is also a Value Type: Long string if you need to set a very long string va
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
 @{
