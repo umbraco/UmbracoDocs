@@ -261,8 +261,3 @@ jobs:
 ```
 
 Now we can go ahead and push our files from our local machine to our Git repository, which then will trigger the deployment and extract our files into our hosted website in Azure and update Umbraco with the necessary changes.
-
-
-
-<!--## Installing Umbraco Deploy on existing site-->
-
