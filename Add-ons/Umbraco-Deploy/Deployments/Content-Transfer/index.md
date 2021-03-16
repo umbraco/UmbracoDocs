@@ -21,16 +21,13 @@ You want to transfer the whole site so you start from the `Home` node and choose
 1. Click on the ellipsis next to the `Home` node in the Content tree
 2. Choose "Do something else"
 3. There you get the choice of **Queue for transfer**
-  * If you’re currently editing the Home page you could also use the Actions dropdown to find  **Queue for transfer**
+    * If you’re currently editing the Home page you could also use the Actions dropdown to find  **Queue for transfer**
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node
-  * If you wish to transfer all your content at once, *right-click* the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
+    * If you wish to transfer all your content at once, *right-click* the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
 5. When you've selected all the content you wish to transfer go to the Deployment dashboard - the easiest way to get there is to click on the Content section header
 6. You will be able to see which items are currently ready to be transferred - this will include both content and media that you've *queued for transfer*
 7. Confirm by clicking '*Send changes to the Development workspace*' and monitor the progress of the transfer
 8. If everything went well, you will see the confirmation screen saying that the transfer has succeeded
-
-<!--Needs updating to V8-->
-![Content transfer](images/content-transfer.gif)
 
 ### Media items
 
@@ -45,7 +42,7 @@ Media items are transferred the same way as content:
 Forms are transferred the same way as content and media:
 
 1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer**
-  * or *right-click* the top of the Forms section to transfer all your Forms at once.
+    * or *right-click* the top of the Forms section to transfer all your Forms at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items
 
 ## Schema Mismatches

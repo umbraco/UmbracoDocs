@@ -44,13 +44,10 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 :::
 
 ## Installation steps
-
-1. Set up Git repository and new Umbraco project
-2. Install Umbraco Deploy via NuGet
-3. Generate Umbraco Deploy API Key
-4. Add the key in the app settings appSettings
-5. Configure UmbracoDeploy.config
-6. Configure CI/CD build server
+<!--Add link to sections-->
+1. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
+2. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
+3. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
 
 ### Set up Git repository and Umbraco project
 
@@ -288,6 +285,6 @@ The Build server that has been set up will go through the steps in the YAML file
 
 ![Deployment Complete](images/deployment-complete.png)
 
-We can now start creating content on the local machine. We can see that once we create something like a document type, the changes are getting picked up in git and, once done with making changes, we can commit them and deploy them to Github which again, will run the build server we have set up and then extract the changes into our website that we have set up in Azure.
+We can now start creating content on the local machine. We can see that once we create something like a document type, the changes are getting picked up in Git and, once done with making changes, we can commit them and deploy them to Github which again, will run the build server we have set up and then extract the changes into our website that we have set up in Azure.
 
 This will only deploy the meta data for our local site to your website in Azure, to transfer content and media you will need to do so from the backoffice on your local project using the queue for transfer [feature](../Content-Transfer).

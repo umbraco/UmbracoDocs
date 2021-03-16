@@ -16,7 +16,7 @@ In summary:
 
 1. Meta data such as Document Types, Templates, Forms, Views and config files are stored in a git repository and are **deployed** between environments using either a git client or using the command prompt.
 
-2. Content and Media items are **not** stored in the git repository. These need to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
+2. Content and Media items are **not** stored in the repository. These need to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
 <!-- need new video or need to be removed 
 ### Video tutorial

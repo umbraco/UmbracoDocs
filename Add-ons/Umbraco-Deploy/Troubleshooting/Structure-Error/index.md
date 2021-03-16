@@ -1,5 +1,5 @@
 ---
-versionFrom: 0.0.0
+versionFrom: 8.0.0
 ---
 <!--This whole article needs to be verified with help from D-team-->
 # How to resolve collision errors
@@ -34,10 +34,10 @@ When you have two or more environments, we recommend that you never create or ma
 :::
 
 ## Video tutorial
-<!--Needs updating-->
+<!--Needs updating
 <iframe width="800" height="450" src="https://www.youtube.com/embed/S8tOVxKkqw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
+You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).-->
 
 ## Using the error message
 

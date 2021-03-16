@@ -43,6 +43,7 @@ This setting allows you to manage how relations are deployed between environment
 This setting is used by package creators who want to have their custom editors work with Deploy. The packages should be creating this setting automatically. There is a community driven package that has value connectors for Deploy called [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib)
 
 Here is how it can look:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
@@ -75,6 +76,7 @@ It's important that these settings are added to both the source and target envir
 Umbraco Deploy have a few built in timeouts, which on larger sites might needs to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
 The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available, which all uses the default timeout which currently is set for 8 minutes.
+
 - sessionTimeout
 - sourceDeployTimeout
 - httpClientTimeout
