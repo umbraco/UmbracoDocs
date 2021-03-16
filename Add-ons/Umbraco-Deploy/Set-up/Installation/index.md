@@ -56,7 +56,16 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 
 The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web and new Umbraco project through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
-When setting up the Github repository add a Gitignore file using the Visual Studio template once we have installed the Umbraco project we will add some Umbraco and Umbraco deploy specific files that we want to get ignored.
+When setting up the Github repository add a Gitignore file using the Visual Studio template once we have installed the Umbraco project we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy:
+
+```none
+**/App_Data/*
+!**/App_Data/packages
+**/media/*
+
+# Umbraco deploy specific
+**/data/deploy*
+```
 
 Once the Github repository have been created, clone it down to your local machine.
 
@@ -151,7 +160,7 @@ We can see that the file has been created and it is being tracked by Git and we 
 
 Now Umbraco Deploy has been installed on our local machine and project, we can now go ahead and commit the files to our repository.
 
-However, make sure to not push the files up just yet as We will need to set up a CI/CD build server and connect it to our Github repository.
+However, make sure to not push the files up yet as We will need to set up a CI/CD build server and connect it to our Github repository.
 
 Then when we push the commit up the build server will run and build our solution into where you are hosting your website.
 
@@ -271,14 +280,14 @@ This is done in Github under settings > Secrets > New repository secret it needs
 
 We can then go ahead and commit it to our Github repository as well and can now push up all the files to our Github repository.
 
-Once the files have been pushed up, go to Github and there we can see that the CI/CD build have started running:
+Once the files have been pushed up, go to Github and there we can see that the CI/CD build has started running:
 
 ![Deployment build started](images/Deploying-meta-data.png)
 
-The Build server that have been set up will go through the steps in the YAML file and once it is done in Github we can see that the deployment have gone through succesfully
+The Build server that has been set up will go through the steps in the YAML file and once it is done in Github we can see that the deployment have gone through succesfully
 
 ![Deployment Complete](images/deployment-complete.png)
 
-We can now start creating content on the local machine. We can see that once we create something like a document type, the changes is getting picked up in git and once done with making changes, we can commit them and deploy them to github which again, will run the build server we have set up and then extract the changes into our website that we have set up in Azure.
+We can now start creating content on the local machine. We can see that once we create something like a document type, the changes are getting picked up in git and, once done with making changes, we can commit them and deploy them to Github which again, will run the build server we have set up and then extract the changes into our website that we have set up in Azure.
 
 This will only deploy the meta data for our local site to your website in Azure, to transfer content and media you will need to do so from the backoffice on your local project using the queue for transfer [feature](../Content-Transfer).

@@ -2,7 +2,9 @@
 # Umbraco Deploy
 
 Welcome to the Umbraco Deploy documentation. Here you can read all about how to set up and work with Umbraco Deploy.
+
 You can find articles about how to set up Umbraco Deploy on a new or an existing website and the deployment workflow.
+
 You can also find articles about troubleshooting various issues.
 
 ## [Getting Started](Getting-Started/)
