@@ -20,7 +20,7 @@ The error means that two (or more) `.uda` files have been created for the same e
 
 In this example, there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
-You can run into an error like this on all of your environment. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a production environment.
+You can run into an error like this on any of your environments. Sometimes you might also run into it on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a production environment.
 
 ## Table of content
 
