@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Deployment
-Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Deploy uses a classic "left to right" deployment model, meaning that changes are first made in he Development or local environment and then deployed to the production environment.
+Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Deploy uses a classic "left to right" deployment model, meaning that changes are first made in the Development or local environment and then deployed to the production environment.
 
 __Note:__ If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 
