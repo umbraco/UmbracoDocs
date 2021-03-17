@@ -157,7 +157,7 @@ We can see that the file has been created and it is being tracked by Git and we 
 
 Now Umbraco Deploy has been installed on our local machine and project, we can now go ahead and commit the files to our repository.
 
-However, make sure to not push the files up yet as We will need to set up a CI/CD build server and connect it to our Github repository.
+However, make sure to not push the files up yet as we will first need to set up a CI/CD build server and connect it to our Github repository.
 
 Then when we push the commit up the build server will run and build our solution into where you are hosting your website.
 
