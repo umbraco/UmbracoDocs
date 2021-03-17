@@ -5,8 +5,14 @@ meta.Title: "Healthchecks"
 
 # Health Checks
 
+In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly. 
+
+Read the [Health Check](../../../Extending/Health-Check) article to learn more about the feature in general.
 ## Database Integrity Health Check
 
+Running this health check will verify whether the database tables for the Umbraco Forms installation are all set up correctly with the proper data integrity checks.
+
+In this section, you can learn more about the background for adding this check, as well as how to use and understand the results.
 ### Background
 
 With version 8.7, a health check was introduced to confirm the Umbraco Forms database tables are all set up with the expected data integrity checks - i.e. primary keys, foreign keys and unique constraints.
@@ -21,7 +27,7 @@ There shouldn't be - but without these constraints in place it's always possible
 
 ### Running The Health Check
 
-To run the health check, navigate to _Settings > Health Check_ and click on the _Forms_ button.  Then click _Check Group_.
+To run the health check, navigate to the Health Check dashboard in the Settings section in the Umbraco backoffice. Click on the _Forms_ button and select _Check Group_.
 
 You'll see a result that looks something like this:
 
@@ -46,7 +52,9 @@ To support this, we provide the following SQL scripts:
 
 The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies just to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
 
+:::note
 Before running any scripts or queries, please be sure to have a database backup in place.
+:::
 
 To take an example, let's say that via the health check results you can see that the _"Unique constraint on table 'UFForms', column 'Key' is missing."_
 
@@ -70,7 +78,7 @@ The CREATE UNIQUE INDEX statement terminated because a duplicate key was found f
 
 The constraint can't be applied if there are existing duplicate values, so first they need to be found and removed.
 
-To find duplicate 'Key' field value in this table you can run the following SQL statement:
+To find duplicate values in the 'Key' field in this table you can run the following SQL statement:
 
 ```
 SELECT [Key]
@@ -79,7 +87,7 @@ GROUP BY [Key]
 HAVING COUNT(*) > 1
 ```
 
-Which will list out the 'Key' fields that are duplicated in the table.
+Running the statement above will list out the 'Key' fields that are duplicated in the table.
 
 To see the full details of the duplicate records, you can use this query:
 
@@ -105,13 +113,3 @@ To support this, we provide the following SQL scripts:
 
 - Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert.sql](scripts/8.7.0-apply-keys-and-indexes_revert.sql)
 - Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert.sql](scripts/8.7.0-apply-keys-and-indexes-forms-in-db_revert.sql)
-
-
-
-
-
-
-
-
-
-
