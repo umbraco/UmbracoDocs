@@ -30,7 +30,7 @@ You can run into an error like this on any of your environments. Sometimes you m
 * [Getting your environments in sync](#getting-your-environments-in-sync)
 
 :::tip
-When you have two or more environments, we recommend that you never create or make schema changes directly on the production or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+When you have two or more environments, we recommend that you never create or make schema changes directly on the Production or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
 :::
 
 ## Video tutorial
