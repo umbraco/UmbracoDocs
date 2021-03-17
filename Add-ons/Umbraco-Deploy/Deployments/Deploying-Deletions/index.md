@@ -33,7 +33,7 @@ Remote: Deleting file: 'data\revision\document-type__79f0600e71ab45eba3ebc2e44f2
 Remote: Copying file: 'Views\ContentPage.cshtml'
 ```
 -->
-Commit the changes and push them to the Git repository which will trigger a deployment to your environment.
+Commit the changes and push them to your repository and trigger a deployment to your environment.
 
 Once the deployment is complete, you will notice the following:
 
