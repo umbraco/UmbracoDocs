@@ -36,20 +36,7 @@ ADD CONSTRAINT UK_UFWorkflows_Key UNIQUE NONCLUSTERED
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 
--- Adds relationship between UFForms and UFWorkflows.
-ALTER TABLE dbo.UFWorkflows
-ADD CONSTRAINT
-	FK_UFWorkflows_UFForms_FormId FOREIGN KEY
-	(
-	FormId
-	) REFERENCES dbo.UFForms
-	(
-	[Key]
-	) ON UPDATE  NO ACTION 
-	 ON DELETE  NO ACTION 
-GO
-
--- Adds index on foreign key fields in UFWorkflows.
+-- Adds index on join field in UFWorkflows.
 CREATE NONCLUSTERED INDEX IX_UFWorkflows_FormId ON dbo.UFWorkflows
 (
 	FormId ASC

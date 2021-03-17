@@ -4,11 +4,6 @@
  This reverts for SQL Server the migration AddFormKeysAndIndexes and can be used for rolling that back in testing.
  */
 
- -- Reverts addition of relationship between UFForms and UFWorkflows.
-ALTER TABLE dbo.UFWorkflows
-DROP CONSTRAINT IF EXISTS FK_UFWorkflows_UFForms_FormId
-GO
-
 -- Reverts addition of unique constraint to UFForms.
 ALTER TABLE dbo.UFForms
 DROP CONSTRAINT IF EXISTS UK_UFForms_Key
