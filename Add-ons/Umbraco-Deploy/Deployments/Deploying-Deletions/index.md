@@ -39,7 +39,7 @@ Once the deployment is complete, you will notice the following:
 
 * The Document Type you deleted on Development is still present in the backoffice on the Production environment
 
-You might wonder why the Document Type that you have deleted, is still there. The reason is, that deploy only delete the associated UDA file, and not the actual Document Type in the database.
+You might wonder why the Document Type that you have deleted, is still there. The reason is, that deploy only deletes the associated UDA file, and not the actual Document Type in the database.
 
 In order to completely delete the Document Type from your entire project, you need to delete it from the backoffice of any of the other environments you have as well. When the Document Type has been deleted from the backoffice of all environments and no UDA file exists, you can consider it completely gone.
 

@@ -18,7 +18,7 @@ These files must be committed to Source control (i.e. Git). Umbraco Deploy works
 
 For example, when working locally you might create a new Content-Type, this will automatically create a new on-disk file in the ~/data folder which is the serialized version of the new Content-Type. You would commit this file to your repository and push this change to your hosted source control (i.e. GitHub).
 
-When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (i.e. Azure DevOps) which will push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment which will extract all changes found in the ~/data folder into the Umbraco target environment.
+When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps) which will push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment which will extract all changes found in the `~/data` folder into the Umbraco target environment.
 
 ![Deploy workflow](images/Deploy_concept.png)
 
@@ -157,7 +157,7 @@ We can see that the file has been created and it is being tracked by Git and we 
 
 Now Umbraco Deploy has been installed on our local machine and project, we can now go ahead and commit the files to our repository.
 
-However, make sure to not push the files up yet as We will need to set up a CI/CD build server and connect it to our Github repository.
+However, make sure to not push the files up yet as we will first need to set up a CI/CD build server and connect it to our Github repository.
 
 Then when we push the commit up the build server will run and build our solution into where you are hosting your website.
 
