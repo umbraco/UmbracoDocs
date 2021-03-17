@@ -44,6 +44,3 @@ If you had to pull down new commits, it is a good idea to see if any of these co
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
 Another way is to use the Deploy Dashboard in the settings section of the backoffice, where you can see the status if an operation has been triggered, is in progress, has completed or has failed, by reading the marker files on the disk and you can trigger the operations.
-
-
-**Pro Tip:** Check the timestamp on the `deploy-complete` marker to see if it has been updated.

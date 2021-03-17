@@ -8,19 +8,6 @@ In this article, we will cover the steps in order for you to install Umbraco dep
 
 We will cover how to install Umbraco deploy and set up Umbraco deploy on your website as well as show an example as to how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure web Apps.
 
-## How Umbraco Deploy works
-
-Umbraco Deploy works by serializing non-content Umbraco items (called “Schema” items) to disk. These serialized files are located in the folder ~/data at the root of your website.
-
-These items are entities like Content-Types, Media Types, Data Types, etc.
-
-These files must be committed to Source control (i.e. Git). Umbraco Deploy works by “extracting” this serialized information back into your Umbraco installation. This is done by Deployment Triggers when a deployment is sent to a target environment.
-
-For example, when working locally you might create a new Content-Type, this will automatically create a new on-disk file in the ~/data folder which is the serialized version of the new Content-Type. You would commit this file to your repository and push this change to your hosted source control (i.e. GitHub).
-
-When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps) which will push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment which will extract all changes found in the `~/data` folder into the Umbraco target environment.
-
-![Deploy workflow](images/Deploy_concept.png)
 
 ## Prerequisites
 
@@ -39,7 +26,7 @@ When you want this deployed to your next upstream environment (i.e. staging), yo
 In this guide we will show how you can install Umbraco Deploy on a brand new site and set up Umbraco Deploy using Github actions
 
 :::note
-Do note that in this guide we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the hosting provider and CI/CD pipeline that you prefer,
+In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the hosting provider and CI/CD pipeline that you prefer,
 as long as it supports executing Powershell scripts it will work with Umbraco Deploy
 :::
 
