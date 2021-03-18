@@ -8,14 +8,13 @@ In this article, we will cover the steps in order for you to install Umbraco dep
 
 We will cover how to install Umbraco deploy and set up Umbraco deploy on your website as well as show an example as to how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure web Apps.
 
-
 ## Prerequisites
 
 * Umbraco 8
 
 * Visual studio 2017 v15.9.6 or later
 
-* Git and Github repository
+* Git and a repository
 
 * CI/CD or Build Server that supports executing Powershell
 
@@ -31,7 +30,7 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 :::
 
 ## Installation steps
-<!--Add link to sections-->
+
 1. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
 2. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
 3. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
@@ -40,7 +39,19 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 
 The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web and new Umbraco project through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
-When setting up the Github repository add a Gitignore file using the Visual Studio template once we have installed the Umbraco project we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy:
+When setting up a repository add a Gitignore file using the Visual Studio template once we have installed the Umbraco project we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy.
+
+Once the repository have been created, clone it down to your local machine.
+
+Once it have been cloned down install the Umbraco project in the repository folder so it will be picked up by Git.
+
+Once the project have been created in the repository, run the project and install Umbraco 8 run through the installer with a Custom SQL connection string to a local database.
+
+Once the installation is done, navigate to the data folder using the command line and run an echo > deploy which will trigger the UDA schema to be installed.
+
+Umbraco have now been installed in the repository, make sure to commit the files to so they are ready to be pushed up once we have set up the build server.
+
+After the Umbraco files have been commited add the following files to the Gitignor so that they will not be picked up by Git when we are deploying and commit it as well.
 
 ```none
 **/App_Data/*
@@ -51,17 +62,9 @@ When setting up the Github repository add a Gitignore file using the Visual Stud
 **/data/deploy*
 ```
 
-Once the Github repository have been created, clone it down to your local machine.
-
-Once it have been cloned down install the Umbraco project in the repository folder so it will be picked up by Git.
-
-Once the project have been created in the repository, run the project and install Umbraco 8 run through the installer with a Custom SQL connection string to a local database.
-
-Once the installation is done, navigate to the data folder using the command line and run an echo > deploy which will trigger the UDA schema to be installed
-
 ### Installing and setting up Umbraco Deploy
 
-When we have installed our umbraco project in the Github repository, we can go ahead and install Umbraco Deploy in our project.
+When we have installed our umbraco project in a repository, we can go ahead and install Umbraco Deploy in our project.
 
 To install Umbraco deploy, in Visual Studio, go to the NuGet Package Manager and search for "UmbracoDeploy" and install it in the Visual Studio solution.
 
@@ -144,7 +147,7 @@ We can see that the file has been created and it is being tracked by Git and we 
 
 Now Umbraco Deploy has been installed on our local machine and project, we can now go ahead and commit the files to our repository.
 
-However, make sure to not push the files up yet as we will first need to set up a CI/CD build server and connect it to our Github repository.
+However, make sure to not push the files up yet as we will first need to set up a CI/CD build server and connect it to our a repository.
 
 Then when we push the commit up the build server will run and build our solution into where you are hosting your website.
 
