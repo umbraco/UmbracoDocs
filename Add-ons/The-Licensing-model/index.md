@@ -53,6 +53,15 @@ Additional domains can be purchased from your account on [Umbraco.com](https://u
 That this is an add-on domain for existing licenses. Refunds will not be given for this product.
 :::
 
+### Umbraco Deploy
+
+- A single license covers the installation and use of Umbraco Courier in 1 production domain, as well as 2 development domains
+- The production domain includes all subdomains (e.g. `*.domain.tld`), as well as the `.local` extension (e.g. `domain.tld.local`)
+- The development domains works with or without the `www` subdomain
+- The license also includes `localhost` as a valid domain
+
+For the Umbraco Deploy license you do not need to purchase additional domains if you are running multiple sites within the same Umbraco installation.
+
 ### Umbraco Courier
 
 - A single license covers the installation and use of Umbraco Courier in 1 production domain, as well as 2 development domains
