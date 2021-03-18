@@ -15,7 +15,7 @@ Here's a quick step-by-step on how you deploy these changes to your environment:
 - The corresponding `.uda` file for this Document type is now updated with the changes - the file is located in the `/data/revision` folder
 - You’ve also created a new data type that’s used on the document type. This data type is stored as a new file in the `/data/revision` folder as well
 - Using Git, commit those two changed files to your local repository and push them to your repository
-- a deployment kicks in and the document type is updated and the new data type you created locally is now automatically created in the environment as well
+- A deployment kicks in and the document type is updated and the new data type you created locally is now automatically created in the environment as well
 
 ## Deploying without using a Git client
 
