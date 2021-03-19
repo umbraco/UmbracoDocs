@@ -59,7 +59,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
 
-Since February 9th 2021, the third alpha release has been available.
+Since March 24th 2021, the fourth alpha release has been available.
 
 More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
@@ -73,12 +73,16 @@ Found a bug that isn't already reported? Please report it on the [GitHub tracker
 
 To get started, follow the steps outlined below.
 
-### Known issues in current Alpha release
-* Often when using the backoffice, a “Not the Ambian scope” exception is shown. Often you can retry the operation with success.
+### Known issues and mising parts in current Alpha release 
 * Restarts during install
   * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
 * Members are still an area with lots of missing functionality
 * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
+
+* Static events
+  * The codebase still has some static events that are not migrated yet. Feel free to pick up some of them and help to migrate them. If you are a package developer and need to use some of the events that are not migrated yet, please reach out and tell us which you want us to prioritize.
+* File system abstractions
+  * The current filesystem abstractions are expected to be changed before the final release. If you are a package developer, and your package mainly extends the file systems, we recommend that you wait for a later release before you start migrating that package.
 
 ### Prerequisites
 
@@ -96,7 +100,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::0.5.0-alpha003
+    dotnet new -i Umbraco.Templates::9.0.0-alpha004
     ```
 
 ### Steps to update the template from earlier alpha versions
@@ -106,7 +110,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::0.5.0-alpha003
+    dotnet new -i Umbraco.Templates::9.0.0-alpha004
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -144,7 +148,7 @@ The following steps, will continue using CLI based on the steps above.
     dotnet run
     ```
 
-The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-3.1&tabs=windows#kestrel) and is available on the default ports: http://localhost:5000 and https://localhost:5001.
+The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0&tabs=windows#kestrel) and is available on the default ports: http://localhost:5000 and https://localhost:5001.
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
