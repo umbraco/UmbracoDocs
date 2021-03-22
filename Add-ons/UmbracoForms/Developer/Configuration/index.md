@@ -65,11 +65,11 @@ In Umbraco Forms 8.7 an update was made to improve the performance of the servic
 By setting the value of the `UseLegacyPageService` to `True` the old service can be reinstated.
 
 ### DisallowedFileUploadExtensions
-When using the File Upload field in a form, editors can choose which file extensions they want to accept.  So if expecting an image, they can for example ensure only .jpg or .png files are uploaded.
+When using the File Upload field in a form, editors can choose which file extensions they want to accept. When an image is expected, they can for example specify that only `.jpg` or `.png` files are uploaded.
 
-There are certain file extension that in almost all cases should never be allowed, which are held in this configuration value.  So even if an editor has selected to allow all files, any files that much the extensions listed here will be blocked.
+There are certain file extensions that in almost all cases should never be allowed, which are held in this configuration value. This means that even if an editor has selected to allow all files, any files that match the extensions listed here will be blocked.
 
-By default .NET related code files like .config and .aspx are included in this deny list, but you can add or - if you are sure - remove values from this list to your needs.
+By default, .NET related code files like `.config` and `.aspx` are included in this deny list. You can add or - if you are sure - remove values from this list to your needs.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
