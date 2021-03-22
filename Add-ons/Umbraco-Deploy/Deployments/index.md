@@ -41,3 +41,5 @@ Moving your content and media between your environments is done through the Umbr
   - [Restore Content and / or Media](Restoring-content)
 
 **Note:** Transferring and restoring content and media is the same whether you are working Locally and transfering between two environments.
+
+## Deploy Dashboard

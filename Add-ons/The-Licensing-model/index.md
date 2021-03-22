@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # The Licensing Model
 
-Umbraco Forms and Umbraco Courier are commercial products.
+Umbraco Forms, Umbraco Deploy and Umbraco Courier are commercial products.
 
 For Umbraco Forms you will have a 14-day free trial to try out the product. After your trial expires, you'll need to have a **valid license** in order to keep using the product on your site.
 
