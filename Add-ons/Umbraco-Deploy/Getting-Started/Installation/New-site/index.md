@@ -261,7 +261,7 @@ This is  an example of how you can set up the CI/CD pipeline for Umbraco Deploy,
 
 Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github actions.
 
-This is done in Github under settings > Secrets > New repository secret it needs to be called **"DEPLOYAPIKEY"** and then add the API key that has been set up in the AppSetting in the web.config and save it.
+This is done in Github under settings > Secrets > New repository secret it needs to be called **"DEPLOYAPIKEY"** and then add the API key from the the AppSetting for Umbraco Deploy in the web.config and save it.
 
 We can now go ahead and commit it to our Github repository and can now push up all the files to the repository.
 
