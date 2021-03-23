@@ -1,8 +1,12 @@
 # Upgrading Umbraco Deploy
 
-Umbraco Deploy can be upgraded by using NuGet.
+As with all of our products, it is always recommended to run the latest version of Umbraco Deploy.
 
-You can open up the **Package Console** and type:
+On the Umbraco Deploy page in the [Packages page](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/) you can see what the latest version is, as well as read the changelog.
+
+Umbraco Deploy can be upgraded via NuGet.
+
+You can open up the **Package Console** in Visual Studio and type:
 `Update-Package UmbracoDeploy`
 
 You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](version-specific.md)**.

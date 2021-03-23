@@ -26,16 +26,11 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 ## How to install Umbraco Deploy on an existing project
 
-In this guide we will show how you can install Umbraco Deploy and set up a build server using Github actions to deploy our content.
-
-:::note
-In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the CI/CD pipeline that you prefer,
-as long as it supports executing Powershell scripts it will work with Umbraco Deploy
-:::
+In this guide we will show how you can install Umbraco Deploy on your already existing website.
 
 ## Installation steps
 
-1. [Create copy of database and download necessary files(views,css and scripts)](#Install-Umbraco-Deploy-on-Existing-site)
+1. [Create copy of database and download views,css and scripts files from your production site](#Install-Umbraco-Deploy-on-Existing-site)
 2. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
 3. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
 4. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
@@ -46,17 +41,19 @@ To install Umbraco Deploy on an already existing site there is some additional s
 
 Since on an existing Umbraco website, there is already created document types, templates and data-types with ID's in the database, you will need to make sure that they are in sync between the different environments that you want to add.
 
-The first step is to take a copy of the production site's database in this way you make sure that the ID's are identical to the production site, when Deploy is installed then the ID's will be identical between the production site and the environments you add.
+The first step is to take a copy of the production site's database, when Deploy is installed then the ID's will be identical between the production site and the environments you add.
 
 The next step is to make sure to download your view folder, css and scripts folder so you will have your view files and styles from your production website.
 
-Once the copy of the production site have been created you can set up a new Umbraco project on your local machine and go through the installation and apply the production database to the empty project that needs to be created and then install Umbraco Deploy.
+When the production database and the view, css and script files have been copied down, we can now start to set up a git repository and a new Umbraco project.
 
 ### Set up Git repository and Umbraco project
 
-The next step is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline which will run the build server to where you are hosting your website.
+The next step is to set up a repository which will act as one of our environment and a empty Umbraco project.
 
-And you also need to install a new Umbraco project through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+For Umbraco Deploy to be able to work a CI/CD pipeline from the repositpry which will run the build server to your hosted website.
+
+a new Umbraco project needs to be installed through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
 When setting up a repository add a Gitignore file using the Visual Studio template.
 Once the Umbraco project is installed we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy.
@@ -65,9 +62,11 @@ Clone down  the repository to your local machine.
 
 When it have been cloned down install the clean Umbraco project in the repository folder so it will be tracked by Git.
 
-Once the project have been created, run the project and install Umbraco 8, when promted to choose a database make sure to use the copy of your production website as well as add the view, css and script folder from your production website.
+Once the project have been created, run the project and install Umbraco 8, when promted to choose a database make sure to use the copy of your production website
 
-Umbraco have now been installed in the repository, make sure to commit the files to so they are ready to be pushed up once we have set up the build server.
+When Umbraco have been installed in the repository add the view, css and script folder from your production website as well.
+
+make sure to commit the files to so they are ready to be pushed up once a CI/CD pipeline have been set up.
 
 After the Umbraco files have been commited add the following files to the Gitignor so that they will not be picked up by Git when we are deploying and commit it to the repository as well:
 
@@ -88,13 +87,13 @@ To install Umbraco deploy, in Visual Studio, go to the NuGet Package Manager and
 
 Once the installation have finished You might notice a new file in your config folder called UmbracoDeploy.config. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
 
-When Umbraco Deploy have been installed, to be able to use it in the project we will need to add the following AppSetting to the Web.Config of the project:
+To be able to use Umbraco Deploy in the project we will need to add the following AppSetting to the Web.Config of the project:
 
 ```xml
 <add key="Umbraco.Deploy.ApiKey" value="YourAPIKeyHere" /> 
 ```
 
-In the AppSetting we need to populate the value with with your own Deploy API Key.
+In the AppSetting we need to populate the value with with our own Deploy API Key.
 
 The following code snippet can be used to generate a random key, using a tool like LinqPad
 
@@ -154,9 +153,10 @@ The URLs for each environment needs to be accessible by the other environments o
 :::
 
 Once the installation is done, navigate to the backoffice go to the deploy dashboard in the settings section:
+
 ![Deploy section](images/Deploy-section.png)
 
-and run the  **```Schema Deployment From Data Files```** operation which will trigger the UDA schema to be generated based of our database from production:
+run the  **```Schema Deployment From Data Files```** operation which will trigger the UDA schema to be generated based of our database from production:
 
  ![Schema Deployment From Data Files](images/Deploy-operation.png)
 
@@ -170,8 +170,16 @@ Make sure to not push the files up yet as a CI/CD build server will first need t
 
 When pushing the commit up the build server will run and build our solution into where you are hosting your website.
 
-### Setting up CI/CD build server with Github actions
+### Set up CI/CD build server
 
-<!--We can now start creating content on the local machine. We can see that once we create something like a document type, the changes are getting picked up in Git and, once done with making changes, we can commit them and deploy them to Github which again, will run the build server we have set up and then extract the changes into the website that we have set up in Azure.
+Once Umbraco Deploy have been installed and the meta data have been generated, a CI/CD build server needs to be set up.
 
-This will only deploy the meta data for our local site to your website, to transfer content and media you will need to do so from the backoffice on your local project using the queue for transfer [feature](../Content-Transfer).-->
+THis can be done in many different ways depeding of where your website is hosted.
+
+Umbraco Deploy will work out of the box with any CI/CD or Build Server that supports executing Powershell (which will be all build servers that support .NET) like Azure DevOps or Github actions.
+
+Once the build server have been set up you can now start creating content and sync it between your website and environments, make sure to follow the proper [deployment workflow](../../../Deployments).
+
+Once Meta data is created the changes will be picked up in Git and, once done with making changes, the files can be committed and deployed to a repository, once the build server is started it will extract the changes that was pushed to the repository into your production website that have been connected with Umbraco Deploy.
+
+This will only deploy the meta data, transfer of content and media will need to be done from the backoffice of your project using the queue for transfer [feature](../Content-Transfer).
