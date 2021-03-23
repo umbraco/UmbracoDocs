@@ -25,27 +25,27 @@ namespace My.Website
     [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class SubscribeToEditorModelEventsComposer : ComponentComposer<SubscribeToEditorModelEvents>
     {
-    //this automatically adds the component to the Components collection of the Umbraco composition
+       // This automatically adds the component to the Components collection of the Umbraco composition
     }
 
     public class SubscribeToEditorModelEvents : IComponent
     {
-        // initialize: runs once when Umbraco starts
+        // Initialize: runs once when Umbraco starts
         public void Initialize()
         {
             EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
         }
 
-        // terminate: runs once when Umbraco stops
+        // Terminate: runs once when Umbraco stops
         public void Terminate()
         {
-            //unsubscribe during shutdown
+            // Unsubscribe during shutdown
             EditorModelEventManager.SendingContentModel -= EditorModelEventManager_SendingContentModel;
         }
 
     private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
-            // set a default value for a NewsArticle's PublishDate property, the editor can override this, but we will suggest it should be today's date
+            // Set a default value for a NewsArticle's PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
             {
                 //access the property you want to pre-populate
@@ -70,6 +70,52 @@ namespace My.Website
     }
 }
 ```
+
+Another example could be to set the default Member Group for a specific Member Type using `SendingMemberModel`:
+
+```
+public class SubscribeToEditorModelEvents : IComponent
+{
+    private readonly IMemberGroupService _memberGroupService;
+
+    public SubscribeToEditorModelEvents(IMemberGroupService memberGroupService)
+    {
+        _memberGroupService = memberGroupService;
+    }
+    
+    public void Initialize()
+    {
+        EditorModelEventManager.SendingMemberModel += EditorModelEventManager_SendingMemberModel;
+    }
+    
+    public void Terminate()
+    {
+        EditorModelEventManager.SendingMemberModel -= EditorModelEventManager_SendingMemberModel;
+    }
+
+    private void EditorModelEventManager_SendingMemberModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.MemberDisplay> e)
+    {
+        // Set a default value member group for the member type `Member`
+        if (e.Model.ContentTypeAlias == "Member")
+        {
+            var group = _memberGroupService.GetByName("Customer");
+            if (group == null)
+                return;
+
+            var prop = e.Model.Properties.FirstOrDefault(x => x.Alias == $"{Umbraco.Core.Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup");
+            if (prop != null)
+            {
+                prop.Value = new Dictionary<string, object>
+                {
+                    { group.Name, true }
+                };
+            }
+        }
+    }
+}
+```
+
+
 ## Events
 
 <table>
