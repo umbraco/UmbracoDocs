@@ -98,13 +98,16 @@ public class SubscribeToEditorModelEvents : IComponent
         // Set a default value member group for the member type `Member`
         if (e.Model.ContentTypeAlias == "Member")
         {
+            // Find a specific member group
             var group = _memberGroupService.GetByName("Customer");
             if (group == null)
                 return;
-
+            
+            // Find member group property on member model
             var prop = e.Model.Properties.FirstOrDefault(x => x.Alias == $"{Umbraco.Core.Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup");
             if (prop != null)
             {
+                // Assign a default value for member group property
                 prop.Value = new Dictionary<string, object>
                 {
                     { group.Name, true }
