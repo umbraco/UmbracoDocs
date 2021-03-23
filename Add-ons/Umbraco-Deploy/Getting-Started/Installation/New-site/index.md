@@ -26,7 +26,7 @@ In this guide we will show how you can install Umbraco Deploy and set up a build
 
 :::note
 In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the hosting provider and CI/CD pipeline that you prefer,
-as long as it supports executing Powershell scripts it will work with Umbraco Deploy
+as long as it supports executing Powershell scripts it will work with Umbraco Deploy.
 :::
 
 ## Installation steps
@@ -46,8 +46,6 @@ Clone down  the repository to your local machine.
 When it have been cloned down install the Umbraco project in the repository folder so it will be tracked by Git.
 
 Now the project have been created in the repository, run the project and install Umbraco 8 run through the installer with a Custom SQL connection string to a local database.
-
-Once the installation is done, navigate to the data folder using the command line and run an echo > deploy which will trigger the UDA schema to be installed.
 
 Umbraco have now been installed in the repository, make sure to commit the files to so they are ready to be pushed up once we have set up the build server.
 
@@ -187,15 +185,13 @@ Once the information have been added we can go ahead and preview the file and se
 
 Once we are done setting it up, we can go ahead and save the workflow.
 
-Once it have been saved the website and the Github repository have now been connected.
+when it have been saved the website and the Github repository have now been connected.
 
 If we go back to the Github repository we can see that a new folder have been created called Workflows:
 
 ![Workflows](images/workflows.png)
 
-Inside the folder, we find that a new YAML file has been created with the settings that we added in the Azure portal called "main_Jonathan-Deploy-App.yml" in this case.
-
-It will need to be configured so that it works with our Umbraco projects.
+Inside the folder, we find that a new YAML file has been created with the default settings that was added in the Azure portal called "main_Jonathan-Deploy-App.yml" in this case, this file will need to be configured so it fits into your set up.
 
 The first thing that needs to be done is to make a pull from the Github repository in Git, so that we will get the YAML file on our local machine.
 
@@ -256,16 +252,16 @@ jobs:
 ```
 
 :::note
-This is  an example of how you can set up the CI/CD pipeline for Umbraco Deploy, however there are many ways that this can be done and it is possible to set it up in a way that works for how you or your company workflow.
+This is  an example of how you can set up the CI/CD pipeline for Umbraco Deploy, however there are many ways that this can be done and it is possible to set it up in a way that works for and your preferred workflow.
 :::
 
 Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github actions.
 
 This is done in Github under settings > Secrets > New repository secret it needs to be called **"DEPLOYAPIKEY"** and then add the API key from the the AppSetting for Umbraco Deploy in the web.config and save it.
 
-We can now go ahead and commit it to our Github repository and can now push up all the files to the repository.
+We can now go ahead and commit it to our Github repository and push up all the files to the repository.
 
-Once the files have been pushed up, go to Github there we can see that the CI/CD build has started running:
+Once the files have been pushed up, go to Github from there we can see that the CI/CD build has started running:
 
 ![Deployment build started](images/Deploying-meta-data.png)
 
