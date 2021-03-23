@@ -11,7 +11,7 @@ _Documents how to work with Umbraco Forms (HQ's official forms builder) from bot
 You can purchase Forms from [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
 
 ## [Installation and upgrading](Installation/index.md)
-Extending Umbraco with the Forms section and keeping it up to date
+Extending Umbraco with the Forms section and keeping it up to date.
 
 ## [For editors](Editor/index.md)
 Documents how to interact with the interface and build forms in a couple of clicks.
