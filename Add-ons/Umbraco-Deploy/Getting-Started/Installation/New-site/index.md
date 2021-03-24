@@ -22,7 +22,7 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 ## How to install Umbraco Deploy
 
-In this guide we will show how you can install Umbraco Deploy and set up a build server using Github actions to deploy our content.
+In this guide we will show how you can install Umbraco Deploy and set up a build server using Github actions to deploy your content.
 
 :::note
 In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the hosting provider and CI/CD pipeline that you prefer,
@@ -64,11 +64,12 @@ After the Umbraco files have been commited add the following files to the Gitign
 
 When Umbraco have been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
 
-To install Umbraco deploy, in Visual Studio, go to the NuGet Package Manager and search for "UmbracoDeploy" and install it in the Visual Studio solution.
+To install Umbraco deploy, in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or via the package manager console run
+ ``` Install-Package UmbracoDeploy.OnPrem ``` and install it in the Visual Studio solution.
 
 Once the installation have finished You might notice a new file in your config folder called UmbracoDeploy.config. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
 
-When Umbraco Deploy have been installed, to be able to use it in the project we will need to add the following AppSetting to the Web.Config of the project:
+When Umbraco Deploy have been installed, to be able to use it in the project you will need to add the following AppSetting to the Web.Config of the project:
 
 ```xml
 <add key="Umbraco.Deploy.ApiKey" value="YourAPIKeyHere" /> 
