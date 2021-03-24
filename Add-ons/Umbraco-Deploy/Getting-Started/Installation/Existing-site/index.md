@@ -10,46 +10,37 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 ## Prerequisites
 
-* Umbraco 8
-
 * Visual studio 2017 v15.9.6 or later
 
 * Copy of your production site's database
 
 * Copy of views, css and scripts folder from production
 
-* Git and a repository
-
 * CI/CD or Build Server that supports executing Powershell
-
-* SQL Server Database
 
 ## Installation steps
 
-1. [Create copy of database and download views,css and scripts files from your production site](#Install-Umbraco-Deploy-on-Existing-site)
+1. [Create copy of database and download views, CSS and scripts files from your production site](#Install-Umbraco-Deploy-on-Existing-site)
 2. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
 3. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
 4. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
 
 ## Install Umbraco Deploy on Existing site
 
-To install Umbraco Deploy on an already existing site there is some additional steps that needs to be done to make sure that Umbraco Deploy can run with your website.
+To install Umbraco Deploy on an already existing site there are some additional steps that needs to be taken to make sure that Umbraco Deploy can run with your website.
 
-Since on an existing Umbraco website, there is already created document types, templates and data-types with ID's in the database, you will need to make sure that they are in sync between the different environments that you want to add.
+On an existing Umbraco website, there are already a set of Document Types, Templates and Data Types with ID's in the database. In order for Umbraco Deploy to work with your website, you will need to make sure that these IDs are in sync between the different environments that you want to add to your setup.
 
-The first step is to take a copy of the production site's database, when Deploy is installed then the ID's will be identical between the production site and the environments you add.
+1. Make a copy of the database on the production site.
+2. Download your `/Views` folder as well as the folders holding your css files and scripts.
 
-The next step is to make sure to download your view folder, css and scripts folder so you will have your view files and styles from your production website.
-
-When the production database and the view, css and script files have been copied down, we can now start to set up a git repository and a new Umbraco project.
+When the production database, folder and files have been copied down, it's time to set up a git repository and a new Umbraco project.
 
 ### Set up Git repository and Umbraco project
 
 The next step is to set up a repository which will act as one of our environment and a empty Umbraco project.
 
-For Umbraco Deploy to be able to work a CI/CD pipeline from the repositpry which will run the build server to your hosted website.
-
-a new Umbraco project needs to be installed through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+For Umbraco Deploy to be able to work a CI/CD pipeline from the repositpry which will run the build server to your hosted website a new Umbraco project needs to be installed through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
 When setting up a repository add a Gitignore file using the Visual Studio template.
 Once the Umbraco project is installed we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy.
