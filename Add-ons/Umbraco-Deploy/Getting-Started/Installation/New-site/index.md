@@ -56,22 +56,21 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco have been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
+When Umbraco has been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
 
-To install Umbraco deploy, in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or via the package manager console run
- ``` Install-Package UmbracoDeploy.OnPrem ``` and install it in the Visual Studio solution.
+To install Umbraco deploy in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or run ```Install-Package UmbracoDeploy.OnPrem``` via the Package Manager.
 
-Once the installation have finished You might notice a new file in your config folder called UmbracoDeploy.config. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
+Once the installation has finished you might notice a new file in your `/config` folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to. It knows which environment you’re currently on (for example local or staging) and it will choose the next environment in the list to deploy to.
 
-When Umbraco Deploy have been installed, to be able to use it in the project you will need to add the following AppSetting to the Web.Config of the project:
+When Umbraco Deploy has been installed, to be able to use it in the project you will need to add the following `appSetting` to the `web.config` of the project:
 
 ```xml
 <add key="Umbraco.Deploy.ApiKey" value="YourAPIKeyHere" /> 
 ```
 
-In the AppSetting we need to populate the value with with your own Deploy API Key.
+The `Umbraco.Deploy.ApiKey` value needs to be replaced with your own Deploy API key.
 
-The following code snippet can be used to generate a random key, using a tool like LinqPad
+The following code snippet can be used to generate a random key, using a tool like LinqPad.
 
 ```C#
 
@@ -88,15 +87,15 @@ public string GetRandomKey(int bytelength)
 
 ```
 
-This same setting/key must be used on each environment for the same website.
+This same Deploy API key must be used on each environment for the same website.
 
-::note
-We strongly advise to generate different keys for different websites
+:::note
+We strongly recommend to generate different keys for different websites.
 :::
 
-Once the AppSetting and API key have been added, it is now time to configure the environments in the UmbracoDeploy.config which is used to define the environments that we have for an Umbraco Deploy installation.
+Once the `appSetting` and API key have been added, it is now time to configure the environments in the `UmbracoDeploy.config` file.
 
-The Config file will look something like this:
+The config file will look like this:
 
 ```xml
 
@@ -104,43 +103,54 @@ The Config file will look something like this:
 <environments xmlns="urn:umbracodeploy-environments">
   <environment type="development" 
     name="Development" 
-    id="00000000-0000-0000-0000-000000000000">http://development/
+    id="00000000-0000-0000-0000-000000000000">
+      http://development/
   </environment>
   <environment type="staging"
     name="Staging" 
-    id="00000000-0000-0000-0000-000000000000">http://staging/
+    id="00000000-0000-0000-0000-000000000000">
+      http://staging/
    </environment>
   <environment type="live" 
     name="Live" 
-    id="00000000-0000-0000-0000-000000000000">http://live/
+    id="00000000-0000-0000-0000-000000000000">
+      http://live/
   </environment>
 </environments>
 
 
 ```
 
-You will need to generate a unique GUID Id for each environment, this can be done in Visual studio or how you prefer to do it.
+You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 
-The “Type” is for informational purposes in the backoffice but in most cases will be the same (lowercased) value of the Name.
+1. Open "Tools".
+2. Select "Create GUID".
+3. Use the Registry Format.
+4. Copy the GUID into the `id` value.
+5. Generate a "New GUID" for each environment you will be adding to your setup.
+
+The `type` value is for informational purposes in the backoffice but in most cases will be the same (lowercased) value of the Name.
 
 The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
 
-:::note you’re free to update the “name” attribute to make it clearer in the interface where you’re deploying to. So if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
+:::note You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
 :::
 
-Once the config has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the ~/data folder of your web application.
+Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `~/data` folder of our Umbraco project.
 
-This can be done by going to the Data folder of the project and create a test UDA file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked:
+This can be done by going to the `~/data/revision` folder of the project and create a test UDA file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
+
+:::tip
+If you do not see a `/data` folder in the root of your project, you might need to start up the project first.
+:::
 
 ![Test UDA file](images/test-UDA.png)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 
-Now Umbraco Deploy has been installed on the project, we can now go ahead and commit the files to the repository.
+Now that Umbraco Deploy has been installed on the project, we can go ahead and commit the files to the repository.
 
-Make sure to not push the files up yet as a CI/CD build server will first need to be set up and connected to our a repository.
-
-Then when pushing the commit up the build server will run and build our solution into where you are hosting your website.
+**Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our a repository.
 
 ### Setting up CI/CD build server with Github actions
 
