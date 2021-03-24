@@ -4,9 +4,8 @@ versionFrom: 8.0.0
 
 # Restoring content
 
-When you have content on your  environment and you clone down your Umbraco project to your local machine, you will need to do an extra step, in order to see your content locally.
+When you have content on your environment and you clone down your Umbraco project to your local machine, you will need to do an extra step, in order to see your content locally.
 
-<!--Needs to be verified how it works-->
 The restore option also comes in really handy when you have content editors creating content on different environments. You will be able to restore and work with that content on your different environments and locally.
 
 ## Step-by-step
@@ -25,30 +24,31 @@ The first time you run your project locally you will have the option to restore 
 This will restore **all** content nodes, and any media dependencies.
 :::
 
-1. When your site is done spinning up, click the green *Restore* button - this will restore all content and media!
+1. When your site is done spinning up, click the green *Restore* button - this will restore all content and media.
 2. Wait till the process completes - this might take a while, depending on the amount of content and media you have on your Umbraco site.
-3. When it's complete select *Open Umbraco* to go to the backoffice
-4. You will now see all your content and media in the Umbraco backoffice
+3. When it's complete select *Open Umbraco* to go to the backoffice.
+4. You will now see all your content and media in the Umbraco backoffice.
 
 ![Restore from start-up](images/Normal-Restore.gif)
 
 ### Restore everything through the Umbraco backoffice
 
-The second option for restoring your content and media is found in the Umbraco backoffice
+The second option for restoring your content and media is found in the Umbraco backoffice.
 
-1. Go to the Umbraco backoffice on the environment you want to restore content and media to
-2. Click the three dots an select *Do something else*, or *Right-click* the Content Tree
-3. Choose *Restore* from the menu
-4. You will now have the option to restore content from any environment that's *to the right of* the current environment in the deployment workflow
-5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Deploying-Changes)
-6. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
-7. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree
+1. Go to the Umbraco backoffice on the environment you want to restore content and media to.
+2. Click the three dots an select *Do something else*, or *Right-click* the Content Tree.
+3. Choose *Restore* from the menu.
+4. You will now have the option to restore content from any environment that's *to the right of* the current environment in the deployment workflow.
+5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Deploying-Changes).
+6. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
+7. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree.
 
 :::note
 If any of your content nodes depends on media items, these will also be restored in the process.
 
 To see the media, go to the Media section and *reload* the tree.
 :::
+
 <!--Video needs updating to be not cloud specific
 <iframe width="800" height="450" src="https://www.youtube.com/embed/WGTU8DF8PEk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
 
