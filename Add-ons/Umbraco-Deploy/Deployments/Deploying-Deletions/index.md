@@ -20,7 +20,7 @@ The main reason we do not delete schema and content on deployments, is because i
 
 Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment, along with some other changes you've made.
 
-Before you deploy the changes, in GIT it will show that the following changes are ready to be committed and deployed:
+Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
 ![Changes ready for deployment](images/deletions-of-doctype2.png)
 
