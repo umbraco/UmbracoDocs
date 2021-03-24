@@ -14,25 +14,16 @@ The databases are environment specific. When you deploy from one environment to 
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
 
-The main reason we do not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
+The main reason Umbraco Deploy does not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
 
 ## Example scenario
 
-Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment, along with some other changes you've made.
+Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment.
 
 Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
 ![Changes ready for deployment](images/deletions-of-doctype2.png)
 
-<!--Needs to be re-written, not sure where to see the activity log with Deploy, maybe the build pipeline 
-Following the **Activity log** in the browser, you'll see that the UDA file for the Document Type is deleted, and that other files containing changes are copied into the new environment.
-
-```
-Remote: Copying file: 'css\umbraco-starterkit-style.css'
-Remote: Deleting file: 'data\revision\document-type__79f0600e71ab45eba3ebc2e44f216a05.uda'
-Remote: Copying file: 'Views\ContentPage.cshtml'
-```
--->
 Commit the changes and push them to your repository and trigger a deployment to your environment.
 
 Once the deployment is complete, you will notice the following:
