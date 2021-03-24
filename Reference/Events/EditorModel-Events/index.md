@@ -95,6 +95,12 @@ public class SubscribeToEditorModelEvents : IComponent
 
     private void EditorModelEventManager_SendingMemberModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.MemberDisplay> e)
     {
+        bool isNew = !int.TryParse(e.Model.Id?.ToString(), out int id) || id == 0;
+        
+        // Skip if entity not is new
+        if (isNew == false)
+            return;
+               
         // Set a default value member group for the member type `Member`
         if (e.Model.ContentTypeAlias == "Member")
         {
