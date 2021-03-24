@@ -152,6 +152,12 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 
 **Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our a repository.
 
+#### Include your Umbraoc Deploy license file
+
+Before moving on to setting up the build server, make sure that your license is included in your project.
+
+The file needs to be placed in the `/bin` folder.
+
 ### Setting up CI/CD build server with Github actions
 
 :::note
@@ -172,31 +178,30 @@ In the Deployment Center we can set up the CI/CD build server. In this example w
 3. Choose which source and build provider to use.
     * In this case we want to choose Github.
 
-![Build server clen](images/Build-server-clean.png)
+![Build server clean](images/Build-server-clean.png)
 
-We need to choose the Organization which we created our Github repository under, once we choose that we can see the repositories that we have under that Organization.
+4. Choose the Organization which you created our Github repository under.
+5. Choose the repository that was set up earlier in this guide.
+6. Select which branch that we want the build server to build into.
 
-We can go ahead and choose the repository and which branch that we want the build server to build into.
+We can also see which runtime stack and version we are running. In this example we are running .NET and ASP.NET Version 4.8.
 
-Below we can as well see which runtime stack and version we are running, in this example we are running .NET and ASP.NET Version 4.8.
-
-Once the information have been added we can go ahead and preview the file and see that we will get a YAML file that will be used for the build server:
+Once the information has been added we can go ahead and preview the file. We will get a YAML file that will be used for the build server:
 
 ![Workflow configuration](images/workflow-preview.png)
 
-Once we are done setting it up, we can go ahead and save the workflow.
+7. Save the workflow.
 
-when it have been saved the website and the Github repository have now been connected.
+The website and the Github repository are now connected.
 
 If we go back to the Github repository we can see that a new folder have been created called Workflows:
 
 ![Workflows](images/workflows.png)
 
-Inside the folder, we find that a new YAML file has been created with the default settings that was added in the Azure portal called "main_Jonathan-Deploy-App.yml" in this case, this file will need to be configured so it fits into your set up.
+Inside the folder, we find that a new YAML file has been created with the default settings that was added in the Azure Portal. In this case, this file will need to be configured so it fits into your set up.
 
-The first thing that needs to be done is to make a pull from the Github repository in Git, so that we will get the YAML file on our local machine.
-
-we now have the file on our local machine, which means that we can go ahead and configure it so it will work with our Umbraco Deploy installation.
+8. Pull down the new file and folder, so you can work with the YAML file on your local machine.
+9. Configure it to work with our Umbraco Deploy installation.
 
 When it have been configured it will look something like this:
 
@@ -253,23 +258,31 @@ jobs:
 ```
 
 :::note
-This is  an example of how you can set up the CI/CD pipeline for Umbraco Deploy, however there are many ways that this can be done and it is possible to set it up in a way that works for and your preferred workflow.
+This is an example of how you can set up the CI/CD pipeline for Umbraco Deploy. However there are many ways that this can be done and it is possible to set it up in a way that works for you and your preferred workflow.
 :::
 
-Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github actions.
+Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github Actions.
 
-This is done in Github under settings > Secrets > New repository secret it needs to be called **"DEPLOYAPIKEY"** and then add the API key from the the AppSetting for Umbraco Deploy in the web.config and save it.
+1. Open your Github repository.
+2. Navigate to Settings.
+3. Go to the Secrets tab.
+4. Select "New repository secret".
+5. Call the new secret **"DEPLOYAPIKEY"**.
+6. Add the API key from the `appSetting` for Umbraco Deploy in the `web.config`.
+7. Save the secret.
 
-We can now go ahead and commit it to our Github repository and push up all the files to the repository.
+We can now go ahead and commit the configured YAML file and push up all the files to the repository.
 
-Once the files have been pushed up, go to Github from there we can see that the CI/CD build has started running:
+Go to Github where you will now be able to see that the CI/CD build has started running:
 
 ![Deployment build started](images/Deploying-meta-data.png)
 
-The Build server that has been set up will go through the steps in the YAML file and once it is done in Github we can see that the deployment have gone through succesfully:
+The build server that has been set up will go through the steps in the YAML file and once it is done we can see that the deployment have gone through succesfully:
 
 ![Deployment Complete](images/deployment-complete.png)
 
-We can now start creating content on the local machine. We can see that once we create something like a document type, the changes are getting picked up in Git and, once done with making changes, we can commit them and deploy them to Github which again, will run the build server we have set up and then extract the changes into the website that we have set up in Azure.
+You can now start creating content on the local machine. Once you create something like a Document Type, the changes are getting picked up in Git and.
 
-This will only deploy the meta data for our local site to your website, to transfer content and media you will need to do so from the backoffice on your local project using the queue for transfer [feature](../Content-Transfer).
+When you're done making changes, you can commit them and deploy them to Github which again, will run the build server you have set up and then extract the changes into the website that you have set up in Azure.
+
+This will only deploy the meta data for our local site to your website, to transfer content and media you will need to do so from the backoffice on your local project using the [queue for transfer feature](../Content-Transfer).
