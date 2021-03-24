@@ -31,7 +31,7 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 
 ### Set up Git repository and Umbraco project
 
-The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web and new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web Apps and new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
 1. Set up a Github repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
@@ -155,26 +155,22 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 ### Setting up CI/CD build server with Github actions
 
 :::note
-In this example we will show how you can set up a CI/CD build server using Github actions in Azure Web Apps.
+In this example we will show how you can set up a CI/CD build server using Github Actions in Azure Web Apps.
 
 We will not cover how you can set up the site itself as this is beyond this documentation.
 :::
 
-To set up the build server in Azure Web Apps, we need to go to the Azure portal go to the website that have been set up.
+To set up the build server in Azure Web Apps, we need to go to the Azure portal and find the empty website that we have set up and want to connect to.
 
-From there we need to go and set up the build server.
-
-In the Azure portal we go to the overwiev of the website that have been set up.
-
-From here we go to the Deployment section and the Deployment section:
+1. Go to the Deployment Center.
 
 ![Azure deployments](images/Deployment-center.png)
 
-In the deployment center we can set up the CI/CD build server, in this example we are going to set up our build server by using Github actions, however you are able to set up the build server however you want as long as it supports executing powershell scripts.
+In the Deployment Center we can set up the CI/CD build server. In this example we are going to set up our build server by using Github Actions. You can set up the build server however you want as long as it supports executing powershell scripts.
 
-In the deployment center, go to the settings section, choose which source and build provider we will use.
-
-In this case we choose Github and we get some different options for how to set it up:
+2. Go to the Settings tab.
+3. Choose which source and build provider to use.
+    * In this case we want to choose Github.
 
 ![Build server clen](images/Build-server-clean.png)
 
