@@ -60,9 +60,7 @@ Here is how it can look:
 
 These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
 
-:::note
-It's important that these settings are added to both the source and target environments in order to work.
-:::
+## Timeout settings
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
