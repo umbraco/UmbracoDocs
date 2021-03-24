@@ -2,9 +2,9 @@
 
 Welcome to the Umbraco Deploy documentation. Here you can read all about how to set up and work with Umbraco Deploy.
 
-You can find articles about how to set up Umbraco Deploy on a new or an existing website and the deployment workflow.
+You can find articles about how to set up Umbraco Deploy on a new or an existing website, and article about the deployment workflow.
 
-You can also find articles about troubleshooting various issues.
+In the Troubleshooting sections you will find guides to help you through some of the most common issues.
 
 ## [Getting Started](Getting-Started/)
 
@@ -12,7 +12,7 @@ Guides to how you can install Umbraco Deploy on your Umbraco projects and an exa
 
 ## [Deployments](Deployments/)
 
-The deployment process explained for Umbraco Deploy using Git.
+The deployment process explained for Umbraco Deploy.
 
 ## [Upgrading Umbraco Deploy](Upgrades)
 
