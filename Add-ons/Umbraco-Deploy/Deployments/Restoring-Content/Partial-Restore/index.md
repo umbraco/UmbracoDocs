@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Partial Restores
 
 In some cases you might not want to restore the entire content tree, but only the parts that you need. **Partial restores** is a feature that allows for restoring specific parts of your content instead of restoring everything.
@@ -19,21 +23,25 @@ E.g. when you restore a content node which references media items as well as oth
 
 Follow these steps to perform a partial restore to get only the parts you need:
 
-1. Go to the Content section of the Umbraco backoffice on your environment or locally
-2. *Right-click* the Content Tree, or click the three dots an select *Do something else*
-3. Choose *Partial Restore*
-4. Select the environment that you would like to restore content from
-5. Click "*Select content to restore*" - this will open a dialog with a *preview of the content tree* from the environment you selected
-6. Select the content node you would like to restore
-7. Decide whether you also want to restore any child nodes *below* the selected node
-8. Start the restore by clicking *Restore*
-9. To see the restored content, *reload* the content tree - *right-click* the Content tree to find this option
+1. Go to the Content section of the Umbraco backoffice on your environment or locally.
+2. *Right-click* the Content Tree, or click the three dots an select *Do something else*.
+3. Choose *Partial Restore*.
+4. Select the environment that you would like to restore content from.
+5. Click "*Select content to restore*" - this will open a dialog with a *preview of the content tree* from the environment you selected.
+6. Select the content node you would like to restore.
+7. Decide whether you also want to restore any child nodes *below* the selected node.
+8. Start the restore by clicking *Restore*.
+9. To see the restored content, *reload* the content tree - *right-click* the Content tree to find this option.
 
+:::tip
 Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
+:::
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
-Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need. This will ensure that you can quickly get on your way with the task at hand.
+Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. 
+
+Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need. This will ensure that you can quickly get on your way with the task at hand.
 
 ## Environment with existing content or media
 
