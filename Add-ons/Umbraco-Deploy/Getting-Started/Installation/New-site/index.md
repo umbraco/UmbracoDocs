@@ -6,17 +6,11 @@ versionFrom: 8.0.0
 
 In this article, we will cover the steps in order for you to install Umbraco deploy on a brand new website.
 
-We will cover how to install Umbraco deploy and set up Umbraco deploy on your website as well as show an example as to how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure web Apps.
+We will cover how to install Umbraco deploy and set up Umbraco deploy on your website as well as show an example as to how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure Web Apps.
 
 ## Prerequisites
 
-* Umbraco 8
-
 * Visual studio 2017 v15.9.6 or later
-
-* Git and a repository
-
-* CI/CD or Build Server that supports executing Powershell
 
 * SQL Server Database
 
@@ -37,19 +31,17 @@ as long as it supports executing Powershell scripts it will work with Umbraco De
 
 ### Set up Git repository and Umbraco project
 
-The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web and new Umbraco project through Visual [studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web and new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
-When setting up a repository add a Gitignore file using the Visual Studio template once the Umbraco project is installed we will add some Umbraco and Umbraco deploy specific files that we want to ignore when we deploy.
+1. Set up a Github repository with a .gitignore file using the Visual Studio template.
+2. Clone down the repository to your local machine.
+3. Create a new Visual Studio project in the repository folder.
+4. Install Umbraco CMS through NuGet - `Install-Package UmbracoCms`.
+5. Run the project.
+6. Choose to use a custom SQL connectionstring pointing to your local database.
+7. Commit the files to so they are ready to be pushed up once we have set up the build server.
 
-Clone down  the repository to your local machine.
-
-When it have been cloned down install the Umbraco project in the repository folder so it will be tracked by Git.
-
-Now the project have been created in the repository, run the project and install Umbraco 8 run through the installer with a Custom SQL connection string to a local database.
-
-Umbraco have now been installed in the repository, make sure to commit the files to so they are ready to be pushed up once we have set up the build server.
-
-After the Umbraco files have been commited add the following files to the Gitignor so that they will not be picked up by Git when we are deploying and commit it as well.
+After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
 **/App_Data/*
@@ -59,6 +51,8 @@ After the Umbraco files have been commited add the following files to the Gitign
 # Umbraco deploy specific
 **/data/deploy*
 ```
+
+Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
