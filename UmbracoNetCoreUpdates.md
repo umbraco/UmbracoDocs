@@ -73,7 +73,7 @@ Found a bug that isn't already reported? Please report it on the [GitHub tracker
 
 To get started, follow the steps outlined below.
 
-### Known issues and mising parts in current Alpha release 
+### Known issues and mising parts in current Alpha release
 * Restarts during install
   * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
 * Members are still an area with lots of missing functionality
@@ -105,7 +105,7 @@ To get started, follow the steps outlined below.
 
 ### Steps to update the template from earlier alpha versions
 
-If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date 
+If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
@@ -124,7 +124,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
     Or if you prefer to using SQL CE:
 
     ```none
-    dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
+    dotnet new umbraco --ce -n MyCustomUmbracoSolution
     ```
 
 You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
@@ -156,13 +156,13 @@ Once the installation process is complete you might need to **manually restart t
 
 ## .NET Core Nightly Builds
 
-To get the latest nightly builds - the latest version of the Umbraco dotnet template, you will need to add another NuGet source. 
+To get the latest nightly builds - the latest version of the Umbraco dotnet template, you will need to add another NuGet source.
 
 1. Use a command prompt of your choice to insert this custom NuGet feed:
 
 ```none
 dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
-```  
+```
 
 2. Install the new Umbraco dotnet template
     ```none
@@ -172,3 +172,40 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
 
 Now you can continue in the same way as if you were using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
+
+## Package development
+
+Since Alpha 4, we have added a new template to in `Umbraco.Templates` package which is targeted packages.
+To use the new template write
+
+```none
+dotnet new umbracopackage -n MyCustomUmbracoPackage
+```
+
+This generates an empty package with an empty `package.manifest`. But more importantly it also contains a `build/MyCustomUmbracoPackage.targets` file.
+
+This file will be included in the nuget package when using
+
+```none
+dotnet pack
+```
+
+The file contains a msbuild target that are executed on build when a project has a dependency to this package. It copies the app_plugin folder into the project. This is required for having umbraco packages as NuGet packages.
+
+Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template, so now you can write
+
+```none
+dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
+```
+
+This new `-p` indicates that the solution is a testside of the package MyCustomUmbracoPackage. So it will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
+
+### Full example
+
+The following shot example shows how to use the templates in combination
+```none
+dotnet new umbracopackage -n MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -p MyCustomUmbracoPackage
+cd MyCustomUmbracoPackage.Testsite
+dotnet build
+```
