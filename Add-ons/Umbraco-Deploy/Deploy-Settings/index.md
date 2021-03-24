@@ -56,20 +56,7 @@ Here is how it can look:
 </settings>
 ```
 
-## SessionTimeout, HttpClientTimeout, DatabaseCommandTimeout & SourceDeployTimeout
-
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
-
 ## Timeout settings
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<settings xmlns="urn:umbracodeploy-settings">
-    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
-</settings>
-```
-
-## Timeout issues
 
 Umbraco Deploy have a few built in timeouts, which on larger sites might needs to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
@@ -80,7 +67,7 @@ The defaults will cover most though. Changing the defaults by updating the `/Con
 - httpClientTimeout
 - databaseCommandTimeout
 
-The settings are set on the deploy element in the file. All settings are in seconds:
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
@@ -89,7 +76,7 @@ It's important that these settings are added to both the source and target envir
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-  <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200"/>
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
 </settings>
 ```
 
