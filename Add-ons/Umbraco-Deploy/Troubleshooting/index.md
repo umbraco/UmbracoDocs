@@ -1,6 +1,6 @@
 # Troubleshooting
 
-In this troubleshooting section, you can find help to resolve issues that you might have when using Umbraco Deploy.
+In this troubleshooting section, you can find help to resolve issues that you might run into when using Umbraco Deploy.
 
 If you are unable to find the issue you are having, then please reach out to our friendly support team at contact@umbraco.com.
 
@@ -26,7 +26,7 @@ First step in resolving this error is to check for pending deployments on the so
 
 If there are no pending deployments in your source environment, there are two ways to go about resolving the schema mismatch:
 
-1. Make a minor change to the schema with mismatches on the source environment (in the example above it would be the **Homepage** document type).
+1. Make a minor change to the schema with mismatches on the source environment (in the example above it would be the **Homepage** Document Type).
 2. Deploy the change to the next environment
     * This will update your schema in the target environment and ensure it is in sync with the source environment
 
