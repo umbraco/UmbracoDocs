@@ -54,9 +54,9 @@ The Block Editor data structure consists of three main parts:
 
 **Layout**: The Layout defines Blocks that each will reference (by UDI) a content item in the list of data. The Layout object will be key/value pairs where the key is the Property Editor alias and the value type depends on your Property Editor's setup.
 
-**ContentData**: A list of content items based on ElementTypes (IPublishedElement).
+**ContentData**: A list of content items based on `IPublishedElement`Element Types.
 
-**SettingsData**: A list of content items based on ElementTypes (IPublishedElement).
+**SettingsData**: A list of settings items based on `IPublishedElement` Element Types.
 
 In the following example the layout object "MyOwn.UnicornBlocksEditor" is of type Array.
 
