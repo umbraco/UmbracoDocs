@@ -12,9 +12,9 @@ When you are using Umbraco Deploy, you might have several environments - includi
 
 The databases are environment specific. When you deploy from one environment to another, Umbraco Deploy will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting).
 
-The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
+The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and/or schema on all your environments, in order to fully complete the deletion.
 
-The main reason Umbraco Deploy does not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your Production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
+The main reason Umbraco Deploy does not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
 
 ## Example scenario
 
@@ -28,7 +28,7 @@ Commit the changes and push them to your repository and trigger a deployment to 
 
 Once the deployment is complete, you will notice the following:
 
-* The Document Type you deleted on Development is still present in the backoffice on the Production environment
+* The Document Type you deleted on Development is still present in the backoffice on the production environment.
 
 You might wonder why the Document Type that you have deleted, is still there. The reason is, that deploy only deletes the associated UDA file, and not the actual Document Type in the database.
 
@@ -45,21 +45,21 @@ Here's an overview of what happens when you deploy various deletions to the next
 ### Deleting Schema (Document Types, Datatypes etc.)
 
 Deleted:
-* The associated `.UDA` file
+* The associated `.UDA` file.
 
 Not deleted:
-* The entry in the database
-* The item will still be visible in the backoffice
+* The entry in the database.
+* The item will still be visible in the backoffice.
 
 ### Deleting a Template
 
 Deleted:
-* The associated `.UDA` file
-* The associated `.cshtml` file (the view file)
+* The associated `.UDA` file.
+* The associated `.cshtml` file (the view file).
 
 Not deleted:
-* The entry in the database
-* The template file will be empty, but still be visible in the backoffice
+* The entry in the database.
+* The template file will be empty, but still be visible in the backoffice.
 
 ### Deleting files (css files, config files etc.)
 
