@@ -97,7 +97,7 @@ public class SubscribeToEditorModelEvents : IComponent
     {
         bool isNew = !int.TryParse(e.Model.Id?.ToString(), out int id) || id == 0;
         
-        // Skip if entity not is new
+        // We only want to set the default group when the member is initially created, eg doesn't have an Id yet
         if (isNew == false)
             return;
                
