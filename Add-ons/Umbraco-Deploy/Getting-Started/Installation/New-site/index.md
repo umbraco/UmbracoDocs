@@ -281,7 +281,7 @@ The build server that has been set up will go through the steps in the YAML file
 
 ![Deployment Complete](images/deployment-complete.png)
 
-You can now start creating content on the local machine. Once you create something like a Document Type, the changes are getting picked up in Git and.
+You can now start creating content on the local machine. Once you create something like a Document Type, the changes are getting picked up in Git.
 
 When you're done making changes, you can commit them and deploy them to Github which again, will run the build server you have set up and then extract the changes into the website that you have set up in Azure.
 
