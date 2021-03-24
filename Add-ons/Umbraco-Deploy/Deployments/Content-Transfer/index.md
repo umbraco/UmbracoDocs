@@ -4,9 +4,9 @@ versionFrom: 8.0.0
 
 # Transferring Content, Media and Forms
 
-After deploying changes to meta data, it's time to transfer your content and media. This is done from the Umbraco backoffice.
+Once all code and meta data is in sync between your environments, it's time to transfer your content and media. This is done from the Umbraco backoffice.
 
-Content and media transfers are very flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time or a single node.
+Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer. You can transfer it all in one go, a few at a time or transfer only a single node.
 
 Transferring content will overwrite any existing nodes on the target environment - content transfers will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
