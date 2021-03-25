@@ -10,6 +10,8 @@ In the Troubleshooting sections you will find guides to help you through some of
 
 Guides to how you can install Umbraco Deploy on your Umbraco projects and an example of how to set it up using a CI/CD build server.
 
+## [Install Umbraco Deploy](Getting-Started/Installation/)
+
 ## [Deployments](Deployments/)
 
 The deployment process explained for Umbraco Deploy.
