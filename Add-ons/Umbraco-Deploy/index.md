@@ -8,11 +8,11 @@ In the Troubleshooting sections you will find guides to help you through some of
 
 ## [Getting Started](Getting-Started/)
 
-Guides to how you can install Umbraco Deploy on your Umbraco projects and an example of how to set it up using a CI/CD build server.
+Learn what Umbraco Deploy is, how it works and how to get started using Umbraco Deploy.
 
 ## [Install Umbraco Deploy](Getting-Started/Installation/)
 
-Find details instructions on how to install Umbraco Deploy on your Umbraco project.
+Find instructions on how to install Umbraco Deploy on your Umbraco project and an example of how to set it up using a CI/CD build server.
 
 ## [Deployments](Deployments/)
 
