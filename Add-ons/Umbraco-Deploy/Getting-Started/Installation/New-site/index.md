@@ -21,8 +21,9 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 In this guide we will show how you can install Umbraco Deploy and set up a build server using Github actions to deploy your content.
 
 :::note
-In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server, however you are free to choose the hosting provider and CI/CD pipeline that you prefer,
-as long as it supports executing Powershell scripts it will work with Umbraco Deploy.
+In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server.
+
+However you are free to choose the hosting provider and CI/CD pipeline that you prefer, as long as it supports executing Powershell scripts it will work with Umbraco Deploy.
 :::
 
 ## Installation steps
