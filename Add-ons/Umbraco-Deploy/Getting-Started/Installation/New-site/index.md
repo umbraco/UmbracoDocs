@@ -12,6 +12,8 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 * Visual studio 2017 v15.9.6 or later
 
+* Umbraco Deploy license
+
 * SQL Server Database
 
 ## How to install Umbraco Deploy
@@ -59,6 +61,12 @@ Make sure that the updates to the .gitignore file are also committed.
 When Umbraco has been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
 
 To install Umbraco deploy in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or run ```Install-Package UmbracoDeploy.OnPrem``` via the Package Manager.
+
+:::note
+To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  ```UmbracoDeploy.Forms``` package as well.
+
+Umbraco Deploy supports Forms version 8.5 and up.
+:::
 
 Once the installation has finished you might notice a new file in your `/config` folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to. It knows which environment you’re currently on (for example local or staging) and it will choose the next environment in the list to deploy to.
 
