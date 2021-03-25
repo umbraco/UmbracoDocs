@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Installation of Umbraco Deploy"
+meta.Description: "Two guides for how to install Umbraco Deploy. One for a new website and one for existing Umbraco websites"
 ---
 
 # Installing Umbraco Deploy

@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Deploy settings"
+meta.Description: "Various settings for Umbraco Deploy"
 ---
 
 # Configurations for Deployments
