@@ -12,6 +12,8 @@ Guides to how you can install Umbraco Deploy on your Umbraco projects and an exa
 
 ## [Install Umbraco Deploy](Getting-Started/Installation/)
 
+Find details instructions on how to install Umbraco Deploy on your Umbraco project.
+
 ## [Deployments](Deployments/)
 
 The deployment process explained for Umbraco Deploy.
