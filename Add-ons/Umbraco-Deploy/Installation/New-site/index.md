@@ -142,7 +142,8 @@ The `type` value is for informational purposes in the backoffice but in most cas
 
 The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
 
-:::note You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
+:::note 
+You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
 :::
 
 Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `~/data` folder of our Umbraco project.
