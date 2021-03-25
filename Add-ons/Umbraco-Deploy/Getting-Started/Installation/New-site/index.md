@@ -34,7 +34,7 @@ However you are free to choose the hosting provider and CI/CD pipeline that you 
 
 ### Set up Git repository and Umbraco project
 
-The first step to get Umbraco Deploy up and running is to set up a  Github repository which will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web Apps and new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+The first step to get Umbraco Deploy up and running is to set up a Github repository. This will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web Apps and a new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
 
 1. Set up a Github repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
