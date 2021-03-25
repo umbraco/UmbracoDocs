@@ -28,9 +28,9 @@ However you are free to choose the hosting provider and CI/CD pipeline that you 
 
 ## Installation steps
 
-1. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
-2. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
-3. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
+1. [Set up Git repository and new Umbraco project](#set-up-git-repository-and-umbraco-project)
+2. [Install Umbraco Deploy via NuGet](#installing-and-setting-up-umbraco-deploy)
+3. [Configure CI/CD build server](#setting-up-ci-cd-build-server-with-github-actions)
 
 ### Set up Git repository and Umbraco project
 
