@@ -292,6 +292,6 @@ The build server that has been set up will go through the steps in the YAML file
 
 You can now start creating content on the local machine. Once you create something like a Document Type, the changes are getting picked up in Git.
 
-When you're done making changes, you can commit them and deploy them to Github which again, will run the build server you have set up and then extract the changes into the website that you have set up in Azure.
+When you're done making changes, you can commit them and deploy them to Github which again, will run the build server you have set up and then extract the changes into the website in Azure.
 
 This will only deploy the meta data for our local site to your website, to transfer content and media you will need to do so from the backoffice on your local project using the [queue for transfer feature](../Content-Transfer).
