@@ -43,7 +43,7 @@ namespace My.Website
             EditorModelEventManager.SendingContentModel -= EditorModelEventManager_SendingContentModel;
         }
 
-    private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
+        private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
             // Set a default value for a NewsArticle's PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
@@ -97,7 +97,7 @@ public class SubscribeToEditorModelEvents : IComponent
     {
         bool isNew = !int.TryParse(e.Model.Id?.ToString(), out int id) || id == 0;
         
-        // We only want to set the default group when the member is initially created, eg doesn't have an Id yet
+        // We only want to set the default member group when the member is initially created, eg doesn't have an Id yet
         if (isNew == false)
             return;
                
@@ -105,8 +105,8 @@ public class SubscribeToEditorModelEvents : IComponent
         if (e.Model.ContentTypeAlias == "Member")
         {
             // Find a specific member group
-            var group = _memberGroupService.GetByName("Customer");
-            if (group == null)
+            var mg = _memberGroupService.GetByName("Customer");
+            if (mg == null)
                 return;
             
             // Find member group property on member model
@@ -116,7 +116,7 @@ public class SubscribeToEditorModelEvents : IComponent
                 // Assign a default value for member group property
                 prop.Value = new Dictionary<string, object>
                 {
-                    { group.Name, true }
+                    { mg.Name, true }
                 };
             }
         }
