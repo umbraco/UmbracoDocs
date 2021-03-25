@@ -4,9 +4,11 @@ versionFrom: 8.0.0
 
 # Getting started with Umbraco Deploy
 
-Umbraco Deploy is the engine that runs behind the scenes on Umbraco Cloud.
+Umbraco Deploy is the engine that runs behind the scenes on Umbraco Cloud and takes care of all the deployment processes of both code, schema and content on projects.
 
-Umbraco Deploy lets you use the Umbraco Cloud Deployment technology outside of Umbraco Cloud to ease deployment between multiple Umbraco environments by connecting external hosted Umbraco projects with localhost or Umbraco Cloud as Development environments.
+With Umbraco Deploy (on-premises) you get to use the Umbraco Cloud Deployment technology outside of Umbraco Cloud to ease deployment between multiple Umbraco environments. This is done by connecting external hosted Umbraco projects with a local instance of your Umbraco website.
+
+In this article you can learn more about what it takes to get started using Umbraco Deploy on your project, and you can also get a high-level overview of how the product works.
 
 ## Getting started
 
