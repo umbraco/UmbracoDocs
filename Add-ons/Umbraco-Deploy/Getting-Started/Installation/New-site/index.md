@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 In this article, we will cover the steps in order for you to install Umbraco deploy on a brand new website.
 
-We will cover how to install Umbraco deploy and set up Umbraco deploy on your website as well as show an example as to how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure Web Apps.
+We will cover how to install Umbraco deploy and set up Umbraco deploy on your website. We will also go through an example on how it can be set up as a CI/CD build server using Github actions to run the deployment on a website set up with Azure Web Apps.
 
 ## Prerequisites
 
