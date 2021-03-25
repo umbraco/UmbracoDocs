@@ -4,11 +4,11 @@ versionFrom: 7.0.0
 
 # The Licensing Model
 
-Umbraco Forms and Umbraco Courier are commercial products.
+Umbraco Forms, Umbraco Deploy and Umbraco Courier are commercial products.
 
 For Umbraco Forms you will have a 14-day free trial to try out the product. After your trial expires, you'll need to have a **valid license** in order to keep using the product on your site.
 
-Umbraco Courier doesn't come with a 14-day free trial, which means you will need a **valid license** in order to use the product. You will be able to test Umbraco Courier on a local setup without a license.
+Umbraco Courier and Umbraco Deploy don't come with a 14-day free trial, which means you will need a **valid license** in order to use the products. You will be able to test both Deploy and Courier on a local setup without a license.
 
 ## How does it work?
 
@@ -53,6 +53,19 @@ Additional domains can be purchased from your account on [Umbraco.com](https://u
 That this is an add-on domain for existing licenses. Refunds will not be given for this product.
 :::
 
+### Umbraco Deploy
+
+- A single license covers the installation and use of Umbraco Courier in 1 production domain, as well as 2 development domains
+- The production domain includes all subdomains (e.g. `*.domain.tld`), as well as the `.local` extension (e.g. `domain.tld.local`)
+- The development domains works with or without the `www` subdomain
+- The license also includes `localhost` as a valid domain
+
+For the Umbraco Deploy license you do not need to purchase additional domains if you are running multiple sites within the same Umbraco installation.
+
+:::note
+The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com]().
+:::
+
 ### Umbraco Courier
 
 - A single license covers the installation and use of Umbraco Courier in 1 production domain, as well as 2 development domains
@@ -82,7 +95,7 @@ Once you've configured your license with the correct domains, you are ready to i
 1. Download your license from your Umbraco.com account - this will give you a `.lic` file
 2. Place the file in the `/bin` directory in your Umbraco installation
 
-The `.lic` file must be placed in the `/bin` directory in order to be registered by Umbraco Courier or Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
+The `.lic` file must be placed in the `/bin` directory in order to be registered by Umbraco Deploy, Umbraco Courier or Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
 
 ![Installing Umbraco Forms license](images/install-forms-license.gif)
 
