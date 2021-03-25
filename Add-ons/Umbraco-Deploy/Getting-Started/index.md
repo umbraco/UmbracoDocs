@@ -14,13 +14,13 @@ In this article you can learn more about what it takes to get started using Umbr
 
 There are three main steps you need to go through in order to start using Umbraco Deploy on your website.
 
-1. [Set up Git repository and new Umbraco project](Installation/New-site#Set-up-Git-repository-and-Umbraco-project)
+1. [Set up Git repository and new Umbraco project](../Installation/New-site#Set-up-Git-repository-and-Umbraco-project)
     - Set up a repository and then install a new Umbraco project inside it.
 
-2. [Install Umbraco Deploy via NuGet](Installation/New-site#Installing-and-setting-up-Umbraco-Deploy)
+2. [Install Umbraco Deploy via NuGet](../Installation/New-site#Installing-and-setting-up-Umbraco-Deploy)
     - Umbraco Deploy can be installed via NuGet.
 
-3. [Configure CI/CD build server](Installation/New-site#Setting-up-CI/CD-build-server-with-Github-actions)
+3. [Configure CI/CD build server](../Installation/New-site#Setting-up-CI/CD-build-server-with-Github-actions)
     - Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment
 
 ## How Umbraco Deploy works
