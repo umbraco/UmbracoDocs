@@ -12,7 +12,7 @@ Umbraco Deploy can be upgraded via NuGet.
 
 Open the **Package Console** in Visual Studio and type:
 
-`Update-Package UmbracoDeploy`
+`Update-Package UmbracoDeploy.OnPrem`
 
 You will be prompted to overwrite files. You should choose **"No to All"** by pressing **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](../../../Getting-Starter/Setup/Upgrading/version-specific.md)**.
 
