@@ -20,7 +20,7 @@ There are three main steps you need to go through in order to start using Umbrac
 2. [Install Umbraco Deploy via NuGet](Installation/new-site#installing-and-setting-up-umbraco-deploy)
     - Umbraco Deploy can be installed via NuGet.
 
-3. [Configure CI/CD build server](Installation/new-site#setting-up-ci-cd-build-server-with-github-actions)
+3. [Configure CI/CD build server](Installation/new-site#setting-up-cicd-build-server-with-github-actions)
     - Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment
 
 ## How Umbraco Deploy works
