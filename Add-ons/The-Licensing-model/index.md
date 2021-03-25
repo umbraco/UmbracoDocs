@@ -63,7 +63,7 @@ That this is an add-on domain for existing licenses. Refunds will not be given f
 For the Umbraco Deploy license you do not need to purchase additional domains if you are running multiple sites within the same Umbraco installation.
 
 :::note
-The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com]().
+The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).
 :::
 
 ### Umbraco Courier
