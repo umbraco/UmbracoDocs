@@ -8,7 +8,7 @@ In the Troubleshooting sections you will find guides to help you through some of
 
 ## [Getting Started](Getting-Started/)
 
-Learn what Umbraco Deploy is, how it works and how to get started using Umbraco Deploy.
+Learn what Umbraco Deploy is, how it works and how to get started using it.
 
 ## [Install Umbraco Deploy](Getting-Started/Installation/)
 
