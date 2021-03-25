@@ -22,10 +22,10 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 ## Installation steps
 
-1. [Create copy of database and download views, CSS and scripts files from your production site](#Install-Umbraco-Deploy-on-Existing-site)
-2. [Set up Git repository and new Umbraco project](#Set-up-Git-repository-and-Umbraco-project)
-3. [Install Umbraco Deploy via NuGet](#Installing-and-setting-up-Umbraco-Deploy)
-4. [Configure CI/CD build server](#Setting-up-CI/CD-build-server-with-Github-actions)
+1. [Create copy of database and download views, CSS and scripts files from your production site](#install-Umbraco-Deploy-on-existing-site)
+2. [Set up Git repository and new Umbraco project](#set-up-git-repository-and-umbraco-project)
+3. [Install Umbraco Deploy via NuGet](#installing-and-setting-up-umbraco-deploy)
+4. [Configure CI/CD build server](#setting-up-cicd-build-server-with-github-actions)
 
 ## Install Umbraco Deploy on Existing site
 
@@ -186,4 +186,4 @@ For an example on how this can be done see the [guide for how Umbraco Deploy can
 
 Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../../Deployments).
 
-This will only deploy the meta data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../Content-Transfer).
+This will only deploy the meta data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../Deployments/Content-Transfer).
