@@ -1,3 +1,8 @@
+---
+versionFrom: 8.0.0
+meta.Title: "Troubleshooting Umbraco Deploy"
+meta.Description: "The troubleshooting section for Umbraco Deploy"
+---
 # Troubleshooting
 
 In this troubleshooting section, you can find help to resolve issues that you might run into when using Umbraco Deploy.

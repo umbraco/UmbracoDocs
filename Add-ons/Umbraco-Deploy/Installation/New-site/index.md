@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Installing Umbraco Deploy on new Umbraco website"
+meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website with an example of an build server using Github Actions"
 ---
 
 # Installing Umbraco Deploy
