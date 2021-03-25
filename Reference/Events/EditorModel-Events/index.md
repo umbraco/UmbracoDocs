@@ -73,7 +73,7 @@ namespace My.Website
 
 Another example could be to set the default Member Group for a specific Member Type using `SendingMemberModel`:
 
-```
+```csharp
 public class SubscribeToEditorModelEvents : IComponent
 {
     private readonly IMemberGroupService _memberGroupService;
