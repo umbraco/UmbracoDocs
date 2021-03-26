@@ -53,7 +53,7 @@ If you're in a creative mood then why not experiment with some of our tutorials:
 [Creating a Property Editor](https://our.umbraco.com/Documentation/Tutorials/Creating-a-Property-Editor/)
 
 :::center
-![Extending Umbraco](images/Headless_blue_arrows.png)
+![Extending Umbraco](images/Headless_Email_hero_780x405px.png)
 :::
 
 

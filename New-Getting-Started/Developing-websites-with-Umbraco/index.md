@@ -32,7 +32,7 @@ From a frontend perspective, Umbraco does not dictate HTML, CSS, or JS in your w
 Umbraco uses ASP.NET and MVC patterns and you can extend and write your own controllers using the approach outlined in this section.
 
 :::center
-![Umbraco on devices](images/devices.png)
+![Umbraco on devices](images/Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png)
 :::
 
 ## Which IDE to use for writing code with Umbraco?

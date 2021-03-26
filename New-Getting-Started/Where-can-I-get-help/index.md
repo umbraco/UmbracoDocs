@@ -12,9 +12,9 @@ If you haven’t been able to find the topic to suit your needs, we have many wa
  
 [Our Umbraco generally](https://our.umbraco.com/)
  
-[Issue Tracker]()
-https://umbraco.com/blog/the-umbraco-issue-tracker-process/ 
-https://github.com/umbraco/Umbraco-CMS/issues  
+[Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
+
+[Read our blog for issue tracker](https://umbraco.com/blog/the-umbraco-issue-tracker-process/) 
 
 [Report issue with UmbracoDocs](https://github.com/umbraco/UmbracoDocs) 
 
@@ -27,7 +27,7 @@ https://umbraco.com/training/course-details/
 [Umbraco TV](https://umbraco.tv/)
 
 :::center
-![Umbraco support](images/support.png)
+![Umbraco support](images/U_PRs.png)
 :::
 
 ## Community Resources 
@@ -55,5 +55,5 @@ https://umbraco.com/training/course-details/
 [Umbraco cloud starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) 
 
 :::center
-![Umbraco community](images/u_community.png)
+![Umbraco community](images/U_docs.png)
 :::

@@ -11,7 +11,7 @@ For information on how to install and host different types of Umbraco projects w
 Umbraco Cloud documentation can be found [here](https://our.umbraco.com/documentation/Umbraco-Cloud/).
 
 :::center
-[Umbraco Cloud](images/u_cloud.png)
+![Umbraco Cloud](images/cloud.png)
 :::
 
 ## Server Requirements
@@ -36,8 +36,6 @@ Umbraco Cloud documentation can be found [here](https://our.umbraco.com/document
 :::
 
 :::center
-![Umbraco arrows](iamges/arrows.png)
+![Umbraco Cloud](images/umbraco_free_way_01.png)
 :::
-
-
 

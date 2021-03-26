@@ -23,7 +23,7 @@ There is also information on how to use features such as translations, forms, an
 [What are the options for managing forms?](documentation/Add-ons/UmbracoForms/Editor/)
 
 :::center
-![Editing Umbraco](images/editor.png)
+![Editing Umbraco](images/umbraco_8_2_A.png)
 :::
 
 Alternatively we have a no code or 'low code' platform called Umbraco Uno which allows you customise your website from a wide range of pre-built widgets.
@@ -35,5 +35,5 @@ Alternatively we have a no code or 'low code' platform called Umbraco Uno which 
 [I'd like to know more, where can I find documentation?](https://our.umbraco.com/documentation/Umbraco-Uno/)
 
 :::center
-![Umbraco baseline](images/baseline.png)
+![Umbraco baseline](images/8_6_Email_hero_780x405px.png)
 :::

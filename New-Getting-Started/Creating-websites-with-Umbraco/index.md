@@ -31,7 +31,7 @@ There a lot of terminology here! Let's look at breaking those terms down...
 [How can translations be used with content?](Getting-Started/Backoffice/Variants)
 
 :::center
-![Umbraco tree image](images/tree.png)
+![Umbraco tree image](images/flexible_Email_hero_780x405px.png)
 :::
 
 
