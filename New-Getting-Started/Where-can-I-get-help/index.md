@@ -27,7 +27,7 @@ https://umbraco.com/training/course-details/
 [Umbraco TV](https://umbraco.tv/)
 
 :::center
-[Umbraco supprt](images/support.png)
+![Umbraco support](images/support.png)
 :::
 
 ## Community Resources 
@@ -55,5 +55,5 @@ https://umbraco.com/training/course-details/
 [Umbraco cloud starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) 
 
 :::center
-[Umbraco commnunity](images/u_community.png)
+![Umbraco community](images/u_community.png)
 :::

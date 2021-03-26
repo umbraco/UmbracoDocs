@@ -36,7 +36,7 @@ Umbraco Cloud documentation can be found [here](https://our.umbraco.com/document
 :::
 
 :::center
-[Umbraco arrows](iamges/arrows.png)
+![Umbraco arrows](iamges/arrows.png)
 :::
 
 

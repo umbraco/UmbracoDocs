@@ -16,7 +16,7 @@ We've even included a helpful tutorial which you can follow for creating a basic
 
 Your website's content is based on a Document Type, published with a Template, each of these Document Types has properties made up of Data Types and each Data Type has an underlying Property Editor. 
 
-[Example of tree content structure](images/contentstructure.png)
+![Example of tree content structure](images/contentstructure.png)
 
 
 There a lot of terminology here! Let's look at breaking those terms down...
@@ -31,7 +31,7 @@ There a lot of terminology here! Let's look at breaking those terms down...
 [How can translations be used with content?](Getting-Started/Backoffice/Variants)
 
 :::center
-[Umbraco tree image](images/tree.png)
+![Umbraco tree image](images/tree.png)
 :::
 
 

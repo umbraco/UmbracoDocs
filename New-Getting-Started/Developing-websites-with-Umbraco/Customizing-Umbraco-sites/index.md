@@ -43,7 +43,7 @@ https://our.umbraco.com/Documentation/Getting-Started/Code/Debugging/
 https://our.umbraco.com/Documentation/Reference/Debugging/
 
 :::center
-[Umbraco packages][images/u_package_ribbon.png]
+![Umbraco packages][images/u_package_ribbon.png]
 :::
 
 
