@@ -1,6 +1,6 @@
 ---
 meta.Title: "Hosting an Umbraco infrastructure" 
-meta.description: "Here you will find details on Azure, Umbraco Cloud, upgrading Umbraco, server configuration and system requirements"
+meta.description: "Here you will find details on Azure, Umbraco Cloud, upgrading Umbraco, server configuration and system requirements."
 versionFrom: 8.0.0
 ---
 
