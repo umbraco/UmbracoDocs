@@ -55,5 +55,5 @@ https://umbraco.com/training/course-details/
 [Umbraco cloud starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) 
 
 :::center
-![Umbraco community](images/U_docs.png)
+![Umbraco community](images/U_Docs.png)
 :::
