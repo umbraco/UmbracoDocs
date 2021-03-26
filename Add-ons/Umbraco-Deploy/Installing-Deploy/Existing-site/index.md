@@ -188,4 +188,4 @@ For an example on how this can be done see the [guide for how Umbraco Deploy can
 
 Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployments).
 
-This will only deploy the meta data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
+This will only deploy the meta data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
