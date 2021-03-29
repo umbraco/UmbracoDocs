@@ -64,3 +64,5 @@ The extraction will end in one of two possible outcomes:
 It is also possible to see which version of Umbraco Deploy you are running, when the last operation was started and the status of the deployment operation.
 
 ![Deploy Dashboard](images/Deploy-dahsboard.png)
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/l5qdTsIddKM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
