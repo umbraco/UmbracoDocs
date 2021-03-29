@@ -48,6 +48,8 @@ Moving your content and media between your environments is done through the Umbr
 Transferring and restoring content and media is the same whether you are working locally and transfering between two environments.
 :::
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Deploy Dashboard
 
 In Umbraco Deploy we have included a Deploy Dashboard in the Settings section of the Umbraco backoffice to make it easier to run operations like schema deployment from data files and extract schema to data files.
@@ -64,3 +66,5 @@ The extraction will end in one of two possible outcomes:
 It is also possible to see which version of Umbraco Deploy you are running, when the last operation was started and the status of the deployment operation.
 
 ![Deploy Dashboard](images/Deploy-dahsboard.png)
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

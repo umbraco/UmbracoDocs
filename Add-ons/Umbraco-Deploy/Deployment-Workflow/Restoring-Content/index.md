@@ -51,8 +51,7 @@ If any of your content nodes depends on media items, these will also be restored
 To see the media, go to the Media section and *reload* the tree.
 :::
 
-<!--Video needs updating to be not cloud specific
-<iframe width="800" height="450" src="https://www.youtube.com/embed/WGTU8DF8PEk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### [Partial Restore](Partial-Restore)
 
