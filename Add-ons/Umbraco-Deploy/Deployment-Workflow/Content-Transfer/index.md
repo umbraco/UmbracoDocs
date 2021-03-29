@@ -32,7 +32,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 
 If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Media items
 

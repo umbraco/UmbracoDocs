@@ -65,4 +65,4 @@ It is also possible to see which version of Umbraco Deploy you are running, when
 
 ![Deploy Dashboard](images/Deploy-dahsboard.png)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/l5qdTsIddKM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
