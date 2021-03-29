@@ -22,6 +22,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Alpha 4 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-4-release-of-umbraco-on-net-core/)
 * [Alpha 3 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-3-release-of-umbraco-on-net-core/)
 * [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
 * [.NET Core Alpha release](https://umbraco.com/blog/net-core-alpha-release/)
@@ -43,6 +44,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Community blog posts
 
+* [Umbraco Package Migration to .NET Core (blog post series)](https://www.andybutland.dev/2021/03/umbraco-package-migration-to-net-core.html)
 * [Running Umbraco on a Raspberry Pi or How I Stopped Worrying and Learned to Love Linux](https://skrift.io/issues/running-umbraco-on-a-raspberry-pi-or-how-i-stopped-worrying-and-learned-to-love-linux/)
 * [Demystifying config in Umbraco .NET Core](https://24days.in/umbraco-cms/2020/umbraco-dotnet-core-config/)
 * [Rick Butterfield: Umbraco Unicore first impressions](https://rickbutterfield.com/blog/umbraco-unicore-impressions)
@@ -50,6 +52,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Other
 
+* [Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=EJw7dfq5_Jc)
 * [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
