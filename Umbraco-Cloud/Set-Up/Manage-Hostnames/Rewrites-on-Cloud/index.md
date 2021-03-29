@@ -38,7 +38,7 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
 <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
   <match url=".*" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
+    <add input="{HTTP_X_Forwarded_For}" pattern="^(.*)?.s1.umbraco.io$" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
