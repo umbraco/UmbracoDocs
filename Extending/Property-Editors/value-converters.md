@@ -17,7 +17,7 @@ Published property values have four "Values":
 
 - **Source** - The raw data stored in the database, this is generally a `String`
 - **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
-- **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
+- **Object** - The object to be used when accessing the property using the `Value<T>` method of `IPublishedContent`
 - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
 ## Registering PropertyValueConverters
@@ -142,7 +142,7 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 ### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
-This method converts the Intermediate to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Intermediate to an Object. The returned value is used by the `Value<T>` method of `IPublishedContent`. 
 
 The below example converts the nodeId (converted to `Int` or `Udi` by *ConvertSourceToIntermediate*) into an 'IPublishedContent' object.  
 
