@@ -69,7 +69,10 @@ When using the File Upload field in a form, editors can choose which file extens
 
 There are certain file extensions that in almost all cases should never be allowed, which are held in this configuration value. This means that even if an editor has selected to allow all files, any files that match the extensions listed here will be blocked.
 
-By default, .NET related code files like `.config` and `.aspx` are included in this deny list. You can add or - if you are sure - remove values from this list to your needs.
+By default, .NET related code files like `.config` and `.aspx` are included in this deny list. You can add or - if you are sure - remove values from this list to meet your needs.
+
+### MaxNumberOfColumnsInFormGroup
+Added in 8.7.0, this setting controls the maximum number of columns that can be created by editors when they configure groups within a form.  The default value used if the setting value is not provided is 12.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
