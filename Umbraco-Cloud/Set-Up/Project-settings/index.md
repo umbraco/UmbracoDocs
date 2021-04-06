@@ -35,7 +35,7 @@ Sometimes you might want to upload and bind your own custom security certificate
 All Staging and Development environments on Umbraco Cloud projects are by default protected by *basic authentication* which require you to enter your Cloud credentials in order to view the frontend. You can disable / enable this authentication with one click on the **Public access** page.
 
 :::note
-Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher. 
+Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher.
 
 On **Trial** projects, the basic authentication is enabled on the Live environment and cannot be removed unless the project is upgraded to a paid plan.
 
@@ -53,6 +53,14 @@ On Umbraco Cloud projects we've made it possible to configure a deployment webho
 From the *Settings* menu you can upgrade your project to a standard or a Professional plan, depending on your needs.
 
 The option will not be available if you are already on the specific plan or if you are running in Trial mode.
+
+## Payment history
+
+From here you can see the payment history for a certain project as well as download the latest invoices or for a specific month.
+
+:::note
+This only applies to new customers on Umbraco Cloud, for old projects, the invoices and payment history is still available in the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+:::
 
 ## [Usage](../Usage/)
 
