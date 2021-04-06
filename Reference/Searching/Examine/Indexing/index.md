@@ -243,6 +243,7 @@ In order to create this index we need three things:
 ```c#
 using System.Collections.Generic;
 using Examine;
+using Lucene.Net.Analysis.Standard;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 using Umbraco.Examine;
@@ -274,7 +275,7 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
             var index = new UmbracoContentIndex("ProductIndex",
                 CreateFileSystemLuceneDirectory("ProductIndex"),
                 new UmbracoFieldDefinitionCollection(),
-                new StandardAnalyzer(Version.LUCENE_30),
+                new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30),
                 _profilingLogger,
                 _localizationService,
                 // We can use the ContentValueSetValidator to set up rules for the content we
