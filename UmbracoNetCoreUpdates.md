@@ -169,7 +169,7 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 
 2. Install the new Umbraco dotnet template
     ```none
-    dotnet new -i Umbraco.Templates::0.5.0-*
+    dotnet new -i Umbraco.Templates::9.0.0-*
     ```
 
 In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
