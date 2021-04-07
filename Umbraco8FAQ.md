@@ -19,7 +19,7 @@ Yes, for now it is still possible to create Umbraco 7 projects on Umbraco Cloud.
 
 When creating a new paid Umbraco Cloud project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8.
 
-If you're running an Umbraco Cloud Baseline project on Umbraco 7 you are able to create new Umbraco 7 child projects up until February 28th 2021.
+From July 2021 you can no longer create new sites nor create baseline children based on Umbraco 7
 
 ## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
 
