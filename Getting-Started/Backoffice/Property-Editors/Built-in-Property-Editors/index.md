@@ -98,6 +98,12 @@ This control gives the same functionality as the standard listview, but allows y
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
+## [Media Picker 3](Media-Picker-3/index.md)
+
+`Alias: Umbraco.MediaPicker3`
+
+Media picker 3 is the latest Media Picker, which enables to select one or more medias from the Media Section. This Property Editor can be configured to only pick certain Media Types. And its possible to define Local Image Crops.
+
 ## [Media Picker](Media-Picker/index.md)
 
 `Alias: Umbraco.MediaPicker`
