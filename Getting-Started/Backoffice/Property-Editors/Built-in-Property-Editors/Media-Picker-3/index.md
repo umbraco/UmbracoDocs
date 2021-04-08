@@ -123,6 +123,35 @@ Local image croppings are stored and retrived different than global crops, below
 }
 ```
 
+## Use global crops
+
+Global image croppings are croppes stored on the Media Item, by the Property Editor `Image Cropper`, making it shared between all usages of the media Item.
+
+The global crops are configured on the DataType of the `umbracoFile` property on the Media Type `Image`
+
+[Read about the Image Cropper here](../Image-Cropper/index.md)
+
+### Using GetCropUrl
+
+```csharp
+@{
+    foreach (var entry in Model.Medias)
+    {
+        <img src="@entry.MediaItem.GetCropUrl("cropAlias")"/>
+    }
+}
+```
+
+### Using UrlHelper
+
+```csharp
+@{
+    foreach (var entry in Model.Medias)
+    {
+        <img src="@Url.GetCropUrl(entry.MediaItem, "cropAlias")"/>
+    }
+}
+
 ## Add values programmatically
 
 ```This is not part of the current Media Picker v3, feel free to provide such.```
