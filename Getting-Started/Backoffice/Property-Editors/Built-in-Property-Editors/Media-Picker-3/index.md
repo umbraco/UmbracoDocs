@@ -125,7 +125,7 @@ Local image croppings are stored and retrived different than global crops, below
 
 ## Use global crops
 
-Global image croppings are croppes stored on the Media Item, by the Property Editor `Image Cropper`, making it shared between all usages of the media Item.
+Global image croppings are crops stored on the Media Item, by the Property Editor `Image Cropper`, making it shared between all usages of the media Item.
 
 The global crops are configured on the DataType of the `umbracoFile` property on the Media Type `Image`
 
