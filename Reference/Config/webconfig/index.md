@@ -184,8 +184,11 @@ This value is primarily used on Umbraco Cloud for a small startup performance op
 
 ### Umbraco.Core.SqlWriteLockTimeOut
 
-An int value representing the time in milliseconds to lock the database for a write operation. The default value is 1800.
+The default value is: `5000` (5 seconds)
+
+This setting needs to be an int value that will represent the time in milliseconds to lock the database for a write operation.
+The setting is not mandatory, but can be used as a fix to extend the timeout if you have been seeing errors in your logs indicating that the default lock timeout is hit.
 
 ```xml
-<add key="Umbraco.Core.SqlWriteLockTimeOut" value="1800" />
+<add key="Umbraco.Core.SqlWriteLockTimeOut" value="6000" />
 ```
