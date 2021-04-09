@@ -88,7 +88,7 @@ Define local image croppings, this data will stay locally, meaning that this wil
 
 ```csharp
 @{
-    var typedMediaPickerSingle = Model.FeaturedBanner;
+    var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
         <p>@mediaEntry.MediaItem.Url</p>
