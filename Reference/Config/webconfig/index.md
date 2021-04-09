@@ -82,6 +82,14 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 Check out the [security documentation](../../security/use-https.md).
 :::
 
+### Umbraco.Core.SqlWriteLockTimeOut
+
+An int value representing the time in milliseconds to lock the database for a write operation. The default value is 1800.
+
+```xml
+<add key="Umbraco.Core.SqlWriteLockTimeOut" value="1800" />
+```
+
 ### Umbraco.Examine.LuceneDirectoryFactory
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory. The indexes will be accessed from the temporary storage directory. 
