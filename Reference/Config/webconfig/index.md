@@ -82,14 +82,6 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 Check out the [security documentation](../../security/use-https.md).
 :::
 
-### Umbraco.Core.SqlWriteLockTimeOut
-
-An int value representing the time in milliseconds to lock the database for a write operation. The default value is 1800.
-
-```xml
-<add key="Umbraco.Core.SqlWriteLockTimeOut" value="1800" />
-```
-
 ### Umbraco.Examine.LuceneDirectoryFactory
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory. The indexes will be accessed from the temporary storage directory. 
@@ -189,3 +181,11 @@ The default value is: `false`
 This is not a setting that commonly needs to be configured.
 
 This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.
+
+### Umbraco.Core.SqlWriteLockTimeOut
+
+An int value representing the time in milliseconds to lock the database for a write operation. The default value is 1800.
+
+```xml
+<add key="Umbraco.Core.SqlWriteLockTimeOut" value="1800" />
+```
