@@ -244,6 +244,7 @@ In order to create this index we need three things:
 using System.Collections.Generic;
 using Examine;
 using Lucene.Net.Analysis.Standard;
+using Lucene.Net.Util;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 using Umbraco.Examine;
@@ -254,17 +255,20 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
     private readonly IProfilingLogger _profilingLogger;
     private readonly ILocalizationService _localizationService;
     private readonly IPublicAccessService _publicAccessService;
+    private readonly IScopeProvider _scopeProvider;
 
     // Since Umbraco 8 has dependency injection out of the box, we can use it to inject
     // the different services that we need.
     public ProductIndexCreator(IProfilingLogger profilingLogger,
         ILocalizationService localizationService,
-        IPublicAccessService publicAccessService
+        IPublicAccessService publicAccessService,
+        IScopeProvider scopeProvider
     )
     {
         _profilingLogger = profilingLogger;
         _localizationService = localizationService;
         _publicAccessService = publicAccessService;
+        _scopeProvider = scopeProvider;
     }
 
         // Noticed that we return a collection of indexes? Technically you
@@ -275,12 +279,12 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
             var index = new UmbracoContentIndex("ProductIndex",
                 CreateFileSystemLuceneDirectory("ProductIndex"),
                 new UmbracoFieldDefinitionCollection(),
-                new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30),
+                new StandardAnalyzer(Version.LUCENE_30),
                 _profilingLogger,
                 _localizationService,
                 // We can use the ContentValueSetValidator to set up rules for the content we
                 // want to have indexed. In our case we want published, non-protected nodes of the type "product".
-                new ContentValueSetValidator(true, false, _publicAccessService, includeItemTypes: new string[] { "product" }));
+                new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new string[] { "product" }));
 
             return new[] { index };
         }
