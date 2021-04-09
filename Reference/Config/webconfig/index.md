@@ -181,3 +181,14 @@ The default value is: `false`
 This is not a setting that commonly needs to be configured.
 
 This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.
+
+### Umbraco.Core.SqlWriteLockTimeOut
+
+The default value is: `5000` (5 seconds)
+
+This setting needs to be an int value that will represent the time in milliseconds to lock the database for a write operation.
+The setting is not mandatory, but can be used as a fix to extend the timeout if you have been seeing errors in your logs indicating that the default lock timeout is hit.
+
+```xml
+<add key="Umbraco.Core.SqlWriteLockTimeOut" value="6000" />
+```
