@@ -91,7 +91,6 @@ Define local image croppings, this data will stay locally, meaning that this wil
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <p>@mediaEntry.MediaItem.Url</p>
         <img src="@mediaEntry.MediaItem.Url" style="width:200px"/>
     }
 }
