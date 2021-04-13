@@ -103,7 +103,7 @@ Define local image croppings, Crop data is stored on the document in this proper
 
 ## Using local crops
 
-Local image croppings are stored and retrived different than global crops, below is two examples of how to retrive local crops.
+Local image croppings are stored and retrieved differently than global crops. Below are two examples of how to retrieve local crops.
 
 ### Using GetLocalCropUrl
 
