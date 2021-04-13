@@ -45,7 +45,7 @@ Even though we use the same licensing model for Umbraco Forms and Umbraco Courie
 - The license allows for an unlimited number of forms
 - The license also includes `localhost` as a valid domain
 
-In the case the you run multiple sites within one Umbraco installation, e.g. you have multiple domains pointing at the same installation, you have the option to purchase and add **additional domains** to your license.
+In the case you run multiple sites within one Umbraco installation, e.g. you have multiple domains pointing at the same installation, you have the option to purchase and add **additional domains** to your license.
 
 Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com) for 129 €. Each additional domain includes 1 live domain and 2 development / testing domains.
 
