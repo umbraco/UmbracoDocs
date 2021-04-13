@@ -15,15 +15,15 @@ Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the offici
 
 ## Can I still create Umbraco 7 projects on Umbraco Cloud and for how long?
 
-Yes, for now it is still possible to create Umbraco 7 projects on Umbraco Cloud.
+You will be able to create Umbraco 7 project on Umbraco Cloud up until July 2021.
 
-When creating a new paid Umbraco Cloud project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8.
+When creating a new paid Umbraco Cloud project, you’ll get the option to choose which major version of Umbraco to use.
 
 From July 2021 you can no longer create new sites nor create baseline children based on Umbraco 7.
 
 ## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
 
-We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. Following September 30th 2023, Umbraco 7 project will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure you migrate your projects to Umbraco 8 before this date.
+We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. From August 2023 Umbraco 7 project will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure you migrate your projects to a newer major version before then.
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
@@ -43,11 +43,15 @@ If you are using Umbraco Cloud we have a [Cloud specific migration guide](Umbrac
 
 As Umbraco 7 is open source, you'll be able to use it, well, forever. You should though be aware that Umbraco HQ is only committed to supporting this version up until a specific date.
 
-We will continue to provide necessary updates in regard to bug and security fixes for Umbraco 7 up until the September 30th 2023.
-
 New features will not be added to Umbraco 7 going forward, and the last planned minor release for Umbraco 7 was Umbraco 7.15.0 which was released on July 9th 2019.
 
-If you are an Umbraco Gold Partner or have a support plan with Umbraco HQ, we will continue to provide technical support for Umbraco 7 projects until February 28th 2021.
+Umbraco 7.15 will be supported till the end of June 2021, after which it will enter the Security phase. In this phase only security issues will be fixed. 
+
+By the end of September 2023 Umbraco 7 will be considered End Of Life (EOL), and we will no longer recommend using it.
+
+We will continue to provide necessary updates in regard to bug and security fixes for Umbraco 7 up until the September 2023.
+
+Learn more about the Support and Security phases as well as get all the dates related to the life-cycle of Umbraco 7 in the [Support, LTS and EOL blog post](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
 
 ## What are the highlights of Umbraco 8?
 
