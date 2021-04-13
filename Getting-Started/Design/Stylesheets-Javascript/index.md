@@ -107,7 +107,9 @@ If you are running your site locally and the compilation setting for debugging i
 :::
 
 :::note
-When adding stylesheet references to Html.RequiresCss there is no need to add ?v=1 to specify a specific version of the asset for cachebusting (In fact doing so will break the minification and combination of your files!). The Client Dependency Framework uses the version number from /config/clientdependency.config on the querystring of the combined and minified resource. To force your updated minified and combined asset to be refreshed, increment this version number by 1 in the config file to bust any browser caching on the old version of your assets. See [Healthcheck for Client Dependency Framework](https://our.umbraco.com/packages/developer-tools/health-check-for-client-dependency-framework/) package to do this from the backoffice, (or automatically increment the version in your build and deploy process). 
+When adding stylesheet references to `Html.RequiresCss` there is no need to add `?v=1` to specify a specific version of the asset for cache-busting. Doing so will break the minification and combination of your files. The Client Dependency Framework uses the version number from `/config/clientdependency.config` on the querystring of the combined and minified resource. 
+
+To force your updated, minified and combined assets to be refreshed, increment this version number by 1 in the config file to bust any browser caching on the old version of your assets. See the [Healthcheck for Client Dependency Framework](https://our.umbraco.com/packages/developer-tools/health-check-for-client-dependency-framework/) package to do this from the backoffice, or you can automatically increment the version in your build and deploy process. 
 :::
 
 
