@@ -23,7 +23,9 @@ From July 2021 you can no longer create new sites nor create baseline children b
 
 ## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
 
-We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. From August 2023 Umbraco 7 project will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure you migrate your projects to a newer major version before then.
+We will continue to support Umbraco 7 projects on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regards to security fixes.
+
+From August 2023 Umbraco 7 projects will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure to migrate your projects to a newer major before then.
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
