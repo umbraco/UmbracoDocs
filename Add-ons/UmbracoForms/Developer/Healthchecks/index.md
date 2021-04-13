@@ -25,7 +25,7 @@ There remains the possibility though that not all will be in place for a particu
 
 In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area.  So we've added some primary key, foreign key and unique constraints with this version.  If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
 
-There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the ophaning of records, that aren't correct.  Of course, this is the reason for the constraints to exist, and why we want to ensure they are in place.
+There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the ophaning of records, that aren't correct. This is the reason for the constraints to exist, and why we want to ensure they are in place.
 
 ### Running The Health Check
 
@@ -52,7 +52,7 @@ To support this, we provide the following SQL scripts:
 - Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](scripts/8.7.0-apply-keys-and-ind.md)
 - Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/8.7.0-apply-keys-and-ind-forms-in-db.md)
 
-The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies just to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
+The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
 
 :::note
 Before running any scripts or queries, please be sure to have a database backup in place.
