@@ -14,9 +14,9 @@ In each step, one feature will be covered. It is important to note that this gui
 
 ## Creating the page
 
-- Start by right-clicking the Umbraco Hotel page in the Content tree
-- Choose Create and select **Page**
-- Name your new page and click **Save**
+- In the **Content** tree, right-click the Umbraco Hotel page
+- Click **Create** and select **Page**
+- Enter a name for your page and click **Save**
 
 The landing page has now been created, and you are ready to start adding content.
 
