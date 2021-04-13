@@ -30,7 +30,7 @@ Use this setting to enforce a minimum and/or maximum amount of selected Media It
 
 ### Start node
 
-Limit the picker to only work in a certain part of the Media Tree.
+This setting is used to limit the Media Picker to certain parts of the Media Tree. 
 
 ### Ignorer user start nodes
 
