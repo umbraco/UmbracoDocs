@@ -49,8 +49,8 @@ As well as in the log files, such issues will be visible via the health check an
 
 To support this, we provide the following SQL scripts:
 
-- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes.sql](scripts/8.7.0-apply-keys-and-indexes.md)
-- Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db.sql](scripts/8.7.0-apply-keys-and-indexes-forms-in-db.md)
+- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](scripts/8.7.0-apply-keys-and-ind.md)
+- Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/8.7.0-apply-keys-and-ind-forms-in-db.md)
 
 The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies just to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
 
@@ -113,5 +113,5 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 
 To support this, we provide the following SQL scripts:
 
-- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert.sql](scripts/8.7.0-apply-keys-and-indexes_revert.md)
-- Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert.sql](scripts/8.7.0-apply-keys-and-indexes-forms-in-db_revert.md)
+- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](scripts/8.7.0-apply-keys-and-ind_revert.md)
+- Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/8.7.0-apply-keys-and-ind-forms-in-db_revert.md)
