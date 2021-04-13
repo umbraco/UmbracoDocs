@@ -49,21 +49,8 @@ or
 
 With the stylesheet referenced, you will be able to style the template file with the rules and classes defined in the stylesheet.
 
-Your stylesheets can be used in Rich Text Editors (datatype) as well - to connect them, make sure the stylesheet includes some CSS:
+Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/RTE-Styles/) documentation for more information.
 
-![Sample CSS code](images/5-rtesheet.png)
-
-Then, in the Setting section, under Datatypes, find your default Rich Text Editor (or create a new one), and under the Stylesheets configuration pick your desired stylesheet.
-
-![Connecting CSS to RTE](images/6-rte-connect-sheet.png)
-
-Once the datatype you modified is used on one of your pages, you will be able to style the text inside the RTE - the change will be applied both in the backoffice, as well as on the frontend.
-
-Use the Formats tool in the RTE toolbar to pick classes you defined in the css file.
-
-Such styling can also be applied to RTEs inside of Grid Layout.
-
-![Styling in RTE](images/7-content-rte.png)
 :::note
 If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.
 :::
