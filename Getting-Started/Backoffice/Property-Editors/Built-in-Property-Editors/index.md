@@ -102,7 +102,7 @@ The markdown editor will be interpreted by the Models Builder. Behind the scenes
 
 `Alias: Umbraco.MediaPicker3`
 
-Media picker 3 is the latest Media Picker, which enables to select one or more medias from the Media Section. This Property Editor can be configured to only pick certain Media Types. And its possible to define Local Image Crops.
+Media Picker 3 is the latest Media Picker, which enables you to select one or more media items from the Media Section. This Property Editor can be configured to only pick certain Media Types and it's possible to define Local Image Crops.
 
 ## [Media Picker](Media-Picker/index.md)
 
