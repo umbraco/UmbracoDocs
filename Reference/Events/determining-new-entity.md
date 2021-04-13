@@ -22,7 +22,7 @@ var isNew = dirty.WasPropertyDirty("Id");
 To check if an entity is new in the ContentService.Saving event, use the following:
 
 ```csharp
-var isNew = dirty.HasIdentity;
+var isNew = entity.HasIdentity;
 ```
 
 ## How it works
