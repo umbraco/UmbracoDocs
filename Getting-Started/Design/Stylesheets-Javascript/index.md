@@ -103,7 +103,7 @@ You can bundle and minify as follows in a view template file.
 ```
 
 :::note
-If you are running your site locally and in your Web.Config the compilation setting for debug is set to true - the Client Dependency Framework will not minify or combine your js/css. This is by design to help when debugging issues in a local environment - but also means if there is a problem minifying a file - you'll only encounter the issue when you deploy - so do test minification and bundling locally by setting the debug setting to false for compilation.
+If you are running your site locally and the compilation setting for debugging in your `web.config` is set to true, the Client Dependency Framework will not minify or combine your js/CSS. This is by design to help when debugging issues in a local environment. However, it also means if there is a problem minifying a file you will only encounter the issue when you deploy. To test minification and bundling locally, set the debug setting to false for compilation.
 :::
 
 :::note
