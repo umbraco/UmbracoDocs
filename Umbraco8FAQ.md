@@ -25,7 +25,9 @@ From July 2021 you can no longer create new sites nor create baseline children b
 
 We will continue to support Umbraco 7 projects on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regards to security fixes.
 
-From August 2023 Umbraco 7 projects will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure to migrate your projects to a newer major before then.
+From August 2023 Umbraco 7 will be considered End of Life (EOL), and we will therefor recommend that you make sure to migrate your project to a newer before then. 
+
+Learn more about the Support and Security phases as well as get all the dates related to the life-cycle of Umbraco 7 in the [Support, LTS and EOL blog post](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
