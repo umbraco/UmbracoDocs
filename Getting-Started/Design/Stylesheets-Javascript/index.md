@@ -89,7 +89,7 @@ Then, navigate to the template where you would like to include your JS file.
 
 By default all JavaScript files will be stored in the `scripts` folder in the solution.
 
-:::note
+:::tip
 If you are working locally, you can create CSS and JS files outside of the Backoffice - long as they are placed in appropiate folders (`css` and `scripts`), they will show up in the Backoffice.
 :::
 
