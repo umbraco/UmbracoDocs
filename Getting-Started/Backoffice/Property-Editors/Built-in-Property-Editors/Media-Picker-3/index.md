@@ -20,7 +20,9 @@ Use setting to limit the picker to only select Media Items of these types.
 
 ### Pick multiple items
 
-Use this setting to enable the property to contain multiple items, when this is turned on the property editor returns a `IEnumerable<MediaWithCrops>`. You can still set the Maximum Amount to 1, do so if you like to retrive a collection but only allowing the Content Editors to select one Media Item.
+Use this setting to enable the property to contain multiple items. When this is enabled the property editor returns an `IEnumerable<MediaWithCrops>`. 
+
+You can still set the maximum amount to 1. Do so when you want to retrieve a collection but only allow the Content Editors to select one Media Item.
 
 ### Amount
 
