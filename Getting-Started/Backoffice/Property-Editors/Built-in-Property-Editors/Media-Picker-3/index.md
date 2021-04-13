@@ -20,19 +20,21 @@ Use setting to limit the picker to only select Media Items of these types.
 
 ### Pick multiple items
 
-Use this setting to enable the property to contain multiple items, when this is turned on the property editor returns a `IEnumerable<MediaWithCrops>`. You can still set the Maximum Amount to 1, do so if you like to retrive a collection but only allowing the Content Editors to select one Media Item.
+Use this setting to enable the property to contain multiple items. When this is enabled the property editor returns an `IEnumerable<MediaWithCrops>`. 
+
+You can still set the maximum amount to 1. Do so when you want to retrieve a collection but only allow the Content Editors to select one Media Item.
 
 ### Amount
 
-Use this setting to enforce a certain minimum or maximum amount of selected Media Items, the maximum setting is unuseable when multiple items is disabled.
+Use this setting to enforce a minimum and/or maximum amount of selected Media Items. Note that it is not possible to set a maximum when the "Pick multiple items" feature is disabled.
 
 ### Start node
 
-Limit the picker to only work in a certain part of the Media Tree.
+This setting is used to limit the Media Picker to certain parts of the Media Tree. 
 
 ### Ignorer user start nodes
 
-Use setting to overrule user permissions, to enable any user of this property to pick any Media Item of the choosen Start node.
+Use this setting to overrule user permissions, to enable any user of this property to pick any Media Item of the chosen Start node.
 
 When this setting is enabled, a user who doesn't normally have access to the media selected as "Start Node" (/Design in this case), can access the media when using this particular Media Picker. If no Start node has been defined for this property any content can be viewed and selected of this property.
 
