@@ -37,9 +37,13 @@ Use setting to overrule user permissions, to enable any user of this property to
 When this setting is enabled, a user who doesn't normally have access to the media selected as "Start Node" (/Design in this case), can access the media when using this particular Media Picker. If no Start node has been defined for this property any content can be viewed and selected of this property.
 
 
-### Image Croppings
+### Enable Focal Point
 
-Define local image croppings, this data will stay locally, meaning that this will be stored on the document in this property.
+Enable the focal point setter, do only enable this if the focal point is used or if you have Image crops defined.
+
+### Image Crops
+
+Define local image croppings, Crop data is stored on the document in this property. This means it can differentiate between documents.
 
 ## Content Example
 
