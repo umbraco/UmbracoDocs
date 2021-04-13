@@ -26,7 +26,7 @@ You can still set the maximum amount to 1. Do so when you want to retrieve a col
 
 ### Amount
 
-Use this setting to enforce a certain minimum or maximum amount of selected Media Items, the maximum setting is unuseable when multiple items is disabled.
+Use this setting to enforce a minimum and/or maximum amount of selected Media Items. Note that it is not possible to set a maximum when the "Pick multiple items" feature is disabled.
 
 ### Start node
 
