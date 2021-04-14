@@ -23,7 +23,19 @@ Under *Settings* in the Umbraco Cloud Portal, you'll find **Hostnames**. This is
 
 You can bind any hostname to your project environments. Keeping in mind that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
-Once you add a hostname to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting a CNAME record for your hostname using **dns.umbraco.io** or an A record using an IP, either `104.19.191.28` or `104.19.208.28`. Check with your DNS host or hostname registrar for details on how to configure this for your hostnames.
+### Setting Up a New Hostname
+1. Log-in to your domain registrar account for the hostname and locate the "Manage DNS" section. (Check with your DNS host or hostname registrar for details on how to configure this for your hostnames if you aren't sure how.)
+2. Add **CNAME** records as needed for any sub-domains in use (example: 'www', etc.) using **dns.umbraco.io** as the answer value.
+3. If your site should be accessible without any sub-domain (example: https://mysite.com), also add records for the following:
+	-  A wildcard **CNAME** record : HOST = `*` and ANSWER = `dns.umbraco.io`
+	-  An **A** record : HOST = blank and ANSWER = an IP, either `104.19.191.28` or `104.19.208.28` 
+6. Once all your DNS entries have been made, log in to the Umbraco Cloud Portal and add those hostnames to your site. 
+7. It might take several minutes for the certificate to be issues and the DNS to be propagated, so don't be alarmed if your site doesn't pop up immediately at the new domain when checked in a web browser.
+
+
+:::note
+Any time you make a change to your DNS records with your hostname registrar, you will need to log into the Umbraco Cloud Portal and remove/re-add those hostnames so that the certificate can be re-issued with the new settings.
+:::
 
 :::warning
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
