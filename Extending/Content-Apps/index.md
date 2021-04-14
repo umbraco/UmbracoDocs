@@ -165,11 +165,10 @@ Here is an example where all types are taken intro consideration when limiting a
             "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
-                "+media/*", // show for all media types
+                "+media/*", // show for all other media types
                 "-member/premiumMembers", // hide for Member type 'premiumMembers'
                 "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "-contentType/textPage", // hide for Content Type with alias 'textPage'
                 "-contentType/*", // hide for all other Content types
             ]
         }
