@@ -75,9 +75,8 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 ```
 
 :::note
-Umbraco backoffice uses the Helveticons icon pack by default 
+Umbraco backoffice uses the Helveticons icon pack by default.
 :::
-
 
 ### Creating the View and the Controller
 
@@ -151,7 +150,11 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
 
-This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
+You can show your Content App for **Media Types**, **Member Types**, and  **Document Types** in the **Settings** section.
+
+:::note
+Content Types is referred to as Document Types.  
+:::
 
 Here is an example where all types are taken intro consideration when limiting access to a Content App:
 
@@ -167,6 +170,7 @@ Here is an example where all types are taken intro consideration when limiting a
                 "+member/*", // show for all other Member types
                 "-contentType/textPage", // hide on Content Type with alias 'textPage'
                 "+contentType/*", // show for all other Content types
+                "-contentType/*", // hide for all other Content types
             ]
         }
     ]
