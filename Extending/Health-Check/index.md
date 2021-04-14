@@ -250,9 +250,11 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
         {
             var success = false;
             var message = string.Empty;
-            const string content = @"# robots.txt for Umbraco
-User-agent: *
-Disallow: /umbraco/";
+            
+            const string content = 
+                @"# robots.txt for Umbraco
+                User-agent: *
+                Disallow: /umbraco/";
 
             try
             {
