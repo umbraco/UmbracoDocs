@@ -12,6 +12,7 @@ offered as complementary paid-for options by the Umbraco HQ_
 Developer, editor and installation documentation for Umbraco Forms. The intended audience is developers looking to configure and extend
 Umbraco Forms.
 
+## [Umbraco Deploy](Umbraco-Deploy/index.md)
 
 ## [Umbraco Courier](UmbracoCourier/index.md)
 Architectural overview, extension and configuration guides, the intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
