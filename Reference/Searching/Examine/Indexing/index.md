@@ -28,8 +28,16 @@ using Examine;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 
-// register the component
-public class CustomizeIndexComposer : ComponentComposer<CustomizeIndexComponent> { }
+// register the component after the ExamineComposer
+[ComposeAfter(typeof(ExamineComposer))]
+public class CustomizeIndexComposer : IUserComposer 
+{ 
+    public void Compose(Composition composition)
+    {
+        //
+        composition.Components().InsertAfter<ExamineComponent, CustomizeIndexComponent>();
+    }
+}
 
 public class CustomizeIndexComponent : IComponent
 {
@@ -58,6 +66,11 @@ public class CustomizeIndexComponent : IComponent
     }
 }
 ```
+:::warning
+Modifying the `FieldDefinitionCollection` after the index has been initialized will have no effect and may cause errors or unpredictable behaviour when searching.
+
+In rare cases the index may have been initialized before your component. Using `ComposeAfter` and `.InsertAfter<ExamineComponent,YourComponent>()`, as above, will significantly reduce the chances of that happening.
+:::
 
 ## Changing IValueSetValidator
 
