@@ -45,7 +45,7 @@ Enable the focal point setter, do only enable this if the focal point is used or
 
 ### Image Crops
 
-Define local image croppings, Crop data is stored on the document in this property. This means it can differentiate between documents.
+Define local image croppings. Crop data is stored on the document in this property. This means it can differentiate between documents.
 
 ## Content Example
 
@@ -156,6 +156,4 @@ The global crops are configured on the DataType of the `umbracoFile` property on
     }
 }
 
-## Add values programmatically
-
-```This is not part of the current Media Picker v3, feel free to provide such.```
+```
