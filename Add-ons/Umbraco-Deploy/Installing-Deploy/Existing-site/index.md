@@ -151,7 +151,7 @@ The URLs for each environment needs to be accessible by the other environments o
 
 When you have set up your environments in the UmbracoDeploy.Config to make sure that Umbraco Deploy knows which environment you are on the following AppSetting needs to be set on the different environments:
 
-```c#
+```xml
 <add key="Umbraco.Deploy.EnvironmentName" value="YourEnvironmentHere" />
 ```
 
