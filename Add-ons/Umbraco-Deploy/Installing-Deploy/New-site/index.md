@@ -144,7 +144,15 @@ The `type` value is for informational purposes in the backoffice but in most cas
 
 The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
 
-:::note 
+When you have set up your environments in the UmbracoDeploy.Config the following AppSetting needs to be set on the different environments that you have set up with Umbraco Deploy:
+
+```c#
+<add key="Umbraco.Deploy.EnvironmentName" value="TheEnvironmentTypeHere" />
+```
+
+The value needs to be the **environment type** that have been set in the UmbracoDeploy.config on the different environment that has been set up, this will make sure that Deploy know which environment you are currently on when you visit one of them.
+
+:::note
 You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
 :::
 
