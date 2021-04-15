@@ -149,7 +149,7 @@ The `type` value is for informational purposes in the backoffice but in most cas
 
 The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
 
-When you have set up your environments in the UmbracoDeploy.Config to make sure that Umbraco Deploy knows which environment you are on the following AppSetting needs to be set on the different environments:
+When you have set up your environments in the `UmbracoDeploy.Config` to make sure that Umbraco Deploy knows which environment you are on, the following `AppSetting` needs to be set on the different environments:
 
 ```xml
 <add key="Umbraco.Deploy.EnvironmentName" value="YourEnvironmentHere" />
