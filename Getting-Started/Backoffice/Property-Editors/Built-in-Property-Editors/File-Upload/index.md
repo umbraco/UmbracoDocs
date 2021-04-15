@@ -28,7 +28,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Modelsbuilder
 ```csharp
 @{
-    if (Model.Value<string>("myFile").HasValue())
+    if (Model.HasValue("myFile"))
     {
         var myFile = Model.Value<string>("myFile");
 
@@ -41,8 +41,9 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### With Modelsbuilder
 
 ```csharp
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    if (Model.MyFile.HasValue())
+    if (Model.HasValue(ContentModels.MyModel.GetModelPropertyType(x => x.MyFile).Alias))
     {
         <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
     }
