@@ -60,9 +60,9 @@ Deploy license:
 A single licence covers one Umbraco solution, including all domains hosted by the solution,
 all production environments (if load-balancing) and all non-production environments.
 
-- If you have a solution covering multiple domains- e.g. www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same back-office instance, and with any number of non-production environments (staging, qa, etc.) - you only need one licence.
+- You only need one license when you have a solution covering multiple domains- e.g. www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same back-office instance, and with any number of non-production environments (staging, qa, etc.)
 
-- If you have a web presence that consists of two separate websites hosted on different domains or sub-domains - e.g. www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and back-office in production - you would need two licences.
+- You need two licences If you have a web presence that consists of two separate websites hosted on different domains or sub-domains - e.g. www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and back-office in production.
 
 For the Umbraco Deploy license you do not need to purchase additional domains if you are running multiple sites within the same Umbraco installation.
 
