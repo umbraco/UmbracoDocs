@@ -500,3 +500,66 @@ public class MemberProfileControllerTests : UmbracoBaseTest
     }
 }
 ```
+
+## Testing an UrlSegmentProvider
+See [Reference documentation on Outbound Pipeline](../../Reference/Routing/Request-Pipeline/outbound-pipeline.md).
+
+```csharp
+public class ProductPageUrlSegmentProvider : IUrlSegmentProvider 
+{
+    private readonly IUrlSegmentProvider defaultUrlSegmentProvider;
+
+    public ProductPageUrlSegmentProvider(IUrlSegmentProvider defaultUrlSegmentProvider)
+    {
+        this.defaultUrlSegmentProvider = defaultUrlSegmentProvider;
+    }
+
+    public string GetUrlSegment(IContentBase content, string culture = null)
+    {
+        if (content.ContentType.Alias != "productPage") return null;
+        var segment = defaultUrlSegmentProvider.GetUrlSegment(content, culture);
+        var productSku = content.GetValue(propertyTypeAlias: "productSku", culture: culture, segment: null, published: true);
+        return string.Format("{0}-{1}", segment, productSku);
+    }
+}
+
+public class RegisterCustomSegmentProviderComposer : IUserComposer 
+{
+    public void Compose(Composition composition)
+    {
+        composition.Register<IUrlSegmentProvider, DefaultUrlSegmentProvider>();
+        composition.UrlSegmentProviders().Insert<ProductPageUrlSegmentProvider>();
+    }
+}
+
+[TestFixture]
+public class ProductPageUrlSegmentProviderTests 
+{
+    private readonly Mock<IUrlSegmentProvider> defaultUrlSegmentProvider;
+    private readonly ProductPageUrlSegmentProvider productPageUrlSegmentProvider;
+
+    public ProductPageUrlSegmentProviderTests()
+    {
+        this.defaultUrlSegmentProvider = new Mock<IUrlSegmentProvider>();
+        this.productPageUrlSegmentProvider = new ProductPageUrlSegmentProvider(defaultUrlSegmentProvider.Object);
+    }
+
+    [Test]
+    [TestCase("en", "swibble", "123xyz", "swibble-123xyz")]
+    [TestCase("en-US", "dibble", "456abc", "dibble-456abc")]
+    public void Given_ProductHasSku_When_GetUrlSegment_Then_ReturnExpectedUrlSegment(string culture, string defaultUrlSegment, string productSku, string expected)
+    {
+        var contentType = new Mock<ISimpleContentType>();
+        contentType.Setup(x => x.Alias).Returns("productPage");
+
+        var content = new Mock<IContentBase>();
+        content.Setup(x => x.ContentType).Returns(contentType.Object);
+        content.Setup(x => x.GetValue("productSku", culture, null, true)).Returns(productSku);
+        defaultUrlSegmentProvider.Setup(x => x.GetUrlSegment(content.Object, culture)).Returns(defaultUrlSegment);
+
+        var result = productPageUrlSegmentProvider.GetUrlSegment(content.Object, culture);
+
+        Assert.AreEqual(expected, result);
+    }
+}
+```
