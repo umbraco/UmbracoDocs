@@ -5,35 +5,39 @@ versionFrom: 8.0.0
 ---
 # Where can I get help?
 
-If you haven’t been able to find the topic to suit your needs, we have many ways for you to reach the community to investigate your query. You can talk to developers across the globe via the Umbraco Forum, report an issue with the Docs team or check out our Training options. We also have Umbraco TV, Support and links to contact HQ for any other questions you may have. 
+If you haven't been able to find a topic that suits your needs, there are many ways for you to reach find help.
 
+You can talk to developers across the globe via the Umbraco Forum, report an issue with the Documentation team or check out our Training options. We also have UmbracoTV, a team of friendly supporters and direct links to get in touch with the team at Umbraco HQ for any other questions you may have.
 
 [Umbraco Forum](https://our.umbraco.com/forum/)
- 
-[Our Umbraco generally](https://our.umbraco.com/)
- 
-[Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
-
-[Read our blog for issue tracker](https://umbraco.com/blog/the-umbraco-issue-tracker-process/) 
-
-[Report issue with UmbracoDocs](https://github.com/umbraco/UmbracoDocs) 
-
-[Suggest an improvement](https://our.umbraco.com/documentation/Contribute/)
 
 [Umbraco Training](https://umbraco.com/training/)
- 
-https://umbraco.com/training/course-details/ 
 
 [Umbraco TV](https://umbraco.tv/)
+
+[Contact Umbraco HQ](https://umbraco.com/contact-us/)
+
+[Umbraco Blog](https://umbraco.com/blog/)
+
+[Free Webinars](https://umbraco.com/products/free-umbraco-webinars/)
+
+[Umbraco Support](https://umbraco.com/products/umbraco-support/what-is-umbraco-support/)
 
 :::center
 ![Umbraco support](images/U_PRs.png)
 :::
 
-## Community Resources 
+## Other resources
 
+[Found an issue in Umbraco? Report it on our Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
 
-[Community events and meetups](https://community.umbraco.com/events/community-events-and-meetups/)
+[Found an issue with the Umbraco Documentation? Report it to the Documentation team](https://github.com/umbraco/UmbracoDocs)
+
+[Suggest an improvement](https://our.umbraco.com/documentation/Contribute/)
+
+## Community Resources
+
+[Community events and meetups](https://community.umbraco.com/events/)
 
 [Community teams](https://community.umbraco.com/community-teams/)
 
@@ -41,18 +45,7 @@ https://umbraco.com/training/course-details/
 
 [Umbracians in action](https://community.umbraco.com/umbracians-in-action/)
 
-[CodeGarden](https://community.umbraco.com/events/codegarden/)
-
-[Umbraco Blog](https://umbraco.com/blog/)
-
 [Umbraco Community's Blog](https://umbraco.com/blog/category/community)
-
-[Free Webinars](https://umbraco.com/products/free-umbraco-webinars/)
-
-[Umbraco Support](https://umbraco.com/products/umbraco-support/what-is-umbraco-support/)
-
-
-[Umbraco cloud starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) 
 
 :::center
 ![Umbraco community](images/U_Docs.png)
