@@ -14,7 +14,7 @@ There is a set of key concepts that you will need to familiarize yourself with. 
 ![Umbraco tree image](images/flexible_Email_hero_780x405px.png)
 :::
 
-We've even included a helpful tutorial which you can follow for creating a basic site to get you started.
+We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
 
 ## How Umbraco works
 
