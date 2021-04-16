@@ -41,7 +41,7 @@ To get you started here are some examples of what you can extend in Umbraco:
 
 [Backoffice Search](https://our.umbraco.com/documentation/Extending/Backoffice-Search/)
 
-[Health checks](https://our.umbraco.com/documentation/Extending/Health-Check/) 
+[Health checks](https://our.umbraco.com/documentation/Extending/Health-Check/)
 
 [File system providers](https://our.umbraco.com/documentation/Extending/FileSystemProviders/)
 
