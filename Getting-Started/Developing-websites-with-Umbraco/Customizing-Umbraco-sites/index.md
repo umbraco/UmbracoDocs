@@ -1,52 +1,48 @@
 ---
-meta.Title: “Customizing Umbraco websites"
-meta.Description: “This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice.”
+meta.Title: "Customizing Umbraco websites"
+meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
 versionFrom: 8.0.0
 ---
 # Customizing Umbraco website
 
-Looking to create a website with custom styling and tools? Any backend developer can follow our instructions to easily create a website that Editors and you can easily manage. We will explain how to set up the environment and how to implement your custom templates with Umbraco’s backoffice. You will find all the tools that you’re going to need to install Umbraco and start developing immediately. 
+Looking to create a website with custom styling and tools? As a backend developer you can follow our instructions to easily create a fully customizable website. You will learn things like how to set up your environments and how to implement your custom templates. You will find all the tools that you're going to need to install Umbraco and start developing immediately.
 
-There are also some tutorials on how to inject dependencies. Here you will also find some information about how the Umbraco pipeline works and how you can customize it for your own needs.
+There are also some tutorials on how to inject dependencies and some information about how the Umbraco pipeline works and how you can customize it to fit your needs.
 
-
-## Using MVC with Umbraco 
+## Using MVC with Umbraco
 
 You can implement your own MVC controllers to work alongside Umbraco.
 
-- [Working with generated models](https://our.umbraco.com/documentation/Reference/Templating/Modelsbuilder/)
+- [Working with generated Models](https://our.umbraco.com/documentation/Reference/Templating/Modelsbuilder/)
 
-- [Concerns when working with views](https://our.umbraco.com/Documentation/Reference/Templating/Mvc)
+- [Concerns when working with Views](https://our.umbraco.com/Documentation/Reference/Templating/Mvc)
 
-- [Different types of controllers](https://our.umbraco.com/documentation/Implementation/Controllers)
-
+- [Different types of Controllers](https://our.umbraco.com/documentation/Implementation/Controllers)
 
 :::links
-##There are two concepts that are Umbraco specific that might prove useful to learn about:
-- [Surface Controllers](https://our.umbraco.com/documentation/Reference/Routing/surface-controllers)
-- [Default routing](https://our.umbraco.com/documentation/Implementation/Default-Routing/Controller-Selection) 
-::: 
 
+## Umbraco specific MVC concepts
+
+There are two concepts that are Umbraco specific which might prove useful to learn about:
+
+- [Surface Controllers](https://our.umbraco.com/documentation/Reference/Routing/surface-controllers)
+- [Default routing](https://our.umbraco.com/documentation/Implementation/Default-Routing/Controller-Selection)
+
+:::
 
 ## Dependency Injection and Umbraco's Composition
 
-Umbraco is composed of components, programmatically you can add your own components and customise Umbraco at application startup. 
+Umbraco is composed of components. Programmatically you can add your own components and customize Umbraco at application startup.
 
-[Composing and Components](https://our.umbraco.com/documentation/Implementation/Composing ) 
+Learn more about composing and components in the [Composing article](https://our.umbraco.com/documentation/Implementation/Composing).
 
 ## Debugging
 
-Some helpful guides in our documentation on how to debug:
+When you're developing with Umbraco you might sometimes run into some errors and issues. Here are some guides to help you with the debugging:
 
-https://our.umbraco.com/Documentation/Getting-Started/Code/Debugging/
-
-https://our.umbraco.com/Documentation/Reference/Debugging/
+- [General debugging](https://our.umbraco.com/Documentation/Getting-Started/Code/Debugging/)
+- [Debugging with SourceLink](https://our.umbraco.com/Documentation/Reference/Debugging/)
 
 :::center
 ![Umbraco packages](images/corona_blogpost_05SoMe_768x432px.png)
 :::
-
-
-
-
-
