@@ -48,7 +48,7 @@ The next step to get Umbraco Deploy up and running is to set up a repository and
 2. Clone down the repository to your local machine.
 3. Create a new Visual Studio project in the repository folder.
 4. Install Umbraco CMS through NuGet - `Install-Package UmbracoCms`.
-5. use the copy of your production Database when setting up the database for the emppty project.
+5. Use the copy of your production Database when setting up the database for the emppty project.
 6. Add the `/Views` folder as well as the folders holding your css files and scripts.
 7. Commit the files so they are ready to be pushed up once you have set up the build server.
 8. Run the project.
@@ -148,6 +148,14 @@ You will need to generate a unique GUID for each environment. This can be done i
 The `type` value is for informational purposes in the backoffice but in most cases will be the same (lowercased) value of the Name.
 
 The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
+
+When you have set up your environments in the `UmbracoDeploy.Config` to make sure that Umbraco Deploy knows which environment you are on, the following `AppSetting` needs to be set on the different environments:
+
+```xml
+<add key="Umbraco.Deploy.EnvironmentName" value="YourEnvironmentHere" />
+```
+
+The value needs to be the environment type that has been set in the `UmbracoDeploy.config` for the specific environment you have for Umbraco Deploy.
 
 :::note
 You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
