@@ -535,10 +535,11 @@ public class RegisterCustomSegmentProviderComposer : IUserComposer
 [TestFixture]
 public class ProductPageUrlSegmentProviderTests 
 {
-    private readonly Mock<IUrlSegmentProvider> defaultUrlSegmentProvider;
-    private readonly ProductPageUrlSegmentProvider productPageUrlSegmentProvider;
+    private Mock<IUrlSegmentProvider> defaultUrlSegmentProvider;
+    private ProductPageUrlSegmentProvider productPageUrlSegmentProvider;
 
-    public ProductPageUrlSegmentProviderTests()
+    [SetUp]
+    public void SetUp()
     {
         this.defaultUrlSegmentProvider = new Mock<IUrlSegmentProvider>();
         this.productPageUrlSegmentProvider = new ProductPageUrlSegmentProvider(defaultUrlSegmentProvider.Object);
