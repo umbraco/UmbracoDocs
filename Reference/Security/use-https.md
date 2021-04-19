@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites."
+meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like "Man in the middle" and phising attacks."
 ---
 
 # HTTPS
@@ -19,16 +21,16 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 Umbraco allows you to force HTTPS for all backoffice communications by using the following appSettings configuration:
 
-In Umbraco V7
-
-```xml
-<add key="umbracoUseSSL" value="true" />
-```
-
-In Umbraco V8
+In Umbraco 8, set the UseHttps (`Umbraco.Core.UseHttps`) key in `appSettings` to true.
 
 ```xml
 <add key="Umbraco.Core.UseHttps" value="true" />
+```
+
+In Umbraco V7 this is done by setting the following `appSetting` key to `true`.
+
+```xml
+<add key="umbracoUseSSL" value="true" />
 ```
 
 This options does several things when it is turned on:
@@ -56,7 +58,9 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 </rule>
 ```
 
-Note that the rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
+:::note
+The rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
+:::
 
 ## SSL versus TLS
 
