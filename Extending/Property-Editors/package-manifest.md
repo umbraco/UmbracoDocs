@@ -5,7 +5,7 @@ v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Pro
 
 # Package Manifest
 
-The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
+The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors, parameter editors, dashboards, sections or content apps. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
 
@@ -31,7 +31,7 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
 ```
 
 ## Root elements
-The manifest can contain six root collections, none of them are mandatory:
+The manifest can contain eight root collections, none of them are mandatory:
 
 ```json
 {
@@ -39,6 +39,8 @@ The manifest can contain six root collections, none of them are mandatory:
     "gridEditors": [],
     "parameterEditors": [],
     "contentApps": [],
+    "dashboards": [],
+    "sections": [],
     "javascript": [],
     "css": []
 }
@@ -185,6 +187,35 @@ Here is an example of adding a content app. See the [Content Apps](../Content-Ap
     }
 ]
 ```
+## Dashboard
+There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice. Registering with package.manifest or with C# Type. Here is an example of registering a custom dashboard with the package.manifest file.
+
+```json
+ "dashboards": [
+    {
+    
+        "alias": "myCustomDashboard", 
+        "view": "~/App_Plugins/WordCounter/wordcounter.html",
+        "sections": ["content", "member", "settings" ],
+        "weight": -10
+ 
+    }
+]
+```
+See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards. 
+
+## Sections
+As with the custom dashboards, a custom section can be registered either with a package.manifest file or with C# Type. Here is an example of registering a custom section with the package.manifest file.
+
+```json
+ "sections": [
+    {
+        "alias": "myFavouriteThings",
+        "name": "My Favourite Things"
+    }
+]
+```
+See the [Sections](../Section-Trees/sections.md) for a full article on how to create custom sections.
 
 ## JavaScript
 `javascript` returns a string[] of JavaScript files to load on application start
