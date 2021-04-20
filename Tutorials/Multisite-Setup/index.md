@@ -9,7 +9,8 @@ meta.Description: "A guide to multisite setup in Umbraco"
 
 This tutorial explains how to host multiple sites from one project/installation of Umbraco.
 For practical reasons, we recommend using [Baselines](../../Umbraco-Cloud/Getting-Started/Baselines/) on the Cloud projects.
-If you are planning to create a multilanguage site in Umbraco 8, please take a look at the [Multilanguage Setup](../Multilanguage-Setup/) tutorial instead.
+
+If you are planning to create a multilingual site in Umbraco 8, please take a look at the [Multilanguage Setup](../Multilanguage-Setup/) tutorial instead.
 
 ## Structuring your website
 
