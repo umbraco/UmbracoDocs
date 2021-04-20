@@ -55,9 +55,8 @@ Click Save and that should do it! The sites you have should now be available und
 
 While such a setup might be handy, it also comes with drawbacks.
 It is important to keep in mind that having multiple sites on one Umbraco project:
-- Might increase resource usage
-- Could interfere with editors' workflows, especially if there are multiple people working on both websites at once
-(that is because the solution will still use one database for both websites)
-- Limit your options in regards to developing new features and making schema changes
+- Might increase resource usage.
+- Could interfere with editors' workflows, especially if there are multiple people working on both websites at once. That is because the solution will still use one database for both websites.
+- Limit your options in regards to developing new features and making schema changes.
 
 On Umbraco Cloud-hosted sites we recommend using the [Baseline](../../Umbraco-Cloud/Getting-Started/Baselines/) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.
