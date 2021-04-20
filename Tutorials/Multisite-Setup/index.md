@@ -5,10 +5,15 @@ product: "CMS"
 meta.Description: "A guide to multisite setup in Umbraco"
 ---
 
-# Multisite setup on Umbraco Cloud
+# Multisite setup
 
 This tutorial explains how to host multiple sites from one project/installation of Umbraco.
-For practical reasons, we recommend using [Baselines](../../Umbraco-Cloud/Getting-Started/Baselines/) on the Cloud projects.
+For practical reasons, we recommend using [Baselines](../../Umbraco-Cloud/Getting-Started/Baselines/) on Umbraco Cloud projects.
+
+
+:::tip
+When using Baselines on Umbraco Cloud for a multisite solution, you would not need to worry about [Usage](../../Umbraco-Cloud/Setup-up/Usage/) limits, and could see better performance compared to having multiple websites in one project.
+:::
 
 If you are planning to create a multilingual site in Umbraco 8, please take a look at the [Multilanguage Setup](../Multilanguage-Setup/) tutorial instead.
 
@@ -18,13 +23,15 @@ The best way to handle a multisite solution is to have multiple root nodes in th
 
 Keep in mind all the websites in your solution will be using the same schema - meaning, in most cases, your content pages on website A will be using the same properties as on website B. 
 
-## Binding the hostnames to the project
+:::note
+If your site is hosted on Umbraco Cloud, you will need to map your sites' hostnames to the project.
 
 Before you can map your hostnames to individual websites in the solution, you should add them in the Hostnames page on the Cloud portal to ensure they are secured with TLS.
 
 ![Adding hostnames to the project](images/1-addinghostnames.png)
 
 Keep in mind the [hostnames have to be configured in a specific way.](../../Umbraco-Cloud/Set-Up/Manage-Hostnames/).
+:::
 
 ## Mapping the hostnames to individual websites/root nodes
 
@@ -48,9 +55,9 @@ Click Save and that should do it! The sites you have should now be available und
 
 While such a setup might be handy, it also comes with drawbacks.
 It is important to keep in mind that having multiple sites on one Umbraco project:
-- might increase resource usage
-- could interfere with editors' workflows, especially if there are multiple people working on both websites at once
+- Might increase resource usage
+- Could interfere with editors' workflows, especially if there are multiple people working on both websites at once
 (that is because the solution will still use one database for both websites)
-- limit your options in regards to developing new features and making schema changes
+- Limit your options in regards to developing new features and making schema changes
 
-In general, while on the Cloud, we instead recommend using the [Baseline](../../Umbraco-Cloud/Getting-Started/Baselines/) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.
+On Umbraco Cloud-hosted sites we recommend using the [Baseline](../../Umbraco-Cloud/Getting-Started/Baselines/) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.
