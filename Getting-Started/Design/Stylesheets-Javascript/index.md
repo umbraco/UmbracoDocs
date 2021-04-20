@@ -102,4 +102,15 @@ You can bundle and minify as follows in a view template file.
 </head>
 ```
 
+:::note
+If you are running your site locally and the compilation setting for debugging in your `web.config` is set to true, the Client Dependency Framework will not minify or combine your js/CSS. This is by design to help when debugging issues in a local environment. However, it also means if there is a problem minifying a file you will only encounter the issue when you deploy. To test minification and bundling locally, set the debug setting to false for compilation.
+:::
+
+:::note
+When adding stylesheet references to `Html.RequiresCss` there is no need to add `?v=1` to specify a specific version of the asset for cache-busting. Doing so will break the minification and combination of your files. The Client Dependency Framework uses the version number from `/config/clientdependency.config` on the querystring of the combined and minified resource. 
+
+To force your updated, minified and combined assets to be refreshed, increment this version number by 1 in the config file to bust any browser caching on the old version of your assets. See the [Healthcheck for Client Dependency Framework](https://our.umbraco.com/packages/developer-tools/health-check-for-client-dependency-framework/) package to do this from the backoffice, or you can automatically increment the version in your build and deploy process. 
+:::
+
+
 Full details of the ClientDependency Framework can be found here: [https://github.com/Shandem/ClientDependency](https://github.com/Shandem/ClientDependency)
