@@ -20,7 +20,7 @@ Keep in mind all the websites in your solution will be using the same schema - m
 
 ## Binding the hostnames to the project
 
-Before you can map your hostnames to individual websites in the solution, you should add them in the Hostnames section on the Cloud portal to ensure they are secured with TLS.
+Before you can map your hostnames to individual websites in the solution, you should add them in the Hostnames page on the Cloud portal to ensure they are secured with TLS.
 
 ![Adding hostnames to the project](images/1-addinghostnames.png)
 
