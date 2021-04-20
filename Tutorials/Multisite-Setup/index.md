@@ -35,18 +35,19 @@ Keep in mind the [hostnames have to be configured in a specific way.](../../Umbr
 
 ## Mapping the hostnames to individual websites/root nodes
 
-Once the hostnames are protected by TLS, navigate to the backoffice of your site, to the Content section.
+1. Once the hostnames are protected by TLS, navigate to the backoffice of your site, to the Content section.
 At this point you should have several root nodes, where each is a separate website.
-Right click on the root node you wish to assign the hostname to, then choose the Culture and Hostnames option.
+
+2. Right click on the root node you wish to assign the hostname to, then choose the Culture and Hostnames option.
 
 ![Culture and hostnames](images/2-culturehostnames.png)
 
-Add a new Domain and choose the matching hostname to be applied.
+3. Add a new Domain and choose the matching hostname to be applied.
 If  you have a multilanguage solution, you can map different hostnames to specific languages.
 
 ![Culture and hostnames](images/3-culturehostnamesp2.png)
 
-Click Save and that should do it! The sites you have should now be available under the hostnames you provided.
+4. Click Save and that should do it! The sites you have should now be available under the hostnames you provided.
 
 ![Dolphin site](images/6-dolphins.png)
 ![SWATO site](images/7-swato.png)
