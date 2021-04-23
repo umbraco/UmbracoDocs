@@ -92,6 +92,14 @@ This setting is required due to the nature of Lucene files and IO latency on Azu
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ```
 
+### Umbraco.Core.AllowContentDashboardAccessToAllUsers
+
+This setting has been added in Umbraco 8.13.0 and gives the ability to make the default Content Dashboard available to all users. The default value of this setting is `true`.
+
+```xml
+<add key="Umbraco.Core.AllowContentDashboardAccessToAllUsers" value="true" />
+```
+
 :::note
 This setting used to be set in the `~/Config/ExamineSettings.config` file in Umbraco 7. `
 Read more in the [Azure Web Apps](../../../Getting-Started/Setup/Server-Setup/azure-web-apps.md#examine-v0180) article.
