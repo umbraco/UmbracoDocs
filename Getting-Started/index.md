@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 # Getting Started
 
-*All the basics of using Umbraco. From making a local installation to extending the backend.*
-
 The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
 
 <div class="docs-overview">
