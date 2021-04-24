@@ -32,9 +32,11 @@ Note these down, as we will use them in the upcoming steps.
 
 ## Installing Azure Storage Explorer
 
-The next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and run through the installer.
+The next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and run through the installer. 
 
-## Connecting to your Azure Blob Storage
+The instructions below are for version 1.19.0 if you are working with an older version we recommend upgrading.
+
+## Configuring the connection to your Azure Blob Storage
 
 In the following, we will use the information you have gathered, and Azure Storage Explorer to get you connected to your Blob storage container.
 
@@ -42,11 +44,15 @@ In the following, we will use the information you have gathered, and Azure Stora
 
     ![Connect my machine](images/storage-explorer-connection.png)
 
-2. Select "Use a shared access signature (SAS) URI" in the first prompt.
+2. Select "Blob container" in the first prompt.
 
-    ![Use a shared access signature (SAS) URI](images/select-connection.png)
+    ![Blob container](images/select-resource.png)
 
-3. Input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]`, in the URI field. See below for an example.
+3. Select "Shared access signature URL (SAS)" in the second prompt.
+
+    ![Shared access signature URL (SAS)](images/select-shared-access-signature.png)
+
+4. Input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]`, in the URI field. See below for an example.
 
     ```xml
     https://ucmediastoragewelive.blob.core.windows.net/0e6ee123-5q22-1234-8618-ae7d0043710f?sv=2017-04-17&sr=c&si=umbraco&sig=f84%2F%2FRPPirgdzn15a%2BA12345678901%2FXA%3D&spr=https
@@ -54,10 +60,19 @@ In the following, we will use the information you have gathered, and Azure Stora
 
     ![Attach with SAS URI](images/attach-blob.png)
 
-4. Ensure that the credentials are correctly set in the "Connection Summary" prompt.
+5. Ensure that the credentials are correctly set in the "Connection Summary" prompt.
 
-5. Select "Connect".
+6. Select "Connect".
 
-6. Open the media folder, and you now have access to the Azure Blob Storage container for your environment.
+7. Open the media folder, and you now have access to the Azure Blob Storage container for your environment.
 
     ![Open media folder](images/storage-explorer-connected.png)
+	
+## Reconnecting to your Azure Blob Storage
+Once succesfully connected to Azure Blob Storage, the connection can be found by:
+
+1. Clicking the explorer icon on the top left of the menu.
+
+2. Expand "Local & Attached". Then drill down "storage Accounts" --> "(Attached Containers)" -> "Blob Containers", as shown below:
+
+   ![Finding the connection](images/reconnecting.png)
