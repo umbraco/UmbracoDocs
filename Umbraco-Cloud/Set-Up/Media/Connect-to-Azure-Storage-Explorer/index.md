@@ -34,7 +34,7 @@ Note these down, as we will use them in the upcoming steps.
 
 The next order of business is to have Azure Storage Explorer installed on your local computer. [Download the files from this page](https://azure.microsoft.com/en-us/features/storage-explorer/), and run through the installer. 
 
-The instructions below are for version 1.19.0 if you are working with an older version we recommend upgrading.
+The instructions below are for version 1.19.0.
 
 ## Configuring the connection to your Azure Blob Storage
 
