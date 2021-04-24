@@ -58,7 +58,7 @@ In the following, we will use the information you have gathered, and Azure Stora
     https://ucmediastoragewelive.blob.core.windows.net/0e6ee123-5q22-1234-8618-ae7d0043710f?sv=2017-04-17&sr=c&si=umbraco&sig=f84%2F%2FRPPirgdzn15a%2BA12345678901%2FXA%3D&spr=https
     ```
 
-    ![Attach with SAS URI](images/attach-blob.png)
+    ![Attach with SAS URI](images/connection-info.png)
 
 5. Ensure that the credentials are correctly set in the "Connection Summary" prompt.
 
@@ -68,11 +68,3 @@ In the following, we will use the information you have gathered, and Azure Stora
 
     ![Open media folder](images/storage-explorer-connected.png)
 	
-## Reconnecting to your Azure Blob Storage
-Once succesfully connected to Azure Blob Storage, the connection can be found by:
-
-1. Clicking the explorer icon on the top left of the menu.
-
-2. Expand "Local & Attached". Then drill down "storage Accounts" --> "(Attached Containers)" -> "Blob Containers", as shown below:
-
-   ![Finding the connection](images/reconnecting.png)
