@@ -8,13 +8,13 @@ meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 
 Umbraco Deploy supports the deployment of CMS schema information, definitions from the HQ's Forms package, along with managed content and media.  In addition it can be extended by package or custom solution developers to allow the deployment of custom data, such as that stored in your own database tables.
 
-Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also all deployment via the back-office - similar to how Umbraco content and media can be queued for transfer and restored.
+Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also all deployment via the backoffice - similar to how Umbraco content and media can be queued for transfer and restored.
 
 ## Concepts
 
 ### Entities
 
-*Entities* are what you may be looking to transfer between two websites using Deploy.  Within Umbraco, they are the document types, data type, documents etc.  In a custom solution or a package, they may be representations of some other data that's being stored separately from Umbraco content, whilst still managed in the back-office using custom trees and editors.
+*Entities* are what you may be looking to transfer between two websites using Deploy.  Within Umbraco, they are the document types, data type, documents etc.  In a custom solution or a package, they may be representations of some other data that's being stored separately from Umbraco content, whilst still managed in the backoffice using custom trees and editors.
 
 For the purposes of subsequent code samples, we'll consider an example entity as a POCO class with a few properties.  Note that the entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution.  The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
 
@@ -65,7 +65,7 @@ For example, to ensure a decimal value is serialized to a consistent number of d
 
 ### Service Connectors
 
-Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data needed for the type of entity they correspond to, including figuring out what dependencies are needed for a particular entity (e.g. in Umbraco, how a document type will depend on a data type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
+Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data required for the type of entity they correspond to, including figuring out what dependencies are needed (e.g. in Umbraco, how a document type will depend on a data type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
 
 Service connectors inherit from `ServiceConnectorBase` and are constructed with the artifact and entity as generic type arguments.
 
@@ -256,7 +256,7 @@ It's also necessary to provide an extension method to generate the appropriate i
 
 #### Handling Dependencies
 
-Just as Umbraco entities often have dependencies on one another, it may also be the case for any custom data you are looking to deploy.  If so, you can add the necessary logic to your service connector to ensure dependencies are added, which will ensure Umbraco Deploy also ensures the appropriate dependencies are in place before initiating a transfer.
+In the same way that Umbraco entities often have dependencies on one another, this may also be the case for any custom data you are looking to deploy.  If so, you can add the necessary logic to your service connector to ensure dependencies are added, which will ensure Umbraco Deploy also ensures the appropriate dependencies are in place before initiating a transfer.
 
 If the dependent entity is also deployable, it will be included in the transfer.  Or if not, the deployment will be blocked and the reason presented to the user.
 
@@ -334,7 +334,7 @@ In order to deploy the entity as schema, via disk based representations held in 
     }
 ```
 
-### Back-Office Integrated Transfers
+### BackOffice Integrated Transfers
 
 Work in progress.  Documentation will be updated once this feature is released.
 
