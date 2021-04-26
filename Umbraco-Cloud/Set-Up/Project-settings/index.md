@@ -54,9 +54,9 @@ From the *Settings* menu you can upgrade your project to a standard or a Profess
 
 The option will not be available if you are already on the specific plan or if you are running in Trial mode.
 
-## Payment history
+## Payment
 
-From here you can see the payment history for a certain project as well as download the latest invoices or for a specific month.
+From here you can see the payment history for your roject, change the credit card, as well as download the latest invoices or for a specific month.
 
 :::note
 This only applies to new customers on Umbraco Cloud, for old projects, the invoices and payment history is still available in the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
