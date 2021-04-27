@@ -57,6 +57,6 @@ Please be aware that links to API documentation and other resources might not ha
 
 ### Reference
 
-* [Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
+* [**NEW** Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
 * [Querying: IPublished Content](Reference/Querying/IPublishedContent/index-v9.md)
   * [Properties](Reference/Querying/IPublishedContent/Properties/index-v9.md)
