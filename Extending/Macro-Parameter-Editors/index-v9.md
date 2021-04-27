@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Macro-Parameter-Editors/index.md"
 updated-links: false
 state: partial
 verified-against: alpha-3
 versionFrom: 9.0.0
+meta.Title: "Macro Parameter Editors"
+meta.Description: "A guide to creating macro property editors in Umbraco"
 ---
 
 # Macro Parameter Editors

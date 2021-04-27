@@ -1,9 +1,10 @@
 ---
 versionFrom: 9.0.0
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Uploading-to-Our/index.md"
 verified-against: alpha-3
 state: complete
 updated-links: true
+meta.Title: "Uploading an Umbraco package to Our"
+meta.Description: "Information on how to upload your Umbraco package on Our"
 ---
 
 # Uploading to Our

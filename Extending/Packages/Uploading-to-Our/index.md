@@ -2,7 +2,6 @@
 versionFrom: 7.0.0
 meta.Title: "Uploading an Umbraco package to Our"
 meta.Description: "Information on how to upload your Umbraco package on Our"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/uploading-to-our.md"
 ---
 
 # Uploading to Our

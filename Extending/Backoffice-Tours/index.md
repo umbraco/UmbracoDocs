@@ -3,7 +3,6 @@ keywords: Backoffice tours
 versionFrom: 8.6.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Backoffice-Tours/extending.md"
 ---
 
 # Backoffice tours

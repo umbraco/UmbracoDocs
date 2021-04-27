@@ -1,8 +1,7 @@
 ---
 versionFrom: 8.7.0
-meta.Title: "Content Apps"
-meta.Description: "A guide to Umbraco Content Apps in the backoffice"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Content-Apps/extending.md"
+meta.Title: "Backoffice Tours"
+meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
 
 # Content Apps

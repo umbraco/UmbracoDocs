@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Backoffice-Tours/index.md"
 updated-links: false
 state: partial
 versionFrom: 9.0.0
 verified-against: alpha-3
+meta.Title: "Backoffice Tours"
+meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
 
 # Backoffice tours

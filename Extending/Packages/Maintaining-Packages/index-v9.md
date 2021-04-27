@@ -1,9 +1,10 @@
 ---
 versionFrom: 9.0.0
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Maintaining-Packages/index.md"
 verified-against: alpha-3
 state: complete
 updated-links: true
+meta.Title: "Maintaining Umbraco Packages"
+meta.Description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
 ---
 
 # Maintaining packages

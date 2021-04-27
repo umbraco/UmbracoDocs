@@ -3,6 +3,8 @@ versionFrom: 9.0.0
 verified-against: alpha-3
 state: partial
 updated-links: false
+meta.Title: "Creating a package"
+meta.Description: "Tutorial to create a package in Umbraco"
 ---
 
 # Creating a Package

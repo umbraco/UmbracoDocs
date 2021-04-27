@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Dashboards/index.md"
 updated-links: false
 versionFrom: 9.0.0
 verified-against: alpha-3
 state: partial
+meta.Title: "Umbraco Custom Dashboards"
+meta.Description: "A guide to creating custom dashboards in Umbraco"
 ---
 
 # Dashboards
