@@ -18,7 +18,7 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Single/Multiple Content Picker
 * ... and some 'others'
 
-Consult the [Backoffice documentation](../../Getting-Started/Backoffice/index.md) for general information on Macros.
+Consult the [Backoffice documentation (only Umbraco 8)](../../Getting-Started/Backoffice) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 
@@ -26,7 +26,7 @@ It is possible to create custom macro parameter types.
 
 ### isParameterEditor
 
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../../Extending/Property-Editors/index.md) and in the corresponding [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index-v9.md) and in the corresponding [Package Manifest file](../Property-Editors/package-manifest-v9.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
 {

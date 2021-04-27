@@ -1,9 +1,10 @@
 ---
 versionFrom: 9.0.0
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/index.md"
 verified-against: alpha-3
 state: complete
 updated-links: true
+meta.Title: "Umbraco Packages"
+meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
 ---
 
 # Packages
@@ -46,7 +47,7 @@ Starter kits are, as the name suggests, a package that helps you set up a starte
 #### Content Apps
 
 :::note
-Content Apps are only available from Umbraco 8
+Content Apps are only available from Umbraco 8.
 :::
 
 Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://our.umbraco.com/packages/backoffice-extensions/preflight-content-health-checks-for-umbraco-8/) content app. It shows you readability scores for your written content, directly on each content node.
@@ -55,34 +56,34 @@ Content apps are almost like dashboards for content nodes that are intended to d
 
 This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module for Umbraco.
 
-## [Types of Packages](./package-types.md)
+## [Types of Packages](package-types-v9.md)
 
 There are two common types of package for Umbraco: Package zip files and NuGet Packages.
 
-## [Creating a Package](./creating-a-package.md)
+## [Creating a Package](Creating-a-Package/index-v9.md)
 
 This short tutorial will teach you how to create a package in the Umbraco backoffice. It will also give a quick overview of what a generated package will contain.
 
-## [Creating a NuGet Package](./creating-a-nuget-package.md)
+## [Creating a NuGet Package (only Umbraco 8)](Creating-a-nuget-package)
 
 This short tutorial will teach you how to create a NuGet package for your Umbraco code.
 
-## [Package Actions](./package-actions.md)
+## [Package Actions](Package-Actions/index-v9.md)
 
 Package actions are actions you want to trigger when your package gets installed.
 
-## [Uploading a Package to Our](./uploading-to-our.md)
+## [Uploading a Package to Our](Uploading-to-Our/index-v9.md)
 
 Once you've created a package upload it on Our to share it with the community.
 
-## [UmbPack](UmbPack/index.md)
+## [UmbPack (only Umbraco 8)](UmbPack)
 
  Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
 
-## [Packages on Umbraco Cloud](./packages-on-Umbraco-Cloud.md)
+## [Packages on Umbraco Cloud (only Umbraco 8)](Packages-on-Umbraco-Cloud)
 
 Things you should know if you are developing for Umbraco Cloud.
 
-## [Maintaining Packages](./maintaining-packages.md)
+## [Maintaining Packages](Maintaining-Packages/index-v9.md)
 
 Some guidance on how to maintain your package after release.

@@ -44,7 +44,7 @@ Some of them can also be rectified via the dashboard, by clicking the **Fix** bu
 
 As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
-For more on this see the [Reference > Config > Health checks page](../../Reference/Config/HealthChecks/index.md).
+For more on this see the [Reference > Config > Health checks page (only Umbraco 8)](../../Reference/Config/HealthChecks).
 
 ## Custom checks
 

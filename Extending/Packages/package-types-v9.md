@@ -1,9 +1,10 @@
 ---
 versionFrom: 9.0.0
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/package-types.md"
 verified-against: alpha-3
 state: partial
 updated-links: false
+meta.Title: "Umbraco Package Types"
+meta.Description: "Types of packages in Umbraco"
 ---
 
 # Package Types
@@ -36,7 +37,7 @@ Packages zip files can contain:
 If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
 :::
 
-A package zip file can also contain [Package Actions](./package-actions.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
+A package zip file can also contain [Package Actions](../Package-Actions/index-v9.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
 
 ### Advantages of package zip files
 
@@ -60,7 +61,7 @@ NuGet packages can include any solution files, and can be configured to run powe
 
 As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation.
 
-If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../database/index.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
+If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../../Database/index-v9.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
 
 ### Advantages of NuGet packages
 
