@@ -334,7 +334,7 @@ In order to deploy the entity as schema, via disk based representations held in 
     }
 ```
 
-### BackOffice Integrated Transfers
+### Backoffice Integrated Transfers
 
 Work in progress.  Documentation will be updated once this feature is released.
 
