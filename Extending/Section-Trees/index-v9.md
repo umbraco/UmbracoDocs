@@ -1,8 +1,9 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/index.md"
 state: complete
 verified-against: alpha-3
 versionFrom: 9.0.0
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections & Trees
@@ -15,14 +16,14 @@ For example, when you load the backoffice you'll see that the 'Content' section 
 
 You can create your own sections and trees to extend Umbraco.
 
-## [Sections](sections.md)
+## [Sections](sections-v9.md)
 
 Describes Umbraco Sections, configuration and APIs.
 
-## [Trees](trees.md)
+## [Trees](trees-v9.md)
 
 Describes Umbraco Trees, configuration, APIs and events.
 
-## [Searchable Trees (ISearchableTree)](Searchable-Trees)
+## [Searchable Trees (ISearchableTree)](Searchable-Trees/index-v9)
 
 Explains how to customise the backoffice search of a Section Tree.

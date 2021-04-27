@@ -1,8 +1,9 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/sections.md"
 state: complete
 verified-against: alpha-3
 versionFrom: 9.0.0
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections
@@ -135,4 +136,4 @@ To provide translations in other languages, duplicate the en-us.xml file in the 
 
 You will need to recycle the application pool, to see changes to the language translation files reflected in the backoffice.
 
-[Now create a custom tree to load in your custom section!](trees.md)
+[Now create a custom tree to load in your custom section!](trees-v9.md)

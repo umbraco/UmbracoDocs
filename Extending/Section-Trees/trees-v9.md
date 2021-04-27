@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Section-Trees/trees.md"
 state: partial
 updated-links: false
 verified-against: alpha-3
 versionFrom: 9.0.0
+meta.Title: "Umbraco Tree"
+meta.Description: "A guide to creating a custom tree in Umbraco"
 ---
 
 # Trees
@@ -51,7 +52,7 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 
 The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract *CreateRootNode* method.
 
-[See Also: How to create your own custom section](sections.md)
+[See Also: How to create your own custom section](sections-v9.md)
 
 ### Implementing the Tree
 
@@ -194,9 +195,9 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
 
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation (currently only available for Umbraco 8)](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
-[see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
+[see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions-v9.md)
 
 ### Single Node Trees / Customising the Root Node Action
 
@@ -403,4 +404,4 @@ public class MyComposer : IUserComposer
 
 ## Tree Actions and User Permissions
 
-[See a list of Tree Actions and User Permission Codes](tree-actions.md)
+[See a list of Tree Actions and User Permission Codes](tree-actions-v9.md)

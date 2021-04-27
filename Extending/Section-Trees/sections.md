@@ -1,8 +1,7 @@
 ---
 versionFrom: 8.0.0
-meta.Title: "Umbraco Sections"
-meta.Description: "A guide to creating a custom section in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Section-Trees/sections.md"
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections

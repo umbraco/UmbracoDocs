@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Property-Editors/Property-Actions/index.md"
 versionFrom: 9.0.0
 verified-against: alpha-3
 state: partial
 updated-links: false
+meta.Title: "Umbraco Property Editors - Property Actions"
+meta.Description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---
 
 # Property Actions
@@ -29,7 +30,7 @@ An action is defined by the following properties:
 }
 ```
 
-We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Language-Files/extending.md)
+We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Language-Files/index-v9.md)
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 

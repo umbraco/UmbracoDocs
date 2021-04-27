@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/edit/main/Extending/Property-Editors/full-examples-value-converters.md"
 state: complete
 versionFrom: 9.0.0
 verified-against: alpha-3

@@ -1,9 +1,10 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/edit/main/Extending/Property-Editors/value-converters.md"
 state: partial
 updated-links: false
 versiomFrom: 9.0.0
 verified-against: alpha-3
+meta.Title: "Umbraco Property Value Converters"
+meta.Description: "A guide to creating a custom property value converter in Umbraco"
 ---
 
 
@@ -191,4 +192,4 @@ public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedProp
 
 ## Sample
 
-[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](full-examples-value-converters.md)
+[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](full-examples-value-converters-v9.md)

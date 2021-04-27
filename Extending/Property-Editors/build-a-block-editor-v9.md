@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Property-Editors/Build-a-Block-Editor.md"
 state: partial
 updated-links: false
 versionFrom: 9.0.0
@@ -7,7 +6,7 @@ verified-against: alpha-3
 ---
 # Build a Block Editor
 
-Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](index.md).
+Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](index-v9.md).
 
 :::note
 [Click here for an overview with a working example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
@@ -67,7 +66,7 @@ namespace MyNamespace
 
 Notice how the `PropertyEditorAsset` attribute is used to load the `UnicornBlocks.controller.js` JavaScript file.
 
-Your Property Editor will need a `PropertyValueConverter`. Read more about [Property Value Converters](value-converters.md).
+Your Property Editor will need a `PropertyValueConverter`. Read more about [Property Value Converters](value-converters-v9.md).
 
 ## Data structure of Block Editors
 
