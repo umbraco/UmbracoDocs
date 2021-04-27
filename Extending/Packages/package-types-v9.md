@@ -37,7 +37,7 @@ Packages zip files can contain:
 If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
 :::
 
-A package zip file can also contain [Package Actions](../Package-Actions/index-v9.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
+A package zip file can also contain [Package Actions](Package-Actions/index-v9.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
 
 ### Advantages of package zip files
 
