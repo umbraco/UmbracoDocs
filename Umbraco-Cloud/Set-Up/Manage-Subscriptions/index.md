@@ -15,10 +15,6 @@ Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be acce
 
 ![Manage Subscriptions](images/manage-subscriptions.png)
 
-:::note
-From the 7th of April this article is only relevant for existing customers on Umbraco Cloud as we have introduced a new shop integration for new customers on Umbraco Cloud.
-:::
-
 ## Invoices
 
 You are able to find all your invoices when you log into [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
