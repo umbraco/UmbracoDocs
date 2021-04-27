@@ -20,7 +20,7 @@ First, to clarify what content nodes are:
 2. Unpublished nodes
 
 Here's what they are not:
-1. Thrashed nodes
+1. Nodes in the Recycle Bin
 2. Nested content
 3. Member data
 4. Media nodes
@@ -34,4 +34,3 @@ On Umbraco Cloud you can always upgrade your project to a higher plan if you hav
 This can also be done from the setting tab on your project.
 
 You can see the prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when you are upgrading your plan.
-
