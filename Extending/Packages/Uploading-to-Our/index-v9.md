@@ -18,7 +18,7 @@ Our uses a karma system where you get positive karma for answering forum posts, 
 
 ## Creating your package
 
-Before you can upload your package, you first have to create your package. Read over the [Creating a Package](./creating-a-package.md) article.
+Before you can upload your package, you first have to create your package. Read over the [Creating a Package](../Creating-a-package/index-v9.md) article.
 
 ### Uploading the package to Our
 
@@ -26,7 +26,7 @@ To get started head over to your [profile page](https://our.umbraco.com/member/p
 
 ![Your packages profile page](images/PackagesPage.png)
 
-You may notice if you followed the [Creating a Package](./Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
+You may notice if you followed the [Creating a Package](../Creating-a-Package/index-v9.md) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
 
 The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page. This means you can come back and finish your package submission at any time.
 

@@ -22,7 +22,7 @@ It would also be helpful to ensure that the 'Package Compatibility' details are 
 
 ### If the package needs updating
 
-Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](./creating-a-package.md) article for guidelines on creating the package zip file using the backoffice.  
+Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](../Creating-a-package/index-v9.md) article for guidelines on creating the package zip file using the backoffice.  
 
 To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating.
 
@@ -38,7 +38,7 @@ You can only have one 'current' file - this is the version that will be download
 
 ![Download current version button](images/download-package-button.png)
 
-If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package](./creating-a-nuget-package.md).
+If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package (currently only available for Umbraco 8)](../Creating-a-nuget-package.md).
 
 ## Manage feature requests and issues
 

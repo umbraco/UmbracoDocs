@@ -1,18 +1,19 @@
 ---
 versionFrom: 9.0.0
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Extending/Packages/Package-Actions/custom-package-actions.md"
 verified-against: alpha-3
 state: partial
 updated-links: false
+meta.Title: "Create custom package actions for your Umbraco package"
+meta.Description: "Tutorial on how to create custom package actions for your Umbraco package"
 ---
 
 # Creating custom package actions
 
-In addition to utilizing the [built-in package actions](./package-actions.md), you can also create your own package actions. Package actions are custom code that runs on install and uninstall of a package. You can do whatever you want in a package action - however some things are more common than others, such as [adding configuration or media to the site](#Examples-of-custom-Package-Actions).
+In addition to utilizing the [built-in package actions](index-v9.md), you can also create your own package actions. Package actions are custom code that runs on install and uninstall of a package. You can do whatever you want in a package action - however some things are more common than others, such as [adding configuration or media to the site](#Examples-of-custom-Package-Actions).
 
 ## When to use a Package Action
 
-A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer](../../../Implementation/Composing/index.md) or [migration](../../Database/index.md). Package Actions have two important differences though:
+A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer (only Umbraco 8)](../../../Implementation/Composing/index.md) or [migration](../Database/index-v9.md). Package Actions have two important differences though:
 
 1. They only run on install and uninstall - no need to worry about startup cost for your site or adding extra checks to see if it ran.
 2. You can ensure your package uninstalls cleanly - it has the `Undo()` method by default where you can clean up after yourself.
@@ -22,7 +23,7 @@ So if you have something you know should only run on install or uninstall then p
 :::note
 If you want your package to be available on a multi-environment solution then you need to consider this:
 
-If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be deployable if the user uses a tool that handles those, otherwise using [migrations](../../Database/index.md) may be better!
+If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be deployable if the user uses a tool that handles those, otherwise using [migrations](../Database/index-v9.md) may be better!
 :::
 
 ## Basic package action implementation
