@@ -64,7 +64,11 @@ There are two common types of package for Umbraco: Package zip files and NuGet P
 
 This short tutorial will teach you how to create a package in the Umbraco backoffice. It will also give a quick overview of what a generated package will contain.
 
-## [Creating a NuGet Package (only Umbraco 8)](Creating-a-nuget-package)
+## [Creating a NuGet Package](Creating-a-nuget-package)
+
+:::note
+Please note that this section is currently not available for Umbraco 9.
+:::
 
 This short tutorial will teach you how to create a NuGet package for your Umbraco code.
 
@@ -76,11 +80,19 @@ Package actions are actions you want to trigger when your package gets installed
 
 Once you've created a package upload it on Our to share it with the community.
 
-## [UmbPack (only Umbraco 8)](UmbPack)
+## [UmbPack](UmbPack)
+
+:::note
+Please note that this section is currently not available for Umbraco 9.
+:::
 
  Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
 
-## [Packages on Umbraco Cloud (only Umbraco 8)](Packages-on-Umbraco-Cloud)
+## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud)
+
+:::note
+Please note that this section is currently not available for Umbraco 9.
+:::
 
 Things you should know if you are developing for Umbraco Cloud.
 
