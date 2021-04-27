@@ -19,7 +19,7 @@ Our uses a karma system where you get positive karma for answering forum posts, 
 
 ## Creating your package
 
-Before you can upload your package, you first have to create your package. Read over the [Creating a Package](../Creating-a-package/index-v9.md) article.
+Before you can upload your package, you first have to create your package. Read over the [Creating a Package](../Creating-a-Package/index-v9.md) article.
 
 ### Uploading the package to Our
 
