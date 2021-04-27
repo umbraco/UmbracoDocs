@@ -8,9 +8,11 @@ updated-links: false
 
 # Creating a custom Database table
 
-In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes. Below you will find an example that sets up a database table by registering a [component in a composer](../../Implementation/Composing/index.md) and then creating a migration plan and running the plan to add the database table to the database. The end result looks like this:
+In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes. Below you will find an example that sets up a database table by registering a component in a composer and then creating a migration plan and running the plan to add the database table to the database. Learn more about composers in the [Composing (Umbraco 8)](../../Implementation/Composing/) article.
 
-![Database result of a migration](images/db-table.png)
+The end result looks like this:
+
+![Database result of a migration](images/db-table.PNG)
 
 ```csharp
 using Microsoft.Extensions.Logging;

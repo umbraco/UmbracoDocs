@@ -22,7 +22,7 @@ The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. T
 
 ### Plugin tours
 
-When you want to include a tour with your custom plugin/package you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package).
+When you want to include a tour with your custom plugin/package you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index-v9.md).
 
 ## The JSON format
 
