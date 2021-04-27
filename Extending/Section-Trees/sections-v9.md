@@ -38,7 +38,7 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 
 This would create a new section in your Umbraco backoffice called 'My Favourite Things'.
 
-When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order. 
+When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order.
 
 ### Registering with C# Type
 

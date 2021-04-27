@@ -21,7 +21,7 @@ Create a 'TreeController' class in C#. A new controller which inherits from the 
 
 Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
-**For example**
+For example:
 
 ```csharp
 [Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
@@ -50,8 +50,6 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 ### Customising the Root Tree Node
 
 The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract *CreateRootNode* method.
-
-
 
 [See Also: How to create your own custom section](sections.md)
 

@@ -12,7 +12,7 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 
 | Node Type    | Propagated Fields      |
 | ------------ | ---------------------- |
-| All Nodes    | Id, __NodeId and __Key |
+| All Nodes    | Id, _NodeId_ and _Key_ |
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
 

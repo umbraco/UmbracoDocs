@@ -76,9 +76,8 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 ```
 
 :::note
-Umbraco backoffice uses the Helveticons icon pack by default 
+Umbraco backoffice uses the Helveticons icon pack by default.
 :::
-
 
 ### Creating the View and the Controller
 

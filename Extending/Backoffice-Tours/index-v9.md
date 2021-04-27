@@ -159,7 +159,9 @@ A CSS selector for the element you wish to highlight. The tour step will positio
 
 A lot of elements in the Umbraco backoffice have a "data-element" attribute. It's recommended to use that, because "id" and "class" are subject to changes, e.g.:
 
-    [data-element='section-content']
+```xml
+[data-element='section-content']
+```
 
 TIP: Use the developer tools from your browser to find the id, class and data-attribute.
 
@@ -187,7 +189,8 @@ Here you can enter a path to your own custom AngularJS view that will be used to
 
 This is useful if you would like to validate input from the user during the tour step.
 
-###  eventElement
+### eventElement
+
 A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
 
 The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
@@ -199,6 +202,7 @@ The image below shows the entire tree highlighted, but requires the user to clic
 A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
 
 ## How to filter/disable tours being shown
+
 It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection.
 
 Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.

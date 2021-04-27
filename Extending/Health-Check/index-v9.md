@@ -143,6 +143,7 @@ namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration
 ```
 
 ### General checks
+
 This can be anything you can think of, the results and the rectify action are completely under your control.
 
 * A general check needs to inherit from `Umbraco.Cms.Core.HealthChecks.HealthCheck`
@@ -264,6 +265,7 @@ Disallow: /umbraco/";
     }
 }
 ```
+
 ## Custom health check notifications
 
 Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/netcore/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
@@ -390,5 +392,4 @@ If a custom configuration is required for a custom notification method, the foll
 }
 ```
 
-If you want to get the notifications by email, SMTP settings should also be configured in the same JSON file.  
-For more on this see [Configure SMTP settings]().
+If you want to get the notifications by email, SMTP settings should also be configured in the same JSON file.

@@ -284,7 +284,7 @@ var invalidLayoutItems = [];
 // Append the blockObjects to our layout.
 vm.layout.forEach(entry => {
 
-	// As we might have the same property-editor displayed multiple times on screen (splitview) we only need to initialize a BlockObject if its not already in place.
+// As we might have the same property-editor displayed multiple times on screen (splitview) we only need to initialize a BlockObject if its not already in place.
 
     // $block must have the 'data' property to be a valid BlockObject, if not it is considered a destroyed blockObject.
     if (entry.$block === undefined || entry.$block === null || entry.$block.data === undefined) {
@@ -294,7 +294,7 @@ vm.layout.forEach(entry => {
         if (block !== null) {
             entry.$block = block;
         } else {
-        	  // We didnt succeed initializing this Block, therefore we need to filter this out of 'layout'. This only happens if the content data of the block couldn't be found.
+          // We didnt succeed initializing this Block, therefore we need to filter this out of 'layout'. This only happens if the content data of the block couldn't be found.
             invalidLayoutItems.push(entry);
         }
     }

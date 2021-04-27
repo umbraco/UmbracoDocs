@@ -43,6 +43,7 @@ You can see the details of these, and any recent editions in the C# developer re
 ## Configuring a new provider
 
 Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `EmbedProviderBase` class as a starting point.
+
 ```csharp
 namespace Umbraco.Cms.Core.Media.EmbedProviders
 {
@@ -137,6 +138,7 @@ namespace MyNamespace
     }
 }
 ```
+
 The new provider should be available for editors to use:
 
 ![Embedding a Media Item from DeviantArt website](images/deviantart-embedded-media.png)
@@ -149,8 +151,7 @@ If your third-party media provider does not support OEmbed or there is some quir
 
 ### Custom Embed Provider Example
 
-Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video using an IFrame:
-https://ampdemo.azureedge.net/azuremediaplayer.html
+Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video [using an IFrame](https://ampdemo.azureedge.net/azuremediaplayer.html).
 
 This example creates a custom Embed Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame video player inside your content.
 

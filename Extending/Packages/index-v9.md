@@ -69,7 +69,7 @@ This short tutorial will teach you how to create a NuGet package for your Umbrac
 
 ## [Package Actions](./package-actions.md)
 
-Package actions are actions you want to trigger when your package gets installed. 
+Package actions are actions you want to trigger when your package gets installed.
 
 ## [Uploading a Package to Our](./uploading-to-our.md)
 

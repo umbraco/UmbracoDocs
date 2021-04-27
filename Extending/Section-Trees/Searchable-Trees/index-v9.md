@@ -123,6 +123,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 ```csharp
 public string TreeAlias => "member";
 ```
+
 To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
 
 ```csharp
