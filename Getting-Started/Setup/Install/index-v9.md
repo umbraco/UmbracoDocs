@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Getting-Started/Setup/Install/index.md"
 versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
@@ -23,7 +22,7 @@ The easiest way to get the latest version of Umbraco up and running is with VS C
 If you have never used VS Code before, you can check out a more detailed guide below that shows these steps more in depth to run a local instance of Umbraco.
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
-## [VS Code installation](install-umbraco-with-vs-code.md)
+## [VS Code installation](install-umbraco-with-vs-code-v9.md)
 
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
 
@@ -36,5 +35,9 @@ Visual Studio Code is an editor with an embedded webserver (through the IIS Expr
 NuGet is the package manager for the Microsoft development platform, including .NET. The NuGet client tools provide the ability to produce and consume packages. NuGet allows you to install Umbraco without ever having to leave Visual Studio.
 
 ## [Install Umbraco unattended](Unattended-Install.md)
+
+:::note
+Please note that this section is currently not available for Umbraco 9.
+:::
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.

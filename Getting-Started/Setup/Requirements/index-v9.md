@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Getting-Started/Setup/Requirements/index.md"
 versionFrom: 9.0.0
 verified-against: alpha-4
 state: complete
@@ -9,6 +8,7 @@ updated-links: true
 # Minimum System Requirements
 
 ## Browsers
+
 The Umbraco UI should work in all modern browsers:
 
 * Firefox (Latest)
@@ -17,6 +17,7 @@ The Umbraco UI should work in all modern browsers:
 * Edge
 
 ## Local Development
+
 * Either OS:
   * Microsoft Windows 7 SP1, 8.1 and 10
   * MacOS High Sierra 10.13
@@ -31,6 +32,7 @@ The Umbraco UI should work in all modern browsers:
 * SQL connection string (SQL Server)
 
 ## Hosting
+
 * IIS 8 and higher
 * SQL Server 2012 and higher
 * .NET 5.0

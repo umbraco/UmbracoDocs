@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Getting-Started/Setup/Install/install-umbraco-with-vs-code.md"
 versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
@@ -22,7 +21,7 @@ Follow these steps to set up an Umbraco solution with VS Code. The benefit of us
 
     ![VS Code install extension](images/VsCode/1.png)
 
-1. Download a fresh Umbraco installation from [https://our.umbraco.com/download/](https://our.umbraco.com/download/) then unzip and drag it into VS Code. Or use our Umbraco .NET Core template which will download Umbraco automatically. For a guide on how to do that, check the [New templates installation](install-umbraco-with-templates.md).
+1. Download a fresh Umbraco installation from [https://our.umbraco.com/download/](https://our.umbraco.com/download/) then unzip and drag it into VS Code. Or use our Umbraco .NET Core template which will download Umbraco automatically. For a guide on how to do that, check the [templates installation guide](install-umbraco-with-templates.md).
 
     ![Fresh Umbraco installation](images/VsCode/2.png)
 
