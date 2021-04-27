@@ -14,7 +14,7 @@ Follow these steps to set up an Umbraco solution with VS Code. The benefit of us
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
 
-1. Go to [https://www.microsoft.com/en-us/download/details.aspx?id=48264](https://www.microsoft.com/en-us/download/details.aspx?id=48264) and download IIS Express. <br/>*This is optional as the VS Code IIS Express extension will install this automatically for you now*
+1. Go to [https://www.microsoft.com/en-us/download/details.aspx?id=48264](https://www.microsoft.com/en-us/download/details.aspx?id=48264) and download IIS Express. *This is optional as the VS Code IIS Express extension will install this automatically for you now.*
 
 1. Once installed, launch VS Code.
 
@@ -28,8 +28,8 @@ Follow these steps to set up an Umbraco solution with VS Code. The benefit of us
 
 1. To launch the site press **CTRL+F5**, this will open a local version of Umbraco in your standard browser.
 
-
 ## Umbraco Web Installer
+
 This section continues from where we left off but covers the installation and configuration of Umbraco inside your web browser when you run Umbraco for the first time.
 
 1. You will see the welcome screen. If you want a fast demo site fill in the information and click **Install!** If you want to decide the database type, or install without a starter site then click **Customize!**
@@ -42,7 +42,8 @@ This section continues from where we left off but covers the installation and co
 
 1. Celebrate - you're all done!
 
-### Congratulations, you have installed an Umbraco site!
+Congratulations, you have installed an Umbraco site!
 
-### Note
-*You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/*
+:::note
+You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/.
+:::

@@ -4,6 +4,8 @@ versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
 updated-links: false
+meta.Title: "Installing Umbraco"
+meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
 ---
 
 # Installation
@@ -26,6 +28,7 @@ Below you'll find some in-depth tutorials on the different ways to install Umbra
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
 
 ## [.NET CLI installation](install-umbraco-with-templates.md)
+
 .NET Core SDK CLI can be used to install or uninstall .NET Core templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With just a few steps you can have an Umbraco .Net Core project running without the need for a code editor.
 
 ## [NuGet installation](install-umbraco-with-nuget.md)

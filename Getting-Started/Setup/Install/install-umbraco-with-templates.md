@@ -7,9 +7,11 @@ updated-links: false
 ---
 
 # Install Umbraco with .NET CLI
+
 We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET Core templates.
 
 ## Install the template
+
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
 
 1. Run `dotnet new -i Umbraco.Templates::*` to install the project templates.  
@@ -24,10 +26,12 @@ Umbraco Solution             umbraco                  [C#]              Web/CMS/
 Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
 ```
 
-To get **help** on a project template with `dotnet new` run the following command:  
+To get **help** on a project template with `dotnet new` run the following command:
+
 `dotnet new umbraco -h`
 
-From that command's output, you will get a better understanding of what are the default template options, as well as those command-line flags specific to Umbraco that you can use (as seen below): 
+From that command's output, you will get a better understanding of what are the default template options, as well as those command-line flags specific to Umbraco that you can use (as seen below):
+
 ```none
 Usage: new [options]
 
@@ -72,8 +76,8 @@ Options:
 * Indicates the value used if the switch is provided without a value.
 ```
 
-
 ## Create an Umbraco solution
+
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:  
 `dotnet new umbraco -n MyCustomUmbracoSolution`
 
@@ -84,8 +88,8 @@ Options:
 You will now have a new project with the name *MyCustomUmbracoSolution*, or the name you chose to use.
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
-
 ## Run Umbraco
+
 1. Navigate to the newly created project folder:  
 `cd MyCustomUmbracoSolution`
 
