@@ -18,7 +18,7 @@ Currently supported is the ability to hook into the disk based serialization and
 
 For the purposes of subsequent code samples, we'll consider an example entity as a POCO class with a few properties.  Note that the entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution.  The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
 
-```
+```C#
     public class Example
     {
         public Guid Id { get; set; }
@@ -39,7 +39,7 @@ Artifact classes must inherit from `DeployArtifactBase`.
 
 The following example shows an artifact representing the entity and it's single property for transfer:
 
-```
+```C#
     public class ExampleArtifact : DeployArtifactBase<GuidUdi>
     {
         public ExampleArtifact(GuidUdi udi, IEnumerable<ArtifactDependency> dependencies = null)
@@ -58,7 +58,7 @@ If you do need more control, attributes can be applied to the artifact propertie
 
 For example, to ensure a decimal value is serialized to a consistent number of decimal places you can use the following (where `RoundingDecimalJsonConverter` is found in the `Umbraco.Deploy.Serialization` namespace):
 
-```
+```C#
     [JsonConverter(typeof(RoundingDecimalJsonConverter), 2)]
     public decimal Amount { get; set; }
 ```
@@ -75,7 +75,7 @@ The following example shows a service connector, responsible for handling the ar
 
 Note that an illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entiries.
 
-```
+```C#
     [UdiDefinition("mypackage-example", UdiType.GuidUdi)]
     public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, GuidUdi, ArtifactDeployState<ExampleArtifact, Example>>
     {
@@ -246,7 +246,7 @@ Note that an illustrative data service is provided via dependency injection.  Th
 
 It's also necessary to provide an extension method to generate the appropriate identifier:
 
-```
+```C#
     public static GuidUdi GetUdi(this Example entity)
     {
         if (entity == null) throw new ArgumentNullException("entity");
@@ -262,7 +262,7 @@ If the dependent entity is also deployable, it will be included in the transfer.
 
 In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Exist` to ensure the dependent entity not only exists but also matches in all properties.
 
-```
+```C#
         private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
         {
             var artifact = new PersonArtifact(udi)
@@ -293,7 +293,7 @@ With the artifact and connectors in place, the final step necessary is to regist
 
 In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
 
-```
+```C#
     public class ExampleDataDeployComponent : IComponent
     {
         private readonly IDiskEntityService _diskEntityService;
