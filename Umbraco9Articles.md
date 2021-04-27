@@ -7,7 +7,7 @@ meta.Description: "Find a sorted list of articles that have already been updated
 
 In this article you will find links to sections and articles that have been verified and/or updated for Umbraco 9.
 
-Find general updates and more resources on Umbraco 9 in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
+Find general updates and more resources on the Umbraco 9 project in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
 
 :::note
 Please be aware that links to API documentation and other resources might not have been updated yet.
