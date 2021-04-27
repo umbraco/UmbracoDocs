@@ -36,8 +36,8 @@ The menu consists of the following options:
 * **Upgrade plan** gives you both overview of the plans and the option to upgrade
 * **Rename project** provides you with the option to give you Umbraco Uno project a new name
 * **Delete project** gives you the option to delete the website
-* **Payment history** Watch the payment history and download invoices for your project
+* **Payment** Watch the payment history and download invoices for your project
 
 :::note
-The payment history is only available for new customers on Umbraco Cloud
+The Payment setting only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::

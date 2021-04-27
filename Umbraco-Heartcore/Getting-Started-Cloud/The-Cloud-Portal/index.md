@@ -60,12 +60,12 @@ Here you are able to set up a webhook that will gather all the information about
 
 Here you will be able to upgrade your trial to a plan that fits your needs.
 
-## Payment history
+## Payment
 
 From here you can see the payment history for a certain project as well as download the latest invoices or for a specific month.
 
 :::note
-This only applies to new customers on Umbraco Cloud, for old projects, the invoices and payment history will still be available through the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+This only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
 
 ### Rename project

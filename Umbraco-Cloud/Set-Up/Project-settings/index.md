@@ -59,7 +59,7 @@ The option will not be available if you are already on the specific plan or if y
 From here you can see the payment history for your roject, change the credit card, as well as download the latest invoices or for a specific month.
 
 :::note
-This only applies to new customers on Umbraco Cloud, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+This only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
 
 ## [Usage](../Usage/)
