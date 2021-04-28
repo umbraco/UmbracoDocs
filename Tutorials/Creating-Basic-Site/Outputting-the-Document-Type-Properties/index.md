@@ -31,5 +31,7 @@ To set the document type properties:
 Now, reload your homepage... voilà! We have content! Now, you can go back and add additional fields in the document type, fill them out in the content node and then hook them up to the template to output the right data in the end. Feel free to do so if you want!
 
 ---
+
 ## Next - [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
+
 How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.

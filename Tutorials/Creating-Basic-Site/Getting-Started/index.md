@@ -24,7 +24,7 @@ To download the latest version of Umbraco, refer to the [Installation article](.
 3. In the **Configure an ASP.Net Machine Key** window, click **Continue**.
 4. In the **Configure your database** window, click **Continue**.
 5. In the **Install a starter website**, click **No thanks, I do not want to install a starter website**.
-    ![Starter Website](images/figure-8-starter-website)
+    ![Starter Website](images/figure-8-starter-website.png)
 6. The installation will take a couple of minutes to complete.
 
 ### Verifying your Umbraco Installation
@@ -54,4 +54,5 @@ Now that you have the **Welcome to your Umbraco installation** screen, click **O
 ---
 
 ## Next: [Creating Your First Document Type](../Document-Types)
+
 How to create Document Types and what they do.
