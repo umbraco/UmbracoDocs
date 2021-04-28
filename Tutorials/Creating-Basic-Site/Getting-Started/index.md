@@ -3,30 +3,43 @@ versionFrom: 8.0.0
 ---
 # Introduction
 
-The following sections of the "Creating a Basic Site" tutorial provide step by step instructions through an Umbraco website build starting from a set of flat HTML, CSS and JavaScript files. It will allow you to take any website "template" and recreate it and wire up the sections that need content managing in the Umbraco CMS.
+This tutorial provides step by step instructions to build an Umbraco website using a set of flat HTML, CSS, and JavaScript files. It  allows you to use a website template, customize it, and wire up the sections that need content managing in the Umbraco CMS.
 
-# **What You’ll Need**
+## **What You Need**
 
-To take you through a demo of installing a basic site in the Umbraco CMS you need the following:
+To install a basic site in the Umbraco CMS, you need the following:
 
-*    A clean, empty installation of the Umbraco CMS without the starter site installed. See the notes below for what to do when running through the installation wizard.  
-*    This tutorial uses a copy of Retrospect – a HTML5, responsive website template from Templated.co - [https://templated.co/retrospect](https://templated.co/retrospect) or, if you prefer, you can use your own flat HTML files.
+* A clean and empty installation of the Umbraco CMS without the starter site installed. See the [Verify your Umbraco Installation](#verify-your-umbraco-installation)
+* This tutorial uses a copy of Retrospect – a HTML5, responsive website template from Templated.co - [https://templated.co/retrospect](https://templated.co/retrospect) or, if you prefer, you can use your own flat HTML files.
 
-# **Getting Started**
+## **Getting Started**
 
-## Installing an Empty Umbraco
+### Installing Umbraco
 
-[Follow the steps in the Installation article](../../../Getting-Started/Setup/Install) using the latest Umbraco 8.x download. When the installation wizard starts click [Customize] and choose to **not** install the starter kit.
+To download the latest version of Umbraco, follow the steps in the [Installation article](../../../Getting-Started/Setup/Install). On the installation wizard, follow the steps:
 
-## Checking you have an Empty Umbraco Install
+1. Enter your **Name**, **Email**, and **Password**.
+    ![Installing Umbraco](images/figure-7-installing-umbraco.png)
+2. Click **Customize**.
+3. In the **Configure an ASP.Net Machine Key** window, click **Continue**.
+4. In the **Configure your database** window, click **Continue**.
+5. In the **Install a starter website**, click **No thanks, I do not want to install a starter website**.
+    ![Starter Website](images/figure-8-starter-website)
+6. The installation will take a couple of minutes to complete.
 
-When you hit your local host address (http://localhost or whatever you’ve set up) you should see the 'Welcome to your Umbraco installation' screen.
+### Verifying your Umbraco Installation
+
+When you run your local host address (http://localhost:xxxx), you will see the **Welcome to your Umbraco installation** screen.
 
 ![Welcome to your Umbraco installation screen](images/figure-3-empty-umbraco-install-v8.png)
 
-You need to reinstall Umbraco if you can see the starter kit. If you did a manual install you can delete all files in the directory where your local host is being served from. Then, copy the Umbraco zip contents back in and then hit localhost in your browser.
+If you see the starter kit, you need to re-install Umbraco. To re-install Umbraco, follow these steps:
 
-## Preparing the Retrospect Template Site
+1. Delete the folder from where you run the local host.
+2. Unzip the downloaded Umbraco installation folder and open the folder in VS code.
+3. Run localhost in your browser.
+
+### Preparing the Retrospect Template Site
 
 Now unzip the Retrospect contents to a folder onto your desktop (or a place of your choosing).  Now open the **_index.html_** from this directory in your preferred browser to see the template – you can see it’s full of lovely filler text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
 
@@ -39,5 +52,5 @@ Log into your Umbraco CMS installation (e.g. go to http://localhost/umbraco in y
 
 ---
 
-## Next - [Creating Your First Document Type](../Document-Types)
+## Next: [Creating Your First Document Type](../Document-Types)
 How to create Document Types and what they do.

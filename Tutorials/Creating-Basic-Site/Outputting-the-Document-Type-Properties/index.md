@@ -1,31 +1,34 @@
 ---
 versionFrom: 8.0.0
 ---
-# Outputting the Document Type Properties
+# Displaying the Document Type Properties
 
-What you’ll notice is that the content we've added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the content from the data properties we created before should go.
+You might have noticed that the content we've added to the homepage isn’t being displayed. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  
+
+Let’s look at our template and identify where the content should be displayed.
 
 ![Where our Data Properties Content Should be Output](images/figure-17-where-our-data-fields-go-v8.png)
 
 The top arrow in this image will be the "Page Title" and the bottom one will be the "Body Text", whereas the Footer is all the way at the bottom.
 
-Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the text `“Etiam adipiscing”` around line 43.
+## Setting the Document Type Properties
 
-![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v8.png)
+To set the document type properties:
 
-Click the button **_Insert_** and then **_Value..._** in the Value window choose the **_pageTitle_** field.
-
-![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
-
-Next do the same for the content in the `<p></p>` tags on the next line using the field **_bodyText_**.
-
-![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
-
-Finally we do the footer – between the `<li></li>` tags in the footer (line 163).
-
+1. Go to **Settings**.
+2. In the **Templating** section, select **Templates** and open the **Homepage**.
+3. Scroll down to the `<!-- Jumbotron, w title -->` section and highlight the text `“Welcome - UmbracoTV”`.
+    ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v8.png)
+4. Click **Insert** and select **Value**.
+5. In the **Value** window, select the **pageTitle** field from the drop-down list.
+    ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
+6. Repeat the same process for the content in the `<p></p>` tags on the next line using the field **bodyText**.
+    ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
+7. Finally, we do the footer – between the `<li></li>` tags in the footer.
+8. Click **Save**.
 ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
 
-Now go and reload your homepage... voilà! We have content! Now, we could go back and add additional fields in the document type, fill them out in the content node and then hook them up to the template to output the right data in the end. Feel free to do so if you want!
+Now, reload your homepage... voilà! We have content! Now, you can go back and add additional fields in the document type, fill them out in the content node and then hook them up to the template to output the right data in the end. Feel free to do so if you want!
 
 ---
 ## Next - [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
