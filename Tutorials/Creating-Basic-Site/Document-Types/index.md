@@ -35,7 +35,7 @@ To create a document type:
 
 With the help of icons you can identify different document types in the **Content Tree**. To add an icon:
 
-1. Click ![Add Icon](images/Document-icon.png). The **Select Icon** pane appears on the right-side of the website.
+1. Click ![Add Icon](images/Document-icon.png) next to the document name. The **Select Icon** pane appears on the right-side of the website.
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.  
