@@ -39,10 +39,10 @@ To update templates with the new master template, follow these steps:
 4. Click **Save**.
 5. Go to the **Master** template and paste this HTML markup after the closing curly brace.
     ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
-6. At the end of this markup, we need to tell Umbraco to insert the child template's content. We can do so by adding the code **_@RenderBody()_** at the end.
+6. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code **_@RenderBody()_** at the end.
     ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 7. Click **Save**.
-8. We'll repeat the same process with the footer content:
+8. Repeat the same process for the footer content:
     1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` comment and click **Save**.
     2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
         ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
