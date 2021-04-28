@@ -40,7 +40,7 @@ To add a content node:
     If you cannot see the content node, check that [Settings] > [Document Types] > [HomePage]  > [Structure tab] > [Allow at root] is checked.
     :::
     The Home Page opens in the content editor.
-3. Enter the name for the content node.  We're going to call this "Homepage".
+3. Enter the name for the content node. We are going to call this _Homepage_.
     :::tip
     The name will show up in the node list and will be used to create a url for the page. Try to keep it short but descriptive.
     :::
@@ -49,22 +49,23 @@ To add a content node:
     <col width="130">
     <col width="600">
     <tr><th>Name</th><th>Description</th></tr>
-    <tr><td>Page Title:</td><td>Welcome to Widgets Ltd</td></tr>
-    <tr><td>Body Text:</td><td>Hello world! We can write what we like here! Widgets Ltd 2019</td></tr>
-    <tr><td>Footer Text:</td><td>Copyright Widgets Ltd 2019</td></tr>
+    <tr><td>Page Title</td><td>Welcome to Widgets Ltd</td></tr>
+    <tr><td>Body Text</td><td>Hello world! We can write what we like here! Widgets Ltd 2019</td></tr>
+    <tr><td>Footer Text</td><td>Copyright Widgets Ltd 2019</td></tr>
     </table>
 
-5. Click **Save and Publish** button. The menu will reload with our homepage node.
+5. Click **Save and Publish**. The tree will reload with the homepage node.
 
-Refresh your webpage in your browser http://localhost – the default Umbraco page will be gone and we'll now see a very bare, unstyled page! We’re getting there!
+Refresh your webpage in your browser http://localhost:xxxx. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
 
 :::tip
-If you see a blank page then check if the template is entered and remember to save it.
+If you see a blank page, check if the template is entered and remember to save it.
 :::
 
 ![An Unstyled Homepage](images/figure-16-unstyled-homepage-v8.png)
 
 ---
-## Next - [CSS & JavaScript](../CSS-And-JavaScript)
+
+## Next: [CSS & JavaScript](../CSS-And-JavaScript)
 
 Adding the CSS and JavaScript for your site into Umbraco.
