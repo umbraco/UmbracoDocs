@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 :::note
 This article is only for already existing customers on Umbraco Cloud.
-For new customers on Umbraco Cloud after the 28th of April handling subscriptions is done directly in the [Payment setting section](..\Project-settings#Payment) on Umbraco Cloud.
+For new customers on Umbraco Cloud after the 28th of April handling subscriptions is done directly in the [Payment setting section](../Project-settings#Payment) on Umbraco Cloud.
 :::
 
 In this article you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
