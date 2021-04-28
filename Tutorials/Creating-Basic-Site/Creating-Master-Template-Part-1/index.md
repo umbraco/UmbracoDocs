@@ -13,8 +13,8 @@ To create a new master template:
 2. In the **Templating** section, select **Templates**.
 3. Click the **...** next to the **Templates** folder and click **Create**.
 4. A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
+   ![Master Template](images/figure-22-master-template-v8.png)
 5. Click **Save**.
-    ![Master Template](images/figure-22-master-template-v8.png)
 
 ## Setting Templates With the New Master Template
 
@@ -28,7 +28,7 @@ To set the templates with the master template:
 
 ## Updating Templates With the New Master Template
 
-We need to move the parts of our HTML template that are common across all templates into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
+We now need to move the parts of our HTML template that are common across all templates into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
 
 To update templates with the new master template, follow these steps:
 
@@ -43,12 +43,12 @@ To update templates with the new master template, follow these steps:
     ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 7. Click **Save**.
 8. We'll repeat the same process with the footer content:
-    a. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` comment and click **Save**.
-    b. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
+    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` comment and click **Save**.
+    2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
         ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
-    c. Click **Save**.
+    3. Click **Save**.
 
-Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you've perhaps mistyped **@RenderBody()**.
+Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 
 If you are missing any content (header or footer), check that the Master template matches the following:
 
