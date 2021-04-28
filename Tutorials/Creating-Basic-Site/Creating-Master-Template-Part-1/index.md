@@ -1,240 +1,283 @@
 ---
 versionFrom: 8.0.0
 ---
-# Creating More Pages
+# Creating a Master Template
 
-## Using a Maintainable Template Structure
+We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a three-page site containing; Home, News and Contact Us pages, you would create a **_Document Type_** with a corresponding **Template** and copy the same HTML code into each template.
 
-We've seen how to create a **_Document Type_**. If we wanted to create a three-page site containing; Home, News and Contact Us pages. We could create a **_Document Type_** with a corresponding template for each and copy the same HTML code into each template. Afterwards we could make the custom changes to each separate template for these pages.
+If you see yourself repeating the same HTML multiple times in your templates, you might want to consider creating a new master template.
 
-Though this would work, but once a site starts to grow this would lead to problems. For instance changing anything in the header or footer would need to be done on each template. It also means we'd need the user to enter the same content for the footer on each page.
+To create a new master template:
 
-Umbraco provides us with an elegant solution for a consistent base template - those familiar with MVC will recognise it.
+1. Go to **Settings**.
+2. In the **Templating** section, select **Templates**.
+3. Click the **...** next to the **Templates** folder and click **Create**.
+4. A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
+5. Click **Save**.
+    ![Master Template](images/figure-22-master-template-v8.png)
 
-To start we're going to unpick a little bit of what we did in creating the homepage to sit the homepage template under a master.
+## Setting Templates With the New Master Template
 
-# Create a Master Template
+To set the templates with the master template:
 
-Go to the **_Settings > Templates_** and open up the tree.  At the moment we only have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**.
+1. Go to **Settings**.
+2. In the **Templating** section, select **Templates** and open the **Homepage** template.
+3. Click on `Master Template: No Master`. The Master template pane opens on the right-side of the browser.
+4. Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
+    ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
 
-![Master Template](images/figure-22-master-template-v8.png)
+## Updating Templates With the New Master Template
 
-Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage template_** and at the top click where it says _No master_, and select the template called **Master**. This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";`
+We need to move the parts of our HTML template that are common across all templates into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
 
-![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
+To update templates with the new master template, follow these steps:
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so can you put this in the master or of it belong to only certain pages?
+1. Go to **Settings**.
+2. In the **Templating** section, select **Templates** and open the **Homepage** template.
+3. For this site, we will cut everything from the `<html>` to the end of the `</div>` basically the `header` and `navigation` of the site to the master template.
+    ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
+4. Click **Save**.
+5. Go to the **Master** template and paste this HTML markup after the closing curly brace.
+    ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
+6. At the end of this markup, we need to tell Umbraco to insert the child template's content. We can do so by adding the code **_@RenderBody()_** at the end.
+    ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
+7. Click **Save**.
+8. We'll repeat the same process with the footer content:
+    a. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` comment and click **Save**.
+    b. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
+        ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
+    c. Click **Save**.
 
-For this site, we will cut everything from the closing curly brace to line 39, so you get the end of the `</nav>` - we're going to move the `header` and `nav` of the site to the master template. Cut this and click **_Save_**.
+Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you've perhaps mistyped **@RenderBody()**.
 
-![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
-
-Now click on your **_Master_** template and paste this HTML markup after the closing curly brace and remember to click **_Save_**.
-
-![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
-
-At the end of this markup we need to tell Umbraco to insert the child template's content - this is done by adding the code **_@RenderBody()_** at the end (around line 39). Click **_Save_**.
-
-![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
-
-Now we'll do the same with the footer content. Cut everything from the `<!-- Footer -->` comment (approximately line 111) from the **_Settings > Templates > Homepage template_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've added. Remember to click **_Save_**.
-
-![Completed Master Template](images/figure-27-master-template-complete-v8.png)
-
-Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the Master template matches the following:
+If you are missing any content (header or footer), check that the Master template matches the following:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    Layout = null;
+	Layout = null;
 }
-<!DOCTYPE HTML>
-<!--
-    Retrospect by TEMPLATED
-    templated.co templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
+@* the fun starts here *@
+
 <html>
-    <head>
-        <title>Retrospect by TEMPLATED</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    </head>
-    <body class="landing">
+	<head>
+		<title>Welcome - UmbracoTV</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+	
+	<body>
 
-        <!-- Header -->
-            <header id="header" class="alt">
-                <h1><a href="index.html">Retrospect</a></h1>
-                <a href="#nav">Menu</a>
-            </header>
+		<!-- Navigation -->
+		<div class="container">
+			<nav class="navbar navbar-expand navbar-light">
+				<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+				<!-- Links -->
+				<ul class="navbar-nav">
+					<li class="nav-item">
+					    <a class="nav-link" href="Contentpage-Simple.html">Simple Content Page</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="Contentpage-Advanced.html">Advanced Content Page</a>
+                    </li>
+                    <li class="nav-item">
+					    <a class="nav-link" href="Blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+					    <a class="nav-link" href="Contentpage2.html">The Team</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="Contactpage.html">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		
+		@RenderBody()
+		
+			<!-- Footer -->
+		<div class="container-fluid footer">
+			<div class="container">
 
-        <!-- Nav -->
-            <nav id="nav">
-                <ul class="links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                </ul>
-            </nav>
+				<div class="row section">
+					<div class="col-md-4">
+						<ul class="footer-links">
+							<h5>@Model.Value("footerText")</h5>
+							<li><a href="#">Developer Documentation</a></li>
+							<li><a href="#">Umbraco.TV</a></li>
+							<li><a href="#">Umbraco HQ Youtube Channel</a></li>
+							<li><a href="#">Training Courses</a></li>
+							<li><a href="#">Umbraco Webinars</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="footer-links">
+							<h5>Meet Umbraco</h5>
+							<li><a href="#">About HQ</a></li>
+							<li><a href="#">Meet the people</a></li>
+							<li><a href="#">Teams</a></li>
+							<li><a href="#">Our Umbraco</a></li>
+							<li><a href="#">Forum</a></li>
+							<li><a href="#">Community Teams</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 text-center">
+						<ul class="footer-links">
+							<h5>Follow Umbraco</h5>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Instagram</a></li>
+						</ul>
+					</div>
+					<div class="text-center">
+						<img src="/images/arm_with_u_logo.png" class="img-fluid" alt="Arm with Umbraco Logo">
+					</div>
+				</div>
 
-            @RenderBody()
-
-        <!-- Footer -->
-            <footer id="footer">
-                <div class="inner">
-                    <ul class="icons">
-                        <li><a href="#" class="icon fa-facebook">
-                            <span class="label">Facebook</span>
-                        </a></li>
-                        <li><a href="#" class="icon fa-twitter">
-                            <span class="label">Twitter</span>
-                        </a></li>
-                        <li><a href="#" class="icon fa-instagram">
-                            <span class="label">Instagram</span>
-                        </a></li>
-                        <li><a href="#" class="icon fa-linkedin">
-                            <span class="label">LinkedIn</span>
-                        </a></li>
-                    </ul>
-                    <ul class="copyright">
-                        <li>&copy; @Model.Value("footerText")</li>
-                        <li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
-                        <li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
-                    </ul>
-                </div>
-            </footer>
-
-        <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-            <script src="assets/js/main.js"></script>
-
-    </body>
+			</div>
+		</div>
+		
+			<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	</body>
 </html>
 ```
 
-And that what you have in the Homepage template matches the following:
+Homepage template:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    Layout = "Master.cshtml";
+	Layout = "Master.cshtml";
 }
-        <!-- Banner -->
-            <section id="banner">
-                <i class="icon fa-diamond"></i>
-                <h2>@Model.Value("pageTitle")</h2>
-                <p>@Model.Value("bodyText")</p>
-                <ul class="actions">
-                    <li><a href="#" class="button big special">Learn More</a></li>
-                </ul>
-            </section>
 
-        <!-- One -->
-            <section id="one" class="wrapper style1">
-                <div class="inner">
-                    <article class="feature left">
-                        <span class="image"><img src="images/pic01.jpg" alt="" /></span>
-                        <div class="content">
-                            <h2>Integer vitae libero acrisus egestas placerat  sollicitudin</h2>
-                            <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-                            <ul class="actions">
-                                <li>
-                                    <a href="#" class="button alt">More</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="feature right">
-                        <span class="image"><img src="images/pic02.jpg" alt="" /></span>
-                        <div class="content">
-                            <h2>Integer vitae libero acrisus egestas placerat  sollicitudin</h2>
-                            <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-                            <ul class="actions">
-                                <li>
-                                    <a href="#" class="button alt">More</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
+<!DOCTYPE HTML>
 
-        <!-- Two -->
-            <section id="two" class="wrapper special">
-                <div class="inner">
-                    <header class="major narrow">
-                        <h2>Aliquam Blandit Mauris</h2>
-                        <p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
-                    </header>
-                    <div class="image-grid">
-                        <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-                        <a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
-                    </div>
-                    <ul class="actions">
-                        <li><a href="#" class="button big alt">Tempus Aliquam</a></li>
-                    </ul>
-                </div>
-            </section>
+		<!-- Jumbotron, w title -->
+		<div class="jumbotron text-center jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-1">@Model.Value("pageTitle")</h1>
+				<p>@Model.Value("bodyText")</p>
+			</div>
+		</div>
 
-        <!-- Three -->
-            <section id="three" class="wrapper style3 special">
-                <div class="inner">
-                    <header class="major narrow	">
-                        <h2>Magna sed consequat tempus</h2>
-                        <p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
-                    </header>
-                    <ul class="actions">
-                        <li><a href="#" class="button big alt">Magna feugiat</a></li>
-                    </ul>
-                </div>
-            </section>
+		<!-- This is where we're going to render our content -->
+		
+		<div class="container">
 
-        <!-- Four -->
-            <section id="four" class="wrapper style2 special">
-                <div class="inner">
-                    <header class="major narrow">
-                        <h2>Get in touch</h2>
-                        <p>Ipsum dolor tempus commodo adipiscing</p>
-                    </header>
-                    <form action="#" method="POST">
-                        <div class="container 75%">
-                            <div class="row uniform 50%">
-                                <div class="6u 12u$(xsmall)">
-                                    <input name="name" placeholder="Name" type="text" />
-                                </div>
-                                <div class="6u$ 12u$(xsmall)">
-                                    <input name="email" placeholder="Email" type="email" />
-                                </div>
-                                <div class="12u$">
-                                    <textarea name="message" placeholder="Message" rows="4"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="actions">
-                            <li><input type="submit" class="special" value="Submit" /></li>
-                            <li><input type="reset" class="alt" value="Reset" /></li>
-                        </ul>
-                    </form>
-                </div>
-            </section>
+			<div class="row section">
+				<div class="col-md-12">
+
+					<h2>Why Umbraco is a great fit for you as a developer</h2>
+					<p>Are you looking for a CMS that’ll give you full flexibility? 
+						A CMS that doesn’t get in the way of tngs but instead lets you unfold your talent, ideas and creations in order to build websites that’ll impress - or simply just work as intended. 
+						All while keeping your editor, boss or client happy? Then look no further. 
+						With Umbraco, you get a clean slate Open Source ASP.NET CMS so you can <span class="font-weight-bold">build and extend your website exactly the way you need to.</span></p>
+					<p>We’ve got over 225,000 active developers in our worldwide Umbraco community, who have already embraced the powers and joys of using a flexible CMS.</p>
+
+					<ul>
+						<li>A flexible CMS - do things your way</li>
+						<li>Neat and clean in order to provide you with power</li>
+						<li>Integrate and extend as much as you want</li>
+						<li>How to become an Umbraco developer</li>
+						<li>Access to support from Umbraco HQ developers</li>
+						<li>The page ALL Umbraco developers have bookmarked</li>
+						<li>Our friendly Open Source community</li>
+						<li>A helping (time-saving!) hand: Umbraco Cloud</li>
+						<li>How to continue your Umbraco journey</li>
+					</ul>
+
+				</div>				
+			</div>
+
+		</div>
+
+		<!-- Grey Banner -->
+		<div class="container-fluid grey-bg">
+			<div class="container">
+				<div class="row section">
+					<div class="col-md-8">
+						<h2>A flexible CMS - do things your way</h2>
+						<p>The Umbraco source code is free and available for download either as a ZIP file or via NuGet under the MIT license, so you can <a href="#">start crafting websites in Umbraco today</a>. 
+						Need to build a site with multiple 3rd party extensions and customized add-ons? No problem. Need to build a simple site with a straightforward contact form? No problem.</p>
+						<p>Whatever type or scale of your project, Umbraco will be able to handle it - and the cherry on top; with Umbraco’s well-known editor friendly UI, 
+							no matter how complex a site you’re building, you know that your editors will still find it a breeze to edit. Oh, and the cherry on top of the cherry - 
+							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p>
+					</div>
+						<div class="col-md-4">
+						<img src="/images/community.png" class="img-fluid" alt="Community illustration">
+					</div> 
+				</div>
+			</div>
+		</div>
+
+		<!-- Blog section -->
+		<div class="container">
+
+			<div class="row section">
+				<div class="col-md-12">
+					<h1>Latest from the blog</h1>
+				</div>
+
+				<!-- Blog Post query goes here. -->
+				<div class="col-md-4">
+					<div class="box-blog">
+						<a href="Blogpost.html"><div class="blog-promoImage" style="background-image:url('/images/u_product_roadmap_white-1.png')"></div></a>
+						<h5>Product Update - Deploying Deploy 3.3</h5>
+						<p class="blog-meta">January 20th 2020 - by Sofie Toft</p>
+						<p>The end of 2019 is approaching and with this, also the last Product Update of the year. 
+							Let’s have a look at what we’ve been working on and what you can expect in the near future.</p>
+					</div>
+					<a href="Blogpost.html" class="btn btn-inverted">Read more >></a>
+				</div>
+				<div class="col-md-4">
+					<div class="box-blog">
+						<a href="#"><div class="blog-promoImage" style="background-image:url('/images/Press.jpg')"></div></a>
+						<h5>Umbraco <3 YouTube</h5>
+						<p class="blog-meta">January 20th 2020 - by Sofie Toft</p>
+						<p>The end of 2019 is approaching and with this, also the last Product Update of the year. 
+							Let’s have a look at what we’ve been working on and what you can expect in the near future.</p>
+					</div>
+					<a href="#" class="btn btn-inverted">Read more >></a>
+				</div>
+				<div class="col-md-4">
+					<div class="box-blog">
+						<a href="#"><div class="blog-promoImage" style="background-image:url('/images/sofie-hammock.jpg')"></div></a>
+						<h5>A day in a Documentation Curators life</h5>
+						<p class="blog-meta">January 20th 2020 - by Sofie Toft</p>
+						<p>The end of 2019 is approaching and with this, also the last Product Update of the year. 
+							Let’s have a look at what we’ve been working on and what you can expect in the near future.</p>
+					</div>
+					<a href="#" class="btn btn-inverted blog-box-btn">Read more >></a>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Call to Action -->
+		<div class="container-fluid orange-bg">
+			<div class="container">
+
+				<div class="row section">
+					<div class="col-md-12 text-center">
+						<h1>How to continue your Umbraco journey</h1>
+						<p>What’s next? We have gathered the 3 best ways for you to go on from here ensuring you get the best start to your Umbraco journey: <br/><br/></p>
+						<a href="#" class="btn btn-inverted-orange" role="button">3 ways to start your Umbraco Journey >></a>
+					</div>
+				</div>
+	
+			</div>
+		</div>
 
 ```
 
-
 ---
-## Next - [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
+## Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
 Part 2 - using the Master template to create new page types.
