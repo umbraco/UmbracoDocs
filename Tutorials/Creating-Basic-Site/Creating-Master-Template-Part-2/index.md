@@ -105,4 +105,3 @@ To use the document type properties from the homepage, do the following:
 ---
 
 ## Next: [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
-

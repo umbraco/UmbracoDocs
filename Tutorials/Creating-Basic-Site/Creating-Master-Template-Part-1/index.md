@@ -279,5 +279,5 @@ Homepage template:
 ```
 
 ---
+
 ## Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
-Part 2 - using the Master template to create new page types.

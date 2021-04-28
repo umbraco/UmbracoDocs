@@ -102,5 +102,3 @@ We’ve now created our first **Document Type**. Umbraco takes the data from an 
 ---
 
 ## Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
-
-How to create your first **_template_** and create a **_Content Node_**.

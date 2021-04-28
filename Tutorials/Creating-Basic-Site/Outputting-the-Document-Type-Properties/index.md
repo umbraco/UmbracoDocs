@@ -33,5 +33,3 @@ Now, reload your homepage to view the content. You can go back and add additiona
 ---
 
 ## Next - [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
-
-How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.

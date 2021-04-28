@@ -54,5 +54,3 @@ Now that you have the **Welcome to your Umbraco installation** screen, click **O
 ---
 
 ## Next: [Creating Your First Document Type](../Document-Types)
-
-How to create Document Types and what they do.
