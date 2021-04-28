@@ -195,7 +195,7 @@ The file contains an `msbuild` target that is executed on build when a project h
 Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template. You can now write:
 
 ```none
-dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoSolution -P MyCustomUmbracoPackage
 ```
 
 This new `-p` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
@@ -206,7 +206,7 @@ The following shot example shows how to use the templates in combination
 
 ```none
 dotnet new umbracopackage -n MyCustomUmbracoPackage
-dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -P MyCustomUmbracoPackage
 cd MyCustomUmbracoPackage.Testsite
 dotnet build
 ```
