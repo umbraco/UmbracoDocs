@@ -26,6 +26,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Umbraco 9 Beta Release](https://umbraco.com/blog/umbraco-9-beta-release/)
 * [Alpha 4 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-4-release-of-umbraco-on-net-core/)
 * [Alpha 3 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-3-release-of-umbraco-on-net-core/)
 * [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
