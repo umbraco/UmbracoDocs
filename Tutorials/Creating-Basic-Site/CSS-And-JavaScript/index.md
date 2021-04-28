@@ -10,7 +10,7 @@ Our homepage is currently missing the CSS and image files. To include these file
     :::note
     For organizational purposes, place the CSS and images files in separate folders (`CSS` and `images`).
     :::
-3. Using Chrome/Firefox/Edge Developer Tools, start your `http://localhost:xxxx.` The network tab should not report any missing css or images files. If it does, have a look and fix any typos, and check if the files are in the right places.
+3. Using Chrome/Firefox/Edge Developer Tools, start your `http://localhost:xxxx.` The network tab should not report any missing css or images files. If it does, check for typos and if the files are in the right places.
 
 ---
 
