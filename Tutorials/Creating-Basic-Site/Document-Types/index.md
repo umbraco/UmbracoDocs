@@ -17,7 +17,7 @@ You can add the following common properties to a **Document Type**:
 
 To create a document type:
 
-1. Go to **Settings** in Umbraco.
+1. Go to **Settings**.
 2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Click **Document Type with Template**.
