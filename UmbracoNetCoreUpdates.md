@@ -8,13 +8,17 @@ meta.Description: "Updates and information related to the upcoming release of Um
 :::note
 This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
 
-We have created a separate repository for [articles and tutorials for Umbraco on .NET Core](https://github.com/umbraco/UmbracoCMSDocs). Please keep in mind, that this is still a work in progress.
-
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
 In this article you will find detailed instructions on [how to try out and test the current alpha version of Umbraco .Net Core](#umbraco-net-core-alpha). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+
+## Umbraco 9 Documentation
+
+We have started verifying the current documentation against Umbraco 9.
+
+You can find a complete list of all updated articles on the [Umbraco 9 Articles](Umbraco9Articles.md) page.
 
 ## News and updates from Umbraco HQ
 
@@ -162,6 +166,7 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 ```
 
 2. Install the new Umbraco dotnet template
+
     ```none
     dotnet new -i Umbraco.Templates::9.0.0-*
     ```

@@ -2,7 +2,6 @@
 versionFrom: 7.3.0
 meta.Title: "Language file for packages"
 meta.Description: "Information on how to use language files to make your Umbraco package UI support multiple languages"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/language-files-for-packages.md"
 ---
 
 # Language file for packages
