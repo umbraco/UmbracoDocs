@@ -202,7 +202,7 @@ This new `-p` indicates that the solution is a test-site of the package `MyCusto
 
 ### Full example
 
-The following shot example shows how to use the templates in combination
+The following example shows how to use the templates in combination
 
 ```none
 dotnet new umbracopackage -n MyCustomUmbracoPackage
