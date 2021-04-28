@@ -7,16 +7,16 @@ This tutorial provides step by step instructions to build an Umbraco website usi
 
 ## **What You Need**
 
-To install a basic site in the Umbraco CMS, you need the following:
+To install a basic website in the Umbraco CMS, you need the following:
 
-* A clean and empty installation of the Umbraco CMS without the starter site installed. See the [Verify your Umbraco Installation](#verify-your-umbraco-installation)
+* A clean and empty installation of the Umbraco CMS without the starter site installed. See the [Verifying your Umbraco Installation](#verifying-your-umbraco-installation)
 * This tutorial uses a copy of Retrospect – a HTML5, responsive website template from Templated.co - [https://templated.co/retrospect](https://templated.co/retrospect) or, if you prefer, you can use your own flat HTML files.
 
 ## **Getting Started**
 
 ### Installing Umbraco
 
-To download the latest version of Umbraco, follow the steps in the [Installation article](../../../Getting-Started/Setup/Install). On the installation wizard, follow the steps:
+To download the latest version of Umbraco, refer to the [Installation article](../../../Getting-Started/Setup/Install). On the installation wizard, follow the steps:
 
 1. Enter your **Name**, **Email**, and **Password**.
     ![Installing Umbraco](images/figure-7-installing-umbraco.png)
@@ -36,7 +36,7 @@ When you run your local host address (http://localhost:xxxx), you will see the *
 If you see the starter kit, you need to re-install Umbraco. To re-install Umbraco, follow these steps:
 
 1. Delete the folder from where you run the local host.
-2. Unzip the downloaded Umbraco installation folder and open the folder in VS code.
+2. Unzip the downloaded Umbraco installation folder and open the extracted folder in VS Code.
 3. Run localhost in your browser.
 
 ### Preparing the Retrospect Template Site
@@ -45,8 +45,9 @@ Now unzip the Retrospect contents to a folder onto your desktop (or a place of y
 
 ![The Retrospect Template](images/figure-5-retrospect-template-v8.png)
 
-Log into your Umbraco CMS installation (e.g. go to http://localhost/umbraco in your browser).  You should be faced with an empty Umbraco Backoffice similiar to the image below.
+### Logging in to Umbraco
 
+Now that you have the **Welcome to your Umbraco installation** screen, click **Open Umbraco**. You should see a similar Umbraco Backoffice as the image below.
 
 ![An empty Umbraco installation backoffice](images/figure-6-umbraco-empty-v8.png)
 
