@@ -26,7 +26,7 @@ To create a document type:
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
 5. Enter the **Description**. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
-6. Click **Save**. Our new document type is now visible as a new item under **[Document types]**.
+6. Click **Save**. Our new document type is now visible as a new item under **Document types**.
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
 ## Customizing the Document Type
@@ -68,37 +68,39 @@ To add properties to your document type, follow these steps:
     :::tip
     Remember to come back and explore the list of **_Data Types_** later.
     :::
-8. Repeat Step 3 to 7 using the specification below:
+8. Repeat Steps 3 to 7 using the specification below:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr><th>Name</th><th>Body Text</th></tr>
-<tr><td>Group:</td><td>Content</td></tr>
-<tr><td>Alias:</td><td>bodyText</td></tr>
-<tr><td>Description:</td><td>The main content of the page.</td></tr>
-<tr><td>Data Type:</td><td>Richtext Editor </td></tr>
-</table>
+    <table border="0">
+    <col width="130">
+    <col width="400">
+    <tr><th>Name</th><th>Body Text</th></tr>
+    <tr><td>Group</td><td>Content</td></tr>
+    <tr><td>Alias</td><td>bodyText</td></tr>
+    <tr><td>Description</td><td>The main content of the page.</td></tr>
+    <tr><td>Data Type</td><td>Richtext Editor </td></tr>
+    </table>
 
-9. Click **Add Group** to create a new group called Footer. Repeat Step 3 to 7 using the specification below:
+9. Click **Add Group** to create a new group called Footer. Repeat Steps 3 to 7 using the specification below:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr><th>Name</th><th>Footer Text</th></tr>
-<tr><td>Group:</td><td>Footer</td></tr>
-<tr><td>Alias:</td><td>footerText</td></tr>
-<tr><td>Description:</td><td>Copyright notice for the footer.</td></tr>
-<tr><td>Data Type:</td><td>Textstring</td></tr>
-</table>
+    <table border="0">
+    <col width="130">
+    <col width="400">
+    <tr><th>Name</th><th>Footer Text</th></tr>
+    <tr><td>Group</td><td>Footer</td></tr>
+    <tr><td>Alias</td><td>footerText</td></tr>
+    <tr><td>Description</td><td>Copyright notice for the footer.</td></tr>
+    <tr><td>Data Type</td><td>Textstring</td></tr>
+    </table>
 
 10. Your document type should now look like this:
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
 
-11. Click **[Save]**.
+11. Click **Save**.
 
-We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the **_Document Type_** (aka a **_Content Node_**) and merges it with a **_Template_** – we’ll create our template next.
+We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the **_Document Type_** (also called as **_Content Node_**) and merges it with a **_Template_** – we’ll create our template next.
 
 ---
-## Next - [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
+
+## Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
+
 How to create your first **_template_** and create a **_Content Node_**.
