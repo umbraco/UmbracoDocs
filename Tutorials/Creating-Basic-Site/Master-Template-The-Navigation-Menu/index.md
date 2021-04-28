@@ -44,7 +44,7 @@ If you want to create dynamic navigation links from published content nodes, use
             {
                 <a class = "nav-link" href = "@child.Url">@child.Name</a>
             }
-    </nav>
+        </nav>
 ```
 
 ---
