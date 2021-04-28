@@ -14,6 +14,6 @@ Our homepage is currently missing the CSS and image files. To include these file
 
 ---
 
-## Next - [Outputting the Document Type Properties](../Outputting-the-Document-Type-Properties)
+## Next - [Displaying the Document Type Properties](../Outputting-the-Document-Type-Properties)
 
 How to wire the Umbraco Document Type Properties into the templates, and output the editor's data in the right place.
