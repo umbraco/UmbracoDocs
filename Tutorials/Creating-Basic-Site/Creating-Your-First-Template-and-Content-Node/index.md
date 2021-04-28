@@ -66,6 +66,6 @@ If you see a blank page, check if the template is entered and remember to save i
 
 ---
 
-## Next: [CSS & JavaScript](../CSS-And-JavaScript)
+## Next: [CSS and Images](../CSS-And-JavaScript)
 
 Adding the CSS and JavaScript for your site into Umbraco.
