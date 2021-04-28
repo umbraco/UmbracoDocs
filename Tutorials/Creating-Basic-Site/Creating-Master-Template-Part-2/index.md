@@ -27,6 +27,7 @@ For now, let's create a content-only contact page where the user can provide a t
     |---------|------------|-----------|------------------|
     | Content | Page Title | pageTitle | Textstring       |
     | Content | Body Text  | bodyText  | Rich Text Editor |
+
     ![Simple Content Page Template with Data Fields](images/figure-35-contact-us-template-with-data-fields-v8.png)
 8. Click **Save**.
 9. Go to **Templates** to view your new Simple Content Page template that was created automatically with the Document Type.  
@@ -73,7 +74,7 @@ To create a content node:
 2. Click on **...** next to the **Homepage** and select **Simple Content Page**.
 3. Enter a name for the document type. Let's call it _Contact Us_.
 4. Fill in details for the **Page Title** and **Body Text**.
-5. Click **Save and Publish**
+5. Click **Save and Publish**.
 
 ### Adding the Document Type Properties
 
@@ -84,12 +85,12 @@ To add the document type properties:
 3. Scroll down to the `<!-- Jumbotron, w title -->` section and highlight the text `“Umbraco Support”`.
 4. Click **Insert** and select **Value**.
 5. In the **Value** window, select the **pageTitle** field from the drop-down list.
-6. Repeat the same process for the content in the `<p></p>` tags of the <div> using the field **bodyText**.
+6. Repeat the same process for the content in the `<p></p>` tags of the `<div>` using the field **bodyText**.
 7. Click **Save**.
 
 ## Using Document Type Properties from the Homepage
 
-You may notice that the footer is now empty - we don't have our content from our Homepage node. 
+You may notice that the footer is now empty - we don't have the content from our Homepage node.
 
 To use the document type properties from the homepage, do the following:
 
