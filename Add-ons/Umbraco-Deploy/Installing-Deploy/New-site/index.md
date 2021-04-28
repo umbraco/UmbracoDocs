@@ -148,6 +148,7 @@ When you have set up your environments in the `UmbracoDeploy.Config` the followi
 
 ```xml
 <add key="Umbraco.Deploy.EnvironmentName" value="TheEnvironmentTypeHere" />
+```
 
 :::note
 You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
