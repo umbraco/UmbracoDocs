@@ -35,7 +35,7 @@ Keep in mind the [hostnames have to be configured in a specific way.](../../Umbr
 
 ## Mapping the hostnames to individual websites/root nodes
 
-At this point you should have several root nodes, where each is a separate website. Once the hostnames are protected by TLS:
+At this point you should have several root nodes, where each is a separate website. To map the hostnames to individual root nodes:
 
 1. Navigate to the backoffice of your site, to the Content section.
 
