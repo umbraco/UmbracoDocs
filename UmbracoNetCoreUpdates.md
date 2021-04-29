@@ -12,7 +12,7 @@ Are you aware of some information about Umbraco .Net Core that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current alpha version of Umbraco .Net Core](#umbraco-net-core-alpha). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
@@ -74,7 +74,7 @@ More details on the alpha can be found in [the alpha release blog post](https://
 :::warning
 As this is an **beta release**, bugs and minor issues are to be expected.
 
-You can find a list of known issues [on this page](#known-issues-and-mising-parts-in-current-beta-release)
+You can find a list of known issues [on this page](#known-issues-and-missing-parts-in-current-beta-release)
 
 Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
 :::
