@@ -57,7 +57,9 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Other
 
-* [Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=EJw7dfq5_Jc)
+* [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
+* [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
+* [YouTube: Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=EJw7dfq5_Jc)
 * [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
