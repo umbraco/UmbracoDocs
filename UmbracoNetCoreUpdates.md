@@ -198,7 +198,7 @@ Furthermore, we introduced a new flag on the regular `dotnet new umbraco` templa
 dotnet new umbraco -n MyCustomUmbracoSolution -P MyCustomUmbracoPackage
 ```
 
-This new `-p` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
+This new `-P` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
 
 ### Full example
 
