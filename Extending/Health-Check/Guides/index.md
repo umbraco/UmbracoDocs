@@ -9,7 +9,7 @@ verified-against: alpha-3
 
 Below is a list of guides for Health Checks in Umbraco.
 
-## [Click jack protection](ClickJackProtection.md)
+## [Click jack protection](ClickJackingProtection.md)
 
 ## [Content sniffing protection](ContentSniffingProtection.md)
 
