@@ -56,7 +56,7 @@ Now it's time to create the new article. Dependending on the article and which v
 Each scenario involves a different set of steps, which are explained below.
 
 :::tip
-Check out the [File Naming Conventions](../File-Naming-Conventions/target-a-specific-umbraco-version-using-file-naming-conventions) to learn more about how to use file names to target a specific version of Umbraco when creating a new article.
+Check out the [File Naming Conventions](../File-Naming-Conventions/#target-a-specific-umbraco-version-using-file-naming-conventions) to learn more about how to use file names to target a specific version of Umbraco when creating a new article.
 :::
 
 ### Target the current major version
