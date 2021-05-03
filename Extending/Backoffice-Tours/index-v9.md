@@ -208,7 +208,7 @@ It is possible to hide/disable tours using a C# composer by adding to the TourFi
 
 Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
 
-```cs
+```c#
 using System.Text.RegularExpressions;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
