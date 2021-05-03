@@ -128,7 +128,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
     Or if you prefer to using SQL CE:
 
     ```none
-    dotnet new umbraco -n MyCustomUmbracoSolution -ce
+    dotnet new umbraco --UseSqlCe -n MyCustomUmbracoSolution
     ```
 
 You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
