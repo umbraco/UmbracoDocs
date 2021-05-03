@@ -98,7 +98,7 @@ To update the **Articles Main** template, follow these steps:
         }
     </ul>
     ```
-9. The above code will output a list of all the **_Article Items_** as links using the name. We will modify the template a little, to add a bit more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
+9. The above code will output a list of all the **_Article Items_** as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
     ```csharp
     <article class="special">
