@@ -23,7 +23,20 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 
 ## Prerequisites
 
+To work with and contribute to the Umbraco Documentation there are a few tools and extensions we recommend that you use. Using these tools will ensure consistency throughout the documentation as well as help you create the best possible version of the article.
+
+* Visual Studio Code (VS Code)
+* Markdown linter - Extension for VS Code
+* Vale - Extension for VS Code
+
+We also highly recommend that you're familiar with Git and the Markdown syntax.
+
 ## Forking and/or cloning the documentation repository
+
+The very first step to create a new version of an article is to **fork the UmbracoDocs Github repository**.
+
+1. Follow our guide on [forking the UmbracoDocs repo].
+2. Clone your fork of the UmbracoDocs repo to your local machine.
 
 ## File structure and naming conventions
 
@@ -46,3 +59,5 @@ Following the links below you will find lists for each of the main section in th
 * [Tutorials](https://docs.google.com/spreadsheets/d/1ya7-ss1WeqHBfpRm3hICRHyZDLAO7UeP1kMwbTmjvb8/edit?usp=sharing)
 
 Please note that the Add-ons sections as well as the sections related to our Cloud products are not included in the lists above.
+
+[MORE DETAILS ON HOW TO HELP OUT!]
