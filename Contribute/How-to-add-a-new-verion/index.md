@@ -14,12 +14,14 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 
 ## Contents
 
-* Prerequisites
-* Forking and/or cloning the documentation repository
-* Creating the new article
-* Adding labels to the article
-* Updating the content
-* Creating the PR
+* [Prerequisites](#prerequisites)
+* [Forking and cloning the documentation repository](#forking-and-cloning-the-documentation-repository)
+* [Creating the new article](#creating-the-new-article)
+* [Adding labels to the article](#adding-labels-to-the-article)
+* [Updating the content](#updating-the-content)
+* [Creating the PR](#creating-the-pr)
+* [Umbraco 9 Documentation](#umbraco-9-documentation)
+* [Example: Creating a new version of an article targetting Umbraco 9](#example-creating-a-new-version-of-index-md-targetting-an-upcoming-version-Umbraco-9)
 
 ## Prerequisites
 
@@ -164,7 +166,7 @@ As Umbraco 9 it still in development it is subject to change over the coming mon
 
 :::tip
 
-### Example: Creating a new version of `index.md` targetting an upcoming version
+### Example: Creating a new version of `index.md` targetting an upcoming version, Umbraco 9
 
 In this example, we'll be using the steps above to create a new version of an `index.md` file. The scenario is, that the existing article is already targetting the *current major version* and we want to create a new version that targets an upcoming version, Umbraco 9.
 
