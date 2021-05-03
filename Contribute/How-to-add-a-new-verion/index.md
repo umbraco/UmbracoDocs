@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 This tutorial will guide you throught the steps it takes to add a new version of an existing article in the Umbraco Documentation.
 
 :::tip
-This article will focus on the general way of creating a new version of an existing articles.
+The **current major version** on the Umbraco Documentation is currently set to Umbraco 8 (v8). This means that any content that isn't targetting a specific version will be recognized as v8 content.
 
 If you want to help out with **updating our documentation against Umbraco 9** you can find more details about that process in the [Umbraco 9 Documentation](#umbraco-9-documentation) section at the bottom of this article.
 :::
@@ -33,10 +33,14 @@ We also highly recommend that you're familiar with Git and the Markdown syntax.
 
 ## Forking and/or cloning the documentation repository
 
-The very first step to create a new version of an article is to **fork the UmbracoDocs Github repository**.
+The very first step to clone the documentation down to your local machine, so you can start working with it. This can be done by either forking the UmbracoDocs repository or by working in branches directly of the UmbracoDocs repository.
 
-1. Follow our guide on [forking the UmbracoDocs repo].
-2. Clone your fork of the UmbracoDocs repo to your local machine.
+Do you prefer working in forks, we recommend that you follow our guide on [forking the UmbracoDocs repo](../Pull-Requests/#options-2-creating-a-pr-through-a-fork).
+
+Do you prefer working in branches, follow the steps outlined below.
+
+1. Clone the UmbracoDocs repository to your local machine.
+2. Create a new branch using the prefix `v9/`.
 
 ## File structure and naming conventions
 
