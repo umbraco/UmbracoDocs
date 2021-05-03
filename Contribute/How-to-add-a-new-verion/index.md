@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # How to add a new version of an article
 
-This tutorial will guide you throught the steps it takes to add a new version of an existing article in the Umbraco Documentation.
+This tutorial will guide you through the steps it takes to add a new version of an existing article in the Umbraco Documentation.
 
 :::tip
 The **current major version** on the Umbraco Documentation is currently set to Umbraco 8 (v8). This means that any content that isn't targetting a specific version will be recognized as v8 content.
@@ -48,7 +48,7 @@ We recommend using Visual Studio Code as it can be extended with a lot of useful
 
 ## Creating the new article
 
-Now it's time to create the new article. Dependending on the article and which version of Umbraco you will be targetting, these are the two most common scenarios:
+Now it's time to create the new article. Depending on the article and which version of Umbraco you will be targetting, these are the two most common scenarios:
 
 * The article is targetting an older Umbraco version and you want to create a new version of the article that targets the *current major version*, or
 * You want to target a version of Umbraco that has not been released yet.
@@ -80,12 +80,12 @@ You will now have (at least) two versions of the same article. One named `index`
 
 ## Adding labels to the article
 
-You've now created a new version of an article and have use the file naming conventions to target the correct Umbraco version.
+You've now created a new version of an article and have used the file naming conventions to target the correct Umbraco version.
 
-The targetted Umbraco version also needs to be added to the **meta data** in the article itself.
+The targetted Umbraco version also needs to be added to the **metadata** in the article itself.
 
 1. Open the new article.
-2. Locate the `versionFrom` label in the meta data section in the very top of the article.
+2. Locate the `versionFrom` label in the metadata section at the very top of the article.
 3. Update the version number to match the version you're targetting.
 
 Example:
@@ -98,13 +98,13 @@ meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or 
 ---
 ```
 
-In some cases you might also want to update the `meta.Title` and `meta.Description` labels.
+In some cases, you might also want to update the `meta.Title` and `meta.Description` labels.
 
-See the [Umbraco 9 Meta data requirements](#meta-data-requirements) section for more details on which meta data to use when verifying material for Umbraco 9.
+See the [Umbraco 9 Metadata requirements](#metadata-requirements) section for more details on which metadata to use when verifying material for Umbraco 9.
 
 ## Updating the content
 
-With the meta data in place it is time to start verifying and updating the content in the article.
+With the metadata in place, it is time to start verifying and updating the content in the article.
 
 When updating the content in the article make sure to
 
@@ -121,7 +121,7 @@ When adding new images, use the same file naming conventions as for the article 
 
 ## Creating the PR
 
-Now that you've created a new article and verified and updated the contents for the targetted Umbraco version, it is time to hand in the contribution.
+Now that you've created a new article and verified and updated the contents for the targeted Umbraco version, it is time to hand in the contribution.
 
 This is done, by submitted a Pull Request (PR) on the UmbracoDocs repository.
 
@@ -141,7 +141,7 @@ Once your PR has been created you can expect an answer from one of the UmbracoDo
 
 To make the process of verifying and updating the documentation for Umbraco 9 as transparent and inclusive as possible, we're maintaining a set of lists of the sections and articles that needs to be worked on.
 
-Following the links below you will find lists for each of the main section in the Umbraco Documentation.
+Following the links below, you will find lists for each of the main sections in the Umbraco Documentation.
 
 * [Getting Started](https://docs.google.com/spreadsheets/d/1SBMsjreht5rMnHysADmYMcjHFWLcAl9LzFbsSIZNxys/edit?usp=sharing)
 * [Implementation](https://docs.google.com/spreadsheets/d/1r5zfT5D5N4kbZjq6YubAZLu7eXjERJh2JsALfXujuQk/edit?usp=sharing)
@@ -153,9 +153,9 @@ Please note that the Add-ons sections as well as the sections related to our Clo
 
 Head on over to the [**Issue Tracker on the UmbracoDocs repository on Github**](https://github.com/umbraco/UmbracoDocs/issues/3145) to see how you can get involved and help us get all the documentation verified and updated for Umbraco 9.
 
-### Meta data requirements
+### Metadata requirements
 
-As Umbraco 9 it still in development it is subject to change over the coming months. In order to ensure that any documentation written before the official release of the product will be kept up to date, we've implemented a set of meta data to help us identify various parameters for each article.
+As Umbraco 9 is still in development it is subject to change over the coming months. In order to ensure that any documentation written before the official release of the product will be kept up to date, we've implemented a set of metadata to help us identify various parameters for each article.
 
 |Label                    |Input options        |Description         |
 |-------------------------|-------------------|----------------------|
@@ -172,10 +172,10 @@ In this example, we'll be using the steps above to create a new version of an `i
 
 1. Create a copy of the `index.md` file.
 2. Rename the new file to `index-v9.md`.
-3. Update the `versionFrom` meta data to `9.0.0`
+3. Update the `versionFrom` metadata to `9.0.0`
 4. Verify and update the contents of the article.
-5. Use the `state` meta data to indicate whether or not the article has been fully verified.
-6. Use the `verified-against` meta data to indicate which beta release you've verifyed the article against.
-7. Use the `updated-links` meta data to tell us whether or not the links have been checked and updated as well.
+5. Use the `state` metadata to indicate whether or not the article has been fully verified.
+6. Use the `verified-against` metadata to indicate which beta release you've verified the article against.
+7. Use the `updated-links` metadata to tell us whether or not the links have been checked and updated as well.
 
 :::
