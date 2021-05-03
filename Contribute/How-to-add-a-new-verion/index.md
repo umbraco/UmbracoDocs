@@ -21,7 +21,7 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 * [Updating the content](#updating-the-content)
 * [Creating the PR](#creating-the-pr)
 * [Umbraco 9 Documentation](#umbraco-9-documentation)
-* [Example: Creating a new version of an article targetting Umbraco 9](#example-creating-a-new-version-of-index-md-targetting-an-upcoming-version-Umbraco-9)
+* [Example: Creating a new version of an article targetting Umbraco 9](#example-creating-a-new-version-of-indexmd-targetting-an-upcoming-version-Umbraco-9)
 
 ## Prerequisites
 
