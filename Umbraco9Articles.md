@@ -20,11 +20,12 @@ Please be aware that links to API documentation and other resources might not ha
 * [Setup](Getting-Started/Setup/index-v9.md)
   * [Install Umbraco](Getting-Started/Setup/Install/index-v9.md)
   * [Install Umbraco using VS Code](Getting-Started/Setup/Install/install-umbraco-with-vs-code-v9.md)
-  * [***NEW*** Install Umbraco with templates](Getting-Started/Setup/Install/install-umbraco-with-templates.md)
+  * [****NEW**** Install Umbraco with templates](Getting-Started/Setup/Install/install-umbraco-with-templates.md)
   * [Requirements](Getting-Started/Setup/Requirements/index-v9.md)
 
 ### Extending
 
+* [FileSystemProviders](Extending/FileSystemProviders/index-v9.md)
 * [Backoffice Search](Extending/Backoffice-Search/index-v9.md)
 * [Backoffice Tours](Extending/Backoffice-Tours/index-v9.md)
 * [Backoffice UI API Documentation](Extending/Backoffice-UI-API-Documentation/index-v9.md)
@@ -33,7 +34,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [Database](Extending/Database/index-v9.md)
 * [Embedded Media Provider](Extending/Embedded-Media-Provider/index-v9.md)
 * [Health Check](Extending/Health-Check/index-v9.md)
-  * [***New*** Health Check Guides](Extending/Health-Check/Guides)
+  * [****New**** Health Check Guides](Extending/Health-Check/Guides)
 * [Language Files](Extending/Language-Files/index-v9.md)
 * [Macro Parameter Editors](Extending/Macro-Parameter-Editors/index-v9.md)
 * [Packages](Extending/Packages/index-v9.md)
@@ -57,6 +58,6 @@ Please be aware that links to API documentation and other resources might not ha
 
 ### Reference
 
-* [***NEW*** Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
+* [****NEW**** Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
 * [Querying: IPublished Content](Reference/Querying/IPublishedContent/index-v9.md)
   * [Properties](Reference/Querying/IPublishedContent/Properties/index-v9.md)
