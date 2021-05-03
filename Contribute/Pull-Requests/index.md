@@ -44,7 +44,7 @@ When you are done and happy with the changes you've made, you can submit a pull 
 
 Sometimes - like in the example above - you may end up forking and then not working on the documentation for a while. Once you do start, you may find that you no longer have the most recent version. If this happens, before making changes and making a pull request, you should do a rebase. For this you set the main repository as an upstream to sync from, fetch the updates and update your own fork to ensure you are in sync:
 
-```
+```none
 git remote add upstream https://github.com/umbraco/UmbracoDocs/
 git fetch upstream
 git rebase upstream/master
