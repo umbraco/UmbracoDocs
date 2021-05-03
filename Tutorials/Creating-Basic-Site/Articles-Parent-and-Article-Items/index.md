@@ -2,109 +2,129 @@
 versionFrom: 8.0.0
 ---
 
-# Articles Parent and Article Items - A Parent Page with Infinite Children
+# Articles and Article Items - A Parent Page with Infinite Children
 
-Having an Articles Parent page, and a number of associated child articles which editors can freely edit, provides a good example of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages or any other collection of document types.
+Having an Articles Parent page, and a number of associated child articles, provides a good example of Umbraco's features. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages, or any other collection of document types.
 
-Create two new Document Types: "Articles Main" and "Articles Item". 
+## Creating Articles and Article Items
 
-Go to **Settings > Document Types (hover) > ...** and choose **Create Document type with template**.
+Create two new Document Types with template: **Articles Main** and **Articles Item**.
 
-![Document type with template](images/Document_type_with_template.png)
+To create **Articles Main** document type, follow these steps:
 
-Create the following **_Tabs_** and **_Data Properties_**:
+1. Go to **Settings**.
+2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
+3. Click **Document Type with Template**.
+    ![Document type with template](images/Document_type_with_template.png){: data-fancybox}
+4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
+5. Let's add two fields with the following specifications:
+    | Group | Field Name         | Alias            | Data Type        |
+    |-------|--------------------|------------------|------------------|
+    | Intro | Articles Title     | articlesTitle    | TextBox          |
+    | Intro | Articles Body Text | articlesBodyText | Rich Text Editor |
 
-## Articles Main
+    ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png){: data-fancybox}
+6. Go to the **Permissions** tab.
+7. In the **Allowed child node types**, click **Add child**. The **Choose child node** window opens.
+8. Select **Articles Item** and click **Save**.
+9. Go to the **List View** tab.
+10. Toggle **Enable List view button** and click **Save**.
 
->Group = Intro
->**"Articles Title"** - Type = Textbox
->**"Articles Body Text"** - Type = Rich Text Editor**
+To create **Articles Item** document type, follow these steps:
 
-![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png)
+1. Go to **Settings**.
+2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
+3. Click **Document Type with Template**.
+    ![Document type with template](images/Document_type_with_template.png)
+4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
+5. Let's add two fields with the following specifications:
+    | Group   | Field Name      | Alias          | Data Type        |
+    |---------|-----------------|----------------|------------------|
+    | Content | Article Title   | articleTitle   | TextBox          |
+    | Content | Article Content | articleContent | Rich Text Editor |
 
-## Articles Item
+    ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png){: data-fancybox}
+6.  Navigate to the **Home Page** node and go to the **Permissions** tab.
+7. In the **Allowed child node types**, click **Add child**. The **Choose child node** window opens.
+8. Select **Articles Main** and click **Save**.
 
->Group = Content
->**"Article Title"** - Type = TextBox
->**"Article Content"** - Type = Rich Text Editor**
+## Creating the Content Node
 
-![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png)
+To add a content node:
 
-Now go to the **_Settings > Document Types >Articles Main node > Permissions screen > Allowed child nodetypes_** and add **_Articles Item_**.
+1. Go to **Content**.
+2. Click the **...** next to the **HomePage** and select **Articles Main**.
+3. Enter the name for the article. We are going to call it _Articles_.
+4. Enter the **Article Title**, **Article Content**, and click **Save**.
+   When you click on Save, you will notice a list view is created. The child nodes are placed in a list making it easier to view them. You can create new nodes from this section.
+   :::tip
+    If you do not see the list view, try refreshing the page.
+   :::
+5. Let's add two child nodes called **Article 1**, **Article 2**, and click **Save**.
+    ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
 
-This allows us to create items under the main (which acts as a parent container). We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_**. Do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_**. Don't add the **_Articles Item_** only the main should be allowed at this level.
+## Updating the Template
 
-Then go to **_Settings > Document Types >Articles Main node > List view screen** And enable List view.
+To update the **Articles Main** template, follow these steps:
 
-Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_Articles_" of type **_Articles Main_** (if you don't have this option go back and check your allowed child nodes - did you forget to click **_Save_**)?  Give the Articles node some content and a title.
-
-When you click save you will notice that it has been created as a list view. This means that child nodes are automatically in a list to make it easier to see them, you can create new nodes from this section too, go ahead and create a few.
-
-Now you should have a content tree that looks like the image below (using your own page node names).  Let's go update our templates we created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Master template_** = "Master" - do the same for the Articles Item remembering to click **_Save_**.
-
-![Content Tree With Articles](images/figure-40-articles-created-v8.png)
-
-<!-- vale valeStyle.Hyperbolic = NO -->
-
-Copy the template content from the **_Simple Content Page_**  template and paste this into both the Articles Item and Articles Main (you may need to refresh the nodes again to see these. Set the Master template to be "Master" and then replace the Page field tags with the relevant  properties e.g. **_articlesTitle_** and **_articlesBodyText_** for the **_Articles Main_** and the **_articleTitle_** and **_articleContent_** for **_Article Item_**.
-
-<!-- vale valeStyle.Hyperbolic = YES -->
-
-:::warn
-Take care when copying not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesMain>` - if you get an exception when loading the page about not being able to bind to source ensure the last part in < > brackets matches your Document Type Alias.
-:::
-
-If we now go and check our Articles Main page in the browser we should see our content. We'd like to list the child article items under the intro content so that our visitors can see a list of our articles. Umbraco makes this possible for us, we need to use a bit of Razor.
-
-Click on the **_Settings_** menu from the top menu, and navigate to the **_Articles Main_** template.
-
-We are going to use Razor to query between all instances of **_Article Item_** under the **_Article Main_** content node. In order to do that, we are going to use the built-in **Query Builder**.
-
-![Query Builder](images/query-builder.png)
-
-There are a few parameters we need to consider, when creating a query like that.
-
-First of all, we need to tell the Query builder **what** we want from **where**. You will also be able to set some conditions to get specific items, and you can decide in which order you will like the items served. For the purpose of this guide, we'll use the following parameters:
-
-![Query parameters](images/query-parameters.png)
-
-If you've set the correct parameters, you will get a preview of the items being selected with the query. When you're happy with the parameters, click **Submit**, and you will see a code snippet has been added to your template.
-
-It will look similar to this:
-
-```csharp
-@{
-    var selection = Umbraco.Content(Guid.Parse("c4b9c457-7182-4cfb-a1af-f0211d67ea51"))
-    .Children("articlesItem")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate);
-}
-<ul>
-    @foreach (var item in selection)
-    {
-        <li>
-            <a href="@item.Url">@item.Name</a>
-        </li>
+1. Go to **Settings**.
+2. In the **Templating** section, expand the **Templates** folder. You should see a template titled **_Articles Main_**.
+3. In the **Master template** select **Master** and click **Save**.
+4. Copy the template content from the **_Simple Content Page_**  template and paste the content into **Articles Main**.
+    :::warn
+    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
+    :::
+5. Replace the static text within the `<!-- Jumbotron, w title -->` tags with the Model.Value references. For example:  Add references to **_articlesTitle_** and **_articlesBodyText_**.
+ ![Articles Main Template](images/articles-main-template.png)
+6. Define a query for all articles, just below the `<div>` tag of the`<!-- Jumbotron, w title -->`.
+    ![Query Builder](images/query-builder.png)
+7. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
+    ![Query parameters](images/query-parameters.png)
+8. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template.
+    It will look similar to this:
+    ```csharp
+    @{
+        var selection = Umbraco.Content(Guid.Parse("c5ed4ea3-f9ea-4c37-a798-fe7892c98b95"))
+        .ChildrenOfType("articlesItem")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate);
     }
-</ul>
-```
+    <ul>
+        @foreach (var item in selection)
+        {
+            <li>
+                <a href="@item.Url">@item.Name</a>
+            </li>
+        }
+    </ul>
+    ```
+9. The above code will output a list of all the **_Article Items_** as links using the name. We will modify the template a little, to add a bit more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
-This code will output a list of all the **_Article Items_** as links using the name. We are going to modify this a little, to add a bit more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
+    ```csharp
+    <article class="special">
+            <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+            <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url">Read More..</a></div>
+        </article>
+    <hr/>
+    ```
+10. Click **Save**.
 
-```csharp
-<article class="special">
-        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url">Read More..</a></div>
-    </article>
-<hr/>
-```
+To update the **Articles Item** template, follow these steps:
 
-Now check this in the browser!
+1. Go to **Settings**.
+2. In the **Templating** section, expand the **Templates** folder. You should see a template titled **_Articles Item_**.
+3. In the **Master template** select **Master** and click **Save**.
+4. Copy the template content from the **_Simple Content Page_**  template and paste the content into **Articles Item** template.
+    :::warn
+    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
+    :::
+5. Replace the static text within the `<p>` tags with the Model.Value references. For example:  Add references to the **_articleTitle_** and **_articleContent_**.
+    ![Articles Item Template](images/articles-item-template.png)
+6. Click **Save**.
 
+Check your browser, you should now see something similar to the screen below.
 ![Finished Articles section](images/article-main-frontend.png)
 
 ---
 
-## Next - [Adding Language Variants](../Adding-Language-Variants.md)
-
-At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how to get started with Language Variants!
+## Next: [Adding Language Variants](../Adding-Language-Variants.md)
