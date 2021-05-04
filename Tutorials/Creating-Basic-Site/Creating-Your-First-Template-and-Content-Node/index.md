@@ -66,4 +66,4 @@ If you see a blank page, check if the template is entered and remember to save i
 
 ---
 
-Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [CSS and Images](../CSS-And-JavaScript)
+Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [CSS and Images](../CSS-And-JavaScript)
