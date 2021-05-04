@@ -39,7 +39,7 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
     if (!string.isNullOrEmpty(color))
     {
-        <div style="background-color: #@color"></div>
+        <div style="background-color: @color"></div>
     }
 }
 ```
@@ -61,7 +61,7 @@ See the example below to see how a value can be added or changed programmaticall
 
 	// Set the value of the property with alias 'color'. 
 	// The value set here, needs to be one of the prevalues on the Color Picker
-	content.SetValue("color", "38761d");
+	content.SetValue("color", "#6fa8dc");
 
 	// Save the change
 	contentService.Save(content);
@@ -82,6 +82,9 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 ```csharp
 @{
     // Set the value of the property with alias 'color'
-    content.SetValue(Home.GetModelPropertyType(x => x.Color).Alias, "38761d");
+    content.SetValue(Home.GetModelPropertyType(x => x.Color).Alias, "#6fa8dc");
+    
+    // Set the value of the property with alias 'theme'
+    content.SetValue(Home.GetModelPropertyType(x => x.Theme).Alias, "rgba(111, 168, 220, 0.7)");
 }
 ```
