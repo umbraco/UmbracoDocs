@@ -103,4 +103,4 @@ We’ve now created our first **Document Type**. Umbraco takes the data from an 
 
 Prev: [Getting Started](../Getting-Started) Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
 
-<div style="text-align: leftt"> Prev: [Getting Started](../Getting-Started) </div>   <div style="text-align: right"> Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node) </div>
+<div style="text-align: left"> Prev: [Getting Started](../Getting-Started) </div>   <div style="text-align: right"> Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node) </div>
