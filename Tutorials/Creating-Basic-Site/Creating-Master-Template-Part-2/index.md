@@ -9,12 +9,12 @@ We are now going to create a page where we put our contact details. For added fu
 
 Some potential solutions:
 
-* If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. This has the added benefit that editors can also create their own forms. Find more info and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/)
-* Build your own contact form using [Surface Controllers](../../../Reference/Templating/Mvc/forms) or the [Surface Controller chapter on UmbracoTV](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/)
+* If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
+* Build your own contact form using [Surface Controllers](../../../Reference/Templating/Mvc/forms/#creating-the-surfacecontroller-action) or the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
 
 ### Creating the Document Type and Template
 
-For now, let's create a content-only contact page where the user can provide a title and some rich text.
+Let's create a content-only contact page where we can provide a title and some rich text.
 
 1. Go to **Settings**.
 2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
@@ -103,4 +103,4 @@ To use the document type properties from the homepage, do the following:
 
 ---
 
-Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
+Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
