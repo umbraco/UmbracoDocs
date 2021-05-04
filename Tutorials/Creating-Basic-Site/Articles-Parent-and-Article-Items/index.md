@@ -127,4 +127,4 @@ Check your browser, you should now see something similar to the screen below.
 
 ---
 
-## Next: [Adding Language Variants](../Adding-Language-Variants.md)
+## Next: [Adding Language Variants](../Adding-Language-Variants)

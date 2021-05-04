@@ -76,4 +76,4 @@ To view the language variant on the browser, follow these steps:
 5. Click on the link to view the new Language Varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: http://localhost:xxxx/dk/
 
-## Next: [Conclusions and Where Next?](Conclusions-Where-Next)
+## Next: [Conclusions and Where Next?](../Conclusions-Where-Next)
