@@ -7,6 +7,7 @@ Our homepage is currently missing the CSS and image files. To include these file
 
 1. Navigate to the Umbraco installation directory and the template folder in File Explorer.
 2. Copy the `css` and `images` folders from the template folder to the Umbraco installation directory.
+   
     :::note
     For organizational purposes, place the CSS and images files in separate folders (`CSS` and `images`).
     :::
@@ -14,4 +15,4 @@ Our homepage is currently missing the CSS and image files. To include these file
 
 ---
 
-## Next - [Displaying the Document Type Properties](../Outputting-the-Document-Type-Properties)
+Prev: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Displaying the Document Type Properties](../Outputting-the-Document-Type-Properties)
