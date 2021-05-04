@@ -50,7 +50,9 @@ To update templates with the new master template, follow these steps:
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 
-If you are missing any content (header or footer), check that the Master template matches the following:
+If you are missing any content (header or footer), check that the templates matches the following:
+
+### Master Template
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -107,37 +109,9 @@ If you are missing any content (header or footer), check that the Master templat
 					<div class="col-md-4">
 						<ul class="footer-links">
 							<h5>@Model.Value("footerText")</h5>
-							<li><a href="#">Developer Documentation</a></li>
-							<li><a href="#">Umbraco.TV</a></li>
-							<li><a href="#">Umbraco HQ Youtube Channel</a></li>
-							<li><a href="#">Training Courses</a></li>
-							<li><a href="#">Umbraco Webinars</a></li>
 						</ul>
-					</div>
-					<div class="col-md-4">
-						<ul class="footer-links">
-							<h5>Meet Umbraco</h5>
-							<li><a href="#">About HQ</a></li>
-							<li><a href="#">Meet the people</a></li>
-							<li><a href="#">Teams</a></li>
-							<li><a href="#">Our Umbraco</a></li>
-							<li><a href="#">Forum</a></li>
-							<li><a href="#">Community Teams</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4 text-center">
-						<ul class="footer-links">
-							<h5>Follow Umbraco</h5>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Instagram</a></li>
-						</ul>
-					</div>
-					<div class="text-center">
-						<img src="/images/arm_with_u_logo.png" class="img-fluid" alt="Arm with Umbraco Logo">
 					</div>
 				</div>
-
 			</div>
 		</div>
 		
@@ -149,7 +123,7 @@ If you are missing any content (header or footer), check that the Master templat
 </html>
 ```
 
-Homepage template:
+### Homepage Template
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
@@ -168,7 +142,7 @@ Homepage template:
 			</div>
 		</div>
 
-		<!-- This is where we're going to render our content -->
+		<!-- This is where we're going to render our content --> 
 		
 		<div class="container">
 
@@ -209,7 +183,7 @@ Homepage template:
 						Need to build a site with multiple 3rd party extensions and customized add-ons? No problem. Need to build a simple site with a straightforward contact form? No problem.</p>
 						<p>Whatever type or scale of your project, Umbraco will be able to handle it - and the cherry on top; with Umbraco’s well-known editor friendly UI, 
 							no matter how complex a site you’re building, you know that your editors will still find it a breeze to edit. Oh, and the cherry on top of the cherry - 
-							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p>
+							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p> 
 					</div>
 						<div class="col-md-4">
 						<img src="/images/community.png" class="img-fluid" alt="Community illustration">
@@ -275,9 +249,8 @@ Homepage template:
 	
 			</div>
 		</div>
-
 ```
 
 ---
 
-## Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
+Prev: [Displaying the Document Type Properties](../Displaying-the-Document-Type-Properties) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
