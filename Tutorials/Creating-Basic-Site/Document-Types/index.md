@@ -19,7 +19,6 @@ To create a document type:
 
 1. Go to **Settings**.
 2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
-
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Click **Document Type with Template**.
 
@@ -29,7 +28,6 @@ To create a document type:
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
 5. Enter the **Description**. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
 6. Click **Save**. Our new document type is now visible as a new item under **Document types**.
-
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
 ## Customizing the Document Type
@@ -39,7 +37,6 @@ To create a document type:
 With the help of icons you can identify different document types in the **Content Tree**. To add an icon:
 
 1. Click ![Add Icon](images/Document-icon.png =50x50) next to the document name. The **Select Icon** pane appears on the right-side of the website.
-
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.  
@@ -49,7 +46,6 @@ With the help of icons you can identify different document types in the **Conten
 To create a document type at the root of the **Content Tree**:
 
 1. Go to the **Permissions** tab.
-
     ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
 2. Toggle the **Allow as root** button.  
 
@@ -64,14 +60,11 @@ To add properties to your document type, follow these steps:
 1. Go to the **Design** tab.
 2. Click **Add Group** and enter a name for the group. For this tutorial, we will call it _Content_.
     ![Document Types - Adding Our First Content Group](images/figure-10-document-types-adding-groups-v8.png)
-
 3. Click **Add property**. The **Property Settings** pane opens.
 4. Enter a **Name**. For example: _Page Title_.
 5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd)_".
-
     ![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
 6. Click **Add Editor** and select the data type of your choice. We'll add _text_ in the search box and select the **Textstring** data type.
-
     ![Selecting Textstring data type](images/figure-11a-selecting-textstring-data-type-v8.png)
 7. Click **Submit**.
 
@@ -97,9 +90,7 @@ To add properties to your document type, follow these steps:
     | Data Type   | Textstring                       |
 
 10. Your document type should now look like this:
-
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
-
 11. Click **Save**.
 
 We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the **_Document Type_** (also called as **_Content Node_**) and merges it with a **_Template_** – we’ll create our template next.
