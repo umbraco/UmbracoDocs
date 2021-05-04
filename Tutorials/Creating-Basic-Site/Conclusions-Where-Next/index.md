@@ -13,5 +13,7 @@ This is not the limit of Umbraco - you've barely scratched the surface in this g
 *    For Online Documentation, see [https://our.umbraco.com/documentation](https://our.umbraco.com/documentation)
 *    For Help and Guidance on anything this guide doesn't cover, reach out to us at [https://our.umbraco.com/forum ](https://our.umbraco.com/forum)
 
+## Happy Umbraco-ing!
+
 ---
-# Happy Umbraco-ing!
+Prev: [Adding Language Variants](../Adding-Language-Variants)
