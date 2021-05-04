@@ -62,8 +62,9 @@ Refresh your webpage in your browser http://localhost:xxxx. The default Umbraco 
 :::tip
 If you see a blank page, check if the template is entered and remember to save it.
 :::
+
 ![An Unstyled Homepage](images/figure-16-unstyled-homepage-v8.png)
 
 ---
 
-Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [CSS and Images](../CSS-And-JavaScript)
+Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [CSS and Images](../CSS-And-JavaScript)
