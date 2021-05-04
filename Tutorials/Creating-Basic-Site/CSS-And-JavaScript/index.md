@@ -15,4 +15,4 @@ Our homepage is currently missing the CSS and image files. To include these file
 
 ---
 
-Prev: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Displaying the Document Type Properties](../Outputting-the-Document-Type-Properties)
+Prev: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Displaying the Document Type Properties](../Outputting-the-Document-Type-Properties)
