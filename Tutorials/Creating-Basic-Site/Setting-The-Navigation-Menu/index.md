@@ -5,10 +5,10 @@ versionFrom: 8.0.0
 
 You can fix the navigation menu in two ways:
 
-1. Dynamically - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears.
-2. Hardcode it.
+1. [Dynamically](#dynamic-navigation) - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears.
+2. [Hardcode](#hardcoded-navigation) it.
 
-## Dynamic navigation
+## Dynamic Navigation
 
 To create dynamic navigation links from published content nodes, use the following code:
 
@@ -25,7 +25,7 @@ To create dynamic navigation links from published content nodes, use the followi
         </nav>
 ```
 
-## Hardcoded navigation
+## Hardcoded Navigation
 
 To add a basic hardcoded navigation, follow these steps:
 
