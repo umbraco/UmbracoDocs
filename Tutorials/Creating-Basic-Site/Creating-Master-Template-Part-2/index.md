@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 ---
-# Creating Pages
+# Creating Pages and Using the Master Template - Part 2
 
 ## Creating a Contact Us Page
 
@@ -35,26 +35,25 @@ For now, let's create a content-only contact page where the user can provide a t
 11. Click **Save**.  
 12. Add the following HTML to the template and click **Save**.
 
-```html
-<!-- Jumbotron, w title -->
-	<div class="jumbotron text-center jumbotron-fluid">
-			<div class="container">
-				<h1 class="display-1">Umbraco Support</h1>
-			</div>
-		</div>
+    ```html
+    <!-- Jumbotron, w title -->
+        <div class="jumbotron text-center jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-1">Umbraco Support</h1>
+                </div>
+            </div>
 
-<!-- Main -->
-<section id="main" class="wrapper">
-    <div class="container">
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="container">
 
-        <p>Are you a developer?</p>
-        <p>Are you a marketer?</p>
-        <p>Are you working at an agency?</p>
-    	<p>Let Umbraco unleash your talent</p>
-    </div>
-</section>        
-  
-```
+            <p>Are you a developer?</p>
+            <p>Are you a marketer?</p>
+            <p>Are you working at an agency?</p>
+            <p>Let Umbraco unleash your talent</p>
+        </div>
+    </section>        
+    ```
 
 ### Updating the Document Type Permissions
 
@@ -104,4 +103,4 @@ To use the document type properties from the homepage, do the following:
 
 ---
 
-## Next: [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
+Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
