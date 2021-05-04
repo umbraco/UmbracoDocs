@@ -32,4 +32,4 @@ Now, reload your homepage to view the content. You can go back and add additiona
 
 ---
 
-## Next - [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
+Prev: [CSS and Images](../CSS-And-Images) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
