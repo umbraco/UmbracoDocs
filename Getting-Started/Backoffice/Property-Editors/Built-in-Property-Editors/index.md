@@ -62,7 +62,7 @@ A single line textbox only allowing valid email addresses.
 
 ## [Eye Dropper Color Picker](Eye-Dropper-Color-Picker/index.md)
 
-`Alias: Umbraco.EyeDropperColorPicker`
+`Alias: Umbraco.ColorPicker.EyeDropper`
 
 A full HEX/RGBA color picker, which support alpha transparency.
 
