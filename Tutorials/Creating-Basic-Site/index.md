@@ -10,11 +10,11 @@ _This tutorial was last tested on **Umbraco 8.12**_
 
 ## Introduction
 
-This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco site and wire up the sections that need content managing in Umbraco.  Umbraco is a powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
+This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco site and wire up the sections that need content managing in Umbraco.  
 
 We will avoid using any of the starter kits in this tutorial. Though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco's features like Document Types and Templates and how these work together to build pages.
 
-Each section in this tutorial builds on the last - it's recommended that you work through the subsections below in order.
+It is recommended that you work through the subsections in the following order.
 
 ## [Getting Started](Getting-Started)
 
@@ -28,11 +28,11 @@ How to create Document Types and what they do.
 
 How to create your first template and create a content node.
 
-## [CSS & JavaScript](CSS-And-JavaScript)
+## [CSS & Images](CSS-And-Images)
 
 Adding the CSS and JavaScript for your site into Umbraco.
 
-## [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties)
+## [Displaying the Document Type Properties](Displaying-the-Document-Type-Properties)
 
 How to wire the Document Type Properties (Umbraco Data Fields) into the templates to output the editor's data in the right place.
 
@@ -44,7 +44,7 @@ How to create a Master Template and use this to create more pages whilst minimis
 
 Part 2 - using the Master template to create new page types.
 
-## [Master Template - The Navigation Menu](Master-Template-The-Navigation-Menu)
+## [Setting The Navigation Menu](Setting-The-Navigation-Menu)
 
 A solution for the template in the menu.
 
@@ -52,7 +52,7 @@ A solution for the template in the menu.
 
 How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing a flexible/infinite number of articles - useful for Blogs or News pages).
 
-## [Adding Language Variants](Adding-Language-Variants.md)
+## [Adding Language Variants](Adding-Language-Variants)
 
 At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how to get started with Language Variants!
 
