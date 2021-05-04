@@ -5,34 +5,12 @@ versionFrom: 8.0.0
 
 You can fix the navigation menu in two ways:
 
-1. Umbraco dynamically creates a navigation menu from the pages it has in the Content Tree, so that when an editor creates a page it automatically appears.
+1. Dynamically - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears.
 2. Hardcode it.
-
-## Basic navigation
-
-As you start building a site you might want to hard code the navigation. 
-
-To add a basic hardcoded navigation, follow these steps:
-
-1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Master** template.
-3. Edit the `<li>` items under the `<nav>` tags to look like:
-    ```html
-    <nav id="nav">
-        <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
-            <li><a href="/articles">Articles</a></li>
-        </ul>
-    </nav>
-    ```
-4. Click **Save**.
-
-Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
 
 ## Dynamic navigation
 
-If you want to create dynamic navigation links from published content nodes, use the following code:
+To create dynamic navigation links from published content nodes, use the following code:
 
 ```csharp
 @using Umbraco.Web;
@@ -47,6 +25,27 @@ If you want to create dynamic navigation links from published content nodes, use
         </nav>
 ```
 
+## Hardcoded navigation
+
+To add a basic hardcoded navigation, follow these steps:
+
+1. Go to **Settings**.
+2. In the **Templating** section, select **Templates** and open the **Master** template.
+3. Edit the `<li>` items under the `<nav>` tags to look like:
+    
+    ```html
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="/articles">Articles</a></li>
+        </ul>
+    </nav>
+    ```
+4. Click **Save**.
+
+Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
+
 ---
 
-## Next: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)
+Prev: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)
