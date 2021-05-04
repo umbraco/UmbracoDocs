@@ -57,6 +57,7 @@ To add a content node:
 3. Enter the name for the article. We are going to call it _Articles_.
 4. Enter the **Article Title**, **Article Content**, and click **Save**.
    When you click on Save, you will notice a list view is created. The child nodes are placed in a list making it easier to view them. You can create new nodes from this section.
+   
    :::tip
     If you do not see the list view, try refreshing the page.
    :::
@@ -71,6 +72,7 @@ To update the **Articles Main** template, follow these steps:
 2. In the **Templating** section, expand the **Templates** folder. You should see a template titled **_Articles Main_**.
 3. In the **Master template** select **Master** and click **Save**.
 4. Copy the template content from the **_Simple Content Page_**  template and paste the content into **Articles Main**.
+    
     :::warn
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
@@ -115,6 +117,7 @@ To update the **Articles Item** template, follow these steps:
 2. In the **Templating** section, expand the **Templates** folder. You should see a template titled **_Articles Item_**.
 3. In the **Master template** select **Master** and click **Save**.
 4. Copy the template content from the **_Simple Content Page_**  template and paste the content into **Articles Item** template.
+    
     :::warn
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
@@ -127,4 +130,4 @@ Check your browser, you should now see something similar to the screen below.
 
 ---
 
-## Next: [Adding Language Variants](../Adding-Language-Variants)
+Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Adding Language Variants](../Adding-Language-Variants)
