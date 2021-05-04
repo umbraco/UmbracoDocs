@@ -19,14 +19,17 @@ To create a document type:
 
 1. Go to **Settings**.
 2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
+
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Click **Document Type with Template**.
+
     :::tip
     Using folders can help you organise your **Document Types**.
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
 5. Enter the **Description**. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
 6. Click **Save**. Our new document type is now visible as a new item under **Document types**.
+
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
 ## Customizing the Document Type
@@ -35,7 +38,8 @@ To create a document type:
 
 With the help of icons you can identify different document types in the **Content Tree**. To add an icon:
 
-1. Click ![Add Icon](images/Document-icon.png) next to the document name. The **Select Icon** pane appears on the right-side of the website.
+1. Click ![Add Icon](images/Document-icon.png =50x50) next to the document name. The **Select Icon** pane appears on the right-side of the website.
+
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.  
@@ -45,8 +49,10 @@ With the help of icons you can identify different document types in the **Conten
 To create a document type at the root of the **Content Tree**:
 
 1. Go to the **Permissions** tab.
+
     ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
 2. Toggle the **Allow as root** button.  
+
     :::note
     If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
     :::
@@ -58,41 +64,40 @@ To add properties to your document type, follow these steps:
 1. Go to the **Design** tab.
 2. Click **Add Group** and enter a name for the group. For this tutorial, we will call it _Content_.
     ![Document Types - Adding Our First Content Group](images/figure-10-document-types-adding-groups-v8.png)
+
 3. Click **Add property**. The **Property Settings** pane opens.
 4. Enter a **Name**. For example: _Page Title_.
 5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd)_".
+
     ![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
 6. Click **Add Editor** and select the data type of your choice. We'll add _text_ in the search box and select the **Textstring** data type.
+
     ![Selecting Textstring data type](images/figure-11a-selecting-textstring-data-type-v8.png)
 7. Click **Submit**.
+
     :::tip
     Remember to come back and explore the list of **_Data Types_** later.
     :::
 8. Repeat Steps 3 to 7 using the specification below:
 
-    <table border="0">
-    <col width="130">
-    <col width="400">
-    <tr><th>Name</th><th>Body Text</th></tr>
-    <tr><td>Group</td><td>Content</td></tr>
-    <tr><td>Alias</td><td>bodyText</td></tr>
-    <tr><td>Description</td><td>The main content of the page.</td></tr>
-    <tr><td>Data Type</td><td>Richtext Editor </td></tr>
-    </table>
+    | Name        | Body Text                     |
+    |-------------|-------------------------------|
+    | Group       | Content                       |
+    | Alias       | bodyText                      |
+    | Description | The main content of the page. |
+    | Data Type   | Richtext Editor               |
 
 9. Click **Add Group** to create a new group called Footer. Repeat Steps 3 to 7 using the specification below:
 
-    <table border="0">
-    <col width="130">
-    <col width="400">
-    <tr><th>Name</th><th>Footer Text</th></tr>
-    <tr><td>Group</td><td>Footer</td></tr>
-    <tr><td>Alias</td><td>footerText</td></tr>
-    <tr><td>Description</td><td>Copyright notice for the footer.</td></tr>
-    <tr><td>Data Type</td><td>Textstring</td></tr>
-    </table>
+    | Name        | Footer Text                      |
+    |-------------|----------------------------------|
+    | Group       | Footer                           |
+    | Alias       | footerText                       |
+    | Description | Copyright notice for the footer. |
+    | Data Type   | Textstring                       |
 
 10. Your document type should now look like this:
+
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
 
 11. Click **Save**.
@@ -101,4 +106,4 @@ We’ve now created our first **Document Type**. Umbraco takes the data from an 
 
 ---
 
-Prev: [Getting Started](../Getting-Started) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
+Prev: [Getting Started](../Getting-Started) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
