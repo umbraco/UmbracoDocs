@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 ---
-# Master Template - The Navigation Menu
+# Setting the Navigation Menu
 
 You can fix the navigation menu in two ways:
 
