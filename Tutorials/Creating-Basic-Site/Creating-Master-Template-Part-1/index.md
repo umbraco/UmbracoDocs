@@ -142,7 +142,7 @@ If you are missing any content (header or footer), check that the templates matc
 			</div>
 		</div>
 
-		<!-- This is where we're going to render our content --> 
+		<!-- This is where we're going to render our content -->
 		
 		<div class="container">
 
@@ -183,7 +183,7 @@ If you are missing any content (header or footer), check that the templates matc
 						Need to build a site with multiple 3rd party extensions and customized add-ons? No problem. Need to build a simple site with a straightforward contact form? No problem.</p>
 						<p>Whatever type or scale of your project, Umbraco will be able to handle it - and the cherry on top; with Umbraco’s well-known editor friendly UI, 
 							no matter how complex a site you’re building, you know that your editors will still find it a breeze to edit. Oh, and the cherry on top of the cherry - 
-							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p> 
+							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p>
 					</div>
 						<div class="col-md-4">
 						<img src="/images/community.png" class="img-fluid" alt="Community illustration">
@@ -253,4 +253,4 @@ If you are missing any content (header or footer), check that the templates matc
 
 ---
 
-Prev: [Displaying the Document Type Properties](../Displaying-the-Document-Type-Properties) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
+Prev: [Displaying the Document Type Properties](../Displaying-the-Document-Type-Properties) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)
