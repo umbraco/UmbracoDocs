@@ -59,8 +59,7 @@ See the example below to see how a value can be added or changed programmaticall
 	// Get the page using the GUID you've defined
 	var content = contentService.GetById(guid); // ID of your page
 
-	// Set the value of the property with alias 'color'. 
-	// The value set here, needs to be one of the prevalues on the Color Picker
+	// Set the value of the property with alias 'color'.
 	content.SetValue("color", "#6fa8dc");
 
 	// Save the change
