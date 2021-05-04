@@ -48,4 +48,4 @@ Let's test the menu. You'll find that clicking on the Articles link throws an Um
 
 ---
 
-Prev: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)
+Prev: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)
