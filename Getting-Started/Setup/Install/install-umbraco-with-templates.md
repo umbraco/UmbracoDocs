@@ -35,41 +35,85 @@ From that command's output, you will get a better understanding of what are the 
 Usage: new [options]
 
 Options:
-  -h, --help          Displays help for this command.
-  -l, --list          Lists templates containing the specified name. If no name is specified, lists all templates.
-  -n, --name          The name for the output being created. If no name is specified, the name of the current directory is used.
-  -o, --output        Location to place the generated output.
-  -i, --install       Installs a source or a template pack.
-  -u, --uninstall     Uninstalls a source or a template pack.
-  --interactive       Allows the internal dotnet restore command to stop and wait for user input or action (for example to complete authentication).
-  --nuget-source      Specifies a NuGet source to use during install.
-  --type              Filters templates based on available types. Predefined values are "project", "item" or "other".
-  --dry-run           Displays a summary of what would happen if the given command line were run if it would result in a template creation.
-  --force             Forces content to be generated even if it would change existing files.
-  -lang, --language   Filters templates based on language and specifies the language of the template to create.
-  --update-check      Check the currently installed template packs for updates.
-  --update-apply      Check the currently installed template packs for update, and install the updates.
+  -h, --help                 Displays help for this command.
+  -l, --list                 Lists templates containing the specified template name. If no name is specified, lists all templates.
+  -n, --name                 The name for the output being created. If no name is specified, the name of the output directory is used.
+  -o, --output               Location to place the generated output.
+  -i, --install              Installs a source or a template pack.
+  -u, --uninstall            Uninstalls a source or a template pack.
+  --interactive              Allows the internal dotnet restore command to stop and wait for user input or action (for example to complete authentication).
+  --nuget-source             Specifies a NuGet source to use during install.
+  --type                     Filters templates based on available types. Predefined values are "project" and "item".
+  --dry-run                  Displays a summary of what would happen if the given command line were run if it would result in a template creation.
+  --force                    Forces content to be generated even if it would change existing files.
+  -lang, --language          Filters templates based on language and specifies the language of the template to create.
+  --update-check             Check the currently installed template packs for updates.
+  --update-apply             Check the currently installed template packs for update, and install the updates.
+  --search                   Searches for the templates on NuGet.org.
+  --author <AUTHOR>          Filters the templates based on the author. Applies to --search and --list.
+  --package <PACKAGE>        Filters the templates based on NuGet package ID. Applies to --search.
+  --columns <COLUMNS_LIST>   Comma separated list of columns to display in --list and --search output.
+                             The supported columns are: language, tags, author, type.
+  --columns-all              Display all columns in --list and --search output.
+  --tag <TAG>                Filters the templates based on the tag. Applies to --search and --list.
 
 
-Umbraco Solution (C#)
+Umbraco Project (C#)
 Author: Umbraco HQ
-Description: An empty Umbraco Solution ready to get started
+Description: An empty Umbraco Project ready to get started
 Options:
+
   -v|--version              The version of Umbraco to load using NuGet
+
                             string - Optional
-                            Default: 9.0.0-beta001.20210407.7
+
+                            Default: 9.0.0-beta002
+
 
   -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
+
                             text - Optional
 
+
   -ce|--SqlCe               Adds the required dependencies to use SqlCE (Windows only) (Default: false)
+
                             bool - Optional
+
                             Default: false / (*) true
 
-  -F|--Framework            The target framework for the project.
+
+  -F|--Framework            The target framework for the project
+
                                 net5.0    - Target net5.0
+
                                 net6.0    - Target net6.0
+
                             Default: net5.0
+
+
+  --no-restore              If specified, skips the automatic restore of the project on create
+
+                            bool - Optional
+
+                            Default: false / (*) true
+
+
+  --friendly-name           The friendly name of the user for Umbraco login when using Unattended install (Without installer wizard UI)
+                            text - Optional
+
+
+  --email                   Email to use for Umbraco login when using Unattended install (Without installer wizard UI)
+
+                            text - Optional
+
+
+  --password                Password to use for Umbraco login when using Unattended install (Without installer wizard UI)
+                            text - Optional
+
+
+  --connection-string       Database connection string when using Unattended install (Without installer wizard UI)
+
+                            text - Optional
 
 
 * Indicates the value used if the switch is provided without a value.
