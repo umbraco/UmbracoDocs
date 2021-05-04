@@ -13,11 +13,11 @@ The Color picker allows you to set some predetermined colors that the editor can
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Color-Picker-DataType-v8.png)
+![Color Picker Data Type Definition](images/Color-Picker-DataType-v8.png)
 
 ## Content Example
 
-![Content Picker Content](images/Color-Picker-Content-v8.png)
+![Color Picker Content](images/Color-Picker-Content-v8.png)
 
 ## Example with Modelsbuilder
 
