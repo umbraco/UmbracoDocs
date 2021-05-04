@@ -4,63 +4,76 @@ versionFrom: 8.0.0
 
 # Adding Language Variants
 
-Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this we will make a Danish version of the `Contact Us` page. At this point your page should look like this:
-
-![Current version of the contact us page](images/current-page.png)
+Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this we will make a Danish version of the `Contact Us` page.
 
 ## Adding a new language
 
-So the first thing we should do is go to the **_Settings > Language_** and then click the `Add Language` button at the top. In the dropdown you can select a long list of languages, in this tutorial we will pick Danish.
+To add a new language, follow these steps:
 
-![Adding the Danish language](images/adding-danish-language.png)
-
-As you can see there are several options, to add a fallback language, make it mandatory and so on. We will leave it default for now but if you want to ensure all content has a language varied version then make them mandatory.
+1. Go to the **Settings** tab.
+2. In the **Settings** pane on the left-side of the website, go to **Languages**. The **Languages** window opens in the editor.
+3. Click **Add Language**. The **Add Language** window opens in the editor.
+4. Select a **Language** from the dropdown list. In this tutorial we will pick Danish.
+    ![Adding the Danish language](images/adding-danish-language.png)
+5. In Settings:
+    1.  If you want to set the new language as the defualt language for your site, toggle **Default Language**.
+    2.  If you want to set the new language as a mandatory language for your site, toggle  **Mandatory Language**.
+6. Select a **Fallback Language** from the drop-down list.
+7. Click **Save**.
 
 ## Enabling Language Variants on Document Types and Properties
 
-<!-- vale valeStyle.Hyperbolic = NO -->
+To enable language variants on document types, follow these steps:
 
-Now head on over to **_Document Types > Simple Content Page > Permissions_** and check the `Allow vary by culture` checkbox, now click save and go to the **_Design_** tab.
+1. Go to the **Settings** tab.
+2. From the **Document Types** folder, select **Home Page**.
+3. Go to the **Permissions** tab and toggle **Allow vary by culture**
+4. Click **Save**.
+5. Go to the **Design** tab.
+6. Click on the gear icon ⚙ of the **Page Title** and toggle **Allow vary by culture**.
+7. Click **Submit**.
+    ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
+8. For now we will leave the **Body Text** unchanged. Click **Save**.
 
-<!-- vale valeStyle.Hyperbolic = YES -->
+To enable language variants on properties, follow these steps:
 
-We will now edit the settings of our property editors, so click on the little gear icon ⚙ for the **_Page Title_** editor and again check the `Allow vary by culture` checkbox.
+1. Go to the **Content** tab.
+2. Right-click on the **...** dots next to the **Home Page** content node and select **Culture and Hostnames...**.
+3. In the **Culture and Hostnames** pane, let's add a domain for each hostname, like it's done here:
+    ![Culture and Hostnames](images/culture-and-hostnames.png)
+4. Click **Save**.
 
-![Allow property editor Language Variants](images/allow-varying-property-editor.png)
+## Adding Language Variants to the Content
 
-For now we will leave the **_Body Text_** property editor unchanged, so click save in the bottom right corner and head on over to **_Content section_**.
-
-You will now find a language dropdown above your content tree - if it's not there, you might need to refresh the page:
-
+You will find a language dropdown above your content tree. If it's not there, you might need to refresh the page:
 ![Language of Content Tree](images/language-content-tree.png)
 
 In the dropdown, you will find all the languages that you have installed on your site, and you can switch between them, to update the content variations for each language.
 
-Now, before we go ahead and start creating the Danish content variation, we need to add hostnames to each language on the *root node* (in our case, the "Home Page").
+To add language variants to the content, follow these steps:
 
-Right-click the **Home Page** content node, and choose **Culture and Hostnames...**, and let's add a domain for each hostname, like it's done here:
+1. Go to the **Home Page** node and you will find a language dropdown next to the title at the top:
+    ![Language Variant dropdown](images/language-dropdown.png)
+2. Click the dropdown and hover over the new language. You will see an **Open in Splitview** option will appear.
+    ![Open Language in Splitview](images/open-in-splitview.png)
+3. Click **Open in Splitview**. In this splitview, we can see the content node with each language side by side.
+    You may notice that the bodytext is greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
+    ![Splitview editing](images/splitview-editing.png)
+4. Enter the **Name** for your content node and the **Page Title** in the new language.
+5. Click **Save and Publish** at the bottom of the page. The **Ready to Publish** window opens giving you the option to publish one or more languages.
+    ![Publishing Variant content](images/publishing-variant-content.png)
+6. You can select either one or multiple languages and click **Publish**.
 
-![Culture and Hostnames](images/culture-and-hostnames.png)
+## Viewing the Language Variant on the Browser
 
-Click **Save** and we are ready to start working on the Danish content variations.
+To view the language variant on the browser, follow these steps:
 
-Go to the **Home Page** node and you will find a language dropdown next to the title at the top:
+1. Go to the **Content** tab.
+2. Select your new language from the language dropdown above your content tree.
+3. Select the **Home Page** node and go to the **Info** tab.
+4. You will notice the links with the new language domain added to it. If it's not there, you might need to refresh the page.
+     ![Viewing the Language Variant Link](images/viewing-langvariant-browser.png)
+5. Click on the link to view the new Language Varied node in the browser.
+6. Alternatively, you can add the domain name to your localhost in the browser. For example: http://localhost:xxxx/dk/
 
-![Language Variant dropdown](images/language-dropdown.png)
-
-When you click the dropdown you will get a list of all the languages you have enabled - much like we saw in the content tree. When you mouseover a language an `Open in Splitview` box will appear, click this to open it.
-
-![Open Language in Splitview](images/open-in-splitview.png)
-
-In this splitview we will be able to see the content node with each language side by side. You may notice that the bodytext is greyed out - this is because we haven't checked the `Allow vary by culture` checkbox for that property editor.
-
-![Splitview editing](images/splitview-editing.png)
-
-You can now click publish at the bottom of the page and it will give you the option to publish one or more languages.
-
-![Publishing Variant content](images/publishing-variant-content.png)
-
-Now if you head on over to your contact page you will see it looks the same. If you then access /kontakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in.
-
-## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
-By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
+## Next: [Conclusions and Where Next?](Conclusions-Where-Next)

@@ -24,7 +24,7 @@ To set the document type properties:
     ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
 6. Repeat the same process for the content in the `<p></p>` tags on the next line using the field **bodyText**.
     ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
-7. Finally, we will replace the content in the footer between the `<li></li>` tags.
+7. Finally, we will remove the static text and replace the content in the footer between the `<li></li>` tags.
     ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
 8. Click **Save**.
 
