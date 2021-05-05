@@ -12,7 +12,7 @@ This page contains a list of all the built-in Umbraco property editors and a sho
 
 Use Element Types to create a set of Blocks that your editors can use to create content.
 
-## [Checkbox (True/False)](True-False)
+## [Toggle (True/False)](True-False)
 
 `Alias: Umbraco.TrueFalse`
 
