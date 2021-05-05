@@ -1,34 +1,32 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.13.0
 ---
 
-# Color Picker
+# Eye Dropper Color Picker
 
-`Alias: Umbraco.ColorPicker`
+`Alias: Umbraco.ColorPicker.EyeDropper`
 
-`Returns: String (Hexadecimal)` <br/>
-`Returns: Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor (When using labels)`
+`Returns: object` <br/>
 
-The Color picker allows you to set some predetermined colors that the editor can choose between.
+The Eye Dropper Color picker allows you to choose a color from the full color spectrum using HEX and RGBA.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](images/Color-Picker-DataType-v8.png)
+![Eye Dropper Color Picker Data Type Definition](images/Eye-Dropper-Color-Picker-DataType-v8.png)
 
 ## Content Example
 
-![Color Picker Content](images/Color-Picker-Content-v8.png)
+![Eye Dropper Color Picker Content](images/Eye-Dropper-Color-Picker-Content-v8.png)
 
 ## Example with Modelsbuilder
 
 ```csharp
 @{
-    var hexColor = Model.Color;
-    String colorLabel = Model.Color.Label;
+    var color = Model.Color?.ToString();
 
-    if (hexColor != null)
+    if (!string.isNullOrEmpty(color))
     {
-        <div style="background-color: #@hexColor">@colorLabel</div>
+        <div style="background-color: @color"></div>
     }
 }
 ```
@@ -36,14 +34,12 @@ The Color picker allows you to set some predetermined colors that the editor can
 ## Example without Modelsbuilder
 
 ```csharp
-@using Umbraco.Core.PropertyEditors.ValueConverters
 @{
-    var hexColor = Model.Value("Color");
-    var colorLabel = Model.Value<ColorPickerValueConverter.PickedColor>("Color").Label;
+    var color = Model.Value<string>("Color");
 
-    if (hexColor != null)
+    if (!string.isNullOrEmpty(color))
     {
-        <div style="background-color: #@hexColor">@colorLabel</div>
+        <div style="background-color: @color"></div>
     }
 }
 ```
@@ -63,9 +59,8 @@ See the example below to see how a value can be added or changed programmaticall
 	// Get the page using the GUID you've defined
 	var content = contentService.GetById(guid); // ID of your page
 
-	// Set the value of the property with alias 'color'. 
-	// The value set here, needs to be one of the prevalues on the Color Picker
-	content.SetValue("color", "38761d");
+	// Set the value of the property with alias 'color'.
+	content.SetValue("color", "#6fa8dc");
 
 	// Save the change
 	contentService.Save(content);
@@ -86,6 +81,9 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 ```csharp
 @{
     // Set the value of the property with alias 'color'
-    content.SetValue(Home.GetModelPropertyType(x => x.Color).Alias, "38761d");
+    content.SetValue(Home.GetModelPropertyType(x => x.Color).Alias, "#6fa8dc");
+    
+    // Set the value of the property with alias 'theme'
+    content.SetValue(Home.GetModelPropertyType(x => x.Theme).Alias, "rgba(111, 168, 220, 0.7)");
 }
 ```
