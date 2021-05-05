@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "A tutorial on how to add a new version of an existing article."
+meta.Description: "Through a very detailed tutorial learn all the steps involved with creating a new version of an article in the Umbraco Docs and how to target it for a specific version of Umbraco."
 ---
 
 # How to add a new version of an article
@@ -62,8 +64,9 @@ Check out the [File Naming Conventions](../File-Naming-Conventions/#target-a-spe
 ### Target the current major version
 
 1. Create a copy of the existing article, e.g. `index.md`.
-2. Rename the *old* article to target the version it was written for, e.g. `index-vX.md` - `X` being the *old* version, e.g. 7.
-3. Rename the new article `index.md`.
+2. Place the new file in the same folder as the aricle you copied.
+3. Rename the *old* article to target the version it was written for, e.g. `index-vX.md` - `X` being the *old* version, e.g. 7.
+4. Rename the new article `index.md`.
 
 You will now have (at least) two versions of the same article. One named `index-v7` which is targetting Umbraco 7 and one named `index` which will target the current major version.
 
@@ -74,7 +77,8 @@ If you're unsure which Umbraco version to target the *old* article for, check th
 ### Target an upcoming version
 
 1. Create a copy of the existing article, e.g. `index.md`.
-2. Rename the new article based on the Umbraco version that you want to target, e.g. `index-vX.md` - `X` being the next major version, e.g. 9.
+2. Place the new file in the same folder as the aricle you copied.
+3. Rename the new article based on the Umbraco version that you want to target, e.g. `index-vX.md` - `X` being the next major version, e.g. 9.
 
 You will now have (at least) two versions of the same article. One named `index` which is targetting the current major version, and one named `index-vX` which is targetting the upcoming Umbraco X version.
 
@@ -106,11 +110,11 @@ See the [Umbraco 9 Metadata requirements](#metadata-requirements) section for mo
 
 With the metadata in place, it is time to start verifying and updating the content in the article.
 
-When updating the content in the article make sure to
+Here's a list of the most common tasks involved with updating an article.
 
-* Update any text that is not correct for the new version,
-* Verify and update all code samples and code snippets,
-* Test and verify that any links in the article is targetting the same version, and
+* Update any text that is not correct for the new version.
+* Verify and update all code samples and code snippets.
+* Test and verify that any links in the article is targetting the same version.
 * Update any images and screenshots that are/will be outdated.
 
 :::tip
