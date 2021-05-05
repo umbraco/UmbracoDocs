@@ -37,7 +37,7 @@ We also highly recommend that you're familiar with Git and the Markdown syntax.
 
 ## Forking and cloning the documentation repository
 
-The very first step to get the documentation files down to your local machine, so you can start working with it. This is done by forking the UmbracoDocs repository and cloning it all down to your local machine.
+The very first step is to get the documentation files down to your local machine, so you can start working with it. This is done by forking the UmbracoDocs repository and cloning it all down to your local machine.
 
 1. Follow our guide on [how to fork the UmbracoDocs repository](../Pull-Requests/#options-2-creating-a-pr-through-a-fork).
 2. Clone your fork to your local machine or open using GitHub Desktop.
