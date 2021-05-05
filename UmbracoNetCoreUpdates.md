@@ -107,7 +107,7 @@ To get started, follow the steps outlined below.
     dotnet new -i Umbraco.Templates::9.0.0-beta001
     ```
 
-### Steps to update the template from earlier alpha versions
+### [Optional] Update the template from earlier alpha versions
 
 If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date
 
