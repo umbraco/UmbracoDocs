@@ -17,7 +17,7 @@ The easiest way to open the firewall for your IP address is to click the "Add No
 
 If you need to open for specific IP addresses, click the "Add New IP Address" button.
 
-When adding a new IP, it is now required to give it a name. This gives an overview of who the different IPs that have been added belongs to.
+When adding a new IP, it is required to give it a name. This gives an overview of who the different IPs that have been added belong to.
 
 ![Name of IPs](images/IPName.png)
 
