@@ -39,7 +39,7 @@ Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsof
 
 Go to **File > New > Project** and search for `Umbraco` in the *Search for templates* field.
 
-![](images/VS/create-project.png)
+![Create a new project](images/VS/create-project.png)
 
 Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by clicking *Next*.
 
@@ -47,7 +47,7 @@ Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by cl
 
 In this step, you will be able to give your project and solution a name.
 
-![](images/VS/configure-project.png)
+![Configure the new project](images/VS/configure-project.png)
 
 :::note  
 Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.  
@@ -57,11 +57,11 @@ Refrain from naming your solution `Umbraco`, as this will cause a namespace conf
 
 On the next step, you are able to specify some additional parameters like *Target framework*. The rest are optional.
 
-![](images/VS/additional-info.png)
+![Add additional information](images/VS/additional-info.png)
 
 You can then click the *Create* button and your Umbraco Project will be ready for you.
 
-![](images/VS/ready-solution.png)
+![Overview of files in the project solution](images/VS/ready-solution.png)
 
 ### Running the site
 
