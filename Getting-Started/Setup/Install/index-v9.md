@@ -3,6 +3,8 @@ versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
 updated-links: true
+meta.Title: "Installing Umbraco"
+meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
 
 # Installation
