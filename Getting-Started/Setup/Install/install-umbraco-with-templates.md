@@ -14,11 +14,14 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
 
 :::note
-Umbraco 9 is currently in a beta release, so to get it running right now you will need to add the beta nuget source:
+Umbraco 9 is currently in a beta release and before the official release you will need to add the beta NuGet source:
+
 `dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"`
 
 And then step 2 below instead becomes:
 Run `dotnet new -i Umbraco.Templates::beta-001`
+
+For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates#umbraco-net-core-beta) article.
 :::
 
 2. Run `dotnet new -i Umbraco.Templates::*` to install the project templates.  
