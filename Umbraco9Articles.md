@@ -20,7 +20,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [Setup](Getting-Started/Setup/index-v9.md)
   * [General upgrade instructions](Getting-Started/Setup/Upgrading/general-v9.md)
   * [Install Umbraco 9 unattended](Getting-Started/Setup/Install/Unattended-Install-v9.md)
-  * [***NEW*** Install Umbraco with Visual Studio](Getting-Started/Setup/Install/install-umbraco-with-visual-studio.md)
+  * [***NEW*** Install Umbraco with Visual Studio](Getting-Started/Setup/Install/visual-studio.md)
   * [Install Umbraco](Getting-Started/Setup/Install/index-v9.md)
   * [Install Umbraco using VS Code](Getting-Started/Setup/Install/install-umbraco-with-vs-code-v9.md)
   * [***NEW*** Install Umbraco with templates](Getting-Started/Setup/Install/install-umbraco-with-templates.md)
