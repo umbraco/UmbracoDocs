@@ -21,7 +21,7 @@ Umbraco 9 is currently in a beta release and before the official release you wil
 And then step 2 below instead becomes:
 Run `dotnet new -i Umbraco.Templates::beta-001`
 
-For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates#umbraco-net-core-beta) article.
+For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates.md#umbraco-net-core-beta) article.
 :::
 
 2. Run `dotnet new -i Umbraco.Templates::*` to install the project templates.  
