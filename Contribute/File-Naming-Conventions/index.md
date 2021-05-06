@@ -15,6 +15,19 @@ The current version of a documentation article will be the normal existing filen
 
 When creating alternate versions of the article that apply in different Umbraco versions, we will append to the filename portion a `-v` followed by information which explains roughly to which version the documentation applies.
 
+### Target a specific Umbraco version using file naming conventions
+
+When you're creating a new version of an existing article in the Umbraco Documentation, you will need to make sure that you target the correct Umbraco version. This is done by using a specific set of file naming conventions when creating a new article.
+
+In the table below is a few examples of how to name an article based on the Umbraco version you are targetting.
+
+|Targetted version        |File name          |
+|-------------------------|-------------------|
+|Current major version    |`index.md`         |
+|Umbraco 9                |`index-v9.md`      |
+|Umbraco 7                |`index-v7.md`      |
+|Umbraco 8.10             |`index-v8.10.md`   |
+
 ### Indicating ranges on file naming
 
 Documentation that only applies to a single Umbraco version would be `index-v7.7.7.md`.
