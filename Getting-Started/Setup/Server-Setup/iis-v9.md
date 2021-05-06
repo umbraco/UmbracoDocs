@@ -10,9 +10,9 @@ This is a quick guide on getting your Umbraco 9 website running locally on IIS.
 
 The guide will assume you already have IIS configured and know your way around it, as well as having a local website you wish to host.
 
-# Setting up prerequisites
+## Setting up prerequisites
 
-First you need to ensure you have "Development time IIS support installed". To check this go to the Visual Studio installer, click modify and check on the right side under "ASP.NET and web development":
+First, you need to ensure you have "Development time IIS support installed". To check this, go to the Visual Studio installer, click modify and check on the right side under "ASP.NET and web development":
 
 ![Checking the IIS module exists](images/iis-module.png)
 
@@ -21,7 +21,7 @@ Once that is installed you should set up a new IIS site - and make sure to add t
 ![IIS site example](images/iis-site.png)
 
 :::note
-For the path you want to point it at the root of your site - where the csproj file is.
+For the path you want to point it at the root of your site - where the `.csproj` file is.
 :::
 
 # Add new launch profile
