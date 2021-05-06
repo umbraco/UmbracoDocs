@@ -30,7 +30,7 @@ Visual Studio Code is an editor with an embedded webserver (through the IIS Expr
 
 .NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
 
-## [Visual Studio installation](install-umbraco-with-visual-studio.md)
+## [Visual Studio installation](visual-studio.md)
 
 Visual Studio is used to write native code and managed code supported by .NET and many others.
 Its built-in tools provide the ability to develop and execute applications for any platform. Developers will be able to install Umbraco without ever having to leave Visual Studio.
