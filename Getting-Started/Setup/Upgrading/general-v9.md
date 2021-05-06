@@ -1,5 +1,4 @@
 ---
-v8-equivalent: "https://github.com/umbraco/UmbracoDocs/blob/main/Getting-Started/Setup/Upgrading/general.md"
 versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
@@ -26,11 +25,9 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 
 ## Contents
 
-In this article you will find instruction of 3 different ways of upgrading:
+In this article you will find instruction on the following ways of upgrading an Umbraco project:
 
 * [Upgrade using NuGet](#upgrade-using-nuget)
-* [Upgrade manually from a Zip file](#upgrade-manually-from-a-zip-file)
-* [Run an unattended upgrade](#run-an-unattended-upgrade)
 
 ## Upgrade using NuGet
 
