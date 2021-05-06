@@ -9,6 +9,10 @@ updated-links: false
 
 _Follow these steps to do a full install of Umbraco using Visual Studio._
 
+:::note
+Please note that this article is valid only for Umbraco 9.
+:::
+
 ## Abbreviated version
 
 - You will get the best results if you use Umbraco's dotnet new templates
