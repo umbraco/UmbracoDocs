@@ -17,6 +17,10 @@ The easiest way to open the firewall for your IP address is to click the "Add No
 
 If you need to open for specific IP addresses, click the "Add New IP Address" button.
 
+When adding a new IP, it is now required to give it a name. This gives an overview of who the different IPs that have been added belongs to.
+
+![Name of IPs](images/IPName.png)
+
 ### Setting up SQL Management Studio
 Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exists for each environment you have on Umbraco Cloud and any changes you make to custom tables needs to be done for each of them.
 
