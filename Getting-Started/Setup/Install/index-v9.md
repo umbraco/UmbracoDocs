@@ -2,9 +2,7 @@
 versionFrom: 9.0.0
 verified-against: alpha-4
 state: partial
-updated-links: false
-meta.Title: "Installing Umbraco"
-meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
+updated-links: true
 ---
 
 # Installation
@@ -22,22 +20,19 @@ The easiest way to get the latest version of Umbraco up and running is with VS C
 If you have never used VS Code before, you can check out a more detailed guide below that shows these steps more in depth to run a local instance of Umbraco.
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
-## [VS Code installation](install-umbraco-with-vs-code-v9.md)
+## [VS Code installation](install-umbraco-with-vs-code.md)
 
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
 
 ## [.NET CLI installation](install-umbraco-with-templates.md)
 
-.NET Core SDK CLI can be used to install or uninstall .NET Core templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With just a few steps you can have an Umbraco .Net Core project running without the need for a code editor.
+.NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With just a few steps you can have an Umbraco project running without the need for a code editor.
 
-## [NuGet installation](install-umbraco-with-nuget.md)
+## [Visual Studio installation](install-umbraco-with-vs.md)
 
-NuGet is the package manager for the Microsoft development platform, including .NET. The NuGet client tools provide the ability to produce and consume packages. NuGet allows you to install Umbraco without ever having to leave Visual Studio.
+Visual Studio is used to write native code and managed code supported by .NET and many others.
+Its built-in tools provide the ability to develop and execute applications for any platform. Developers will be able to install Umbraco without ever having to leave Visual Studio.
 
 ## [Install Umbraco unattended](Unattended-Install.md)
-
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.
