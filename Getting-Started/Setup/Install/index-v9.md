@@ -28,7 +28,7 @@ Visual Studio Code is an editor with an embedded webserver (through the IIS Expr
 
 ## [.NET CLI installation](install-umbraco-with-templates.md)
 
-.NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With just a few steps you can have an Umbraco project running without the need for a code editor.
+.NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
 
 ## [Visual Studio installation](install-umbraco-with-vs.md)
 
