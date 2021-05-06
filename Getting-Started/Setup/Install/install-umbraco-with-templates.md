@@ -7,7 +7,7 @@ updated-links: false
 
 # Install Umbraco with .NET CLI
 
-We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET Core templates.
+We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET templates.
 
 ## Install the template
 
