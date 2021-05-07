@@ -7,6 +7,8 @@ meta.Description: "Find a sorted list of articles that have already been updated
 
 In this article you will find links to sections and articles that have been verified and/or updated for Umbraco 9.
 
+You will also find a number of new articles, written only for Umbraco 9.
+
 Find general updates and more resources on the Umbraco 9 project in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
 
 :::note
@@ -18,8 +20,9 @@ Please be aware that links to API documentation and other resources might not ha
 ### Getting Started
 
 * [Setup](Getting-Started/Setup/index-v9.md)
+  * [***NEW*** Install Umbraco on IIS](Getting-Started/Setup/Install/iis-v9.md)
   * [General upgrade instructions](Getting-Started/Setup/Upgrading/general-v9.md)
-  * [Install Umbraco 9 unattended](Getting-Started/Setup/Install/Unattended-Install-v9.md)
+  * [Install Umbraco unattended](Getting-Started/Setup/Install/Unattended-Install-v9.md)
   * [***NEW*** Install Umbraco with Visual Studio](Getting-Started/Setup/Install/visual-studio.md)
   * [Install Umbraco](Getting-Started/Setup/Install/index-v9.md)
   * [Install Umbraco using VS Code](Getting-Started/Setup/Install/install-umbraco-with-vs-code-v9.md)
