@@ -24,7 +24,7 @@ Once that is installed you should set up a new IIS site - and make sure to add t
 For the path you want to point it at the root of your site - where the `.csproj` file is.
 :::
 
-# Add new launch profile
+## Add new launch profile
 
 At this point you can go to your Visual Studio solution of the site and in the `Properties` folder there is a `launchSettings.json` file, that looks like this:
 

@@ -23,9 +23,3 @@ Information on how to deploy Umbraco in a Load Balanced scenario and other detai
 ## [Running Umbraco on Azure Web Apps](azure-web-apps.md)
 
 Best practices for running Umbraco on Azure Web Apps.
-
-## [Run Umbraco on IIS](iis-v9.md)
-
-*Please note that this article is only relevant if you're running Umbraco 9.*
-
-Learn how to run an already installed local installation of Umbraco 9.
