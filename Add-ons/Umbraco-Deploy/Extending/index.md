@@ -10,7 +10,7 @@ Umbraco Deploy supports the deployment of CMS schema information, definitions fr
 
 Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also support deployment of custom data via the backoffice - similar to how Umbraco content and media can be queued for transfer and restored.
 
-## Concepts
+## Concepts and Examples
 
 ### Entities
 
@@ -337,6 +337,35 @@ In order to deploy the entity as schema, via disk based representations held in 
 ### Backoffice Integrated Transfers
 
 Work in progress.  Documentation will be updated once this feature is released.
+
+### Refreshing Signatures
+
+Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifacts in the database for each environment.  The signature is a string based, hashed representation of the serialized artifact.  When an update is made to an entity, this signature value should be refreshed.
+
+Hooking this up can be achieved by applying code similar to the following, extending the `ExampleDataDeployComponent` shown above.
+
+```
+    public class ExampleDataDeployComponent : IComponent
+    {
+        ...
+        private readonly ISignatureService _signatureService;
+
+        public ExampleDataDeployComponent(
+            ...
+            ISignatureService signatureService)
+        {
+            _signatureService = signatureService;
+        }
+
+        public void Initialize()
+        {
+            ...
+            _signatureService.RegisterHandler<ExampleDataService, ExampleEventArgs>(nameof(IExampleDataService.ExampleSaved), (refresher, args) => refresher.SetSignature(GetExampleArtifactFromEvent(args)));
+        }
+
+        ...
+    }
+```
 
 
 
