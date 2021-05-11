@@ -50,26 +50,26 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Get the page you want to assign to the content picker 
-	var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
-	
-	// Create an Udi of the page
-	var udi = Udi.Create(Constants.UdiEntityType.Document, page.Key);
+    // Get the page you want to assign to the content picker 
+    var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
+    
+    // Create an Udi of the page
+    var udi = Udi.Create(Constants.UdiEntityType.Document, page.Key);
 
-	// Set the value of the property with alias 'featurePicker'. 
-	content.SetValue("featurePicker", udi.ToString());
+    // Set the value of the property with alias 'featurePicker'. 
+    content.SetValue("featurePicker", udi.ToString());
 
-	// Save the change
-	contentService.Save(content);
+    // Save the change
+    contentService.Save(content);
 }
 ```
 
@@ -90,4 +90,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.FeaturePicker).Alias, udi.ToString());
 }
 ```
-

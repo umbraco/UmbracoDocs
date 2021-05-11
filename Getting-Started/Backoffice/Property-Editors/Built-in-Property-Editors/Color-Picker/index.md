@@ -6,10 +6,13 @@ versionFrom: 8.0.0
 
 `Alias: Umbraco.ColorPicker`
 
-`Returns: String (Hexadecimal)` <br/>
+`Returns: String (Hexadecimal)`
+
 `Returns: Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor (When using labels)`
 
 The Color picker allows you to set some predetermined colors that the editor can choose between.
+
+It's possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
@@ -24,6 +27,7 @@ The Color picker allows you to set some predetermined colors that the editor can
 ```csharp
 @{
     var hexColor = Model.Color;
+    // Define the label if you've included it
     String colorLabel = Model.Color.Label;
 
     if (hexColor != null)
@@ -39,6 +43,7 @@ The Color picker allows you to set some predetermined colors that the editor can
 @using Umbraco.Core.PropertyEditors.ValueConverters
 @{
     var hexColor = Model.Value("Color");
+    // Define the label if you've included it
     var colorLabel = Model.Value<ColorPickerValueConverter.PickedColor>("Color").Label;
 
     if (hexColor != null)
@@ -54,21 +59,21 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Set the value of the property with alias 'color'. 
-	// The value set here, needs to be one of the prevalues on the Color Picker
-	content.SetValue("color", "38761d");
+    // Set the value of the property with alias 'color'. 
+    // The value set here, needs to be one of the prevalues on the Color Picker
+    content.SetValue("color", "38761d");
 
-	// Save the change
-	contentService.Save(content);
+    // Save the change
+    contentService.Save(content);
 }
 ```
 

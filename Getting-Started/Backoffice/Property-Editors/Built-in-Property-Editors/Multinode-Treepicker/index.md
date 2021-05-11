@@ -16,27 +16,27 @@ The Multinode Treepicker allows you to configure the type of tree to render and 
 
 For querying for a root node, you can use dynamic placeholders in the XPath query, following the below sample queries
 
-    // get the first textpage below the current document
-    $current/textpage: current page or closest found ancestor
+```none
+// get the first textpage below the current document
+$current/textpage: current page or closest found ancestor
 
-    // get a descendant of type news article somewhere below the parent
-    $parent//newsArticle: parent page or closest found ancestor
+// get a descendant of type news article somewhere below the parent
+$parent//newsArticle: parent page or closest found ancestor
 
-    // go to the root of the content tree
-    $root
+// go to the root of the content tree
+$root
 
-    // go the ancestor at @level=1 where your website root usually is.
-    $site: Ancestor node at level 1
+// go the ancestor at @level=1 where your website root usually is.
+$site: Ancestor node at level 1
+```
 
 It is important to notice that all placeholders above act against published content only. So if you, therefore, try to fetch `$parent` of the current document, then Umbraco will return that or its closest published ancestor. So in case, the parent is not published, it will try the parent of that parent, and so on.
-
 
 **Filter out items with type:** allow or disallow tree nodes with a certain content type alias.
 
 Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. Enter `!typeAlias,altTypeAlias` to only allow selecting nodes **not** with those alias'.
 
 **Minimum/maximum number of items:** set a limit on the number of items allowed to be selected.
-
 
 ## Data Type Definition Example
 
@@ -78,31 +78,31 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Get the pages you want to assign to the Multinode Treepicker
-	var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
-	var anotherPage = Umbraco.Content("1f8cabd5-2b06-4ca1-9ed5-fbf14d300d59");
+    // Get the pages you want to assign to the Multinode Treepicker
+    var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
+    var anotherPage = Umbraco.Content("1f8cabd5-2b06-4ca1-9ed5-fbf14d300d59");
 
-	// Create Udi's of the pages
-	var pageUdi = Udi.Create(Constants.UdiEntityType.Document, page.Key);
-	var anotherPageUdi = Udi.Create(Constants.UdiEntityType.Document, anotherPage.Key);
+    // Create Udi's of the pages
+    var pageUdi = Udi.Create(Constants.UdiEntityType.Document, page.Key);
+    var anotherPageUdi = Udi.Create(Constants.UdiEntityType.Document, anotherPage.Key);
 
-	// Create a list of the page udi's
-	var udis = new List<string>{pageUdi.ToString(), anotherPageUdi.ToString()};
+    // Create a list of the page udi's
+    var udis = new List<string>{pageUdi.ToString(), anotherPageUdi.ToString()};
 
-	// Set the value of the property with alias 'featuredArticles'. 
-	content.SetValue("featuredArticles", string.Join(",", udis));
+    // Set the value of the property with alias 'featuredArticles'. 
+    content.SetValue("featuredArticles", string.Join(",", udis));
 
-	// Save the change
-	contentService.Save(content);
+    // Save the change
+    contentService.Save(content);
 }
 ```
 
@@ -123,4 +123,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.FeaturedArticles).Alias, string.Join(",", udis));
 }
 ```
-

@@ -43,7 +43,6 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 }
 ```
 
-
 ### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
