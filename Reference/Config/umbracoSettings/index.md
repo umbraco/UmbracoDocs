@@ -359,8 +359,6 @@ The maximum log age in minutes used for the internal audit log scrubbing.
 
 ## Web.Routing
 
-This section configures...
-
 ### `<trySkipIisCustomErrors>`
 
 defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. You probably want it to be true in order to prevent IIS from displaying its own 404 or 500 pages, and instead have your own page displayed.
