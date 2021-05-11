@@ -10,7 +10,7 @@ Here you will be able to find documentation on all the options you can modify in
 
 ## Backoffice
 
-Below you can see the settings that affect the Umbraco backoffice (v7.8+)
+Below you can see the settings that affect the Umbraco backoffice.
 
 ### Tours
 
