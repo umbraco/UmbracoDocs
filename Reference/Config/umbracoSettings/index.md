@@ -44,8 +44,6 @@ By default this is set to false. To make the obsolete data types visible in the 
 
 ### Imaging
 
-<small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
-
 This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
 
 ```xml
@@ -220,7 +218,7 @@ If greater control is required than available from the above, this setting can b
 
 ### `<loginBackgroundImage>`
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `~/umbraco` path. The default location is: `/umbraco/assets/img/installer.jpg`.
 
 ```xml
 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
@@ -239,9 +237,8 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
     <!-- by default this is true and if not specified in config will be true.
     Set to false to always show a separate username field in the backoffice user editor -->
     <usernameIsEmail>true</usernameIsEmail>
-
-    <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree.
-    If you prefer not to display them set this to true -->
+    
+    <!-- If you prefer not to display them set this to true -->
     <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
     <!-- set to true to enable the UI and API to allow backoffice users to reset their passwords -->
@@ -265,11 +262,11 @@ option to "false" and thereby enabling it.
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set the "true" (the default value) the username is hidden and always the same as the email address.
 
 **`<hideDisabledUsersInBackoffice>`**
-As stated in the comment above, this setting was introduced in v4.8. If it's set to "true" it's not possible to see disabled users, which means it's
+If this is set to "true" it's not possible to see disabled users, which means it's
 not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. The feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to "false".
+The feature to allow users to reset their passwords if they have forgotten them. The feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to "false".
 
 **`<authCookieName>`**
 The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
@@ -350,7 +347,7 @@ So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as 
 
 ## Logging
 
-Starting v8 most of the logging configuration is moved to the Serilog config files.
+Most of the logging configuration is moved to the Serilog config files.
 
 ```xml
 <logging>
@@ -387,9 +384,7 @@ when true, urls such as /1234 do _not_ find content with ID 1234.
 
 ### `<disableRedirectUrlTracking>`
 
-` when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
-
-**Note:** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
+When you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
 ### `<urlProviderMode>`
 
