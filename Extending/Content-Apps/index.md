@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.7.0
-meta.Title: "Backoffice Tours"
-meta.Description: "A guide configuring backoffice tours in Umbraco"
+meta.Title: "Content apps"
+meta.Description: "A guide to extending and creating content apps in Umbraco"
 ---
 
 # Content Apps
