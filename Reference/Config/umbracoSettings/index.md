@@ -296,7 +296,7 @@ Let's have a further look at each option below.
 <requestHandler>
     <!-- this will add a trailing slash (/) to urls when in directory url mode -->
     <addTrailingSlash>true</addTrailingSlash>
-    <urlReplacing removeDoubleDashes="false" toAscii="false">
+    <urlReplacing toAscii="false">
         <char org=" ">-</char>
         <char org="&quot;"></char>
         <char org="'"></char>
@@ -333,8 +333,6 @@ As mentioned in the comment above, this will add a trailing slash to the url whe
 If you don't want to have a trailing slash when directory urls are in use, set the value to **false**.
 
 ### `<urlReplacing>`
-
-The **removeDoubleDashes** attribute makes sure the double dashes will not appear in the url. Set it to **false** if you want to have double dashes. NOTE that this attribute has no effect anymore starting with Umbraco 6.1 / 7.0 where double dashes are systematically removed.
 
 The **toAscii** attributes tells Umbraco to convert all urls to ASCII using the built-in transliteration library. It is disabled by default, ie by default urls remain UTF8. Set it to **true** if you want to have ASCII urls.
 
