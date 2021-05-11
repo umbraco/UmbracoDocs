@@ -1,8 +1,9 @@
 ---
-title: "Rendering content"
+meta.Title: "Rendering content"
 keywords: content razor v8 version8
 versionFrom: 8.0.0
 ---
+
 # Rendering content
 
 _The primary task of any template in Umbraco is to render the values of the current page or the result of a query against the content cache._
@@ -90,6 +91,7 @@ We can use similar overloads when working with ModelsBuilder, for example:
 ![Configuring fall-back languages](images/language-fallback.png)
 
 ## Query content
+
 In many cases you want to do more than display values from the current page, like creating a list of pages in a navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
 
 You can do this by querying content relative to your current page in template views:
@@ -109,11 +111,6 @@ You can use the Query Builder in the template editor to build more advanced quer
 ![Query helper](images/query-v8.png)
 
 ### More information
-- [Razor examples](../../../Reference/Templating/Mvc/examples.md)
-- [Querying](../../../Reference/Templating/Mvc/querying.md)
 
-<!--
-### Umbraco TV
-- [Episode: Setting up our first template](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/alt-template/)
-- [Episode: Insert Umbraco page field dialog](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/insert-umbraco-page-field-dialog/)
--->
+* [Razor examples](../../../Reference/Templating/Mvc/examples.md)
+* [Querying](../../../Reference/Templating/Mvc/querying.md)
