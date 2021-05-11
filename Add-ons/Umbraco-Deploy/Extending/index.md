@@ -344,7 +344,7 @@ Umbraco Deploy improves the efficiency of transfers by caching signatures of eac
 
 Hooking this up can be achieved by applying code similar to the following, extending the `ExampleDataDeployComponent` shown above.
 
-```
+```C#
     public class ExampleDataDeployComponent : IComponent
     {
         ...
@@ -366,6 +366,5 @@ Hooking this up can be achieved by applying code similar to the following, exten
         ...
     }
 ```
-
 
 
