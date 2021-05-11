@@ -6,7 +6,7 @@ versionFrom: 8.13.0
 
 `Alias: Umbraco.ColorPicker.EyeDropper`
 
-`Returns: object` <br/>
+`Returns: object`
 
 The Eye Dropper Color picker allows you to choose a color from the full color spectrum using HEX and RGBA.
 
@@ -50,20 +50,20 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Set the value of the property with alias 'color'.
-	content.SetValue("color", "#6fa8dc");
-
-	// Save the change
-	contentService.Save(content);
+    // Set the value of the property with alias 'color'.
+    content.SetValue("color", "#6fa8dc");
+    
+    // Save the change
+    contentService.Save(content);
 }
 ```
 

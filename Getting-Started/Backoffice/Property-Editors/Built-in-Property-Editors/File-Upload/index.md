@@ -19,13 +19,14 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 ![Content Example Empty](images/content-example-empty.png)
 ![Content Example](images/content-example.png)
 
-In code, the property is a string, which references the location of the file. 
+In code, the property is a string, which references the location of the file.
 
 Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ## MVC View Example
 
 ### Without Modelsbuilder
+
 ```csharp
 @{
     if (Model.HasValue("myFile"))
@@ -43,7 +44,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ```csharp
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    if (Model.HasValue(ContentModels.MyModel.GetModelPropertyType(x => x.MyFile).Alias))
+    if (Model.MyFile != null)
     {
         <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
     }
@@ -56,45 +57,45 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
-	
+    // Get access to ContentService
+    var contentService = Services.ContentService;
+
     // Get access to MediaService 
     var mediaService = Services.MediaService;
 
-	// Create a variable for the GUID of the parent where you want to add a child item
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the parent where you want to add a child item
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Create a variable for the file you want to upload, in this case the Our Umbraco logo
-	var imageUrl = "https://our.umbraco.com/assets/images/logo.svg";
+    // Create a variable for the file you want to upload, in this case the Our Umbraco logo
+    var imageUrl = "https://our.umbraco.com/assets/images/logo.svg";
 
-	// Create a request to get the file
-	var request = WebRequest.Create(imageUrl);
-	var webResponse = request.GetResponse();
-	var responseStream = webResponse.GetResponseStream();
+    // Create a request to get the file
+    var request = WebRequest.Create(imageUrl);
+    var webResponse = request.GetResponse();
+    var responseStream = webResponse.GetResponseStream();
 
-	// Get the file name 
-	var lastIndex = imageUrl.LastIndexOf("/", StringComparison.Ordinal) + 1;
-	var filename = imageUrl.Substring(lastIndex, imageUrl.Length - lastIndex);
+    // Get the file name 
+    var lastIndex = imageUrl.LastIndexOf("/", StringComparison.Ordinal) + 1;
+    var filename = imageUrl.Substring(lastIndex, imageUrl.Length - lastIndex);
 
-	// Create a media file
-	var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
-	media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
+    // Create a media file
+    var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
+    media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
 
-	// Save the created media 
-	mediaService.Save(media);
+    // Save the created media 
+    mediaService.Save(media);
 
-	// Get the published version of the media (IPublishedContent)
-	var publishedMedia = Umbraco.Media(media.Id);
+    // Get the published version of the media (IPublishedContent)
+    var publishedMedia = Umbraco.Media(media.Id);
 
-	// Set the value of the property with alias 'myFile' 
-	content.SetValue("myFile", publishedMedia.Url());
+    // Set the value of the property with alias 'myFile' 
+    content.SetValue("myFile", publishedMedia.Url());
 
-	// Save the child item
-	contentService.Save(content);
+    // Save the child item
+    contentService.Save(content);
 }
 ```
 
