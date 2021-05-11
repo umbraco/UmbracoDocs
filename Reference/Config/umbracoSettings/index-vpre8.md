@@ -7,14 +7,14 @@ meta.Description: "Reference on umbracoSettings.config options in Umbraco"
 
 # umbracoSettings
 
-The sections below are only valid in umbraco versions until v8.
+The sections below are only valid in Umbraco 7.
 
 :::warning
 In v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned.
 These default values will be expressed below and you can insert these configuration items in the file to override the defaults.
 :::
 
-### Script editor
+## Script editor
 
 This section is used for managing the options to create and edit script files in the Umbraco backoffice.
 
