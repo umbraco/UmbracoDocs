@@ -58,7 +58,7 @@ See the example below to see how a value can be added or changed programmaticall
     
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
+
     // Set the value of the property with alias 'myCheckBox'
     content.SetValue("myCheckBox", true);
             
