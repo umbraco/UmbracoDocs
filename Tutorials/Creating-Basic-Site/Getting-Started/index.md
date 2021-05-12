@@ -10,7 +10,7 @@ This tutorial provides step by step instructions to build an Umbraco website usi
 To install a basic website in the Umbraco CMS, you need the following:
 
 * A clean and empty installation of the Umbraco CMS without the starter site installed. See the [Verifying your Umbraco Installation](#verifying-your-umbraco-installation)
-* This tutorial uses a copy of Retrospect – a HTML5, responsive website template from Templated.co - [https://templated.co/retrospect](https://templated.co/retrospect) or, if you prefer, you can use your own flat HTML files.
+* This tutorial uses a copy of Custom Umbraco Template – a HTML5, responsive website template. Download the [Custom Umbraco Template](http://umbra.co/Umbracotemplate) or, if you prefer, you can use your own flat HTML files.
 
 ## **Getting Started**
 
@@ -39,11 +39,11 @@ If you see the starter kit, you need to re-install Umbraco. To re-install Umbrac
 2. Unzip the downloaded Umbraco installation folder and open the extracted folder in VS Code.
 3. Run localhost in your browser.
 
-### Preparing the Retrospect Template Site
+### Preparing the Custom Umbraco Template Site
 
-Now unzip the Retrospect contents to a folder onto your desktop (or a place of your choosing).  Now open the **_index.html_** from this directory in your preferred browser to see the template – you can see it’s full of lovely filler text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
+Unzip the Custom Umbraco Template to a folder on your system.  Open the **index.html** from the folder in your preferred browser to see the template. The template contains some text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
 
-![The Retrospect Template](images/figure-5-retrospect-template-v8.png)
+![Custom Umbraco Template](images/figure-5-retrospect-template-v8.png)
 
 ### Logging in to Umbraco
 
