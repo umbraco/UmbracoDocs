@@ -65,7 +65,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco .NET Core Beta
+## Umbraco 9 (.NET Core) Beta
 
 As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
 
@@ -104,7 +104,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta001
+    dotnet new -i Umbraco.Templates::9.0.0-beta002
     ```
 
 ### [Optional] Update the template from earlier alpha versions
@@ -114,7 +114,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta001
+    dotnet new -i Umbraco.Templates::9.0.0-beta002
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -235,3 +235,28 @@ See tickets  tagged on [Github](https://github.com/umbraco/Umbraco-CMS/pulls?q=i
   - Fix warning logged regarding Antiforgery tokens
   - Fix for problem with models builder and nested content
   - Fix for ContentCacheRefresherNotification is dispatching every 10 seconds FileSystem changes??
+
+
+### Changes between beta 1 and beta 2
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2Fnetcore-beta002+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - `HideTopLevelNodeFromPath` default value changed to to `true`.
+  - All notifications moved to the same namespace to make them easily discoverable
+  - The order of view location changes, so `/Views` is the first to search.
+  - "WebRouting:DisableRedirectUrlTracking" configuration changed from `string` to `bool`.
+- Features
+  - Added API to validate user creadentials without actually logging them in.
+  - Reintroduced missing overloads for `GetCropUrl`.
+  - Enabled Microsoft SouceLink Debugging Feature.
+  - Added localizable error descriptors for Users and Members
+  - Replaced System.Drawing with ImageSharp when extracting the height and width of uploaded images.
+- Bugfixes
+  - Fixed issue with scheduled publishing.
+  - Fixed issues where the runtime lever was not used correct.
+  - Fixed issue with ModelsBuilder when using inherited Document Types.
+  - Fixed issues where the javascript minifier was too agressive.
+  - Fixed issue with hardcoded '\' as directory separator char (Linux issue).
+  - Fixed issue in the Danish translation file leading to error doing install.
