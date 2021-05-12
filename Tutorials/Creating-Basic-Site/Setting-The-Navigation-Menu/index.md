@@ -5,25 +5,36 @@ versionFrom: 8.0.0
 
 You can fix the navigation menu in two ways:
 
-1. [Dynamically](#dynamic-navigation) - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears.
-2. [Hardcode](#hardcode-navigation) it.
+1. [Dynamically](#dynamic-navigation) - Umbraco creates a navigation menu from the pages in the Content Tree, so when you create a page it automatically appears in the navigation menu. Using dynamic navigation, you do not need to manually add or change your menu items if the page changes.
+2. [Hardcode](#hardcode-navigation) it. You can hardcode the navigation menu but they would require more upkeep in the future if you  want to remove a page or change its name.
 
 ## Dynamic Navigation
 
 To create dynamic navigation links from published content nodes, use the following code:
 
 ```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
+@{ 
+    var site = Model.Root();
+    var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
+}
 
-	<!-- Navigation -->
-	<nav class = "nav-bar top-nav">
-            <a class = "nav-link" href = "/"> Home </a>
-            @foreach (var child in Model.Root().Children())
-            {
-                <a class = "nav-link" href = "@child.Url">@child.Name</a>
-            }
-        </nav>
+<!-- uncomment this line if you want the site name to appear in the top navigation -->
+<!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
+
+@foreach (var item in selection)
+{
+    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+}
 ```
+
+:::tip The IsVisible() helper method
+
+If you add a checkbox property to a document type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
+:::
+
+
 
 ## Hardcode Navigation
 

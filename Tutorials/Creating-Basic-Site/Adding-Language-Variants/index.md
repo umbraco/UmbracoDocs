@@ -35,7 +35,7 @@ To enable language variants on document types, follow these steps:
     ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
 8. For this tutotial, we will not make any changes to the **Body Text**. Click **Save**.
 
-To enable language variants on properties, follow these steps:
+To add culture and hostnames to the root note of the website, follow these steps:
 
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Home Page** content node and select **Culture and Hostnames...**.

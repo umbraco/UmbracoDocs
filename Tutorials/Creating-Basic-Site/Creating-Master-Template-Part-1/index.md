@@ -16,9 +16,9 @@ To create a new master template:
    ![Master Template](images/figure-22-master-template-v8.png)
 5. Click **Save**.
 
-## Setting Templates With the New Master Template
+## Using the Master Template
 
-To set the templates with the master template:
+To use the master template:
 
 1. Go to **Settings**.
 2. In the **Templating** section, select **Templates** and open the **Homepage** template.
