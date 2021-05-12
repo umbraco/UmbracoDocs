@@ -25,6 +25,10 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 * [Umbraco 9 Documentation](#umbraco-9-documentation)
 * [Example: Creating a new version of an article targetting Umbraco 9](#example-creating-a-new-version-of-indexmd-targetting-an-upcoming-version-Umbraco-9)
 
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embedzIq9WA9QNkk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Prerequisites
 
 To work with and contribute to the Umbraco Documentation there are a few tools and extensions we recommend that you use. Using these tools will ensure consistency throughout the documentation as well as help you create the best possible version of the article.
