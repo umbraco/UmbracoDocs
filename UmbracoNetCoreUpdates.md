@@ -256,7 +256,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
 - Bugfixes
   - Fixed issue with scheduled publishing.
   - Fixed issues where the runtime lever was not used correct.
-  - Fixed issue with ModelsBuilder when using inheriated document types.
+  - Fixed issue with ModelsBuilder when using inherited Document Types.
   - Fixed issues where the javascript minifier was too agressive.
-  - Fixed issue with hardcoded '\' as directory separator char  (Linux issue).
-  - Fixed issue in the danish translation file leading to error doing install.
+  - Fixed issue with hardcoded '\' as directory separator char (Linux issue).
+  - Fixed issue in the Danish translation file leading to error doing install.
