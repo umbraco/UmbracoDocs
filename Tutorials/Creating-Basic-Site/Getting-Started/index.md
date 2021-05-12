@@ -41,7 +41,8 @@ If you see the starter kit, you need to re-install Umbraco. To re-install Umbrac
 
 ### Preparing the Custom Umbraco Template Site
 
-Unzip the Custom Umbraco Template to a folder on your system.  Open the **index.html** from the folder in your preferred browser to see the template. The template contains some text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
+1. Unzip the Custom Umbraco Template to a folder on your system.  
+2. Open the **index.html** from the folder in your preferred browser to see the template. The template contains some text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
 
 ![Custom Umbraco Template](images/figure-5-retrospect-template-v8.png)
 

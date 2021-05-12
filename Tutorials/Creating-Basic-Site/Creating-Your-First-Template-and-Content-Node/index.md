@@ -18,8 +18,7 @@ To edit the template:
     We are using files from the Custom Umbraco template here: [Custom Umbraco Template](http://umbra.co/Umbracotemplate)
     :::
 5. Open the Custom Umbraco Template folder and copy the contents of **index.html**.
-6. Paste the content into the _HomePage_ template below the closing curly brace "}". Your **_HomePage_** template should now look like:
-    ![Custom Umbraco Template](images/figure-14-homepage-template-with-Retrospect-html-v8.png)
+6. Paste the content into the _HomePage_ template below the closing curly brace "}".
    
     :::warning
     Umbraco **_Templates_** use **_Razor_** which allows you to add code in your **_Template_** files. **_Razor_** reacts to `@` signs.
