@@ -245,6 +245,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
 - Breaking changes
   - `HideTopLevelNodeFromPath` default value changed to to `true`.
   - All notifications moved to the same namespace to make them easily discoverable
+    - More notifications also postfixed with "Notification". `ServerVariablesParsing` => `ServerVariablesParsingNotification`.
   - The order of view location changes, so `/Views` is the first to search.
   - "WebRouting:DisableRedirectUrlTracking" configuration changed from `string` to `bool`.
 - Features
