@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 
 The first step in any Umbraco site is to create a **Document Type**. A **Document Type** is a data container in Umbraco where you can add **Properties** (data fields/attributes) to input data. Each **Property** has a **Data Type** like text string, number or rich text body. Umbraco outputs the input data using **Templates**.
 
-You can add the following common properties to a **Document Type**:
+These are some of the most common properties you would add to a **Document Type**:
 
 * Page title
 * Sub Heading
@@ -18,7 +18,7 @@ You can add the following common properties to a **Document Type**:
 To create a document type:
 
 1. Go to **Settings**.
-2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
+2. Select the **...** next to the **Document Types** in the **Settings** pane,.
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Click **Document Type with Template**.
 
@@ -34,16 +34,16 @@ To create a document type:
 
 ### Adding icons
 
-With the help of icons you can identify different document types in the **Content Tree**. To add an icon:
+With the help of icons, you can identify different document types in the **Content Tree**. To add an icon:
 
-1. Click ![Add Icon](images/Document-icon.png =50x50) next to the document name. The **Select Icon** pane appears on the right-side of the website.
+1. Select the icon placeholder next to the document name. The **Select Icon** pane appears on the right-side of the website.
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.  
 
 ### Setting Permissions
 
-To create a document type at the root of the **Content Tree**:
+To create a Document Type at the root of the **Content Tree**:
 
 1. Go to the **Permissions** tab.
     ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
