@@ -20,7 +20,7 @@ Please be aware that links to API documentation and other resources might not ha
 ### Getting Started
 
 * [Setup](Getting-Started/Setup/index-v9.md)
-  * [***NEW*** Running Umbraco on IIS](Getting-Started/Setup/Server-Setup/iis-v9.md)
+  * [***NEW*** Running Umbraco on IIS](Getting-Started/Setup/Install/iis-v9.md)
   * [General upgrade instructions](Getting-Started/Setup/Upgrading/general-v9.md)
   * [Install Umbraco unattended](Getting-Started/Setup/Install/Unattended-Install-v9.md)
   * [***NEW*** Install Umbraco with Visual Studio](Getting-Started/Setup/Install/visual-studio.md)
