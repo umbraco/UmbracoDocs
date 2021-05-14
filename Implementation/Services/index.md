@@ -460,7 +460,7 @@ The second approach can seem 'different' or more complex at first glance, but it
 :::tip
 Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with   third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
 
-See the [Circular Dependencies](Circular-Depndencies) article for an example on how to get around this.
+See the [Circular Dependencies](Circular-Dependencies) article for an example on how to get around this.
 :::
 
 ###### Aside: What is the IUmbracoContextAccessor then?
@@ -600,7 +600,7 @@ To access the service directly from the view you would need to use the Service L
         <article>
 ```
 
-or to take this idea a step further create a custom implementation of UmbracoViewPage, called 'CustomViewPage' and create strongly typed gateways to access the shared custom Services:
+Or to take this idea a step further create a custom implementation of UmbracoViewPage, called 'CustomViewPage' and create strongly typed gateways to access the shared custom Services:
 
 ```csharp
 using System.Web;
@@ -661,7 +661,7 @@ namespace Umbraco8.ViewPages
 }
 ```
 
-with this in place all views inheriting from CustomViewPage or CustomViewPage&lt;T&gt; would have access to the SiteService:
+With this in place all views inheriting from CustomViewPage or CustomViewPage&lt;T&gt; would have access to the SiteService:
 
 ```csharp
 @using Umbraco8.ViewPages

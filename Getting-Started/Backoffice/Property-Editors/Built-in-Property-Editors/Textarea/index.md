@@ -48,7 +48,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ```csharp
 @{
-    if (Model.Description.HasValue())
+    if (!string.IsNullOrWhiteSpace(Model.Description))
     {
         <p>@Model.Description</p>
     }

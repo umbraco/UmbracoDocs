@@ -10,7 +10,7 @@ This tutorial provides step by step instructions to build an Umbraco website usi
 To install a basic website in the Umbraco CMS, you need the following:
 
 * A clean and empty installation of the Umbraco CMS without the starter site installed. See the [Verifying your Umbraco Installation](#verifying-your-umbraco-installation)
-* This tutorial uses a copy of Custom Umbraco Template – a HTML5, responsive website template. Download the [Custom Umbraco Template](http://umbra.co/Umbracotemplate) or, if you prefer, you can use your own flat HTML files.
+* This tutorial uses a custom made template, called Custom Umbraco Template. You can download the [Custom Umbraco Template](http://umbra.co/Umbracotemplate) or, if you prefer, you can use your own flat HTML files.
 
 ## **Getting Started**
 

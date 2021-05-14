@@ -63,7 +63,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 ### Single item - with Modelsbuilder
 
 ```csharp
-@if (Model.Category.HasValue())
+@if (!string.IsNullOrWhiteSpace(Model.Category))
 {
     <p>@Model.Category</p>
 }
@@ -90,20 +90,20 @@ See the example below to see how a value can be added or changed programmaticall
 ```csharp
 @using Newtonsoft.Json
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
-	
-	// Set the value of the property with alias 'categories'. 
-	content.SetValue("categories", JsonConvert.SerializeObject(new[] { "News" }));
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Save the change
-	contentService.Save(content);
+    // Set the value of the property with alias 'categories'. 
+    content.SetValue("categories", JsonConvert.SerializeObject(new[] { "News" }));
+
+    // Save the change
+    contentService.Save(content);
 }
 ```
 
@@ -124,6 +124,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.Categories).Alias, JsonConvert.SerializeObject(new[] { "News" }));
 }
 ```
-
-
-

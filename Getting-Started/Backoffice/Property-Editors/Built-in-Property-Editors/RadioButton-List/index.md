@@ -35,7 +35,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 #### With Modelsbuilder
 
 ```csharp
-@if (Model.ColorTheme.HasValue())
+@if (Model.ColorTheme != null)
 {
     var value = Model.ColorTheme;
     <p>@value</p>
@@ -54,10 +54,10 @@ See the example below to see how a value can be added or changed programmaticall
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
     
-	// Get the page using the GUID you've defined
+    // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
-	// Set the value of the property with alias 'colorTheme'
+    
+    // Set the value of the property with alias 'colorTheme'
     content.SetValue("colorTheme", "water");
             
     // Save the change

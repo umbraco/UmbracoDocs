@@ -2,7 +2,6 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Property Value Converters"
 meta.Description: "A guide to creating a custom property value converter in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Property-Editors/Extending/value-converters.md"
 ---
 
 # Property Value Converters

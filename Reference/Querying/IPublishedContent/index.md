@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.1.0
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/IPublishedContent/index.md"
 ---
 
 # IPublishedContent

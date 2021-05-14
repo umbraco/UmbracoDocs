@@ -1,8 +1,7 @@
 ---
 versionFrom: 8.7.0
-meta.Title: "Content Apps"
-meta.Description: "A guide to Umbraco Content Apps in the backoffice"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Content-Apps/extending.md"
+meta.Title: "Content apps"
+meta.Description: "A guide to extending and creating content apps in Umbraco"
 ---
 
 # Content Apps
@@ -75,9 +74,8 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 ```
 
 :::note
-Umbraco backoffice uses the Helveticons icon pack by default 
+Umbraco backoffice uses the Helveticons icon pack by default.
 :::
-
 
 ### Creating the View and the Controller
 
@@ -151,7 +149,11 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
 
-This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
+You can show your Content App for **Media Types**, **Member Types**, and  **Document Types** in the **Settings** section.
+
+:::note
+Content Types is referred to as Document Types.  
+:::
 
 Here is an example where all types are taken intro consideration when limiting access to a Content App:
 
@@ -162,11 +164,11 @@ Here is an example where all types are taken intro consideration when limiting a
             "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
-                "+media/*", // show for all media types
+                "+media/*", // show for all other media types
                 "-member/premiumMembers", // hide for Member type 'premiumMembers'
                 "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "-contentType/textPage", // hide for Content Type with alias 'textPage'
+                "-contentType/*", // hide for all other Content types
             ]
         }
     ]

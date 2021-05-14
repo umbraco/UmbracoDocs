@@ -8,13 +8,17 @@ meta.Description: "Updates and information related to the upcoming release of Um
 :::note
 This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
 
-We have created a separate repository for [articles and tutorials for Umbraco on .NET Core](https://github.com/umbraco/UmbracoCMSDocs). Please keep in mind, that this is still a work in progress.
-
 Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current alpha version of Umbraco .Net Core](#umbraco-net-core-alpha). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+
+## Umbraco 9 Documentation
+
+We have started verifying the current documentation against Umbraco 9.
+
+You can find a complete list of all updated articles on the [Umbraco 9 Articles](Umbraco9Articles.md) page.
 
 ## News and updates from Umbraco HQ
 
@@ -22,6 +26,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Umbraco 9 Beta Release](https://umbraco.com/blog/umbraco-9-beta-release/)
 * [Alpha 4 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-4-release-of-umbraco-on-net-core/)
 * [Alpha 3 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-3-release-of-umbraco-on-net-core/)
 * [Status of migration to .NET Core, December 2020](https://umbraco.com/blog/status-of-migration-to-net-core-december-2020/)
@@ -52,40 +57,36 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Other
 
-* [Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=EJw7dfq5_Jc)
+* [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
+* [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
+* [YouTube: Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=rpUg-oySw8g)
 * [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco .NET Core Alpha
+## Umbraco 9 (.NET Core) Beta
 
 As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
 
-Since March 24th 2021, the fourth alpha release has been available.
+Since April 28th 2021, the first beta release has been available.
 
 More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
 
 :::warning
-As this is an **alpha release**, bugs and minor issues are to be expected.
+As this is an **beta release**, bugs and minor issues are to be expected.
 
-You can find a list of known issues in the [release blog post](https://umbraco.com/blog/net-core-alpha-release/) and see [already reported issues on the Issue tracker](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aopen+is%3Aissue+label%3Aproject%2Fnet-core+).
+You can find a list of known issues [on this page](#known-issues-and-missing-parts-in-current-beta-release)
 
 Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
 :::
 
 To get started, follow the steps outlined below.
 
-### Known issues and mising parts in current Alpha release
+### Known issues and missing parts in current Beta release
 * Restarts during install
-  * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again
-* Members are still an area with lots of missing functionality
+  * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again.
 * Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
-
-* Static events
-  * The codebase still has some static events that are not migrated yet. Feel free to pick up some of them and help to migrate them. If you are a package developer and need to use some of the events that are not migrated yet, please reach out and tell us which you want us to prioritize.
-* File system abstractions
-  * The current filesystem abstractions are expected to be changed before the final release. If you are a package developer, and your package mainly extends the file systems, we recommend that you wait for a later release before you start migrating that package.
 
 ### Prerequisites
 
@@ -103,17 +104,17 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-alpha004
+    dotnet new -i Umbraco.Templates::9.0.0-beta002
     ```
 
-### Steps to update the template from earlier alpha versions
+### [Optional] Update the template from earlier alpha versions
 
 If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-alpha004
+    dotnet new -i Umbraco.Templates::9.0.0-beta002
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -127,7 +128,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
     Or if you prefer to using SQL CE:
 
     ```none
-    dotnet new umbraco -n MyCustomUmbracoSolution -ce
+    dotnet new umbraco --SqlCe -n MyCustomUmbracoSolution
     ```
 
 You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
@@ -157,7 +158,7 @@ The next step is to run through the Umbraco CMS installation. If you chose to us
 
 Once the installation process is complete you might need to **manually restart the application** in order to start the application again and get access to the Umbraco backoffice.
 
-## .NET Core Nightly Builds
+## Umbraco 9 Nightly Builds
 
 To get the latest nightly builds - the latest version of the Umbraco dotnet template, you will need to add another NuGet source.
 
@@ -168,13 +169,14 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 ```
 
 2. Install the new Umbraco dotnet template
+
     ```none
     dotnet new -i Umbraco.Templates::9.0.0-*
     ```
 
 In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
 
-Now you can continue in the same way as if you were using the [Alpha version](#steps-to-create-an-umbraco-solution-using-the-dotnet-new-template)
+Now you can continue in the same way as if you were using the [beta version](#steps-to-install-the-umbraco-dotnet-new-template)
 
 ## Package development
 
@@ -195,18 +197,67 @@ The file contains an `msbuild` target that is executed on build when a project h
 Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template. You can now write:
 
 ```none
-dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoSolution -P MyCustomUmbracoPackage
 ```
 
-This new `-p` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
+This new `-P` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
 
 ### Full example
 
-The following shot example shows how to use the templates in combination
+The following example shows how to use the templates in combination
 
 ```none
 dotnet new umbracopackage -n MyCustomUmbracoPackage
-dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -P MyCustomUmbracoPackage
 cd MyCustomUmbracoPackage.Testsite
 dotnet build
 ```
+
+
+### Changes between alpha 4 and beta 1
+
+See tickets  tagged on [Github](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+is%3Aclosed+label%3Arelease%2Fnetcore-beta001) for a full overview.
+
+#### Summary
+- Members
+  - Members are updated to ASP.NET Core Identity
+  - Member passwords are rolled to a stronger hashing algorithm on member login
+  - Members have stored a security stamp
+  - Public Access Restrictions is updated to use the new member implementation
+- Events
+  - The remaining events are migrated to the new notification pattern
+  - Added TreeAlias to tree notifications.
+- Other
+  - IUmbracoMapper should be injected instead of UmbracoMapper
+  - Features and optimizations from Umbraco 8.13 
+- Bugfixes
+  - Fix for Can't enable AppData mode for models builder in Alpha4
+  - Fix warning logged regarding Antiforgery tokens
+  - Fix for problem with models builder and nested content
+  - Fix for ContentCacheRefresherNotification is dispatching every 10 seconds FileSystem changes??
+
+
+### Changes between beta 1 and beta 2
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2Fnetcore-beta002+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - `HideTopLevelNodeFromPath` default value changed to to `true`.
+  - All notifications moved to the same namespace to make them easily discoverable
+    - More notifications also postfixed with "Notification". `ServerVariablesParsing` => `ServerVariablesParsingNotification`.
+  - The order of view location changes, so `/Views` is the first to search.
+  - "WebRouting:DisableRedirectUrlTracking" configuration changed from `string` to `bool`.
+- Features
+  - Added API to validate user creadentials without actually logging them in.
+  - Reintroduced missing overloads for `GetCropUrl`.
+  - Enabled Microsoft SouceLink Debugging Feature.
+  - Added localizable error descriptors for Users and Members
+  - Replaced System.Drawing with ImageSharp when extracting the height and width of uploaded images.
+- Bugfixes
+  - Fixed issue with scheduled publishing.
+  - Fixed issues where the runtime lever was not used correct.
+  - Fixed issue with ModelsBuilder when using inherited Document Types.
+  - Fixed issues where the javascript minifier was too agressive.
+  - Fixed issue with hardcoded '\' as directory separator char (Linux issue).
+  - Fixed issue in the Danish translation file leading to error doing install.

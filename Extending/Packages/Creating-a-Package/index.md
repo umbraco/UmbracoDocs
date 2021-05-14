@@ -2,7 +2,6 @@
 versionFrom: 8.0.0
 meta.Title: "Creating a package"
 meta.Description: "Tutorial to create a package in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/creating-a-package.md"
 ---
 
 # Creating a Package

@@ -2,17 +2,17 @@
 versionFrom: 8.0.0
 ---
 
-# Checkbox
+# Toggle
 
 `Returns: Boolean`
 
-Checkbox is a standard checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+Toggle is a standard checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## Data Type Definition Example
 
 ![True/False Data Type Definition](images/Checkbox-Data-Type.png)
 
-The Checkbox property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
+The Toggle property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
 
 It is also possible to define a label, that will be displayed next to the checkbox on the content.
 
@@ -58,7 +58,7 @@ See the example below to see how a value can be added or changed programmaticall
     
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
+
     // Set the value of the property with alias 'myCheckBox'
     content.SetValue("myCheckBox", true);
             

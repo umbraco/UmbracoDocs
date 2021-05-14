@@ -10,7 +10,6 @@ versionFrom: 8.1.0
 
 Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" data type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
 
-
 ## Data Type Definition Example
 
 ![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8_1.png)
@@ -40,6 +39,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 ```
 
 If `Max number of items` is configured to `1`
+
 ```csharp
 @using Umbraco.Web.Models
 @{
@@ -59,67 +59,67 @@ See the example below to see how a value can be added or changed programmaticall
 @using Newtonsoft.Json
 @using Umbraco.Web.Models
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Get the media you want to assign to the footer links property 
-	var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
+    // Get the media you want to assign to the footer links property 
+    var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
 
-	// Create an Udi of the media
-	var mediaUdi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
+    // Create an Udi of the media
+    var mediaUdi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
 
-	// Get the content you want to assign to the footer links property 
-	var contentPage = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
+    // Get the content you want to assign to the footer links property 
+    var contentPage = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
 
-	// Create an Udi of the Content
-	var contentPageUdi = Udi.Create(Constants.UdiEntityType.Document, contentPage.Key);
-	
-	// Create a list with different link types
-	var externalLink = new List<Link>
-	{
-		// External Link
-		new Link
-		{
-			Target = "_blank",
-			Name = "Our Umbraco",
-			Url = "https://our.umbraco.com/",
-			Type = LinkType.External
-		},
-		// Media 
-		new Link
-		{
-			Target = "_self",
-			Name = media.Name,
-			Url = media.MediaUrl(),
-			Type = LinkType.Media,
-			Udi = mediaUdi
-		}, 
-		// Content 
-		new Link
-		{
-			Target = "_self",
-			Name = contentPage.Name,
-			Url = contentPage.Url(),
-			Type = LinkType.Content,
-			Udi = contentPageUdi
-		}
-	};
+    // Create an Udi of the Content
+    var contentPageUdi = Udi.Create(Constants.UdiEntityType.Document, contentPage.Key);
 
-	// Serialize the list with links to JSON
-	var links = JsonConvert.SerializeObject(externalLink);
-	
+    // Create a list with different link types
+    var externalLink = new List<Link>
+    {
+        // External Link
+        new Link
+        {
+            Target = "_blank",
+            Name = "Our Umbraco",
+            Url = "https://our.umbraco.com/",
+            Type = LinkType.External
+        },
+        // Media 
+        new Link
+        {
+            Target = "_self",
+            Name = media.Name,
+            Url = media.MediaUrl(),
+            Type = LinkType.Media,
+            Udi = mediaUdi
+        }, 
+        // Content 
+        new Link
+        {
+            Target = "_self",
+            Name = contentPage.Name,
+            Url = contentPage.Url(),
+            Type = LinkType.Content,
+            Udi = contentPageUdi
+        }
+    };
 
-	// Set the value of the property with alias 'footerLinks'. 
-	content.SetValue("footerLinks", links);
+    // Serialize the list with links to JSON
+    var links = JsonConvert.SerializeObject(externalLink);
 
-	// Save the change
-	contentService.Save(content);
+
+    // Set the value of the property with alias 'footerLinks'. 
+    content.SetValue("footerLinks", links);
+
+    // Save the change
+    contentService.Save(content);
 }
 ```
 
@@ -140,4 +140,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.FooterLinks).Alias, links);
 }
 ```
-
