@@ -27,7 +27,7 @@ To create a Document Type:
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
 5. Enter the **Description**. For example: _This is our homepage template_. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
-6. Click **Save**. Our new Document Type is now visible as a new item under **Document types**.
+6. Click **Save**. Our new Document Type is now visible as a new item under **Document Types**.
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
 ## Customizing the Document Type
