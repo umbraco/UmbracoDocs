@@ -36,7 +36,7 @@ To create a Document Type:
 
 With the help of icons, you can identify different Document Types in the **Content Tree**. To add an icon:
 
-1. Select the icon placeholder next to the document name. The **Select Icon** pane appears on the right-side of the website.
+1. Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.  
@@ -65,8 +65,8 @@ To add properties to your Document Type, follow these steps:
 4. Enter a **Name**. For example: _Page Title_.
 5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd.)_".
     ![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
-6. Select **Add Editor** and select the data type of your choice. We'll add _text_ in the search box and select the **Textstring** data type.
-    ![Selecting Textstring data type](images/figure-11a-selecting-textstring-data-type-v8.png)
+6. Select **Add Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
+    ![Selecting Textstring Data Type](images/figure-11a-selecting-textstring-data-type-v8.png)
 7. Click **Submit**.
 
     :::tip
@@ -81,7 +81,7 @@ To add properties to your Document Type, follow these steps:
     | Description | The main content of the page. |
     | Data Type   | Richtext Editor               |
 
-9. Click **Add Group** to create a new group called Footer. Repeat Steps 3 to 7 using the specification below:
+9. Select **Add Group** to create a new group called Footer. Repeat Steps 3 to 7 using the specification below:
 
     | Name        | Footer Text                      |
     |-------------|----------------------------------|
