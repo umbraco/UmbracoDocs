@@ -22,11 +22,12 @@ To set the document type properties:
 4. Click **Insert** and select **Value**.
 5. In the **Value** window, select the **pageTitle** field from the drop-down list.
     ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
-6. Repeat the same process for the content in the `<p></p>` tags on the next line using the field **bodyText**.
+6. Select **Submit**.
+7. Repeat the same process for the content in the `<p></p>` tags on the next line using the field **bodyText**.
     ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
-7. Finally, we will remove the static text and replace the content in the footer between the `<li></li>` tags.
+8. Finally, we will remove the static text and replace the content in the footer between the `<li></li>` tags.
     ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
-8. Click **Save**.
+9. Click **Save**.
 
 Now, reload your homepage to view the content. You can go back and add additional fields in the document type, fill them out in the content node and then add them in the template to display the data in the website.
 

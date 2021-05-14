@@ -29,13 +29,6 @@ To create dynamic navigation links from published content nodes, use the followi
 }
 ```
 
-:::tip The IsVisible() helper method
-
-If you add a checkbox property to a document type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
-:::
-
-
-
 ## Hardcode Navigation
 
 To add a basic hardcoded navigation, follow these steps:
@@ -43,7 +36,7 @@ To add a basic hardcoded navigation, follow these steps:
 1. Go to **Settings**.
 2. In the **Templating** section, select **Templates** and open the **Master** template.
 3. Edit the `<li>` items under the `<nav>` tags to look like:
-    
+
     ```html
     <nav id="nav">
         <ul class="links">
@@ -53,7 +46,13 @@ To add a basic hardcoded navigation, follow these steps:
         </ul>
     </nav>
     ```
+
 4. Click **Save**.
+
+:::tip The IsVisible() helper method
+
+If you add a checkbox property to a document type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
+:::
 
 Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
 
