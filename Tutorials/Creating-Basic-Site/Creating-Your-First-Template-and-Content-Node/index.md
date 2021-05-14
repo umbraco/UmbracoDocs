@@ -34,7 +34,7 @@ Our third and final stage to creating our first page in Umbraco, is to create a 
 To add a content node:
 
 1. Go to **Content**.
-2. Click the **...** next to the **Content** headline in the tree. Select **HomePage**.
+2. Select the **...** next to the **Content** headline in the tree. Select **HomePage**.
     ![Create a Homepage](images/figure-15-create-a-homepage-v8.png)
 
     :::tip
