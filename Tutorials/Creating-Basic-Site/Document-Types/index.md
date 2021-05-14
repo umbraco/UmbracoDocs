@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 # Document Types
 
-The first step in any Umbraco site is to create a **Document Type**. A **Document Type** is a data container in Umbraco where you can add **Properties** (data fields/attributes) to input data. Each **Property** has a **Data Type** like text string, number or rich text body. Umbraco outputs the input data using **Templates**.
+The first step in any Umbraco site is to create a **Document Type**. A **Document Type** is a data container in Umbraco where you can add **Properties** (data fields/attributes) to input data. Each **Property** has a **Data Type** like text string, number, or rich text body. Umbraco outputs the input data using **Templates**.
 
 These are some of the most common properties you would add to a **Document Type**:
 
@@ -15,26 +15,26 @@ These are some of the most common properties you would add to a **Document Type*
 
 ## Creating a Document Type
 
-To create a document type:
+To create a Document Type:
 
 1. Go to **Settings**.
-2. Select the **...** next to the **Document Types** in the **Settings** pane,.
+2. Select the **...** next to the **Document Types** in the **Settings** tree.
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
-3. Click **Document Type with Template**.
+3. Select **Document Type with Template**.
 
     :::tip
     Using folders can help you organise your **Document Types**.
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
-5. Enter the **Description**. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
-6. Click **Save**. Our new document type is now visible as a new item under **Document types**.
+5. Enter the **Description**. For example: _This is our homepage template_. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
+6. Click **Save**. Our new Document Type is now visible as a new item under **Document types**.
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
 ## Customizing the Document Type
 
 ### Adding icons
 
-With the help of icons, you can identify different document types in the **Content Tree**. To add an icon:
+With the help of icons, you can identify different Document Types in the **Content Tree**. To add an icon:
 
 1. Select the icon placeholder next to the document name. The **Select Icon** pane appears on the right-side of the website.
    ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type-v8.png)
@@ -52,19 +52,20 @@ To create a Document Type at the root of the **Content Tree**:
     :::note
     If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
     :::
+3. Click **Save**.
 
 ### Adding Properties
 
-To add properties to your document type, follow these steps:
+To add properties to your Document Type, follow these steps:
 
 1. Go to the **Design** tab.
-2. Click **Add Group** and enter a name for the group. For this tutorial, we will call it _Content_.
+2. Select **Add Group** and enter a name for the group. For this tutorial, we will call it _Content_.
     ![Document Types - Adding Our First Content Group](images/figure-10-document-types-adding-groups-v8.png)
-3. Click **Add property**. The **Property Settings** pane opens.
+3. Select **Add property**. The **Property Settings** dialog opens.
 4. Enter a **Name**. For example: _Page Title_.
-5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd)_".
+5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd.)_".
     ![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
-6. Click **Add Editor** and select the data type of your choice. We'll add _text_ in the search box and select the **Textstring** data type.
+6. Select **Add Editor** and select the data type of your choice. We'll add _text_ in the search box and select the **Textstring** data type.
     ![Selecting Textstring data type](images/figure-11a-selecting-textstring-data-type-v8.png)
 7. Click **Submit**.
 
@@ -89,7 +90,7 @@ To add properties to your document type, follow these steps:
     | Description | Copyright notice for the footer. |
     | Data Type   | Textstring                       |
 
-10. Your document type should now look like this:
+10. Your Document Type should now look like this:
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
 11. Click **Save**.
 
