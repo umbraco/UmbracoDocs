@@ -13,11 +13,11 @@ To edit the template:
 3. Open the template. It will contain a little bit of **_Razor code_**.
     ![Empty Homepage Template](images/figure-13-empty-homepage-template-v8.png)
 4. Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in.
-   
+
     :::note
-    We are using files from the Custom Umbraco template here: [Custom Umbraco Template](http://umbra.co/Umbracotemplate)
+    We are using files from the [Custom Umbraco Template](http://umbra.co/Umbracotemplate).
     :::
-5. Open the Custom Umbraco Template folder and copy the contents of **index.html**.
+5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
    
     :::warning
@@ -38,7 +38,7 @@ To add a content node:
     ![Create a Homepage](images/figure-15-create-a-homepage-v8.png)
 
     :::tip
-    If you cannot see the content node, check that [Settings] > [Document Types] > [HomePage]  > [Structure tab] > [Allow at root] is checked.
+    If you cannot see the content node, check that [Settings] > [Document Types] > [HomePage]  > [Permissions tab] > [Allow at root] is checked.
     :::
     The Home Page opens in the content editor.
 3. Enter the name for the content node. We are going to call this _Homepage_.
