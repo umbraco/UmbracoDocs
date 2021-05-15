@@ -185,3 +185,6 @@ var imagePosition = Model.MacroParameters["imagePosition"];
 var imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
 }
 ```
+### Umbraco 8 compatibility
+
+Just followed this page and implemented the sample in Umbraco 8.9.1 and although these instruction may have been written for version 7 this still works in 8.
