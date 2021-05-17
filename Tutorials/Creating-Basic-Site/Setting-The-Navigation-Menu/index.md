@@ -10,7 +10,11 @@ You can fix the navigation menu in two ways:
 
 ## Dynamic Navigation
 
-To create dynamic navigation links from published content nodes, use the following code:
+To create dynamic navigation links from published content nodes, follow these steps:
+
+1. Go to **Settings**.
+2. Select **Templates** from the **Templating** section, and open the **Master** template.
+3. Go to the `<!-- Navigation -->` tag (around line 20) and use the following code:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -34,24 +38,31 @@ To create dynamic navigation links from published content nodes, use the followi
 To add a basic hardcoded navigation, follow these steps:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Master** template.
-3. Edit the `<li>` items under the `<nav>` tags to look like:
+2. Select **Templates** from the **Templating** section, and open the **Master** template.
+3. Go to the `<!-- Navigation -->` tag (around line 20) and update your code to look like:
 
     ```html
-    <nav id="nav">
-        <ul class="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
-            <li><a href="/articles">Articles</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+			<nav class="navbar navbar-expand navbar-light">
+				<a class="navbar-brand font-weight-bold" href="/">Umbraco TV</a>
+				<!-- Links -->
+				<ul class="navbar-nav">
+					<li class="nav-item">
+					    <a class="nav-link" href="/contact-us">Contact Us</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="/articles">Articles</a>
+                    </li>
+				</ul>
+			</nav>
+		</div>
     ```
 
 4. Click **Save**.
 
 :::tip The IsVisible() helper method
 
-If you add a checkbox property to a document type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
+If you add a checkbox property to a Document Type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
 :::
 
 Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
