@@ -19,7 +19,7 @@ To edit the template:
     :::
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 6. Paste the content into the _HomePage_ template below the closing curly brace "}".
-   
+
     :::warning
     Umbraco **_Templates_** use **_Razor_** which allows you to add code in your **_Template_** files. **_Razor_** reacts to `@` signs.
     :::
@@ -42,21 +42,49 @@ To add a content node:
     :::
     The Home Page opens in the content editor.
 3. Enter the name for the content node. We are going to call this _Homepage_.
-    
+
     :::tip
     The name will show up in the node list and will be used to create a url for the page. Try to keep it short but descriptive.
     :::
 4. Enter the following details:
-   
-    | Name        | Description                                                    |
-    |-------------|----------------------------------------------------------------|
-    | Page Title  | Welcome to Widgets Ltd.                                        |
-    | Body Text   | Hello world! We can write what we like here! Widgets Ltd. 2019 |
-    | Footer Text | Copyright Widgets Ltd. 2019                                    |
+
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Page Title</td>
+    <td>Welcome to Widgets Ltd</td>
+  </tr>
+  <tr>
+    <td>Body Text</td>
+    <td><b>Lorem ipsum</b>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et aliquet ante, ut eleifend libero. </p>
+    <p> 
+        <ul> 
+            <li> Proin eleifend consequat nunc id vulputate. </li>
+            <li> Ut eget lobortis metus, non congue lorem. </li>
+            <li> Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </li>
+            <li> Maecenas tempus non lectus rhoncus efficitur. </li>
+        </ul>
+    </p>
+    <p> Sed est ligula, maximus in dolor sed, lacinia egestas ligula. Donec eu nisi lectus. </p>
+    <p> <i> Morbi pharetra pulvinar arcu non gravida.</i></p></td>
+  </tr>
+  <tr>
+    <td>Footer Text</td>
+    <td>Copyright Widgets Ltd 2019</td>
+  </tr>
+</tbody>
+</table>
 
 5. Click **Save and Publish**. The content tree will reload with the homepage node.
 
-Refresh your webpage in your browser http://localhost:xxxx. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
+Refresh your webpage in your browser <http://localhost:xxxx>. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
 
 :::tip
 If you see a blank page, check if the template is entered and remember to save it.
