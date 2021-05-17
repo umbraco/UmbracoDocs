@@ -16,22 +16,23 @@ To create dynamic navigation links from published content nodes, follow these st
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
 3. Go to the `<!-- Navigation -->` tag (around line 20) and use the following code:
 
-```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using Umbraco.Web;
-@{ 
-    var site = Model.Root();
-    var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
-}
+    ```csharp
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage
+    @using Umbraco.Web;
+    @{ 
+        var site = Model.Root();
+        var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
+    }
 
-<!-- uncomment this line if you want the site name to appear in the top navigation -->
-<!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
+    <!-- uncomment this line if you want the site name to appear in the top navigation -->
+    <!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
 
-@foreach (var item in selection)
-{
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
-}
-```
+    @foreach (var item in selection)
+    {
+        <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    }
+    ```
+4. Click **Save**.
 
 ## Hardcode Navigation
 
