@@ -4,18 +4,18 @@ versionFrom: 8.0.0
 
 # Articles and Article Items - A Parent Page with Infinite Children
 
-Having an Articles Parent page, and a number of associated child articles, provides a good example of Umbraco's features. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages, or any other collection of document types.
+Having an Articles Parent page, and a number of associated child articles, provides a good example of Umbraco's features. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages, or any other collection of Document Types.
 
 ## Creating Articles and Article Items
 
 Create two new Document Types with template: **Articles Main** and **Articles Item**.
 
-To create **Articles Main** document type, follow these steps:
+To create **Articles Main** Document Type, follow these steps:
 
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
-    ![Document type with template](images/Document_type_with_template.png)
+    ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5. Let's add two fields with the following specifications:
     | Group | Field Name         | Alias            | Data Type        |
@@ -26,12 +26,12 @@ To create **Articles Main** document type, follow these steps:
     ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png){: data-fancybox}
 6. Click **Save**
 
-To create **Articles Item** document type, follow these steps:
+To create **Articles Item** Document Type, follow these steps:
 
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
-    ![Document type with template](images/Document_type_with_template.png)
+    ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5. Let's add two fields with the following specifications:
     | Group   | Field Name      | Alias          | Data Type        |
@@ -49,8 +49,8 @@ To update **Articles Main** Document Type permissions:
 1. Navigate to the **Home Page** Document Type and go to the **Permissions** tab.
 2. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
 3. Select **Articles Main** and click **Save**.
-4. Go to the **List View** tab.
-5. Toggle **Enable List view button** and click **Save**.
+4. Navigate to the **Articles Main** Document Type and go to the **List View** tab.
+5. Toggle **Enable List view** and click **Save**.
     ![Enabling List View](images/figure-44-list-view-enabled.png)
 6. Go to the **Permissions** tab.
 7. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
@@ -70,7 +70,9 @@ To add a content node:
 2. Select **...** next to the **HomePage** and select **Articles Main**.
 3. Enter the name for the article. We are going to call it _Articles_.
 4. Enter the **Article Title**, **Article Content**, and click **Save**.
-   When you click on Save, you will notice an empty list view is created. We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
+   When you click on Save, you will notice an empty list view is created. 
+   
+   We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
    
    :::tip
     If you do not see the list view, try refreshing the page.
@@ -96,7 +98,7 @@ To update the **Articles Main** template, follow these steps:
 8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articlesTitle_**.
 9. Replace the static text within the `<div>` tags (from line 22 to 28) with the Model.Value reference to **_articlesBodyText_**.
     ![Articles Main Template](images/articles-main-template.png)
-10. Define a query for all articles, just below the `<h3>` tag (around line 29) of the `<!-- Latest blog posts -->` section.
+10. Define a query for all articles, just below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
     ![Query Builder](images/query-builder.png)
 11. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
     ![Query parameters](images/query-parameters.png)
