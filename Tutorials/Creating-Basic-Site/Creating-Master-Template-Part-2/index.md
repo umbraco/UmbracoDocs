@@ -18,7 +18,7 @@ Let's create a content-only contact page where we can provide a title and some r
 
 1. Go to **Settings**.
 2. Select the **...** next to the **Document Types** in the **Settings** tree.
-3. Click **Document Type with Template**. The Document Type opens in the content editor.
+3. Select **Document Type with Template**. The Document Type opens in the content editor.
 4. Select an **Icon** from the list of icons.
 5. Enter a **Name**. Let's call it _Simple Content Page_.
 6. Enter a Description.  
