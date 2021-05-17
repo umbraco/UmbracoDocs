@@ -9,7 +9,7 @@ We now have a fully fledged working site! Hopefully, this guide has given you al
 This is not the limit of Umbraco - you've barely scratched the surface in this guide.
 
 * For Video Tutorials, see the [Umbraco TV website](https://umbraco.tv/videos/umbraco-v8/implementor/).
-* For hands-on Training and Developer Certification, attend an official Umbraco Master Class course in a city near you. [Book Online Courses](https://umbraco.com/products/training).
+* For hands-on Training and Developer Certification, attend an official Umbraco Master Class course in a city near you. [Book your Online Course now](https://umbraco.com/products/training).
 * For Online Documentation, see [Our Umbraco Documentation website](https://our.umbraco.com/documentation).
 * For Help and Guidance on anything this guide doesn't cover, reach out to us at [Umbraco Forum](https://our.umbraco.com/forum).
 
