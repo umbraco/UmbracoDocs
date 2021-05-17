@@ -10,8 +10,8 @@ If you see yourself repeating the same HTML multiple times in your templates, yo
 To create a new master template:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates**.
-3. Click the **...** next to the **Templates** folder and click **Create**.
+2. Select **Templates** from the **Templating** section.
+3. Select the **...** next to the **Templates** folder and click **Create**.
 4. A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
    ![Master Template](images/figure-22-master-template-v8.png)
 5. Click **Save**.
@@ -21,10 +21,11 @@ To create a new master template:
 To use the master template:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Homepage** template.
-3. Click on `Master Template: No Master`. The Master template pane opens on the right-side of the browser.
+2. Select **Templates** from the **Templating** section and open the **Homepage** template.
+3. Click on `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
 4. Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
     ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
+5. Click **Save**.
 
 ## Updating Templates With the New Master Template
 
@@ -33,17 +34,17 @@ We now need to move the parts of our HTML template that are common across all te
 To update templates with the new master template, follow these steps:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Homepage** template.
-3. For this site, we will cut everything from the `<html>` to the end of the `</div>` basically the `header` and `navigation` of the site to the master template.
+2. Select **Templates** from the **Templating** section and open the **Homepage** template.
+3. For this tutorial, we will cut everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
     ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
 4. Click **Save**.
-5. Go to the **Master** template and paste this HTML markup after the closing curly brace.
+5. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 8).
     ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
 6. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code **_@RenderBody()_** at the end.
     ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 7. Click **Save**.
 8. Repeat the same process for the footer content:
-    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` comment and click **Save**.
+    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</div>` tag (around line 114) and click **Save**.
     2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
         ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
     3. Click **Save**.
@@ -101,26 +102,13 @@ If you are missing any content (header or footer), check that the templates matc
 		
 		@RenderBody()
 		
-			<!-- Footer -->
+		<!-- Footer -->
 		<div class="container-fluid footer">
 			<div class="container">
 
-				<div class="row section">
-					<div class="col-md-4">
-						<ul class="footer-links">
-							<h5>@Model.Value("footerText")</h5>
-						</ul>
-					</div>
-				</div>
+				@Model.Value("footerText")
 			</div>
 		</div>
-		
-			<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	
-	</body>
-</html>
 ```
 
 ### Homepage Template
@@ -134,11 +122,12 @@ If you are missing any content (header or footer), check that the templates matc
 
 <!DOCTYPE HTML>
 
+		
 		<!-- Jumbotron, w title -->
 		<div class="jumbotron text-center jumbotron-fluid">
 			<div class="container">
 				<h1 class="display-1">@Model.Value("pageTitle")</h1>
-				<p>@Model.Value("bodyText")</p>
+				<p>And this is <span class="font-weight-bold">only</span> the beginning.</p>
 			</div>
 		</div>
 
@@ -149,25 +138,7 @@ If you are missing any content (header or footer), check that the templates matc
 			<div class="row section">
 				<div class="col-md-12">
 
-					<h2>Why Umbraco is a great fit for you as a developer</h2>
-					<p>Are you looking for a CMS that’ll give you full flexibility? 
-						A CMS that doesn’t get in the way of tngs but instead lets you unfold your talent, ideas and creations in order to build websites that’ll impress - or simply just work as intended. 
-						All while keeping your editor, boss or client happy? Then look no further. 
-						With Umbraco, you get a clean slate Open Source ASP.NET CMS so you can <span class="font-weight-bold">build and extend your website exactly the way you need to.</span></p>
-					<p>We’ve got over 225,000 active developers in our worldwide Umbraco community, who have already embraced the powers and joys of using a flexible CMS.</p>
-
-					<ul>
-						<li>A flexible CMS - do things your way</li>
-						<li>Neat and clean in order to provide you with power</li>
-						<li>Integrate and extend as much as you want</li>
-						<li>How to become an Umbraco developer</li>
-						<li>Access to support from Umbraco HQ developers</li>
-						<li>The page ALL Umbraco developers have bookmarked</li>
-						<li>Our friendly Open Source community</li>
-						<li>A helping (time-saving!) hand: Umbraco Cloud</li>
-						<li>How to continue your Umbraco journey</li>
-					</ul>
-
+				@Model.Value("bodyText")
 				</div>				
 			</div>
 
@@ -185,9 +156,9 @@ If you are missing any content (header or footer), check that the templates matc
 							no matter how complex a site you’re building, you know that your editors will still find it a breeze to edit. Oh, and the cherry on top of the cherry - 
 							there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>. </p>
 					</div>
-						<div class="col-md-4">
+					<div class="col-md-4">
 						<img src="/images/community.png" class="img-fluid" alt="Community illustration">
-					</div> 
+					</div>
 				</div>
 			</div>
 		</div>
@@ -249,6 +220,15 @@ If you are missing any content (header or footer), check that the templates matc
 	
 			</div>
 		</div>
+
+		
+	
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>
 ```
 
 ---
