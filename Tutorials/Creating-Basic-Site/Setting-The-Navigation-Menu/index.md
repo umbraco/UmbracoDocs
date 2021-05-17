@@ -44,8 +44,8 @@ To add a basic hardcoded navigation, follow these steps:
 
     ```html
     <div class="container">
-			<nav class="navbar navbar-expand navbar-light">
-				<a class="navbar-brand font-weight-bold" href="/">Umbraco TV</a>
+		<nav class="navbar navbar-expand navbar-light">
+			<a class="navbar-brand font-weight-bold" href="/">Umbraco TV</a>
 				<!-- Links -->
 				<ul class="navbar-nav">
 					<li class="nav-item">
@@ -55,8 +55,8 @@ To add a basic hardcoded navigation, follow these steps:
 					    <a class="nav-link" href="/articles">Articles</a>
                     </li>
 				</ul>
-			</nav>
-		</div>
+		</nav>
+	</div>
     ```
 
 4. Click **Save**.
