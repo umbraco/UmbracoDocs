@@ -19,6 +19,7 @@ using System.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Web.Editors;
+using Umbraco.Web.Models.ContentEditing;
 
 namespace My.Website
 {
