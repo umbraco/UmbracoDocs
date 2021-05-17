@@ -22,7 +22,7 @@ To use the master template:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section and open the **Homepage** template.
-3. Click on `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
+3. Select `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
 4. Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
     ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
 5. Click **Save**.
