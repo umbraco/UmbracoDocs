@@ -58,7 +58,7 @@ If we now go and check our Articles Main page in the browser we should see our c
 
 Click on the **_Settings_** menu from the top menu, and navigate to the **_Articles Main_** template.
 
-We are going to use Razor to query between all instances of **_Article Item_** under the **_Article Main_** content node. In order to do that, we are going to use the built-in **Query Builder**.
+We are going to use Razor to query between all instances of **_Article Item_** under the **_Articles Main_** content node. In order to do that, we are going to use the built-in **Query Builder**.
 
 ![Query Builder](images/query-builder.png)
 
