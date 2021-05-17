@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 # Displaying the Document Type Properties
 
-You might have noticed that the content we've added to the homepage is not being displayed. We need to wire up the data type properties to the template.  
+You might have noticed that the content we've added to the homepage is not being displayed. We need to wire up the Data Type properties to the template.  
 
 Let’s look at our template and identify where the content should be displayed.
 
@@ -13,23 +13,31 @@ The top arrow in this image is the "Page Title" and the bottom arrow is the "Bod
 
 ## Setting the Document Type Properties
 
-To set the document type properties:
+To set the Document Type properties:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Homepage** template.
-3. Scroll down to the `<!-- Jumbotron, w title -->` section and highlight the text `“Welcome - UmbracoTV”`.
+2. Select **Templates** in the **Templating** section, and open the **Homepage** template.
+3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 45) and highlight the text `“Welcome - UmbracoTV”`.
     ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v8.png)
 4. Click **Insert** and select **Value**.
-5. In the **Value** window, select the **pageTitle** field from the drop-down list.
+5. Select **pageTitle** field from the drop-down list.
     ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
-6. Select **Submit**.
-7. Repeat the same process for the content in the `<p></p>` tags on the next line using the field **bodyText**.
+6. Click **Submit**.
+7. Repeat the same process for the content in the `<div class="container">` tag (around line 55):
+    1. Highlight the content as shown in the figure.
     ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
-8. Finally, we will remove the static text and replace the content in the footer between the `<li></li>` tags.
+    2. Click **Insert** and select **Value**.
+    3. Select **bodyText** field from the drop-down list.
+    4. Click **Submit**.
+8. Repeat the same process for the content in the `<div class="container-fluid footer">` tag (around line 144):
+    1. Highlight the content between the `<div class="container">` tags.
     ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
+    2. Click **Insert** and select **Value**.
+    3. Select **footerText** field from the drop-down list.
+    4. Click **Submit**.
 9. Click **Save**.
 
-Now, reload your homepage to view the content. You can go back and add additional fields in the document type, fill them out in the content node and then add them in the template to display the data in the website.
+Now, reload your homepage to view the content. You can go back and add additional fields in the Document Type, fill them out in the content node and then add them in the template to display the data in the website.
 
 ---
 
