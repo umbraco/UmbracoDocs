@@ -37,7 +37,7 @@ To set the Document Type properties:
     4. Click **Submit**.
 9. Click **Save**.
 
-Now, reload your homepage to view the content. You can go back and add additional fields in the Document Type, fill them out in the content node and then add them in the template to display the data in the website.
+Now, reload your homepage to view the content. You can go back and add additional fields or update existing fields in the Document Type, fill them out in the content node and then add them in the template to display the data in the website.
 
 ---
 
