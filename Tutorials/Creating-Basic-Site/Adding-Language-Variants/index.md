@@ -4,14 +4,14 @@ versionFrom: 8.0.0
 
 # Adding Language Variants
 
-Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this we will make a Danish version of the `Contact Us` page.
+Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this tutorial, we will make a Danish version of the `HomePage` page.
 
 ## Adding a new language
 
 To add a new language, follow these steps:
 
 1. Go to the **Settings** tab.
-2. In the **Settings** pane, go to **Languages**. The **Languages** window opens in the editor.
+2. Go to **Languages** in the **Settings** tree. The **Languages** window opens in the editor.
 3. Click **Add Language**. The **Add Language** window opens in the editor.
 4. Select a **Language** from the dropdown list. In this tutorial, we will pick Danish.
     ![Adding the Danish language](images/adding-danish-language.png)
@@ -19,21 +19,22 @@ To add a new language, follow these steps:
     1.  Defualt language for your site, toggle **Default Language**.
     2.  Mandatory language for your site, toggle  **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
+    ![Adding a Fallback language](images/fallback-language.png)
 7. Click **Save**.
 
 ## Enabling Language Variants on Document Types and Properties
 
-To enable language variants on document types, follow these steps:
+To enable language variants on Document Types, follow these steps:
 
 1. Go to the **Settings** tab.
-2. From the **Document Types** folder, select **Home Page**.
+2. Select **HomePage** from the **Document Types** folder.
 3. Go to the **Permissions** tab and toggle **Allow vary by culture**
 4. Click **Save**.
 5. Go to the **Design** tab.
 6. Click on the gear icon ⚙ of the **Page Title** and toggle **Allow vary by culture**.
 7. Click **Submit**.
     ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
-8. For this tutotial, we will not make any changes to the **Body Text**. Click **Save**.
+8. For this tutorial, we will not make any changes to the **Body Text**. Click **Save**.
 
 ## Adding Culture and Hostnames to the root node of the website
 
@@ -41,7 +42,7 @@ To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Home Page** content node and select **Culture and Hostnames...**.
-3. In the **Culture and Hostnames** pane, let's add a domain for each hostname, like it's done here:
+3. In the **Culture and Hostnames** tree, let's add a domain for each hostname, like it's done here:
     ![Culture and Hostnames](images/culture-and-hostnames.png)
 4. Click **Save**.
 
