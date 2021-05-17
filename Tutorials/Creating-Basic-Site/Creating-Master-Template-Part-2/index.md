@@ -17,8 +17,8 @@ Some potential solutions:
 Let's create a content-only contact page where we can provide a title and some rich text.
 
 1. Go to **Settings**.
-2. In the **Settings** pane, click the **...** next to the **Document Types** in the tree.
-3. Click **Document Type with Template**. The document type opens in the content editor.
+2. Select the **...** next to the **Document Types** in the **Settings** tree.
+3. Click **Document Type with Template**. The Document Type opens in the content editor.
 4. Select an **Icon** from the list of icons.
 5. Enter a **Name**. Let's call it _Simple Content Page_.
 6. Enter a Description.  
@@ -31,9 +31,8 @@ Let's create a content-only contact page where we can provide a title and some r
     ![Simple Content Page Template with Data Fields](images/figure-35-contact-us-template-with-data-fields-v8.png)
 8. Click **Save**.
 9. Go to **Templates** to view your new Simple Content Page template that was created automatically with the Document Type.  
-10. Click on the **Simple Content Page** template and then select **Master** as the **Master template**.
-11. Click **Save**.  
-12. Add the following HTML to the template and click **Save**.
+10. Select the **Simple Content Page** template and then select **Master** as the **Master template**.
+11. Add the following HTML to the **Simple Content Page** template and click **Save**.
 
     ```html
     <!-- Jumbotron, w title -->
@@ -55,13 +54,17 @@ Let's create a content-only contact page where we can provide a title and some r
     </section>        
     ```
 
+12. Click **Save**.
+
 ### Updating the Document Type Permissions
 
-To update the document type permissions, follow these steps:
+We now need to update the Document Type permissions to specifically add child nodes under the root content node.
+
+To update the Document Type permissions:
 
 1. Go to **Settings**.
-2. Open the **Homepage** document type and go to the **Permissions** tab.
-3. In the **Allowed child node types**, click **Add child**. The **Choose child node** window opens.
+2. Open the **Homepage** Document Type and go to the **Permissions** tab.
+3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
 4. Select **Simple Content Page** and click **Save**.
     ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child-v8.png)
 
@@ -70,36 +73,52 @@ To update the document type permissions, follow these steps:
 To create a content node:
 
 1. Go to **Content**.
-2. Click on **...** next to the **Homepage** and select **Simple Content Page**.
-3. Enter a name for the document type. Let's call it _Contact Us_.
+2. Select **...** next to the **Homepage** and select **Simple Content Page**.
+3. Enter a name for the Document Type. Let's call it _Contact Us_.
 4. Fill in details for the **Page Title** and **Body Text**.
 5. Click **Save and Publish**.
 
 ### Adding the Document Type Properties
 
-To add the document type properties:
+To add the Document Type properties:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Simple Content Page** template.
-3. Scroll down to the `<!-- Jumbotron, w title -->` section and highlight the text `“Umbraco Support”`.
+2. Select **Templates** from the **Templating** section, and open the **Simple Content Page** template.
+3. Scroll to the `<!-- Jumbotron, w title -->` (around line 7) section and highlight the text `“Umbraco Support”`.
 4. Click **Insert** and select **Value**.
-5. In the **Value** window, select the **pageTitle** field from the drop-down list.
-6. Repeat the same process for the content in the `<p></p>` tags of the `<div>` using the field **bodyText**.
+5. Select the **pageTitle** field from the drop-down list and click **Submit**.
+6. Repeat the same process for the `<div class="container">` tag:
+    1. Highlight the content from the `<p>` tag (around line 17) to the end of the `</p>` tag (around line 20).
+    2. Click **Insert** and select **Value**.
+    3. Select **bodyText** field from the drop-down list.
+    4. Click **Submit**.
 7. Click **Save**.
+
+### Viewing the Contact Us Page
+
+To view the **Contact Us** Page:
+
+1. Go to **Content**.
+2. Select the **Contact Us** page.
+3. Go to the **Info** tab.
+4. Click the link to view the page.
+    ![Viewing the Contact Us Page](images/figure-37-viewing-contact-us.png)
 
 ## Using Document Type Properties from the Homepage
 
 You may notice that the footer is now empty - we don't have the content from our Homepage node.
 
-To use the document type properties from the homepage, do the following:
+To use the Document Type properties from the homepage, do the following:
 
 1. Go to **Settings**.
-2. In the **Templating** section, select **Templates** and open the **Master** template.
-3. Highlight `@Model.Value("footerText")` in the footer and click **Insert**.
+2. Select **Templates** from the **Templating** section, and open the **Master** template.
+3. Highlight `@Model.Value("footerText")` in the footer (around line 51) and click **Insert**.
 4. Select **Value** and choose the footerText again from the **Choose field** dropdown.
 5. Select **Yes, make it recursive** checkbox. This notifies Umbraco to look up the content tree if the field doesn't exist at the node level for the page we're requesting.
 6. Click **Submit**.
 7. Click **Save**.
+
+Reload the Contact Us page to view the content with the footer.
 
 ---
 
