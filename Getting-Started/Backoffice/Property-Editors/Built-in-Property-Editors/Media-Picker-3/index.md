@@ -20,7 +20,7 @@ Use setting to limit the picker to only select Media Items of these types.
 
 ### Pick multiple items
 
-Use this setting to enable the property to contain multiple items. When this is enabled the property editor returns an `IEnumerable<MediaWithCrops>`. 
+Use this setting to enable the property to contain multiple items. When this is enabled the property editor returns an `IEnumerable<MediaWithCrops>`.
 
 You can still set the maximum amount to 1. Do so when you want to retrieve a collection but only allow the Content Editors to select one Media Item.
 
@@ -30,7 +30,7 @@ Use this setting to enforce a minimum and/or maximum amount of selected Media It
 
 ### Start node
 
-This setting is used to limit the Media Picker to certain parts of the Media Tree. 
+This setting is used to limit the Media Picker to certain parts of the Media Tree.
 
 ### Ignorer user start nodes
 
@@ -45,7 +45,13 @@ Enable the focal point setter, do only enable this if the focal point is used or
 
 ### Image Crops
 
-Define local image croppings. Crop data is stored on the document in this property. This means it can differentiate between documents.
+Define local image crops. Local image crop data is stored on the document in this property. This means it can differentiate between documents.
+
+This is different from Global crops as they are defined on the Media Item, making the crops shared between all usage of that Media Item.
+
+Global crops are configured on the Image Cropper property of the Image Media Type
+
+[Read about the Image Cropper here](../Image-Cropper/index.md)
 
 ## Content Example
 
@@ -103,7 +109,7 @@ Define local image croppings. Crop data is stored on the document in this proper
 
 ## Using local crops
 
-Local image croppings are stored and retrieved differently than global crops. Below are two examples of how to retrieve local crops.
+Local image crops are stored and retrieved differently than global crops. Below are two examples of how to retrieve local crops.
 
 ### Using GetLocalCropUrl
 

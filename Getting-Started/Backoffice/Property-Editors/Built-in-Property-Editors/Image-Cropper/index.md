@@ -8,6 +8,14 @@ versionFrom: 8.7.0
 
 Returns a path to an image, along with information about focal point and available crops
 
+When image Cropper is used on a Media Type the crops are shared between all usages of a Media Item. This is called global crops.
+
+If Image Cropper is used on a Document Type, the file and crops will be local to the Document.
+
+Notice its possible make local crops on shared Media Items via the Media Picker 3 Property Editor.
+
+[Read about the Media Picker 3](../Media-Picker-3/index.md)
+
 ## Settings
 
 ### Prevalues
@@ -51,12 +59,12 @@ is shown for a specific crop.
 Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
 dynamic object.
 
-The Url Helper method can be used to replace the IPublishedContent extension methods. It has  a set of extensions for working with URLs. 
+The Url Helper method can be used to replace the IPublishedContent extension methods. It has  a set of extensions for working with URLs.
 
 For rendering a cropped media item, the `.GetCropUrl` is used:
 
 ```csharp
-@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true); 
+@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true);
 ```
 
 `HtmlEncode` is by default set to true, which means you only need to define the parameter if you wan't to disable HTML encoding.
@@ -87,7 +95,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ```csharp
 @{
-    
+
     if (Model.Image != null)
     {
         var cropUrl = Url.GetCropUrl(Model.Image, "banner", false);
@@ -118,7 +126,7 @@ See the example below to see how a value can be added or changed programmaticall
 @{
 	// Get access to ContentService
 	var contentService = Services.ContentService;
-	
+
 	// Create a variable for the GUID of the page you want to update
 	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
@@ -131,10 +139,10 @@ See the example below to see how a value can be added or changed programmaticall
 	// Get the desired media file
 	var media = Umbraco.Media(mediaKey);
 
-	// Create a variable for the image cropper and set the source 
+	// Create a variable for the image cropper and set the source
 	var cropper = new ImageCropperValue {Src = media.Url()};
 
-	// Serialize the image cropper value 
+	// Serialize the image cropper value
 	var cropperValue = JsonConvert.SerializeObject(cropper);
 
 	// Set the value of the property with alias 'cropper'
@@ -149,7 +157,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
