@@ -111,7 +111,7 @@ Media Picker 3 is the latest Media Picker, which enables you to select one or mo
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 :::note 
-As of Umbraco 8.13 this Media Picker has been replaced by [Media Picker 3]((Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
+As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
 :::
 
 ## [Member Group Picker](Member-Group-Picker/index.md)
