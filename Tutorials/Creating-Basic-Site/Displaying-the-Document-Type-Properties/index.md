@@ -9,7 +9,7 @@ Let’s look at our template and identify where the content should be displayed.
 
 ![Where our Data Properties Content Should be Output](images/figure-17-where-our-data-fields-go-v8.png)
 
-The top arrow in this image is the "Page Title" and the bottom arrow is the "Body Text", whereas the Footer is all the way at the bottom.
+The top arrow in this image is the _Page Title_ and the bottom arrow is the _Body Text_, whereas the Footer is all the way at the bottom.
 
 ## Setting the Document Type Properties
 
