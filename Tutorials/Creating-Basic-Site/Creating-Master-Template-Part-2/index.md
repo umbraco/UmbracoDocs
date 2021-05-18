@@ -30,7 +30,7 @@ Let's create a content-only contact page where we can provide a title and some r
 
     ![Simple Content Page Template with Data Fields](images/figure-35-contact-us-template-with-data-fields-v8.png)
 8. Click **Save**.
-9. Go to **Templates** to view your new Simple Content Page template that was created automatically with the Document Type.  
+9. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.  
 10. Select the **Simple Content Page** template and then select **Master** as the **Master template**.
 11. Add the following HTML to the **Simple Content Page** template and click **Save**.
 
