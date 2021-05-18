@@ -98,7 +98,7 @@ This control gives the same functionality as the standard listview, but allows y
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
-## [Media Picker 3](Media-Picker-3/index.md)
+## [Media Picker 3 (Recommended)](Media-Picker-3/index.md)
 
 `Alias: Umbraco.MediaPicker3`
 
