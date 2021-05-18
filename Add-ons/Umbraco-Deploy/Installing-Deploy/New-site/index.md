@@ -71,6 +71,10 @@ To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  ``
 Umbraco Deploy supports Forms version 8.5 and up.
 :::
 
+:::note
+In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List Editor - there is one further NuGet package to install: ```UmbracoDeploy.Contrib```.
+:::
+
 Once the installation has finished you might notice a new file in your `/config` folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to. It knows which environment you’re currently on (for example local or staging) and it will choose the next environment in the list to deploy to.
 
 When Umbraco Deploy has been installed, to be able to use it in the project you will need to add the following `appSetting` to the `web.config` of the project:
