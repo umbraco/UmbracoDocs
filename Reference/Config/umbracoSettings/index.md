@@ -329,8 +329,8 @@ Let's have a further look at each option below.
 
 ### `<addTrailingSlash>`
 
-As mentioned in the comment above, this will add a trailing slash to the url when **`<umbracoUseDirectoryUrls>`** in the **web.config** file is set to "true".
-If you don't want to have a trailing slash when directory urls are in use, set the value to **false**.
+As mentioned in the comment above, this will add a trailing slash to the url when **`<addTrailingSlash>`** is set to "true".
+If you don't want to have a trailing slash, set the value to **false**.
 
 ### `<urlReplacing>`
 
