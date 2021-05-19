@@ -46,6 +46,10 @@ By default, the User groups available to new users are **Administrators**, **Wri
 
 ## Creating a User Group
 
+:::note
+When creating a custom user group, remember to set a start node for content for the user group. If you don't assign a start node then users assigned to the user group will not be able to login to the backoffice.
+:::
+
 You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.
 
 Go to the Users section and select the **Groups** tab in the top-right corner.

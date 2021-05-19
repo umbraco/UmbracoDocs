@@ -1,12 +1,19 @@
 ---
-meta.Title: "Getting Started" 
-meta.description: ""
-versionFrom: 8.0.0
+meta.Title: "All the basics of using Umbraco"
+meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
+versionFrom: 7.0.0
 ---
 
-# Fundamentals
+# Getting Started with Umbraco
+*All the basics of using Umbraco. From making a local installation to extending the backend.*
 
-*All the fundamentals of using Umbraco. From making a local installation to extending the backend.*
+The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
+
+## [What's new in Umbraco 8?](New-in-V8.md)
+
+Learn more about the new features in Umbraco 8.
+
+## Umbraco Documentation
 
 <div class="row implementation">
     <div class="col-sm-12"></div>

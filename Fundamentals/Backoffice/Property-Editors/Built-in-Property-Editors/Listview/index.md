@@ -61,9 +61,10 @@ These views can be disabled if you are not interested in any of them.
 A minimum of one layout needs to be enabled for the list view to work.
 :::
 
-You can also make your own layout and add it to the settings. For example, if you wanted to change the width or length of the grid, you will be able to do so. 
+You can also make your own layout and add it to the settings. For example, if you wanted to change the width or length of the grid, you will be able to do so.
 
 ### Bulk Action Permissions
+
 Select what kind of action is available on the list view.
 
 - **Allow bulk publish** - content only
@@ -73,20 +74,24 @@ Select what kind of action is available on the list view.
 - **Allow bulk delete**
 
 ### Content app icon
+
 Changes the icon in the backoffice of the listview. By default it will look like the image below.
 
 ![List icon example](images/list-icon.png)
 
 ### Content app name
+
 You can change the name of the listview itself. Default if empty: 'Child Items'.
 
 ### Show Content App First
+
 Enable this to show the content app by default instead of the list view
 
 ## Content Example
 
 ### Generic field value
-This example uses a generic field on a child item and displays it in the list. 
+
+This example uses a generic field on a child item and displays it in the list.
 ![List view content example email](images/listview-content-example-email-settings.png)
 
 The ```{{ value }}``` will take the value of the Email property and display it in the list, as shown on the image below.
@@ -95,7 +100,7 @@ The ```{{ value }}``` will take the value of the Email property and display it i
 
 ### Member name
 
-First, a Member Picker property needs to be present on the content item. In this example, the ```child item``` has gotten a Member Picker Data Type with the alias of ```isAuthor```. 
+First, a Member Picker property needs to be present on the content item. In this example, the ```child item``` has gotten a Member Picker Data Type with the alias of ```isAuthor```.
 
 ![List view member picker](images/member-picker.png)
 
@@ -103,7 +108,7 @@ Now that the child item has a member and the value that should be displayed is t
 
 ![List view member picker](images/member-picker-settings.png)
 
-This will take the value picked up by the member picker. 
+This will take the value picked up by the member picker.
 ![List view member picker](images/picked-member.png)
 
 And display it in the listview. Shown in the example below:

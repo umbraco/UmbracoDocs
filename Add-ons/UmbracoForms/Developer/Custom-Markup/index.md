@@ -32,6 +32,7 @@ The view is separated into two parts, one is the actual form and the other will 
 This view can be customized, if you do so it will be customized for all your forms.
 
 ### Script.cshtml
+
 This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here.
 
 ### FieldType.*.cshtml

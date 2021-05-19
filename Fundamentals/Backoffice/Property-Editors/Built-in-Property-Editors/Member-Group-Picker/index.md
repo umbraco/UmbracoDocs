@@ -51,10 +51,10 @@ See the example below to see how a value can be added or changed programmaticall
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
     
-	// Get the page using the GUID you've defined
+    // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
-	// Set the value of the property with alias 'memberGroup'. The value is the specific ID of the member group
+
+    // Set the value of the property with alias 'memberGroup'. The value is the specific ID of the member group
     content.SetValue("memberGroup", 1067);
             
     // Save the change
@@ -88,4 +88,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.MemberGroup).Alias, 1067);
 }
 ```
-

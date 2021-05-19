@@ -83,8 +83,9 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @{
-
+    var udi = Udi.Create(Umbraco.Core.Constants.UdiEntityType.Member, authorId);
+    
     // Set the value of the property with alias 'author'
-    content.SetValue(Home.GetModelPropertyType(x => x.Author).Alias, authorId);
+    content.SetValue(Home.GetModelPropertyType(x => x.Author).Alias, udi);
 }
 ```
