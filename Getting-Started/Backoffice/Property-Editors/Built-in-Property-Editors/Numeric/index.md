@@ -76,7 +76,6 @@ You can also render the output by casting it to a string, which means you will n
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
-
 ```csharp
 @{
     // Get access to ContentService
@@ -87,11 +86,11 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
-	// Set the value of the property with alias 'students'
+
+    // Set the value of the property with alias 'students'
     content.SetValue("students", 20);
     
-	// Save the change
+    // Save the change
     contentService.Save(content);
 
 }

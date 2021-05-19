@@ -1,12 +1,13 @@
 ---
 meta.Title: "Language Variants in Umbraco"
 meta.Description: "Language Variants allow you to vary content by culture, so you can allow a content node to exist in several languages."
-versionFrom: 8.0.0
+versionFrom: 8.0.0 
+verified-against: 9.0.0
 ---
 
 # Language Variants
 
-Language Variants is a new feature included in Umbraco 8. It allows you to vary content by culture, so you can allow a content node to exist in several languages.
+Language Variants allows you to vary content by culture, so you can allow a content node to exist in several languages.
 
 ## Video tutorial
 
@@ -14,25 +15,26 @@ Language Variants is a new feature included in Umbraco 8. It allows you to vary 
 
 ## How to enable Language Variants
 
-The first thing to ensure when you want to work with Language Variants is that you have more than one language enabled, this can be done from the `Settings` section:
+To work with Language Variants you need to have more than one language enabled. This can be done from the `Settings` section:
 
 ![Adding a language](images/languages.png)
 
-Note that you will always have one default language but each language can be set to mandatory if you want.
+:::note You will always have one default language but each language can be set to mandatory. :::
 
 ## Enabling Language Variants on doctypes
 
-Now that there are two languages to vary the content with, it needs to be enabled on the document types you wish to use it with. To do so head to a document type in the Settings section. In the top right corner you can go to permissions and then check the "Allow varying by culture" toggle:
+Now that there are two languages to vary the content with, it needs to be enabled on the document types. To do so:
+1. Go to the document type in the **Settings** section. 
+2. In the top-right corner, go to **Permissions** and toggle **Allow varying by culture**.
+    ![Allowing variance on doc types](images/allow-variance.png)
 
-![Allowing variance on doc types](images/allow-variance.png)
-
-Now to allow a property on the doctype to be varied it will have to be enabled for the property:
+To allow a property on the doctype to be varied it will have to be enabled for the property:
 
 ![Allowing variance on properties](images/varying-properties.png)
 
 ## Working with Language Variants on content
 
-When you return to your content node you will notice two things.
+When you return to your content node you will notice two things:
 
 1. At the top of the content tree there will now be a dropdown so you can show the content tree in the language of your choice.
 2. To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
@@ -45,7 +47,7 @@ To read about how you render variant content in templates, check out the [render
 
 ## Test your language variants
 
-Culture and hostnames must be added to your language sites before the content can be tested for variants.
+Culture and hostnames must be added to your language sites before the content can be tested for variants:
 
 1. Right-click the Home node and select Culture and Hostnames.
 2. Add a specific url per language and save. For eg: An English language variant with English (United States) as the language can be given a specific url *https://yourwebsite.com/en-us* and a Danish language variant can be given a specific url *https://yourwebsite.com/dk*.

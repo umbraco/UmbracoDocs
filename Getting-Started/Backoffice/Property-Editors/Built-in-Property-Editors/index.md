@@ -12,7 +12,7 @@ This page contains a list of all the built-in Umbraco property editors and a sho
 
 Use Element Types to create a set of Blocks that your editors can use to create content.
 
-## [Checkbox (True/False)](True-False)
+## [Toggle (True/False)](True-False)
 
 `Alias: Umbraco.TrueFalse`
 
@@ -54,13 +54,19 @@ A configurable number control allowing only numbers including decimals.
 
 Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## [Email address](Email-Address)
+## [Email Address](Email-Address)
 
 `Alias: Umbraco.EmailAddress`
 
 A single line textbox only allowing valid email addresses.
 
-## [File upload](File-Upload/index.md)
+## [Eye Dropper Color Picker](Eye-Dropper-Color-Picker/index.md)
+
+`Alias: Umbraco.ColorPicker.EyeDropper`
+
+A full HEX/RGBA color picker, which support alpha transparency.
+
+## [File Upload](File-Upload/index.md)
 
 `Alias: Umbraco.UploadField`
 
@@ -90,7 +96,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
-## [Markdown editor](Markdown-Editor/index.md)
+## [Markdown Editor](Markdown-Editor/index.md)
 
 `Alias: Umbraco.MarkdownEditor`
 
@@ -146,13 +152,13 @@ The nested content property editor enables you to use Document Types as a schema
 
 A configurable number control allowing only numbers.
 
-## [Radio button list](RadioButton-List/index.md)
+## [Radiobutton List](RadioButton-List/index.md)
 
 `Alias: Umbraco.RadioButtonList`
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Repeatable textstrings](Multiple-Textbox)
+## [Repeatable Textstrings](Multiple-Textbox)
 
 `Alias: Umbraco.MultipleTextstring`
 
@@ -188,7 +194,7 @@ A textarea control to input text.
 
 A normal html input text field.
 
-## [ User picker ](User-Picker/index.md)
+## [User Picker](User-Picker/index.md)
 
 `Alias: Umbraco.UserPicker`
 

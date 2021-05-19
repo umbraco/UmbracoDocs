@@ -97,6 +97,14 @@ This setting used to be set in the `~/Config/ExamineSettings.config` file in Umb
 Read more in the [Azure Web Apps](../../../Getting-Started/Setup/Server-Setup/azure-web-apps.md#examine-v0180) article.
 :::
 
+### Umbraco.Core.AllowContentDashboardAccessToAllUsers
+
+This setting has been added in Umbraco 8.13.0 and gives the ability to make the default Content Dashboard available to all users. The default value of this setting is `true`.
+
+```xml
+<add key="Umbraco.Core.AllowContentDashboardAccessToAllUsers" value="true" />
+```
+
 ### umbracoCssPath
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
@@ -181,3 +189,14 @@ The default value is: `false`
 This is not a setting that commonly needs to be configured.
 
 This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.
+
+### Umbraco.Core.SqlWriteLockTimeOut
+
+The default value is: `5000` (5 seconds)
+
+This setting needs to be an int value that will represent the time in milliseconds to lock the database for a write operation.
+The setting is not mandatory, but can be used as a fix to extend the timeout if you have been seeing errors in your logs indicating that the default lock timeout is hit.
+
+```xml
+<add key="Umbraco.Core.SqlWriteLockTimeOut" value="6000" />
+```

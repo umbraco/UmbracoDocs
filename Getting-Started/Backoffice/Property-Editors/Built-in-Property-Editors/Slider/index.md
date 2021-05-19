@@ -43,20 +43,21 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ```csharp
 // with a range off
-@if (Model.SingleRangeSlider.HasValue())
+@if (Model.SingleRangeSlider != null)
 {
     var value = Model.SingleRangeSlider;
     <p>@value</p>
 }
 
 // with a range on
-@if (Model.MultiValueSlider.HasValue())
+@if (Model.MultiValueSlider != null)
 {
     var minValue = Model.MultiValueSlider.Minimum;
     var maxValue = Model.MultiValueSlider.Maximum;
     <p>@minValue and @maxValue</p>
 }
 ```
+
 ## Add values programmatically
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
@@ -121,8 +122,8 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 @{
     // Set the value of the property with alias 'singleValueSlider'
     content.SetValue(Home.GetModelPropertyType(x => x.SingleValueSlider).Alias, 10);
-	
-	// Set the value of the property with alias 'multiValueSlider'
-	content.SetValue(Home.GetModelPropertyType(x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});	
+
+    // Set the value of the property with alias 'multiValueSlider'
+    content.SetValue(Home.GetModelPropertyType(x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});
 }
 ```

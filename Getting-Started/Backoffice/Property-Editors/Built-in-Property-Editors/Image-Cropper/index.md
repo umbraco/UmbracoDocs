@@ -19,6 +19,7 @@ Notice its possible make local crops on shared Media Items via the Media Picker 
 ## Settings
 
 ### Prevalues
+
 You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
@@ -37,10 +38,12 @@ The cropper comes in 3 modes:
 - Cropping the image to predefined crops
 
 ### Uploading images
+
 The editor exposes a drop area for files. Click it to upload an image.
 ![Image Cropper Upload](images/imageCropper-upload-v8.png)
 
 ### Set focal point
+
 By default, the cropper allows the editor to set a focal point on the uploaded image.
 Next to the image, all the preset crops are shown to give the editor a preview of what
 the image will look like to the end user.
@@ -48,11 +51,11 @@ the image will look like to the end user.
 ![Image Cropper Focal point](images/imageCropper-focalpoint-v8.png)
 
 ### Crop and resize
+
 If needed, the editor can crop the image to specific crop presets, to ensure the right part and size of the image
 is shown for a specific crop.
 
 ![Image Cropper Crop](images/imageCropper-crop-v8.png)
-
 
 ## Sample code
 
@@ -76,6 +79,7 @@ For rendering a cropped media item, the `.GetCropUrl` is used:
 ```
 
 Or, alternatively:
+
 ```html
 <img src="@(Model.Image.GetCropUrl("banner", Current.ImageUrlGenerator))" />
 ```
@@ -124,31 +128,31 @@ See the example below to see how a value can be added or changed programmaticall
 @using Umbraco.Core.PropertyEditors.ValueConverters
 @using Newtonsoft.Json
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Create a variable for the GUID of the media item you want to use
-	var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
+    // Create a variable for the GUID of the media item you want to use
+    var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
+    
+    // Get the desired media file
+    var media = Umbraco.Media(mediaKey);
 
-	// Get the desired media file
-	var media = Umbraco.Media(mediaKey);
+    // Create a variable for the image cropper and set the source 
+    var cropper = new ImageCropperValue {Src = media.Url()};
 
-	// Create a variable for the image cropper and set the source
-	var cropper = new ImageCropperValue {Src = media.Url()};
+    // Serialize the image cropper value 
+    var cropperValue = JsonConvert.SerializeObject(cropper);
 
-	// Serialize the image cropper value
-	var cropperValue = JsonConvert.SerializeObject(cropper);
+    // Set the value of the property with alias 'cropper'
+    content.SetValue("cropper", cropperValue);
 
-	// Set the value of the property with alias 'cropper'
-	content.SetValue("cropper", cropperValue);
-
-	contentService.Save(content);
+    contentService.Save(content);
 }
 ```
 

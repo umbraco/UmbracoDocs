@@ -2,7 +2,7 @@
 versionFrom: 8.1.0
 ---
 
-# Media Picker #
+# Media Picker
 
 `Alias: Umbraco.MediaPicker`
 
@@ -20,7 +20,7 @@ As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](Medi
 
 ### Ignorer user start nodes
 
-Use setting to overrule user permissions, to enable any user of this property to pick any Media Item of the choosen Start node. 
+Use setting to overrule user permissions, to enable any user of this property to pick any Media Item of the choosen Start node.
 
 When this setting is enabled, a user who doesn't normally have access to the media selected as "Start Node" (/Design in this case), can access the media when using this particular Media Picker. If no Start node has been defined for this property any content can be viewed and selected of this property.
 
@@ -86,26 +86,26 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-	// Get access to ContentService
-	var contentService = Services.ContentService;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
-	// Get the media you want to assign to the media picker 
-	var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
-	
-	// Create an Udi of the media
-	var udi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
+    // Get the media you want to assign to the media picker 
+    var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
 
-	// Set the value of the property with alias 'featuredBanner'. 
-	content.SetValue("featuredBanner", udi.ToString());
+    // Create an Udi of the media
+    var udi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
 
-	// Save the change
-	contentService.Save(content);
+    // Set the value of the property with alias 'featuredBanner'. 
+    content.SetValue("featuredBanner", udi.ToString());
+
+    // Save the change
+    contentService.Save(content);
 }
 ```
 
@@ -126,4 +126,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.FeaturedBanner).Alias, true);
 }
 ```
-

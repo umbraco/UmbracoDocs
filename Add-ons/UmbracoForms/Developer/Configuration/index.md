@@ -106,3 +106,6 @@ This setting needs to be a `True` or `False` value and will allow you to toggle 
 
 ### DefaultMessageOnSubmit
 This allows you to configure what text is displayed when a form is submitted and is not being redirected to a different content node.
+
+### DefaultStoreRecordsLocally
+This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data will be stored in the Umbraco Forms database tables.  By default this is set to `True`.

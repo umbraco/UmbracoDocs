@@ -43,7 +43,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 ```csharp
 @{
     // Perform an null-check on the field with alias 'pageTitle'
-    if (Model.PageTitle.HasValue())
+    if (!string.IsNullOrWhiteSpace(Model.PageTitle))
     {
         // Print the value of the field with alias 'pageTitle'
         <p>@Model.PageTitle</p>
@@ -65,12 +65,12 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
-	
-	// Set the value of the property with alias 'pageTitle'
+
+    // Set the value of the property with alias 'pageTitle'
     content.SetValue("pageTitle", "Umbraco Demo");
-	
-	// Save the change
-    contentService.Save(content);	
+
+    // Save the change
+    contentService.Save(content);
 }
 ```
 

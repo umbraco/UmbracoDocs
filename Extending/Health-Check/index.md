@@ -2,7 +2,6 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Healthcheck"
 meta.Description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Health-Check/extending.md"
 ---
 
 # Health Check
@@ -250,9 +249,11 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
         {
             var success = false;
             var message = string.Empty;
-            const string content = @"# robots.txt for Umbraco
-User-agent: *
-Disallow: /umbraco/";
+            
+            const string content = 
+                @"# robots.txt for Umbraco
+                User-agent: *
+                Disallow: /umbraco/";
 
             try
             {

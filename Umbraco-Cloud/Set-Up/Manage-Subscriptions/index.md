@@ -4,6 +4,11 @@ versionFrom: 7.0.0
 
 # Manage Subscriptions
 
+:::note
+This article is only for already existing customers on Umbraco Cloud.
+For new customers on Umbraco Cloud after the 28th of April handling subscriptions is done directly in the [Payment setting section](../Project-settings#payment) on Umbraco Cloud.
+:::
+
 In this article you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
 
 Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be access through [umbraco.com](https://umbraco.com) or by following the "Manage Subcriptions" link on the Profile dropdown on the Umbraco Cloud Portal.
