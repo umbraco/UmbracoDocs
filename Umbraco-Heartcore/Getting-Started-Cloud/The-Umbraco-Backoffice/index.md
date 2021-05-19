@@ -136,10 +136,4 @@ The Members section is where you manage your members who are able to log into yo
 
 ## Forms
 
-:::note
-While you can create and manage forms in the backoffice, there is currently no API endpoints enabling you to use the forms on your frontend.
-
-These will be added at a later point. [Keep an eye on our Roadmap for more details](https://umbraco.com/products/roadmap/).
-:::
-
 In this section you can create and manage your Umbraco Forms.

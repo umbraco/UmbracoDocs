@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # umbProperty
 
-The [umb-property](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor]( https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
+The [umb-property](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
 
 The two directives are typically used in tandem. For instance if your Angular model has an array of properties, your view could look something like:
 

@@ -8,11 +8,13 @@ meta.Title: "Healthchecks"
 In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly. 
 
 Read the [Health Check](../../../Extending/Health-Check) article to learn more about the feature in general.
+
 ## Database Integrity Health Check
 
 Running this health check will verify whether the database tables for the Umbraco Forms installation are all set up correctly with the proper data integrity checks.
 
 In this section, you can learn more about the background for adding this check, as well as how to use and understand the results.
+
 ### Background
 
 With version 8.7, a health check was introduced to confirm the Umbraco Forms database tables are all set up with the expected data integrity checks - i.e. primary keys, foreign keys and unique constraints.
@@ -23,7 +25,7 @@ There remains the possibility though that not all will be in place for a particu
 
 In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area.  So we've added some primary key, foreign key and unique constraints with this version.  If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
 
-There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the ophaning of records, that aren't correct.  Of course, this is the reason for the constraints to exist, and why we want to ensure they are in place.
+There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the ophaning of records, that aren't correct. This is the reason for the constraints to exist, and why we want to ensure they are in place.
 
 ### Running The Health Check
 
@@ -47,10 +49,10 @@ As well as in the log files, such issues will be visible via the health check an
 
 To support this, we provide the following SQL scripts:
 
-- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes.sql](scripts/8.7.0-apply-keys-and-indexes.sql)
-- Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db.sql](scripts/8.7.0-apply-keys-and-indexes-forms-in-db.sql)
+- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](scripts/Apply-keys.md)
+- Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/Forms-in-the-database-apply-keys.md)
 
-The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies just to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
+The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
 
 :::note
 Before running any scripts or queries, please be sure to have a database backup in place.
@@ -60,7 +62,7 @@ To take an example, let's say that via the health check results you can see that
 
 If you look in the SQL script you'll see that in order to apply this directly to the database, you would need to run the following SQL statement:
 
-```
+```sql
 -- Adds unique constraint to UFForms.
 ALTER TABLE dbo.UFForms
 ADD CONSTRAINT UK_UFForms_Key UNIQUE NONCLUSTERED 
@@ -72,7 +74,7 @@ GO
 
 If you run it though, you'll see the reason why the migration that ran when Umbraco Forms was upgraded couldn't apply the change:
 
-```
+```sql
 The CREATE UNIQUE INDEX statement terminated because a duplicate key was found for the object name 'dbo.UFForms' and the index name 'UK_UFForms_Key'. The duplicate key value is (...).
 ```
 
@@ -80,7 +82,7 @@ The constraint can't be applied if there are existing duplicate values, so first
 
 To find duplicate values in the 'Key' field in this table you can run the following SQL statement:
 
-```
+```sql
 SELECT [Key]
 FROM UFForms
 GROUP BY [Key]
@@ -91,7 +93,7 @@ Running the statement above will list out the 'Key' fields that are duplicated i
 
 To see the full details of the duplicate records, you can use this query:
 
-```
+```sql
 SELECT *
 FROM UFForms
 WHERE [Key] IN (SELECT [Key]
@@ -111,5 +113,5 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 
 To support this, we provide the following SQL scripts:
 
-- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert.sql](scripts/8.7.0-apply-keys-and-indexes_revert.sql)
-- Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert.sql](scripts/8.7.0-apply-keys-and-indexes-forms-in-db_revert.sql)
+- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](scripts/Apply-keys.md#revert-application-of-keys-and-indexes)
+- Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/Forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)

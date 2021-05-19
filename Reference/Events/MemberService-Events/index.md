@@ -17,6 +17,9 @@ using System;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Services.Implement;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
 
 namespace Umbraco8.Components
 {
