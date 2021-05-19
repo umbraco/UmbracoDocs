@@ -61,8 +61,9 @@ private readonly IMenuItemCollectionFactory _menuItemCollectionFactory;
 
 public FavouriteThingsTreeController(ILocalizedTextService localizedTextService,
     UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
-    IMenuItemCollectionFactory menuItemCollectionFactory)
-    : base(localizedTextService, umbracoApiControllerTypeCollection)
+    IMenuItemCollectionFactory menuItemCollectionFactory,
+    IEventAggregator eventAggregator)
+    : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
 {
     _menuItemCollectionFactory = menuItemCollectionFactory ?? throw new ArgumentNullException(nameof(menuItemCollectionFactory));
 }
