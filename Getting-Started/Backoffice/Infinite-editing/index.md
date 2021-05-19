@@ -2,6 +2,7 @@
 meta.Title: "Infinite Editing in Umbraco"
 meta.Description: "This section explains how the concept of infinite editing in the Umbraco backoffice works."
 versionFrom: 8.0.0
+verified-against: 9.0.0
 ---
 
 # Infinite Editing
