@@ -2,6 +2,7 @@
 meta.Title: "Templates in Umbraco"
 meta.Description: "Templating in Umbraco including inheriting from master template"
 versionFrom: 8.0.0
+verified-against: 9.0.0
 ---
 
 # Templates
@@ -72,7 +73,7 @@ When a page using the textpage template renders, the final html will be merged t
 ## Template Sections
 What's good to know, is that you are not limited to a single section. Template sections allow child templates that inherit the master layout template to insert HTML code up into the main layout template. For example a child template inserting code into the `<head>` tag of the master template.
 
-You can do this by using named sections. Add named sections to your master template with the following code:
+You can do this by using [named sections](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/templating/advanced-features/).  Add named sections to your master template with the following code:
 
 ```csharp
 @RenderSection("SectionName")
