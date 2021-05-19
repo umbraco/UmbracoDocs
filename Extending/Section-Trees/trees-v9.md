@@ -25,7 +25,7 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 For example:
 
 ```csharp
-[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
+[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
 public class FavouriteThingsTreeController : TreeController
 { }
 ```
