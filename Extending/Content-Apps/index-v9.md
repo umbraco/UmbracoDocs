@@ -3,8 +3,8 @@ versionFrom: 9.0.0
 verified-against: alpha-3
 state: complete
 updated-links: true
-meta.Title: "Backoffice Tours"
-meta.Description: "A guide configuring backoffice tours in Umbraco"
+meta.Title: "Content Apps"
+meta.Description: "A guide configuring content apps in Umbraco"
 ---
 
 # Content Apps
