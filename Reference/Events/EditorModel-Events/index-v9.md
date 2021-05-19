@@ -13,26 +13,7 @@ The `SendingContentNotification` class is used to emit events that enable you to
 
 Example usage of the `SendingContentNotification` event - eg set the default PublishDate for a new NewsArticle to be today's date:
 
-First register a composer:
-
-```csharp
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Notifications;
-
-namespace BetaTwo.Code.Events
-{
-    public class EditorModelComposer : IUserComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<SendingContentNotification, EditorModelNotificationHandler>();
-        }
-    }
-}
-```
-
-Then add the notification handler class:
+First add the notification handler class:
 
 ```csharp
 using System;
@@ -67,6 +48,62 @@ namespace BetaTwo.Code.Events
                 // set datetime value to current time
                 pubDateProperty.Value = DateTime.UtcNow;       
             }            
+        }
+    }
+}
+```
+
+Now we need to register it in Umbraco. For that there are 2 ways - composing and builder extension methods. If you are building a package you probably want to use a Composer, but otherwise a builder extension method is the way to go:
+
+Builder extension method example:
+
+```csharp
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace BetaTwo.Code.Events
+{
+    public static class UmbracoBuilderExtensions
+    {
+        public static IUmbracoBuilder AddNotifierEvents(this IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<SendingContentNotification, EditorModelNotificationHandler>();
+            return builder;
+        }
+    }
+}
+```
+
+Then you want to register this new extension in your startup.cs after the standard Umbraco methods:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddNotifierEvents()
+        .Build();
+
+}
+```
+
+
+Composer example:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace BetaTwo.Code.Events
+{
+    public class EditorModelComposer : IUserComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<SendingContentNotification, EditorModelNotificationHandler>();
         }
     }
 }
