@@ -98,4 +98,4 @@ We’ve now created our first **Document Type**. Umbraco takes the data from an 
 
 ---
 
-Prev: [Getting Started](../Getting-Started) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
+Prev: [Getting Started](../Getting-Started) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
