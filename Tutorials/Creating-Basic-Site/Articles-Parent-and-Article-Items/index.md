@@ -15,6 +15,7 @@ To create **Articles Main** Document Type, follow these steps:
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
+
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5. Let's add two fields with the following specifications:
@@ -32,6 +33,7 @@ To create **Articles Item** Document Type, follow these steps:
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
+
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5. Let's add two fields with the following specifications:
@@ -53,6 +55,7 @@ To update **Articles Main** Document Type permissions:
 3. Select **Articles Main** and click **Save**.
 4. Navigate to the **Articles Main** Document Type and go to the **List View** tab.
 5. Toggle **Enable List view** and click **Save**.
+
     ![Enabling List View](images/figure-44-list-view-enabled.png)
 6. Go to the **Permissions** tab.
 7. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
@@ -80,6 +83,7 @@ To add a content node:
     If you do not see the list view, try refreshing the page.
    :::
 5. Let's add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
+
     ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
 
 ## Updating the Template
@@ -99,10 +103,13 @@ To update the **Articles Main** template, follow these steps:
 7. Remove everything from the `<!-- Footer -->` tag (around line 92) to the end of the `</div>` tag (around line 132)
 8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articlesTitle_**.
 9. Replace the static text within the `<div>` tags (from line 22 to 28) with the Model.Value reference to **_articlesBodyText_**.
+
     ![Articles Main Template](images/articles-main-template.png)
 10. Define a query for all articles, just below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
+
     ![Query Builder](images/query-builder.png)
 11. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
+
     ![Query parameters](images/query-parameters.png)
 12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template.
     It will look similar to this:
@@ -156,6 +163,7 @@ To update the **Articles Item** template, follow these steps:
 10. Click **Save**.
 
 Check your browser, you should now see something similar to the screen below.
+
 ![Finished Articles section](images/article-main-frontend.png)
 
 ---
