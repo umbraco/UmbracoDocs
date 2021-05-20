@@ -611,4 +611,4 @@ Furthermore, there was no reason to listen for the Creating/Created events. They
 
 #### What do we use instead?
 
-The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](./determining-new-identity.md)
+The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity-v9.md)

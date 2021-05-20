@@ -14,7 +14,7 @@ All notifications reside in the `Umbraco.Cms.Core.Notifications` namespace and a
 
 Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and publishes notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](./contentservice-notifications.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
+Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Events-v9.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
 ### Notification handlers lifetime
 
@@ -127,26 +127,26 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Content, Media, and Member notifications
 
-* See [ContentService Notifications](./contentservice-notifications.md) for a listing of the ContentService object notifications.
-* See [MediaService Notifications](./mediaservice-notifications.md) for a listing of the MediaService object notifications.
-* See [MemberService Notifications](./memberservice-notifications.md) for a listing of the MemberService object notifications.
+* See [ContentService Notifications](ContentService-Events-v9.md) for a listing of the ContentService object notifications.
+* See [MediaService Notifications](MediaService-Events-v9.md) for a listing of the MediaService object notifications.
+* See [MemberService Notifications](MemberService-Events/index-v9.md) for a listing of the MemberService object notifications.
 
 ## Other notifications
 
-* See [ContentTypeService Notifications](./contenttypeservice-notifications.md) for a listing of the ContentTypeService object notifications.
-* See [MediaTypeService Notifications](./mediatypeservice-notifications.md) for a listing of the MediaTypeService object notifiactions.
-* See [MemberTypeService Notifications](./membertypeservice-notifications.md) for a listing of the MemberTypeService object notifications.
-* See [DataTypeService Notifications](./datatypeservice-notifications.md) for a listing of the DataTypeSErvice object notifications
-* See [FileService Notifications](./fileservice-notifications.md) for a listing of the FileService object notifications.
-* See [LocalizationService Notifications](./localizationservice-notifications.md) for a listing of the LocalizationService object notifications.
+* See [ContentTypeService Notifications](ContentTypeService-Events-v9.md) for a listing of the ContentTypeService object notifications.
+* See [MediaTypeService Notifications](MediaTypeService-Events-v9.md) for a listing of the MediaTypeService object notifiactions.
+* See [MemberTypeService Notifications](MemberTypeService-Events-v9.md) for a listing of the MemberTypeService object notifications.
+* See [DataTypeService Notifications](DataTypeService-Events-v9.md) for a listing of the DataTypeSErvice object notifications
+* See [FileService Notifications](FileService-Events-v9.md) for a listing of the FileService object notifications.
+* See [LocalizationService Notifications](LocalizationService-Events-v9.md) for a listing of the LocalizationService object notifications.
 
 ## Tree notifications
 
-See [Tree Notifications](../Section-Trees/trees.md) for a listing of the tree notifications.
+See [Tree Notifications](../../Extending/Section-Trees/trees-v9.md) for a listing of the tree notifications.
 
 ## Editor Model Notifications
 
-See [EditorModel Notifications](./editormodel-notifications.md) for a listing of the EditorModel events
+See [EditorModel Notifications](EditorModel-Events/index-v9.md) for a listing of the EditorModel events
 
 
 :::tip

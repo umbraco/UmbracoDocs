@@ -278,7 +278,7 @@ public class FavouritistThingsTreeController : TreeController
 
 All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`. 
 
-For more information about registering and using notifications see [Notifications](../Notifications/index.md)
+For more information about registering and using notifications see [Notifications](../../Reference/Events/index-v9.md)
 
 ### RootNodeRenderingNotification
 
