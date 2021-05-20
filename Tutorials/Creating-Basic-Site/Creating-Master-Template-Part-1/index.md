@@ -44,7 +44,7 @@ To update templates with the new master template, follow these steps:
     ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 7. Click **Save**.
 8. Repeat the same process for the footer content:
-    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</div>` tag (around line 114) and click **Save**.
+    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
     2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
         ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
     3. Click **Save**.
@@ -109,6 +109,13 @@ If you are missing any content (header or footer), check that the templates matc
 				@Model.Value("footerText")
 			</div>
 		</div>
+    
+    <!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>
 ```
 
 ### Homepage Template
@@ -220,15 +227,6 @@ If you are missing any content (header or footer), check that the templates matc
 	
 			</div>
 		</div>
-
-		
-	
-	<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	
-	</body>
-</html>
 ```
 
 ---
