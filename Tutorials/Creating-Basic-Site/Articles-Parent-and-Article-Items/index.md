@@ -15,6 +15,7 @@ To create **Articles Main** Document Type, follow these steps:
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
+
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5. Let's add two fields with the following specifications:
@@ -31,6 +32,7 @@ To create **Articles Item** Document Type, follow these steps:
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3. Click **Document Type with Template**.
+
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5. Let's add two fields with the following specifications:
