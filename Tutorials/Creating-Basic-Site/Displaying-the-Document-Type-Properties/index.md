@@ -17,7 +17,7 @@ To set the Document Type properties:
 
 1. Go to **Settings**.
 2. Select **Templates** in the **Templating** section, and open the **Homepage** template.
-3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 45) and highlight the text `“Welcome - UmbracoTV”`.
+3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 48) and highlight the text `“Welcome - UmbracoTV”`.
     ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v8.png)
 4. Click **Insert** and select **Value**.
 5. Select **pageTitle** field from the drop-down list.
