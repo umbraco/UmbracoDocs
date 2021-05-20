@@ -63,7 +63,7 @@ To add properties to your Document Type, follow these steps:
     ![Document Types - Adding Our First Content Group](images/figure-10-document-types-adding-groups-v8.png)
 3. Select **Add property**. The **Property Settings** dialog opens.
 4. Enter a **Name**. For example: _Page Title_.
-5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd.)_".
+5. Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd.)_.
     ![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
 6. Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
     ![Selecting Textstring Data Type](images/figure-11a-selecting-textstring-data-type-v8.png)
