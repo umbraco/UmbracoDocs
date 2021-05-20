@@ -23,13 +23,13 @@ To set the Document Type properties:
 5. Select **pageTitle** field from the drop-down list.
     ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
 6. Click **Submit**.
-7. Repeat the same process for the content in the `<div class="container">` tag (around line 55):
+7. Repeat the same process for the content between the `<div class="container">` tags (around line 60 to 77):
     1. Highlight the content as shown in the figure.
     ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
     2. Click **Insert** and select **Value**.
     3. Select **bodyText** field from the drop-down list.
     4. Click **Submit**.
-8. Repeat the same process for the content in the `<div class="container-fluid footer">` tag (around line 144):
+8. Repeat the same process for the content in the `<div class="container-fluid footer">` tag (around line 147 to 180):
     1. Highlight the content between the `<div class="container">` tags.
     ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
     2. Click **Insert** and select **Value**.
