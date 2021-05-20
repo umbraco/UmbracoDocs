@@ -82,4 +82,4 @@ To view the language variant on the browser, follow these steps:
 
 ---
 
-Prev: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Conclusions and Where Next?](../Conclusions-Where-Next)
+Prev: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Conclusions and Where Next?](../Conclusions-Where-Next)

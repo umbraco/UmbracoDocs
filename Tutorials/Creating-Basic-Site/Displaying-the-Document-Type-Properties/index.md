@@ -44,4 +44,4 @@ Now, you can go back and add additional fields or update existing fields in the 
 
 ---
 
-Prev: [CSS and Images](../CSS-And-Images) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 1](../Creating-Master-Template-Part-1)
+Prev: [CSS and Images](../CSS-And-Images) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Creating Master Template Part 1](../Creating-Master-Template-Part-1)

@@ -23,6 +23,7 @@ Let's create a content-only contact page where we can provide a title and some r
 5. Enter a **Name**. Let's call it _Simple Content Page_.
 6. Enter a Description.  
 7. Let's add two fields with the following specifications:
+
     | Group   | Field Name | Alias     | Data Type        |
     |---------|------------|-----------|------------------|
     | Content | Page Title | pageTitle | Textstring       |
@@ -122,4 +123,4 @@ Reload the Contact Us page to view the content with the footer.
 
 ---
 
-Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)
+Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)
