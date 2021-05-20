@@ -168,4 +168,4 @@ Check your browser, you should now see something similar to the screen below.
 
 ---
 
-Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &Next: [Adding Language Variants](../Adding-Language-Variants)
+Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Adding Language Variants](../Adding-Language-Variants)
