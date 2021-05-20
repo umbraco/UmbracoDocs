@@ -19,12 +19,13 @@ To create **Articles Main** Document Type, follow these steps:
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5. Let's add two fields with the following specifications:
+
     | Group | Field Name         | Alias            | Data Type        |
     |-------|--------------------|------------------|------------------|
     | Intro | Articles Title     | articlesTitle    | TextBox          |
     | Intro | Articles Body Text | articlesBodyText | Rich Text Editor |
 
-    ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png){: data-fancybox}
+    ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png)
 6. Click **Save**
 
 To create **Articles Item** Document Type, follow these steps:
@@ -36,12 +37,13 @@ To create **Articles Item** Document Type, follow these steps:
     ![Document Type with template](images/Document_type_with_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5. Let's add two fields with the following specifications:
+
     | Group   | Field Name      | Alias          | Data Type        |
     |---------|-----------------|----------------|------------------|
     | Content | Article Title   | articleTitle   | TextBox          |
     | Content | Article Content | articleContent | Rich Text Editor |
 
-    ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png){: data-fancybox}
+    ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png)
 6. Click **Save**
 
 ### Updating the Document Type Permissions
@@ -94,7 +96,7 @@ To update the **Articles Main** template, follow these steps:
 4. Open the **Custom Umbraco Template** folder.
 5. Copy the contents of **Blog.html** and paste the content into **Articles Main** below the closing curly brace "}".
 
-    :::warn
+    :::warning
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
 6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
@@ -149,7 +151,7 @@ To update the **Articles Item** template, follow these steps:
 4. Open the **Custom Umbraco Template** folder.
 5. Copy the contents of **Blogpost.html** and paste the content into **Articles Item** below the closing curly brace "}".
 
-    :::warn
+    :::warning
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
 6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
@@ -166,4 +168,4 @@ Check your browser, you should now see something similar to the screen below.
 
 ---
 
-Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Adding Language Variants](../Adding-Language-Variants)
+Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &Next: [Adding Language Variants](../Adding-Language-Variants)

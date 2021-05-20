@@ -48,39 +48,39 @@ To add a content node:
     :::
 4. Enter the following details:
 
-  <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Page Title</td>
-      <td>Welcome to Widgets Ltd</td>
-    </tr>
-    <tr>
-      <td>Body Text</td>
-      <td><b>Lorem ipsum</b>
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et aliquet ante, ut eleifend libero. </p>
-      <p>
-          <ul>
-              <li> Proin eleifend consequat nunc id vulputate. </li>
-              <li> Ut eget lobortis metus, non congue lorem. </li>
-              <li> Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </li>
-              <li> Maecenas tempus non lectus rhoncus efficitur. </li>
-          </ul>
-      </p>
-      <p> Sed est ligula, maximus in dolor sed, lacinia egestas ligula. Donec eu nisi lectus. </p>
-      <p> <i> Morbi pharetra pulvinar arcu non gravida.</i></p></td>
-    </tr>
-    <tr>
-      <td>Footer Text</td>
-      <td>Copyright Widgets Ltd 2019</td>
-    </tr>
-  </tbody>
-  </table>
+    <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Page Title</td>
+        <td>Welcome to Widgets Ltd</td>
+      </tr>
+      <tr>
+        <td>Body Text</td>
+        <td><b>Lorem ipsum</b>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et aliquet ante, ut eleifend libero. </p>
+        <p>
+            <ul>
+                <li> Proin eleifend consequat nunc id vulputate. </li>
+                <li> Ut eget lobortis metus, non congue lorem. </li>
+                <li> Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </li>
+                <li> Maecenas tempus non lectus rhoncus efficitur. </li>
+            </ul>
+        </p>
+        <p> Sed est ligula, maximus in dolor sed, lacinia egestas ligula. Donec eu nisi lectus. </p>
+        <p> <i> Morbi pharetra pulvinar arcu non gravida.</i></p></td>
+      </tr>
+      <tr>
+        <td>Footer Text</td>
+        <td>Copyright Widgets Ltd 2019</td>
+      </tr>
+    </tbody>
+    </table>
 5. Click **Save and Publish**. The content tree will reload with the homepage node.
 
 Refresh your webpage in your browser <http://localhost:xxxx>. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
@@ -93,4 +93,4 @@ If you see a blank page, check if the template is entered and remember to save i
 
 ---
 
-Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [CSS and Images](../CSS-And-Images)
+Prev: [Document Types](../Document-Types) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [CSS and Images](../CSS-And-Images)
