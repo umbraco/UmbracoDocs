@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # CSS and JavaScript
 
-Looking at our homepage we’re missing the CSS and JavaScript from the Initializr template. To include these files navigate to the root of your website directory (e.g. "C:\inetpub\wwwroot" - this may be different depending on your installation type) in File Explorer. Here you copy over the `assets` and `images` folders from the Retrospect to the root of your site.
+Looking at our homepage we’re missing the CSS and JavaScript from the Initializr template. To include these files navigate to the root of your website directory (e.g. "C:\inetpub\wwwroot" - this may be different depending on your installation type) in File Explorer. Here you copy over the `assets` and `images` folders from the Custom Umbraco Template to the root of your site.
 
 :::note
 You could use the Umbraco UI to create your CSS file. **_Settings > Stylesheets_** > **_... > + Create_** and create a stylesheet called style (don’t add the file suffix .css) and paste the CSS in I find it easier to copy the CSS. Using either method should be noted does NOT include them in your HTML markup automatically – Umbraco produces clean output and this means you only wire up what you want and need.
