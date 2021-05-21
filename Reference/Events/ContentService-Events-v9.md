@@ -488,7 +488,7 @@ Umbraco V8 introduced the concept of Variants for Document Types, initially to a
 
 These variants can be saved, published and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
 
-This poses a problem when handling notifications from the ContentService - eg Which culture just got published? do I want to run my 'custom' code that fires on save if it's just the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending on which event you are handling there are helper methods you can call to find out:
+This poses a problem when handling notifications from the ContentService - eg which culture got published? Do I want to run my 'custom' code that fires on save if it's only the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation to if 'all the variants' have been 'unpublished'. Depending on which event you are handling there are helper methods you can call to find out.
 
 #### Saving
 
@@ -527,7 +527,7 @@ public bool HasSavedCulture(IContent content, string culture);
 
 #### Unpublishing
 
-When handling the Unpublishing notification, this might not work how you would expect! If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur, then the Unpublishing notification will be published as expected.
+When handling the Unpublishing notification, it might not work how you would expect. If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur) then the Unpublishing notification will be published as expected.
 
 However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action 'without' the variant that has been unpublished.
 
@@ -556,15 +556,15 @@ public bool HasUnpublishedCulture(IContent content, string culture);
 
 #### Publishing
 
-When handling the ContentPublishingNotification which will be triggered whenever a variant is published (or unpublished - see note in Unpublishing section).
+When handling the ContentPublishingNotification which will be triggered whenever a variant is published (or unpublished - see note in the Unpublishing section above).
 
-You can tell 'which' variant has triggered the publish using a helper method on the ContentPublishingNotification called IsPublishingCulture
+You can tell 'which' variant has triggered the publish using a helper method on the ContentPublishingNotification called IsPublishingCulture.
 
 ```C#
 public bool IsPublishingCulture(IContent content, string culture);
 ```
 
-For example, you could check which cultures are being published and act accordingly (it could be multiple if multiple checkboxes are checked)
+For example, you could check which cultures are being published and act accordingly (it could be multiple if multiple checkboxes are checked).
 
 ```C#
 public void Handle(ContentPublishingNotification notification)
@@ -586,6 +586,7 @@ public void Handle(ContentPublishingNotification notification)
 ```
 
 #### Published
+
 In the Published notification you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non-mandatory variant that was unpublished.
 
 ```C#
