@@ -100,7 +100,7 @@ To update the **Articles Main** template, follow these steps:
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
 6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
-7. Remove everything from the `<!-- Footer -->` tag (around line 92) to the end of the `</div>` tag (around line 132)
+7. Remove everything from the `<!-- Footer -->` tag (around line 92) to the end of the `</html>` tag (around line 139)
 8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articlesTitle_**.
 9. Replace the static text within the `<div>` tags (from line 22 to 28) with the Model.Value reference to **_articlesBodyText_**.
 
@@ -155,7 +155,7 @@ To update the **Articles Item** template, follow these steps:
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
 6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
-7. Remove everything from the `<!-- Footer -->` tag (around line 104) to the end of the `</div>` tag (around line 144)
+7. Remove everything from the `<!-- Footer -->` tag (around line 104) to the end of the `</html>` tag (around line 151)
 8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articleTitle_**.
 9. Replace the static text within the `<div>` tags (from line 23 to 38) with the Model.Value reference to **_articleContent_**.
 
