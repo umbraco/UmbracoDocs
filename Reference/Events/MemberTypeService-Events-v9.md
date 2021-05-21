@@ -42,7 +42,7 @@ The MemberTypeService class implements IMemberTypeService. It provides access to
     </td>
     <td>
     Published when MemberTypeService.Save is called in the API, after the entities has been saved.<br/>
-    NOTE: <em><a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em><br/>
+    NOTE: <em><a href="determining-new-entity-v9.md">See here on how to determine if the entity is brand new</a></em><br/>
     SavedEntities: Gets the collection of saved IMemberType objects.
     </td>
   </tr>
