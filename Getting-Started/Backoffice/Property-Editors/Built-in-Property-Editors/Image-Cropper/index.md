@@ -49,6 +49,12 @@ is shown for a specific crop.
 
 ![Image Cropper Crop](images/imageCropper-crop-v8.png)
 
+## Powered by ImageProcessor
+
+[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
+
+We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
+
 ## Sample code
 
 Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
@@ -113,12 +119,6 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 ```
 
 Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
-
-## Powered by ImageProcessor
-
-[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
-
-We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
 ## Upload property replacement
 
