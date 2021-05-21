@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-verionTo: 9.0.0
+versionTo: 9.0.0
 product: "CMS"
 meta.Title: "Macro Parameter Editors"
 meta.Description: "A guide to creating macro property editors in Umbraco"
