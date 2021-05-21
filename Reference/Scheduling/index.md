@@ -1,8 +1,10 @@
 ---
 versionFrom: 8.0.0
+keywords: ScheduledTasks, schedule
 ---
 
 # Scheduling with BackgroundTaskRunner
+
 In Umbraco 8+ it is possible to run recurring code using the `BackgroundTaskRunner`.
 Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index.md) that will regularly empty out the recycle bin every five minutes.
 
@@ -96,6 +98,7 @@ namespace Umbraco.Web.UI
 }
 
 ```
+
 ## RecurringTaskBase
 
 This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to `true` and the `PerformRunAsync` must be overridden to implement the class.
@@ -178,9 +181,8 @@ public class CleanUpYourRoomComponent : IComponent
 
 ```
 
-
-
 ### Using RuntimeState
+
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
 
 ```csharp
