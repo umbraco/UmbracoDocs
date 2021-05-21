@@ -120,7 +120,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ### MVC View Example on how to blur a crop
 
-```html
+```csharp
 <img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias:
 "banner", useCropDimensions:true, furtherOptions:
 "&blur=11&sigma=1.5&threshold=10")" />
