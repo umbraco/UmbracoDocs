@@ -196,6 +196,6 @@ Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicK
 
 #### SiteKey & PrivateKey
 
-Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google. This field type is available in Umbraco Forms from v8.7+. 
+Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google.
 
 You can obtain both of these values after signing up to create a ReCaptcha key here:  https://www.google.com/recaptcha/admin.

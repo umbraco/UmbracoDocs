@@ -1,12 +1,12 @@
 ---
 versionFrom: 9.0.0
-meta.Title: "Adding Event Handlers in Umbraco Forms"
+meta.Title: "Adding Notification Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
 state: complete
 verified-against: beta001
 ---
 
-# Adding a server-side event handler to Umbraco Forms
+# Adding a server-side notification handler to Umbraco Forms
 
 Add a new class to your project as a handler for the `FormValidateNotification` notification:
 
