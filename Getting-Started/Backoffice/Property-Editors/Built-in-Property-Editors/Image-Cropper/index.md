@@ -8,6 +8,14 @@ versionFrom: 8.7.0
 
 Returns a path to an image, along with information about focal point and available crops
 
+When image Cropper is used on a Media Type the crops are shared between all usages of a Media Item. This is called global crops.
+
+If Image Cropper is used on a Document Type, the file and crops will be local to the Document.
+
+Notice its possible make local crops on shared Media Items via the Media Picker 3 Property Editor.
+
+[Read about the Media Picker 3](../Media-Picker-3/index.md)
+
 ## Settings
 
 ### Prevalues
@@ -59,7 +67,7 @@ The Url Helper method can be used to replace the IPublishedContent extension met
 For rendering a cropped media item, the `.GetCropUrl` is used:
 
 ```csharp
-@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true); 
+@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true);
 ```
 
 `HtmlEncode` is by default set to true, which means you only need to define the parameter if you wan't to disable HTML encoding.
@@ -91,7 +99,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ```csharp
 @{
-    
+
     if (Model.Image != null)
     {
         var cropUrl = Url.GetCropUrl(Model.Image, "banner", false);
@@ -131,7 +139,7 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a variable for the GUID of the media item you want to use
     var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
-
+    
     // Get the desired media file
     var media = Umbraco.Media(mediaKey);
 
@@ -153,7 +161,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
