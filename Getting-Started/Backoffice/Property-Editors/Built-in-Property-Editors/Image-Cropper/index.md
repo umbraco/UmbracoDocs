@@ -25,9 +25,9 @@ By default, images in the cropper will be shown based on a set focal point, and 
 
 The cropper comes in 3 modes:
 
-- Uploading an image
-- Setting a focal point
-- Cropping the image to predefined crops
+-   Uploading an image
+-   Setting a focal point
+-   Cropping the image to predefined crops
 
 ### Uploading images
 
@@ -54,15 +54,15 @@ is shown for a specific crop.
 Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
 dynamic object.
 
-The Url Helper method can be used to replace the IPublishedContent extension methods. It has  a set of extensions for working with URLs.
+The Url Helper method can be used to replace the IPublishedContent extension methods. It has a set of extensions for working with URLs.
 
 For rendering a cropped media item, the `.GetCropUrl` is used:
 
 ```csharp
-@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true); 
+@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true);
 ```
 
-`HtmlEncode` is by default set to true, which means you only need to define the parameter if you wan't to disable HTML encoding.
+`HtmlEncode` is by default set to true, which means you only need to define the parameter if you want to disable HTML encoding.
 
 ### MVC View Example to output a "banner" crop from a cropper property with the alias "image"
 
@@ -91,7 +91,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ```csharp
 @{
-    
+
     if (Model.Image != null)
     {
         var cropUrl = Url.GetCropUrl(Model.Image, "banner", false);
@@ -103,6 +103,21 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
     }
 }
 ```
+
+### MVC View Example on how to blur a crop
+
+```html
+<img src="@Url.GetCropUrl(Model, propertyAlias: "image", cropAlias: "banner",
+useCropDimensions:true, furtherOptions: "&blur=11&sigma=1.5&threshold=10")" />
+```
+
+Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
+
+## Powered by ImageProcessor
+
+[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
+
+We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
 ## Upload property replacement
 
@@ -135,10 +150,10 @@ See the example below to see how a value can be added or changed programmaticall
     // Get the desired media file
     var media = Umbraco.Media(mediaKey);
 
-    // Create a variable for the image cropper and set the source 
+    // Create a variable for the image cropper and set the source
     var cropper = new ImageCropperValue {Src = media.Url()};
 
-    // Serialize the image cropper value 
+    // Serialize the image cropper value
     var cropperValue = JsonConvert.SerializeObject(cropper);
 
     // Set the value of the property with alias 'cropper'
@@ -153,7 +168,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
