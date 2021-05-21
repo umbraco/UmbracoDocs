@@ -11,9 +11,7 @@ With Umbraco Forms it's possible to customize the functionality with various con
 
 ## Editing configuration values
 
-Configuration in version 9 has moved from the `UmbracoForms.config` file used in previous versions, replaced by standard .NET configuration.
-
-By default this is held in an `appSettings.json` file found in the root of your Umbraco website.  If configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for your Umbraco Forms is held in an `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Forms configuration follows this pattern, i.e.:
 

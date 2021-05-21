@@ -122,7 +122,7 @@ Also look in the reference chapter for complete class implementations of workflo
 
 It is possible to override and inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider, and make sure your class is public.
 
-Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk, which has been updated for Forms 9.
+Here is an example of overriding the Textarea field aka Long Answer.
 
 ```csharp
 public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textarea
