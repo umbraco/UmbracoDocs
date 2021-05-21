@@ -107,8 +107,9 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 ### MVC View Example on how to blur a crop
 
 ```html
-<img src="@Url.GetCropUrl(Model, propertyAlias: "image", cropAlias: "banner",
-useCropDimensions:true, furtherOptions: "&blur=11&sigma=1.5&threshold=10")" />
+<img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias:
+"banner", useCropDimensions:true, furtherOptions:
+"&blur=11&sigma=1.5&threshold=10")" />
 ```
 
 Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
