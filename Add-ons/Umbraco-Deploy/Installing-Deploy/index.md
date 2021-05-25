@@ -19,3 +19,9 @@ The guide goes through the installation process, which steps you need to do and 
 In this guide you can learn how to get up and running with Umbraco Deploy on an Umbraco website that you already have running.
 
 The guide goes through some additional steps that you need to go through to make sure that you can run your project with Umbraco Deploy.
+
+## [Setting up a CI/CD Pipeline](CICD-Pipeline/)
+
+In this guide you can learn how to get up and running with Umbraco Deploy on an Umbraco website that you already have running.
+
+The guide goes through some additional steps that you need to go through to make sure that you can run your project with Umbraco Deploy.

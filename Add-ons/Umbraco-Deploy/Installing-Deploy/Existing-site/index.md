@@ -187,17 +187,10 @@ Before moving on to setting up the build server, make sure that your license is 
 
 The file needs to be placed in the `/bin` folder and commit it to the repository.
 
-### Set up CI/CD build server
-
-Once Umbraco Deploy has been installed and the meta data has been generated, a CI/CD build server needs to be set up.
-The build server will extract the changes that has been pushed to the repository into your production website that has been connected with Umbraco Deploy.
-
-This is something that can be done in many different ways depending on where your website is hosted and your setup.
-
-Umbraco Deploy will work out of the box with any CI/CD or build server that supports executing Powershell (which will be all build servers that support .NET) like Azure DevOps or Github Actions.
-
-For an example on how this can be done see the [guide for how Umbraco Deploy can be installed for a new site](../New-site/#Setting-up-CI-CD-build-server-with-Github-actions) where Github Actions is used as the build server.
+At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICI-Pipeline).
 
 Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployments).
 
-This will only deploy the meta data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
+This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
+
+
