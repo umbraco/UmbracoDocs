@@ -16,7 +16,7 @@ The newest major version of Umbraco comes with a lot of new big features, as wel
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <a href="Managing-an-Umbraco-project/index.md" class="docs-section">
+            <a href="Managing-an-Umbraco-project" class="docs-section">
                 <img src="images/calendar_marked.png" alt="">
                 <h2>Managing an Umbraco project</h2>
                 <p>This section allows you to investigate the deployment process, the commercial options and how to best plan an Umbraco project.</p>
