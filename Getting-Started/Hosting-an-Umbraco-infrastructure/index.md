@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 # Hosting an Umbraco Infrastructure
 
-You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](https://our.umbraco.com/documentation/Umbraco-Cloud/) hosting service, how to upgrade Umbraco, and much more.
+You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](../../Umbraco-Cloud/) hosting service, how to upgrade Umbraco, and much more.
 
 In this section you will also find information on areas such as load balancing, deployments and user management.
 
@@ -16,25 +16,25 @@ In this section you will also find information on areas such as load balancing, 
 
 ## How to install and configure an Umbraco installation
 
-- [Setup Umbraco](https://our.umbraco.com/Documentation/Getting-Started/Setup/)
+- [Setup Umbraco](../../Fundamentals/Setup/)
 
-- [Install Umbraco](https://our.umbraco.com/Documentation/Getting-Started/Setup/Install/)
+- [Install Umbraco](../../Fundamentals/Setup/Install/)
 
-- [Upgrading Umbraco](https://our.umbraco.com/Documentation/Getting-Started/Setup/Upgrading/)
+- [Upgrading Umbraco](../../Fundamentals/Setup/Upgrading/)
 
 ## Server Requirements
 
-- [Server setup](https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/)
+- [Server setup](../../Fundamentals/Setup/Server-Setup/)
 
-- [Server setup requirements](https://our.umbraco.com/documentation/Getting-Started/Setup/Requirements/)
+- [Server setup requirements](../../Fundamentals/Setup/Requirements/)
 
-- [Running on Azure web apps](https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/azure-web-apps)
+- [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps)
 
 :::
 
 ## Related links
 
-- [External login providers](https://our.umbraco.com/Documentation/Reference/Security/external-login-providers)
+- [External login providers](../../Fundamentals/Reference/Security/external-login-providers)
 
 :::
 
