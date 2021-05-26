@@ -17,7 +17,7 @@ It is recommended that you have some knowledge and prior experience working with
 
 ## Resources for extending - TBD
 
-- [Package manifest](../../../Extending/Property-Editors/package-manifest)
+- [Package manifest](../../../Extending/Property-Editors/package-manifest.md)
 - [Angular docs / Backoffice UI API](../../../Reference/Angular/)
 - [C# API Docs](../../../Reference/API-Documentation/)
 
