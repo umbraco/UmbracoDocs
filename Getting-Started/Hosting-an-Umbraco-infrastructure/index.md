@@ -28,7 +28,7 @@ In this section you will also find information on areas such as load balancing, 
 
 - [Server setup requirements](../../Fundamentals/Setup/Requirements/)
 
-- [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps)
+- [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps.md)
 
 :::
 
