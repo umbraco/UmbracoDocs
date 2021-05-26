@@ -12,15 +12,15 @@ This section will help you get up to speed with where to start as content editor
 
 There is also information on how to use features such as translations, forms, and other ways to personalize your site.
 
-[Get to know the Umbraco Backoffice](https://our.umbraco.com/documentation/Getting-Started/Backoffice/)
+[Get to know the Umbraco Backoffice](../../Fundamentals/Backoffice/)
 
-[The Editors Manual](documentation/Tutorials/Editors-Manual)
+[The Editors Manual](../../Tutorials/Editors-Manual)
 
-[What are the options for managing content?](documentation/Tutorials/Editors-Manual/Working-With-Content/)
+[What are the options for managing content?](../../Tutorials/Editors-Manual/Working-With-Content/)
 
-[What are the options for managing media?](documentation/Tutorials/Editors-Manual/Media-Management/)
+[What are the options for managing media?](../../Tutorials/Editors-Manual/Media-Management/)
 
-[What are the options for managing forms?](documentation/Add-ons/UmbracoForms/Editor/)
+[What are the options for managing forms?](../../Add-ons/UmbracoForms/Editor/)
 
 :::center
 ![Editing Umbraco](images/umbraco_8_2_A.png)
@@ -32,7 +32,7 @@ Alternatively we have a "no-code/low-code" platform called Umbraco Uno which all
 
 [Sounds interesting, but what can you build with Uno?](https://umbraco.com/products/umbraco-uno/what-can-you-build-with-umbraco-uno/)
 
-[I'd like to know more - where can I find documentation?](https://our.umbraco.com/documentation/Umbraco-Uno/)
+[I'd like to know more - where can I find documentation?](../../Umbraco-Uno/)
 
 :::center
 ![Umbraco baseline](images/8_6_Email_hero_780x405px.png)
