@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "Umbraco MediaService Events"
 meta.Description: "Information on the various events available in the MediaService"
 ---
