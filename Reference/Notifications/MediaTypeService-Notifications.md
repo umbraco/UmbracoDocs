@@ -6,7 +6,7 @@ verified-against: beta-2
 
 # MediaTypeService Notifications
 
-The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType
+The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.
 
 <table>
   <tr>

@@ -7,6 +7,12 @@ versionRemoved: 8.0.0
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
+:::note
+Since Umbraco 9, Events are called Notifications. The information and links in this article are only relevant to you, if you're using Umbraco 7.
+
+All available notifications are documented in the [Notifications](../Notifications) section.
+:::
+
 ## [Application Startup & event registration](Application-Startup.md)
 
 Umbraco allows you to execute code during application startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events.
@@ -23,6 +29,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 * See [MediaService Events](MediaService-Events.md) for a listing of the MediaService object events.
 
 ## Other events
+
 * See [ContentTypeService Events](ContentTypeService-Events.md) for a listing of the ContentTypeService object events.
 * See [DataTypeService Events](DataTypeService-Events.md) for a listing of the DataTypeService object events.
 * See [FileService Events](FileService-Events.md) for a listing of the FileService object events.

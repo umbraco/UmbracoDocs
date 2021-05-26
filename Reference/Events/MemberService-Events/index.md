@@ -8,6 +8,15 @@ meta.Description: "Information on the various events available in the MemberServ
 
 The MemberService implements IMemberService and provides access to operations involving IMember.
 
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, MemberService Events have been renamed to [**MemberService Notifications**](../Notifications/MemberService-Notifications).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
+
 ## Usage
 
 Example usage of the MemberService events:
