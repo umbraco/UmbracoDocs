@@ -23,7 +23,7 @@ The newest major version of Umbraco comes with a lot of new big features, as wel
             </a>
         </div>
         <div class="col-sm-6">
-            <a href="Editing-the-Umbraco-Backoffice" class="docs-section">
+            <a href="Editing-websites-with-Umbraco" class="docs-section">
             <img src="images/editor.png" alt="">
                 <h2>Editing websites with Umbraco</h2>
                 <p>This section will introduce you to a set of tools and resources to get you started with editing content in an Umbraco website.</p>
@@ -39,7 +39,7 @@ The newest major version of Umbraco comes with a lot of new big features, as wel
             </a>
         </div>
         <div class="col-sm-6">
-            <a href="Developing-websites-withUmbraco" class="docs-section">
+            <a href="Developing-websites-with-Umbraco" class="docs-section">
                 <img src="images/code.png" alt="">
                 <h2>Developing websites with Umbraco</h2>
                 <p>Learn how to develop with Umbraco - you will find tools for backend development as well as tool to help you extend and customize the Umbraco backoffice.</p>
