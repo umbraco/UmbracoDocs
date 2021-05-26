@@ -16,7 +16,7 @@ There is also information on how to use features such as translations, forms, an
 
 [The Editors Manual](../../Tutorials/Editors-Manual)
 
-[What are the options for managing content?](../../Tutorials/Editors-Manual/Working-With-Content/)
+[What are the options for managing content?](../../Tutorials/Editors-Manual/Working-with-Content/)
 
 [What are the options for managing media?](../../Tutorials/Editors-Manual/Media-Management/)
 
