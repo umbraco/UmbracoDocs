@@ -13,11 +13,11 @@ There are also some tutorials on how to inject dependencies and some information
 
 You can implement your own MVC controllers to work alongside Umbraco.
 
-- [Working with generated Models](https://our.umbraco.com/documentation/Reference/Templating/Modelsbuilder/)
+- [Working with generated Models](../../Reference/Templating/Modelsbuilder/)
 
-- [Concerns when working with Views](https://our.umbraco.com/Documentation/Reference/Templating/Mvc)
+- [Concerns when working with Views](../../Reference/Templating/Mvc)
 
-- [Different types of Controllers](https://our.umbraco.com/documentation/Implementation/Controllers)
+- [Different types of Controllers](../../Implementation/Controllers)
 
 :::links
 
@@ -25,8 +25,8 @@ You can implement your own MVC controllers to work alongside Umbraco.
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
-- [Surface Controllers](https://our.umbraco.com/documentation/Reference/Routing/surface-controllers)
-- [Default routing](https://our.umbraco.com/documentation/Implementation/Default-Routing/Controller-Selection)
+- [Surface Controllers](../../Reference/Routing/surface-controllers)
+- [Default routing](../../Implementation/Default-Routing/Controller-Selection)
 
 :::
 
@@ -34,14 +34,14 @@ There are two concepts that are Umbraco specific which might prove useful to lea
 
 Umbraco is composed of components. Programmatically you can add your own components and customize Umbraco at application startup.
 
-Learn more about composing and components in the [Composing article](https://our.umbraco.com/documentation/Implementation/Composing).
+Learn more about composing and components in the [Composing article](../../Implementation/Composing).
 
 ## Debugging
 
 When you're developing with Umbraco you might sometimes run into some errors and issues. Here are some guides to help you with the debugging:
 
-- [General debugging](https://our.umbraco.com/Documentation/Getting-Started/Code/Debugging/)
-- [Debugging with SourceLink](https://our.umbraco.com/Documentation/Reference/Debugging/)
+- [General debugging](../../Fundamentals//Code/Debugging/)
+- [Debugging with SourceLink](../../Reference/Debugging/)
 
 :::center
 ![Umbraco packages](images/corona_blogpost_05SoMe_768x432px.png)
