@@ -19,7 +19,7 @@ Umbraco 9 is currently in a beta release and before the official release you wil
 `dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"`
 
 And then step 2 below instead becomes:
-Run `dotnet new -i Umbraco.Templates::beta-001`
+Run `dotnet new -i Umbraco.Templates::beta-002`
 
 For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates.md#umbraco-net-core-beta) article.
 :::

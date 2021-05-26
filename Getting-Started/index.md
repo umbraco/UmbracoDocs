@@ -56,12 +56,10 @@ The newest major version of Umbraco comes with a lot of new big features, as wel
         </div>
         <div class="col-sm-6">
             <a href="Where-can-I-get-help/index.md" class="docs-section">
-            <img src="images/support.png" alt="">
+                <img src="images/support.png" alt="">
                 <h2>Haven't found what you're looking for?</h2>
                 <p>In this section we've gathered a set of resources to help you find the information and help that you need in order to continue working with a learning Umbraco.</p>
             </a>
         </div>
-
     </div>
 </div>
-</br>
