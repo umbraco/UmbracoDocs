@@ -61,7 +61,7 @@ The newest major version of Umbraco comes with a lot of new big features, as wel
                 <p>In this section we've gathered a set of resources to help you find the information and help that you need in order to continue working with a learning Umbraco.</p>
             </a>
         </div>
-
     </div>
 </div>
+
 </br>
