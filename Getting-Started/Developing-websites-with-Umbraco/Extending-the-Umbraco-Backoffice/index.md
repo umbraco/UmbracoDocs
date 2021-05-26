@@ -27,35 +27,35 @@ It is recommended that you have some knowledge and prior experience working with
 
 To get you started here are some examples of what you can extend in Umbraco:
 
-[Property Editors](https://our.umbraco.com/Documentation/Extending/Property-Editors/)
+[Property Editors](../../../Extending/Property-Editors/)
 
-[Dashboards](https://our.umbraco.com/documentation/Extending/Dashboards/)
+[Dashboards](../../../Extending/Dashboards/)
 
-[Backoffice Tours](https://our.umbraco.com/documentation/Extending/Backoffice-Tours/)
+[Backoffice Tours](../../../Extending/Backoffice-Tours/)
 
-[Sections](https://our.umbraco.com/Documentation/Extending/Section-Trees/sections)
+[Sections](../../../Extending/Section-Trees/sections)
 
-[Trees](https://our.umbraco.com/Documentation/Extending/Section-Trees/trees)
+[Trees](../../../Extending/Section-Trees/trees)
 
-[Content Apps](https://our.umbraco.com/Documentation/Extending/Content-Apps/)
+[Content Apps](../../../Extending/Content-Apps/)
 
-[Backoffice Search](https://our.umbraco.com/documentation/Extending/Backoffice-Search/)
+[Backoffice Search](../../../Extending/Backoffice-Search/)
 
-[Health checks](https://our.umbraco.com/documentation/Extending/Health-Check/)
+[Health checks](../../../Extending/Health-Check/)
 
-[File system providers](https://our.umbraco.com/documentation/Extending/FileSystemProviders/)
+[File system providers](../../../Extending/FileSystemProviders/)
 
 ## Tutorials
 
 If you're in a creative mood then why not experiment with some of our tutorials:
 
-[Creating a Property Editor](https://our.umbraco.com/Documentation/Tutorials/Creating-a-Property-Editor/)
+[Creating a Property Editor](../../../Tutorials/Creating-a-Property-Editor/)
 
-[Creating a Custom Content Apps](https://our.umbraco.com/Documentation/Extending/Content-Apps/#creating-a-custom-content-app)
+[Creating a Custom Content Apps](../../../Extending/Content-Apps/#creating-a-custom-content-app)
 
-[Creating a Custom Dashboard](https://our.umbraco.com/Documentation/Tutorials/Creating-a-Custom-Dashboard/)
+[Creating a Custom Dashboard](../../../Tutorials/Creating-a-Custom-Dashboard/)
 
-[Creating a Package](https://our.umbraco.com/documentation/Extending/Packages/Creating-a-Package/)
+[Creating a Package](../../../Extending/Packages/Creating-a-Package/)
 
 :::center
 ![Extending Umbraco](images/Headless_Email_hero_780x405px.png)
