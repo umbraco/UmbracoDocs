@@ -32,11 +32,11 @@ There a lot of terminology here! Let's look at breaking those terms down:
 
 [What is a Property Editor?](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/)
 
-[Working with Templates](https://our.umbraco.com/documentation/Getting-Started/Design/Templates/)
+[Working with Templates](../../Fundamentals/Design/Templates/)
 
 ## Try it out
 
-[Learn how to create a website with Umbraco](https://our.umbraco.com/documentation/Tutorials/Creating-Basic-Site/)
+[Learn how to create a website with Umbraco](../../Tutorials/Creating-Basic-Site/)
 
 [Video: Create an Umbraco website](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/creating-an-umbraco-website/)
 
