@@ -78,7 +78,7 @@ namespace MySite
     <td>
     Published when IContentService.Save is called in the API and after data has been persisted.<br />
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
-    <em>NOTE: <a href="./determining-new-entity">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="./determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     SavedEntities: The saved collection of IContent objects.
     </td>
   </tr>
@@ -113,7 +113,7 @@ namespace MySite
     <td>
     Published when IContentService.Publish is called in the API and after data has been published.<br />
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
-    <em>NOTE: <a href="./determining-new-entity">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="./determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     PublishedEntities: The published collection of IContent objects.
     </td>
   </tr>
@@ -612,4 +612,4 @@ Furthermore, there was no reason to listen for the Creating/Created events. They
 
 #### What do we use instead?
 
-The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity-v9.md)
+The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)

@@ -42,7 +42,7 @@ The MediaTypeService class implements IMediaTypeService. It provides access to o
     </td>
     <td>
     Published when MediaTypeService.Save is called in the API, after the entities has been saved.<br/>
-    NOTE: <em><a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em><br/>
+    NOTE: <em><a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br/>
     SavedEntities: Gets the collection of saved IMediaType objects.
     </td>
   </tr>
