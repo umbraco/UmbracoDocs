@@ -105,7 +105,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta002
+    dotnet new -i Umbraco.Templates::9.0.0-beta003
     ```
 
 ### [Optional] Update the template from earlier alpha versions
@@ -115,7 +115,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta002
+    dotnet new -i Umbraco.Templates::9.0.0-beta003
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -262,3 +262,26 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fixed issues where the javascript minifier was too agressive.
   - Fixed issue with hardcoded '\' as directory separator char (Linux issue).
   - Fixed issue in the Danish translation file leading to error doing install.
+
+### Changes between beta 2 and beta 3
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-beta003+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - Examine 2.0 implementation.
+  - ModelsBuilder mode names are changed. 
+     - `PureLive` => `InMemoryAuto`
+     - `AppData` => `SourceCodeManual`
+     - `LiveAppData` => `SourceCodeAuto`
+ - Scope optional parameter ordering
+- Features
+  - Restart not required on install.
+  - Modelsbuilder InMemoryAuto (PureLive) output is generated in temp folder
+  - Latests updated from Umbraco 8.14-RC
+- Bugfixes
+  - Fix for unsafe project names; these are no longer unsafe for namespaces. 
+     - E.g. "Umbraco 9" will now use namespace "Umbraco_9"
+  - Resolve virtual paths from DataEditorAttribute. E.g. "~/App_Data/...."
+
+
