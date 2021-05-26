@@ -274,152 +274,115 @@ To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attr
 public class FavouritistThingsTreeController : TreeController
 ```
 
-## Tree events
+## Tree notifications
 
-All tree events are defined on the class `Umbraco.Cms.Web.BackOffice.Trees.TreeControllerBase`
+All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`. 
 
-### RootNodeRendering
+For more information about registering and using notifications see [Notifications](../../Reference/Events/index-v9.md)
 
-The `RootNodeRendering` is raised whenever a tree's root node is created.
+### RootNodeRenderingNotification
 
-**Definition:**
+The `RootNodeRenderingNotification` is published whenever a tree's root node is created.
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, TreeNodeRenderingEventArgs> RootNodeRendering;
-```
+**Members:**
+
+* `TreeNode Node`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-// register the event listener using a component
-public void Initialize()
+public void Handle(RootNodeRenderingNotification notification)
 {
-    TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
-}
-
-// the event listener method:
-void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
-{
-    // normally you will want to target a specific tree, this can be done by checking the
-    // tree alias of by checking the tree type (casting 'sender')
-    if (sender.TreeAlias == "content")
+    // normally you will want to target a specific tree, this can be done by checking the tree alias
+    if (notification.TreeAlias.Equals("content"))
     {
-        e.Node.Name = "My new title";
+        notification.Node.Name = "My new title";
     }
 }
-public void Terminate()
-{
-    // unsubscribe on shutdown
-    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
-}
 ```
 
-### TreeNodesRendering
+### TreeNodesRenderingNotification
 
-The `TreeNodesRendering` is raised whenever a list of child nodes are created.
+The `TreeNodesRenderingNotification` is published whenever a list of child nodes are created.
 
-**Definition:**
+**Members:**
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, TreeNodesRenderingEventArgs> TreeNodesRendering;
-```
+* `TreeNodeCollection Nodes`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-public class MyComposer : IUserComposer
+public class TreeNotificationHandler :INotificationHandler<TreeNodesRenderingNotification>
 {
-    private Umbraco.Cms.Core.Security.IBackofficeSecurityAccessor  _backOfficeSecurityAccessor;
+    private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 
-    public MyComposer(IBackofficeSecurityAccessor backOfficeSecurityAccessor)
+    public TreeNotificationHandler(IBackOfficeSecurityAccessor backOfficeSecurityAccessor)
     {
         _backOfficeSecurityAccessor = backOfficeSecurityAccessor;
     }
 
-    // register the event listener with a component:
-    public void Initialize()
-    {
-        TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
-    }
-
-    // the event listener method:
-    void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+    public void Handle(TreeNodesRenderingNotification notification)
     {
         // this example will filter any content tree node whose node name starts with
-
         // 'Private', for any user that is in the customUserGroup
-        if (sender.TreeAlias == "content"
-            && _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(f => f.Alias == "customUserGroupAlias"))
+        if (notification.TreeAlias.Equals("content") &&
+            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(f =>
+                f.Alias.Equals("customUserGroupAlias")))
         {
-            e.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
+            notification.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
         }
-    }
-    public void Terminate()
-    {
-        // unsubscribe on shutdown
-        TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
     }
 }
 ```
 
-### MenuRendering
+### MenuRenderingNotification
 
-The `MenuRendering` is raised whenever a menu is generated for a tree node.
+The `MenuRenderingNotification` is raised whenever a menu is generated for a tree node.
 
-**Definition:**
+**Members:**
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, MenuRenderingEventArgs> MenuRendering;
-```
+* `MenuItemCollection Menu`
+* `string NodeId`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-public class MyComposer : IUserComposer
+public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
-    private Umbraco.Cms.Core.Security.IBackofficeSecurityAccessor  _backOfficeSecurityAccessor;
+    private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 
-    public MyComposer(IBackofficeSecurityAccessor backOfficeSecurityAccessor)
+    public TreeNotificationHandler(IBackOfficeSecurityAccessor backOfficeSecurityAccessor)
     {
         _backOfficeSecurityAccessor = backOfficeSecurityAccessor;
     }
 
-    // register the event listener with a component:
-    public void Initialize()
-    {
-        TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
-    }
-
-    // the event listener method:
-    void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
+    public void Handle(MenuRenderingNotification notification)
     {
         // this example will add a custom menu item for all admin users
-
+        
         // for all content tree nodes
-        if (sender.TreeAlias == "content"
-            && _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x => x.Alias.InvariantEquals("admin")))
+        if (notification.TreeAlias.Equals("content") &&
+            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x =>
+                x.Alias.InvariantEquals("admin")))
         {
-            // creates a menu action that will open /umbraco/currentSection/itemAlias.html
-            var i = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
-
-            // optional, if you want to load a legacy page, otherwise it will follow convention
-            i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
-
+            // Creates a menu action that will open /umbraco/currentSection/itemAlias.html
+            var menuItem = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
+            
             // optional, if you don't want to follow the naming conventions, but do want to use a angular view
             // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
-            i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
-
+            menuItem.AdditionalData.Add("actionView", "my/long/url/to/view.html");
+            
             // sets the icon to icon-wine-glass
-            i.Icon = "wine-glass";
-
+            menuItem.Icon = "wine-glass";
             // insert at index 5
-            e.Menu.Items.Insert(5, i);
+            notification.Menu.Items.Insert(5, menuItem);
         }
-    }
-    public void Terminate()
-    {
-        // unsubscribe on shutdown
-        TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
     }
 }
 ```
