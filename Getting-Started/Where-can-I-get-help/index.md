@@ -33,7 +33,7 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Found an issue with the Umbraco Documentation? Report it to the Documentation team](https://github.com/umbraco/UmbracoDocs)
 
-[Suggest an improvement](https://our.umbraco.com/documentation/Contribute/)
+[Suggest an improvement](../../Contribute/)
 
 ## Community Resources
 
