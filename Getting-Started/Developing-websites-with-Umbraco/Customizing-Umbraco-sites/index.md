@@ -25,7 +25,7 @@ You can implement your own MVC controllers to work alongside Umbraco.
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
-- [Surface Controllers](../../../Reference/Routing/surface-controllers)
+- [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
 - [Default routing](../../../Implementation/Default-Routing/Controller-Selection)
 
 :::
