@@ -2,6 +2,7 @@
 meta.Title: "Creating media in Umbraco"
 meta.Description: "Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files."
 versionFrom: 8.0.0
+verified-against: 9.0.0
 ---
 
 # Creating media
@@ -18,7 +19,7 @@ The __Folder__ Media Type is a container for organizing media items in the media
 
 It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload files and images in the right place.
 
-To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up a dialogue. Pick the __Folder__, enter a name and press __save__.
+To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose **Create**. This will bring up a dialogue. Pick __Folder__, enter a name and press __save__.
 
 ## Uploading images and files
 
@@ -112,7 +113,11 @@ We want the same basic functionality (same properties and tabs) as the __Folder_
 
 ![Compositions](images/folder-composition.png)
 
-Finally we need to allow the Employee Image Media Type in our new folder. Go to the __Permissions__ tab. Click __Add child__ under __Employee images__.
+Switch to a list view by clicking the **List view** tab and toggle the **Enable list view** option.
+
+![Enable List View](images/toggle-listview.png)
+
+Finally, we need to allow the Employee Image Media Type in our new folder. Go to the __Permissions__ tab. Click __Add child__ under __Employee Images__ and select __Employee Image__.
 
 ![Permissions](images/select-child-nodes.png)
 
@@ -120,7 +125,7 @@ All that is left to do is to define where the folder can be created. We want to 
 
 ### Creating the folder and media items
 
-Go to the __Media__ section and click the menu icon next to Media and select the __Employee images__ folder. Name it "Employee Images" and click create.
+Go to the __Media__ section and click the menu icon next to Media and select the __Employee images__ folder. Name it "Employee Images" and click **Save**.
 
 There are four options to add a new media items to the folder, as you can see here:
 
