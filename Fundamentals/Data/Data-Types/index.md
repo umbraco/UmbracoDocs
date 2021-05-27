@@ -22,9 +22,6 @@ To create a new Data Type, go to the **Settings** section within the backoffice 
 
 * __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown__ and now you will see the configuration options that are available for a Data Type referencing the Dropdown Property Editor.
 
-* __Property Editor Alias__
-The alias of the Property Editor being used - in this case `Umbraco.DropDown.Flexible`
-
 * __Enable multiple choice:__ By enabling this it will be possible to select multiple options from the dropdown.
 
 * __Add prevalue:__ Here you can add prevalues to the Data Type by entering the value you want into the input field and pressing the __add__ button or hitting __Enter__ on your keyboard.
