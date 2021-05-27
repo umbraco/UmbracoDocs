@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "Umbraco MediaService Events"
 meta.Description: "Information on the various events available in the MediaService"
 ---
@@ -7,6 +8,15 @@ meta.Description: "Information on the various events available in the MediaServi
 # MediaService Events
 
 The MediaService class implements IMediaService. It provides access to operations involving IMedia.
+
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, MediaService Events have been renamed to [**MediaService Notifications**](../Notifications/MediaService-Notifications.md).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
 
 ## Usage
 

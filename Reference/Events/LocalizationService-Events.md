@@ -1,8 +1,18 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 9.0.0
 ---
 
-# LocalizationService Events#
+# LocalizationService Events
+
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, LocalizationService Events have been renamed to [**LocalizationService Notifications**](../Notifications/LocalizationService-Notifications.md).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
 
 The LocalizationService class implements ILocalizationService. It provides access to operations involving Language and DictionaryItem.
 

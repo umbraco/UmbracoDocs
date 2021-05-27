@@ -74,7 +74,7 @@ namespace MySite
     <td>
     Published when MemberService.Save is called in the API and after data has been persisted.<br/>
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br/>
-    <em>NOTE: <a href="../determining-new-entity-v9.md">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="../determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     SavedEntities: Gets the saved collection of IMember objects.
     </td>
   </tr>

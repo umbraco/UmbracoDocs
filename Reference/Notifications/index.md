@@ -6,7 +6,7 @@ verified-against: beta-2
 
 # Using notifications
 
-Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that. 
+Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that.
 
 ## Notifications
 
@@ -14,7 +14,7 @@ All notifications reside in the `Umbraco.Cms.Core.Notifications` namespace and a
 
 Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and publishes notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Events-v9.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
+Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
 ### Notification handlers lifetime
 
@@ -35,11 +35,11 @@ public void Handle(TemplateSavedNotification notification)
 {  
   var valueFromSaving = notification.State["SomeKey"];  
 }
-``` 
+```
 
 ### Registering notification handlers
 
-Once you've made your notification handlers you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`, so they're run whenever a notification they subscribe to is published. There are two ways to do this: In the Startup class, if you're making handlers for your site, or a composer if you're a package developer subscribing to notifications. 
+Once you've made your notification handlers you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`, so they're run whenever a notification they subscribe to is published. There are two ways to do this: In the Startup class, if you're making handlers for your site, or a composer if you're a package developer subscribing to notifications.
 
 #### Registering notification handlers in the startup class
 
@@ -60,12 +60,13 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-The extension method takes two generic type parameters, the first `ContentPublishingNotification` is the notification you wish to subscribe to, the second `DontShout` is the class that handles the notification. This class must implement `INotificationHandler<>` with the type of notification it handles as the generic type parameter, in this case, the DontShout class definition looks like this: 
+The extension method takes two generic type parameters, the first `ContentPublishingNotification` is the notification you wish to subscribe to, the second `DontShout` is the class that handles the notification. This class must implement `INotificationHandler<>` with the type of notification it handles as the generic type parameter, in this case, the DontShout class definition looks like this:
 
 ```C#
 public class DontShout : INotificationHandler<ContentPublishingNotification>
 ```
-For the full handler implementation see [ContentService Notifications](Contentservice-Events-v9.md).
+
+For the full handler implementation see [ContentService Notifications](Contentservice-Notifications.md).
 
 #### Registering notification handlers in a composer
 
@@ -127,18 +128,18 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Content, Media, and Member notifications
 
-* See [ContentService Notifications](ContentService-Events-v9.md) for a listing of the ContentService object notifications.
-* See [MediaService Notifications](MediaService-Events-v9.md) for a listing of the MediaService object notifications.
-* See [MemberService Notifications](MemberService-Events/index-v9.md) for a listing of the MemberService object notifications.
+* See [ContentService Notifications](ContentService-Notifications.md) for a listing of the ContentService object notifications.
+* See [MediaService Notifications](MediaService-Notifications.md) for a listing of the MediaService object notifications.
+* See [MemberService Notifications](MemberService-Notifications) for a listing of the MemberService object notifications.
 
 ## Other notifications
 
-* See [ContentTypeService Notifications](ContentTypeService-Events-v9.md) for a listing of the ContentTypeService object notifications.
-* See [MediaTypeService Notifications](MediaTypeService-Events-v9.md) for a listing of the MediaTypeService object notifiactions.
-* See [MemberTypeService Notifications](MemberTypeService-Events-v9.md) for a listing of the MemberTypeService object notifications.
-* See [DataTypeService Notifications](DataTypeService-Events-v9.md) for a listing of the DataTypeSErvice object notifications
-* See [FileService Notifications](FileService-Events-v9.md) for a listing of the FileService object notifications.
-* See [LocalizationService Notifications](LocalizationService-Events-v9.md) for a listing of the LocalizationService object notifications.
+* See [ContentTypeService Notifications](ContentTypeService-Notifications.md) for a listing of the ContentTypeService object notifications.
+* See [MediaTypeService Notifications](MediaTypeService-Notifications.md) for a listing of the MediaTypeService object notifiactions.
+* See [MemberTypeService Notifications](MemberTypeService-Notifications.md) for a listing of the MemberTypeService object notifications.
+* See [DataTypeService Notifications](DataTypeService-Notifications.md) for a listing of the DataTypeSErvice object notifications
+* See [FileService Notifications](FileService-Notifications.md) for a listing of the FileService object notifications.
+* See [LocalizationService Notifications](LocalizationService-Notifications.md) for a listing of the LocalizationService object notifications.
 
 ## Tree notifications
 
@@ -146,8 +147,7 @@ See [Tree Notifications](../../Extending/Section-Trees/trees-v9.md) for a listin
 
 ## Editor Model Notifications
 
-See [EditorModel Notifications](EditorModel-Events/index-v9.md) for a listing of the EditorModel events
-
+See [EditorModel Notifications](EditorModel-Notifications) for a listing of the EditorModel events
 
 :::tip
 Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document.
