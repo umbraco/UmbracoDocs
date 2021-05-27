@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Content Templates in Umbraco"
 meta.Description: "In this article you can learn about how to create and use Content Templates in Umbraco."
+verified-against: 9.0.0
 ---
 
 # Content Templates
@@ -12,11 +13,11 @@ Content Templates allows a content editor to create a blueprint for new content 
 
 ## Create - Method 1
 
-Select the 'Content' menu:
+Select a 'Content node' from the 'Content' menu:
 
 ![Content Menu](images/v8-01-Content-Menu.png)
 
-Then click the 'Actions' dropdown menu button and select the 'Create Content Template' menu item:
+Right-click the Content node and select the 'Create Content Template' option. Alternatively, select the 'Actions' dropdown of the content node and select the 'Create Content Template' option:
 
 ![Actions Button](images/v8-02-Actions-Menu.png)
 
@@ -28,9 +29,13 @@ Click the 'Create' button and if the creation was successful, you will see a suc
 
 ![Create Button](images/v8-04-Save-Content-Template.png)
 
-The new content template will be created in 'Content Templates' node of the settings tree:
+The new content template will be created in 'Content Templates' node of the 'Settings' tree:
 
 ![New Content Template](images/v8-05-Find-Content-Template.png)
+
+:::note
+Refresh your browser, if you do not see the new content template in the 'Content Templates' folder.
+:::
 
 ## Create - Method 2
 
