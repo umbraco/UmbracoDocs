@@ -1,37 +1,51 @@
 ---
 meta.Title: "Creating media in Umbraco"
 meta.Description: "Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files."
-versionFrom: 8.0.0
-versionTo: 8.13.0
+versionFrom: 8.14.0
+verified-against: 9.0.0
 ---
 
 # Creating media
 
-Media in Umbraco is handled in much the same way as content. Instead of defining Document Types you define Media Types that act as the base for media items. Unlike with normal content there are a three default Media Types:
+Media in Umbraco is handled the same way as content. Instead of defining Document Types you define Media Types that act as the base for media items. The following default Media Types are available:
 
-- Folder
-- Image
-- File
+- Article - <TBD>
+- Audio - used for uploading and storing digital audio files.
+- File - used for uploading and storing different types of files in the Media section.
+- Folder - a container for organizing media items in the media tree.
+- Image - used for uploading and storing images.
+- Vector Graphics (SVG) - used for uploading and storing Scalable Vector Graphics files which are text files containing source code to draw the desired image.
+- Video - used for uploading and storing video files.
 
-The __Folder__ Media Type is a container for organizing media items in the media tree. The __Image__ Media Type is used for uploading and storing images and the __File__ Media Type is used to upload and store other files in the Media section. This means you don't have to define your own Media Types to start using the section. You've already got the tools for organizing and uploading media.
+This means you don't have to define your own Media Types to start using the section. You've already got the tools for organizing and uploading media.
 
 ## Creating a folder
 
-It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload files and images in the right place.
+It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload their media items in the right place.
 
-To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose **Create**. This will bring up a dialogue. Pick __Folder__, enter a name and press __save__.
+To create a media folder go to the __Media section__ and click **...** next to __Media__. Alternatively, you can right-click the __Media__ node and choose **Create**. This will bring up the list of available media types. Pick __Folder__, enter a name and press __save__.
 
-## Uploading images and files
+## Uploading Media
 
-There are a couple of different ways to do this.
+You can upload media in three ways:
 
-You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Upload field__ and choose a file to upload.
+1. Click **...** next to __Media__ and choose the media type, enter a name for your media item and click the __Click to upload__ field to choose a file type or drag the file into the upload field to upload the item.
 
-An easier way to do it is to drag and drop the file to the upload field in the Media section. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click on the upload field to get a standard OS file picker dialog.
+    ![Upload Media - Create](images/v9-media-types-create1.png)
 
-You can also click the __Create__ dropdown, and choose what kind of item you want to create. Choose Image or File here, will again give you the option to either click an Upload field or drag the image into the upload field to upload the item.
+2. Drag and drop your files in the __Upload__ field in the Media section.
 
-The default __Image__ Media Type has 5 properties that will be populated once the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__. They can be viewed in the __Media__ section and accessed in your templates.
+    ![Upload Media - Media section](images/v9-media-types-media-section.png)
+
+    :::note
+    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively, you can click on the __Click to upload__ field to get a standard OS file picker window.
+    :::
+
+3. Click the __Create__ dropdown, and choose the media item you want to create. Enter a name for your media item and click the __Click to upload__ field or drag the file into the upload field to upload the item.
+
+    ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
+
+The default __Image__ Media Type has 5 properties that will be populated once the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__. They can be viewed in the __Media__ section and accessed in your templates. The rest of the media types has 3 properties - __Upload Image__, __Type__, and __Size__.
 
 ## Organizing and editing media items
 
@@ -39,7 +53,7 @@ The default view for the media section is a card view that let's you preview the
 
 ![Media Section - Cardview](images/media-section.png)
 
-By clicking the items you can select multiple media items and do bulk operations like deleting or moving them. To edit properties on a media item click the name of the item, which you will see once hovering over the item.
+By clicking the items you can select multiple media items and do bulk operations like deleting or moving them. To edit properties on a media item click the name of the item, which you will see once you hover over the item.
 
 ![Edit media item](images/hover-over.png?width=200px)
 
