@@ -7,8 +7,6 @@ verified-against: 9.0.0
 
 # Creating a property editor
 
-_This tutorial was last tested on **Umbraco 8.11**_
-
 ## Overview
 
 This guide explains how to set up a property editor, how to hook it into Umbraco's Data Types, how to hook it into AngularJS' modules and its injector, and finally how we can test our property editor.
