@@ -61,7 +61,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
 * [YouTube: Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=rpUg-oySw8g)
 * [YouTube: Migrating Event Handlers to Notification Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
-* [Adrian Ochmann: Umbraco (.NEThttps://m.youtube.com/watch?v=o_rpltxwj-8 Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
+* [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
