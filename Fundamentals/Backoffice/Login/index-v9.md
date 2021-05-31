@@ -32,16 +32,20 @@ The login screen features a greeting, which you can personalize by changing the 
 </area>
 ```
 
-You can customize other text in the login screen as well, grab the default values from `~/Umbraco/Config/Lang/en.xml` and copy the keys you want to translate into your `~/Umbraco/Config/Lang/MYLANGUAGE.xml` file.
+You can customize other text in the login screen as well, grab the default values from `~/umbraco/config/lang/en.xml` and copy the keys you want to translate into your `~/umbraco/config/lang/MYLANGUAGE.xml` file.
 
 ## Password reset
 
-The **Forgotten password?** link allows your backoffice users to reset their password. To use this feature, you will need to add the following key to the `"security"` section in the `appsettings.json` file:
+The **Forgotten password?** link allows your backoffice users to reset their password. To use this feature, you will need to add the following key to the `Umbraco.Cms.Security` section in the `appsettings.json` file:
 
 ```json
-"Security": { 
+"Umbraco": {
+    "CMS": {
+      "Security": { 
         "AllowPasswordReset": true
-      },
+      }
+   }
+}
 ```
 
 Set it to `true` to enable the password reset feature, and `false` to disable the feature.
@@ -51,35 +55,8 @@ You will also need to configure an SMTP server in your `appsettings.json` file. 
 An example:
 
 ```json
-"Global": {
-        "Id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "Smtp": {
-          "From": "noreply@test.com",
-          "Host": "127.0.0.1",
-          "Username": "username",
-          "Password": "password"
-        }
-      },
-```
-
-## Background image
-
-It is possible to customize the background image for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
-
-```json
-"Content": {
-        "LoginBackgroundImage": "assets/img/login.jpg"
-      }
-```
-
-## `appsettings.json` file
-Your `appsettings.json` file should now look like this:
-```json
- "Umbraco": {
+"Umbraco": {
     "CMS": {
-      "Hosting": {
-        "Debug": false
-      },
       "Global": {
         "Id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "Smtp": {
@@ -88,13 +65,21 @@ Your `appsettings.json` file should now look like this:
           "Username": "username",
           "Password": "password"
         }
-      },
-     "Security": { 
-        "AllowPasswordReset": true
-      },
+      }
+    }
+}
+```
+
+## Background image
+
+It is possible to customize the background image for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
+
+```json
+"Umbraco": {
+    "CMS": {
       "Content": {
         "LoginBackgroundImage": "assets/img/login.jpg"
       }
-    }
- }
+   }
+} 
 ```
