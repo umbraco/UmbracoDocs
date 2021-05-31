@@ -13,7 +13,7 @@ In Umbraco it is possible to add custom database tables to your site if you want
 
 The end result looks like this:
 
-![Database result of a migration](images/db-table.PNG)
+![Database result of a migration](images/db-table.png)
 
 ```csharp
 using Microsoft.Extensions.Logging;
