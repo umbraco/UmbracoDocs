@@ -17,8 +17,11 @@ We then have a number of variables defined, that are used in the build configura
 ### Build Stage
 
 Each stage - the first of which being the build stage - consists of a number of tasks. The majority of these are standard things that will be used in any .NET web application release, such as the first steps:
+
 #1 Install of the NuGet tooling, 
+
 #2 Restore of NuGet dependencies,
+
 #3 And the project build.
 
 The build uses a publish profile named `ToFileSys.pubxml` in order to output the published web application to a temporary disk location, from where it can be packaged up for deployment.  This publish profile should be added to your web application project in the `\Properties\PublishProfiles\` folder.
