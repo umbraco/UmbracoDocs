@@ -48,3 +48,7 @@ In this example, you are looking at the content section.
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or right-click to view additional options.
 
 The **Recycle Bin** contains the deleted content and is available only in the **Content** and the **Media** section.
+
+---
+
+Prev: [Logging In and Out](Logging-In-and-Out/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index-v9.md)
