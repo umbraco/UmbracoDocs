@@ -2,6 +2,7 @@
 meta.Title: "Sections in the Umbraco Backoffice"
 meta.Description: "In this article you can learn more about the various sections you can find within the Umbraco Backoffice."
 versionFrom: 8.0.0
+versionTo: 9.0.0
 verified-against: 9.0.0
 updated-links: False
 ---
