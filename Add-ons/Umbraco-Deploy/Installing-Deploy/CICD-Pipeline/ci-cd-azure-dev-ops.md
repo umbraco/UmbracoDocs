@@ -16,15 +16,18 @@ We then have a number of variables defined, that are used in the build configura
 
 ### Build Stage
 
-Each stage - the first of which being the build stage - consists of a number of tasks.  The majority of these are standard things that will be used in any .NET web application release, such the first steps of install of the NuGet tooling (#1), restore of NuGet dependencies (#2), and the project build (#3).
+Each stage - the first of which being the build stage - consists of a number of tasks. The majority of these are standard things that will be used in any .NET web application release, such as the first steps:
+#1 Install of the NuGet tooling, 
+#2 Restore of NuGet dependencies,
+#3 And the project build.
 
 The build uses a publish profile named `ToFileSys.pubxml` in order to output the published web application to a temporary disk location, from where it can be packaged up for deployment.  This publish profile should be added to your web application project in the `\Properties\PublishProfiles\` folder.
 
-The first Deploy specific step is step #4.  The Umbraco Deploy license file needs to live in the bin folder, which here we have checked into source control, but not defined as part of the `.csproj` file.  In the step we copy it to the bin folder of the published web application using the values defined in the variables.
+Step #4 is the first Deploy specific step.  The Umbraco Deploy license file needs to live in the bin folder, which here we have checked into source control, but not defined as part of the `.csproj` file.  In this step, we copy it to the bin folder of the published web application using the values defined in the variables.
 
 There is then a similar step for the schema data files (#5).  They are checked into source control and need to be part of the build output so they are deployed to the destination site.
 
-The last steps in the build stage prepare (#6, #7, #8) the build artifacts, of which there are two.  One being the zipped up, published website along with schema data and license files.  The other being the Powershell script, provided with Umbraco Deploy, that will be used to trigger the extraction of the schema files and update of the target environment in the deploy stage.
+The last steps in the build stage (#6, #7, #8) prepares the build artifacts, of which there are two.  One being the zipped-up, published website along with schema data and license files.  The other being the Powershell script, provided with Umbraco Deploy, that will be used to trigger the extraction of the schema files and update of the target environment in the deploy stage.
 
 ### Deploy Stage
 
@@ -201,6 +204,5 @@ stages:
   </PropertyGroup>
 </Project>
 ```
-
 
 
