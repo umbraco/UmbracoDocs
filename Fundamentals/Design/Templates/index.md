@@ -2,6 +2,7 @@
 meta.Title: "Templates in Umbraco"
 meta.Description: "Templating in Umbraco including inheriting from master template"
 versionFrom: 8.0.0
+versionTo: 9.0.0
 verified-against: 9.0.0
 ---
 
