@@ -184,7 +184,7 @@ Before moving on to setting up the build server, make sure that your license is 
 
 The file needs to be placed in the `/bin` folder.
 
-At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICI-Pipeline).
+At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICD-Pipeline).
 
 Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployments).
 
