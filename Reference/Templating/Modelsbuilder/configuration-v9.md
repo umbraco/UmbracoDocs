@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: beta-3
 meta.Title: ModelsBuilder Configuration
 meta.Description:  Explanation of how to configure models builder 
 ---
