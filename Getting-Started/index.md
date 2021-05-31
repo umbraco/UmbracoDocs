@@ -6,14 +6,11 @@ versionFrom: 8.0.0
 
 # Getting Started
 
-The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
+How to get started with Umbraco depends a lot on what you're going to be using Umbraco for. Are you a content editor looking to learn how to start working with content in Umbraco? Are you an experience .NET developer looking to take your first shot at building a custom Umbraco solution? Or perhaps you're a project manager looking to find out whether Umbraco would be a good fit for your next project?
+
+In this section you will be able to find all the relevant resources to help you get started with exactly the thing you're looking to use Umbraco for.
 
 <div class="docs-overview">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco</h1>
-        </div>
-    </div>
     <div class="row">
         <div class="col-sm-6">
             <a href="Managing-an-Umbraco-project" class="docs-section">

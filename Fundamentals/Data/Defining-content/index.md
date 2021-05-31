@@ -3,6 +3,9 @@ meta.Title: "Defining content"
 meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
 versionFrom: 8.0.0
 versionTo: 9.0.0
+verified-against: 9.0.0
+updated-links: false
+
 ---
 
 # Defining content
@@ -71,6 +74,10 @@ Let's add some properties of our own.
 
 Go to the __Settings section__, expand __Document Types__ by clicking the arrow to the left and select the __Home__ Document Type.
 
+#### Keyboard Shortcuts
+
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available click **ALT + SHIFT + K**.
+
 #### Adding groups
 
 Before we start adding properties to the Document Type we need to create a group to hold the property.
@@ -90,13 +97,9 @@ Give the property a name, the name will be shown to the editor so make relevant 
 
 ![Adding a property](images/v8Screenshots/addproperty.png)
 
-##### Keyboard Shortcuts
-
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available click **ALT + SHIFT + K**.
-
 ##### Property editors
 
-Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the available editors on the __Create new__ tab (this will create a new configuration) or already configured editors in the __Use existing__ tab. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under __Use existing__) and all available editors under that.
+Clicking __Select editor__ will open the Select editor dialog. Here you can choose between all the available editors on the __Create a new configuration__ tab (this will create a new configuration) or already configured editors in the __Available configurations__ tab. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under __Available configurations__) and all available editors under that.
 
 Select the __Rich Text editor__ under __Create new__.
 
