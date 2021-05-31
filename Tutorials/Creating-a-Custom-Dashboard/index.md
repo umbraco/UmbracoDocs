@@ -8,6 +8,8 @@ verified-against: 9.0.0
 
 # Tutorial - Creating a Custom Dashboard
 
+_This tutorial was last tested on **Umbraco 9.0.0**_
+
 ## Overview
 
 This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
