@@ -8,7 +8,7 @@ verified-against: 9.0.0
 
 # Tutorial - Creating a Custom Dashboard
 
-_This tutorial was last tested on **Umbraco 9.0.0**_
+_This tutorial was last tested on **Umbraco 8.13.0** and **Umbraco 9.0.0**_
 
 ## Overview
 
