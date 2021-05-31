@@ -29,4 +29,4 @@ To log out of the Umbraco Backoffice:
 
 ---
 
-Prev: [Getting Started With Umbraco](../Getting-Started-With-Umbraco) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Interface](../Umbraco-Interface)
+Prev: [Getting Started With Umbraco](Getting-Started-With-Umbraco/) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Interface](Umbraco-Interface/index-v9.md)
