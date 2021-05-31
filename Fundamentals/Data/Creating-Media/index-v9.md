@@ -2,14 +2,13 @@
 meta.Title: "Creating media in Umbraco"
 meta.Description: "Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files."
 versionFrom: 8.14.0
-verified-against: 9.0.0
 ---
 
 # Creating media
 
 Media in Umbraco is handled the same way as content. Instead of defining Document Types you define Media Types that acts as a base for media items. The following default Media Types are available:
 
-- Article - TBD
+- Article - Used for uploading and storing documents.
 - Audio - used for uploading and storing digital audio files.
 - File - used for uploading and storing different types of files in the Media section.
 - Folder - a container for organizing media items in the media tree.
