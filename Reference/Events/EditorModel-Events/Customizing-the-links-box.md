@@ -4,6 +4,15 @@ versionFrom: 8.0.0
 
 # Customizing the "Links" box
 
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, Events have been renamed to Notifications.
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
+
 For a content item, Umbraco will show a **Links** box within the **Info** content app. By default, this box will show one or more links to content item.
 
 ![image](Images/properties-info-app.png)

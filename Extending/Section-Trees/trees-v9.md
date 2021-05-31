@@ -20,12 +20,14 @@ Create a 'TreeController' class in C#. A new controller which inherits from the 
 * GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure;
 * GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
 
+You will need to add a constructor as TreeController requires this. See full code snippet in the "Implementing the Tree" section below.
+
 Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
 For example:
 
 ```csharp
-[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
+[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
 public class FavouriteThingsTreeController : TreeController
 { }
 ```
@@ -38,7 +40,7 @@ The SortOrder controls the order of the custom tree within the Tree Group.
 
 Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
-If you add your own alias, you'll need to add a translation key to `config/lang/en-US.user.xml` to avoid the alias appearing as the header in [square brackets] eg
+If you add your own alias, you'll need to add a translation key to `umbraco/config/lang/en-us.user.xml` to avoid the alias appearing as the header in [square brackets] eg
 
 ```xml
 <language>
@@ -57,89 +59,109 @@ The first node in the tree is referred to as the **Root Node**. You might want t
 ### Implementing the Tree
 
 ```csharp
-private readonly IMenuItemCollectionFactory _menuItemCollectionFactory;
 
-public FavouriteThingsTreeController(ILocalizedTextService localizedTextService,
-    UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
-    IMenuItemCollectionFactory menuItemCollectionFactory)
-    : base(localizedTextService, umbracoApiControllerTypeCollection)
-{
-    _menuItemCollectionFactory = menuItemCollectionFactory ?? throw new ArgumentNullException(nameof(menuItemCollectionFactory));
-}
+using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Actions;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Models.Trees;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Trees;
+using Umbraco.Cms.Web.BackOffice.Trees;
+using Umbraco.Extensions;
 
-protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)
+[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
+public class FavouriteThingsTreeController : TreeController
 {
-    // check if we're rendering the root node's children
-    if (id == Constants.System.Root.ToInvariantString())
+
+    private readonly IMenuItemCollectionFactory _menuItemCollectionFactory;
+
+    public FavouriteThingsTreeController(ILocalizedTextService localizedTextService,
+        UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
+        IMenuItemCollectionFactory menuItemCollectionFactory,
+        IEventAggregator eventAggregator)
+        : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
     {
-        // you can get your custom nodes from anywhere, and they can represent anything...
-        Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-        favouriteThings.Add(1, "Raindrops on Roses");
-        favouriteThings.Add(2, "Whiskers on Kittens");
-        favouriteThings.Add(3, "Skys full of Stars");
-        favouriteThings.Add(4, "Warm Woolen Mittens");
-        favouriteThings.Add(5, "Cream coloured Unicorns");
-        favouriteThings.Add(6, "Schnitzel with Noodles");
-        // create our node collection
-        var nodes = new TreeNodeCollection();
-
-        // loop through our favourite things and create a tree item for each one
-        foreach (var thing in favouriteThings)
-        {
-            // add each node to the tree collection using the base CreateTreeNode method
-            // it has several overloads, using here unique Id of tree item,
-            // -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention
-            // - the querystring collection passed into this route
-            // - the name of the tree node
-            // - css class of icon to display for the node
-            // - and whether the item has child nodes
-            var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
-            nodes.Add(node);
-        }
-        return nodes;
+        _menuItemCollectionFactory = menuItemCollectionFactory ?? throw new ArgumentNullException(nameof(menuItemCollectionFactory));
     }
 
-    // this tree doesn't support rendering more than 1 level
-    throw new NotSupportedException();
-}
-
-protected override ActionResult<MenuItemCollection> GetMenuForNode(string id, FormCollection queryStrings)
-{
-    // create a Menu Item Collection to return so people can interact with the nodes in your tree
-    var menu = _menuItemCollectionFactory.Create();
-
-    if (id == Constants.System.Root.ToInvariantString())
+    protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)
     {
-        // root actions, perhaps users can create new items in this tree, or perhaps it's not a content tree, it might be a read only tree, or each node item might represent something entirely different...
-        // add your menu item actions or custom ActionMenuItems
-        menu.Items.Add(new CreateChildEntity(LocalizedTextService));
-        // add refresh menu item (note no dialog)
-        menu.Items.Add(new RefreshNode(LocalizedTextService, true));
+        // check if we're rendering the root node's children
+        if (id == Constants.System.Root.ToInvariantString())
+        {
+            // you can get your custom nodes from anywhere, and they can represent anything...
+            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
+            favouriteThings.Add(1, "Raindrops on Roses");
+            favouriteThings.Add(2, "Whiskers on Kittens");
+            favouriteThings.Add(3, "Skys full of Stars");
+            favouriteThings.Add(4, "Warm Woolen Mittens");
+            favouriteThings.Add(5, "Cream coloured Unicorns");
+            favouriteThings.Add(6, "Schnitzel with Noodles");
+            // create our node collection
+            var nodes = new TreeNodeCollection();
+
+            // loop through our favourite things and create a tree item for each one
+            foreach (var thing in favouriteThings)
+            {
+                // add each node to the tree collection using the base CreateTreeNode method
+                // it has several overloads, using here unique Id of tree item,
+                // -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention
+                // - the querystring collection passed into this route
+                // - the name of the tree node
+                // - css class of icon to display for the node
+                // - and whether the item has child nodes
+                var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
+                nodes.Add(node);
+            }
+            return nodes;
+        }
+
+        // this tree doesn't support rendering more than 1 level
+        throw new NotSupportedException();
+    }
+
+    protected override ActionResult<MenuItemCollection> GetMenuForNode(string id, FormCollection queryStrings)
+    {
+        // create a Menu Item Collection to return so people can interact with the nodes in your tree
+        var menu = _menuItemCollectionFactory.Create();
+
+        if (id == Constants.System.Root.ToInvariantString())
+        {
+            // root actions, perhaps users can create new items in this tree, or perhaps it's not a content tree, it might be a read only tree, or each node item might represent something entirely different...
+            // add your menu item actions or custom ActionMenuItems
+            menu.Items.Add(new CreateChildEntity(LocalizedTextService));
+            // add refresh menu item (note no dialog)
+            menu.Items.Add(new RefreshNode(LocalizedTextService, true));
+            return menu;
+        }
+        // add a delete action to each individual item
+        menu.Items.Add<ActionDelete>(LocalizedTextService, true, opensDialog: true);
+
         return menu;
     }
-    // add a delete action to each individual item
-    menu.Items.Add<ActionDelete>(LocalizedTextService, true, opensDialog: true);
 
-    return menu;
-}
-
-protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStrings)
-{
-    var rootResult = base.CreateRootNode(queryStrings);
-    if (!(rootResult.Result is null))
+    protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStrings)
     {
-        return rootResult;
+        var rootResult = base.CreateRootNode(queryStrings);
+        if (!(rootResult.Result is null))
+        {
+            return rootResult;
+        }
+        var root = rootResult.Value;
+
+        // set the icon
+        root.Icon = "icon-hearts";
+        // could be set to false for a custom tree with a single node.
+        root.HasChildren = true;
+        //url for menu
+        root.MenuUrl = null;
+
+        return root;
     }
-    var root = rootResult.Value;
-
-    // set the icon
-    root.Icon = "icon-hearts";
-    // could be set to false for a custom tree with a single node.
-    root.HasChildren = true;
-    //url for menu
-    root.MenuUrl = null;
-
-    return root;
 }
 ```
 
@@ -154,7 +176,7 @@ For example clicking on one of the 'Favourite Things' in the custom tree example
 If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
-[Tree("developer", "favouriteThingsAlias", TreeTitle = "Favourite Things Name")]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name")]
 [PluginController("favouriteThings")]
 public class FavouriteThingsTreeController : TreeController
 ```
@@ -252,152 +274,115 @@ To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attr
 public class FavouritistThingsTreeController : TreeController
 ```
 
-## Tree events
+## Tree notifications
 
-All tree events are defined on the class `Umbraco.Cms.Web.BackOffice.Trees.TreeControllerBase`
+All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`. 
 
-### RootNodeRendering
+For more information about registering and using notifications see [Notifications](../../Reference/Events/index-v9.md)
 
-The `RootNodeRendering` is raised whenever a tree's root node is created.
+### RootNodeRenderingNotification
 
-**Definition:**
+The `RootNodeRenderingNotification` is published whenever a tree's root node is created.
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, TreeNodeRenderingEventArgs> RootNodeRendering;
-```
+**Members:**
+
+* `TreeNode Node`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-// register the event listener using a component
-public void Initialize()
+public void Handle(RootNodeRenderingNotification notification)
 {
-    TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
-}
-
-// the event listener method:
-void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
-{
-    // normally you will want to target a specific tree, this can be done by checking the
-    // tree alias of by checking the tree type (casting 'sender')
-    if (sender.TreeAlias == "content")
+    // normally you will want to target a specific tree, this can be done by checking the tree alias
+    if (notification.TreeAlias.Equals("content"))
     {
-        e.Node.Name = "My new title";
+        notification.Node.Name = "My new title";
     }
 }
-public void Terminate()
-{
-    // unsubscribe on shutdown
-    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
-}
 ```
 
-### TreeNodesRendering
+### TreeNodesRenderingNotification
 
-The `TreeNodesRendering` is raised whenever a list of child nodes are created.
+The `TreeNodesRenderingNotification` is published whenever a list of child nodes are created.
 
-**Definition:**
+**Members:**
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, TreeNodesRenderingEventArgs> TreeNodesRendering;
-```
+* `TreeNodeCollection Nodes`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-public class MyComposer : IUserComposer
+public class TreeNotificationHandler :INotificationHandler<TreeNodesRenderingNotification>
 {
-    private Umbraco.Cms.Core.Security.IBackofficeSecurityAccessor  _backOfficeSecurityAccessor;
+    private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 
-    public MyComposer(IBackofficeSecurityAccessor backOfficeSecurityAccessor)
+    public TreeNotificationHandler(IBackOfficeSecurityAccessor backOfficeSecurityAccessor)
     {
         _backOfficeSecurityAccessor = backOfficeSecurityAccessor;
     }
 
-    // register the event listener with a component:
-    public void Initialize()
-    {
-        TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
-    }
-
-    // the event listener method:
-    void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+    public void Handle(TreeNodesRenderingNotification notification)
     {
         // this example will filter any content tree node whose node name starts with
-
         // 'Private', for any user that is in the customUserGroup
-        if (sender.TreeAlias == "content"
-            && _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(f => f.Alias == "customUserGroupAlias"))
+        if (notification.TreeAlias.Equals("content") &&
+            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(f =>
+                f.Alias.Equals("customUserGroupAlias")))
         {
-            e.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
+            notification.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
         }
-    }
-    public void Terminate()
-    {
-        // unsubscribe on shutdown
-        TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
     }
 }
 ```
 
-### MenuRendering
+### MenuRenderingNotification
 
-The `MenuRendering` is raised whenever a menu is generated for a tree node.
+The `MenuRenderingNotification` is raised whenever a menu is generated for a tree node.
 
-**Definition:**
+**Members:**
 
-```csharp
-public static event TypedEventHandler<TreeControllerBase, MenuRenderingEventArgs> MenuRendering;
-```
+* `MenuItemCollection Menu`
+* `string NodeId`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
 ```csharp
-public class MyComposer : IUserComposer
+public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
-    private Umbraco.Cms.Core.Security.IBackofficeSecurityAccessor  _backOfficeSecurityAccessor;
+    private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 
-    public MyComposer(IBackofficeSecurityAccessor backOfficeSecurityAccessor)
+    public TreeNotificationHandler(IBackOfficeSecurityAccessor backOfficeSecurityAccessor)
     {
         _backOfficeSecurityAccessor = backOfficeSecurityAccessor;
     }
 
-    // register the event listener with a component:
-    public void Initialize()
-    {
-        TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
-    }
-
-    // the event listener method:
-    void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
+    public void Handle(MenuRenderingNotification notification)
     {
         // this example will add a custom menu item for all admin users
-
+        
         // for all content tree nodes
-        if (sender.TreeAlias == "content"
-            && _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x => x.Alias.InvariantEquals("admin")))
+        if (notification.TreeAlias.Equals("content") &&
+            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x =>
+                x.Alias.InvariantEquals("admin")))
         {
-            // creates a menu action that will open /umbraco/currentSection/itemAlias.html
-            var i = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
-
-            // optional, if you want to load a legacy page, otherwise it will follow convention
-            i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
-
+            // Creates a menu action that will open /umbraco/currentSection/itemAlias.html
+            var menuItem = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
+            
             // optional, if you don't want to follow the naming conventions, but do want to use a angular view
             // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
-            i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
-
+            menuItem.AdditionalData.Add("actionView", "my/long/url/to/view.html");
+            
             // sets the icon to icon-wine-glass
-            i.Icon = "wine-glass";
-
+            menuItem.Icon = "wine-glass";
             // insert at index 5
-            e.Menu.Items.Insert(5, i);
+            notification.Menu.Items.Insert(5, menuItem);
         }
-    }
-    public void Terminate()
-    {
-        // unsubscribe on shutdown
-        TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
     }
 }
 ```

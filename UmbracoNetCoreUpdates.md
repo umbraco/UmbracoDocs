@@ -60,7 +60,8 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
 * [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
 * [YouTube: Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=rpUg-oySw8g)
-* [Adrian Ochmann: Umbraco (.NET Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
+* [YouTube: Migrating Event Handlers to Notification Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
+* [Adrian Ochmann: Umbraco (.NEThttps://m.youtube.com/watch?v=o_rpltxwj-8 Core) Docker Example](https://github.com/thecogworks/umbraco-core-docker-example)
 * [Youtube: umbraCoffee #141 - Unicore Alpha](https://www.youtube.com/watch?v=-ceCJZ9Tus0&ab_channel=umbraCoffee)
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
@@ -84,9 +85,7 @@ Found a bug that isn't already reported? Please report it on the [GitHub tracker
 To get started, follow the steps outlined below.
 
 ### Known issues and missing parts in current Beta release
-* Restarts during install
-  * When the Umbraco solution is installed, a restart is required. Right now we need to use IIS/IIS express to handle the next request and start the process again. Sometimes this fails and you need to start the process again.
-* Mac/Linux + Examine/Lucene issue as that assembly still is built for .NET Framework.
+* Packages can only include dll/assemblies when distributed by NuGet
 
 ### Prerequisites
 
@@ -104,7 +103,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta002
+    dotnet new -i Umbraco.Templates::9.0.0-beta003
     ```
 
 ### [Optional] Update the template from earlier alpha versions
@@ -114,7 +113,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta002
+    dotnet new -i Umbraco.Templates::9.0.0-beta003
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -197,7 +196,7 @@ The file contains an `msbuild` target that is executed on build when a project h
 Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template. You can now write:
 
 ```none
-dotnet new umbraco -n MyCustomUmbracoSolution -P MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
 ```
 
 This new `-P` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
@@ -208,7 +207,7 @@ The following example shows how to use the templates in combination
 
 ```none
 dotnet new umbracopackage -n MyCustomUmbracoPackage
-dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -P MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoPackage.Testsite -p MyCustomUmbracoPackage
 cd MyCustomUmbracoPackage.Testsite
 dotnet build
 ```
@@ -261,3 +260,26 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fixed issues where the javascript minifier was too agressive.
   - Fixed issue with hardcoded '\' as directory separator char (Linux issue).
   - Fixed issue in the Danish translation file leading to error doing install.
+
+### Changes between beta 2 and beta 3
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-beta003+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - Examine 2.0 implementation.
+  - ModelsBuilder mode names are changed. 
+     - `PureLive` => `InMemoryAuto`
+     - `AppData` => `SourceCodeManual`
+     - `LiveAppData` => `SourceCodeAuto`
+ - Scope optional parameter ordering
+- Features
+  - Restart not required on install.
+  - Modelsbuilder InMemoryAuto (PureLive) output is generated in temp folder
+  - Latests updated from Umbraco 8.14-RC
+- Bugfixes
+  - Fix for unsafe project names; these are no longer unsafe for namespaces. 
+     - E.g. "Umbraco 9" will now use namespace "Umbraco_9"
+  - Resolve virtual paths from DataEditorAttribute. E.g. "~/App_Data/...."
+
+

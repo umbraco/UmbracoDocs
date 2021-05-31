@@ -26,11 +26,7 @@ To access the current page in your templates, copy-paste the below Razor code.
 
 Listing and explanation of IPublishedContent properties and standard helpers for Content and Media.
 
-## Collections & Filtering
-
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
+## [Collections & Filtering](Collections/index-v9.md)
 
 Methods for IPublishedContent collections and filtering.
 
