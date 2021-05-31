@@ -1,7 +1,7 @@
 ---
 meta.Title: "Editors Manual for Umbraco 8"
 meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Editor's Manual
@@ -34,7 +34,7 @@ How to roll back different versions of content.
 
 ## [Media Management](Media-Management/)
 
-How to work with media, organise folders and image editing.
+How to work with media, organise folders, and image editing.
 
 ## [Tips and Tricks](Tips-and-Tricks/)
 
