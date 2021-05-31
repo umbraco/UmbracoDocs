@@ -3,7 +3,9 @@ product: "CMS"
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 versionFrom: 8.0.0
+vrsionTo: 9.0.0
 verified-against: 9.0.0
+updated-link: False
 ---
 
 # Tutorial - Creating a Custom Dashboard
