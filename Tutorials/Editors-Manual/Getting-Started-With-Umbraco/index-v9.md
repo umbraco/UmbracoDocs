@@ -6,37 +6,31 @@ versionFrom: 9.0.0
 
 - [Logging In and Out](Logging-In-and-Out/index-v9.md)
 
-- [Umbraco Interface](Umbraco-Interface/index.md)
+- [Umbraco Interface](Umbraco-Interface/index-v9.md)
 
-- [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index.md)
+- [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index-v9.md)
 
-  - [Creating a New Page](Creating-Saving-and-Publishing-Content/index.md/#creating-a-new-page)
+- [Finding Content](Finding-Content/index-v9.md)
 
-  - [Various Saving and Publishing Options](Creating-Saving-and-Publishing-Content/index.md/#various-saving-and-publishing-options)
+- [Editing Existing Content](Editing-Existing-Content/index-v9.md)
 
-  - [Unpublishing](Creating-Saving-and-Publishing-Content/index.md/#unpublishing)
+  - [Content Within the Tree View](Editing-Existing-Content/index-v9.md/#content-within-the-tree-view)
 
-- [Finding Content](Finding-Content/index.md)
+  - [List View Pages](Editing-Existing-Content/index-v9.md/#list-view-pages)
 
-- [Editing Existing Content](Editing-Existing-Content/index.md)
+- [Ordering Pages](Ordering-Pages/index-v9.md)
 
-  - [Content Within the Tree View](Editing-Existing-Content/index.md/#content-within-the-tree-view)
+- [Moving a Page](Moving-a-Page/index-v9.md)
 
-  - [List View Pages](Editing-Existing-Content/index.md/#list-view-pages)
+- [Copying a Page](Copying-a-Page/index-v9.md)
 
-- [Ordering Pages](Ordering-Pages/index.md)
+- [Deleting and Restoring Pages](Deleting-and-Restoring-Pages/index-v9.md)
 
-- [Moving a Page](Moving-a-Page/index.md)
+  - [Deleting a Page](Deleting-and-Restoring-Pages/index-v9.md/#deleting-a-page)
 
-- [Copying a Page](Copying-a-Page/index.md)
+  - [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages/index-v9.md/#restoring-a-deleted-page-from-the-recycle-bin)
 
-- [Deleting and Restoring Pages](Deleting-and-Restoring-Pages/index.md)
-
-  - [Deleting a Page](Deleting-and-Restoring-Pages/index.md/#deleting-a-page)
-
-  - [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages/index.md/#restoring-a-deleted-page-from-the-recycle-bin)
-
-  - [Emptying the Recycle Bin](Deleting-and-Restoring-Pages/index.md/#emptying-the-recycle-bin)
+  - [Emptying the Recycle Bin](Deleting-and-Restoring-Pages/index-v9.md/#emptying-the-recycle-bin)
 
 ---
 
