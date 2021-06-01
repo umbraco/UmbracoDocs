@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 The Umbraco content tree view allows you to navigate web pages through a logical site hierarchy. You can find a page by navigating through the tree itself if you know where the page is stored.
 
-## Searching Umbraco
+## Searching in Umbraco
 
 A quicker way to search across all the content, files, or folders in Umbraco is to click the Magnifier icon ![magnifier](images/search-magnifier-v9.png) in the top-right of the screen. Alternatively, you can use the keyboard shortcut **CTRL + SPACE** to access the **Search** bar.
 
