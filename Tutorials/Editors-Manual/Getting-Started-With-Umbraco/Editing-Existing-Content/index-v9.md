@@ -17,7 +17,7 @@ To edit existing content, follow these steps:
 3. Edit the contents of the page.
 4. Click **Save** to save the edits without publishing it.
 5. Click **Save and preview** to preview the changes.
-6. Click **Save and publish** to publish the changes. For more information, see the [Save and publish](../Creating-Saving-and-Publishing-Content/index-v9.md#saving-and-publishing-pages) article.
+6. Click **Save and publish** to publish the changes. For more information, see the [Save and Publishing Pages](../Creating-Saving-and-Publishing-Content/index-v9.md#saving-and-publishing-pages) article.
 
 ## View Page Layout
 
@@ -39,7 +39,7 @@ You can view Page layouts in three ways:
     1. Go to **Settings**.
     2. Navigate to the Document Type/page you wish to enable list view.
     3. Go to the **List View** tab.
-    4. Toggle **Enable List view** and click **Save**. 
+    4. Toggle **Enable List view** and click **Save**.
 
     ![Shows the regular listview.](images/Enabling-List-View-v9.png)
 
