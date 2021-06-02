@@ -48,3 +48,7 @@ You can view Page layouts in three ways:
     You can switch between list view and tiles view:
 
     ![Tiles View.](images/Tiles-View-v9.png)
+
+---
+
+Prev: [Finding Content](../Finding-Content/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Sorting Pages](../Ordering-Pages/index-v9.md)
