@@ -8,7 +8,7 @@ versionFrom: 9.0.0
 
 When you are looking to edit content, locate the ***page*** you want to edit content in the section tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](images/Pick-page-v9.png)
+![Viewing Pages in Content Section](images/View-page-v9.png)
 
 To edit existing content, follow these steps:
 
