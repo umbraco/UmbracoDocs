@@ -13,7 +13,7 @@ You can copy a page in two ways:
 ## Option 1
 
 1. Go to **Content**.
-2. Right-click the page you wish to copy and select **Copy**.
+2. Right-click the page you wish to copy and select **Copy**. Alternatively, click **•••** next to the page and select **Copy**.
 
     ![Copy Menu 1](images/Copy-menu-v9.png)
 3. A window appears next to the section tree. Here, you can choose where you want to copy the page in the tree structure.
@@ -49,4 +49,4 @@ When you select **Relate to original**, Umbraco will create a relationship betwe
 
 ---
 
-Prev: [Sorting Pages](../Ordering-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Deleting and Restoring Pages](../Deleting-and-Restoring-Pages/index-v9.md)
+Prev: [Moving a Page](../Moving-a-Page/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Deleting and Restoring Pages](../Deleting-and-Restoring-Pages/index-v9.md)
