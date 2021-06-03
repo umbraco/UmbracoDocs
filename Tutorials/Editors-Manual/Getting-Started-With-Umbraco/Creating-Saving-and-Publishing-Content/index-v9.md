@@ -69,7 +69,7 @@ To publish the node with descendants, follow these steps:
     ![Publish with descendants](images/Publish-with-descendants-v9.png)
 4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the available linked pages.
 
-    ![Publish with descendants](images/Publish-with-descendants2-v9.png.png)
+    ![Publish with descendants](images/Publish-with-descendants2-v9.png)
 
 #### Option 3: Unpublish
 
