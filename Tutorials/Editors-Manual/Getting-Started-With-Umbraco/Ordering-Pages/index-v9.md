@@ -6,11 +6,9 @@ versionFrom: 8.0.0
 
 The pages in Umbraco are placed in the tree structure according to a predefined sort order. The most recently created page is placed at the bottom of the tree structure. You can change the order of the pages by using the **Sort** function.
 
-## Sorting your content
-
 You can sort pages in two ways:
 
-### Option 1
+## Option 1
 
 1. Go to **Content**.
 2. Navigate to the parent node whose child nodes you wish to sort.
@@ -24,7 +22,7 @@ You can sort pages in two ways:
 
 5. Click **Save** and then **Close**.
 
-### Option 2
+## Option 2
 
 1. Go to **Content**.
 2. Select the parent node whose child nodes you wish to sort.
