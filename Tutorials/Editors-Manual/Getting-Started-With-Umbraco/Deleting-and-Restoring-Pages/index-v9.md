@@ -1,46 +1,108 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Deleting and Restoring Pages
-In this guide you will get a quick overview of how to delete pages from the section tree.
-Further more will also be shown how you can restore them if you end up changing your mind.
 
+If you have pages that are no longer required for your website you can delete them. Upon deletion, the page is moved to the **Recycle Bin** and is not deleted permanently.
 
+In case you wish to restore the page, you can restore them from the **Recycle Bin**. You also have the option to empty the recycle bin which permanently deletes the items.
 
 ## Deleting a Page
 
-If you have pages that you no longer want on the website you are able to delete them. Upon deletion, the page is moved to the ***Recycle Bin*** as a safety net in case you wish to restore the page.
+To delete a page:
 
-1. Find the page you wish to delete in the section tree view.
-2. Right click on the page name in the tree view or click the actions button in the top right when on the selected page.
-3. Click ***Delete.***
-4. Click ***OK*** to confirm you wish to delete the page or click ***Cancel*** if you do not.
+1. Go to **Content**.
+2. Right-click the page you wish to delete and select **Delete**.
+
+    ![Delete Menu 1](images/Delete-menu-v9.png)
+
+    Alternatively, click **Actions** in the top-right corner of the screen and select **Delete**.
+
+    ![Delete Menu 2](images/Delete-menu2-v9.png)
+3. A window appears next to the section tree confirming if you want to delete the page.
+
+     ![Delete Warning](images/Delete-warning-v9.png)
+
+4. Click **OK**.
+5. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+
+## Moving a Deleted Page from the Recycle Bin
+
+To move deleted pages from Recycle Bin:
+
+1. Right-click the page you wish to move from the Recycle Bin and select **Move**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Move**.
+
+    ![Move Menu 1](images/Move-menu-v9.png)
+
+    You can also click **Actions** in the top-right corner of the screen and select **Move**.
+
+    ![Move Menu 2](images/Move-menu2-v9.png)
+
+2. Here, you can choose where you want to move the page in the tree structure.
+
+     ![Move Select Structure](images/Move-selection-v9.png)
+3. Click **Move**.
+4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
 ## Restoring a Deleted Page from the Recycle Bin
 
-The ***Recycle Bin*** is a separate tree list which can be found at the bottom of the section tree view. Clicking the arrow to the left of the Recycle Bin icon will reveal any pages that have been deleted from the website. Restoring these pages follows the same process as moving a page between sections.
+The **Recycle Bin** is a separate tree list which can be found at the bottom of the section tree view. Clicking the arrow to the left of the Recycle Bin icon will reveal any pages that have been deleted from the website.
 
-1. Click on the ***(•••)*** icon for the page you wish to restore from the Recycle Bin to reveal the Actions menu.
-2. Click on ***Move*** and select the page you wish to nest the page under.
-You can also choose to ***Restore***, which will then restore the page to where it was before you deleted it.
-3. Click on the ***Move*** button to confirm the move and then you will see a confirmation message.
-If you chose to ***Restore*** then you click the ***Restore*** button to confirm the restoration of the page.
-4. Click ***OK*** to confirm.
-5. You will now need to go to the page and republish it by clicking the ***Save and publish*** button in order for it to be visible on the website.
+To restore deleted pages from Recycle Bin:
+
+1. Right-click the page you wish to restore from the Recycle Bin and select **Restore**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Restore**.
+
+    ![Restore Menu 1](images/Restore-menu-v9.png)
+
+    You can also click **Actions** in the top-right corner of the screen and select **Restore**.
+
+    ![Restore Menu 2](images/Restore-menu2-v9.png)
+
+2. A window appears next to the section tree confirming if you want to restore the page.
+
+     ![Restore Warning](images/Restore-warning-v9.png)
+3. Click **Restore**.
+4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+
+:::note
+To display the page on the website, click **Save and publish**.
+:::
 
 ## Emptying the Recycle Bin
 
-If you are confident you no longer require any content within the ***Recycle Bin*** you can permanently delete it. You can delete pages one by one or as a whole. Please note that after deleting pages from the ***Recycle Bin*** you will ***not*** be able to retrieve any data associated with that page.
+If you are confident you no longer require any pages in the **Recycle Bin**, you can permanently delete it. You can delete pages one by one or empty the Recycle Bin in one go.
 
-1. Click on the ***(•••)*** icon for the Recycle Bin in the section tree structure to reveal the Actions menu.
-2. Click ***Empty Recycle Bin.***
-3. Click ***OK*** to confirm you wish to empty the ***Recycle Bin*** or click ***Cancel*** if you do not.
+:::note
+After deleting the pages from the **Recycle Bin**, you will **not** be able to retrieve any data associated with that page.
+:::
 
-![This is the warning you will get when you try to delete the Recycle Bin.](images/Delete-warning.png)
+To empty the Recycle Bin:
 
-### Deleting Individual Items
+1. Right-click the **Recycle Bin** and select **Empty recycle bin**. Alternatively, click **•••** next to the **Recycle Bin** and select **Empty recycle bin**.
 
-1. Click on the ***(•••)*** icon of the page within the Recycle Bin you wish to permanently delete.
-2. Click ***Delete.***
-3. Click ***OK*** to confirm you wish to permanently delete the page or click ***Cancel*** if you do not.
+    ![Empty Recycle Bin](images/Empty-recycle-bin-v9.png)
+2. A window appears next to the section tree confirming if you want to empty the recycle bin.
+
+     ![Empty Recycle Bin Warning](images/Empty-warning-v9.png)
+3. Click **OK**.
+
+To delete individual pages from the Recycle Bin:
+
+1. Right-click the page you wish to delete from the Recycle Bin and select **Delete**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Delete**.
+
+    ![Delete single page](images/Delete-single-page-v9.png)
+
+    You can also click **Actions** in the top-right corner of the screen and select **Delete**.
+
+    ![Delete single page option 2](images/Delete-single-page2-v9.png)
+
+2. A window appears next to the section tree confirming if you want to delete the page.
+
+     ![Delete Warning](images/Delete-warning1-v9.png)
+3. Click **OK**.
+4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+
+---
+
+Prev: [Copying a Page](../Copying-a-Page/index-v9.md)
