@@ -8,7 +8,7 @@ In this section, you will get an overview of how you can create a new page, save
 
 ## Creating a New Page
 
-Select the parent page to create you new page. The parent page can be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, the following process can be followed:
+Select the parent page to create your new page. The parent page can be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, follow these steps:
 
 1. Hover over the name of the parent page in the **Content** section and click **•••** to view the types of pages you can create.
 2. Select the page type you wish to create. The new page is loaded in the editor on the right-hand side.
@@ -20,29 +20,29 @@ Select the parent page to create you new page. The parent page can be the home p
 
 There are three different options for saving and publishing pages. The options vary depending on whether you’re still in the process of editing the page or have completed your edits and wish to publish your changes.
 
-### 1. Save and Preview
+### Option 1: Save and Preview
 
-The **Save and preview** button allows you to save your changes and preview it before publishing the changes to the live site. The **Preview** feature shows you how the page will look once published. This option only saves your page and does not publish your contents to the live site.
+The **Save and preview** button allows you to save your changes and preview it before publishing the changes to the live site. The **Preview** feature shows you how the page will look once it is published. This **Save and preview** feature only saves your page and does not publish your contents to the live site.
 
 ![Save and preview](images/Save-and-preview-v9.png)
 
-### 2. Save
+### Option 2: Save
 
-The **Save** button is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data.
+The **Save** button is used for saving the page without publishing the changes to the live site. The **Save** feature is especially useful if you are working on changes over a period of time as you can save your changes frequently to prevent losing any data.
 
 ![Save](images/Save-v9.png)
 
-### 3. Save and Publish
+### Option 3: Save and Publish
 
-The **Save and publish** button is used to publish a previously saved page to the live website or to publish a page without previewing it. This will save and publish the page to your live website.
+The **Save and publish** button is used to publish a previously saved page to the live website or to publish a page without previewing it. The **Save and publish** feature will save and publish the page to your live website.
 
 ![Save and Publish](images/Save-and-publish-v9.png)
 
 The **Save and publish** button has three options:
 
-#### 3.1 Schedule
+#### Option 1: Schedule
 
-The **Schedule** button allows you to set a time and a date for when your page should be published. With this option, you can continue working on your edits and the site will automatically be published at the time and date it was scheduled to. Additionally, you can unpublish your page by setting the date and time using this option.
+The **Schedule** button allows you to set a time and a date for when your page should be published. With this option, you can continue working on your edits and the site will automatically be published at the time and date it was scheduled to.
 
 ![Schedule](images/Schedule-v9.png)
 
@@ -52,30 +52,26 @@ To set up scheduled publishing, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Schedule**.
 4. In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
+
+    ![Schedualed publishing.](images/Schedule_publishing_v9.png)
 5. Select **Schedule**.
 
-To set up scheduled unpublishing, follow these steps:
+#### Option 2: Publish with descendants
 
-1. Navigate to the page you want to unpublish.
-2. Select the arrow next to the **Save and Publish** button.
-3. Select **Schedule**.
-4. In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
-5. Select **Schedule**.
-
-#### 3.2 Publish with descendants
-
-The **Publish with descendants** button allows you to publish the current page and all the content linked to this page to the live site. Using this option, you can publish the current parent page and it's child nodes, previously published and unpublished content items.
+The **Publish with descendants** button allows you to publish the current page and all the content linked to this page to the live site. Using this option, you can publish the current parent page and it's child nodes, previously published, and unpublished content items.
 
 To publish the node with descendants, follow these steps:
 
 1. Navigate to the page you want to publish.
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Publish with descendants**.
+
+    ![Publish with descendants](images/Publish-with-descendants-v9.png)
 4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the available linked pages.
 
-![Publish with descendants](images/Publish-with-descendants-v9.png)
+    ![Publish with descendants](images/Publish-with-descendants2-v9.png.png)
 
-#### 3.3 Unpublish
+#### Option 3: Unpublish
 
 The **Unpublish** button allows you to unpublish a page if you do not want a page to be publicly visible and do not want to delete it.
 
@@ -87,15 +83,17 @@ To unpublish a page, follow these steps:
 
 ![Unpublish](images/Manually-unpublishing-v9.png)
 
+You can also unpublish your page by setting the date and time using the **Schedule** feature.
+
 To set up scheduled unpublishing, follow these steps:
 
 1. Navigate to the page you want to unpublish.
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Schedule**.
 4. In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
-5. Select **Schedule**.
 
-![Schedualed unpublishing.](images/Schedule_Unpublishing_v9.png)
+    ![Schedualed unpublishing.](images/Schedule_Unpublishing_v9.png)
+5. Select **Schedule**.
 
 ---
 
