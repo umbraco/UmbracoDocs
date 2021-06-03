@@ -97,7 +97,7 @@ To delete individual pages from the Recycle Bin:
 
     ![Delete single page option 2](images/Delete-single-page2-v9.png)
 
-2. A window appears next to the section tree confirming if you want to delete the page.
+2. A window appears next to the section tree confirming if you want to delete the page permanently.
 
      ![Delete Warning](images/Delete-warning1-v9.png)
 3. Click **OK**.
