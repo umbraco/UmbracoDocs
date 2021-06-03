@@ -11,7 +11,7 @@ You can move a page in two ways:
 ## Option 1
 
 1. Go to **Content**.
-2. Right-click the page you wish to move and select **Move**.
+2. Right-click the page you wish to move and select **Move**. Alternatively, click **•••** next to the parent node and select **Move**.
 
     ![Move Menu 1](images/Move-menu-v9.png)
 3. A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
