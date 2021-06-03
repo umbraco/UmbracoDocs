@@ -4,9 +4,9 @@ versionFrom: 9.0.0
 
 # Deleting and Restoring Pages
 
-If you have pages that are no longer required for your website you can delete them. Upon deletion, the page is moved to the **Recycle Bin** and is not deleted permanently.
+If you have pages that are no longer required for your website, you can delete them. Upon deletion, the page is moved to the **Recycle Bin** and is not deleted permanently.
 
-In case you wish to restore the page, you can restore them from the **Recycle Bin**. You also have the option to empty the recycle bin which permanently deletes the items.
+In case you wish to restore the page, you can restore them from the **Recycle Bin**. You also have the option to empty the Recycle Bin which permanently deletes all the items.
 
 ## Deleting a Page
 
@@ -29,9 +29,9 @@ To delete a page:
 
 ## Moving a Deleted Page from the Recycle Bin
 
-To move deleted pages from Recycle Bin:
+To move deleted pages from the Recycle Bin:
 
-1. Right-click the page you wish to move from the Recycle Bin and select **Move**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Move**.
+1. Right-click the page you wish to move from the Recycle Bin and select **Move**. Alternatively, click **•••** next to the page in the Recycle Bin and select **Move**.
 
     ![Move Menu 1](images/Move-menu-v9.png)
 
@@ -49,9 +49,9 @@ To move deleted pages from Recycle Bin:
 
 The **Recycle Bin** is a separate tree list which can be found at the bottom of the section tree view. Clicking the arrow to the left of the Recycle Bin icon will reveal any pages that have been deleted from the website.
 
-To restore deleted pages from Recycle Bin:
+To restore deleted pages from the Recycle Bin:
 
-1. Right-click the page you wish to restore from the Recycle Bin and select **Restore**. Alternatively, click **•••** next to the page from the Recycle Bin and select **Restore**.
+1. Right-click the page you wish to restore from the Recycle Bin and select **Restore**. Alternatively, click **•••** next to the page in the Recycle Bin and select **Restore**.
 
     ![Restore Menu 1](images/Restore-menu-v9.png)
 
