@@ -6,22 +6,26 @@ versionFrom: 9.0.0
 
 ## Initial View
 
-After logging in to an Umbraco 9 project you will be presented with a dashboard containing a wide array of buttons and features. In this guide you will gain a quick overview of what each button does.
+After logging in to an Umbraco 9 project you will be presented with a dashboard containing a wide array of buttons and features. Let's quickly go through what each feature does.
 
-### 1. The Dashboard
+### The Dashboard
 
-The first tab in the dashboard is **Getting Started** which provides helpful information about Umbraco. The second tab is **Redirect URL Management** which redirects published pages which are renamed or moved to the new page in your project.
+By default, there are two dashboards available:
+
+1. The **Getting Started** dashboard provides helpful information about Umbraco.
+2. The **Redirect URL Management** dashboard displays the original and redirected links of the published pages which are moved to a new location in your project.
 
 ![The Dashboard](images/The-Dashboards-v9.png)
 
-### 2. Search, Help, and Profile Settings
+### Search, Help, and Profile Settings
 
-In the top right corner of the screen, is the **Search** field where you can search for the content, that you are looking for. The next icon is the **Help** icon which provides different Help options such as Tours, Umbraco TV, and Umbraco Documentation.
-The last icon is your **profile** which allows you to edit your profile and password.
+1. The **Search** bar allows you to search for the content in your entire project.
+2. The **Help** icon provides different Help options such as Tours, Umbraco TV, and Umbraco Documentation.
+3. The **profile** icon allows you to edit your profile, change the password, and Logout from the application.
 
 ![Search, help and profile.](images/Search-and-help-v9.png)
 
-### 3. The Sections menu
+### The Sections Menu
 
 The following sections are available in the backoffice:
 
@@ -29,16 +33,16 @@ The following sections are available in the backoffice:
 - **Media** - allows to manage images and other media files.
 - **Settings** - allows to handle your meta data such as document types.
 - **Packages** - allows to manage and install packages.
-- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../Getting-Started/Data/Users/) article.
-- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Member](../../../../Getting-Started/Data/Members/) article.
+- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../Fundamentals/Data/Users/) article.
+- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Member](../../../../Fundamentals/Data/Members/) article.
 - **Forms** - allows to create and manage your forms.
 - **Translation** - allows to manage languages.  
 
 ![The Sections Menu.](images/The-Section-Menu-v9.png)
 
-The menu list will differ depending on your rights for the project. For example: if you are an editor, then you will only have access to **Content**, **Media** and **Forms** as per default settings.
+The menu list will differ depending on your permissions for the project. For example: if you are an editor, then you will only have access to **Content**, **Media** and **Forms** as per default settings.
 
-### 4. The Section tree
+### The Section tree
 
 The section tree is different depending on the section you are in. The section provides an overview of the nodes contained in the tree.
 

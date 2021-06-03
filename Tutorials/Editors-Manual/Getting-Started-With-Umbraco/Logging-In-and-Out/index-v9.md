@@ -9,14 +9,14 @@ versionFrom: 9.0.0
 To access the Umbraco Backoffice:
 
 1. Open your web browser and enter your website domain name followed by `/umbraco` (for example: http://www.company.com/umbraco/). A login screen appears.
-2. Enter your username or email address and the password provided by your system administrator.
+2. Enter your **Email** and **Password** provided by your system administrator.
 3. Click **Login**.
 
 :::note
 The address at which you access Umbraco may vary so check with your system administrator.
 :::
 
-![loginScreen.jpg](images/login8.png)
+![Login Screen](images/login8.png)
 
 ## Logging Out
 
@@ -25,7 +25,7 @@ To log out of the Umbraco Backoffice:
 1. Select the profile picture in the top-right of the screen.
 2. Click **Logout**.
 
-![logout.jpg](images/logout-8.png)
+![Logout Screen](images/logout-v9.png)
 
 ---
 
