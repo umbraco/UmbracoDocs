@@ -39,4 +39,4 @@ You can move a page in two ways:
 
 ---
 
-Prev: [Moving a Page](../Moving-a-Page/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index-v9.md)
+Prev: [Sorting Pages](../Ordering-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index-v9.md)
