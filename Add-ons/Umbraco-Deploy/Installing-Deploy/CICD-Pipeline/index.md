@@ -32,7 +32,7 @@ Without a CI/CD pipeline step in place to trigger the extraction, following a de
 
 Behind the scenes what happens here is a marker file being written to disk - in the `/data/` folder and with a name of `deploy`.  It’s by monitoring this directory for a file with this name that Umbraco Deploy knows to trigger the extraction.
 
-Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenticated request.  This will write the market file, which will trigger the extraction.
+Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenticated request.  This will write the marker file, which will trigger the extraction.
 
 Umbraco Deploy On-Premises also ships with a Powershell script, that when executed will call the endpoint, which will write the file, and which will trigger the extraction.
 
