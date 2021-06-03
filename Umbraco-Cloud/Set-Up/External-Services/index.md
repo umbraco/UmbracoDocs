@@ -20,6 +20,40 @@ These are the IPs you will need to add:
 13.94.247.45
 52.157.96.229
 ```
+The addresses above will be replaced as part of the [migration to our new platform](https://umbraco.com/blog/the-future-of-umbraco-cloud/). The outgoing IPs of the new platform are:
+```
+20.73.236.170
+20.73.116.47
+20.73.117.188
+20.71.72.232
+20.71.72.216
+20.73.117.69
+20.73.117.242
+20.73.118.105
+20.73.112.139
+20.73.118.128
+20.73.118.167
+20.73.236.227
+20.73.119.47
+20.73.119.98
+20.73.114.150
+20.73.117.131
+20.73.233.232
+20.73.237.117
+20.73.119.207
+20.73.114.207
+20.73.117.108
+20.73.118.39
+20.71.73.203
+20.76.56.206
+20.76.56.210
+20.76.57.19
+20.73.116.61
+20.73.117.164
+20.73.117.133
+20.73.119.53
+20.50.2.41
+```
 
 These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs they will be updated here.
 
