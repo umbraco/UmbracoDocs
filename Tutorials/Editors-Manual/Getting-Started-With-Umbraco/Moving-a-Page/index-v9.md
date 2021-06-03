@@ -13,10 +13,10 @@ You can move a page in two ways:
 1. Go to **Content**.
 2. Right-click the page you wish to move and select **Move**.
 
-    ![Sort Menu 1](images/Move-menu-v9.png)
+    ![Move Menu 1](images/Move-menu-v9.png)
 3. A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
 
-     ![Sort Option 1](images/Move-options-v9.png)
+     ![Move Option 1](images/Move-options-v9.png)
 
 4. Click **Move**.
 5. A confirmation message appears. Click **OK** to dismiss the confirmation message.
@@ -32,11 +32,11 @@ You can move a page in two ways:
 
 5. A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
 
-     ![Sort Option 1](images/Move-options-v9.png)
+     ![Move Option 1](images/Move-options-v9.png)
 
 6. Click **Move**.
 7. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
 ---
 
-Prev: [Sorting Pages](../Ordering-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index-v9.md)
+Prev: [Moving a Page](../Moving-a-Page/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index-v9.md)
