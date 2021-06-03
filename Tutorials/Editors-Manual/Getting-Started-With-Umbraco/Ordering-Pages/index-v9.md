@@ -14,7 +14,7 @@ You can sort pages in two ways:
 
 1. Go to **Content**.
 2. Navigate to the parent node whose child nodes you wish to sort.
-3. Right-click the parent node and select **Sort**.
+3. Right-click the parent node and select **Sort**. Alternatively, click **•••** next to the parent node and select **Sort**.
 
     ![Sort Menu 1](images/Sort-menu-v9.png)
 4. A window appears next to the section tree. Here, you can arrange the child nodes in the order you want by dragging them up or down.
