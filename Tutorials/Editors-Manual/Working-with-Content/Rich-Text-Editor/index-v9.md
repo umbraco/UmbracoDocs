@@ -18,29 +18,29 @@ The Rich Text Editor provides the following functionalities:
 
 ### 1. Paragraph Break/Line Break
 
-    The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end.   To add space between paragraphs, press `ENTER` in the editor. To add line breaks, press `SHIFT + ENTER` in the editor.
+The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. To add space between paragraphs, press `ENTER` in the editor. To add line breaks, press `SHIFT + ENTER` in the editor.
 
 ### 2. Shortcut Keys
 
-    For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys on your keyboard to carry out certain commands:
+For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys on your keyboard to carry out certain commands:
 
-    Shortcut | Action
-    ---|---
-    Ctrl + A | Select all
-    Ctrl + B | Bold
-    Ctrl + C | Copy
-    Ctrl + I | Italic
-    Ctrl + U | Underline
-    Ctrl + V | Paste
-    Ctrl + X | Cut
-    Ctrl + Y | Redo
-    Ctrl + Z | Undo
+Shortcut | Action
+---|---
+Ctrl + A | Select all
+Ctrl + B | Bold
+Ctrl + C | Copy
+Ctrl + I | Italic
+Ctrl + U | Underline
+Ctrl + V | Paste
+Ctrl + X | Cut
+Ctrl + Y | Redo
+Ctrl + Z | Undo
 
 ### 3. Text Formatting
 
-    You do not normally need to spend much time formatting text because Umbraco takes care of the formatting for you. However, the editor provides a number of options for controlling the text formatting.
+You do not normally need to spend much time formatting text because Umbraco takes care of the formatting for you. However, the editor provides a number of options for controlling the text formatting.
 
-#### Formatting Buttons
+#### 3.1 Formatting Buttons
 
 The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
 
