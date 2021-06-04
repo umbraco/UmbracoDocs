@@ -136,7 +136,7 @@ This will make the models of your Document Types available with IntelliSense in 
 [You can read more about configuring ModelsBuilder here.](../../../Reference/Templating/Modelsbuilder)
 
 :::note
-If you are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension&ssr=false), and have Umbraco Id enabled on your Cloud project, you might get the error message "Unauthorized" when generating models. This is because the extension can't use Umbraco Id credentials. You can get around this issue by creating a new User in the back-office of your local installation, and supplying those credentials in the Visual Studio options. 
+If you are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension&ssr=false) and get the error message "Unauthorized" when generating models, you will need to use or create a backoffice user in your local installation, and supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
 :::
 
 ### Using Umbraco namespaces in your `*.Core` project
