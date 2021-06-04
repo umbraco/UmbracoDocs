@@ -184,7 +184,7 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
-1. Insert an image into the editor (see [Working with Images](#working-with-images), for more details).
+1. Insert an image into the editor (see [Working with Images](#6-working-with-images), for more details).
 2. Select the image to form the hyperlink.
 3. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
 4. In the **Link** field, enter the URL of the web page you wish to link to.
@@ -273,7 +273,7 @@ The macros available to you differ from system to system. Contact your system ad
    ![Macro Editor](images/Select-a-macro-v9.png)
 
 :::note
-If there are no macros, you can [Create Macros](../Reference/Templating/Macros/managing-macros#creating-macros). What you see above, is how it looks when the Starter Kit package is installed.
+If there are no macros, you can [Create Macros](../../Reference/Templating/Macros/managing-macros#creating-macros). What you see above, is how it looks when the Starter Kit package is installed.
 :::
 
 #### 7.2 Editing macros
