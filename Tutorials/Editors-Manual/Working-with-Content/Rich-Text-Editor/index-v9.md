@@ -154,7 +154,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor - the anchor itself and the link to the anchor.
 
-### Creating an anchor
+#### Creating an anchor
 
 1. Select the text or place the cursor where you wish to create the anchor.
 2. Click the **Anchor** button. The **Create Anchor** dialog opens.
@@ -171,7 +171,7 @@ To delete the anchor:
 1. Select the anchor icon in the editor.
 2. Press the **Delete** key.
 
-### Linking to an anchor
+#### Linking to an anchor
 
 1. Select the text where you wish to add the anchor.
 2. Click the **Insert link** button. The **Select Link** tree opens on the right-side of the editor.
@@ -309,4 +309,4 @@ To edit an existing table:
 
 **Table Properties** provides several options for modifying the table’s appearance. However the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
-    ![Table Properties](images/Table-properties-v8.png)
+![Table Properties](images/Table-properties-v8.png)
