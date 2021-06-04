@@ -14,15 +14,20 @@ By default, the following editor styles are available. Your system administrator
 
 ![editorBar.jpg](images/editorBar-v9.jpg)
 
+## Rich Text Editor Functionality
+
 The Rich Text Editor provides the following functionalities:
 
 ### 1. Paragraph Break/Line Break
 
-The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. To add space between paragraphs, press `ENTER` in the editor. To add line breaks, press `SHIFT + ENTER` in the editor.
+The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. Use the following keyboard shortcuts in the editor to add:
+
+1. Space between paragraphs - press `ENTER`.
+2. Line breaks - press `SHIFT + ENTER`.
 
 ### 2. Shortcut Keys
 
-For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys on your keyboard to carry out certain commands:
+For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
 Shortcut | Action
 ---|---
@@ -38,72 +43,90 @@ Ctrl + Z | Undo
 
 ### 3. Text Formatting
 
-You do not normally need to spend much time formatting text because Umbraco takes care of the formatting for you. However, the editor provides a number of options for controlling the text formatting.
+You do not normally need to spend much time formatting text because Umbraco takes care of the formatting. However, the editor provides a number of options for controlling the text formatting.
 
 #### 3.1 Formatting Buttons
 
-The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
+The most familiar way to control formatting is using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
 
-Regardless of the formatting being applied, the process for applying a format using the formatting buttons is always the same.
+To apply a format using the formatting buttons:
 
 1. Select the text you want to apply the formatting to.
-2. Click the appropriate format button to apply the formatting you wish to add.
+2. Click the format button to apply the formatting you wish to add.
 
-![formats.jpg](images/formats.jpg)
+    ![formats.jpg](images/formats-v9.png)
 
-### Formats
+#### 3.2 Custom Formats
 
-Another way of applying formatting is via the Formats drop-down list. The Formats drop-down list provides a set of predefined styles that can be applied to text whilst maintaining a consistent look and feel through the site. These styles often incorporate more advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings and sub heading. For example you can use a format style to change a link into a call to action button. Whilst the styles available on your site may differ, the process for applying styles is always the same.
+An alternate way to apply formatting is using Custom Formats. The **Formats** drop-down list provides a set of predefined styles that can be applied to text while maintaining a consistent look and feel throughout the site.
+
+These styles often incorporate more advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings and sub-heading. For example, you can use a format style to change a link into a call to action button. While the styles available on your site may differ, follow the below process to apply styles:
 
 1. Select the text you want to apply the style to.
-2. Select the style to apply from the Format drop-down list.
+2. Choose the style to apply from the **Format** drop-down list.
 
-### Copying Content from Other Programs
+#### 3.3 Copying Content from Other Programs
 
-It is important to note that when you pre-write content to later be copied into a rich text editor you may encounter style issues on your website. When pasting content, the original text styles will be preserved which can lead to different font faces, sizes and colours from what is expected when the website is viewed. To prevent this from happening it is advisable that you paste the content into a markdown editor first such as notepad, then copy and paste it from there into your rich text editor.
+:::note
+When you write content in another editor to be copied into a rich text editor, you may encounter style issues on your website.
+:::
 
-### Remove Formatting
+While pasting content, the original text styles is preserved which can lead to different font faces, sizes, and colours displaying on the website when viewed.
 
-If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by selecting the text, and clicking the relevant formatting button to remove that formatting rule. You may also have a remove format button in your toolbar. If you do not have this button please speak to your system administrator.
+:::tip
+To prevent formatting issues, we recommended pasting the content first into a markdown editor such as notepad, then copy and paste it into your rich text editor.
+:::
 
-![removeFormat.jpg](images/removeFormat.jpg) *Remove Format button*
+#### 3.4 Remove Formatting
 
-## Show/Hide HTML Code
+If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule. To remove formatting:
 
-![code.jpg](images/code.jpg)
+1. Select the text you want to remove the style from.
+2. Click the relevant formatting button to remove the formatting rule.
 
-If you are proficient in the use of HTML you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments here to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of code pasted into the rich text editor.
+You can also add a **Remove format** button in your toolbar. To add the **Remove format** button:
 
-## Links
+1. Navigate to your rich text editor.
+2. Go to the **Editor Settings** window.
+3. Select **Remove format**.
+
+    ![removeFormat.jpg](images/removeFormat-v9.png)
+
+### 4. View Source Code
+
+![code.jpg](images/source-code-v9.png)
+
+If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want it.
+
+Certain elements such as scripts is not recognized by the HTML view of the rich text editor. You can enter the scripts directly in the text view of the editor.
+
+### 5. Links
 
 ![linkButton.jpg](images/linkButton.jpg)
 
-The ***Insert Link*** button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
+The **Insert/edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. To insert different types of hyperlinks, follow these steps:
 
-### Link to a Page on Another Website
+#### 5.1 Link to a Page on Another Website
 
-1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
-3. In the URL field, enter the URL of the web page you wish to link to.
-4. In the Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
-5. In the Target field, select the target window/frame then select how the should be opened. There are three different ways the link can be opened:
-    1. Open link in a new tab in the same browser window.
-    2. Open link in a new separate browser window.
-    3. Open the link in the same browser tab as the user would be viewing your site.
-6. Click ***Submit.*** Your text will now contain the link as requested.
+1. Select the text for the hyperlink.
+2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
+3. In the **Link** field, enter the URL of the web page you wish to link to.
+4. In the **Link title** field, enter the text that will be shown as a pointer to the link. This is an important information for everyone reading the website with different accessibility aids.
+5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
+6. Click **Submit**.
 
-![externalLink.jpg](images/Create-link.png)
+![externalLink.jpg](images/Create-link-v9.png)
 
 ### Link to a Page in Umbraco
 
-1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
-3. Select a page from the ***Content*** tab to link to. This will then populate the **link to document** automatically.
-4. In the Page Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids, (by default the name of the selected page will automatically be entered for your convenience).
-5. In the ***Target*** field, select the target window/frame the link should be opened in.
-6. Click ***Submit***.
+1. Select the text for the hyperlink.
+2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
+3. Select a page from the **Link to page** tree. The selection will populate the **Link** and **Link Title** fields.
+4. In the **Link Title** field, enter the text that will be shown as a pointer to the link. By default, the name of the selected page will be populated.
+5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
+6. Click **Submit**.
 
-![internalLink.jpg](images/Internal-linksv8.png)
+![internalLink.jpg](images/Internal-links-v9.png)
 
 ### Link to a Media File in Umbraco
 
