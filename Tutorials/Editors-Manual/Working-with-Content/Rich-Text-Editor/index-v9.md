@@ -313,4 +313,4 @@ To edit an existing table:
 
 ---
 
-Prev: [Deleting and Restoring Pages](../Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working With Content](Working-With-Content/index-v9.md)
+Prev: [Working With Content](../Working-With-Content/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](..\Version-Management\index-v9.md)
