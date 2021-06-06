@@ -310,3 +310,7 @@ To edit an existing table:
 **Table Properties** provides several options for modifying the table’s appearance. However the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
 ![Table Properties](images/Table-properties-v8.png)
+
+---
+
+Prev: [Deleting and Restoring Pages](../Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working With Content](Working-With-Content/index-v9.md)
