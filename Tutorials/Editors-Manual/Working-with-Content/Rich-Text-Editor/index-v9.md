@@ -273,7 +273,7 @@ The macros available to you differ from system to system. Contact your system ad
    ![Macro Editor](images/Select-a-macro-v9.png)
 
 :::note
-If there are no macros, you can [Create Macros](../../../Reference/Templating/Macros/managing-macros#creating-macros). What you see above, is how it looks when the Starter Kit package is installed.
+If there are no macros, you can [Create Macros](../Reference/Templating/Macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
 :::
 
 #### 7.2 Editing macros
