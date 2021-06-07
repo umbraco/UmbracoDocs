@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Working with Folders
 
-All media within your site must be loaded in the **Media** section. The Media section is a media library for the site. Within the Media section, you can create or organize files and folders in a similar manner as File Explorer.
+All media within your site must be loaded in the **Media** section. The Media section is a media library for the site. Within the Media section, you can create or organize files and folders as in a File Explorer.
 
 Folders help organize the Media section and keep similar media items in a logical structure. We recommend using folders to organize your media items. When your media library starts growing, folders help in locating media quickly and easily.
 
@@ -13,13 +13,13 @@ Folders help organize the Media section and keep similar media items in a logica
 To create a folder:
 
 1. Go to the **Media** section.
-2. Click on **•••** where you want the folder to be created and select **Folder** from the list.
+2. Click on **•••** where you want to create the folder and select **Folder**.
 
     ![Create Folder](images/create-folder-v9.png)
 3. Enter a **Name** for your folder and click **Save**.
 
 :::note
-Folders are purely for sorting within the media section. They will not be part of the image URL nor will they create a folder on the server with the given name.
+Folders are only used for sorting media items within the media section. Folders will not be part of the image URL nor be created on the server with the given name.
 :::
 
 ## Editing a Folder
@@ -53,11 +53,11 @@ The contents of the folder are also moved to the Recycle Bin. You can restore it
 
 The Recycle Bin is a separate tree structure within the Media tree. Clicking on the arrow next to the Recycle Bin will display its contents.
 
-![Recycle Bin](images/mediaRecycle-v8.png)
+![Recycle Bin](images/mediaRecycle-v9.png)
 
 To restore a folder:
 
-1. Click **•••** next to the folder or right=click the folder you want to restore.
+1. Click **•••** next to the folder or right-click the folder you want to restore.
 2. Select **Restore**.
 
     ![Restore Folder](images/Restore-Folder-v9.png)
@@ -71,7 +71,7 @@ To move folders within the Media section:
 2. Select **Move**.
 
     ![Move Folder](images/Move-Folder-v9.png)
-3. Choose the location you want to move the folder to in the tree structure.
+3. Choose the location where you want to move the folder to in the tree structure.
 
     ![Move Media.png](images/Move-media-location-v9.png)
 4. Click **Move**.
@@ -88,6 +88,8 @@ To sort the order of the items in a folder:
 
     ![Sort Folder](images/Sort-Folder-v9.png)
 3. Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
+
+    ![Sort Items](images/sort-items-v9.png)
 4. Click **Save.**
 
 ---
