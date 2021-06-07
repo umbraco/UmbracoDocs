@@ -25,4 +25,4 @@ To compare a page on the site with its previous versions:
 
 ---
 
-Prev: [Version Management](../../Version-Management/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Rollback to a Previous Versions](../Rollback-to-a-Previous-Versions/index-v9.md)
+Prev: [Version Management](../../Version-Management/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Rollback to a Previous Versions](../Rollback-to-a-Previous-Version/index-v9.md)

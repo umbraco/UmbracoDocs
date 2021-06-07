@@ -10,7 +10,7 @@ To rollback to a previous version of the page:
 2. Go to the **Info** tab.
 3. Click on the **Rollback** button in the **History** section.
 
-    ![Rollback](images/Rollback-v9.png)
+  ![Rollback](images/Rollback-v9.png)
 4. The Rollback tree opens in the right-side of the screen. Select a version of the page from the **Rollback To** drop-down list.
 
   ![Confirm Rollback](images/Rollback-changes-v9.png)
