@@ -5,7 +5,7 @@ versionTo: 9.0.0
 
 # Notifications
 
-You can set up notifications for a user to receive an email when an action is performed on a given content item. To receive notifications, you need to add your email address to your user profile.
+You can set up notifications to receive an email when an action is performed on a given content item. To receive notifications, you need to add your email address to your user profile.
 
 To set up notifications for a content item:
 
