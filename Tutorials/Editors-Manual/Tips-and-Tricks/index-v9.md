@@ -4,12 +4,12 @@ versionFrom: 9.0.0
 
 - Tips & Tricks
 
-    - [Tips when Working with Folders](Tips-when-Working-with-Folders/index-v9.md)
+    - [Refreshing the Tree View](Tips-when-Working-with-Folders)
 
-    - [Audit Trail](Audit-Trail/index-v9.md)
+    - [Audit Trail](Audit-Trail)
 
-    - [Notifications](Notifications/index-v9.md)
+    - [Notifications](Notifications)
 
-    - [Preview Pane Responsive View](Preview-Pane-Responsive-View/index-v9.md)
+    - [Preview Pane Responsive View](Preview-Pane-Responsive-View)
 
-    - [Session Timeout](Session-Timeout/index-v9.md)
+    - [Session Timeout](Session-Timeout)
