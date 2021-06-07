@@ -14,7 +14,7 @@ Subscribing to notifications allows you to execute custom code on a number of op
 ### Subscribing to a notification
 Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
 
-We subscribe to notifications in Umbraco inside a notifications handler, so let's create one. Add a new C# class to our project - call it *LogWhenPublishedHandler* and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
+We react to notifications in Umbraco inside a notifications handler, so let's create one. Add a new C# class to our project - call it *LogWhenPublishedHandler* and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
 
 We now have a class that looks like this:
 
@@ -50,7 +50,7 @@ namespace MyProject
 }
 ```
 
-To check that his works, let's add a message to the log every time a content node is published.
+To check that this works, let's add a message to the log every time a content node is published.
 
 We'll need to inject a Microsoft ILogger into our notification handler, by adding `using Microsoft.Extensions.Logging;` to the top our file to add the required namespace, and creating a constructor for our handler that allows Umbraco to inject the logger:
 
@@ -105,7 +105,7 @@ public void Handle(ContentPublishedNotification notification)
 Now we have a notification handler that logs the name of a piece of content every time it's published, however, we're not quite done yet.
 
 Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`, to tell Umbraco this, we open up the `Startup.cs` file in the root of the project. First, we need to add `using Umbraco.Cms.Core.Notifications;
-` to the top of this file as well, once we've done this we need to find the `ConfigureServices` method. To the `ConfigureServices` we now add `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()` right before the `Build()` part, the method now looks like this:
+` to the top of this file as well, once we've done this we need to find the `ConfigureServices` method. We now add `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()` to the `ConfigureServices` method right before the `Build()` part. The method now looks like this:
 
 ```c#
         public void ConfigureServices(IServiceCollection services)
