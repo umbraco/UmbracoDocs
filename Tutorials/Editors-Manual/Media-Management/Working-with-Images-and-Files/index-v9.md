@@ -16,20 +16,22 @@ The following default Media Types are available:
 
 ## Uploading a Media Item
 
-In the Media Library, there are multiple ways to upload media items. These are the two most commonly used ones:
+In the Media Library, there are multiple ways to upload media items. The two most commonly used ones are:
 
 1. Use the **Create** button to create a new media item and then upload directly from your machine.
-2. The **Upload** field is available in every folder in the Media section, where you can drag and drop files or choose files exactly where you need them.
+2. The **Upload** field is available in every folder in the Media section, where you can drag and drop files or choose files to the desired location.
 
-![mediaUpload.jpg](images/upload-images-v9.png)
+    ![mediaUpload.jpg](images/upload-images-v9.png)
 
 :::note
-We recommend using folders to organize your media items. This is relevant, if you are going to add a lot of media to your website.
+We recommend using folders to organize your media items if you are going to add a lot of media to your website.
 :::
 
 ## Deleting a Media Item
 
 If you wish to tidy up the Media section of your site, you can delete existing media items. Once you have deleted a media item, it is sent to the Recycle Bin. If you change your mind, you can restore the deleted media item from the Recycle Bin.
+
+To delete a Media Item:
 
 1. Select the media item you want to delete.
 2. Right-click the media item and select **Delete**.
@@ -40,7 +42,7 @@ If you wish to tidy up the Media section of your site, you can delete existing m
 
 ## Restoring a Media Item from the Recycle Bin
 
-The Recycle Bin is a separate tree structure within the Media section. Clicking on the arrow next to the Recycle Bin will display its contents.
+The **Recycle Bin** is a separate tree structure within the Media section. Clicking on the arrow next to the Recycle Bin will display its contents.
 
 ![Recycle Bin](images/mediaRecycle-v9.png)
 

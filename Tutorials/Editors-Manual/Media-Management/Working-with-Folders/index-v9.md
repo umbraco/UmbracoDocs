@@ -94,4 +94,4 @@ To sort the order of the items in a folder:
 
 ---
 
-Prev: [Media Management](../../Media-Management/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Images and Files](../Working-with-Images-and-Files/index-v9.md)
+Prev: [Media Management](../../Media-Management/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Media Items](../Working-with-Images-and-Files/index-v9.md)
