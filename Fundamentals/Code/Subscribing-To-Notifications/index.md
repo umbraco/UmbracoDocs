@@ -31,7 +31,7 @@ namespace MyProject
 }
 ```
 
-However, we have an error and a red squiggly line under our class, this is because the `INotificationHandler` interface expects us to implement a `Handle` method for our notification, so let's create a public method called `Handle` that takes a `ContentPublishedNotification` as a parameter:
+However, we have an error and a red squiggly line under our class, this is because the `INotificationHandler` interface expects us to implement a `Handle` method for our notification. Let's create a public method called `Handle` that takes a `ContentPublishedNotification` as a parameter:
 
 ```c#
 using Umbraco.Cms.Core.Events;
