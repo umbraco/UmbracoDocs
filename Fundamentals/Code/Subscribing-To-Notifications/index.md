@@ -9,7 +9,8 @@ v8-equivalent: "https://our.umbraco.com/documentation/Fundamentals/Code/Subscrib
 ---
 
 :::note
-Events was renamed to Notifications in V9, this article is only relevant for V9. For V8 equivalent see: [Events](../Subscribing-To-Events)
+In Umbraco 9 Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9. 
+For Umbraco 8 see the [Subscribing to events article](../Subscribing-To-Events)
 :::
 
 # Subscribing to notifications
