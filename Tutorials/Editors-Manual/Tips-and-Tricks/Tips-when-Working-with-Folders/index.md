@@ -5,9 +5,9 @@ versionTo: 9.0.0
 
 # Refreshing the Tree View
 
-When editing content, the content tree will generally refresh itself when the content is saved.
+When editing content, the content tree will refresh itself when the content is saved.
 
-If the tree does not refresh, or if multiple editors are working on the site, and you want to have their changes loaded into your content tree, you can do so by reloading parts of the content tree.
+If the tree does not refresh or if multiple editors are working on the site, and you want to have their changes loaded into your content tree - you can do so by reloading parts of the content tree.
 
 To reload a section of the content tree:
 
