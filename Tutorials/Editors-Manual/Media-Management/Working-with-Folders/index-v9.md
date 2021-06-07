@@ -55,9 +55,9 @@ The Recycle Bin is a separate tree structure within the Media tree. Clicking on 
 
 ![Recycle Bin](images/mediaRecycle-v9.png)
 
-To restore a folder:
+To restore a Folder:
 
-1. Click **•••** next to the folder or right-click the folder you want to restore.
+1. Click **•••** next to the Folder or right-click the Folder you want to restore.
 2. Select **Restore**.
 
     ![Restore Folder](images/Restore-Folder-v9.png)
@@ -65,7 +65,7 @@ To restore a folder:
 
 ### Moving a Folder from the Recycle Bin
 
-To move folders within the Media section:
+To move Folders within the Media section:
 
 1. Click **•••** next to the folder or right-click the folder you want to move.
 2. Select **Move**.
