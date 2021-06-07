@@ -105,4 +105,4 @@ To delete individual pages from the Recycle Bin:
 
 ---
 
-Prev: [Copying a Page](../Copying-a-Page/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working With Content](../../Working-With-Content/index-v9.md)
+Prev: [Copying a Page](../Copying-a-Page/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working With Content](../../Working-with-Content/index-v9.md)
