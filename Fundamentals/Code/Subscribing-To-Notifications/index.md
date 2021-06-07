@@ -2,7 +2,7 @@
 meta.title: "Subscribing to notifications"
 meta.description: "Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs"
 versionFrom: 9.0.0
-updated-links: false
+updated-links: true
 verified-against: beta-3
 state: complete
 v8-equivalent: "https://our.umbraco.com/documentation/Fundamentals/Code/Subscribing-To-Events/"
@@ -166,4 +166,3 @@ As you can see our custom code has been executed when we published a piece of co
 
 ### More information
 - [Notifications Reference](../../../Reference/Notifications/)
-- [Components & Composing](../../../Implementation/Composing/)
