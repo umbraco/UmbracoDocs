@@ -14,7 +14,7 @@ Subscribing to notifications allows you to execute custom code on a number of op
 ### Subscribing to a notification
 Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
 
-We react to notifications in Umbraco inside a notifications handler, so let's create one. Add a new C# class to our project - call it *LogWhenPublishedHandler* and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
+We react to notifications in Umbraco inside a notification handler, so let's create one. Add a new C# class to our project - call it *LogWhenPublishedHandler* and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
 
 We now have a class that looks like this:
 
