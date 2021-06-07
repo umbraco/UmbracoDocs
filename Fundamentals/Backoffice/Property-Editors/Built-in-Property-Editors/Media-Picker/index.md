@@ -11,7 +11,7 @@ versionFrom: 8.1.0
 This property editors returns a single item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
 
 :::note 
-As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
+As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](../Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
 :::
 
 ## Data Type Definition Example
