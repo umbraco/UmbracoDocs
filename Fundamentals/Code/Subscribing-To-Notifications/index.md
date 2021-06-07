@@ -8,6 +8,10 @@ state: complete
 v8-equivalent: "https://our.umbraco.com/documentation/Fundamentals/Code/Subscribing-To-Events/"
 ---
 
+:::note
+Events was renamed to Notifications in V9, this article is only relevant for V9. For V8 equivalent see: [Events](../Subscribing-To-Events)
+:::
+
 # Subscribing to notifications
 Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
 
