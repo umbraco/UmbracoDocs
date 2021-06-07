@@ -4,7 +4,9 @@ versionFrom: 8.0.0
 
 # Audit Trail
 
-Within the **Info** content app for pages you can find the **Audit Trail** in the **History** section. Here, you can get a quick overview of the actions performed on that node, by whom, when and any additional comments. The Audit Trail is useful to find out who made changes on a certain date.
+Within the **Info** content app for pages you can find the **Audit Trail** in the **History** section. Here, you can get a quick overview of the actions performed on that node, by whom, when and any additional comments.
+
+The Audit Trail is useful to find out who made changes on a certain date.
 
 ![Audit Trail](images/auditTrail-v9.png)
 
