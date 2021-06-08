@@ -210,35 +210,26 @@ https:{your-domain}/{image-name}.jpg?crop=0.10592105263157896,0.0061107012631250
 You can use the "GetCropUrl" method not only in the view, but also for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops dynamically, and get all the crop urls for a specific image, below you can find an example. Later, you can manipulate every obtained URL with other query string parameters provided by "ImageProcessor" library.
 
 ```csharp
+internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
+{
+    //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
+    Dictionary<string, string> cropUrls = new Dictionary<string, string>();
 
-   private readonly ConfigurationManager configuration;
+    if (image.GetProperty("umbracoFile").HasValue())
+    {
+        //Dynamically retrieve the ImageCropperValue properties
+        ImageCropperValue fileProperties = (ImageCropperValue)image.GetProperty("umbracoFile").GetValue();
 
-   //Your ctor
-   public MyClassName(ConfigurationManager configuration)
+        //Iterating Crop elements to get every alias defined in the backoffice
+        foreach (ImageCropperValue.ImageCropperCrop crop in fileProperties.Crops)
         {
-            this.configuration = configuration;
+            //Get the cropped URL and add it to the dictionary that I will return
+            cropUrls.Add(crop.Alias, image.GetCropUrl(crop.Alias));
         }
+    }
 
-   internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
-        {
-            //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
-            Dictionary<string, string> cropUrls = new Dictionary<string, string>();
-
-            if (image.GetProperty("umbracoFile").HasValue())
-            {
-                //Dynamically retrieve the ImageCropperValue properties
-                ImageCropperValue fileProperties = (ImageCropperValue)image.GetProperty("umbracoFile").GetValue();
-
-                //Iterating Crop elements to get every alias defined in the backoffice
-                foreach (ImageCropperValue.ImageCropperCrop crop in fileProperties.Crops)
-                {
-                    //Get the cropped URL and add it to the dictionary that I will return
-                    cropUrls.Add(crop.Alias, string.Concat(configuration.BasePath, image.GetCropUrl(crop.Alias)));
-                }
-            }
-
-            return cropUrls;
-        }
+    return cropUrls;
+}
 ```
 
 ## MVC view Example on how to set the background color
