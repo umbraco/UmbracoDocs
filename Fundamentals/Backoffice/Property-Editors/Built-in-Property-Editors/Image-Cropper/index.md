@@ -207,7 +207,7 @@ https:{your-domain}/{image-name}.jpg?crop=0.10592105263157896,0.0061107012631250
 
 ## Get all the crop urls for a specific image
 
-You can use the "GetCropUrl" method not only in the view, but also for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops dynamically, and get all the crop urls for a specific image, below you can find an example. Later, you can manipulate every obtained URL with other query string parameters provided by "ImageProcessor" library.
+You can use the "GetCropUrl" method not only in the view. But for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops dynamically, and get all the crop urls for a specific image, below you can find an example. Later, you can manipulate every obtained URL with other query string parameters provided by "ImageProcessor" library.
 
 ```csharp
 internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
@@ -215,13 +215,10 @@ internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
     //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
     Dictionary<string, string> cropUrls = new Dictionary<string, string>();
 
-    if (image.GetProperty("umbracoFile").HasValue())
+    if (image.HasValue("umbracoFile"))
     {
-        //Dynamically retrieve the ImageCropperValue properties
-        ImageCropperValue fileProperties = (ImageCropperValue)image.GetProperty("umbracoFile").GetValue();
-
-        //Iterating Crop elements to get every alias defined in the backoffice
-        foreach (ImageCropperValue.ImageCropperCrop crop in fileProperties.Crops)
+        var imageCropper = image.Value<ImageCropperValue>("bannerImage");
+        foreach (var crop in imageCropper.Crops)
         {
             //Get the cropped URL and add it to the dictionary that I will return
             cropUrls.Add(crop.Alias, image.GetCropUrl(crop.Alias));
