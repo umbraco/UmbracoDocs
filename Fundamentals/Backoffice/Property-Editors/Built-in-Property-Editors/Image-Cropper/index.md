@@ -231,7 +231,7 @@ internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
 
 ## MVC view Example on how to set the background color
 
-Below the exmaple to set the background color to white using the ImageProcessor [bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
+Below the example to set the background color to white using the ImageProcessor [bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
 
 ```csharp
 <img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias: "banner",
