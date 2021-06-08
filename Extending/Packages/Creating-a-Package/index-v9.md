@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: alpha-3, 9.0.0
 state: partial
 updated-links: false
 meta.Title: "Creating a package"
@@ -17,7 +17,7 @@ If you have something you want to make into a package, you can do so through the
 
 First go to the `Packages` section and select `Created` in the top right corner. Next, choose the `Create package` button.
 
-![Buttons to select for creating a package in the backoffice](images/creating-package-menu.png)
+![Buttons to select for creating a package in the backoffice](images/creating-package-menu-v9.png)
 
 On the `Create package` page there are 4 sections each with different information to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
@@ -44,8 +44,10 @@ This section is used to determine which things the package should contain. We wi
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| Content | _Empty_ | Here you can include content - e.g. if you want to create a starter kit. Not relevant for this package though. |
+| Content | _Empty_ | Here, you can include content - e.g. if you want to create a starter kit. Not relevant for this package though. |
+| Media | _Empty_ | Here, you can include media - e.g. if you want to add media to the starter kit. Not relevant for this package though. |
 | Document Types | _Empty_ | Similar to the Content picker above. It is important to note that if you include content you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
+| Media Types | _Empty_ | Similar to the Media picker above. It is important to note that if you include media you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
 | Templates | _Empty_ | See `Document Types` above |
 | Stylesheets | _Empty_ | These will come from the wwwroot/css folder. If you have stylesheets you want to include from other locations you can do so at a later step. |
 | Macros | _Empty_ | See `Document Types` above |
