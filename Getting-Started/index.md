@@ -23,7 +23,7 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Editing-websites-with-Umbraco" class="docs-section">
             <img src="images/editor.png" alt="" width="130">
                 <h2>Editing websites with Umbraco</h2>
-                <p>Tools and resources to get you started with editing content in an Umbraco website.</p>
+                <p>Resources to help you create, edit and publish content in an Umbraco website.</p>
             </a>
         </div>
     </div>
@@ -32,14 +32,14 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Creating-websites-with-Umbraco" class="docs-section">
             <img src="images/tree.png" alt="" width="130">
                 <h2>Creating websites with Umbraco</h2>
-                <p>Tips and information to help you get started with creating websites wih Umbraco.</p>
+                <p>Key concepts and frameworks for creating websites with Umbraco.</p>
             </a>
         </div>
         <div class="col-sm-6">
             <a href="Developing-websites-with-Umbraco" class="docs-section">
                 <img src="images/code.png" alt="" width="130">
                 <h2>Developing websites with Umbraco</h2>
-                <p>Learn how to develop with Umbraco - you will find tools for backend development as well as tool to help you extend and customize the Umbraco backoffice.</p>
+                <p>Tips and tools for backend development, extending and customizing the Umbraco backoffice.</p>
             </a>
         </div>
     </div>
@@ -48,14 +48,14 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Hosting-an-Umbraco-infrastructure" class="docs-section">
                 <img src="images/globe.png" alt="" width="130">
                 <h2>Hosting an Umbraco infrastructure</h2>
-                <p>Here you will find details on Azure, Umbraco Cloud, upgrading Umbraco, server configuration, and much more.</p>
+                <p>Details on the process of installing and hosting different types of Umbraco projects.</p>
             </a>
         </div>
         <div class="col-sm-6">
             <a href="Where-can-I-get-help" class="docs-section">
                 <img src="images/support.png" alt="" width="130">
                 <h2>Haven't found what you're looking for?</h2>
-                <p>Resources to help you find the information and help that you need in order to continue working with a learning Umbraco.</p>
+                <p>Information, training and forums to answer any Umbraco related needs.</p>
             </a>
         </div>
     </div>
