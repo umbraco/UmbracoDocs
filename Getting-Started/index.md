@@ -16,14 +16,14 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Managing-an-Umbraco-project" class="docs-section">
                 <img src="images/calendar_marked.png" alt="" width="130">
                 <h2>Managing an Umbraco project</h2>
-                <p>This section allows you to investigate the deployment process, the commercial options and how to best plan an Umbraco project.</p>
+                <p>Investigate the deployment process, the commercial options and how to best plan an Umbraco project.</p>
             </a>
         </div>
         <div class="col-sm-6">
             <a href="Editing-websites-with-Umbraco" class="docs-section">
             <img src="images/editor.png" alt="" width="130">
                 <h2>Editing websites with Umbraco</h2>
-                <p>This section will introduce you to a set of tools and resources to get you started with editing content in an Umbraco website.</p>
+                <p>Tools and resources to get you started with editing content in an Umbraco website.</p>
             </a>
         </div>
     </div>
@@ -32,7 +32,7 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Creating-websites-with-Umbraco" class="docs-section">
             <img src="images/tree.png" alt="" width="130">
                 <h2>Creating websites with Umbraco</h2>
-                <p>This section will give you some tools and information to help you get started with creating websites wih Umbraco.</p>
+                <p>Tips and information to help you get started with creating websites wih Umbraco.</p>
             </a>
         </div>
         <div class="col-sm-6">
@@ -55,7 +55,7 @@ In this section you will be able to find all the relevant resources to help you 
             <a href="Where-can-I-get-help" class="docs-section">
                 <img src="images/support.png" alt="" width="130">
                 <h2>Haven't found what you're looking for?</h2>
-                <p>In this section we've gathered a set of resources to help you find the information and help that you need in order to continue working with a learning Umbraco.</p>
+                <p>Resources to help you find the information and help that you need in order to continue working with a learning Umbraco.</p>
             </a>
         </div>
     </div>
