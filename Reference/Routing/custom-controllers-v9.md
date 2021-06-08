@@ -121,9 +121,9 @@ The page in Umbraco will have a single 'template' selected as it's default templ
 
 ### Summary - How the route hijacking convention works
 
-* Document Type name = controller name
-* Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
-* Controller Inherits from `Umbraco.Cms.Web.Common.Controllers.RenderController`
+- Document Type name = controller name
+- Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
+- Controller Inherits from `Umbraco.Cms.Web.Common.Controllers.RenderController`
 
 ## Returning a view with a custom model
 
@@ -346,31 +346,74 @@ See [Composing](../../Implementation/Composing/) for further information.
 ## Replace Umbraco's default `RenderController`
 
 You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests.
-This is possible by assigning your own default controller during initialization using a composer and the `SetDefaultRenderMvcController(T)` method.
+This is possible by assigning your own default controller during initialization. One way to achieve this is to create an extension method. First of all you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
+
+Implement the `IRenderController`:
 
 ```csharp
-public class SetDefaultRenderMvcControllerComposer : IUserComposer
+public class MyRenderController : IRenderController
 {
-    public void Compose(Composition composition)
+    public IActionResult Index()
     {
-        composition.SetDefaultRenderMvcController(typeof(MyRenderMvcController));
+        return new OkObjectResult("Hello from your custom Render Controller");
     }
 }
 ```
 
-Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
+Or inherit from `RenderController`
 
 ```csharp
-public class MyRenderMvcController : IRenderMvcController
+public class MyRenderController : RenderController
 {
-    public void Execute(RequestContext requestContext)
+    public MyRenderController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) 
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        throw new NotImplementedException();
     }
 
-    public ActionResult Index(ContentModel model)
+    public override IActionResult Index()
     {
-        throw new NotImplementedException();
+        // Add some custom logic here. 
+        return CurrentTemplate(CurrentPage);
     }
+}
+```
+
+The next step is to create your own renderings defaults. Create a class that implements the `IUmbracoRenderingDefaults` and set the type of the DefaultControllerType property.
+
+```csharp
+public class MyRenderingDefaults : IUmbracoRenderingDefaults
+{
+    public Type DefaultControllerType => typeof(MyRenderController);
+}
+```
+
+After creating your own `RenderingDefaults` you can create the extionson method where the UmbracoRenderingDefaults will be removed from the container and your own RenderingDefaults will be added.
+
+```csharp
+public static class UmbracoBuilderExtensions
+{
+    public static IUmbracoBuilder SetDefaultRenderController(this IUmbracoBuilder builder)
+    {
+        var umbracoRenderingDefaults = builder.Services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(UmbracoRenderingDefaults));
+        builder.Services.Remove(umbracoRenderingDefaults);
+
+        builder.Services.AddSingleton<IUmbracoRenderingDefaults, MyRenderingDefaults>();
+
+        return builder;
+    }
+}
+```
+
+Last step is to use your `SetDefaultRenderController` extension method. You can do that in the `ConfigureServices` method in the `Startup.cs` class. It is important to call the `SetDefaultRenderController` method after the `AddWebsite` method.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()             
+        .AddWebsite()
+        .SetDefaultRenderController()
+        .AddComposers()
+        .Build();
 }
 ```
