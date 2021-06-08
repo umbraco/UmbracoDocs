@@ -9,19 +9,23 @@ meta.Description: "Tutorial to create a package in Umbraco"
 
 # Creating a Package
 
-The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process will be the same for most packages so feel free to follow along with something else.
+The goal of this tutorial is to extend Umbraco and create a package. The tutorials starting point is to create a package out of the dashboard from the [Creating a Custom Dashboard tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process is the same for most packages so feel free to follow along with something else.
 
 ## Creating a package in the backoffice
 
-If you have something you want to make into a package, you can do so through the Umbraco backoffice.
+To create a package through the Umbraco backoffice:
 
-First go to the `Packages` section and select `Created` in the top right corner. Next, choose the `Create package` button.
+1. Go to the `Packages` section.
+2. Select `Created` in the top-right corner of the screen.
+3. Select the `Create package` button.
 
-![Buttons to select for creating a package in the backoffice](images/creating-package-menu-v9.png)
+    ![Buttons to select for creating a package in the backoffice](images/creating-package-menu-v9.png)
+4. On the `Create package` page, there are 4 sections each with different information to fill out. Some of the fields are mandatory, most of it is not.
+5. Enter the package name at the top - we will call our dashboard the same as in the [Tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
-On the `Create package` page there are 4 sections each with different information to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
+We will now take a look at the individual sections and the values that can be filled in:
 
-### The Package Properties section
+### Package Properties section
 
 This section contains mostly meta data about the package and the creator. We will fill in the following things:
 
@@ -38,7 +42,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | License URL | http://opensource.org/licenses/MIT | Will be set to the URL for the MIT license and can be changed as needed. |
 | Package readme | This will add a dashboard to your content section. <br> <br>The dashboard will show each user the most recent nodes they have saved. | This will be shown when someone looks at the package in the packages dashboard. |
 
-### The Package Content section
+### Package Content section
 
 This section is used to determine which things the package should contain. We will fill in the following things:
 
@@ -55,7 +59,7 @@ This section is used to determine which things the package should contain. We wi
 | Dictionary | _Empty_ | See `Document Types` above |
 | Data Types | _Empty_ | See `Document Types` above |
 
-### The Package Files section
+### Package Files section
 
 In this section you will be able to select all of your own custom files. We will start with the `Path to file` option.
 
@@ -67,11 +71,11 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 ![Gif of Articulates use of Package options](images/package-options.gif)
 
-### The Package Actions section
+### Package Actions section
 
-Here you can add package actions. There are a number of [default package actions](../Package-Actions/index-v9.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions-v9.md)
+Here, you can add package actions. There are a number of [default package actions](../Package-Actions/index-v9.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions-v9.md)
 
-Finally after filling out all the info we can select `Create` to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
+Finally, after filling out all the information we can select **Create** to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
 ## Inspecting a package zip
 
