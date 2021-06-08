@@ -217,7 +217,7 @@ internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
 
     if (image.HasValue("umbracoFile"))
     {
-        var imageCropper = image.Value<ImageCropperValue>("bannerImage");
+        var imageCropper = image.Value<ImageCropperValue>("umbracoFile");
         foreach (var crop in imageCropper.Crops)
         {
             //Get the cropped URL and add it to the dictionary that I will return
