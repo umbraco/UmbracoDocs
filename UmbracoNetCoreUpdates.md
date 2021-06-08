@@ -291,15 +291,15 @@ And the package name is: Umbraco.Forms.9.0.0-beta001.
 
 With an Umbraco V9 application running beta 3, you can install the package with the following command:
 
-    ```none
-    dotnet add package Umbraco.Forms --version 9.0.0-beta001
-    ```
+```none
+dotnet add package Umbraco.Forms --version 9.0.0-beta001
+```
 
 And then restart the web application with:
 
-    ```none
-    dotnet run
-    ```
+```none
+dotnet run
+```
 
 You'll find the [Forms documentation](Add-ons/UmbracoForms) updated where necessary for V9, mostly around configuration and some changes to method signatures when extending Forms with custom workflow and field types.
 
