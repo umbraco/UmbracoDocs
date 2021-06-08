@@ -192,7 +192,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ## Going further with the image cropper
 
-Umbraco's Image Cropping functionality is based on the opensource library ![ImageProcessor.Web](https://imageprocessor.org/imageprocessor-web/) that has lots of additional options for transforming your images via query string parameters.
+Umbraco's Image Cropping functionality is based on the opensource library [ImageProcessor.Web](https://imageprocessor.org/imageprocessor-web/) that has lots of additional options for transforming your images via query string parameters.
 Using the "GetCropUrl" method, specifying the crop alias:
 
 ```html
@@ -231,7 +231,7 @@ internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
 
 ## MVC view Example on how to set the background color
 
-Below the exmaple to set the background color to white using the ImageProcessor ![bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
+Below the exmaple to set the background color to white using the ImageProcessor [bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
 
 ```csharp
 <img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias: "banner",
@@ -240,7 +240,7 @@ useCropDimensions:true, furtherOptions: "&bgcolor=white")" />
 
 ## List of the available parameters provided by the "ImageProcessor" library
 
-See the list of the available query string parameters provided by the "ImageProcessor" library. You can find all the examples in the official ![reference guide](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/#methods)
+See the list of the available query string parameters provided by the "ImageProcessor" library. You can find all the examples in the official [reference guide](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/#methods)
 
 **Attention**: For security reasons **only the following essential processors are enabled by default**:
 
