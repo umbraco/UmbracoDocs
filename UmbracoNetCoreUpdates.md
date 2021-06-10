@@ -12,7 +12,7 @@ Are you aware of some information about Umbraco .Net Core that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-9-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
