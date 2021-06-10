@@ -8,6 +8,16 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 8 to version 9
+
+There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
+
+You can reuse your content if you take a backup of your Umbraco 8 database and restore it into a new database used for a Umbraco 9 site.
+You will need to ensure packages you are using is available in Umbraco 9, and you will need to reimplement your custom code and templates.
+
+The reason why it is not possible to upgrade an Umbraco 8 site to Umbraco 9 is is that the codebase has been fundamentally updated in Umbraco 9 and the underlying web framework updated from ASP.NET to ASP.NET Core.
+It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 8.
+
 ## Version 8.1.0
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
