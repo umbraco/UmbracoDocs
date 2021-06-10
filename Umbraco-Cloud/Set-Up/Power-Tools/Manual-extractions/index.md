@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 # Manually run extractions on your Cloud environments
 
 :::note
-If you are running Deploy 4+, we recommend you run extractions from the Deploy Dashboard instead of KUDU. [Click here to go to the article about the Deploy Dashboard](../../../Deployment/Deployment-Operations/Deploy-schema).
+If you are running Deploy 4+, we recommend you run extractions from the Deploy Dashboard instead of KUDU. [Click here to go to the article about the Deploy Dashboard](../../../Deployment/Deploy-Operations/Deploy-schema).
 :::
 
 When you deploy from one environment to another on your Umbraco Cloud project, the files from the Git repository are merged into the files used on the site. The Deploy engine then runs an extraction. What this means is that the files on the disk will be deserialized into the database on the Cloud environment.
