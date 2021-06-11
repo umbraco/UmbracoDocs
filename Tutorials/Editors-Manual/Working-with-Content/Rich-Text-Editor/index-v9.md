@@ -6,7 +6,27 @@ versionFrom: 9.0.0
 
 The Umbraco Rich Text Editor is an editable field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is.
 
-If you want to use advanced functionality, you can insert images, create tables, or create links to other pages or documents. The functionality varies depending on how the editor is set up. Contact your system administrator for details regarding your editor.
+If you want to use advanced functionality, you can insert images, create tables, or create links to other pages or documents. The functionality varies depending on how the editor is set up.
+
+- [Editor Buttons](Rich-Text-Editor/index-v9.md#editor-buttons)
+
+- [Paragraph Break/Line Break](Rich-Text-Editor/index-v9.md#paragraph-breakline-break)
+
+- [Shortcut Keys](Rich-Text-Editor/index-v9.md#shortcut-keys)
+
+- [Text Formatting](Rich-Text-Editor/index-v9.md#text-formatting)
+
+- [View Source Code](Rich-Text-Editor/index-v9.md#view-source-code)
+
+- [Links](Rich-Text-Editor/index-v9.md#links)
+
+- [Working with Images](Rich-Text-Editor/index-v9.md#working-with-images)
+
+- [Macros](Rich-Text-Editor/index-v9.md#macros)
+
+- [Tables](Rich-Text-Editor/index-v9.md#tables)
+
+Contact your system administrator for details regarding your editor.
 
 ## Editor Buttons
 
@@ -313,4 +333,4 @@ To edit an existing table:
 
 ---
 
-Prev: [Working With Content](../../Working-with-Content/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../../Version-Management/index-v9.md)
+Prev: [Deleting and Restoring Pages](../../Getting-Started-With-Umbraco\Deleting-and-Restoring-Pages\index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../../Version-Management/index-v9.md)
