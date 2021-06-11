@@ -2,18 +2,18 @@
 versionFrom: 9.0.0
 verified-against: beta-2
 meta-title: Umbraco Route Hijacking
-meta.Description:  Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type
+meta.Description:  Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type
 ---
 
 # Custom MVC controllers (Umbraco Route Hijacking)
 
-_Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type_
+_Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type_
 
 ## What is Umbraco Route Hijacking?
 
-By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core MVC Controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View.
+By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core Controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View.
 
-It is however possible to implement a custom MVC Controller to replace this default implementation to give complete control over this execution.
+It is however possible to implement a custom Controller to replace this default implementation to give complete control over this execution.
 
 For example:
 
@@ -30,7 +30,7 @@ This replacement of the default controller can either be made 'globally' for all
 
 In the following example, imagine an Umbraco site with a set of 'product' pages created from a Document Type called 'Product Page' with an alias 'productPage'.
 
-Create a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
+Create a custom locally declared controller in the Umbraco web application project (or App_Code folder for website projects) named 'ProductPageController'.
 
 Ensure that this controller inherits from the base controller `Umbraco.Cms.Web.Common.Controllers.RenderController`.
 
@@ -136,32 +136,33 @@ By default, your Umbraco Template will be based on the `ContentModel` that the d
 The default inherits statement:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 ```
 
 or if you are using modelsbuilder:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductPage>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ProductPage>
 ```
 
 `<>` contains a model generated for each document type to give strongly typed access to the Document Type properties in the template view.
 
-To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
+To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
 So for example, if your custom model is of type 'MyProductModel' then your `@inherits` directive will look like:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
 ```
 
 :::note
-Views in MVC will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
+Views will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
 Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown.
 To avoid this you could:
+
 * Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
 or
-* Break the dependency on `Umbraco.Web.Models.ContentModel` in your master layout by having it instead inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
+* Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
 or
 * Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
 :::
@@ -256,7 +257,7 @@ namespace My.Website
 and in our template
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
 @{
 Layout = "Master";
 }
@@ -284,13 +285,14 @@ You can also pass values directly into the controller action using the query str
 The values in the querystring will be bound to the matching parameters defined in the controller's action:
 
 ```csharp
-public class ProductListingPageController : Umbraco.Web.Mvc.RenderMvcController
+public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.RenderController
 {
-//notice how we are no longer overriding the Index action because the signature is now different to the base signature.
-    public ActionResult Index(ContentModel model, int page, string andAnotherThing)
+   //notice how we are no longer overriding the Index action because the signature is now different to the base signature.
+    [HttpGet("{page},{andAnotherThing}")]
+    public IActionResult Index(int page, string andAnotherThing)
     {
        var products = _madeUpProductService.GetProductsByPage(page);
-       var productListingViewModel = new ProductListingViewModel(model.Content);
+       var productListingViewModel = new ProductListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor));
        productListingViewModel.Products = products;
        productListViewModel.Thing = andAnotherThing;
 
@@ -306,16 +308,15 @@ Injecting services into your controller constructors is possible with Umbraco's 
 For example:
 
 ```csharp
-    public class ProductListingPageController : RenderMvcController
+    public class ProductListingPageController : RenderController
     {
     private readonly IMadeUpProductService _madeUpProductService;
-    public MyController(IMadeUpProductService madeUpProductService)
+    public ProductListingPageController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor, IMadeUpProductService madeUpProductService)
     {
         _madeUpProductService = madeUpProductService;
     }
 
-    public override ActionResult Index(
-    ContentModel model)
+    public override IActionResult Index()
     {
         var products = __madeUpProductService.GetProductsByPage(page);
     ...
@@ -325,17 +326,18 @@ For example:
 To wire up a concrete instance of IMadeUpProductService, use a composer:
 
 ```csharp
-    using Umbraco.Core;
-    using Umbraco.Core.Logging;
-    using Umbraco.Core.Composing;
+    using Umbraco.Cms.Core.Composing;
+    using Umbraco.Cms.Core.DependencyInjection;
+    using Umbraco.Extensions;
+
     namespace MyWebsite.Composers
     {
         public class RegisterSuperSiteServiceComposer : IUserComposer
         {
-            public void Compose(Composition composition)
+            public void Compose(IUmbracoBuilder builder)
             {
-            // Register your service with different Lifetime options: Singleton, Request, Transient, Scope
-            composition.Register<IMadeUpProductService, MadeUpProductService>(Lifetime.Singleton);
+                builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
+             
             }
         }
     }
