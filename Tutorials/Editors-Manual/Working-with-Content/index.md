@@ -33,7 +33,7 @@ Contact your system administrator for details regarding your editor.
 
 By default, the following editor styles are available. Your system administrator can determine the styles displayed in different templates. You might have access to more or fewer styles than those shown here.
 
-![Editor Bar](../images/editorBar-v9.jpg)
+![Editor Bar](images/editorBar-v9.jpg)
 
 ## Rich Text Editor Functionality
 
@@ -75,7 +75,7 @@ To apply a format using the formatting buttons:
 1. Select the text you want to apply the formatting to.
 2. Click the format button to apply the formatting you wish to add.
 
-    ![Formats](../images/formats-v9.png)
+    ![Formats](images/formats-v9.png)
 
 #### Custom Formats
 
@@ -111,11 +111,11 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 2. Go to the **Editor Settings** window.
 3. Select **Remove format**.
 
-    ![Remove Format](../images/removeFormat-v9.png)
+    ![Remove Format](images/removeFormat-v9.png)
 
 ### View Source Code
 
-![View Source Code](../images/source-code-v9.png)
+![View Source Code](images/source-code-v9.png)
 
 If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want it.
 
@@ -123,7 +123,7 @@ Certain elements such as scripts is not recognized by the HTML view of the rich 
 
 ### Links
 
-![Link Button](../images/linkButton.jpg)
+![Link Button](images/linkButton.jpg)
 
 The **Insert/edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. To insert different types of hyperlinks, follow these steps:
 
@@ -136,7 +136,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
 6. Click **Submit**.
 
-![External Link](../images/Create-link-v9.png)
+![External Link](images/Create-link-v9.png)
 
 #### Link to a Page in Umbraco
 
@@ -147,7 +147,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
 6. Click **Submit**.
 
-![Internal Link](../images/Internal-links-v9.png)
+![Internal Link](images/Internal-links-v9.png)
 
 #### Link to a Media File in Umbraco
 
@@ -158,7 +158,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
 6. Click **Submit**.
 
-![Link Media](../images/Link-media-v9.png)
+![Link Media](images/Link-media-v9.png)
 
 #### Link to an email address in Umbraco
 
@@ -169,7 +169,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
 6. Click **Submit**.
 
-![Link Email](../images/Email-link-v9.png)
+![Link Email](images/Email-link-v9.png)
 
 #### Link to an Anchor on the Same Page
 
@@ -180,11 +180,11 @@ An anchor allows you to create internal page links that enable users to navigate
 1. Select the text or place the cursor where you wish to create the anchor.
 2. Click the **Anchor** button. The **Create Anchor** dialog opens.
 
-    ![Anchor Button](../images/anchorButton.jpg)
+    ![Anchor Button](images/anchorButton.jpg)
 
 3. Enter the anchor name in the **ID** field. Aoid special characters and do not use spaces.
 
-    ![Anchor Dialogue](../images/Anchor-v8.png)
+    ![Anchor Dialogue](images/Anchor-v8.png)
 4. Click **OK**. You will see a small anchor icon where you previously had the cursor in the editor.
 
 To delete the anchor:
@@ -199,7 +199,7 @@ To delete the anchor:
 3. Add a `#`symbol followed by the name of your anchor in the **anchor/querystring** field.
 4. Click **Submit**.
 
-![Link Anchor](../images/Linking-anchor-v9.png)
+![Link Anchor](images/Linking-anchor-v9.png)
 
 #### Create a Link from an Image
 
@@ -220,7 +220,7 @@ To remove a link:
 1. Select the link in the editor. For text links, place the cursor anywhere within the link text. For an image, select the image itself.
 2. Click the **Remove Link** button which removes the hyperlink.
 
-    ![Unlink](../images/unlink.jpg)
+    ![Unlink](images/unlink.jpg)
 
 If the remove link button is not in your richtext editor toolbar, you can add the **Remove Link** button:
 
@@ -228,7 +228,7 @@ If the remove link button is not in your richtext editor toolbar, you can add th
 2. Go to the **Editor Settings** window.
 3. Select **Remove Link**.
 
-    ![Remove Format](../images/remove-link-v9.png)
+    ![Remove Format](images/remove-link-v9.png)
 
 Alternatively, click the **Insert/Edit Link** button and manually remove the link from the **Link** field.
 
@@ -247,7 +247,7 @@ Many organisations set up a media library containing images that editors can use
 5. Enter an **Alternative Text** and **Caption** for your image. Both these fields are optional.
 6. Click **Select** to add the image.
 
-![Media Picker](../images/Media-picker-v9.png)
+![Media Picker](images/Media-picker-v9.png)
 
 #### Inserting an Image from your Computer
 
@@ -255,7 +255,7 @@ You can upload images directly from your local directory in the rich text editor
 
 You can also create folders in the media library by clicking the `+` icon next to `Media/`.
 
-![Media Upload](../images/create-new-folders-v9.png)
+![Media Upload](images/create-new-folders-v9.png)
 
 To insert an image from your computer:
 
@@ -266,7 +266,7 @@ To insert an image from your computer:
 5. Enter an **Alternative Text** and **Caption** for your image. Both these fields are optional.
 6. Click **Select** to add the image.
 
-![Media Upload](../images/Upload-from-local-v9.png)
+![Media Upload](images/Upload-from-local-v9.png)
 
 #### Deleting an Image from the Page
 
@@ -287,11 +287,11 @@ The macros available to you differ from system to system. Contact your system ad
 2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
 3. Select a macro to insert or enter the macro name in the **Search** bar.
 
-   ![Macro Picker](../images/Select-a-macro.png)
+   ![Macro Picker](images/Select-a-macro.png)
 4. Configure the macro as required.
 5. Click **Submit** to insert the macro. The macro is displayed in the editor with a dotted border.
 
-   ![Macro Editor](../images/Select-a-macro-v9.png)
+   ![Macro Editor](images/Select-a-macro-v9.png)
 
 :::note
 If there are no macros, you can [Create Macros](../../../../Reference/Templating/Macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
@@ -316,7 +316,7 @@ To remove a macro:
 
 Tables are used to format information in a grid based structure. When you insert a table, you select how many rows and columns the table should comprise of, as well as fill in a number of additional optional formatting properties. These values can be altered later, so it is not important to know exactly what your table will look like when you create it.
 
-![Tables](../images/Table-v9.png)
+![Tables](images/Table-v9.png)
 
 #### Editing an Existing Table
 
@@ -326,12 +326,12 @@ To edit an existing table:
 2. A small square box is displayed with some quick actions.
 3. Select the action of your choice. Alternatively, click on the **Table** button in the rich text editor. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
 
-    ![Table Options](../images/Table-options-v9.png)
+    ![Table Options](images/Table-options-v9.png)
 
 **Table Properties** provides several options for modifying the table’s appearance. However the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
-![Table Properties](../images/Table-properties-v8.png)
+![Table Properties](images/Table-properties-v8.png)
 
 ---
 
-Prev: [Deleting and Restoring Pages](../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../../Version-Management/index-v9.md)
+Prev: [Deleting and Restoring Pages](../../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index-v9.md)
