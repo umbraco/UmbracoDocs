@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 ---
 
-# Rich Text Editor
+# Working with Rich Text Editor
 
 The Umbraco Rich Text Editor is an editable field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is.
 
@@ -294,7 +294,7 @@ The macros available to you differ from system to system. Contact your system ad
    ![Macro Editor](images/Select-a-macro-v9.png)
 
 :::note
-If there are no macros, you can [Create Macros](../../../../Reference/Templating/Macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
+If there are no macros, you can [Create Macros](../../../Reference/Templating/Macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
 :::
 
 #### Editing macros
@@ -334,4 +334,4 @@ To edit an existing table:
 
 ---
 
-Prev: [Deleting and Restoring Pages](../../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index-v9.md)
+Prev: [Deleting and Restoring Pages](../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index-v9.md)

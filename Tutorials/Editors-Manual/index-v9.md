@@ -24,7 +24,7 @@ Happy editing!
 
 Showing you the ropes on getting started with Umbraco. A walk through on how to log-in, create and publish content, working with pages.
 
-## [Working With Content](Working-with-Content/Rich-Text-Editor/index-v9.md)
+## [Working With Rich Text Editor](Working-with-Content/)
 
 How to use the Rich Text Editor.
 
