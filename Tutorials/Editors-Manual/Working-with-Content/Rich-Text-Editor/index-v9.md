@@ -8,23 +8,23 @@ The Umbraco Rich Text Editor is an editable field where you, as the editor, can 
 
 If you want to use advanced functionality, you can insert images, create tables, or create links to other pages or documents. The functionality varies depending on how the editor is set up.
 
-- [Editor Buttons](Rich-Text-Editor/index-v9.md#editor-buttons)
+- [Editor Buttons](#editor-buttons)
 
-- [Paragraph Break/Line Break](Rich-Text-Editor/index-v9.md#paragraph-breakline-break)
+- [Paragraph Break/Line Break](#paragraph-breakline-break)
 
-- [Shortcut Keys](Rich-Text-Editor/index-v9.md#shortcut-keys)
+- [Shortcut Keys](#shortcut-keys)
 
-- [Text Formatting](Rich-Text-Editor/index-v9.md#text-formatting)
+- [Text Formatting](#text-formatting)
 
-- [View Source Code](Rich-Text-Editor/index-v9.md#view-source-code)
+- [View Source Code](#view-source-code)
 
-- [Links](Rich-Text-Editor/index-v9.md#links)
+- [Links](#links)
 
-- [Working with Images](Rich-Text-Editor/index-v9.md#working-with-images)
+- [Working with Images](#working-with-images)
 
-- [Macros](Rich-Text-Editor/index-v9.md#macros)
+- [Macros](#macros)
 
-- [Tables](Rich-Text-Editor/index-v9.md#tables)
+- [Tables](#tables)
 
 Contact your system administrator for details regarding your editor.
 
