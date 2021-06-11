@@ -226,4 +226,4 @@ Let's go a bit further, and load in a markdown editor JavaScript library. In thi
 
 ---
 
-Next: [Adding configuration to a property editor](/Adding-configuration-to-a-property-editor/index.md)
+Next: [Adding configuration to a property editor](Adding-configuration-to-a-property-editor/index.md)
