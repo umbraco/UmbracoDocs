@@ -157,4 +157,4 @@ To gain access to our new configuration options:
 
 ---
 
-Prev: [Creating a property editor](../Creating-a-Property-Editor/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Integrating services with a property editor](../Integrating-services-with-a-property-editor/index.md)
+Prev: [Creating a property editor](../../Creating-a-Property-Editor/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Integrating services with a property editor](../Integrating-services-with-a-property-editor/index.md)
