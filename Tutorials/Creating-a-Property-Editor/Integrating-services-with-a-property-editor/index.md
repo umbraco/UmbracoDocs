@@ -47,7 +47,9 @@ The markdown editor we are using has a nice event system in place, so we can hoo
 
     Notice the callback, this callback is used to return whatever data we want to the editor.
 
-2. So now that we have access to the editor events, we will trigger a media picker dialog, by using the `editorService`. We can inject whatever HTML we want with this service, but it also has a number of shorthands for things like a media picker. So at this point your controller should look like this:
+2. So now that we have access to the editor events, we will trigger a media picker dialog, by using the `editorService`.
+
+    We can inject whatever HTML we want with this service, but it also has a number of shorthands for things like a media picker. So at this point your controller should look like this:
 
     ```javascript
     angular.module("umbraco")
@@ -104,9 +106,11 @@ The markdown editor we are using has a nice event system in place, so we can hoo
 
 4. Clicking an image and choosing select returns the image to the editor which then renders it as:
 
-    ![Koala picture][1]
+    ```csharp
+        ![Koala picture][1]
 
-    [1]: /media/1005/Koala.jpg
+        [1]: /media/1005/Koala.jpg
+    ```
 
 5. The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
 6. If you wish to render your markdown in a view, you first need to convert you markdown to html format in the Document Type:
