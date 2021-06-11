@@ -17,10 +17,10 @@ It is however possible to implement a custom Controller to replace this default 
 
 For example:
 
-- to enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco)
-- to implement serverside paging
-- to implement any custom/granular security
-- to return alternative templates depending on some custom business logic
+- To enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco)
+- To implement serverside paging
+- To implement any custom/granular security
+- To return alternative templates depending on some custom business logic
 
 This replacement of the default controller can either be made 'globally' for all requests (see last example) or by *'hijacking'* requests for types of pages based on their specific Document Type following a this controller naming convention: `[DocumentTypeAlias]Controller`.
 
