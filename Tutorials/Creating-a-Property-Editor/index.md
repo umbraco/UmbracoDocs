@@ -104,7 +104,7 @@ To create a property editor with C#:
 
 3. Since the `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
 
-    ```json
+    ```javascript
     {
         // array of files we want to inject into the application on app_start
         "javascript": [
@@ -194,7 +194,7 @@ Let's go a bit further, and load in a markdown editor JavaScript library. In thi
     Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more details about extending this service.
     :::
 
-3. Let's replace that `alert()` with some code that can instantiate the pagedown editor:
+3. Let's replace the `alert()` with some code that can instantiate the pagedown editor:
 
     ```javascript
     var converter2 = new Markdown.Converter();
@@ -226,4 +226,4 @@ Let's go a bit further, and load in a markdown editor JavaScript library. In thi
 
 ---
 
-Next: [Adding configuration to a property editor](../Adding-configuration-to-a-property-editor/index.md)
+Next: [Adding configuration to a property editor](/Adding-configuration-to-a-property-editor/index.md)
