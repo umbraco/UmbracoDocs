@@ -3,13 +3,11 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 ---
 
-# Versions
+# Comparing Versions
 
 Umbraco allows you to work with multiple versions of the same page. All previously saved pages are stored in a version history list.
 
 You will never lose changes on a page because all the old versions of the page are saved in **History**. You also have the opportunity to access and re-publish older versions if necessary.
-
-## Comparing Versions
 
 To compare a page on the site with its previous versions:
 
