@@ -91,7 +91,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
   <conditions>
     <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
     <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z]{1,4}$" negate="true" />
+    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z1-5]{1,4}$" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />
