@@ -56,4 +56,4 @@ The **Recycle Bin** contains the deleted content and is available only in the **
 
 ---
 
-Prev: [Logging In and Out](../Logging-In-and-Out/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md)
+Prev: [Logging In and Out](../Logging-In-and-Out/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md)

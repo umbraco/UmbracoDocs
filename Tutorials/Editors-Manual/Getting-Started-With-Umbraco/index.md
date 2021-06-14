@@ -5,6 +5,8 @@ versionTo: 9.0.0
 
 # Getting started with Umbraco
 
+In this section, you will find all the relevant topics to help you get started with Umbraco:
+
 - [Logging In and Out](Logging-In-and-Out/index.md)
 
 - [Umbraco Interface](Umbraco-Interface/index.md)

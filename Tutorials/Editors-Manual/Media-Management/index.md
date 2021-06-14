@@ -3,7 +3,9 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 ---
 
-- Media Management
+# Media Management
+
+Umbraco provides the tools for organizing and uploading the Media. In this section, you can find information on how to work with different media types, organise folders, and edit images:
 
     - [Working with Folders](Working-with-Folders/index.md)
 

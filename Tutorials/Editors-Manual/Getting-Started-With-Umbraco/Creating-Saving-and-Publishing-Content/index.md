@@ -5,17 +5,19 @@ versionTo: 9.0.0
 
 # Creating, Saving, and Publishing Content
 
-In this section, you will get an overview of how you can create a new page, save your content and the options available for publishing and unpublishing the content.
+In this section, you will get an overview of how to create a new page, save your content, and the options available for publishing and unpublishing the content.
 
 ## Creating a New Page
 
-Select the parent page to create your new page. The parent page can be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, follow these steps:
+Select the parent page to create your new page. The parent page can be the home page or any of the sub-pages of the site. 
+
+If the parent page allows sub-pages underneath it, follow these steps:
 
 1. Hover over the name of the parent page in the **Content** section and click **•••** to view the types of pages you can create.
 2. Select the page type you wish to create. The new page is loaded in the editor on the right-hand side.
 3. Enter a **Name** for the page and click **Save**.
 
-![New Page](images/Enter-name-v9.png)
+    ![New Page](images/Enter-name-v9.png)
 
 ## Saving and Publishing Pages
 
@@ -41,7 +43,7 @@ The **Save and publish** button is used to publish a previously saved page to th
 
 The **Save and publish** button has three options:
 
-#### Option 1: Schedule
+#### 1: Schedule
 
 The **Schedule** button allows you to set a time and a date for when your page should be published. With this option, you can continue working on your edits and the site will automatically be published at the time and date it was scheduled to.
 
@@ -57,7 +59,7 @@ To set up scheduled publishing, follow these steps:
     ![Schedualed publishing.](images/Schedule_publishing_v9.png)
 5. Select **Schedule**.
 
-#### Option 2: Publish with descendants
+#### 2: Publish with descendants
 
 The **Publish with descendants** button allows you to publish the current page and all the content linked to this page to the live site. Using this option, you can publish the current parent page and it's child nodes, previously published, and unpublished content items.
 
@@ -72,7 +74,7 @@ To publish the node with descendants, follow these steps:
 
     ![Publish with descendants](images/Publish-with-descendants2-v9.png)
 
-#### Option 3: Unpublish
+#### 3: Unpublish
 
 The **Unpublish** button allows you to unpublish a page if you do not want a page to be publicly visible and do not want to delete it.
 

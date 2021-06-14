@@ -17,7 +17,7 @@ To view the audit trail:
 2. Navigate to the page you wish to see the audit trail.
 3. Go to the **Info** tab.
 
-![View audit Trail](images/view-audit-v9.png)
+    ![View audit Trail](images/view-audit-v9.png)
 
 ---
 

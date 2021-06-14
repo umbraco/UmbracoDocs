@@ -5,6 +5,8 @@ versionTo: 9.0.0
 
 # Rollback to a Previous Version
 
+You have the opportunity to access and re-publish older versions, if necessary.
+
 To rollback to a previous version of the page:
 
 1. Navigate to the page whose versions you wish to view.
