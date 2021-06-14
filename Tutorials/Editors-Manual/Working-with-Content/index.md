@@ -334,4 +334,4 @@ To edit an existing table:
 
 ---
 
-Prev: [Deleting and Restoring Pages](../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index-v9.md)
+Prev: [Deleting and Restoring Pages](../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index.md)

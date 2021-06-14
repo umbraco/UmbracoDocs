@@ -18,4 +18,4 @@ To reload a section of the content tree:
 
 ---
 
-Prev: [Tips and Tricks](../../Tips-and-Tricks/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Audit Trail](../Audit-Trail/index.md)
+Prev: [Tips and Tricks](../../Tips-and-Tricks/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Audit Trail](../Audit-Trail/index.md)

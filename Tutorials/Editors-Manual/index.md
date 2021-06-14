@@ -2,6 +2,7 @@
 meta.Title: "Editors Manual for Umbraco 8"
 meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Editor's Manual
@@ -24,7 +25,7 @@ Happy editing!
 
 Showing you the ropes on getting started with Umbraco. A walk through on how to log-in, create and publish content, working with pages.
 
-## [Working With Content](Working-With-Content/)
+## [Working With Rich Text Editor](Working-with-Content/)
 
 How to use the Rich Text Editor.
 
@@ -34,7 +35,7 @@ How to roll back different versions of content.
 
 ## [Media Management](Media-Management/)
 
-How to work with media, organise folders and image editing.
+How to work with media, organise folders, and image editing.
 
 ## [Tips and Tricks](Tips-and-Tricks/)
 
