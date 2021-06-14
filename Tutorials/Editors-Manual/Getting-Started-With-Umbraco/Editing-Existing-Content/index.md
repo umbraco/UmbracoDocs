@@ -1,65 +1,57 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Editing Existing Content
 
 ## Content Within the Tree View
 
-This documentation is intended as a guide that will be helping you gain an overview of how you edit existing content.
+When you are looking to edit content, locate the ***page*** you want to edit in the section tree on the left-side of the screen.
 
-1.	When you are looking to edit content, the first thing you should do is locate the ***page*** you want to edit content on. This can be done in the section tree on the left side of the screen.
+![Viewing Pages in Content Section](images/View-page-v9.png)
 
-![Pick the page you want to edit in the section tree.](images/Pick-page.png)
+To edit existing content, follow these steps:
 
-2.	When you have located the page, you want to ***edit*** and clicked onto it.
+1. Go to the **Content** section.
+2. Select the page in the section tree you wish to edit. The content of the page is loaded in the right-side editor.
+3. Edit the contents of the page.
+4. Click **Save** to save the edits without publishing it.
+5. Click **Save and preview** to preview the changes.
+6. Click **Save and publish** to publish the changes. For more information, see the [Save and Publishing Pages](../Creating-Saving-and-Publishing-Content/index.md#saving-and-publishing-pages) article.
 
-You will be presented with the content of the page (if there is any). 
-This content will be in the middle of the page (see image). The content is everything inside the red box. On this page there are three kinds of fields for content.
-- A text box for the title.
-- A media picker for the image.
-- A rich text editor.
+## View Page Layout
 
-Which fields you see in this area and what type of content you will be able to fill in, is dependent on how the developers has built the site.
+You can view Page layouts in three ways:
 
-![This shows the content on the middle of the page.](images/Edit-content.png)
+1. **Tree View**
 
-3.	After you have edited the content, you can click the save button to ***save*** the edits you did without publishing it.
+    The tree view is present in the section tree on the left-side of the screen. For a growing website with multiple content pages, the tree view can become very large and unmanageable.
 
-![This shows the save button in the buttom left of the screen.](images/Save.png)
+    ![Tree View](images/Pick-page-v9.png)
 
-4.	At this point it is recommended that you ***preview*** the changes that you did, which you can do by pressing the preview button located to the left of the save button.
+2. **List View**
 
-![This shows the preview button next to the save button.](images/Preview.png)
+    When you enable listview on a page, there will be no standard tree view for that page. Clicking on the parent page displays the child pages in the list view.
 
-5.	Finally, after you have done the preview and confirmed that the changes are how you like it then you can click ***save and publish***, to publish the changes you did.
+    ![Shows the regular listview.](images/List-view-v9.png)
 
-    You can learn more about that in the [Save and publish](../Creating-Saving-and-Publishing-Content) article.
+    To enable list view:
+    1. Go to **Settings**.
+    2. Navigate to the Document Type/page you wish to enable list view.
+    3. Go to the **List View** tab.
+    4. Toggle **Enable List view** and click **Save**.
 
-![This shows the save and publish button.](images/Save-publish.png)
+    ![Shows the regular listview.](images/Enabling-List-View-v9.png)
 
+    Additionally, you can sort the column **Name**, **Last edited**, and **Created by** in ascending or descending order to sort the list items.
 
-## List View Pages
+3. **Tiles View**
 
-Some of the pages in your website may use a list view style which shows child pages in a table format rather than the standard tree view.
+    You can switch between list view and tiles view by clicking the view icon in the top-right of the screen:
 
-The first screenshot below shows three child items below the **The news** page in the tree view. If the website were to have tens or even hundreds more content pages, the tree view would become very large and unmanageable.
+    ![Tiles View.](images/Tiles-View-v9.png)
 
-![Shows the standard tree view.](images/Non-listview.png)
+---
 
-The screenshot below shows what a page with a listview could look like.
-When a page uses listview, there will be no standard tree for that page, instead there will be a table list when you click into the page.
-
-![Shows the regular listview.](images/List-view.png)
-
-If you want another type of list view, there is another option if you click the button shown in the screenshot below.
-
-![Shows the options for listview.](images/Options-for-listview.png)
-
-Selecting this option will present you with boxes rather then a table.
-This can be a good way to keep track of your pages if you need a quick overview.
-
-![Shows the other option for listview.](images/Other-version-of-listview.png)
-
-
-The table will show a maximum of ten child pages at any one time. Pagination controls allow you to navigate to additional pages should you have more than ten. In the top right of the table there is a search facility which enables you search for specific pages. This enables you to quickly locate pages without having to use the pagination. You can click the column titles to sort the list items. For example clicking the name column title will sort the list items alphbetically.
+Prev: [Finding Content](../Finding-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Sorting Pages](../Ordering-Pages/index.md)
