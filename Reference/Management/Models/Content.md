@@ -257,28 +257,14 @@ return content.WriterId;
 
 ## Methods
 
-### .ChangeContentType(IContentType contentType)
-
-Changes the `IContentType` for the current Content object and removes PropertyTypes and Properties, which are not part of the new `ContentType`. **Please use with caution** as this remove differences between the new and old ContentType.
-
-```csharp
-// Given a `ContentTypeService` object get the ContentType that we're changing to,
-// get the Content from the `ContentService` for which we want to change ContentType for,
-// and then save the Content through the ContentService.
-var contentType = contentTypeService.GetContentType(1122);
-var content = contentService.GetById(1234);
-content.ChangeContentType(contentType);
-contentService.Save(content);
-```
-
-### .GetCreatorProfile()
+### .GetCreatorProfile(IUserService userService)
 
 Gets the `IProfile` object for the Creator of this Content, which contains the Id and Name of the User who created this Content item.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and get the `IProfile` of the Creator
 var content = contentService.GetById(1234);
-var profile = content.GetCreatorProfile();
+var profile = content.GetCreatorProfile(userService);
 var id = profile.Id;
 string name = profile.Name;
 ```
@@ -304,14 +290,14 @@ var content = contentService.GetById(1234);
 string value = content.GetValue<string>("bodyText");
 ```
 
-### .GetWriterProfile()
+### .GetWriterProfile(IUserService userService)
 
 Gets the `IProfile` object for the Writer of this Content, which contains the Id and Name of the User who last updated this Content item.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and get the `IProfile` of the Writer
 var content = contentService.GetById(1234);
-var profile = content.GetWriterProfile();
+var profile = content.GetWriterProfile(userService);
 var id = profile.Id;
 string name = profile.Name;
 ```
@@ -327,16 +313,6 @@ bool tagsExists = content.HasProperty("myTagProperty");
 bool bodyTextExists = content.HasProperty("bodyText");
 ```
 
-### .IsValid()
-
-Returns a `Bool` indicating whether the content and its properties are valid. If a property is set to Mandatory and blank upon saving the Content is not considered valid. This check is used when Content is published, so it won't be possible to publish invalid Content.
-
-```csharp
-// Given a `ContentService` object get Content by its Id and check if Content is valid
-var content = contentService.GetById(1234);
-bool valid = content.IsValid();
-```
-
 ### .SetValue(string propertyTypeAlias, object value)
 
 Sets the value of a property by its alias.
@@ -350,13 +326,13 @@ content.SetValue("date", DateTime.Now);
 contentService.Save(content);
 ```
 
-### .ToXml()
+### .ToXml(IEntityXmlSerializer serializer)
 
 Returns an `XElement` containing the Content data, based off the latest changes. Is used when the published content is sent to the in-memory xml cache.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and returns the xml
 var content = contentService.GetById(1234);
-XElement xml = content.ToXml();
+XElement xml = content.ToXml(serializer);
 return xml;
 ```
