@@ -24,10 +24,7 @@ A great thing about the `appsettings.json` is that it allows for intellisense wi
 
 There is many settings that you can configure in Umbraco so to help you get an overview they're divided into sections
 
-* Core settings
-* STMP
-* Logging
-* Examine Settings
+* [GlobalSettings](GlobalSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
