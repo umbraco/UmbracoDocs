@@ -1,0 +1,22 @@
+---
+versionFrom: 9.0.0
+meta.Title: "Umbraco Tours Settings"
+meta.Description: "Information on the tours settings section"
+state: complete
+verified-against: beta-3
+update-links: true
+---
+
+# Tours settings
+
+The tours section is simple section that only contains one value `"EnableTours"` which allows you to enable or disable tours, by default tours are enabled. If you wish to disable tours set the `"EnableTours"` to false, like so:
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Tours": {
+      "EnableTours": false
+    }
+  }
+}
+```
