@@ -1,7 +1,6 @@
 ---
 keywords: Content
-versionFrom: 6.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 # Content
 
@@ -25,21 +24,21 @@ using Umbraco.Core.Services;
 
 ## Constructors
 
-### new Content(string name, IContent parent, IContentType contentType)
+### new Content(string name, IContent parent, IContentType contentType, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
 
-### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties)
+### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.In addition, there is an optional parameter for the culture.
 
-### new Content(string name, int parentId, IContentType contentType)
+### new Content(string name, int parentId, IContentType contentType, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
 
-### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties)
+### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int`, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int`, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.In addition, there is an optional parameter for the culture.
 
 ## Properties
 
@@ -65,7 +64,7 @@ return content.CreatorId;
 
 ### .ContentType
 
-Returns a `ContentType` object representing the DocumentType used by the given `Content`.
+Returns a `ISimlpeContentType` object representing the DocumentType used by the given `Content`.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return ContentType
@@ -83,14 +82,14 @@ var content = contentService.GetById(1234);
 return content.ContentTypeId;
 ```
 
-### .ExpireDate
+### .ContentSchedule
 
-If set, returns the `DateTime` the Content is meant to be unpublished and become unavailable on the website.
+Returns the `ContentScheduleCollection`.
 
 ```csharp
-// Given a `ContentService` object get Content by its Id and set the expire date to 5 days from now
+// Given a `ContentService` object get Content by its Id and return the content schedule
 var content = contentService.GetById(1234);
-content.ExpireDate = DateTime.Now.AddDays(5);
+return content.ContentSchedule;
 ```
 
 ### .Id
@@ -107,9 +106,9 @@ var content = contentService.GetById(1234);
 return content.Key;
 ```
 
-### .Language
+### .PublishedCultures
 
-Gets or Sets the Language of the Content as a `string`. **Please note** that this property is introduced in v.6.0.0, but won't be fully utilized until multi-lingual support is added in a later version.
+Gets Languages of the Content as a `IEnumerable<string>`.
 
 ### .Level
 
@@ -161,44 +160,8 @@ var content = contentService.GetById(1234);
 foreach (var property in content.Properties)
 {
     string alias = property.Alias;
-    object value = property.Value;
-    Guid version = property.Version;
-}
-```
+    object value = property.GetValue();
 
-### .PropertyGroups
-
-Returns a list of `PropertyGroup` objects as defined on the `ContentType` that the Content is based on. A PropertyGroup corresponds to a Tab in the backoffice.
-
-```csharp
-// Given a `ContentService` object get Content by its Id and loop through all PropertyGroups
-var content = contentService.GetById(1234);
-foreach (var propertyGroup in content.PropertyGroups)
-{
-    string name = propertyGroup.Name;
-    int? parentId = propertyGroup.ParentId;
-    int sortOrder = propertyGroup.SortOrder;
-    PropertyTypeCollection propertyTypes = propertyGroup.PropertyTypes; //PropertyTypes within this group
-}
-```
-
-### .PropertyTypes
-
-Returns a list of `PropertyType` objects as defined on the `ContentType` that the Content is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes within this list is the sum of those within all PropertyGroups as well as those not within a group.
-
-```csharp
-// Given a `ContentService` object get Content by its Id and loop through all PropertyTypes
-var content = contentService.GetById(1234);
-foreach (var propertyType in content.PropertyTypes)
-{
-    string alias = propertyType.Alias;
-    string name = propertyType.Name;
-    string description = propertyType.Description;
-    int dataTypeDefinitionId = propertyType.DataTypeDefinitionId;
-    Guid dataTypeId = propertyType.DataTypeId;
-    bool mandatory = propertyType.Mandatory;
-    string helpText = propertyType.HelpText;
-    int sortOrder = propertyType.SortOrder;
 }
 ```
 
@@ -212,14 +175,14 @@ var content = contentService.GetById(1234);
 return content.Published;
 ```
 
-### .ReleaseDate
+### .PublishDate
 
 If set, returns `DateTime` indicating when the `Content` should be published and made available on the website and cache.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and set the release date to 4 days from now
 var content = contentService.GetById(1234);
-content.ReleaseDate = DateTime.Now.AddDays(4);
+return content.ReleaseDate
 ```
 
 ### .SortOrder
@@ -232,24 +195,24 @@ var content = contentService.GetById(1234);
 return content.SortOrder;
 ```
 
-### .Status
+### .PublishedState
 
-Returns a `ContentStatus` enum with the status of the Content being either Unpublished, Published, Expired, Trashed or Awaiting Release.
+Returns a `PublishedState` enum with the status of the Content being either Unpublished, Published, Publishing, Unpublishing.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return its Status
 var content = contentService.GetById(1234);
-return content.Status;
+return content.PublishedState;
 ```
 
-### .Template
+### .TemplateId
 
-Gets or Sets the `ITemplate` object, which is the template explicitly set on the Content or the default template as defined on the `ContentType`.
+Gets or sets the template id used to render the content.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return its Template
 var content = contentService.GetById(1234);
-return content.Template;
+return content.TemplateId;
 ```
 
 ### .Trashed
@@ -272,14 +235,14 @@ var content = contentService.GetById(1234);
 return content.UpdateDate;
 ```
 
-### .Version
+### .VersionId
 
-Returns the current Version Id as a `Guid`, for each change made to a content item, its values are stored under a new Version. This version is identified by a `Guid`.
+Returns the current Version Id as a `int`, for each change made to a content item, its values are stored under a new Version. This version is identified by a `int`.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return its Version
 var content = contentService.GetById(1234);
-return content.Version;
+return content.VersionId;
 ```
 
 ### .WriterId
