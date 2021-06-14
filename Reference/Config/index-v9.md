@@ -27,6 +27,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Global settings](GlobalSettings/index-v9.md)
 * [Content settings](ContentSettings/index-v9.md)
 * [Hosting settings](HostingSettings/index-v9.md)
+* [Keep alive settings](KeepAliveSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
