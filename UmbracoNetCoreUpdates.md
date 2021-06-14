@@ -26,6 +26,7 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Packages in Umbraco 9 via NuGet](https://umbraco.com/blog/packages-in-umbraco-9-via-nuget/)
 * [Umbraco 9 Beta Release](https://umbraco.com/blog/umbraco-9-beta-release/)
 * [Alpha 4 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-4-release-of-umbraco-on-net-core/)
 * [Alpha 3 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-3-release-of-umbraco-on-net-core/)
@@ -72,7 +73,7 @@ As of September 3rd 2020 it is possible to try out and test the latest alpha rel
 
 Since April 28th 2021, the first beta release has been available.
 
-More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/).
+More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/) and [the beta release blog post](https://umbraco.com/blog/umbraco-9-beta-release/).
 
 :::warning
 As this is an **beta release**, bugs and minor issues are to be expected.
