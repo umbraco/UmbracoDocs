@@ -7,7 +7,7 @@ verified-against: beta-3
 update-links: true
 ---
 
-# Request handler section
+# Request handler settings
 
 The options in the request handler let us do some quite useful things, like  deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 
