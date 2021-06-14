@@ -25,4 +25,4 @@ To manually alter the pre-defined crops:
 
 ---
 
-Prev: [Working with Media Items](../Working-with-Images-and-Files/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Tips and Tricks](../../Tips-and-Tricks/index.md)
+Prev: [Working with Media Types](../Working-with-Images-and-Files/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Tips and Tricks](../../Tips-and-Tricks/index.md)
