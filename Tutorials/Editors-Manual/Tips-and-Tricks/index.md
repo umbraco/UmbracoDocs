@@ -3,7 +3,9 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 ---
 
-- Tips & Tricks
+# Tips & Tricks
+
+This section provides a few handy tips to work with your Content using Umbraco:
 
   - [Refreshing the Tree View](Tips-when-Working-with-Folders/index.md)
 

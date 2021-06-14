@@ -42,7 +42,7 @@ You can view Page layouts in three ways:
     3. Go to the **List View** tab.
     4. Toggle **Enable List view** and click **Save**.
 
-    ![Shows the regular listview.](images/Enabling-List-View-v9.png)
+        ![Shows the regular listview.](images/Enabling-List-View-v9.png)
 
     Additionally, you can sort the column **Name**, **Last edited**, and **Created by** in ascending or descending order to sort the list items.
 

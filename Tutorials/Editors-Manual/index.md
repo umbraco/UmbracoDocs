@@ -31,7 +31,7 @@ How to use the Rich Text Editor.
 
 ## [Version Management](Version-Management/)
 
-How to roll back different versions of content.
+How to compare versions and roll back different versions of content.
 
 ## [Media Management](Media-Management/)
 
