@@ -33,6 +33,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Runtime minification settins](RuntimeMinificationSettings/index-v9.md)
 * [Tours settings](ToursSettings/index-v9.md)
 * [Rich text editor settings](RichTextEditorSettings/index-v9.md)
+* [Debug settings](DebugSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
