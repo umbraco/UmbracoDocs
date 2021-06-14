@@ -26,7 +26,7 @@ The Umbraco Documentation uses Markdown for all of the documentation; please rea
 
 # Annotating a document
 
-To add version information and extra keywords, [every document can be annotated using YAML](Contribute/adding-metadata.md).
+To add version information and extra keywords, [every document can be annotated using YAML](Contribute/Adding-Metadata/index.md).
 
 # Multi version documentation
 Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
