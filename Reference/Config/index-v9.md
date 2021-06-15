@@ -41,6 +41,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Examine settings](ExamineSettings/index-v9.md)
 * [NuCache settings](NuCacheSettings/index-v9.md)
 * [Runtime settings](RuntimeSettings/index-v9.md)
+* [Type finder settings](TypeFinderSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
