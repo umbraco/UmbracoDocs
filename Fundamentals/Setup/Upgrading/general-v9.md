@@ -62,7 +62,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](#unat
 1. Add the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key.
 2. Set the value of the key to `true`.
 
-#### Example from an appsettings json configuration file.
+#### Example from an appsettings json configuration file
 ```json
 {
     "Umbraco": {
