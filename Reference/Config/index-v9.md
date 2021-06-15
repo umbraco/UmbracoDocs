@@ -29,6 +29,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Security setting](SecuritySettings/index-v9.md)
 * [Hosting settings](HostingSettings/index-v9.md)
 * [Models builder settings](ModelsBuilderSettings/index-v9.md)
+* [Unattended settings](UnattendedSettings/index-v9.md)
 * [Keep alive settings](KeepAliveSettings/index-v9.md)
 * [Request handler settings](RequestHandlerSettings/index-v9.md)
 * [Runtime minification settins](RuntimeMinificationSettings/index-v9.md)
