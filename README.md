@@ -32,8 +32,8 @@ To add version information and extra keywords, [every document can be annotated 
 Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
 
 Therefore we introduced 2 different mechanisms:
-1. The [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
-2. The possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md).
+1. The [YAML metadata describing](Contribute/Adding-Metadata/index.md) `versionFrom` and `versionTo`.
+2. The possibility [to add multiple files about the same topic](Contribute/File-Naming-Conventions/index.md).
 
 # Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
 We :heart: valuable contributions from everyone who is willing to help. It does not matter to us if it's something trivial like correcting spelling mistakes, raising an issue or writing a tutorial! Every little bit of help counts and it all helps make Umbraco easier to use, for everyone.
