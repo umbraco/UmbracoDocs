@@ -57,7 +57,7 @@ Are you running a load balanced setup with multiple servers and environments?
 Check out the section about [Unattended upgrades in a load balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
 :::
 
-### Enable the feature
+### Enable the Upgrade Unattended feature
 
 1. Add the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key.
 2. Set the value of the key to `true`.
