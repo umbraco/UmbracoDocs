@@ -68,7 +68,7 @@ Work on the project(s) can resume immediately after receiving confirmation of a 
 ## After the migration
 
 ### New Umbraco Cloud project URL
-The project URL will change from ´my-project-alias.s1.umbraco.io` to `my-project-alias.euwest01.umbraco.io`. It is only the project URL that changes. Custom hostnames will continue to work as baefore. 
+The project URL will change from `my-project-alias.s1.umbraco.io` to `my-project-alias.euwest01.umbraco.io`. It is only the project URL that changes. Custom hostnames will continue to work as baefore. 
 
 ### New GIT repository URL
 There will be an improved repository URL you can switch to, but __it is not required as part of the migration__. The GIT repository will still be accessible from the same URL as before and any custom domains assigned to the project will continue to work as expected. 
