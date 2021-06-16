@@ -94,6 +94,12 @@ Similar to specifying a `HttpPostedFileBase` as shown in the example above, you 
 
 As an example, if you have a file on disk, you can open a new stream for a file on the disk, and then create a new media for that file in Umbraco:
 
+Note that you will need to inject the following services:
+- `MediaFileManager _mediaFileManager`
+- `IShortStringHelper _shortStringHelper`
+- `IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider`
+- `IJsonSerializer _serializer`
+
 ```csharp
 // Open a new stream to the file
 using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
