@@ -13,7 +13,7 @@ The localization service contains a number of methods for looking up languages. 
 
 ```C#
 // Get a reference to the language by its ID
-ILanguage language1 = LocalizationService.GetLanguageById(1);
+ILanguage language1 = _localizationService.GetLanguageById(1);
 ```
 Alternative, you can look up a language by its iso code via the `GetLanguageByIsoCode` method:
 
