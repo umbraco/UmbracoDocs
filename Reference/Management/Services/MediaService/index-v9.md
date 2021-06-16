@@ -104,15 +104,12 @@ Note that you will need to inject the following services:
 // Open a new stream to the file
 using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
 {
-
     // Initialize a new image at the root of the media archive
-    IMedia media = MediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
-
+    IMedia media = _mediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
     // Set the property value (Umbraco will handle the underlying magic)
-    media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, "my-image.jpg", stream);
-
+    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.Media.File, "my-image.jpg", stream);
     // Save the media
-    MediaService.Save(media);
+    _mediaService.Save(media);
 }
 ```
 
