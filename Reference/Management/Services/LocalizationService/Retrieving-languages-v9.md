@@ -32,7 +32,7 @@ If you need instead need a list of all installed languages, you can use the `Get
 
 ```C#
 // Get a collection of all languages
-IEnumerable<ILanguage> languages = LocalizationService.GetAllLanguages();
+IEnumerable<ILanguage> languages = _localizationService.GetAllLanguages();
 
 // Iterate over the collection
 foreach (ILanguage language in languages)
