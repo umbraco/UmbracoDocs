@@ -65,7 +65,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url" style="width:200px"/>
+        <img src="@entry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
@@ -77,7 +77,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Medias;
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url" style="width:200px" />
+        <img src="@entry.MediaItem.Url()" style="width:200px" />
     }
 }
 ```
@@ -89,7 +89,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.MediaItem.Url" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
+        <img src="@typedMediaPickerSingle.MediaItem.Url()" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
     }
 }
 ```
@@ -101,7 +101,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <img src="@mediaEntry.MediaItem.Url" style="width:200px"/>
+        <img src="@mediaEntry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
