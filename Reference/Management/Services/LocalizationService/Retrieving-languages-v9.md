@@ -19,7 +19,7 @@ Alternative, you can look up a language by its iso code via the `GetLanguageByIs
 
 ```C#
 // Get a reference to the language by its ISO code
-ILanguage language2 = LocalizationService.GetLanguageByIsoCode("en-US");
+ILanguage language2 = _localizationService.GetLanguageByIsoCode("en-US");
 ```
 
 The ISO code is a combination of the two-letter ISO 639-1 language code (lowercase) and two-letter ISO-3166 country code (uppercase). Eg. `en-US` for English in the United States, `en-GB` for English in the United Kingdom and `da-DK` for Danish in Denmark.
