@@ -259,8 +259,3 @@ There is full API coverage of all Umbraco core entities:
 - [Umbraco Services API reference](../../../Reference/Management/Services/)
 - [Umbraco Events reference](../../../Reference/Events/) <!--- (this should change) -->
 - [Routes and controllers](../../../Reference/Routing/)
-
-### Umbraco TV
-- [Chapter: Content API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/content-api/)
-- [Chapter: Media API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/media-api/)
-- [Chapter: Member API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/member-api/)
