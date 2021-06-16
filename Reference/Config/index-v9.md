@@ -46,6 +46,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Runtime settings](RuntimeSettings/index-v9.md)
 * [Type finder settings](TypeFinderSettings/index-v9.md)
 * [Logging settings](LoggingSettings/index-v9.md)
+* [Plugins settings](PluginsSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
