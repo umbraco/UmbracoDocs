@@ -49,7 +49,7 @@ As an environment variable it becomes a variable with the name `Umbraco__CMS__Un
 
 ### Using command line arguments configuration
 
-Just like with environment variables, it's not feasable to use an entire json file as a command line argument. However, with the command line the `:` will work just fine, so each section of the hierarchy is seperated with a `:` character, if we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
+Like with environment variables, it's not feasable to use an entire json file as a command line argument. However, with the command line the `:` will work without issues, so each section of the hierarchy is seperated with a `:` character. If we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
 
 `dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
 
