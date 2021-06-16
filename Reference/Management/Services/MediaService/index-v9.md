@@ -88,52 +88,6 @@ The third parameter is the alias of the Media Type. As Umbraco comes with a Fold
 In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`, which corresponds to the built-in "Administrator" user.
 
 
-### Creating a new media from an uploaded file
-
-The example below shows how to create a new file (in this case, an image) from a HTTP upload. For illustrative purposes the example is a Razor view.
-
-```csharp
-@using Umbraco.Cms.Core.Services
-@using Umbraco.Cms.Core
-@using Umbraco.Cms.Core.Models
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPublishedContent>
-@inject IMediaService MediaService
-
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="file" />
-    <input type="submit" value="Upload Image" name="submit" />
-</form>
-
-@if (IsPost)
-{
-    // Get a reference to the uploaded file
-    HttpPostedFileBase file = Request.Files["file"];
-
-    // Did the user actually select a file?
-    if (file != null)
-    {
-
-        // TODO: Add validation to prevent malicious file uploads
-        
-        // Initialize a new image at the root of the media archive
-        IMedia media = MediaService.CreateMedia("Hello", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
-        
-        // Set the property value (Umbraco will automatically update related properties)
-        media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, "hello.jpg", file);
-        
-        // Save the media
-        MediaService.Save(media);
-    }
-}
-```
-
-:::note
-When creating a new media from a file (eg. of the types **Image** or **File**), you must specify an instance of `IContentTypeBaseServiceProvider` (here accessed via `Services.ContentTypeBaseServices`) when setting the property value with the file reference.
-
-Umbraco uses this instance to determine the type of the media you're creating, as well as handling a few things "under the hood" so you don't have to. For instance Umbraco will automatically set other properties related to the file - such as file size and image dimensions.
-:::
-
-
 ### Creating a new media item from a stream
 
 Similar to specifying a `HttpPostedFileBase` as shown in the example above, you can instead specify a `Stream` for the contents of the file that should be created.
