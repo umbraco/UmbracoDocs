@@ -7,8 +7,8 @@ In this article, you’ll find all relevant information to be aware of when a si
 ## Schedule and timing
 Projects are scheduled for migration through Q3, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email 2 weeks in advance with the specific date and time.
 
-### Re-scheduling migration
-In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to...
+### Rescheduling migration
+In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>.
 
 ## Minimum requirements for migration
 In order for an Umbraco Cloud project to be scheduled for migration, the following requirements need to be fulfilled.
