@@ -27,6 +27,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [Global settings](GlobalSettings/index-v9.md)
 * [Content settings](ContentSettings/index-v9.md)
 * [Imaging settings](ImagingSettings/index-v9.md)
+* [Serilog settings](Serilog/index-v9.md)
 * [Security setting](SecuritySettings/index-v9.md)
 * [Hosting settings](HostingSettings/index-v9.md)
 * [Models builder settings](ModelsBuilderSettings/index-v9.md)
@@ -44,6 +45,7 @@ There is many settings that you can configure in Umbraco so to help you get an o
 * [NuCache settings](NuCacheSettings/index-v9.md)
 * [Runtime settings](RuntimeSettings/index-v9.md)
 * [Type finder settings](TypeFinderSettings/index-v9.md)
+* [Logging settings](LoggingSettings/index-v9.md)
 
 ## The following Configuration Files remain in Umbraco 8
 
