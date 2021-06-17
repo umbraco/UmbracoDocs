@@ -7,21 +7,31 @@ meta.Description: "Umbraco ships with signalR installed, find out how to add you
 ---
 
 # Todo 
-- Create a hub
+- Create a hub and its interface
 - Define a custom route for it
 - Add the routing to the umbraco composer
 - Test the setup with some javascript
 
-## Create a hub
-We are going to go for the most simple implementation possible, a simple status ping. So create a new class with the following code
+## Create a hub and its interface
+We are going to go for the most basic implementation possible, a status ping. So first create a new interface with the following code
+```csharp
+public interface ITestHubEvents
+{
+    // Define the events the clients can listen to
+    public Task Pong();
+}
+```
+And then the actual hub
 ```csharp
 using Microsoft.AspNetCore.SignalR;
 
-public class TestHub : Hub
+public class TestHub : Hub<ITestHubEvents>
 {
+    // when a client sends us a ping
     public async Task Ping()
     {
-        await Clients.All.SendAsync("Pong");
+        // we trigger the pong event on all clients
+        await Clients.All.Pong;
     }
 }
 ```
@@ -83,8 +93,15 @@ public class TestHubComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
+        // first we are going to add signalR to the serviceCollection if no hubs have been added yet
+        // this is just in case Umbraco ever decides to use a different technology
+        if (!builder.Services.Any(x => x.ServiceType == typeof(IHubContext<>)))
+        {
+            builder.Services.AddSignalR();
+        }
+        
+        // next is adding the routes we defined earlier
         builder.Services.AddUnique<TestHubRoutes>();
-        builder.Services.AddSignalR();
         builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
             options.AddFilter(new UmbracoPipelineFilter(
@@ -116,17 +133,17 @@ And lastly we can test the setup with some js in our view
         .withAutomaticReconnect()
         .configureLogging(signalR.LogLevel.Warning)
         .build();
+    
+    // register our callbacks when the hub sends us an event
+        connection.on("Pong", function () {
+            console.log("Pong");
+        });
 
     // start the connection
     connection.start().then(function () {
         console.info("signalR connection established");
 
-        // connection is established => register our callbacks when the hub sends us something
-        connection.on("Pong", function () {
-            console.log("Pong");
-        });
-
-        // call a function on the hub
+        // connection is established => call a function on the hub
         connection.invoke("Ping").catch(function (err) {
             return console.error("Could not invoke method [Ping] on signalR connection", err.toString());
         });
