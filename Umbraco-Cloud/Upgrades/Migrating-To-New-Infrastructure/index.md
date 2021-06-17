@@ -45,6 +45,7 @@ Your projects need to be updated to use the new Cloudflare DNS settings.
 All CNAME records must point to __dns.umbraco.io__. If you require an A-Record this must point to `104.19.191.28` or `104.19.208.28`. See the [Manage Hostnames documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/) for detailed instructions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GKUzEu_bgg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 You can see if you are using the new Cloudflare DNS settings or the “old” Let’s Encrypt under Project settings -> Hostnames:
 
 ## Before the migration
