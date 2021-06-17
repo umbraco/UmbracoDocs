@@ -21,10 +21,13 @@ To create a Form, follow these steps:
 
 1. Navigate to the **Forms** section.
 2. Click **...** next to the Forms folder.
+
     ![Forms tree](images/FormsTree.png)
 3. The **Create a new Form** dialog opens.
+
     ![Forms create dialog](images/FormsCreateDialogV9.png)
 4. Select **Empty Form**. The Form Designer opens in the editor.
+
     ![Forms designer](images/FormDesignerStartV8.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the form has to be added using the interface.
 
@@ -37,11 +40,12 @@ To create a Form, follow these steps:
     ![Forms designer Set Name](images/FormDesignerFormNameV8.png)
 7. [Optional] Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
     ![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
-8. [Optional] Enter the **Group Name**.
-    ![Forms designer page caption](images/FormDesignerPageGroupV8.png). Click **Add new group** to add another group.
-9. Click the **Add Question** button to add a new field. 
+8. [Optional] Enter the **Group Name**. Click **Add new group** to add another group.
+    ![Forms designer page caption](images/FormDesignerPageGroupV8.png).
+9. Click the **Add Question** button to add a new field.
     ![Forms designer add field](images/FormDesignerAddFieldV8.png)
 10. The Add Question dialog opens.
+
     ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
     | Field Name | Value |
