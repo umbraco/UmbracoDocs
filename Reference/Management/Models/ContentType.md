@@ -1,6 +1,5 @@
 ---
-versionFrom: 6.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # ContentType
@@ -13,8 +12,8 @@ A Document Type is composed by Properties, which are grouped by Tabs (or Propert
 
 It is also possible to link one or more Templates to a Document Type to choose how you want your model / data rendered to the user.
 
- * **Namespace:** `Umbraco.Core.Models`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -30,29 +29,32 @@ using Umbraco.Core.Services;
 ## Constructors
 
 ### new ContentType(int parentId)
+
 Constructor for creating a new `ContentType` object where the necessary parameter is the Id of the parent `ContentType` as an `Int`.
 
 ### new ContentType(IContentType parent)
+
 Constructor for creating a new `ContentType` object where the necessary parameter is the parent `ContentType` as an `IContentType` object.
 
 ## Properties
 
 ### .Alias
+
 Gets or Sets the Alias as a `String` of the ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return Alias
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Alias;
 ```
 
-### .AllowedAtRoot
-Gets or Sets a `Bool` indicating whether this ContentType is allowed at the root. If one or more ContentTypes are set to 'AllowedAtRoot' only they are shown in the create dialog at the root level in the backoffice.
+### .AllowedAsRoot
+Gets or Sets a `Bool` indicating whether this ContentType is allowed at the root. If one or more ContentTypes are set to 'AllowedAsRoot' only they are shown in the create dialog at the root level in the backoffice.
 
 ```csharp
-// Given a `ContentTypeService` object get ContentType by its Id and return AllowedAtRoot
-var contentType = contentTypeService.GetContentType(1234);
-return contentType.AllowedAtRoot;
+// Given a `ContentTypeService` object get ContentType by its Id and return AllowedAsRoot
+var contentType = contentTypeService.Get(1234);
+return contentType.AllowedAsRoot;
 ```
 
 ### .AllowedContentTypes
@@ -62,16 +64,16 @@ The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alia
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return AllowedContentTypes
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.AllowedContentTypes;
 ```
 
 ### .AllowedTemplates
-Gets or Sets an `Enumerable` list of Templates which are allowed for the current ContentType.
+Gets or Sets an `Enumerable` list of `ITemplates` which are allowed for the current ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return AllowedTemplates
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.AllowedTemplates;
 ```
 
@@ -82,7 +84,7 @@ The ContentTypeComposition provides a mixin-type functionality in that you can c
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return ContentTypeComposition
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.ContentTypeComposition;
 ```
 
@@ -91,7 +93,7 @@ Gets a list of all 'PropertyGroup` objects from the composition including Proper
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return CompositionPropertyGroups
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.CompositionPropertyGroups;
 ```
 
@@ -100,7 +102,7 @@ Gets a list of all `PropertyType` objects from the composition including Propert
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return CompositionPropertyTypes
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.CompositionPropertyTypes;
 ```
 
@@ -109,7 +111,7 @@ Gets or Sets a `DateTime` object, indicating then the given ContentType was crea
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return CreateDate
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.CreateDate;
 ```
 
@@ -118,7 +120,7 @@ Gets or Sets the Id of the `User` who created the ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Id of the Creator
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.CreatorId;
 ```
 
@@ -127,7 +129,7 @@ Gets or Sets the Description as a `String` for the ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Description
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Description;
 ```
 
@@ -136,7 +138,7 @@ Gets the default Template set as an `ITemplate` object for this ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the DefaultTemplate
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.DefaultTemplate;
 ```
 
@@ -145,7 +147,7 @@ Gets or Sets the Icon as a `String` for the ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Icon
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Icon;
 ```
 
@@ -157,7 +159,7 @@ Gets the `Guid` assigned to the ContentType during creation. This value is uniqu
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Key
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Key;
 ```
 
@@ -166,7 +168,7 @@ Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. Co
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Level
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Level;
 ```
 
@@ -175,7 +177,7 @@ Gets or Sets the name of the ContentType as a `String`.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return its Name
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Name;
 ```
 
@@ -184,7 +186,7 @@ Gets or Sets the parent `ContentType` Id as an `Int`.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Id of the Parent ContentType
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.ParentId;
 ```
 
@@ -193,7 +195,7 @@ Gets or Sets the path of the ContentType as a `String`. This string contains a c
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Path
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Path;
 ```
 
@@ -202,7 +204,7 @@ Gets or Sets a `PropertyGroupCollection` containing a list of PropertyGroups for
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return PropertyGroups
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.PropertyGroups;
 ```
 
@@ -211,7 +213,7 @@ Gets an `Enumerable` list of PropertyTypes aggregated for all groups within the 
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return PropertyTypes
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.PropertyTypes;
 ```
 
@@ -220,7 +222,7 @@ Gets the given `ContentType` index, compared to sibling content.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return its SortOrder
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.SortOrder;
 ```
 
@@ -229,7 +231,7 @@ Gets or Sets the Thumbnail as a `String` for the ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Thumbnail
-var contentType = contentTypeService.GetContentType(1234);
+var contentType = contentTypeService.Get(1234);
 return contentType.Thumbnail;
 ```
 
