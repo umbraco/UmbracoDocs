@@ -1,65 +1,51 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
-# Form settings
+# Form Settings
 
-In this article you can read more about how you can customize your form.
+In this article, you can read about customizing your form. To access the Form Settings:
 
-![Form settings dialog](images/FormSettings.png)
+1. Navigate to the **Forms** section.
+2. Open a Form you wish to customize.
+3. Click **Settings** in the top-right corner of the screen.
+    ![Form settings dialog](images/FormSettings.png)
 
-## Store records (version 7+)
+## Settings Options
 
-By default all submitted records will be stored to the database. This can be changed by un-checking the **Store records** option.
+The following options are available in Forms Settings:
 
-## Captions
+- **Store Records**
+    By default, all submitted records is saved in a database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organisation), you can uncheck the box.
 
-Customize that buttons and labels used in your form.
+    ![Form settings Store Records](images/Store-Records.png)
 
-![Form settings stylesheet](images/FormSettingsCaptions.png)
+- **Captions**
+    Customize the labels of the Submit, Next, and Previous buttons used in your form.
 
-## Styling
+    ![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
 
-Set a **css class** to give your form custom styling. You can also disable the default styling, and chose whether to load assets with client dependencies.
+- **Styling**
+    Set a **css class** to give your form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the form is placed.
 
-![Form settings stylesheet](images/FormSettingsStyling.png)
+    ![Form settings stylesheet](images/FormSettingsStyling.png)
 
-### Disable default stylesheet
+- **Validation**
+    Define a message that is displayed when a field is mandatory, when a value is not supplied or when the value is invalid.
 
-Enabling this option will prevent a default stylesheet being added to the pages where the form is placed.
+    ![Form settings validation](images/FormSettingsValidation.png)
 
-## Validation
+    The following Validations are available:
+    | **Mandatory error message** | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
+    |-|-|
+    | **Invalid error message** | The error message is displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
+    | **Show validation summary** | Enable this option if you wish to display a summary of all error messages on top of the form. |
+    | **Hide field validation labels** | Enable this option if you wish to hide individual field error messages from being displayed. |
+    |**Mark fields** | You can choose to not mark any fields or only mark mandatory or optional fields. |
+    | **Indicator** | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*` |
 
-Define the message that is displayed when a field is mandatory, when a value isn't supplied or when the value is invalid.
+- **Moderation**
+    Enabling this feature allows the moderator to approve or deny a Form before its published. Most Forms contain publicly shown entries such as blog post comments or submissions for a social campaign and you can decide what's being published online.
 
-![Form settings validation](images/FormSettingsValidation.png)
-
-### Mandatory error message
-
-The error message that will be displayed for a field if it is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level. `{0}` will be replaced with the field caption.
-
-### Invalid error message
-
-The error message that will be displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level. `{0}` will be replaced with the field caption.
-
-### Show validation summary
-
-Enable this option if you wish to display a summary of all error messages on top of the form.
-
-### Hide field validation labels
-
-Enable this option if you wish the hide individual field error messages from being displayed.
-
-### Mark fields
-
-You can choose to not mark any fields or only mark mandatory or optional fields.
-
-### Indicator
-
-Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*`.
-
-### Moderation
-
-Allow form submissions to be post moderated. Most use cases are for publicly shown entries such as blog post comments or submissions for a social campaign.
-
-![Form settings validation](images/FormSettingsModeration.png)
+    ![Form settings validation](images/FormSettingsModeration.png)
