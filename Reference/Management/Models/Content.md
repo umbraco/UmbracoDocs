@@ -64,7 +64,7 @@ return content.CreatorId;
 
 ### .ContentType
 
-Returns a `ISimlpeContentType` object representing the DocumentType used by the given `Content`.
+Returns a `ISimpleContentType` object representing the DocumentType used by the given `Content`.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return ContentType
