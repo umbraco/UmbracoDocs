@@ -12,6 +12,7 @@ To access the Form Settings:
 1. Navigate to the **Forms** section.
 2. Open a Form you wish to customize.
 3. Click **Settings** in the top-right corner of the screen.
+
     ![Form settings dialog](images/FormSettings.png)
 
 ## Settings Options
