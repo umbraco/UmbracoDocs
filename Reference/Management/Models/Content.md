@@ -182,7 +182,7 @@ If set, returns `DateTime` indicating when the `Content` should be published and
 ```csharp
 // Given a `ContentService` object get Content by its Id and set the release date to 4 days from now
 var content = contentService.GetById(1234);
-return content.ReleaseDate
+return content.PublishDate
 ```
 
 ### .SortOrder
