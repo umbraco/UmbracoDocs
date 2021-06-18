@@ -243,9 +243,9 @@ Adds a new `ContentType` to the list of composite ContentTypes.
 ```csharp
 // Given a `ContentTypeService` object get a few ContentTypes by their alias
 // and add the 'Meta' and 'SEO' ContentTypes to the composition of the 'Textpage' ContentType.
-var metaContentType = contentTypeService.GetContentType("meta");
-var seoContentType = contentTypeService.GetContentType("seo");
-var textpageContentType = contentTypeService.GetContentType("textPage");
+var metaContentType = contentTypeService.Get("meta");
+var seoContentType = contentTypeService.Get("seo");
+var textpageContentType = contentTypeService.Get("textPage");
 textpageContentType.AddContentType(metaContentType);
 textpageContentType.AddContentType(seoContentType);
 contentTypeService.Save(textpageContentType);
@@ -256,11 +256,8 @@ Returns an `Enumerable` list of ContentType aliases as `String` from the current
 
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias and loop through CompositionAliases
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 var aliases = contentType.CompositionAliases();
-foreach(var alias in aliases){
-    string alias = alias;
-}
 ```
 
 ### .CompositionIds()
@@ -268,11 +265,8 @@ Returns an `Enumerable` list of ContentType Ids as `Int` from the current compos
 
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias and loop through CompositionIds
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 var ids = contentType.CompositionIds();
-foreach(var id in ids){
-    string id = id;
-}
 ```
 
 ### .ContentTypeCompositionExists(string alias)
@@ -281,7 +275,7 @@ Checks if a `ContentType` with the supplied alias exists in the list of composit
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias
 // and check if a given ContentType exists in the composition of the 'Text Page' ContentType.
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 bool result = contentType.ContentTypeCompositionExists("meta");
 ```
 
@@ -291,7 +285,7 @@ Sets the default `Template` for the current ContentType.
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias
 // and change the default template with another one from the list of allowed templates.
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 ITemplate template = contentType.AllowedTemplates.First(x => x.Alias == "anotherTemplate");
 contentType.SetDefaultTemplate(template);
 contentTypeService.Save(contentType);
@@ -303,7 +297,7 @@ Removes a `ContentType` with the supplied alias from the list of composite Conte
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias and
 // remove the 'Meta' ContentType from its composition.
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 bool success = contentType.RemoveContentType("meta");
 if(success)
     contentTypeService.Save(contentType);
@@ -315,9 +309,8 @@ Removes a `PropertyType` from the current `ContentType`.
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias
 // and remove a PropertyType from the list of PropertyTypes.
-var contentType = contentTypeService.GetContentType("textPage");
-PropertyType propertyType = contentType.PropertyTypes.First(x => x.Alias == "author");
-contentType.RemovePropertyType(propertyType);
+var contentType = contentTypeService.Get("textPage");
+contentType.RemovePropertyType("author");
 contentTypeService.Save(contentType);
 ```
 
@@ -327,7 +320,7 @@ Removes a `Template` from the list of allowed templates.
 ```csharp
 // Given a `ContentTypeService` object get a ContentType by its alias
 // and remove one of the templates from the list of allowed templates.
-var contentType = contentTypeService.GetContentType("textPage");
+var contentType = contentTypeService.Get("textPage");
 ITemplate template = contentType.AllowedTemplates.First(x => x.Alias == "RemoveThisTemplate");
 contentType.RemoveTemplate(template);
 contentTypeService.Save(contentType);
