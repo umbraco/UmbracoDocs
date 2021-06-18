@@ -162,3 +162,36 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 }
 
 ```
+
+### Add values programmatically
+
+This solution can be applied to both Media Picker 3 and Multi Media Picker 3
+
+```csharp
+@{
+                        //Get media by Id
+                        var media = mediaService.GetById(1150);
+                        
+                        //Initialize new list of dictionaries
+                        var dictionary = new List<Dictionary<string, string>>
+                        {
+                            new Dictionary<string, string>()
+                        {
+                            //Create new GUID for "key"
+                            { "key", Guid.NewGuid().ToString() },
+                            
+                            //Reference our media in "mediaKey"
+                            { "mediaKey", media.Key.ToString() },
+                            { "crops", null },
+                            { "focalPoint", null }
+                        }
+                        };
+
+                        //Serialize entire list of dictionaries
+                        var json = JsonConvert.SerializeObject(dictionary);
+                        
+                        //Assign JSON as the value of Media Picker 3 property
+                        content.SetValue("firstPic", json);
+}
+
+```
