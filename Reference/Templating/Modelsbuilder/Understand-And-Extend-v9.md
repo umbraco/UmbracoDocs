@@ -116,11 +116,11 @@ public partial class TextPage
 }
 ```
 
-If the custom partial class provides a **constructor** that has the same signature as the generated one, it will be detected and no constructor will be generated, as that would be redundant and would not compile.
+Models builder does not take a custom partial class into account when generating the models. This means that if a custom partial class, inherits from a base class, tries to provide a constructor with the same signature, or implements a generated property, it will cause compilation errors. 
 
-If the custom partial class **inherits** from a base class, it will be detected and the generated model will *not* inherit from anything, as that would be redundant and would not compile. The base class *must* inherit (directly or indirectly) from `PublishedContentModel` in order for the model to be valid, though.
+Furthermore a generated model will always be instantiated with its default constructor, so if an overloading constructor is created it will never be used.
 
-If the custom partial class **implements** a generated property, it will *not* be detected and will cause a compilation error. Models Builder needs to be explicitly notified about the situation. See [Control Models Generation](Control-Generation.md).
+For more complex partial classes, you'll have to use the full version of the [Models Builder](https://github.com/zpqrtbnk/Zbu.ModelsBuilder).
 
 ## Best Practices
 
@@ -131,18 +131,26 @@ Extending models should be used to add stateless, local features to models, and 
 A customer has "posts" that has two "release date" properties. One is a true date picker property and is used to specify an actual date and to order the posts. The other is a string that is used to specify dates such as "Summer 2015" or "Q1 2016". Alongside the title of the post, the customer wants to display the text date, if present, else the actual date. If none of those are present, the Umbraco update date should be used. Keep in mind that each view can contain code to deal with the situation, but it is much more efficient to extend the `Post` model:
 
 ```csharp
-public partial class Post
-{
-  public string DisplayDate
-  {
-    get
+    public partial class Post
     {
-    if (!string.IsNullOrEmpty(this.TextDate)) return this.TextDate;
-    if (this.ActualDate != DateTime.MinValue) return this.ActualDate.ToString();
-    return this.UpdateDate;
+        public string DisplayDate
+        {
+            get
+            {
+                if(!TextDate.IsNullOrWhiteSpace())
+                {
+                    return TextDate;
+                }
+
+                if (ActualDate != default)
+                {
+                    return ActualDate.ToString();
+                }
+
+                return UpdateDate.ToString();
+            }
+        }
     }
-  }
-}
 ```
 
 And to simplify the view as:
@@ -186,15 +194,17 @@ The scope and life-cycle of a model is *not specified*. In other words, you don'
 As a consequence, the following code has a major issue: the `TextPage` model "caches" an instance of the `HomePageDocument` model that will never be updated if the home page is re-published.
 
 ```csharp
-public partial class TextPage
+private HomePageDocument _homePage;
+public HomePageDocument HomePage
 {
-  public TextPage(IPublishedContent content)
-    : base(content)
-  {
-    HomePage = content.AncestorOrSelf(1) as HomePageDocument;
-  }
-
-  public HomePageDocument HomePage { get; private set; }
+    get
+    {
+        if (_homePage is null)
+        {
+            _homePage = this.AncestorOrSelf<HomePageDocument>(1);
+        }
+        return _homePage;
+    }
 }
 ```
 
