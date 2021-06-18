@@ -125,7 +125,7 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 You have now successfully setup Azure Blob Storage with your Umbraco site.
 
 ### Application Setting Override
-After manually updating the security.config file, you can override the `Container` and `Host` values for your blob via an appsetting value.  This allows you to set these values in the Azure Portal.    Be sure that your security.config has some value configured for the container, and the host value is a valid Uri or else the site wont load. 
+After manually updating the security.config file, you can override the `Container` and `Host` values for your blob via an appsetting value.  Moving to application settings can be useful in some scenarios, for example allowing these values to be set in the Azure Portal applications settings rather than stored in the security.config file.    Be sure that your security.config has some value configured for the container, and the host value is a valid Uri or else the site wont load. 
 
 ```
 <appSettings>
