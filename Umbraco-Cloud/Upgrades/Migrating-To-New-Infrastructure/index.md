@@ -84,6 +84,10 @@ will become
 
 This brings a whole host of advantages both for local development, password management and adds more flexibility overall. If a site has been migrated from the old infrastructure, the old GUID-based URL will continue to work after the migration as we do not want to break any potential CI/CD setup.
 
+:::note
+This feature will be available from the 1st of July.
+:::
+
 ### New outgoing IP addresses (for allow lists)
 The outgoing IP addresses on Umbraco Cloud will be changed once the projects are running on the new infrastructure. This is only relevant if you are working with an allow list. In this case, please add the new outgoing IPs prior to migration.
 
