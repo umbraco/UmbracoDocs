@@ -25,5 +25,5 @@ The Models builder is a tool that can generate a complete set of strongly-typed 
 * [Builder Modes](Builder-Modes-v9.md)
 * [Understand and Extend Models](Understand-And-Extend-v9.md)
 * [Using Interfaces](Using-Interfaces-v9.md)
-* [Cool things to do with models](CoolThingsWithModels.md)
+* [Cool things to do with models](CoolThingsWithModels-v9.md)
 * [Install the full version of Models Builder](install-models-builder.md)
