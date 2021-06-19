@@ -17,7 +17,7 @@ Below is a list of guides for Health Checks in Umbraco.
 
 ## [Debug compilation mode](DebugCompilationMode.md)
 
-## [Excessive Hearders](ExcessiveHeaders.md)
+## [Excessive Headers](ExcessiveHeaders.md)
 
 ## [Folders and File Permissions](FolderAndFilePermissions.md)
 
