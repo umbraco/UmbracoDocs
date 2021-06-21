@@ -1,76 +1,87 @@
 ---
 versionFrom: 7.0.0
+version To: 9.0.0
 ---
 
-# Overview of the default fieldtypes
+# Overview of the Field Types
 
-Umbraco Forms comes with a bunch of default fieldtypes (also known as **answer types**) you can choose from when adding new fields to your forms. Here is a detailed overview.
+Umbraco Forms comes with a bunch of default Field Types (also known as **Answer Types**) you can choose from when adding new fields to your Forms.
 
-## Short Answer
-A textbox allows up to 250 characters.
+By default, the following Field Types are available:
 
-![Textfield](images/shortanswer.png)
+- **Short Answer**
+    A textbox allows up to 250 characters.
 
-## Long Answer
-Bigger textfield that allows multiline text and more than 250 characters.
+    ![Textfield](images/shortanswer.png)
 
-![Textarea](images/longanswer.png)
+- **Long Answer**
+    A bigger text field that allows multiline text and more than 250 characters.
 
-## [Date](Date)
-Will display a picker that allows to user to select a date.
+    ![Textarea](images/longanswer.png)
 
-![Datepicker](images/date.png)
+- [**Date**](Date)
+    Displays a picker that allows the user to select a date.
 
-## Checkbox
-Displays a single checkbox that can be checked or not.
+    ![Datepicker](images/date.png)
 
-![Checkbox](images/checkbox.png)
+- **Checkbox**
+    Displays a single checkbox that can be checked or not.
 
-## [File upload](FileUpload)
-Allows user to select and upload a local file.
+    ![Checkbox](images/checkbox.png)
 
-![File upload](images/fileupload.png)
+- [**File Upload**](FileUpload)
+    Allows user to select and upload a local file.
 
-## Password
-Password field (input isn't visible when typing).
+    ![File upload](images/fileupload.png)
 
-![Password field](images/password.png)
+- **Password**
+    Allows to type a password. The input is not visible when typing.
 
-## Multiple Choice
-Will display a list of items (a checkbox for each item) where the user can select multiple options.
+    ![Password field](images/password.png)
 
-![Checkboxlist](images/multiplechoice.png)
+- **Multiple Choice**
+    Displays a list of items with a checkbox for each item where the user can select multiple options.
 
-## Data Consent
+    ![Checkboxlist](images/multiplechoice.png)
 
-A field for the purpose of asking for data consent. **Note**: This field is automatically added to all new forms created with Forms 6+.
+- **Data Consent**
 
-![Data Consent](images/dataconsent.png)
+    A field for the purpose of asking for data consent.
 
-## Dropdown
-Will display a list of items (in a drop down box) where the user can select a single option.
+    :::note
+    By default, this field is added to all new forms created with Forms version 6+.
+    :::
 
-![Dropdownlist](images/dropdown.png)
+    ![Data Consent](images/dataconsent.png)
 
-## Single Choice
-Displays a list of items (a radio button for each item), where the user can select a single option.
+- **Dropdown**
+    Displays a list of items in a drop down box where the user can select a single option.
 
-![singlechoice](images/singlechoice.png)
+    ![Dropdownlist](images/dropdown.png)
 
-## Title and Description
-Outputs a title and description that are set as prevalues.
+- **Single Choice**
+    Displays a list of items with a radio button for each item where the user can select a single option.
 
-![Radiobuttonlist](images/titleanddescription.png)
+    ![singlechoice](images/singlechoice.png)
 
-## [Recaptcha2](Recaptcha2)
-The field displays a single checkbox for the user to check in order for the form to be validated.
+- **Title and Description**
+    Displays a title and description that are set as default values.
 
-![reCAPTCHA v2](images/recaptcha2.png)
+    ![Radiobuttonlist](images/titleanddescription.png)
 
-## [recaptcha3 with Score](Recaptcha3)
-Available in Umbraco Forms from v8.7.0, this field renders the necessary scripts and functionality to implement the recaptcha3 technology from Google, to minimise the possibility of form completion by bots. There is no visible input for the person filling in the form.
+- **Hidden**
+    A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.
 
-## Hidden
-Hidden field, won't be visible to the user.
+    ![Hidden](images/hidden.png)
 
-![Hidden](images/hidden.png)
+- [**Recaptcha V2**](Recaptcha2)
+    The field displays a single checkbox for the user to select in order to validate the Form.
+
+    ![reCAPTCHA v2](images/recaptcha2.png)
+
+- [**Recaptcha V3 with Score**](Recaptcha3)
+    Available in Umbraco Forms from v8.7.0. This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
+
+---
+
+Prev: [Form settings](../Form-Settings/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting-up conditional logic on fields](../Conditional-Logic/index.md)
