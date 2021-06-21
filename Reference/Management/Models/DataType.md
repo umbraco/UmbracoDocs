@@ -2,11 +2,9 @@
 versionFrom: 8.0.0
 ---
 
-# DataTypeDefinition
+# DataType
 
-**Applies to Umbraco 6.x and newer**
-
-A DataTypeDefinition is what you see in the backoffice in the Developer / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
+A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
 
  * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
@@ -23,8 +21,9 @@ using Umbraco.Core.Models;
 
 ## Constructors
 
-### new DataTypeDefinition(int parentId, Guid controlId)
-Constructor for creating a new `DataTypeDefinition` object where the necessary parameters are the id of the parent as `Int` and the Id of the DataType's control as a `Guid`.
+### new DataType(int parentId, Guid controlId)
+
+Constructor for creating a new `DataType` object where the necessary parameter is a `IDataEditor`.  Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
 
 ## Properties
 
