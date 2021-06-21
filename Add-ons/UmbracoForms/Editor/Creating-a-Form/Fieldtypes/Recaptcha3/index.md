@@ -7,6 +7,7 @@ versionFrom: 8.0.0
 You need to configure your site keys by adding your public and private keys in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
 
 ```xml
+<!-- Recaptcha V3 -->
 <setting key="RecaptchaV3SiteKey" value="..." />
 <setting key="RecaptchaV3PrivateKey" value="..." />
 ```
