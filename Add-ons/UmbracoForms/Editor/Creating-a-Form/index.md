@@ -5,17 +5,17 @@ versionTo: 9.0.0
 
 # Creating a Form - The Basics
 
-In this section, we'll take a look at the basic steps of creating a Form and adding the Form to your Umbraco site.
+In this article, we'll take a look at the basic steps of creating a Form and adding the Form to your Umbraco site.
 
 ## Accessing the Forms Section
 
-You can manage Forms in the **Forms** section of the Umbraco backoffice. You need to have access to the section in order to see it.
+You can manage the Forms in the **Forms** section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-If you do not see it, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give permission to view the Forms section to your individual account or the user group your account belongs to from within the Users section of the backoffice.
+If you do not see the **Forms** section, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give permission to view the Forms section to your individual account or the user group your account belongs to from within the Users section of the backoffice.
 
 ![Forms Section](images/FormsSectionV9.png)
 
-## Create a Form
+## Creating a Form
 
 To create a Form, follow these steps:
 
@@ -38,10 +38,10 @@ To create a Form, follow these steps:
 
 6. Enter the **Name** for the Form. Let's call it _Our first form_.
     ![Forms designer Set Name](images/FormDesignerFormNameV8.png)
-7. [Optional] Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
+7. **[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
     ![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
-8. [Optional] Enter the **Group Name**. Click **Add new group** to add another group.
-    ![Forms designer page caption](images/FormDesignerPageGroupV8.png).
+8. **[Optional]** Enter the **Group Name**. Click **Add new group** to add another group.
+    ![Forms designer page caption](images/FormDesignerPageGroupV8.png)
 9. Click the **Add Question** button to add a new field.
     ![Forms designer add field](images/FormDesignerAddFieldV8.png)
 10. The Add Question dialog opens.
@@ -59,7 +59,7 @@ To create a Form, follow these steps:
 14. Add a **Placeholder** to make it easier for the user to fill in the Form.
 15. Select if the field is **Mandatory** and customize the message.
 16. Add a **Validation** to the field. There are some predefined validation available but it is possible to add your own custom validation as well.
-17. Set **Conditions** for the field. For more information on Conditions, see the [Setting up conditional logic on fields](Conditional-Logic) article.
+17. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](Conditional-Logic) article.
 
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected *Short Answer* as our answer type we got two additional settings (Default Value and Placeholder).
 18. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
@@ -93,7 +93,7 @@ To add the Form, follow these steps:
 4. Click **Add** under **Choose a Form** and select the Form you want to insert.
 
     ![Content page add macro](images/ContentPageAddMacroDialog.png)
-5. [Optional] Click **Add** under **Theme** to choose which theme the Form should use.
+5. **[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
 6. Finally you have an option to **Exclude Scripts**.
 7. Click **Submit**.
 8. The Form is inserted on to your page. Click the **Save and publish** button.
@@ -102,4 +102,4 @@ To add the Form, follow these steps:
 
 ---
 
-Prev: [Editor Documentation](../Editor/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](/Form-Settings/index.md)
+Prev: [Editor Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](../Form-Settings/index.md)
