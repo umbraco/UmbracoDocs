@@ -104,7 +104,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta003
+    dotnet new -i Umbraco.Templates::9.0.0-beta004
     ```
 
 ### [Optional] Update the template from earlier alpha versions
@@ -114,7 +114,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta003
+    dotnet new -i Umbraco.Templates::9.0.0-beta004
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
