@@ -9,7 +9,7 @@ The date picker uses a front-end library called [Pikaday](https://github.com/dbu
 
 ![Date picker on frontend](images/date-picker.png)
 
-As of Umbraco Forms 4.4.0, Pikaday date picker can be localised based on the page the form is rendered on.
+As of Umbraco Forms 4.4.0, Pikaday date picker can be localised based on the page the Form is rendered on.
 
 The date picker displays the picked date in the required locale. Using JavaScript, a hidden field is updated with a standard date format to send to the server for storing the record submission in a standard format. This avoids the locale mixing up the dates.
 

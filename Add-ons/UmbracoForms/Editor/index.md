@@ -9,11 +9,11 @@ This section covers the different parts of the Forms Interface.
 
 ## [Creating a Form - The Basics](Creating-a-Form/index.md)
 
-Create new forms and add them to your Umbraco site in minutes.
+Create new Forms and add them to your Umbraco site in minutes.
 
 ## [Form Settings](Creating-a-Form/Form-Settings/index.md)
 
-A look at the settings tab of the form designer
+A look at the settings tab of the Form designer
 
 ## [Overview of the Field Types](Creating-a-Form/Fieldtypes/index.md)
 
@@ -25,7 +25,7 @@ Show field X if value of field Y is...
 
 ## [Attaching Workflows](Attaching-Workflows/index.md)
 
-Extend the functionality of your forms by adding workflows
+Extend the functionality of your Forms by adding workflows
 
 ## [Workflow Types](Attaching-Workflows/Workflow-Types)
 

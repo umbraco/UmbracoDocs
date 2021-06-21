@@ -13,7 +13,7 @@ You can achieve this setting by using **conditional logic** on Fields.
 
 Take a look at the following as an example:
 
-![Example form](images/ExampleForm.png)
+![Example Form](images/ExampleForm.png)
 
 In this case, it makes sense to **only** show the email or phone field when the corresponding option is selected in the **How should we contact you?** field.
 
