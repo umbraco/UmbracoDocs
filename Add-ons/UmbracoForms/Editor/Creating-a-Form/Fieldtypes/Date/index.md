@@ -21,7 +21,7 @@ The **DatePicker.cshtml** includes the `moment-with-locales.min.js` library to h
 
 The Date picker has a configuration setting to control the number of years shown in the picker. The default value is 10 years.
 
-You can configure the settings in `~/App_Plugins/UmbracoForms/UmbracoForms.config`:
+You can configure the settings in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
 
 ```xml
 <setting key="DatePickerYearRange" value="10" />
