@@ -100,6 +100,6 @@ To add the Form, follow these steps:
 
     ![Content page with form](images/ContentExamplesWithForm.png)
 
----Add-ons\UmbracoForms\Editor\Creating-a-Form\Form-Settings\index.md
+---
 
-Prev: [Editor Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](../Creating-a-Form/Form-Settings/index.md)
+Prev: [Editor Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](../Creating-a-Form/Form-Settings/index.md)
