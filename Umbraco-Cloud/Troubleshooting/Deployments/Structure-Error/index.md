@@ -20,7 +20,7 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../../Set-Up/Power-Tools/generating-uda-files/#what-are-uda-files)).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files/#what-are-uda-files)).
 
 In this example, there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
@@ -44,7 +44,7 @@ When you have two or more Cloud environments, we recommend that you never create
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/S8tOVxKkqw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[TODO: Make video tutorial]
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
 
@@ -72,12 +72,33 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Access **Kudu** on the Live environment
-2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/revision` folder
-3. Remove the colliding `.uda` files mentioned in the error message from the Cloud portal
-4. Go back to the `/wwwroot/data` folder and run this command: `echo > deploy-export` in the console
-5. This will regenerate all `.uda` files for the Live environment - this means only the currently used ones will be there afterward
-6. Run the command: `echo > deploy` in the same folder, to make sure everything is extracting correctly
+1. Connect to the database of the Live environment [using this tutorial](../../../Databases/Cloud-Database#connecting-to-your-cloud-database-locally)
+2. Run one of the following queries on the database, depending on the type you see the error with
+    * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
+    ```sql
+    SELECT uniqueId
+    FROM umbracoNode
+    WHERE id = (SELECT nodeId FROM cmsContentType WHERE alias = '[The alias from the error message eg. home]')
+    ```
+    * Run the following query, if the error states that the error is a `Collisions for entity type "template"`:
+    ```sql
+    SELECT uniqueId
+    FROM umbracoNode
+    WHERE id = (SELECT nodeId FROM cmsTemplate WHERE alias = '[The alias from the error message eg. home]')
+    ```
+    * Run the following query, if the error states that the error is a `Collisions for entity type "macro"`:
+    ```sql
+    SELECT uniqueId
+    FROM cmsMacro
+    WHERE macroAlias = '[The alias from the error message eg. home]'
+    ```
+    * Run the following query, if the error states that the error is a `Collisions for entity type "data-type"`:
+    ```sql
+    SELECT uniqueId
+    FROM umbracoNode
+    WHERE text = '[The alias from the error message eg. home]'
+    ```
+3. The above mentioned queries will give you the udi of the entity in use on the live environment.
 
 You now know which `.uda` file you want.
 
@@ -90,9 +111,9 @@ We strongly recommend that you resolve this locally since this will ensure that 
 1. Clone down the Development environment to your local machine
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
     * When you run the project, you should see an error message in the browser once the site starts to build
-3. Remove the wrong `.uda` file from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
-4. Open CMD prompt and navigate to your local `/data` folder
-5. Type the following command: `echo > deploy`
+3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
+4. Open the Umbraco Backoffice and go to Settings -> Deploy to see the Deploy dashboard.
+5. Select `Schema deployment from data files` in the dropdown.
 6. You will now see a `deploy-complete` marker in your local `/data` folder
 
 :::note
@@ -110,6 +131,6 @@ When the push from local to the Development environment has completed, refresh t
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow the steps described in the [manual extractions guide](../../../Set-Up/Power-Tools/Manual-extractions).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying in order to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../../Deployment/Deploy-Operations/Deploy-schema/).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.
