@@ -9,7 +9,7 @@ In this article, you can learn how to add extra functionality to your Form by at
 
 Workflows are a way of defining actions after your Form is submitted like sending an email or creating a content node.
 
-By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-form/Form-Settings/#store-records-version-7) of the Forms settings.
+By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-form/Form-Settings/index.md#settings-options) of the Forms settings.
 
 ## Adding a Workflow
 
@@ -37,4 +37,4 @@ Fill in the settings and hit **Submit**. The workflow is added to your Form and 
 
 ---
 
-Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](/Workflow-Types/index.md)
+Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Workflow-Types/index.md)
