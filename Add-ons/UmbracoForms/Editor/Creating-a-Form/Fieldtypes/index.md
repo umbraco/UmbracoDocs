@@ -85,4 +85,4 @@ By default, the following Field Types are available:
 
 ---
 
-Prev: [Form settings](../Form-Settings/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting-up conditional logic on fields](../Conditional-Logic/index.md)
+Prev: [Form settings](../Form-Settings/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting-up Conditional Logic on Fields](../Conditional-Logic/index.md)

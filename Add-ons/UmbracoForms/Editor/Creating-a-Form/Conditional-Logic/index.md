@@ -1,59 +1,62 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
-# Setting up conditional logic on fields
+# Setting-up Conditional Logic on Fields
 
-Some times you might have a field in your form, that you only want to show if the user has entered a specific value in another field:
+Sometimes you might have a field in your Form, that you want to show *only* if the user has entered a specific value in another field.
 
-*Only show this field if the value of that field is x*
-
-You can achieve this by setting up **conditional logic**.
+You can achieve this setting by using **conditional logic** on Fields.
 
 ## Example
 
-Take a look at the following as an example
+Take a look at the following as an example:
 
 ![Example form](images/ExampleForm.png)
 
-In this case it would make sense to **only show the email/phone field when that corresponds with the option chosen in the 'How should we contact you?' field**.
+In this case, it makes sense to **only** show the email or phone field when the corresponding option is selected in the **How should we contact you?** field.
 
-To achieve that, we need to enable conditions for the **Email** and **Phone** fields. This can be done in the additional settings.
+To enable conditions for the Email and Phone fields, do the following:
 
-![Enable conditions](images/EnableConditions.png)
+1. Click the cog wheel next to the Email and Phone field. The Edit question dialog opens.
+2. Select **Enable Conditions** in the **Conditions** section.
+    ![Enable conditions](images/EnableConditions-v9.png)
+3. Enabling the condition field displays more options:
+    ![Conditions](images/conditions-v9.png)
 
-Enabling conditions will give you more options:
+### Action and Logic Types
 
-![Conditions](images/conditions.png)
+There are two **Action Types**:
 
-### Action and Logic types
-
-First thing that needs to be chosen is the **action type**:
-
-- Show: the field will be hidden unless the rules match
+- Show: the field will be displayed if the rules match
 - Hide: the field will be hidden if the rules match
 
-Next up, you'll need to specify the **logic type**. This setting is only important if you have multiple rules.
+Next up, you'll need to specify the **Logic Type**. This setting is only important if you have multiple rules.
 
 - All: All of the rules must match
 - Any: Any of the rules may match
 
 ## Adding a new condition
 
-When adding a new condition you'll need to select the field where you want to evaluate the value and then you can also select an operator.
+When adding a new condition, you'll need to select the field where you want to evaluate the value and can select an operator.
 
-In this example we only want to show the *Email* field if the value of the *How should we contact you* field is `Email`. In the same way we only want to show the *Phone* field, if the value of the *How should we contact you* field is `Phone`.
+In this example, we only want to show the *Phone* field if the value of the *How should we contact you* field is `Phone`. Similarly, you can display the *Email* field, if the value of the *How should we contact you* field is `Email`.
 
-![Setup rule](images/exampleConditions.png)
+![Setup rule](images/conditions-v9.png)
 
-You will also be able to see the conditions added to each file, from the forms designer:
+You can see the conditions added to each field in the Forms designer:
 
-![See conditions in the Forms designer](images/exampleBackoffice.png)
+![See conditions in the Forms designer](images/exampleBackoffice-v9.png)
 
 ## Result
 
-When both conditions have been set as shown above, this is how it will look on the frontend:
+When both the conditions have been set as shown above, this is how it will look on the frontend:
 
-![Frontend Example](images/exampleFrontend.png)
+![Frontend Example](images/exampleFrontend-v9.png)
 
-As we in this little tutorial have chosen to use a `checkbox`, it's possible to choose both 'Email' and 'Phone' in the 'How should we contact you' field. In that case, both fields will be shown.
+In this example, we have selected only *Phone* but it is possible to choose both *Phone* and *Email* and display both the fields.
+
+---
+
+Prev: [Overview of the Field Types](../Fieldtypes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Attaching Workflows](../../Attaching-Workflows/index.md)
