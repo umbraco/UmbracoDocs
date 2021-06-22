@@ -21,7 +21,53 @@ All samples in this document will require the following using statement:
 
 ### new Template(string name, string alias)
 
+Constructor for creating a new Template object where the necessary parameters are the name of the Template and the alias for the Template being created.
 
 ## Properties
+
+### .Alias
+
+Gets the Alias of the File, which is the name without the extension.
+
+```csharp
+var template = new Template("Page", "page");
+return template.Alias;
+```
+
+### .IsMasterTemplate
+
+Returns true if the template is used as a layout for other templates (i.e. it has 'children')
+
+```csharp
+var template = new Template("Page", "page");
+return template.IsMasterTemplate;
+```
+
+### .MasterTemplateAlias
+
+Returns the alias of the master template if one is set.
+
+```csharp
+var template = new Template("Page", "page");
+return template.MasterTemplateAlias;
+```
+
+### .MasterTemplateId
+
+Returns the id of the master template if one is set.
+
+```csharp
+var template = new Template("Page", "page");
+return template.MasterTemplateId;
+```
+
+### .Name
+
+Gets the Name of the File including extension.
+
+```csharp
+var template = new Template("Page", "page");
+return template.Name;
+```
 
 ## Methods
