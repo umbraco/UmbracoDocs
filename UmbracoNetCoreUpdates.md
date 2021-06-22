@@ -104,7 +104,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta003
+    dotnet new -i Umbraco.Templates::9.0.0-beta004
     ```
 
 ### [Optional] Update the template from earlier alpha versions
@@ -114,7 +114,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta003
+    dotnet new -i Umbraco.Templates::9.0.0-beta004
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -281,6 +281,28 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fix for unsafe project names; these are no longer unsafe for namespaces. 
      - E.g. "Umbraco 9" will now use namespace "Umbraco_9"
   - Resolve virtual paths from DataEditorAttribute. E.g. "~/App_Data/...."
+
+### Changes between beta 3 and beta 4
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-beta004+is%3Aclosed) for a full overview.
+
+#### Summary
+- Features
+  - Added notifications when emails are sent
+  - Allow Css / JS assets to be added via c# code in addition to `package.manifest`
+- Bugfixes
+  - Moved extensions methods from `HtmlHelper` to `IHtmlHelper`
+  - Fixed issue with saving data types
+  - Fixed issue with recurring tasks executing too often.
+  - Fixed serialization issues with data types
+  - Fixed issue with View Model validation failing when using value types
+  - Added missing friendly overload for IsAllowedTemplate
+  - Fixed issues with the Umbraco dotnet new templates
+  - Project name is not set
+  - Unattended install info is now json escaped
+  - Fixed issue with updating password
+  - Fixed issue with members not approved by default when using the build-in macro snippets
+  - Fixed issues with MediaPicker3
 
 ## Umbraco Forms 9 (.NET Core) Beta
 
