@@ -77,7 +77,7 @@ return template.Name;
 Sets the master template of the tempalte.
 
 ```csharp
-// Cretae a new template
+// Create a new template
 var template = new Template("Page", "page");
 // Get a master template 
 var masterTemplate = fileService.GetTemplate(1234);
