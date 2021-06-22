@@ -29,16 +29,16 @@ To export all the entries from your Form:
 2. Navigate to the **Entries** you wish to export.
 3. Click **Export** in the top-right corner of the screen.
     ![Export button](images/Export.png)
-4. The Export dialog opens. Choose a format to export Form records to.
+4. The Export dialog opens. Choose a format to export the Form records to.
     ![Export all dialog](images/ExportAllDialog.png)
 5. Click **Done**.
 
 ## Record Actions
 
-When selecting entries it is possible to execute Actions. To select an entry, click anywhere on the entry.
+When selecting entries, it is possible to execute Actions. To select an entry, click anywhere on the entry.
 
 :::note
-Clicking on the *Name* opens a view where you can see the entire entry.
+Clicking on the *Name* opens a view where you can see the entire entry details.
 :::
 
 ![Record bulk actions](images/BulkActions.png)
