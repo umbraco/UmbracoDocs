@@ -47,7 +47,7 @@ This setting allows you to specify how long an image may be stored in the local 
 
 ### Cache name length
 
-Whenever an image is cached it will be remamed with a randomly generated name, this setting allows you to change how long that name will be, by default 8 characters. It's worth mentioning here that cached images will be but in a series of sub folders based on their name, for instance a file with the name `abc1` will be put in `mediacahce/a/b/c/1`. This is done to mitigate the potential performance hit of having a very large amount of files in the same folder, so a longer cache name length will result in a deeper folder structure.
+Whenever an image is cached it will be renamed with a randomly generated name, this setting allows you to change how long that name will be, by default 8 characters. It's worth mentioning here that cached images will be but in a series of subfolders based on their name, for instance, a file with the name `abc1` will be put in `mediacahce/a/b/c/1`. This is done to mitigate the potential performance hit of having a very large amount of files in the same folder, so a longer cache name length will result in a deeper folder structure.
 
 ### Cache folder
 
