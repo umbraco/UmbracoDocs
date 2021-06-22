@@ -50,4 +50,4 @@ Here is a quick overview of the default types:
 
 ---
 
-Prev: [Defining and attaching prevalue sources](../Defining-and-Attaching-Prevaluesources/index.md)
+Prev: [Defining and attaching prevalue sources](../index.md)
