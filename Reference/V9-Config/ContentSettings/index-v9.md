@@ -134,7 +134,7 @@ You can specify your own background image for the login screen here. The image w
 
 ### Login logo image
 
-You can specify for own image for the login screen logo. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
+You can specify your own image for the small logo in the top left cornor of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
 
 ## Notifications
 
