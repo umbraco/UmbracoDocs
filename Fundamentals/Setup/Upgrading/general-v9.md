@@ -92,7 +92,7 @@ The upgrade is run after Composers but before Components and the `UmbracoApplica
 Follow the steps outlined below to use run unattended upgrades in a load balanced setup.
 
 1. Upgrade Umbraco via NuGet.
-2. Deploy to all environments, including the updated `appSetting` for `Umbraco.Core.ConfigurationStatus`.
+2. Deploy to all environments.
 3. Set the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
 4. Boot the Main server and the upgrade will run automatically.
 5. Wait for the upgrade to complete.
