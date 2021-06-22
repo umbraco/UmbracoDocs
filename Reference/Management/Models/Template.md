@@ -72,7 +72,7 @@ return template.Name;
 
 ## Methods
 
-### .SetMasterTemplateITemplate masterTemplate)
+### .SetMasterTemplate(ITemplate masterTemplate)
 
 Sets the master template of the template.
 
