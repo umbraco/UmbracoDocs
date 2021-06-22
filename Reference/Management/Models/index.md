@@ -21,7 +21,7 @@ API reference for the DataTypeDefinition class.
 ## DictionaryItem
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
-## [Language](Language.md)
+## Language
 API reference for the Language class.
 
 ## [Media](Media.md)
@@ -42,5 +42,5 @@ API reference for the Task class.
 ## TaskType
 API reference for the TaskType class.
 
-## Template
+## [Template](Template.md)
 API reference for the Template class.
