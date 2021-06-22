@@ -18,7 +18,7 @@ API reference for the ContentType class.
 ## [DataType](DataType.md)
 API reference for the DataType class.
 
-## DictionaryItem
+## [DictionaryItem](DictionaryItem.md)
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
 ## Language
