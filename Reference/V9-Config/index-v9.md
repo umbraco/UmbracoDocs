@@ -9,13 +9,13 @@ update-links: true
 
 # Configuration Files
 
-In V9, we have moved away from the previous configuration using .config files, now instead using the netcore built in configuration pattern. This means that there is no longer seperate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
+In V9, we have moved away from the previous configuration using .config files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0) article.
 
 ## Managing configuration
 
-You might not always want to have the configuration stored in the `appsettings.json` file, for instance you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution, fortunately the `IConfiguration` pattern.
+You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution, fortunately, the `IConfiguration` pattern.
 
 With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with: 
 
@@ -27,7 +27,7 @@ With the configuration pattern the settings can be read from multiple different 
 
 This list is in order of precedence, so the values from `appSettings.json` will only be used if they're not also define in the environment variables, if they are then the environment variable will be used instead.
 
-There isone caveat, to this precedence though, the `appSettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance the `appsettings.Development.json` file will only be used when the environment is set to development.
+There is one caveat, to this precedence though, the `appSettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance, the `appsettings.Development.json` file will only be used when the environment is set to development.
 
 ### Using environment variables for configuration
 

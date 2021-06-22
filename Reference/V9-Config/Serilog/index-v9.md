@@ -9,7 +9,7 @@ update-links: true
 
 # Serilog settings
 
-Umbraco uses Serilog as its logging library, this means that the configuration of logging is offloaded to Serilog instead of the CMS. This means that logging specific configuration is no the `Umbraco.Cms` section, but instead the Serilog section.
+Umbraco uses Serilog as its logging library, this means that the configuration of logging is offloaded to Serilog instead of the CMS. This means that logging specific configuration is not in the `Umbraco.Cms` section, but instead the Serilog section.
 
 We will go through some of the more common logging configurations here, but for more information see the [Serilog settings github project](https://github.com/serilog/serilog-settings-configuration).
 
@@ -76,4 +76,3 @@ An example of this can be seen in the default `appsettings.Development.json`, wh
 Here you can see that we use the `"WriteTo"` key to specify a list of sinks the logger should write to. In this case we use the `"Async"` sink configured to write to the console, this means that we'll log to the console asynchronously.
 
 Now there's too many sinks to cover here, for a full list of all available sinks see [Provided sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks#list-of-available-sinks). Each of these entries will have their own documentation on how to set up the logging with the particular sink.
-

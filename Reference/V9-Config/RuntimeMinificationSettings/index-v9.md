@@ -38,4 +38,4 @@ Specifies what type of cache buster to use, the options are:
 
 You might see a setting `"version"` with a long number after it, this setting is generated if you use the `Version` type cache buster, generally you don't need to change this. However. if you're making some front end changes, and not seeing the change, then you can increase this number by one, clearing the cache and now you should see the change.
 
-Another setting you might see be populated is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be nececary to change this.
+Another setting you might see be populated is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be necessary to change this.

@@ -53,7 +53,7 @@ Allows you to specify what plugins should be enabled for the rich text editor as
 
 ## Valid elements
 
-Allows you to specify the valid HTML elements for the rich text editor as a well as the allowed properties, for for instance, in the config above the `a` element is allowed, and it's allowed to have `onclick`, `href`, and many more attributes.
+Allows you to specify the valid HTML elements for the rich text editor as well as the allowed properties, for instance, in the config above the `a` element is allowed, and it's allowed to have `onclick`, `href`, and many more attributes.
 
 ## Invalid elements
 

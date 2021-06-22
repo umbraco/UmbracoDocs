@@ -52,7 +52,7 @@ At the root level of security you can configure the following
 
 ### Keep user logged in
 
-If set to false a user will be logged out after a specific amount of time as passed with no activity, you can specify this time span in the [global settings](../GlobalSettings/index-v9.md) with the `TimeOut` key.
+If set to false a user will be logged out after a specific amount of time has passed with no activity, you can specify this time span in the [global settings](../GlobalSettings/index-v9.md) with the `TimeOut` key.
 
 ### Hide disabled users in backoffice
 
@@ -73,7 +73,7 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 ### Username is email
 
-This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set the "true" (the default value) the username is hidden and always the same as the email address.
+This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
 
 ## User password settings
 

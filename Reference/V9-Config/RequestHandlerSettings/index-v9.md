@@ -9,7 +9,7 @@ update-links: true
 
 # Request handler settings
 
-The options in the request handler let us do some quite useful things, like  deciding whether or not to use trailing slashes and setting URL replacement for special characters.
+The options in the request handler let us do some quite useful things, like deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 
 Let's have a further look at each option below.
 
