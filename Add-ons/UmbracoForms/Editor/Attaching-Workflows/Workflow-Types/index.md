@@ -7,77 +7,21 @@ versionTo: 9.0.0
 
 There are a couple of default workflow types that can be used to extend the functionality of your Form. Here, is an overview:
 
-<table>
-<thead>
-  <tr>
-    <th>Workflow Types</th>
-    <th>Description<br></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Change Record State <br> ![Change Record state](images/change-record-state.png)</td>
-    <td>Used to automatically **approve** or **delete** a record once it is submitted.
-    <br> Configure some words that you want to check and select whether these words should trigger an approval or deletion of the record.</td>
-  </tr>
-  <tr>
-    <td>Post as XML <br>  ![Post as XML](images/post-as-xml.png)</td>
-    <td>Used to post the Form as an XML to a specified URL. Besides a **Name**, the following configuration can be set:
-    <ul>
-        <li> URL (required) </li>
-        <li> Method </li>
-        <li> XsltFile - used to transform the XML </li>
-        <li> Headers - map the needed files </li>
-        <li> User and password </li>
-  </ul> </td>
-  </tr>
-  <tr>
-    <td>Save as an XML file</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Save as Umbraco Content Node</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Send email</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Send email with template (Razor)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Send form to URL</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Send XSLT transformed email</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Slack</td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
+- **Change Record State**  ![Change Record state](images/change-record-state.png)
 
-- **Change Record State**: Used to automatically **approve** or **delete** a record once it is submitted.
+    Used to automatically **approve** or **delete** a record once it is submitted.
 
     Configure some words that you want to check and select whether these words should trigger an approval or deletion of the record.
 
-    ![Change Record state](images/change-record-state.png)
+- **Post as XML**  ![Post as XML](images/post-as-xml.png)
 
-- **Post as XML**: Used to post the Form as an XML to a specified URL. Besides a **Name**, the following configuration can be set:
+    Used to post the Form as an XML to a specified URL. Besides a **Name**, the following configuration can be set:
 
   - URL (required)
   - Method
   - XsltFile - used to transform the XML
   - Headers - map the needed files
   - User and password
-
-    ![Post as XML](images/post-as-xml.png)
-
 
 ## Save as an XML file
 
