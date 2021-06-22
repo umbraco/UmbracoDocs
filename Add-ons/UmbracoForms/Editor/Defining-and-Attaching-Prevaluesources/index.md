@@ -31,11 +31,11 @@ Depending on the **Type** you choose, you'll need to provide some additional set
     ![Type settings](images/typesettings.png)
 2. Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
-    example value 1
-    example value 2
-    example value 3
-    example value 4
-    example value 5
+        example value 1
+        example value 2
+        example value 3
+        example value 4
+        example value 5
 
 3. Select **Pick File** and choose the text file you just created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
@@ -57,4 +57,4 @@ Once you have selected the prevalue source, the values are rendered in the Forms
 
 ---
 
-Prev: [Viewing and Exporting Entries](../Viewing-and-Exporting-Entries/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Overview of the Prevalue Source Types](../Prevalue-source-types/index.md)
+Prev: [Viewing and Exporting Entries](../Viewing-and-Exporting-Entries/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Overview of the Prevalue Source Types](../Defining-and-Attaching-Prevaluesources/Prevalue-source-types/index.md)
