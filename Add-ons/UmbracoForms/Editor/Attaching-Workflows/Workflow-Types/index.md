@@ -9,13 +9,11 @@ There are a couple of default workflow types that can be used to extend the func
 
 - **Change Record State**  ![Change Record state](images/change-record-state.png)
 
-    Used to automatically **approve** or **delete** a record once it is submitted.
-
-    Configure some words that you want to check and select whether these words should trigger an approval or deletion of the record.
+    Used to automatically **approve** or **delete** a record once it is submitted. Configure words that you want to verify and select whether these words should trigger an approval or deletion of the record.
 
 - **Post as XML**  ![Post as XML](images/post-as-xml.png)
 
-    Used to post the Form as an XML to a specified URL. Besides a **Name**, the following configuration can be set:
+    Used to post the Form as an XML to a specified URL. Besides **Name**, the following configuration can be set:
 
   - URL (required)
   - Method
@@ -23,99 +21,88 @@ There are a couple of default workflow types that can be used to extend the func
   - Headers - map the needed files
   - User and password
 
-## Save as an XML file
+- **Save as an XML file** ![Save as XML](images/save-as-an-xml-file.png)
 
-![Save as XML](images/save-as-an-xml-file.png)
+    Saves the result of the Form as an XML file by using XSLT. You can configure the following settings:
 
-This workflow will save the result of the form as an XML file by using XSLT.
-In the configuration you can configure the following settings:
+  - Path (required) - where to save the XML file
+  - File extension (required)
+  - XsltFile - used to transform the XML
 
-* Path - where to save the XML file (required)
-* File extension (required)
-* XsltFile - used to transform the XML
+- **Save as Umbraco Content Node** ![Save as content node](images/save-as-content-node.png)
 
-## Save as Umbraco Content Node
+    Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
 
-![Save as content node](images/save-as-content-node.png)
+    You can also choose to set a static value to fill in the properties:
 
-This workflow gives you the option to save a forms submission as a new content node.
+    ![Save as content node](images/create-new-node.png)
 
-First of all, you need to choose a Document type and match the fields in the form with the properties on the selected Document Type. You can also choose to set a static value to fill in the properties.
+    In the example above, a Document Type called **Blogpost** is selected for creating the new Content node. The value from the **Name** field will be added as the **Node Name** property in the new Content node and the value from the **Email** field will be used as the **Content** property.
 
-![Save as content node](images/create-new-node.png)
+    Other configurations:
 
-In the example above, a Document Type called 'Blogpost' is selected to be used for creating the new content node. Furthermore, the value from the 'Name' field will be added as the 'Node Name' property in the new content node, and the value from the 'Email' field will be used for the 'Content' property.
+  - Publish - choose whether to publish the node on submission
+  - Where to save - choose a section in the content tree where this new node should be added
 
-Other configuration:
+- **Send Email** ![Send email](images/send-email.png)
 
-* Publish - choose whether to publish the node on submission
-* Where to save - choose a section in the content tree where this new node should be added
+    Sends the result of the Form to the specified email address.
 
-## Send email
+    The following settings can be configured:
 
-![Send email](images/send-email.png)
+  - Email (required)
+  - SenderEmail - also configurable in `Config/umbracosettings.config`
+  - Subject of the email
+  - Message (required)
+  - Attachment - specify whether file uploads should be attached to the email
 
-Send the result of the form to a specified email address.
+- **Send Email with Template (Razor)** ![Send email with template](images/send-email-razor.png)
 
-The following settings can be configured:
+    Uses a template to send the results of the Form to a specified email address.
 
-* Email (required)
-* SenderEmail - also configurable in `Config/umbracosettings.config`
-* Subject of the email
-* Message (required)
-* Attachment - specify whether file uploads should be attached to the email
+    You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
 
-## Send email with template (Razor)
+    The following settings can be configured:
 
-![Send email with template](images/send-email-razor.png)
+  - Email (required)
+  - SenderEmail - also configurable in `Config/umbracosettings.config`
+  - Subject (required)
+  - Email Template - specify which template you want to use (required)
+  - Attachment - specify whether file uploads should be attached to the email
 
-This workflow will use a template to send the results of the form to a specified email address.
+- **Send Form to URL** ![Send to URL](images/send-to-URL.png)
 
-You can create your own custom Razor templates to be used to send out emails upon forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
+    Sends the Form to a URL either as a HTTP POST or GET.
 
-The following settings can be configured:
+    The following settings can be configured:
 
-* Email (required)
-* SenderEmail - also configurable in `Config/umbracosettings.config`
-* Subject (required)
-* Email Template - specify which template you want to use (required)
-* Attachment - specify whether file uploads should be attached to the email
+  - URL (required)
+  - Method - POST, GET, PUT or DELETE (required)
+  - Fields - map the needed fields
+  - User and password
 
-## Send form to URL
+- **Send XSLT Transformed Email** ![Send XSLT Email](images/xslt-email.png)
 
-![Send to URL](images/send-to-URL.png)
+    Sends the result of the Form to an email address with full control over the email contents by providing an xslt file.
 
-This workflow sends the form to a url, either as a HTTP POST or GET.
+    The following settings can be configured:
 
-The following settings can be configured:
+  - Email (required)
+  - SenderEmail - also configurable in `Config/umbracosettings.config`
+  - Subject (required)
+  - XSLT File - specify which file should be used to transform the content
 
-* URL (required)
-* Method - POST, GET, PUT or DELETE (required)
-* Fields - map the needed fields
-* User and password
+- **Slack** ![Send to Slack](images/email-slack.png)
 
-## Send XSLT transformed email
+    Allows to post the Form data to a specific channel on Slack.
 
-![Send XSLT Email](images/xslt-email.png)
+    The following settings can be configured:
 
-Send the result of the form to an email address and have full control over the email contents by supplying an xslt file.
+  - API Token (required)
+  - Channel (required)
+  - Username (required)
+  - Avatar URL (required)
 
-The following settings can be configured:
-
-* Email (required)
-* SenderEmail - also configurable in `Config/umbracosettings.config`
-* Subject (required)
-* XSLT File - specify which file should be used to transform the content
-
-## Slack
-
-![Send to Slack](images/email-slack.png)
-
-This workflow lets you post the form data to a specific channel on Slack.
-
-The following settings can be configured:
-
-* API Token (required)
-* Channel (required)
-* Username (required)
-* Avatar URL (required)
+---
+Add-ons\UmbracoForms\Editor\Viewing-and-Exporting-Entries\index.md
+Prev: [Attaching Workflows](../Attaching-Workflows/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Viewing and Exporting Entries](../../Viewing-and-Exporting-Entries/index.md)
