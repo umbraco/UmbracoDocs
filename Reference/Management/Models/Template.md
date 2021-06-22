@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Language
+# Template
 
 Represents a Template file.
 
