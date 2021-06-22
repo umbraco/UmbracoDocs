@@ -42,5 +42,5 @@ API reference for the Task class.
 ## TaskType
 API reference for the TaskType class.
 
-## Template
+## [Template](Template.md)
 API reference for the Template class.
