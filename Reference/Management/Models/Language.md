@@ -71,3 +71,18 @@ return template.Name;
 ```
 
 ## Methods
+
+### .SetMasterTemplateITemplate masterTemplate)
+
+Sets the master template of the tempalte.
+
+```csharp
+// Cretae a new template
+var template = new Template("Page", "page");
+// Get a master template 
+var masterTemplate = fileService.GetTemplate(1234);
+// Set the master template to new created template
+template.SetMasterTemplate(masterTemplate);
+// Save the new template
+fileService.SaveTemplate(template);
+```
