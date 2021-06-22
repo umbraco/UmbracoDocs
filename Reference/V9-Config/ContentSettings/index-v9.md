@@ -106,10 +106,10 @@ This allows you to customize the preview badge being shown when you're previewin
 
 ### Macro errors
 
-This setting allows toy to specify how errors in macros should be handled.
+This setting allows you to specify how errors in macros should be handled.
 
 Options:
-* Inline - Default Umbraco behaviour, show an inline error within the macro bu allow the page to continue rendering.
+* Inline - Default Umbraco behavior, show an inline error within the macro but allow the page to continue rendering.
 * Silent - Silently suppress the error and do not display the offending macro.
 * Throw - Throw an exception.
 * Content - Silently suppress the error, and dusplay custom content reported in the error event args.
@@ -170,7 +170,7 @@ You can define what properties should be automatically updated when an image is 
 
 ### Custom media document
 
-If you need to create a custom media document type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another object where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
+If you need to create a custom media document type to handle images called something like "Custom Image" with an alias of **customImage** then you need to add another object where the **alias** is set to **customImage**. Like below. Note that the width and height attributes have also been changed in this example.
 
 ```json
 "Imaging": {
