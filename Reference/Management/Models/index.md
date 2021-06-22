@@ -21,7 +21,7 @@ API reference for the DataTypeDefinition class.
 ## DictionaryItem
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
-## Language
+## [Language](Language.md)
 API reference for the Language class.
 
 ## [Media](Media.md)
