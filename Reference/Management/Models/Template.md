@@ -74,7 +74,7 @@ return template.Name;
 
 ### .SetMasterTemplateITemplate masterTemplate)
 
-Sets the master template of the tempalte.
+Sets the master template of the template.
 
 ```csharp
 // Create a new template
