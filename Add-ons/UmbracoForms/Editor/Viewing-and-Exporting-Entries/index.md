@@ -33,7 +33,7 @@ To export all the entries from your Form:
     ![Export all dialog](images/ExportAllDialog.png)
 5. Click **Done**.
 
-## Record Actions
+## Recording Actions
 
 When selecting entries, it is possible to execute Actions. To select an entry, click anywhere on the entry.
 
