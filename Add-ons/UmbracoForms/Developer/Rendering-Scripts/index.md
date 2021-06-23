@@ -6,7 +6,7 @@ versionTo: 9.0.0
 # Rendering Forms Scripts
 
 :::tip
-If you are using Umbraco Forms version 4.x, see the [Using Forms 4.x](#when-using-forms-4x) section.
+If you are using Umbraco Forms version 4.x, see the [Using Forms 4.x](#using-forms-4x) section.
 :::
 
 Forms output some JavaScript which is by default rendered right below the markup.
