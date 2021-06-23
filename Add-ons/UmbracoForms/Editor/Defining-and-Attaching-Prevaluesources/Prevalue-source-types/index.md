@@ -5,13 +5,19 @@ versionTo: 9.0.0
 
 # Overview of the Prevalue Source Types
 
-There are some default prevalue source types that can be used. For each prevalue source you setup, a `json` file will be generated in `~/App_Data/UmbracoForms/Data/prevaluesources`.
+There are some default prevalue source types that can be used.
+
+In Umbraco version 8, for each prevalue source you setup, a `json` file will be generated in `~/App_Data/UmbracoForms/Data/prevaluesources`.
+
+:::note
+As of Umbraco Forms version 9.0.0, it is *only* possible to store Forms data in the database. If upgrading to Umbraco version 9 and using Forms, you should first migrate the Forms to the database using Forms version 8. For more information, see [Umbraco Forms in the Database](../Developer\Forms-in-the-Database\index.md).
+:::
 
 Here is a quick overview of the default types:
 
 - **Get values from textfile**
 
-    Upload a textfile that contains the prevalues. Each prevalue should have its own line in the file. Once the file has been uploaded, you can find it in `~/wwwroot/App_Data/UmbracoForms/Data/PreValueTextFiles`.
+    Upload a textfile that contains the prevalues. Each prevalue should have its own line in the file. Once the file has been uploaded, you can find it in `~/wwwroot/App_Data/UmbracoForms/Data/PreValueTextFiles/{GUID}` where the `{GUID}`is replaced with the pre-value ID.
 
 - **Umbraco Documents**
 
