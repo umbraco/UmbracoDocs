@@ -25,4 +25,57 @@ Constructor for creating a new `Language` object where the necessary parameter i
 
 ## Properties
 
+### .CultureInfo
+
+Gets the CultureInfo object for the language.
+
+```csharp
+var language = new Language("en-US");
+return language.CultureInfo;
+```
+
+### .CultureName
+
+Gets or sets the culture name of the language.
+
+```csharp
+var language = new Language("en-US");
+return language.CultureName;
+```
+
+### .FallbackLanguageId
+
+Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help  define fallback strategies when a value does not exist for a requested language.
+
+```csharp
+var language = new Language("en-US");
+return language.FallbackLanguageId;
+```
+
+### .IsDefault
+Gets or sets a value indicating whether the language is the default language.
+
+```csharp
+var language = new Language("en-US");
+return language.IsDefault;
+```
+
+### .IsMandatory
+
+Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help define fallback strategies when a value does not exist for a requested language.
+
+```csharp
+var language = new Language("en-US");
+return language.IsMandatory;
+```
+
+### .IsoCode
+
+Gets or sets the ISO code of the language.
+
+```csharp
+var language = new Language("en-US");
+return language.IsoCode;
+```
+
 ## Methods
