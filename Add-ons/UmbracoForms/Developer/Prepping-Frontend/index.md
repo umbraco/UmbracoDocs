@@ -31,7 +31,7 @@ Alternatively, you can add the dependencies to the body tag:
 
 All dependencies originate from your Umbraco Forms installation, which means that no external references are needed.
 
-## Using jQuery (Required for versions before 8.6)
+## Using jQuery (Required for versions before 8.6.0)
 
 In earlier versions (before Umbraco Forms 8.6) jQuery, jQuery Validate, and jQuery Validate Unobtrusive are hard dependencies for client-side validation and advanced functionality such as conditional fields.
 
@@ -41,14 +41,12 @@ If you want to use jQuery as your validation framework for Umbraco Forms, you ca
 - `jQuery validate` (jQuery plugin that provides client-side form validation)
 - `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
 
-The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network).
+The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
 
-There are various CDN services you can use:
-
-- We've included references for [Microsoft CDN](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview).
+- For example: [Microsoft CDN](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview).
 - Other CDN services you might want to look at are https://www.jsdelivr.com/ and https://cdnjs.com/about, which may offer better performance and more reliable service.
 
-Here's how to add the three client dependencies below to your template within the head tags or at the bottom of the page.
+To add the three client dependencies, see the examples below:
 
 **Example within `head` tags.**
 
@@ -60,7 +58,7 @@ Here's how to add the three client dependencies below to your template within th
 </head>
 ```
 
-**Example before closing `body` tag**
+**Example within `body` tags.**
 
 When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering From Scripts](../Rendering-Scripts/index.md) article.
 
@@ -76,4 +74,4 @@ When adding the script to the bottom of the page, you will also need to render t
 
 ---
 
-Prev: [Developer Documentation](../Developer/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Rendering Forms Scripts](../Rendering-Scripts/index.md)
+Prev: [Developer Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Rendering Forms Scripts](../Rendering-Scripts/index.md)
