@@ -77,5 +77,3 @@ Gets or sets the ISO code of the language.
 var language = new Language("en-US");
 return language.IsoCode;
 ```
-
-## Methods
