@@ -1,7 +1,7 @@
 ---
 state: partial
 updated-links: false
-versiomFrom: 9.0.0
+versionFrom: 9.0.0
 verified-against: alpha-3
 meta.Title: "Umbraco Property Value Converters"
 meta.Description: "A guide to creating a custom property value converter in Umbraco"
