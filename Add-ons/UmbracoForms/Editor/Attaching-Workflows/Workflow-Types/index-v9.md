@@ -6,6 +6,16 @@ versionFrom: 9.0.0
 
 There are a couple of default workflow types that can be used to extend the functionality of your Form. Here, is an overview:
 
+- [Change Record State](#change-record-state)
+- [Post as XML](#post-as-xml)
+- [Save as an XML file](#save-as-an-xml-file)
+- [Save as Umbraco Content Node](#save-as-umbraco-content-node)
+- [Send Email](#send-email)
+- [Send Email with Template (Razor)](#send-email-with-template-razor)
+- [Send Form to URL](#send-form-to-url)
+- [Send XSLT Transformed Email](#send-xslt-transformed-email)
+- [Slack](#slack)
+
 - **Change Record State**  
 
     ![Change Record state](images/change-record-state.png)
@@ -96,11 +106,28 @@ There are a couple of default workflow types that can be used to extend the func
 
     The following configuration can be set:
 
-  - Email (required)
-  - SenderEmail - also configurable in `Config/umbracosettings.config`
-  - Subject (required)
-  - Email Template - specify which template you want to use (required)
+  - Workflow Name
+  - Email Template (required) - specify which template you want to use
   - Attachment - specify whether file uploads should be attached to the email
+  - Recipient Email (required)
+  - CC Email
+  - BCC Email
+  - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+
+    ```json
+    "Umbraco": {
+         "CMS": {
+            "Global": {
+                "Smtp": {
+                    "From": "person@umbraco.dk"
+                        }
+                    }
+                }
+            }
+    ```
+
+  - Reply To Email
+  - Subject of the email (required)
 
 - **Send Form to URL**
 
@@ -108,10 +135,12 @@ There are a couple of default workflow types that can be used to extend the func
 
     Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
+  - Workflow Name
   - URL (required)
-  - Method - POST, GET, PUT or DELETE (required)
+  - Method (required) - POST, GET, PUT or DELETE
   - Fields - map the needed fields
-  - User and password
+  - User
+  - Password
 
 - **Send XSLT Transformed Email**
 
@@ -119,21 +148,36 @@ There are a couple of default workflow types that can be used to extend the func
 
     Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
-  - Email (required)
-  - SenderEmail - also configurable in `Config/umbracosettings.config`
-  - Subject (required)
+  - Workflow Name
   - XSLT File - specify which file should be used to transform the content
+  - Recipient Email (required)
+  - CC Email
+  - BCC Email
+  - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
 
+    ```json
+    "Umbraco": {
+         "CMS": {
+            "Global": {
+                "Smtp": {
+                    "From": "person@umbraco.dk"
+                        }
+                    }
+                }
+            }
+    ```
+
+  - Reply To Email
+  - Subject of the email (required)
+  
 - **Slack**
 
     ![Send to Slack](images/email-slack.png)
 
     Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 
-  - API Token (required)
-  - Channel (required)
-  - Username (required)
-  - Avatar URL (required)
+  - Workflow Name
+  - Webhook URL (required)
 
 ---
 
