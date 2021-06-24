@@ -69,7 +69,7 @@ There are a couple of default workflow types that can be used to extend the func
   - Recipient Email (required)
   - CC Email
   - BCC Email
-  - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../Reference/V9-Config/GlobalSettings/index.md) article.
+  - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../Reference/V9-Config/GlobalSettings/index.md) article.
 
     ```json
     "Umbraco": {
