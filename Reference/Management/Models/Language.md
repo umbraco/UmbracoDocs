@@ -45,7 +45,7 @@ return language.CultureName;
 
 ### .FallbackLanguageId
 
-Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help  define fallback strategies when a value does not exist for a requested language.
+Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help define fallback strategies when a value does not exist for a requested language.
 
 ```csharp
 var language = new Language("en-US");
