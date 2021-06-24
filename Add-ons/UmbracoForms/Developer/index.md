@@ -25,7 +25,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
 
-## [Creating Custom HTML Emails](Email-Templates/index.md)
+## [Email Templates](Email-Templates/index.md)
 
 Sends custom HTML email templates using the **Send email with template (Razor)** workflow.
 

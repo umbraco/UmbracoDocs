@@ -79,4 +79,4 @@ You can also overwrite views for one or more fieldtypes by adding the views to t
 
 ---
 
-Prev: [Themes](../Themes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating custom HTML emails](../Email-Templates/index-v9.md)
+Prev: [Themes](../Themes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Email Templates](../Email-Templates/index-v9.md)
