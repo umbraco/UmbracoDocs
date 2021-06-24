@@ -62,7 +62,7 @@ return language.IsDefault;
 
 ### .IsMandatory
 
-Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help define fallback strategies when a value does not exist for a requested language.
+Gets or sets a value indicating whether the language is mandatory. When a language is mandatory, a multi-lingual document cannot be published without that language being published, and unpublishing that language unpublishes the entire document.
 
 ```csharp
 var language = new Language("en-US");
