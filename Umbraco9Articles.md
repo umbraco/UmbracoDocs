@@ -80,7 +80,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [Querying: IPublished Content](Reference/Querying/IPublishedContent/index-v9.md)
   * [Properties](Reference/Querying/IPublishedContent/Properties/index-v9.md)
 * [ModelsBuilder Configuration](Reference/Templating/Modelsbuilder/configuration-v9.md)
-* [V9 -Config](/Reference/V9-Config/)
+* [V9 -Config](Reference/V9-Config/)
 * [AuditService](Reference/Management/Services/AuditService/index-v9)
 * [ContentService](Reference/Management/Services/ContentService/index-v9)
 * [ContentTypeService](Reference/Management/Services/ContentTypeService/index-v9)
