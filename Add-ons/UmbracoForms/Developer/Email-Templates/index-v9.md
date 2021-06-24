@@ -249,4 +249,4 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 
 ---
 
-Prev: [Custom Markup](../Custom-Markup/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Record Data](../Working-With-Data/index-v9.md)
+Prev: [Custom Markup](../Custom-Markup/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Record Data](../Working-With-Data/index.md)
