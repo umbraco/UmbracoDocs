@@ -8,8 +8,6 @@ meta.Description: "Creating an email template for Umbraco Forms."
 
 From version 6+, we now include a new Workflow **Send email with template (Razor)** that allows you to pick a Razor view file that can be used to send out a *pretty HTML email* for Form submissions.
 
-We have included an example email template below to look and understand how it works. The email template can be found at `~/Views/Partials/Forms/Emails/` folder.
-
 ## Creating an Email Template
 
 If you wish to have one or more templates to choose from the **Send email with template (Razor)**, you will need to place all email templates into the `~/Views/Partials/Forms/Emails/` folder.
@@ -22,7 +20,7 @@ The Razor view must inherit from FormsHtmlModel:
 
 You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
-Below is an example of an email template:
+Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
