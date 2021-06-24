@@ -5,7 +5,11 @@ versionTo: 9.0.0
 
 # reCAPTCHA V2
 
-You need to configure your site keys adding your public and private keys in the `appSettings.json` file:
+You need to configure your site keys adding your public and private keys.
+
+## For version 9
+
+You can configure the settings in `appSettings.json` file:
 
 ```json
 "Forms": {
@@ -15,6 +19,15 @@ You need to configure your site keys adding your public and private keys in the 
       }
 }
 
+```
+
+## For version 8.x and below
+
+You can configure your public and private keys in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
+
+```xml
+<setting key="RecaptchaPublicKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG" />
+<setting key="RecaptchaPrivateKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG-" />
 ```
 
 ![reCAPTCHA v2](images/recaptcha2-v9.png)
