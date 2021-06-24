@@ -18,15 +18,15 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Change Record State**  
 
-    ![Change Record state](images/change-record-state.png)
+![Change Record state](images/change-record-state.png)
 
-    Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
+Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 
-    ![Post as XML](images/post-as-xml.png)
+![Post as XML](images/post-as-xml.png)
 
-    Used to post the Form as an XML to a specified URL. The following configuration can be set:
+Used to post the Form as an XML to a specified URL. The following configuration can be set:
 
 - Workflow Name
 - URL (required)
@@ -38,9 +38,9 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Save as an XML file**
 
-    ![Save as XML](images/save-as-an-xml-file.png)
+![Save as XML](images/save-as-an-xml-file.png)
 
-    Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
+Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
 
 - Workflow Name
 - Path (required) - where to save the XML file
@@ -49,19 +49,19 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Save as Umbraco Content Node**
 
-    ![Save as content node](images/save-as-content-node.png)
+![Save as content node](images/save-as-content-node.png)
 
-    Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
+Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
 
-    You can also choose to set a static value to fill in the properties:
+You can also choose to set a static value to fill in the properties:
 
-    ![Save as content node](images/create-new-node.png)
+![Save as content node](images/create-new-node.png)
 
-    In the example above, a Document Type called **Blogpost** is selected for creating the new Content node.
+In the example above, a Document Type called **Blogpost** is selected for creating the new Content node.
 
-    The value from the **Name** field will be added as the **Node Name** property in the new Content node and the value from the **Email** field will be used as the **Content** property.
+The value from the **Name** field will be added as the **Node Name** property in the new Content node and the value from the **Email** field will be used as the **Content** property.
 
-    The following configuration can be set:
+The following configuration can be set:
 
 - Workflow Name
 - Publish - choose whether to publish the node on submission
@@ -69,9 +69,9 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Send Email**
 
-    ![Send email](images/send-email.png)
+![Send email](images/send-email.png)
 
-    Sends the result of the Form to the specified email address. The following configuration can be set:
+Sends the result of the Form to the specified email address. The following configuration can be set:
 
 - Workflow Name
 - Message (required)
@@ -96,13 +96,13 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Send Email with Template (Razor)**
 
-    ![Send email with template](images/send-email-razor.png)
+![Send email with template](images/send-email-razor.png)
 
-    Uses a template to send the results of the Form to a specified email address.
+Uses a template to send the results of the Form to a specified email address.
 
-    You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
+You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
 
-    The following configuration can be set:
+The following configuration can be set:
 
 - Workflow Name
 - Email Template (required) - specify which template you want to use
@@ -127,9 +127,9 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Send Form to URL**
 
-    ![Send to URL](images/send-to-URL.png)
+![Send to URL](images/send-to-URL.png)
 
-    Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
+Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
 - Workflow Name
 - URL (required)
@@ -140,9 +140,9 @@ There are a couple of default workflow types that can be used to extend the func
 
 ## **Send XSLT Transformed Email**
 
-    ![Send XSLT Email](images/xslt-email.png)
+![Send XSLT Email](images/xslt-email.png)
 
-    Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
+Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
 - Workflow Name
 - XSLT File - specify which file should be used to transform the content
@@ -166,9 +166,9 @@ There are a couple of default workflow types that can be used to extend the func
   
 ## **Slack**
 
-    ![Send to Slack](images/email-slack.png)
+![Send to Slack](images/email-slack.png)
 
-    Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
+Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 
 - Workflow Name
 - Webhook URL (required)
