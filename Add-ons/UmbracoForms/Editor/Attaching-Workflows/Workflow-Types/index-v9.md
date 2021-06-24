@@ -81,6 +81,7 @@ Sends the result of the Form to the specified email address. The following confi
 - BCC Email
 - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
 
+```json
     "Umbraco": {
          "CMS": {
             "Global": {
@@ -90,6 +91,7 @@ Sends the result of the Form to the specified email address. The following confi
                     }
                 }
             }
+```
 
 - Reply To Email
 - Subject of the email (required)
@@ -112,6 +114,8 @@ The following configuration can be set:
 - BCC Email
 - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
 
+```json
+
     "Umbraco": {
          "CMS": {
             "Global": {
@@ -121,6 +125,7 @@ The following configuration can be set:
                     }
                 }
             }
+```
 
 - Reply To Email
 - Subject of the email (required)
@@ -151,6 +156,8 @@ Sends the result of the Form to an email address with full control over the emai
 - BCC Email
 - SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
 
+```json
+
     "Umbraco": {
          "CMS": {
             "Global": {
@@ -160,6 +167,7 @@ Sends the result of the Form to an email address with full control over the emai
                     }
                 }
             }
+```
 
 - Reply To Email
 - Subject of the email (required)
