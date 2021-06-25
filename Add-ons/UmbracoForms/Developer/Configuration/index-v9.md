@@ -7,6 +7,7 @@ verified-against: beta001
 ---
 
 # Configuration
+
 With Umbraco Forms it's possible to customize the functionality with various configuration values.  
 
 ## Editing configuration values
@@ -176,26 +177,30 @@ This setting needs to be a `true` or `false` value and will enable the ASP.NET A
 
 This setting needs to be a `true` or `false` value and controls whether password fields provided in forms will be saved to the database. Defaults to `false`.
 
-## Field type specific configuration 
+## Field type specific configuration
 
-### Date picker field type configuration 
+### Date picker field type configuration
 
 #### DatePickerYearRange
 
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
 
-### reCAPTCHA v2 field type configuration 
+### reCAPTCHA v2 field type configuration
 
 #### PublicKey & PrivateKey
 
-Both of these configuration values are needed in order to use the "*Recaptcha2*" field type implementing legacy ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
+Both of these configuration values are needed in order to use the "*Recaptcha2*" field type implementing legacy ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - <https://www.google.com/recaptcha/admin>
 
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
-### reCAPTCHA v3 field type configuration 
+### reCAPTCHA v3 field type configuration
 
 #### SiteKey & PrivateKey
 
 Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google.
 
-You can obtain both of these values after signing up to create a ReCaptcha key here:  https://www.google.com/recaptcha/admin.
+You can obtain both of these values after signing up to create a ReCaptcha key here:  <https://www.google.com/recaptcha/admin>.
+
+---
+
+Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Magic Strings](../Magic-Strings/index-v9.md)
