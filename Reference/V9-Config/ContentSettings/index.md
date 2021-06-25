@@ -78,7 +78,9 @@ The above example shows what you need to do if you only have a single site that 
 
 :::
 
-:::warning Remember to recycle the app pool to make sure changes to this section take effect. :::
+:::warning Remember to recycle the app pool to make sure changes to this section take effect. 
+
+:::
 
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
 
