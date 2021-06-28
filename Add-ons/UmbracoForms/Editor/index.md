@@ -27,7 +27,7 @@ Show field X if value of field Y is...
 
 Extend the functionality of your Forms by adding workflows
 
-## [Workflow Types](Attaching-Workflows/Workflow-Types/index-v9.md)
+## [Workflow Types](Attaching-Workflows/Workflow-Types/index.md)
 
 Get a full overview of the default workflow types
 
