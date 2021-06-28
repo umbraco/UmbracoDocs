@@ -13,7 +13,7 @@ Developer documentation covers working with Umbraco Forms from a developer stand
 
 Ensure you have the necessary client dependencies before adding a Form to your site.
 
-## [Rendering Forms Scripts](Rendering-Scripts/index.md)
+## [Rendering Forms Scripts](Rendering-Scripts/index-v9.md)
 
 Control where you want Forms to render its JavaScript.
 
@@ -25,7 +25,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
 
-## [Email Templates](Email-Templates/index.md)
+## [Email Templates](Email-Templates/index-v9.md)
 
 Sends custom HTML email templates using the **Send email with template (Razor)** workflow.
 
