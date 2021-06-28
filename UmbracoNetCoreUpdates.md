@@ -122,16 +122,16 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:
 
     ```none
-    dotnet new umbraco -n MyCustomUmbracoSolution
+    dotnet new umbraco -n MyCustomUmbracoProject
     ```
 
     Or if you prefer to using SQL CE:
 
     ```none
-    dotnet new umbraco --SqlCe -n MyCustomUmbracoSolution
+    dotnet new umbraco --SqlCe -n MyCustomUmbracoProject
     ```
 
-You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
+You will now have a new project with the name `MyCustomUmbracoProject`, or whichever name you chose.
 
 The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
 
@@ -142,7 +142,7 @@ The following steps, will continue using CLI based on the steps above.
 1. Navigate to the newly created project folder:
 
     ```none
-    cd MyCustomUmbracoSolution
+    cd MyCustomUmbracoProject
     ```
 
 2. Build and run the new Umbraco .Net Core project:
@@ -197,7 +197,7 @@ The file contains an `msbuild` target that is executed on build when a project h
 Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template. You can now write:
 
 ```none
-dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoProject -p MyCustomUmbracoPackage
 ```
 
 This new `-P` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
