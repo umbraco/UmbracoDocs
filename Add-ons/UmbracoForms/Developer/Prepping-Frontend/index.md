@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 versionTo: 9.0.0
 ---
 
-# Preparing your frontend
+# Preparing your Frontend
 
 For Umbraco Forms to work correctly, you need to include some client dependencies.
 
