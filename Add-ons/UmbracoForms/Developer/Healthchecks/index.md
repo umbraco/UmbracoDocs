@@ -1,13 +1,14 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 meta.Title: "Healthchecks"
 ---
 
 # Health Checks
 
-In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly. 
+In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly.
 
-Read the [Health Check](../../../Extending/Health-Check) article to learn more about the feature in general.
+Read the [Health Check](../../../../Extending/Health-Check/index-v9.md) article to learn more about the feature in general.
 
 ## Database Integrity Health Check
 
@@ -29,11 +30,12 @@ There shouldn't be - but without these constraints in place it's always possible
 
 ### Running The Health Check
 
-To run the health check, navigate to the Health Check dashboard in the Settings section in the Umbraco backoffice. Click on the _Forms_ button and select _Check Group_.
+To run the health check:
 
-You'll see a result that looks something like this:
-
-![Umbraco Forms Health Check](images/healthcheck.png)
+1. Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.
+ ![Umbraco Forms Health Check](images/Umb-backoffice.png)
+2. Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this:
+ ![Umbraco Forms Health Check](images/healthcheck.png)
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 
@@ -67,7 +69,7 @@ If you look in the SQL script you'll see that in order to apply this directly to
 ALTER TABLE dbo.UFForms
 ADD CONSTRAINT UK_UFForms_Key UNIQUE NONCLUSTERED 
 (
-	[Key] ASC
+ [Key] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 ```
@@ -97,9 +99,9 @@ To see the full details of the duplicate records, you can use this query:
 SELECT *
 FROM UFForms
 WHERE [Key] IN (SELECT [Key]
-	FROM UFForms
-	GROUP BY [Key]
-	HAVING COUNT(*) > 1
+ FROM UFForms
+ GROUP BY [Key]
+ HAVING COUNT(*) > 1
 )
 ```
 
@@ -115,3 +117,7 @@ To support this, we provide the following SQL scripts:
 
 - Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](scripts/Apply-keys.md#revert-application-of-keys-and-indexes)
 - Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/Forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
+
+---
+
+Prev: [Magic Strings](../Magic-Strings/index.md)
