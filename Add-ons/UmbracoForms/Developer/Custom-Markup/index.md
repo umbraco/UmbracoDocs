@@ -67,13 +67,13 @@ This can be customized but it's important to keep the ID of the control to `@Mod
 
 ### Customizing for a Specific Form
 
-In Forms 4, it is also possible to customize the markup for a specific form.
+In Forms 4, it is also possible to customize the markup for a specific Form.
 
-You will need to create folder using the ID of the form: `~\Views\Partials\Forms\{FormId}` (find the id of the form in the URL when you are viewing the form in the backoffice.)
+You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the form in the backoffice.)
 
 ![Form GUID](images/form-guid.png)
 
-As an example if your form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
+As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 
 You can also overwrite views for one or more fieldtypes by adding the views to the folder: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml`.
 
