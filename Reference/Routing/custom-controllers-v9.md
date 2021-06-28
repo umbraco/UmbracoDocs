@@ -30,7 +30,7 @@ This replacement of the default controller can either be made 'globally' for all
 
 In the following example, imagine an Umbraco site with a set of 'product' pages created from a Document Type called 'Product Page' with an alias 'productPage'.
 
-Create a custom locally declared controller in the Umbraco web application project (or App_Code folder for website projects) named 'ProductPageController'.
+Create a custom locally declared controller in the Umbraco web application project named 'ProductPageController'.
 
 Ensure that this controller inherits from the base controller `Umbraco.Cms.Web.Common.Controllers.RenderController`.
 
