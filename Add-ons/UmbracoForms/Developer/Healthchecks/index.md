@@ -52,9 +52,9 @@ As well as in the log files, such issues will be visible via the health check an
 To support this, we provide the following SQL scripts:
 
 - Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](scripts/Apply-keys.md)
-- Apply database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/Forms-in-the-database-apply-keys.md)
+- Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/Forms-in-the-database-apply-keys.md)
 
-The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when forms are stored in the database, and hence only need to be applied if that option is configured.
+The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
 
 :::note
 Before running any scripts or queries, please be sure to have a database backup in place.
@@ -105,7 +105,7 @@ WHERE [Key] IN (SELECT [Key]
 )
 ```
 
-From the `Id` field you can identify the form records that are duplicated and should be removed, and delete the records.  To check you have found them all, run one of the above queries again, and confirm you find no records returned.
+From the `Id` field you can identify the Form records that are duplicated and should be removed, and delete the records.  To check you have found them all, run one of the above queries again, and confirm you find no records returned.
 
 Finally you can run the `ALTER TABLE...` statement shown above to apply the constraint, and confirm via the health check that it's now in place.
 
@@ -116,7 +116,7 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 To support this, we provide the following SQL scripts:
 
 - Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](scripts/Apply-keys.md#revert-application-of-keys-and-indexes)
-- Revert database integrity schema changes for 8.7.0 (forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/Forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
+- Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/Forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
 
 ---
 
