@@ -6,7 +6,7 @@ meta.Description: "Developer documentation on working with Forms record data."
 
 # Working with Record Data
 
-Umbraco Forms `v8.2` includes some helper methods that return records of a given form, which can be used to output records in your templates using razor.
+Umbraco Forms `v8.2` includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
 
 ## Available Methods
 
@@ -34,7 +34,7 @@ Returns all records with the state set to approved from the Form with the id = `
 PagedResult<IRecord> GetApprovedRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the form with the ID = `formId` as a `PagedResult<IRecord>`.
+Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedResult<IRecord>`.
 
 ### GetRecordsFromPage
 
@@ -42,7 +42,7 @@ Returns all records with the state set to approved from the form with the ID = `
 PagedResult<IRecord> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
-Returns all records from all forms on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
+Returns all records from all Forms on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
 
 ### GetRecordsFromFormOnPage
 
@@ -50,7 +50,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid.Parse("formId"), int pageNumber, int pageSize)
 ```
 
-Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
+Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<IRecord>`.
 
 ### GetRecordsFromForm
 
@@ -58,7 +58,7 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 PagedResult<IRecord> GetRecordsFromForm(Guid.Parse("formId"), int pageNumber, int pageSize)
 ```
 
-Returns all records from the form with the ID = formId as a `PagedResult<IRecord>`.
+Returns all records from the Form with the ID = formId as a `PagedResult<IRecord>`.
 
 ## The returned objects
 
@@ -79,14 +79,14 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom form fields, these are available in the `RecordFields` property.
+In order to access custom Form fields, these are available in the `RecordFields` property.
 Furthermore there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
 
 This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
 
 ## Sample razor script
 
-Sample script that is outputting comments using a form created with the default comment form template.
+Sample script that is outputting comments using a Form created with the default comment Form template.
 
 ```csharp
 @using Umbraco.Core;
