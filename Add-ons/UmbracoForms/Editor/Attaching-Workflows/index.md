@@ -37,4 +37,4 @@ Fill in the settings and hit **Submit**. The workflow is added to your Form and 
 
 ---
 
-Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md)
+Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Attaching-Workflows/Workflow-Types/index-v9.md)
