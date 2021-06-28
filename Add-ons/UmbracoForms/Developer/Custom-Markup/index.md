@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 versionTo: 9.0.0
 meta.Title: "Umbraco Forms custom markup"
-meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output."
+meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
 ---
 
 # Custom Markup
@@ -16,11 +16,11 @@ This will ensure that nothing is overwritten when you upgrade Forms to a newer v
 
 ## Customizing the Default Views
 
-The razor macro uses some razor views to output the form:
+The razor macro uses some razor views to output the Form:
 
 * 1 view for each fieldtype
 * 1 view for the scripts
-* 1 view for the rest of the form
+* 1 view for the rest of the Form
 
 You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder if you are using Forms 6+, or in the `~\Views\Partials\Forms\`folder if you are using Forms 4.
 
@@ -28,11 +28,11 @@ To avoid your custom changes to the default views from being overwritten, you ne
 
 ### Form.cshtml
 
-This is the main view responsible for rendering the form markup.
+This is the main view responsible for rendering the Form markup.
 
-The view is separated into two parts, one is the actual form and the other will be shown if the form is submitted.
+The view is separated into two parts, one is the actual Form and the other will be shown if the Form is submitted.
 
-This view can be customized, if you do so it will be customized for all your forms.
+This view can be customized, if you do so it will be customized for all your Forms.
 
 ### Script.cshtml
 
