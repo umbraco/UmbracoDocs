@@ -10,4 +10,4 @@ If you are upgrading to Umbraco 9 and using Forms, you should first migrate the 
 
 ---
 
-Prev: [Working with Record Data](../Working-With-Data/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Extending](../Extending/index.md)
+Prev: [Working with Record Data](../Working-With-Data/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Extending](../Extending/index.md)
