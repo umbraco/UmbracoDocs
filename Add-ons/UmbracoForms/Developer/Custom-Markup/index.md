@@ -63,13 +63,13 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
 
-This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
+This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
 ### Customizing for a Specific Form
 
 In Forms 4, it is also possible to customize the markup for a specific Form.
 
-You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the form in the backoffice.)
+You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the Form in the backoffice.)
 
 ![Form GUID](images/form-guid.png)
 
