@@ -389,7 +389,7 @@ public class MyRenderingDefaults : IUmbracoRenderingDefaults
 }
 ```
 
-After creating your own `RenderingDefaults` you can create the extionson method where the UmbracoRenderingDefaults will be removed from the container and your own RenderingDefaults will be added.
+After creating your own `RenderingDefaults` you can create the extension method where the UmbracoRenderingDefaults will be removed from the container and your own RenderingDefaults will be added.
 
 ```csharp
 public static class UmbracoBuilderExtensions
