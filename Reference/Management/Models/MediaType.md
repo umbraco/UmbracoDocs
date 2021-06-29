@@ -235,14 +235,14 @@ return mediaType.Thumbnail;
 Adds a new `MediaType` to the list of composite MediaTypes.
 
 ```csharp
-// Given a `ContentTypeService` object get a few MediaTypes by their alias
+// Given a `MediaTypeService` object get a few MediaTypes by their alias
 // and add the 'Meta' and 'SEO' MediaTypes to the composition of the 'Video' MediaType.
-var metaContentType = contentTypeService.GetMediaType("meta");
-var seoContentType = contentTypeService.GetMediaType("seo");
-var videoContentType = contentTypeService.GetMediaType("video");
+var metaContentType = mediaTypeService.Get("meta");
+var seoContentType = mediaTypeService.Get("seo");
+var videoContentType = mediaTypeService.Get("video");
 videoContentType.AddContentType(metaContentType);
 videoContentType.AddContentType(seoContentType);
-contentTypeService.Save(videoContentType);
+mediaTypeService.Save(videoContentType);
 ```
 
 ### .CompositionAliases()
@@ -250,11 +250,12 @@ contentTypeService.Save(videoContentType);
 Returns an `Enumerable` list of MediaType aliases as `String` from the current composition.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias and loop through CompositionAliases
-var mediaType = contentTypeService.GetMediaType("video");
+// Given a `MediaTypeService` object get a MediaType by its alias and loop through CompositionAliases
+var mediaType = mediaTypeService.Get("video");
 var aliases = mediaType.CompositionAliases();
-foreach(var alias in aliases){
-    string alias = alias;
+foreach (var alias in aliases)
+{
+    string a = alias;
 }
 ```
 
@@ -263,11 +264,12 @@ foreach(var alias in aliases){
 Returns an `Enumerable` list of MediaType Ids as `Int` from the current composition.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias and loop through CompositionIds
-var mediaType = contentTypeService.GetMediaType("video");
+// Given a `MediaTypeService` object get a MediaType by its alias and loop through CompositionIds
+var mediaType = mediaTypeService.Get("video");
 var ids = mediaType.CompositionIds();
-foreach(var id in ids){
-    string id = id;
+foreach (var id in ids)
+{
+    int i = id;
 }
 ```
 
@@ -276,9 +278,9 @@ foreach(var id in ids){
 Checks if a `MediaType` with the supplied alias exists in the list of composite MediaTypes.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias
+// Given a `MediaTypeService` object get a MediaType by its alias
 // and check if a given MediaType exists in the composition of the 'Video' MediaType.
-var mediaType = contentTypeService.GetMediaType("video");
+var mediaType = mediaTypeService.Get("video");
 bool result = mediaType.ContentTypeCompositionExists("meta");
 ```
 
@@ -287,12 +289,12 @@ bool result = mediaType.ContentTypeCompositionExists("meta");
 Removes a `MediaType` with the supplied alias from the list of composite MediaTypes.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias and
+// Given a `MediaTypeService` object get a MediaType by its alias and
 // remove the 'Meta' MediaType from its composition.
-var mediaType = contentTypeService.GetMediaType("video");
+var mediaType = mediaTypeService.Get("video");
 bool success = mediaType.RemoveContentType("meta");
-if(success)
-    contentTypeService.Save(mediaType);
+if (success)
+    mediaTypeService.Save(mediaType);
 ```
 
 ### .RemovePropertyType(string propertyTypeAlias)
@@ -300,10 +302,9 @@ if(success)
 Removes a `PropertyType` from the current `MediaType`.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias
+// Given a `MediaTypeService` object get a MediaType by its alias
 // and remove a PropertyType from the list of PropertyTypes.
-var mediaType = contentTypeService.GetMediaType("video");
-PropertyType propertyType = mediaType.PropertyTypes.First(x => x.Alias == "uploader");
-mediaType.RemovePropertyType(propertyType);
-contentTypeService.Save(mediaType);
+var mediaType = mediaTypeService.Get("video");
+mediaType.RemovePropertyType("uploader");
+mediaTypeService.Save(mediaType);
 ```
