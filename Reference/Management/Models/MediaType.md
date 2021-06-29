@@ -4,13 +4,9 @@ versionFrom: 8.0.0
 
 # MediaType
 
-:::note
-Applies to Umbraco 6.0.0+
-:::
-
 A MediaType is almost the same as a [ContentType](ContentType.md). I.e. a model / data definition for your media nodes.
 
-You can set icon, thumbnail and description. It is also possible to add tabs and properties.
+You can set icon, thumbnail and description. It is also possible to add groups and properties.
 
 A Media Type differs from a Document Type in that it has no templates.
 
@@ -37,6 +33,10 @@ Constructor for creating a new `MediaType` object where the necessary parameter 
 ### new MediaType(IMediaType parent)
 
 Constructor for creating a new `MediaType` object where the necessary parameter is the parent `MediaType` as an `IMediaType` object.
+
+### new MediaType(IMediaType parent, string alias)
+
+Constructor for creating a new `MediaType` object where the necessary parameters are the parent `MediaType` as an `IMediaType` object and the alias od the `MediaType` as a `string`.
 
 ## Properties
 
