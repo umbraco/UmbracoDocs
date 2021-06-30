@@ -384,10 +384,11 @@ Default setting can be changed in the Umbraco:CMS:WebRouting section of appsetti
 ```
 
 
-### Site Domain Helper
+### Site Domain Mapper
+
 The `ISiteDomainMapper` implementation is used in the IUrlProvider and filters a list of <c>DomainAndUri</c> to pick one that best matches the current request.
 
-Create a custom SiteDomainHelper by implementing ISiteDomainMapper
+Create a custom SiteDomainMapper by implementing ISiteDomainMapper
 
 ```csharp
 public interface ISiteDomainMapper
@@ -397,11 +398,11 @@ public interface ISiteDomainMapper
 }
 ```
 
-The MapDomain methods will receive the Current Uri of the request, and custom logic can be implemented to decide upon the preferred domain to use for a site in the context of that request. The SiteDomainHelper's role is to get the current Uri and all eligible domains, and only return one domain which is then used by the UrlProvider to create the Url.
+The MapDomain methods will receive the Current Uri of the request, and custom logic can be implemented to decide upon the preferred domain to use for a site in the context of that request. The SiteDomainMapper's role is to get the current Uri and all eligible domains, and only return one domain which is then used by the UrlProvider to create the Url.
 
 Only a single SiteDomainMapper can be registered with Umbraco.
 
-Register the custom SiteDomainHelper with Umbraco using the `SetSiteDomainHelper` extension method
+Register the custom SiteDomainMapper with Umbraco using the `SetSiteDomainHelper` extension method
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -420,7 +421,7 @@ namespace RoutingDocs.SiteDomainMapper
 }
 ```
 
-### Default SiteDomainHelper
+### Default SiteDomainMapper
 
 Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together.
 With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
@@ -433,25 +434,50 @@ What the editor sees without any SiteDomainMapper, visiting the backoffice url:
 
 Which is 'noise' and can lead to confusion: accidentally clicking the staging url, which is likely to be served from a different environment / different database etc may display the wrong content...
 
-To avoid this problem, use the default SiteDomainMapper's AddSite method to group Urls together:
+To avoid this problem, use the default SiteDomainMapper's AddSite method to group Urls together.
+
+Since the SiteDomainMapper is registered in the DI, we can't consume it directly from a composer, so first create a component which adds the sites in the initialize method:
 
 ```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Routing;
 
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Web.Routing;
-
-namespace Umbraco8.Composers
+namespace RoutingDocs.SiteDomainMapping
 {
-    public class SiteDomainHelperComposer : IUserComposer
+    public class SiteDomainMapperComponent : IComponent
     {
-        public void Compose(Composition composition)
+        private readonly SiteDomainMapper _siteDomainMapper;
+
+        public SiteDomainMapperComponent(ISiteDomainMapper siteDomainMapper)
         {
-            SiteDomainHelper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-            SiteDomainHelper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-            SiteDomainHelper.AddSite("staging", "umbraco-v8-staging.localtest.me");
+            // SiteDomainMapper can be overwritten, so ensure it's the default one which contains the AddSite
+            if (siteDomainMapper is SiteDomainMapper concreteSiteDomainMapper)
+            {
+                _siteDomainMapper = concreteSiteDomainMapper;
+            }
         }
+        public void Initialize()
+        {
+            _siteDomainMapper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
+            _siteDomainMapper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
+            _siteDomainMapper.AddSite("staging", "umbraco-v8-staging.localtest.me");
+        }
+
+        public void Terminate()
+        { }
     }
+}
+```
+
+Then add the component with a composer:
+
+```C#
+using Umbraco.Cms.Core.Composing;
+
+namespace RoutingDocs.SiteDomainMapping
+{
+    public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
+    { }
 }
 ```
 
@@ -467,16 +493,16 @@ NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a grou
 
 #### Grouping the groupings - BindSites
 
-The SiteDomainHelper contains a 'BindSites' method that enables different site groupings to be bound together:
+The SiteDomainMapper contains a 'BindSites' method that enables different site groupings to be bound together:
 
 ```csharp
-    public void Compose(Composition composition)
-        {
-            SiteDomainHelper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-            SiteDomainHelper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-            SiteDomainHelper.AddSite("staging", "umbraco-v8-staging.localtest.me");
-            SiteDomainHelper.BindSites("backoffice", "staging");
-        }
+public void Initialize()
+{
+    _siteDomainMapper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
+    _siteDomainMapper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
+    _siteDomainMapper.AddSite("staging", "umbraco-v8-staging.localtest.me");
+    _siteDomainMapper.BindSites("backoffice", "staging");
+}
 ```
 
 Visiting the backoffice now via umbraco-v8-backoffice.localtest.me/umbraco would list all the 'backoffice' grouped domains AND all the 'staging' grouped domains.
