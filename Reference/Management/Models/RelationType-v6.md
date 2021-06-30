@@ -1,6 +1,6 @@
 ---
 keywords: relation type RelationType relations related
-versionFrom: 8.0.0
+versionFrom: 6.0.0
 ---
 # RelationType
 
