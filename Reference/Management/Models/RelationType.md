@@ -29,6 +29,7 @@ Constructor for creating a new RelationType object where the necessary parameter
 ## Properties
 
 ### .Name
+
 Gets or sets the Name of the RelationType as a `String`.
 
 ```csharp
@@ -38,6 +39,7 @@ return relationType.Name;
 ```
 
 ### .Alias
+
 Gets or sets the Alias of the RelationType as `String`.
 
 ```csharp
@@ -47,6 +49,7 @@ return relationType.Alias;
 ```
 
 ### .IsBidirectional
+
 Gets or sets a `boolean` indicating whether the RelationType is Bidirectional (true) or Parent to Child (false)
 
 ```csharp
@@ -56,6 +59,7 @@ return relationType.IsBidirectional;
 ```
 
 ### .ParentObjectType
+
 Gets or sets the Parents object type key as `Guid`
 
 ```csharp
@@ -65,6 +69,7 @@ return relationType.ParentObjectType;
 ```
 
 ### .ChildObjectType
+
 Gets or sets the Childs object type key as `Guid`
 
 ```csharp
