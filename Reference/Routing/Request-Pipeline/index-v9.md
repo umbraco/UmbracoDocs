@@ -21,9 +21,9 @@ The request pipeline is the process of building up the URL for a node, resolving
 
 ### Outbound vs Inbound
 
-The pipeline works bidirectional: **[inbound](inbound-pipeline-v9.md)** and **[outbound](outbound-pipeline.md)**.
+The pipeline works bidirectional: **[inbound](inbound-pipeline-v9.md)** and **[outbound](outbound-pipeline-v9.md)**.
 
-**[Outbound](outbound-pipeline.md)** is the process of building up a URL for a requested node. **[Inbound](inbound-pipeline-v9.md)** is every request received by the web server and handled by Umbraco.
+**[Outbound](outbound-pipeline-v9.md)** is the process of building up a URL for a requested node. **[Inbound](inbound-pipeline-v9.md)** is every request received by the web server and handled by Umbraco.
 
 ### Customizing the pipeline
 
