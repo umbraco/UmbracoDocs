@@ -107,8 +107,12 @@ ASP.NET Core supports multiple ways to share keys. Use the [official docs](https
 
 
 ### Session State and Distributed Cache
+It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
 
-* If you use Session in your application, or are using the default TempDataProvider in MVC (which uses Session) then you will need to configure your application to use the `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+Because Umbraco in some cases uses TempData, your setup needs to be configured with a distributed cache.
+
+
 
 ### Logging
 
