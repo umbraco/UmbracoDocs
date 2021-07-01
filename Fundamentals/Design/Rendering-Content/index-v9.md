@@ -83,11 +83,11 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
     ```csharp
     // For projects created before January 2020
     @Model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
-    @Model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+    @Model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: new HtmlString("Default page title"))
 
     // For projects created after January 2020
     @Model.ValueFor(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
-    @Model.ValueFor(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+    @Model.ValueFor(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: new HtmlString("Default page title"))
     ```
 
   - Fall-back languages can be configured via the **Languages** tree within the **Settings** section.  
