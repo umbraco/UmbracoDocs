@@ -20,7 +20,7 @@ Describes the various Umbraco special/reserved Property Type aliases that can be
 ## [Surface Controllers](surface-controllers-v9.md)
 What is a Surface Controller and how to use them?
 
-## [Api Controllers](WebApi/index.md)
+## [Api Controllers](WebApi/index-v9.md)
 What is an API Controller and how to use them?
 
 ## [Custom controllers (hijacking routes)](custom-controllers.md)
