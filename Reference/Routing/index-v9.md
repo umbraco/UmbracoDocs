@@ -29,7 +29,7 @@ Creating custom controllers to have 100% full control over how your pages are re
 ## [Custom routes](custom-routes.md)
 How to specify your own custom MVC routes in your Umbraco application?
 
-## [Routes & Authentication](Authorized/index.md)
+## [Routes & Authentication](Authorized/index-v9.md)
 Routing requirements for authenticated controllers for both front-end and the backoffice.
 
 ## [URL Tracking](URL-Tracking/index.md)
