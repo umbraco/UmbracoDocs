@@ -36,11 +36,5 @@ API reference for the Relation class.
 ## [RelationType](RelationType.md)
 API reference for the RelationType class.
 
-## Task
-API reference for the Task class.
-
-## TaskType
-API reference for the TaskType class.
-
 ## [Template](Template.md)
 API reference for the Template class.
