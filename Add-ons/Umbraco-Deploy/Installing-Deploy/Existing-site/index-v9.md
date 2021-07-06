@@ -1,7 +1,9 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Installing Umbraco Deploy on an existing Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on an existing Umbraco website"
+state: complete
+verified-against: beta001
 ---
 
 # Installing Umbraco Deploy on an existing project
@@ -42,16 +44,15 @@ When the production database, folder and files have been copied down, it's time 
 
 ### Set up Git repository and Umbraco project
 
-The next step to get Umbraco Deploy up and running is to set up a repository and install Umbraco into it using [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+The next step to get Umbraco Deploy up and running is to set up a repository and install Umbraco into it.
 
 1. Set up a repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
-3. Create a new Visual Studio project in the repository folder.
-4. Install Umbraco CMS through NuGet - `Install-Package UmbracoCms`.
-5. Use the copy of your production Database when setting up the database for the emppty project.
-6. Add the `/Views` folder as well as the folders holding your css files and scripts.
-7. Commit the files so they are ready to be pushed up once you have set up the build server.
-8. Run the project.
+3. [Create a new Umbraco V9 project](/UmbracoNetCoreUpdates).
+4. Use the copy of your production Database when setting up the database for the emppty project.
+5. Add the `/Views` folder as well as the folders holding your css files and scripts.
+6. Commit the files so they are ready to be pushed up once you have set up the build server.
+7. Run the project.
 
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
@@ -64,9 +65,9 @@ After the Umbraco files have been committed add the following lines to the .giti
 **/data/deploy*
 ```
 
-### Installing and Setting Up Umbraco Deploy
+### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index-v9).
 
 ### Set up CI/CD Pipeline
 
