@@ -318,7 +318,7 @@ For example:
 
     public override IActionResult Index()
     {
-        var products = __madeUpProductService.GetProductsByPage(page);
+        var products = _madeUpProductService.GetProductsByPage(page);
     ...
     }
 ```
