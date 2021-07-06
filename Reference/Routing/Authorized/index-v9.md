@@ -46,26 +46,21 @@ public class MyControllerComposer : IUserComposer
     {
         builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
-            options.AddFilter(new UmbracoPipelineFilter(
-                "CustomBackOfficeController",
-                applicationBuilder => {},
-                applicationBuilder => {},
-                applicationBuilder =>
+            options.AddFilter(new UmbracoPipelineFilter(nameof(MyController))
+            {
+                Endpoints = app => app.UseEndpoints(endpoints =>
                 {
-                    applicationBuilder.UseEndpoints(endpoints =>
-                    {
-                        var globalSettings = applicationBuilder.ApplicationServices
-                            .GetRequiredService<IOptions<GlobalSettings>>().Value;
-                        var hostingEnvironment = applicationBuilder.ApplicationServices
-                            .GetRequiredService<IHostingEnvironment>();
-                        var backofficeArea = Constants.Web.Mvc.BackOfficePathSegment;
+                    var globalSettings = app.ApplicationServices
+                        .GetRequiredService<IOptions<GlobalSettings>>().Value;
+                    var hostingEnvironment = app.ApplicationServices
+                        .GetRequiredService<IHostingEnvironment>();
+                    var backofficeArea = Constants.Web.Mvc.BackOfficePathSegment;
 
-                        var rootSegment = $"{globalSettings.GetUmbracoMvcArea(hostingEnvironment)}/{backofficeArea}";
-                        var areaName = "MyPackageName";
-                        endpoints.MapUmbracoRoute<MyController>(rootSegment, areaName, areaName);
-                    });
-                }
-            ));
+                    var rootSegment = $"{globalSettings.GetUmbracoMvcArea(hostingEnvironment)}/{backofficeArea}";
+                    var areaName = "MyPackageName";
+                    endpoints.MapUmbracoRoute<MyController>(rootSegment, areaName, areaName);
+                })
+            });
         });
     }
 }
