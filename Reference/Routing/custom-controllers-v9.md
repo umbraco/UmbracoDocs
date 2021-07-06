@@ -188,7 +188,7 @@ public class MyProductViewModel : PublishedContentWrapped
 Using Modelsbuilder you will find that all the generated models have a constructor that takes an IPublishedContent item in a similar way:
 
 ```csharp
-public class MyProductViewModel : ContactPage
+public class MyProductViewModel : ProductPage
 {
     // The PublishedContentWrapped accepts an IPublishedContent item as a constructor
     public MyProductViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
