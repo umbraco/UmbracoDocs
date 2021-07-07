@@ -9,7 +9,7 @@ In this article you will find links to sections and articles that have been veri
 
 You will also find a number of new articles, written only for Umbraco 9.
 
-Find general updates and more resources on the Umbraco 9 project in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
+Find general updates and more resources on the Umbraco 9 project in the [Umbraco on .NET 5+ Updates](UmbracoNetCoreUpdates.md) article.
 
 :::note
 Please be aware that links to API documentation and other resources might not have been updated yet.
