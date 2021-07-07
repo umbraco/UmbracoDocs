@@ -74,7 +74,7 @@ As this is an **beta release**, bugs and minor issues are to be expected.
 
 You can find a list of known issues [on this page](#known-issues-and-missing-parts-in-current-beta-release)
 
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
+Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml). 
 :::
 
 To get started, follow the steps outlined below.
@@ -84,7 +84,7 @@ To get started, follow the steps outlined below.
 
 ### Prerequisites
 
-* [.Net 5 SDK](https://dotnet.microsoft.com/download)
+* [.NET 5 SDK](https://dotnet.microsoft.com/download)
 * SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
 
 ### Steps to install the Umbraco `dotnet new` template
