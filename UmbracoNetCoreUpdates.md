@@ -1,18 +1,18 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
+meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
 ---
 
-# Umbraco .NET Core
+# Umbraco on .NET 5+
 
 :::note
-This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco on .NET 5.
 
-Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
+Are you aware of some information about Umbraco on .NET 5 that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-9-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
@@ -67,13 +67,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco 9 (.NET Core) Beta
-
-As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
-
-Since April 28th 2021, the first beta release has been available.
-
-More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/) and [the beta release blog post](https://umbraco.com/blog/umbraco-9-beta-release/).
+## Umbraco 9 (.NET 5) Beta
 
 :::warning
 As this is an **beta release**, bugs and minor issues are to be expected.
