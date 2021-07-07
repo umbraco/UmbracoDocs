@@ -348,7 +348,11 @@ See [Composing](../../Implementation/Composing/) for further information.
 ## Replace Umbraco's default `RenderController`
 
 You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests.
-This is possible by assigning your own default controller during initialization. One way to achieve this is to create an extension method. First of all you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
+This is possible by assigning your own default controller type in the Umbraco setup during initialization.
+
+You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in the  `ConfigureServices` method in the `Startup.cs` class.
+
+First of all you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
 
 Implement the `IRenderController`:
 
@@ -380,33 +384,11 @@ public class MyRenderController : RenderController
 }
 ```
 
-The next step is to create your own renderings defaults. Create a class that implements the `IUmbracoRenderingDefaults` and set the type of the DefaultControllerType property.
+Last step is to use your `SetDefaultRenderController` extension method. You can do that in the `ConfigureServices` method in the `Startup.cs` class.
 
-```csharp
-public class MyRenderingDefaults : IUmbracoRenderingDefaults
-{
-    public Type DefaultControllerType => typeof(MyRenderController);
-}
-```
-
-After creating your own `RenderingDefaults` you can create the extension method where the UmbracoRenderingDefaults will be removed from the container and your own RenderingDefaults will be added.
-
-```csharp
-public static class UmbracoBuilderExtensions
-{
-    public static IUmbracoBuilder SetDefaultRenderController(this IUmbracoBuilder builder)
-    {
-        var umbracoRenderingDefaults = builder.Services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(UmbracoRenderingDefaults));
-        builder.Services.Remove(umbracoRenderingDefaults);
-
-        builder.Services.AddSingleton<IUmbracoRenderingDefaults, MyRenderingDefaults>();
-
-        return builder;
-    }
-}
-```
-
-Last step is to use your `SetDefaultRenderController` extension method. You can do that in the `ConfigureServices` method in the `Startup.cs` class. It is important to call the `SetDefaultRenderController` method after the `AddWebsite` method.
+:::warning  
+It is important to call the `SetDefaultRenderController` method after the `AddWebsite` method.
+:::
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -417,5 +399,11 @@ public void ConfigureServices(IServiceCollection services)
         .SetDefaultRenderController()
         .AddComposers()
         .Build();
+
+    // Configure Umbraco Render Controller Type
+    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+    {
+        c.DefaultControllerType = typeof(MyRenderController);
+    });
 }
 ```
