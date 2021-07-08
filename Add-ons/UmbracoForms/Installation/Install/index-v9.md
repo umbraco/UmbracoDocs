@@ -29,8 +29,10 @@ To install the Umbraco Forms package (**Umbraco.Forms.9.0.0-beta001**), follow t
 
 ## Start Building Forms
 
-Once the installation is successful you will be able to start using Umbraco Forms.
-
-For details on using Forms, check out the [Editor Documentation](../../Editor)
+Once the installation is successful, you will see a similar screen in the Forms section:
 
 ![Create form](images/start-with-forms-v9.png)
+
+## Using Forms
+
+For details on using Forms, see the [Editor Documentation](../../Editor).
