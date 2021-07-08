@@ -23,7 +23,7 @@ What is a Surface Controller and how to use them?
 ## [Api Controllers](WebApi/index-v9.md)
 What is an API Controller and how to use them?
 
-## [Custom controllers (hijacking routes)](custom-controllers.md)
+## [Custom controllers (hijacking routes)](custom-controllers-v9.md)
 Creating custom controllers to have 100% full control over how your pages are rendered. AKA: Hijacking Umbraco Routes
 
 ## [Custom routes](custom-routes.md)
