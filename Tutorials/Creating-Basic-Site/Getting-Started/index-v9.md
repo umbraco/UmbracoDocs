@@ -20,24 +20,11 @@ To download the latest version of Umbraco, refer to the [Installation article](.
 
 1. Enter your **Name**, **Email**, and **Password**.
     ![Installing Umbraco](images/figure-7-installing-umbraco-v9.png)
-2. Click **Customize**.
-3. In the **Configure an ASP.Net Machine Key** window, click **Continue**.
-4. In the **Configure your database** window, leave the default selection and click **Continue**.
-5. In the **Install a starter website**, click **No thanks, I do not want to install a starter website**.
-    ![Starter Website](images/figure-8-starter-website.png)
-6. The installation will take a couple of minutes to complete.
-7. Once the installation is complete, you will see the **Login** screen. You can enter the **Name** and **Password** used during the installation process.
-
-### Verifying your Umbraco Installation
-
-When you run your localhost address (<http://localhost:xxxx>), you will see the **Welcome to your Umbraco installation** screen.
-![Welcome to your Umbraco installation screen](images/figure-3-empty-umbraco-install-v8.png)
-
-If you see the starter kit, you need to re-install Umbraco. To re-install Umbraco, follow these steps:
-
-1. Delete the folder from where you run the localhost.
-2. Unzip the downloaded Umbraco installation folder and open the extracted folder in VS Code.
-3. Run localhost in your browser and complete the [installation steps](#installing-umbraco).
+2. Click **Nexr**.
+3. In the **Configure your database** window, enter the connection and authentication details for the database you want to install Umbraco.
+4. Click **Continue**.
+5. The installation will take a couple of minutes to complete.
+6. Once the installation is complete, you will see the **Umbraco Backoffice** screen.
 
 ### Preparing the Custom Umbraco Template Site
 
