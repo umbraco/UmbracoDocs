@@ -1,41 +1,45 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 meta.Title: "Umbraco Forms custom markup"
-meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output."
+meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
 ---
 
-# Custom markup
-With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output.
+# Custom Markup
+
+With Umbraco Forms, it is possible to customize the output markup of a Form, which means you have complete control over what Forms will display.
 
 :::warning
-When using Forms version 6 or higher, we strongly recommend that you use [Themes](../Themes) when you want to customize your forms.
+When using Forms version 6 or higher, we recommend that you use [Themes](../Themes) to customize your Forms.
 This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
 :::
 
-## Customizing the default views
-The way the razor macro works is that it uses some razor views to output the form:
+## Customizing the Default Views
+
+The razor macro uses some razor views to output the Form:
 
 * 1 view for each fieldtype
 * 1 view for the scripts
-* 1 view for the rest of the form
+* 1 view for the rest of the Form
 
 You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder if you are using Forms 6+, or in the `~\Views\Partials\Forms\`folder if you are using Forms 4.
 
-To avoid your custom changes to the default views from being overwritten, you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit it there.
+To avoid your custom changes to the default views from being overwritten, you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit the file in `YourTheme` folder.
 
 ### Form.cshtml
 
-This is the main view responsible for rendering the form markup.
+This is the main view responsible for rendering the Form markup.
 
-The view is separated into two parts, one is the actual form and the other will be shown if the form is submitted.
+The view is separated into two parts, one is the actual Form and the other will be shown if the Form is submitted.
 
-This view can be customized, if you do so it will be customized for all your forms.
+This view can be customized, if you do so it will be customized for all your Forms.
 
 ### Script.cshtml
 
 This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here.
 
 ### FieldType.*.cshtml
+
 The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` and those will output the fields. There is a view for each default fieldtype like *textfield*, *textarea*, *checkbox*, etc)
 
 Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
@@ -59,16 +63,20 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
 
-This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
+This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
-### Customizing for a specific form
+### Customizing for a Specific Form
 
-In Forms 4 it is also possible to customize the markup for a specific form.
+In Forms 4, it is also possible to customize the markup for a specific Form.
 
-You will need to create folder using the ID of the form: `~\Views\Partials\Forms\{FormId}` (find the id of the form in the URL when you are viewing the form in the backoffice.)
+You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the Form in the backoffice.)
 
 ![Form GUID](images/form-guid.png)
 
-As an example if your form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
+As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 
 You can also overwrite views for one or more fieldtypes by adding the views to the folder: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml`.
+
+---
+
+Prev: [Themes](../Themes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Email Templates](../Email-Templates/index-v9.md)

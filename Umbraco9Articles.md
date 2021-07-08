@@ -9,7 +9,7 @@ In this article you will find links to sections and articles that have been veri
 
 You will also find a number of new articles, written only for Umbraco 9.
 
-Find general updates and more resources on the Umbraco 9 project in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
+Find general updates and more resources on the Umbraco 9 project in the [Umbraco on .NET 5+ Updates](UmbracoNetCoreUpdates.md) article.
 
 :::note
 Please be aware that links to API documentation and other resources might not have been updated yet.
@@ -20,16 +20,16 @@ Please be aware that links to API documentation and other resources might not ha
 ### Fundamentals
 
 * [Setup](Getting-Started/Setup/index-v9.md)
-  * [***NEW*** Running Umbraco on IIS](Getting-Started/Setup/Install/iis-v9.md)
+  * [Running Umbraco on IIS](Getting-Started/Setup/Install/iis-v9.md)
   * [General upgrade instructions](Getting-Started/Setup/Upgrading/general-v9.md)
   * [Install Umbraco unattended](Getting-Started/Setup/Install/Unattended-Install-v9.md)
-  * [***NEW*** Install Umbraco with Visual Studio](Getting-Started/Setup/Install/visual-studio.md)
+  * [Install Umbraco with Visual Studio](Getting-Started/Setup/Install/visual-studio.md)
   * [Install Umbraco](Getting-Started/Setup/Install/index-v9.md)
   * [Install Umbraco using VS Code](Getting-Started/Setup/Install/install-umbraco-with-vs-code-v9.md)
-  * [***NEW*** Install Umbraco with templates](Getting-Started/Setup/Install/install-umbraco-with-templates.md)
+  * [Install Umbraco with templates](Getting-Started/Setup/Install/install-umbraco-with-templates.md)
   * [Requirements](Getting-Started/Setup/Requirements/index-v9.md)
   * [Sections](Fundamentals/Backoffice/Sections/)
-  * [Login](Fundamentals/Backoffice//Login/)
+  * [Login](Fundamentals/Backoffice/Login/)
   * [Content-Templates](Fundamentals/Backoffice/Content-Templates/)
   * [Infinite-editing](Fundamentals/Backoffice/Infinite-editing/)
   * [Creating Media](Fundamentals/Data/Creating-Media/)
@@ -52,7 +52,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [Database](Extending/Database/index-v9.md)
 * [Embedded Media Provider](Extending/Embedded-Media-Provider/index-v9.md)
 * [Health Check](Extending/Health-Check/index-v9.md)
-  * [***New*** Health Check Guides](Extending/Health-Check/Guides)
+  * [Health Check Guides](Extending/Health-Check/Guides)
 * [Language Files](Extending/Language-Files/index-v9.md)
 * [Macro Parameter Editors](Extending/Macro-Parameter-Editors/index-v9.md)
 * [Packages](Extending/Packages/index-v9.md)
@@ -76,9 +76,24 @@ Please be aware that links to API documentation and other resources might not ha
 
 ### Reference
 
-* [***NEW*** Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
+* [Events](Reference/Events/index-v9)
+* [ContentService Events](Reference/Events/ContentService-Events-v9) 
+* [ContentTypeService Events](Reference/Events/ContentTypeService-Events-v9) 
+* [DataTypeService Events](Reference/Events/DataTypeService-Events-v9)
+* [FileService Events](Reference/Events/FileService-Events-v9)
+* [LocalizationService-Events](Reference/Events/LocalizationService-Events-v9)
+* [MediaService Events](Reference/Events/MediaService-Events-v9)
+* [MediaTypeService Events](Reference/Events/MediaTypeService-Events-v9)
+* [MemberService Events](Reference/Events/MemberService-Events/index-v9)
+* [MemberTypeService Events](Reference/Events/MemberTypeService-Events-v9)
+* [EditorModel Events](Reference/Events/EditorModel-Events/index-v9)
+    * [Customizing The Link Box](Reference/Events/EditorModel-Events/Customizing-the-links-box-v9)
+* [Determining New Entity](Reference/Events/determining-new-entity-v9)
+
+* [Configuration: The 'No published content' page](Reference/Config/no-published-content-page.md)
 * [Querying: IPublished Content](Reference/Querying/IPublishedContent/index-v9.md)
   * [Properties](Reference/Querying/IPublishedContent/Properties/index-v9.md)
+  * [Collections](Reference/Querying/IPublishedContent/Collections/index-v9.md)
 * [ModelsBuilder Configuration](Reference/Templating/Modelsbuilder/configuration-v9.md)
 * [V9 -Config](Reference/V9-Config/)
 * [AuditService](Reference/Management/Services/AuditService/index-v9)
@@ -91,9 +106,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [MacroService](Reference/Management/Services/MacroService/index-v9)
 * [MediaService](Reference/Management/Services/MediaService/index-v9)
 * [MemberService](Reference/Management/Services/MemberService/index-v9)
-* [MemberService](Reference/Management/Services/MemberService/index-v9)
 * [MemberGroupService](Reference/Management/Services/MemberGroupService/index-v9)
-* [Collections](Reference/Querying/IPublishedContent/Collections/index-v9)
 * [Notifications](Reference/Notifications/)
 * [EditorModel-Notifications](Reference/Notifications/EditorModel-Notifications/)
 * [MemberService-Notifications](Reference/Notifications/MemberService-Notifications/)
@@ -111,3 +124,8 @@ Please be aware that links to API documentation and other resources might not ha
 * [Configuration](Add-ons/UmbracoForms/Developer/Configuration/index-v9)
 * [Creating a Form](Add-ons/UmbracoForms/Editor/Creating-a-Form/)
 * [Preparing your frontend](Add-ons/UmbracoForms/Developer/Prepping-Frontend/)
+* [Adding a Exporttype](Add-ons/UmbracoForms/Developer/Extending/Adding-a-Exporttype-v9)
+* [Adding a Fieldtype](Add-ons/UmbracoForms/Developer/Extending/Adding-a-Fieldtype-v9)
+* [Adding a Type](Add-ons/UmbracoForms/Developer/Extending/Adding-a-Type-v9)
+* [Adding a Workflowtype](Add-ons/UmbracoForms/Developer/Extending/Adding-a-Workflowtype-v9)
+* [Adding an Event Handler](Add-ons/UmbracoForms/Developer/Extending/Adding-an-Event-Handler-v9)

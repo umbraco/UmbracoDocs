@@ -1,18 +1,18 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
+meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
 ---
 
-# Umbraco .NET Core
+# Umbraco on .NET 5+
 
 :::note
-This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco on .NET 5.
 
-Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
+Are you aware of some information about Umbraco on .NET 5 that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-9-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-5-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
@@ -67,20 +67,14 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco 9 (.NET Core) Beta
-
-As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
-
-Since April 28th 2021, the first beta release has been available.
-
-More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/) and [the beta release blog post](https://umbraco.com/blog/umbraco-9-beta-release/).
+## Umbraco 9 (.NET 5) Beta
 
 :::warning
 As this is an **beta release**, bugs and minor issues are to be expected.
 
 You can find a list of known issues [on this page](#known-issues-and-missing-parts-in-current-beta-release)
 
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
+Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml). 
 :::
 
 To get started, follow the steps outlined below.
@@ -90,7 +84,7 @@ To get started, follow the steps outlined below.
 
 ### Prerequisites
 
-* [.Net 5 SDK](https://dotnet.microsoft.com/download)
+* [.NET 5 SDK](https://dotnet.microsoft.com/download)
 * SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
 
 ### Steps to install the Umbraco `dotnet new` template
@@ -122,16 +116,16 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:
 
     ```none
-    dotnet new umbraco -n MyCustomUmbracoSolution
+    dotnet new umbraco -n MyCustomUmbracoProject
     ```
 
     Or if you prefer to using SQL CE:
 
     ```none
-    dotnet new umbraco --SqlCe -n MyCustomUmbracoSolution
+    dotnet new umbraco --SqlCe -n MyCustomUmbracoProject
     ```
 
-You will now have a new project with the name `MyCustomUmbracoSolution`, or whichever name you chose.
+You will now have a new project with the name `MyCustomUmbracoProject`, or whichever name you chose.
 
 The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
 
@@ -142,7 +136,7 @@ The following steps, will continue using CLI based on the steps above.
 1. Navigate to the newly created project folder:
 
     ```none
-    cd MyCustomUmbracoSolution
+    cd MyCustomUmbracoProject
     ```
 
 2. Build and run the new Umbraco .Net Core project:
@@ -197,7 +191,7 @@ The file contains an `msbuild` target that is executed on build when a project h
 Furthermore, we introduced a new flag on the regular `dotnet new umbraco` template. You can now write:
 
 ```none
-dotnet new umbraco -n MyCustomUmbracoSolution -p MyCustomUmbracoPackage
+dotnet new umbraco -n MyCustomUmbracoProject -p MyCustomUmbracoPackage
 ```
 
 This new `-P` indicates that the solution is a test-site of the package `MyCustomUmbracoPackage`. It will add a project dependency to `MyCustomUmbracoPackage` and import the target file from that project. So when you build the new solution, it will also copy the `App_Plugins` folder from the package project into the solution. In the same way, as if it was a NuGet reference.
