@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: rc001
 meta-title: Umbraco Route Hijacking
 meta.Description:  Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type
 ---
@@ -384,11 +384,7 @@ public class MyRenderController : RenderController
 }
 ```
 
-Last step is to use your `SetDefaultRenderController` extension method. You can do that in the `ConfigureServices` method in the `Startup.cs` class.
-
-:::warning  
-It is important to call the `SetDefaultRenderController` method after the `AddWebsite` method.
-:::
+The last step is to configure Umbraco to use your implementation. You can do that in the `ConfigureServices` method in the `Startup.cs` class.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -396,7 +392,6 @@ public void ConfigureServices(IServiceCollection services)
     services.AddUmbraco(_env, _config)
         .AddBackOffice()             
         .AddWebsite()
-        .SetDefaultRenderController()
         .AddComposers()
         .Build();
 
