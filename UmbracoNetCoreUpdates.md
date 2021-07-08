@@ -314,8 +314,11 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
 
 On Friday 4th June a beta release of the Umbraco Forms package for V9 was released.
 
-It's available from the same NuGet feed used for the CMS.
+It's available from the Umbraco prerelease MyGet feed used for the CMS betas.
 
+    ```none
+    dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
+    ```
 And the package name is: Umbraco.Forms.9.0.0-beta002.
 
 With an Umbraco V9 application running rc1, you can install the package with the following command:
