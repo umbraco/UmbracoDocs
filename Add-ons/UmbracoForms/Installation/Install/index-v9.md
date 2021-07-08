@@ -13,12 +13,12 @@ Since Umbraco v7.2, Umbraco contains the **Forms** section, by default. You will
 
 ## Installing Umbraco Forms
 
-To install the Umbraco Forms package (**Umbraco.Forms.9.0.0-beta001**), follow these steps:
+To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
 1. Run the following command on a command prompt of your choice:
 
     ```cli
-    dotnet add package Umbraco.Forms --version 9.0.0-beta001
+    dotnet add package Umbraco.Forms
     ```
 
 2. Restart the web application using the following command:
