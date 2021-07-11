@@ -195,7 +195,7 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
     [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
     Description = "Create a robots.txt file to block access to system folders.",
     Group = "SEO")]
-    public class RobotsTxt : HealthCheck.HealthCheck
+    public class RobotsTxt : HealthCheck
     {
         private readonly ILocalizedTextService _textService;
 
