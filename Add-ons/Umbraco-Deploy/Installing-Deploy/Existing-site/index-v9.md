@@ -48,7 +48,7 @@ The next step to get Umbraco Deploy up and running is to set up a repository and
 
 1. Set up a repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
-3. [Create a new Umbraco V9 project](/UmbracoNetCoreUpdates).
+3. [Create a new Umbraco V9 project](UmbracoNetCoreUpdates).
 4. Use the copy of your production Database when setting up the database for the emppty project.
 5. Add the `/Views` folder as well as the folders holding your css files and scripts.
 6. Commit the files so they are ready to be pushed up once you have set up the build server.
