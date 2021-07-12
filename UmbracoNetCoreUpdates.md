@@ -1,18 +1,18 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco .Net Core."
+meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
 ---
 
-# Umbraco .NET Core
+# Umbraco on .NET 5+
 
 :::note
-This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco .Net Core.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco on .NET 5.
 
-Are you aware of some information about Umbraco .Net Core that isn't already added to this list?
+Are you aware of some information about Umbraco on .NET 5 that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco .Net Core](#umbraco-9-net-core-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-5-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
@@ -67,54 +67,37 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco 9 (.NET Core) Beta
-
-As of September 3rd 2020 it is possible to try out and test the latest alpha release of Umbraco .Net Core.
-
-Since April 28th 2021, the first beta release has been available.
-
-More details on the alpha can be found in [the alpha release blog post](https://umbraco.com/blog/net-core-alpha-release/) and [the beta release blog post](https://umbraco.com/blog/umbraco-9-beta-release/).
+## Umbraco 9 (.NET 5) Release Candidate
 
 :::warning
-As this is an **beta release**, bugs and minor issues are to be expected.
+As this is an **release candidate**, bugs and minor issues are to be expected.
 
-You can find a list of known issues [on this page](#known-issues-and-missing-parts-in-current-beta-release)
-
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?labels=project%2Fnet-core&template=3_BugNetCore.md&title=NetCore%3A%20%7BIssue%20Title%7D) with a title prefixed with “NetCore:”.
+Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml). 
 :::
 
 To get started, follow the steps outlined below.
 
-### Known issues and missing parts in current Beta release
-* Packages can only include dll/assemblies when distributed by NuGet
-
 ### Prerequisites
 
-* [.Net 5 SDK](https://dotnet.microsoft.com/download)
+* [.NET 5 SDK](https://dotnet.microsoft.com/download)
 * SQL connection string (MS SQL Server/Azure), unless you want to install using SQL CE (Compact Edition)
 
 ### Steps to install the Umbraco `dotnet new` template
 
-1. Use a command prompt of your choice to insert this custom NuGet feed:
-
-    ```none
-    dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
-    ```
-
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta004
+    dotnet new -i Umbraco.Templates::9.0.0-rc001
     ```
 
-### [Optional] Update the template from earlier alpha versions
+### [Optional] Update the template from earlier pre-release versions
 
 If you have already installed the Umbraco `dotnet new` template, you will need ensure it is up-to-date
 
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-beta004
+    dotnet new -i Umbraco.Templates::9.0.0-rc001
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -152,7 +135,7 @@ The following steps, will continue using CLI based on the steps above.
     dotnet run
     ```
 
-The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0&tabs=windows#kestrel) and is available on the default ports: http://localhost:5000 and https://localhost:5001.
+The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0&tabs=windows#kestrel) and is available on the ports listed in the console.
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process.
 
@@ -304,18 +287,44 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fixed issue with members not approved by default when using the build-in macro snippets
   - Fixed issues with MediaPicker3
 
+### Changes between beta 4 and rc 1
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-rc001+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - Methods obsoleted in 8.15 removed
+  - Route plugin controllers by area
+  - RenderController configuration as .NETCore IOptions pattern
+- Features
+  - Packages migrations and UI changes to support NuGet packages. 
+  - 8.15 features
+- Bugfixes
+  - Changes the RoslynCompiler to use assemblies resolved from the DependencyContext (Fix for MB InMemoryAuto)
+  - Migrated missing surfaceaction extension methods 
+  - Add RazorCompileOnPublish property to UmbracoProject for template
+  - Migrated missing UmbracoAuthorizedController 
+  - Linux case-sensitive directories (Grid)
+  - Render grid editor partial async
+  - Render Block List component partial async
+  - Use english names for cultures in language CRUD
+  - Rebuild Database Cache button does nothing
+
 ## Umbraco Forms 9 (.NET Core) Beta
 
 On Friday 4th June a beta release of the Umbraco Forms package for V9 was released.
 
-It's available from the same Umbraco prereleases NuGet feed used for the CMS, found at: https://www.myget.org/F/umbracoprereleases/api/v3/index.json.
+It's available from the Umbraco prerelease MyGet feed used for the CMS betas.
 
-And the package name is: Umbraco.Forms.9.0.0-beta001.
+    ```none
+    dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
+    ```
+And the package name is: Umbraco.Forms.9.0.0-beta002.
 
-With an Umbraco V9 application running beta 3, you can install the package with the following command:
+With an Umbraco V9 application running rc1, you can install the package with the following command:
 
 ```none
-dotnet add package Umbraco.Forms --version 9.0.0-beta001
+dotnet add package Umbraco.Forms --version 9.0.0-beta002
 ```
 
 And then restart the web application with:

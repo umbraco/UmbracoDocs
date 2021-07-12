@@ -21,7 +21,7 @@ using Umbraco.Core.Models;
 
 ## Constructors
 
-### new DataType(int parentId, Guid controlId)
+### new DataType(IDataEditor editor, int parentId = -1)
 
 Constructor for creating a new `DataType` object where the necessary parameter is a `IDataEditor`.  Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
 

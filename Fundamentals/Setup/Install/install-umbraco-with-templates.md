@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
+verified-against: beta-4
 state: partial
 updated-links: false
 ---
@@ -19,9 +19,14 @@ Umbraco 9 is currently in a beta release and before the official release you wil
 `dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"`
 
 And then step 2 below instead becomes:
-Run `dotnet new -i Umbraco.Templates::beta-002`
+Run `dotnet new -i Umbraco.Templates::9.0.0-beta004`
 
 For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates.md#umbraco-net-core-beta) article.
+
+If you have multiple NuGet feeds added, (and the order is important, particularly if one requires authentication) - then you may need to explicitly tell the install templates command to use the Pre Releases feed eg:
+
+Run `dotnet new --nuget-source https://www.myget.org/F/umbracoprereleases/api/v3/index.json -i Umbraco.Templates::9.0.0-beta004`
+
 :::
 
 2. Run `dotnet new -i Umbraco.Templates::*` to install the project templates.  
@@ -78,7 +83,7 @@ Options:
 
                             string - Optional
 
-                            Default: 9.0.0-beta002
+                            Default: 9.0.0-beta004
 
 
   -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
