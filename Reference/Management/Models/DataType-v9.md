@@ -40,7 +40,7 @@ Gets or Sets the Id of the `User` who created the DataType.
 
 ### .DatabaseType
 
-Gets or Sets the DatabaseType as a `DataTypeDatabaseType` enum for which the DataType's value is saved as.
+Gets or Sets the DatabaseType as a `ValueStorageType` enum for which the DataType's value is saved as.
 
 ### .Id
 
