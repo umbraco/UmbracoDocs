@@ -49,13 +49,13 @@ Here is an example of how the setting can look:
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
     <valueConnectors>
-        <valueConnector alias="nuPickers.DotNetCheckBoxPicker" 
+        <valueConnector alias="nuPickers.DotNetCheckBoxPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetDropDownPicker" 
+        <valueConnector alias="nuPickers.DotNetDropDownPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetPrefetchListPicker" 
+        <valueConnector alias="nuPickers.DotNetPrefetchListPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetTypeaheadListPicker" 
+        <valueConnector alias="nuPickers.DotNetTypeaheadListPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
     </valueConnectors>
 </settings>
@@ -65,7 +65,7 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available, which all uses the default timeout which currently is set for 8 minutes.
+The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available:
 
 - `sessionTimeout`
 - `sourceDeployTimeout`

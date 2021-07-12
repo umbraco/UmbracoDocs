@@ -8,11 +8,11 @@ verified-against: beta001
 
 # Configuration
 
-With Umbraco Forms it's possible to customize the functionality with various configuration values.  
+With Umbraco Forms it's possible to customize the functionality with various configuration values.
 
 ## Editing configuration values
 
-All configuration for your Umbraco Forms is held in an `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Forms configuration follows this pattern, i.e.:
 
@@ -51,7 +51,7 @@ For illustration purposes, the following structure represents the full set of op
         "HideFieldValidationLabels": false,
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true
-      }      
+      }
     },
     "PackageOptions": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -74,7 +74,7 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": ""
-      }            
+      }
     }
   }
 ```
