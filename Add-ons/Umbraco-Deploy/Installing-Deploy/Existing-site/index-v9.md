@@ -29,7 +29,7 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 1. [Create copy of database and download views, CSS and scripts files from your production site](#install-umbraco-deploy-on-existing-site)
 2. [Set up Git repository and new Umbraco project](#set-up-git-repository-and-umbraco-project)
 3. [Install Umbraco Deploy via NuGet](#installing-and-setting-up-umbraco-deploy)
-4. [Configure CI/CD build server](#set-up-cicd-build-server)
+4. [Configure CI/CD build server](#set-up-cicd-pipeline)
 
 ## Install Umbraco Deploy on Existing site
 
@@ -76,5 +76,4 @@ At this stage your new website is prepared for use with Umbraco Deploy.  You sho
 Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployments).
 
 This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
-
 
