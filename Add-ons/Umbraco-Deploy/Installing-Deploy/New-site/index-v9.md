@@ -42,7 +42,7 @@ The first step to get Umbraco Deploy up and running is to set up a Github reposi
 
 1. Set up a Github repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
-3. [Create a new Umbraco V9 project](/UmbracoNetCoreUpdates.md).
+3. [Create a new Umbraco V9 project](UmbracoNetCoreUpdates.md).
 4. Run the project.
 5. Choose to use a custom SQL connectionstring pointing to your local database.
 6. Commit the files to so they are ready to be pushed up once we have set up the build server.
