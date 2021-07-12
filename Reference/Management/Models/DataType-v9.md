@@ -1,13 +1,16 @@
 ---
 versionFrom: 9.0.0
+verified-against: rc001
+meta-title: DataType Model
+meta.Description: A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
 ---
 
 # DataType
 
 A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
 
- * **Namespace:** `Umbraco.Core.Models`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -16,7 +19,7 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Models;
 ```
 
 ## Constructors
