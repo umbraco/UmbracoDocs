@@ -31,6 +31,10 @@ using Umbraco.Cms.Core.Services;
 
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
 
+### new Content(string name, IContent parent, IContentType contentType, int userId, string culture = null)
+
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object for the Content being created and the id of the user as a `int`. In addition, there is an optional parameter for the culture.
+
 ### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties, string culture = null)
 
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.In addition, there is an optional parameter for the culture.
@@ -38,6 +42,10 @@ Constructor for creating a new Content object where the necessary parameters are
 ### new Content(string name, int parentId, IContentType contentType, string culture = null)
 
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
+
+### new Content(string name, int parentId, IContentType contentType, int userId, string culture = null)
+
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent id of the Content as an `int` object, the ContentType as an `IContentType` object for the Content being created and the id of the user as a `int`. In addition, there is an optional parameter for the culture.
 
 ### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties, string culture = null)
 
