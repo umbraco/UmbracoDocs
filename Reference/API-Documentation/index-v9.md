@@ -14,11 +14,11 @@ C# API references for the Umbraco Core and Web libraries.
 
 ### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
 
-### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
 
 ### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
 
-### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
+### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
