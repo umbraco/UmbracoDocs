@@ -11,7 +11,7 @@ The `Content` class represents a single item in the content tree, its values are
 
 All content is versioned, so on each individual change, a new version is stored. Past versions can only be retrieved from the `Content` api, not from the cache.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -21,8 +21,8 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
