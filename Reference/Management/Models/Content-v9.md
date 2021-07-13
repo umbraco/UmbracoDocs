@@ -163,7 +163,7 @@ return content.Path;
 
 ### .Properties
 
-Gets or Sets the `PropertyCollection` object, which is a collection of `Property` objects. Each property corresponds to a `PropertyType`, which is defined on the `ContentType`.
+Gets or Sets the `IPropertyCollection` object, which is a collection of `IProperty` objects. Each property corresponds to a `PropertyType`, which is defined on the `ContentType`.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and loop through all Properties
@@ -188,7 +188,7 @@ return content.Published;
 
 ### .PublishDate
 
-If set, returns `DateTime` indicating when the `Content` should be published and made available on the website and cache.
+If set, returns `DateTime?` indicating when the `Content` should be published and made available on the website and cache.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and set the release date to 4 days from now
@@ -208,7 +208,7 @@ return content.SortOrder;
 
 ### .PublishedState
 
-Returns a `PublishedState` enum with the status of the Content being either Unpublished, Published, Publishing, Unpublishing.
+Returns a `IPublishedState` enum with the status of the Content being either Unpublished, Published, Publishing, Unpublishing.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return its Status
