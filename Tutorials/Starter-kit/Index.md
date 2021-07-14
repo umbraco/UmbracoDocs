@@ -34,7 +34,7 @@ The sample content includes:
 
 ## Lessons
 
-While familiarizing yourself with the Starter Kit you might have spotted some places where you would want some additional functionality. The following lessons will give you step-by-step instructions on how to add specific features.
+While familiarizing yourself with the Starter Kit you might have spotted some places where you would want some additional functionality. The following lessons will give you step-by-step instructions on how to add specific features:
 
 [For Umbraco 9](/Documentation/Tutorials/Starter-kit/Lessons/index.md)
 
