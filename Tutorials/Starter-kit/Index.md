@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 product: "CMS"
 meta.Title: "Getting started with Umbraco using the Starter Kit"
 meta.Description: "A tutorial on getting started with Umbraco using the starter kit"
@@ -7,7 +8,7 @@ meta.Description: "A tutorial on getting started with Umbraco using the starter 
 
 # The Starter Kit
 
-The *Starter kit* is the name of one of the Starter kits build for Umbraco by Umbraco HQ. It is the great way to familiarize yourself with Umbraco CMS.
+The *Starter Kit* is the name of one of the Starter kits build for Umbraco by Umbraco HQ. It is the great way to familiarize yourself with Umbraco CMS.
 
 Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 
@@ -35,9 +36,11 @@ The sample content includes:
 
 While familiarizing yourself with the Starter Kit you might have spotted some places where you would want some additional functionality. The following lessons will give you step-by-step instructions on how to add specific features.
 
-[Show me the lessons for Umbraco 8](/Documentation/Tutorials/Starter-kit/Lessons/index.md)
+[For Umbraco 9](/Documentation/Tutorials/Starter-kit/Lessons/index.md)
 
-[Show me the lessons for Umbraco 7](/Documentation/Tutorials/Starter-kit/Lessons/index-v7.md)
+[For Umbraco 8](/Documentation/Tutorials/Starter-kit/Lessons/index.md)
+
+[For Umbraco 7](/Documentation/Tutorials/Starter-kit/Lessons/index-v7.md)
 
 ___
 
