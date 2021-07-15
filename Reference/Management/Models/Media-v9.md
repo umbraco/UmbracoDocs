@@ -150,39 +150,8 @@ foreach(var property in media.Properties){
 }
 ```
 
-### .PropertyGroups
-Returns a list of `PropertyGroup` objects as defined on the `MediaType` that the Media is based on. A PropertyGroup corresponds to a Tab in the backoffice.
-
-```csharp
-// Given a `MediaService` object get Media by its Id and loop through all PropertyGroups
-var media = mediaService.GetById(1234);
-foreach(var propertyGroup in media.PropertyGroups){
-    string name = propertyGroup.Name;
-    int? parentId = propertyGroup.ParentId;
-    int sortOrder = propertyGroup.SortOrder;
-    PropertyTypeCollection propertyTypes = propertyGroup.PropertyTypes; //PropertyTypes within this group
-}
-```
-
-### .PropertyTypes
-Returns a list of `PropertyType` objects as defined on the `MediaType` that the Media is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes within this list is the sum of those within all PropertyGroups as well as those not within a group.
-
-```csharp
-// Given a `MediaService` object get Media by its Id and loop through all PropertyTypes
-var media = mediaService.GetById(1234);
-foreach(var propertyType in media.PropertyTypes){
-    string alias = propertyType.Alias;
-    string name = propertyType.Name;
-    string description = propertyType.Description;
-    int dataTypeDefinitionId = propertyType.DataTypeDefinitionId;
-    Guid dataTypeId = propertyType.DataTypeId;
-    bool mandatory = propertyType.Mandatory;
-    string helpText = propertyType.HelpText;
-    int sortOrder = propertyType.SortOrder;
-}
-```
-
 ### .SortOrder
+
 Returns the given `Media` index, compared to sibling media.
 
 ```csharp
@@ -192,6 +161,7 @@ return media.SortOrder;
 ```
 
 ### .Trashed
+
 Returns a `Bool` indicating whether the given `Media` is currently in the recycle bin.
 
 ```csharp
@@ -201,6 +171,7 @@ return media.Trashed;
 ```
 
 ### .UpdateDate
+
 Gets or Sets a `DateTime` object, indicating when the given Media was last updated.
 
 ```csharp
@@ -210,14 +181,9 @@ return media.UpdateDate;
 ```
 
 ### .Version
+
 Returns the current Version Id as a `Guid`,
 For each change made to a Media item, its values are stored under a new Version. This version is identified by a `Guid`.
-
-```csharp
-// Given a `MediaService` object get Media by its Id and return its Version
-var media = mediaService.GetById(1234);
-return media.Version;
-```
 
 ## Methods
 
@@ -265,6 +231,7 @@ int value = media.GetValue<int>("height");
 ```
 
 ### .HasProperty(string propertyTypeAlias)
+
 Returns a `Bool` indicating whether the Media object has a property with the supplied alias.
 
 ```csharp
@@ -274,16 +241,8 @@ bool tagsExists = media.HasProperty("myTagProperty");
 bool textExists = media.HasProperty("altText");
 ```
 
-### .IsValid()
-Returns a `Bool` indicating whether the Media and its properties are valid. If a property is set to Mandatory and blank upon saving the Media is not considered valid.
-
-```csharp
-// Given a `MediaService` object get Media by its Id and check if Media is valid
-var media = mediaService.GetById(1234);
-bool valid = media.IsValid();
-```
-
 ### .SetValue(string propertyTypeAlias, object value)
+
 Sets the value of a property by its alias.
 
 ```csharp
@@ -298,11 +257,12 @@ mediaService.Save(media);
 It is worth noting that it is also possible to pass a HttpPostedFile, HttpPostedFileBase or HttpPostedFileWrapper to the SetValue method, so it can be used for uploads.
 
 ### .ToXml()
+
 Returns an `XElement` containing the Media data, based off the latest changes. When the Media item is saved the xml is stored in the database.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and returns the xml
 var media = mediaService.GetById(1234);
-XElement xml = media.ToXml();
+XElement xml = media.ToXml(serializer);
 return xml;
 ```
