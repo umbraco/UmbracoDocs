@@ -7,9 +7,9 @@ meta.Description: The Media class represents a single item in the media tree.
 
 # Media
 
-The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the [UmbracoHelper](https://our.umbraco.com/Documentation/Reference/Querying/UmbracoHelper/#working-with-media) to get the media. Then one would use [LINQ to query and filter the collection](https://our.umbraco.com/documentation/Reference/Querying/IPublishedContent/Collections/).
+The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the `IUmbracoContext.IPublishedMediaCache` to get the media. Then one would use [LINQ to query and filter the collection](https://our.umbraco.com/documentation/Reference/Querying/IPublishedContent/Collections/index-v9).
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -19,22 +19,26 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
 
 ### new Media(string name, IMedia parent, IMediaType mediaType)
+
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the parent of the Media as an `IMedia` object and the MediaType as an `IMediaType` object for the Media being created.
 
 ### new Media(string name, IMedia parent, IMediaType mediaType, PropertyCollection properties)
+
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the parent of the Media as an `IMedia` object, the MediaType as an `IMediaType` object and a `PropertyCollection` for the Media being created.
 
 ### new Media(string name, int parentId, IMediaType mediaType)
+
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the id of the parent as `int` and the MediaType as an `IMediaType` object for the Media being created.
 
 ### new Media(string name, int parentId, IMediaType mediaType, PropertyCollection properties)
+
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the id of the parent as `int`, the MediaType as an `IMediaType` object and a `PropertyCollection` for the Media being created.
 
 ## Properties
