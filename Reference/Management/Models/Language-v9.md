@@ -39,8 +39,9 @@ To create a new Language the global setting parameter is necessary. You can find
 Gets the CultureInfo object for the language.
 
 ```csharp
-var language = new Language("en-US");
-return language.CultureInfo;
+var language = new Language(globalSettings, "en-US");
+CultureInfo cultureInfo = language.CultureInfo;
+return cultureInfo;
 ```
 
 ### .CultureName
@@ -48,8 +49,9 @@ return language.CultureInfo;
 Gets or sets the culture name of the language.
 
 ```csharp
-var language = new Language("en-US");
-return language.CultureName;
+var language = new Language(globalSettings, "en-US");
+string cultureName = language.CultureName;
+return cultureName;
 ```
 
 ### .FallbackLanguageId
@@ -57,16 +59,19 @@ return language.CultureName;
 Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help define fallback strategies when a value does not exist for a requested language.
 
 ```csharp
-var language = new Language("en-US");
-return language.FallbackLanguageId;
+var language = new Language(globalSettings, "en-US");
+int? fallbackLanguageId = language.FallbackLanguageId;
+return fallbackLanguageId;
 ```
 
 ### .IsDefault
+
 Gets or sets a value indicating whether the language is the default language.
 
 ```csharp
-var language = new Language("en-US");
-return language.IsDefault;
+var language = new Language(globalSettings, "en-US");
+bool isDefault = language.IsDefault;
+return isDefault;
 ```
 
 ### .IsMandatory
@@ -74,8 +79,9 @@ return language.IsDefault;
 Gets or sets a value indicating whether the language is mandatory. When a language is mandatory, a multi-lingual document cannot be published without that language being published, and unpublishing that language unpublishes the entire document.
 
 ```csharp
-var language = new Language("en-US");
-return language.IsMandatory;
+var language = new Language(globalSettings, "en-US");
+bool isMandatory = language.IsMandatory;
+return isMandatory;
 ```
 
 ### .IsoCode
@@ -83,6 +89,6 @@ return language.IsMandatory;
 Gets or sets the ISO code of the language.
 
 ```csharp
-var language = new Language("en-US");
+var language = new Language(globalSettings, "en-US");
 return language.IsoCode;
 ```
