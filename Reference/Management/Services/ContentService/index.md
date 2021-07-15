@@ -64,4 +64,4 @@ IContentService contentService = Umbraco.Core.Composing.Current.Services.Content
 
 ## Samples
 
-* [**Create content programmatically**](Create-content-programmatically.md)<br />See an example on how to create content programmatically.
+* [**Create content programmatically**](/ContentService/Create-content-programmatically.md)<br />See an example on how to create content programmatically.
