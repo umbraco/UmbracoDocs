@@ -1,5 +1,8 @@
 ---
 versionFrom: 9.0.0
+verified-against: rc001
+meta-title: MediaType Model
+meta.Description: A MediaType is almost the same as a ContentType. I.e. a model / data definition for your media nodes.
 ---
 
 # MediaType
@@ -10,7 +13,7 @@ You can set icon, thumbnail and description. It is also possible to add groups a
 
 A Media Type differs from a Document Type in that it has no templates.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -20,8 +23,8 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
