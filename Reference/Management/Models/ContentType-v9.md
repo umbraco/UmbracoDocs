@@ -29,13 +29,13 @@ using using Umbraco.Cms.Core.Services;
 
 ## Constructors
 
-### new ContentType(int parentId)
+### ContentType(IShortStringHelper shortStringHelper, IContentType parent, string alias)
 
-Constructor for creating a new `ContentType` object where the necessary parameter is the Id of the parent `ContentType` as an `Int`.
+Constructor for creating a new `ContentType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `ContentType` as an `IContentType` and the alias of the new `ContentType` as `string`.
 
-### new ContentType(IContentType parent)
+### new ContentType(IShortStringHelper shortStringHelper, int parentId)
 
-Constructor for creating a new `ContentType` object where the necessary parameter is the parent `ContentType` as an `IContentType` object.
+Constructor for creating a new `ContentType` object where the necessary parameters are a short string helper `IShortStringHelper` and the Id of the parent `ContentType` as an `Int`.
 
 ## Properties
 
