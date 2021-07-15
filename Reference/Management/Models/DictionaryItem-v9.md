@@ -1,12 +1,15 @@
 ---
 versionFrom: 9.0.0
+verified-against: rc001
+meta-title: DictionaryItem Model
+meta.Description: Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.
 ---
 
 # DictionaryItem
 
 Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.  
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -16,7 +19,7 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Models;
 ```
 
 ## Constructors
