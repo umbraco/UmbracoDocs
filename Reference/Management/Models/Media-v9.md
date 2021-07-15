@@ -44,6 +44,7 @@ Constructor for creating a new Media object where the necessary parameters are t
 ## Properties
 
 ### .CreateDate
+
 Gets or Sets a `DateTime` object, indicating then the given Media was created.
 
 ```csharp
@@ -53,7 +54,8 @@ return media.CreateDate;
 ```
 
 ### .CreatorId
-Gets or Sets the Id of the `User` who created the Media.
+
+Gets or Sets the Id of the `User` as an `int` who created the Media.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return the Id of the Creator
@@ -62,7 +64,8 @@ return media.CreatorId;
 ```
 
 ### .ContentType
-Returns a `MediaType` object representing the ContentType used by the given `Media`.
+
+Returns a `ISimpleContentType` object representing the ContentType used by the given `Media`.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return MediaType
@@ -71,6 +74,7 @@ return media.ContentType;
 ```
 
 ### .ContentTypeId
+
 Returns the id as an `int` of the `MediaType` object representing the ContentType used by the given `Media`.
 
 ```csharp
@@ -80,9 +84,11 @@ return media.ContentTypeId;
 ```
 
 ### .Id
+
 Returns the unique `Media` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
+
 Returns the `Guid` assigned to the Media during creation. This value is unique, and should never change, even if the Media is moved between instances.
 
 ```csharp
@@ -92,6 +98,7 @@ return media.Key;
 ```
 
 ### .Level
+
 Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media right underneath will return 2, and so on.
 
 ```csharp
@@ -101,15 +108,17 @@ return media.Level;
 ```
 
 ### .Name
+
 Gets or Sets the name of the Media as a `String`.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return its Name
-var v = mediaService.GetById(1234);
+var media = mediaService.GetById(1234);
 return media.Name;
 ```
 
 ### .ParentId
+
 Gets or Sets the parent `Media` Id as an `Int`.
 
 ```csharp
@@ -119,6 +128,7 @@ return media.ParentId;
 ```
 
 ### .Path
+
 Gets or Sets the path of the Media as a `String`. This string contains a comma separated list of the ancestors Ids including the current medias own id at the end of the string.
 
 ```csharp
@@ -128,6 +138,7 @@ return media.Path;
 ```
 
 ### .Properties
+
 Gets or Sets the `PropertyCollection` object, which is a collection of `Property` objects. Each property corresponds to a `PropertyType`, which is defined on the `MediaType`.
 
 ```csharp
@@ -135,8 +146,7 @@ Gets or Sets the `PropertyCollection` object, which is a collection of `Property
 var media = mediaService.GetById(1234);
 foreach(var property in media.Properties){
     string alias = property.Alias;
-    object value = property.Value;
-    Guid version = property.Version;
+    object value = property.GetValue();
 }
 ```
 
