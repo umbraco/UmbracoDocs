@@ -29,17 +29,17 @@ using Umbraco.Cms.Core.Services;
 
 ## Constructors
 
-### new MediaType(int parentId)
+### new MediaType(IShortStringHelper shortStringHelper, int parentId)
 
-Constructor for creating a new `MediaType` object where the necessary parameter is the Id of the parent `MediaType` as an `Int`.
+Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper` and the Id of the parent `MediaType` as an `Int`.
 
-### new MediaType(IMediaType parent)
+### new MediaType(IShortStringHelper shortStringHelper,IMediaType parent)
 
-Constructor for creating a new `MediaType` object where the necessary parameter is the parent `MediaType` as an `IMediaType` object.
+Constructor for creating a new `MediaType` object where the necessary parameter are a short string helper `IShortStringHelper` and the parent `MediaType` as an `IMediaType` object.
 
-### new MediaType(IMediaType parent, string alias)
+### new MediaType(IShortStringHelper shortStringHelper, IMediaType parent, string alias)
 
-Constructor for creating a new `MediaType` object where the necessary parameters are the parent `MediaType` as an `IMediaType` object and the alias od the `MediaType` as a `string`.
+Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `MediaType` as an `IMediaType` object and the alias of the `MediaType` as a `string`.
 
 ## Properties
 
