@@ -50,6 +50,7 @@ return contentType.Alias;
 ```
 
 ### .AllowedAsRoot
+
 Gets or Sets a `Bool` indicating whether this ContentType is allowed at the root. If one or more ContentTypes are set to 'AllowedAsRoot' only they are shown in the create dialog at the root level in the backoffice.
 
 ```csharp
@@ -59,6 +60,7 @@ return contentType.AllowedAsRoot;
 ```
 
 ### .AllowedContentTypes
+
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the ContentTypes allowed under the current ContentType.
 
 The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
@@ -70,6 +72,7 @@ return contentType.AllowedContentTypes;
 ```
 
 ### .AllowedTemplates
+
 Gets or Sets an `Enumerable` list of `ITemplates` which are allowed for the current ContentType.
 
 ```csharp
@@ -79,6 +82,7 @@ return contentType.AllowedTemplates;
 ```
 
 ### .ContentTypeComposition
+
 Gets a list of `ContentTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current ContentType.
 
 The ContentTypeComposition provides a mixin-type functionality in that you can compose a ContentType of one or more other ContentTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
@@ -90,6 +94,7 @@ return contentType.ContentTypeComposition;
 ```
 
 ### .CompositionPropertyGroups
+
 Gets a list of all 'PropertyGroup` objects from the composition including PropertyGroups from the current ContentType.
 
 ```csharp
@@ -99,6 +104,7 @@ return contentType.CompositionPropertyGroups;
 ```
 
 ### .CompositionPropertyTypes
+
 Gets a list of all `PropertyType` objects from the composition including PropertyTypes from the current ContentType.
 
 ```csharp
@@ -108,6 +114,7 @@ return contentType.CompositionPropertyTypes;
 ```
 
 ### .CreateDate
+
 Gets or Sets a `DateTime` object, indicating then the given ContentType was created.
 
 ```csharp
@@ -117,6 +124,7 @@ return contentType.CreateDate;
 ```
 
 ### .CreatorId
+
 Gets or Sets the Id of the `User` who created the ContentType.
 
 ```csharp
@@ -126,6 +134,7 @@ return contentType.CreatorId;
 ```
 
 ### .Description
+
 Gets or Sets the Description as a `String` for the ContentType.
 
 ```csharp
@@ -135,6 +144,7 @@ return contentType.Description;
 ```
 
 ### .DefaultTemplate
+
 Gets the default Template set as an `ITemplate` object for this ContentType.
 
 ```csharp
@@ -144,6 +154,7 @@ return contentType.DefaultTemplate;
 ```
 
 ### .Icon
+
 Gets or Sets the Icon as a `String` for the ContentType.
 
 ```csharp
@@ -153,9 +164,11 @@ return contentType.Icon;
 ```
 
 ### .Id
+
 Gets the unique `ContentType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
+
 Gets the `Guid` assigned to the ContentType during creation. This value is unique, and should never change, even if the content is moved between instances.
 
 ```csharp
@@ -165,6 +178,7 @@ return contentType.Key;
 ```
 
 ### .Level
+
 Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
@@ -174,6 +188,7 @@ return contentType.Level;
 ```
 
 ### .Name
+
 Gets or Sets the name of the ContentType as a `String`.
 
 ```csharp
@@ -183,6 +198,7 @@ return contentType.Name;
 ```
 
 ### .ParentId
+
 Gets or Sets the parent `ContentType` Id as an `Int`.
 
 ```csharp
@@ -192,6 +208,7 @@ return contentType.ParentId;
 ```
 
 ### .Path
+
 Gets or Sets the path of the ContentType as a `String`. This string contains a comma separated list of the ancestors Ids including the current ContentTypes own id at the end of the string.
 
 ```csharp
@@ -201,6 +218,7 @@ return contentType.Path;
 ```
 
 ### .PropertyGroups
+
 Gets or Sets a `PropertyGroupCollection` containing a list of PropertyGroups for the current ContentType.
 
 ```csharp
@@ -210,6 +228,7 @@ return contentType.PropertyGroups;
 ```
 
 ### .PropertyTypes
+
 Gets an `Enumerable` list of PropertyTypes aggregated for all groups within the current ContentType, as well as PropertyTypes not within a group.
 
 ```csharp
@@ -219,6 +238,7 @@ return contentType.PropertyTypes;
 ```
 
 ### .SortOrder
+
 Gets the given `ContentType` index, compared to sibling content.
 
 ```csharp
@@ -228,6 +248,7 @@ return contentType.SortOrder;
 ```
 
 ### .Thumbnail
+
 Gets or Sets the Thumbnail as a `String` for the ContentType.
 
 ```csharp
