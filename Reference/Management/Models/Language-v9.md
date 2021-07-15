@@ -9,7 +9,7 @@ meta.Description: Represents a Language. Installed languages can be found in the
 
 Represents a Language. Installed languages can be found in the settings section.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -18,7 +18,9 @@ All samples in this document will require references to the following dll:
 
 All samples in this document will require the following using statement:
 
-    using Umbraco.Core.Models;
+```csharp
+using Umbraco.Cms.Core.Models;
+```
 
 ## Constructors
 
