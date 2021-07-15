@@ -29,17 +29,17 @@ using Umbraco.Cms.Core.Services;
 
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the parent of the Media as an `IMedia` object and the MediaType as an `IMediaType` object for the Media being created.
 
-### new Media(string name, IMedia parent, IMediaType mediaType, PropertyCollection properties)
+### new Media(string name, IMedia parent, IMediaType mediaType, IPropertyCollection properties)
 
-Constructor for creating a new Media object where the necessary parameters are the name of the Media, the parent of the Media as an `IMedia` object, the MediaType as an `IMediaType` object and a `PropertyCollection` for the Media being created.
+Constructor for creating a new Media object where the necessary parameters are the name of the Media, the parent of the Media as an `IMedia` object, the MediaType as an `IMediaType` object and a `IPropertyCollection` for the Media being created.
 
 ### new Media(string name, int parentId, IMediaType mediaType)
 
 Constructor for creating a new Media object where the necessary parameters are the name of the Media, the id of the parent as `int` and the MediaType as an `IMediaType` object for the Media being created.
 
-### new Media(string name, int parentId, IMediaType mediaType, PropertyCollection properties)
+### new Media(string name, int parentId, IMediaType mediaType, IPropertyCollection properties)
 
-Constructor for creating a new Media object where the necessary parameters are the name of the Media, the id of the parent as `int`, the MediaType as an `IMediaType` object and a `PropertyCollection` for the Media being created.
+Constructor for creating a new Media object where the necessary parameters are the name of the Media, the id of the parent as `int`, the MediaType as an `IMediaType` object and a `IPropertyCollection` for the Media being created.
 
 ## Properties
 
