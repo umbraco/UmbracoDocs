@@ -5,7 +5,7 @@ keywords: oauth, security
 
 # Linking External Login Provider accounts
 
-Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
+Traditionally when using [External login providers (OAuth)](../external-login-providers/), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
 In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a single sign-on (SSO) approach to the backoffice. This is called Auto Linking.
 
