@@ -11,6 +11,21 @@ Backoffice tours are a way to create helpful guides for how to work in the Umbra
 
 They are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
 
+### Tours configuration
+
+You can enable or disable the tours from within the [umbracoSettings](../../../Reference/Config/umbracoSettings/index.md#tours).
+
+```xml
+<backOffice>
+    <tours enable="true"></tours>
+</backOffice>
+```
+
+There is only one supported attribute on the tours element:
+
+**`enable`**
+By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+
 ## Tour file locations
 
 The tour functionality will load information from multiple locations.
