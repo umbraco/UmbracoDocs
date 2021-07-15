@@ -260,6 +260,7 @@ return contentType.Thumbnail;
 ## Methods
 
 ### .AddContentType(IContentTypeComposition contentType)
+
 Adds a new `ContentType` to the list of composite ContentTypes.
 
 ```csharp
@@ -274,6 +275,7 @@ contentTypeService.Save(textpageContentType);
 ```
 
 ### .CompositionAliases()
+
 Returns an `Enumerable` list of ContentType aliases as `String` from the current composition.
 
 ```csharp
@@ -283,6 +285,7 @@ var aliases = contentType.CompositionAliases();
 ```
 
 ### .CompositionIds()
+
 Returns an `Enumerable` list of ContentType Ids as `Int` from the current composition.
 
 ```csharp
@@ -292,6 +295,7 @@ var ids = contentType.CompositionIds();
 ```
 
 ### .ContentTypeCompositionExists(string alias)
+
 Checks if a `ContentType` with the supplied alias exists in the list of composite ContentTypes.
 
 ```csharp
@@ -302,6 +306,7 @@ bool result = contentType.ContentTypeCompositionExists("meta");
 ```
 
 ### .SetDefaultTemplate(ITemplate template)
+
 Sets the default `Template` for the current ContentType.
 
 ```csharp
@@ -314,6 +319,7 @@ contentTypeService.Save(contentType);
 ```
 
 ### .RemoveContentType(string alias)
+
 Removes a `ContentType` with the supplied alias from the list of composite ContentTypes.
 
 ```csharp
@@ -326,6 +332,7 @@ if(success)
 ```
 
 ### .RemovePropertyType(string propertyTypeAlias)
+
 Removes a `PropertyType` from the current `ContentType`.
 
 ```csharp
@@ -337,6 +344,7 @@ contentTypeService.Save(contentType);
 ```
 
 ### .RemoveTemplate(ITemplate template)
+
 Removes a `Template` from the list of allowed templates.
 
 ```csharp
