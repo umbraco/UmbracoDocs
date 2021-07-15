@@ -62,20 +62,20 @@ return relationType.IsBidirectional;
 
 ### .ParentObjectType
 
-Gets or sets the Parents object type key as `Guid`
+Gets or sets the Parents object type key as `Guid?`
 
 ```csharp
-// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+// Given a `RelationService` object get RelationType by its Id and return ParentObjectType
 var relationType = relationService.GetRelationTypeById(1234);
 return relationType.ParentObjectType;
 ```
 
 ### .ChildObjectType
 
-Gets or sets the Childs object type key as `Guid`
+Gets or sets the Childs object type key as `Guid?`
 
 ```csharp
-// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+// Given a `RelationService` object get RelationType by its Id and return ChildObjectType
 var relationType = relationService.GetRelationTypeById(1234);
 return relationType.ChildObjectType;
 ```
