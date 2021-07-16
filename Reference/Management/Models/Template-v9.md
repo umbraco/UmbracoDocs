@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 verified-against: rc001
 meta.Title: "Template Model"
-meta.Description: Represents a Template file.
+meta.Description: "Represents a Template file."
 ---
 
 # Template
