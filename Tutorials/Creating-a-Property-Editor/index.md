@@ -4,12 +4,13 @@ meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
 
-
 # Creating a property editor
+
+_This tutorial was last tested on **Umbraco 8.11**_
 
 ## Overview
 
-This guide explains how to set up a property editor, how to hook it into Umbraco's Data Types, how to hook it into Angular's modules and its injector, and finally how we can test our property editor.
+This guide explains how to set up a property editor, how to hook it into Umbraco's Data Types, how to hook it into AngularJS' modules and its injector, and finally how we can test our property editor.
 
 So all the steps we will go through in part 1 are:
 
@@ -73,6 +74,42 @@ Inside this package manifest, we add a bit of JSON to describe the property edit
 }
 ```
 
+## Setting up a property editor with C#
+You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `MarkdownEditor.cs` file in `/App_Code/` to register the editor this way.
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Core.PropertyEditors;
+
+namespace Umbraco.Web.UI
+{
+    [DataEditor(
+        alias:"My.MarkdownEditor",
+        name:"My markdown editor",
+        view:"~/App_Plugins/MarkDownEditor/markdowneditor.html",
+        Group = "Rich Content",
+        Icon = "icon-code")]
+    public class MarkdownEditor : DataEditor
+    {
+        public MarkdownEditor(ILogger logger)
+            : base(logger)
+        { }
+
+    }
+}
+```
+
+You will still need to add all of the files you added above but, because your `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
+
+```json5
+{
+    // array of files we want to inject into the application on app_start
+    "javascript": [
+        "~/App_Plugins/MarkDownEditor/markdowneditor.controller.js"
+    ]
+}
+```
+
 ## Writing some basic HTML and JavaScript
 Then we add 2 files to the /App_Plugins/markdowneditor/ folder:
 - `markdowneditor.html`
@@ -106,13 +143,15 @@ Now our basic parts of the editor are done, namely:
 - The controller for wiring up the editor with angular.
 
 ## Register the Data Type in Umbraco
+
 After the above edits are done and we've restarted our application, we may now create a new Data Type called "markdown" and select our newly added property editor "My markdown editor".
-Save the Data Type, and add it to any Document Type. Then open a content item of that Document type and we'll be greeted with an alert message saying "The controller has landed", which means all is well. 
+Save the Data Type, and add it to any Document Type. Then open a content item of that Document type and we'll be greeted with an alert message saying "The controller has landed", which means all is well.
+
 We can now edit the assigned property's value with our new property editor.
 
-
 ## Add external dependencies
-Let's go a bit further, and load in a markdown editor JavaScript library. In this example we're using [pagedown][PagedownBootstrap], but this is of course optional.
+
+Let's go a bit further, and load in a markdown editor JavaScript library. In this example we're using [pagedown][PagedownBootstrap], but this is optional.
 
 First of, we'll add some external files to our package folder, in `/App_Plugins/markdowneditor/lib`. These files come from the pagedown editor project found here:
 
@@ -126,7 +165,7 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 angular.module("umbraco")
 .controller("My.MarkdownEditorController",
 // inject umbracos assetsService
-	function ($scope,assetsService,$timeout) {
+    function ($scope,assetsService,$timeout) {
 
     // tell the assetsService to load the markdown.editor libs from the markdown editors
     // plugin folder
@@ -138,9 +177,9 @@ angular.module("umbraco")
         ])
         .then(function () {
             // this function will execute when all dependencies have loaded
-			    $timeout(function(){
+            $timeout(function(){
             alert("editor dependencies loaded");
-			    });
+            });
         });
 
     // load the separate css for the editor to avoid it blocking our JavaScript loading

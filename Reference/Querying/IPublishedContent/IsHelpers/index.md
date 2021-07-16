@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
-IsHelper methods are basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
+IsHelper methods are ternary operators, however they work a little nicer in that they can be embedded in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
 ---
 
@@ -38,6 +38,17 @@ Test whether the specified `templateId` is an allowed template for the current n
 ### IsAllowedTemplate(string templateAlias)
 
 Test whether the specified `templateAlias` is an allowed template for the current node.
+
+:::note
+By default the above template methods are disabled. To enable them, make sure to modify your web.routing section of UmbracoSettings.config:
+
+```xml
+<web.routing
+    validateAlternativeTemplates="true">
+  </web.routing>
+```
+
+:::
 
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 

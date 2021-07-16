@@ -18,12 +18,17 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
 * [Colliding Data Types](Colliding-Datatypes)
+* [Type Not Found](Type-Not-Found)
+* [Language Mismatch](Language-Mismatch)
+* [Deployment Failed (with no error message)](Deployment-Failed)
+* [Changes not being applied](Changes-Not-Being-Applied)  
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
 * [Schema mismatch](Schema-Mismatches)
-* [SQL Timeouts](Deploy-Settings)
+* [SQL Timeouts](../../Deployment/Deploy-Settings/#timeout-issues)
 * [Dependency Exception](Dependency-Exceptions)
 * [Media path too long](Path-too-long-exception)
+* [An existing connection was forcibly closed by the remote host](Connection-Forcibly)
 
 
 ### Issues when using third party packages

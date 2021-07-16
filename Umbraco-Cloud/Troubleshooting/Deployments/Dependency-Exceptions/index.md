@@ -14,4 +14,6 @@ Or like this:
 
 These errors indicate that on the `Contact page` has (for example) a picker on it that refers to another content item. This other content item has either been deleted or is in the recycle bin on the environment you're deploying from.
 
+## How to fix your dependency error
+
 To resolve the issue, find the Contact page (hint: the nodeId can be used in the search field in the top-left of the backoffice) and publish it again. This should remove the reference to the node that is no longer available. Transferring the Contact page node should now succeed.

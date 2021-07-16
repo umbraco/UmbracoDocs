@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
 
-If you are interested in more general and easy-to-understand information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
+If you are interested in more general and information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
 ## General
 
@@ -32,7 +32,7 @@ Not currently.
 
 ### Can I move my site from Umbraco Cloud?
 
-Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
+Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 
 ### Can I move my existing site to Umbraco Cloud?
 
@@ -58,17 +58,32 @@ No. All services currently run in the Azure West Europe region.
 
 Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
 
-We do have some limitations:
+We do have some limitations.
 
-- If your Cloud site is using over 80% CPU for more than 3 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 80% CPU per 3 minutes
-- Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 15 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
+If your Cloud site is using a set amount of CPU for more than a set time, the priority for your CPU will be throttled down for each time you consecutively use more than the allowed amount within the given time.
+
+The amount of CPU and the set time, is defined by the plan you are on:
+
+- For a starter it is 20% CPU / 10 minutes / 5 times a day.
+- For a Standard it is 35% CPU / 10 minutes / 3 times a day.
+- For a Pro it is 50% CPU / 10 minutes / 2 times a day.
+
+The VMs the sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
+E.g.: A starter project can use up to 20% CPU over a period of 10 minutes. Every time it exceeds that it's flagged. A project can be flagged only 5 times a day.
+
+We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
+:::note
+If you have questions about how many resources your site is using, then please reach out to our friendly support team.
+:::
+
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+Yes you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
+
+Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### What versions of .NET does Cloud support?
 
@@ -146,9 +161,26 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation. 
 
-### Does Umbraco Cloud support Let's Encrypt certificates?
+### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes. And our own service [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) automates the process of installing and renewing Let's Encrypt certificates. All new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
+Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+
+### Does Umbraco Cloud support custom certificates?
+
+Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
+
+Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
+
+### How do I know if my site is still using a Latch certificate?
+
+To check whether your site is still using Latch follow this guide:
+
+1. Open your website URL.
+2. Select the "lock" icon to the left of the URL in the address bar in your browser.
+3. Click on Certificate.
+4. Identify the provider next to Issued by:.
+
+If the certificat issuer is Let's Encrypt, you are still using a Latch certificate.
 
 ### Does Umbraco Cloud support http/2?
 
@@ -172,9 +204,9 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should of course still be able to use the site locally.
+Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
 
-Learn more about this and how to set it up in our [Security section](../Security/#cookies-and-security).
+Learn more about this and how to set it up in our [Security section](../Security/#restrict-backoffice-access-using-ip-filtering).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -203,7 +235,7 @@ If you have any experience with Azure Web Apps, Cloud works in the same way. So 
 
 ### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. It's really easy to get the site running locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
+Yes, an Umbraco Cloud project is similar to a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. You can run your site locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 
@@ -262,7 +294,7 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 #### Database
 
-Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 14 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
+Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
 
 You can read more about database backups and how to perform these on Umbraco Cloud in the [Databases/Backups section](../Databases/Backups)
 

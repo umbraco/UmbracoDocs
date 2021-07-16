@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco File System Providers"
+meta.Description: "A guide to creating custom file systems in Umbraco"
 ---
 
 # Custom file systems (IFileSystem)

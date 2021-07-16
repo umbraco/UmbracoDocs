@@ -5,17 +5,20 @@ needsV8Update: "true"
 
 # Overview & Explanation - "Examining Examine by Peter Gregory"
 
-<small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
+Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx).
 
 When Umbraco Examine was released many developers including myself thought all my search woes were solved. I figured I would be able to fire up Umbraco, configure examine and BAM! I would have a search engine that gave me exactly what I needed. After trying it out, most developers left it alone and put it in the too hard basket as they did not understand what was going on under the surface or why their search results were not what they expected. What I want to try and achieve in this post is to demystify Umbraco Examine and provide a few tips I have picked up while working with it.
 
-## What is Examine?
-First, for those that don't know what I am on about let's start by telling you what Examine is.  Examine is a provider based Indexer/Searcher API and wraps the Lucene.Net indexing/searching engine. Examine makes it super easy to work with Lucene indexes and allows you to query or index almost any content with very little effort. Lucene is SUPER fast and when managed correctly can allow you to open up super fast searching on absurd amounts of data.
+## What is Examine
 
-## What is Umbraco Examine?
+First, for those that don't know what I am on about let's start by telling you what Examine is.  Examine is a provider based Indexer/Searcher API and wraps the Lucene.Net indexing/searching engine. Examine makes it possible to work with Lucene indexes and allows you to query or index almost any content with very little effort. Lucene is SUPER fast and when managed correctly can allow you to open up super fast searching on absurd amounts of data.
+
+## What is Umbraco Examine
+
 Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusive to Umbraco and can be used as a completely stand alone component on any project that needs a fast Index. Umbraco Examine is a combination of Umbraco, Examine and Lucene.Net and uses Umbraco as the data source for its Lucene index. Lucene has been a part of Umbraco from the early days and powers the backoffice search.
 
 ## The Basics of Examine
+
 Out of the box Umbraco comes configured to index content and members in the backoffice for the backoffice or internal search engine that appears in the header. As Examine is configuration driven you can quickly modify or set up indexes and searchers. The best place to start is with an index set.
 
 You configure an index set in the /config/examineIndex.config file. This file defines our indexes. As mentioned earlier, there are two internal default indexes configured in this file, and they are called "InternalIndexSet" and "InternalMemberIndexSet". The quickest way to get your index set up and running is with a single line of code.
@@ -63,15 +66,16 @@ This is where we define which of the standard properties (not user defined prope
 These are the properties that we have defined against our DocumentTypes that we want to index.  Use the property aliases.
 
 **`<IncludeNodeTypes>` & `<ExcludeNodeTypes>`**
-I like to think of these as the white list and the black list. Basically figure out if you have to include more or exclude more nodeTypes. Generally which ever one requires less configuration is the one that you should use but that is completely up to you and how much you like typing.
+I like to think of these as the white list and the black list. Figure out if you have to include more or exclude more nodeTypes. Generally which ever one requires less configuration is the one that you should use but that is completely up to you and how much you like typing.
 
-Remember that creating errors in index configuration is easy if you make spelling mistakes.  You will know if you have made errors as your index will either not create or not include the features you expect.  We will look at how to check your index content later with Luke, a Java based tool that allows us to look into our index and run queries against the index directly.
+Remember that creating errors in index configuration can be done for if you make spelling mistakes. You will know if you have made errors as your index will either not create or not include the features you expect.  We will look at how to check your index content later with Luke, a Java based tool that allows us to look into our index and run queries against the index directly.
 
 So now we have defined our index, we now need to tell Examine what to do with this configuration.  In our next step we need to configure our Indexer and our Searcher.  This is done in the `/config/ExamineSettings.Config` file.
 
 This file contains two main sections, `<ExamineIndexProviders>` and `<ExamineSearchProviders>`
 
 ## Setting Up your IndexProvider
+
 We will start out by creating our ExamineIndexProvider. As the name suggests this tells Examine how to manage our Index.  Again, contrary to what you may have been told you can leave out most of the optional configuration and specify your indexer in a single line of code.
 
 ```xml
@@ -110,6 +114,7 @@ Let's look at each of the options.
 Now that Examine knows how to index our site. It should be reading the config and slamming your content into an index.
 
 ## Checking your Index
+
 The easiest way to check that your config is correct is to first go and look in the IndexPath that you specified in your IndexSet.   You should see a set of folders and files. If you want to check the contents of the index you can do this using a tool named Luke which you can either download or launch from this page <http://www.getopt.org/luke/>.
 
 Using Luke, you can open up your index and see its content. It should give you statistics on the elements, number of documents indexed etc. If however you don't see indexed items then it's likely you have either made a mistake in your indexSet configuration or it has not indexed yet. When you are finished with Luke it's important to close the index to get Luke to release its lock on the files.
@@ -117,6 +122,7 @@ Using Luke, you can open up your index and see its content. It should give you s
 Luke can also be used to run raw Lucene searches against your index. This can be helpful during development or to debug your queries. Later on in this document you will start to learn how these raw queries fit together.
 
 ## Setting up your Search Provider
+
 We have a provider for our indexing, now we need to set up our search provider.  We do this by adding a new provider in the `<ExamineSearchProviders>` section of the `ExamineSettings.config` file.  The simplest search provider element looks like this:
 
 ```xml
@@ -134,9 +140,11 @@ Let's break it down, again.
 Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... now we need to do some coding.
 
 ## Querying with Examine
-So without further ado let's cut straight to the chase and focus on querying your indexes.  We are going to look first at the Fluent API which allows you to quickly create queries using an easy to learn chaining syntax, and then at building your own Raw Lucene queries for more complex scenarios.
+
+So without further ado let's cut straight to the chase and focus on querying your indexes. We are going to look first at the Fluent API which allows you to quickly create queries using a chaining syntax, and then at building your own Raw Lucene queries for more complex scenarios.
 
 ## Fluent API
+
 Examine contains a powerful fluent API that enables you to create searches by chaining up query conditions and then pass that chain to Examine to return results.  Let's look at formulating a query.
 First we need to specify our search provider that we want to do the searching for us.
 
@@ -165,7 +173,7 @@ Now this is where things often go wrong for developers and why they often get a 
 
 So Examine feeds the query to Lucene as follows.
 
-    +nodeName:hello metaTitle:hello
+`+nodeName:hello metaTitle:hello`
 
 The + specifies that it MUST meet this rule.
 
@@ -177,7 +185,7 @@ var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
 
 Now when Examine passes the query to Lucene it will pass it as this:
 
-    nodeName:hello metaTitle:hello
+`nodeName:hello metaTitle:hello`
 
 Which means give me anything where nodeName or metaTitle contain hello.  Much better.
 
@@ -189,13 +197,13 @@ var query = searchCriteria.Fields("nodeName","hello").And().Field("metaTitle",he
 
 without passing the BooleanOperation.Or into our ISearchCriteria we would get the following for our Lucene query
 
-    +nodeName:hello +metaTitle:hello
+`+nodeName:hello +metaTitle:hello`
 
 Which means give me results where nodeName MUST contain hello AND metaTitle MUST contain hello.
 
 With the BooleanOperation.Or we would get this:
 
-    nodeName:hello +metaTitle:hello
+`nodeName:hello +metaTitle:hello`
 
 Which means give me results where nodeName SHOULD contain hello AND metaTitle MUST contain hello.
 
@@ -207,7 +215,7 @@ var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, "h
 
 This would give a Lucene query that looks like this:
 
-    (nodeName:hello metaTitle:hello)
+`(nodeName:hello metaTitle:hello)`
 
 You can also pass in a group of query values.
 
@@ -217,7 +225,7 @@ var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, ne
 
 this would end up becoming:
 
-    (nodeName:hello metaTitle:goodbye)
+`(nodeName:hello metaTitle:goodbye)`
 
 I think you get the gist.
 
@@ -229,9 +237,10 @@ var query = searchCriteria.Field("nodeName","hello").And().GroupedOr(new string[
 
 This would end up being:
 
-    nodeName:hello +(metaTitle:hello metaDescription:goodbye)
+`nodeName:hello +(metaTitle:hello metaDescription:goodbye)`
 
 ### Fuzzy
+
 Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could be sound.
 
 ```csharp
@@ -241,6 +250,7 @@ var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8f)).Compile();
 The optional value you pass into Fuzzy between 0 and 1 specifies how Fuzzy or how close the match is to the original. For instance a match of 0.5 will not return when a threshold of 0.8 is specified.
 
 ### Boosting
+
 Sometimes you want hits in particular fields to result in higher relevance (score). Thankfully we can use the concept of Boosting to achieve this. By using Boost we can for instance define that if a match is found in the "nodeName" or the "metaTitle" it is more relevant than a match in the body.
 
 ```csharp
@@ -250,6 +260,7 @@ var query = searchCriteria.Fields("nodeName","hello".Boost(8)).Or().Field("metaT
 If you're curious as to the Math of this, don't be. First rule of Lucene is never ask how the Math works.
 
 ### Power Searching with Raw Lucene Queries
+
 Cool, we have learnt a lot. BUT the Fluent API can't do everything. Let's look at a complex example that is not achievable with the Fluent API. Let's say we want to do a search with a phrase, boost exact matches, find results that contain any of the parts of our search phrase. The Fluent API will not be able to do this. So this is where you need to know a little bit of Lucene query syntax.  Along the way I have been showing you what certain queries look like when we convert them from the fluent API to Lucene syntax. It's not as complex as it looks.
 
 Let's say our query is for the following phrase: "paging in XSLT". Most times when you search with Examine you will unfortunately either get nothing back or get back only a few results that match exactly. To see why, let's look at how we might do this with Fluent and then look at the problem when it's converted:
@@ -260,13 +271,13 @@ var query = searchCriteria.Fields("nodeName","paging in XSLT").Compile();
 
 When this converts it looks like this:
 
-    nodeName:"paging in XSLT"
+`nodeName:"paging in XSLT"`
 
-The problem becomes apparent straight away as you can see it quotes the phrase which basically means the term is the whole phrase. What we want from Lucene is the following:
+The problem becomes apparent straight away as you can see it quotes the phrase which means the term is the whole phrase. What we want from Lucene is the following:
 
-    nodeName:paging in XSLT
+`nodeName:paging in XSLT`
 
-What this basically means is that field nodeName needs to contain either paging, in, or XLST.
+What this means, is that field nodeName needs to contain either paging, in, or XLST.
 
 So to achieve this we need to build our custom Lucene query and then pass it to Examine as a Raw query.
 
@@ -286,13 +297,13 @@ luceneString += "nodeName:" + term;
 
 The resultant query would look like this:
 
-    nodeName:(+paging +in +XSLT)^5 nodeName:paging in XSLT
+`nodeName:(+paging +in +XSLT)^5 nodeName:paging in XSLT`
 
 The ^5 is the equivalent of .Boost(5)
 
 So as you can see, it can get pretty complex but also pretty powerful.
 
-For more information I suggest that you take the time to look through the official Lucene query syntax guide https://lucene.apache.org/core/2_9_4/queryparsersyntax.html. It will show you what can be used to achieve very complicated queries.
+For more information I suggest that you take the time to look through the official Lucene query syntax guide [https://lucene.apache.org/core/2_9_4/queryparsersyntax.html](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). It will show you what can be used to achieve very complicated queries.
 
 We haven't gone into the output of results but quickly here is what you could end up with in your codebehind using the above Raw query:
 
@@ -318,8 +329,8 @@ And then in your code front the objects that you are iterating over are of type 
 In conclusion Examine is awesome and with a little bit of information and a little patience to get to know it, you can be up and running with some very complex querying.
 
 ## Examine Videos
+
 There are a few videos covering Examine available online:
 
-- [CodeGarden '10: Web Search With Examine](http://stream.umbraco.org/video/635188/codegarden-10-web-search-with) (Shannon Deminick)
 - [Umbraco Examine and Lucene.NET : Umbraco UK Festival 2012](https://www.youtube.com/watch?v=6AMb0rrSrJw) (Ismail Mayat)
 - [Searching - Let users find your content](https://www.youtube.com/watch?v=ShzdJm87hzM) (Casper Andersen)

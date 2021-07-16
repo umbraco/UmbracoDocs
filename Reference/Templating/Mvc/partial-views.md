@@ -114,10 +114,10 @@ public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper h
 {
     return (model, viewData) => String.Join("", keys.Select(s => viewData[s].ToString()));
 }
-@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
+@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("year", "Parameter2") )
 ```
 
-Or even based off the Model, though Model is the current page then cacheByPage should be used instead:
+Or even based on a property on the Model (though if Model is the current page then `cacheByPage` should be used instead):
 
 ```csharp
 @Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
@@ -125,4 +125,4 @@ Or even based off the Model, though Model is the current page then cacheByPage s
 
 Regardless of the complexity here the contextualKeyBuilder function needs to return a single string value.
 
-Caching is only enabled when your application has debug="false". When debug="true" caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.
+Caching is only enabled when your application has `debug="false"`. When `debug="true"` caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.

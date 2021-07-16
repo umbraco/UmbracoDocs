@@ -22,46 +22,6 @@ Roles for each environment can be set on the *Edit Team* page available from the
 
 * Admin: Has access to everything on a project. An admin can delete a project, and edit the team. An admin can deploy changes between environments in the Project Portal and has access to git, as well as the Power Tools Kudu.
 
-
-## Team Member Permissions in the Umbraco Backoffice
-By default all team members created through the Portal are created as admin users in the backoffice. This can be overwritten by adding custom rules to the CloudUsers.config file in the /config directory.
-
-To match a Team Member with a group of permissions in the CloudUsers.config file you'll need to either match by e-mail or by the User Type of the Team Member using the "match" or "matchEmail" attributes.
-
-You can specify:
-
-* UserType: The name of a Backoffice User Type thus default permissions on Content Nodes
-* Start Nodes for Content and Media: You'll need to add the GUID of the node.
-* Language: The Culture Code for the backoffice user interface language
-* Disable Umbraco Access: When this is set to false, the user cannot login to the backoffice. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
-* Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
-
-```xml
-<PermissionGroups>
-  <Group match="*">
-    <UserType>Editor</UserType>
-    <StartNodeContent>0319fe65-a558-45a1-bd88-f93429e1dc04</StartNodeContent>
-    <StartNodeMedia>fc22bc00-54ee-52bf-b54c-92477dc95136</StartNodeMedia>
-    <Language>da</Language>
-    <DisableUmbracoAccess>true</DisableUmbracoAccess>
-    <Apps>
-    <App>Content</App>
-    <App>Media</App>
-    </Apps>
-  </Group>
-  <Group match="admin" matchEmail="@umbraco.">
-    <UserType>Admin</UserType>
-    <StartNodeContent></StartNodeContent>
-    <StartNodeMedia></StartNodeMedia>
-    <Language>en</Language>
-    <DisableUmbracoAccess>false</DisableUmbracoAccess>
-    <Apps>
-    <App>*</App>
-    </Apps>
-  </Group>
-</PermissionGroups>
-```
-
 ## [Technical contact](Technical-Contact.md)
 
 In order for us to reach the correct person when sending out information about server maintenance you need to add a technical contact to your Umbraco Cloud project.

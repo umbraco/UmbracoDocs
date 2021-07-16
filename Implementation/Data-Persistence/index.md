@@ -11,7 +11,7 @@ _The Umbraco Services layer is used to query and manipulate Umbraco stored in th
 
 The `ServiceContext` is the gateway to all of Umbraco's core services. In most cases, the `ServiceContext` will be
 exposed as a property on all Umbraco base classes such as `SurfaceController`s, `UmbracoApiController`s, any Umbraco views, etc...
-So for the majority of cases you can access the services by using this code (for example):
+So for the majority of cases, you can access the services by using this code (for example):
 
 ```csharp
 Services.ContentService.GetById(123);

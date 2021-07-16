@@ -110,5 +110,5 @@ The XSLT implementation of Examine has a few specific steps that you'll need to 
 ## Recommended resources
 For more detailed examples of implementing search with Examine, the following resources can be extremely helpful
 
-- [Examining Examine](overview-explanation.md) by Peter Gregory.
+- [Examining Examine](../overview-explanation.md) by Peter Gregory.
 - [The worlds friendliest post on getting started with Examine](https://24days.in/umbraco-cms/2013/getting-started-with-examine/) (24 Days in Umbraco)

@@ -6,6 +6,14 @@ versionFrom: 7.0.0
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
+:::note
+We are currently in the process of improving the Umbraco Cloud platform. This includes making some big changes to some of the key features the platform provides.
+
+You will [**need to ensure that your project(s) meet the minimum requirements**](/migrating-to-new-infrastructure/) in order to keep hosting them on Umbraco Cloud.
+
+On our website you can [learn more about the 'Future of Umbraco Cloud'](https://umbraco.com/blog/the-future-of-umbraco-cloud/) and if you have any questions about the process reach out to our friendly support team.
+:::
+
 ## What products are auto upgraded?
 
 * Umbraco CMS patch updates
@@ -17,7 +25,7 @@ When minor upgrades are available, you will need a Development environment on yo
 
 ## When do upgrades happen?
 
-* The status page will include all important roll out information: __[http://status.umbraco.io/](http://status.umbraco.io/)__
+* The status page will include all important roll out information: __[https://status.umbraco.io/](https://status.umbraco.io/)__
 * We will release product updates only on __Tuesday__
 * The decision to roll out an upgrade will be made no later than the __Thursday__ prior and that status page will be updated accordingly
 * A product upgrade will be rolled out if:
@@ -64,6 +72,7 @@ This describes how an Umbraco Cloud project is auto-upgraded:
 If a project is a project that has had child projects created off it, the upgrade process for patch versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterwards we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the patch upgrade will also be sent to the children.
 
 ## What is a breaking change?
+
 It is important that developers understand what is considered a breaking change in Umbraco products. In most cases an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases developers may be using Umbraco’s internal code or Umbraco’s code that is not intended for public consumption and in some releases that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated since this may directly affect a site that is auto-upgraded.
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)

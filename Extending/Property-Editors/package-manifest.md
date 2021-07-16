@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Package Manifest
 
-The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
+The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors, parameter editors, dashboards, sections or content apps. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
 
@@ -30,19 +30,24 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
 ```
 
 ## Root elements
-The manifest can contain five root collections, none of them are mandatory:
+
+The manifest can contain eight root collections, none of them are mandatory:
 
 ```json
 {
     "propertyEditors": [],
     "gridEditors": [],
     "parameterEditors": [],
+    "contentApps": [],
+    "dashboards": [],
+    "sections": [],
     "javascript": [],
     "css": []
 }
 ```
 
 ## Property Editors
+
 `propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members. They can also be made available as a macro parameter editor.
 
 The basic values on any editor are `alias`, `name` and `editor`. These three **must** be set. Furthermore the editor value is an object with additional configuration options, it must contain a view value.
@@ -71,6 +76,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `defaultConfig` Provides a collection of default configuration values, in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
 
 ### Editor
+
 `editor` Besides setting a view, the editor can also contain additional information.
 
 ```json
@@ -97,6 +103,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `JSON` Stored as ntext and automatically serialized to a dynamic object
 
 ### Pre Values
+
 `preValues` is a collection of prevalue editors, used for configuring the property editor, the prevalues object must return an array of editors, called `fields`.
 
 ```json
@@ -139,6 +146,7 @@ $scope.model.config.wolf
 If you specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
+
 The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
 
 ```json
@@ -150,6 +158,7 @@ The defaultConfig object provides a collection of default configuration values i
 ```
 
 ## Grid Editors
+
 Similar to how the `propertyEditors` array defines one or more property editors, `gridEditors` can be used to define editors specific to the grid. Setting up the default richtext editor in the Umbraco grid could look like:
 
 ```json
@@ -166,9 +175,59 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
+
 `parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors and will not show up on the property editors list.
 
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
+
+## Content Apps
+
+Here is an example of adding a content app. See the [Content Apps](../Content-Apps/index.md) article for more information and a full guide on how to create Content Apps.
+
+```json
+ "contentApps": [
+    {
+        "name": "Word Counter", // required - the name that appears under the icon
+        "alias": "wordCounter", // required - unique alias for your app
+        "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
+        "icon": "icon-calculator", // required - the icon to use
+        "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+    }
+]
+```
+
+## Dashboard
+
+There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice. Registering with package.manifest or with C# Type. Here is an example of registering a custom dashboard with the package.manifest file.
+
+```json
+ "dashboards": [
+    {
+    
+        "alias": "myCustomDashboard", 
+        "view": "~/App_Plugins/WordCounter/wordcounter.html",
+        "sections": ["content", "member", "settings" ],
+        "weight": -10
+ 
+    }
+]
+```
+
+See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards. 
+
+## Sections
+
+As with the custom dashboards, a custom section can be registered either with a package.manifest file or with C# Type. Here is an example of registering a custom section with the package.manifest file.
+
+```json
+ "sections": [
+    {
+        "alias": "myFavouriteThings",
+        "name": "My Favourite Things"
+    }
+]
+```
+See the [Sections](../Section-Trees/sections.md) for a full article on how to create custom sections.
 
 ## JavaScript
 `javascript` returns a string[] of JavaScript files to load on application start
@@ -193,9 +252,15 @@ The parameter editors array follows the same format as the property editors desc
 ## JSON Schema
 The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
-### Setting up Visual Studio 2015
+### Schema Files
 
-To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+* [Package.manifest](https://json.schemastore.org/package.manifest)
+* [Package.manifest 7.0.0](https://json.schemastore.org/package.manifest-7.0.0)
+* [Package.manifest 8.0.0](https://json.schemastore.org/package.manifest-8.0.0)
+
+### Setting up Visual Studio
+
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio.
 
 * Tools -> Options
 * Browse down to Text Editor -> File Extension

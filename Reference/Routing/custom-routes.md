@@ -120,3 +120,80 @@ public class MyProductController : RenderMvcController
     }
 }
 ```
+
+
+## Real World Example
+Say you want to route in a custom URL to a page controlled by a RenderMvcController for example a listing page with querystring filters – and you want to ensure your routes are content managed by Umbraco’s existing routing. Try the example “one pager” below:
+
+```csharp
+
+namespace Umbraco8.Components
+{
+    public class RegisterCustomRouteComposer : ComponentComposer<RegisterCustomRouteComponent>
+    { }
+
+    public class RegisterCustomRouteComponent : IComponent
+    {
+        private readonly IUmbracoContextFactory _context;
+
+        public RegisterCustomRouteComponent(IUmbracoContextFactory context)
+        {
+            _context = context;
+        }
+
+        public void Initialize()
+        {
+            int i = 0;
+
+            using (var cref = _context.EnsureUmbracoContext())
+            {
+                var umbracoHelper = cref.UmbracoContext.Content;
+                var productListing = umbracoHelper.GetAtRoot().DescendantsOrSelfOfType(Models.ProductListing.ModelTypeAlias);
+                var filters = umbracoHelper.GetAtRoot().DescendantsOrSelfOfType(Models.Filter.ModelTypeAlias);
+                
+                foreach (var root in productListing)
+                {
+                    foreach (var filter in filters)
+                    {
+                        i++;
+
+                        // Custom route to Product Listing Controller which will use a node as the
+                        // IPublishedContent for the current rendering page
+                        RouteTable.Routes.MapUmbracoRoute("ResourceSlugs-" + i, ((root.Url() + filter.Name.ToLower().Replace(" ", "-")).TrimStart('/')), new
+                        {
+                            controller = "ProductListing",
+                            action = "Index",
+                            category = filter.Id
+                        }, new ProductListingFilterHandler(root));
+                    }
+
+                }
+            }
+            
+        }
+
+        public void Terminate()
+        {
+            // Nothing to terminate
+        }
+
+    }
+
+        public class ProductListingFilterHandler : UmbracoVirtualNodeRouteHandler
+        {
+            private readonly IPublishedContent _node;
+
+            public ProductListingFilterHandler(IPublishedContent node)
+            {
+                _node = node;
+            }
+
+            protected override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
+            {
+                return _node;
+            }
+        
+        }
+   
+}
+```

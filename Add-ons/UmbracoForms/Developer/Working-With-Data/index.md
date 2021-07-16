@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Working with Umbraco Forms data"
+meta.Description: "Developer documentation on working with Forms record data."
 ---
 
 # Working with Record data

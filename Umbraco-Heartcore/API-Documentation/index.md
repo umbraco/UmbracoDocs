@@ -6,11 +6,15 @@ meta.Description: "Documentation for Umbraco Heartcore REST APIs"
 
 # API Documentation
 
-This page contains documentation for the REST API endpoints for Umbraco Heartcore. It is divided into two main areas: Content Delivery and Content Mangement.
+This page contains documentation for the available API endpoints for Umbraco Heartcore. It includes endpoints for the GraphQL API as well as for the REST API which is divided into two main areas: Content Delivery and Content Mangement.
+
+The [GraphQL API](GraphQL) can be used to query the read-only Content that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
 
 The [Content Delivery API](Content-Delivery) is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
 [The Content Management API](Content-Management) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
+
+The Preview API is the read-only Content and Media that you would retrieve to show the draft content in your apps, websites or other platforms. The API is available on `https://preview.umbraco.io`. The Preview API is always protected and requires an Api-Key. The endpoints are the same as the Content Delivery API.
 
 ## REST API Standard
 
@@ -108,6 +112,7 @@ Api-Key: {api-key}
 The endpoints implements OAuth 2.0.
 
 A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user.
+This corresponds to a user logging into the backoffice and is thus only meant to be used for the Content Management API.
 
 ```http
 POST https://api.umbraco.io/oauth/token
@@ -128,6 +133,10 @@ Authorization: Bearer {token}
 A member login can be used to access the Content Delivery API if it's protected. Members will only have access to CDN endpoint and cannot be used to access the Content Management API.
 
 Content can be restricted further by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
+
+:::note
+Do note that you will need an API key header if the Content Delivery API `cdn.umbraco.io` is set to protected via the backoffice.
+:::
 
 ### Member Bearer token
 

@@ -42,7 +42,7 @@ public class MyClass
 
     private IMemberGroupService _memberGroupService;
     
-    public MyClass(IMemberService memberGroupService)
+    public MyClass(IMemberGroupService memberGroupService)
     {
         _memberGroupService = memberGroupService;
     }

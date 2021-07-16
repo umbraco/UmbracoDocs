@@ -1,11 +1,12 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 product: "CMS"
 meta.Title: "Learn about extending the functionality of Umbraco"
 meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
 ---
 
 # Extending Umbraco
+
 ## [Dashboards](Dashboards/index.md)
 
 A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
@@ -40,6 +41,10 @@ Backoffice tours is the integrated and interactive help for the backoffice.
 
 A library of API Reference documentation.
 
+## [Backoffice Search](Backoffice-Search/)
+
+Extending the Umbraco Backoffice search, customising the fields searched - replacing the searching mechanism.
+
 ## [Content Apps](Content-Apps/index.md)
 
 Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
@@ -65,8 +70,3 @@ Developers can create their own Umbraco Health Checks and Health Check notificat
 ## [Packaging](Packages)
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
-
-
-
-
-

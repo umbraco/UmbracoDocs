@@ -1,12 +1,43 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Moving a Page
 
-Pages can be moved between areas of the website by moving them in the tree view. Not all pages will be able to be moved below other pages depending on your specific set up. If you are unsure or need clarification, seek advice from your system administrator. To move a page:
+Move pages within the website through the tree view. Not all pages can be moved depending on your set-up or page permissions. If you need clarification, contact your system administrator.
 
-1. Right click the page you want to move to reveal the context menu. Or alternatively you can click the ***Actions*** button in the top right right-hand corner.
-2. Click on ***Move*** and select the parent page you would like to move this page under.
-3. Click on the ***Move*** button to confirm the move and then you will see a confirmation message.
-4. Click ***OK*** to dismiss the confirmation message
+You can move a page in two ways:
+
+## Option 1
+
+1. Go to **Content**.
+2. Right-click the page you wish to move and select **Move**. Alternatively, click **•••** next to the parent node and select **Move**.
+
+    ![Move Menu 1](images/Move-menu-v9.png)
+3. A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
+
+     ![Move Option 1](images/Move-options-v9.png)
+
+4. Click **Move**.
+5. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+
+## Option 2
+
+1. Go to **Content**.
+2. Select the page you wish to move.
+3. Select **Actions** in the top-right corner of the screen.
+4. Select **Move** from the **Actions** drop-down menu.
+
+    ![Actions Menu](images/Actions-menu-v9.png)
+
+5. A window appears next to the section tree. Here, you can choose where you want to move the page in the tree structure.
+
+     ![Move Option 1](images/Move-options-v9.png)
+
+6. Click **Move**.
+7. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+
+---
+
+Prev: [Sorting Pages](../Ordering-Pages/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index.md)

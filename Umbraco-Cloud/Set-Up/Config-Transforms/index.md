@@ -104,6 +104,9 @@ Note that for the `compilation debug` and the `customErrors mode` there is a tog
 
 ![Toggle debug mode](images/toggle-debug.png)
 
+## Umbraco Latch transforms
+All sites created on Cloud since Umbraco v7.12 will contain a web.config transform called: `Latch.Web.live.xdt.config`. See the [Latch documentation](../Manage-Hostnames/Umbraco-Latch/index.md#https-by-default) for more information
+
 ## Baseline config transforms
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
@@ -121,3 +124,7 @@ Again, these types of prefixed files can be placed next to any other file so if 
 - `~/config/AcmeEnvironmentColor.Dashboard.development.xdt.config`
 - `~/config/AcmeEnvironmentColor.Dashboard.staging.xdt.config`
 - `~/config/AcmeEnvironmentColor.Dashboard.live.xdt.config`
+
+:::note
+Keep in mind that a misconfigured config transform may block Data Extraction on your project. Please see [here](../../Troubleshooting/Deployments/Changes-Not-Being-Applied) for more details.
+:::

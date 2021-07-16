@@ -33,6 +33,10 @@ Below is a screenshot of our recommendation on how the projects should be config
 * Visual Studio 2017 v15.9.6 or later
 * Git and/or Git Credential Manager for Windows
 
+:::note 
+If you're used to using a Git client like GitKraken or SourceTree, you will still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
+:::
+
 ## Video tutorial
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/a3yUPq567nQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -53,8 +57,6 @@ Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) a
 This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio.
 
 What follows is **a recommendation and not the only way to work with Visual Studio**.
-
-![](images/cmd-in-empty-folder.png)
 
 Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
 
@@ -124,6 +126,19 @@ We recommend placing all your code in the `*.Core` project (instead of, for exam
 * Data Access (the `*.Core` project references Umbraco so you can use the Umbraco datalayer as needed)
 * Extensions methods
 
+### Using ModelsBuilder and IntelliSense
+In order to use ModelsBuilder with IntelliSense in Visual Studio, you will need to make a couple of configuration changes to the web.config file of your `*.Web` project. This is to ensure that the models produced by ModelsBuilder are stored in the right place for compilation.
+1. Make sure ModelsBuilder.Enable is set to true (default): `<add key="Umbraco.ModelsBuilder.Enable" value="true" />`
+2. Set the Mode to `AppData` or `LiveAppData`. This will ensure you can use ModelsBuilder with Visual Studio. So in your Web.config, you should to have: `<add key="Umbraco.ModelsBuilder.ModelsMode" value="AppData" />`
+3. Create a directory called "Models" in your App_Code folder in the `*.Web` directory of your site. Then add: `<add key="Umbraco.ModelsBuilder.ModelsDirectory" value="~/App_Code/Models/" />` to Web.config.
+
+This will make the models of your Document Types available with IntelliSense in Visual Studio.
+[You can read more about configuring ModelsBuilder here.](../../../Reference/Templating/Modelsbuilder)
+
+:::note
+If you are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension&ssr=false) and get the error message "Unauthorized" when generating models, you will need to use or create a backoffice user in your local installation, and supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
+:::
+
 ### Using Umbraco namespaces in your `*.Core` project
 In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.
 
@@ -138,6 +153,12 @@ When working with this solution setup it's important to remember that you have o
 The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled.
 
 As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
+
+:::note
+To ensure that your `.dll` files are created in release mode, ensure that you switch to "Release" (instead of "Debug") mode when building the project.
+
+It is recommend to build the project in release mode, before deploying the changes through Git.
+:::
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.
 

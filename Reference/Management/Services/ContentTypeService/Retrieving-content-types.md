@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.4.0
+versionFrom: 8.7.0
 ---
 
 # Retrieving content types
@@ -55,10 +55,30 @@ IEnumerable<IContentType> contentTypes = contentTypeService.GetAll(new[] {
 IEnumerable<IContentType> contentTypes = contentTypeService.GetAll(1234, 1235);
 ```
 
-To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specyfing the numeric ID of the folder:
+To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specifying the numeric ID or the GUID:
 
 ```C#
 // Get a collection of content types of a specific content type
 IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(1232);
 ```
 
+```C#
+IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(Guid.Parse("4f89dd28-d038-4209-aaa1-06109b7946a7"));
+
+```
+
+## Check whether a content type has children
+
+In some cases it can be useful to check if a content type has children. The `HasChildren` method can be used to check whether a content type has children.
+
+```csharp
+// Check if there are children
+bool hasChildren = contentTypeService.HasChildren(Guid.Parse("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"));
+```
+
+Although the use of a GUID is preferable, you can also use it's numeric ID:
+
+```csharp
+// Check if there are children
+bool hasChildren = contentTypeService.HasChildren(1234);
+```

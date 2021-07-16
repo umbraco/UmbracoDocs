@@ -21,7 +21,7 @@ ILanguage language2 = ls.GetLanguageByIsoCode("en-US");
 
 The ISO code is a combination of the two-letter ISO 639-1 language code (lowercase) and two-letter ISO-3166 country code (uppercase). Eg. `en-US` for English in the United States, `en-GB` for English in the United Kingdom and `da-DK` for Danish in Denmark.
 
-Both methods will return an instance of the [ILanguage](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
+Both methods will return an instance of the [ILanguage](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
 
 ### Getting all languages
 
@@ -59,7 +59,7 @@ Below you can see a full example of the examples shown above - including the nec
 
 @{
     // Get a reference to the localization service
-    ILocalizationService ls = ApplicationContext.Services.LocalizationService;
+    ILocalizationService ls = Services.LocalizationService;
 
     // Get a collection of all languages
     IEnumerable<ILanguage> languages = ls.GetAllLanguages();
@@ -90,3 +90,4 @@ Below you can see a full example of the examples shown above - including the nec
     <pre>@language1</pre>
     <pre>@language2</pre>
 }
+```

@@ -15,6 +15,8 @@ The MediaService acts as a "gateway" to Umbraco data for operations which are re
 
 * Umbraco.Core.dll
 
+The Umbraco.Core.dll allows you to reference the Constants classes used in the below examples.
+
 All samples in this document will require the following using statements:
 
 ```csharp
@@ -67,7 +69,17 @@ To create a new folder at the root of the media archive, your code could look li
 
 ```csharp
 // Initialize a new media at the root of the media archive
-IMedia folder = Services.MediaService.CreateMedia("My Folder", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
+IMedia folder = Services.MediaService.CreateMedia("My Folder", Constants.System.Root, Constants.Conventions.MediaTypes.Folder);
+
+// Save the folder
+Services.MediaService.Save(folder);
+```
+
+Alternatively, you can replace the Constants in the above sample with hardcoded values.
+
+```csharp
+// Initialize a new media at the root of the media archive
+IMedia folder = Services.MediaService.CreateMedia("My Folder", -1, "Folder");
 
 // Save the folder
 Services.MediaService.Save(folder);
@@ -79,7 +91,7 @@ The second parameter is the ID of the parent media item. `Constants.System.Root`
 
 The third parameter is the alias of the Media Type. As Umbraco comes with a Folder Type by default, we can use the `Constants.Conventions.MediaTypes.Folder` constant to specify that the alias of the Media Type is `Folder`.
 
-In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`.
+In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`, which corresponds to the built-in "Administrator" user.
 
 
 ### Creating a new media from an uploaded file

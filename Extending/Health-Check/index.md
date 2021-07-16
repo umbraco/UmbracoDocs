@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Healthcheck"
+meta.Description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
 ---
 
 # Health Check
@@ -17,6 +19,8 @@ Umbraco comes with the following checks by default:
   * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the "from" email address used for email notifications has been changed from its default value
   * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true`
+* Category **Data Integrity**
+  * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for various data integrity issues in the Umbraco database
 * Category **Live environment**
   * **Custom errors (id: `4090C0A1-2C52-4124-92DD-F028FD066A64`)** - should be set to `RemoteOnly` or `On` on your live site
   * **Trace mode (id: `9BED6EF4-A7F3-457A-8935-B64E9AA8BAB3`)** - should be set to `enabled="false"` on your live site
@@ -183,8 +187,8 @@ using System.IO;
 using System.Web;
 using System.Web.Hosting;
 using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
+using Umbraco.Web.HealthCheck;
 
 namespace Umbraco.Web.HealthCheck.Checks.SEO
 {
@@ -228,8 +232,10 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
             if (success == false)
                 actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
                 // Override the "Rectify" button name and describe what this action will do
-                { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
-                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
+                {
+                    Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
+                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription")
+                });
 
             return
                 new HealthCheckStatus(message)
@@ -243,9 +249,11 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
         {
             var success = false;
             var message = string.Empty;
-            const string content = @"# robots.txt for Umbraco
-User-agent: *
-Disallow: /umbraco/";
+            
+            const string content = 
+                @"# robots.txt for Umbraco
+                User-agent: *
+                Disallow: /umbraco/";
 
             try
             {
@@ -254,7 +262,7 @@ Disallow: /umbraco/";
             }
             catch (Exception exception)
             {
-                Current.Logger.Error<RobotsTxt>(exception, "Could not write robots.txt to the root of the site");
+                Current.Logger.Error(typeof(RobotsTxt), exception, "Could not write robots.txt to the root of the site");
             }
 
             return
@@ -269,9 +277,11 @@ Disallow: /umbraco/";
 ```
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this, please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+
+
 
 The following example shows how the core method for sending notification via email is implemented:
 
@@ -282,18 +292,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 
 namespace Umbraco.Web.HealthCheck.NotificationMethods
 {
     [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificationMethod
+    public class EmailNotificationMethod : NotificationMethodBase
     {
         private readonly ILocalizedTextService _textService;
+        private readonly IRuntimeState _runtimeState;
+        private readonly ILogger _logger;
 
-        public EmailNotificationMethod(ILocalizedTextService textService)
+        public EmailNotificationMethod(ILocalizedTextService textService, IRuntimeState runtimeState, ILogger logger)
         {
-            var recipientEmail = Settings["recipientEmail"]?.Value;
+            var recipientEmail = Settings?["recipientEmail"]?.Value;
             if (string.IsNullOrWhiteSpace(recipientEmail))
             {
                 Enabled = false;
@@ -303,6 +316,8 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
             RecipientEmail = recipientEmail;
 
             _textService = textService ?? throw new ArgumentNullException(nameof(textService));
+            _runtimeState = runtimeState;
+            _logger = logger;
         }
 
         public string RecipientEmail { get; }
@@ -326,7 +341,11 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
                 results.ResultsAsHtml(Verbosity)
             });
 
-            var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
+            // Include the umbraco Application URL host in the message subject so that
+            // you can identify the site that these results are for.
+            var host = _runtimeState.ApplicationUrl;
+
+            var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject", new[] { host.ToString() });
 
             var mailSender = new EmailSender();
             using (var mailMessage = CreateMailMessage(subject, message))

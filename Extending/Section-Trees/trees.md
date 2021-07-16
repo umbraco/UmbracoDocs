@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Tree"
+meta.Description: "A guide to creating a custom tree in Umbraco"
 ---
 
 # Trees
@@ -15,7 +17,7 @@ Create a 'TreeController' class in C#. A new mvc controller which inherits from 
 * GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure.
 * GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
 
-Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section. The Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
+Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
 
 **For example**
@@ -261,6 +263,11 @@ void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRen
         e.Node.Title = "My new title";
     }
 }
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
+}
 ```
 
 ### TreeNodesRendering
@@ -293,6 +300,11 @@ void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesR
     {
         e.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
     }
+}
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
 }
 ```
 
@@ -340,6 +352,11 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
         // insert at index 5
         e.Menu.Items.Insert(5, i);
     }
+}
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
 }
 ```
 

@@ -5,31 +5,36 @@ versionFrom: 8.0.0
 # Adding server-side data to a property editor
 
 ## Overview
+
 In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to an angular controller + view.
 
 The end result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
 ## Setup the database
+
 First thing we need is some data; below is an SQL Script for creating a `people` table with some random data in it. You could also use [https://generatedata.com](https://generatedata.com) for larger amounts of data:
 
-    CREATE TABLE people (
-        id INTEGER NOT NULL IDENTITY(1, 1),
-        name VARCHAR(255) NULL,
-        town VARCHAR(255) NULL,
-        country VARCHAR(100) NULL,
-        PRIMARY KEY (id)
-    );
-    GO
+```xml
+CREATE TABLE people (
+    id INTEGER NOT NULL IDENTITY(1, 1),
+    name VARCHAR(255) NULL,
+    town VARCHAR(255) NULL,
+    country VARCHAR(100) NULL,
+    PRIMARY KEY (id)
+);
+GO
 
-    INSERT INTO people(name,town,country) VALUES('Myles A. Pearson','Tailles','United Kingdom');
-    INSERT INTO people(name,town,country) VALUES('Cora Y. Kelly','Froidchapelle','Latvia');
-    INSERT INTO people(name,town,country) VALUES('Brooke Baxter','Mogi das Cruzes','Grenada');
-    INSERT INTO people(name,town,country) VALUES('Illiana T. Strong','Bevel','Bhutan');
-    INSERT INTO people(name,town,country) VALUES('Kaye Frederick','Rothesay','Turkmenistan');
-    INSERT INTO people(name,town,country) VALUES('Erasmus Camacho','Sint-Pieters-Kapelle','Saint Vincent and The Grenadines');
-    INSERT INTO people(name,town,country) VALUES('Aimee Sampson','Hawera','Antigua and Barbuda');
+INSERT INTO people(name,town,country) VALUES('Myles A. Pearson','Tailles','United Kingdom');
+INSERT INTO people(name,town,country) VALUES('Cora Y. Kelly','Froidchapelle','Latvia');
+INSERT INTO people(name,town,country) VALUES('Brooke Baxter','Mogi das Cruzes','Grenada');
+INSERT INTO people(name,town,country) VALUES('Illiana T. Strong','Bevel','Bhutan');
+INSERT INTO people(name,town,country) VALUES('Kaye Frederick','Rothesay','Turkmenistan');
+INSERT INTO people(name,town,country) VALUES('Erasmus Camacho','Sint-Pieters-Kapelle','Saint Vincent and The Grenadines');
+INSERT INTO people(name,town,country) VALUES('Aimee Sampson','Hawera','Antigua and Barbuda');`
+```
 
 ## Setup ApiController routes
+
 Next we need to define an `ApiController` to expose a server-side route which our application will use to fetch the data.
 
 For this, we will create a file at: `/App_Code/PersonApiController.cs`. It must be in `App_Code` since we want our app to compile it on start. Alternatively, you can add it to a normal .NET project and compile it into a DLL as usual.
@@ -45,6 +50,7 @@ using System.Web;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.Editors;
 using Umbraco.Core.Persistence;
+using Umbraco.Core.Scoping;
 
 namespace My.Controllers
 {
@@ -59,6 +65,7 @@ namespace My.Controllers
 This is a very basic API controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return JSON data and only to requests which are authorized to access the backoffice.
 
 ## Setup the GetAll() method
+
 Now that we have a controller, we need to create a method, which can return a collection of people, which our editor will use.
 
 So first of all, we add a `Person` class to the `My.Controllers` namespace:
@@ -112,6 +119,7 @@ We are now done with the server-side of things, with the file saved in App_Code 
 This will return our JSON data.
 
 ## Create a Person Resource
+
 Now that we have the server-side in place, and a URL to call, we will setup a service to retrieve our data. As an Umbraco-specific convention, we call these services a *resource*, so we always have an indication of what services fetch data from the DB.
 
 Create a new file as `person.resource.js` and add:
@@ -138,6 +146,7 @@ This uses the standard angular factory pattern, so we can now inject this into a
 The `getAll()` method returns a promise from an `$http.get` call, which handles calling the URL, and will return the data when it's ready. You'll notice that the `$http.get` method is wrapped inside `umbRequestHelper.resourcePromise`, the `umbRequestHelper.resourcePromise` will automatically handle any 500 errors for you which is why the 2nd string parameter is there - it defines the error message displayed.
 
 ## Create the view and controller
+
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details:
 
 ### The view
@@ -151,6 +160,7 @@ We will now finally setup a new view and controller, which follows previous tuto
     </ul>
 </div>
 ```
+
 #### The controller
 
 ```javascript
@@ -163,6 +173,7 @@ angular.module("umbraco")
 ```
 
 ## The flow
+
 So with all these bits in place, all you need to do is register the property editor in a package.manifest - have a look at the first tutorial in this series. You will need to tell the package to load both your `personpicker.controller.js` and the `person.resource.js` file on app start.
 
 With this, the entire flow is:
@@ -175,9 +186,10 @@ With this, the entire flow is:
 6. The resource resolve the Promise
 7. The controller populates the view
 
-Easy huh? - honestly though, there is a good amount of things to keep track of, but each component is tiny and flexible.
+There is a good amount of things to keep track of, but each component is tiny and flexible.
 
 ## Wrap-up
+
 The important part of the above is the way you create an `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
 
 For simplicity, you could also have skipped the service part, and called `$http` directly in your controller, but by having your data in a service, it becomes a reusable resource for your entire application.

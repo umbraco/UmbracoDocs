@@ -18,6 +18,12 @@ When you are working with Umbraco Forms you have the option to setup email workf
 
 Before this email workflow will send out emails you will need to configure an SMTP service.
 
+:::note
+In some cases, you might also experience that you need to configure a sender-email for notifications.
+
+This can be done in the `<notifications>` section of the `web.config` file. Find more details on this in the [`umbracoSettings`](../../../reference/config/umbracosettings/#notifications) article.
+:::
+
 ### Backoffice users
 
 There are two scenarios regarding backoffice users where configuring an SMTP service is needed.
@@ -27,7 +33,12 @@ The first scenario is when you want to add a user to your project directly from 
 The second scenario where you'd need to setup an SMTP service for your Umbraco Cloud project, is if one of your backoffice users have forgotten their password. To reset their password, they have to request a password reset which will be send to them by mail. This will only work once you've configured an SMTP service.
 
 :::note
-The option to request password resets for backoffice users is disabled by default on Umbraco Cloud projects. This is mainly due to the fact, that we recommend adding backoffice users as team members through the Umbraco Cloud Portal instead of directly through the Umbraco backoffice.
+The option to request password resets for backoffice users is disabled by default on Umbraco Cloud projects. This is mainly to ensure that your backoffice login stays in sync with your Umbraco ID.
+You can reset your Umbraco ID password from the Umbraco Cloud login page.
+
+![reset password](images/Reset_password.png)
+
+Find more details about Umbraco ID in the ['Users on Cloud article'](..\Users-On-Cloud)
 :::
 
 ## How to configure SMTP settings

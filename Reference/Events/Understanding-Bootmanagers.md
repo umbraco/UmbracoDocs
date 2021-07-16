@@ -3,6 +3,14 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 ---
 
+:::note
+**This article has not yet been verified against Umbraco 8.**
+
+The concepts and code examples might not work if you are running Umbraco 8.0 or a later version. If you are using Umbraco 7, this article is perfect for you!
+
+You are more than welcome to report any issues found on the [Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues).
+:::
+
 # Understanding Umbraco the BootManager
 
 After IIS started the W3 process, Umbraco will begin launching.  There is a bootstrapper for the `Umbraco Application` which initializes all objects.

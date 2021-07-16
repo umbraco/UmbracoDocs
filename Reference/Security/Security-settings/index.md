@@ -8,6 +8,10 @@ versionFrom: 8.0.0
 
 The settings for Umbraco passwords are handled by default through the ASP.NET Membership Providers. There are two Membership Providers in the web.config file. One for Umbraco Members and one for Users.
 
+:::note
+Users in Umbraco are managed with ASP.NET Identity but in order to maintain backwards compatibility the password settings are still applied at the membership provider level which are carried over into ASP.NET Identity.
+:::
+
 ```xml
 <membership defaultProvider="UmbracoMembershipProvider" userIsOnlineTimeWindow="15">
   <providers>

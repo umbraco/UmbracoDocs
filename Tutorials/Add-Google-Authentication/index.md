@@ -12,29 +12,31 @@ meta.Description: "A guide to setup a Google login for the Umbraco backoffice."
 
 This guide takes you through the steps to setup a Google login for the Umbraco backoffice.
 
-### What is a Google login?
+### What is a Google login
 
 It means when you log in to the backoffice you normally have to put in your username and password, instead it will add a button that you can click and then log in with your Google account. Here is how it looks on Umbraco v7.9.1
 
 ![Google login screen](images/googleLoginScreen.png)
 
-### Why?
+### Why
 
 Why not? I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click a button and if you are already logged into Google it will log you in!
 
-### Who is this tutorial for?
+### Who is this tutorial for
 
 Developers who won't mind configuring a Google API, running the solution in Visual Studio, adding NuGet packages and editing the config files - does that sound way too advanced for you? Don't worry, I did this after working a bit with Umbraco for about a month, and I will make the steps in the guide very clear so even beginners will have a chance!
 
 ### Prerequisites
+
 Here is what you will need for this tutorial:
+
 - [Visual Studio](https://visualstudio.microsoft.com/) installed
 - A [Google](https://myaccount.google.com/) account
 - A working [Umbraco solution](../../Getting-Started/)
 
 ## Setting up a Google OAuth API
 
-The first thing to do is set up a Google API. To do this you need to go to https://console.developers.google.com/, then log in with your Google account.
+The first thing to do is set up a Google API. To do this you need to go to [https://console.developers.google.com/](https://console.developers.google.com/), then log in with your Google account.
 
 The first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but click the + at the top:
 
@@ -105,9 +107,15 @@ Add this in the file as seen here:
 
 The ConfigurationManager is missing a dependency so add the following at the top: `using System.Configuration;`
 
-Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says
-`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to
-`<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
+Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api.
+
+But first locate the code that says
+`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />`
+and change the value to:
+
+```xml
+<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
+```
 
 Then add the following in the appSettings as well:
 
@@ -116,7 +124,7 @@ Then add the following in the appSettings as well:
 <add key="GoogleOAuthSecret" value="this is where you paste in the client secret"/>
 ```
 
-And of course fill in the relevant information as the value fields - you can copy paste this from your Google API.
+Make sure to fill in the relevant information as the value fields - you can copy paste this from your Google API.
 
 Build and run the website one final time. Now when you have logged into your backoffice you can click your user in the top right corner and choose link with Google:
 

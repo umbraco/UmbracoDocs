@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Umbraco solution and project structure"
+meta.Description: "How the Visual Studio solution is structured and what is the functionality of each project."
 ---
 
 # Solution and project structure

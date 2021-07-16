@@ -7,33 +7,38 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/p5oMCMboxQ8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/rZCwfH7CsTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Step-by-step
 
 From the Umbraco Cloud portal copy your development environments git repository endpoint using the *How to connect my machine* option and then clone the site using your favorite Git client. We like [Fork](https://git-fork.com/),  [SourceTree](https://www.sourcetreeapp.com/), [Git Extensions](https://gitextensions.github.io), or [GitKraken](https://www.gitkraken.com/).
-Here are the steps to clone your site (**We'll use GitKraken in this example.**):
+Here are the steps to clone your site (**We'll use Fork in this example.**):
 
 1. Click the Connect my machine button to get the Clone project dialog.
+
     ![Connect my machine](images/connect-my-machine.png)
 
 2. Copy the Clone Url from the portal for your dev environment
+
     ![clone dialog](images/connect-my-machine-2.png)
 
-3. From GitKraken select Clone Repo
-    ![GitKraken Clone UI](images/gitkraken-clone.png)
+3. From Fork select Clone
+
+    ![Fork Clone UI](images/Fork-Clone.png)
 
 4. Set your destination path to where you keep your local work
 5. Paste the URL in to the URL box
 6. Choose a name for the local project folder (preferably using the project name)
 7. Click 'Clone the repo!'
+
+    ![Fork Clone UI](images/Fork-clone-2.png)
 8. You’ll be prompted to log in - Use the same credentials as you use for Umbraco Cloud.
 
 ![Clone to local machine](images/clone-to-local.gif)
 
-Now you have an exact copy of your Umbraco Cloud environment locally.
+Now you have an exact copy of your Umbraco Cloud environment locally that you can [run](https://youtu.be/p5oMCMboxQ8?t=233).
 
-We like to use Microsoft WebMatrix or Visual Studio Code when working locally, but you can use Visual Studio or another development tool or web server of course. When you run your local site for the first time you’ll be prompted to restore your site's content. Wait until this process completes as it also creates the local SqlCE database for your site.
+We like to use Microsoft WebMatrix or Visual Studio Code when working locally, but you can use Visual Studio or another development tool or web server. When you run your local site for the first time you’ll be prompted to restore your site's content. Wait until this process completes as it also creates the local SqlCE database for your site.
 
 ![clone dialog](images/restorecontent.jpg)
 

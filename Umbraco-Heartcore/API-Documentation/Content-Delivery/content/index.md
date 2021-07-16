@@ -11,6 +11,7 @@
 * [Get By Url](#get-by-url)
 * [Get By Type](#get-by-type)
 * [Get Ancestors](#get-ancestors)
+* [Get Children](#get-children)
 * [Get Descendants](#get-descendants)
 * [Content Filter](#content-filter)
 * [Search](#search)

@@ -1,11 +1,23 @@
 ---
-keywords: EditorModelEventManager setting default values
+keywords: EditorModelEventManager setting default values defaultvalue
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
+meta.Title: "EditorModel Events - or how to set a default value"
+meta.Description: "Explanation of how handle the EditorModelEventManager SendingContent event to set an initial default value for a propery when the editor creates a new content item in the backoffice"
 ---
 
 # EditorModel Events
 
 The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the SendingContentModel event fires right before a content item is loaded into the backoffice for editing. It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
+
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, EditorModel Events have been renamed to [**EditorModel Notifications**](../Notifications/EditorModel-Notifications).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
 
 ## Usage
 
@@ -17,46 +29,113 @@ using System.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Web.Editors;
+using Umbraco.Web.Models.ContentEditing;
 
 namespace My.Website
 {
     [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class SubscribeToEditorModelEventsComposer : ComponentComposer<SubscribeToEditorModelEvents>
     {
-    //this automatically adds the component to the Components collection of the Umbraco composition
+       // This automatically adds the component to the Components collection of the Umbraco composition
     }
 
     public class SubscribeToEditorModelEvents : IComponent
     {
-        // initialize: runs once when Umbraco starts
+        // Initialize: runs once when Umbraco starts
         public void Initialize()
         {
             EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
         }
 
-        // terminate: runs once when Umbraco stops
+        // Terminate: runs once when Umbraco stops
         public void Terminate()
         {
+            // Unsubscribe during shutdown
+            EditorModelEventManager.SendingContentModel -= EditorModelEventManager_SendingContentModel;
         }
 
-    private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
+        private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
-            // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
+            // Set a default value for a NewsArticle's PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
             {
-            //access the property you want to pre-populate
-            //note each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class, which has an IEnumerable of Tabs, and each Tab is an IEnumerable of `ContentPropertyDisplay` properties for each property in the document type
-                var pubDateProperty = e.Model.Variants.FirstOrDefault().Tabs.FirstOrDefault(f=>f.Alias=="Content").Properties.FirstOrDefault(f => f.Alias == "publishDate");
-                if (pubDateProperty.Value == null || String.IsNullOrEmpty(pubDateProperty.Value.ToString()))
-                {
-                    // set default value if the date property is null or empty
-                    pubDateProperty.Value = DateTime.UtcNow;
+                //access the property you want to pre-populate
+                //in V8 each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
+                //if your site uses variants, then you need to decide whether to set the default value for all variants or a specific variant
+                // eg. set by variant name:
+                // var variant = e.Model.Variants.FirstOrDefault(f => f.Name == "specificVariantName");
+                // OR loop through all the variants:
+                foreach (var variant in e.Model.Variants){
+                    //check if variant is a 'new variant' - we only want to set the default value when the content item is first created
+                    if (variant.State == ContentSavedState.NotCreated){
+                        // each variant has an IEnumerable of 'Tabs' (property groupings) and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
+                        var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties).FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
+                        if (pubDateProperty!=null){
+                            // set default value of the publish date property if it exists
+                            pubDateProperty.Value = DateTime.UtcNow;
+                        }
+                    }
                 }
             }
         }
     }
 }
 ```
+
+Another example could be to set the default Member Group for a specific Member Type using `SendingMemberModel`:
+
+```csharp
+public class SubscribeToEditorModelEvents : IComponent
+{
+    private readonly IMemberGroupService _memberGroupService;
+
+    public SubscribeToEditorModelEvents(IMemberGroupService memberGroupService)
+    {
+        _memberGroupService = memberGroupService;
+    }
+    
+    public void Initialize()
+    {
+        EditorModelEventManager.SendingMemberModel += EditorModelEventManager_SendingMemberModel;
+    }
+    
+    public void Terminate()
+    {
+        EditorModelEventManager.SendingMemberModel -= EditorModelEventManager_SendingMemberModel;
+    }
+
+    private void EditorModelEventManager_SendingMemberModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.MemberDisplay> e)
+    {
+        bool isNew = !int.TryParse(e.Model.Id?.ToString(), out int id) || id == 0;
+        
+        // We only want to set the default member group when the member is initially created, eg doesn't have an Id yet
+        if (isNew == false)
+            return;
+               
+        // Set a default value member group for the member type `Member`
+        if (e.Model.ContentTypeAlias == "Member")
+        {
+            // Find a specific member group
+            var mg = _memberGroupService.GetByName("Customer");
+            if (mg == null)
+                return;
+            
+            // Find member group property on member model
+            var prop = e.Model.Properties.FirstOrDefault(x => x.Alias == $"{Umbraco.Core.Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup");
+            if (prop != null)
+            {
+                // Assign a default value for member group property
+                prop.Value = new Dictionary<string, object>
+                {
+                    { mg.Name, true }
+                };
+            }
+        }
+    }
+}
+```
+
+
 ## Events
 
 <table>
@@ -143,6 +222,6 @@ A model representing a member to be displayed in the backoffice
 
 ## Samples
 
-The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experience. You can can find inspiration from the various samples provided below:
+The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experience. You can find inspiration from the various samples provided below:
 
 * [Customizing the "Links" box](Customizing-the-links-box)

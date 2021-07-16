@@ -1,10 +1,13 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Umbraco Package Types"
+meta.Description: "Types of packages in Umbraco"
 ---
 
 # Package Types
+
 There are two main ways to install packages in Umbraco; Package zip files and NuGet packages.
-Each of these has its own advantages. 
+Each of these has its own advantages.
 
 When developing a package you should attempt to provide both a zip file package and a NuGet package.
 
@@ -14,8 +17,9 @@ A package zip file can be installed through the Umbraco backoffice.
 
 ![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
 
-Packages zip files can contain: 
+Packages zip files can contain:
 
+* Content
 * Solutions files (dlls, App_plugins files, etc)
 * Document Types
 * Templates

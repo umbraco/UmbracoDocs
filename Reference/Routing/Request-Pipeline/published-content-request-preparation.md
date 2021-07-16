@@ -82,7 +82,7 @@ PublishedContentRequest.Prepared += (sender, args) =>
 
 Concerning Webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
 
-You can of course create your own Mvc RenderController:
+You can create your own Mvc RenderController:
 
 ```csharp
 // This is the default controller

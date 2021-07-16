@@ -59,7 +59,7 @@ public class ScoresController : UmbracoApiController
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
 
 Example:
 
@@ -115,11 +115,66 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 
 
 E.g
-*~/Umbraco/Api/Products/GetAllProducts* or
+*~/Umbraco/backoffice/Api/Products/GetAllProducts* or
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
-
 
 ### More Information
 
 * [Authenticating & Authorizing controllers](../Authorized/index.md)
+
+## Using MVC Attribute Routing in Umbraco Web API Controllers
+
+*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application. 
+
+To enable attribute routing in Umbraco Web API controllers you need to write a *Component* and register that using a *Composer*. The most important part in the Component is the `MapHttpAttributeRoutes` which enables attribute routing. This below example ensures your Web API controller can be accessed at `products/getallproducts`.
+
+```csharp
+
+public class AttributeRoutingComponent :IComponent
+{
+    public void Initialize()
+    {
+        GlobalConfiguration.Configuration.MapHttpAttributeRoutes();        
+        
+    }
+
+    public void Terminate()
+    {
+        
+    }
+}
+
+public class AttributeRoutingComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+       composition.Components().Append<AttributeRoutingComponent>(); ;
+    }
+}
+
+public class ProductsController : UmbracoApiController
+{
+    [Route("products/getallproducts")]
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+```
+
+You can also *Insert* the Component to avoid clashes with other packages if they use the configuration.
+
+```csharp
+
+[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+public class AttributeRoutingComposer : IComposer
+{
+    public void Compose(Composition composition)
+    {
+       composition.Components().Insert<AttributeRoutingComponent>(); ;
+    }
+}
+
+```

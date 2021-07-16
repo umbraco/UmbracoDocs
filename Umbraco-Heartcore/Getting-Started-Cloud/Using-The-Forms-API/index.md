@@ -132,7 +132,7 @@ First step is to install it through NuGet:
 > Install-Package Umbraco.Headless.Client.Net
 ```
 
-When using the library you need the Content Management part in order to work with Forms. Create a new instance of the `ContentManagementService` and pass in the name of your Umbraco Heartcore project and either username + password of a backoffice user or an API-Key. In the example below we use an API-Key when retriving all available form definitions:
+When using the library you need the Content Management part in order to work with Forms. Create a new instance of the `ContentManagementService` and pass in the name of your Umbraco Heartcore project and either username + password of a backoffice user or an API-Key. In the example below we use an API-Key when retrieving all available form definitions:
 
 ```csharp
 var managementService = new ContentManagementService("project-alias", "api-key-value");

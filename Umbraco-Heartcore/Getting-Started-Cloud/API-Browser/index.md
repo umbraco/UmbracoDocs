@@ -8,7 +8,7 @@ The API Browser is located in the Settings section of the Umbraco backoffice. Ex
 
 ## The user interface
 
-Using the API Browser you can browse through the output for the various API endpoints. This is done from a UI where you in the left side are able to *explore* the endpoints and it the right side *inspect* the output.
+Using the API Browser you can browse through the output for the various API endpoints. This is done from a UI, where on the left side you are able to *explore* the endpoints and on the right side you are able to *inspect* the output.
 
 ![API Browser user interface](images/user-interface.png)
 
@@ -30,7 +30,7 @@ The **Properties** will show you all the available properties on the object / pi
 
 Below the properties, is a section with a list of **Links**. These are links that you can use to make various GET requests from the endpoint you are already using. 
 
-The final section in the explorer is the **Embedded resources**. Here you can see the properties for each embedded resource on the endpoint you are callin, as well as links to continue browser the API based on each of those resources.
+The final section in the explorer is the **Embedded resources**. Here you can see the properties for each embedded resource on the endpoint you are calling, as well as links to continue browser the API based on each of those resources.
 
 ### Inspector
 

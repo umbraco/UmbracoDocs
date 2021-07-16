@@ -1,10 +1,18 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco events"
+meta.Description: "Information on various backofice events in Umbraco"
 ---
 
 # Using events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
+
+:::note
+Since Umbraco 9, Events are called Notifications. This means that the information and links in this article are only relevant to you, if you're using Umbraco 8.
+
+All available notifications are documented in the [Notifications](../Notifications) section.
+:::
 
 ## [Composing](../../Implementation/Composing)
 
@@ -20,8 +28,10 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 * See [ContentService Events](ContentService-Events.md) for a listing of the ContentService object events.
 * See [MediaService Events](MediaService-Events.md) for a listing of the MediaService object events.
+* See [MemberService Events](MemberService-Events/index.md) for a listing of the MemberService object events.
 
 ## Other events
+
 * See [ContentTypeService Events](ContentTypeService-Events.md) for a listing of the ContentTypeService object events.
 * See [DataTypeService Events](DataTypeService-Events.md) for a listing of the DataTypeService object events.
 * See [FileService Events](FileService-Events.md) for a listing of the FileService object events.
@@ -32,6 +42,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 * See [Tree Events](../../Extending/Section-Trees/trees.md) for a listing of the tree events.
 
 ## Editor Model events
+
 See [EditorModelEventManager Events](EditorModel-Events/index.md) for a listing of the EditorModel events
 
 :::tip

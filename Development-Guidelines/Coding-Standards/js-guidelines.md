@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Coding Standards"
+meta.Description: "A guide to Javascript coding standards in Umbraco."
 ---
 
 # JavaScript coding standards and guidelines

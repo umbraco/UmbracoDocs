@@ -1,10 +1,21 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco DataTypeService Events"
+meta.Description: "Information on the various events available in the DataTypeService"
 ---
 
-# DataTypeService Events#
+# DataTypeService Events
 
-The DataTypeService class implements IDataTypeService. It provides easy access to operations involving IDataType.
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, DataTypeService Events have been renamed to [**DataTypeService Notifications**](../Notifications/DataTypeService-Notifications.md).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
+
+The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 
 <table>
     <tr>

@@ -4,9 +4,14 @@ versionFrom: 7.0.0
 
 # Manage Subscriptions
 
+:::note
+This article is only for already existing customers on Umbraco Cloud.
+For new customers on Umbraco Cloud after the 28th of April handling subscriptions is done directly in the [Payment setting section](../Project-settings#payment) on Umbraco Cloud.
+:::
+
 In this article you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be access through [umraco.com](https://umbraco.com) or by following the "Manage Subcriptions" link on the Profile dropdown on the Umbraco Cloud Portal.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be access through [umbraco.com](https://umbraco.com) or by following the "Manage Subcriptions" link on the Profile dropdown on the Umbraco Cloud Portal.
 
 ![Manage Subscriptions](images/manage-subscriptions.png)
 
@@ -46,6 +51,14 @@ You might find yourself in a situation where you will need to change the ownersh
 Changing subscription ownerships is not something you can do by yourself. You will need to reach out to our __Support Team__ and they will do it for you.
 
 Whomever is taking over a subscription will need to have an existing account on umbraco.com. If they do not have an account they can [register here](https://shop.umbraco.com/profile/register).
+
+When you have registered your user. You will need to login to your [profile] (https://shop.umbraco.com/profile/edit-your-details/) and fill out the following info under the invoicing information section. Please make sure you fill out the following:
+
+- Company Name 
+- Address
+- Country 
+- VAT number (if within EU)
+
 
 :::note
 Do note that it will have to be the owner of the subscription who reaches out when changing the owner.

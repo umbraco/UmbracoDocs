@@ -1,11 +1,21 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 9.0.0
 needsV8Update: "true"
 ---
 
 # ContentTypeService Events
 
-The ContentTypeService class implements IContentTypeService. It provides easy access to operations involving IContentType and IMediaType.
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, ContentTypeService Events have been renamed to [**ContentTypeService Notifications**](../Notifications/ContentTypeService-Notifications.md).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
+
+The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType and IMediaType.
 
 <table>
     <tr>

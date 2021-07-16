@@ -1,22 +1,25 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
-# Versions
+# Comparing Versions
 
-Umbraco allows you to work with multiple versions of the same page. All previously saved pages are stored in a version history list. This means that you never lose changes to a page because all old versions of the page are saved to the history. You then have the opportunity to access and re-publish older versions if necessary.
-
-## Comparing Versions
+You will never lose changes on a page because all the old versions of the page are saved in **History**. 
 
 To compare a page on the site with its previous versions:
 
-1. Right-click on the page title in the menu or click the ***Actions*** button.
-2. Select the ***Rollback*** option.
-3. In the Rollback dialogue box, select a version from the Rollback To drop-down list.
-4. When you select a version from the drop-down list, you are presented with a comparison of the current page with the version you selected. Red, struck-out text is text that will not appear in the selected version and green means text that will be added, should you choose to rollback to that version of the page.
-5. If you check the HTML radio button, you will be shown the selected version of the page as HTML. Check the Diff checkbox to see the differences between the versions as a list of fields. 
+1. Navigate to the page whose versions you wish to view.
+2. Go to the **Info** tab.
+3. Click on the **Rollback** button in the **History** section.
 
-![rollback.jpg](images/rollback.jpg)
- 
-![cancelRollback.jpg](images/cancelRollback.jpg)
+    ![Rollback](images/Rollback-v9.png)
+4. The Rollback tree opens in the right-side of the screen. Select a version from the **Rollback To** drop-down list.
+
+    After selecting the version, a comparison of the current page with the version you selected is displayed. The text highlighted in red and striked-out will not appear in the selected version and the text highlighted in green means the text that will be added, should you choose to rollback to that version of the page.
+
+    ![Rollback Changes](images/Rollback-changes-v9.png)
+
+---
+
+Prev: [Version Management](../../Version-Management/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Rollback to a Previous Version](../Rollback-to-a-Previous-Versions/index.md)

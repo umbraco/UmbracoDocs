@@ -11,7 +11,9 @@ To ensure that the documentation is readable and has a similar style throughout 
 
 ### Punctuation in headings
 
-This rule will give a warning if you end headings with either of these punctuation symbols:
+Try to not use any kind of punctuation in headings and headlines. These should act as titles, and no punctuation is necessary.
+
+For consistency, this rule will give a warning if you end headings with either of these punctuation symbols:
 
 - ?
 - :
@@ -19,7 +21,9 @@ This rule will give a warning if you end headings with either of these punctuati
 
 ### Use of Hyperbole
 
-This rule will give a warning if you use either of these words in your text:
+The words in the list below, will cause a warning when they are included in your contribution.
+
+Try not to use any of the mentioned words, as they are often opinionated. What may be 'easy' for you, might not be easy another user reading the article.
 
 <!-- vale off -->
 
@@ -33,20 +37,21 @@ This rule will give a warning if you use either of these words in your text:
 
 ### Start lists with capital letters
 
-This rule will give an error if you have a list that starts with uncapitalized words.
+To ensure consistency with grammar and sentence, this rule will give an error if you have a list that starts with uncapitalized words.
 
 ### Long sentences
 
 This rule will give an error if you have a sentence with more than 40 words. The number of words may change in the future, generally 20-25 is the recommended amount per sentence in documentation.
+
 This is to improve readability.
 
 ### Double spacing
 
-This rule will warn you if you have more than 1 space in a row in your text.
+In order to ensure readability and consistency, this rule will warn you if you have more than 1 space in a row in your text.
 
 ### Terms
 
-This rule will suggest a different term if you use one we have deemed wrong, this is to ensure the same spelling of terms throughout the documentation.
+To ensure the consistency in the way terms are spelled throughout the documentation, this rule will suggest a different term if you use one we have deemed wrong.
 
 **Example**:
 The term `backoffice` has been seen spelled in many different ways, most commonly:

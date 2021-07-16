@@ -61,6 +61,12 @@ The final view should look like this:
 <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
 ```
 
+:::note
+If you do not have Starter Kit installed, or experience issues with the properties not being picked up/showing up in HTML feel free to remove the fallback to siteName.
+
+If your meta properties do not show up on social media, make sure to inspect source HMTL and make sure there are no inline HTML tags in `og:title`, `og:description` etc.
+:::
+
 **Pro tip:** In order to keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
 
 [Previous](step-3-v7.md) - [Next](summary-v7.md)

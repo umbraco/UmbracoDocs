@@ -1,130 +1,105 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
-# Creating a form
+# Creating a Form - The Basics
 
-This will show the basic steps of creating a form and adding them to your Umbraco site.
+In this article, we'll take a look at the basic steps of creating a Form and adding the Form to your Umbraco site.
 
-## Navigate to the Forms section
+## Accessing the Forms Section
 
-Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
+You can manage the Forms in the **Forms** section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-![Forms Section](images/FormsSectionV8.png)
+If you do not see the **Forms** section, you will need to either log in with an Administrator account or request access from someone with Administrator permissions for your site. An Administrator can give permission to view the Forms section to your individual account or the user group your account belongs to from within the Users section of the backoffice.
 
-## Click the forms tree
+![Forms Section](images/FormsSectionV9.png)
 
-Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option.
+## Creating a Form
 
-![Forms tree](images/FormsTree.png)
+To create a Form, follow these steps:
 
-## Select if you want to start from scratch
-You will see the following dialog
+1. Navigate to the **Forms** section.
+2. Click **...** next to the Forms folder.
 
-![Forms create dialog](images/FormsCreateDialog.png)
+    ![Forms tree](images/FormsTree.png)
+3. The **Create a new Form** dialog opens.
 
-You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
+    ![Forms create dialog](images/FormsCreateDialogV9.png)
+4. Select **Empty Form**. The Form Designer opens in the editor.
 
-In this walk-through we'll select **Empty form**.
+    ![Forms designer](images/FormDesignerStartV8.png)
+5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
 
-## Design the form
+    :::note
+    In Umbraco Forms version 7 or higher, unless the feature has been disabled via configuration, there will be a predefined *Consent for storing submitted data* field added to all new Forms.
+    See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https://umbraco.com/blog/umbraco-version-79-and-forms-70-is-out/)
+    :::
 
-The next screen you will see is the form designer.
+6. Enter the **Name** for the Form. Let's call it _Our first form_.
+    ![Forms designer Set Name](images/FormDesignerFormNameV8.png)
+7. **[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
+    ![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
+8. **[Optional]** Enter the **Group Name**. Click **Add new group** to add another group.
+    ![Forms designer page caption](images/FormDesignerPageGroupV8.png)
+9. Click the **Add Question** button to add a new field.
+    ![Forms designer add field](images/FormDesignerAddFieldV8.png)
+10. The Add Question dialog opens.
 
-![Forms designer](images/FormDesignerStartV8.png)
+    ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
+11. Enter the following details:
+    | Field Name | Value |
+    |-|-|
+    | Enter question | Name |
+    | Enter help text | Enter your name here |
+    | Choose answer type | Short answer |
 
-There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI.
+12. In the **Sensitive data** field, choose if the field stores sensitive data. Once selected, the data from this field will be prevented from being downloaded and viewed by users who do not have permission to do so. Only members of the sensitive data user group will see this option.
+13. Enter a **Default Value** for the field.
+14. Add a **Placeholder** to make it easier for the user to fill in the Form.
+15. Select if the field is **Mandatory** and customize the message.
+16. Add a **Validation** to the field. There are some predefined validation available but it is possible to add your own custom validation as well.
+17. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](Conditional-Logic) article.
 
+    Some of the additional settings are dependent on which answer type was chosen. For example, since we selected *Short Answer* as our answer type we got two additional settings (Default Value and Placeholder).
+18. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
+    ![Forms field added](images/FormDesignerFieldAddedV8.png)
 
-:::note
-In Umbraco Forms version 7 or higher there will be a predefined *dataConsent* field added to all new forms.
-See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https://umbraco.com/blog/umbraco-version-79-and-forms-70-is-out/)
-:::
+To edit a field that has already been added to the Form, click the little **cog** icon next to the field to open the dialog. To delete a field or a group, click the **Recycle Bin** icon.
 
-### Setting the form name
-First we will need to give our new form a name.
+### Structuring the Form
 
-![Forms designer Set Name](images/FormDesignerFormNameV8.png)
+Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
+![Reorder Form](images/Reorder_Form.png)
 
-### Setting the page name (optional)
+When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.
+![Reorder Form](images/Reorder_Form_1.png)
 
-Click the page name in order to change it.
+## Saving the Form
 
-![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
+Once you are satisfied with the Form, you can save the design by clicking the **Save** button.
 
-To add more pages by clicking **Add new page** at the bottom of the page forms designer.
+![Form save Form](images/FormDesignerSaveV8.png)
 
-### Setting the page group (optional)
+## Adding the Form to the Umbraco site
 
-As you can give each page a name, you can also name the groups.
+To add the Form, follow these steps:
 
-![Forms designer page caption](images/FormDesignerPageGroupV8.png)
+1. Navigate to the **Content** section of the Umbraco Backoffice.
+2. Select the content page where you want to insert the Form. The page you choose should either have an RTE field, a Grid Editor, or a form picker all of which you can add in the **Settings** section under **Document Types**.
 
-To add another group to your form, click **Add new group** which you can find at the bottom of each page in the form designer.
-
-### Adding fields
-
-To add a new field hit the Add Question button
-
-![Forms designer add field](images/FormDesignerAddFieldV8.png)
-
-This will open the following dialog
-
-![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
-
-From this dialog you need to give the field a **name**. You can also add a **help text** to make it easier for your users to know how to fill in the field.
-
-In the dialog you'll also need to choose which type of field or layout element you wish to add. These are also known as **answer types** because they decide the type of answer that will be displayed to the end user. Find a full list of the available answer types here: [Answer types](Fieldtypes).
-
-Once the type has been selected, there are a number of additional settings that can be applied to the field:
-
-* Mark whether the field stores **sensitive data**
-    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensitive data user group will see this option.
-* You can give the field a **default value**
-* Add a **placeholder** to make it easier for the user to fill in the form
-* Mark whether the field is **mandatory**, and customize the message
-* Add **validation** to the field
-    * There are a number of predefined validation, and it is possible to add your own custom validation as well
-* Set **Conditions** for the field (read more: [Conditional logic](Conditional-Logic))
-
-Some of the additional settings is dependent on which answer type was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder).
-
-Once the type has been selected, and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
-
-![Forms field added](images/FormDesignerFieldAddedV8.png)
-
-To edit a field that has already been added to the form, click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
-
-### Structure your form
-
-Once you've added a few fields to your form, you might want to change the order of questions. This can be done by clicking **Reorder** in the top-right corner of the form designer.
-
-When reordering your form, you can drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
-
-## Saving the form
-
-Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
-
-![Form save form](images/FormDesignerSaveV8.png)
-
-## Adding the form to the Umbraco site
-
-### Select page
-
-Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form (this page should either have an RTE field, a Grid Editor, or a form picker)
-
-![Content page](images/ContentExamples.png)
-
-### Add Form macro
-
-* Hit the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
-* Under 'Choose a Form' click **Add** and select the form you want to insert
+    ![Content page](images/ContentExamples.png)
+3. Click the **Insert macro** button in the toolbar of the RTE or Grid. The **Select Macro** dialog opens.
+4. Click **Add** under **Choose a Form** and select the Form you want to insert.
 
     ![Content page add macro](images/ContentPageAddMacroDialog.png)
+5. **[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
+6. Finally you have an option to **Exclude Scripts**.
+7. Click **Submit**.
+8. The Form is inserted on to your page. Click the **Save and publish** button.
 
-* (Optional) Click **Add** under 'Theme' to choose which theme the form should use
-* Finally you have an option to **exclude scripts**
+    ![Content page with form](images/ContentExamplesWithForm.png)
 
-The form should be inserted now and all that's needed to put it on your site is a *Save and publish* of the content page!
+---
 
-![Content page with form](images/ContentExamplesWithForm.png)
+Prev: [Editor Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](../Creating-a-Form/Form-Settings/index.md)

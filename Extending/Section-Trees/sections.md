@@ -1,12 +1,14 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Sections & Trees"
+meta.Description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
 
-Each section is identified by an icon in the top navigation ribbon of the Umbraco Backoffice.
+Each section is shown in the top navigation ribbon of the Umbraco Backoffice.
 
 ## Create a Custom Section
 
@@ -34,8 +36,10 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 
 ... would create a new section in your Umbraco backoffice called 'My Favourite Things'.
 
+When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order. 
+
 ### Registering with C# Type
-By creating a C# class that implements `ISection` from `Umbraco.Core.Models.Sections`
+By creating a C# class that implements `ISection` from `Umbraco.Core.Models.Sections`:
 
 ```csharp
 using Umbraco.Core.Models.Sections;
@@ -53,7 +57,7 @@ namespace My.Website.Sections
 }
 ```
 
-For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IUserComposer` .
+For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IUserComposer`.
 
 ```csharp
 using My.Website.Sections;
@@ -74,6 +78,26 @@ namespace My.Website.Composers
 ```
 
 This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
+
+Similar to registering the section via a `package.manifest` file, the `Append<>` method will add the section to the end of the list of sections.
+
+If you wish to control the order of your section a bit more, you can use some of the other methods on `SectionsCollectionBuilder`. For instance, you can add your section at a specific index:
+
+```csharp
+composition.Sections().Insert<MyFavouriteThingsSection>(2);
+```
+
+Or before or after an existing section:
+
+```csharp
+composition.Sections().InsertBefore<SettingsSection, MyFavouriteThingsSection>();
+```
+
+```csharp
+composition.Sections().InsertAfter<SettingsSection, MyFavouriteThingsSection>();
+```
+
+The final order of the sections is down to the order of which the composers are executed. For instance, two composers may add a new section before `SettingsSection`, in which case the latter will add it's section between the section of the first composer and `SettingsSection`.
 
 ### Why can't I see my new Custom Section?
 

@@ -8,6 +8,8 @@ meta.Description: "Tour of Umbraco Heartcore backoffice"
 
 In this article you will get an introduction to the different sections in the Umbraco Backoffice.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/IYPRMCVCH9g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Login screen
 
 When you go to the backoffice of your Umbraco Heartcore project you will be asked to log in.
@@ -18,7 +20,7 @@ From here you are able to log in with the credentials used when the project was 
 
 ## Sections
 
-The backoffice is devided in specefic sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
+The backoffice is divided into specific sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
 
 ![Sections of the backoffice](images/sections.png)
 
@@ -38,7 +40,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 ## Dashboard
 
-Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project. 
+Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project.
 
 ![Getting Started](images/dashboard.png)
 
@@ -82,7 +84,7 @@ What differs from Document Types is that Media Types are specifically made for m
 
 ### Member Types
 
-When you have a website with a login you might want to create Member Types. Umbraco comes with a standard Member Type. You can extend of this, but you can also create your own type for more costumized members.
+When you have a website with a login you might want to create Member Types. Umbraco comes with a standard Member Type. You can extend of this, but you can also create your own type for more customized members.
 
 ### Data Type
 
@@ -105,6 +107,7 @@ In the Languages section you can manage your language variants. Depending on wha
 The headless dashboard has some information about your Heartcore project. Depending on what plan you are on, you will have access to more languages and user groups.
 
 The dashboard shows you:
+
 - What plan you are on
 - How many available languages you have
 - How many user groups you have
@@ -115,9 +118,9 @@ In addition you are able to set the Content Delivery API to either Public or Pri
 
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
--   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
+- API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
 
--   Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
+- Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
 
 ## Users
 
@@ -129,14 +132,8 @@ For each user on your project you can generate a unique API key. This key will b
 
 ## Members
 
-The Members section is where you manage your members who are able to log into your projects frontend. You can create Member Groups for easy management if you have multiple types of memberships.
+The Members section is where you manage your members who are able to log into your projects frontend. You can create Member Groups for management if you have multiple types of memberships.
 
 ## Forms
-
-:::note
-While you can create and manage forms in the backoffice, there is currently no API endpoints enabling you to use the forms on your frontend.
-
-These will be added at a later point. [Keep an eye on our Roadmap for more details](https://umbraco.com/products/roadmap/).
-:::
 
 In this section you can create and manage your Umbraco Forms.

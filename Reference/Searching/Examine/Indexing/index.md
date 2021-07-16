@@ -24,6 +24,10 @@ There is some documentation about this in the [Examine documentation](https://sh
 The easiest way to modify how a field is configured is using a custom component, for example:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
 // register the component
 public class CustomizeIndexComposer : ComponentComposer<CustomizeIndexComponent> { }
 
@@ -59,9 +63,15 @@ public class CustomizeIndexComponent : IComponent
 
 An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index and/or filtering the data in the `ValueSet`. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
-Starting in Umbraco 8.4.0 it is easy to change the `IValueSetValidator` implementation for the built in indexes, for example:
+Starting in Umbraco 8.4.0, the `IValueSetValidator` implementation for the built in indexes, can be changed like this:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+
 public class CustomizeIndexComposer : IUserComposer
 {
     public void Compose(Composition composition)
@@ -99,19 +109,27 @@ If you are using a version of Umbraco before 8.4.0 then to do this you will need
 
 ### Overriding index creation
 
-You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`. 
+You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`.
 
 A few examples of why you might want to override the index creation:
 
 * To customize the default analyzer used in the built in indexes
 * Change the `IValueSetValidator`
 * Modify field definitions
-* Change the location of where the indexes are stored, or 
+* Change the location of where the indexes are stored, or
 * Completely replace the indexes with your own entirely custom implementation
 
 As an example, to change the `IValueSetValidator` for the MemberIndex in the above example:
 
 ```c#
+using Examine;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 public class CustomizeIndexComposer : IUserComposer
 {
     public void Compose(Composition composition)
@@ -145,6 +163,15 @@ public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
 Another example could be to replace the default Lucene analyzer for the ExternalIndex:
 
 ```c#
+using System.Collections.Generic;
+using Examine;
+using Lucene.Net.Analysis;
+using Umbraco.Core;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 // override the default creator
 public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
 {
@@ -204,29 +231,44 @@ Take a look at our [Examine Quick Start](../quick-start/index.md) to see some ex
 :::
 
 In order to create this index we need three things:
-1. An IndexCreator to create the index(s)
-2. A component to register our index to Examine
-3. A composer to register our component and index creator
+
+1. An IndexCreator to create a definition for the configuration of the index(s)
+2. A Component to register the created index(s) with Examine
+3. A Composer to append this Component to the list of Components Umbraco initializes during start up and to register our IndexCreator service with the underlying dependency injection framework, so it can be injected into our Component constructor.
+
+(Read more about [using Composition and Components to modify Umbraco's default behaviour](../../../../Implementation/Composing/) and [Registering dependencies with Umbraco's underlying IoC framework](../../../Using-Ioc/)).
 
 ### ProductIndexCreator
 
 ```c#
+using System.Collections.Generic;
+using Examine;
+using Lucene.Net.Analysis.Standard;
+using Lucene.Net.Util;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Examine;
+using Umbraco.Web.Search;
+
 public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 {
     private readonly IProfilingLogger _profilingLogger;
     private readonly ILocalizationService _localizationService;
     private readonly IPublicAccessService _publicAccessService;
+    private readonly IScopeProvider _scopeProvider;
 
     // Since Umbraco 8 has dependency injection out of the box, we can use it to inject
     // the different services that we need.
     public ProductIndexCreator(IProfilingLogger profilingLogger,
         ILocalizationService localizationService,
-        IPublicAccessService publicAccessService
+        IPublicAccessService publicAccessService,
+        IScopeProvider scopeProvider
     )
     {
         _profilingLogger = profilingLogger;
         _localizationService = localizationService;
         _publicAccessService = publicAccessService;
+        _scopeProvider = scopeProvider;
     }
 
         // Noticed that we return a collection of indexes? Technically you
@@ -242,7 +284,7 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
                 _localizationService,
                 // We can use the ContentValueSetValidator to set up rules for the content we
                 // want to have indexed. In our case we want published, non-protected nodes of the type "product".
-                new ContentValueSetValidator(true, false, _publicAccessService, includeItemTypes: new string[] { "product" }));
+                new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new string[] { "product" }));
 
             return new[] { index };
         }
@@ -252,6 +294,9 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 ### ProductComponent
 
 ```c#
+using Examine;
+using Umbraco.Core.Composing;
+
 public class ProductComponent : IComponent
 {
     private readonly IExamineManager _examineManager;
@@ -280,6 +325,9 @@ public class ProductComponent : IComponent
 ### ProductComposer
 
 ```c#
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
 public class ProductComposer : IUserComposer
 {
     public void Compose(Composition composition)
