@@ -115,7 +115,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](#unat
 
 ```xml
     <add key="Umbraco.Core.RuntimeState.UpgradeUnattended" value="true" />
-</appSettings>
+
 ```
 
 ### Check the `ConfigurationStatus`
