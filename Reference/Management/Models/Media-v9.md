@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 verified-against: rc001
-meta-title: Media Model
+meta.Title: "Media Model"
 meta.Description: The Media class represents a single item in the media tree.
 ---
 
