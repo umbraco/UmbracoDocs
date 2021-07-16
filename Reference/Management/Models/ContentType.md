@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.title: ContentType Model
+meta.title: "ContentType Model"
 ---
 
 # ContentType
