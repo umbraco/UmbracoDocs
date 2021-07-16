@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 verified-against: rc001
-meta-title: RelationType Model
+meta.Title: "RelationType Model"
 meta.Description: "The `RelationType` class represents a relation definition between two node types (content or media)."
 ---
 # RelationType
