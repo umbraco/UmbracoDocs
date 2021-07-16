@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 verified-against: rc001
 meta.Title: "ContentType Model"
-meta.Description: A ContentType corresponds to the Document Type found in the backoffice.
+meta.Description: "A ContentType corresponds to the Document Type found in the backoffice."
 ---
 
 # ContentType
