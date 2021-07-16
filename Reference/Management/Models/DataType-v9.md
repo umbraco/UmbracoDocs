@@ -26,7 +26,7 @@ using Umbraco.Cms.Core.Models;
 
 ### new DataType(IDataEditor editor, IConfigurationEditorJsonSerializer serializer, int parentId = -1)
 
-Constructor for creating a new `DataType` object where the necessary parameters are a `IDataEditor` and a `IConfigurationEditorJsonSerializer`.  Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
+Constructor for creating a new `DataType` object where the necessary parameters are a `IDataEditor` and a `IConfigurationEditorJsonSerializer`. Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
 
 ## Properties
 
