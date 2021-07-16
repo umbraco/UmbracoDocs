@@ -35,7 +35,7 @@ Constructor for creating a new Template object where the necessary parameters ar
 Gets the Alias of the File, which is the name without the extension.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.Alias;
 ```
 
@@ -44,7 +44,7 @@ return template.Alias;
 Returns true if the template is used as a layout for other templates (i.e. it has 'children')
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper,"Page", "page");
 return template.IsMasterTemplate;
 ```
 
@@ -53,7 +53,7 @@ return template.IsMasterTemplate;
 Returns the alias of the master template if one is set.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.MasterTemplateAlias;
 ```
 
@@ -62,7 +62,7 @@ return template.MasterTemplateAlias;
 Returns the id of the master template if one is set.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.MasterTemplateId;
 ```
 
@@ -71,7 +71,7 @@ return template.MasterTemplateId;
 Gets the Name of the File including extension.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.Name;
 ```
 
