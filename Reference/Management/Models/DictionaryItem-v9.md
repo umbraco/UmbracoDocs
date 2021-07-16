@@ -30,7 +30,7 @@ Constructor for creating a new `DictionaryItem` object where the necessary param
 
 ### new DictionaryItem(Guid? parentId, string itemKey)
 
-Constructor for creating a new `DictionaryItem` object where the necessary parameters are the parentKey as `Guid` and the key of the `DictionaryItem` as a `string`. Use this one if you want to create a `DictionaryItem` untherneath another one.
+Constructor for creating a new `DictionaryItem` object where the necessary parameters are the parentKey as `Guid` and the key of the `DictionaryItem` as a `string`. Use this one if you want to create a `DictionaryItem` underneath another one.
 
 ## Properties
 
