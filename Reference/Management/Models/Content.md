@@ -1,6 +1,6 @@
 ---
-keywords: Content
 versionFrom: 8.0.0
+meta.title: Content Model
 ---
 # Content
 
