@@ -26,6 +26,6 @@ Allows you to configure the keep alive service of Umbraco. A keep alive section 
 
 Allows you to disable the keep alive http calls.
 
-### Keep alive pung URL
+### Keep alive ping URL
 
 If you want to change the url you need to call to keep the site alive, update this property.
