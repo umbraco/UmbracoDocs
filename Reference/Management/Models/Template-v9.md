@@ -1,21 +1,26 @@
 ---
 versionFrom: 9.0.0
+verified-against: rc001
+meta-title: Template Model
+meta.Description: Represents a Template file.
 ---
 
 # Template
 
 Represents a Template file.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following using statement:
+All samples in this document will require the following using statements:
 
-    using Umbraco.Core.Models;
+```csharp
+using Umbraco.Cms.Core.Models;
+```
 
 ## Constructors
 
