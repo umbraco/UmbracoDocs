@@ -85,7 +85,7 @@ will become
 This brings a whole host of advantages both for local development, password management and adds more flexibility overall. If a site has been migrated from the old infrastructure, the old GUID-based URL will continue to work after the migration as we do not want to break any potential CI/CD setup.
 
 :::note
-This feature will be available from the 1st of July.
+This feature is currently UNAVAILABLE with no specific ETA. We'll remove this note once it has been released.
 :::
 
 ### New outgoing IP addresses (for allow lists)
