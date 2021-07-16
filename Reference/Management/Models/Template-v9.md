@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 verified-against: rc001
-meta-title: Template Model
+meta.Title: "Template Model"
 meta.Description: Represents a Template file.
 ---
 
