@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Content Type"
+meta.Description: "A ContentType corresponds to the Document Type found in the backoffice."
 ---
 
 # ContentType

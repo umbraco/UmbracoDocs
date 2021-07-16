@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Dictionary Item"
+meta.Description: "A Dictionary Item is what you see in the Translation / Dictionary tree."
 ---
 
 # DictionaryItem

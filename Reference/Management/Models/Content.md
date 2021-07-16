@@ -1,6 +1,8 @@
 ---
 keywords: Content
 versionFrom: 8.0.0
+meta.Title: "Content"
+meta.Description: "The `Content` class represents a single item in the content tree."
 ---
 # Content
 

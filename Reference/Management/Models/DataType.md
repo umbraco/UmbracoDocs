@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Data Type"
+meta.Description: "A DataType is what you see in the backoffice in the Settings / DataTypes tree."
 ---
 
 # DataType
