@@ -83,7 +83,7 @@ Sets the master template of the template.
 
 ```csharp
 // Create a new template
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 // Get a master template 
 var masterTemplate = fileService.GetTemplate(1234);
 // Set the master template to new created template
