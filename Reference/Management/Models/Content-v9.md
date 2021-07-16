@@ -37,7 +37,7 @@ Constructor for creating a new Content object where the necessary parameters are
 
 ### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.In addition, there is an optional parameter for the culture.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created. In addition, there is an optional parameter for the culture.
 
 ### new Content(string name, int parentId, IContentType contentType, string culture = null)
 
