@@ -24,7 +24,7 @@ All samples in this document will require the following using statements:
 
 ```csharp
 using Umbraco.Cms.Core.Models;
-using using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
