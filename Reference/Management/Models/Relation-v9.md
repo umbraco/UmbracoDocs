@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc001
+meta.Title: "Relation Model"
+meta.Description: "Represents a Relation between two items."
 ---
 
 # Relation
