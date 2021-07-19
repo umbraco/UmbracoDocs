@@ -1,3 +1,9 @@
+---
+meta.Title: "Hosting v9+ in IIS"
+meta.Description: "Information on hosting Umbraco v9+ on IIS"
+versionFrom: 9.0.0
+---
+
 ## Hosting v9+ in IIS
 
 ### Configuring IIS for .NET 5
