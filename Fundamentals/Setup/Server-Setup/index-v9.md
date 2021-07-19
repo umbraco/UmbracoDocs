@@ -16,9 +16,9 @@ We strongly encourage the use of HTTPS with Umbraco installations especially in 
 
 To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 
-## [Alternative IIS Setup with manual Deployment](iis/iis-deployment-v9.md)
+## [Hosting v9+ in IIS](iis/index-v9.md)
 
-If you need to manually deploy you solution to another server like staging or production, it might be helpful to know some further details about IIS configuration.
+Information about hosting a v9 application using IIS.
 
 ## [Load Balanced setup](Load-Balancing/index-v9.md)
 
