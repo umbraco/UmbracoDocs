@@ -4,8 +4,6 @@ versionFrom: 8.0.0
 
 # Relation
 
-Note: **Applies to Umbraco 6.x and newer**
-
 Represents a Relation between two items
 
 - **Namespace:** `Umbraco.Core.Models`

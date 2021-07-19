@@ -7,21 +7,23 @@ meta.Description: "Represents a Relation between two items."
 
 # Relation
 
-Note: **Applies to Umbraco 6.x and newer**
+Represents a Relation between two items.
 
-Represents a Relation between two items
-
-- **Namespace:** `Umbraco.Core.Models`
-- **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
-- Umbraco.Core.dll
+* Umbraco.Core.dll
 
 All samples in this document will require the following using statement:
 
-    using Umbraco.Core.Models;
+```csharp
+using Umbraco.Cms.Core.Models;
+```
 
-## Code reference
+## Constructors
 
-More information about this object can be found in the [Relation Model Core documentation](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Models.Relation.html)
+### new DataType(IDataEditor editor, IConfigurationEditorJsonSerializer serializer, int parentId = -1)
+
+## Properties
