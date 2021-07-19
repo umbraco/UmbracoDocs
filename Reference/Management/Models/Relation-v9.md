@@ -33,3 +33,53 @@ Constructor for creating a new Relation object where the necessary parameters ar
 A second constructor exists but it should not be used because it is used to reconstruct a relation from the data source.
 
 ## Properties
+
+### .ChildId
+
+Gets or sets the Child Id of the Relation (Destination)
+
+```csharp
+// Given a `IRelationService` object get Relation by its Id and return ChildId
+var relation = relationService.GetById(1234);
+return relation.ChildId;
+```
+
+### .Comment
+
+Gets or sets a comment for the Relation
+
+```csharp
+// Given a `IRelationService` object get Relation by its Id and return Comment
+var relation = relationService.GetById(1234);
+return relation.Comment;
+```
+
+### .ParentId
+
+Gets or sets the Parent Id of the Relation (Source)
+
+```csharp
+// Given a `IRelationService` object get Relation by its Id and return ParentId
+var relation = relationService.GetById(1234);
+return relation.ParentId;
+```
+
+### .RelationType
+
+Gets or sets the RelationType for the Relation
+
+```csharp
+// Given a `IRelationService` object get Relation by its Id and return RelationType
+var relation = relationService.GetById(1234);
+return relation.RelationType;
+```
+
+### .RelationTypeId
+
+Gets the Id of the RelationType that this Relation is based on.
+
+```csharp
+// Given a `IRelationService` object get Relation by its Id and return RelationTypeId
+var relation = relationService.GetById(1234);
+return relation.RelationTypeId;
+```
