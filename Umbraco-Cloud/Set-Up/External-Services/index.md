@@ -53,6 +53,13 @@ The addresses above will be replaced as part of the [migration to our new platfo
 20.73.117.133
 20.73.119.53
 20.50.2.41
+20.73.238.219,
+20.73.239.127,
+20.73.239.146,
+20.73.112.71,
+20.73.232.74,
+20.71.77.129,
+20.50.2.31
 ```
 
 These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs they will be updated here.
