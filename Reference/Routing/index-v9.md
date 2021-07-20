@@ -26,7 +26,7 @@ What is an API Controller and how to use them?
 ## [Custom controllers (hijacking routes)](custom-controllers-v9.md)
 Creating custom controllers to have 100% full control over how your pages are rendered. AKA: Hijacking Umbraco Routes
 
-## [Custom routes](custom-routes.md)
+## [Custom routes](custom-routes-v9.md)
 How to specify your own custom MVC routes in your Umbraco application?
 
 ## [Routes & Authentication](Authorized/index-v9.md)
