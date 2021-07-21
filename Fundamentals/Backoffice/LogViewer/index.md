@@ -125,7 +125,7 @@ Umbraco needs to be made aware that there is a new implementation of an `ILogVie
 
 ```csharp
 using Umbraco.Core;
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 
 namespace My.Website
 {
