@@ -4,7 +4,7 @@ meta.Title: "Routing & Controllers Reference"
 meta.Description: "All about Umbraco's routing pipeline & the types of Controllers used in Umbraco"
 state: complete
 verified-against: beta-4
-update-links: false
+update-links: true
 ---
 
 # Routing & Controllers
@@ -32,8 +32,5 @@ How to specify your own custom MVC routes in your Umbraco application?
 ## [Routes & Authentication](Authorized/index-v9.md)
 Routing requirements for authenticated controllers for both front-end and the backoffice.
 
-## [URL Tracking](URL-Tracking/index.md)
+## [URL Tracking](URL-Tracking/index-v9.md)
 Moving and renaming Umbraco documents will lead to URL redirects to be created.
-
-## [IIS Rewrite Rules](IISRewriteRules/index.md)
-How to create static or regex based rewrite rules with a config file?
