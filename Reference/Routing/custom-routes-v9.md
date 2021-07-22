@@ -296,6 +296,7 @@ With that we have our controller with a custom route within an Umbraco context.
 One of the benefits of the `IVirtualPageController` is that it allows you to use attribute routing. If you wish to use attribute routing you must use an `IVirtualPageController` and decorate your controller and/or actions with the `Route` attribute. If we want to convert our above example into using attribute routing we must first add the attributes to our actions: 
 
 ```C#
+[Route("[controller]")]
 [Route("[controller]/[action]")]
 [HttpGet]
 public IActionResult Index()
@@ -334,7 +335,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-This will give us routing that's similar to what we have in the other example, with one difference, there won't be any default values, so `/shop` will return 404 because there's no default action, so instead you will have to use `/shop/index`.
+This will give us routing that's similar to what we have in the other example. It's worth noting that there's no defaults when using attribute routing, so to allow our index action to be accessed through both `/shop` and `/shop/index`, we add two attributes, specifying both routes individually. 
 
 ### Custom route with ForUmbracoPage
 
