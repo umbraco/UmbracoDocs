@@ -17,15 +17,15 @@ public interface IContentFinder
   bool TryFindContent(IPublishedRequestBuilder contentRequest);
 }
 ```
-and use either an Umbraco builder extension, or a composer to add to it to the ContentFindersCollection.
+and use either an Umbraco builder extension, or a composer to add it to it to the `ContentFindersCollection`.
 
-Umbraco runs all content finders in the collection 'in order', until one of the IContentFinders returns true, and then the request is handled by that finder, and no further IContentFinders are executed. Therefore the order in which ContentFinders are added to the ContentFinderCollection is important.
+Umbraco runs all content finders in the collection 'in order', until one of the IContentFinders returns true, the request is then handled by that finder, and no further IContentFinders are executed. Therefore the order in which ContentFinders are added to the ContentFinderCollection is important.
 
-The ContentFinder can set the PublishedContent item for the request, or template or even execute a redirect…
+The ContentFinder can set the PublishedContent item for the request, or template or even execute a redirect.
 
 ### Example
 
-This IContentFinders will find a document with id 1234, when the Url begins with /woot
+This IContentFinders will find a document with id 1234, when the Url begins with /woot.
 
 ```csharp
 public class MyContentFinder : IContentFinder
@@ -60,9 +60,10 @@ public class MyContentFinder : IContentFinder
     }
 }
 ```
+
 ### Adding and removing IContentFinders
 
-You either use an extension on the Umbraco builder or, a composer to access the `ContentFinderCollection` to and and remove specific `ContentFinders`
+You either use an extension on the Umbraco builder or, a composer to access the `ContentFinderCollection` to add and remove specific `ContentFinders`
 
 #### Umbraco builder extension
 
@@ -179,10 +180,12 @@ namespace RoutingDocs.ContentFinders
                 .FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
             var siteRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(false, siteId ?? -1);
+
             if (siteRoot is null)
             {
                 return false;
             }
+
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
             IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 

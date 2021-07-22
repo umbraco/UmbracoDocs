@@ -4,7 +4,7 @@ meta.Title: "Umbraco WebApi Authorization"
 meta.Description: "How to secure your Umbraco Api controllers"
 state: complete
 verified-against: beta-4
-update-links: false
+update-links: true
 ---
 
 
@@ -18,7 +18,7 @@ _This section will describe how to secure your Umbraco Api controllers based on 
 
 Probably the easiest way to ensure your controller is secured for only backoffice users is to inherit from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This is essentially the same as applying `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]` to your controller (see below).
 
-The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
+The `UmbracoAuthorizedApiController` is automatically routed. Check out the [routing documentation](../Authorized/index-v9.md) for more information on this topic.
 
 ### Using the Authorize attribute
 

@@ -50,9 +50,9 @@ Umbraco doesn't interfere with any user defined routes that you wish to have. Yo
 
 For a request to be considered executing in an Umbraco context, and therefore the Umbraco pipeline, it needs to have an HTTP request feature with the type `UmbracoRouteValues`, all the information required for Umbraco to handle the request is stored there. The question is now, how do we add this request feature? There's three possibilities:
 
-1. Do it completely manually - This requires that you have a custom route, controller, even middleware, and manually assign the `UmbracoRouteValues` as an HTTP request feature, however you see fit. To create an `UmbracoRouteValues` object generally requires: `IUmbracoContextAccessor` (to access the `CleanedUmbracoUrl`), `IPublishedRouter` (to create the `IPublishedRequestBuilder`), `IPublishedRequestBuilder` (to set the published content and to build the `IPublishedRequest`), `IPublishedRequest` to assign to the `UmbracoRouteValues`. As you can see this is quite a lot of work, but luckily there's some much easier ways
+1. Do it completely manually - This requires that you have a custom route, controller, even middleware, and manually assign the `UmbracoRouteValues` as an HTTP request feature, however you see fit. To create an `UmbracoRouteValues` object generally requires: `IUmbracoContextAccessor` (to access the `CleanedUmbracoUrl`), `IPublishedRouter` (to create the `IPublishedRequestBuilder`), `IPublishedRequestBuilder` (to set the published content and to build the `IPublishedRequest`), `IPublishedRequest` to assign to the `UmbracoRouteValues`. As you can see this is quite a lot of work, but luckily there's some much easier ways.
 2. Route a custom controller that implements the `IVirtualPageController` interface, assigning the `UmbracoRouteValues` to the HTTP requests will then be taken care of for you.
-3.  Route a custom controller with conventional routing, using the typical call to `endpoints.MapControllerRoute`, and then call `.ForUmbracoPage()` with an action for finding content, on what `MapControllerRoute` returns, and then `UmbracoRouteValues` will automatically be applied to request to that controller.
+3.  Route a custom controller with conventional routing, using the typical call to `endpoints.MapControllerRoute`, and then call `.ForUmbracoPage()` with an action for finding content on what `MapControllerRoute` returns, now `UmbracoRouteValues` will automatically be applied to any request to that controller.
 
 Don't fret if this all seems a bit overwhelming, we'll be going through an example of the last two options.
 
@@ -64,7 +64,7 @@ As mentioned, with this approach we need to implement the `IVirtualPageControlle
 IPublishedContent FindContent(ActionExecutingContext actionExecutingContext);
 ```
 
-It can also be helpful to inherit from the `UmbracoPageController` since this includes some useful helper methods such as `CurrentPage`, do however note that it's *not* possible to inherit from `RenderController` when doing custom routes like this.
+It can also be helpful to inherit from the `UmbracoPageController` since this includes some useful helper methods such as `CurrentPage`, do however note that it is *not* possible to inherit from `RenderController` when doing custom routes like this.
 
 Let's create a shop controller, with an Index action showing all our products, and an Product action which will show some custom data about the product that could exists outside Umbraco. A common approach in a scenario like this is to have a "real" Umbraco node as a starting point. 
 In this example we're going to use an empty "Products" document type to act as a list view, and "Product" document type which only contains an SKU. We also need some content based on those document types, a "Products" content node, which contains two product nodes, each with their own SKU.
@@ -110,7 +110,7 @@ public IActionResult Index()
 }
 ```
 
-This is a fairly straightforward method, we simply return the view with the content found by the `FindContent` method, which then can be used to list all the children in the veiw with `Model.Children`
+This is a fairly straightforward method, we return the view with the content found by the `FindContent` method, which can then be used to list all the children in the view with `Model.Children`
 
 Next we have our Product method:
 
@@ -138,7 +138,7 @@ public IActionResult Product(string id)
 
 This method is a bit more interesting, here we get some extra data from a different source, in this case a `DbContext`, but this can be anything you want, using the id we get from the route values. We use this extra data to create a custom model, wich includes the available stores, which we then render the view with.
 
-It's important to note that this custom model must inherit from the `ContentModel` class, in this case our model looks like this: 
+It's important to note that this custom model must implement `IPublishedContent`, to do this we inherit from the `ContentModel` class, in this case our model looks like this: 
 
 ```C#
 public class Product : ContentModel
@@ -152,7 +152,7 @@ public class Product : ContentModel
 }
 ```
 
-What's great about this is that we use this model as a type argument when inheriting from `UmbracoViewPage` in our model like so:
+What's great about this is that we can use this model as a type argument when inheriting from `UmbracoViewPage` in our model like so:
 
 ```html
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<RoutingDocs.Models.Product>
@@ -170,7 +170,7 @@ Which makes the model typed, so we can access the available stores easily like s
 </ul>
 ```
 
-But let's get back to our controller, the last thing we need now is to implement `FindContent` so we can find content for our action and serve it to them. First we need to be able to get our content, and properties from them, so we need to inject `IUmbracoContextAccessor` and `IPublishedValueFallback` and save them to some fields like so: 
+But let's get back to our controller, the last thing we need now is to implement `FindContent` method so we can find content for our actions and serve it to them. First we need to be able to get our content, and properties, so we need to inject `IUmbracoContextAccessor` and `IPublishedValueFallback` and save them to some fields like so: 
 
 ```C#
 private readonly IUmbracoContextAccessor _umbracoContextAccessor;
@@ -289,12 +289,11 @@ namespace RoutingDocs.Controllers
 }
 ```
 
-
 With that we have our controller with a custom route within an Umbraco context.
 
 #### Attribute routing with IVirtualPageController
 
-One of the benifits if the `IVirtualPageController` is that it allows you to use attribute routing, if you wish to use attribute routing you must use an `IVirtualPageController` and decorate your controller and/or actions with the `Route` attribute. If we want to convert our above example into using attribute routing we must first add the attributes to our actions: 
+One of the benefits of the `IVirtualPageController` is that it allows you to use attribute routing. If you wish to use attribute routing you must use an `IVirtualPageController` and decorate your controller and/or actions with the `Route` attribute. If we want to convert our above example into using attribute routing we must first add the attributes to our actions: 
 
 ```C#
 [Route("[controller]/[action]")]
@@ -335,7 +334,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-This will give us routing that's similar to what we have in the other example, with one difference, there won't be any default values, so `/shop` will return 404 because there's no default action, so instead you will have to use `/shop/index`
+This will give us routing that's similar to what we have in the other example, with one difference, there won't be any default values, so `/shop` will return 404 because there's no default action, so instead you will have to use `/shop/index`.
 
 ### Custom route with ForUmbracoPage
 
@@ -454,6 +453,6 @@ The Umbraco magic will now instead happen where we route the controller, here we
 }
 ```
 
-The `Compose` method of our composer is much the same as any other normal routing, with one difference we call `ForUmbracoPage` on the `MapControllerRoute` where we pass in our `FindContent` method. The `FindContent` method is also largely the same as when it was in the controller in the `IVirtualPageController` example, with one important difference, since we can no longer inject our required service into the constructor, we instead request them using `actionExecutingContext.HttpContext.RequestServices.GetRequiredService`. It's important to note here that you should *not* save the `HttpContext` or the `IServiceProvider` you get from the `actionExecutingContext` to a field or property on the class since these will be specific for each request. 
+The `Compose` method of our composer is much the same as any other normal routing, with one difference we call `ForUmbracoPage` on the `MapControllerRoute` where we pass in our `FindContent` method. The `FindContent` method is also largely the same as it was in the controller in the `IVirtualPageController` example, with one important difference. Since we can no longer inject our required service into the constructor, we instead request them using `actionExecutingContext.HttpContext.RequestServices.GetRequiredService`. It's important to note here that you should *not* save the `HttpContext` or the `IServiceProvider` you get from the `actionExecutingContext` to a field or property on the class since these will be specific for each request. 
 
 With this we have a custom routed controller within the Umbraco pipeline, if you navigate to `/shop` or `/shop/product/<SKU>` you will see the controllers actions being called with the content found in `FindContent`

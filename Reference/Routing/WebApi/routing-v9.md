@@ -27,7 +27,7 @@ All plugin based Umbraco api controllers will be routed under the url path of:
 
 ## Urls
 
-We've added some handy UrlHelper extension methods so you can retrieve the Url of your Umbraco Api controllers. The extension methods are found in the class: `Umbraco.Extensions.UrlHelperExtensions` so you'll need to ensure you have the namespace `Umbraco.Extension` imported. You will also need to inject `UmbracoApiControllerTypeCollection`, if you want to use any of the overloads that require it.
+We've added some handy `UrlHelper` extension methods to help you retrieve the Url of your Umbraco Api controllers. The extension methods are found in the class: `Umbraco.Extensions.UrlHelperExtensions` so you'll need to ensure you have the namespace `Umbraco.Extension` imported. You will also need to inject `UmbracoApiControllerTypeCollection`, if you want to use any of the overloads that require it.
 
 The method overloads are:
 

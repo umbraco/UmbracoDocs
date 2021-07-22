@@ -19,7 +19,7 @@ To explain things we will use the following content tree:
 
 ## 1. <a name="segments"></a> Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment.  Each published [Content](../../../Reference/Management/Models/Content) item has a corresponding url segment.
+When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../../Reference/Management/Models/Content) item has a corresponding url segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -29,7 +29,7 @@ The segments are created by the "Url Segment provider"
 
 The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
-When the GetUrlSegment extension method is called for a content item + culture combination, each registered IUrlSegmentProvider in the collection is executed in 'collection order' until a particular UrlSegmentProvider returns a segment value for the content, (and no further UrlSegementProviders in the collection will be executed.). If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment, this is done to ensure that a segment will always be created, in case the default provider was removed from the collection without a new being added or something similar.
+When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order' until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegementProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment, this is done to ensure that a segment will always be created, in case the default provider was removed from the collection without a new being added or something similar.
 
 To create a new Url Segment Provider, implement the following interface:
 
@@ -42,7 +42,7 @@ public interface IUrlSegmentProvider
 
 Note each 'culture' variation can have a different Url Segment!
 
-The returned string will be the Url Segment for this node.  Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
+The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments", so something like `5678/swibble` is not allowed.
 
 #### Example
 
@@ -57,6 +57,7 @@ namespace RoutingDocs.SegmentProviders
     public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
     {
         private readonly IUrlSegmentProvider _provider;
+
         public ProductPageUrlSegmentProvider(IShortStringHelper stringHelper)
         {
             _provider = new DefaultUrlSegmentProvider(stringHelper);
@@ -78,11 +79,11 @@ namespace RoutingDocs.SegmentProviders
 }
 ```
 
-The returned string becomes the native Url segment.  No need for any Url rewriting.
+The returned string becomes the native Url segment. No need for any Url rewriting.
 
-For our "swibble" product in our example content tree the  `ProductPageUrlSegmentProvider`, would return a segment "swibble-123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
+For our "swibble" product in our example content tree the  `ProductPageUrlSegmentProvider`, would return a segment "swibble--123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
 
-Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method in the `IUmbracoBuilder`:
+Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -107,25 +108,27 @@ The Default Url Segment provider builds its segments like this:
 First it looks (in this order) for:
 
 - A property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-- The 'name' of the content item eg content.Name
+- The 'name' of the content item e.g. `content.Name`.
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
 
 ```csharp
  public string GetUrlSegment(IContentBase content, string culture = null)
-        {
-            return GetUrlSegmentSource(content, culture).ToUrlSegment(culture);
-        }
+{
+    return GetUrlSegmentSource(content, culture).ToUrlSegment(culture);
+}
 
-        private static string GetUrlSegmentSource(IContentBase content, string culture)
-        {
-            string source = null;
-            if (content.HasProperty(Constants.Conventions.Content.UrlName))
-                source = (content.GetValue<string>(Constants.Conventions.Content.UrlName, culture) ?? string.Empty).Trim();
-            if (string.IsNullOrWhiteSpace(source))
-                source = content.GetCultureName(culture);
-            return source;
-        }
+private static string GetUrlSegmentSource(IContentBase content, stringculture)
+{
+    string source = null;
+    if (content.HasProperty(Constants.Conventions.Content.UrlName))
+        source = (content.GetValue<string>(Constants.Conventions.Content.UrlName, culture) ?? string.Empty).Trim();
+
+    if (string.IsNullOrWhiteSpace(source))
+        source = content.GetCultureName(culture);
+
+    return source;
+}
 ```
 
 ## 2. <a name="paths"></a>Create paths
@@ -180,7 +183,7 @@ The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uni
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble"
 
-Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url (e.g.):
+Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url e.g.:
 
 ```csharp
 @Model.Url
@@ -188,15 +191,15 @@ Generating this url is handled by the Url Provider.  The Url Provider is called 
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
 
-The DI container of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlProvider' - but custom implementations can be added to the collection.
-When .Url is called each UrlProvider registered in the collection is executed in 'collection order' until a particular UrlProvider returns a value. (and no further UrlProviders in the collection will be executed.)
+The DI container of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a `DefaultUrlProvider` - but custom implementations can be added to the collection.
+When .Url is called each `IUrlProvider` registered in the collection is executed in 'collection order' until a particular `IUrlProvider` returns a value. (and no further `IUrlProviders` in the collection will be executed.)
 
 ### DefaultUrlProvider
 
-Umbraco ships with a DefaultUrlProvider, which provides the implementation for the out of the box mapping of the structure of the content tree to the url.
+Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for the out of the box mapping of the structure of the content tree to the url.
 
 ```csharp
-// That one is initialized by default
+// This one is initialized by default
 public class DefaultUrlProvider : IUrlProvider
 {
     public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string culture, Uri current)
@@ -208,20 +211,19 @@ public class DefaultUrlProvider : IUrlProvider
 ```
 ### How the Default Url provider works
 
-- If the current domain matches a root domain of the target content
-  - Return a relative Url
-  - Else must return an absolute Url
-- If the target content has only one root domain
-  - Use that domain to build the absolute Url
-- If the target content has more that one root domain
-  - Figure out which one to use
-  - To build the absolute Url
-- Complete the absolute Url with scheme (http vs https)
-  - If the domain contains a scheme use it
-  - Else use the current request’s scheme
-
-If "addTrailingSlash" is true, then add a slash.
-Then add the virtual directory.
+- If the current domain matches a root domain of the target content.
+  - Return a relative Url.
+  - Else must return an absolute Url.
+- If the target content has only one root domain.
+  - Use that domain to build the absolute Url.
+- If the target content has more that one root domain.
+  - Figure out which one to use.
+  - To build the absolute Url.
+- Complete the absolute Url with scheme (http vs https).
+  - If the domain contains a scheme use it.
+  - Else use the current request’s scheme.
+- If "addTrailingSlash" is true, then add a slash.
+- Then add the virtual directory.
 
 If the URL provider encounters collisions when generating content URLs, it will always select the first available node and assign the URL to this one.
 The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL.
@@ -233,7 +235,7 @@ This means publishing an unpublished node with a conflicting URL, might change t
 
 ### Custom Url Provider
 
-Create a custom Url Provider by implementing `IUrlProvider` interface
+Create a custom Url Provider by implementing `IUrlProvider` interface:
 
 ```csharp
 public interface IUrlProvider
@@ -248,9 +250,9 @@ The url returned in the 'UrlInfo' object by GetUrl can be completely custom.
 
 If implementing a custom Url Provider, consider following things:
 
-- Cache things,
-- Be sure to know how to handle schema's (http vs https) and hostnames
-- Inbound might require rewriting
+- Cache things.
+- Be sure to know how to handle schema's (http vs https) and hostnames.
+- Inbound might require rewriting.
 
 :::tip
 If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
@@ -338,9 +340,9 @@ namespace RoutingDocs.UrlProviders
 
 ### GetOtherUrls
 
-The GetOtherUrls method is only actioned in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
+The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
 
-For example, let's consider a convention-led umbracoUrlAlias property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding AliasUrlProvider registered in the UrlProviderCollecton to display this list to the Editor in the backoffice Info Content app for a node.
+For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollecton` to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
 Specifies the type of urls that the url provider should produce, eg. absolute vs. relative Urls. Auto is the default
@@ -371,7 +373,7 @@ public enum UrlMode
   Auto
 }
 ```
-Default setting can be changed in the Umbraco:CMS:WebRouting section of appsettings.json:
+Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsettings.json`:
 
 ```json
 "Umbraco": {
@@ -383,10 +385,12 @@ Default setting can be changed in the Umbraco:CMS:WebRouting section of appsetti
 }
 ```
 
+See [WebRouting config reference documentation](../../V9-Config/WebRoutingSettings/index.md) for more information on routing settings.
+
 
 ### Site Domain Mapper
 
-The `ISiteDomainMapper` implementation is used in the IUrlProvider and filters a list of <c>DomainAndUri</c> to pick one that best matches the current request.
+The `ISiteDomainMapper` implementation is used in the `IUrlProvider` and filters a list of `DomainAndUri` to pick one that best matches the current request.
 
 Create a custom SiteDomainMapper by implementing ISiteDomainMapper
 
@@ -400,9 +404,9 @@ public interface ISiteDomainMapper
 
 The MapDomain methods will receive the Current Uri of the request, and custom logic can be implemented to decide upon the preferred domain to use for a site in the context of that request. The SiteDomainMapper's role is to get the current Uri and all eligible domains, and only return one domain which is then used by the UrlProvider to create the Url.
 
-Only a single SiteDomainMapper can be registered with Umbraco.
+Only a single `ISiteDomainMapper` can be registered with Umbraco.
 
-Register the custom SiteDomainMapper with Umbraco using the `SetSiteDomainHelper` extension method
+Register the custom `ISiteDomainMapper` with Umbraco using the `SetSiteDomainHelper` extension method
 
 ```csharp
 using Umbraco.Cms.Core.Composing;

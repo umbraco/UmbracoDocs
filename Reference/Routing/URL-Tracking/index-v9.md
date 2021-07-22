@@ -25,7 +25,7 @@ In addition, the dashboard can be used to disable or enable the 301 Redirect Man
 
 Anytime a document is published and its corresponding *url segment* changes, Umbraco checks its URL (and all its descendants' URLs) for changes. For every URL that has changed, it creates (or updates) a row in the `umbracoRedirectUrl` table. Rows in this table contain: the old url, the create date, and the target content identifier, culture, and a url hash.
 
-Umbraco registers a new content finder, `ContentFinderByRedirectUrl`, which runs as a normal content finder after the other content finders. It looks for the incoming URL in the database table and, if found, computes the URL of the target document and returns a "301 Redirect". These redirects are considered "permanent". It's good to note that we explicitly set `no-cache` headers on these redirects so that when they change, browsers update the URL immediately. They are a "true" 301, however and search engines will accept them as such.
+Umbraco registers a new content finder, `ContentFinderByRedirectUrl`, which runs as a normal content finder after the other content finders. It looks for the incoming URL in the database table and, if found, computes the URL of the target document and returns a "301 Redirect". These redirects are considered "permanent". It's good to note that we explicitly set `no-cache` headers on these redirects so that when they change, browsers update the URL immediately. They are a "true" 301, however, and search engines will accept them as such.
 
 ## Enable / Disable / Configure
 

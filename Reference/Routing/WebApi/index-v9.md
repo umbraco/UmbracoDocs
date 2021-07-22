@@ -4,7 +4,7 @@ meta.Title: "Umbraco WebApi"
 meta.Description: "A guide to implenting WebApi in Umbraco projects"
 state: complete
 verified-against: beta-4
-update-links: false
+update-links: true
 ---
 
 # Umbraco Api
@@ -26,7 +26,7 @@ A great resource for getting started with creating web API's using .Net Core is 
 
 ## Web Api in Umbraco
 
-We've created a base api controller for developers to inherit from which will ensure that the api controller gets routed. Unlike V8, this does not expose any specific umbraco related services or objects, but does inherit from the .Net Core controller base, meaning you will have access to the same things you would from a regular .Net Core controller. Dependency injection is available to controllers, so any Umbraco specific services or object you might need can be injected in the constructor.
+We've created a base api controller for developers to inherit from which will ensure that the api controller gets routed. Unlike V8, this does not expose any specific umbraco related services or objects, but does inherit from the .Net Core controller base, meaning you will have access to the same things you would from a regular .Net Core controller. Dependency injection is also available to controllers, so any Umbraco specific services or objects you might need can be injected in the constructor.
 
 The class to inherit from is: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`
 
@@ -34,10 +34,10 @@ The class to inherit from is: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiCont
 
 There are 2 types of Umbraco Api controllers:
 
-1. A locally declared controller - is **not** routed via an Area
-2. A plugin based controller - is routed via an Area
+1. A locally declared controller - is **not** routed via an Area.
+2. A plugin based controller - is routed via an Area.
 
-When working on your own projects you will normally be creating a locally declared controller which requires no additional steps. However, if you are creating an Umbraco package to be distributed you will want to create a plugin based controller so that it gets routed via its own area. This ensures that the route will not overlap with someone's locally declared controller if they are both named the same thing.
+When working on your own projects you will normally be creating a locally declared controller which requires no additional steps. However, if you are creating an Umbraco package, to be distributed, you will want to create a plugin based controller so it gets routed via its own area. This ensures that the route will not overlap with someone's locally declared controller if they are both named the same thing.
 
 ### Naming conventions
 
@@ -71,7 +71,7 @@ All locally declared Umbraco api controllers will be routed under the url path o
 
 *~/Umbraco/Api/[YourControllerName]*
 
-E.g *~/Umbraco/Api/Products/GetAllProducts*
+E.g. *~/Umbraco/Api/Products/GetAllProducts*
 
 Note that the "Controller" part of your controller name gets stripped away.
 
@@ -96,13 +96,13 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 *~/Umbraco/[YourAreaName]/[YourControllerName]*
 
-E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
+E.g. *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
 
 For more information about areas, Urls and routing see the [routing section](routing-v9.md)
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'.
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another segment to the path: 'backoffice'.
 
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
@@ -110,14 +110,14 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
 
 
-E.g
+E.g.
 *~/Umbraco/backoffice/Api/Products/GetAllProducts* or
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
 
 ### More Information
 
-* [Authenticating & Authorizing controllers](../Authorized/index.md)
+* [Authenticating & Authorizing controllers](../Authorized/index-v9.md)
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
@@ -167,6 +167,6 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-Here the `GetAllProducts` endpoint will be routed normally, but the `GetProduct` will be routed as `~/product` where you can optionally access is as `~/product/4`, or any other number, if a number is included as the last segment of the path, let's say 4, the action will return "Monitor model 4", otherwise it will just return "Base model Monitor".
+Here the `GetAllProducts` endpoint will be routed normally, but the `GetProduct` will be routed as `~/product` where you can optionally access it as `~/product/4`, or any other number, if a number is included as the last segment of the path, let's say 4, the action will return "Monitor model 4", otherwise it will just return "Base model Monitor".
 
 This is not anything Umbraco specific, so to read more about attribute routing, see the [routing article on the official Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#attribute-routing-for-rest-apis).
