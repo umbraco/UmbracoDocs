@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-3
+verified-against: rc-1
 meta.Title: ModelsBuilder Configuration
 meta.Description:  Explanation of how to configure models builder 
 ---
@@ -17,7 +17,7 @@ The following configuration option can be set in the application settings (in th
     * `SourceCodeManual`: Generate models in `~/umbraco/models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
     * `SourceCodeAuto`: Generate models in `~/umbraco/models` (but do not compile them) anytime a content type changes.
 
-* `Umbraco.CMS.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedModels`) specifies the generated models' namespace.
+* `Umbraco.CMS.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.Common.PublishedModels`) specifies the generated models' namespace.
 
 * `Umbraco.CMS.ModelsBuilder.FlagOutOfDateModels` (bool, default is `true`) indicates whether out-of-date models (i.e. after a content type or data type has been modified) should be flagged.
 
