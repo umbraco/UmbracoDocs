@@ -216,7 +216,7 @@ public class DefaultUrlProvider : IUrlProvider
   - Else must return an absolute Url.
 - If the target content has only one root domain.
   - Use that domain to build the absolute Url.
-- If the target content has more that one root domain.
+- If the target content has more than one root domain.
   - Figure out which one to use.
   - To build the absolute Url.
 - Complete the absolute Url with scheme (http vs https).
