@@ -76,10 +76,12 @@ XPath example:
     "Umbraco": {
         "CMS": {
             "Content": {
-                "Error404Collection": {
-                    "Culture": "default",
-                    "ContentXPath": "//errorPages[@nodeName='My cool error']"
-                }
+                "Error404Collection": [
+                    {
+                        "Culture": "default",
+                        "ContentXPath": "//errorPages[@nodeName='My cool error']"
+                    }
+                ]
             }
         }
     }
