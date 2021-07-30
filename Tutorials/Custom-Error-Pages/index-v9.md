@@ -47,10 +47,12 @@ That is where the value you grabbed earlier comes in. Fill it out like so:
     "Umbraco": {
         "CMS": {
             "Content": {
-                "Error404Collection": {
-                    "Culture": "default",
-                    "ContentKey": "81dbb860-a2e3-49df-9a1c-2e04a8012c03"
-                }
+                "Error404Collection": [
+                    {
+                        "Culture": "default",
+                        "ContentKey": "81dbb860-a2e3-49df-9a1c-2e04a8012c03"
+                    }
+                ]
             }
         }
     }
