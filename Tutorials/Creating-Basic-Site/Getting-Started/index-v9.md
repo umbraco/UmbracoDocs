@@ -20,7 +20,7 @@ To download the latest version of Umbraco, refer to the [Installation article](.
 
 1. Enter your **Name**, **Email**, and **Password**.
     ![Installing Umbraco](images/figure-7-installing-umbraco-v9.png)
-2. Click **Nexr**.
+2. Click **Next**.
 3. In the **Configure your database** window, enter the connection and authentication details for the database you want to install Umbraco.
 4. Click **Continue**.
 5. The installation will take a couple of minutes to complete.
