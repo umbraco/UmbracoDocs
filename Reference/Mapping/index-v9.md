@@ -59,20 +59,20 @@ If a mapping has been defined from `IEnumerable<ISource>` to `IEnumerable<ITarge
 Mappings are defined in `IMapDefinition` instances. This interface defines one method:
 
 ```csharp
-void DefineMaps(UmbracoMapper mapper);
+void DefineMaps(IUmbracoMapper mapper);
 ```
 
 Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index.md#Collections):
 
 ```csharp
-composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
+builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
     .Add<MyMapDefinition>();
 ```
 
 A definition provides a constructor, and a map:
 
 ```csharp
-public void DefineMaps(UmbracoMapper mapper)
+public void DefineMaps(IUmbracoMapper mapper)
 {
     mapper.Define<ISource, ITarget>(
         (source, context) => { ... },           // constructor
