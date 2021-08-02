@@ -50,6 +50,7 @@ For illustration purposes, the following structure represents the full set of op
             "IgnoreBrokenDependencies": false,
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
+            "TransferDictionaryAsContent": false,
             "ExportMemberGroups": true,
         }
     }
@@ -125,6 +126,10 @@ It's important that these settings are added to both the source and target envir
 ## TransferFormsAsContent
 
 In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`.  To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
+
+## TransferDictionaryAsContent
+
+In a similar way, Deploy can be configured to allow for back-office transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 ## ExportMemberGroups
 
