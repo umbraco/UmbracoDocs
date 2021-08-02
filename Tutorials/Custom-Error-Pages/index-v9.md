@@ -30,7 +30,7 @@ Make sure the permissions are set to create it under Content.
 Properties on this document type are optional - in most cases, the 404 not found page would be static.
 Make sure to assign (and fill out) the template for your error page, and then create it in Content.
 
-### Set a custom 404 page in umbracoSettings.config
+### Set a custom 404 page in appsettings.json
 
 Once all of that is done, grab your published error page's ID, GUID or path and head on over to the `appsettings.json`.
 
