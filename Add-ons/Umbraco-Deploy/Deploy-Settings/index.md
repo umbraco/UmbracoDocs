@@ -98,7 +98,7 @@ In order for Deploy to handle Forms data as content, you'll need to add the foll
 
 ## Transfer dictionary items as content
 
-In a similar way, Deploy can be configured to allow for back-office transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
+In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

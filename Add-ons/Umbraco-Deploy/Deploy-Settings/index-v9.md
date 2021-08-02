@@ -129,7 +129,7 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 
 ## TransferDictionaryAsContent
 
-In a similar way, Deploy can be configured to allow for back-office transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
+In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 ## ExportMemberGroups
 
