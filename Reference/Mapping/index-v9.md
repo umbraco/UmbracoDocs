@@ -221,7 +221,7 @@ public class ProductDto
 
 public class ProductMappingDefinition : IMapDefinition
 {
-    public void DefineMaps(UmbracoMapper mapper)
+    public void DefineMaps(IUmbracoMapper mapper)
     {
         mapper.Define<Product, ProductDto>((source, context) => new ProductDto(), Map);
     }
@@ -238,9 +238,9 @@ public class ProductMappingDefinition : IMapDefinition
 
 public class ProductComposer : IUserComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
-        composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
+        builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
             .Add<ProductMappingDefinition>();
     }
 }
@@ -251,7 +251,7 @@ public class ProductsController : UmbracoApiController
 {
     private readonly UmbracoMapper _mapper;
 
-    public ProductsController(UmbracoMapper mapper) => _mapper = mapper;
+    public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 
     [HttpGet]
     public HttpResponseMessage GetAll()
