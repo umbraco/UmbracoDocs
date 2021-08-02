@@ -16,9 +16,9 @@ This is not to be confused with the [UmbracoMapper package by Andy Butland](http
 
 UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is totally fine for anyone to use in their custom site implementations or packages as they wish.
 
-## Accessing the UmbracoMapper
+## Accessing the IUmbracoMapper
 
-The UmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. Alternatively, it is also exposed via the Current service locator: `Current.Mapper`.
+The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. 
 
 ## Mapping
 
