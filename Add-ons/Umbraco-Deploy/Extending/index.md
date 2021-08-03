@@ -336,7 +336,7 @@ In order to deploy the entity as schema, via disk based representations held in 
 
 ### Backoffice Integrated Transfers
 
-If the optimal deployment workflow for your entity is to have editor's control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to allow register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the case where multiple entity types are managed within a single tree.
+If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to also register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
 
 An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
 
@@ -385,11 +385,11 @@ The `RegisterTransferEntityType` method on the `ITransferEntityService` takes th
 
 - The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
 - A pluralized, human-readable name of the entity, which is used in the transfer queue visual presentation to users.
-- Options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
+- A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
 - A value indicating whether the entity is an Umbraco entity, queryable via the `IEntityService`.  For custom solutions and packages, the value to use here is always `false`.
 - The alias of the tree used for creating and editing the entity data.
 
-We then have three functions, which are used to determine if the registered entity matches a specific node and tree alias.  For trees managing single entities as we have here, we know that all nodes related to that tree alias will be for the registered entity, so we can use the following function definitions:
+We then have three functions, which are used to determine if the registered entity matches a specific node and tree alias.  For trees managing single entities as we have here, we know that all nodes related to that tree alias will be for the registered entity, and that each node Id is the Guid identifier for the entity.  Hence we can use the following function definitions:
 
 - Return `true` for all route paths.
 - Return `true` for all node Ids.
@@ -397,7 +397,7 @@ We then have three functions, which are used to determine if the registered enti
 
 For more complex cases, where we have a tree that manages more than one entity type, we need a means of distinguishing which entity is being referenced by a particular route path or node Id.  A common way to handle this is to prefix the Guid identifier with a different value for each entity, that can then be used to determine for which entity the value refers.
 
-For example, as shown in the linked sample and video, we have entities for "Team" and "Rider", both managed in the same tree.  When rendering the tree, a prefix of "team-" or "rider-" respectively is added to the Guid identifier for the team or rider respectively.  We then register the following functions, firstly for the team entity registration:
+For example, as shown in the linked sample and video, we have entities for "Team" and "Rider", both managed in the same tree.  When rendering the tree, a prefix of "team-" or "rider-" is added to the Guid identifier for the team or rider respectively.  We then register the following functions, firstly for the team entity registration:
 
 ```C#
     _transferEntityService.RegisterTransferEntityType(
@@ -429,7 +429,7 @@ You would do this in the custom angularjs controller responsible for handling th
 (function () {
     "use strict";
 
-    function MyController($scope, $routeParams, stageResource, formHelper, notificationsService, editorState, pluginEntityService) {
+    function MyController($scope, $routeParams, myResource, formHelper, notificationsService, editorState, pluginEntityService) {
 
         var vm = this;
 
