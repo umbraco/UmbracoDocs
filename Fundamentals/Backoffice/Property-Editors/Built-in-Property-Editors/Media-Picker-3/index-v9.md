@@ -165,12 +165,14 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 
 ```
 
-:::warning
-Adding values programmatically for media picker 3 have not yet been verified for V9 yet.
-The concept and code examples might not work if you are running Umbraco 9.0.
-:::
+
 
 ### Add values programmatically
+
+:::warning
+Adding values programmatically for media picker 3 have not been verified for V9 yet.
+The concept and code examples might not work if you are running Umbraco 9.0.
+:::
 
 This solution can be applied to both Media Picker 3 and Multi Media Picker 3
 
