@@ -75,45 +75,59 @@ When looking at the currently logged in Member, you will get a `ProfileModel` ba
 which are specific to members.
 
 ### .GetByEmail(string email)
+
 Looks for a member with a given email, if found, returns a member profile as `IPublishedContent`
 
-### .GetById(int id)
+### .GetById(int memberId)
+
 Looks for a member with a given node ID, if found, returns a member profile as `IPublishedContent`
 
 ### .GetByProviderKey(object key)
+
 Looks for a member with a given provider key, if found, returns a member profile as `IPublishedContent`. Provider key is the key that
 the membership provider allocates for the member as its primary key.
 Umbraco's default membership provider assigns a guid, alternative providers such as active directive likely uses another format.
 
 ### .GetByUsername(string username)
+
 Looks for a member with a given username, if found, returns a member profile as `IPublishedContent`
 
 ### .GetCurrentLoginStatus()
+
 Gets the current members login status as a `LoginStatusModel`
 
 ### .GetCurrentMember()
+
 Get the currently logged in member as `IPublishedContent`
 
 ### .GetCurrentMemberProfileModel()
+
 Gets the current member profile as a `ProfileModel`
 
 ### .GetCurrentMemberId()
+
 Gets the currently logged in member id, -1 if they are not logged in.
 
 ### .IsLoggedIn()
+
 Returns a boolean to state whether there is a member currently logged in.
 
 ### .Login(string username, string password)
+
 Attempts to log in a member with the given username and password
 
 ### .IsMemberAuthorized(params)
+
 Determines if a member is authorized, based on memberType, associated roles, and member ID.
 
 ### .IsUmbracoMembershipProviderActive()
+
 Detects if the default Umbraco membership provider is in use.
 
 ### .RegisterMember(RegisterModel model)
+
 Registers a new member
 
 ### .UpdateMemberProfile(ProfileModel model)
+
 Updates a current member profile
