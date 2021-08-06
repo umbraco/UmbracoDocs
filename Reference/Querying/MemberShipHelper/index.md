@@ -12,6 +12,11 @@ Note: For a more detailed list, visit the API documentation.
 - [API Documentation for v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
 
 ## How to reference MembershipHelper?
+
+There are different ways on how to reference MembershipHelper.
+
+### Views
+
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates can access member data:
 
 ```csharp
@@ -19,13 +24,50 @@ When working in templating, this helper will automatically be there for you to u
 @Members.GetCurrentMemberProfileModel();
 ```
 
-If you need a `MembershipHelper` in a custom class, service, view, etc. you can create one using this syntax:
+### Members Property
+
+If you wish to use the `MembershipHelper` in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the membership helper through a local `Members` property:
 
 ```csharp
-var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
+MembershipHelper membershipHelper = Members;
+```
+
+### Dependency Injection
+
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IAuditService` interface in your constructor:
+
+```csharp
+public class MyClass
+{
+
+    private MembershipHelper _membershipHelper;
+    
+    public MyClass(MembershipHelper membershipHelper)
+    {
+        _membershipHelper = membershipHelper;
+    }
+
+}
+```
+
+### Factory
+
+If neither a Members property or Controller Injection is available, you can also reference the `MembershipHelper` by using the Factory in the static `Current` class.
+
+```csharp
+public class MyClass
+{
+    private MembershipHelper _membershipHelper;
+    
+    public MyClass()
+    {
+        _membershipHelper = Umbraco.Core.Composing.Current.Factory.GetInstance<MembershipHelper>();
+    }
+}
 ```
 
 ## ProfileModel and IPublishedContent
+
 When looking up Members, member data is returned as `IPublishedContent`, which is the same format used for Content and Media, so referencing member properties should
 be the exact same api as with those.
 
