@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: rc001
 state: partial
 updated-links: false
 meta.Title: "Umbraco Database"
@@ -9,11 +9,17 @@ meta.Description: "A guide to creating a custom Database table in Umbraco"
 
 # Creating a custom Database table
 
-In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes. Below you will find an example that sets up a database table by registering a component in a composer and then creating a migration plan and running the plan to add the database table to the database. Learn more about composers in the [Composing (Umbraco 8)](../../Implementation/Composing/) article.
+In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes.
+
+If migrating from V8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing (Umbraco 8)](../../Implementation/Composing/) article.
 
 The end result looks like this:
 
 ![Database result of a migration](images/db-table.png)
+
+## Using a composer and component
+
+The following code sample shows how this is done in Umbraco V9.  If migrating from V8, the only changes to note other than namespace updates, are the dependencies that need to be passed to the `Upgrader.Execute()` method, and a change to the access modifier of the `Migrate()` method.
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -134,6 +140,148 @@ namespace MyNamespace
         }
     }
 }
+```
+
+## Using a notification handler
+
+If building a new solution in Umbraco V9, you can adopt a new pattern, where you create and run a similar migration but trigger it in response to a [notification handler](../../Fundamentals/Code/Subscribing-To-Notifications\index.md).
+
+The code for this approach is as follows:
+
+```C#
+using Microsoft.Extensions.Logging;
+using NPoco;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Scoping;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Infrastructure.Migrations;
+using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
+using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
+
+namespace MyNamespace
+{
+    public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
+    {
+        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
+        private readonly IScopeProvider _scopeProvider;
+        private readonly IKeyValueService _keyValueService;
+        private readonly IRuntimeState _runtimeState;
+
+        public RunBlogCommentsMigration(
+            IScopeProvider scopeProvider,
+            IMigrationPlanExecutor migrationPlanExecutor,
+            IKeyValueService keyValueService,
+            IRuntimeState runtimeState)
+        {
+            _migrationPlanExecutor = migrationPlanExecutor;
+            _scopeProvider = scopeProvider;
+            _keyValueService = keyValueService;
+            _runtimeState = runtimeState;
+        }
+
+        public void Handle(UmbracoApplicationStartingNotification notification)
+        {
+            if (_runtimeState.Level < RuntimeLevel.Run)
+            {
+                return;
+            }
+
+            // Create a migration plan for a specific project/feature
+            // We can then track that latest migration state/step for this project/feature
+            var migrationPlan = new MigrationPlan("BlogComments");
+
+            // This is the steps we need to take
+            // Each step in the migration adds a unique value
+            migrationPlan.From(string.Empty)
+                .To<AddCommentsTable>("blogcomments-db");
+
+            // Go and upgrade our site (Will check if it needs to do the work or not)
+            // Based on the current/latest step
+            var upgrader = new Upgrader(migrationPlan);
+            upgrader.Execute(
+                _migrationPlanExecutor,
+                _scopeProvider,
+                _keyValueService);
+        }
+    }
+
+    // Migration and schema defined as in the previous code sample.
+}
+```
+
+The notification handler can either be registered in a composer:
+
+```C#
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace TableMigrationTest
+{
+    public class BlogCommentsComposer : IUserComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
+        }
+    }
+}
+```
+
+Or in an extension method called from `StartUp.cs` as is preferred:
+
+```C#
+using System.Linq;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace MyNamespace
+{
+    public static class UmbracoBuilderExtensions
+    {
+        public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
+            return builder;
+        }
+    }
+}
+```
+
+```C#
+using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
+
+namespace MyNamespace
+{
+    public class Startup
+    {
+        ...
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddUmbraco(_env, _config)
+                .AddBackOffice()
+                .AddWebsite()
+                .AddComposers()
+                .AddBlogComments()  // calls our extension method to register the notification handler
+                .Build();
+
+        }
+
+        ...
+    }
+}
+
 ```
 
 ## Schema class and migrations
