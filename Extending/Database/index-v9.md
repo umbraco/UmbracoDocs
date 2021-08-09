@@ -284,6 +284,14 @@ namespace MyNamespace
 
 ```
 
+## Which to use?
+
+In short, it's up to you.  If you are migrating from V8 and want the quickest route to getting running with V9, then using a component makes sense.
+
+With V9 you will likely find you are using the notification pattern elsewhere, such as when responding to Umbraco events that run many times in the lifetime of the application, like when content is saved.  And so you may also prefer to align with that pattern for start-up events.
+
+It's also worth noting that components offer both `Initialize` and `Terminate` methods, where you will need to handle two notifications to do the same with the notification handler approach (`UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`).  A single handler class can be used for both notifications though.
+
 ## Schema class and migrations
 
 **Important!** It is important to note that the `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration. Instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute. So you should choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
