@@ -85,7 +85,7 @@ To render the stored value of your **Nested Content** property, a built in value
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.YourDocumentTypeAlias>
 @{
     var items = Model.Value<IEnumerable<IPublishedElement>>("nest");
 
@@ -154,11 +154,15 @@ The first dictionary item property/parameter we should specify for each Nested C
 Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 
 ```csharp
+@using Umbraco.Cms.Core.Models;
+@using Umbraco.Cms.Core.Services;
+@inject IContentService _contentService;
+
  //if the class containing our code inherits SurfaceController, UmbracoApiController, 
  //or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
- var contentService = Services.ContentService; 
+ var contentService = _contentService; 
 //here we create a new node, and fill out attendeeList afterwards
- IContent request = ContentService.Create("new node", guid, "mydoctype", -1); 
+ IContent request = contentService.Create("new node", guid, "mydoctype", -1); 
  //our list which will contain nested content
  var attendees = new List<Dictionary<string, string>>(); 
 //participants is our list of attendees - multiple items, good use case for nested content
