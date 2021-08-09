@@ -112,15 +112,15 @@ Please be aware that links to API documentation and other resources might not ha
 * [MemberService-Notifications](Reference/Notifications/MemberService-Notifications/)
 * [Modelsbuilder](Reference/Templating/Modelsbuilder/index-v9)
 * [V9 API Documentation](https://apidocs.umbraco.com/v9/csharp/)
-* [Routing & Controllers](/Reference/Routing/index-v9)
-* [Request-Pipeline/](/Routing/Request-Pipeline/index-v9)
-* [Routing-properties](/Reference/Routing/routing-properties-v9)
-* [Surface-Controllers](/Reference/Routing/surface-controllers-v9)
-* [Api-Controllers](/Reference/Routing/WebApi/index-v9)
+* [Routing & Controllers](Reference/Routing/index-v9)
+* [Request-Pipeline/](Routing/Request-Pipeline/index-v9)
+* [Routing-properties](Reference/Routing/routing-properties-v9)
+* [Surface-Controllers](Reference/Routing/surface-controllers-v9)
+* [Api-Controllers](Reference/Routing/WebApi/index-v9)
 * [Custom controllers (hijacking routes)](/Reference/Routing/custom-controllers-v9)
-* [Custom routes](/Reference/Routing/custom-routes-v9)
-* [Routes & Authentication](/Reference/Routing/Authorized/index-v9)
-* [URL Tracking](/Reference/Routing/URL-Tracking/index-v9)
+* [Custom routes](Reference/Routing/custom-routes-v9)
+* [Routes & Authentication](Reference/Routing/Authorized/index-v9)
+* [URL Tracking](Reference/Routing/URL-Tracking/index-v9)
 
 ### Tutorials
 
