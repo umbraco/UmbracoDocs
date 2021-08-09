@@ -85,7 +85,7 @@ To render the stored value of your **Nested Content** property, a built in value
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.YourDocumentTypeAlias>
 @{
     var items = Model.Value<IEnumerable<IPublishedElement>>("nest");
 
