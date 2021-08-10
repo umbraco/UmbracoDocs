@@ -112,7 +112,7 @@ Serilog uses levels as the primary means for assigning importance to log events.
 ## Configuration
 
 Serilog can be configured and extended by using the .NETCore configuration such as the AppSetting.json files or environment variables.
-Info on the Serilog config [here](../../../../Reference/Config/Serilog/index-v9.md).
+Info on the Serilog config [here](../../../../Reference/V9-Config/Serilog/index.md).
 
 ## The logviewer dashboard
 
