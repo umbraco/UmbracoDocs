@@ -156,6 +156,7 @@ Afterwards, the entire list needs to be serialized to Json via JsonConvert.
 ```csharp
 @using Umbraco.Cms.Core.Models;
 @using Umbraco.Cms.Core.Services;
+@using Newtonsoft.Json;
 @inject IContentService _contentService;
 
  //if the class containing our code inherits SurfaceController, UmbracoApiController, 
