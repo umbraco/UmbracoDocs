@@ -2,7 +2,6 @@
 state: partial
 updated-links: false
 versionFrom: 9.0.0
-verified-against: alpha-3
 ---
 
 
@@ -244,9 +243,11 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 
 To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
-* File -> Preferences -> User Settings
-* This will open two editors side by side with the default settings on the left and custom overrides on the right
-* In the right hand file add the following
+* File -> Preferences -> Settings. The **Settings** window opens.
+* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.
+  ![JSON Schemas](../images/JSON-schema.png)  
+* Select **Edit in settings.json** from the **Schemas** section. 
+* Add the following snippet in the `settings.json` file:
 
 ```json
 {
