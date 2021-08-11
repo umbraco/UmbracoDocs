@@ -246,7 +246,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * File -> Preferences -> Settings. The **Settings** window opens.
 * In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.
   ![JSON Schemas](../images/JSON-schema.png)  
-* Select **Edit in settings.json** from the **Schemas** section. 
+* Select **Edit in settings.json** from the **Schemas** section.
 * Add the following snippet in the `settings.json` file:
 
 ```json
