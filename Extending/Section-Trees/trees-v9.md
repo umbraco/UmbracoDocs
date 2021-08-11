@@ -261,7 +261,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
 
 The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
-![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)
+![Favourite Thing Custom Single Node Tree](images/favourite-thing-custom-single-node-tree.png)
 
 #### Full Width App - IsSingleNodeTree
 
@@ -276,9 +276,9 @@ public class FavouritistThingsTreeController : TreeController
 
 ## Tree notifications
 
-All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`. 
+All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`.
 
-For more information about registering and using notifications see [Notifications](../../Reference/Events/index-v9.md)
+For more information about registering and using notifications see [Notifications](../../Reference/Notifications/index.md)
 
 ### RootNodeRenderingNotification
 
