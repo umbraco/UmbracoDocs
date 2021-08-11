@@ -249,18 +249,18 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * Select **Edit in settings.json** from the **Schemas** section.
 * Add the following snippet in the `settings.json` file:
 
-```json
-{
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "manifest.json"
-            ],
-            "url": "http://json.schemastore.org/package.manifest"
-        }
-    ]
-}
-```
+    ```json
+    {
+        "json.schemas": [
+            {
+                "fileMatch": [
+                    "manifest.json"
+                ],
+                "url": "http://json.schemastore.org/package.manifest"
+            }
+        ]
+    }
+    ```
 
 ### Adding inline schema
 
