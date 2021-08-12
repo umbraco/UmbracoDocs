@@ -288,8 +288,8 @@ The values in the querystring will be bound to the matching parameters defined i
 public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.RenderController
 {
    //notice how we are no longer overriding the Index action because the signature is now different to the base signature.
-    [HttpGet("{page},{andAnotherThing}")]
-    public IActionResult Index(int page, string andAnotherThing)
+    [HttpGet]
+    public IActionResult Index([FromQuery(Name = "page")] int page, [FromQuery(Name = "andAnotherThing")] string andAnotherThing)
     {
        var products = _madeUpProductService.GetProductsByPage(page);
        var productListingViewModel = new ProductListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor));
