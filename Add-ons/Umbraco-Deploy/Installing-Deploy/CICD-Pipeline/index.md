@@ -12,8 +12,6 @@ The build server will extract the changes that has been pushed to the repository
 
 This is something that can be done in many different ways depending on where your website is hosted and your setup.
 
-For an example on how this can be done see the [guide for how Umbraco Deploy can be installed for a new site](../New-site/#Setting-up-CI-CD-build-server-with-Github-actions) where Github Actions is used as the build server.
-
 Umbraco Deploy does not require the use of any particular build or deployment tools and hence we expect that you should be able to continue using the tool or tools of your choice. Any that have support for .NET website deployments and the running of Powershell scripts. such as Azure DevOps or Github Actions, would be appropriate.
 
 Above and beyond the normal steps of a build pipeline for a .NET web application - tasks like NuGet restore, solution build, running of tests etc. - Umbraco Deploy requires three additional steps.
@@ -36,7 +34,7 @@ Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenti
 
 Umbraco Deploy On-Premises also ships with a Powershell script, that when executed will call the endpoint, which will write the file, and which will trigger the extraction.
 
-So whilst it may be possible to have the CI/CD step directly write the file or call the endpoint, so long as the build too used supports running Powershell scripts this is the method we’d recommend, as it has some necessary error checking and retry logic built-in.
+So while it may be possible to have the CI/CD step directly write the file or call the endpoint, so long as the build used supports running Powershell scripts this is the method we’d recommend, as it has some necessary error checking and retry logic built-in.
 
 ## [Setting up CI/CD pipeline with Github Actions](ci-cd-github-actions.md)
 
