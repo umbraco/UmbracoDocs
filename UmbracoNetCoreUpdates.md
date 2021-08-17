@@ -72,7 +72,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 :::warning
 As this is an **release candidate**, bugs and minor issues are to be expected.
 
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml). 
+Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml).
 :::
 
 To get started, follow the steps outlined below.
@@ -87,7 +87,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc001
+    dotnet new -i Umbraco.Templates::9.0.0-rc002
     ```
 
 ### [Optional] Update the template from earlier pre-release versions
@@ -97,7 +97,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc001
+    dotnet new -i Umbraco.Templates::9.0.0-rc002
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -211,7 +211,7 @@ See tickets  tagged on [Github](https://github.com/umbraco/Umbraco-CMS/pulls?q=i
   - Added TreeAlias to tree notifications.
 - Other
   - IUmbracoMapper should be injected instead of UmbracoMapper
-  - Features and optimizations from Umbraco 8.13 
+  - Features and optimizations from Umbraco 8.13
 - Bugfixes
   - Fix for Can't enable AppData mode for models builder in Alpha4
   - Fix warning logged regarding Antiforgery tokens
@@ -251,7 +251,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
 #### Summary
 - Breaking changes
   - Examine 2.0 implementation.
-  - ModelsBuilder mode names are changed. 
+  - ModelsBuilder mode names are changed.
      - `PureLive` => `InMemoryAuto`
      - `AppData` => `SourceCodeManual`
      - `LiveAppData` => `SourceCodeAuto`
@@ -261,7 +261,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Modelsbuilder InMemoryAuto (PureLive) output is generated in temp folder
   - Latests updated from Umbraco 8.14-RC
 - Bugfixes
-  - Fix for unsafe project names; these are no longer unsafe for namespaces. 
+  - Fix for unsafe project names; these are no longer unsafe for namespaces.
      - E.g. "Umbraco 9" will now use namespace "Umbraco_9"
   - Resolve virtual paths from DataEditorAttribute. E.g. "~/App_Data/...."
 
@@ -297,13 +297,13 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Route plugin controllers by area
   - RenderController configuration as .NETCore IOptions pattern
 - Features
-  - Packages migrations and UI changes to support NuGet packages. 
+  - Packages migrations and UI changes to support NuGet packages.
   - 8.15 features
 - Bugfixes
   - Changes the RoslynCompiler to use assemblies resolved from the DependencyContext (Fix for MB InMemoryAuto)
-  - Migrated missing surfaceaction extension methods 
+  - Migrated missing surfaceaction extension methods
   - Add RazorCompileOnPublish property to UmbracoProject for template
-  - Migrated missing UmbracoAuthorizedController 
+  - Migrated missing UmbracoAuthorizedController
   - Linux case-sensitive directories (Grid)
   - Render grid editor partial async
   - Render Block List component partial async
@@ -317,7 +317,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
 #### Summary
 - Breaking changes
   - Fixes issues after ImageProcessor or ImageSharp migrations related to querystrings
-  - Removed VariationContextAccessor from IUmbracoContext 
+  - Removed VariationContextAccessor from IUmbracoContext
   - Removed things that was obsolete in latest v8
 - Features
   - Pack the physical files into packages when picking media
@@ -346,8 +346,8 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fix RedirectToCurrentUmbracoPage when UrlProviderMode is set to "Absolute"
   - Fix Grid editor headline gets encoded twice
   - Fixed issue with public acces, if member didnt have a member group, restricting access to the public would always lead to error page
-  - Added missing disposel of Process 
-  - Avoid mixing using of string interpolation and string formatting in log messages 
+  - Added missing disposel of Process
+  - Avoid mixing using of string interpolation and string formatting in log messages
   - Reduce allocations by using existing CharArrays for TrimStart()
   - Cleanup _inMemoryModelFactory.ModelsChanged event on dispose in RefreshingRazorViewEngine
 
