@@ -310,6 +310,48 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Use english names for cultures in language CRUD
   - Rebuild Database Cache button does nothing
 
+### Changes between rc 1 and rc 2
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-rc002+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - Fixes issues after ImageProcessor or ImageSharp migrations related to querystrings
+  - Removed VariationContextAccessor from IUmbracoContext 
+  - Removed things that was obsolete in latest v8
+- Features
+  - Pack the physical files into packages when picking media
+  - Changes all collections from collection builders to resolve the concrete instances lazily
+  - Updated public IUmbracoBuilder extension methods to allow chaining
+  - Adds bundle options to the package manifest
+  - Added more common namespaces to _ViewImports.cshtml
+  - Updated nuget dependencies
+  - Added basic authentication middleware
+  - 8.16-RC merged in
+- Bugfixes
+  - One overload of GetLocalCropUrl was calling itself recursively
+  - Fix issue with runtime hash calculation
+  - Fixes issue that the update culture dates were not synced with the version date like they are for the published culture dates
+  - Various Typo fixes
+  - Fix recursive localize when resetting password
+  - Fix drag and drop image upload
+  - Fixes various issues related to showing error/validation messages
+  - Fixes issue with MultiUrlPicker
+  - Fixed race condition with EnsureApplicationMainUrl
+  - Fixed issue with BlockLiost thumbnails could be picked in non-browsable folders
+  - Fixes for the dotnet new templates, related to publish of Umbraco
+  - Added "JetBrains.Annotations" to assembly exclusion list
+  - Fixed issue so it doesn't explode when saving content during a migration
+  - Fixed issue with CachePartial
+  - Fix RedirectToCurrentUmbracoPage when UrlProviderMode is set to "Absolute"
+  - Fix Grid editor headline gets encoded twice
+  - Fixed issue with public acces, if member didnt have a member group, restricting access to the public would always lead to error page
+  - Added missing disposel of Process 
+  - Avoid mixing using of string interpolation and string formatting in log messages 
+  - Reduce allocations by using existing CharArrays for TrimStart()
+  - Cleanup _inMemoryModelFactory.ModelsChanged event on dispose in RefreshingRazorViewEngine
+
+
 ## Umbraco Forms 9 (.NET Core) Beta
 
 On Friday 4th June a beta release of the Umbraco Forms package for V9 was released.
