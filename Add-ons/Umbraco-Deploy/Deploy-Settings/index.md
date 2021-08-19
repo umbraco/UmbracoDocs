@@ -96,6 +96,17 @@ In order for Deploy to handle Forms data as content, you'll need to add the foll
 </settings>
 ```
 
+## Transfer dictionary items as content
+
+In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <dictionary transferDictionaryAsContent="true" />
+</settings>
+```
+
 ## Exporting member groups
 
 This setting is to be defined and set to false only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
