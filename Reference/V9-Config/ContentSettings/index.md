@@ -24,8 +24,8 @@ To get an overview of the keys and values in the global section, the following s
       "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "AllowedUploadFiles": [],
       "ShowDeprecatedPropertyEditors": false,
-      "LoginBackgroundImage": "assets/img/login.jpg",
-      "LoginLogoImage": "assets/img/application/umbraco_logo_white.svg",
+      "LoginBackgroundImage": "~/assets/img/login.jpg",
+      "LoginLogoImage": "~/assets/img/application/umbraco_logo_white.svg",
       "Notifications": {
         "Email": "",
         "DisableHtmlEmail": false
