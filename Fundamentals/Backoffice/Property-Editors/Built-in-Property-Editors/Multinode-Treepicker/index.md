@@ -60,6 +60,18 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 }
 ```
 
+### Without Modelsbuilder (Maximum number of items set to 1)
+
+```csharp
+@{
+    var typedMultiNodeTreePicker = Model.Value<IPublishedContent>("featuredArticles");
+    foreach (var item in typedMultiNodeTreePicker)
+    {
+        <p>@item.Name</p>
+    }
+}
+```
+
 ### With Modelsbuilder
 
 ```csharp
