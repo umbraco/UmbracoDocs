@@ -64,8 +64,8 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ```csharp
 @{
-    var typedMultiNodeTreePicker = Model.Value<IPublishedContent>("featuredArticles");
-    foreach (var item in typedMultiNodeTreePicker)
+    var typedMultiNodeTreePicker = Model.Value<IPublishedContent>("featuredArticle");
+    if (typedMultiNodeTreePicker != null)
     {
         <p>@item.Name</p>
     }
