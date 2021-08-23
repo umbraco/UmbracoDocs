@@ -118,3 +118,7 @@ A complete list of all the configuration sections included in Umbraco by default
 * [Type finder settings](TypeFinderSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
 * [Plugins settings](PluginsSettings/index.md)
+
+## Configured by code
+
+* [FileSystemProviders](filesystemProviders-v9.md)
