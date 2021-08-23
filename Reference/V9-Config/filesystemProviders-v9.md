@@ -59,7 +59,7 @@ The physical file system provider manages the interaction of Umbraco with the lo
 
 ### Virtual Folder
 
-To configure the PhysicalFileSystem to work with a virtual folder, you must create a new filesystem with a root path and root url that points within the `wwwroot` folder, see the example above, this can then be used to configure the media filesystem. For information see [Extending FileSystemProviders](../extending/../../Extending/FileSystemProviders/index-v9.md).
+To configure the PhysicalFileSystem to work with a virtual folder, you must create a new filesystem with a root path and root url that points within the `wwwroot` folder, see the example above, this can then be used to configure the media filesystem. For information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index-v9.md).
 
 ### Physical path
 If you want to store the media files in a separate folder, outside of the webroot folder, maybe on a NAS/SAN, there's a few more steps. 
