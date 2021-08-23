@@ -16,12 +16,6 @@ Let's have a further look at each option below.
 Here is a snippet containing all the default values of the `RequestHandler` section.
 
 ```json
-"Umbraco": {
-  "CMS": {
-    "RequestHandler": {
-      "AddTrailingSlash": true,
-      "ConvertUrlsToAscii": "try",
-      "CharCollection": [ 
         {
           "Char": " ",
           "Replacement": "-"
