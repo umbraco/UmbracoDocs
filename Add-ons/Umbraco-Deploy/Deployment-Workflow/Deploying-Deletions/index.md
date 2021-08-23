@@ -47,7 +47,7 @@ Here's an overview of what happens when you deploy various deletions to the next
 ### Deleting Schema (Document Types, Datatypes etc.)
 
 Deleted:
-* The associated `.UDA` file.
+* The associated `.uda` file.
 
 Not deleted:
 * The entry in the database.
@@ -56,7 +56,7 @@ Not deleted:
 ### Deleting a Template
 
 Deleted:
-* The associated `.UDA` file.
+* The associated `.uda` file.
 * The associated `.cshtml` file (the view file).
 
 Not deleted:
@@ -74,7 +74,7 @@ Content and media deletions will not be picked up by deployments and will have t
 ### Deleting backoffice languages
 
 Deleted:
-* The associated `.UDA` file
+* The associated `.uda` file
 
 Not deleted:
 * The entry in the database
