@@ -21,7 +21,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
     "RequestHandler": {
       "AddTrailingSlash": true,
       "ConvertUrlsToAscii": "try",
-      "CharCollection": [
+      "CharCollection": [ 
         {
           "Char": " ",
           "Replacement": "-"
