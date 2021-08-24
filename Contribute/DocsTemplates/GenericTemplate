@@ -1,0 +1,71 @@
+---
+versionFrom: A property with semver notation to indicate from which version this article is valid 
+versionTo: A property with semver notation to indicate till which version this article is valid
+needsV8Update: true
+verified-against: The article which has been tested against or the latest version
+meta.Title: "VERBing a(n)/the NOUN(s) [title case]"
+meta.Description: "Short description of the topic, can reuse first sentence, max 300 characters"
+---
+
+## Main heading
+This guide will help you [describe what the user will achieve by the end of the guide]. [Explain goal, domain-related background information, any information that helps understand the purpose or terminology of the tutorial.]
+
+
+### Subheading
+
+Text
+
+![image](image/imagename)
+
+```csharp
+codeblock
+```
+
+```json
+codeblock
+```
+
+[link text](https://yourlink.com)
+
+
+#### Sub-subheading
+
+Text
+
+![image](image/imagename)
+
+```csharp
+codeblock
+```
+
+### Subheading
+
+Text
+
+![image](image/imagename)
+
+```csharp
+codeblock
+```
+
+#### sub sub heading
+
+Text
+
+![image](image/imagename)
+
+```csharp
+codeblock
+```
+
+:::note
+This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::warning
+This is a warning, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::tip
+This is a tip, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
