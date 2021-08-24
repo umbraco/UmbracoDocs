@@ -23,7 +23,7 @@ How to create Document Types and what they do.
 How to create your first template and create a content node.
 
 
-## [CSS & JavaScript](CSS-And-JavaScript/index-v7.md)
+## [CSS & JavaScript](CSS-And-Images/index-v7.md)
 Adding the CSS and JavaScript for your site into Umbraco.
 
 
