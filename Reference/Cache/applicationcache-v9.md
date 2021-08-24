@@ -16,8 +16,6 @@ The `AppCaches` which can be found in namespace `Umbraco.Cms.Core.Cache` contain
 
 ## Getting the AppCaches
 
-### AppCaches property
-
 ### Dependency Injection
 
 ```csharp
@@ -37,13 +35,3 @@ public class MyClass
 
 }
 ```
-
-### Static accessor
-
-```csharp
-IAppPolicyCache runtimeCache = Umbraco.Core.Composing.Current.AppCaches.RuntimeCache;
-IAppCache requestCache = Umbraco.Core.Composing.Current.AppCaches.RequestCache;
-IsolatedCaches isolatedCaches = Umbraco.Core.Composing.Current.AppCaches.IsolatedCaches;
-```
-
-You can [access and update the cache items](updating-cache.md), using the provided methods.
