@@ -16,7 +16,7 @@ The `AppCaches` which can be found in namespace `Umbraco.Cms.Core.Cache` contain
 
 ## Getting the AppCaches
 
-### Dependency Injection
+If you wish to use the AppCaches in a class, you need to use Dependency Injection (DI) in your constructor:
 
 ```csharp
 public class MyClass
