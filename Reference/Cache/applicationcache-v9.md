@@ -18,14 +18,6 @@ The `AppCaches` which can be found in namespace `Umbraco.Cms.Core.Cache` contain
 
 ### AppCaches property
 
-If you wish to use cache in a class that inherits from one of the Umbraco base classes (eg. SurfaceController, UmbracoApiController or UmbracoAuthorizedApiController), you can access the various cache types through a local AppCaches property:
-
-```csharp
-IAppPolicyCache runtimeCache = AppCaches.RuntimeCache;
-IAppCache requestCache = AppCaches.RequestCache;
-IsolatedCaches isolatedCaches = AppCaches.IsolatedCaches;
-```
-
 ### Dependency Injection
 
 ```csharp
