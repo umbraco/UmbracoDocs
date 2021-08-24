@@ -54,9 +54,9 @@ Like with environment variables, it's not feasable to use an entire json file as
 `dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
 
 
-## IntelliSesnse
+## IntelliSense
 
-A great thing about the `appsettings.json` is that it allows for intellisense with a schema file. For most ediors this should work out of the box, without having configure anything, since the schema is specified in the top of the file like so `"$schema": "https://json.schemastore.org/appsettings.json"`.
+A great thing about the `appsettings.json` is that it allows for intellisense with a schema file. For most ediors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so `"$schema": "https://json.schemastore.org/appsettings.json"`.
 
 ## Reading configuration in code
 
@@ -118,3 +118,7 @@ A complete list of all the configuration sections included in Umbraco by default
 * [Type finder settings](TypeFinderSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
 * [Plugins settings](PluginsSettings/index.md)
+
+## Configured by code
+
+* [FileSystemProviders](filesystemProviders-v9.md)

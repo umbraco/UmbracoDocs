@@ -27,7 +27,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
           "Replacement": "-"
         },
         {
-          "Char": "\"",
+          "Char": "\",
           "Replacement": ""
         },
         {

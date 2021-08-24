@@ -26,7 +26,7 @@ Why work with tags? Because they're not cached by default.. which makes them ide
 
 ### TagService
 
-First we want to create our `TagService`. In this example it's a basic class with one method (`GetAll`) that wraps Umbraco's `TagQuery.GetAllTags()`.
+First we want to create our `CacheTagService`. In this example it's a basic class with one method (`GetAll`) that wraps Umbraco's `TagQuery.GetAllTags()`.
 
 ```csharp
 using System;
@@ -37,12 +37,12 @@ using Umbraco.Web.Models;
 
 namespace Doccers.Core.Services.Implement
 {
-    public class TagService : ITagService
+    public class CacheTagService : ICacheTagService
     {
         private readonly ITagQuery _tagQuery;
         private readonly IAppPolicyCache _runtimeCache;
 
-        public TagService(ITagQuery tagQuery, AppCaches appCaches)
+        public CacheTagService(ITagQuery tagQuery, AppCaches appCaches)
         {
             _tagQuery = tagQuery;
             // Grap RuntimeCache from appCaches
@@ -66,7 +66,7 @@ namespace Doccers.Core.Services.Implement
 }
 ```
 
-As you can see we inherit from the `ITagService` interface. All that has is:
+As you can see we inherit from the `ICacheTagService` interface. All that has is:
 
 ```csharp
 using System;
@@ -75,7 +75,7 @@ using Umbraco.Web.Models;
 
 namespace Doccers.Core.Services
 {
-    public interface ITagService
+    public interface ICacheTagService
     {
         IEnumerable<TagModel> GetAll(
             string group,
@@ -99,13 +99,13 @@ namespace Doccers.Core
     {
         public void Compose(Composition composition)
         {
-            composition.Register<ITagService, TagService>();
+            composition.Register<ICacheTagService, CacheTagService>();
         }
     }
 }
 ```
 
-Now you can inject `ITagService` in any constructor in your project - wohooo!
+Now you can inject `ICacheTagService` in any constructor in your project - wohooo!
 
 ### API
 
@@ -123,10 +123,10 @@ namespace Doccers.Core.Controllers.Api
 {
     public class TagsController : UmbracoApiController
     {
-        private readonly ITagService _tagService;
+        private readonly ICacheTagService _tagService;
 
         // Dependency injection rocks!
-        public TagsController(ITagService tagService)
+        public TagsController(ICacheTagService tagService)
         {
             _tagService = tagService;
         }
@@ -216,7 +216,7 @@ Now that we have our component we also need to register it. Add `composition.Com
 ```csharp
 public void Compose(Composition composition)
 {
-    composition.Register<ITagService, TagService>();
+    composition.Register<ICacheTagService, CacheTagService>();
 
     composition.Components().Append<Component>();
 }

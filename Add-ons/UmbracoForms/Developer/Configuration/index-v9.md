@@ -40,6 +40,7 @@ For illustration purposes, the following structure represents the full set of op
       "DisableAutomaticAdditionOfDataConsentField": false,
       "DisableDefaultWorkflow": false,
       "MaxNumberOfColumnsInFormGroup": 12,
+      "DefaultTheme": "default",
       "Defaults": {
         "ManualApproval": false,
         "DisableStylesheet": false,
@@ -50,7 +51,8 @@ For illustration purposes, the following structure represents the full set of op
         "ShowValidationSummary": false,
         "HideFieldValidationLabels": false,
         "MessageOnSubmit": "Thank you",
-        "StoreRecordsLocally": true
+        "StoreRecordsLocally": true,
+        "AutocompleteAttribute": "",
       }
     },
     "PackageOptions": {
@@ -92,6 +94,9 @@ This configuration value expects a `true` or `false` value and can be used to to
 ### MaxNumberOfColumnsInFormGroup
 
 This setting controls the maximum number of columns that can be created by editors when they configure groups within a form. The default value used if the setting value is not provided is 12.
+
+### DefaultTheme
+This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
 ### Form default settings configuration
 
@@ -140,6 +145,10 @@ This allows you to configure what text is displayed when a form is submitted and
 #### StoreRecordsLocally
 
 This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data should be stored in the Umbraco Forms database tables. By default this is set to `True`.
+
+#### AutocompleteAttribute
+
+This setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.
 
 ## Package options configuration
 

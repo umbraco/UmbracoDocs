@@ -22,7 +22,7 @@ The new infrastructure comes with minimum requirements on what version of Umbrac
 |---|---|---|---|
 |  Umbraco CMS  |  8.6.7 |
 |  Umbraco Forms  |  8.5.3 |
-|  Umbraco Deploy  |  3.5.3 |
+|  Umbraco Deploy  |  4.0.5 |
 
 ### Umbraco 7
 
@@ -30,7 +30,7 @@ The new infrastructure comes with minimum requirements on what version of Umbrac
 |---|---|---|---|
 |  Umbraco CMS  |  7.7.6 |
 |  Umbraco Forms  |  6.0.8 |
-|  Umbraco Deploy |  2.0.0 |
+|  Umbraco Deploy |  2.0.18 |
 
 You can find the Umbraco CMS, Forms and Deploy version for each environment listed on the project page in the Umbraco Cloud Portal:
 
