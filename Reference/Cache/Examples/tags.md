@@ -114,12 +114,13 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
 ```csharp
-using Doccers.Core.Services;
 using System;
 using System.Collections.Generic;
-using System.Web.Http;
-using Umbraco.Web.Models;
-using Umbraco.Web.WebApi;
+using Microsoft.AspNetCore.Mvc;
+using Doccers.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Web.Common.Controllers;
+
 
 namespace Doccers.Core.Controllers.Api
 {
