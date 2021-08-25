@@ -63,6 +63,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple enabled without Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
@@ -87,6 +88,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled without Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
@@ -99,6 +101,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled with Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
