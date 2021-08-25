@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Working with the runtime cache in Umbraco"
 meta.Description: "Information on how to insert and delete from the runtime cache"
 ---
@@ -31,9 +31,10 @@ First we want to create our `CacheTagService`. In this example it's a basic clas
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Core.Cache;
-using Umbraco.Web;
-using Umbraco.Web.Models;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.PublishedCache;
+using Umbraco.Extensions;
 
 namespace Doccers.Core.Services.Implement
 {
@@ -71,7 +72,7 @@ As you can see we inherit from the `ICacheTagService` interface. All that has is
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Web.Models;
+using Umbraco.Cms.Core.Models;
 
 namespace Doccers.Core.Services
 {
@@ -90,16 +91,17 @@ The interface was created to better register it so we can use dependency injecti
 ```csharp
 using Doccers.Core.Services;
 using Doccers.Core.Services.Implement;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
 
 namespace Doccers.Core
 {
-    public class Composer : IUserComposer
+    public class Composer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.Register<ICacheTagService, CacheTagService>();
+            builder.Services.AddUnique<ICacheTagService, CacheTagService>();
         }
     }
 }
@@ -112,12 +114,13 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
 ```csharp
-using Doccers.Core.Services;
 using System;
 using System.Collections.Generic;
-using System.Web.Http;
-using Umbraco.Web.Models;
-using Umbraco.Web.WebApi;
+using Microsoft.AspNetCore.Mvc;
+using Doccers.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Web.Common.Controllers;
+
 
 namespace Doccers.Core.Controllers.Api
 {
