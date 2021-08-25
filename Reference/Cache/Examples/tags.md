@@ -31,9 +31,10 @@ First we want to create our `CacheTagService`. In this example it's a basic clas
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Core.Cache;
-using Umbraco.Web;
-using Umbraco.Web.Models;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.PublishedCache;
+using Umbraco.Extensions;
 
 namespace Doccers.Core.Services.Implement
 {
@@ -71,7 +72,7 @@ As you can see we inherit from the `ICacheTagService` interface. All that has is
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Web.Models;
+using Umbraco.Cms.Core.Models;
 
 namespace Doccers.Core.Services
 {
