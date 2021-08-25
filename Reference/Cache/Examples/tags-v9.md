@@ -167,49 +167,34 @@ Everything should now work as expected when it comes to getting tags. However, i
 
 ### Clearing cache on publish
 
-To clear the cache we need a component in which we register to the `Published` event on the `ContentService`. This allows us to run a piece of code whenever you publish a node.
+To clear the cache we need a notification handler in which we register to the `ContentPublishedNotification` event on the `ContentService`. This allows us to run a piece of code whenever you publish a node.
 
 ```csharp
 using System.Linq;
-using Umbraco.Core.Cache;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Events;
-using Umbraco.Core.Services;
-using Umbraco.Core.Services.Implement;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 
 namespace Doccers.Core
 {
-    public class Component : IComponent
+    public class Notification : INotificationHandler<ContentPublishedNotification>
     {
+
         private readonly IAppPolicyCache _runtimeCache;
 
-        public Component(AppCaches appCaches)
+        public Notification(AppCaches appCaches)
         {
-            // Again we can just grab RuntimeCache from AppCaches.
             _runtimeCache = appCaches.RuntimeCache;
         }
 
-        public void Initialize()
+        public void Handle(ContentPublishedNotification notification)
         {
-            ContentService.Published += ContentService_Published;
-        }
 
-        private void ContentService_Published(IContentService sender,
-            ContentPublishedEventArgs e)
-        {
-            // We only want to clear the blogTags cache
-            // if we're publishing a blog post.
-            if (e.PublishedEntities
-                .Where(x => x.ContentType.Alias == "blogPost").Any())
+            if (notification.PublishedEntities.Any(x => x.ContentType.Alias == "blogPost"))
             {
                 _runtimeCache.ClearByKey("blogTags");
             }
         }
-
-        public void Terminate() {
-            //unsubscribe during shutdown
-            ContentService.Published -= ContentService_Published;
- }
     }
 }
 ```
@@ -217,11 +202,12 @@ namespace Doccers.Core
 Now that we have our component we also need to register it. Add `composition.Components().Append<Component>();` to the `Compose` method in the `Composer` class so it becomes:
 
 ```csharp
-public void Compose(Composition composition)
+public void Compose(IUmbracoBuilder builder)
 {
-    composition.Register<ICacheTagService, CacheTagService>();
+    builder.Services.AddScoped<ICacheTagService, CacheTagService>();
 
-    composition.Components().Append<Component>();
+    builder.AddNotificationHandler<ContentPublishedNotification, Notification>();
+
 }
 ```
 
