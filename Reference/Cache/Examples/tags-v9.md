@@ -93,7 +93,7 @@ using Doccers.Core.Services;
 using Doccers.Core.Services.Implement;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Doccers.Core
 {
@@ -101,7 +101,7 @@ namespace Doccers.Core
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.AddUnique<ICacheTagService, CacheTagService>();
+            builder.Services.AddScoped<ICacheTagService, CacheTagService>();
         }
     }
 }
