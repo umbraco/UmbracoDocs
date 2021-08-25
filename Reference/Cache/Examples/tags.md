@@ -91,16 +91,17 @@ The interface was created to better register it so we can use dependency injecti
 ```csharp
 using Doccers.Core.Services;
 using Doccers.Core.Services.Implement;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
 
 namespace Doccers.Core
 {
-    public class Composer : IUserComposer
+    public class Composer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.Register<ICacheTagService, CacheTagService>();
+            builder.Services.AddUnique<ICacheTagService, CacheTagService>();
         }
     }
 }
