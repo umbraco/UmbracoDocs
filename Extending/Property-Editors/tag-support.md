@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-versionTo: 8.0.0
+versionTo: 7.0.0
 ---
 
 # Tag support for property editors
