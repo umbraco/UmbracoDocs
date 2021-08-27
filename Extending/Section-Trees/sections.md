@@ -136,6 +136,17 @@ You will need to recycle the application pool, to see changes to the language tr
 
 [Now create a custom tree to load in your custom section!](../../Extending/Section-Trees/trees.md)
 
+## Moving / removing core sections
+
+The core sections are registered in a specific order in Core, but you can remove and move them around in your own Composer similar to how you can move custom sections. Fx:
+
+```csharp
+composition.Sections().Remove<SettingsSection>();
+composition.Sections().InsertBefore<UsersSection, SettingsSection>();
+```
+
+The above example will remove the settings section and then insert it again after the users section - allowing you to manipulate the order.
+
 ## Section Service API v7
 
 The section API in v7+ is found in the interface `Umbraco.Core.Services.ISectionService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/applications.config file.
