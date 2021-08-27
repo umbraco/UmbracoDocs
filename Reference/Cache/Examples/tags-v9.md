@@ -199,7 +199,7 @@ namespace Doccers.Core
 }
 ```
 
-Now that we have our component we also need to register it. Add `composition.Components().Append<Component>();` to the `Compose` method in the `Composer` class so it becomes:
+Now that we have our notification we also need to register it. Add `builder.AddNotificationHandler<ContentPublishedNotification, Notification>();` to the `Compose` method in the `Composer` class so it becomes:
 
 ```csharp
 public void Compose(IUmbracoBuilder builder)
