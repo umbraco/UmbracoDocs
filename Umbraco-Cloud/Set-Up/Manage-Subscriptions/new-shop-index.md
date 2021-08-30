@@ -12,11 +12,11 @@ In this article you will be able to find information on how to manage your subsc
 
 ## Manage Subscriptions
 
-To manage you subscription on Umbraco Cloud, go to the menu in the top right corner and select "Manage subscription".
+To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Manage subscription".
 
 ![manage subscriptions](images/manage-subscriptions-new.png)
 
-You will then be send to the the overview of the subscriptions that you have running on your Umbraco Cloud user.
+You will see a overview of the subscriptions that you have running on your Umbraco Cloud account.
 
 Here you can find information about the projects you are currently paying for on Umbraco Cloud.
 
@@ -24,21 +24,17 @@ Here you can find information about the projects you are currently paying for on
 
 ## Payment methods
 
-To change your payment method on Umbraco Cloud, go to your profile and select "Payment methods" in the left side menu.
+To change your payment method on Umbraco Cloud, go to your profile and select "Payment Methods" in the left side menu.
 
 ![Select Payment Methods](images/select_payment.png)
 
-On this page you can see the credit cards already added or add a new one.
+On this page you can see the credit cards you have already added or you can add a new one.
 
-Once a credit card have been added it will show up in a drop-down when creating new projects.
+Once a credit card have been added it will show up in a drop-down when creating new projects and you can change the payment method for a specific project.
 
 ![Select Payment Methods](images/Payment_methods.png)
 
-It is also possible to change which card you use for paying your projects on Umbraco Cloud, this can be done from the project page of the project you want to change the subscription for.
-
-![Change payment method](images/Change-payment.png)
-
-## Invoices
+## Payment and Invoices
 
 On Umbraco Cloud we are sending out one single invoice with all the projects that you are paying for on email every month.
 
@@ -48,7 +44,8 @@ If you want watch the Payment history and download a invoice from a previous mon
 
 From here you can see a history of the payments that have been done on the respective project that you are looking at.
 
-You can see the Invoice number, the date the invoice was issued, the total amount that have been paid, and the payment status.
+You can see the Invoice number, the date the invoice was issued, the total amount that have been paid, and the payment status, as well as change which Credit card you are using to pay for the specific project.
+
 ![payment history](images/payment-history.png)
 
 When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
