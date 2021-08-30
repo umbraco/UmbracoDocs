@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 # Payments on Umbraco Cloud
 
 :::note
-This article is only for customers in the payment system released on the 28th of April.
+This article is only for customers in the payment system released on the 5th of May.
 For  customers on Umbraco Cloud before the 28th of April handling subscriptions is done through [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
 :::
 
