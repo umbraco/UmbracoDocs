@@ -51,4 +51,6 @@ From here you can see a history of the payments that have been done on the respe
 You can see the Invoice number, the date the invoice was issued, the total amount that have been paid, and the payment status.
 ![payment history](images/payment-history.png)
 
-Downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
+When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
+
+![Invoice for projects](images/invoice.png)
