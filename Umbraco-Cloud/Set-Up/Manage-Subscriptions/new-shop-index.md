@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 
 :::note
 This article is only for customers in the payment system released on the 5th of May.
-For  customers on Umbraco Cloud before the 28th of April handling subscriptions is done through [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
+For  customers on Umbraco Cloud before the 5th of May handling subscriptions is done through [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
 :::
 
 In this article you will be able to find information on how to manage your subscriptions, download and pay invoices and change your credit card on Umbraco Cloud.
