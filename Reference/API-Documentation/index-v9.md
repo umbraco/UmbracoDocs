@@ -30,6 +30,6 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 - The umbraco.services
 - The umbraco.resources
 
-### [Backoffice UI](https://our.umbraco.com/apidocs/v8/ui/#/api/)
+### [Backoffice UI](https://apidocs.umbraco.com/v9/ui)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
