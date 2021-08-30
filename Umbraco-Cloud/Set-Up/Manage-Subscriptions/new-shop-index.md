@@ -20,7 +20,7 @@ You will see a overview of the subscriptions that you have running on your Umbra
 
 Here you can find information about the projects you are currently paying for on Umbraco Cloud.
 
-![Your subscriptions](images/subscriptions.png)
+![Your subscriptions](Manage-Subscriptions/images/subscriptions.png)
 
 ## Payment methods
 
