@@ -14,7 +14,7 @@ In this article you will be able to find information on how to manage your subsc
  
 To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Manage subscription".
 
-![manage subscriptions](/images/manage-subscriptions-new.png)
+![manage subscriptions](images/manage-subscriptions-new.png)
 
 You will see a overview of the subscriptions that you have running on your Umbraco Cloud account.
 
