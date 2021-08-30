@@ -25,6 +25,7 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 
 ```json
 {
+    "$schema": "https://json.schemastore.org/package.manifest",
     "sections": [
         {
             "alias": "myFavouriteThings",
