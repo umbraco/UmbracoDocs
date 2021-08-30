@@ -11,7 +11,7 @@ For  customers on Umbraco Cloud before the 5th of May handling subscriptions is 
 In this article you will be able to find information on how to manage your subscriptions, download and pay invoices and change your credit card on Umbraco Cloud.
 
 ## Manage Subscriptions
-
+ 
 To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Manage subscription".
 
 ![manage subscriptions](images/manage-subscriptions-new.png)
@@ -48,6 +48,6 @@ You can see the Invoice number, the date the invoice was issued, the total amoun
 
 ![payment history](images/payment-history.png)
 
-When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
+When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month. 
 
 ![Invoice for projects](images/invoice.png)
