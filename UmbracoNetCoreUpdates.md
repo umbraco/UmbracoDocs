@@ -73,6 +73,9 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 * [Github repository: Umbraco 9 Demo site ](https://github.com/Adolfi/UmbracoNineDemoSite) 
 * [YouTube: Porting an Umbraco package to v9 using multi-targeting - The Package Team](https://www.youtube.com/watch?v=W9IvX9MmoMo)
+* [YouTube: How to Host an Umbraco 9 site with IIS](https://www.youtube.com/watch?v=riO5EQKE0YY)
+* [YouTube: Run .NETCore CMS Umbraco on a MacBook](https://www.youtube.com/watch?v=lDL9tsJojfs)
+* [YouTube: Migrating Enent Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
 * [YouTube: Umbraco Community Office Hours - Updates on Project Unicore with the Unicore Community Team](https://www.youtube.com/watch?v=S18kpMhefl0)
 * [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
 * [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
