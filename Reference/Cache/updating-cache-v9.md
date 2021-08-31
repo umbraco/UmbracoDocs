@@ -30,7 +30,7 @@ To use this generic implementation, add the `Umbraco.Extensions` namespace to yo
 
 ### Retrieving an item from the cache without a callback
 
-One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to retrieve an item from the cache without populating it if it doesn't exist.
+One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow you to retrieve an item from the cache without populating it if it doesn't exist.
 
 An example of usage:
 
