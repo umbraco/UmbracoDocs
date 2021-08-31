@@ -26,6 +26,8 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Package Migration to V9 Using Multi-Targeting](https://umbraco.com/blog/multi-targeted-package-migration/)
+* [Umbraco 9 Release Candidate](https://umbraco.com/blog/umbraco-9-release-candidate/)
 * [Packages in Umbraco 9 via NuGet](https://umbraco.com/blog/packages-in-umbraco-9-via-nuget/)
 * [Umbraco 9 Beta Release](https://umbraco.com/blog/umbraco-9-beta-release/)
 * [Alpha 4 release of Umbraco on .NET Core](https://umbraco.com/blog/alpha-4-release-of-umbraco-on-net-core/)
@@ -50,14 +52,31 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Community blog posts
 
+* [Rendering products from an external source using a contentfinder in Umbraco 9](https://adolfi.dev/blog/contentfinder-umbraco-9/)
+* [How to use Server-Side Blazor with Umbraco 9 - Live Notifications](https://cornehoskam.com/posts/how-to-use-server-side-blazor-with-umbraco-9-live-notifications)
+* [Mocking property values in Umbraco 9 (and Umbraco 8)](https://adolfi.dev/blog/mocking-property-values-umbraco/)
+* [Viewcomponents in Umbraco 9](https://skrift.io/issues/viewcomponents-in-umbraco-9/)
+* [Umbraco and blazor](https://skrift.io/issues/umbraco-and-blazor/)
+* [Umbraco v9: Models Builder](https://carole.dev/blog/umbraco-v9-models-builder/)
+* [How to setup Hangfire with Umbraco 9 - Jobs & Dashboards](https://cornehoskam.com/posts/how-to-setup-hangfire-with-umbraco-9)
+* [Umbraco v9 findings](https://adolfi.dev/blog/v9-findings/)
+* [The challenge for .NET Core developers](https://skrift.io/issues/the-challenge-of-net-core-for-umbraco-package-developers/)
 * [Umbraco Package Migration to .NET Core (blog post series)](https://www.andybutland.dev/2021/03/umbraco-package-migration-to-net-core.html)
 * [Running Umbraco on a Raspberry Pi or How I Stopped Worrying and Learned to Love Linux](https://skrift.io/issues/running-umbraco-on-a-raspberry-pi-or-how-i-stopped-worrying-and-learned-to-love-linux/)
+* [Building Applications with Umbraco 9 & Docker - Getting Started](https://cornehoskam.com/posts/building-applications-with-umbraco-9-docker-getting-started)
+* [Building friendly APIs in Umbraco v9 (alpha)](https://carole.dev/blog/building-friendly-apis-in-umbraco-v9-alpha/)
 * [Demystifying config in Umbraco .NET Core](https://24days.in/umbraco-cms/2020/umbraco-dotnet-core-config/)
 * [Rick Butterfield: Umbraco Unicore first impressions](https://rickbutterfield.com/blog/umbraco-unicore-impressions)
 * [Greystate: Trying Out the .NET Core Umbraco Alpha Release](https://greystate.dk/log/2020/09/04/umbraco-net-core-alpha/)
 
 ### Other
 
+* [Github repository: Umbraco 9 Demo site ](https://github.com/Adolfi/UmbracoNineDemoSite) 
+* [YouTube: Porting an Umbraco package to v9 using multi-targeting - The Package Team](https://www.youtube.com/watch?v=W9IvX9MmoMo)
+* [YouTube: How to Host an Umbraco 9 site with IIS](https://www.youtube.com/watch?v=riO5EQKE0YY)
+* [YouTube: Run .NETCore CMS Umbraco on a MacBook](https://www.youtube.com/watch?v=lDL9tsJojfs)
+* [YouTube: Migrating Enent Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
+* [YouTube: Umbraco Community Office Hours - Updates on Project Unicore with the Unicore Community Team](https://www.youtube.com/watch?v=S18kpMhefl0)
 * [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
 * [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
 * [YouTube: Configuring Umbraco on .NET Core - JSON Schema](https://www.youtube.com/watch?v=rpUg-oySw8g)
@@ -70,7 +89,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 ## Umbraco 9 (.NET 5) Release Candidate
 
 :::warning
-As this is an **release candidate**, bugs and minor issues are to be expected.
+As this is a **release candidate**, bugs and minor issues are to be expected.
 
 Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml).
 :::
