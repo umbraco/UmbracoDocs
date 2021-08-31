@@ -1,15 +1,19 @@
+---
+versionFrom: 7.0.0
+---
+
 # Editor Service
 
 The Angular `editorService` service is the primary resource used for opening overlays and handling infinite editing. Besides the `open` and `close` functions, the service also contains functions for opening specialized overlays/editors - eg. `contentPicker` or `mediaPicker`.
 
-### Content Picker
+## Content Picker
 
 The `contentPicker` function opens a Content Picker in infinite editing. Depending on the options, it may be used for picking a single content item or a set of content items. Options for the function is as following:
 
 | Alias           | Description |
 |-----------------|-------------|
 | **multiPicker** | Indicates a boolean value for whether the editor should work as a single Content Picker (`false`) or a Multi Content Picker (`true`). |
-| **submit**      | Is a callback function for then the user selects and submits one or more content items.  |
+| **submit**      | Is a callback function when the user selects and submits one or more content items.  |
 | **close**       | Is a callback function when the close button is clicked. |
 
 The Content Picker could be opened as:
@@ -31,11 +35,7 @@ editorService.contentPicker({
 
 This example snippet will open a new Multi Content Picker. If the user submits one or more content items, the name of each content item will be printed to the console. The user may also close the Content Picker without selecting any content items, in which case the `close` callback function is invoked.
 
-
-
-
-
-### Document Type Editor
+## Document Type Editor
 
 The `documentTypeEditor` function of the editor service can be used for opening a new overlay for either creating a new Document Type or editing an existing Document Type.
 
@@ -57,7 +57,7 @@ editorService.documentTypeEditor({
     create: true,
     submit: function (model) {
         console.log(model.documentTypeAlias);
-	    editorService.close();
+     editorService.close();
     },
     close: function () {
         editorService.close();

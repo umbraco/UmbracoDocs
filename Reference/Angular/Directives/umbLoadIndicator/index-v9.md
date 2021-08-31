@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.4.0
+versionFrom: 9.0.0
 ---
 
 # umbLoadIndicator
@@ -14,7 +14,7 @@ Umbraco internally does this via the `<umb-load-indicator />` directive, which y
 
 :::links
 
-- [`<umbLoadIndicator />` in the **API documentation**](/apidocs/v8/ui/#/api/umbraco.directives.directive:umbLoadIndicator)
+- [`<umbLoadIndicator />` in the **API documentation**](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbLoadIndicator)
 - [`<umbLoadIndicator />` source code on **GitHub**](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/directives/components/umbloadindicator.directive.js)
 :::
 
