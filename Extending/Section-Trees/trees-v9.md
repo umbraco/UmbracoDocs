@@ -27,7 +27,7 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 For example:
 
 ```csharp
-[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
 public class FavouriteThingsTreeController : TreeController
 { }
 ```
@@ -73,7 +73,7 @@ using Umbraco.Cms.Core.Trees;
 using Umbraco.Cms.Web.BackOffice.Trees;
 using Umbraco.Extensions;
 
-[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
 public class FavouriteThingsTreeController : TreeController
 {
 
