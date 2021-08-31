@@ -1,7 +1,7 @@
 ---
 state: partial
 updated-links: false
-verified-against: alpha-3
+verified-against: RC-2
 versionFrom: 9.0.0
 meta.Title: "Umbraco Tree"
 meta.Description: "A guide to creating a custom tree in Umbraco"
@@ -217,7 +217,7 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
 
-Take a look at the [umbEditor directives in the backoffice API Documentation (currently only available for Umbraco 8)](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions-v9.md)
 
@@ -316,6 +316,8 @@ The `TreeNodesRenderingNotification` is published whenever a list of child nodes
 **Usage:**
 
 ```csharp
+using Umbraco.Cms.Core.Security;
+
 public class TreeNotificationHandler :INotificationHandler<TreeNodesRenderingNotification>
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
@@ -353,6 +355,8 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 **Usage:**
 
 ```csharp
+using Umbraco.Cms.Core.Security;
+
 public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
