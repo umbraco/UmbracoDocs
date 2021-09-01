@@ -83,7 +83,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [FileService Notifications](Reference/Notifications/FileService-Notifications)
 * [LocalizationService-Notifications](Reference/Notifications/LocalizationService-Notifications)
 * [MediaService Notifications](Reference/Notifications/MediaService-Notifications)
-* [MediaTypeService Notifications](Reference/Events/MediaTypeService-Notifications)
+* [MediaTypeService Notifications](Reference/Notifications/MediaTypeService-Notifications)
 * [MemberService Notifications](Reference/Notifications/MemberService-Notifications/index)
 * [MemberTypeService Notifications](Reference/Notifications/MemberTypeService-Notifications)
 * [EditorModel Notifications](Reference/Notifications/EditorModel-Notifications/index)
