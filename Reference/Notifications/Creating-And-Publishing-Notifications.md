@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 verified-against: rc002
-meta-title: Creating And Publishing Notifications
+meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
 state: complete
 update-links: true
@@ -25,7 +25,7 @@ namespace Umbraco.Cms.Web.UI.Notifications
 }
 ```
 
-This notification can now be published, and we can create a notification handler to recieve it with, see [MediaService-Notifications](MediaService-Notifications.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is in essence just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the amount of nodes removed from the recycle bin:
+This notification can now be published, and we can create a notification handler to recieve it with, see [MediaService-Notifications](MediaService-Notifications.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the amount of nodes removed from the recycle bin:
 
 ```C#
 using Umbraco.Cms.Core.Notifications;

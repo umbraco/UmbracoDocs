@@ -96,7 +96,7 @@ namespace Umbraco.Cms.Web.UI
 
 ### Registering with extension method
 
-First we needto create out extension method:
+First we need to create our extension method where we register the hosted service with `AddHostedService`:
 
 ```C#
 using Microsoft.Extensions.DependencyInjection;
@@ -133,7 +133,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Registering with a composer
 
-All we need to do here is to create the composer which will be run automatically:
+All we need to do here is to create the composer where we register the hosted service with `AddHostedService`, which will be run automatically:
 
 ```C#
 using Microsoft.Extensions.DependencyInjection;
@@ -159,7 +159,7 @@ This class provides the base class for any hosted service.
 
 You can override the `PerformExecuteAsync` method to implement the class. Hosted services are always run asynchronously.
 
-The `RecurringHostedServiceBase` is a base class that implements the netcore interface `IHostedService`, and makes the task recurring, if you don't need your task to run recurringly you can implement `IHostedService` yourself, and register your hosted service in the same way. For more information about hosted services, take a look at [the Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-5.0).
+The `RecurringHostedServiceBase` is a base class that implements the netcore interface `IHostedService`, and makes the task recurring, if you don't need your task to run recurringly you can implement `IHostedService` yourself, and register your hosted service in the same way. For more information about hosted services, take a look at the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-5.0).
 
 ## BackgroundTaskRunner Notifications
 
@@ -167,7 +167,7 @@ In earlier versions of Umbraco, there were a series of events triggered by backg
 
 ## Using ServerRoleAccessor
 
-In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server and exit out early.
+In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server you can exit out early.
 
 ```C#
 // Do not run the code on replicas nor unknown role servers
