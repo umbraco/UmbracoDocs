@@ -78,7 +78,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [YouTube: Umbraco 9 - The next major version (CG21)](https://www.youtube.com/watch?v=a-NFlIKO1TQ)
 * [Youtube: Headless on .NET Core (CG21)](https://www.youtube.com/watch?v=2dm5YgDQVK4)
 * [YouTube: Run .NET Core CMS Umbraco on a MacBook](https://www.youtube.com/watch?v=lDL9tsJojfs)
-* [YouTube: Migrating Enent Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
+* [YouTube: Migrating Event Handlers in Umbraco V9](https://www.youtube.com/watch?v=o_rpltxwj-8)
 * [YouTube: Umbraco Community Office Hours - Updates on Project Unicore with the Unicore Community Team](https://www.youtube.com/watch?v=S18kpMhefl0)
 * [YouTube: Part01 Porting a Package from V8 to V9](https://www.youtube.com/watch?v=_GqlI_YZeKQ)
 * [YouTube: Part02 Configuration & Options in Umbraco Package for .NETCore](https://www.youtube.com/watch?v=AOFdQAODU5o)
