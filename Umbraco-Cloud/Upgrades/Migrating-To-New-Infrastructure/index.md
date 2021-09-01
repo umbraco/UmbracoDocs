@@ -87,7 +87,7 @@ This brings a whole host of advantages both for local development, password mana
 ### New outgoing IP addresses (for allow lists)
 The outgoing IP addresses on Umbraco Cloud will be changed once the projects are running on the new infrastructure. This is only relevant if you are working with an allow list. In this case, please add the new outgoing IPs prior to migration.
 
-## Additinal information
+## Additional information
 Several blog posts has been published detailing the journey to the new and improved infrastructure:
 
 * [The future of Umbraco Cloud (December 2020)](https://umbraco.com/blog/the-future-of-umbraco-cloud/)
