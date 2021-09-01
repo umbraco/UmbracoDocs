@@ -163,96 +163,22 @@ The `RecurringHostedServiceBase` is a base class that implements the netcore int
 
 ## BackgroundTaskRunner Notifications
 
-Background tasks can also trigger events. [Browse the API documentation for BackgroundTaskRunner events.](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Scheduling.BackgroundTaskRunner-1.html#events)
+In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within you background task. For more information about creating and publishing your own custon notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications.md)
 
-You can subscribe to the events in the `Initialize` method of your `CleanUpYourRoomComponent`. The events are registered on the `BackgroundTaskRunner` object, in this case `_cleanUpYourRoomRunner`.
+## Using ServerRoleAccessor
 
-```csharp
+In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server and exit out early.
 
-public class CleanUpYourRoomComponent : IComponent
-{
-    private IProfilingLogger _logger;
-    private IRuntimeState _runtime;
-    private IContentService _contentService;
-    private BackgroundTaskRunner<IBackgroundTask> _cleanUpYourRoomRunner;
-
-    public CleanUpYourRoomComponent(IProfilingLogger logger, IRuntimeState runtime, IContentService contentService)
-    {
-        _logger = logger;
-        _runtime = runtime;
-        _contentService = contentService;
-        _cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
-    }
-
-    public void Initialize()
-    {
-        int delayBeforeWeStart = 60000; // 60000ms = 1min
-        int howOftenWeRepeat = 300000; //300000ms = 5mins
-
-        var task = new CleanRoom(_cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
-
-        //declare the events
-        _cleanUpYourRoomRunner.TaskCompleted += Task_Completed;
-
-        _cleanUpYourRoomRunner.TaskStarting += this.Task_Starting;
-
-        _cleanUpYourRoomRunner.TaskCancelled += this.Task_Cancelled;
-
-        _cleanUpYourRoomRunner.TaskError += this.Task_Error;
-
-        //As soon as we add our task to the runner it will start to run (after its delay period)
-        _cleanUpYourRoomRunner.TryAdd(task);
-    }
-
-    private void Task_Error(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom error");
-    }
-
-    private void Task_Cancelled(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom cancelled");
-    }
-
-    private void Task_Starting(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom starting");
-    }
-
-    private void Task_Completed(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom run finished");
-    }
-
-    public void Terminate()
-    {
-        //unsubscribe during shutdown
-        _cleanUpYourRoomRunner.TaskCompleted -= Task_Completed;
-
-        _cleanUpYourRoomRunner.TaskStarting -= this.Task_Starting;
-
-        _cleanUpYourRoomRunner.TaskCancelled -= this.Task_Cancelled;
-
-        _cleanUpYourRoomRunner.TaskError -= this.Task_Error;
-    }
-}
-
-```
-
-### Using RuntimeState
-
-In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
-
-```csharp
+```C#
 // Do not run the code on replicas nor unknown role servers
 // ONLY run for Master server or Single
-switch (_runtime.ServerRole)
+switch (_serverRoleAccessor.CurrentServerRole)
 {
     case ServerRole.Replica:
-        _logger.Debug<CleanRoom>("Does not run on replica servers.");
-        return true; // We return true to try again as the server role may change!
+        _logger.LogDebug("Does not run on replica servers.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
     case ServerRole.Unknown:
-        _logger.Debug<CleanRoom>("Does not run on servers with unknown role.");
-        return true; // We return true to try again as the server role may change!
+        _logger.LogDebug("Does not run on servers with unknown role.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change! 
 }
 ```
