@@ -100,7 +100,7 @@ Please be aware that links to API documentation and other resources might not ha
 * [ContentService](Reference/Management/Services/ContentService/index-v9)
 * [ContentTypeService](Reference/Management/Services/ContentTypeService/index-v9)
 * [DataTypeService](Reference/Management/Services/DataTypeService/index-v9)
-* [EntityService](/Reference/Management/Services/EntityService/index-v9)
+* [EntityService](Reference/Management/Services/EntityService/index-v9)
 * [FileService](Reference/Management/Services/FileService/index-v9)
 * [LocalizationService](Reference/Management/Services/LocalizationService/index-v9)
 * [MacroService](Reference/Management/Services/MacroService/index-v9)
