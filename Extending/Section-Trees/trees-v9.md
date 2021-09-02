@@ -90,6 +90,8 @@ public class FavouriteThingsTreeController : TreeController
 
     protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)
     {
+        var nodes = new TreeNodeCollection();
+        
         // check if we're rendering the root node's children
         if (id == Constants.System.Root.ToInvariantString())
         {
@@ -101,8 +103,6 @@ public class FavouriteThingsTreeController : TreeController
             favouriteThings.Add(4, "Warm Woolen Mittens");
             favouriteThings.Add(5, "Cream coloured Unicorns");
             favouriteThings.Add(6, "Schnitzel with Noodles");
-            // create our node collection
-            var nodes = new TreeNodeCollection();
 
             // loop through our favourite things and create a tree item for each one
             foreach (var thing in favouriteThings)
@@ -117,11 +117,9 @@ public class FavouriteThingsTreeController : TreeController
                 var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
                 nodes.Add(node);
             }
-            return nodes;
         }
 
-        // this tree doesn't support rendering more than 1 level
-        throw new NotSupportedException();
+        return nodes;
     }
 
     protected override ActionResult<MenuItemCollection> GetMenuForNode(string id, FormCollection queryStrings)
@@ -136,10 +134,12 @@ public class FavouriteThingsTreeController : TreeController
             menu.Items.Add(new CreateChildEntity(LocalizedTextService));
             // add refresh menu item (note no dialog)
             menu.Items.Add(new RefreshNode(LocalizedTextService, true));
-            return menu;
         }
-        // add a delete action to each individual item
-        menu.Items.Add<ActionDelete>(LocalizedTextService, true, opensDialog: true);
+        else
+        {
+            // add a delete action to each individual item
+            menu.Items.Add<ActionDelete>(LocalizedTextService, true, opensDialog: true);
+        }
 
         return menu;
     }
@@ -151,6 +151,7 @@ public class FavouriteThingsTreeController : TreeController
         {
             return rootResult;
         }
+
         var root = rootResult.Value;
 
         // set the icon
@@ -179,6 +180,7 @@ If you're creating a custom tree as part of an Umbraco package/plugin, it's reco
 [Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name")]
 [PluginController("favouriteThings")]
 public class FavouriteThingsTreeController : TreeController
+{ }
 ```
 
 The edit view in the example would now be loaded from the location: `/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html`
@@ -232,6 +234,7 @@ In both scenarios you need to override the *CreateRootNode* method for the custo
 [Tree("settings", "favouritistThingsAlias", TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
 [PluginController("favouriteThing")]
 public class FavouritistThingsTreeController : TreeController
+{ }
 ```
 
 Overriding the *CreateRootNode* method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
@@ -244,6 +247,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
     {
         return rootResult;
     }
+
     var root = rootResult.Value;
 
     //optionally setting a routepath would allow you to load in a custom UI instead of the usual behaviour for a tree
@@ -272,6 +276,7 @@ To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attr
 [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
 [PluginController("favouriteThing")]
 public class FavouritistThingsTreeController : TreeController
+{ }
 ```
 
 ## Tree notifications
