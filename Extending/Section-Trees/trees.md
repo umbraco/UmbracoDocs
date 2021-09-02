@@ -60,6 +60,8 @@ In Umbraco 8 the `/config/trees.config` file has been removed.
 ```csharp
 protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
 {
+    var nodes = new TreeNodeCollection();
+
     // check if we're rendering the root node's children
     if (id == Constants.System.Root.ToInvariantString())
     {
@@ -71,9 +73,6 @@ protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection
         favouriteThings.Add(4, "Warm Woolen Mittens");
         favouriteThings.Add(5, "Cream coloured Unicorns");
         favouriteThings.Add(6, "Schnitzel with Noodles");
-        
-        // create our node collection
-        var nodes = new TreeNodeCollection();
 
         // loop through our favourite things and create a tree item for each one
         foreach (var thing in favouriteThings)
@@ -83,12 +82,9 @@ protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection
             var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
             nodes.Add(node);
         }
-        
-        return nodes;
     }
 
-    // this tree doesn't support rendering more than 1 level
-    throw new NotSupportedException();
+    return nodes;
 }
 
 protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
