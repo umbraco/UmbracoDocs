@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "false"
+versionTo: 9.0.0
 ---
 
 

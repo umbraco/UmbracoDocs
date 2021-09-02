@@ -83,7 +83,12 @@ To add a content node:
     </table>
 5. Click **Save and Publish**. The content tree will reload with the homepage node.
 
-Refresh your webpage in your browser <http://localhost:xxxx>. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
+Refresh your webpage in your browser <http://localhost:xxxx>. To access your webpage:
+
+1. In the **Homepage** content node, select **Info**.
+2. Click on the window pop-up symbol under the **Links** section.
+
+The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
 
 :::tip
 If you see a blank page, check if the template is entered and remember to save it.

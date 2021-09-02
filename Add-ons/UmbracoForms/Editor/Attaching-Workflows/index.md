@@ -1,18 +1,31 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
-# Attaching workflows
+# Attaching Workflows
 
-In this article you can learn how to add extra functionality to your form by attaching **workflows**.
+In this article, you can learn how to add extra functionality to your Form by attaching **workflows**.
 
-Workflows are a way of defining what happens when a form is submitted. This could be sending an email, or creating a content node.
+Workflows are a way of defining actions after your Form is submitted like sending an email or creating a content node.
 
-Submitting a form will by default result in the record data being stored in the database. This can be configured in the Forms settings: [Store records](../Creating-a-form/Form-Settings/#store-records-version-7).
+## Default Workflow
 
-## Adding a workflow
+By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-Form/Form-Settings/index.md#settings-options) of the Forms settings.
 
-At the bottom of each of your forms, you can see which workflows are already attached to the form, as well as an option to configure the workflows.
+The behaviour to display a message to the user that submitted the form, or to redirect to another page, can be configured by clicking on the built-in first workflow step, labelled **Submit message / Go to page**.
+
+![Submit message / Go to page](images/MessageOnSubmit.png).
+
+If a value is selected for **Go to page** it will be used to issue a redirect to that page once the form has been submitted.
+
+If no value is selected, the message provided in **Message on submit** will be displayed to the user on the same page, instead of the form fields.  From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
+
+For either method, a developer can customize the page viewed after the form is submitted on the basis of the presence of a `TempData` variable with a key of `UmbracoFormSubmitted` and a value containing the Guid identifier for the submitted form.
+
+## Adding a Workflow
+
+At the bottom of your Form, you can see which workflow is already attached to the Form, as well as an option to configure the workflows.
 
 ![Button](images/configure-workflows.png)
 
@@ -20,16 +33,20 @@ Clicking **Configure workflow** will give you the option to configure existing w
 
 ![Workflow add](images/WorkflowsPage.png)
 
-### Select the type
+### Choose a Workflow
 
-A new workflow can be of different types, and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](Workflow-Types) article.
+A new workflow can be of different types and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](Workflow-Types) article.
 
 ![Workflow add modal](images/WorkflowsAddModel.png)
 
-### Fill in type specific settings
+### Update Type-specific Settings
 
-Once the type has been selected you will need to configure the workflow. There are various settings depending on the type that has been selected.
+Once the Workflow Type has been selected, you will need to configure the workflow. There are various settings depending on the type that has been selected.
 
-To be able to use data from the submitted form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
+To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
-Fill in the settings and hit *Submit*. The workflow will now have been added to your form, and it will be shown at the bottom of the page.
+Fill in the settings and hit **Submit**. The workflow is added to your Form and it will be shown at the bottom of the page.
+
+---
+
+Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md)

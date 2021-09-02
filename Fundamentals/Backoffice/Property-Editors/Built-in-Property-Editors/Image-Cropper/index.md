@@ -155,7 +155,7 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a variable for the GUID of the media item you want to use
     var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
-    
+
     // Get the desired media file
     var media = Umbraco.Media(mediaKey);
 
@@ -189,3 +189,66 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
     content.SetValue(Home.GetModelPropertyType(x => x.Cropper).Alias, cropperValue);
 }
 ```
+
+## Going further with the image cropper
+
+Umbraco's Image Cropping functionality is based on the opensource library [ImageProcessor.Web](https://imageprocessor.org/imageprocessor-web/) that has lots of additional options for transforming your images via query string parameters.
+Using the "GetCropUrl" method, specifying the crop alias:
+
+```html
+<img src="@(Model.Image.GetCropUrl("banner"))" />
+```
+
+it's possible to retrieve an URL with a series of query string parameters that represents your crop settings, here an example of the returned URL for a specific crop name:
+
+```
+https:{your-domain}/{image-name}.jpg?crop=0.10592105263157896,0.0061107012631250292,0.528981977613254,0&cropmode=percentage&width=690&height=719&rnd=132652178928630000
+```
+
+## Get all the crop urls for a specific image
+
+You can use the "GetCropUrl" method not only in the view. But for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops dynamically, and get all the crop urls for a specific image, below you can find an example. Later, you can manipulate every obtained URL with other query string parameters provided by "ImageProcessor" library.
+
+```csharp
+internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
+{
+    //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
+    Dictionary<string, string> cropUrls = new Dictionary<string, string>();
+
+    if (image.HasValue("umbracoFile"))
+    {
+        var imageCropper = image.Value<ImageCropperValue>("umbracoFile");
+        foreach (var crop in imageCropper.Crops)
+        {
+            //Get the cropped URL and add it to the dictionary that I will return
+            cropUrls.Add(crop.Alias, image.GetCropUrl(crop.Alias));
+        }
+    }
+
+    return cropUrls;
+}
+```
+
+## MVC view Example on how to set the background color
+
+Below the example to set the background color to white using the ImageProcessor [bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
+
+```csharp
+<img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias: "banner",
+useCropDimensions:true, furtherOptions: "&bgcolor=white")" />
+```
+
+## List of the available parameters provided by the "ImageProcessor" library
+
+See the list of the available query string parameters provided by the "ImageProcessor" library. You can find all the examples in the official [reference guide](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/#methods)
+
+**Attention**: For security reasons **only the following essential processors are enabled by default**:
+
+-   AutoRotate
+-   BackgroundColor
+-   Crop
+-   Format
+-   Quality
+-   Resize
+
+You can find here [how to enable other methods](https://imageprocessor.org/imageprocessor-web/) (see the [Configuration section](https://imageprocessor.org/imageprocessor-web/configuration/)).

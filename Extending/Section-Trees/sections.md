@@ -25,6 +25,7 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 
 ```json
 {
+    "$schema": "https://json.schemastore.org/package.manifest",
     "sections": [
         {
             "alias": "myFavouriteThings",
@@ -135,6 +136,17 @@ To provide translations in other languages, duplicate the en-us.xml file in the 
 You will need to recycle the application pool, to see changes to the language translation files reflected in the backoffice.
 
 [Now create a custom tree to load in your custom section!](../../Extending/Section-Trees/trees.md)
+
+## Moving / removing core sections
+
+The core sections are registered in a specific order in Core, but you can remove and move them around in your own Composer similar to how you can move custom sections. Fx:
+
+```csharp
+composition.Sections().Remove<SettingsSection>();
+composition.Sections().InsertBefore<UsersSection, SettingsSection>();
+```
+
+The above example will remove the settings section and then insert it again after the users section - allowing you to manipulate the order.
 
 ## Section Service API v7
 

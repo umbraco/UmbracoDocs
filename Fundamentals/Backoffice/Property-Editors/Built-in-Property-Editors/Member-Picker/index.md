@@ -61,9 +61,12 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a variable for the GUID of the member ID
     var authorId = Guid.Parse("ed944097281e4492bcdf783355219450");
-
-    // Set the value of the property with alias 'author'. 
-    content.SetValue("author", authorId);
+    
+    // Create a variable for the UDI of the member
+    var authorUdi = Udi.Create(Umbraco.Core.Constants.UdiEntityType.Member, authorId);
+    
+    // Set the value of the property with alias 'author' to the memberUdi. 
+    content.SetValue("author", authorUdi);
 
     // Save the change
     contentService.Save(content);

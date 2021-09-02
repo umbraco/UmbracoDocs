@@ -65,7 +65,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url" style="width:200px"/>
+        <img src="@entry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
@@ -77,7 +77,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Medias;
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url" style="width:200px" />
+        <img src="@entry.MediaItem.Url()" style="width:200px" />
     }
 }
 ```
@@ -89,7 +89,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.MediaItem.Url" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
+        <img src="@typedMediaPickerSingle.MediaItem.Url()" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
     }
 }
 ```
@@ -101,7 +101,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <img src="@mediaEntry.MediaItem.Url" style="width:200px"/>
+        <img src="@mediaEntry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
@@ -159,6 +159,39 @@ The global crops are configured on the DataType of the `umbracoFile` property on
     {
         <img src="@Url.GetCropUrl(entry.MediaItem, "cropAlias")"/>
     }
+}
+
+```
+
+### Add values programmatically
+
+This solution can be applied to both Media Picker 3 and Multi Media Picker 3
+
+```csharp
+@{
+                        //Get media by Id
+                        var media = mediaService.GetById(1150);
+                        
+                        //Initialize new list of dictionaries
+                        var dictionary = new List<Dictionary<string, string>>
+                        {
+                            new Dictionary<string, string>()
+                        {
+                            //Create new GUID for "key"
+                            { "key", Guid.NewGuid().ToString() },
+                            
+                            //Reference our media in "mediaKey"
+                            { "mediaKey", media.Key.ToString() },
+                            { "crops", null },
+                            { "focalPoint", null }
+                        }
+                        };
+
+                        //Serialize entire list of dictionaries
+                        var json = JsonConvert.SerializeObject(dictionary);
+                        
+                        //Assign JSON as the value of Media Picker 3 property
+                        content.SetValue("firstPic", json);
 }
 
 ```

@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Routing requirements for backoffice authentication
 
-In order for Umbraco to authentication a request for the backoffice, the routing needs to be specific. Any URL that routes to :
+In order for Umbraco to authenticate a request for the backoffice, the routing needs to be specific. Any URL that routes to :
 
 > /umbraco/backoffice/*
 
@@ -83,7 +83,7 @@ In order for the Component above to be considered by Umbraco it needs to be adde
 Surface Controllers should not be used in the backoffice.  Surface Controllers are not designed to work with the backoffice, they are not meant to be used there and will not be supported being used there.
 
 ## Special backoffice routes for user authentication
-There are some special routes Umbraco checks to determine if the authentication should check a member of a user.
+There are some special routes Umbraco checks to determine if the authentication should check a member or a user.
 
 If any route has an extension in the path like `.aspx` or the below are always backoffice routes:
 

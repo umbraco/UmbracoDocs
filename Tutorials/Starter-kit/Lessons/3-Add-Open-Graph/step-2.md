@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Add Open Graph - Step 2
@@ -19,4 +20,4 @@ This will add the group and properties from the Open Graph Document Type to the 
 
 If you go to the content section and select Home you can now see your changes (the same goes for the blog posts).
 
-[Previous](step-1.md) - [Next](step-3.md)
+[Previous](step-1.md) - [Next](step-3-v9.md)

@@ -1,12 +1,13 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 meta.Title: "UmbPack"
 meta.Description: "How to use the UmbPack tool to deploy package versions to Our"
 ---
 
 # UmbPack
 
-UmbPack is an open source NuGet tool that can deploy packages to Our, and also help you pack your files into a package. 
+UmbPack is an open source NuGet tool that can deploy packages to Our, and also help you pack your files into a package.
 
 :::note
 You still need to create the package on Our before the tool can be used. Once it has been set up you will then be able to add new versions of the package zip files using UmbPack
@@ -29,7 +30,7 @@ Once you copy the key one more step is needed in order to start using it: you mu
 
 To install the latest version of the tool locally you need to run the following command in a commandline:
 
-```
+```bash
 dotnet tool install --global Umbraco.Tools.Packages
 ```
 
@@ -40,7 +41,7 @@ You will then be able to use it by running `umbpack [command]` in the command li
 The `init` command helps you create a `package.xml` file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
 The `init` command can be used by typing:
 
-```
+```bash
 umbpack init
 ```
 
@@ -60,21 +61,21 @@ The `pack` command has no way of handling package actions, Umbraco schema and co
 
 The `pack` command has a few options. The only mandatory one is to point it at either a `package.xml` file or a folder containing a `package.xml` file:
 
-**Example of packing a folder**
+### Example of packing a folder
 
-```
+```bash
 umbpack pack C:\Umbraco\Customers\test\Test.Web\App_Plugins\CustomPackage
 ```
 
 In this example I wanted to pack up the `~App_Plugins/CustomPackage` folder inside the .Web project. Often that is where you will store package files. The tool will ensure it adds all files to the `package.xml` inside the folder so if you continue to develop and add things a new pack will update it.
 
-**Example of packing based on a package.xml file**
+### Example of packing based on a package.xml file
 
-```
+```bash
 umbpack pack C:\Umbraco\Customers\test\package.xml
 ```
 
-In this example you can imagine I keep a `package.xml` file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder. 
+In this example you can imagine I keep a `package.xml` file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder.
 
 Let's say you have a solution that looks like this:
 
@@ -82,7 +83,7 @@ Let's say you have a solution that looks like this:
 
 There is a .Web project and a .Core project. We have a controller in the .Core project that gets built into a dll in the .Web project, so the package files we would want to include are in the .Web project:
 
-```
+```bash
 ~/App_Plugins/CustomPackage
 ~/bin/UmbPackTest.Core.dll
 ```
@@ -137,13 +138,13 @@ The `pack` command has a few options. As described above the mandatory value is 
 
 `-o` - specifies an output folder. It defaults to the current folder, but you could do something like:
 
-```
+```bash
 umbpack pack .\package.xml -o ../MyCustomPackageVersions
 ```
 
 `-v` - specifies a version for the package. When packing a package it will name it as `{packagename}_{version}.zip`. By default it will take the version from the `package.xml`, but if running in CI/CD for example you may not want to update this value all the time, so you can overwrite it using:
 
-```
+```bash
 umbpack pack .\package.xml -v 1.9.9
 ```
 
@@ -153,11 +154,14 @@ umbpack pack .\package.xml -v 1.9.9
 `{version}` - replaced with the version of the release declared in the package.xml
 
 Fixed naming:
-```
+
+```bash
 umbpack pack .\package.xml -n MyPackageWithBadVersioning_FirstVersion.zip
 ```
+
 Template naming:
-```
+
+```bash
 umbpack pack .\package.xml -n {name}_{version}.zip
 ```
 
@@ -170,7 +174,7 @@ umbpack pack .\package.xml -n {name}_{version}.zip
       <version>$Version$</version>
 ```
 
-```
+```bash
 umbpack pack .\package.xml -p Name=MyPackage;Version=1.0.0
 ```
 
@@ -180,25 +184,25 @@ This would pack your package and update your package.xml - note this happens bef
 
 The `push` command requires an API key and a path to your package zip file, so will look something like this:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] 
 ```
 
 However it also contains a few extra options. By default the pushed version will be set as the new current package version. You can change that by via the `-c` flag:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -c false -k [APIKEY]
 ```
 
 Also when you upload a new package you need to specify which versions it works with. It will default to the latest, but you can specify more with the `-w` flag:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -w v860,v850,v840,v830,v820,v810,v800 -k [APIKEY]
 ```
 
 You can also specify the compatible DotNetVersion if you would like, it defaults to 4.7.2:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip --DotNetVersion=4.5.2 -k [APIKEY]
 ```
 
@@ -206,24 +210,24 @@ Finally you can specify whether you want any older versions to be listed as arch
 
 Will only archive the current package:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current
 ```
 
 Will archive all other packages:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a *
 ```
 
 Will archive all packages based on a partial match:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a UmbPackTest_0*
 ```
 
 Combining several archive patterns:
 
-```
+```bash
 umbpack push .\UmbPackTest_1.0.0.zip -k [APIKEY] -a current UmbPackTest_0* UmbPackTest-Assets_0*
 ```

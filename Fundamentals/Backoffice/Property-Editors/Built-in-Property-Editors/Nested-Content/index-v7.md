@@ -110,6 +110,64 @@ Example:
 }
 ```
 
+### Rendering Nested Content with custom templates
+
+The example above is fine if you are outputting many of the same Nested Content type. However often you have a mix of different content types with different properties. Doing this gets confusing:
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+
+    foreach(var item in items)
+    {
+        if (item.HasProperty("bodyText"))
+        {
+            <p>item.GetPropertyValue("bodyText");</p>
+        }
+
+        if (item.HasProperty("slider"))
+        {
+            <div>item.GetPropertyValue("slider");</div>
+        }
+    }
+}
+```
+
+Instead you can create a partial view for each block type, and then on the page view you can loop through all Nested Content elements and show each in their own partial view.
+
+_~/Views/Frontpage.cshtml_
+
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+
+    foreach(var item in items)
+    {
+        var partialPath = string.Format("~/Views/Partials/NestedContentModules/{0}.cshtml", item.DocumentTypeAlias);
+        @Html.Partial(partialPath, item);
+    }
+}
+```
+
+_~/Views/Partials/NestedContentModules/newsItem.cshtml_
+
+```csharp
+@inherits UmbracoViewPage<IPublishedContent>
+    
+<h1>@Model.GetPropertyValue("newsTitle")</h1>
+```
+
+_~/Views/Partials/NestedContentModules/blogItem.cshtml_
+
+```csharp
+@inherits UmbracoViewPage<IPublishedContent>
+
+<h1>@Model.GetPropertyValue("blogTitle")</h1>
+```
+
+
 #### Single Item Mode
 
 If your **Nested Content** property editor is configured in single item mode, then the value converter will automatically know this and return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.

@@ -1,7 +1,7 @@
 ---
 state: partial
 updated-links: false
-verified-against: alpha-3
+verified-against: RC-2
 versionFrom: 9.0.0
 meta.Title: "Umbraco Tree"
 meta.Description: "A guide to creating a custom tree in Umbraco"
@@ -27,7 +27,7 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 For example:
 
 ```csharp
-[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
 public class FavouriteThingsTreeController : TreeController
 { }
 ```
@@ -73,7 +73,7 @@ using Umbraco.Cms.Core.Trees;
 using Umbraco.Cms.Web.BackOffice.Trees;
 using Umbraco.Extensions;
 
-[Tree("myFavouriteThings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
 public class FavouriteThingsTreeController : TreeController
 {
 
@@ -90,6 +90,8 @@ public class FavouriteThingsTreeController : TreeController
 
     protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)
     {
+        var nodes = new TreeNodeCollection();
+        
         // check if we're rendering the root node's children
         if (id == Constants.System.Root.ToInvariantString())
         {
@@ -101,9 +103,6 @@ public class FavouriteThingsTreeController : TreeController
             favouriteThings.Add(4, "Warm Woolen Mittens");
             favouriteThings.Add(5, "Cream coloured Unicorns");
             favouriteThings.Add(6, "Schnitzel with Noodles");
-
-            // create our node collection
-            var nodes = new TreeNodeCollection();
 
             // loop through our favourite things and create a tree item for each one
             foreach (var thing in favouriteThings)
@@ -118,12 +117,9 @@ public class FavouriteThingsTreeController : TreeController
                 var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
                 nodes.Add(node);
             }
-
-            return nodes;
         }
 
-        // this tree doesn't support rendering more than 1 level
-        throw new NotSupportedException();
+        return nodes;
     }
 
     protected override ActionResult<MenuItemCollection> GetMenuForNode(string id, FormCollection queryStrings)
@@ -223,7 +219,7 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
 
-Take a look at the [umbEditor directives in the backoffice API Documentation (currently only available for Umbraco 8)](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions-v9.md)
 
@@ -269,7 +265,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
 
 The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
-![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)
+![Favourite Thing Custom Single Node Tree](images/favourite-thing-custom-single-node-tree.png)
 
 #### Full Width App - IsSingleNodeTree
 
@@ -285,9 +281,9 @@ public class FavouritistThingsTreeController : TreeController
 
 ## Tree notifications
 
-All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`. 
+All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`.
 
-For more information about registering and using notifications see [Notifications](../../Reference/Events/index-v9.md)
+For more information about registering and using notifications see [Notifications](../../Reference/Notifications/index.md)
 
 ### RootNodeRenderingNotification
 
@@ -325,7 +321,9 @@ The `TreeNodesRenderingNotification` is published whenever a list of child nodes
 **Usage:**
 
 ```csharp
-public class TreeNotificationHandler : INotificationHandler<TreeNodesRenderingNotification>
+using Umbraco.Cms.Core.Security;
+
+public class TreeNotificationHandler :INotificationHandler<TreeNodesRenderingNotification>
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 
@@ -362,6 +360,8 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 **Usage:**
 
 ```csharp
+using Umbraco.Cms.Core.Security;
+
 public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;

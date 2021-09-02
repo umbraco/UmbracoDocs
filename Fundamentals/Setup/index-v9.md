@@ -19,19 +19,12 @@ Defines the system requirements to run Umbraco.
 
 Umbraco installation steps and guidelines.
 
-## [Upgrading](Upgrading/index.md)
-
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
+## [Upgrading](Upgrading/index-v9.md)
 
 Covers the steps to upgrade your copy of Umbraco to a newer version.
 
-## [Server Setup](Server-Setup/index.md)
+## [Server Setup](Server-Setup/index-v9.md)
 
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
 
 Information about server setup for Umbraco including information about permissions and load balancing.
 

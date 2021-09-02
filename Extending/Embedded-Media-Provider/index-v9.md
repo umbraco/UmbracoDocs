@@ -80,13 +80,14 @@ If the provider to add supports the *OEmbed* format for embedding a representati
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: <https://www.deviantart.com/developers/oembed>. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
 
 ```csharp
 using System.Collections.Generic;
-using Umbraco.Web.Media.EmbedProviders;
+using Umbraco.Cms.Core.Media.EmbedProviders;
+using Umbraco.Cms.Core.Serialization;
 
 namespace MyNamespace
 {
@@ -193,7 +194,7 @@ namespace MyNamespace
 
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
 
-#### Register the provider with the OEmbedProvidersCollection
+#### Register the Azure Embed Provider with the OEmbedProvidersCollection
 
 Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
 

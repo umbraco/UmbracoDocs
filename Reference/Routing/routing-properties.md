@@ -31,4 +31,4 @@ The URL alias remains in the browser address bar as a 'mask' over the real URL. 
 
 ## Filtering
 
-[See Filtering Property Conventions](../Querying/IPublishedContent/Collections.md#filtering-conventions)
+[See Filtering Property Conventions](../Querying/IPublishedContent/Collections/index.md#filtering-conventions)

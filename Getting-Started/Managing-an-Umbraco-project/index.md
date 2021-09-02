@@ -12,7 +12,7 @@ An Umbraco project is the process of developing a website, program or applicatio
 
 In this section you will find information on the key concepts and requirements of working with Umbraco CMS. You will find advise on everything from how to lead a project, how to work with design to the process of launching the completed website.
 
-[What is Umbraco?](https://umbraco/products/umbraco-cms)
+[What is Umbraco?](https://umbraco.com/products/umbraco-cms)
 
 [Is Umbraco right for me?](https://umbraco.com/why-choose-umbraco/)
 

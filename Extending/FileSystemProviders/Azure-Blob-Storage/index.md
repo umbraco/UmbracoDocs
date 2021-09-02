@@ -124,6 +124,16 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 
 You have now successfully setup Azure Blob Storage with your Umbraco site.
 
+### Application Setting Override
+After manually updating the security.config file, you can override the `Container` and `Host` values for your blob via an appsetting value.  Moving to application settings can be useful in some scenarios, for example allowing these values to be set in the Azure Portal applications settings rather than stored in the security.config file.    Be sure that your security.config has some value configured for the container, and the host value is a valid Uri or else the site wont load. 
+
+```
+<appSettings>
+    <add key="ImageProcessor.CloudImageService.Container" value="[container name]" />
+    <add key="ImageProcessor.CloudImageService.Host" value="https://[your blob account].blob.core.windows.net/" />
+<appSettings>
+```
+
 ## Existing Media files
 
 Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/Media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `/Media` folder locally, as it is no longer needed.

@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Add a Blog Post Publication Date
@@ -26,7 +27,7 @@ Now in Part Two we're going to display that instead of the default creation date
     <small class="blogpost-date">@Model.PublicationDate.ToLongDateString()</small>
     ```
 
-5. *Save* the Template - a confirmation message should appear confirming that the Template was saved.
-6. View the blog post page in the browser (find the page in the Content tree, then select the link on the Info tab).
+6. *Save* the Template - a confirmation message should appear confirming that the Template was saved.
+7. View the blog post page in the browser (find the page in the Content tree, then select the link on the Info tab).
 
 [Proceed to Part Three](part-3.md)

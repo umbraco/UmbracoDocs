@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Customise the Starter Kit
@@ -50,6 +51,7 @@ To see the changes you've made go to the Info tab and select the link.
 ![Link to page](images/link-to-page.png)
 
 ## Summary
-Nice job! In this lesson you've learned to navigate and edit properties on a page. You've also learned the difference between the **Save**, **Preview** and **Save and Publish** actions and how to use them.
+
+Nice job! In this lesson you've learned to navigate and edit properties on a page. You've also learned the difference between the **Save**, **Preview**, and **Save and Publish** actions and how to use them.
 
 [Back to Lessons](../index.md)

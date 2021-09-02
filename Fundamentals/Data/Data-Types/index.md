@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 meta.Title: "Data types in Umbraco"
 meta.Description: "Learn about the data types in Umbraco."
 verified-against: 9.0.0

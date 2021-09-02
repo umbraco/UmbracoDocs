@@ -2,8 +2,10 @@
 meta.Title: "Defining content"
 meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
 versionFrom: 8.0.0
+versionTo: 9.0.0
 verified-against: 9.0.0
 updated-links: false
+
 ---
 
 # Defining content
