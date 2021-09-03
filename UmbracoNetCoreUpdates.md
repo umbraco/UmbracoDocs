@@ -12,7 +12,7 @@ Are you aware of some information about Umbraco on .NET 5 that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-5-release-candidate). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current release candidate version of Umbraco on .NET 5](#umbraco-9-net-5-release-candidate). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
