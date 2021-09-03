@@ -9,7 +9,7 @@ meta.Description: "The Umbraco backoffice supports external login providers (OAu
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-Unlike previous major releases of Umbraco the use of Identity Extensions package is no longer required. 
+Unlike previous major releases of Umbraco the use of Identity Extensions package is no longer required.
 
 Install an appropriate nuget package for the provider you wish to use. Some popular ones found in Nuget include:
  * [Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google)
@@ -19,7 +19,9 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
  * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
  * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
-To configure the provider create a new static class for your provider. An example of configurating for Google Authentication may look like:
+To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index-v9.md) section.
+An example of configuration for Google Authentication may look like:
+
 ```cs
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
@@ -33,16 +35,23 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
     {
         public static IUmbracoBuilder AddGoogleAuthentication(this IUmbracoBuilder builder)
         {
-            builder.AddBackOfficeExternalLogins(loginOptions =>
-                loginOptions.AddBackOfficeLogin(new BackOfficeExternalLoginProviderOptions(
-                    "btn-danger",
-                    "fa-google"
-                ), authOptions => authOptions.AddGoogle("Umbraco.Google","Google", options =>
-                {
-                    IConfigurationSection googleAuthNSection = builder.Config.GetSection("Authentication:Google");
-                    options.ClientId = googleAuthNSection["ClientId"];
-                    options.ClientSecret = googleAuthNSection["ClientSecret"];
-                })));
+            builder.AddBackOfficeExternalLogins(logins =>
+            {
+                logins.AddBackOfficeLogin(
+                    backOfficeAuthenticationBuilder =>
+                    {
+                        backOfficeAuthenticationBuilder.AddGoogle(
+                            // The scheme must be set with this method to work for the back office
+                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemaName),
+                            options =>
+                            {
+                                //  By default this is '/signin-google' but it needs to be changed to this
+                                options.CallbackPath = "/umbraco-google-signin";
+                                options.ClientId = "YOURCLIENTID";
+                                options.ClientSecret = "YOURCLIENTSECRET";
+                            });
+                    });
+            });
             return builder;
         }
     }
@@ -52,16 +61,14 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 Finally, update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. An example may look like:
 ```cs
 public void ConfigureServices(IServiceCollection services)
-        {
-#pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddAuthenticationServer()
-                .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-        }
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddGoogleAuthentication()
+        .Build();
+}
 ```
 
 For a more in depth article on how to setup OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0&tabs=visual-studio).

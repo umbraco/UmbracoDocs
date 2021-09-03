@@ -20,4 +20,4 @@ Traditionally a backoffice user will need to exist first and then that user can 
 
 In this case, you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
-Read more about [auto linking](../auto-linking/index-v7.md).
+Read more about [auto linking](../auto-linking/index.md).

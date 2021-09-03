@@ -47,15 +47,11 @@ The [`BackOfficeUserManager`](backoffice-user-manager-v9.md) is the ASP.NET Core
 
 ### Custom password check
 
-In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
+In most cases [External login providers (OAuth)](external-login-providers/index-v9.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
-You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
-
-#### Authenticating with Active Directory credentials
-
-If you are using a network based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker-v9.md).
 
 ## Sensitive data on members
 
@@ -63,15 +59,15 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](sensitive-data.md) article.
 
-## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+[comment]: <> (## [Setup Umbraco for a FIPS Compliant Server]&#40;Setup-Umbraco-for-a-Fips-Server/index-v9.md&#41;)
 
-How to configure Umbraco to run on a FIPS compliant server.
+[comment]: <> (How to configure Umbraco to run on a FIPS compliant server.)
 
 ## [Reset admin password](reset-admin-password.md)
 
-Use this guide to [reset the password of the "admin" user](reset-admin-password.md).
+Use this guide to [reset the password of the "admin" user](reset-admin-password-v9.md).
 
-If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
+If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset-v9.md)" article.
 
 ## Other articles related to security
 
