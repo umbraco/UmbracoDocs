@@ -160,4 +160,4 @@ Useful for manipulating the model before it is sent to an editor in the backoffi
 
 # Creating and publishing your own custon notifications
 
-Umbraco uses notification to allow people to hook in various workflow processes, but the notification pattern is also extendable, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful, when for instance creating packages. For more information on how you create and publish you own notifications see the [creating and publishing noticiations](Creating-And-Publishing-Notifications.md) article.
+Umbraco uses notifications to allow people to hook in various workflow processes, but the notification pattern is also extendable, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful when for instance creating packages. For more information on how you create and publish your own notifications see the [creating and publishing noticiations](Creating-And-Publishing-Notifications.md) article.
