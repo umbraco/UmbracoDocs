@@ -22,80 +22,6 @@ or implement a particular interface (typed scanned) or by being explicitly regis
 Umbraco setup the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour.
 These default collections can be removed, reordered, replaced, etc. by implementing `IComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
-### Example - Explicitly Registering a new custom OEmbedProvider
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
-
-```csharp
-
-using System.Collections.Generic;
-using Umbraco.Cms.Core.Media.EmbedProviders;
-using Umbraco.Cms.Core.Serialization;
-
-namespace My.Website
-{
-    public class Spotify : EmbedProviderBase
-    {
-        public Spotify(IJsonSerializer jsonSerializer)
-            : base(jsonSerializer)
-        {
-        }
-
-        public override string ApiEndpoint => "https://embed.spotify.com/oembed/";
-
-        // Playlist
-        // https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sNI4jZloSZr?si=cueBooBfTnqCGriSa4N_Kg
-        // spotify:user:spotify:playlist:37i9dQZF1E4sNI4jZloSZr
-
-        // Artist
-        // https://open.spotify.com/artist/0iirUbtgwt9jEkc2Grin8C?si=TLeUR2cHR-KPRJJhW6YiVg
-        // spotify:artist:0iirUbtgwt9jEkc2Grin8C
-
-        // Album
-        // https://open.spotify.com/album/0lvtdqkqIln6uDBBUT7DHL?si=XTVJIEmnS_OVv9l6ktPFiw
-        // spotify:album:0lvtdqkqIln6uDBBUT7DHL
-
-        // Track
-        // https://open.spotify.com/track/7aCk4XfXIEJM2MecU6Gmf2?si=vESDzI0xTNeA9FQ_dvf1eQ
-        // spotify:track:7aCk4XfXIEJM2MecU6Gmf2
-
-        public override string[] UrlSchemeRegex => new string[]
-        {
-            @".*.spotify.com/.*",
-            @"spotify:.*"
-        };
-
-        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
-
-        public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-        {
-            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
-            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
-
-            return oembed.GetHtml();
-        }
-    }
-}
-```
-
-```csharp
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-
-namespace My.Website
-{
-    public class CustomOEmbedComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Change the OEmbedProviders collection
-            // by adding our new EmbedProvider for Spotify
-            builder.OEmbedProviders().Append<Spotify>();
-        }
-    }
-}
-```
-See a list of collections below to determine which are 'type scanned' and which require explicit registration.
-
 ### Example - Creating a Composer to listen for ContentSavingNotification
 
 This example shows how to create a component and an notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
@@ -134,12 +60,6 @@ namespace My.Website
         }
     }
 }
-```
-
-:::warning
-Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding,
-that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
-:::
 
 ### ComponentComposer&lt;T&gt;
 It's an implementation of `IComposer`, that provides a quicker way to add a custom component to the Component's collection. Creating a C# class that inherits from `ComponentComposer<YourComponentType>` will automatically add `YourComponentType` to the collection of Components. In the example above, the `SubscribeToContentServiceSavingComposer` for the `SubscribeToContentServiceSavingComponent` could have been written more conveniently as:
