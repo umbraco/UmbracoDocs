@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionTo: 8.0.0
 ---
 
 # Partial View Macros
@@ -65,3 +65,5 @@ and with default value fallback
 ```csharp
 var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter", "default value if parameter value has not been set");
 ```
+
+To take a look at how to access macro parameters, see the [Using Macro Parameters](https://umbraco.tv/videos/umbraco-v7/implementor/working-with-umbraco-data/macros-partial-views/using-macro-parameters/) video.
