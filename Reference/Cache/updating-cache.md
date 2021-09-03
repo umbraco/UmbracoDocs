@@ -6,14 +6,31 @@ versionFrom: 8.0.0
 
 _This section describes how you should be getting/adding/updating/inserting items in the cache._
 
+## Use RuntimeCache
+
+To use the `RuntimeCache` you have to inject `AppCaches` and create a field like so:
+
+```csharp
+public class MyClass
+{
+    private readonly IAppPolicyCache _runtimeCache;
+
+    public MyClass(AppCaches appCaches)
+    {
+        _runtimeCache = appCaches.RuntimeCache;
+    }
+}
+
+[Read more about how to inject AppCaches](applicationcache.md).
+
+```
+
 ## Adding and retrieving items in the cache
 
 The recommended way to put data in and get data out is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
 
 ```csharp
-MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-    .GetCacheItem<MyObject>("MyCacheKey",
-        () => new MyObject());
+var cachedItem = _runtimeCache.GetCacheItem("MyCacheKey", () => new MyObject());
 ```
 
 Notice 2 things:
@@ -34,8 +51,7 @@ One of the overloads of `GetCacheItem` doesn't specify a callback, this will all
 An example of usage:
 
 ```csharp
-MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-    .GetCacheItem<MyObject>("MyCacheKey");
+var cachedItem = _runtimeCache.GetCacheItem<MyObject>("MyCacheKey");
 ```
 
 ### Inserting an item into the cache without retrieval
