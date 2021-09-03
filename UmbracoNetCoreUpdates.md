@@ -12,7 +12,7 @@ Are you aware of some information about Umbraco on .NET 5 that isn't already add
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-5-beta). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test the current beta version of Umbraco on .NET 5](#umbraco-9-net-5-release-candidate). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
 
 ## Umbraco 9 Documentation
 
@@ -181,7 +181,7 @@ dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.jso
 
 In order to get the latest template from the new source, you will need to use a wildcard symbol like shown above.
 
-Now you can continue in the same way as if you were using the [beta version](#steps-to-install-the-umbraco-dotnet-new-template)
+Now you can continue in the same way as if you were using the [release candidate version](#steps-to-install-the-umbraco-dotnet-new-template)
 
 ## Package development
 
