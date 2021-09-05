@@ -123,9 +123,9 @@ The URL configured for each environment should be the root URL for the website, 
 
 #### Validating Source Control
 
-Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `/umbraco/Data` folder of our Umbraco project.
+Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `/umbraco/Deploy` folder of our Umbraco project.
 
-This can be done by going to the `/umbraco/Data/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
+This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
 ![Test UDA file](images/test-UDA.png)
 

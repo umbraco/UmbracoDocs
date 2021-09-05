@@ -60,7 +60,7 @@ After the Umbraco files have been committed add the following lines to the .giti
 **/media/*
 
 # Umbraco deploy specific
-**/umbraco/Data/deploy*
+**/umbraco/Deploy/deploy*
 ```
 
 ### Installing and setting up Umbraco Deploy

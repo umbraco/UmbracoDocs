@@ -27,12 +27,12 @@ There are three main steps you need to go through in order to start using Umbrac
 
 ## How Umbraco Deploy works
 
-Umbraco Deploy works by serializing non-content Umbraco items (called “Schema” items) to disk. These serialized files are located in the `/umbraco/Data/Revision` folder at the root of your website.
+Umbraco Deploy works by serializing non-content Umbraco items (called “Schema” items) to disk. These serialized files are located in the `/umbraco/Deploy/Revision` folder at the root of your website.
 
 These items are entities like Document Types, Media Types, Data Types, etc, and these files must be committed to source control (i.e. Git). Umbraco Deploy works by “extracting” this serialized information back into your Umbraco installation, which is done by deployment triggers when a deployment is sent to a target environment.
 
-For example, when working locally you might create a new Document Type. This will automatically create a new on-disk file in the `umbraco/Data/Revision` folder which is the serialized version of the new Document Type. You would then commit this file to your repository and push this change to your hosted source control (e.g. GitHub).
+For example, when working locally you might create a new Document Type. This will automatically create a new on-disk file in the `umbraco/Deploy/Revision` folder which is the serialized version of the new Document Type. You would then commit this file to your repository and push this change to your hosted source control (e.g. GitHub).
 
-When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps or Github Actions). This will then push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Data/Revision` folder will then be extracted into the Umbraco target environment.
+When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps or Github Actions). This will then push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
 
 ![Deploy workflow](images/Deploy_concept.png)
