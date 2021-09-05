@@ -26,7 +26,7 @@ The third step needs to run last in the pipeline, once the built web application
 
 ## Background on the Schema Extraction Process
 
-Without a CI/CD pipeline step in place to trigger the extraction, following a deployment the process would need to be carried out manually. This can be done by logging into the back-office, navigating to _Settings > Deploy_ and triggering the operation via the dashboard.
+Without a CI/CD pipeline step in place to trigger the extraction, following a deployment, the process would need to be carried out manually. This can be done by logging into the backoffice, navigating to _Settings > Deploy_ and triggering the operation via the dashboard.
 
 Behind the scenes what happens here is a marker file being written to disk - in the `/umbraco/Data/` folder and with a name of `deploy`.  It’s by monitoring this directory for a file with this name that Umbraco Deploy knows to trigger the extraction.
 
