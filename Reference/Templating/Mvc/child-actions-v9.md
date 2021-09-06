@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Using View Components in Umbraco
 
-In previous versions of MVC, we used Child Actions to build reusable components/widgets consisting of both Razor markup and logic. The logic was implemented as a controller action and marked with a [ChildActionOnly] attribute. Child Actions are no longer supported in ASP.NET Core MVC. Instead, we will use the new *View Component* feature.
+In previous versions of MVC, we used Child Actions to build reusable components/widgets consisting of both Razor markup and backend logic. The backend logic was implemented as a controller action and marked with a *[ChildActionOnly]* attribute. Child Actions are no longer supported in ASP.NET Core MVC. Instead, we will use the new *View Component* feature.
 
 ## What is a View Component
 
@@ -43,7 +43,7 @@ namespace ViewComponentSample.ViewComponents
 
 ### Create a View for ViewComponent
 
-In **Views** folder, create new folders with the path `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Index.cshtml** as below:
+In **Views** folder, create new folders at `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Index.cshtml** as below:
 
 ```csharp
 <h1> Welcome to your Home Page <h1>
