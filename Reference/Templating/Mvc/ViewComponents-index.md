@@ -93,7 +93,7 @@ You can invoke a ViewComponent from anywhere (even from within a Controller or a
 
 You can read about different ways of invoking your view component in the [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0#invoking-a-view-component) section of the Microsoft Docuemntation.view=aspnetcore-5.0)
 
-## View Components Locations
+## View Component Locations
 
 By default, the framework searches for the Component View path in the following areas:
 
