@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # IMemberManager
 
-`IMemberManager` is an user manager interface for accessing member data in the form of `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views, controllers, and webforms classes. For the list of methods, see the [Interface IMemberManager API Documentation](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+`IMemberManager` is an user manager interface for accessing member data in the form of `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views, controllers, and webforms classes. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 
 ## How to reference IMemberManager
 
@@ -57,7 +57,7 @@ Checks if the current member is authorized based on the parameters provided.
 
 ### IsProtectedAsync()
 
-Checks if a document object is protected by the "Protect Pages" functionality in umbraco
+Checks if a document object is protected by the "Protect Pages" functionality in Umbraco.
 
 ### MemberHasAccessAsync(IEnumerable<String>)
 
