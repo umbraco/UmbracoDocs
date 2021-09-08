@@ -14,7 +14,7 @@ Example usage of the ContentPublishingNotification:
 
 ```C#
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Services.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace MySite
 {
