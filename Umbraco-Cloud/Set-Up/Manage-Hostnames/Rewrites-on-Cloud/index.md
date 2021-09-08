@@ -66,6 +66,24 @@ If your Umbraco Cloud site is running on the new infrastucture then the rewrite 
 </rule>
 ```
 
+or match one of the Umbraco Cloud domains (`mysite.s1.umbraco.io` or `mysite.euwest01.umbraco.io`) in case the site hasn't been migrated to new infrastructure yet.
+
+
+```xml
+<rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^(.*)?.(s1|euwest01).umbraco.io$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+    <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+  </conditions>
+  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
+        appendQueryString="true" redirectType="Permanent" />
+</rule>
+```
+
 :::note
 This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply on your local copy of the site running on `localhost`.
 :::
