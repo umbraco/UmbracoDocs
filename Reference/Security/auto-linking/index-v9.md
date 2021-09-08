@@ -29,10 +29,10 @@ namespace Umbraco9
 {
     public class OpenIdConnectBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
     {
-        public const string SchemaName = "OpenIdConnect";
+        public const string SchemeName = "OpenIdConnect";
         public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
         {
-            if (name != "Umbraco." + SchemaName)
+            if (name != "Umbraco." + SchemeName)
             {
                 return;
             }
@@ -115,10 +115,13 @@ services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>()
 ```
 
 We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this
-
+This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
 ```cs
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
 {
+    // Register OpenIdConnectBackOfficeExternalLoginProviderOptions here rather than require it in startup
+    builder.Services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
+
     builder.AddBackOfficeExternalLogins(logins =>
     {
         logins.AddBackOfficeLogin(
@@ -126,7 +129,7 @@ public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilde
             {
                 backOfficeAuthenticationBuilder.AddOpenIdConnect(
                     // The scheme must be set with this method to work for the back office
-                    backOfficeAuthenticationBuilder.SchemeForBackOffice(OpenIdConnectBackOfficeExternalLoginProviderOptions.SchemaName),
+                    backOfficeAuthenticationBuilder.SchemeForBackOffice(OpenIdConnectBackOfficeExternalLoginProviderOptions.SchemeName),
                     options =>
                     {
                         // use cookies
@@ -158,8 +161,16 @@ public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilde
 }
 ```
 
-Finally this extension can also be called from the `Startup.cs`.
+Finally this extension can also be called from the `Startup.cs` like the example below:
 
+```c#
+services.AddUmbraco(_env, _config)
+   .AddBackOffice()
+   .AddWebsite()
+   .AddComposers()
+   .AddOpenIdConnectAuthentication()
+   .Build();
+```
 :::note
 For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
 :::

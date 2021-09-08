@@ -42,7 +42,7 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
                     {
                         backOfficeAuthenticationBuilder.AddGoogle(
                             // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemaName),
+                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
                                 //  By default this is '/signin-google' but it needs to be changed to this
