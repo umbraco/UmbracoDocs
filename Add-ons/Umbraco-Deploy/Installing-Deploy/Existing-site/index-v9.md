@@ -35,7 +35,7 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 
 To install Umbraco Deploy on an already existing site there are some additional steps that needs to be taken to make sure that Umbraco Deploy can run with your website.
 
-On an existing Umbraco website, there is already a set of Document Types, Templates and Data Types with ID's in the database. In order for Umbraco Deploy to work with your website, you will need to make sure that these IDs are in sync between the different environments that you want to add to your setup.
+On an existing Umbraco website, there is already a set of Document Types, Templates and Data Types with IDs in the database. In order for Umbraco Deploy to work with your website, you will need to make sure that these IDs are in sync between the different environments that you want to add to your setup.
 
 1. Make a copy of the database on the production site.
 2. Download your `/Views` folder as well as the folders holding your css files and scripts.
@@ -57,12 +57,10 @@ The next step to get Umbraco Deploy up and running is to set up a repository and
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
-**/App_Data/*
-!**/App_Data/packages
 **/media/*
 
 # Umbraco deploy specific
-**/data/deploy*
+**/umbraco/Deploy/deploy*
 ```
 
 ### Installing and setting up Umbraco Deploy

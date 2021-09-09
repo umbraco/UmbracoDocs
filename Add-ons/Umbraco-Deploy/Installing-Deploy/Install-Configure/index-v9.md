@@ -19,12 +19,10 @@ Ensure you have read and followed the setup guide for [new](../New-site/index-v9
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
-**/App_Data/*
-!**/App_Data/packages
 **/media/*
 
 # Umbraco deploy specific
-**/data/deploy*
+**/umbraco/Data/deploy*
 ```
 
 :::note
@@ -125,13 +123,9 @@ The URL configured for each environment should be the root URL for the website, 
 
 #### Validating Source Control
 
-Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `~/data` folder of our Umbraco project.
+Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `/umbraco/Deploy` folder of our Umbraco project.
 
-This can be done by going to the `~/data/revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
-
-:::tip
-If you do not see a `/data` folder in the root of your project, you might need to start up the project first.
-:::
+This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
 ![Test UDA file](images/test-UDA.png)
 
