@@ -8,7 +8,7 @@ meta.Description: "Setup your site to use Azure Blob storage for media and Image
 
 # Setup Your Site to use Azure Blob Storage for Media and ImageSharp Cache
 
-For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media. Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
+For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media. Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the ImageSharp cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
 
 Setup consists of adding a package to your site, setting the correct configuration, and adding the services and middleware. Before you begin you’ll need to create an Azure Storage Account and a container for your media and ImageSharp cache. In this example we assume your container name is "media". You can, optionally, enable an Azure CDN for this storage container and use it in the appsettings.json below.
 
@@ -26,12 +26,12 @@ First you need to navigate to your project folder, that is the folder that conta
 dotnet add package Umbraco.StorageProviders.AzureBlob
 ```
 
-Now the correct package has been installed in your project.
+and the correct package will been installed in your project.
 
 
 ## Configuring Blob storage
 
-The next step is to configure your blob storage, there's multiple approaches for this, but in this document we're going to do it through `appsettings.json`, for more configuration option see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the github repo for more options.
+The next step is to configure your blob storage, there's multiple approaches for this, but in this document we're going to do it through `appsettings.json`, for more configuration option see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the github repository.
 
 Open up your `appsettings.json` file, we need to add the connection string and container name under `Umbraco:Storage:AzureBlob:Media`, your Umbraco section of appsettings will look something like this:
 
@@ -48,7 +48,8 @@ Open up your `appsettings.json` file, we need to add the connection string and c
     "CMS": {
       "Hosting": {
         "Debug": false
-      }
+      },
+      {...}
     }
   }
 ```
@@ -59,9 +60,9 @@ Tip: You can get your connection string from Azure under "Access Keys"
 
 ## Setting the services and middleware
 
-We're almost there, as the last step we need to setup the required services, this sounds daunting, but thankfully there is extension methods that does all this for us, all we need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
+We're almost there, the last step we need to do is to setup the required services and middleware, this may sound daunting, but thankfully there is extension methods that does all this for us, all we need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
 
-Invoke the `.AddAzureBlobMediaFileSystem()` extentions method in the `ConfigureServices` method:
+Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureServices` method:
 
 ```C#
         public void ConfigureServices(IServiceCollection services)
@@ -105,7 +106,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `media` and `cache` folders does not get created untill the first time a piece of media is uploaded.
+Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `media` and `cache` folders do not get created untill a piece of media is uploaded.
 
 
 ## Existing Media files
