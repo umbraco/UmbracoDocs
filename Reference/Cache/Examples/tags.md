@@ -221,5 +221,4 @@ public void Compose(Composition composition)
     composition.Components().Append<Component>();
 }
 ```
-
 Awesome! Now we have set up caching on our tags - making the site a bit faster. :)

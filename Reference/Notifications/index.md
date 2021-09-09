@@ -157,3 +157,7 @@ See [EditorModel Notifications](EditorModel-Notifications) for a listing of the 
 :::tip
 Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document.
 :::
+
+# Creating and publishing your own custon notifications
+
+Umbraco uses notifications to allow people to hook in various workflow processes, but the notification pattern is also extendable, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful when for instance creating packages. For more information on how you create and publish your own notifications see the [creating and publishing noticiations](Creating-And-Publishing-Notifications.md) article.

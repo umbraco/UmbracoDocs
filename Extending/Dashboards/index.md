@@ -18,6 +18,7 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
 
 ```json
 {
+    "$schema": "https://json.schemastore.org/package.manifest",
     "dashboards":  [
         {
             "alias": "myCustomDashboard",
@@ -218,6 +219,7 @@ Further to this, within this section, you can control which users can see a part
 
 ```json
 {
+    "$schema": "https://json.schemastore.org/package.manifest",
     "dashboards":  [
         {
             "alias": "myCustomDashboard2",

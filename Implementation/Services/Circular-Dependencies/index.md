@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Circular Dependencies
@@ -20,7 +21,7 @@ public class SiteService : ISiteService
     }
      public IPublishedContent GetNewsSection()
     {
-         using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.Value.EnsureUmbracoContext()) 
+         using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.Value.EnsureUmbracoContext())
          {
              // Do your thing
          }

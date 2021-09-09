@@ -30,6 +30,4 @@ Details how Umbraco Deploy can be extended for the purposes of deploying data re
 
 Tips on finding, identifying and resolving issues with Umbraco Deploy.
 
-## [Frequently Asked Questions](FAQ/)
 
-Anything else not covered above.
