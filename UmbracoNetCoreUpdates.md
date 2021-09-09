@@ -109,7 +109,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc002
+    dotnet new -i Umbraco.Templates::9.0.0-rc003
     ```
 
 ### [Optional] Update the template from earlier pre-release versions
@@ -119,7 +119,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc002
+    dotnet new -i Umbraco.Templates::9.0.0-rc003
     ```
 
 ### Steps to create an Umbraco solution using the `dotnet new` template
@@ -373,6 +373,30 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Reduce allocations by using existing CharArrays for TrimStart()
   - Cleanup _inMemoryModelFactory.ModelsChanged event on dispose in RefreshingRazorViewEngine
 
+
+### Changes between rc 2 and rc 3
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-rc003+is%3Aclosed) for a full overview.
+
+#### Summary
+- Breaking changes
+  - Umbraco 8.17rc features including Tabs
+  - Updated to latest Examine version
+  - Removed obsolete propertyes from User and IUser
+  - IEmailServer now required an email type
+  - 
+- Features
+  - Added support for configuring the UmbracoFile serilog "Sink" in appsettings.
+  - Added helper method for replacing the BackOfficeUserManager
+- Bugfixes
+  - Added missing Action of GetAncestors that uses key instead of id
+  - Fixed issue with path parsing with Image Cropper
+  - Fixed issues with invalid characters in the Umbraco package dotnet new template
+  - Fixed issues with structured logging in IProfilingLogger
+  - Fixed issues when changing UmbracoPath in config
+  - Fixed issue with translations keys shown instead of the translated values
+  - Fixed issues with Block list thumbnail selector on Linux
+  - Suppresses scope notifications dutin migrations to avoid handlers to execute before packages are ready.
 
 ## Umbraco Forms 9 (.NET Core) Beta
 
