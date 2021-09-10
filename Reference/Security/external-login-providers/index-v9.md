@@ -74,7 +74,8 @@ public void ConfigureServices(IServiceCollection services)
 For a more in depth article on how to setup OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0&tabs=visual-studio).
 
 Depending on the provider you've configured and its caption/color, the end result will look similar to this:
-![OAuth login screen](../images/google-oauth-v8.png)
+
+![OAuth Login Screen](images/google-oauth-v8.png)
 
 ## Auto-linking accounts for custom OAuth providers
 
