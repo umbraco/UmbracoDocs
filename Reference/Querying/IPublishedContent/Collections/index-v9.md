@@ -44,7 +44,7 @@ Returns a collection of child items available in the specified culture with a de
 
 ```csharp
 <ul>
-    @foreach(var item in Model.Children())
+    @foreach(var item in Model.Children("dk-dk"))
     {
         <li><a href="@item.Url()">@item.Name</a></li>
     }
