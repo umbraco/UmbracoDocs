@@ -1,5 +1,5 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/category/subcategory/generic-page" 
+"v8-equivalent: "If you are creating a document for Umbraco 9 and there is an Umbraco 8 equivalent, please include the link here." 
 versionFrom: A property with semver notation to indicate from which version this article is valid 
 versionTo: A property with semver notation to indicate till which version this article is valid
 verified-against: The version of Umbraco which has been tested against or the latest version
