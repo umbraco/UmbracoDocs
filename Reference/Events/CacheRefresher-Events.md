@@ -34,13 +34,16 @@ namespace Test.Composers {
         private readonly IIndex _index;
         private readonly IPublishedContentValueSetBuilder _valueSetBuilder;
 
-        public ContentCacheRefresherEventComponent(IContentService contentService, IIndex index, IPublishedContentValueSetBuilder valueSetBuilder) {
+        public ContentCacheRefresherEvent(IContentService contentService, IPublishedContentValueSetBuilder valueSetBuilder, IExamineManager examineManager) {
             _contentService = contentService;
-            _index = index;
             _valueSetBuilder = valueSetBuilder;
+            _examineManager = examineManager;            
         }
 
         public void Initialize() {
+             if (!_examineManager.TryGetIndex(Umbraco.Core.Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+                throw new InvalidOperationException($"No index found by name {Umbraco.Core.Constants.UmbracoIndexes.ExternalIndexName}");
+            _index = index;
             ContentCacheRefresher.CacheUpdated += ContentCacheRefresher_CacheUpdated;
         }
 
