@@ -26,6 +26,8 @@ In this section you will find links to news and updates from the .Net Core team 
 
 ### Blog posts
 
+* [Umbraco 9 Release candidate 3](https://umbraco.com/blog/umbraco-817-release-candidate-and-umbraco-9-rc3-are-now-available/)
+* [Putting Umbraco 9 to the test](https://umbraco.com/blog/putting-umbraco-9-to-the-test-dennis-adolfi/)
 * [Package Migration to V9 Using Multi-Targeting](https://umbraco.com/blog/multi-targeted-package-migration/)
 * [Umbraco 9 Release Candidate](https://umbraco.com/blog/umbraco-9-release-candidate/)
 * [Packages in Umbraco 9 via NuGet](https://umbraco.com/blog/packages-in-umbraco-9-via-nuget/)
