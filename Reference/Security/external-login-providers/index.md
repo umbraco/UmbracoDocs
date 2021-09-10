@@ -12,7 +12,7 @@ To install and configure an external login provider, use the [Identity Extension
 
 The installation of these packages will install snippets of code with "readme" files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to this:
 
-![OAuth login screen](../images/google-oauth-v8.png)
+![OAuth Login Screen](images/google-oauth-v8.png)
 
 ## Auto-linking accounts for custom OAuth providers
 
