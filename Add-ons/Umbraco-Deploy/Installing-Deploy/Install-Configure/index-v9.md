@@ -97,7 +97,7 @@ An example configuration with a single upstream environment file will look like 
         "Settings": {
             "ApiKey": "<your API key here>",
         },
-        "Environments": {
+        "Project": {
             "Workspaces": [
                 {
                     "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
