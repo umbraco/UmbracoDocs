@@ -41,22 +41,19 @@ namespace MyNamespace
     public class BlogCommentsComponent : IComponent
     {
         private readonly IScopeProvider _scopeProvider;
-        private readonly IMigrationBuilder _migrationBuilder;
+        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
         private readonly IKeyValueService _keyValueService;
         private readonly ILoggerFactory _loggerFactory;
-        private readonly IRuntimeState _runtimeState;
 
         public BlogCommentsComponent(
             IScopeProvider scopeProvider,
-            IMigrationBuilder migrationBuilder,
+            IMigrationPlanExecutor migrationPlanExecutor,
             IKeyValueService keyValueService,
-            ILoggerFactory loggerFactory,
             IRuntimeState runtimeState)
         {
             _scopeProvider = scopeProvider;
-            _migrationBuilder = migrationBuilder;
+            _migrationPlanExecutor = migrationPlanExecutor;
             _keyValueService = keyValueService;
-            _loggerFactory = loggerFactory;
             _runtimeState = runtimeState;
         }
 
@@ -79,12 +76,7 @@ namespace MyNamespace
             // Go and upgrade our site (Will check if it needs to do the work or not)
             // Based on the current/latest step
             var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(
-                _scopeProvider,
-                _migrationBuilder,
-                _keyValueService,
-                _loggerFactory.CreateLogger<Upgrader>(),
-                _loggerFactory);
+            upgrader.Execute(_migrationPlanExecutor,_scopeProvider,_keyValueService);
         }
 
         public void Terminate()
