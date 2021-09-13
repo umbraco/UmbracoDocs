@@ -28,7 +28,7 @@ There are lots of different possible variations within your working environment 
 - Source control repository.
 - And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old FTP etc).
 
-However, V9 ships with a `.gitignore` file with a custom Umbraco section, which will make git ignore the files for you, the Umbraco specific section looks like this:
+However, V9 ships with a `.gitignore` file with a custom Umbraco section, which will make git ignore the files for you, if you use git, the Umbraco specific section looks like this:
 
 ```
 ##
@@ -72,7 +72,7 @@ For most projects this gitignore will be enough, and this documentation can't be
 
 The main folder where the Umbraco CMS resides in, is the `/umbraco` one inside your project.
 
-Some of the contents change when you upgrade Umbraco, and will even be deleted and re-added on a clean and rebuild! No part of your implementation or third party packages installed should update these folder.
+Some of the contents change when you upgrade Umbraco, and will even be deleted and re-added on a clean and rebuild! No part of your implementation or third party packages installed should update these folders.
 
 From the gitignore above we can see that the content that will change when you upgrade Umbraco and be deleted and re-added on clean and rebuild are:
 
@@ -82,28 +82,31 @@ From the gitignore above we can see that the content that will change when you u
 * `umbraco/config/lang`
 * `umbraco/config/appsettings-schema.json`
 
-None of these folders should be commited to github, since they will automatically be added on build. If you're working with Visual Studio and a Build Server, it's NuGet's job to restore the correct versions of these folders for you. You shouldn't include these folder in your Visual Studio project, as there is a build step, that ensures it is 'deployed' along with your solution when doing a publish or build.
+None of these folders should be commited to github, since they will automatically be added on build. If you're working with an IDE and a Build Server, it's NuGet's job to restore the correct versions of these folders for you.
 
-But these are not the only files in the umbraco folder that you should commit to your git, some files are generated during runtime and should not be commited either, these are:
+But these are not the only files in the umbraco folder that you should not commit to your git, some files are generated during runtime and should not be commited either, these are:
 
 * `/umbraco/data/TEMP` - This folder contains examine indexs, NuCache files and so on, these are temporary and should not be commited.
   * `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 * `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing tracelogs of your application, one JSON file for each day.
-* `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, eg to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../../Reference/V9-Config/ImagingSettings/index.md) allows you to determine where this cache is stored)
+* `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, e.g. to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../../Reference/V9-Config/ImagingSettings/index.md) allows you to determine where this cache is stored)
+
+We've now covered most of the folders within the `/umbraco` folder, however there's two left, the `/umbraco/models` folder, and the `/umbraco/PartialViewMacros`. The models folder has its own section right below, but for the `PartialViewMacros` folder, the answer to "should I commit this to git" is that it depends. If you want to change the templates within the folder, or add your own, then you should commit it to git, if you don't need to do that, you should not, the build will automatically create it and its content.
+
+##### The umbraco wwwroot folder
+
+The `/wwwroot/umbraco` folder contains static assets for the backoffice, these files will be automatically created when you do a build, and should not be included in source control.
 
 #### Umbraco Models Builder
 
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder) you have opted to work with.
+The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index-v9.md) you have opted to work with.
 
-- **Pure Live** (default), The models are generated in memory, no source control required.
-- **App_Data**, The models are generated in the `/App_Data` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
-- **Dll**, The models are generated into a class library dll, avoid adding the dll to source control, to avoid tricky merge conflicts!
-
-There is a custom Visual Studio Extension: [Umbraco ModelsBuilder Custom Tool](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderCustomTool) that you can install (along with the *Umbraco.ModelsBuilder.Api* NuGet package) to help generate models from within Visual Studio.
+- **InMemoryAuto** (default), The models are generated in memory, no source control required.
+- **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
 
 #### Media
 
-The Media section of Umbraco (unless configured otherwise) stores files in the `/Media` folder, these can be updated by editors, in the Umbraco backoffice, so generally speaking you would not source control these files.
+The Media section of Umbraco (unless configured otherwise) stores files in the `/wwwroot/media` folder, these can be updated by editors, in the Umbraco backoffice, so generally speaking you would not source control these files.
 
 #### Packages and Plugins
 
@@ -111,9 +114,7 @@ The **App_Plugins** folder is the home for all third party packages installed on
 
 Depending on how you installed the plugin it will affect how you choose to version control a particular third party plugin:
 
-- **NuGet** - if the plugin is installed via NuGet then as long as the packages.config file in the root of your project is source controlled, then the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
-- **Backoffice** - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice.
-- **Backoffice + Buildserver** - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
+Since plugins are installed via NuGet the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
 
 :::note
 Each plugin could be different depending on its implementation and functionality. It may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
@@ -123,45 +124,42 @@ Each plugin could be different depending on its implementation and functionality
 
 #### Front-end build
 
-A lot depends on how you maintain the front-end build of your website, eg are you using css preprocessors such as SCSS/LESS etc - gulp/grunt tasks to combine and minify script resources.
+A lot depends on how you maintain the front-end build of your website, e.g. are you using css preprocessors such as SCSS/LESS etc - gulp/grunt tasks to combine and minify script resources.
 But generally you will need to source control all of your website's static assets: JavaScript, Css, Fonts, Page Furniture Images etc.
 
 #### Views/Templates/Partials
 
-Umbraco site templates/views can be edited via the Umbraco Backoffice. They also reside in the `/Views` folder on disk (or `/masterpages` on webforms implementations). As these views/template often include code, it can make a lot of sense to have their changes tracked under source/version control.
+Umbraco site templates/views can be edited via the Umbraco Backoffice. They also reside in the `/Views` folder on disk. As these views/template often include code, it can make a lot of sense to have their changes tracked under source/version control.
 
 However this can pose a problem if the templates are updated via the backoffice outside of source control on the production environment.
+
 This is not an adviced approach since more often than not this will cause breaking changes to your website.
 You would need to manually merge these files before considering a deploy.
 Umbraco Cloud is a good solution in these scenarios, as changes via the backoffice are tracked in a Git repository automatically.
 
 #### Macros
 
-Macros can be implemented in four different ways - to source/version control changes to Macro implementation code, track the files in the following locations:
+To source/version control changes to Macro implementation code, track the files in the following location:
 
 - **Partial View Macros** - stored in `/Views/MacroPartials` as .cshtml files
-- **Dynamic Razor** - stored in /macroScripts as .cshtml files (obsolete - use Partial View Macros)
-- **UserControls** - stored in /userControls folder as .ascx and ascx.cs files
-- **XSLT** - stored in /xslt folder as .xslt files
 
 #### Controllers/Classes/Custom Code
 
 Any supporting custom code for your application should be in version control, eg any
 - C# implementation,
-  - Surface Controllers,
-  - RenderMVCControllers,
-  - ViewModels,
-  - Helpers / Extension Methods,
+  - Surface Controllers.
+  - API Controllers.
+  - ViewModels.
+  - Helpers / Extension Methods.
   - Services etc
 - Supporting class library projects,
-- App_Code,
-- Models generated by Modelsbuilder in API or App_Data mode
+- Models generated by Modelsbuilder in SourceCodeManual or SourceCodeAuto mode
 
 ...all should be added to source/version control.
 
 #### Config
 
-Your site's `/config` folder contains the set of configuration files for your Umbraco site. Add these to source control along with config.transforms to change variables for different environments during deployment.
+Your site's `apsettings.json` and `appsettings.Development.json` files contains the configuration for your Umbraco site. Add these to source control to have consistent setups, however, be careful about adding these to source control, it's important to make sure that they do not contain any secrets like API keys, and connection strings.
 
 #### DocumentType - Backoffice Structure Changes
 
@@ -173,14 +171,4 @@ There are several add-on packages that can help add source control to these stru
 
 - *[uSync Snapshots (licensed)](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 
-- *Umbraco Deploy* - package used by Umbraco Cloud, as a replacement for Courier. Cloud-only at this moment, but on-premises is on the [roadmap](https://umbraco.com/products/roadmap/).
-
-## Git
-
-If you are working with Git, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
-
-### Example gitignore
-
-GitHub has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
-
-Combining: [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) & [Umbraco.gitignore](https://github.com/github/gitignore/blob/master/Umbraco.gitignore)
+- *[Umbraco Deploy on Premise](https://umbraco.com/products/umbraco-deploy/umbraco-deploy-on-premises/)* - the on premise version of the package used by Umbraco Cloud,
