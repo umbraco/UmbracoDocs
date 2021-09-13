@@ -64,7 +64,7 @@ However, V9 ships with a `.gitignore` file with a custom Umbraco section, which 
 **/wwwroot/umbraco/
 ```
 
-For most projects this gitignore will be enough, and this documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
+For most projects this gitignore will be enough, and this documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. However, we will go through the different files, and hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
 ![Typical set of Umbraco Project Folders](images/folder-structure-v9.jpg)
 
@@ -82,7 +82,7 @@ From the gitignore above we can see that the content that will change when you u
 * `umbraco/config/lang`
 * `umbraco/config/appsettings-schema.json`
 
-None of these folders should be commited to github, since they will automatically be added on build. If you're working with an IDE and a Build Server, it's NuGet's job to restore the correct versions of these folders for you.
+None of these folders should be commited to github, since they will automatically be added on build. If you're working with an IDE and a Build Server, it's NuGet's and MSBuild's job to restore the correct versions of these folders for you. If you don't use an IDE and prefer the commandline you can use `dotnet restore` to manually restore the nuget packages.
 
 But these are not the only files in the umbraco folder that you should not commit to your git, some files are generated during runtime and should not be commited either, these are:
 
