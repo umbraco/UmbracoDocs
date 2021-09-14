@@ -22,7 +22,7 @@ FIPS can be enabled through your Local Group Policy, Registry Setting, or Networ
 
 ## What version of Umbraco is FIPS compliant?
 
-Umbraco 7.6.4+ has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptographic algorithms for hashing are changed to a FIPS compliant algorithm. When FIPS mode is disabled, then Umbraco uses backwards compatible algorithms (MD5) so as not to affect existing installs. As of Umbraco version 7.6.4, the FIPS compliant cryptographic algorithm used is SHA1.
+Umbraco 7.6.4+ has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptographic algorithms for hashing are changed to a FIPS compliant algorithm. When FIPS mode is disabled, then Umbraco uses backward compatible algorithms (MD5) so as not to affect existing installs. As of Umbraco version 7.6.4, the FIPS compliant cryptographic algorithm used is SHA1.
 
 ## Umbraco 9.0.0 and key dependencies are FIPS compliant
 
