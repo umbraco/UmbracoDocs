@@ -59,9 +59,9 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](sensitive-data.md) article.
 
-[comment]: <> (## [Setup Umbraco for a FIPS Compliant Server]&#40;Setup-Umbraco-for-a-Fips-Server/index-v9.md&#41;)
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index-v9.md)
 
-[comment]: <> (How to configure Umbraco to run on a FIPS compliant server.)
+How to configure Umbraco to run on a FIPS compliant server.
 
 ## [Reset admin password](reset-admin-password.md)
 
