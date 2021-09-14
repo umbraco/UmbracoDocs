@@ -22,7 +22,7 @@ After the Umbraco files have been committed add the following lines to the .giti
 **/media/*
 
 # Umbraco deploy specific
-**/umbraco/Data/deploy*
+**/umbraco/Deploy/deploy*
 ```
 
 :::note
@@ -139,4 +139,4 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 
 Before moving on to setting up the build server, make sure that your license is included in your project.
 
-The file needs to be placed in the `/umbraco/Data` folder.
+The file needs to be placed in the `/umbraco/Licenses` folder.
