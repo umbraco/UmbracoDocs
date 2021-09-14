@@ -35,9 +35,10 @@ foreach (var entity in e.SavedEntities)
 To check if an entity is new in the ContentService.Saving event, use the following:
 
 ```csharp
+
 foreach (var entity in e.SavedEntities)
  {
-    var isNew = entity.HasIdentity;
+    var isNew = entity.HasIdentity == false;
  }
 ```
 
