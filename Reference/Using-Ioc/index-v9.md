@@ -244,114 +244,121 @@ Most of (if not all) the Umbraco goodies you work with every day can be injected
 
 ### UmbracoHelper
 
+`UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
+
 [Read more about the UmbracoHelper](../querying/umbracohelper/index.md)
 
 ```csharp
-using System.Globalization;
-using System.Linq;
-using Umbraco.Web;
-using Umbraco.Web.PublishedModels;
+using System.Collections.Generic;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.Common;
 
-namespace Example.Core.Services.Implement
+namespace IOCDocs.Services
 {
-    public class SiteService : ISiteService
+    // This service must be scoped
+    public class MyCustomScopedService
     {
-        private readonly UmbracoHelper _umbraco;
+        private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
 
-        public SiteService(UmbracoHelper umbraco)
+        public MyCustomScopedService(IUmbracoHelperAccessor umbracoHelperAccessor)
         {
-            _umbraco = umbraco;
+            _umbracoHelperAccessor = umbracoHelperAccessor;
         }
-
-        public Site GetSiteByCulture(string culture)
+        
+        public IEnumerable<IPublishedContent> GetContentAtRoot()
         {
-            return _umbraco
-                .ContentAtRoot()
-                .OfType<Site>()
-                .FirstOrDefault(x => x.GetCultureFromDomains() == culture);
+            // Try and get the umbraco helper
+            var success = _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+            if (success is false)
+            {
+                // Failed to get UmbracoHelper, probably because it was accessed outside of a scoped/transient service.
+                return null;
+            }
+            
+            // We got umbraco helper, now we can do something with it.
+            return umbracoHelper.ContentAtRoot();
         }
     }
 }
 ```
 :::note
-The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index-v9.md).
 :::
+
 ### ExamineManager
 
 [Read more about examine](../Searching/Examine/index.md).
 
 ```csharp
-using Examine;
-using Examine.Providers;
 using System;
-using Umbraco.Core.Composing;
+using System.Collections.Generic;
+using Examine;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Extensions;
 
-namespace Example.Core.Components
+namespace IOCDocs.Services
 {
-
-    public class ExamineComponent : IComponent
+    // This service must be scoped.
+    public class SearchService : ISearchService
     {
         private readonly IExamineManager _examineManager;
+        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
-        public ExamineComponent(IExamineManager examineManager)
+        public SearchService(IExamineManager examineManager, IUmbracoContextAccessor umbracoContextAccessor)
         {
             _examineManager = examineManager;
+            _umbracoContextAccessor = umbracoContextAccessor;
         }
 
-        public void Initialize()
+        public IEnumerable<PublishedSearchResult> Search(string searchTerm)
         {
-            if (_examineManager.TryGetIndex("ExternalIndex", out var index))
+            if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
             {
-                if (!(index is BaseIndexProvider indexProvider))
-                    throw new InvalidOperationException("Could not cast");
-
-                // Do stuff with the index
+                throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
             }
-        }
 
-        public void Terminate() { }
+            if (!(index is IUmbracoIndex umbracoIndex))
+            {
+                throw new InvalidOperationException("Could not case");
+            }
+            
+            // Do stuff with the index
+            if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
+            {
+                throw new InvalidOperationException("Could not get umbraco context");
+            }
+
+            return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
+        }
     }
 }
 ```
 
-### Accessing LightInject container
-
-Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
-
-```csharp
-var container = composition.Concrete as LightInject.ServiceContainer;
-container.Register<IFoo, Foo>();
-
-// It's not currently possible to assembly scan without workarounds
-// see https://github.com/umbraco/Umbraco-CMS/issues/7502 for details
-// The following will not work:
-// container.RegisterAssembly(/* Any method signature */);
-```
-
-[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
-
 ### ILogger
 
-[Read more about logging](../../Getting-Started/Code/Debugging/Logging/index.md)
+[Read more about logging](../../Fundamentals/Code/Debugging/Logging/index-v9.md)
 
 ```csharp
 using System;
-using Umbraco.Core.Logging;
+using Microsoft.Extensions.Logging;
 
-namespace Example.Core
+namespace IOCDocs.Services
 {
-    public class Foobar
+    public class Foobar : IFooBar
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<Foobar> _logger;
 
-        public Foobar(ILogger logger)
+        public Foobar(ILogger<Foobar> logger)
         {
             _logger = logger;
         }
 
         public void Foo()
         {
-            _logger.Info<Foobar>($"Method Foo called at {DateTime.UtcNow}");
+            _logger.LogInformation("Method Foo called at {DateTime}", DateTime.UtcNow);
         }
     }
 }
@@ -359,4 +366,4 @@ namespace Example.Core
 
 ## Using DI in Services and Helpers
 
-[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+[Services and Helpers](../../Implementation/Services/index-v9.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
