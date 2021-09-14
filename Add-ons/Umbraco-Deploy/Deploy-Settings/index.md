@@ -49,13 +49,13 @@ Here is an example of how the setting can look:
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
     <valueConnectors>
-        <valueConnector alias="nuPickers.DotNetCheckBoxPicker" 
+        <valueConnector alias="nuPickers.DotNetCheckBoxPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetDropDownPicker" 
+        <valueConnector alias="nuPickers.DotNetDropDownPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetPrefetchListPicker" 
+        <valueConnector alias="nuPickers.DotNetPrefetchListPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
-        <valueConnector alias="nuPickers.DotNetTypeaheadListPicker" 
+        <valueConnector alias="nuPickers.DotNetTypeaheadListPicker"
                         type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
     </valueConnectors>
 </settings>
@@ -65,7 +65,7 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available, which all uses the default timeout which currently is set for 8 minutes.
+The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available:
 
 - `sessionTimeout`
 - `sourceDeployTimeout`
@@ -96,7 +96,18 @@ In order for Deploy to handle Forms data as content, you'll need to add the foll
 </settings>
 ```
 
-## ExportMemberGroups
+## Transfer dictionary items as content
+
+In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <dictionary transferDictionaryAsContent="true" />
+</settings>
+```
+
+## Exporting member groups
 
 This setting is to be defined and set to false only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
@@ -108,3 +119,19 @@ Setting the `exportMemberGroups` to false will no longer export Member Groups to
     <deploy exportMemberGroups="false" />
 </settings>
 ```
+
+## Ignore broken dependencies
+
+When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
+
+For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, you'll get an error and the deploy won't complete until the issue is resolved (by removing the reference to the deleted media item).
+
+You can configure deploy to ignore these issues and proceed with the transfer operation without warning, with the following setting:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy ignoreBrokenDependencies="true" />
+</settings>
+```
+

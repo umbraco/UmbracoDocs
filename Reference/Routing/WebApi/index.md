@@ -115,7 +115,7 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 
 
 E.g
-*~/Umbraco/Api/Products/GetAllProducts* or
+*~/Umbraco/backoffice/Api/Products/GetAllProducts* or
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
 

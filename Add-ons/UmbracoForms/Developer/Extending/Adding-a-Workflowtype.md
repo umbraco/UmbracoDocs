@@ -24,9 +24,7 @@ namespace PrereleaseForm8_4.Workflows
     /// Summary description for TestWorkflow
     /// </summary>
     public class TestWorkflow : WorkflowType
-    {
-        
-        
+    {   
         public TestWorkflow()
         {
             this.Id = new Guid("ccbeb0d5-adaa-4729-8b4c-4bb439dc0202");

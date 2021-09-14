@@ -14,10 +14,10 @@ When you are working with your Umbraco project locally all changes you make will
 
 Here's a quick step-by-step on how you deploy these changes to your environment:
 
-- You’ve cloned a site to your local machine to work on.
-- You’ve made some changes to a Document Type.
+- You've cloned a site to your local machine to work on.
+- You've made some changes to a Document Type.
 - The corresponding `.uda` file for this Document Type is now updated with the changes - the file is located in the `/data/revision` folder.
-- You’ve also created a new Data Type that’s used on the Document Type. This Data Type is stored as a new file in the `/data/revision` folder as well.
+- You've also created a new Data Type that's used on the Document Type. This Data Type is stored as a new file in the `/data/revision` folder as well.
 - Using Git, commit those two changed files to your local repository and push them to your repository.
 - A deployment kicks in and the Document Type is updated and the new Data Type you created locally is now automatically created in the remote environment as well.
 

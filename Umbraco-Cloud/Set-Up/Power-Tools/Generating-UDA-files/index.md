@@ -4,6 +4,10 @@ versionFrom: 7.0.0
 
 # Generate UDA files
 
+:::note
+If you are running Deploy 4+, we recommend you generate UDA files from the Deploy Dashboard instead of KUDU. [Click here to go to the article about the Deploy Dashboard](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files).
+:::
+
 Sometimes our guides requires you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
 
 Generating UDA files manually ensures that you have everything you need in order to deploy successfully from one environment to another.

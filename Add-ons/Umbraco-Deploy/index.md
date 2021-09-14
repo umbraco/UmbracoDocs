@@ -22,10 +22,12 @@ The deployment process explained for Umbraco Deploy.
 
 How you can Upgrade Umbraco Deploy.
 
+## [Extending](Extending)
+
+Details how Umbraco Deploy can be extended for the purposes of deploying data related to custom data and property editors.
+
 ## [Troubleshooting](Troubleshooting)
 
 Tips on finding, identifying and resolving issues with Umbraco Deploy.
 
-## [Frequently Asked Questions](FAQ/)
 
-Anything else not covered above.

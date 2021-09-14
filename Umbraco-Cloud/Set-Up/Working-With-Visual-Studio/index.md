@@ -135,6 +135,10 @@ In order to use ModelsBuilder with IntelliSense in Visual Studio, you will need 
 This will make the models of your Document Types available with IntelliSense in Visual Studio.
 [You can read more about configuring ModelsBuilder here.](../../../Reference/Templating/Modelsbuilder)
 
+:::note
+If you are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension&ssr=false) and get the error message "Unauthorized" when generating models, you will need to use or create a backoffice user in your local installation, and supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
+:::
+
 ### Using Umbraco namespaces in your `*.Core` project
 In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.
 
@@ -149,6 +153,12 @@ When working with this solution setup it's important to remember that you have o
 The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled.
 
 As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
+
+:::note
+To ensure that your `.dll` files are created in release mode, ensure that you switch to "Release" (instead of "Debug") mode when building the project.
+
+It is recommend to build the project in release mode, before deploying the changes through Git.
+:::
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.
 

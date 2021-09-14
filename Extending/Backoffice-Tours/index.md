@@ -3,7 +3,6 @@ keywords: Backoffice tours
 versionFrom: 8.6.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Backoffice-Tours/extending.md"
 ---
 
 # Backoffice tours
@@ -11,6 +10,16 @@ v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Bac
 Backoffice tours are a way to create helpful guides for how to work in the Umbraco backoffice.
 
 They are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
+
+### Enabling Tours 
+
+You can enable or disable the tours from within the [umbracoSettings](../../../Reference/Config/umbracoSettings/index.md#tours).
+
+```xml
+<backOffice>
+    <tours enable="true"></tours>
+</backOffice>
+```
 
 ## Tour file locations
 

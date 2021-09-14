@@ -1,6 +1,7 @@
 ---
 keywords: EditorModelEventManager setting default values defaultvalue
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "EditorModel Events - or how to set a default value"
 meta.Description: "Explanation of how handle the EditorModelEventManager SendingContent event to set an initial default value for a propery when the editor creates a new content item in the backoffice"
 ---
@@ -8,6 +9,15 @@ meta.Description: "Explanation of how handle the EditorModelEventManager Sending
 # EditorModel Events
 
 The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the SendingContentModel event fires right before a content item is loaded into the backoffice for editing. It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
+
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, EditorModel Events have been renamed to [**EditorModel Notifications**](../Notifications/EditorModel-Notifications).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
 
 ## Usage
 
@@ -19,6 +29,7 @@ using System.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Web.Editors;
+using Umbraco.Web.Models.ContentEditing;
 
 namespace My.Website
 {

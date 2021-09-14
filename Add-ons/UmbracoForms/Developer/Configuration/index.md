@@ -42,7 +42,7 @@ Both of these configuration values are needed in order to use the "*Recaptcha2*"
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
 ### RecaptchaV3SiteKey & RecaptchaV3PrivateKey
-Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google. This field type is available in Umbraco Forms from v8.7+. 
+Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google. This field type is available in Umbraco Forms from v8.7+.
 
 You can obtain both of these values after signing up to create a ReCaptcha key here:  https://www.google.com/recaptcha/admin.
 
@@ -59,7 +59,7 @@ This setting needs to be set to `True` if you want your Forms data to be stored 
 
 For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
 
-### UseLegacyPageService 
+### UseLegacyPageService
 In Umbraco Forms 8.7 an update was made to improve the performance of the service responsible for retrieving the content of the Umbraco page where a form is hosted. This service is used to populate the string placeholders - or "magic strings" - with the values of properties from the page.
 
 By setting the value of the `UseLegacyPageService` to `True` the old service can be reinstated.
@@ -73,6 +73,9 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 
 ### MaxNumberOfColumnsInFormGroup
 Added in 8.7.0, this setting controls the maximum number of columns that can be created by editors when they configure groups within a form.  The default value used if the setting value is not provided is 12.
+
+### DefaultTheme
+Added in 8.8.0, this setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
@@ -106,3 +109,10 @@ This setting needs to be a `True` or `False` value and will allow you to toggle 
 
 ### DefaultMessageOnSubmit
 This allows you to configure what text is displayed when a form is submitted and is not being redirected to a different content node.
+
+### DefaultStoreRecordsLocally
+This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data will be stored in the Umbraco Forms database tables.  By default this is set to `True`.
+
+### DefaultAutocompleteAttribute
+
+Added in 8.8.0, this setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.

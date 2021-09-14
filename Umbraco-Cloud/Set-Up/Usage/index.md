@@ -14,6 +14,17 @@ You can also get an overview of the usage limitations for your Umbraco Cloud pro
 
 ## Usage limits
 
+First, to clarify what content nodes are:
+
+1. Published nodes
+2. Unpublished nodes
+
+Here's what they are not:
+1. Nodes in the Recycle Bin
+2. Nested content
+3. Member data
+4. Media nodes
+
 On the image below you can see the Usage limitatons for the specific plans on Umbraco Cloud.
 
 ![Usage limits on a starter plan](images/Plan_limitations.png)

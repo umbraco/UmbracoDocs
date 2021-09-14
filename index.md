@@ -2,10 +2,12 @@
 meta.Title: "Umbraco Documentation"
 ---
 
-:::note
-Want to know more about **the upcoming Umbraco .Net Core version**?
+:::tip
+Want to know more about **the upcoming Umbraco .NET 5+ version, Umbraco 9**?
 
-We've put together a list of links to resources both from Umbraco HQ and from the community. You can find the list in the [Umbraco .Net Core Updates](UmbracoNetCoreUpdates.md) article.
+We've put together a list of links to resources both from Umbraco HQ and from the community. You can find the list in the [Umbraco on .NET 5+ Updates](UmbracoNetCoreUpdates.md) article.
+
+Find a list of articles that have already been updated for Umbraco 9 on the [Umbraco 9 Articles](Umbraco9Articles.md) page.
 :::
 
 <div class="docs-overview">
@@ -17,14 +19,14 @@ We've put together a list of links to resources both from Umbraco HQ and from th
 <div class="row">
     <div class="col-sm-6">
         <a href="Getting-Started/" class="docs-section">
-            <img src="images/icon-getting-started.png" alt="">
+            <img src="images/devices.png" width="130" alt="">
             <h2>Getting Started</h2>
             <p>All the basics of using Umbraco. From your first local installation, to a fully functional customized CMS.</p>
         </a>
     </div>
     <div class="col-sm-6">
         <a href="Implementation/" class="docs-section">
-        <img src="images/icon-implementation.png" alt="">
+        <img src="images/code.png" width="130" alt="">
             <h2>Implementation</h2>
             <p>Get an overview of how the Umbraco pipeline is structured. Learn how to write queries and use the APIs.</p>
         </a>
@@ -33,14 +35,14 @@ We've put together a list of links to resources both from Umbraco HQ and from th
 <div class="row">
     <div class="col-sm-6">
         <a href="Extending/" class="docs-section">
-        <img src="images/icon-extending.png" alt="">
+        <img src="images/headless.png" width="130"  alt="">
             <h2>Extending</h2>
             <p>Documentation on the areas in Umbraco that are extendable such as customizing backoffice UI and creating packages.</p>
         </a>
     </div>
     <div class="col-sm-6">
         <a href="Reference/" class="docs-section">
-            <img src="images/icon-add-on.png" alt="">
+            <img src="images/documents.png" width="130" alt="">
             <h2>Developers' Reference</h2>
             <p>Code reference for Umbraco's management APIs, templating, querying, searching and more.</p>
         </a>

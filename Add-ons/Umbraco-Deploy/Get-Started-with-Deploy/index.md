@@ -31,7 +31,7 @@ Umbraco Deploy works by serializing non-content Umbraco items (called “Schema�
 
 These items are entities like Document Types, Media Types, Data Types, etc, and these files must be committed to source control (i.e. Git). Umbraco Deploy works by “extracting” this serialized information back into your Umbraco installation, which is done by deployment triggers when a deployment is sent to a target environment.
 
-For example, when working locally you might create a new Document Type. This will automatically create a new on-disk file in the `~/data` folder which is the serialized version of the new Document Type. You would then commit this file to your repository and push this change to your hosted source control (i.e. GitHub).
+For example, when working locally you might create a new Document Type. This will automatically create a new on-disk file in the `~/data` folder which is the serialized version of the new Document Type. You would then commit this file to your repository and push this change to your hosted source control (e.g. GitHub).
 
 When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps or Github Actions). This will then push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `~/data` folder will then be extracted into the Umbraco target environment.
 

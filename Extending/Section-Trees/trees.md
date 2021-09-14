@@ -2,7 +2,6 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Tree"
 meta.Description: "A guide to creating a custom tree in Umbraco"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Section-Trees/trees.md"
 ---
 
 # Trees
@@ -24,9 +23,9 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 **For example**
 
 ```csharp
-[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup="favouritesGroup", SortOrder=5)]
+[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
 public class FavouriteThingsTreeController : TreeController
-{
+{ }
 ```
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'
@@ -59,8 +58,10 @@ In Umbraco 8 the `/config/trees.config` file has been removed.
 ### Implementing the Tree
 
 ```csharp
- protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
+protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
 {
+    var nodes = new TreeNodeCollection();
+
     // check if we're rendering the root node's children
     if (id == Constants.System.Root.ToInvariantString())
     {
@@ -72,8 +73,6 @@ In Umbraco 8 the `/config/trees.config` file has been removed.
         favouriteThings.Add(4, "Warm Woolen Mittens");
         favouriteThings.Add(5, "Cream coloured Unicorns");
         favouriteThings.Add(6, "Schnitzel with Noodles");
-        // create our node collection
-        var nodes = new TreeNodeCollection();
 
         // loop through our favourite things and create a tree item for each one
         foreach (var thing in favouriteThings)
@@ -83,11 +82,9 @@ In Umbraco 8 the `/config/trees.config` file has been removed.
             var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
             nodes.Add(node);
         }
-        return nodes;
     }
 
-    // this tree doesn't support rendering more than 1 level
-    throw new NotSupportedException();
+    return nodes;
 }
 
 protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
@@ -102,10 +99,12 @@ protected override MenuItemCollection GetMenuForNode(string id, FormDataCollecti
         menu.Items.Add(new CreateChildEntity(Services.TextService));
         // add refresh menu item (note no dialog)
         menu.Items.Add(new RefreshNode(Services.TextService, true));
-        return menu;
     }
-    // add a delete action to each individual item
-    menu.Items.Add<ActionDelete>(Services.TextService, true, opensDialog: true);
+    else
+    {
+        // add a delete action to each individual item
+        menu.Items.Add<ActionDelete>(Services.TextService, true, opensDialog: true);
+    }
 
     return menu;
 }
@@ -141,6 +140,7 @@ If you're creating a custom tree as part of an Umbraco package/plugin, it's reco
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
 [PluginController("favouriteThings")]
 public class FavouriteThingsTreeController : TreeController
+{ }
 ```
 
 The edit view in the example would now be loaded from the location: `/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html`
@@ -195,6 +195,7 @@ In both scenarios you need to override the *CreateRootNode* method for the custo
 [Tree("settings", "favouritistThingsAlias", TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
 [PluginController("favouriteThing")]
 public class FavouritistThingsTreeController : TreeController
+{ }
 ```
 
 Overriding the *CreateRootNode* method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
@@ -205,7 +206,7 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
     var root = base.CreateRootNode(queryStrings);
 
     //optionally setting a routepath would allow you to load in a custom UI instead of the usual behaviour for a tree
-        root.RoutePath = string.Format("{0}/{1}/{2}", Constants.Applications.Settings, "favouritistThingsAlias", "overview");
+    root.RoutePath = string.Format("{0}/{1}/{2}", Constants.Applications.Settings, "favouritistThingsAlias", "overview");
     // set the icon
     root.Icon = "icon-hearts";
     // set to false for a custom tree with a single node.
@@ -229,6 +230,7 @@ To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attr
 [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
 [PluginController("favouriteThing")]
 public class FavouritistThingsTreeController : TreeController
+{ }
 ```
 
 ## Tree events
@@ -254,8 +256,14 @@ public void Initialize()
     TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
 }
 
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
+}
+
 // the event listener method:
-void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
+private void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
 {
     // normally you will want to target a specific tree, this can be done by checking the
     // tree alias of by checking the tree type (casting 'sender')
@@ -263,11 +271,6 @@ void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRen
     {
         e.Node.Title = "My new title";
     }
-}
-public void Terminate()
-{
-    // unsubscribe on shutdown
-    TreeControllerBase.RootNodeRendering -= TreeControllerBase_RootNodeRendering;
 }
 ```
 
@@ -290,8 +293,14 @@ public void Initialize()
     TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
 }
 
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
+}
+
 // the event listener method:
-void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+private void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
 {
     // this example will filter any content tree node whose node name starts with
 
@@ -301,11 +310,6 @@ void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesR
     {
         e.Nodes.RemoveAll(node => node.Name.StartsWith("Private"));
     }
-}
-public void Terminate()
-{
-    // unsubscribe on shutdown
-    TreeControllerBase.TreeNodesRendering -= TreeControllerBase_TreeNodesRendering;
 }
 ```
 
@@ -328,8 +332,14 @@ public void Initialize()
     TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
 }
 
+public void Terminate()
+{
+    // unsubscribe on shutdown
+    TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
+}
+
 // the event listener method:
-void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
+private void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
 {
     // this example will add a custom menu item for all admin users
 
@@ -353,11 +363,6 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
         // insert at index 5
         e.Menu.Items.Insert(5, i);
     }
-}
-public void Terminate()
-{
-    // unsubscribe on shutdown
-    TreeControllerBase.MenuRendering -= TreeControllerBase_MenuRendering;
 }
 ```
 

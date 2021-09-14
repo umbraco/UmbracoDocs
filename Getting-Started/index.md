@@ -1,278 +1,62 @@
 ---
-meta.Title: "All the basics of using Umbraco"
-meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
-versionFrom: 7.0.0
+meta.Title: "Getting Started" 
+meta.description: ""
+versionFrom: 8.0.0
 ---
 
-# Getting Started with Umbraco
-*All the basics of using Umbraco. From making a local installation to extending the backend.*
+# Getting Started
 
-The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
+How to get started with Umbraco depends a lot on what you're going to be using Umbraco for. Are you a content editor looking to learn how to start working with content in Umbraco? Are you an experience .NET developer looking to take your first shot at building a custom Umbraco solution? Or perhaps you're a project manager looking to find out whether Umbraco would be a good fit for your next project?
 
-## [What's new in Umbraco 8?](New-in-V8.md)
+In this section you will be able to find all the relevant resources to help you get started with exactly the thing you're looking to use Umbraco for.
 
-Learn more about the new features in Umbraco 8.
-
-## Umbraco Documentation
-
-<div class="row implementation">
-    <div class="col-sm-12"></div>
-</div>
-<div class="row">
-    <div class="col-xs-3 point">
-    </div>
-    <div class="col-xs-3">
-        <span class="dot big icon-Wrench">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right"><a href="Setup/">Setup</a></h4>
-                <small>Covers how to install and configure your Umbraco installation.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Requirements/">Requirements</a></h5>
-                <small>What is needed to run Umbraco?</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Install/">Install</a></h5>
-                <small>How to install Umbraco?</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
-                <small>Setting up a Web and SQL servers for your installation.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Upgrading/">Upgrading</a></h5>
-                <small>How to upgrade your copy of Umbraco to a newer version?</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Config/">Configuration</a></h5>
-                <small>Information about all of the different configuration files that control Umbraco.</small>
-            </div>
+<div class="docs-overview">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="Managing-an-Umbraco-project" class="docs-section">
+                <img src="images/calendar_marked.png" alt="" width="130">
+                <h2>Managing an Umbraco project</h2>
+                <p>Investigate the deployment process, the commercial options and how to best plan an Umbraco project.</p>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="Editing-websites-with-Umbraco" class="docs-section">
+            <img src="images/editor.png" alt="" width="130">
+                <h2>Editing websites with Umbraco</h2>
+                <p>Resources to help you create, edit and publish content in an Umbraco website.</p>
+            </a>
         </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big  icon-untitled">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right"><a href="Backoffice/">Backoffice overview</a></h4>
-                <small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Backoffice/LogViewer">Log viewer</a></h5>
-                <small>Learn more about how to use the Log viewer in the backoffice, to view log entries.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Backoffice/Variants">Language Variants</a></h5>
-                <small>Learn how to vary your content based on several languages.</small>
-            </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="Creating-websites-with-Umbraco" class="docs-section">
+            <img src="images/tree.png" alt="" width="130">
+                <h2>Creating websites with Umbraco</h2>
+                <p>Key concepts and frameworks for creating websites with Umbraco.</p>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="Developing-websites-with-Umbraco" class="docs-section">
+                <img src="images/code.png" alt="" width="130">
+                <h2>Developing websites with Umbraco</h2>
+                <p>Tips and tools for backend development, extending and customizing the Umbraco backoffice.</p>
+            </a>
         </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big  icon-untitled">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right"><a href="Data/">Data</a></h4>
-                <small>Using the backoffice to create data.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Data/Defining-content">Defining content</a></h5>
-                <small>Setting up content types, defining fields and creating your first content.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Data/Creating-Media/">Creating media</a></h5>
-                <small>Uploading files to media library, using upload fields and image cropper.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Data/Members/">Creating Members</a></h5>
-                <small>Defining Member Types and creating members for authentication and user profiles.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
-                <small>Creating and editing Data Types.</small>
-            </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="Hosting-an-Umbraco-infrastructure" class="docs-section">
+                <img src="images/globe.png" alt="" width="130">
+                <h2>Hosting an Umbraco infrastructure</h2>
+                <p>Details on the process of installing and hosting different types of Umbraco projects.</p>
+            </a>
         </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big icon-Palette">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right">Design</h4>
-                <small>Create templates and views with your own markup and use Razor to render content.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Design/Templates/">Templates</a></h5>
-                <small>Creating and managing templates.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Design/Rendering-Content">Rendering content</a></h5>
-                <small>Render the values of the current page or the result of a query against the content cache.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Design/Rendering-Media/">Rendering media</a></h5>
-                <small>How to query and render media?</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Design/Stylesheets-JavaScript/">Stylesheets and JavaScript</a></h5>
-                <small>Working with css and JavaScript in Umbraco's templates.</small>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big icon-Code">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right">Code</h4>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Code/Debugging/Logging">Logging</a></h5>
-                <small>Understanding how logging works, and learn to setup custom logging.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Code/Umbraco-Services/">Using Umbraco's service APIs</a></h5>
-                <small>Create and update entities in Umbraco from code.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Code/Subscribing-To-Events/">Subscribing to events</a></h5>
-                <small>Using events to modify content or run custom code.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="Code/Debugging/">Debugging</a></h5>
-                <small>Using the tools included with Umbraco to debug issues with your project.</small>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big  icon-untitled">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right"><a href="../Extending/">Extending</a></h4>
-                <small>Using the backoffice to create data.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="../Extending/Content-Apps/">Content Apps</a></h5>
-                <small>Learn how to develop content apps / tools for your editors.</small>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3">
-        <span class="dot big icon-Code">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right">Tutorials</h4>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="../Tutorials/Porting-Packages-V8">Porting packages to V8</a></h5>
-                <small>Learn how to convert your Umbraco 7 packages to Umbraco 8.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="../Tutorials/Creating-Basic-Site">Create a basic Umbraco site</a></h5>
-                <small>This tutorial will take you through the steps of building a basic website with Umbraco.</small>
-            </div>
+        <div class="col-sm-6">
+            <a href="Where-can-I-get-help" class="docs-section">
+                <img src="images/support.png" alt="" width="130">
+                <h2>Haven't found what you're looking for?</h2>
+                <p>Information, training and forums to answer any Umbraco related needs.</p>
+            </a>
         </div>
     </div>
 </div>

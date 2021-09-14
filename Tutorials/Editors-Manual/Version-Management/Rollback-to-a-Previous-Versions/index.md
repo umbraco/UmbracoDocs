@@ -1,12 +1,26 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Rollback to a Previous Version
 
+You have the opportunity to access and re-publish older versions, if necessary.
+
 To rollback to a previous version of the page:
 
-1. Follow the steps in Comparing Versions.
-2. When you have chosen the version of the page that you wish to rollback to, click the ***Rollback*** button.
-3. Your content has now been rolled back to the selected version of the page and is saved as a draft.
-4. If desired, you can publish the draft version by pressing the ***Save and publish*** button.
+1. Navigate to the page whose versions you wish to view.
+2. Go to the **Info** tab.
+3. Click on the **Rollback** button in the **History** section.
+
+    ![Rollback](images/Rollback-v9.png)
+4. The Rollback tree opens in the right-side of the screen. Select a version of the page from the **Rollback To** drop-down list.
+
+    ![Confirm Rollback](images/Rollback-changes-v9.png)
+
+5. Click **Rollback** to proceed with the changes. Your content has now been rolled back to the selected version of the page and is saved as a **Draft** version.
+6. To publish the draft version, click **Save and publish**.
+
+---
+
+Prev: [Comparing Versions](../Comparing-Versions/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Media Management](../../Media-Management/index.md)

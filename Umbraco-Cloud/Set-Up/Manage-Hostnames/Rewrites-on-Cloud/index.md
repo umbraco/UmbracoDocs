@@ -34,18 +34,28 @@ Once you've assigned a hostname to your Live environment you may want to "hide" 
 
 One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
 
-:::warning
-This rewrite only works for hostnames that are using Umbraco Latch, which was the old way of managing hostnames on Umbraco Cloud. Every hostname created after December 8th 2020 or hostnames that have had their DNS moved will use Cloudflare. If your hostname is using Cloudflare this rewrite will not work.
-We are working on updating the documentation to provide a correct redirect that will also work on Cloudflare.
-
-If you are unsure whether your hostname uses Umbraco Latch or Cloudflare, feel free to reach out to support directly from the Cloud portal.
-:::
-
 ```xml
 <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+    <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+  </conditions>
+  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
+        appendQueryString="true" redirectType="Permanent" />
+</rule>
+```
+
+If your Umbraco Cloud site is running on the new infrastucture then the rewrite rule needs to be like this 
+
+```xml
+<rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
@@ -98,7 +108,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
   <conditions>
     <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
     <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z]{1,4}$" negate="true" />
+    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z1-5]{1,4}$" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />

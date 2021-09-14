@@ -39,6 +39,17 @@ Test whether the specified `templateId` is an allowed template for the current n
 
 Test whether the specified `templateAlias` is an allowed template for the current node.
 
+:::note
+By default the above template methods are disabled. To enable them, make sure to modify your web.routing section of UmbracoSettings.config:
+
+```xml
+<web.routing
+    validateAlternativeTemplates="true">
+  </web.routing>
+```
+
+:::
+
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
 Test if the current node is equal (by Id) to another node.

@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Data Persistence (CRUD) in Umbraco
@@ -17,12 +16,10 @@ So for the majority of cases, you can access the services by using this code (fo
 Services.ContentService.GetById(123);
 ```
 
-If you are not working with an Umbraco base class and the ServiceContext is not exposed, you can access the ServiceContext via the
-`ApplicationContext`. Like the ServiceContext, the ApplicationContext is exposed an all Umbraco base classes, but in the rare case
-that you are not using an Umbraco base class, you can access the ApplicationContext via a singleton. For example:
+If you are not working with an Umbraco base class and the ServiceContext is not exposed, you can reference the static Current class directly:
 
 ```csharp
-ApplicationContext.Current.Services.ContentService.GetById(123);
+Umbraco.Core.Composing.Current.Services.ContentService.GetById(123);
 ```
 
 ## Services

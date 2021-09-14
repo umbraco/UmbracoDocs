@@ -9,6 +9,10 @@ As of Umbraco Forms version 8.5.0 it is possible to persist all forms data in th
 In this article you will find instructions on how to migrate your Umbraco Forms data to the database.
 
 :::note
+As of Umbraco Forms version 9.0.0 it is *only* possible to store form data in the database.  As such, if upgrading to Umbraco 9 and using Forms, you should first migrate the forms to the database using Forms 8.
+:::
+
+:::note
 **Custom file system providers**
 
 If [custom file system providers are used on your project for storing Umbraco Forms data](../../../../Extending/FileSystemProviders/#custom-providers), the migration will not be able to run.

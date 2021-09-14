@@ -55,12 +55,16 @@ That this is an add-on domain for existing licenses. Refunds will not be given f
 
 ### Umbraco Deploy
 
-- A single license covers the installation and use of Umbraco Deploy in 1 production domain, as well as 2 development domains
-- The production domain includes all subdomains (e.g. `*.domain.tld`), as well as the `.local` extension (e.g. `domain.tld.local`)
-- The development domains works with or without the `www` subdomain
-- The license also includes `localhost` as a valid domain
+Deploy license:
 
-For the Umbraco Deploy license you do not need to purchase additional domains if you are running multiple sites within the same Umbraco installation.
+A single licence covers one Umbraco solution, including all domains hosted by the solution,
+all production environments (if load-balancing) and all non-production environments.
+
+To clarify on the above:
+
+- You only need one license when you have a solution covering multiple domains- e.g. www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same back-office instance, and with any number of non-production environments (staging, qa, etc.)
+
+- You need two licences If you have a web presence that consists of two separate websites hosted on different domains or sub-domains - e.g. www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and back-office in production.
 
 :::note
 The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).

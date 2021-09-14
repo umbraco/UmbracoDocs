@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "Umbraco ContentService Events"
 meta.Description: "Information on the various events available in the ContentService"
 ---
@@ -7,6 +8,15 @@ meta.Description: "Information on the various events available in the ContentSer
 # ContentService Events
 
 The ContentService class is the most commonly used type when extending Umbraco using events. ContentService implements IContentService. It provides access to operations involving IContent.
+
+:::note
+
+## Are you using Umbraco 9?
+
+Note that in Umbraco 9, ContentService Events have been renamed to [**ContentService Notifications**](../Notifications/ContentService-Notifications.md).
+
+Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+:::
 
 ## Usage
 
