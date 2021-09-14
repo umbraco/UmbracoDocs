@@ -116,7 +116,7 @@ services.AddSingleton<Foobar>();
 ```
 :::
 
-Now you can call you `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
+Now you can call your `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
 
 ```C#
 public void ConfigureServices(IServiceCollection services)
@@ -148,7 +148,7 @@ namespace IOCDocs
 }
 ```
 
-### Services lifetime
+### Service lifetime
 
 During registration you have to define the lifetime of your service:
 
@@ -168,7 +168,7 @@ There is three possible lifetimes:
 * Singleton - one unique instance for the whole web application
   * The single instance will be shared across all web requests.
 
-For more information, have a look at the official [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes)
+For more information, have a look at the official [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes).
 
 ## Injecting dependencies
 
@@ -222,6 +222,7 @@ You might need to use services within your templates or views, fortunately you c
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
 @* Add a using for the namespace of the service *@
 @using IOCDocs.Services
 @* Now you can inject it *@
@@ -244,9 +245,9 @@ Most of (if not all) the Umbraco goodies you work with every day can be injected
 
 ### UmbracoHelper
 
-`UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
-
 [Read more about the UmbracoHelper](../querying/umbracohelper/index.md)
+
+`UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
 
 ```csharp
 using System.Collections.Generic;
@@ -322,7 +323,7 @@ namespace IOCDocs.Services
 
             if (!(index is IUmbracoIndex umbracoIndex))
             {
-                throw new InvalidOperationException("Could not case");
+                throw new InvalidOperationException("Could not cast");
             }
             
             // Do stuff with the index
