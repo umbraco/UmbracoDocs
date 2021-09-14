@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: RC-1
+verified-against: rc-1
 state: partial
 updated-links: false
 meta.Title: "Umbraco Property Editors - Property Actions"
