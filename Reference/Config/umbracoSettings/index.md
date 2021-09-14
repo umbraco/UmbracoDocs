@@ -50,8 +50,6 @@ This section is used for managing thumbnail creation, allowed attributes and, wh
 <imaging>
     <!-- what file extension that should cause Umbraco to create thumbnails -->
     <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
-    <!-- what attributes that are allowed in the editor on an img tag -->
-    <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
     <!-- automatically updates dimension, file size and extension attributes on upload -->
     <autoFillImageProperties>
         <uploadField alias="umbracoFile">
@@ -68,9 +66,6 @@ Let's break it down.
 
 **`<imageFileTypes>`**
 As the comment above states, this is a comma separated list of accepted image formats, which Umbraco can create a thumbnail of the image from.
-
-**`<allowedAttributes>`**
-As the comment above states, this is a comma separated list of those attributes you want to allow on the image tag.
 
 **`<autoFillImageProperties>`**
 As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** need to be updated with the new property aliases. This needs to happen in order to automatically populate the values when the image is being uploaded.
