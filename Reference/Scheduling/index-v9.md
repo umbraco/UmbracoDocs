@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc002
+verified-against: rc-2
 meta-title: Scheduling with hosted services in Umbraco
 meta.Description: Use hosted services to run a background task
 state: complete
