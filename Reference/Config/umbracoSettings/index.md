@@ -44,7 +44,7 @@ By default this is set to false. To make the obsolete data types visible in the 
 
 ### Imaging
 
-This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
+This section is used for managing thumbnail creation and which properties of an image that should be automatically updated on upload.
 
 ```xml
 <imaging>
@@ -77,8 +77,6 @@ If you need to create a custom media document type to handle images called somet
 <imaging>
     <!-- what file extension that should cause Umbraco to create thumbnails -->
     <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
-    <!-- what attributes that are allowed in the editor on an img tag -->
-    <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
     <!-- automatically updates dimension, file size and extension attributes on upload -->
     <autoFillImageProperties>
         <uploadField alias="umbracoFile">
