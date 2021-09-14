@@ -116,4 +116,4 @@ For more details, see the [Using MemberAuthorizeAttribute](../../Reference/Routi
 
 ### Routing
 
-For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../../Reference/Routing/WebApi/authorization) article.
+For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../../Reference/Routing/WebApi/authorization-v9.md) article.
