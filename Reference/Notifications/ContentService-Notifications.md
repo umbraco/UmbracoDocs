@@ -1,7 +1,7 @@
 ---
 v8-equivalent: "https://our.umbraco.com/documentation/reference/events/ContentService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: rc-3
 ---
 
 # ContentService Notifications
@@ -14,7 +14,7 @@ Example usage of the ContentPublishingNotification:
 
 ```C#
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Services.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace MySite
 {
