@@ -529,6 +529,16 @@ public bool HasSavedCulture(IContent content, string culture);
 
 When handling the Unpublishing notification, it might not work how you would expect. If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur) then the Unpublishing notification will be published as expected.
 
+```C#
+public void Handle(ContentUnpublishingNotification  notification)
+{
+	foreach (var unPublishedEntity  in notification.UnpublishedEntities)
+	{
+		// complete unpublishing of entity, all cultures
+	}
+}
+```
+
 However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action 'without' the variant that has been unpublished.
 
 You can therefore detect the Unpublishing of a variant in the publishing notification - using the IsUnpublishingCulture extension method of the `ContentPublishingNotification`
