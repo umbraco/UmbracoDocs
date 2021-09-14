@@ -41,6 +41,10 @@ There are 2 other base types of `ICacheRefresher` which are:
 
 There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Web/Cache
 
+## Retrieving and Adding items in the cache
+
+You can [update and insert items in the cache](updating-cache.md).
+
 ## Getting and clearing cached content
 
 [See our example on how to cache tags](examples/tags.md).
