@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Configuration for Umbraco Deploy
