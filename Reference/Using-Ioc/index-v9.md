@@ -1,0 +1,362 @@
+---
+versionFrom: 9.0.0
+meta.Title: "Umbraco Dependency Injection"
+meta.Description: "Inversion of Control/Dependency Injection in Umbraco"
+state: complete
+verified-against: rc-003
+update-links: false
+---
+
+# Inversion of Control / Dependency injection
+
+Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes), this means that you don't have to install an external package to register and use your dependencies, and if you're familiar with APS.NET Core, the experience will be similar.
+
+`IUmbracoBuilder` is an Umbraco specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco specific services, such notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example: 
+
+```C#
+IUmbracoBuilder.Services
+```
+
+## Registering dependencies
+
+There's two strategies for registering your own dependencies to the container, which one you should use depends on whether you're making a package, or making custom services for your own site.
+
+### Registering dependencies for your site
+
+When working with your site, and not a package, the recommend way to registering depencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+        .AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>()
+        .Build();
+
+    // Regular services can be added outside the "AddUmbraco" builder chain, using the default IServiceCollection.
+    services.AddSingleton<IFooBar, Foobar>();
+}
+```
+
+### Registering dependencies in packages
+
+When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../../implementation/Composing/index-v9.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`: 
+
+```csharp
+using IOCDocs.NotificationHandlers;
+using IOCDocs.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace IOCDocs
+{
+    public class MyComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
+            builder.Services.AddSingleton<IFooBar, Foobar>();
+        }
+    }
+}
+```
+
+:::tip
+Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, it's exension methods, and the Microsoft `IServiceProvider
+:::
+
+### Builder extension methods
+
+Depending on your scenario, you may have a lot of dependencies you need to register, in this case your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
+
+```C#
+using IOCDocs.NotificationHandlers;
+using IOCDocs.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
+
+namespace IOCDocs
+{
+    public static class MyCustomBuilderExtensions
+    {
+        public static IUmbracoBuilder RegisterCustomNotificationHandlers(this IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
+            {...}
+            return builder;
+        }
+
+        public static IUmbracoBuilder RegisterCustomServices(this IUmbracoBuilder builder)
+        {
+            builder.Services.AddSingleton<IFooBar, Foobar>();
+            {...}
+            return builder;
+        }
+
+        public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
+        {
+            builder.RegisterCustomNotificationHandlers();
+            builder.RegisterCustomServices();
+            return builder;
+        }
+    }
+}
+```
+
+:::note
+It is not required to have an interface for your dependency:
+```csharp
+services.AddSingleton<Foobar>();
+```
+:::
+
+Now you can call you `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
+
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // Register all our custom services in one go.
+        .AddCustomServices()
+        .Build();
+}
+```
+
+```C#
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+namespace IOCDocs
+{
+    public class MyComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            // Register all our custom services in one go.
+            builder.AddCustomServices();
+        }
+    }
+}
+```
+
+### Services lifetime
+
+During registration you have to define the lifetime of your service:
+
+```csharp
+IServiceCollection.AddTransient<TService, TImplementing>();
+IServiceCollection.AddScoped<TService, TImplementing>();
+IServiceCollection.AddSingleton<TService, TImplementing>();
+```
+
+There is three possible lifetimes:
+
+* Transient - always creates a new instance
+  * A new instance will be created each time it's injected. 
+* Scoped - one unique instance per web request (connection)
+  * Scoped services are disposed at the end of the request
+  * Be very careful not to resolve a scoped service from a singleton, since it may cause it to have an incorrect state in subsequent requests.
+* Singleton - one unique instance for the whole web application
+  * The single instance will be shared across all web requests.
+
+For more information, have a look at the official [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes)
+
+## Injecting dependencies
+
+Once you have registered your services, factories, helpers or whatever you need for you application, you can go ahead and inject them where needed.
+
+### Injecting dependencies into a class
+
+If you need to inject your service intro a controller, or another service, you'll do so through the class
+
+```csharp
+using IOCDocs.Services;
+using Umbraco.Cms.Web.Common.Controllers;
+
+namespace IOCDocs.Controllers
+{
+    public class FooController : UmbracoApiController
+    {
+        private readonly IFooBar _fooBar;
+
+        public FooController(IFooBar fooBar)
+        {
+            _fooBar = fooBar;
+        }
+
+        public string Foo()
+        {
+            var bar = _fooBar.Foo();
+            return bar;
+        }
+    }
+}
+```
+
+If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`, which is what you'd expect since all the `Foobar.Foo()` method does it to return `Bar` as a string:
+
+```csharp
+namespace IOCDocs.Services
+{
+    public class Foobar : IFooBar
+    {
+        public string Foo() => "Bar";
+    }
+}
+```
+
+### Injecting dependencies into a View or Template
+
+You might need to use services within your templates or views, fortunately you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so: 
+
+```html
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@* Add a using for the namespace of the service *@
+@using IOCDocs.Services
+@* Now you can inject it *@
+@inject IFooBar _fooBar
+
+@{
+	Layout = null;
+}
+
+<h1>@_fooBar.Foo()</h1>
+```
+
+If you then load the page which uses this template you'll see a heading with "Bar", which we got from our service.
+
+Note that in order to use our service we also haved to add a using statement for the namespace of the service.
+
+## Other things you can inject
+
+Most of (if not all) the Umbraco goodies you work with every day can be injected. Here are some examples.
+
+### UmbracoHelper
+
+[Read more about the UmbracoHelper](../querying/umbracohelper/index.md)
+
+```csharp
+using System.Globalization;
+using System.Linq;
+using Umbraco.Web;
+using Umbraco.Web.PublishedModels;
+
+namespace Example.Core.Services.Implement
+{
+    public class SiteService : ISiteService
+    {
+        private readonly UmbracoHelper _umbraco;
+
+        public SiteService(UmbracoHelper umbraco)
+        {
+            _umbraco = umbraco;
+        }
+
+        public Site GetSiteByCulture(string culture)
+        {
+            return _umbraco
+                .ContentAtRoot()
+                .OfType<Site>()
+                .FirstOrDefault(x => x.GetCultureFromDomains() == culture);
+        }
+    }
+}
+```
+:::note
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
+:::
+### ExamineManager
+
+[Read more about examine](../Searching/Examine/index.md).
+
+```csharp
+using Examine;
+using Examine.Providers;
+using System;
+using Umbraco.Core.Composing;
+
+namespace Example.Core.Components
+{
+
+    public class ExamineComponent : IComponent
+    {
+        private readonly IExamineManager _examineManager;
+
+        public ExamineComponent(IExamineManager examineManager)
+        {
+            _examineManager = examineManager;
+        }
+
+        public void Initialize()
+        {
+            if (_examineManager.TryGetIndex("ExternalIndex", out var index))
+            {
+                if (!(index is BaseIndexProvider indexProvider))
+                    throw new InvalidOperationException("Could not cast");
+
+                // Do stuff with the index
+            }
+        }
+
+        public void Terminate() { }
+    }
+}
+```
+
+### Accessing LightInject container
+
+Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
+
+```csharp
+var container = composition.Concrete as LightInject.ServiceContainer;
+container.Register<IFoo, Foo>();
+
+// It's not currently possible to assembly scan without workarounds
+// see https://github.com/umbraco/Umbraco-CMS/issues/7502 for details
+// The following will not work:
+// container.RegisterAssembly(/* Any method signature */);
+```
+
+[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
+
+### ILogger
+
+[Read more about logging](../../Getting-Started/Code/Debugging/Logging/index.md)
+
+```csharp
+using System;
+using Umbraco.Core.Logging;
+
+namespace Example.Core
+{
+    public class Foobar
+    {
+        private readonly ILogger _logger;
+
+        public Foobar(ILogger logger)
+        {
+            _logger = logger;
+        }
+
+        public void Foo()
+        {
+            _logger.Info<Foobar>($"Method Foo called at {DateTime.UtcNow}");
+        }
+    }
+}
+```
+
+## Using DI in Services and Helpers
+
+[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
