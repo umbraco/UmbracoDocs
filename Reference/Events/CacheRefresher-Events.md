@@ -7,11 +7,11 @@ meta.Description: "Information on the various CacheRefresher events available"
 
 # CacheRefresher Events
 
-Cacherefresher events happen when the cache updates. They are not commonly used, but are sometimes nessecary instead of the Content or Media Service events as the cache events trigger later.
+Cache refresher events are executed when the Umbraco Cache is updated. They can be useful to use in load balanced environments since they fire whenever the cache is updated on each server, whereas Content or Media Service events, eg 'ContentService_Published' event are only triggered on the server you are accessing the backoffice on. So if you need 'something' to happen on all servers after something is published, then the CacheUpdate event is the one to use.
 
 ## Usage
 
-Image you have some sort of product content nodes that are nested under product collection nodes. But you've extended the ExternalIndex for the product items to contain some of the collection info to make them searchable in a productsearcher. If you then update the product collection you'd want the index for the products under it to also be updated with the new collection data. Here we can use a concentcache event:
+Imagine you have some sort of product content nodes that are nested under product collection nodes. But you've extended the ExternalIndex for the product items to contain some of the collection info to make them searchable in a productsearcher. If you then update the product collection you'd want the index for the products under it to also be updated with the new collection data. Here we can use a contentcache event:
 
 ```csharp
 using Examine;
