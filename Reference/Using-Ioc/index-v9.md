@@ -9,9 +9,9 @@ update-links: false
 
 # Inversion of Control / Dependency injection
 
-Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes), this means that you don't have to install an external package to register and use your dependencies, and if you're familiar with APS.NET Core, the experience will be similar.
+Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes), this means that you don't have to install an external package to register and use your dependencies, and if you're familiar with APS.NET Core, the experience will be similar.
 
-`IUmbracoBuilder` is an Umbraco specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco specific services, such notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example: 
+`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example: 
 
 ```C#
 IUmbracoBuilder.Services
@@ -19,11 +19,11 @@ IUmbracoBuilder.Services
 
 ## Registering dependencies
 
-There's two strategies for registering your own dependencies to the container, which one you should use depends on whether you're making a package, or making custom services for your own site.
+There are two strategies for registering your own dependencies to the container, which one you should use depends on whether you're making a package, or making custom services for your own site.
 
 ### Registering dependencies for your site
 
-When working with your site, and not a package, the recommend way to registering depencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+When working with your site, and not a package, the recommended way to register dependencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
 
 ```C#
 public void ConfigureServices(IServiceCollection services)
@@ -67,12 +67,12 @@ namespace IOCDocs
 ```
 
 :::tip
-Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, it's exension methods, and the Microsoft `IServiceProvider
+Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, its extension methods, and the Microsoft `IServiceProvider.
 :::
 
 ### Builder extension methods
 
-Depending on your scenario, you may have a lot of dependencies you need to register, in this case your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
+Depending on your scenario, you may have a lot of dependencies you need to register, in this case, your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
 
 ```C#
 using IOCDocs.NotificationHandlers;
@@ -176,7 +176,7 @@ Once you have registered your services, factories, helpers or whatever you need 
 
 ### Injecting dependencies into a class
 
-If you need to inject your service intro a controller, or another service, you'll do so through the class
+If you need to inject your service into a controller, or another service, you'll do so through the class
 
 ```csharp
 using IOCDocs.Services;
@@ -216,7 +216,7 @@ namespace IOCDocs.Services
 
 ### Injecting dependencies into a View or Template
 
-You might need to use services within your templates or views, fortunately you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so: 
+You might need to use services within your templates or views, fortunately, you can inject services directly into your views using the `@inject` keyword. You can for example inject the `Foobar` from above into a view like so: 
 
 ```html
 @using Umbraco.Cms.Web.Common.PublishedModels;
@@ -237,7 +237,7 @@ You might need to use services within your templates or views, fortunately you c
 
 If you then load the page which uses this template you'll see a heading with "Bar", which we got from our service.
 
-Note that in order to use our service we also haved to add a using statement for the namespace of the service.
+Note that in order to use our service we also have to add a using statement for the namespace of the service.
 
 ## Other things you can inject
 
