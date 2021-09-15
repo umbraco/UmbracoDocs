@@ -3,9 +3,10 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Helper"
 meta.Description: "Using the Umbraco Helper"
 state: complete
-verified-against: beta-3
+verified-against: rc-003
 update-links: true
 ---
+
 # UmbracoHelper
 
 UmbracoHelper is the unified way to work with published content/media on your website. You can use the UmbracoHelper to query/traverse Umbraco published data.
@@ -14,15 +15,59 @@ UmbracoHelper also has a variety of helper methods that are useful when working 
 
 ## How to reference UmbracoHelper
 
-Nearly all of Umbraco's base classes expose an instance of UmbracoHelper. If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
+If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property.
+If you need the `UmbracoHelper` in your own controllers, you need to inject `IUmbracoHelperAccessor`, and resolve the helper with the `TryGetUmbracoHelper` method. A `HttpContext` is required to use the `UmbracoHelper`, if the helper cannot be resolved the `TryGetUmbracoHelper` method will return false. 
+
+Example of getting `UmbracoHelper` in a controller:
+
+```C#
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common;
+using Umbraco.Cms.Web.Common.Controllers;
+
+namespace UmbracoHelperDocs.Controllers
+{
+    [Route("customcontent/[action]")]
+    public class CustomContentController : UmbracoApiController
+    {
+        private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
+
+        public CustomContentController(IUmbracoHelperAccessor umbracoHelperAccessor)
+        {
+            // Inject IUmbracoHelperAccessor
+            _umbracoHelperAccessor = umbracoHelperAccessor;
+        }
+
+        public ActionResult<string> GetHomeNodeName()
+        {
+            // Try and get the UmbracoHelper
+            if (_umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper) is false)
+            {
+                // If TryGetUmbracoHelper returns false, we couldn't get the helper because there was no HTTP Context
+                // This should not happen in an Umbraco Controller
+                return StatusCode(500);
+            }
+
+            // Do something with the UmbracoHelper
+            var rootNode = umbracoHelper.ContentAtRoot().FirstOrDefault();
+            if (rootNode is null)
+            {
+                return NotFound();
+            }
+
+            return rootNode.Name;
+        }
+    }
+}
+```
 
 ## IPublishedContent
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`.
 
-The samples below demonstrate using `UmbracoHelper` in Razor. Aside from the `@` syntax, usage is the same inside controllers or UserControls.
+The samples below demonstrate using `UmbracoHelper` in Razor. Working with the `UmbracoHelper` will be the same in controllers, except for the fact that you must resolve it with `IUmbracoHelperAccessor` like shown above.
 
 ## Working with Content
 
@@ -32,14 +77,14 @@ Given a node ID, returns a `IPublishedContent`
 
 ```csharp
 @{
-    var page = Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
+	var pageFromGui = Umbraco.Content(Guid.Parse("af22cb83-9bd4-454b-ab06-cc19ac8e983d"));
 }
 
-<h3>@(page.Value<string>("propertyAlias"))
-</h3>
+<h3>@pageFromGui.Value("propertyAlias")</h3>
 
-@foreach (var child in page.Children) {
-    <a href="@child.Url">@child.Name</a>
+@foreach (var child in pageFromGui.Children)
+{
+	<a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -48,9 +93,10 @@ Given a node ID, returns a `IPublishedContent`
 Returns a collection of `IPublishedContent` objects from the Content tree.
 
 ```csharp
-// Get the children of the first content item found in the root
-@foreach (var child in Umbraco.ContentAtRoot().First().Children) {
-    <a href="@child.Url">@child.Name</a>
+@* Get the children of the first content item found in the root *@
+@foreach (var child in Umbraco.ContentAtRoot().First().Children)
+{
+	<a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -85,7 +131,7 @@ Given a node ID, returns an `IPublishedContent` Media entity
 ```csharp
 @{
     var media = Umbraco.Media(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
-    var image = media.Url;
+    var image = media.Url();
     var height = media.Value<int>("umbracoHeight");
 }
 ```
@@ -95,126 +141,15 @@ Given a node ID, returns an `IPublishedContent` Media entity
 Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ```csharp
-@foreach (var child in Umbraco.MediaAtRoot()) {
-    <img src="@child.Url" />
+@foreach (var child in Umbraco.MediaAtRoot())
+{
+	<img src="@child.Url()"/>
 }
 ```
 
 ## Working with Tags
 
-### .TagQuery
 
-Gets a lazily loaded reference to the tag context to allow you to work with tags
-
-```csharp
-@{
-    var tagQuery = Umbraco.TagQuery;
-}
-```
-
-### .TagQuery.GetAllContentTags([string tagGroup])
-
-Get a collection of tags used by content items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllContentTags();
-    var newsTags = Umbraco.TagQuery.GetAllContentTags("news");
-}
-```
-
-### .TagQuery.GetAllMediaTags([string tagGroup])
-
-Get a collection of tags used by media items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllMediaTags();
-    var newsTags = Umbraco.TagQuery.GetAllMediaTags("news");
-}
-```
-
-### .TagQuery.GetAllMemberTags([string tagGroup])
-
-Get a collection of tags used by members on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllMemberTags();
-    var newsTags = Umbraco.TagQuery.GetAllMemberTags("news");
-}
-```
-
-### .TagQuery.GetAllTags([string tagGroup])
-
-Get a collection of tags used on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllTags();
-    var newsTags = Umbraco.TagQuery.GetAllTags("news");
-}
-```
-
-### .TagQuery.GetContentByTag(string tag, [string tagGroup])
-
-Get a collection of IPublishedContent by tag, and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetContentByTag("News");
-}
-```
-
-### .TagQuery.GetContentByTagGroup(string tagGroup)
-
-Get a collection of IPublishedContent by tag group
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetContentByTagGroup("BlogTags");
-}
-```
-
-### .TagQuery.GetMediaByTag(string tag, [string tagGroup])
-
-Get a collection of Media by tag, and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTag("BlogTags");
-}
-```
-
-### .TagQuery.GetMediaByTagGroup(string tag, [string tagGroup])
-
-Get a collection of Media by tag group
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
-}
-```
-
-### .TagQuery.GetTagsForEntity(int contentId, [string tagGroup])
-
-Get a collection of tags by entity id (queries content, media and members), and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetTagsForEntity(1234);
-}
-```
-
-### .TagQuery.GetTagsForProperty(int contentId, string propertyTypeAlias, [string tagGroup])
-
-Get a collection of tags assigned to a property of an entity (queries content, media and members), and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetTagsForProperty(1234,"propertyTypeAlias");
-}
-```
 
 ## Working with Members
 
