@@ -149,7 +149,7 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ## Working with Tags
 
-Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about [here](tagQuery-v9.md) 
+Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about int the [ITagQuery document](tagQuery-v9.md).
 
 
 ## Working with Members
