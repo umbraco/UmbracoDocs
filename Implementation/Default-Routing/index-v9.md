@@ -76,11 +76,11 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
     <div class="col-xs-9">
         <div class="row explain">
             <div class="col-xs-12">
-                <h4 class="text-right"><a href="Execute-Request/">Execute request</a></h4>
+                <h4 class="text-right"><a href="Execute-Request/index-v9.md">Execute request</a></h4>
                 <small>The MVC Action and View are executed. During this execution you can query for published data to be displayed/rendered.</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="../../Reference/Querying/IPublishedContent/index-v9">IPublishedContent</a></h5>
+                <h5><a href="../../Reference/Querying/IPublishedContent/index-v9.md">IPublishedContent</a></h5>
                 <small>IPublishedContent is a strongly typed underlying model used in all Umbraco views..</small>
             </div>       
             <div class="col-sm-6">
