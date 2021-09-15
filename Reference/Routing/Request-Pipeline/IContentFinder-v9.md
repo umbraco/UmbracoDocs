@@ -30,8 +30,7 @@ This IContentFinders will find a document with id 1234, when the Url begins with
 ```csharp
 public class MyContentFinder : IContentFinder
 {
-    private readonly IUmbracoContextAccessor 
-    ;
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
     public MyContentFinder(IUmbracoContextAccessor umbracoContextAccessor)
     {
