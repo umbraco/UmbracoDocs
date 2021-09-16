@@ -3,7 +3,7 @@ versionFrom: 8.17.0
 versionTo: 9.0.0
 ---
 
-# Adding Tabs
+# Using Tabs
 
 In this section, you will get an overview of how to add a tab, sort and reorder tabs, and convert a group to a tab.
 

@@ -13,6 +13,8 @@ In this section, you will find all the relevant topics to help you get started w
 
 - [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index.md)
 
+- [Using Tabs](../Adding-Tabs/index.md)
+
 - [Finding Content](Finding-Content/index.md)
 
 - [Editing Existing Content](Editing-Existing-Content/index.md)
