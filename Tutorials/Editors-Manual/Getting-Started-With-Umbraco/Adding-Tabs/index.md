@@ -9,7 +9,9 @@ In this section, you will get an overview of how to add a tab, sort and reorder 
 
 ## Adding a Tab
 
-Using Tabs, you can organize properties in the backoffice to provide a tailored and efficient workflow for editors creating and maintaining Content, Media, and Members. Tabs allow you to add horizontal organization in your Document Types and is quite handy for Content Types that need a more defined hierarchy or have many properties and groups.
+Using Tabs, you can organize properties in the backoffice to provide a tailored and efficient workflow for editors creating and maintaining Content, Media, and Members. 
+
+Tabs allow you to add horizontal organization in your Document Types and is quite handy for Content Types that need a more defined hierarchy or have many properties and groups.
 
 To add a Tab, follow these steps:
 
