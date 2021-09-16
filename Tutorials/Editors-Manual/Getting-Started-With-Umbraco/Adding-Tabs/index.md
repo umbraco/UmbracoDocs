@@ -31,7 +31,9 @@ To sort a Tab, follow these steps:
 1. Go to **Settings**.
 2. Select a **Document Type/Media/Member Type**.
 3. Select **Reorder**.
-4. You can manually add a numeric value next to the Tab name. This is important when using compositions, as you might want to always display a tab/group at a certain position by setting a manual numeric value.
+4. You can manually add a numeric value next to the Tab name or use the arrows to set a value. 
+    
+    This is important when using compositions, as you might want to always display a tab/group at a certain position by setting a manual numeric value.
     ![Sort Tab](images/Sort-Tabs.gif)
 5. Select **I am done reordering**.
 6. Click **Save**.
