@@ -52,7 +52,7 @@ To convert a group to a tab, follow these steps:
 2. Select a **Document Type/Media/Member Type**.
 3. Select **Reorder**.
 4. You can drag and position the Tab where you want.
-    ![Reorder Tab](images/Convert-group-to-tab.gif)
+    ![Convert Group to Tab](images/Convert-group-to-tab.gif)
 5. Select **I am done reordering**.
 6. Click **Save**.
 
