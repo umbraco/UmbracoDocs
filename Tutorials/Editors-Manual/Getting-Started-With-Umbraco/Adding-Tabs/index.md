@@ -60,6 +60,17 @@ To convert a group to a tab, follow these steps:
 5. Select **I am done reordering**.
 6. Click **Save**.
 
+## Managing "Generic" Tabs
+
+Once you start adding tabs, you might see a “Generic” tab appear. This is done to hold groups and properties that are not assigned to a tab. For example, a group of properties coming from a composition that has no tab. In order to display the groups and properties correctly and have a solid data structure, they will be displayed under the Generic tab.
+
+To manage the **Generic** tab on a **Document Type/Media/Member Type**:
+
+1. Go to the **Composition** Document Type.
+2. Click **Add Tab** and enter the **Name** for the tab. All existing groups and properties are added to the tab.
+    ![Managing Generic Tab](images/Generic-tab.gif)
+3. Go to the **Document Type/Media/Member Type**, the **Generic** tab will now be replaced by the Composition tab.
+
 ---
 
 Prev: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Finding Content](../Finding-Content/index.md)
