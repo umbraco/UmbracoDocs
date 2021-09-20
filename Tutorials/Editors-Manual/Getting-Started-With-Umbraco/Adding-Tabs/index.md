@@ -70,9 +70,9 @@ To manage the **Generic** tab on a **Document Type/Media/Member Type**:
 
 1. Go to the **Composition** Document Type.
 2. Click **Add Tab** and enter the **Name** for the tab. All existing groups and properties are added to the tab.
-    ![Composition Add Tab](images/Composition-Add-Tab.gif)
+    ![Composition Add Tab](images/Composition-Add-Tab.jpg)
 3. Go to the **Document Type/Media/Member Type**, the **Generic** tab will now be replaced by the Composition tab.
-    ![Composition Add Tab](images/Merged-Generic-Tab.gif)
+    ![Composition Add Tab](images/Merged-Generic-Tab.jpg)
 
 ---
 
