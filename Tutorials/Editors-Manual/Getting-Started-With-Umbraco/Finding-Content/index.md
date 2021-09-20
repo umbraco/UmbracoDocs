@@ -17,4 +17,4 @@ Using the search bar, you can enter a search term and Umbraco will search for pa
 
 ---
 
-Prev: [Using Tabs](../Adding-Tabs/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; & Next: [Editing Existing Content](../Editing-Existing-Content/index.md)
+Prev: [Using Tabs](../Adding-Tabs/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Editing Existing Content](../Editing-Existing-Content/index.md)
