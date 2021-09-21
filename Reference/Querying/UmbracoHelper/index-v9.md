@@ -149,15 +149,18 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ## Working with Tags
 
-Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](../ITagQuery/index-v9.md).
+Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](../ITagQuery/index.md).
 
 
 ## Working with Members
 
 Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](../IMemberManager/index.md) for more information
 
+## Searching
 
-## Fetching miscellaneous data
+Previously the `UmbracoHelper` could be used to run queries on your content, this has been moved out of `UmbracoHelper` and is now available from `IPublishedContentQuery`, see [IPublishedContentQuery](../IPublishedContentQuery/index.md) for more information.
+
+## Fetching Dictionary Values
 
 ### .GetDictionaryValue(string key)
 
@@ -173,66 +176,6 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
 
-### .Search(string term)
-
-By default, Umbraco searches it's 'External' search index for any published content matching the provided search term. 
-
-```csharp
-@{
-    <ul>
-        @foreach (var result in Umbraco.ContentQuery.Search("ipsum"))
-        {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-        }
-    </ul>
-}
-```
-
-### .Search(string term, int skip, int take, out long totalRecords)
-
-Specifying the number of records 'to skip', and the number of records 'to take' is more performant when there are lots of matching search results and there is a requirement to implement paging.
-
-```csharp
-@{
-    var search = Umbraco.ContentQuery.Search("ipsum", 5, 10, out long totalRecords);
-    <ul>
-        <li>
-            Total results: @totalRecords
-            <ul>
-                @foreach (var result in search)
-                {
-                    <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-                }
-            </ul>
-        </li>
-    </ul>
-}
-```
-
-### .Search(IQueryExecutor queryExecutor)
-
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
-[Further information on using Examine](../../Searching/Examine/Quick-Start/index.md#different-ways-to-query)
-
-```csharp
-@{
-    if (!ExamineManager.Instance.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-    {
-        throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
-    }
-
-    var term = "ipsum";
-    var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
-    var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
-
-    foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
-    {
-        {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-        }
-    }
-}
-```
 
 ## Templating Helpers
 
