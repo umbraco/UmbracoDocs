@@ -184,13 +184,13 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 Renders a macro in the current page content, given the macro's alias, and parameters required by the macro.
 
 ```csharp
-@Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
+@await Umbraco.RenderMacroAsync"navigation", new {root="1083", header="Hello"})
 ```
 
-### .RenderTemplate(int contentId, int? altTemplateId)
+### .RenderTemplateAsync(int contentId, int? altTemplateId)
 
-Renders a template, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
+Renders a template asynchronously, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
 
 ```csharp
-@Umbraco.RenderTemplate(1234)
+@await Umbraco.RenderTemplate(1234)
 ```
