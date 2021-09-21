@@ -13,7 +13,7 @@ The `IPublishedContentQuery` interface contains various query methods for access
 
 ## How to reference IPublishedContentQuery
 
-In order to reference the `IPublishedContentQuery` in your views you must add a using statement for `Umbraco.Core` and inject the service using the `@inject` keyword.
+In order to reference the `IPublishedContentQuery` in your views, you must add a using statement for `Umbraco.Core` and inject the service using the `@inject` keyword.
 
 ```C#
 @using Umbraco.Cms.Core
@@ -27,7 +27,7 @@ Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
 
 ### .Search(string term)
 
-By default, `IPublishedContentQuery` will search on Umbracos 'External' search index for any published content matching the provided search term. 
+By default, `IPublishedContentQuery` will search on Umbraco's 'External' search index for any published content matching the provided search term. 
 
 ```csharp
 <ul>
