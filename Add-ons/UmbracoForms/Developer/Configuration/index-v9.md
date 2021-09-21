@@ -52,7 +52,7 @@ For illustration purposes, the following structure represents the full set of op
         "HideFieldValidationLabels": false,
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true,
-        "AutocompleteAttribute": "",
+        "AutocompleteAttribute": ""
       }
     },
     "PackageOptions": {
