@@ -40,7 +40,7 @@ The live site (`/site/wwwroot/`) contains the files used to show your website to
 
 All the team members you add through the Umbraco Cloud Portal will be added as backoffice users on your environments as well. As with any other Umbraco CMS installation, you can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
 
-Read more about this and team member roles in the [Team Members article](../../Set-up/Team-members).
+Read more about this and team member roles in the [Team Members](../../Set-Up/Team-Members) article.
 
 ## SQL Database
 
@@ -54,7 +54,7 @@ Aside from viewing the files on your Umbraco Cloud environments when cloning dow
 
 This is a dashboard that allows you to browse, view and edit all the files in your Umbraco Cloud environment. We recommend only using the tool when you are following one of our guides in the Troubleshooting section.
 
-In the [Power Tools](../../Set-up/Power-tools) article, you can read more about how to access the dashboard, and how we recommend using it.
+In the [Power Tools](../../Set-Up/Power-Tools) article, you can read more about how to access the dashboard, and how we recommend using it.
 
 ## Environment History
 
