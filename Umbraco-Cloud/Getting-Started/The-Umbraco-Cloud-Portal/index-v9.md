@@ -14,7 +14,7 @@ When you login to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/logi
 
 By default, the projects are ordered by latest updates - projects you've worked on recently will be shown on top and the ones you haven't worked with for a while are in the bottom. In the top-right corner of the Cloud Portal, you will find:
 
-- **Create New Project** button - Allows to create more projects using the plan you wish and a project will be ready for you within a few minutes.
+- **Create New Project** - Allows to create more projects using the plan you wish and a project will be ready for you within a few minutes.
 
 - **Notifications** - You can also see notifications for your different projects. For example: if your project have been automatically updated or if an upgrade has failed.
 
@@ -25,6 +25,8 @@ For quick access, you can *favorite* the projects you are currently working on, 
 ## Chat Feature
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you have any questions regarding your Umbraco Cloud projects.
+
+![Chat Feature](images/Chat.png)
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -38,8 +40,8 @@ Managing your individual projects has been made even simpler with Umbraco Cloud.
 
 ![Project Overview](images/project-overview-v9.png)
 
-- Project Name along with the options to manage environments, Invite User, or Settings section.
-- Git URL for cloning the environment to your local machine.
+- Project Name along with the options to **Manage environments**, **Invite User**, or **Settings** section.
+- **Git URL** for cloning the environment to your local machine.
 - Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
 - Toggle option for **Debug mode**.
 - Option to **Restart environment**, view **Logs**, **Clone project**, and access to **Power Tools (Kudu)**.
@@ -87,7 +89,7 @@ Each environment has an error log that appears only if you have any unread error
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
-During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the [section about databases on Umbraco Cloud](../../Databases/Cloud-Database).
+During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../Databases/Cloud-Database).
 
 Environment errors are stored in the `UCErrorLog` table.
 
