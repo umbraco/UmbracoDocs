@@ -149,57 +149,13 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ## Working with Tags
 
-Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about int the [ITagQuery document](tagQuery-v9.md).
+Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](../ITagQuery/index-v9.md).
 
 
 ## Working with Members
 
-### .Member(1234)
+Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](../IMemberManager/index.md) for more information
 
-Given a node ID, returns a single `IPublishedContent` Member 
-
-```csharp
-@{
-    var member = Umbraco.MembershipHelper.GetById(Guid.Parse("1f46e266-9acb-4f5b-afdb-5e26c23c56e3"));
-    var email = member.Value<string>("email");
-}
-```
-
-### Member Helpers
-
-### .MemberIsLoggedOn()
-
-Returns a `Boolean` on whether there is currently a member profile
-
-```csharp
-@if(Umbraco.MemberIsLoggedOn()) {
-    <h1>Welcome!</h1>
-}
-```
-
-### .MemberHasAccess(string path)
-
-Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties.md#path).
-
-```csharp
-@if (Umbraco.MemberHasAccess(Model.Path))
-{
-    <h1>Welcome!</h1>
-}
-```
-
-### .IsProtected(string path)
-
-Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties.md#path) has public access restrictions set.
-
-```csharp
-@foreach (var child in Model.Children) {
-    <h2>@child.Name</h2>
-    if(Umbraco.MembershipHelper.IsProtected(child.Path)){
-        <blink>Members only</blink>
-    }
-}
-```
 
 ## Fetching miscellaneous data
 
