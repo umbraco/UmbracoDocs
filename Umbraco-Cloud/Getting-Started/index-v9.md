@@ -50,8 +50,8 @@ To create a project in Umbraco Cloud Portal:
 
 When you create a:
 
-- Trial project for the first time, a unique project name will be generated for you.
-- Project from the Umbraco Cloud Portal, you will get to choose a name for the project.
+- Trial project for the first time - a unique project name will be generated for you.
+- Project from the Umbraco Cloud Portal - you will get to choose a name for the project.
 
 You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
 
