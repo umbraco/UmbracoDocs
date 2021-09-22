@@ -37,7 +37,7 @@ To create a child project:
 
 When your environments are ready, you will see a *green* light next to the environment name.
 
-![Creating a Baseline child project](images/create-baseline-child-project-v9.mp4)
+![Creating a Baseline child project](images/create-baseline-child-project-v9.gif)
 
 :::note
 Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
