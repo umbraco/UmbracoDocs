@@ -44,7 +44,7 @@ There are two scenarios for Backoffice users where configuring an SMTP service i
 By default, the option to request password resets for Backoffice Users is disabled on Umbraco Cloud projects. This is mainly to ensure that your Backoffice login stays in sync with your Umbraco ID.
 :::
 
-You can reset your Umbraco ID password from the Umbraco Cloud login page. Find more details about Umbraco ID in the ['Users on Cloud article'](..\Users-On-Cloud).
+You can reset your Umbraco ID password from the Umbraco Cloud login page. Find more details about Umbraco ID in the ['Users on Cloud'](../Users-On-Cloud) article.
 
 ![reset password](images/Reset_password.png)
 
@@ -57,6 +57,7 @@ As Umbraco Cloud doesn't provide SMTP servers, you will need to find hosting els
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side
 
 Step 1 - Set up the SMTP server.
+
 Step 2 - Configure the service in your `appsettings.json` file - in the `Umbraco:CMS:Global:Smtp` section.
 
 ```csharp
@@ -76,14 +77,14 @@ Step 2 - Configure the service in your `appsettings.json` file - in the `Umbraco
 
 ![Configure SMTP settings](images/configure-SMTP-settings.gif)
 
-To configure your SMTP service you will need to following details:
+To configure your SMTP service, enter the following details:
 
-* The **host**: IP address or hostname for your SMTP service
-* The **userName**: Your username for the SMTP service
-* The **password**: The password you use to access your SMTP service
+* **Host**: IP address or hostname for your SMTP service
+* **Username**: Your username for the SMTP service
+* **Password**: The password you use to access your SMTP service
 
 When you've configured these settings for your SMTP service, you will be able to send emails from your Umbraco Cloud project.
 
 :::note
-You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/index-v9.md) from the Umbraco Backoffice.
+You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/) from the Umbraco Backoffice.
 :::
