@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
+verified-against: rc-003
+state: complete
 updated-links: true
 meta.Title: "Installing Umbraco"
 meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
@@ -9,17 +9,16 @@ meta.Description: "Instructions on installing Umbraco on various platforms using
 
 # Installation
 
-The easiest way to get the latest version of Umbraco up and running is with VS Code.
+The easiest way to get the latest version of Umbraco up and running is with the CLI.
 
-1. **Download and install [Visual Studio Code](https://code.visualstudio.com/)**
-1. **Download and install [IIS Express](https://www.microsoft.com/en-us/download/details.aspx?id=48264) (Optional as IIS Express for VSCode will install it)**
-1. **Download and unzip [Umbraco](https://our.umbraco.com/download)**
-1. **Install the [IIS Express Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)**
-1. **Open the unzipped root folder in VS Code**
-1. **Run the website with the IIS Express Extension (CTRL+F5)**
-1. **Follow instructions on installer**
+1. Open your commandline
+2. Install the Umbraco templates with `dotnet new -i Umbraco.Templates::*`
+3. Enter the project folder, it will be the folder containing the `.csproj` file
+4. Run and build your project using `dotnet run`
+5. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
+6. Open your browser and navigate to that url
+7. Follow instructions on installer
 
-If you have never used VS Code before, you can check out a more detailed guide below that shows these steps more in depth to run a local instance of Umbraco.
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
 ## [VS Code installation](install-umbraco-with-vs-code-v9.md)
