@@ -73,7 +73,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 
 ### Other
 
-* [Github repository: Umbraco 9 Demo site ](https://github.com/Adolfi/UmbracoNineDemoSite) 
+* [Github repository: Umbraco 9 Demo site ](https://github.com/Adolfi/UmbracoNineDemoSite)
 * [YouTube: Porting an Umbraco package to v9 using multi-targeting - The Package Team](https://www.youtube.com/watch?v=W9IvX9MmoMo)
 * [YouTube: How to Host an Umbraco 9 site with IIS](https://www.youtube.com/watch?v=riO5EQKE0YY)
 * [YouTube: Shaken to the Coreabout .NET 5 (CG21)](https://www.youtube.com/watch?v=xEtWx9E9b-8)
@@ -111,7 +111,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc003
+    dotnet new -i Umbraco.Templates::9.0.0-rc004
     ```
 
 ### [Optional] Update the template from earlier pre-release versions
@@ -121,7 +121,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc003
+    dotnet new -i Umbraco.Templates::9.0.0-rc004
     ```
 
 ### Steps to create an Umbraco Project using the `dotnet new` template
@@ -386,7 +386,7 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Updated to latest Examine version
   - Removed obsolete propertyes from User and IUser
   - IEmailServer now required an email type
-  - 
+
 - Features
   - Added support for configuring the UmbracoFile serilog "Sink" in appsettings.
   - Added helper method for replacing the BackOfficeUserManager
@@ -399,6 +399,35 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
   - Fixed issue with translations keys shown instead of the translated values
   - Fixed issues with Block list thumbnail selector on Linux
   - Suppresses scope notifications dutin migrations to avoid handlers to execute before packages are ready.
+
+## Changes between rc 3 and rc 4
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0-rc004+is%3Aclosed) for a full overview.
+
+#### Summary
+- Features
+    - Added option to set NoNodesViewPath in umbraco template.
+    - Add LocalDB database install option and implement automatic database creation (Breaking)
+    - Updated NuGet dependencies
+    - Renames of ServerRole values (Breaking)
+    - Added folder keys to package xml and restore using these keys (Breaking)
+
+- Performance improvements
+    - Optimizations for empty recycle bin
+
+- Bugfixes
+    - Fixed issue with backoffice UI notifications not shown when using SimpleNotificationsModel
+    - Multiple fixes for tabs
+    - /umbraco not redirects to the install screen when a upgrade is required.
+    - Route hijacking with restricted public access - protected page request is not handled by custom login page controller
+    - Fixes for uploading big files
+    - Fix for directory values not working when language and region information on the hosting machine is different.
+    - Fix concurrency and certificate days to expiry issues in HttpsCheck
+    - Fix when connectionstring umbracoDbDSN key was missing
+    - Fix for when ApplicationMainUrl is set in config
+    - Culture fixes for when backoffice user or Host machine is Swedish
+    - Bugfix for SqlMaindomLock
+    - Linux casing issues
 
 ## Umbraco Forms 9 (.NET Core) Beta
 
