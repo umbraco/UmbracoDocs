@@ -211,22 +211,6 @@ var doThis = Umbraco.TypedContent(123);
 
 If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.
 
-## Using UmbracoContext to access ApplicationContext
-
-You should not access the `ApplicationContext` via the `UmbracoContext`.
-
-For example: `UmbracoContext.Current.Application` _<-- this is now deprecated/obsolete_
-
-If you need access to both the `UmbracoContext` and the `ApplicationContext`, you should do one of the following:
-
-* Access these services via the properties exposed on the Umbraco base class you are using (i.e. Controllers, views, controls, http handler, etc...)
-* Or inject these services into the services you are using
-* Or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
-
-The reason why this is bad practice is that it has caused confusion and problems in the past. In some cases developers would always
-access the `ApplicationContext` from the `UmbracoContext` but as we now know, this won't always work because the `UmbracoContext` is a request
-scoped instance which isn't going to be available when executing code in a non-request scope (i.e. background thread).
-
 ## Using Umbraco content items for volatile data
 
 This is one of the worst Umbraco anti-patterns and could very well cause your site to perform ultra poorly.
