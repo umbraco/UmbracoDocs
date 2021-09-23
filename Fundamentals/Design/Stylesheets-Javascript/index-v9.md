@@ -81,7 +81,7 @@ Then, navigate to the template where you would like to include your JS file.
 By default all JavaScript files will be stored in the `wwwroot/scripts` folder in the solution.
 
 :::tip
-If you are working locally, you can create CSS and JS files outside of the Backoffice - long as they are placed in appropiate folders (`css` and `scripts`), they will show up in the Backoffice.
+If you are working locally, you can create CSS and JS files outside of the Backoffice - as long as they are placed in appropriate folders (`css` and `scripts`), they will show up in the Backoffice when you right-click on the folder and then pick reload.
 :::
 
 ## Bundling & Minification for JavaScript and CSS
@@ -90,14 +90,34 @@ You can use whichever tool you are comfortable with for bundling & minification 
 
 You can create various bundles of your site's CSS or JavaScript files in your code that can be rendered later in your views. There can be a single bundle for the entire site, or a common bundle for the files you want to be loaded on every page, as well as page-specific bundles, just by listing your resources in the order you like.
 ```csharp
-_runtimeMinifier.CreateJsBundle("inline-js-bundle",
-                    BundlingOptions.NotOptimizedAndComposite,
-                    new[] { "~/scripts/myScript1.js", "~/scripts/myScript2.js" });
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.WebAssets;
 
-_runtimeMinifier.CreateCssBundle("inline-css-bundle",
-                    BundlingOptions.NotOptimizedAndComposite,
-                    new[] { "~/css/mystylesheet.css" });
+namespace MyNamespace
+{
+    public class MyComponent : IComponent
+    {
+        private readonly IRuntimeMinifier _runtimeMinifier;
 
+        public MyComponent(IRuntimeMinifier runtimeMinifier) => _runtimeMinifier = runtimeMinifier;
+
+        public void Initialize()
+        {
+            _runtimeMinifier.CreateJsBundle("inline-js-bundle",
+                BundlingOptions.NotOptimizedAndComposite,
+                new[] { "~/scripts/myScript1.js", "~/scripts/myScript2.js" });
+
+            _runtimeMinifier.CreateCssBundle("inline-css-bundle",
+                BundlingOptions.NotOptimizedAndComposite,
+                new[] { "~/css/mystylesheet.css" });
+        }
+
+        public void Terminate() { }
+    }
+
+    public class MyComposer : ComponentComposer<MyComponent>
+    { }
+}
 ```
 
 Then, you can render the bundles by the bundle name in a view template file:
@@ -112,6 +132,10 @@ Then, you can render the bundles by the bundle name in a view template file:
 ```
 
 Or by using our `IRuntimeMinifier`:
+
+:::note
+In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `"Debug": false` in your appsettings file.
+:::
 
 ```csharp
 @using Umbraco.Cms.Core.WebAssets
