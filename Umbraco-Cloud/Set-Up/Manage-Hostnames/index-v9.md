@@ -8,10 +8,10 @@ When you create an Umbraco Cloud project, the project URLs are based on the name
 
 Let's say you have a project named `Snoopy`. These will be the default hostnames:
 
-* Umbraco Cloud Portal: *www.s1.umbraco.io/project/snoopy*
-* Live site: *snoopy.euwest01.umbraco.io*
-* Development environment: *dev-snoopy.euwest01.umbraco.io*
-* Staging environment: *stage-snoopy.euwest01.umbraco.io*
+* Umbraco Cloud Portal: www.s1.umbraco.io/project/snoopy
+* Live site: snoopy.euwest01.umbraco.io
+* Development environment: dev-snoopy.euwest01.umbraco.io
+* Staging environment: stage-snoopy.euwest01.umbraco.io
 
 To access the backoffice add `/umbraco` at the end of the Live, Development or Staging URL.
 
