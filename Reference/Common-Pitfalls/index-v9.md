@@ -59,12 +59,26 @@ public class ContactFormSurfaceController : SurfaceController
 
 So next time you are using a singleton pattern or a static, think "Why am I doing this?", "I'm using Dependency Injection, I should be injecting this instance into my class."
 
-## Static references to web request instances (such as `UmbracoHelper`)
+## Static references to scoped instances (such as `UmbracoHelper`)
 
 __Example 1:__
 
 ```csharp
-private static _umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+public class BadApiController : UmbracoApiController
+{
+    // Note that this is static, that's bad
+    private static UmbracoHelper _umbracoHelper;
+    
+    public BadApiController(IUmbracoHelperAccessor umbracoHelperAccessor)
+    {
+        // Don't do this, this is bad
+        if (_umbracoHelper is null)
+        {
+            umbracoHelperAccessor.TryGetUmbracoHelper(out UmbracoHelper umbracoHelper);
+            _umbracoHelper = umbracoHelper;
+        }
+    }
+}
 ```
 
 This practice can cause memory leaks along with inconsistent data results when using this `_umbracoHelper` instance.
@@ -72,34 +86,19 @@ This practice can cause memory leaks along with inconsistent data results when u
 __Why?__
 
 It's important to understand the difference between an object that has a Request based scope/lifespan and
-an object that has an Application based scope/lifespan ... here's the gist:
+an object that has an Singleton/Application based scope/lifespan ... here's the gist:
 
-* Application scope - if an object has an application scope/lifespan, that means that this single object
+* Application scope - if an object has an singleton/application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
-accesses it. Static variables will always be application scope/lifespan.
-* Request scope - The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, it may either be disposed or cleared from memory
-by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
+accesses it. Static variables will always be application lifespan.
+* Request scope - The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, it may either be disposed or cleared from memory by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
-An example of an application scoped instance is Umbraco's `ApplicationContext`, this single instance is shared by all threads and exists for the lifetime of
-the application.
+An example of a request scoped instance is the `HttpContext`. This object exists for a single request and it definitely cannot be shared between other threads and especially not other request threads. This is because it is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it relies directly on an instance of `HttpContext`. The `UmbracoHelper` is request scoped as well.
 
-An example of a request scoped instance is the `HttpContext`. This object exists for a single request and it definitely cannot be shared between other threads and especially not other request threads. This is because it is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it
-relies directly on an instance of `HttpContext`. The `UmbracoHelper` is a request scoped object - as you can see above, it requires an instance of an `UmbracoContext`.
-
-So... in the above example, the `UmbracoHelper` which relies on an `UmbracoContext` which relies on an `HttpContext` will now be statically assigned to a variable, which means
-that these particular request scoped objects are now bound to an Application scope lifetime and will never go away. This could mean that under certain circumstances that an entire Umbraco
+So... in the above example, the `UmbracoHelper` which has a request scoped lifetime, will now be statically assigned to a variable, which means that this particular request scoped object is now bound to an Application scope lifetime and will never go away. This could mean that under certain circumstances that an entire Umbraco
 cache copy is stuck in memory, or that the `Security` property of the context will be accessed by multiple threads but this now contains the security information for a user for another request!
 
-__Other Examples:__
-
-```csharp
-private static _umbracoContext = UmbracoContext.Current;
-
-// MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
-private static _membershipHelper = new MembershipHelper(UmbracoContext.Current);
-
-private static _request = HttpContext.Current.Request;
-```
+Additionally since V9 comes with depdency injection out of the box, there's never really any reason to use static references, instead you should always use inject your required resources, and let the DI container handle the lifetimes of the objects.
 
 ## Querying with Descendants, DescendantsOrSelf
 
