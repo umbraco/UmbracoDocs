@@ -1,6 +1,7 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
 meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
+versionFrom: 9.0.0
 ---
 
 # Umbraco on .NET 5+
