@@ -190,37 +190,6 @@ for the same value. Instead this can be rewritten as:
 </ul>
 ```
 
-## Dynamics
-
-In Umbraco version 8+ dynamic support for access to IPublishedContent will be removed.
-There are a few reasons for this:
-
-* Dynamics are much slower than their strongly typed equivalent
-* The codebase for Dynamics is difficult to maintain and its massive
-* Many querying concepts in Dynamics are difficult to understand and need to be memorized due to all of the string syntax required
-* It is much harder to debug and to know if there are errors since the syntax is not typed or compiled
-* No intellisense is possible inside Visual Studio
-* [Models Builder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
-
-How do you know if you are using Dynamics?
-
-* If you are using `@CurrentPage` then __you are__ using dynamics
-* If you are using the UmbracoHelper query methods like `@Umbraco.Content` or `@Umbraco.Media` instead of the typed methods like `@Umbraco.TypedContent` and `@Umbraco.TypedMedia` then __you are__ using dynamics
-
-It is strongly advised that you use the strongly typed `@Model.Content` instead of `@CurrentPage` models in your views,
-this will perform much better and you'll be forward compatible with Umbraco v8+ with regards to querying `IPublishedContent`.
-
-A large problem with the performance of dynamics is having to parse string syntax such as:
-`@CurrentPage.Children.Where("DocumentTypeAlias == \"DatatypesFolder\" && Visible")` and turn that into something that is compilable when
-instead it can be written as something that compiles
-
-:::note
-About the Query Builder: We are aware that the Query Builder in the template editor of the backoffice currently
-uses dynamics. We will eventually replace the query logic in this dialog with strongly typed model (Models Builder) syntax to follow
-these best practices. In the meantime if you are concerned about performance and have a large site then we'd recommend if you use the
-Query Builder to update its results with strongly typed syntax.
-:::
-
 ## Using the Services layer in your views
 
 The Services layer of Umbraco is for manipulating the business logic of Umbraco directly to/from the database.
