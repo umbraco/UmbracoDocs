@@ -6,12 +6,12 @@ versionFrom: 9.0.0
 
 When you create an Umbraco Cloud project, the project URLs are based on the name of your project.
 
-Let's say you have a project named `Snoopy`. These will be the default hostnames:
+Let's say you have a project named `Snoopy`. The default hostnames will be:
 
-* Umbraco Cloud Portal: www.s1.umbraco.io/project/snoopy
-* Live site: snoopy.euwest01.umbraco.io
-* Development environment: dev-snoopy.euwest01.umbraco.io
-* Staging environment: stage-snoopy.euwest01.umbraco.io
+* Umbraco Cloud Portal - www.s1.umbraco.io/project/snoopy
+* Live site - snoopy.euwest01.umbraco.io
+* Development environment - dev-snoopy.euwest01.umbraco.io
+* Staging environment - stage-snoopy.euwest01.umbraco.io
 
 To access the backoffice add `/umbraco` at the end of the Live, Development or Staging URL.
 
@@ -45,9 +45,8 @@ To specify the hostname for each root node using a multisite setup, follow these
 3. Select **Culture and Hostnames**.
 4. In the Culture and Hostnames window, click **Add New Domain**.
 5. Enter your **Domain** name and select the **Language** from the drop-down list.
+    ![Culture and Hostnames](images/culture-and-hostnames-v9.png)
 6. Click **Save**.
-
-![Culture and Hostnames](images/culture-and-hostnames-v9.png)
 
 Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. *snoopy.euwest01.umbraco.io*). To do so, see the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbracoio-url) article.
 
@@ -58,9 +57,9 @@ All hostnames added to an Umbraco Cloud project's environment will get a TLS (HT
 :::note
 Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
 
-Find instructions on how to change the certificate for your hostname in the [How to move away from Umbraco Latch](Move-away-from-Latch) article.
+To change the certificate for your hostname, see the [How to move away from using Umbraco Latch](Move-away-from-Latch) article.
 
-Do note that you will need to **remove the old DNS entry** before the Cloudflare service will generate a new certificate for your hostname.
+You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 :::
 
 ### Is your Domain hosted on your own Cloudflare account?
