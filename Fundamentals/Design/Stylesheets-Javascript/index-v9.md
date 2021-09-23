@@ -100,7 +100,7 @@ _runtimeMinifier.CreateCssBundle("inline-css-bundle",
 
 ```
 
-Then, you can simply render bundles by the bundle name in a view template file:
+Then, you can render the bundles by the bundle name in a view template file:
 
 ```csharp
 <html>
