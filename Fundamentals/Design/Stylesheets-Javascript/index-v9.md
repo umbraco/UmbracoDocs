@@ -114,6 +114,7 @@ Then, you can render the bundles by the bundle name in a view template file:
 Or by using our `IRuntimeMinifier`:
 
 ```csharp
+@using Umbraco.Cms.Core.WebAssets
 @inject IRuntimeMinifier runtimeMinifier
 
 <html>
