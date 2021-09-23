@@ -267,7 +267,7 @@ using Umbraco.Cms.Web.Common.ApplicationBuilder;
 
 namespace RoutingDocs.Controllers
 {
-    public class ShopControllerComposer : IUserComposer
+    public class ShopControllerComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -397,7 +397,7 @@ As you can see we still inherit from `UmbracoPageController` to get access to th
 The Umbraco magic will now instead happen where we route the controller, here we will pass a `Func<ActionExecutingContext, IPublishedContent>` delegate to the `ForUmbracoPage` method, this delegate is then responsible for finding the content, for instance using a composer with the same logic as in the `IVirtualPageController` it will look like this: 
 
 ```C#
- public class ShopControllerComposer : IUserComposer
+ public class ShopControllerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
@@ -425,7 +425,8 @@ The Umbraco magic will now instead happen where we route the controller, here we
         var publishedValueFallback = actionExecutingContext.HttpContext.RequestServices
             .GetRequiredService<IPublishedValueFallback>();
 
-        var productRoot = umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
+        var umbracoContext = umbracoContextAccessor.GetRequiredUmbracoContext();
+        var productRoot = umbracoContext.Content.GetById(2074);
 
         if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
         {
