@@ -114,4 +114,4 @@ Setting the `exportMemberGroups` to false will no longer export member groups to
 
 
 ### Large media libraries
-If you are often hitting the timeouts on content transfer or restores it is likely because your media library is too large. It is recommended that you switch to Blob storage if you have a media library larger than 1gb. See how [here!](../../../Set-Up/Media)
+If you are often hitting the timeouts on content transfer or restores it is likely because your media library is too large. It is recommended that you switch to Blob storage if you have a media library larger than 1gb. See how [here!](../../Set-Up/Media)

@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc001
+verified-against: rc-1
 meta-title: Umbraco Route Hijacking
 meta.Description:  Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type
 ---

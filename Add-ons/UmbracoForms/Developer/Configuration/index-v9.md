@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Forms configuration"
 meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Configuration
@@ -52,7 +52,7 @@ For illustration purposes, the following structure represents the full set of op
         "HideFieldValidationLabels": false,
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true,
-        "AutocompleteAttribute": "",
+        "AutocompleteAttribute": ""
       }
     },
     "PackageOptions": {

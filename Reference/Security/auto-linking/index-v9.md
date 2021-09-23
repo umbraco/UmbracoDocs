@@ -20,7 +20,7 @@ _This example shows connection to an Open ID Connect Service such as [IdentitySe
 
 You can first create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures the options like
 
-```cs
+```Csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
@@ -110,13 +110,13 @@ Additionally, there are more advanced properties for `BackOfficeExternalLoginPro
   * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic. To get started, the easiest way is to copy what the [default angular view](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/views/components/application/umb-login.html#L126-L140) does and then implement your angular controller to do what the [default controller](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/directives/components/application/umblogin.directive.js#L48) does.
 
 To register this configuration class, you can call the following from your `startup.cs`:
-```cs
+```Csharp
 services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
 ```
 
 We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this
 This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
-```cs
+```Csharp
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
 {
     // Register OpenIdConnectBackOfficeExternalLoginProviderOptions here rather than require it in startup
@@ -163,7 +163,7 @@ public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilde
 
 Finally this extension can also be called from the `Startup.cs` like the example below:
 
-```c#
+```Csharp
 services.AddUmbraco(_env, _config)
    .AddBackOffice()
    .AddWebsite()
@@ -195,7 +195,7 @@ Do not flow large amounts of data into the backoffice identity because this info
 
 _This is a very simplistic example for brevity, no null checks, etc..._
 
-```cs
+```Csharp
 OnAutoLinking = (user, loginInfo) => {
     // You can customize the user before it's linked.
     // i.e. Modify the user's groups based on the Claims returned

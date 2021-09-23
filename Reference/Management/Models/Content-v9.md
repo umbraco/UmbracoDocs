@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc001
+verified-against: rc-1
 meta.Title: "Content Model"
 meta.Description: "The Content class represents a single item in the content tree, its values are fetched directly from the database, not from the cache." 
 ---

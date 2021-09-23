@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
 meta.Description: "Steps to how to install and configure Umbraco Deploy"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Installing Umbraco Deploy

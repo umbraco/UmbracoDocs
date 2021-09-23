@@ -32,7 +32,7 @@ As previously mentioned a lot of notifications exist in pairs, with a "before" a
 ```C#
 public void Handle(TemplateSavingNotification notification)  
 {  
- notification.State["SomeKey"] = "Some Value Relevant to the \"after\" notifiaction handler";  
+ notification.State["SomeKey"] = "Some Value Relevant to the \"after\" notification handler";  
 }  
   
   
@@ -155,9 +155,9 @@ See [Tree Notifications](../../Extending/Section-Trees/trees-v9.md) for a listin
 See [EditorModel Notifications](EditorModel-Notifications) for a listing of the EditorModel events
 
 :::tip
-Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document.
+Useful for manipulating the model before it is sent to an editor in the backoffice - e.g. perhaps to set a default value of a property on a new document.
 :::
 
-# Creating and publishing your own custon notifications
+# Creating and publishing your own custom notifications
 
-Umbraco uses notifications to allow people to hook in various workflow processes, but the notification pattern is also extendable, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful when for instance creating packages. For more information on how you create and publish your own notifications see the [creating and publishing noticiations](Creating-And-Publishing-Notifications.md) article.
+Umbraco uses notifications to allow people to hook in various workflow processes, but the notification pattern is also extendible, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful when for instance creating packages. For more information on how you create and publish your own notifications see the [creating and publishing notifications](Creating-And-Publishing-Notifications.md) article.

@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Adding Notification Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Adding a server-side notification handler to Umbraco Forms

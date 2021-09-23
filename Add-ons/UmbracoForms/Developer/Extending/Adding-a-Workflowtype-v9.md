@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 state: complete
-verified-against: beta001
+verified-again: beta-1
 ---
 
 # Adding a workflow type to Umbraco Forms
