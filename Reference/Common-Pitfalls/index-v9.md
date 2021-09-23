@@ -1,8 +1,10 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 9.0.0
 meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
+state: complete
+verified-against: rc-004
+update-links: false
 ---
 
 # Common Pitfalls & Anti-Patterns
@@ -12,59 +14,50 @@ _This section is ultra important! It will describe many common pitfalls that dev
 ## Usage of Singletons and Statics
 
 Generally speaking if you are writing software these days you should be using Dependency Injection principles.
-If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco itself is not built with an IoC container to use out of the box you may find yourself using Umbraco's built in Singleton accessors like:
-`ApplicationContext.Current` or `UmbracoContext.Current`. In most cases you shouldn't be using these Singleton accessors. It makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard
-to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
+If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco 9 comes with depdenency injection out of the box, there really isn't any reason to use singletons or statics. It makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
 
-In all Umbraco base classes that you'll normally use, these objects are already exposed as properties, so please use these instead!
-For example, all Razor views that Umbraco creates expose an `UmbracoContext` property which is the UmbracoContext, they expose an `ApplicationContext`
-property which is Umbraco's `ApplicationContext`. The other base classes that expose all the instances you need are things like `SurfaceController`,
-`UmbracoApiController`, `UmbracoController`, `RenderMvcController`, `UmbracoUserControl`, `UmbracoPage`, `UmbracoHttpHandler`, and the list goes on...
+Depedency injection is available everywhere, and you can register your own services as well, additionally some resoureces are available through properties on certain base classes. For example, all Razor views that Umbraco creates expose an `UmbracoHelper` property you can access through `@Umbraco`, as well as a `SmidgeHelper` property. The other base classes that expose some things you might need like `UmbracoContext` are things like `SurfaceController`, but even here the services are initially gotten through DI, and you can inject further Umbraco and custom services that you might need.
 
-__Example of using base class properties instead of Singleton accessors:__
+For more information about consuming and registering your own dependencies have a look at the [Dependency Injection](../../Reference/Using-Ioc/index-v9) documentation
 
-_This example shows how you can access all sorts of Umbraco services in a `SurfaceController` without
-relying on Singletons. These same properties exist on all of Umbraco's base classes that you commonly use
-including razor views._
+
+__Example of using base class properties gotten through DI:__
 
 ```csharp
-public class ContactFormSurfaceController: SurfaceController
+public class ContactFormSurfaceController : SurfaceController
 {
-    [HttpPost]
-    public ActionResult SubmitForm(ContactFormModel model)
+    // The services are injected with DI and passed to the parent class
+    public ContactFormSurfaceController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        // TODO: All normal form processing logic is left out of this example for brevity
+    }
 
-        // You can access all of these because they are properties of the base class,
-        // notice there is no Singleton accessors used!
-
-        // ProfilingLogger:
-        using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("start", "stop"))
+    [HttpPost]
+    public IActionResult SubmitForm(ContactFormModel model)
+    {
+        // All normal form processing logic is left out of this example for brevity
+        // You can access all of these because they are properties of the base class, 
+        // if you need something else you can inject it in the constructor.
+        
+        //Profiling logger
+        using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("Start", "stop"))
         {
-            // Logger:
-            Logger.Warn<ContactFormSurfaceController>("warning!");
-
-            // MembershipHelper:
-            Members.CurrentUserName;
-
-            // ServiceContext:
-            Services.ContentService.GetById(1234);
-
-            // ApplicationContext:
-            ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem("myKey", () => "hello world");
-
-            // UmbracoContext:
-            UmbracoContext.UrlProvider.GetUrl(4321);
-
-            // DatabaseContext:
-            DatabaseContext.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM umbracoNode");
+            // UmbracoContext
+            UmbracoContext.Content.GetById(1234);
         }
+
+        return Ok();
     }
 }
 ```
 
-So next time you are using `ApplicationContext.Current` or `UmbracoContext.Current`, think "Why am I doing this?",
-"Is this already exposed as a property of the base class that I'm using?", "I'm using Dependency Injection, I should be injecting this instance into my class."
+So next time you are using a singleton pattern or a static, think "Why am I doing this?", "I'm using Dependency Injection, I should be injecting this instance into my class."
 
 ## Static references to web request instances (such as `UmbracoHelper`)
 
