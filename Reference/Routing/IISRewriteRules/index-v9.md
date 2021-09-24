@@ -7,14 +7,17 @@ versionFrom: 9.0.0
 With the release of Umbraco 9 and the change of the underlying framework to .NET Core 5 they way that you use rewrites have changed as well.
 
 The IIS module have been replaced with [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) for rewritting in Umbraco 9.
+This it means that there is no Web.config to add your rewrites in any more.
 
 ## Enabling the rules
 
-With this it means that there is no Web.config to add your rewrites in any more. Instead you will need to create an XML file with your rules and register it in your Startup.cs in your project by creating an instance of the RewriteOptions class with extension methods for each of your rewrite rules.
+To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions` class with extension methods for each of your rewrite rules.
 
 ### Example
 
-First create an XML file with your rewrites in and place it in your project:
+An example of how this can be done is
+
+- Create an XML file with your rewrites in and place it in your project:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -36,7 +39,7 @@ First create an XML file with your rewrites in and place it in your project:
 </rewrite>
 ```
 
-Once the file have been created you need to create an instance of the RewriteOptions class with your extension methods for each rule in the Startup.cs file:
+- With the XML file with the rules created, you need to create an instance of the RewriteOptions class with your extension methods for each rule in the Startup.cs file:
 
 ```Csharp
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,9 +52,9 @@ Once the file have been created you need to create an instance of the RewriteOpt
             }
 ```
 
-For more information on how to use rewrites in Umbraco 9, check out the documentation for [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0)
+For more in-depth information on how to use rewrites in Umbraco 9, check out the documentation for [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0)
 >
-## Examples
+## Examples of rewrite rules
 
 * A great site showing 10 very handy IIS Rewrite rules: [https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
 * Another site showing some handy examples of IIS Rewrite rules: [https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
