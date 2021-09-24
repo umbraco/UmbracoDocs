@@ -37,22 +37,6 @@ An example of how this can be done is
     </rule>
   </rules>
 </rewrite>
-```
-
-- With the XML file with the rules created, you need to create an instance of the RewriteOptions class with your extension methods for each rule in the Startup.cs file:
-
-```Csharp
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            using (StreamReader iisUrlRewriteStreamReader = File.OpenText("Umbraco/Rewrites.xml"))
-            {
-                var options = new RewriteOptions()
-                    .AddIISUrlRewrite(iisUrlRewriteStreamReader);
-                app.UseRewriter(options);
-            }
-```
-
-For more in-depth information on how to use rewrites in Umbraco 9, check out the documentation for [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0)
 >
 ## Examples of rewrite rules
 
