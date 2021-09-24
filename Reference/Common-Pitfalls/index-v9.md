@@ -109,37 +109,37 @@ You have 10,000 content items in your tree and your tree structure is something 
 
     - Root
     -- Home
-    --- Blog (list view with 9495 nodes)
-    --- Office Locations (list view with 500 nodes)
-    --- About Us
-    --- Contact Us
+    -- Blog (list view with 9495 nodes)
+    -- Office Locations (list view with 500 nodes)
+    -- About Us
+    -- Contact Us
 
 You create a menu on your Home page like:
 
 ```csharp
 <ul>
-    <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
-    @foreach(var node in Model.Content.Site().DescendantsOrSelf().Where(x => x.Level == 2))
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
+	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+	@foreach (var node in Model.Root().DescendantsOrSelf().Where(x => x.Level == 2))
+	{
+		<li><a href="@node.Url()">@node.Name</a></li>
+	}
 </ul>
 ```
 
-Which renders out: _Home, Blog, Office Locations, About Us, Contact Us_
+Which renders out: _Root, Home, Blog, Office Locations, About Us, Contact Us_
 
-BUT! ...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them. Further more,
+BUT!...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them. Further more,
 this means it is going to allocate 10,000 `IPublishedContent` instances in memory in order to check its `Level` value.
 
 This can be re-written as:
 
 ```csharp
 <ul>
-    <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
-    @foreach(var node in Model.Content.Site().Children)
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
+	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+	@foreach (var node in Model.Root().Children)
+	{
+		<li><a href="@node.Url()">@node.Name</a></li>
+	}
 </ul>
 ```
 
@@ -156,29 +156,28 @@ using the current page's root node:
 
 ```csharp
 <ul>
-    <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
-    @foreach(var node in Model.Content.Site().Children)
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
+	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+	@foreach (var node in Model.Root().Children)
+	{
+		<li><a href="@node.Url()">@node.Name</a></li>
+	}
 </ul>
 ```
 
-The syntax `@Model.Content.Site()` is shorthand for doing this:
-`Model.Content.AncestorsOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
-with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done
-for the same value. Instead this can be rewritten as:
+The syntax `@Model.Root()` is shorthand for doing this:
+`Model.AncestorOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
+with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done for the same value. Instead this can be rewritten as:
 
 ```csharp
 @{
-    var site = Model.Content.Site();
+	var root = Model.Root();
 }
 <ul>
-    <li><a href="@site.Url">@site.Name</a></li>
-    @foreach(var node in site.Children)
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
+	<li><a href="@root.Url()">@root.Name</a></li>
+	@foreach (var node in root.Children)
+	{
+		<li><a href="@node.Url()">@node.Name</a></li>
+	}
 </ul>
 ```
 
