@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Configuration for Umbraco Deploy
@@ -110,12 +110,12 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available.
+There are four settings available:
 
-- `sessionTimeout`
-- `sourceDeployTimeout`
-- `httpClientTimeout`
-- `databaseCommandTimeout`
+- `SessionTimeout`
+- `SourceDeployTimeout`
+- `HttpClientTimeout`
+- `DatabaseCommandTimeout`
 
 These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timepsan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
 

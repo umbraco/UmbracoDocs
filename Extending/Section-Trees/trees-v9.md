@@ -1,7 +1,7 @@
 ---
 state: partial
 updated-links: false
-verified-against: RC-2
+verified-against: rc-2
 versionFrom: 9.0.0
 meta.Title: "Umbraco Tree"
 meta.Description: "A guide to creating a custom tree in Umbraco"

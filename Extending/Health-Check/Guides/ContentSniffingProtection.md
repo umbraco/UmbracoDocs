@@ -15,7 +15,7 @@ This health check can be fixed by adding a header before the response is started
 
 Preferable you use a security library like [NWebSec](https://docs.nwebsec.com/).
 
-### Adding Click-Jacking Protection using NWebSec
+### Adding Content/MIME Sniffing Protection using NWebSec
 
 If you take a NuGet dependency on [NWebsec.AspNetCore.Middleware/](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/), you can use third extension methods on `IApplicationBuilder`.
 
@@ -31,7 +31,7 @@ public class Startup
 }
 ```
 
-### Adding Click-Jacking Protection using manual middleware
+### Adding Content/MIME Sniffing Protection using manual middleware
 
 If you don't like to have a dependency on third party libraries. You can add the following custom middleware to the request pipeline.
 

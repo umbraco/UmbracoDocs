@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Installing Umbraco Deploy on new Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Installing Umbraco Deploy
@@ -50,12 +50,10 @@ The first step to get Umbraco Deploy up and running is to set up a Github reposi
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
-**/App_Data/*
-!**/App_Data/packages
 **/media/*
 
 # Umbraco deploy specific
-**/data/deploy*
+**/umbraco/Deploy/deploy*
 ```
 
 :::note

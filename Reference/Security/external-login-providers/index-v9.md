@@ -22,7 +22,7 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
 To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index-v9.md) section.
 An example of configuration for Google Authentication may look like:
 
-```cs
+```Csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Umbraco.Cms.Web.BackOffice.Security;
@@ -59,7 +59,7 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 ```
 
 Finally, update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. An example may look like:
-```cs
+```Csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -74,7 +74,8 @@ public void ConfigureServices(IServiceCollection services)
 For a more in depth article on how to setup OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0&tabs=visual-studio).
 
 Depending on the provider you've configured and its caption/color, the end result will look similar to this:
-![OAuth login screen](../images/google-oauth-v8.png)
+
+![OAuth Login Screen](images/google-oauth-v8.png)
 
 ## Auto-linking accounts for custom OAuth providers
 

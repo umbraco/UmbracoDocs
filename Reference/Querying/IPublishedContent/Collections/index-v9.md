@@ -27,7 +27,7 @@ Returns a collection of child items available in the current culture, below the 
 
 ### .ChildrenForAllCultures
 
-Returns a collection of child items for all cultures, below the current content item.
+Returns a collection of child items for all cultures, below the current content item, regardless of whether they are available for the current culture.
 
 ```csharp
 <ul>
@@ -44,7 +44,7 @@ Returns a collection of child items available in the specified culture with a de
 
 ```csharp
 <ul>
-    @foreach(var item in Model.Children())
+    @foreach(var item in Model.Children("dk-dk"))
     {
         <li><a href="@item.Url()">@item.Name</a></li>
     }

@@ -16,7 +16,7 @@ Umbraco Deploy does not require the use of any particular build or deployment to
 
 Above and beyond the normal steps of a build pipeline for a .NET web application - tasks like NuGet restore, solution build, running of tests etc. - Umbraco Deploy requires three additional steps.
 
-- The license file needs to be deployed into the target envrionment's `bin` folder.
+- The license file needs to be deployed into the target environment's `bin` folder.
 - The `.uda` schema files that are written to disk and included in source control, need to be made available in the build artifact that is deployed to the target environment.
 - Once the build is complete, the extraction of the updated schema in the target environment needs to be triggered.
 

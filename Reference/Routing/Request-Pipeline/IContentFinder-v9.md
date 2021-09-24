@@ -46,8 +46,12 @@ public class MyContentFinder : IContentFinder
             return false; // Not found
         }
         
+        if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+        {
+            return false;
+        }
         // Have we got a node with ID 1234
-        var content = _umbracoContextAccessor.UmbracoContext.Content.GetById(1059);
+        var content = umbracoContext.Content.GetById(1234);
         if (content is null)
         {
             // If not found, let another IContentFinder in the collection try.
@@ -179,7 +183,11 @@ namespace RoutingDocs.ContentFinders
                 .Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == $"https://{contentRequest.Uri.Authority}")
                 .FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
-            var siteRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(false, siteId ?? -1);
+            if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+            {
+                return false;
+            }
+            var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
 
             if (siteRoot is null)
             {

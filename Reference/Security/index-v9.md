@@ -36,7 +36,7 @@ Authentication for backoffice users in Umbraco uses [ASP.NET Core Identity](http
 
 Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
-### [External login providers](external-login-providers-v9.md)
+### [External login providers](external-login-providers/index-v9)
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users.
 This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
@@ -59,9 +59,9 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](sensitive-data.md) article.
 
-[comment]: <> (## [Setup Umbraco for a FIPS Compliant Server]&#40;Setup-Umbraco-for-a-Fips-Server/index-v9.md&#41;)
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index-v9.md)
 
-[comment]: <> (How to configure Umbraco to run on a FIPS compliant server.)
+How to configure Umbraco to run on a FIPS compliant server.
 
 ## [Reset admin password](reset-admin-password.md)
 
