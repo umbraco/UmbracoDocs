@@ -31,6 +31,8 @@ This guide will help you [describe what the user will achieve by the end of the 
 ### Step 1: [VERB(ing) the/a(n)/your NOUN]
 
 [Full description of step with additional content, like code snippet, screenshot, etc.]
+If you are adding a codeblock to your document please use relevant namespaces and aliases from the repo. This will make sure that all code examples throughout our documentation are consistent and correct.
+Here is our Docs example: https://github.com/umbraco/Umbraco.Docs.Samples
 
 ### Step 2: [VERB(ing) the/a(n)/your NOUN]
 
