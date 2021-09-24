@@ -147,7 +147,7 @@ In Umbraco 7 there existed an IContentFinder that would find content and display
 
 Eg: `/blog/my-blog-post/blogfullstory` would 'find' the `/blog/my-blog-post` page and display using the `blogfullstory` template. 
 
-In Umbraco 9 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IComposer`, or Umbraco builder extension (see above example).
+In Umbraco 9 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behavior by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IComposer`, or Umbraco builder extension (see above example).
 :::
 
 # NotFoundHandlers
