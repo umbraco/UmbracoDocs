@@ -17,9 +17,9 @@ Kudu is available for each environment on your Umbraco Cloud project. You can fi
 
 The power tools can be used for various things, we often refer to the tools in our troubleshooting guides.
 
-* [The file structure](File-structure-on-cloud)
+* [The file structure](File-structure-on-Cloud)
 * [Run an extraction manually](Manual-extractions)
-* [Generate UDA files](generating-uda-files)
+* [Generate UDA files](Generating-UDA-files)
 
 ## Showing more than 199 items in Kudu
 
