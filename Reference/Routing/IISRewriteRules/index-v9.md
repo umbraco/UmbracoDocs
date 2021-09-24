@@ -1,0 +1,97 @@
+---
+versionFrom: 9.0.0
+---
+
+# Rewrites in Umbraco 9
+
+With the release of Umbraco 9 and the change of the underlying framework to .NET Core 5 they way that you use rewrites have changed as well.
+
+The IIS module have been replaced with [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) for rewritting in Umbraco 9.
+
+## Enabling the rules
+
+With this it means that there is no Web.config to add your rewrites in any more. Instead you will need to create an XML file with your rules and register it in your Startup.cs in your project by creating an instance of the RewriteOptions class with extension methods for each of your rewrite rules.
+
+### Example
+
+First create an XML file with your rewrites in and place it in your project:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<rewrite>
+  <rules>
+    <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+        <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+      </conditions>
+      <action type="Redirect" url="http://jonathanpabst.com>.com/{R:0}"
+        appendQueryString="true" redirectType="Permanent" />
+    </rule>
+  </rules>
+</rewrite>
+```
+
+Once the file have been created you need to create an instance of the RewriteOptions class with your extension methods for each rule in the Startup.cs file:
+
+```Csharp
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            using (StreamReader iisUrlRewriteStreamReader = File.OpenText("Umbraco/Rewrites.xml"))
+            {
+                var options = new RewriteOptions()
+                    .AddIISUrlRewrite(iisUrlRewriteStreamReader);
+                app.UseRewriter(options);
+            }
+```
+
+For more information on how to use rewrites in Umbraco 9, check out the documentation for [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0)
+>
+## Examples
+
+* A great site showing 10 very handy IIS Rewrite rules: [https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
+* Another site showing some handy examples of IIS Rewrite rules: [https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
+* If you needed to a lot of static rewrites using rewrite maps: [https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
+
+For example, to always remove trailing slash from the URL:
+
+```xml
+<rule name="Remove trailing slash" stopProcessing="true">
+  <match url="(.*)/$" />
+    <conditions>      
+      <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+    </conditions>
+  <action type="Redirect" redirectType="Permanent" url="{R:1}" />
+</rule>
+```
+
+Another example would be to enforce HTTPS only on your site:
+
+```xml
+<rule name="HTTP to HTTPS redirect" stopProcessing="true">
+  <match url="(.*)" />
+  <conditions>
+    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+  </conditions>
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+</rule>
+```
+
+Another example would be to redirect from non-www to www:
+
+```xml
+<rule name="Non WWW to WWW" stopProcessing="true">
+  <match url="(.*)" ignoreCase="true" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^google\.com" />
+  </conditions>
+  <action type="Redirect" url="https://www.google.com/{R:1}" redirectType="Permanent" />
+</rule>
+```
