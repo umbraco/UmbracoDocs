@@ -463,7 +463,7 @@ For Example, here's how to turn the above recipe query into a more effecient que
 		.OrderBy(new SortableField("vote"));
 }
 <ul>
-	@foreach (var result in _publishedContentQuery.Search(queryExecutor, 0, 10, out var totalRecords))
+    @foreach (var result in _publishedContentQuery.Search(queryExecutor, 0, 10, out var totalRecords))
     {
 	    <li><a href="@result.Content.Url()">@result.Content.Name - Votes: @result.Content.Value("vote")</a></li>
     }
