@@ -57,6 +57,8 @@ Text
 ```csharp
 codeblock
 ```
+If you are adding a codeblock to your document please use relevant namespaces and aliases from the repo. This will make sure that all code examples throughout our documentation are consistent and correct.
+Here is our Docs example: https://github.com/umbraco/Umbraco.Docs.Samples
 
 :::note
 This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
