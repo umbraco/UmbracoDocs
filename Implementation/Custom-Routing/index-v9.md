@@ -12,17 +12,17 @@ _There are a couple of ways of controlling the routing behavior in Umbraco: cust
 
 ## Customizing the inbound pipeline
 
-Below lists the ways in which you can customize the inbound request pipeline, this is done by using native Umbraco plugin classes, notifications or defining your own routes.
+Below lists the ways in which you can customize the inbound request pipeline, this is done by using native Umbraco plugin classes, notifications, or defining your own routes.
 
 ### IContentFinder
 
-All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to an Umbraco content item.
+All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to a Umbraco content item.
 
 See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v9.md)
 
 ### Last Chance IContentFinder
 
-A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
+A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched a Umbraco content node.
 
 To set your own 404 finder create a `IContentLastChanceFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
 
