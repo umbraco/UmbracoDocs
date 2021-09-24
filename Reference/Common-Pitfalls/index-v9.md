@@ -187,20 +187,25 @@ The Services layer of Umbraco is for manipulating the business logic of Umbraco 
 None of these methods should be used within your views and can have a very large impact on performance and stability of
 your application.
 
-Your views should rely only on the read-only data access of the `UmbracoHelper` and the properties/methods that it exposes. This ensures
+Your views should rely only on the read-only data services such as `UmbracoHelper`, `ITagQuery` and `IMemberManager` and the properties/methods that they expose. This ensures
 that the data being queried is fast (comes from cache) and that you aren't inadvertently making database changes.
 
 __For example__, when retrieving a content item in your views:
 
 ```csharp
-// Services access in your views :(
-var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
+@using Umbraco.Cms.Core.Services
+@inject IContentService _contentService
 
-// Content cache access in your views :)
-var doThis = Umbraco.TypedContent(123);
+@{
+	// Services access in your views :(
+	var dontDoThis = _contentService.GetById(1234);
+	
+	// Content cache access in your views
+	var doThis = Umbraco.Content(1234);
+}
 ```
 
-If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.
+If you are using services in your views, you should figure out why this is being done and, in most cases, remove this logic.
 
 ## Using Umbraco content items for volatile data
 
@@ -219,7 +224,7 @@ In some cases this might be ok but many times we've seen bulk imports occur on a
 
 ## Processing during startup
 
-Umbraco allows you to run some initialization code during startup by using `ApplicationEventHandler`, however great
+Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification` or `UmbracoApplicationMainDomAcquiredNotification`, however great
 care should be used to ensure that you are not slowing down application startup. You should be especially careful
 as a Package developer that you are not slowing down application startup since your package may end up being used for
 thousands of websites.
@@ -235,9 +240,7 @@ This can be achieved in various ways such as:
 * (there's plenty of ways)
 
 Even more important is that you ensure that the initialization logic only executes one time for the lifetime of the
-application even when your app domain is restarted. If your initialization logic creates a database table or something
-similar to that, where it should only be executed one time only. Then you should set a persistent flag (such as a file) to
-indicate to your own logic that the initialization code has already executed and doesn't need to be done again.
+application even when your app domain is restarted. If your initialization logic creates a database table or something similar to that, where it should only be executed one time only. Then you should set a persistent flag (such as a file) to indicate to your own logic that the initialization code has already executed and doesn't need to be done again.
 
 ## Rebuilding indexes
 
