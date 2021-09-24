@@ -34,6 +34,7 @@ Current languages that are included in the core are:
 - Chinese (Taiwan)
 - Czech
 - Turkish
+- Welsh
 
 ## Where to find the language files
 
