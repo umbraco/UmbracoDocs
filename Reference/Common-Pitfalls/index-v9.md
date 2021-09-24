@@ -445,6 +445,7 @@ For Example, here's how to turn the above recipe query into a more effecient que
 @using Umbraco.Cms.Core
 @using Examine
 @using Examine.Search
+@using Umbraco.Cms.Infrastructure.Examine
 @inject IPublishedContentQuery _publishedContentQuery;
 @inject IExamineManager _examineManager; 
 
