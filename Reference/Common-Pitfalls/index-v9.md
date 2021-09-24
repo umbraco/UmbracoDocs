@@ -416,7 +416,7 @@ This is slightly better:
 This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-## Too much LINQ - XPath is still your friend
+## Too much LINQ
 
 Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
@@ -424,43 +424,47 @@ turnover can cause performance problems. The more objects created, the more item
 
 So, if you have a huge site and are running LINQ queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances?
 
-Instead of iterating over (and thus creating them) we can use regular old `XPath` or use the `XPathNodeIterator` directly:
+Instead of iterating over (and thus creating them) we can use regular old `XPath` or use an `IQuery` with Examine.
 
-* `UmbracoHelper.ContentQuery.TypedContentAtXPath`
-* `UmbracoHelper.ContentQuery.TypedContentSingleAtXPath`
-* `UmbracoContext.ContentCache.GetXPathNavigator`
+* `IPublishedContentQuery.Search`
+* `IPublishedContentQuery.ContentAtXPath`
+* `IPublishedContentQuery.ContentSingleAtXPath`
 
-The methods `TypedContentAtXPath` and `TypedContentSingleAtXPath` will return the resulting `IPublishedContent` instances based
-on your XPath query but without creating interim `IPublishedContent` instances to perform the query against.
+The methods `ContentAtXPath` and `ContentSingleAtXPath` will return the resulting `IPublishedContent` instances based on your XPath query but without creating interim `IPublishedContent` instances to perform the query against.
 
 These 2 methods can certainly help avoid using LINQ (and as such allocating IPublishedContent instances)
 to perform almost any content filtering you want.
 
-## XPathNodeIterator - for when you need direct XML support
+## IQuery - for even more complicated searches
 
-Using the `GetXPathNavigator` method is a little more advanced but can come in very handy to solve some performance problems when
-dealing with a ton of content. Keep in mind that when you use this method you'll now be working directly with XML.
+Using the `Search` method with a query is a little more advanced but can come in very handy when dealing with a ton of content.
 
-For example, here's how to turn the above recipe query into a much more efficient query
-without allocating any `IPublishedContent` instances:
+For Example, here's how to turn the above recipe query into a more effecient query without allocating any `IPublishedContent` instances:
 
-```csharp
+```C#
+@using Umbraco.Cms.Core
+@using Examine
+@using Examine.Search
+@inject IPublishedContentQuery _publishedContentQuery;
+@inject IExamineManager _examineManager; 
+
 @{
-    var recipeNode = Umbraco.TypedContent(3251);
-    if (recipeNode == null) throw new NullReferenceException("No node found with ID " + 3251);
-    var xPath = $"//* [@isDoc and @id='{recipeNode.Id}']/* [@isDoc]";
+	if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+	{
+		throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
+	}
+	var query = index.Searcher.CreateQuery(IndexTypes.Content);
+	
+	var queryExecutor = query
+		.ParentId(1063)
+		.And()
+		.NodeTypeAlias("Recipe")
+		.OrderBy(new SortableField("vote"));
 }
 <ul>
-@foreach(var recipe in UmbracoContext.ContentCache.GetXPathNavigator()
-                            .Select(xPath).Cast<XPathNavigator>()
-                            .OrderByDescending(x =>
-                                {
-                                    var vote = 0;
-                                    int.TryParse(x.GetAttribute("@id", ""), out vote);
-                                    return vote;
-                                })
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.GetAttribute("@nodeName", "")</a></li>
-}
+	@foreach (var result in _publishedContentQuery.Search(queryExecutor, 0, 10, out var totalRecords))
+    {
+	    <li><a href="@result.Content.Url()">@result.Content.Name - Votes: @result.Content.Value("vote")</a></li>
+    }
 </ul>
+```
