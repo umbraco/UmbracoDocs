@@ -262,7 +262,7 @@ advised to determine why and to try to resolve the underlying problem.
 
 There's a couple well known Examine events: `GatheringNodeData` and `DocumentWriting`. Both of these events
 allow the developer to modify the data that is going into the Lucene index but many times we see developers Performing
-Service lookups in these methods. For example, using `ApplicationContext.Current.Services.ContentService.GetById(e.NodeId)`
+Service lookups in these methods. For example, using `IContentService.GetById(e.NodeId)`
 inside of these events could cause an `N + 1` problem. This is because these events are executed for every single document
 being indexed and if you are rebuilding an index, this will mean this logic will fire for every single document and media item
 going into each index ... That could mean a tremendous number of lookups and performance drain.
@@ -271,10 +271,10 @@ Similarly, if you are executing other logic in these events that perform poorly,
 it will slow that process down. And if you rebuild an index then any slow code running in these events will cause the indexing
 to go ultra slow.
 
-## RenderTemplate
+## RenderTemplateAsync
 
 There is an API in Umbraco that should never be used unless you really know what you are doing. This API method
-is called `RenderTemplate`. It allows you to be able to render a particular content item's template and get a `string`
+is called `RenderTemplateAsync`. It allows you to be able to render a particular content item's template and get a `IHtmlEncodedString`
 in response. In some cases, this may be useful. Perhaps you want to send an email based on a content item and its template, but
 you must be very careful not to use this for purposes it is not meant to be used for.
 
@@ -304,19 +304,21 @@ You have a custom model that looks like:
 ```csharp
 public class RecipeModel : PublishedContentWrapped
 {
-    public RecipeModel(IPublishedContent content) : base(content)
+    public RecipeModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
     {
         RelatedRecipes = content
             .Parent
-            .Children
-            .Where(x => x.GetPropertyValue<IEnumerable<int>>("related")
-                            .Contains(content.Id));
+            .Children<RecipeModel>()
+            .Where(x => x.Value<IEnumerable<int>>("related")
+                .Contains(content.Id));
 
-        Votes = content.GetPropertyValue<int>("votes");
+        Votes = content.Value<int>("votes");
     }
-
+    
     public int Votes { get; private set; }
+    
     public IEnumerable<RecipeModel> RelatedRecipes { get; private set; }
+}
 }
 ```
 
@@ -324,15 +326,20 @@ You then run the following code to show to show the favorites
 
 ```csharp
 @var recipeNode = Umbraco.TypedContent(3251);
-<ul>
-@foreach(var recipe in recipeNode.Children
-                            .Select(x => new RecipeModel(x))
-                            .OrderByDescending(x => x.Votes)
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.Name</a></li>
+@{
+	var recipeNode = Umbraco.Content(1234);
 }
+
+<ul>
+	@foreach (var recipe in recipeNode.Children
+		.Select(x => new RecipeModel(x, _publishedValueFallback))
+		.OrderByDescending(x => x.Votes)
+		.Take(10))
+	{
+		<li><a href="@recipe.Url()">@recipe.Name</a></li>
+	}	
 </ul>
+
 ```
 
 __Ouch!__ To show the top 10 voted recipe's this will end up doing the following:
@@ -354,36 +361,28 @@ Which leads us on to the next anti-pattern...
 The above example could be rewritten like this:
 
 ```csharp
-public class RecipeModel : PublishedContentWrapped
-{
-    public RecipeModel(IPublishedContent content) : base(content)
+    public class RecipeModel : PublishedContentWrapped
     {
-    }
+        public RecipeModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
+        {}
 
-    private int? _votes;
-    public int Votes
-    {
-        get
+        private int? _votes;
+        public int Votes
         {
-            // Lazy load the property value and ensure it's not re-resolved once it's loaded
-            return _votes ?? (_votes = GetPropertyValue<int>("votes"));
+            get
+            {
+                // Lazy load the property value and ensure it's not re-resolved once it's loaded
+                return _votes ??= this.Value<int>("votes");
+            }
         }
-    }
 
-    // Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
-    // doesn't need to be in the model - this would also be bad if the model was cached since all of the
-    // related entities would end up in the cache too.
-    private List<int> _related;
-    public IEnumerable<int> RelatedRecipes
-    {
-        get
-        {
-            // Lazy load the property value and ensure it's not re-resolved once it's loaded
-            return _related ??
-                (_related = GetPropertyValue<IEnumerable<int>>("related").ToList());
-        }
+        // Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
+        // doesn't need to be in the model - this would also be bad if the model was cached since all of the
+        // related entities would end up in the cache too.
+        private List<int> _related;
+
+        public IEnumerable<int> RelatedRecipes => _related ??= this.Value<IEnumerable<int>>("related").ToList();
     }
-}
 ```
 
 This is slightly better:
@@ -398,14 +397,17 @@ This is still not great though. There really isn't much reason to create a `Reci
 this is allocating a lot of objects to memory for no real reason. This could be written like:
 
 ```csharp
-@var recipeNode = Umbraco.TypedContent(3251);
-<ul>
-@foreach(var recipe in recipeNode.Children
-                            .OrderByDescending(x => x.GetPropertyValue<int>("votes"))
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.Name</a></li>
+@{
+	var recipeNode = Umbraco.Content(1234);
 }
+
+<ul>
+	@foreach (var recipe in recipeNode.Children
+		.OrderByDescending(x => x.Value<int>("votes"))
+		.Take(10))
+	{
+		<li><a href="@recipe.Url()">@recipe.Name</a></li>
+	}
 </ul>
 ```
 
@@ -418,10 +420,7 @@ of these objects is now __5000__.
 
 Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
-turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job
-is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really
-large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the
-GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to cleanup!
+turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to cleanup!
 
 So, if you have a huge site and are running LINQ queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances?
 
