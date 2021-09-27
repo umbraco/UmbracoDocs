@@ -36,7 +36,7 @@ Authentication for backoffice users in Umbraco uses [ASP.NET Core Identity](http
 
 Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
-### [External login providers](external-login-providers-v9.md)
+### [External login providers](external-login-providers/index-v9)
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users.
 This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
