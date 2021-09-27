@@ -99,7 +99,7 @@ The `/wwwroot/umbraco` folder contains static assets for the backoffice, these f
 
 #### Umbraco Models Builder
 
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index-v9.md) you have opted to work with.
+The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index.md) you have opted to work with.
 
 - **InMemoryAuto** (default), The models are generated in memory, no source control is required.
 - **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
@@ -124,7 +124,7 @@ The `/wwwroot/umbraco` folder contains static assets for the backoffice, these f
 
 #### Umbraco Models Builder
 
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index-v9.md) you have opted to work with.
+The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index.md) you have opted to work with.
 
 - **InMemoryAuto** (default), The models are generated in memory, no source control is required.
 - **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
