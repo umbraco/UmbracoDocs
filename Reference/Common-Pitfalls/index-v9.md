@@ -4,12 +4,12 @@ meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
 state: complete
 verified-against: rc-004
-update-links: false
+update-links: true
 ---
 
 # Common Pitfalls & Anti-Patterns
 
-_This section is ultra important! It will describe many common pitfalls that developers fall in to. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site!_
+_This section is ultra important! It will describe many common pitfalls that developers fall in to. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site! Another great source of information is Shannon Deminick's Codegarden 2021 talk about performance tuning which can be seen [here](https://www.youtube.com/watch?v=RM2EGXm6DYU&list=PLG_nqaT-rbpx6wIDr5ufUlbHkg6qB3sxH)_
 
 ## Usage of Singletons and Statics
 
@@ -416,56 +416,11 @@ This is slightly better:
 This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-## Too much LINQ
+## Not caching epxensive lookups
 
-Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new
+Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new 
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
 turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to cleanup!
 
-So, if you have a huge site and are running LINQ queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances?
 
-Instead of iterating over (and thus creating them) we can use regular old `XPath` or use an `IQuery` with Examine.
-
-* `IPublishedContentQuery.Search`
-* `IPublishedContentQuery.ContentAtXPath`
-* `IPublishedContentQuery.ContentSingleAtXPath`
-
-The methods `ContentAtXPath` and `ContentSingleAtXPath` will return the resulting `IPublishedContent` instances based on your XPath query but without creating interim `IPublishedContent` instances to perform the query against.
-
-These 2 methods can certainly help avoid using LINQ (and as such allocating IPublishedContent instances)
-to perform almost any content filtering you want.
-
-## IQuery - for even more complicated searches
-
-Using the `Search` method with a query is a little more advanced but can come in very handy when dealing with a ton of content.
-
-For Example, here's how to turn the above recipe query into a more effecient query without allocating any `IPublishedContent` instances:
-
-```C#
-@using Umbraco.Cms.Core
-@using Examine
-@using Examine.Search
-@using Umbraco.Cms.Infrastructure.Examine
-@inject IPublishedContentQuery _publishedContentQuery;
-@inject IExamineManager _examineManager; 
-
-@{
-	if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-	{
-		throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
-	}
-	var query = index.Searcher.CreateQuery(IndexTypes.Content);
-	
-	var queryExecutor = query
-		.ParentId(1063)
-		.And()
-		.NodeTypeAlias("Recipe")
-		.OrderBy(new SortableField("vote"));
-}
-<ul>
-    @foreach (var result in _publishedContentQuery.Search(queryExecutor, 0, 10, out var totalRecords))
-    {
-	    <li><a href="@result.Content.Url()">@result.Content.Name - Votes: @result.Content.Value("vote")</a></li>
-    }
-</ul>
-```
+So what can we do to mitigate this? Unfortunately there is no silver bullet that will solve all your performance issues, it will always depend on your specific scenario. One great tip though is to cache the IDs of the content you need in your critical code, and then retrieve it from the cache by ID. For instance if you need to render the same four pieces of content for your nav, then cache, or simply hardcore, the IDs of the content items and retrieve them with the ID using `Umbraco.Content`, this will always be much, much faster than trying to traverse your content tree and finding the content programatically, since it will do a direct lookup in the cache, meaning that only the `IPublishedContent` you actually need will be created.
