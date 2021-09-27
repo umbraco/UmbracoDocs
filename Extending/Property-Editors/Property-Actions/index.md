@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.4.0
+versionFrom: 9.0.0
+verified-against: rc-1
+state: partial
+updated-links: false
 meta.Title: "Umbraco Property Editors - Property Actions"
 meta.Description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---
@@ -10,10 +13,11 @@ Property Actions are a built-in feature that provide a generic place for seconda
 
 Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it very open as to what a Property Action is.
 
-![Example of Property Action on Nested Content Property Editor](example-of-property-actions.jpg)
+![Example of Property Action on Nested Content Property Editor](images/example-of-property-actions.jpg)
 
 ## Data Structure of Property Actions
-Property Editors are an array of objects defining each action. 
+
+Property Editors are an array of objects defining each action.
 An action is defined by the following properties:
 
 ```js
@@ -26,11 +30,12 @@ An action is defined by the following properties:
 }
 ```
 
-We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Language-Files/)
+We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Language-Files/index.md)
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 
 ## Implementation
+
 The implementation of Property Actions varies depending on whether your Property Editor is implemented with a Controller or as a Component.
 
 ### Controller Implementation
@@ -40,33 +45,33 @@ When your Property Editor is implemented with a Controller, use the following ap
 ```js
 angular.module("umbraco").controller("My.MarkdownEditorController", function ($scope) {
 
-	function myActionExecutionMethod() {
-        alert('My Custom Property Action Clicked');
-        // Disable the action so it can not be re-run
-        // You may have custom logic to enable or disable the action
-        // Based on number of items selected etc...
-        myAction.isDisabled = true;
-    };
-    
-	var myAction = {
-	    labelKey: 'general_labelForMyAction',
-	    labelTokens: [],
-	    icon: 'action',
-	    method: myActionExecutionMethod,
-	    isDisabled: false
-	}
-	
-	var propertyActions = [
-	    myAction
-	];
-	
-	this.$onInit = function () {
-	    if ($scope.umbProperty) {
-	        $scope.umbProperty.setPropertyActions(propertyActions);
-	    }
-	};
-	
-	
+function myActionExecutionMethod() {
+    alert('My Custom Property Action Clicked');
+    // Disable the action so it can not be re-run
+    // You may have custom logic to enable or disable the action
+    // Based on number of items selected etc...
+    myAction.isDisabled = true;
+};
+
+var myAction = {
+    labelKey: 'general_labelForMyAction',
+    labelTokens: [],
+    icon: 'action',
+    method: myActionExecutionMethod,
+    isDisabled: false
+}
+
+var propertyActions = [
+    myAction
+];
+
+this.$onInit = function () {
+    if ($scope.umbProperty) {
+        $scope.umbProperty.setPropertyActions(propertyActions);
+    }
+};
+
+
 });
 ```
 

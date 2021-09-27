@@ -1,12 +1,12 @@
 ---
-versionFrom: 8.6.0
+versionFrom: 9.0.0
 meta.Title: "Umbraco Property Editors - Tracking References"
 meta.Description: "Guide on how to implement tracking entity references for Property Editors in Umbraco"
 ---
 
 # Tracking References
 
-Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors. 
+Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors.
 
 A good example of this is the Media Picker where the CMS stores a reference to what media item was picked and thus allows to see what content nodes are using a media item. This avoids it being accidentally deleted if it is being used.
 
@@ -14,33 +14,43 @@ When a content node is saved it will save the entity references as relations.
 
 ## Viewing References
 
-For media items you can view the list of references by clicking the Info content app on a specific media item.
+### For Media Items
 
-![Viewing media references](media-references.jpg)
+1. Go to the **Media** section.
+2. Select a media item and click the **Info** tab.
 
-For content nodes you can view the list of references as relations in the Settings section under the Relation Types folder and viewing the Related Document relations.
+    ![Viewing media references](media-references-v9.png)
 
-![Viewing document references](document-references.jpg)
+### For Content Nodes
+
+1. Go to the **Settings** section.
+2. Under the **Relation Types** folder, select **Related Document** relations and click **Relations**.
+
+    ![Viewing document references](document-references-v9.png)
 
 ## Example
-The following example shows how to implement tracking for the inbuilt CMS property editor Content Picker, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
+
+The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
 
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Models.Editors;
-using Umbraco.Core.PropertyEditors;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.Editors;
+using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Extensions;
 
 namespace Umbraco.Web.PropertyEditors
 {
 
-    public class ExampleComposer : IUserComposer
+     public class ExampleComposer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.DataValueReferenceFactories().Append<TrackingExample>();
+            builder.DataValueReferenceFactories().Append<TrackingExample>();
         }
     }
 

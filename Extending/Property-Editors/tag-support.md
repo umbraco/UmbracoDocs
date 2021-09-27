@@ -1,5 +1,6 @@
 ---
 versionTo: 7.0.0
+needsv9Update: "true"
 ---
 
 # Tag support for property editors

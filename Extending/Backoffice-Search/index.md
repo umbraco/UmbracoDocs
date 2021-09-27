@@ -1,6 +1,8 @@
 ---
-keywords: Backoffice Search
-versionFrom: 8.6.0
+versionFrom: 9.0.0
+state: partial
+updated-links: false
+verified-against: alpha-3
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---
@@ -11,16 +13,39 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 
 | Node Type    | Propagated Fields      |
 | ------------ | ---------------------- |
-| All Nodes    | Id, __NodeId and __Key |
+| All Nodes    | Id, _NodeId_ and _Key_ |
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
-|              |                        |
 
-However, a specific Umbraco implementation may have additional custom properties that it would be useful to be considered in a Backoffice Search, for example perhaps there is an 'Organisation Name' property on the Member Type, or the 'Main Body Text' property of a Content item. 
-
-Umbraco 8.6 introduced a new way to extend/override the default fields by implementing `IUmbracoTreeSearcherFields`. This service exposes the list of default internal search fields for each section and allows modification of them.
+However, a specific Umbraco implementation may have additional custom properties that it would be useful to be considered in a Backoffice Search, for example perhaps there is an 'Organisation Name' property on the Member Type, or the 'Main Body Text' property of a Content item.
 
 ## Adding custom properties to backoffice search
+
+To add custom properties, it is required to register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend to override the existing `UmbracoTreeSearcherFields`.
+
+Your custom implementation needs to be registered in the container. E.g. in the `Startup.ConfigureServices` method or in a composer, as an alternative.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+    ...
+
+    services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
+}
+```
+
+or
+
+```csharp
+public class MyComposer : IUserComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+    builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
+    }
+}
+```
 
 ### All Node types
 
@@ -61,7 +86,7 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 ### Member Types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,  IUmbracoTreeSearcherFields
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
 {
     public IEnumerable<string> GetBackOfficeMembersFields()
     {
@@ -72,4 +97,4 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,  IUmbr
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/ "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/")
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../Section-Trees/Searchable-Trees/index-v9.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index-v9.md")

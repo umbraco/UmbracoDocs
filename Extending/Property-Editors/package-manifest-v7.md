@@ -1,13 +1,11 @@
 ---
-state: partial
-updated-links: false
-versionFrom: 9.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
-
 
 # Package Manifest
 
-The `package.manifest` JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
+The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors, parameter editors, dashboards, sections or content apps. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
 
@@ -20,29 +18,30 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
             "alias": "Sir.Trevor",
             "name": "Sir Trevor",
             "editor": {
-                "view": "/App_Plugins/SirTrevor/SirTrevor.html",
+                "view": "~/App_Plugins/SirTrevor/SirTrevor.html",
                 "hideLabel": true,
                 "valueType": "JSON"
             }
         }
     ],
     "javascript": [
-        "/App_Plugins/SirTrevor/SirTrevor.controller.js"
+        "~/App_Plugins/SirTrevor/SirTrevor.controller.js"
     ]
 }
 ```
 
 ## Root elements
 
-The manifest can contain seven root collections, none of them are mandatory:
+The manifest can contain eight root collections, none of them are mandatory:
 
 ```json
 {
     "propertyEditors": [],
     "gridEditors": [],
     "parameterEditors": [],
-    "dashboards": [],
     "contentApps": [],
+    "dashboards": [],
+    "sections": [],
     "javascript": [],
     "css": []
 }
@@ -59,10 +58,10 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
     "alias": "my.editor.alias",
     "name": "My friendly editor name",
     "editor": {
-        "view": "/App_Plugins/SirTrevor/view.html"
+        view: "~/App_Plugins/SirTrevor/view.html"
     },
     "prevalues": {
-        "fields": []
+        fields: []
     }
 }
 ```
@@ -70,7 +69,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace"
 * `name` The name visible to the user in the UI, should also be unique.
 * `editor` Object containing editor configuration (see below)
-* `isParameterEditor` enables the property editor as a macro parameter editor can be `true`/`false`
+* `isParameterEditor` enables the property editor as a macro parameter editor can be true/false
 * `prevalues` Configuration of editor prevalues (see below)
 * `defaultConfig` Default configuration values (see below)
 * `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: e.g. `icon-autofill`
@@ -83,7 +82,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 
 ```json
 "editor": {
-    "view": "/App_Plugins/SirTrevor/view.html",
+    "view": "~/App_Plugins/SirTrevor/view.html",
     "hideLabel": true,
     "valueType": "TEXT",
     "validation": {},
@@ -92,13 +91,12 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 ```
 
 * `view` Path to the HTML file to use for rendering the editor
-* `hideLabel` Turn the label on or off by using `true` or `false`, respectively.
+* `hideLabel` Turn the label on/off
 * `valueType` Sets the database type the value is stored as, by default it's `string`
 * `validation` Object describing required validators on the editor
 * `isReadOnly` Disables editing the value
 
 `valueType` sets the kind of data the editor will save in the database, its default setting is `string`. The available options are:
-
 * `STRING` Stores the value as an nvarchar in the database
 * `DATETIME` Stores the value as datetime in the database
 * `TEXT` Stores the value as ntext in the database
@@ -146,7 +144,7 @@ $scope.model.config.wolf
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you specify a name like `boolean` then Umbraco will look at `/wwwroot/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `/App_Plugins/{YourPackageName}/prevalue-editor.html`.
+If you specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
 
@@ -165,19 +163,17 @@ The defaultConfig object provides a collection of default configuration values i
 Similar to how the `propertyEditors` array defines one or more property editors, `gridEditors` can be used to define editors specific to the grid. Setting up the default richtext editor in the Umbraco grid could look like:
 
 ```json
-{
-  "gridEditors": [
+"gridEditors": [
     {
-      "name": "Rich text editor",
-      "alias": "rte",
-      "view": "rte",
-      "icon": "icon-article"
+        "name": "Rich text editor",
+        "alias": "rte",
+        "view": "rte",
+        "icon": "icon-article"
     }
-  ]
-}
+]
 ```
 
-However the default grid editors are already configured. You can see the [Grid Editors page (currently only available for Umbraco 8)](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) for more information on grid editors.
+However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
 
@@ -185,82 +181,114 @@ However the default grid editors are already configured. You can see the [Grid E
 
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
-## JavaScript
+## Content Apps
 
+Here is an example of adding a content app. See the [Content Apps](../Content-Apps/index.md) article for more information and a full guide on how to create Content Apps.
+
+```json
+ "contentApps": [
+    {
+        "name": "Word Counter", // required - the name that appears under the icon
+        "alias": "wordCounter", // required - unique alias for your app
+        "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
+        "icon": "icon-calculator", // required - the icon to use
+        "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+    }
+]
+```
+
+## Dashboard
+
+There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice. Registering with package.manifest or with C# Type. Here is an example of registering a custom dashboard with the package.manifest file.
+
+```json
+ "dashboards": [
+    {
+    
+        "alias": "myCustomDashboard", 
+        "view": "~/App_Plugins/WordCounter/wordcounter.html",
+        "sections": ["content", "member", "settings" ],
+        "weight": -10
+ 
+    }
+]
+```
+
+See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards. 
+
+## Sections
+
+As with the custom dashboards, a custom section can be registered either with a package.manifest file or with C# Type. Here is an example of registering a custom section with the package.manifest file.
+
+```json
+ "sections": [
+    {
+        "alias": "myFavouriteThings",
+        "name": "My Favourite Things"
+    }
+]
+```
+See the [Sections](../Section-Trees/sections.md) for a full article on how to create custom sections.
+
+## JavaScript
 `javascript` returns a string[] of JavaScript files to load on application start
 
 ```json
-{
-  "javascript": [
-    "/App_Plugins/SirTrevor/SirTrevor.controller.js",
-    "/App_Plugins/SirTrevor/service.js"
-  ]
-}
+"javascript": [
+    "~/App_Plugins/SirTrevor/SirTrevor.controller.js",
+    "~/App_Plugins/SirTrevor/service.js"
+]
 ```
 
 ## CSS
-
 `css` returns a string[] of css files to load on application start
 
 ```json
-{
-  "css": [
-    "/App_Plugins/SirTrevor/SirTrevor.css",
-    "/App_Plugins/SirTrevor/hibba.css"
-  ]
-}
+"css": [
+    "~/App_Plugins/SirTrevor/SirTrevor.css",
+    "~/App_Plugins/SirTrevor/hibba.css"
+]
 ```
 
 ## JSON Schema
+The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
-The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio, Rider and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
+### Schema Files
 
-### Setting up Visual Studio 2015+
+* [Package.manifest](https://json.schemastore.org/package.manifest)
+* [Package.manifest 7.0.0](https://json.schemastore.org/package.manifest-7.0.0)
+* [Package.manifest 8.0.0](https://json.schemastore.org/package.manifest-8.0.0)
 
-To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+### Setting up Visual Studio
+
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio.
 
 * Tools -> Options
 * Browse down to Text Editor -> File Extension
 * Add `manifest` into the Extension box
 * Select `JSON Editor` from the dropdown and add the mapping
-* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to `http://json.schemastore.org/package.manifest`. You can also add the schema inline in the json file (see below).
-
-### Setting up JetBrains Rider 2019+
-
-To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
-
-* File -> Settings
-* Browse down to Editor -> File Types -> JSON
-* Add `package.manifest` to the list of file pattern names.
-* Browse down to Languages & Frameworks -> Schemas and DTDs -> JSON Schema Mappings
-* Add new by clicking the `+` symbol
-* Add `package.manifest` as Name
-* Add `https://json.schemastore.org/package.manifest` as the Schema File or URL, or choose `package.manifest` from the Remote Schema URls
-* Add `package.manifest` as File path pattern
-* Open a `package.manifest` file and ensure in the bottom tool bar you see the schema is detected as `package.manifest`.
+* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest. You can also add the schema inline in the json file (see below).
 
 ### Setting up Visual Studio Code
 
 To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
-* File -> Preferences -> Settings. The **Settings** window opens.
-* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.
-  ![JSON Schemas](../Property-Editors/images/JSON-schema.png)
-* Select **Edit in settings.json** from the **Schemas** section.
-* Add the following snippet in the `settings.json` file:
+* File -> Preferences -> User Settings
+* This will open two editors side by side with the default settings on the left and custom overrides on the right
+* In the right hand file add the following
 
-    ```json
-    {
-        "json.schemas": [
-            {
-                "fileMatch": [
-                    "manifest.json"
-                ],
-                "url": "http://json.schemastore.org/package.manifest"
-            }
-        ]
-    }
-    ```
+```json
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "manifest.json"
+            ],
+            "url": "http://json.schemastore.org/package.manifest"
+        }
+    ]
+}
+```
 
 ### Adding inline schema
 

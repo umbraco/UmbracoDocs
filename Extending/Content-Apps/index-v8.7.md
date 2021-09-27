@@ -1,10 +1,7 @@
 ---
-versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
-meta.Title: "Content Apps"
-meta.Description: "A guide configuring content apps in Umbraco"
+versionFrom: 8.7.0
+meta.Title: "Content apps"
+meta.Description: "A guide to extending and creating content apps in Umbraco"
 ---
 
 # Content Apps
@@ -13,13 +10,13 @@ meta.Description: "A guide configuring content apps in Umbraco"
 
 Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
-With Content Apps, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+Content Apps are a new concept in Umbraco 8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 ![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
 
-**'Info'** - The 'Info' Content App is a default Content App for all items, displaying Links, History and Status of the current content item.
+**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco 7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
 
@@ -152,7 +149,11 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
 
-This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
+You can show your Content App for **Media Types**, **Member Types**, and  **Document Types** in the **Settings** section.
+
+:::note
+Content Types is referred to as Document Types.  
+:::
 
 Here is an example where all types are taken intro consideration when limiting access to a Content App:
 
@@ -163,11 +164,11 @@ Here is an example where all types are taken intro consideration when limiting a
             "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
-                "+media/*", // show for all media types
+                "+media/*", // show for all other media types
                 "-member/premiumMembers", // hide for Member type 'premiumMembers'
                 "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "-contentType/textPage", // hide for Content Type with alias 'textPage'
+                "-contentType/*", // hide for all other Content types
             ]
         }
     ]
@@ -203,25 +204,26 @@ When a role restriction is given in the manifest, it overrides any other restric
 ## C#: Creating a Content App
 
 This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
-Create a `WordCounter.cs` file with the following implementation:
+Create a `WordCounter.cs` file in `/App_Code/` to register the dashboard this way.
 
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Models.ContentEditing;
-using Umbraco.Cms.Core.Models.Membership;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.ContentEditing;
+using Umbraco.Core.Models.Membership;
 
-namespace My.Website
+namespace Umbraco.Web.UI
 {
+
     public class WordCounterAppComponent : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
             // Add our word counter content app into the composition aka into the DI
-            builder.ContentApps().Append<WordCounterApp>();
+            composition.ContentApps().Append<WordCounterApp>();
         }
     }
 
@@ -231,7 +233,7 @@ namespace My.Website
         {
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
             // only show app on content items
             if(source is IContent)
@@ -252,7 +254,7 @@ namespace My.Website
 }
 ```
 
-You will still need to add all of the files you added above but, because your C# code is adding the Content App, the `package.manifest` file can be simplified like this:
+You will still need to add all of the files you added above but, because your `C#` code is adding the Content App, the `package.manifest` file can be simplified like this:
 
 ```json5
 {
@@ -284,25 +286,26 @@ $scope.model.badge = {
 };
 ```
 
-Further customization can be done by setting a notification badge from an `IContentAppFactory`. This is achieved by setting the badge property on the ContentApp model.
+From version 8.4.0 and up it is also possible to set a notification badge from an `IContentAppFactory`. This is achieved by setting the badge property on the ContentApp model.
 
 ```csharp
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Models.ContentEditing;
-using Umbraco.Cms.Core.Models.Membership;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.ContentEditing;
+using Umbraco.Core.Models.Membership;
 
-namespace My.Website
+namespace Umbraco.Web.UI
 {
+
     public class WordCounterAppComponent : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
             // Add our word counter content app into the composition aka into the DI
-            builder.ContentApps().Append<WordCounterApp>();
+            composition.ContentApps().Append<WordCounterApp>();
         }
     }
 
@@ -312,7 +315,7 @@ namespace My.Website
         {
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
             // only show app on content items
             if(source is IContent)
