@@ -219,4 +219,4 @@ After the `SetStylesheetFileSystem` method has run, `FileSystems.StylesheetsFile
 
 There is an Azure Blob Storage provider:
 
-* [Azure Blob Storage](Azure-Blob-Storage/index-v9.md)
+* [Azure Blob Storage](Azure-Blob-Storage/index.md)
