@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Add Open Graph - Step 4
@@ -10,7 +10,7 @@ The final piece to the puzzle is adding the partial view that will be rendered w
 
 2. Right-click on *Partial Views* and choose *Create...* > *New empty partial view*
 
-The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.UmbracoViewPage`. We are using compositions and only render this view on pages where the composition exists, which means we need to be a little more specific.
+    The partial view comes with a standard view model `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage`. We are using compositions and only render this view on pages where the composition exists, which means we need to be a little more specific.
 
 3. In the template editor, pass in the specific model you've created by adding `<IOpenGraph>`.
     * Now you can start rendering the meta tags and adding in the values.
@@ -46,7 +46,7 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 
     ```csharp
     @{
-    var ogImage = Model.Value<IPublishedContent>("openGraphImage");
+        var ogImage = Model.Value<IPublishedContent>("openGraphImage");
     }
     ```
 
@@ -61,13 +61,14 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 The final view should look like this:
 
 ```html
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
-<meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IOpenGraph>
+
+<meta property="og:title" content="@Model.Value("openGraphTitle", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: new HtmlString("siteName"))" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="@Model.Url(mode: UrlMode.Absolute)" />
 
 @{
-var ogImage = Model.Value<IPublishedContent>("openGraphImage");
+    var ogImage = Model.Value<IPublishedContent>("openGraphImage");
 }
 
 <meta property="og:image" content="@ogImage.Url(mode: UrlMode.Absolute)" />
@@ -81,4 +82,4 @@ If your meta properties do not show up on social media, make sure to inspect sou
 
 **Pro tip:** In order to keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
 
-[Previous](step-3.md) - [Next](summary.md)
+[Previous](step-3-v9.md) - [Next](summary.md)

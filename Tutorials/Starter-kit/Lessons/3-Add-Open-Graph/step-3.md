@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Add Open Graph - Step 3
@@ -16,9 +16,9 @@ Because you've added the Open Graph feature as a composition you can check if th
 4. Write the following before the closing `</head>` tag:
 
 ```csharp
-@if(Model.Content is IOpenGraph){
-    @Html.Partial("openGraph")
-}
+ @if(Model is IOpenGraph){
+        @Html.Partial("../Views/Partials/OpenGraph.cshtml")
+    }
 ```
 
 This will render a partial view *if* the composition is present on the current page. Currently that is the case for Home and Blog posts on the site.
@@ -27,12 +27,14 @@ This will render a partial view *if* the composition is present on the current p
 
 At the end, the head should look like this:
 
+```csharp
     <head>
         ...
 
-        @if (Model.Content is IOpenGraph) {
-            @Html.Partial("openGraph")
-        }
+        @if(Model is IOpenGraph){
+        @Html.Partial("../Views/Partials/OpenGraph.cshtml")
+    }
     </head>
+```
 
-[Previous](step-2.md) - [Next](step-4.md)
+[Previous](step-2.md) - [Next](step-4-v9.md)
