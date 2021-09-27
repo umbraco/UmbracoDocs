@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 meta.Title: "Umbraco Forms Email Templates"
 meta.Description: "Creating an email template for Umbraco Forms."
 ---
@@ -8,6 +9,8 @@ meta.Description: "Creating an email template for Umbraco Forms."
 
 From version 6+, we now include a new Workflow **Send email with template (Razor)** that allows you to pick a Razor view file that can be used to send out a *pretty HTML email* for Form submissions.
 
+We have included an example email template below to look and understand how it works. The email template can be found at `~/Views/Partials/Forms/Emails/` folder.
+
 ## Creating an Email Template
 
 If you wish to have one or more templates to choose from the **Send email with template (Razor)**, you will need to place all email templates into the `~/Views/Partials/Forms/Emails/` folder.
@@ -15,15 +18,17 @@ If you wish to have one or more templates to choose from the **Send email with t
 The Razor view must inherit from FormsHtmlModel:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 ```
 
 You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
-Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
+Below is an example of an email template:
+
+### For Version 8.0.0+
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
 @{
     //This is an example email template where you can use Razor Views to send HTML emails
@@ -40,7 +45,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
     //@foreach(var color in Model.DynamicFields.checkboxField
 
     //Images need to be absolute - so fetching domain to prefix with images
-    var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+    var siteDomain = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
     var assetUrl = siteDomain + "/App_plugins/UmbracoForms/Assets/Email-Example";
 
 }
@@ -74,13 +79,13 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
         line-height: inherit !important;
     }
 
- /* MOBILE STYLES */
- @@media screen and (max-width:600px){
-  h1 {
-   font-size: 32px !important;
-   line-height: 32px !important;
-  }
- }
+	/* MOBILE STYLES */
+	@@media screen and (max-width:600px){
+		h1 {
+			font-size: 32px !important;
+			line-height: 32px !important;
+		}
+	}
 
     /* ANDROID CENTER FIX */
     div[style*="margin: 16px 0;"] { margin: 0 !important; }
@@ -172,7 +177,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
                     <!-- COPY -->
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #303033; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-
+                            
                             @foreach (var field in Model.Fields)
                             {
                                 <h4 style="font-weight: 700; margin: 0; color: #000000;">@field.Name</h4>
@@ -247,6 +252,60 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 
 ```
 
----
+### For Version 7+
 
-Prev: [Custom Markup](../Custom-Markup/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Record Data](../Working-With-Data/index-v9.md)
+```csharp
+@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+
+@{
+    // This is an example email template where you can use Razor Views to send HTML emails
+
+    // You can use Umbraco.TypedContent & Umbraco.TypedMedia etc to use Images & content from your site
+    // directly in your email templates too
+
+    // Strongly Typed
+    // @Model.GetValue("aliasFormField")
+    // @foreach (var color in Model.GetValues("checkboxField")){}
+
+}
+
+<h1>Explicitly Named Fields</h1>
+<h2>Name:</h2>
+@Model.GetValue("name")
+
+<h2>Favourite Colors</h2>
+<ul>
+    @foreach (var color in Model.GetValues("favColors")) {
+        <li>@color</li>
+    }
+</ul>
+
+<hr/>
+
+<h1>Generic/reusable template</h1>
+@foreach (var field in Model.Fields)
+{
+    <h2>@field.Name</h2>
+
+    switch (field.FieldType)
+    {
+        case "FieldType.FileUpload.cshtml":
+            <a href="@siteDomain/@field.GetValue()">@field.GetValue()</a>
+            break;
+
+        case "FieldType.DatePicker.cshtml":
+            @(Convert.ToDateTime(field.GetValue()).ToString("f"))
+            break;
+
+        case "FieldType.CheckboxList.cshtml":
+            foreach (var color in field.GetValues())
+            {
+                @color<br/>
+            }
+            break;
+        default:
+            @field.GetValue()
+            break;
+    }
+}
+```
