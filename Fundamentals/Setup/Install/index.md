@@ -1,37 +1,43 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
+verified-against: rc-003
+state: complete
+updated-links: true
 meta.Title: "Installing Umbraco"
-meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
+meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
 
 # Installation
 
-The easiest way to get the latest version of Umbraco up and running is with VS Code.
+The easiest way to get the latest version of Umbraco up and running is with the CLI.
 
-1. **Download and install [Visual Studio Code](https://code.visualstudio.com/)**
-1. **Download and install [IIS Express](https://www.microsoft.com/en-us/download/details.aspx?id=48264) (Optional as IIS Express for VSCode will install it)**
-1. **Download and unzip [Umbraco](https://our.umbraco.com/download)**
-1. **Install the [IIS Express Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)**
-1. **Open the unzipped root folder in VS Code**
-1. **Run the website with the IIS Express Extension (CTRL+F5)**
-1. **Follow instructions on installer**
+1. Open your command line
+2. Install the Umbraco templates with `dotnet new -i Umbraco.Templates`
+3. Enter the project folder, it will be the folder containing the `.csproj` file
+4. Run and build your project using `dotnet run`
+5. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
+6. Open your browser and navigate to that url
+7. Follow instructions on the installer
 
-If you have never used VS Code before, you can check out a more detailed guide below that shows these steps more in depth to run a local instance of Umbraco.
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
-## [VS Code installation](install-umbraco-with-vs-code.md)
+## [VS Code installation](install-umbraco-with-vs-code-v9.md)
 
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
 
-## [NuGet installation](install-umbraco-with-nuget.md)
+### [Run Umbraco on IIS](iis-v9.md)
 
-NuGet is the package manager for the Microsoft development platform, including .NET. The NuGet client tools provide the ability to produce and consume packages. NuGet allows you to install Umbraco without ever having to leave Visual Studio.
+Learn how to run an already installed local installation of Umbraco 9.
 
-## [Install Umbraco unattended](Unattended-Install.md)
+## [.NET CLI installation](install-umbraco-with-templates.md)
+
+.NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
+
+## [Visual Studio installation](visual-studio.md)
+
+Visual Studio is used to write native code and managed code supported by .NET and many others.
+Its built-in tools provide the ability to develop and execute applications for any platform. Developers will be able to install Umbraco without ever having to leave Visual Studio.
+
+## [Install Umbraco unattended](Unattended-Install-v9.md)
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.
-
-## [Running Umbraco on a Mac](running-umbraco-on-a-mac.md)
-
-Umbraco does not run natively on Mac OS but it's possible to get Windows up and running on your Mac.
-Click on the link [tools and information on how to run Umbraco on a mac](running-umbraco-on-a-mac.md) to find out more about how to do this and the tools available to you.

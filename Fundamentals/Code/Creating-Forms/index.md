@@ -1,30 +1,28 @@
 ---
 meta.Title: "Creating Forms"
 meta.Description: "Information on creating forms in Umbraco"
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+state: complete
+verified-against: beta-3
+update-links: false
 ---
 
 
 # Creating forms
 
-Creating forms requires that you know your way around .NET MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
+Creating forms requires that you know your way around .NET Core MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
 :::note
 You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, extendable and supported by Umbraco HQ.
 :::
 
-In this example we'll create a basic contact form contain name, email and message field.
+In this example we'll create a basic contact form containing a name, email and message field.
 
 ### Creating the view model
 
 First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 namespace MyFirstForm.Models
 {
     public class ContactFormViewModel 
@@ -46,45 +44,64 @@ Name your view "ContactForm".
 The view can be built with standard MVC helpers:
 
 ```csharp
+@using MyFirstForm.Controllers
 @model MyFirstForm.Models.ContactFormViewModel
 
-@using(Html.BeginUmbracoForm("Submit", "ContactForm")) 
+@using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
 {
-    <div>
-        @Html.TextBoxFor(m=>m.Name)
+    <div class="input-group">
+        <p>Name:</p>
+        @Html.TextBoxFor(m => m.Name)
     </div>
     <div>
-        @Html.TextBoxFor(m=>m.Email)
+        <p>Email:</p>
+        @Html.TextBoxFor(m => m.Email)
     </div>
     <div>
-        @Html.TextAreaFor(m=>m.Message)
+        <p>Message:</p>
+        @Html.TextAreaFor(m => m.Message)
     </div>
+    <br/>
     <input type="submit" name="Submit" value="Submit" />
 }
 ```
 
 ### Adding the controller
-Finally, we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
+Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder, name it `ContactController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
 
 ```csharp
+using Microsoft.AspNetCore.Mvc;
 using MyFirstForm.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Umbraco.Web.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
 
 namespace MyFirstForm.Controllers
 {
     public class ContactFormController : SurfaceController
     {
+        public ContactFormController(
+            IUmbracoContextAccessor umbracoContextAccessor,
+            IUmbracoDatabaseFactory databaseFactory,
+            ServiceContext services,
+            AppCaches appCaches,
+            IProfilingLogger profilingLogger,
+            IPublishedUrlProvider publishedUrlProvider) 
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+        {}
+
         [HttpPost]
-        public ActionResult Submit(ContactFormViewModel model)
+        public IActionResult Submit(ContactFormViewModel model)
         {
             if (!ModelState.IsValid)
+            {
                 return CurrentUmbracoPage();
-
+            }
+            
             // Work with form data here
 
             return RedirectToCurrentUmbracoPage();
@@ -92,8 +109,6 @@ namespace MyFirstForm.Controllers
     }
 }
 ```
-
-You should note that the controller inherits "SurfaceController" and not from "Controller" as initially added to the file by Visual Studio.
 
 If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 

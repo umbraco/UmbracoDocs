@@ -1,7 +1,7 @@
 ---
 meta.Title: "Information on server setup for Umbraco hosting"
 meta.Description: "This section describes different ways of setting up servers for use with Umbraco"
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 ---
 
 # Server setup
@@ -12,14 +12,18 @@ versionFrom: 7.0.0
 
 We strongly encourage the use of HTTPS with Umbraco installations especially in production environments. Using HTTPS will greatly enhance the security of your website, see the [Security reference](../../../Reference/Security/index.md) for more information.
 
-## [File & folder permissions](permissions.md)
+## [File & folder permissions](permissions-v9.md)
 
 To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 
-## [Load Balanced setup](Load-Balancing/index.md)
+## [Hosting v9+ in IIS](iis/index-v9.md)
+
+Information about hosting a v9 application using IIS.
+
+## [Load Balanced setup](Load-Balancing/index-v9.md)
 
 Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing.
 
-## [Running Umbraco on Azure Web Apps](azure-web-apps.md)
+## [Running Umbraco on Azure Web Apps](azure-web-apps-v9.md)
 
 Best practices for running Umbraco on Azure Web Apps.

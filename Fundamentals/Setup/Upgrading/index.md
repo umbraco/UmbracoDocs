@@ -1,14 +1,14 @@
 ---
 meta.Title: "Upgrading existing installs"
 meta.Description: "Info on the steps to upgrade your copy of Umbraco to a newer version"
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 ---
 
 # Upgrading existing installs
 
 _Covers the steps to upgrade your copy of Umbraco to a newer version._
 
-## [General upgrade instructions](general.md)
+## [General upgrade instructions](general-v9.md)
 
 General upgrade instructions which must be followed for each upgrade. Usually, upgrading involves copying a few files and updating config files.
 
