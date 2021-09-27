@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 7.0.0
 meta.Title: "Azure Blob Storage on Umbraco Cloud"
 meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
 ---
@@ -35,21 +35,35 @@ You can learn more about how this works in the [Restoring content](../../Deploym
 
 When you add new media files to your project while working on a local clone, the files will automatically be added to the Azure Blob Storage container connected to the environment you deploy to.
 
-## One Storage per Environment
+## One storage per environment
 
-Each environment on your Umbraco Cloud project has a separate Azure Blob Storage container. Each of your environments use a storage container specific to that environment.
+Each environment on your Umbraco Cloud project has a separate Azure Blob Storage container. This means that each of your environments will be using a storage container specific to that environment.
 
 When you deploy between two environments on your Umbraco Cloud project the media files will be copied from one storage to the other, depending on which environment is being transferred to and from.
 
 As an example, imagine that you are transferring new content changes from your Development environment to your Live environment. When you initiate the transfer, all media files from the Azure Blog Storage container connected to your Development environment will be copied and pasted into the container connected to your Live environment. Once all content changes have also been transferred, and the transfer is complete, your Media libraries on the two environments will now be in sync.
 
-## Media Folder
+## Media folder
 
 You will notice that there is a Media (`/media`) folder in the root of your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with Azure Blob Storage, the media files are not in this media folder.
 
-Instead, you will find a `project.assets.json` file in the `obj` folder. This file is used to connect the Media library on your Cloud environment to an Azure Blob Storage container.
+Instead, you will find a `web.config` file in the folder. This file is used to connect the Media library on your Cloud environment to an Azure Blob Storage container.
 
-## Environment Variables
+Below is an example of how the `/media/web.config` file should look by default.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <clear />
+      <add name="AzureBlobStorageFile" path="*" verb="*" type="Umbraco.Cloud.StorageProviders.AzureBlob.FileHandler, Umbraco.Cloud.StorageProviders.AzureBlob" />
+    </handlers>
+  </system.webServer>
+</configuration>
+```
+
+## Environment variables
 
 In some cases, you might want to connect to your Azure Blob Storage container for the environments on your Umbraco Cloud project. This could be to clean up unwanted media files or to download the current contents of the library.
 
@@ -62,22 +76,21 @@ You should only use the following approach, when you do not have the option to c
 In order to do this, you need to know some details about the connection between the environment and the Azure Blob Storage containers. Below are the steps you need to follow, in order to locate the necessary variables:
 
 1. Access [Kudu](../Power-Tools) on your Cloud environment.
-2. Locate the **Environment** page in the top navigation.
-3. Scroll to the section containing **Environment variables**.
+2. Locate the "Environment" page in the top navigation.
+3. Scroll to the section containing "Environment variables".
 
-There are 4 variables related to the Azure Blob Storage container on your environment:
+There is a total of 5 variables related to the Azure Blob Storage container on your environment:
 
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__CONTAINERALIAS`
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__CONTAINERNAME`
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__ENDPOINT`
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__SHAREDACCESSSIGNATURE`
+* `APPSETTING_Umbraco.Cloud.AzureBlob.BlobStorageAccountName`
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.ContainerAlias`
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.ContainerName`
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.Endpoint`
+* `APPSETTING_Umbraco.Cloud.StorageProviders.AzureBlob.SharedAccessSignature`
 
-Once you have the variables, use the ["Connect to Azure Storage Explorer"](Connect-to-Azure-Storage-Explorer) guide to connect to your storage container.
+Once you have the variables, use the ["Connect to Azure Storage Explorer"](Connect-to-Azure-Storage-Explorer) guide to connect to your storage container. 
 
 :::links
-
-## Related Articles
-
-* [Rewrites will impact your media rendering as well - read about the best practices in here](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/)
-* [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface - read more about that here](https://our.umbraco.com/Documentation/Reference/Config/fileSystemProviders/#get-the-contents-of-a-file-as-a-stream)
+## Related articles
+- [Rewrites will impact your media rendering as well - read about the best practices in here](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/)
+- [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface - read more about that here](https://our.umbraco.com/Documentation/Reference/Config/fileSystemProviders/#get-the-contents-of-a-file-as-a-stream)
 :::

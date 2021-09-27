@@ -1,10 +1,9 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 7.0.0
 ---
 
 # Baselines
-
-A Baseline Child project is very similar to a Fork (forked repository) on GitHub where we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
+A Baseline Child project is very similar to a Fork (forked repository) on GitHub in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
 Any project can act as a Baseline project.
 
@@ -14,34 +13,26 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 
-## Creating a Child Project
+## Video Tutorial
 
-To create a child project:
+<iframe width="800" height="450" src="https://www.youtube.com/embed/t4zI8_F33LM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
-2. Click the **Create New Project** button.
-3. Select **Umbraco Cloud** from the **Create New Project** window.
-4. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
-5. In the **Project Information** window, enter the following details:
-    - Enter the **Project Name**.
-    - **Choose an Owner** from the drop-down list.
-    - From the **Choose baseline (Optional)** drop-down list, select the Cloud project the new project should be based on.
-    :::note
-    Any Umbraco Cloud project can be used as a Baseline project
-    :::
-    - Select the **Region** from the drop-down list.
-    - Select **I want to create an Umbraco 9 project**.
-    - Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-6. Click **Create Project** and you will be redirected to the new project.
+## Step-by-step
+
+### Creating a Child project
+
+* Choose the “Create new Project” option from the Umbraco Cloud Portal - choose either the Starter, the standard or the Professional plan for your new project
+* Choose a name for your new project
+* From the *Choose baseline (Optional)* dropdown, choose which of your other Cloud project the new project should be based on
+    - Note that any Umbraco Cloud project can be used as a Baseline project
+* Click **Create project** and you will be redirected to the new project where you can follow the creation progress.
     - It might take several minutes for the project to spin up and before your environments are ready.
 
-When your environments are ready, you will see a *green* light next to the environment name.
+When your environments are ready you will see a *green* light next to the environment name.
 
-![Creating a Baseline child project](images/create-baseline-child-project-v9.gif)
+![Creating a Baseline child project](images/create-baseline-child-project.gif)
 
-:::note
-Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
-:::
+**Note:** Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
 
 ### Restore content from the Baseline project
 
