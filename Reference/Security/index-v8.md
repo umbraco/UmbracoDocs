@@ -12,17 +12,17 @@ In this article, you will find everything you need regarding security within Umb
 
 On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-## [SSL/HTTPS](use-https.md)
+## [SSL/HTTPS](use-https-v8.md)
 
 We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
-## [Password settings](Security-settings)
+## [Password settings](Security-settings/index-v8.md)
 
 Learn which password settings that can be configured in Umbraco.
 
-## [Security Hardening](Security-hardening)
+## [Security Hardening](Security-hardening/index-v8.md)
 
 Learn about how to can harden the security on your Umbraco website to secure it even further.
 
@@ -38,11 +38,11 @@ Out of the box Umbraco ships with a custom ASP.NET Identity implementation which
 
 The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers).
 
-### [External login providers](external-login-providers)
+### [External login providers](external-login-providers/index-v8.md)
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-### [BackOfficeUserManager](backoffice-user-manager.md) and Events
+### [BackOfficeUserManager](backoffice-user-manager-v8.9.md) and Events
 
 The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
 
@@ -64,18 +64,18 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](sensitive-data.md) article.
 
-## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index-v8.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
-## [Reset admin password](reset-admin-password.md)
+## [Reset admin password](reset-admin-password-v8.md)
 
-Use this guide to [reset the password of the "admin" user](reset-admin-password.md).
+Use this guide to [reset the password of the "admin" user](reset-admin-password-v8.md).
 
 If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
 
 ## Other articles related to security
 
-* [Routing requirements for backoffice authentication](../Routing/Authorized/)
-* [Health Checks](../../Extending/Health-Check/)
-* [Consent Service](../Management/Services/ConsentService/)
+* [Routing requirements for backoffice authentication](../Routing/Authorized-v8)
+* [Health Checks](../../Extending/Health-Check/index-v8.md)
+* [Consent Service](../Management/Services/ConsentService/index-v8.md)

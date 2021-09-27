@@ -92,7 +92,7 @@ This would request the 'Super Fancy Product' page but force it to be loaded with
 The final part of this url is assumed to be the 'altTemplate' querystring value.
 
 :::note
-In Umbraco 8 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IUserComposer` (see an example on the [IContentFinder documentation page](Request-Pipeline/IContentFinder.md)).
+In Umbraco 8 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IUserComposer` (see an example on the [IContentFinder documentation page](Request-Pipeline/IContentFinder-v8.md)).
 :::
 
 ### Summary - How the route hijacking convention works
@@ -246,7 +246,7 @@ public class ProductListingPageController : Umbraco.Web.Mvc.RenderMvcController
 }
 ```
 ## Controller Injection
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See (Services and Helpers)[../../Implementation/Services/#custom-services-and-helpers-1] for more info on this.
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../Implementation/Services/index-v8.md#custom-services-and-helpers-1) for more info on this.
 
 For example:
 
@@ -286,7 +286,7 @@ To wire up a concrete instance of IMadeUpProductService, use a composer:
     }
 ```
 
-See [Composing](../../Implementation/Composing/) for further information.
+See [Composing](../../Implementation/Composing/index-v8.md) for further information.
 
 ## Replace Umbraco's default `RenderMVCController`
 

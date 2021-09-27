@@ -18,7 +18,7 @@ Below lists the ways in which you can customize the inbound request pipeline, th
 
 All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to a Umbraco content item.
 
-See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v9.md)
+See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder.md)
 
 ### Last Chance IContentFinder
 
@@ -45,7 +45,7 @@ namespace My.Website
 }
 ```
 
-For more detailed information see: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v9#notfoundhandlers)
+For more detailed information see: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder.md#notfoundhandlers)
 
 ## Custom MVC routes
 
@@ -99,12 +99,12 @@ namespace CustomRoutes
 ```
 
 :::note
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers-v9.md). 
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers.md).
 :::
 
 ### RoutingRequestNotification
 
-You can subscribe to the `RoutingRequestNotification` which is published right after the point when the `PublishedRequestBuilder` is prepared - (but before it is ready to be processed). Here you can modify anything in the request before it is processed, eg. content, template, etc: 
+You can subscribe to the `RoutingRequestNotification` which is published right after the point when the `PublishedRequestBuilder` is prepared - (but before it is ready to be processed). Here you can modify anything in the request before it is processed, eg. content, template, etc:
 
 ```csharp
 using Umbraco.Cms.Core.Events;

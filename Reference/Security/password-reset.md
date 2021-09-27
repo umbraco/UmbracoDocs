@@ -10,7 +10,7 @@ It's impossible to brute force the authentication on the login screen because af
 
 When you submit the password reset form, an email is sent to the user with a link. This link contains a random token for this user that is valid for 24 hours.
 
-The settings `AllowPasswordReset` is documented in the [Umbraco Security Settings](../V9-Config/SecuritySettings/) and e-mail configuration settings in [Backoffice Login Password Reset Section](../../Fundamentals/Backoffice/Login/index-v9.md#password-reset)
+The settings `AllowPasswordReset` is documented in the [Umbraco Security Settings](../V9-Config/SecuritySettings/) and e-mail configuration settings in [Backoffice Login Password Reset Section](../../Fundamentals/Backoffice/Login/index.md#password-reset)
 
 ## Password reset of a non-existing user
 
@@ -22,4 +22,4 @@ If a user is locked out, it is possible to do a password reset. After the e-mail
 
 ## Reset admin user password
 
-If you lost the admin user password and you need to reset is, [check this article](reset-admin-password-v9.md).
+If you lost the admin user password and you need to reset is, [check this article](reset-admin-password.md).

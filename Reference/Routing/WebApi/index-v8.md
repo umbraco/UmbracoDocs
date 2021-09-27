@@ -102,7 +102,7 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
 
-For more information about areas, Urls and routing see the [routing section](routing.md)
+For more information about areas, Urls and routing see the [routing section](routing-v8.md)
 
 ## Backoffice controllers
 
@@ -121,7 +121,7 @@ E.g
 
 ### More Information
 
-* [Authenticating & Authorizing controllers](../Authorized/index.md)
+* [Authenticating & Authorizing controllers](../Authorized/index-v8.md)
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 

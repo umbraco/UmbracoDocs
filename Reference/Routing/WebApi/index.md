@@ -98,7 +98,7 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 E.g. *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
 
-For more information about areas, Urls and routing see the [routing section](routing-v9.md)
+For more information about areas, Urls and routing see the [routing section](routing.md)
 
 ## Backoffice controllers
 

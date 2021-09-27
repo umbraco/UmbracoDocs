@@ -241,7 +241,7 @@ Returns a `Boolean` on whether there is currently a member profile
 
 ### .MemberHasAccess(string path)
 
-Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties.md#path).
+Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties/index-v8.md#path).
 
 ```csharp
 @if (Umbraco.MemberHasAccess(Model.Path))
@@ -252,7 +252,7 @@ Returns a `Boolean` on whether the currently logged in member has access to the 
 
 ### .IsProtected(string path)
 
-Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties.md#path) has public access restrictions set.
+Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties/index-v8.md#path) has public access restrictions set.
 
 ```csharp
 @foreach (var child in Model.Children) {

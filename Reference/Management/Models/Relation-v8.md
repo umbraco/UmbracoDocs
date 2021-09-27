@@ -1,15 +1,13 @@
 ---
-versionFrom: 9.0.0
-verified-against: rc-1
+versionFrom: 8.0.0
 meta.Title: "Relation Model"
-meta.Description: "Represents a Relation between two items."
 ---
 
 # Relation
 
 Represents a Relation between two items.
 
-* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Namespace:** `Umbraco.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -19,7 +17,7 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Cms.Core.Models;
+using Umbraco.Core.Models;
 ```
 
 ## Constructors

@@ -303,7 +303,7 @@ public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.R
 
 ## Controller Injection
 
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See (Services and Helpers)[../../Implementation/Services/#custom-services-and-helpers-1] for more info on this.
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../Implementation/Services/index.md#custom-services-and-helpers-1) for more info on this.
 
 For example:
 

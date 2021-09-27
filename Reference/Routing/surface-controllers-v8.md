@@ -140,4 +140,4 @@ Encryption/decryption is done using the machine key (configured in the `Web.conf
 
 ### Surface Controller Actions
 
-You can read more about the surface controller [action result helpers](surface-controllers-actions.md).
+You can read more about the surface controller [action result helpers](surface-controllers-actions-v8.md).

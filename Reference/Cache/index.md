@@ -18,7 +18,7 @@ In normal environments caching seems to be a pretty standard concept. If you are
 
 ## Retrieving and Adding items in the cache
 
-You can [update and insert items in the cache](updating-cache-v9.md).
+You can [update and insert items in the cache](updating-cache.md).
 
 ## Refreshing/Invalidating cache
 

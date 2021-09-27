@@ -55,7 +55,7 @@ Information on Umbraco security, its various security options and configuring ho
 
 This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
 
-## API Documentation
+## API Documentation V8
 
 #### [C# API Documentation](https://our.umbraco.com/apidocs/v8/csharp/)
 
@@ -64,6 +64,16 @@ __Note: opens a documentation browser that is different from the documentation s
 C# API references for the Umbraco Core and Web libraries.
 
 #### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
+
+## API Documentation V9
+
+#### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
+
+#### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+
+#### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
+
+#### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 

@@ -18,7 +18,7 @@ Below lists the ways in which you can customize the inbound request pipeline, th
 
 All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to an Umbraco content item.
 
-See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder)
+See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v8.md)
 
 ### Last Chance IContentFinder
 
@@ -47,7 +47,7 @@ namespace My.Website
 
 ```
 
-For more detailed information see: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder#notfoundhandlers)
+For more detailed information see: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v8.md#notfoundhandlers)
 
 ## Custom MVC routes
 
@@ -97,10 +97,10 @@ namespace Umbraco8.Components
 }
 ```
 
-See: [Custom routing documentation](../../Reference/Routing/custom-routes)
+See: [Custom routing documentation](../../Reference/Routing/custom-routes-v8.md)
 
 :::note
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers). 
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers-v8.md). 
 :::
 
 ### PublishedRequest.Prepared event

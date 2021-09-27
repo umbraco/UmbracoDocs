@@ -58,7 +58,7 @@ The FindDomain method looks for a domain matching the request Uri
 5. FollowExternalRedirect()
 6. HandleWildcardDomains()
 
-If content is not found, the ContentFinder kicks in.  In the past this was handled by the INotFoundHandler, but the new request pipeline uses [IContentFinder](IContentFinder.md).
+If content is not found, the ContentFinder kicks in.  In the past this was handled by the INotFoundHandler, but the new request pipeline uses [IContentFinder](IContentFinder-v8.md).
 
 More information can be found [here](FindPublishedContentAndTemplate.md).
 
@@ -100,7 +100,7 @@ A missing template goes to MVC
 
 There's one by default but you can use your own, so still time to change the view...
 
-As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this:
+As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers-v8.md) works like this:
 
 - create a **MyContentType**Controller
   - Will run in place of the default controller

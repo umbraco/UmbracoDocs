@@ -21,7 +21,7 @@ public class MyClass
     }
 }
 
-[Read more about how to inject AppCaches](applicationcache.md).
+[Read more about how to inject AppCaches](applicationcache-v8.md).
 
 ```
 

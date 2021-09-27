@@ -190,4 +190,4 @@ Note this doesn't protect against Cross-Site Request Forgery (CSRF) attacks, the
 
 ### Surface Controller Actions
 
-You can read more about the surface controller [action result helpers](surface-controllers-actions-v9.md).
+You can read more about the surface controller [action result helpers](surface-controllers-actions.md).
