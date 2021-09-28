@@ -121,6 +121,7 @@ Each plugin could be different depending on its implementation and functionality
 :::
 ```suggestion
 The `/wwwroot/umbraco` folder contains static assets for the backoffice, these files will be automatically created when you do a build, and should not be included in source control.
+```
 
 #### Umbraco Models Builder
 
