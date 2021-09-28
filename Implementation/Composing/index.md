@@ -1,135 +1,57 @@
 ---
-keywords: composing composers components runtime boot booting v8 version8 events registering
-versionFrom: 8.0.0
+keywords: composing composers components runtime boot booting v9 version9 events registering
+versionFrom: 9.0.0
 meta.Title: "Composers in Umbraco"
 meta.Description: "Customising the behaviour of an Umbraco Application at start up"
 ---
 
 # Composing
-Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
+Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to notifications.
 
 ## Overview
 An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
-A `Component` is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below)
+A `Component` is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively.
+The functionality of a `Component` is identical to having a class handling both the `UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`.
 
-How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class or implement a particular interface (typed scanned) or by being explicitly registered via a `Composer`.
+How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class
+or implement a particular interface (typed scanned) or by being explicitly registered via a `Composer`.
 
-Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc. by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
+Umbraco setup the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour.
+These default collections can be removed, reordered, replaced, etc. by implementing `IComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
-### Example - Explicitly Registering a new custom OEmbedProvider
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
+### Example - Creating a Composer to listen for ContentSavingNotification
 
-```csharp
-using System.Collections.Generic;
-using Umbraco.Web.Media.EmbedProviders;
+This example shows how to create a component and an notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
-namespace My.Website
-{
-    public class Spotify : EmbedProviderBase
-    {
-        public override string ApiEndpoint => "https://embed.spotify.com/oembed/";
+We create a new C# class that implements `IComposer` and use it register our notification handler.
 
-        // Playlist
-        // https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sNI4jZloSZr?si=cueBooBfTnqCGriSa4N_Kg
-        // spotify:user:spotify:playlist:37i9dQZF1E4sNI4jZloSZr
-
-        // Artist
-        // https://open.spotify.com/artist/0iirUbtgwt9jEkc2Grin8C?si=TLeUR2cHR-KPRJJhW6YiVg
-        // spotify:artist:0iirUbtgwt9jEkc2Grin8C
-
-        // Album
-        // https://open.spotify.com/album/0lvtdqkqIln6uDBBUT7DHL?si=XTVJIEmnS_OVv9l6ktPFiw
-        // spotify:album:0lvtdqkqIln6uDBBUT7DHL
-
-        // Track
-        // https://open.spotify.com/track/7aCk4XfXIEJM2MecU6Gmf2?si=vESDzI0xTNeA9FQ_dvf1eQ
-        // spotify:track:7aCk4XfXIEJM2MecU6Gmf2
-
-        public override string[] UrlSchemeRegex => new string[]
-        {
-            @".*.spotify.com/.*",
-            @"spotify:.*"
-        };
-
-        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
-
-        public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-        {
-            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
-            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
-
-            return oembed.GetHtml();
-        }
-    }
-}
-```
-
-```csharp
-using Umbraco.Core.Composing;
-using Umbraco.Web;
-
-namespace My.Website
-{
-    public class CustomOEmbedComposer : IUserComposer
-    {
-        public void Compose(Composition composition)
-        {
-            // Change the OEmbedProviders collection
-            // by adding our new EmbedProvider for Spotify
-            composition.OEmbedProviders().Append<Spotify>();
-        }
-    }
-}
-```
-See a list of collections below to determine which are 'type scanned' and which require explicit registration.
-
-### Example - Creating a Component to listen for ContentService.Saving events
-
-This example shows how to create a component to listen and respond to  `ContentService.Saving` events, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
-
-We create a new C# class that implements `IUserComposer` and use it to add our new `IComponent` to the collection of Components. When Umbraco starts up, the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
 
 ```csharp
 using System.Linq;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Events;
-using Umbraco.Core.Services;
-using Umbraco.Core.Services.Implement;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Extensions;
 
 namespace My.Website
 {
-    public class SubscribeToContentServiceSavingComposer : IUserComposer
+    public class SubscribeToContentServiceSavingComposer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            // Append our component to the collection of Components
-            // It will be the last one to be run
-            composition.Components().Append<SubscribeToContentServiceSavingComponent>();
+            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>()
         }
     }
 
-    public class SubscribeToContentServiceSavingComponent : IComponent
+    public class CustomContentSavingNotificationHandler : INotificationHandler<ContentSavingNotification>
     {
-        // initialize: runs once when Umbraco starts
-        public void Initialize()
+        public void Handle(ContentSavingNotification notification)
         {
-            ContentService.Saving += ContentService_Saving;
-        }
-
-        // terminate: runs once when Umbraco stops
-        public void Terminate()
-        {
-            //unsubscribe during shutdown
-            ContentService.Saving -= ContentService_Saving;
-        }
-
-        private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
-        {
-            foreach (var content in e.SavedEntities
+            foreach (var content in notification.SavedEntities
                 // Check if the content item type has a specific alias
                 .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType")))
             {
@@ -138,37 +60,81 @@ namespace My.Website
         }
     }
 }
+
 ```
-## Types of Composers
-
-Composers are responsible for drawing together the different components an Umbraco application is composed of. 
-
-`InitialComposer`
-
-The *CoreInitialComposer* and the *WebInitialComposer* setup everything required for Umbraco to run. The *CoreInitialComposer* runs first, followed by the *WebInitialComposer* . Registering the database builder, services, routes for *RenderMvcControllers*, *APIControllers* and *SurfaceControllers* are some of the resposibilities of these two composers. 
-
-These composers run before any other composers and there should only be one instance of each of these composers. They belong to Umbraco and must not be used for any customisations. 
-
-After the InitialComposer's there are two groups of composers that execute, they implement the following interfaces to control the order in which they are run:
-
-
-`ICoreComposer`
-
-After the WebInitialComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run. Some of the responsibilities covered by ICoreComposers include registering ModelsBuilder, registering the log viewer, registering the component responsible for writing into the audit logs, etc.
-
-`IUserComposer`
-
-Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or for use in package development.
 
 :::warning
-Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding, that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
+Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding,
+that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
 :::
+
+### Example - Explicitly Registering a new custom OEmbedProvider
+This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
+
+```csharp
+using System.Collections.Generic;
+using Umbraco.Cms.Core.Media.EmbedProviders;
+using Umbraco.Cms.Core.Serialization;
+namespace My.Website
+{
+    public class Spotify : EmbedProviderBase
+    {
+        public Spotify(IJsonSerializer jsonSerializer)
+            : base(jsonSerializer)
+        {
+        }
+        public override string ApiEndpoint => "https://embed.spotify.com/oembed/";
+        // Playlist
+        // https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sNI4jZloSZr?si=cueBooBfTnqCGriSa4N_Kg
+        // spotify:user:spotify:playlist:37i9dQZF1E4sNI4jZloSZr
+        // Artist
+        // https://open.spotify.com/artist/0iirUbtgwt9jEkc2Grin8C?si=TLeUR2cHR-KPRJJhW6YiVg
+        // spotify:artist:0iirUbtgwt9jEkc2Grin8C
+        // Album
+        // https://open.spotify.com/album/0lvtdqkqIln6uDBBUT7DHL?si=XTVJIEmnS_OVv9l6ktPFiw
+        // spotify:album:0lvtdqkqIln6uDBBUT7DHL
+        // Track
+        // https://open.spotify.com/track/7aCk4XfXIEJM2MecU6Gmf2?si=vESDzI0xTNeA9FQ_dvf1eQ
+        // spotify:track:7aCk4XfXIEJM2MecU6Gmf2
+        public override string[] UrlSchemeRegex => new string[]
+        {
+            @".*.spotify.com/.*",
+            @"spotify:.*"
+        };
+        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
+        public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+        {
+            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
+            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
+            return oembed.GetHtml();
+        }
+    }
+}
+```
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+namespace My.Website
+{
+    public class CustomOEmbedComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            // Change the OEmbedProviders collection
+            // by adding our new EmbedProvider for Spotify
+            builder.OEmbedProviders().Append<Spotify>();
+        }
+    }
+}
+```
+See a list of collections below to determine which are 'type scanned' and which require explicit registration.
 
 ### ComponentComposer&lt;T&gt;
 It's an implementation of `IComposer`, that provides a quicker way to add a custom component to the Component's collection. Creating a C# class that inherits from `ComponentComposer<YourComponentType>` will automatically add `YourComponentType` to the collection of Components. In the example above, the `SubscribeToContentServiceSavingComposer` for the `SubscribeToContentServiceSavingComponent` could have been written more conveniently as:
 
 ```csharp
-public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>, IUserComposer
+public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
 { }
 ```
 
@@ -180,17 +146,18 @@ Below is a list of collections with their corresponding 'collection type' and ho
 
 | Collection                | Type      | Registration                                                      |
 | ---                       | ---       | ---                                                               |
+| Actions                   | Lazy      | Type scanned for `IAction`                                        |
 | CacheRefreshers           | Lazy      | Type scanned for `ICacheRefresher`                                |
 | Components                | Ordered   | Explicit Registration                                             |
 | ContentApps               | Ordered   | Package.manifest & Explicit Registration                          |
 | ContentFinders            | Ordered   | Explicit Registration                                             |
-| Dashboards                | Weighted  | Package.manifest & Type scanned for `IDashboard`                  |
+| Dashboards                | Weighted  | Package.manifest & Explicit Registration                          |
 | DataEditors               | Lazy      | Type scanned for `IDataEditor`                                    |
-| FilteredControllerFactory | Ordered   | Explicit Registration                                             |
+| EditorValidators          | Lazy      | Type scanned for `IEditorValidator`                               |
 | HealthChecks              | Lazy      | Type scanned for `HealthCheck`                                    |
+| ManifestValueValidators   | Set       | Explicit Registration                                             |
 | OEmbedProviders           | Ordered   | Explicit Registration                                             |
-| PackageActions            | Lazy      | Type scanned for `IPackageAction`                                 |
-| PropertyValueConvertors   | Ordered   | Type scanned for `IPropertyValueConverter`                        |
+| PropertyValueConverters   | Ordered   | Type scanned for `IPropertyValueConverter`                        |
 | SearchableTrees           | Lazy      | Type scanned for `ISearchableTree`                                |
 | Sections                  | Ordered   | Package.manifest & Explicit Registration                          |
 | TourFilters               | Base      | Empty collection                                                  |
@@ -201,6 +168,10 @@ Below is a list of collections with their corresponding 'collection type' and ho
 
 
 ### Types of Collections
+
+Set<br/>
+`SetCollectionBuilderBase` - The base class for collection builders that do not order their items explicitly.
+
 Ordered<br/>
 `OrderedCollectionBuilderBase` - The base class for collection builders that order their items explicitly.
 
@@ -216,25 +187,23 @@ Lazy<br/>
 This example shows how to control which Healthchecks are available to run in the Umbraco backoffice. Create a C# class which implements IUserComposer, the Compose method gives access to the HealthChecks collection of the Umbraco Composition - first we clear all HealthChecks from the collection, then add back in the ones we want to keep:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Web;
-using Umbraco.Web.HealthCheck.Checks.Permissions;
-using Umbraco.Web.HealthCheck.Checks.Security;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.HealthChecks.Checks.Permissions;
+using Umbraco.Cms.Core.HealthChecks.Checks.Security;
 
 namespace My.Website
 {
-    public class MyComposer : IUserComposer
+    public class MyComposer: IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
             // Remove all HealthChecks
-            composition.HealthChecks().Clear();
+            builder.HealthChecks().Clear();
 
             // Explicitly add back the ones we want to use
-            composition.HealthChecks().Add<FolderAndFilePermissionsCheck>();
-            composition.HealthChecks().Add<ExcessiveHeadersCheck>();
-
+            builder.HealthChecks().Add<FolderAndFilePermissionsCheck>();
+            builder.HealthChecks().Add<ExcessiveHeadersCheck>();
         }
     }
 }
@@ -249,9 +218,9 @@ A finer-grain mechanism can then be used to refine the order of composition. Eac
 
 ```csharp
 [ComposeBefore(typeof(ThatOtherComposer))]
-public class ThisComposer : IUserComposer
+public class ThisComposer : IComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
     }
 }
@@ -307,7 +276,7 @@ When used without arguments, these attributes apply to the composer they are mar
 [Disable(typeof(Way1Composer))]
 public class MyComposer : IComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
         // ...
     }
@@ -325,35 +294,9 @@ But maybe they want to swap our two "something" implementations? In this case, a
 Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
 :::
 
-### [RuntimeLevel]
-
-The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
-
-By default, any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus does not need to explicitly add the attribute as shown in the example below.
-
-```csharp
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-
-namespace My.Website
-{
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class MyComposer : IUserComposer
-    {
-        public void Compose(Composition composition)
-        {
-        }
-    }
-}
-```
-
-:::tip
-If you wish to see the order of components when Umbraco boots, then you can see this information in the logs of Umbraco.
-:::
-
 ## Runtime Levels
 
-The `Umbraco.Core.RuntimeLevel` enum contains the following values:
+The `Umbraco.Cms.Core.RuntimeLevel` enum contains the following values:
 
 `BootFailed`
 
@@ -384,9 +327,11 @@ The runtime has detected an up-to-date Umbraco install and is running.
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`.
 
 ```csharp
+using System;
 using System.Collections.Generic;
-using Umbraco.Core.Composing;
-using Umbraco.Web.WebApi;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Web.BackOffice.Controllers;
 
 namespace TestCollections.Code
 {
@@ -416,23 +361,24 @@ namespace TestCollections.Code
 
     public class MyThingsCollection : BuilderCollectionBase<IMyThing>
     {
-        public MyThingsCollection(IEnumerable<IMyThing> items)
+        public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
             : base(items)
-        { }
+        {
+        }
     }
 
     public static class WebCompositionExtensions
     {
-        public static MyThingsCollectionBuilder MyThings(this Composition composition)
-            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+        public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
+            => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
     }
 
     public class MyThingComposer : IUserComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
             // Explicitly add to the collection a Type in a specific order
-            composition.MyThings().Append<ExampleThing>()
+            builder.MyThings().Append<ExampleThing>()
                 .Append<AnotherThing>()
                 .Append<SomeOtherThing>();
         }
@@ -477,9 +423,11 @@ If you still need to use type scanning, ensure your Interface implements `IDisco
 :::
 
 ```csharp
+using System;
 using System.Collections.Generic;
-using Umbraco.Core.Composing;
-using Umbraco.Web.WebApi;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Web.BackOffice.Controllers;
 
 namespace TestCollections.Code
 {
@@ -507,25 +455,26 @@ namespace TestCollections.Code
 
     public class MyThingsCollection : BuilderCollectionBase<IMyThing>
     {
-        public MyThingsCollection(IEnumerable<IMyThing> items)
+        public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
             : base(items)
-        { }
+        {
+        }
     }
 
     public static class WebCompositionExtensions
     {
-        public static MyThingsCollectionBuilder MyThings(this Composition composition)
-            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+        public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
+            => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
     }
 
     public class MyThingComposer : IUserComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
             // Add types from assemblies - be conscious of doing type scanning
             // as this adds time to boot up of Umbraco
             // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
-            composition.MyThings().Add(() => composition.TypeLoader.GetTypes<IMyThing>());
+            builder.MyThings().Add(() => builder.TypeLoader.GetTypes<IMyThing>());
         }
     }
 

@@ -148,7 +148,7 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Tree notifications
 
-See [Tree Notifications](../../Extending/Section-Trees/trees-v9.md) for a listing of the tree notifications.
+See [Tree Notifications](../../Extending/Section-Trees/trees.md) for a listing of the tree notifications.
 
 ## Editor Model Notifications
 

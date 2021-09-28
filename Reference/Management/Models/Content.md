@@ -1,15 +1,18 @@
 ---
-versionFrom: 8.0.0
-meta.title: "Content Model"
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "Content Model"
+meta.Description: "The Content class represents a single item in the content tree, its values are fetched directly from the database, not from the cache." 
 ---
+
 # Content
 
 The `Content` class represents a single item in the content tree, its values are fetched directly from the database, not from the cache. **Notice** the Content class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
 All content is versioned, so on each individual change, a new version is stored. Past versions can only be retrieved from the `Content` api, not from the cache.
 
- * **Namespace:** `Umbraco.Core.Models`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -18,8 +21,8 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
@@ -28,13 +31,21 @@ using Umbraco.Core.Services;
 
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
 
+### new Content(string name, IContent parent, IContentType contentType, int userId, string culture = null)
+
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object for the Content being created and the id of the user as a `int`. In addition, there is an optional parameter for the culture.
+
 ### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties, string culture = null)
 
-Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.In addition, there is an optional parameter for the culture.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created. In addition, there is an optional parameter for the culture.
 
 ### new Content(string name, int parentId, IContentType contentType, string culture = null)
 
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created. In addition, there is an optional parameter for the culture.
+
+### new Content(string name, int parentId, IContentType contentType, int userId, string culture = null)
+
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent id of the Content as an `int` object, the ContentType as an `IContentType` object for the Content being created and the id of the user as a `int`. In addition, there is an optional parameter for the culture.
 
 ### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties, string culture = null)
 
@@ -152,7 +163,7 @@ return content.Path;
 
 ### .Properties
 
-Gets or Sets the `PropertyCollection` object, which is a collection of `Property` objects. Each property corresponds to a `PropertyType`, which is defined on the `ContentType`.
+Gets or Sets the `IPropertyCollection` object, which is a collection of `IProperty` objects. Each property corresponds to a `PropertyType`, which is defined on the `ContentType`.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and loop through all Properties
@@ -177,7 +188,7 @@ return content.Published;
 
 ### .PublishDate
 
-If set, returns `DateTime` indicating when the `Content` should be published and made available on the website and cache.
+If set, returns `DateTime?` indicating when the `Content` should be published and made available on the website and cache.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and set the release date to 4 days from now
@@ -197,7 +208,7 @@ return content.SortOrder;
 
 ### .PublishedState
 
-Returns a `PublishedState` enum with the status of the Content being either Unpublished, Published, Publishing, Unpublishing.
+Returns a `IPublishedState` enum with the status of the Content being either Unpublished, Published, Publishing, Unpublishing.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return its Status

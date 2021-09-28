@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+state: complete
+verified-again: beta-1
 ---
 
 # Adding a workflow type to Umbraco Forms
@@ -18,25 +20,27 @@ using Umbraco.Forms.Core.Persistence.Dtos;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Composing;
 
-namespace PrereleaseForm8_4.Workflows
+namespace MyFormsExtensions
 {
-    /// <summary>
-    /// Summary description for TestWorkflow
-    /// </summary>
     public class TestWorkflow : WorkflowType
     {   
-        public TestWorkflow()
+        private readonly ILogger<TestWorkflow> _logger;
+
+        public TestWorkflow(ILogger<TestWorkflow> logger)
         {
+            _logger = logger;
+
             this.Id = new Guid("ccbeb0d5-adaa-4729-8b4c-4bb439dc0202");
             this.Name = "TestWorkflow";
             this.Description = "This workflow is just for testing";
             this.Icon = "icon-chat-active";
             this.Group = "Services";                      
         }
-        public override WorkflowExecutionStatus Execute(Record record, RecordEventArgs e)
+
+        public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
         {
             // first we log it
-            Current.Logger.Debug<TestWorkflow>("the IP " + record.IP + " has submitted a record");            
+            _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");            
 
             // we can then iterate through the fields
             foreach (RecordField rf in record.RecordFields.Values)
@@ -51,8 +55,8 @@ namespace PrereleaseForm8_4.Workflows
             //Change the state
             record.State = FormState.Approved;
 
-            Current.Logger.Debug<TestWorkflow>("The record with unique id {RecordId} that was submitted via the Form {FormName} with id {FormId} has been changed to {RecordState} state",
-               record.UniqueId, e.Form.Name, e.Form.Id, "approved");
+            _logger.LogDebug("The record with unique id {RecordId} that was submitted via the Form {FormName} with id {FormId} has been changed to {RecordState} state",
+               record.UniqueId, context.Form.Name, context.Form.Id, "approved");
 
             return WorkflowExecutionStatus.Completed;
         }
@@ -60,10 +64,9 @@ namespace PrereleaseForm8_4.Workflows
         public override List<Exception> ValidateSettings()
         {
             return new List<Exception>();
-        }
-       
+        }       
     }
 }
 ```
 
-The `Execute()` method gets a `Record` and a `RecordEventArgs` argument. These 2 arguments contains all information related to the workflow. The record contains all data and meta data submitted by the form. The RecordEventArgs contains references to what form the record is from, what state it is in and a reference to the current `HttpContext`.
+The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  Essentially, this parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides it's state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (e.g. the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).

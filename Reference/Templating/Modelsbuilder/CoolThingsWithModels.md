@@ -1,30 +1,38 @@
 ---
-versionFrom: 8.5.0
+versionFrom: 9.0.0
+meta.Title: "Cool Things to do With Models"
+meta.Description: "Cool things you can do with models"
+state: complete
+verified-against: beta-3
+update-links: true
 ---
-
 # Cool things you can do with strongly-typed models
 
-## Declarative style in Razor
-
-The **apply-templates** and **match="..."** features are part of XSLT and lets you declare how to handle various types of content. You can tell XSLT how to render some types of content, and then you can ask XSLT to "render that content" and it will figure it out. Much nicer than ugly huge **switch(...)** or **if-else** statements.
-
-Turns out it is possible to do something similar in Razor. Assuming `content` is an `IPublishedContent` instance that can be of any content type (but is strongly typed, and is not a dynamic):
+It's possible with Razor to define functions for rendering HTML, we can leverage our strongly typed models when doing this, and even provide overloads for different types of models, that will automatically called for different models using `dynamic`
 
 ```csharp
-@* declare how to render a news item *@
-@helper RenderContent(NewsItem item)
+@functions
 {
-  <div>News! @item.Title</div>
+	// Declare how to render a news item
+	void RenderContent(NewsItem item)
+	{
+		<div>News! @item.Title</div>
+	}
+
+	// Declare how to render a product
+	void RenderContent(Product item)
+	{
+		<div>Product! @product.Name cheap at @product.Price</div>
+	}
 }
 
-@* declare how to render a product *@
-@helper RenderContent(Product product)
-{
-  <div>Product! @product.Name cheap at @product.Price</div>
+@{
+	RenderContent((dynamic) Model);
 }
-
-@* render our content *@
-@RenderContent((dynamic) content)
 ```
+
+Now, it's not recommended to create a single template and doing all the rendering via razor function, but it can be quite nifty for rendering search results, and so on.
+
+A thing that's important to note here is that `RenderContent` is called from a codeblock, and not as `@RenderContent((dynamic) Model);` the reason for this is that if you try to use the latter, razor will expect for the function to return something for it to render.
 
 By casting the strongly-typed to a dynamic when calling the **RenderContent** method, you tell C# to do late runtime binding and pick the proper **RenderContent** implementation depending on the actual CLR type of the **content** object. Using dynamic here is OK and will not pollute the rest of the code.

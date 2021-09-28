@@ -1,12 +1,14 @@
 ---
-keywords: relation type RelationType relations related
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "RelationType Model"
+meta.Description: "The `RelationType` class represents a relation definition between two node types (content or media)."
 ---
 # RelationType
 
 The `RelationType` class represents a relation definition between two node types (content or media). For example keeping track of node usage across the site, in order to avoid deleting content that is used else where. When querying a relation this is done using the parent node key unless the `RelationType` is set to bidirectional in which case you can also query using the child node key.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -16,8 +18,8 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
@@ -60,20 +62,20 @@ return relationType.IsBidirectional;
 
 ### .ParentObjectType
 
-Gets or sets the Parents object type key as `Guid`
+Gets or sets the Parents object type key as `Guid?`
 
 ```csharp
-// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+// Given a `RelationService` object get RelationType by its Id and return ParentObjectType
 var relationType = relationService.GetRelationTypeById(1234);
 return relationType.ParentObjectType;
 ```
 
 ### .ChildObjectType
 
-Gets or sets the Childs object type key as `Guid`
+Gets or sets the Childs object type key as `Guid?`
 
 ```csharp
-// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+// Given a `RelationService` object get RelationType by its Id and return ChildObjectType
 var relationType = relationService.GetRelationTypeById(1234);
 return relationType.ChildObjectType;
 ```
