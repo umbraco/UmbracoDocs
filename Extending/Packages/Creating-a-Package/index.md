@@ -73,7 +73,7 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 ### Package Actions section
 
-Here, you can add package actions. There are a number of [default package actions](../Package-Actions/index-v9.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
+Here, you can add package actions. There are a number of [default package actions](../Package-Actions/index.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
 
 Finally, after filling out all the information we can select **Create** to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 

@@ -66,7 +66,7 @@ namespace MyNamespace
 
 Notice how the `PropertyEditorAsset` attribute is used to load the `UnicornBlocks.controller.js` JavaScript file.
 
-Your Property Editor will need a `PropertyValueConverter`. Read more about [Property Value Converters](value-converters-v9.md).
+Your Property Editor will need a `PropertyValueConverter`. Read more about [Property Value Converters](value-converters.md).
 
 ## Data structure of Block Editors
 
