@@ -1,5 +1,10 @@
 ---
-versionFrom: 8.5.0
+versionFrom: 9.0.0
+meta.Title: "Using Modelsbuilder interfaces"
+meta.Description: "Using interfaces with modelsbuilder"
+state: complete
+verified-against: beta-3
+update-links: true
 ---
 
 # Using Interfaces
@@ -8,16 +13,16 @@ When using compositions, Models Builder generates an interface for the composed 
 
 A common use-case for this is if you have a separate composition for the "SEO properties" `Page Title` and `Page Description`.
 
-You would usually use this composition on both your `Home` and `Textpage` document types. You won't be able to use the simpler Models Builder syntax (e.g. `Model.PageTitle`) to render them on neither the **Home** template nor
-the **Textpage** template. This is because they would be bound to their respective models. And you won't be able to use it on any Master Template they'd be children of, because that would need to be bound to the generic `IPublishedContent`.
-So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties.
+You would usually use this composition on both your `Home` and `Textpage` document types. Since both `Home` and `Textpage` will implement the generated `ISeoProperties` interface, you will still be able to use the simpler models builder syntax (e.g. `Model.PageTitle`).
+
+However, you won't be able to use the nice models builder syntax on any master template, since a master template needs to be bound to a generic `IPublishedContent`. So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties. It is possible to solve this issue of master templating, by using partial views, to render the SEO specific properties. 
 
 ## Render with a partial
 
 If you create a partial and change the first line to use the *interface name* for the model binding, you can use the nice Models Builder syntax when rendering the properties, like this:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ISeocomposition>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISeoProperties>
 <title>@Model.PageTitle</title>
 <meta name="description" content="@Model.PageDescription">
 ```
@@ -28,4 +33,7 @@ You can then render the partial from your Master Template with something like th
 <head>
     @Html.Partial("Metatags")
 </head>
+@RenderBody()
 ```
+
+It's important to note though, that this master template will only work for content types that use the Seo Properties composition.

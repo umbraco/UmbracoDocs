@@ -144,7 +144,7 @@ Checks if the current member is authorized for content protected by types, group
 
 ### IsProtectedAsync()
 
-Returns a `Task<bool>` specifying if the page with a given [Umbraco path](../IPublishedContent/Properties/index-v9.md#Path) has public access restrictions set.
+Returns a `Task<bool>` specifying if the page with a given [Umbraco path](../IPublishedContent/Properties/index.md#Path) has public access restrictions set.
 
 ```csharp
 <ul>
@@ -164,7 +164,7 @@ Returns a `Task<bool>` specifying if the page with a given [Umbraco path](../IPu
 
 ### MemberHasAccessAsync(string)
 
-Returns a `Task<bool>` specifying if the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties/index-v9.md#Path).
+Returns a `Task<bool>` specifying if the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties/index.md#Path).
 
 ```csharp
 <ul>
