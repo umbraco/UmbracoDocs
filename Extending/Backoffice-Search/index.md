@@ -97,4 +97,4 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,    
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../Section-Trees/Searchable-Trees/index-v9.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index-v9.md")
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../Section-Trees/Searchable-Trees/index.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index.md")
