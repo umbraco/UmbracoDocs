@@ -80,4 +80,4 @@ There is also a public extension method `ParsePlaceHolders()` extending the `str
 
 ---
 
-Prev: [Configuration](../Configuration/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Health Checks](../Healthchecks/index.md)
+Prev: [Configuration](../Configuration/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Health Checks](../Healthchecks/index.md)

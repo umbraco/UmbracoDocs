@@ -1,7 +1,8 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 meta.Title: "Learn how to implement an Umbraco site"
 meta.Description: "Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco."
+Links-updated: partial
 ---
 # Implementation
 
@@ -108,7 +109,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
     <div class="col-xs-9">
         <div class="row explain">
             <div class="col-xs-12">
-                <h4 class="text-right"><a href="Composing/">Composing</a></h4>
+                <h4 class="text-right"><a href="Composing/index">Composing</a></h4>
                 <small>Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.</small>
             </div>
         </div>
@@ -125,7 +126,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
     <div class="col-xs-9">
         <div class="row explain">
             <div class="col-xs-12">
-                <h4 class="text-right"><a href="Services/">Services</a></h4>
+                <h4 class="text-right"><a href="Services/index">Services</a></h4>
                 <small>Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site.</small>
             </div>
         </div>
@@ -147,4 +148,4 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
         </div>
     </div>
 </div>
-    
+

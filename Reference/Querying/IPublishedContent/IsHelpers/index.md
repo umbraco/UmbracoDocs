@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.0.0
+state: complete
+updated-links: true
+verified-against: alpha-4
+versionFrom: 9.0.0
 ---
 
 # IPublishedContent IsHelpers
@@ -18,7 +21,7 @@ An IsHelper can be invoked as a method of an `IPublishedContent`.
 @{
 if(item.IsVisible())
 {
-<a href="@item.Url">@item.Name</a>
+<a href="@item.Url()">@item.Name</a>
 }
 }
 ```
@@ -40,12 +43,13 @@ Test whether the specified `templateId` is an allowed template for the current n
 Test whether the specified `templateAlias` is an allowed template for the current node.
 
 :::note
-By default the above template methods are disabled. To enable them, make sure to modify your web.routing section of UmbracoSettings.config:
+By default the above template methods are disabled. To enable them, make sure to modify your appsettings.json to include the following JSON config keys inside Umbraco.CMS section:
 
-```xml
-<web.routing
-    validateAlternativeTemplates="true">
-  </web.routing>
+```json
+"WebRouting": {
+    "ValidateAlternativeTemplates": true,
+    "DisableAlternativeTemplates": false
+ }
 ```
 
 :::

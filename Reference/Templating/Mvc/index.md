@@ -20,5 +20,5 @@ Using MVC Child Actions in Umbraco
 ## [Querying](querying.md)
 How to query for published data in your Views
 
-## [Forms](forms.md)
+## [Forms](Forms\index.md)
 How to create html forms to submit data

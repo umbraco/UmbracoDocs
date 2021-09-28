@@ -34,7 +34,7 @@ In this section you will also find information on areas such as load balancing, 
 
 ## Related links
 
-- [External login providers](../../Reference/Security/external-login-providers.md)
+- [External login providers](../../Reference/Security/external-login-providers/)
 
 :::
 

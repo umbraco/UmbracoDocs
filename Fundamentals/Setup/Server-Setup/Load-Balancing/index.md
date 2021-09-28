@@ -1,7 +1,7 @@
 ---
 meta.Title: "Umbraco in Load Balanced Environments"
 meta.Description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Umbraco in Load Balanced Environments
@@ -15,10 +15,10 @@ Configuring and setting up a load balanced server environment requires planning,
 This document assumes that you have a fair amount of knowledge about:
 
 * Umbraco
-* IIS 7+
+* IIS 10+
 * Networking & DNS
 * Windows Server
-* .NET Framework v4.7.2+
+* .NET5+
 
 :::note
 It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.
@@ -29,7 +29,7 @@ It is highly recommended that you setup your staging environment to also be load
 These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
-* You are running Umbraco 8.1.0 or above
+* You are running Umbraco 9.0.0 or above
 * _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the backoffice is behind the load balancer.
 
 There are three design alternatives you can use to effectively load balance servers:
@@ -98,29 +98,21 @@ This section describes the various configuration options depending on your hosti
 
 [Full documentation is available here](file-system-replication.md)
 
-### Machine Key
+### Data Protection
+The replacement for Machine Keys in ASP.NET Core are called Data Protection.
+You will need to setup data protection to the same keys on all servers,
+without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 
-* You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
-  * Here are a couple of tools that can be used to generate machine keys:
-    * [Machine key generator on betterbuilt.com](http://www.betterbuilt.com/machinekey/)
-    * [Machine key generator on developerfusion.com](https://www.developerfusion.com/tools/generatemachinekey/)
-* You need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
-* Umbraco offers the opportunity to auto generate a machine key during the installation steps so this may already exist
+ASP.NET Core supports multiple ways to share keys. Use the [official docs](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview) to find a description that fits your setup the best.
 
-```xml
-<configuration>
-  <system.web>
-    <machineKey decryptionKey="Your decryption key here"
-                validationKey="Your Validation key here"
-                validation="SHA1"
-                decryption="AES" />
-  </system.web>
-</configuration>
-```
 
-### Session State
+### Session State and Distributed Cache
+It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
 
-* If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore or an alternative provider (see [https://msdn.microsoft.com/en-us/library/aa478952.aspx](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+Because Umbraco in some cases uses TempData, your setup needs to be configured with a distributed cache.
+
+
 
 ### Logging
 
@@ -138,9 +130,9 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 ## Unattended upgrades
 
-When upgrading to Umbraco 8.12+ it is possible to run the upgrades unattended. 
+When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general.md#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general-v9#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 

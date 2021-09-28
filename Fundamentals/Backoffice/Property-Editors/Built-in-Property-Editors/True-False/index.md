@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Toggle
@@ -49,9 +49,10 @@ It is also possible to define a label, that will be displayed next to the checkb
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
@@ -80,7 +81,10 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @{
+    @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+
     // Set the value of the property with alias 'myCheckBox'
-    content.SetValue(Home.GetModelPropertyType(x => x.MyCheckBox).Alias, true);
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor,x => x.MyCheckBox).Alias, true);
+
 }
 ```

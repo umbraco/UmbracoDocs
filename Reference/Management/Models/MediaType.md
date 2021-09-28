@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "MediaType Model"
+meta.Description: "A MediaType is almost the same as a ContentType. I.e. a model / data definition for your media nodes."
 ---
 
 # MediaType
@@ -10,7 +13,7 @@ You can set icon, thumbnail and description. It is also possible to add groups a
 
 A Media Type differs from a Document Type in that it has no templates.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -20,23 +23,23 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Constructors
 
-### new MediaType(int parentId)
+### new MediaType(IShortStringHelper shortStringHelper, int parentId)
 
-Constructor for creating a new `MediaType` object where the necessary parameter is the Id of the parent `MediaType` as an `Int`.
+Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper` and the Id of the parent `MediaType` as an `Int`.
 
-### new MediaType(IMediaType parent)
+### new MediaType(IShortStringHelper shortStringHelper,IMediaType parent)
 
-Constructor for creating a new `MediaType` object where the necessary parameter is the parent `MediaType` as an `IMediaType` object.
+Constructor for creating a new `MediaType` object where the necessary parameter are a short string helper `IShortStringHelper` and the parent `MediaType` as an `IMediaType` object.
 
-### new MediaType(IMediaType parent, string alias)
+### new MediaType(IShortStringHelper shortStringHelper, IMediaType parent, string alias)
 
-Constructor for creating a new `MediaType` object where the necessary parameters are the parent `MediaType` as an `IMediaType` object and the alias od the `MediaType` as a `string`.
+Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `MediaType` as an `IMediaType` object and the alias of the `MediaType` as a `string`.
 
 ## Properties
 
@@ -66,7 +69,7 @@ return mediaType.AllowedContentTypes;
 
 Gets a list of `MediaTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current MediaType.
 
-The ContentTypeComposition provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
+The `ContentTypeComposition` provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
 
 ```csharp
 // Given a `MediaTypeService` object get MediaType by its Id and return ContentTypeComposition
