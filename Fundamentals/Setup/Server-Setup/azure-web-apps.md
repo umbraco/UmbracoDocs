@@ -1,5 +1,5 @@
----
-versionFrom: 8.0.0
+﻿---
+versionFrom: 9.0.0
 ---
 
 # Running Umbraco on Azure Web Apps
@@ -18,23 +18,25 @@ Umbraco will run on Azure Web Apps but there are some configuration options and 
 
 ## Recommended configuration
 
-You need to add these `appSettings`:
+You need to add these configuration values. E.g in a json configuration source like `appSettings.json`:
 
-```xml
-<add
-    key="Umbraco.Core.MainDom.Lock"
-    value="SqlMainDomLock" />
-<add
-    key="Umbraco.Core.LocalTempStorage"
-    value="EnvironmentTemp" />
-<add
-    key="Umbraco.Examine.LuceneDirectoryFactory"
-    value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Global": {
+                "MainDomLock" : "SqlMainDomLock"
+            },
+            "Hosting": {
+                "LocalTempStorageLocation": "EnvironmentTemp"
+            },
+            "Examine": {
+                "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
+            }
+        }
+    }
+}
 ```
-
-:::note
-The `Umbraco.Core.MainDom.Lock` setting is for Umbraco 8.6+. Having this setting for versions between 8.0-8.5 will not have any affect. It is recommended to use 8.6+ when running Umbraco on Azure Web Apps since this setting will prevent file locking issues.
-:::
 
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
 
@@ -56,7 +58,6 @@ to be configured to support scaling/auto-scaling.
 It's important to know that Azure Web Apps may move your website between their 'workers' at any given time. This is normally a transparent operation but in some cases you may be affected by it if any of your code or libraries use the following variables:
 
 * `Environment.MachineName` (or equivalent)
-* `HttpRuntime.AppDomainAppId` (or equivalent)
 
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.

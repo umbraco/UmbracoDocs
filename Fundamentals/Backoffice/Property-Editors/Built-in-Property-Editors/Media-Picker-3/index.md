@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.14.0
+versionFrom: 9.0.0
+state: partial
+updated-links: false
 ---
 
 # Media Picker
@@ -61,11 +63,12 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple enabled without Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url()" style="width:200px"/>
+        <img src="@entry.MediaUrl()" style="width:200px" />
     }
 }
 ```
@@ -77,7 +80,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Medias;
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaItem.Url()" style="width:200px" />
+        <img src="@entry.MediaUrl()" style="width:200px" />
     }
 }
 ```
@@ -85,11 +88,12 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled without Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.MediaItem.Url()" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
+        <img src="@typedMediaPickerSingle.MediaUrl()" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
     }
 }
 ```
@@ -97,11 +101,12 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled with Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <img src="@mediaEntry.MediaItem.Url()" style="width:200px"/>
+        <img src="@mediaEntry.MediaUrl()" style="width:200px"/>
     }
 }
 ```
@@ -146,7 +151,7 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@entry.MediaItem.GetCropUrl("cropAlias")"/>
+        <img src="@entry.GetCropUrl("cropAlias")" />
     }
 }
 ```
@@ -155,15 +160,22 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 
 ```csharp
 @{
-    foreach (var entry in Model.Medias)
+    foreach (var entry in Model.Images)
     {
-        <img src="@Url.GetCropUrl(entry.MediaItem, "cropAlias")"/>
+        <img src="@Url.GetCropUrl(entry, "cropAlias")" />
     }
 }
 
 ```
 
+
+
 ### Add values programmatically
+
+:::warning
+Adding values programmatically for media picker 3 have not been verified for V9 yet.
+The concept and code examples might not work if you are running Umbraco 9.0.
+:::
 
 This solution can be applied to both Media Picker 3 and Multi Media Picker 3
 
