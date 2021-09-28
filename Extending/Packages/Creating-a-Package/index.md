@@ -9,7 +9,7 @@ meta.Description: "Tutorial to create a package in Umbraco"
 
 # Creating a Package
 
-The goal of this tutorial is to extend Umbraco and create a package. The tutorials starting point is to create a package out of the dashboard from the [Creating a Custom Dashboard tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process is the same for most packages so feel free to follow along with something else.
+The goal of this tutorial is to extend Umbraco and create a package. The tutorials starting point is to create a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process is the same for most packages so feel free to follow along with something else.
 
 ## Creating a package in the backoffice
 
@@ -21,7 +21,7 @@ To create a package through the Umbraco backoffice:
 
     ![Buttons to select for creating a package in the backoffice](images/creating-package-menu-v9.png)
 4. On the `Create package` page, there are 4 sections each with different information to fill out. Some of the fields are mandatory, most of it is not.
-5. Enter the package name at the top - we will call our dashboard the same as in the [Tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
+5. Enter the package name at the top - we will call our dashboard the same as in the [Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
 We will now take a look at the individual sections and the values that can be filled in:
 
@@ -73,7 +73,7 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 ### Package Actions section
 
-Here, you can add package actions. There are a number of [default package actions](../Package-Actions/index-v9.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
+Here, you can add package actions. There are a number of [default package actions](../Package-Actions/index.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
 
 Finally, after filling out all the information we can select **Create** to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
@@ -83,7 +83,7 @@ When you download and then open the zip package you will find that it looks like
 
 ![Content of a zip package](images/zip-package.png)
 
-The 5 highlighted files contained in the package are the ones that we created in the [Creating a Custom Dashboard tutorial (currently only available for Umbraco 8)](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). However, there is another file here called `package.xml` - so let's take a look at that. It looks like this:
+The 5 highlighted files contained in the package are the ones that we created in the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). However, there is another file here called `package.xml` - so let's take a look at that. It looks like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

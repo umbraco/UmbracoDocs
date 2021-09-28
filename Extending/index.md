@@ -33,7 +33,7 @@ This section will describe how to work with and create Parameter Editors.
 
 The Umbraco backoffice can be configured so that the user interface runs in the user's native language. This is made possible with community generated language files, if your language is not currently supported, why not help to add support?
 
-## [Backoffice tours](Backoffice-Tours/index.md)
+## [Backoffice Tours](Backoffice-Tours/index.md)
 
 Backoffice tours is the integrated and interactive help for the backoffice.
 
