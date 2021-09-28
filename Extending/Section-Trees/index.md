@@ -24,6 +24,6 @@ Describes Umbraco Sections, configuration and APIs.
 
 Describes Umbraco Trees, configuration, APIs and events.
 
-## [Searchable Trees (ISearchableTree)](Searchable-Trees/index-v9)
+## [Searchable Trees (ISearchableTree)](Searchable-Trees/index)
 
 Explains how to customise the backoffice search of a Section Tree.
