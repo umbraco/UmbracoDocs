@@ -46,32 +46,44 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
- ![Umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
+ ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-v9.png)
 
 The process is as follows:
 
-* Administrators and editors create, update, delete data/content on the master server
+* Administrators and editors create, update, delete data/content on the backoffice server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
 * There can be a delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
-## Scheduling and master election
+## Scheduling and server role election
 
-Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server".
+Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server".
 In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
 * Scheduled publishing - to initiate any scheduled publishing for documents
 
+### Automatic Server Role Election
 Umbraco will automatically elect a "Scheduling server" to perform the above services. This means
-that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
+that all of the servers will need to be able to resolve the URL of either: itself, the Backoffice server, the internal load balancer or the public address.
 
-For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
-requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
+There are two server roles:
 
-![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
+* `SchedulingPublisher` - Usually this is the backoffice instance.
+* `Subscriber` - These are the scalable front-end instances - not recommended to be used for backoffice access.
+
+:::note
+These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
+:::
+
+Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
+
+For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
+
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler-v9.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
@@ -81,8 +93,8 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
-* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) by creating a custom `IServerRegistrar`, this means the front end servers will never be used as the master scheduler
-* Set the `umbracoApplicationUrl` property in the appsettings-schema.json file in the Umbraco -> Config folder.
+* __Recommended__: [set your front-end(s) (non-admin server) to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRegistrar`, this means the front-end servers will never be used as the SchedulingPublisher server role.
+* Set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
 
 ## Common load balancing setup information
 
@@ -132,7 +144,7 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general-v9#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 
@@ -146,9 +158,9 @@ The reason you need a single server is because there is no way to guarantee tran
 
 Additionally the order in which cache instructions are written to the cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
 
-__Question>__ _Can my Master admin server also serve front-end requests?_
+__Question>__ _Can my SchedulingPublisher backoffice admin server also serve front-end requests?_
 
-Yes. There are no problems with having your master admin server also serve front-end request.
+Yes. There are no problems with having your SchedulingPublisher backoffice admin server also serve front-end request.
 
 However, if you wish to have different security policies for your front-end servers and your back
 office servers, you may choose to not do this.

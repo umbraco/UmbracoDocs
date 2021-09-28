@@ -170,12 +170,12 @@ In earlier versions of Umbraco, there were a series of events triggered by backg
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server you can exit out early.
 
 ```C#
-// Do not run the code on replicas nor unknown role servers
-// ONLY run for Master server or Single
+// Do not run the code on subscribers or unknown role servers
+// ONLY run for SchedulingPublisher server or Single server roles
 switch (_serverRoleAccessor.CurrentServerRole)
 {
-    case ServerRole.Replica:
-        _logger.LogDebug("Does not run on replica servers.");
+    case ServerRole.Subscriber:
+        _logger.LogDebug("Does not run on subscriber servers.");
         return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
     case ServerRole.Unknown:
         _logger.LogDebug("Does not run on servers with unknown role.");
