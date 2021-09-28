@@ -1,27 +1,29 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 meta.Title: "How to move away from using Umbraco Latch"
 meta.Description: "The Umbraco Latch service has been deprecated and it instead being replaced by a new Umbraco Cloud service which uses Cloudflare as a provider for issueing TLS (HTTPS) certificates to hostnames added to Cloud environments. In this article you can learn how to move to use the new service."
 ---
 
 # How to move away from using Umbraco Latch
 
-As of December 8th, 2020 the Umbraco Latch service used for issuing security certificates to hostnames added to Umbraco Cloud environments, has been replaced with another Umbraco Cloud service. Any hostnames added to your environments going forward will automatically be issued a TLS (HTTPS) certificate provided by Cloudflare.
+As of December 8th, 2020, the Umbraco Latch service used for issuing security certificates to hostnames added to Umbraco Cloud environments, has been replaced with another Umbraco Cloud service. Any hostnames added to your environments going forward will automatically be issued a TLS (HTTPS) certificate provided by Cloudflare.
 
 All current certificates issued by the Umbraco Latch service, using Let's Encrypt, will continue to be renewed every three months.
 
-In this article you will find a guide on how to move away from Umbraco Latch (Let's Encrypt) and instead ensure that all your hostnames are protected by TLS (HTTPS) certificates provided by our Umbraco Cloud service and Cloudflare.
+In this article, you will find a guide on how to move away from Umbraco Latch (Let's Encrypt) and instead ensure that all your hostnames are protected by TLS (HTTPS) certificates provided by our Umbraco Cloud service and Cloudflare.
 
 ## Checking the certificate
 
-The very first step, is to double-check which provider has issued the certificate which is currently protecting your hostname(s).
+To check which provider has issued the certificate which is currently protecting your hostname(s):
 
 1. Open your website URL.
-2. Select the "lock" icon to the left of the URL in the address bar in your browser.
+2. Select the **lock** icon to the left of the URL in the address bar in your browser.
 3. Click on **Certificate**.
 4. Identify the provider next to **Issued by:**.
+    ![Certificate](images/Certificate.png)
 
-If the certificate is already issued by Cloudflare, there are no further steps.
+If the certificate is already issued by Cloudflare, there are no further steps to be taken.
 
 If the certificate is issues by Let's Encrypt, follow the steps below to issue a new TLS (HTTPS) certificate for your hostname(s).
 
@@ -46,7 +48,7 @@ As these static IPs a volatile towards change, this is something you should only
 Depending on your DNS provider, it might take some time before the changes kick in.
 
 :::tip
-In some cases you might not be able to update the DNS entry but will need to create a new entry instead. 
+In some cases you might not be able to update the DNS entry but will need to create a new entry instead.
 
 In these cases you will need to **remove the old DNS entry** in order for Umbraco Cloud and the Cloudflare service to generate a new TLS certificate for your hostname.
 :::
