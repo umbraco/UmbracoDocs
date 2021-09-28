@@ -37,4 +37,4 @@ At the end, the head should look like this:
     </head>
 ```
 
-[Previous](step-2.md) - [Next](step-4-v9.md)
+[Previous](step-2.md) - [Next](step-4.md)

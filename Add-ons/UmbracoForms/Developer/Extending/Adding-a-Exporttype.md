@@ -6,7 +6,7 @@ verified-against: beta001
 ---
 
 # Adding a Export type to Umbraco Forms
-*This builds on the "[adding a type to the provider model](Adding-a-Type-v9.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
+*This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
 

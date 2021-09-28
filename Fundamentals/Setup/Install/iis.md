@@ -108,6 +108,6 @@ And finally the site is running from your local IIS:
 
 ![Local IIS site](images/voila.png)
 
-## [Alternative IIS Setup with manual Deployment](../Server-Setup/iis/iis-deployment-v9.md)
+## [Alternative IIS Setup with manual Deployment](../Server-Setup/iis/iis-deployment.md)
 
 If you need to manually deploy you solution to another server like staging or production, it might be helpful to know some further details about IIS configuration.

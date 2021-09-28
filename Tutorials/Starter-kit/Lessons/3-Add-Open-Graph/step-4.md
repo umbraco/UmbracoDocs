@@ -82,4 +82,4 @@ If your meta properties do not show up on social media, make sure to inspect sou
 
 **Pro tip:** In order to keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
 
-[Previous](step-3-v9.md) - [Next](summary.md)
+[Previous](step-3.md) - [Next](summary.md)

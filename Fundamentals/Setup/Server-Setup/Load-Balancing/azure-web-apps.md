@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 ## Load Balancing Azure Web Apps
 
-Ensure you read the [overview](index-v9.md) before you begin - you will need to ensure that your ASP.NET Core & logging configurations are correct.
+Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET Core & logging configurations are correct.
 
 ### Azure Requirements
 
@@ -13,9 +13,9 @@ Ensure you read the [overview](index-v9.md) before you begin - you will need to 
 
 ### Lucene/Examine configuration
 
-The single instance Backoffice Administrative Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication-v9.md#examine-directory-factory-options).
+The single instance Backoffice Administrative Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
-The multi instance Scalable Public Web App should be set to use [TempEnvDirectoryFactory](file-system-replication-v9.md#examine-directory-factory-options).
+The multi instance Scalable Public Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 ### Umbraco TEMP files
 
@@ -58,7 +58,7 @@ Apply this setting to both the __MASTER__ Administrative server and the __REPLIC
 2. Install Umbraco on your backoffice administrative environment and ensure to use your Azure SQL Database
 3. Install Umbraco on your scalable public facing environment and ensure to use your Azure SQL Database
 4. Test: Perform some content updates on the administrative environment, ensure they work successfully on that environment, then verify that those changes appear on the scalable public facing environment
-5. Fix the backoffice environment to be the MASTER scheduling server and the scalable public facing environment to be REPLICAs - see [Explicit Master Scheduling](flexible-advanced-v9.md#explicit-master-scheduling-server)
+5. Fix the backoffice environment to be the MASTER scheduling server and the scalable public facing environment to be REPLICAs - see [Explicit Master Scheduling](flexible-advanced.md#explicit-master-scheduling-server)
 
 :::note
 Ensure all Azure resources are located in the same region to avoid connection lag

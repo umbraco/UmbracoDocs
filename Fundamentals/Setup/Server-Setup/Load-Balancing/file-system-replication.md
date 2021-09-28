@@ -72,7 +72,7 @@ IIS configuration is pretty straightforward with file replication. IIS is only r
 
 In some scenarios you have a mixture of standalone and synchronised file systems. An example of this is Azure Web Apps where the file system isn't replicated between backoffice and front end servers but is replicated between all front end servers, in this configuration you should follow the steps for synchronised file systems.
 
-There is a specific documentation for load balancing with [Azure Web Apps](azure-web-apps-v9.md)
+There is a specific documentation for load balancing with [Azure Web Apps](azure-web-apps.md)
 
 ## Examine Directory Factory Options
 
@@ -102,9 +102,9 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 ```
 
 :::tip
-If you are load balancing with [Azure Web Apps](azure-web-apps-v9.md) make sure to check out the article we have for that specific set-up.
+If you are load balancing with [Azure Web Apps](azure-web-apps.md) make sure to check out the article we have for that specific set-up.
 :::
 
 ## Advanced techniques
 
-Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced-v9.md).
+Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).

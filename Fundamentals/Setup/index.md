@@ -11,19 +11,19 @@ meta.Description: "Information on the requirements to setup, install & upgrade U
 
 How to install and configure your Umbraco installation.
 
-## [Requirements](Requirements/index-v9.md)
+## [Requirements](Requirements/index.md)
 
 Defines the system requirements to run Umbraco.
 
-## [Install](Install/index-v9.md)
+## [Install](Install/index.md)
 
 Umbraco installation steps and guidelines.
 
-## [Upgrading](Upgrading/index-v9.md)
+## [Upgrading](Upgrading/index.md)
 
 Covers the steps to upgrade your copy of Umbraco to a newer version.
 
-## [Server Setup](Server-Setup/index-v9.md)
+## [Server Setup](Server-Setup/index.md)
 
 
 Information about server setup for Umbraco including information about permissions and load balancing.

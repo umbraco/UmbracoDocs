@@ -116,4 +116,4 @@ Sample script that is outputting comments using a Form created with the default 
 
 ---
 
-Prev: [Email Templates](../Email-Templates/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Forms in the Database](../Forms-in-the-Database/index-v9.md)
+Prev: [Email Templates](../Email-Templates/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Forms in the Database](../Forms-in-the-Database/index.md)

@@ -240,19 +240,19 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
 ## Services available
 There is full API coverage of all Umbraco core entities:
 
-- [AuditService](../../../Reference/Management/Services/AuditService/index-v9.md)
-- [ConsentService](../../../Reference/Management/Services/ConsentService/index-v9.md)
-- [ContentService](../../../Reference/Management/Services/ContentService/index-v9.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index-v9.md)
-- [DataTypeService](../../../Reference/Management/Services/DataTypeService/index-v9.md)
-- [EntityService](../../../Reference/Management/Services/EntityService/index-v9.md)
-- [FileService](../../../Reference/Management/Services/FileService/index-v9.md)
-- [LocalizationService](../../../Reference/Management/Services/LocalizationService/index-v9.md)
-- [MacroService](../../../Reference/Management/Services/MacroService/index-v9.md)
-- [MediaService](../../../Reference/Management/Services/MediaService/index-v9.md)
-- [MemberService](../../../Reference/Management/Services/MemberService/index-v9.md)
-- [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index-v9.md)
-- [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index-v9.md)
+- [AuditService](../../../Reference/Management/Services/AuditService/index.md)
+- [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
+- [ContentService](../../../Reference/Management/Services/ContentService/index.md)
+- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
+- [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
+- [EntityService](../../../Reference/Management/Services/EntityService/index.md)
+- [FileService](../../../Reference/Management/Services/FileService/index.md)
+- [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
+- [MacroService](../../../Reference/Management/Services/MacroService/index.md)
+- [MediaService](../../../Reference/Management/Services/MediaService/index.md)
+- [MemberService](../../../Reference/Management/Services/MemberService/index.md)
+- [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
+- [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
 
 
 ### More information

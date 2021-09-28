@@ -21,11 +21,11 @@ The easiest way to get the latest version of Umbraco up and running is with the 
 
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
-## [VS Code installation](install-umbraco-with-vs-code-v9.md)
+## [VS Code installation](install-umbraco-with-vs-code.md)
 
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
 
-### [Run Umbraco on IIS](iis-v9.md)
+### [Run Umbraco on IIS](iis.md)
 
 Learn how to run an already installed local installation of Umbraco 9.
 
@@ -38,6 +38,6 @@ Learn how to run an already installed local installation of Umbraco 9.
 Visual Studio is used to write native code and managed code supported by .NET and many others.
 Its built-in tools provide the ability to develop and execute applications for any platform. Developers will be able to install Umbraco without ever having to leave Visual Studio.
 
-## [Install Umbraco unattended](Unattended-Install-v9.md)
+## [Install Umbraco unattended](Unattended-Install.md)
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.

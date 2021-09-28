@@ -18,7 +18,7 @@ You can create and edit stylesheets in the Stylesheets folder in the Settings se
 In the Create menu, there are several options available:
 
 * Stylesheet file (for use in templates/views)
-* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/index-v9.md))
+* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/index.md))
 * Folder (for keeping stylesheets organized)
 
 :::note

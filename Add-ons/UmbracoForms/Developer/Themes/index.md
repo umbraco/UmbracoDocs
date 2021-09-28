@@ -107,4 +107,4 @@ class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)"
 
 ---
 
-Prev: [Rendering Forms Scripts](../Rendering-Scripts/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Custom Markup](../Custom-Markup/index.md)
+Prev: [Rendering Forms Scripts](../Rendering-Scripts/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Custom Markup](../Custom-Markup/index.md)

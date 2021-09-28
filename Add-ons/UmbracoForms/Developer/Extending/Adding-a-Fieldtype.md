@@ -7,7 +7,7 @@ verified-against: beta-1
 
 # Adding a field type to Umbraco Forms #
 
-*This builds on the "[adding a type to the provider model](Adding-a-Type-v9.md)" chapter*
+*This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
 
 ## C#
 
