@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionFrom: 9.0.0
+versionTo: 9.0.0
 ---
 
 # Apply hotfix by using Git
