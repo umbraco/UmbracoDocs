@@ -7,8 +7,8 @@ versionTo: 9.0.0
 
 Introduced in Umbraco 8, Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
 
-- [Getting started with Language Variants](../../Getting-Started/Backoffice/Variants/index.md)
-- [Rendering variant values](../../Getting-Started/Design/Rendering-Content/index.md)
+- [Getting started with Language Variants](../../Fundamentals/Backoffice/Variants/index.md)
+- [Rendering variant values](../../Fundamentals/Design/Rendering-Content/index.md)
 
 [`IPublishedContent`](../Querying/IPublishedContent/index.md) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
 

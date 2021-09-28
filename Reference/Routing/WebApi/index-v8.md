@@ -10,8 +10,10 @@ _This section will describe how to work with Web Api in Umbraco to create REST s
 
 Related links:
 
-* [Umbraco api routes and Urls](routing.md)
-* [Umbraco api authorization](authorization.md)
+
+* [Umbraco api routes and Urls](routing-v8.md)
+* [Umbraco api authorization](authorization-v8.md)
+
 
 ## What is Web API?
 The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api). *"ASP.NET Web API is a framework that allows developers to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
@@ -102,7 +104,9 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
 
-For more information about areas, Urls and routing see the [routing section](routing.md)
+
+For more information about areas, Urls and routing see the [routing section](routing-v8.md)
+
 
 ## Backoffice controllers
 
@@ -121,7 +125,9 @@ E.g
 
 ### More Information
 
-* [Authenticating & Authorizing controllers](../Authorized/index.md)
+
+* [Authenticating & Authorizing controllers](../Authorized/index-v8.md)
+
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 

@@ -1,8 +1,10 @@
 ---
-versionFrom: 8.8.0
+versionFrom: 9.0.0
+state: partial
+verified-against: alpha-3 
 ---
 
-# IPublishedContent Property Access
+# IPublishedContent Property Access & Extension Methods
 
 ## Umbraco Properties
 
@@ -12,7 +14,7 @@ Common Examples
 
 ```csharp
 @* gets the current page Url *@
-@Model.Url
+@Model.Url(PublishedUrlProvider)
 
 @* gets the Creation date, and formats it to a short date *@
 @Model.CreateDate.ToString("D")
@@ -39,12 +41,12 @@ Returns the Name of the current content item in the current culture
 @Model.Name
 ```
 
-### .Name(string culture = null)
+### .Name(IVariationContextAccessor, string culture = null)
 
 Returns the Name of the current content item in the specified culture, null falls back to the current culture
 
 ```csharp
-@Model.Name()
+@Model.Name(VariationContextAccessor, "dk-dk")
 ```
 
 ### .ContentType
@@ -56,12 +58,12 @@ Returns a strongly typed 'PublishedContentType' object representing the content 
 @Model.ContentType.Alias
 ```
 
-### .GetCultureFromDomains()
+### .GetCultureFromDomains(IUmbracoContextAccessor, ISiteDomainHelper, Uri current = null)
 
 Returns a culture from a configured domain in the content tree.
 
 ```csharp
-@Model.GetCultureFromDomains(Model.Url)
+@Model.GetCultureFromDomains(ContextAccessor, DomainHelper)
 ```
 
 ### .Parent
@@ -107,34 +109,24 @@ Returns the index the page is on, compared to its siblings
 @Model.SortOrder
 ```
 
-### .Url - (Obsolete)
-
-Returns the complete Url to the page in the current culture
-
-```csharp
-@Model.Url
-```
-
-### .Url(string culture = null, UrlMode mode = UrlMode.Default) - (Extension method)
+### .Url(IPublishedUrlProvider, culture = null, UrlMode mode = UrlMode.Default) - (Extension method)
 
 Returns the Url to the page.
 
-This can be used to get the Url for a specific culture, and for getting the Url in a specific (mode)[https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.PublishedContent.UrlMode.html].
-
 ```csharp
-@Model.Url()
+@Model.Url(PublishedUrlProvider)
 ```
 
 **Example:** Getting a Danish Url for a site where a Danish language has been set up.
 
 ```csharp
-@Model.Url("dk")
+@Model.Url(PublishedUrlProvider, "dk")
 ```
 
 **Example:** Getting an Absolute Danish Url for a site where a Danish language has been set up.
 
 ```csharp
-@Model.Url("dk", UrlMode.Absolute)
+@Model.Url(PublishedUrlProvider, "dk", UrlMode.Absolute)
 ```
 
 ### .UrlSegment
@@ -145,12 +137,12 @@ Returns the Url encoded name of the page (slug) of the current culture
 @Model.UrlSegment
 ```
 
-### .UrlSegment(string culture = null)
+### .UrlSegment(IVariationContextAccessor, string culture = null)
 
 Returns the Url encoded name of the page (slug) of the specified culture
 
 ```csharp
-@Model.UrlSegment()
+@Model.UrlSegment(VariationContextAccessor)
 ```
 
 ### .WriterId
@@ -161,22 +153,12 @@ Returns the id of the Umbraco backoffice user that performed the last update ope
 @Model.WriterId
 ```
 
-### .WriterName
-
-Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
-
-_deprecated_ Will be removed in future versions of Umbraco, use WriterName(IUserService) instead
-
-```csharp
-@Model.WriterName
-```
-
 ### .WriterName(IUserService)
 
 Returns the name of the Umbraco backoffice user that initially created the content item.
 
 ```csharp
-@Model.WriterName(IUserService)
+@Model.WriterName(UserService)
 ```
 
 ### .CreatorId
@@ -187,22 +169,12 @@ Returns the id of the Umbraco backoffice user that initially created the content
 @Model.CreatorId
 ```
 
-### .CreatorName
-
-Returns the name of the Umbraco backoffice user that initially created the content item.
-
-_deprecated_ Will be removed in future versions of Umbraco, use CreatorName(IUserService) instead
-
-```csharp
-@Model.CreatorName
-```
-
 ### .CreatorName(IUserService)
 
 Returns the name of the Umbraco backoffice user that initially created the content item.
 
 ```csharp
-@Model.CreatorName(IUserService)
+@Model.CreatorName(UserService)
 ```
 
 ### .CreateDate
@@ -232,13 +204,13 @@ Returns the DateTime the page was modified
 All content and media items contain a reference to all the data defined by their document type.
 Custom property access is achieved using variations of the method: `Value`
 
-### Model.Value(string)
+### Model.Value(IPublishedValueFallback, string)
 
 Returns the property value for the specified property alias
 
 ```csharp
 @*Get the property with alias: "siteName" from the current page  *@
-@Model.Value("siteName")
+@Model.Value(PublishedValueFallback, "siteName")
 ```
 
 The type returned of this property value is `object` which is fine in most cases since when using
@@ -253,25 +225,11 @@ Returns the property value for the specified property alias converted to 'T' - t
 For example, to return the `string` result of "siteName":
 
 ```csharp
-@(Model.Value<string>("siteName"))
-```
-Or to return a collection of `IPublishedContent` for a multiple media picker
-
-```csharp
-var mediaItems = Model.Value<IEnumerable<IPublishedContent>>("mediaIds");
+@(Model.Value<string>(PublishedValueFallback, "siteName"))
 ```
 
-Another example might be if a property editor stores a JSON value, it might then support converting to a custom
-strongly typed model, or at the very least the JSON would be convertible to a `JObject` instance, for example:
-
 ```csharp
-@(Model.Value<NestedContentModel>("nestedContent"))
-```
-
-or
-
-```csharp
-@(Model.Value<JObject>("nestedContent"))
+var mediaItems = Model.Value<IEnumerable<IPublishedContent>>(PublishedValueFallback, "mediaIds");
 ```
 
 ## Fallbacks
@@ -283,13 +241,13 @@ If the current content item doesn't have the requested value, use an alternative
 If a content page has a 'title' property, to fallback to use the 'Name' of the content item if the 'title' is not populated. Set the Fallback type to be Fallback.ToDefaultValue, and set the DefaultValue accordingly:
 
 ```csharp
-@Model.Value<string>("title", fallback: Fallback.ToDefaultValue, defaultValue: Model.Name);
+@(Model.Value<string>(PublishedValueFallback, "title", fallback: Fallback.ToDefaultValue, defaultValue: Model.Name));
 ```
 
 or to a specific value
 
 ```csharp
-@Model.Value<string>("author", fallback: Fallback.ToDefaultValue, defaultValue: "Team Reporter");
+@(Model.Value<string>(PublishedValueFallback, "author", fallback: Fallback.ToDefaultValue, defaultValue: "Team Reporter"));
 ```
 
 ### Fallback to Ancestors
@@ -297,7 +255,7 @@ or to a specific value
 Look for a property value on the current page. If it doesn't exist look for the property value on the parent page. Then the parent's parent page and so on. All the way up the content tree - this approach allows the specification of 'global property values' that can then be overridden in different sections or on individual pages.
 
 ```csharp
-@Model.Value("propertyAlias", fallback: Fallback.ToAncestors)
+@(Model.Value(PublishedValueFallback, "propertyAlias", fallback: Fallback.ToAncestors))
 ```
 
 ### Fallback to Language
@@ -305,7 +263,7 @@ Look for a property value on the current page. If it doesn't exist look for the 
 If working with variants - fallback to a different language value - if perhaps the value hasn't been populated yet for the current language:
 
 ```csharp
-Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
+@(Model.Value(PublishedValueFallback, "pageTitle", "fr", fallback: Fallback.ToLanguage))
 ```
 
 ### Combining the Fallback options
@@ -315,7 +273,7 @@ Use Fallback.To() to 'combine' Fallback options.
 The following would first look for a 'title' property on all ancestors, before defaulting to the current page's name:
 
 ```csharp
-@Model.Value("title", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: Model.Name)
+@Model.Value(PublishedValueFallback, "title", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: Model.Name)
 ```
 
 ## Property Methods
@@ -333,5 +291,5 @@ Returns a boolean value representing if the IPublishedContent property has had a
 It's possible to use 'Fallbacks' with HasValue:
 
 ```csharp
-bool hasPageTitleSetSomewhere = Model.HasValue("pageTitle",fallback: Fallback.ToAncestors);
+bool hasPageTitleSetSomewhere = Model.HasValue(PublishedValueFallback, "pageTitle", fallback: Fallback.ToAncestors);
 ```

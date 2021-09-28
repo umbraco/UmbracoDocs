@@ -16,7 +16,7 @@ Licenses for our products are sold per domain and will also work on all subdomai
 
 ### Example
 
-let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
+Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
 
 The license will cover the following domains:
 
@@ -107,7 +107,7 @@ The `.lic` file must be placed in the `/bin` directory in order to be registered
 
 If you can't include the license file in the `/bin` directory for any reason it is possible to configure an alternative location for the file.
 
-It can be configured in the Umbraco installation's `Web.config` file by adding the following AppSetting, where `value="~/Licenses/"` contains the path of your custom license directory, relative to the root of your Umbraco Installation. 
+It can be configured in the Umbraco installation's `Web.config` file by adding the following AppSetting, where `value="~/Licenses/"` contains the path of your custom license directory, relative to the root of your Umbraco Installation.
 
 :::warning
 This will also change the location for other Umbraco related licenses in this project.

@@ -3,6 +3,7 @@ meta.Title: "Log Viewer"
 meta.Description: "Information on using the Umbraco log viewer in version 8"
 keywords: logging logviewer logs serilog messagetemplates logs v8 version8
 versionFrom: 8.0.0
+needsV9Update: "true"
 ---
 
 # Log Viewer
@@ -125,7 +126,7 @@ Umbraco needs to be made aware that there is a new implementation of an `ILogVie
 
 ```csharp
 using Umbraco.Core;
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 
 namespace My.Website
 {
