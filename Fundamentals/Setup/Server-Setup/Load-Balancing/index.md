@@ -82,7 +82,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) by creating a custom `IServerRegistrar`, this means the front end servers will never be used as the master scheduler
-* Set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
+* Set the `umbracoApplicationUrl` property in the appsettings-schema.json file in the Umbraco -> Config folder.
 
 ## Common load balancing setup information
 
@@ -132,7 +132,7 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general-v9#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 

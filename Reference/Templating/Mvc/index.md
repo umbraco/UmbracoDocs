@@ -17,6 +17,9 @@ Documentation covering how to use Partial Views. This is not documentation about
 ## [Child Actions](child-actions.md)
 Using MVC Child Actions in Umbraco
 
+## [ViewComponents](ViewComponents-index.md)
+Using MVC Child Actions in Umbraco
+
 ## [Querying](querying.md)
 How to query for published data in your Views
 
