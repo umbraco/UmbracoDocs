@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Routing
@@ -22,7 +22,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
         <div class="row explain">
             <div class="col-xs-12">
                 <h4 class="text-right">User Request</h4>
-                <small>A front-end request is made...</small>
+                <small>A front-end request is made.</small>
             </div>
         </div>
     </div>
@@ -46,6 +46,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
                 <h4 class="text-right">Request Pipeline</h4>
             </div>
             <div class="col-sm-6">
+
                 <h5><a href="Implementation\Default-Routing\Inbound-Pipeline">Inbound request pipeline</a></h5>
                 <small>Matching a URL to a content item & determining the rendering engine (MVC or Webforms).</small>
             </div>
@@ -76,20 +77,21 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
     <div class="col-xs-9">
         <div class="row explain">
             <div class="col-xs-12">
+ fixing-broken-links-jonathan
                 <h4 class="text-right"><a href="Implementation\Default-Routing\Execute-Request\index.md">Execute request</a></h4>
                 <small>The MVC Action and View are executed. During this execution you can query for published data to be displayed/rendered.</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="../../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
-                <small>IPublishedContent is the underlying model used in all Umbraco views.</small>
+                <h5><a href="../../Reference/Querying/IPublishedContent/index.md">IPublishedContent</a></h5>
+                <small>IPublishedContent is a strongly typed underlying model used in all Umbraco views..</small>
             </div>       
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
                 <small>Use UmbracoHelper to query published media and content.</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="../../Reference/Querying/MembershipHelper/">Members</a></h5>
-                <small>This section covers the MembershipHelper.</small>
+                <h5><a href="../../Reference/Querying/IMemberManager/">Members</a></h5>
+                <small>This section covers the IMemberManager.</small>
             </div>
         </div>
     </div>
@@ -105,7 +107,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
     <div class="col-xs-9">
         <div class="row explain">
             <div class="col-xs-12">
-                <h4 class="text-right">Content is delivered</h4>
+                <h4 class="text-right">Content is delivered.</h4>
             </div>
         </div>
     </div>

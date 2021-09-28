@@ -9,11 +9,11 @@ meta.Description: "Tutorial on how to create custom package actions for your Umb
 
 # Creating custom package actions
 
-In addition to utilizing the [built-in package actions](index.md), you can also create your own package actions. Package actions are custom code that runs on install and uninstall of a package. You can do whatever you want in a package action - however some things are more common than others, such as [adding configuration or media to the site](#Examples-of-custom-Package-Actions).
+In addition to utilizing the [built-in package actions](index.md), you can also create your own package actions. Package actions are custom code that runs on install and uninstall of a package. You can do whatever you want in a package action - however some things are more common than others, such as [adding configuration or media to the site](#examples-of-custom-package-actions).
 
 ## When to use a Package Action
 
-A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer (only Umbraco 8)](../../../Implementation/Composing/index.md) or [migration](../../Database/index.md). Package Actions have two important differences though:
+A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer](../../../Implementation/Composing/index.md) or [migration](../../Database/index.md). Package Actions have two important differences though:
 
 1. They only run on install and uninstall - no need to worry about startup cost for your site or adding extra checks to see if it ran.
 2. You can ensure your package uninstalls cleanly - it has the `Undo()` method by default where you can clean up after yourself.

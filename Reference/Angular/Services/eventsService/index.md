@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+needsV9Update: "true"
 ---
 
 # Events Service

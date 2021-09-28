@@ -39,7 +39,7 @@ You can only have one 'current' file - this is the version that will be download
 
 ![Download current version button](images/download-package-button.png)
 
-If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package (currently only available for Umbraco 8)](../Creating-a-nuget-package).
+If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package](../Creating-a-nuget-package).
 
 ## Manage feature requests and issues
 

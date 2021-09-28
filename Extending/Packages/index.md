@@ -66,10 +66,6 @@ This short tutorial will teach you how to create a package in the Umbraco backof
 
 ## [Creating a NuGet Package](Creating-a-nuget-package)
 
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
-
 This short tutorial will teach you how to create a NuGet package for your Umbraco code.
 
 ## [Package Actions](Package-Actions/index.md)
@@ -82,11 +78,7 @@ Once you've created a package upload it on Our to share it with the community.
 
 ## [UmbPack](UmbPack)
 
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
-
- Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
+Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
 
 ## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud)
 
