@@ -9,16 +9,16 @@ update-links: true
 
 # Common Pitfalls & Anti-Patterns
 
-_This section is ultra important! It will describe many common pitfalls that developers fall in to. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site! Another great source of information is Shannon Deminick's Codegarden 2021 talk about performance tuning which can be seen [here](https://www.youtube.com/watch?v=RM2EGXm6DYU&list=PLG_nqaT-rbpx6wIDr5ufUlbHkg6qB3sxH)_
+_This section is ultra important! It will describe many common pitfalls that developers fall into. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site! Another great source of information is Shannon Deminick's Codegarden 2021 talk about performance tuning which can be seen [here](https://www.youtube.com/watch?v=RM2EGXm6DYU&list=PLG_nqaT-rbpx6wIDr5ufUlbHkg6qB3sxH)_
 
 ## Usage of Singletons and Statics
 
-Generally speaking if you are writing software these days you should be using Dependency Injection principles.
-If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco 9 comes with depdenency injection out of the box, there really isn't any reason to use singletons or statics. It makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
+Generally speaking, if you are writing software these days you should be using Dependency Injection principles.
+If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco 9 comes with dependency injection out of the box, there really isn't any reason to use singletons or statics. It makes your code very difficult to test but more importantly using Singletons and Statics in your code makes it very hard to manage, APIs become leaky, and ultimately you'll end up with more problems than when you started.
 
-Depedency injection is available everywhere, and you can register your own services as well, additionally some resoureces are available through properties on certain base classes. For example, all Razor views that Umbraco creates expose an `UmbracoHelper` property you can access through `@Umbraco`, as well as a `SmidgeHelper` property. The other base classes that expose some things you might need like `UmbracoContext` are things like `SurfaceController`, but even here the services are initially gotten through DI, and you can inject further Umbraco and custom services that you might need.
+Dependency injection is available everywhere, and you can register your own services as well, additionally, some resources are available through properties on certain base classes. For example, all Razor views that Umbraco creates expose an `UmbracoHelper` property you can access through `@Umbraco`, as well as a `SmidgeHelper` property. The other base classes that expose some things you might need like `UmbracoContext` are things like `SurfaceController`, but even here the services are initially gotten through DI, and you can inject further Umbraco and custom services that you might need.
 
-For more information about consuming and registering your own dependencies have a look at the [Dependency Injection](../../Reference/Using-Ioc/index-v9) documentation
+For more information about consuming and registering your own dependencies have a look at the [Dependency Injection](../../Reference/Using-Ioc/index) documentation
 
 
 __Example of using base class properties gotten through DI:__
@@ -86,19 +86,19 @@ This practice can cause memory leaks along with inconsistent data results when u
 __Why?__
 
 It's important to understand the difference between an object that has a Request based scope/lifespan and
-an object that has an Singleton/Application based scope/lifespan ... here's the gist:
+an object that has a Singleton/Application based scope/lifespan ... here's the gist:
 
-* Application scope - if an object has an singleton/application scope/lifespan, that means that this single object
+* Application scope - if an object has a singleton/application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
 accesses it. Static variables will always be application lifespan.
-* Request scope - The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, it may either be disposed or cleared from memory by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
+* Request scope - The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, it may either be disposed of or cleared from memory by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
-An example of a request scoped instance is the `HttpContext`. This object exists for a single request and it definitely cannot be shared between other threads and especially not other request threads. This is because it is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it relies directly on an instance of `HttpContext`. The `UmbracoHelper` is request scoped as well.
+An example of a request-scoped instance is the `HttpContext`. This object exists for a single request and it definitely cannot be shared between other threads and especially not other request threads. This is because it is where the security information for a given user is stored! The `UmbracoContext` is also a request-scoped object - in fact, it relies directly on an instance of `HttpContext`. The `UmbracoHelper` is request-scoped as well.
 
-So... in the above example, the `UmbracoHelper` which has a request scoped lifetime, will now be statically assigned to a variable, which means that this particular request scoped object is now bound to an Application scope lifetime and will never go away. This could mean that under certain circumstances that an entire Umbraco
+So... in the above example, the `UmbracoHelper` which has a request-scoped lifetime, will now be statically assigned to a variable, which means that this particular request-scoped object is now bound to an Application scope lifetime and will never go away. This could mean that under certain circumstances that an entire Umbraco
 cache copy is stuck in memory, or that the `Security` property of the context will be accessed by multiple threads but this now contains the security information for a user for another request!
 
-Additionally since V9 comes with depdency injection out of the box, there's never really any reason to use static references, instead you should always use inject your required resources, and let the DI container handle the lifetimes of the objects.
+Additionally, since V9 comes with dependency injection out of the box, there's never really any reason to use static references, instead, you should always use inject your required resources, and let the DI container handle the lifetimes of the objects.
 
 ## Querying with Descendants, DescendantsOrSelf
 
@@ -143,7 +143,7 @@ This can be re-written as:
 </ul>
 ```
 
-In many cases you might know that there is only ever going to be a small number of Descendants . If so then go nuts and use Descendants or DescendantsOrSelf. It's important to be aware of the implications of what you are writing.
+In many cases, you might know that there is only ever going to be a small number of Descendants. If so then go nuts and use Descendants or DescendantsOrSelf. It's important to be aware of the implications of what you are writing.
 
 ## Too much querying (Over querying)
 
@@ -151,7 +151,7 @@ Querying content is not Free! Anytime you make a query or resolve a property val
 You could try to think about every query you make as an SQL call - you don't want to make too many otherwise the performance of
 your website is going to suffer.
 
-Here's a common pitfall that is seen. Let's continue the menu example, in this example the menu is going to be rendered
+Here's a common pitfall that is seen. Let's continue the menu example, in this example, the menu is going to be rendered
 using the current page's root node:
 
 ```csharp
@@ -166,7 +166,7 @@ using the current page's root node:
 
 The syntax `@Model.Root()` is shorthand for doing this:
 `Model.AncestorOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
-with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done for the same value. Instead this can be rewritten as:
+with a level of one. As mentioned above, traversing costs resources and in this example, there are 3x traversals being done for the same value. Instead, this can be rewritten as:
 
 ```csharp
 @{
@@ -184,8 +184,7 @@ with a level of one. As mentioned above, traversing costs resources and in this 
 ## Using the Services layer in your views
 
 The Services layer of Umbraco is for manipulating the business logic of Umbraco directly to/from the database.
-None of these methods should be used within your views and can have a very large impact on performance and stability of
-your application.
+None of these methods should be used within your views and can have a very large impact on the performance and stability of your application.
 
 Your views should rely only on the read-only data services such as `UmbracoHelper`, `ITagQuery` and `IMemberManager` and the properties/methods that they expose. This ensures
 that the data being queried is fast (comes from cache) and that you aren't inadvertently making database changes.
@@ -220,11 +219,11 @@ Some examples of what not to do are:
 * Hit counters to track the number of times your page has been viewed - use something like Google Analytics for this or a custom database table
 * Creating new nodes for form submissions - this should be stored in a custom database table
 * Importing lots of data into Umbraco content nodes that could be stored in a custom database table (i.e. it's not going to be edited).
-In some cases this might be ok but many times we've seen bulk imports occur on an hourly/daily schedule which is generally unnecessary.
+In some cases, this might be ok but many times we've seen bulk imports occur on an hourly/daily schedule which is generally unnecessary.
 
 ## Processing during startup
 
-Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification` or `UmbracoApplicationMainDomAcquiredNotification`, however great
+Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification` or `UmbracoApplicationMainDomAcquiredNotification`, however, great
 care should be used to ensure that you are not slowing down application startup. You should be especially careful
 as a Package developer that you are not slowing down application startup since your package may end up being used for
 thousands of websites.
@@ -240,14 +239,14 @@ This can be achieved in various ways such as:
 * (there's plenty of ways)
 
 Even more important is that you ensure that the initialization logic only executes one time for the lifetime of the
-application even when your app domain is restarted. If your initialization logic creates a database table or something similar to that, where it should only be executed one time only. Then you should set a persistent flag (such as a file) to indicate to your own logic that the initialization code has already executed and doesn't need to be done again.
+application even when your app domain is restarted. If your initialization logic creates a database table or something similar to that, where it should only be executed one time only. Then you should set a persistent flag (such as a file) to indicate to your own logic that the initialization code has already been executed and doesn't need to be done again.
 
 ## Rebuilding indexes
 
 Far too often we've seen code in people's solutions that rebuild the Examine indexes
 (we've even seen this done on every request!). Rebuilding indexes can cause severe
-performance penalties and is not a recommended practice. Umbraco's and Examine's index management, index stability and
-synchronization of the data in the index gets better with every release. You should always ensure you are running the latest
+performance penalties and is not a recommended practice. Umbraco's and Examine's index management, index stability, and
+synchronization of the data in the index get better with every release. You should always ensure you are running the latest
 Umbraco and Examine versions if you are having trouble with your index data becoming out of sync with your Umbraco data.
 
 The primary reasons your data will become out of sync are:
@@ -278,14 +277,14 @@ is called `RenderTemplateAsync`. It allows you to be able to render a particular
 in response. In some cases, this may be useful. Perhaps you want to send an email based on a content item and its template, but
 you must be very careful not to use this for purposes it is not meant to be used for.
 
-Generally speaking this method should not be used for the normal rendering of content. If abused this could cause severe
+Generally speaking, this method should not be used for the normal rendering of content. If abused this could cause severe
 performance problems. For normal content rendering of module type data from another content item, you should use Partial Views instead.
 
 ## Don't put logic inside your constructors
 
 Constructors should generally not perform any logic, they should set some parameter values, perform some null checks and perhaps validate some data but in most cases, they should not perform any logic.
 
-There's a few reasons why this can become a huge performance problem:
+There are a few reasons why this can become a huge performance problem:
 
 * The consumer of an API doesn't expect that by creating an object that they should be worried about performance
 * Creating an object can inadvertently happen a vast number of times, especially when using LINQ
@@ -299,7 +298,7 @@ Your tree structure is something like this:
     --- About Us
     --- Contact Us
 
-You have a custom model that looks like:
+You have a custom model that looks like this:
 
 ```csharp
 public class RecipeModel : PublishedContentWrapped
@@ -342,7 +341,7 @@ You then run the following code to show to show the favorites
 
 ```
 
-__Ouch!__ To show the top 10 voted recipe's this will end up doing the following:
+__Ouch!__ To show the top 10 voted recipes's this will end up doing the following:
 
 * This will iterate over all Recipes, create and allocate 5000 instances of `IPublishedContent`
 * This will create and allocate 5000 instances of `RecipeModel`
@@ -354,7 +353,7 @@ of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
 _Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe should have a picker to choose its related recipe's and then each of those can be looked up by their ID.
 (There's probably a few other ways to achieve this too!)_
 
-Which leads us on to the next anti-pattern...
+This leads us on to the next anti-pattern...
 
 ## Don't eager load data, lazy load it instead
 
@@ -416,11 +415,10 @@ This is slightly better:
 This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-## Not caching epxensive lookups
+## Not caching expensive lookups
 
-Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new 
-instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
-turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to cleanup!
+Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
+turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to clean up!
 
 
-So what can we do to mitigate this? Unfortunately there is no silver bullet that will solve all your performance issues, it will always depend on your specific scenario. One great tip though is to cache the IDs of the content you need in your critical code, and then retrieve it from the cache by ID. For instance if you need to render the same four pieces of content for your nav, then cache, or simply hardcore, the IDs of the content items and retrieve them with the ID using `Umbraco.Content`, this will always be much, much faster than trying to traverse your content tree and finding the content programatically, since it will do a direct lookup in the cache, meaning that only the `IPublishedContent` you actually need will be created.
+So what can we do to mitigate this? Unfortunately, there is no silver bullet that will solve all your performance issues, it will always depend on your specific scenario. One great tip though is to cache the IDs of the content you need in your critical code and then retrieve it from the cache by ID. For instance, if you need to render the same four pieces of content for your nav, then cache, or simply hardcore, the IDs of the content items and retrieve them with the ID using `Umbraco.Content`, this will always be much, much faster than trying to traverse your content tree and finding the content programmatically, since it will do a direct lookup in the cache, meaning that only the `IPublishedContent` you actually need will be created.
