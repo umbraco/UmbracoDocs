@@ -13,9 +13,9 @@ Workflows are a way of defining actions after your Form is submitted like sendin
 
 By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-Form/Form-Settings/index.md#settings-options) of the Forms settings.
 
-The behaviour to display a message to the user that submitted the form, or to redirect to another page, can be configured by clicking on the built-in first workflow step, labelled **Submit message / Go to page**.
+The behaviour to display a message to the user that submitted the form, or to redirect to another page, can be configured by clicking on the built-in first workflow step, labelled **Submit message/Go to page**.
 
-![Submit message / Go to page](images/MessageOnSubmit.png).
+![Submit message/Go to page](MessageOnSubmit.png)
 
 If a value is selected for **Go to page** it will be used to issue a redirect to that page once the form has been submitted.
 

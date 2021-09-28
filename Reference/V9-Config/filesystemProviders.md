@@ -59,7 +59,7 @@ The physical file system provider manages the interaction of Umbraco with the lo
 
 ### Virtual Folder
 
-To configure the PhysicalFileSystem to work with a virtual folder, you must create a new filesystem with a root path and root url that points within the `wwwroot` folder, see the example above, this can then be used to configure the media filesystem. For information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index-v9.md).
+To configure the PhysicalFileSystem to work with a virtual folder, you must create a new filesystem with a root path and root url that points within the `wwwroot` folder, see the example above, this can then be used to configure the media filesystem. For information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index.md).
 
 ### Physical path
 If you want to store the media files in a separate folder, outside of the webroot folder, maybe on a NAS/SAN, there's a few more steps. 
@@ -120,11 +120,11 @@ This is much the same as when you register it within the wwwroot with a virutal 
  - `rootPath` is the full filesystem path where you want media files to be stored. It has to be rooted, must use directory separators (`\`) and must not end with a separator. For example, `Z:` or `C:\path\to\folder` or `\\servername\path`.
  - `rootUrl` is the url where the files will be accessible from. It must use url separators (`/`) and must not end with a separator. It can either be a folder, like `/UmbracoMedia`, in which case it will considered as subfolder of the main domain (`example.com/UmbracoMedia`) or can be a fully qualified url, with also domain name and protocol (for ex `http://media.example.com/media`).
 
-For more information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index-v9.md).
+For more information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index.md).
 
 ## Custom providers
 
-To store media files in different systems, the type of provider must be changed. You can learn [how to build a custom filesystem provider](../../Extending/FileSystemProviders/index-v9.md#ifilesystem) in the Extending Umbraco section.
+To store media files in different systems, the type of provider must be changed. You can learn [how to build a custom filesystem provider](../../Extending/FileSystemProviders/index.md#ifilesystem) in the Extending Umbraco section.
 
 :::note
 At the moment when a file is saved, its full url is stored as node property, so a configuration change will not apply to pre-existing media files but only to the ones saved after that.

@@ -44,6 +44,7 @@ The following options are available in Forms Settings:
     ![Form settings validation](images/FormSettingsValidation.png)
 
     The following Validations are available:
+    
     |Validation Type | Description|
     |-|-|
     | **Mandatory error message** | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
