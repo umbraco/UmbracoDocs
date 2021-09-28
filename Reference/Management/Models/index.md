@@ -30,7 +30,7 @@ API reference for the Media class.
 ## [MediaType](MediaType.md)
 API reference for the MediaType class.
 
-## [MediaType](Relation.md)
+## [Relation](Relation.md)
 API reference for the Relation class.
 
 ## [RelationType](RelationType.md)

@@ -19,7 +19,7 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
  * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
  * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
-To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index-v9.md) section.
+To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index.md) section.
 An example of configuration for Google Authentication may look like:
 
 ```Csharp

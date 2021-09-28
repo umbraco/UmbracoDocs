@@ -10,7 +10,7 @@ We are now going to create a page where we put our contact details. For added fu
 Some potential solutions:
 
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
-* Build your own contact form using [Surface Controllers](../../../Reference/Templating/Mvc/Forms/index.md#creating-the-surfacecontroller-action) or view the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
+* Build your own contact form using [Surface Controllers](../../../Fundamentals/Code/Creating-Forms/index.md) or view the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
 
 ### Creating the Document Type and Template
 

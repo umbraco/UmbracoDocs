@@ -11,7 +11,7 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 There are several benefits of HTTPS:
 
 * Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
-* Removing an attack vector called ["Man in the middle"](https://www.owasp.org/index.php/Man-in-the-middle_attack) (or network Sniffing)
+* Removing an attack vector called ["Man in the middle"](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) (or network Sniffing)
 * Guards against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic SSL certificate
 * Google likes HTTPS, it may help your site's rankings
 
@@ -37,7 +37,7 @@ In Umbraco 9, set the UseHttps key in `appSettings` to true.
 
 This options does several things when it is turned on:
 
-* Ensures that the backoffice authentication cookie is set to [secure only](https://www.owasp.org/index.php/SecureFlag) (so it can only be transmitted over https)
+* Ensures that the backoffice authentication cookie is set to [secure only](https://owasp.org/www-community/controls/SecureCookieAttribute) (so it can only be transmitted over https)
 * All non-https requests to any backoffice controller is redirected to https
 * All self delivered Umbraco requests (i.e. scheduled publishing, keep alive, etc...) are performed over https
 * All Umbraco notification emails with links generated have https links

@@ -2,7 +2,6 @@
 meta.Title: "Configure and customize the Login screen"
 meta.Description: "In this article you can learn the various ways of customizing the Umbraco backoffice login screen and form."
 versionFrom: 8.0.0
-versionTo: 9.0.0
 ---
 
 # Login screen
