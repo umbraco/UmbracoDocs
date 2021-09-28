@@ -61,7 +61,7 @@ NuGet packages can include any solution files, and can be configured to run powe
 
 As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation.
 
-If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../Database/index-v9.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
+If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../Database/index.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
 
 ### Advantages of NuGet packages
 
