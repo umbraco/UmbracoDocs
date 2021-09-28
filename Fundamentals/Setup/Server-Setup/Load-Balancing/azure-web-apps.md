@@ -50,7 +50,7 @@ Several file system based services in Umbraco such as the Published Cache and Lu
     }
 }
 ```
-Apply this setting to both the __MASTER__ Administrative server and the __REPLICA__ scalable public-facing servers.
+Apply this setting to both the __SCHEDULINGPUBLISHER__ Administrative server and the __SUBSCRIBER__ scalable public-facing servers.
 
 ### Steps to set-up an environment
 
@@ -58,7 +58,7 @@ Apply this setting to both the __MASTER__ Administrative server and the __REPLIC
 2. Install Umbraco on your backoffice administrative environment and ensure to use your Azure SQL Database
 3. Install Umbraco on your scalable public facing environment and ensure to use your Azure SQL Database
 4. Test: Perform some content updates on the administrative environment, ensure they work successfully on that environment, then verify that those changes appear on the scalable public facing environment
-5. Fix the backoffice environment to be the MASTER scheduling server and the scalable public facing environment to be REPLICAs - see [Explicit Master Scheduling](flexible-advanced.md#explicit-master-scheduling-server)
+5. Fix the backoffice environment to be the SCHEDULINGPUBLISHER scheduling server and the scalable public facing environment to be SUBSCRIBERs - see [Setting Explicit Server Roles](flexible-advanced.md#explicit-schedulingpublisher-server)
 
 :::note
 Ensure all Azure resources are located in the same region to avoid connection lag
@@ -68,10 +68,10 @@ Ensure all Azure resources are located in the same region to avoid connection la
 
 **Do not scale your backoffice administrative environment** this is not supported and can cause issues.
 
-The public facing replica Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
+The public facing subscriber Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
 
 ### Deployment considerations
 
 Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are various automation techniques you can use to simplify the process. That is outside the scope of this article.
 
-**Important note:** This also means that you should not be editing templates or views on a live server as master and replica environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
+**Important note:** This also means that you should not be editing templates or views on a live server as SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
