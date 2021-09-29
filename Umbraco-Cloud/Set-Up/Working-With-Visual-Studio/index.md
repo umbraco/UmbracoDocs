@@ -2,17 +2,17 @@
 versionFrom: 9.0.0
 ---
 
-# Working with Visual Studio and Umbraco 9 on Umbraco Cloud
+# Working with Visual Studio
 
-In this article you will learn how to work with Visual studio and Umbraco 9 on a Umbraco Cloud project on your local machine, you will also learn 
+In this article you will learn how to work with Visual studio and Umbraco 9 with a Umbraco Cloud project on your local machine.
 
-## Get started with Visual Studio
+## Getting started with 
 
 The first step to get started working with Umbraco 9 and Visual studio is to clone down your project from Umbraco Cloud.
 
 This can be done by following the [Working Locally guide](../Working-Locally) for Umbraco Cloud.
 
-Once you have cloned down your project you will get a folder with the name you gave the project, with the files for your Umbraco Cloud project.
+Once the project have been cloned down you will get a folder with the name you gave the project, with the files for your Umbraco Cloud project.
 
 ![Umbraco 9 files](images\V9-files.png)
 
@@ -24,21 +24,43 @@ You will notice that in the folder there is a csproj-file called: `UmbracoProjec
 
 Opening this file will open up yor project in visual studio and you can start building and running your solution and start working with Visual studio.
 
-### Adding a Solution file
+### Adding a Solution file to your cloud project
 
 Working with Visual Studio you will likely want a solution file, so you and your team can easily work with the Umbraco Cloud project from within Visual Studio and have the option to add additional projects.
 
-From the terminal of your choice navigate to the root of the git repository for your Umbraco Cloud project, and enter the following command.
+there is two options to how this can be done:
+
+1. From the terminal of your choice navigate to the root of the git repository for your Umbraco Cloud project, and enter the following command.
 
 ```Text
 dotnet new sln --name MyAwesomeSolution
 ```
 
-:::tip
+2. The second option for adding a solution file is by running the `UmbracoProject.csproj` which will open your project in Visual studio, once the project is open, click on your solution:
+
+![Visual studio solution](images/solution-VS.png)
+
+Then you can go ahead and save the solution file as:
+
+![save file as](images/save-as.png)
+
+And it will create the solution file for you in the folder that you specified.
+
+:::note
 When creating a solution file we recommend that you place it in the root of the git repository.
 :::
 
-If you want to add additional projects to your solution, you can do that from the command line as well using the following `dotnet new` command
+### Adding additional projects to your solution
+
+If you want to add additional projects to your solution, you can do it from the command line or through Visual studio.
+
+:::note
+When creating new projects along side the default UmbracoProject, we recommend that they are added to the src folder in the git repository.
+:::
+
+1. Adding additional projects through Command line.
+
+ using the following `dotnet new` command, it is possible to add additional projects to your solution:
 
 ```Text
 dotnet new classlib --name MyAwesomeProject.Web --output src/MyAwesomeProject.Web
@@ -46,9 +68,22 @@ dotnet sln add .\src\MyAwesomeProject.Code\MyAwesomeProject.Code.csproj
 dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 ```
 
-:::tip
- When creating new projects along side the default UmbracoProject, we recommend that they are added to the src folder in the git repository.
-:::
+2. Adding additional projects through Visual Studio
+
+To add a new project through Visual studio, go to the solution explorer and select your solution:
+![Solution](images/solution-VS.png)
+
+Right click and choose `Add` -> `New Project...`
+
+![add new project](images/add-new.png)
+
+Add a class library using .NET 5 to your project:
+
+![Class library](images/class-library.png)
+
+Once the Class library have been added you can see the project(S) that have been added in the Solution explorer:
+
+![New project added](images/new-project.png)
 
 ### Renaming the project file and folder
 
@@ -74,6 +109,6 @@ base = "src/MyAwesomeProject/MyAwesomeProject.Web"
 csproj = "MyAwesomeProject.Web.csproj"
 ```
 
-We also recommend that you update the Namespace in the `Program.cs`, `Startup.cs` and the `_ViewImports.cshtml` files, So the naming is consistent throughout your project structure. 
+We recommend that you update the Namespace in the `Program.cs`, `Startup.cs` and the `_ViewImports.cshtml` files, So the naming is consistent throughout your project structure.
 
 Once updated you will need to clear out the bin and obj folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud, and that's it.
