@@ -18,7 +18,7 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 
 ## Accessing logs
 
-On Umbraco Cloud Portal:
+### On Umbraco Cloud Portal
 
 1. Go to your project and click on the arrow next to the environment name.
     ![Logs on Cloud](images/logs.png)
@@ -26,7 +26,7 @@ On Umbraco Cloud Portal:
 2. Click **Logs** to view the logs details.
     ![Logs on Cloud](images/logs-table.png)
 
-On Kudu:
+### On Kudu
 
 To access logs through Kudu, see [Power tools (Kudu)](../../Set-Up/Power-Tools) article.
 

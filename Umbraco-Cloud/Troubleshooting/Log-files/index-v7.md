@@ -8,13 +8,29 @@ versionFrom: 7.0.0
 If your project is using Umbraco Courier, please refer to this article as well: [Courier in debug mode](../../../Add-ons/UmbracoCourier/Architecture/Configuration#debugmode)
 :::
 
-To get access to the different types of log files on Umbraco Cloud it is necessary to use [Kudu](../../Set-Up/Power-Tools). Once you access the server files through Kudu there are several different types of logs you will have access to:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../../Set-Up/Power-Tools). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
 * Environment logs
+* Site Extension logs
+* IIS logs
 
 __NOTE:__ Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
+
+## Accessing logs
+
+On Umbraco Cloud Portal:
+
+1. Go to your project and click on the arrow next to the environment name.
+    ![Logs on Cloud](images/logs.png)
+
+2. Click **Logs** to view the logs details.
+    ![Logs on Cloud](images/logs-table-v8.png)
+
+On Kudu:
+
+To access logs through Kudu, see [Power tools (Kudu)](../../Set-Up/Power-Tools) article.
 
 ## Umbraco logs
 
