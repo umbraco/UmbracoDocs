@@ -1,14 +1,17 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Upgrade your Umbraco Cloud Plan
+
 In this article you can read about how you can upgrade your Umbraco Cloud plan and what you need to be aware of before you do so.
 
 ## Before you upgrade your plan
+
 Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few things:
 
- - If you are on the Starter plan, you can either upgrade your plan to a Standard or a Professional plan.
+- If you are on the Starter plan, you can either upgrade your plan to a Standard or a Professional plan.
 
 - On the Standard plan you have the option to upgrade to a Profesional plan.
 
@@ -43,21 +46,17 @@ In the menu you can find a tab called *"Upgrade plan"*.
 
 ![Upgrade plane step2](images/step_2.png)
 
-
 - If you are on a Starter plan you can upgrade to the Standard and the Professional plan.
 
 - If you are on the Standard plan you can upgrade to the Professional plan.
 
-
 To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
- 
+
 :::note
 The change in price will take effect from the next period of your subscription.
 
 If you change plan in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
 :::
-
-
 
 ## Downgrade your plan
 
