@@ -15,7 +15,6 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 
 - On the Standard plan you have the option to upgrade to a Profesional plan.
 
-
 - When you upgrade from the Starter plan to the Standard plan, the price will increase from €30 a month to €185.
 
 - With the Standard plan you will get a Development environment for no additional cost and it is possible to add a Staging environment for €50.
