@@ -1,185 +1,79 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 ---
 
-# Visual Studio Setup
+# Working with Visual Studio and Umbraco 9 on Umbraco Cloud
 
-This page describes how to set up your Visual Studio solution to work with an Umbraco Cloud Project.
-In this article you will find:
+In this article you will learn how to work with Visual studio and Umbraco 9 on a Umbraco Cloud project on your local machine, you will also learn 
 
- - [Prerequisites](#prerequisites)
- - [Generate a Visual Studio Solution](#generate-a-visual-studio-solution)
- - [The Git repositories](#the-git-repositories)
- - [What's next?](#whats-next)
- - [Working with Visual Studio](#working-with-visual-studio)
- - [Git - what should be committed](#git---what-should-be-committed)
- - [Setup for new team members](#setup-for-new-team-members)
- - [Working with NuGet](#working-with-nuget)
+## Get started with Visual Studio
 
-## The Visual Studio Solution
-If you're writing a lot of custom code (or like Intellisense), we recommend the following setup:
+The first step to get started working with Umbraco 9 and Visual studio is to clone down your project from Umbraco Cloud.
 
-A Visual Studio solution with a
+This can be done by following the [Working Locally guide](../Working-Locally) for Umbraco Cloud.
 
-* Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and
-* Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
+Once you have cloned down your project you will get a folder with the name you gave the project, with the files for your Umbraco Cloud project.
 
-Below is a screenshot of our recommendation on how the projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
+![Umbraco 9 files](images\V9-files.png)
 
-![Visual Studio Project setup](images/vs-project-setup.png)
+With the files in place you can now navigate to your project folder and make sure to go to src/UmbracoProject, here you will find the files for your Umbraco installation.
 
-## Prerequisites
+You will notice that in the folder there is a csproj-file called: `UmbracoProject.csproj`:
 
-* Visual Studio 2017 v15.9.6 or later
-* Git and/or Git Credential Manager for Windows
+![Umbraco 9 files](images\V9-project-file.png)
 
-:::note 
-If you're used to using a Git client like GitKraken or SourceTree, you will still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
+Opening this file will open up yor project in visual studio and you can start building and running your solution and start working with Visual studio.
+
+### Adding a Solution file
+
+Working with Visual Studio you will likely want a solution file, so you and your team can easily work with the Umbraco Cloud project from within Visual Studio and have the option to add additional projects.
+
+From the terminal of your choice navigate to the root of the git repository for your Umbraco Cloud project, and enter the following command.
+
+```Text
+dotnet new sln --name MyAwesomeSolution
+```
+
+:::tip
+When creating a solution file we recommend that you place it in the root of the git repository.
 :::
 
-## Video tutorial
+If you want to add additional projects to your solution, you can do that from the command line as well using the following `dotnet new` command
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/a3yUPq567nQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+```Text
+dotnet new classlib --name MyAwesomeProject.Web --output src/MyAwesomeProject.Web
+dotnet sln add .\src\MyAwesomeProject.Code\MyAwesomeProject.Code.csproj
+dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
+```
 
-## Generate a Visual Studio Solution
-Manually creating and configuring a Visual Studio solution with the right projects can take a bit of time, so we have made a little command line tool that will set the solution up for you.
-
-Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and place it in the folder you want the solution in.
-
-:::note
-**Important**: To use the UaaS.cmd tool you will need to have Visual Studio 2017 version 15.9.6 or any later version installed.
+:::tip
+ When creating new projects along side the default UmbracoProject, we recommend that they are added to the src folder in the git repository.
 :::
 
-:::warning
-**Important**: Be aware if you run the Uaas.cmd tool as an adminstrator it will genereate the files in your Windows/System folder.
-:::
+### Renaming the project file and folder
 
-This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio.
+At the Root of the project there is a file called .Umbraco which contains the following:
 
-What follows is **a recommendation and not the only way to work with Visual Studio**.
+```Text
+[project]
+base = "src/UmbracoProject"
+csproj = "UmbracoProject.csproj"
+```
 
-Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
+These two properties help inform us the folder location which contains the application and the second is the name of the .csproj file to build.
 
-* Go to the Project in the Portal
-* Copy the url from "How to connect my machine"
+You can rename the folder and .csproj file to whatever you want, you may also want to update any C# code namespaces to reflect the name of your project.
 
-![](images/connect-my-machine.png)
+In addition to this you are able to add additional Class Library projects that are referenced by the Umbraco application .csproj file, if you prefer to organise your code that way.
 
-Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and then prompt you to enter the git clone url for your Project.
-Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
+An examoke could be to rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
 
-If an error appears where the tool is saying: "Unable to connect to the remote server", but you are still able to add the clone Url, then you need to allow the UaaS.cmd through your firewall / antivirus.
+```Text
+[project]
+base = "src/MyAwesomeProject/MyAwesomeProject.Web"
+csproj = "MyAwesomeProject.Web.csproj"
+```
 
-If you haven't cloned the repository before or don't have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed you will be asked to enter the username and password for the Umbraco Cloud Project. These are the same credentials as you use to access the Portal and the Umbraco backoffice.
+We also recommend that you update the Namespace in the `Program.cs`, `Startup.cs` and the `_ViewImports.cshtml` files, So the naming is consistent throughout your project structure. 
 
-![](images/cmd-clone.png)
-
-Once it's done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
-
-* `*.Web` contains the Umbraco site that was (git) cloned from your Project
-* `*.Core` is a Class Library that you can use for your custom code, as mentioned above
-
-Both projects are configured with the NuGet packages for Umbraco using the version that corresponds to the site cloned from Umbraco Cloud.
-
-The result should look something like this within the folder where the UaaS.cmd tool ran:
-
-![](images/generated-solution.png)
-
-You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
-
-## The Git repositories
-One thing to notice about this setup is that you will get two git repositories as well as two projects.
-
-1. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco Cloud is also located.
-
-2. Going up one level to where the `*.sln` file is located you will notice a `.git` folder. This is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
-
-Think of everything within the `*.Web` folder as your **deployment repository**, and everything surrounding that folder as your **source code repository**. The Umbraco Cloud repository (within the `*.Web` folder) will not (and should not) be committed to the other git repository.
-
-## What's next?
-Now that you've added your own touch to your site, you're ready to deploy to your Umbraco Cloud development site (the destination might vary depending on the plan you chose).
-The key thing to know is that your custom code from the `*.Core` project will be built into a .dll file in your `*.Web` project that you can then push up to the Cloud repository.
-
-Once you have everything your site will need committed you can follow the [deployment workflow](../../Deployment/) to complete the deployment.
-
-## Working with Visual Studio
-As mentioned in the previous section, you will start with two projects in Visual Studio. A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
-
-_So what goes where?_
-
-Anything that is used within Umbraco, like plugins and configuration, should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the `*.Web` project:
-
-* Website assets like css, JavaScript and related images
-* Views, Partial Views and Partial View Macros
-* Configuration (web.config and all the Umbraco specific or related config files in ~/Config/)
-* Usercontrol ascx-files
-* Plugins (typically located in App_Plugins)
-* Meta data (the files that Umbraco Deploy uses in the folder ~/Data/Revision/)
-
-Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website project shows all files on disk by default. Media files from the /Media/ folder should not be committed to the git repository, but more on that in the next section about 'What should be committed'.
-
-We recommend placing all your code in the `*.Core` project (instead of, for example, using App_Code for that). This includes, but is not limited to:
-
-* Controllers for MVC, Web Api
-* Controllers for Umbraco Plugins, Surface, API
-* Models and ViewModels
-* Data Access (the `*.Core` project references Umbraco so you can use the Umbraco datalayer as needed)
-* Extensions methods
-
-### Using ModelsBuilder and IntelliSense
-In order to use ModelsBuilder with IntelliSense in Visual Studio, you will need to make a couple of configuration changes to the web.config file of your `*.Web` project. This is to ensure that the models produced by ModelsBuilder are stored in the right place for compilation.
-1. Make sure ModelsBuilder.Enable is set to true (default): `<add key="Umbraco.ModelsBuilder.Enable" value="true" />`
-2. Set the Mode to `AppData` or `LiveAppData`. This will ensure you can use ModelsBuilder with Visual Studio. So in your Web.config, you should to have: `<add key="Umbraco.ModelsBuilder.ModelsMode" value="AppData" />`
-3. Create a directory called "Models" in your App_Code folder in the `*.Web` directory of your site. Then add: `<add key="Umbraco.ModelsBuilder.ModelsDirectory" value="~/App_Code/Models/" />` to Web.config.
-
-This will make the models of your Document Types available with IntelliSense in Visual Studio.
-[You can read more about configuring ModelsBuilder here.](../../../Reference/Templating/Modelsbuilder)
-
-:::note
-If you are using the [Visual Studio Extension for ModelsBuilder](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension&ssr=false) and get the error message "Unauthorized" when generating models, you will need to use or create a backoffice user in your local installation, and supply the credentials for this user in the Visual Studio options. This is necessary because the extension is not able to authenticate against Umbraco Id.
-:::
-
-### Using Umbraco namespaces in your `*.Core` project
-In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.
-
-You can do this by right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
-
-![](images/references.gif)
-
-## Git - what should be committed
-
-When working with this solution setup it's important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
-
-The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled.
-
-As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
-
-:::note
-To ensure that your `.dll` files are created in release mode, ensure that you switch to "Release" (instead of "Debug") mode when building the project.
-
-It is recommend to build the project in release mode, before deploying the changes through Git.
-:::
-
-For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.
-
-These are the files and folders you typically want to commit in your own source code repository:
-
-* The project and code files in `*.Core`
-* The solution file `*.sln`
-* `.gitignore`
-* UaaSClone.cmd (used for re-establishing the `*.Web` folder with the git repository from Umbraco Cloud)
-
-## Setup for new team members
-
-When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your GitHub, Bitbucket or Visual Studio Team Services account. In doing so they will, by default, not get the `*.Web` folder and the Umbraco site, because that part is not contained within the source code repository.
-
-To help to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository. Running this command line tool will clone the Umbraco Cloud repository to the right folder, and set up Visual Studio for them.
-
-## Working with NuGet
-
-Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is a normal Visual Studio solution, so you can work with NuGet packages exactly like you're used to. Install them in the project where you need them. You should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
-
-For example, if you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
-
-- Install it in `*.Core` so you can write the code you need against the library you working with (obtained from NuGet)
-- Also install it in `*.Web` so that the library files also end up in your website and your compiled code works there as well
+Once updated you will need to clear out the bin and obj folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud, and that's it.
