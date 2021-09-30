@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # File upload
@@ -28,12 +28,13 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Modelsbuilder
 
 ```csharp
+@using System.IO;
 @{
     if (Model.HasValue("myFile"))
     {
         var myFile = Model.Value<string>("myFile");
 
-        <a href="@myFile">@Path.GetFileName(myFile)</a>
+        <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
     }
 
 }
@@ -46,7 +47,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 @{
     if (!string.IsNullOrWhiteSpace(Model.MyFile))
     {
-        <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
+        <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
     }
 }
 ```
@@ -56,12 +57,21 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md) and the [Media Service](../../../../../Reference/Management/Services/MediaService/index.md).
 
 ```csharp
+
+@using Umbraco.Cms.Core.IO
+@using Umbraco.Cms.Core.Serialization
+@using Umbraco.Cms.Core.Strings
+@inject MediaFileManager _mediaFileManager;
+@inject IShortStringHelper _shortStringHelper;
+@inject IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider;
+@inject IContentService Services;
+@inject IJsonSerializer _serializer;
 @{
-    // Get access to ContentService
-    var contentService = Services.ContentService;
+   // Get access to ContentService
+    var contentService = Services;
 
     // Get access to MediaService 
-    var mediaService = Services.MediaService;
+    var mediaService = MediaService;
 
     // Create a variable for the GUID of the parent where you want to add a child item
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -83,7 +93,7 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a media file
     var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
-    media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
+    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.Media.File, filename, responseStream);
 
     // Save the created media 
     mediaService.Save(media);
@@ -111,8 +121,9 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'myFile'
-    content.SetValue(Home.GetModelPropertyType(x => x.MyFile).Alias, publishedMedia.Url();
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyFile).Alias, publishedMedia.Url();
 }
 ```

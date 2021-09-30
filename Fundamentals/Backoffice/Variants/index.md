@@ -20,7 +20,9 @@ To work with Language Variants you need to have more than one language enabled. 
 
 ![Adding a language](images/languages.png)
 
-:::note You will always have one default language but each language can be set to mandatory. :::
+:::note
+You will always have one default language but each language can be set to mandatory. 
+:::
 
 ## Enabling Language Variants on doctypes
 

@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.7.0
+needsV9Update: "true"
 ---
 
 # Image Cropper

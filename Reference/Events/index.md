@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco events"
 meta.Description: "Information on various backofice events in Umbraco"
+versionRemoved: 9.0.0
 ---
 
 # Using events
@@ -14,7 +15,7 @@ Since Umbraco 9, Events are called Notifications. This means that the informatio
 All available notifications are documented in the [Notifications](../Notifications) section.
 :::
 
-## [Composing](../../Implementation/Composing)
+## [Composing](../../Implementation/Composing/index-v8)
 
 Umbraco uses Composition and Components to allows you to execute code during startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events.
 

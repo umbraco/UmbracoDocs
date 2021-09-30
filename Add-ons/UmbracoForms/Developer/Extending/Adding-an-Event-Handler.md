@@ -1,75 +1,79 @@
 ---
-versionFrom: 8.0.0
-meta.Title: "Adding Event Handlers in Umbraco Forms"
+versionFrom: 9.0.0
+meta.Title: "Adding Notification Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
+state: complete
+verified-against: beta-1
 ---
 
-# Adding a server-side event handler to Umbraco Forms
+# Adding a server-side notification handler to Umbraco Forms
 
-:::note
-The samples in this article applies to Umbraco Forms version 8 and later versions.
-:::
-
-Add a new class to your project and have it inherit from `IUserComposer`, implement the `Compose()` method. This method will contain a handler for the `FormValidate` event. 
+Add a new class to your project as a handler for the `FormValidateNotification` notification:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using Umbraco.Core.Composing;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Forms.Core.Models;
+using Umbraco.Forms.Core.Services.Notifications;
 
-namespace Forms8.EventHandlers
+namespace MyFormsExtensions
 {
     /// <summary>
     /// Catch form submissions before being saved and perform custom validation.
     /// </summary>
-    public class FormEventsComposer : IUserComposer
+    public class FormValidateNotificationHandler : INotificationHandler<FormValidateNotification>
     {
-        
-        public void Compose(Composition composition)
+        public void Handle(FormValidateNotification notification)
         {
-            // Attach a handler to the `FormValidate` event of UmbracoForms
-            Umbraco.Forms.Web.Controllers.UmbracoFormsController.FormValidate += FormsController_FormValidate;
-        }
-        
-        private void FormsController_FormValidate(object sender, Umbraco.Forms.Mvc.FormValidationEventArgs e)
-        {
-            // If needed, be selective about which form submissions you affect
-            if (e.Form.Name == "Form Name")
+            // If needed, be selective about which form submissions you affect.
+            if (notification.Form.Name == "Form Name")
             {
-                // Access the Controller that handled the Request
-                var controller = sender as Umbraco.Forms.Web.Controllers.UmbracoFormsController;
-
                 // Check the ModelState
-                if (controller == null || !controller.ModelState.IsValid)
+                if (notification.ModelState.IsValid == false)
+                {
                     return;
+                }
 
                 // A sample validation
-                var email = GetPostFieldValue(e, "email");
-                var emailConfirm = GetPostFieldValue(e, "verifyEmail");
-                
+                var email = GetPostFieldValue(notification.Form, "email");
+                var emailConfirm = GetPostFieldValue(notification.Form, notification.Context, "verifyEmail");
+
                 // If the validation fails, return a ModelError
                 if (email.ToLower() != emailConfirm.ToLower())
-                    controller.ModelState.AddModelError(GetPostField(e, "verifyEmail").Id.ToString(), "Email does not match");
-
+                {
+                    notification.ModelState.AddModelError(GetPostField(e, "verifyEmail").Id.ToString(), "Email does not match");
+                }
             }
         }
 
-        // Helper method
-        private static string GetPostFieldValue(Umbraco.Forms.Mvc.FormValidationEventArgs e, string key)
+        private static string GetPostFieldValue(Form form, HttpContext context, string key)
         {
-            var field = GetPostField(e, key);
-            var value = e.Context.Request[field.Id.ToString()] ?? "";
-            return value.Trim();
+            Field field = GetPostField(form, key);
+            if (field == null)
+            {
+                return string.Empty;
+            }
+
+
+            return context.Request.HasFormContentType &&  context.Request.Form.Keys.Contains(field.Id.ToString())
+                ? context.Request.Form[field.Id.ToString()].ToString().Trim()
+                : string.Empty;
         }
-        
-        // Helper method
-        private static Umbraco.Forms.Core.Models.Field GetPostField(Umbraco.Forms.Mvc.FormValidationEventArgs e, string key)
-        {
-            return e.Form.AllFields.SingleOrDefault(f => f.Alias == key);
-        }
-       
+
+        private static Field GetPostField(Form form, string key) => form.AllFields.SingleOrDefault(f => f.Alias == key);
     }
 }
+
 ```
 
-The `FormValidate` event will pass a reference to the Controller and Form objects. Use them to check ModelState and Form Field values. If validation fails, return a ModelError.
+The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a ModelError.
+
+To register the handler, add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+
+```csharp
+public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)
+{
+    builder.AddNotificationHandler<FormValidateNotification, FormValidateNotificationHandler>();
+}
+```
