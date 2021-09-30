@@ -128,8 +128,7 @@ You create a menu on your Home page like:
 
 Which renders out: _Root, Home, Blog, Office Locations, About Us, Contact Us_
 
-BUT!...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them. Further more,
-this means it is going to allocate 10,000 `IPublishedContent` instances in memory in order to check its `Level` value.
+BUT!...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them!
 
 This can be re-written as:
 
@@ -259,7 +258,7 @@ advised to determine why and to try to resolve the underlying problem.
 
 ## Performing lookups and logic in Examine events
 
-There's a couple well known Examine events: `GatheringNodeData` and `DocumentWriting`. Both of these events
+There's a couple well known Examine events: `TransformingIndexValues` and `DocumentWriting`. Both of these events
 allow the developer to modify the data that is going into the Lucene index but many times we see developers Performing
 Service lookups in these methods. For example, using `IContentService.GetById(e.NodeId)`
 inside of these events could cause an `N + 1` problem. This is because these events are executed for every single document
@@ -343,12 +342,11 @@ You then run the following code to show to show the favorites
 
 __Ouch!__ To show the top 10 voted recipes's this will end up doing the following:
 
-* This will iterate over all Recipes, create and allocate 5000 instances of `IPublishedContent`
+* This will iterate over all 5000 Recipes
 * This will create and allocate 5000 instances of `RecipeModel`
 * For each `RecipeModel` created, this will traverse upwards, iterate all 5000 recipes then resolve property data for 2 properties
 
-This means that there is now a minimum of __20,000__ new objects created and allocated in memory. The number of traversals/visits to each
-of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
+This means that there is now an additional __5,000__ new objects created and allocated in memory. The number of traversals/visits to each of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
 
 _Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe should have a picker to choose its related recipe's and then each of those can be looked up by their ID.
 (There's probably a few other ways to achieve this too!)_
@@ -384,16 +382,10 @@ The above example could be rewritten like this:
     }
 ```
 
-This is slightly better:
+This is slightly better. but will still iterate over all Recipes so the number of traversals/visits to each of these objects is now __5000__.
 
-* This will iterate over all Recipes, create and allocate 5000 instances of `IPublishedContent`
-* This will create and allocate 5000 instances of `RecipeModel`
 
-This means that there is now a minimum of __15,000__ new objects created and allocated in memory. The number of traversals/visits to each
-of these objects is now __5000__.
-
-This is still not great though. There really isn't much reason to create a `RecipeModel` to use it as a filter,
-this is allocating a lot of objects to memory for no real reason. This could be written like:
+This is still not great though. There really isn't much reason to create a `RecipeModel`. This could be written like:
 
 ```csharp
 @{
@@ -410,15 +402,13 @@ this is allocating a lot of objects to memory for no real reason. This could be 
 </ul>
 ```
 
-This is slightly better:
-
-This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
-of these objects is now __5000__.
-
 ## Not caching expensive lookups
 
-Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
-turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to clean up!
+Based on the above 2 points, you can see that iterating content with the traversal APIs ends up being very expensive. 
+
+So what can we do to mitigate this? Unfortunately, there is no silver bullet that will solve all your performance issues, it will always depend on your specific scenario. One great tip though is to cache the IDs of the content you need in your critical code and then retrieve it from the cache by ID. For instance, if you need to render the same four pieces of content for your nav, then cache, or simply hardcode, the IDs of the content items and retrieve them with the ID using `Umbraco.Content`, this will always be much, much faster than trying to traverse your content tree and finding the content programmatically, since it will do a direct lookup in the cache, meaning that your code don't have to do thousands of traversals to get your content. 
 
 
-So what can we do to mitigate this? Unfortunately, there is no silver bullet that will solve all your performance issues, it will always depend on your specific scenario. One great tip though is to cache the IDs of the content you need in your critical code and then retrieve it from the cache by ID. For instance, if you need to render the same four pieces of content for your nav, then cache, or simply hardcore, the IDs of the content items and retrieve them with the ID using `Umbraco.Content`, this will always be much, much faster than trying to traverse your content tree and finding the content programmatically, since it will do a direct lookup in the cache, meaning that only the `IPublishedContent` you actually need will be created.
+## Be mindful about memory
+
+When memory is used, for instance creating 5,000 recipe models with a `Select` statement, Garbage Collection needs to occur and this turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to clean up!
