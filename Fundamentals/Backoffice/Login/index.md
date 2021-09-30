@@ -70,16 +70,56 @@ An example:
 }
 ```
 
-## Background image
+## Background and logo images
 
-It is possible to customize the background image for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
+It is possible to customize the background and logo images for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
 
 ```json
 "Umbraco": {
     "CMS": {
       "Content": {
-        "LoginBackgroundImage": "assets/img/login.jpg"
+        "LoginBackgroundImage": "../myImagesFolder/myLogin.jpg",
+        "LoginLogoImage": "../myImagesFolder/myLogo.svg"
       }
    }
 } 
 ```
+The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroot/umbraco/` folder.
+
+To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `css` folder, containg a css file, and a package.manifest file. An example structure might be:
+```json
+/App_Plugins
+    /myLoginFolder
+        /css
+            /myLoginStyles.css
+        /package.manifest
+```
+An example stylesheet might be:
+
+    .login-overlay {
+    	background-color: #000;
+    }
+    
+    .login-overlay__background-image {
+    /* Override background image opacity here if needed */
+    /* opacity is set to 0.05 by default if background images is set */
+    	/*opacity:0.05;*/
+    	opacity:0;
+    	background-size:contain;
+    	background-image: none;
+    }
+    
+    div.login-overlay__logo {
+    	width: 10%;
+    }
+    
+An example package.manifest might be:
+
+    {
+    css: [
+        '~/App_Plugins/myLoginFolder/css/myLoginStyles.css'
+        ]
+    }
+
+
+
