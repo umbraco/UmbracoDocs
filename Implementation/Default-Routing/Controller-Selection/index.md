@@ -1,43 +1,68 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
-# Controller & Action selection
+# Controller & Action Selection
 
-_Once the published content request has been created, and MVC is the selected rendering engine, it's time to execute an MVC Controller's Action._
+When you make a page request to the MVC application, a controller is responsible for returning the response to that request. The controller can perform one or more actions. The controller action can return different types of action results based on the request.
 
-## Defaults
+## Default Contoller Action
 
-By default, Umbraco will execute every request via its built in default controller: `Umbraco.Web.Mvc.RenderMvcController`.
-The MVC Action that executes by default for every request is the `Index` action on the `RenderMvcController`.
-
-## Changing the default
-
-It is possible to use a custom Controller and Action to be executed during the Umbraco request pipeline.
-A default Controller can be set during composition by creating a c# class which implements `IUserComposer`, for example:
+By default, Umbraco will execute every request via it's built-in default controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. Umbraco site automatically routes all the front-end requests via the `Index` action of the `RenderController`.
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Web;
-using Umbraco.Web.Mvc;
+using Umbraco.Cms.Web.Common.Controllers;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Umbraco.Cms.Core.Web;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Umbraco8.Composers
+namespace UmbracoProject.Controller
 {
-    public class SetDefaultRenderMvcControllerComposer : IUserComposer
+    public class HomePageController : RenderController
+    {
+
+        public HomePageController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
+        {
+        }
+        public override IActionResult Index()
+        {
+            return CurrentTemplate(CurrentPage);
+        }
+
+        public IActionResult HomePage()
+        {
+            return CurrentTemplate(CurrentPage);
+        }
+    }
+}
+
+```
+
+## Change the Default Controllers
+
+It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. A default Controller can be set during composition by creating a C# class which implements `IUserComposer`, for example:
+
+```csharp
+using System;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+namespace UmbracoProject.Controller
+{
+    public class MyValidationComposer : IUserComposer
     {
         public void Compose(Composition composition)
         {
-            composition.SetDefaultRenderMvcController<CustomMvcController>();
+            composition.Components().Append<MyValidationComponent>();
         }
     }
 }
 ```
 
-It is a requirement that your custom controller inherit from `Umbraco.Web.MVC.RenderMvcController`.
-You can override the `Index` method to perform any customisations that you require.
+Ensure that the controller inherits from the base controller `Umbraco.Cms.Web.Common.Controllers.RenderController`. You can override the `Index` method to perform any customizations of your choice.
 
-## Custom controller selection
+## Custom Controller Selection
 
-Custom controllers can be created to execute for different Umbraco Document Types and Templates. This is termed 'Hijacking Umbraco Routes'.
-For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md).
+You can create Custom controllers for different Document Types and Templates. This is termed 'Hijacking Umbraco Routes'. For details on how this process works, see the [Custom MVC Controllers (Umbraco Route Hijacking)](../../../Reference/Routing/custom-controllers.md) article.

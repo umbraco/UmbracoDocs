@@ -1,200 +1,184 @@
 ---
-versionFrom: 8.0.0
-keywords: ScheduledTasks, schedule
+versionFrom: 9.0.0
+verified-against: rc-2
+meta-title: Scheduling with hosted services in Umbraco
+meta.Description: Use hosted services to run a background task
+state: complete
+update-links: true
 ---
 
-# Scheduling with BackgroundTaskRunner
+# Scheduling with RecurringHostedServiceBase
 
-In Umbraco 8+ it is possible to run recurring code using the `BackgroundTaskRunner`.
-Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index.md) that will regularly empty out the recycle bin every five minutes.
+In Umbraco 9 it is possible to run recurring code using a hosted service.
+Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes. 
 
 :::warning
-Be aware you may or may not want this background task code to run on all servers, if you are using Load Balancing with multiple servers - https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/
+Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../../Fundamentals/Setup/Server-Setup/Load-Balancing/index.md) for more information
 :::
 
-```csharp
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Services;
-using Umbraco.Web.Scheduling;
+## RecurringHostedService example
 
-namespace Umbraco.Web.UI
+```C#
+using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Scoping;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Sync;
+using Umbraco.Cms.Infrastructure.HostedServices;
+
+namespace Umbraco.Cms.Web.UI
 {
-    // We start by setting up a composer and component so our task runner gets registered on application startup
-    public class CleanUpYourRoomComposer : ComponentComposer<CleanUpYourRoomComponent>
+    public class CleanUpYourRoom : RecurringHostedServiceBase
     {
-    }
+        private readonly IRuntimeState _runtimeState;
+        private readonly IContentService _contentService;
+        private readonly IServerRoleAccessor _serverRoleAccessor;
+        private readonly IProfilingLogger _profilingLogger;
+        private readonly ILogger<CleanUpYourRoom> _logger;
+        private readonly IScopeProvider _scopeProvider;
 
-    public class CleanUpYourRoomComponent : IComponent
-    {
-        private IProfilingLogger _logger;
-        private IRuntimeState _runtime;
-        private IContentService _contentService;
-        private BackgroundTaskRunner<IBackgroundTask> _cleanUpYourRoomRunner;
+        private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
+        private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
 
-        public CleanUpYourRoomComponent(IProfilingLogger logger, IRuntimeState runtime, IContentService contentService)
+        public CleanUpYourRoom(
+            IRuntimeState runtimeState,
+            IContentService contentService,
+            IServerRoleAccessor serverRoleAccessor,
+            IProfilingLogger profilingLogger,
+            ILogger<CleanUpYourRoom> logger,
+            IScopeProvider scopeProvider)
+            : base(HowOftenWeRepeat, DelayBeforeWeStart)
         {
-            _logger = logger;
-            _runtime = runtime;
+            _runtimeState = runtimeState;
             _contentService = contentService;
-            _cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
-        }
-
-        public void Initialize()
-        {
-            int delayBeforeWeStart = 60000; // 60000ms = 1min
-            int howOftenWeRepeat = 300000; //300000ms = 5mins
-
-            var task = new CleanRoom(_cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
-
-            //As soon as we add our task to the runner it will start to run (after its delay period)
-            _cleanUpYourRoomRunner.TryAdd(task);
-        }
-
-        public void Terminate()
-        {
-        }
-    }
-
-    // Now we get to define the recurring task
-    public class CleanRoom : RecurringTaskBase
-    {
-        private IRuntimeState _runtime;
-        private IProfilingLogger _logger;
-        private IContentService _contentService;
-
-        public CleanRoom(IBackgroundTaskRunner<RecurringTaskBase> runner, int delayBeforeWeStart, int howOftenWeRepeat, IRuntimeState runtime, IProfilingLogger logger, IContentService contentService)
-            : base(runner, delayBeforeWeStart, howOftenWeRepeat)
-        {
-            _runtime = runtime;
+            _serverRoleAccessor = serverRoleAccessor;
+            _profilingLogger = profilingLogger;
             _logger = logger;
-            _contentService = contentService;
+            _scopeProvider = scopeProvider;
         }
 
-        public override bool PerformRun()
+        public override Task PerformExecuteAsync(object state)
         {
-            var numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
+            // Don't do anything if the site is not running.
+            if (_runtimeState.Level != RuntimeLevel.Run)
+            {
+                return Task.CompletedTask;
+            }
 
-            _logger.Info<CleanRoom>("Go clean your room - {ServerRole}", _runtime.ServerRole);
-            _logger.Info<CleanRoom>("You have {NumberOfThingsInTheBin}", numberOfThingsInBin);
+            // Wrap the three content service calls in a scope to do it all in one transaction.
+            using IScope scope = _scopeProvider.CreateScope();
+            
+            int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
+            _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
+            _logger.LogInformation("You have {NumberOfThinsInTheBing} items to clean", numberOfThingsInBin);
 
             if (_contentService.RecycleBinSmells())
             {
                 // Take out the trash
-                using (_logger.TraceDuration<CleanRoom>("Mum, I am emptying out the bin", "Its all clean now!"))
+                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bing",
+                    "It's all clean now"))
                 {
                     _contentService.EmptyRecycleBin(userId: -1);
                 }
             }
 
-            // If we want to keep repeating - we need to return true
-            // But if we run into a problem/error & want to stop repeating - return false
-            return true;
+            // Remember to complete the scope when done.
+            scope.Complete();
+            return Task.CompletedTask;
         }
-
-        public override bool IsAsync => false;
     }
 }
 
 ```
 
-## RecurringTaskBase
+### Registering with extension method
 
-This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to `true` and the `PerformRunAsync` must be overridden to implement the class.
+First we need to create our extension method where we register the hosted service with `AddHostedService`:
 
-## BackgroundTaskRunner Events
+```C#
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.DependencyInjection;
 
-Background tasks can also trigger events. [Browse the API documentation for BackgroundTaskRunner events.](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Scheduling.BackgroundTaskRunner-1.html#events)
-
-You can subscribe to the events in the `Initialize` method of your `CleanUpYourRoomComponent`. The events are registered on the `BackgroundTaskRunner` object, in this case `_cleanUpYourRoomRunner`.
-
-```csharp
-
-public class CleanUpYourRoomComponent : IComponent
+namespace Umbraco.Cms.Web.UI
 {
-    private IProfilingLogger _logger;
-    private IRuntimeState _runtime;
-    private IContentService _contentService;
-    private BackgroundTaskRunner<IBackgroundTask> _cleanUpYourRoomRunner;
-
-    public CleanUpYourRoomComponent(IProfilingLogger logger, IRuntimeState runtime, IContentService contentService)
+    public static class BuilderExtensions
     {
-        _logger = logger;
-        _runtime = runtime;
-        _contentService = contentService;
-        _cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
+        public static IUmbracoBuilder AddHostedServices(this IUmbracoBuilder builder)
+        {
+            builder.Services.AddHostedService<CleanUpYourRoom>();
+            return builder;
+        }
     }
+}
+```
 
-    public void Initialize()
+Now we can invoke it in the `ConfigureServices` method in `Startup.cs`:
+
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+#pragma warning disable IDE0022 // Use expression body for methods
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddHostedServices() // Register CleanUpYourRoom
+        .Build();
+#pragma warning restore IDE0022 // Use expression body for methods
+}
+```
+
+### Registering with a composer
+
+All we need to do here is to create the composer where we register the hosted service with `AddHostedService`, which will be run automatically:
+
+```C#
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+namespace Umbraco.Cms.Web.UI
+{
+    public class CleanUpYourRoomComposer : IComposer
     {
-        int delayBeforeWeStart = 60000; // 60000ms = 1min
-        int howOftenWeRepeat = 300000; //300000ms = 5mins
-
-        var task = new CleanRoom(_cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
-
-        //declare the events
-        _cleanUpYourRoomRunner.TaskCompleted += Task_Completed;
-
-        _cleanUpYourRoomRunner.TaskStarting += this.Task_Starting;
-
-        _cleanUpYourRoomRunner.TaskCancelled += this.Task_Cancelled;
-
-        _cleanUpYourRoomRunner.TaskError += this.Task_Error;
-
-        //As soon as we add our task to the runner it will start to run (after its delay period)
-        _cleanUpYourRoomRunner.TryAdd(task);
-    }
-
-    private void Task_Error(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom error");
-    }
-
-    private void Task_Cancelled(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom cancelled");
-    }
-
-    private void Task_Starting(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom starting");
-    }
-
-    private void Task_Completed(BackgroundTaskRunner<IBackgroundTask> sender, TaskEventArgs<IBackgroundTask> e)
-    {
-        _logger.Info<CleanUpYourRoomComponent>("CleanUpYourRoom run finished");
-    }
-
-    public void Terminate()
-    {
-        //unsubscribe during shutdown
-        _cleanUpYourRoomRunner.TaskCompleted -= Task_Completed;
-
-        _cleanUpYourRoomRunner.TaskStarting -= this.Task_Starting;
-
-        _cleanUpYourRoomRunner.TaskCancelled -= this.Task_Cancelled;
-
-        _cleanUpYourRoomRunner.TaskError -= this.Task_Error;
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.Services.AddHostedService<CleanUpYourRoom>();
+        }
     }
 }
 
 ```
 
-### Using RuntimeState
+## RecurringHostedServiceBase
 
-In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
+This class provides the base class for any hosted service. 
 
-```csharp
-// Do not run the code on replicas nor unknown role servers
-// ONLY run for Master server or Single
-switch (_runtime.ServerRole)
+You can override the `PerformExecuteAsync` method to implement the class. Hosted services are always run asynchronously.
+
+The `RecurringHostedServiceBase` is a base class that implements the netcore interface `IHostedService` and makes the task recurring, if you don't need your task to run recurringly you can implement `IHostedService` yourself, and register your hosted service in the same way. For more information about hosted services, take a look at the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-5.0).
+
+## BackgroundTaskRunner Notifications
+
+In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications.md)
+
+## Using ServerRoleAccessor
+
+In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server you can exit out early.
+
+```C#
+// Do not run the code on subscribers or unknown role servers
+// ONLY run for SchedulingPublisher server or Single server roles
+switch (_serverRoleAccessor.CurrentServerRole)
 {
-    case ServerRole.Replica:
-        _logger.Debug<CleanRoom>("Does not run on replica servers.");
-        return true; // We return true to try again as the server role may change!
+    case ServerRole.Subscriber:
+        _logger.LogDebug("Does not run on subscriber servers.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
     case ServerRole.Unknown:
-        _logger.Debug<CleanRoom>("Does not run on servers with unknown role.");
-        return true; // We return true to try again as the server role may change!
+        _logger.LogDebug("Does not run on servers with unknown role.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change! 
 }
 ```

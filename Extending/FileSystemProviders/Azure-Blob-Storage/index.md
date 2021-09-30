@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+needsV9Update: "true"
 ---
 
 # Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
