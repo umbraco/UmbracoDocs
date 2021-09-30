@@ -37,7 +37,21 @@ An example of how this can be done is
     </rule>
   </rules>
 </rewrite>
->
+```
+
+- Create an in an instance of the `RewriteOptions` class:
+
+```Csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            using (StreamReader iisUrlRewriteStreamReader = File.OpenText("Umbraco/Rewrites.xml"))
+            {
+                var options = new RewriteOptions()
+                    .AddIISUrlRewrite(iisUrlRewriteStreamReader);
+                app.UseRewriter(options);
+            }
+```
+
 ## Examples of rewrite rules
 
 * A great site showing 10 very handy IIS Rewrite rules: [https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
