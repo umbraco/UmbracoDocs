@@ -16,6 +16,16 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 
 With all the success you will have building your site with Umbraco Cloud, you will want to add more using the same account and team members all from a single place. [Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/).
 
+## Umbraco Cloud Plans
+
+Umbraco Cloud offers shared hosting in 3 different tiers:
+
+- Starter
+- Standard
+- Professional
+
+You can [learn more about quotas](Umbraco-cloud-plans) that are put in place in order to ensure stability of your website.
+
 ## Umbraco Cloud Project
 
 ### Trial Project
