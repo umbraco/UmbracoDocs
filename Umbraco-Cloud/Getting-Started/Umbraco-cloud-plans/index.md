@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Umbraco Cloud Plans
 
-Umbraco Cloud plans Starter, Standard & Professional are running on shared infrastructure and are limitted in terms of how many resources they can use in order to prevent exhaustion of the underlying infrastructure referred to as pools. This applies to websites running on the new infrastructure. If you're interested in earlier generation of Umbraco Cloud hosting, you can [head to the FAQ](../../Frequently-Asked-Questions) to learn more.
+Umbraco Cloud plans Starter, Standard & Professional are running on shared infrastructure and are limited in terms of how many resources they can use in order to prevent exhaustion of the underlying infrastructure referred to as pools. This applies to websites running on the new infrastructure. If you're interested in earlier generation of Umbraco Cloud hosting, you can [head to the FAQ](../../Frequently-Asked-Questions) to learn more.
 
 The shared resources used by the Umbraco Cloud websites are:
 
