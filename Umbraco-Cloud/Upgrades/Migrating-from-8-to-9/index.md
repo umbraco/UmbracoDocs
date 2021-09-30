@@ -10,9 +10,11 @@ You also need to make sure that the packages that you are using is available for
 
 Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
 
+<!--Needs V9 update
 ## Video tutorial
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/videoseries?list=PLG_nqaT-rbpxrVkhlMedRKL9frAVIHlve" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+-->
 
 ## Prerequisites
 
@@ -30,7 +32,7 @@ Should something fail during the migration, the Development environment can alwa
 
 ## Step 1: Content migration
 
-* Create a backup of the database from your Umbraco 8 project, this can be done by using the [database backup guide](..\..\Databases\Backups) or by cloning down the V8 project and make a backup of the local Database(Make sure to restore the content from your cloud environment).
+* Create a backup of the database from your Umbraco 8 project, this can be done by using the [database backup guide](..\..\Databases\Backups) or by cloning down the V8 project and make a backup of the local Database(Make sure to restore the content from your cloud environment)
 
 * Import the database backup into SQL Server Management Studio
 
