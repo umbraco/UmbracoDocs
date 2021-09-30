@@ -1,36 +1,40 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Umbraco's request pipeline
 
-_The process of Umbraco accepting a request, how it matches a URL to a content item and executes the ASP.NET handler._
+Umbraco's request pipeline is the process of building-up the URL for a node, resolving a request to a specified node, and ensuring that the right content is sent back.
 
 ## Published Request Preparation
 
-The inbound process is triggered by the Umbraco (http) Module.
-The published request preparation process kicks in to create a `PublishedRequest` instance.
-
-It is called in `UmbracoInjectedModule.ProcessRequest(…)`
+The inbound process is triggered by `UmbracoRouteValueTransformer` and then handled with the Published router. The [Published Content Request Preparation](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md) process kicks in and creates a `PublishedRequestBuilder` which will be used to create a `PublishedContentRequest`.
 
 What it does:
 
-* It ensures Umbraco is ready, and the request is a document request.
-* Creates a PublishedRequest instance
-* Runs IPublishedRouter.PrepareRequest() for that instance
-* Handles redirects and status
-* Forwards missing content to 404
+- It ensures Umbraco is ready, and the request is a document request.
+- Ensures there's content in the published cache, if there isn't it routes to the `RenderNoContentController` which displays the no content page you see when running a fresh install.
+- Creates a published request builder.
+- Routes the request with the request builder using the `PublishedRouter.RouteRequestAsync(…)`.
+  - This will handle redirects, find domain, template, published content and so on.
+  - Build the final `IPublishedRequest`.
+- Sets the routed request in the umbraco context, so it will be available to the controller.
+- Create the route values with the `UmbracoRouteValuesFactory`.
+  - This is what actually routes your request to the correct controller and action, and allows you to hijack routes.
+- Set the route values to the http context.
+- Handles posted form data.
+- Returns the route values to netcore so it routes your request correctly.
 
 ## Published Content Request Instance
 
-Once the request is prepared, an instance of [`PublishedRequest`](/apidocs/v8/csharp/api/Umbraco.Web.Routing.PublishedRequest.html) is available which represents the request that Umbraco must handle.
-It contains everything that will be needed to render it including domain information, the content model to be rendered and the template to use.
-This information is also used during the [MVC Controller/Action selection process](../Controller-Selection/).
+When finding published content the [PublishedRouter](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRouter.html) will first check if the [PublishedRequestBuilder](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRequestBuilder.html) already has content, if it doesn't the content finders will kick in. For more information, see the [Find published content](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md#find-published-content) section in the [Published Content Request Preparation](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md) article.
+
+This information is also used during the [Controller & Action selection](../Controller-Selection/index.md) process.
 
 ## Rendering engine
 
-Umbraco 8 only supports MVC.
-Umbraco 7 was the last major version of Umbraco to support both Webforms and MVC
-	
-### More information
-- [Umbraco Request Pipeline](../../../Reference/Routing/Request-Pipeline/)
+Umbraco 8 and above only supports MVC. Umbraco 7 was the last major version of Umbraco to support both Webforms and MVC.
+
+### Related Information
+
+- [Routing in Umbraco](../../../Reference/Routing/Request-Pipeline/index.md)

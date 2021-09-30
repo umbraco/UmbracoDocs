@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: beta-3
+state: complete
+updated-links: true
 ---
 
 # Retrieving content types
@@ -13,14 +16,14 @@ Content types can be added either at the root level, under another content type 
 Guid guid = new Guid("d3b9cc9a-d471-4465-a89a-112c6bc1e5b4");
 
 // Get a container by its GUID ID
-EntityContainer container = contentTypeService.GetContainer(guid);
+EntityContainer container = _contentTypeService.GetContainer(guid);
 ```
 
 or its numeric counterpart:
 
 ```C#
 // Get a container by its numeric ID
-EntityContainer container = contentTypeService.GetContainer(1090);
+EntityContainer container = _contentTypeService.GetContainer(1090);
 ```
 
 ## Getting a list of content type containers
@@ -32,7 +35,7 @@ In the same way as you can get the content types of a container, you can get the
 int[] ids = new[] {1090};
 
 // Get the child containers via the content type service
-IEnumerable<EntityContainer> containers = contentTypeService.GetContainers(ids);
+IEnumerable<EntityContainer> containers = _contentTypeService.GetContainers(ids);
 ```
 
 Also, if the array is empty, all containers will be returned:
@@ -42,5 +45,5 @@ Also, if the array is empty, all containers will be returned:
 int[] ids = new int[0];
 
 // Get all content type containers
-IEnumerable<EntityContainer> containers = contentTypeService.GetContainers(ids);
+IEnumerable<EntityContainer> containers = _contentTypeService.GetContainers(ids);
 ```

@@ -1,12 +1,12 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Umbraco Security Hardening
 
 Here you find some tips and trick for hardening the security of your Umbraco installation.
 
-## Lock down access to your Umbraco-folders
+## Lock down access to your Umbraco-folders (IIS)
 
 By default there are some folders in your Umbraco installation that should be only used by authenticated users. It’s considered a good practice to lock down these folders to specific IP-addresses and/or IP-ranges to make sure not everyone can access these.
 The folders we want to lock down are App_Plugins, Config and Umbraco.
@@ -59,23 +59,26 @@ If you now go to /umbraco/ for example from a different IP-address the login scr
 :::
 
 By default the login page of Umbraco is available at the path /umbraco/. This page is the entrance to your installation and it’s considered a good practice to rename your path to a more secure path.
-This can be done by following these two steps.
+This can be done by following these steps.
 
-1. Rename you /umbraco/-folder on disk to another path (for example: /my-secret-loginpanel/)
+1. Clean solution - This will delete the `wwwroot/umbraco` folder
+2. Add the following line into a property group element of your `csproj`-file
+   - `<UmbracoWwwrootName>my-secret-loginpanel</UmbracoWwwrootName>`
+3. Build sulution - This will copy umbraco content into `wwwroot/my-secret-loginpanel`
+4. Change the three keys in your configuration “Umbraco:CMS:Global:ReservedPaths”,“Umbraco:CMS:Global:UmbracoPath” and “Umbraco:CMS:Global:IconsPath” to your new path.
 
-Before:
-
-![Umbraco-folder on disk - before](images/foldersondisk-before.png)
-
-After:
-
-![Umbraco-folder on disk - after](images/foldersondisk-after.png)
-
-2. Change the two keys in your web.config “Umbraco.Core.ReservedUrls” and “Umbraco.Core.Path” to your new path.
-
-```xml
-<add key="Umbraco.Core.ReservedUrls" value="~/my-secret-loginpanel" />
-<add key="Umbraco.Core.Path" value="~/my-secret-loginpanel" />
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Global": {
+                "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/my-secret-loginpanel/,",
+                "UmbracoPath": "~/my-secret-loginpanel",
+                "IconsPath": "~/my-secret-loginpanel/assets/icons"
+            }
+        }
+    }
+}
 ```
 
 From now on, you can only get access to the login screen by going to this path and no longer by going to /umbraco/.

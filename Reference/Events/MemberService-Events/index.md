@@ -13,9 +13,9 @@ The MemberService implements IMemberService and provides access to operations in
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, MemberService Events have been renamed to [**MemberService Notifications**](../Notifications/MemberService-Notifications).
+Note that in Umbraco 9, MemberService Events have been renamed to [**MemberService Notifications**](../../Notifications/MemberService-Notifications).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 ## Usage

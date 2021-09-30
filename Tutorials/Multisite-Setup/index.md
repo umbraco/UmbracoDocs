@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 meta.Title: "Multisite setup in Umbraco"
 product: "CMS"
 meta.Description: "A guide to multisite setup in Umbraco"
+needsV9Update: "true"
 ---
 
 # Multisite setup

@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc001
+verified-against: 9.0.0
 state: partial
 updated-links: false
 meta.Title: "Umbraco Database"
@@ -11,7 +11,7 @@ meta.Description: "A guide to creating a custom Database table in Umbraco"
 
 In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes.
 
-If migrating from V8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing (Umbraco 8)](../../Implementation/Composing/) article.
+If migrating from v8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing (Umbraco 8)](../../Implementation/Composing/) article.
 
 The end result looks like this:
 
@@ -19,13 +19,14 @@ The end result looks like this:
 
 ## Using a composer and component
 
-The following code sample shows how this is done in Umbraco V9.  If migrating from V8, the only changes to note other than namespace updates, are the dependencies that need to be passed to the `Upgrader.Execute()` method, and a change to the access modifier of the `Migrate()` method.
+The following code sample shows how this is done in Umbraco v9.  If migrating from v8, the only changes to note other than namespace updates, are the dependencies that need to be passed to the `Upgrader.Execute()` method, and a change to the access modifier of the `Migrate()` method.
 
 ```csharp
 using Microsoft.Extensions.Logging;
 using NPoco;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Migrations;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
@@ -34,7 +35,7 @@ using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
 namespace MyNamespace
 {
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IUserComposer
+    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IComposer
     {
     }
 
@@ -43,7 +44,7 @@ namespace MyNamespace
         private readonly IScopeProvider _scopeProvider;
         private readonly IMigrationPlanExecutor _migrationPlanExecutor;
         private readonly IKeyValueService _keyValueService;
-        private readonly ILoggerFactory _loggerFactory;
+        private readonly IRuntimeState _runtimeState;
 
         public BlogCommentsComponent(
             IScopeProvider scopeProvider,
@@ -76,7 +77,7 @@ namespace MyNamespace
             // Go and upgrade our site (Will check if it needs to do the work or not)
             // Based on the current/latest step
             var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(_migrationPlanExecutor,_scopeProvider,_keyValueService);
+            upgrader.Execute(_migrationPlanExecutor, _scopeProvider, _keyValueService);
         }
 
         public void Terminate()
@@ -84,13 +85,12 @@ namespace MyNamespace
         }
     }
 
-    public class AddCommentsTable  : MigrationBase
+    public class AddCommentsTable : MigrationBase
     {
         public AddCommentsTable(IMigrationContext context) : base(context)
         {
         }
-
-        public override void Migrate()
+        protected override void Migrate()
         {
             Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
 

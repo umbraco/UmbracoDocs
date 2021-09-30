@@ -56,7 +56,7 @@ To use this endpoint, make a request like this:
         "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
-    
+
 :::note
 You'll notice the "plan" parameter takes either "Single", "Standard" or "Studio" as valid options. The terminology used for these plans has since changed for the "Single" and "Studio" plans. "Single" will create a "Starter" plan whereas "Studio" a "Professional" one.
 :::
@@ -104,14 +104,14 @@ In the example below the project creation is still under-way:
     "projectIsReady": false,
     "creationStatus": "Creating",
     "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
-    "backofficeUrl": ""
+    "backofficeUrl": "",
     "environments": null
 }
 ```
 
 You should keep polling this until the `creationStatus` changes to "Created" (or `projectIsReady=true`). The `backofficeUrl` will also be filled with the correct url to the backoffice once the project has been created.
 
-Here's how a responce for a created project would loo like:
+Here's how a responce for a created project would look like:
 
 ```json
 {

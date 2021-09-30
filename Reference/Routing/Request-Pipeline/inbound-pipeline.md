@@ -1,12 +1,17 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+meta.Title: "Inbound request pipeline"
+meta.Description: "How the Umbraco inbound request pipeline works"
+state: complete
+verified-against: beta-4
+update-links: true
 ---
 
 # Inbound request pipeline
 
-The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedRequest`.
+The inbound process is triggered by `UmbracoRouteValueTransformer` and then handled with the Published router. The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedRequestBuilder` which will be used to create a `PublishedContentRequest`.
 
-The `PublishedRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this occurs when the Umbraco modules consider that an incoming request maps to a document that can be rendered.
+The `PublishedContentRequest` object represents the request which Umbraco must handle. It contains everything that will be needed to render it. All this occurs when the Umbraco modules knows that an incoming request maps to a document that can be rendered.
 
 ```csharp
 public class PublishedContentRequest
@@ -16,60 +21,48 @@ public class PublishedContentRequest
 }
 ```
 
-There are 4 important properties, which contains all the information to find back a node:
+There are 3 important properties, which contains all the information to find a node:
 
 ```csharp
 public bool HasDomain { get; }
 public DomainAndUri Domain { get; }
 public CultureInfo Culture { get; }
 ```
-Domain is a DomainAndUri object ie a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified eg "https://example.com/".
+Domain is a DomainAndUri object i.e. a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified e.g. "https://example.com/".
 
 It contains the content to render:
 
 ```csharp
 public bool HasPublishedContent { get; }
 public IPublishedContent PublishedContent { get; set; }
-public bool IsInitialPublishedContent { get; }
-public IPublishedContent InitialPublishedContent { get; }
-public void SetIsInitialPublishedContent();
-public void SetInternalRedirectPublishedContent(IPublishedContent content);
-public bool IsInternalRedirectPublishedContent { get; }
+public bool IsInternalRedirect { get; }
+public bool IsRedirect {get; }
 ```
 
-Contains template information and the corresponding rendering engine:
+Contains template information:
 
 ```csharp
 public bool HasTemplate { get; }
-public string TemplateAlias { get; }
-public bool TrySetTemplate(string alias);
-public void SetTemplate(ITemplate template);
+public string GetTemplateAlias { get; }
+public ITemplate Template {get; }
 ```
 
-You can subscribe to the 'Prepared' event which is triggered right after the point when the`PublishedRequest` is prepared - (but before it is ready to be processed).  Here modify anything in the request before it is processed!  eg. content, template, etc:
+The published request is created using the `PublishedRequestBuilder` which implements `IPublishedRequestBuilder`, it's only in this builder that it's possible to set values, such as domain, culture, published content, redirects and so on.
 
-```csharp
-using Umbraco.Core.Composing;
-using Umbraco.Web.Routing;
+You can subscribe to the 'routing request' notification, which is published right after the `PublishedRequestBuilder` has been prepared, but before the request is built, and processed. Here you can modify anything in the request before it is built and processed! e.g. content, template, etc:
 
-namespace Umbraco8.Components
+```C#
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+
+namespace Umbraco9.NotificationHandlers
 {
-    public class PublishedRequestComponent : IComponent
+    public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
     {
-        public void Initialize()
+        public void Handle(RoutingRequestNotification notification)
         {
-            PublishedRequest.Prepared += PublishedRequest_Prepared;
-        }
-
-        private void PublishedRequest_Prepared(object sender, EventArgs e)
-        {
-             var request = sender as PublishedRequest;
-             // do something…
-        }
-
-        public void Terminate() {
-            //unsubscribe during shutdown
-            PublishedRequest.Prepared -= PublishedRequest_Prepared;
+            var requestBuilder = notification.RequestBuilder;
+            // Do something with the IPublishedRequestBuilder here 
         }
     }
 }

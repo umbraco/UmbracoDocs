@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 9.0.0
 ---
 
 # Media Picker
@@ -11,7 +11,7 @@ versionFrom: 8.1.0
 This property editors returns a single item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
 
 :::note 
-As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](../Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
+As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
 :::
 
 ## Data Type Definition Example
@@ -37,7 +37,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMultiMediaPicker = Model.Value<IEnumerable<IPublishedContent>>("sliders");
     foreach (var item in typedMultiMediaPicker)
     {
-        <img src="@item.Url" style="width:200px"/>
+        <img src="@item.Url()" style="width:200px"/>
     }
 }
 ```
@@ -49,7 +49,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMultiMediaPicker = Model.Sliders;
     foreach (var item in typedMultiMediaPicker)
     {
-        <img src="@item.Url" style="width:200px" />
+        <img src="@item.Url()" style="width:200px" />
     }
 }
 ```
@@ -61,8 +61,8 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMediaPickerSingle = Model.Value<IPublishedContent>("featuredBanner");
     if (typedMediaPickerSingle != null)
     {
-        <p>@typedMediaPickerSingle.Url</p>
-        <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+        <p>@typedMediaPickerSingle.Url()</p>
+        <img src="@typedMediaPickerSingle.Url()" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
     }
 }
 ```
@@ -74,8 +74,8 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMediaPickerSingle = Model.FeaturedBanner;
     if (typedMediaPickerSingle is Image image)
     {
-        <p>@image.Url</p>
-        <img src="@image.Url" style="width:200px"/>
+        <p>@image.())</p>
+        <img src="@image.Url()" style="width:200px"/>
     }
 }
 ```
@@ -85,6 +85,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@inject IContentService Services;
 @{
     // Get access to ContentService
     var contentService = Services.ContentService;
@@ -121,8 +122,9 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'featuredBanner'
-    content.SetValue(Home.GetModelPropertyType(x => x.FeaturedBanner).Alias, true);
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, true);
 }
 ```

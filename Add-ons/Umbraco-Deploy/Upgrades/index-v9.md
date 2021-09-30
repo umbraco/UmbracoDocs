@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Upgrading Umbraco Deploy"
 meta.Description: "How to upgrade Umbraco Deploy"
 state: complete
-verified-against: beta001
+verified-against: beta-1
 ---
 
 # Upgrading Umbraco Deploy

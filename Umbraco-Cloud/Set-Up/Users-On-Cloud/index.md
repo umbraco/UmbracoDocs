@@ -2,6 +2,7 @@
 meta.Title: "Users on Umbraco Cloud"
 meta.Description: "An article explaining how Umbraco Users are working on Umbraco Cloud."
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Users on Umbraco Cloud

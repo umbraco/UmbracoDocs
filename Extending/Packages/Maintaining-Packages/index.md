@@ -1,6 +1,8 @@
 ---
-versionFrom: 7.0.0
-keywords: packages 
+versionFrom: 9.0.0
+verified-against: alpha-3
+state: complete
+updated-links: true
 meta.Title: "Maintaining Umbraco Packages"
 meta.Description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
 ---
@@ -11,7 +13,7 @@ Once you've created and published your package, what's involved in its ongoing m
 
 ## Keep it up-to-date
 
-When a new version of Umbraco is released you should test your package on this latest version to confirm it still works. 
+When a new version of Umbraco is released you should test your package on this latest version to confirm it still works.
 
 ### If the package still works
 
@@ -21,9 +23,9 @@ It would also be helpful to ensure that the 'Package Compatibility' details are 
 
 ### If the package needs updating
 
-Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](../Creating-a-Package/) article for guidelines on creating the package zip file using the backoffice.  
+Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](../Creating-a-Package/index.md) article for guidelines on creating the package zip file using the backoffice.  
 
-To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating. 
+To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating.
 
 - On the 'Package Details' section of the form update the 'Current Version'. You should also add some details about which versions of your package are for which version of Umbraco in the 'Package Description'. For example:
 
@@ -37,7 +39,7 @@ You can only have one 'current' file - this is the version that will be download
 
 ![Download current version button](images/download-package-button.png)
 
-If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package](../Creating-a-nuget-package/).
+If your package is available on Nuget then you should also release this new version to Nuget. This will be a similar process to the one described in [Creating a Nuget Package](../Creating-a-nuget-package).
 
 ## Manage feature requests and issues
 
@@ -55,7 +57,7 @@ Any forum you create will appear under the Package Files list on the package's p
 
 ## Find collaborators
 
-If you are a sole maintainer of a package then it's a good idea to find someone to help you. If you have accepted pull requests from people then why not ask them if they would like to collaborate.
+If you are the sole maintainer of a package then it's a good idea to find someone to help you. If you have accepted pull requests from people then why not ask them if they would like to collaborate?
 
 If someone requests a feature that you think is a good fit but you don't have the time, then ask that person if they would like to work with you to get it added.
 
@@ -71,7 +73,7 @@ You can assign other Our members to the 'team' for your package. Team members wi
 
 If your package should no longer be used (perhaps it is now too old, or it has been superseded by another one that you recommend instead), then you should update your package accordingly via [your packages profile page](https://our.umbraco.com/member/profile/packages/):
 
-At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement
+At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement.
 
 ![Flag package as retired](images/flag-as-retired.png)
 
