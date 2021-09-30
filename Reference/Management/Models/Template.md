@@ -1,29 +1,32 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "Template Model"
+meta.Description: "Represents a Template file."
 ---
 
 # Template
 
 Represents a Template file.
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following using statement:
+All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Models;
 ```
 
 ## Constructors
 
-### new Template(string name, string alias)
+### new Template(IShortStringHelper shortStringHelper, string name, string alias)
 
-Constructor for creating a new Template object where the necessary parameters are the name of the Template and the alias for the Template being created.
+Constructor for creating a new Template object where the necessary parameters are a short String Helper as a `IShortStringHelper`, the name of the Template as a `string` and the alias as a `string` for the Template being created.
 
 ## Properties
 
@@ -32,7 +35,7 @@ Constructor for creating a new Template object where the necessary parameters ar
 Gets the Alias of the File, which is the name without the extension.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.Alias;
 ```
 
@@ -41,7 +44,7 @@ return template.Alias;
 Returns true if the template is used as a layout for other templates (i.e. it has 'children')
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper,"Page", "page");
 return template.IsMasterTemplate;
 ```
 
@@ -50,7 +53,7 @@ return template.IsMasterTemplate;
 Returns the alias of the master template if one is set.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.MasterTemplateAlias;
 ```
 
@@ -59,7 +62,7 @@ return template.MasterTemplateAlias;
 Returns the id of the master template if one is set.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.MasterTemplateId;
 ```
 
@@ -68,7 +71,7 @@ return template.MasterTemplateId;
 Gets the Name of the File including extension.
 
 ```csharp
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 return template.Name;
 ```
 
@@ -80,7 +83,7 @@ Sets the master template of the template.
 
 ```csharp
 // Create a new template
-var template = new Template("Page", "page");
+var template = new Template(shortStringHelper, "Page", "page");
 // Get a master template 
 var masterTemplate = fileService.GetTemplate(1234);
 // Set the master template to new created template

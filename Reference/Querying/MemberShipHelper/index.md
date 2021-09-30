@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 ---
 
 # Membershiphelper
@@ -7,7 +8,8 @@ versionFrom: 8.0.0
 _`MembershipHelper` is a helper class for accessing member data in the form of `IPublishedContent`.
 `MembershipHelper` has a variety of helper methods that are useful when working in your views, controllers and webforms classes._
 
-Note: For a more detailed list, visit the API documentation.
+Note: For a more detailed list, visit the API documentation:
+
 - [API Documentation for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
 - [API Documentation for v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
 
@@ -34,7 +36,7 @@ MembershipHelper membershipHelper = Members;
 
 ### Dependency Injection
 
-In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IAuditService` interface in your constructor:
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `MembershipHelper` interface in your constructor:
 
 ```csharp
 public class MyClass

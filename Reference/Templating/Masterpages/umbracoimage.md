@@ -1,6 +1,7 @@
 ---
 versionFrom: 4.11.0
 versionRemoved: 8.0.0
+
 ---
 
 # Umbraco:image

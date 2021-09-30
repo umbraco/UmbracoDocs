@@ -10,7 +10,7 @@ update-links: true
 
 # Imaging settings
 
-Imaging settings lets you configure the caching settings, and resize settings for images on your project. If you need to configure allowed image file types, or auto fill image properties, you want to use [content settings](../ContentSettings/index-v9.md) instead.
+Imaging settings lets you configure the caching settings, and resize settings for images on your project. If you need to configure allowed image file types, or auto fill image properties, you want to use [content settings](../ContentSettings/index.md) instead.
 
 All these settings contains default values, so nothing needs to be configured. A complete settings section for imaging can be seen here with all the default values:
 

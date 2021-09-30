@@ -1,12 +1,15 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "DictionaryItem Model"
+meta.Description: "Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree."
 ---
 
 # DictionaryItem
 
 Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.  
 
-* **Namespace:** `Umbraco.Core.Models`
+* **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -16,7 +19,7 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Models;
 ```
 
 ## Constructors
@@ -27,7 +30,7 @@ Constructor for creating a new `DictionaryItem` object where the necessary param
 
 ### new DictionaryItem(Guid? parentId, string itemKey)
 
-Constructor for creating a new `DictionaryItem` object where the necessary parameters are the parentKey as `Guid` and the key of the `DictionaryItem` as a `string`. Use this one if you want to create a `DictionaryItem` untherneath another one.
+Constructor for creating a new `DictionaryItem` object where the necessary parameters are the parentKey as `Guid` and the key of the `DictionaryItem` as a `string`. Use this one if you want to create a `DictionaryItem` underneath another one.
 
 ## Properties
 

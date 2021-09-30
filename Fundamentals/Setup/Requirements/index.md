@@ -1,5 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: alpha-4
+state: complete
+updated-links: true
 ---
 
 # Minimum System Requirements
@@ -15,17 +18,25 @@ The Umbraco UI should work in all modern browsers:
 
 ## Local Development
 
-* Microsoft Windows 7 SP1
-* [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express) or [Microsoft Visual Studio](https://www.visualstudio.com/) 2017 **version 15.9.6 and higher**
-* ASP.NET 4.7.2
+* Either OS:
+  * Microsoft Windows 7 SP1, 8.1 and 10
+  * MacOS High Sierra 10.13
+  * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
+* One of the following .NET Tools or Editors:
+  * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
+  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
+  * .NET Core CLI
+  * etc.
+* .NET 5.0
+* SQL connection string (SQL Server)
 
 ## Hosting
 
 * IIS 8 and higher
-* SQL CE, SQL Server 2012 and higher
-* ASP.NET 4.7.2
+* SQL Server 2012 and higher
+* .NET 5.0
+* Docker
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-## Note
-
-* Umbraco will not run on ASP.NET Core
+*For more information, check the official Microsoft documentation for [Hosting and deploying ASP.NET Core applications](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-5.0)*

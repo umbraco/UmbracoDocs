@@ -48,6 +48,7 @@ To create a Form, follow these steps:
 
     ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
+
     | Field Name | Value |
     |-|-|
     | Enter question | Name |

@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Radiobutton List
@@ -47,9 +47,10 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
@@ -77,6 +78,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'colorTheme'
     content.SetValue(Home.GetModelPropertyType(x => x.ColorTheme).Alias, "water");
