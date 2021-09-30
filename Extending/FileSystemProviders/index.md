@@ -214,3 +214,9 @@ namespace UmbracoExamples.Composition
 Where `YourFileSystemImplementation` is a class that implements `IFileSystem`. This should always be done in a composer, since we do not recommend trying to change filesystems on the fly.
 
 After the `SetStylesheetFileSystem` method has run, `FileSystems.StylesheetsFileSystem` will return the instance that was created in the `ConfigureFileSystems` extension method.
+
+## Custom providers
+
+There is an Azure Blob Storage provider:
+
+* [Azure Blob Storage](Azure-Blob-Storage/index.md)
