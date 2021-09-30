@@ -18,7 +18,7 @@ Below, you will find instructions on how to customise the login screen.
 
 ## Greeting
 
-The login screen features a greeting, which you can personalize by changing the language file of your choice. For example for en-US you would add the following keys to: `~/umbraco/config/lang/en_us.xml`
+The login screen features a greeting which you can personalize by creating (as an example) an `en_us.user.xml` file in a new root directory `~/config/lang/`. For example for en-US you would take the relevant keys below from `~/umbraco/config/lang/en_us.xml` and add them to `~/config/lang/en_us.user.xml`
 
 ```xml
 <area alias="login">
@@ -31,8 +31,7 @@ The login screen features a greeting, which you can personalize by changing the 
     <key alias="greeting6">Happy Caturday</key>
 </area>
 ```
-
-You can customize other text in the login screen as well, grab the default values from `~/umbraco/config/lang/en.xml` and copy the keys you want to translate into your `~/umbraco/config/lang/MYLANGUAGE.xml` file.
+You can customize other text in the login screen as well, grab the default values from `~/umbraco/config/lang/en.xml` and copy the keys you want to translate into a new `~/config/lang/MYLANGUAGE.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
 
 ## Password reset
 
