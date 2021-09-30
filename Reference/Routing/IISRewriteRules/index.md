@@ -39,7 +39,7 @@ An example of how this can be done is
 </rewrite>
 ```
 
-- Create an in an instance of the `RewriteOptions` class:
+- Create an instance of the `RewriteOptions` class:
 
 ```Csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
