@@ -1,4 +1,4 @@
-# Migrate Umbraco 7 Cloud project to Umbraco 8
+# Migrate Umbraco 8 Cloud project to Umbraco 9
 
 This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 9.
 
@@ -8,7 +8,9 @@ It is not possible to migrate the custom code, as the underlying web framework u
 
 You also need to make sure that the packages that you are using is available for Umbraco 9.
 
+<!--Removed for now, might move it back as we create a article for V8-9
 Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
+-->
 
 <!--Needs V9 update
 ## Video tutorial
@@ -36,16 +38,15 @@ Should something fail during the migration, the Development environment can alwa
 
 * Import the database backup into SQL Server Management Studio
 
-* Clone down the Development environment from the Umbraco 9 Cloud project
+* Clone down the Development environment from the Umbraco 9 Cloud project, test the project and make sure to login to the backoffice
 
 * Update the connection string in the Umbraco 9 AppSetting.Json file so that it connects to the Umbraco 8 database
 
-* Run the Umbraco 9 project locally and make sure it runs
+* Run the Umbraco 9 project locally
 
 * The migration will need to be authorized - Your Umbraco ID credentials will be used for that
 
-
-![Authorize upgrade](images/upgrade-to-8_1.png)
+![Authorize upgrade](images/upgrade-to-9_1.png)
 
 * Click **Continue** to start the migration
 * When the migration is done, login to the backoffice and verify that everything is there
@@ -58,45 +59,38 @@ The database will be migrated, but upgrading view files and custom code and impl
 See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
 :::
 
-## Step 2: Files migration
+## Step 2: File migration V9
 
-* The following files / folders needs to be copied into the Umbraco 8 project
+* The following files / folders needs to be copied into the Umbraco 9 project
     * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files, unless changes have been made to these
-    * `~/Media`
+    * Your media files need to be uploaded in the media section on your Umbraco 9 project
     * Any files / folders related to Stylesheets and JavaScripts
-    * Any custom files / folders the Umbraco 7 project uses, that isn't in the `~/Config` or `~/bin`
 
-* If Umbraco Forms is used on the Umbraco 7 project:
-    * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 project
+* In Umbraco 9 Config files no longer lives in a Web.Config and is instead in the `AppSettings.Json` file. You will need to make sure that you update the AppSettings with any custom settings that you had in your Umbraco 8 project to match with the[V9 configs](../../../Reference/V9-Config/index.md).
 
-* Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
+* In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
 
-* Run the Umbraco 8 project locally
+    * Make sure to first migrate the Forms to the database using [Umbraco forms 8](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/)
+
+* Run the Umbraco 9 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
 
-* Open CMD in the `~/data` folder on the Umbraco 8 project
+* Go to the backoffice of your project and navigate to the Settings section and find the deploy dashboard
 
-* Generate UDA files by running the following command: `echo > deploy-export`
+* Generate UDA files by running the following command: `Extract Schema To Data Files` from the dashboard
 
-* Once a `deploy-complete` marker is added to the `~/data` folder, it is done
+* Once the `Operation` is done the status will change to `Last deployment operation completed`
 
-* Check `~/data/revision` to ensure all the UDA files have been generated
+* Check `~\umbraco\Deploy\Revision` to ensure all the UDA files have been generated
 
-* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files that was generated
-
-* This check will result in either of the two:
-    * `deploy-failed`
-        * Something failed during the check
-        * Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error
-    * `deploy-complete`
-        * Everything checks out: Move on to the next step
+* Run `Schema Deployment From Data Files` in the from the deploy dashboard to make sure everything checks out with the UDA files that was generated
 
 ## Step 3: custom code for Umbraco 9
 
-Umbraco 8 is different from Umbraco 7 in many ways. This means that in this step, all custom code, controllers and models needs to be reviewed and rewritten for Umbraco 8.
+Umbraco 9 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers and models needs to be rewritten for Umbraco 9.
 
 :::note
-Many of the changes have been documented, and the articles are listed here: [Umbraco Documentation Status](../../../Umbraco9Articles).
+Many of the changes have been documented, and the articles are listed here: [Umbraco Documentation Status](/../../../Umbraco9Articles).
 
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
@@ -107,13 +101,9 @@ One of the changes made, is how published content is rendered through Template f
 
 Read more about these changes in the [IPublishedContent section of the Documentation](../../../Reference/Querying/IPublishedContent/).
 
-* Template files need to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>`
+* Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 
-* Template files need to use `ContentModels = Umbraco.Web.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedContentModels`
-
-* `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`
-
-* `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`
+* Template files need to use `ContentModels = Umbraco.Cms.Web.Common.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedModels`
 
 Depending on the size of the project that is being migrated and the amount of custom code and implementations, this step is going to require a lot of work.
 
@@ -125,15 +115,15 @@ Once the Umbraco 9 project runs without errors on the local setup, the next step
 
 :::note
 The deployment might take a bit longer than normal.
-
-To track the process, keep an eye on the deploy markers in `site/wwwroot/data` using KUDU.
 :::
 
+Once everything have been pushed, go to the Deploy Dashboard and trigger an `Schema Deployment From Data Files`
+
 * The deployment will result in either of the two:
-    * `deploy-failed`
+    * `Last deployment operation failed`
         * Something failed during the check
         * Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error
-    * `deploy-complete`
+    * `Last deployment operation completed`
         * Everything checks out: The Development environment has been upgraded
 
 * Transfer Content and Media from the local clone to the Development environment
@@ -146,15 +136,14 @@ To track the process, keep an eye on the deploy markers in `site/wwwroot/data` u
 
 Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
-* Setup rewrites on the Umbraco 8 site
+* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 8 site
 * Assign hostnames to the project
     * Note that hostnames are unique, and can only be added to one Cloud project at a time
 
 ## Related information
 
-* [Content Migration for Umbraco CMS - 7 to 8](../../../Getting-Started/Setup/Upgrading/migrating-to-v8)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Umbraco 8 Documentation status](../../../v8documentation)
+* [Umbraco 9 Documentation status](../../../Umbraco9Articles)
 * [Forms on Umbraco Cloud](../../Deployment/Umbraco-Forms-on-Cloud)
 * [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
 * [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
