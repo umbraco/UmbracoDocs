@@ -56,6 +56,10 @@ No. All services currently run in the Azure West Europe region.
 
 ### How many resources do I have available for my website?
 
+:::note
+This FAQ relates to websites hosted on the older platform before H2 2021. In order to see limitations for newer platform websites see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
+:::
+
 Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
 
 We do have some limitations.
