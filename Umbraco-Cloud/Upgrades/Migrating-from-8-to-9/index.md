@@ -59,11 +59,11 @@ The database will be migrated, but upgrading view files and custom code and impl
 See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
 :::
 
-## Step 2: File migration V9
+## Step 2: File migration
 
 * The following files / folders needs to be copied into the Umbraco 9 project
     * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files, unless changes have been made to these
-    * Your media files need to be uploaded in the media section on your Umbraco 9 project
+    * `~/Media`
     * Any files / folders related to Stylesheets and JavaScripts
 
 * In Umbraco 9 Config files no longer lives in a Web.Config and is instead in the `AppSettings.Json` file. You will need to make sure that you update the AppSettings with any custom settings that you had in your Umbraco 8 project to match with the[V9 configs](../../../Reference/V9-Config/index.md).
@@ -122,7 +122,7 @@ Once everything have been pushed, go to the Deploy Dashboard and trigger an `Sch
 * The deployment will result in either of the two:
     * `Last deployment operation failed`
         * Something failed during the check
-        * Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error
+        * Run `Clear Cached Signatures` followed by `Schema Deployment From Data Filesy` to clear up the error
     * `Last deployment operation completed`
         * Everything checks out: The Development environment has been upgraded
 
@@ -136,7 +136,7 @@ Once everything have been pushed, go to the Deploy Dashboard and trigger an `Sch
 
 Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
-* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 8 site
+* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 9 site
 * Assign hostnames to the project
     * Note that hostnames are unique, and can only be added to one Cloud project at a time
 
