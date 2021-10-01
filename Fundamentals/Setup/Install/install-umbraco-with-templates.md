@@ -38,7 +38,7 @@ Description: An empty Umbraco Project ready to get started
 Options:
   -v|--version              The version of Umbraco to load using NuGet
                             string - Optional
-                            Default: 9.0.0-rc001
+                            Default: 9.0.0
 
   -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
                             text - Optional
@@ -67,6 +67,13 @@ Options:
 
   --connection-string       Database connection string when using Unattended install (Without installer wizard UI)
                             text - Optional
+
+  --no-nodes-view-path      Path to a custom view presented with the Umbraco installation contains no published content
+                            text - Optional
+
+  --use-https-redirect      Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting (Default: false)
+                            bool - Optional
+                            Default: false
 ```
 
 ## Create an Umbraco solution
