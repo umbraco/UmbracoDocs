@@ -7,6 +7,11 @@ meta.Description: "The Umbraco Latch service has been deprecated and it instead 
 
 # How to move away from using Umbraco Latch
 
+:::warning
+From November 1st, 2021 you will no longer be able to use Latch on Umbraco Cloud.
+This will effectively mean that unless changing the settings, the site will not be accessible for users, therefore make sure to update your hostname to Automatic TLS with Cloudflare..
+:::
+
 As of December 8th, 2020, the Umbraco Latch service used for issuing security certificates to hostnames added to Umbraco Cloud environments, has been replaced with another Umbraco Cloud service. Any hostnames added to your environments going forward will automatically be issued a TLS (HTTPS) certificate provided by Cloudflare.
 
 All current certificates issued by the Umbraco Latch service, using Let's Encrypt, will continue to be renewed every three months.
