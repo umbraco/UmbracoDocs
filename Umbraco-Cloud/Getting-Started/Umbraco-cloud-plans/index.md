@@ -48,7 +48,7 @@ Umbraco Cloud Professional plan
 
 # Soft quotas for shared Umbraco Cloud Plans
 
-Sites are monitored for hitting soft quotas every minute. (Evlauation freqency). A quota is evaluation for a window of 5 minutes. In case a site reaches the soft quota it will be restarted. After x times the soft quota is reached within 24 hours the site will be isolated to a dedicated plan, in order to protect the rest of the sites in the pool.
+Sites are monitored for hitting soft quotas every minute. (Evaluation freqency). A quota is evaluation for a window of 5 minutes. In case a site reaches the soft quota it will be restarted. After x times the soft quota is reached within 24 hours the site will be isolated to a dedicated plan, in order to protect the rest of the sites in the pool.
 
 These are soft quotas because peaks are allowed and the evaluation period is 5 minutes.
 
@@ -72,4 +72,4 @@ Umbraco Cloud Professional plan
 
 # Quotas for the shared pool
 
-Whenever a pool hits above 95% usage of any resource disk, the busiest staging or development site, that hasn't been moved prevously will be moved to a different pool.
+Whenever a pool hits above 95% usage of any resource disk, the busiest staging or development site, that hasn't been moved previously will be moved to a different pool.
