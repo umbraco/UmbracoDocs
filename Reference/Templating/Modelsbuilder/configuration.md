@@ -34,8 +34,7 @@ The example below shows an example configuration using the SourceCodeManual mode
 	"Umbraco": {
 		"CMS": {
 			"ModelsBuilder": {
-				"ModelsMode": "SourceCodeManual",
-				"Enable": true
+				"ModelsMode": "SourceCodeManual"
 			}
 		}
 	}
