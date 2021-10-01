@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline"
 meta.Description: "Steps and examples on how Umbraco Deploy can be integrated into an automated build and deployment pipeline"
 ---
@@ -16,7 +16,7 @@ Umbraco Deploy does not require the use of any particular build or deployment to
 
 Above and beyond the normal steps of a build pipeline for a .NET web application - tasks like NuGet restore, solution build, running of tests etc. - Umbraco Deploy requires three additional steps.
 
-- The license file needs to be deployed into the target envrionment's `bin` folder.
+- The license file needs to be deployed into the target environment's `umbraco/Licenses` folder.
 - The `.uda` schema files that are written to disk and included in source control, need to be made available in the build artifact that is deployed to the target environment.
 - Once the build is complete, the extraction of the updated schema in the target environment needs to be triggered.
 
@@ -26,9 +26,9 @@ The third step needs to run last in the pipeline, once the built web application
 
 ## Background on the Schema Extraction Process
 
-Without a CI/CD pipeline step in place to trigger the extraction, following a deployment the process would need to be carried out manually. This can be done by logging into the back-office, navigating to _Settings > Deploy_ and triggering the operation via the dashboard.
+Without a CI/CD pipeline step in place to trigger the extraction, following a deployment, the process would need to be carried out manually. This can be done by logging into the backoffice, navigating to _Settings > Deploy_ and triggering the operation via the dashboard.
 
-Behind the scenes what happens here is a marker file being written to disk - in the `/data/` folder and with a name of `deploy`.  It’s by monitoring this directory for a file with this name that Umbraco Deploy knows to trigger the extraction.
+Behind the scenes what happens here is a marker file being written to disk - in the `/umbraco/Deploy/` folder and with a name of `deploy`.  It’s by monitoring this directory for a file with this name that Umbraco Deploy knows to trigger the extraction.
 
 Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenticated request.  This will write the marker file, which will trigger the extraction.
 

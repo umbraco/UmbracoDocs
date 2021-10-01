@@ -1,14 +1,17 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: beta-3
+state: complete
+updated-links: true
 ---
 
 # ConsentService
 
-**Applies to Umbraco 7.9 and newer**
+**Applies to Umbraco 9 and newer**
 
-[Browse the API documentation for ConsentService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IConsentService.html).
+[Browse the API documentation for ConsentService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IConsentService.html).
 
- * **Namespace:** `Umbraco.Core.Services`
+ * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 A service for handling lawful data processing requirements.
@@ -18,12 +21,10 @@ A consent is fully identified by a source (whoever is consenting), a context (fo
 A consent state registers the state of the consent (granted, revoked...).
 
 ## Register a new consent
-Consent can be given or revoked or changed via the `RegisterConsent` method, which
-creates a new `Consent` entity to track the consent.
+Consent can be given or revoked or changed via the `RegisterConsent` method, which creates a new `Consent` entity to track the consent.
 
 ## Get the current state
-Getter methods of this service return the current state of a consent, i.e. the latest [IConsent](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.IConsent.html)
-entity that was created.
+Getter methods of this service return the current state of a consent, i.e. the latest [IConsent](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
 
 ## Revoking a consent
 Revoking a consent is performed by registering a revoked consent.
@@ -34,10 +35,10 @@ A consent *cannot be deleted*.  It can only be revoked by registering a "revoked
 
 ```c#
 // store a new consent
-var newConsent = ServiceContext.ConsentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
+var newConsent = _consentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
 
 // lookup a consent
-var consents = ServiceContext.ConsentService.LookupConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", sourceStartsWith : true);
+var consents = _consentService.LookupConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", sourceStartsWith : true);
 if (consents != null && consents.Any())
 {
     var currentConsent = consents.First(c => c.Current == true);
@@ -50,4 +51,10 @@ if (consents != null && consents.Any())
         // the state is None, Pending or Revoked
     }
 }
+```
+
+In Razor views, you can access the consent service through the `@inject` directive:
+
+```csharp
+@inject IConsentService ConsentService
 ```
