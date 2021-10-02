@@ -11,7 +11,7 @@ update-links: true
 
 There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../Scheduling/index-v9.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
 
-For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotifiaction`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
+For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
 
 ```C#
 using Umbraco.Cms.Core.Notifications;
@@ -44,7 +44,7 @@ namespace Umbraco.Cms.Web.UI.Notifications
 }
 ```
 
-Now you can create a handler that recieves the amount of items deleted through the notification.
+Now you can create a handler that receives the amount of items deleted through the notification.
 
 # Sending notifications
 

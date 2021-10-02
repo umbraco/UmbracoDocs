@@ -129,7 +129,7 @@ The MemberTypeService class implements IMemberTypeService. It provides access to
       </ul>
     </td>
     <td>
-    Published when a MemberType is saved or deleted, after the transaction has completed. This is mainly used for caching purposes, and generally not recommended, use Saved and Delted notifications instead.<br/>
+    Published when a MemberType is saved or deleted, after the transaction has completed. This is mainly used for caching purposes, and generally not recommended, use Saved and Deleted notifications instead.<br/>
     Changes will for each item affected by the change prove:
     <ol>
       <li>Item: The IMemberType affected by the change.</li>
