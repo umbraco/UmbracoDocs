@@ -67,7 +67,7 @@ namespace MySite
   </tr>
 
   <tr>
-    <td>ContentSavedNotifiaction</td>
+    <td>ContentSavedNotification</td>
     <td>
         <ul>
           <li>IEnumerable&ltIContent&gt SavedEntities</li>

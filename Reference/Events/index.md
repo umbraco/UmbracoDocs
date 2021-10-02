@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Umbraco events"
-meta.Description: "Information on various backofice events in Umbraco"
+meta.Description: "Information on various backoffice events in Umbraco"
 versionRemoved: 9.0.0
 ---
 
@@ -17,7 +17,7 @@ All available notifications are documented in the [Notifications](../Notificatio
 
 ## [Composing](../../Implementation/Composing/index-v8)
 
-Umbraco uses Composition and Components to allows you to execute code during startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events.
+Umbraco uses Compositions and Components to allow you to execute code during startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events.
 
 ## Events
 
