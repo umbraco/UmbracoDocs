@@ -71,7 +71,7 @@ The extension method takes two generic type parameters, the first `ContentPublis
 public class DontShout : INotificationHandler<ContentPublishingNotification>
 ```
 
-For the full handler implementation see [ContentService Notifications](Contentservice-Notifications.md).
+For the full handler implementation see [ContentService Notifications](ContentService-Notifications.md).
 
 #### Registering notification handlers in a composer
 
