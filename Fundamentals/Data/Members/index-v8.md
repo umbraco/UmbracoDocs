@@ -1,7 +1,8 @@
 ---
 meta.Title: "Creating Members in Umbraco"
 meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
-versionFrom: 9.0.0
+versionFrom: 8.0.0
+needsV9Update: "true"
 ---
 
 # Members
@@ -68,36 +69,7 @@ More information can be found under [security](../../../Reference/Security/#sens
 
 As a developer you are able to leverage your website when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
-Members are created using APS.NET Core Identity, there are some provider settings that can be set in appsettings.json - here are the defaults:
-
-```json
-{
-  "$schema": "./umbraco/config/appsettings-schema.json",  
-  "Umbraco": {
-    "CMS": {      
-      "Security": {
-        "AllowPasswordReset": true,
-        "AuthCookieDomain": "(No default, but takes a string)",
-        "AuthCookieName": "UMB_UCONTEXT",
-        "KeepUserLoggedIn": false,
-        "UsernameIsEmail": true,
-        "HideDisabledUsersInBackoffice": false,
-        "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
-        "MemberPassword": {
-          "RequiredLength": 10,
-          "RequireNonLetterOrDigit": false,
-          "RequireDigit": false,
-          "RequireLowercase": false,
-          "RequireUppercase": false,
-          "MaxFailedAccessAttemptsBeforeLockout": 5,
-          "HashAlgorithmType": "HMACSHA256"
-        }
-      }
-    }
-  }
-}
-```
-
+Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the `web.config`.
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
 ### More information
