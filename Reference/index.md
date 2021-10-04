@@ -13,6 +13,10 @@ _Developers' Reference primarily consists of API references of the different cor
 
 Information about all of Umbraco's configuration files and options.
 
+## [Configuration V-9](V9-Config/index.md)
+
+Information about all of Umbraco's configurations and options for Umbraco 9.
+
 ## [Templates](Templating/index.md)
 
 Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css.
