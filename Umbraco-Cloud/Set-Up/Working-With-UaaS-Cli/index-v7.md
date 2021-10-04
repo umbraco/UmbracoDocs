@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Working with Umbraco Cloud and Node.js cli
