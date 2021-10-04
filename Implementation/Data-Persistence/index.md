@@ -27,10 +27,6 @@ ASP.NET Core supports dependency injection in almost every scenario.
 *Constructors in views*
 ```cshtml
     @inject IContentService ContentService
-
-    @{
-        ContentService.
-    }
 ```
 
 ## Services
