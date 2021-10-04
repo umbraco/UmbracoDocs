@@ -42,21 +42,22 @@ Should something fail during the migration, the Development environment can alwa
 
 * Update the connection string in the Umbraco 9 AppSetting.Json file so that it connects to the Umbraco 8 database
 
+* To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended)
+
 * Run the Umbraco 9 project locally
 
-* The migration will need to be authorized - Your Umbraco ID credentials will be used for that
+* Wait for the site to finish upgrading
 
-![Authorize upgrade](images/upgrade-to-9_1.png)
+* Stop the site and disable unattended upgrade
 
-* Click **Continue** to start the migration
-* When the migration is done, login to the backoffice and verify that everything is there
+* Run the site and Login using Umbraco ID
 
 :::note
 Please be aware that this is **only a content migration**.
 
 The database will be migrated, but upgrading view files and custom code and implementation will need to be done manually.
 
-See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
+See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more detail on this.
 :::
 
 ## Step 2: File migration
