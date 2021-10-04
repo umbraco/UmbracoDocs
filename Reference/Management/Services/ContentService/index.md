@@ -1,16 +1,17 @@
 ---
-
-keywords: services content service
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: beta-3
+state: complete
+updated-links: true
 ---
 
 # ContentService
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.
 
-[Browse the v8 API documentation for ContentService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IContentService.html).
+[Browse the v9 API documentation for ContentService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IContentService.html).
 
- * **Namespace:** `Umbraco.Core.Services`
+ * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -20,48 +21,32 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
+```
+
+For Razor views:
+```csharp
+@using Umbraco.Cms.Core.Services
 ```
 
 ## Getting the service
 
-### Services property
-If you wish to use the content service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the content service through a local `Services` property:
-
-```csharp
-IContentService contentService = Services.ContentService;
-```
-
-The `Services` property is also available in the Razor veiw inheriting from `UmbracoViewPage`.
-
-### Dependency Injection
-
-In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IContentService` interface in your constructor:
+If you wish to use the content service in a class, you need to use Dependency Injection (DI) in your constructor:
 
 ```csharp
 public class MyClass
 {
-
-    private readonly IContentService _contentService;
+    private IContentService _contentService;
     
     public MyClass(IContentService contentService)
     {
         _contentService = contentService;
     }
-
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+In Razor views, you can access the content service through the `@inject` directive:
 
 ```csharp
-IContentService contentService = Umbraco.Core.Composing.Current.Services.ContentService;
+@inject IContentService ContentService
 ```
-
-## Samples
-
-* [**Create content programmatically**](/Documentation/Reference/Management/Services/ContentService/Create-content-programmatically)<br />See an example on how to create content programmatically.

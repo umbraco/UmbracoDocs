@@ -52,4 +52,4 @@ Select at least 1 record to see the available actions in the top-right corner. B
 
 ---
 
-Prev: [Workflow Types](../Attaching-Workflows/Workflow-Types/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Defining and Attaching Prevalue Sources](../Defining-and-Attaching-Prevaluesources/index.md)
+Prev: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Defining and Attaching Prevalue Sources](../Defining-and-Attaching-Prevaluesources/index.md)

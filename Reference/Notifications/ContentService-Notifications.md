@@ -67,7 +67,7 @@ namespace MySite
   </tr>
 
   <tr>
-    <td>ContentSavedNotifiaction</td>
+    <td>ContentSavedNotification</td>
     <td>
         <ul>
           <li>IEnumerable&ltIContent&gt SavedEntities</li>
@@ -415,7 +415,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Published when ContentService.SendToPublication is called in the API, after the entity has been sent to publlication.<br/>
+    Published when ContentService.SendToPublication is called in the API, after the entity has been sent to publication.<br/>
     Entity: Gets the IContent object being sent to publish.
     </td>
   </tr>

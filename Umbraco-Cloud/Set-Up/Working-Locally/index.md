@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Working with a local clone of an Umbraco Cloud site
@@ -36,7 +37,7 @@ Here are the steps to clone your site (**We'll use Fork in this example.**):
 
 ![Clone to local machine](images/clone-to-local.gif)
 
-Now you have an exact copy of your Umbraco Cloud environment locally that you can [run](https://youtu.be/p5oMCMboxQ8?t=233).
+Now you have an exact copy of your Umbraco Cloud environment locally that you can run.
 
 We like to use Microsoft WebMatrix or Visual Studio Code when working locally, but you can use Visual Studio or another development tool or web server. When you run your local site for the first time you’ll be prompted to restore your site's content. Wait until this process completes as it also creates the local SqlCE database for your site.
 

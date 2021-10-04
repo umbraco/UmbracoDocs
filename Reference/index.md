@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
@@ -11,6 +12,10 @@ _Developers' Reference primarily consists of API references of the different cor
 ## [Configuration](Config/index.md)
 
 Information about all of Umbraco's configuration files and options.
+
+## [Configuration V9](V9-Config/index.md)
+
+Information about all of Umbraco's configurations and options for Umbraco 9.
 
 ## [Templates](Templating/index.md)
 
@@ -54,7 +59,7 @@ Information on Umbraco security, its various security options and configuring ho
 
 This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
 
-## API Documentation
+## API Documentation V8
 
 #### [C# API Documentation](https://our.umbraco.com/apidocs/v8/csharp/)
 
@@ -63,6 +68,16 @@ __Note: opens a documentation browser that is different from the documentation s
 C# API references for the Umbraco Core and Web libraries.
 
 #### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
+
+## API Documentation V9
+
+#### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
+
+#### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+
+#### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
+
+#### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 

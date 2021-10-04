@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 9.0.0
 ---
 
 # Using MVC Child Actions in Umbraco
@@ -16,7 +17,7 @@ Child Actions can be very powerful especially when you want to have re-usable co
 
 ## Creating a Child Action
 
-This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the `ChildActionOnly` attribute, this will ensure that this action is not publicly routable via a URL):
+This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers-v8.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the `ChildActionOnly` attribute, this will ensure that this action is not publicly routable via a URL):
 
 ```csharp
 public class MySearchController : SurfaceController
@@ -45,7 +46,7 @@ MVC allows you to have the same overloaded action names on your controllers. How
 
 The same view locations apply to Partial Views returned from Child Actions as the ones listed here: [Partial Views](partial-views.md)
 
-Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the *~/App_Plugins* view location will work too. See  [SurfaceControllers](../../Routing/surface-controllers.md) documentation under the heading *Plugin based controllers*.
+Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the *~/App_Plugins* view location will work too. See  [SurfaceControllers](../../Routing/surface-controllers-v8.md) documentation under the heading *Plugin based controllers*.
 
 ## Rendering a Child Action
 
