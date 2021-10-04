@@ -13,7 +13,7 @@ _Developers' Reference primarily consists of API references of the different cor
 
 Information about all of Umbraco's configuration files and options.
 
-## [Configuration V-9](V9-Config/index.md)
+## [Configuration V9](V9-Config/index.md)
 
 Information about all of Umbraco's configurations and options for Umbraco 9.
 
