@@ -100,7 +100,7 @@ These two properties help inform us the folder location which contains the appli
 
 You can rename the folder and .csproj file to whatever you want, you may also want to update any C# code namespaces to reflect the name of your project.
 
-In addition to this you are able to add additional Class Library projects that are referenced by the Umbraco application .csproj file, if you prefer to organise your code that way.
+In addition to this, you are able to add additional Class Library projects that are referenced by the Umbraco application .csproj file, if you prefer to organize your code that way.
 
 An example could be to rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
 
