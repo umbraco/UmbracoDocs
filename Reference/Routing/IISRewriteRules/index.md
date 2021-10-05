@@ -14,7 +14,7 @@ If you are publishing Umbraco 9 on IIS you can still add web.configs to your pro
 
 ## When to use URL Rewriting Middleware
 
-Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) documentation for more information to when you should or should not use the URL Rewriting Middleware.
+Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0#when-to-use-url-rewriting-middleware) documentation for more information to when you should or should not use the URL Rewriting Middleware.
 
 ## Using URL Rewriting Middleware
 
