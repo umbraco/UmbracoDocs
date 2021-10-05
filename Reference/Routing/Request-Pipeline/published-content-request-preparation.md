@@ -1,38 +1,49 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 9.0.0
+meta.Title: "Published Content Request Preparation"
+meta.Description: "How Umbraco prepares content requests"
+state: complete
+verified-against: beta-4
+update-links: true
 ---
 
 # Published Content Request Preparation
 
-Is called in `UmbracoModule`:
+Is started in `UmbracoRouteValueTransformer` where it gets the `HttpContext` and `RouteValueDictionary` from the netcore framework:
 
-```csharp
-void ProcessRequest(…)
+```c#
+ async ValueTask<RouteValueDictionary> TransformAsync(…)
 ```
 
 What it does:
 
 - It ensures Umbraco is ready, and the request is a document request.
-- Creates a PublishedContentRequest instance
-- Runs PublishedContentRequestEngine.PrepareRequest() for that instance
-- Handles redirects and status
-- Forwards missing content to ugly 404
-- Forwards to either WebForms or MVC
+- Ensures there's content in the published cache, if there isn't it routes to the `RenderNoContentController` which displays the no content page you see when running a fresh install.
+- Creates a published request builder.
+- Routes the request with the request builder using the `PublishedRouter.RouteRequestAsync(…)`.
+  - This will handle redirects, find domain, template, published content and so on.
+  - Build the final `IPublishedRequest`.
+- Sets the routed request in the umbraco context, so it will be available to the controller.
+- Create the route values with the `UmbracoRouteValuesFactory`.
+  - This is what actually routes your request to the correct controller and action, and allows you to hijack routes.
+- Set the route values to the http context.
+- Handles posted form data.
+- Returns the route values to netcore so it routes your request correctly.
 
-## PrepareRequest
+## RouteRequestAsync
 
-The ProcessRequest method calls the PublishedContentRequestEngine.PrepareRequest method. The prepare request takes care of:
+When the `RouteRequestAsync` method is invoked on the `PublishedRouter` it will:
 
-- FindDomain()
-- Handles redirects
-- Sets culture
-- FindPublishedContentAndTemplate()
-- Sets culture (again, in case it was changed)
-- Triggers PublishedContentRequest.Prepared event
-- Sets culture (again, in case it was changed)
-- Handles redirects and missing content
-- Initializes a few internal stuff
+- FindDomain().
+- Handle redirects.
+- Set culture.
+- Find the published content.
+  - Only if it doesn't exist, allowing you to handle it in a custom way with a custom router handler.
+- Find the template.
+- Set the culture (again, in case it was changed).
+- Publish `RoutingRequestNotification`.
+- Handle redirects and missing content.
+- Initialize a few internal stuff.
 
 We will discuss a few of these steps below.
 
@@ -40,88 +51,56 @@ We will discuss a few of these steps below.
 
 The FindDomain method looks for a domain matching the request Uri
 
-- Using a greedy match: “domain.com/foo” takes over “domain.com”
-- Sets published content request’s domain
-- If a domain was found
-    - Sets published content request’s culture accordingly
-    - Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com")
-- Else
+- Using a greedy match: “domain.com/foo” takes over “domain.com”.
+- Sets published content request’s domain.
+- If a domain was found.
+    - Sets published content request’s culture accordingly.
+    - Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com").
+- Else.
 - Sets published content request’s culture by default
-(first language, else system)
+(first language, else system).
 
-### FindPublishedContentAndTemplate()
+### Find published content
 
-1. FindPublishedContent ()
-2. Handles redirects
-3. HandlePublishedContent()
-4. FindTemplate()
-5. FollowExternalRedirect()
-6. HandleWildcardDomains()
+When finding published content the `PublishedRouter` will first check if the ` PublishedRequestBuilder` already has content, if it doesn't the content finders will kick in. There a many different types of content finders, such as find by url, by id path, and more. If none of the content finders manages to find any content, the request will be set as 404, and the `ContentLastChanceFinder` will run, this will try to find a page to handle a 404, if it can't find one, the ugly 404 will be used.
 
-If content is not found, the ContentFinder kicks in.  In the past this was handled by the INotFoundHandler, but the new request pipeline uses [IContentFinder](IContentFinder.md).
+You can also implement your own content finders and last chance finder, for more information, see [IContentFinder](IContentFinder-v9.md)
 
-More information can be found [here](FindPublishedContentAndTemplate.md).
+The `PublishedRouter` will also follow any internal redirects there might be, it is however limited, as to not spiral out of control if there is an infite loop of redirects.
 
-UmbracoModule will pick up the redirect and redirect...  There is no need to write your own redirects:
+### Find template
+
+Once the content has been found, the `PublishedRouter` moves on to finding the template.
+
+First off it checks if any content was found, if it wasn't it sets the template to null, since there can't be a template without content. 
+
+Next it checks to see if there is an alternative template which should be used. An alternative template will be used if the router can find a value with the key "altTemplate", in either the querystring, form, or cookie, and there is content found by the contentfinders, so not the 404 page, or it's an internal redirect and the web routing setting has `InternalRedirectPreservesTemplate`.
+
+If no alternative template is found the router will get the template with the file service, using the ID specified on the published content, and then assign the template to the request.
+
+If an alternative template is specified, the router will check if it's an allowed template for the content, if the template is not allowed on that specific piece of content it will revert to using the default template.
+If the template is allowed it will then use the file service to get the specified alternative template and assign the template to the request.
+
+### Redirects
+
+The router will pick up the redirect and redirect. There is no need to write your own redirects:
 
 ```csharp
 PublishedContentRequest.Prepared += (sender, args) =>
 {
-  var request = sender as PublishedContentRequest;
-  if (!request.HasPublishedContent) return;
-
-  var content = request.PublishedContent;
-  var redirect = content.GetPropertyValue<string>("myRedirect");
-
-  if (!string.IsNullOrWhiteSpace(redirect))
-    request.SetRedirect(redirect);
+public void Handle(RoutingRequestNotification notification)
+{
+    var requestBuilder = notification.RequestBuilder;
+    var content = requestBuilder.PublishedContent;
+    var redirect = content.Value<string>("myRedirect");
+    if (!string.IsNullOrWhiteSpace(redirect))
+    {
+        requestBuilder.SetRedirect(redirect);
+    }
+}
 }
 ```
 
-## Forward to either WebForms or Mvc
-
-Concerning Webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
-
-You can create your own Mvc RenderController:
-
-```csharp
-// This is the default controller
-public class RenderMvcController : UmbracoController
-{ … }
-
-// But feel free to use your own
-public class DefaultRenderMvcControllerResolver
-{ … }
-```
-
-:::note
-A missing template goes to MVC
-:::
-
-There's one by default but you can use your own, so still time to change the view...
-
-As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this:
-
-- create a **MyContentType**Controller
-  - Will run in place of the default controller
-  - For every content of type **MyContentType**
-- Specific action runs if name matches the template alias
-- Otherwise default (Index) action runs
-
 ## Missing template?
 
-In case the PrepareRequest can not find a template:
-
-- It will verify if this is route hijacking
-- Otherwise handles these steps:
-  - HandlePublishedContent()
-  - FindTemplate()
-  - Handle redirects, etc.
-  - Ugly 404 (w/ message)
-  - Transfer to WebForms or MVC…
-
-## Other things which got routed in the process
-
-- The /Base Rest service
-- WebApi
-- Mvc Routes
+In case the router can't find a template, it will try and verify if there's route hijacking in place, if there is, it will just run the hijacked route. If route hijacking is not in place, the router will set the content to null, and run through the routing of the request again, in order for the last chance finder to find a 404.

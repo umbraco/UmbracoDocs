@@ -38,4 +38,4 @@ Form events are raised during the submission life cycle and can be handled for e
 
 ---
 
-Prev: [Umbraco Forms in the Database](../Forms-in-the-Database/index-v9.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Configuration](../Configuration/index-v9.md)
+Prev: [Umbraco Forms in the Database](../Forms-in-the-Database/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Configuration](../Configuration/index.md)

@@ -129,7 +129,7 @@ The MediaTypeService class implements IMediaTypeService. It provides access to o
       </ul>
     </td>
     <td>
-    Published when a MediaType is saved or deleted, after the transaction has completed. This is mainly used for caching purposes, and generally not recommended, use Saved and Delted notifications instead.<br/>
+    Published when a MediaType is saved or deleted, after the transaction has completed. This is mainly used for caching purposes, and generally not recommended, use Saved and Deleted notifications instead.<br/>
     Changes will for each item affected by the change prove:
     <ol>
       <li>Item: The IMediaType affected by the change.</li>

@@ -1,13 +1,16 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "DataType Model"
+meta.Description: "A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes."
 ---
 
 # DataType
 
 A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
 
- * **Namespace:** `Umbraco.Core.Models`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -16,14 +19,14 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Models;
 ```
 
 ## Constructors
 
-### new DataType(IDataEditor editor, int parentId = -1)
+### new DataType(IDataEditor editor, IConfigurationEditorJsonSerializer serializer, int parentId = -1)
 
-Constructor for creating a new `DataType` object where the necessary parameter is a `IDataEditor`.  Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
+Constructor for creating a new `DataType` object where the necessary parameters are a `IDataEditor` and a `IConfigurationEditorJsonSerializer`. Optionally, the parentId can be added, if not provided the default value is -1, which means it will be created at root level.
 
 ## Properties
 
@@ -37,7 +40,7 @@ Gets or Sets the Id of the `User` who created the DataType.
 
 ### .DatabaseType
 
-Gets or Sets the DatabaseType as a `DataTypeDatabaseType` enum for which the DataType's value is saved as.
+Gets or Sets the DatabaseType as a `ValueStorageType` enum for which the DataType's value is saved as.
 
 ### .Id
 

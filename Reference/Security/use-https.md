@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 meta.Title: "Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites."
 meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like "Man in the middle" and phising attacks."
 ---
@@ -11,7 +11,7 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 There are several benefits of HTTPS:
 
 * Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
-* Removing an attack vector called ["Man in the middle"](https://www.owasp.org/index.php/Man-in-the-middle_attack) (or network Sniffing)
+* Removing an attack vector called ["Man in the middle"](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) (or network Sniffing)
 * Guards against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic SSL certificate
 * Google likes HTTPS, it may help your site's rankings
 
@@ -19,31 +19,66 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 ## Set UseSSL configuration option
 
-Umbraco allows you to force HTTPS for all backoffice communications by using the following appSettings configuration:
+Umbraco allows you to force HTTPS for all backoffice communications by using the following configuration:
 
-In Umbraco 8, set the UseHttps (`Umbraco.Core.UseHttps`) key in `appSettings` to true.
+In Umbraco 9, set the UseHttps key in `appSettings` to true.
 
-```xml
-<add key="Umbraco.Core.UseHttps" value="true" />
-```
-
-In Umbraco V7 this is done by setting the following `appSetting` key to `true`.
-
-```xml
-<add key="umbracoUseSSL" value="true" />
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Global": {
+                "UseHttps": true
+            }
+        }
+    }
+}
 ```
 
 This options does several things when it is turned on:
 
-* Ensures that the backoffice authentication cookie is set to [secure only](https://www.owasp.org/index.php/SecureFlag) (so it can only be transmitted over https)
+* Ensures that the backoffice authentication cookie is set to [secure only](https://owasp.org/www-community/controls/SecureCookieAttribute) (so it can only be transmitted over https)
 * All non-https requests to any backoffice controller is redirected to https
 * All self delivered Umbraco requests (i.e. scheduled publishing, keep alive, etc...) are performed over https
 * All Umbraco notification emails with links generated have https links
 * All authorization attempts for backoffice handlers and services will be denied if the request is not over https
 
+## Redirect traffic in code
+The .NET5+ way to handle this, is by adding this `HttpsRedirectionMiddleware` to your pipeline in `Startup.cs`.
+This can be done by adding `app.UseHttpsRedirection();` before the call to `app.UseUmbraco()` in the `Configure` method:
+```cs
+public class Startup
+{
+    ...
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        ...
+        app.UseHttpsRedirection();
+
+        app.UseUmbraco()
+            .WithMiddleware(u =>
+            {
+                u.UseBackOffice();
+                u.UseWebsite();
+            })
+            .WithEndpoints(u =>
+            {
+                u.UseInstallerEndpoints();
+                u.UseBackOfficeEndpoints();
+                u.UseWebsiteEndpoints();
+            });
+    }
+}
+
+```
+
+
+
 ## Redirect traffic on IIS
 
-Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule. The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
+Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule.
+The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
 
 In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
 

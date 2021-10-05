@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Extending Umbraco Deploy"
 meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 ---
@@ -372,7 +372,7 @@ The following code shows the registration of an entity for backoffice deployment
                 "exampleTreeAlias",
                 (string routePath) => true,
                 (string nodeId) => true,
-                (string nodeId, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
+                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
         }
 
         public void Terminate()
@@ -405,7 +405,7 @@ For example, as shown in the linked sample and video, we have entities for "Team
         "teams",
         (string routePath) => routePath.Contains($"/teamEdit/") || routePath.Contains($"/teamsOverview"),
         (string nodeId) => nodeId == "-1" || nodeId.StartsWith("team-"),
-        (string nodeId, out Guid entityId) => Guid.TryParse(nodeId.Substring("team-".Length), out entityId);
+        (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("team-".Length), out entityId);
 ```
 
 And then for the rider:
@@ -416,7 +416,13 @@ And then for the rider:
         "teams",
         (string routePath) => routePath.Contains($"/riderEdit/"),
         (string nodeId) => nodeId.StartsWith("rider-"),
-        (string nodeId, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
+        (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
+```
+
+If access to any services is required when parsing the entity Id, the `HttpContext` is provided as a parameter to the function.  A service can be accessed from this, e.g.:
+
+```C#
+var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
 ```
 
 #### Client-Side Registration

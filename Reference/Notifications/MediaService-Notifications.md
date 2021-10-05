@@ -239,7 +239,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Published when MediaService.DeleteVersion, MediaService.DeleteVersions are called in the API, after the media version has been delelted<br/>
+    Published when MediaService.DeleteVersion, MediaService.DeleteVersions are called in the API, after the media version has been deleted<br/>
       <ol>
         <li>Id: Gets the id of the deleted IMedia object.</li>
         <li>DateToRetain: Gets the latest version date.</li>

@@ -1,5 +1,10 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
+meta.Title: "Routing & Controllers Reference"
+meta.Description: "All about Umbraco's routing pipeline & the types of Controllers used in Umbraco"
+state: complete
+verified-against: beta-4
+update-links: true
 ---
 
 # Routing & Controllers
@@ -29,6 +34,3 @@ Routing requirements for authenticated controllers for both front-end and the ba
 
 ## [URL Tracking](URL-Tracking/index.md)
 Moving and renaming Umbraco documents will lead to URL redirects to be created.
-
-## [IIS Rewrite Rules](IISRewriteRules/index.md)
-How to create static or regex based rewrite rules with a config file?

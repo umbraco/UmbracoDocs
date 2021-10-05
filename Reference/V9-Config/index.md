@@ -121,4 +121,4 @@ A complete list of all the configuration sections included in Umbraco by default
 
 ## Configured by code
 
-* [FileSystemProviders](filesystemProviders-v9.md)
+* [FileSystemProviders](filesystemProviders.md)

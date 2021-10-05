@@ -1,6 +1,7 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
 meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
+versionFrom: 9.0.0
 ---
 
 # Umbraco on .NET 5+
@@ -111,7 +112,7 @@ To get started, follow the steps outlined below.
 1. Install the new Umbraco dotnet template:
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc004
+    dotnet new -i Umbraco.Templates
     ```
 
 ### [Optional] Update the template from earlier pre-release versions
@@ -121,7 +122,7 @@ If you have already installed the Umbraco `dotnet new` template, you will need e
 1. Use a command prompt of your choice to update the `dotnet new` templates
 
     ```none
-    dotnet new -i Umbraco.Templates::9.0.0-rc004
+    dotnet new -i Umbraco.Templates
     ```
 
 ### Steps to create an Umbraco Project using the `dotnet new` template
@@ -428,6 +429,17 @@ See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=l
     - Culture fixes for when backoffice user or Host machine is Swedish
     - Bugfix for SqlMaindomLock
     - Linux casing issues
+
+## Changes between rc 4 and 9.0.0
+
+See tickets tagged on [Github](https://github.com/umbraco/Umbraco-CMS/issues?q=label%3Arelease%2F9.0.0+is%3Aclosed) for a full overview.
+
+#### Summary
+- Bugfixes
+    - Member groups stopped working
+    - Content finder causing redirect to /account/accessdenied
+    - Fixed integer parsing issues when using swedish culture
+    - Reintroducting some missing translation keys.
 
 ## Umbraco Forms 9 (.NET Core) Beta
 
