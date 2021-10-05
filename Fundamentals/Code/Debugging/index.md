@@ -29,8 +29,8 @@ Debug should always be set to false in production.
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. In Umbraco 8 and before, it was possible to something explict named tracing. This is not an option in ASP.NET Core and Umbraco 9.
-Instead you need to configure what log messages you wanna log.
+Logging and tracing are really two names for the same technique. In Umbraco 8 and before, it was possible to do explicit named tracing. This is not an option in ASP.NET Core and Umbraco 9.
+Instead, you need to configure what log messages you wanna log.
 
 ### Enabling Trace Logging
 
@@ -64,9 +64,9 @@ The MiniProfiler profiles your code method calls, giving you a greater insight i
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` e.g. in you appSettings.json and then add `?umbDebug=true` to the querystring of any request.
+To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` e.g. in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
 
-Also ensure your template calls `@Html.RenderProfiler()` as one of the last things.
+Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
 
 
 ![?umbDebug=true](images/v8-miniprofiler-view.png)
