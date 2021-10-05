@@ -2,12 +2,19 @@
 versionFrom: 9.0.0
 ---
 
-# Rewrites in Umbraco 9
+# Url Rewrites in Umbraco 9
 
 With the release of Umbraco 9 and the change of the underlying framework to .NET 5, the way that you use rewrites has changed as well.
 
 The URL Rewriting extension in IIS has been replaced with [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) for rewriting in Umbraco 9.
-This means that there is no Web.config to add your rewrites in anymore.
+
+:::note
+If you are publishing Umbraco 9 on IIS you can still add web.configs to your project to configure IIS features such as URL rewrites.
+:::
+
+## When to use URL Rewriting Middleware
+
+Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) documentation for more information to when you should or should not use the URL Rewriting Middleware.
 
 ## Enabling the rules
 
