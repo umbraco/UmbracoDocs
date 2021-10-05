@@ -44,7 +44,7 @@ Then you can go ahead and save the solution file as:
 
 ![save file as](images/save-as.png)
 
-And it will create the solution file for you in the folder that you specified.
+It will create the solution file for you in the folder that you specified.
 
 :::note
 When creating a solution file we recommend that you place it in the root of the git repository.
