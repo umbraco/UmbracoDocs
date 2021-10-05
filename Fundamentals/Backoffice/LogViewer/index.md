@@ -156,7 +156,7 @@ namespace My.Website
 ```
 
 ### Configure Umbraco to log to Azure Table Storage
-Now with the above two classes we have the plumbing in place to view logs from an Azure Table, however we are not persisting our logs into the Azure table storage account.
+Now with the above two classes, we have the plumbing in place to view logs from an Azure Table, however, we are not persisting our logs into the Azure table storage account.
 So we need to configure the Serilog logging pipeline to store our logs into Azure table storage.
 
 * Install Serilog.Sinks.AzureTableStorage from Nuget
