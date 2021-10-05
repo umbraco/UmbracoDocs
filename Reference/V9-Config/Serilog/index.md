@@ -70,7 +70,7 @@ This can be done by updating the appsettings.json configuration file to sepcify 
 
 ## Logging to a different output
 
-Serilog has the ability to log to a huge amount of different mechanism, from console, to files, even to slack or email, this is all configured using what Serilog calls sinks. 
+Serilog has the ability to log to a huge amount of different mechanism, from console, to files, even to slack or email, this is all configured using what Serilog calls sinks.
 
 An example of this can be seen in the default `appsettings.Development.json`, where Serilog is configured to log to the console using the Async wrapper sink:
 
@@ -98,6 +98,29 @@ Here you can see that we use the `"WriteTo"` key to specify a list of sinks the 
 
 Now there's too many sinks to cover here, for a full list of all available sinks see [Provided sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks#list-of-available-sinks). Each of these entries will have their own documentation on how to set up the logging with the particular sink.
 
+## Changing the Umbraco 'sink'
+By default umbraco uses a special Serilog 'sink' that is optimized for performance. To change paramenters for only this sink, but not the default. E.g higher log lever for this compared to other sinks you can do it in the following way:
+
+```json
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information"
+    },
+    "WriteTo": [
+      {
+        "Name": "UmbracoFile",
+        "Args": {
+          "RestrictedToMinimumLevel": "Warning",
+          "FileSizeLimitBytes": 1073741824,
+          "RollingInterval" : "Day",
+          "FlushToDiskInterval": null,
+          "RollOnFileSizeLimit": false,
+          "RetainedFileCountLimit": 31
+        }
+      }
+    ]
+  }
+```
 
 ## Adding a custom log property to all log items
 
