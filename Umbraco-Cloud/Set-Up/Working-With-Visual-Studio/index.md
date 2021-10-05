@@ -22,7 +22,7 @@ You will notice that in the folder there is a csproj-file called: `UmbracoProjec
 
 ![Umbraco 9 files](images\V9-project-file.png)
 
-Opening this file will open up yor project in visual studio and you can start building and running your solution and start working with Visual studio.
+Opening this file will open up your project in visual studio and you can start building and running your solution and start working with Visual studio.
 
 ### Adding a Solution file to your cloud project
 
