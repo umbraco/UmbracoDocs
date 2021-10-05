@@ -16,7 +16,7 @@ If you are publishing Umbraco 9 on IIS you can still add web.configs to your pro
 
 Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) documentation for more information to when you should or should not use the URL Rewriting Middleware.
 
-## Enabling the rules
+## Using URL Rewriting Middleware
 
 To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions` class with extension methods for each of your rewrite rules.
 
