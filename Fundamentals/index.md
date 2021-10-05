@@ -59,7 +59,7 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
                 <small>How to upgrade your copy of Umbraco to a newer version?</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="../Reference/V9-Config/index.md">Configuration</a></h5>
+                <h5><a href="../Reference/V9-Config/">Configuration</a></h5>
                 <small>Information about all of the different configuration files that control Umbraco.</small>
             </div>
         </div>
