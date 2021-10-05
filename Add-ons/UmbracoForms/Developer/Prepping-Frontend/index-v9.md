@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+Validation Without External References
 ---
 
 # Preparing your Frontend
@@ -8,7 +9,7 @@ For Umbraco Forms to work correctly, you need to include some client dependencie
 
 ## Umbraco Forms version 9.0.0
 
-You can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Mvc`:
+You can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Web`:
 
 ```html
 @using Umbraco.Forms.Web
@@ -29,6 +30,13 @@ Alternatively, you can add the dependencies to the body tag:
 ```
 
 All dependencies originate from your Umbraco Forms installation, which means that no external references are needed.
+
+
+## Validation Using jQuery
+If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies without using the above Razor method:
+- `jQuery` (JavaScript library)
+- `jQuery validate` (jQuery plugin that provides client-side Form validation)
+- `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
 
 The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
 
