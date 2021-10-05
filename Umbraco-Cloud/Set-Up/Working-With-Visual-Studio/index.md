@@ -30,7 +30,7 @@ Working with Visual Studio you will likely want a solution file, so you and your
 
 there is two options to how this can be done:
 
-1. From the terminal of your choice navigate to the root of the git repository for your Umbraco Cloud project, and enter the following command.
+1. From the terminal of your choice navigate to the root of the git repository for your Umbraco Cloud project and enter the following command.
 
 ```Text
 dotnet new sln --name MyAwesomeSolution
