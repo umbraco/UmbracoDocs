@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+needsV9Update: true
 meta.Title: "Unit Testing Umbraco"
 meta.Description: "A guide to getting started with unit testing in Umbraco"
 ---
