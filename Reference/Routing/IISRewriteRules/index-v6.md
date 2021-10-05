@@ -1,5 +1,6 @@
 ---
 versionFrom: 6.0.0
+versionTo: 8.0.0
 versionRemoved: 9.0.0
 ---
 
