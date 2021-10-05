@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 In this article you will learn how to work with Visual studio and Umbraco 9 with a Umbraco Cloud project on your local machine.
 
-## Getting started with 
+## Getting started with
 
 The first step to get started working with Umbraco 9 and Visual studio is to clone down your project from Umbraco Cloud.
 
@@ -71,6 +71,7 @@ dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 2. Adding additional projects through Visual Studio
 
 To add a new project through Visual studio, go to the solution explorer and select your solution:
+
 ![Solution](images/solution-VS.png)
 
 Right click and choose `Add` -> `New Project...`
