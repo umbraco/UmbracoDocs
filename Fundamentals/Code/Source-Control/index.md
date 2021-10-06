@@ -123,29 +123,6 @@ Each plugin could be different depending on its implementation and functionality
 The `/wwwroot/umbraco` folder contains static assets for the backoffice, these files will be automatically created when you do a build, and should not be included in source control.
 ```
 
-#### Umbraco Models Builder
-
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index.md) you have opted to work with.
-
-- **InMemoryAuto** (default), The models are generated in memory, no source control is required.
-- **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
-
-#### Media
-
-The Media section of Umbraco (unless configured otherwise) stores files in the `/wwwroot/media` folder, these can be updated by editors, in the Umbraco backoffice, so generally speaking, you would not source control these files.
-
-#### Packages and Plugins
-
-The **App_Plugins** folder is the home for all third-party packages installed on your site.
-
-Depending on how you installed the plugin it will affect how you choose to version control a particular third party plugin:
-
-Since plugins are installed via NuGet the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
-
-:::note
-Each plugin could be different depending on its implementation and functionality. It may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
-:::
-
 ### What folders and files should I **include** in my source control repository?
 
 #### Front-end build
