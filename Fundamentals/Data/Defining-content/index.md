@@ -5,7 +5,6 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 verified-against: 9.0.0
 updated-links: false
-
 ---
 
 # Defining content
@@ -84,8 +83,10 @@ Before we start adding properties to the Document Type we need to create a group
 
 Click __Add group__ and name the group "Content".
 
-![Creating groups](images/v8Screenshots/createGroup.png)
+![Creating groups](images/v8Screenshots/createGroup_new.png)
 _If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
+
+To convert a group to a tab, see the [Convert a group to a tab](../Adding-Tabs/index.md#convert-a-group-to-a-tab) section in the [Using Tabs](../Adding-Tabs/index.md) article.
 
 #### Adding properties
 
@@ -95,7 +96,7 @@ Click the __Add property__ link in the Content group. This opens the property se
 
 Give the property a name, the name will be shown to the editor so make relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
-![Adding a property](images/v8Screenshots/addproperty.png)
+![Adding a property](images/v8Screenshots/addproperty_new.png)
 
 ##### Property editors
 
@@ -103,7 +104,7 @@ Clicking __Select editor__ will open the Select editor dialog. Here you can choo
 
 Select the __Rich Text editor__ under __Create new__.
 
-![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.png)
+![Choosing the Rich Text editor](images/v8Screenshots/selectEditor_new.png)
 
 This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property and the property editor. Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
 

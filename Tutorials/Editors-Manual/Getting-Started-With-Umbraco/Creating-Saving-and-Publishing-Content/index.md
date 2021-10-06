@@ -100,4 +100,4 @@ To set up scheduled unpublishing, follow these steps:
 
 ---
 
-Prev: [Umbraco Interface](../Umbraco-Interface/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Using Tabs](../Adding-Tabs/index.md)
+Prev: [Umbraco Interface](../Umbraco-Interface/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Finding Content](../Finding-Content/index.md)

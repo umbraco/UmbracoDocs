@@ -3,7 +3,7 @@ versionFrom: 8.17.0
 versionTo: 9.0.0
 ---
 
-# Using tabs
+# Using Tabs
 
 In this section, you will get an overview of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab.
 
@@ -66,9 +66,7 @@ To manage the **Generic** tab on a **Document Type/Media Type**:
 1. Go to the **Composition** Document Type/Media Type.
 2. Click **Add tab** and enter the **Name** for the tab. All existing groups and properties are added to the tab.
 3. Go to the **Document Type/Media Type**, the **Generic** tab will now be replaced by the tab from the composition.
-    
+
     ![Composition Add Tab](images/Composition-add-tab.gif)
 
 ---
-
-Prev: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Finding Content](../Finding-Content/index.md)
