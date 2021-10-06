@@ -9,7 +9,7 @@ update-links: true
 
 # Configuration Files
 
-In V9, we have moved away from the previous configuration using .config files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
+In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0) article.
 
@@ -17,7 +17,7 @@ For more in depth information on the configuration pattern see Microsofts [Confi
 
 You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution, fortunately, the `IConfiguration` pattern.
 
-With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with: 
+With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with:
 
 1. The `appsettings.json` file
 2. An `appsettings.{environment}.json` file
@@ -33,7 +33,7 @@ There is one caveat, to this precedence though, the `appSettings.{environment}.j
 
 It is not feasible to have an entire json file as an environment variable, and the `:` doesn't work with environment variables on all platforms, so instead a double underscore is used to create the hierachy.
 
-As an example, if you want to set your unattended username, you would normally write it in the `appsettings.json` like so: 
+As an example, if you want to set your unattended username, you would normally write it in the `appsettings.json` like so:
 
 ```json
 "Umbraco": {
@@ -60,7 +60,7 @@ A great thing about the `appsettings.json` is that it allows for intellisense wi
 
 ## Reading configuration in code
 
-You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it, here is an example of how you'd read the the Host value from the SMTP settings contained within the global settings: 
+You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it, here is an example of how you'd read the the Host value from the SMTP settings contained within the global settings:
 
 ```C#
 using Microsoft.Extensions.Options;
@@ -118,6 +118,7 @@ A complete list of all the configuration sections included in Umbraco by default
 * [Type finder settings](TypeFinderSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
 * [Plugins settings](PluginsSettings/index.md)
+* [Package migration settings](PackageMigrationSettings/index.md)
 
 ## Configured by code
 
