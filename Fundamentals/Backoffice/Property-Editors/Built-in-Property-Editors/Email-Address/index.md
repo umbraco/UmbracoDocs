@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.0.0
+meta.Title: "Display an email address"
+meta.Description: "In this article you can learn how to use the build in email property editor"
+versionFrom: 9.0.0
 ---
 
 # Email Address
@@ -12,23 +14,9 @@ Displays an email address.
 
 ## Settings
 
-### Enable required checkbox (8.7.0 and below)
-
-If the property is set to mandatory, Umbraco will display a warning label under the property editor when you publish the page this editor is located on and clean the input. This functionality has been deprecated in `8.8.0` and above. Instead, you select the mandatory checkbox when adding the property editor to a Document Type.
-
-## Data Type Definition Example
-
-### 8.8.0 and higher
-
-![Email Data Type Definition 8.8.0](images/EmailAddress-DataType-v88.png)
-
 ### Mandatory checkbox example
 
 ![Mandatory Checkbox Example](images/mandatory-checkbox.png)
-
-### 8.0.0 - 8.7.0
-
-![Email Data Type Definition 8.0.0 - 8.7.0](images/EmailAddress-DataType-v8.png)
 
 ## Content Example
 
@@ -61,9 +49,11 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@inject IContentService Services;
+
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of your page
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
@@ -71,7 +61,7 @@ See the example below to learn how a value can be added or changed programmatica
     // Get the page using the GUID you've just defined
     var content = contentService.GetById(guid);
     // Set the value of the property with alias 'email'
-    content.SetValue("email", "stk@umbraco.com");
+    content.SetValue("email", "jpk@umbraco.dk");
 
     // Save the change
     contentService.Save(content);

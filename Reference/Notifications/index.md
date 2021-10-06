@@ -71,7 +71,7 @@ The extension method takes two generic type parameters, the first `ContentPublis
 public class DontShout : INotificationHandler<ContentPublishingNotification>
 ```
 
-For the full handler implementation see [ContentService Notifications](Contentservice-Notifications.md).
+For the full handler implementation see [ContentService Notifications](ContentService-Notifications.md).
 
 #### Registering notification handlers in a composer
 
@@ -140,15 +140,15 @@ Now all the notifications you registered in your extension method will be handle
 ## Other notifications
 
 * See [ContentTypeService Notifications](ContentTypeService-Notifications.md) for a listing of the ContentTypeService object notifications.
-* See [MediaTypeService Notifications](MediaTypeService-Notifications.md) for a listing of the MediaTypeService object notifiactions.
+* See [MediaTypeService Notifications](MediaTypeService-Notifications.md) for a listing of the MediaTypeService object notifications.
 * See [MemberTypeService Notifications](MemberTypeService-Notifications.md) for a listing of the MemberTypeService object notifications.
-* See [DataTypeService Notifications](DataTypeService-Notifications.md) for a listing of the DataTypeSErvice object notifications
+* See [DataTypeService Notifications](DataTypeService-Notifications.md) for a listing of the DataTypeService object notifications
 * See [FileService Notifications](FileService-Notifications.md) for a listing of the FileService object notifications.
 * See [LocalizationService Notifications](LocalizationService-Notifications.md) for a listing of the LocalizationService object notifications.
 
 ## Tree notifications
 
-See [Tree Notifications](../../Extending/Section-Trees/trees-v9.md) for a listing of the tree notifications.
+See [Tree Notifications](../../Extending/Section-Trees/trees.md) for a listing of the tree notifications.
 
 ## Editor Model Notifications
 

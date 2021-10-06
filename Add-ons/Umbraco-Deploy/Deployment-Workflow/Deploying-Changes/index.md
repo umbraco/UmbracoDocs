@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Deploying changes from a local machine with Umbraco Deploy"
 meta.Description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without"
 ---
@@ -16,8 +16,8 @@ Here's a quick step-by-step on how you deploy these changes to your environment:
 
 - You've cloned a site to your local machine to work on.
 - You've made some changes to a Document Type.
-- The corresponding `.uda` file for this Document Type is now updated with the changes - the file is located in the `/data/revision` folder.
-- You've also created a new Data Type that's used on the Document Type. This Data Type is stored as a new file in the `/data/revision` folder as well.
+- The corresponding `.uda` file for this Document Type is now updated with the changes - the file is located in the `/umbraco/Deploy/Revision` folder.
+- You've also created a new Data Type that's used on the Document Type. This Data Type is stored as a new file in the `/umbraco/Deploy/Revision` folder as well.
 - Using Git, commit those two changed files to your local repository and push them to your repository.
 - A deployment kicks in and the Document Type is updated and the new Data Type you created locally is now automatically created in the remote environment as well.
 
@@ -43,9 +43,9 @@ git pull
 git push
 ```
 
-If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
 
-`/…mysite/data> echo > deploy`
+`/…mysite/umbraco/Deploy> echo > deploy`
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 

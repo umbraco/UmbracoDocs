@@ -1,3 +1,10 @@
+---
+versionFrom: 8.0.0
+versionTo: 9.0.0
+meta.Title: "Umbraco Deploy"
+meta.Description: "Documentation on how to work with Umbraco Deploy"
+---
+
 # Umbraco Deploy
 
 Welcome to the Umbraco Deploy documentation. Here you can read all about how to set up and work with Umbraco Deploy.

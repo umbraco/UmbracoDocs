@@ -1,12 +1,13 @@
 ---
-versionFrom: 7.3.0
+versionFrom: 9.0.0
+verified-against: alpha-3
+state: complete
+updated-links: true
 meta.Title: "Language file for packages"
 meta.Description: "Information on how to use language files to make your Umbraco package UI support multiple languages"
 ---
 
 # Language file for packages
-
-**Applies to version 7.3.0 and newer**
 
 While the Umbraco Core ships with its own set of language files, package authors who would like their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.
 
@@ -19,9 +20,9 @@ For each language your package supports, you include an .xml file in the same fo
 
 ## Language file format
 
-Each language file can include one or more area, each area contains a collection of language keys with the translation.
+Each language file can include one or more area. Each area contains a collection of language keys with the translation.
 
-For reference on the language file format see the core [language files on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web.UI/umbraco/config/lang)
+For reference on the language file format see the core [language files on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/v9/dev/src/Umbraco.Web.UI/umbraco/config/lang)
 
 ### Sample structure
 

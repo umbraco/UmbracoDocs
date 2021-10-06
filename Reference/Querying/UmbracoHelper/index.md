@@ -1,5 +1,10 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+meta.Title: "Umbraco Helper"
+meta.Description: "Using the Umbraco Helper"
+state: complete
+verified-against: rc-003
+update-links: true
 ---
 
 # UmbracoHelper
@@ -10,17 +15,59 @@ UmbracoHelper also has a variety of helper methods that are useful when working 
 
 ## How to reference UmbracoHelper
 
-Nearly all of Umbraco's base classes expose an instance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
+If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property.
+If you need the `UmbracoHelper` in your own controllers, you need to inject `IUmbracoHelperAccessor`, and resolve the helper with the `TryGetUmbracoHelper` method. A `HttpContext` is required to use the `UmbracoHelper`, if the helper cannot be resolved the `TryGetUmbracoHelper` method will return false. 
 
-For webservices and HTTP handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService`
+Example of getting `UmbracoHelper` in a controller:
+
+```C#
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common;
+using Umbraco.Cms.Web.Common.Controllers;
+
+namespace UmbracoHelperDocs.Controllers
+{
+    [Route("customcontent/[action]")]
+    public class CustomContentController : UmbracoApiController
+    {
+        private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
+
+        public CustomContentController(IUmbracoHelperAccessor umbracoHelperAccessor)
+        {
+            // Inject IUmbracoHelperAccessor
+            _umbracoHelperAccessor = umbracoHelperAccessor;
+        }
+
+        public ActionResult<string> GetHomeNodeName()
+        {
+            // Try and get the UmbracoHelper
+            if (_umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper) is false)
+            {
+                // If TryGetUmbracoHelper returns false, we couldn't get the helper because there was no HTTP Context
+                // This should not happen in an Umbraco Controller
+                return StatusCode(500);
+            }
+
+            // Do something with the UmbracoHelper
+            var rootNode = umbracoHelper.ContentAtRoot().FirstOrDefault();
+            if (rootNode is null)
+            {
+                return NotFound();
+            }
+
+            return rootNode.Name;
+        }
+    }
+}
+```
 
 ## IPublishedContent
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`.
 
-The samples below demonstrate using `UmbracoHelper` in Razor. Aside from the `@` syntax, usage is the same inside controllers or UserControls.
+The samples below demonstrate using `UmbracoHelper` in Razor. Working with the `UmbracoHelper` will be the same in controllers, except for the fact that you must resolve it with `IUmbracoHelperAccessor` like shown above.
 
 ## Working with Content
 
@@ -30,14 +77,14 @@ Given a node ID, returns a `IPublishedContent`
 
 ```csharp
 @{
-    var page = Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
+	var pageFromGui = Umbraco.Content(Guid.Parse("af22cb83-9bd4-454b-ab06-cc19ac8e983d"));
 }
 
-<h3>@(page.Value<string>("propertyAlias"))
-</h3>
+<h3>@pageFromGui.Value("propertyAlias")</h3>
 
-@foreach (var child in page.Children) {
-    <a href="@child.Url">@child.Name</a>
+@foreach (var child in pageFromGui.Children)
+{
+	<a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -46,9 +93,10 @@ Given a node ID, returns a `IPublishedContent`
 Returns a collection of `IPublishedContent` objects from the Content tree.
 
 ```csharp
-// Get the children of the first content item found in the root
-@foreach (var child in Umbraco.ContentAtRoot().First().Children) {
-    <a href="@child.Url">@child.Name</a>
+@* Get the children of the first content item found in the root *@
+@foreach (var child in Umbraco.ContentAtRoot().First().Children)
+{
+	<a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -83,7 +131,7 @@ Given a node ID, returns an `IPublishedContent` Media entity
 ```csharp
 @{
     var media = Umbraco.Media(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
-    var image = media.Url;
+    var image = media.Url();
     var height = media.Value<int>("umbracoHeight");
 }
 ```
@@ -93,177 +141,26 @@ Given a node ID, returns an `IPublishedContent` Media entity
 Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ```csharp
-@foreach (var child in Umbraco.MediaAtRoot()) {
-    <img src="@child.Url" />
+@foreach (var child in Umbraco.MediaAtRoot())
+{
+	<img src="@child.Url()"/>
 }
 ```
 
 ## Working with Tags
 
-### .TagQuery
+Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](../ITagQuery/index.md).
 
-Gets a lazily loaded reference to the tag context to allow you to work with tags
-
-```csharp
-@{
-    var tagQuery = Umbraco.TagQuery;
-}
-```
-
-### .TagQuery.GetAllContentTags([string tagGroup])
-
-Get a collection of tags used by content items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllContentTags();
-    var newsTags = Umbraco.TagQuery.GetAllContentTags("news");
-}
-```
-
-### .TagQuery.GetAllMediaTags([string tagGroup])
-
-Get a collection of tags used by media items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllMediaTags();
-    var newsTags = Umbraco.TagQuery.GetAllMediaTags("news");
-}
-```
-
-### .TagQuery.GetAllMemberTags([string tagGroup])
-
-Get a collection of tags used by members on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllMemberTags();
-    var newsTags = Umbraco.TagQuery.GetAllMemberTags("news");
-}
-```
-
-### .TagQuery.GetAllTags([string tagGroup])
-
-Get a collection of tags used on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
-
-```csharp
-@{
-    var allTags = Umbraco.TagQuery.GetAllTags();
-    var newsTags = Umbraco.TagQuery.GetAllTags("news");
-}
-```
-
-### .TagQuery.GetContentByTag(string tag, [string tagGroup])
-
-Get a collection of IPublishedContent by tag, and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetContentByTag("News");
-}
-```
-
-### .TagQuery.GetContentByTagGroup(string tagGroup)
-
-Get a collection of IPublishedContent by tag group
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetContentByTagGroup("BlogTags");
-}
-```
-
-### .TagQuery.GetMediaByTag(string tag, [string tagGroup])
-
-Get a collection of Media by tag, and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTag("BlogTags");
-}
-```
-
-### .TagQuery.GetMediaByTagGroup(string tag, [string tagGroup])
-
-Get a collection of Media by tag group
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
-}
-```
-
-### .TagQuery.GetTagsForEntity(int contentId, [string tagGroup])
-
-Get a collection of tags by entity id (queries content, media and members), and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetTagsForEntity(1234);
-}
-```
-
-### .TagQuery.GetTagsForProperty(int contentId, string propertyTypeAlias, [string tagGroup])
-
-Get a collection of tags assigned to a property of an entity (queries content, media and members), and you can optionally filter by tag group as well
-
-```csharp
-@{
-    var taggedContent = Umbraco.TagQuery.GetTagsForProperty(1234,"propertyTypeAlias");
-}
-```
 
 ## Working with Members
 
-### .Member(1234)
+Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](../IMemberManager/index.md) for more information
 
-Given a node ID, returns a single `IPublishedContent` Member 
+## Searching
 
-```csharp
-@{
-    var member = Umbraco.MembershipHelper.GetById(Guid.Parse("1f46e266-9acb-4f5b-afdb-5e26c23c56e3"));
-    var email = member.Value<string>("email");
-}
-```
+Previously the `UmbracoHelper` could be used to run queries on your content, this has been moved out of `UmbracoHelper` and is now available from `IPublishedContentQuery`, see [IPublishedContentQuery](../IPublishedContentQuery/index.md) for more information.
 
-### Member Helpers
-
-### .MemberIsLoggedOn()
-
-Returns a `Boolean` on whether there is currently a member profile
-
-```csharp
-@if(Umbraco.MemberIsLoggedOn()) {
-    <h1>Welcome!</h1>
-}
-```
-
-### .MemberHasAccess(string path)
-
-Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties.md#path).
-
-```csharp
-@if (Umbraco.MemberHasAccess(Model.Path))
-{
-    <h1>Welcome!</h1>
-}
-```
-
-### .IsProtected(string path)
-
-Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties.md#path) has public access restrictions set.
-
-```csharp
-@foreach (var child in Model.Children) {
-    <h2>@child.Name</h2>
-    if(Umbraco.MembershipHelper.IsProtected(child.Path)){
-        <blink>Members only</blink>
-    }
-}
-```
-
-## Fetching miscellaneous data
+## Fetching Dictionary Values
 
 ### .GetDictionaryValue(string key)
 
@@ -279,66 +176,6 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
 
-### .Search(string term)
-
-By default, Umbraco searches it's 'External' search index for any published content matching the provided search term. 
-
-```csharp
-@{
-    <ul>
-        @foreach (var result in Umbraco.ContentQuery.Search("ipsum"))
-        {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-        }
-    </ul>
-}
-```
-
-### .Search(string term, int skip, int take, out long totalRecords)
-
-Specifying the number of records 'to skip', and the number of records 'to take' is more performant when there are lots of matching search results and there is a requirement to implement paging.
-
-```csharp
-@{
-    var search = Umbraco.ContentQuery.Search("ipsum", 5, 10, out long totalRecords);
-    <ul>
-        <li>
-            Total results: @totalRecords
-            <ul>
-                @foreach (var result in search)
-                {
-                    <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-                }
-            </ul>
-        </li>
-    </ul>
-}
-```
-
-### .Search(IQueryExecutor queryExecutor)
-
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
-[Further information on using Examine](../../Searching/Examine/Quick-Start/index.md#different-ways-to-query)
-
-```csharp
-@{
-    if (!ExamineManager.Instance.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-    {
-        throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
-    }
-
-    var term = "ipsum";
-    var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
-    var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
-
-    foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
-    {
-        {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
-        }
-    }
-}
-```
 
 ## Templating Helpers
 
@@ -347,13 +184,13 @@ For more complex searching you can construct an Examine QueryExecutor. In the ex
 Renders a macro in the current page content, given the macro's alias, and parameters required by the macro.
 
 ```csharp
-@Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
+@await Umbraco.RenderMacroAsync"navigation", new {root="1083", header="Hello"})
 ```
 
-### .RenderTemplate(int contentId, int? altTemplateId)
+### .RenderTemplateAsync(int contentId, int? altTemplateId)
 
-Renders a template, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
+Renders a template asynchronously, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
 
 ```csharp
-@Umbraco.RenderTemplate(1234)
+@await Umbraco.RenderTemplate(1234)
 ```
