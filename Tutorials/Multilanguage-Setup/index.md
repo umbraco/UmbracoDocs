@@ -96,7 +96,7 @@ To add language variants to the content, follow these steps:
     ![Open Language in Splitview](images/open-in-splitview.png)
 3. Click **Open in Splitview**. In this splitview, we can see the content node with each language side by side.
 
-    You may notice that the Address and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
+    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
 
     ![Splitview editing](images/splitview-editing.png)
 4. Enter the **Name** for your content node and the **Page Title** in the new language.
@@ -113,9 +113,7 @@ To render the values of the Contact Us page, use the following in the template:
 @Model.Value("pageTitle")
 ```
 
-The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content, when the property value does not exist on the current content item.
-
-To use the fallback type, add the `@using Umbraco.Cms.Core.Models.PublishedContent;` directive.
+The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content, when the property value does not exist on the current content item. To use the fallback type, add the `@using Umbraco.Cms.Core.Models.PublishedContent;` directive.
 
 To display a value for a different language, if the language we are requesting does not have content populated:
 
