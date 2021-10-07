@@ -1,1 +1,3 @@
-just a test file
+---
+versionFrom: 7.0.0
+---
