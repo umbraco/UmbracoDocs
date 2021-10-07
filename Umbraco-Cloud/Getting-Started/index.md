@@ -18,7 +18,7 @@ With all the success you will have building your site with Umbraco Cloud, you wi
 
 ## Umbraco Cloud Plans
 
-Umbraco Cloud offers shared hosting in 3 different tiers:
+Umbraco Cloud offers shared hosting in 3 different plans:
 
 - Starter
 - Standard
