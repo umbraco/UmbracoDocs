@@ -37,3 +37,4 @@ Everything you need to know about the security on Umbraco Cloud.
 
 ## [Umbraco Heartcore](../Umbraco-Heartcore/)
 Documentation on Umbraco Heartcore.
+
