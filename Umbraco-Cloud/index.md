@@ -1,9 +1,6 @@
 ---
 meta.Title: "Cloud based CMS that lets you focus on the fun stuff"
 meta.Description: "Welcome to the Umbraco Cloud documentation. Here you can read all about how to set up and work with Umbraco Cloud. You can find articles about the deployment workflow, how to work locally and all the features that comes with your Umbraco Cloud project. You can also find articles about troubleshooting various issues."
-versionFrom: 7.0.0
-versionTo: 9.0.0
-
 ---
 
 # Umbraco Cloud documentation
