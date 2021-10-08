@@ -20,7 +20,7 @@ Currently all available Umbraco Cloud plans are utilising P1V3 Azure App Service
 - 250 GB Disk space
 - 1,920 TCP connections
 
-In order to ensure stable performance of all websites hosted on Umbraco Cloud shared plans, soft and hard quotas were put in place. Quotas per site and the number of sites on the same worker varies per Umbraco Cloud Plan.
+In order to ensure stable performance of all websites hosted on Umbraco Cloud shared plans, soft and hard quotas were put in place. Quotas per site and the number of sites in the  pool varies per Umbraco Cloud Plan.
 
 # Hard quotas for shared Umbraco Cloud Plans
 
@@ -48,7 +48,7 @@ Umbraco Cloud Professional plan
 
 # Soft quotas for shared Umbraco Cloud Plans
 
-Sites are monitored for hitting soft quotas every minute. (Evaluation freqency). A quota is evaluated for a window of 5 minutes. In case a site reaches the soft quota it will be restarted. After x times the soft quota is reached within 24 hours the site will be isolated to a dedicated plan, in order to protect the rest of the sites in the pool.
+Sites are monitored for hitting soft quotas every minute. (Evaluation freqency). A quota is evaluated for a window of 5 minutes. In case a site reaches the soft quota it will be restarted. After multiple restarts, due to exceeding the soft quota, the site will be isolated in order to protect the rest of the sites in the pool. The number of restarts depends on the Cloud plan, details for each plan can be found below.
 
 These are soft quotas because peaks are allowed and the evaluation period is 5 minutes.
 
