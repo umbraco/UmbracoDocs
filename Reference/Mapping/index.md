@@ -236,7 +236,7 @@ public class ProductMappingDefinition : IMapDefinition
 
 #region Composing
 
-public class ProductComposer : IUserComposer
+public class ProductComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
