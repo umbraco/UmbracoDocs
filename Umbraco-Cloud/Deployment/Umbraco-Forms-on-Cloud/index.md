@@ -9,7 +9,7 @@ In this article you can learn about how Umbraco Forms is handled on Umbraco Clou
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI, where you can create forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
-Read more about the product in the [Umbraco Forms section](../../Add-ons/UmbracoForms).
+Read more about the product in the [Umbraco Forms section](../../../Add-ons/UmbracoForms).
 
 ## How forms are handled on Umbraco Cloud
 
@@ -50,7 +50,7 @@ In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the d
 
 If want to upgrading to Umbraco 9 and using Forms, you should first migrate the Forms to the database using Forms 8.
 
-see the [Umbraco Forms in the Database version 8.0.0+](../../../Forms-in-the-Database/index.md) article.
+see the [Umbraco Forms in the Database version 8.0.0+](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index.md) article.
 
 #### Version 8.5.0
 
