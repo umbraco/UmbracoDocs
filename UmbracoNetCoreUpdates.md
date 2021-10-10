@@ -1,13 +1,13 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
+meta.Description: "Updates and information related to the release of Umbraco on .NET 5+."
 versionFrom: 9.0.0
 ---
 
 # Umbraco on .NET 5+
 
 :::note
-This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco on .NET 5.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the release of Umbraco on .NET 5.
 
 Are you aware of some information about Umbraco on .NET 5 that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
