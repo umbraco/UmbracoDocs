@@ -92,13 +92,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco 9 (.NET 5) Release Candidate
-
-:::warning
-As this is a **release candidate**, bugs and minor issues are to be expected.
-
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml).
-:::
+## Umbraco 9 (.NET 5) 
 
 To get started, follow the steps outlined below.
 
