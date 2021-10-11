@@ -53,6 +53,12 @@ If you set this setting to true while using an `Auto` mode, it will automaticall
 
 Allows you to specify a custom directory for your generated models. By default this settings has to be a virtual directory, that is, it must start with `~/`, if needed `AccceptUnsafeModelsDirectory` can be set to true, to allow the path to be outside the website root, be aware though that this is a potential security risk.
 
+:::note
+If you want to generate models outside the web project you can easily change the ModelsDirectory path. Suppose you have a data project called My.Website.Data the ModelsDirectory path should be:
+
+`~/../My.Website.Data/Models/`
+:::
+
 ## Accept unsafe models directory
 
 By setting this to true, you specify that the models directory is allowed to be outside the websites root. This is not allowed by default since it can be a potential security risk.
