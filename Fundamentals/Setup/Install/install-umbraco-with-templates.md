@@ -24,6 +24,9 @@ Templates                    Short Name               Language          Tags
 Umbraco Solution             umbraco                  [C#]              Web/CMS/Umbraco
 Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
 ```
+:::note
+In some cases the templates may silently fail to install (usually this is an issue with NuGet sources). If this occurs you can try specifying the NuGet source in the command by running `dotnet new -i Umbraco.Templates::* --nuget-source "https://api.nuget.org/v3/index.json"`.
+:::
 
 To get **help** on a project template with `dotnet new` run the following command:
 
