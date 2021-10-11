@@ -1,7 +1,8 @@
 ---
 meta.Title: "a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another"
 meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic "left to right" deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment"
-versionFrom: 9.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Deployment
@@ -57,11 +58,11 @@ From the Umbraco Cloud Portal you can manually restart your environments.
 
 ![Restart an environment](images/restart-environment.gif)
 
-## Umbraco-cloud.json
+## UmbracoDeploy.config
 
-You might notice a new file in your cloud project called `umbraco-cloud.json`. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
+You might notice a new file in your config folder called UmbracoDeploy.config. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
 
-![clone dialog](images/umbraco-cloud-json.png)
+![clone dialog](images/umbraco-deploy-config.png)
 
 **Note**: you’re free to update the “name” attribute to make it clearer in the interface where you’re deploying to. So if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
 
