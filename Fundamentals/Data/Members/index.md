@@ -68,7 +68,7 @@ More information can be found under [security](../../../Reference/Security/#sens
 
 As a developer you are able to leverage your website when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
-Members are created using APS.NET Core Identity, there are some provider settings that can be set in appsettings.json - here are the defaults:
+Members are created using ASP.NET Core Identity, there are some provider settings that can be set in appsettings.json - here are the defaults:
 
 ```json
 {
