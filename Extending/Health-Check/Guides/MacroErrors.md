@@ -24,7 +24,7 @@ The following json needs to be merged into one of you json sources. By default t
     "Umbraco": {
         "CMS": {
             "Content": {
-                "MacroError": "<Inline(default)|Silent|Throw|Content>"
+                "MacroErrors": "<Inline(default)|Silent|Throw|Content>"
             }
         }
     }
@@ -38,7 +38,7 @@ One example that can be used in production, but is not recommended for developme
     "Umbraco": {
         "CMS": {
             "Content": {
-                "MacroError": "Silent"
+                "MacroErrors": "Silent"
             }
         }
     }
