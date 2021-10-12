@@ -1,16 +1,30 @@
 ---
-versionFrom: 8.0.0
-meta.Title: "Manually Upgrading Umbraco Forms"
-meta.Description: "Documentation on how to upgrade Umbraco Forms"
-needsV9Update: "true"
+versionFrom: 9.0.0
 ---
 
-# Manually upgrading forms
+# Manual upgrade of Umbraco Umbraco Forms
 
-## Download
-In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `Umbraco.Forms.Files.x.y.z.zip` file (where x.y.z) is the version.
+This article will show how to manually upgrade Umbraco Forms to run the latest version
+with Umbraco 9.
 
-Note that this filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
+## Get the latest version of Umbraco Forms
 
-## Copy
-The easiest way to proceed is to unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
+To get the latest version of Umbraco Forms you will need to upgrade using NuGet.
+
+NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
+
+`dotnet add package Umbraco.Forms --version <VERSION>`
+
+After you have added a package reference to your project by executing the `dotnet add package Umbraco.Forms` command in the directory that contains your project file, run `dotnet restore` to install the package.
+
+You can also update forms through the `NuGet Package Manager` in Visual studio:
+
+![NuGet Package Manager](images/Manage_packages.png)
+
+When the command completes, open the **.csproj** file to make sure the package reference was updated:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Umbraco.Forms" Version="9.0.1" />
+</ItemGroup>
+```
