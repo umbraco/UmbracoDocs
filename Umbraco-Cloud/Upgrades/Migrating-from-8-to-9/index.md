@@ -71,7 +71,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
 
-    * Make sure to first migrate the Forms to the database using [Umbraco forms 8](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/)
+    * Make sure to first migrate the Forms to the database using [Umbraco forms 8](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8)
 
 * Run the Umbraco 9 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
@@ -91,7 +91,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 Umbraco 9 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 9.
 
 :::note
-Many of the changes have been documented, and the articles are listed here: [Umbraco Documentation Status](/../../../Umbraco9Articles).
+Many of the changes have been documented, and the articles are listed here: [Umbraco Documentation Status](../../../Umbraco9Articles).
 
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
