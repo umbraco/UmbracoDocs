@@ -2,7 +2,7 @@
 
 This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 9.
 
-Because the underlying framework going from Umbraco 8 to 9, means that there are no direct upgrade path, however there have been few changes to the Database schema, meaning that you can re-use the database from your Umbraco 8 project and use it on your new Umbraco 9 Cloud project, so that you have your content from Umbarco 8.
+Because the underlying framework going from Umbraco 8 to 9, means that there is no direct upgrade path, however, there have been few changes to the Database schema, meaning that you can re-use the database from your Umbraco 8 project and use it on your new Umbraco 9 Cloud project, so that you have your content from Umbraco 8.
 
 It is not possible to migrate the custom code, as the underlying web framework updated from ASP.NET to ASP.NET Core and you will need to re-implement it.
 
