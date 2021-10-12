@@ -118,7 +118,7 @@ Once the Umbraco 9 project runs without errors on the local setup, the next step
 The deployment might take a bit longer than normal.
 :::
 
-Once everything have been pushed, go to the Deploy Dashboard and trigger an `Schema Deployment From Data Files`
+Once everything has been pushed, go to the Deploy Dashboard and trigger a `Schema Deployment From Data Files`
 
 * The deployment will result in either of the two:
     * `Last deployment operation failed`
