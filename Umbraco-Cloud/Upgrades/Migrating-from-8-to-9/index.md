@@ -96,9 +96,9 @@ Many of the changes have been documented, and the articles are listed here: [Umb
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
 
-### Example of changes that needs to be made
+### Example of changes that need to be made
 
-One of the changes made, is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
+One of the changes made is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
 
 Read more about these changes in the [IPublishedContent section of the Documentation](../../../Reference/Querying/IPublishedContent/).
 
