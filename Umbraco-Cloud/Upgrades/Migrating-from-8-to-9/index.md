@@ -6,7 +6,7 @@ Because the underlying framework going from Umbraco 8 to 9, means that there are
 
 It is not possible to migrate the custom code, as the underlying web framework updated from ASP.NET to ASP.NET Core and you will need to re-implement it.
 
-You also need to make sure that the packages that you are using is available for Umbraco 9.
+You also need to make sure that the packages that you are using are available for Umbraco 9.
 
 <!--Removed for now, might move it back as we create a article for V8-9
 Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
