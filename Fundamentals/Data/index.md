@@ -27,5 +27,8 @@ Creating and editing Data Types.
 ## [Scheduled Publishing](Scheduled-Publishing/)
 Schedule when content should be published / unpublished automatically.
 
+## [Adding Tabs](Adding-Tabs/)
+Overview of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab
+
 ## [Users](Users/)
 Control who has access to the Umbraco backoffice and what permissions they have.
