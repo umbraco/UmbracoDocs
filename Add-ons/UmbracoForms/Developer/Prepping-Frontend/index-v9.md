@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-Validation Without External References
 ---
 
 # Preparing your Frontend
