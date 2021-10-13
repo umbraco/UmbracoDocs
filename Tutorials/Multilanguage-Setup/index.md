@@ -157,6 +157,7 @@ To create dictionary items:
 ### Rendering Dictionary Items
 
 To render dictionary items in the template, use the following snippet:
+
 ```csharp
 @Umbraco.GetDictionaryValue("Address")
 @Umbraco.GetDictionaryValue("Contact Number")
