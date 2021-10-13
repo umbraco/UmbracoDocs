@@ -140,7 +140,7 @@ For more information, see the [Using fall-back methods](../../Fundamentals/Desig
 
 ## Using Dictionary Items
 
-Dictionary items store a value for each language. They have an unique key and can be managed from the **Translation** section. For this tutorial, let's add dictionary items for the **Address** and **Contact Number** fields of the Contact Us page.
+Depending on how your site is set up, not all content is edited through the content section. Some of the content may be written in the template or labels of content node and dictionary items can play a part here. Dictionary items store a value for each language. They have an unique key and can be managed from the **Translation** section. For this tutorial, let's add dictionary items for the **Address** and **Contact Number** labels of the Contact Us page.
 
 ### Creating Dictionary Items
 
@@ -156,7 +156,7 @@ To create dictionary items:
 
 ### Rendering Dictionary Items
 
-To render dictionary items in the template, use the following snippet:
+To render dictionary items in the template, replace the text with the following snippet:
 
 ```csharp
 @Umbraco.GetDictionaryValue("Address")
