@@ -8,7 +8,9 @@ meta.Description: "A guide to multilanguage setup in Umbraco"
 
 # Creating a Multilingual Site
 
-In Umbraco 8 and above, you can use **language variants** to setup a multilingual site. **Language Variants** allows you to vary content by culture so you can allow a content node to exist in several languages. This tutorial explains how to make the site multilingual by making variations of our content.
+In Umbraco 8 and above, you can use **language variants** to setup a multilingual site. **Language Variants** allows you to have variants of the same content all under the same project. Basically, if you open a page and a language variant is enabled, you will see the option to switch the language from the drop-down list. Additionally, you can view or input the translated content.
+
+This tutorial explains how to set-up a basic multilingual website.
 
 ## Adding a new language
 
@@ -28,8 +30,21 @@ To add a new language, follow these steps:
     ![Adding a Fallback language](images/fallback-language.png)
 7. Click **Save**.
 
-Similarly, we can add more languages depending on the website requirements. For this tutorial, we'll use Danish (default language), English, and German as our variants.
-    ![Adding a Fallback language](images/Language-variants.png)
+### Adding Multiple Languages
+
+We can add multiple languages depending on our website requirements. In the previous step, we have already set Danish as our default language. We will now set-up English and German as our variants for this tutorial.
+
+1. Go to **Languages** in the **Settings** tree and click **Add Language**.
+2. For English Variant:
+    - Select **English (United States)** from the drop-down list.
+    - Click **Save**.
+   For German Variant:
+    - Select **German** from the drop-down list.
+    - Toggle **Mandatory Language** option.
+    - Select **Danish** from the **Fallback Language** drop-down list.
+    - Click **Save**.
+
+   ![Adding a Fallback language](images/Language-variants.png)
 
 ## Document Types
 
@@ -123,6 +138,30 @@ To display a value for a different language, if the language we are requesting d
 
 For more information, see the [Using fall-back methods](../../Fundamentals/Design/Rendering-Content/#using-fall-back-methods) article.
 
+## Using Dictionary Items
+
+Dictionary items store a value for each language. They have an unique key and can be managed from the **Translation** section. For this tutorial, let's add dictionary items for the **Address** and **Contact Number** fields of the Contact Us page.
+
+### Creating Dictionary Items
+
+To create dictionary items:
+
+1. Go to the **Translation** section.
+2. Click on **Dictionary** in the **Translation** tree and select **Create**.
+3. Enter a **Name** for the dictionary item. Let's say **Address**.
+4. Enter the different language versions for the dictionary item.
+    ![Add dictionary items](images/add-dictionary-item.png)
+5. Click **Save**.
+6. Similarly, we will add different language versions for the **Contact Number** field.
+
+### Rendering Dictionary Items
+
+To render dictionary items in the template, use the following snippet:
+```csharp
+@Umbraco.GetDictionaryValue("Address")
+@Umbraco.GetDictionaryValue("Contact Number")
+```
+
 ## Viewing the Language Variant on the Browser
 
 To view the language variant on the browser, follow these steps:
@@ -132,6 +171,6 @@ To view the language variant on the browser, follow these steps:
 3. Select the **Contact Us** node and go to the **Info** tab.
 4. You will notice the links with the new language domain added to it. If it's not there, you might need to refresh the page.
 
-     ![Viewing the Language Variant Link](images/viewing-langvariant-browser.png)
+    ![Viewing the Language Variant Link](images/viewing-langvariant-browser.png)
 5. Click on the link to view the new language varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: <http://localhost:xxxx/da/>
