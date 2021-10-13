@@ -1,6 +1,6 @@
 ---
 state: complete
-verified-against: alpha-3
+verified-against: 9.0.0
 versionFrom: 9.0.0
 meta.Title: "Umbraco Sections & Trees"
 meta.Description: "An explanation on sections and trees in Umbraco"
@@ -43,7 +43,7 @@ When registering your section this way, it is added to the end of the collection
 
 ### Registering with C# Type
 
-By creating a C# class that implements `ISection` from `Umbraco.Core.Models.Sections`:
+By creating a C# class that implements `ISection` from `Umbraco.Cms.Core.Sections`:
 
 ```csharp
 using Umbraco.Cms.Core.Sections;
@@ -59,7 +59,7 @@ namespace My.Website.Sections
 }
 ```
 
-For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IUserComposer`.
+For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IComposer` as of Umbraco v9 `IUserComposer` interface is obsolete.
 
 ```csharp
 using My.Website.Sections;
@@ -69,7 +69,7 @@ using Umbraco.Cms.Core.Sections;
 
 namespace My.Website.Composers
 {
-    public class SectionComposer : IUserComposer
+    public class SectionComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {

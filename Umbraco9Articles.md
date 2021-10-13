@@ -1,6 +1,7 @@
 ---
 meta.Title: "Umbraco 9 articles"
 meta.Description: "Find a sorted list of articles that have already been updated for the upcoming release of Umbraco 9."
+versionFrom: 9.0.0
 ---
 
 # Umbraco 9 Articles

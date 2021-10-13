@@ -1,9 +1,11 @@
 ---
+meta.Title: "Get started working with Umbraco Cloud"
+meta.Description: "Here you can find information aboit getting started working with Umbraco Cloud"
 versionFrom: 9.0.0
 ---
 
 # Umbraco Cloud
-
+ 
 In this article, you can read about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started.
 
 ## Umbraco Cloud Overview
@@ -15,6 +17,16 @@ Umbraco Cloud takes care of installation, infrastructure, and security. Umbraco 
 When you are ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that let's you publish to the web. When you have changes or updates to your site, Umbraco Cloud follows the process of moving, testing, and deploying your changes to your public site.
 
 With all the success you will have building your site with Umbraco Cloud, you will want to add more using the same account and team members all from a single place. [Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/).
+
+## Umbraco Cloud Plans
+
+Umbraco Cloud offers shared hosting in 3 different plans:
+
+- Starter
+- Standard
+- Professional
+
+You can [learn more about quotas](Umbraco-cloud-plans) that are put in place in order to ensure stability of your website.
 
 ## Umbraco Cloud Project
 

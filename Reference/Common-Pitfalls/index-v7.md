@@ -3,7 +3,6 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
-needsv9Update: true
 ---
 
 # Common Pitfalls & Anti-Patterns

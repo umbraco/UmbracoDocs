@@ -109,10 +109,23 @@ public override List<Exception> ValidateSettings() {
 To register the type, ensure your web application project has a reference to the class library - either via a project or NuGet reference - and add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
 
 ```csharp
-public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)
+public static IUmbracoBuilder AddUmbracoFormsCustomProviders(this IUmbracoBuilder builder)
 {
     builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
         .Add<LogWorkflow>();
+}
+```
+
+An alternative approach is to use a composer, as per this example:
+
+```csharp
+public class UmbracoFormsCustomProvidersComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+            .Add<LogWorkflow>();
+    }
 }
 ```
 

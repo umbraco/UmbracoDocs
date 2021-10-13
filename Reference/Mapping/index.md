@@ -236,7 +236,7 @@ public class ProductMappingDefinition : IMapDefinition
 
 #region Composing
 
-public class ProductComposer : IUserComposer
+public class ProductComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
@@ -249,7 +249,7 @@ public class ProductComposer : IUserComposer
 
 public class ProductsController : UmbracoApiController
 {
-    private readonly UmbracoMapper _mapper;
+    private readonly IUmbracoMapper _mapper;
 
     public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 

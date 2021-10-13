@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 state: complete
 updated-links: true
 meta.Title: "Content Apps"
@@ -202,8 +202,7 @@ When a role restriction is given in the manifest, it overrides any other restric
 
 ## C#: Creating a Content App
 
-This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
-Create a `WordCounter.cs` file with the following implementation:
+This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App. When registering a Content App, the C# class needs to implement the `IComposer` interface as of Umbraco v9 `IUserComposer` interface is obsolete. Create a `WordCounter.cs` file with the following implementation:
 
 ```csharp
 using System.Collections.Generic;
@@ -216,7 +215,7 @@ using Umbraco.Cms.Core.Models.Membership;
 
 namespace My.Website
 {
-    public class WordCounterAppComponent : IUserComposer
+    public class WordCounterAppComponent : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -233,20 +232,29 @@ namespace My.Website
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
                 return null;
-            // only show app on content items
-            if(source is IContent)
+                
+            // Only show app on content items
+            if (!(source is IContent))
+                return null;
+                
+            var content = ((IContent)source);
+                
+            // Only show app on content items with template
+            if (content.TemplateId is null)
+                return null;
+                
+            // Only show app on content with certin content type alias
+            // if (!content.ContentType.Alias.Equals("aliasName"))
+            //    return null;
+                
+            return new ContentApp
             {
-                var wordCounterApp = new ContentApp
-                {
-                    Alias = "wordCounter",
-                    Name = "Word Counter",
-                    Icon = "icon-calculator",
-                    View = "/App_Plugins/WordCounter/wordcounter.html",
-                    Weight = 0
-                };
-                return wordCounterApp;
-            }
-            return null;
+                Alias = "wordCounter",
+                Name = "Word Counter",
+                Icon = "icon-calculator",
+                View = "/App_Plugins/WordCounter/wordcounter.html",
+                Weight = 0
+            };
         }
     }
 }
@@ -297,7 +305,7 @@ using Umbraco.Cms.Core.Models.Membership;
 
 namespace My.Website
 {
-    public class WordCounterAppComponent : IUserComposer
+    public class WordCounterAppComponent : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -314,21 +322,30 @@ namespace My.Website
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
                 return null;
-            // only show app on content items
-            if(source is IContent)
+                
+            // Only show app on content items
+            if (!(source is IContent))
+                return null;
+                
+            var content = ((IContent)source);
+                
+            // Only show app on content items with template
+            if (content.TemplateId is null)
+                return null;
+                
+            // Only show app on content with certin content type alias
+            // if (!content.ContentType.Alias.Equals("aliasName"))
+            //    return null;
+                
+            return new ContentApp
             {
-                var wordCounterApp = new ContentApp
-                {
-                    Alias = "wordCounter",
-                    Name = "Word Counter",
-                    Icon = "icon-calculator",
-                    View = "/App_Plugins/WordCounter/wordcounter.html",
-                    Weight = 0,
-                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
-                };
-                return wordCounterApp;
-            }
-            return null;
+                Alias = "wordCounter",
+                Name = "Word Counter",
+                Icon = "icon-calculator",
+                View = "/App_Plugins/WordCounter/wordcounter.html",
+                Weight = 0,
+                Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
+            };
         }  
     }
 }

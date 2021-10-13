@@ -13,11 +13,13 @@ You can configure the settings in the `appSettings.json` file:
 
 ```json
 "Forms": {
- "Recaptcha3": {
+  "FieldTypes": {
+    "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": ""
-      }  
-}
+      }
+    }  
+  }
 ```
 
 ## For version 8.x and below

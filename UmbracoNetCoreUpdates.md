@@ -1,19 +1,19 @@
 ---
 meta.Title: "Umbraco .Net Core Updates"
-meta.Description: "Updates and information related to the upcoming release of Umbraco on .NET 5+."
+meta.Description: "Updates and information related to the release of Umbraco on .NET 5+."
 versionFrom: 9.0.0
 ---
 
 # Umbraco on .NET 5+
 
 :::note
-This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the upcoming release of Umbraco on .NET 5.
+This article is intended for keeping an overview of all the information, official as well as unofficial, currently available on the release of Umbraco on .NET 5.
 
 Are you aware of some information about Umbraco on .NET 5 that isn't already added to this list?
 Please feel free to submit a Pull Request by using the **Edit this page** button at the top of this article.
 :::
 
-In this article you will find detailed instructions on [how to try out and test the current release candidate version of Umbraco on .NET 5](#umbraco-9-net-5-release-candidate). You will also find a list of relevant links to official as well as unofficial resources on the upcoming release.
+In this article you will find detailed instructions on [how to try out and test Umbraco on .NET 5](#umbraco-9-net-5). You will also find a list of relevant links to official as well as unofficial resources on the release.
 
 ## Umbraco 9 Documentation
 
@@ -92,13 +92,7 @@ In this section you will find a list of Umbraco .Net Core resources provided by 
 * [Youtube: umbraCoffee #110 - Meet the Unicore team](https://www.youtube.com/watch?v=55xAuUxkpUo&ab_channel=umbraCoffee)
 * [Umbraco Community: Unicore Team update](https://www.youtube.com/watch?v=0WmP3Xdq9dU)
 
-## Umbraco 9 (.NET 5) Release Candidate
-
-:::warning
-As this is a **release candidate**, bugs and minor issues are to be expected.
-
-Found a bug that isn't already reported? Please report it on the [GitHub tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type%2Fbug&template=01_bug_report.yml).
-:::
+## Umbraco 9 (.NET 5) 
 
 To get started, follow the steps outlined below.
 
