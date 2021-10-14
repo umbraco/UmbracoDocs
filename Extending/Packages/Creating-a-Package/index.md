@@ -82,10 +82,6 @@ The files that we created from the [Creating a Custom Dashboard Tutorial](../../
 
 You will notice that the values for each of the fields we provided can be found inside this XML file. But since our example doesn't require any backoffice items, just the package name is contained. In a different case, the other values will be kept under the respective XML tags.
 
-:::warning
-It is very important to pick all dependencies required for the package features to work. On the other hand, everything included here will be deleted on uninstall, so you also have to make sure not to include unnecessary things!
-:::
-
 ## Creating a NuGet package
 
 This is the next step of preparing your package before install. Umbraco 9 only supports packages using NuGet installation, which enforces better practices for both source control and deployment. Here, you will find how to create a NuGet Package for the custom dashboard that will extend Umbraco's functionality.
@@ -128,7 +124,7 @@ As mentioned previously, let's navigate to the **App_Plugins** folder and replac
 
 In this section, we will demonstrate how you can add metadata about the package and its creator(s). 
 
-In Umbraco 9, you can add values directly to the package `csproj` file and it will pick them up. If you don't want to manually edit the `csproj` file, you can right-click your project, go to _Properties_ and then to _Package_. There you can insert your specific information:
+Now that Umbraco 9 is built on ASP.NET Core, you can add values directly to the package `csproj` file and it will pick them up. If you don't want to manually edit the `csproj` file, you can right-click your project, go to _Properties_ and then to _Package_. There you can insert your specific information:
 
 ![Package properties](images/package-properties.png)
 
@@ -183,7 +179,19 @@ There is comprehensive documentation on how to [Publish a NuGet package to NuGet
 
 You can install your newly created NuGet package using Visual Studio, Rider, Command Line or editing the project file directly.
 
-We will continue using the CLI and our `dotnet new umbraco` template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the App_Plugins folder from the package project into the project. In the same way, as if it was a NuGet reference.
+We will continue using the CLI and first create an Umbraco project, and then add the package reference to it:
+
+```none
+dotnet new umbraco -n CustomWelcomeDashboardProject
+cd CustomWelcomeDashboardProject
+dotnet add package CustomWelcomeDashboard.1.0.0
+dotnet run
+```
+
+You can check that the NuGet package was referenced in your solution and that the **App_Plugins** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
+
+
+A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our `dotnet new umbraco` template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
 
 This is the full command:
 
@@ -192,16 +200,6 @@ dotnet new umbraco -n CustomWelcomeDashboardProject -p CustomWelcomeDashboard
 ```
 
 Afterwards, you can enter the `CustomWelcomeDashboardProject` directory, build your Umbraco website using the `dotnet build` command and then run the application.
-
-A **different approach** would be to break it down to the individual steps - first create the Umbraco project, and then add the package reference to it:
-```none
-dotnet new umbraco -n CustomWelcomeDashboardProject
-cd CustomWelcomeDashboardProject
-dotnet add package CustomWelcomeDashboard.1.0.0
-dotnet run
-```
-
-You can check that the NuGet package was referenced in your solution and that the **App_Plugin** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
 
 ### Package migration
 We can run a migration plan for each package that contains Umbraco content (_referenced in the package schema_).
@@ -228,7 +226,7 @@ namespace CustomWelcomeDashboardProject.Migrations
 
 **Custom Package Migration**
 
-Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan - in the example below we have a single migration called `MyCustomMigration`.
+Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
 ```c#
 using System;
@@ -306,7 +304,7 @@ Whichever migration plan you choose to create, you will be able to see that your
 
 After creating a migration plan, the content and schema will automatically be imported either during unattended package migration or from the Packages section in the backoffice.
 
-By default, all these package migrations are executed unattended during startup but you can disable this in the configuration. IntelliSense will help you, as well as provide further information about the `PackageMigrationsUnattended` setting. Then in the Packages section, you will have an option to run the package migration for each package individually when the `PackageMigrationsUnattended` is set to `false`.
+By default, all these package migrations are executed unattended during startup but the solution owners can disable this in the configuration. IntelliSense can help, as well as provide further information about the `PackageMigrationsUnattended` setting. Then in the Packages section, there will be an option to run the package migration for each package individually when the `PackageMigrationsUnattended` is set to `false`.
 
 ```json
   "Umbraco": {
@@ -320,9 +318,5 @@ By default, all these package migrations are executed unattended during startup 
 ```
 
 ![Attended package install](images/package-install-attended.png)
-
-:::note
-You can only run attended package installs if you don't have an Automatic Package Migration plan.
-:::
 
 The configuration of package migrations can be different for each environment and makes it possible to have the migration executed unattended on the development environment, but leave them out or manually execute them on other environments. This is useful when you use a tool like Umbraco Deploy or USync as these will migrate the content.
