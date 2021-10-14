@@ -46,6 +46,26 @@ We can add multiple languages depending on our website requirements. In the prev
 
    ![Adding a Fallback language](images/Language-variants.png)
 
+### Changing the Default Language of a website
+
+To change the default language of a website:
+
+1. Go to **Languages** in the **Settings** tree.
+2. Select the language you want to set as the new default language.
+3. Toggle **Default Language**.
+    ![Change default language](images/change-default-language.png)
+4. Click **Save**.
+
+### Changing the Default Backoffice Language of a User
+
+To change the default language of a User:
+
+1. Go to **Users** section.
+2. Select the user whose backoffice language you wish to change.
+3. Select the new language from the **Language** drop-down list.
+    ![Change backoffice language](images/change-backoffice-language.png)
+4. Click **Save**.
+
 ## Document Types
 
 For this tutorial, we will create the following document types:
@@ -84,7 +104,7 @@ When you return to your content node you will notice two things:
 1. At the top of the content tree, there is a dropdown to view the content tree in the language of your choice.
 
    ![Variant Content Tree](images/Variant-content-tree.png)
-2. To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
+2. To the right of the content name, there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
    ![Variant Drop-down list](images/variant-dropdown.png)
 
@@ -99,9 +119,9 @@ To add culture and hostnames, follow these steps:
     ![Culture and Hostnames](images/culture-and-hostnames.png)
 4. Click **Save**.
 
-## Adding Language Variants to the Content
+## Using side-by-side mode for editing content
 
-To add language variants to the content, follow these steps:
+To use side-by-side mode for editing content at the same time, follow these steps:
 
 1. Go to the **Contact Us** node. You will find a language dropdown next to the title at the top:
 
@@ -114,11 +134,19 @@ To add language variants to the content, follow these steps:
     You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
 
     ![Splitview editing](images/splitview-editing.png)
-4. Enter the **Name** for your content node and the **Page Title** in the new language.
-5. Click **Save and Publish**. The **Ready to Publish** window opens providing the option to publish in one or more languages.
+
+    To enable these fields, follow the steps mentioned in the [Enabling Language Variants on Document Types and Properties](#enabling-language-variants-on-document-types-and-properties) section.
+
+## Adding Language Variants to the Content
+
+To add language variants to the content.
+
+1. Go to the **Contact Us** node.
+2. Enter the **Name** for your content node and the **Page Title** in the new language.
+3. Click **Save and Publish**. The **Ready to Publish** window opens providing the option to publish in one or more languages.
 
     ![Publishing Variant content](images/publishing-variant-content.png)
-6. You can select either one or multiple languages and click **Publish**.
+4. You can select either one or multiple languages and click **Publish**.
 
 ## Rendering Variant Content in Templates
 
@@ -175,3 +203,9 @@ To view the language variant on the browser, follow these steps:
     ![Viewing the Language Variant Link](images/viewing-langvariant-browser.png)
 5. Click on the link to view the new language varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: <http://localhost:xxxx/da/>
+
+For viewing purposes, I've added stylesheet to my website. The final result should look similar to the image below:
+
+Danish Version: ![Danish version of Contact Us page](images/final-result-dk.png)
+
+German Version: ![German version of Contact Us page](images/final-result-da.png)
