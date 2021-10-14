@@ -102,6 +102,8 @@ This setting allows you to configure the name of the theme to use when an editor
 
 The following configured values are applied to all forms as they are created. They can then be amended on a per-form basis via the Umbraco backoffice.
 
+Once the form has been created, the values are set explicitly on the form, so subsequent changes to the defaults in configuration won't change the settings used on existing forms.
+
 #### ManualApproval
 
 This setting needs to be a `true` or `false` value and will allow you to toggle if a form allows submissions to be post moderated. Most use cases are for publicly shown entries such as blog post comments or submissions for a social campaign. Defaults to `false`.
