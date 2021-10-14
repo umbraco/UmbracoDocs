@@ -12,7 +12,7 @@ In Umbraco 8 and above, you can use **language variants** to setup a multilingua
 
 This tutorial explains how to set-up a basic multilingual website.
 
-## Adding a new language
+## Adding a New language
 
 To add a new language, follow these steps:
 
@@ -46,7 +46,7 @@ We can add multiple languages depending on our website requirements. In the prev
 
    ![Adding a Fallback language](images/Language-variants.png)
 
-### Changing the Default Language of a website
+### Changing the Default Language of a Website
 
 To change the default language of a website:
 
@@ -119,7 +119,7 @@ To add culture and hostnames, follow these steps:
     ![Culture and Hostnames](images/culture-and-hostnames.png)
 4. Click **Save**.
 
-## Using side-by-side mode for editing content
+## Using Side-by-Side Mode for Editing Content
 
 To use side-by-side mode for editing content at the same time, follow these steps:
 
