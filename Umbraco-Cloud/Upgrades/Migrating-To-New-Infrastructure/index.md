@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 In this article, you’ll find all relevant information to be aware of when a site is migrated from the old to the new Umbraco Cloud infrastructure. This article is kept up-to-date should any new information arise.
 
 ## Schedule and timing
-Projects are scheduled for migration through Q3, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email 2 weeks in advance with the specific date and time.
+Projects are scheduled for migration through Q4, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email with the specific date and time.
 
 ### Rescheduling migration
 In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>.
