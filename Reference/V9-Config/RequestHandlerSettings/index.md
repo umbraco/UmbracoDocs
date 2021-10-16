@@ -15,8 +15,7 @@ Let's have a further look at each option below.
 
 Here is a snippet containing all the default values of the `RequestHandler` section.
 
-```json
-
+```
 {
 	"Umbraco": {
 		"CMS": {
@@ -125,7 +124,6 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
 		}
 	}
 }
-
 ```
 
 ### Add trailing slash
