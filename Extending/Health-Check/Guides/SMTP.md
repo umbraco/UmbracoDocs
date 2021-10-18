@@ -49,8 +49,11 @@ One example that can be used on localhost, if you have a (fake) SMTP server runn
             "Global": {
                 "Smtp": {
                     "From": "my@email.com",
-                    "Host": "localhost",
-                    "Port": "25"
+                    "Host": "127.0.0.1",
+                    "Username": "username",
+                    "Password": "password",
+                    "SecureSocketOptions": "None",
+                    "Port": 25
                 }
             }
         }
