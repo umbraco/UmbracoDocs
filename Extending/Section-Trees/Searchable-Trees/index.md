@@ -1,7 +1,7 @@
 ---
 state: complete
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 ---
 
 # Searchable Trees (ISearchableTree)
@@ -21,25 +21,32 @@ To create a search for your own custom tree you need to create a C# class that i
 ### ISearchableTree
 
 ```csharp
-public interface ISearchableTree : IDiscoverable
-{
-    /// <summary>
-    /// The alias of the tree that the <see cref="ISearchableTree"/> belongs to
-    /// </summary>
-    string TreeAlias { get; }
+using System.Collections.Generic;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Models.ContentEditing;
 
-    /// <summary>
-    /// Searches for results based on the entity type
-    /// </summary>
-    /// <param name="query">The search term used for finding matching results.</param>
-    /// <param name="pageSize">The number of records to return for a page of results.</param>
-    /// <param name="pageIndex">The 0-based index for retrieving a page of search results.</param>
-    /// <param name="totalFound">Populated with the total number of results matching the provided search term.</param>
-    /// <param name="searchFrom">
-    ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
-    /// </param>
-    /// <returns></returns>
-    IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
+namespace My.Website
+{
+    public interface ISearchableTree : IDiscoverable
+    {
+        /// <summary>
+        /// The alias of the tree that the <see cref="ISearchableTree"/> belongs to
+        /// </summary>
+        string TreeAlias { get; }
+
+        /// <summary>
+        /// Searches for results based on the entity type
+        /// </summary>
+        /// <param name="query">The search term used for finding matching results.</param>
+        /// <param name="pageSize">The number of records to return for a page of results.</param>
+        /// <param name="pageIndex">The 0-based index for retrieving a page of search results.</param>
+        /// <param name="totalFound">Populated with the total number of results matching the provided search term.</param>
+        /// <param name="searchFrom">
+        ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
+    }
 }
 ```
 
@@ -72,33 +79,47 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Trees;
 
-public class FavouriteThingsSearchableTree : ISearchableTree
+namespace My.Website
 {
-    public string TreeAlias => "favouriteThingsAlias";
-
-    public IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
+    public class FavouriteThingsSearchableTree : ISearchableTree
     {
-        // your custom search implementation starts here
-        Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-        favouriteThings.Add(1, "Raindrops on Roses");
-        favouriteThings.Add(2, "Whiskers on Kittens");
-        favouriteThings.Add(3, "Skys full of Stars");
-        favouriteThings.Add(4, "Warm Woolen Mittens");
-        favouriteThings.Add(5, "Cream coloured Unicorns");
-        favouriteThings.Add(6, "Schnitzel with Noodles");
+        public string TreeAlias => "favouriteThingsAlias";
 
-        var searchResults = new List<SearchResultEntity>();
-
-        var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
-        foreach (var matchingItem in matchingItems)
+        public IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
         {
-            // making up the Id/Udi for this example! - these would normally be different for each search result.
-            searchResults.Add(new SearchResultEntity() { Id = 12345, Alias = "favouriteThingItem", Icon = "icon-favorite", Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), Name = matchingItem.Value, ParentId = -1, Path = "-1,123456", Score = 1.0F, Trashed = false, Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1")) });
+            // your custom search implementation starts here
+            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
+            favouriteThings.Add(1, "Raindrops on Roses");
+            favouriteThings.Add(2, "Whiskers on Kittens");
+            favouriteThings.Add(3, "Skys full of Stars");
+            favouriteThings.Add(4, "Warm Woolen Mittens");
+            favouriteThings.Add(5, "Cream coloured Unicorns");
+            favouriteThings.Add(6, "Schnitzel with Noodles");
+
+            var searchResults = new List<SearchResultEntity>();
+
+            var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
+            foreach (var matchingItem in matchingItems)
+            {
+                // Making up the Id/Udi for this example! - these would normally be different for each search result.
+                searchResults.Add(new SearchResultEntity() { 
+                    Id = 12345, 
+                    Alias = "favouriteThingItem", 
+                    Icon = "icon-favorite", 
+                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), 
+                    Name = matchingItem.Value, 
+                    ParentId = -1, 
+                    Path = "-1,12345", 
+                    Score = 1.0F, 
+                    Trashed = false, 
+                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1")) 
+                });
+            }
+            // Set number of search results found
+            totalFound = matchingItems.Count();
+            // Return your IEnumerable of SearchResultEntity
+            return searchResults;
         }
-        // set number of search results found
-        totalFound = matchingItems.Count();
-        // return your IEnumerable of SearchResultEntity
-        return searchResults;
     }
 }
 ```
@@ -107,7 +128,7 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco automatically finds any implementation of ISearchableTree in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two ISearchableTree implementations trying to search the 'same' TreeAlias, it's *one* ISearchableTree per TreeAlias!
+Umbraco automatically finds any implementation of `ISearchableTree` in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias!
 
 ## Replacing an existing Section Tree Search
 
@@ -123,7 +144,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 public string TreeAlias => "member";
 ```
 
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an `IComposer` (as of Umbraco v9 `IUserComposer` interface is obsolete) when Umbraco starts up:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -132,15 +153,15 @@ using Umbraco.Cms.Web.BackOffice.Trees;
 
 namespace My.Website
 {
-    public class RemoveCoreMemberSearchableTreeComposer : IUserComposer
+    public class RemoveCoreMemberSearchableTreeComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            //Remove core MemberTreeController
+            // Remove core MemberTreeController
             builder.SearchableTrees().Exclude<MemberTreeController>();
         }
     }
 }
 ```
 
-This would then allow your custom implementation of ISearchableTree with TreeAlias 'member' to be used when searching the Member Section Tree.
+This would then allow your custom implementation of `ISearchableTree` with TreeAlias 'member' to be used when searching the Member Section Tree.
