@@ -1,7 +1,7 @@
 ---
 updated-links: false
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 state: partial
 meta.Title: "Umbraco Custom Dashboards"
 meta.Description: "A guide to creating custom dashboards in Umbraco"
@@ -288,7 +288,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace My.Website
 {
-    public class RemoveDashboard : IUserComposer
+    public class RemoveDashboard : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
