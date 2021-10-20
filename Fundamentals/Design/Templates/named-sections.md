@@ -8,7 +8,7 @@ verified-against: 9.0.0
 
 # Named Sections
 
-Template sections supports the ability to add additional *Named Sections* to layout templates. These sections can be defined anywhere in the layout file (including within the <head> section of the HTML) and allows you to output dynamic content in your template.
+Template sections support the ability to add additional *Named Sections* to layout templates. These sections can be defined anywhere in the layout file (including within the <head> section of the HTML) and allow you to output dynamic content in your template.
 
 ## Defining a Named Section
 
@@ -41,7 +41,7 @@ To define a Named Section, follow these steps:
 
 ## Render a Name Section
 
-Renders a named area of a child template, by inserting a `@RenderSection(name)` placeholder. This renders an area of a child template which is wrapped in a corresponding `@section [name]` definition.
+Renders a named area of a child template, by inserting a `@RenderSection(name)` placeholder. This renders an area of a child template that is wrapped in a corresponding `@section [name]` definition.
 
 For example, you can define the following section within a Master template like:
 
