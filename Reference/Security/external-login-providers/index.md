@@ -95,3 +95,5 @@ You can disable it in umbraco-cloud.json using the configuration below:
     "AutoRedirectLogin": false 
   }
 ```
+
+**Note:** Make sure that your ClientId, ClientSecret, EnvironmentId and LocalLoginRedirectUri are in place in Identity section, otherwise you may break Umbraco Identity authorization.

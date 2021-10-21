@@ -30,3 +30,5 @@ You can disable it using the configuration below:
 ```xml
 <add key="Umbraco.Cloud.Identity.AutoRedirectLogin" value="false" />
 ```
+
+**Note:** Make sure that your ClientId, ClientSecret, EnvironmentId and LocalLoginRedirectUri are in place in Identity section, otherwise you may break Umbraco Identity authorization.
