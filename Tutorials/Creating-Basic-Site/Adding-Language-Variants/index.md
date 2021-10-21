@@ -18,8 +18,8 @@ To add a new language, follow these steps:
 
     ![Adding the Danish language](images/adding-danish-language.png)
 5. In **Settings**, to set the new language as the:
-    1. Defualt language for your site, toggle **Default Language**.
-    2. Mandatory language for your site, toggle  **Mandatory Language**.
+    - Default language for your site, toggle **Default Language**.
+    - Mandatory language for your site, toggle  **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
 
     ![Adding a Fallback language](images/fallback-language.png)
