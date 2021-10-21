@@ -15,7 +15,7 @@ In order for Umbraco to authenticate a request for the backoffice, the routing n
 
 will be authenticated. If you have a controller that is not routed within the prefix, it will not be authenticated for backoffice use.
 
-You do not have to worry about routing if you are using WebApi and using `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` (or any inherited controller) since these are auto routed. All implementations of `UmbracoAuthorizedApiController` (which includes `UmbracoAuthorizedJsonController`) are auto-routed with the default route:
+You do not have to worry about routing if you are using `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` (or any inherited controller) since these are auto routed. All implementations of `UmbracoAuthorizedApiController` (which includes `UmbracoAuthorizedJsonController`) are auto-routed with the default route:
 
 > `/umbraco/backoffice/api/{controller}/{action}`
 
