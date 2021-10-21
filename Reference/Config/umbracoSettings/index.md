@@ -99,11 +99,11 @@ If you need to create a custom media document type to handle images called somet
 
 In case of a 404 error (page not found), Umbraco can return a default page instead. You can also set a different error page, based on the current culture so a 404 page can be returned in the correct language.
 
-You can customize the error pages using the `Error404Collection` section in the `appsettings.json` file. For more information, see the [Implementing Custom Error Pages](../../../Tutorials/Custom-Error-Pages/index#404-errors) article.
+You can customize the error pages using the `Error404Collection` section in the `appsettings.json` file. For more information, see the [Implementing Custom Error Pages](../../../Tutorials/Custom-Error-Pages/index.md#404-errors) article.
 
 #### Configuration for Multiple Sites with different Cultures
 
-If you have multiple sites, with different cultures, setup in your tree then you will need to setup the `Error404Collection` section in the `appsettings.json` file like below:
+If you have multiple sites, with different cultures, setup in your tree then you need to update the `Error404Collection` section in the `appsettings.json` file like below:
 
 ```json
 {
@@ -130,7 +130,7 @@ If you have multiple sites, with different cultures, setup in your tree then you
 }
 ```
 
-If you have more than two sites and forget to update the `Error404Collection` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you forget to define a hostname on a site.
+If you have more than two sites and did not update the `Error404Collection` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you haven't defined a hostname on a site.
 
 #### Proxying through IIS on Umbraco Cloud
 
