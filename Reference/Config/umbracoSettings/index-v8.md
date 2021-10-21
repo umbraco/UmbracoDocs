@@ -106,13 +106,13 @@ Let's take a look at an example: You have a single site that should display a cu
 To set-up a custom 404 page, do the following:
 
 1. [Update the `customErrors` section in the `web.config` file](#update-the-customerrors-section-in-the-webconfig-file)
-2. [Create custom error pages](#create-custom-error-pages)
-3. [Specify the node where the page should be displayed when there's an exception](#specify-the-node-where-the-page-should-be-displayed-when-theres-an-exception)
-4. [Set the appropriate response and status code](#set-the-appropriate-response-and-status-code)
+2. [Create Custom Error Pages](#create-custom-error-pages)
+3. [Specify the Node where the Page should be displayed when there's an Exception](#specify-the-node-where-the-page-should-be-displayed-when-theres-an-exception)
+4. [Set the appropriate Response and Status Code](#set-the-appropriate-response-and-status-code)
 
 #### Update the `customErrors` section in the `web.config` file
 
-Configure the web application to use the custom error page by specifying the URL of the error page. Add the following markup to your `web.config` file:
+To use the custom error page by specifying the URL of the error page, add the following markup to your `web.config` file:
 
 ```html
 <system.web>
@@ -124,7 +124,7 @@ The `redirectMode` will show the error page on the same request instead of redir
 
 #### Create Custom Error Pages
 
-You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. For example purposes, both my custom pages look like:
+You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. For example purposes, both my custom pages look similar:
 
 ```html
 <!DOCTYPE html>
@@ -149,23 +149,23 @@ You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. F
 
     ```xml
     <settings>
-    <content>
-        <errors>
-            <!--
-                The value for error pages can be:
-                * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
-                * An XPath statement            (example: //errorPages[@nodeName='My cool error'])
-                * A content item's integer ID   (example: 1066)
-            -->
-            <!--
-                <error404>
-                    <errorPage culture="default">26C1D84F-C900-4D53-B167-E25CC489DAC8</errorPage>
-                    <errorPage culture="en-US">D820E120-6865-4D88-BFFE-48801A6AC375</errorPage>
-                </error404>
-            -->
-            <error404>1066</error404>
-        </errors>
-    </content>
+        <content>
+            <errors>
+                <!--
+                    The value for error pages can be:
+                    * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+                    * An XPath statement            (example: //errorPages[@nodeName='My cool error'])
+                    * A content item's integer ID   (example: 1066)
+                -->
+                <!--
+                    <error404>
+                        <errorPage culture="default">26C1D84F-C900-4D53-B167-E25CC489DAC8</errorPage>
+                        <errorPage culture="en-US">D820E120-6865-4D88-BFFE-48801A6AC375</errorPage>
+                    </error404>
+                -->
+                <error404>1066</error404>
+            </errors>
+        </content>
     </settings>
     ```
 
@@ -177,7 +177,7 @@ You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. F
 
     :::note
 
-    - Ids are usually local to the specific solution (so it won't point to the same node in two different environments if you're using Umbraco Cloud).
+    - Id's are usually local to the specific solution (so it won't point to the same node in two different environments if you're using Umbraco Cloud).
     - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
     - When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
 
@@ -222,9 +222,9 @@ You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. F
     </configuration>
     ```
 
-#### [Optional] Set the Media location
+#### *[Optional]* Set the Media location
 
-To display media instead of a blank page, set the `location` section in the `web.config` file:
+To display media instead of a blank page, update the `location` section in the `web.config` file:
 
 ```html
 <configuration>
@@ -255,13 +255,13 @@ If you have multiple sites, with different cultures, setup in your tree then you
 </errors>
 ```
 
-If you have more than two sites and forget to update the `<errors>` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you forget to define a hostname on a site.
+If you have more than two sites and forget to update the `errors` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you forget to define a hostname on a site.
 
 #### Validation Errors
 
 The error pages won’t capture every exception you’re likely to encounter in your application.
 
-For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These request will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
+For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These requests will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
 
 ```html
 <customErrors mode="Off" redirectMode="ResponseRewrite" defaultRedirect="~/404.aspx">
