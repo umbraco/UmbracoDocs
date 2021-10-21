@@ -8,7 +8,7 @@ meta.Description: "A guide to multilanguage setup in Umbraco"
 
 # Creating a Multilingual Site
 
-In Umbraco 8 and above, you can use **language variants** to setup a multilingual site. **Language Variants** allows you to have variants of the same content all under the same project. So, if you open a page and a language variant is enabled, you will see the option to switch the language from the drop-down list. Additionally, you can view or input the translated content.
+In Umbraco 8 and above, you can use **language variants** to setup a multilingual site. **Language Variants** allow you to have variants of the same content all under the same project. So, if you open a page and a language variant is enabled, you will see the option to switch the language from the drop-down list. Additionally, you can view or input the translated content.
 
 This tutorial explains how to set-up a basic multilingual website.
 
@@ -168,7 +168,7 @@ For more information, see the [Using fall-back methods](../../Fundamentals/Desig
 
 ## Using Dictionary Items
 
-Depending on how your site is set up, not all content is edited through the content section. Some of the content may be written in the template or labels of content node and dictionary items can play a part here. Dictionary items store a value for each language. They have an unique key and can be managed from the **Translation** section. For this tutorial, let's add dictionary items for the **Address** and **Contact Number** labels of the Contact Us page.
+Depending on how your site is set up, not all content is edited through the content section. Some of the content may be written in the template or labels of the content node and dictionary items can play a part here. Dictionary items store a value for each language. They have a unique key and can be managed from the **Translation** section. For this tutorial, let's add dictionary items for the **Address** and **Contact Number** labels of the Contact Us page.
 
 ### Creating Dictionary Items
 
@@ -204,7 +204,7 @@ To view the language variant on the browser, follow these steps:
 5. Click on the link to view the new language varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: <http://localhost:xxxx/da/>
 
-For viewing purposes, I've added stylesheet to my website. The final result should look similar to the image below:
+For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
 Danish Version: ![Danish version of Contact Us page](images/final-result-dk.png)
 
