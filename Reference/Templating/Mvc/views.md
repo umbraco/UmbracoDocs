@@ -72,7 +72,7 @@ This renders a macro with the specified alias without any parameters:
 This renders a macro with some parameters using an anonymous object:
 
 ```csharp
-@Umbraco.RenderMacroAsync("myMacroAlias", new { name = "Ned", age = 28 })
+@await Umbraco.RenderMacroAsync("myMacroAlias", new { name = "Ned", age = 28 })
 ```
 
 This renders a macro with some parameters using a dictionary
