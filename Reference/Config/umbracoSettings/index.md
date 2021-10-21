@@ -156,7 +156,7 @@ To set the appropriate status code, update your **web.Production.config** for th
 
 The error pages won’t capture every exception you’re likely to encounter in your application.
 
-For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These request will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
+For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These request will produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
 
 ```html
 <customErrors mode="Off" redirectMode="ResponseRewrite" defaultRedirect="~/404.aspx">
