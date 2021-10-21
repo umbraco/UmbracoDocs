@@ -101,14 +101,14 @@ In case of a 404 error (page not found), Umbraco can return a default page inste
 
 You can customize the error pages using the `customErrors` or `errors` section in the `web.config` file.
 
-Let's take a look at an example: You have a single site that needs to show a custom 404 page in case of exceptions.
+Let's take a look at an example: You have a single site that should display a custom 404 page in case of exceptions.
 
 To set-up a custom 404 page, do the following:
 
-1. Update the `customErrors` section in the `web.config` file
-2. Create custom error pages
-3. Specify the node where the page should be displayed when there's an exception
-4. Set the appropriate response and status code
+1. [Update the `customErrors` section in the `web.config` file](#update-the-customerrors-section-in-the-webconfig-file)
+2. [Create custom error pages](#create-custom-error-pages)
+3. [Specify the node where the page should be displayed when there's an exception](#specify-the-node-where-the-page-should-be-displayed-when-theres-an-exception)
+4. [Set the appropriate response and status code](#set-the-appropriate-response-and-status-code)
 
 #### Update the `customErrors` section in the `web.config` file
 
@@ -204,7 +204,7 @@ You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. F
     <% Response.StatusCode = 404;%>
     ```
 
-2. Update your `web.config` file with the following:
+2. Update your `web.config` file:
 
     ```html
     <configuration>
@@ -224,7 +224,7 @@ You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. F
 
 #### [Optional] Set the Media location
 
-To display media instead of a blank page, we'll set the `location` section in the `web.config` file:
+To display media instead of a blank page, set the `location` section in the `web.config` file:
 
 ```html
 <configuration>
@@ -240,6 +240,8 @@ To display media instead of a blank page, we'll set the `location` section in th
 ```
 
 Now when you spin up the site, you will get a customized Umbraco content page for the 404 error.
+
+#### Configuration for Multiple Sites with different Cultures
 
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
 
@@ -257,7 +259,9 @@ If you have more than two sites and forget to update the `<errors>` section with
 
 #### Validation Errors
 
-The error pages won’t capture every exception you’re likely to encounter in your application. For example, the user entered or pasted the wrong URL in the address window, invalid request message, or malformed syntax request etc. These request will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
+The error pages won’t capture every exception you’re likely to encounter in your application.
+
+For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These request will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
 
 ```html
 <customErrors mode="Off" redirectMode="ResponseRewrite" defaultRedirect="~/404.aspx">
