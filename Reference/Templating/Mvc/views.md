@@ -78,7 +78,7 @@ This renders a macro with some parameters using an anonymous object:
 This renders a macro with some parameters using a dictionary
 
 ```csharp
-@Umbraco.RenderMacroAsync("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
+@await Umbraco.RenderMacroAsync("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 ```
 
 [UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
