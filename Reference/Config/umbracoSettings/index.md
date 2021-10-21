@@ -134,11 +134,7 @@ If you have more than two sites and did not update the `Error404Collection` sect
 
 #### Proxying through IIS on Umbraco Cloud
 
-For environment specific transforms, include a `web.{ENVIRONMENT}.config` file for each environment requiring a `web.config` transformation such as:
-
-- web.Development.config
-- web.Staging.config
-- web.Production.config
+For environment specific transforms, include a `web.{ENVIRONMENT}.config` file for each environment requiring a `web.config` transformation such as `web.Development.config`, `web.Staging.config`, or `web.Production.config`.
 
 To set the appropriate status code, update your **web.Production.config** for the *Production* environment:
 
@@ -369,7 +365,7 @@ Most of the logging configuration is moved to the Serilog config files.
 </logging>
 ```
 
-### <maxLogAge>
+### `<maxLogAge>`
 
 The maximum log age in minutes used for the internal audit log scrubbing.
 
@@ -402,10 +398,10 @@ When you move and rename pages in Umbraco, 301 permanent redirects are automatic
 
 Possible values are:
 
--   `Default`: Indicates that the URL provider should do what it has been configured to do.
--   `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
--   `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
--   `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
+- `Default`: Indicates that the URL provider should do what it has been configured to do.
+- `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
+- `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
+- `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
 
 ### `umbracoApplicationUrl`
 
