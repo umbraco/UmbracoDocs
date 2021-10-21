@@ -21,3 +21,12 @@ Traditionally a backoffice user will need to exist first and then that user can 
 In this case, you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
 Read more about [auto linking](../auto-linking/index.md).
+
+## How to disable automatic redirection to the umbraco identity login screen in Umbraco Cloud projects.
+
+Since Umbraco Cloud uses Umbraco Identity by default and has automatic redirection to the login screen, you cannot use external login.
+You can disable it using the configuration below:
+
+```xml
+<add key="Umbraco.Cloud.Identity.AutoRedirectLogin" value="false" />
+```
