@@ -66,7 +66,7 @@ Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll star
 This renders a macro with the specified alias without any parameters:
 
 ```csharp
-@Umbraco.RenderMacroAsync("myMacroAlias")
+@await Umbraco.RenderMacroAsync("myMacroAlias")
 ```
 
 This renders a macro with some parameters using an anonymous object:
