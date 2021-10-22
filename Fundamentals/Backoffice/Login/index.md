@@ -84,18 +84,22 @@ It is possible to customize the background and logo images for the backoffice lo
    }
 } 
 ```
+
 The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroot/umbraco/` folder.
 
-To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `css` folder, containg a css file, and a package.manifest file. An example structure might be:
-```json
+To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `css` folder, containing a css file, and a package.manifest file. An example structure might be:
+
+```
 /App_Plugins
     /myLoginFolder
         /css
             /myLoginStyles.css
         /package.manifest
 ```
+
 An example stylesheet might be:
 
+```css
     .login-overlay {
     	background-color: #000;
     }
@@ -112,14 +116,16 @@ An example stylesheet might be:
     div.login-overlay__logo {
     	width: 10%;
     }
-    
+ ```
+ 
 An example package.manifest might be:
 
+```json
     {
     css: [
         '~/App_Plugins/myLoginFolder/css/myLoginStyles.css'
         ]
     }
-
+```
 
 
