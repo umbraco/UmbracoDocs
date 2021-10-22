@@ -70,9 +70,9 @@ An example:
 }
 ```
 
-## Background and logo images
+## Custom background image and logo
 
-It is possible to customize the background and logo images for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
+It is possible to customize the background image and the logo for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
 
 ```json
 "Umbraco": {
