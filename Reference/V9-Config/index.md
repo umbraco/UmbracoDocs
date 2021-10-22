@@ -9,7 +9,7 @@ update-links: true
 
 # Configuration Files
 
-In V9, we have moved away from the previous configuration using .config files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
+In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0) article.
 
@@ -106,6 +106,7 @@ A complete list of all the configuration sections included in Umbraco by default
 * [Logging settings](LoggingSettings/index.md)
 * [Models builder settings](ModelsBuilderSettings/index.md)
 * [NuCache settings](NuCacheSettings/index.md)
+* [Package migration settings](PackageMigrationSettings/index.md)
 * [Plugins settings](PluginsSettings/index.md)
 * [Request handler settings](RequestHandlerSettings/index.md)
 * [Rich text editor settings](RichTextEditorSettings/index.md)
