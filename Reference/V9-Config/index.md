@@ -13,7 +13,7 @@ In V9, we have moved away from the previous configuration using `.config` files,
 
 For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0) article.
 
-## Managing configuration
+## Managing Configuration
 
 You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution, fortunately, the `IConfiguration` pattern.
 
@@ -29,7 +29,7 @@ This list is in order of precedence, so the values from `appSettings.json` will 
 
 There is one caveat, to this precedence though, the `appSettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance, the `appsettings.Development.json` file will only be used when the environment is set to development.
 
-### Using environment variables for configuration
+### Using Environment Variables for Configuration
 
 It is not feasible to have an entire json file as an environment variable, and the `:` doesn't work with environment variables on all platforms, so instead a double underscore is used to create the hierachy.
 
@@ -47,18 +47,17 @@ As an example, if you want to set your unattended username, you would normally w
 
 As an environment variable it becomes a variable with the name `Umbraco__CMS__Unattended__UnattendedUserName` and a value of `A.N. Other`.
 
-### Using command line arguments configuration
+### Using Command Line Arguments Configuration
 
 Like with environment variables, it's not feasable to use an entire json file as a command line argument. However, with the command line the `:` will work without issues, so each section of the hierarchy is seperated with a `:` character. If we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
 
 `dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
 
-
 ## IntelliSense
 
 A great thing about the `appsettings.json` is that it allows for intellisense with a schema file. For most ediors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so `"$schema": "https://json.schemastore.org/appsettings.json"`.
 
-## Reading configuration in code
+## Reading Configuration in Code
 
 You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it, here is an example of how you'd read the the Host value from the SMTP settings contained within the global settings:
 
@@ -90,35 +89,36 @@ Now we have a typed object containing our settings, so we can get the Host value
 
 To see what setting types you can access see the complete list below, each document corresponds to a settings type.
 
-## Configuration options
+## Configuration Options
 
 A complete list of all the configuration sections included in Umbraco by default can be seen here, along with any keys they contain:
 
-* [Global settings](GlobalSettings/index.md)
-* [Content settings](ContentSettings/index.md)
-* [Imaging settings](ImagingSettings/index.md)
-* [Serilog settings](Serilog/index.md)
-* [Security settings](SecuritySettings/index.md)
-* [Hosting settings](HostingSettings/index.md)
-* [Models builder settings](ModelsBuilderSettings/index.md)
-* [Unattended settings](UnattendedSettings/index.md)
-* [Health checks settings](HealthChecks/index.md)
 * [Connection strings settings](ConnectionStringsSettings/index.md)
-* [Web routing settings](WebRoutingSettings/index.md)
-* [Keep alive settings](KeepAliveSettings/index.md)
-* [Request handler settings](RequestHandlerSettings/index.md)
-* [Runtime minification settins](RuntimeMinificationSettings/index.md)
-* [Tours settings](ToursSettings/index.md)
-* [Rich text editor settings](RichTextEditorSettings/index.md)
+* [Content settings](ContentSettings/index.md)
 * [Debug settings](DebugSettings/index.md)
-* [Exception filter settings](ExceptionFilterSettings/index.md)
 * [Examine settings](ExamineSettings/index.md)
-* [NuCache settings](NuCacheSettings/index.md)
-* [Runtime settings](RuntimeSettings/index.md)
-* [Type finder settings](TypeFinderSettings/index.md)
+* [Exception filter settings](ExceptionFilterSettings/index.md)
+* [Global settings](GlobalSettings/index.md)
+* [Health checks settings](HealthChecks/index.md)
+* [Hosting settings](HostingSettings/index.md)
+* [Imaging settings](ImagingSettings/index.md)
+* [Keep alive settings](KeepAliveSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
-* [Plugins settings](PluginsSettings/index.md)
+* [Models builder settings](ModelsBuilderSettings/index.md)
+* [NuCache settings](NuCacheSettings/index.md)
 * [Package migration settings](PackageMigrationSettings/index.md)
+* [Plugins settings](PluginsSettings/index.md)
+* [Request handler settings](RequestHandlerSettings/index.md)
+* [Rich text editor settings](RichTextEditorSettings/index.md)
+* [Runtime minification settins](RuntimeMinificationSettings/index.md)
+* [Runtime settings](RuntimeSettings/index.md)
+* [Security settings](SecuritySettings/index.md)
+* [Serilog settings](Serilog/index.md)
+* [Tours settings](ToursSettings/index.md)
+* [Type finder settings](TypeFinderSettings/index.md)
+* [Umbraco settings](umbracoSettings/index.md)
+* [Unattended settings](UnattendedSettings/index.md)
+* [Web routing settings](WebRoutingSettings/index.md)
 
 ## Configured by code
 
