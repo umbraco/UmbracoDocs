@@ -37,6 +37,10 @@ NuGet installs the latest version of the package when you use the `dotnet add pa
 
 After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
+:::warning
+If you're using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
+:::
+
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
 ```xml

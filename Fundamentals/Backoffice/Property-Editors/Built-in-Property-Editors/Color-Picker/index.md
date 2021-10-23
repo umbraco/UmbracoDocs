@@ -8,7 +8,7 @@ versionFrom: 9.0.0
 
 `Returns: String (Hexadecimal)`
 
-`Returns: Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor (When using labels)`
+`Returns: Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor (When using labels)`
 
 The Color picker allows you to set some predetermined colors that the editor can choose between.
 
@@ -40,7 +40,7 @@ It's possible to add a label to use with the color.
 ## Example without Modelsbuilder
 
 ```csharp
-@using Umbraco.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
 @{
     var hexColor = Model.Value("Color");
     // Define the label if you've included it
