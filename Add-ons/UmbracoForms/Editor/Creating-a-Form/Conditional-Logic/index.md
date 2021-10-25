@@ -42,7 +42,7 @@ Next up, you'll need to specify the **Logic Type**. This setting is only importa
 
 When adding a new condition, you'll need to select the field where you want to evaluate the value and can select an operator.
 
-In this example, we only want to show the *Phone* field if the value of the *How should we contact you* field is `Phone`. 
+In this example, we only want to show the *Phone* field if the value of the *How should we contact you* field is `Phone`.
 
 ![Setup rule](images/conditions-v9.png)
 
@@ -57,6 +57,12 @@ When both the conditions have been set as shown above, this is how it will look 
 ![Frontend Example](images/exampleFrontend-v9.png)
 
 In this example, we have only selected *Phone* but it is possible to choose both *Phone* and *Email* and display both the fields.
+
+## Conditions for Pages and Fieldsets
+
+As well as showing or hiding a field based on conditions, you can also apply conditions to groups of fields (known as fieldsets) or to pages.  The process is the same as described above.
+
+When applying a condition to a page, effectively you are controlling the display of the submit button (for a single-page form) or the next/previous buttons (available on multi-page forms).  In this way you can ensure that the entry so far is complete before accepting it or allowing the user to move onto the next page.
 
 ---
 
