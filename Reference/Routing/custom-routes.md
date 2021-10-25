@@ -193,32 +193,39 @@ Now that we have our dependencies, and our action methods, we're finally ready t
 ```C#
 public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
 {
-    var productRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
+    var umbracoContext = _umbracoContextAccessor.GetRequiredUmbracoContext();
 
-    if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+    if (umbracoContext != null)
     {
-        // Check which action is executing
-        switch (controllerActionDescriptor.ActionName)
+        var productRoot = umbracoContext.Content.GetById(2074);
+
+        if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
         {
-            case nameof(Index):
-                return productRoot;
-            
-            case nameof(Product):
-                // Get the SKU/Id from the route values
-                if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
-                {
-                    return productRoot
-                        .Children
-                        .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
-                }
-                else
-                {
+            // Check which action is executing
+            switch (controllerActionDescriptor.ActionName)
+            {
+                case nameof(Index):
                     return productRoot;
-                }
+                
+                case nameof(Product):
+                    // Get the SKU/Id from the route values
+                    if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+                    {
+                        return productRoot
+                            .Children
+                            .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
+                    }
+                    else
+                    {
+                        return productRoot;
+                    }
+            }
         }
+
+        return productRoot;
     }
 
-    return productRoot;
+    return null;
 }
 ```
 
