@@ -191,7 +191,7 @@ public ShopController(
 Now that we have our dependencies, and our action methods, we're finally ready to implement the `FindContent` method: 
 
 ```C#
-public IPublishedContent FindContent(ActionExecutingContextactionExecutingContext)
+public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
 {
     var productRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
 
