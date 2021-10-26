@@ -98,6 +98,24 @@ example.com. IN CAA 0 issuewild "digicert.com"
 
 On the Professional and Enterprise plan, you can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
+## [Using WAF on Cloud](WAF)
+There is an option to install Web Application Firewall if that is needed.
+If you are using a custom certificate for that specific hostname with WAF make sure you are able to upload the custom certificate:
+
+1. Make sure the hostname is pointing to  Umbraco Cloud (dns. umbraco.io)
+2. Certificates are issued for the actual hostname - It is probably required to have a custom certificate for a WAF hostname. 
+3. Be on a plan that supports custom certificates
+
+Even though the hostname isn't pointing to Umbraco Cloud (dns.umbraco.io) can the certificate be validated by adding a txt record for the hostname. Or a DNS record.
+When that is validated, then the hostname will, in principle, be ready to be used in Umbraco Cloud.
+
+So when you update your DNS, regarding go-live, will it typically be very fast and the hostname will be ready to use.
+So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it removed. That means that you has 14 days to add a TXT record in your DNS settings. 
+
+Reach out to support and they will assist you with the details that needs to be in the TXT record. We will first be able to see what you need to add in the TXT record when you have added the hostname.
+
+When that is added it should work immediately.
+
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
 
 Learn more about best practices for working with rewrite rules on Umbraco Cloud projects.
