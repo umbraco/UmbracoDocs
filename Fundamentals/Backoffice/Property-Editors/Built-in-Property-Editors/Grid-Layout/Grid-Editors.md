@@ -18,6 +18,8 @@ Grid editors are specified in `/config/grid.editors.config.js`. By default this 
 
 The default items in the config file are as follows below. It is recommended that you copy all of editors below before you add more, in case some of them are already in use. 
 
+If you don't add the editors below to this config file then they won't be available in your grid editors, even if there are existing grid datatypes already using these editors.
+
 :::tip
 You will need to restart your site before any new customizations become available to use.
 :::
