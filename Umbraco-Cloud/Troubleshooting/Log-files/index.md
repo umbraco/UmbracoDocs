@@ -78,7 +78,5 @@ Find more information about IIS Logging on [the Official Microsoft Documentation
 :::note
 IIS Logging is only available if your project is on a Professional plan.
 
-Do note that IIS logging will automatically turn off after 12 hours.
-
 See our [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/) for more details on various tiers.
 :::
