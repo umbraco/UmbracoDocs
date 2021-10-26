@@ -1,14 +1,14 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionTo: 7.0.0
+needsv9Update: "true"
 ---
 
 # Tag support for property editors
 
 :::note
-This article has not yet been updated against Umbraco 8.
+This feature is not supported for Umbraco 8 and above.
 
-All content in this article is writting for Umbraco 7.
+The content in this article is valid *only* for Umbraco 7.
 :::
 
 ## What is tag support?
@@ -19,7 +19,7 @@ When a property editor with tag support enabled is published (or saved in the ca
 
 ## Enabling tag support
 
-This will explain both ways to enable tag support for property editors: both in C# or by the manifest.
+Below example allows you to enable tag support for property editors in C#.
 
 ### CSharp
 
@@ -55,4 +55,4 @@ There is one last option that can be set which is the `TagValueType` enum, the v
 
 * `FromDelimitedValue` - this is the default
 * `CustomTagList` - if this is used then it is expected that the property editor's value (returned from the method `ConvertEditorToDb`) is an `IEnumerable<string>`
-    * This setting might be handy if you need to dynamically (in C#) generate the tags list
+  * This setting might be handy if you need to dynamically (in C#) generate the tags list

@@ -48,6 +48,7 @@ To create a Form, follow these steps:
 
     ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
+
     | Field Name | Value |
     |-|-|
     | Enter question | Name |
@@ -59,10 +60,11 @@ To create a Form, follow these steps:
 14. Add a **Placeholder** to make it easier for the user to fill in the Form.
 15. Select if the field is **Mandatory** and customize the message.
 16. Add a **Validation** to the field. There are some predefined validation available but it is possible to add your own custom validation as well.
-17. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](Conditional-Logic) article.
+17. Some form fields allow you to show or hide the label that's associated with the field when it is rendered within the form on the website.  The default is always to show the field, but if you prefer to hide it, untick the **Show label** option.
+18. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](Conditional-Logic) article.
 
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected *Short Answer* as our answer type we got two additional settings (Default Value and Placeholder).
-18. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
+19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
     ![Forms field added](images/FormDesignerFieldAddedV8.png)
 
 To edit a field that has already been added to the Form, click the little **cog** icon next to the field to open the dialog. To delete a field or a group, click the **Recycle Bin** icon.
@@ -78,6 +80,14 @@ When reordering your Form, you can drag and drop the fields to make it look the 
 ## Saving the Form
 
 Once you are satisfied with the Form, you can save the design by clicking the **Save** button.
+
+## Organizing Forms in Folders
+
+If you are running Umbraco Forms 8.8.0 or above, and installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders.  If you are planning to create a number of them, this may help with organization and locating them once created for modification.
+
+To create a folder, from the same dialog as you use to create a form, you'll have the option to create a folder, for which you need to provide a name.
+
+You can create folders within folders, rename, move and delete them.  You also have the ability to move or copy forms into folders, all via the tree operations available from the **...** menu.
 
 ![Form save Form](images/FormDesignerSaveV8.png)
 

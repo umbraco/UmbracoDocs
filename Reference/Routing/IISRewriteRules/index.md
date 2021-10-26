@@ -1,51 +1,66 @@
 ---
-versionFrom: 6.0.0
+versionFrom: 9.0.0
 ---
 
-# IIS Rewrite Rules
+# Url Rewrites in Umbraco 9
 
-If you require static rewrites you should use IIS Rewrite rules. This is an IIS plugin that exists outside of Umbraco
-but should be installed by the vast majority of hosting providers. [There is a significant amount of documentation](https://www.iis.net/learn/extensions/url-rewrite-module)
-for doing static rewrites with IIS Rewrite rules. This documentation will list some basic examples with links to some reference sites.
+With the release of Umbraco 9 and the change of the underlying framework to .NET 5, the way that you use rewrites has changed as well.
 
-## Enabling the rules
+The URL Rewriting extension in IIS has been replaced with [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0) for rewriting in Umbraco 9.
 
-By default the web.config with Umbraco (7.6+) will contain a commented out section that looks like:
+:::note
+If you are publishing Umbraco 9 on IIS you can still add web.configs to your project to configure IIS features such as URL rewrites.
+:::
+
+## When to use URL Rewriting Middleware
+
+Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0#when-to-use-url-rewriting-middleware) documentation for more information to when you should or should not use the URL Rewriting Middleware.
+
+## Using URL Rewriting Middleware
+
+To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions` class with extension methods for each of your rewrite rules.
+
+### Example
+
+An example of how this can be done is
+
+- Create an XML file with your rewrites in and place it in your project:
 
 ```xml
-<!--
-If you wish to use IIS rewrite rules, see the documentation here:
-https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
--->
-<!--
+<?xml version="1.0" encoding="utf-8" ?>
 <rewrite>
-  <rules></rules>
+  <rules>
+    <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+        <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+      </conditions>
+      <action type="Redirect" url="http://jonathanpabst.com>.com/{R:0}"
+        appendQueryString="true" redirectType="Permanent" />
+    </rule>
+  </rules>
 </rewrite>
--->
 ```
 
-If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module)
-installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite module installed, you will get a Yellow Screen Of Death (YSOD).
+- Create an instance of the `RewriteOptions` class:
 
-## Storing rules in an external file
-
-You can store the rules in an external file if you wish by using this syntax:
-
-```xml
-<rewrite>
-  <rules configSource="config\IISRewriteRules.config" />
-</rewrite>
+```Csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            using (StreamReader iisUrlRewriteStreamReader = File.OpenText("Umbraco/Rewrites.xml"))
+            {
+                var options = new RewriteOptions()
+                    .AddIISUrlRewrite(iisUrlRewriteStreamReader);
+                app.UseRewriter(options);
+            }
 ```
 
-and creating a file at `~/Config/IISRewriteRules.config` with the content:
+## Examples of rewrite rules
 
-```xml
-<rules></rules>
-```
-
-## Examples
-
-* Main documentation: [https://www.iis.net/learn/extensions/url-rewrite-module](https://www.iis.net/learn/extensions/url-rewrite-module)
 * A great site showing 10 very handy IIS Rewrite rules: [https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
 * Another site showing some handy examples of IIS Rewrite rules: [https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)

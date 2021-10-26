@@ -1,12 +1,12 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # umbProperty
 
-The [umb-property](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
+The [umb-property](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
 
-The two directives are typically used in tandem. For instance if your Angular model has an array of properties, your view could look something like:
+The two directives are typically used together. For instance, if your Angular model has an array of properties, your view could look something like:
 
 ```html
 <umb-property property="property" ng-repeat="property in properties">
@@ -16,7 +16,7 @@ The two directives are typically used in tandem. For instance if your Angular mo
 
 As `properties` contains the model for each property, we can use `ng-repeat` to iterate over each property, which is then passed on to the two directives via the `property` and `model` attributes respectively.
 
-For a basic property with a textbox, the model for the property could be defined as:
+For a basic property with a textbox, the model for the property can be defined as:
 
 ```javascript
 var property = {
@@ -28,4 +28,6 @@ var property = {
 };
 ```
 
-The `view` property specifies the URL to the property editor that should be used for this property. To use one of the build-in property editors in Umbraco, you can specify the alias (eg. `textbox`) rather than the full URL to the view (eg. `/umbraco/Views/propertyeditors/textbox/textbox.html`). You can see a list of all the build-in property editors in the [propertyeditors folder on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/v8/contrib/src/Umbraco.Web.UI.Client/src/views/propertyeditors).
+The `view` property specifies the URL to the property editor that should be used for this property. To use one of the build-in property editors in Umbraco, you can specify the alias (eg. `textbox`) rather than the full URL to the view (eg. `/umbraco/Views/propertyeditors/textbox/textbox.html`). 
+
+You can see a list of all the build-in property editors in the [propertyeditors folder on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/v8/contrib/src/Umbraco.Web.UI.Client/src/views/propertyeditors).

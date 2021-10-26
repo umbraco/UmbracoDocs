@@ -198,7 +198,7 @@ namespace MySite
 
 #### ContentItemDisplay
 
-A model representing a conten item to be displayed in the backoffice
+A model representing a content item to be displayed in the backoffice
 
 * TemplateAlias
 * Urls

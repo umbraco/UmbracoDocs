@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionTo: 9.0.0
 ---
 
 # Persistence Models reference
@@ -30,7 +30,7 @@ API reference for the Media class.
 ## [MediaType](MediaType.md)
 API reference for the MediaType class.
 
-## Relation
+## [Relation](Relation.md)
 API reference for the Relation class.
 
 ## [RelationType](RelationType.md)

@@ -1,6 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Adding a type to the provider model"
+state: complete
+verified-against: beta-1
 ---
 
 # Adding a type to the provider model
@@ -9,16 +11,23 @@ To add a new type, no matter if it's a workflow, field, data source, etc, there 
 
 ## Preparations
 
-Create a new ASP.NET or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
+Create a new class library project in Visual Studio add references to the Umbraco.Forms.Core.dll (available via referencing the [NuGet package](https://www.nuget.org/packages/UmbracoForms.Core/)).
 
 ## Adding the type to Forms
 
-The Forms API contains a collection of classes that the provider model automatically registers. So to add a new type to Forms you inherit from the right class. In the sample below we use the class for the workflow type.
+The Forms API contains a collection of classes that can be registered at startup or in an Umbraco component. So to add a new type to Forms you inherit from the right class. In the sample below we use the class for the workflow type.
 
 ```csharp
 public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 {
-    public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e)
+    private readonly ILogger<LogWorkflow> _logger;
+
+    public LogWorkflow(ILogger<LogWorkflow> logger)
+    {
+        _logger = logger;
+    }
+
+    public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
     {
         throw new NotImplementedException();
     }
@@ -31,14 +40,19 @@ public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 
 When you implement this class you get two methods added. One of them is Execute which performs the execution of the workflow and the other is a method which validates the workflow settings, we will get back to these settings later on.
 
+Any dependencies required that are registered with the dependency injection container can be provided via the constructor.
+
 Even though we have the class inheritance in place, we still need to add a bit of default information.
 
 ## Setting up basic type information
 
-Even though we have the class inheritance in place, we still need to add a bit of default information. This information is added in the class's empty constructor like this:
+Even though we have the class inheritance in place, we still need to add a bit of default information. This information is added in the class's constructor like this:
 
 ```csharp
-public LogWorkflow() {
+public LogWorkflow(ILogger<LogWorkflow> logger) {
+
+    _logger = logger;
+
     this.Name = "The logging workflow";
     this.Id = new Guid("D6A2C406-CF89-11DE-B075-55B055D89593");
     this.Description = "This will save an entry to the log";
@@ -68,9 +82,9 @@ With the attribute in place, the property value is set every time the class is i
         View = "Pickers.Content")]
 public string Document { get; set; }
 
-public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e) {
-     Umbraco.Core.Composing.Current.Logger.Info<WorkflowType>("{Document} record submitted from: {IP}", int.Parse(Document), record.IP);
-            return WorkflowExecutionStatus.Completed;
+public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context) {
+    _logger.LogInformation("Record submitted from: {IP}", context.Record.IP);
+    return WorkflowExecutionStatus.Completed;
 }
 ```
 
@@ -78,7 +92,7 @@ For all types that use the provider model, settings work this way. By adding the
 
 ## Validate type settings with ValidateSettings()
 
-The ValidateSettings() method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
+The `ValidateSettings()` method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
 
 ```csharp
 public override List<Exception> ValidateSettings() {
@@ -92,14 +106,36 @@ public override List<Exception> ValidateSettings() {
 
 ## Registering the class with Umbraco and Forms
 
-Finally compile the project and copy the .dll to your website /bin folder or copy the .cs file to the app_code directory. The website will now restart and your type will be registered automatically, no configuration
-needed. Also look in the reference chapter for complete class implementations of workflows, fields and export types
+To register the type, ensure your web application project has a reference to the class library - either via a project or NuGet reference - and add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+
+```csharp
+public static IUmbracoBuilder AddUmbracoFormsCustomProviders(this IUmbracoBuilder builder)
+{
+    builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+        .Add<LogWorkflow>();
+}
+```
+
+An alternative approach is to use a composer, as per this example:
+
+```csharp
+public class UmbracoFormsCustomProvidersComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+            .Add<LogWorkflow>();
+    }
+}
+```
+
+Also look in the reference chapter for complete class implementations of workflows, fields and export types.
 
 ## Overriding default providers in Umbraco Forms
 
-This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider, and make sure your class is public.
+It is possible to override and inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider, and make sure your class is public.
 
-Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk, which has been updated for Forms 8.
+Here is an example of overriding the Textarea field aka Long Answer.
 
 ```csharp
 public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textarea

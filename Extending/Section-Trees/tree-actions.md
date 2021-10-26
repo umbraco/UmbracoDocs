@@ -1,24 +1,25 @@
 ---
-versionFrom: 8.0.0
+state: complete
+verified-against: alpha-3
+versionFrom: 9.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
 ---
 
 # Tree Actions
 
-Items in an Umbraco Tree can have associated Actions, the actions visible to the currently logged in user can be controlled via User Permissions.
+Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
 If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
 
-For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor., but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
+For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
 
 ```csharp
 bool canCreateBlogs = false;
-var us = Services.UserService;
-var user = us.GetByEmail(email);
-var userPermissionsForBlog = us.GetPermissions(user, blogId);
+var user = _userService.GetByEmail(email);
+var userPermissionsForBlog = _userService.GetPermissions(user, blogId);
 foreach (var permission in userPermissionsForBlog)
 {
     if (permission.AssignedPermissions.Contains("C"))
@@ -52,7 +53,7 @@ When you pull back the AssignedPermissions for a user on a particular item, it i
 
 ### User Permission Codes
 
-Here's a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call... (if relevant)
+Here is a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call, if relevant.
 
 | Letter | Alias                | Can be Permission Assigned | Icon                | JavaScript Function                                                                                                                     |
 |--------|----------------------|----------------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------|

@@ -15,112 +15,114 @@ Let's have a further look at each option below.
 
 Here is a snippet containing all the default values of the `RequestHandler` section.
 
-```json
-"Umbraco": {
-  "CMS": {
-    "RequestHandler": {
-      "AddTrailingSlash": true,
-      "ConvertUrlsToAscii": "try",
-      "CharCollection": [
-        {
-          "Char": " ",
-          "Replacement": "-"
-        },
-        {
-          "Char": "\"",
-          "Replacement": ""
-        },
-        {
-          "Char": "'",
-          "Replacement": ""
-        },
-        {
-          "Char": "%",
-          "Replacement": ""
-        },
-        {
-          "Char": ".",
-          "Replacement": ""
-        },
-        {
-          "Char": ";",
-          "Replacement": ""
-        },
-        {
-          "Char": "/",
-          "Replacement": ""
-        },
-        {
-          "Char": "\\",
-          "Replacement": ""
-        },
-        {
-          "Char": ":",
-          "Replacement": ""
-        },
-        {
-          "Char": "#",
-          "Replacement": ""
-        },
-        {
-          "Char": "+",
-          "Replacement": "plus"
-        },
-        {
-          "Char": "*",
-          "Replacement": "star"
-        },
-        {
-          "Char": "&",
-          "Replacement": ""
-        },
-        {
-          "Char": "?",
-          "Replacement": ""
-        },
-        {
-          "Char": "æ",
-          "Replacement": "ae"
-        },
-        {
-          "Char": "ä",
-          "Replacement": "ae"
-        },
-        {
-          "Char": "ø",
-          "Replacement": "oe"
-        },
-        {
-          "Char": "ö",
-          "Replacement": "oe"
-        },
-        {
-          "Char": "å",
-          "Replacement": "aa"
-        },
-        {
-          "Char": "ü",
-          "Replacement": "ue"
-        },
-        {
-          "Char": "ß",
-          "Replacement": "ss"
-        },
-        {
-          "Char": "|",
-          "Replacement": "-"
-        },
-        {
-          "Char": "<",
-          "Replacement": ""
-        },
-        {
-          "Char": ">",
-          "Replacement": ""
-        }
-      ]
-    }
-  }
+```
+{
+	"Umbraco": {
+		"CMS": {
+			"RequestHandler": {
+				"AddTrailingSlash": true,
+				"ConvertUrlsToAscii": "try",
+				"CharCollection": [
+                    {
+						"Char": " ",
+						"Replacement": "-"
+					},
+					{
+						"Char": "\\",
+						"Replacement": ""
+					},
+					{
+						"Char": "'",
+						"Replacement": ""
+					},
+					{
+						"Char": "%",
+						"Replacement": ""
+					},
+					{
+						"Char": ".",
+						"Replacement": ""
+					},
+					{
+						"Char": ";",
+						"Replacement": ""
+					},
+					{
+						"Char": "/",
+						"Replacement": ""
+					},
+					{
+						"Char": "\\\\",
+						"Replacement": ""
+					},
+					{
+						"Char": ":",
+						"Replacement": ""
+					},
+					{
+						"Char": "#",
+						"Replacement": ""
+					},
+					{
+						"Char": "+",
+						"Replacement": "plus"
+					},
+					{
+						"Char": "*",
+						"Replacement": "star"
+					},
+					{
+						"Char": "&",
+						"Replacement": ""
+					},
+					{
+						"Char": "?",
+						"Replacement": ""
+					},
+					{
+						"Char": "æ",
+						"Replacement": "ae"
+					},
+					{
+						"Char": "ä",
+						"Replacement": "ae"
+					},
+					{
+						"Char": "ø",
+						"Replacement": "oe"
+					},
+					{
+						"Char": "ö",
+						"Replacement": "oe"
+					},
+					{
+						"Char": "å",
+						"Replacement": "aa"
+					},
+					{
+						"Char": "ü",
+						"Replacement": "ue"
+					},
+					{
+						"Char": "ß",
+						"Replacement": "ss"
+					},
+					{
+						"Char": "|",
+						"Replacement": "-"
+					},
+					{
+						"Char": "<",
+						"Replacement": ""
+					},
+					{
+						"Char": ">",
+						"Replacement": ""
+					}
+				]
+			}
+		}
+	}
 }
 ```
 

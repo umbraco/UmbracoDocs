@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 9.0.0
+verified-against: rc-1
+meta.Title: "UmbracoMapper"
 ---
 
 # UmbracoMapper
@@ -14,9 +16,9 @@ This is not to be confused with the [UmbracoMapper package by Andy Butland](http
 
 UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is totally fine for anyone to use in their custom site implementations or packages as they wish.
 
-## Accessing the UmbracoMapper
+## Accessing the IUmbracoMapper
 
-The UmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. Alternatively, it is also exposed via the Current service locator: `Current.Mapper`.
+The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. 
 
 ## Mapping
 
@@ -57,20 +59,20 @@ If a mapping has been defined from `IEnumerable<ISource>` to `IEnumerable<ITarge
 Mappings are defined in `IMapDefinition` instances. This interface defines one method:
 
 ```csharp
-void DefineMaps(UmbracoMapper mapper);
+void DefineMaps(IUmbracoMapper mapper);
 ```
 
 Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index.md#Collections):
 
 ```csharp
-composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
+builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
     .Add<MyMapDefinition>();
 ```
 
 A definition provides a constructor, and a map:
 
 ```csharp
-public void DefineMaps(UmbracoMapper mapper)
+public void DefineMaps(IUmbracoMapper mapper)
 {
     mapper.Define<ISource, ITarget>(
         (source, context) => { ... },           // constructor
@@ -219,7 +221,7 @@ public class ProductDto
 
 public class ProductMappingDefinition : IMapDefinition
 {
-    public void DefineMaps(UmbracoMapper mapper)
+    public void DefineMaps(IUmbracoMapper mapper)
     {
         mapper.Define<Product, ProductDto>((source, context) => new ProductDto(), Map);
     }
@@ -234,11 +236,11 @@ public class ProductMappingDefinition : IMapDefinition
 
 #region Composing
 
-public class ProductComposer : IUserComposer
+public class ProductComposer : IComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
-        composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
+        builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
             .Add<ProductMappingDefinition>();
     }
 }
@@ -247,9 +249,9 @@ public class ProductComposer : IUserComposer
 
 public class ProductsController : UmbracoApiController
 {
-    private readonly UmbracoMapper _mapper;
+    private readonly IUmbracoMapper _mapper;
 
-    public ProductsController(UmbracoMapper mapper) => _mapper = mapper;
+    public ProductsController(IUmbracoMapper mapper) => _mapper = mapper;
 
     [HttpGet]
     public HttpResponseMessage GetAll()

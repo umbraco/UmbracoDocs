@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Extending Umbraco Deploy"
 meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 ---
@@ -8,7 +8,7 @@ meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 
 Umbraco Deploy supports the deployment of CMS schema information, definitions from the HQ's Forms package, along with managed content and media.  In addition it can be extended by package or custom solution developers to allow the deployment of custom data, such as that stored in your own database tables.
 
-Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also support deployment of custom data via the backoffice - similar to how Umbraco content and media can be queued for transfer and restored.
+As a package or solution developer, you can hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  It's also possible to provide the ability for editors to deploy custom data via the backoffice - in the same way that Umbraco content and media can be queued for transfer and restored.
 
 ## Concepts and Examples
 
@@ -23,7 +23,7 @@ For the purposes of subsequent code samples, we'll consider an example entity as
     {
         public Guid Id { get; set; }
 
-        public string Name { get; set; }        
+        public string Name { get; set; }
 
         public string Description { get; set; }
     }
@@ -31,7 +31,7 @@ For the purposes of subsequent code samples, we'll consider an example entity as
 
 ### Artifacts
 
-Every entity Deploy works with, whether from Umbraco core or custom data, needs to have an *artifact* representation. You can consider an artifact as a container capable of knowing everything there is to know about a particular entity is defined. They are used as a transport object for communicating between Deploy environments.  
+Every entity Deploy works with, whether from Umbraco core or custom data, needs to have an *artifact* representation. You can consider an artifact as a container capable of knowing everything there is to know about a particular entity is defined. They are used as a transport object for communicating between Deploy environments.
 
 They can also be serialized to JSON representations.  These are visible in the .uda files seen on disk in the `/data/revisions/` folder for schema transfers and are also used when transferring content between different environments over HTTP requests.
 
@@ -187,7 +187,7 @@ Note that an illustrative data service is provided via dependency injection.  Th
 
             var entity = _exampleDataService.GetExampleById(udi.Guid);
             if (entity == null)
-            { 
+            {
                 throw new ArgumentException("Could not find an entity with the specified identifier.", nameof(udi));
             }
 
@@ -336,7 +336,153 @@ In order to deploy the entity as schema, via disk based representations held in 
 
 ### Backoffice Integrated Transfers
 
-Work in progress.  Documentation will be updated once this feature is released.
+If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to also register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
+
+An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
+
+There's also a code sample, demonstrated in the video linked above, available [here](https://github.com/AndyButland/RaceData).
+
+The following code shows the registration of an entity for backoffice deployment, where we have the simplest case of a single tree for the entity.
+
+```C#
+    public class ExampleDataDeployComponent : IComponent
+    {
+        private readonly ITransferEntityService _transferEntityService;
+
+        public ExampleDataDeployComponent(
+            ITransferEntityService transferEntityService)
+        {
+            _transferEntityService = transferEntityService;
+        }
+
+        public void Initialize()
+        {
+            _transferEntityService.RegisterTransferEntityType(
+                "mypackage-example",
+                "Examples",
+                new DeployRegisteredEntityTypeDetailOptions
+                {
+                    SupportsQueueForTransfer = true,
+                    SupportsQueueForTransferOfDescendents = true,
+                    SupportsRestore = true,
+                    PermittedToRestore = true,
+                    SupportsPartialRestore = true,
+                },
+                false,
+                "exampleTreeAlias",
+                (string routePath) => true,
+                (string nodeId) => true,
+                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
+        }
+
+        public void Terminate()
+        {
+        }
+    }
+```
+
+The `RegisterTransferEntityType` method on the `ITransferEntityService` takes the following parameters:
+
+- The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
+- A pluralized, human-readable name of the entity, which is used in the transfer queue visual presentation to users.
+- A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
+- A value indicating whether the entity is an Umbraco entity, queryable via the `IEntityService`.  For custom solutions and packages, the value to use here is always `false`.
+- The alias of the tree used for creating and editing the entity data.
+
+We then have three functions, which are used to determine if the registered entity matches a specific node and tree alias.  For trees managing single entities as we have here, we know that all nodes related to that tree alias will be for the registered entity, and that each node Id is the Guid identifier for the entity.  Hence we can use the following function definitions:
+
+- Return `true` for all route paths.
+- Return `true` for all node Ids.
+- Return `true` and parse the Guid identity value from the provided string.
+
+For more complex cases, where we have a tree that manages more than one entity type, we need a means of distinguishing which entity is being referenced by a particular route path or node Id.  A common way to handle this is to prefix the Guid identifier with a different value for each entity, that can then be used to determine for which entity the value refers.
+
+For example, as shown in the linked sample and video, we have entities for "Team" and "Rider", both managed in the same tree.  When rendering the tree, a prefix of "team-" or "rider-" is added to the Guid identifier for the team or rider respectively.  We then register the following functions, firstly for the team entity registration:
+
+```C#
+    _transferEntityService.RegisterTransferEntityType(
+        ...
+        "teams",
+        (string routePath) => routePath.Contains($"/teamEdit/") || routePath.Contains($"/teamsOverview"),
+        (string nodeId) => nodeId == "-1" || nodeId.StartsWith("team-"),
+        (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("team-".Length), out entityId);
+```
+
+And then for the rider:
+
+```C#
+    _transferEntityService.RegisterTransferEntityType(
+        ...
+        "teams",
+        (string routePath) => routePath.Contains($"/riderEdit/"),
+        (string nodeId) => nodeId.StartsWith("rider-"),
+        (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
+```
+
+If access to any services is required when parsing the entity Id, the `HttpContext` is provided as a parameter to the function.  A service can be accessed from this, e.g.:
+
+```C#
+var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
+```
+
+#### Client-Side Registration
+
+With the server-side registration discussed in the previous section, most features that are available for the deployment of Umbraco entities will also be accessible to entities defined in custom solutions or packages.  One feature though - the "Transfer Now" option available from the "Save and Publish" or "Save" button available for content or media - is only available to custom entities if requested client-side.
+
+You would do this in the custom angularjs controller responsible for handling the edit operations on your entity, injecting the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
+
+```JavaScript
+(function () {
+    "use strict";
+
+    function MyController($scope, $routeParams, myResource, formHelper, notificationsService, editorState, pluginEntityService) {
+
+        var vm = this;
+
+        vm.page = {};
+        vm.entity = {};
+        ...
+
+        vm.page.defaultButton = {
+            alias: "save",
+            hotKey: "ctrl+s",
+            hotKeyWhenHidden: true,
+            labelKey: "buttons_save",
+            letter: "S",
+            handler: function () { vm.save(); }
+        };
+        vm.page.subButtons = [];
+
+        function init() {
+
+            ...
+
+            if (!$routeParams.create) {
+
+                myResource.getById($routeParams.id).then(function (entity) {
+
+                    vm.entity = entity;
+
+                    // Augment with additional details necessary for identifying the node for a deployment.
+                    vm.entity.metaData = { treeAlias: $routeParams.tree };
+
+                    ...
+                });
+            }
+
+            pluginEntityService.addInstantDeployButton(vm.page.subButtons);
+        }
+
+        ...
+
+        init();
+
+    }
+
+    angular.module("umbraco").controller("MyController", MyController);
+
+})();
+```
 
 ### Refreshing Signatures
 

@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 In this article, you’ll find all relevant information to be aware of when a site is migrated from the old to the new Umbraco Cloud infrastructure. This article is kept up-to-date should any new information arise.
 
 ## Schedule and timing
-Projects are scheduled for migration through Q3, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email 2 weeks in advance with the specific date and time.
+Projects are scheduled for migration through Q4, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email with the specific date and time.
 
 ### Rescheduling migration
 In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>.
@@ -21,8 +21,8 @@ The new infrastructure comes with minimum requirements on what version of Umbrac
 |   |  Minimum required version |  
 |---|---|---|---|
 |  Umbraco CMS  |  8.6.7 |
-|  Umbraco Forms  |  8.5.3 |
-|  Umbraco Deploy  |  3.5.3 |
+|  Umbraco Forms  |  8.4.4 |
+|  Umbraco Deploy  |  4.0.5 |
 
 ### Umbraco 7
 
@@ -30,7 +30,7 @@ The new infrastructure comes with minimum requirements on what version of Umbrac
 |---|---|---|---|
 |  Umbraco CMS  |  7.7.6 |
 |  Umbraco Forms  |  6.0.8 |
-|  Umbraco Deploy |  2.0.0 |
+|  Umbraco Deploy |  2.0.18 |
 
 You can find the Umbraco CMS, Forms and Deploy version for each environment listed on the project page in the Umbraco Cloud Portal:
 
@@ -84,14 +84,10 @@ will become
 
 This brings a whole host of advantages both for local development, password management and adds more flexibility overall. If a site has been migrated from the old infrastructure, the old GUID-based URL will continue to work after the migration as we do not want to break any potential CI/CD setup.
 
-:::note
-This feature will be available from the 1st of July.
-:::
-
 ### New outgoing IP addresses (for allow lists)
 The outgoing IP addresses on Umbraco Cloud will be changed once the projects are running on the new infrastructure. This is only relevant if you are working with an allow list. In this case, please add the new outgoing IPs prior to migration.
 
-## Additinal information
+## Additional information
 Several blog posts has been published detailing the journey to the new and improved infrastructure:
 
 * [The future of Umbraco Cloud (December 2020)](https://umbraco.com/blog/the-future-of-umbraco-cloud/)

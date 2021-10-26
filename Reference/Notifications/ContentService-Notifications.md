@@ -1,7 +1,7 @@
 ---
 v8-equivalent: "https://our.umbraco.com/documentation/reference/events/ContentService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: rc-3
 ---
 
 # ContentService Notifications
@@ -14,7 +14,7 @@ Example usage of the ContentPublishingNotification:
 
 ```C#
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Services.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace MySite
 {
@@ -67,7 +67,7 @@ namespace MySite
   </tr>
 
   <tr>
-    <td>ContentSavedNotifiaction</td>
+    <td>ContentSavedNotification</td>
     <td>
         <ul>
           <li>IEnumerable&ltIContent&gt SavedEntities</li>
@@ -415,7 +415,7 @@ namespace MySite
       </ul>
     </td>
     <td>
-    Published when ContentService.SendToPublication is called in the API, after the entity has been sent to publlication.<br/>
+    Published when ContentService.SendToPublication is called in the API, after the entity has been sent to publication.<br/>
     Entity: Gets the IContent object being sent to publish.
     </td>
   </tr>
@@ -528,6 +528,16 @@ public bool HasSavedCulture(IContent content, string culture);
 #### Unpublishing
 
 When handling the Unpublishing notification, it might not work how you would expect. If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur) then the Unpublishing notification will be published as expected.
+
+```C#
+public void Handle(ContentUnpublishingNotification  notification)
+{
+	foreach (var unPublishedEntity  in notification.UnpublishedEntities)
+	{
+		// complete unpublishing of entity, all cultures
+	}
+}
+```
 
 However, if only one variant is being unpublished, the Unpublishing event will not be triggered. This is because the content item itself is not fully 'unpublished' by the action. Instead what occurs is a 'publish' action 'without' the variant that has been unpublished.
 

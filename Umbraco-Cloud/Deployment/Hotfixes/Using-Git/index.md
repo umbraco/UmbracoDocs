@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Apply hotfix by using Git
@@ -11,7 +12,7 @@ Tools used:
 * GitKraken
 
 :::note
-You can use whichever Git client or cli you prefer. 
+You can use whichever Git client or cli you prefer.
 
 If you've never worked with cherry picking before, we recommend that you use a Git client with a UI that gives you a visual overview of your commits.
 :::

@@ -44,14 +44,12 @@ By default this is set to false. To make the obsolete data types visible in the 
 
 ### Imaging
 
-This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
+This section is used for managing thumbnail creation and which properties of an image that should be automatically updated on upload.
 
 ```xml
 <imaging>
     <!-- what file extension that should cause Umbraco to create thumbnails -->
     <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
-    <!-- what attributes that are allowed in the editor on an img tag -->
-    <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
     <!-- automatically updates dimension, file size and extension attributes on upload -->
     <autoFillImageProperties>
         <uploadField alias="umbracoFile">
@@ -69,9 +67,6 @@ Let's break it down.
 **`<imageFileTypes>`**
 As the comment above states, this is a comma separated list of accepted image formats, which Umbraco can create a thumbnail of the image from.
 
-**`<allowedAttributes>`**
-As the comment above states, this is a comma separated list of those attributes you want to allow on the image tag.
-
 **`<autoFillImageProperties>`**
 As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** need to be updated with the new property aliases. This needs to happen in order to automatically populate the values when the image is being uploaded.
 
@@ -82,8 +77,6 @@ If you need to create a custom media document type to handle images called somet
 <imaging>
     <!-- what file extension that should cause Umbraco to create thumbnails -->
     <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
-    <!-- what attributes that are allowed in the editor on an img tag -->
-    <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
     <!-- automatically updates dimension, file size and extension attributes on upload -->
     <autoFillImageProperties>
         <uploadField alias="umbracoFile">
@@ -104,53 +97,177 @@ If you need to create a custom media document type to handle images called somet
 
 ### Errors
 
-In case of a 404 error (page not found) Umbraco can return a default page instead. This is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language.
+In case of a 404 error (page not found), Umbraco can return a default page instead. You can also set a different error page, based on the current culture so a 404 page can be returned in the correct language.
+
+You can customize the error pages using the `customErrors` or `errors` section in the `web.config` file.
+
+Let's take a look at an example: You have a single site that should display a custom 404 page in case of exceptions.
+
+To set-up a custom 404 page, do the following:
+
+1. [Update the `customErrors` section in the `web.config` file](#update-the-customerrors-section-in-the-webconfig-file)
+2. [Create Custom Error Pages](#create-custom-error-pages)
+3. [Specify the Node where the Page should be displayed when there's an Exception](#specify-the-node-where-the-page-should-be-displayed-when-theres-an-exception)
+4. [Set the appropriate Response and Status Code](#set-the-appropriate-response-and-status-code)
+
+#### Update the `customErrors` section in the `web.config` file
+
+To use the custom error page by specifying the URL of the error page, add the following markup to your `web.config` file:
+
+```html
+<system.web>
+    <customErrors mode="On" defaultRedirect="~/ErrorPages/404.aspx" redirectMode="ResponseRewrite" />
+</system.web>
+```
+
+The `redirectMode` will show the error page on the same request instead of redirecting it.
+
+#### Create Custom Error Pages
+
+You need to create `404.aspx` for ASP.NET and `404.html` for IIS in your site. For example purposes, both my custom pages look similar:
+
+```html
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>404 Page Not Found</title>
+    </head>
+    <body>
+        <h1>404 Page Not Found</h1>
+        <h2> Looks like you're lost </h2>
+        <div class="media-small" data-index="0">
+            <img alt="404 Error Page" width="80" height="60" src="assets/img/404.png" />
+        </div>
+    </body>
+  </html>
+```
+
+#### Specify the Node where the Page should be displayed when there's an Exception
+
+1. Lets add the node details in the `umbracoSettings.config` file:
+
+    ```xml
+    <settings>
+        <content>
+            <errors>
+                <!--
+                    The value for error pages can be:
+                    * A content item's GUID ID      (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+                    * An XPath statement            (example: //errorPages[@nodeName='My cool error'])
+                    * A content item's integer ID   (example: 1066)
+                -->
+                <!--
+                    <error404>
+                        <errorPage culture="default">26C1D84F-C900-4D53-B167-E25CC489DAC8</errorPage>
+                        <errorPage culture="en-US">D820E120-6865-4D88-BFFE-48801A6AC375</errorPage>
+                    </error404>
+                -->
+                <error404>1066</error404>
+            </errors>
+        </content>
+    </settings>
+    ```
+
+    You can specify the node in three ways:
+
+    - Enter the node's **id** (e.g. `<error404>1066</error404>`)
+    - Enter the node's **GUID** (e.g. `<error404>26C1D84F-C900-4D53-B167-E25CC489DAC8</error404>`)
+    - Enter an XPath to find the node (`<error404>//errorPages[@nodeName='My cool error']</error404>`)
+
+    :::note
+
+    - Id's are usually local to the specific solution (so it won't point to the same node in two different environments if you're using Umbraco Cloud).
+    - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
+    - When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
+
+    :::
+
+    :::warning
+    Remember to recycle the app pool to make sure changes to this section take effect.
+    :::
+
+2. Set `trySkipIisCustomErrors` to `true` in `umbracoSettings.config` file:
+
+   ```xml
+   <settings>
+        <web.routing trySkipIisCustomErrors="true" internalRedirectPreservesTemplate="false" disableAlternativeTemplates="false" validateAlternativeTemplates="false" disableFindContentByIdPath="false" umbracoApplicationUrl="">
+        </web.routing>
+   </settings>
+   ```
+
+#### Set the appropriate response and status code
+
+1. In the `404.aspx` page, set the appropriate http status code:
+
+    ```html
+    <% Response.StatusCode = 404;%>
+    ```
+
+2. Update your `web.config` file:
+
+    ```html
+    <configuration>
+    <system.web>
+        <customErrors mode="On" redirectMode="ResponseRewrite" defaultRedirect="~/ErrorPages/404.aspx">
+            <error statusCode="404" redirect="~/ErrorPages/404.aspx"/>
+        </customErrors>
+    </system.web>
+    <system.webServer>
+        <httpErrors errorMode="Custom" existingResponse="Auto" >
+            <remove statusCode="404"/>
+                <error statusCode="404" path="~/ErrorPages/404.html" responseMode="File"/>
+        </httpErrors>
+    </system.webServer>
+    </configuration>
+    ```
+
+#### *[Optional]* Set the Media location
+
+To display media instead of a blank page, update the `location` section in the `web.config` file:
+
+```html
+<configuration>
+    <location path="media">
+        <system.webServer>
+            <httpErrors errorMode="Custom" existingResponse="Replace">
+                <remove statusCode="404"/>
+                    <error statusCode="404" path="~/ErrorPages/404.html" responseMode="File"/>
+            </httpErrors>
+        </system.webServer>
+    </location>
+</configuration>
+```
+
+Now when you spin up the site, you will get a customized Umbraco content page for the 404 error.
+
+#### Configuration for Multiple Sites with different Cultures
+
+If you have multiple sites, with different cultures, setup in your tree then you will need to setup the `errors` section like below:
 
 ```xml
 <errors>
     <!-- The id of the page that should be shown if the page is not found -->
-    <!--
     <error404>
-        <errorPage culture="default">1</errorPage>
-        <errorPage culture="en-US">200</errorPage>
-    </error404>
-    -->
-    <error404>1</error404>
-</errors>
-```
-
-The above example shows what you need to do if you only have a single site that needs to show a custom 404 page. You specify which node that should be shown when a request for a non-existing page is being made. You can specify the node in three ways:
-
-1. Enter the node's **id** (e.g. `<error404>1066</error404>`)
-2. Enter the node's **GUID** (e.g. `<error404>4f96ffdd-b969-46a8-949e-7935c41fabc0</error404>`)
-3. Enter an XPath to find the node (`<error404>/root/Home//TextPage[@urlName = 'error404']</error404>`)
-
-:::note
-
--   Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
--   GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
--   When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
-
-:::
-
-:::warning
-Remember to recycle the app pool to make sure changes to this section take effect.
-:::
-
-If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
-
-```xml
-<errors>
-    <!-- The id of the page that should be shown if the page is not found -->
-    <error404>
-        <errorPage culture="default">1</errorPage>
-        <errorPage culture="en-US">200</errorPage>
+        <errorPage culture="default">1066</errorPage>
+        <errorPage culture="en-US">1063</errorPage>
     </error404>
 </errors>
 ```
 
-If you have more than two sites and for some reason forget to update the above section with a 404 page and a culture then the **default** page will act as a fallback. Same
-happens if you for some reason forget to define a hostname on a site.
+If you have more than two sites and forget to update the `errors` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you forget to define a hostname on a site.
+
+#### Validation Errors
+
+The error pages won’t capture every exception you’re likely to encounter in your application.
+
+For example, if the user entered or pasted the wrong URL in the address window, an invalid request message, or a malformed syntax request etc. These requests will actually produce a 400 (Bad Request) response so you can either add a specific error page to handle this request or set up a `defaultRedirect` as such:
+
+```html
+<customErrors mode="Off" redirectMode="ResponseRewrite" defaultRedirect="~/404.aspx">
+    <error statusCode="404" redirect="~/404.aspx"/>
+</customErrors>
+```
 
 #### Errors and IIS7+
 
@@ -353,7 +470,7 @@ Most of the logging configuration is moved to the Serilog config files.
 </logging>
 ```
 
-### <maxLogAge>
+### `<maxLogAge>`
 
 The maximum log age in minutes used for the internal audit log scrubbing.
 
@@ -386,10 +503,10 @@ When you move and rename pages in Umbraco, 301 permanent redirects are automatic
 
 Possible values are:
 
--   `Default`: Indicates that the URL provider should do what it has been configured to do.
--   `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
--   `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
--   `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
+- `Default`: Indicates that the URL provider should do what it has been configured to do.
+- `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
+- `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
+- `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
 
 ### `umbracoApplicationUrl`
 

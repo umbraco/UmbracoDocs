@@ -1,6 +1,8 @@
 ---
-versionFrom: 7.0.0
-product: "CMS"
+updated-links: true
+state: partial
+verified-against: alpha-3
+versionFrom: 9.0.0
 meta.Title: "Macro Parameter Editors"
 meta.Description: "A guide to creating macro property editors in Umbraco"
 ---
@@ -15,38 +17,52 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Numeric
 * Single/Multiple Media Picker
 * Single/Multiple Content Picker
+* ... and some 'others'
 
-... and some 'others'.  Consult the [Backoffice documentation](../../Getting-Started/Backoffice/index.md) for general information on Macros.
+Consult the [Backoffice documentation (only Umbraco 8)](../../Fundamentals/Backoffice) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 
-## Creating a custom Macro Parameter Type ##
+## Creating a custom Macro Parameter Type
 
 ### isParameterEditor
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../../Extending/Property-Editors/index.md) and in the corresponding [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
+
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
-propertyEditors: [
-    {
-        alias: "My.ParameterEditorAlias",
-        name: "Parameter Editor Name",
-        isParameterEditor: true,
-        editor: {
-            view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
-        }
-    }
-]
+{
+  "propertyEditors": [
+      {
+          "alias": "My.ParameterEditorAlias",
+          "name": "Parameter Editor Name",
+          "isParameterEditor": true,
+          "editor": {
+              "view": "/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
+          }
+      }
+  ]
+}
 ```
 
 ### PreValues/Configuration/DefaultValues
+
 However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration options in the Macro Parameter tab when a particular type is chosen. However using the `defaultConfig` option enables the passing of 'one off' default set of configuration for the parameter editor to use:
 
 ```json
-defaultConfig: {
-    startNode: "1234",
-    minItems: 0,
-    maxItems: 6
+{
+  "propertyEditors": [
+    {
+      "alias": "My.ParameterEditorAlias",
+      ...
+      "defaultConfig": {
+        "startNode": "1234",
+        "minItems": 0,
+        "maxItems": 6
+      }
+    }
+  ]
 }
+
 ```
 
 This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configurations in each instance.
@@ -55,29 +71,30 @@ This is only a problem if you have a macro parameter type, that needs to be used
 
 We'll create an 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via an 'Insert Image' Macro into a Rich Text Editor.
 
-#### Package Manifest ####
+#### Package Manifest
 
 ```json
 {
     "propertyEditors": [
-        {
-            "alias": "Our.Umbraco.ImagePosition",
-            "name": "Image Position",
-            "isParameterEditor": true,
-            "editor": {
-                "view": "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
-                "valueType": "STRING"
-            }
-    }],
+      {
+        "alias": "Our.Umbraco.ImagePosition",
+        "name": "Image Position",
+        "isParameterEditor": true,
+        "editor": {
+            "view": "/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
+            "valueType": "STRING"
+        }
+      }
+    ],
     "javascript": [
-        "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
+        "/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
     ]
 }
 ```
 
 #### View
 
-```csharp
+```html
 <div ng-controller="Our.Umbraco.ImagePositionController">
     <div class="radio" ng-repeat="position in positions" id="selectstatus-{{position.Name}}">
         <label>
@@ -128,16 +145,16 @@ The package manifest becomes:
 
 ```json
 {
-    "propertyEditors": [
-        {
-            "alias": "Our.Umbraco.ImagePosition",
-            "name": "Image Position",
-            "isParameterEditor": true,
-            "editor": {
-                "view": "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
-                "valueType": "STRING"
-            },
-"prevalues": {
+  "propertyEditors": [
+    {
+      "alias": "Our.Umbraco.ImagePosition",
+      "name": "Image Position",
+      "isParameterEditor": true,
+      "editor": {
+        "view": "/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
+        "valueType": "STRING"
+      },
+      "prevalues": {
         "fields": [
           {
             "label": "Options",
@@ -163,25 +180,28 @@ The package manifest becomes:
           }
         ]
       }
-    }],
-    "javascript": [
-        "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
-    ]
+    }
+  ],
+  "javascript": [
+    "/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
+  ]
 }
 ```
 
-and in the ImagePosition.controller.js we can now read the 'options' values from the defaultConfig in the package.manifest configuration:
+In the `ImagePosition.controller.js` we can now read the 'options' values from the `defaultConfig` in the package.manifest configuration:
+
 ```javascript
  $scope.positions = $scope.model.config.options;
 ```
+
 ### Reading the parameter value in the Macro Partial View
 
 ```csharp
-@inherits Umbraco.Web.Macros.PartialViewMacroPage
-@using Umbraco.Web.Models
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage
 @{
 var imagePosition = Model.MacroParameters["imagePosition"];
-//or if for convenience if you are using Umbraco.Web.Models namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
-var imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
+//or if for convenience if you are using Umbraco.Extensions namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
+imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
 }
 ```
