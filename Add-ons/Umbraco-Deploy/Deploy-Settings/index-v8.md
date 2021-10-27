@@ -135,7 +135,7 @@ You can configure deploy to ignore these issues and proceed with the transfer op
 </settings>
 ```
 
-For finer control of the above setting you can add a further attribute named `ignoreBrokenDependenciesBehavior` and set the value to either `IgnoreForAll` (the default), `IgnoreForTransferOnly` or `IgnoreForRestoreOnly`.
+For finer control of the above setting you can add a further attribute named `ignoreBrokenDependenciesBehavior` and set the value to either `All` (the default), `Transfer` or `Restore`.
 
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment.  It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
 
@@ -143,7 +143,7 @@ For example, using the following settings, you will have an installation that ig
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
     <deploy ignoreBrokenDependencies="true"
-            ignoreBrokenDependenciesBehavior="IgnoreForRestoreOnly" />
+            ignoreBrokenDependenciesBehavior="Restore" />
 </settings>
 ```
 

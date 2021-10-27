@@ -148,13 +148,13 @@ You can configure deploy to ignore these issues and proceed with the transfer op
 
 ## IgnoreBrokenDependenciesBehavior
 
-For finer control of the above setting you can amend this value from the default of `IgnoreForAll` to either `IgnoreForTransferOnly` or `IgnoreForRestoreOnly`.
+For finer control of the above setting you can amend this value from the default of `All` to either `Transfer` or `Restore`.
 
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment.  It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
 
 ```json
     "IgnoreBrokenDependencies": true,
-    "IgnoreBrokenDependenciesBehavior": "IgnoreForRestoreOnly",
+    "IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
 
