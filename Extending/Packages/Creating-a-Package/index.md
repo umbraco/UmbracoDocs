@@ -186,7 +186,9 @@ dotnet new umbraco -n CustomWelcomeDashboardProject
 cd CustomWelcomeDashboardProject
 dotnet add package CustomWelcomeDashboard.1.0.0
 dotnet run
+```
 
+You can check that the NuGet package was referenced in your solution and that the **App_Plugins** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
 
 A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our `dotnet new Umbraco template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
 
@@ -194,6 +196,9 @@ This is the full command:
 
 ```none
 dotnet new umbraco -n CustomWelcomeDashboardProject -p CustomWelcomeDashboard
+```
+
+Afterwards, you can enter the `CustomWelcomeDashboardProject` directory, build your Umbraco website using the `dotnet build` command and then run the application.
 
 ### Package migration
 We can run a migration plan for each package that contains Umbraco content (_referenced in the package schema_).
