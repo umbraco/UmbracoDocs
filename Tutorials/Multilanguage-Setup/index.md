@@ -191,6 +191,12 @@ To render dictionary items in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Contact Number")
 ```
 
+## Adding a Translator to the Website
+
+You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
+
+Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning acesss or User permissions see the [Users](../../Fundamentals/Data/Users/index.md) article.
+
 ## Viewing the Language Variant on the Browser
 
 To view the language variant on the browser, follow these steps:
@@ -209,9 +215,3 @@ For viewing purposes, I've added a stylesheet to my website. The final result sh
 Danish Version: ![Danish version of Contact Us page](images/final-result-dk.png)
 
 German Version: ![German version of Contact Us page](images/final-result-da.png)
-
-## Adding a Translator to the Website
-
-You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
-
-Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning acesss or User permissions see the [Users](../../Fundamentals/Data/Users/index.md) article.
