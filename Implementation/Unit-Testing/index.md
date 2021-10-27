@@ -6,7 +6,7 @@ meta.Description: "A guide to getting started with unit testing in Umbraco"
 
 # Unit Testing Umbraco
 
-These examples are for Umbraco 9+ and they rely on [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
+These examples are for Umbraco 9+ and they rely on [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4) and [AutoFixture](https://github.com/AutoFixture/AutoFixture).
 
 ## Testing a ContentModel
 
@@ -22,17 +22,14 @@ public class PageViewModel : ContentModel
 
 public class PageViewModelTests
 {
-    [Test]
-    [TestCase("My Heading", "My Heading")]
-    [TestCase("Another Heading", "Another Heading")]
-    public void Given_PublishedContent_When_GetHeading_Then_ReturnPageViewModelWithHeading(string value, string expected)
+    [Test, AutoData]
+    public void Given_PublishedContent_When_GetHeading_Then_ReturnPageViewModelWithHeading(string value, Mock<IPublishedContent> content)
     {
-        var content = new Mock<IPublishedContent>();
         SetupPropertyValue(content, nameof(PageViewModel.Heading), value);
                         
         var viewModel = new PageViewModel(content.Object);
 
-        Assert.AreEqual(expected, viewModel.Heading);
+        Assert.AreEqual(value, viewModel.Heading);
     }
 
     public void SetupPropertyValue(Mock<IPublishedContent> content, string propertyAlias, string propertyValue, string culture = null)
@@ -70,22 +67,19 @@ public class PageControllerTests
         this.controller = new PageController(Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
     }
 
-    [Test]
-    public void When_PageAction_Then_ResultIsIsAssignableFromContentResult()
+     [Test, AutoData]
+    public void When_PageAction_ThenResultIsIsAssignableFromContentResult(Mock<IPublishedContent> content)
     {
-        var model = new ContentModel(new Mock<IPublishedContent>().Object);
+        var model = new ContentModel(content.Object);
 
         var result = this.controller.Page(model);
 
         Assert.IsAssignableFrom<ViewResult>(result);
     }
 
-    [Test]
-    [TestCase("Heading")]
-    [TestCase("Other heading")]
-    public void Given_PublishedContentHasHeading_When_PageAction_Then_ReturnViewModelWithHeading(string value)
+    [Test, AutoData]
+    public void Given_PublishedContentHasHeading_When_PageAction_Then_ReturnViewModelWithHeading_With_AutoFixture(string value, Mock<IPublishedContent> content)
     {
-        var content = new Mock<IPublishedContent>();
         SetupPropertyValue(content, nameof(PageViewModel.Heading), value);
 
         var viewModel = (PageViewModel)((ViewResult)this.controller.Page(new ContentModel(content.Object))).ViewData.Model;
