@@ -72,9 +72,18 @@ Be aware when enabling IIS logging, the site will have to restart. For more info
 
 ## Renaming and Deleting
 
+### Renaming the Cloud Project
+
+You can rename your Umbraco Cloud project from the **Settings** drop-down list.
+![settings](images/renaming-project.png)
+
+:::note
+If you are working locally, you need to update the origin of your local git repository to point to the new clone url. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
+:::
+
 ### Renaming the Project file and folder
 
-To rename your Umbraco Cloud project, do the following:
+To rename your Umbraco Cloud project files and folder, do the following:
 
 1. Navigate to the `.umbraco` file at the root of the project and view the following:
 
