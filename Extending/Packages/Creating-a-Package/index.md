@@ -190,7 +190,7 @@ dotnet run
 
 You can check that the NuGet package was referenced in your solution and that the **App_Plugins** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
 
-A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our `dotnet new Umbraco template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
+A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our `dotnet new umbraco template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
 
 This is the full command:
 
