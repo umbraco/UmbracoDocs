@@ -6,7 +6,7 @@ meta.Description: "A guide to getting started with unit testing in Umbraco"
 
 # Unit Testing Umbraco
 
-These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
+These examples are for Umbraco 9+ and they rely on [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
 
 ## Testing a ContentModel
 
