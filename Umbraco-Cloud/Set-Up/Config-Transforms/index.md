@@ -18,7 +18,7 @@ If you want to do a transform on your `Web.config` file for the Live environment
 
 The `{environment}` part needs to be replaced with the target environment, for which there are currently 3 possibilities for each project:
 
-1. `development`
+1. `production`
 2. `staging`
 3. `live`
 
@@ -79,9 +79,9 @@ This config transform will add a new `<rule>` to `<configuration><system.webServ
 
 Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website.
 
-## Baseline config transforms
+<!--## Baseline config transforms
 
-It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
+It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)-->
 
 ## Including transforms in Umbraco packages
 
