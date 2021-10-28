@@ -30,6 +30,10 @@ We recommend:
 * Setting a CNAME record for your hostname using **dns.umbraco.io** or
 * An A record using an IP, either `104.19.191.28` or `104.19.208.28`.
 
+:::note
+Once you have updated your DNS we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
+:::
+
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
 
 :::warning
