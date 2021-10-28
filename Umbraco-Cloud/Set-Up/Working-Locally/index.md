@@ -70,6 +70,7 @@ With dotnet installed, run the following commands in your terminal application o
     ```
 
 The terminal output will show the application starting up and will include localhost URLs which you can use to browse to your local Umbraco site.
+
 ![Terminal Output](images/terminal-output.png)
 
 The first time the project is run locally, you will see the restore boot up screen from Umbraco Cloud. If the environment you have cloned already contained Umbraco Deploy metadata files (such as Document Types), these will automatically be extracted with the option to restore content from the Cloud environment into the local installation.
