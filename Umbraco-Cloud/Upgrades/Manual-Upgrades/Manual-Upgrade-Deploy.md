@@ -14,15 +14,18 @@ Make sure you can run your Cloud project locally and restore content and media. 
 
 ## Get the latest version of Umbraco
 
-To get the latest version of Umbraco you will need to upgrade the site using NuGet.
+To get the latest version of Umbraco Deploy you will need to upgrade the site using NuGet. The main package to install is Umbraco.Deploy.Cloud (the has dependencies on other components of Umbraco Deploy that will be imported automatically.
 
-NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
+If using Umbraco Forms in your installation, you should also update the Umbraco.Deploy.Forms package reference,
 
+NuGet installs the latest version of the package when you use the dotnet add package command unless you specify a package version:
+
+`dotnet add package Umbraco.Deploy.Cloud --version <VERSION>`
 `dotnet add package Umbraco.Deploy.Forms --version <VERSION>`
 
-After you have added a package reference to your project by executing the `dotnet add package Umbraco.Deploy.Forms` command in the directory that contains your project file, run `dotnet restore` to install the package.
+After you have added a package reference to your project by executing the commands above in the directory that contains your project file, run `dotnet restore` to install the packages.
 
-You can also update the CMS through the `NuGet Package Manager` in Visual studio:
+You can also update the Umbraco Deploy through the NuGet Package Manager in Visual studio:
 
 ![NuGet Package Manager](images/Manage_packages.png)
 
@@ -30,6 +33,7 @@ When the command completes, open the **.csproj** file to make sure the package r
 
 ```xml
 <ItemGroup>
+  <PackageReference Include="Umbraco.Deploy.Cloud" Version="9.0.1" />
   <PackageReference Include="Umbraco.Deploy.Forms" Version="9.0.1" />
 </ItemGroup>
 ```
