@@ -21,6 +21,7 @@ The upgrade will cover most issues it encounters, but at certain Umbraco configu
 In general, if anything should fail during this process, you can reach out for support, using the in-app chat in the bottom right corner. We will help you though the upgrade process, should anything happen.
 
 ## Courier dependencies
+
 Symptoms, feedback given from the upgrade process: **Unable to upgrade as the site has custom Courier dependencies**
 
 Along with the upgrade to 7.6 we will replace the old deployment engine Umbraco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier.
@@ -30,6 +31,7 @@ If you need to create your own specialized ValueConnector, take a look at the  [
 Your code will need to be updated and built without Umbraco Courier in order to go through the Upgrade process.
 
 ## Database upgrade failing
+
 Symptoms, feedback given from the upgrade process: **Unable to run the Umbraco installer**
 
 The first step in the process, after having updated all the files, is to call the Umbraco install engine in order to get its  database updated to support the new version. As this step is the first time the site gets requested after the updated files is run, it may fail. The reason is often code that is incompatible with the upgraded files.
