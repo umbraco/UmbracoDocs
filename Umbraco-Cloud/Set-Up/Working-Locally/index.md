@@ -54,7 +54,7 @@ If you have more than "a few" media items see our recommendations for working wi
 
 To run Umbraco 9 locally, you will need to [install the .NET 5.0 SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
 
-With dotnet installed, run the following commands in your terminal application of choice:
+With .NET 5 installed, run the following commands in a terminal application of your choice:
 
 1. Navigate to the newly created project folder:
 
@@ -73,7 +73,7 @@ The terminal output will show the application starting up and will include local
 
 ![Terminal Output](images/terminal-output.png)
 
-The first time the project is run locally, you will see the restore boot up screen from Umbraco Cloud. If the environment you have cloned already contained Umbraco Deploy metadata files (such as Document Types), these will automatically be extracted with the option to restore content from the Cloud environment into the local installation.
+The first time the project is run locally, you will see the restore boot-up screen from Umbraco Cloud. If the environment you have cloned already contains Umbraco Deploy metadata files (such as Document Types), these will automatically be extracted with the option to restore content from the Cloud environment into the local installation.
 
 :::note
 When running locally, it is recommend to setup a developer certificate and run the website under HTTPS. If you haven't configured one already, then run the following dotnet command:
