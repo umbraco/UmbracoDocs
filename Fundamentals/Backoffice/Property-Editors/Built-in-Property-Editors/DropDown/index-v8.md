@@ -63,10 +63,11 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 ### Single item - with Modelsbuilder
 
 ```csharp
-@if (!string.IsNullOrWhiteSpace(Model.Category))
+@if (!Model.HasValue(Model.Category))
 {
-    <p>@Model.Category</p>
+   <p>@Model.Category</p>
 }
+
 ```
 
 ### Multiple items - with Modelsbuilder

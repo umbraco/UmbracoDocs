@@ -49,11 +49,12 @@ If the property is set to mandatory, Umbraco will display a warning label under 
 ### With Modelsbuilder
 
 ```csharp
-@if (!string.IsNullOrWhiteSpace(Model.Email))
+@if (!Model.HasValue(Model.Email))
 {
     var emailAddress = Model.Email;
     <p>@emailAddress</p>
 }
+
 ```
 
 ## Add value programmatically
