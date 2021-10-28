@@ -2,11 +2,11 @@
 versionFrom: 9.0.0
 ---
 
-# Working with a local clone of an Umbraco Cloud site
+# Working with a Local Clone of an Umbraco Cloud Site
 
 To work with a local copy of your site, you'll need to use Windows and have a local web server installed (like WebMatrix / IIS). If you're not using Windows, you can still work with your site's files (Templates, Css, JavaScript, etc...) but you'll need to deploy these to your development site before you can "see" your updates - head over to our chapter on [Working with UaaS Cli](../Working-With-UaaS-Cli/) for more information on this.
 
-## Video tutorial
+## Video Tutorial
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/rZCwfH7CsTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -36,9 +36,11 @@ Here are the steps to clone your site (**We'll use Fork in this example.**):
     ![Fork Clone UI](images/Fork-clone-2.png)
 8. You’ll be prompted to log in - Use the same credentials as you use for Umbraco Cloud.
 
-![Clone to local machine](images/clone-to-local.gif)
+    ![Clone to local machine](images/clone-to-local.gif)
 
-Now, you have an exact copy of your Umbraco Cloud environment that you can run locally. For information on how to run the site locally, see the [Running the Site Locally](#running-the-site-locally) section or the `Readme` file in the project.  We like to use Visual Studio Code when working locally, but you can use Visual Studio or any other development tool or web server. When you run your local site for the first time, you’ll be prompted to restore your site's content. Wait until this process completes as it also creates the local SqlCE database for your site.
+Now, you have an exact copy of your Umbraco Cloud environment that you can run locally. For information on how to run the site locally, see the [Running the Site Locally](#running-the-site-locally) section or the `Readme` file in the project.  
+
+We like to use Visual Studio Code when working locally, but you can use Visual Studio or any other development tool or web server. When you run your local site for the first time, you’ll be prompted to restore your site's content. Wait until this process completes as it also creates the local SqlCE database for your site.
 
 ![clone dialog](images/restorecontent.jpg)
 
