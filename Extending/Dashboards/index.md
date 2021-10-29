@@ -1,7 +1,7 @@
 ---
 updated-links: false
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 state: partial
 meta.Title: "Umbraco Custom Dashboards"
 meta.Description: "A guide to creating custom dashboards in Umbraco"
@@ -25,10 +25,10 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
 {
     "dashboards":  [
         {
-            "alias": "myCustomDashboard",
-            "view":  "/App_Plugins/myCustom/dashboard.html",
-            "sections":  [ "content", "member", "settings" ],
-            "weight": -10
+             "alias": "myCustomDashboard",
+             "view": "/App_Plugins/MyCustomDashboard/dashboard.html",
+             "sections": [ "content", "member", "settings" ],
+             "weight": -10
         }
     ]
 }
@@ -41,27 +41,27 @@ The section aliases can be found in the C# developer reference for [Umbraco.Cms.
 By creating a C# class that implements `IDashboard` from `Umbraco.Cms.Core.Dashboards` then this will automatically be discovered by Umbraco at application startup time.
 
 ```csharp
-using System;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Dashboards
 {
     [Weight(-10)]
-    public class MyDashboard : IDashboard
+    public class MyCustomDashboard : IDashboard
     {
         public string Alias => "myCustomDashboard";
 
         public string[] Sections => new[]
         {
-            Umbraco.Cms.Core.Constants.Applications.Content,
-            Umbraco.Cms.Core.Constants.Applications.Members,
-            Umbraco.Cms.Core.Constants.Applications.Settings
+            Cms.Core.Constants.Applications.Content,
+            Cms.Core.Constants.Applications.Members,
+            Cms.Core.Constants.Applications.Settings
         };
 
-        public string View => "/App_Plugins/myCustom/dashboard.html";
+        public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
 
         public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
+       
     }
 }
 ```
@@ -227,18 +227,18 @@ Further to this, within this section, you can control which users can see a part
 
 ```json
 {
-    "dashboards":  [
-        {
-            "alias": "myCustomDashboard2",
-            "view":  "/App_Plugins/myCustom/dashboard.html",
-            "sections": [ "content", "settings" ],
-            "weight": -10,
-            "access": [
-                { "deny": "translator" },
-                { "grant": "admin" }
-            ]
-        }
-    ]
+  "dashboards": [
+    {
+      "alias": "myCustomDashboard",
+      "view": "/App_Plugins/MyCustomDashboard/dashboard.html",
+      "sections": [ "content", "member", "settings" ],
+      "weight": -10,
+      "access": [
+        { "deny": "translator" },
+        { "grant": "admin" }
+      ]
+    }
+  ]
 }
 ```
 
@@ -246,18 +246,21 @@ Further to this, within this section, you can control which users can see a part
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Dashboards
 {
     [Weight(-10)]
-    public class MyDashboard : IDashboard
+    public class MyCustomDashboard : IDashboard
     {
         public string Alias => "myCustomDashboard";
+
         public string[] Sections => new[]
         {
-            Umbraco.Cms.Core.Constants.Applications.Content,
-            Umbraco.Cms.Core.Constants.Applications.Settings
+            Cms.Core.Constants.Applications.Content,
+            Cms.Core.Constants.Applications.Members,
+            Cms.Core.Constants.Applications.Settings
         };
-        public string View => "/App_Plugins/myCustom/dashboard.html";
+
+        public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
 
         public IAccessRule[] AccessRules
         {
@@ -265,8 +268,8 @@ namespace My.Website
             {
                 var rules = new IAccessRule[]
                 {
-                    new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.TranslatorGroupAlias},
-                    new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias}
+                    new AccessRule {Type = AccessRuleType.Deny, Value = Cms.Core.Constants.Security.TranslatorGroupAlias},
+                    new AccessRule {Type = AccessRuleType.Grant, Value = Cms.Core.Constants.Security.AdminGroupAlias}
                 };
                 return rules;
             }
@@ -286,9 +289,9 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Dashboards
 {
-    public class RemoveDashboard : IUserComposer
+    public class RemoveDashboard : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -307,9 +310,9 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Dashboards
 {
-    public class MyComposer : IComposer
+    public class MyDashboardComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
