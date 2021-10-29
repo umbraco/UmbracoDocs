@@ -99,5 +99,46 @@ public class Tests : UmbracoIntegrationTest
 }
 ```
 
+## Testing with a schema
 
+So one of the awesome things about integration tests, is that you can setup a site, download the package for it, and we can run this state for every test.
+This means that you do not have to go through and setup your tests with data, like we do in the above example with the builder pattern.
 
+To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`
+Then what you wanna do is setup your umbraco site, go to the packages section and create your own package. Download the package and place the xml file next to your testing class. You want to have the build action of that xml file to be `EmbeddedRessource`
+
+Now we're almost ready to start testing! Last thing we wanna do is have a Setup method to install the package on your site.
+
+```csharp
+[SetUp]
+public void MySetup()
+{
+    var xml = PackageMigrationResource.GetEmbeddedPackageDataManifest(this.GetType());
+    var packagingService = GetRequiredService<IPackagingService>();
+    packagingService.InstallCompiledPackageData(xml);
+}
+```
+
+Now you're all-set to start testing with your own site! Lets try and see how that would look! 
+Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to setup our site!
+
+```csharp
+[Test]
+public void Ensure_No_Content_After_Doctype_Is_Deleted()
+{
+    var contentTypeService = GetRequiredService<IContentTypeService>();
+    var contentTypes = contentTypeService.GetAll();
+    Assert.AreEqual(true, contentTypes.Count() > 0);
+    foreach (var contentType in contentTypes)
+    {
+        if (contentType.ParentId == Constants.System.Root)
+        {
+            contentTypeService.Delete(contentType);
+        }
+    }
+    var contentService = GetRequiredService<IContentService>();
+    var contents = contentService.GetRootContent();
+    Assert.AreEqual(0, contents.Count());
+    Assert.AreEqual(0, contentTypeService.GetAll().Count());
+}
+```

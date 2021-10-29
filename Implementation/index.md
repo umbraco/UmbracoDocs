@@ -148,4 +148,21 @@ Links-updated: partial
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-xs-3">
+        <span class="dot big">
+            <span class="line v-line top"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Integration-Testing/">Integration Test</a></h4>
+                <small>Examples of how to setup Integration Tests with Umbraco 9.1.0</small>
+            </div>
+        </div>
+    </div>
+</div>
+
 
