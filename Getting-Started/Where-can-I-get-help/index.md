@@ -23,6 +23,8 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Umbraco Support](https://umbraco.com/products/umbraco-support/what-is-umbraco-support/)
 
+[Umbraco Discord](https://discord.gg/umbraco)
+
 :::center
 ![Umbraco support](images/U_PRs.png)
 :::
