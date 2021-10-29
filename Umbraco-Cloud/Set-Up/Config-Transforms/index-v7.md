@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV9Update: "true"
+needsV9Update: "false"
 ---
 
 # Config Transforms
@@ -75,7 +75,7 @@ Here is an example of how that config transform would look:
         </rewrite>
     </system.webServer>
 </configuration>
-```
+``` 
 
 This config transform will add a new `<rule>` to `<configuration><system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
 
