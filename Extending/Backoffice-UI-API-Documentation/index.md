@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 state: complete
 updated-links: true
 ---
@@ -11,7 +11,7 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 ## [Backoffice UI](https://apidocs.umbraco.com/v9/ui)
 
-Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
+Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. Note that V9 is using minified versions of the following files;
 
 - The umbraco.directives
 - The umbraco.services
