@@ -1,6 +1,5 @@
 ---
-versionFrom: 8.0.0
-versionTo: 9.0.0
+versionFrom: 9.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
@@ -74,16 +73,6 @@ Run recurring code using the RecurringHostedServiceBase.
 ## [IoC & Dependency Injection](using-ioc.md)
 
 Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
-
-## API Documentation V8
-
-#### [C# API Documentation](https://our.umbraco.com/apidocs/v8/csharp/)
-
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
-
-C# API references for the Umbraco Core and Web libraries.
-
-#### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
 
 ## API Documentation V9
 
