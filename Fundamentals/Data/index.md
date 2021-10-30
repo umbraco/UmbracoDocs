@@ -8,7 +8,10 @@ versionTo: 9.0.0
 # Data
 *This section focuses on how to create data using the Umbraco backoffice.*
 
-There are three kinds of content in Umbraco. Your normal website content that exists in the content section. Media content such as images, videos and PDFs that are stored in the Media section. Finally Members, used for user profiles and frontend authentication which you can find in the Members section.
+There are three kinds of content in Umbraco:
+- Your normal website content that exists in the content section. 
+- Media content such as images, videos and PDFs that are stored in the Media section. 
+- Finally Members, used for user profiles and frontend authentication which you can find in the Members section.
 
 A fundamental principle in Umbraco is that all content types have a definition (Document Types, Media Types, Member Types). These definitions are highly customizable, meaning you can add properties and have complete control over how the data is organized.
 
