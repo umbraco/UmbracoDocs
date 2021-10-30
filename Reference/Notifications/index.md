@@ -1,7 +1,7 @@
 ---
 v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: 9.0.1
 ---
 
 :::note
