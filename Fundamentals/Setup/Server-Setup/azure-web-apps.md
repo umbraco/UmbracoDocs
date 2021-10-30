@@ -64,7 +64,7 @@ You cannot rely on these variables remaining static for the lifetime of your web
 
 ## Deploying to Linux App Service
 
-To avoid cross compatibility issues its recommeded to deploy to Linux App Service using a managed Dev Ops service such as Azure DevOps and configure a Linux build agent. 
+To avoid cross compatibility issues its recommended to deploy to Linux App Service using a managed Dev Ops service such as Azure DevOps and configure a Linux build agent. 
 
 One specific issue that may happen is the following Item Group being present in your csproj file:
 ```xml
