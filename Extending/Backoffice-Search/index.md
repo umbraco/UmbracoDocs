@@ -17,7 +17,7 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
 
-However, a specific Umbraco implementation may have additional custom properties that it would be useful to be considered in a Backoffice Search, for example perhaps there is an 'Organisation Name' property on the Member Type, or the 'Main Body Text' property of a Content item.
+An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item. 
 
 ## Adding custom properties to backoffice search
 
