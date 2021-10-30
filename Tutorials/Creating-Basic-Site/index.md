@@ -11,9 +11,9 @@ _This tutorial was last tested on **Umbraco 8.12**_
 
 ## Introduction
 
-This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS, and JavaScript) and install it into a fresh Umbraco site and wire up the sections that need content managing in Umbraco.  
+This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS, and JavaScript) and install it into a fresh Umbraco site and wire up the sections that need content managing by Umbraco.  
 
-We will avoid using any of the starter kits in this tutorial. Though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco's features like Document Types and Templates and how these work together to build pages.
+We will avoid using any starter kits in this tutorial. Although these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco. Such as Document Types and Templates and how these work together to build pages.
 
 It is recommended that you work through the subsections in the following order.
 
