@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco configuration"
 meta.Description: "Information on configuring Umbraco"
 state: complete
-verified-against: beta-3
+verified-against: 9.0.1
 update-links: true
 ---
 :::note In Umbraco 9 configuration is json based rather than xml, you can view the v8 config documentation [here](../Config/index.md) :::
