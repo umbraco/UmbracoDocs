@@ -9,11 +9,7 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
-## [Configuration](Config/index.md)
-
-Information about all of Umbraco's configuration files and options.
-
-## [Configuration V9](V9-Config/index.md)
+## [Configuration](V9-Config/index.md)
 
 Information about all of Umbraco's configurations and options for Umbraco 9.
 
@@ -34,9 +30,9 @@ This section also describes the types of Controllers used in Umbraco, how they w
 
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
 
-## [Events](Events/index.md)
+## [Notifications](Notifications/index.md)
 
-Event model covering all major aspects of the system for triggering custom code or automation.
+Notifications covering all major aspects of the system for triggering custom code or automation.
 
 ## [Management APIs](Management/index.md)
 
@@ -58,6 +54,26 @@ Information on Umbraco security, its various security options and configuring ho
 ## [Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
 
 This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
+
+## [Rest APIs](Routing/WebApi/index.md)
+
+How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
+
+## [Debugging](Debugging/index.md)
+How to debug your code with Visual Studio
+
+## [Language Variation](Language-Variation/index.md)
+Language Variation allows you to have several different variations of content based on a language culture. 
+
+## [Mapping](Mapping/index.md)
+Find out how to map one object's properties to another type of object.
+
+## [Scheduling](Scheduling/index.md)
+Run recurring code using the RecurringHostedServiceBase.
+
+## [IoC & Dependency Injection](using-ioc.md)
+
+Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
 
 ## API Documentation V8
 
@@ -82,27 +98,6 @@ C# API references for the Umbraco Core and Web libraries.
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
-
-
-## [Rest APIs](Routing/WebApi/index.md)
-
-How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
-
-## [Debugging](Debugging/index.md)
-How to debug your code with Visual Studio
-
-## [Language Variation](Language-Variation/index.md)
-Language Variation allows you to have several different variations of content based on a language culture. 
-
-## [Mapping](Mapping/index.md)
-Find out how to map one object's properties to another type of object.
-
-## [Scheduling](Scheduling/index.md)
-Run recurring code using the BackgroundTaskRunner.
-
-## [IoC & Dependency Injection](using-ioc.md)
-
-Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
 
 ## External resources
 
