@@ -12,7 +12,7 @@ _This section is ultra important! It will describe many common pitfalls that dev
 ## Usage of Singletons and Statics
 
 Generally speaking if you are writing software these days you should be using Dependency Injection principles.
-If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco itself is not built with an IoC container to use out of the box you may find yourself using Umbraco's built in Singleton accessors like:
+If you do this, you probably aren't using [Singletons](https://en.wikipedia.org/wiki/Singleton_pattern) or [Statics](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members) (and for the most part you shouldn't be!). Since Umbraco itself is not built with an IoC container to use out of the box you may find yourself using Umbraco's built in Singleton accessors like:
 `ApplicationContext.Current` or `UmbracoContext.Current`. In most cases you shouldn't be using these Singleton accessors. It makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard
 to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
 
