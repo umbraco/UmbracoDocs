@@ -11,10 +11,10 @@ updated-links: true
 
 The Umbraco UI should work in all modern browsers:
 
-* Firefox (Latest)
 * Chrome (Latest)
+* Edge (Chromium)
+* Firefox (Latest)
 * Safari (Latest)
-* Edge
 
 ## Local Development
 
