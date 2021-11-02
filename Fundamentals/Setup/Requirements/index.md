@@ -19,7 +19,7 @@ The Umbraco UI should work in all modern browsers:
 ## Local Development
 
 * Either OS:
-  * Microsoft Windows 7 SP1, 8.1 and 10
+  * Microsoft Windows 7 SP1, 8.1, 10 and 11
   * MacOS High Sierra 10.13
   * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
 * One of the following .NET Tools or Editors:
