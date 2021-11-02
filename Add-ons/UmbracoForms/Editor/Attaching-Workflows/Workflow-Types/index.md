@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Workflow Types
 
-There are a couple of default workflow types that can be used to extend the functionality of your Form.
+There are several built-in workflow types that can be used to extend the functionality of your Form.
 
 - [Change Record State](#change-record-state)
 - [Post as XML](#post-as-xml)
@@ -16,7 +16,7 @@ There are a couple of default workflow types that can be used to extend the func
 - [Send XSLT Transformed Email](#send-xslt-transformed-email)
 - [Slack](#slack)
 
-## **Change Record State**  
+## **Change Record State**
 
 ![Change Record state](images/change-record-state.png)
 
@@ -139,7 +139,8 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 - Workflow Name
 - URL (required)
 - Method (required) - POST, GET, PUT or DELETE
-- Fields - map the needed fields
+* Standard Fields - optionally include and map standard form information such as name and page URL
+* Fields - map the needed fields
 - User
 - Password
 
@@ -171,7 +172,7 @@ Sends the result of the Form to an email address with full control over the emai
 
 - Reply To Email
 - Subject of the email (required)
-  
+
 ## **Slack**
 
 ![Send to Slack](images/email-slack.png)
