@@ -12,7 +12,7 @@ These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) a
 
 # Using the NuGet package and attributes in your class
 
-In your NUnit class you need to use the NuGet package Umbraco.Cms.Tests.Integration, and then decorate your class with the TestFixture attribute & UmbracoTest attribute, with the UmbracoTest attributes there are multiple options:
+In your NUnit class, you need to use the NuGet package Umbraco.Cms.Tests.Integration, and then decorate your class with the TestFixture attribute & UmbracoTest attribute, with the UmbracoTest attributes there are multiple options:
 - None
 - NewEmptyPerFixture
 - NewEmptyPerTest
@@ -33,7 +33,7 @@ public class IntegrationTests : UmbracoIntegrationTest
 
 ## Testing a notification
 
-Start by making a NotificationHandler, this example will be of one cancelling overwrites on content named "Root", so if you have some content named "Root" published, you cannot change it.
+Start by making a NotificationHandler, this example will be of one canceling overwrites on content named "Root", so if you have some content named "Root" published, you cannot change it.
 
 ```csharp
 public class MyNotificationHandler : INotificationHandler<ContentSavingNotification>
@@ -51,8 +51,8 @@ public class MyNotificationHandler : INotificationHandler<ContentSavingNotificat
     }
 }
 ```
-Then we can make an integration tests, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
-After this we can build our ContentType and Content with their respective builders.
+Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
+After this, we can build our ContentType and Content with their respective builders.
 When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need.
 We can then use `Assert.Multiple()` to do multiple asserts
 
@@ -101,13 +101,13 @@ public class Tests : UmbracoIntegrationTest
 
 ## Testing with a schema
 
-So one of the awesome things about integration tests, is that you can setup a site, download the package for it, and we can run this state for every test.
-This means that you do not have to go through and setup your tests with data, like we do in the above example with the builder pattern.
+So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test.
+This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
 
 To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`
-Then what you wanna do is setup your umbraco site, go to the packages section and create your own package. Download the package and place the xml file next to your testing class. You want to have the build action of that xml file to be `EmbeddedRessource`
+Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedRessource`
 
-Now we're almost ready to start testing! Last thing we wanna do is have a Setup method to install the package on your site.
+Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
 
 ```csharp
 [SetUp]
@@ -119,8 +119,8 @@ public void MySetup()
 }
 ```
 
-Now you're all-set to start testing with your own site! Lets try and see how that would look! 
-Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to setup our site!
+Now you're all set to start testing with your own site! Let's try and see how that would look! 
+Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to set up our site!
 
 ```csharp
 [Test]
