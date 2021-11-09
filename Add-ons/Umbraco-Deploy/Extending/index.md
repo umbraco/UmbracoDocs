@@ -289,6 +289,16 @@ Examples of these can be found in the open-source Umbraco.Deploy.Contrib project
 
 With the artifact and connectors in place, the final step necessary is to register your entity for deployment.
 
+### Custom Entity Types
+
+If you have introduced custom entity types that will be handled by Umbraco Deploy, they need to be registered with Umbraco so that it can parse the UDI references.
+
+This is done via the following code, which can be triggered from an Umbraco component or an `UmbracoApplicationStartingNotification` handler.
+
+```C#
+UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
+```
+
 ### Disk Based Transfers
 
 In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
