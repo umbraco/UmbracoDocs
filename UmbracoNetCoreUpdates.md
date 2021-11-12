@@ -137,6 +137,16 @@ You will now have a new project with the name `MyCustomUmbracoProject`, or which
 
 The new project can be opened and run using your favorite IDE or you can continue to use the CLI commands.
 
+### [Optional] Error message 'No template found matching: Umbraco'
+If you are sure that you've installed the templates (see the previous step) but the command prompt keeps telling you that there is "No template found matching: Umbraco" it can help to specificy the specific version and nuget source.
+
+![foutmelding opdrachtprompt](https://user-images.githubusercontent.com/12457148/141447451-538b6eca-3c99-4e69-82d9-d58e8913e951.png)
+
+1. Use a command prompt of your choice to specify the specific sources. Please note that you can update the version (9.0.1.) to the latest version that is available.
+
+    ```none
+    dotnet new --install Umbraco.Templates::9.0.1 --nuget-source https://api.nuget.org/v3/index.json
+    ```
 ### Steps to build and run
 
 The following steps, will continue using CLI based on the steps above.
