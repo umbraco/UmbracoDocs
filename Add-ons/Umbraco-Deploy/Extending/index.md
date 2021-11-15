@@ -293,11 +293,10 @@ With the artifact and connectors in place, the final step necessary is to regist
 
 If you have introduced custom entity types that will be handled by Umbraco Deploy, they need to be registered with Umbraco so that it can parse the UDI references.
 
-This is done via the following code, which can be triggered from an Umbraco component or an `UmbracoApplicationStartingNotification` handler.
+This is done via the following code, which can be triggered from a Umbraco component or an `UmbracoApplicationStartingNotification` handler.
 
 ```C#
 UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
-```
 
 ### Disk Based Transfers
 
