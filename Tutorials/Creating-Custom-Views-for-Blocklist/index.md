@@ -18,7 +18,7 @@ To create a Document Type:
 3. Select **Document Type with Template**.
 
     :::tip
-    Using folders can help you organise your **Document Types**.
+    Using folders can help you organize your **Document Types**.
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _Product_. You'll notice that an **Alias** is automatically created.
 5. Click **Add Group** and **Enter a Name** for the group. Let's call it _Product Details_.
@@ -68,14 +68,14 @@ To add blocks to our Block List editor:
     | Image          | image   | Media Picker|
 
 4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#setup-block-types) section.
-5. Similarly, I'll setup another block called **Hero**.
+5. Similarly, I'll set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
 
 ## Creating Custom Views for blocks
 
 We can improve the editing experience by overwriting the default representation of our block entries with a custom view that provides a better view of how the content will look on the frontend. Currently, you can only pick HTML files for a custom view. AngularJS powers these views, and therefore you can write any AngularJS logic.
 
-Lets create a `custom.html` file with the following configuration:
+Let's create a `custom.html` file with the following configuration:
 
 ```html
 <section id="banner" ng-click="block.edit()">
@@ -93,14 +93,14 @@ Lets create a `custom.html` file with the following configuration:
 Once the HTML file is updated, make sure that you restart your application.
 :::
 
-### Assinging the View to the Block
+### Assigning the View to the Block
 
 Now that we have created our view, let's assign it to our block:
 
 1. Go to **Product** in the **Settings** tree.
 2. Click the `cog` wheel next to **Features**.
 3. Select the **Product - Features - Block List**. The **Editor Settings** window opens.
-4. Select **Feature** from the **Availabe Blocks** configuration. The **Configuration of 'Feature'** window opens.
+4. Select **Feature** from the **Available Blocks** configuration. The **Configuration of 'Feature'** window opens.
 5. Select **Add Custom View** in **Custom View** and browse to the **custom.html** file.
     ![Browse View Location](images/View-location.png)
 6. Click **Submit**.
@@ -126,7 +126,7 @@ To add a Settings model:
 1. Go to **Product** in the **Settings** tree.
 2. Click the `cog` wheel next to **Features**.
 3. Select the **Product - Features - Block List**. The **Editor Settings** window opens.
-4. Select **Feature** from the **Availabe Blocks** configuration.
+4. Select **Feature** from the **Available Blocks** configuration.
 5. Select **Settings Model** in the Data Models section. The **Attach a settings Element Type** window opens.
 6. Select **Create new Element Type**.
     a. **Enter a Name** for the element type. Let's say *Feature Settings*.
