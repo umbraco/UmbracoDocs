@@ -330,7 +330,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         // override explicit implementation
         IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
         {
-            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
+            new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.WriterGroupAlias},
             new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias}
         };
     }
