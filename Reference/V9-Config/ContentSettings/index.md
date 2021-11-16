@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 9.1.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
 state: complete
@@ -39,6 +39,11 @@ To get an overview of the keys and values in the global section, the following s
           "LengthFieldAlias": "umbracoBytes",
           "ExtensionFieldAlias": "umbracoExtension"
         }
+      },
+      "ContentVersionCleanupPolicy": {
+        "EnableCleanup": false,
+        "KeepAllVersionsNewerThanDays": 7,
+        "KeepLatestVersionPerDayForDays": 90
       }
     }
   }
@@ -195,3 +200,39 @@ If you need to create a custom media document type to handle images called somet
   ]
 }
 ```
+
+## ContentVersionCleanupPolicy
+
+The global settings for the scheduled job which cleans up historic content versions, these settings can be overridden per document type.
+
+Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
+
+See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
+
+```json
+"ContentVersionCleanupPolicy": {
+  "EnableCleanup": false,
+  "KeepAllVersionsNewerThanDays": 7,
+  "KeepLatestVersionPerDayForDays": 90
+}
+```
+
+If you don't wish to store any historic content versions at all simply set both of the "keep" settings values to 0.
+
+### EnableCleanup
+
+When true a scheduled job will delete historic content versions that are not kept according to the policy every hour.
+
+When false, the scheduled job will never delete any content versions regardless of overridden settings for a document type.
+
+This defaults to false when not set in configuration which will be the case for those upgrading from v9.0.0, however the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
+
+### KeepAllVersionsNewerThanDays
+
+All versions that fall in this period will be kept.
+
+### KeepLatestVersionPerDayForDays
+
+For content versions that fall in this period the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
+
+This variable is independent from KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.

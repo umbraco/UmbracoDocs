@@ -2,7 +2,7 @@
 meta.Title: "Umbraco Data"
 meta.Description: "This section focuses on how to create data using the Umbraco backoffice"
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 9.1.0
 ---
 
 # Data
@@ -35,3 +35,6 @@ Overview of how to add and reorder tabs, convert a group to a tab and manage the
 
 ## [Users](Users/)
 Control who has access to the Umbraco backoffice and what permissions they have.
+
+## [Content Version Cleanup (v9.1.0+)](Content-Version-Cleanup/)
+How to keep the noise down whilst ensuring your important content versions stick around indefinitely.
