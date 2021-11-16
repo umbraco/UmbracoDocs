@@ -12,7 +12,7 @@ As of Umbraco 7.7 permissions aren't administered for the specific user, but rat
 
 ```csharp
 // Get a reference to the default "Administrators" user group
-UserGroup adminUserGroup = (UserGroup) us.GetUserGroupByAlias("admin");
+UserGroup adminUserGroup = (UserGroup) us.GetUserGroupByAlias(Umbraco.Cms.Core.Constants.Security.AdminGroupAlias);
 
 // Add the user to the user group
 user.AddGroup(adminUserGroup);

@@ -361,6 +361,7 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 
 ```csharp
 using Umbraco.Cms.Core.Security;
+using Umbraco.Cms.Core;
 
 public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
@@ -378,7 +379,7 @@ public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotific
         // for all content tree nodes
         if (notification.TreeAlias.Equals("content") &&
             _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x =>
-                x.Alias.InvariantEquals("admin")))
+                x.Alias.InvariantEquals(Constants.Security.AdminGroupAlias)))
         {
             // Creates a menu action that will open /umbraco/currentSection/itemAlias.html
             var menuItem = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
