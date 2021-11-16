@@ -217,7 +217,9 @@ See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-C
 }
 ```
 
-If you don't wish to store any historic content versions at all simply set both of the "keep" settings values to 0.
+If you don't wish to retain any content versions except for the current draft and current published you can set both of the
+"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non current versions (except
+ those marked "prevent cleanup") will be removed.
 
 ### EnableCleanup
 

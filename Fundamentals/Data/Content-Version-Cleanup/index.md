@@ -17,7 +17,7 @@ those upgrading from 9.0.0.
 
 This feature certainly isn't for everyone, some sites will have regulatory requirements to keep historic data for audit.
 
-For those sites with stricter requirements (or those who just don't want the feature) it is possible to opt out both globally 
+For those sites with stricter requirements (or those who don't want the feature) it is possible to opt out both globally 
 (see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per document type (keep reading).
 
 Additionally it is possible to keep the feature enabled but mark specific versions to keep forever (perhaps last years awesome marketing campaign).
