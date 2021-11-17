@@ -23,4 +23,4 @@ To rollback to a previous version of the page:
 
 ---
 
-Prev: [Comparing Versions](../Comparing-Versions/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Media Management](../../Media-Management/index.md)
+Prev: [Comparing Versions](../Comparing-Versions/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [History Cleanup](../History-Cleanup/index.md)
