@@ -56,8 +56,18 @@
             <dt>Versions</dt>
             @foreach (var version in Model.Alternates)
             {
-                <dd>
-                    <a href="@version">@version</a>
+                var isCurrent = Model.IsCurrent(version);
+
+                <dd class="@(isCurrent ? "selected-version" : string.Empty)">
+                    @if (isCurrent)
+                    {
+                        @version
+                    }
+                    else
+                    {
+                        var url = $"/documentation/{Model.FolderName}/{version}".Replace("//", "/");
+                        <a href="@url">@version</a>
+                    }
                 </dd>
             }
         </dl>

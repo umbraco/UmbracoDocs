@@ -37,6 +37,7 @@ namespace Umbraco.Docs.Preview.UI.Controllers
             var model = new DocumentationViewModel
             {
                 Path = path,
+                FolderName = _docs.GetDocumentFolder(path),
                 Markup = _md.RenderMarkdown(path),
                 Navigation = _ourDocsUpdater.BuildSitemap(),
                 Alternates = _docs.GetAlternates(path).ToList()
