@@ -104,7 +104,7 @@ namespace My.Website.ContentFinders
         public bool TryFindContent(PublishedRequest contentRequest)
         {
             //find the root node with a matching domain to the incoming request            
-            var allDomains = _domainService.GetAll(true);
+            var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains?.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : (allDomains.Any() ? allDomains.FirstOrDefault().RootContentId : null);
             var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
