@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Docs.Preview.UI", "src\Umbraco.Docs.Preview.UI\Umbraco.Docs.Preview.UI.csproj", "{722921FA-D2CF-4AD1-936C-1D828F5C5CAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Solution Items", "00 - Solution Items", "{CCA7DB2F-F543-4C9A-B0B8-D3C5182485A8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - UI", "10 - UI", "{1BF25929-DB53-4308-8EE7-4B9F2857926F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{722921FA-D2CF-4AD1-936C-1D828F5C5CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722921FA-D2CF-4AD1-936C-1D828F5C5CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722921FA-D2CF-4AD1-936C-1D828F5C5CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722921FA-D2CF-4AD1-936C-1D828F5C5CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{722921FA-D2CF-4AD1-936C-1D828F5C5CAD} = {1BF25929-DB53-4308-8EE7-4B9F2857926F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F0AC3EF-B608-438B-84DA-90CC8BEC0E23}
+	EndGlobalSection
+EndGlobal
