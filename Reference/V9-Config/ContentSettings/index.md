@@ -217,8 +217,8 @@ See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-C
 }
 ```
 
-If you don't wish to retain any content versions except for the current draft and current published you can set both of the
-"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non current versions (except
+If you don't wish to retain any content versions except for the current draft and currently published you can set both of the
+"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non-current versions (except
  those marked "prevent cleanup") will be removed.
 
 ### EnableCleanup
@@ -227,7 +227,7 @@ When true a scheduled job will delete historic content versions that are not kep
 
 When false, the scheduled job will never delete any content versions regardless of overridden settings for a document type.
 
-This defaults to false when not set in configuration which will be the case for those upgrading from v9.0.0, however the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
+This defaults to false when not set in the configuration which will be the case for those upgrading from v9.0.0, however, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
 
 ### KeepAllVersionsNewerThanDays
 
@@ -235,6 +235,6 @@ All versions that fall in this period will be kept.
 
 ### KeepLatestVersionPerDayForDays
 
-For content versions that fall in this period the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
+For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
 
-This variable is independent from KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
+This variable is independent of KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
