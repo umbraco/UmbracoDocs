@@ -119,7 +119,7 @@ namespace My.Website.ContentFinders
                 return false;
             }
             //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode != null)
             {
