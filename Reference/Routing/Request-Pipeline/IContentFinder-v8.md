@@ -108,7 +108,12 @@ namespace My.Website.ContentFinders
             var domain = allDomains.FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority);
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
             var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
-            if (siteRoot == null) { siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault(); }
+            
+            if (siteRoot == null)
+            {
+                siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault();
+            }
+
             if (siteRoot == null)
             {
                 return false;
