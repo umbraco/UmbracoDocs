@@ -1,0 +1,57 @@
+﻿@model Umbraco.Docs.Preview.UI.Models.DocumentationViewModel
+
+<div class="has-sidebar">
+    <div class="documentation">
+        <div class="page-content">
+            <div class="sidebar-area">
+                <div class="sidebar-content">
+                    <div class="content-wrapper">
+                        @*@Html.Partial("~/Views/Partials/Documentation/Navigation.cshtml")*@
+                    </div><!-- .content-wrapper -->
+                </div><!-- .sidebar-content -->
+            </div><!-- .sidebar-area-->
+            <div class="main-area">
+                <div class="main-content">
+                    <div class="content-wrapper">
+                        <div>
+                            @*@Html.Partial("~/Views/Partials/Documentation/Breadcrumb.cshtml")*@
+                        </div>
+                        <div class="search-big">
+                            <div class="textSearch">
+                                <input type="search" class="docs-search-input" required placeholder="Search for documentation">
+                                <label for="search">Search for documentation</label>
+                            </div>
+                            <select class="version-search-select">
+                                @*<option value="9" selected="@(currentVersion == "9"? "selected" : null)">v9</option>
+                                    <option value="8" selected="@(currentVersion == "8"? "selected" : null)">v8</option>
+                                    <option value="7" selected="@(currentVersion == "7"? "selected" : null)">v7</option>
+                                    <option value="6" selected="@(currentVersion == "6"? "selected" : null)">v6</option>*@
+                            </select>
+                        </div>
+                        <ul class="search-all-results docs-search-listing"></ul>
+                        <div id="markdown-docs" class="docs-default-listing markdown-syntax">
+                            @await Html.PartialAsync("~/Views/Partials/Documentation/DisplayMarkdown.cshtml", Model)
+                        </div>
+                    </div><!-- .content-wrapper -->
+                </div><!-- .main-content -->
+            </div><!-- .main-area -->
+        </div><!-- .page-content -->
+        <script type="text/template" class="search-item-docs">
+            <li>
+                <a href="{{ url }}">
+                    <div class="type-icon">
+                        <i class="icon-Book-alt"></i>
+                    </div>
+                    <div class="type-context">
+                        <div class="type-name">
+                            {{ name }}
+                        </div>
+                        <div class="type-description">
+                            {{ body }}
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </script>
+    </div>
+</div>

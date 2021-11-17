@@ -1,0 +1,87 @@
+﻿@model Umbraco.Docs.Preview.UI.Models.DocumentationViewModel
+
+<style>
+    #markdown-docs .anchorjs-link {
+        color: #ff6e00 !important;
+        font-size: 20px !important;
+        text-decoration: none !important;
+    }
+
+    #markdown-docs a.offset-anchor {
+        visibility: hidden;
+        position: relative;
+        top: -100px;
+        display: block;
+    }
+</style>
+@*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.1/anchor.js"></script>*@
+<script type="text/javascript" src="/scripts/anchorjs/anchorjs.custom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        anchors.options = {
+            placement: 'left',
+            visible: "hover",
+            anchorCreated: function (e) {
+                var id = $(e).attr('id');
+                //clear it's id since we'll be creating a custom anchor point with an offset
+                $(e).removeAttr("id");
+                $(e).addClass("anchorjs-heading");
+                $(e).prepend("<a class='offset-anchor' id='" + id + "'></a>");
+            }
+        };
+        anchors.add('.markdown-syntax h1, .markdown-syntax h2, .markdown-syntax h3, .markdown-syntax h4, .markdown-syntax h5, .markdown-syntax h5');
+
+        var element = $(window.location.hash);
+        if (element.length === 1) {
+            setTimeout(function () {
+                //hightlight it
+                element.closest(".anchorjs-heading").css("color", "#ff6e00");
+                element.closest(".anchorjs-heading").find("a").not(".anchorjs-link").css("color", "#ff6e00");
+            }, 100);
+        }
+
+        $("#markdown-docs .anchorjs-link").click(function () {
+            if (element.length === 1) {
+                //un hightlight it
+                element.closest(".anchorjs-heading").css("color", "inherit");
+                element.closest(".anchorjs-heading").find("a").not(".anchorjs-link").css("color", "inherit");
+            }
+        });
+    });
+</script>
+
+<aside>
+    <div class="info-box docs-version-panel">
+        <dl>
+            <dt>Versions</dt>
+            @*@if (hasAltVersions)
+                {
+                    foreach (var version in altVersions)
+                    {
+                        <dd class="@Umbraco.If(version.IsCurrentVersion, "current-version") @Umbraco.If(version.IsCurrentPage, "selected-version")">
+                            @if (version.IsCurrentPage)
+                            {
+                                @(version.Version)
+                            }
+                            else
+                            {
+                                <a href='@version.Url'>@(version.Version)</a>
+                            }
+                            @if (version.IsCurrentVersion)
+                            {
+                                @:(current)
+                            }
+                        </dd>
+                    }
+                }
+                else if (currentVersion != null)
+                {
+                    <dd class="current-version selected-version">
+                        @(currentVersion.Version)
+                    </dd>
+                }*@
+        </dl>
+    </div>
+</aside>
+
+@Html.Raw(Model.Markup)
