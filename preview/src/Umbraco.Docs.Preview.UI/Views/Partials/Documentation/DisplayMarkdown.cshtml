@@ -54,32 +54,12 @@
     <div class="info-box docs-version-panel">
         <dl>
             <dt>Versions</dt>
-            @*@if (hasAltVersions)
-                {
-                    foreach (var version in altVersions)
-                    {
-                        <dd class="@Umbraco.If(version.IsCurrentVersion, "current-version") @Umbraco.If(version.IsCurrentPage, "selected-version")">
-                            @if (version.IsCurrentPage)
-                            {
-                                @(version.Version)
-                            }
-                            else
-                            {
-                                <a href='@version.Url'>@(version.Version)</a>
-                            }
-                            @if (version.IsCurrentVersion)
-                            {
-                                @:(current)
-                            }
-                        </dd>
-                    }
-                }
-                else if (currentVersion != null)
-                {
-                    <dd class="current-version selected-version">
-                        @(currentVersion.Version)
-                    </dd>
-                }*@
+            @foreach (var version in Model.Alternates)
+            {
+                <dd>
+                    <a href="@version">@version</a>
+                </dd>
+            }
         </dl>
     </div>
 </aside>

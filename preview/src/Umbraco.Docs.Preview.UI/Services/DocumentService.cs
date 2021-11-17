@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Umbraco.Docs.Preview.UI.Services
@@ -49,6 +52,26 @@ namespace Umbraco.Docs.Preview.UI.Services
 
             path = null;
             return false;
+        }
+
+        public IEnumerable<string> GetAlternates(string path)
+        {
+            // TODO: parse version numbers, might not even be worth it.
+            var directory = Path.GetDirectoryName(path);
+
+            return Directory
+                .GetFiles(directory!)
+                .Where(x =>
+                {
+                    var orig = Path.GetFileNameWithoutExtension(path);
+                    var isVersioned = Regex.Match(orig, @"(.*?)-v\d");
+
+                    var unVersioned = isVersioned.Success ? isVersioned.Groups[0].Value : orig;
+                    var alt = Path.GetFileNameWithoutExtension(x);
+
+                    return alt.StartsWith(unVersioned);
+                })
+                .Select(Path.GetFileNameWithoutExtension);
         }
     }
 }

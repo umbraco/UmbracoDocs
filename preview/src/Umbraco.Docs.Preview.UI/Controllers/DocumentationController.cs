@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Docs.Preview.UI.MiscellaneousOurStuff;
 using Umbraco.Docs.Preview.UI.Models;
 using Umbraco.Docs.Preview.UI.Services;
 
@@ -10,11 +12,13 @@ namespace Umbraco.Docs.Preview.UI.Controllers
     {
         private readonly IDocumentService _docs;
         private readonly IMarkdownService _md;
+        private readonly DocumentationUpdater _ourDocsUpdater;
 
-        public DocumentationController(IDocumentService docs, IMarkdownService md)
+        public DocumentationController(IDocumentService docs, IMarkdownService md, DocumentationUpdater ourDocsUpdater)
         {
             _docs = docs;
             _md = md;
+            _ourDocsUpdater = ourDocsUpdater;
         }
 
         [HttpGet("{**slug}")]
@@ -33,7 +37,9 @@ namespace Umbraco.Docs.Preview.UI.Controllers
             var model = new DocumentationViewModel
             {
                 Path = path,
-                Markup = _md.RenderMarkdown(path)
+                Markup = _md.RenderMarkdown(path),
+                Navigation = _ourDocsUpdater.BuildSitemap(),
+                Alternates = _docs.GetAlternates(path).ToList()
             };
 
             return View("DocumentationSubpage", model);

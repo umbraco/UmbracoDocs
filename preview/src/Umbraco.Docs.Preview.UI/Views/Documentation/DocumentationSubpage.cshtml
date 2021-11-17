@@ -6,7 +6,7 @@
             <div class="sidebar-area">
                 <div class="sidebar-content">
                     <div class="content-wrapper">
-                        @*@Html.Partial("~/Views/Partials/Documentation/Navigation.cshtml")*@
+                        @await Html.PartialAsync("~/Views/Partials/Documentation/Navigation.cshtml", Model)
                     </div><!-- .content-wrapper -->
                 </div><!-- .sidebar-content -->
             </div><!-- .sidebar-area-->
@@ -16,18 +16,18 @@
                         <div>
                             @*@Html.Partial("~/Views/Partials/Documentation/Breadcrumb.cshtml")*@
                         </div>
-                        <div class="search-big">
+                        <!--<div class="search-big">
                             <div class="textSearch">
                                 <input type="search" class="docs-search-input" required placeholder="Search for documentation">
                                 <label for="search">Search for documentation</label>
                             </div>
-                            <select class="version-search-select">
+                            <select class="version-search-select">-->
                                 @*<option value="9" selected="@(currentVersion == "9"? "selected" : null)">v9</option>
                                     <option value="8" selected="@(currentVersion == "8"? "selected" : null)">v8</option>
                                     <option value="7" selected="@(currentVersion == "7"? "selected" : null)">v7</option>
                                     <option value="6" selected="@(currentVersion == "6"? "selected" : null)">v6</option>*@
-                            </select>
-                        </div>
+                            <!--</select>
+                        </div>-->
                         <ul class="search-all-results docs-search-listing"></ul>
                         <div id="markdown-docs" class="docs-default-listing markdown-syntax">
                             @await Html.PartialAsync("~/Views/Partials/Documentation/DisplayMarkdown.cshtml", Model)

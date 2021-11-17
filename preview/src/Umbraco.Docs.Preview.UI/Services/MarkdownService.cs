@@ -39,7 +39,8 @@ namespace Umbraco.Docs.Preview.UI.Services
                 .UseTaskLists()
                 .UseDiagrams()
                 .UseAutoLinks()
-                //.UseSyntaxHighlighter(out SyntaxHighlighterOptions highligther)
+                // TODO: https://github.com/abjerner/Skybrud.SyntaxHighlighter.Markdig appears to be .Net framework only.
+                //.UseSyntaxHighlighter(out SyntaxHighlighterOptions highligther) 
                 .Build();
 
             //highligther.AddAlias("json5", Language.Json);

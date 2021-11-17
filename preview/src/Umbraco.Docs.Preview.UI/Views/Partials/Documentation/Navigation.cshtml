@@ -1,0 +1,58 @@
+@using Microsoft.AspNetCore.Http
+@model Umbraco.Docs.Preview.UI.Models.DocumentationViewModel
+
+@inject IHttpContextAccessor _contextAccessor;
+
+@functions{
+    public string IsActive(string path, string classname = "active")
+    {
+        var requestPath = $"{_contextAccessor?.HttpContext?.Request.Path}";
+        return requestPath.ToLower().StartsWith(path.ToLower()) ? classname : string.Empty;
+    }
+}
+
+@{
+    const string root = "/documentation/";
+}
+
+<nav>
+    <ul class="level-1">
+
+        @foreach (var item in Model.Navigation.Directories)
+        {
+            if (item.Name != "Development Guidelines"
+                && item.Name != "Extending Umbraco"
+                && item.Name != "Using Umbraco"
+                && item.Name != "Installation"
+                && item.Name != "Products"
+                && item.Name != "Cheatsheets")
+            {
+                <li class=" @IsActive(root+item.Path, "active open")">
+                    <a href="@(root + item.Path)/"><h3>@item.Name</h3></a>
+
+                    @if (item.HasChildren)
+                    {
+                        <ul class="level-2 @IsActive(root + item.Path, "open")">
+                            @foreach (var itemChild in item.Directories)
+                            {
+                                <li class=" @IsActive(root + itemChild.Path, "active open")">
+                                    <a href="@(root + itemChild.Path)/"><h4>@itemChild.Name</h4></a>
+
+                                    @if (itemChild.HasChildren)
+                                    {
+                                        <ul class="level-3 @IsActive(root + item.Path, "open")">
+                                            @foreach (var itemGrandChild in itemChild.Directories)
+                                            {
+                                                <li class=" @IsActive(root + itemGrandChild.Path, "active")"><a href="@(root + itemGrandChild.Path)/"><h5>@itemGrandChild.Name</h5></a></li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        }
+    </ul>
+</nav>
