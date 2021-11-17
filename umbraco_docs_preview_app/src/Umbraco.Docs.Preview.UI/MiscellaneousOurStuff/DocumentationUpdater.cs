@@ -54,7 +54,7 @@ namespace Umbraco.Docs.Preview.UI.MiscellaneousOurStuff
 
         public SiteMapItem BuildSitemap()
         {
-            var root = _env.ContentRootPath.Split("preview")[0];
+            var root = _env.ContentRootPath.Split("umbraco_docs_preview_app")[0];
             var folder = new DirectoryInfo(root);
             return GetFolderStructure(folder, folder.FullName, 0);
         }
@@ -93,8 +93,8 @@ namespace Umbraco.Docs.Preview.UI.MiscellaneousOurStuff
                 "images", 
                 ".git", 
                 ".github", 
-                "Old-Courier-versions", 
-                "preview" // Ignore self
+                "Old-Courier-versions",
+                "umbraco_docs_preview_app" // Ignore self
             };
 
             foreach (var child in dir.GetDirectories().Where(x => !ignored.Contains(x.Name)))

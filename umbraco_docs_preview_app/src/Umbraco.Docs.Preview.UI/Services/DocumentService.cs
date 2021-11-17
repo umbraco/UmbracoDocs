@@ -24,7 +24,7 @@ namespace Umbraco.Docs.Preview.UI.Services
                 if (!string.IsNullOrEmpty(_docsRoot))
                     return _docsRoot;
 
-                _docsRoot = Path.GetDirectoryName(_env.ContentRootPath.Split("preview")[0]);
+                _docsRoot = Path.GetDirectoryName(_env.ContentRootPath.Split("umbraco_docs_preview_app")[0]);
 
                 return _docsRoot;
             }
