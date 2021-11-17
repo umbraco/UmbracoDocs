@@ -10,14 +10,14 @@ namespace Umbraco.Docs.Preview.UI.Services
     {
         public const string RegEx = @"\[([^\]]+)\]\(([^)]+)\)"; // wat?
 
-        public string RenderMarkdown(string path)
+        public string RenderMarkdown(string path, string folder)
         {
             var rawMarkdown = File.ReadAllText(path);
 
             var clean = Regex.Replace(
                 rawMarkdown,
                 RegEx,
-                LinkEvaluator,
+                x => LinkEvaluator(x, folder),
                 RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
 
             var pipeline = new MarkdownPipelineBuilder()
@@ -50,7 +50,7 @@ namespace Umbraco.Docs.Preview.UI.Services
             return transform;
         }
 
-        private string LinkEvaluator(Match match)
+        private string LinkEvaluator(Match match, string folder)
         {
             string mdUrlTag = match.Groups[0].Value;
             string rawUrl = match.Groups[2].Value;
@@ -65,7 +65,12 @@ namespace Umbraco.Docs.Preview.UI.Services
 
             //Correct internal image links
             if (rawUrl.StartsWith("../images/"))
-                return mdUrlTag.Replace("../images/", "images/");
+                return mdUrlTag.Replace("../images/", $"/documentation/{folder}/images/".Replace("\\", "/"));
+
+            if (rawUrl.StartsWith("images/"))
+            {
+                return mdUrlTag.Replace("images/", $"/documentation/{folder}/images/".Replace("\\", "/"));
+            }
 
 
             if (rawUrl.EndsWith("index.md"))

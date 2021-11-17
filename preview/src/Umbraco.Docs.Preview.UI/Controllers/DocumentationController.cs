@@ -34,11 +34,12 @@ namespace Umbraco.Docs.Preview.UI.Controllers
                 return NotFound();
             }
 
+            var folder = _docs.GetDocumentFolder(path);
             var model = new DocumentationViewModel
             {
                 Path = path,
-                FolderName = _docs.GetDocumentFolder(path),
-                Markup = _md.RenderMarkdown(path),
+                FolderName = folder,
+                Markup = _md.RenderMarkdown(path, folder),
                 Navigation = _ourDocsUpdater.BuildSitemap(),
                 Alternates = _docs.GetAlternates(path).ToList()
             };

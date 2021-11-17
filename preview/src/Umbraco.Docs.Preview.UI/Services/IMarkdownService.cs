@@ -2,6 +2,6 @@
 {
     public interface IMarkdownService
     {
-        string RenderMarkdown(string path);
+        string RenderMarkdown(string path, string folder);
     }
 }
