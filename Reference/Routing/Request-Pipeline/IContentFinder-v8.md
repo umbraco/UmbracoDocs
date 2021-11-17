@@ -106,7 +106,7 @@ namespace My.Website.ContentFinders
             //find the root node with a matching domain to the incoming request            
             var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains.FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority);
-            var siteId = domain != null ? domain.RootContentId : (allDomains.Any() ? allDomains.FirstOrDefault().RootContentId : null);
+            var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
             var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
             if (siteRoot == null) { siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault(); }
             if (siteRoot == null)
