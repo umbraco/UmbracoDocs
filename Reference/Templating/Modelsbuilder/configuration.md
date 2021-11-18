@@ -46,7 +46,7 @@ The example below shows an example configuration using the SourceCodeManual mode
 Models Builder ships with a dashboard in the *Settings* section of Umbraco's backoffice. The dashboard does three things:
 
 * Details on how Models Builder is configured
-* Provides a way to generate models (in SourceCodeAuto mode only)
+* Provides a way to generate models (in SourceCodeManual mode only)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
 ![Models Builder Dashboard](images/ModelsBuilderDashboard-v9.png)
