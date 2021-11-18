@@ -1,15 +1,12 @@
 ---
 versionFrom: 9.1.0
-verified-against: 9.0.0
-state: complete
-updated-links: true
 ---
 
 # UI Library
 
-The UI Library is a set of web components that can be used to build Umbraco UI. The UI Library separates the user interface from Umbraco’s business logic and creates a unified user experience, with coherent styling and naming, across all Umbraco platforms and projects including the ones developed by you.
+The UI Library is a set of web components that can be used to build Umbraco User Interface. The UI Library separates the user interface from Umbraco’s business logic and creates a unified user experience, with coherent styling and naming, across all the Umbraco platforms and projects including the one's developed by you.
 
-With the UI Library, you get a collection of visual building blocks that hold all the pieces to build any UI in Umbraco. Each component is a building block that updates its display according to the data passed to it.
+With the UI Library, you get a collection of visual building blocks that consists of pieces to build any UI in Umbraco. Each component is a building block updating its display according to the data passed to it.
 
 ## UI Library Storybook
 
