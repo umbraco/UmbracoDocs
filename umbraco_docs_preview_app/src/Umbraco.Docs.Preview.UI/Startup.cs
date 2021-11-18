@@ -41,6 +41,8 @@ namespace Umbraco.Docs.Preview.UI
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseStatusCodePages();
+
             var tree = app.ApplicationServices.GetRequiredService<DocumentationUpdater>().BuildSitemap();
 
             AddImageFileProviders(tree, app);
