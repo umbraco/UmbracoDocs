@@ -10,7 +10,7 @@ With the UI Library, you get a collection of visual building blocks that consist
 
 ## UI Library Storybook
 
-[Storybook](https://uui.umbraco.com/?path=/story/uui-avatar-group--aaa-overview&_ga=2.165515577.727907355.1637240820-415968107.1637240820) is an application that gathers all the components together, holds their documentation, and showcases different use case scenarios. You can explore all the components through stories reflecting their use cases.
+[Storybook](https://uui.umbraco.com/) is an application that gathers all the components together, holds their documentation, and showcases different use case scenarios. You can explore all the components through stories reflecting their use cases.
 
 Each story has interactive controls that allows you to change the state of the component in real-time. Every publicly available property is editable in Storybook, so you can test out various configurations and use-cases.
 
