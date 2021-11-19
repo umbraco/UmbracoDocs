@@ -104,17 +104,22 @@ namespace My.Website.ContentFinders
         public bool TryFindContent(PublishedRequest contentRequest)
         {
             //find the root node with a matching domain to the incoming request            
-            var allDomains = _domainService.GetAll(true);
-            var domain = allDomains?.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
-            var siteId = domain != null ? domain.RootContentId : (allDomains.Any() ? allDomains.FirstOrDefault().RootContentId : null);
+            var allDomains = _domainService.GetAll(true).ToList();
+            var domain = allDomains.FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority);
+            var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
             var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
-            if (siteRoot == null) { siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault(); }
+            
+            if (siteRoot == null)
+            {
+                siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault();
+            }
+
             if (siteRoot == null)
             {
                 return false;
             }
             //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode != null)
             {
