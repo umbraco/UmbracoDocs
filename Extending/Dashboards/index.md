@@ -332,7 +332,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         {
             new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.WriterGroupAlias},            
             new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias},
-            "marketing"
+            new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
         };
     }
 }
