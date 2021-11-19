@@ -14,4 +14,4 @@ With the UI Library, you get a collection of visual building blocks that consist
 
 Each story has interactive controls that allow you to change the state of the component in real-time. Every publicly available property is editable in Storybook, so you can test out various configurations and use-cases.
 
-You can also change the stylesheet of custom properties, to see how the component will look like. Every story has a code example that you can copy and paste into your project, making it easy to implement the components in your own packages and extensions.
+You can also change the stylesheet of custom properties, to see how the component will look like. Every story has a code example that you can copy and paste into your project, allowing you to implement the components in your own packages and extensions.
