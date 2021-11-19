@@ -48,6 +48,7 @@ For illustration purposes, the following structure represents the full set of op
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
             "IgnoreBrokenDependencies": false,
+            "IgnoreBrokenDependenciesBehavior": "IgnoreForAll",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
@@ -144,3 +145,17 @@ When restoring or transferring content, Umbraco Deploy will make checks to ensur
 For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, you'll get an error and the deploy won't complete until the issue is resolved (by removing the reference to the deleted media item).
 
 You can configure deploy to ignore these issues and proceed with the transfer operation without warning, by setting the value of this option to `true`.
+
+## IgnoreBrokenDependenciesBehavior
+
+For finer control of the above setting you can amend this value from the default of `All` to either `Transfer` or `Restore`.
+
+For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment.  It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
+
+```json
+    "IgnoreBrokenDependencies": true,
+    "IgnoreBrokenDependenciesBehavior": "Restore",
+```
+
+
+

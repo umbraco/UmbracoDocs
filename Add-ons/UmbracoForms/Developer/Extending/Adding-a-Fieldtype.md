@@ -63,6 +63,27 @@ In the constructor, we specify the standard provider information (remember to se
 
 And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
 
+You will then need to register this new field as a dependency.
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Forms.Core.Providers;
+
+namespace MyFormsExtensions
+{
+    public class Startup : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.WithCollectionBuilder<FieldCollectionBuilder>()
+                .Add<MyCustomField>();
+        }
+    }
+}
+```
+
+
 ## Partial view
 
 Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 

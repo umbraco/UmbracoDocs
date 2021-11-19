@@ -40,7 +40,7 @@ By default, the User groups available to new users are **Administrators**, **Wri
 - **Administrator**: Can do anything when editing nodes in the content section (has all permissions).
 - **Editor**: Allowed to create and publish content items or nodes on website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
 - **Writer**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish** and **Update**).
-- **Translator**: Allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
+- **Translator**: Are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
 - **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-data/) article.
 
 ## Creating a User Group

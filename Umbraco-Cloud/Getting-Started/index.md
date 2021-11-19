@@ -63,7 +63,8 @@ When you create a:
 - Trial project for the first time - a unique project name will be generated for you.
 - Project from the Umbraco Cloud Portal - you will get to choose a name for the project.
 
-You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
+For version 9: To rename the project file and folder, see the [*Renaming the Project file and folder*](../Set-up/project-settings/index.md#renaming-and-deleting) article.
+For version 8 and below: You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/index-v8.md#renaming-and-deleting) option from the *Settings* menu.
 
 An Umbraco Cloud project name is unique, which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
 

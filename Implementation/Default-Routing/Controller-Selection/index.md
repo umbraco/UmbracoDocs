@@ -42,22 +42,22 @@ namespace UmbracoProject.Controller
 
 ## Change the Default Controllers
 
-It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. A default Controller can be set during composition by creating a C# class which implements `IUserComposer`, for example:
+It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. You can configure Umbraco to use your implementation in the `ConfigureServices` method in the `Startup.cs` class, for example:
 
 ```csharp
-using System;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-
-namespace UmbracoProject.Controller
+public void ConfigureServices(IServiceCollection services)
 {
-    public class MyValidationComposer : IUserComposer
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()             
+        .AddWebsite()
+        .AddComposers()
+        .Build();
+
+    // Configure Umbraco Render Controller Type
+    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
     {
-        public void Compose(Composition composition)
-        {
-            composition.Components().Append<MyValidationComponent>();
-        }
-    }
+        c.DefaultControllerType = typeof(MyRenderController);
+    });
 }
 ```
 
