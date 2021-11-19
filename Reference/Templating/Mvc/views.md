@@ -1,6 +1,5 @@
 ---
-versionFrom: 8.0.0
-needsv9Update: "true"
+versionFrom: 9.0.0
 ---
 
 
@@ -10,13 +9,12 @@ _Working with MVC Views and Razor syntax in Umbraco_
 
 ## Properties available in Views
 
-All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NameOfYourDocType>` along with the using statement `@using ContentModels = Umbraco.Web.PublishedModels;`. This exposes many properties that are available in razor. The properties on the Document Type can be accessed in a number of ways:
+All Umbraco views inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NameOfYourDocType>` along with the using statement `@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;`. This exposes many properties that are available in razor. The properties on the Document Type can be accessed in a number of ways:
 
 * @Model (of type `Umbraco.Web.Mvc.ContentModel`) -> the model for the view which contains the standard list of IPublishedContent properties but also gives you access to the typed current page (of type whatever type you have added in the angled brackets).
-* @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retrieving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index-v8.md)
+* @Umbraco (of type `UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retrieving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
-* @UmbracoContext (of type `Umbraco.Web.UmbracoContext`)
-* @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
+* @UmbracoContext (of type `Umbraco.Cms.Web.Common.UmbracoContext`)
 
 ## Rendering a field in a strongly typed view
 
@@ -68,36 +66,39 @@ Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll star
 This renders a macro with the specified alias without any parameters:
 
 ```csharp
-@Umbraco.RenderMacro("myMacroAlias")
+@await Umbraco.RenderMacroAsync("myMacroAlias")
 ```
 
 This renders a macro with some parameters using an anonymous object:
 
 ```csharp
-@Umbraco.RenderMacro("myMacroAlias", new { name = "Ned", age = 28 })
+@await Umbraco.RenderMacroAsync("myMacroAlias", new { name = "Ned", age = 28 })
 ```
 
 This renders a macro with some parameters using a dictionary
 
 ```csharp
-@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
+@await Umbraco.RenderMacroAsync("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 ```
 
-[UmbracoHelper Documentation](../../Querying/UmbracoHelper/index-v8.md)
+[UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 
 ## Accessing Member data
 
-`@Members` is the gateway to everything related to members when templating your site. [MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
+`IMemberManager` is the gateway to everything related to members when templating your site. [IMemberManager Documentation](../../Querying/IMemberManager/index.md)
 
 ```csharp
-@if(Members.IsLoggedIn())
-{
-    var profile = Members.GetCurrentMemberProfileModel();
-    var umbracomember = Members.GetByUsername(profile.UserName);
+@using Umbraco.Cms.Core.Security;
+@inject IMemberManager _memberManager;
 
-    <h1>@umbracomember.Name</h1>
-    <p>@umbracomember.Value<string>("bio")</p>
-}
+@if(_memberManager.IsLoggedIn())
+    {
+        <p>A Member is logged in</p>
+    }
+    else
+    {
+        <p>No member is logged in</p>
+    }
 ```
 
 ## Models Builder

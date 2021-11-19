@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 In this article, you’ll find all relevant information to be aware of when a site is migrated from the old to the new Umbraco Cloud infrastructure. This article is kept up-to-date should any new information arise.
 
 ## Schedule and timing
-Projects are scheduled for migration through Q3, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email 2 weeks in advance with the specific date and time.
+Projects are scheduled for migration through Q4, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email with the specific date and time.
 
 ### Rescheduling migration
 In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>.
@@ -20,16 +20,14 @@ The new infrastructure comes with minimum requirements on what version of Umbrac
 
 |   |  Minimum required version |  
 |---|---|---|---|
-|  Umbraco CMS  |  8.6.7 |
-|  Umbraco Forms  |  8.4.4 |
+|  Umbraco CMS  |  8.1.0 |
 |  Umbraco Deploy  |  4.0.5 |
 
 ### Umbraco 7
 
 |   |  Minimum required version |  
 |---|---|---|---|
-|  Umbraco CMS  |  7.7.6 |
-|  Umbraco Forms  |  6.0.8 |
+|  Umbraco CMS  |  7.7.0 |
 |  Umbraco Deploy |  2.0.18 |
 
 You can find the Umbraco CMS, Forms and Deploy version for each environment listed on the project page in the Umbraco Cloud Portal:

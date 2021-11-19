@@ -1,7 +1,7 @@
 ---
 state: complete
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 ---
 
 # Searchable Trees (ISearchableTree)

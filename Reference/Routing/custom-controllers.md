@@ -149,10 +149,10 @@ or if you are using modelsbuilder:
 
 To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
-So for example, if your custom model is of type 'MyProductModel' then your `@inherits` directive will look like:
+So for example, if your custom model is of type 'MyProductViewModel' then your `@inherits` directive will look like:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductViewModel>
 ```
 
 :::note
@@ -190,7 +190,7 @@ Using Modelsbuilder you will find that all the generated models have a construct
 ```csharp
 public class MyProductViewModel : ProductPage
 {
-    // The PublishedContentWrapped accepts an IPublishedContent item as a constructor
+    // The ProductPage model accepts an IPublishedContent item as a constructor
     public MyProductViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
     {
     }
@@ -257,7 +257,7 @@ namespace My.Website
 and in our template
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductViewModel>
 @{
 Layout = "Master";
 }

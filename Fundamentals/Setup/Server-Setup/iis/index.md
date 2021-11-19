@@ -8,7 +8,7 @@ versionFrom: 9.0.0
 
 ### Configuring IIS for .NET 5
 
- - Install the "ASP.NET Core 5.0 Runtime - Windows Hosting Bundle Installer" https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-5.0.8-windows-hosting-bundle-installer
+ - Install the "ASP.NET Core 5.0 Runtime - Windows Hosting Bundle Installer" https://dotnet.microsoft.com/permalink/dotnetcore-current-windows-runtime-bundle-installer
  - Once you have the hosting bundle installed and have restarted IIS (`net stop was /y` followed by `net start w3svc`), create a site in IIS as you would for a v8 site, however you need to ensure that ".NET CLR version" is set to "No Managed Code" for the Application Pool.
 
 ![IIS Application Pool](images/iis-app-pool-core.png)

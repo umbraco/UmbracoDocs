@@ -12,6 +12,8 @@ The release of V8 has moved many of the previous configuration options from XML 
 ## The following Configuration Files remain in Umbraco 8
 
 ### [web.config](webconfig/)
+The heart of your web application that hosts many configuration settings required for your application.
+
 This file can be found at the following path: /web.config
 
 ### [tinyMceConfig.config](tinyMceConfig/index.md)
@@ -39,7 +41,7 @@ This file can be found at the following path: /config/HealthChecks.config
 
 ### Image Processor 
 
-The configuration for the Image Processor the library responsible for the on the fly processing of images in Umbraco.
+The configuration for Image Processor, the library responsible for "on the fly processing" of images in Umbraco.
 
 There are three configuration files
 /imageprocessor/cache.config
@@ -52,10 +54,10 @@ There are three configuration files
 Configuration file for legacy NotFoundHandlers
 
 ### [applications.config](applications/index.md)
-Configuration options of setting up sections within the Umbraco Backoffice.
+Configuration options for setting up sections within the Umbraco Backoffice.
 
 ### [BaseRestExtensions.config](BaseRestExtensions/index.md)
-The 'BaseRestExtension.config' contains the data necessary for the /Base system when exposing the methods in your class library.
+The 'BaseRestExtension.config' contains the data necessary for the /Base system when exposing methods in your class library.
 
 ### [dashboards.config](dashboard/index.md)
 Configuration options for controlling which dashboards appear in which sections of the backoffice and who has the permissions to see them.
@@ -67,7 +69,7 @@ This configuration file lists the Embedded Media Providers configured for use in
 The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
 
 ### [ExamineSettings.config](ExamineSettings)
-The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
+The 'ExamineSettings.config' file shows all the configuration options for Examine.
 
 ### [fileSystemProviders.config](fileSystemProviders/index.md)
 The 'fileSystemProviders.config' file contains the configuration for the file system providers used by Umbraco to interact with file systems.
@@ -89,7 +91,7 @@ This is now obsolete and there are better ways to do UrlRewriting, such as withi
 In v8 Serilog is used for logging, use these files to configure this:
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
-* `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
+* `/config/serilog.user.config` a sublogger that allows you to make modifications without affecting the main Umbraco logger
 
 
 

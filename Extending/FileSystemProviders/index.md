@@ -24,7 +24,7 @@ using Umbraco.Cms.Infrastructure.DependencyInjection;
 
 namespace UmbracoExamples.Composition
 {
-    public class SetMediaFileSystemComposer : IUserComposer
+    public class SetMediaFileSystemComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -188,7 +188,7 @@ using Umbraco.Cms.Infrastructure.DependencyInjection;
 
 namespace UmbracoExamples.Composition
 {
-    public class FileSystemComposer : IUserComposer
+    public class FileSystemComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {

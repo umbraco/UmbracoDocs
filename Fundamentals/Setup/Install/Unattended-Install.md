@@ -117,7 +117,7 @@ We have added support for unattended installs with Name, Email and Password, and
 ### CLI
 
 ```powershell
-dotnet new umbraco -n MyNewProject --FriendlyName "Friendly User" --Email user@email.com --Password password1234 --ConnectionString "Server=(localdb)\\Umbraco;Database=MyDatabase;Integrated Security=true" --version 9.0.0
+dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@email.com --password password1234 --connection-string "Server=(localdb)\Umbraco;Database=MyDatabase;Integrated Security=true" --version 9.0.0
 ```
 
 ### Visual Studio
