@@ -17,7 +17,7 @@ There are several benefits of HTTPS:
 
 Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
 
-## Set UseSSL configuration option
+## Set UseHttps configuration option
 
 Umbraco allows you to force HTTPS for all backoffice communications by using the following configuration:
 
