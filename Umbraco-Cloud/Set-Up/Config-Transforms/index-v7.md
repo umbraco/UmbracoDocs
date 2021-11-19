@@ -63,6 +63,7 @@ Here is an example of how that config transform would look:
                 <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
                     <match url=".*" />
                     <conditions>
+                        <add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
                         <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
                         <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
                         <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />

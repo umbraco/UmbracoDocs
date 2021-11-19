@@ -18,9 +18,9 @@ If you want to do a transform on your `Web.config` file for the Live environment
 
 The `{environment}` part needs to be replaced with the target environment, for which there are currently 3 possibilities for each project:
 
-1. `production`
-2. `staging`
-3. `live`
+1. `Production`
+2. `Staging`
+3. `Development`
 
 This file needs to be created on a local clone of your project, as this will ensure that the file is added to the project repository.
 
@@ -53,27 +53,29 @@ Here is an example of how that config transform would look:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-    <system.webServer>
-        <rewrite xdt:Transform="InsertIfMissing">
-            <rules>
-                <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
-                    <match url=".*" />
-                    <conditions>
-                        <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
-                        <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-                        <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-                        <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
-                        <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
-                    </conditions>
-                    <action type="Redirect" url="http://swato.dk/{R:0}" appendQueryString="true" redirectType="Permanent" />
-                </rule>
-            </rules>
-        </rewrite>
-    </system.webServer>
+	<location>
+		<system.webServer>
+			<rewrite xdt:Transform="InsertIfMissing">
+				<rules>
+					<rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
+						<match url=".*" />
+						<conditions>
+							<add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
+							<add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+							<add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+							<add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+							<add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+						</conditions>
+						<action type="Redirect" url="http://swato.dk/{R:0}" appendQueryString="true" redirectType="Permanent" />
+					</rule>
+				</rules>
+			</rewrite>
+		</system.webServer>
+	</location>
 </configuration>
 ```
 
-This config transform will add a new `<rule>` to `<configuration><system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
+This config transform will add a new `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
 
 ## Forced transforms
 
@@ -89,15 +91,15 @@ For package developers it can be useful to add a config transform that needs to 
 
 We need to create 3 transform files named after the package. A good convention is to use your company name and the package name to make sure that there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:
 
-- `~/AcmeEnvironmentColor.Web.development.xdt.config`
-- `~/AcmeEnvironmentColor.Web.staging.xdt.config`
-- `~/AcmeEnvironmentColor.Web.live.xdt.config`
+- `~/AcmeEnvironmentColor.Web.Development.xdt.config`
+- `~/AcmeEnvironmentColor.Web.Staging.xdt.config`
+- `~/AcmeEnvironmentColor.Web.Production.xdt.config`
 
 Again, these types of prefixed files can be placed next to any other file so if you also need to transform `~/config/Dashboard.config` specifically for your package, then you can create three transform files for that as well, e.g.:
 
-- `~/config/AcmeEnvironmentColor.Dashboard.development.xdt.config`
-- `~/config/AcmeEnvironmentColor.Dashboard.staging.xdt.config`
-- `~/config/AcmeEnvironmentColor.Dashboard.live.xdt.config`
+- `~/config/AcmeEnvironmentColor.Dashboard.Development.xdt.config`
+- `~/config/AcmeEnvironmentColor.Dashboard.Staging.xdt.config`
+- `~/config/AcmeEnvironmentColor.Dashboard.Production.xdt.config`
 
 :::note
 Keep in mind that a misconfigured config transform may block Data Extraction on your project. Please see [here](../../Troubleshooting/Deployments/Changes-Not-Being-Applied) for more details.
