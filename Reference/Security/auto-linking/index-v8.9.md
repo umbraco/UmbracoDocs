@@ -22,7 +22,7 @@ To enable auto linking there is an extension method on `Microsoft.Owin.Security.
 
 If you have installed the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions) and are using the Azure Active Directory provider, it will create a `UmbracoADAuthExtensions.cs` file which configures the AAD options (`OpenIdConnectAuthenticationOptions`). You can extend these options like:
 
-```cs
+```Csharp
 adOptions.SetBackOfficeExternalLoginProviderOptions(
     new BackOfficeExternalLoginProviderOptions
     {
@@ -119,7 +119,7 @@ Do not flow large amounts of data into the backoffice identity because this info
 
 _This is a very simplistic example for brevity, no null checks, etc..._
 
-```cs
+```Csharp
 adOptions.SetBackOfficeExternalLoginProviderOptions(
     new BackOfficeExternalLoginProviderOptions
     {
