@@ -24,7 +24,7 @@ These default collections can be removed, reordered, replaced, etc. by implement
 
 ### Example - Creating a Composer to listen for ContentSavingNotification
 
-This example shows how to create a component and an notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
+This example shows how to create a component and a notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
 We create a new C# class that implements `IComposer` and use it register our notification handler.
 
