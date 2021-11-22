@@ -14,6 +14,27 @@ Each story has interactive controls that allow you to change the state of the co
 
 You can also change the stylesheet of custom properties, to see how the component will look like. Every story has a code example that you can copy and paste into your project, allowing you to implement the components in your own packages and extensions.
 
+## Installing the UI Library Components
+
+You can download the UI Library package from [Github](https://github.com/umbraco/Umbraco.UI/tree/dev/packages/uui).
+
+If you are installing a component via npm, there are two ways to import it:
+
+1. To import a specific component and register it at the same time, use the following command:
+
+    ```sql
+    import '@umbraco-ui/uui-button/lib';
+    ```
+
+2. To build on top of the components functionality, you can extend its class:
+
+    ```sql
+    import { UUIButtonElement } from 
+    '@umbraco-ui/uui-button/lib/uui-button.element';
+    ```
+
+For more information on installation, CDN, or included components, see the [Readme file](https://github.com/umbraco/Umbraco.UI/blob/dev/packages/uui/README.md) in the [Github](https://github.com/umbraco/Umbraco.UI/tree/dev/packages/uui) project.
+
 ## Getting Started with the UI Library
 
 The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library.  The Storybook contains two tabs:
