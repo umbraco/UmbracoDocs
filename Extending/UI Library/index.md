@@ -1,12 +1,10 @@
----
-versionFrom: 9.1.0
----
-
 # UI Library
 
-The UI Library is a set of web components that can be used to build Umbraco User Interface. The UI Library separates the user interface from Umbraco’s business logic and creates a unified user experience, with coherent styling and naming, across all the Umbraco platforms and projects including the ones developed by you.
+The Umbraco UI Library is a set of web components that can be used to build Umbraco User Interface. The UI Library separates the user interface from Umbraco’s business logic and creates a unified user experience, with coherent styling and naming, across all the Umbraco platforms and projects including the ones developed by you.
 
 With the UI Library, you get a collection of visual building blocks that consists of pieces to build any UI in Umbraco. Each component is a building block updating its display according to the data passed to it.
+
+Currently, the UI Library is a standalone project. The UI Library components are not yet shipped to the backoffice with Umbraco 9.
 
 ## UI Library Storybook
 
@@ -15,3 +13,12 @@ With the UI Library, you get a collection of visual building blocks that consist
 Each story has interactive controls that allow you to change the state of the component in real-time. Every publicly available property is editable in Storybook, so you can test out various configurations and use-cases.
 
 You can also change the stylesheet of custom properties, to see how the component will look like. Every story has a code example that you can copy and paste into your project, allowing you to implement the components in your own packages and extensions.
+
+## Getting Started with the UI Library
+
+The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library.  The Storybook contains two tabs:
+
+1. Canvas - The Canvas tab allows to use the interactive controls.
+    ![Canvas Tab](images/Canvas_tab.png)
+2. Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
+    ![Docs Tab](images/Docs_tab.png)
