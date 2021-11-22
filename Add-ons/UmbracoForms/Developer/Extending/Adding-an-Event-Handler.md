@@ -6,7 +6,9 @@ state: complete
 verified-against: beta-1
 ---
 
-# Adding a server-side notification handler to Umbraco Forms
+# Adding a server-side notification handlers to Umbraco Forms
+
+## Form validation notification
 
 Add a new class to your project as a handler for the `FormValidateNotification` notification:
 
@@ -76,4 +78,80 @@ public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder 
 {
     builder.AddNotificationHandler<FormValidateNotification, FormValidateNotificationHandler>();
 }
+```
+
+## Service notifications
+
+The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` trigger following notifications just before or after an entity handled by the service is modified.
+
+The "-ing" events allow for the entity being changed to be modified before the operation takes place, or to cancel the operation.  The "-ed" events fire after the update is complete.
+
+Both can be wired up using a composer and component:
+
+```csharp
+    public class TestSiteComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<FormSavingNotification, FormSavingNotificationHandler>();
+        }
+    }
+
+    public class FormSavingNotificationHandler : INotificationHandler<FormSavingNotification>
+    {
+        public void Handle(FormSavingNotification notification)
+        {
+            foreach (Form form in notification.SavedEntities)
+            {
+                foreach (Page page in form.Pages)
+                {
+                    foreach (FieldSet fieldset in page.FieldSets)
+                    {
+                        foreach (FieldsetContainer fieldsetContainer in fieldset.Containers)
+                        {
+                            foreach (Field field in fieldsetContainer.Fields)
+                            {
+                                field.Caption += " (updated)";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+```
+
+## Backoffice entry rendering events
+
+When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user.  This is shown in the following example:
+
+```csharp
+    public class TestSiteComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<EntrySearchResultFetchingNotification, EntrySearchResultFetchingNotificationHandler>();
+        }
+    }
+
+    public class EntrySearchResultFetchingNotificationHandler : INotificationHandler<EntrySearchResultFetchingNotification>
+    {
+        public void Handle(EntrySearchResultFetchingNotification notification)
+        {
+            var transformedFields = new List<object>();
+            foreach (var field in notification.EntrySearchResult.Fields)
+            {
+                if (field?.ToString() == "Test")
+                {
+                    transformedFields.Add("Test (updated)");
+                }
+                else
+                {
+                    transformedFields.Add(field);
+                }
+            }
+
+            notification.EntrySearchResult.Fields = transformedFields;
+        }
+    }
 ```
