@@ -56,3 +56,7 @@ Introducing the health checks provided to confirm your Umbraco Forms installatio
 ## [Localization](Localization/index.md)
 
 Discusses how the backoffice for Umbraco Forms is available translated into the language your editors like to work with.
+
+## [Content Apps](ContentApps/index.md)
+
+Adding an Umbraco content app to the Umbraco Forms backoffice section.
