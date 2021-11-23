@@ -22,5 +22,14 @@ using Umbraco.Cms.Core.Models;
 
 ## Constructors
 
+### new ServerRegistration(string serverAddress, string serverIdentity, DateTime registered)
+
+Constructor for creating a new ServerRegistration object where the necessary parameters are the serverAddress as a `string`, the serverIdentity as a `string` and the date and time of registration as a `DateTime`
+
+### new ServerRegistration(int id, string serverAddress, string serverIdentity, DateTime registered, DateTime accessed, bool isActive, bool isSchedulingPublisher)
+
+A second constructor exists but it should not be used because it is used to reconstruct a `ServerRegistration` from the data source.
+
+
 ## Properties
 
