@@ -49,7 +49,7 @@ public class MyClass
 }
 ```
 
-In Razor views, you can access the macro service through the `@inject` directive:
+In Razor views, you can access the media service through the `@inject` directive:
 
 ```csharp
 @inject IMediaService MediaService
