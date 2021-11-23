@@ -181,8 +181,10 @@ namespace RoutingDocs.ContentFinders
             // Find the root node with a matching domain to the incoming request
             var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains?
-                .Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == $"https://{contentRequest.Uri.Authority}")
-                .FirstOrDefault();
+                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority 
+                || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+                
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
 
             if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
@@ -197,7 +199,7 @@ namespace RoutingDocs.ContentFinders
             }
 
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode is not null)
             {
