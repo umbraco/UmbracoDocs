@@ -213,21 +213,17 @@ namespace RoutingDocs.ContentFinders
 }
 ```
 
-Example on how to register your own implementation:
+You can configure Umbraco to use your own implementation in the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
 
 ```csharp
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace RoutingDocs.ContentFinders
+public void ConfigureServices(IServiceCollection services)
 {
-    public class UpdateContentFindersComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetContentLastChanceFinder<My404ContentFinder>();
-        }
-    }
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>();
+        .Build();
 }
 ```
