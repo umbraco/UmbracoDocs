@@ -4,7 +4,7 @@ versionTo: 8.0.0
 meta.Title: "Content Apps"
 ---
 
-# Localization
+# Content Apps
 
 From versions 8.10, [Umbraco Content Apps](../../../../Extending/Content-Apps/index.md) can be configured to appear alongside forms in the Umbraco Forms backoffice section.
 
