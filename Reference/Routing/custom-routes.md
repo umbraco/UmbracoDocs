@@ -455,6 +455,17 @@ The Umbraco magic will now instead happen where we route the controller, here we
 }
 ```
 
+:::note
+If a request is considered a client side request (static file) e.g. `/sitemap.xml` the `var umbracoContext = umbracoContextAccessor.GetRequiredUmbracoContext();` needs to be replaced with 
+
+```
+using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+{
+     var umbracoContext = umbracoContextReference.UmbracoContext;
+}
+```
+:::
+
 The `Compose` method of our composer is much the same as any other normal routing, with one difference we call `ForUmbracoPage` on the `MapControllerRoute` where we pass in our `FindContent` method. The `FindContent` method is also largely the same as it was in the controller in the `IVirtualPageController` example, with one important difference. Since we can no longer inject our required service into the constructor, we instead request them using `actionExecutingContext.HttpContext.RequestServices.GetRequiredService`. It's important to note here that you should *not* save the `HttpContext` or the `IServiceProvider` you get from the `actionExecutingContext` to a field or property on the class since these will be specific for each request. 
 
 With this we have a custom routed controller within the Umbraco pipeline, if you navigate to `/shop` or `/shop/product/<SKU>` you will see the controllers actions being called with the content found in `FindContent`
