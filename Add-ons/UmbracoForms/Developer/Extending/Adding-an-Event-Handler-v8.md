@@ -182,6 +182,8 @@ When a form or folder is _moved_ there is no specific service event.  However in
     }
 ```
 
+If a folder is being moved, the key within the `AdditionalData` dictionary is `"MovedFromParentId"`.
+
 ## Backoffice entry rendering events
 
 When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user.  This is shown in the following example:

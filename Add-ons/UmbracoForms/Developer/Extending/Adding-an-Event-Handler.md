@@ -121,6 +121,35 @@ Both can be wired up using a composer and component:
     }
 ```
 
+When a form or folder is _moved_ there is no specific service event.  However information available in the `State` dictionary available on the notification object can be used to determine whether the item was moved, and if so, where from:
+
+```csharp
+    public class TestSiteComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<FormSavingNotification, FormSavingNotificationHandler>();
+        }
+    }
+
+    public class FormSavingNotificationHandler : INotificationHandler<FormSavingNotification>
+    {
+        private readonly ILogger<FormSavingNotification> _logger;
+
+        public FormSavingNotificationHandler(ILogger<FormSavingNotification> logger) => _logger = logger;
+
+        public void Handle(FormSavingNotification notification)
+        {
+            foreach (Form savedEntity in notification.SavedEntities)
+            {
+                _logger.LogInformation($"Form updated. New parent: {savedEntity.FolderId}. Old parent: {notification.State["MovedFromFolderId"]}");
+            }
+        }
+    }
+```
+
+If a folder is being moved, the key within the `State` dictionary is `"MovedFromParentId"`.
+
 ## Backoffice entry rendering events
 
 When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user.  This is shown in the following example:
