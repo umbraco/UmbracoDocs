@@ -6,7 +6,9 @@ state: complete
 verified-against: 9.0.1
 update-links: true
 ---
-:::note In Umbraco 9 configuration is json based rather than xml, you can view the v8 config documentation [here](../Config/index.md) :::
+:::note 
+In Umbraco 9 configuration is json based rather than xml, you can view the v8 config documentation [here](../Config/index.md) 
+:::
 # Configuration Files
 
 In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
