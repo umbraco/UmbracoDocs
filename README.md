@@ -46,7 +46,12 @@ This library is released under the [MIT License](LICENSE.md).
 
 There is an experimental project which supports rendering the documentation locally.
 
-You can install from nuget as a global tool see https://www.nuget.org/packages/Umbraco.Docs.Preview.App/  
+You can install this from [nuget](https://www.nuget.org/packages/Umbraco.Docs.Preview.App/) as a dotnet global tool by running the following in a terminal.
+
+```bash
+$ dotnet tool install -g Umbraco.Docs.Preview.App
+```
+
 Or check out the source at https://github.com/umbraco/UmbracoDocs.Preview
 
-Once installed just navigate to your local clone for this repository in a terminal and run the command `umbracodocs`
+Once installed, navigate to your local clone of the UmbracoDocs repository in a terminal and run the command `umbracodocs`
