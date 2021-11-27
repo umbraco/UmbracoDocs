@@ -41,3 +41,12 @@ Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug f
 Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
 ## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 This library is released under the [MIT License](LICENSE.md).
+
+# Previewing rendered output locally
+
+There is an experimental project which supports rendering the documentation locally.
+
+You can install from nuget as a global tool see https://www.nuget.org/packages/Umbraco.Docs.Preview.App/  
+Or check out the source at https://github.com/umbraco/UmbracoDocs.Preview
+
+Once installed just navigate to your local clone for this repository in a terminal and run the command `umbracodocs`
