@@ -54,4 +54,4 @@ $ dotnet tool install -g Umbraco.Docs.Preview.App
 
 Or check out the source at https://github.com/umbraco/UmbracoDocs.Preview
 
-Once installed, navigate to your local clone of the UmbracoDocs repository in a terminal and run the command `umbracodocs`
+Once installed, navigate to your local clone of the UmbracoDocs repository and run the command `umbracodocs`. This will start a local webserver (the URL will be shown), which you can open in your browser and view the rendered documentation.
