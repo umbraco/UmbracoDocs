@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.2.0
+versionFrom: 9.0.0
+verified-against: 9.0.0
 state: complete
 updated-links: true
 meta.Title: "Content Apps"
@@ -201,11 +202,13 @@ When a role restriction is given in the manifest, it overrides any other restric
 
 ## C#: Creating a Content App
 
-This is an example of how to create a Content App with C# and perform your own custom logic to show a Content App. Create a `WordCounter.cs` file with the following implementation: 
+This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App. When registering a Content App, the C# class needs to implement the `IComposer` interface as of Umbraco v9 `IUserComposer` interface is obsolete. Create a `WordCounter.cs` file with the following implementation:
 
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Models.Membership;
@@ -254,23 +257,6 @@ namespace My.Website
             };
         }
     }
-}
-```
-
-You can register a content app in the `ConfigureServices` method in the `Startup.cs`:
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // Register the content app
-        .AddContentApp<WordCounterApp>()
-        .Build();
-
 }
 ```
 
