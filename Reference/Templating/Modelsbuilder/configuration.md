@@ -9,7 +9,7 @@ meta.Description:  Explanation of how to configure models builder
 
 The following configuration option can be set in the application settings (in the `appsettings.json` file):
 
-* `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
+* `Umbraco.CMS.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
     * `Nothing`: Do not generate models.
     * `InMemoryAuto`(default): Generate models in a dynamic in-memory assembly.
     * `SourceCodeManual`: Generate models in `~/umbraco/models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
