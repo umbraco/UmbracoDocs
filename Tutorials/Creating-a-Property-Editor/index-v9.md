@@ -70,10 +70,9 @@ Inside the `package.manifest`, we'll add the below JSON to describe the property
 You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file in `/App_Code/` to register the editor this way.
 
 ```csharp
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Web.UI
+namespace Umbraco.Cms.Core.PropertyEditors
 {
     [DataEditor(
         alias: "Suggestions editor",
@@ -83,9 +82,9 @@ namespace Umbraco.Web.UI
         Icon = "icon-list")]
     public class Suggestions : DataEditor
     {
-        public Suggestions(ILogger logger)
-            : base((IDataValueEditorFactory)logger)
-        { }
+        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
+            IIOHelper ioHelper)
+            : base(dataValueEditorFactory)
 
     }
 }
@@ -210,4 +209,4 @@ When we save or publish, the value of the data type is automatically synced to t
 
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
-[Next - Adding configuration to a property editor](part-2.md)
+[Next - Adding configuration to a property editor](part-2-v9.md)

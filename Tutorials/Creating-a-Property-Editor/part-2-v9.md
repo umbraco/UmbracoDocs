@@ -45,14 +45,12 @@ It is also possible to add configuration if you have chosen to create a property
 First create a `SuggestionConfiguration.cs` file:
 
 ```csharp
-using Umbraco.Core.PropertyEditors;
-
-namespace Umbraco.Web.UI
+namespace Umbraco.Cms.Core.PropertyEditors
 {
     public class SuggestionConfiguration
     {
         [ConfigurationField("isEnabled", "Enabled?", "boolean", Description = "Provides Suggestions")]
-        public bool Preview { get; set; }
+        public bool Enabled { get; set; }
     }
 }
 ```
@@ -60,41 +58,45 @@ namespace Umbraco.Web.UI
 Then create a `SuggestionConfigurationEditor.cs` file:
 
 ```csharp
-using Umbraco.Core.PropertyEditors;
+using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Web.UI
+namespace Umbraco.Cms.Core.PropertyEditors
 {
-    public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
+     public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
     {
+        public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
+        {
+        }
     }
+
 }
 ```
 
 Finally, edit the `Suggestion.cs` file from step one until it looks like the example below:
 
 ```csharp
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Web.UI
+namespace Umbraco.Cms.Core.PropertyEditors
 {
     [DataEditor(
         alias: "Suggestions editor",
-        name: "Suggestions",
+        name: "Suggestions Editor",
         view: "~/App_Plugins/Suggestions/suggestion.html",
         Group = "Common",
         Icon = "icon-list")]
     public class Suggestions : DataEditor
     {
-        public Suggestions(ILogger logger)
-            : base((IDataValueEditorFactory)logger)
-        { }
+        private readonly IIOHelper _ioHelper;
+        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
+            IIOHelper ioHelper)
+            : base(dataValueEditorFactory)
 
-        protected override IConfigurationEditor CreateConfigurationEditor()
         {
-            return new SuggestionConfigurationEditor();
+            _ioHelper = ioHelper;
         }
-
+        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
+        
     }
 }
 ```
