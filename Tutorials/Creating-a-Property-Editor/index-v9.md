@@ -151,7 +151,7 @@ Now our basic parts of the editor are done, namely:
 - The controller for wiring up the editor with angular
 - The stylesheet for defining our data type styles
 
-## Registering the data type in Umbraco
+## Registering the Data Type in Umbraco
 
 We will now restart our application. In the Document Type, let's add our newly added property editor "Suggestions" and save it.
 
@@ -174,7 +174,7 @@ angular.module("umbraco")
     function ($scope) {
 
     // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
-   $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club?", "Are you hungry?"];
+   $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
 
     // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
     $scope.getSuggestion = function () {
