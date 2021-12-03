@@ -17,7 +17,7 @@ using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Data.Storage;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Persistence.Dtos;
-using Umbraco.Core.Logging;
+using Microsoft.Extensions.Logging;
 using Umbraco.Core.Composing;
 
 namespace MyFormsExtensions
