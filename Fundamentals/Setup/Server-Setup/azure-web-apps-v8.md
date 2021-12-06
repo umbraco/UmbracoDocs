@@ -40,7 +40,8 @@ You may also want add a setting `WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG
 The `Umbraco.Core.MainDom.Lock` setting is for Umbraco 8.6+. Having this setting for versions between 8.0-8.5 will not have any affect. It is recommended to use 8.6+ when running Umbraco on Azure Web Apps since this setting will prevent file locking issues.
 :::
 
-__The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers. If Umbraco utilises all of the available database DTU during startup - it may fail to start, or prevent other instances within a load balanced configuration from starting as if it can't query the database then it can't obtain a `MainDom` lock in order to start. In the worst case scenario Umbraco may end up in a application recycling lopp trying to acquire this lock, so you must ensure that your database scaling is sufficient for the number of intsances and volume of content that you have.
+__The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers. If Umbraco uses all of the available database DTU during startup it may fail to start, or prevent other instances from starting. If Umbraco can't query the database then it can't obtain a `MainDom` lock in order to start.  
+In the worst case scenario Umbraco may end up in a application recycling loop trying to acquire this lock. Ensure that your database scaling is sufficient for the number of instances and volume of content that you have.
 
 __If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
 [Load Balancing documentation](Load-Balancing/index.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
