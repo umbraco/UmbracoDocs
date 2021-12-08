@@ -43,7 +43,7 @@ namespace My.Website
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>()
+            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>();
         }
     }
 
