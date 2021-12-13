@@ -20,15 +20,19 @@ These are the IPs you will need to add:
 13.94.247.45
 52.157.96.229
 ```
+These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs on the old platform they will be updated here.
+
 :::note
 Above IPs only apply to websites created before H1 2021 or websites that haven't been migrated to the new platform.
 :::
-
-As part of the [migration to our new platform](https://umbraco.com/blog/the-future-of-umbraco-cloud/) the outgoing IPs of the new platform are changing. Please reach out to support in order to get the outgoing IPs for your project.
-These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs they will be updated here.
 
 :::note
 When new IPs are added we will also send the information directly to the [Technical Contacts](../Team-Members/Technical-Contact.md) for each Umbraco Cloud project.
 :::
 
 If you are using an external service that is not behind a firewall, you do not need to include the Umbraco Cloud IPs in an allow list.
+
+## Outgoing IPs for project on new platform
+As part of the [migration to our new platform](https://umbraco.com/blog/the-future-of-umbraco-cloud/) the outgoing IPs of the new platform are changing. Please reach out to support in order to get the outgoing IPs for your project.
+
+A change of plan for a project on the new platform enforces a new set of outgoing IPs for that project. If the project to be changed are using external services and has its outgoing IPs whitelisted, please reach out to Umbraco support prior to upgrading/downgrading the plan.
