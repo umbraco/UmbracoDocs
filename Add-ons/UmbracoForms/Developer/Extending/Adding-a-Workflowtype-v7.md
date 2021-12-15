@@ -45,7 +45,7 @@ public class TestWorkflow : WorkflowType
             rf.ValuesAsString();
         }
 
-        // If we are supporting the modification of from entries (i.e. via the AllowEditableFormSubmissions configuration option), 
+        // If we are supporting the modification of form entries (i.e. via the AllowEditableFormSubmissions configuration option), 
         // and we have  altered a field, we can save it using the record storage.
         RecordStorage store = new RecordStorage();
         store.UpdateRecord(record, e.Form);
