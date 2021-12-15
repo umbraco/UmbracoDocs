@@ -32,7 +32,7 @@ When new IPs are added we will also send the information directly to the [Techni
 
 If you are using an external service that is not behind a firewall, you do not need to include the Umbraco Cloud IPs in an allow list.
 
-## Outgoing IPs for project on new platform
+## Outgoing IPs for projects on the new platform
 As part of the [migration to our new platform](https://umbraco.com/blog/the-future-of-umbraco-cloud/) the outgoing IPs of the new platform are changing. Please reach out to support in order to get the outgoing IPs for your project.
 
-A change of plan for a project on the new platform enforces a new set of outgoing IPs for that project. If the project to be changed are using external services and has its outgoing IPs whitelisted, please reach out to Umbraco support prior to upgrading/downgrading the plan.
+A change of plan for a project on the new platform enforces a new set of outgoing IPs for that project. If the project to be changed is using external services and has its outgoing IPs whitelisted, please reach out to Umbraco support prior to upgrading/downgrading the plan.
