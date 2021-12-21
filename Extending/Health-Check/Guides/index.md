@@ -30,3 +30,5 @@ Below is a list of guides for Health Checks in Umbraco.
 ## [SMTP](SMTP.md)
 
 ## [Strict transport security header](StrictTransportSecurityHeader.md)
+
+## [Fixed Application Url](FixedApplicationUrl.md)
