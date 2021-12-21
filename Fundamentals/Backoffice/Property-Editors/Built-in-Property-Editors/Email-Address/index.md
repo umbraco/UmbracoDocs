@@ -37,11 +37,12 @@ Displays an email address.
 ### With Modelsbuilder
 
 ```csharp
-@if (!string.IsNullOrWhiteSpace(Model.Email))
+@if (!Model.HasValue(Model.Email))
 {
     var emailAddress = Model.Email;
     <p>@emailAddress</p>
 }
+
 ```
 
 ## Add value programmatically

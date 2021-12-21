@@ -18,7 +18,7 @@ Below, you will find instructions on how to customise the login screen.
 
 ## Greeting
 
-The login screen features a greeting, which you can personalize by changing the language file of your choice. For example for en-US you would add the following keys to: `~/umbraco/config/lang/en_us.xml`
+The login screen features a greeting which you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd create a file called: `en_us.user.xml` in the directory `~/config/lang/`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary!
 
 ```xml
 <area alias="login">
@@ -31,8 +31,7 @@ The login screen features a greeting, which you can personalize by changing the 
     <key alias="greeting6">Happy Caturday</key>
 </area>
 ```
-
-You can customize other text in the login screen as well, grab the default values from `~/umbraco/config/lang/en.xml` and copy the keys you want to translate into your `~/umbraco/config/lang/MYLANGUAGE.xml` file.
+You can customize other text in the login screen as well, grab the default values and keys from `~/umbraco/config/lang/en.xml` and copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
 
 ## Password reset
 
@@ -70,16 +69,62 @@ An example:
 }
 ```
 
-## Background image
+## Custom background image and logo
 
-It is possible to customize the background image for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
+It is possible to customize the background image and the logo for the backoffice login screen by adding the `"Content"` section in the `appsettings.json` file:
 
 ```json
 "Umbraco": {
     "CMS": {
       "Content": {
-        "LoginBackgroundImage": "assets/img/login.jpg"
+        "LoginBackgroundImage": "../myImagesFolder/myLogin.jpg",
+        "LoginLogoImage": "../myImagesFolder/myLogo.svg"
       }
    }
 } 
 ```
+
+The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroot/umbraco/` folder.
+
+To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `css` folder, containing a css file, and a package.manifest file. An example structure might be:
+
+```
+/App_Plugins
+    /myLoginFolder
+        /css
+            /myLoginStyles.css
+        /package.manifest
+```
+
+An example stylesheet might be:
+
+```css
+    .login-overlay {
+    	background-color: #000;
+    }
+    
+    .login-overlay__background-image {
+    /* Override background image opacity here if needed */
+    /* opacity is set to 0.05 by default if background images is set */
+    	/*opacity:0.05;*/
+    	opacity:0;
+    	background-size:contain;
+    	background-image: none;
+    }
+    
+    div.login-overlay__logo {
+    	width: 10%;
+    }
+ ```
+ 
+An example package.manifest might be:
+
+```json
+    {
+    css: [
+        '~/App_Plugins/myLoginFolder/css/myLoginStyles.css'
+        ]
+    }
+```
+
+

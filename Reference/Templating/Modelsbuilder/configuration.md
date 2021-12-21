@@ -9,7 +9,7 @@ meta.Description:  Explanation of how to configure models builder
 
 The following configuration option can be set in the application settings (in the `appsettings.json` file):
 
-* `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
+* `Umbraco.CMS.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
     * `Nothing`: Do not generate models.
     * `InMemoryAuto`(default): Generate models in a dynamic in-memory assembly.
     * `SourceCodeManual`: Generate models in `~/umbraco/models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
@@ -46,7 +46,7 @@ The example below shows an example configuration using the SourceCodeManual mode
 Models Builder ships with a dashboard in the *Settings* section of Umbraco's backoffice. The dashboard does three things:
 
 * Details on how Models Builder is configured
-* Provides a way to generate models (in SourceCodeAuto mode only)
+* Provides a way to generate models (in SourceCodeManual mode only)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
 ![Models Builder Dashboard](images/ModelsBuilderDashboard-v9.png)

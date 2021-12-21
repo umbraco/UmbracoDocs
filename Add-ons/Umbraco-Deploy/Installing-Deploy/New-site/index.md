@@ -64,7 +64,7 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index-v9).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index).
 
 ### Set up CI/CD Pipeline
 

@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 state: complete
 updated-links: true
-verified-against: alpha-3
+verified-against: 9.0.0
 ---
 
 # Health check: Click-Jacking Protection
@@ -24,7 +24,7 @@ public class Startup
 {
     public void Configure(IApplicationBuilder app)
     {
-        app.UseXfo(options => options.Deny());
+        app.UseXfo(options => options.SameOrigin());
 
         ...
     }
@@ -42,7 +42,7 @@ public class Startup
     {
         app.Use(async (context, next) =>
         {
-            context.Response.Headers.Add("X-Frame-Options", "DENY");
+            context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
             await next();
         });
 

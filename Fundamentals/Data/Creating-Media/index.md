@@ -85,15 +85,15 @@ Having different folders for different media types makes it possible to restrict
 
 Choose __New Media Type__. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
-![Creating a Media Type](images/create-new-media-type.png)
+![Creating a Media Type](images/create-new-media-type_new.png)
 
 Name the Media Type _Employee Image_. Choose an icon by clicking the icon to the left of the name.
 
-### Adding tabs
+### Adding tabs/groups
 
-Before we start adding properties to the Media Type we need to create a group to put these in.
+Before we start adding properties to the Media Type we need to add a tab/group to put these in. To add a tab/group, Click on __Add tab__ or __Add group__ and call it _Image_.
 
-Click on __Add group__ and call it _Image_.
+For more information on adding a tab, see [Using tabs](../Adding-Tabs/index.md) article.
 
 ### Adding properties
 
@@ -111,11 +111,11 @@ Click __Add editor__, search for _cropper_ and choose __Image cropper__ under __
 
 Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](images/new-data-type.png)
+![Defining crops](images/new-data-type_new.png)
 
 Name the remaining four properties _Width_, _Height_, _Size_ and _Type_ and give them the aliases as mentioned in the image below. They should all use the __Label__ editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](images/finished-new-media-type.png)
+![Adding properties](images/finished-new-media-type_new.png)
 
 ## Defining a Media Type folder
 
@@ -127,7 +127,7 @@ Go back to the __Settings__ and create a new Media Type and name it _Employee Im
 
 We want the same basic functionality (same properties and tabs) as the __Folder__ Media type and that can be achieved by clicking __Compositions__ and selecting the __Folder__ Media Type. Now, Employee images will inherit tabs and properties from the Folder Media Type.
 
-![Compositions](images/folder-composition.png)
+![Compositions](images/folder-composition_new.png)
 
 Switch to a list view by clicking the **List view** tab and toggle the **Enable list view** option.
 

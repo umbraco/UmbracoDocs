@@ -31,9 +31,11 @@ To export all the entries from your Form:
 2. Navigate to the **Entries** you wish to export.
 3. Click **Export** in the top-right corner of the screen.
     ![Export button](images/Export.png)
-4. The Export dialog opens. Choose a format to export the Form records to.
+4. The Export dialog opens. Choose a format such as Microsoft Excel to export the Form records to.
     ![Export all dialog](images/ExportAllDialog.png)
 5. Click **Done**.
+
+If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files.  You can either download the files in the stucture that they are stored on the web server's disk.  Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
 ## Record Actions
 

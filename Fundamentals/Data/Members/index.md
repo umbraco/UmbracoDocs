@@ -1,8 +1,7 @@
 ---
 meta.Title: "Creating Members in Umbraco"
 meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
-versionFrom: 8.0.0
-needsV9Update: "true"
+versionFrom: 9.0.0
 ---
 
 # Members
@@ -33,15 +32,15 @@ Once the Member is created and saved you can access it by expanding the Members 
 
 ## Creating a Member Type
 
-You can create your own Member Types and add properties and tabs as you would with Document Types.
+You can create your own Member Types and add tabs, groups and properties as you would with Document Types.
 
 Go to the __Settings__ section, right-click __Member Types__ and select __Create__. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click __Save__.
 
-![Member Type Editor](images/Member-Type-Editor.png)
+![Member Type Editor](images/Member-Type-Editor_new.png)
 
 You will see that the __Membership__ group is added automatically to any Member Types you create. This group includes all the default Member Type properties listed above. The properties are locked, which means you cannot remove them, but you can still configure the settings for each property:
 
-![Configure property settings](images/member-type-property-settings.png)
+![Configure property settings](images/member-type-property-settings_new.png)
 
 It is possible to add more groups and more properties to each of the Member Types you create, as well as the default Member Type.
 
@@ -69,7 +68,36 @@ More information can be found under [security](../../../Reference/Security/#sens
 
 As a developer you are able to leverage your website when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
-Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the `web.config`.
+Members are created using ASP.NET Core Identity, there are some provider settings that can be set in appsettings.json - here are the defaults:
+
+```json
+{
+  "$schema": "./umbraco/config/appsettings-schema.json",  
+  "Umbraco": {
+    "CMS": {      
+      "Security": {
+        "AllowPasswordReset": true,
+        "AuthCookieDomain": "(No default, but takes a string)",
+        "AuthCookieName": "UMB_UCONTEXT",
+        "KeepUserLoggedIn": false,
+        "UsernameIsEmail": true,
+        "HideDisabledUsersInBackoffice": false,
+        "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
+        "MemberPassword": {
+          "RequiredLength": 10,
+          "RequireNonLetterOrDigit": false,
+          "RequireDigit": false,
+          "RequireLowercase": false,
+          "RequireUppercase": false,
+          "MaxFailedAccessAttemptsBeforeLockout": 5,
+          "HashAlgorithmType": "HMACSHA256"
+        }
+      }
+    }
+  }
+}
+```
+
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
 ### More information

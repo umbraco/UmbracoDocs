@@ -91,7 +91,7 @@ You can invoke a ViewComponent from anywhere (even from within a Controller or a
  @(await Component.InvokeAsync("ProductView")) 
 ```
 
-You can read about different ways of invoking your view component in the [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0#invoking-a-view-component) section of the Microsoft Docuemntation.view=aspnetcore-5.0)
+You can read about different ways of invoking your view component in the [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0#invoking-a-view-component) section of the Microsoft Documentation.view=aspnetcore-5.0)
 
 ## View Component Locations
 

@@ -8,7 +8,7 @@ meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 
 Umbraco Deploy supports the deployment of CMS schema information, definitions from the HQ's Forms package, along with managed content and media.  In addition it can be extended by package or custom solution developers to allow the deployment of custom data, such as that stored in your own database tables.
 
-Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also support deployment of custom data via the backoffice - similar to how Umbraco content and media can be queued for transfer and restored.
+As a package or solution developer, you can hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  It's also possible to provide the ability for editors to deploy custom data via the backoffice - in the same way that Umbraco content and media can be queued for transfer and restored.
 
 ## Concepts and Examples
 

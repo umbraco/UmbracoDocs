@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
 verified-against: alpha-4
-state: partial
-updated-links: false
+state: completed
+updated-links: true
 meta.Title: "How to install and configure your Umbraco installation"
 meta.Description: "Information on the requirements to setup, install & upgrade Umbraco"
 ---
@@ -28,10 +28,6 @@ Covers the steps to upgrade your copy of Umbraco to a newer version.
 
 Information about server setup for Umbraco including information about permissions and load balancing.
 
-## [Config](../../Reference/Config/index.md)
-
-:::note
-Please note that this section is currently not available for Umbraco 9.
-:::
+## [Config](../../Reference/V9-Config/index.md)
 
 How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.

@@ -13,10 +13,12 @@ You can configure the settings in `appSettings.json` file:
 
 ```json
 "Forms": {
+  "FieldTypes": {
       "Recaptcha2": {
         "PublicKey": "",
         "PrivateKey": ""
       }
+   }
 }
 
 ```

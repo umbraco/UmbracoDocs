@@ -1,6 +1,7 @@
 ---
 meta.Title: "Umbraco 9 articles"
 meta.Description: "Find a sorted list of articles that have already been updated for the upcoming release of Umbraco 9."
+versionFrom: 9.0.0
 ---
 
 # Umbraco 9 Articles
@@ -36,7 +37,7 @@ Please be aware that links to API documentation and other resources might not ha
   * [Data Types](Fundamentals/Data/Data-Types/)
   * [Scheduled Publishing](Fundamentals/Data/Scheduled-Publishing/)
   * [Users](Fundamentals/Data/Users/)
-  * [Templates](/Fundamentals/Design/Templates/)
+  * [Templates](Fundamentals/Design/Templates/)
   * [Umbraco Services](Fundamentals/Code/Umbraco-Services/index)
   * [Subscribing to Notifications](Fundamentals/Code/Subscribing-To-Notifications/)
   * [Creating Forms](Fundamentals/Code/Creating-Forms/index)

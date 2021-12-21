@@ -63,7 +63,8 @@ For illustration purposes, the following structure represents the full set of op
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
       "EnableAntiForgeryToken": true,
-      "SavePlainTextPasswords": false
+      "SavePlainTextPasswords": false,
+      "DisableFileUploadAccessProtection": false
     },
     "FieldTypes": {
       "DatePicker": {
@@ -101,6 +102,8 @@ This setting allows you to configure the name of the theme to use when an editor
 ### Form default settings configuration
 
 The following configured values are applied to all forms as they are created. They can then be amended on a per-form basis via the Umbraco backoffice.
+
+Once the form has been created, the values are set explicitly on the form, so subsequent changes to the defaults in configuration won't change the settings used on existing forms.
 
 #### ManualApproval
 
@@ -185,6 +188,11 @@ This setting needs to be a `true` or `false` value and will enable the ASP.NET A
 ### SavePlainTextPasswords
 
 This setting needs to be a `true` or `false` value and controls whether password fields provided in forms will be saved to the database. Defaults to `false`.
+
+### DisableFileUploadAccessProtection
+In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
+
+If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
 ## Field type specific configuration
 

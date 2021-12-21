@@ -52,3 +52,11 @@ Learn about the magic string formats that Umbraco Forms supports that can retrie
 ## [Health Checks](Healthchecks/index.md)
 
 Introducing the health checks provided to confirm your Umbraco Forms installation is running as intended. Understand how to handle any issues reported.
+
+## [Localization](Localization/index.md)
+
+Discusses how the backoffice for Umbraco Forms is available translated into the language your editors like to work with.
+
+## [Content Apps](ContentApps/index.md)
+
+Adding an Umbraco content app to the Umbraco Forms backoffice section.

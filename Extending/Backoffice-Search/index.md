@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 state: partial
 updated-links: false
-verified-against: alpha-3
+verified-against: 9.0.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---
@@ -17,7 +17,7 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
 
-However, a specific Umbraco implementation may have additional custom properties that it would be useful to be considered in a Backoffice Search, for example perhaps there is an 'Organisation Name' property on the Member Type, or the 'Main Body Text' property of a Content item.
+An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item. 
 
 ## Adding custom properties to backoffice search
 
@@ -38,59 +38,63 @@ public void ConfigureServices(IServiceCollection services)
 or
 
 ```csharp
-public class MyComposer : IUserComposer
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Extensions;
+
+namespace Umbraco.Docs.Samples.Web.BackofficeSearch
 {
-    public void Compose(IUmbracoBuilder builder)
+    public class BackofficeSearchComposer : IComposer
     {
-    builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
+        }
     }
 }
 ```
 
-### All Node types
 
 ```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
+using System.Collections.Generic;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Cms.Infrastructure.Search;
+
+//https://our.umbraco.com/documentation/Extending/Backoffice-Search/
+
+namespace Umbraco.Docs.Samples.Web.BackofficeSearch
 {
-    public IEnumerable<string> GetBackOfficeFields()
+    public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
     {
-        return new List<string>(base.GetBackOfficeFields()) { "parentID" };
-    }
-}
-```
+        public CustomUmbracoTreeSearcherFields(ILocalizationService localizationService) : base(localizationService)
+        {
+        }
 
-### Documents types
+        //Adding custom field to search in all nodes
+        public new IEnumerable<string> GetBackOfficeFields()
+        {
+            return new List<string>(base.GetBackOfficeFields()) { "parentID" };
+        }
 
-```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IInternalSearchConstants
-{
-    public IEnumerable<string> GetBackOfficeDocumentFields()
-    {
-        return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
-    }
-}
-```
+        //Adding custom field to search in document types
+        public new IEnumerable<string> GetBackOfficeDocumentFields()
+        {
+            return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
+        }
 
-### Media Types
+        //Adding custom field to search in media
+        public new IEnumerable<string> GetBackOfficeMediaFields()
+        {
+            return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
+        }
 
-```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
-{
-    public IEnumerable<string> GetBackOfficeMediaFields()
-    {
-       return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
-    }
-}
-```
-
-### Member Types
-
-```csharp
-public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields,     IUmbracoTreeSearcherFields
-{
-    public IEnumerable<string> GetBackOfficeMembersFields()
-    {
-        return new List<string>(base.GetBackOfficeMembersFields()) { "parentID" };
+        //Adding custom field to search in members
+        public new IEnumerable<string> GetBackOfficeMembersFields()
+        {
+            return new List<string>(base.GetBackOfficeMembersFields()) { "parentID" };
+        }
     }
 }
 ```

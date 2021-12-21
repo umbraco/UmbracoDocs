@@ -136,10 +136,11 @@ the created partial can now be injected into any template by using the `@Html.Pa
 @Html.Partial("a-new-view")
 ```
 
-### Find More information
+### Related Articles
 
 - [Basic Razor syntax](basic-razor-syntax.md)
 - [Rendering content](../Rendering-Content/)
+- [Named Sections](named-sections.md)
 
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)

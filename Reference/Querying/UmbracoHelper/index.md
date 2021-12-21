@@ -17,7 +17,7 @@ UmbracoHelper also has a variety of helper methods that are useful when working 
 
 If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you need the `UmbracoHelper` in your own controllers, you need to inject `IUmbracoHelperAccessor`, and resolve the helper with the `TryGetUmbracoHelper` method. A `HttpContext` is required to use the `UmbracoHelper`, if the helper cannot be resolved the `TryGetUmbracoHelper` method will return false. 
+If you need an `UmbracoHelper` in your own controllers, you need to inject an instance.
 
 Example of getting `UmbracoHelper` in a controller:
 
@@ -30,38 +30,33 @@ using Umbraco.Cms.Web.Common.Controllers;
 namespace UmbracoHelperDocs.Controllers
 {
     [Route("customcontent/[action]")]
-    public class CustomContentController : UmbracoApiController
+    public class CustomContentController : Controller
     {
-        private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
+        private readonly UmbracoHelper _umbracoHelper;
 
-        public CustomContentController(IUmbracoHelperAccessor umbracoHelperAccessor)
+        public CustomContentController(UmbracoHelper umbracoHelper)
+            => _umbracoHelper = umbracoHelper;
+
+        public IActionResult GetHomeNodeName()
         {
-            // Inject IUmbracoHelperAccessor
-            _umbracoHelperAccessor = umbracoHelperAccessor;
-        }
+            IPublishedContent rootNode = _umbracoHelper
+                .ContentAtRoot()
+                .FirstOrDefault();
 
-        public ActionResult<string> GetHomeNodeName()
-        {
-            // Try and get the UmbracoHelper
-            if (_umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper) is false)
-            {
-                // If TryGetUmbracoHelper returns false, we couldn't get the helper because there was no HTTP Context
-                // This should not happen in an Umbraco Controller
-                return StatusCode(500);
-            }
-
-            // Do something with the UmbracoHelper
-            var rootNode = umbracoHelper.ContentAtRoot().FirstOrDefault();
             if (rootNode is null)
             {
                 return NotFound();
             }
 
-            return rootNode.Name;
+            return Ok(rootNode.Name);
         }
     }
 }
 ```
+
+UmbracoHelper is registered with a scoped lifetime (see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information), as a service scope is created for each request you can resolve an instance directly in a controller.
+
+If you need to use an UmbracoHelper in a service with a singleton lifetime you would instead need to make use of the IUmbracoHelperAccessor interface to obtain a temporary reference to an instance.
 
 ## IPublishedContent
 

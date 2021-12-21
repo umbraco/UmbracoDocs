@@ -8,7 +8,7 @@ meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 
 Umbraco Deploy supports the deployment of CMS schema information, definitions from the HQ's Forms package, along with managed content and media.  In addition it can be extended by package or custom solution developers to allow the deployment of custom data, such as that stored in your own database tables.
 
-Currently supported is the ability to hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  In a later release we plan to also support deployment of custom data via the backoffice - similar to how Umbraco content and media can be queued for transfer and restored.
+As a package or solution developer, you can hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  It's also possible to provide the ability for editors to deploy custom data via the backoffice - in the same way that Umbraco content and media can be queued for transfer and restored.
 
 ## Concepts and Examples
 
@@ -288,6 +288,15 @@ Examples of these can be found in the open-source Umbraco.Deploy.Contrib project
 ## Registration
 
 With the artifact and connectors in place, the final step necessary is to register your entity for deployment.
+
+### Custom Entity Types
+
+If you have introduced custom entity types that will be handled by Umbraco Deploy, they need to be registered with Umbraco so that it can parse the UDI references.
+
+This is done via the following code, which can be triggered from a Umbraco component or an `UmbracoApplicationStartingNotification` handler.
+
+```C#
+UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
 
 ### Disk Based Transfers
 
