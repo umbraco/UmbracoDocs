@@ -39,7 +39,7 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 * ~/App_Data/TEMP/*
 
 :::tip
-Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
+Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing the value of the `Umbraco.Core.LocalTempStorage` configuration setting to 'EnvironmentTemp' in the web.config. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
         
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
