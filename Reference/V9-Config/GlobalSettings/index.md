@@ -154,7 +154,7 @@ By adding this settings to the appsettings.json you will be able to send out ema
 
 ### From
 
-Specifies the default address emails will be sent from, this setting may be overridden some place, such as when inviting a user, where the email of the user sending the invite will be used instead.
+Specifies the default address emails will be sent from, this setting may be overridden some place, such as when inviting a user, where the email of the user sending the invite will be used instead. The format of the address follows the RFC 822 standard so you can include a friendly name using the format `"Friendly Name <your@emailaddress.com>"`
 
 ### Host
 
