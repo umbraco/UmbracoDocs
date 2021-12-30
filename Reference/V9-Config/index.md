@@ -106,6 +106,7 @@ A complete list of all the configuration sections included in Umbraco by default
 * [Imaging settings](ImagingSettings/index.md)
 * [Keep alive settings](KeepAliveSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
+* [Maximum upload size settings](MaximumUploadSizeSettings/index.md)
 * [Models builder settings](ModelsBuilderSettings/index.md)
 * [NuCache settings](NuCacheSettings/index.md)
 * [Package migration settings](PackageMigrationSettings/index.md)
