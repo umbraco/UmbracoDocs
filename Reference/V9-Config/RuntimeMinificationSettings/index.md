@@ -9,7 +9,7 @@ update-links: true
 
 # Runtime minification settings
 
-This section allows you to configure the runtime minifications.
+This section allows you to configure the runtime minifications (defaults shown).
 
 ```json
 "Umbraco": {
@@ -36,6 +36,8 @@ Specifies what type of cache buster to use, the options are:
 
 ## Automatically generated settings
 
-You might see a setting `"version"` with a long number after it, this setting is generated if you use the `Version` type cache buster, generally you don't need to change this. However. if you're making some front end changes, and not seeing the change, then you can increase this number by one, clearing the cache and now you should see the change.
+If you use a CacheBuster setting of "Version" you can add another option: "Version": "1234" to control the version number generated in the HTML link thus: ```<link href='/sc/69a3dbf6.1cf661e7.css.v1234' rel='stylesheet' type='text/css'/>```
+
+Generally you don't need to add this. However. if you're making some front end changes, and not seeing the change, then you can add this option and increase the number by one each time, clearing the cache and rendering the change.
 
 Another setting you might see be populated is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be necessary to change this.
