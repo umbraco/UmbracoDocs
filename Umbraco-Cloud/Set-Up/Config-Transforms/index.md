@@ -81,10 +81,6 @@ This config transform will add a new `<rule>` to `<system.webServer><rewrite><ru
 
 Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website.
 
-<!--## Baseline config transforms
-
-It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)-->
-
 ## Including transforms in Umbraco packages
 
 For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor**. You want to set an AppSetting in `Web.config` to a different color in each environment. It could be be `red` for the Live environment, `orange` for Staging and `yellow` for Development.
