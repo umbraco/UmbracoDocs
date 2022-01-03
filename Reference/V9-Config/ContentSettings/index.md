@@ -145,7 +145,7 @@ You can specify your own image for the small logo in the top left cornor of the 
 
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/index-v9.md) for more information.
+Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/) for more information.
 
 
 ## Imaging
