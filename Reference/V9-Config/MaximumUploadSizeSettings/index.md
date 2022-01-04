@@ -8,7 +8,7 @@ Umbraco does not touch the default maximum allowed content size of the different
 
 # Using IIS
 
-To configure the default 28.6mb upload limit using IIS, we have to create a web.config file in the root of the project. It should contain this:
+To configure the default 28.6MB upload limit using IIS, we have to create a web.config file at the root of the project. It should contain this:
 ```
 <?xml version="1.0"?>
 <configuration>
@@ -27,9 +27,9 @@ To configure the default 28.6mb upload limit using IIS, we have to create a web.
 
 # Using Kestrel
 
-Runtime settings allows you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6mb, then you have to configure these seetings. If nothing is configured reqests and query string can only be the default size and smaller.
+Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
 
-An example of a configuration could look something like: 
+An example of a configuration could look something like this: 
 
 ```json
 "Umbraco": {
@@ -44,9 +44,9 @@ An example of a configuration could look something like:
 
 `MaxRequestLength` is specified in kilobytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
 
-# Using nginx
+# Using Nginx
 
-Here's the documentation link to nginx: 
+Here's the documentation link to Nginx: 
 https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size
 
 # Using apache
