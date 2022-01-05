@@ -52,6 +52,8 @@ For illustration purposes, the following structure represents the full set of op
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
+            "AllowMembersDeploymentOperations": "None",
+            "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
         }
     }
@@ -131,6 +133,21 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 ## TransferDictionaryAsContent
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
+
+## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
+
+As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  Howeever, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+
+To enable, you can add or amend the `AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent` settings.
+
+The `AllowMembersDeploymentOperations` setting can take four values:
+
+- `None` - member deployment operations are not enabled (the default value if the setting is missing)
+- `Restore` - restore of members from upstream environments via the backoffice is enabled
+- `Transfer` - transfer of members to upstream environments via the backoffice is enabled
+- `Restore` - restore and transfer of members from upstream environments via the backoffice is enabled
+
+With `TransferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
 
 ## ExportMemberGroups
 
