@@ -41,7 +41,7 @@ For IIS you will need to manipulate `web.config` (If you don't have `web.config`
 
 By default Kestrel will only expose the `Server` header. To disable this, you have to configure Kestrel in `Program.cs`. You can use the `UseKestrel` extension method on `IWebHostBuilder` like in the following example.
 
-```cs
+```csharp
 public class Program
 {
     public static IHostBuilder CreateHostBuilder(string[] args) =>
