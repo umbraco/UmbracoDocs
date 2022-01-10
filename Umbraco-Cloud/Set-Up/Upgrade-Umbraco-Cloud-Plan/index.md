@@ -11,6 +11,8 @@ In this article you can read about how you can upgrade your Umbraco Cloud plan a
 
 Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few things:
 
+- Changing a plan for a project on the new platform will change the outgoing IP of the project. If your solution have an external service that requires whitelisting the outgoing IP of the project, please visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/) prior to upgrade.
+
 - If you are on the Starter plan, you can either upgrade your plan to a Standard or a Professional plan.
 
 - On the Standard plan you have the option to upgrade to a Profesional plan.

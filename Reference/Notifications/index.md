@@ -1,7 +1,7 @@
 ---
 v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: 9.0.1
 ---
 
 :::note
@@ -160,4 +160,4 @@ Useful for manipulating the model before it is sent to an editor in the backoffi
 
 # Creating and publishing your own custom notifications
 
-Umbraco uses notifications to allow people to hook in various workflow processes, but the notification pattern is also extendible, allowing you to create your own custom notification and publishing them, allowing other people to hook into your processes, this can be very useful when for instance creating packages. For more information on how you create and publish your own notifications see the [creating and publishing notifications](Creating-And-Publishing-Notifications.md) article.
+Umbraco uses notifications to allow people to hook into various workflow processes. This notification pattern is extensible, allowing you to create and publish your own custom notifications, thus allowing other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications see the [creating and publishing notifications](Creating-And-Publishing-Notifications.md) article.

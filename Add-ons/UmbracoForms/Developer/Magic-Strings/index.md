@@ -1,7 +1,6 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 versionTo: 9.0.0
-needsV8Update: "false"
 ---
 
 # Magic strings
@@ -64,19 +63,20 @@ Some extra variables are:
 
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 
-The `Umbraco.Forms.Data.StringHelpers` class contains helper methods for parsing magic strings:
+A service implemented by the `IPlaceholderParsingService` interface is available for use in custom code or views.  It's found in the `Umbraco.Forms.Core.Services` namespace.
+
+In a controller you can inject it via the constructor and it can also be injected into views via:
 
 ```csharp
-// Does not parse Record-related magic strings - they are removed.
-public static string ParsePlaceHolders(HttpContext context, string value)
-
-// Uses the passed in Record to parse Record-related magic strings
-public static string ParsePlaceHolders(Record record, string value)
-
-public static string ParsePlaceHolders(HttpContext context, Record record, string value)
+@using Umbraco.Forms.Core.Services;
+@inject IPlaceholderParsingService PlaceholderParsingService
 ```
 
-There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace. This can be used to replace the above tokens in a string, but it doesn't currently work with records/From field items.
+The interface implements a single method, `ParsePlaceHolders`, that can be used for parsing magic strings.  There are a few overloads available for use depending on the context.
+
+If parameters for the `Record` or `Form` are omitted, magic strings relating to these objects will be removed.
+
+There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace, again available with some overloads allowing the provision of a `Form` or `Record` object if available.
 
 ---
 

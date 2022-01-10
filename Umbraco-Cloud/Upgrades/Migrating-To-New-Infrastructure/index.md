@@ -4,8 +4,13 @@ versionFrom: 7.0.0
 # Migrating to the new Umbraco Cloud infrastruture
 In this article, you’ll find all relevant information to be aware of when a site is migrated from the old to the new Umbraco Cloud infrastructure. This article is kept up-to-date should any new information arise.
 
+:::warning
+From **January 25th, 2022** the old infrastructure will be end of life. Soon hereafter we will be closing down the entire old infrastructure. 
+This means that unless your project is migrated before this date, it will be deleted alongside the old infrastructure. If you are unsure whether your project is migrated or if it is scheduled to be migrated before the end of life please do not hesitate to reach out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>
+:::
+
 ## Schedule and timing
-Projects are scheduled for migration through Q4, 2021. When a project is scheduled the project owner and technical contacts will receive direct communication via email with the specific date and time.
+Projects are scheduled for migration through Q1, 2022. When a project is scheduled the project owner and technical contacts will receive direct communication via email with the specific date and time.
 
 ### Rescheduling migration
 In case the timing of the migration schedule does not work for you, it is possible to reschedule by reaching out to <a href="mailto:contact@umbraco.com">contact@umbraco.com</a>.
@@ -66,8 +71,8 @@ Work on the project(s) can resume immediately after receiving confirmation of a 
 
 ## After the migration
 
-### New Umbraco Cloud project URL
-The project URL will change from `my-project-alias.s1.umbraco.io` to `my-project-alias.euwest01.umbraco.io`. It is only the project URL that changes. Custom hostnames will continue to work as before. 
+### New Umbraco Environment URL
+The URL will change from `my-project-alias.s1.umbraco.io` to `my-project-alias.euwest01.umbraco.io`. The [Umbraco Cloud Portal](../../Getting-Started/The-Umbraco-Cloud-Portal/index.md#the-umbraco-cloud-portal) URL to access the project does not change. It is only the environment URL that changes. Custom hostnames will continue to work as before.
 
 ### New GIT repository URL
 There will be an improved repository URL you can switch to, but __it is not required as part of the migration__. The GIT repository will still be accessible from the same URL as before and any custom domains assigned to the project will continue to work as expected. 

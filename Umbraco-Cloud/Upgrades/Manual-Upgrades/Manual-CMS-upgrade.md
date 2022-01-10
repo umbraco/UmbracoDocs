@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Manual upgrade of Umbraco CMS on Cloud
@@ -60,59 +60,6 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
         <environments configSource="config\UmbracoDeploy.config" />
         <settings configSource="config\UmbracoDeploy.Settings.config" />
     </umbraco.deploy>
-
-:::note
-The following section with the `Dashboard.config` only applies to Umbraco 7 projects.
-:::
-
-### Dashboard.config
-
-When merging the `Dashboard.config` file make sure that you **do not overwrite / remove** the following settings:
-
-**Deploy**
-
-    <section alias="Deploy">
-        <areas>
-        <area>content</area>
-        </areas>
-        <tab caption="Your workspace">
-        <control>/App_Plugins/Deploy/views/dashboards/dashboard.html</control>
-        </tab>
-    </section>
-
-**StartupFormsDashboardSection**
-
-    <section alias="StartupFormsDashboardSection">
-        <areas>
-        <area>forms</area>
-        </areas>
-        <tab caption="Dashboard">
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/activity.html</control>
-        </tab>
-    </section>
-
-Note that you **should not merge in** the following section from the new version of Umbraco:
-
-    <section alias="StartupDashboardSection">
-        <access>
-        <deny>translator</deny>
-        </access>
-        <areas>
-        <area>content</area>
-        </areas>
-        <tab caption="Get Started">
-        <access>
-            <grant>admin</grant>
-        </access>
-
-        <control showOnce="true" addPanel="true" panelCaption="">
-            views/dashboard/default/startupdashboardintro.html
-        </control>
-
-        </tab>
-    </section>
 
 ### Other config files
 

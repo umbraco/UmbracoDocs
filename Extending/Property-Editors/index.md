@@ -41,7 +41,7 @@ Learn how to build your own Block Editors.
 
 ## More information
 
-* [Built in Property Editors (currently only available for Umbraco 8)](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)
+* [Built in Property Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)
 * The full [Umbraco Backoffice UI API documentation (Umbraco 8)](../../../apidocs/v8/ui/) for all the angular services, directives and resources.
 
 ## Umbraco TV

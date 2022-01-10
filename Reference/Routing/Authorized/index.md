@@ -40,7 +40,7 @@ Defining a route is done with the standard .NET Core MVC routing practices, howe
 When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
 
 ```C#
-public class MyControllerComposer : IUserComposer
+public class MyControllerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {

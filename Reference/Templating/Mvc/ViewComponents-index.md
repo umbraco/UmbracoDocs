@@ -70,7 +70,7 @@ namespace ViewComponentSample.ViewComponents
 
 ### Create a View for ViewComponent
 
-In **Views** folder, create new folders at `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Index.cshtml** as below:
+In **Views** folder, create new folders at `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Default.cshtml** as below:
 
 ```csharp
 <h1> Welcome to your Home Page <h1>

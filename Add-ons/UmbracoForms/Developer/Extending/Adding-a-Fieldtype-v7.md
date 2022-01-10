@@ -16,8 +16,6 @@ using Umbraco.Forms.Core.Data.Storage;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Models;
 
-
-
 public class MyCustomField : Umbraco.Forms.Core.FieldType
 {
     public MyCustomField()
@@ -73,7 +71,7 @@ On the view, it is important to note that the ID attribute is fetched from `@Mod
 
 ### Partial view for themes
 
-We will also add a file for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 
+We will also add a file for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
@@ -96,4 +94,36 @@ The final step involves building the HTML view which will be rendered in Umbraco
     class="input-block-level"
     style="max-width: 100px"
 />
+```
+
+## Field settings
+
+Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
+
+```csharp
+    [Setting("My Setting", Description = "Help text for the setting", View = "TextField")]
+    public string MySetting { get; set; }
+```
+
+The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer.  Umbraco Forms ships with a number of these, found in `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+
+If you require a custom setting type view, you can store them in this folder, or a different location by providing a full path to the view in the setting's attribute, e.g.:
+
+```csharp
+    [Setting("My Setting",
+        Description = "Help text for the setting",
+        View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html")]
+    public string MySetting { get; set; }
+```
+
+## Backoffice entry rendering
+
+The third and final client-side view file used for settings is in the rendering of the submitted values for the field in the "Entries" section of the backoffice.
+
+These are defined by the `RenderView` property of a field type and are found in `App_Plugins\UmbracoForms\backoffice\Common\RenderTypes\`.
+
+If you require a custom setting type view, you can add them to this folder, and override the `RenderView` property, e.g.:
+
+```csharp
+public override string RenderView => "mycustomrenderfield.html";
 ```

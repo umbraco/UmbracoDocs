@@ -49,7 +49,7 @@ public class MyClass
 }
 ```
 
-In Razor views, you can access the macro service through the `@inject` directive:
+In Razor views, you can access the media service through the `@inject` directive:
 
 ```csharp
 @inject IMediaService MediaService
@@ -107,7 +107,7 @@ using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
     // Initialize a new image at the root of the media archive
     IMedia media = _mediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
     // Set the property value (Umbraco will handle the underlying magic)
-    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.Media.File, "my-image.jpg", stream);
+    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.MediaTypes.File, "my-image.jpg", stream);
     // Save the media
     _mediaService.Save(media);
 }

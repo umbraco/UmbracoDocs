@@ -213,7 +213,7 @@ using Umbraco.Cms.Core.Notifications;
 
 namespace TableMigrationTest
 {
-    public class BlogCommentsComposer : IUserComposer
+    public class BlogCommentsComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {

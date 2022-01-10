@@ -67,7 +67,7 @@ If you look in the SQL script you'll see that in order to apply this directly to
 ```sql
 -- Adds unique constraint to UFForms.
 ALTER TABLE dbo.UFForms
-ADD CONSTRAINT UK_UFForms_Key UNIQUE NONCLUSTERED 
+ADD CONSTRAINT UK_UFForms_Key UNIQUE NONCLUSTERED
 (
  [Key] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -120,4 +120,4 @@ To support this, we provide the following SQL scripts:
 
 ---
 
-Prev: [Magic Strings](../Magic-Strings/index.md)
+Prev: [Magic Strings](../Magic-Strings/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Localization](../Localization/index.md)

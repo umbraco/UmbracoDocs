@@ -5,6 +5,10 @@ meta.Description: "Information on the various configuration files in Umbraco"
 versionRemoved: 9.0.0
 ---
 
+:::note
+If you are searching for Umbraco v9+ documentation, it currently lives under the folder [V9-Config](../V9-Config/index.md)
+:::
+
 # Configuration Files
 
 The release of V8 has moved many of the previous configuration options from XML configuration files in the usual /config folder to be configurable through code. 

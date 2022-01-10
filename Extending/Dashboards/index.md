@@ -268,8 +268,8 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
             {
                 var rules = new IAccessRule[]
                 {
-                    new AccessRule {Type = AccessRuleType.Deny, Value = Cms.Core.Constants.Security.TranslatorGroupAlias},
-                    new AccessRule {Type = AccessRuleType.Grant, Value = Cms.Core.Constants.Security.AdminGroupAlias}
+                    new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.TranslatorGroupAlias},
+                    new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias}
                 };
                 return rules;
             }
@@ -330,8 +330,9 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         // override explicit implementation
         IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
         {
-            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
-            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias}
+            new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.WriterGroupAlias},            
+            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias},
+            new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
         };
     }
 }
