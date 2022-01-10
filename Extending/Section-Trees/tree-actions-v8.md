@@ -80,5 +80,11 @@ If you have created a package using a custom tree action, please consider provid
 |Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
 |Umbraco.Deploy.UI.Actions.ActionPartialRestore|deployPartialRestore|Ø|True|
 |Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|N|True|
+|Jumoo.TranslationManager.Core.Actions.ActionTranslate|translate|5|True|
+|Jumoo.TranslationManager.Core.Actions.ActionManageTranslation|manageTranslations|Ť|True|
+|uSync.Publisher.Actions.PushToServer|pushContent|>|True|
+|uSync.Publisher.Actions.PullFromServer|oullContent|<|True|
+|uSync.Publisher.Action.PushButton|pushContentButton|^|True|
+|Our.Umbraco.LinkedPages.LinkedAction|linkPages|l|True|
 
 *Note: up until Umbraco Deploy 4.4.2, the letter "N" was used for the "Queue For Transfer" action.  In 4.4.3 it was changed to be "TBC", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*
