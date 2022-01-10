@@ -136,7 +136,7 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
-As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  Howeever, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
 
 To enable, you can add or amend the `AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent` settings.
 
