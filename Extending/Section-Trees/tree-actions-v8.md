@@ -83,7 +83,7 @@ If you have created a package using a custom tree action, please consider provid
 |Jumoo.TranslationManager.Core.Actions.ActionTranslate|translate|5|True|
 |Jumoo.TranslationManager.Core.Actions.ActionManageTranslation|manageTranslations|Ť|True|
 |uSync.Publisher.Actions.PushToServer|pushContent|>|True|
-|uSync.Publisher.Actions.PullFromServer|oullContent|<|True|
+|uSync.Publisher.Actions.PullFromServer|pullContent|<|True|
 |uSync.Publisher.Action.PushButton|pushContentButton|^|True|
 |Our.Umbraco.LinkedPages.LinkedAction|linkPages|l|True|
 
