@@ -41,7 +41,7 @@ Content Apps are designed to be companions to the Content Item. They should enha
 
 ## Creating a Custom Content App
 
-This guide explains how to set up a custom Content App in the following steps:
+This guide explains how to set up a Custom Content App in the following steps:
 
 * Adding a Content App that counts how many words are added for each property type
 * Limiting the Content App to appear for only specific content types
