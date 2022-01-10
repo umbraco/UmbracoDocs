@@ -60,26 +60,25 @@ If you have created a package using a custom tree action, please consider provid
 
 |Type|Alias|Letter|Can Be Permission Assigned|
 |-|-|-|-|
-|Umbraco.Cms.Core.Actions.ActionAssignDomain|assignDomain|I|True|
-|Umbraco.Cms.Core.Actions.ActionBrowse|browse|F|True|
-|Umbraco.Cms.Core.Actions.ActionCopy|copy|O|True|
-|Umbraco.Cms.Core.Actions.ActionCreateBlueprintFromContent|createblueprint|‹|True|
-|Umbraco.Cms.Core.Actions.ActionDelete|delete|D|True|
-|Umbraco.Cms.Core.Actions.ActionMove|move|M|True|
-|Umbraco.Cms.Core.Actions.ActionNew|create|C|True|
-|Umbraco.Cms.Core.Actions.ActionNotify|notify|N|True|
-|Umbraco.Cms.Core.Actions.ActionProtect|protect|P|True|
-|Umbraco.Cms.Core.Actions.ActionPublish|publish|U|True|
-|Umbraco.Cms.Core.Actions.ActionRestore|restore|V|False|
-|Umbraco.Cms.Core.Actions.ActionRights|rights|R|True|
-|Umbraco.Cms.Core.Actions.ActionRollback|rollback|K|True|
-|Umbraco.Cms.Core.Actions.ActionSort|sort|S|True|
-|Umbraco.Cms.Core.Actions.ActionToPublish|sendtopublish|H|True|
-|Umbraco.Cms.Core.Actions.ActionUnpublish|unpublish|Z|True|
-|Umbraco.Cms.Core.Actions.ActionUpdate|update|A|True|
-|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
+|Umbraco.Web.Actions.ActionAssignDomain|assignDomain|I|True|
+|Umbraco.Web.Actions.ActionBrowse|browse|F|True|
+|Umbraco.Web.Actions.ActionCopy|copy|O|True|
+|Umbraco.Web.Actions.ActionCreateBlueprintFromContent|createblueprint|ï|True|
+|Umbraco.Web.Actions.ActionDelete|delete|D|True|
+|Umbraco.Web.Actions.ActionMove|move|M|True|
+|Umbraco.Web.Actions.ActionNew|create|C|True|
+|Umbraco.Web.Actions.ActionProtect|protect|P|True|
+|Umbraco.Web.Actions.ActionPublish|publish|U|True|
+|Umbraco.Web.Actions.ActionRestore|restore|V|False|
+|Umbraco.Web.Actions.ActionRights|rights|R|True|
+|Umbraco.Web.Actions.ActionRollback|rollback|K|True|
+|Umbraco.Web.Actions.ActionSort|sort|S|True|
+|Umbraco.Web.Actions.ActionToPublish|sendtopublish|H|True|
+|Umbraco.Web.Actions.ActionUnpublish|unpublish|Z|True|
+|Umbraco.Web.Actions.ActionUpdate|update|A|True|
 |Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore|deployTreeRestore|Ψ|True|
+|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
 |Umbraco.Deploy.UI.Actions.ActionPartialRestore|deployPartialRestore|Ø|True|
-|Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|TBC|True|
+|Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|N|True|
 
 *Note: up until Umbraco Deploy 4.4.2, the letter "N" was used for the "Queue For Transfer" action.  In 4.4.3 it was changed to be "TBC", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*
