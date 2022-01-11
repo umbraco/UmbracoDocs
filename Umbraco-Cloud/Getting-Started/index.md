@@ -68,6 +68,24 @@ For version 8 and below: You can at any time change the name of your project by 
 
 An Umbraco Cloud project name is unique, which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
 
+### Project Overview
+
+Once a project is created, you can view its overview in Umbraco Cloud Portal:
+
+1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
+2. Select your Project from the **Projects** dashboard.
+3. Go to the Project **Settings** and click **Overview**.
+    ![Project Overview](images/Cloud-Overview.png)
+
+The Overview Page consists of:
+
+- Name: The name of the project.
+- Alias - The alias of the project.
+- Your Plan - The plan selected for the project. Available plans are Starter, Standard, or Professional.
+- Payment Status - The payment status of the project.
+- Created by - The name and email of the project creator.
+- Creation date - The date the project was created.
+
 ## Different ways to start an Umbraco Cloud project
 
 You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](Migrate-Existing-Site) that you can follow in order to successfully move your project to Umbraco Cloud.
