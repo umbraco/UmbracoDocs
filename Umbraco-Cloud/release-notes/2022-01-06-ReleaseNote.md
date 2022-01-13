@@ -20,7 +20,7 @@ You are now able to access a simple project overview page for each of your proje
 ![New Project Overview Page](https://user-images.githubusercontent.com/93588665/149168523-088b58f1-5a04-43ff-9ac5-f30b62c74e4e.gif)
 
 ### Various tweaks and improvements
-We have during December provided a lot of small improvements to the Umbraco Cloud Portal. Actually too many to mention, so we will restrict ourselves to only mention a few of these in the bullit list below.
+We have during December provided a lot of small improvements to the Umbraco Cloud Portal. Actually too many to mention, so we will restrict ourselves to only mention a few of these in the bullet list below.
 
 - Alignment and consistent order of versions on the project page
 - Confirmation box for restarting environment (to avoid accidental restarts)
