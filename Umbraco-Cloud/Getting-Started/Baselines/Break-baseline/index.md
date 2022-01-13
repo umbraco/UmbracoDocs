@@ -23,4 +23,5 @@ To break reference between a baseline and child project:
 2. A window with the consequences of the action is displayed.
 3. Read and understand the consequences mentioned and check all three boxes, if you want to disconnect.
 4. Click **Disconnect**.
+
     ![Break Baseline and child project](images/Break-baseline.gif)
