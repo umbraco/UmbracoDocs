@@ -82,7 +82,7 @@ The Overview Page consists of:
 - Name: The name of the project.
 - Alias - The alias of the project.
 - Your Plan - The plan selected for the project. Available plans are Starter, Standard, or Professional.
-- Payment Status - The payment status of the project.
+- Payment status - The payment status of the project.
 - Created by - The name and email of the project creator.
 - Creation date - The date the project was created.
 
