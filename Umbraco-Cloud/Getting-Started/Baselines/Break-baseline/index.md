@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Break Reference between Baseline and Child Project
@@ -19,7 +20,7 @@ From this page, you can break the connection of all the Child Projects this Base
 To break reference between a baseline and child project:
 
 1. Click on the ![Disconnect](images/disconnect-icon.png) icon.
-2. A window with the consequences to the action is displayed.
-3. Read and understand the consequences mentioned and check all the three boxes, if you want to disconnect.
+2. A window with the consequences of the action is displayed.
+3. Read and understand the consequences mentioned and check all three boxes, if you want to disconnect.
 4. Click **Disconnect**.
     ![Break Baseline and child project](images/Break-baseline.gif)
