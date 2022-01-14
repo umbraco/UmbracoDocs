@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+versionTo: 9.0.0
+---
 # Umbraco Cloud Product Release Notes
 
 _Get updates on new releases_
