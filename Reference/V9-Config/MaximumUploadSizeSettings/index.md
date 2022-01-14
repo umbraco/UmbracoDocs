@@ -9,7 +9,8 @@ Umbraco does not touch the default maximum allowed content size of the different
 # Using IIS
 
 To configure the default 28.6MB upload limit using IIS, we have to create a web.config file at the root of the project. It should contain this:
-```
+
+```xml
 <?xml version="1.0"?>
 <configuration>
   <system.webServer>
