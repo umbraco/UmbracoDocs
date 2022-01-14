@@ -146,6 +146,7 @@ If you are sure that you've installed the templates (see the previous step) but 
     ```none
     dotnet new --install Umbraco.Templates::9.0.1 --nuget-source https://api.nuget.org/v3/index.json
     ```
+Where 9.0.1 is replaced with the latest version that is available that you are trying to install.
 ### Steps to build and run
 
 The following steps, will continue using CLI based on the steps above.
