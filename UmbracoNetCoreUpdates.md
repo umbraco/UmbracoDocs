@@ -142,7 +142,6 @@ If you are sure that you've installed the templates (see the previous step) but 
 
 ![foutmelding opdrachtprompt](https://user-images.githubusercontent.com/12457148/141447451-538b6eca-3c99-4e69-82d9-d58e8913e951.png)
 
-1. Use a command prompt of your choice to specify the specific sources. Please note that you can update the version (9.0.1.) to the latest version that is available.
 
     ```none
     dotnet new --install Umbraco.Templates::9.0.1 --nuget-source https://api.nuget.org/v3/index.json
