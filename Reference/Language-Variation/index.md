@@ -37,7 +37,13 @@ namespace TestStuff
     public class TestController : SurfaceController
     {
 
-        public TestController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) 
+        public TestController(
+            IUmbracoContextAccessor umbracoContextAccessor, 
+            IUmbracoDatabaseFactory databaseFactory, 
+            ServiceContext services, 
+            AppCaches appCaches, 
+            IProfilingLogger profilingLogger, 
+            IPublishedUrlProvider publishedUrlProvider) 
             : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
         }
@@ -73,7 +79,14 @@ namespace TestStuff
     {
         private readonly IVariationContextAccessor _variationContextAccessor;
 
-        public TestController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, IVariationContextAccessor variationContextAccessor) 
+        public TestController(
+            IUmbracoContextAccessor umbracoContextAccessor, 
+            IUmbracoDatabaseFactory databaseFactory, 
+            ServiceContext services, 
+            AppCaches appCaches, 
+            IProfilingLogger profilingLogger, 
+            IPublishedUrlProvider publishedUrlProvider, 
+            IVariationContextAccessor variationContextAccessor) 
             : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
             _variationContextAccessor = variationContextAccessor;
