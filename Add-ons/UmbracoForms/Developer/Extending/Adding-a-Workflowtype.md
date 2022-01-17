@@ -17,7 +17,7 @@ using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Data.Storage;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Persistence.Dtos;
-using Umbraco.Core.Logging;
+using Microsoft.Extensions.Logging;
 using Umbraco.Core.Composing;
 
 namespace MyFormsExtensions
@@ -43,7 +43,7 @@ namespace MyFormsExtensions
             _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");            
 
             // we can then iterate through the fields
-            foreach (RecordField rf in record.RecordFields.Values)
+            foreach (RecordField rf in context.Record.RecordFields.Values)
             {
                 // and we can then do something with the collection of values on each field
                 List<object> vals = rf.Values;
@@ -53,10 +53,10 @@ namespace MyFormsExtensions
             }
                       
             //Change the state
-            record.State = FormState.Approved;
+            context.Record.State = FormState.Approved;
 
             _logger.LogDebug("The record with unique id {RecordId} that was submitted via the Form {FormName} with id {FormId} has been changed to {RecordState} state",
-               record.UniqueId, context.Form.Name, context.Form.Id, "approved");
+               context.Record.UniqueId, context.Form.Name, context.Form.Id, "approved");
 
             return WorkflowExecutionStatus.Completed;
         }

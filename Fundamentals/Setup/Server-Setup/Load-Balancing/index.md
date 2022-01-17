@@ -94,7 +94,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * __Recommended__: [set your front-end(s) (non-admin server) to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRegistrar`, this means the front-end servers will never be used as the SchedulingPublisher server role.
-* Set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
+* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../Reference/V9-Config/WebRoutingSettings/index.md)
 
 ## Common load balancing setup information
 
@@ -119,7 +119,7 @@ ASP.NET Core supports multiple ways to share keys. Use the [official docs](https
 
 
 ### Session State and Distributed Cache
-It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for more details).
 The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
 
 Because Umbraco in some cases uses TempData, your setup needs to be configured with a distributed cache.

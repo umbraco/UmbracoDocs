@@ -1,7 +1,8 @@
 ---
 state: partial
 updated-links: false
-versionFrom: 9.2.0
+versionFrom: 9.0.0
+versionTo: 9.1.2
 ---
 
 
@@ -45,23 +46,6 @@ The manifest can contain seven root collections, none of them are mandatory:
     "contentApps": [],
     "javascript": [],
     "css": []
-}
-```
-
-### Telemetry elements
-
-In version 9.2 some additional root elements was added, the purpose of these are to control and facilitate telemetry about the package, none of these are mandatory. The properties are:
-
-* `name` - Allows you to specify a friendly name for your package that will be used for telemetry, if no name is specified the name of the folder will be used instead
-* `version` - The version of your package, if this is not specified there will be no version specific information for your package
-* `allowPackageTelemetry` - Allows you to entirely disable telemetry for your package if set to false, defaults to true.
-
-Example package.manifest
-```json
-{
-    "name": "My Awesome Package",
-    "version": "1.0.0",
-    "allowPackageTelemetry": true
 }
 ```
 
