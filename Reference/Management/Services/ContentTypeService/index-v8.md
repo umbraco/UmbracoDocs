@@ -60,6 +60,6 @@ IContentTypeService contentTypeService = Umbraco.Core.Composing.Current.Services
 
 ## Samples
 
-* [**Retrieving content types**](Retrieving-content-types-v8.md)<br />See examples on how to retrieve content types via the service - either individually or as a collection.
+* [**Retrieving content types**](Retrieving-content-types-v8.7.md)<br />See examples on how to retrieve content types via the service - either individually or as a collection.
 
 * [**Retrieving content type containers**](Retrieving-content-type-containers-v8.md)<br />See examples on how to retrieve content type containers (folders) via the service - either individually or as a collection.
