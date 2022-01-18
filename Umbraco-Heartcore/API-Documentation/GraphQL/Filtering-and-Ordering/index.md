@@ -36,7 +36,7 @@ Filters can be combined with `AND` and `OR`, e.g. if we want to find all content
 ```graphql
 query {
   allContent(
-    where {
+    where: {
       AND: [
         { level_any: [2, 3] }
         { updateDate_gt: "2020-09-13" }
@@ -57,9 +57,9 @@ Or if we want to get all of type person which names does not start with `t` we c
 ```graphql
 query {
   allContent(
-    where {
+    where: {
       NOT: [
-        { name_starts_with: `t` }
+        { name_starts_with: "t" }
       ]
     }
   ) {
