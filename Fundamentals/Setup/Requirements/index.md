@@ -33,8 +33,18 @@ The Umbraco UI should work in all modern browsers:
 
 ## Hosting
 
+### We recommend
+
+* Windows Server 2019 and higher
+* IIS 10 and higher
+* SQL Server 2019 and higher
+* .NET 5.0
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+
+### The absolute miminium requiremnts to be able to run Umbraco are:
+
 * Windows Server 2012 R2 and higher
-* IIS 8 and higher
+* IIS 8.5 and higher
 * SQL Server 2012 and higher
 * .NET 5.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
