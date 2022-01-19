@@ -14,6 +14,10 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=A4FhZTyruE0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Creating a Child Project
 
 To create a child project:

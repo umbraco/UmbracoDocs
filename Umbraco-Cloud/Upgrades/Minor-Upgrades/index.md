@@ -11,7 +11,7 @@ This workflow applies to all producs on Umbraco Cloud: Umbraco CMS, Umbraco Form
 
 For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/BK9q4FHI2sU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=mMk2VM_5N-I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Troubleshooting Automated minor upgrades
 
