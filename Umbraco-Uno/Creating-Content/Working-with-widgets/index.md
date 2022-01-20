@@ -26,7 +26,7 @@ Contents of this article:
 
 In the video below, you can learn the basics of working with and customizing widgets in Umbraco Uno.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/hu_jJqV2uTw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=3SIPc1hJnzE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Adding a widget
 

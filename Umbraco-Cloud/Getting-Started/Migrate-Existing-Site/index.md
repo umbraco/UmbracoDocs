@@ -20,11 +20,9 @@ These are the steps you need to go through to complete the migration successfull
 
 ## Video tutorial
 
-On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide.
-
 <iframe width="800" height="450" src="https://www.youtube.com/watch?v=Gz-pte30arM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLgX62vUaGZsE8aMQguNfc3j5fLmnvwcSg)
+On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide. You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLgX62vUaGZsE8aMQguNfc3j5fLmnvwcSg)
 
 If you prefer following a written guide, continue to read below.
 

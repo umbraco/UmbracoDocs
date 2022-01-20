@@ -12,7 +12,7 @@ Language Variants allows you to vary content by culture, so you can allow a cont
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/-vzxCdjq4FM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=Ik_cYRqnWnk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## How to enable Language Variants
 

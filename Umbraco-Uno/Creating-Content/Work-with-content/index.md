@@ -21,10 +21,10 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 
 ## Video tutorials
 
-On the [Umbraco HQ Youtube channel](https://www.youtube.com/channel/UCcltXlJQ-U553MoOsP9p4wg) you can find a series of video tutorials on how to work with and use Umbraco Uno.
+You can find a series of video tutorials on how to work with and use Umbraco Uno:
 
-* [Creating new content](https://www.youtube.com/watch?v=frE2jl6e18c&ab_channel=UmbracoHQ)
-* [Updating content](https://www.youtube.com/watch?v=wamxLGnb4Ok&ab_channel=UmbracoHQ)
+* [Creating new content](https://www.youtube.com/watch?v=SxWKBUAwfNE)
+* [Updating content](https://www.youtube.com/watch?v=-XOkpG8YcGA)
 
 ## Creating content
 
