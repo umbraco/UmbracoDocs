@@ -243,7 +243,7 @@ namespace My.Website
             if (content.TemplateId is null)
                 return null;
                 
-            // Only show app on content with certin content type alias
+            // Only show app on content with certain content type alias
             // if (!content.ContentType.Alias.Equals("aliasName"))
             //    return null;
                 
@@ -333,7 +333,7 @@ namespace My.Website
             if (content.TemplateId is null)
                 return null;
                 
-            // Only show app on content with certin content type alias
+            // Only show app on content with certain content type alias
             // if (!content.ContentType.Alias.Equals("aliasName"))
             //    return null;
                 
