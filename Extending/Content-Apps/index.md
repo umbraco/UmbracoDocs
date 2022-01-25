@@ -66,6 +66,9 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+        "show": [
+        "+content/*" // show app for all content types
+      ]
     }
     ],
     // array of files we want to inject into the application on app_start
