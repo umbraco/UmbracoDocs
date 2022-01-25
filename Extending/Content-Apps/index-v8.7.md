@@ -182,6 +182,8 @@ Here is an example where all types are taken intro consideration when limiting a
 When the 'show' directive is omitted then the app will be shown for all types.
 
 Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
+
+In this case the WordCounter app is only usable within the Content section so you have to exclude from all other types.
 :::
 
 ### Limiting according to User Role
