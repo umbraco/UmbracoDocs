@@ -162,3 +162,6 @@ If the `setupData` is `null` for the specified `providerName` it means the provi
 
 The last part required is to use the `Login` Partial Macro snippet.
 
+## Notification when 2FA is requested for a member
+When 2FA login is requested for a member, the `MemberTwoFactorRequestedNotification` is published.
+This notification can also be used to send the member a one time password on e-mail or phone, even that these 2FA types is [not considered as secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
