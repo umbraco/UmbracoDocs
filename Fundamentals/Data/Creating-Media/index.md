@@ -19,6 +19,10 @@ Media in Umbraco is handled the same way as content. Instead of defining Documen
 
 This means you don't have to define your own Media Types to start using the Media section. You have already got the tools for organizing and uploading the media.
 
+:::note
+If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by follwing the steps below ['Creating a new Media Type'](#creating-a-media-type). On [this page](default-media-types.md) you will find an overview of all new media types. If you use uSync it is possible to import the new media types. In this [repo](https://github.com/erikjanwestendorp/UmbracoMediaTypes) you will find the uSync definitions.
+:::
+
 ## Creating a folder
 
 It is always a good idea to start by creating a folder for your Media items. Make sure to name your folders in a way that makes it possible for editors to upload their media items in the right place.
