@@ -77,10 +77,6 @@ Here is an example of how that config transform would look:
 
 This config transform will add a new `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
 
-## Forced transforms
-
-Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website.
-
 ## Including transforms in Umbraco packages
 
 For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor**. You want to set an AppSetting in `Web.config` to a different color in each environment. It could be be `red` for the Live environment, `orange` for Staging and `yellow` for Development.
