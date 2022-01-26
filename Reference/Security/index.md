@@ -41,6 +41,11 @@ Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation 
 The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
 This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
+### [Two-factor authentication](two-factor-authentication/index.md)
+
+The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
+This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
+
 ### [BackOfficeUserManager](backoffice-user-manager.md) and Notifications
 
 The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Core Identity [UserManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.usermanager-1) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Core Identity including password handling.
