@@ -106,6 +106,28 @@ namespace Umbraco9
 
 First we create a model with information required to setup the 2FA provider and then we implement the `ITwoFactorProvider` with use of the `TwoFactorAuthenticator` from the GoogleAuthenticator NuGet package.
 
+Now we need to register the `UmbracoAppAuthenticator` implementation. This can be done on the `IUmbracoBuilder` in your startup or in a composer.
+
+```Csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Security;
+using Umbraco.Extensions;
+
+namespace Umbraco9
+{
+    public class UmbracoAppAuthenticatorComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            var identityBuilder = new MemberIdentityBuilder(builder.Services);
+            identityBuilder.AddTwoFactorProvider<UmbracoAppAuthenticator>(UmbracoAppAuthenticator.Name);
+        }
+    }
+}
+```
+
+
 At this point the 2FA is actually active, but no members have setup 2FA yet.
 The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
