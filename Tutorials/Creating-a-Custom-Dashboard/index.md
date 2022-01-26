@@ -82,7 +82,7 @@ Similar to a property editor you will now register the dashboard in a package.ma
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,
@@ -115,7 +115,7 @@ You will need to create a *lang* folder in your custom dashboard folder and crea
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
   <area alias="dashboardTabs">
-    <key alias="WelcomeDashboard">Welcome</key>
+    <key alias="welcomeDashboard">Welcome</key>
   </area>
 </language>
 ```
@@ -140,7 +140,7 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,
@@ -211,7 +211,7 @@ Finally, we need to update the package.manifest file to load the additional cont
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,

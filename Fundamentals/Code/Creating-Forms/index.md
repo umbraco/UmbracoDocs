@@ -67,7 +67,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder, name it `ContactController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
+Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder, name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

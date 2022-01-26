@@ -80,6 +80,8 @@ Added in 8.8.0, this setting allows you to configure the name of the theme to us
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
 
+Once the form has been created, the values are set explicitly on the form, so subsequent changes to the defaults in configuration won't change the settings used on existing forms.
+
 ### DefaultManualApproval
 This setting needs to be a `True` or `False` value and will allow you to toggle if a form allows submissions to be post moderated. Most use cases are for publicly shown entries such as blog post comments or submissions for a social campaign.
 

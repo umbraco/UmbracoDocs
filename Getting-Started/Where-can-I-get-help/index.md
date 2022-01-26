@@ -5,9 +5,9 @@ versionFrom: 8.0.0
 ---
 # Where can I get help?
 
-If you haven't been able to find a topic that suits your needs, there are many ways for you to reach find help.
+If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.
 
-You can talk to developers across the globe via the Umbraco Forum, report an issue with the Documentation team or check out our Training options. We also have UmbracoTV, a team of friendly supporters and direct links to get in touch with the team at Umbraco HQ for any other questions you may have.
+You can talk to developers across the globe via the Umbraco Forum, report an issue with the Documentation team or check out our Training options. We also have UmbracoTV, a team of friendly supporters and direct links to get in touch with the team at Umbraco HQ for any questions you may have.
 
 [Umbraco Forum](https://our.umbraco.com/forum/)
 
@@ -22,6 +22,8 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 [Free Webinars](https://umbraco.com/products/free-umbraco-webinars/)
 
 [Umbraco Support](https://umbraco.com/products/umbraco-support/what-is-umbraco-support/)
+
+[Umbraco Discord](https://discord.gg/umbraco)
 
 :::center
 ![Umbraco support](images/U_PRs.png)

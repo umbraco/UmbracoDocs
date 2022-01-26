@@ -50,7 +50,7 @@ For information on what each of these levels means see [the serilog wiki](https:
 
 ## Changing the log level for specific namespaces
 
-This can be done by updating the appsettings.json configuration file to sepcify namespaces in which you want to change the log level for.
+This can be done by updating the appsettings.json configuration file to specify namespaces in which you want to change the log level for.
 
 ```json
   "Serilog": {

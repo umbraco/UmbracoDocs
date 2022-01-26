@@ -181,8 +181,10 @@ namespace RoutingDocs.ContentFinders
             // Find the root node with a matching domain to the incoming request
             var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains?
-                .Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == $"https://{contentRequest.Uri.Authority}")
-                .FirstOrDefault();
+                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority 
+                || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+                
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
 
             if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
@@ -197,7 +199,7 @@ namespace RoutingDocs.ContentFinders
             }
 
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode is not null)
             {
@@ -211,21 +213,17 @@ namespace RoutingDocs.ContentFinders
 }
 ```
 
-Example on how to register your own implementation:
+You can configure Umbraco to use your own implementation in the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
 
 ```csharp
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace RoutingDocs.ContentFinders
+public void ConfigureServices(IServiceCollection services)
 {
-    public class UpdateContentFindersComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetContentLastChanceFinder<My404ContentFinder>();
-        }
-    }
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>();
+        .Build();
 }
 ```

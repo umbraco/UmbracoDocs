@@ -41,7 +41,7 @@ Description: An empty Umbraco Project ready to get started
 Options:
   -v|--version              The version of Umbraco to load using NuGet
                             string - Optional
-                            Default: 9.0.0-rc001
+                            Default: 9.0.0
 
   -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
                             text - Optional
@@ -70,24 +70,37 @@ Options:
 
   --connection-string       Database connection string when using Unattended install (Without installer wizard UI)
                             text - Optional
+
+  --no-nodes-view-path      Path to a custom view presented with the Umbraco installation contains no published content
+                            text - Optional
+
+  --use-https-redirect      Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting (Default: false)
+                            bool - Optional
+                            Default: false
 ```
 
-## Create an Umbraco solution
+## Create an Umbraco project
 
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:  
-`dotnet new umbraco -n MyCustomUmbracoSolution`
+`dotnet new umbraco -n MyCustomUmbracoProject`
 
     Or if you prefer to using SQL CE:  
 
-    `dotnet new umbraco --SqlCe -n MyCustomUmbracoSolution`
+    `dotnet new umbraco --SqlCe -n MyCustomUmbracoProject`
 
-You will now have a new project with the name *MyCustomUmbracoSolution*, or the name you chose to use.
+You will now have a new project with the name *MyCustomUmbracoProject*, or the name you chose to use.
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
+
+:::note
+If you want to create a solution file as well you can run the commands below. 
+`dotnet new sln`  
+`dotnet sln add MyCustomUmbracoProject `
+:::
 
 ## Run Umbraco
 
 1. Navigate to the newly created project folder:  
-`cd MyCustomUmbracoSolution`
+`cd MyCustomUmbracoProject`
 
 1. Build and run the new Umbraco .Net Core project:  
 `dotnet build`  

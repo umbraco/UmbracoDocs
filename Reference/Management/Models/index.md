@@ -36,5 +36,8 @@ API reference for the Relation class.
 ## [RelationType](RelationType.md)
 API reference for the RelationType class.
 
+## [ServerRegistration](ServerRegistration.md)
+Represents a registered server in a multiple-servers environment.
+
 ## [Template](Template.md)
 API reference for the Template class.

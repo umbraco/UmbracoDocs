@@ -91,7 +91,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace RoutingDocs.SegmentProviders
 {
-    public class RegisterCustomSegmentProviderComposer : IUserComposer
+    public class RegisterCustomSegmentProviderComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {

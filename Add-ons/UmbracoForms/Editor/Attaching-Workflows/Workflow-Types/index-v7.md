@@ -5,7 +5,7 @@ versionTo: 8.0.0
 
 # Overview of the default workflow types
 
-There are a couple of default workflow types that can be used to extend the functionality of your form. Here is an overview:
+There are are several built-in workflow types that can be used to extend the functionality of your form. Here is an overview:
 
 ## Change Record State
 
@@ -97,6 +97,7 @@ The following settings can be configured:
 
 * URL (required)
 * Method - POST, GET, PUT or DELETE (required)
+* Standard Fields - optionally include and map standard form information such as name and page URL
 * Fields - map the needed fields
 * User and password
 

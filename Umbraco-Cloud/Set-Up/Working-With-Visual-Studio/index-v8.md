@@ -52,7 +52,7 @@ Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) a
 :::
 
 :::warning
-**Important**: Be aware if you run the Uaas.cmd tool as an adminstrator it will genereate the files in your Windows/System folder.
+**Important**: Be aware if you run the Uaas.cmd tool as an adminstrator it will generate the files in your Windows/System folder.
 :::
 
 This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio.

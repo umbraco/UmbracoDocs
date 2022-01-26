@@ -1,7 +1,7 @@
 ---
 v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/EditorModel-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+verified-against: 9.0.1
 ---
 
 # EditorModel Notifications
@@ -17,16 +17,16 @@ using System;
 using System.Linq;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.ContentEditing;
-using Umbraco.Cms.Web.BackOffice.Filters;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
-    public class EditorModelNotificationHandler : INotificationHandler<SendingContentNotification>
+    public class EditorSendingContentNotificationHandler : INotificationHandler<SendingContentNotification>
     {
         public void Handle(SendingContentNotification notification)
         {
-            if (notification.Content.ContentTypeAlias.Equals("newsArticle"))
+            if (notification.Content.ContentTypeAlias.Equals("blogpost"))
             {
                 // Access the property you want to pre-populate
                 // each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
@@ -42,6 +42,7 @@ namespace MySite
                     {
                         // each variant has an IEnumerable of 'Tabs' (property groupings)
                         // and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
+                        // find the first property with alias 'publishDate'
                         var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties)
                             .FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
                         if (pubDateProperty is not null)
@@ -64,12 +65,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.BackOffice.Filters;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
-    public class EditorModelNotificationHandler : INotificationHandler<SendingMemberNotification>
+    public class EditorSendingMemberNotificationHandler : INotificationHandler<SendingMemberNotification>
     {
         private readonly IMemberGroupService _memberGroupService;
 

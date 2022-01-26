@@ -45,7 +45,7 @@ With **SourceCode** models, models are generated in the `~/umbraco/models` direc
 
 Generation *can* fail for various reasons, in which case no models are generated. Umbraco's log file should contain all details about what prevented the generation, but it is probably faster to check the Models Builder dashboard, which should report the last error that was encountered, if any.
 
-The modelsbuilder works much in the same way whether using `SourceCodeManual` or `SourceCodeAuto`. The only real difference between the two are that with `SourceCodeManual` you must manually trigger the generation of the models from the models builder dashboard, whereas with `SoruceCodeAuto` the models are automatically generated whenever content types change.
+The modelsbuilder works much in the same way whether using `SourceCodeManual` or `SourceCodeAuto`. The only real difference between the two are that with `SourceCodeManual` you must manually trigger the generation of the models from the models builder dashboard, whereas with `SourceCodeAuto` the models are automatically generated whenever content types change.
 
 
 ## API models and Dll Models

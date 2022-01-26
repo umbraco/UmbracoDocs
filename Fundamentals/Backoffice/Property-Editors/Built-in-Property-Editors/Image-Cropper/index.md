@@ -178,7 +178,7 @@ namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values
 }
 ```
 
-Using Modelsbuildee you can get the alias of the desired property without using a magic string (you'll need to inject `IPublishedSnapshotAccessor`):
+Using Modelsbuilder you can get the alias of the desired property without using a magic string (you'll need to inject `IPublishedSnapshotAccessor`):
 
 ```csharp
 @{

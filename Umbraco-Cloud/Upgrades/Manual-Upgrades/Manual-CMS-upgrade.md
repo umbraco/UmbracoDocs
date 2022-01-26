@@ -1,4 +1,5 @@
 ---
+
 versionFrom: 9.0.0
 ---
 
@@ -14,6 +15,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 * Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
+
 ## Get the latest version of Umbraco
 
 To get the latest version of Umbraco you will need to upgrade the site using NuGet.
@@ -27,6 +29,7 @@ After you have added a package reference to your project by executing the `dotne
 You can also update the CMS through the `NuGet Package Manager` in Visual studio:
 
 ![NuGet Package Manager](images/Manage_packages.png)
+
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 

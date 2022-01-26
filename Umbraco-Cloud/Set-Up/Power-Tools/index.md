@@ -21,9 +21,9 @@ The power tools can be used for various things, we often refer to the tools in o
 * [Run an extraction manually](Manual-extractions)
 * [Generate UDA files](Generating-UDA-files)
 
-## Showing more than 199 items in Kudu
+## Showing more than 299 items in Kudu
 
-Larger sites can often have more than 199 items in various folders and by default, you can only view 199 files/folders.
+Larger sites can often have more than 299 items in various folders and by default, you can only view 299 files/folders.
 
 This number can be increased by doing the following:
 
@@ -34,7 +34,7 @@ This number can be increased by doing the following:
 5. You should now be able to view the folders/files up to the limit you've set it to.
 
 :::note
-If you refresh the page, the limit will go back to the standard 199.
+If you refresh the page, the limit will go back to the standard 299.
 :::
 
 ## Important notes

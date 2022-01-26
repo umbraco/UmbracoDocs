@@ -13,9 +13,9 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Lucene/Examine configuration
 
-The single instance Backoffice Administrative Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
+The single instance Backoffice Administrative Web App should be set to use [SyncedTempFileSystemDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
-The multi instance Scalable Public Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
+The multi instance Scalable Public Web App should be set to use [TempFileSystemDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 ### Umbraco TEMP files
 

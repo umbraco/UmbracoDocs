@@ -2,7 +2,7 @@
 updated-links: false
 state: partial
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
@@ -23,7 +23,7 @@ The tour functionality will load information from multiple locations.
 
 - **Plugin tours**
 
-    When you want to include a tour with your custom plugin/package you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index.md).
+    When you want to include a tour with your custom plugin/package you can store the custom json tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index.md).
 
 ## The JSON Format
 
@@ -47,17 +47,19 @@ A tour configuration JSON object contains all the data related to a tour.
 Example tour configuration object:
 
 ```json
-{
-    "name": "My Awesome tour",
-    "alias": "myUniqueAlias",
+[
+  {
+    "name": "My Custom Backoffice tour",
+    "alias": "myCustomBackofficeTour",
     "group": "Get things done!!!",
     "groupOrder": 1,
     "allowDisable": true,
-    "culture" : "en-US",
-    "contentType" : "homePage",
-    "requiredSections": ["content","media"],
+    "culture": "en-US",
+    "contentType": "",
+    "requiredSections": [ "content", "media" ],
     "steps": []
-}
+  }
+]
 ```
 
 Below is an explanation of each of the properties on the tour configuration object:
@@ -122,18 +124,20 @@ A tour step JSON object contains all the data related to a tour step.
 Example tour step object:
 
 ```json
-{
-    "title": "A meaningful title",
-    "content": "<p>Some text explaining the step</p>",
-    "type": null,
-    "element": "#section-avatar",
-    "elementPreventClick": false,
-    "backdropOpacity": 0.6,
-    "event": "click",
-    "view": null,
-    "eventElement": "#section-avatar .umb-avatar",
-    "customProperties": null
-},
+"steps": [
+      {
+        "title": "A meaningful title",
+        "content": "<p>Some text explaining the step</p>",
+        "type": null,
+        "element": "[data-element='global-user']",
+        "elementPreventClick": false,
+        "backdropOpacity": 0.6,
+        "event": "click",
+        "view": null,
+        "eventElement": "[data-element='global-user'] .umb-avatar",
+        "customProperties": null
+      }
+    ]
 ```
 
 Below is an explanation of each of the properties on the tour step object.
@@ -216,9 +220,9 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Tour;
 
-namespace Umbraco.Examples
+namespace Umbraco.Docs.Samples.Web.BackofficeTours
 {
-    public class BackofficeComposer : IUserComposer
+    public class BackofficeComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -227,15 +231,15 @@ namespace Umbraco.Examples
                 .AddFilter(new BackOfficeTourFilter(pluginName: null, tourFileName: null, tourAlias: new Regex("^umbIntro", RegexOptions.IgnoreCase)));
 
             // Filter any tours in the file that is custom-tours.json
-            // Found in App_Plugins/MyAwesomePlugin/backoffice/tours/
+            // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/
             // OR at /Config/BackOfficeTours/
             builder.TourFilters()
                 .AddFilterByFile("custom-tours.json");
 
             // Filter out one or more tour JSON files from a specific plugin/package
-            // Found in App_Plugins/MyAwesomePlugin/backoffice/tours/tour-two.json
+            // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/custom-tours.json
             builder.TourFilters()
-                .AddFilterByPlugin("MyAwesomePlugin");
+                .AddFilterByPlugin("MyCustomBackofficeTour");
         }
     }
 }
