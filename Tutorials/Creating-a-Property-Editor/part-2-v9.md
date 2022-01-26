@@ -121,7 +121,7 @@ if($scope.model.value === null || $scope.model.value === ""){
 }
 ```
 
-and the nat the end we add a getState method:
+and then at the end we add a getState method:
 
 ```javascript
     // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.

@@ -4,9 +4,9 @@ meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
 
-# Creating a property editor
+# Creating a Property Editor
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, AngularJS' modules and its injector, and finally how we can test our property editor.
+This guide explains how to set up a property editor, hook it into Umbraco's Data Types, AngularJS' modules, and its injector, and finally how we can test our property editor.
 
 The steps we will go through in part 1 are:
 
@@ -25,7 +25,7 @@ This tutorial covers how to use AngularJS with Umbraco, so it does not cover Ang
 
 ## The End Result
 
-By the end of this tutorial, we will have a suggestion data type running inside of Umbraco, registered as a Data Type in the backoffice and assigned to a Document Type. The data type can create and suggest values.
+By the end of this tutorial, we will have a suggestion data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
 
 ## Setting up a plugin
 
