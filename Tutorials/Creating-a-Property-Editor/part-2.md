@@ -137,4 +137,4 @@ and then at the end we add a getState method:
 
 See what's new? - the `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
-[Next - Integrating services with a property editor](part-3-v9.md)
+[Next - Integrating services with a property editor](part-3.md)

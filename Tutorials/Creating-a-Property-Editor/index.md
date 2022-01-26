@@ -209,4 +209,4 @@ When we save or publish, the value of the data type is automatically synced to t
 
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
-[Next - Adding configuration to a property editor](part-2-v9.md)
+[Next - Adding configuration to a property editor](part-2.md)
