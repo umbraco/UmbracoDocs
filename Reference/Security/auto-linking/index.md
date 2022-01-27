@@ -298,7 +298,7 @@ Auto-linking only makes sense if you have a public member registration anyway or
 
 ## Local logins
 
-If you have configured auto-linking, then any auto-linked user/member will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
+If you have configured auto-linking, then any auto-linked user or member will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
 
 For users only, if the `DenyLocalLogin` option is enabled, then all password changing functionality in the backoffice is also disabled and local login is not possible.
 
