@@ -131,7 +131,7 @@ namespace Umbraco9
 At this point the 2FA is actually active, but no members have setup 2FA yet.
 The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
-```
+```Csharp
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
 @using Umbraco.Cms.Web.Website.Models
