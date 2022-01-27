@@ -293,7 +293,7 @@ services.AddUmbraco(_env, _config)
    .Build();
 ```
 :::note
-Auto-linking only make sense if you have a public member registration anyway or the external provider do not have public account creation.
+Auto-linking only makes sense if you have a public member registration anyway or the external provider does not have public account creation.
 :::
 
 ## Local logins
