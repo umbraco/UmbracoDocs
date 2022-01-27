@@ -61,11 +61,9 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 And another, but fairly similar, example of configuration for Google Authentication for members may look like:
 
 ```Csharp
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
-using Umbraco.Cms.Web.BackOffice.Security;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 
 namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 {
