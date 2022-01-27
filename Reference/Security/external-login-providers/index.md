@@ -76,11 +76,11 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
             builder.AddMemberExternalLogins(logins =>
             {
                 logins.AddMemberLogin(
-                    backOfficeAuthenticationBuilder =>
+                    memberAuthenticationBuilder =>
                     {
-                        backOfficeAuthenticationBuilder.AddGoogle(
+                        memberAuthenticationBuilder.AddGoogle(
                             // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleMemberExternalLoginProviderOptions.SchemeName),
+                            memberAuthenticationBuilder.SchemeForMembers(GoogleMemberExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
                                 options.ClientId = "YOURCLIENTID";
