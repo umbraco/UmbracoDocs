@@ -8,7 +8,7 @@ meta.Description: "Umbraco users and members supports a two-factor authenticatio
 # Two-factor authentication for Members
 Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
 
-Because Umbraco do not control how the UI is for member login and profile edit, the UI for 2FA is shipped at part of the snippets for macros. These can be used as a starting point, before styling the page like you would like.
+Because Umbraco does not control how the UI is for member login and profile edit, the UI for 2FA is shipped as part of the snippets for macros. These can be used as a starting point, before styling the page as you would like.
 
 ### Example implementation for Authenticator Apps
 In the following example we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/).
