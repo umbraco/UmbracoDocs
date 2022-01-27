@@ -255,7 +255,7 @@ To register this configuration class, you can call the following from your `star
 services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
 ```
 
-Like for users, we recommend to create an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this
+Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this.
 This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
 ```Csharp
 public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
