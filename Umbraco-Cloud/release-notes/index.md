@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 versionTo: 9.0.0
 ---
-# Umbraco Cloud Product Release Notes
+# Umbraco Cloud Portal Release Notes
 
 _View the latest updates for the Umbraco Cloud Portal_
 
