@@ -31,15 +31,15 @@ If you wish to use the `IMemberManager` in a class that inherits from one of the
 
 ```csharp
 
- public class MemberAuthenticationSurfaceController : SurfaceController
+public class MemberAuthenticationSurfaceController : SurfaceController
+{
+    private readonly IMemberManager _memberManager;
+    
+    public MemberAuthenticationSurfaceController(IMemberManager memberManager)
     {
-        private readonly IMemberManager _memberManager;
-       
-        public MemberAuthenticationSurfaceController(IMemberManager memberManager)
-        {
-            _memberManager = memberManager;
-        }
+        _memberManager = memberManager;
     }
+}
 ```
 
 ## Examples
@@ -54,12 +54,35 @@ Finds a member by their ID
 
 ```C#
 @{
-	var memberById = await _memberManager.FindByIdAsync("1234");
-	// Do stuff with the member, for instance checking if email is confirmed
-	var emailConfirmed = memberById.EmailConfirmed;
+    var memberById = await _memberManager.FindByIdAsync("1234");
+    // Do stuff with the member, for instance checking if email is confirmed
+    var emailConfirmed = memberById.EmailConfirmed;
 }
 ```
 
+If we want to find a member by `Udi` or `Guid` we need to to inject `IIdKeyMap` service:
+
+##### Find member by `Udi`
+
+```C#
+var memberUdiAttempt = _idKeyMap.GetIdForUdi(nodeUdi);
+if (memberUdiAttempt.Success)
+{
+   var memberId = memberUdiAttempt.Result;
+   var member = await _memberManager.FindByIdAsync(memberId.ToString());
+}
+```
+
+##### Find member by `Guid`
+
+```C#
+var memberKeyAttempt = _idKeyMap.GetIdForKey(nodeKey);
+if (memberKeyAttempt.Success)
+{
+   var memberId = memberKeyAttempt.Result;
+   var member = await _memberManager.FindByIdAsync(memberId.ToString());
+}
+```
 
 #### FindByEmailAsync(string)
 
@@ -67,9 +90,9 @@ Finds a member by their email.
 
 ```C#
 @{
-	var memberById = await _memberManager.FindByEmailAsync("test@member.com");
-	// Do stuff with the member, for instance checking if email is confirmed
-	var emailConfirmed = memberById.EmailConfirmed;
+    var memberById = await _memberManager.FindByEmailAsync("test@member.com");
+    // Do stuff with the member, for instance checking if email is confirmed
+    var emailConfirmed = memberById.EmailConfirmed;
 }
 ```
 
@@ -79,9 +102,9 @@ Finds a member by their login name.
 
 ```C#
 @{
-	var memberById = await _memberManager.FindByNameAsync("TestLoginName");
-	// Do stuff with the member, for instance checking if email is confirmed
-	var emailConfirmed = memberById.EmailConfirmed;
+    var memberById = await _memberManager.FindByNameAsync("TestLoginName");
+    // Do stuff with the member, for instance checking if email is confirmed
+    var emailConfirmed = memberById.EmailConfirmed;
 }
 ```
 
@@ -92,8 +115,8 @@ By default `IMemberManager` returns members as `MemberIdentityUser`. This method
 
 ```C#
 @{
-	MemberIdentityUser memberById = await _memberManager.FindByEmailAsync("test@member.com");
-	IPublishedContent memberAsContent = _memberManager.AsPublishedMember(memberById);
+    MemberIdentityUser memberById = await _memberManager.FindByEmailAsync("test@member.com");
+    IPublishedContent memberAsContent = _memberManager.AsPublishedMember(memberById);
 }
 ```
 
@@ -104,16 +127,16 @@ Returns the currently logged in member if there is one, else returns null value.
 
 ```C#
 @{
-	var currentMember = await _memberManager.GetCurrentMemberAsync();
+    var currentMember = await _memberManager.GetCurrentMemberAsync();
 }
 
 @if (currentMember is not null)
 {
-	<p>A member is logged in, member username: @currentMember.UserName</p>
+    <p>A member is logged in, member username: @currentMember.UserName</p>
 }
 else
 {
-	<p>No member is logged in.</p>
+    <p>No member is logged in.</p>
 }
 ```
 
@@ -124,11 +147,11 @@ Checks if a member is logged in.
 ```C#
 @if (_memberManager.IsLoggedIn())
 {
-	<p>A member is logged in</p>
+    <p>A member is logged in</p>
 }
 else
 {
-	<p>No member is logged in.</p>
+    <p>No member is logged in.</p>
 }
 ```
 
@@ -138,7 +161,7 @@ Checks if the current member is authorized for content protected by types, group
 
 ```C#
 @{
-	var memberIsAuthorized = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
+    var memberIsAuthorized = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
 }
 ```
 
@@ -148,17 +171,17 @@ Returns a `Task<bool>` specifying if the page with a given [Umbraco path](../IPu
 
 ```csharp
 <ul>
-	@foreach (var child in Model.Children)
-	{
-		@if (await _memberManager.IsProtectedAsync(child.Path))
-		{
-			<li>@child.Name - Members only!</li>
-		}
-		else
-		{
-			<li>@child.Name - Access to everyone!</li>
-		}
-	}
+    @foreach (var child in Model.Children)
+    {
+        @if (await _memberManager.IsProtectedAsync(child.Path))
+        {
+            <li>@child.Name - Members only!</li>
+        }
+        else
+        {
+            <li>@child.Name - Access to everyone!</li>
+        }
+    }
 </ul>
 ```
 
@@ -168,13 +191,13 @@ Returns a `Task<bool>` specifying if the currently logged in member has access t
 
 ```csharp
 <ul>
-	@foreach (var child in Model.Children)
-	{
-		// Only display the page if the current member has access to it.
-		@if (await _memberManager.MemberHasAccessAsync(child.Path))
-		{
-			<li>@child.Name</li>
-		}
-	}
+    @foreach (var child in Model.Children)
+    {
+        // Only display the page if the current member has access to it.
+        @if (await _memberManager.MemberHasAccessAsync(child.Path))
+        {
+            <li>@child.Name</li>
+        }
+    }
 </ul>
 ```
