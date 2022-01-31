@@ -14,9 +14,9 @@ Therefore this connection info is now easy to **_copy directly from the portal_*
 ![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
 
 ### Project invitation link to clipboard
-The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees spam-folder. We have now **_optimized_** the configuration of the portal _**email delivery**_ so every invite should now be delivered to the expected receiver - in the correct inbox.
+The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have now **_optimized_** the configuration of the portal _**email delivery**_ so every invite should now be delivered to the expected receiver - in the correct inbox.
 
-However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases a resend of the project invitation might not do the trick. So to ease the invite process, in the rare case the email doesn’t show up, we have added the option to **_copy the project invitation link_** for active invites.
+However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. So to ease the invite process, in the rare case the email doesn’t show up, we have added the option to **_copy the project invitation link_** for active invites.
 
 ![CopyProjectInviteLink](https://user-images.githubusercontent.com/93588665/151602357-1bd4b165-eb4d-44b5-bc88-b45594ae5dc0.gif)
 
