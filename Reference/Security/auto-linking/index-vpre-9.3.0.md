@@ -1,20 +1,21 @@
----
-versionFrom: 9.3.0
+﻿---
+versionFrom: 9.0.0
+versionTo: 9.2.0
 keywords: oauth, security
 ---
 
 # Linking External Login Provider accounts
 
-Traditionally when using [External login providers (OAuth)](../external-login-providers/index.md), a backoffice user or website member will need to exist first and then that user can link their user account to an external login provider in the backoffice or edit profile page.
+Traditionally when using [External login providers (OAuth)](../external-login-providers/index.md), a backoffice user will need to exist first and then that user can link their user account to an external login provider in the backoffice.
 
-In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a single sign-on (SSO) approach to the backoffice or your member sections of your website. This is called Auto Linking.
+In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a single sign-on (SSO) approach to the backoffice. This is called Auto Linking.
 
 
 ## Configure External Login provider
 
-To enable auto linking you have to implement a custom named configuration of `BackOfficeExternalLoginProviderOptions` or `MemberExternalLoginProviderOptions` for users or members, respectively.
+To enable auto linking you have to implement a custom named configuration of `BackOfficeExternalLoginProviderOptions`.
 
-### Example for users
+### Example
 
 _This example shows connection to an Open ID Connect Service such as [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) or [OpenIDDict](https://github.com/openiddict/openiddict-core)_
 
@@ -175,132 +176,11 @@ services.AddUmbraco(_env, _config)
 For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
 :::
 
-### Example for members
-The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members.
-Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
-
-When auto-linking is enabled, only the `Login` snippet is relevant as users do not have to register before.
-
-The following example will show how to use Google and external login provider.
-You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
-
-
-```Csharp
-using System;
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Web.BackOffice.Security;
-
-namespace Umbraco9
-{
-    public class GoogleMemberExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
-    {
-        public const string SchemeName = "Google";
-
-        public void Configure(string name, MemberExternalLoginProviderOptions options)
-        {
-            if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
-            {
-                return;
-            }
-
-            Configure(options);
-        }
-
-        public void Configure(MemberExternalLoginProviderOptions options) =>
-            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
-                // Must be true for auto-linking to be enabled
-                autoLinkExternalAccount: true,
-
-                // Optionally specify the default culture to create
-                // the user as. If null it will use the default
-                // culture defined in the web.config, or it can
-                // be dynamically assigned in the OnAutoLinking
-                // callback.
-                defaultCulture: null,
-
-                // Optionally specify the default "IsApprove" status. Must be true for auto-linking.
-                defaultIsApproved:true,
-
-                // Optionally specify the member type alias. Default is "Member"
-                defaultMemberTypeAlias:"Member",
-
-                // Optionally specify the member groups names to add the auto-linking user to.
-                defaultMemberGroups: Array.Empty<string>()
-            )
-            {
-                // Optional callback
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // You can customize the member before it's linked.
-                    // i.e. Modify the member's groups based on the Claims returned
-                    // in the externalLogin info
-                },
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // You can customize the member before it's saved whenever they have
-                    // logged in with the external provider.
-                    // i.e. Sync the member's name based on the Claims returned
-                    // in the externalLogin info
-
-                    return true; //returns a boolean indicating if sign in should continue or not.
-                }
-            };
-    }
-}
-```
-
-To register this configuration class, you can call the following from your `startup.cs`:
-```Csharp
-services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
-```
-
-Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this.
-This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
-```Csharp
-public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
-{
-    // Register GoogleMemberExternalLoginProviderOptions here rather than require it in startup
-    builder.Services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
-
-    builder.AddMemberExternalLogins(logins =>
-    {
-        logins.AddMemberLogin(
-            memberAuthenticationBuilder =>
-            {
-                memberAuthenticationBuilder.AddGoogle(
-                    // The scheme must be set with this method to work for the umbraco members
-                    memberAuthenticationBuilder.SchemeForMembers(GoogleMemberExternalLoginProviderOptions.SchemeName),
-                    options =>
-                    {
-                        options.ClientId = "YOURCLIENTID";
-                        options.ClientSecret = "YOURCLIENTSECRET";
-                    });
-            });
-    });
-    return builder;
-}
-```
-
-Finally this extension can also be called from the `Startup.cs` like the example below:
-
-```Csharp
-services.AddUmbraco(_env, _config)
-   .AddBackOffice()
-   .AddWebsite()
-   .AddComposers()
-   .AddMemberGoogleAuthentication()
-   .Build();
-```
-:::note
-Auto-linking only makes sense if you have a public member registration anyway or the external provider does not have public account creation.
-:::
-
 ## Local logins
 
-If you have configured auto-linking, then any auto-linked user or member will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
+If you have configured auto-linking, then any auto-linked user will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice.
 
-For users only, if the `DenyLocalLogin` option is enabled, then all password changing functionality in the backoffice is also disabled and local login is not possible.
+If the `DenyLocalLogin` option is enabled, then all password changing functionality in the backoffice is also disabled and local login is not possible.
 
 ## Transfering Claims from External identities
 
@@ -351,8 +231,8 @@ OnExternalLogin = (user, loginInfo) => {
 
 ## Storing external login provider data
 In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
-You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`.
-The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`.
+You can persist this data to the affiliated user's external login data via the `IExternalLoginService`.
+The `void Save(int userId, IEnumerable<IExternalLogin> logins)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`.
 This is a blob text column so can store any arbitrary data for the external login provider.
 
 

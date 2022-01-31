@@ -36,5 +36,5 @@ You can configure your public and private keys in the `UmbracoForms.config` file
 You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
 
 :::note
-Ensure to select the **Mandatory** field while adding the **Recaptcha2** to your Form.
+Ensure to select the **Mandatory** field while adding the **Recaptcha3** to your Form.
 :::
