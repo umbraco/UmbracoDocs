@@ -40,4 +40,4 @@ You are able to see a list of all your created API Keys and all relevant informa
 
 ![List of all APIs](images/listOfAPIs.png)
 
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=QHrFcEibYrE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/QHrFcEibYrE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

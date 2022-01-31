@@ -8,7 +8,7 @@ meta.Description: "Tour of Umbraco Heartcore backoffice"
 
 In this article you will get an introduction to the different sections in the Umbraco Backoffice.
 
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=bQT2QcMYvwE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/bQT2QcMYvwE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Login screen
 

@@ -19,7 +19,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=wNIDdgdAt8s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/wNIDdgdAt8s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to 8](https://www.youtube.com/playlist?list=PLgX62vUaGZsGceCXveMkprlDV5a3K94db)
 
