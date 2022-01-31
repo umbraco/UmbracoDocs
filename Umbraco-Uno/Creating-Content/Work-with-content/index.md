@@ -23,8 +23,8 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 
 You can find a series of video tutorials on how to work with and use Umbraco Uno:
 
-* [Creating new content](https://www.youtube.com/watch?v=SxWKBUAwfNE)
-* [Updating content](https://www.youtube.com/watch?v=-XOkpG8YcGA)
+* [Creating new content](https://www.youtube.com/embed/SxWKBUAwfNE?rel=0)
+* [Updating content](https://www.youtube.com/embed/-XOkpG8YcGA?rel=0)
 
 ## Creating content
 

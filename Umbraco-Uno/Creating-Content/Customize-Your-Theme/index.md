@@ -10,7 +10,7 @@ A custom theme lets you add a little personal touch to your page - the colors yo
 
 In this video you will get a quick walk-through of the basics when customizing your Umbraco Uno website.
 
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=j_L0cABFZo0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/j_L0cABFZo0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## How to customize your theme through the theme editor
 

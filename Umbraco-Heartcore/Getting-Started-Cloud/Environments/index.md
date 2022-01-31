@@ -18,7 +18,7 @@ Learn more about the deployment model in the [Deployment workflow article](../De
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=6MXuDqEMM70" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/6MXuDqEMM70?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Manage environments
 
