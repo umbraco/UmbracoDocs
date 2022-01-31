@@ -24,3 +24,5 @@ When you create a **New Project**, the user used to create the project will auto
 5. Click **Confirm**.
 
     ![Add technical contact form](images/Technical-Contact.gif)
+
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=sjugjnHz3bo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

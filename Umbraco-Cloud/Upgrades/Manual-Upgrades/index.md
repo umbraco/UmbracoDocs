@@ -32,9 +32,9 @@ When you are manually upgrading your Umbraco Cloud project and you need to upgra
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/yuHUxI_rplE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=A0Kzgsb4EGQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-You can find the full playlist here: [Manually upgrade your Umbraco Cloud project](https://www.youtube.com/playlist?list=PLG_nqaT-rbpx1lzrdSIqPyJrpRf_z4DS9)
+You can find the full playlist here: [Manually upgrade your Umbraco Cloud project](https://www.youtube.com/playlist?list=PLgX62vUaGZsFy6I695OINpxhddOe-lOIP)
 
 ## [How to upgrade Umbraco CMS manually](Manual-CMS-upgrade.md)
 

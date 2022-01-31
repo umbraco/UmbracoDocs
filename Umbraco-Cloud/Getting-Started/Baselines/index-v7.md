@@ -15,7 +15,7 @@ For some more in-depth information have a look at the [High-level Overview](High
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/t4zI8_F33LM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/watch?v=A4FhZTyruE0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step-by-step
 
