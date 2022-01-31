@@ -20,7 +20,7 @@ However, there can be exceptions where an email is either bounced or lands in th
 
 ![CopyProjectInviteLink](https://user-images.githubusercontent.com/93588665/151602357-1bd4b165-eb4d-44b5-bc88-b45594ae5dc0.gif)
 
-### Release notes link in portal
-In 2021 we added several new team members to the Cloud Feature team to support our strategy of making Umbraco Cloud [the best way](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. During 2022 and the years to come we will continue our _**customer-centric development**_ and with an increased focus on  input from partners and portal users improve existing functionality and create new exciting features.
+### Release notes link in the portal
+In 2021 we added several new team members to the Cloud Feature team to support our strategy of making Umbraco Cloud [the best way](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. In 2022 and the years to come we will continue our _**customer-centric development**_ and with an increased focus on input from partners and portal users improve existing functionality and create new exciting features.
 
 In order for agencies and users to keep up with the improvements, we’ve made it easy to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal. 
