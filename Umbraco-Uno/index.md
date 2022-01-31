@@ -6,23 +6,11 @@ versionFrom: 8.0.0
 
 Without having to write any code or build a complex setup, you can build, design and create websites for any occasion with Umbraco Uno. Everything you would need is already setup for you and ready for you to use.
 
-Umbraco Uno projects are all hosted on our servers and you can get a new project in a matter of minutes. Follow the link below to take a free 14-day trial or, if you already have an account on [Umbraco.io](https://umbraco.io), use the **Create project** option.
-
-[Try Umbraco Uno today by taking a 14-day free trial.](https://umbraco.com/try-umbraco-uno/)
-
 In this section you will find all you need to know in order to setup, configure and work with **Umbraco Uno**.
 
 ## [Getting Started](Getting-Started)
 
 Learn more about how to get your hands on an Umbraco Uno project, how to configure it and learn the basics of working with content.
-
-## [How to work with content](Creating-Content)
-
-Looking to learn more about how to work with content in Umbraco Uno or are you brand new and need a place to start? In the Creating Content section you will find a guides for the most common scenarios when working with Umbraco Uno.
-
-## [Custom Code](Custom-Code)
-
-Do you want to extend on the features in your Umbraco Uno project? By enabled the option to add custom code you get full access to the source code and get the option to add even more flexibility to your project.
 
 ## [Going live](Going-live)
 
@@ -51,10 +39,6 @@ An Umbraco Uno project can be configured in many different way. In this section 
 ### [Content Types](Uno-pedia/Content-Types)
 
 A set of content types will be available to you. This section will give you more information about each of these types.
-
-### [Widgets](Widgets)
-
-Widgets are the *building blocks* of Umbraco Uno. In this section you can learn more about each of the widgets, to learn how they can be used.
 
 ## [Frequently asked questions](https://umbraco.com/products/umbraco-uno/faq-umbraco-uno/)
 
