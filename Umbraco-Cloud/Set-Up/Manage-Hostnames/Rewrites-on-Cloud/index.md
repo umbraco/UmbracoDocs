@@ -32,24 +32,7 @@ When you are doing rewrite rules on Umbraco Cloud there are a few important thin
 
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only one hostname.
 
-One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
-
-```xml
-<rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
-  <match url=".*" />
-  <conditions>
-    <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
-    <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
-  </conditions>
-  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
-        appendQueryString="true" redirectType="Permanent" />
-</rule>
-```
-
-If your Umbraco Cloud site is running on the new infrastucture then the rewrite rule needs to be like this 
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.euwest01.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
 
 ```xml
 <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
