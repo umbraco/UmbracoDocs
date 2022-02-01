@@ -187,7 +187,10 @@ Whenever you render an Umbraco form within your view using `Html.BeginUmbracoFor
 ```
 
 
+
+::: tip
 In Umbraco 9 the `__RequestVerificationToken` token is automatically added to forms for you, so you no longer need to add `@Html.AntiForgeryToken()` to your forms.
+:::
 
 ### Surface Controller Actions
 
