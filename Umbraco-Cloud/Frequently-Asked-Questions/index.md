@@ -44,11 +44,12 @@ Umbraco Cloud is best when used as the base for a new project. There is a specif
 
 ### On what kind of server environment does my Cloud site run?
 
-All of our infrastructure is based on Windows Azure virtual machines.
+All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan offers in total
 
-Currently all web servers run on Windows Server 2012 R2. Each Cloud site runs on a standard IIS version 8.5 instance.
-
-All databases always run on the latest version of SQL Azure Server.
+- 2 CPU Cores
+- 8GB of RAM
+- 250 GB Disk space
+- 1,920 TCP connections
 
 ### Can I choose which Azure Region my projects run in?
 
@@ -56,24 +57,7 @@ No. All services currently run in the Azure West Europe region.
 
 ### How many resources do I have available for my website?
 
-:::note
-This FAQ item relates to websites hosted on the older platform before H2 2021. In order to see quotas for newer platform websites see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
-:::
-
-Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
-
-We do have some limitations.
-
-If your Cloud site is using a set amount of CPU for more than a set time, the priority for your CPU will be throttled down for each time you consecutively use more than the allowed amount within the given time.
-
-The amount of CPU and the set time, is defined by the plan you are on:
-
-- For a starter it is 20% CPU / 10 minutes / 5 times a day.
-- For a Standard it is 35% CPU / 10 minutes / 3 times a day.
-- For a Pro it is 50% CPU / 10 minutes / 2 times a day.
-
-The VMs the sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
-E.g.: A starter project can use up to 20% CPU over a period of 10 minutes. Every time it exceeds that it's flagged. A project can be flagged only 5 times a day.
+In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
@@ -130,7 +114,6 @@ Yes, that’s fine. In some cases you may want to upgrade sooner than the schedu
 
 Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
 
-
 ### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
@@ -174,17 +157,6 @@ Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL h
 Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
 Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
-
-### How do I know if my site is still using a Latch certificate?
-
-To check whether your site is still using Latch follow this guide:
-
-1. Open your website URL.
-2. Select the "lock" icon to the left of the URL in the address bar in your browser.
-3. Click on Certificate.
-4. Identify the provider next to Issued by:.
-
-If the certificat issuer is Let's Encrypt, you are still using a Latch certificate.
 
 ### Does Umbraco Cloud support http/2?
 
