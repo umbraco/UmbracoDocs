@@ -64,7 +64,10 @@ For illustration purposes, the following structure represents the full set of op
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
       "EnableAntiForgeryToken": true,
       "SavePlainTextPasswords": false,
-      "DisableFileUploadAccessProtection": false
+      "DisableFileUploadAccessProtection": false,
+      "DefaultAccessToNewForms": "Grant",
+      "ManageSecurityWithUserGroups": false,
+      "GrantAccessToNewFormsForUserGroups": "admin,editor"
     },
     "FieldTypes": {
       "DatePicker": {
@@ -193,6 +196,16 @@ This setting needs to be a `true` or `false` value and controls whether password
 In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
+
+### DefaultAccessToNewForms
+In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
+the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
+
+### ManageSecurityWithUserGroups
+Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
+
+### GrantAccessToNewFormsForUserGroups
+Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
 ## Field type specific configuration
 
