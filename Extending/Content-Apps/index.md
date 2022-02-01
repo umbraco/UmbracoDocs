@@ -66,6 +66,9 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+        "show": [
+        "+content/*" // show app for all content types
+      ]
     }
     ],
     // array of files we want to inject into the application on app_start
@@ -177,6 +180,8 @@ Here is an example where all types are taken intro consideration when limiting a
 When the 'show' directive is omitted then the app will be shown for all types.
 
 Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
+
+In this case the WordCounter app is only usable within the Content section so you have to exclude from all other types.
 :::
 
 ### Limiting according to User Role
