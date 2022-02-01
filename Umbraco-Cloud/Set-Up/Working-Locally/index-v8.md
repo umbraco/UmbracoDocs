@@ -8,7 +8,7 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/rZCwfH7CsTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/e3spd6Nqrf8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Step-by-step
 

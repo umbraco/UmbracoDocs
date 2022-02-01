@@ -9,7 +9,7 @@ One of the features built into Umbraco Cloud is the ability to work locally with
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/hfgy9Izsi_4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/31XlMIuwwh8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step by step
 

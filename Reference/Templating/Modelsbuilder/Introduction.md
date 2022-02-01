@@ -9,11 +9,11 @@ update-links: true
 
 # Umbraco Models Builder Introduction
 
-Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default a slimmed down version of Models Builder is embedded with the main Umbraco distribution. 
+Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default, a slimmed down version of Models Builder is embedded with the main Umbraco distribution. 
 
-Models can be used anywhere that content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, when using the Models Builder, the content cache does not return `IPublishedContent` objects anymore, but strongly typed models, implemeting `IPublishedContent`.
+Models can be used anywhere that content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, when using the Models Builder, the content cache does not return `IPublishedContent` objects anymore, but strongly typed models, implementing `IPublishedContent`.
 
-For each content, media and member type in the Umbraco setup, the generator creates a `*.generated.cs` file, corresponding to the type. For instance a document type with a textstring property named Title, and a rich text editor named BodyText will look like this:
+For each content, media and member type in the Umbraco setup, the generator creates a `*.generated.cs` file, corresponding to the type. For instance, a document type with a textstring property named Title, and a rich text editor named BodyText will look like this:
 
 ```csharp
 //------------------------------------------------------------------------------
