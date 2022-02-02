@@ -112,7 +112,7 @@ After registering your dashboard, it will appear in the backoffice - however it 
 You will need to create a *Lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
 
 :::note
-The `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
+The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
 :::
 
 ```xml
