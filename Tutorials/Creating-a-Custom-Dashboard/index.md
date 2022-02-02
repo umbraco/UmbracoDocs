@@ -109,7 +109,11 @@ You can specify multiple controls to appear on a particular tab, and multiple ta
 
 After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
+You will need to create a *Lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
+
+:::note
+The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
+:::
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
