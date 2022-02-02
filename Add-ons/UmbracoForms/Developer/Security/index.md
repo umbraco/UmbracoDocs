@@ -26,6 +26,12 @@ As new forms are created, users will automatically be granted access to them, un
 
 Umbraco Forms 9, and Umbraco Forms 8 when form definitions are configured for storage in the database, allows for the creation of folders to group forms within.  It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
 
+If no start folders are selected, the user will be able to access all forms in the backoffice according to their permissions.
+
+If a single start folder is selected, that will act as the root of the tree view of forms.  The user will have access to all folders and forms below that selected folder.
+
+If more than one start folder is selected, they will appear underneath the root of the tree view of forms.  The user will have access to only those folders and their descendent folders and forms.
+
 ![Start folders](images/user-start-folders.png)
 
 ## User group based permissions
