@@ -211,3 +211,57 @@ public class ProductsControllerTests
 }
 
 ```
+
+## Testing ICultureDictionary using the UmbracoHelper
+See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
+
+```csharp
+public class HomeController : RenderController
+{
+    private readonly UmbracoHelper umbracoHelper;
+
+    public HomeController(UmbracoHelper umbracoHelper, ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) : base(logger, compositeViewEngine, umbracoContextAccessor)
+    {
+        this.umbracoHelper = umbracoHelper;
+    }
+
+    public IActionResult Home(ContentModel model)
+    {
+        var myCustomModel = new PageViewModel(model.Content)
+        {
+            MyDictionaryProperty = this.umbracoHelper.GetDictionaryValue("myDictionaryKey")
+        };
+
+        return View(myCustomModel);
+    }
+}
+
+public class HomeControllerTests
+{
+    private Mock<ICultureDictionary> cultureDictionary;
+    private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
+    private UmbracoHelper umbracoHelper;
+    private HomeController controller;
+
+    [SetUp]
+    public void SetUp()
+    {
+        this.cultureDictionary = new Mock<ICultureDictionary>();
+        this.cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
+        this.cultureDictionaryFactory.Setup(x => x.CreateDictionary()).Returns(this.cultureDictionary.Object);
+        this.umbracoHelper = new UmbracoHelper(this.cultureDictionaryFactory.Object, Mock.Of<IUmbracoComponentRenderer>(), Mock.Of<IPublishedContentQuery>());
+        this.controller = new HomeController(this.umbracoHelper, Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
+    }
+
+    [Test, AutoData]
+    public void GivenMyDictionaryKey_WhenIndexAction_ThenReturnViewModelWithMyPropertyDictionaryValue(string expected)
+    {
+        var model = new ContentModel(new Mock<IPublishedContent>().Object);            
+        this.cultureDictionary.Setup(x => x["myDictionaryKey"]).Returns(expected);
+
+        var result = (PageViewModel)((ViewResult)this.controller.Home(model)).Model;
+
+        Assert.AreEqual(expected, result.MyDictionaryProperty);
+    }
+}
+```
