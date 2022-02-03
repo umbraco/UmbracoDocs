@@ -145,7 +145,7 @@ The `AllowMembersDeploymentOperations` setting can take four values:
 - `None` - member deployment operations are not enabled (the default value if the setting is missing)
 - `Restore` - restore of members from upstream environments via the backoffice is enabled
 - `Transfer` - transfer of members to upstream environments via the backoffice is enabled
-- `Restore` - restore and transfer of members from upstream environments via the backoffice is enabled
+- `All` - restore and transfer of members from upstream environments via the backoffice is enabled
 
 With `TransferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
 
