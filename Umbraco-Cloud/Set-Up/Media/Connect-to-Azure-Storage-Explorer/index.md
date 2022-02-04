@@ -20,15 +20,9 @@ All media needs to be added through the Umbraco backoffice.
 
 ## Getting the credentials
 
-The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials in [Kudu (Power Tools)](../../Power-Tools) - under the "Environment" section.
+The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials under the connection details for your Umbraco Cloud project.
 
-In the environment section, we want to locate the "Environment Variables" and find the following three variables:
-
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__CONTAINERNAME`,
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__ENDPOINT`, and
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__SHAREDACCESSSIGNATURE`.
-
-Note these down, as we will use them in the upcoming steps.
+![Blob storage connection details GIF](images/blob.gif)
 
 ## Installing Azure Storage Explorer
 
