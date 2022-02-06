@@ -55,6 +55,24 @@ Like with environment variables, it's not feasable to use an entire json file as
 
 `dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
 
+### Using UserSecrets for Configuration
+
+In the development environment it is possible to use UserSecrets for configuration, which is ideal for connection strings and similar settings that shouldn't be committed to source control. To use UserSecrets you need to first enable them for the project - this is done with the following command, issued within the directory that contains the `.csproj` file:
+
+`dotnet user-secrets init`
+
+Now it's possible to store the connection string with this command:
+
+`dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
+
+The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+
+```json
+"ConnectionStrings": {
+    "umbracoDbDSN": "CONNECTION_STRING_IN_HERE"
+}
+```
+
 ## IntelliSense
 
 A great thing about the `appsettings.json` is that it allows for intellisense with a schema file. For most ediors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so `"$schema": "https://json.schemastore.org/appsettings.json"`.
