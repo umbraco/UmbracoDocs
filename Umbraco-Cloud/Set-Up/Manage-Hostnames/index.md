@@ -30,7 +30,7 @@ You can bind any hostname to your project environments. Keeping in mind that the
 	-  A wildcard **CNAME** record : HOST = `*` and ANSWER = `dns.umbraco.io`
 	-  An **A** record : HOST = blank and ANSWER = an IP, either `104.19.191.28` or `104.19.208.28` 
 4. Once all your DNS entries have been made, log in to the Umbraco Cloud Portal and add those hostnames to your site. 
-5. It might take several minutes for the certificate to be issues and the DNS to be propagated, so don't be alarmed if your site doesn't pop up immediately at the new domain when checked in a web browser.
+5. It might take several minutes for the certificate to be issued and the DNS to be propagated, so don't be alarmed if your site doesn't pop up immediately at the new domain when checked in a web browser.
 
 
 :::note
