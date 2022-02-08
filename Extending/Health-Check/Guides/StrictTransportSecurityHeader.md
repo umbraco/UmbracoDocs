@@ -24,7 +24,7 @@ public class Startup
 {
     public void Configure(IApplicationBuilder app)
     {
-        app.UseHsts(options => options.MaxAge(days: 30));
+        app.UseHsts(options => options.MaxAge(days: 365));
 
         ...
     }
@@ -42,7 +42,7 @@ public class Startup
     {
         app.Use(async (context, next) =>
         {
-            context.Response.Headers.Add("Strict-Transport-Security", "max-age=2592000");
+            context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
             await next();
         });
 
