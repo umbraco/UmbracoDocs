@@ -58,7 +58,7 @@ Now that we have a basic class setup, we would like to pass setting items to the
 public string LogHeader { get; set; }
 ```
 
-The Umbraco.Forms.Core.Attributes.Setting registers the property in Umbraco Forms and there will automatically be UI and storage generated for it. In the attribute, a name, description and the view to be rendered is defined.
+The `Umbraco.Forms.Core.Attributes.Setting` registers the property in Umbraco Forms and there will automatically be UI and storage generated for it. In the attribute, a name, description and the view to be rendered is defined.
 
 With the attribute in place, the property value is set every time the class is instantiated by Umbraco Forms. This means you can use the property in your code like this:
 
@@ -74,11 +74,11 @@ public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.D
 }
 ```
 
-For all types that use the provider model, settings work this way. By adding the Setting attribute Forms automatically registers the property in the UI and sets the value when the class is instantiated.
+For all types that use the provider model, settings work this way. By adding the `Setting` attribute Forms automatically registers the property in the UI and sets the value when the class is instantiated.
 
 ## Validate type settings with ValidateSettings()
 
-The ValidateSettings() method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
+The `ValidateSettings()` method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
 
 ```csharp
 public override List<Exception> ValidateSettings() {
