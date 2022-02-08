@@ -9,7 +9,7 @@ meta.Title: "Adding a field type to Umbraco Forms"
 
 ## C#
 
-Add a new class to the Visual Studio solution, make it inherit from Umbraco.Forms.Core.FieldType and fill in the constructor:
+Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType` and fill in the constructor:
 
 ```csharp
 using Umbraco.Forms.Core.Data.Storage;
