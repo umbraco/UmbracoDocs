@@ -41,6 +41,10 @@ The example below shows an example configuration using the SourceCodeManual mode
 }
 ```
 
+:::note
+It is recommended to to generate models in your development environment only and change the ModelMode to 'Nothing' for your staging and production environments.
+:::
+
 ## Models Builder Dashboard
 
 Models Builder ships with a dashboard in the *Settings* section of Umbraco's backoffice. The dashboard does three things:
