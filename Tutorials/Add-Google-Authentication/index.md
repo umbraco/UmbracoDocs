@@ -7,7 +7,7 @@ needsV9Update: "true"
 ---
 
 
-# Tutorial - Add Google Authentication
+# Add Google Authentication
 
 ## Overview
 
