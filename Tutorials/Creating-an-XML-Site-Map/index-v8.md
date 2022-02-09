@@ -6,7 +6,7 @@ meta.Description: "A guide to creating an XML sitemap in Umbraco"
 needsV9Update: "true"
 ---
 
-# Tutorial - Creating a Search Engine XML Site Map
+# Creating a Search Engine XML Site Map
 
 ## Overview
 
