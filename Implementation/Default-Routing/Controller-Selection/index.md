@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 When you make a page request to the MVC application, a controller is responsible for returning the response to that request. The controller can perform one or more actions. The controller action can return different types of action results based on the request.
 
-## Default Contoller Action
+## Default Controller Action
 
 By default, Umbraco will execute every request via it's built-in default controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. Umbraco site automatically routes all the front-end requests via the `Index` action of the `RenderController`.
 
