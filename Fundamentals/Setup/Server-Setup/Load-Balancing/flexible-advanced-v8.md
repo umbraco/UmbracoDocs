@@ -11,6 +11,10 @@ _This describes some more advanced techniques that you could achieve with flexib
 It is recommended to configure an explicit master scheduling server since this reduces the amount
 complexity that the [master election](flexible.md#scheduling-and-master-election) process performs.
 
+:::note
+Explicitly registering the Master Scheduling Server is advised against when using the deployment slots feature on Azure Web Apps.
+This is because both the staging and production slot would be master scheduling servers, this can result in data corruption when using scheduled publishing/unpublishing is used.
+
 The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 ```csharp

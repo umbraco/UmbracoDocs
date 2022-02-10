@@ -22,6 +22,10 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 It is recommended to configure an explicit SchedulingPublisher server since this reduces the amount
 of complexity that the election process performs.
 
+:::note
+Explicitly registering the SchedulingPublisher Server is advised against when using the deployment slots feature on Azure Web Apps.
+This is because both the staging and production slot would be scheduling publisher servers, this can result in data corruption when using scheduled publishing/unpublishing is used.
+
 The first thing to do is create a couple of small classes that implement `IServerRoleAccessor` one for each of the different server roles:
 
 ```csharp
