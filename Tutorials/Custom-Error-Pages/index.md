@@ -87,3 +87,27 @@ XPath example:
     }
 }
 ```
+
+## Errors with booting a project
+
+Sometimes you might experience issues with booting up your Umbraco project. This could be a brand new project, or it could be an existing project after an upgrade.
+
+When there is an error during boot you will presented with a generic error page.
+
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png "Screen shot of generic BootFailed page")
+
+The file used for rendering this error page can be found here `~/umbraco/views/errors/BootFailed.html`.
+
+In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the wwwroot on the Physical file system.
+
+:::note
+The `BootFailed.html` page will only be shown if debugging is disabled in `web.config` i.e. `<compilation debug="false" />`.  The full error can always be found in the log file.
+:::
+
+## Are the error pages not working?
+
+If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
+
+* Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+* Any packages that allow you to customize redirects, or
+* Rewrite rules in web.config that might interefere with custom error handling.
