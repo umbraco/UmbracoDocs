@@ -18,6 +18,9 @@ You will need to ensure packages you are using is available in Umbraco 9, and yo
 The reason why it is not possible to upgrade an Umbraco 8 site to Umbraco 9 is is that the codebase has been fundamentally updated in Umbraco 9 and the underlying web framework updated from ASP.NET to ASP.NET Core.
 It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 8.
 
+### Database upgrades:
+If you want to upgrade your database from 8.x to 9.3, first upgrade to 9.2. Else you will run into `userOrMemberKey` upgrade errors.
+
 ## Version 8.1.0
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
