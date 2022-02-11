@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 versionRemoved: 8.0.0
 
 ---
-# Tutorial - Creating Tables in Umbraco with PetaPoco
+# Creating Tables in Umbraco with PetaPoco
 
 ## Overview
 

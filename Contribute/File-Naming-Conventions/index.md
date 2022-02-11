@@ -19,7 +19,7 @@ When creating alternate versions of the article that apply in different Umbraco 
 
 When you're creating a new version of an existing article in the Umbraco Documentation, you will need to make sure that you target the correct Umbraco version. This is done by using a specific set of file naming conventions when creating a new article.
 
-In the table below is a few examples of how to name an article based on the Umbraco version you are targetting.
+In the table below are examples of how to name an article based on the Umbraco version you are targetting.
 
 |Targetted version        |File name          |
 |-------------------------|-------------------|
@@ -32,7 +32,7 @@ In the table below is a few examples of how to name an article based on the Umbr
 
 Documentation that only applies to a single Umbraco version would be `index-v7.7.7.md`.
 
-For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this. E.g.:
+For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this, e.g.:
 
 `index-vpost7.6.md` would contain documentation to be used after version 7.6 but before the next documentation version
 and `index-vpre7.3.md` would contain the documentation for versions before version 7.3.
@@ -43,13 +43,13 @@ For SEO reasons it is not necessary to change a file name when a feature becomes
 
 ## Adding meta data
 
-It is the [YAML meta data](../Adding-Metadata) in the document itself, that will be used as the "point of truth" for when a version applies from and to.
-The YAML will be added to an examine index, along with the filename and is used later on for searching on (major) version, or to show the information to the user.
+It is the [YAML meta data](../Adding-Metadata) in the document itself that will be used as the "point of truth" for when a version applies from and to.
+The YAML is added to an examine index, along with the filename, and is used for searching on a (major) version, or to show the information to the user.
 
 For versioning we use 3 YAML attributes:
 
-1. `versionFrom` to indicate a start version, including the version you're setting here
-2. `versionTo` to indicate which version the support ended - including the version you're setting here
+1. `versionFrom` to indicate the first version, including the version you're setting here
+2. `versionTo` to indicate in which version the support ended, including the version you're setting here
 3. `versionRemoved` to indicate in which version the feature described in the article was removed
 
 :::note
@@ -60,27 +60,27 @@ If none of the version tags are specified, the article will default to `versionF
 
 ## Discovering other pages
 
-Alternative pages for documentation will be discovered by searching the examine index for other files beginning with the same name e.g.
+Alternate pages for documentation will be discovered by searching the examine index for other files beginning with the same name, e.g.
 
 If we are on the page
 
     /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events.md
 
-we will search for any documents in the index beginning with
+a search for any documents in the index beginning with
 
     /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events
 
-which will return
+will return
 
     /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events-vpre7.3.md
 
-We will use the YAML for these files to display the alternate versions options to the user.
+We will use the YAML for these files to display the alternate version options to the user.
 
-When searching the documentation articles on Our, there is an app setting that indicates the 'current' major Umbraco version, only versions documentation that have no end version specified will be returned for this major version in the initial search. However, we will explain in the search results that the user has searched the current documentation and present an option to further 'search all versions'.
+When searching the documentation articles on Our, there is an app setting that indicates the 'current' major Umbraco version: only versions of the documentation that have no end version specified will be returned for this major version in the initial search. However, we will explain in the search results that the user has searched the current documentation and present an option to 'search all versions'.
 
 ## Examples
 
-On every document the other versions will be linked to. These are some examples on how they will be referenced to:
+On every document, the other versions will be linked to. These are some examples on how they will be referenced to:
 
 file name                             | versionFrom  | versionTo | renders out
 -------                               |:------------:|     -----:| ---

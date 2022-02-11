@@ -186,7 +186,11 @@ Whenever you render an Umbraco form within your view using `Html.BeginUmbracoFor
 }
 ```
 
-Note this doesn't protect against Cross-Site Request Forgery (CSRF) attacks, there is a `__RequestVerificationToken` you can use to protect you from this.
+
+
+::: tip
+In Umbraco 9 the `__RequestVerificationToken` token is automatically added to forms for you, so you no longer need to add `@Html.AntiForgeryToken()` to your forms.
+:::
 
 ### Surface Controller Actions
 

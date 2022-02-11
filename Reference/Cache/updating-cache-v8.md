@@ -21,9 +21,8 @@ public class MyClass
     }
 }
 
-[Read more about how to inject AppCaches](applicationcache-v8.md).
-
 ```
+[Read more about how to inject AppCaches](applicationcache-v8.md).
 
 ## Adding and retrieving items in the cache
 

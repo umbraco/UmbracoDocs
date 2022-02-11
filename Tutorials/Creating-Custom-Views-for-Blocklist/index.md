@@ -156,7 +156,7 @@ We need to update the `custom.html` file with the following configuration:
                 <p>{{block.data.details}}</p>
         </div>
     </div>
-</div>
+</section>
 ```
 
 Additionally, we need to update our stylesheet to use the color configuration. For this tutorial, I have created a `style.css` stylesheet with the following styles:

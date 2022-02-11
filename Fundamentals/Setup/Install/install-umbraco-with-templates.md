@@ -9,6 +9,10 @@ updated-links: false
 
 We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET templates.
 
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/boK2cMXiI10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Install the template
 
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
