@@ -14,7 +14,7 @@ The libraries that are out there tend to have very strict, and therefore, proble
 To make this task as easy as possible we've added an abstraction called `IHtmlSanitizer`, by default this doesn't do anything, but you can overwrite it with your own implementation to handle sanitization how you see fit.
 This interface only has a single method `string Sanitize(string html)`, the output of this method is what will be stored in the database when you save a RichText editor.
 
-To add your own sanitizer you must first create a class the implements the interface:
+To add your own sanitizer you must first create a class that implements the interface:
 
 ```c#
 using Umbraco.Core.Security;
@@ -53,5 +53,5 @@ namespace MySite.HtmlSanitization
 }
 ```
 
-If you've followed along you'll now see that no matter what you type in a Rich Text Editor, when you save it, it'll always only contain a heading that says "Sanitized HTML", this is of course isn't that helpful, but it shows that everything is working as expected, and that whatever your sanitizer returns is what will be saved.
+If you've followed along you'll now see that no matter what you type in a Rich Text Editor when you save it, it'll always only contain a heading that says "Sanitized HTML", this is of course isn't that helpful, but it shows that everything is working as expected and that whatever your sanitizer returns are what will be saved.
 
