@@ -29,6 +29,15 @@ This configuration value expects a `True/False` value and can be used to toggle 
 ### DisableAutomaticAdditionOfDataConsentField
 This configuration value expects a `True/False` value and can be used to disable the feature where all new forms are provided with a default "Consent for storing submitted data" field on creation.
 
+### DisableFileUploadAccessProtection
+In Umbraco Forms 8.10.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
+
+If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
+
+### DefaultAccessToNewForms
+In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
+the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
+
 ### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
 
@@ -116,5 +125,4 @@ This allows you to configure what text is displayed when a form is submitted and
 This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data will be stored in the Umbraco Forms database tables.  By default this is set to `True`.
 
 ### DefaultAutocompleteAttribute
-
 Added in 8.8.0, this setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.
