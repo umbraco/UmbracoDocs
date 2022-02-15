@@ -107,11 +107,36 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
 </settings>
 ```
 
+## Transfer members
+
+As of version 4.5.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+
+To enable, add the following setting to your `UmbracoDeploy.Settings.config` configuration file:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <members allowMembersDeploymentOperations="None|Restore|Transfer|All"
+             transferMemberGroupsAsContent="true|false" />
+</settings>
+```
+
+The `allowMembersDeploymentOperations` setting can take four values:
+
+- `None` - member deployment operations are not enabled (the default value if the setting is missing)
+- `Restore` - restore of members from upstream environments via the backoffice is enabled
+- `Transfer` - transfer of members to upstream environments via the backoffice is enabled
+- `All` - restore and transfer of members from upstream environments via the backoffice is enabled
+
+With `transferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
+
+Note that it's important to ensure a common machine key is setup for all environments, to ensure hashed passwords remain usable in the destination environment.
+
 ## Exporting member groups
 
 This setting is to be defined and set to false only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
-Setting the `exportMemberGroups` to false will no longer export Member Groups to UDA entities on disk. By default if this setting is not present, its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+Setting the `exportMemberGroups` to false will no longer export Member Groups to .uda files on disk. By default if this setting is not present, its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
