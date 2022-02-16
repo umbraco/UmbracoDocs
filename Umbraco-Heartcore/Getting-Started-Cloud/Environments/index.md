@@ -35,6 +35,11 @@ You can add and remove the environments any time you want, as long as you have m
 
 Adding and removing environments is done from the Project page in the Cloud Portal.
 
+:::note
+Please note you will need to restart environments after they have been setup orremoved from your project. In order to update the configuratuin of Umbraco Deploy 
+:::
+
+
 ![Manage environments from here](images/button-to-manage.png)
 
 This will open an overlay, where you can manage the environments on your Heartcore project.
