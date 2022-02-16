@@ -3,6 +3,7 @@
 _View the latest updates for the Umbraco Cloud Portal_
 
 ---
+[**15/02/2022 Release Notes:**](2022-02-15-ReleaseNotes.md) Improved pending invite status + View backoffice user groups for team members + Usage limit warnings
 
 [**31/01/2022 Release Notes:**](2022-01-31-ReleaseNotes.md) Blob storage connection info + Copy project invitation link + Release notes link in portal
 
