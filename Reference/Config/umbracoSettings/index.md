@@ -341,6 +341,15 @@ You can specify your own background image for the login screen here. The image w
 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
 ```
 
+### `<hideBackofficeLogo>`
+
+This setting is used for controlling whether or not to show the Umbraco login inside backoffice. The default value is: `false`.
+
+```xml
+<hideBackofficeLogo>false</hideBackofficeLogo>
+```
+
+
 ## Security
 
 In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**, **`<hideDisabledUsersInBackoffice>`**, **`<allowPasswordReset>`**, **`<authCookieName>`** and **`<authCookieDomain>`**. These settings deal with backoffice users and settings for the backoffice authentication cookies.
