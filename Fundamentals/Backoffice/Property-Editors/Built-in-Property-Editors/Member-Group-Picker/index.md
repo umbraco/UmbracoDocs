@@ -12,7 +12,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Data Type Definition Example
 
-![Member Group Picker Type Definition](images/Member-Group-Picker-DataType.png)
+![Member Group Picker Type Definition](images/Member-Picker-DataType.png)
 
 ## Content Example
 
