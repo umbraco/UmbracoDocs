@@ -6,9 +6,11 @@ state: complete
 verified-against: 9.0.1
 update-links: true
 ---
+
 :::note
 In Umbraco 9 configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
 :::
+
 # Configuration Files
 
 In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
@@ -111,8 +113,9 @@ To see what setting types you can access see the complete list below, each docum
 
 ## Configuration Options
 
-A complete list of all the configuration sections included in Umbraco by default can be seen here, along with any keys they contain:
+A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
 
+* [Basic Authentication Settings](BasicAuthSettings/index.md)
 * [Connection strings settings](ConnectionStringsSettings/index.md)
 * [Content settings](ContentSettings/index.md)
 * [Debug settings](DebugSettings/index.md)
