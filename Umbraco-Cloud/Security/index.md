@@ -134,11 +134,7 @@ When using Cloudflare, which is the default setup for all Cloud projects, the pr
     <conditions logicalGrouping="MatchAll">
 
         <!-- Umbraco Cloud to Cloud connections should be allowed -->
-        <add input="{HTTP_X_Forwarded_For}" pattern="52.166.147.129" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="13.95.93.29" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="40.68.36.142" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="13.94.247.45" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="52.157.96.229" negate="true" />
+        <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" /> - Please reach out to our support to get the IPs
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
@@ -165,11 +161,7 @@ When your Cloud project is not using Cloudflare, your site gets the Remote IP ad
     <conditions logicalGrouping="MatchAll">
 
         <!-- Umbraco Cloud to Cloud connections should be allowed -->
-        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="52.157.96.229" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" /> - Please reach out to our support to get the IPs
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
