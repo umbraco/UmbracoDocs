@@ -115,7 +115,7 @@ To see what setting types you can access see the complete list below, each docum
 
 A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
 
-* [Basic Authentication Settings](BasicAuthSettings/index.md)
+* [Basic authentication settings](BasicAuthSettings/index.md)
 * [Connection strings settings](ConnectionStringsSettings/index.md)
 * [Content settings](ContentSettings/index.md)
 * [Debug settings](DebugSettings/index.md)
