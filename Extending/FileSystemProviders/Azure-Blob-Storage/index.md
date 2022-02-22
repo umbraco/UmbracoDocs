@@ -8,32 +8,35 @@ meta.Description: "Setup your site to use Azure Blob storage for media and Image
 
 # Setup Your Site to use Azure Blob Storage for Media and ImageSharp Cache
 
-For Umbraco sites there are some scenarios when you may want or need, to consider using Azure Blob Storage for your media. Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can also help your deployments complete more quickly and have the potential to positively affect site performance as the ImageSharp cache is moved to Azure Blob Storage.
+For Umbraco sites, there are some scenarios when you may want or need to consider using Azure Blob Storage for your media, particularly if your site contains large amounts of media. Having your site's media in Azure Blob Storage can also help your deployments complete more quickly, and has the potential to positively affect site performance, as the ImageSharp cache is moved to Azure Blob Storage.
 
 The setup consists of adding a package to your site, setting the correct configuration, and adding the services and middleware. Before you begin you’ll need to create an Azure Storage Account and a container for your media and ImageSharp cache. In this example, we assume your container name is "mysitestorage" and has already been created.
 
-See [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) for information on how you set up blob storage container. 
+See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) for a quickstart guide on how to create a blob storage container. 
 
 ## Installing the package
 
-First things first we need to install the `Umbraco.StorageProviders.AzureBlob` NuGet package, there are two approaches to this. You can use your favorite IDE and open up NuGet package manager, and find it there, but you can also use the command line to install the package.
+Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` NuGet package. There are two approaches to installing the package:
+
+1. Use your favorite IDE and open up the NuGet Package Manager to search and install the package
+1. Use the command line to install the package
 
 ### Installing through command line
 
-First, you need to navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the dotnet add package command like so:
+Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
 ```
 dotnet add package Umbraco.StorageProviders.AzureBlob
 ```
 
-and the correct package will been installed in your project.
+The correct package will have be installed in your project.
 
 
 ## Configuring Blob storage
 
-The next step is to configure your blob storage, there are multiple approaches for this, but in this document, we're going to do it through `appsettings.json`, for more configuration options see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the Github repository.
+The next step is to configure your blob storage. There are multiple approaches for this, but in this document, we're going to do it through `appsettings.json`. For more configuration options, see the [readme](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageproviders) on the Github repository.
 
-Open up your `appsettings.json` file, we need to add the connection string and container name under `Umbraco:Storage:AzureBlob:Media`, your Umbraco section of appsettings will look something like this:
+Open up your `appsettings.json` file and add the connection string and container name under `Umbraco:Storage:AzureBlob:Media`. Your Umbraco section of appsettings will look something like this:
 
 ```json
   "Umbraco": {
@@ -54,13 +57,13 @@ Open up your `appsettings.json` file, we need to add the connection string and c
   }
 ```
 
-Note that in this case the container name is mysitestorage. 
+Note that in this example, the container name is `mysitestorage`. 
 
-Tip: You can get your connection string from Azure under "Access Keys"
+_Tip: You can get your connection string from your Azure Portal under "Access Keys"_
 
 ## Setting the services and middleware
 
-We're almost there, the last step we need to do is to set up the required services and middleware, this may sound daunting, but thankfully there are extension methods that do all this for us, all we need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
+You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
 
 Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureServices` method:
 
@@ -79,7 +82,7 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
         }
 ```
 
-Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call like so:
+Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
 
 ```C#
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -106,11 +109,11 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `media` and `cache` folders do not get created until a piece of media is uploaded.
+Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
 
 
 ## Existing Media files
 
-Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/wwwroot/media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `wwwroot/media` folder locally, as it is no longer needed.
+Any media files you already have on your site will not automatically be added to the blob storage container. You will need to copy the contents on the `/wwwroot/media` folder and upload them to a new folder called `/media` in your blob storage container. Once you've done that, you can safely delete the `wwwroot/media` folder locally, as it is no longer needed.
 
 Any new media files you upload to the site will automatically be added to the Blob Storage.
