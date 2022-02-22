@@ -44,7 +44,7 @@ The grayed out Document Type Composition Master is a parent to the particular Do
 
 ### Exporting/Importing the Document Type
 
-You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __document type__ and select __Export__. When you click on the __Export__ button the document type is saved as *.udt file.
+You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __document type__ and select __Export__. When you click on the __Export__ button, the document type is saved as *.udt file.
 
 ![Exporting a Document Type](images/v8Screenshots/export-document-type.png)
 
