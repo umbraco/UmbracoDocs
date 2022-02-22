@@ -42,6 +42,20 @@ You can also use compositions to create a new document type. Compositions allows
 
 The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it to another location, this is how it will stay. The other document type that is checked is the Banner type. This means that the Document will also inherit the properties from the Banner Type into this Document Type.
 
+### Exporting/Importing the Document Type
+
+You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __document type__ and select __Export__. When you click on the __Export__ button the document type is saved as *.udt file.
+
+![Exporting a Document Type](images/v8Screenshots/export-document-type.png)
+
+To import a document type, go to the __Settings__ section, right-click the __document type__ and select __Import Document Type__. Click on the __Import__ button and browse to the document type you exported. The __Name__ and __Alias__ of the document type is displayed. Click __Import__ to complete the process.
+
+![Importing a Document Type](images/import-document-type.png)
+
+:::note
+If your document type contains compositions or inherits from another document type, then you need to export/import the composition/document type too.
+:::
+
 ### Defining the root node
 
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
