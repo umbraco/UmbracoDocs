@@ -53,7 +53,9 @@ To import a document type, go to the __Settings__ section, right-click the __doc
 ![Importing a Document Type](images/import-document-type.png)
 
 :::note
-If your document type contains compositions or inherits from another document type, then you need to export/import the composition/document type too.
+
+1) If your document type contains compositions or inherits from another document type, then you need to export/import the composition/document type too.
+2) You cannot export/import document types on Umbraco Cloud.
 :::
 
 ### Defining the root node
