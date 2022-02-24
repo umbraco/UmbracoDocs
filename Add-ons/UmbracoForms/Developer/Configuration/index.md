@@ -55,7 +55,7 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": ""
       }
     },
-    "PackageOptions": {
+    "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
       "AllowEditableFormSubmisisons": false
