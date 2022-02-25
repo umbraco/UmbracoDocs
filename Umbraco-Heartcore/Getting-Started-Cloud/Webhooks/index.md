@@ -44,3 +44,4 @@ When you are working with an external service that is behind a firewall and that
 20.86.53.156
 20.86.53.157
 ```
+If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `20.86.53.156/31`
