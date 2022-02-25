@@ -45,6 +45,10 @@ Extend Umbraco Forms with your own custom providers.
 
 Look at some of the available configuration options to modify how Umbraco Forms works.
 
+## [Security](Security/index.md)
+
+Understand the security model of Umbraco Forms.
+
 ## [Magic Strings](Magic-Strings/index.md)
 
 Learn about the magic string formats that Umbraco Forms supports that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.

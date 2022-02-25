@@ -43,6 +43,7 @@ By creating a C# class that implements `IDashboard` from `Umbraco.Cms.Core.Dashb
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
+using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.Dashboards
 {
@@ -53,9 +54,9 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
 
         public string[] Sections => new[]
         {
-            Cms.Core.Constants.Applications.Content,
-            Cms.Core.Constants.Applications.Members,
-            Cms.Core.Constants.Applications.Settings
+            Constants.Applications.Content,
+            Constants.Applications.Members,
+            Constants.Applications.Settings
         };
 
         public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
@@ -245,6 +246,7 @@ Further to this, within this section, you can control which users can see a part
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
+using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.Dashboards
 {
@@ -255,9 +257,9 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
 
         public string[] Sections => new[]
         {
-            Cms.Core.Constants.Applications.Content,
-            Cms.Core.Constants.Applications.Members,
-            Cms.Core.Constants.Applications.Settings
+            Constants.Applications.Content,
+            Constants.Applications.Members,
+            Constants.Applications.Settings
         };
 
         public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
@@ -268,8 +270,8 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
             {
                 var rules = new IAccessRule[]
                 {
-                    new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.TranslatorGroupAlias},
-                    new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias}
+                    new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.TranslatorGroupAlias},
+                    new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias}
                 };
                 return rules;
             }
@@ -306,6 +308,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
 To modify the order of a default dashboard or change its permissions, you must first remove the default dashboard (see above), then add an overridden instance of the default dashboard. The overridden dashboard can then include your modifications. For example, if you wanted to deny the Writers group access to the default Redirect URL Management dashboard, you would create an override of RedirectUrlDashboard to add after removing the default dashboard.
 
 ```csharp
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -330,8 +333,8 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         // override explicit implementation
         IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
         {
-            new AccessRule {Type = AccessRuleType.Deny, Value = Umbraco.Cms.Core.Constants.Security.WriterGroupAlias},            
-            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Cms.Core.Constants.Security.AdminGroupAlias},
+            new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.WriterGroupAlias},            
+            new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias},
             new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
         };
     }

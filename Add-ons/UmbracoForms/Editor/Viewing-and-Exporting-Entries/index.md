@@ -23,6 +23,12 @@ Clicking on the first field for each record in the list will open the full set o
 
 ![Filter](images/Filter.png)
 
+### Editing the Entries
+
+If configured via the permissions model and supported by the version of Umbraco Forms you are running (8.11+/9.3+), entries may be editable via the back-office.  If available, click the _Edit_ button to switch the read-only view of an entry to an editable one and _Save_ to record the changes.  An audit trail will show who and when updates on the entry were made.
+
+Validation will operate as is configured for the form in terms of mandatory fields and those that must match a particular pattern.  Conditional display of fields is not supported.
+
 ## Exporting Entries
 
 To export all the entries from your Form:

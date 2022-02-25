@@ -24,7 +24,7 @@ In order to render your scripts where you want, you need to add the following sn
 
 ## Enabling `ExcludeScripts`
 
-Whether you are inserting your Form using a macro or adding it directly in your template, you need to make sure `ExcludeScripts` is checked/enabled:
+If you do not want to render the associated scripts with a Form, you need to explicitly say so. You need to make sure `ExcludeScripts` is checked/enabled, whether you are inserting your Form using a macro or adding it directly in your template.
 
 To enable `ExcludeScripts`:
 
@@ -37,6 +37,10 @@ To enable `ExcludeScripts`:
     ```csharp
     @await Umbraco.RenderMacroAsync("renderUmbracoForm", new {FormGuid="6c3f053c-1774-43fa-ad95-710a01d9cd12", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})
     ```
+
+:::note
+`ExcludeScripts = "1"` prevents the associated scripts from being rendered. Any other value, an empty value, or if the parameter is excluded, will render the scripts on the Form.
+:::
 
 ---
 

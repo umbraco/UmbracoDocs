@@ -119,7 +119,7 @@ To add content to the blocks:
 
 ## Creating `Settings` section for Blocks
 
-Now, we have overwritten the AngularJS view for the content editor's block presentation by using our own view. Let's create a **Settings** section to control the background color and text color of the block. To do this, we need to add a **Settings** model to our block configuration.
+Now, we have overwritten the AngularJS view for the content editor's block presentation by using our own view. Let's create a **Settings** section to control the data alignment of the block. To do this, we need to add a **Settings** model to our block configuration.
 
 To add a Settings model:
 
@@ -132,14 +132,14 @@ To add a Settings model:
     a. **Enter a Name** for the element type. Let's say *Feature Settings*.
     b. Give it an icon.
     c. Click **Add Group** and **Enter a Name**. Let's call it *Settings*.
-    d. Click **Add Property** and **Enter a Name**. Let's call it *Block Theme*. An alias *blockTheme* is generated.
+    d. Click **Add Property** and **Enter a Name**. Let's call it *Block Alignment*. An alias *blockTheme* is generated.
     e. Select **Dropdown List** as the editor. The **Editor Settings** window opens.
-    f. In the Add prevalue field, add **light**, **dark** and **medium** as values.
-        ![Prevalue Options](images/prevalue-options.png)
+    f. In the Add prevalue field, add **left**, **center** and **right** as values.
+        ![Prevalue Options](images/prevalue-options-1.png)
     g. Click **Submit**.
 7. Click **Submit**.
 8. Click **Save and Close**.
-    ![Feature Settings](images/Feature-Settings.png)
+    ![Feature Settings](images/Feature-Settings-1.png)
 9. Click **Submit** until you reach the Product document type.
 10. Click **Save**.
 
@@ -148,7 +148,7 @@ We need to update the `custom.html` file with the following configuration:
 ```html
 <section id="banner" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)">
 
-    <div class="text-block" ng-class="{'bg-dark': block.settingsData.blockTheme[0] === 'dark', 'bg-light': block.settingsData.blockTheme[0] === 'light', 'bg-medium': block.settingsData.blockTheme[0] === 'medium' }">
+    <div class="text-block" ng-class="{'block-left': block.settingsData.blockAlignment[0] === 'left', 'block-center': block.settingsData.blockAlignment[0] === 'center', 'block-right': block.settingsData.blockAlignment[0] === 'right' }">
         <div class="content">
             <header>
                 <h1>{{block.data.name}}</h1>
@@ -176,19 +176,22 @@ h1{
     padding:20px;
 }
 
-.bg-dark {
-    background-color: #33ddaa;
-    color: #8866aa;
+.block-left {
+    text-align: left;
+    border: 3px solid green;
+    padding: 10px;
 }
 
-.bg-light {
-    background-color:#b76e79;
-    color:#f50407;
+.block-center {
+    text-align: center;
+    border: 3px solid green;
+    padding: 10px;
 }
         
-.bg-medium{
-    background-color:#2211aa;
-    color:#b76e79;
+.block-right{
+    text-align: right;
+    border: 3px solid green;
+    padding: 10px;
 }
 ```
 
@@ -208,10 +211,12 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 9. Restart your application. Now, when you head over to the **Product** page in the **Content** section and hover over the block you will notice the settings option.
     ![Stylesheet Location](images/Settings-option.png)
 10. Click on **Edit Settings** and you can see the **Block Theme** options we created.
-    ![Feature Options](images/Feature-Options.png)
+    ![Feature Options](images/Feature-Options-1.png)
 11. **Select a Theme** of your choice and click on **Submit** to see the changes reflect on your block.
-    ![Feature Options](images/Block-settings.png)
+    ![Feature Options](images/Block-settings-1.png)
 
 ## Rendering the Block List Content
 
 To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -19,7 +19,7 @@ This may be required if you want to extend the functionality of the BackOfficeUs
 You can replace the BackOfficeUserManager in the startup class by using the `SetBackOfficeUserManager` extension on the `IUmbracoBuilder`.
 
 
-```cs
+```csharp
 public class Startup
 {
    ...
@@ -32,14 +32,14 @@ public class Startup
             .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
             .Build();
     }
-...
+  ...
 }
 ```
 
 You can then implement your custom `BackOfficeUserManager`, like this.
 Note the constructor minimum needs to inject what is required for the base `BackOfficeUserManager` class:
 
-```cs
+```csharp
  public class CustomBackOfficeUserManager : BackOfficeUserManager
 {
     public CustomBackOfficeUserManager(

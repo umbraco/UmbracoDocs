@@ -41,7 +41,6 @@ APIs that focus on creating, updating and deleting.
 
 The term 'Plugins' refers to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
 
-
 ## [Caching](Cache/index.md)
 
 Describes how to work with caching custom data structures in Umbraco. When creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
@@ -91,5 +90,3 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 ## External resources
 
 * [Umbraco and precompiled views](https://dobryak.org/road-to-precompiled-web-application-based-on-umbraco-cms/)
-
-

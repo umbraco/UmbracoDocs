@@ -74,7 +74,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     {
         private readonly IMemberGroupService _memberGroupService;
 
-        public EditorModelNotificationHandler(IMemberGroupService memberGroupService)
+        public EditorSendingMemberNotificationHandler(IMemberGroupService memberGroupService)
         {
             _memberGroupService = memberGroupService;
         }

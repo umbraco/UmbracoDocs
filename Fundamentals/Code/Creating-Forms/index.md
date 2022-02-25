@@ -8,7 +8,7 @@ update-links: false
 ---
 
 
-# Creating forms
+# Creating Forms
 
 Creating forms requires that you know your way around .NET Core MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
@@ -132,7 +132,7 @@ Go to the Settings section and right-click the __Partial Views Macro Files__ nod
 In the partial view, we're going to render our contact form using the view model we created earlier.
 
 ```csharp
-@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage;
 
 @using MyFirstForm.Models;
 
