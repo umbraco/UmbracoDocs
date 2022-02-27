@@ -101,7 +101,17 @@ The file used for rendering this error page can be found here `~/umbraco/views/e
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the wwwroot on the Physical file system.
 
 :::note
-The `BootFailed.html` page will only be shown if debugging is disabled in `web.config` i.e. `<compilation debug="false" />`.  The full error can always be found in the log file.
+The `BootFailed.html` page will only be shown if debugging is disabled in `appsettings.json` i.e. 
+```json  
+"Umbraco": {
+    "CMS": {
+      "Hosting": {
+        "Debug": false
+      }
+    }
+  }
+```
+The full error can always be found in the log file.
 :::
 
 ## Are the error pages not working?
