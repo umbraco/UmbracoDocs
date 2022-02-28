@@ -119,7 +119,7 @@ The setting under _Debug:EnvironmentName_ should match the _Name_ provided in th
 
 _Note:_ Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). It will likely be moved to the "Project" section in Umbraco Deploy 10.
 
-Expected values for _Type_ are "development", "staging" or "live" (though strictly only for the latter is it necessary to use the specific value of "live").
+Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 
