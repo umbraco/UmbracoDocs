@@ -85,7 +85,8 @@ namespace Umbraco.Cms.Core.PropertyEditors
         public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
             IIOHelper ioHelper)
             : base(dataValueEditorFactory)
-
+        {            
+        }
     }
 }
 ```
