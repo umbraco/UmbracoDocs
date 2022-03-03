@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Frequently asked questions
@@ -75,7 +76,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 projects runs on 4.7.2, and Umbraco 9 projects run on .NET 5.0.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8 and Umbraco 9 projects on .NET 5.0.
 
 ---
 
@@ -158,9 +159,9 @@ Yes. Pro and Enterprise Plans can add custom certificates for each of their cust
 
 Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
 
-### Does Umbraco Cloud support http/2?
+### Does Umbraco Cloud support HTTP/2?
 
-On the server, IIS 10.0 running on Windows 10 or Windows Server 2016 supports HTTP/2. Umbraco runs on Azure Web Apps which provides support for the HTTP/2 protocol for all applications hosted on the Azure App Service.
+By default, Umbraco Cloud supports HTTP/2.
 
 ### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
 
