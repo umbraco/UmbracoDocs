@@ -18,11 +18,11 @@ But let's take things one step at a time.
 
 ## Adding the nightly feed as a NuGet source
 
-The nuget feed containing the nightly builds are `https://www.myget.org/F/umbraconightly/api/v3/index.json`, you can either add this feed through the command line, or use your IDE of choice, in this guide we'll cover Visual Studio and Rider as well as using the command line.
+The NuGet feed containing the nightly builds is `https://www.myget.org/F/umbraconightly/api/v3/index.json`, you can either add this feed through the command line or use your IDE of choice, in this guide we'll cover Visual Studio and Rider as well as using the command line.
 
 ### Using the command line
 
-To add the nightly feed using the command line, open up your command prompt of choice and run this command:
+To add the nightly feed using the command line, open up your command prompt of choice and run the following command:
 
 ```
 dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
@@ -44,7 +44,7 @@ Now the feed is added as a source named `Umbraco Nightly`
 
 ### Using Rider
 
-To add the feed through Rider first click on the `NuGet` tab in the bottom, a menu blade will pop up, then choose the `Sources` tab. Now you must choose what NuGet configuration you wish to add the feed to, to add the feed globally add it to the `NuGet.Config` in `AppData\Roaming\NuGet`, by clicking that option. Lastly open up the `New Feed` dialog by clicking the green `+` button.
+To add the feed through Rider first click on the `NuGet` tab at the bottom, a menu blade will pop up, then choose the `Sources` tab. Now you must choose what NuGet configuration you wish to add the feed to, to add the feed globally add it to the `NuGet.Config` in `AppData\Roaming\NuGet`, by clicking that option. Lastly, open up the `New Feed` dialog by clicking the green `+` button.
 
 ![Open the new feed menu](images/Rider/open-add-feed.jpg)
 
