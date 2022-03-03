@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Frequently asked questions
@@ -75,7 +76,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 projects runs on 4.7.2.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8 and Umbraco 9 projects on .NET 5.0.
 
 ---
 
@@ -158,15 +159,13 @@ Yes. Pro and Enterprise Plans can add custom certificates for each of their cust
 
 Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
 
-### Does Umbraco Cloud support http/2?
+### Does Umbraco Cloud support HTTP/2?
 
-The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
-
-As a workaround, you could consider setting up a product like CloudFlare, which offers free support for http/2 (they call it "Opportunistic Encryption") out of the box.
+By default, Umbraco Cloud supports HTTP/2.
 
 ### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
 
-No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 You can learn much more about this in our [Security section](../Security/#cookies-and-security).
 
