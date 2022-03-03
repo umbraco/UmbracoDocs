@@ -76,9 +76,21 @@ Here is an example of how that config transform would look:
         </rewrite>
     </system.webServer>
 </configuration>
-``` 
+```
 
 This config transform will add a new `<rule>` to `<configuration><system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
+
+## The default Umbraco Cloud config transform
+
+Umbraco Cloud projects Comes by default with a config transform called `https.web.live.xdt.config`.
+
+This config transform is used to ensure that the live site will be running via https and force redirects from http to https.
+
+It does so by setting the "umbracoUseSSL" setting to true, which will tell the Umbraco Backoffice to serve URLs via https
+and it adds a redirect rule that will force the site to run via https, except for when running localhost.
+
+To disable the forced https, simply remove this file from your repository. This is not advised, as all domains
+on Umbraco Cloud will be running https, as a certificate will be issued for custom domains by the Automatic TLS feature, and all [alias].euwest01.umbraco.io domains will already be protected.
 
 ## Forced transforms
 
@@ -106,11 +118,12 @@ Note that for the `compilation debug` and the `customErrors mode` there is a tog
 
 ![Toggle debug mode](images/toggle-debug.png)
 
-
 ## Baseline config transforms
+
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
 ## Including transforms in Umbraco packages
+
 For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor**. You want to set an AppSetting in `Web.config` to a different color in each environment. It could be be `red` for the Live environment, `orange` for Staging and `yellow` for Development.
 
 We need to create 3 transform files named after the package. A good convention is to use your company name and the package name to make sure that there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:
