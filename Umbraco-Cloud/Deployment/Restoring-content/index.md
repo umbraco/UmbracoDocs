@@ -52,7 +52,7 @@ If any of your content nodes depends on media items, these will also be restored
 To see the media, go to the *Media* section and *reload* the tree.
 :::
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Z_vK6vhIbMw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+![Workspace Restore](images/Normal-Restore.gif)
 
 ### Tree Restore
 
@@ -66,6 +66,10 @@ Tree restore option restores all the entities available for the selected tree in
 6. Click *Restore from <environment_name>* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
 7. Once the content restore is completed, you will get a notification with a timestamp. Click *Okay* to complete the process.
 8. Right-click the *Content* tree and choose *Reload* to see your content in the tree.
+
+![Tree Restore](images/Normal-Restore.gif)
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Z_vK6vhIbMw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### [Partial Restore](Partial-Restore)
 
