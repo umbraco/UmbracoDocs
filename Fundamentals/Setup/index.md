@@ -31,3 +31,7 @@ Information about server setup for Umbraco including information about permissio
 ## [Config](../../Reference/V9-Config/index.md)
 
 How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.
+
+## [Installing the latest nightly builds](Install/installing-nightly-builds.md)
+
+How to install the latest nightly builds.
