@@ -35,7 +35,7 @@ This will restore **all** the content nodes and any media dependencies.
 
 ### Workspace Restore
 
-Use this option when setting up new Cloud environments. Workspace restore option restores all the entities (content, media, forms, datasources, and prevalue sources from Umbraco Forms) of a workspace via the back office.
+Use this option when setting up new Cloud environments. Workspace restore option restores all the entities (content, media, forms, datasources, and prevalue sources from Umbraco Forms) of a workspace via the backoffice.
 
 1. Log in to the Umbraco backoffice in the environment you want to restore the content and media.
 2. Click the three dots and select *Do something else* or *Right-click* the Content Tree in the Content section.
