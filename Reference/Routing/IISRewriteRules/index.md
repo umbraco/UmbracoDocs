@@ -39,7 +39,7 @@ An example of how this can be done is
         <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
         <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
       </conditions>
-      <action type="Redirect" url="http://jonathanpabst.com>.com/{R:0}"
+      <action type="Redirect" url="http://jonathanpabst.com>/{R:0}"
         appendQueryString="true" redirectType="Permanent" />
     </rule>
   </rules>
