@@ -107,7 +107,6 @@ If you need to use your own Web Application Firewall (WAF) in front of your Umbr
 3. Be on a plan that supports custom certificates
 
 "When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
-When that is validated, then the hostname will, in principle, be ready to be used in Umbraco Cloud.
 
 So when you update your DNS, regarding go-live, will it typically be very fast and the hostname will be ready to use.
 So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it removed. That means that you has 14 days to add a TXT record in your DNS settings. 
