@@ -99,7 +99,7 @@ example.com. IN CAA 0 issuewild "digicert.com"
 On the Professional and Enterprise plan, you can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
 ## [Using your own WAF on Umbraco Cloud](WAF)
-There is an option to install Web Application Firewall if that is needed.
+If you need to use your own Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configuration needed. But please note that configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
 If you are using a custom certificate for that specific hostname with WAF make sure you are able to upload the custom certificate:
 
 1. Make sure the hostname is pointing to  Umbraco Cloud (dns. umbraco.io)
