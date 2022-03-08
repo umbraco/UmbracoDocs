@@ -73,12 +73,12 @@ namespace Umbraco.Cms.Web.UI
             
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
             _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
-            _logger.LogInformation("You have {NumberOfThinsInTheBing} items to clean", numberOfThingsInBin);
+            _logger.LogInformation("You have {NumberOfThingsInTheBin} items to clean", numberOfThingsInBin);
 
             if (_contentService.RecycleBinSmells())
             {
                 // Take out the trash
-                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bing",
+                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bin",
                     "It's all clean now"))
                 {
                     _contentService.EmptyRecycleBin(userId: -1);
