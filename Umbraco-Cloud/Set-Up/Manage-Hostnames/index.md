@@ -100,7 +100,7 @@ On the Professional and Enterprise plan, you can manually add your own certifica
 
 ## [Using your own WAF on Umbraco Cloud](WAF)
 If you need to use your own Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configuration needed. But please note that configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
-If you are using a custom certificate for that specific hostname with WAF make sure you are able to upload the custom certificate:
+"In most cases you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates is a plan-specific feature on Umbraco Cloud, so please make sure that you have access to upload certificates."
 
 1. Make sure the hostname is pointing to  Umbraco Cloud (dns. umbraco.io)
 2. Certificates are issued for the actual hostname - It is probably required to have a custom certificate for a WAF hostname. 
