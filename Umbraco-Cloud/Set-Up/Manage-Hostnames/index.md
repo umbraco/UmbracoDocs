@@ -106,7 +106,7 @@ If you need to use your own Web Application Firewall (WAF) in front of your Umbr
 2. Certificates are issued for the actual hostname - It is probably required to have a custom certificate for a WAF hostname. 
 3. Be on a plan that supports custom certificates
 
-Even though the hostname isn't pointing to Umbraco Cloud (dns.umbraco.io) can the certificate be validated by adding a txt record for the hostname. Or a DNS record.
+"When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
 When that is validated, then the hostname will, in principle, be ready to be used in Umbraco Cloud.
 
 So when you update your DNS, regarding go-live, will it typically be very fast and the hostname will be ready to use.
