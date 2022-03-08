@@ -5,12 +5,12 @@ meta.Description: "Information on common defaults and good practice for umbraco 
 ---
 
 # Good practice and defaults
-_This document provides some guides and notes on package development, and good practive that will help you maintain and support your package through multiple releases and versions of umbraco. These good practices are not prescriptive, but mearly offer a guid as to what we have found works well and badly when developing packages for Umbraco_
+_This document provides some guides and notes on package development, and good practice that will help you maintain and support your package through multiple releases and versions of Umbraco. These good practices are not prescriptive, but mearly offer a guide as to what we have found works well, and not-so-well, when developing packages for Umbraco_
 
 ## App_Plugins
-Files in the `App_Plugins` folder should be considered immutable, that is they are not something a user of your package should be expected change on their site. 
+Files in the `App_Plugins` folder should be considered immutable, that is they are not something a user of your package should be expecting to change on their site. 
 
-The default delivery method for files to the App_Plugins folder is via a `.targets` file within a package, this means when a website is built the files in this folder are copied over from the nuget cache, and any changes a user might have made will be lost. equally if the user performs a `dotnet clean` on a solution all files in the app_plugins folder will likely be deleted. 
+The default delivery method for files to the App_Plugins folder is via a `.targets` file within a package, this means when a website is built the files in this folder are copied over from the nuget cache, and any changes a user might have made will be lost. Equally if the user performs a `dotnet clean` on a solution all files in the App_Plugins folder will likely be deleted. 
 
 If you have files that you expect users of your package to alter you should not place them in the `App_Plugins` folder.
 
@@ -22,12 +22,12 @@ As the files will still be copied during build you should ensure your target fil
 _This method isn't perfect and if you do have a package that is heavy on views you might consider building a dotnet template or Razor class library to contain the views so they don't pollute your user's solutions._ 
 
 ## License files
-umbraco products store thier licenses in `/umbraco/Licences` and it is considered a goog location for third party packages that require license files to also store their licence files there. 
+Umbraco products store their licenses in `/umbraco/Licences` and it is considered a good location for third party packages that require license files to also store their licence files there. 
 
 _The default .gitignore for Umbraco templates will include any files in this folder in a repo (while ignoring most of the rest of the Umbraco folder_
 
 :::note
-The  `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco so you might need to create it before you save your license file to this folder. 
+The `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco so you might need to create it before you save your license file to this folder. 
 :::
 
 ## Operating system considerations
@@ -50,28 +50,28 @@ Some folders within Umbraco will already exist for all installations, if you acc
 | Folder | Note | 
 |-|-|
 | /App_Plugins | Uppercase `A` and `P` |
-| /App_Pluigns/[Ll]ang | Uppercase `L` but in later version of Umbraco 9.3+ can be upper or lowercase `L` |
+| /App_Plugins/[Ll]ang | Uppercase `L` but in later version of Umbraco 9.3+ can be upper or lowercase `L` |
 | /Views | Uppercase `V` | 
 | /umbraco/Licenses | Lowercase `u` uppercase `L` |
 | /config | Lowercase `c` |
 
 :::note 
-If you create a custom section/tree umbraco will also build paths based on the name of that section or tree, these folder paths will also be case sensitive: 
+If you create a custom section/tree Umbraco will also build paths based on the name of that section or tree, these folder paths will also be case sensitive: 
 
-For example If you have a custom tree with the treeAlias of `MyCustomTree` umbraco will look for files in `App_Plugins\MyCustomTree\backoffice\MyCustomTree\` 
+For example if you have a custom tree with the treeAlias of `MyCustomTree` Umbraco will look for files in `App_Plugins\MyCustomTree\backoffice\MyCustomTree\` 
 :::
 
 ### Path manipulation
 Building folder path strings manually can cause problems when swapping between file systems. Windows uses the backslash character to '\' separate folders and files, Linux uses the forward slash '/'.
 
-You should use the .Net `Path` commands wherever possible when building paths to ensure that the correct path is build. 
+You should use the .Net `Path` commands wherever possible when building paths to ensure that the correct path is built. 
 
 ``` cs
 // WRONG: don't build paths manually.
 var myPath = myFolder + "\myfile.txt";
 
 // CORRECT: build the path using the correct separator for the current file system.
-var myPath = Path.Combine(MyFolder, "myFile.txt"); 
+var myPath = Path.Combine(myFolder, "myFile.txt"); 
 ```
 
 If you do need to build a path manually use `Path.DirectorySeparatorChar` to get the correct separator for the filesystem.
@@ -79,7 +79,7 @@ If you do need to build a path manually use `Path.DirectorySeparatorChar` to get
 ### Folder Access 
 You should not assume things about the folder structure of a site, and ideally you should not use direct IO commands to access the file system. Within a Asp.Net Core site access to the disk is usually managed with FileProviders, you can get access to the file providers from the `IWebHostEnvironment` class.
 
-As an example if you wanted to read a file called `robots.txt` from the `wwwroot` folder  of a site in a controller you can use the `WebRootFileProvider` to get to the root of the site and read the file. 
+As an example if you wanted to read a file called `robots.txt` from the `wwwroot` folder of a site in a controller you can use the `WebRootFileProvider` to get to the root of the site and read the file. 
 
 ```cs
 public class MyController: UmbracoAuthorizedJsonController
@@ -103,24 +103,26 @@ public class MyController: UmbracoAuthorizedJsonController
 }
 ```
 
-_This is the preferred method for file because not all files served up by a site may in fact be in the wwwroot folder when you expect them to be - this is especially true if the site is using Razor class library to insert static files_
+:::note
+This is the preferred method for file IO because not all files served up by a site may in fact be in the wwwroot folder when you expect them to be - this is especially true if the site is using Razor class library to insert static files.
+:::
 
 ## Settings
-All the but the most simple package will probibly require some settings to be stored for the users to control and change the behavior of how the package works on a site. Where your store those settings will depend a lot on the nature of the package. 
+All but the most simple package will probably require some settings to be stored for the users to control and change the behavior of how the package works on a site. Where you store these settings will depend a lot on the nature of the package. 
 
 ### Property Editors
-Property editors should store there settings as part of their datatype in umbraco. This is the standard way property editors behavior is controlled, it is familar to users and is supported by deployment tools. 
+Property editors should store their settings as part of their datatype in Umbraco. This is the standard way property editors behavior is controlled, it is familar to users and is supported by deployment tools. 
 
 ### Don't save to appsettings.json
 You should not alter `appsettings.json` in code. 
 
-Settings in aspnet core are merged from a number of diffrent locations at runtime. you cannot gaurntee that appsettings.json is the location that a setting is read from and your users may well not want certain settings in that file. You can read settings from the configuration but you cannot assume they have come from appsettings.json.
+Settings in aspnet core are merged from a number of different locations at runtime. You cannot guarantee that `appsettings.json` is the location that a setting is read from and your users may well not want certain settings in that file. You can read settings from the configuration but you cannot assume they have come from `appsettings.json`.
 
 ### Settings locations
 There are many options for where you might save your settings and a lot will depend on the nature of your package: 
 
 #### Save to database 
-settings can saved to the database, usually in a custom table. 
+settings can be saved to the database, usually in a custom table. 
 
 - Pro: Settings will be accessible directly from the database, and not dependent on deployed files on disk.
 - Con: Will require some setup to create the database tables for the settings to live in.
@@ -130,8 +132,8 @@ settings can saved to the database, usually in a custom table.
 You could choose to save settings to disk (e.g in the `/config` folder in root of site). 
 
 - Pro: Settings will be accessible to the site, and can be included in deployments between sites. 
-- Con: You cannot guarantee that the folder or files will be present on a site or that they will be writable, 
-- Con: Using your own config means your uses cannot harness the power of the dotnet core options system and move settings to the environment or key stores. meaning sensitive information may end up on disk.
+- Con: You cannot guarantee that the folder or files will be present on a site or that they will be writable.
+- Con: Using your own config means your uses cannot harness the power of the dotnet core options system and move settings to the environment or key stores. Meaning sensitive information may end up on disk.
 
 #### Provide user with appsettings.json
 You could choose to provide your user with a snippet that they can copy into their appsettings.json file so settings are stored in the correct location.
