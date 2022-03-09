@@ -18,13 +18,13 @@ Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https
 
 ## Using URL Rewriting Middleware
 
-To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions` class with extension methods for each of your rewrite rules.
+To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions`.
 
 ### Example
 
-An example of how this can be done is
+An example of how this can be done is:
 
-- Create an XML file with your rewrites in and place it in your project:
+- Create an XML file with your rewrites in and place it in the root of your project:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -46,18 +46,29 @@ An example of how this can be done is
 </rewrite>
 ```
 
-- Create an instance of the `RewriteOptions` class:
+- In the `Startup.cs` file in your project you can use the [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0#microsoft-aspnetcore-rewrite-iisurlrewriteoptionsextensions-addiisurlrewrite(microsoft-aspnetcore-rewrite-rewriteoptions-microsoft-extensions-fileproviders-ifileprovider-system-string-system-boolean)) method:
 
 ```Csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            using (StreamReader iisUrlRewriteStreamReader = File.OpenText("Umbraco/Rewrites.xml"))
-            {
-                var options = new RewriteOptions()
-                    .AddIISUrlRewrite(iisUrlRewriteStreamReader);
-                app.UseRewriter(options);
-            }
+using Microsoft.AspNetCore.Rewrite;
+
+app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "Rewrites.xml"));
+
 ```
+
+- In your csproj file add the XML file with your rewrites to a new item group and set it to Copy To Publish Directory:
+
+```xml
+	<ItemGroup>
+		<Content Include="Rewrites.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+```
+
+:::note
+On Umbraco Cloud it needs to be set to `CopyToPublishDirectory<Always></CopyToPublishDirectory>` for the file to be published to your Umbraco Cloud project.
+:::
 
 ## Examples of rewrite rules
 
