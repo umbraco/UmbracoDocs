@@ -61,20 +61,23 @@ If you create a custom section/tree Umbraco will also build paths based on the n
 For example if you have a custom tree with the treeAlias of `MyCustomTree` Umbraco will look for files in `App_Plugins\MyCustomTree\backoffice\MyCustomTree\` 
 :::
 
-### Path manipulation
-Building folder path strings manually can cause problems when swapping between file systems. Windows uses the backslash character to '\' separate folders and files, Linux uses the forward slash '/'.
+### File/folder locations
+You should never hardwire a file or folder location into code if possible. Instead you should either access files file the `IHostingEnvrionment` FileProviders or by using the built in methods to access well known locations 
 
-You should use the .Net `Path` commands wherever possible when building paths to ensure that the correct path is built. 
+#### Temp folder
+The location of the Umbraco temp folder can be controlled via configuration and cannot be assumed, you should use the `IHostingEnvironment.LocalTempPath` variable to locate the temp folder. 
 
 ``` cs
-// WRONG: don't build paths manually.
-var myPath = myFolder + "\myfile.txt";
-
-// CORRECT: build the path using the correct separator for the current file system.
-var myPath = Path.Combine(myFolder, "myFile.txt"); 
+var localTempRoot = Path.GetFullPath(hostingEnvironment.LocalTempPath);
 ```
 
-If you do need to build a path manually use `Path.DirectorySeparatorChar` to get the correct separator for the filesystem.
+#### Relative paths
+If require the path of a folder relative to the site root you can use the `IHostingEnvironment` methods to map a path. 
+
+``` cs 
+var contentRootPath = hostingEnvironment.MapPathContentRoot("/");
+var webrootPath = hostEnvironment.MapPathWebRoot("/");
+```
 
 ### Folder Access 
 You should not assume things about the folder structure of a site, and ideally you should not use direct IO commands to access the file system. Within a Asp.Net Core site access to the disk is usually managed with FileProviders, you can get access to the file providers from the `IWebHostEnvironment` class.
@@ -106,6 +109,21 @@ public class MyController: UmbracoAuthorizedJsonController
 :::note
 This is the preferred method for file IO because not all files served up by a site may in fact be in the wwwroot folder when you expect them to be - this is especially true if the site is using Razor class library to insert static files.
 :::
+
+### Path manipulation
+Building folder path strings manually can cause problems when swapping between file systems. Windows uses the backslash character to '\\' separate folders and files, Linux uses the forward slash '/'.
+
+You should use the .Net `Path` commands wherever possible when building paths to ensure that the correct path is built. 
+
+``` cs
+// WRONG: don't build paths manually.
+var myPath = webrootPath + "\robots.txt";
+
+// CORRECT: build the path using the correct separator for the current file system.
+var myPath = Path.Combine(webrootPath, "robots.txt"); 
+```
+
+If you do need to build a path manually use `Path.DirectorySeparatorChar` to get the correct separator for the filesystem.
 
 ## Settings
 All but the most simple package will probably require some settings to be stored for the users to control and change the behavior of how the package works on a site. Where you store these settings will depend a lot on the nature of the package. 
