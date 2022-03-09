@@ -45,6 +45,15 @@ An example of how this can be done is
   </rules>
 </rewrite>
 ```
+When using Umbraco Cloud you have to make sure the XML is deployed in the right manner. The best place for your XML is at the root of the project, next to appsettings.json. Then verify the file is copied to the correct directory either by setting the properties of the file to build action 'Content' and Copy to Output Directory 'Copy if newer' or adding the next lines to your .csproj:
+
+```xml
+<ItemGroup>
+     <Content Include="rewrites.xml">
+         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     </Content>
+</ItemGroup>
+```
 
 - Create an instance of the `RewriteOptions` class:
 
