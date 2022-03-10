@@ -84,13 +84,13 @@ This config transform will add a new `<rule>` to `<configuration><system.webServ
 
 Umbraco Cloud projects Comes by default with a config transform called `https.web.live.xdt.config`.
 
-This config transform is used to ensure that the live site will be running via https and force redirects from http to https.
+This config transform is used to ensure that the live site will be running via HTTPS and force redirects from HTTP to HTTPS.
 
-It does so by setting the "umbracoUseSSL" setting to true, which will tell the Umbraco Backoffice to serve URLs via https
-and it adds a redirect rule that will force the site to run via https, except for when running localhost.
+It does so by setting the "umbracoUseSSL" setting to true, which will tell the Umbraco Backoffice to serve URLs via HTTPS
+and it adds a redirect rule that will force the site to run via HTTPS, except for when running localhost.
 
-To disable the forced https, simply remove this file from your repository. This is not advised, as all domains
-on Umbraco Cloud will be running https, as a certificate will be issued for custom domains by the Automatic TLS feature, and all [alias].euwest01.umbraco.io domains will already be protected.
+To disable the forced HTTPS, simply remove this file from your repository. This is not advised, as all domains
+on Umbraco Cloud will be running HTTPS, as a certificate will be issued for custom domains by the Automatic TLS feature, and all [alias].euwest01.umbraco.io domains will already be protected.
 
 ## Forced transforms
 
