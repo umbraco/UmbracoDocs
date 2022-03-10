@@ -55,7 +55,7 @@ app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvide
 
 ```
 
-- In your csproj file add the XML file with your rewrites to a new item group and set it to Copy To Publish Directory:
+- In your csproj file add the XML file with your rewrites to a new item group and set it to `CopyToOutputDirectory`:
 
 ```xml
 	<ItemGroup>
