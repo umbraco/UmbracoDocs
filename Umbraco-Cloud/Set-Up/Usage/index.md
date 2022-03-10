@@ -15,7 +15,7 @@ You can also get an overview of the usage limitations for your Umbraco Cloud pro
 
 In the below image, you can see the Usage limitatons for the specific plans on Umbraco Cloud:
 
-![Usage limits on a starter plan](images/Plan_limitations.png)
+![Usage limits on a starter plan](images/Plan_limits.png)
 
 On Umbraco Cloud, you can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project. You can **Upgrade Plan** from the **Settings** drop-down list on your project.
 
