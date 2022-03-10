@@ -28,14 +28,14 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
 <?xml version="1.0" encoding="utf-8" ?>
 <rewrite>
   <rules>
-    <rule name="Redirect umbraco.io to preferred domain" patternSyntax="Wildcard" stopProcessing="true">
-      <match url="*" />
+    <rule name="Redirect umbraco.io to preferred domain" stopProcessing="true">
+      <match url=".*" />
       <conditions>
-        <add input="{HTTP_HOST}" pattern="*.umbraco.io" />
-        <add input="{REQUEST_URI}" pattern="/App_Plugins/*" negate="true" />
-        <add input="{REQUEST_URI}" pattern="/umbraco*" negate="true" />
+        <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
+        <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
+        <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
       </conditions>
-      <action type="Redirect" url="https://example.com/{R:1}" />
+      <action type="Redirect" url="https://example.com/{R:0}" />
     </rule>
   </rules>
 </rewrite>
@@ -75,11 +75,11 @@ For example, to always remove a trailing slash from the URL (make sure Umbraco d
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
   <match url="(.*)/+$" />
-    <conditions>      
-      <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
-    </conditions>
+  <conditions>
+    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
+    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+  </conditions>
   <action type="Redirect" url="{R:1}" />
 </rule>
 ```
@@ -87,25 +87,26 @@ For example, to always remove a trailing slash from the URL (make sure Umbraco d
 Another example would be to enforce HTTPS only on your site:
 
 ```xml
-<rule name="Redirect to HTTPS" patternSyntax="Wildcard" stopProcessing="true">
-  <match url="*" />
+<rule name="Redirect to HTTPS" stopProcessing="true">
+  <match url=".*" />
   <conditions>
-    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
-    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+    <add input="{HTTPS}" pattern="^OFF$" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
   </conditions>
-  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" />
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" />
 </rule>
 ```
 
 Another example would be to redirect from non-www to www (except for the Umbraco Cloud project hostname):
 
 ```xml
-<rule name="Redirect to www prefix" patternSyntax="Wildcard" stopProcessing="true">
-  <match url="*" />
+<rule name="Redirect to www prefix" stopProcessing="true">
+  <match url=".*" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="www.*" negate="true" />
-    <add input="{HTTP_HOST}" pattern="*.umbraco.io" negate="true" />
+    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
   </conditions>
-  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:1}" />
+  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
 </rule>
 ```
