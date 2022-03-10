@@ -18,7 +18,7 @@ Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https
 
 ## Using URL Rewriting Middleware
 
-To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by creating an instance of the `RewriteOptions`.
+To use Rewrites with Umbraco 9 you need to create an XML file with your rules and register it in your `Startup.cs` in your project by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter?view=aspnetcore-6.0#microsoft-aspnetcore-builder-rewritebuilderextensions-userewriter(microsoft-aspnetcore-builder-iapplicationbuilder)) method.
 
 ### Example
 
@@ -67,7 +67,7 @@ app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvide
 ```
 
 :::note
-On Umbraco Cloud it needs to be set to `CopyToPublishDirectory<Always></CopyToPublishDirectory>` for the file to be published to your Umbraco Cloud project.
+On Umbraco Cloud the item group needs to be set to `CopyToPublishDirectory<Always></CopyToPublishDirectory>` for the file to be published to your Umbraco Cloud project.
 :::
 
 ## Examples of rewrite rules
