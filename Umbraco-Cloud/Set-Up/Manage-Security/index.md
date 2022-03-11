@@ -12,7 +12,7 @@ The options that are currently available are
 - TLS 1.3 (default: off)
 - Minimum TLS Version (default: 1.2)
 
-When a new hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new hostnames will get the default settings to you have chosen.
+When a new hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new hostnames will get the default settings you have chosen.
 
 ## HTTP/2 Explained
 
