@@ -117,6 +117,16 @@ else
 }
 ```
 
+### GetUserIdAsync()
+
+Returns the user id of a user
+
+```C#
+@{
+	var userId = await _memberManager.GetUserIdAsync(user);
+}
+```
+
 ### IsLoggedIn()
 
 Checks if a member is logged in.
@@ -178,3 +188,14 @@ Returns a `Task<bool>` specifying if the currently logged in member has access t
 	}
 </ul>
 ```
+    
+`MemberManager` can also be used to manage users.
+    
+### ValidateCredentialsAsync(string, string)
+    
+Validates that a user's credentials are correct without actually logging them in.
+    
+```C#
+@{
+	var isValidCredentials = await _memberManager.ValidateCredentialsAsync(userName, password);
+}
