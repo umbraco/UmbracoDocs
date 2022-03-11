@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Managing Transport Security
 
-Once you have added your own hostnames to your Umbraco Cloud project its possible to configure certain transport security options for all or for specific hostnames within your project.
+Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain transport security options for all or for specific hostnames within your project.
 These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
 The options that are currently available are
