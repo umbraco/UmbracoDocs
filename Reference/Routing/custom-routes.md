@@ -191,34 +191,42 @@ public ShopController(
 Now that we have our dependencies, and our action methods, we're finally ready to implement the `FindContent` method: 
 
 ```C#
-public IPublishedContent FindContent(ActionExecutingContextactionExecutingContext)
+public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
 {
-    var productRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
-
-    if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
-    {
-        // Check which action is executing
-        switch (controllerActionDescriptor.ActionName)
+   if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+   {
+        var productRoot = umbracoContext.Content.GetById(2074);
+        if (productRoot!=null)
         {
-            case nameof(Index):
-                return productRoot;
-            
-            case nameof(Product):
-                // Get the SKU/Id from the route values
-                if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+
+            if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+            {
+                // Check which action is executing
+                switch (controllerActionDescriptor.ActionName)
                 {
-                    return productRoot
-                        .Children
-                        .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
-                }
-                else
-                {
-                    return productRoot;
-                }
+                    case nameof(Index):
+                        return productRoot;
+
+                    case nameof(Product):
+                        // Get the SKU/Id from the route values
+                        if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+                        {
+                            return productRoot
+                                .Children
+                                .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
+                        }
+                        else
+                        {
+                            return productRoot;
+                        }
+                 }
+            }           
+
+            return productRoot;
         }
     }
 
-    return productRoot;
+    return null;
 }
 ```
 
