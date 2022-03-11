@@ -92,24 +92,34 @@ An example configuration with a single upstream environment file will look like 
 
 ```json
 {
-  "Umbraco": {
-    "Deploy": {
-        "Settings": {
-            "ApiKey": "<your API key here>",
-        },
-        "Project": {
-            "Workspaces": [
-                {
-                    "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
-                    "Name": "Live",
-                    "Url": "https://localhost:44307"
-                }
+   "Umbraco":{
+      "Deploy":{
+         "Settings":{
+            "ApiKey": "<your API key here>"
+         },
+         "Debug":{
+            "EnvironmentName": "Live"
+         },
+         "Project":{
+            "Workspaces":[
+               {
+                  "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
+                  "Name": "Live",
+                  "Type": "live",
+                  "Url" :"https://localhost:44307"
+               }
             ]
-        },
-    }
-  }
+         }
+      }
+   }
 }
 ```
+
+The setting under _Debug:EnvironmentName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
+
+_Note:_ Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). It will likely be moved to the "Project" section in Umbraco Deploy 10.
+
+Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 

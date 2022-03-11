@@ -27,7 +27,7 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/zIq9WA9QNkk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/j81pNEMMA8c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ We also highly recommend that you're familiar with Git and the Markdown syntax.
 
 ## Forking and cloning the documentation repository
 
-The very first step is to get the documentation files down to your local machine, so you can start working with it. This is done by forking the UmbracoDocs repository and cloning it all down to your local machine.
+The first step is to get the documentation files down to your local machine, so you can start working with them. This is done by forking the UmbracoDocs repository and cloning it to your local machine.
 
 1. Follow our guide on [how to fork the UmbracoDocs repository](../Pull-Requests/#options-2-creating-a-pr-through-a-fork).
 2. Clone your fork to your local machine or open using GitHub Desktop.
@@ -54,7 +54,7 @@ We recommend using Visual Studio Code as it can be extended with a lot of useful
 
 ## Creating the new article
 
-Now it's time to create the new article. Depending on the article and which version of Umbraco you will be targetting, these are the two most common scenarios:
+Now it's time to create the new article. Depending on the article and the version of Umbraco you will be targetting, these are the two most common scenarios:
 
 * The article is targetting an older Umbraco version and you want to create a new version of the article that targets the *current major version*, or
 * You want to target a version of Umbraco that has not been released yet.
@@ -72,7 +72,7 @@ Check out the [File Naming Conventions](../File-Naming-Conventions/#target-a-spe
 3. Rename the *old* article to target the version it was written for, e.g. `index-vX.md` - `X` being the *old* version, e.g. 7.
 4. Rename the new article `index.md`.
 
-You will now have (at least) two versions of the same article. One named `index-v7` which is targetting Umbraco 7 and one named `index` which will target the current major version.
+You will now have (at least) two versions of the same article: one named `index-v7`, which is targetting Umbraco 7, and one named `index`, which will target the current major version.
 
 :::tip
 If you're unsure which Umbraco version to target the *old* article for, check the `versionFrom` label inside the article, at the very top.

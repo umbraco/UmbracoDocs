@@ -7,7 +7,7 @@ meta.Description: "A guide to creating a Basic Website using Umbraco"
 ---
 # Creating a Basic Website using Umbraco
 
-_This tutorial was last tested on **Umbraco 8.12**_
+_This tutorial was last tested on **Umbraco 9.0.0+**_
 
 ## Introduction
 

@@ -6,9 +6,11 @@ state: complete
 verified-against: 9.0.1
 update-links: true
 ---
-:::note 
-In Umbraco 9 configuration is json based rather than xml, you can view the v8 config documentation [here](../Config/index.md) 
+
+:::note
+In Umbraco 9 configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
 :::
+
 # Configuration Files
 
 In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
@@ -27,9 +29,9 @@ With the configuration pattern the settings can be read from multiple different 
 4. Environment variables
 5. Command line arguments
 
-This list is in order of precedence, so the values from `appSettings.json` will only be used if they're not also define in the environment variables, if they are then the environment variable will be used instead.
+This list is in order of precedence, so the values from `appsettings.json` will only be used if they're not also defined in the environment variables. If they are, then the environment variable will be used instead.
 
-There is one caveat, to this precedence though, the `appSettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance, the `appsettings.Development.json` file will only be used when the environment is set to development.
+There is one caveat, to this precedence though, the `appsettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance, the `appsettings.Development.json` file will only be used when the environment is set to development.
 
 ### Using Environment Variables for Configuration
 
@@ -51,17 +53,35 @@ As an environment variable it becomes a variable with the name `Umbraco__CMS__Un
 
 ### Using Command Line Arguments Configuration
 
-Like with environment variables, it's not feasable to use an entire json file as a command line argument. However, with the command line the `:` will work without issues, so each section of the hierarchy is seperated with a `:` character. If we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
+Like with environment variables, it's not feasible to use an entire JSON file as a command line argument. However, with the command line the `:` will work without issues, so each section of the hierarchy is separated with a `:` character. If we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
 
 `dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
 
+### Using UserSecrets for Configuration
+
+In the development environment it is possible to use UserSecrets for configuration, which is ideal for connection strings and similar settings that shouldn't be committed to source control. To use UserSecrets you need to first enable them for the project - this is done with the following command, issued within the directory that contains the `.csproj` file:
+
+`dotnet user-secrets init`
+
+Now it's possible to store the connection string with this command:
+
+`dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
+
+The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+
+```json
+"ConnectionStrings": {
+    "umbracoDbDSN": "CONNECTION_STRING_IN_HERE"
+}
+```
+
 ## IntelliSense
 
-A great thing about the `appsettings.json` is that it allows for intellisense with a schema file. For most ediors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so `"$schema": "https://json.schemastore.org/appsettings.json"`.
+A great thing about `appsettings.json` is that it allows for intellisense with a schema file. For most editors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so: `"$schema": "https://json.schemastore.org/appsettings.json"`.
 
 ## Reading Configuration in Code
 
-You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it, here is an example of how you'd read the the Host value from the SMTP settings contained within the global settings:
+You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it. Here is an example of how you'd read the Host value from the SMTP settings contained within the global settings:
 
 ```C#
 using Microsoft.Extensions.Options;
@@ -93,8 +113,9 @@ To see what setting types you can access see the complete list below, each docum
 
 ## Configuration Options
 
-A complete list of all the configuration sections included in Umbraco by default can be seen here, along with any keys they contain:
+A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
 
+* [Basic authentication settings](BasicAuthSettings/index.md)
 * [Connection strings settings](ConnectionStringsSettings/index.md)
 * [Content settings](ContentSettings/index.md)
 * [Debug settings](DebugSettings/index.md)

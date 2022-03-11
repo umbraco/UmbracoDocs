@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.1.0
+versionFrom: 9.4.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
 state: complete
@@ -24,8 +24,8 @@ To get an overview of the keys and values in the global section, the following s
       "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "AllowedUploadFiles": [],
       "ShowDeprecatedPropertyEditors": false,
-      "LoginBackgroundImage": "~/assets/img/login.jpg",
-      "LoginLogoImage": "~/assets/img/application/umbraco_logo_white.svg",
+      "LoginBackgroundImage": "/assets/img/login.jpg",
+      "LoginLogoImage": "/assets/img/application/umbraco_logo_white.svg",
       "Notifications": {
         "Email": "",
         "DisableHtmlEmail": false
@@ -44,7 +44,9 @@ To get an overview of the keys and values in the global section, the following s
         "EnableCleanup": false,
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
-      }
+      },
+      "DisableDeleteWhenReferenced": false,
+      "DisableUnpublishWhenReferenced": false
     }
   }
 }
@@ -238,3 +240,11 @@ All versions that fall in this period will be kept.
 For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
+
+### Disable delete when referenced
+
+This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+
+### Disable unpublish when referenced
+
+This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.

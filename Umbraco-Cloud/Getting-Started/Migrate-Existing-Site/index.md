@@ -20,11 +20,9 @@ These are the steps you need to go through to complete the migration successfull
 
 ## Video tutorial
 
-On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide.
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Gz-pte30arM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/xzua-5f2Nf4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
+On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide. You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLgX62vUaGZsE8aMQguNfc3j5fLmnvwcSg)
 
 If you prefer following a written guide, continue to read below.
 
@@ -171,7 +169,7 @@ You can either
 
 With your Umbraco Cloud project ready for the migration, it is time to clone down the project to your local machine.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/p5oMCMboxQ8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/1uUadErk9vQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Run the site locally and verify your own project and the cloned Umbraco Cloud project are using the same Umbraco version. After you've verified this, shut down the site, and it's now time to start merging the two projects.
 

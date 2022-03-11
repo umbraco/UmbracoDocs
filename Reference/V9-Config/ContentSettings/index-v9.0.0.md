@@ -26,6 +26,7 @@ To get an overview of the keys and values in the global section, the following s
       "ShowDeprecatedPropertyEditors": false,
       "LoginBackgroundImage": "~/assets/img/login.jpg",
       "LoginLogoImage": "~/assets/img/application/umbraco_logo_white.svg",
+      "HideBackOfficeLogo": false,
       "Notifications": {
         "Email": "",
         "DisableHtmlEmail": false
@@ -137,6 +138,10 @@ You can specify your own background image for the login screen here. The image w
 ### Login logo image
 
 You can specify your own image for the small logo in the top left cornor of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
+
+### Hide Backoffice Logo
+
+This setting is used for controlling whether or not to show the Umbraco login inside backoffice. The default value is: `false`.
 
 ## Notifications
 

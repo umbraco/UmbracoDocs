@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites."
-meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like "Man in the middle" and phising attacks."
+meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like 'Man in the middle' and phising attacks."
 ---
 
 # HTTPS

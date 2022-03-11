@@ -56,6 +56,8 @@ As Umbraco Cloud doesn't provide SMTP servers, you will need to find hosting els
 * [SendGrid](https://sendgrid.com/) - quick to setup
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/CFYuF7eNTF4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Step 1 - Set up the SMTP server.
 
 Step 2 - Configure the service in your `appsettings.json` file - in the `Umbraco:CMS:Global:Smtp` section.

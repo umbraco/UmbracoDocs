@@ -40,7 +40,7 @@ Check with your DNS host or hostname registrar regarding configuration details f
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
 :::
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/NAGnvMbVZu4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/UQ4Sn40YipA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 To specify the hostname for each root node using a multisite setup, follow these steps:
 
@@ -57,16 +57,6 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 ### Automatic TLS (HTTPS)
 
 All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
-
-:::note
-Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
-
-:::warning
-From November 1st, 2021 you will no longer be able to use Latch on Umbraco Cloud.
-This will effectively mean that unless changing the settings, the site will not be accessible for users, therefore make sure to update your hostname to Automatic TLS with Cloudflare.
-:::
-
-To change the certificate for your hostname, see the [How to move away from using Umbraco Latch](Move-away-from-Latch) article.
 
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 :::

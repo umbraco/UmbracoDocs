@@ -160,3 +160,108 @@ public class PageSurfaceControllerTests
 :::tip
 ```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
 :::
+
+## Testing an UmbracoApiController
+
+See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+
+```csharp
+
+public class ProductsController : UmbracoApiController
+{
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+
+    [HttpGet]
+    public JsonResult GetAllProductsJson()
+    {
+        return new JsonResult(this.GetAllProducts());
+    }
+}
+
+public class ProductsControllerTests
+{
+    private ProductsController controller;
+
+    [SetUp]
+    public void SetUp()
+    {
+        this.controller = new ProductsController();
+    }
+
+    [Test]
+    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
+    {
+        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+
+        var result = this.controller.GetAllProducts();
+
+        Assert.AreEqual(expected, result);
+    }
+
+    [Test]
+    public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
+    {
+        var json = JsonConvert.SerializeObject(this.controller.GetAllProductsJson().Value);
+
+        Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
+    }
+}
+
+```
+
+## Testing ICultureDictionary using the UmbracoHelper
+See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
+
+```csharp
+public class HomeController : RenderController
+{
+    private readonly UmbracoHelper umbracoHelper;
+
+    public HomeController(UmbracoHelper umbracoHelper, ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) : base(logger, compositeViewEngine, umbracoContextAccessor)
+    {
+        this.umbracoHelper = umbracoHelper;
+    }
+
+    public IActionResult Home(ContentModel model)
+    {
+        var myCustomModel = new PageViewModel(model.Content)
+        {
+            MyDictionaryProperty = this.umbracoHelper.GetDictionaryValue("myDictionaryKey")
+        };
+
+        return View(myCustomModel);
+    }
+}
+
+public class HomeControllerTests
+{
+    private Mock<ICultureDictionary> cultureDictionary;
+    private Mock<ICultureDictionaryFactory> cultureDictionaryFactory;
+    private UmbracoHelper umbracoHelper;
+    private HomeController controller;
+
+    [SetUp]
+    public void SetUp()
+    {
+        this.cultureDictionary = new Mock<ICultureDictionary>();
+        this.cultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
+        this.cultureDictionaryFactory.Setup(x => x.CreateDictionary()).Returns(this.cultureDictionary.Object);
+        this.umbracoHelper = new UmbracoHelper(this.cultureDictionaryFactory.Object, Mock.Of<IUmbracoComponentRenderer>(), Mock.Of<IPublishedContentQuery>());
+        this.controller = new HomeController(this.umbracoHelper, Mock.Of<ILogger<RenderController>>(), Mock.Of<ICompositeViewEngine>(), Mock.Of<IUmbracoContextAccessor>());
+    }
+
+    [Test, AutoData]
+    public void GivenMyDictionaryKey_WhenIndexAction_ThenReturnViewModelWithMyPropertyDictionaryValue(string expected)
+    {
+        var model = new ContentModel(new Mock<IPublishedContent>().Object);            
+        this.cultureDictionary.Setup(x => x["myDictionaryKey"]).Returns(expected);
+
+        var result = (PageViewModel)((ViewResult)this.controller.Home(model)).Model;
+
+        Assert.AreEqual(expected, result.MyDictionaryProperty);
+    }
+}
+```

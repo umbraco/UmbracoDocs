@@ -7,6 +7,8 @@ versionTo: 9.0.0
 
 You need to configure your site keys by adding your public and private keys.
 
+When adding the field to your form, you can select whether or not to save the scores calculated by reCAPTCHA as a value in the form submission, using the _Save score_ setting.
+
 ## For version 9
 
 You can configure the settings in the `appSettings.json` file:
@@ -18,7 +20,7 @@ You can configure the settings in the `appSettings.json` file:
         "SiteKey": "",
         "PrivateKey": ""
       }
-    }  
+    }
   }
 ```
 
