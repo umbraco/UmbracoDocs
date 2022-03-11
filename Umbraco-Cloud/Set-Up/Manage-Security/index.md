@@ -17,7 +17,7 @@ When a new hostname is added to a Project it will have the default settings appl
 ## HTTP/2 Explained
 
 The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 progressively enhances your website’s performance. When a browser supports HTTP/2, Umbraco Cloud will take full advantage of HTTP/2 performance benefits end to end. 
-For older browsers or non-HTTPS requests, the traffic will fall back to HTTP/1.1. You don’t need to choose between better performance and backwards-compatibility, which is why HTTP/2 is enabled by default for all new hostnames added to an Umbraco Cloud project.
+For older browsers or non-HTTPS requests, the traffic will fall back to HTTP/1.1. You don’t need to choose between better performance and backward compatibility, which is why HTTP/2 is enabled by default for all new hostnames added to a Umbraco Cloud project.
 
 ## TLS 1.3 Explained
 
