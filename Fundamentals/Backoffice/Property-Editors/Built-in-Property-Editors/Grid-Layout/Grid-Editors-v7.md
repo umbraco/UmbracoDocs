@@ -10,7 +10,7 @@ A grid editor is the component responsible for getting data into the grid - that
 - .js controller
 - .cshtml server side renderer
 
-The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
+The 'view' is what the editor sees, the 'controller' handles how it acts and the 'renderer' determines how the entered data is rendered in the template.
 
 ### Default Grid editors
 
@@ -79,7 +79,7 @@ The built-in views you can use are:
 - `macro`
 - `media`
 
-In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it quick to customise these.
+In most cases, you will either use the textstring or media view, or build your own from scratch. The textstring and media editors come with additional configuration to make it quick to customise.
 
 ##### Sample textstring config
 
