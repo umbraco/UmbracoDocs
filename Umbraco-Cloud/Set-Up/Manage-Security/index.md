@@ -42,7 +42,7 @@ Currently the features are available as follows:
 
 From your Umbraco Cloud Project, click Security from the Settings dropdown to get to the Security subpage.
 The Security settings are scoped per environment, so if you have multiple environments and add your own hostnames to different environments you can select the environment at the top of the page.
-Aside from environments the Security subpage is divded into two parts: 'Default Settings' and 'Hostname Specific Settings'.
+Aside from environments, the Security subpage is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'.
 Use the default settings to configure what should be applied by default to new and existing hostnames.
 
 ![Default Security Settings](images/security-subpage.png)
