@@ -50,16 +50,16 @@ The view can be built with standard MVC helpers:
 @using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
 {
     <div class="input-group">
-        <p>Name:</p>
-        @Html.TextBoxFor(m => m.Name)
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
     </div>
     <div>
-        <p>Email:</p>
-        @Html.TextBoxFor(m => m.Email)
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
     </div>
     <div>
-        <p>Message:</p>
-        @Html.TextAreaFor(m => m.Message)
+        <label asp-for="Message"></label>
+        <textarea asp-for="Message"></textarea>
     </div>
     <br/>
     <input type="submit" name="Submit" value="Submit" />
