@@ -13,8 +13,6 @@ Umbraco Courier is a tool that lets you deploy your schema and content from one 
 
 With Courier installed on your site, you can tell it to deploy an item from one site to another. Courier will then figure out what is needed for that specific item, package everything up, send it and finally extract it on the target site.
 
-You can purchase Courier from [Umbraco Apps](https://umbraco.com/apps/umbraco-courier/).
-
 In this section you can find all the information you need in order to install, configure and work with Courier on a daily basis.
 
 ## [Install Courier](Installing)
