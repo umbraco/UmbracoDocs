@@ -9,7 +9,15 @@ From the Usage page, you can see the current usage of custom domains added to th
 
 You can also get an overview of the usage limitations for your Umbraco Cloud project as well as the plan that the project is on. In the Umbraco Cloud Settings menu you can find a page called Usage.
 
-![Usage on Cloud](images/Usage2.png)
+![Usage on Cloud](images/Usage.png)
+
+It is also possible to see a top 10 of the HTTP referers causing the most bandwidth. A referer is the name of an optional HTTP header field that identifies the address of the web page, from which the resource has been requested. It is the bandwidth generated from these resource requests that counts in the monthly usage limit of the project.
+
+![top 10 bandwidth](images/bandwidth.png)
+
+:::note
+the top 10 bandwidth are currently in a beta state, as the bandwidth listed does not always match the total bandwidth shown for the project.
+:::
 
 ## Usage limits
 
@@ -22,7 +30,7 @@ On Umbraco Cloud, you can always upgrade your project to a higher plan if you ha
 You can see the prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when you are upgrading your plan.
 
 :::warning
-If you exceed the limitations of the plan that your project is on, we will automaticly upgrade your project to a higher plan that fits the usage of your project.
+When one of the limits reaches 90%, you’ll see a warning banner in the portal and an email is sent to the project owner and the technical contact(s) of the project, notifying you that you’re getting close to your limit(s).
 
-When your project has reached 90% of the usage limits for the plan, we will notify the technical contact through the portal as well as we send out an email.
+![USage Warning](images/warnings_usage.png)
 :::
