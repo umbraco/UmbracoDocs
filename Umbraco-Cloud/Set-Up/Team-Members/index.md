@@ -29,7 +29,7 @@ User Permissions for each environment can be set in the **Edit Team** page avail
 
 ## Backoffice User Groups for Team Members
 
-Project team members can view the actual user group memberships of the project’s backoffice users. Currently, you can manage the backoffice user groups of a user through the Umbraco backoffice. A backoffice user is only created once the user logs into the backoffice of the project for the first time.
+You can view the user group memberships of the project’s backoffice users. Currently, you can manage the backoffice user groups of a user through the Umbraco backoffice. A backoffice user is only created once the user logs into the backoffice of the project for the first time.
 
 ![Backoffice User Groups](images/Backoffice-User-Groups.png)
 
