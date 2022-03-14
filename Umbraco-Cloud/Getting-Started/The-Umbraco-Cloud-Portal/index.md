@@ -58,7 +58,9 @@ Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be acce
 
 ### Project Invites
 
-On Umbraco Cloud, you can receive invitation from different projects. These project details will be available in the **Project Invite** tab.
+On Umbraco Cloud, you can receive invitation from different projects. These project details are available in the **Project Invites** tab. On the **Project Invites** page, as a user, you will see the project name, invited by, expiration date of the invite, invite status, and options to approve, reject, or delete the invitations that have expired.
+
+[Project Invites](images/project-invites.png)
 
 ### Organizations
 
@@ -82,6 +84,10 @@ Profile consists of the following information:
 
 - Change Password: Change the password for your Umbraco Cloud account from here.
   ![change password](images/change-password.png)
+
+## Release Notes
+
+On Umbraco Cloud portal, you can now find the link for the **Release Notes** in the **Profile Settings** menu. Release notes will be published multiple times every month and list the most relevant fixes and features added to the portal.
 
 ## Environment error log
 
