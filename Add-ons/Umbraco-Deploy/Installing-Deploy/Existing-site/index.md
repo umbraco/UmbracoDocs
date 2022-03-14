@@ -65,7 +65,7 @@ After the Umbraco files have been committed add the following lines to the .giti
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index-v9).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/).
 
 ### Set up CI/CD Pipeline
 
