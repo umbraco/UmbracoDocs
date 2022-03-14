@@ -28,6 +28,7 @@ To make it easier to see what values are present in the global section, the foll
       "IconsPath": "~/umbraco/assets/icons",
       "UmbracoCssPath": "~/css",
       "UmbracoMediaPath": "~/media",
+      "UmbracoMediaPhysicalRootPath": "X:/Shared/Media",
       "InstallMissingDatabase": false,
       "DisableElectionForSingleServer": false,
       "DatabaseFactoryServerVersion": "SqlServer.V2019",
@@ -102,11 +103,17 @@ By adding this value you can specify a new/different folder for storing your ico
 
 ### Umbraco CSS path
 
-By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be serverd from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
 
 ### Umbraco media path
 
-By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be serverd from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+
+### Umbraco media physical root path
+
+*Available in V9.3+*
+
+By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
 
 ### Install missing database
 
