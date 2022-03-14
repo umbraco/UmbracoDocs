@@ -19,6 +19,7 @@ Articles about configuring various settings on your project, as well as managing
  - [SMTP Settings](SMTP-settings/)
  - [Manage Hostnames](Manage-Hostnames/)
  - [Manage Environments](Manage-Environments/)
+ - [Manage Transport Security](Manage-Security/)
 
 ## Working with your Umbraco Cloud project
 
