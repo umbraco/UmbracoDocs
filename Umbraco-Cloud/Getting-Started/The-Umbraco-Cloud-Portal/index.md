@@ -60,7 +60,7 @@ Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be acce
 
 On Umbraco Cloud, you can receive invitation from different projects. These project details are available in the **Project Invites** tab. On the **Project Invites** page, as a user, you will see the project name, invited by, expiration date of the invite, invite status, and options to approve, reject, or delete the invitations that have expired.
 
-[Project Invites](images/project-invites.png)
+![Project Invites](images/project-invites.png)
 
 ### Organizations
 
