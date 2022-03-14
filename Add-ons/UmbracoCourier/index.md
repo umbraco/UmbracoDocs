@@ -4,7 +4,11 @@ versionRemoved: 8.0.0
 ---
 
 # Courier Documentation
+:::warning
+By March 2022 official support for Umbraco Courier has ended.
 
+It has been replaced with [Umbraco Deploy-on-premis](https://umbraco.com/products/umbraco-deploy/umbraco-deploy-on-premises/)
+:::
 Umbraco Courier is a tool that lets you deploy your schema and content from one Umbraco site to another.
 
 With Courier installed on your site, you can tell it to deploy an item from one site to another. Courier will then figure out what is needed for that specific item, package everything up, send it and finally extract it on the target site.
