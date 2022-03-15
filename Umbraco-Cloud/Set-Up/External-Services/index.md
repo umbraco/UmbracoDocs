@@ -14,7 +14,7 @@ An example could be, that you're fetching some information from an external serv
 # Enabling static outbound IP addresses
 For projects on a standard, Professional and Enterprise plan you can enable static outbound IP addresses.
 
-On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for Standard, Pro, and Enterprise cloud projects.
+On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**,**Professional**, and **Enterprise** Cloud projects.
 
 ![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
 
