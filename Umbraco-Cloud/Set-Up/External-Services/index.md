@@ -18,5 +18,5 @@ If you are on a **Standard** or **Professional** plan, you can turn on the on th
 ![Static Outbound IP's](images/Static_IPs.png)
 
 :::note
-If you are on a **Starter Plan** you can see the current outbound IP addresses of your project, however they are dynamic and likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+If you are on a **Starter Plan** you can see the current outbound IP addresses of your project, however, they are dynamic and likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 :::
