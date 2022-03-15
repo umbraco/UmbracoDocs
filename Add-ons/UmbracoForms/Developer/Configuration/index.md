@@ -235,4 +235,4 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 ---
 
-Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Magic Strings](../Magic-Strings/index.md)
+Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Security](../Security/index.md)
