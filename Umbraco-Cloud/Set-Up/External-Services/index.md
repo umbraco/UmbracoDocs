@@ -39,4 +39,6 @@ The static outbound IPs for every environment are:
 ```
 If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
 
-For projects on a starter plan you are able to see the current dynamic outbound IP addresses. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+:::note
+For projects on a Starter plan, you are able to see the current dynamic outbound IP addresses. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+:::
