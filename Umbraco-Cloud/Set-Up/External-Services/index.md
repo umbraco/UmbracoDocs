@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-keywords: whitelist allow list allowlist ip internal
+keywords: whitelist allow list allowlist ip internal static outbound ips
 ---
 
 # Using external services with Umbraco Cloud
@@ -11,8 +11,34 @@ When you are working with an external service that is behind a firewall and that
 
 An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give your Umbraco Cloud project access to the external service you need to add the IPs used by the Umbraco Cloud servers to an allow list (other services may refer to it as a "whitelist").
 
-Please reach out to support in order to get the outgoing IPs for your project.
+# Enabling static outbound IP addresses
+For projects on a standard, Professional and Enterprise plan you can enable static outbound IP addresses.
 
-:::warning
-A change of plan for a project on Umbraco Cloud enforces a new set of outgoing IPs for that project. If the project to be changed is using external services and has its outgoing IPs whitelisted, please reach out to Umbraco support prior to upgrading/downgrading the plan.
+On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**,**Professional**, and **Enterprise** Cloud projects.
+
+![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
+
+The static outbound IPs for every environment are:
+```
+40.113.173.32
+40.113.173.33
+40.113.173.34
+40.113.173.35
+40.113.173.36
+40.113.173.37
+40.113.173.38
+40.113.173.39
+40.113.173.40
+40.113.173.41
+40.113.173.42
+40.113.173.43
+40.113.173.44
+40.113.173.45
+40.113.173.46
+40.113.173.47
+```
+If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
+
+:::note
+For projects on a Starter plan, you are able to see the current dynamic outbound IP addresses. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 :::
