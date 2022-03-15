@@ -54,6 +54,8 @@ To see the media, go to the *Media* section and *reload* the tree.
 
 ![Workspace Restore](images/Workspace_Restore.gif)
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/0jIhKZOSeLc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Tree Restore
 
 Tree restore option restores all the entities available for the selected tree in that particular section. It's available in the **Content**, **Media**, **Forms** (root node of Forms, Datasources, and Prevalue sources), or **Translation** (Dictionary menu if configured) sections. Using Tree Restore, you can for example, restore all your content only. This will restore any media that’s referenced in that content, but it won’t attempt to restore the full media library.
@@ -69,7 +71,7 @@ Tree restore option restores all the entities available for the selected tree in
 
 ![Tree Restore](images/Tree-Restore.gif)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Z_vK6vhIbMw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/X7m3FzhRHp0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### [Partial Restore](Partial-Restore)
 
