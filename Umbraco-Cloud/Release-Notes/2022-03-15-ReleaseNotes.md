@@ -12,7 +12,7 @@ When your Umbraco project connects to an external endpoint that requires connect
 
 On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for Standard, Pro, and Enterprise cloud projects.
 
-![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
+![StaticOutboundIps](images/ips.gif)
 
 For Starter projects, there is likewise a new addition. On the Advanced page, you can see the current outbound IP addresses of your project. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 
@@ -40,7 +40,7 @@ You can also add hostname-specific settings if needed and thereby overriding the
 The Umbraco Commercial Packages team has made some great improvements for  Umbraco Forms and Umbraco Deploy [lately](https://umbraco.com/blog/umbraco-forms-81193-and-deploy-4593-release/) which immediately adds value to your projects on Umbraco Cloud.
 One of the new Umbraco Deploy features, Content Comparison, enables you to preview content changes directly in the backoffice prior to transferring them to another environment. This will often be helpful in order to ensure the correct updates are transferred and improve predictability when working with content in multiple environments. 
 
-https://umbraco.com/media/00vd3guu/umbraco-deploy-93-content-comparisson.mp4
+![Content comparison](images/umbraco-deploy-93-content-comparisson_1.gif)
 
 You are able to see what has changed when. And understand what will change if you proceed with a transfer upstream or a restore into the local environment.
 
