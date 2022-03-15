@@ -143,6 +143,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Umbraco settings](umbracoSettings/index.md)
 * [Unattended settings](UnattendedSettings/index.md)
 * [Web routing settings](WebRoutingSettings/index.md)
+* [RichTextEditor settings](RichTextEditorSettings/index.md)
 
 ## Configured by code
 
