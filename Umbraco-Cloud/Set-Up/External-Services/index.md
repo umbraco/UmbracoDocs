@@ -12,7 +12,7 @@ When you are working with an external service that is behind a firewall and that
 An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give your Umbraco Cloud project access to the external service you need to add the IPs used by the Umbraco Cloud servers to an allow list (other services may refer to it as a "whitelist").
 
 # Enabling static outbound IP addresses
-For projects on a standard, Professional and Enterprise plan you can enable static outbound IP addresses.
+For projects on a Standard, Professional and Enterprise plan you can enable static outbound IP addresses.
 
 On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**,**Professional**, and **Enterprise** Cloud projects.
 
