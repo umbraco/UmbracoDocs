@@ -15,7 +15,7 @@ Example usage of the MediaService notifications:
 ```C#
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Services.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace MySite
 {
