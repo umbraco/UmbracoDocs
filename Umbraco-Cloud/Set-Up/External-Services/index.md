@@ -13,7 +13,7 @@ An example could be, that you're fetching some information from an external serv
 
 ## Static Outbound IP's
 
-If you are on a **Standard** or **Professional** plan, you can turn on the on the static outbound IP address feature under the `Advanced` Settings page:
+If you are on a **Standard** or **Professional** plan, you can turn on the static outbound IP address feature under the `Advanced` Settings page:
 
 ![Static Outbound IP's](images/Static_IPs.png)
 
