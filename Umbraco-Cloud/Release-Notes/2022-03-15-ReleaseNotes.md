@@ -19,6 +19,12 @@ For Starter projects, there is likewise a new addition. On the Advanced page, yo
 ### [Managing Transport Security](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Security/)
 Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain **transport security options** for all or for specific hostnames within your project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
+This can be done on the new _Security_ page.
+
+:::note
+The Manage Transport Security feature will be rolling out on individual projects this week. It is expected that all relevant projects is able to access the new _Security_ page on March 18th 2022.
+:::
+
 ![image](https://user-images.githubusercontent.com/93588665/158339048-166b9715-1d1e-4d71-8c8b-ddf35402d3ed.png)
 
 The options currently available are:
