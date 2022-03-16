@@ -2,6 +2,10 @@
 versionFrom: 7.0.0
 ---
 
+:::note
+The Manage Transport Security feature will be rolling out on individual projects this week. It is expected that all relevant projects is able to access the new _Security_ page on March 18th 2022.
+:::
+
 # Managing Transport Security
 
 Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain transport security options for all or for specific hostnames within your project.
