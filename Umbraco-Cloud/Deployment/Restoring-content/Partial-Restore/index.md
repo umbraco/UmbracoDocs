@@ -60,4 +60,4 @@ Imagine that you are working with your Umbraco Cloud project locally. One of you
 
 ![Partial restore](images/partialRestore-onEnvWithContent.png)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/X7m3FzhRHp0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
