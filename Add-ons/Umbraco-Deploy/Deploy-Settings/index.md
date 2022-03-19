@@ -48,7 +48,7 @@ For illustration purposes, the following structure represents the full set of op
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
             "IgnoreBrokenDependencies": false,
-            "IgnoreBrokenDependenciesBehavior": "IgnoreForAll",
+            "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
