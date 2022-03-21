@@ -94,13 +94,13 @@ On the Professional and Enterprise plan, you can manually add your own certifica
 
 ## [Using your own WAF on Umbraco Cloud](WAF)
 If you need to use your own Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configuration needed. But please note that configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
-"In most cases you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates is a plan-specific feature on Umbraco Cloud, so please make sure that you have access to upload certificates."
+In most cases you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates is a plan-specific feature on Umbraco Cloud, so please make sure that you have access to upload certificates.
 
-Make sure the hostname is pointing to Umbraco Cloud (dns.umbraco.io)
+1. Make sure the hostname is pointing to Umbraco Cloud (dns.umbraco.io)
 2. Certificates are issued for the actual hostname - It is probably required to have a custom certificate for a WAF hostname. 
 3. Be on a plan that supports custom certificates
 
-"When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
+When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
 
 So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it removed. That means that you has 14 days to add a TXT record in your DNS settings. 
 
