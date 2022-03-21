@@ -27,11 +27,11 @@ To edit an account contact, do the following:
 
 1. Go to the Project in the Umbraco Cloud Portal.
 2. Click **Settings** and go to **Edit Team**.
-3. In the **Account contacts** section, select the contact whose details you wish to change and click ![Edit](images/edit.png).
+3. In the **Account contacts** section, select the contact whose details you wish to change and click **Edit**.
 4. In the **Edit account contact** window, enter the updated **Name** or **Email**.
     ![Add account contact form](images/edit-account-contact-form.png)
 5. Click **Confirm**.
 
     ![Add account contact form](images/Edit-Account-Contact.gif)
 
-<!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/sjugjnHz3bo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+<iframe width="800" height="450" src="https://www.youtube.com/embed/GnX4svXWE8U?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
