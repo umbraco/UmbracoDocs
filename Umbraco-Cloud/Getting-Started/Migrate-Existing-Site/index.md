@@ -18,12 +18,6 @@ These are the steps you need to go through to complete the migration successfull
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
 
-## Video tutorial
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Gz-pte30arM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide. You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLgX62vUaGZsE8aMQguNfc3j5fLmnvwcSg)
-
 If you prefer following a written guide, continue to read below.
 
 ## 1. Requirements
@@ -72,8 +66,6 @@ If you need help upgrading your project, we have some excellent [Upgrade instruc
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
 After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
-
-Ideally your site will run locally using the SQL CE database as this will make content migration easier. Don't worry - if that's not possible you will still be able to complete the migration.
 
 ### Cleaning your project
 
@@ -134,15 +126,15 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
     * `/Views`
     * `/umbraco`
 
-    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses/umbracoForms.lic` file
+    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
 2. Merge Appsettings.JSON files from your existing site with the cloud site.
 
     * Make sure that you merge your Appsetting.JSON files with the one from your existing site so that the settings you used are moved over to your Cloud project
 
 3. Merge your Program.cs and Startup.cs with the one from your existing site
 
-4. If you are using SQL CE
-    * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
+4. If you are using SQL Server Express (LocalDB)
+    * Make sure the SQL Server Express database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
     * You can find it in `/umbraco/Data/umbraco.sdf`
 5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
