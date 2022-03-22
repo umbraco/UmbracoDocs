@@ -172,4 +172,32 @@ For example, using the following settings, you will have an installation that ig
 </settings>
 ```
 
+## Memory cache reload
+
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, that are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into to such issues and have no issues with a cache clear after deployment, this workaround can be automated via the following setting:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy reloadMemoryCacheFollowingDiskReadOperation="true" />
+</settings>
+```
+
+## Deployment of culture & hostnames settings
+
+Culture and hostname settings, defined per content item, are not deployed between environments by default, but can be opted into via configuration.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy allowDomainsDeploymentOperations="None|Wildcard|Absolute|Hostname|WildcardAndAbsolute|WildcardAndHostname|AbsoluteAndHostName|All" />
+</settings>
+```
+
+To enable this, set the configuration value as appropriate for the types of domains you want to allow:
+
+- *Wildcard* - the language setting for the content, defined under "Culture"
+- *Absolute* - values defined under "Domains" with a root relative path, e.g. "/en"
+- *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+
 

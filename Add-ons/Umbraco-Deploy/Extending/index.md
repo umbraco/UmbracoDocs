@@ -381,7 +381,8 @@ The following code shows the registration of an entity for backoffice deployment
                 "exampleTreeAlias",
                 (string routePath) => true,
                 (string nodeId) => true,
-                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
+                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
+                new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"));
         }
 
         public void Terminate()
@@ -432,6 +433,52 @@ If access to any services is required when parsing the entity Id, the `HttpConte
 
 ```C#
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
+```
+
+Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+
+- A function responsible for returing a level of a tree.
+- The name of the entity (or entities) that can be restored from the remote tree.
+- The remote tree alias.
+
+An example function that returns a level of a remote tree may look like this:
+
+```C#
+    public static IEnumerable<RemoteTreeNode> GetExampleTree(string parentId, HttpContext httpContext)
+    {
+        var exampleDataService = httpContext.RequestServices.GetRequiredService<IExampleDataService>();
+        var items = exampleDataService.GetItems(parentId);
+        return items
+            .Select(x => new RemoteTreeNode
+            {
+                Id = x.Id,,
+                Title = x.Name,
+                Icon = "icon-box",
+                ParentId = parentId,
+                HasChildren = true,
+            })
+            .ToList();
+    }
+```
+
+To complete the setup for partial restore support, an external tree controller needs to be added, attributed to match the registered tree alias.  Using a base class available in `Umbraco.Deploy.Forms.Tree`, this can look like the following:
+
+```C#
+    [Tree(DeployConstants.SectionAlias, "externalExampleTree", TreeUse = TreeUse.Dialog)]
+    public class ExternalDataSourcesTreeController : ExternalTreeControllerBase
+    {
+        public ExternalDataSourcesTreeController(
+            ILocalizedTextService localizedTextService,
+            UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
+            IEventAggregator eventAggregator,
+            IExtractEnvironmentInfo environmentInfoExtractor,
+            LinkGenerator linkGenerator,
+            ILoggerFactory loggerFactory,
+            IOptions<DeploySettings> deploySettings)
+            : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator, environmentInfoExtractor, linkGenerator, loggerFactory, deploySettings, "mypackage-example")
+        {
+        }
+    }
 ```
 
 #### Client-Side Registration
