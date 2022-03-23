@@ -63,7 +63,7 @@ There are several ways to access the Azure Key Vault.
 ### Local Developement 
 
 1. Sign in to Visual Studio using the credentials that can access the Key Vault. 
-1. Use az CLI to store your preferred account into the credential cache.
+1. Use Azure CLI to store your preferred account into the credential cache.
 
 ### Staging/Production
 
