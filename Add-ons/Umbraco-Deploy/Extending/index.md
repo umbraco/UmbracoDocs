@@ -437,7 +437,7 @@ var localizationService = httpContext.RequestServices.GetRequiredService<ILocali
 
 Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 
-- A function responsible for returing a level of a tree.
+- A function responsible for returning a level of a tree.
 - The name of the entity (or entities) that can be restored from the remote tree.
 - The remote tree alias.
 

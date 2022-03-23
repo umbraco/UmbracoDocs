@@ -174,7 +174,7 @@ For example, using the following settings, you will have an installation that ig
 
 ## Memory cache reload
 
-Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, that are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into to such issues and have no issues with a cache clear after deployment, this workaround can be automated via the following setting:
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and have no issues with a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -185,7 +185,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 ## Deployment of culture & hostnames settings
 
-Culture and hostname settings, defined per content item, are not deployed between environments by default, but can be opted into via configuration.
+Culture and hostname settings, defined per content item, are not deployed between environments by default but can be opted into via configuration.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
