@@ -29,7 +29,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Sync;
 using Umbraco.Cms.Infrastructure.HostedServices;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
@@ -102,11 +102,11 @@ First we need to create our extension method where we register the hosted servic
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
-    public static class BuilderExtensions
+    public static class UmbracoBuilderHostedServiceExtensions
     {
-        public static IUmbracoBuilder AddHostedServices(this IUmbracoBuilder builder)
+        public static IUmbracoBuilder AddCustomHostedServices(this IUmbracoBuilder builder)
         {
             builder.Services.AddHostedService<CleanUpYourRoom>();
             return builder;
@@ -125,7 +125,7 @@ public void ConfigureServices(IServiceCollection services)
         .AddBackOffice()
         .AddWebsite()
         .AddComposers()
-        .AddHostedServices() // Register CleanUpYourRoom
+        .AddCustomHostedServices() // Register CleanUpYourRoom
         .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
 }
@@ -140,7 +140,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
     public class CleanUpYourRoomComposer : IComposer
     {
