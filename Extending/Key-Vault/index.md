@@ -33,7 +33,7 @@ The next step is to add the Azure Key Vault endpoint to the 'appsettings.json' f
 }
 ```
 
-After adding the Key Vault endpoint you have to update the`CreateHostBuilder` method which you can find in the `Program.cs` class. 
+After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` class. 
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
