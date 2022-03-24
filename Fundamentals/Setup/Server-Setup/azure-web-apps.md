@@ -47,6 +47,14 @@ __If you are load balancing or require the scaling ("scale out") ability of Azur
 
 It is important to know that Azure Web Apps uses a remote file share to host the files to run your website (i.e. the files running your website do not exist on the machine running your website). In many cases this isn't an issue but it can become one if you have a large amount of IO operations running over remote file share.
 
+## Issues with read-only filesystems
+
+Although Umbraco can be configured to use environmental storage it still requires its working-directory to be writable. If Umbraco is deployed to a read-only file system it will [fail to boot](https://github.com/umbraco/Umbraco-CMS/issues/12043).
+
+For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us/azure/app-service/deploy-run-package) is not supported by Umbraco. To check if your web app is using this feature you can check the `WEBSITE_RUN_FROM_PACKAGE` environment variable.
+
+### Azure 
+
 ## Scaling
 
 If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult
