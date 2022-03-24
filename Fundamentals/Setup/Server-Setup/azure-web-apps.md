@@ -53,8 +53,6 @@ Although Umbraco can be configured to use environmental storage it still require
 
 For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us/azure/app-service/deploy-run-package) is not supported by Umbraco. To check if your web app is using this feature you can check the `WEBSITE_RUN_FROM_PACKAGE` environment variable.
 
-### Azure 
-
 ## Scaling
 
 If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult
