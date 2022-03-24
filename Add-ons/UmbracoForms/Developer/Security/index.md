@@ -55,12 +55,12 @@ As new forms are created, user groups with aliases listed in the `GrantAccessToN
 
 ### Start folders for user groups
 
-In Umbraco Forms 8.12.0 and 9.4.0, start folders were also enabled for user groups.  They work in a similar way to the group based permissions described above:
+In Umbraco Forms 8.12.0 and 9.4.0, start folders are also enabled for User Groups. They work in a similar way as the group based permissions described above:
 
 - If the user has a specific user permission set, it is used in preference to anything set on the user groups they are a part of.
-    - This means if the user has no start folders defined, even if they groups they are part of do, they will have access to the root of the forms tree and be able to access all folders and forms.
+    - This means if the user has no start folders defined and the groups they are part of do, they will have access to the root of the Forms tree and be able to access all folders and Forms.
  - If the user doesn't have a specific user permission set, they are granted access to all the unique folders the groups they are part of have access to.
-    - If they are part of any group that has no start folders defined, they will have access to the root of the forms tree and be able to access all folders and forms.
+    - If they are part of any group that has no start folders defined, they will have access to the root of the Forms tree and be able to access all folders and Forms.
 
 ### Migrating to user group based permissions
 

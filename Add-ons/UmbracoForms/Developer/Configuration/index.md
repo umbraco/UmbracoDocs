@@ -104,7 +104,7 @@ This setting controls the maximum number of columns that can be created by edito
 This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
 ### DefaultEmailTemplate
-When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms and found at `Forms/Emails/Example-Template.cshtml` is used.
+When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
