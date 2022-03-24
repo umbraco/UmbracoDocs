@@ -125,6 +125,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Health checks settings](HealthChecks/index.md)
 * [Hosting settings](HostingSettings/index.md)
 * [Imaging settings](ImagingSettings/index.md)
+* [Install default data setting](InstallDefaultDataSettings/index.md)
 * [Keep alive settings](KeepAliveSettings/index.md)
 * [Logging settings](LoggingSettings/index.md)
 * [Maximum upload size settings](MaximumUploadSizeSettings/index.md)
