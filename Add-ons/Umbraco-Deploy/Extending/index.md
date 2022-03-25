@@ -343,6 +343,29 @@ In order to deploy the entity as schema, via disk based representations held in 
     }
 ```
 
+#### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
+
+In Umbraco Deploy 4.6 and 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+
+All core Umbraco entities, such as document types and data types, will be shown.
+
+To include entities from plugins, they need to be registered using an overload of the method shown above, that allows you to provide additional detail, e.g.:
+
+```C#
+_diskEntityService.RegisterDiskEntityType(
+    "mypackage-example",
+    "Examples",
+    false,
+    _exampleDataService.GetAll().Select(x => new DeployDiskRegisteredEntityTypeDetail.InstalledEntityDetail(x.GetUdi(), x.Name, x))));
+```
+
+The parameters are as follows:
+
+- The system name of the entity type (as used in the `UdiDefinition` attribute).
+- A human readable, pluralized name for display in the schema comparison dashboard user interface.
+- A flag indicating whether the entity is an Umbraco one, which should be set to `false`.
+- A function that returns all entities of the type installed in Umbraco, mapped to an object exposing the Udi and name of the entity.
+
 ### Backoffice Integrated Transfers
 
 If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to also register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
