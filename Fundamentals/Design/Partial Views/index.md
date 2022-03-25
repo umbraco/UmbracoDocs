@@ -9,7 +9,7 @@ updated-links: true
 
 # Partial Views
 
-A Partial View (`.cshtml` file) is a regular view which can be used multiple times in an application. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu etc. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
+A Partial View (`.cshtml` file) is a regular view which can be used multiple times throughout your site. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu etc. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
 
 ## Partial Views in the Backoffice
 
@@ -47,7 +47,7 @@ To create a folder, go to the **Settings** section in the Umbraco backoffice and
 
 ## Rendering a Partial View
 
-To render the created partial view into any template, use the `[PartialAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync?view=aspnetcore-6.0)` helper method:
+To render the created partial view into any template, use any of these helper methods: `@Html.PartialAsync`, `@Html.Partial()`, or `@Html.RenderPartial()`
 
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
@@ -57,11 +57,13 @@ To render the created partial view into any template, use the `[PartialAsync](ht
 	Layout = null;
 }
 
-@await Html.PartialAsync("Navigation")
-
-<h1>Login</h1>
-
 @await Html.PartialAsync("Login")
+
+@Html.Partial("Login")
+
+@{
+ Html.RenderPartial("Login");   
+}
 ```
 
 ### Related Articles
