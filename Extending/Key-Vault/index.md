@@ -58,12 +58,20 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ## Authentication 
 
-There are several ways to access the Azure Key Vault.
+There are several ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
+
+1. Navigate to your Key Vault. 
+1. Select Access Control.
+1. Select Add -> Add role assignment.
+1. Select the preferred role.
+1. Search for the user. 
+1. Click review + assign
+
 
 ### Local Developement 
 
-1. Sign in to Visual Studio using the credentials that can access the Key Vault. 
-1. Use Azure CLI to store your preferred account into the credential cache.
+1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio) 
+1. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
 
 ### Staging/Production
 
