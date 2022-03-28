@@ -131,11 +131,10 @@ In this next part you are going to setup your Umbraco Cloud project and clone it
 
 Before the migration process can start, you will need to have an Umbraco Cloud project you can migrate your own project into.
 
-![How to start an Umbraco Cloud trial](images/start-trial.gif)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
-2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful
-3. We recommend that you setup your project with at least two environments.
+1. The best way to get started with Umbraco Cloud is to take a [14-day free trial](https://umbraco.com/?product_tour_id=103162). The project is automatically created, and you are ready to get started within a few minutes. Since we set-up the entire project, we recommend that you get to know your project before you start building.
+2. We also recommend that you setup your project with at least two environments.
 
 ![Manage environments](images/setup-dev-env.png)
 
@@ -261,7 +260,7 @@ Go to the backoffice of your Development environment and make sure all your meta
     You will need to manually migrate them using SQL.
     :::
 
-![Queue for transfer](images/transfer.gif)
+![Queue for transfer](images/transfer-v9.gif)
 
 **Voila!** You've now migrated your site to Umbraco Cloud.
 
