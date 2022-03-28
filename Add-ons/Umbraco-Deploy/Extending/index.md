@@ -345,7 +345,7 @@ In order to deploy the entity as schema, via disk based representations held in 
 
 #### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
 
-In Umbraco Deploy 4.6 and 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+In Umbraco Deploy 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
 
 All core Umbraco entities, such as document types and data types, will be shown.
 
