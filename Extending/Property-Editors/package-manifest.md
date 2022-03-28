@@ -234,7 +234,7 @@ The parameter editors array follows the same format as the property editors desc
 ```
 
 ## Bundling
-`bundleOptions` is an enum that expects one of the following values:
+`bundleOptions` is an enumerable type that expects one of the following values:
 
 * `Default` - The default bundling behavior for assets in the package folder where the assets will be bundled with the typical packages bundle.
 * `None` - The assets in the package will not be processed at all and will all be requested as individual assets and will essentially be a bundle that has composite processing turned off for both debug and production
