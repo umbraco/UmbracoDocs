@@ -7,14 +7,6 @@ meta.Description: "Welcome to the Umbraco Cloud documentation. Here you can read
 
 # Umbraco Cloud documentation
 
-:::warning
-By the 28th of March all sale and support of Umbraco Uno has stopped.
-
-All Umbraco Uno Customers have been notified via email with details regarding our decision around Umbraco Uno.
-
-If you have further questions, please reach out to our friendly support team.
-:::
-
 Welcome to the Umbraco Cloud documentation. Here you can read all about how to set up and work with Umbraco Cloud. You can find articles about the deployment workflow, how to work locally and all the features that comes with your Umbraco Cloud project. You can also find articles about troubleshooting various issues.
 
 ## [Getting Started](Getting-Started/)
