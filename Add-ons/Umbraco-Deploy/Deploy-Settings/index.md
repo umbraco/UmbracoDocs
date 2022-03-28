@@ -178,7 +178,7 @@ For example, using the following settings, you will have an installation that ig
 
 ## Memory cache reload
 
-Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and have no issues with a cache clear after deployment, this workaround can be automated via the following setting:
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accomodate a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```json
     "ReloadMemoryCacheFollowingDiskReadOperation": true,
