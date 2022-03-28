@@ -9,7 +9,7 @@ updated-links: true
 
 # Partial Views
 
-A Partial View (`.cshtml` file) is a regular view which can be used multiple times throughout your site. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu etc. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
+A Partial View (`.cshtml` file) is a regular view that can be used multiple times throughout your site. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu etc. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
 
 ## Partial Views in the Backoffice
 
@@ -33,7 +33,7 @@ By default, the partial view is saved in the `Views/Partials` folder in the solu
 
 ## Creating a Partial View from Snippet
 
-To create a partial view from snippet, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views** folder. Choose **Create**. Select **New empty partial view from snippet**. Select the snippet you want to create a partial view for and enter a partial view name. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button.
+To create a partial view from the snippet, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views** folder. Choose **Create**. Select **New empty partial view from snippet**. Select the snippet you want to create a partial view for and enter a partial view name. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button.
 
 ![Created partial view from snippet](images/created-partial-view-from-snippet.png)
 
@@ -69,7 +69,6 @@ To render the created partial view into any template, use any of these helper me
 ### Related Articles
 
 * [Using MVC Partial Views in Umbraco](../../../Reference/Templating/Mvc/partial-views.md)
-* [Creating an MVC Form using a Partial View](../../../Reference/Templating/Mvc/Forms/tutorial-partial-views.md)
 
 ### Video Materials
 
