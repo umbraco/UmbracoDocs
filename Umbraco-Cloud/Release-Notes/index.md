@@ -4,6 +4,8 @@ _View the latest updates for the Umbraco Cloud Portal_
 
 ---
 
+[**15/03/2022 Release Notes:**](2022-03-29-ReleaseNotes.md) Bandwidth Usage Top 10 for resources
+
 [**15/03/2022 Release Notes:**](2022-03-15-ReleaseNotes.md) Static outbound IP + Managing Transport Security + Content Comparison
 
 [**02/03/2022 Release Notes:**](2022-03-02-ReleaseNotes.md) Backoffice user group selection + Outgoing IPs for Heartcore webhooks + Bandwidth usage top 10 (Beta)
