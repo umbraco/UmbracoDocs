@@ -42,7 +42,7 @@ By default, the Partial View Macro File is saved in the `Views/MacroPartials` fo
 
 ## Creating a Partial View Macro File from Snippet
 
-To create a Partial View Macro File from snippet, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views Macro Files** folder. Choose **Create**. Select **New empty partial view macro from snippet**. Select the snippet you want to create a partial view for and enter a Partial View Macro File name. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder and the macro in the **Macros** folder in the Backoffice.
+To create a Partial View Macro File from the snippet, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views Macro Files** folder. Choose **Create**. Select **New empty partial view macro from snippet**. Select the snippet you want to create a partial view for and enter a Partial View Macro Filename. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder and the macro in the **Macros** folder in the Backoffice.
 
 ![Created partial view from snippet](images/created-partial-view-macro-file-from-snippet.png)
 
