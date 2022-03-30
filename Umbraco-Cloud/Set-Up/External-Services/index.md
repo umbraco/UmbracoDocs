@@ -40,5 +40,9 @@ The static outbound IPs for every environment are:
 If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
 
 :::note
-For projects on a Starter plan, you are able to see the current dynamic outbound IP addresses. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+For projects on a Starter plan, you are able to see the current dynamic outbound IP addresses. Please note, the IP adresses shown for starter projects are dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+:::
+
+:::note
+The enabling of static outbound IP addresses might have the effect that port 25 will be blocked. Port 25 is the default port for SMTP relay and is commonly abused to send spam from compromised parties. Accordingly this port is often blocked by ISPs and cloud provides. For SMTP submissions we advice you to use port 587 or, alternatively, port 2525.
 :::
