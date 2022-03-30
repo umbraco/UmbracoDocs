@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 8.0.0
+needsv9Update: "true"
 ---
 
 # Macros
@@ -46,7 +47,7 @@ Macros can be implemented using an MVC Partial View - [Partial View Macros](Part
 Here's a basic method to render macros:
 
 ```csharp
-@await Umbraco.RenderMacroAsync("myMacroAlias")
+@Umbraco.RenderMacro("myMacroAlias")
 ```
 
 ### Rendering Macros with Parameters
@@ -54,13 +55,13 @@ Here's a basic method to render macros:
 This renders a macro with some parameters using an anonymous object:
 
 ```csharp
-@await Umbraco.RenderMacroAsync("myMacroAlias", new { name = "Ned", age = 28 })
+@Umbraco.RenderMacro("myMacroAlias", new { name = "Ned", age = 28 })
 ```
 
 This renders a macro with some parameters using a dictionary
 
 ```csharp
-@await Umbraco.RenderMacroAsync("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
+@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 ```
 
 #### Meaning of all the symbols
