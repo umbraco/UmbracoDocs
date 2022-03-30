@@ -2,7 +2,7 @@
 
 _Bandwidth Usage Top 10 for resources_
 
-### Key Takeaways
+## Key Takeaways
 - **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project that contributes with most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
 
 ### Bandwidth Usage Top 10 for resources
