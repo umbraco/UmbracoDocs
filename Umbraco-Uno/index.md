@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 :::warning
 By the 28th of March all sale and support of Umbraco Uno has stopped.
 
-All Umbraco Uno Customers have been notified via email with details regarding our decision around Umbraco Uno and a ![blog post has been released](https://umbraco.com/blog/umbraco-product-update-march-30-2022/).
+All Umbraco Uno Customers have been notified via email with details regarding our decision around Umbraco Uno and a [blog post has been released](https://umbraco.com/blog/umbraco-product-update-march-30-2022/).
 
 If you have further questions, please reach out to our friendly support team.
 :::
