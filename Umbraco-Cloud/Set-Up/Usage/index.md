@@ -22,8 +22,12 @@ For _media storage_ it is the size of all files in the blob storage including th
 ## Bandwidth Top 10's
 You will find a couple of top 10 for the bandwidth in the project's live environment.
 
+### Top 10 - Bandwidth Usage Paths 
+
 The first is displaying the 10 resources that are contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
 ![top 10 bandwidth](images/Top10BandwidthPaths2.png)
+
+### Top 10 - Bandwidth Usage Referers
 
 The second you will find, is a top 10 of the HTTP referers causing the most bandwidth. A referer is the name of an optional HTTP header field that identifies the address of the web page, from which the resource has been requested. It is the bandwidth generated from these resource requests that counts in the monthly usage limit of the project.
 
