@@ -100,7 +100,7 @@ namespace Umbraco.Web.UI
 ```
 
 :::tip
-Trying to inject services or helpers that rely on `UmbracoContext` such as `UmbracoHelper` or `MembershipHelper` will trigger a boot failed error on startup. See the [Services and Helpers](../../Implementation/Services/index-v8.md#accessing-published-content-outside-of-a-http-request) article on how to get around this by using the `UmbracoContextFactory`.
+Trying to inject services or helpers that rely on `UmbracoContext` such as `UmbracoHelper` or `MembershipHelper` will trigger a boot failed error on startup. See the [Accessing Published Content outside of a Http Request](../../Implementation/Services/index-v8.md#accessing-published-content-outside-of-a-http-request) article to query the Umbraco Published Content using `UmbracoContextFactory`.
 :::
 
 ## RecurringTaskBase
