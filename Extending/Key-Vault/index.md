@@ -18,7 +18,7 @@ Before you begin, you need to install the `Microsoft.Extensions.Configuration.Az
 
 ## Installing through command line
 
-Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following dotnet add package command to install the package:
+Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following 'dotnet add package' command to install the package:
 
 ```
 dotnet add package Microsoft.Extensions.Configuration.AzureKeyVault
