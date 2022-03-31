@@ -190,14 +190,16 @@ Culture and hostname settings, defined per content item, are not deployed betwee
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy allowDomainsDeploymentOperations="None|Wildcard|Absolute|Hostname|WildcardAndAbsolute|WildcardAndHostname|AbsoluteAndHostName|All" />
+    <deploy allowDomainsDeploymentOperations="None|Wildcard|Absolute|Hostname|All" />
 </settings>
 ```
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
 - *Wildcard* - the language setting for the content, defined under "Culture"
-- *Absolute* - values defined under "Domains" with a root relative path, e.g. "/en"
+- *AbsolutePath* - values defined under "Domains" with a root relative path, e.g. "/en"
 - *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+
+Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
 
