@@ -13,7 +13,7 @@ The MediaService class implements IMediaService. It provides access to operation
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, MediaService Events have been renamed to [**MediaService Notifications**](../Notifications/MediaService-Notifications.md).
+Note that in Umbraco 9, MediaService Events have been renamed to [**MediaService Notifications**](../Notifications/MediaService-Notifications/index.md).
 
 Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
 :::

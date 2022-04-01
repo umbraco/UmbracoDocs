@@ -134,7 +134,7 @@ Now all the notifications you registered in your extension method will be handle
 ## Content, Media, and Member notifications
 
 * See [ContentService Notifications](ContentService-Notifications/index.md) for a listing of the ContentService object notifications.
-* See [MediaService Notifications](MediaService-Notifications.md) for a listing of the MediaService object notifications.
+* See [MediaService Notifications](MediaService-Notifications/index.md) for a listing of the MediaService object notifications.
 * See [MemberService Notifications](MemberService-Notifications) for a listing of the MemberService object notifications.
 
 ## Other notifications
