@@ -19,7 +19,7 @@ All notifications reside in the `Umbraco.Cms.Core.Notifications` namespace and a
 
 Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and publishes notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
+Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications/index.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
 ### Notification handlers lifetime
 
@@ -71,7 +71,7 @@ The extension method takes two generic type parameters, the first `ContentPublis
 public class DontShout : INotificationHandler<ContentPublishingNotification>
 ```
 
-For the full handler implementation see [ContentService Notifications](ContentService-Notifications.md).
+For the full handler implementation see [ContentService Notifications](ContentService-Notifications/index.md).
 
 #### Registering notification handlers in a composer
 
@@ -133,7 +133,7 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Content, Media, and Member notifications
 
-* See [ContentService Notifications](ContentService-Notifications.md) for a listing of the ContentService object notifications.
+* See [ContentService Notifications](ContentService-Notifications/index.md) for a listing of the ContentService object notifications.
 * See [MediaService Notifications](MediaService-Notifications.md) for a listing of the MediaService object notifications.
 * See [MemberService Notifications](MemberService-Notifications) for a listing of the MemberService object notifications.
 
