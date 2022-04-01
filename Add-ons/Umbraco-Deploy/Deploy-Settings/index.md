@@ -186,7 +186,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 ## Deployment of culture & hostnames settings
 
-Culture and hostname settings, defined per content item, are not deployed between environments by default but can be opted into via configuration.
+Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
 
 ```json
     "AllowDomainsDeploymentOperations": "None|Wildcard|AbsolutePath|Hostname|All",
