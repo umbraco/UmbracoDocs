@@ -99,6 +99,10 @@ namespace Umbraco.Web.UI
 
 ```
 
+:::tip
+Trying to inject services or helpers that rely on `UmbracoContext` such as `UmbracoHelper` or `MembershipHelper` will trigger a boot failed error on startup. See the [Accessing Published Content outside of a Http Request](../../Implementation/Services/index-v8.md#accessing-published-content-outside-of-a-http-request) article to query the Umbraco Published Content using `UmbracoContextFactory`.
+:::
+
 ## RecurringTaskBase
 
 This class provides the base class for any recurring task. You can override the `PerformRun` method to implement the class. Tasks can also be run asynchronously. In this case, the property `IsAsync` must be overridden and set to `true` and the `PerformRunAsync` must be overridden to implement the class.
