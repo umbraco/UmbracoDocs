@@ -163,7 +163,7 @@ The `RecurringHostedServiceBase` is a base class that implements the netcore int
 
 ## BackgroundTaskRunner Notifications
 
-In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications.md)
+In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications/index.md)
 
 ## Using ServerRoleAccessor
 
