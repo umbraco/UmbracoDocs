@@ -25,7 +25,7 @@ namespace Umbraco.Cms.Web.UI.Notifications
 }
 ```
 
-This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
+This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](../MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
 
 ```C#
 using Umbraco.Cms.Core.Notifications;
