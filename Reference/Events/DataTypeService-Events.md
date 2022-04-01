@@ -10,7 +10,7 @@ meta.Description: "Information on the various events available in the DataTypeSe
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, DataTypeService Events have been renamed to [**DataTypeService Notifications**](../Notifications/DataTypeService-Notifications.md).
+Note that in Umbraco 9, DataTypeService Events have been renamed to [**DataTypeService Notifications**](../Notifications/DataTypeService-Notifications/index.md).
 
 Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
 :::
