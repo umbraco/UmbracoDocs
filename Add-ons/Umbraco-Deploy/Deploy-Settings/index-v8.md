@@ -197,7 +197,7 @@ Culture and hostname settings, defined per content item for culture invariant co
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
 - *Wildcard* - the language setting for the content, defined under "Culture"
-- *AbsolutePath* - values defined under "Domains" with a root relative path, e.g. "/en"
+- *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
 - *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
