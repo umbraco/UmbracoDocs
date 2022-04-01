@@ -144,7 +144,7 @@ Now all the notifications you registered in your extension method will be handle
 * See [MemberTypeService Notifications](MemberTypeService-Notifications.md) for a listing of the MemberTypeService object notifications.
 * See [DataTypeService Notifications](DataTypeService-Notifications/index.md) for a listing of the DataTypeService object notifications
 * See [FileService Notifications](FileService-Notifications/index.md) for a listing of the FileService object notifications.
-* See [LocalizationService Notifications](LocalizationService-Notifications.md) for a listing of the LocalizationService object notifications.
+* See [LocalizationService Notifications](LocalizationService-Notifications/index.md) for a listing of the LocalizationService object notifications.
 
 ## Tree notifications
 
