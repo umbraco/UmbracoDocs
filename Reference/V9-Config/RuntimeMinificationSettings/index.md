@@ -15,45 +15,49 @@ This section allows you to configure the runtime minifications (defaults shown),
 "Umbraco": {
   "CMS": {
     "RuntimeMinification": {
-      "UseInMemoryCache": false,
-      "CacheBuster": "Version"
+      "UseInMemoryCache": true,
+      "CacheBuster": "Timestamp"
     }
   }
 }
 ```
+## Use 'in memory' cache
 
-## Use in memory cache
-
-Specifies if Smidge should use an in memory cache or not.
+This setting determines whether Smidge should save it's cached output in memory, or in a file on disk. If set to false, then the folder will be created at the wwwroot of your Umbraco site in a folder called 'Smidge'/
 
 ## Cache buster
 
-Specifies what type of cache buster to use, the options are:
+This is the setting that determines how Smidge should break it's cache.
 
-* Version - Caches will be busted every time the version string changes.
+The options are:
+
+* Version - Caches will be busted every time the version string changes in your appsettings.json file
 * AppDomain - Caches will be busted when the app restarts.
-* Timestamp - Caches will be busted based on a timestamp.
+* Timestamp - Caches will be busted based on a timestamp of the bundled files.
 
-## Automatically generated settings
+## Manually changing the Cache buster version
 
-If you use a CacheBuster setting of "Version" you can add an additional configuration option, also called 'Version'  
+If you use a CacheBuster setting of "Version" you can add an additional configuration option, also called 'Version' , which allows you to set a value that you can incremement manually, or via a build server to make sure the version number changes for Smidge and busts the cache.
 
 ```json
 "Umbraco": {
   "CMS": {
     "RuntimeMinification": {
-      "UseInMemoryCache": false,
+      "UseInMemoryCache": true,
       "CacheBuster": "Version",
       "Version": "1234"
     }
   }
 }
 ```
+The actual 'Version' number will not be visible in the url of the assets, this is because it is combined, along with the Umbraco Version from configuration and the your project assembly dll, and then once combined a 'hash' is generated to obscure these details.
 
-to control the version number generated in the HTML link thus: ```<link href='/sc/69a3dbf6.1cf661e7.css.v1234' rel='stylesheet' type='text/css'/>```
+in the HTML link thus: ```<link href='/sc/69a3dbf6.1cf661e7.css.d=efb7329470a16d7020272a294742726ebe1da5f1' rel='stylesheet' type='text/css'/>```
+
+So if you increased the Version in the configuration by 1 to 1235, all you would see is a different hash!
 
 :::note
-Generally you don't need to add this. However, if you're making some front end changes and not seeing the change, then you can add this option and increase the number by one each time, clearing the cache and rendering the change.
+For production environments, it's recommended to set Cache Buster to 'Version' (you don't actually need to supply a version number, but if you do, you can control when the cache breaks, eg if a package has installed new assets) or to 'AppDomain'.
 :::
 
-Another configuration option is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be necessary to change this either.
+Another configuration option (of Smidge) is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be necessary to change this either, it will only be used if UseInMemoryCache is set to false.
