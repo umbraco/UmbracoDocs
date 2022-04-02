@@ -27,7 +27,7 @@ This setting determines whether Smidge should save it's cached output in memory,
 
 ## Cache buster
 
-This is the setting that determines how Smidge should break it's cache.
+Specifies mechanism for cache invalidation.
 
 The options are:
 
