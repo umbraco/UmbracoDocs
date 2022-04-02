@@ -15,8 +15,8 @@ This section allows you to configure the runtime minifications (defaults shown),
 "Umbraco": {
   "CMS": {
     "RuntimeMinification": {
-      "UseInMemoryCache": true,
-      "CacheBuster": "Timestamp"
+      "UseInMemoryCache": false,
+      "CacheBuster": "Version"
     }
   }
 }
