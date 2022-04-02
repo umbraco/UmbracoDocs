@@ -31,7 +31,7 @@ Specifies mechanism for cache invalidation.
 
 The options are:
 
-* Version - Caches will be busted every time the version string changes in your appsettings.json file
+* Version - Caches will be busted when your assembly version changes, when the upstream Umbraco version changes and when the version string specified in Configuration changes.
 * AppDomain - Caches will be busted when the app restarts.
 * Timestamp - Caches will be busted based on a timestamp of the bundled files.
 
