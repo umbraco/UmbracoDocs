@@ -91,6 +91,6 @@ To edit the **appSetting.json** files for the different environments, the Umbrac
 
 ![appSettings.json transforms](images/appSettings.png)
 
-Once you've added the settings you want to the files, it will need to be pushed up to your Umbraco Cloud project to make sure that it is added to your projects repository.
+Once you've added the settings you want to the files, they will need to be pushed up to your Umbraco Cloud project in order to be added to the repository.
 
 Once pushed up, when the file is deployed to the next environment, the **appSettings** files will be transformed based on the environment you are pushing to and the settings that have been added will be applied for that specific environment.
