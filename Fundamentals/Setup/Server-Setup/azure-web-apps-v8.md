@@ -32,7 +32,7 @@ You need to add these `appSettings`:
     value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ```
 
-You should also add an appsetting `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` with a value of 1 to your Azure WebApp (not this needs to be added to the App configuration via the Azure portal and not via Web.config. This setting prevents Umbraco from starting on an instance before a shutdown is complete - which is important as Umbraco in Azure needs to acquire an exclusive `MainDom` lock in order to start.
+You should also add an appsetting `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` with a value of 1 to your Azure WebApp. Keep in mind that this needs to be added to the App configuration via the Azure portal and not via Web.config. This setting prevents Umbraco from starting on an instance before a shutdown is complete - which is important as Umbraco in Azure needs to acquire an exclusive `MainDom` lock in order to start.
 
 You may also want add a setting `WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG` with a value of 1 to your Azure WebApp. Although not required, this may help minimise app restarts during deployments. More details can be found in this post: https://ruslany.net/2019/06/azure-app-service-deployment-slots-tips-and-tricks/
 
