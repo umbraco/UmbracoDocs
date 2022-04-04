@@ -87,7 +87,7 @@ On Umbraco Cloud, projects come with an **appSettings.json** file for each of yo
 
 With this, you can add different environment-specific settings to your project.
 
-To edit the **appSetting.json** files for the different environments, the Umbraco Cloud project needs to be cloned down to your local machine and edit the files from your code editor.
+To edit the **appSetting.json** files for the different environments, the Umbraco Cloud project needs to be cloned down to your local machine. Then the files can be edited using your code editor.
 
 ![appSettings.json transforms](images/appSettings.png)
 
