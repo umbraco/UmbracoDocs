@@ -33,7 +33,7 @@ If the login screen shows a 'Forgotten password?' link you can send a password r
 ### Method A: Using a pickup directory
 
 Open the web.config file at the root of your site.
-locate the section `<mailsettings>` and configure the `deliveryMethod` and specify an existing location for the email to be saved.
+Locate the section `<mailsettings>` and configure the `deliveryMethod` and specify an existing location for the email to be saved.
     
 ```xml
 <smtp deliveryMethod="SpecifiedPickupDirectory">
