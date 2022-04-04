@@ -79,7 +79,7 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Trees;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Trees
 {
     public class FavouriteThingsSearchableTree : ISearchableTree
     {
