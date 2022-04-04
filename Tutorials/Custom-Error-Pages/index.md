@@ -88,6 +88,10 @@ XPath example:
 }
 ```
 
+:::note
+In the above XPath example `//errorPages` is the DocTypeAlias
+:::
+
 ## Errors with booting a project
 
 Sometimes you might experience issues with booting up your Umbraco project. This could be a brand new project, or it could be an existing project after an upgrade.
