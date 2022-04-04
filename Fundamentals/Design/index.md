@@ -17,7 +17,7 @@ Querying and rendering published content.
 
 Querying and rendering media items.
 
-## [Partial Views](Partial Views/)
+## [Partial Views](Partial-Views/)
 
 Working with partial views in Umbraco's templates.
 
