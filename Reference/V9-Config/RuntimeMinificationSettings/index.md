@@ -52,7 +52,7 @@ If you use a CacheBuster setting of "Version" you can add an additional configur
 ```
 The actual 'Version' number will not be visible in the url of the assets, this is because it is combined, along with the Umbraco Version from configuration and the your project assembly dll, and then once combined a 'hash' is generated to obscure these details.
 
-in the HTML link thus: ```<link href='/sc/69a3dbf6.1cf661e7.css.d=efb7329470a16d7020272a294742726ebe1da5f1' rel='stylesheet' type='text/css'/>```
+in the HTML link thus: ```<link href='/sb/umbraco-backoffice-init-css.css.v7a71f91360259c5f7c3337f152b0df01eeee36f0' rel='stylesheet' type='text/css'/>```
 
 So if you increased the Version in the configuration by 1 to 1235, all you would see is a different hash!
 
