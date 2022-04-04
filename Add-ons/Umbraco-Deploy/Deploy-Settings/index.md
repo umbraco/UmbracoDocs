@@ -189,12 +189,12 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
 
 ```json
-    "AllowDomainsDeploymentOperations": "None|Wildcard|AbsolutePath|Hostname|All",
+    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
 ```
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
-- *Wildcard* - the language setting for the content, defined under "Culture"
+- *Culture* - the language setting for the content, defined under "Culture"
 - *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
 - *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
