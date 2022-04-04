@@ -83,7 +83,7 @@ Keep in mind that a misconfigured config transform may block Data Extraction on 
 
 ## appSettings.json transforms
 
-On Umbraco Cloud, projects by default comes with an **appSettings.json** file for each of your different environments that is available on Umbraco Cloud.
+On Umbraco Cloud, projects come with an **appSettings.json** file for each of your different environments.
 
 With this you can add different  environment specific settings to your project.
 
