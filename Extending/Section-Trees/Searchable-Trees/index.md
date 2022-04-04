@@ -144,7 +144,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 public string TreeAlias => "member";
 ```
 
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an `IComposer` (as of Umbraco v9 `IUserComposer` interface is obsolete) when Umbraco starts up:
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an `IComposer` when Umbraco starts up:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
