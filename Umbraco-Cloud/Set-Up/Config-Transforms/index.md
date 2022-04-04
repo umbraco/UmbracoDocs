@@ -85,7 +85,7 @@ Keep in mind that a misconfigured config transform may block Data Extraction on 
 
 On Umbraco Cloud, projects come with an **appSettings.json** file for each of your different environments.
 
-With this you can add different  environment specific settings to your project.
+With this, you can add different environment-specific settings to your project.
 
 To edit the **appSetting.json** files for the different environments, the Umbraco Cloud project needs to be cloned down to your local machine and edit the files from your code editor.
 
