@@ -151,7 +151,7 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.BackOffice.Trees;
 
-namespace My.Website
+namespace Umbraco.Docs.Samples.Web.Trees
 {
     public class RemoveCoreMemberSearchableTreeComposer : IComposer
     {
