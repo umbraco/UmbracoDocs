@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Config Transforms
 
-In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.
+In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project using both Web.Config files as well as the appSettings.json file.
 
 ## What are Config Transforms?
 
@@ -80,3 +80,17 @@ This config transform will add a new `<rule>` to `<system.webServer><rewrite><ru
 :::note
 Keep in mind that a misconfigured config transform may block Data Extraction on your project. Please see [here](../../Troubleshooting/Deployments/Changes-Not-Being-Applied) for more details.
 :::
+
+## appSettings.json transforms
+
+On Umbraco Cloud, projects by default comes with an appSettings.json file for each of your different environments that is available on Umbraco Cloud.
+
+With this you can add different  environment specific settings.
+
+To edit the appSetting.json files for the different environments, the Umbraco Cloud project needs to be cloned down to your local machine and edit the files from your code editor.
+
+![appSettings.json transforms](images/appSettings.png)
+
+Once you've added the settings you want to the files, it will need to be pushed up to your Umbraco Cloud project to make sure that it is added to your projects repository.
+
+Once pushed up, when the file is deployed to the next environment, the **appSettings** files will be transformed based on the environment you are pushing to and the settings that have been added will be applied for that specific environment.
