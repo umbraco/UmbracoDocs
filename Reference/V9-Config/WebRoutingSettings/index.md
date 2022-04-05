@@ -25,7 +25,7 @@ An example of a web routing config with default values, and a placeholder for ap
       "DisableFindContentByIdPath": false,
       "DisableRedirectUrlTracking": false,
       "UrlProviderMode": "Auto",
-      "UmbracoApplicationUrl": "http://www.mysite.com/umbraco"
+      "UmbracoApplicationUrl": "http://www.mysite.com/"
     }
   }
 }
