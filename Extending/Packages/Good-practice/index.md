@@ -24,7 +24,7 @@ _This method isn't perfect and if you do have a package that is heavy on views y
 ## License files
 Umbraco products store their licenses in `/umbraco/Licences` and it is considered a good location for third party packages that require license files to also store their licence files there. 
 
-_The default .gitignore for Umbraco templates will include any files in this folder in a repo (while ignoring most of the rest of the Umbraco folder_
+_The default .gitignore for Umbraco templates will include any files in this folder in a repo (while ignoring most of the rest of the Umbraco folder)_
 
 :::note
 The `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco so you might need to create it before you save your license file to this folder. 
