@@ -17,7 +17,7 @@ For projects on a Standard, Professional and Enterprise plan you can enable stat
 On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**, **Professional**, and **Enterprise** Cloud projects.
 
 :::note
-The enabling of static outbound IP addresses might have the effect that port 25 will be blocked. Port 25 is the default port for SMTP relay and is commonly abused to send spam from compromised parties. Accordingly, this port is often blocked by ISPs and cloud providers. For SMTP submissions, we advise you to use port 587 or alternatively, port 2525.
+The enabling of static outbound IP addresses will have the effect that port 25 will be blocked. Port 25 is the default port for SMTP relay and is commonly abused to send spam from compromised parties. Accordingly, this port is often blocked by ISPs and cloud providers such as Microsoft and Google. For SMTP submissions, we advise you to use port 587 or alternatively, port 2525.
 :::
 
 ![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
