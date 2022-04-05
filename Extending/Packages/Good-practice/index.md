@@ -72,7 +72,7 @@ var localTempRoot = Path.GetFullPath(hostingEnvironment.LocalTempPath);
 ```
 
 #### Relative paths
-If require the path of a folder relative to the site root you can use the `IHostingEnvironment` methods to map a path. 
+If you require the path of a folder relative to the site root, you can use the `IHostingEnvironment` methods to map a path. 
 
 ``` cs 
 var contentRootPath = hostingEnvironment.MapPathContentRoot("/");
