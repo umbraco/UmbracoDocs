@@ -4,7 +4,9 @@ versionFrom: 9.0.0
 
 # Config Transforms
 
-In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project using both Web.Config files as well as the appSettings.json file.
+In this article you will find two options for applying environment specific configuration to your Umbraco Cloud project.
+
+The article will show how to use a Web.Config transform as well as transforming the appSettings.json file.
 
 ## What are Config Transforms?
 
@@ -78,7 +80,7 @@ Here is an example of how that config transform would look:
 This config transform will add a new `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
 
 :::note
-Keep in mind that a misconfigured config transform may block Data Extraction on your project. Please see [here](../../Troubleshooting/Deployments/Changes-Not-Being-Applied) for more details.
+Keep in mind that a misconfigured config transform may [block Data Extraction on your project](../../Troubleshooting/Deployments/Changes-Not-Being-Applied).
 :::
 
 ## appSettings.json transforms
@@ -91,6 +93,6 @@ To edit the **appSetting.json** files for the different environments, the Umbrac
 
 ![appSettings.json transforms](images/appSettings.png)
 
-Once you've added the settings you want to the files, they will need to be pushed up to your Umbraco Cloud project in order to be added to the repository.
+Once done editing the files, they will need to be pushed up to your Umbraco Cloud project in order to be added to the repository.
 
-Once pushed up, when the file is deployed to the next environment, the **appSettings** files will be transformed based on the environment you are pushing to and the settings that have been added will be applied for that specific environment.
+When the file is deployed to the next environment on Umbraco Cloud, the settings in the **appSettings** file  will be aplied to that environment e.g the settings in the **appSettings.Production.json** will be applied to the Live environment of your project.
