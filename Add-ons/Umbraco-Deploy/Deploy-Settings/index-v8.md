@@ -183,7 +183,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 </settings>
 ```
 
-By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade it not an option, then this workaround can be considered.
+By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
 
 ## Deployment of culture & hostnames settings
 
