@@ -82,7 +82,7 @@ var webrootPath = hostEnvironment.MapPathWebRoot("/");
 ### Folder Access 
 You should not assume things about the folder structure of a site, and ideally you should not use direct IO commands to access the file system. Within a Asp.Net Core site access to the disk is usually managed with FileProviders, you can get access to the file providers from the `IWebHostEnvironment` class.
 
-As an example if you wanted to read a file called `robots.txt` from the `wwwroot` folder of a site in a controller you can use the `WebRootFileProvider` to get to the root of the site and read the file. 
+As an example, if you wanted to read a file called `robots.txt` from the `wwwroot` folder of a site then in a controller you can use the `WebRootFileProvider` to get to the root of the site and read the file. 
 
 ```cs
 public class MyController: UmbracoAuthorizedJsonController
