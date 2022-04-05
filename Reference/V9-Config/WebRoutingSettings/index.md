@@ -73,4 +73,4 @@ Will set the URL provider mode, options are:
 
 ## Umbraco application URL
 
-Defines the Umbraco application URL, i.e. how the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" i.e. it needs to contain the scheme (http/https), complete hostname, and Umbraco path.
+Defines the Umbraco application URL, i.e. how the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/" i.e. it needs to contain the scheme (http/https) and complete hostname.
