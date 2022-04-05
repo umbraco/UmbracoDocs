@@ -62,23 +62,9 @@ It's important to know that Azure Web Apps may move your website between their '
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.
 
-## Deploying to Linux App Service
+## Creating a clean environment for an Azure Web App using slots
 
-To avoid cross compatibility issues its recommended to deploy to Linux App Service using a managed Dev Ops service such as Azure DevOps and configure a Linux build agent. 
-
-One specific issue that may happen is the following Item Group being present in your csproj file:
-```xml
-<ItemGroup>
-        <PackageReference Include="Clean" Version="2.0.0-beta002" />
-        <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.6" />
-        <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
-    </ItemGroup
-```
-This will cause the following error in your environment: `Process terminated. Failed to load app-local ICU: libicudata.so.68.2` and crash the SSH client in the KUDU console.
-
-Azure would attempt to start your environment and simply crash with this error in the log stream. Commenting out this ItemGroup and recreating the environment should fix this issue. 
-
-If you have slots, creating an empty slot and swapping it with the main slot is enough to recreate the environment for a future, issue free, deployment.
+If for any reason you need a clean fresh environment for your next release. Perhaps the Umbraco application is misbehaving and is unable to start in Azure App Service. You can achieve a fresh environment by creating a new slot and swapping this slot with your deployment slot. Your deployment slot becomes clean and any issues that were in the slot is moved to the copy and can be deleted.
 
 ### How to find the Linux App Service Logs
 
@@ -87,5 +73,3 @@ The quickest way to get to your logs is using the following url template and rep
 https://{app}.scm.azurewebsites.net/api/logstream
 
 You can also find this in the KUDU console by clicking **Advanced Tools** and then **Log Stream** on the Web App in the Azure Portal.
-
-
