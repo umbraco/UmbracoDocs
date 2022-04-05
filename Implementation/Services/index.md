@@ -597,3 +597,37 @@ To access the service directly from the view you would need to use the Razor `@i
     <div class="container">
         <article>
 ```
+
+### Handle routes as server-side requests
+Sometimes you want to request for example "/sitemap.xml" from your server, but as this has a file extension, this will be treated as a client side request,
+and thus, this will not work, but in your `startup.cs`, you can configure routes to be handled as server-side requests
+For a single route:
+```csharp
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        return httpRequest.Path.StartsWithSegments("/sitemap.xml");
+    };
+});
+```
+For multiple routes:
+```csharp
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    string[] allowList = new[] {"/sitemap.xml", "robots.txt", ...};
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        foreach (string route in allowList)
+        {
+            if (httpRequest.Path.StartsWithSegments(route))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    };
+});
+
+```
