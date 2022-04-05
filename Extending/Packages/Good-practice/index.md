@@ -107,7 +107,7 @@ public class MyController: UmbracoAuthorizedJsonController
 ```
 
 :::note
-This is the preferred method for file IO because not all files served up by a site may in fact be in the wwwroot folder when you expect them to be - this is especially true if the site is using Razor class library to insert static files.
+This is the preferred method for file IO. because not all files served up by a site may in fact be in the wwwroot folder when you expect them to be - this is especially true if the site is using Razor class library to insert static files.
 :::
 
 ### Path manipulation
