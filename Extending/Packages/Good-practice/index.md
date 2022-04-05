@@ -129,7 +129,7 @@ If you do need to build a path manually use `Path.DirectorySeparatorChar` to get
 All but the most simple package will probably require some settings to be stored for the users to control and change the behavior of how the package works on a site. Where you store these settings will depend a lot on the nature of the package. 
 
 ### Property Editors
-Property editors should store their settings as part of their datatype in Umbraco. This is the standard way property editors behavior is controlled, it is familar to users and is supported by deployment tools. 
+Property Editors should store their settings as part of their datatype in Umbraco. This is the standard way property editors behavior is controlled, it is familar to users and is supported by deployment tools. 
 
 ### Don't save to appsettings.json
 You should not alter `appsettings.json` in code. 
