@@ -46,7 +46,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
             var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
             if (!string.IsNullOrWhiteSpace(keyVaultEndpoint))
             {
-                if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
+                if (!string.IsNullOrWhiteSpace(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
                 {
                     config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
                 }
