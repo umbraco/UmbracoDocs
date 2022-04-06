@@ -18,7 +18,7 @@ As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](../M
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
 
-### Ignorer user start nodes
+### Ignore user start nodes
 
 Use setting to overrule user permissions, to enable any user of this property to pick any Media Item of the choosen Start node.
 
