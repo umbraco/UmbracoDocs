@@ -37,7 +37,7 @@ To create a partial view from the snippet, go to the **Settings** section in the
 
 ![Created partial view from snippet](images/created-partial-view-from-snippet.png)
 
-By default, the partial view is saved in the `Views/Partials` folder in the solution. Umbraco provides the following snippets:
+By default, the partial view is saved in the `Views/Partials` folder in the solution. Umbraco provides the following partial view snippets:
 
 * Empty - Creates an empty partial view file.
 * Breadcrumb - Creates a breadcrumb of parents using the `Ancestors()` method to generate links in an unordered HTML list. It displays the name of the current page without a link.

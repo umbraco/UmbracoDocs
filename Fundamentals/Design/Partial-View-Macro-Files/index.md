@@ -46,7 +46,7 @@ To create a Partial View Macro File from the snippet, go to the **Settings** sec
 
 ![Created partial view from snippet](images/created-partial-view-macro-file-from-snippet.png)
 
-By default, the partial view is saved in the `Views/MacroPartials` folder. Umbraco provides the following snippets:
+By default, the partial view is saved in the `Views/MacroPartials` folder. Umbraco provides the following partial view macro snippets:
 
 * Empty - Creates an empty partial view file.
 * Breadcrumb - Creates a breadcrumb of parents using the `Ancestors()` method to generate links in an unordered HTML list. It displays the name of the current page without a link.
