@@ -11,9 +11,9 @@ From a security perspective, it's always a good solution to store your applicati
 
 ## Installing the package
 
-Before you begin, you need to install the `Microsoft.Extensions.Configuration.AzureKeyVault` NuGet package. There are two approaches to installing the package:
+Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
 
-1. Use your favorite IDE and open up the NuGet Package Manager to search and install the package
+1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
 1. Use the command line to install the package
 
 ## Installing through command line
@@ -21,7 +21,8 @@ Before you begin, you need to install the `Microsoft.Extensions.Configuration.Az
 Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following 'dotnet add package' command to install the package:
 
 ```
-dotnet add package Microsoft.Extensions.Configuration.AzureKeyVault
+dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets
+dotnet add package Azure.Identity
 ```
 
 ## Configuration
@@ -45,12 +46,10 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
             var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
             if (!string.IsNullOrWhiteSpace(keyVaultEndpoint))
             {
-                var azureServiceTokenProvider = new AzureServiceTokenProvider();
-                var keyVaultClient =
-                    new KeyVaultClient(
-                        new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider
-                            .KeyVaultTokenCallback));
-                config.AddAzureKeyVault(keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+                if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
+                {
+                    config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
+                }
             }
         })
         .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
