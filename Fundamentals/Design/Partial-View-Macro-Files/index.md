@@ -26,7 +26,7 @@ In the **Create** menu, there are four options available:
 
 ## Creating a Partial View Macro File
 
-To create a Partial View Macro File, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro** and enter a Partial View Macro File name. Enter the macro logic and click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder and the macro in the **Macros** folder in the Backoffice.
+To create a Partial View Macro File, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder and the macro in the **Macros** folder in the Backoffice.
 
 ![Created partial view](images/created-partial-view-macro-file.png)
 
@@ -34,7 +34,7 @@ By default, the Partial View Macro File is saved in the `Views/MacroPartials` fo
 
 ## Creating a Partial View Macro File (without macro)
 
-To create a Partial View Macro File without a macro, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro (without macro)** and enter a Partial View Macro File name. Enter the macro logic and click the **Save** button. You will now see *only* the Partial View Macro File in the **Partial View Macro Files** folder in the Backoffice.
+To create a Partial View Macro File without a macro, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro (without macro)** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. You will now see *only* the Partial View Macro File in the **Partial View Macro Files** folder in the Backoffice.
 
 ![Created partial view](images/created-partial-view-macro-file-without-macro.png)
 
@@ -46,7 +46,28 @@ To create a Partial View Macro File from the snippet, go to the **Settings** sec
 
 ![Created partial view from snippet](images/created-partial-view-macro-file-from-snippet.png)
 
-By default, the partial view is saved in the `Views/MacroPartials` folder.
+By default, the partial view is saved in the `Views/MacroPartials` folder. Umbraco provides the following partial view macro snippets:
+
+* Empty - Creates an empty partial view file.
+* Breadcrumb - Creates a breadcrumb of parents using the `Ancestors()` method to generate links in an unordered HTML list. It displays the name of the current page without a link.
+* Edit Profile - Creates a Member profile model that can be edited.
+* Gallery - Displays a gallery of images from the Media section. It works with either a 'Single Media Picker' or a 'Multiple Media Picker' macro parameters.
+* List Ancestors From Current Page -  Displays a list of links to the parents of the current page using the `Ancestors()` method to generate links in an unordered HTML list. It displays the name of the current page without a link.
+* List Child Pages From Changeable Source - Lists all the child pages under a specific page in the Content tree.
+* List Child Pages From Current Page - Displays a list of links to the children of the current page using the `Children()` method to generate links in an unordered HTML list.
+* List Child Pages Ordered By Date -  Displays a list of links to the children of the current page using the `Children()` method to generate links in an unordered HTML list. The pages are sorted by the creation date in a descending order using the `OrderByDescending()` method.
+* List Child Pages Ordered By Name - Displays a list of links to the children of the current page using the `Children()` method to generate links in an unordered HTML list. The pages are sorted by the page name using the `OrderBy()` method.
+* List Child Pages With DocType - Displays only the children of a certain Document Type.
+* List Descendants From Current Page - Displays a list of links for every page below the current page in an unordered HTML list.
+* List Images From Media Picker - Displays a series of images from a media folder.
+* Login - Displays a login form.
+* Login Status - Displays the user name if the user is logged in.
+* Multinode Tree-picker - Lists the items from a Multinode tree picker using the picker's default settings.
+* Navigation - Displays a list of links of the pages under the top-most page in the Content tree. It also highlights the currently active page/section in the navigation menu.
+* Register Member - Displays a Member registration form. It will only display the properties marked as **Member can edit** on the **Info** tab of the Member Type.
+* Site Map - Displays a list of links of all the visible pages of the site using the `Traverse()` method to select and display the markup and links as nested unordered HTML lists.
+* InsertUmbracoFormWithTheme - If a theme is provided as a macro parameter, Umbraco Forms will use the custom theme files.
+* RenderUmbracoFormScripts - Renders your Umbraco Forms scripts. In many cases, you might prefer rendering your scripts at the bottom of the page as this generally improves site performance.
 
 ## Creating a Folder
 
