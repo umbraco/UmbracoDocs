@@ -59,9 +59,17 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
 
 ### EnableAntiForgeryToken
-This setting needs to be a `True` or `False` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this and set this to `True`. Due to older versions of Umbraco Forms not containing this, it has become an optional config setting and due to upgrade reasons we do not automatically set this to `True` for you.
+This setting needs to be a `True` or `False` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this and set this to `True`.
 
-If you do set this to `True` then you need to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and should have `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
+If set to `True` then you need to ensure to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and has `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
+
+In certain circumstances, including hosting pages with forms in IFRAMEs from other websites, this may need to be set to `False`.
+
+### AppendQueryStringOnRedirectAfterFormSubmission
+
+When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
+
+By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### StoreUmbracoFormsInDb
 This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.

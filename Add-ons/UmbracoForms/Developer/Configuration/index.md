@@ -59,7 +59,8 @@ For illustration purposes, the following structure represents the full set of op
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false     // Note the typo here (see below).
+      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AppendQueryStringOnRedirectAfterFormSubmission": false,
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -182,6 +183,12 @@ _Note:_ There is a typo in this setting where it has been named as `AllowEditabl
 Enable this feature ONLY if you understand the security implications.
 :::
 
+### AppendQueryStringOnRedirectAfterFormSubmission
+
+When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
+
+By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -195,6 +202,8 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 ### EnableAntiForgeryToken
 
 This setting needs to be a `true` or `false` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this option. Defaults to `true`.
+
+In certain circumstances, including hosting pages with forms in IFRAMEs from other websites, this may need to be set to `false`.
 
 ### SavePlainTextPasswords
 
