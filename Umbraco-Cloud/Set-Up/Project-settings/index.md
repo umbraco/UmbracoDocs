@@ -6,13 +6,13 @@ versionFrom: 9.0.0
 
 When working with an Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
 
-![settings](images/project-settings-v9.png)
+![settings](images/project-settings-v9-1.png)
 
 ## Overview
 
 You can view the **Overview** of your Umbraco Cloud project from the **Settings** menu.
 
-![Project Overview](images/project-overview.png)
+![Project Overview](images/project-overview-1.png)
 
 ## [Edit team](../Team-Members)
 
@@ -47,7 +47,7 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 ### Renaming the Cloud Project
 
 You can rename your Umbraco Cloud project from the **Settings** menu.
-![settings](images/renaming-project.png)
+![settings](images/renaming-project-1.png)
 
 :::note
 If you are working locally, you need to update the origin of your local git repository to point to the new clone url. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
@@ -95,6 +95,8 @@ Manage **Advanced** settings for your project from the **Settings** menu:
     :::note
     When enabling IIS logging, the site will have to restart. For more information about IIS logging look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
     :::
+
+![Advanced Settings](images/Advanced-Settings.png)
 
 ## [Payment](../Manage-Subscriptions/new-shop.md)
 
