@@ -92,10 +92,7 @@ Once you've configured your license with the correct domains, you are ready to i
 
 The `.lic` file must be placed in the `/umbraco/Licenses` directory in order to be registered by Umbraco Deploy or Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
 
-
-<!--Needs updating to V9
-![Installing Umbraco Forms license](images/install-forms-license.gif)
--->
+![Installing Umbraco Forms license](images/install-forms-license-v9.gif)
 
 ## Alternative license location
 
