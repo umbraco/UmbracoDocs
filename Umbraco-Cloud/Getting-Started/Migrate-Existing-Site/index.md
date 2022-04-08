@@ -107,8 +107,6 @@ If you on your existing site have been working with members and made changes to 
 
 ![Default media types](images/MemberType-delete.png)
 
-:::note
-
 ## 5. Clone down the Cloud project
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
