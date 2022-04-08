@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Keep Alive Settings"
 meta.Description: "Information on the keep alive settings section"
 state: complete
-verified-against: beta-3
+verified-against: 9.5.0
 update-links: true
 ---
 
@@ -16,7 +16,7 @@ Allows you to configure the keep alive service of Umbraco. A keep alive section 
   "CMS": {
     "KeepAlive": {
       "DisableKeepAliveTask": false,
-      "KeepAlivePingUrl": "{umbracoApplicationUrl}/api/keepalive/ping"
+      "KeepAlivePingUrl": "~/api/keepalive/ping"
     }
   }
 }
@@ -28,4 +28,6 @@ Allows you to disable the keep alive http calls.
 
 ### Keep alive ping URL
 
-If you want to change the url you need to call to keep the site alive, update this property.
+If you want to change the url you need to call to keep the site alive, update this property, it should not contain a trailing slash.
+
+:::note Due to a bug this setting is ignored [pre v9.5.0](https://github.com/umbraco/Umbraco-CMS/pull/12224) :::
