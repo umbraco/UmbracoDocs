@@ -16,8 +16,9 @@ Please note that this article is valid only for Umbraco 9.
 ## Abbreviated version
 
 - You will get the best results if you use Umbraco's dotnet new templates
-  - *For information on how to enable dotnet new templates to appear in Visual Studio check this [link](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/)*
-- You will need Visual Studio 2019 updated to version **16.8 at least**
+  - *In Visual Studio 2022 the dotnet new templates are enabled by default to appear. For information on how to enable dotnet new templates to appear in Visual Studio 2019 check this [link](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/)*
+
+- You will need Visual Studio 2019 updated to version **16.8 at least** or use you can use Visual Studio 2022.
 - Go to `File` > `New` > `Project`, search for **Umbraco**
 - Choose **Umbraco Project (Umbraco HQ)** then click *Next*
 - In the next screen you can choose or specify different parameters but you can leave them all empty/default

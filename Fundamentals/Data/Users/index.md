@@ -85,3 +85,7 @@ When a new user is created, you can set specific permissions for that user on di
 ## Technical
 
 As a developer you are only able to leverage your website from the backoffice when you build on the users section of Umbraco, since the Users section is restricted to the Umbraco backoffice.
+
+## [Managing Forms Security](../../../Add-ons/UmbracoForms/Developer/Security/index.md)
+
+Umbraco Forms has a backoffice security model integrated with Umbraco Users. You can manage the details in the **Users** section of the backoffice, within a tree named **Forms Security**.

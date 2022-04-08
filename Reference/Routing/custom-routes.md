@@ -191,38 +191,47 @@ public ShopController(
 Now that we have our dependencies, and our action methods, we're finally ready to implement the `FindContent` method: 
 
 ```C#
-public IPublishedContent FindContent(ActionExecutingContextactionExecutingContext)
+public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
 {
-    var productRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
-
-    if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
-    {
-        // Check which action is executing
-        switch (controllerActionDescriptor.ActionName)
+   if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+   {
+        var productRoot = umbracoContext.Content.GetById(2074);
+        if (productRoot!=null)
         {
-            case nameof(Index):
-                return productRoot;
-            
-            case nameof(Product):
-                // Get the SKU/Id from the route values
-                if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+
+            if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+            {
+                // Check which action is executing
+                switch (controllerActionDescriptor.ActionName)
                 {
-                    return productRoot
-                        .Children
-                        .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
-                }
-                else
-                {
-                    return productRoot;
-                }
+                    case nameof(Index):
+                        return productRoot;
+
+                    case nameof(Product):
+                        // Get the SKU/Id from the route values
+                        if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+                        {
+                            return productRoot
+                                .Children
+                                .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
+                        }
+                        else
+                        {
+                            return productRoot;
+                        }
+                 }
+            }           
+
+            return productRoot;
         }
     }
 
-    return productRoot;
+    return null;
 }
 ```
+
 :::note
-    If the endpoint of your custom route is considered a client-side request e.g. `/sitemap.xml`, you will need to replace the use of `IUmbracoContextAccessor` in the `FindContent` method with `IUmbracoContextFactory`. [Read more](https://our.umbraco.com/documentation/implementation/Services/#accessing-published-content-outside-of-a-http-request).
+If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need to replace the use of **IUmbracoContextAccessor** in the **FindContent** method with **IUmbracoContextFactory**. There is a currently a bug in V9, all versions less than 9.4 are affected, where this fix won't work for mapping a client-side request to an Umbraco Controller - see [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details and hopefully news of a fix!
 :::
 
 We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested, to do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we just return the product root, but if it's product, we try to get the SKU from the route value `id`, and try to find the child node which matches the SKU and return that.

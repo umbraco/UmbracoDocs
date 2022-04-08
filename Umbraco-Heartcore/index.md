@@ -64,6 +64,6 @@ In order to test your Umbraco Heartcore project against the REST API endpoints, 
 
 Learn more about how we handle versioning and updates of Heartcore projects.
 
-## [Frequently asked questions](https://umbraco.com/products/umbraco-heartcore/faq/)
+## [Frequently asked questions](https://umbraco.com/products/umbraco-heartcore/heartcore-faq/)
 
 Do you have questions that are not covered by this documentation? Please create an issue on our [Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) or get in touch with Umbraco Support using the chat in the portal or write a mail to support@umbraco.com.

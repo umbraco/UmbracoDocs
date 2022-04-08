@@ -29,7 +29,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Sync;
 using Umbraco.Cms.Infrastructure.HostedServices;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
@@ -73,12 +73,12 @@ namespace Umbraco.Cms.Web.UI
             
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
             _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
-            _logger.LogInformation("You have {NumberOfThinsInTheBing} items to clean", numberOfThingsInBin);
+            _logger.LogInformation("You have {NumberOfThingsInTheBin} items to clean", numberOfThingsInBin);
 
             if (_contentService.RecycleBinSmells())
             {
                 // Take out the trash
-                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bing",
+                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bin",
                     "It's all clean now"))
                 {
                     _contentService.EmptyRecycleBin(userId: -1);
@@ -102,11 +102,11 @@ First we need to create our extension method where we register the hosted servic
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
-    public static class BuilderExtensions
+    public static class UmbracoBuilderHostedServiceExtensions
     {
-        public static IUmbracoBuilder AddHostedServices(this IUmbracoBuilder builder)
+        public static IUmbracoBuilder AddCustomHostedServices(this IUmbracoBuilder builder)
         {
             builder.Services.AddHostedService<CleanUpYourRoom>();
             return builder;
@@ -125,7 +125,7 @@ public void ConfigureServices(IServiceCollection services)
         .AddBackOffice()
         .AddWebsite()
         .AddComposers()
-        .AddHostedServices() // Register CleanUpYourRoom
+        .AddCustomHostedServices() // Register CleanUpYourRoom
         .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
 }
@@ -140,7 +140,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 {
     public class CleanUpYourRoomComposer : IComposer
     {
@@ -163,7 +163,7 @@ The `RecurringHostedServiceBase` is a base class that implements the netcore int
 
 ## BackgroundTaskRunner Notifications
 
-In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications.md)
+In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications/index.md)
 
 ## Using ServerRoleAccessor
 

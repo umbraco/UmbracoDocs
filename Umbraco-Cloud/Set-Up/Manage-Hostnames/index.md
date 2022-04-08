@@ -58,16 +58,6 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 
 All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
 
-:::note
-Hostnames added prior to December 8th 2020 will be issued by Let's Encrypt and will continue to be renewed until the hostname is removed or re-added. If a hostname is removed and then re-added the DNS should be configured as mentioned in the section above, and then the certificate will be issued and renewed by Cloudflare (with Digicert as the Certificate Authority).
-
-:::warning
-From November 1st, 2021 you will no longer be able to use Latch on Umbraco Cloud.
-This will effectively mean that unless changing the settings, the site will not be accessible for users, therefore make sure to update your hostname to Automatic TLS with Cloudflare.
-:::
-
-To change the certificate for your hostname, see the [How to move away from using Umbraco Latch](Move-away-from-Latch) article.
-
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 :::
 
@@ -101,6 +91,22 @@ example.com. IN CAA 0 issuewild "digicert.com"
 ## [Upload certificates manually](Security-Certificates)
 
 On the Professional and Enterprise plan, you can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
+
+## Using your own WAF on Umbraco Cloud
+If you need to use your own Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configuration needed. But please note that configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
+In most cases you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates is a plan-specific feature on Umbraco Cloud, so please make sure that you have access to upload certificates.
+
+1. Make sure the hostname is pointing to Umbraco Cloud (dns.umbraco.io)
+2. Certificates are issued for the actual hostname - It is probably required to have a custom certificate for a WAF hostname. 
+3. Be on a plan that supports custom certificates
+
+When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
+
+So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it removed. That means that you has 14 days to add a TXT record in your DNS settings. 
+
+Reach out to support and they will assist you with the details that needs to be in the TXT record. We will first be able to see what you need to add in the TXT record when you have added the hostname.
+
+When that is added it should work immediately.
 
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
 

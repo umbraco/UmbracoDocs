@@ -1,7 +1,6 @@
 ---
 state: complete
-verified-against: 9.0.0
-versionFrom: 9.0.0
+versionFrom: 9.2.0
 meta.Title: "Umbraco Sections & Trees"
 meta.Description: "An explanation on sections and trees in Umbraco"
 ---
@@ -59,23 +58,18 @@ namespace My.Website.Sections
 }
 ```
 
-For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IComposer` as of Umbraco v9 `IUserComposer` interface is obsolete.
+For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`. You can achieve this by updating the `ConfigureServices` method in the `Startup.cs` class: 
 
 ```csharp
-using My.Website.Sections;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Sections;
-
-namespace My.Website.Composers
+public void ConfigureServices(IServiceCollection services)
 {
-    public class SectionComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Sections().Append<MyFavouriteThingsSection>();
-        }
-    }
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // Register the section
+        .AddSection<MyFavouriteThingsSection>()
+        .Build();
 }
 ```
 

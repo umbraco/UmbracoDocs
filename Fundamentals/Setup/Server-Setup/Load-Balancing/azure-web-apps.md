@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 ## Load Balancing Azure Web Apps
 
-Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET Core & logging configurations are correct.
+Ensure you read the [Load Balancing overview](index.md) and general [Azure Web Apps](../azure-web-apps.md) documentation before you begin - you will need to ensure that your ASP.NET Core & logging configurations are correct.
 
 ### Azure Requirements
 

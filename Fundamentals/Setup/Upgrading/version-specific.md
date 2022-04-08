@@ -18,18 +18,6 @@ You will need to ensure packages you are using is available in Umbraco 9, and yo
 The reason why it is not possible to upgrade an Umbraco 8 site to Umbraco 9 is is that the codebase has been fundamentally updated in Umbraco 9 and the underlying web framework updated from ASP.NET to ASP.NET Core.
 It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 8.
 
-:::warning
-If you want to migrate your database from 8.x to 9.3, there is currently a known issue which will cause the site to fail with error message: 
-
-Error during installation
-The database failed to upgrade. ERROR: The database configuration failed with the following message: Invalid column name 'userOrMemberKey'. Please check log file for additional information
-
-The workaround is to migrate to version 9.2 first, after which you can then upgrade safely to 9.3
-
-An issue is open on the tracker here https://github.com/umbraco/Umbraco-CMS/issues/11980 which will be updated with any resolution.
-:::
-
-
 ## Version 8.1.0
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).

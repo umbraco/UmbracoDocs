@@ -6,20 +6,20 @@ versionTo: 9.0.0
 # Manage Subscriptions
 
 :::note
-This article is only for existing customers on Umbraco Cloud. For new customers on Umbraco Cloud after the 5th of May handling subscriptions is done directly on [Umbraco Cloud](new-shop.md).
+This article is only for existing customers on Umbraco Cloud. For new customers on Umbraco Cloud after the 5th of May, 2021 handling subscriptions is done directly on [Umbraco Cloud](new-shop.md).
 :::
 
-In this article you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
+In this article, you will be able to find information on how to manage your subscriptions. You will also be able to find information on how to change ownership of your projects.
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subcriptions** link on the Profile dropdown on the Umbraco Cloud Portal.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link on the Profile dropdown on the Umbraco Cloud Portal.
 
 ![Manage Subscriptions](images/manage-subscriptions.png)
 
 ## Invoices
 
-You are able to find all your invoices when you log into the shop on [Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
+You can find all your invoices when you log into the shop on [Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
 
-Once you have logged in, you can see an overview of your account where you will be able to find your [Order History](https://shop.umbraco.com/profile/options/order-history/). In this section you can see all your invoices.
+Once you have logged in, you can see an overview of your account where you will be able to find your [Order History](https://shop.umbraco.com/profile/options/order-history/). In this section, you can see all your invoices.
 
 ![Overview of your account](images/account-overview.png)
 
@@ -48,7 +48,7 @@ You might find yourself in a situation where you will need to change the ownersh
 
 ### Subscriptions
 
-Changing subscription ownerships is not something you can do by yourself. You will need to reach out to our __Support Team__ and they will do it for you.
+Changing subscription ownership is not something you can do by yourself. You will need to reach out to our __Support Team__ and they will do it for you.
 
 Whoever is taking over a subscription will need to have an existing account on umbraco.com. If they do not have an account, they can register [here](https://shop.umbraco.com/profile/register).
 
@@ -57,7 +57,7 @@ When you have registered your user. You will need to login to your [profile](htt
 - Company Name
 - Address
 - Country
-- VAT number (if within EU)
+- VAT number (if within the EU)
 
 :::note
 The owner of the subscription must reach out when changing the owner.
@@ -68,7 +68,7 @@ The owner of the subscription must reach out when changing the owner.
 Handing over a project to someone else can be done by adding them to the project as a [Team Member](../Team-Members) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
 
 :::note
-Remember to change the [technical contact details](../Team-Members/Technical-Contact) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whomever is listed under technical contact.
+Remember to change the [technical contact details](../Team-Members/Technical-Contact) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whoever is listed under technical contact.
 
 You can change the technical contact details under the **Edit team** section in the Backoffice.
 :::

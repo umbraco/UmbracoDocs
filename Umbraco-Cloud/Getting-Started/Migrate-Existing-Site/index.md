@@ -209,7 +209,7 @@ Go to the backoffice of your Development environment and make sure all your meta
     You will need to manually migrate them using SQL.
     :::
 
-![Queue for transfer](images/transfer.gif)
+![Queue for transfer](images/transfer-v9.gif)
 
 **Voila!** You've now migrated your site to Umbraco Cloud.
 
