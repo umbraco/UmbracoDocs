@@ -51,9 +51,16 @@ With that in place the _Form Security_ tree divides into three sub-trees:
 
 - Under _User Permissions_, each user that has a specific user permission record is listed and can be managed.  Records for users can be created or deleted via the tree's action menu.
 
-- As we no longer necessarily have a user permission record for every user in the system, _Start folders_ are moved into a separate area where all users are listed and hence the appropriate options can be set.
-
 As new forms are created, user groups with aliases listed in the `GrantAccessToNewFormsForUserGroups` configuration setting will be automatically given access.  For example, with a value of `admin,editor`, the built-in Adminstrators and Editors groups would have access.
+
+### Start folders for user groups
+
+In Umbraco Forms 8.12.0 and 9.4.0, start folders are also enabled for User Groups. They work in a similar way as the group based permissions described above:
+
+- If the user has a specific user permission set, it is used in preference to anything set on the user groups they are a part of.
+    - This means if the user has no start folders defined and the groups they are part of do, they will have access to the root of the Forms tree and be able to access all folders and Forms.
+ - If the user doesn't have a specific user permission set, they are granted access to all the unique folders the groups they are part of have access to.
+    - If they are part of any group that has no start folders defined, they will have access to the root of the Forms tree and be able to access all folders and Forms.
 
 ### Migrating to user group based permissions
 
