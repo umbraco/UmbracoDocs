@@ -146,7 +146,7 @@ Available options:
 + **SqlMainDomLock** - Available cross-platform, uses the database to control acquisition of MainDom status.
 
 *Available  in v9.4+*
-+ **FileSystemMainDomLock** - Available cross platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
++ **FileSystemMainDomLock** - Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
 
 The default selection is platform-specific.<br />
 On Windows, MainDomSemaphoreLock will be used unless configured otherwise.<br />
