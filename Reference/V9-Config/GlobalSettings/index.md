@@ -136,23 +136,23 @@ This setting is used to specify which sql server version that the database is ru
 
 ### Main dom lock
 
-Specifies the implementation of IMainDomLock to be used.
+Specifies the implementation of `IMainDomLock` to be used.
 
 IMainDomLock is used to synchronize access to various resources e.g. Lucene indexes.
 
 Available options:
 
-+ **MainDomSemaphoreLock** - Windows only, uses a named Semaphore with a maximumCount of 1 to control acquisition of MainDom status.
-+ **SqlMainDomLock** - Available cross platform, uses the database to control acquisition of MainDom status.
++ **MainDomSemaphoreLock** - Windows only, uses a named Semaphore with a `maximumCount` of 1 to control acquisition of MainDom status.
++ **SqlMainDomLock** - Available cross-platform, uses the database to control acquisition of MainDom status.
 
 *Available  in v9.4+*
 + **FileSystemMainDomLock** - Available cross platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
 
-The default selection is platform specific.<br />
-On Windows MainDomSemaphoreLock will be used unless configured otherwise.<br />
-On other platforms SqlMainDomLock will be used unless configured otherwise.<br />
+The default selection is platform-specific.<br />
+On Windows, MainDomSemaphoreLock will be used unless configured otherwise.<br />
+On other platforms, SqlMainDomLock will be used unless configured otherwise.<br />
 
-Additionally SqlMainDomLock will be used when configuration specifies MainDomSemaphoreLock on an unsupported platform.
+Additionally, SqlMainDomLock will be used when configuration specifies MainDomSemaphoreLock on an unsupported platform.
 
 ### Main dom key discriminator
 
@@ -162,21 +162,21 @@ For advanced use cases e.g. deployment slot swapping on Azure app services.
 
 When using SqlMainDomLock a MainDomKey is used to identify an instance of a running application.
 
-The MainDomKey is by default comprised of the servers machine name & the application id.
+The MainDomKey is by default comprised of the server's machine name & the application id.
 This is generally all that is required to control MainDom status as starting a new process for the same application on the same
 server will result in a matching MainDomKey, requiring that an existing instance yields MainDom status to the new process.
 
 Deployment slots for a given Azure app service share the same machine name and without additional configuration will share a
 MainDomKey and therefore compete for MainDom status, this can be undesirable if attempting to deploy to a deployment slot
 followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots
-and can re-aquire MainDom status.
+and can re-acquire MainDom status.
 See [What happens during a swap](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#what-happens-during-a-swap).
 
-To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as slot specific configuration
-to prevent the slots competing for MainDom status.
+To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as a slot-specific configuration
+to prevent the slots from competing for MainDom status.
 
 It's worth noting that during the swap operation there is a period where both instances will share the same
-configuration and at this point the old instance will yield MainDom status to the new instance.
+configuration and at this point, the old instance will yield MainDom status to the new instance.
 
 ### Id
 
