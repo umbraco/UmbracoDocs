@@ -111,4 +111,4 @@ In v8 Serilog is used for logging, use these files to configure this:
 
 ### NuCache
 
-We have moved away from the traditional large XML files (`umbraco.config` file) and instead using a key value store (`NuCache.Content`) for caching. Content is now stored in a binary cache called NuCache. You can find the file at `/App_Data/TEMP/NuCache/NuCache.Content.db`.
+We have moved away from the traditional large XML file (`umbraco.config` file) and instead using a key value store (`NuCache.Content`) for caching. Content is now stored in a binary cache called NuCache. You can find the file at `/App_Data/TEMP/NuCache/NuCache.Content.db`.
