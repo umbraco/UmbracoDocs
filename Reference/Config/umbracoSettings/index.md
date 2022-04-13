@@ -31,7 +31,7 @@ By default this is set to true. Set it to false to turn off [backoffice tours](.
 
 Below you can see settings that affects content in Umbraco.
 
-### Cleanup policy (Available on 8.18+)
+### Cleanup policy (Available on 8.18)
 
 The global settings for the scheduled job which cleans up historic content versions. These settings can be overridden per document type.
 
