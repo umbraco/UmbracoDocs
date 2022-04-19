@@ -6,13 +6,13 @@ versionFrom: 9.0.0
 
 When working with an Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
 
-![settings](images/project-settings-v9.png)
+![settings](images/project-settings-v9-1.png)
 
 ## Overview
 
 You can view the **Overview** of your Umbraco Cloud project from the **Settings** menu.
 
-![Project Overview](images/project-overview.png)
+![Project Overview](images/project-overview-1.png)
 
 ## [Edit team](../Team-Members)
 
@@ -20,7 +20,7 @@ Manage the team members on your project. You can also view the backoffice user g
 
 ## [Connection details](../../Databases)
 
-Find connection details to your Umbraco Cloud databases. You need to allow your IP in order to connect to the databases with your local machine.
+Find connection details to your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
 
 ## [Hostnames](../Manage-Hostnames)
 
@@ -28,7 +28,7 @@ Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** s
 
 ## [Security](../Manage-Security)
 
-Manage transport security settings for your project. You can configure certain transport security options for all hostnames or for specific hostnames within your project.
+Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates) (Only available on **Professional** or **Enterprise** plan)
 
@@ -47,10 +47,10 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 ### Renaming the Cloud Project
 
 You can rename your Umbraco Cloud project from the **Settings** menu.
-![settings](images/renaming-project.png)
+![settings](images/renaming-project-1.png)
 
 :::note
-If you are working locally, you need to update the origin of your local git repository to point to the new clone url. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
+If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
 :::
 
 ### Renaming the Project file and folder
@@ -71,7 +71,7 @@ To rename your Umbraco Cloud project files and folder, do the following:
 
 3. Update the `.umbraco` file with the new name and any C# code namespaces reflecting the name of your project.
 
-4. Additionally, if you prefer to organise your code, you can add additional Class Library projects that are referenced by the Umbraco application .csproj file.
+4. Additionally, if you prefer to organize your code, you can add additional Class Library projects that are referenced by the Umbraco application .csproj file.
 
    For example: Rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
 
@@ -82,7 +82,7 @@ To rename your Umbraco Cloud project files and folder, do the following:
     ```
 
 :::note
-Its a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
+It's a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
 :::
 
 ## Advanced
@@ -93,15 +93,17 @@ Manage **Advanced** settings for your project from the **Settings** menu:
 - Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 
     :::note
-    When enabling IIS logging, the site will have to restart. For more information about IIS logging look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+    When enabling IIS logging, the site will have to restart. For more information about IIS logging, look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
     :::
+
+![Advanced Settings](images/Advanced-Settings.png)
 
 ## [Payment](../Manage-Subscriptions/new-shop.md)
 
 From here, you can see the payment history for your project, change the credit card, as well as download the latest invoices for your project.
 
 :::note
-This only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
 
 ## [Usage](../Usage/)

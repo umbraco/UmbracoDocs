@@ -39,5 +39,5 @@ The menu consists of the following options:
 * **Payment** Watch the payment history and download invoices for your project
 
 :::note
-The Payment setting only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+The Payment setting only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::

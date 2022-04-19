@@ -9,7 +9,7 @@ versionRemoved: 9.0.0
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, LocalizationService Events have been renamed to [**LocalizationService Notifications**](../Notifications/LocalizationService-Notifications.md).
+Note that in Umbraco 9, LocalizationService Events have been renamed to [**LocalizationService Notifications**](../Notifications/LocalizationService-Notifications/index.md).
 
 Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
 :::

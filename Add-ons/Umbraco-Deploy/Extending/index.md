@@ -343,6 +343,29 @@ In order to deploy the entity as schema, via disk based representations held in 
     }
 ```
 
+#### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
+
+In Umbraco Deploy 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+
+All core Umbraco entities, such as document types and data types, will be shown.
+
+To include entities from plugins, they need to be registered using an overload of the method shown above, that allows you to provide additional detail, e.g.:
+
+```C#
+_diskEntityService.RegisterDiskEntityType(
+    "mypackage-example",
+    "Examples",
+    false,
+    _exampleDataService.GetAll().Select(x => new DeployDiskRegisteredEntityTypeDetail.InstalledEntityDetail(x.GetUdi(), x.Name, x))));
+```
+
+The parameters are as follows:
+
+- The system name of the entity type (as used in the `UdiDefinition` attribute).
+- A human readable, pluralized name for display in the schema comparison dashboard user interface.
+- A flag indicating whether the entity is an Umbraco one, which should be set to `false`.
+- A function that returns all entities of the type installed in Umbraco, mapped to an object exposing the Udi and name of the entity.
+
 ### Backoffice Integrated Transfers
 
 If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to also register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
@@ -381,7 +404,8 @@ The following code shows the registration of an entity for backoffice deployment
                 "exampleTreeAlias",
                 (string routePath) => true,
                 (string nodeId) => true,
-                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
+                (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
+                new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"));
         }
 
         public void Terminate()
@@ -432,6 +456,52 @@ If access to any services is required when parsing the entity Id, the `HttpConte
 
 ```C#
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
+```
+
+Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+
+- A function responsible for returning a level of a tree.
+- The name of the entity (or entities) that can be restored from the remote tree.
+- The remote tree alias.
+
+An example function that returns a level of a remote tree may look like this:
+
+```C#
+    public static IEnumerable<RemoteTreeNode> GetExampleTree(string parentId, HttpContext httpContext)
+    {
+        var exampleDataService = httpContext.RequestServices.GetRequiredService<IExampleDataService>();
+        var items = exampleDataService.GetItems(parentId);
+        return items
+            .Select(x => new RemoteTreeNode
+            {
+                Id = x.Id,,
+                Title = x.Name,
+                Icon = "icon-box",
+                ParentId = parentId,
+                HasChildren = true,
+            })
+            .ToList();
+    }
+```
+
+To complete the setup for partial restore support, an external tree controller needs to be added, attributed to match the registered tree alias.  Using a base class available in `Umbraco.Deploy.Forms.Tree`, this can look like the following:
+
+```C#
+    [Tree(DeployConstants.SectionAlias, "externalExampleTree", TreeUse = TreeUse.Dialog)]
+    public class ExternalDataSourcesTreeController : ExternalTreeControllerBase
+    {
+        public ExternalDataSourcesTreeController(
+            ILocalizedTextService localizedTextService,
+            UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
+            IEventAggregator eventAggregator,
+            IExtractEnvironmentInfo environmentInfoExtractor,
+            LinkGenerator linkGenerator,
+            ILoggerFactory loggerFactory,
+            IOptions<DeploySettings> deploySettings)
+            : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator, environmentInfoExtractor, linkGenerator, loggerFactory, deploySettings, "mypackage-example")
+        {
+        }
+    }
 ```
 
 #### Client-Side Registration

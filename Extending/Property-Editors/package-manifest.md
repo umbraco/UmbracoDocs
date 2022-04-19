@@ -15,6 +15,11 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
 
 ```json
 {
+    "name": "Sir Trevor",
+    "version": "1.0.0 beta",
+    "allowPackageTelemetry": true,
+    "bundleOptions": "Default",
+    "packageView": "/App_Plugins/SirTrevor/SirTrevor-config.html",
     "propertyEditors": [
         {
             "alias": "Sir.Trevor",
@@ -227,6 +232,13 @@ The parameter editors array follows the same format as the property editors desc
   ]
 }
 ```
+
+## Bundling
+`bundleOptions` is an enumerable type that expects one of the following values:
+
+* `Default` - The default bundling behavior for assets in the package folder where the assets will be bundled with the typical packages bundle.
+* `None` - The assets in the package will not be processed at all and will all be requested as individual assets and will essentially be a bundle that has composite processing turned off for both debug and production
+* `Independent` - The packages assets will be processed as its own separate bundle. (In debug, files will not be processed)
 
 ## JSON Schema
 

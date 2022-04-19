@@ -23,7 +23,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 ## Typed
 
 ```csharp
-@using Umbraco.Web.Models
+@using Umbraco.Cms.Core.Models
 @{
     var links = Model.Value<IEnumerable<Link>>("footerLinks");
     if (links.Any())
@@ -41,7 +41,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 If `Max number of items` is configured to `1`
 
 ```csharp
-@using Umbraco.Web.Models
+@using Umbraco.Cms.Core.Models
 @{
     var link = Model.Value<Link>("link");
     if (link != null)

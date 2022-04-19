@@ -65,6 +65,16 @@ Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attribute
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
+The view model for the partial view for a field is `FieldViewModel`. This defined various properties that may be useful when creating new themes or custom fields, some of which are shown in the code samples above.  Others include:
+
+- `AdditionalSettings` - a dictionary of the settings keys and values populated for the form field. These can be retrieved in typed form by key using e.g. `Model.GetSettingValue<int>("MaximumLength", 255);`.
+
+The following are avaialble on the model but only populated for fields that support file upload:
+
+- `AllowAllUploadExtensions`- a boolean indicating whether all file extensions are permitted for upload.
+- `AllowedUploadExtensions`- a collection of strings indicating the file extensions that are permitted for upload.
+- `AllowMultipleFileUploads`- a boolean indicating whether selecting multiple files for upload is allowed.
+
 ### Customizing for a Specific Form
 
 In Forms 4, it is also possible to customize the markup for a specific Form.

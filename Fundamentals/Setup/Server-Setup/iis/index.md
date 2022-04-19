@@ -48,7 +48,7 @@ Find the line named *environmentVariables* and open the dialog to add environmen
 IIS can host .NET 5 applications using 2 different hosting models
 
 - In-process (default) - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0
-In-process hosting runs an .NET 5 app in the same process as its IIS worker proces
+In-process hosting runs an .NET 5 app in the same process as its IIS worker process
 - Out-of-process - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/out-of-process-hosting?view=aspnetcore-5.0 - to enable this model you need to edit your .csproj file and add:
 
 ```

@@ -15,6 +15,7 @@ The samples in this article applies to Umbraco Forms version 8 and later version
 Add a new class to your project and have it inherit from `IUserComposer`, implement the `Compose()` method. This method will contain a handler for the `FormValidate` event.
 
 ```csharp
+using System.Linq;
 using System;
 using System.Collections.Generic;
 using Umbraco.Core.Composing;

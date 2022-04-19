@@ -2,7 +2,7 @@
 state: partial
 updated-links: false
 versionFrom: 9.0.0
-verified-against: alpha-3
+verified-against: 9.0.0
 meta.Title: "Umbraco Property Value Converters"
 meta.Description: "A guide to creating a custom property value converter in Umbraco"
 ---
@@ -34,7 +34,7 @@ using System.Linq;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-public class MyComposer : IUserComposer
+public class MyComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {

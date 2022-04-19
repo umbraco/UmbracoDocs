@@ -31,6 +31,29 @@ By default this is set to true. Set it to false to turn off [backoffice tours](.
 
 Below you can see settings that affects content in Umbraco.
 
+### Cleanup policy (Available on Umbraco version 8.18)
+
+The global settings for the scheduled job which cleans up historic content versions. These settings can be overridden per document type.
+
+Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
+
+See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
+
+```json
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <content>
+    <!-- Add contentVersionCleanupPolicyGlobalSettings in the content section -->
+    <contentVersionCleanupPolicyGlobalSettings 
+      enable="true" 
+      keepAllVersionsNewerThanDays="7" 
+      keepLatestVersionPerDayForDays="90" />
+  </content>
+<settings>
+```
+
+If you don't wish to retain any content versions except for the current draft and currently published you can set both of the "keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
+
 ### Obsolete data types
 
 This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.

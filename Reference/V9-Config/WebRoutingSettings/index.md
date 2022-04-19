@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 meta.Title: "Umbraco Web Routing Settings"
 meta.Description: "Information on the web routing settings section"
 state: complete
-verified-against: beta-3
+verified-against: 9.4
 update-links: true
 ---
 
@@ -25,7 +25,7 @@ An example of a web routing config with default values, and a placeholder for ap
       "DisableFindContentByIdPath": false,
       "DisableRedirectUrlTracking": false,
       "UrlProviderMode": "Auto",
-      "UmbracoApplicationUrl": "http://www.mysite.com/umbraco"
+      "UmbracoApplicationUrl": "http://www.mysite.com/"
     }
   }
 }
@@ -73,4 +73,4 @@ Will set the URL provider mode, options are:
 
 ## Umbraco application URL
 
-Defines the Umbraco application URL, i.e. how the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" i.e. it needs to contain the scheme (http/https), complete hostname, and Umbraco path.
+Defines the Umbraco application URL, i.e. how the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: `http://www.mysite.com/` i.e. it needs to contain the scheme (http/https) and complete hostname.
