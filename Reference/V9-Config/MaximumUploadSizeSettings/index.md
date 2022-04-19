@@ -26,6 +26,10 @@ To configure the default 28.6MB upload limit using IIS, we have to create a web.
 
 `maxAllowedContentLength` is specified in bytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes
 
+:::note
+If your site is hosted on Umbraco Cloud, this is the method you should use.
+:::
+
 # Using Kestrel
 
 Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
