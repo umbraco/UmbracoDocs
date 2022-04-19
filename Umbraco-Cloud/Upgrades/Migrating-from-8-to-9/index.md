@@ -86,7 +86,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
 * Run `Schema Deployment From Data Files` from the deploy dashboard to make sure everything checks out with the UDA files that was generated
 
-## Step 3: custom code for Umbraco 9
+## Step 3: Custom code for Umbraco 9
 
 Umbraco 9 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 9.
 
