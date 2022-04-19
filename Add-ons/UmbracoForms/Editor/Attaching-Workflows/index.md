@@ -23,7 +23,7 @@ If no value is selected, the message provided in **Message on submit** will be d
 
 For either method, a developer can customize the page viewed after the form is submitted on the basis of the presence of a `TempData` variable with a key of `UmbracoFormSubmitted` and a value containing the Guid identifier for the submitted form.
 
-There will also be available a similar `TempData` value containing the Guid identifier of the record that was created from the form submission.  This is found using the key `Forms_Current_Record_id`.
+A similar `TempData` value is also available containing the GUID identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
 
 ## Adding a Workflow
 
