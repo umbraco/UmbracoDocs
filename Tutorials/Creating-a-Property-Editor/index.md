@@ -82,8 +82,7 @@ namespace Umbraco.Cms.Core.PropertyEditors
         Icon = "icon-list")]
     public class Suggestions : DataEditor
     {
-        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
-            IIOHelper ioHelper)
+        public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
             : base(dataValueEditorFactory)
         {            
         }
