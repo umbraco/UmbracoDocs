@@ -23,7 +23,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 ## [Custom Markup](Custom-Markup/index.md)
 
-Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
+Customize your Forms your way. You have full control over your Form's HTML markup and styling.
 
 ## [Email Templates](Email-Templates/index.md)
 
