@@ -6,13 +6,13 @@ meta.Description: "Information on configuration allowing for the modification of
 
 # Install Default Data Settings
 
-When Umbraco is installed for the first time, it creates various default data.  These include a language, some data types and some media and member types.
+When Umbraco is installed for the first time, it creates various default data.  These include a language, some data types, and some media and member types.
 
-In certain setups you may want to take control over what is installed, and opt-out of the creation of certain items.
+In certain setups, you may want to take control over what is installed and opt-out of the creation of certain items.
 
 When working in a team and using a tool like Umbraco Deploy for sharing schema updates, when a colleague first sets up the project in their local environment, having this default data installed may not always be useful.  For example, if a different set of languages from Umbraco's default (en-US) have been set up, it would be preferable to not have the default recreated.  In other situations, certain Umbraco default data, member and media types may not be required.
 
-The following example configuration shows how this default data installation can be customised:
+The following example configuration shows how this default data installation can be customized:
 
 ```json
 "Umbraco": {
@@ -42,12 +42,12 @@ The following example configuration shows how this default data installation can
 
 Each `InstallData` setting can be one of the following values:
 
-- `All` - all default data for the type will be installed (this is the default behavior if the configration is omitted).
+- `All` - all default data for the type will be installed (this is the default behavior if the configuration is omitted).
 - `Values` - only the default data specified will be installed.  For languages, the values are the ISO codes for the language.  For all other types, the Guid for the type should be listed.
 - `ExceptValues` - all default data except those specified will be installed.
 - `None` - no default data of the type will be installed.
 
-The Guid values representing the default data, media and member types installed are as follows.
+The Guid values representing the default data, media, and member types installed are as follows.
 
 Data types:
 
