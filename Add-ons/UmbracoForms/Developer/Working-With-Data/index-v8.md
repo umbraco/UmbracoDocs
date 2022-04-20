@@ -12,7 +12,7 @@ Umbraco Forms includes some helper methods that return records of a given form, 
 
 The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface.
 
-For performance reasons, all these methods are paged and retrieve their values from an underying Examine search index.
+For performance reasons, all these methods are paged and retrieve their values from an underlying Examine search index.
 
 ### GetApprovedRecordsFromPage
 
@@ -83,7 +83,7 @@ Dictionary<Guid, RecordField> RecordFields
 
 In order to access custom form fields, these are available in the `RecordFields` property.
 
-Furthermore there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
+Furthermore, there exists an extension method named `ValueAsString` on `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as a string given the alias of the field.
 
 This extension method will handle multi-value fields by comma separating the values. E.g. "A, B, C"
 
@@ -124,7 +124,7 @@ Sample script that is outputting comments using a form created with the default 
 
 ## Working with single records
 
-If you have a use-case where you want to be able to retrieve the single record created from a form submission by a user, then a different interface, that provides access via database requests, should be used.  The interface is `IRecordStorage`, found in the `Umbraco.Forms.Core.Data.Storage` namespace.
+If you have a use case where you want to be able to retrieve the single record created from a form submission by a user, then a different interface, that provides access via database requests, should be used.  The interface is `IRecordStorage`, found in the `Umbraco.Forms.Core.Data.Storage` namespace.
 
 By using this interface you avoid any timing issues caused by the Examine indexes used in the previous examples not yet being populated.
 
@@ -134,7 +134,7 @@ By using this interface you avoid any timing issues caused by the Examine indexe
 Record GetRecordByUniqueId(Guid uniqueId, Form form);
 ```
 
-Returns a single record based on it's unique Id and form.
+Returns a single record based on its unique Id and form.
 
 [This blog post](https://www.andybutland.dev/2022/04/getting-submitted-form-data-in-umbraco.html) shows an example where `TempData` values are used to retrieve the identifiers of the submitted form and created record. With those identifiers, the full details of the form and record can be retrieved and displayed on the page.
 
