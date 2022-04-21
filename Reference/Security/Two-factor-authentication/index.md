@@ -490,7 +490,7 @@ When the authenticator is enabled correctly, a disable button is shown instead.
 
 ![Disable 2fa](images/disable-2fa.png)
 
-To disable the two on your own user, it is required to enter the verification code, otherwise admins are allowed to disable providers on other users.
+To disable the two on your user, it is required to enter the verification code, otherwise, admins are allowed to disable providers on other users.
 
 ![Verify disable](images/verify-disable.png)
 
