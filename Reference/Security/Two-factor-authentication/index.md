@@ -478,7 +478,7 @@ Each user will now a able to enable the configured 2fa providers on their user. 
 
 ![User panel](images/user-panel.png)
 
-When clicking the `Configure Two-Factor` button, a new panel is shown, listing all enalbed two-factor providers.
+When clicking the `Configure Two-Factor` button, a new panel is shown, listing all enabled two-factor providers.
 
 ![Configure 2fa](images/configure-2fa.png)
 
