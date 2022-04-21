@@ -600,6 +600,7 @@ To access the service directly from the view you would need to use the Razor `@i
 
 ### Handle routes as server-side requests
 Sometimes you might want to request, for example "/sitemap.xml" from your server, but since this has a file extension it will be treated as a client-side request and will not work. You can configure routes to be handled as server-side requests in your startup.cs.
+
 **For a single route:**
 ```csharp
 services.Configure<UmbracoRequestOptions>(options =>
@@ -610,6 +611,7 @@ services.Configure<UmbracoRequestOptions>(options =>
     };
 });
 ```
+
 **For multiple routes:**
 ```csharp
 services.Configure<UmbracoRequestOptions>(options =>
