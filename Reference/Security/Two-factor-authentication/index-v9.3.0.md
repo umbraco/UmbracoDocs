@@ -178,7 +178,7 @@ The setup of 2FA depends on the type. In the case of App Authenticator, we will 
 }
 ```
 
-In this razor-code sample, we get the current members unique key and list all registered `ITwoFactorProvider` implementations.
+In this razor-code sample, we get the current member's unique key and list all registered `ITwoFactorProvider` implementations.
 
 If the `setupData` is `null` for the specified `providerName` it means the provider is already <span class="x x-first x-last">set up</span>. In this case<span class="x x-first x-last">,</span> we show a disable button. Otherwise<span class="x x-first x-last">,</span> we check the type and show the UI for how to <span class="x x-first x-last">set up </span>the App Authenticator, by showing the QR Code and <span class="x x-first x-last">an</span> input field to validate the code from the App Authenticator.
 
