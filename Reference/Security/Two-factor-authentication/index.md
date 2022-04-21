@@ -494,7 +494,7 @@ To disable the two on your user, it is required to enter the verification code, 
 
 ![Verify disable](images/verify-disable.png)
 
-While the 2fa is enabled, the user will be presented this screen after entering username and password.
+While the 2FA is enabled, the user will be presented with this screen after entering the username and password.
 ![Verify disable](images/login-2fa.png)
 
 
