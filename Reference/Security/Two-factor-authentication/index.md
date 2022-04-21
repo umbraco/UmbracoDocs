@@ -486,7 +486,7 @@ When clicking `Enable` on one of these, the configured view for the specific pro
 
 ![Enable 2fa](images/enable-2fa.png)
 
-When the authenticator is enabled correct a disable button is shown instead.
+When the authenticator is enabled correctly, a disable button is shown instead.
 
 ![Disable 2fa](images/disable-2fa.png)
 
