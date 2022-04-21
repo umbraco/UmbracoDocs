@@ -500,4 +500,4 @@ While the 2FA is enabled, the user will be presented with this screen after ente
 
 ## Notification when 2FA is requested for a user
 When a 2FA login is requested for a user, the `UserTwoFactorRequestedNotification` is published.
-This notification can also be used to send the user a one-time password on e-mail or phone, even though these 2FA types are [not considered as secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
+This notification can also be used to send the user a one-time password via e-mail or phone, even though these 2FA types are [not considered secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
