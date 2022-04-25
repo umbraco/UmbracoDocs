@@ -18,5 +18,5 @@ By turning this feature on for an environment you will be able to load a client 
 You can find more information on loading a certificate from a file [here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file).
 
 :::note
-When toggling the setting you will be met by a confirmation prompt. An enabling and disabling of this feature will enforce a restart of the environment.
+When toggling the setting you will be met by a confirmation prompt. An enabling/disabling of this feature will enforce a restart of the environment.
 :::
