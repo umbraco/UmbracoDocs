@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.3.0
-versionTo: 9.5.0
 keywords: 2fa, security, members
 meta.Title: "Two-factor authentication"
 meta.Description: "Umbraco users and members support a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice"
