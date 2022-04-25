@@ -13,7 +13,7 @@ Custom error handling might make your site look more on-brand and minimize the i
 
 This article contains guides on how to create custom error pages for the following types of errors:
 
--   [404 errors ("Page not found")](#404-errors)
+- [404 errors ("Page not found")](#404-errors)
 
 ## In-code error page handling
 
@@ -36,9 +36,9 @@ Once all of that is done, grab your published error page's ID, GUID or path and 
 
 The value for error pages can be:
 
--   A content item's GUID ID (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
--   An XPath statement (example: //errorPages[@nodeName='My cool error']
--   A content item's integer ID (example: 1234)
+- A content item's GUID ID (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+- An XPath statement (example: //errorPages[@nodeName='My cool error']
+- A content item's integer ID (example: 1234)
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
 
@@ -105,7 +105,8 @@ The file used for rendering this error page can be found here `~/umbraco/views/e
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the wwwroot on the Physical file system.
 
 :::note
-The `BootFailed.html` page will only be shown if debugging is disabled in `appsettings.json` i.e. 
+The `BootFailed.html` page will only be shown if debugging is disabled in `appsettings.json` i.e.
+
 ```json  
 "Umbraco": {
     "CMS": {
@@ -115,6 +116,7 @@ The `BootFailed.html` page will only be shown if debugging is disabled in `appse
     }
   }
 ```
+
 The full error can always be found in the log file.
 :::
 
@@ -122,6 +124,10 @@ The full error can always be found in the log file.
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
 
-* Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
-* Any packages that allow you to customize redirects, or
-* Rewrite rules in web.config that might interefere with custom error handling.
+- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.
+
+## Handling errors in ASP.NET Core
+
+For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
