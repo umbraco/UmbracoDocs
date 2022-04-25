@@ -8,7 +8,7 @@ verified-against: beta-1
 
 # Configuration for Umbraco Deploy
 
-All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Umbraco Deploy configuration follows this pattern, i.e.:
 
