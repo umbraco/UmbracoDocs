@@ -95,4 +95,4 @@ To edit the **appSetting.json** files for the different environments, the Umbrac
 
 Once done editing the files, they will need to be pushed up to your Umbraco Cloud project in order to be added to the repository.
 
-When the file is deployed to the next environment on Umbraco Cloud, the settings in the **appSettings** file  will be aplied to that environment e.g the settings in the **appSettings.Production.json** will be applied to the Live environment of your project.
+When the file is deployed to the next environment on Umbraco Cloud, the settings in the **appSettings** file  will be applied to that environment e.g the settings in the **appSettings.Production.json** will be applied to the Live environment of your project.
