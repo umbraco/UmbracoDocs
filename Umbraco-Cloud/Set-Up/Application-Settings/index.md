@@ -4,6 +4,10 @@ versionFrom: 7.0.0
 
 # Custom Application Settings
 
+:::note
+This feature is *only* available for Umbraco Cloud projects on a **Standard** or **Professional** plan.
+:::
+
 Umbraco Cloud enables you to toggle a selection of predefined settings for each of the project's environments.
 A change of an application setting enables you to change one specific behavoir of the app service that an environment is running in. The objective with application settings are to empower you with feature or functionality that isn't available by default.
 
