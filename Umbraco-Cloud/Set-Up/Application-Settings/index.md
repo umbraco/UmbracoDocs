@@ -10,7 +10,7 @@ This feature is *only* available for Umbraco Cloud projects on a **Standard** or
 :::
 
 Umbraco Cloud enables you to toggle a selection of predefined settings for each of the project's environments.
-A change of an application setting enables you to change one specific behavoir of the app service that an environment is running in. The objective with application settings are to empower you with feature or functionality that isn't available by default.
+A change of an application setting enables you to change one specific behavior of the app service that an environment is running in. The objective of application settings is to empower you with features or functionality that aren't available by default.
 
 Currently, the only setting that is available is the _enable client certificate loaded from file system_.
 
