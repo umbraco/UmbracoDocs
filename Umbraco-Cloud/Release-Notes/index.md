@@ -4,6 +4,8 @@ _View the latest updates for the Umbraco Cloud Portal_
 
 ---
 
+[**25/04/2022 Release Notes:**](2022-04-25-ReleaseNotes.md) Enable client certificates from filesystem + Various Cloud Portal improvements
+
 [**29/03/2022 Release Notes:**](2022-03-29-ReleaseNotes.md) Bandwidth Usage Top 10 for resources
 
 [**15/03/2022 Release Notes:**](2022-03-15-ReleaseNotes.md) Static outbound IP + Managing Transport Security + Content Comparison
