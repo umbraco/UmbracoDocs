@@ -85,7 +85,7 @@ Follow these steps to generate UDA files:
 
 1. Access Kudu.
 2. Navigate to **CMD** under the **Debug console** menu.
-3. In the file structure, navigate to `site/wwwroot/umbraco/Deploy`.
+3. In the file structure, navigate to `site/wwwroot/data`.
 4. Type the following command in the CMD console: `echo > deploy-export`
 5. The Deploy engine will generate UDA files for all the types in your project.
 6. When it's done you'll end up with a `deploy-complete` marker.
