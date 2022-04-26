@@ -129,6 +129,33 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 }
 ```
 
+From Umbraco Forms 9.5 and 10.0, there a further convenience methods you can use for registering custom types.
+
+For example, instead of the following:
+
+```csharp
+    builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+        .Add<LogWorkflow>();
+```
+
+Your workflow can be registered using:
+
+```csharp
+    builder.AddFormWorkflow<LogWorkflow>():
+```
+
+Or:
+
+```csharp
+    builder.FormWorkflows().Add<LogWorkflow>();
+```
+
+Existing items that are not required in a particular installation can be removed with:
+
+```csharp
+    builder.FormWorkflows().Exclude<Slack>();
+```
+
 Also look in the reference chapter for complete class implementations of workflows, fields and export types.
 
 ## Overriding default providers in Umbraco Forms
