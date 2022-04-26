@@ -4,7 +4,7 @@ _Enable client certificates from filesystem + Various Cloud Portal improvements_
 
 ## Key Takeaways
 - **Enable client certificates from file system** - If you need to load a client certificate from the file system in your cloud project at runtime you can make this possible by turning on the new setting on the _Advanced_ page of the project.
-- **Various tweaks and improvements** - During March and April we have focused on fixing minor issues and adding minor improvements. The highlights of these changes are shown below.
+- **Various tweaks and improvements** - During March and April, we have focused on fixing minor issues and adding minor improvements. The highlights of these changes are shown below.
 
 ## [Enable client certificates from file system](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Application-Settings/)
 If your cloud project needs to load a client certificate (such as an X.509 certificate) at runtime you can turn on this feature for one or more environments. By turning this feature on for an environment, you will be able to load a client certificate as a file during the run-time of your cloud project.
