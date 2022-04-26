@@ -14,7 +14,7 @@ If your cloud project needs to load a client certificate (such as an X.509 certi
 ## Various tweaks and improvements
 During March and April, we have provided a lot of small improvements to the Umbraco Cloud Portal. Actually, too many to mention, but you will find the highlights in the list below.
 - Display the time of creation for environments (_now presented on the “Overview” page of the project_)
-- Restrict access to function when environments are changing (_to avoid actions on environments that is being created, deleted or modified_)
+- Restrict access to function when environments are changing (_to avoid actions on environments that are being created, deleted, or modified_)
 - Ordering Umbraco Logs correctly by date (_the logs and errors log of cloud projects were not always listed chronologically_)
 - Always display a link to the error page for environments on the project page (_and not exclusively when the project has new errors_).
 - Better user guidance when visiting the project page before accepting the project invite.
