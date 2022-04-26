@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 `Alias: Umbraco.ColorPicker.EyeDropper`
 
-`Returns: object`
+`Returns: string`
 
 The Eye Dropper Color picker allows you to choose a color from the full color spectrum using HEX and RGBA.
 
