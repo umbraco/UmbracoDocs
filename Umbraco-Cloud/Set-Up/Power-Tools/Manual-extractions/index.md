@@ -14,9 +14,9 @@ Run an extraction following these steps:
 
 1. Access Kudu.
 2. Navigate to **CMD** under the **Debug console** menu.
-3. In the file structure, navigate to `site/wwwroot/umbraco/Deploy`
-4. The `/Deploy` folder contains:
-    * `Revision` folder containing all your projects UDA files
+3. In the file structure, navigate to `site/wwwroot/data`
+4. The `/data` folder contains:
+    * `revision` folder containing all your projects UDA files
     * *deploy-marker* indicating the state of the latest extraction (`deploy-complete` or `deploy-failed`)
     * `deploy.log` containing logs from the latest extraction
 5. While in this folder, type the following command in the CMD console: `echo > deploy` - this will initiate an extraction on the environment
