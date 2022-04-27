@@ -129,7 +129,7 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 }
 ```
 
-From Umbraco Forms 9.5 and 10.0, there a further convenience methods you can use for registering custom types.
+From Umbraco Forms 9.5 and 10.0, there are further convenience methods you can use for registering custom types. These are found in the namepsace `Umbraco.Forms.Core.Providers.Extensions`.
 
 For example, instead of the following:
 
@@ -141,19 +141,19 @@ For example, instead of the following:
 Your workflow can be registered using:
 
 ```csharp
-    builder.AddFormWorkflow<LogWorkflow>():
+    builder.AddFormsWorkflow<LogWorkflow>():
 ```
 
 Or:
 
 ```csharp
-    builder.FormWorkflows().Add<LogWorkflow>();
+    builder.FormsWorkflows().Add<LogWorkflow>();
 ```
 
 Existing items that are not required in a particular installation can be removed with:
 
 ```csharp
-    builder.FormWorkflows().Exclude<Slack>();
+    builder.FormsWorkflows().Exclude<Slack>();
 ```
 
 Also look in the reference chapter for complete class implementations of workflows, fields and export types.
