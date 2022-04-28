@@ -67,6 +67,15 @@ If you want to override Umbraco core translations or translations shipped with p
 
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
+:::note
+In order for these files to deploy when you do a `dotnet publish`, you need to add the following to your `.csproj` file:
+    ```csharp
+        <ItemGroup>
+            <Content Include="config/**" CopyToOutputDirectory="Always" />
+        </ItemGroup>
+    ``` 
+:::
+
 ## Using the language keys
 
 Using core or custom language keys from your code:
