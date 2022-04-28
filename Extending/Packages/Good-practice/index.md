@@ -114,7 +114,7 @@ This is the preferred method for file IO. because not all files served up by a s
 ### Path manipulation
 Building folder path strings manually can cause problems when swapping between file systems. Windows uses the backslash character to '\\' separate folders and files, Linux uses the forward slash '/'.
 
-You should use the .Net `Path` commands wherever possible when building paths to ensure that the correct path is built. 
+You should use the .NET `Path` commands wherever possible when building paths to ensure that the correct path is built. 
 
 ``` cs
 // WRONG: don't build paths manually.
