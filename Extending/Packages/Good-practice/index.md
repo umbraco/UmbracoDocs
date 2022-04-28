@@ -135,7 +135,7 @@ Property Editors should store their settings as part of their datatype in Umbrac
 ### Don't save to appsettings.json
 You should not alter `appsettings.json` in code. 
 
-Settings in aspnet core are merged from a number of different locations at runtime. You cannot guarantee that `appsettings.json` is the location that a setting is read from and your users may well not want certain settings in that file. You can read settings from the configuration but you cannot assume they have come from `appsettings.json`.
+Settings in ASP.NET Core are merged from a number of different locations at runtime. You cannot guarantee that `appsettings.json` is the location that a setting is read from and your users may well not want certain settings in that file. You can read settings from the configuration, but you cannot assume they have come from `appsettings.json`.
 
 ### Settings locations
 There are many options for where you might save your settings and a lot will depend on the nature of your package: 
