@@ -75,8 +75,9 @@ var localTempRoot = Path.GetFullPath(hostingEnvironment.LocalTempPath);
 If you require the path of a folder relative to the site root, you can use the `IHostingEnvironment` methods to map a path. 
 
 ``` cs 
-var contentRootPath = hostingEnvironment.MapPathContentRoot("/");
-var webrootPath = hostEnvironment.MapPathWebRoot("/");
+var contentRootPath = hostingEnvironment.MapPathContentRoot("~/"); // Full physical path to the content/project root
+var webrootPath = hostEnvironment.MapPathWebRoot("~/"); // Full physical path to the web root (served publicly)
+var absolutePath = hostEnvironment.ToAbsolute("~/"); // Absolute path to use as URL
 ```
 
 ### Folder Access 
