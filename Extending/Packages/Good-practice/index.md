@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Package development good practice"
-meta.Description: "Information on common defaults and good practice for umbraco package development"
+meta.Description: "Information on good practice and common defaults for Umbraco package development"
 ---
 
 # Good practice and defaults
