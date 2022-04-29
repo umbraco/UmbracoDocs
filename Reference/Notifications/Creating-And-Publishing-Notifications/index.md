@@ -7,7 +7,7 @@ state: complete
 update-links: true
 ---
 
-# Creating a custom notification
+# Creating And Publishing Custom Notifications
 
 There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../../Scheduling/index.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
 
