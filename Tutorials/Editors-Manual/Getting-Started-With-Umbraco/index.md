@@ -11,7 +11,7 @@ In this section, you will find all the relevant topics to help you get started w
 
 - [Umbraco Interface](Umbraco-Interface/index.md)
 
-- [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index.md)
+- [Creating, Saving and Publishing, Comparing, and Transferring Content](Creating-Saving-and-Publishing-Content/index.md)
 
 - [Finding Content](Finding-Content/index.md)
 
