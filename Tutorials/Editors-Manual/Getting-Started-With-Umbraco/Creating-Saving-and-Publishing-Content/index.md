@@ -3,9 +3,9 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 ---
 
-# Creating, Saving and Publishing, Comparing, and Transferring Content
+# Creating, Saving and Publishing Content Options
 
-In this section, you will get an overview of how to create a new page, save your content, options available for publishing and unpublishing the content, compare content between environments, and transfer the content from one environment to another.
+In this section, you will get an overview of how to create and save pages. You will also learn more about how to publish and unpublish your content, as well as how you can compare content between multiple environments. Finally, you will also get an introduction to how you can transfer your created content to another environment.
 
 ## Creating a New Page
 
@@ -101,33 +101,36 @@ To set up scheduled unpublishing, follow these steps:
 ## Comparing Content between environments
 
 :::note
-Content comparison is currently available in all Umbraco Cloud projects running Umbraco Deploy 9.3+ for Umbraco 9 and Umbraco Deploy 4.5+ for Umbraco 8.
+**Compare** content is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
 :::
 
-Compare Content allows to preview content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
+Compare Content allows previewing content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
 
-You can see the **Summary Information** and **Field Comparision** values to understand what will change if you proceed to transfer the content upstream or try restoring content to the current environment.
+You can see the **Summary Information** and **Field Comparison** values to understand what will change if you proceed to transfer the content to a higher environment or try restoring content to the current environment.
 
 To compare content between environments, follow these steps:
 
 1. Navigate to the page you want to compare.
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can right-click the content node or click the **Actions** drop-down.
-3. Select **Compare**.
+3. Select **Compare** to open the **Compare** window.
 
     ![Compare option](images/Compare_option.png)
-4. In the **Compare** window, you can do the following:
-    a. **Choose the workspace** from the drop-down field.
-    b. View the **Summary information**.
-    c. In the **Field Comparision** table, view the differences between the versions in the two workspaces at the node level of each field.
-    d. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
-    e. Restore the content from the upstream environment using the **Partial restore** option.
-    f. Click **Close** to continue editing the content node.
+4. **Choose the workspace** from the drop-down field.
+5. View the **Summary information**.
+6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
+7. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
+8. Restore the content from the higher environment using the **Partial restore** option.
+9. Click **Close** to continue editing the content node.
 
     ![Comparing Content](images/Comparing_Content.png)
 
 ## Transferring content
 
-You can transfer a specific content node directly to the upstream environment without adding it to the **Queue for transfer**.
+:::note
+**Transfer now** is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
+:::
+
+You can transfer a specific content node directly to the higher environment without adding it to the **Queue for transfer**.
 
 To transfer content between environments, follow these steps:
 
@@ -136,7 +139,7 @@ To transfer content between environments, follow these steps:
 3. Select **Transfer now**.
 
     ![Transfer option](images/Transfernow_option.png)
-4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the upstream environment, without adding it to the queue.
+4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
     ![Transfer Content](images/Transfer_Content.png)
 5. Click **Transfer now**.
 
