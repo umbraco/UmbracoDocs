@@ -8,6 +8,10 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
+
+Breaking changes going from Umbraco 9 to Umbraco 10.
+
 ## Version 8 to version 9
 
 There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
