@@ -127,7 +127,7 @@ public override string GetDesignView() =>
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder="10")]
+    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder=10)]
     public string MySetting { get; set; }
 ```
 
@@ -141,7 +141,7 @@ To reference the file the setting should be configured with a full path to the v
     [Setting("My Setting",
         Description = "Help text for the setting",
         View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-        DisplayOrder="10")]
+        DisplayOrder=10)]
     public string MySetting { get; set; }
 ```
 
