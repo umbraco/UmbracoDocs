@@ -9,7 +9,10 @@ versionFrom: 7.0.0
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
 ## Version 9 to version 10
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references. Additionally, you will need to update `Program.cs` and remove some folders from your solution.
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references.
+
+After updating the nuget dependency, you will need update your project from `net5.0` to `net6.0`
+Additionally, you will need to update `Program.cs` and remove some folders from your solution.
 
 We updated the `Program` class in the `Program.cs` file to the following out of the box:
 
