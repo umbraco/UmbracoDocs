@@ -7,7 +7,7 @@ versionFrom: 9.0.0
 
 ## Overview
 
-This is step 2 in our guide to building a property editor. This step continues work on the suggestion data type we built in [step 1](index-v9.md), but goes further to show how to add configuration options to our editor.
+This is step 2 in our guide to building a property editor. This step continues work on the suggestion data type we built in [step 1](index.md), but goes further to show how to add configuration options to our editor.
 
 ## Configuration
 
@@ -105,7 +105,7 @@ So what did we add? We added a prevalue editor, with a `fields` collection. This
 
 The label "Enabled?" uses the view "boolean", so this will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`
 
-Save the manifest, restart the application and have a look at the markdown data type in Umbraco now. You should now see that you have 1 configuration option:
+Save the file, rebuild the application and have a look at the Suggestions data type in Umbraco now. You should now see that you have 1 configuration option:
 
 ![An example of how the configuration will look](images/suggestion-editor-config.png)
 
