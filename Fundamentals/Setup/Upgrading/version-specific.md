@@ -8,8 +8,8 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
-
 ## Version 9 to version 10
+
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references.
 
 After updating the nuget dependency, you will need update your project from `net5.0` to `net6.0`
@@ -49,10 +49,13 @@ Furthermore, it is recommended to remove the following files and folders:
 
 All these files are now served directly from a Razor Class Library (Umbraco.Cms.StaticAssets) or as embedded resources.
 
-
 :::note
 Please note to upgrade to Umbraco 10, you need your database to be at least on Umbraco 8.18.
 :::
+
+## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
+
+Breaking changes going from Umbraco 9 to Umbraco 10.
 
 ## Version 8 to version 9
 
