@@ -44,7 +44,7 @@ Furthermore, it is recommended to remove the following files and folders:
 - `/umbraco/UmbracoBackOffice`
 - `/umbraco/UmbracoInstall`
 - `/umbraco/UmbracoWebsite`
-- `/umbraco/lang`
+- `/umbraco/config/lang`
 
 All these files are now served directly from a Razor Class Library (Umbraco.Cms.StaticAssets) or as embedded resources.
 
