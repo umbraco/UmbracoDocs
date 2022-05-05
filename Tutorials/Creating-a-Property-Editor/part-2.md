@@ -7,7 +7,7 @@ versionFrom: 9.0.0
 
 ## Overview
 
-This is step 2 in our guide to building a property editor. This step continues work on the suggestion data type we built in [step 1](index-v9.md), but goes further to show how to add configuration options to our editor.
+This is step 2 in our guide to building a property editor. This step continues work on the suggestion data type we built in [step 1](index.md), but goes further to show how to add configuration options to our editor.
 
 ## Configuration
 
