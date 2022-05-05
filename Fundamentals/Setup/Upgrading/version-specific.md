@@ -8,6 +8,49 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 9 to version 10
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references. Additionally, you will need to update `Program.cs` and remove some folders from your solution.
+
+We updated the `Program` class in the `Program.cs` file to the following out of the box:
+
+```cs
+ public class Program
+    {
+        public static void Main(string[] args)
+            => CreateHostBuilder(args)
+                .Build()
+                .Run();
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureUmbracoDefaults()
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStaticWebAssets();
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+```
+
+The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
+
+Furthermore, it is recommended to remove the following files and folders:
+
+- `/wwwroot/umbraco`
+- `/umbraco/PartialViewMacros`
+- `/umbraco/UmbracoBackOffice`
+- `/umbraco/UmbracoInstall`
+- `/umbraco/UmbracoWebsite`
+- `/umbraco/lang`
+
+All these files are now served directly from a Razor Class Library (Umbraco.Cms.StaticAssets) or as embedded resources.
+
+
+:::note
+Please note to upgrade to Umbraco 10, you need your database to be at least on Umbraco 8.18.
+:::
+
+
 ## Version 8 to version 9
 
 There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
