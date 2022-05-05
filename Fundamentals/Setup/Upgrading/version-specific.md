@@ -9,9 +9,9 @@ versionFrom: 7.0.0
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
 ## Version 9 to version 10
-The upgrade path between Umbraco 9 and Umbraco 10 and be done directly by updating the Nuget references. Additional to that you will have to remove a couple of files from your solution.
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references. Additionally, you will need to update `Program.cs` and remove some folders from your solution.
 
-We updated the `Program` class in the `Program.cs` file to the following out of box:
+We updated the `Program` class in the `Program.cs` file to the following out of the box:
 
 ```cs
  public class Program
@@ -34,7 +34,7 @@ We updated the `Program` class in the `Program.cs` file to the following out of 
 
 The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-Furthermore it is recommended to remove the following files and folders:
+Furthermore, it is recommended to remove the following files and folders:
 
 - `/wwwroot/umbraco`
 - `/umbraco/PartialViewMacros`
