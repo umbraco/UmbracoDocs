@@ -30,7 +30,7 @@ We updated the `Program` class in the `Program.cs` file to the following out of 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStaticWebAssets();
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup&lt;Startup&gt;();
                 });
     }
 ```
