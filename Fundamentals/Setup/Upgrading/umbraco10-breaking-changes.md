@@ -9,6 +9,10 @@ meta.Description: "In this article we list the breaking changes between Umbraco 
 Below it is possible to read about the breaking changes between Umbraco 9 and 10.
 The article is subject to change, the closer we get to the launch of Umbraco 10.
 
+## Update 'diff' from 3.5.0 to 5.0.0
+
+diff library used in the Backoffice client is outdated by two major versions. Updating this will be a breaking change since the exposed global object has been renamed from JsDiff to Diff.
+
 ## V10/feature/content schedule performance
 
 Removes mutable ContentSchedule property from IContent/Content to read/write content schedules please make use of _IContentService.GetContentScheduleByContentId && IContentService.PersistContentSchedule_ or the optional _contentSchedule parameter_ on _IContentService.Save_
@@ -96,7 +100,7 @@ Lastly the nullable dates on a user, I.E. _LastLoginLate_ will now be null inste
 bool TryFindContent(IPublishedRequestBuilder request);
 ```
 
-changed to:
+Has changed to:
 
 ```CSharp
 Task<bool> TryFindContent(IPublishedRequestBuilder request)
@@ -106,6 +110,11 @@ Task<bool> TryFindContent(IPublishedRequestBuilder request)
 
 - Added more methods to **_IRedirectUrlRepository_** and **_IRedirectUrlService.cs_**
 
+## v10: Fix Block List settings exception and optimize PVCs
+
+- Added a new method on _IPublishedModelFactory: Type GetModelType(string? alias);_
+- The generic types of a _BlockListItem<TContent, TSettings>_ instance in the _BlockListModel_ returned by _BlockListPropertyValueConverter_ are now determined by calling this new method, which can be different and cause a _ModelBindingException_ in your views.
+
 ## v10: Async tree search
 
 ```CSharp
@@ -113,7 +122,7 @@ IEnumerable<SearchResultEntity?> Search(string query, int pageSize, long pageInd
 = null)
 ```
 
-changed to:
+Has changed to:
 
 ```CSharp
 Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
@@ -126,13 +135,9 @@ StackQueue has been moved from **_Umbraco.Core.Collections_** to the **_Umbraco.
 <!--
 Missing information about the breaking changes:
 
-## Update 'diff' from 3.5.0 to 5.0.0
-
 ## Implement IOptionsMonitor or IOptionsSnapshot instead of IOptions
 
 ## 11269: Make sure TemplateId is set correctly from cache
-
-## v10: Clean-up migrations and initial state
 
 ## v10: Make language name editable
 
@@ -140,5 +145,5 @@ Missing information about the breaking changes:
 
 ## V10: Move core services to core project 
 ## Update to .NET6 and ASP.NET Core 6
-## v10: Fix Block List settings exception and optimize PVCs
+
 -->
