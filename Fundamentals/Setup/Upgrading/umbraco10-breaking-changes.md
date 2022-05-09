@@ -94,7 +94,7 @@ Lastly the nullable dates on a user, I.E. _LastLoginLate_ will now be null inste
 - _ValueSet immutable._
 - _ValueSetValidationResult is renamed to ValueSetValidationStatus and ValueSetValidationResult is now a type._
 
-## v10: Async support for content finders. Improve logging performance
+## v10: Async support for content finders.
 
 ```CSharp
 bool TryFindContent(IPublishedRequestBuilder request);
