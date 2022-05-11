@@ -16,7 +16,7 @@ A full configuration with all default values can be seen here:
 ```json
 "Umbraco": {
   "CMS": {
-    "umbracoSecurity": {
+    "Security": {
       "KeepUserLoggedIn": false,
       "HideDisabledUsersInBackOffice": false,
       "AllowPasswordReset": true,
