@@ -223,7 +223,7 @@ public void ConfigureServices(IServiceCollection services)
         .AddWebsite()
         .AddComposers()
         // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>();
+        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
         .Build();
 }
 ```
