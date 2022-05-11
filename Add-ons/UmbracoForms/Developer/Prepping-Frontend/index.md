@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 For Umbraco Forms to work correctly, you need to include some client dependencies.
 
-## Umbraco Forms version 9.0.0
+## Umbraco Forms
 
 You can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Web`:
 
