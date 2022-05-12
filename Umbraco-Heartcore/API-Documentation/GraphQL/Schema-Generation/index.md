@@ -227,11 +227,11 @@ List of reserved Content Type Property names, these cannot be used as a Property
 * level
 * name
 * parent
+* content
+* parentId
 * sortOrder
 * updateDate
 * url
-* parentId
-* content
 
 ### Reserved Media Type Property Names
 
