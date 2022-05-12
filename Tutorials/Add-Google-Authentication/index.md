@@ -1,31 +1,33 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Add Google Authentication"
-meta.Description: "A guide to setup a Google login for the Umbraco backoffice."
+meta.Description: "A guide to set up a Google login for the Umbraco Backoffice."
 verified-against: 9.5.0
 ---
 
 
 # Add Google Authentication
 
-The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook. In this tutorial, we will take you through the steps of setting up a Google login for an Umbraco backoffice.
+The Umbraco Backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google, or Facebook.
+
+In this tutorial, we will take you through the steps of setting up a Google login for the Backoffice.
 
 ## What is a Google Login?
 
-When you log in to the Umbraco backoffice, you need to enter your username and password. Integrating you website with google authentication, adds a button that you can click to log in with your Google account. Here is how it looks on Umbraco v9.5.0
+When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with google authentication adds a button that you can click to log in with your Google account.
 
 ![Google login screen](images/GoogleLoginScreen_v9.png)
 
 ## Why?
 
-Why not? I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click a button and if you are already logged into Google it will log you in!
+I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click **Sign in with Google** and if you are already logged in with your Google account, it will log you in directly.
 
 ### Who is this tutorial for?
 
 **Developers** who won't mind:
 
 1. [Setting up a Google OAuth API](#setting-up-a-google-oauth-api)
-2. [Integrating Google Auth in .NET 5.0](#integrating-google-auth-in-net-50)
+2. [Integrating Google Auth in Visual Studio](#integrating-google-auth-in-visual-studio)
 3. [Configuring the solution to allow Google logins](#configuring-the-solution-to-allow-google-logins)
 
 Does that sound way too advanced for you? Then this tutorial is just the right fit. Let's get started.
@@ -36,15 +38,15 @@ For this tutorial, you need:
 
 - [Visual Studio](https://visualstudio.microsoft.com/) installed
 - A [Google](https://myaccount.google.com/) account
-- A working [Umbraco solution](../../Getting-Started/)
+- A working [Umbraco solution](../../Fundamentals/Setup/index.md)
 
 ## Setting up a Google OAuth API
 
-The first thing to do is set up a Google API. To do this you need to go to [https://console.developers.google.com/](https://console.developers.google.com/) and log in with your Google account.
+The first thing to do is set up a Google API. To do this, you need to go to [https://console.developers.google.com/](https://console.developers.google.com/) and log in with your Google account.
 
 ### Setup a Google Console Project
 
-1. At the top of the page, next to the Google Cloud Platform logo, select the project dropdown list and click **New Project**.
+1. At the top of the page, next to the Google Cloud Platform logo, select the project dropdown and click **New Project**.
     ![Project dropdown list](images/Project_dropdown_list.png)
 
 2. Enter the **Project name**, **Organization**, **Location** and click **Create**.
@@ -70,11 +72,11 @@ The first thing to do is set up a Google API. To do this you need to go to [http
 
 4. In the **Scopes** tab, select the scopes your project uses. Click **Save and Continue**.
 
-5. [Optional] In the **Test Users** tab, add the test users that can access the app. Click **Save and Continue**.
+5. [Optional] In the **Test Users** tab, add the test users that can access the application. Click **Save and Continue**.
 
-6. In the **Summary** tab, verify the provided details. Click **Back to Dashboard** or **Submit for verification**.
+6. In the **Summary** tab, verify the details provided. Click **Back to Dashboard** or **Submit for verification**.
 
-7. Click on **Credentials** from the left-side navigation menu. Click on **Create Crendentials** and select **OAuth Client ID**.
+7. Click on **Credentials** from the left-side navigation menu. Click on **Create Credentials** and select **OAuth Client ID**.
     ![OAuth Client Id](images/OAuth_Client_Id.png)
 
 8. Select **Web Application** from the **Application type** drop-down.
@@ -82,31 +84,41 @@ The first thing to do is set up a Google API. To do this you need to go to [http
 9. Enter the application **Name**, **Authorized JavaScript origins**, **Authorized redirect URIs** and click **Create**.
     ![Credentials Details](images/Credentials_v9.png)
 
-A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution. The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in **APIs & Services** menu.
+A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution. 
 
-## Integrating Google Auth in .NET 5.0
+:::note
+The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in **APIs & Services** menu.
+:::
 
-Now that you have the Google API set up, you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working with Visual Studio](../../Umbraco-Cloud/Set-Up/Working-with-Visual-Studio/) article.
+## Integrating Google Auth in Visual Studio
+
+Now that you have the Google API set up, open your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working with Visual Studio](../../Umbraco-Cloud/Set-Up/Working-with-Visual-Studio/) article.
 
 ### Installing a Nuget Package
 
+*Option 1*
+
 1. Open your project/solution in Visual Studio.
-2. Go to **Tools** -> **NuGet Package Manager** -> **Package Manager Console**. A package manager console appears at the bottom where you can install packages with commands. In this console type the following:
+2. Go to **Tools** -> **NuGet Package Manager** -> **Package Manager Console**. A package manager console appears at the bottom where you can install packages with commands. In this console, type the following:
 
     ```js
     Install-Package Microsoft.AspNetCore.Authentication.Google -Version 5.0.0
     ```
 
-    **OR**
+*Opton 2*
 
-    You can also install the `Microsoft.AspNetCore.Authentication.Google` package as shown in the below image:
+1. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
+2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
+3. Select the **version** from the drop-down and click **Install**.
     ![Install Package](images/Install_Package.png)
 
 ## Configuring the solution to allow Google logins
 
-1. To enable a user to link their user account to an external login provider such as Google in the Umbraco backoffice, you have to implement a custom named configuration  `BackOfficeExternalLoginProviderOptions` for users.
+1. To enable a user to link their user account to an external login provider such as Google in the Umbraco Backoffice, you have to implement a custom named configuration  `BackOfficeExternalLoginProviderOptions` for users.
 
-    You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice. For tutorial purposes, I have created the file in `App_Code/Google_Authentication` folder. Add the following code in the `GoogleBackOfficeExternalLoginProviderOptions.cs` file.
+    You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice. For tutorial purposes, I have created the file in `App_Code/Google_Authentication` folder. 
+    
+    Add the following code in the `GoogleBackOfficeExternalLoginProviderOptions.cs` file.
 
     ```csharp
     using Microsoft.Extensions.Options;
@@ -169,7 +181,7 @@ Now that you have the Google API set up, you have to go to your existing solutio
                         // i.e. Sync the user's name based on the Claims returned
                         // in the externalLogin info
 
-                        return true; //returns a boolean indicating if sign in should continue or not.
+                        return true; //returns a boolean indicating if sign-in should continue or not.
                     }
                 };
 
@@ -224,9 +236,11 @@ Now that you have the Google API set up, you have to go to your existing solutio
     }
     ```
 
-    Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window.
+    :::note
+    Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
+    :::
 
-3. Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. An example may look like:
+3. Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;
@@ -242,15 +256,15 @@ Now that you have the Google API set up, you have to go to your existing solutio
     }
     ```
 
-4. Build and run the website. The first time you will have to link the provider to an account from the back office.
+4. Build and run the website. The first time you will have to link the provider to your account from the Backoffice.
 
-5. Log in to the backoffice. Click on your user profile in the top-right corner and select **Link your Google account**:
+5. Log in to the Backoffice. Click on your user profile in the top-right corner and select **Link your Google account**:
     ![Link to Google Account from Backoffice](images/Link_Google_Account_Backoffice.png)
 
 6. In the **Choose an account** window, select the account you wish to link with the google console project.
     ![Choose Google Sign-in account](images/Link_Google-sign-in.png)
 
-7. For future backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the backoffice with just a click!
+7. For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice with just a click!
     ![Google login screen](images/GoogleLoginScreen_v9.png)
 
 ## Related Links
