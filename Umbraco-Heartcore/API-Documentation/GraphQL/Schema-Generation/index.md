@@ -163,8 +163,8 @@ List of reserved type names, these cannot be used as an `alias` for Content Type
 The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 :::
 
-* BlockListItem
 * BigInt
+* BlockListItem
 * Byte
 * Content
 * Date
