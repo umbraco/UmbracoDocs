@@ -194,7 +194,6 @@ The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 * OurUmbracoGMaps
 * OurUmbracoGMapsAddress
 * OurUmbracoGMapsCoordinate
-* OurUmbracoGMapsAddress
 * OurUmbracoGMapsMapConfig
 * OurUmbracoGMapsMapType
 * PageInfo
