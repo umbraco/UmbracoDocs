@@ -163,6 +163,7 @@ List of reserved type names, these cannot be used as an `alias` for Content Type
 The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 :::
 
+* BlockListItem
 * BigInt
 * Byte
 * Content
@@ -187,7 +188,15 @@ The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 * LinkType
 * Long
 * Media
+* MediaConnection
+* MediaEdge
 * Milliseconds
+* OurUmbracoGMaps
+* OurUmbracoGMapsAddress
+* OurUmbracoGMapsCoordinate
+* OurUmbracoGMapsAddress
+* OurUmbracoGMapsMapConfig
+* OurUmbracoGMapsMapType
 * PageInfo
 * PickedColor
 * Query
@@ -198,11 +207,7 @@ The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 * ULong
 * Uri
 * UShort
-* OurUmbracoGMapsMapType
-* OurUmbracoGMapsMapConfig
-* OurUmbracoGMapsCoordinate
-* OurUmbracoGMapsAddress
-* OurUmbracoGMaps
+
 
 ### Reserved Element Type Property Names
 
