@@ -84,7 +84,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 9. Enter the application **Name**, **Authorized JavaScript origins**, **Authorized redirect URIs** and click **Create**.
     ![Credentials Details](images/Credentials_v9.png)
 
-A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution. 
+A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
 
 :::note
 The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in **APIs & Services** menu.
@@ -96,7 +96,11 @@ Now that you have the Google API set up, open your existing solution in Visual S
 
 ### Installing a Nuget Package
 
-*Option 1*
+You can install and manage packages in Visual Studio either using the Package Manager Console (PowerShell) or the NuGet Package Manager.
+
+#### Option 1: Package Manager Console (PowerShell)
+
+The NuGet Package Manager Console lets you use NuGet PowerShell commands to find, install, uninstall, and update NuGet packages. You can use this option if you are comfortable using the Package Manager Console (PowerShell). The command listed below is specific to the Package Manager Console in Visual Studio:
 
 1. Open your project/solution in Visual Studio.
 2. Go to **Tools** -> **NuGet Package Manager** -> **Package Manager Console**. A package manager console appears at the bottom where you can install packages with commands. In this console, type the following:
@@ -105,12 +109,16 @@ Now that you have the Google API set up, open your existing solution in Visual S
     Install-Package Microsoft.AspNetCore.Authentication.Google -Version 5.0.0
     ```
 
-*Opton 2*
+#### Opton 2: NuGet Package Manager
+
+The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
 
 1. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
 3. Select the **version** from the drop-down and click **Install**.
     ![Install Package](images/Install_Package.png)
+
+For more information on installing and managing packages in Visual Studio, see the [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
 
 ## Configuring the solution to allow Google logins
 
