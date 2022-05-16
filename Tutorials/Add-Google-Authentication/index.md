@@ -32,7 +32,7 @@ I'm sure a lot of content editors and implementors of your Umbraco sites would l
 
 Does that sound way too advanced for you? Then this tutorial is just the right fit. Let's get started.
 
-### Pre-requisites
+### Prerequisites
 
 For this tutorial, you need:
 
