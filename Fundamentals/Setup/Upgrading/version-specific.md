@@ -42,7 +42,7 @@ public class Program
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStaticWebAssets();
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup&lt;Startup&gt;();
                 });
     }
 ```
