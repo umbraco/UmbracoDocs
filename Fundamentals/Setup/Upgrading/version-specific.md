@@ -16,7 +16,7 @@ The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updati
 
 - Open your Umbraco 9 project in Visual Studio
 
-- Go to "__tools > NuGet Package Manager > Manage NuGet Packages for Solutions...__"
+- Go to "__Tools > NuGet Package Manager > Manage NuGet Packages for Solution...__"
 
 - In the NuGet Package manager go to "Installed" and choose __Umbraco.Cms__
 
