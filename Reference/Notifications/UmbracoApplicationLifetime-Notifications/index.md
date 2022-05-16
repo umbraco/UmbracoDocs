@@ -82,7 +82,9 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
   <tr>
     <td>UmbracoApplicationStartedNotification</td>
     <td>
-       bool IsRestarting
+      <ul>
+        <li>bool IsRestarting</li>
+      </ul>
     </td>
     <td>
       Triggered when the application has fully started and is accepting incoming requests.<br />
