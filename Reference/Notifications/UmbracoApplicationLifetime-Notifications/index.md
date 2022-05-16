@@ -7,7 +7,7 @@ state: complete
 update-links: true
 ---
 
-# UmbracoApplicationLifetime Notifications
+# Umbraco Application Lifetime Notifications
 
 The UmbracoApplicationLifetime class implements IUmbracoApplicationLifetimeNotification. It represents an Umbraco application lifetime such as starting, started, stopping, and stopped notifications.
 
