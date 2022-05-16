@@ -9,12 +9,21 @@ versionFrom: 7.0.0
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
 ## Version 9 to version 10
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references.
 
-After updating the nuget dependency, you will need update your project from `net5.0` to `net6.0`
-Additionally, you will need to update `Program.cs` and remove some folders from your solution.
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet.
 
-We updated the `Program` class in the `Program.cs` file to the following out of the box:
+### Steps on how to upgrade using Visual Studio
+
+- Open your Umbraco 9 project in Visual Studio
+
+- Go to "__tools > NuGet Package Manager > Manage NuGet Packages for Solutions...__"
+
+- In the NuGet Package manager go to "Installed" and choose __Umbraco.Cms__
+
+- Choose Umbraco 10 and install the version in your project.
+
+After updating the project through NuGet, you will need update your project from `net5.0` to `net6.0`
+Additionally, you will need to update the `Program.cs`to the following:
 
 ```cs
  public class Program
@@ -37,7 +46,7 @@ We updated the `Program` class in the `Program.cs` file to the following out of 
 
 The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-Furthermore, it is recommended to remove the following files and folders:
+Finally remove the following files and folders:
 
 - `/wwwroot/umbraco`
 - `/umbraco/PartialViewMacros`
@@ -46,13 +55,11 @@ Furthermore, it is recommended to remove the following files and folders:
 - `/umbraco/UmbracoWebsite`
 - `/umbraco/config/lang`
 
-All these files are now served directly from a Razor Class Library (Umbraco.Cms.StaticAssets) or as embedded resources.
-
+All these files are now served directly from a Razor Class Library (__Umbraco.Cms.StaticAssets__) or as embedded resources.
 
 :::note
-Please note to upgrade to Umbraco 10, you need your database to be at least on Umbraco 8.18.
+Please note to upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
-
 
 ## Version 8 to version 9
 
