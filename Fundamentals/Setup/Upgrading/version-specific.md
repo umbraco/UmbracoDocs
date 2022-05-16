@@ -49,7 +49,7 @@ public class Program
 
 The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-Finally remove the following files and folders:
+Finally, remove the following files and folders:
 
 - `/wwwroot/umbraco`
 - `/umbraco/PartialViewMacros`
