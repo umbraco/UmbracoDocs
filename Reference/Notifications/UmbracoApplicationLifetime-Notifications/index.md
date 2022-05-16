@@ -112,7 +112,9 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
   <tr>
     <td>UmbracoApplicationStoppedNotification</td>
     <td>
-      bool IsRestarting
+      <ul>
+        <li>bool IsRestarting</li>
+      </ul>
     </td>
     <td>
       Triggered when the application has performed a graceful shutdown.<br />
