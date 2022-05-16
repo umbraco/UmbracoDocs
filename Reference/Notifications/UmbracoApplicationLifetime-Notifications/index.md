@@ -19,27 +19,37 @@ Example usage of the UmbracoApplicationLifetime notifications:
 
 ```C#
 using Microsoft.Extensions.Logging;
+using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MySite
+public class UmbracoApplicationNotificationComposer : IComposer
 {
-  public class UmbracoApplicationNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>, INotificationHandler<UmbracoApplicationStartedNotification>, INotificationHandler<UmbracoApplicationStoppingNotification>, INotificationHandler<UmbracoApplicationStoppedNotification>
+    public void Compose(IUmbracoBuilder builder)
     {
-      private readonly ILogger _logger;
-
-      public UmbracoApplicationNotificationHandler(ILogger<UmbracoApplicationNotificationHandler> logger) => _logger = logger;
-
-      public void Handle(UmbracoApplicationStartingNotification notification) => Log(notification, notification.IsRestarting);
-
-      public void Handle(UmbracoApplicationStartedNotification notification) => Log(notification, notification.IsRestarting);
-
-      public void Handle(UmbracoApplicationStoppingNotification notification) => Log(notification, notification.IsRestarting);
-
-      public void Handle(UmbracoApplicationStoppedNotification notification) => Log(notification, notification.IsRestarting);
-
-      private void Log(INotification notification, bool isRestarting) => _logger.LogInformation("{Type} - {IsRestarting}", notification.GetType().Name, isRestarting);
+        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, UmbracoApplicationNotificationHandler>();
+        builder.AddNotificationHandler<UmbracoApplicationStartedNotification, UmbracoApplicationNotificationHandler>();
+        builder.AddNotificationHandler<UmbracoApplicationStoppingNotification, UmbracoApplicationNotificationHandler>();
+        builder.AddNotificationHandler<UmbracoApplicationStoppedNotification, UmbracoApplicationNotificationHandler>();
     }
+}
+
+public class UmbracoApplicationNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>, INotificationHandler<UmbracoApplicationStartedNotification>, INotificationHandler<UmbracoApplicationStoppingNotification>, INotificationHandler<UmbracoApplicationStoppedNotification>
+{
+    private readonly ILogger _logger;
+
+    public UmbracoApplicationNotificationHandler(ILogger<UmbracoApplicationNotificationHandler> logger) => _logger = logger;
+
+    public void Handle(UmbracoApplicationStartingNotification notification) => Log(notification, notification.IsRestarting);
+
+    public void Handle(UmbracoApplicationStartedNotification notification) => Log(notification, notification.IsRestarting);
+
+    public void Handle(UmbracoApplicationStoppingNotification notification) => Log(notification, notification.IsRestarting);
+
+    public void Handle(UmbracoApplicationStoppedNotification notification) => Log(notification, notification.IsRestarting);
+
+    private void Log(INotification notification, bool isRestarting) => _logger.LogInformation("{Type} - {IsRestarting}", notification.GetType().Name, isRestarting);
 }
 ```
 
