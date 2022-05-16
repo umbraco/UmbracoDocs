@@ -115,8 +115,10 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
       bool IsRestarting
     </td>
     <td>
-    Initializes a new instance of the UmbracoApplicationStoppedNotification class.<br>
-    IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).
+      Triggered when the application has performed a graceful shutdown.<br />
+      <ol>
+        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
+      </ol>
     </td>
   </tr>
 
