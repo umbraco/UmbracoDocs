@@ -14,7 +14,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 ## What is a Google Login?
 
-When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with google authentication adds a button that you can click to log in with your Google account.
+When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
 ![Google login screen](images/GoogleLoginScreen_v9.png)
 
