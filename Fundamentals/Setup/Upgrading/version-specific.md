@@ -61,7 +61,7 @@ Finally, remove the following files and folders:
 All these files are now served directly from a Razor Class Library (__Umbraco.Cms.StaticAssets__) or as embedded resources.
 
 :::note
-Please note to upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
+To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
 
 ## Version 8 to version 9
