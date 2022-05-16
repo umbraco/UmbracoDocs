@@ -9,7 +9,7 @@ update-links: true
 
 # Umbraco Application Lifetime Notifications
 
-Umbraco application lifetime notifications are published for the starting, started, stopping, and stopped events of the Umbraco runtime. These events implement the `IUmbracoApplicationLifetimeNotification` interface that contain a single `IsRestarting` property.
+Umbraco application lifetime notifications are published for the starting, started, stopping, and stopped events of the Umbraco runtime. These events implement the `IUmbracoApplicationLifetimeNotification` interface that contains a single `IsRestarting` property.
 
 A Umbraco application is restarted after an install or upgrade has been completed, so you can use this property to prevent running code twice (on initial boot and restart). To prevent running code when the application is in the install or upgrade state, inject an `IRuntimeState` instance in your notification and inspect the `Level` property instead.
 
