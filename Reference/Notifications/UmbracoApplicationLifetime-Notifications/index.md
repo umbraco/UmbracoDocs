@@ -97,7 +97,9 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
   <tr>
     <td>UmbracoApplicationStoppingNotification</td>
     <td>
-    bool IsRestarting
+      <ul>
+        <li>bool IsRestarting</li>
+      </ul>
     </td>
     <td>
     Initializes a new instance of the UmbracoApplicationStoppingNotification class.<br>
