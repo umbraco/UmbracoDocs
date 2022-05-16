@@ -9,9 +9,9 @@ update-links: true
 
 # Umbraco Application Lifetime Notifications
 
-Umbraco application lifetime notifications are published for the starting, started, stopping and stopped events of the Umbraco runtime and they all implement the `IUmbracoApplicationLifetimeNotification` interface that exposes a single `IsRestarting` property.
+Umbraco application lifetime notifications are published for the starting, started, stopping, and stopped events of the Umbraco runtime. These events implement the `IUmbracoApplicationLifetimeNotification` interface that contain a single `IsRestarting` property.
 
-An Umbraco application is restarted after an install or upgrade has completed, so you can use this property to prevent running code twice (on initial boot and restart). To prevent running code when the application is in the install or upgrade state, inject an `IRuntimeState` instance in your notification and inspect the `Level` property instead.
+An Umbraco application is restarted after an install or upgrade has been completed, so you can use this property to prevent running code twice (on initial boot and restart). To prevent running code when the application is in the install or upgrade state, inject an `IRuntimeState` instance in your notification and inspect the `Level` property instead.
 
 ## Usage
 
@@ -71,7 +71,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
       </ul>
     </td>
     <td>
-      Triggered when the application is starting, after all `IComponent`s are initialized, but before any incoming requests are accepted.<br />
+        Triggered when the application is starting, after all <code>IComponents</code> are initialized but before any incoming requests are accepted.<br />
       <ol>
         <li>RuntimeLevel: Gets the runtime level.</li>
         <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
@@ -102,7 +102,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
       </ul>
     </td>
     <td>
-      Triggered when the application is performing a graceful shutdown, after all `IComponent`s are terminated.<br />
+      Triggered when the application is performing a graceful shutdown after all <code>IComponents</code> are terminated.<br />
       <ol>
         <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
       </ol>
