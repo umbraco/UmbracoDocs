@@ -24,8 +24,8 @@ The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updati
 
 - Build and run your project to finish the installation of Umbraco 10.
 
-After updating the project through NuGet, you will need update your project from `net5.0` to `net6.0`
-Additionally, you will need to update the `Program.cs`to the following:
+After updating the project through NuGet, you will need to update your project from `net5.0` to `net6.0`
+Additionally, you will need to update the `Program.cs` to the following:
 
 ```cs
 using Umbraco.Cms.Web.Common.Hosting;
