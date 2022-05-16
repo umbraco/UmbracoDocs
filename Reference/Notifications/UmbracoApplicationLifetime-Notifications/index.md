@@ -71,7 +71,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
       </ul>
     </td>
     <td>
-    Initializes a new instance of the UmbracoApplicationStartingNotification class.<br>
+      Triggered when the application is starting, after all `IComponent`s are initialized, but before any incoming requests are accepted.<br />
       <ol>
         <li>RuntimeLevel: Gets the runtime level.</li>
         <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
