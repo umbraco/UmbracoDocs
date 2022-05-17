@@ -38,7 +38,7 @@ NPoco types and interfaces are part of our public interface and there are change
 
 - Removed `ReadLock` and `WriteLock` methods from _ISqlSyntaxProvider_ interface. Use  _IDistributedLockingMechanism_ (or IScope which delegates to _IDistributedLockingMechanism_) instead.
 
-- Constants for SQL Server provider name moved+consolidated from _Core.Constants.DatabaseProviders_ & _Core.Constants.-DbProviderNames_ to _Umbraco.Cms.Persistence.SqlServer.Constants_
+- Constants for SQL Server provider name moved+consolidated from _Core.Constants.DatabaseProviders_ and _Core.Constants.-DbProviderNames_ to _Umbraco.Cms.Persistence.SqlServer.Constants_
 
 - Various SQL Server related services moved from the Umbraco.Infrastructure project to the new Umbraco.Cms.
 Persistence.- SqlServer project with altered namespaces e.g.
