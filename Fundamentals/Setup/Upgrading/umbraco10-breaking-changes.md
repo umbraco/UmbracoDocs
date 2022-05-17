@@ -60,7 +60,7 @@ Persistence.- SqlServer project with altered namespaces e.g.
 
 - _SixLabors.ImageSharp from 1.0.4 to 2.1.1 (see breaking changes in v2.0.0 release notes);_
 
-- _SixLabors.ImageSharp.Web from 1.0.5 to 2.0.0 (see breaking changed in release notes);_
+- _SixLabors.ImageSharp.Web from 1.0.5 to 2.0.0_
 
 Renamed CachedNameLength property to CacheHashLength on ImagingCacheSettings.
 
