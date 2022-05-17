@@ -51,10 +51,10 @@ IIS can host .NET 5 applications using 2 different hosting models
 In-process hosting runs an .NET 5 app in the same process as its IIS worker process
 - Out-of-process - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/out-of-process-hosting?view=aspnetcore-5.0 - to enable this model you need to edit your .csproj file and add:
 
-```
-    <PropertyGroup>
-      <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    </PropertyGroup>
+```js
+<PropertyGroup>
+  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+</PropertyGroup>
 ```
 
 Out-of-process .NET 5 apps run in a separate from the IIS worker process. The module controls the management of the Kestrel server and requests are proxied between them.

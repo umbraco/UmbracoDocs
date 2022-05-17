@@ -10,15 +10,26 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ## Version 9 to version 10
 
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project NuGet references.
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet.
 
-After updating the nuget dependency, you will need update your project from `net5.0` to `net6.0`
-Additionally, you will need to update `Program.cs` and remove some folders from your solution.
+### Steps on how to upgrade using Visual Studio
 
-We updated the `Program` class in the `Program.cs` file to the following out of the box:
+- Open your Umbraco 9 project in Visual Studio.
+
+- Go to "__Tools > NuGet Package Manager > Manage NuGet Packages for Solution...__"
+
+- In the NuGet Package manager go to **Installed** and choose __Umbraco.Cms__
+
+- Choose **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
+
+- Build and run your project to finish the installation of Umbraco 10.
+
+After updating the project through NuGet, you will need to update your project from `net5.0` to `net6.0`
+Additionally, you will need to update the `Program.cs` to the following:
 
 ```cs
- public class Program
+using Umbraco.Cms.Web.Common.Hosting;
+public class Program
     {
         public static void Main(string[] args)
             => CreateHostBuilder(args)
@@ -31,26 +42,24 @@ We updated the `Program` class in the `Program.cs` file to the following out of 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStaticWebAssets();
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup&lt;Startup&gt;();
                 });
     }
 ```
 
 The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-Furthermore, it is recommended to remove the following files and folders:
+Finally, remove the following files and folders:
 
 - `/wwwroot/umbraco`
 - `/umbraco/PartialViewMacros`
 - `/umbraco/UmbracoBackOffice`
 - `/umbraco/UmbracoInstall`
 - `/umbraco/UmbracoWebsite`
-- `/umbraco/lang`
-
-All these files are now served directly from a Razor Class Library (Umbraco.Cms.StaticAssets) or as embedded resources.
-
+- `/umbraco/config/lang`
+- 
 :::note
-Please note to upgrade to Umbraco 10, you need your database to be at least on Umbraco 8.18.
+To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
 
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)

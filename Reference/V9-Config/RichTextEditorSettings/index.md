@@ -75,3 +75,17 @@ When specifying these, every object should contain:
 ## Custom config
 
 Allows you to specify custom key value pairs for the rich text editor.
+
+### Examples
+Remove default ```<p>``` tag
+```json    
+  "Umbraco": {
+    "CMS": {
+      "RichTextEditor": {
+        "CustomConfig": {
+          "forced_root_block": ""
+        }
+      }
+    }
+  }
+```
