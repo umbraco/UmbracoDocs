@@ -24,7 +24,7 @@ Removes mutable ContentSchedule property from `IContent/Content` to `read/write`
 
 ## v10 scope provider cleanup
 
-- Some public classes in the _Cms.Core.Services_ namespace have moved assembly from **_Umbraco.Cms.Infrastructure_** to **_Umbraco.Cms.Core_**
+- Some public classes in the _Cms.Core.Services_ namespace has moved assembly from **_Umbraco.Cms.Infrastructure_** to **_Umbraco.Cms.Core_**.
 
 - These same public classes have changed namespace from **_Umbraco.Cms.Core.Services.Implement_** to **_Umbraco.Cms.Core.Services_**.
 
