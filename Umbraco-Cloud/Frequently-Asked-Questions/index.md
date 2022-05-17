@@ -276,3 +276,7 @@ You can read more about database backups and how to perform these on Umbraco Clo
 #### Filesystem
 
 Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
+
+#### Blob Storage containers
+
+Umbraco Cloud keeps 35 days of snapshots of the Blob Storage container for disaster recovery purposes.
