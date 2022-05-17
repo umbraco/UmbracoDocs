@@ -66,7 +66,7 @@ Renamed `CachedNameLength` property to `CacheHashLength` on **ImagingCacheSettin
 
 Moved **ImageSharpImageUrlGenerator** from project `Umbraco.Infrastructure` to `Umbraco.Web.Common` and updated the corresponding namespace and DI registration (from `AddCoreInitialServices()` to `AddUmbracoImageSharp()`);
 
-Moved ImageSharp configuration from the _AddUmbracoImageSharp()_ extension method into separate _IConfigureOptions<>_ implementations:
+Moved **ImageSharp** configuration from the _AddUmbracoImageSharp()_ extension method into separate _IConfigureOptions<>_ implementations:
 
 - _The middleware is configured in ConfigureImageSharpMiddlewareOptions (which also replaces ImageSharpConfigurationOptions that previously only set the default ImageSharp configuration);_
 
