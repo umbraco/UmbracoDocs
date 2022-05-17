@@ -103,7 +103,7 @@ bool TryFindContent(IPublishedRequestBuilder request);
 Has changed to:
 
 ```CSharp
-Task<bool> TryFindContent(IPublishedRequestBuilder request)
+Task<bool> TryFindContent(IPublishedRequestBuilder request);
 ```
 
 ## v10: Improve redirect content finder scalability
