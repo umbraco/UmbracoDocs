@@ -85,7 +85,7 @@ This is breaking because it is no longer possible to access the properties liste
 
 Additionally, when previously you resolved a member as published content, all the default properties would be there twice, for instance, _IsLockedOut_ would be there both as a property with the alias _umbracoMemberLockedOut_ and with the alias _IsLockedOut_, now it'll only be there once, with the alias being the name of the property, so _IsLockedOut_ in this instance.
 
-Lastly the nullable dates on a user, I.E. _LastLoginLate_ will now be null instead of _DateTime.MinValue_ when getting a user with the user service.
+Lastly the nullable dates on a user, i.e. _LastLoginLate_ will now be null instead of _DateTime.MinValue_ when getting a user with the user service.
 
 ## Update examine to version 3
 
