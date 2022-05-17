@@ -34,7 +34,7 @@ NPoco types and interfaces are part of our public interface and there are change
 
 ## v10 SQLite support + distributed locking abstractions
 
-- Removed support for Microsoft SQL Server Compact (SQL CE)
+- Removed support for Microsoft SQL Server Compact (SQL CE).
 
 - Removed ReadLock & WriteLock methods from _ISqlSyntaxProvider_ interface, please instead make use of - _IDistributedLockingMechanism_ (or IScope which delegates to _IDistributedLockingMechanism_).
 
