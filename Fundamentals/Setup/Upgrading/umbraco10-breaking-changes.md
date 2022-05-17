@@ -113,7 +113,7 @@ Task<bool> TryFindContent(IPublishedRequestBuilder request);
 ## v10: Fix Block List settings exception and optimize PVCs
 
 - Added a new method on _IPublishedModelFactory: Type GetModelType(string? alias);_
-- The generic types of a _BlockListItem<TContent, TSettings>_ instance in the _BlockListModel_ returned by _BlockListPropertyValueConverter_ are now determined by calling this new method, which can be different and cause a _ModelBindingException_ in your views.
+- The generic types of a _BlockListItem<TContent, TSettings>_ instance in the _BlockListModel_ returned by _BlockListPropertyValueConverter_ is now determined by calling this new method, which can be different and cause a _ModelBindingException_ in your views.
 
 ## v10: Async tree search
 
