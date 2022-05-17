@@ -11,7 +11,7 @@ The article is subject to change, the closer we get to the launch of Umbraco 10.
 
 ## Update 'diff' from 3.5.0 to 5.0.0
 
-diff library used in the Backoffice client is outdated by two major versions. Updating this will be a breaking change since the exposed global object has been renamed from JsDiff to Diff.
+`diff `library used in the Backoffice client is outdated by two major versions. Updating this will be a breaking change since the exposed global object has been renamed from `JsDiff `to `Diff`.
 
 ## V10/feature/content schedule performance
 
