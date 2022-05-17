@@ -15,7 +15,7 @@ The article is subject to change, the closer we get to the launch of Umbraco 10.
 
 ## V10/feature/content schedule performance
 
-Removes mutable ContentSchedule property from IContent/Content to read/write content schedules please make use of _IContentService.GetContentScheduleByContentId && IContentService.PersistContentSchedule_ or the optional _contentSchedule parameter_ on _IContentService.Save_
+Removes mutable ContentSchedule property from `IContent/Content` to `read/write` content schedules. Use _IContentService.GetContentScheduleByContentId && IContentService.PersistContentSchedule_ or the optional _contentSchedule parameter_ on _IContentService.Save_ instead.
 
 ## v10 misc - Removed some redundant event handling code
 
