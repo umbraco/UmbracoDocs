@@ -62,7 +62,7 @@ Persistence.- SqlServer project with altered namespaces e.g.
 
 - _SixLabors.ImageSharp.Web from 1.0.5 to 2.0.0_
 
-Renamed CachedNameLength property to CacheHashLength on ImagingCacheSettings.
+Renamed `CachedNameLength` property to `CacheHashLength` on **ImagingCacheSettings**.
 
 Moved ImageSharpImageUrlGenerator from project Umbraco.Infrastructure to Umbraco.Web.Common and updated the corresponding namespace and DI registration (from AddCoreInitialServices() to AddUmbracoImageSharp());
 
