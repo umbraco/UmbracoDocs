@@ -19,7 +19,7 @@ Removes mutable ContentSchedule property from `IContent/Content` to `read/write`
 
 ## v10 misc - Removed some redundant event handling code
 
-- Removed public methods: _PublishedSnapshotServiceEventHandler.Dispose_, _PublishedSnapshotServiceEventHandler.Dispose(bool)_ and _.PublishedSnapshotServiceEventHandler.Initialize_
+- Removed public methods: _PublishedSnapshotServiceEventHandler.Dispose_, _PublishedSnapshotServiceEventHandler.Dispose(bool)_, and _.PublishedSnapshotServiceEventHandler.Initialize_.
 - Removed public ctor.
 
 ## v10 scope provider cleanup
