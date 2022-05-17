@@ -45,7 +45,7 @@ Persistence.- SqlServer project with altered namespaces e.g.
 
 - _SqlServerSyntaxProvider_, _SqlServerBulkSqlInsertProvider_, _SqlServerDatabaseCreator_
 
-**Added various methods / properties to ISqlSyntaxProvider, these must be implemented in any downstream implementation e.g:**
+**Added the following methods/properties to ISqlSyntaxProvider. These must be implemented in any downstream implementation e.g:**
 
 - _ISqlSyntaxProvider.HandleCreateTable(IDatabase,TableDefinition,Boolean)_
 - _ISqlSyntaxProvider.GetFieldNameForUpdate()_
