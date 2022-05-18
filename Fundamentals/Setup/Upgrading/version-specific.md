@@ -57,12 +57,14 @@ Finally, remove the following files and folders:
 - `/umbraco/UmbracoInstall`
 - `/umbraco/UmbracoWebsite`
 - `/umbraco/config/lang`
-
-All these files are now served directly from a Razor Class Library (__Umbraco.Cms.StaticAssets__) or as embedded resources.
-
+- 
 :::note
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
+
+## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
+
+Breaking changes going from Umbraco 9 to Umbraco 10.
 
 ## Version 8 to version 9
 
