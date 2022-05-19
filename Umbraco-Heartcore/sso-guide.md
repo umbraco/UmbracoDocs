@@ -28,16 +28,18 @@ It is not possible to reset your password when going through the verification pr
 Once you are ready follow the steps below:
 
 1. Go to the backoffice of your Umbraco Heartcore project, which will redirect you to a central login page.
-3. Enter your email and password and click sign in:
+2. Enter your email and password and click sign in:
 ![Login page](images/Login1.png)
 
-4. You will be prompted to request a verification code which will be sent to your email address
+3. Request a verification code which will be sent to your email address
 ![Login page](images/ssoHC1.png)
 
-5. Enter the verification code and press verify
+4. Enter the verification code and press verify
 ![Login page](images/ssoHC4.png)
 
-6. Once the code has been verified, click continue and you are done and will be redirected to the backoffice of your heartcore project.
+5. Click continue once the code has been verified. 
 ![Login page](images/ssoHC6.png)
+
+You are now done and will be redirected to the backoffice of your Umbraco Heartcore project.
 
 When the steps are completed your backoffice user has been migrated to Umbraco ID and single sign-on is enabled. This means that the login for all your projects will be centralized with one login through Umbraco ID for all your projects, Cloud and Heartcore, and the Umbraco Cloud portal.
