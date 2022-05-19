@@ -8,7 +8,7 @@ Once you log in to your Umbraco Heartcore project after the migration, you will 
 
 Before verifying your user, make sure that you have the username and password ready.
 
-If you have saved your password in your browser, make sure to find it by following the following guides:
+If you have saved your password in your browser, make sure to find it by using the browser-specific guides:
 
 Chrome
 - https://support.google.com/chrome/answer/95606?hl=en&co=GENIE.Platform%3DDesktop
