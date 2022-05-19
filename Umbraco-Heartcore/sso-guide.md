@@ -41,4 +41,4 @@ Once you are ready follow the steps below:
 6. Once the code has been verified, click continue and you are done and will be redirected to the backoffice of your heartcore project.
 ![Login page](images/ssoHC6.png)
 
-This process will need to be done all environments, for each of your Umbraco Heartcore projects. When the steps are completed your backoffice user has been migrated to Umbraco ID and single sign-on is enabled. This means it’s the same user/password for all your projects, Cloud and Heartcore, and the Umbraco Cloud portal.
+When the steps are completed your backoffice user has been migrated to Umbraco ID and single sign-on is enabled. This means that the login for all your projects will be centralized with one login through Umbraco ID for all your projects, Cloud and Heartcore, and the Umbraco Cloud portal.
