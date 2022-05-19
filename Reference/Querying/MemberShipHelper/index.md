@@ -7,7 +7,7 @@ versionRemoved: 9.0.0
 :::warning
 The topic covered in this article is only relevant to you if you are using Umbraco 8 or below.
 
-This article is not relevant to you if you are using Umbraco 9 or above.
+If you are using Umbraco 9 or above, see the [IMemberManager](../IMemberManager/index.md) article.
 :::
 
 # Membershiphelper
