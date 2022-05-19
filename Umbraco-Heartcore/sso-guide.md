@@ -1,6 +1,6 @@
 # Single-Sign-On for Umrbaco Heartcore
 
-As of May 24, 2022, all Umbraco Heartcore projectss have been migrated to use UmbracoID for single sign-on. The first time you log in to your Umbraco Heartcore project, after the upgrade, there are a few steps you need to take.
+As of May 24, 2022, all Umbraco Heartcore projects have been migrated to use UmbracoID for single sign-on. The first time you log in to your Umbraco Heartcore project, after the upgrade, there are a few steps you need to take.
 
 ## How to verify your User after the UmbracoID Migration
 
