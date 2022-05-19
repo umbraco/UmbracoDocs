@@ -3,7 +3,7 @@ Meta.Title: Single-Sign-On for Umbraco Heartcore
 Meta.Description: Short guide on how to log in the first time after a Heartcore project has been migrated to UmbracoID
 ---
 
-# Single-Sign-On for Umrbaco Heartcore
+# Single-Sign-On for Umbraco Heartcore
 
 As of May 24, 2022, all Umbraco Heartcore projects have been migrated to use UmbracoID for single sign-on. The first time you log in to your Umbraco Heartcore project, after the upgrade, there are a few steps you need to take.
 
