@@ -27,8 +27,7 @@ It is not possible to reset your password when going through the verification pr
 
 Once you are ready follow the steps below:
 
-1. Go to the backoffice of your Umbraco Heartcore project
-2. You will be redirected to a central login page
+1. Go to the backoffice of your Umbraco Heartcore project, which will redirect you to a central login page.
 3. Enter your email and password and click sign in:
 ![Login page](images/Login1.png)
 
