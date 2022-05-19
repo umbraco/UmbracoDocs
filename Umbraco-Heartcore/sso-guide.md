@@ -1,3 +1,8 @@
+---
+Meta.Title: Single-Sign-On for Umbraco Heartcore
+Meta.Description: Short guide on how to log in the first time after a Heartcore project has been migrated to UmbracoID
+---
+
 # Single-Sign-On for Umrbaco Heartcore
 
 As of May 24, 2022, all Umbraco Heartcore projects have been migrated to use UmbracoID for single sign-on. The first time you log in to your Umbraco Heartcore project, after the upgrade, there are a few steps you need to take.
@@ -10,14 +15,11 @@ Before verifying your user, make sure that you have the username and password re
 
 If you have saved your password in your browser, make sure to find it by using the browser-specific guides:
 
-Chrome
-- https://support.google.com/chrome/answer/95606?hl=en&co=GENIE.Platform%3DDesktop
+- [Chrome](https://support.google.com/chrome/answer/95606?hl=en&co=GENIE.Platform%3DDesktop)
 
-Firefox:
-- https://nordpass.com/blog/view-edit-delete-saved-passwords-firefox/
+- [Firefox](https://nordpass.com/blog/view-edit-delete-saved-passwords-firefox/)
 
-Safari:
-- https://support.apple.com/en-us/HT211145
+- [Safari](https://support.apple.com/en-us/HT211145)
 
 :::warning
 It is not possible to reset your password when going through the verification process - this is why it is key that you know the password beforehand.
