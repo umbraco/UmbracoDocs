@@ -57,7 +57,19 @@ Finally, remove the following files and folders:
 - `/umbraco/UmbracoInstall`
 - `/umbraco/UmbracoWebsite`
 - `/umbraco/config/lang`
-- 
+
+To re-enable the appsettings intellisense you must update your schema reference from: 
+
+```json
+"$schema": "./umbraco/config/appsettings-schema.json",
+```
+
+To:
+
+```json
+"$schema": "./appsettings-schema.json",
+```
+
 :::note
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
