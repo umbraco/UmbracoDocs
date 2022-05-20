@@ -45,9 +45,9 @@ Please note that the webpage itself is not cached when CDN Caching is enabled.
 
 ## Cache Everything Explained
 
-When Cache Everything is enabled it means that everything including the webpage is cached in the CDN. So in addition to static assets the webpage will also be cached and served from the CDN instead of loaded from the origin. When a webpage is cached it will be stripped of any cookies that are otherwise part of the request, so if you are utilizing cookies as part of the website please be aware of the implications of using Cache Everything.
+When Cache Everything is enabled it means that everything including the webpage is cached in the CDN. So in addition to static assets, the webpage will also be cached and served from the CDN instead of loaded from the origin. When a webpage is cached it will be stripped of any cookies that are otherwise part of the request, so if you are utilizing cookies as part of the website please be aware of the implications of using Cache Everything.
 
-When using Cache Everything you should use a Cache TTL, which matches the Editors expectations of when the webpage is refreshed with a new version loaded from the origin. As an example, chosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours and then it will be refreshed with a copy from the origin. If Editors makes changes every 30 minutes then they will have to wait at least two hours until they can see the changes on the website.
+When using Cache Everything you should use a Cache TTL, which matches the Editor's expectations of when the webpage is refreshed with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours and then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes then they will have to wait at least two hours until they can see the changes on the website.
 
 We recommend that Cache Everything is used with caution.
 
