@@ -27,7 +27,7 @@ If you want to disable caching on certain types of static assets, you can use a 
 
 The following example adds a cache-control header with 'no-cache' as the value when the requested Url contains a PDF file:
 
-```
+```XML
 <rewrite>
     <outboundRules>
         <rule name="Set Cache-Control - No-Cache PDF">
