@@ -53,9 +53,9 @@ We recommend that Cache Everything is used with caution.
 
 ## Cache Purging
 
-When assets are cached for a long time and you need to refresh them, you can choose to purge the CDN cache in order to evict everything from the cache and force a refresh. This can be useful to do after having deployed changes to javascript and css files, which are cached in the CDN.
+When assets are cached for a long time and you need to refresh them, you can choose to purge the CDN cache to evict everything from the cache and force a refresh. This can be useful to do after having deployed changes to javascript and CSS files, which are cached in the CDN.
 
-Cache purging is done per hostname and it can take up to 30 seconds before assets are completely gone from the CDN, as its refreshed globally.
+Cache purging is done per hostname and it can take up to 30 seconds before assets are completely gone from the CDN, as it's refreshed globally.
 
 By default, all hostnames are selected, but you can choose to purge specific hostnames from the environments in your Umbraco Cloud project.
 
