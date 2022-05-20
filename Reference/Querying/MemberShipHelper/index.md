@@ -15,10 +15,7 @@ If you are using Umbraco 9 or above, see the [IMemberManager](../IMemberManager/
 _`MembershipHelper` is a helper class for accessing member data in the form of `IPublishedContent`.
 `MembershipHelper` has a variety of helper methods that are useful when working in your views, controllers and webforms classes._
 
-Note: For a more detailed list, visit the API documentation:
-
-- [API Documentation for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
-- [API Documentation for v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
+[For a more detailed list, visit the API documentation.](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
 
 ## How to reference MembershipHelper?
 
