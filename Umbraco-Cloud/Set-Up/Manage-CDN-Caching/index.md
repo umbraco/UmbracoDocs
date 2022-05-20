@@ -51,7 +51,7 @@ When using Cache Everything you should use a Cache TTL, which matches the Editor
 
 We recommend that Cache Everything is used with caution.
 
-## Cache Purging Explained
+## Cache Purging
 
 When assets are cached for a long time and you need to refresh them, you can choose to purge the CDN cache in order to evict everything from the cache and force a refresh. This can be useful to do after having deployed changes to javascript and css files, which are cached in the CDN.
 
