@@ -15,7 +15,7 @@ The options that are currently available are
 - Minify Javascript (default: off)
 - Minify HTML (default: off)
 
-When a new hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new hostnames will get the default settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
+When a new hostname is added to a Project it will have the default settings applied. However you can change the default settings for your project, so new hostnames will get the settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
 
 ## Caching Explained
 
