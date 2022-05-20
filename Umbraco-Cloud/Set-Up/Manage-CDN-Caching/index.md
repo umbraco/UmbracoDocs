@@ -72,8 +72,8 @@ Please note that using minification through the CDN can affect Content Security 
 
 ## Plan specific features
 
-Access to the different options vary depending on the Umbraco Cloud Plan your project is on.
-Currently the features are available as follows:
+Access to the different options varies depending on the Umbraco Cloud Plan your project is on.
+Currently, the features are available as follows:
 
 - Starter: 
   - Enable Caching
