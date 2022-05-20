@@ -117,7 +117,7 @@ Use the default settings to configure what should be applied by default to new a
 ![Default Settings](images/caching-subpage.png)
 
 If you want to have different caching options for different hostnames, then select the hostname under Hostname specific settings and adjust the options for that specific hostname.
-This might be useful if you want to test the different options on another hostname then your primary hostname.
+This might be useful if you want to test the different options on another hostname than your primary hostname.
 
 ### Cache Purging
 
