@@ -57,10 +57,10 @@ When assets are cached for a long time and you need to refresh them, you can cho
 
 Cache purging is done per hostname and it can take up to 30 seconds before assets are completely gone from the CDN, as its refreshed globally.
 
-By default all hostnames are selected, but you can choose to purge for specific hostnames from the environments in your Umbraco Cloud project.
+By default, all hostnames are selected, but you can choose to purge specific hostnames from the environments in your Umbraco Cloud project.
 
-Purging the cache is a fairly heavy operation, so there is a constraint on how many purge requests can be done within a 24 hour period. The 24 hours starts from the moment you Purge, so if you have 2 Purge requests available and Purge twice with an hour in between then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
-In the Purge section of the subpage you can always see how many Purge requests you have available and when.
+Purging the cache is a fairly heavy operation, so there is a constraint on how many purge requests can be done within a 24-hour period. The 24 hours starts from the moment you Purge, so if you have 2 Purge requests available and Purge twice with an hour in between then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
+In the Purge section of the subpage, you can always see how many Purge requests you have available and when.
 
 Please note that the number of Purge requests you have available vary depending on your Cloud Plan. The Plan specific features are listed below.
 
