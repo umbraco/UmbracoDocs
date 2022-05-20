@@ -23,7 +23,7 @@ When Caching is enabled on your project it means that static assets like javascr
 
 These are the types of files that are cached as static assets through the CDN: '7z', 'csv', 'gif', 'midi', 'png', 'tif', 'zip', 'avi', 'doc', 'gz', 'mkv', 'ppt', 'tiff', 'zst', 'avif', 'docx', 'ico', 'mp3', 'pptx', 'ttf', 'apk', 'dmg', 'iso', 'mp4', 'ps', 'webm', 'bin', 'ejs', 'jar', 'ogg', 'rar', 'webp', 'bmp', 'eot', 'jpg', 'otf', 'svg', 'woff', 'bz2', 'eps', 'jpeg', 'pdf', 'svgz', 'woff2', 'class', 'exe', 'js', 'pict', 'swf', 'xls', 'css', 'flac', 'mid', 'pls', 'tar', 'xlsx'.
 
-If you want to disable caching on certain types of static assets, you can use a 'no-cache' cache control header, which will be respected by the caching strategy in the CDN. You can utilize an outbound rewrite rule in order to add such a cache control header to the request. 
+If you want to disable caching on certain types of static assets, you can use a 'no-cache' cache-control header, which will be respected by the caching strategy in the CDN. You can utilize an outbound rewrite rule in order to add such a cache-control header to the request. 
 
 The following example adds a cache-control header with 'no-cache' as the value when the requested Url contains a PDF file:
 
