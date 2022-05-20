@@ -64,7 +64,7 @@ In the Purge section of the subpage, you can always see how many Purge requests 
 
 Please note that the number of Purge requests you have available varies depending on your Cloud Plan. The Plan specific features are listed below.
 
-## Minification Explained
+## Minification
 
 Minification can be enabled for CSS, javascript, and HTML, and is done through the CDN as part of serving the request. Minification strips whitespace from the CSS, javascript, and HTML files, so the request is smaller and thus faster to download for the end-user.
 
