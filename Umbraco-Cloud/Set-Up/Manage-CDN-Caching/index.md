@@ -43,7 +43,7 @@ The following example adds a cache-control header with 'no-cache' as the value w
 
 Please note that the webpage itself is not cached when CDN Caching is enabled.
 
-## Cache Everything Explained
+## Cache Everything
 
 When Cache Everything is enabled it means that everything including the webpage is cached in the CDN. So in addition to static assets, the webpage will also be cached and served from the CDN instead of loaded from the origin. When a webpage is cached it will be stripped of any cookies that are otherwise part of the request, so if you are utilizing cookies as part of the website please be aware of the implications of using Cache Everything.
 
