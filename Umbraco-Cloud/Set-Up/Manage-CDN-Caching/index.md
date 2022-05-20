@@ -66,9 +66,9 @@ Please note that the number of Purge requests you have available varies dependin
 
 ## Minification Explained
 
-Minification can be enabled for css, javascript and html, and is done through the CDN as part of serving the request. Minification strips whitespace from the css, javascript and html files, so the request is smaller and thus faster to download for the end user.
+Minification can be enabled for CSS, javascript, and HTML, and is done through the CDN as part of serving the request. Minification strips whitespace from the CSS, javascript, and HTML files, so the request is smaller and thus faster to download for the end-user.
 
-Please note that using minification through the CDN can have an effect on Content Security Policies, as the files are being changed after they leave the origin. If you are using Content Security Policies we recommend doing minification within the Umbraco site.
+Please note that using minification through the CDN can affect Content Security Policies, as the files are being changed after they leave the origin. If you are using Content Security Policies we recommend doing minification within the Umbraco site.
 
 ## Plan specific features
 
