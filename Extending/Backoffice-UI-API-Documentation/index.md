@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: 9.0.0
 ---
 
 # Backoffice UI API Documentation

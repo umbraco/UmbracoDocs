@@ -1,7 +1,6 @@
 ---
 meta.Title: "Content version cleanup"
 versionFrom: 9.1.0
-verified-against: 9.1.0
 ---
 
 # Content Version Cleanup

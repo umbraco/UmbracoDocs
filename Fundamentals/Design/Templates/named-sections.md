@@ -3,7 +3,6 @@ meta.Title: "Named Sections in Umbraco"
 meta.Description: "Using named sections in Umbraco"
 versionFrom: 7.0.0
 versionTo: 9.0.0
-verified-against: 9.0.0
 ---
 
 # Named Sections
