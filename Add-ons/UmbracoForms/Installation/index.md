@@ -15,4 +15,4 @@ Getting Forms out of trial mode
 Manual upgrade instructions
 
 ## [Upgrading - version specific](Version-Specific.md)
-This contains version specific upgrade documentation, such as upgrading from V4 to V6
+This contains version specific upgrade documentation for when upgrading between major versions of Forms.
