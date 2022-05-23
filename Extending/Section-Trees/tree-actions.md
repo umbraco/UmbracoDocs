@@ -1,6 +1,4 @@
 ---
-state: complete
-verified-against: alpha-3
 versionFrom: 9.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
