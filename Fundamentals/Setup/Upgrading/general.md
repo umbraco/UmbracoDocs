@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
-updated-links: false
 ---
 
 # Upgrades in general
@@ -29,6 +26,7 @@ In this article you will find instruction on the following ways of upgrading an 
 
 * [Upgrade using NuGet](#upgrade-using-nuget)
 * [Run an unattended upgrade](#run-an-unattended-upgrade)
+
 ## Upgrade using NuGet
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:

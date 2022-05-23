@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Models Builder Settings"
 meta.Description: "Information on the models builder settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Models builder settings

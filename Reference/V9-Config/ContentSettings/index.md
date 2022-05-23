@@ -2,9 +2,6 @@
 versionFrom: 9.4.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Content Settings

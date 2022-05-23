@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Cool Things to do With Models"
 meta.Description: "Cool things you can do with models"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 # Cool things you can do with strongly-typed models
 

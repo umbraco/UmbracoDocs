@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Outbound request pipeline"
 meta.Description: "How the Umbraco outbound request pipeline works"
-state: complete
-verified-against: beta-4
-update-links: false
 ---
 # Outbound request pipeline
 

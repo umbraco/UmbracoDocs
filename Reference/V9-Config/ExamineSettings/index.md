@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Examine Settings"
 meta.Description: "Information on the Examine settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Examine settings

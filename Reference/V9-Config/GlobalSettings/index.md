@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Global Settings"
 meta.Description: "Information on the global settings section"
-state: complete
-verified-against: beta-3
-update-links: false
 ---
 
 # Global Settings

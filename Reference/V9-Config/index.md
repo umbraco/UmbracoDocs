@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco configuration"
 meta.Description: "Information on configuring Umbraco"
-state: complete
-verified-against: 9.0.1
-update-links: true
 ---
 
 :::note

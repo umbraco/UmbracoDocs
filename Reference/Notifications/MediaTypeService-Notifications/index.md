@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/ContentTypeService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # MediaTypeService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [MediaTypeService Events](../Events/MediaTypeService-Events) article instead.
+:::
 
 The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.
 

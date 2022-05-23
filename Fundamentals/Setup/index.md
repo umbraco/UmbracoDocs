@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: completed
-updated-links: true
 meta.Title: "How to install and configure your Umbraco installation"
 meta.Description: "Information on the requirements to setup, install & upgrade Umbraco"
 ---

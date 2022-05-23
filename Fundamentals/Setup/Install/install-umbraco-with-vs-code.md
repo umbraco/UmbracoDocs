@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-003
-state: complete
-updated-links: true
 ---
 
 # Install Umbraco with Visual Studio Code

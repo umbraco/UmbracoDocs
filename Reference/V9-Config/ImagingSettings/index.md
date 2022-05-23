@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Imaging Settings"
 meta.Description: "Information on the imaging settings section"
-state: complete
-verified-against: rc-3
-update-links: true
 ---
 
 

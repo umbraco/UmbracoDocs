@@ -1,10 +1,7 @@
 ---
 versionFrom: 9.3.0
-verified-against: 9.3.0
 meta-title: Umbraco Application Lifetime Notifications
 meta.Description: Represents an Umbraco application lifetime (starting, started, stopping, stopped) notification
-state: complete
-update-links: true
 ---
 
 # Umbraco Application Lifetime Notifications

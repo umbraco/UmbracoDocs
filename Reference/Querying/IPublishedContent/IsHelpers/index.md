@@ -1,7 +1,4 @@
 ---
-state: complete
-updated-links: true
-verified-against: alpha-4
 versionFrom: 9.0.0
 ---
 

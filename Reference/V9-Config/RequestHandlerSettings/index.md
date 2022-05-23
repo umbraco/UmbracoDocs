@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Request Handler Settings"
 meta.Description: "Information on the request handler settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Request handler settings

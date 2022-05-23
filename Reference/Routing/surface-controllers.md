@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Surface Controllers"
 meta.Description: "Information about Surface Controllers in Umbraco"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Surface controllers

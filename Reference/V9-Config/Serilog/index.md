@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Serilog Settings"
 meta.Description: "Information on the serilog settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Serilog settings

@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Routing & Controllers Reference"
 meta.Description: "All about Umbraco's routing pipeline & the types of Controllers used in Umbraco"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Routing & Controllers

@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
-state: complete
-verified-against: rc-004
-update-links: true
 ---
 
 # Common Pitfalls & Anti-Patterns

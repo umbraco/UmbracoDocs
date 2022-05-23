@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/EditorModel-Events"
 versionFrom: 9.0.0
-verified-against: 9.0.1
 ---
 
 # EditorModel Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [EditorModel Events](../Events/EditorModel-Events) article instead.
+:::
 
 EditorModel notifications enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the `SendingContentNotification` is published right before a content item is loaded into the backoffice for editing. It is therefore the perfect notification to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 

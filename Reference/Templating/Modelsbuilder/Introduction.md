@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Modelsbuilder Introduction"
 meta.Description: "Modelsbuilder introduction"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Umbraco Models Builder Introduction

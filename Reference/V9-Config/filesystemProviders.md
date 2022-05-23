@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "FileSystemProviders in Umbraco"
 meta.Description: "Information on FileSystemProviders and how to configure them in Umbraco"
-state: complete
-verified-against: rc-2
-update-links: true
 ---
 
 # FileSystemProviders Configuration

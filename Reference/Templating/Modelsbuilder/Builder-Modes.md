@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Modelsbuilder Modes"
 meta.Description: "Modelsbuilder modes"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Builder Modes

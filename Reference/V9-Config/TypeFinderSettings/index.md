@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Type Finder Settings"
 meta.Description: "Information on the type finder settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Type finder settings

@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/DataTypeService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # DataTypeService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [DataTypeSercive Events](../Events/DataTypeService-Events) article instead.
+:::
 
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 

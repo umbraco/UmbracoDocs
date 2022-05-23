@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Surface Controller Actions"
 meta.Description: "Information about Surface Controller Actions Result Helpers in Umbraco"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Surface controller actions

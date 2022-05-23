@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/ContentTypeService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # ContentTypeService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [ContentTypeService Events](../Events/ContentTypeService-Events) article instead.
+:::
 
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType
 

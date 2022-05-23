@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Creating content finders"
 meta.Description: "Information about creating your own content finders"
-state: complete
-verified-against: beta-4
-update-links: false
 ---
 
 # IContentFinder
@@ -17,13 +14,14 @@ public interface IContentFinder
   bool TryFindContent(IPublishedRequestBuilder contentRequest);
 }
 ```
+
 and use either an Umbraco builder extension, or a composer to add it to it to the `ContentFindersCollection`.
 
 Umbraco runs all content finders in the collection 'in order', until one of the IContentFinders returns true, the request is then handled by that finder, and no further IContentFinders are executed. Therefore the order in which ContentFinders are added to the ContentFinderCollection is important.
 
 The ContentFinder can set the PublishedContent item for the request, or template or even execute a redirect.
 
-### Example
+## Example
 
 This IContentFinders will find a document with id 1234, when the Url begins with /woot.
 

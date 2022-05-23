@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Published Content Request Preparation"
 meta.Description: "How Umbraco prepares content requests"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Published Content Request Preparation
