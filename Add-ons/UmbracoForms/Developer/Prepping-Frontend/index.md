@@ -10,7 +10,7 @@ For Umbraco Forms to work correctly, you need to include some client dependencie
 
 You can use the following Razor helper to output script tags containing the dependencies. To access this method you will need a reference to `Umbraco.Forms.Web`:
 
-```html
+```csharp
 @using Umbraco.Forms.Web
 <head>
     @Html.RenderUmbracoFormDependencies()
@@ -19,7 +19,7 @@ You can use the following Razor helper to output script tags containing the depe
 
 Alternatively, you can add the dependencies to the body tag:
 
-```html
+```csharp
 @using Umbraco.Forms.Web
 ...
 
