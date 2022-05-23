@@ -115,7 +115,9 @@ An example configuration with a single upstream environment file will look like 
 
 The setting under _Project:CurrentEnvironmentName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
 
-_Note:_ In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
+:::note
+In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
+:::
 
 Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
 

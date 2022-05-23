@@ -21,7 +21,7 @@ Version 10 contains a number of breaking changes but we won't expect many projec
 
 #### Database Initialization
 
-When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restore a project for the first time into a local environment.  With Umbraco 9 and previous version, SQL CE could be used for this.  This database version is no longer supported in Umbraco 10, so SQLlite is available instead.  SQLlite will be the default format used for the local database.
+When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time. With Umbraco 9 and previous versions, SQL CE could be used for this.  This database version is no longer supported in Umbraco 10, so SQLlite is available instead.  SQLlite will be the default format used for the local database.
 
 If you prefer to use a supported alternative, i.e. LocalDb or SQL Server, ensure that a connection string is in place before triggering the restore operation.
 
@@ -38,10 +38,10 @@ For example, to use LocalDb, you would place this in your `appSettings.json` con
 
 #### Configuration
 
-- The superfluous boolean property `IgnoreBrokenDependencies` has been removed, so this option is now controlled only by the configuration key `IgnoreBrokenDependenciesBehavior`, that takes an enumeration value.
-  - The default value for has been changed to `IgnoreBrokenDependenciesBehavior.Restore`, as this will most likely be what developers require (allowing broken dependencies when restoring, but not when pushing to an upstream environment).
+- The superfluous boolean property `IgnoreBrokenDependencies` has been removed, and the option is now controlled only by the configuration key `IgnoreBrokenDependenciesBehavior`, which takes an enumeration value.
+  - The default value has changed to `IgnoreBrokenDependenciesBehavior.Restore`, as this will most likely be what developers require (allowing broken dependencies when restoring, but not when pushing to an upstream environment).
 - `CurrentWorkspaceName` has been added to the `Project` configuration section.  This will be used by on-premises installations.
-  - Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades.  We'd recommend though using the new configuration as it's more intuitively placed (i.e. it's not really a "debug" setting for on-premises installations).
+  - Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades. We recommend using the new configuration as it's more intuitively placed (i.e. it's not really a "debug" setting for on-premises installations).
 
 #### Code
 
