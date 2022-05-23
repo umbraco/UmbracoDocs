@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
 ---
 
 # Health check: Cross-site scripting Protection (X-XSS-Protection header)

@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
 meta.Title: "Umbraco Packages"
 meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
 ---

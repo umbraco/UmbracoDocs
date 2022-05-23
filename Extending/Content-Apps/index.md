@@ -1,7 +1,5 @@
 ---
 versionFrom: 9.2.0
-state: complete
-updated-links: true
 meta.Title: "Content Apps"
 meta.Description: "A guide configuring content apps in Umbraco"
 ---

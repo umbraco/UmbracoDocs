@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
 state: partial
-updated-links: false
-verified-against: 9.0.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---
@@ -54,7 +52,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch
     }
 }
 ```
-
 
 ```csharp
 using System.Collections.Generic;

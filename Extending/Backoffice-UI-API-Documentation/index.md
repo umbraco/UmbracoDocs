@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
 verified-against: 9.0.0
-state: complete
-updated-links: true
 ---
 
 # Backoffice UI API Documentation

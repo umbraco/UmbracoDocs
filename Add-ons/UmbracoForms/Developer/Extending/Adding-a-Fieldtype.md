@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Adding a field type to Umbraco Forms"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a field type to Umbraco Forms #
