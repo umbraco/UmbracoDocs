@@ -15,6 +15,10 @@ To migrate to version 10 you should first update to the latest minor release of 
 
 Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here.
 
+#### Views and client-side files
+
+Umbraco 10 distributes the views and client-side files as part of a Razor class library, distributed in the Umbraco.Forms.StaticAssets package.  This means these assets are no longer individual files available on disk. The advantage of this approach is that that avoids changes made to them by solution developers being inadvertently lost when the project is rebuilt.
+
 #### Configuration
 
 - Renamed the configuration option to allow editable form submissions on the front-end to `AllowEditableFormSubmisisons` (fixing the typo in the previous value of `AllowEditableFormSubmisisons`.
