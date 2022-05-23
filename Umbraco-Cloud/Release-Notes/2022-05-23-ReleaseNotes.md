@@ -20,7 +20,8 @@ For more information and tips and tricks for handling caching, minification, and
 
 ## Improved Organization Invite flow
 The organization pages have received a facelift and are now based on the Umbraco UI Library web components. In the updated overview you will find the organization information, members, pending invites, projects of your organization, and the access rights granted to members of the organization
-![Members](images/Members.gif)
+
+![Members](images/Members.png)
 
 We have also added a new flow for inviting a user to an organization, where the user must accept an invitation before the user becomes a member. You already know this flow from inviting a user to a cloud project.
 
@@ -31,6 +32,6 @@ When a Umbraco Cloud portal user receives an invitation they are able to accept 
 ## Media Storage Files Top 50
 On the “Usage” page of a Cloud project, we have added an option for you to see the top 50 media files that **take up the most storage space** in the blob storage of your project. The feature helps you to get an overview of which media files are candidates for deletion if you are running out of blob storage.
 
-![Top50MediaFiles](images/Top50MediaFiles.png)
+![Top50MediaFiles](images/Top50MediaFiles.gif)
 
 The sorted list is a real-time display of media files including file name, path, size, and type. If you delete one or more of the listed files in the backoffice or the blob storage you can refresh the page and select the option to load the media files again.
