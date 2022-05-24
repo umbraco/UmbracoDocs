@@ -27,7 +27,7 @@ We have also added a new flow for inviting a user to an organization, where the 
 
 ![PendingOrgInvite](images/PendingOrgInvite.png)
 
-When a Umbraco Cloud portal user receives an invitation they are able to accept or decline the invitation on the “Pending invites” profile page.
+When a Umbraco Cloud portal user receives an invitation they can accept or decline the invitation on the “Pending invites” profile page.
 
 ## Media Storage Files Top 50
 On the “Usage” page of a Cloud project, we have added an option for you to see the top 50 media files that **take up the most storage space** in the blob storage of your project. The feature helps you to get an overview of which media files are candidates for deletion if you are running out of blob storage.
