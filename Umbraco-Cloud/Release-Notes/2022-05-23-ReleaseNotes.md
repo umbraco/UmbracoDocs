@@ -3,7 +3,7 @@
 _CDN Caching and Optimization settings + Improved Organization Invite Flow + Media Storage Files Top 50_
 
 ## Key Takeaways
-- **CDN Caching and Optimization settings** - You can now enable CDN caching on your Umbraco Cloudloud projects for even better performance. You can specify default settings and overwrite them at hostname level.
+- **CDN Caching and Optimization settings** - You can now enable CDN caching on your Umbraco Cloud projects for even better performance. You can specify default settings and overwrite them at the hostname level.
 - **Improved Organization Invite flow** - When you invite a new user to your organization, the Umbraco Cloud portal now ensures a more intuitive and secure handling of the invitation workflow.
 - **Media Storage Files Top 50** - The Umbraco Cloud portal now offers greater transparency for which media files take up the most space in your cloud project's media storage.
 
