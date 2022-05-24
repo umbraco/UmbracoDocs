@@ -19,7 +19,7 @@ You can likewise specify when the cache is to be purged to evict everything from
 For more information and tips and tricks for handling caching, minification, and purging of your cache visit the documentation page.
 
 ## Improved Organization Invite flow
-The organization pages have received a facelift and are now based on the Umbraco UI Library web components. In the updated overview you will find the organization information, members, pending invites, projects of your organization, and the access rights granted to members of the organization
+The organization pages have received a facelift and are now based on the Umbraco UI Library web components. In the updated overview, you will find the organization information, members, pending invites, projects of your organization, and the access rights granted to members of the organization
 
 ![Members](images/Members.png)
 
