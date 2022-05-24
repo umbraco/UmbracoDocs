@@ -13,6 +13,8 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 ### What is a Dashboard TESTING YOyoYoYO PLZ weork ?!?
 
+This is a very very very long sentance to help test if it's toooo long will it trigger another rule of too many words over forty, I wonder if this long sentenance will trigger this rule, I am sure it will do as it is a very very very long sentance.
+
 A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
 
 ![Redirect Url Management Dashboard](images/whatisadashboard.jpg)
