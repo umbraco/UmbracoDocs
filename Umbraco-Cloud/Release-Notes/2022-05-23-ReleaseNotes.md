@@ -10,7 +10,7 @@ _CDN Caching and Optimization settings + Improved Organization Invite Flow + Med
 ## [CDN Caching and Optimization settings](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-CDN-Caching/)
 In the Umbraco Cloud portal, you can now enable **caching** and ensure that the static resources such as javascript, CSS, and images are cached in the **Content Delivery Network** (CDN) used by Umbraco Cloud.
 
-The feature enables you to set default settings for caching, cache TTL, and minification of CSS, javascript, and HTML for your Cloud projects. If you  prefer an alternative caching strategy than the default,for one or more hostnames, this can just as easily be done in the friendly user interface on the project setting page “CDN Caching and Optimization”.
+The feature enables you to set default settings for caching, cache TTL, minification of CSS, javascript, and HTML for your Cloud projects. If you prefer an alternative caching strategy to the default, for one or more hostnames, this can be done in **CDN Caching and Optimization** in the project's **Setting** menu.
 
 ![CDCachingAndOptimization](images/CDCachingAndOptimization.gif)
 
