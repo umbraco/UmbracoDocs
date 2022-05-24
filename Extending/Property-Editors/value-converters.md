@@ -1,6 +1,4 @@
 ---
-state: partial
-updated-links: false
 versionFrom: 9.0.0
 verified-against: 9.0.0
 meta.Title: "Umbraco Property Value Converters"

@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: partial
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---

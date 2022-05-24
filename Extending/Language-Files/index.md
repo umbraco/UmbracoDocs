@@ -1,6 +1,4 @@
 ---
-updated-links: false
-state: partial
 versionFrom: 9.0.0
 meta.Title: "Language Files & Localization"
 meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
