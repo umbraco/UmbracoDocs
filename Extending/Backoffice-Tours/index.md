@@ -1,8 +1,5 @@
 ---
-updated-links: false
-state: partial
 versionFrom: 9.0.0
-verified-against: 9.0.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---

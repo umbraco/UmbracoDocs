@@ -2,9 +2,6 @@
 meta.Title: "Creating Forms"
 meta.Description: "Information on creating forms in Umbraco"
 versionFrom: 9.0.0
-state: complete
-verified-against: beta-3
-update-links: false
 ---
 
 

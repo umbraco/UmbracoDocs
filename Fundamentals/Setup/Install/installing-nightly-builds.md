@@ -1,7 +1,5 @@
 ﻿---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
 meta.Title: "Installing Umbraco Nightly Builds"
 meta.Description: "Instructions on installing nightly builds of Umbraco."
 ---

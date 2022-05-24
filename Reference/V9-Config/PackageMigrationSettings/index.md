@@ -2,9 +2,6 @@
 versionFrom: 9.0.1
 meta.Title: "Umbraco Package Migration Settings"
 meta.Description: "Information on the package migration settings section"
-state: complete
-verified-against: 9.0.1
-update-links: true
 ---
 
 # Package Migration

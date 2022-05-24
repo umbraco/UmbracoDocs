@@ -1,5 +1,4 @@
 ---
-state: complete
 versionFrom: 9.2.0
 meta.Title: "Umbraco Sections & Trees"
 meta.Description: "An explanation on sections and trees in Umbraco"

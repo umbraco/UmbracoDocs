@@ -2,8 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Installing Umbraco Deploy on new Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
-state: complete
-verified-against: beta-1
 ---
 
 # Installing Umbraco Deploy

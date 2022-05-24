@@ -1,7 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
 meta.Title: "Umbraco Embed Providers"
 meta.Description: "A guide to creating a custom embed providers in Umbraco"
 

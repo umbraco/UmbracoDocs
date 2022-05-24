@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Plugins Settings"
 meta.Description: "Information on the plugins settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Plugins settings

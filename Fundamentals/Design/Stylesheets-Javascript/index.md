@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Working with stylesheets and JavaScript in Umbraco"
 meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
-verified-against: rc-02
-state: complete
-updated-links: true
 ---
 
 # Working with stylesheets and JavaScript

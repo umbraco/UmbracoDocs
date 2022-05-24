@@ -2,7 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Version specific upgrades"
 meta.Description: "Version specific documentation for upgrading to new major versions of Umbraco Deploy."
-state: complete
 ---
 
 # Version Specific Upgrade Details

@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc001
 meta.Title: "Language Model"
 meta.Description: "Represents a Language. Installed languages can be found in the settings section."
 ---

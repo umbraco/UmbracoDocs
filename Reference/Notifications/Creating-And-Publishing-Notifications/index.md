@@ -1,10 +1,7 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-2
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
-state: complete
-update-links: true
 ---
 
 # Creating And Publishing Custom Notifications

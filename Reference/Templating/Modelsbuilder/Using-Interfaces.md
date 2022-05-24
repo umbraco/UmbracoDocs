@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Using Modelsbuilder interfaces"
 meta.Description: "Using interfaces with modelsbuilder"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Using Interfaces

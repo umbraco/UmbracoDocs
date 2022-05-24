@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: 9.0.0
 ---
 
 # Health check: Click-Jacking Protection

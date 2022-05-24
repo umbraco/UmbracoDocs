@@ -1,7 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: partial
-updated-links: false
 ---
 
 # Media Picker

@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
-meta.Title: ModelsBuilder Configuration
-meta.Description:  Explanation of how to configure models builder 
+meta.Title: "ModelsBuilder Configuration"
+meta.Description: "Explanation of how to configure models builder"
 ---
 
 # Configuration

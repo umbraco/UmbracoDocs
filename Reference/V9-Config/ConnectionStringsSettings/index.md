@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Connection Strings Settings"
 meta.Description: "Information on the connection strings settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Connection strings settings

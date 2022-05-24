@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Exception Filter Settings"
 meta.Description: "Information on the exception filter settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Exception filter settings

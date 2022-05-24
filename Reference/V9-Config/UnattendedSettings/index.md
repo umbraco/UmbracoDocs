@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Unattended Settings"
 meta.Description: "Information on the unattended settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Unattended

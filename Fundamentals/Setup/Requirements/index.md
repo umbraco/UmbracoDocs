@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: complete
-updated-links: true
 ---
 
 # Minimum System Requirements

@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Custom Umbraco Routes"
 meta.Description: "Setting up your own controllers and routes that exist alongside the Umbraco pipeline"
-state: complete
-verified-against: rc-1
-update-links: true
 ---
 
 # Custom MVC Routes
