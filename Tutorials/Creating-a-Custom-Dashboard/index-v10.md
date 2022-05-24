@@ -26,14 +26,14 @@ The finished dashboard will give the editors an overview of which pages and medi
 
 Here's an overview of the steps that will be covered:
 
-- Setting up the dashboard plugin
-- Writing a basic Welcome Message view
-- Configure the Custom Welcome Dashboard to be displayed
-- Adding styles
-- Adding an AngularJS controller
-- Display the current user's name in our welcome message
-- Display the current user's recent updates
-- Create a shortcut button to add a new blog post
+- setting up the dashboard plugin
+- writing a basic Welcome Message view
+- configure the Custom Welcome Dashboard to be displayed
+- adding styles
+- adding an AngularJS controller
+- display the current user's name in our welcome message
+- display the current user's recent updates
+- create a shortcut button to add a new blog post
 - You can do anything...
 
 ### Prerequisites
