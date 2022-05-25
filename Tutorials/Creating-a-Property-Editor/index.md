@@ -29,12 +29,15 @@ By the end of this tutorial, we will have a suggestion data type running inside 
 
 ## Setting up a plugin
 
-To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`
+To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`.
 
-Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allow us to inject any needed files into the application, so we create the file `/App_Plugins/Suggestions/package.manifest`
-For the package.manifest JSON documentation, see the [Package Manifest](../../Extending/Property-Editors/package-manifest.md) article.
+Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application. 
 
-Inside the `package.manifest`, we'll add the below JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
+Create the file `/App_Plugins/Suggestions/package.manifest`.
+
+For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/package-manifest.md) article.
+
+Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
 
 ```json
 {
