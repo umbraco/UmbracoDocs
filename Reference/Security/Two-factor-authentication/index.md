@@ -390,9 +390,9 @@ Now we need to create the view we just configured, in the path we choose.
 
 </div>
 ```
-As this view uses an angular controller we need to create that class and configure it in package.manifest.
+As this view uses an angular controller we need to create that class and configure it in the package.manifest.
 
-In package.manifest we point choose a path to the angular controller.
+In package.manifest we point to the path of the angular controller, that we are creating in the next step.
 
 ```json
 {
@@ -401,7 +401,7 @@ In package.manifest we point choose a path to the angular controller.
   ]
 }
 ```
-And we create a file in that location:
+And we create the controller in that location:
 ```javascript
 !(function () {
   "use strict";
@@ -490,7 +490,7 @@ When the authenticator is enabled correctly, a disable button is shown instead.
 
 ![Disable 2fa](images/disable-2fa.png)
 
-To disable the two on your user, it is required to enter the verification code, otherwise, admins are allowed to disable providers on other users.
+To disable the two factor authentication on your user, it is required to enter the verification code, otherwise, admins are allowed to disable providers on other users.
 
 ![Verify disable](images/verify-disable.png)
 
