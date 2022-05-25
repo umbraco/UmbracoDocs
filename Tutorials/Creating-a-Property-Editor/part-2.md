@@ -12,9 +12,9 @@ This is step 2 in our guide to building a Property Editor. This step continues w
 
 ## Configuration
 
-An important part of building good Property Editors is to build something relatively flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
+An important part of building good Property Editors is to build something flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, which allow us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
-An editor can be used several times, with different configurations, and that is what we will be working on now.
+An editor can be used again and again, with different configurations, and that is what we will be working on now.
 
 There are two ways to add configuration to the Property Editor. If in the previous step you chose to create the property editor using a `package.manifest` file, read the `package.manifest` section below. If you have chosen the `C#` variant, read the `Csharp` part of the article.
 
