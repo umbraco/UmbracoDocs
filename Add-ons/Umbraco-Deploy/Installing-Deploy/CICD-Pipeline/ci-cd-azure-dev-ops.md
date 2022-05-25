@@ -1,13 +1,13 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 8.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using Azure DevOps"
 meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using Azure DevOps"
 ---
 
 # Setting up CI/CD build server with Azure DevOps
 
-In this section we provide a full example on how Umbraco Deploy can be utilized as part of a build and deployment pipeline using Azure DevOps, which you can use or adapt for your needs.
+In this section we provide a full example on how Umbraco Deploy running on Umbraco 8 can be utilized as part of a build and deployment pipeline using Azure DevOps, which you can use or adapt for your needs.
 
 ## Discussion on the Provided Example
 
@@ -19,7 +19,7 @@ We then have a number of variables defined, that are used in the build configura
 
 Each stage - the first of which being the build stage - consists of a number of tasks. The majority of these are standard things that will be used in any .NET web application release, such as the first steps:
 
-#1 Install of the NuGet tooling, 
+#1 Install of the NuGet tooling,
 
 #2 Restore of NuGet dependencies,
 
@@ -35,7 +35,7 @@ The last steps in the build stage (#6, #7, #8) prepares the build artifacts, of 
 
 ### Deploy Stage
 
-The deploy stage consists of two steps.  Firstly a web deployment (#1), taking the packaged build artifact and deploying it, in this case, to an Azure web app.  
+The deploy stage consists of two steps.  Firstly a web deployment (#1), taking the packaged build artifact and deploying it, in this case, to an Azure web app.
 
 The second step (#2) is Umbraco Deploy specific - to call a function defined in the Powershell script and trigger the extraction.  We provide the API key to authenticate this operation, either from a variable, or in order to add a layer of security, from an Azure secret defined within Azure DevOps.
 
@@ -55,7 +55,7 @@ variables:
   buildConfiguration: 'Release'
 
   # The Visual Studio .sln name
-  vsSolutionName: DeployOnPremSite 
+  vsSolutionName: DeployOnPremSite
 
   # The Visual Studio .csproj Web App name
   vsProjectName: DeployOnPremSite
@@ -92,10 +92,10 @@ stages:
 - stage: Build
   variables:
     Release.EnvironmentName: '$(buildConfiguration)'
-  jobs: 
+  jobs:
   - job: RestoreBuildPublish
     steps:
-    
+
     #1 NuGet Tool Install
     - task: NuGetToolInstaller@1
       displayName: Install NuGet
@@ -107,7 +107,7 @@ stages:
         restoreSolution: '$(solution)'
         feedsToUse: 'config'
         nugetConfigPath: 'Nuget.config'
-        
+
     #3 Build the VS Solution and publish the output to a directory
     - task: VSBuild@1
       displayName: Build
@@ -126,16 +126,16 @@ stages:
         sourceFolder: $(deployLicense)
         targetFolder: '$(publishDir)\bin'
         Contents: '*.lic'
-    
+
     #5 Copy the deploy (data) files since they are not part of the csproj/msbuild
     - task: CopyFiles@2
       displayName: Copy data files
       enabled: true
       inputs:
         sourceFolder: $(umbracoDeployData)
-        targetFolder: '$(publishDir)'        
+        targetFolder: '$(publishDir)'
 
-    #6 Zip the output    
+    #6 Zip the output
     - task: ArchiveFiles@2
       displayName: Zip build output
       inputs:
@@ -144,7 +144,7 @@ stages:
         archiveType: 'zip'
         archiveFile: '$(zipDir)/$(Build.BuildId).zip'
         replaceExistingArchive: true
-    
+
     #7 Publish the zipped website as a build artifact
     - task: PublishBuildArtifacts@1
       displayName: Publish website artifact
@@ -152,13 +152,13 @@ stages:
         PathtoPublish: '$(zipDir)'
         ArtifactName: 'zip'
         publishLocation: 'Container'
-    
+
     #8 Publish the TriggerDeploy.ps1 file as a build artifact
     - task: PublishBuildArtifacts@1
       displayName: Publish deploy trigger script
       inputs:
-        pathtoPublish: '$(umbracoDeployTriggerDeploy)' 
-        artifactName: 'triggerDeploy' 
+        pathtoPublish: '$(umbracoDeployTriggerDeploy)'
+        artifactName: 'triggerDeploy'
         publishLocation: 'Container'
 
 # Stage 2: Deploy
@@ -192,7 +192,7 @@ stages:
             displayName: Umbraco Deploy extraction
             failOnStderr: true
             enabled: true
-    
+
 ```
 
 ## Publish Profile
