@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
@@ -31,7 +32,7 @@ By the end of this tutorial, we will have a suggestion data type running inside 
 
 To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`.
 
-Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application. 
+Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application.
 
 Create the file `/App_Plugins/Suggestions/package.manifest`.
 
@@ -68,7 +69,7 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
 }
 ```
 
-## Setting up a Property Editor with C#
+## Setting up a Property Editor with Csharp
 
 You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file in `/App_Code/` to register the editor this way.
 
@@ -204,11 +205,11 @@ and add that id to the button in the HTML:
 </div>
 ```
 
-Now, clear the cache, reload the document, and see the Suggestions data type running:
+Now, clear the cache, reload the document, and see the Suggestions Data Type running.
 
 ![Example of the Suggestions data type running](images/suggestion-editor-backoffice.png)
 
-When we save or publish, the value of the data type is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
+When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 

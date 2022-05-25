@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 
@@ -7,7 +8,7 @@ versionFrom: 9.0.0
 
 ## Overview
 
-This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the `notificationsService` to show a dialog with a custom view when you click in a textbox and the content is longer than 30 characters.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `notificationsService` to show a dialog with a custom view when you click in a textbox and the content is longer than 35 characters.
 
 ## Injecting the service
 
@@ -22,7 +23,7 @@ angular.module("umbraco")
 
 ## Hooking into Textbox
 
-To hook the service with the textbox, we will use the add method of the notificationsService to render our own view by setting the view property. We will also pass an args object which contains the property value and a callback function that we are going to call from our notification.
+To hook the service with the textbox, we will use the `add` method of the notificationsService. This will be used to render our own view by setting the view property. We will also pass an `args` object which contains the Property Value and a callback function that we are going to call from our notification.
 
 ```javascript
 // function to show custom notification
@@ -41,9 +42,9 @@ $scope.showNotification = function () {
     };
 ```
 
-Notice the callback, this callback is used to return whatever data we want to the editor.
+The callback is used to return data to the editor.
 
-So now that we have access to the editor events, we will trim the text to a length of 30. 
+Now that we have access to the editor events, we will trim the text to a length of 35.
 
 ```javascript
    $scope.TrimText = function () {
@@ -52,7 +53,7 @@ So now that we have access to the editor events, we will trim the text to a leng
    
 ```
 
-So at this point your controller should look like this:
+At this point your controller should look like this:
 
 ```javascript
 angular.module('umbraco').controller('SuggestionPluginController', function ($scope, notificationsService) {
@@ -104,7 +105,7 @@ angular.module('umbraco').controller('SuggestionPluginController', function ($sc
 ### Add the directive in the `suggestion.html`
 
 ```html
-    <input type="text" ng-model="model.value" ng-click="showNotification()"/>
+    <input type="text" ng-model="model.value" ng-click="showNotification()" />
 ```
 
 ### Add the Javascript file in `package.manifest`
@@ -120,7 +121,7 @@ angular.module('umbraco').controller('SuggestionPluginController', function ($sc
 
 ## Creating custom Notification View and Controller
 
-Now, we will add 2 files to the /App_Plugins/Suggestions/ folder:
+We will add 2 files to the /App_Plugins/Suggestions/ folder:
 
 - `notification.html`
 - `notification.controller.js`
@@ -137,7 +138,7 @@ In the `notification.html`, we'll add:
 </div>
 ```
 
-and in the `notification.controller.js` we will add:
+In the `notification.controller.js` we will add:
 
 ```javascript
 angular.module('umbraco')
@@ -158,22 +159,20 @@ angular.module('umbraco')
   });
 ```
 
-Now, restart the application and either enter a suggestion longer than 35 characters or click on `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
+Restart the application and either enter a suggestion longer than 35 characters or click on the `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
 
 ![Suggestion Notification](images/suggestion-notification.png)
 
-So, what's happening here? The notification object contains the args object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we call the callback function from the Suggestions controller so it gets executed in the scope of our Suggestions property editor.
+The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller which is executed in the scope of our Suggestions Property Editor.
 
 ## Wrap up
 
-So over the 3 previous steps, we've:
+Over the 3 previous steps, we have:
 
-- Created a plugin
-- Defined an editor
-- Registered the data type in Umbraco
-- Added a $scope object to pass information from the controller to the view.
-- Added configuration to the property editor
-- Connected the editor with notification service
-- Looked at the notification dialog in play
-
-[Next - Adding server-side data to a property editor](part-4.md)
+- Created a plugin.
+- Defined an editor.
+- Registered the Data Type in Umbraco.
+- Added a `$scope` object to pass information from the controller to the view.
+- Added configuration to the Property Editor.
+- Connected the editor with the Notification Service.
+- Looked at the notification dialog in action.
