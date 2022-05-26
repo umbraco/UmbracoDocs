@@ -34,7 +34,7 @@ Should something fail during the migration, the Development environment can alwa
 
 ## Step 1: Content migration
 
-* Create a backup of the database from your Umbraco 8 project, this can be done by using the [database backup guide](..\..\Databases\Backups) or by cloning down the V8 project and make a backup of the local Database(Make sure to restore the content from your cloud environment)
+* Create a backup of the database from your Umbraco 8 project, this can be done by using the [database backup guide](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) or by cloning down the V8 project and make a backup of the local Database(Make sure to restore the content from your cloud environment)
 
 * Import the database backup into SQL Server Management Studio
 
@@ -142,7 +142,6 @@ Once the migration is complete, and the Live environment is running without erro
 ## Related information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Umbraco 9 Documentation status](../../../Umbraco9Articles)
 * [Forms on Umbraco Cloud](../../Deployment/Umbraco-Forms-on-Cloud)
 * [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
 * [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
