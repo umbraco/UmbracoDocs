@@ -6,4 +6,4 @@ versionFrom: 7.5.0
 
 Umbraco 7.5.0+ comes with a built-in `IBackOfficeUserPasswordChecker` for **Active Directory**: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`.
 
-Find out how to activate the [ActiveDirectoryBackOfficeUserPasswordChecker](Authenticate-with-Active-Directory/Authenticate-With-AD-vpre8.md)
+Find out how to activate the [ActiveDirectoryBackOfficeUserPasswordChecker](Authenticate-with-Active-Directory/index-vpre8.md)
