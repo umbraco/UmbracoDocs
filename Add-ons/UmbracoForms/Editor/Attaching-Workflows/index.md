@@ -61,6 +61,22 @@ To use data from the submitted Form in your workflow, head over to the [Magic St
 
 Fill in the settings and hit **Submit**. The workflow is added to your Form and it will be shown at the bottom of the page.
 
+## Workflow Processing
+
+When a form is submitted, any workflows associated with the "submit" stage of the form will run sequentially in the configured order. The record is stored after these workflows are completed, and as such they can make changes to the information recorded.
+
+Similarly, approval of a form entry, whether automatic or manual, will trigger the execution of the workflows associated with the "approve" stage.
+
+If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form, recording the exception and other details of the failed operation to the log.
+
+From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
+
+![Workflow execution summary](images/workflow-summary.png)
+
+For each entry, in the backoffice a table can be viewed that shows each of the workflows and the success, or otherwise, of the operation.
+
+![Workflow execution summary](images/workflow-audit.png)
+
 ---
 
 Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md)
