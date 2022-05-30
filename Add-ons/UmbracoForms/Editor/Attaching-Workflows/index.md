@@ -21,9 +21,21 @@ If a value is selected for **Go to page** it will be used to issue a redirect to
 
 If no value is selected, the message provided in **Message on submit** will be displayed to the user on the same page, instead of the form fields.  From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
-For either method, a developer can customize the page viewed after the form is submitted on the basis of the presence of a `TempData` variable with a key of `UmbracoFormSubmitted` and a value containing the Guid identifier for the submitted form.
+### Customizing The Redirect
 
-A similar `TempData` value is also available containing the GUID identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
+Whether displaying a message or redirecting, a developer can customize the page viewed after the form is submitted on the basis of presence of `TempData` variables.
+
+One variable with a key of `UmbracoFormSubmitted` has a value containing the Guid identifier for the submitted form.
+
+A second variable containt the Guid identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
+
+In order to redirect to an external URL rather than a selected page on the Umbraco website, you will need to use a [custom workflow](../../Developer/Extending/Adding-a-Workflowtype.md). Within this workflow you can set the required redirect URL on the `HttpContext.Items` dictionary using the key `FormsRedirectAfterFormSubmitUrl` (defined in the constant `Umbraco.Forms.Core.Constants.ItemKeys.RedirectAfterFormSubmitUrl`).  This feature is available from versions 8.13 and 10.1.
+
+For example, using an injected instance of `IHttpContextAccessor`:
+
+```c#
+_httpContextAccessor.HttpContext.Items[Constants.ItemKeys.RedirectAfterFormSubmitUrl] = "https://www.umbraco.com";
+```
 
 ## Adding a Workflow
 
