@@ -177,6 +177,8 @@ For example clicking on one of the 'Favourite Things' in the custom tree example
 If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
+@using Umbraco.Cms.Web.Common.Attributes;
+
 [Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name")]
 [PluginController("favouriteThings")]
 public class FavouriteThingsTreeController : TreeController
