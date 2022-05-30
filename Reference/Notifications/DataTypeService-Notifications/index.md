@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/DataTypeService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # DataTypeService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [DataTypeSercive Events](../Events/DataTypeService-Events) article instead.
+:::
 
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 
@@ -42,7 +44,7 @@ The DataTypeService class implements IDataTypeService. It provides access to ope
     </td>
     <td>
     Published when DataTypeService.Save is called in the API and after data has been persisted.
-    NOTE: <em><a href="./determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br>
+    NOTE: <em><a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em><br>
     SavedEntities: Gets the saved collection of IDataType objects.
     </td>
   </tr>

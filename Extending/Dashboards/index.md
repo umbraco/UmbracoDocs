@@ -1,8 +1,5 @@
 ---
-updated-links: false
 versionFrom: 9.0.0
-verified-against: 9.0.0
-state: partial
 meta.Title: "Umbraco Custom Dashboards"
 meta.Description: "A guide to creating custom dashboards in Umbraco"
 ---

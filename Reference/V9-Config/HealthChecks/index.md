@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Health Check Settings"
 meta.Description: "Information on the health check settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Health checks

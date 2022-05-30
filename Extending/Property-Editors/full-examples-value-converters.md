@@ -1,7 +1,5 @@
 ---
-state: complete
 versionFrom: 9.0.0
-verified-against: alpha-3
 ---
 
 # Content Picker Value Converter Example

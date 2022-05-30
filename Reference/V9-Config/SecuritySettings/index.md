@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Security Settings"
 meta.Description: "Information on the security settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Security Settings

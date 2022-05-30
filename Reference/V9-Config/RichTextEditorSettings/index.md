@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Rich Text Editor Settings"
 meta.Description: "Information on the Rich text editor settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Rich text editor settings
@@ -75,3 +72,17 @@ When specifying these, every object should contain:
 ## Custom config
 
 Allows you to specify custom key value pairs for the rich text editor.
+
+### Examples
+Remove default ```<p>``` tag
+```json    
+  "Umbraco": {
+    "CMS": {
+      "RichTextEditor": {
+        "CustomConfig": {
+          "forced_root_block": ""
+        }
+      }
+    }
+  }
+```

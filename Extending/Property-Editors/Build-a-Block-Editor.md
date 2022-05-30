@@ -1,8 +1,5 @@
 ---
-state: partial
-updated-links: false
 versionFrom: 9.0.0
-verified-against: alpha-3
 ---
 # Build a Block Editor
 

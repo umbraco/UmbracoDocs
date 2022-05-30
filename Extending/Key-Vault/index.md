@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
 meta.Title: "Azure Key Vault"
 meta.Description: "A guide configuring an Azure Key Vault"
 ---

@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Adding a type to the provider model"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a type to the provider model

@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco IMemberManager"
 meta.Description: "Using the IMemberManager1"
-state: complete
-verified-against: rc-003
-update-links: true
 ---
 
 # IMemberManager

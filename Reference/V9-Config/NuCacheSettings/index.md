@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco NuCache Settings"
 meta.Description: "Information on the NuCache settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # NuCache Settings

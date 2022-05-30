@@ -9,4 +9,4 @@ Umbraco allows you to work with multiple versions of the same page. All previous
 
   - [Comparing Versions](Comparing-Versions/index.md)
 
-  - [Rollback to a Previous Versions](Rollback-to-a-Previous-Versions/index.md)
+  - [Rollback to a Previous Version](Rollback-to-a-Previous-Versions/index.md)

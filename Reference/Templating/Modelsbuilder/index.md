@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Modelsbuilder Reference"
 meta.Description: "Modelsbuilder reference"
-state: complete
-verified-against: beta-3
-update-links: false
 ---
 
 

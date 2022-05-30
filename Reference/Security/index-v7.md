@@ -44,7 +44,7 @@ You are able to check the username and password against your own credentials sto
 
 #### Authenticating with Active Directory credentials
 
-If you are using a network-based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-With-AD-vpre8.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
+If you are using a network-based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-with-Active-Directory/index-vpre8.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data on members
 

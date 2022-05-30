@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: complete
-updated-links: true
 ---
 
 # Minimum System Requirements
@@ -27,13 +24,12 @@ The Umbraco UI should work in all modern browsers:
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
   * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
   * .NET Core CLI
-  * etc.
 * .NET 5.0
 * SQL connection string (SQL Server)
 
 ## Hosting
 
-### We recommend
+### Recommendation
 
 * Windows Server 2019 and higher
 * IIS 10 and higher
@@ -41,7 +37,11 @@ The Umbraco UI should work in all modern browsers:
 * .NET 5.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-### The absolute miminium requirements to be able to run Umbraco are:
+:::tip
+You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
+:::
+
+### Miminium requirements to run Umbraco
 
 * Windows Server 2012 R2 and higher
 * IIS 8.5 and higher
@@ -49,4 +49,4 @@ The Umbraco UI should work in all modern browsers:
 * .NET 5.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-*For more information, check the official Microsoft documentation for [Hosting and deploying ASP.NET Core applications](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-5.0)*
+*For more information, see the [Host and deploy ASP.NET Core applications](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-5.0) article in the Microsoft documentation.*

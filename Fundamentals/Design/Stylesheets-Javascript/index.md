@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Working with stylesheets and JavaScript in Umbraco"
 meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
-verified-against: rc-02
-state: complete
-updated-links: true
 ---
 
 # Working with stylesheets and JavaScript
@@ -134,7 +131,7 @@ Then, you can render the bundles by the bundle name in a view template file:
 Or by using our `IRuntimeMinifier`:
 
 :::note
-In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `"Debug": false` in your appsettings file.
+In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
 :::
 
 ```csharp
@@ -151,6 +148,10 @@ In case you are in Debug mode, your bundles won't be minified or bundled, so you
 
 Another possibility is to declare bundles inline in your views using Smidge directly:
 
+:::note
+SmidgeHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. You will need to set the `debug` parameter in the SmidgeHelper method.
+:::
+
 ```csharp
 @using Smidge
 @{
@@ -164,8 +165,14 @@ Another possibility is to declare bundles inline in your views using Smidge dire
 }
 <html>
 <head>
-    @await SmidgeHelper.JsHereAsync("inline-js-bundle")
-    @await SmidgeHelper.CssHereAsync("inline-css-bundle")
+    <environment names="Development">
+        @await SmidgeHelper.CssHereAsync("inline-css-bundle", debug: true)
+        @await SmidgeHelper.JsHereAsync("inline-js-bundle", debug: true)
+    </environment>
+    <environment exclude="Development">
+        @await SmidgeHelper.CssHereAsync("inline-css-bundle", debug: false)
+        @await SmidgeHelper.JsHereAsync("inline-js-bundle", debug: false)
+    </environment>
 </head>
 </html>
 ```

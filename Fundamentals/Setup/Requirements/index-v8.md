@@ -26,6 +26,10 @@ The Umbraco UI should work in all modern browsers:
 * ASP.NET 4.7.2
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-## Note
+:::tip
+You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
+:::
 
-* Umbraco will not run on ASP.NET Core
+:::note
+Umbraco will not run on ASP.NET Core
+:::

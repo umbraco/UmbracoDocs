@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: partial
 ---
 
 # Implementing custom error pages

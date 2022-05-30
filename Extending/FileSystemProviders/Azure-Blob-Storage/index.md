@@ -1,6 +1,4 @@
 ---
-state: complete
-verified-against: 9.0.0
 versionFrom: 9.0.0
 meta.Title: "Using Azure Blob Storage for Media and ImageSharp Cache"
 meta.Description: "Setup your site to use Azure Blob storage for media and ImageSharp cache"

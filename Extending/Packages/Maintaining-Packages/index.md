@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
 meta.Title: "Maintaining Umbraco Packages"
 meta.Description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
 ---

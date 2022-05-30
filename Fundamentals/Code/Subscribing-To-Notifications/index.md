@@ -2,18 +2,15 @@
 meta.title: "Subscribing to notifications"
 meta.description: "Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs"
 versionFrom: 9.0.0
-updated-links: true
-verified-against: beta-3
-state: complete
-v8-equivalent: "https://our.umbraco.com/documentation/Fundamentals/Code/Subscribing-To-Events/"
 ---
+
+# Subscribing to notifications
 
 :::note
 In Umbraco 9 Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9. 
 For Umbraco 8 see the [Subscribing to events article](../Subscribing-To-Events)
 :::
 
-# Subscribing to notifications
 Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
 
 ### Subscribing to a notification

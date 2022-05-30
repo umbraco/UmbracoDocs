@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Keep Alive Settings"
 meta.Description: "Information on the keep alive settings section"
-state: complete
-verified-against: 9.5.0
-update-links: true
 ---
 
 # Keep alive settings

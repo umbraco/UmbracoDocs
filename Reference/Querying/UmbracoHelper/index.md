@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Helper"
 meta.Description: "Using the Umbraco Helper"
-state: complete
-verified-against: rc-003
-update-links: true
 ---
 
 # UmbracoHelper

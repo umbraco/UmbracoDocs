@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco WebApi"
 meta.Description: "A guide to implenting WebApi in Umbraco projects"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Umbraco API Controllers

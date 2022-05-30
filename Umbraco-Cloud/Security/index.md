@@ -64,7 +64,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
 
 ### Ports
 
@@ -81,7 +81,7 @@ Umbraco Cloud offers a multitude of features allowing you to block access to dif
 
 On all Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.
 
-It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure App Service) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
 

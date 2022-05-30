@@ -1,7 +1,4 @@
 ---
-updated-links: true
-state: partial
-verified-against: alpha-3
 versionFrom: 9.0.0
 meta.Title: "Macro Parameter Editors"
 meta.Description: "A guide to creating macro property editors in Umbraco"
@@ -19,7 +16,7 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Single/Multiple Content Picker
 * ... and some 'others'
 
-Consult the [Backoffice documentation (only Umbraco 8)](../../Fundamentals/Backoffice) for general information on Macros.
+Consult the [Backoffice documentation](../../Fundamentals/Backoffice) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 

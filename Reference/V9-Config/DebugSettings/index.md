@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Umbraco Debug Settings"
 meta.Description: "Information on debug settings section"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Debug settings

@@ -2,9 +2,6 @@
 versionFrom: 9.0.0
 meta.Title: "Inbound request pipeline"
 meta.Description: "How the Umbraco inbound request pipeline works"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Inbound request pipeline

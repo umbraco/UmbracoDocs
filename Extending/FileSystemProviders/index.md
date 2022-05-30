@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-1
 meta.Title: "Umbraco File System Providers"
 meta.Description: "A guide to creating custom file systems in Umbraco"
 ---
