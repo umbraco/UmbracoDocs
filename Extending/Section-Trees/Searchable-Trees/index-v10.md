@@ -8,7 +8,7 @@ When you type a search term into the Umbraco backoffice search field, you'll see
 
 ![Content Section Dashboards](images/backoffice-search-v8.png)
 
-The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: essentially, each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
+The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
 You can create your own search mechanisms for your own custom sections or replace the default search implementation for a particular section tree.
 
