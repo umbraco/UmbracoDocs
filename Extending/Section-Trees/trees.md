@@ -1,8 +1,6 @@
 ---
-state: partial
-updated-links: false
-verified-against: rc-2
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Tree"
 meta.Description: "A guide to creating a custom tree in Umbraco"
 ---
@@ -40,7 +38,9 @@ The SortOrder controls the order of the custom tree within the Tree Group.
 
 Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
-If you add your own alias, you'll need to add a translation key to `umbraco/config/lang/en-us.user.xml` to avoid the alias appearing as the header in [square brackets] eg
+If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in [square brackets].
+
+The language file should contain the following XML:
 
 ```xml
 <language>
@@ -177,6 +177,8 @@ For example clicking on one of the 'Favourite Things' in the custom tree example
 If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
+@using Umbraco.Cms.Web.Common.Attributes;
+
 [Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name")]
 [PluginController("favouriteThings")]
 public class FavouriteThingsTreeController : TreeController
