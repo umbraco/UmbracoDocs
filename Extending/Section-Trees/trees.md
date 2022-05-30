@@ -38,7 +38,9 @@ The SortOrder controls the order of the custom tree within the Tree Group.
 
 Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
-If you add your own alias, you'll need to add a translation key to `umbraco/config/lang/en-us.user.xml` to avoid the alias appearing as the header in [square brackets] eg
+If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in [square brackets].
+
+The language file should contain the following XML:
 
 ```xml
 <language>
