@@ -59,6 +59,7 @@ For illustration purposes, the following structure represents the full set of op
       "ExecuteWorkflowAsync": "False",
       "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
+      "CultureToUseWhenParsingDatesForBackOffice": "",
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -186,6 +187,16 @@ Enable this feature ONLY if you understand the security implications.
 When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
 
 By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+
+### CultureToUseWhenParsingDatesForBackOffice
+This setting has been added in 8.13.0 and 10.1, to help resolve an issue with multi-lingual setups. When Umbraco Forms stores data for a record, as well as storing the values subitted for each field into a dedicated table for each type (string, date etc.), it also saves a second copy of the record in a JSON structure, more suitable for fast look-up and display in the backoffice.  Date values are serialized using the culture used by the front-end website when the form entry is stored.
+
+When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, to that used when the value was stored.
+
+From 8.13.0 and 10.1 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website and ensure the date fields in the backoffice are correctly presented.
+
+In other words, if you have a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor may be using "en-GB" (which formats dates as of `d/m/y`), by setting the value of this configuration key to "en-US" you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
+
 
 ## Security configuration
 
