@@ -189,8 +189,7 @@ The last part required is to use the `Login` Partial Macro snippet.
 
 ### Notification when 2FA is requested for a member
 
-When a 2FA login is requested for a member, the `MemberTwoFactorRequestedNotification` is published.
-This notification can also be used to send the member a one-time password via e-mail or phone, even though these 2FA types are [not considered secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
+When a 2FA login is requested for a member, the `MemberTwoFactorRequestedNotification` is published. This notification can also be used to send the member a one-time password via e-mail or phone. Even though these 2FA types are [not considered secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
 
 ## Two-factor authentication for Users
 
