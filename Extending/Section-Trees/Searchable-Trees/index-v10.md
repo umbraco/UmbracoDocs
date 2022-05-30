@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 9.0.0
+versionFrom: 10.0.0
 ---
 
 # Searchable Trees (ISearchableTree)
@@ -74,6 +73,7 @@ If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [cus
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Trees;
@@ -84,7 +84,7 @@ namespace Umbraco.Docs.Samples.Web.Trees
     {
         public string TreeAlias => "favouriteThingsAlias";
 
-        public IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
+        public async Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string searchFrom = null)
         {
             // your custom search implementation starts here
             Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
@@ -101,23 +101,24 @@ namespace Umbraco.Docs.Samples.Web.Trees
             foreach (var matchingItem in matchingItems)
             {
                 // Making up the Id/Udi for this example! - these would normally be different for each search result.
-                searchResults.Add(new SearchResultEntity() { 
-                    Id = 12345, 
-                    Alias = "favouriteThingItem", 
-                    Icon = "icon-favorite", 
-                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), 
-                    Name = matchingItem.Value, 
-                    ParentId = -1, 
-                    Path = "-1,12345", 
-                    Score = 1.0F, 
-                    Trashed = false, 
-                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1")) 
+                searchResults.Add(new SearchResultEntity()
+                {
+                    Id = 12345,
+                    Alias = "favouriteThingItem",
+                    Icon = "icon-favorite",
+                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"),
+                    Name = matchingItem.Value,
+                    ParentId = -1,
+                    Path = "-1,12345",
+                    Score = 1.0F,
+                    Trashed = false,
+                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"))
                 });
             }
             // Set number of search results found
-            totalFound = matchingItems.Count();
-            // Return your IEnumerable of SearchResultEntity
-            return searchResults;
+            var totalFound = matchingItems.Count();
+            // Return your results
+            return new EntitySearchResults(searchResults, totalFound);
         }
     }
 }
@@ -127,7 +128,7 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco automatically finds any implementation of `ISearchableTree` in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias!
+Umbraco automatically finds any implementation of `ISearchableTree` in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias.
 
 ## Replacing an existing Section Tree Search
 
