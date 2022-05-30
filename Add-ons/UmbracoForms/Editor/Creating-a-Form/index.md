@@ -100,7 +100,7 @@ To add the Form, follow these steps:
 
     ![Content page](images/ContentExamples.png)
 3. Click the **Insert macro** button in the toolbar of the RTE or Grid. The **Select Macro** dialog opens.
-4. Click **Add** under **Choose a Form** and select the Form you want to insert.
+4. Click **Add** under **Choose a Form** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
     ![Content page add macro](images/ContentPageAddMacroDialog.png)
 5. **[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
