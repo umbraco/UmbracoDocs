@@ -222,6 +222,12 @@ Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms
 ### GrantAccessToNewFormsForUserGroups
 Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
+There are two "special" values that can be applied within or instead of the comma-separated list.
+
+A value of `all` will give access to the form to all user groups.
+
+A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
+
 ## Field type specific configuration
 
 ### Date picker field type configuration

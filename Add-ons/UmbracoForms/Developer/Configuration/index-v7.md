@@ -38,6 +38,18 @@ If for any reason you need to revert to the previous behavior, or have other rea
 In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
 the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
 
+### ManageSecurityWithUserGroups
+Umbraco Forms 8.11.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
+
+### GrantAccessToNewFormsForUserGroups
+Also introduced in Umbraco Forms 8.11.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
+
+There are two "special" values that can be applied within or instead of the comma-separated list.
+
+A value of `all` will give access to the form to all user groups.
+
+A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
+
 ### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
 
