@@ -39,7 +39,7 @@ If your connection string is for SQLite or SQL Server Express LocalDB it is assu
 
 ### SQLite Example in appsettings.json
 
-Note that a value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
+A value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
 
 It is recommended that you make use of the values shown below for the `Cache`, `Foreign Keys` and `Pooling` keywords on your connection string.
 
@@ -108,7 +108,7 @@ Depending on your preferences, you can use any type of configuration to specify 
 #endif
 ```
 
-Having intellisense will help you to easily add your connection string and information needed for the unattended install.
+Having intellisense will help you to add your connection string and information needed for the unattended install.
 
 ```json
 {
