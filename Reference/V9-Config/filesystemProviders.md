@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "FileSystemProviders in Umbraco"
 meta.Description: "Information on FileSystemProviders and how to configure them in Umbraco"
 ---
@@ -10,36 +11,31 @@ Filesystem providers are configured via code, you can either configure it in a c
 
 
 ```csharp
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
+using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
-namespace FilesystemProviders
+namespace FilesystemProviders;
+
+public class FilesystemComposer : IComposer
 {
-    public class FilesystemComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
+    public void Compose(IUmbracoBuilder builder) =>
+        builder.SetMediaFileSystem(factory =>
         {
-            builder.SetMediaFileSystem(factory =>
-            {
-                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                var folderLocation = "~/CustomMediaFolder";
-                var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
-                var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+            var folderLocation = "~/CustomMediaFolder";
+            var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
+            var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
 
-                return new PhysicalFileSystem(
-                    factory.GetRequiredService<IIOHelper>(),
-                    hostingEnvironment,
-                    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                    rootPath,
-                    rootUrl);
-            });
-        }
-    }
+            return new PhysicalFileSystem(
+                factory.GetRequiredService<IIOHelper>(),
+                hostingEnvironment,
+                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+                rootPath,
+                rootUrl);
+        });
 }
 ```
 
@@ -59,9 +55,9 @@ The physical file system provider manages the interaction of Umbraco with the lo
 To configure the PhysicalFileSystem to work with a virtual folder, you must create a new filesystem with a root path and root url that points within the `wwwroot` folder, see the example above, this can then be used to configure the media filesystem. For information see [Extending FileSystemProviders](../../Extending/FileSystemProviders/index.md).
 
 ### Physical path
-If you want to store the media files in a separate folder, outside of the webroot folder, maybe on a NAS/SAN, there's a few more steps. 
+If you want to store the media files in a separate folder, outside of the webroot folder, maybe on a NAS/SAN, there's a few more steps.
 
-First you must register the folder as a static file provider in your `Startup.cs` file like so: 
+First you must register the folder as a static file provider in your `Startup.cs` file like so:
 
 ```C#
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -163,7 +159,7 @@ namespace FilesystemProviders
             IProfilingLogger profilingLogger,
             IPublishedUrlProvider publishedUrlProvider,
             MediaFileManager mediaFileManager,
-            IHostingEnvironment hostingEnvironment) 
+            IHostingEnvironment hostingEnvironment)
             : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
             _mediaFileManager = mediaFileManager;
@@ -173,12 +169,12 @@ namespace FilesystemProviders
         public IActionResult Index(string id, string file)
         {
             var path = _hostingEnvironment.MapPathWebRoot($"~/media/{id}/{file}");
-            
+
             if (_mediaFileManager.FileSystem.FileExists(path))
             {
                 var stream = _mediaFileManager.FileSystem.OpenFile(path);
                 stream.Seek(0, SeekOrigin.Begin);
-                
+
                 var provider = new FileExtensionContentTypeProvider();
                 string contentType;
                 if (!provider.TryGetContentType(file, out contentType))

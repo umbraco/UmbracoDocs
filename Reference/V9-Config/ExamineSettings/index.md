@@ -1,12 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Examine Settings"
 meta.Description: "Information on the Examine settings section"
 ---
 
 # Examine settings
 
-Since the majority of Examine configuration takes place in code, this section is quite small containing only one setting to change, `LuceneDirectoryFactory`, this setting allows you to change the behaviour of the `ExamineIndexes` directory. 
+Since the majority of Examine configuration takes place in code, this section is quite small containing only one setting to change, `LuceneDirectoryFactory`, this setting allows you to change the behaviour of the `ExamineIndexes` directory.
 
 This section has a default value, and does not need to be configured, configuring Examine might look something like this:
 

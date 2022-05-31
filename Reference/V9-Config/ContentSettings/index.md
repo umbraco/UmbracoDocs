@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.4.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
 ---
@@ -14,36 +15,39 @@ To get an overview of the keys and values in the global section, the following s
 "Umbraco": {
   "CMS": {
     "Content": {
-      "ResolveUrlsFromTextString": false,
-      "Error404Collection": [],
-      "PreviewBadge": "",
-      "MacroErrors": "Inline",
-      "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
-      "AllowedUploadFiles": [],
-      "ShowDeprecatedPropertyEditors": false,
-      "LoginBackgroundImage": "/assets/img/login.jpg",
-      "LoginLogoImage": "/assets/img/application/umbraco_logo_white.svg",
-      "Notifications": {
-        "Email": "",
-        "DisableHtmlEmail": false
-      },
-      "Imaging": {
-        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
-        "AutoFillImageProperties": {
-          "Alias": "umbracoFile",
-          "WidthFieldAlias": "umbracoWidth",
-          "HeightFieldAlias": "umbracoHeight",
-          "LengthFieldAlias": "umbracoBytes",
-          "ExtensionFieldAlias": "umbracoExtension"
-        }
-      },
       "ContentVersionCleanupPolicy": {
         "EnableCleanup": false,
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
       },
+      "AllowedUploadFiles": [],
       "DisableDeleteWhenReferenced": false,
-      "DisableUnpublishWhenReferenced": false
+      "DisableUnpublishWhenReferenced": false,
+      "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
+      "Error404Collection": [],
+      "HideBackOfficeLogo": false,
+      "Imaging": {
+        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+        "AutoFillImageProperties": [
+          {
+            "Alias": "umbracoFile",
+            "ExtensionFieldAlias": "umbracoExtension",
+            "HeightFieldAlias": "umbracoHeight",
+            "LengthFieldAlias": "umbracoBytes",
+            "WidthFieldAlias": "umbracoWidth"
+          }
+        ]
+      },
+      "LoginBackgroundImage": "assets/img/login.jpg",
+      "LoginLogoImage": "assets/img/application/umbraco_logo_white.svg",
+      "MacroErrors": "Inline",
+      "Notifications": {
+        "DisableHtmlEmail": false,
+        "Email": null
+      },
+      "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
+      "ResolveUrlsFromTextString": false,
+      "ShowDeprecatedPropertyEditors": false
     }
   }
 }
@@ -53,21 +57,34 @@ To get an overview of the keys and values in the global section, the following s
 
 In the root level section, that is those without a seperate sub section like Imaging, you can configure:
 
-### Resolve urls from text string
+### Allowed upload files
 
-This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links, however, this is required if Umbraco is running in a virtual directory.
+If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+
+### Disable delete when referenced
+
+This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+
+### Disable unpublish when referenced
+
+This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.
+
+### Disallowed upload files
+
+This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
 ### Error 404 collection
 
 In case of a 404 error (page not found) Umbraco can return a default page instead. This is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language.
 
 ```json
-"Error404Collection": [{
-  "ContentId": 1,
-  "Culture": "en-US"
-}]
+"Error404Collection": [
+  {
+    "ContentId": 1,
+    "Culture": "en-US"
+  }
+]
 ```
-
 The above example shows what you need to do if you only have a single site that needs to show a custom 404 page. You specify which node that should be shown when a request for a non-existing page is being made. You can specify the node in three ways:
 
 1. Enter the nodes **id** (`"ContentId": 1`)
@@ -79,10 +96,6 @@ The above example shows what you need to do if you only have a single site that 
 - Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 - When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
-
-:::
-
-:::warning Remember to recycle the app pool to make sure changes to this section take effect. 
 
 :::
 
@@ -102,13 +115,17 @@ If you have multiple sites, with different cultures, setup in your tree then you
 
 If you have more than two sites and for some reason forget to update the above section with a 404 page and a culture then the default page will act as a fallback. Same happens if you for some reason forget to define a hostname on a site.
 
-### Preview badge
+### Hide backoffice logo
 
-This allows you to customize the preview badge being shown when you're previewing a node.
+This setting can be used to hide the umbraco logo in backoffice.
 
-```json
-"PreviewBadge": "<![CDATA[<a id=\"umbracoPreviewBadge\" style=\"position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;\" href=\"{0}/endPreview.aspx?redir={2}\"><span style=\"display:none;\">In Preview Mode - click to end</span></a>]]>"
-```
+### Login background image
+
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/installer.jpg`.
+
+### Login logo image
+
+You can specify your own image for the small logo in the top left corner of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
 
 ### Macro errors
 
@@ -118,15 +135,20 @@ Options:
 * Inline - Default Umbraco behavior, show an inline error within the macro but allow the page to continue rendering.
 * Silent - Silently suppress the error and do not display the offending macro.
 * Throw - Throw an exception.
-* Content - Silently suppress the error, and dusplay custom content reported in the error event args.
+* Content - Silently suppress the error, and display custom content reported in the error event args.
 
-### Disallowed upload files
 
-This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the backoffice.
+### Preview badge
 
-### Allowed upload files
+This allows you to customize the preview badge being shown when you're previewing a node.
 
-If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+```json
+"PreviewBadge": "<![CDATA[<a id=\"umbracoPreviewBadge\" style=\"position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;\" href=\"{0}/endPreview.aspx?redir={2}\"><span style=\"display:none;\">In Preview Mode - click to end</span></a>]]>"
+```
+
+### Resolve urls from text string
+
+This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links, however, this is required if Umbraco is running in a virtual directory.
 
 ### Show deprecated property editors
 
@@ -134,17 +156,44 @@ This setting is used for controlling whether or not the data types marked as obs
 
 By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**
 
-### Login background image
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/installer.jpg`.
+## ContentVersionCleanupPolicy
 
-### Login logo image
+The global settings for the scheduled job which cleans up historic content versions, these settings can be overridden per document type.
 
-You can specify your own image for the small logo in the top left cornor of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
+Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-## Notifications
+See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/) for more information.
+```json
+"ContentVersionCleanupPolicy": {
+  "EnableCleanup": false,
+  "KeepAllVersionsNewerThanDays": 7,
+  "KeepLatestVersionPerDayForDays": 90
+}
+```
+
+If you don't wish to retain any content versions except for the current draft and currently published you can set both of the
+"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non-current versions (except
+those marked "prevent cleanup") will be removed.
+
+### EnableCleanup
+
+When true a scheduled job will delete historic content versions that are not kept according to the policy every hour.
+
+When false, the scheduled job will never delete any content versions regardless of overridden settings for a document type.
+
+This defaults to false when not set in the configuration which will be the case for those upgrading from v9.0.0, however, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
+
+### KeepAllVersionsNewerThanDays
+
+All versions that fall in this period will be kept.
+
+### KeepLatestVersionPerDayForDays
+
+For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
+
+This variable is independent of KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
 
 
 ## Imaging
@@ -199,49 +248,7 @@ If you need to create a custom media document type to handle images called somet
   ]
 }
 ```
+## Notifications
 
-## ContentVersionCleanupPolicy
+Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/) for more information.
 
-The global settings for the scheduled job which cleans up historic content versions, these settings can be overridden per document type.
-
-Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
-
-See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
-
-```json
-"ContentVersionCleanupPolicy": {
-  "EnableCleanup": false,
-  "KeepAllVersionsNewerThanDays": 7,
-  "KeepLatestVersionPerDayForDays": 90
-}
-```
-
-If you don't wish to retain any content versions except for the current draft and currently published you can set both of the
-"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non-current versions (except
- those marked "prevent cleanup") will be removed.
-
-### EnableCleanup
-
-When true a scheduled job will delete historic content versions that are not kept according to the policy every hour.
-
-When false, the scheduled job will never delete any content versions regardless of overridden settings for a document type.
-
-This defaults to false when not set in the configuration which will be the case for those upgrading from v9.0.0, however, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
-
-### KeepAllVersionsNewerThanDays
-
-All versions that fall in this period will be kept.
-
-### KeepLatestVersionPerDayForDays
-
-For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
-
-This variable is independent of KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
-
-### Disable delete when referenced
-
-This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
-
-### Disable unpublish when referenced
-
-This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Runtime Minification Settings"
 meta.Description: "Information on the runtime minification settings section"
 ---
@@ -33,7 +34,7 @@ Specifies what type of cache buster to use, the options are:
 
 ## Automatically generated settings
 
-If you use a CacheBuster setting of "Version" you can add an additional configuration option, also called 'Version'  
+If you use a CacheBuster setting of "Version" you can add an additional configuration option, also called 'Version'
 
 ```json
 "Umbraco": {

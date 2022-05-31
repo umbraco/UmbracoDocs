@@ -16,7 +16,8 @@ A full configuration with default values can be seen here:
     "Hosting": {
       "ApplicationVirtualPath": "/",
       "LocalTempStorageLocation": "Default",
-      "Debug": false
+      "Debug": false,
+      "SiteName"
     }
   }
 }
@@ -39,3 +40,6 @@ Options:
 ### Debug
 
 This setting allows you to run Umbraco in debug mode, by setting the value to true.
+
+### Site name
+Gets or sets a value specifying the name of the site. The [IWebHostEnvironment.ApplicationName](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.ihostenvironment.applicationname?view=dotnet-plat-ext-6.0) is used if not specified

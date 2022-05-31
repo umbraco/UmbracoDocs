@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Request Handler Settings"
 meta.Description: "Information on the request handler settings section"
 ---
@@ -130,7 +131,7 @@ If you don't want to have a trailing slash, set the value to **false**.
 
 ### Convert urls to ascii
 
-This setting tells Umbraco to convert all urls to ASCII, if set to false the urls will remain UTF-8. 
+This setting tells Umbraco to convert all urls to ASCII, if set to false the urls will remain UTF-8.
 
 This setting can be set to **try** This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages don't have ASCII implementations, therefore the urls would end up being empty.
 

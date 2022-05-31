@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Rich Text Editor Settings"
 meta.Description: "Information on the Rich text editor settings section"
 ---
@@ -60,7 +61,7 @@ Specifies invalid HTML elements for the rich text editor
 
 Allows you to specify what commands should be available, as a list of object. These commands are the little buttons you find at the top of the editor, such as bold, italic, and so on.
 
-When specifying these, every object should contain: 
+When specifying these, every object should contain:
 
 * Alias - The alias of the command
 * Name - A friendly name descriping the command
@@ -75,7 +76,7 @@ Allows you to specify custom key value pairs for the rich text editor.
 
 ### Examples
 Remove default ```<p>``` tag
-```json    
+```json
   "Umbraco": {
     "CMS": {
       "RichTextEditor": {

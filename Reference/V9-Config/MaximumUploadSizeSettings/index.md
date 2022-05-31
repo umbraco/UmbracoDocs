@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Maximum upload size settingsg"
 meta.Description: "Information on how to change the default cap of upload size"
 ---
@@ -34,7 +35,7 @@ If your site is hosted on Umbraco Cloud, this is the method you should use.
 
 Runtime settings allow you to configure the `MaxRequestLength` and `MaxQueryStringLength` for kestrel. If you want to upload files larger than 28.6MB, then you have to configure these settings. If nothing is configured requests and query strings can only be the default size and smaller.
 
-An example of a configuration could look something like this: 
+An example of a configuration could look something like this:
 
 ```json
 "Umbraco": {
@@ -51,7 +52,7 @@ An example of a configuration could look something like this:
 
 # Using Nginx
 
-Here's the documentation link to Nginx: 
+Here's the documentation link to Nginx:
 https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size
 
 # Using apache

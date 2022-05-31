@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Exception Filter Settings"
 meta.Description: "Information on the exception filter settings section"
 ---
