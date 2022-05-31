@@ -61,7 +61,7 @@ For each entry, in the backoffice a table can be viewed that shows each of the w
 
 ![Workflow execution summary](images/workflow-audit.png)
 
-For any workflows that did not complete successful, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.
+For any workflows that did not complete successfully, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.
 
 ---
 
