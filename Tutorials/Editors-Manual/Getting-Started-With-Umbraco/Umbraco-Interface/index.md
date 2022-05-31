@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Umbraco Interface
@@ -21,7 +21,7 @@ By default, there are two dashboards available:
 ### Search, Help, and Profile Settings
 
 1. The **Search** bar allows you to search for the content in your entire project.
-2. The **Help** icon provides different Help options such as Tours, Umbraco TV, and Umbraco Documentation.
+2. The **Help** icon provides different Help options such as Tours, Umbraco Learning Base YouTube videos, Umbraco Documentation, and your System Information.
 3. The **profile** icon allows you to edit your profile, change the password, and Logout from the application.
 
 ![Search, help and profile.](images/Search-and-help-v9.png)
@@ -35,9 +35,9 @@ The following sections are available in the backoffice:
 - **Settings** - allows to handle your meta data such as document types.
 - **Packages** - allows to manage and install packages.
 - **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../Fundamentals/Data/Users/) article.
-- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Member](../../../../Fundamentals/Data/Members/) article.
+- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../../Fundamentals/Data/Members/) article.
 - **Forms** - allows to create and manage your forms.
-- **Translation** - allows to manage languages.  
+- **Translation** - allows to manage dictionary items.  
 
 ![The Sections Menu.](images/The-Section-Menu-v9.png)
 
