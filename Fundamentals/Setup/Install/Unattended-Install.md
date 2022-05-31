@@ -23,7 +23,7 @@ As you will not be running through the installation wizard when using the unatte
 * Add the connection string using configuration.
 
 :::tip
-Umbraco can create a SQL Server database for you during the unattended install process if the user specified by the credentials in your connection string has the `CREATE DATABASE` permission granted and the global setting [InstallMissingDatabase](/documentation/Reference/V9-Config/GlobalSettings/#install-missing-database) is set to `true`.
+Umbraco can create a SQL Server database for you during the unattended install process if the user specified by the credentials in your connection string has the `CREATE DATABASE` permission granted and the global setting [InstallMissingDatabase](/documentation/Reference/Configuration/GlobalSettings/#install-missing-database) is set to `true`.
 
 If your connection string is for SQL CE or SQL Server Express LocalDB it is assumed that a database should be created when missing regardless of the value of the `InstallMissingDatabase` setting.
 :::

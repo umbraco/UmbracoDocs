@@ -8,7 +8,7 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
-## [Configuration](V9-Config/index.md)
+## [Configuration](Configuration/index.md)
 
 Information about all of Umbraco's configurations and options for Umbraco 9.
 

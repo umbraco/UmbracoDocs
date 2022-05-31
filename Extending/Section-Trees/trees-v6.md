@@ -5,7 +5,7 @@ versionRemoved: 7.0.0
 
 # Trees
 
-Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
+Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Configuration-for-Umbraco-7-and-8/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
 
 ```xml
 <add application="users" alias="users" title="Users"

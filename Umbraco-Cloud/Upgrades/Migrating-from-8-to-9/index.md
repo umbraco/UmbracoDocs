@@ -42,7 +42,7 @@ Should something fail during the migration, the Development environment can alwa
 
 * Update the connection string in the Umbraco 9 AppSetting.Json file so that it connects to the Umbraco 8 database
 
-* To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended)
+* To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/Configuration/UnattendedSettings/#upgrade-unattended)
 
 * Run the Umbraco 9 project locally
 
@@ -67,7 +67,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
     * `~/Media`
     * Any files/folders related to Stylesheets and JavaScripts
 
-* In Umbraco 9 Config files no longer live in a Web.Config and is instead in the `AppSettings.Json` file. You will need to make sure that you update the AppSettings with any custom settings that you had in your Umbraco 8 project to match with the[V9 configs](../../../Reference/V9-Config/index.md).
+* In Umbraco 9 Config files no longer live in a Web.Config and is instead in the `AppSettings.Json` file. You will need to make sure that you update the AppSettings with any custom settings that you had in your Umbraco 8 project to match with the[Configurations](../../../Reference/Configuration/index.md).
 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
 

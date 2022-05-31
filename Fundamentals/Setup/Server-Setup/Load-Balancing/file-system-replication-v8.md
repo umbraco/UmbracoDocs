@@ -9,7 +9,7 @@ versionFrom: 8.0.0
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
 
-Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](../../../../Reference/Config/webconfig/index.md#umbracocorelocaltempstorage). 
+Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](../../../../Reference/Configuration-for-Umbraco-7-and-8/webconfig/index.md#umbracocorelocaltempstorage). 
 
 ## Synchronised File System 
 :::note 

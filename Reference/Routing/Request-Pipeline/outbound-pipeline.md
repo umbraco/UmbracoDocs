@@ -382,7 +382,7 @@ Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsett
 }
 ```
 
-See [WebRouting config reference documentation](../../V9-Config/WebRoutingSettings/index.md) for more information on routing settings.
+See [WebRouting config reference documentation](../../Configuration/WebRoutingSettings/index.md) for more information on routing settings.
 
 
 ### Site Domain Mapper

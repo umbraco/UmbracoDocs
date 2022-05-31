@@ -25,6 +25,6 @@ Covers the steps to upgrade your copy of Umbraco to a newer version.
 
 Information about server setup for Umbraco including information about permissions and load balancing.
 
-## [Config](../../Reference/Config/)
+## [Config](../../Reference/Configuration-for-Umbraco-7-and-8/)
 
 How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.

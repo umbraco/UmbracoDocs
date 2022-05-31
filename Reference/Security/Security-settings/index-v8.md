@@ -63,13 +63,13 @@ For both of these Membership Providers you can specify the following settings (i
 
 Umbraco backend users can [reset their own password](../password-reset-v8.md), or if they try too much, have a locked out account.
 
-To deactivate the User password reset look at the [Umbraco Settings Security](../../Config/umbracoSettings/index-v8.md#security) section.
+To deactivate the User password reset look at the [Umbraco Settings Security](../../Configuration-for-Umbraco-7-and-8/umbracoSettings/index-v8.md#security) section.
 
 To configure password reset verify the [Backoffice Login Password Reset](../../../Getting-Started/Backoffice/Login/index-v8.md#password-reset) section.
 
 ## Other security settings
 
-- [The Umbraco timeout in minutes](../../Config/webconfig/index.md#umbracotimeoutinminutes)
-- [disableAlternativeTemplates](../../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to try to render pages in a way that they are not supposed to
-- [disableFindContentByIdPath](../../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
+- [The Umbraco timeout in minutes](../../Configuration-for-Umbraco-7-and-8/webconfig/index.md#umbracotimeoutinminutes)
+- [disableAlternativeTemplates](../../Configuration-for-Umbraco-7-and-8/umbracoSettings/index.md#webrouting) If set to false this can be used to try to render pages in a way that they are not supposed to
+- [disableFindContentByIdPath](../../Configuration-for-Umbraco-7-and-8/umbracoSettings/index.md#webrouting) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
 - Umbraco Forms: [AntiForgeryToken](../../../Add-ons/UmbracoForms/Developer/Configuration/index.md#enableantiforgerytoken) and DisableFormCaching

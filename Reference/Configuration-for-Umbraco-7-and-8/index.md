@@ -6,7 +6,7 @@ versionRemoved: 9.0.0
 ---
 
 :::note
-If you are searching for Umbraco v9+ documentation, it currently lives under the folder [V9-Config](../V9-Config/index.md)
+If you are searching for Umbraco 9+ documentation, it lives under the [Configuration](../Configuration/index.md) folder.
 :::
 
 # Configuration Files

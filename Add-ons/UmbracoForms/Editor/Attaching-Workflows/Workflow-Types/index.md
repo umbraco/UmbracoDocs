@@ -79,7 +79,7 @@ Sends the result of the Form to the specified email address. The following confi
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/Configuration/GlobalSettings/index.md) article.
 
 ```json
     "Umbraco": {
@@ -112,7 +112,7 @@ The following configuration can be set:
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/Configuration/GlobalSettings/index.md) article.
 
 ```json
 
@@ -155,7 +155,7 @@ Sends the result of the Form to an email address with full control over the emai
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/Configuration/GlobalSettings/index.md) article.
 
 ```json
 

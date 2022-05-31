@@ -28,7 +28,7 @@ Provides an overview of the available Examine functionality available directly w
 
 A detailed overview from top to bottom of how to use Examine
 
-## [Full configuration markup example](../../Config/ExamineSettings/index.md)
+## [Full configuration markup example](../../Configuration-for-Umbraco-7-and-8/ExamineSettings/index.md)
 
 Shows all configuration options with an explanation for each
 

@@ -94,7 +94,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * __Recommended__: [set your front-end(s) (non-admin server) to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRegistrar`, this means the front-end servers will never be used as the SchedulingPublisher server role.
-* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../Reference/V9-Config/WebRoutingSettings/index.md)
+* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../Reference/Configuration/WebRoutingSettings/index.md)
 
 ## Common load balancing setup information
 

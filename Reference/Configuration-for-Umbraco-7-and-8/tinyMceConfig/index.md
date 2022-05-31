@@ -5,7 +5,7 @@ meta.Description: "Reference on tinyMce Configuration in Umbraco"
 ---
 
 :::note
-In Umbraco 9, configuration is JSON-based (`appsettings.json` files) rather than XML-based (`.config` files). To view the v9 configuration documentation, see the [Rich text editor settings](../../V9-Config/RichTextEditorSettings/index.md) article.
+In Umbraco 9, configuration is JSON-based (`appsettings.json` files) rather than XML-based (`.config` files). To view the configurationuration documentation, see the [Rich text editor settings](../../Configuration/RichTextEditorSettings/index.md) article.
 :::
 
 # tinyMceConfig - Rich Text Editor Configuration

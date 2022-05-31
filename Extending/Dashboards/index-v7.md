@@ -13,7 +13,7 @@ In the above screenshot, you can see the default set of dashboards for the Conte
 
 ![Developer Section Dashboards](images/developer-dashboards.png)
 
-The different sections, dashboards and their configuration (sort order and users rights) are all configured in the [/config/dashboards.config](../../Reference/Config/dashboard/index.md) file.
+The different sections, dashboards and their configuration (sort order and users rights) are all configured in the [/configuration-for-umbraco-7-and-8/dashboards.config](../../Reference/Configuration-for-Umbraco-7-and-8/dashboard/index.md) file.
 
 ## Configuration Example
 
@@ -39,7 +39,7 @@ The different sections, dashboards and their configuration (sort order and users
 </dashBoard>
 ```
 
-[More on Configuring Dashboards](../../Reference/Config/dashboard/index.md)
+[More on Configuring Dashboards](../../Reference/Configuration-for-Umbraco-7-and-8/dashboard/index.md)
 
 ## Custom Dashboards
 

@@ -21,7 +21,7 @@ Before this email workflow will send out emails you will need to configure an SM
 :::note
 In some cases, you might also experience that you need to configure a sender-email for notifications.
 
-This can be done in the `<notifications>` section of the `web.config` file. Find more details on this in the [`umbracoSettings`](../../../reference/config/umbracosettings/#notifications) article.
+This can be done in the `<notifications>` section of the `web.config` file. Find more details on this in the [`umbracoSettings`](../../../reference/configuration-for-umbraco-7-and-8/umbracosettings/#notifications) article.
 :::
 
 ### Backoffice users

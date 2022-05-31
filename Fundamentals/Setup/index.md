@@ -25,7 +25,7 @@ Covers the steps to upgrade your copy of Umbraco to a newer version.
 
 Information about server setup for Umbraco including information about permissions and load balancing.
 
-## [Config](../../Reference/V9-Config/index.md)
+## [Configuration](../../Reference/Configuration/index.md)
 
 How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.
 

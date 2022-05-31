@@ -13,7 +13,7 @@ Currently we have 2 actions available. If you need to perform more advanced inst
 :::note
 Package actions have been removed for Umbraco 9.
 
-For doing something similar have a look at the [Package migration](../../../Reference/V9-Config/PackageMigrationSettings/) Documentation.
+For doing something similar have a look at the [Package migration](../../../Reference/Configuration/PackageMigrationSettings/) Documentation.
 :::
 
 ## Adding actions to a package

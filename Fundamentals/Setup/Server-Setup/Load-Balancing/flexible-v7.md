@@ -69,7 +69,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced-v7#explicit-master-scheduling-server) which means they will never be used as the master scheduler
-* set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
+* set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/index.md)
 * or in an [`ApplicationStarting` event of an application startup handler](../../../../Reference/Events/Application-Startup.md) you can specify a custom delegate to return the base url for a node by setting [`ApplicationUrlHelper.ApplicationUrlProvider`](https://github.com/umbraco/Umbraco-CMS/blob/75c2b07ad3a093b5b65b6ebd45697687c062f62a/src/Umbraco.Core/Sync/ApplicationUrlHelper.cs#L21)
 
 ## Umbraco Configuration files
@@ -140,7 +140,7 @@ For **Umbraco v7.7.3+**
 <add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 ```
 
-This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Configuration-for-Umbraco-7-and-8/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 

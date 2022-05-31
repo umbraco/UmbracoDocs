@@ -16,7 +16,7 @@ This article contains guides on how to create custom error pages for the followi
 
 ## In-code error page handling
 
-One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../../Reference/Config/404handlers/) article for an example.
+One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../../Reference/Configuration-for-Umbraco-7-and-8/404handlers/) article for an example.
 
 ## 404 errors
 

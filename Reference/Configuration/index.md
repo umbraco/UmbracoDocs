@@ -5,7 +5,7 @@ meta.Description: "Information on configuring Umbraco"
 ---
 
 :::note
-In Umbraco 9 configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
+In Umbraco 9 configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Configuration-for-Umbraco-7-and-8/index.md)
 :::
 
 # Configuration Files

@@ -59,7 +59,7 @@ An example:
 
 ## Background image
 
-It is possible to customize the background image for the backoffice login screen. In [`~/Config/umbracoSettings.config`](../../../Reference/Config/umbracoSettings/) find the `loginBackgroundImage` and change the path to the image you want to use.
+It is possible to customize the background image for the backoffice login screen. In [`~/Config/umbracoSettings.config`](../../../Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/) find the `loginBackgroundImage` and change the path to the image you want to use.
 
 ```xml
 <settings>

@@ -40,4 +40,4 @@ It is possible to disable the feature entirely (both generating URLs in the data
 }
 ```
 
-See [the web routing config reference](../../V9-Config/WebRoutingSettings/index.md) for more configuration options
+See [the web routing config reference](../../Configuration/WebRoutingSettings/index.md) for more configuration options

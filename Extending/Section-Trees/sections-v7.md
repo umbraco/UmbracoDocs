@@ -8,7 +8,7 @@ The Umbraco backoffice consists of Sections, also referred to as Applications, w
 
 Each section is identified by an icon in the left-hand side navigation ribbon of the Umbraco Backoffice.
 
-[Configuration for sections is defined in the `~/Config/applications.config` file.](../../Reference/Config/applications/index.md)
+[Configuration for sections is defined in the `~/Config/applications.config` file.](../../Reference/Configuration-for-Umbraco-7-and-8/applications/index.md)
 
 ## Create a Custom Section
 
