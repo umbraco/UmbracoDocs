@@ -23,7 +23,7 @@ Umbraco comes with the following checks by default:
 * Category **Live Environment**
   * **Debug Compilation Mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
 * Category **Permissions**
-  * **Folder & File Permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
+  * **Folder & File Permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that the folders and files set with write permissions that are either required or recommended can be accessed
 * Category **Security**
   * **Application URL Configuration (id: `6708CA45-E96E-40B8-A40A-0607C1CA7F28`)** - checks if the Umbraco application URL is configured for your site.
   * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
