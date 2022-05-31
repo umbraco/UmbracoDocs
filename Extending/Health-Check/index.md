@@ -63,7 +63,7 @@ These are small checks that take an [IConfiguration](https://docs.microsoft.com/
 
 * A configuration check needs to inherit from `Umbraco.Cms.Core.HealthChecks.Checks.AbstractSettingsCheck`
 * A configuration check needs the `HealthCheck` attribute as noted at the start of this document
-* `ReadMoreLink` is a link to an external guide which will help you to troubleshoot any problems
+* `ReadMoreLink` is a link to an external guide that will help you to troubleshoot any problems
 * `ValueComparisonType` can either be `ValueComparisonType.ShouldEqual` or `ValueComparisonType.ShouldNotEqual`
 * `ItemPath` is the IConfiguration key path leading to the configuration value that you want to verify
 * `Values` is a list of values that are available for this configuration item - in this example it can be `RemoteOnly` or `On`, they're both acceptable for a live site.
