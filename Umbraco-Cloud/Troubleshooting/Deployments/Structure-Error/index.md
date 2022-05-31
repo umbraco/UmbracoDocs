@@ -131,6 +131,6 @@ When the push from local to the Development environment has completed, refresh t
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying in order to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../../Deployment/Deploy-Operations/Deploy-schema/).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../../Deployment/Deploy-Operations/Deploy-schema/).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.
