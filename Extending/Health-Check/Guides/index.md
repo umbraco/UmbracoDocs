@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
 ---
 
 # Health Check Guides
@@ -30,3 +27,5 @@ Below is a list of guides for Health Checks in Umbraco.
 ## [SMTP](SMTP.md)
 
 ## [Strict transport security header](StrictTransportSecurityHeader.md)
+
+## [Fixed Application Url](FixedApplicationUrl.md)

@@ -2,15 +2,22 @@
 meta.title: "Subscribing to events"
 meta.description: "Subscribing to events allows you to execute custom code on a number of events both before and after the event occurs"
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 ---
 
 # Subscribing to events
-Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
 
-### Subscribing to an event
-Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
+:::note
+This article is only relevant if you are using Umbraco 9+. For older versions see the [Subscribing to events article](../Subscribing-To-Events).
+:::
 
-We subscribe to events in Umbraco inside a Component, let's create one, add a new c# class to our project - call it *LogWhenPublishedComponent*. and use `: IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file and because the events that you can subscribe to in Umbraco are found in the core services namespace we'll also need to add a using statement for that too: `using Umbraco.Core;using Umbraco.Core.Services.Implement;` .
+Subscribing to events allows you to execute custom code on several events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
+
+## Subscribing to an event
+
+Let's add a string of text to the log when a document is published. The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings, and errors to the log.
+
+We subscribe to events in Umbraco inside a Component, let's create one, add a new c# class to our project - call it *LogWhenPublishedComponent*. and use `: IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file and because the events that you can subscribe to in Umbraco are found in the core services namespace we'll also need to add a using statement for that too: `using Umbraco.Core;` and `using Umbraco.Core.Services.Implement;`.
 
 ```csharp
 using System;
@@ -29,7 +36,8 @@ namespace MyProjectName.Web.Components
     }
 }
 ```
-When you create a Component in Umbraco you need to implement two methods, one to run when Umbraco application is initialized and one to run when the Umbraco application terminates:
+
+When you create a Component in Umbraco you need to implement two methods, one to run when the Umbraco application is initialized and one to run when the Umbraco application terminates:
 
 ```csharp
 using System;
@@ -60,7 +68,7 @@ namespace MyProjectName.Web.Components
 }
 ```
 
-It's in this `Intialize()` method where we will subscribe to our Published event `Umbraco.Core.Services.Contentservice.Published`.
+It's in this `Initialize()` method where we will subscribe to our Published event `Umbraco.Core.Services.Contentservice.Published`.
 
 ```csharp
 public void Initialize()
@@ -81,7 +89,7 @@ public void Initialize()
 
 private void ContentService_Published(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishedEventArgs e)
 {
-    // the custom code to fire everytime content is published goes here!
+    // the custom code to fire every time content is published goes here!
 }
 public void Terminate()
 {
@@ -89,13 +97,14 @@ public void Terminate()
     ContentService.Published -= ContentService_Published;
 }
 ```
+
 :::note
-When you subscribe to static events you should also unsubscribe from them when Umbraco shuts down, see the Terminate() method in the example using the -+ syntax to achieve the unsubscribing.
+When you subscribe to static events you should also unsubscribe from them when Umbraco shuts down, see the Terminate() method in the example using the -= syntax to achieve the unsubscribing.
 :::
 
 Let's check if this works by adding a message to the log every time the publish event occurs.
 
-We'll need to inject in the Umbraco Core Logging service into our Component, by adding the Umbraco.Core.Logging namespace and creating a 'constructor' for our component that allows Umbraco to inject in the service:
+We'll need to inject the Umbraco Core Logging service into our Component, by adding the Umbraco.Core.Logging namespace and creating a 'constructor' for our component that allows Umbraco to inject in the service:
 
 ```csharp
 using System;
@@ -121,6 +130,7 @@ public class LogWhenPublishedComponent : IComponent
     // ...
     }
 ```
+
 Now we can use the logger to send a message to the logs:
 
 ```csharp
@@ -128,6 +138,7 @@ _logger.Info<LogWhenPublishedComponent>("Something has been published...");
 ```
 
 We could log the name of each item that is being published too:
+
 ```csharp
 foreach (var publishedItem in e.PublishedEntities)
     {
@@ -135,7 +146,7 @@ foreach (var publishedItem in e.PublishedEntities)
     }
 ```
 
-Finally we need to add our custom Component to the collection of Components that Umbraco is aware of. We use another C# class to achieve that called a Composer. There is a special base composer class called ComponentComposer that we can make use of:
+Finally, we need to add our custom Component to the collection of Components that Umbraco is aware of. We use another C# class to achieve that called a Composer. There is a special base composer class called ComponentComposer that we can make use of:
 
 ```csharp
 [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
@@ -210,8 +221,10 @@ Search 'All Logs', and if all is wired up correctly you should discover your cus
 ![Messages in Log](images/log-messages.png)
 
 ### Before and after
-As you can see our custom code has been executed when we published a piece of content. It executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
+
+As you can see our custom code has been executed when we published a piece of content. It was executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied`, and so forth.
 
 ### More information
+
 - [Events Reference](../../../Reference/Events/)
 - [Components & Composing](../../../Implementation/Composing/)

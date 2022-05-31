@@ -3,7 +3,6 @@ meta.Title: "Templates in Umbraco"
 meta.Description: "Templating in Umbraco including inheriting from master template"
 versionFrom: 8.0.0
 versionTo: 9.0.0
-verified-against: 9.0.0
 ---
 
 # Templates
@@ -136,10 +135,11 @@ the created partial can now be injected into any template by using the `@Html.Pa
 @Html.Partial("a-new-view")
 ```
 
-### Find More information
+### Related Articles
 
 - [Basic Razor syntax](basic-razor-syntax.md)
 - [Rendering content](../Rendering-Content/)
+- [Named Sections](named-sections.md)
 
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)

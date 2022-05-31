@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
+verified-against: rc-1
 state: partial
 updated-links: false
 ---
@@ -9,20 +9,13 @@ updated-links: false
 
 We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET templates.
 
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/boK2cMXiI10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Install the template
 
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
-
-:::note
-Umbraco 9 is currently in a beta release and before the official release you will need to add the beta NuGet source:
-
-`dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"`
-
-And then step 2 below instead becomes:
-Run `dotnet new -i Umbraco.Templates::beta-002`
-
-For more details on how to work with the beta releases, check out the instructions in the [Umbraco Net Core Updates](../../../UmbracoNetCoreUpdates.md#umbraco-net-core-beta) article.
-:::
 
 2. Run `dotnet new -i Umbraco.Templates::*` to install the project templates.  
 *The solution is packaged up into the NuGet package [Umbraco.Templates](https://www.nuget.org/packages/Umbraco.Templates) and can be installed into the dotnet CLI*.
@@ -35,6 +28,9 @@ Templates                    Short Name               Language          Tags
 Umbraco Solution             umbraco                  [C#]              Web/CMS/Umbraco
 Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
 ```
+:::note
+In some cases the templates may silently fail to install (usually this is an issue with NuGet sources). If this occurs you can try specifying the NuGet source in the command by running `dotnet new -i Umbraco.Templates::* --nuget-source "https://api.nuget.org/v3/index.json"`.
+:::
 
 To get **help** on a project template with `dotnet new` run the following command:
 
@@ -43,109 +39,72 @@ To get **help** on a project template with `dotnet new` run the following comman
 From that command's output, you will get a better understanding of what are the default template options, as well as those command-line flags specific to Umbraco that you can use (as seen below):
 
 ```none
-Usage: new [options]
-
-Options:
-  -h, --help                 Displays help for this command.
-  -l, --list                 Lists templates containing the specified template name. If no name is specified, lists all templates.
-  -n, --name                 The name for the output being created. If no name is specified, the name of the output directory is used.
-  -o, --output               Location to place the generated output.
-  -i, --install              Installs a source or a template pack.
-  -u, --uninstall            Uninstalls a source or a template pack.
-  --interactive              Allows the internal dotnet restore command to stop and wait for user input or action (for example to complete authentication).
-  --nuget-source             Specifies a NuGet source to use during install.
-  --type                     Filters templates based on available types. Predefined values are "project" and "item".
-  --dry-run                  Displays a summary of what would happen if the given command line were run if it would result in a template creation.
-  --force                    Forces content to be generated even if it would change existing files.
-  -lang, --language          Filters templates based on language and specifies the language of the template to create.
-  --update-check             Check the currently installed template packs for updates.
-  --update-apply             Check the currently installed template packs for update, and install the updates.
-  --search                   Searches for the templates on NuGet.org.
-  --author <AUTHOR>          Filters the templates based on the author. Applies to --search and --list.
-  --package <PACKAGE>        Filters the templates based on NuGet package ID. Applies to --search.
-  --columns <COLUMNS_LIST>   Comma separated list of columns to display in --list and --search output.
-                             The supported columns are: language, tags, author, type.
-  --columns-all              Display all columns in --list and --search output.
-  --tag <TAG>                Filters the templates based on the tag. Applies to --search and --list.
-
-
 Umbraco Project (C#)
 Author: Umbraco HQ
 Description: An empty Umbraco Project ready to get started
 Options:
-
   -v|--version              The version of Umbraco to load using NuGet
-
                             string - Optional
-
-                            Default: 9.0.0-beta002
-
+                            Default: 9.0.0
 
   -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
-
                             text - Optional
 
-
   -ce|--SqlCe               Adds the required dependencies to use SqlCE (Windows only) (Default: false)
-
                             bool - Optional
-
-                            Default: false / (*) true
-
+                            Default: false
 
   -F|--Framework            The target framework for the project
-
                                 net5.0    - Target net5.0
-
                                 net6.0    - Target net6.0
-
                             Default: net5.0
 
-
   --no-restore              If specified, skips the automatic restore of the project on create
-
                             bool - Optional
-
-                            Default: false / (*) true
-
+                            Default: false
 
   --friendly-name           The friendly name of the user for Umbraco login when using Unattended install (Without installer wizard UI)
                             text - Optional
 
-
   --email                   Email to use for Umbraco login when using Unattended install (Without installer wizard UI)
-
                             text - Optional
-
 
   --password                Password to use for Umbraco login when using Unattended install (Without installer wizard UI)
                             text - Optional
 
-
   --connection-string       Database connection string when using Unattended install (Without installer wizard UI)
-
                             text - Optional
 
+  --no-nodes-view-path      Path to a custom view presented with the Umbraco installation contains no published content
+                            text - Optional
 
-* Indicates the value used if the switch is provided without a value.
+  --use-https-redirect      Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting (Default: false)
+                            bool - Optional
+                            Default: false
 ```
 
-## Create an Umbraco solution
+## Create an Umbraco project
 
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:  
-`dotnet new umbraco -n MyCustomUmbracoSolution`
+`dotnet new umbraco -n MyCustomUmbracoProject`
 
     Or if you prefer to using SQL CE:  
 
-    `dotnet new umbraco -n MyCustomUmbracoSolution -ce`
+    `dotnet new umbraco --SqlCe -n MyCustomUmbracoProject`
 
-You will now have a new project with the name *MyCustomUmbracoSolution*, or the name you chose to use.
+You will now have a new project with the name *MyCustomUmbracoProject*, or the name you chose to use.
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
+
+:::note
+If you want to create a solution file as well you can run the commands below. 
+`dotnet new sln`  
+`dotnet sln add MyCustomUmbracoProject `
+:::
 
 ## Run Umbraco
 
 1. Navigate to the newly created project folder:  
-`cd MyCustomUmbracoSolution`
+`cd MyCustomUmbracoProject`
 
 1. Build and run the new Umbraco .Net Core project:  
 `dotnet build`  

@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/EditorModel-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # EditorModel Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [EditorModel Events](../Events/EditorModel-Events) article instead.
+:::
 
 EditorModel notifications enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the `SendingContentNotification` is published right before a content item is loaded into the backoffice for editing. It is therefore the perfect notification to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 
@@ -17,16 +19,16 @@ using System;
 using System.Linq;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.ContentEditing;
-using Umbraco.Cms.Web.BackOffice.Filters;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
-    public class EditorModelNotificationHandler : INotificationHandler<SendingContentNotification>
+    public class EditorSendingContentNotificationHandler : INotificationHandler<SendingContentNotification>
     {
         public void Handle(SendingContentNotification notification)
         {
-            if (notification.Content.ContentTypeAlias.Equals("newsArticle"))
+            if (notification.Content.ContentTypeAlias.Equals("blogpost"))
             {
                 // Access the property you want to pre-populate
                 // each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
@@ -42,6 +44,7 @@ namespace MySite
                     {
                         // each variant has an IEnumerable of 'Tabs' (property groupings)
                         // and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
+                        // find the first property with alias 'publishDate'
                         var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties)
                             .FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
                         if (pubDateProperty is not null)
@@ -64,16 +67,16 @@ using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.BackOffice.Filters;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
-    public class EditorModelNotificationHandler : INotificationHandler<SendingMemberNotification>
+    public class EditorSendingMemberNotificationHandler : INotificationHandler<SendingMemberNotification>
     {
         private readonly IMemberGroupService _memberGroupService;
 
-        public EditorModelNotificationHandler(IMemberGroupService memberGroupService)
+        public EditorSendingMemberNotificationHandler(IMemberGroupService memberGroupService)
         {
             _memberGroupService = memberGroupService;
         }
@@ -198,7 +201,7 @@ namespace MySite
 
 #### ContentItemDisplay
 
-A model representing a conten item to be displayed in the backoffice
+A model representing a content item to be displayed in the backoffice
 
 * TemplateAlias
 * Urls

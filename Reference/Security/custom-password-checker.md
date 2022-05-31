@@ -1,18 +1,16 @@
 ---
-versionFrom: 8.1.1
+versionFrom: 9.0.0
 ---
 
 # Replacing the basic username/password check
 
-Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
+Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Core Identity this
 would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup.
 Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 
 Here are the steps to specify your own logic for validating a username and password for the backoffice:
 
-1. Install the [UmbracoIdentityExtensions package](https://github.com/umbraco/UmbracoIdentityExtensions)
-
-1. Create an implementation of `Umbraco.Core.Security.IBackOfficeUserPasswordChecker`
+1. Create an implementation of `Umbraco.Cms.Core.Security.IBackOfficeUserPasswordChecker`
 
     * There is one method in this interface: `Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password);`
     * The result of this method can be 3 things:
@@ -43,34 +41,15 @@ namespace MyNamespace
 }
 ```
 
-1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
-
-    * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`
-
+2. Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method
 ```C#
-app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-    RuntimeState,
-    GlobalSettings,
-    (options, context) =>
-    {
-        var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-        var userManager = BackOfficeUserManager.Create(options,
-            Services.UserService,
-            Services.MemberTypeService,
-            Services.EntityService,
-            Services.ExternalLoginService,
-            membershipProvider,
-            Mapper,
-            UmbracoSettings.Content,
-            GlobalSettings);
+public void ConfigureServices(IServiceCollection services)
+{
+    ...
 
-        // Set your own custom IBackOfficeUserPasswordChecker
-        userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
-        return userManager;
-    });
+    services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
+}
 ```
-
-1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
 
 :::note
 if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).

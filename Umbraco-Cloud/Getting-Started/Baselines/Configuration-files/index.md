@@ -1,8 +1,15 @@
 ---
 versionFrom: 7.0.0
+needsV9Update: "true"
 ---
 
 # Handling configuration files
+
+:::warning
+This is currently not possible on projects that run Umbraco 9.
+
+We are working on making it available for Umbraco 9 projects on Umbraco Cloud.
+:::
 
 When you are doing your normal development process, you'd be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
 
@@ -23,7 +30,9 @@ When you need specific configuration on Child projects, you should always use co
 :::
 
 # Examples
+
 Here is a few examples of what could be transformed in the child sites.
+
 ## Adding, or updating app settings (i.e. child-appsettings.web.live.xdt.config)
 
 ```xml

@@ -1,10 +1,12 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/MemberService-Events/"
 versionFrom: 9.0.0
-verified-against: beta-2
 ---
 
 # MemberService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [MemberService Events](../Events/MemberService-Events) article instead.
+:::
 
 The MemberService implements IMemberService and provides access to operations involving IMember.
 
@@ -74,7 +76,7 @@ namespace MySite
     <td>
     Published when MemberService.Save is called in the API and after data has been persisted.<br/>
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br/>
-    <em>NOTE: <a href="../determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em><br />
     SavedEntities: Gets the saved collection of IMember objects.
     </td>
   </tr>

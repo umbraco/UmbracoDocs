@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Frequently asked questions
@@ -44,11 +45,12 @@ Umbraco Cloud is best when used as the base for a new project. There is a specif
 
 ### On what kind of server environment does my Cloud site run?
 
-All of our infrastructure is based on Windows Azure virtual machines.
+All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan offers in total
 
-Currently all web servers run on Windows Server 2012 R2. Each Cloud site runs on a standard IIS version 8.5 instance.
-
-All databases always run on the latest version of SQL Azure Server.
+- 2 CPU Cores
+- 8GB of RAM
+- 250 GB Disk space
+- 1,920 TCP connections
 
 ### Can I choose which Azure Region my projects run in?
 
@@ -56,20 +58,7 @@ No. All services currently run in the Azure West Europe region.
 
 ### How many resources do I have available for my website?
 
-Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
-
-We do have some limitations.
-
-If your Cloud site is using a set amount of CPU for more than a set time, the priority for your CPU will be throttled down for each time you consecutively use more than the allowed amount within the given time.
-
-The amount of CPU and the set time, is defined by the plan you are on:
-
-- For a starter it is 20% CPU / 10 minutes / 5 times a day.
-- For a Standard it is 35% CPU / 10 minutes / 3 times a day.
-- For a Pro it is 50% CPU / 10 minutes / 2 times a day.
-
-The VMs the sites are running on are E3 series in Azure: Standard E2 v3 (2 vcpus, 16 GiB memory).
-E.g.: A starter project can use up to 20% CPU over a period of 10 minutes. Every time it exceeds that it's flagged. A project can be flagged only 5 times a day.
+In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
@@ -87,7 +76,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 projects runs on 4.7.2.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8 and Umbraco 9 projects on .NET 5.0.
 
 ---
 
@@ -126,7 +115,6 @@ Yes, that’s fine. In some cases you may want to upgrade sooner than the schedu
 
 Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
 
-
 ### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
@@ -159,7 +147,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
-Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation. 
+Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation.
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
@@ -171,26 +159,13 @@ Yes. Pro and Enterprise Plans can add custom certificates for each of their cust
 
 Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
 
-### How do I know if my site is still using a Latch certificate?
+### Does Umbraco Cloud support HTTP/2?
 
-To check whether your site is still using Latch follow this guide:
-
-1. Open your website URL.
-2. Select the "lock" icon to the left of the URL in the address bar in your browser.
-3. Click on Certificate.
-4. Identify the provider next to Issued by:.
-
-If the certificat issuer is Let's Encrypt, you are still using a Latch certificate.
-
-### Does Umbraco Cloud support http/2?
-
-The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
-
-As a workaround, you could consider setting up a product like CloudFlare, which offers free support for http/2 (they call it "Opportunistic Encryption") out of the box.
+By default, Umbraco Cloud supports HTTP/2.
 
 ### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
 
-No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 You can learn much more about this in our [Security section](../Security/#cookies-and-security).
 
@@ -301,3 +276,7 @@ You can read more about database backups and how to perform these on Umbraco Clo
 #### Filesystem
 
 Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
+
+#### Blob Storage containers
+
+Umbraco Cloud keeps 35 days of snapshots of the Blob Storage container for disaster recovery purposes.

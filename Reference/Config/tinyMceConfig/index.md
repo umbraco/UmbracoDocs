@@ -4,6 +4,10 @@ meta.Title: "tinyMce Configuration in Umbraco"
 meta.Description: "Reference on tinyMce Configuration in Umbraco"
 ---
 
+:::note
+In Umbraco 9, configuration is JSON-based (`appsettings.json` files) rather than XML-based (`.config` files). To view the v9 configuration documentation, see the [Rich text editor settings](../../V9-Config/RichTextEditorSettings/index.md) article.
+:::
+
 # tinyMceConfig - Rich Text Editor Configuration
 
 The Rich Text Editor in the Umbraco V8 Backoffice utilises the rich text editor plugin: [TinyMce V4.x](https://www.tiny.cloud/docs-4x/). This configuration file **'/config/tinyMce.config'** is used to set globally every TinyMce instance when it is intialized by Umbraco. Not all TinyMce features are enabled by default in Umbraco, you can use this configuration file to enable other TinyMce plugins or ammend the core behaviour of the Rich Text Editor in Umbraco.

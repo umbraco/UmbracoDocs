@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.7.0
+versionFrom: 9.0.0
 ---
 
 # Block List
@@ -48,7 +48,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
-- **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar". You can also use more advanced expression using AngularJS filters, e.g. `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
+- **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar". You can also use more advanced expression using AngularJS filters, e.g. `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
 - **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
 - **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
 - **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
@@ -146,8 +146,8 @@ In the following example of a Partial view for a Block Type, please note that th
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Core.Models.Blocks.BlockListItem>
-@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
     var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
@@ -167,6 +167,8 @@ With ModelsBuilder:
 
 ```
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/ltZTgfIoCtg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### 2. Build your own rendering
 
 A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListItem>` and the stored value will be returned as a list of `BlockListItem` entities.
@@ -174,8 +176,8 @@ A built-in value converter is available to use the data as you like. Call the `V
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using Umbraco.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using Umbraco.Cms.Core.Models.Blocks;
 @{
     var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
     foreach (var block in blocks)
@@ -192,9 +194,9 @@ Each item is a `BlockListItem` entity that contains two main properties `Content
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using Umbraco.Core.Models.Blocks;
-@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
 @{
     var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
     foreach (var block in blocks)
@@ -217,9 +219,9 @@ In this case, you can extract the variant's data using the following, which retu
 Example:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using Umbraco.Core.Models.Blocks;
-@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
 @{
     var variants = Model.Value<IEnumerable<BlockListItem>>("variants").Select(x => x.Content);
     foreach (var variant in variants)
@@ -314,6 +316,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope) 
 ```
 
 #### Example: Displaying an image from a Media Picker
+
 Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
 
 We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
@@ -460,10 +463,14 @@ public class Person
 After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
 
 ```csharp
+
+            @inject IContentService Services;
+            @inject IContentTypeService _contentTypeService;
+
            //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
-            var contentService = Services.ContentService;
+            var contentService = Services;
             //not to be confused with ContentService, this service will be useful for getting some Document Type IDs
-            IContentTypeService contentTypeService = Services.ContentTypeService;
+            IContentTypeService contentTypeService = _contentTypeService;
             //we are creating two people to be added to Blocklist, which means we need two new Guids
             GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());
             //Since these will be BLock List objects the Guids need to mention the "element" keyword  

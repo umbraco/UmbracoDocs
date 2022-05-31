@@ -1,45 +1,42 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
 # Organizations on Umbraco Cloud
 
-On Umbraco Cloud  you are able to get an Umbraco Cloud Organization.
+On Umbraco Cloud, you are able to get an Umbraco Cloud Organization. With an Organization, you get an overview of all the projects that have been created by you and the members of your Organization.
 
-With an Organization you get an overview of all the project that have been created by you and the members of the Organization to give you an better overview of all your project if you create a lot of them.
+If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
 
-If you are interested in getting an organization, please reach out to our support team through the Chat box in your project overview.
+## Managing your Organization
 
-## Managing your organization
+In the following sections, we will go through the different options that are available in an Organization:
 
-In the following section we will go over the different options that you will get when you have an organization and give you an overview of what you can do in each section.
+![Organization Overview](images/Organization-Overview.png)
 
-## Information
+### Information
 
-From the information section in your organization you can find information about your organization and if there are any changes to your information, you can change it from this section.
+In the **Information** section of the Organization, you can find Information about your Organization. If there are any changes to your Information, you can change it from this section.
 
 ![Information](images/Information.png)
 
-## Members
+### Members
 
-In the members section you can get an overview of all the members that are a part of your organization.
-
-It is also possible from here to setup different permissions for your members, if they have write or read rights or are administrators for your organization.
+In the **Members** section, you can get an overview of all the Members that are a part of your Organization. It is also possible to setup different permissions for your Members, such as Read,  Write, Administrators, or Super-Admins for your organization.
 
 ![Organization Members](images/Members.png)
 
-## Projects
+### Projects
 
-In the projects section, you can get an overview of all the projects that have been created in your organization. This makes it easier for you to see which projects your organization has.
-
-It is also possible to see which user from your organization that has created which project and edit the team on the different project if you are a super-admin in the organization.
+In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization. It is also possible to see which User from your Organization has created the Project and edit the team members for different projects if you are a super-admin in the Organization.
 
 ![Project overview](images/Projects.png)
 
-You are also able to see if any projects have been disabled under your organization.
+Additionally, you can view if any Projects have been disabled under your Organization.
 
 ## Access Rights
 
-In the Access rights overview, you can get a list of all the access rights that your members have to each projects in your organization.
+In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Projects in your Organization.
 
 ![Access Rights](images/Access_rights.png)

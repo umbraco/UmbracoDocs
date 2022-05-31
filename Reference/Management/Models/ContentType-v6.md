@@ -1,6 +1,6 @@
 ---
 versionFrom: 6.0.0
-needsV8Update: "true"
+meta.title: "ContentType Model"
 ---
 
 # ContentType

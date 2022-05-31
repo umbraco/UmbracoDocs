@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
 ---
 
 # Health check: Click-Jacking Protection
@@ -19,12 +16,12 @@ Preferable you use a security library like [NWebSec](https://docs.nwebsec.com/).
 
 If you take a NuGet dependency on [NWebsec.AspNetCore.Middleware/](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/), you can use third extension methods on `IApplicationBuilder`.
 
-```cs
+```csharp
 public class Startup
 {
     public void Configure(IApplicationBuilder app)
     {
-        app.UseXfo(options => options.Deny());
+        app.UseXfo(options => options.SameOrigin());
 
         ...
     }
@@ -35,14 +32,14 @@ public class Startup
 
 If you don't like to have a dependency on a third party library, you can add the following custom middleware to the request pipeline instead.
 
-```cs
+```csharp
 public class Startup
 {
     public void Configure(IApplicationBuilder app)
     {
         app.Use(async (context, next) =>
         {
-            context.Response.Headers.Add("X-Frame-Options", "DENY");
+            context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
             await next();
         });
 

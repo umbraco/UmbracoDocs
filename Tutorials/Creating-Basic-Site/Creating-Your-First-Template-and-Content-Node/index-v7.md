@@ -92,5 +92,5 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 
 
 ---
-## Next - [CSS & JavaScript](../CSS-And-JavaScript/index-v7.md)
+## Next - [CSS & JavaScript](../CSS-And-Images/index-v7.md)
 Adding the CSS and JavaScript for your site into Umbraco.

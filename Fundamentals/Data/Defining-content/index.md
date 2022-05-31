@@ -3,9 +3,6 @@ meta.Title: "Defining content"
 meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
 versionFrom: 8.0.0
 versionTo: 9.0.0
-verified-against: 9.0.0
-updated-links: false
-
 ---
 
 # Defining content
@@ -42,6 +39,22 @@ You can also use compositions to create a new document type. Compositions allows
 ![Creating a Compositions](images/v8Screenshots/compositions.png)
 
 The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it to another location, this is how it will stay. The other document type that is checked is the Banner type. This means that the Document will also inherit the properties from the Banner Type into this Document Type.
+
+### Exporting/Importing the Document Type
+
+You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __document type__ and select __Export__. When you click on the __Export__ button, the document type is saved as *.udt file.
+
+![Exporting a Document Type](images/v8Screenshots/export-document-type.png)
+
+To import a document type, go to the __Settings__ section, right-click the __document type__ and select __Import Document Type__. Click on the __Import__ button and browse to the document type you exported. The __Name__ and __Alias__ of the document type is displayed. Click __Import__ to complete the process.
+
+![Importing a Document Type](images/import-document-type.png)
+
+:::note
+
+1) If your document type contains compositions or inherits from another document type, then you need to export/import the composition/document type too.
+2) You cannot export/import document types on Umbraco Cloud.
+:::
 
 ### Defining the root node
 
@@ -84,8 +97,10 @@ Before we start adding properties to the Document Type we need to create a group
 
 Click __Add group__ and name the group "Content".
 
-![Creating groups](images/v8Screenshots/createGroup.png)
+![Creating groups](images/v8Screenshots/createGroup_new.png)
 _If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
+
+To convert a group to a tab, see the [Convert a group to a tab](../Adding-Tabs/index.md#convert-a-group-to-a-tab) section in the [Using Tabs](../Adding-Tabs/index.md) article.
 
 #### Adding properties
 
@@ -95,7 +110,7 @@ Click the __Add property__ link in the Content group. This opens the property se
 
 Give the property a name, the name will be shown to the editor so make relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
-![Adding a property](images/v8Screenshots/addproperty.png)
+![Adding a property](images/v8Screenshots/addproperty_new.png)
 
 ##### Property editors
 
@@ -103,7 +118,7 @@ Clicking __Select editor__ will open the Select editor dialog. Here you can choo
 
 Select the __Rich Text editor__ under __Create new__.
 
-![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.png)
+![Choosing the Rich Text editor](images/v8Screenshots/selectEditor_new.png)
 
 This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property and the property editor. Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
 

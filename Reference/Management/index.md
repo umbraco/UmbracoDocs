@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionTo: 9.0.0
 ---
 
 # Umbraco Persistence

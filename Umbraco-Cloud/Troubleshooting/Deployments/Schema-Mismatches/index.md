@@ -10,7 +10,7 @@ In this article you can learn how to resolve schema mismatch issues, and how you
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/W2VqBrAIN5s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step-by-step
 

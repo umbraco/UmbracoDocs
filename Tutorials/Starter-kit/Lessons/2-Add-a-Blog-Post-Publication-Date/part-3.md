@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 # Add a Blog Post Publication Date
@@ -26,12 +27,14 @@ Finally in Part Three we shall change the blog listing.
     ```csharp
     var blogposts = startNode.Children.OrderByDescending(x => x.Value<DateTime>("PublicationDate")).ToList();
     ```
+
     * Because we are sorting by a custom property we need to use the generic `Value` method.
 
 4. *Save* the partial view - a confirmation message should appear confirming that the Partial view has saved.
 5. Now view both the Blog overview and the blog posts themselves in the browser to confirm that all is working as expected.
 
 ## Summary
+
 Nice job! In this lesson you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
 
 [Back to Lessons](../index.md)

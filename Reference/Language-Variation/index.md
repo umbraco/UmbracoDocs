@@ -1,13 +1,13 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Language Variation
 
 Introduced in Umbraco 8, Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
 
-- [Getting started with Language Variants](../../Getting-Started/Backoffice/Variants/index.md)
-- [Rendering variant values](../../Getting-Started/Design/Rendering-Content/index.md)
+- [Getting started with Language Variants](../../Fundamentals/Backoffice/Variants/index.md)
+- [Rendering variant values](../../Fundamentals/Design/Rendering-Content/index.md)
 
 [`IPublishedContent`](../Querying/IPublishedContent/index.md) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
 
@@ -22,17 +22,35 @@ The problem here comes if you want to output all values of an IPublishedContent 
 If you do something like this:
 
 ```csharp
-using System.Linq;
-using System.Web.Mvc;
-using Umbraco.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Extensions;
 
 namespace TestStuff
 {
     public class TestController : SurfaceController
     {
-        public ActionResult Index()
+
+        public TestController(
+            IUmbracoContextAccessor umbracoContextAccessor, 
+            IUmbracoDatabaseFactory databaseFactory, 
+            ServiceContext services, 
+            AppCaches appCaches, 
+            IProfilingLogger profilingLogger, 
+            IPublishedUrlProvider publishedUrlProvider) 
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
-            var culturedRootNode = Umbraco.ContentAtRoot().First();
+        }
+
+        public IActionResult Index()
+        {
+            var culturedRootNode = CurrentPage.Root();
             TempData.Add("CulturedRootNode", culturedRootNode);
 
             return View();
@@ -44,10 +62,16 @@ namespace TestStuff
 You will get the root node in the default culture. However you can set a new `VariationContext` like this:
 
 ```csharp
-using System.Linq;
-using System.Web.Mvc;
-using Umbraco.Web.Mvc;
-using Umbraco.Core.Models.PublishedContent;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Website.Controllers;
+using Umbraco.Extensions;
 
 namespace TestStuff
 {
@@ -55,18 +79,27 @@ namespace TestStuff
     {
         private readonly IVariationContextAccessor _variationContextAccessor;
 
-        public TestController(IVariationContextAccessor variationContextAccessor)
+        public TestController(
+            IUmbracoContextAccessor umbracoContextAccessor, 
+            IUmbracoDatabaseFactory databaseFactory, 
+            ServiceContext services, 
+            AppCaches appCaches, 
+            IProfilingLogger profilingLogger, 
+            IPublishedUrlProvider publishedUrlProvider, 
+            IVariationContextAccessor variationContextAccessor) 
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
             _variationContextAccessor = variationContextAccessor;
         }
-        public ActionResult Index()
+
+        public IActionResult Index()
         {
             const string culture = "af"; // Afrikaans
 
             // This is how the culture is set for the context we are in
             _variationContextAccessor.VariationContext = new VariationContext(culture);
 
-            var culturedRootNode = Umbraco.ContentAtRoot().First();
+            var culturedRootNode = CurrentPage.Root();
             TempData.Add("CulturedRootNode", culturedRootNode);
 
             return View();

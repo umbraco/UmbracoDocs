@@ -1,16 +1,16 @@
 ---
 versionFrom: 8.0.0
+versionTo: 9.0.0
 ---
 
 
 # umbLayoutSelector
 
-When you have a list of items or similar, you can use the `umb-layout-selector` directive to let users toggle between different layouts. For instance, in Umbraco's media archive, users can select between a grid-based layout (thumbnails) and a list-based layout (table).
+When you have a list of items, you can use the `umb-layout-selector` directive to let users toggle between different layouts. For instance, in Umbraco's media archive, users can select between a grid-based layout (thumbnails) and a list-based layout (table).
 
 :::center
 ![Example of the layout selector](images/umbLayoutSelector.png)
 :::
-
 
 The directive has three attributes:
 
@@ -18,49 +18,56 @@ The directive has three attributes:
 - `active-layout` is a reference to the layout currently being used.
 - `on-layout-select` is a callback function triggered when the user chooses another layout.
 
-For a view utilizing this directive, the HTML could look something like this:
+For a view utilizing this directive:
 
-```html
-<div ng-controller="myController">
-    <umb-layout-selector layouts="layouts"
-                         active-layout="activeLayout"
-                         on-layout-select="selectLayout(layout)">
-    </umb-layout-selector>
-</div>
-```
+- The HTML could look something like this:
 
-For this to work, you'd also need a controller - eg. for initializing the different values to be used for the directive:
+    ```html
+    <div ng-controller="myController">
+        <umb-layout-selector layouts="layouts"
+                            active-layout="activeLayout"
+                            on-layout-select="selectLayout(layout)">
+        </umb-layout-selector>
+    </div>
+    ```
 
-```js
-angular.module("umbraco").controller("myController", function ($scope) {
+- You'd also need a controller for initializing the different values to be used for the directive:
 
-    // Declare the available layouts
-    $scope.layouts = [
-        {
-            name: "Grid",
-            icon: "icon-thumbnails-small",
-            path: "gridpath",
-            selected : true
-        },
-        {
-            name: "List",
-            icon: "icon-list",
-            path: "listpath",
-            selected: true
-        }
-    ];
+    ```js
+    angular.module("umbraco").controller("myController", function ($scope) {
 
-    // Declare the function called by the directive when user chooses another layout
-    $scope.selectLayout = function(layout) {
-        $scope.activeLayout = layout;
-        $scope.layouts.forEach(element => element.active = false);
-        layout.active = true;
-    };
+        // Declare the available layouts
+        $scope.layouts = [
+            {
+                name: "Grid",
+                icon: "icon-thumbnails-small",
+                path: "gridpath",
+                selected : true
+            },
+            {
+                name: "List",
+                icon: "icon-list",
+                path: "listpath",
+                selected: true
+            }
+        ];
 
-    // Select the first layout
-    $scope.selectLayout($scope.layouts[0]);
+        // Declare the function called by the directive when user chooses another layout
+        $scope.selectLayout = function(layout) {
+            $scope.activeLayout = layout;
+            $scope.layouts.forEach(element => element.active = false);
+            layout.active = true;
+        };
 
-});
-```
+        // Select the first layout
+        $scope.selectLayout($scope.layouts[0]);
 
-For each layout, the `name` property indicates the visual name of the layout (eg. used when hovering over the layout in the selector), and `icon` is the CSS selector for the icon of the layout. The `path` attribute indicates a sort of alias, and is used internally for comparing the layouts. And while a bit misleading, each layout should also have a `selected` property indicating whether a particular layout is enabled, and thereby visible in the selector.
+    });
+    ```
+
+For each layout:
+
+- `name` property indicates the visual name of the layout (eg. used when hovering over the layout in the selector)
+- `icon` is the CSS selector for the icon of the layout.
+- `path` attribute indicates a sort of alias, and is used internally for comparing the layouts.
+- Each layout should also have a `selected` property indicating whether a particular layout is enabled, and thereby visible in the selector.

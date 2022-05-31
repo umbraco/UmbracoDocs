@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Slider
@@ -65,9 +65,10 @@ See the example below to see how a value can be added or changed programmaticall
 ### With a range off
 
 ```csharp
+@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -86,9 +87,10 @@ See the example below to see how a value can be added or changed programmaticall
 ### With a range on
 
 ```csharp
+@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services.;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -119,11 +121,12 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'singleValueSlider'
-    content.SetValue(Home.GetModelPropertyType(x => x.SingleValueSlider).Alias, 10);
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.SingleValueSlider).Alias, 10);
 
     // Set the value of the property with alias 'multiValueSlider'
-    content.SetValue(Home.GetModelPropertyType(x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MultiValueSlider).Alias, new Range<decimal> {Minimum = 10, Maximum = 12});
 }
 ```

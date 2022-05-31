@@ -1,17 +1,10 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 9.0.0
 ---
 
 # ICacheRefresher
 
 _This section describes what ICacheRefresher and ICacheRefresher&lt;T&gt; are and how to use them to invalidate your cache correctly including load balanced environments_
-
-:::warning
-Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
-
-The documentation available around caching in the current Umbraco version can be found here: [Caching](../Cache).
-:::
 
 ## What is an ICacheRefresher
 

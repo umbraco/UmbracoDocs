@@ -44,9 +44,9 @@ When you have two or more Cloud environments, we recommend that you never create
 
 ## Video tutorial
 
-[TODO: Make video tutorial]
+<iframe width="800" height="450" src="https://www.youtube.com/embed/I60utxMLoG4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
+You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLgX62vUaGZsHAKusJRjVyquIV47eJgjDq).
 
 ## Using the error message
 

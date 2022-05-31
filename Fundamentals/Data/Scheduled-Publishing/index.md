@@ -3,7 +3,6 @@ meta.Title: "Scheduled Publishing"
 meta.Description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
 versionFrom: 8.0.0
 versionTo: 9.0.0
-verified-against: 9.0.0
 ---
 
 # Scheduled Publishing
@@ -59,4 +58,4 @@ If your scheduled publishing/unpublishing is not working as you would expect it 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not.
 
-In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index-v8.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.

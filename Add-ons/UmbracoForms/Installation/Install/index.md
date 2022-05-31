@@ -1,31 +1,38 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
 
 meta.Title: "Installing Umbraco Forms"
 meta.Description: "Installing Umbraco Forms"
 ---
 
-# Extending Umbraco with the full Forms section
+# Extending Umbraco with the Forms Section
 
-Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's a few steps to install and get started using Umbraco Forms.
+Since Umbraco v7.2, Umbraco contains the **Forms** section, by default. You will see a similar interface, when you click on the **Forms** section in the **Umbraco Backoffice**.
+
+![Form section in backoffice](images/Forms_Section_Backoffice.png)
 
 ## Installing Umbraco Forms
 
-It only takes a few steps to install Umbraco Forms.
+To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
-1. Navigate to the Forms section in the Umbraco backoffice
-2. The Forms dashboard will contain a *Install* button
-3. Hit the *Install* button
-4. Wait for the installation to complete
-5. Your browser will automagically refresh
-6. You are now ready to start building your very first form with Umbraco Forms!
+1. Run the following command on a command prompt of your choice:
 
-![Installing Umbraco Forms](images/InstallingForms.gif)
+    ```cli
+    dotnet add package Umbraco.Forms
+    ```
 
-## Start building forms
+2. Restart the web application using the following command:
 
-Once the installation is successful you will be able to start using Umbraco Forms.
+   ```cli
+    dotnet run
+    ```
 
-For details on how to proceed, check out the [editor documentation](../../Editor)
+## Start Building Forms
 
-![Create form](images/start-with-forms.png)
+Once the installation is successful, you will see a similar screen in the Forms section:
+
+![Create form](images/start-with-forms-v9.png)
+
+## Using Forms
+
+For details on using Forms, see the [Editor Documentation](../../Editor).

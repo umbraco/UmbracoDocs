@@ -1,53 +1,60 @@
 ---
 versionFrom: 7.0.0
+versionTo: 9.0.0
 ---
 
-# Defining and attaching prevalue sources
+# Defining and Attaching Prevalue Sources
 
-Prevalue sources are a way to pre-define and/or retrieve a list of items from a certain source. They can be used in any fieldtypes that include some kind of list, like Dropdown and Multiple / Single Choice lists.
+Prevalue sources are a way to pre-define and/or retrieve a list of items from a certain source. They can be added in any field types that include some kind of list like Dropdown and Multiple/Single Choice lists.
 
-## Setting up a prevalue source
+## Setting up a Prevalue Source
 
-Prevalue sources can be managed in the corresponding part of the Umbraco Forms section
+Prevalue sources can be managed in the **Prevalue sources** folder available in the **Forms** section.
 
 ![Prevalue source tree](images/prevaluesourcetree.png)
 
-Right-click the prevalue source tree and select create. You will see a new page where you'll need to setup and configure your prevalue source.
+To set a prevalue source:
 
-After setting a name, you need to select the type of prevalue source you'll want to use. An overview of the different default types can be found in the [Prevalue source types](Prevalue-source-types) article.
+1. Navigate to the **Forms** section.
+2. Right-click the **Prevalue sources** folder and select **Create**.
+3. A new page opens in the right-side of the editor where you'll need to setup and configure your prevalue source.
+4. Enter a **Name**.
+5. Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](Prevalue-source-types) article.
 
-![Choose type](images/choosetype.png)
+    ![Choose type](images/choosetype.png)
 
-### Configure the prevalue source
+### Configuring the Prevalue Source
 
-Depending on the type you choose, you'll need to provide some additional settings.
+Depending on the **Type** you choose, you'll need to provide some additional settings:
 
-In this walk-through we will choose `Get values from textfile`:
+1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down.
+    ![Type settings](images/typesettings.png)
+2. Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
-![Type settings](images/typesettings.png)
+        example value 1
+        example value 2
+        example value 3
+        example value 4
+        example value 5
 
-We need to provide a file containing the list we want to use as prevalues. This could be a `.txt` file containing the following:
+3. Select **Pick File** and choose the text file you just created.
+4. Once the text file is uploaded, click **Save** to save the prevalue source.
+5. If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
+    ![Preview](images/preview.png)
 
-    example value 1
-    example value 2
-    example value 3
-    example value 4
-    example value 5
+## Attaching a Prevalue Source to a Field
 
-Once the settings are populated, save the prevalue source by hitting the Save button. If the settings are successfully validated and they return results, you will be able to see an overview of the values.
+Once a prevalue source has been created, it can be used while building Forms in the Forms designer.
 
-![Preview](images/preview.png)
-
-## Attaching a prevalue source to a field
-
-Once a prevalue source has been created, we can now use it when building forms in the Forms designer.
-
-The example below is the settings for a Multiple Choice fieldtype. When there is at least one prevalue source defined in your project, the Prevalues section will contain a dropdown from where you can choose to use a prevalue source.
+**Example:**
+Let's add a Multiple Choice field type in our Form. If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
 ![Prevalue source](images/FieldPrevalueSource.png)
 
-Once you have chosen the prevalue source you want, you will see a render of the field in the Forms designer using the values from the attached source.
+Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 
 ![Preview](images/fieldpreview.png)
 
-## [Overview of the default prevalue source types](Prevalue-source-types)
+---
+
+Prev: [Viewing and Exporting Entries](../Viewing-and-Exporting-Entries/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Overview of the Prevalue Source Types](../Defining-and-Attaching-Prevaluesources/Prevalue-source-types/index.md)

@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Installing Umbraco Deploy on new Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
 ---
@@ -23,7 +23,7 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 In this guide we will show how you can install Umbraco Deploy and set up a build server using Github actions to deploy your content.
 
 :::note
-In this example we are hosting the site on Azure Web Apps, using Github actions to set up the CI/CD build server.
+In these examples we are hosting the site on Azure Web Apps, using Github actions or Azure DevOps to set up the CI/CD build server.
 
 However you are free to choose the hosting provider and CI/CD pipeline that you prefer, as long as it supports executing Powershell scripts it will work with Umbraco Deploy.
 :::
@@ -32,29 +32,26 @@ However you are free to choose the hosting provider and CI/CD pipeline that you 
 
 1. [Set up Git repository and new Umbraco project](#set-up-git-repository-and-umbraco-project)
 2. [Install Umbraco Deploy via NuGet](#installing-and-setting-up-umbraco-deploy)
-3. [Configure CI/CD build server](#setting-up-ci-cd-build-server-with-github-actions)
+3. [Configure CI/CD pipeline](#set-up-cicd-pipeline)
 
 ### Set up Git repository and Umbraco project
 
-The first step to get Umbraco Deploy up and running is to set up a Github repository. This will act as our environment where we will set up a CI/CD pipeline that will run the build server to Azure Web Apps and a new Umbraco project through [Visual Studio](https://our.umbraco.com/documentation/Getting-Started/Setup/Install/install-umbraco-with-nuget).
+The first step to get Umbraco Deploy up and running is to set up a Github repository. This will be where source code is stored, and, if following the GitHub actions example, act as our environment where we will set up a CI/CD pipeline.
 
 1. Set up a Github repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
-3. Create a new Visual Studio project in the repository folder.
-4. Install Umbraco CMS through NuGet - `Install-Package UmbracoCms`.
-5. Run the project.
-6. Choose to use a custom SQL connectionstring pointing to your local database.
-7. Commit the files to so they are ready to be pushed up once we have set up the build server.
+3. [Create a new Umbraco V9 project](https://our.umbraco.com/documentation/UmbracoNetCoreUpdates).
+4. Run the project.
+5. Choose to use a custom SQL connectionstring pointing to your local database.
+6. Commit the files to so they are ready to be pushed up once we have set up the build server.
 
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
-**/App_Data/*
-!**/App_Data/packages
 **/media/*
 
 # Umbraco deploy specific
-**/data/deploy*
+**/umbraco/Deploy/deploy*
 ```
 
 :::note
@@ -65,127 +62,12 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index).
 
-To install Umbraco deploy in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or run ```Install-Package UmbracoDeploy.OnPrem``` via the Package Manager.
-
-:::note
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  ```UmbracoDeploy.Forms``` package as well.
-
-Umbraco Deploy supports Forms version 8.5 and up.
-:::
-
-:::note
-In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List Editor - there is one further NuGet package to install: ```UmbracoDeploy.Contrib```.
-:::
-
-Once the installation has finished you might notice a new file in your `/config` folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to. It knows which environment you’re currently on (for example local or staging) and it will choose the next environment in the list to deploy to.
-
-When Umbraco Deploy has been installed, to be able to use it in the project you will need to add the following `appSetting` to the `web.config` of the project:
-
-```xml
-<add key="Umbraco.Deploy.ApiKey" value="YourAPIKeyHere" /> 
-```
-
-The `Umbraco.Deploy.ApiKey` value needs to be replaced with your own Deploy API key.
-
-The following code snippet can be used to generate a random key, using a tool like LinqPad.
-
-```C#
-
-public string GetRandomKey(int bytelength)
-{
-   byte[] buff = new byte[bytelength];
-   RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-   rng.GetBytes(buff);
-   StringBuilder sb = new StringBuilder(bytelength * 2);
-   for (int i = 0; i < buff.Length; i++)
-       sb.Append(string.Format("{0:X2}", buff[i]));
-   return sb.ToString();
-}
-
-```
-
-This same Deploy API key must be used on each environment for the same website.
-
-:::note
-We strongly recommend to generate different keys for different websites.
-:::
-
-Once the `appSetting` and API key have been added, it is now time to configure the environments in the `UmbracoDeploy.config` file.
-
-The config file will look like this:
-
-```xml
-
-<?xml version="1.0" encoding="utf-8"?>
-<environments xmlns="urn:umbracodeploy-environments">
-  <environment type="development" 
-    name="Development" 
-    id="00000000-0000-0000-0000-000000000000">
-      http://development/
-  </environment>
-  <environment type="staging"
-    name="Staging" 
-    id="00000000-0000-0000-0000-000000000000">
-      http://staging/
-   </environment>
-  <environment type="live" 
-    name="Live" 
-    id="00000000-0000-0000-0000-000000000000">
-      http://live/
-  </environment>
-</environments>
-
-
-```
-
-You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
-
-1. Open "Tools".
-2. Select "Create GUID".
-3. Use the Registry Format.
-4. Copy the GUID into the `id` value.
-5. Generate a "New GUID" for each environment you will be adding to your setup.
-
-The `type` value is for informational purposes in the backoffice but in most cases will be the same (lowercased) value of the Name.
-
-The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
-
-When you have set up your environments in the `UmbracoDeploy.Config` the following `AppSetting` needs to be set on the different environments that you have set up with Umbraco Deploy:
-
-```xml
-<add key="Umbraco.Deploy.EnvironmentName" value="TheEnvironmentTypeHere" />
-```
-
-:::note
-You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
-:::
-
-Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `~/data` folder of our Umbraco project.
-
-This can be done by going to the `~/data/revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
-
-:::tip
-If you do not see a `/data` folder in the root of your project, you might need to start up the project first.
-:::
-
-![Test UDA file](images/test-UDA.png)
-
-We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
-
-Now that Umbraco Deploy has been installed on the project, we can go ahead and commit the files to the repository.
-
-**Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our a repository.
-
-#### Include your Umbraco Deploy license file
-
-Before moving on to setting up the build server, make sure that your license is included in your project.
-
-The file needs to be placed in the `/bin` folder.
+### Set up CI/CD Pipeline
 
 At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICD-Pipeline).
 
-Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployments).
+Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployment-Workflow).
 
 This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).

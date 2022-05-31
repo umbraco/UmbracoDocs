@@ -10,6 +10,4 @@ This section contains information on each feature and functionality in an Umbrac
 
 ## [Page Types](Content-Types)
 
-## [Overview of widgets](../Widgets)
-
 ## [Available settings](Settings)

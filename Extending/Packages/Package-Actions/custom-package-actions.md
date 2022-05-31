@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Create custom package actions for your Umbraco package"
 meta.Description: "Tutorial on how to create custom package actions for your Umbraco package"
+versionRemoved: 9.0.0
 ---
 
 # Creating custom package actions
@@ -10,7 +11,7 @@ In addition to utilizing the [built-in package actions](index.md), you can also 
 
 ## When to use a Package Action
 
-A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer](../../../Implementation/Composing/index.md) or [migration](../../Database/index.md). Package Actions have two important differences though:
+A lot of the things you would use a package action for can also be accomplished in other ways - for example via a [composer](../../../Implementation/Composing/index-v8.md) or [migration](../../Database/index-v8.md). Package Actions have two important differences though:
 1. They only run on install and uninstall - no need to worry about startup cost for your site or add extra checks to see if it ran.
 1. You can ensure your package uninstalls cleanly - it has the `Undo()` method by default where you can clean up after yourself.
 
@@ -19,7 +20,7 @@ So if you have something you know should only run on install or uninstall then p
 :::note
 If you want your package to be available on a multi-environment solution then you need to consider this:
 
-If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be deployable if the user uses a tool that handles those, otherwise using [migrations](../../Database/index.md) may be better!
+If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be deployable if the user uses a tool that handles those, otherwise using [migrations](../../Database/index-v8.md) may be better!
 :::
 
 ## Basic package action implementation

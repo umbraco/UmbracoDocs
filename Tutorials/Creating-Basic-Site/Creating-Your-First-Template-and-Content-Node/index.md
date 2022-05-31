@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 ---
 
 # Creating Your First Template
@@ -11,7 +11,7 @@ To edit the template:
 1. Go to **Settings**.
 2. Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled **_HomePage_**.
 3. Open the template. It will contain a little bit of **_Razor code_**.
-    ![Empty Homepage Template](images/figure-13-empty-homepage-template-v8.png)
+    ![Empty Homepage Template](images/figure-13-empty-homepage-template-v9.png)
 4. Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in.
 
     :::note
@@ -83,7 +83,12 @@ To add a content node:
     </table>
 5. Click **Save and Publish**. The content tree will reload with the homepage node.
 
-Refresh your webpage in your browser <http://localhost:xxxx>. The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
+Refresh your webpage in your browser <http://localhost:xxxx>. To access your webpage:
+
+1. In the **Homepage** content node, select **Info**.
+2. Click on the window pop-up symbol under the **Links** section.
+
+The default Umbraco page will now be gone and we'll now see a very bare, unstyled page. We are getting there.
 
 :::tip
 If you see a blank page, check if the template is entered and remember to save it.

@@ -1,5 +1,7 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 9.0.0
+meta.Title: "Special Property Type Aliases for Routing"
+meta.Description: "Describes special property type aliases which can be used to customise routing"
 ---
 
 # Special Property Type aliases for routing
@@ -31,4 +33,4 @@ The URL alias remains in the browser address bar as a 'mask' over the real URL. 
 
 ## Filtering
 
-[See Filtering Property Conventions](../Querying/IPublishedContent/Collections.md#filtering-conventions)
+[See Filtering Property Conventions](../Querying/IPublishedContent/Collections/index.md#filtering-conventions)

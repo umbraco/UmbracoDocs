@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
 ---
 
 # Health check: HTTPS Configuration
@@ -11,7 +8,7 @@ _Checks if your site is configured to work over HTTPS and if the Umbraco related
 
 ## How to fix this health check
 
-This health check actuall checks a couple of things.
+This health check actually checks a couple of things.
 
 First of all, it ensures that your website is running on HTTPS using a valid certificate.
 

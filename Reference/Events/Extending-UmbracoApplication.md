@@ -14,16 +14,22 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
 
 ```csharp
 using System;
-using System.Collections.Generic;
 using System.Web;
+using System.Web.SessionState;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Web;
 
 namespace Umbraco8.Example
 {
     public sealed class BindApplicationEventsExampleComponent : IComponent
     {
-        private readonly WebProfiler _profiler;
-        private readonly bool _profile;
+        private readonly ILogger _logger;
+
+        public BindApplicationEventsExampleComponent(ILogger logger)
+        {
+            _logger = logger;
+        }
 
         public void Initialize()
         {
@@ -46,26 +52,38 @@ namespace Umbraco8.Example
             // be removed when the app dies.
             app.BeginRequest += BeginRequest;
             app.EndRequest += EndRequest;
-            
+
             // and session start?
             var module = app.Modules["Session"] as SessionStateModule;
-    	    if (module != null)
+            if (module != null)
             {
                 module.Start += this.Session_Start;
             }
         }
 
-        private void BeginRequest(object sender, EventArgs e){
+        private void BeginRequest(object sender, EventArgs e)
+        {
 
-	    };
+        }
 
-        private void EndRequest(object sender, EventArgs e){
+        private void EndRequest(object sender, EventArgs e)
+        {
 
-	    };
-	    private void Session_Start(object sender, EventArgs e){
-	    {
-    		
-	    };
+        }
+
+        private void Session_Start(object sender, EventArgs e)
+        {
+            _logger.Info<BindApplicationEventsExampleComponent>("Session Started");
+
+        }
+    }
+
+    public class ApplicationComposer : ComponentComposer<BindApplicationEventsExampleComponent>, IUserComposer
+    {
+        public override void Compose(Composition composition)
+        {
+            base.Compose(composition);
+        }
     }
 }
 ```

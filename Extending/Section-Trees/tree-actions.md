@@ -1,24 +1,23 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
 ---
 
 # Tree Actions
 
-Items in an Umbraco Tree can have associated Actions, the actions visible to the currently logged in user can be controlled via User Permissions.
+Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
 If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
 
-For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor., but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
+For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
 
 ```csharp
 bool canCreateBlogs = false;
-var us = Services.UserService;
-var user = us.GetByEmail(email);
-var userPermissionsForBlog = us.GetPermissions(user, blogId);
+var user = _userService.GetByEmail(email);
+var userPermissionsForBlog = _userService.GetPermissions(user, blogId);
 foreach (var permission in userPermissionsForBlog)
 {
     if (permission.AssignedPermissions.Contains("C"))
@@ -52,42 +51,40 @@ When you pull back the AssignedPermissions for a user on a particular item, it i
 
 ### User Permission Codes
 
-Here's a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call... (if relevant)
+Here is a list of the tree actions and associated user permission codes shipped by Umbraco CMS and add-on projects (such as Umbraco Deploy), as well as those used by some community packages.
 
-| Letter | Alias                | Can be Permission Assigned | Icon                | JavaScript Function                                                                                                                     |
-|--------|----------------------|----------------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| F      | Action Browse        | True                       |                     | This action is used as a security constraint that grants a user the ability to view nodes in a tree that has permissions applied to it. |
-| ï      | createblueprint      | True                       | blueprint           |                                                                                                                                         |
-| I      | assignDomain         | True                       | home                | UmbClientMgr.appActions().actionAssignDomain()                                                                                          |
-| Z      | auditTrail           | True                       | time                | UmbClientMgr.appActions().actionAudit()                                                                                                 |
-| 7      | changeDocType        | True                       | axis-rotation-2     | UmbClientMgr.appActions().actionChangeDocType()                                                                                         |
-| O      | copy                 | True                       | documents           | UmbClientMgr.appActions().actionCopy()                                                                                                  |
-| D      | delete               | True                       | delete              | UmbClientMgr.appActions().actionDelete()                                                                                                |
-| E      | disable              | False                      | remove              | UmbClientMgr.appActions().actionDisable()                                                                                               |
-| N      | emptyRecycleBin      | False                      | trash               | UmbClientMgr.appActions().actionEmptyTranscan()                                                                                         |
-| 9      | exportDocumentType   | False                      | download-alt        | UmbClientMgr.appActions().actionExport()                                                                                                |
-| 8      | importDocumentType   | False                      | page-up             | UmbClientMgr.appActions().actionImport()                                                                                                |
-| M      | move                 | True                       | enter               | UmbClientMgr.appActions().actionMove()                                                                                                  |
-| C      | create               | True                       | add                 | UmbClientMgr.appActions().actionNew()                                                                                                   |
-| !      | createFolder         | False                      | plus-sign-alt       | UmbClientMgr.appActions().actionNewFolder()                                                                                             |
-| T      | notify               | False                      | megaphone           | UmbClientMgr.appActions().actionNotify()                                                                                                |
-| X      | importPackage        | False                      | gift                | UmbClientMgr.appActions().actionPackage()                                                                                               |
-| Y      | createPackage        | False                      | gift                | UmbClientMgr.appActions().actionPackageCreate()                                                                                         |
-| P      | protect              | True                       | lock                | UmbClientMgr.appActions().actionProtect()                                                                                               |
-| U      | publish              | True                       | globe               | UmbClientMgr.appActions().actionPublish()                                                                                               |
-| Q      | logout               | False                      | signout             | UmbClientMgr.appActions().actionQuit()                                                                                                  |
-| L      | refreshNode          | False                      | refresh             | UmbClientMgr.appActions().actionRefresh()                                                                                               |
-| B      | republish            | False                      | globe               | UmbClientMgr.appActions().actionRePublish()                                                                                             |
-| R      | rights               | True                       | vcard               | UmbClientMgr.appActions().actionRights()                                                                                                |
-| K      | rollback             | True                       | undo                | UmbClientMgr.appActions().actionRollback()                                                                                              |
-| 5      | sendToTranslate      | True                       | chat                | UmbClientMgr.appActions().actionSendToTranslate()                                                                                       |
-| S      | sort                 | True                       | navigation-vertical | UmbClientMgr.appActions().actionSort()                                                                                                  |
-| H      | sendtopublish        | True                       | outbox              | UmbClientMgr.appActions().actionToPublish()                                                                                             |
-| 4      | translate            | True                       | comments            |                                                                                                                                         |
-| A      | update               | True                       | save                | UmbClientMgr.appActions().actionUpdate()                                                                                                |
-| Z      | unpublish            | False                      | circle-dotted       |                                                                                                                                         |
-| ¤      | delete               | False                      | delete              | javascript:actionDeleteRelationType(UmbClientMgr.mainTree().getActionNode(). nodeId,UmbClientMgr.mainTree().getActionNode().nodeName);   |
-| ®      | create               | False                      | add                 | javascript:actionNewRelationType();                                                                                                     |
-| V      | ActionRestore        | False                      |                     | This action is invoked when the content item is to be restored from the recycle bin                                                     |
-| -      | Action Null          | False                      |                     | This is used internally to assign no permissions to a node for a user and shouldn't be used in code                                     |
-| ,      | ContextMenuSeparator | False                      |                     | Used to define context menu separator items. This should not be used directly in any code except for creating menus              |
+If building a package or adding custom tree actions to your solution, it's important to pick a permission letter that doesn't clash with one of these.
+
+If you have created a package using a custom tree action, please consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
+
+|Type|Alias|Letter|Can Be Permission Assigned|
+|-|-|-|-|
+|Umbraco.Cms.Core.Actions.ActionAssignDomain|assignDomain|I|True|
+|Umbraco.Cms.Core.Actions.ActionBrowse|browse|F|True|
+|Umbraco.Cms.Core.Actions.ActionCopy|copy|O|True|
+|Umbraco.Cms.Core.Actions.ActionCreateBlueprintFromContent|createblueprint|ï|True|
+|Umbraco.Cms.Core.Actions.ActionDelete|delete|D|True|
+|Umbraco.Cms.Core.Actions.ActionMove|move|M|True|
+|Umbraco.Cms.Core.Actions.ActionNew|create|C|True|
+|Umbraco.Cms.Core.Actions.ActionNotify|notify|N|True|
+|Umbraco.Cms.Core.Actions.ActionProtect|protect|P|True|
+|Umbraco.Cms.Core.Actions.ActionPublish|publish|U|True|
+|Umbraco.Cms.Core.Actions.ActionRestore|restore|V|False|
+|Umbraco.Cms.Core.Actions.ActionRights|rights|R|True|
+|Umbraco.Cms.Core.Actions.ActionRollback|rollback|K|True|
+|Umbraco.Cms.Core.Actions.ActionSort|sort|S|True|
+|Umbraco.Cms.Core.Actions.ActionToPublish|sendtopublish|H|True|
+|Umbraco.Cms.Core.Actions.ActionUnpublish|unpublish|Z|True|
+|Umbraco.Cms.Core.Actions.ActionUpdate|update|A|True|
+|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
+|Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore|deployTreeRestore|Ψ|True|
+|Umbraco.Deploy.UI.Actions.ActionPartialRestore|deployPartialRestore|Ø|True|
+|Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|T|True|
+|Jumoo.TranslationManager.Core.Actions.ActionTranslate|translate|5|True|
+|Jumoo.TranslationManager.Core.Actions.ActionManageTranslation|manageTranslations|Ť|True|
+|uSync.Publisher.Actions.PushToServer|pushContent|>|True|
+|uSync.Publisher.Actions.PullFromServer|pullContent|<|True|
+|uSync.Publisher.Action.PushButton|pushContentButton|^|True|
+|Our.Umbraco.LinkedPages.LinkedAction|linkPages|l|True|
+
+*Note: up until Umbraco Deploy 9.2.0, the letter "N" was used for the "Queue For Transfer" action.  In 9.2.1 it was changed to be "T", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*

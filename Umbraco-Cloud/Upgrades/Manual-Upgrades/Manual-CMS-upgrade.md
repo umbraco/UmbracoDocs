@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+
+versionFrom: 9.0.0
 ---
 
 # Manual upgrade of Umbraco CMS on Cloud
@@ -8,123 +9,38 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-When upgrading an Umbraco Cloud project manually, the very first step is to [clone down your Cloud Development environment to your local machine](../../Set-Up/Working-Locally/).
+* When upgrading an Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../Set-Up/Working-Locally/) or pull down the latest changes for your development environment.
 
-Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
+* navigate to the /src/UmbracoProject/ folder with the csproj with the CMS nuget  package installed.
+
+* Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
 ## Get the latest version of Umbraco
 
-* [Download the latest version Umbraco CMS from Our](https://our.umbraco.com/download/)
-* Unzip the folder to your computer
-* Copy the following folders from the unzipped folder to your Cloud project folder:
-    * `/bin`
-    * `/Umbraco`
+To get the latest version of Umbraco you will need to upgrade the site using NuGet.
 
-## Merge configuration files
+NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
 
-In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
+`dotnet add package Umbraco.Cms --version <VERSION>`
 
-The reason you shouldn't overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
+After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
-### Web.config
+You can also update the CMS through the `NuGet Package Manager` in Visual studio:
 
-When merging the `web.config` file make sure that you **do not overwrite/remove** the following settings:
+![NuGet Package Manager](images/Manage_packages.png)
 
-**< configSettings >**
 
-    <sectionGroup name="umbraco.deploy">
-    <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
-    <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
-    </sectionGroup>
+When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
-**< appSettings >**
-
-    <add key="umbracoConfigurationStatus" value="7.8.1" />
-    ---
-    <add key="UmbracoLicensesDirectory" value="~/App_Plugins/UmbracoLicenses/" />
-    <add key="umbracoVersionCheckPeriod" value="0" />
-    <add key="umbracoDisableElectionForSingleServer" value="true" />
-    <add key="Umbraco.Deploy.ApiKey" value="9BEA9EAA7333131EB93B6DB7EF5D79709985F3FB" />
-
-**< connectionString >**
-
-    <connectionStrings>
-        <remove name="umbracoDbDSN" />
-        <add name="umbracoDbDSN" connectionString="Data Source=|DataDirectory|\Umbraco.sdf;Flush Interval=1;" providerName="System.Data.SqlServerCe.4.0" />
-        <!-- Important: If you're upgrading Umbraco, do not clear the connection string / provider name during your web.config merge. -->
-    </connectionStrings>
-
-**< umbraco.deploy >**
-
-    <umbraco.deploy>
-        <environments configSource="config\UmbracoDeploy.config" />
-        <settings configSource="config\UmbracoDeploy.Settings.config" />
-    </umbraco.deploy>
-
-:::note
-The following section with the `Dashboard.config` only applies to Umbraco 7 projects.
-:::
-
-### Dashboard.config
-
-When merging the `Dashboard.config` file make sure that you **do not overwrite / remove** the following settings:
-
-**Deploy**
-
-    <section alias="Deploy">
-        <areas>
-        <area>content</area>
-        </areas>
-        <tab caption="Your workspace">
-        <control>/App_Plugins/Deploy/views/dashboards/dashboard.html</control>
-        </tab>
-    </section>
-
-**StartupFormsDashboardSection**
-
-    <section alias="StartupFormsDashboardSection">
-        <areas>
-        <area>forms</area>
-        </areas>
-        <tab caption="Dashboard">
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
-        <control>/App_Plugins/umbracoforms/backoffice/dashboards/activity.html</control>
-        </tab>
-    </section>
-
-Note that you **should not merge in** the following section from the new version of Umbraco:
-
-    <section alias="StartupDashboardSection">
-        <access>
-        <deny>translator</deny>
-        </access>
-        <areas>
-        <area>content</area>
-        </areas>
-        <tab caption="Get Started">
-        <access>
-            <grant>admin</grant>
-        </access>
-
-        <control showOnce="true" addPanel="true" panelCaption="">
-            views/dashboard/default/startupdashboardintro.html
-        </control>
-
-        </tab>
-    </section>
-
-### Other config files
-
-The following config files contain differences, and in most cases, you need to keep the ones from your Cloud project:
-
-* `/Splashes/noNodes.aspx`
-* `trees.config`
-* `umbracoSettings.config`
+```xml
+<ItemGroup>
+  <PackageReference Include="Umbraco.Cms" Version="9.0.1" />
+</ItemGroup>
+```
 
 ## Run the upgrade locally
 
-When you are done merging the new version of Umbraco with your clone of the Umbraco Cloud project, follow these steps to complete the upgrade:
+When you are done updating the nuget packages as mentioned above, follow these steps to complete the upgrade and verify that everything is working as expected before you push the changes to your Umbraco Cloud project
 
 * Run the project locally
 * When the project spins up, you'll be prompted to log in to verify the upgrade
@@ -140,7 +56,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../Product-Dependencies) on the new Umbraco version.
 
-Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on.
+If updates are available for Umbraco Forms or Umbraco Deploy then you can upgrade those locally as well, before moving on.
 
 When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
 

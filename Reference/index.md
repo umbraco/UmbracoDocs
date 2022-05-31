@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
@@ -8,9 +8,9 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
-## [Configuration](Config/index.md)
+## [Configuration](V9-Config/index.md)
 
-Information about all of Umbraco's configuration files and options.
+Information about all of Umbraco's configurations and options for Umbraco 9.
 
 ## [Templates](Templating/index.md)
 
@@ -29,9 +29,9 @@ This section also describes the types of Controllers used in Umbraco, how they w
 
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
 
-## [Events](Events/index.md)
+## [Notifications](Notifications/index.md)
 
-Event model covering all major aspects of the system for triggering custom code or automation.
+Notifications covering all major aspects of the system for triggering custom code or automation.
 
 ## [Management APIs](Management/index.md)
 
@@ -40,7 +40,6 @@ APIs that focus on creating, updating and deleting.
 ## [Plugins](Plugins/index.md)
 
 The term 'Plugins' refers to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
-
 
 ## [Caching](Cache/index.md)
 
@@ -53,21 +52,6 @@ Information on Umbraco security, its various security options and configuring ho
 ## [Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
 
 This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
-
-## API Documentation
-
-#### [C# API Documentation](https://our.umbraco.com/apidocs/v8/csharp/)
-
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
-
-C# API references for the Umbraco Core and Web libraries.
-
-#### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
-
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
-
-Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
-
 
 ## [Rest APIs](Routing/WebApi/index.md)
 
@@ -83,14 +67,26 @@ Language Variation allows you to have several different variations of content ba
 Find out how to map one object's properties to another type of object.
 
 ## [Scheduling](Scheduling/index.md)
-Run recurring code using the BackgroundTaskRunner.
+Run recurring code using the RecurringHostedServiceBase.
 
 ## [IoC & Dependency Injection](using-ioc.md)
 
 Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
 
+## API Documentation V9
+
+#### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
+
+#### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+
+#### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
+
+#### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
+
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+
+Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
+
 ## External resources
 
 * [Umbraco and precompiled views](https://dobryak.org/road-to-precompiled-web-application-based-on-umbraco-cms/)
-
-

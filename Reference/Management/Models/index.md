@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionTo: 9.0.0
 ---
 
 # Persistence Models reference
@@ -15,13 +15,13 @@ API reference for the Content class.
 ## [ContentType](ContentType.md)
 API reference for the ContentType class.
 
-## [DataTypeDefinition](DataTypeDefinition.md)
-API reference for the DataTypeDefinition class.
+## [DataType](DataType.md)
+API reference for the DataType class.
 
-## DictionaryItem
+## [DictionaryItem](DictionaryItem.md)
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
-## Language
+## [Language](Language.md)
 API reference for the Language class.
 
 ## [Media](Media.md)
@@ -30,17 +30,14 @@ API reference for the Media class.
 ## [MediaType](MediaType.md)
 API reference for the MediaType class.
 
-## Relation
+## [Relation](Relation.md)
 API reference for the Relation class.
 
 ## [RelationType](RelationType.md)
 API reference for the RelationType class.
 
-## Task
-API reference for the Task class.
+## [ServerRegistration](ServerRegistration.md)
+Represents a registered server in a multiple-servers environment.
 
-## TaskType
-API reference for the TaskType class.
-
-## Template
+## [Template](Template.md)
 API reference for the Template class.

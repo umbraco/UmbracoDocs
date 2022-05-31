@@ -3,12 +3,11 @@ versionFrom: 8.0.0
 versionTo: 9.0.0
 meta.Title: "Content Templates in Umbraco"
 meta.Description: "In this article you can learn about how to create and use Content Templates in Umbraco."
-verified-against: 9.0.0
 ---
 
 # Content Templates
 
-_This tutorial was last tested on **Umbraco 8.11**_
+_This tutorial was last tested on **Umbraco 9.0**_
 
 Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
 
@@ -75,7 +74,3 @@ Once you have created a content template, you can use the template to create new
 When you click a document type that has content templates, Umbraco lets you choose to create a new node based on a content template or a blank one:
 
 ![Select Template](images/v8-13-Select-Template.png)
-
-## More Information
-
-* [Content template demo for Umbraco v7](https://www.youtube.com/watch?v=AEutrBnXZ-Q)

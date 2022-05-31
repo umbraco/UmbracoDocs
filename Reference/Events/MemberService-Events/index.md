@@ -13,9 +13,9 @@ The MemberService implements IMemberService and provides access to operations in
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, MemberService Events have been renamed to [**MemberService Notifications**](../Notifications/MemberService-Notifications).
+Note that in Umbraco 9, MemberService Events have been renamed to [**MemberService Notifications**](../../Notifications/MemberService-Notifications).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 ## Usage
@@ -99,7 +99,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IMemberService object.<br />
         "e" will provide:<br/>
-        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContent objects.</li>
             </ol>
@@ -127,7 +127,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
         "sender" will be the current IPublishingStrategy object.<br />
         "e" will provide:<br/>
-        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>PublishedEntities: Gets the published collection of IContent objects.</li>
             </ol>

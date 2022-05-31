@@ -14,9 +14,9 @@ The `EditorModelEventManager` class is used to emit events that enable you to ma
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, EditorModel Events have been renamed to [**EditorModel Notifications**](../Notifications/EditorModel-Notifications).
+Note that in Umbraco 9, EditorModel Events have been renamed to [**EditorModel Notifications**](../../Notifications/EditorModel-Notifications).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 ## Usage

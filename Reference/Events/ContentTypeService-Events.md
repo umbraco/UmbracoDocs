@@ -10,7 +10,7 @@ needsV8Update: "true"
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, ContentTypeService Events have been renamed to [**ContentTypeService Notifications**](../Notifications/ContentTypeService-Notifications.md).
+Note that in Umbraco 9, ContentTypeService Events have been renamed to [**ContentTypeService Notifications**](../Notifications/ContentTypeService-Notifications/index.md).
 
 Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
 :::

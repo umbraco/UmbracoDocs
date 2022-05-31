@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 9.0.0
 ---
 
 # Multi Url Picker
@@ -23,7 +23,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 ## Typed
 
 ```csharp
-@using Umbraco.Web.Models
+@using Umbraco.Cms.Core.Models
 @{
     var links = Model.Value<IEnumerable<Link>>("footerLinks");
     if (links.Any())
@@ -41,7 +41,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 If `Max number of items` is configured to `1`
 
 ```csharp
-@using Umbraco.Web.Models
+@using Umbraco.Cms.Core.Models
 @{
     var link = Model.Value<Link>("link");
     if (link != null)
@@ -57,10 +57,11 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @using Newtonsoft.Json
-@using Umbraco.Web.Models
+@using Umbraco.Cms.Core.Models;
+@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -135,8 +136,9 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'footerLinks'
-    content.SetValue(Home.GetModelPropertyType(x => x.FooterLinks).Alias, links);
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FooterLinks).Alias, links);
 }
 ```

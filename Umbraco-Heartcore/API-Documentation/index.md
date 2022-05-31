@@ -134,6 +134,10 @@ A member login can be used to access the Content Delivery API if it's protected.
 
 Content can be restricted further by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
 
+:::note
+Do note that you will need an API key header if the Content Delivery API `cdn.umbraco.io` is set to protected via the backoffice.
+:::
+
 ### Member Bearer token
 
 The endpoints implements OAuth 2.0.

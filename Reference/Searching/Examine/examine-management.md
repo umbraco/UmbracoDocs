@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+needsv9Update: "true"
 ---
 
 # Examine Management

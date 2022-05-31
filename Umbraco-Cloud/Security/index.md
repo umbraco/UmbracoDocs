@@ -64,7 +64,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
 
 ### Ports
 
@@ -73,7 +73,7 @@ By default, all ports are closed to secure them against external attacks. This i
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
-- Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users.
+- Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users. **Note:** This feature is currently not available in Umbraco Cloud version 9.
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
 
@@ -81,7 +81,7 @@ Umbraco Cloud offers a multitude of features allowing you to block access to dif
 
 On all Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.
 
-It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure App Service) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
 
@@ -129,64 +129,53 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
 
 ```xml
-<rule name="Backoffice IP Filter" enabled="true">
-    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-    <conditions logicalGrouping="MatchAll">
+<rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
+  <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
+  <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
+  <action type="None" />
+</rule>
+<rule name="Backoffice IP Filter excluding localhost" enabled="true" stopProcessing="true">
+  <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
+  <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
 
-        <!-- Umbraco Cloud to Cloud connections should be allowed -->
-        <add input="{HTTP_X_Forwarded_For}" pattern="52.166.147.129" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="13.95.93.29" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="40.68.36.142" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="13.94.247.45" negate="true" />
-        <add input="{HTTP_X_Forwarded_For}" pattern="52.157.96.229" negate="true" />
+    <!-- Don't apply rules on localhost so your local environment still works -->
+    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-        <!-- Don't apply rules on localhost so your local environment still works -->
-        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-
-        <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
-         <add input="{HTTP_X_Forwarded_For}" pattern="52.232.105.169" negate="true" />
-         <add input="{HTTP_X_Forwarded_For}" pattern="52.174.66.30" negate="true" />
-
-        <!-- Add other client IPs that need access to the backoffice -->
-        <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
-
-    </conditions>
-    <action type="CustomResponse" statusCode="403"/>
+    <!-- Custom IP list -->
+    <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
+  </conditions>
+  <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
+:::note
+In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
+:::
 
 **Non-Reverse Proxy (eg. non-Cloudflare)**
 
 When your Cloud project is not using Cloudflare, your site gets the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
 
 ```xml
-<rule name="Backoffice IP Filter" enabled="true">
-    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-    <conditions logicalGrouping="MatchAll">
+<rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
+  <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
+  <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
+  <action type="None" />
+</rule>
+<rule name="Backoffice IP Filter excluding localhost" enabled="true" stopProcessing="true">
+    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
+    <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
+    
+    <!-- Don't apply rules on localhost so your local environment still works -->
+    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-        <!-- Umbraco Cloud to Cloud connections should be allowed -->
-        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-        <add input="{REMOTE_ADDR}" pattern="52.157.96.229" negate="true" />
-
-        <!-- Don't apply rules on localhost so your local environment still works -->
-        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-
-        <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
-         <add input="{REMOTE_ADDR}" pattern="52.232.105.169" negate="true" />
-         <add input="{REMOTE_ADDR}" pattern="52.174.66.30" negate="true" />
-
-        <!-- Add other client IPs that need access to the backoffice -->
-        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-
+    <!-- Custom IP list -->
+    <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
     </conditions>
-    <action type="CustomResponse" statusCode="403"/>
+    <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
 
-What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this.
+What we're doing here is blocking all the requests to `umbraco/backoffice/` (while still allowing Umbraco Deploy to work)and all of the routes that start with this.
 
 All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 5 IP addresses, which are all specific to the servers we use for Umbraco Cloud.
 
