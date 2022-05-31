@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.5.0
+versionTo: 10.0.0
 keywords: 2fa, security, members, users
 meta.Title: "Two-factor authentication"
 meta.Description: "Umbraco users and members support a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice"
@@ -181,7 +182,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 }
 ```
 
-In this razor-code sample, we get the current members unique key and list all registered `ITwoFactorProvider` implementations.
+In this razor-code sample, we get the current member's unique key and list all registered `ITwoFactorProvider` implementations.
 
 If the `setupData` is `null` for the specified `providerName` it means the provider is already set up. In this case, we show a disable button. Otherwise, we check the type and show the UI for how to set up the App Authenticator, by showing the QR Code and an input field to validate the code from the App Authenticator.
 
