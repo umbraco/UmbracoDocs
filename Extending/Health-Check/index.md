@@ -59,7 +59,7 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 
 ### Configuration checks
 
-These are small checks that take an [IConfiguration](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.iconfiguration?view=dotnet-plat-ext-6.0) key and confirm that the value that's expected is there. If the value is not correct, there will link to a guide for how to set this value correct.
+These are small checks that take an [IConfiguration](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.iconfiguration?view=dotnet-plat-ext-6.0) key and confirm that the value that's expected is there. If the value is not correct, there will be a link to a guide on how to set this value correct.
 
 * A configuration check needs to inherit from `Umbraco.Cms.Core.HealthChecks.Checks.AbstractSettingsCheck`
 * A configuration check needs the `HealthCheck` attribute as noted at the start of this document
