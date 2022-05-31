@@ -11,7 +11,7 @@ In this section we provide a full example on how Umbraco Deploy running on Umbra
 
 ## Discussion on the Provided Example
 
-We have defined a two stage build process, divided into a build and a deploy stage, configured in YAML format.  Although initially this isn’t as easy to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
+We have defined a two-stage build process, divided into a build and a deploy stage, configured in YAML format. Although initially, this isn’t as easy to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
 
 We then have a number of variables defined, that are used in the build configuration below.  By using variables we have the ability to modify the script easily for use on other web applications.
 

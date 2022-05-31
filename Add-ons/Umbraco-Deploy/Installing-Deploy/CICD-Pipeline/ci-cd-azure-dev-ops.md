@@ -6,13 +6,13 @@ meta.Description: "Steps and examples on how to setup a build and deployment pip
 
 # Setting up CI/CD build server with Azure DevOps
 
-In this section we provide a full example on how Umbraco Deploy running on Umbraco 9 and above can be utilized as part of a build and deployment pipeline using Azure DevOps, which you can use or adapt for your needs.
+In this section, we provide a full example of how Umbraco Deploy running on Umbraco 9 and above can be utilized as a part of a build and deployment pipeline using Azure DevOps. You can use this directly or adapt it for your needs.
 
 ## Discussion on the Provided Example
 
 We have defined a single stage build and deployment pipeline, configured in YAML format.  Although initially this isn’t as easy to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
 
-We then have a number of variables defined, that are used in the build configuration below.  By using variables we have the ability to modify the script easily for use on other web applications. Some values are set in the script, and some via Azure DevOps variables or secrets.
+We then have a number of variables defined, that are used in the build configuration below. By using variables we have the ability to modify the script for use on other web applications. Some values are set in the script, and some via Azure DevOps variables or secrets.
 
 Most tasks in the pipeline are standard steps that will be used in any .NET web application release, such as the first steps:
 
@@ -24,9 +24,13 @@ Most tasks in the pipeline are standard steps that will be used in any .NET web 
 
 Additional steps can be added as required, for example for running automated tests.
 
-The Umbraco Deploy license file and the schema data files will automatically be included within the build output.  There's no need for custom steps to include these as there was in Umbraco 8.
+The Umbraco Deploy license file and the schema data files will automatically be included within the build output. 
 
-The deployment part of the pipeline stage consists of two steps.  Firstly a web deployment (#4), taking the packaged build artifact and deploying it, in this case, to an Azure web app slot.
+There's no need for custom steps to include these as there was in Umbraco 8.
+
+The deployment part of the pipeline stage consists of two steps. 
+
+Firstly a web deployment (#4), takes the packaged build artifact and deploys it, in this case, to an Azure Web App slot.
 
 The final step (#5) is Umbraco Deploy specific - to call a function defined in the Powershell script and trigger the extraction.
 
