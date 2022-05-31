@@ -388,7 +388,7 @@ namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods
 
 ```
 
-If a custom configuration is required for a custom notification method, the following extract can be merged in `appsettings.json` file, which will enable the email notification method to be configured:
+If a custom configuration is required for a custom notification method, the following extract can be merged in the `appsettings.json` file, which will enable the email notification method to be configured:
 
 ```json
 {
