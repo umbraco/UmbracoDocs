@@ -7,7 +7,7 @@ meta.Description: "Information on the content dashboard settings section"
 
 # Content Dashboard Settings
 
-Allows you to configure the content dashboard settings for Umbraco.
+Allows you to configure the Content Dashboard settings for Umbraco.
 
 ```json
 {
@@ -25,8 +25,9 @@ Allows you to configure the content dashboard settings for Umbraco.
 
 ## AllowContentDashboardAccessToAllUsers
 
-Gets a value indicating whether the content dashboard should be available to all users.
-`true` if the dashboard is visible for all user groups; otherwise, `false` and the default access rules for that dashboard will be in use.
+Gets a value indicating whether the Content Dashboard should be available to all users.
+
+When the value is `true` the dashboard is visible for all user groups. Otherwise, when the value is `false`, the default access rules for that dashboard will be in use.
 
 ## ContentDashboardPath
 
@@ -35,5 +36,6 @@ Gets the path to use when constructing the URL for retrieving data for the conte
 ## ContentDashboardUrlAllowlist
 
 Gets the allowed addresses to retrieve data for the content dashboard.
+
 No addresses specified indicates that any URL is allowed.
 
