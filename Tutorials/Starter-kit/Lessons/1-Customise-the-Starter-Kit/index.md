@@ -31,7 +31,7 @@ Learn how to:
 
     * Try different combinations and see what fits your site.
     * Save a draft of your changes by using `ctrl`+`s` or clicking the **Save** button. **Save** will not publish the changes to the website.
-    * Click **Save and preview** to see how the page looks on various screen sizes.
+    * Click **Save and preview** to see how the page looks on different screen sizes.
 
 4. Try changing the background image of the Home page.
 
