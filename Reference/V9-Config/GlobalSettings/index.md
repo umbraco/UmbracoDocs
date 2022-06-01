@@ -7,9 +7,9 @@ meta.Description: "Information on the global settings section"
 
 # Global Settings
 
-Global settings contains various global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
+Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
 
-To make it easier to see what values are present in the global section, the following snippet will contain all the available options, with default values, and some example values for the required, From, Host and Port keys of the SMTP settings:
+The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host` and `Port` keys of the SMTP settings:
 
 ```json
 "Umbraco": {

@@ -44,7 +44,7 @@ Specifies how long a processed image may be used from the server cache before it
 
 ### Cache name length
 
-Whenever an image is cached it will use a generated name (based on the SHA256 file hash by default), this setting allows you to change how long that name will be, by default 8 characters. It's worth mentioning here that cached images will be in a series of subfolders based on their name, for instance: a file with the name `abc1` will be put in `/a/b/c/1`. This is done to mitigate the potential performance hit of having a very large amount of files in the same folder, so a longer cache name length will result in a deeper folder structure.
+Whenever an image is cached it will use a generated name (based on the SHA256 file hash by default). This setting allows you to change how long that name will be, by default 8 characters. It is worth mentioning here that cached images will be in a series of subfolders based on their name, for instance: a file with the name `abc1` will be put in `/a/b/c/1`. This is done to mitigate the potential performance hit of having a large amount of files in the same folder. A longer cache name length will result in a deeper folder structure.
 
 ### Cache folder
 
@@ -56,4 +56,4 @@ Contains configuration for image resizing.
 
 ### Max width/max height
 
-Specifies the maximum width and height an image can be resized to. If the requested width and height are _both_ above the configured maximums, no resizing will be performed. This adds very basic security to prevent resizing to very big dimensions and using a lot of server CPU/memory to do so.
+Specifies the maximum width and height an image can be resized to. If the requested width and height are _both_ above the configured maximums, no resizing will be performed. This adds basic security to prevent resizing to big dimensions and using a lot of server CPU/memory to do so.

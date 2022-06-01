@@ -7,7 +7,7 @@ meta.Description: "Information on configuration allowing for the modification of
 
 # Install Default Data Settings
 
-When Umbraco is installed for the first time, it creates various default data. These include a language, some Data Types, and some Media and Member Types.
+When Umbraco is installed for the first time, it creates a set of default data. These include a language, some Data Types, and some Media and Member Types.
 
 In certain setups, you may want to take control over what is installed and opt-out of the creation of certain items.
 
