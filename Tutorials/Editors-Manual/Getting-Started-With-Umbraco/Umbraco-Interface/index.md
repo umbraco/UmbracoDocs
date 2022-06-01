@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 ## Initial View
 
-After logging in to an Umbraco 9 project you will be presented with a dashboard containing a wide array of buttons and features. Let's quickly go through what each feature does.
+After logging in to an Umbraco project you will be presented with a dashboard containing a wide array of buttons and features. Let's quickly go through what each feature does.
 
 ### The Dashboard
 
