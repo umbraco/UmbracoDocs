@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Keep Alive Settings"
 meta.Description: "Information on the keep alive settings section"
 ---
@@ -27,6 +28,6 @@ Allows you to disable the keep alive http calls.
 
 If you want to change the url you need to call to keep the site alive, update this property, it should not contain a trailing slash.
 
-:::note 
-Due to a bug this setting is ignored [pre v9.5.0](https://github.com/umbraco/Umbraco-CMS/pull/12224) 
+:::note
+Due to a bug this setting is ignored [pre v9.5.0](https://github.com/umbraco/Umbraco-CMS/pull/12224)
 :::

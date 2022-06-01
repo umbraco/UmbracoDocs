@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.1
+versionTo: 10.0.0
 meta.Title: "Umbraco Package Migration Settings"
 meta.Description: "Information on the package migration settings section"
 ---

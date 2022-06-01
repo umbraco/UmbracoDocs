@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Type Finder Settings"
 meta.Description: "Information on the type finder settings section"
 ---

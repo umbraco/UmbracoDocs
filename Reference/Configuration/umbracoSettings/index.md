@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 8.0.0
+versionTo: 8.17.0
 meta.Title: "umbracoSettings.config options in Umbraco"
 meta.Description: "Reference on umbracoSettings.config options in Umbraco"
 ---
@@ -44,9 +45,9 @@ See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup
 <settings>
   <content>
     <!-- Add contentVersionCleanupPolicyGlobalSettings in the content section -->
-    <contentVersionCleanupPolicyGlobalSettings 
-      enable="true" 
-      keepAllVersionsNewerThanDays="7" 
+    <contentVersionCleanupPolicyGlobalSettings
+      enable="true"
+      keepAllVersionsNewerThanDays="7"
       keepLatestVersionPerDayForDays="90" />
   </content>
 <settings>
@@ -272,7 +273,7 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
     <!-- by default this is true and if not specified in config will be true.
     Set to false to always show a separate username field in the backoffice user editor -->
     <usernameIsEmail>true</usernameIsEmail>
-    
+
     <!-- If you prefer not to display them set this to true -->
     <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 

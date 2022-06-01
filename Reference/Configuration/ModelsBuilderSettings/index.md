@@ -1,12 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Models Builder Settings"
 meta.Description: "Information on the models builder settings section"
 ---
 
 # Models builder settings
 
-This section allows you to configure the Umbraco models builder, a complete section with default values can be seen here: 
+This section allows you to configure the Umbraco models builder, a complete section with default values can be seen here:
 
 ```json
 "Umbraco": {
@@ -23,7 +24,7 @@ This section allows you to configure the Umbraco models builder, a complete sect
 }
 ```
 
-Let's go through them one by one 
+Let's go through them one by one
 
 ## Models mode
 
@@ -40,13 +41,13 @@ This setting allows you to customize the namespace of the generated models, for 
 
 ## Flag out of date models
 
-This setting allows you to specify if a model should be flagged as out of date if its content type, or a datatype the content type depends on, are changed. When a model is flagged as out of date you will be able to see that you need to regenerated models in modelsbuilder dashboard. 
+This setting allows you to specify if a model should be flagged as out of date if its content type, or a datatype the content type depends on, are changed. When a model is flagged as out of date you will be able to see that you need to regenerated models in modelsbuilder dashboard.
 
-This setting is only really relevant if you use the `SourceCodeManual` models mode, since otherwise the models will be automatically regenerated, and will therefore never be out of date. 
+This setting is only really relevant if you use the `SourceCodeManual` models mode, since otherwise the models will be automatically regenerated, and will therefore never be out of date.
 
 If you set this setting to true while using an `Auto` mode, it will automatically be intepreted as false.
 
-## Models directory 
+## Models directory
 
 Allows you to specify a custom directory for your generated models. By default this settings has to be a virtual directory, that is, it must start with `~/`, if needed `AccceptUnsafeModelsDirectory` can be set to true, to allow the path to be outside the website root, be aware though that this is a potential security risk.
 

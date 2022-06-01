@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Web Routing Settings"
 meta.Description: "Information on the web routing settings section"
 ---

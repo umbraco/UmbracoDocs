@@ -1,14 +1,15 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Global Settings"
 meta.Description: "Information on the global settings section"
 ---
 
 # Global Settings
 
-Global settings contains various global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site. 
+Global settings contains at set of global settings for the CMS such as default UI language, reserved urls, and much more. All of these, except for SMTP settings contains default values, meaning that all configuration is optional, unless you wish to send emails from your site.
 
-To make it easier to see what values are present in the global section, the following snippet will contain all the available options, with default values, and some example values for the required, From, Host and Port keys of the SMTP settings: 
+The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host` and `Port` keys of the SMTP settings:
 
 ```json
 "Umbraco": {
@@ -24,6 +25,7 @@ To make it easier to see what values are present in the global section, the foll
       "UmbracoPath": "~/umbraco",
       "IconsPath": "~/umbraco/assets/icons",
       "UmbracoCssPath": "~/css",
+      "UmbracoScriptsPath": "~/css",
       "UmbracoMediaPath": "~/media",
       "UmbracoMediaPhysicalRootPath": "X:/Shared/Media",
       "InstallMissingDatabase": false,
@@ -34,6 +36,7 @@ To make it easier to see what values are present in the global section, the foll
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
       "SqlWriteLockTimeOut": "00:00:05",
+      "SanitizeTinyMce": false,
       "Smtp": {
         "From": "person@umbraco.dk",
         "Host": "localhost",
@@ -53,7 +56,10 @@ To make it easier to see what values are present in the global section, the foll
         "TimeToRetainInstructions": "2.00:00:00",
         "TimeBetweenSyncOperations": "00:00:05",
         "TimeBetweenPruneOperations": "00:01:00"
-      }
+      },
+      "DistributedLockingMechanism": "",
+      "DistributedLockingReadLockDefaultTimeout": "00:01:00",
+      "DistributedLockingWriteLockDefaultTimeout": "00:00:05",
     }
   }
 }
@@ -103,6 +109,10 @@ By adding this value you can specify a new/different folder for storing your ico
 
 By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
 
+### Umbraco scripts path
+
+By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+
 ### Umbraco media path
 
 By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
@@ -127,7 +137,7 @@ This value is primarily used on Umbraco Cloud for a small startup performance op
 
 ### Database factory version
 
-This is not a setting that commonly needs to be configured. 
+This is not a setting that commonly needs to be configured.
 
 This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`
 
@@ -143,11 +153,14 @@ Available options:
 + **SqlMainDomLock** - Available cross-platform, uses the database to control acquisition of MainDom status.
 
 *Available  in v9.4+*
+
 + **FileSystemMainDomLock** - Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
 
-The default selection is platform-specific.<br />
-On Windows, MainDomSemaphoreLock will be used unless configured otherwise.<br />
-On other platforms, SqlMainDomLock will be used unless configured otherwise.<br />
+The default selection is platform-specific.
+
+On Windows, MainDomSemaphoreLock will be used unless configured otherwise.
+
+On other platforms, SqlMainDomLock will be used unless configured otherwise.
 
 Additionally, SqlMainDomLock will be used when configuration specifies MainDomSemaphoreLock on an unsupported platform.
 
@@ -160,6 +173,7 @@ For advanced use cases e.g. deployment slot swapping on Azure app services.
 When using SqlMainDomLock a MainDomKey is used to identify an instance of a running application.
 
 The MainDomKey is by default comprised of the server's machine name & the application id.
+
 This is generally all that is required to control MainDom status as starting a new process for the same application on the same
 server will result in a matching MainDomKey, requiring that an existing instance yields MainDom status to the new process.
 
@@ -174,6 +188,11 @@ to prevent the slots from competing for MainDom status.
 
 It's worth noting that during the swap operation there is a period where both instances will share the same
 configuration and at this point, the old instance will yield MainDom status to the new instance.
+
+### Main dom release signal polling interval
+
+Gets or sets the duration (in milliseconds) for which the MainDomLock release signal polling task should sleep.
+The default value is 2000ms.
 
 ### Id
 
@@ -218,6 +237,7 @@ The password used to authenticate with the specified SMTP server, when sending a
 Allows you to specify what security should be used for the connection sending the email.
 
 The options are:
+
 * None - No SSL or TLS encryption should be used.
 * Auto - Allow the IMailService to decide which SSL or TLS options to use (default). If the server does not support SSL or TLS, then the connection will continue without any encryption.
 * SslOnConnect - The connection should use SSL or TLS encryption immediately.
@@ -226,7 +246,7 @@ The options are:
 
 ### Delivery method
 
-Specifies what delivery method should be used for emails, most of the time you'd want to use the default `"Network"` option to send emails over the network. It might be useful during development to use `"SpecifiedPickupDirectory"` to place the email messages in a folder on disk, instead of trying to send them over the network. 
+Specifies what delivery method should be used for emails, most of the time you'd want to use the default `"Network"` option to send emails over the network. It might be useful during development to use `"SpecifiedPickupDirectory"` to place the email messages in a folder on disk, instead of trying to send them over the network.
 
 ### Pickup directory location
 
@@ -263,3 +283,30 @@ Sets a value for the time to wait between each sync operation.
 ### Time between prune operations
 
 Sets a value for the time to wait between each prune operation.
+
+### Distributed Locking Mechanism
+
+Gets or sets a value representing the DistributedLockingMechanism to use.
+
+Valid values:
+
+- `"SqlServerDistributedLockingMechanism"`
+- `"SqliteDistributedLockingMechanism"`
+
+### Distributed Read Lock DefaultTimeout
+
+Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed read lock.
+
+The default value is 60 seconds.
+
+### Distributed Write Lock DefaultTimeout
+
+Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
+
+The default value is 5 seconds.
+
+### Sanitize TinyMce
+
+Gets or sets a value indicating whether TinyMCE scripting sanitization should be applied.
+
+The default value is `false`.

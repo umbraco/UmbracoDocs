@@ -1,16 +1,19 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Install Default Data Settings"
 meta.Description: "Information on configuration allowing for the modification of default data installed in new projects"
 ---
 
 # Install Default Data Settings
 
-When Umbraco is installed for the first time, it creates various default data.  These include a language, some data types, and some media and member types.
+When Umbraco is installed for the first time, it creates a set of default data. These include a language, some Data Types, and some Media and Member Types.
 
 In certain setups, you may want to take control over what is installed and opt-out of the creation of certain items.
 
-When working in a team and using a tool like Umbraco Deploy for sharing schema updates, when a colleague first sets up the project in their local environment, having this default data installed may not always be useful.  For example, if a different set of languages from Umbraco's default (en-US) have been set up, it would be preferable to not have the default recreated.  In other situations, certain Umbraco default data, member and media types may not be required.
+When working in a team and using a tool like Umbraco Deploy for sharing schema updates, when a colleague first sets up the project in their local environment, having this default data installed may not always be useful.
+
+For example, if a different set of languages from Umbraco's default (en-US) have been set up, it would be preferable to not have the default recreated. In other situations, certain Umbraco default Data, Member and Media Types may not be required.
 
 The following example configuration shows how this default data installation can be customized:
 
@@ -43,15 +46,15 @@ The following example configuration shows how this default data installation can
 Each `InstallData` setting can be one of the following values:
 
 - `All` - all default data for the type will be installed (this is the default behavior if the configuration is omitted).
-- `Values` - only the default data specified will be installed.  For languages, the values are the ISO codes for the language.  For all other types, the Guid for the type should be listed.
+- `Values` - only the default data specified will be installed.  For languages, the values are the ISO codes for the language. For all other types, the Guid for the type should be listed.
 - `ExceptValues` - all default data except those specified will be installed.
 - `None` - no default data of the type will be installed.
 
-The Guid values representing the default data, media, and member types installed are as follows.
+The Guid values representing the default Data, Media, and Member Types installed are as follows.
 
 Data types:
 
-```
+```none
 ApprovedColor = 0225af17-b302-49cb-9176-b9f35cab9c17
 Checkbox = 92897bc6-a5f3-4ffe-ae27-f2e7e33dda49
 CheckboxList = fbaf13a8-4036-41f2-93a3-974f678c312a
@@ -94,7 +97,7 @@ UploadVideo = 70575fe7-9812-4396-bbe1-c81a76db71b5
 
 Media types:
 
-```
+```none
 MediaTypes.Article - a43e3414-9599-4230-a7d3-943a21b20122
 MediaTypes.Audio - a5ddeee0-8fd8-4cee-a658-6f1fcdb00de3
 MediaTypes.File - 4c52d8ab-54e6-40cd-999c-7a5f24903e4d
@@ -106,6 +109,6 @@ MediaTypes.Video - f6c515bb-653c-4bdc-821c-987729ebe327
 
 Member types:
 
-```
+```none
 MemberTypes.DefaultAlias - d59be02f-1df9-4228-aa1e-01917d806cda
 ```
