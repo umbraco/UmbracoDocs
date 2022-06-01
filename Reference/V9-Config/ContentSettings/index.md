@@ -117,7 +117,7 @@ If you have more than two sites and for some reason forget to update the above s
 
 ### Hide backoffice logo
 
-This setting can be used to hide the umbraco logo in backoffice.
+This setting can be used to hide the Umbraco logo in backoffice.
 
 ### Login background image
 
@@ -152,9 +152,9 @@ This setting is used when you're running Umbraco in virtual directories. Setting
 
 ### Show deprecated property editors
 
-This setting is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
+This setting is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new Data Types.
 
-By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**
+By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
 
 
 ## ContentVersionCleanupPolicy
@@ -163,7 +163,7 @@ The global settings for the scheduled job which cleans up historic content versi
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
+See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
 
 ```json
 "ContentVersionCleanupPolicy": {
@@ -173,17 +173,15 @@ See [Content Version Cleanup](/documentation/Fundamentals/Data/Content-Version-C
 }
 ```
 
-If you don't wish to retain any content versions except for the current draft and currently published you can set both of the
-"keep" settings values to 0, after which the next time the scheduled job runs (hourly) all non-current versions (except
-those marked "prevent cleanup") will be removed.
+If you don't wish to retain any content versions except for the current draft and currently published you can set both of the "keep" settings values to 0. After doing this, the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
 
 ### EnableCleanup
 
-When true a scheduled job will delete historic content versions that are not kept according to the policy every hour.
+When `true` a scheduled job will delete historic content versions that are not kept according to the policy every hour.
 
-When false, the scheduled job will never delete any content versions regardless of overridden settings for a document type.
+When `false`, the scheduled job will never delete any content versions regardless of overridden settings for a Document Type.
 
-This defaults to false when not set in the configuration which will be the case for those upgrading from v9.0.0, however, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from v9.1.0.
+This defaults to `false` when not set in the configuration which will be the case for those upgrading from v9.0.0. However, the dotnet new template will supply an appsettings.json with the value set to true for all sites starting from Umbraco 9.1.0.
 
 ### KeepAllVersionsNewerThanDays
 
@@ -193,12 +191,12 @@ All versions that fall in this period will be kept.
 
 For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
 
-This variable is independent of KeepAllVersionsNewerThanDays, if both were set to the same value KeepLatestVersionPerDayForDays would never apply as KeepAllVersionsNewerThanDays is considered first.
+This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
 
 
 ## Imaging
 
-This section is used for managing how umbraco handles images, allowed attributes and, which properties of an image that should be automatically updated on upload.
+This section is used for managing how Umbraco handles images, allowed attributes and, which properties of an image that should be automatically updated on upload.
 
 ```json
 "Imaging": {
@@ -225,7 +223,7 @@ You can define what properties should be automatically updated when an image is 
 
 ### Custom media document
 
-If you need to create a custom media document type to handle images called something like "Custom Image" with an alias of **customImage** then you need to add another object where the **alias** is set to **customImage**. Like below. Note that the width and height attributes have also been changed in this example.
+If you need to create a custom Media Document Type to handle images called something like "Custom Image" with an alias of **customImage** then you need to add another object where the **alias** is set to **customImage**. Like below. Note that the width and height attributes have also been changed in this example.
 
 ```json
 "Imaging": {
