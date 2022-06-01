@@ -229,7 +229,7 @@ namespace My.Website
 
     public class WordCounterApp : IContentAppFactory
     {
-        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        public ContentApp? GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
