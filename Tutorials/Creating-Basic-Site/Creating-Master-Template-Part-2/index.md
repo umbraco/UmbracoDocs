@@ -117,10 +117,6 @@ To use the Document Type properties from the homepage, do the following:
 4. Select **Value** and choose the **footerText** again from the **Choose field** dropdown.
 5. Select **Yes, make it recursive** checkbox. This notifies Umbraco to look up the content tree if the field doesn't exist at the node level for the page we're requesting.
 
-    :::note
-    To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedContent;` directive.
-    :::
-
     ![Adding directive for Fallback](images/fallback-directive-v9.png)
 6. Click **Submit**.
 7. Click **Save**.
