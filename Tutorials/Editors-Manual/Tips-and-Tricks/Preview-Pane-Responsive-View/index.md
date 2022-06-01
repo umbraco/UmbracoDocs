@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Preview Pane Responsive View
@@ -12,10 +12,6 @@ When viewing page content in preview mode you have the option to scale the previ
 
     ![responsivePreview.png](images/responsivePreview-v9.png)
 3. Select the device you would like to scale the preview pane to.
-
-:::note
-The notification settings apply to the chosen content item as well as any child items that appear below the item in the content tree
-:::
 
 ---
 
