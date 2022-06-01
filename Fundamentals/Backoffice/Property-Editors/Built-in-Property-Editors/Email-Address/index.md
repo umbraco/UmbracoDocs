@@ -14,13 +14,13 @@ Displays an email address.
 
 ## Settings
 
-### Mandatory checkbox example
+The Email Address Property Editor does not come with any further configuration. The property can be configured once it has been added to a Document Type.
 
-![Mandatory Checkbox Example](images/mandatory-checkbox.png)
+![Mandatory Checkbox Example](images/emailaddress-datatype-v10.png)
 
 ## Content Example
 
-![Single email address content example](images/EmailAddress-DataType-Content.png)
+![Single email address content example](images/EmailAddress-Content-v10.png)
 
 ## MVC View Example
 

@@ -12,11 +12,11 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker-DataType-8_1.png)
+![Content Picker Data Type Definition](images/Content-Picker2-DataType-v10.png)
 
 ## Content Example
 
-![Content Picker Content](images/Content-Picker-Content-v8.png)
+![Content Picker Content](images/Content-Picker-Content-v10.png)
 
 ## MVC View Example
 
