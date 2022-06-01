@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Multilanguage setup in Umbraco"
 product: "CMS"
 meta.Description: "A guide to multilanguage setup in Umbraco"
@@ -21,13 +21,13 @@ To add a new language, follow these steps:
 3. Click **Add Language**. The **Add Language** window opens in the editor.
 4. Select a **Language** from the dropdown list. In this tutorial, we will pick *Danish*.
 
-   ![Adding the Danish language](images/adding-danish-language.png)
+   ![Adding the Danish language](images/adding-danish-language-v10.png)
 5. In **Settings**, select the following options to set the new language as the:
     - Default language for your site, toggle **Default Language**.
     - Mandatory language for your site, toggle **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
 
-    ![Adding a Fallback language](images/fallback-language.png)
+    ![Adding a Fallback language](images/fallback-language-v10.png)
 7. Click **Save**.
 
 ### Adding Multiple Languages
@@ -38,13 +38,13 @@ We can add multiple languages depending on our website requirements. In the prev
 2. For English Variant:
     - Select **English (United States)** from the drop-down list.
     - Click **Save**.
-   For German Variant:
+3. For German Variant:
     - Select **German** from the drop-down list.
     - Toggle **Mandatory Language** option.
     - Select **Danish** from the **Fallback Language** drop-down list.
     - Click **Save**.
 
-   ![Adding a Fallback language](images/Language-variants.png)
+   ![Adding a Fallback language](images/Language-variants-v10.png)
 
 ### Changing the Default Language of a Website
 
@@ -53,7 +53,7 @@ To change the default language of a website:
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
 3. Toggle **Default Language**.
-    ![Change default language](images/change-default-language.png)
+    ![Change default language](images/change-default-language-v10.png)
 4. Click **Save**.
 
 ### Changing the Default Backoffice Language of a User
@@ -113,8 +113,11 @@ When you return to your content node you will notice two things:
 To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
-2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**.
-3. In the **Culture and Hostnames** tree, let's add a domain for each hostname, like it's done here:
+2. Right-click on the **...** dots next to the **Contact Us** content node and select **Allow access to assign culture and hostnames**.
+    :::note
+    In Umbraco 9, this option is called **Culture and Hostnames...**.
+    :::
+3. In the **Allow access to assign culture and hostnames** pane, let's add a domain for each hostname, like it's done here:
 
     ![Culture and Hostnames](images/culture-and-hostnames.png)
 4. Click **Save**.
@@ -175,8 +178,8 @@ Depending on how your site is set up, not all content is edited through the cont
 To create dictionary items:
 
 1. Go to the **Translation** section.
-2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3. Enter a **Name** for the dictionary item. Let's say **Address**.
+2. Right-click **Dictionary** in the **Translation** tree and select **Create**.
+3. Enter a **Name** for the dictionary item. Let's say **Address** and click **Create**.
 4. Enter the different language versions for the dictionary item.
     ![Add dictionary items](images/add-dictionary-item.png)
 5. Click **Save**.
