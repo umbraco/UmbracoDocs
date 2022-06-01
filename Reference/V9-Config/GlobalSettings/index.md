@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Global Settings"
 meta.Description: "Information on the global settings section"
 ---
@@ -56,10 +55,7 @@ The following snippet contains all the available options, with default values, a
         "TimeToRetainInstructions": "2.00:00:00",
         "TimeBetweenSyncOperations": "00:00:05",
         "TimeBetweenPruneOperations": "00:01:00"
-      },
-      "DistributedLockingMechanism": "",
-      "DistributedLockingReadLockDefaultTimeout": "00:01:00",
-      "DistributedLockingWriteLockDefaultTimeout": "00:00:05",
+      }
     }
   }
 }
@@ -283,27 +279,6 @@ Sets a value for the time to wait between each sync operation.
 ### Time between prune operations
 
 Sets a value for the time to wait between each prune operation.
-
-### Distributed Locking Mechanism
-
-Gets or sets a value representing the DistributedLockingMechanism to use.
-
-Valid values:
-
-- `"SqlServerDistributedLockingMechanism"`
-- `"SqliteDistributedLockingMechanism"`
-
-### Distributed Read Lock DefaultTimeout
-
-Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed read lock.
-
-The default value is 60 seconds.
-
-### Distributed Write Lock DefaultTimeout
-
-Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
-
-The default value is 5 seconds.
 
 ### Sanitize TinyMce
 
