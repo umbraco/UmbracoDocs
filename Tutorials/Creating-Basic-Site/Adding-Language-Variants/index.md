@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Adding Language Variants
@@ -45,8 +45,13 @@ To enable language variants on Document Types, follow these steps:
 To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
-2. Right-click on the **...** dots next to the **Home Page** content node and select **Culture and Hostnames...**.
-3. In the **Culture and Hostnames** tree, let's add a domain for each hostname, like it's done here:
+2. Right-click on the **...** dots next to the **Home Page** content node and select **Allow access to assign culture and hostnames**.
+
+    :::note
+    In Umbraco 9 this menu is called **Culture and Hostnames**.
+    :::
+
+3. Add a domain for each hostname, like it's done here:
 
     ![Culture and Hostnames](images/culture-and-hostnames.png)
 4. Click **Save**.
