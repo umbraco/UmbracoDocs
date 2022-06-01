@@ -81,6 +81,7 @@ To add a content node:
    :::tip
     If you do not see the list view, try refreshing the page.
    :::
+   
 5. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
 
     ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
@@ -98,6 +99,7 @@ To update the **Articles Main** template, follow these steps:
     :::warning
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
+    
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 84) to the end of the `</html>` tag (around line 131)
 8. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to **_articlesTitle_**.
@@ -113,28 +115,28 @@ To update the **Articles Main** template, follow these steps:
 12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template.
     It will look similar to this:
 
-    ```csharp
+```csharp
 
-   @{
-        var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
-        .ChildrenOfType("articlesItem")
-        .Where(x => x.IsVisible())
-        .OrderByDescending(x => x.CreateDate);
+@{
+    var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
+    .ChildrenOfType("articlesItem")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
+}
+<ul>
+    @foreach (var item in selection)
+    {
+        <li>
+            <a href="@item.Url()">@item.Name()</a>
+        </li>
     }
-    <ul>
-        @foreach (var item in selection)
-        {
-            <li>
-                <a href="@item.Url()">@item.Name()</a>
-            </li>
-        }
-    </ul>
-    ```
+</ul>
+
+```
 
 13. The above code will output a list of all the **_Article Items_** as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
     ```csharp
-
     <article class="special">
         <div class="articledate" > @item.CreateDate </div>
         <div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
@@ -155,6 +157,7 @@ To update the **Articles Item** template, follow these steps:
     :::warning
     Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesItem>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
+    
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
 8. Replace the static text within the `<h1>` tags (around line 14) with the Model.Value reference to **_articleTitle_**.
