@@ -68,7 +68,7 @@ As with example one, we are accessing a MediaType `image` using the same Guid as
         // you could add this as an extension method to the Umbraco.Cms.Web.Common.PublishedModels.Image class
         var orientationCssClass = mediaItemAsImage.UmbracoWidth > mediaItemAsImage.UmbracoHeight ? "img-landscape" : "img-portrait";
 
-        <img src="@mediaItem.Url()" alt="@mediaItemAsImage.Name" class="@orientationCssClass"/>
+        <img src="@mediaItemAsImage.Url()" alt="@mediaItemAsImage.Name" class="@orientationCssClass"/>
     }
 }
 ```
