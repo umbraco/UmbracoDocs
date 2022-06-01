@@ -23,7 +23,7 @@ To create dynamic navigation links from published content nodes, follow these st
 
 You now have the following snippet in your **Master** Template:
 
-```
+```csharp
 @{
 	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
     .Children()
