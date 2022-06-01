@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Debug Settings"
 meta.Description: "Information on debug settings section"
 ---
@@ -14,8 +15,8 @@ The debug section has two settings you can configure, `"LogIncompletedScopes"` a
 "Umbraco": {
   "CMS": {
     "Debug": {
-      "LogIncompletedScopes": false,
       "DumpOnTimeoutThreadAbort": false
+      "LogIncompletedScopes": false,
     }
   }
 }
@@ -27,4 +28,4 @@ If this value is set to true, any scope that gets disposed without first being c
 
 ## DumpOnTimeoutThreadAbort
 
-If this value is set to true a memory dump will be taken if a thread aborts due to a timeout, this dump will be saved to `/umbraco/Data/MiniDump`
+If this value is set to true a memory dump will be taken if a thread aborts due to a timeout, this dump will be saved to `/umbraco/Data/MiniDump`.

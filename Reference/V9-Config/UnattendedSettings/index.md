@@ -1,14 +1,15 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Unattended Settings"
 meta.Description: "Information on the unattended settings section"
 ---
 
 # Unattended
 
-This settings lets you configure the unattended install & upgrade settings. This is a feature that allows Umbraco to install without using the UI. If you don't intended to use this feature, you don't need to configure this. 
+This settings lets you configure the unattended install & upgrade settings. This is a feature that allows Umbraco to install without using the UI. If you don't intended to use this feature, you don't need to configure this.
 
-It's important to note that the install feature will only work if there is a connection string configured pointing to an empty database, so a configuration for unattended install & upgrade can look something like: 
+It's important to note that the install feature will only work if there is a connection string configured pointing to an empty database, so a configuration for unattended install & upgrade can look something like:
 
 ```json
 {
@@ -21,6 +22,7 @@ It's important to note that the install feature will only work if there is a con
     "CMS": {
       "Unattended": {
         "InstallUnattended": true,
+        "PackageMigrationsUnattended": true,
         "UpgradeUnattended": true,
         "UnattendedUserName": "A.N. Other",
         "UnattendedUserEmail": "AN@Other.com",
@@ -56,3 +58,9 @@ This setting is used to specify the email address of the default admin user.
 ## Unattended user pass
 
 This setting is used to specify the password of the default admin user.
+
+### Package migrations unattended
+
+Gets or sets a value indicating whether unattended package migrations are enabled.
+
+This is true by default.

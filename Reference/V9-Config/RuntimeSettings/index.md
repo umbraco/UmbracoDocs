@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Runtime Settings"
 meta.Description: "Information on the runtime settings section"
 ---
@@ -8,7 +9,7 @@ meta.Description: "Information on the runtime settings section"
 
 Runtime settings allows you to configure the `MaxRequestLength` and `MaxQueryStringLength` for your application. Neither of these settings needs to be configured. If nothing is configured reqests and query string can be any size.
 
-An example of a configuration could look something like: 
+An example of a configuration could look something like:
 
 ```json
 "Umbraco": {

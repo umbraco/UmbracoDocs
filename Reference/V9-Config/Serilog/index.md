@@ -19,8 +19,7 @@ When you create a new Umbraco project the following Serilog section will be incl
   "MinimumLevel": {
     "Default": "Information",
     "Override": {
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.AspNetCore": "Warning",
       "System": "Warning"
     }
   }

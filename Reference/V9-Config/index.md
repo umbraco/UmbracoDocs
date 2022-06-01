@@ -1,18 +1,19 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco configuration"
 meta.Description: "Information on configuring Umbraco"
 ---
 
 :::note
-In Umbraco 9 configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
+In Umbraco 9+ (ASP.NET Core) configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
 :::
 
 # Configuration Files
 
-In V9, we have moved away from the previous configuration using `.config` files, to instead using the netcore built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done from the `appsettings.json` file.
+In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
 
-For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0) article.
+For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
 
 ## Managing Configuration
 
@@ -78,7 +79,9 @@ A great thing about `appsettings.json` is that it allows for intellisense with a
 
 ## Reading Configuration in Code
 
-You might need to read the configuration from your code. When reading the configuration you need to inject an `IOptions<>` object into the class that needs it. Here is an example of how you'd read the Host value from the SMTP settings contained within the global settings:
+You might need to read the configuration from your code.
+
+When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or [`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
 
 ```C#
 using Microsoft.Extensions.Options;

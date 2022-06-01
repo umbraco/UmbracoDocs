@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 meta.Title: "Umbraco Imaging Settings"
 meta.Description: "Information on the imaging settings section"
 ---
@@ -18,7 +18,8 @@ All these settings contain default values, so nothing needs to be explicitly con
       "Cache": {
         "BrowserMaxAge": "7.00:00:00",
         "CacheMaxAge": "365.00:00:00",
-        "CachedNameLength": 8,
+        "CacheFolderDepth": 8,
+        "CacheHashLength": 12,
         "CacheFolder": "~/umbraco/Data/TEMP/MediaCache"
       },
       "Resize": {
@@ -42,9 +43,12 @@ Specifies how long a requested processed image may be stored in the browser cach
 
 Specifies how long a processed image may be used from the server cache before it needs to be re-processed again. The default is one year (365 days, formatted as a timespan).
 
-### Cache name length
+### Cache folder depth
 
-Whenever an image is cached it will use a generated name (based on the SHA256 file hash by default). This setting allows you to change how long that name will be, by default 8 characters. It is worth mentioning here that cached images will be in a series of subfolders based on their name, for instance: a file with the name `abc1` will be put in `/a/b/c/1`. This is done to mitigate the potential performance hit of having a large amount of files in the same folder. A longer cache name length will result in a deeper folder structure.
+Gets or sets the depth of the nested cache folders structure to store the images. Defaults to 8.
+
+### Cache hash length
+Gets or sets the length of the filename to use (minus the extension) when storing images in the image cache. Defaults to 12 characters.
 
 ### Cache folder
 
@@ -56,4 +60,4 @@ Contains configuration for image resizing.
 
 ### Max width/max height
 
-Specifies the maximum width and height an image can be resized to. If the requested width and height are _both_ above the configured maximums, no resizing will be performed. This adds basic security to prevent resizing to big dimensions and using a lot of server CPU/memory to do so.
+Specifies the maximum width and height an image can be resized to. If the requested width and height are _both_ above the configured maximums, no resizing will be performed. This adds very basic security to prevent resizing to very big dimensions and using a lot of server CPU/memory to do so.

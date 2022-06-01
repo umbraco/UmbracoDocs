@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Health Check Settings"
 meta.Description: "Information on the health check settings section"
 ---
@@ -69,9 +70,9 @@ Specifies how often the health checks should run, as a DateTime string, in this 
 
 ### Notification methods
 
-A dictionary of all the notification methods that should be used. 
+A dictionary of all the notification methods that should be used.
 
-The key of the dictionary is the alias of the notification method, and the value is a `HealthChecksNotificationMethodSettings` configuration object, in this case it's the built in `email` notification method. 
+The key of the dictionary is the alias of the notification method, and the value is a `HealthChecksNotificationMethodSettings` configuration object, in this case it's the built in `email` notification method.
 
 Each object allows the following to be configured:
 
@@ -83,7 +84,7 @@ Allows you to enable or disable specific checks.
 
 Configures how verbose the reporting should be, the available options are:
 
-* Summary 
+* Summary
 * Detailed
 
 #### Failure only

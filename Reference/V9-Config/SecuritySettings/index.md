@@ -1,12 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Security Settings"
 meta.Description: "Information on the security settings section"
 ---
 
 # Security Settings
 
-The options in the security section allows you to configure all things security, whether to keep users logged in, password rules and more. 
+The options in the security section allows you to configure all things security, whether to keep users logged in, password rules and more.
 
 A full configuration with all default values can be seen here:
 
