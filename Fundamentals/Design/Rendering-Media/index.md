@@ -1,8 +1,9 @@
 ---
 meta.Title: "Rendering Media in Umbraco"
 meta.Description: "Info on rendering media items and imaging cropping"
-keywords: v9 version8 rendering media imagecropper
+keywords: rendering media imagecropper
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Rendering media
