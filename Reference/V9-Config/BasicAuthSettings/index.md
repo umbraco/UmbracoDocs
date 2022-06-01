@@ -7,8 +7,7 @@ meta.Description: "Information on the basic authentication section"
 
 # Basic Authentication Settings
 
-Allows you to configure the basic authentication settings for Umbraco. A basic authentication section fully populated
-with default values can be seen here:
+Allows you to configure the basic authentication settings for Umbraco. A basic authentication section fully populated with default values can be seen here:
 
 ```json
 "Umbraco": {
@@ -35,13 +34,16 @@ If the value is set to `true`, the basic authentication is enabled. By default, 
 
 ## RedirectToLoginPage
 
-If the value is set to `true`, instead of showing the basic auth popup in the browser. The user is redirected to the login page. This is required for external logins to work. By default, the value is set to false.
+If the value is set to `true`, instead of showing the basic authentication popup in the browser, the user is redirected to the login page. This is required for external logins to work. By default, the value is set to false.
 
 ## SharedSecret
-A shared secret can be sent using a http header to bypass the basic authentication. This can be valuable for server to server communication.
+
+A shared secret can be sent using an HTTP header to bypass the basic authentication. This can be valuable for server-to-server communication.
 
 ### HeaderName
+
 The header name used to compare the shared secret. By default, the value is set to `X-Authentication-Shared-Secret`.
 
 ### Value
+
 The value of the shared secret. Must be a string longer than 0 characters to be enabled. The default value is `null`.
