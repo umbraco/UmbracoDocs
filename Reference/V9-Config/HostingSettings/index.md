@@ -34,6 +34,7 @@ This setting specified the virtual path of the application, this path must start
 This setting specifies the location of the local temp storage.
 
 Options:
+
 * Default
 * EnvironmentTemp
 
@@ -42,4 +43,5 @@ Options:
 This setting allows you to run Umbraco in debug mode, by setting the value to true.
 
 ### Site name
+
 Gets or sets a value specifying the name of the site. The [IWebHostEnvironment.ApplicationName](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.ihostenvironment.applicationname?view=dotnet-plat-ext-6.0) is used if not specified

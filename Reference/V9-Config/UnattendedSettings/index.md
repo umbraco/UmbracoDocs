@@ -60,6 +60,7 @@ This setting is used to specify the email address of the default admin user.
 This setting is used to specify the password of the default admin user.
 
 ### Package migrations unattended
+
 Gets or sets a value indicating whether unattended package migrations are enabled.
 
 This is true by default.

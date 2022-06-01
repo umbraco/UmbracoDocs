@@ -153,11 +153,14 @@ Available options:
 + **SqlMainDomLock** - Available cross-platform, uses the database to control acquisition of MainDom status.
 
 *Available  in v9.4+*
+
 + **FileSystemMainDomLock** - Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
 
-The default selection is platform-specific.<br />
-On Windows, MainDomSemaphoreLock will be used unless configured otherwise.<br />
-On other platforms, SqlMainDomLock will be used unless configured otherwise.<br />
+The default selection is platform-specific.
+
+On Windows, MainDomSemaphoreLock will be used unless configured otherwise.
+
+On other platforms, SqlMainDomLock will be used unless configured otherwise.
 
 Additionally, SqlMainDomLock will be used when configuration specifies MainDomSemaphoreLock on an unsupported platform.
 
@@ -170,6 +173,7 @@ For advanced use cases e.g. deployment slot swapping on Azure app services.
 When using SqlMainDomLock a MainDomKey is used to identify an instance of a running application.
 
 The MainDomKey is by default comprised of the server's machine name & the application id.
+
 This is generally all that is required to control MainDom status as starting a new process for the same application on the same
 server will result in a matching MainDomKey, requiring that an existing instance yields MainDom status to the new process.
 
@@ -186,6 +190,7 @@ It's worth noting that during the swap operation there is a period where both in
 configuration and at this point, the old instance will yield MainDom status to the new instance.
 
 ### Main dom release signal polling interval
+
 Gets or sets the duration (in milliseconds) for which the MainDomLock release signal polling task should sleep.
 The default value is 2000ms.
 
@@ -232,6 +237,7 @@ The password used to authenticate with the specified SMTP server, when sending a
 Allows you to specify what security should be used for the connection sending the email.
 
 The options are:
+
 * None - No SSL or TLS encryption should be used.
 * Auto - Allow the IMailService to decide which SSL or TLS options to use (default). If the server does not support SSL or TLS, then the connection will continue without any encryption.
 * SslOnConnect - The connection should use SSL or TLS encryption immediately.
@@ -279,20 +285,28 @@ Sets a value for the time to wait between each sync operation.
 Sets a value for the time to wait between each prune operation.
 
 ### Distributed Locking Mechanism
+
 Gets or sets a value representing the DistributedLockingMechanism to use.
 
 Valid values:
+
 - `"SqlServerDistributedLockingMechanism"`
 - `"SqliteDistributedLockingMechanism"`
--
+
 ### Distributed Read Lock DefaultTimeout
+
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed read lock.
+
 The default value is 60 seconds.
 
 ### Distributed Write Lock DefaultTimeout
+
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
+
 The default value is 5 seconds.
 
 ### Sanitize TinyMce
+
 Gets or sets a value indicating whether TinyMCE scripting sanitization should be applied.
+
 The default value is `false`.

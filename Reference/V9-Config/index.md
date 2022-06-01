@@ -80,8 +80,8 @@ A great thing about `appsettings.json` is that it allows for intellisense with a
 ## Reading Configuration in Code
 
 You might need to read the configuration from your code.
-When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or
-[`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you'd read the Host value from the SMTP settings contained within the global settings:
+
+When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or [`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
 
 ```C#
 using Microsoft.Extensions.Options;
