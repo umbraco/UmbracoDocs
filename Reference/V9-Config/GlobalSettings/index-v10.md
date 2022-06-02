@@ -161,10 +161,7 @@ The MainDomKey is by default comprised of the server's machine name & the applic
 
 This is generally all that is required to control MainDom status as starting a new process for the same application on the same server will result in a matching MainDomKey. This will then require that an existing instance yields MainDom status to the new process.
 
-Deployment slots for a given Azure app service share the same machine name and without additional configuration will share a
-MainDomKey and therefore compete for MainDom status, this can be undesirable if attempting to deploy to a deployment slot
-followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots
-and can re-acquire MainDom status.
+Deployment slots for a given Azure App Service share the same machine name. Without additional configuration, they will share a MainDomKey and therefore compete for MainDom status. This can be undesirable if attempting to deploy to a deployment slot followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots and can re-acquire MainDom status.
 See [What happens during a swap](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#what-happens-during-a-swap).
 
 To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as a slot-specific configuration
