@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 ---
 
 # Enable custom logging on Umbraco Cloud projects
+
 To be able to use custom logging on Umbraco Cloud you need to ensure that the custom log files do not have the same name on several environments. To do this you can make a config transform of your log4net.config file.
 
 ## Config transforms of log4net.config
