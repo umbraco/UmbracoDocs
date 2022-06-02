@@ -36,7 +36,7 @@ The feature can be configured ni the `appSettings.json`:
 ```
 
 For those sites with stricter requirements (or those who do not want the feature) it is possible to opt out both globally 
-(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per Document Type (keep reading).
+(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
