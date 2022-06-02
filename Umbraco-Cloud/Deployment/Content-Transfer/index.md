@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Transfering content with Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
@@ -52,7 +52,7 @@ In order for deploy to handle Forms data as content for a V8 project, you'll nee
 </settings>
 ```
 
-For projects on V9 you'll need to ensure the `TransferFormsAsContent` setting is set to true, in order for Deploy to handle Forms data as content:
+For projects on Umbraco 9+ you'll need to ensure the `TransferFormsAsContent` setting is set to true, in order for Deploy to handle Forms data as content:
 
 ```json
 "Umbraco": {
