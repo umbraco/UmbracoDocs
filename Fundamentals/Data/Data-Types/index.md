@@ -37,6 +37,12 @@ To customize an existing Data Type go to the __Settings__ section, expand the __
 
 Besides the Data Types that are available out of the box there are some additional **Property Editors** to choose from such as the __Slider__ and __Nested Content__.
 
+## Viewing Data Type References
+
+To view the Data Type reference, go to the __Settings__ section and expand the __Data Types__ folder. Select the **Data Type** you wish to view the reference for and click the __Info__ tab.
+
+![Content Picker References](images/viewing-data-type-reference.png)
+
 ### More information
 
 * [List of available Data Types](default-data-types.md)
