@@ -6,7 +6,7 @@ versionTo: 9.0.0
 # Persistence Models reference
 
 :::note
-As of the release of Umbraco 10 we will no longer be updating the articles in this section.
+Since the release of Umbraco 10, we will no longer be updating the articles in this section.
 
 You can find up-to-date code references for all Models in our [API Documentation](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Models.html).
 :::
