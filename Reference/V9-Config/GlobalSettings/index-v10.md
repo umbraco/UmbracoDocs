@@ -101,7 +101,7 @@ The URL pointing to the Umbraco backoffice, if you change this value you also ne
 
 ### Icons path
 
-By adding this value you can specify a new/different folder for storing your icon resources, it's important to be aware of NetCores limitations regarding serving static file content, by default, static content will only be serverd from the wwwroot folder.
+By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of NetCore's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
 
 ### Umbraco CSS path
 
