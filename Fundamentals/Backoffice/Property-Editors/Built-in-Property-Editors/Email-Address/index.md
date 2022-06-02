@@ -50,8 +50,9 @@ The Email Address Property Editor does not come with any further configuration. 
 See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 
+@inject IContentService Services;
 @{
     // Get access to ContentService
     var contentService = Services;
