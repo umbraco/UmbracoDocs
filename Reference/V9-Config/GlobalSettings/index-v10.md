@@ -141,7 +141,7 @@ This setting is used to specify which sql server version that the database is ru
 
 Specifies the implementation of IMainDomLock to be used.
 
-IMainDomLock is used to synchronize access to various resources e.g. Lucene indexes.
+`IMainDomLock` is used to synchronize access to resources like the Lucene indexes.
 
 Available options:
 
