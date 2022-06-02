@@ -159,8 +159,7 @@ When using SqlMainDomLock a MainDomKey is used to identify an instance of a runn
 
 The MainDomKey is by default comprised of the server's machine name & the application id.
 
-This is generally all that is required to control MainDom status as starting a new process for the same application on the same
-server will result in a matching MainDomKey, requiring that an existing instance yields MainDom status to the new process.
+This is generally all that is required to control MainDom status as starting a new process for the same application on the same server will result in a matching MainDomKey. This will then require that an existing instance yields MainDom status to the new process.
 
 Deployment slots for a given Azure app service share the same machine name and without additional configuration will share a
 MainDomKey and therefore compete for MainDom status, this can be undesirable if attempting to deploy to a deployment slot
