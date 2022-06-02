@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Decimal
@@ -42,6 +43,7 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 @{
     // Get access to ContentService
     var contentService = Services;
@@ -73,6 +75,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache;
 @{
     // Set the value of the property with alias 'myDecimal'
     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyDecimal).Alias, 3);
