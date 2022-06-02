@@ -10,9 +10,11 @@ versionFrom: 9.0.0
 
 Adds an upload field, which allows documents or images to be uploaded to Umbraco.
 
+You can define which file types should be accepted through the upload field.
+
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/definition-example.png)
+![Data Type Definition Example](images/definition-example-v10.png)
 
 ## Content Example
 
@@ -43,7 +45,6 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### With Modelsbuilder
 
 ```csharp
-@using ContentModels = Umbraco.Web.PublishedModels;
 @if (!Model.HasValue(Model.MyFile))
 {
    <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
