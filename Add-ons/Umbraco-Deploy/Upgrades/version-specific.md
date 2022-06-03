@@ -1,13 +1,16 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Version specific upgrades"
 meta.Description: "Version specific documentation for upgrading to new major versions of Umbraco Deploy."
 ---
 
 # Version Specific Upgrade Details
+
 This page covers specific upgrade documentation for when migrating to a new major of Umbraco Deploy.
 
 ## Version 10
+
 Version 10 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
 The forms deployment component has a minimum dependency on Umbraco Forms of `10.0.0`.
