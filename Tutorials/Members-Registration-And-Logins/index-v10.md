@@ -296,7 +296,7 @@ namespace Umbraco.Web.Controllers
                     member.Properties[property.Alias]?.SetValue(property.Value);
                 }
 
-                //Before we save the member we make sure to assigne the group, for this the "Group" must exist in the backoffice.
+                //Before we save the member we make sure to assign the group, for this the "Group" must exist in the backoffice.
                 string memberGroup = "professionals";
                 AssignMemberGroup(model.Email, memberGroup);
 
