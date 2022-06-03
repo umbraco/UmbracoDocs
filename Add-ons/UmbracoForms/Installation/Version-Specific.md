@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV9Update: "true"
+versionTo: 10.0.0
 ---
 
 # Upgrading - version specific
