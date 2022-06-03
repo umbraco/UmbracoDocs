@@ -1,12 +1,7 @@
 ---
 versionFrom: 10.0.0
----
-
----
-versionFrom: 8.0.0
 meta.Title: "Members Registration and Logins"
 meta.Description: "In this article you can learn about how to create Member registration and login functionality for the frontend of your application."
-needsV9Update: "true"
 ---
 
 # Member registration and login 
