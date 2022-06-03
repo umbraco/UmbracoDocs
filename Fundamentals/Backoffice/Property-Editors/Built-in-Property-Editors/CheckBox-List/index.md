@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Checkbox List
@@ -62,6 +63,7 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 @using Newtonsoft.Json
 @{
     // Get access to ContentService
@@ -94,6 +96,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache;
 @{
 
 // Set the value of the property with alias 'superHeros'
