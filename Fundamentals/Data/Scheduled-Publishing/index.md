@@ -41,7 +41,7 @@ If you are in a load balanced environment special care must be given to ensure y
 
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
-* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/Config/umbracoSettings/index.md#web-routing) for details)_
+* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/V9-Config/umbracoSettings/index.md#webrouting) for details)_
 * Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base url of this request _(default)_
@@ -58,4 +58,4 @@ If your scheduled publishing/unpublishing is not working as you would expect it 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not.
 
-In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/V9-Config/umbracoSettings/index.md#webrouting) setting to ensure that your server is communicating to itself on the correct base url.
