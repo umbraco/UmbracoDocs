@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
+versionTo: 8.0.0
 ---
 
 # Tags
@@ -13,7 +13,7 @@ The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/Tags-DataType-v10.png)
+![Data Type Definition Example](images/Tags-DataType-v8.png)
 
 ### Tag group
 
@@ -43,7 +43,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ## MVC View Example - displays a list of tags
 
-### Multiple items - with Modelsbuilder
+### Typed using models builder
 
 ```csharp
 @if(Model.Tags.Any()){
@@ -55,15 +55,12 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 }
 ```
 
-### Multiple items - without Modelsbuilder
+### using GetProperty and Value
 
 ```csharp
-@if(Model.HasValue("tags"))
-{
- var tags = Model.Value<IEnumerable<string>>("tags");
+@if(Model.GetProperty("tags") !=null){
     <ul>
-        @foreach(var tag in tags)
-        {
+        @foreach(var tag in Model.GetProperty("tags").Value<IEnumerable<string>>()){
             <li>@tag</li>
         }
     </ul>
@@ -75,44 +72,31 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 You can use the ContentService to create and update Umbraco content from c# code, when setting tags there is an extension method (SetTagsValue) on IContentBase that helps you set the value for a Tags property. Remember to add the using statement for `Umbraco.Core.Models` to take advantage of it.
 
 ```csharp
-@using Umbraco.Cms.Core.Services
-@inject IContentService Services;
-@using Newtonsoft.Json
-@{
-    // Get access to ContentService
-    var contentService = Services;
+using System.Web.Mvc;
+using Umbraco.Core.Models;
+using Umbraco.Web.Mvc;
 
-    // Create a variable for the GUID of the page you want to update
-    var guid = Guid.Parse("9daf8585-6ab6-4ac2-98f0-28bf83aeea6e");
+namespace Our.Documentation.Examples.Controllers
+{
+    public class TestController : SurfaceController
+    {
+        // GET: Test
+        public ActionResult Index()
+        {
+            //get content item to update
+            IContent content = this.Services.ContentService.GetById(1234);
 
-    // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
+            // list of tags
+            string[] newTagsToSet = new string[] { "Umbraco", "Example", "Setting Tags", "Helper" };
 
-    // Set the value of the property with alias 'tags'. 
-    content.SetValue("tags", JsonConvert.SerializeObject(new[] { "News", "Umbraco", "Example", "Setting Tags", "Helper" }));
+            //make content persisted
+            Services.ContentService.Save(content);
+            // set the tags
+            content.AssignTags("aliasOfTagProperty", newTagsToSet);
 
-    // Save the change
-    contentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = contentService.GetById(1234); 
-}
-```
-
-If Modelsbuilder is enabled, you can get the alias of the desired property without using a magic string:
-
-```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-@{
-    // Set the value of the property with alias 'tags'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Tags).Alias, JsonConvert.SerializeObject(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
+            return View();
+        }
+    }
 }
 ```
 
