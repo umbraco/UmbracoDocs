@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Property Value Converters"
 meta.Description: "A guide to creating a custom property value converter in Umbraco"
 ---
