@@ -67,7 +67,7 @@ Every registered person will show up in the Members section in the backoffice.
 
 Now, we have our signup and login functionality - though there is one partial view we have not used yet, the Login Status.
 We created it as a Partial View, not as a Macro, for a singular reason - we are going to include it directly in a template, not in a property editor in the Content section.
-This partial will show the current status - whether the person is logged in or not.
+This partial view will show the current status - whether the person is logged in or not.
 
 To insert the partial, type `@Html.Partial("")` and enter the name of your partial in the quotes.
 
