@@ -11,9 +11,9 @@ needsV9Update: "true"
 
 # Member registration and login 
 
-Using tools available on a fresh install of Umbraco CMS, you are able to create a frontend-based registration and login functions, and restrict access to specific areas of your site based on this system.
+Using tools available on a fresh install of Umbraco CMS, you are able to create a frontend-based registration and login functions and restrict access to specific areas of your site based on this system.
 
-By the end of this tutorial you will know how to implement a basic register/login functionality on your website, hide pages from non-logged in members, and assign newly registered members to specific member groups.
+By the end of this tutorial, you will know how to implement a basic register/login functionality on your website, hide pages from non-logged-in members, and assign newly registered members to specific member groups.
 
 
 ## Create the necessary macros and partial files
