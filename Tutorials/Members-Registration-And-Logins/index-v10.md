@@ -316,12 +316,12 @@ namespace Umbraco.Web.Controllers
 
 For an easier implementation, you can copy the above code to a new .cs file and place it in a folder in your solution so that it will be compiled on application startup.
 
-With the above controller in place it is time to adjust the macro/view files as well.
+With the above controller in place, it is time to adjust the macro/view files as well.
 
 :::note
-In the example above we have only hardcoded the Member group we are assigning to someone who are registrating in our example.
+In the example above we have only hardcoded the Member group, which we are assigning to someone who is registering in our example.
 
-To be able to add the Member Group that we automaticly assign from the backoffice you will need to extend the controller further, which we won't cover in this tutorial.
+To be able to add the Member Group that we automatically assign from the backoffice you will need to extend the controller further, which we won't cover in this tutorial.
 :::
 
 ### Adjusting the Registration partial to use the new controller
