@@ -112,14 +112,14 @@ To restrict access you need to have made a member group, and a page containing t
 
 ![Restrict public access details](images/v8-15-Restrict-Public-Access-Details.png)
 
-Congratulations! With all of that set up, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
+Congratulations! With all of that setup, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
 
 In the navigation, you will be able to tell the content node is restricted - the small red icon that is added on top of the document type icon signifies that.
 
 ![Protected content](images/v8-16-Protected-node.png)
 
 :::note
-The above approach relies on two Macro partial views and a non-Macro partial view. It is also possible to achieve the same result by working entirely with plain Partial Views, three Macros, and even plain HTML/Razor code copied from the Snippets into your Templates.
+The above approach relies on two Macro partial views and a non-macro partial view. It is also possible to achieve the same result by working entirely with plain Partial Views, three Macros, and even plain HTML/Razor code copied from the Snippets into your Templates.
 :::
 
 However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
