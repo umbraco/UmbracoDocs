@@ -88,11 +88,31 @@ You can use the ContentService to create and update Umbraco content from c# code
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
 
-    // Set the value of the property with alias 'categories'. 
+    // Set the value of the property with alias 'tags'. 
     content.SetValue("tags", JsonConvert.SerializeObject(new[] { "News", "Umbraco", "Example", "Setting Tags", "Helper" }));
 
     // Save the change
     contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled, you can get the alias of the desired property without using a magic string:
+
+```csharp
+@using Umbraco.Cms.Core.PublishedCache;
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@{
+    // Set the value of the property with alias 'tags'
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Tags).Alias, JsonConvert.SerializeObject(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
 }
 ```
 

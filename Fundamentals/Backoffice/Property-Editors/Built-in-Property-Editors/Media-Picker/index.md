@@ -86,6 +86,8 @@ When this setting is enabled, a user who doesn't normally have access to the med
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core;
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
@@ -123,6 +125,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'featuredBanner'
