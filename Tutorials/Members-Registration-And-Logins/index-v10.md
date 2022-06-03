@@ -18,7 +18,7 @@ By the end of this tutorial, you will know how to implement a basic register/log
 
 ## Create the necessary macros and partial files
 
-Navigate to the Settings dashboard in the Backoffice, and under Templating section, expand Partial View Macro Files folder and create a new partial view.
+Navigate to the Settings dashboard in the Backoffice, and under Templating section, expand the Partial View Macro Files folder and create a new partial view.
 
 ![Partial create](images/v8-01-Partial-Macro-Create.png)
 
@@ -31,7 +31,7 @@ Start with the Register Member snippet.
 ![Partial macro register](images/v8-03-Partial-Macro-Register.png)
 
 Make sure to fill out the name of the partial view (you can call it "Register", for example).
-Afterwards, using the same approach, create a Macro Partial View using the Login snippet and name it "Login".
+Afterward, using the same approach, create a Macro Partial View using the Login snippet and name it "Login".
 
 With that done, navigate to the Partial Views folder above Partial View Macro Files, and create a New partial view from the snippet.
 This view should be using the Login Status snippet.
