@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 meta.Title: "Umbraco Global Settings"
 meta.Description: "Information on the global settings section"
 ---
@@ -30,11 +30,10 @@ The following snippet contains all the available options, with default values, a
       "InstallMissingDatabase": false,
       "DisableElectionForSingleServer": false,
       "DatabaseFactoryServerVersion": "SqlServer.V2019",
-      "MainDomLock": "MainDomSemaphoreLock",
+      "MainDomLock": "FileSystemMainDomLock",
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
-      "SqlWriteLockTimeOut": "00:00:05",
       "SanitizeTinyMce": false,
       "Smtp": {
         "From": "person@umbraco.dk",
@@ -55,7 +54,10 @@ The following snippet contains all the available options, with default values, a
         "TimeToRetainInstructions": "2.00:00:00",
         "TimeBetweenSyncOperations": "00:00:05",
         "TimeBetweenPruneOperations": "00:01:00"
-      }
+      },
+      "DistributedLockingMechanism": "",
+      "DistributedLockingReadLockDefaultTimeout": "00:01:00",
+      "DistributedLockingWriteLockDefaultTimeout": "00:00:05",
     }
   }
 }
@@ -99,7 +101,7 @@ The URL pointing to the Umbraco backoffice, if you change this value you also ne
 
 ### Icons path
 
-By adding this value you can specify a new/different folder for storing your icon resources, it's important to be aware of NetCores limitations regarding serving static file content, by default, static content will only be serverd from the wwwroot folder.
+By adding this value you can specify a new/different folder for storing your icon resources. It's important to be aware of NetCore's limitations regarding serving static file content. By default, static content will only be served from the `wwwroot` folder.
 
 ### Umbraco CSS path
 
@@ -114,8 +116,6 @@ By adding this you can specify a new/different folder for storing your script/js
 By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
 
 ### Umbraco media physical root path
-
-*Available in V9.3+*
 
 By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
 
@@ -139,30 +139,19 @@ This setting is used to specify which sql server version that the database is ru
 
 ### Main dom lock
 
-Specifies the implementation of `IMainDomLock` to be used.
+Specifies the implementation of IMainDomLock to be used.
 
-IMainDomLock is used to synchronize access to various resources e.g. Lucene indexes.
+`IMainDomLock` is used to synchronize access to resources like the Lucene indexes.
 
 Available options:
 
-+ **MainDomSemaphoreLock** - Windows only, uses a named Semaphore with a `maximumCount` of 1 to control acquisition of MainDom status.
-+ **SqlMainDomLock** - Available cross-platform, uses the database to control acquisition of MainDom status.
++ `"FileSystemMainDomLock"`- Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
++ `"MainDomSemaphoreLock"` - Windows only, uses a named system Semaphore with a `maximumCount` of 1 to control acquisition of MainDom status.
++ `"SqlMainDomLock"` - Available cross-platform, uses the database to control acquisition of MainDom status.
 
-*Available  in v9.4+*
-
-+ **FileSystemMainDomLock** - Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
-
-The default selection is platform-specific.
-
-On Windows, MainDomSemaphoreLock will be used unless configured otherwise.
-
-On other platforms, SqlMainDomLock will be used unless configured otherwise.
-
-Additionally, SqlMainDomLock will be used when configuration specifies MainDomSemaphoreLock on an unsupported platform.
+The default implementation unless configured otherwise is `FileSystemMainDomLock`.
 
 ### Main dom key discriminator
-
-*Available in V9.4+*
 
 For advanced use cases e.g. deployment slot swapping on Azure app services.
 
@@ -170,13 +159,9 @@ When using SqlMainDomLock a MainDomKey is used to identify an instance of a runn
 
 The MainDomKey is by default comprised of the server's machine name & the application id.
 
-This is generally all that is required to control MainDom status as starting a new process for the same application on the same
-server will result in a matching MainDomKey, requiring that an existing instance yields MainDom status to the new process.
+This is generally all that is required to control MainDom status as starting a new process for the same application on the same server will result in a matching MainDomKey. This will then require that an existing instance yields MainDom status to the new process.
 
-Deployment slots for a given Azure app service share the same machine name and without additional configuration will share a
-MainDomKey and therefore compete for MainDom status, this can be undesirable if attempting to deploy to a deployment slot
-followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots
-and can re-acquire MainDom status.
+Deployment slots for a given Azure App Service share the same machine name. Without additional configuration, they will share a MainDomKey and therefore compete for MainDom status. This can be undesirable if attempting to deploy to a deployment slot followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots and can re-acquire MainDom status.
 See [What happens during a swap](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#what-happens-during-a-swap).
 
 To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as a slot-specific configuration
@@ -199,10 +184,6 @@ This setting contains a unique ID used to identify your project, and is populate
 ### No nodes view path
 
 This setting specifies what view to render when there is no content on the site.
-
-### Sql write lock timeout
-
-A timespan value that represents the time to lock the database for a write operation. The setting is not mandatory, but can be used as a fix to extend the timeout if you have been seeing errors in your logs indicating that the default lock timeout is hit. The format for this setting is HH:MM:SS.
 
 ## SMTP settings
 
@@ -285,3 +266,26 @@ Sets a value for the time to wait between each prune operation.
 Gets or sets a value indicating whether TinyMCE scripting sanitization should be applied.
 
 The default value is `false`.
+
+### Distributed Locking Mechanism
+
+This is not a setting that commonly needs to be configured.
+
+Gets or sets a value representing the DistributedLockingMechanism to use.
+
+Valid values:
+
+- `"SqlServerDistributedLockingMechanism"`
+- `"SqliteDistributedLockingMechanism"`
+
+### Distributed Read Lock DefaultTimeout
+
+Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed read lock.
+
+The default value is 60 seconds.
+
+### Distributed Write Lock DefaultTimeout
+
+Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
+
+The default value is 5 seconds.
