@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms configuration"
 meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
 ---
