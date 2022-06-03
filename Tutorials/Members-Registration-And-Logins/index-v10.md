@@ -33,15 +33,15 @@ Start with the Register Member snippet.
 Make sure to fill out the name of the partial view (you can call it "Register", for example).
 Afterwards, using the same approach, create a Macro Partial View using the Login snippet and name it "Login".
 
-With that done, navigate to Partial Views folder above Partial View Macro Files, and create a New partial view from snippet.
+With that done, navigate to the Partial Views folder above Partial View Macro Files, and create a New partial view from the snippet.
 This view should be using the Login Status snippet.
 
 ![Partial snippets](images/v8-04-Partial-Snippets.png)
 
-These three partials already contain all the necessary code to make the register, login and logout functionality work.
+These three partials already contain all the necessary code to make the register, login, and logout functionality work.
 
 Since the Register and Login were created as macro partials, you will have corresponding Macros with the same names available under the Macros folder above the Templating section.
-Make sure to expand the Macros view, and in Editor Settings enable Login and Register macros to be used in Richtext Editor and the grid.
+Make sure to expand the Macros view, and in Editor Settings enable log in and Register macros to be used in Richtext Editor and the grid.
 
 ![Macro settings](images/v8-05-Macros-Settings.png)
 
