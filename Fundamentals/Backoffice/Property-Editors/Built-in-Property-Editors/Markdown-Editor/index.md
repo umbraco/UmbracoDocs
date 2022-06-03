@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Markdown editor
@@ -12,12 +13,13 @@ This built-in editor allow the user to use the markdown formatting options, from
 
 ## Data Type Definition Example
 
-![Definition Example](images/definition-example.png)
+![Definition Example](images/definition-example-v10.png)
 
-There are two settings available for manipulating the **Markdown editor** property.
+There are three settings available for manipulating the **Markdown editor** property.
 
 * **Preview** toggles if a preview of the markdown should be displayed beneath the editor in the content view.
 * **Default value** is inserted if no content has been saved to the document type using this property editor.
+* **Overlay Size** is used to select the width of the link picker overlay in the content view.
 
 ## Content Example
 

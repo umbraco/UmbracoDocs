@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Eye Dropper Color Picker
@@ -24,9 +25,9 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 @{
     var color = Model.Color?.ToString();
 
-    if (!string.isNullOrEmpty(color))
+    if (color != null)
     {
-        <div style="background-color: @color"></div>
+        <body style="background-color: @color"></body>
     }
 }
 ```
@@ -37,9 +38,9 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 @{
     var color = Model.Value<string>("Color");
 
-    if (!string.isNullOrEmpty(color))
+    if (color != null)
     {
-        <div style="background-color: @color"></div>
+        <body style="background-color: @color"></body>
     }
 }
 ```

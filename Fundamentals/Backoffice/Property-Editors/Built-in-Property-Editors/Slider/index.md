@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Slider
@@ -34,7 +35,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 @if (Model.HasValue("multiValueSlider"))
 {
-    var value = Model.Value<Umbraco.Core.Models.Range<decimal>>("multiValueSlider");
+    var value = Model.Value<Umbraco.Cms.Core.Models.Range<decimal>>("multiValueSlider");
     <p>@(value.Minimum) and @(value.Maximum)</p>
 }
 ```
@@ -90,7 +91,7 @@ See the example below to see how a value can be added or changed programmaticall
 @inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");

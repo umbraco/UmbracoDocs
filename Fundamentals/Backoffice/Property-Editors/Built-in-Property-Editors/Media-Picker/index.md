@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Media Picker
@@ -10,13 +11,13 @@ versionFrom: 9.0.0
 
 This property editors returns a single item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
 
-:::note 
+:::note
 As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](../Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
 :::
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
+![Media Picker Data Type Definition](images/Media-Picker-DataType-v10.png)
 
 ### Ignore user start nodes
 
@@ -74,7 +75,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMediaPickerSingle = Model.FeaturedBanner;
     if (typedMediaPickerSingle is Image image)
     {
-        <p>@image.())</p>
+        <p>@typedMediaPickerSingle.Url()</p>
         <img src="@image.Url()" style="width:200px"/>
     }
 }
@@ -88,7 +89,7 @@ See the example below to see how a value can be added or changed programmaticall
 @inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.ContentService;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -125,6 +126,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'featuredBanner'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, true);
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, udi.ToString());
 }
 ```

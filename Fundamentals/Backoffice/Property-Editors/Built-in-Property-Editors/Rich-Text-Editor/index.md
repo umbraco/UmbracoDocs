@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Rich Text Editor
@@ -20,7 +21,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](images/rte-datatype.png)
+![Rich Text Editor - Data Type](images/rte-datatype-v10.png)
 
 ## Content Example
 

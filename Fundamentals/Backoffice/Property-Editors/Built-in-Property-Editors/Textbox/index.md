@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Textbox
@@ -12,7 +13,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-![Textbox Data Type Definition](images/Textbox-Setup-v8.png)
+![Textbox Data Type Definition](images/Textbox-Setup-v10.png)
 
 ## Content Example
 

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Repeatable textstrings
@@ -12,7 +13,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Data Type Definition Example
 
-![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType.png)
+![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType-v10.png)
 
 ## Content Example
 

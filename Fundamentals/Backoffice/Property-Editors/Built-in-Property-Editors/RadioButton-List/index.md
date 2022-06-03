@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Radiobutton List
@@ -12,7 +13,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](images/RadioButton-List-DataType-v8.png)
+![Radiobutton List Data Type Definition](images/RadioButton-List-DataType-v10.png)
 
 ## Content Example
 
@@ -81,6 +82,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'colorTheme'
-    content.SetValue(Home.GetModelPropertyType(x => x.ColorTheme).Alias, "water");
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.ColorTheme).Alias, "water");
 }
 ```

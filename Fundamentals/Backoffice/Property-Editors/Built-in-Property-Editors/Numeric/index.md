@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Numeric
@@ -12,7 +13,7 @@ Numeric is an HTML input control for entering numbers. Since it's a standard HTM
 
 ## Data Type Definition Example
 
-![Numeric Data Type Definition](images/numeric-datatype.png)
+![Numeric Data Type Definition](images/numeric-datatype-v10.png)
 
 ### Minimum
 

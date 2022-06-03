@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Dropdown
@@ -22,7 +23,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Data Type Definition Example
 
-![Dropdown Data Type Definition](images/Dropdown-DataType-v8.png)
+![Dropdown Data Type Definition](images/Dropdown-DataType-v10.png)
 
 ## Content Example
 
