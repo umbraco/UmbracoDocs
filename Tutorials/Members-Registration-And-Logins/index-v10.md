@@ -71,7 +71,7 @@ This partial view will show the current status - whether the person is logged in
 
 To insert the partial, type `@Html.Partial("")` and enter the name of your partial view in the quotes.
 
-A good place to put it would be either the Master page, or a navigation component.
+A good place to put it would be either the Master page or a navigation component.
 
 ![Login partial in navigation](images/v8-10-Login-Partial-In-Nav.png)
 
