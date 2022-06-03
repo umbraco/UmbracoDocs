@@ -85,21 +85,21 @@ Do keep in mind that you might need to style the partial a bit to make it fit wi
 Now that we have the options to:
 
 - Register a member
-- Log in a member
-- Check current login status
+- Log in as a member
+- Check the current login status
 - Log out a member
 
-We can also go a bit further and specify which parts of our website should be accessible to logged in members.
+We can also go a bit further and specify which parts of our website should be accessible to logged-in members.
 To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
 
 ![New member group](images/v8-12-New-Member-Group.png)
 
-Give the group a name, and save it. Next, move over to the Members folder, click on any of the Members you  have, and assign the newly created Member Group to them. In order to do that, click on the member who you would like to assign to the group.
+Give the group a name, and save it. Next, move over to the Members folder, click on any of the Members you have, and assign the newly created Member Group to them. To do that, click on the member who you would like to assign to the group.
 Under `Properties`, you have the option to pick a group to assign the member to `(Member Group` property).
 
 ![Member group assign](images/v8-13-Member-Group-Assign.png)
 
-Almost there. Save the member, move to the Content section and find the page you would like to restrict. Right-click on that content node, and find the option "Restrict Public Access".
+Almost there. Save the member, move to the Content section and find the page you would like to restrict. Right-click on that content node and find the option "Restrict Public Access".
 
 ![Restrict public access](images/v8-14-Restrict-Public-Access.png)
 
