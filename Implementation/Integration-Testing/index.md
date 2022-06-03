@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.1.0
-needsV9Update: false
+versionTo: 10.0.0
 meta.Title: "Integration Testing Umbraco"
 meta.Description: "A guide to getting started with integration testing in Umbraco"
 ---
