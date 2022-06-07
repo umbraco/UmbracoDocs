@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Routing Requirements for Backoffice authentication"
 meta.Description: "Requirements for authenticating requests for the backoffice"
 ---
@@ -70,10 +71,10 @@ public static void MapUmbracoRoute<T>(
             this IEndpointRouteBuilder endpoints,
             string rootSegment,
             string areaName,
-            string prefixPathSegment,
+            string? prefixPathSegment,
             string defaultAction = "Index",
             bool includeControllerNameInRoute = true,
-            object constraints = null)
+            object? constraints = null)
 ```
 
 * The generic type argument is the contoller you wish to route, in this case `MyController`.
