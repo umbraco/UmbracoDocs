@@ -1,8 +1,9 @@
 ---
 versionFrom: 8.0.0
+versionTo: 10.0.0
 ---
 
-# Extract schema to data files
+# Extract Schema to Data Files
 
 Sometimes our guides requires you to generate UDA files for your projects metadata. You do that by extracting schema to your data files. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
 
@@ -103,16 +104,16 @@ UDA files are generated for the following types:
 
 ## Manually extracting schema to your UDA/Data files
 
-Follow these steps to extract schema to your data files
+Follow these steps to extract schema to your data files:
 
-![Generate UDA files](images/generating-uda-files.gif)
+1. Go to the backoffice.
+2. Navigate to the **Settings** section.
+3. Go to the **Deploy** dashboard.
+4. Select `Extract schema to data files` from the **Deploy Operations** dropdown.
+5. Click **Trigger Operation**. The Deploy engine will generate UDA files for all the types in your project. The status will change to `Write pending`.
+6. When it's done you'll see the status has changed to `Last deployment operation completed`.
+7. Final step is to deploy the schema. See the [**Deploying Schema from Data Files on your Cloud Environments**](../Deploy-schema) article.
 
-1. Go to backoffice
-2. Navigate to the **Settings** section
-3. Select the **Deploy** dashboard
-4. In the dropdown under **Deploy Operations** select `Extract schema to data files`
-5. The Deploy engine will generate UDA files for all the types in your project. The status will change to `Write pending`
-6. When it's done you'll see the status has changed to `Last deployment operation completed`
-7. Final step is to deploy the schema - see [**Deploy schema**](../Deploy-schema) article
+This process might sometimes end up giving you collision errors on your environments due to duplicates. See [How to resolve collision errors](../../../Troubleshooting/Structure-Error) article.
 
-This process might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../../Troubleshooting/Structure-Error) documentation.
+![Generate UDA files](images/generating-uda-files-v10.gif)
