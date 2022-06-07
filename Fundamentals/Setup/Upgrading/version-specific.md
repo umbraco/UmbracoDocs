@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Version specific upgrades
@@ -10,7 +11,7 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ## Version 9 to version 10
 
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet.
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
 :::warning
 **Important**: SQL CE is no longer a supported database engine.
