@@ -41,7 +41,6 @@ After updating the project through NuGet, you will need to update your project f
 Additionally, you will need to update the `Program.cs` to the following:
 
 ```csharp
-using Umbraco.Cms.Web.Common.Hosting;
 public class Program
     {
         public static void Main(string[] args)
