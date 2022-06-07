@@ -341,12 +341,10 @@ services.Configure<UmbracoRequestOptions>(options =>
 In your **FindContent** method you should still be able to access and use **IUmbracoContextAccessor** through standard DI:
 
 ```
-public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
+public IPublishedContent? FindContent(ActionExecutingContext actionExecutingContext)
 {
-    IPublishedContent content = default(IPublishedContent);
-    var context = _umbracoContextAccessor.GetRequiredUmbracoContext();
-
-    content = context.Content.GetAtRoot().FirstOrDefault();
+    IUmbracoContext context = _umbracoContextAccessor.GetRequiredUmbracoContext();
+    IPublishedContent? content = context.Content?.GetAtRoot().FirstOrDefault();
 
     return content;
 }
