@@ -17,7 +17,7 @@ To create a package, you first need to create a package schema through the Umbra
 3. Select the `Create package` button.
 
     ![Buttons to select for creating a package schema in the backoffice](images/creating-package-menu-v9.png)
-4. On the `Create package` page, there are fields that you can use to construct the contents of your package that are based on items from the backoffice. 
+4. On the `Create package` page, there are fields that you can use to construct the contents of your package that are based on items from the backoffice.
 5. Enter the package name at the top - we will call our dashboard the same as in the mentioned [Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
 We will now take a look at the different information that can be filled in:
@@ -41,7 +41,6 @@ These values are used to determine which backoffice items the package should con
 | Scripts | _Empty_ | These will come from the **wwwroot/scripts** folder. If you have scripts you want to include from other locations (_like App_Plugins folder_) you can do so at a later step. |
 | Partial Views | _Empty_ | See `Document Types` above |
 
-
 After filling out all the information, we can select **Create** to create the package schema. We will download it and take a closer look at what it contains.
 
 ## Inspecting a package ZIP
@@ -50,7 +49,7 @@ If your package doesn't include backoffice specific items, the result from downl
 
 ![Content of a ZIP package](images/zip-package-v9.png)
 
-Additionally to the `package.xml`, there is a folder containing the media items for your package. The rest of the information is recorded in the XML schema document. 
+Additionally to the `package.xml`, there is a folder containing the media items for your package. The rest of the information is recorded in the XML schema document.
 
 The files that we created from the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md) will be discussed at a later point. Now, let's take a look at the `package.xml` file:
 
@@ -85,7 +84,7 @@ This is the next step of preparing your package before install. Umbraco 9 only s
 
 NuGet is the standard package manager for .NET projects. More information about NuGet and how it works can be found on the [Microsoft documentation pages for NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget).
 
-### Generate an empty package using a template 
+### Generate an empty package using a template
 
 Assuming you have already installed the Umbraco templates, you can execute the following command in the .NET CLI to create a package project, that will include the necessary configuration for packing and installing your client-side assets:
 
@@ -119,7 +118,7 @@ As mentioned previously, let's navigate to the **App_Plugins** folder and replac
 
 ### Specify package properties
 
-In this section, we will demonstrate how you can add metadata about the package and its creator(s). 
+In this section, we will demonstrate how you can add metadata about the package and its creator(s).
 
 Now that Umbraco 9 is built on ASP.NET Core, you can add values directly to the package `csproj` file and it will pick them up. If you don't want to manually edit the `csproj` file, you can right-click your project, go to _Properties_ and then to _Package_. There you can insert your specific information:
 
@@ -198,9 +197,10 @@ dotnet new umbraco -n CustomWelcomeDashboardProject -p CustomWelcomeDashboard
 Afterwards, you can enter the `CustomWelcomeDashboardProject` directory, build your Umbraco website using the `dotnet build` command and then run the application.
 
 ### Package migration
+
 We can run a migration plan for each package that contains Umbraco content (_referenced in the package schema_).
 
-**Automatic Package Migration**
+#### Automatic Package Migration
 
 If you just want to ship a package that only installs the schema and the content you chose, then you can inherit from the `AutomaticPackageMigrationPlan` as seen below, and specify the package name that will be displayed under the packages _Installed_ tab in the backoffice. You will also need to embed the schema file in the same namespace.
 
@@ -220,7 +220,7 @@ namespace CustomWelcomeDashboardProject.Migrations
 
 ![Automatic package migration](images/embeded-resource.png)
 
-**Custom Package Migration**
+#### Custom Package Migration
 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
