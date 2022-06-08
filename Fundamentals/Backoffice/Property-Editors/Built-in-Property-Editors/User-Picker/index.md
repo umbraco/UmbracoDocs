@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # User Picker
@@ -25,10 +26,13 @@ Please note that getting the Value of the property will return the user ID - pro
 ### Without Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
 @{
+    
     if (Model.Value("userPicker") != null)
     {
-        var us = Services.UserService;
+        var us = UserService;
         var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
 
         <p>This is the chosen person: @username</p>
@@ -40,11 +44,13 @@ Please note that getting the Value of the property will return the user ID - pro
 ### With Modelsbuilder
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
 @{
     if (Model.UserPicker != null)
     {
 
-        var us = Services.UserService;
+        var us = UserService;
         var user = us.GetUserById((int)Model.UserPicker);
 
         <p>This is the chosen person: @user.Name</p>
