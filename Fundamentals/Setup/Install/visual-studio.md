@@ -8,7 +8,7 @@ versionTo: 10.0.0
 *Follow these steps to do a full install of Umbraco using Visual Studio.*
 
 :::note
-Please note that this article is valid only for Umbraco 9 and later versions.
+This article is valid only for Umbraco 9 and later versions.
 :::
 
 ## Abbreviated version
