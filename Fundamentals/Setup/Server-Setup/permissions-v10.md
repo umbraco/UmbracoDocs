@@ -1,7 +1,7 @@
 ---
 meta.Title: "Umbraco file and folder permissions"
 meta.Description: "Information on file and folder permissions required for Umbraco sites"
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 versionTo: 10.0.0
 ---
 
