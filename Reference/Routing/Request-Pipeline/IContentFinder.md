@@ -11,7 +11,7 @@ To create a custom content finder, with custom logic to find an Umbraco document
 ```csharp
 public interface IContentFinder
 {
-  bool TryFindContent(IPublishedRequestBuilder contentRequest);
+  Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest);
 }
 ```
 
@@ -35,7 +35,7 @@ public class MyContentFinder : IContentFinder
         _umbracoContextAccessor = umbracoContextAccessor;
     }
 
-    public bool TryFindContent(IPublishedRequestBuilder contentRequest)
+    public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
         // Handle all requests beginning with /woot
         var path = contentRequest.Uri.GetAbsolutePathDecoded();
@@ -113,7 +113,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-
 #### Composer
 
 ```csharp
@@ -140,6 +139,7 @@ namespace RoutingDocs.ContentFinders
 }
 
 ```
+
 :::note
 In Umbraco 7 there existed an IContentFinder that would find content and display it with an 'alternative template' via a convention. This could be to avoid the ugly `?alttemplate=blogfullstory` appearing on the querystring of the url when using the alternative template mechanism. Instead the Url could follow the convention of `/urltocontent/altemplatealias`. 
 
@@ -148,7 +148,7 @@ Eg: `/blog/my-blog-post/blogfullstory` would 'find' the `/blog/my-blog-post` pag
 In Umbraco 9 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behavior by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IComposer`, or Umbraco builder extension (see above example).
 :::
 
-# NotFoundHandlers
+## NotFoundHandlers
 
 To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)
 
@@ -174,7 +174,7 @@ namespace RoutingDocs.ContentFinders
             _umbracoContextAccessor = umbracoContextAccessor;
         }
         
-        public bool TryFindContent(IPublishedRequestBuilder contentRequest)
+        public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
         {
             // Find the root node with a matching domain to the incoming request
             var allDomains = _domainService.GetAll(true).ToList();
