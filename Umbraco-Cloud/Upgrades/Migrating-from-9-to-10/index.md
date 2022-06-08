@@ -15,22 +15,22 @@ The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updati
 * A backup of your Umbraco 9 project database.
 
 :::note
-We strongly recommend having at least 2 environments on the Umbraco 9 project. If something fails during the upgrade, the Development environment can be removed and added again to start over with the upgrade process.
+We strongly recommend having at least 2 environments on your project. If something fails during the upgrade, the Development environment can be removed and added again to start over with the upgrade process.
 :::
 
 ## Step 1: Content Migration
 
-* Create a backup of the database from your Umbraco 9 project, see the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article or clone down the V9 project and take a backup of the local Database (Ensure to restore the content from your cloud environment).
+* Create a backup of the database from your project, see the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article or clone down the project and take a backup of the local Database (Ensure to restore the content from your cloud environment).
 
 * On the Cloud portal, go to the project that you wish to upgrade and navigate to **Settings** -> **Advanced**. Scroll down to **Runtime Settings** section and **Enable .NET 6 for your Umbraco 9 install** for each environment of your cloud project.
 
     ![Runtime Settings](images/Runtime-Settings.png)
 
-* Clone down the **Development** environment from the Umbraco 9 Cloud project, build and run the project locally and make sure to log in to the backoffice.
+* Clone down the **Development** environment from the Umbraco Cloud project, build and run the project locally and make sure to log in to the backoffice.
 
 ## Step 2: Upgrade the project locally using Visual Studio
 
-* Open your Umbraco 9 project in Visual Studio.
+* Open your project in Visual Studio.
 
 * Right-click your project solution in the **Solution Explorer** and select **Properties**.
     ![Solution Explorer](images/Solution-Explorer.png)
@@ -46,7 +46,6 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
     ![Nuget Version Install](images/Nuget-Version-Install.png)
 
 * Similarly, update the below packages referenced in your project to the latest versions available on NuGet either through the **NuGet Package Manager** or **Package Manager Console (PowerShell)**:
-  * <https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0>
   * <https://www.nuget.org/packages/Umbraco.Cms/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Cloud/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Contrib/10.0.0>
@@ -54,6 +53,8 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
   * <https://www.nuget.org/packages/Umbraco.Cloud.StorageProviders.AzureBlob/5.0.0>
   * <https://www.nuget.org/packages/Umbraco.Cloud.Identity.Cms/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Forms/10.0.0/>
+
+* Install the [Microsoft.Extensions.DependencyInjection.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0) package.
 
 * Update the `Program.cs` to the following:
 
@@ -101,7 +102,7 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
 * Build and run your project locally to verify the Umbraco 10 upgrade.
     ![Target Framework](images/verify-v10-upgrade-locally.png)
 
-## Step 3: Deploy and test on Umbraco Cloud
+## Step 3: Deploy and Test on Umbraco Cloud
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
