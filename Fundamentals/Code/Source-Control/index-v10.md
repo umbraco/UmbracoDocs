@@ -113,7 +113,7 @@ Umbraco site templates/views can be edited via the Umbraco Backoffice. They also
 
 However, this can pose a problem if the templates are updated via the backoffice outside of source control on the production environment.
 
-This is not an advisable approach since more often than not this will cause breaking changes to your website.
+This is not an advisable approach since often this will cause breaking changes to your website.
 
 You would need to manually merge these files before considering a deployment.
 
