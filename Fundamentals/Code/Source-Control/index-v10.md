@@ -105,7 +105,7 @@ Each plugin could be different depending on its implementation and functionality
 
 A lot depends on how you maintain the front-end build of your website, e.g. are you using CSS preprocessors such as SCSS/LESS etc - gulp/grunt tasks to combine and minify script resources.
 
-But generally, you will need to source control all of your website's static assets: JavaScript, CSS, Fonts, Page Furniture Images, etc.
+But generally, you will need to source control all your website's static assets: JavaScript, CSS, Fonts, Page Furniture Images, etc.
 
 #### Views/Templates/Partials
 
