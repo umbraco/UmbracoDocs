@@ -8,7 +8,7 @@ meta.Description: "In this article you can learn more about how to effectively s
 
 ## Umbraco Cloud
 
-If you are running your site on Umbraco Cloud - and why wouldn't you be? - then source control is very much part of the experience, have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../Umbraco-Cloud/Getting-Started/Environments/) and the information on ['Working with your Umbraco Cloud project'](../../../Umbraco-Cloud/Set-Up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../Umbraco-Cloud/Getting-Started/Environments/) and the information on ['Working with your Umbraco Cloud project'](../../../Umbraco-Cloud/Set-Up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 
@@ -146,9 +146,9 @@ In general, it is recommended to add these to source control. When you do this, 
 
 #### DocumentType - Backoffice Structure Changes
 
-When you create and edit eg. Document Types, Media Types, and Data Types in the Umbraco Backoffice these values are stored in the Umbraco Database, making them very difficult to source control in a 'file based' version control system.
+When you create and edit eg. Document Types, Media Types, and Data Types in the Umbraco Backoffice these values are stored in the Umbraco Database, making them difficult to source control in a 'file based' version control system.
 
-There are several add-on packages that can help add source control to these structure changes:
+There are a series of add-on packages that can help add source control to these structure changes:
 
 - *[The uSync package (free)](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
 
