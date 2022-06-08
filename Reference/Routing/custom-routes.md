@@ -297,7 +297,7 @@ namespace RoutingDocs.Controllers
 With that we have our controller with a custom route within an Umbraco context.
 
 #### Client-Side Requests
-If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need make a few of changes to get this to work.
+If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need to make a few changes to get this to work.
 
 Define your route as before, specifying the correct client type route:
 
