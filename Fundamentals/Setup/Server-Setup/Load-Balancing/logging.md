@@ -9,7 +9,4 @@ Umbraco v8+ uses Serilog for logging. When load balancing Umbraco consideration 
 
 There are many Serilog Sinks available and one of these may be appropriate to store logs for all servers in a central repository such as Azure Application Insights or Elmah.io.
 
-
 See [SeriLog Provided Sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) for more info
-
-
