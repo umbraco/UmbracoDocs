@@ -1,10 +1,17 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.0.0
 meta.Title: "Umbraco Serilog config"
 meta.Description: "Reference for the Serilog config file in Umbraco"
 ---
 
 # Serilog Config
+
+:::note
+This article is only valid if you are using Umbraco 8 or previous versions.
+
+If you are using Umbraco 9 or later, the relevant article for you is found in the [Configuration](../../Configuration/Serilog/) section.
+:::
 
 Serilog can be configured and extended by using the two XML configuration files on disk.
 
