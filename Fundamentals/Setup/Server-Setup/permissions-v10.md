@@ -18,7 +18,7 @@ Generally when developing locally with Visual Studio or Rider, permissions do no
 :::note
 If you have any specific static files/media items/etc, you should add the appropriate permissions accordingly.
 
-The permissions documentation as it is should allow you to run a plain Umbraco install successfully, the rest is up to you.
+The permissions documentation should allow you to run a plain Umbraco install successfully.
 :::
 
 |File / folder             |Permission             |Comment                                              |
