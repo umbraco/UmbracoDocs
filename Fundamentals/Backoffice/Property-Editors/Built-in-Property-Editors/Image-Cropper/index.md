@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Image Cropper
@@ -118,6 +119,10 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 ```
 
 ## Add values programmatically
+
+:::note
+This samples in this section has not been verified against the latest version of Umbraco.
+:::
 
 See the example below which is using a API controller to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
