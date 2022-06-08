@@ -1,6 +1,5 @@
 ---
 versionFrom: 10.0.0
-updated-links: true
 ---
 
 # Install Umbraco with .NET CLI

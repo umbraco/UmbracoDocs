@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Install Umbraco with Visual Studio Code
@@ -46,7 +47,7 @@ Now that we've told VS Code how to build your project, we need to tell it how to
 
 ![Creating launch.json file](images/VsCode/creatingLaunchFile.png)
 
-This will prompt a menu to appear, select the 
+This will prompt a menu to appear, select:
 
 ![Nectore launch task](images/VSCode/NetcoreTask.png)
 

@@ -1,16 +1,14 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
-updated-links: false
+versionTo: 10.0.0
 ---
 
 # Install Umbraco with Visual Studio
 
-_Follow these steps to do a full install of Umbraco using Visual Studio._
+*Follow these steps to do a full install of Umbraco using Visual Studio.*
 
 :::note
-Please note that this article is valid only for Umbraco 9.
+This article is valid only for Umbraco 9 and later versions.
 :::
 
 ## Abbreviated version
@@ -28,7 +26,8 @@ Please note that this article is valid only for Umbraco 9.
 ## New project
 
 To install Umbraco we first need to install Umbraco's dotnet new templates.
-*For more information check the first 2 steps of [Install Umbraco with .NET CLI](install-umbraco-with-templates.md#Install-the-template)*
+
+For more information check the first 2 steps of [Install Umbraco with .NET CLI](install-umbraco-with-templates.md#Install-the-template).
 
 :::note  
 Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.  

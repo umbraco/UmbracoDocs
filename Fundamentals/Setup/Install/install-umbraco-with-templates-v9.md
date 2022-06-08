@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
-state: partial
-updated-links: false
 ---
 
 # Install Umbraco with .NET CLI

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Installing Umbraco"
 meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
@@ -25,7 +26,7 @@ Visual Studio Code is an editor with an embedded webserver (through the IIS Expr
 
 ### [Run Umbraco on IIS](iis.md)
 
-Learn how to run an already installed local installation of Umbraco 9.
+Learn how to run an already installed local installation of Umbraco.
 
 ## [.NET CLI installation](install-umbraco-with-templates.md)
 
