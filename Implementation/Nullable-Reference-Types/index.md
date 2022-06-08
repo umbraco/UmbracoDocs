@@ -16,5 +16,5 @@ Nullable reference types includes three features that help you avoid these excep
 - Attributes that annotate APIs so that the flow analysis determines null-state.
 - Variable annotations that developers use to explicitly declare the intended null-state for a variable.
 
-To learn more about Nullable Reference Types, make sure to check out the [microsoft documentation](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
+To learn more about Nullable Reference Types, make sure to check out the [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
 
