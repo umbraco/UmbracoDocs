@@ -1,12 +1,17 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
-needsv9Update: "true"
+versionTo: 7.0.0
 ---
 
 # Examine Management
 
 _Provides an overview of the available Examine functionality available directly within the Umbraco backoffice_
+
+:::note
+This document has been verified for Umbraco 7.
+
+If you are using Umbraco 8 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+:::
 
 ## Overview
 
