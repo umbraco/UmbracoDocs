@@ -91,7 +91,7 @@ These are by default ignored by git.
 
 The **App_Plugins** folder is the home for all third-party packages installed on your site.
 
-Depending on how you installed the plugin it will affect how you choose to version control a particular third party plugin:
+Depending on how you installed the plugin it will affect how you choose to version control a particular third-party plugin:
 
 Since plugins are installed via NuGet the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
 
