@@ -351,7 +351,7 @@ public IPublishedContent? FindContent(ActionExecutingContext actionExecutingCont
 ```
 
 :::note
-There is a currently a bug in all versions below 9.5, where this fix won't work for mapping a client-side request to an Umbraco Controller. See [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details. v9.5 fixes this issue and its recommended to update to the latest version!
+There is currently a bug in all versions below 9.5, where this fix won't work for mapping a client-side request to an Umbraco Controller. See [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details. v9.5 fixes this issue and it's recommended to update to the latest version!
 :::
 
 #### Attribute routing with IVirtualPageController
