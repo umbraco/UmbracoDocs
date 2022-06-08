@@ -112,7 +112,7 @@ Once the Umbraco 10 project runs locally without any errors, the next step is to
 
 Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
-* Setup [rewrites](../../../Reference/Routing/IISRewriteRules/index.md) on the Umbraco 10 site.
+* Setup [URL Rewrites](../../../Reference/Routing/IISRewriteRules/index.md) on the Umbraco 10 site.
 * Assign hostnames to the project.
     :::note
     Hostnames are unique and can only be added to one Cloud project at a time.
