@@ -1,10 +1,16 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
-needsv9Update: "true"
+versionTo: 7.0.0
 ---
 
 # Examine Manager
+
+:::note
+This document has been verified for Umbraco 7.
+
+If you are using Umbraco 8 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+:::
+
 _The Examine.ExamineManager is a singleton object which exposes all of the index and search providers which are registered in the configuration of the application. As with all singletons in Umbraco, we recommend reviewing the [Common Pitfalls & Anti-Patterns](../../Common-Pitfalls/index.md) page to ensure the correct usage._
 
 Accessing the singleton can be done like:

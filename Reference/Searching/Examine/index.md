@@ -1,11 +1,19 @@
 ---
 versionFrom: 8.0.0
-needsv9Update: true
+versionTo: 8.0.0
 ---
 
 # Examine
 
 _Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast._
+
+:::note
+The majority of the Examine documentation in this section, is last verified for Umbraco 8 or 7.
+
+We recommend that you refer to the official [Examine](https://shazwazza.github.io/Examine/) and [Lucene](https://lucenenet.apache.org/) documentation when using Umbraco 9 or later versions.
+
+Do you have any specific questions or queries regarding the above, please feel free to report on the official [UmbracoDocs Github Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues).
+:::
 
 ## What is Examine?
 
