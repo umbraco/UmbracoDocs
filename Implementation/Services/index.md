@@ -237,7 +237,7 @@ namespace Umbraco9.Components
 Inside a ContentFinder access to the content cache is possible by injecting `IUmbracoContextAccessor` into the constructor and  provided via the PublishedRequest object:
 
 ```csharp
-public bool TryFindContent(IPublishedRequestBuilder frequest)
+public Task<bool> TryFindContent(IPublishedRequestBuilder request)
 {
     if (!UmbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
     {
