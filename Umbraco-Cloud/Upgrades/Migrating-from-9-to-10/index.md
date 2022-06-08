@@ -2,9 +2,9 @@
 versionFrom: 9.0.0
 ---
 
-# Migrating an Umbraco 9 Cloud project to Umbraco 10
+# Upgrading an Umbraco 9 Cloud project to Umbraco 10
 
-This article will provide steps on how to migrate an Umbraco 9 Cloud project to Umbraco 10.
+This article will provide steps on how to upgrade an Umbraco 9 Cloud project to Umbraco 10.
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
@@ -15,14 +15,14 @@ The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updati
 * A backup of your Umbraco 9 project database.
 
 :::note
-We strongly recommend having at least 2 environments on the Umbraco 9 project. If something fails during the migration, the Development environment can be removed and added again to start over with the migration process.
+We strongly recommend having at least 2 environments on the Umbraco 9 project. If something fails during the upgrade, the Development environment can be removed and added again to start over with the upgrade process.
 :::
 
 ## Step 1: Content migration
 
 * Create a backup of the database from your Umbraco 9 project, see the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article or clone down the V9 project and take a backup of the local Database (Ensure to restore the content from your cloud environment).
 
-* On the Cloud portal, go to the project that you wish to migrate and navigate to **Settings** -> **Advanced**. Scroll down to **Runtime Settings** section and **Enable .NET 6 for your Umbraco 9 install** for each environment of your cloud project.
+* On the Cloud portal, go to the project that you wish to upgrade and navigate to **Settings** -> **Advanced**. Scroll down to **Runtime Settings** section and **Enable .NET 6 for your Umbraco 9 install** for each environment of your cloud project.
 
     ![Runtime Settings](images/Runtime-Settings.png)
 
@@ -56,6 +56,7 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
 * Update the `Program.cs` to the following:
 
     ```csharp
+    using Umbraco.Cms.Web.Common.Hosting;
     public class Program
         {
             public static void Main(string[] args)
@@ -74,7 +75,7 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
         }
     ```
 
-* To re-enable the appsettings IntelliSense, you must update your schema reference in the **appsettings.json** file and the **appsettings.<environment-name>.json** from:
+* To re-enable the appsettings IntelliSense, update your schema reference in the **appsettings.json**, **appsettings.Development.json**, **appsettings.Production.json**, and **appsettings.Staging.json** files from:
 
     ```json
     "$schema": "./umbraco/config/appsettings-schema.json",
@@ -86,7 +87,7 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
     "$schema": "./appsettings-schema.json",
     ```
 
-* Remove the following files and folders manually from your local project and on all cloud environments through [KUDU](../../Set-Up/Power-Tools/index.md) both from the `repository` and `wwwroot` folders:
+* Remove the following files and folders *manually* from your local project and on the cloud **Development** environment through [KUDU](../../Set-Up/Power-Tools/index.md) both from the `repository` and `wwwroot` folders:
 
   * `/wwwroot/umbraco`
   * `/umbraco/PartialViewMacros`
@@ -102,15 +103,15 @@ We strongly recommend having at least 2 environments on the Umbraco 9 project. I
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
-* Push the migration and changes to the Umbraco Cloud Development environment, see the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
+* Push the changes to the Umbraco Cloud **Development** environment, see the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
 
-* Test **everything** on the Development environment.
+* Test **everything** on the **Development** environment.
 
-* Deploy to the Live environment, see [Deploying from one Cloud environment to another](../../Deployment/Cloud-to-Cloud/index.md) article.
+* Deploy to the **Live** environment, see [Deploying from one Cloud environment to another](../../Deployment/Cloud-to-Cloud/index.md) article.
 
-## Step 5: Going live
+## Step 4: Going live
 
-Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
+Once the upgrade is complete, and the Live environment is running without any errors, the site is ready for launch.
 
 * Setup [URL Rewrites](../../../Reference/Routing/IISRewriteRules/index.md) on the Umbraco 10 site.
 * Assign hostnames to the project.
