@@ -58,7 +58,7 @@ Refrain from naming your solution `Umbraco`, as this will cause a namespace conf
 
 On the next step, you are able to specify some additional parameters like *Target framework*. The rest are optional.
 
-![Add additional information](images/VS/additional-info.png)
+![Add additional information](images/VS/Umbraco10_install.png)
 
 You can then click the *Create* button and your Umbraco Project will be ready for you.
 
