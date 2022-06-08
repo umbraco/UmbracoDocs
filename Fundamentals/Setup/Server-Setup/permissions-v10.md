@@ -12,7 +12,7 @@ To ensure a stable and smoothly running Umbraco installation, these permissions 
 
 The main account that requires 'modify' file permissions to be set on the folders below, is the account used start Umbraco. If Umbraco is hosted in IIS this will be the Application Pool Identity for the IIS website. Usually IIS APPPOOL\appPoolName or a specific local account or in some circumstances Network Service. If in doubt, ask your server admin / hosting company. Additionally, the IUSR account and IIS_IUSRS account only require 'read only' access to the site's folders.
 
-Generally when developing locally with Visual Studio or Rider, permissions do not need to be strictly applied.
+Generally, when developing locally with Visual Studio or Rider, permissions do not need to be strictly applied.
 :::
 
 :::note
