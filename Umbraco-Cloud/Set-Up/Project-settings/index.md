@@ -1,12 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Project Settings
 
 When working with an Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
 
-![settings](images/project-settings-v9-1.png)
+![settings](images/project-settings-v10.png)
 
 ## Overview
 
@@ -47,7 +48,7 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 ### Renaming the Cloud Project
 
 You can rename your Umbraco Cloud project from the **Settings** menu.
-![settings](images/renaming-project-1.png)
+![settings](images/renaming-project-v10.png)
 
 :::note
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.

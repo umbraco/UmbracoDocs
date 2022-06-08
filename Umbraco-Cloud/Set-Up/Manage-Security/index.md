@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Managing Transport Security
@@ -7,7 +8,8 @@ versionFrom: 7.0.0
 Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain transport security options for all or for specific hostnames within your project.
 These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
-The options that are currently available are
+These options are currently available:
+
 - HTTP/2 (default: on)
 - TLS 1.3 (default: off)
 - Minimum TLS Version (default: 1.2)
@@ -16,7 +18,7 @@ When a new hostname is added to a Project it will have the default settings appl
 
 ## HTTP/2 Explained
 
-The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 progressively enhances your website’s performance. When a browser supports HTTP/2, Umbraco Cloud will take full advantage of HTTP/2 performance benefits end to end. 
+The first usable version of HTTP was created in 1997. Because it went through different stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 progressively enhances your website’s performance. When a browser supports HTTP/2, Umbraco Cloud will take full advantage of HTTP/2 performance benefits end to end.
 For older browsers or non-HTTPS requests, the traffic will fall back to HTTP/1.1. You don’t need to choose between better performance and backward compatibility, which is why HTTP/2 is enabled by default for all new hostnames added to a Umbraco Cloud project.
 
 ## TLS 1.3 Explained
@@ -40,10 +42,9 @@ Currently the features are available as follows:
 
 ## Security subpage
 
-From your Umbraco Cloud Project, click Security from the Settings dropdown to get to the Security subpage.
-The Security settings are scoped per environment, so if you have multiple environments and add your own hostnames to different environments you can select the environment at the top of the page.
-Aside from environments, the Security subpage is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'.
-Use the default settings to configure what should be applied by default to new and existing hostnames.
+From your Umbraco Cloud Project, click **Security** from the **Settings** dropdown. The Security settings are scoped per environment, so if you have multiple environments and add your own hostnames to different environments you can select the environment at the top of the page.
+
+Aside from environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the default settings to configure what should be applied by default to new and existing hostnames.
 
 ![Default Security Settings](images/security-subpage.png)
 
