@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Settings and styling
@@ -90,7 +91,7 @@ and will translate in to three different options where each string will become a
 ]
 ```
 
-**modifier** is a basic way to prepend, append or wrap the value from the editor in a string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
+**modifier** is a basic way to prepend, append or wrap the value from the editor in a string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url({0})` which means that `{0}` is replaced with the editor value.
 
 **applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string.
 
