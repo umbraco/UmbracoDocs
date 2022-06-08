@@ -62,7 +62,7 @@ However, we will go through the different files in order to give you an insight 
 
 #### The Umbraco Folder
 
-The main folder where the Umbraco CMS resides in, is the `/umbraco` one inside your project.
+The main folder where the Umbraco CMS resides is the `/umbraco` one inside your project.
 
 Most of the files and folders within the Umbraco folder, is already added to the default gitignore file. As most of the Umbraco CMS core files are embedded, the `/umbraco` folder contains primarily temporary files and log files, which are all added as Umbraco is installed.
 
