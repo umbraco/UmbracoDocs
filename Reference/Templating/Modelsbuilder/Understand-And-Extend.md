@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Understand and Extend Modelsbuilder"
 meta.Description: "Understand and extend modelsbuilder"
 ---
@@ -10,38 +11,38 @@ meta.Description: "Understand and extend modelsbuilder"
 Models are generated as partial classes. In its most basic form, a model for content type `TextPage` ends up in a `TextPage.generated.cs` file and looks like:
 
 ```csharp
-	/// <summary>TextPage</summary>
-	[PublishedModel("textPage")]
-	public partial class TextPage : PublishedContentModel
-	{
-		// helpers
-		public new const string ModelTypeAlias = "textPage";
+/// <summary>TextPage</summary>
+[PublishedModel("textPage")]
+public partial class TextPage : PublishedContentModel
+{
+  // helpers
+  public new const string ModelTypeAlias = "textPage";
 
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+  public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 
-		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
-			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+  public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+    => PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<TextPage, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+  public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<TextPage, TValue>> selector)
+    => PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 
-		private IPublishedValueFallback _publishedValueFallback;
+  private IPublishedValueFallback _publishedValueFallback;
 
-		// ctor
-		public TextPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
-			: base(content, publishedValueFallback)
-		{
-			_publishedValueFallback = publishedValueFallback;
-		}
+  // ctor
+  public TextPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+    : base(content, publishedValueFallback)
+  {
+    _publishedValueFallback = publishedValueFallback;
+  }
 
-		// properties
+  // properties
 
-		///<summary>
-		/// Header
-		///</summary>
-		[ImplementPropertyType("header")]
-		public virtual string Header => this.Value<string>(_publishedValueFallback, "header");
-	}
+  ///<summary>
+  /// Header
+  ///</summary>
+  [ImplementPropertyType("header")]
+  public virtual string Header => this.Value<string>(_publishedValueFallback, "header");
+}
 ```
 
 What is important is the `Header` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects:
