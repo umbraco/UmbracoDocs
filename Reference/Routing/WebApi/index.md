@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco WebApi"
 meta.Description: "A guide to implenting WebApi in Umbraco projects"
 ---
@@ -15,7 +16,9 @@ Related links:
 
 ## What is Web API?
 
-The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api). *"ASP.NET makes it easy to build services that reach a broad range of clients, including browsers and mobile devices. With ASP.NET you use the same framework and patterns to build both web pages and services, side-by-side in the same project."*
+The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+
+"ASP.NET enables you to build services that reach a broad range of clients, including browsers and mobile devices. With ASP.NET you use the same framework and patterns to build both web pages and services, side-by-side in the same project."
 
 A great resource for getting started with creating web API's using .Net Core is the [official Microsoft documentation](https://docs.microsoft.com/en-gb/aspnet/core/web-api/?view=aspnetcore-5.0).
 
@@ -50,7 +53,6 @@ public class ScoresController : UmbracoApiController
 
 This is the most common way to create an Umbraco API controller, you inherit from the class `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` and that is all. You will need to follow the guidelines specified by Microsoft for creating a Web API controller, documentation can be found on the [official Microsoft documentation website](https://docs.microsoft.com/en-gb/aspnet/core/web-api/?view=aspnetcore-5.0).
 
-
 Example:
 
 ```csharp
@@ -65,17 +67,15 @@ public class ProductsController : UmbracoApiController
 
 All locally declared Umbraco API controllers will be routed under the url path of:
 
-*~/Umbraco/Api/[YourControllerName]*
+`~/Umbraco/Api/[YourControllerName]`
 
-E.g. *~/Umbraco/Api/Products/GetAllProducts*
+E.g. *`~/Umbraco/Api/Products/GetAllProducts`
 
 Note that the "Controller" part of your controller name gets stripped away.
 
 ### Plugin based controller
 
-
 If you are creating an Umbraco API controller to be shipped in an Umbraco package you will need to add the `Umbraco.Cms.Web.Common.Attributes.PluginController` attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute.
-
 
 Example:
 
@@ -92,9 +92,9 @@ public class ProductsController : UmbracoApiController
 
 Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco API controllers will be routed under the url path of:
 
-*~/Umbraco/[YourAreaName]/[YourControllerName]*
+`~/Umbraco/[YourAreaName]/[YourControllerName]`
 
-E.g. *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
+E.g. `~/Umbraco/AwesomeProducts/Products/GetAllProducts`
 
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
@@ -102,16 +102,14 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another segment to the path: 'backoffice'.
 
+`~/Umbraco/backoffice/Api/[YourControllerName]`
 
-*~/Umbraco/backoffice/Api/[YourControllerName]*
-
-*~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
-
+`~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]`
 
 E.g.
-*~/Umbraco/backoffice/Api/Products/GetAllProducts* or
+`~/Umbraco/backoffice/Api/Products/GetAllProducts` or
 
-*~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
+`~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts` for PluginController
 
 ### More Information
 
@@ -143,8 +141,7 @@ This route the controllers actions like so:
 
 `~/products/GetAllProducts` and `~/products/GetProduct`
 
-
-If you use the route attribute for a specific action the `[action]` token is not nececary, but you can request parameters from the path in a similar manner, using the `{parameterName}` syntax, for instance: 
+If you use the route attribute for a specific action the `[action]` token is not nececary, but you can request parameters from the path in a similar manner, using the `{parameterName}` syntax, for instance:
 
 ```C#
 public class ProductsController : UmbracoApiController
