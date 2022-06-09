@@ -60,6 +60,7 @@ For illustration purposes, the following structure represents the full set of op
       "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
+      "TriggerConditionsCheckOn": "change"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -198,6 +199,10 @@ From 8.13.0 and 10.1 onwards, the culture used when storing the form entry is re
 In other words, if you have a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor may be using "en-GB" (which formats dates as of `d/m/y`), by setting the value of this configuration key to "en-US" you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
 
 If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
+
+### TriggerConditionsCheckOn
+
+This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.
 
 ## Security configuration
 
