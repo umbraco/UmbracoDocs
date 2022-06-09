@@ -1,9 +1,10 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 :::note
-In Umbraco 9 Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9.
+Since the release of Umbraco 9, Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9.
 For V8 equivalent see: [Events](../Events)
 :::
 
