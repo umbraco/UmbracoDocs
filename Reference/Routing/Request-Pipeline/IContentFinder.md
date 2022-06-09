@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Creating content finders"
 meta.Description: "Information about creating your own content finders"
 ---
