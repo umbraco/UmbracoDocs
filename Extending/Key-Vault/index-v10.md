@@ -25,7 +25,7 @@ dotnet add package Azure.Identity
 ```
 
 ## Configuration
-The next step is to add the Azure Key Vault endpoint to the 'appsettings.json' file. 
+The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file. 
 
 ```json
 {
