@@ -17,7 +17,7 @@ Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configura
 
 ### Installing through command line
 
-Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following 'dotnet add package' command to install the package:
+Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
 ```
 dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets
