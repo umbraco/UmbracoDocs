@@ -70,7 +70,7 @@ Finally, remove the following files and folders:
 - `/umbraco/UmbracoInstall`
 - `/umbraco/UmbracoWebsite`
 - `/umbraco/config/lang`
-
+- `/App_Plugins/UmbracoForms`
 To re-enable the appsettings IntelliSense, you must update your schema reference in the **appsettings.json** file from: 
 
 ```json
