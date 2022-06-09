@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTO: 10.0.0
 ---
 
 # Add values programmatically
@@ -16,6 +17,8 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @using Newtonsoft.Json
+@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Models;
 @inject IContentService Services;
 @{
 	// Get access to ContentService
@@ -89,6 +92,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'body'
