@@ -98,6 +98,7 @@ We strongly recommend having at least 2 environments on your project. If somethi
   * `/umbraco/UmbracoInstall`
   * `/umbraco/UmbracoWebsite`
   * `/umbraco/config/lang`
+  * `/App_Plugins/UmbracoForms`
 
 * Build and run your project locally to verify the Umbraco 10 upgrade.
     ![Target Framework](images/verify-v10-upgrade-locally.png)
