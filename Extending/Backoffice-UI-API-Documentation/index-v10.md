@@ -8,7 +8,7 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 ## [Backoffice UI](https://apidocs.umbraco.com/v10/ui)
 
-Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. Note that V9 is using minified versions of the following files:
+Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. V10 is using minified versions of the following files:
 
 - The umbraco.directives
 - The umbraco.services
