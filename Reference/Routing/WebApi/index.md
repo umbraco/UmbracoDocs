@@ -18,7 +18,7 @@ Related links:
 
 The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
 
-"ASP.NET makes it easy to build services that reach a broad range of clients, including browsers and mobile devices. With ASP.NET you use the same framework and patterns to build both web pages and services, side-by-side in the same project."
+"ASP.NET enables you to build services that reach a broad range of clients, including browsers and mobile devices. With ASP.NET you use the same framework and patterns to build both web pages and services, side-by-side in the same project."
 
 A great resource for getting started with creating web API's using .Net Core is the [official Microsoft documentation](https://docs.microsoft.com/en-gb/aspnet/core/web-api/?view=aspnetcore-5.0).
 
