@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Working with a Local Clone of an Umbraco Cloud Site
@@ -52,9 +53,9 @@ If you have more than "a few" media items see our recommendations for working wi
 
 ### Running the Site Locally
 
-To run Umbraco 9 locally, you will need to [install the .NET 5.0 SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
+To run Umbraco locally, you will need to [install the latest .NET SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
 
-With .NET 5 installed, run the following commands in a terminal application of your choice:
+With that installed, run the following commands in a terminal application of your choice:
 
 1. Navigate to the newly created project folder:
 
