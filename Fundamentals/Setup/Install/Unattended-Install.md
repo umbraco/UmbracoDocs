@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
-updated-links: false
+versionTo: 9.0.0
 ---
 
 # Unattended Installs

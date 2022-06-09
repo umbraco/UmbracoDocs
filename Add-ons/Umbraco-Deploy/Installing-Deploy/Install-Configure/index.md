@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
 meta.Description: "Steps to how to install and configure Umbraco Deploy"
 ---

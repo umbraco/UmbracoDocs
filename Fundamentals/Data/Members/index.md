@@ -2,6 +2,7 @@
 meta.Title: "Creating Members in Umbraco"
 meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Members
@@ -110,6 +111,6 @@ You can find out more about the services methods in the reference section of the
 - [MemberType Service](../../../Reference/Management/Services/MemberTypeService/index.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService/index.md)
 
-### [Umbraco.TV](https://umbraco.tv)
+### [Video tutorials](https://www.youtube.com/c/UmbracoLearningBase)
 
-- [Chapter: Members](https://umbraco.tv/videos/umbraco-v8/content-editor/administrative-content/members/what-is-a-member/)
+- [Chapter: Members](https://www.youtube.com/playlist?list=PLgX62vUaGZsHYlNtXGSolK5_Tg0AMkQBA)

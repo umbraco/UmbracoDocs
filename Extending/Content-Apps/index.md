@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.2.0
+versionTo: 10.0.0
 meta.Title: "Content Apps"
 meta.Description: "A guide configuring content apps in Umbraco"
 ---
@@ -209,6 +210,8 @@ This is an example of how to create a Content App with C# and perform your own c
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Models.Membership;
@@ -226,7 +229,7 @@ namespace My.Website
 
     public class WordCounterApp : IContentAppFactory
     {
-        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        public ContentApp? GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups

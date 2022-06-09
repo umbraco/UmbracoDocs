@@ -1,8 +1,9 @@
 ---
 meta.Title: "Rendering Media in Umbraco"
 meta.Description: "Info on rendering media items and imaging cropping"
-keywords: v9 version8 rendering media imagecropper
+keywords: rendering media imagecropper
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Rendering media
@@ -67,7 +68,7 @@ As with example one, we are accessing a MediaType `image` using the same Guid as
         // you could add this as an extension method to the Umbraco.Cms.Web.Common.PublishedModels.Image class
         var orientationCssClass = mediaItemAsImage.UmbracoWidth > mediaItemAsImage.UmbracoHeight ? "img-landscape" : "img-portrait";
 
-        <img src="@mediaItem.Url()" alt="@mediaItemAsImage.Name" class="@orientationCssClass"/>
+        <img src="@mediaItemAsImage.Url()" alt="@mediaItemAsImage.Name" class="@orientationCssClass"/>
     }
 }
 ```

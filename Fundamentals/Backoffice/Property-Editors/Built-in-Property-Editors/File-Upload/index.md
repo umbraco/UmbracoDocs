@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # File upload
@@ -10,9 +11,17 @@ versionFrom: 9.0.0
 
 Adds an upload field, which allows documents or images to be uploaded to Umbraco.
 
+You can define which file types should be accepted through the upload field.
+
+:::tip
+For uploading and adding files and images to your Umbraco project, we recommend using the Media Picker.
+
+Find the full documentation for the property in the [Media Picker](../Media-Picker-3) article.
+:::
+
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/definition-example.png)
+![Data Type Definition Example](images/definition-example-v10.png)
 
 ## Content Example
 
@@ -43,7 +52,6 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### With Modelsbuilder
 
 ```csharp
-@using ContentModels = Umbraco.Web.PublishedModels;
 @if (!Model.HasValue(Model.MyFile))
 {
    <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
@@ -51,6 +59,10 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ```
 
 ## Add values programmatically
+
+:::note
+The samples in this section has not been verified against the latest version of Umbraco.
+:::
 
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md) and the [Media Service](../../../../../Reference/Management/Services/MediaService/index.md).
 

@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-verified-against: rc-1
-state: partial
-updated-links: false
+versionFrom: 10.0.0
 ---
 
 # Install Umbraco with .NET CLI
@@ -41,56 +38,61 @@ From that command's output, you will get a better understanding of what are the 
 ```none
 Umbraco Project (C#)
 Author: Umbraco HQ
-Description: An empty Umbraco Project ready to get started
+Description: An empty Umbraco project ready to get started.
 Options:
-  -v|--version              The version of Umbraco to load using NuGet
-                            string - Optional
-                            Default: 9.0.0
+  -v|--version                       The version of Umbraco.Cms to add as PackageReference.
+                                     string - Optional
+                                     Default: 10.0.0
 
-  -p|--PackageTestSiteName  The name of the package this should be a test site for (Default: '')
-                            text - Optional
+  --use-https-redirect               Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
+                                     bool - Optional
+                                     Default: false
 
-  -ce|--SqlCe               Adds the required dependencies to use SqlCE (Windows only) (Default: false)
-                            bool - Optional
-                            Default: false
+  --no-restore                       If specified, skips the automatic restore of the project on create.
+                                     bool - Optional
+                                     Default: false
 
-  -F|--Framework            The target framework for the project
-                                net5.0    - Target net5.0
-                                net6.0    - Target net6.0
-                            Default: net5.0
+  --exclude-gitignore                Whether to exclude .gitignore from the generated template.
+                                     bool - Optional
+                                     Default: false
 
-  --no-restore              If specified, skips the automatic restore of the project on create
-                            bool - Optional
-                            Default: false
+  --minimal-gitignore                Whether to only include minimal (Umbraco specific) rules in the .gitignore.
+                                     bool - Optional
+                                     Default: false
 
-  --friendly-name           The friendly name of the user for Umbraco login when using Unattended install (Without installer wizard UI)
-                            text - Optional
+  --connection-string                Database connection string used by Umbraco.
+                                     string - Optional
 
-  --email                   Email to use for Umbraco login when using Unattended install (Without installer wizard UI)
-                            text - Optional
+  --connection-string-provider-name  Database connection string provider name used by Umbraco.
+                                     string - Optional
+                                     Default: Microsoft.Data.SqlClient
 
-  --password                Password to use for Umbraco login when using Unattended install (Without installer wizard UI)
-                            text - Optional
+  --development-database-type        Database type used by Umbraco for development.
+                                         None       - Do not configure a database for development.
+                                         SQLite     - Use embedded SQLite database.
+                                         LocalDB    - Use embedded LocalDB database (requires SQL Server Express with Advanced Services).
+                                     Default: None
 
-  --connection-string       Database connection string when using Unattended install (Without installer wizard UI)
-                            text - Optional
+  --friendly-name                    Used to specify the name of the default admin user when using unattended install on development (stored as plain text).
+                                     string - Optional
 
-  --no-nodes-view-path      Path to a custom view presented with the Umbraco installation contains no published content
-                            text - Optional
+  --email                            Used to specify the email of the default admin user when using unattended install on development (stored as plain text).
+                                     string - Optional
 
-  --use-https-redirect      Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting (Default: false)
-                            bool - Optional
-                            Default: false
+  --password                         Used to specify the password of the default admin user when using unattended install on development (stored as plain text).
+                                     string - Optional
+
+  --no-nodes-view-path               Path to a custom view presented with the Umbraco installation contains no published content.
+                                     string - Optional
+
+  -p|--PackageTestSiteName           The name of the package project this should be a test site for.
+                                     string - Optional
 ```
 
 ## Create an Umbraco project
 
 1. Create a new empty Umbraco solution using MS SQL Azure/Server:  
 `dotnet new umbraco -n MyCustomUmbracoProject`
-
-    Or if you prefer to using SQL CE:  
-
-    `dotnet new umbraco --SqlCe -n MyCustomUmbracoProject`
 
 You will now have a new project with the name *MyCustomUmbracoProject*, or the name you chose to use.
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.

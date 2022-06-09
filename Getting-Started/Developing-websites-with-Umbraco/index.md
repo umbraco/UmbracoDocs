@@ -43,7 +43,7 @@ Umbraco uses ASP.NET and MVC patterns and you can extend and write your own cont
 
 When you are customizing or extending your Umbraco website using C# we recommend using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
 
-You can also use a simpler tool like [Visual Studio Code](https://visualstudio.microsoft.com/free-developer-offers/) or any other text editor you prefer working with. However, this is only recommended you're not working directly with the C# files.
+You can also use a simpler tool like [Visual Studio Code](https://visualstudio.microsoft.com/free-developer-offers/) or any other text editor you prefer working with. However, this is only recommended when you're not working directly with the C# files.
 
 :::tip
 Whilst it's perfectly possible to use a tool like Notepad and put the code in the `App_code` folder of your site, and have it compiled when the site starts up, we do recommend using a tool like Visual Studio instead.

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Data Persistence (CRUD) in Umbraco
@@ -11,7 +12,8 @@ _The Umbraco Services layer is used to query and manipulate Umbraco stored in th
 All services are available using their interfaces in the dependency injection container.
 ASP.NET Core supports dependency injection in almost every scenario.
 
-*Constructors in classes*
+### Constructors in classes
+
 ```csharp
     public class MyClass
     {
@@ -24,7 +26,8 @@ ASP.NET Core supports dependency injection in almost every scenario.
     }
 ```
 
-*Constructors in views*
+### Constructors in views
+
 ```cshtml
     @inject IContentService ContentService
 ```

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Media Picker
@@ -12,7 +13,7 @@ This property editors returns a single `MediaWithCrops` item if the "Pick multip
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker3-DataType.jpg)
+![Media Picker Data Type Definition](images/MediaPicker-DataType-v10.png)
 
 ### Accepted types
 
@@ -166,13 +167,10 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 
 ```
 
-
-
 ### Add values programmatically
 
 :::warning
-Adding values programmatically for media picker 3 have not been verified for V9 yet.
-The concept and code examples might not work if you are running Umbraco 9.0.
+Adding values programmatically for the Media Picker have not been verified for Umbraco 9 and 10 yet.
 :::
 
 This solution can be applied to both Media Picker 3 and Multi Media Picker 3

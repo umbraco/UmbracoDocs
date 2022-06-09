@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline"
 meta.Description: "Steps and examples on how Umbraco Deploy can be integrated into an automated build and deployment pipeline"
 ---

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Dependency Injection"
 meta.Description: "Inversion of Control/Dependency Injection in Umbraco"
 ---

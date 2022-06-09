@@ -1,34 +1,52 @@
 ---
 meta.Title: "Content version cleanup"
 versionFrom: 9.1.0
+versionTo: 10.0.0
 ---
 
 # Content Version Cleanup
 
-When you publish a document a lot of new records are created in the database, all of the property data
-for each culture variant of a document are duplicated and this can mount up fast eating up disk space on 
-your database server.
+When you publish a document a lot of new records are created in the database. All of the property data for each culture variant of a document are duplicated and this can mount up fast taking disk space on your database server.
 
-Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspired by [Our.Umbraco.UnVersion](https://our.umbraco.com/packages/website-utilities/unversion/) h5yr!).
+Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspired by [Our.Umbraco.UnVersion](https://our.umbraco.com/packages/website-utilities/unversion/)).
+
+## How it works
+
+The default cleanup policy is to remove all versions that are more than 4 days old except for the latest version which will be kept for 90 days.
 
 The feature is enabled by default via configuration for new installs starting from 9.1.0 but will require to opt in for 
 those upgrading from 9.0.0.
 
-This feature certainly isn't for everyone, some sites will have regulatory requirements to keep historic data for audit.
+The feature can be configured ni the `appSettings.json`:
 
-For those sites with stricter requirements (or those who don't want the feature) it is possible to opt out both globally 
-(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per document type (keep reading).
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "Content": {
+        "ContentVersionCleanupPolicy": {
+          "EnableCleanup": true,
+          "KeepLatestVersionPerDayForDays": 90,
+          "KeepAllVersionsNewerThanDays": 7
+        }
+      }
+    }
+  }
+}
+```
 
-Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever (perhaps last years awesome marketing campaign).
+For those sites with stricter requirements (or those who do not want the feature) it is possible to opt out both globally 
+(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per Document Type.
 
-It's worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes so for upgraded sites with a lot
-of history you may wish to perform these tasks (if they are not part of your regular database maintenance plan already).
+Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
+
+It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot
+of history you may wish to perform these tasks, if they are not part of your regular database maintenance plan already.
 
 ## Overriding global settings
 
-It is possible to override the global settings per document type in the backoffice to prevent unwanted cleanup, this can be managed in the "permissions"
-content app for each document type.
-
+It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions"
+Content App for each Document Type.
 
 ![Content Version Cleanup - document type overrides](images/per-doctype-override.png)
 

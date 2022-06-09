@@ -6,6 +6,10 @@ meta.Description: "A guide to creating macro property editors in Umbraco"
 
 # Macro Parameter Editors
 
+:::note
+The samples in this article has not been verified against the latest version of Umbraco.
+:::
+
 Every macro can contain parameters. Options for the Editor to set when they insert the Macro to customise the output. There are some useful default types.  For example:
 
 * True/False

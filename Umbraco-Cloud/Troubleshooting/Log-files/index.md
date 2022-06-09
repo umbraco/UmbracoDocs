@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Log files on Umbraco Cloud
@@ -16,7 +17,12 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
  Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
 :::
 
+## Video
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/xM5QbF751SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Accessing logs
+
 
 ### On Umbraco Cloud Portal
 

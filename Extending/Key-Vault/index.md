@@ -15,9 +15,9 @@ Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configura
 1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
 1. Use the command line to install the package
 
-## Installing through command line
+### Installing through command line
 
-Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following 'dotnet add package' command to install the package:
+Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following `dotnet add package` command to install the package:
 
 ```
 dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets
@@ -25,7 +25,7 @@ dotnet add package Azure.Identity
 ```
 
 ## Configuration
-The next step is to add the Azure Key Vault endpoint to the 'appsettings.json' file. 
+The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file. 
 
 ```json
 {
@@ -33,7 +33,7 @@ The next step is to add the Azure Key Vault endpoint to the 'appsettings.json' f
 }
 ```
 
-After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` class. 
+After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` file. 
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -56,7 +56,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ## Authentication 
 
-There are several ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
+There are different ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
 
 1. Navigate to your Key Vault. 
 1. Select Access Control.

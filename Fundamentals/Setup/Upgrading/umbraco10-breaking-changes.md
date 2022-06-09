@@ -132,6 +132,10 @@ Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex
 
 StackQueue has been moved from **_Umbraco.Core.Collections_** to the **_Umbraco.Cms.Core.Collections_** namespace.
 
+## v10: Global setting SqlWriteLockTimeOut has been removed
+
+This setting has been superseeded by `DistributedLockingWriteLockDefaultTimeout`
+
 <!--
 Missing information about the breaking changes:
 

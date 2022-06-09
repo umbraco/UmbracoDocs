@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-3
-state: partial
-updated-links: false
+versionTo: 10.0.0
 ---
 
 # Using Umbraco's service APIs
@@ -70,6 +68,8 @@ public class CustomComposer : IComposer
 
 ```csharp
 using System.Linq;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
