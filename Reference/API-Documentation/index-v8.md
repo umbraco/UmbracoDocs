@@ -15,7 +15,9 @@ C# API references for the Umbraco Core and Web libraries.
 ### [Umbraco.Core](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.html)
 ### [Umbraco.Web](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.html)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+:::note
+opens a documentation browser that is different from the documentation section you're viewing now.
+:::
 
 ## Backoffice UI API Documentation
 
@@ -27,4 +29,6 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 
 ### [Backoffice UI](https://our.umbraco.com/apidocs/v8/ui/#/api/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+:::note
+opens a documentation browser that is different from the documentation section you're viewing now.
+:::

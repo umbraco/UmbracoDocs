@@ -8,7 +8,7 @@ meta.Description: "Information on Umbraco API Documentation"
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
-## CSharp API Documentation
+## C# API Documentation
 
 C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
 
@@ -20,7 +20,9 @@ C# API references for the Umbraco Core, Infrastructure, Extensions and Web libra
 
 ### [Umbraco.Extensions](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Extensions.html)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+:::note
+opens a documentation browser that is different from the documentation section you're viewing now.
+:::
 
 ## Backoffice UI API Documentation
 
@@ -32,4 +34,6 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 
 ### [Backoffice UI](https://apidocs.umbraco.com/v10/ui)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+:::note
+opens a documentation browser that is different from the documentation section you're viewing now.
+:::
