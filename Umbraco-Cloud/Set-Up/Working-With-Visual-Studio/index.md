@@ -112,4 +112,13 @@ csproj = "MyAwesomeProject.Web.csproj"
 
 We recommend that you update the Namespace in the `Program.cs`, `Startup.cs` and the `_ViewImports.cshtml` files, So the naming is consistent throughout your project structure.
 
-Once updated you will need to clear out the bin and obj folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud, and that's it.
+Once updated you will need to clear out the bin and obj folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
+
+If you have already built and run the project locally using the original project file and folder, you should also make an update in your local .git repository to reflect the change that has been made. When a Cloud project first runs, a git hook is created to trigger a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
+
+You'll find this within the file `.git/hooks/post_merge` that you can open with a text editor.  You can either delete the file so it will be recreated with the new path, or update it.  The default contents are shown below, and can be updated to reflect the new path to the `umbraco/Deploy` folder.
+
+```sh
+#!/bin/sh
+echo > src/UmbracoProject/umbraco/Deploy/deploy
+```
