@@ -114,6 +114,10 @@ In other words, if you have a website globalization culture code setting of "en-
 
 If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
 
+### TriggerConditionsCheckOn
+
+This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.
+
 ### DefaultTheme
 Added in 8.8.0, this setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
