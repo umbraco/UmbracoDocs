@@ -8,7 +8,7 @@ meta.Description: "Information on Umbraco API Documentation"
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
-## C# API Documentation
+## CSharp API Documentation
 
 C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
 
