@@ -15,7 +15,7 @@ Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configura
 1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
 1. Use the command line to install the package
 
-## Installing through command line
+### Installing through command line
 
 Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following 'dotnet add package' command to install the package:
 
