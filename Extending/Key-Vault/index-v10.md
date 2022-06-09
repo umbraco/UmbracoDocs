@@ -53,7 +53,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ## Authentication 
 
-There are several ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
+There are different ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
 
 1. Navigate to your Key Vault. 
 1. Select Access Control.
