@@ -8,7 +8,7 @@ versionTo: 8.0.0
 :::note
 This document has been verified for Umbraco 8.
 
-If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](../index.md) for more details.
 :::
 
 Examine has changed quite a bit in Umbraco 8 (and by "a bit" we really mean a lot). In Umbraco 7 everything was configured in the two Examine config files - in Umbraco 8 everything happens through C#.
