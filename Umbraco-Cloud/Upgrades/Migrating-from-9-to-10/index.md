@@ -90,7 +90,7 @@ Click **Install** to upgrade your project to version 10.
         }
     ```
 
-* To re-enable the appsettings IntelliSense, update your schema reference in the **appsettings.json**, **appsettings.Development.json**, **appsettings.Production.json**, and **appsettings.Staging.json** files from:
+* Re-enable the appsettings IntelliSense by updating your schema reference in the **appsettings.json**, **appsettings.Development.json**, **appsettings.Production.json**, and **appsettings.Staging.json** files from:
 
     ```json
     "$schema": "./umbraco/config/appsettings-schema.json",
