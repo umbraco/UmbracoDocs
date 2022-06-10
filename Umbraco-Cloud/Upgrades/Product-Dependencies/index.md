@@ -13,7 +13,7 @@ The products are:
 * Umbraco Forms
 * Umbraco Deploy
 
-In the table below you can see which version of Umbraco Forms and Courier / Deploy you should be running on your Umbraco Cloud project depending on which version of Umbraco CMS, you are running.
+In the table below you can see which version of Umbraco Forms and Deploy you should be running on your Umbraco Cloud project depending on which version of Umbraco CMS, you are running.
 
 |Umbraco CMS   |Umbraco Forms   |Umbraco Deploy   |
 |--------------|----------------|------------------
@@ -21,8 +21,6 @@ In the table below you can see which version of Umbraco Forms and Courier / Depl
 |**8.1 <**     |8.x             |4.x              |
 |**9.0 <**     |9.0x            |9.x              |
 |**10.0 <**    |10.0x           |10.x             |
-
-**NOTE**: All Umbraco Cloud projects running Umbraco 7.6 or above should be using Umbraco Deploy instead of Umbraco Courier. If you are upgrading from Umbraco 7.5.x to 7.6 or above, you also need to [replace Umbraco Courier with Umbraco Deploy](../Moving-from-Courier-to-Deploy).
 
 ## [How to upgrade Umbraco CMS manually](../Manual-Upgrades/Manual-CMS-upgrade.md)
 
