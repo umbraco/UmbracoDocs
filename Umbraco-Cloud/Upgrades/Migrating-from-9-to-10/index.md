@@ -44,7 +44,7 @@ We strongly recommend having at least 2 environments on your project. If somethi
 * Select **Properties**.
     ![Solution Explorer](images/Solution-Explorer.png)
 
-* In the **General** section of the **Application** tab, select **.Net 6.0** from the **Target Framework** drop-down.
+* Select **.Net 6.0** from the **Target Framework** drop-down in the **General** section of the **Application** tab.
     ![Target Framework](images/Target-Framework.png)
 
 * Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
