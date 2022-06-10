@@ -206,8 +206,8 @@ Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
 When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
 
-By default, a Sqlite database is created.
+By default, a SQLite database is created.
 
-If you would prefer to use LocalDb, set this value to `true`.
+If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 

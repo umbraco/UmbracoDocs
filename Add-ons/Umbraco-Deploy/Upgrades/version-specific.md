@@ -23,7 +23,7 @@ Version 10 contains a number of breaking changes but we won't expect many projec
 
 #### Database Initialization
 
-When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time. With Umbraco 9 and previous versions, SQL CE could be used for this.  This database version is no longer supported in Umbraco 10, so SQLlite is available instead.  SQLlite will be the default format used for the local database.
+When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time. With Umbraco 9 and previous versions, SQL CE could be used for this.  This database type is no longer supported in Umbraco 10, so SQLite is available instead.  SQLite will be the default format used for the local database.
 
 If you prefer to use a supported alternative, you can ensure that a connection string is in place before triggering the restore operation.
 
@@ -38,7 +38,7 @@ For example, to use a local SQL Server Express instance, you would place this in
 }
 ```
 
-If you prefer to use LocalDb, either set a connection string as above:
+If you prefer to use LocalDB, either set a connection string as above:
 
 ```json
 {
@@ -63,7 +63,7 @@ Or set the configuration value of `Umbraco:Deploy:Settings:PreferLocalDbConnecti
 }
 ```
 
-If you are upgrading from Umbraco 9 and already have a LocalDb instance, setting this value to `true` will ensure it is used rather than a new, empty Sqlite database.
+If you are upgrading from Umbraco 9 and already have a LocalDB instance, setting this value to `true` will ensure it is used rather than a new, empty SQLite database.
 
 #### Configuration
 
