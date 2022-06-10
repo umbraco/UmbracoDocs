@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Upgrading your project from Umbraco 9 to 10
 
-This article will provide steps on how to upgrade your Umbraco 9 project to 10.
+This article will provide steps on how to upgrade your Umbraco 9 project to Umbraco 10.
 
 :::tip
 **Are you using any custom packages or code on your Umbraco Cloud project?**
