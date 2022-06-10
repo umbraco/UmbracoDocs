@@ -2,76 +2,87 @@
 versionFrom: 9.0.0
 ---
 
-# Upgrading an Umbraco 9 Cloud project to Umbraco 10
+# Upgrading your project from Umbraco 9 to 10
 
-This article will provide steps on how to upgrade an Umbraco 9 Cloud project to Umbraco 10.
+This article will provide steps on how to upgrade your Umbraco 9 project to 10.
 
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
+:::tip
+**Are you using any custom packages or code on your Umbraco Cloud project?**
+
+You will need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
+:::
 
 ## Prerequisites
 
-* An Umbraco 9 Cloud project running **the latest version of Umbraco 9** with **at least 2 environments**.
+* An Umbraco 9 Cloud project running **the latest version of Umbraco 9**
 
-* A backup of your Umbraco 9 project database.
+* **At least 2 environments** on your Cloud project.
 
-:::note
-We strongly recommend having at least 2 environments on your project. If something fails during the upgrade, the Development environment can be removed and added again to start over with the upgrade process.
-:::
+* A backup of your project database.
+  * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article,
+  * Or clone down and restore the project, and take a backup of the local database.
 
-## Step 1: Clone down your environment
+## Step 1: Enabled .NET 6
 
-* Create a backup of the database
-  * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article 
-  * Or clone down and restore the project, and take a backup of the local Database.
-
-* Go to the project in the Cloud portal.
-* Navigate to **Settings** -> **Advanced**
-* Scroll down to the **Runtime Settings** section.
-* **Enable .NET 6 for your Umbraco 9 install** for each environment of your Cloud project.
+1. Go to the project in the Umbraco Cloud portal.
+2. Navigate to **Settings** -> **Advanced**.
+3. Scroll down to the **Runtime Settings** section.
+4. **Enable .NET 6** for each environment on your Cloud project.
 
     ![Runtime Settings](images/Runtime-Settings.png)
 
-* Clone down the **Development** environment from the Umbraco Cloud project.
-* Build and run the project locally.
-* Make sure to log in to the backoffice.
-* Restore content from your Cloud enviroment.
+## Step 2: Clone down your environment
 
-## Step 2: Upgrade the project locally using Visual Studio
+1. Clone down the **Development** environment.
+2. Build and run the project locally.
+3. Log in to the backoffice.
+4. Restore content from your Cloud enviroment.
 
-* Open your project in Visual Studio.
+## Step 3: Upgrade the project locally using Visual Studio
 
-* Right-click your project solution in the **Solution Explorer**.
-* Select **Properties**.
+1. Open your project in Visual Studio - use the `csproj` file in the `/src/UmbracoProject` folder.
+2. Right-click your project solution in the **Solution Explorer**.
+3. Select **Properties**.
+
     ![Solution Explorer](images/Solution-Explorer.png)
 
-* Select **.Net 6.0** from the **Target Framework** drop-down in the **General** section of the **Application** tab.
+4. Select **.Net 6.0** from the **Target Framework** drop-down in the **General** section of the **Application** tab.
+
     ![Target Framework](images/Target-Framework.png)
 
-* Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
+5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
+6. Navigate to the **Browse** tab.
+7. Install the *latest stable* version of the "Microsoft.Extensions.DependencyInjection.Abstractions".
+8. Navigate to the **Installed** tab.
+9. Choose **Umbraco.Cms**.
+10. Select your project.
+11. Choose **10.0.0** from the **Version** drop-down.
+12. Click **Install** to upgrade your project to version 10.
 
-* Go to the **Installed** tab In the **NuGet Package manager Solution**.
-* Choose **Umbraco.Cms**
-
-* Select your project.
-* Choose **10.0.0** from the **Version** drop-down.
-Click **Install** to upgrade your project to version 10.
     ![Nuget Version Install](images/Nuget-Version-Install.png)
 
-* Update the below packages referenced in your project to the latest versions available on NuGet either through the **NuGet Package Manager** or **Package Manager Console (PowerShell)**:
-  * <https://www.nuget.org/packages/Umbraco.Cms/10.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Deploy.Cloud/10.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Deploy.Contrib/10.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Forms/10.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Cloud.StorageProviders.AzureBlob/5.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Cloud.Identity.Cms/10.0.2>
-  * <https://www.nuget.org/packages/Umbraco.Deploy.Forms/10.0.0/>
+Follow the steps 9-12 to update the following packages as well:
 
-* Install the [Microsoft.Extensions.DependencyInjection.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0) package.
+|Product                                  |Version         |
+|-----------------------------------------|----------------|
+|Umbraco Deploy Cloud                     |10.0.0          |
+|Umbraco Deploy Contrib                   |10.0.0          |
+|Umbraco Forms                            |10.0.0          |
+|Umbraco Deploy Forms                     |10.0.0          |
+|Umbraco Cloud Identity                   |10.0.2          |
+|Umbraco Cloud StorageProviders AzureBlob |5.0.0           |
 
-* Update the `Program.cs` to the following:
+:::note
+If you have more projects in your solution or other packages, make sure that these are also updated to support .NET 6 framework.
+:::
+
+With the packages and projects updated, it is time to make some changes to some of the default files.
+
+1. Update the `Program` class in the `Program.cs` file to the following:
 
     ```CSharp
     using Umbraco.Cms.Web.Common.Hosting;
+
     public class Program
         {
             public static void Main(string[] args)
@@ -90,7 +101,7 @@ Click **Install** to upgrade your project to version 10.
         }
     ```
 
-* Re-enable the appsettings IntelliSense by updating your schema reference in the **appsettings.json**, **appsettings.Development.json**, **appsettings.Production.json**, and **appsettings.Staging.json** files from:
+2. Re-enable the appsettings IntelliSense by updating your schema reference in the **appsettings.json** file from:
 
     ```json
     "$schema": "./umbraco/config/appsettings-schema.json",
@@ -102,42 +113,59 @@ Click **Install** to upgrade your project to version 10.
     "$schema": "./appsettings-schema.json",
     ```
 
-* Remove the following files and folders *manually* from your local project and on the cloud **Development** environment through [KUDU](../../Set-Up/Power-Tools/index.md) both from the `repository` and `wwwroot` folders:
+3. Follow step 2 for the following files as well:
+  - **appsettings.Development.json**
+  - **appsettings.Production.json**
+  - **appsettings.Staging.json**
 
-  * `/wwwroot/umbraco`
-  * `/umbraco/PartialViewMacros`
-  * `/umbraco/UmbracoBackOffice`
-  * `/umbraco/UmbracoInstall`
-  * `/umbraco/UmbracoWebsite`
-  * `/umbraco/config/lang`
-  * `/App_Plugins/UmbracoForms`
+The final thing you need to do before testing the upgrade locally, is to remove a series of files no longer needed in your project.
 
-* Build and run your project locally to verify the Umbraco 10 upgrade.
-    ![Target Framework](images/verify-v10-upgrade-locally.png)
+Remove the following files and folders *manually* from your local project:
 
-## Step 3: Deploy and Test on Umbraco Cloud
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
+* `/App_Plugins/UmbracoForms`
+
+Build and run your project locally to verify the Umbraco 10 upgrade.
+
+![Target Framework](images/verify-v10-upgrade-locally.png)
+
+## Step 4: Deploy and Test on Umbraco Cloud
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
-* Push the changes to the Umbraco Cloud **Development** environment, see the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
+1. Remove the folders mentioned above on the **Development** environment using [KUDU](../../Set-Up/Power-Tools/index.md) from the `repository` and `wwwroot` folders.
+2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
+3. Test **everything** on the **Development** environment.
 
-* Test **everything** on the **Development** environment.
+We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues on to your Live environment.
 
-* Deploy to the **Live** environment, see [Deploying from one Cloud environment to another](../../Deployment/Cloud-to-Cloud/index.md) article.
+## Step 5: Going live
 
-## Step 4: Going live
+Before deploying the upgrade to your Live environment, you will need to remove the folders you also removed from both your local instance and your Development environment.
 
-Once the upgrade is complete, and the Live environment is running without any errors, the site is ready for launch.
+The files are:
 
-* Setup [URL Rewrites](../../../Reference/Routing/IISRewriteRules/index.md) on the Umbraco 10 site.
-* Assign hostnames to the project.
-    :::note
-    Hostnames are unique and can only be added to one Cloud project at a time.
-    :::
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
+* `/App_Plugins/UmbracoForms`
+
+They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
+
+:::links
 
 ## Related information
 
-* [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../../Deployment/Umbraco-Forms-on-Cloud)
+* [Breaking changes in Umbraco 10](../../../Fundamentals/Setup/Upgrading/umbraco10-breaking-changes.md)
 * [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
 * [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
+
+:::
