@@ -32,7 +32,7 @@ For example, to use a local SQL Server Express instance, you would place this in
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Server=.\\SQLEXPRESS;Database=UmbracoCmsWithFormsV7;Integrated Security=true",
+    "umbracoDbDSN": "Server=.\\SQLEXPRESS;Database=UmbracoDb;Integrated Security=true",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SqlClient"
   }
 }
