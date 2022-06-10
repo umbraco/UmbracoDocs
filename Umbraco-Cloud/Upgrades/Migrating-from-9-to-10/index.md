@@ -162,7 +162,7 @@ They need to be removed through KUDU from both the `repository` and `wwwroot` fo
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 :::links
 
