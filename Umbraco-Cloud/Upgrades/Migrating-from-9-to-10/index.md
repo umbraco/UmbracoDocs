@@ -18,7 +18,7 @@ The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updati
 We strongly recommend having at least 2 environments on your project. If something fails during the upgrade, the Development environment can be removed and added again to start over with the upgrade process.
 :::
 
-## Step 1: Content Migration
+## Step 1: Clone down your environment
 
 * Create a backup of the database from your project, see the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article or clone down the project and take a backup of the local Database (Make sure to restore the content from your cloud environment).
 
