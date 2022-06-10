@@ -43,7 +43,7 @@ namespace My.Website
         ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
         /// </param>
         /// <returns></returns>
-        IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
+        Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string searchFrom = null)
     }
 }
 ```
@@ -53,13 +53,14 @@ Your implementation needs to return an IEnumerable of `SearchResultEntity` items
 ```csharp
 public class SearchResultEntity : EntityBasic
 {
-    public SearchResultEntity();
+    public SearchResultEntity() {
+        /// <summary>
+        /// The score of the search result
+        /// </summary>
+        [DataMember(Name = "score")]
+        public float Score { get; set; }
+    };
 
-    /// <summary>
-    /// The score of the search result
-    /// </summary>
-    [DataMember(Name = "score")]
-    public float Score { get; set; }
 }
 ```
 
