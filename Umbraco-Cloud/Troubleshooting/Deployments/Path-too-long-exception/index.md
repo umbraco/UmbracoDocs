@@ -13,7 +13,8 @@ The exception you will see on content transfer / restore will look something lik
 `System.IO.PathTooLongException: The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.`
 
 The full stacktrace:
-```
+
+```none
 2017-09-14 07:52:06,178 [P3284/D9/T51] ERROR Umbraco.Deploy.Work.WorkEnvironment - Deployment failed.
 Umbraco.Deploy.Exceptions.RemoteApiException: The remote API has thrown an exception. ---> Umbraco.Deploy.Exceptions.GenericException: An error has occurred.
     --- End of inner exception stack trace ---
@@ -44,7 +45,9 @@ Umbraco.Deploy.Exceptions.RemoteApiException: The remote API has thrown an excep
 This is a known issue with Microsoft servers, that limits the amounts of characters allowed in a path.
 
 ## Solution
+
 In order to fix this error, you will need to use [Power-tools Kudu](../../../Set-up/Power-tools/)
+
 1. Go to Kudu and navigate to CMD under the Debug console menu. Here you'll be presented with a navigable file structure
 2. Navigate to site/wwwroot/media
 3. Write this command in CMD prompt - ```dir /s /b > out.txt```

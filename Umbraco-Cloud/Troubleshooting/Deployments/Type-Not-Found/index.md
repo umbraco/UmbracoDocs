@@ -22,7 +22,7 @@ Open the **More info** to see the details for the error message.
 
 In the case illustrated above the extraction error is saying:
 
-```
+```none
 Document type c3bedefc-7eab-4ee2-9941-920ecc9b09b2 not found! This Document type is listed as an allowed child content type of parent Document type Test1 with id: 1087, and guid: 4a06f910-7b1b-4ad6-84db-72481b1ae529
 ```
 
