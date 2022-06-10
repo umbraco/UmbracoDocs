@@ -40,7 +40,8 @@ We strongly recommend having at least 2 environments on your project. If somethi
 
 * Open your project in Visual Studio.
 
-* Right-click your project solution in the **Solution Explorer** and select **Properties**.
+* Right-click your project solution in the **Solution Explorer**.
+* Select **Properties**.
     ![Solution Explorer](images/Solution-Explorer.png)
 
 * In the **General** section of the **Application** tab, select **.Net 6.0** from the **Target Framework** drop-down.
