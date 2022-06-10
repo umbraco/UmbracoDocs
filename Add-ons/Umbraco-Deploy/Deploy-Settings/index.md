@@ -56,7 +56,7 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
-            "ConnectionStringPreferLocalDb": false
+            "PreferLocalDbConnectionString": false
         }
     }
   }
@@ -202,7 +202,7 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-## ConnectionStringPreferLocalDb
+## PreferLocalDbConnectionString
 
 When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
 

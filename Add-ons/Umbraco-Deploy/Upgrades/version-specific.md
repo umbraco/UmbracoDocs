@@ -49,14 +49,14 @@ If you prefer to use LocalDb, either set a connection string as above:
 }
 ```
 
-Or set the configuration value of `Umbraco:Deploy:Settings:ConnectionStringPreferLocalDb` to `true`:
+Or set the configuration value of `Umbraco:Deploy:Settings:PreferLocalDbConnectionString` to `true`:
 
 ```json
 {
     "Umbraco": {
         "Deploy": {
             "Settings": {
-                "ConnectionStringPreferLocalDb": true
+                "PreferLocalDbConnectionString": true
             }
         }
     }
