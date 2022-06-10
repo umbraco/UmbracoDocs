@@ -116,7 +116,9 @@ Once updated you will need to clear out the bin and obj folders locally to avoid
 
 If you have already built and run the project locally using the original project file and folder, you should also make an update in your local .git repository to reflect the change that has been made. When a Cloud project first runs, a git hook is created to trigger a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
 
-You'll find this within the file `.git/hooks/post_merge` that you can open with a text editor.  You can either delete the file so it will be recreated with the new path, or update it.  The default contents are shown below, and can be updated to reflect the new path to the `umbraco/Deploy` folder.
+The file you'll need is the `post-merge` within `.git/hooks/` in your cloned environment files. It can be opened with a text editor.
+
+You can either delete the file so it will be recreated with the new path or update it. The default contents are shown below and can be updated to reflect the new path to the `umbraco/Deploy` folder.
 
 ```sh
 #!/bin/sh
