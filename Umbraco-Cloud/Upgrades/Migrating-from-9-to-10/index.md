@@ -24,7 +24,10 @@ We strongly recommend having at least 2 environments on your project. If somethi
   * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article 
   * Or clone down and restore the project, and take a backup of the local Database.
 
-* On the Cloud portal, go to the project that you wish to upgrade and navigate to **Settings** -> **Advanced**. Scroll down to **Runtime Settings** section and **Enable .NET 6 for your Umbraco 9 install** for each environment of your cloud project.
+* Go to the project in the Cloud portal.
+* Navigate to **Settings** -> **Advanced**
+* Scroll down to the **Runtime Settings** section.
+* **Enable .NET 6 for your Umbraco 9 install** for each environment of your Cloud project.
 
     ![Runtime Settings](images/Runtime-Settings.png)
 
