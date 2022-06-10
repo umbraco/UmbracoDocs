@@ -26,7 +26,10 @@ We strongly recommend having at least 2 environments on your project. If somethi
 
     ![Runtime Settings](images/Runtime-Settings.png)
 
-* Clone down the **Development** environment from the Umbraco Cloud project, build and run the project locally and make sure to log in to the backoffice.
+* Clone down the **Development** environment from the Umbraco Cloud project.
+* Build and run the project locally.
+* Make sure to log in to the backoffice.
+* Restore content from your Cloud enviroment.
 
 ## Step 2: Upgrade the project locally using Visual Studio
 
