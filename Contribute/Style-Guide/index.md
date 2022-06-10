@@ -5,7 +5,7 @@ meta.Description: "A style guide for Umbraco documentation repo."
 
 # Style Guide
 
-To ensure that the documentation is readable and has a similar style throughout we have a few rules to follow. These rules are set up with an automatic style linter called [Vale](https://errata-ai.github.io/vale/). Additionally we have a GitHub bot that will check PRs for broken rules and advise you what to change.
+To ensure that the documentation is readable and has a similar style throughout we have a few rules to follow. These rules are set up with an automatic style linter called [Vale](https://github.com/errata-ai/vale). Additionally we have a GitHub bot that will check PRs for broken rules and advise you what to change.
 
 ## Current style rules
 
