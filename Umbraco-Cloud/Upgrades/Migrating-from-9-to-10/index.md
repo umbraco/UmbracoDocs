@@ -49,7 +49,8 @@ We strongly recommend having at least 2 environments on your project. If somethi
 
 * Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
 
-* In the **NuGet Package manager Solution**, go to the **Installed** tab and choose **Umbraco.Cms**.
+* Go to the **Installed** tab In the **NuGet Package manager Solution**.
+* Choose **Umbraco.Cms**
 
 * Select your project, choose **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
     ![Nuget Version Install](images/Nuget-Version-Install.png)
