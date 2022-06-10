@@ -68,7 +68,7 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 #### Example implementation of ISearchableTree
 
-If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees.md)) then we could implement searchability by creating the following C# class in our site:
+If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the [custom tree example](../trees.md)) then we could implement searchability by creating the following C# class in our site:
 
 ```csharp
 using System;
@@ -129,13 +129,13 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco automatically finds any implementation of `ISearchableTree` in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias.
+Umbraco automatically finds any implementation of `ISearchableTree` in your site and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias.
 
 ## Replacing an existing Section Tree Search
 
 Perhaps you want to change the logic for searching an existing section of the site, (why? - well you might have a 'company name' property on a MemberType in the Member section, and you want searches for that company name to filter the members who work there, the default implementation will only search on Member Name).
 
-Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
+Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud-hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
 
 ### Example
 
