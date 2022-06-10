@@ -63,7 +63,7 @@ Click **Install** to upgrade your project to version 10.
   * <https://www.nuget.org/packages/Umbraco.Deploy.Contrib/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Forms/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Cloud.StorageProviders.AzureBlob/5.0.0>
-  * <https://www.nuget.org/packages/Umbraco.Cloud.Identity.Cms/10.0.0>
+  * <https://www.nuget.org/packages/Umbraco.Cloud.Identity.Cms/10.0.2>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Forms/10.0.0/>
 
 * Install the [Microsoft.Extensions.DependencyInjection.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0) package.
