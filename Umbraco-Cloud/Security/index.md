@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Security on Umbraco Cloud
 
-In this article you can find information about security on Umbraco Cloud. 
+In this article you can find information about security on Umbraco Cloud.
 
 ## HTTPS & Certificates
 
@@ -20,7 +20,9 @@ As of April 2020, we've deprecated support for TLS 1.0 & TLS 1.1.
 
 TLS 1.2 is now the default supported TLS protocol going forward.
 
-Umbraco 8 sites are using the TLS 1.2 protocol by default. Umbraco 7 sites, due to running on an older .NET framework 4.5.2, have been updated to TLS 1.2.
+On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
+
+Learn more about how this in the [Manage Security](../Set-Up/Manage-Security/) article.
 
 ### TLS Ciphers support
 
@@ -73,6 +75,7 @@ By default, all ports are closed to secure them against external attacks. This i
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
+
 - Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users. **Note:** This feature is currently not available in Umbraco Cloud version 9.
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
