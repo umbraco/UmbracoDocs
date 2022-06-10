@@ -22,7 +22,7 @@ You will need to ensure the packages you are using are available in Umbraco 10 a
   * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article,
   * Or clone down and restore the project, and take a backup of the local database.
 
-## Step 1: Enabled .NET 6
+## Step 1: Enable .NET 6
 
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Settings** -> **Advanced**.
