@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 meta.Title: "Umbraco API Documentation"
 meta.Description: "Information on Umbraco API Documentation"
 ---
@@ -12,13 +12,13 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
 
-### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
+### [Umbraco.Core](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.html)
 
-### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Infrastructure.html)
 
-### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
+### [Umbraco.Web](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Web.Common.html)
 
-### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
+### [Umbraco.Extensions](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Extensions.html)
 
 :::note
 opens a documentation browser that is different from the documentation section you're viewing now.
@@ -32,7 +32,7 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 - The umbraco.services
 - The umbraco.resources
 
-### [Backoffice UI](https://apidocs.umbraco.com/v9/ui)
+### [Backoffice UI](https://apidocs.umbraco.com/v10/ui)
 
 :::note
 opens a documentation browser that is different from the documentation section you're viewing now.
