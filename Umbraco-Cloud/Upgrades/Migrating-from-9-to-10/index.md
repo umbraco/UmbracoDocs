@@ -12,6 +12,18 @@ This article will provide steps on how to upgrade your Umbraco 9 project to 10.
 You will need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
 :::
 
+## Content
+
+An overview of what you will find throughout this guide.
+
+* [Preprequisites](#prerequisites)
+* [Video Tutorial](#video-tutorial)
+* [Step 1: Enable .NET 6](#step-1-enable-net-6)
+* [Step 2: Clone down your project](#step-2-clone-down-your-environment)
+* [Step 3: Upgrade the project locally using Visual Studio](#step-3-upgrade-the-project-locally-using-visual-studio)
+* [Step 4: Deploy and Test on Umbraco Cloud](#step-4-deploy-and-test-on-umbraco-cloud)
+* [Step 5: Going live](#step-5-going-live)
+
 ## Prerequisites
 
 * An Umbraco 9 Cloud project running **the latest version of Umbraco 9**
@@ -21,6 +33,10 @@ You will need to ensure the packages you are using are available in Umbraco 10 a
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article,
   * Or clone down and restore the project, and take a backup of the local database.
+
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step 1: Enable .NET 6
 
@@ -159,10 +175,6 @@ The files are:
 * `/App_Plugins/UmbracoForms`
 
 They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
-
-## Video Tutorial
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 :::links
 
