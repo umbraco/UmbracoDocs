@@ -160,9 +160,13 @@ The files are:
 
 They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
 
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+
 :::links
 
-## Related information
+## Related Information
 
 * [Breaking changes in Umbraco 10](../../../Fundamentals/Setup/Upgrading/umbraco10-breaking-changes.md)
 * [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
