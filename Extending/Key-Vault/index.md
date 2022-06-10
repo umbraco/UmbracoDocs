@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 meta.Title: "Azure Key Vault"
 meta.Description: "A guide configuring an Azure Key Vault"
 ---
@@ -17,7 +17,7 @@ Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configura
 
 ### Installing through command line
 
-Navigate to your project folder, which is the folder that contains your .csproj file. Now use the following `dotnet add package` command to install the package:
+Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
 ```
 dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets
@@ -42,13 +42,10 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         .ConfigureAppConfiguration((context, config) =>
         {
             var settings = config.Build();
-            var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
-            if (!string.IsNullOrWhiteSpace(keyVaultEndpoint))
+            var keyVaultEndpoint = settings[Constants.Azure.AzureKeyVaultEndpoint];
+            if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
             {
-                if (!string.IsNullOrWhiteSpace(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
-                {
-                    config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
-                }
+                config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
             }
         })
         .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
