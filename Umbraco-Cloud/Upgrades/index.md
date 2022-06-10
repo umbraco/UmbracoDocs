@@ -6,14 +6,6 @@ versionFrom: 7.0.0
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
-:::note
-We are currently in the process of improving the Umbraco Cloud platform. This includes making some big changes to some of the key features the platform provides.
-
-You will [**need to ensure that your project(s) meet the minimum requirements**](Migrating-To-New-Infrastructure/index.md) in order to keep hosting them on Umbraco Cloud.
-
-On our website you can [learn more about the 'Future of Umbraco Cloud'](https://umbraco.com/blog/the-future-of-umbraco-cloud/) and if you have any questions about the process reach out to our friendly support team.
-:::
-
 ## What products are auto upgraded?
 
 * Umbraco CMS patch updates
