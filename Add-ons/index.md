@@ -19,7 +19,9 @@ Umbraco Deploy is the engine that runs behind the scenes on Umbraco Cloud and ta
 With Umbraco Deploy (on-premises) you can use the Umbraco Cloud Deployment technology outside of Umbraco Cloud to ease deployment between multiple Umbraco environments.
 
 ## [Umbraco Courier](UmbracoCourier/index.md)
+
 Architectural overview, extension and configuration guides, the intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
 
 ## [The Licensing Model](The-Licensing-model)
+
 Learn more about the licensing model we use for our licensed products, Umbraco Courier and Umbraco Forms.
