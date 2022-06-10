@@ -1,9 +1,13 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
+versionTo: 9.0.0
 ---
 
 # Add Open Graph - Step 4
+
+:::note
+This lesson has not been verified against the latest version of Umbraco.
+:::
 
 The final piece to the puzzle is adding the partial view that will be rendered when the composition is present. To do this:
 

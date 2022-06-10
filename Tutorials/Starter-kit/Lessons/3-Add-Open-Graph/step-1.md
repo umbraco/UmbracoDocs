@@ -1,11 +1,15 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
+versionTo: 9.0.0
 ---
 
 # Add Open Graph - Step 1
 
 Adding support for Open Graph can be done in many ways. In this lesson, we'll create a reusable set of properties we can add to specific page types.
+
+:::note
+This lesson has not been verified against the latest version of Umbraco.
+:::
 
 First we need to see what the expected outcome will be. Open Graph for web pages needs to contain at least the following:
 

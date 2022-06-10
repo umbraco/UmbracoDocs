@@ -1,11 +1,15 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
+versionTo: 9.0.0
 ---
 
 # Add Open Graph - Step 2
 
 We will now add the group and properties to the Home page and Blog post of the site.
+
+:::note
+This lesson has not been verified against the latest version of Umbraco.
+:::
 
 This is done by using compositions to add the functionality in multiple places.
 
