@@ -57,7 +57,7 @@ We strongly recommend having at least 2 environments on your project. If somethi
 Click **Install** to upgrade your project to version 10.
     ![Nuget Version Install](images/Nuget-Version-Install.png)
 
-* Similarly, update the below packages referenced in your project to the latest versions available on NuGet either through the **NuGet Package Manager** or **Package Manager Console (PowerShell)**:
+* Update the below packages referenced in your project to the latest versions available on NuGet either through the **NuGet Package Manager** or **Package Manager Console (PowerShell)**:
   * <https://www.nuget.org/packages/Umbraco.Cms/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Cloud/10.0.0>
   * <https://www.nuget.org/packages/Umbraco.Deploy.Contrib/10.0.0>
