@@ -43,7 +43,7 @@ namespace My.Website
         ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
         /// </param>
         /// <returns></returns>
-        Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string searchFrom = null)
+        Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
     }
 }
 ```
