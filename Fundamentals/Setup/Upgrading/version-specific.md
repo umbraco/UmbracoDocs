@@ -13,6 +13,8 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../Umbraco-Cloud/Upgrades/Migrating-from-9-to-10/) instead, as it requires a few steps specific to Umbraco Cloud.
+
 :::warning
 **Important**: SQL CE is no longer a supported database engine.
 
@@ -28,15 +30,12 @@ The following options may suit your needs:
 
 ### Steps on how to upgrade using Visual Studio
 
-- Open your Umbraco 9 project in Visual Studio.
-
-- Go to "__Tools > NuGet Package Manager > Manage NuGet Packages for Solution...__"
-
-- In the NuGet Package manager go to **Installed** and choose __Umbraco.Cms__
-
-- Choose **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
-
-- Build and run your project to finish the installation of Umbraco 10.
+1. Open your Umbraco 9 project in Visual Studio.
+2. Go to "__Tools > NuGet Package Manager > Manage NuGet Packages for Solution...__"
+3. Go to the **Installed** tab in the NuGet Package manager.
+4. Choose __Umbraco.Cms__.
+5. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
+6. Build and run your project to finish the installation of Umbraco 10.
 
 After updating the project through NuGet, you will need to update your project from `net5.0` to `net6.0`
 Additionally, you will need to update the `Program.cs` to the following:
