@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add a Blog Post Publication Date
@@ -22,9 +22,9 @@ Learn how to:
 ## Steps - Part One
 
 1. In the **Settings** section, expand **Document Types**.
-2. Click on *Blogpost*: this is the Document Type that defines the fields for this type of page.
+2. Click on *Blogpost*. This is the Document Type that defines the fields for this type of page.
 
-    ![Blogpost Document Type](images/Blogpost-Document-Type.png)
+    ![Blogpost Document Type](images/Blogpost-Document-Type-v10.png)
 
 3. The Document Type contains 2 groups: *Content* and *Navigation & SEO*.
     * At the bottom of the *Content* group select **Add property**.
@@ -36,15 +36,15 @@ Learn how to:
     * Always try to add a meaningful description to help your editors.
 
 6. Select **Add editor** to specify what type of data is being stored.
-    * We need a standard date, so select the **Use existing** tab, then click on the **Date Picker** icon.
+    * We need a standard date, so click on the **Date Picker** icon.
 
-7. In the validation section tick to say that the field is mandatory.
+7. In the validation section, enable the field to make it mandatory.
 8. Submit to close the dialog and save the property.
 
-    ![Property settings](images/property-settings.png)
+    ![Property settings](images/property-settings-v10.png)
 
-9. Select the **Reorder** option near the top-right of the pane, then drag the new property to be after *Page Title*.
+9. Select the **Reorder** option near the top-right of the window, then drag the new property to be after *Page Title*.
     * A logical order to your properties will make things easier for your editors.
-10. *Save* the Document Type - a confirmation message should appear confirming that the Document Type was saved.
+10. Click **I am done reordering** near the top-right of the window and select **Save** the Document Type - a confirmation message should appear confirming that the Document Type was saved.
 
 [Proceed to Part Two](part-2.md)

@@ -7,6 +7,10 @@ versionTo: 9.0.0
 
 We will now add the group and properties to the Home page and Blog post of the site.
 
+:::note
+This lesson has not been verified against the latest version of Umbraco.
+:::
+
 This is done by using compositions to add the functionality in multiple places.
 
 1. In the **Settings** section, expand the Document Type tree.
@@ -14,7 +18,7 @@ This is done by using compositions to add the functionality in multiple places.
 3. Choose the `Open Graph` Document Type we created and *Submit*.
 4. **Save** the Document Type.
 
-This will add the group and properties from the Open Graph Document Type to the Home Document Type. Follow the same steps for the `Blogpost` Document Type.
+This will add the group and properties from the **Open Graph** Document Type to the **Home** Document Type. Follow the same steps for the `Blogpost` Document Type.
 
 ## Reviewing the changes
 
