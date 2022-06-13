@@ -83,6 +83,10 @@ Another case you might have is that you want your Partial View to be strongly ty
 ```
 ## Caching
 
+:::note
+The samples in the following section have not been verified against the latest version of Umbraco.
+:::
+
 You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
 ```csharp
