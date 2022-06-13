@@ -2,12 +2,10 @@
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Tutorial - Creating a Custom Dashboard
-
-_This tutorial was last tested on **Umbraco 8.13.0** and **Umbraco 9.0.0**_
 
 ## Overview
 
