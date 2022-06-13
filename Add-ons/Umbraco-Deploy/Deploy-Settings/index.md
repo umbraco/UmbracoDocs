@@ -42,7 +42,7 @@ For illustration purposes, the following structure represents the full set of op
             "ValueConnectors": [],
             "Edition": "Default",
             "SessionTimeout": "0.0:20:00",
-            "SourceDeployTimeout": "0.0:20:00", 
+            "SourceDeployTimeout": "0.0:20:00",
             "DatabaseCommandTimeout": "0.0:20:00",
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
@@ -56,6 +56,7 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
+            "PreferLocalDbConnectionString": false
         }
     }
   }
@@ -201,6 +202,12 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
+## PreferLocalDbConnectionString
 
+When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
+
+For Umbraco 10, by default, a SQLite database is created.
+
+If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 
