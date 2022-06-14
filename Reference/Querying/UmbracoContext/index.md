@@ -16,7 +16,7 @@ If you are using Views or Partial View Macros you can reference the UmbracoConte
 
 If you need an `UmbracoContext` in your own controllers, you need to inject an `IUmbracoContextAccessor`.
 
-Example of getting `UmbracoContext` in a controller:
+The following is an example of how to get access to the `UmbracoContext` in a controller:
 
 ```C#
 using System;
