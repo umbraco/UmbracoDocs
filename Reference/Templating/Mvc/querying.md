@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-needsv9Update: "true"
+versionTo:10.0.0
 ---
 
 
@@ -100,6 +100,11 @@ With the `IPublishedContent` model we support strongly typed LINQ queries out of
 ```csharp
 var items = @Model.Children.Where(x => x.IsVisible() && x.Level <= 4)
 ```
+:::note
+The two examples below have not been verified for Umbraco 9 and 10 yet.
+
+therefore they might not work on the latest versions of Umbraco.
+:::
 
 #### Content sub menu
 
