@@ -55,7 +55,7 @@ The FindDomain method looks for a domain matching the request Uri
     - Sets published content request’s culture accordingly.
     - Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com").
 - Else.
-- Sets published content request’s culture by default
+    - Sets published content request’s culture by default
 (first language, else system).
 
 ### Find published content
@@ -101,4 +101,4 @@ public void Handle(RoutingRequestNotification notification)
 
 ## Missing template?
 
-In case the router can't find a template, it will try and verify if there's route hijacking in place, if there is, it will just run the hijacked route. If route hijacking is not in place, the router will set the content to null, and run through the routing of the request again, in order for the last chance finder to find a 404.
+In case the router can't find a template, it will try and verify if there's route hijacking in place, if there is, it will run the hijacked route. If route hijacking is not in place, the router will set the content to null, and run through the routing of the request again, in order for the last chance finder to find a 404.
