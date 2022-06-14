@@ -8,7 +8,7 @@ meta.Description: "The UmbracoContext is a helpful service provided on each requ
 
 The UmbracoContext is the simplified way to work with the current request on your website.
 
-You can use the UmbracoContext to access the content & media cache. Other useful properties are the the original & cleaned url's of the current request. And last, but not least, you can also check if the current request is running in "preview" mode.
+You can use UmbracoContext to access the content and media cache. Other useful properties are the original and cleaned URLs of the current request. You can also check if the current request is running in "preview" mode.
 
 ## How to reference UmbracoContext
 
