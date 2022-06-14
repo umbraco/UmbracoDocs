@@ -31,13 +31,14 @@ The following options may suit your needs:
 ### Steps on how to upgrade using Visual Studio
 
 1. Open your Umbraco 9 project in Visual Studio.
-2. Go to "__Tools > NuGet Package Manager > Manage NuGet Packages for Solution...__"
-3. Go to the **Installed** tab in the NuGet Package manager.
-4. Choose __Umbraco.Cms__.
-5. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
-6. Build and run your project to finish the installation of Umbraco 10.
+2. Right-click on the project name in the Solution Explorer and select **Properties**.
+3. Select **.NET 6.0** from the **Target Framework** drop-down.
+4. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
+5. Go to the **Installed** tab in the NuGet Package manager.
+6. Choose **Umbraco.Cms**.
+7. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
+8. Build and run your project to finish the installation of Umbraco 10.
 
-After updating the project through NuGet, you will need to update your project from `net5.0` to `net6.0`
 Additionally, you will need to update the `Program.cs` to the following:
 
 ```csharp
@@ -71,7 +72,7 @@ Finally, remove the following files and folders:
 - `/umbraco/config/lang`
 - `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
 
-To re-enable the appsettings IntelliSense, you must update your schema reference in the **appsettings.json** file from: 
+To re-enable the appsettings IntelliSense, you must update your schema reference in the **appsettings.json** file from:
 
 ```json
 "$schema": "./umbraco/config/appsettings-schema.json",
