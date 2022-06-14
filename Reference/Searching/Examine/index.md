@@ -12,6 +12,10 @@ The majority of the Examine documentation in this section, is last verified for 
 
 We recommend that you refer to the official [Examine](https://shazwazza.github.io/Examine/) and [Lucene](https://lucenenet.apache.org/) documentation when using Umbraco 9 or later versions.
 
+Since Examine 1.2.1, special characters (like æ, ø, å etc.) are now indexed by default.
+This version of Examine ships with Umbraco CMS 8.18 and above.
+For more information, you can refer to the [Github Issue](https://github.com/umbraco/Umbraco-CMS/issues/11871#issuecomment-1153923424). 
+
 Do you have any specific questions or queries regarding the above, please feel free to report on the official [UmbracoDocs Github Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
 
