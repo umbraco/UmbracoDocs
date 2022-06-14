@@ -67,4 +67,4 @@ public class PeopleController : UmbracoApiController
 }
 ```
 
-UmbracoContext is registered with a scoped lifetime (see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information), as a service scope is created for each request you can resolve an instance directly in a controller.
+UmbracoContext is registered with a scoped lifetime. See the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information. A service scope is created for each request, which means you can resolve an instance directly in a controller.
