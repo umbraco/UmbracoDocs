@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 
@@ -38,16 +37,14 @@ A quick example of a content item that has a template that renders out a partial
 The MVC template markup for the document:
 
 ```csharp
-
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
 }
 
 <html>
 <body>
-@foreach(var page in Model.Children.Where(x => x.IsVisible()))
-    {
+    @foreach(var page in Model.Children.Where(x => x.IsVisible())){
         <div>
             @Html.Partial("ChildItem", page)
         </div>
@@ -65,10 +62,10 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 
 ## Strongly typed Partial Views
 
-Normally you would create a partial view by using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you need to inherit from the correct view class, so do this instead:
+Normally you would create a partial view by using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is possible. Instead of using the `@model MyModel` syntax, you need to inherit from the correct view class, so do this instead:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyModel>
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
 ```
 
 By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
@@ -82,10 +79,6 @@ Another case you might have is that you want your Partial View to be strongly ty
 }
 ```
 ## Caching
-
-:::note
-The samples in the following section have not been verified against the latest version of Umbraco.
-:::
 
 You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
