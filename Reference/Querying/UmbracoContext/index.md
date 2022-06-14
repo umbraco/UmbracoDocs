@@ -12,7 +12,7 @@ You can use UmbracoContext to access the content and media cache. Other useful p
 
 ## How to reference UmbracoContext
 
-If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@UmbracoContext`
+If you are using Views or Partial View Macros you can reference the UmbracoContext with the syntax: `@UmbracoContext`
 
 If you need an `UmbracoContext` in your own controllers, you need to inject an `IUmbracoContextAccessor`.
 
