@@ -14,7 +14,7 @@ We recommend that you refer to the official [Examine](https://shazwazza.github.i
 
 Since Examine 1.2.1, special characters (like æ, ø, å etc.) are now indexed by default.
 This version of Examine ships with Umbraco CMS 8.18 and above.
-Reference [here](https://github.com/umbraco/Umbraco-CMS/issues/11871#issuecomment-1153923424). 
+For more information, you can refer to the [Github Issue](https://github.com/umbraco/Umbraco-CMS/issues/11871#issuecomment-1153923424). 
 
 Do you have any specific questions or queries regarding the above, please feel free to report on the official [UmbracoDocs Github Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
