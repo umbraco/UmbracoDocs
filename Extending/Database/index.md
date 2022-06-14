@@ -125,7 +125,7 @@ namespace MyNamespace
             public string Website { get; set; }
 
             [Column("Message")]
-            [SpecialDbType(SpecialDbTypes.NTEXT)]
+            [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
             public string Message { get; set; }
         }
     }
