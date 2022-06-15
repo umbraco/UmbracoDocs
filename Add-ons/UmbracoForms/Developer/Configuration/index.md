@@ -83,6 +83,9 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": ""
+      },
+      "RichText": {
+        "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
       }
     }
   }
@@ -269,6 +272,12 @@ Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicK
 Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google.
 
 You can obtain both of these values after signing up to create a ReCaptcha key here:  <https://www.google.com/recaptcha/admin>.
+
+### Rich text field type configuration
+
+#### DataTypeId
+
+Sets the data type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text data type created by Umbraco on a new install is used.
 
 ---
 
