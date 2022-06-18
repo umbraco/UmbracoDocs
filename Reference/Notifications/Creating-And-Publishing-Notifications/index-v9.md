@@ -1,6 +1,6 @@
 ---
-versionFrom: 10.0.0
-versionTo: 11.0.0
+versionFrom: 9.0.0
+versionTo: 10.0.0
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
 ---
@@ -60,7 +60,7 @@ using System;
 using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.HostedServices;
 using Umbraco.Cms.Web.UI.Notifications;
