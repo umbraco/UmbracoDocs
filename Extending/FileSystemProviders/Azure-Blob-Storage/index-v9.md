@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
+versionTo: 9.x
 meta.Title: "Using Azure Blob Storage for Media and ImageSharp Cache"
 meta.Description: "Setup your site to use Azure Blob storage for media and ImageSharp cache"
 ---
