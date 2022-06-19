@@ -38,16 +38,15 @@ public class MyContentFinder : IContentFinder
 
     public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
-        // Handle all requests beginning with /woot
         var path = contentRequest.Uri.GetAbsolutePathDecoded();
         if (path.StartsWith("/woot") is false)
         {
-            return false; // Not found
+            return new Task<bool>(() => false); // Not found
         }
-        
-        if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+
+        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
         {
-            return false;
+            return new Task<bool>(() => false);
         }
 
         // Have we got a node with ID 1234
@@ -55,12 +54,12 @@ public class MyContentFinder : IContentFinder
         if (content is null)
         {
             // If not found, let another IContentFinder in the collection try.
-            return false;
+            return new Task<bool>(() => false);
         }
-        
+
         // If content is found, then render that node
         contentRequest.SetPublishedContent(content);
-        return true;
+        return new Task<bool>(() => true);
     }
 }
 ```
