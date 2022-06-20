@@ -50,7 +50,7 @@ namespace MyApp
 }
 ```
 
-Last step is to update the `Startup.cs` class. Update the `ConfigureServices` method like so: 
+Last step is to update the `Startup.cs` file. Update the `ConfigureServices` method like so: 
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
