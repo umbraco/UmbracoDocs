@@ -17,7 +17,7 @@ From the Umbraco Cloud portal, copy your development environments git repository
 
 Here are the steps to clone your site (**We'll use Fork in this example.**):
 
-1. Open the dropdown menu for your Developement machine and choose the **Clone project** option to open the Clone project dialog.
+1. Click on the arrow next to the **Development** environment and select **Clone project** to open the Clone project dialog.
 
     ![Connect my machine](images/connect-my-machine.png)
 
