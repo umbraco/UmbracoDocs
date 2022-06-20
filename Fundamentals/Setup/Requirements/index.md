@@ -34,7 +34,7 @@ The Umbraco UI should work in all modern browsers:
 * Windows Server 2019 and higher
 * IIS 10 and higher
 * SQL Server 2019 and higher
-* .NET 6.0
+* .NET 6.0.5+
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
 :::tip
@@ -46,7 +46,7 @@ You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Clou
 * Windows Server 2012 R2 and higher
 * IIS 8.5 and higher
 * SQL Server 2012 and higher
-* .NET 6.0
+* .NET 6.0.5+
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
 *For more information, see the [Host and deploy ASP.NET Core applications](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-6.0) article in the Microsoft documentation.*
