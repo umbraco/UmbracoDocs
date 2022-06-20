@@ -32,6 +32,8 @@ Learn how to run an already installed local installation of Umbraco.
 
 .NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
 
+There is a useful website which makes installation of Umbraco and the associated packages a lot easier for you. Go to [https://psw.codeshare.co.uk](https://psw.codeshare.co.uk), configure your options and click on the `Install Script` tab to get the commands you need to paste into the terminal. This even includes the commands for unattended install, which creates the database for you and can install a starter kit too, if you wish.
+
 ## [Visual Studio installation](visual-studio.md)
 
 Visual Studio is used to write native code and managed code supported by .NET and many others.
