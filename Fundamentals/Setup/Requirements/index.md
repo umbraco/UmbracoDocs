@@ -24,7 +24,7 @@ The Umbraco UI should work in all modern browsers:
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
   * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
   * .NET Core CLI
-* .NET 6.0
+* .NET 6.0.5+
 * SQL connection string (SQL Server)
 
 ## Hosting
