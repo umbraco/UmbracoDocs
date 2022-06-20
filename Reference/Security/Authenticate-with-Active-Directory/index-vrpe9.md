@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.1.0
-versionTo: 10.0.0
+versionTo: 8.18.4
 ---
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials

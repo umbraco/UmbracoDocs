@@ -1,10 +1,18 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
 
+## Installing the package
+
+Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
+
+1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
+1. Use the command line to install the package
 You'll need to create a new file to override the existing owin configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
+
 
 ```C#
 using Microsoft.Owin;
