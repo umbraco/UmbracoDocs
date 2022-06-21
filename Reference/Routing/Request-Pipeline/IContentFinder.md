@@ -41,12 +41,12 @@ public class MyContentFinder : IContentFinder
         var path = contentRequest.Uri.GetAbsolutePathDecoded();
         if (path.StartsWith("/woot") is false)
         {
-            return new Task<bool>(() => false); // Not found
+            return Task.FromResult(false); // Not found
         }
 
         if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
         {
-            return new Task<bool>(() => false);
+            return Task.FromResult(false);
         }
 
         // Have we got a node with ID 1234
@@ -54,12 +54,12 @@ public class MyContentFinder : IContentFinder
         if (content is null)
         {
             // If not found, let another IContentFinder in the collection try.
-            return new Task<bool>(() => false);
+            return Task.FromResult(false);
         }
 
         // If content is found, then render that node
         contentRequest.SetPublishedContent(content);
-        return new Task<bool>(() => true);
+        return Task.FromResult(true);
     }
 }
 ```
@@ -187,7 +187,7 @@ namespace RoutingDocs.ContentFinders
 
             if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
             {
-                return new Task<bool>(() => false);
+                return Task.FromResult(false);
             }
 
             if (umbracoContext.Content == null)
@@ -197,7 +197,7 @@ namespace RoutingDocs.ContentFinders
 
             if (siteRoot is null)
             {
-                return new Task<bool>(() => false);
+                return Task.FromResult(false);
             }
 
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
@@ -209,7 +209,7 @@ namespace RoutingDocs.ContentFinders
             }
 
             // Return true or false depending on whether our custom 404 page was found
-            return new Task<bool>(() => contentRequest.PublishedContent is not null);
+            return Task.FromResult(contentRequest.PublishedContent is not null);
         }
     }
 }
