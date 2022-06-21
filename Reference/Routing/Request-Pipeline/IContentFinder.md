@@ -203,7 +203,7 @@ namespace RoutingDocs.ContentFinders
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
             var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
-            if (notFoundNode != null)
+            if (notFoundNode is not null)
             {
                 contentRequest.SetPublishedContent(notFoundNode);
             }
