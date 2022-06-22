@@ -13,7 +13,7 @@ To work with a local copy of your site, you'll need to use Windows and have a lo
 
 ## Cloning the Umbraco Project
 
-From the Umbraco Cloud portal, copy your development environments git repository endpoint using the **How to connect my machine** option and then clone the site using your favorite Git client. We like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), [Git Extensions](https://gitextensions.github.io), or [GitKraken](https://www.gitkraken.com/).
+From the Umbraco Cloud portal, copy your development environments git repository endpoint using the **Clone project** option using your favorite Git client. We like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), [Git Extensions](https://gitextensions.github.io), or [GitKraken](https://www.gitkraken.com/).
 
 Here are the steps to clone your site (**We'll use Fork in this example.**):
 
