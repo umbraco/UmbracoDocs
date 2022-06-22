@@ -73,7 +73,7 @@ By default, these files are empty but you can add any new keys you want or overr
 
 In order for these files to deploy when you do a `dotnet publish`, you need to add the following to your `.csproj` file:
 
-```html
+```xml
 <ItemGroup>
     <Content Include="config/**" CopyToOutputDirectory="Always" />
 </ItemGroup>
