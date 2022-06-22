@@ -1,6 +1,5 @@
 ---
 versionFrom: 10.0.0
-versionTo: 11.0.0
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
 ---

@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
+versionTo: 9.0.0
 meta.Title: "Umbraco Database"
 meta.Description: "A guide to creating a custom Database table in Umbraco"
 ---
