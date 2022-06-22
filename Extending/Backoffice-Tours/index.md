@@ -15,13 +15,13 @@ They are managed in a JSON format and stored in files on disk. The filenames sho
 
 The tour functionality will load information from multiple locations.
 
-- **Core tours and custom tours**
+- **Core tours**
 
     The tour that ship with Umbraco are embedded into the CMS assemblies.
 
-- **Plugin tours**
+- **Custom tours**
 
-    When you want to include a tour with your custom plugin/package you can store the custom json tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index.md).
+    Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](../Packages/Creating-a-Package/index.md).
 
 ## The JSON Format
 
