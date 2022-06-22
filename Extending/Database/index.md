@@ -8,132 +8,14 @@ meta.Description: "A guide to creating a custom Database table in Umbraco"
 
 In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes.
 
-If migrating from v8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../../Implementation/Composing/) article.
-
 The end result looks like this:
 
 ![Database result of a migration](images/db-table.png)
 
-## Using a composer and component
-
-The following code sample shows how this is done in Umbraco v9.  If migrating from v8, the only changes to note other than namespace updates, are the dependencies that need to be passed to the `Upgrader.Execute()` method, and a change to the access modifier of the `Migrate()` method.
-
-```csharp
-using Microsoft.Extensions.Logging;
-using NPoco;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Migrations;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
-using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
-
-namespace MyNamespace
-{
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IComposer
-    {
-    }
-
-    public class BlogCommentsComponent : IComponent
-    {
-        private readonly ICoreScopeProvider _coreScopeProvider;
-        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly IKeyValueService _keyValueService;
-        private readonly IRuntimeState _runtimeState;
-
-        public BlogCommentsComponent(
-            ICoreScopeProvider coreScopeProvider,
-            IMigrationPlanExecutor migrationPlanExecutor,
-            IKeyValueService keyValueService,
-            IRuntimeState runtimeState)
-        {
-            _coreScopeProvider = coreScopeProvider;
-            _migrationPlanExecutor = migrationPlanExecutor;
-            _keyValueService = keyValueService;
-            _runtimeState = runtimeState;
-        }
-
-        public void Initialize()
-        {
-            if (_runtimeState.Level < RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            // Create a migration plan for a specific project/feature
-            // We can then track that latest migration state/step for this project/feature
-            var migrationPlan = new MigrationPlan("BlogComments");
-
-            // This is the steps we need to take
-            // Each step in the migration adds a unique value
-            migrationPlan.From(string.Empty)
-                .To<AddCommentsTable>("blogcomments-db");
-
-            // Go and upgrade our site (Will check if it needs to do the work or not)
-            // Based on the current/latest step
-            var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
-        }
-
-        public void Terminate()
-        {
-        }
-    }
-
-    public class AddCommentsTable : MigrationBase
-    {
-        public AddCommentsTable(IMigrationContext context) : base(context)
-        {
-        }
-        protected override void Migrate()
-        {
-            Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
-
-            // Lots of methods available in the MigrationBase class - discover with this.
-            if (TableExists("BlogComments") == false)
-            {
-                Create.Table<BlogCommentSchema>().Do();
-            }
-            else
-            {
-                Logger.LogDebug("The database table {DbTable} already exists, skipping", "BlogComments");
-            }
-        }
-
-        [TableName("BlogComments")]
-        [PrimaryKey("Id", AutoIncrement = true)]
-        [ExplicitColumns]
-        public class BlogCommentSchema
-        {
-            [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
-            [Column("Id")]
-            public int Id { get; set; }
-
-            [Column("BlogPostUmbracoId")]
-            public int BlogPostUmbracoId { get; set; }
-
-            [Column("Name")]
-            public string Name { get; set; }
-
-            [Column("Email")]
-            public string Email { get; set; }
-
-            [Column("Website")]
-            public string Website { get; set; }
-
-            [Column("Message")]
-            [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
-            public string Message { get; set; }
-        }
-    }
-}
-```
 
 ## Using a notification handler
 
-If building a new solution in Umbraco V9, you can adopt a new pattern, where you create and run a similar migration but trigger it in response to a [notification handler](../../Fundamentals/Code/Subscribing-To-Notifications\index.md).
+Since Umbraco V9, you can adopt a new pattern, where you create and run a migration but trigger it in response to a [notification handler](../../Fundamentals/Code/Subscribing-To-Notifications\index.md).
 
 The code for this approach is as follows:
 
@@ -272,14 +154,6 @@ namespace MyNamespace
 }
 
 ```
-
-## Which to use?
-
-In short, it's up to you.  If you are migrating from V8 and want the quickest route to getting running with V9, then using a component makes sense.
-
-With V9 you will likely find you are using the notification pattern elsewhere, such as when responding to Umbraco events that run many times in the lifetime of the application, like when content is saved.  And so you may also prefer to align with that pattern for start-up events.
-
-It's also worth noting that components offer both `Initialize` and `Terminate` methods, where you will need to handle two notifications to do the same with the notification handler approach (`UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`).  A single handler class can be used for both notifications though.
 
 ## Schema class and migrations
 
