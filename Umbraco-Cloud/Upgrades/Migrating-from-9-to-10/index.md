@@ -86,7 +86,7 @@ Follow the steps 9-12 to update the following packages as well:
 |Umbraco Forms                            |10.0.0          |
 |Umbraco Deploy Forms                     |10.0.0          |
 |Umbraco Cloud Identity                   |10.0.2          |
-|Umbraco Cloud StorageProviders AzureBlob |5.0.0           |
+|Umbraco Cloud StorageProviders AzureBlob |10.0.0          |
 
 :::note
 If you have more projects in your solution or other packages, make sure that these are also updated to support .NET 6 framework.
