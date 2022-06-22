@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Language Files & Localization"
 meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
 ---
@@ -42,7 +43,9 @@ Current languages that are included in the core are:
 
 The core Umbraco language files are found at the following location within the Umbraco source:
 
-    Umbraco-CMS/src/Umbraco.Web.UI.Netcore/umbraco/config/lang/
+```xml
+Umbraco-CMS/src/Umbraco.Core/EmbeddedResources/Lang/
+```
 
 These language files are the ones shipped with Umbraco and should not be modified.
 
@@ -50,8 +53,10 @@ These language files are the ones shipped with Umbraco and should not be modifie
 
 If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Language-Files-For-Packages/index.md), package language files are located in:
 
-    /App_Plugins/mypackage/Lang/{language}.xml
-    
+```xml
+/App_Plugins/mypackage/Lang/{language}.xml
+```
+
 :::note
 The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
 :::
@@ -60,7 +65,9 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:
 
-    /config/lang/{language}.user.xml
+```xml
+/config/lang/{language}.user.xml
+```
 
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
@@ -70,7 +77,7 @@ In order for these files to deploy when you do a `dotnet publish`, you need to a
 <ItemGroup>
     <Content Include="config/**" CopyToOutputDirectory="Always" />
 </ItemGroup>
-``` 
+```
 
 ## Using the language keys
 
@@ -119,7 +126,9 @@ As Umbraco is a continually evolving product it is inevitable that new text is a
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
-    [assignDomain]
+```xml
+[assignDomain]
+```
 
 The language files are XML files with a straight-forward layout as seen below.
 
