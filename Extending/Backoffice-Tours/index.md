@@ -17,9 +17,7 @@ The tour functionality will load information from multiple locations.
 
 - **Core tours and custom tours**
 
-    The tour that ship with Umbraco are embedded into the CMS.
-
-    When you want to implement custom tours into your website, we recommend that you create
+    The tour that ship with Umbraco are embedded into the CMS assemblies.
 
 - **Plugin tours**
 
