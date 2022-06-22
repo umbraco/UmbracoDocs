@@ -230,7 +230,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeTours
 
             // Filter any tours in the file that is custom-tours.json
             // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/
-            // OR at /Config/BackOfficeTours/
             builder.TourFilters()
                 .AddFilterByFile("custom-tours.json");
 
