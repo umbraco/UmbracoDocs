@@ -60,7 +60,7 @@ using System;
 using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.HostedServices;
 using Umbraco.Cms.Web.UI.Notifications;
@@ -70,19 +70,19 @@ namespace Umbraco.Cms.Web.UI
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
         private readonly IContentService _contentService;
-        private readonly IScopeProvider _scopeProvider;
+        private readonly ICoreScopeProvider _coreScopeProvider;
         private readonly IEventAggregator _eventAggregator;
         private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
         private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
 
         public CleanUpYourRoom(
             IContentService contentService,
-            IScopeProvider scopeProvider,
+            ICoreScopeProvider coreScopeProvider,
             IEventAggregator eventAggregator)
             : base(HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _contentService = contentService;
-            _scopeProvider = scopeProvider;
+            _coreScopeProvider = coreScopeProvider;
             _eventAggregator = eventAggregator;
         }
 
@@ -91,7 +91,7 @@ namespace Umbraco.Cms.Web.UI
             // This will be published immediately
             _eventAggregator.Publish(new CleanYourRoomStartedNotification());
 
-            using IScope scope = _scopeProvider.CreateScope();
+            using IScope scope = _coreScopeProvider.CreateScope();
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
 
             if (_contentService.RecycleBinSmells())

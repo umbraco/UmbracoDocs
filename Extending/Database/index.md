@@ -25,7 +25,7 @@ using NPoco;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Migrations;
-using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
@@ -39,18 +39,18 @@ namespace MyNamespace
 
     public class BlogCommentsComponent : IComponent
     {
-        private readonly IScopeProvider _scopeProvider;
+        private readonly ICoreScopeProvider _coreScopeProvider;
         private readonly IMigrationPlanExecutor _migrationPlanExecutor;
         private readonly IKeyValueService _keyValueService;
         private readonly IRuntimeState _runtimeState;
 
         public BlogCommentsComponent(
-            IScopeProvider scopeProvider,
+            ICoreScopeProvider coreScopeProvider,
             IMigrationPlanExecutor migrationPlanExecutor,
             IKeyValueService keyValueService,
             IRuntimeState runtimeState)
         {
-            _scopeProvider = scopeProvider;
+            _coreScopeProvider = coreScopeProvider;
             _migrationPlanExecutor = migrationPlanExecutor;
             _keyValueService = keyValueService;
             _runtimeState = runtimeState;
@@ -75,7 +75,7 @@ namespace MyNamespace
             // Go and upgrade our site (Will check if it needs to do the work or not)
             // Based on the current/latest step
             var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(_migrationPlanExecutor, _scopeProvider, _keyValueService);
+            upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
         }
 
         public void Terminate()
@@ -145,7 +145,7 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Migrations;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
@@ -156,18 +156,18 @@ namespace MyNamespace
     public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
     {
         private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly IScopeProvider _scopeProvider;
+        private readonly ICoreScopeProvider _coreScopeProvider;
         private readonly IKeyValueService _keyValueService;
         private readonly IRuntimeState _runtimeState;
 
         public RunBlogCommentsMigration(
-            IScopeProvider scopeProvider,
+            ICoreScopeProvider coreScopeProvider,
             IMigrationPlanExecutor migrationPlanExecutor,
             IKeyValueService keyValueService,
             IRuntimeState runtimeState)
         {
             _migrationPlanExecutor = migrationPlanExecutor;
-            _scopeProvider = scopeProvider;
+            _coreScopeProvider = coreScopeProvider;
             _keyValueService = keyValueService;
             _runtimeState = runtimeState;
         }
@@ -193,7 +193,7 @@ namespace MyNamespace
             var upgrader = new Upgrader(migrationPlan);
             upgrader.Execute(
                 _migrationPlanExecutor,
-                _scopeProvider,
+                _coreScopeProvider,
                 _keyValueService);
         }
     }
