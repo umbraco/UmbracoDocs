@@ -61,6 +61,12 @@ namespace Forms8.EventHandlers
         private static string GetPostFieldValue(Umbraco.Forms.Mvc.FormValidationEventArgs e, string key)
         {
             var field = GetPostField(e, key);
+
+            if (field == null)
+            {
+                return string.Empty;
+            }
+            
             var value = e.Context.Request[field.Id.ToString()] ?? "";
             return value.Trim();
         }
