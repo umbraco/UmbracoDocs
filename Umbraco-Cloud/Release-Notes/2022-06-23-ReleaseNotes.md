@@ -3,7 +3,7 @@
 _Runtime settings for .NET versions + New version of “Edit team” page + Various improvements_
 
 ## Key Takeaways
-- **Runtime settings for .NET versions** - We have made it real easy for you to change the .NET runtime for Umbraco 9 and Umbraco 10 cloud projects. You can change it on a per environment basis.
+- **Runtime settings for .NET versions** - We have made it real easy for you to change the .NET runtime for Umbraco 9 and Umbraco 10 cloud projects. You can change the runtime on a per environment basis.
 - **New version of “Edit team” page** - The project subpage “Edit team” has received a noticeable facelift and reflects the future design of the Umbraco Cloud Portal.
 - **Various improvements** - A whole bunch of improvements and bug fixes have been added to Umbraco Cloud recently. Here you will find a list of the most noticeable tweaks and improvements
 
