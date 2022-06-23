@@ -1,13 +1,13 @@
 # Release Notes, June 23, 2022
 
-_Runtime settings for .NET versions + New version of “Edit team” page + Various improvements_
+_Runtime setting for .NET version + New version of “Edit team” page + Various improvements_
 
 ## Key Takeaways
-- **Runtime settings for .NET versions** - We have made it real easy for you to change the .NET runtime for Umbraco 9 and Umbraco 10 cloud projects. You can change the runtime on a per environment basis.
+- **Runtime setting for .NET version** - We have made it real easy for you to change the .NET runtime for Umbraco 9 and Umbraco 10 cloud projects. You can change the runtime on a per environment basis.
 - **New version of “Edit team” page** - The project subpage “Edit team” has received a noticeable facelift and reflects the future design of the Umbraco Cloud Portal.
 - **Various improvements** - A whole bunch of improvements and bug fixes have been added to Umbraco Cloud recently. Here you will find a list of the most noticeable tweaks and improvements
 
-## [Runtime settings for .NET versions]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-CDN-Caching/](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/Migrating-from-9-to-10/#step-1-enable-net-6))
+## [Runtime setting for .NET version]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-CDN-Caching/](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/Migrating-from-9-to-10/#step-1-enable-net-6))
 For Umbraco 9 projects and Umbraco 10 you can on the project subpage “Advanced” toggle the runtime settings between .NET 5 til .NET 6 on a per environment basis.
 
 ![RuntimeSettingsForV9](images/RuntimeSettingsForV9.gif)
