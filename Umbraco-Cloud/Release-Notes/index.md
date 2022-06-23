@@ -4,6 +4,8 @@ _View the latest updates for the Umbraco Cloud Portal_
 
 ---
 
+[**23/06/2022 Release Notes:**](2022-06-23-ReleaseNotes.md) Runtime setting for .NET version + New version of “Edit team” page + Various improvements
+
 [**23/05/2022 Release Notes:**](2022-05-23-ReleaseNotes.md) CDN Caching and Optimization settings + Improved Organization Invite Flow + Media Storage Files Top 50
 
 [**25/04/2022 Release Notes:**](2022-04-25-ReleaseNotes.md) Enable client certificates from filesystem + Various Cloud Portal improvements
