@@ -129,7 +129,7 @@ and then at the end we add a getState method:
     $scope.getState = function () {
         
         //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-        if ($scope.model.config.isEnabled === "1") {
+        if ($scope.model.config.isEnabled) {
             return false;
         }
         return true;
