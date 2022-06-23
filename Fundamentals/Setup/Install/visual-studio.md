@@ -15,7 +15,7 @@ This article is valid only for Umbraco 9 and later versions.
 
 - To install Umbraco, you first need to install [Umbraco's dotnet new templates](install-umbraco-with-templates.md).
 - You will get the best results if you use Umbraco's dotnet new templates.
-  - *In Visual Studio 2022 the dotnet new templates are enabled by default to appear. For information on how to enable dotnet new templates to appear in Visual Studio 2019 check this [link](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/)*
+  - *In Visual Studio 2022, the .NET CLI templates are enabled to appear, by default. For information on how to enable .NET CLI templates in Visual Studio 2019, see the [.NET CLI Templates in Visual Studio](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/) article*
 
 - You will need Visual Studio 2019 updated to version **16.8 at least** or use you can use Visual Studio 2022.
 - Go to `File` > `New` > `Project`, search for **Umbraco**.
