@@ -1,12 +1,12 @@
-# Migrate Umbraco 8 Cloud project to Umbraco 9
+# Migrate Umbraco 8 Cloud project to Umbraco 10
 
 This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 9.
 
-Because the underlying framework going from Umbraco 8 to 9, means that there is no direct upgrade path, however, there have been few changes to the Database schema, meaning that you can re-use the database from your Umbraco 8 project and use it on your new Umbraco 9 Cloud project, so that you have your content from Umbraco 8.
+Because the underlying framework going from Umbraco 8 to 10, means that there is no direct upgrade path, however, there have been few changes to the Database schema, meaning that you can re-use the database from your Umbraco 8 project and use it on your new Umbraco 10 Cloud project, so that you have your content from Umbraco 8.
 
 It is not possible to migrate the custom code, as the underlying web framework updated from ASP.NET to ASP.NET Core and you will need to re-implement it.
 
-You also need to make sure that the packages that you are using are available for Umbraco 9.
+You also need to make sure that the packages that you are using are available for Umbraco 10.
 
 <!--Removed for now, might move it back as we create a article for V8-9
 Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
@@ -22,12 +22,12 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 * An Umbraco 8 Cloud project running **the latest version of Umbraco 8**
 
-* A clean Cloud project running the latest version of Umbraco 9 with **at least 2 environments**
+* A clean Cloud project running the latest version of Umbraco 10 with **at least 2 environments**
 
 * A backup of your Umbraco 8 projects database
 
 :::note
-We strongly recommend having at least 2 environments on the Umbraco 9 project.
+We strongly recommend having at least 2 environments on the Umbraco 10 project.
 
 Should something fail during the migration, the Development environment can always be removed and re-added in order to start over on a clean slate.
 :::
@@ -38,13 +38,13 @@ Should something fail during the migration, the Development environment can alwa
 
 * Import the database backup into SQL Server Management Studio
 
-* Clone down the Development environment from the Umbraco 9 Cloud project, test the project and make sure to login to the backoffice
+* Clone down the Development environment from the Umbraco 10 Cloud project, test the project and make sure to login to the backoffice
 
-* Update the connection string in the Umbraco 9 AppSetting.Json file so that it connects to the Umbraco 8 database
+* Update the connection string in the Umbraco 10 AppSetting.Json file so that it connects to the Umbraco 8 database
 
 * To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended)
 
-* Run the Umbraco 9 project locally
+* Run the Umbraco 10 project locally
 
 * Wait for the site to finish upgrading
 
@@ -62,7 +62,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
 ## Step 2: File migration
 
-* The following files/folders needs to be copied into the Umbraco 9 project
+* The following files/folders needs to be copied into the Umbraco 10 project
     * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files unless changes have been made to these
     * `~/Media`
     * Any files/folders related to Stylesheets and JavaScripts
@@ -73,7 +73,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
     * Make sure to first migrate the Forms to the database using [Umbraco forms 8](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8)
 
-* Run the Umbraco 9 project locally
+* Run the Umbraco 10 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
 
 * Go to the backoffice of your project and navigate to the Settings section and find the deploy dashboard
@@ -86,9 +86,9 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
 * Run `Schema Deployment From Data Files` from the deploy dashboard to make sure everything checks out with the UDA files that was generated
 
-## Step 3: Custom code for Umbraco 9
+## Step 3: Custom code for Umbraco 10
 
-Umbraco 9 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 9.
+Umbraco 10 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 9.
 
 :::note
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
@@ -108,7 +108,7 @@ Depending on the size of the project that is being migrated and the amount of cu
 
 ## Step 4: Deploy and test on Umbraco Cloud
 
-Once the Umbraco 9 project runs without errors on the local setup, the next step is to deploy and test on the Cloud Development environment.
+Once the Umbraco 10 project runs without errors on the local setup, the next step is to deploy and test on the Cloud Development environment.
 
 * Push the migration and changes to the Umbraco Cloud Development environment
 
@@ -135,7 +135,7 @@ Once everything has been pushed, go to the Deploy Dashboard and trigger a `Schem
 
 Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
-* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 9 site
+* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 10 site
 * Assign hostnames to the project
     * Note that hostnames are unique, and can only be added to one Cloud project at a time
 
