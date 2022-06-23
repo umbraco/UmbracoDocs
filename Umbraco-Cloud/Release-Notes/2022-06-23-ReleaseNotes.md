@@ -14,7 +14,7 @@ For Umbraco 9 projects and Umbraco 10 you can on the project subpage “Advanced
 
 This is primary an important step in when you are migrating a cloud project from Umbraco 9 to version 10 (read about the basic steps for migration [here](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/Migrating-from-9-to-10/). But you could potentially also enable .NET 6 for your Umbraco 9 project to get the performance boost of the new runtime and to take advantage of the new features included in C# 10.
 
-Prior to update, you need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
+Prior to updating, you need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
 
 ## New version of “Edit team” page
 The “Edit team” page has received a facelift and is now based on the Umbraco UI Library web components. The new design has a more modern look and gives you a sneak preview of how the Umbraco Cloud Portal pages will look and feel in the future.
