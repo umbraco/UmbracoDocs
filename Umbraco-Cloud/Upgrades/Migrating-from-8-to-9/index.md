@@ -1,6 +1,6 @@
 # Migrate Umbraco 8 Cloud project to Umbraco 10
 
-This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 9.
+This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 10.
 
 Because the underlying framework going from Umbraco 8 to 10, means that there is no direct upgrade path, however, there have been few changes to the Database schema, meaning that you can re-use the database from your Umbraco 8 project and use it on your new Umbraco 10 Cloud project, so that you have your content from Umbraco 8.
 
