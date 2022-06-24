@@ -75,7 +75,8 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 * Run the Umbraco 10 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
 
-* Go to the backoffice of your project and navigate to the Settings section and find the deploy dashboard
+* Go to the backoffice of your project.
+* Navigate to the **Settings** section and go to the **Deploy** dashboard.
 
 * Generate UDA files by running the following command: `Extract Schema To Data Files` from the dashboard
 
