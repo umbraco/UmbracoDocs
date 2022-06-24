@@ -10,7 +10,7 @@ meta.Title: "Umbraco-Dokumentation"
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <a href="Getting-Started/" class="docs-section">
+        <a href="Erste-Schritte/" class="docs-section">
             <img src="images/devices.png" width="130" alt="">
             <h2>Erste Schritte</h2>
             <p>Alle Grundlagen zur Verwendung von Umbraco. Von Ihrer ersten lokalen Installation bis hin zu einem voll funktionsfähigen angepassten CMS.</p>

@@ -7,7 +7,7 @@ Dies ist das Dokumentationsprojekt für Umbraco. Der Umfang dieses Projekts best
 # Was steht in der Dokumentation
 
 ## Einstieg
-[Erste Schritte](Getting-Started/) ist eine Einführung in Umbraco, die Erläuterungen zu grundlegenden Konzepten und kurze Tutorials enthält.
+[Erste Schritte](Erste-Schritte/) ist eine Einführung in Umbraco, die Erläuterungen zu grundlegenden Konzepten und kurze Tutorials enthält.
 
 ## Implementierung
 [Implementierung](Implementation/) ist ein Überblick über die Struktur und Pipeline von Umbraco.
