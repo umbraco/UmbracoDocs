@@ -85,7 +85,7 @@ In Umbraco 10 Config files no longer live in the Web.Config and is instead in th
 
 * Check `~\umbraco\Deploy\Revision` to ensure all the UDA files have been generated
 
-* Run `Schema Deployment From Data Files` from the deploy dashboard to make sure everything checks out with the UDA files that was generated
+* Run `Schema Deployment From Data Files` from the deploy dashboard to make sure everything checks out with the UDA files that were generated
 
 ## Step 3: Custom code for Umbraco 10
 
