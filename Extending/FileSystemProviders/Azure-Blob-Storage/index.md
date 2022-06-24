@@ -82,7 +82,36 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
         }
 ```
 
+## Setting the middleware !!V9 Only!!
 
+NB: In version 10 `AzureBlobFileSystem` now implements `IFileProviderFactory` to expose the files via the ASP.NET Core `WebRootFileProvider`, removing the `AzureBlobFileSystemMiddleware` and `UseAzureBlobMediaFileSystem()` extension method. If you are implementing in Umbraco 10, skip this.
+
+Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
+
+```C#
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseUmbraco()
+        .WithMiddleware(u =>
+        {
+            u.UseBackOffice();
+            u.UseWebsite();
+            // This enables the Azure Blob storage middleware for media.
+            u.UseAzureBlobMediaFileSystem();
+        })
+        .WithEndpoints(u =>
+        {
+            u.UseInstallerEndpoints();
+            u.UseBackOfficeEndpoints();
+            u.UseWebsiteEndpoints();
+        });
+}
+```
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
 
