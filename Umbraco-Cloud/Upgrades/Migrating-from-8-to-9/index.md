@@ -44,6 +44,7 @@ Should something fail during the migration, the Development environment can alwa
 "ConnectionStrings": {
     "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;Integrated Security=true"
   }
+```
 
 * To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended)
 
