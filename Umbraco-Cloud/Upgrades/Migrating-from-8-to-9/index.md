@@ -107,7 +107,7 @@ Read more about these changes in the [IPublishedContent section of the Documenta
 
 Depending on the size of the project that is being migrated and the amount of custom code and implementations, this step is going to require a lot of work.
 
-## Step 4: Deploy and test on Umbraco Cloud
+## Step 4: Deploy and Test on Umbraco Cloud
 
 Once the Umbraco 10 project runs without errors on the local setup, the next step is to deploy and test on the Cloud Development environment.
 
