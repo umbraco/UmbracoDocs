@@ -24,7 +24,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 * A clean Cloud project running the latest version of Umbraco 10 with **at least 2 environments**
 
-* A backup of your Umbraco 8 projects database
+* A backup of your Umbraco 8 project database
 
 :::note
 We strongly recommend having at least 2 environments on the Umbraco 10 project.
