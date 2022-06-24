@@ -133,7 +133,7 @@ Once everything has been pushed, go to the Deploy Dashboard and trigger a `Schem
 * Deploy to the Live environment
 
 ## Step 5: Going live
-
+Test **everything** in the Development environment
 Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
 * Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 10 site
