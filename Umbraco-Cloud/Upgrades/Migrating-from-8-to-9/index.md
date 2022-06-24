@@ -89,7 +89,7 @@ In Umbraco 10 Config files no longer live in the Web.Config and is instead in th
 
 ## Step 3: Custom code for Umbraco 10
 
-Umbraco 10 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 9.
+Umbraco 10 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 10.
 
 :::note
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
