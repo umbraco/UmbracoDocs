@@ -140,21 +140,28 @@ Finally calling `.Execute()` at the end of the query logic will trigger the sear
 
 The final template looks like this:
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
-@using Umbraco.Examine
-@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<People>
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Examine
+@inject IExamineManager ExamineManager;
 @{
     Layout = "master.cshtml";
 }
-@helper SocialLink(string content, string service)
-{
-    if (!string.IsNullOrEmpty(content))
+@{
+    void SocialLink(string content, string service)
     {
-        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+        if (!string.IsNullOrEmpty(content))
+        {
+            ; //semicolon needed otherwise <a> cannot be resolved
+            <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+        }
     }
 }
+
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
 <section class="section">
+
     <div class="container">
         <!-- todo: implement department filter -->
         <!--
@@ -172,23 +179,25 @@ The final template looks like this:
                 <button>Search</button>
             </form>
         </div>
-
         <div>
             @{
                 var searchTerm = string.Empty;
-                searchTerm = string.IsNullOrEmpty(Request["query"])
+                searchTerm = string.IsNullOrEmpty(Context.Request.Query["query"])
                     ? string.Empty
-                    : Request["query"];
-
+                    : Context.Request.Query["query"];
                 if (searchTerm == string.Empty)
                 {
                     <p>Enter search term</p>
                 }
                 else
                 {
-                    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
+                    //perform the search
+                    //first we try to get the index, it is the ExternalIndex as we don't want to return unpublished things
+                    //it returns the index in the var index
+                    //be sure to add "@using Umbraco.Examine;" at the top of the view
+                    if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
                     {
-                        var searcher = index.GetSearcher();
+                        var searcher = index.Searcher;
                         var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
                         if (results.Any())
                         {
@@ -199,7 +208,7 @@ The final template looks like this:
                                     {
                                         var node = Umbraco.Content(result.Id);
                                         <li>
-                                            <a href="@node.Url">@node.Name</a>
+                                            <a href="@node.Url()">@node.Name</a>
                                         </li>
                                     }
                                 }
@@ -215,10 +224,11 @@ The final template looks like this:
             }
         </div>
         <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Children)
+            @foreach (Person person in Model.Children<Person>())
             {
+
                 <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
+                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo?.Url()')"></div>
                     <div class="employee-grid__item__details">
                         <h3 class="employee-grid__item__name">@person.Name</h3>
                         @if (!string.IsNullOrEmpty(person.Email))
@@ -226,10 +236,10 @@ The final template looks like this:
                             <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
                         }
                         <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
+                            @{ SocialLink(person.FacebookUsername, "Facebook"); }
+                            @{ SocialLink(person.TwitterUsername, "Twitter"); }
+                            @{ SocialLink(person.LinkedInUsername, "LinkedIn"); }
+                            @{ SocialLink(person.InstagramUsername, "Instagram"); }
                         </div>
                     </div>
                 </div>
