@@ -91,9 +91,9 @@ else
     //first we try to get the index, it is the ExternalIndex as we don't want to return unpublished things
     //it returns the index in the var index
     //be sure to add "@using Umbraco.Examine;" at the top of the view
-    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
+    if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
     {
-        var searcher = index.GetSearcher();
+        var searcher = index.Searcher;
         var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
         if (results.Any())
         {
