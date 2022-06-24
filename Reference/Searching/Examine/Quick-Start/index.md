@@ -42,9 +42,9 @@ Right below the form, add the following:
 <div>
     @{
         var searchTerm = string.Empty;
-        searchTerm = string.IsNullOrEmpty(Request["query"])
+        searchTerm = string.IsNullOrEmpty(Context.Request.Query["query"])
             ? string.Empty
-            : Request["query"];
+            : Context.Request.Query["query"];
         if (searchTerm == string.Empty)
         {
             <p>Enter search term</p>
