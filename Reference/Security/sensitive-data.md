@@ -13,7 +13,7 @@ In this article, you will get an overview of how you can grant and/or deny your 
 
 Every new Umbraco installation ships with a default set of User Groups. One of them is the **Sensitive data User Group**. To give users in the backoffice access to view and work with sensitive data, they need to be part of the Sensitive data User Group.
 
-Any users who are not part of the Sensitive data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead they will will see a generic message: "*This value is hidden. If you need access to view this value please contact your website administrator.*"
+Any users who are not part of the Sensitive data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead, they will see a generic message: "*This value is hidden. If you need access to view this value please contact your website administrator.*"
 
 ![Sensitive data hidden](images/sensitive-data-hidden-v8.png)
 
