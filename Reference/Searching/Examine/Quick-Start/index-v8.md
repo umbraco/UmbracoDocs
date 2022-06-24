@@ -61,7 +61,7 @@ Right below the form, add the following:
 Here we are getting the request query from the form. If the string is empty, we ask them to submit a term, otherwise, we will perform the search.
 
 ### Examine Search Index
-To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
+To perform the search, we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access its corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
 
 Umbraco ships with three indexes:
 * ExternalIndex - available to use for indexing published unprotected content.
