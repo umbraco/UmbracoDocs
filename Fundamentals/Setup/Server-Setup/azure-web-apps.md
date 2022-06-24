@@ -17,7 +17,7 @@ They have been called a few names in the past, many people still know Azure Web 
 
 Umbraco will run on Azure Web Apps but there are some configuration options and specific Azure Web Apps environment limitations you need to be aware of.
 
-## Recommended configuration
+## Recommended configuration Version 10
 
 You need to add these configuration values. E.g in a json configuration source like `appSettings.json`:
 
@@ -25,7 +25,28 @@ You need to add these configuration values. E.g in a json configuration source l
 {
     "Umbraco": {
         "CMS": {
-            "Global": {
+            "Hosting": {
+                "LocalTempStorageLocation": "EnvironmentTemp"
+            },
+            "Examine": {
+                "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
+            }
+        }
+    }
+}
+```
+
+NB: in version 10 the MainDomLock (see below) is no longer desireable.
+
+## Recommended configuration Version 9
+
+You need to add these configuration values. E.g in a json configuration source like `appSettings.json`:
+
+```json
+{
+    "Umbraco": {
+        "CMS": {
+           "Global": {
                 "MainDomLock" : "SqlMainDomLock"
             },
             "Hosting": {
@@ -38,6 +59,7 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
+## Azure App Service Plan Requirements
 
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
 
