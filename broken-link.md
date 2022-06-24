@@ -1,5 +1,5 @@
-# Oooops, something broke
+# Ups, da ist etwas kaputt gegangen
 
-It looks like you ran into a broken link. We really want to fix it but we need to know about it first. You can let us know by [creating an issue on GitHub](https://github.com/umbraco/Umbraco4Docs/issues).
+Anscheinend sind Sie auf einen defekten Link gestoßen. Wir wollen es wirklich beheben, aber wir müssen es zuerst wissen. Sie können uns dies mitteilen, indem Sie [ein Problem auf GitHub erstellen](https://github.com/umbraco/Umbraco4Docs/issues).
 
-The Umbraco documentation is open-source so you can also help us make the documentation better by creating a pull request. You can find information on how to get involved in the [guidelines](https://github.com/umbraco/UmbracoDocs).
+Die Umbraco-Dokumentation ist Open Source, sodass Sie uns auch dabei helfen können, die Dokumentation zu verbessern, indem Sie eine Pull-Anforderung erstellen. Informationen zur Teilnahme finden Sie in den [Richtlinien](https://github.com/umbraco/UmbracoDocs).

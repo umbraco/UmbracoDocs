@@ -1,42 +1,42 @@
 ---
-meta.Title: "Umbraco Documentation"
+meta.Title: "Umbraco-Dokumentation"
 ---
 
 <div class="docs-overview">
 <div class="row">
     <div class="col-xs-12">
-        <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco</h1>
+        <h1 class="text-center" style="font-size:3rem">Dokumentation für Umbraco</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
         <a href="Getting-Started/" class="docs-section">
             <img src="images/devices.png" width="130" alt="">
-            <h2>Getting Started</h2>
-            <p>All the basics of using Umbraco. From your first local installation, to a fully functional customized CMS.</p>
+            <h2>Erste Schritte</h2>
+            <p>Alle Grundlagen zur Verwendung von Umbraco. Von Ihrer ersten lokalen Installation bis hin zu einem voll funktionsfähigen angepassten CMS.</p>
         </a>
     </div>
     <div class="col-sm-6">
         <a href="Implementation/" class="docs-section">
         <img src="images/code.png" width="130" alt="">
-            <h2>Implementation</h2>
-            <p>Get an overview of how the Umbraco pipeline is structured. Learn how to write queries and use the APIs.</p>
+            <h2>Implementierung</h2>
+            <p>Verschaffen Sie sich einen Überblick darüber, wie die Umbraco-Pipeline aufgebaut ist. Erfahren Sie, wie Sie Abfragen schreiben und die APIs verwenden.</p>
         </a>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
         <a href="Extending/" class="docs-section">
-        <img src="images/headless.png" width="130"  alt="">
-            <h2>Extending</h2>
-            <p>Documentation on the areas in Umbraco that are extendable such as customizing backoffice UI and creating packages.</p>
+        <img src="images/headless.png" width="130" alt="">
+            <h2>Erweitern</h2>
+            <p>Dokumentation zu den Bereichen in Umbraco, die erweiterbar sind, wie z. B. das Anpassen der Backoffice-Benutzeroberfläche und das Erstellen von Paketen.</p>
         </a>
     </div>
     <div class="col-sm-6">
         <a href="Reference/" class="docs-section">
             <img src="images/documents.png" width="130" alt="">
-            <h2>Developers' Reference</h2>
-            <p>Code reference for Umbraco's management APIs, templating, querying, searching and more.</p>
+            <h2>Referenz für Entwickler</h2>
+            <p>Code-Referenz für die Management-APIs von Umbraco, Templating, Abfragen, Suchen und mehr.</p>
         </a>
     </div>
 </div>
@@ -46,30 +46,30 @@ meta.Title: "Umbraco Documentation"
 ---
 
 ### [Tutorials](Tutorials/index.md)
-Step by step tutorials.
+Schritt-für-Schritt-Tutorials.
 
-### [Umbraco Add ons](Add-ons/index.md)
-Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ.
+### [Umbraco Add-ons](Add-ons/index.md)
+Alles, was Sie über Forms und Courier wissen müssen, die beiden Premium-Pakete, die von HQ entwickelt und unterstützt werden.
 
-### [Development Guidelines](Development-Guidelines/index.md)
-How to work with the Umbraco codebase.
+### [Entwicklungsrichtlinien](Development-Guidelines/index.md)
+Wie man mit der Umbraco-Codebasis arbeitet.
 
 ### [Cheatsheets](Cheatsheets/index.md)
-Cheatsheets for overview of different areas like the Razor API and Views syntax.
+Cheatsheets für einen Überblick über verschiedene Bereiche wie die Razor-API und die Views-Syntax.
 
-### [Umbraco Cloud](Umbraco-Cloud/)
-How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy and troubleshoot issues.
+### [Umbraco-Cloud](Umbraco-Cloud/)
+So verwenden Sie Umbraco Cloud: Legen Sie los, richten Sie Ihr Umbraco Cloud-Projekt ein, stellen Sie es bereit und beheben Sie Probleme.
 
-### [Umbraco Heartcore](Umbraco-Heartcore/) 
-How to use Umbraco Heartcore: Getting started, API Documentation and client libraries.
+### [Umbraco-Heartcore](Umbraco-Heartcore/)
+So verwenden Sie Umbraco Heartcore: Erste Schritte, API-Dokumentation und Client-Bibliotheken.
 
 
 ---
 
-### Contributing
-*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. 
+### Mitwirken
+*Das Dokumentationsprojekt ist Open Source und wird auf GitHub gehostet. Wenn Sie Korrekturen oder Ergänzungen zur Dokumentation haben, klonen Sie das Projekt und stellen Sie eine Pull-Anfrage.
 
-[Getting Started](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) contributing to the documentation. 
-[Guidelines](https://our.umbraco.com/documentation/Contribute/) for Umbraco documentation*
+[Erste Schritte](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) zur Dokumentation beitragen.
+[Richtlinien](https://our.umbraco.com/documentation/Contribute/) für die Umbraco-Dokumentation*
 
 ----------------

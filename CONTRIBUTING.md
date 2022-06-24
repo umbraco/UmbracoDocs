@@ -1,48 +1,48 @@
-# Contributing Guidelines
+# Richtlinien für Beiträge
 
-To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.com/documentation](https://our.umbraco.com/documentation).
+Um entweder zur Dokumentation oder zu Stubs beizutragen, können Sie unser Repository forken und klonen, Ihre Änderungen vornehmen und zu GitHub zurückschieben und uns eine Pull-Anfrage senden. Alle Elemente, die in das Haupt-Repository gezogen werden, werden automatisch an [our.umbraco.com/documentation] (https://our.umbraco.com/documentation) gepusht.
 
-## Getting started with Git and GitHub
+## Erste Schritte mit Git und GitHub
 
-* [Download GitHub Desktop](https://desktop.github.com)
-* [Configuring GitHub Desktop](https://help.github.com/desktop/guides/)
-* [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
-* [The basic guide to Git](https://rogerdudler.github.io/git-guide/)
+* [GitHub-Desktop herunterladen](https://desktop.github.com)
+* [GitHub Desktop konfigurieren](https://help.github.com/desktop/guides/)
+* [GitHub-Repository forken](https://help.github.com/articles/fork-a-repo/)
+* [Die grundlegende Anleitung zu Git](https://rogerdudler.github.io/git-guide/)
 
-## Repository organisation
+## Repository-Organisation
 
-All active work done on the documentation is currently being done on the `main` branch.
+Alle aktiven Arbeiten an der Dokumentation werden derzeit im Hauptzweig durchgeführt.
 
-### Keeping your UmbracoDocs fork in sync with the main repository
+### Halten Sie Ihren UmbracoDocs-Fork mit dem Haupt-Repository synchron
 
-If you decide to clone the UmbracoDocs repository on your local machine for making larger changes that can't be done directly on GitHub then we recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
+Wenn Sie sich entscheiden, das UmbracoDocs-Repository auf Ihrem lokalen Computer zu klonen, um größere Änderungen vorzunehmen, die nicht direkt auf GitHub vorgenommen werden können, empfehlen wir Ihnen, mit unserem Repository zu synchronisieren, bevor Sie Ihre Pull-Anfrage senden. Auf diese Weise können Sie potenzielle Zusammenführungskonflikte beheben und unser Leben ein wenig einfacher machen.
 
-To sync your fork with this original one, you'll have to add the upstream URL, you only have to do this once:
+Um Ihren Fork mit diesem Original zu synchronisieren, müssen Sie die Upstream-URL hinzufügen, Sie müssen dies nur einmal tun:
 
-```xml
+„xml
 git remote add upstream https://github.com/umbraco/UmbracoDocs.git
 ```
 
-Then when you want to get the changes from the main repository:
+Wenn Sie dann die Änderungen aus dem Haupt-Repository abrufen möchten:
 
-```xml
-git fetch upstream
+„xml
+git stromaufwärts abrufen
 git rebase upstream/main
 ```
 
-In this command, we're syncing with the `main` branch. You can choose another one if needed.
+In diesem Befehl synchronisieren wir mit dem Hauptzweig. Sie können bei Bedarf eine andere auswählen.
 
-### Contributing documentation
+### Beitragende Dokumentation
 
-All documents are written in Markdown, using a basic structure and stored as .md files.
-These are then pulled to [our.umbraco.com/documentation](https://our.umbraco.com/documentation) for browsing.
+Alle Dokumente werden in Markdown geschrieben, verwenden eine Grundstruktur und werden als .md-Dateien gespeichert.
+Diese werden dann zum Durchsuchen auf [our.umbraco.com/documentation](https://our.umbraco.com/documentation) gezogen.
 
-First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use GitHub to issue a "pull request", which means your edits will be reviewed, and once accepted, merged into the main repository.
+Forken und klonen Sie zuerst das Repository, damit Sie Ihre eigene Arbeitskopie haben. Erstellen Sie dann einen neuen Zweig auf Ihrer lokalen Kopie, um Ihre Änderungen vorzunehmen. Wenn Sie mit Ihren Änderungen zufrieden sind, verwenden Sie GitHub, um eine „Pull-Anforderung“ zu stellen, was bedeutet, dass Ihre Änderungen überprüft und nach der Annahme in das Haupt-Repository zusammengeführt werden.
 
-**Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to set up a remote repo and pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo).
+**Hinweis:** Es ist eine gute Idee, Upstream-Änderungen einzufügen, zusammenzuführen und an Ihren eigenen Fork zu übergeben, bevor Sie einen Pull-Request senden. Anweisungen zum Einrichten eines Remote-Repos und Pullen aus dem Upstream finden Sie auf dieser [Seite](https://help.github.com/articles/fork-a-repo).
 
-Everything in the main repository will make it onto the [our.umbraco.com/documentation](https://our.umbraco.com/documentation) site, which is why we have chosen a pull request workflow to keep everything straightforward.
+Alles im Haupt-Repository wird es auf die Website [our.umbraco.com/documentation](https://our.umbraco.com/documentation) schaffen, weshalb wir einen Pull-Request-Workflow gewählt haben, um alles unkompliziert zu halten.
 
-## Planning & discussions
+## Planung & Diskussionen
 
-If you want to report an issue, or you're planning a big change, use [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.
+Wenn Sie ein Problem melden möchten oder eine große Änderung planen, verwenden Sie [GitHub-Issues](https://github.com/umbraco/UmbracoDocs/issues), um eine Diskussion zu eröffnen. Wenn Sie eine kleine Änderung vornehmen möchten, zögern Sie nicht, eine Pull-Anfrage zu stellen, Sie müssen nicht zuerst ein Problem erstellen.
