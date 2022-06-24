@@ -61,7 +61,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 
 ## Step 2: File migration
 
-* The following files/folders needs to be copied into the Umbraco 10 project
+* The following files/folders need to be copied into the Umbraco 10 project:
     * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files unless changes have been made to these
     * `~/Media`
     * Any files/folders related to Stylesheets and JavaScripts
