@@ -69,7 +69,8 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide, for more de
 * In Umbraco 9 Config files no longer live in a Web.Config and is instead in the `AppSettings.Json` file. You will need to make sure that you update the AppSettings with any custom settings that you had in your Umbraco 8 project to match with the[V9 configs](../../../Reference/V9-Config/index.md).
 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
-
+In Umbraco 10 Config files no longer live in the Web.Config and is instead in the `appSettings.Json` file. You will need to make sure that you update the `appSettings.Json` with any custom settings that you had in your Umbraco 8 project to match with the [Configuration Files](../../../Reference/Configuration/index.md).
+* In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
     * Make sure to first migrate the Forms to the database using [Umbraco forms 8](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8)
 
 * Run the Umbraco 10 project locally
