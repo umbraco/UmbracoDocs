@@ -61,7 +61,7 @@ Note that in this example, the container name is `mysitestorage`.
 You can get your connection string from your Azure Portal under "Access Keys".
 :::
 
-## Setting the services and middleware
+## Setting the services
 
 You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
 
@@ -82,32 +82,7 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
         }
 ```
 
-Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
 
-```C#
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.UseBackOffice();
-            u.UseWebsite();
-            // This enables the Azure Blob storage middleware for media.
-            u.UseAzureBlobMediaFileSystem();
-        })
-        .WithEndpoints(u =>
-        {
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
-```
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
 
