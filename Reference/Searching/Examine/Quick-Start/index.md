@@ -59,7 +59,7 @@ Right below the form, add the following:
 Here we are getting the request query from the form. If the string is empty we ask them to submit a term, otherwise we will perform the search.
 
 ### Examine Search Index
-To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
+To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `ISearcher`. We use the `ISearcher` to construct the query logic to execute and search the index.
 
 Umbraco ships with three indexes:
 * ExternalIndex - available to use for indexing published unprotected content.
@@ -68,7 +68,7 @@ Umbraco ships with three indexes:
 
 ([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
 
-You use a convenient service named the `ExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
+You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
 ```csharp
  if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
     {
