@@ -68,11 +68,18 @@ Umbraco ships with three indexes:
 
 ([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
 
-You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
+You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher. First inject the `IExamineManager`:
+
+```
+@using Examine
+@inject IExamineManager ExamineManager;
+```
+ and then get a reference: 
+
 ```csharp
- if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
-    {
-        var searcher = index.GetSearcher();
+ if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
+{
+    var searcher = index.Searcher;
 ```
 ### Creating the Search Query
 With this in mind we begin to update the `else` condition with the following:
