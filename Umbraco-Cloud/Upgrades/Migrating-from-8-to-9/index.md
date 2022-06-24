@@ -19,7 +19,6 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 -->
 
 ## Prerequisites
-## Prerequisites
 * An Umbraco 8 Cloud project running **the latest version of Umbraco 8**
 
 * A clean Cloud project running the latest version of Umbraco 10 with **at least 2 environments**
