@@ -19,7 +19,7 @@ Any users who are not part of the Sensitive data User Group, will not be able to
 
 While not part of the Sensitive data User Group it is also not possible to export members or member data.
 
-Follow these steps in order to grant a user access to sensitive data.
+Follow these steps in order to grant a user access to sensitive data:
 
 * Navigate to the **User** section in the Umbraco backoffice.
 * Select the **Groups** menu in the top-right corner.
