@@ -27,15 +27,15 @@ Follow these steps in order to grant a user access to sensitive data:
 
 ![Sensitive data user group](images/sensitive-data-user-group-v8.png)
 
-* Click **Add** in the User box on the right.
-* Select the sers you want to give access to the sensitive data.
+* Click **Add** in the **Users** box on the right.
+* Select the users you want to give access to the sensitive data.
 * Click **Submit**.
 * **Save** the User Group.
 
-The users you have added to the Sensitive data User Group will now be able to
+The users you have added to the Sensitive data User Group will now be able to:
 
 * See member data that has been marked as sensitive,
-* Mark data and properties on Member Types as sensitive and
+* Mark data and properties on Member Types as sensitive, and
 * Export members and member data.
 
 ## Marking data as sensitive
@@ -45,7 +45,7 @@ Once your user is added to the Sensitive data User Group, you have access to add
 * Navigate to the **Settings** section in the Umbraco backoffice.
 * Double-click on **Member Types** in the Settings tree.
 * Select the Member Type you wish to edit.
-* **Add** a property, or configure an existing property.
+* **Add** a property or configure an existing property.
 
 In the Property settings dialog you will see the "Is sensitive data" option in the bottom of the "Options" group. When this is enable the value and data in the property will only be visible to the users who have access to sensitive data.
 
