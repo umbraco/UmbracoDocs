@@ -68,7 +68,7 @@ Umbraco ships with three indexes:
 * InternalIndex - which Umbraco's backoffice search uses.
 * InternalMemberIndex - which Umbraco's Membership implementation uses.
 
-([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
+([You can create your indexes too](../indexing)) if you need to analyze text in a different language for example.
 
 You use a convenient service named the `ExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
 ```csharp
