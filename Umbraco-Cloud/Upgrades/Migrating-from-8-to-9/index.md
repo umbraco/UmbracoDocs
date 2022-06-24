@@ -39,7 +39,11 @@ Should something fail during the migration, the Development environment can alwa
 
 * Clone down the Development environment from the Umbraco 10 Cloud project, test the project and make sure to log in to the backoffice
 
-* Update the connection string in the Umbraco 10 AppSetting.Json file so that it connects to the Umbraco 8 database
+* Update the connection string in the Umbraco 10 AppSetting.Json file so that it connects to the Umbraco 8 database:
+```JSON
+"ConnectionStrings": {
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;Integrated Security=true"
+  }
 
 * To be able to authorize the database upgrade, you need to enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended)
 
