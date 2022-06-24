@@ -16,7 +16,7 @@ If you are using Umbraco 9 or later versions, please refer to the note on the [E
 ## Performing a search
 
 :::note
-In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
+In the coming examples, the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your existing site.
 :::
 
 The starter kit comes with some Templates, Document Types and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as much more complex searches are possible with Examine.
