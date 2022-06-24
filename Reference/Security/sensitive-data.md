@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 Marking fields and properties on member data as sensitive will hide the data in those fields for backoffice users that are not privy to the data.
 
-In this article you will get an overview on how you can grant and/or deny your users access to sensitive data as well as how to mark data as sensitive.
+In this article, you will get an overview of how you can grant and/or deny your users access to sensitive data as well as how to mark data as sensitive.
 
 ## Grant or deny access to sensitive data
 
