@@ -8,7 +8,7 @@ meta.Description: "A guide configuring an Azure Key Vault"
 
 From a security perspective, it's always a good solution to store your application secrets (such as a connection string and others keys) in an Azure Key Vault. This article tells you how to configure your application so that it's ready to use a Key Vault
 
-## Installing the package
+## Installing the packages
 
 Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
 
@@ -17,7 +17,7 @@ Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configura
 
 ### Installing through command line
 
-Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
+Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the packages:
 
 ```
 dotnet add package Azure.Extensions.AspNetCore.Configuration.Secrets
