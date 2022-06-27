@@ -146,6 +146,9 @@ Remove the following files and folders *manually* from your local project:
 * `/umbraco/config/lang`
 * `/App_Plugins/UmbracoForms`
 
+By default Umbraco Deploy will create an SQLite database. If you want to re-use existing LocalDB database configure the connectionstring:
+https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization or use the setting `PreferLocalDbConnectionString`: https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring
+
 Build and run your project locally to verify the Umbraco 10 upgrade.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
