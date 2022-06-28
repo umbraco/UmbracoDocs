@@ -79,7 +79,7 @@ The following options may suit your needs:
     - `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
 10. Build and run your project to finish the installation of Umbraco 10.
 
-To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file, and any other `appsettings.{Environment}.json` files from:
+To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:
 
 ```json
 "$schema": "./umbraco/config/appsettings-schema.json",
