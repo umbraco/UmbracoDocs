@@ -1,8 +1,7 @@
 ﻿---
-versionFrom: 9.4.0
-versionTo: 10.0.0
+versionFrom: 9.0.0
+versionTo: 9.3.0
 ---
-
 
 # Running Umbraco on Azure Web Apps
 
@@ -27,7 +26,7 @@ You need to add these configuration values. E.g in a json configuration source l
     "Umbraco": {
         "CMS": {
             "Global": {
-                "MainDomLock" : "FileSystemMainDomLock"
+                "MainDomLock" : "SqlMainDomLock"
             },
             "Hosting": {
                 "LocalTempStorageLocation": "EnvironmentTemp"
