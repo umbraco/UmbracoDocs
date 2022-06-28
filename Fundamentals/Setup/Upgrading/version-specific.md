@@ -38,7 +38,7 @@ The following options may suit your needs:
 + Setup a new database for v10 and use a premium tool such as [Umbraco Deploy](https://umbraco.com/products/umbraco-deploy) to transfer document types and content across.
 :::
 
-### Steps on how to upgrade using Visual Studio
+### Steps to upgrade using Visual Studio
 
 1. Open your Umbraco 9 project in Visual Studio.
 2. Right-click on the project name in the Solution Explorer and select **Properties**.
@@ -47,12 +47,10 @@ The following options may suit your needs:
 5. Go to the **Installed** tab in the NuGet Package manager.
 6. Choose **Umbraco.Cms**.
 7. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
-8. Build and run your project to finish the installation of Umbraco 10.
+8. Update `Program.cs` to the following:
 
-Additionally, you will need to update the `Program.cs` to the following:
-
-```csharp
-public class Program
+    ```csharp
+    public class Program
     {
         public static void Main(string[] args)
             => CreateHostBuilder(args)
@@ -68,21 +66,21 @@ public class Program
                     webBuilder.UseStartup<Startup>();
                 });
     }
-```
+    ```
+    The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
+9. Remove the following files and folders:
+    - `/wwwroot/umbraco`
+    - `/umbraco/PartialViewMacros`
+    - `/umbraco/UmbracoBackOffice`
+    - `/umbraco/UmbracoInstall`
+    - `/umbraco/UmbracoWebsite`
+    - `/umbraco/config/lang`
+    - `/umbraco/config/appsettings-schema.json`
+    - `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
+10. Build and run your project to finish the installation of Umbraco 10.
 
-Finally, remove the following files and folders:
-
-- `/wwwroot/umbraco`
-- `/umbraco/PartialViewMacros`
-- `/umbraco/UmbracoBackOffice`
-- `/umbraco/UmbracoInstall`
-- `/umbraco/UmbracoWebsite`
-- `/umbraco/config/lang`
-- `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
-
-To re-enable the appsettings IntelliSense, you must update your schema reference in the **appsettings.json** file from:
+To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:
 
 ```json
 "$schema": "./umbraco/config/appsettings-schema.json",
