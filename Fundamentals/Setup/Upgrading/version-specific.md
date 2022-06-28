@@ -75,7 +75,7 @@ The following options may suit your needs:
     - `/umbraco/UmbracoBackOffice`
     - `/umbraco/UmbracoInstall`
     - `/umbraco/UmbracoWebsite`
-    - `/umbraco/config`
+    - `/umbraco/config/lang`
     - `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
 10. Build and run your project to finish the installation of Umbraco 10.
 
