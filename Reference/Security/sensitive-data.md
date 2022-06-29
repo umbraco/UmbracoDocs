@@ -22,7 +22,7 @@ While not part of the Sensitive data User Group it is also not possible to expor
 Follow these steps in order to grant a user access to sensitive data:
 
 * Navigate to the **Users** section in the Umbraco backoffice.
-* Ensure that **Users** is selected from the section tree.
+* Ensure that **Users** is selected from the Users tree.
 * Select the **Groups** menu in the top-right corner.
 * Choose the **Sensitive data** group.
 
