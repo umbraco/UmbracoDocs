@@ -17,11 +17,11 @@ View components are:
 - Derived from the base class ViewComponent and
 - Associated with a Razor file (*.cshtml) to generate markup.
 
-[View components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0) are similar to partial views but it is much more powerful compared to the partial view. View components do not use model binding but it works only with the data provided when calling it.
+[View components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0) are similar to partial views but they are much more powerful compared to the partial views. View components do not use model binding, instead they work with the data provided when calling it.
 
 View Components can be implemented in any part of the web application where there are some possibilities to duplicate code like Header, Navigation Pane, Login Panel, Menu, Shopping Cart, Footer, Nested Content, BlockList Items and so on. View Components behave like a web part containing both business logic and UI design to create a package which can be reused in  multiple parts of the web application.
 
-A view component consists of two parts:
+A view component code consists of two parts:
 
 - The View Component class derived from the `ViewComponent` class:
 
