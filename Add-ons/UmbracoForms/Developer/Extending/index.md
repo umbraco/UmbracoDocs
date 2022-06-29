@@ -54,7 +54,7 @@ Form events are raised during the submission life cycle and can be handled for e
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-From versions 8.13/10.1 it's been possible to amend this behavior and change it to fit your needs.
+From versions 8.13/9.5/10.1 it's been possible to amend this behavior and change it to fit your needs.
 
 ## Responding to State Values
 
