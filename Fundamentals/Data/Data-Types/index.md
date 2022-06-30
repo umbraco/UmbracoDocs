@@ -45,7 +45,7 @@ To view the Data Type reference, go to the __Settings__ section and expand the _
 
 This gives you an overview of the Types that currently use the Data Type.
 
-Learn more about tracking Data Type references in the [Tracking](../../../Extending/Property-Editors/Tracking/) article.
+Learn more about viewing references or implementing tracking in the [Tracking References](../../../Extending/Property-Editors/Tracking/) article.
 
 ### More information
 
