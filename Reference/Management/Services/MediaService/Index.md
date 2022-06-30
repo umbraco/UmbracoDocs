@@ -108,7 +108,7 @@ using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
     // Initialize a new image at the root of the media archive
     IMedia media = _mediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
     // Set the property value (Umbraco will handle the underlying magic)
-    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, "umbracoFile", "my-image.jpg", stream)
+    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, "umbracoFile", "my-image.jpg", stream);
     // Save the media
     _mediaService.Save(media);
 }
