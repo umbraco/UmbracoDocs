@@ -1,5 +1,6 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
+versionTo: 9.0.0
 meta.Title: "Using Azure Blob Storage for Media and ImageSharp Cache"
 meta.Description: "Setup your site to use Azure Blob storage for media and ImageSharp cache"
 ---
@@ -79,6 +80,33 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
 #pragma warning restore IDE0022 // Use expression body for methods
 
         }
+```
+
+Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
+
+```C#
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseUmbraco()
+        .WithMiddleware(u =>
+        {
+            u.UseBackOffice();
+            u.UseWebsite();
+            // This enables the Azure Blob storage middleware for media.
+            u.UseAzureBlobMediaFileSystem();
+        })
+        .WithEndpoints(u =>
+        {
+            u.UseInstallerEndpoints();
+            u.UseBackOfficeEndpoints();
+            u.UseWebsiteEndpoints();
+        });
+}
 ```
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
