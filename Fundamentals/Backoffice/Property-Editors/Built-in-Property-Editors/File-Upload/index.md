@@ -61,7 +61,9 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ## Add values programmatically
 
 :::note
-The samples in this section has not been verified against the latest version of Umbraco.
+The samples in this section has not and will not be verified against the latest version of Umbraco.
+
+Instead, we recommend using the [Media Picker](../Media-Picker-3/) for uploading files to your Umbraco website.
 :::
 
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md) and the [Media Service](../../../../../Reference/Management/Services/MediaService/index.md).
