@@ -169,37 +169,54 @@ The global crops are configured on the DataType of the `umbracoFile` property on
 
 ### Add values programmatically
 
-:::warning
-Adding values programmatically for the Media Picker have not been verified for Umbraco 9 and 10 yet.
-:::
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
-This solution can be applied to both Media Picker 3 and Multi Media Picker 3
+The following sample will update a single image in a Media Picker.
+
+```csharp
+@using Umbraco.Cms.Core;
+@using Umbraco.Cms.Core.Services;
+@inject IContentService Services;
+@{
+    // Get access to ContentService
+    var contentService = Services;
+
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
+
+    // Get the media you want to assign to the media picker 
+    var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
+
+    // Create an Udi of the media
+    var udi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
+
+    // Set the value of the property with alias 'featuredBanner'. 
+    content.SetValue("featuredBanner", udi.ToString());
+
+    // Save the change
+    contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
 
 ```csharp
 @{
-                        //Get media by Id
-                        var media = mediaService.GetById(1150);
-                        
-                        //Initialize new list of dictionaries
-                        var dictionary = new List<Dictionary<string, string>>
-                        {
-                            new Dictionary<string, string>()
-                        {
-                            //Create new GUID for "key"
-                            { "key", Guid.NewGuid().ToString() },
-                            
-                            //Reference our media in "mediaKey"
-                            { "mediaKey", media.Key.ToString() },
-                            { "crops", null },
-                            { "focalPoint", null }
-                        }
-                        };
-
-                        //Serialize entire list of dictionaries
-                        var json = JsonConvert.SerializeObject(dictionary);
-                        
-                        //Assign JSON as the value of Media Picker 3 property
-                        content.SetValue("firstPic", json);
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
 }
+```
 
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@using Umbraco.Cms.Core.PublishedCache;
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@{
+    // Set the value of the property with alias 'featuredBanner'
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, udi.ToString());
+}
 ```
