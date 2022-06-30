@@ -20,6 +20,12 @@ The easiest way to get the latest version of Umbraco up and running is with the 
 
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
+:::tip
+
+Members of the Umbraco Community have created a website which you can find at [https://psw.codeshare.co.uk](https://psw.codeshare.co.uk). The website makes the installation of Umbraco a lot easier for you. On the website you can configure your options to generate the required script to run. Click on the Install Script tab to get the commands you need to paste into the terminal. This tab also includes the commands for adding a starter kit or unattended install which creates the database for you.
+
+:::
+
 ## [VS Code installation](install-umbraco-with-vs-code.md)
 
 Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). A fast way to get you up and running with Umbraco.
