@@ -99,6 +99,7 @@ Note that you will need to inject the following services:
 - `IShortStringHelper _shortStringHelper`
 - `IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider`
 - `IJsonSerializer _serializer`
+- `MediaUrlGeneratorCollection _mediaUrlGeneratorCollection`
 
 ```csharp
 // Open a new stream to the file
@@ -107,7 +108,7 @@ using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
     // Initialize a new image at the root of the media archive
     IMedia media = _mediaService.CreateMedia("My image", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
     // Set the property value (Umbraco will handle the underlying magic)
-    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.MediaTypes.File, "my-image.jpg", stream);
+    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, "umbracoFile", fileName, stream)
     // Save the media
     _mediaService.Save(media);
 }
