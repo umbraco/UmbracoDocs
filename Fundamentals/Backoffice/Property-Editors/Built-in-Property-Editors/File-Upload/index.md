@@ -61,7 +61,7 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ## Add values programmatically
 
 :::note
-The samples in this section have not and will not be verified against the latest version of Umbraco.
+The samples in this section have not been verified against the latest version of Umbraco.
 
 Instead, we recommend using the [Media Picker](../Media-Picker-3/) for uploading files to your Umbraco website.
 :::
