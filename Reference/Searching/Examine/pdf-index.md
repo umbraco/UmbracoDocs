@@ -8,7 +8,7 @@ versionTo: 8.0.0
 :::note
 This document has been verified for Umbraco 8.
 
-If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](../index.md) for more details.
 :::
 
 If you want to index PDF files and search for them you will need to use the [UmbracoExamine.Pdf extension package](https://github.com/umbraco/UmbracoExamine.PDF).
