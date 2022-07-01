@@ -34,3 +34,13 @@ You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Clou
 :::note
 Umbraco will not run on ASP.NET Core
 :::
+
+## Database Account Roles
+
+The database account used in the connection string will need permissions to read and write from tables as well as create schema during installs and upgrades:
+
+* The `db_owner` role has full permissions on the database.
+
+* To use an account with more restricted permissions, the `db_datareader` and `db_datawriter` roles will be needed for normal use to read from and write to the database. The `db_ddladmin` role, which can modify the database schema, is required for installs and upgrades of the CMS and/or any packages that create database tables.
+
+For more information on the Database-level roles, see the [Microsoft documentation](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#fixed-database-roles).
