@@ -352,9 +352,6 @@ public class TreeNotificationHandler :INotificationHandler<TreeNodesRenderingNot
 
 The `MenuRenderingNotification` is raised whenever a menu is generated for a tree node.
 
-**Reference:**
-* `Umbraco.Cms.Web.BackOffice`
-
 **Members:**
 
 * `MenuItemCollection Menu`
@@ -365,9 +362,11 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 **Usage:**
 
 ```csharp
+using System.Linq;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Security;
+using Umbraco.Extensions;
 
 public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
 {
