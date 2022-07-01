@@ -16,7 +16,7 @@ Umbraco cloud repositories are only deployment repositories and should not be us
 
 ## A source control repository with your own code
 
-Source control is a way to control changes to files and directories, so that you can keep a record of changes and revert to specific versions of a file in the event you’d like to back up to an earlier time. A source control repository is used as the single source of truth that has the latest version of your project source code with all the git branches.
+Source control is a way to control changes to files and directories. You can keep a record of changes and revert to specific versions of a file in the event you would like to back up to an earlier time. A source control repository is used as the single source of truth that has the latest version of your project source code with all the git branches.
 
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), CVS, Mercurial, etc.
 
@@ -36,7 +36,7 @@ With this setup, you commit your changes twice. Once to commit your code in your
 
 ## Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 
-- We only guarantee to maintain and keep the master branch, if any other branches are created they might be removed causing data loss.
+- We only guarantee to maintain and keep the `master` branch, if any other branches are created they might be removed causing data loss.
 
 - In Umbraco version 9 and above: Unlike your code repository, you will still need to commit your frontend artifacts, as the build pipeline only builds dlls from your C# code, 
 
