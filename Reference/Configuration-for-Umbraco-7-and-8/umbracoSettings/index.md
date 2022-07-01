@@ -280,6 +280,26 @@ If you have multiple sites, with different cultures, setup in your tree then you
 
 If you have more than two sites and forget to update the `errors` section with a 404 page and a culture, then the **default** page will act as a fallback. It acts the same if you forget to define a hostname on a site.
 
+#### Proxying through IIS on Umbraco Cloud
+
+For environment specific transforms, include a `web.{ENVIRONMENT}.config` file for each environment requiring a `web.config` transformation such as `web.Development.config`, `web.Staging.config`, or `web.Production.config`.
+
+To set the appropriate status code, update your **web.Production.config** for the *Production* environment:
+
+```html
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <httpErrors errorMode="Custom" existingResponse="Replace">
+        <remove statusCode="404"/>
+            <error statusCode="404" path="~/ErrorPages/404.html" responseMode="File"/>
+      </httpErrors>
+    </system.webServer>
+  </location>
+</configuration>
+```
+
 #### Validation Errors
 
 The error pages won’t capture every exception you’re likely to encounter in your application.
