@@ -194,7 +194,7 @@ When redirecting following a form submission, a `TempData` value is set that is 
 By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### CultureToUseWhenParsingDatesForBackOffice
-This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups. When Umbraco Forms stores data for a record, as well as storing the values submitted for each field into a dedicated table for each type (string, date etc.), it also saves a second copy of the record in a JSON structure, more suitable for fast look-up and display in the backoffice.  Date values are serialized using the culture used by the front-end website when the form entry is stored.
+This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups. When Umbraco Forms stores data for a record, as well as storing the values submitted for each field into a dedicated table for each type (string, date etc.), it also saves a second copy of the record in a JSON structure. This is more suitable for fast look-up and display in the backoffice.  Date values are serialized using the culture used by the front-end website when the form entry is stored.
 
 When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, to that used when the value was stored.
 
