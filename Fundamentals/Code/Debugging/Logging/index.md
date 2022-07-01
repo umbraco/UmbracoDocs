@@ -83,6 +83,10 @@ namespace Umbraco.Cms.Web.UI.NetCore
 }
 ```
 
+:::note
+If you are Logging and using the MiniProfiler, you can inject `IProfilingLogger` that has a reference to both ILogger and IProfiler.
+:::
+
 The incorrect way to log the message would be use string interpolation or string concatenation such as
 
 ```csharp
