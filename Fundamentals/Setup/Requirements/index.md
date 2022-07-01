@@ -57,7 +57,7 @@ The database account used in the connection string will need permissions to read
 
 * The `db_owner` role has full permissions on the database.
 
-* The `db_datareader` and `db_datawriter` roles will be needed for normal use to use an account with more restricted permissions.
+* The `db_datareader` and `db_datawriter` roles are required for normal use to use an account with more restricted permissions.
 
 * The `db_ddladmin` role can perform installs and upgrades of the CMS and/or any packages that create database tables.
 
