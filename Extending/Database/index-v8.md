@@ -4,23 +4,9 @@ meta.Title: "Umbraco Database"
 meta.Description: "A guide to creating a custom Database table in Umbraco"
 ---
 
-# Custom Database Table in Umbraco
+# Creating a Custom Database Table
 
 In Umbraco, it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes.
-
-## Database-level Roles
-
-The following table shows the database roles required by Umbraco and their capabilities:
-
-| Database role name 	| Description                                                                                                                                                                                                        	|
-|--------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| db_owner           	| Members of the db_owner role can perform all configuration and maintenance activities on the database.                                                                                              	|
-| db_ddladmin        	| Members of the db_ddladmin can perform installation and upgrades of the CMS and/or any packages that create database tables.                                                                                 	|
-| db_securityadmin   	| Members of the db_securityadmin role can modify role membership and manage permissions. Members of this role can potentially elevate their privileges and their actions should be monitored. 	|
-| db_datawriter      	| Members of the db_datawriter role can add, delete, or change data in all user tables.                                                                                                                              	|
-| db_datareader      	| Members of the db_datareader role can read all data from all user tables and views.                                                                                                                                	|
-
-## Creating a Custom Database Table
 
 Below you will find an example that sets up a database table by registering a [component in a composer](../../Implementation/Composing/index-v8.md) and then creating a migration plan and running the plan to add the database table to the database. The end result looks like this:
 
