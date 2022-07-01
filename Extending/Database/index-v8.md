@@ -10,7 +10,7 @@ In Umbraco, it is possible to add custom database tables to your site if you wan
 
 ## Database-level Roles
 
-The following table shows the database roles and their capabilities:
+The following table shows the database roles required by Umbraco and their capabilities:
 
 | Database role name 	| Description                                                                                                                                                                                                        	|
 |--------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
