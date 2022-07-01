@@ -57,8 +57,6 @@ The database account used in the connection string will need permissions to read
 
 * The `db_owner` role has full permissions on the database.
 
-* The `db_datareader` and `db_datawriter` roles are required for normal use to use an account with more restricted permissions.
-
-* The `db_ddladmin` role can perform installs and upgrades of the CMS and/or any packages that create database tables.
+* To use an account with more restricted permissions, the `db_datareader` and `db_datawriter` roles will be needed for normal use to read from and write to the database.  The `db_ddladmin` role, which can modify database schema, is required for installs and upgrades of the CMS and/or any packages that create database tables.
 
 For more information on the Database-level roles, see the [Microsoft documentation](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#fixed-database-roles).
