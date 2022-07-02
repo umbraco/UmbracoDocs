@@ -93,7 +93,11 @@ To:
 ```
 
 :::note
-To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18. If using Umbraco Forms, the database should be on the latest minor version of Forms 8 or 9.
+To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
+:::
+
+:::note
+If using Umbraco Forms, the database should be on the latest minor version of Forms 8 (with form definitions stored in the database) or 9. See more details of the Forms upgrade [here](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md).
 :::
 
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
