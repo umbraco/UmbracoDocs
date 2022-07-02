@@ -91,6 +91,18 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 }
 
 ```
+:::note
+If you are using an Umbraco version before v9.4 you don't have to pass in an instance of Ilogger in to the base constructor. See the code example below:
+
+```C#
+public CleanUpYourRoom(
+    ...)
+    : base(HowOftenWeRepeat, DelayBeforeWeStart)
+{
+    ...
+}
+```
+:::
 
 ### Registering with extension method
 
