@@ -48,7 +48,7 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
             IProfilingLogger profilingLogger,
             ILogger<CleanUpYourRoom> logger,
             IScopeProvider scopeProvider)
-            : base(HowOftenWeRepeat, DelayBeforeWeStart)
+            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _runtimeState = runtimeState;
             _contentService = contentService;
