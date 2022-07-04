@@ -148,9 +148,9 @@ dotnet new sln --name <MyAwesomeSolution>
 
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
-    :::note
-    When creating a solution file, we recommend placing it at the root of the git repository.
-    :::
+:::note
+When creating a solution file, we recommend placing it at the root of the git repository.
+:::
 
 ### Adding Additional Projects to your Solution
 
