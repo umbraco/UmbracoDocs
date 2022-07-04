@@ -142,7 +142,7 @@ dotnet new sln --name <MyAwesomeSolution>
 
    ![Visual studio solution](images/solution-VS.png)
 
-3. Using the **Save as** option save the solution file:
+3. Save the solution file using the **Save as** option:
 
    ![save file as](images/save-as.png)
 
