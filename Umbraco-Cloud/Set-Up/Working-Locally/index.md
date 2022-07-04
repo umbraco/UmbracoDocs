@@ -189,7 +189,7 @@ dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 
    ![Class library](images/class-library.png)
 
-5. Once the Class library has been added, you can see the project(s) that have been added in Solution Explorer:
+Once the Class library has been added, you can see the project(s) that have been added in Solution Explorer:
 
    ![New project added](images/new-project.png)
 
