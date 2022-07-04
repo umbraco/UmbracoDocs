@@ -26,7 +26,7 @@ We recommend using the following tools to work with a local clone of your Umbrac
 
 - Git needs to be installed on your computer
   - Example: [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
-- Visual Studio OR Visual Studio Code + IIS Express
+- Visual Studio
 
 ## Cloning a Umbraco Cloud Project
 
