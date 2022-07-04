@@ -128,7 +128,7 @@ If you want to add a solution file for your Cloud project, you can do it either:
 
 #### Using the Command Line
 
-Using the terminal of your choice, navigate to the root of the git repository of your Umbraco Cloud project and enter the following command.
+Using the terminal of your choice, navigate to the root of the git repository of your Umbraco Cloud project and enter the following command:
 
 ```cs
 dotnet new sln --name <MyAwesomeSolution>
