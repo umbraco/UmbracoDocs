@@ -51,6 +51,8 @@ That's it! Now you can work with your site locally as you would with any other U
 If you have multiple media items see our recommendations for working with [Media in Umbraco Cloud](../Media/).
 :::
 
-## Related Links
+:::links
+## Related Article
 
 - [Working with Visual Studio](Working-With-Visual-Studio/index-v8.md)
+:::
