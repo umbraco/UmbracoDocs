@@ -35,6 +35,20 @@ Manage transport security settings for your project. You can configure certain t
 
 Used to upload and bind your own custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
 
+## Public access
+
+By default, all Staging and Development environments on Umbraco Cloud projects are protected by *basic authentication* which require you to enter your Cloud credentials in order to view the frontend. You can disable/enable this authentication with one click on the **Public access** page.
+
+:::note
+Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher.
+
+On **Trial** projects, the basic authentication is enabled on the Live environment and cannot be removed unless the project is upgraded to a paid plan.
+
+Should you for some reason still have basic authentication enabled on your Live environment after upgrading your Trial, please reach out to our friendly support team, who will be able to help you move forward.
+:::
+
+On the **Public access** page you can also allow IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the allowed IPs.
+
 ## [Webhooks](../../Deployment/Deployment-webhook)
 
 On Umbraco Cloud projects, it is possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
