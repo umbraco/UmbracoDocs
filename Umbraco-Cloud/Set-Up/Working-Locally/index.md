@@ -80,8 +80,8 @@ The terminal output will show the application starting up and will include local
 
 ![Terminal Output](images/terminal-output.png)
 
-:::note
-We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following dotnet command:
+:::tip
+We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
 
 ```cs
 dotnet dev-certs https --trust
