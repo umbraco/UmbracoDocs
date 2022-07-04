@@ -24,7 +24,8 @@ To work with a local copy of your site, you'll need to use Windows with a local 
 To clone a Umbraco Cloud project, follow these steps:
 
 1. Open the project you wish to clone in the Umbraco Cloud Portal
-2. Click on the arrow next to the **Development** environment and select **Clone project**.
+2. Click on the arrow next to the **Development** environment.
+3. Select **Clone project**.
 
    ![Clone project option](images/clone-project-option.png)
 3. **Copy** the clone URL to copy the development environment's git repository endpoint.
