@@ -108,7 +108,7 @@ When working locally, we recommend using Visual Studio but you can use any other
 
 ### Adding a Solution File to your Cloud Project
 
-Working with Visual Studio, you will likely want a solution file, so you and your team can easily work with an Umbraco Cloud project and have the option to add additional projects.
+Working with Visual Studio, you will likely want a solution file, so you and your team can work with an Umbraco Cloud project and have the option to add additional projects.
 
 If you want to a solution File to your Cloud project, you can do it either:
 
