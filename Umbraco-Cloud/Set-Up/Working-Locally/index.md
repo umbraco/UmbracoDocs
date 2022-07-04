@@ -31,8 +31,7 @@ To clone a Umbraco Cloud project, follow these steps:
 4. **Copy** the clone URL to copy the Development environment's git repository endpoint.
 
     ![Copy the clone URL](images/copy-clone-url.png)
-4. Go to the location on your local machine where you wish to clone the project.
-5. Clone the repository using your favorite Git client. For example: [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), [Git Extensions](https://gitextensions.github.io), [GitKraken](https://www.gitkraken.com/), etc. For this article, I'll use **Git Bash**.
+5. Use your favorite Git client to clone down the project. In this guide, we will continue to use **Git Bash**.
 6. In the **Git Bash** terminal, type the following command:
 
    ```cs
