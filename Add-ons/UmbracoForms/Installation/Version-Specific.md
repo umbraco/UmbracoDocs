@@ -11,7 +11,7 @@ This page covers specific upgrade documentation for specific versions.
 
 Version 10 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
-To migrate to version 10 you should first update to the latest minor release of version 9. If you are upgrading from Umbraco 8, you can also update Forms to the latest minor version of Forms 8, and ensure you have the configuration in place for [storing form definitions in the database](../Developer/Forms-in-the-Database/index-v8.md).
+To migrate to version 10, you should first update to the latest minor release of version 9. If you are upgrading from Umbraco 8, update Forms to the latest minor version of Forms 8 and ensure you have the configuration in place for storing form definitions in the database. For more information, see the [Umbraco Forms in the Database](../Developer/Forms-in-the-Database/index-v8.md) article.
 
 Either will ensure you have all the database schema changes in place.
 
