@@ -302,7 +302,7 @@ If the endpoint of your custom route is considered a client-side request e.g. **
 
 Define your route as before, specifying the correct client type route:
 
-```
+```C#
 .WithEndpoints(u =>
 {
     u.EndpointRouteBuilder.MapControllerRoute("Sitemap Xml", "/sitemap.xml",
@@ -312,7 +312,7 @@ Define your route as before, specifying the correct client type route:
 
 You will need to configure your route request options within your **Startup.cs** class. For single routes:
 
-```
+```C#
 services.Configure<UmbracoRequestOptions>(options =>
 {
     options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");
@@ -321,7 +321,7 @@ services.Configure<UmbracoRequestOptions>(options =>
 
 Or it can handle multiple routes:
 
-```
+```C#
 services.Configure<UmbracoRequestOptions>(options =>
 {
     string[] allowList = new[] {"/sitemap.xml", ...};
