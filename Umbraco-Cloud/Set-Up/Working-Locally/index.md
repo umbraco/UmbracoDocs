@@ -9,7 +9,7 @@ To work with a local copy of your site, you'll need to use Windows with a local 
 
 - [Video Tutorial](#video-tutorial)
 - [Cloning an Umbraco Cloud Project](#cloning-an-umbraco-cloud-project)
-- [Running the Site Locally](#running-the-site-locally)
+- [Running the site Locally](#running-the-site-locally)
 - [Working with Visual Studio](#working-with-visual-studio)
     - [Adding a Solution File to your Cloud Project](#adding-a-solution-file-to-your-cloud-project)
     - [Adding Additional Projects to your Solution](#adding-additional-projects-to-your-solution)
