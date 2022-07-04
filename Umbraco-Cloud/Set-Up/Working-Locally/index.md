@@ -121,7 +121,7 @@ If you have more than "a few" media items, see our recommendations for working w
 
 Working with Visual Studio, you will likely want a solution file, so you and your team can work with a Umbraco Cloud project and have the option to add additional projects.
 
-If you want to add a solution File for your Cloud project, you can do it either:
+If you want to add a solution file for your Cloud project, you can do it either:
 
 - [Using the Command Line](#using-the-command-line)
 - [Using Visual Studio](#using-visual-studio)
