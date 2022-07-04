@@ -99,17 +99,17 @@ Click **Restore** to restore your site's content if any. Wait until this process
 
 When working locally, we recommend using Visual Studio but you can use any other development tool of your choice.
 
-1. Once the project has been cloned down, you will get a folder with files for your Umbraco Cloud project.
+Once the project has been cloned down, you will get a folder with files for your Umbraco Cloud project.
 
-    ![Umbraco 9 files](images/V9-files.png)
+![Umbraco 9 files](images/V9-files.png)
 
-2. Navigate to `src/UmbracoProject`. Here, you will find the files for your Umbraco installation.
+1. Navigate to `src/UmbracoProject`. Here, you will find the files for your Umbraco installation.
 
     ![Umbraco 9 files](images/V9-project-file.png)
 
-3. Open the `UmbracoProject.csproj` file in Visual Studio.
+2. Open the `UmbracoProject.csproj` file in Visual Studio.
 
-4. Build and run your solution in Visual studio.
+3. Build and run your solution in Visual studio.
 
 You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../../Deployment/index.md) documentation.
 
