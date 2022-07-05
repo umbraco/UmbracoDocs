@@ -8,7 +8,7 @@ _This section describes best practices with running Umbraco in production._
 
 ## What are runtime modes?
 
-Runetime modes are settings you can enable via your Appsettings.json, that enforces best practices for different styles of development or production
+Runtime modes are settings you can enable via your Appsettings.json, which enforce best practices for different styles of development or production.
 
 There are 3 available runtime modes in Umbraco:
 
@@ -18,7 +18,7 @@ There are 3 available runtime modes in Umbraco:
 
 ## BackofficeDevelopment mode
 
-BackofficeDevelopment mode is the default behavior for Umbraco, and does not enforce any settings at all
+BackofficeDevelopment mode is the default behavior for Umbraco and it does not enforce any settings at all.
 
 # Development mode
 
