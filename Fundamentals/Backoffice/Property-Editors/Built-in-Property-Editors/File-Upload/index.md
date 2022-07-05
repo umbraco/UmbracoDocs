@@ -78,6 +78,8 @@ See the example below to see how a value can be added or changed programmaticall
 @inject IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider;
 @inject IContentService Services;
 @inject IJsonSerializer _serializer;
+@inject MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
+
 @{
    // Get access to ContentService
     var contentService = Services;
@@ -105,8 +107,7 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a media file
     var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
-    media.SetValue(_mediaFileManager, _shortStringHelper, _contentTypeBaseServiceProvider, _serializer, Constants.Conventions.Media.File, filename, responseStream);
-
+    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, Constants.Conventions.Media.File, filename, responseStream);
     // Save the created media 
     mediaService.Save(media);
 
