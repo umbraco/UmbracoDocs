@@ -146,6 +146,10 @@ Remove the following files and folders *manually* from your local project:
 * `/umbraco/config/lang`
 * `/App_Plugins/UmbracoForms`
 
+Furthermore make the following change in these two files in Umbraco Forms:
+* Change `schema` to `Schema` in `/Views/Partials/Forms/Export/excel.cshtml` (and any custom exports).
+* Change `Html.SetFormThemeCssFile(Model, "~/App_Plugins/UmbracoForms/Assets/themes/default/style.css")` to `Html.SetFormThemeCssFile("~/App_Plugins/UmbracoForms/Assets/themes/default/style.css")` in `/Views/Partials/Forms/Themes/default/Form.cshtml` (any custom themes overriding default form view).
+
 By default, Umbraco Deploy will create an SQLite database. If you want to re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring). 
 
 Build and run your project locally to verify the Umbraco 10 upgrade.
@@ -157,8 +161,9 @@ Build and run your project locally to verify the Umbraco 10 upgrade.
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
 1. Remove the folders mentioned above on the **Development** environment using [KUDU](../../Set-Up/Power-Tools/index.md) from the `repository` and `wwwroot` folders.
-2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
-3. Test **everything** on the **Development** environment.
+2. In `repository` folder also make the two changes regarding Umbraco Forms in `excel.cshtml` and `Form.cshtml` mentioned previously.
+3. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
+4. Test **everything** on the **Development** environment.
 
 We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues on to your Live environment.
 
