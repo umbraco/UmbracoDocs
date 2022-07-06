@@ -125,9 +125,9 @@ For this tutorial we will create an image gallery editor using [Lit](https://lit
 * Name it **Image Gallery**.
 * Change the alias to `my-image-gallery`.
 
-::note
+:::note
 The alias is used as the custom element tag name and must be unique. By choosing a prefix that is less likely to used by any other HTML element, in this case `my-`, there is less chance for running into conflicts.
-::
+:::
 
 ![A custom grid editor for creating an image gallery](images/create-new-grid-editor.png)
 
@@ -328,9 +328,9 @@ We will also need to add a `click` event to the button so it will show the dialo
 <button type="button" class="btn-reset placeholder" @click=${() => this.showPicker()}>
 ```
 
-::note
+:::note
 Clicking the button in preview mode does nothing. This is because of a limitation when previewing where we do not have access to the full backoffice. Saving and testing on a Content item should work.
-::
+:::
 
 * Click **Save**.
 * Go back to the content page.
@@ -464,9 +464,9 @@ With the JSON above we are adding a `properties` object containing a `url` prope
 
 We now have an array where each item has the URL to the picked media item.
 
-::note
+:::note
 While it is not necessary to define all properties in the JSON Schema, it is highly recommended as the schema is also used for validating the editor data when saving.
-::
+:::
 
 Besides the `uri-reference` format there's also `richtext`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `richtext` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
