@@ -16,7 +16,7 @@ Umbraco cloud repositories are only deployment repositories and should not be us
 
 ## A source control repository with your own code
 
-Source control is a way to control changes to files and directories. You can keep a record of changes and revert to specific versions of a file in the event you would like to back up to an earlier time. A source control repository is used as the single source of truth that has the latest version of your project source code with all the git branches.
+Source control is a way to control changes to files and directories. You can keep a record of changes and revert to specific versions of a file in the event you would like to back up to an earlier time. A source control repository is used as the single source of truth which has the latest version of your project source code with all the git branches.
 
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), CVS, Mercurial, etc.
 
