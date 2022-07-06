@@ -144,9 +144,10 @@ Remove the following files and folders *manually* from your local project:
 * `/umbraco/UmbracoInstall`
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
-* `/App_Plugins/UmbracoForms`
 
-By default, Umbraco Deploy will create an SQLite database. If you want to re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring). 
+If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+
+By default, Umbraco Deploy will create an SQLite database. If you want to re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring).
 
 Build and run your project locally to verify the Umbraco 10 upgrade.
 
@@ -174,7 +175,8 @@ The files are:
 * `/umbraco/UmbracoInstall`
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
-* `/App_Plugins/UmbracoForms`
+
+If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
 They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
 
