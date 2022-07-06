@@ -1,5 +1,6 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
+versionTo: 9.0.0
 ---
 
 # Searchable Trees (ISearchableTree)
@@ -8,7 +9,7 @@ When you type a search term into the Umbraco backoffice search field, you'll see
 
 ![Content Section Dashboards](images/backoffice-search-v8.png)
 
-The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
+The results are grouped by 'Section Tree' e.g. Content, Media, Document Types. Each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
 You can create your own search mechanisms for your own custom sections or replace the default search implementation for a particular section tree.
 
@@ -43,7 +44,7 @@ namespace My.Website
         ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
         /// </param>
         /// <returns></returns>
-        Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
+        IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
     }
 }
 ```
@@ -53,14 +54,13 @@ Your implementation needs to return an IEnumerable of `SearchResultEntity` items
 ```csharp
 public class SearchResultEntity : EntityBasic
 {
-    public SearchResultEntity() {
-        /// <summary>
-        /// The score of the search result
-        /// </summary>
-        [DataMember(Name = "score")]
-        public float Score { get; set; }
-    };
+    public SearchResultEntity();
 
+    /// <summary>
+    /// The score of the search result
+    /// </summary>
+    [DataMember(Name = "score")]
+    public float Score { get; set; }
 }
 ```
 
@@ -68,13 +68,12 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 #### Example implementation of ISearchableTree
 
-If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the [custom tree example](../trees.md)) then we could implement searchability by creating the following C# class in our site:
+If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees.md)) then we could implement searchability by creating the following C# class in our site:
 
 ```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Trees;
@@ -85,7 +84,7 @@ namespace Umbraco.Docs.Samples.Web.Trees
     {
         public string TreeAlias => "favouriteThingsAlias";
 
-        public async Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string searchFrom = null)
+        public IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
         {
             // your custom search implementation starts here
             Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
@@ -102,24 +101,23 @@ namespace Umbraco.Docs.Samples.Web.Trees
             foreach (var matchingItem in matchingItems)
             {
                 // Making up the Id/Udi for this example! - these would normally be different for each search result.
-                searchResults.Add(new SearchResultEntity()
-                {
-                    Id = 12345,
-                    Alias = "favouriteThingItem",
-                    Icon = "icon-favorite",
-                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"),
-                    Name = matchingItem.Value,
-                    ParentId = -1,
-                    Path = "-1,12345",
-                    Score = 1.0F,
-                    Trashed = false,
-                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"))
+                searchResults.Add(new SearchResultEntity() { 
+                    Id = 12345, 
+                    Alias = "favouriteThingItem", 
+                    Icon = "icon-favorite", 
+                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), 
+                    Name = matchingItem.Value, 
+                    ParentId = -1, 
+                    Path = "-1,12345", 
+                    Score = 1.0F, 
+                    Trashed = false, 
+                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1")) 
                 });
             }
             // Set number of search results found
-            var totalFound = matchingItems.Count();
-            // Return your results
-            return new EntitySearchResults(searchResults, totalFound);
+            totalFound = matchingItems.Count();
+            // Return your IEnumerable of SearchResultEntity
+            return searchResults;
         }
     }
 }
@@ -129,13 +127,13 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco automatically finds any implementation of `ISearchableTree` in your site and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias.
+Umbraco automatically finds any implementation of `ISearchableTree` in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two `ISearchableTree` implementations trying to search the 'same' TreeAlias, it's *one* `ISearchableTree` per TreeAlias!
 
 ## Replacing an existing Section Tree Search
 
 Perhaps you want to change the logic for searching an existing section of the site, (why? - well you might have a 'company name' property on a MemberType in the Member section, and you want searches for that company name to filter the members who work there, the default implementation will only search on Member Name).
 
-Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud-hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
+Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
 
 ### Example
 
