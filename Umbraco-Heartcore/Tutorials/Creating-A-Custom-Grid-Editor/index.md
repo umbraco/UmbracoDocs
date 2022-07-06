@@ -6,7 +6,16 @@ meta.Description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore
 
 # Custom Grid Editors in Umbraco Heartcore
 
-In this tutorial we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
+In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
+
+## Content
+
+* [Create a Document Type and Grid configuration](#create-a-document-type-and-grid-configuration)
+* [A look at a default grid editor](#a-look-at-a-default-grid-editor)
+* [Create a custom grid editor](#create-a-custom-grid-editor)
+* [Using module aliases](#using-module-aliases)
+* [Describing the grid editor using JSON schema](#describing-the-grid-editor-using-json-schema)
+* [Limitations and best practices](#limitations-and-best-practices)
 
 ## Create a Document Type and grid configuration
 
