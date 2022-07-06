@@ -10,7 +10,7 @@ In this tutorial we will create a Custom Grid Editor using [custom elements](htt
 
 ## Create a Document Type and grid configuration
 
-First, we will need to create a Document Type containing the Grid Layout property editor. 
+First, we will need to create a Document Type containing the Grid Layout property editor.
 
 * Go to the **Settings** section.
 * Create a new Document Type called **Grid Page**.
@@ -40,7 +40,7 @@ To verify the configuration follow these steps:
 
 ![A content node based on the Grid Page Document Type](images/my-grid-page.png)
 
-Try choosing a layout, add a row and click **Add content**. Here we' wil see that we have a couple of editors to choose from.
+Try choosing a layout, add a row and click **Add content**. Here we will see that we have a couple of editors to choose from.
 
 ![List of available Grid Editors](images/choose-grid-editor.png)
 
@@ -111,7 +111,7 @@ For this tutorial we will create an image gallery editor using [Lit](https://lit
 ![The final image gallery grid editor](images/image-gallery-grid-editor.png)
 
 * Go to the **Settings** section.
-* Create a new **Grid Editor**. 
+* Create a new **Grid Editor**.
 * Choose an icon.
 * Name it **Image Gallery**.
 * Change the alias to `my-image-gallery`.
@@ -171,8 +171,6 @@ export default class extends LitElement {
 `
 
   render() {
-    const items = this.value || []
-
     return html`<div class="container">
       <button class="add-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -276,7 +274,7 @@ Let's save the editor and see how it looks when adding it to the a content item.
 
 ![The first version of the Image Gallery grid editor](images/image-gallery-content-item-first-draft.png)
 
-We now have the **Add image** button rendering, but clicking it does nothing. Let's do something about that. 
+We now have the **Add image** button rendering, but clicking it does nothing. Let's do something about that.
 
 * Go back to the **Settings** section.
 * Click on the **Image Gallery** Grid Editor.
@@ -292,19 +290,19 @@ This imports the `mediaPicker` function from the [backoffice bridge](https://git
 We will add another function before the `render` function:
 
 ```javascript
-  showPicker() {
-    mediaPicker.show({
-      disableFolderSelect: true,
-      onlyImages: true,
-      showDetails: true,
-      submit: (items) => {
-        const selected = items[0]
-        if(!this.value) this.value = []
-        this.value.push(({ url: selected.udi, ...selected }))
-        this.requestUpdate('value')
-      }
-    })
-  }
+showPicker() {
+  mediaPicker.show({
+    disableFolderSelect: true,
+    onlyImages: true,
+    showDetails: true,
+    submit: (items) => {
+      const selected = items[0]
+      if(!this.value) this.value = []
+      this.value.push(({ url: selected.udi, ...selected }))
+      this.requestUpdate('value')
+    }
+  })
+}
 ```
 
 This will open the Media Picker with a configuration that only allows selecting images and showing the detail view, which allows us to enter an alt text, caption and choose a focal point.
@@ -333,7 +331,28 @@ We should now see the image overlay.
 
 ![Select media overlay shown when clicking the Add image button](images/select-media-overlay.png)
 
-Selecting an image does not currently do anything. Let's do something about that. Lets go back to the grid editor code in the **Settings** section.
+Selecting an image does not currently render anything. Let's do something about that. Go back to the grid editor code in the **Settings** section.
+
+Update the `render()` function with the following
+
+```javascript
+render() {
+  const items = this.value || []
+
+  return html`<div class="container">
+    ${items.map(image => html`<umbh-image width="200" height="200" udi=${image.udi} alt=${image.altText} .focalPoint=${image.focalPoint}></umbh-image>`)}
+    <button class="add-button" @click=${() => this.showPicker()}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M246.486 299.31l-85.604-91.047-58.21 107.66v29.658h289.12c-36.821-31.753-114.476-99.682-114.476-99.682l-30.83 53.411zM347 230.786c16.062 0 29.073-13 29.073-29.06 0-16.04-13.012-29.062-29.073-29.062-16.019 0-29.038 13.021-29.038 29.062 0 16.06 13.019 29.06 29.038 29.06zM37.74 102.699v306.569h434.688V102.699H37.74zm396.082 267.916H77.635l-.016-228.033h354.928v.017h1.275v228.016z"></path>
+      </svg>
+      <div>Add image</div>
+    </button>
+  </div>`
+}
+```
+
+We assign the editor value to a local variable `items`, if `this.value` is `null` or `undefined` we assign an empty array.
+Then in the HTML we are now looping over the items and returning an `umbh-image` for each item. `umbh-image` is a custom element included with the backoffice bridge, it takes an `udi` and renders an images based on that.
 
 Go back to the **Content** section try to add some images to a page using the editor.
 
@@ -370,7 +389,7 @@ By using the same alias in all our editors, we can ensure that only one version 
 
 ## Describing the grid editor using JSON schema
 
-Now that we have a working editor, let's add a couple of images to our page. When done, click **Save and publish**. 
+Now that we have a working editor, let's add a couple of images to our page. When done, click **Save and publish**.
 
 Note down the **Id** from the **Info** tab. We will need that in a bit.
 
@@ -392,7 +411,7 @@ Looking at the default JSON schema we can see that the type is set to `string`. 
 
 * Change the `type` from `string` to `array`
 * Add an `items` property containing a `type: object` property.
- 
+
 The schema should now look like this:
 
 ```json
@@ -405,13 +424,13 @@ The schema should now look like this:
 }
 ```
 
-Let's go back to the API Browser, type the same URL as before and click **Go!**. 
+Let's go back to the API Browser, type the same URL as before and click **Go!**.
 
 Inspecting the output, we can already see an improvement. The value is now returned as an array which is already much better.
 
 ![Response from the API with the grid content property returned as an array](images/api-browser-array-output.png)
 
-Remember the `url` property stored earlier? Lets make it return a URL instead of a UDI. 
+Remember the `url` property stored earlier? Let's make it return a URL instead of a UDI.
 
 * Go back to the Grid Editor schema.
 * Update it to the following:
@@ -450,5 +469,5 @@ To make your custom editors less likely to break with future updates, do not use
 
 If the library is missing any functionality raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
 
-Try to avoid relying on backoffice CSS-classes. Instead we recommend creatinh isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
+Try to avoid relying on backoffice CSS-classes. Instead we recommend creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
 
