@@ -10,12 +10,7 @@ _This guide will help you get set up quickly using Examine with minimal configur
 ## Performing a search
 
 :::note
-In the coming examples, the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your existing site. You can use the following `dotnet add package` command to install the package:
-
-```
-dotnet add package Umbraco.TheStarterKit
-```
-:::
+In the coming examples, the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your existing site. You can use the following command to install the package: `dotnet add package Umbraco.TheStarterKit`
 
 The starter kit comes with some Templates, Document Types, and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as many more complex searches are possible with Examine.
 
