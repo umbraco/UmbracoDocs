@@ -78,7 +78,7 @@ The following options may suit your needs:
     - `/umbraco/config/lang`
     - `/umbraco/config/appsettings-schema.json`
 
-10. If using Umbraco Forms, also review and update the according to the [upgrade guide](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10.
+10. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
 11. Build and run your project to finish the installation of Umbraco 10.
 
