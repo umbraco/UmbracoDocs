@@ -77,7 +77,7 @@ Finally, to use your `UmbracoStandardOwinStartup` class during startup, update t
 </appSettings>
 ```
 
-If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco backoffice under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
+If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco backoffice under a specific user in user management by setting the name and username to be the active directory username. Making username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
 
 ```xml
 <usernameIsEmail>false</usernameIsEmail>
