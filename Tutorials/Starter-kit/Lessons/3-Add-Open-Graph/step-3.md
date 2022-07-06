@@ -1,15 +1,11 @@
 ---
 versionFrom: 9.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph - Step 3
 
 Next step is to get the Open Graph code rendered on the website. This is done in the `head` section of the HTML, so you need to find the template for this.
-
-:::note
-This lesson has not been verified against the latest version of Umbraco.
-:::
 
 In the `Starter Kit` the head is placed in the Master Template, which is responsible for wrapping all the other templates.
 
