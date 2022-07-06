@@ -118,6 +118,23 @@ namespace MyNamespace
 }
 ```
 
+You will then need to register your component:
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+namespace MyNamespace
+{
+    public class MyComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddComponent<MyComponent>();
+        }
+    }
+}
+```
+
 Then, you can render the bundles by the bundle name in a view template file:
 
 ```csharp
