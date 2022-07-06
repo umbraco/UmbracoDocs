@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Repositories in an Umbraco cloud Project
 
-Each Umbraco cloud Project can have multiple environments: Development, Staging, and Live depending on your cloud project plan. Each environment has its own git repository that is hosted on Azure. Ideally, your Umbraco Cloud setup should look like this:
+Each Umbraco cloud Project can have multiple environments: Development, Staging and Live depending on your cloud project plan. Each environment has it's own git repository that is hosted on Azure. Ideally, your Umbraco Cloud setup should look like this: 
 
 - [A source control repository with your own code](#a-source-control-repository-with-your-own-code)
 - [A Umbraco Cloud source control repository with the locally cloned Umbraco project](#a-git-umbraco-cloud-source-control-repository-with-the-locally-cloned-umbraco-project)
