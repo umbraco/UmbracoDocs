@@ -15,10 +15,6 @@ If you don't want to use the creation date of blog posts, take this lesson to le
 
 ## [Add Open Graph Support](3-Add-Open-Graph/)
 
-:::note
-This lesson has not been verified against the latest version of Umbraco.
-:::
-
 With a few steps you can add support for Open Graph pages on the site.
 
 ## [Ask for help and join the community](4-Ask-For-Help-and-Join-The-Community/)

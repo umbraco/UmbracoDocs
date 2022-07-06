@@ -1,15 +1,11 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph
 
 With a few steps, we can add Open Graph to our pages.
-
-:::note
-This lesson has not been verified against the latest version of Umbraco.
-:::
 
 ## Outcome
 
