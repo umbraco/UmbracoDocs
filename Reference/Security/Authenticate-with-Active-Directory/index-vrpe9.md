@@ -5,7 +5,7 @@ versionTo: 8.18.4
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
 
-You'll need to create a new file to override the existing owin configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
+You'll need to create a new file to override the existing OWIN configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
 ```C#
 using Microsoft.Owin;
