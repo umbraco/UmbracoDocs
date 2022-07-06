@@ -77,8 +77,10 @@ The following options may suit your needs:
     - `/umbraco/UmbracoWebsite`
     - `/umbraco/config/lang`
     - `/umbraco/config/appsettings-schema.json`
-    - `/App_Plugins/UmbracoForms` (if you are using Umbraco Forms on your project)
-10. Build and run your project to finish the installation of Umbraco 10.
+
+10. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+
+11. Build and run your project to finish the installation of Umbraco 10.
 
 To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:
 
@@ -94,10 +96,6 @@ To:
 
 :::note
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
-:::
-
-:::note
-If using Umbraco Forms, the database should be on the latest minor version of Forms 8 (with form definitions stored in the database) or 9. See more details of the Forms upgrade [here](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md).
 :::
 
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
