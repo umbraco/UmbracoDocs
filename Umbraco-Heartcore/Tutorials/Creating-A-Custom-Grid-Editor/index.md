@@ -34,7 +34,7 @@ To allow the Document Type to be created in the tree we need to change the permi
 To verify the configuration follow these steps:
 
 * Go to the **Content** section.
-* Create a new page based on the **Grid Page** Document Type we just created.
+* Create a new page based on the **Grid Page** Document Type we created.
 * Give it a name.
 * Save the page.
 
@@ -444,7 +444,7 @@ Besides the `uri-reference` format there's also `richtext`. This is useful when 
 
 ## Limitations and best practices
 
-Currently there are some functionality and components that does not work well in the preview pane. This is mostly integrations with the backoffice like pickers and the Rich Text Editor. They do however still work when inserted on a page.
+Currently there are some functionality and components that does not work well in the preview pane. This includes integrations with the backoffice like pickers and the Rich Text Editor. They do however still work when inserted on a page.
 
 To make your custom editors less likely to break with future updates, do not use any of the backoffice javascript directly. Always use the [headless backoffice bridge](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
 
