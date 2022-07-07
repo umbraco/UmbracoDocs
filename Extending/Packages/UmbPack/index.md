@@ -13,7 +13,7 @@ UmbPack is an open source NuGet tool that can deploy packages to Our, and also h
 :::note
 **Are you using Umbraco 9+?**
 
-As of Umbraco 9 all packages needs to be installed through NuGet, and it is no longer to install packages from .zip files.
+As of Umbraco 9, packages can only be installed using NuGet and it is no longer possible to install packages from package zip files.
 
 In order to make your packages available for sites using the latest version of Umbraco, follow our guide on [Creating a NuGet package](../Creating-a-nuget-package/).
 :::
