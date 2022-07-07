@@ -220,6 +220,10 @@ namespace CustomWelcomeDashboardProject.Migrations
 
 ![Automatic package migration](images/embeded-resource.png)
 
+:::note
+Whenever the embedded package.xml file changes, the automatic package migration plan is executed again. This is due to the fact that the migration state is based on the file hash. Existing schema or content will not be overwritten in this process.
+:::
+
 #### Custom Package Migration
 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
@@ -295,6 +299,8 @@ Here we also added the ZIP file as an embedded resource to the package project.
 Whichever migration plan you choose to create, you will be able to see that your package has been installed after the migration is completed.
 
 ![Installed package](images/installed-package.png)
+
+When using a custom package migration plan, any changes to the plan will trigger all migrations again even those that have already run previously. This is due to the `IgnoreCurrentState` being set to `true` when changes are made to the plan. You can override this property and set it to `false` again to make it behave like regular migration plans and only run the migrations that have not yet been executed on the current environment.
 
 ### Attended/Unattended migration execution
 
