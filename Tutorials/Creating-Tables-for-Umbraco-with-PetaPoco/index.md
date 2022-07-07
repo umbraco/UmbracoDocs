@@ -1,13 +1,18 @@
 ---
 versionFrom: 7.0.0
+versionTo: 7.0.0
 versionRemoved: 8.0.0
-
 ---
+
 # Creating Tables in Umbraco with PetaPoco
 
 ## Overview
 
 This guide will take you through the steps needed to create tables in Umbraco using PetaPoco and the ability to access data in those tables.
+
+:::note
+Umbraco version 7 uses [PetaPoco](#what-is-peta-poco) and Umbraco 8 and above uses [NPoco](../../Extending/Database/index.md) to query the database.
+:::
 
 ## What is Peta Poco?
 

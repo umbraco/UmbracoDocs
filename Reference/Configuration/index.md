@@ -17,7 +17,7 @@ For more in depth information on the configuration pattern see Microsofts [Confi
 
 ## Managing Configuration
 
-You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution, fortunately, the `IConfiguration` pattern.
+You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution. To achieve this, the `IConfiguration` pattern can be used for this.
 
 With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with:
 

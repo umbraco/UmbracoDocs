@@ -44,6 +44,9 @@ To view the Data Type reference, go to the __Settings__ section and expand the _
 ![Content Picker References](images/viewing-data-type-reference.png)
 
 This gives you an overview of the Types that currently use the Data Type.
+
+Learn more about viewing references or implementing tracking in the [Tracking References](../../../Extending/Property-Editors/Tracking/) article.
+
 ### More information
 
 * [List of available Data Types](default-data-types.md)

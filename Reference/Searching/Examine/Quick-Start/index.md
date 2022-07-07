@@ -1,25 +1,21 @@
 ---
-versionFrom: 8.0.0
-versionTo: 8.0.0
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Quick start
 
-_This guide will help you get setup quickly using Examine with minimal configuration options. Umbraco ships Examine with 3 indexes: internal, external, and members. The internal index should not be used for searching when returning results on a public website because it includes content that has not been published yet. Instead you can use the external index to get up and running._
-
-:::note
-This document has been verified for Umbraco 8.
-
-If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
-:::
+_This guide will help you get set up quickly using Examine with minimal configuration options. Umbraco ships Examine with 3 indexes: internal, external, and members. The internal index should not be used for searching when returning results on a public website because it includes content that has not been published yet. Instead, you can use the external index to get up and running._
 
 ## Performing a search
 
-:::note
-In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
-:::
+In the coming examples, the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your existing site. You can use the following command to install the package: 
 
-The starter kit comes with some Templates, Document Types and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as much more complex searches are possible with Examine.
+```
+dotnet add package Umbraco.TheStarterKit
+```
+
+The starter kit comes with some Templates, Document Types, and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as many more complex searches are possible with Examine.
 
 We will make it possible to 'search' on the _People_ page, by adding a search bar to the template page: `people.cshtml` - add the following form at the top of the template, but underneath the `<nav>` element:
 
@@ -44,9 +40,9 @@ Right below the form, add the following:
 <div>
     @{
         var searchTerm = string.Empty;
-        searchTerm = string.IsNullOrEmpty(Request["query"])
+        searchTerm = string.IsNullOrEmpty(Context.Request.Query["query"])
             ? string.Empty
-            : Request["query"];
+            : Context.Request.Query["query"];
         if (searchTerm == string.Empty)
         {
             <p>Enter search term</p>
@@ -61,7 +57,7 @@ Right below the form, add the following:
 Here we are getting the request query from the form. If the string is empty we ask them to submit a term, otherwise we will perform the search.
 
 ### Examine Search Index
-To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
+To perform the search, we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access its corresponding `ISearcher`. We use the `ISearcher` to construct the query logic to execute and search the index.
 
 Umbraco ships with three indexes:
 * ExternalIndex - available to use for indexing published unprotected content.
@@ -70,11 +66,18 @@ Umbraco ships with three indexes:
 
 ([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
 
-You use a convenient service named the `ExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
+You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher. First, inject the `IExamineManager`:
+
+```
+@using Examine
+@inject IExamineManager ExamineManager;
+```
+ and then get a reference: 
+
 ```csharp
- if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
-    {
-        var searcher = index.GetSearcher();
+ if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
+{
+    var searcher = index.Searcher;
 ```
 ### Creating the Search Query
 With this in mind we begin to update the `else` condition with the following:
@@ -86,9 +89,9 @@ else
     //first we try to get the index, it is the ExternalIndex as we don't want to return unpublished things
     //it returns the index in the var index
     //be sure to add "@using Umbraco.Examine;" at the top of the view
-    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
+    if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
     {
-        var searcher = index.GetSearcher();
+        var searcher = index.Searcher;
         var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
         if (results.Any())
         {
@@ -135,21 +138,28 @@ Finally calling `.Execute()` at the end of the query logic will trigger the sear
 
 The final template looks like this:
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
-@using Umbraco.Examine
-@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<People>
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Examine
+@inject IExamineManager ExamineManager;
 @{
     Layout = "master.cshtml";
 }
-@helper SocialLink(string content, string service)
-{
-    if (!string.IsNullOrEmpty(content))
+@{
+    void SocialLink(string content, string service)
     {
-        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+        if (!string.IsNullOrEmpty(content))
+        {
+            ; //semicolon needed otherwise <a> cannot be resolved
+            <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+        }
     }
 }
+
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
 <section class="section">
+
     <div class="container">
         <!-- todo: implement department filter -->
         <!--
@@ -167,23 +177,25 @@ The final template looks like this:
                 <button>Search</button>
             </form>
         </div>
-
         <div>
             @{
                 var searchTerm = string.Empty;
-                searchTerm = string.IsNullOrEmpty(Request["query"])
+                searchTerm = string.IsNullOrEmpty(Context.Request.Query["query"])
                     ? string.Empty
-                    : Request["query"];
-
+                    : Context.Request.Query["query"];
                 if (searchTerm == string.Empty)
                 {
                     <p>Enter search term</p>
                 }
                 else
                 {
-                    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
+                    //perform the search
+                    //first we try to get the index, it is the ExternalIndex as we don't want to return unpublished things
+                    //it returns the index in the var index
+                    //be sure to add "@using Umbraco.Examine;" at the top of the view
+                    if(ExamineManager.TryGetIndex("ExternalIndex", out var index))
                     {
-                        var searcher = index.GetSearcher();
+                        var searcher = index.Searcher;
                         var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
                         if (results.Any())
                         {
@@ -194,7 +206,7 @@ The final template looks like this:
                                     {
                                         var node = Umbraco.Content(result.Id);
                                         <li>
-                                            <a href="@node.Url">@node.Name</a>
+                                            <a href="@node.Url()">@node.Name</a>
                                         </li>
                                     }
                                 }
@@ -210,10 +222,11 @@ The final template looks like this:
             }
         </div>
         <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Children)
+            @foreach (Person person in Model.Children<Person>())
             {
+
                 <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
+                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo?.Url()')"></div>
                     <div class="employee-grid__item__details">
                         <h3 class="employee-grid__item__name">@person.Name</h3>
                         @if (!string.IsNullOrEmpty(person.Email))
@@ -221,10 +234,10 @@ The final template looks like this:
                             <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
                         }
                         <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
+                            @{ SocialLink(person.FacebookUsername, "Facebook"); }
+                            @{ SocialLink(person.TwitterUsername, "Twitter"); }
+                            @{ SocialLink(person.LinkedInUsername, "LinkedIn"); }
+                            @{ SocialLink(person.InstagramUsername, "Instagram"); }
                         </div>
                     </div>
                 </div>

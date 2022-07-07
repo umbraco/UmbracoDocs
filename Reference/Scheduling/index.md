@@ -48,7 +48,7 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
             IProfilingLogger profilingLogger,
             ILogger<CleanUpYourRoom> logger,
             IScopeProvider scopeProvider)
-            : base(HowOftenWeRepeat, DelayBeforeWeStart)
+            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _runtimeState = runtimeState;
             _contentService = contentService;
@@ -91,6 +91,18 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 }
 
 ```
+:::note
+If you are using an Umbraco version before v9.4 you can't pass in an instance of `ILogger` in to the base constructor. See the code example below:
+
+```C#
+public CleanUpYourRoom(
+    ...)
+    : base(HowOftenWeRepeat, DelayBeforeWeStart)
+{
+    ...
+}
+```
+:::
 
 ### Registering with extension method
 

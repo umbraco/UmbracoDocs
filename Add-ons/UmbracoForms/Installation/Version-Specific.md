@@ -11,17 +11,31 @@ This page covers specific upgrade documentation for specific versions.
 
 Version 10 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
-To migrate to version 10 you should first update to the latest minor release of version 9. This will ensure you have all the database schema changes in place.
+To migrate to version 10, you should first update to the latest minor release of version 9. If you are upgrading from Umbraco 8, update Forms to the latest minor version of Forms 8 and ensure you have the configuration in place for storing form definitions in the database. For more information, see the [Umbraco Forms in the Database](../Developer/Forms-in-the-Database/index-v8.md) article.
 
-### Breaking changes
+Either way will ensure you have all the database schema changes in place.
 
-Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
-
-#### Views and client-side files
+### Views and client-side files
 
 Umbraco 10 distributes the views and client-side files as part of a Razor class library, distributed in the Umbraco.Forms.StaticAssets package.  This means these assets are no longer individual files available on disk. The advantage of this approach is that that avoids changes made to them by solution developers being inadvertently lost when the project is rebuilt.
 
 When upgrading from Forms 9, you should either first run a `dotnet clean`, or, after installing Forms 10, delete the `App_Plugins/UmbracoForms` folder.  This will ensure there aren't two copies of the `package.manifest` file, which would cause issues by registering duplicate property editors.
+
+For views, assuming you are using the default theme and templates, you should also remove the following folders and files (again, either via a `dotnet clean` before upgrading, or manually afterward):
+
+- `/Views/MacroPartials/InsertUmbracoFormWithTheme.cshtml`
+- `/Views/MacroPartials/RenderUmbracoFormScripts.cshtml`
+- `/Views/Partials/Forms/`
+
+If you have custom themes or other changes to the files in the `Views/Partials/Forms` folder, you should ensure those files remain.
+
+For example, with a custom email template, remove the file `Example-Template.cshtml` from the `/Views/Forms/Emails` folder but keep any custom templates.
+
+Similarly, if you have a custom theme, remove the `default` and `bootstrap3-horizontal` folders from the `/Views/Partials/Forms/Themes/` folder but keep any custom theme folders.
+
+### Breaking changes
+
+Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
 
 #### Configuration
 

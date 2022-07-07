@@ -38,16 +38,15 @@ public class MyContentFinder : IContentFinder
 
     public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
-        // Handle all requests beginning with /woot
         var path = contentRequest.Uri.GetAbsolutePathDecoded();
         if (path.StartsWith("/woot") is false)
         {
-            return false; // Not found
+            return Task.FromResult(false); // Not found
         }
-        
-        if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+
+        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
         {
-            return false;
+            return Task.FromResult(false);
         }
 
         // Have we got a node with ID 1234
@@ -55,12 +54,12 @@ public class MyContentFinder : IContentFinder
         if (content is null)
         {
             // If not found, let another IContentFinder in the collection try.
-            return false;
+            return Task.FromResult(false);
         }
-        
+
         // If content is found, then render that node
         contentRequest.SetPublishedContent(content);
-        return true;
+        return Task.FromResult(true);
     }
 }
 ```
@@ -180,25 +179,29 @@ namespace RoutingDocs.ContentFinders
             // Find the root node with a matching domain to the incoming request
             var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains?
-                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority 
-                || f.DomainName == $"https://{contentRequest.Uri.Authority}"
-                || f.DomainName == $"http://{contentRequest.Uri.Authority}");
-                
+                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
+                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
 
-            if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+            if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
             {
-                return false;
+                return Task.FromResult(false);
             }
+
+            if (umbracoContext.Content == null)
+                return new Task<bool>(() => contentRequest.PublishedContent is not null);
+
             var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
 
             if (siteRoot is null)
             {
-                return false;
+                return Task.FromResult(false);
             }
 
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode is not null)
             {
@@ -206,7 +209,7 @@ namespace RoutingDocs.ContentFinders
             }
 
             // Return true or false depending on whether our custom 404 page was found
-            return contentRequest.PublishedContent is not null;
+            return Task.FromResult(contentRequest.PublishedContent is not null);
         }
     }
 }

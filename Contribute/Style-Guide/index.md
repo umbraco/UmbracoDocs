@@ -60,13 +60,13 @@ The term `backoffice` has been seen spelled in many different ways, most commonl
 1. `back office`
 1. `back-office`
 
-This rule will kick in if you spell it as number 2 or 3 and suggest you spell it as number 1. For a full list of terms please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/valeStyle/Terms.yml).
+This rule will kick in if you spell it as number 2 or 3 and suggest you spell it as number 1. For a full list of terms please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/styles/UmbracoDocs/Terms.yml).
 
 ## Using Vale locally
 
 One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR, there is also a VS Code extension for it.
 
-First step to running Vale locally is to install it following [their documentation](https://errata-ai.github.io/vale/#installation).
+First step to running Vale locally is to install it following Vale's [Installation documentation](https://vale.sh/docs/vale-cli/installation/).
 
 Next you can open a command line tool in the documentation repo and run the following command:
 
@@ -86,8 +86,9 @@ At the end of the list of errors it will tell you the total amount of errors and
 
 ### VS Code extension
 
-Taking it even further there is an extension for Visual Studio Code that allows you to use Vale as you are writing documentation. It is called `vale` and can be downloaded via the VS Code Marketplace in your editor.
-To use it you will still have to install Vale on your computer which can be done following [their documentation](https://errata-ai.github.io/vale/#installation).
+Taking it even further there is an extension for Visual Studio Code that allows you to use Vale as you are writing documentation. It is called `vale-vscode` and can be downloaded via the VS Code Marketplace in your editor.
+
+To use it, you will still have to install `Vale Server` on your computer. For more information, see the [Vale + VS Code Integration](https://github.com/errata-ai/vale-vscode#vale--vs-code) article.
 
 The Vale extension will run automatically when you are in Markdown files in VS Code and will give warnings directly in the document as you write, based on the style rules set for the project. It looks like this:
 

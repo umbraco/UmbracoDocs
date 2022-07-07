@@ -83,30 +83,30 @@ Another case you might have is that you want your Partial View to be strongly ty
 ```
 ## Caching
 
-:::note
-The samples in the following section have not been verified against the latest version of Umbraco.
-:::
-
 You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
 ```csharp
-@Html.CachedPartial("MyPartialName", new MyModel(), 3600)
+@Html.CachedPartialAsync("MyPartialName", new MyModel(), 3600)
 ```
 
 The above will cache the output of your partial view for one hour (3600 seconds). Additionally, there are a few optional parameters you can specify to this method. Here is the full method signature:
 
 ```csharp
-IHtmlString CachedPartial(
-    string partialViewName,
-    object model,
-    int cachedSeconds,
-    bool cacheByPage = false,
-    bool cacheByMember = false,
-    ViewDataDictionary viewData = null,
-    Func<object, ViewDataDictionary, string> contextualKeyBuilder = null)
+IHtmlString CachedPartialAsync(
+    string partialViewName, 
+    object model, 
+    TimeSpan cacheTimeout, 
+    bool cacheByPage = false, 
+    bool cacheByMember = false, 
+    ViewDataDictionary viewData = null, 
+    Func<object, ViewDataDictionary, string>? contextualKeyBuilder = null)
 ```
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution. If this is not desired you can generate your own cache key to differentiate cache instances using the contextualKeyBuilder parameter
+
+:::note
+The samples below have not been verified against the latest version of Umbraco.
+:::
 
 To create multiple versions based on one or more viewData parameters you can do something like this:
 

@@ -362,6 +362,8 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 **Usage:**
 
 ```csharp
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Security;
 
 public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotification>
