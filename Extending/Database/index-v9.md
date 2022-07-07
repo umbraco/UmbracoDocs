@@ -284,13 +284,14 @@ It's also worth noting that components offer both `Initialize` and `Terminate` m
 
 ## Schema class and migrations
 
-**Important!** It is important to note that the `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration. Instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute. So you should choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
+**Important!** The `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration. Instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute. So you should choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
 
 Whilst this adds a level of duplication, it is important that migrations and the code/classes within a migration remain immutable. If the DTO was to be used for both, it could cause unexpected behaviour should you later modify your DTO used in your application but you have previous migrations expecting the DTO to be in its unmodified state.
 
 Once a snapshot has been created, and once your code has been deployed, the snapshot should never be changed directly. Instead, you should use further migrations to alter the database table into the state you require. This ensures that migrations can always be run in sequence and that each migration can expect the database to be in a known state before executing.
 
-When adding further migrations it is also important to note that if you need to reuse the schema class, it can be a good idea to duplicate this again in those particular migrations. You want the migrations to be immutable, so having separate classes in separate namespaces, reduces the risk of modifying a schema class from your initial migration.
+If you need to reuse the schema class for new migrations, it can be a good idea to duplicate the scema class again in those particular migrations. You want the migrations to be immutable, so having separate classes in separate namespaces, reduces the risk of modifying a schema class from your initial migration.
+
 
 ## Data stored in custom database tables
 
@@ -300,4 +301,4 @@ This however also means that if you do need to edit or display this data, it is 
 
 It also means that if you need this data to be transferred or kept synchronized between multiple sites or environments, it is up to you to handle this. Data stored in custom tables are not supported out of the box by add-ons such as Umbraco Deploy or Umbraco Courier and therefore will not be deployable by default.
 
-Figuring out how to manage data across multiple environments can be very different between individual sites and there is not one solution that fits all. Some sites may have automated database synchronization set up to ensure specific tables in multiple databases are always kept in sync, while others may be better off with scripts moving data around manually on demand.
+Figuring out how to manage data across multiple environments can be challenging, as there is not one solution that fits all. Some sites may have automated database synchronization set up to ensure specific tables in multiple databases are always kept in sync, while others may be better off with scripts moving data around manually on demand.
