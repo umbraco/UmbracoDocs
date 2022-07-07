@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.18.0
 meta.Title: "umbracoSettings.config options in Umbraco"
 meta.Description: "Reference on umbracoSettings.config options in Umbraco"
 ---
@@ -392,7 +393,6 @@ This setting is used for controlling whether or not to show the Umbraco login in
 <hideBackofficeLogo>false</hideBackofficeLogo>
 ```
 
-
 ## Security
 
 In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**, **`<hideDisabledUsersInBackoffice>`**, **`<allowPasswordReset>`**, **`<authCookieName>`** and **`<authCookieDomain>`**. These settings deal with backoffice users and settings for the backoffice authentication cookies.
@@ -545,7 +545,7 @@ Will not load the template from the database. If `false` the template might not 
 
 ### `<disableFindContentByIdPath>`
 
-when true, urls such as /1234 do _not_ find content with ID 1234.
+when true, urls such as /1234 do *not* find content with ID 1234.
 
 ### `<disableRedirectUrlTracking>`
 
@@ -577,19 +577,19 @@ Defines the Umbraco application url, i.e. how the server should reach itself. By
 />
 ```
 
-## KeepAlive
+## KeepAlive (Available on Umbraco version 8.6.0 and above)
 
 ```xml
-<keepAlive
-    disableKeepAliveTask="false"
-    keepAlivePingUrl="{umbracoApplicationUrl}/api/keepalive/ping"
-/>
+<keepAlive disableKeepAliveTask="false" keepAlivePingUrl="{umbracoApplicationUrl}/api/keepalive/ping" />
 ```
 
-### `<disableKeepAliveTask>`
+With the `keepAlive` element, you can configure two attributes:
 
-Allows you to disable the keep alive http calls
+- **disableKeepAliveTask**: Disables the periodic KeepAliveTask when set to `"true"`. Use this setting to disable the KeepAliveTask in case you already have an alternative. For example, Azure App Service has keep alive functionality built-in.
+- **keepAlivePingUrl**: The url of the KeepAlivePing action. By default, the url will use the umbracoApplicationUrl setting as the basis. Change this setting to specify an alternative url to reach the KeepAlivePing action. eg `http://localhost/umbraco/api/keepalive/ping` defaults to `"{umbracoApplicationUrl}/api/keepalive/ping"`.
 
-### `<keepAlivePingUrl>`
+:::note
+There is an `[OnlyLocalRequests]` attribute which verifies if the request to the `KeepAliveController.Ping` action came from the local machine.
 
-If you want to change the url you need to call to keep the site alive, update this property.
+If the request is made from an external source, Umbraco will return an HTTP 404 response.
+:::
