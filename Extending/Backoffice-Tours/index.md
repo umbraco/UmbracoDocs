@@ -15,13 +15,13 @@ They are managed in a JSON format and stored in files on disk. The filenames sho
 
 The tour functionality will load information from multiple locations.
 
-- **Core tours and custom tours**
+- **Core tours**
 
     The tour that ship with Umbraco are embedded into the CMS assemblies.
 
-- **Plugin tours**
+- **Custom tours**
 
-    When you want to include a tour with your custom plugin/package you can store the custom json tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index.md).
+    Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](../Packages/Creating-a-Package/index.md).
 
 ## The JSON Format
 
@@ -212,6 +212,12 @@ It is possible to hide/disable tours using a C# composer by adding to the TourFi
 
 Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
 
+:::note
+The option to filter tours based on the file names, `AddFilterByFile`, is currently not working.
+
+The [issue is reported](https://github.com/umbraco/Umbraco-CMS/issues/12667), and this document will be updated as soon as it has been resolved.
+:::
+
 ```c#
 using System.Text.RegularExpressions;
 using Umbraco.Cms.Core.Composing;
@@ -230,7 +236,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeTours
 
             // Filter any tours in the file that is custom-tours.json
             // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/
-            // OR at /Config/BackOfficeTours/
             builder.TourFilters()
                 .AddFilterByFile("custom-tours.json");
 
