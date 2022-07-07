@@ -1,17 +1,11 @@
 ---
 versionFrom: 8.0.0
-versionTo: 8.0.3
+versionTo: 8.18.4
 ---
-
-:::note
-The example works only in v8.0.x
-:::
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
 
-Umbraco 8.0.0 incorporated the previous [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package in to the core.
-
-You'll need to create a new file to override the existing owin configuration (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
+You'll need to create a new file to override the existing OWIN configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
 ```C#
 using Microsoft.Owin;
@@ -51,6 +45,7 @@ namespace MyApp
                         Services.EntityService,
                         Services.ExternalLoginService,
                         membershipProvider,
+                        Mapper,
                         UmbracoSettings.Content,
                         GlobalSettings
                     );
@@ -59,6 +54,39 @@ namespace MyApp
                 });
         }
     }
+
 }
 ```
 
+:::note
+If you are using an Umbraco version before v8.0.3 you can't pass in an instance of `Mapper` in to the base `Create` method. 
+:::
+
+The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
+
+```xml
+<appSettings>
+    <add key="ActiveDirectoryDomain" value="mydomain.local" />
+</appSettings>
+```
+:::tip
+One way to find your Active Directory Domain if you are logged into your domain is to open a command prompt and run `set logon` and use the value returned as the `LOGONSERVER` (not including any slashes).
+:::
+
+Finally, to use your `UmbracoStandardOwinStartup` class during startup, update this setting to Web.config:
+
+```xml
+<appSettings>
+    <add key="owin:appStartup" value="MyOwinStartup" />
+</appSettings>
+```
+
+If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco backoffice under a specific user in user management by setting the name and username to be the active directory username. Making username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
+
+```xml
+<usernameIsEmail>false</usernameIsEmail>
+```
+
+:::note
+If the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
+:::
