@@ -40,7 +40,7 @@ namespace MyApp
                                 //  by default this is '/signin-microsoft' but it needs to be changed to this
                                 options.CallbackPath = "/umbraco/";
                                 options.ClientId = "{your_client_id}";
-                                options.ClientSecret = "{your_client_secret}}";
+                                options.ClientSecret = "{your_client_secret}";
                             });
                     });
             });
