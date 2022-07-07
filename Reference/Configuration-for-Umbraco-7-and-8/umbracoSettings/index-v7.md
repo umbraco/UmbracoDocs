@@ -176,7 +176,7 @@ You can specify your own background image for the login screen here. The image w
 
 ## `<AllowedUploadFiles>` (Available on Umbraco versions 7.6.2 and above)
 
-If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
+If greater control is required than available from the above, this setting can be used to store an "allow list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
 
 ```xml
 <!-- If completed, only the file extensions listed below will be allowed to be uploaded. If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
