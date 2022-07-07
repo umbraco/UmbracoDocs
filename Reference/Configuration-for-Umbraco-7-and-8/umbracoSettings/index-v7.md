@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionRemoved: 8.0.0
+versionTo: 7.15.0
 meta.Title: "umbracoSettings.config options in Umbraco"
 meta.Description: "Reference on umbracoSettings.config options in Umbraco"
 ---
@@ -156,7 +156,7 @@ As stated in the comment below this setting caches media and member data. This p
 <UmbracoLibraryCacheDuration>1800</UmbracoLibraryCacheDuration>
 ```
 
-**`<EnablePropertyValueConverters>`**
+## `<EnablePropertyValueConverters>`** (Available on Umbraco versions 7.6.0 and above)
 
 Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../Templating/Modelsbuilder/index.md)
 
@@ -165,6 +165,29 @@ On new installs this set to true. When you are upgrading from a lower version th
 ```xml
 <EnablePropertyValueConverters>true</EnablePropertyValueConverters>
 ```
+
+## `<loginBackgroundImage>` (Available on Umbraco versions 7.6.0 and above)
+
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+
+```xml
+<loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+```
+
+## `<AllowedUploadFiles>` (Available on Umbraco versions 7.6.2 and above)
+
+If greater control is required than available from the above, this setting can be used to store an "allow list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
+
+```xml
+<!-- If completed, only the file extensions listed below will be allowed to be uploaded. If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
+<allowedUploadFiles></allowedUploadFiles>
+```
+
+## `<allowPasswordReset>` (Available on Umbraco versions 7.5.0 and above)
+
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. The feature is based on a method provided by ASP.NET Identity.
+
+By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to false.
 
 ## RequestHandler
 
@@ -199,6 +222,10 @@ then setup the domain and culture for the sites.
 **`<defaultRenderingEngine>`**
 Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is a flag to indicate to Umbraco what type of templates to create in the backoffice.
 
+**`<useAspNetMasterPages>`**
+
+This is a legacy setting and should not normally be changed. Enabled by default, you can turn off masterpages and go back and use **the old templating engine (from v3 of Umbraco)**. But it is in no way recommended to do so.
+
 **`<enableSkinSupport>`**
 This setting only affects skinning when using Webforms Masterpages.
 
@@ -218,7 +245,33 @@ The comment says it all :)
 
 ## Scripting
 
-The [`<scripting>` section](index-vpre6.0.0.md) is about legacy scripting and is by default not present in new versions.
+Scripting is a legacy setting and by default not present in new versions.
+
+This is a legacy setting which is used for the legacy Razor Macros (superseded by Partial View Macros in v4.10+), generally you won't need to modify this section. If you need custom razor macro converters you should use implementations of IRazorDataTypeModel instead of setting them in config.
+
+```xml
+<scripting>
+    <razor>
+        <!-- razor DynamicNode typecasting detects XML and returns DynamicXml - Root elements that won't convert to DynamicXml -->
+        <notDynamicXmlDocumentElements>
+            <element>p</element>
+            <element>div</element>
+            <element>ul</element>
+            <element>span</element>
+        </notDynamicXmlDocumentElements>
+        <dataTypeModelStaticMappings>
+            <!--
+        <mapping dataTypeGuid="00000000-0000-0000-0000-000000000000">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        <mapping documentTypeAlias="textPage" nodeTypeAlias="propertyAlias">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        <mapping dataTypeGuid="00000000-0000-0000-0000-000000000000" documentTypeAlias="textPage" nodeTypeAlias="propertyAlias">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        <mapping dataTypeGuid="00000000-0000-0000-0000-000000000000" documentTypeAlias="textPage">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        <mapping dataTypeGuid="00000000-0000-0000-0000-000000000000" nodeTypeAlias="propertyAlias">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        <mapping nodeTypeAlias="propertyAlias">Fully.Qualified.Type.Name.For.ModelBinder,Assembly.Name.Excluding.Dot.Dll</mapping>
+        -->
+        </dataTypeModelStaticMappings>
+    </razor>
+</scripting>
+```
 
 ## viewstateMoverModule
 
@@ -267,6 +320,10 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
 
 ## ScheduledTasks
 
+:::note
+This setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
+:::
+
 In this section you can add multiple scheduled tasks that should run at certain intervals.
 
 ```xml
@@ -279,8 +336,6 @@ In this section you can add multiple scheduled tasks that should run at certain 
 The scheduledTasks element consist of the following attributes:
 
 **baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: [http://issues.umbraco.org/issue/U4-5391](http://issues.umbraco.org/issue/U4-5391).
-
-Note: this setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
 
 For each task you want to run you should add a **`<task>`** element.
 
