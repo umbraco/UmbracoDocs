@@ -1,15 +1,15 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
-# Creating, Saving, and Publishing Content
+# Creating, Saving and Publishing Content Options
 
-In this section, you will get an overview of how to create a new page, save your content, and the options available for publishing and unpublishing the content.
+In this section, you will get an overview of how to create and save pages. You will also learn more about how to publish and unpublish your content, as well as how you can compare content between multiple environments. Finally, you will also get an introduction to how you can transfer your created content to another environment.
 
 ## Creating a New Page
 
-Select the parent page to create your new page. The parent page can be the home page or any of the sub-pages of the site. 
+Select the parent page to create your new page. The parent page can be the home page or any of the sub-pages of the site.
 
 If the parent page allows sub-pages underneath it, follow these steps:
 
@@ -97,6 +97,51 @@ To set up scheduled unpublishing, follow these steps:
 
     ![Schedualed unpublishing.](images/Schedule_Unpublishing_v9.png)
 5. Select **Schedule**.
+
+## Comparing Content between environments
+
+:::note
+**Compare** content is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
+:::
+
+Compare Content allows previewing content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
+
+You can see the **Summary Information** and **Field Comparison** values to understand what will change if you proceed to transfer the content to a higher environment or try restoring content to the current environment.
+
+To compare content between environments, follow these steps:
+
+1. Navigate to the page you want to compare.
+2. Select the arrow next to the **Save and Publish** button. Alternatively, you can right-click the content node or click the **Actions** drop-down.
+3. Select **Compare** to open the **Compare** window.
+
+    ![Compare option](images/Compare_option.png)
+4. **Choose the workspace** from the drop-down field.
+5. View the **Summary information**.
+6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
+7. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
+8. Restore the content from the higher environment using the **Partial restore** option.
+9. Click **Close** to continue editing the content node.
+
+    ![Comparing Content](images/Comparing_Content.png)
+
+## Transferring content
+
+:::note
+**Transfer now** is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
+:::
+
+You can transfer a specific content node directly to the higher environment without adding it to the **Queue for transfer**.
+
+To transfer content between environments, follow these steps:
+
+1. Navigate to the page you want to transfer.
+2. Select the arrow next to the **Save and Publish** button.
+3. Select **Transfer now**.
+
+    ![Transfer option](images/Transfernow_option.png)
+4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
+    ![Transfer Content](images/Transfer_Content.png)
+5. Click **Transfer now**.
 
 ---
 

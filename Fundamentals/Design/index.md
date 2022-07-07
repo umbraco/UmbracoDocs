@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Design
@@ -17,7 +17,7 @@ Querying and rendering published content.
 
 Querying and rendering media items.
 
-## [Partial Views](Partial Views/)
+## [Partial Views](Partial-Views/)
 
 Working with partial views in Umbraco's templates.
 

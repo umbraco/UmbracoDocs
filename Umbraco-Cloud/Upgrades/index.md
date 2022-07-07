@@ -6,19 +6,11 @@ versionFrom: 7.0.0
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
-:::note
-We are currently in the process of improving the Umbraco Cloud platform. This includes making some big changes to some of the key features the platform provides.
-
-You will [**need to ensure that your project(s) meet the minimum requirements**](Migrating-To-New-Infrastructure/index.md) in order to keep hosting them on Umbraco Cloud.
-
-On our website you can [learn more about the 'Future of Umbraco Cloud'](https://umbraco.com/blog/the-future-of-umbraco-cloud/) and if you have any questions about the process reach out to our friendly support team.
-:::
-
 ## What products are auto upgraded?
 
 * Umbraco CMS patch updates
 * Forms patch updates
-* Deploy / Courier patch updates
+* Deploy
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases if they do we will notify Umbraco Cloud users via the status page)
 
 When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](Minor-Upgrades) article for more details.
@@ -31,12 +23,12 @@ When minor upgrades are available, you will need a Development environment on yo
 * A product upgrade will be rolled out if:
   * A fix needs to be shipped due to a critical issue in any product
   * A patch version of Umbraco Core is ready for release
-  * A new version of Deploy / Courier is ready for release
+  * A new version of Deploy is ready for release
   * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to rollout an emergency product fix to fix a critical issue at any time
 
 :::note
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. E.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. E.g. if you are in the middle of upgrading to a new minor version, and one environment is running 8.6.x while another environment on the same project is running 8.7.x.
 :::
 
 ## The auto upgrade roll out process

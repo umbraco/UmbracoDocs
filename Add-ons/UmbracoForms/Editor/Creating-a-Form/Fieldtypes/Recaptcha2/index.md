@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # reCAPTCHA V2
@@ -12,15 +12,16 @@ You need to configure your site keys adding your public and private keys.
 You can configure the settings in `appSettings.json` file:
 
 ```json
-"Forms": {
-  "FieldTypes": {
+"Umbraco": {
+  "Forms": {
+    "FieldTypes": {
       "Recaptcha2": {
         "PublicKey": "",
         "PrivateKey": ""
       }
-   }
+    }
+  }
 }
-
 ```
 
 ## For version 8.x and below

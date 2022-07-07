@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Block List
@@ -463,7 +464,9 @@ public class Person
 After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
 
 ```csharp
-
+            @using Umbraco.Cms.Core.Services;
+            @using Umbraco.Cms.Core;
+            @using Umbraco.Cms.Core.Models;
             @inject IContentService Services;
             @inject IContentTypeService _contentTypeService;
 

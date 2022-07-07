@@ -1,8 +1,6 @@
 ---
-updated-links: false
-state: partial
 versionFrom: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
@@ -19,7 +17,7 @@ The tour functionality will load information from multiple locations.
 
 - **Core tours and custom tours**
 
-    The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. This is also the recommended location for storing your own tour files.
+    The tour that ship with Umbraco are embedded into the CMS assemblies.
 
 - **Plugin tours**
 

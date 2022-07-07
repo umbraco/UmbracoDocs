@@ -2,8 +2,7 @@
 meta.Title: "Users in Umbraco"
 meta.Description: "This guide will explain how to define, create, and manage users in the backoffice"
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 
 ---
 
@@ -46,7 +45,7 @@ By default, the User groups available to new users are **Administrators**, **Wri
 ## Creating a User Group
 
 :::note
-When creating a custom user group, remember to set a start node for content for the user group. If you don't assign a start node then users assigned to the user group will not be able to login to the backoffice.
+When creating a custom user group, remember to set a start node for content for the User Group. If you don't assign a start node then users assigned to the User Group will not be able to login to the backoffice.
 :::
 
 You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.

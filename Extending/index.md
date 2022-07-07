@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 product: "CMS"
 meta.Title: "Learn about extending the functionality of Umbraco"
 meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."

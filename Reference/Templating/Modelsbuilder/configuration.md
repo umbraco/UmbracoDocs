@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
-meta.Title: ModelsBuilder Configuration
-meta.Description:  Explanation of how to configure models builder 
+versionTo: 10.0.0
+meta.Title: "ModelsBuilder Configuration"
+meta.Description: "Explanation of how to configure models builder"
 ---
 
 # Configuration
@@ -10,10 +10,10 @@ meta.Description:  Explanation of how to configure models builder
 The following configuration option can be set in the application settings (in the `appsettings.json` file):
 
 * `Umbraco.CMS.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
-    * `Nothing`: Do not generate models.
-    * `InMemoryAuto`(default): Generate models in a dynamic in-memory assembly.
-    * `SourceCodeManual`: Generate models in `~/umbraco/models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
-    * `SourceCodeAuto`: Generate models in `~/umbraco/models` (but do not compile them) anytime a content type changes.
+  * `Nothing`: Do not generate models.
+  * `InMemoryAuto`(default): Generate models in a dynamic in-memory assembly.
+  * `SourceCodeManual`: Generate models in `~/umbraco/models` (but do not compile them) whenever the user clicks the "Generate models" button on the Models Builder dashboard in the Settings section.
+  * `SourceCodeAuto`: Generate models in `~/umbraco/models` (but do not compile them) anytime a content type changes.
 
 * `Umbraco.CMS.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Cms.Web.Common.PublishedModels`) specifies the generated models' namespace.
 
@@ -26,18 +26,19 @@ The following configuration option can be set in the application settings (in th
 * `Umbraco.CMS.ModelsBuilder.DebugLevel` (int, default is zero) indicates the debug level. Set to greater than zero to enable detailed logging. For internal / development use.
 
 ## Example Configuration
+
 The example below shows an example configuration using the SourceCodeManual mode.
 
 ```json
 {
-	"$schema": "https://json.schemastore.org/appsettings.json",
-	"Umbraco": {
-		"CMS": {
-			"ModelsBuilder": {
-				"ModelsMode": "SourceCodeManual"
-			}
-		}
-	}
+  "$schema": "https://json.schemastore.org/appsettings.json",
+  "Umbraco": {
+    "CMS": {
+      "ModelsBuilder": {
+        "ModelsMode": "SourceCodeManual"
+      }
+    }
+  }
 }
 ```
 

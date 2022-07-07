@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms configuration"
 meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
-state: complete
-verified-against: beta-1
 ---
 
 # Configuration
@@ -41,6 +40,7 @@ For illustration purposes, the following structure represents the full set of op
       "DisableDefaultWorkflow": false,
       "MaxNumberOfColumnsInFormGroup": 12,
       "DefaultTheme": "default",
+      "DefaultEmailTemplate": "Forms/Emails/Example-Template.cshtml",
       "Defaults": {
         "ManualApproval": false,
         "DisableStylesheet": false,
@@ -58,7 +58,8 @@ For illustration purposes, the following structure represents the full set of op
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false     // Note the typo here (see below).
+      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AppendQueryStringOnRedirectAfterFormSubmission": false,
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -101,6 +102,11 @@ This setting controls the maximum number of columns that can be created by edito
 
 ### DefaultTheme
 This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
+
+### DefaultEmailTemplate
+When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
+
+If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### Form default settings configuration
 
@@ -176,6 +182,12 @@ _Note:_ There is a typo in this setting where it has been named as `AllowEditabl
 Enable this feature ONLY if you understand the security implications.
 :::
 
+### AppendQueryStringOnRedirectAfterFormSubmission
+
+When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
+
+By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -189,6 +201,8 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 ### EnableAntiForgeryToken
 
 This setting needs to be a `true` or `false` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this option. Defaults to `true`.
+
+In certain circumstances, including hosting pages with forms in IFRAMEs from other websites, this may need to be set to `false`.
 
 ### SavePlainTextPasswords
 

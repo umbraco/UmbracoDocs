@@ -1,6 +1,4 @@
 ---
-state: partial
-updated-links: false
 versionFrom: 9.0.0
 versionTo: 9.1.2
 ---

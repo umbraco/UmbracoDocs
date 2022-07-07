@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Advanced techniques with Flexible Load Balancing
@@ -87,6 +88,7 @@ SQL Server Replica databases cannot be used as they are read-only without replac
 
 The configurations can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
 Below is shown how to do this from a JSON configuration source.
+
 ```json
 {
     "Umbraco": {

@@ -1,14 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
-state: complete
-verified-against: beta-1
 ---
 
 # Configuration for Umbraco Deploy
 
-All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Umbraco Deploy configuration follows this pattern, i.e.:
 
@@ -55,6 +54,9 @@ For illustration purposes, the following structure represents the full set of op
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
+            "ReloadMemoryCacheFollowingDiskReadOperation": false,
+            "AllowDomainsDeploymentOperations": "None",
+            "PreferLocalDbConnectionString": false
         }
     }
   }
@@ -120,7 +122,7 @@ There are four settings available:
 - `HttpClientTimeout`
 - `DatabaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timepsan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
@@ -174,5 +176,38 @@ For example, using the following settings, you will have an installation that ig
     "IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
+## Memory cache reload
+
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accomodate a cache clear after deployment, this workaround can be automated via the following setting:
+
+```json
+    "ReloadMemoryCacheFollowingDiskReadOperation": true,
+```
+
+By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
+
+## Deployment of culture & hostnames settings
+
+Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
+
+```json
+    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
+```
+
+To enable this, set the configuration value as appropriate for the types of domains you want to allow:
+
+- *Culture* - the language setting for the content, defined under "Culture"
+- *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
+- *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+
+Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
+
+## PreferLocalDbConnectionString
+
+When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
+
+For Umbraco 10, by default, a SQLite database is created.
+
+If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 

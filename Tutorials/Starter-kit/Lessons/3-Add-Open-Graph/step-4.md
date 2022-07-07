@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph - Step 4
@@ -80,6 +81,6 @@ If you do not have Starter Kit installed, or experience issues with the properti
 If your meta properties do not show up on social media, make sure to inspect source HMTL and make sure there are no inline HTML tags in `og:title`, `og:description` etc.
 :::
 
-**Pro tip:** In order to keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
+**Pro tip:** To keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
 
 [Previous](step-3.md) - [Next](summary.md)

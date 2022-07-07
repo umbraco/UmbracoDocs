@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Cookies
@@ -19,5 +20,17 @@ The below cookies are necessary while accessing the Umbraco Backoffice for funct
 | UMB-XSRF-V                 | Used to store the backoffice antiforgery token validation value.                                                  | Session    |
 | UMB-XSRF-TOKEN             | Set for angular to pass in to the header value for "X-UMB-XSRF-TOKEN"                                             | Session    |
 | TwoFactorRememberBrowser   | Default authentication type used for storing that 2FA is not needed on next login                                 | Session    |
+| UMB_SESSION                | Preserves the visitor's session state across page requests.                                                       | Session    |
 
-For information on the rest of the cookies, see the [Constants-Web.cs file on Github](https://github.com/umbraco/Umbraco-CMS/blob/5bfab13dc5a268714aad2426a2b68ab5561a6407/src/Umbraco.Core/Constants-Web.cs).
+The `UMB_SESSION` cookie is secure if you are using HTTPS pages. However, if you wish to secure the cookie in your code, add the following in the `Program.cs` file after `Build();`
+
+```cs
+services.AddSession(options =>
+    {
+        options.Cookie.Name = "UMB_SESSION";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    });
+```
+
+For information on the rest of the cookies, see the [Constants-Web.cs](https://github.com/umbraco/Umbraco-CMS/blob/v10/contrib/src/Umbraco.Core/Constants-Web.cs) file on Github.

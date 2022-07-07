@@ -2,9 +2,7 @@
 meta.Title: "Creating Forms"
 meta.Description: "Information on creating forms in Umbraco"
 versionFrom: 9.0.0
-state: complete
-verified-against: beta-3
-update-links: false
+versionTo: 10.0.0
 ---
 
 
@@ -20,7 +18,7 @@ In this example we'll create a basic contact form containing a name, email and m
 
 ### Creating the view model
 
-First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
+First, we're going to create the model for the contact form by adding a new class to the `/Models` folder (if the folder doesn't already exist, create it at the root of your website). Let's call it `ContactFormViewModel.cs`
 
 ```csharp
 namespace MyFirstForm.Models
@@ -67,7 +65,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder, name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
+Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder (if the folder doesn't already exist, create it at the root of the website). Name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

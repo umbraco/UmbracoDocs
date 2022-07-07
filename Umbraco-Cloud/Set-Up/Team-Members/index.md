@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Team Members in the Project Portal
@@ -42,7 +43,3 @@ You can see the details of your project invitation in the **Member(s) who still 
 ## [Technical Contacts](Technical-Contact.md)
 
 For us to reach the correct person when sending out information about server maintenance, you need to add a technical contact to your Umbraco Cloud project.
-
-## [Account Contacts](Accounts-Contact.md)
-
-For us to reach the correct person when sending out billing information, you need to add an account contact to your Umbraco Cloud project.

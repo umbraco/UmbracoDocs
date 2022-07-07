@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Default data types in Umbraco"
 meta.Description: "Learn about the default data types in Umbraco."
 ---

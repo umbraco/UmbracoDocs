@@ -32,7 +32,6 @@ This will sort the files by last edit time, and only show you the top 5 results.
 
 ## [Common issues](https://our.umbraco.com/documentation/Reference/Common-Pitfalls/)
 
-
 ## In addition to that, here are some things we see often
 
 ### Excessive indexing
@@ -49,8 +48,9 @@ Please be aware that using any Umbraco Service will also include the database, a
 Scheduled jobs can be very nice, but you have to think about how often they should run and how taxing they are on your sites performance. If for example you want to rebuild your cache every 5 minutes but it takes 6 minutes to do so you will run into a lot of trouble!
 
 - [Reference Umbraco 7](https://our.umbraco.com/documentation/Reference/Config/umbracoSettings/#scheduledtasks)
-- [Reference Umbraco 8](https://our.umbraco.com/documentation/Reference/Scheduling/) 
+- [Reference Umbraco 8](https://our.umbraco.com/documentation/Reference/Scheduling/)
 
 ### Other resources
+
 To debug your site further it is recommended to perform load tests to try to discover if certain pages have issues with many users.
 Additionally you can also use tools for profiling your page like dotTrace for example.

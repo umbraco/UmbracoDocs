@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 
@@ -7,19 +8,19 @@ versionFrom: 9.0.0
 
 ## Overview
 
-This is step 2 in our guide to building a property editor. This step continues work on the suggestion data type we built in [step 1](index-v9.md), but goes further to show how to add configuration options to our editor.
+This is step 2 in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in [step 1](index.md), but goes further to show how to add configuration options to our editor.
 
 ## Configuration
 
-An important part of building good property editors is to build something relatively flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
+An important part of building good Property Editors is to build something flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, which allow us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
-So an editor can be used several times, with different configurations, and that is what we will be working on now.
+An editor can be used again and again, with different configurations, and that is what we will be working on now.
 
-There are two ways to add configuration to the property editor. If in the previous step you chose to create the property editor using a `package.manifest` file, read the `package.manifest` section below. If you have chosen the `c#` variant, read the `c#` part of the article.
+There are two ways to add configuration to the Property Editor. If in the previous step you chose to create the property editor using a `package.manifest` file, read the `package.manifest` section below. If you have chosen the `C#` variant, read the `Csharp` part of the article.
 
-## package.manifest
+## Package.manifest
 
-To add configuration options to our suggestion data type, open the `package.manifest` file. Right below the editor definition, paste in the prevalues block:
+To add configuration options to our Suggestion Data Type, open the `package.manifest` file. Right below the editor definition, paste in the prevalues block:
 
 ```json
 ...
@@ -38,7 +39,7 @@ To add configuration options to our suggestion data type, open the `package.mani
             }
 ```
 
-## C# 
+## Csharp
 
 It is also possible to add configuration if you have chosen to create a property editor using C#. Create two new files in the `/App_Code/` folder and update the existing `Suggestion.cs` file to add configuration to the property editor.
 
@@ -101,11 +102,11 @@ namespace Umbraco.Cms.Core.PropertyEditors
 }
 ```
 
-So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
+So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the Data Type configuration for this editor.
 
-The label "Enabled?" uses the view "boolean", so this will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`
+The label "Enabled?" uses the "boolean" view. This will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`.
 
-Save the manifest, restart the application and have a look at the markdown data type in Umbraco now. You should now see that you have 1 configuration option:
+Save the file, rebuild the application and have a look at the Suggestions Data Type. You should see that you have one configuration option.
 
 ![An example of how the configuration will look](images/suggestion-editor-config.png)
 
@@ -128,13 +129,13 @@ and then at the end we add a getState method:
     $scope.getState = function () {
         
         //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-        if ($scope.model.config.isEnabled === "1") {
+        if ($scope.model.config.isEnabled) {
             return false;
         }
         return true;
     }
 ```
 
-See what's new? - the `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
+See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
 [Next - Integrating services with a property editor](part-3.md)

@@ -29,8 +29,6 @@ The `editor` object then has the following properties:
 | `validation` | object | No | Object describing required validators on the editor. |
 | `isReadOnly` | boolean | No | If set to true this makes the property editor read only. |
 
-
-
 ## Using a Package Manifest
 
 A package manifest is a file specific to your package or custom code, and it is always stored in a folder in `/App_Plugins/{YourPackageName}`, and with the name `package.manifest` :
@@ -128,9 +126,7 @@ The actual **Sir Trevor** property editor has some additional configuration. It'
 }
 ```
 
-
-
-## Using C#
+## Using Csharp
 
 The same property editor can be declared using C# instead using the `DataEditor` class and decorating the class with the `DataEditor` attribute:
 
@@ -185,7 +181,7 @@ Optionally one may also specify a third parameter, which is the priority of the 
 
 ### DataEditor class
 
-In the example above, the `SirTrevorEditor ` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
+In the example above, the `SirTrevorEditor` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
 
 The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a data type.
 

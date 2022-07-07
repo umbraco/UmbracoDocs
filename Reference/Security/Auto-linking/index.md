@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.3.0
+versionTo: 10.0.0
 keywords: oauth, security
 ---
 

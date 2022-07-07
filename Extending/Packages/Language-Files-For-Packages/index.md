@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
+versionTo: 10.0.0
 meta.Title: "Language file for packages"
 meta.Description: "Information on how to use language files to make your Umbraco package UI support multiple languages"
 ---

@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms Developer Documention"
 meta.Description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
 ---
@@ -23,7 +23,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 ## [Custom Markup](Custom-Markup/index.md)
 
-Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
+Customize your Forms your way. You have full control over your Form's HTML markup and styling.
 
 ## [Email Templates](Email-Templates/index.md)
 

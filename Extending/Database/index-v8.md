@@ -4,9 +4,11 @@ meta.Title: "Umbraco Database"
 meta.Description: "A guide to creating a custom Database table in Umbraco"
 ---
 
-# Creating a custom Database table
+# Creating a Custom Database Table
 
-In Umbraco it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes. Below you will find an example that sets up a database table by registering a [component in a composer](../../Implementation/Composing/index-v8.md) and then creating a migration plan and running the plan to add the database table to the database. The end result looks like this:
+In Umbraco, it is possible to add custom database tables to your site if you want to store additional data that should not be stored as normal content nodes.
+
+Below you will find an example that sets up a database table by registering a [component in a composer](../../Implementation/Composing/index-v8.md) and then creating a migration plan and running the plan to add the database table to the database. The end result looks like this:
 
 ![Database result of a migration](images/db-table.png)
 
@@ -115,7 +117,7 @@ namespace Umbraco.Web.UI
 }
 ```
 
-## Schema class and migrations
+## Schema Class and Migrations
 
 **Important!** It is important to note that the `BlogCommentSchema` class nested inside the migration is purely used as a database schema representation class and should not be used as a Data Transfer Object (DTO) to access the table data. Equally, you shouldn't use your DTO classes to define the schema used by your migration. Instead you should create a duplicate snapshot as demonstrated above specifically for the purpose of creating or working with your database tables in the current migration. The name of the class is not important as you will be overriding it using the TableName attribute. So you should choose a name that makes it clear for you and everyone else that this class is purely for defining the schema in this migration.
 
@@ -125,7 +127,7 @@ Once a snapshot has been created, and once your code has been deployed, the snap
 
 When adding further migrations it is also important to note that if you need to reuse the schema class, it can be a good idea to duplicate this again in those particular migrations. You want the migrations to be immutable, so having separate classes in separate namespaces, reduces the risk of modifying a schema class from your initial migration.
 
-## Data stored in custom database tables
+## Data stored in Custom Database Tables
 
 When storing data in custom database tables, this is by default not manageable by Umbraco at all. This can be great for many purposes such as storing massive amounts of data that you do not need to edit from inside the Umbraco backoffice. Decoupling part of your data from being managed by Umbraco as content can be a way of achieving better performance for your site. That way, it will no longer take up space in indexes and caches, and the Umbraco database which may not have the best structure for your type of data.
 

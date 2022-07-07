@@ -1,7 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: partial
-verified-against: alpha-3 
+versionTo: 10.0.0
 ---
 
 # IPublishedContent Property Access & Extension Methods

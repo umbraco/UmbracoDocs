@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Usage on your Umbraco Cloud project
@@ -11,6 +11,7 @@ On the Usage page, you will find an usage overview that displays your usage and 
 On the page you will also find top 10 for the bandwidth usage of your project that can give you important insight into where you can optimally optimize resource management.
 
 ## Usage overview
+
 The usage overview shows the bandwidth usage of the project this month, the size of the media library and the number of custom domains added to the project.
 In this overview you will also find the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
 
@@ -20,6 +21,7 @@ The usage shown is for the Live environment of your project as it is the usage i
 For _media storage_ it is the size of all files in the blob storage including the cache that is considered.
 
 ## Bandwidth Top 10's
+
 You will find a couple of top 10 for the bandwidth in the project's live environment.
 
 ### Top 10 - Bandwidth Usage Paths 

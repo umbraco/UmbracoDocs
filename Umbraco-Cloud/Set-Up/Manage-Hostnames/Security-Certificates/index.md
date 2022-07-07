@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Upload Custom Certificates Manually
@@ -32,6 +32,7 @@ The **`.pfx`** file can only contain one certificate. Each certificate can then 
 
 * Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
 * Enter the **Password** for your certificate.
+
     ![Add Manual Certificate](images/Add-Manual-Certificate.png)  
 * Click **Add**
 

@@ -38,7 +38,7 @@ There a lot of terminology here! Let's look at breaking those terms down:
 
 [Learn how to create a website with Umbraco](../../Tutorials/Creating-Basic-Site/)
 
-[Video: Create an Umbraco website](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/creating-an-umbraco-website/)
+[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI&list=PLgX62vUaGZsFBcq9eSJ_178rXgn82sJ-T)
 
 ## Other resources
 

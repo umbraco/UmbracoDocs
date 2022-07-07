@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Custom Umbraco Routes"
 meta.Description: "Setting up your own controllers and routes that exist alongside the Umbraco pipeline"
-state: complete
-verified-against: rc-1
-update-links: true
 ---
 
 # Custom MVC Routes
@@ -230,10 +228,6 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
 }
 ```
 
-:::note
-If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need to replace the use of **IUmbracoContextAccessor** in the **FindContent** method with **IUmbracoContextFactory**. There is a currently a bug in V9, all versions less than 9.4 are affected, where this fix won't work for mapping a client-side request to an Umbraco Controller - see [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details and hopefully news of a fix!
-:::
-
 We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested, to do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we just return the product root, but if it's product, we try to get the SKU from the route value `id`, and try to find the child node which matches the SKU and return that.
 
 Now there's only one last thing to do, we need to register our shop controller, if you're creating a controller for your own site you can do it in the `Configure` method of `Startup.cs` like so:
@@ -302,6 +296,64 @@ namespace RoutingDocs.Controllers
 ```
 
 With that we have our controller with a custom route within an Umbraco context.
+
+#### Client-Side Requests
+If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need to make a few changes to get this to work.
+
+Define your route as before, specifying the correct client type route:
+
+```C#
+.WithEndpoints(u =>
+{
+    u.EndpointRouteBuilder.MapControllerRoute("Sitemap Xml", "/sitemap.xml",
+        new { Controller = "SitemapXml", Action = "Index" });
+});
+```
+
+You will need to configure your route request options within your **Startup.cs** class. For single routes:
+
+```C#
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");
+});
+```
+
+Or it can handle multiple routes:
+
+```C#
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    string[] allowList = new[] {"/sitemap.xml", ...};
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        foreach (string route in allowList)
+        {
+            if (httpRequest.Path.StartsWithSegments(route))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    };
+});
+```
+In your **FindContent** method you should still be able to access and use **IUmbracoContextAccessor** through standard DI:
+
+```
+public IPublishedContent? FindContent(ActionExecutingContext actionExecutingContext)
+{
+    IUmbracoContext context = _umbracoContextAccessor.GetRequiredUmbracoContext();
+    IPublishedContent? content = context.Content?.GetAtRoot().FirstOrDefault();
+
+    return content;
+}
+```
+
+:::note
+There is currently a bug in all versions below 9.5, where this fix won't work for mapping a client-side request to an Umbraco Controller. See [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details. v9.5 fixes this issue and it's recommended to update to the latest version!
+:::
 
 #### Attribute routing with IVirtualPageController
 

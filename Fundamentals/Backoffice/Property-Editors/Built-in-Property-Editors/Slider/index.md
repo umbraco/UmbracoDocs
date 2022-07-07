@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Slider
@@ -34,7 +35,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 @if (Model.HasValue("multiValueSlider"))
 {
-    var value = Model.Value<Umbraco.Core.Models.Range<decimal>>("multiValueSlider");
+    var value = Model.Value<Umbraco.Cms.Core.Models.Range<decimal>>("multiValueSlider");
     <p>@(value.Minimum) and @(value.Maximum)</p>
 }
 ```
@@ -43,9 +44,9 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ```csharp
 // with a range off
-@if (Model.SingleRangeSlider != null)
+@if (Model.SingleValueSlider != null)
 {
-    var value = Model.SingleRangeSlider;
+    var value = Model.SingleValueSlider;
     <p>@value</p>
 }
 
@@ -65,6 +66,7 @@ See the example below to see how a value can be added or changed programmaticall
 ### With a range off
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
@@ -87,10 +89,11 @@ See the example below to see how a value can be added or changed programmaticall
 ### With a range on
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services.;
+    var contentService = Services;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -121,6 +124,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'singleValueSlider'

@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Special Property Type Aliases for Routing"
 meta.Description: "Describes special property type aliases which can be used to customise routing"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 # Special Property Type aliases for routing

@@ -1,11 +1,12 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Generate UDA files
 
 :::note
-If you are running Deploy 4+, we recommend you generate UDA files from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files).
+If you are running Deploy 4+, we recommend you generate Umbraco Deploy Artifact (UDA) files from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files).
 :::
 
 Sometimes our guides require you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
@@ -18,20 +19,25 @@ When you create something in the backoffice of your Umbraco Cloud project and hi
 
 The UDA file contains metadata and detailed information about the type that was created.
 
-Here's an example of what a UDA file looks like for a Content Page:
+Here's an example of what a UDA file looks like for a Blog Page:
 
 ```json
 {
-  "Name": "Content Page",
-  "Alias": "contentPage",
-  "DefaultTemplate": "umb://template/3b0e5e0899414c4387ed4bf919f2e254",
+  "Name": "Blog",
+  "Alias": "Blog",
+  "DefaultTemplate": "umb://template/fa51596e66574dc7b2839354be1c0ddf",
   "AllowedTemplates": [
-    "umb://template/3b0e5e0899414c4387ed4bf919f2e254"
+    "umb://template/fa51596e66574dc7b2839354be1c0ddf"
   ],
-  "Icon": "icon-article color-red",
+   "HistoryCleanup": {
+    "preventCleanup": false,
+    "keepAllVersionsNewerThanDays": null,
+    "keepLatestVersionPerDayForDays": null
+  },
+  "Icon": "icon-calendar-alt color-black",
   "Thumbnail": "folder.png",
   "Description": null,
-  "IsContainer": false,
+  "IsContainer": true,
   "Permissions": {
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
@@ -42,8 +48,37 @@ Here's an example of what a UDA file looks like for a Content Page:
     ]
   },
   "Parent": null,
-  "CompositionContentTypes": [],
-  "PropertyGroups": [],
+  "CompositionContentTypes": [
+    "umb://document-type/4ff4a1fc24db489abdd2532081dbc62f",
+    "umb://document-type/e24e6d11800547d99078219a2182f34f"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "964c16db-bf0b-4ffd-a993-423533cb5ad5",
+      "Name": "Settings",
+      "SortOrder": 0,
+      "Type": 0,
+      "Alias": "settings",
+      "PropertyTypes": [
+        {
+          "Key": "5ed407a1-9ab5-403e-b1dd-6405c2f3e421",
+          "Alias": "howManyPostsShouldBeShown",
+          "DataType": "umb://data-type/9d5ba2c5ed7a41f8b4549fc65f48752e",
+          "Description": null,
+          "Mandatory": true,
+          "Name": "How many posts should be shown?",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false,
+          "LabelOnTop": false,
+          "MemberCanEdit": false,
+          "ViewOnProfile": false,
+          "IsSensitive": false
+        }
+      ]
+    }
+  ],
   "PropertyTypes": [],
   "Udi": "umb://document-type/dd58f94c0b3341829186ec020cf06cfa",
   "Dependencies": [
@@ -59,11 +94,11 @@ Here's an example of what a UDA file looks like for a Content Page:
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "9.0.0-beta003"
+  "__version": "10.0.0-rc6"
 }
 ```
 
-This UDA file represents a Document Type with name **Content Page**. All dependencies for the document type is listed in the file and also metadata like `AllowedAtRoot` and `Icon`.
+This UDA file represents a Document Type with name **Blog**. All dependencies for the document type is listed in the file and also metadata like `AllowedAtRoot` and `Icon`.
 
 UDA files are generated for the following types:
 

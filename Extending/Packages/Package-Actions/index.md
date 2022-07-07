@@ -1,11 +1,16 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.0.0
 meta.Title: "Package actions"
 meta.Description: "Information on how to add actions to your Umbraco package"
 versionRemoved: 9.0.0
 ---
 
 # What are package actions?
+
+:::note
+This article is no longer valid if you are running Umbraco 9 or higher.
+:::
 
 Package actions are a way to perform common tasks while installing / uninstalling packages.
 Currently we have 2 actions available. If you need to perform more advanced installation routines, you will have to write your [own package action](custom-package-actions.md), which will then automatically be picked up by Umbraco.

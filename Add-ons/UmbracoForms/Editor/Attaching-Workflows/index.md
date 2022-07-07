@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Attaching Workflows
@@ -22,6 +22,8 @@ If a value is selected for **Go to page** it will be used to issue a redirect to
 If no value is selected, the message provided in **Message on submit** will be displayed to the user on the same page, instead of the form fields.  From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
 For either method, a developer can customize the page viewed after the form is submitted on the basis of the presence of a `TempData` variable with a key of `UmbracoFormSubmitted` and a value containing the Guid identifier for the submitted form.
+
+A similar `TempData` value is also available containing the GUID identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
 
 ## Adding a Workflow
 

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Rewrite rules on Umbraco Cloud
@@ -8,12 +9,11 @@ To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed 
 
 The rewrite rules should be added to the `<system.webServer><rewrite>` module in your projects `Web.config` file.
 
-```xml
-<!--
-If you wish to use IIS rewrite rules, see the documentation here:
-https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
--->
+:::note
+If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco 9](https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules) article.
+:::
 
+```xml
 <!--
 <rewrite>
     <rules></rules>

@@ -2,6 +2,7 @@
 state: partial
 updated-links: false
 versionFrom: 9.2.0
+versionTo: 10.0.0
 ---
 
 
@@ -47,6 +48,7 @@ The manifest can contain seven root collections, none of them are mandatory:
     "gridEditors": [],
     "parameterEditors": [],
     "dashboards": [],
+    "sections": [],
     "contentApps": [],
     "javascript": [],
     "css": []

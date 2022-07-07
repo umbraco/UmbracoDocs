@@ -11,9 +11,9 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Umbraco Forum](https://our.umbraco.com/forum/)
 
-[Umbraco Training](https://umbraco.com/training/)
+[Youtube: Umbraco Learning Base](https://www.youtube.com/c/UmbracoLearningBase)
 
-[Umbraco TV](https://umbraco.tv/)
+[Umbraco Training](https://umbraco.com/training/)
 
 [Contact Umbraco HQ](https://umbraco.com/contact-us/)
 

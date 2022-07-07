@@ -1,6 +1,6 @@
 ---
-versionFrom: 8.0.0
-needsv9Update: "true"
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 
@@ -38,14 +38,16 @@ A quick example of a content item that has a template that renders out a partial
 The MVC template markup for the document:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
 }
 
 <html>
 <body>
-    @foreach(var page in Model.Children.Where(x => x.IsVisible())){
+@foreach(var page in Model.Children.Where(x => x.IsVisible()))
+    {
         <div>
             @Html.Partial("ChildItem", page)
         </div>
@@ -66,7 +68,7 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 Normally you would create a partial view by using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you need to inherit from the correct view class, so do this instead:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyModel>
 ```
 
 By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
@@ -84,23 +86,27 @@ Another case you might have is that you want your Partial View to be strongly ty
 You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
 ```csharp
-@Html.CachedPartial("MyPartialName", new MyModel(), 3600)
+@Html.CachedPartialAsync("MyPartialName", new MyModel(), 3600)
 ```
 
 The above will cache the output of your partial view for one hour (3600 seconds). Additionally, there are a few optional parameters you can specify to this method. Here is the full method signature:
 
 ```csharp
-IHtmlString CachedPartial(
-    string partialViewName,
-    object model,
-    int cachedSeconds,
-    bool cacheByPage = false,
-    bool cacheByMember = false,
-    ViewDataDictionary viewData = null,
-    Func<object, ViewDataDictionary, string> contextualKeyBuilder = null)
+IHtmlString CachedPartialAsync(
+    string partialViewName, 
+    object model, 
+    TimeSpan cacheTimeout, 
+    bool cacheByPage = false, 
+    bool cacheByMember = false, 
+    ViewDataDictionary viewData = null, 
+    Func<object, ViewDataDictionary, string>? contextualKeyBuilder = null)
 ```
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution. If this is not desired you can generate your own cache key to differentiate cache instances using the contextualKeyBuilder parameter
+
+:::note
+The samples below have not been verified against the latest version of Umbraco.
+:::
 
 To create multiple versions based on one or more viewData parameters you can do something like this:
 

@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Frequently asked questions
@@ -76,7 +76,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8 and Umbraco 9 projects on .NET 5.0.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0 and Umbraco 10 projects on .NET 6.0.
 
 ---
 
@@ -109,7 +109,7 @@ You can find all the steps of the auto-upgrade process outlined in the [Upgrades
 
 Pending commits won't stop the auto-upgrade.
 
-### Is it OK to do manual updates? For example if a project on 7.4.3 is updated locally to 7.4.4, can we commit back to dev?
+### Is it OK to do manual updates? For example if a project on 9.4.3 is updated locally to 9.4.4, can we commit back to dev?
 
 Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
 
@@ -276,3 +276,7 @@ You can read more about database backups and how to perform these on Umbraco Clo
 #### Filesystem
 
 Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
+
+#### Blob Storage containers
+
+Umbraco Cloud keeps 35 days of snapshots of the Blob Storage container for disaster recovery purposes.
