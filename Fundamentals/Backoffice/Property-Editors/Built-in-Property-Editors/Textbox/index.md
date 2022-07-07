@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Textbox
@@ -12,7 +13,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-![Textbox Data Type Definition](images/Textbox-Setup-v8.png)
+![Textbox Data Type Definition](images/Textbox-Setup-v10.png)
 
 ## Content Example
 
@@ -43,7 +44,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 ```csharp
 @{
     // Perform an null-check on the field with alias 'pageTitle'
-    if (!string.IsNullOrWhiteSpace(Model.PageTitle))
+    @if (!Model.HasValue(Model.PageTitle))
     {
         // Print the value of the field with alias 'pageTitle'
         <p>@Model.PageTitle</p>
@@ -56,6 +57,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
@@ -87,6 +89,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
 

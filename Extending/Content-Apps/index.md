@@ -1,8 +1,6 @@
 ---
-versionFrom: 9.0.0
-verified-against: 9.0.0
-state: complete
-updated-links: true
+versionFrom: 9.2.0
+versionTo: 10.0.0
 meta.Title: "Content Apps"
 meta.Description: "A guide configuring content apps in Umbraco"
 ---
@@ -67,6 +65,9 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
+        "show": [
+        "+content/*" // show app for all content types
+      ]
     }
     ],
     // array of files we want to inject into the application on app_start
@@ -178,6 +179,8 @@ Here is an example where all types are taken intro consideration when limiting a
 When the 'show' directive is omitted then the app will be shown for all types.
 
 Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
+
+In this case the WordCounter app is only usable within the Content section so you have to exclude from all other types.
 :::
 
 ### Limiting according to User Role
@@ -202,7 +205,7 @@ When a role restriction is given in the manifest, it overrides any other restric
 
 ## C#: Creating a Content App
 
-This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App. When registering a Content App, the C# class needs to implement the `IComposer` interface as of Umbraco v9 `IUserComposer` interface is obsolete. Create a `WordCounter.cs` file with the following implementation:
+This is an example of how to create a Content App with C# and perform your own custom logic to show a Content App. Create a `WordCounter.cs` file with the following implementation: 
 
 ```csharp
 using System.Collections.Generic;
@@ -226,7 +229,7 @@ namespace My.Website
 
     public class WordCounterApp : IContentAppFactory
     {
-        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        public ContentApp? GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
@@ -243,7 +246,7 @@ namespace My.Website
             if (content.TemplateId is null)
                 return null;
                 
-            // Only show app on content with certin content type alias
+            // Only show app on content with certain content type alias
             // if (!content.ContentType.Alias.Equals("aliasName"))
             //    return null;
                 
@@ -257,6 +260,23 @@ namespace My.Website
             };
         }
     }
+}
+```
+
+You can register a content app in the `ConfigureServices` method in the `Startup.cs`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        // Register the content app
+        .AddContentApp<WordCounterApp>()
+        .Build();
+
 }
 ```
 
@@ -333,7 +353,7 @@ namespace My.Website
             if (content.TemplateId is null)
                 return null;
                 
-            // Only show app on content with certin content type alias
+            // Only show app on content with certain content type alias
             // if (!content.ContentType.Alias.Equals("aliasName"))
             //    return null;
                 

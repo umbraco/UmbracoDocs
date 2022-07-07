@@ -2,7 +2,7 @@
 meta.Title: "Creating media in Umbraco"
 meta.Description: "Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files."
 versionFrom: 8.14.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Creating media
@@ -18,6 +18,10 @@ Media in Umbraco is handled the same way as content. Instead of defining Documen
 - Video - used for uploading and storing video files.
 
 This means you don't have to define your own Media Types to start using the Media section. You have already got the tools for organizing and uploading the media.
+
+:::note
+If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](#creating-a-media-type). On [this page](default-media-types.md) you will find an overview of all new media types. 
+:::
 
 ## Creating a folder
 

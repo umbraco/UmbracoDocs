@@ -78,12 +78,12 @@ We can use similar overloads when working with ModelsBuilder, for example:
 
 ```csharp
 // For projects created before January 2020
-@model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
-@model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+@Model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
+@Model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 
 // For projects created after January 2020
-@model.ValueFor(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
-@model.ValueFor(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+@Model.ValueFor(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
+@Model.ValueFor(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 ```
 
 * Fall-back languages can be configured via the Languages tree within the Settings section.  Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.  It's possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.

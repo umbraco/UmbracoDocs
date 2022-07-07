@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Image Cropper
@@ -119,6 +120,10 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
+:::note
+The samples in this section has not been verified against the latest version of Umbraco.
+:::
+
 See the example below which is using a API controller to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
@@ -178,7 +183,7 @@ namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values
 }
 ```
 
-Using Modelsbuildee you can get the alias of the desired property without using a magic string (you'll need to inject `IPublishedSnapshotAccessor`):
+Using Modelsbuilder you can get the alias of the desired property without using a magic string (you'll need to inject `IPublishedSnapshotAccessor`):
 
 ```csharp
 @{

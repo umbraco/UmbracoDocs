@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Health check: Click-Jacking Protection
@@ -19,7 +17,7 @@ Preferable you use a security library like [NWebSec](https://docs.nwebsec.com/).
 
 If you take a NuGet dependency on [NWebsec.AspNetCore.Middleware/](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/), you can use third extension methods on `IApplicationBuilder`.
 
-```cs
+```csharp
 public class Startup
 {
     public void Configure(IApplicationBuilder app)
@@ -35,7 +33,7 @@ public class Startup
 
 If you don't like to have a dependency on a third party library, you can add the following custom middleware to the request pipeline instead.
 
-```cs
+```csharp
 public class Startup
 {
     public void Configure(IApplicationBuilder app)

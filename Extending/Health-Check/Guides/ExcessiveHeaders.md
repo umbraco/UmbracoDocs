@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Health check: Excessive Headers
@@ -20,6 +18,10 @@ Unless you publicly expose the Kestrel server ([not recommended by Microsoft](ht
 ### Removing headers when hosted on IIS
 
 For IIS you will need to manipulate `web.config` (If you don't have `web.config` already in your project you will need to add it at the root). Ensure to remove the custom `X-Powered-By` and `Server` header as shown in the following example.
+
+:::note
+The `removeServerHeader` attribute is added in IIS 10.0 and does not work in versions of Windows prior to Windows Server version 1709 or Windows 10 version 1709.
+:::
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -41,7 +43,7 @@ For IIS you will need to manipulate `web.config` (If you don't have `web.config`
 
 By default Kestrel will only expose the `Server` header. To disable this, you have to configure Kestrel in `Program.cs`. You can use the `UseKestrel` extension method on `IWebHostBuilder` like in the following example.
 
-```cs
+```csharp
 public class Program
 {
     public static IHostBuilder CreateHostBuilder(string[] args) =>

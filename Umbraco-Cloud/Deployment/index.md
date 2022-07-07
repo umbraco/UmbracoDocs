@@ -1,10 +1,11 @@
 ---
-meta.Title: "a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another"
-meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic "left to right" deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment"
+meta.Title: "A deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another"
+meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic 'left to right' deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment"
 versionFrom: 9.0.0
 ---
 
 # Deployment
+
 Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic "left to right" deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment.
 
 __Note:__ If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
@@ -12,6 +13,7 @@ __Note:__ If your project contains a Staging environment, deployments will be ma
 ![Left to right model](images/left-to-right.png)
 
 ## Deployment Approach
+
 Umbraco Cloud uses a two-part deployment approach where we keep meta data (Document types, templates, etc) and content (Content nodes and Media) as separate parts of a deployment. In order to be able to distinguish between the two types of deployments we use the term *transfer* for content and media deployments and the term *deploy* for meta data deployments.
 In summary:
 
@@ -42,7 +44,12 @@ Moving your content and media between your environments is done through the Umbr
 
 **Note:** Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
 
+## [Deploy Settings](../../Add-ons/Umbraco-Deploy/Deploy-Settings/)
+
+All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.
+
 ## Environment restarts
+
 Some deployments can cause an Umbraco Cloud environment to restart. See the table below to learn which actions initiates an application restart.
 
 |Action:                            |Application Restart? |
@@ -53,13 +60,14 @@ Some deployments can cause an Umbraco Cloud environment to restart. See the tabl
 |Content and/or Media transfer      |No                   |
 
 ### Manual restart
+
 From the Umbraco Cloud Portal you can manually restart your environments.
 
 ![Restart an environment](images/restart-environment.gif)
 
 ## Umbraco-cloud.json
 
-You might notice a new file in your cloud project called `umbraco-cloud.json`. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
+You might notice a file in your cloud project called `umbraco-cloud.json`. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example local or staging) and chooses the next environment in the list to deploy to.
 
 ![clone dialog](images/umbraco-cloud-json.png)
 

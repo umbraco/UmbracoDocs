@@ -1,9 +1,10 @@
 ---
 versionFrom: 7.0.0
-needsV9Update: "true"
+versionTo: 10.0.0
 ---
 
 # Pushing upgrades to a Child Project
+
 When a project has one or more Child Projects it will appear on the Project page, and the user can click to get an overview of all the Child Projects based on the current project.
 
 ![Manage Baseline Children](images/mange-updates-here.png)
@@ -45,6 +46,7 @@ The upgrade itself will happen, once you click the upgrade button. This will sta
 When using the feature, it is important that the Baseline Child projects have been setup following our [best practices for handling config files](../Configuration-files). This means that any changes to the Child project, should be applied via a config transform file. The reason for this, is that the Child projects config files will be merged by choosing the parents config files first. That is to ensure that changes to config files, that has been made in the minor upgrade, will also be applied to the child projects.
 
 ### Errors while upgrading children from baseline
+
 If the upgrade of a Child projects fails, or the Child project is left in a bad state, it is most likely because the Child project was unable to be merged properly.
 
 When updating Child projects from a Baseline project, a configuration from the Child project will take precedence over the Baseline project configuration. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed.

@@ -1,18 +1,26 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Design
 
-### [Templates](Templates/)
-Creating, managing and reusing templates in Umbraco.
+## [Templates](Templates/)
+
+Creating, managing, and reusing templates in Umbraco.
 
 ## [Rendering content](Rendering-Content/)
-How to query and render published content.
+
+Querying and rendering published content.
 
 ## [Rendering media](Rendering-Media/)
-How to query and render media items.
+
+Querying and rendering media items.
+
+## [Partial Views](Partial-Views/)
+
+Working with partial views in Umbraco's templates.
 
 ## [Stylesheets and JavaScript](Stylesheets-JavaScript/)
-Working with css and JavaScript in Umbraco's templates.
+
+Working with CSS and JavaScript in Umbraco's templates.

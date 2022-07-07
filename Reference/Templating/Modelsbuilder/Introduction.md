@@ -1,19 +1,17 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Modelsbuilder Introduction"
 meta.Description: "Modelsbuilder introduction"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 
 # Umbraco Models Builder Introduction
 
-Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default a slimmed down version of Models Builder is embedded with the main Umbraco distribution. 
+Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default, a slimmed down version of Models Builder is embedded with the main Umbraco distribution. 
 
-Models can be used anywhere that content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, when using the Models Builder, the content cache does not return `IPublishedContent` objects anymore, but strongly typed models, implemeting `IPublishedContent`.
+Models can be used anywhere that content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, when using the Models Builder, the content cache does not return `IPublishedContent` objects anymore, but strongly typed models, implementing `IPublishedContent`.
 
-For each content, media and member type in the Umbraco setup, the generator creates a `*.generated.cs` file, corresponding to the type. For instance a document type with a textstring property named Title, and a rich text editor named BodyText will look like this:
+For each content, media and member type in the Umbraco setup, the generator creates a `*.generated.cs` file, corresponding to the type. For instance, a document type with a textstring property named Title, and a rich text editor named BodyText will look like this:
 
 ```csharp
 //------------------------------------------------------------------------------
@@ -36,49 +34,49 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>NewsItem</summary>
-	[PublishedModel("newsItem")]
-	public partial class NewsItem : PublishedContentModel
-	{
-		// helpers
+/// <summary>NewsItem</summary>
+[PublishedModel("newsItem")]
+public partial class NewsItem : PublishedContentModel
+{
+  // helpers
 #pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		public new const string ModelTypeAlias = "newsItem";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
-			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<NewsItem, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  public new const string ModelTypeAlias = "newsItem";
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+    => PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<NewsItem, TValue>> selector)
+    => PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
-		private IPublishedValueFallback _publishedValueFallback;
+  private IPublishedValueFallback _publishedValueFallback;
 
-		// ctor
-		public NewsItem(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
-			: base(content, publishedValueFallback)
-		{
-			_publishedValueFallback = publishedValueFallback;
-		}
+  // ctor
+  public NewsItem(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+    : base(content, publishedValueFallback)
+  {
+    _publishedValueFallback = publishedValueFallback;
+  }
 
-		// properties
+  // properties
 
-		///<summary>
-		/// BodyText
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		[ImplementPropertyType("bodyText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
+  ///<summary>
+  /// BodyText
+  ///</summary>
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  [ImplementPropertyType("bodyText")]
+  public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
 
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
-		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
-	}
+  ///<summary>
+  /// Title
+  ///</summary>
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-beta003+b07f6519e7a1c890b534502982612ce6b3fea293")]
+  [ImplementPropertyType("title")]
+  public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+  }
 }
 ```
 
@@ -88,7 +86,7 @@ Now since this is an automatically generated file, it's a bit messy, the importa
 public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
 ```
 
-and 
+And:
 
 ```c#
 public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
@@ -109,7 +107,7 @@ If your view inherits from `UmbracoViewPage<NewsItem>` then the model is the con
 
 Models Builder respects the content types' inheritance tree, i.e. models inherit from each other if required, and mixins (content type compositions) are represented by interfaces.
 
-Models Builder is a "*code-after*" solution. It only generates code from content types that already exist in Umbraco. It is not a "*code-first*" solution - code-first is a much more complex question.
+Models Builder is a "_code-after_*_" solution. It only generates code from content types that already exist in Umbraco. It is not a "_code-first_" solution - code-first is a much more complex question.
 
 And once you are using strongly typed models, there are some [cool things](CoolThingsWithModels.md) that you can do.
 
@@ -121,6 +119,6 @@ Check [the official releases on the Models Builder GitHub repository](https://gi
 
 ## Documentation
 
-At the core of the strongly typed models "experience" is the `IPublishedModelFactory` interface. This interface is part of the Umbraco core codebase. It is responsible for mapping the internal `IPublishedContent` implementations returned by the content cache, to strongly typed models. There is a default factory shipped with Umbraco and it is possible to replace this by custom implementations. When using the default factory, models do *not* necessarily need to be generated by Models Builder. 
+At the core of the strongly typed models "experience" is the `IPublishedModelFactory` interface. This interface is part of the Umbraco core codebase. It is responsible for mapping the internal `IPublishedContent` implementations returned by the content cache, to strongly typed models. There is a default factory shipped with Umbraco and it is possible to replace this by custom implementations. When using the default factory, models do _not_ necessarily need to be generated by Models Builder.
 
-Models Builder is one way to generate models for the default, built-in factory. Models can be generated automatically or straight from the Settings section of the Umbraco backoffice, for more info see [builder modes](Builder-Modes.md). 
+Models Builder is one way to generate models for the default, built-in factory. Models can be generated automatically or straight from the Settings section of the Umbraco backoffice, for more info see [builder modes](Builder-Modes.md).

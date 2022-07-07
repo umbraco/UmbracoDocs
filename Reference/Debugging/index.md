@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Debugging with SourceLink"
 meta.Description: "Information on SourceLink and how to use it to debug the Umbraco CMS source code"
 ---
@@ -28,7 +29,7 @@ To read about SourceLink, you can take a look at the following websites:
 
 * Create a new `.NET 5.0` Framework blank/empty website.
 * Install the latest Umbraco CMS 9.0+ Nuget Packages from Nuget.org
-* Create an IUserComposer or similar code in your new site/SLN that you want to F11/Step Into. [Example Code Snippet to try with SourceLink](#example-code-snippet-to-try-with-sourcelink)
+* Create an IComposer or similar code in your new site/SLN that you want to F11/Step Into. [Example Code Snippet to try with SourceLink](#example-code-snippet-to-try-with-sourcelink)
 * Prompt will appear and the original source code file is fetched directly from GitHub.
     ![Visual Studio 2019 SourceLink dialog](images/VS19-sourcelink-prompt.png)
 * How far can you `F11` aka `Step Into` and go down the rabbit hole of the Umbraco CMS source code?

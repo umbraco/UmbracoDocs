@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Routing Requirements for Backoffice authentication"
 meta.Description: "Requirements for authenticating requests for the backoffice"
-state: complete
-verified-against: beta-4
-update-links: "true"
 ---
 
 # Routing requirements for backoffice authentication
@@ -15,7 +13,7 @@ In order for Umbraco to authenticate a request for the backoffice, the routing n
 
 will be authenticated. If you have a controller that is not routed within the prefix, it will not be authenticated for backoffice use.
 
-You do not have to worry about routing if you are using WebApi and using `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` (or any inherited controller) since these are auto routed. All implementations of `UmbracoAuthorizedApiController` (which includes `UmbracoAuthorizedJsonController`) are auto-routed with the default route:
+You do not have to worry about routing if you are using `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` (or any inherited controller) since these are auto routed. All implementations of `UmbracoAuthorizedApiController` (which includes `UmbracoAuthorizedJsonController`) are auto-routed with the default route:
 
 > `/umbraco/backoffice/api/{controller}/{action}`
 
@@ -34,13 +32,14 @@ If you are using MVC in the backoffice then you would normally inherit from `Umb
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
 
 ## Defining a route
+
 When you create a controller that inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard .NET Core MVC routing practices, however there is a handy extension method on the `IEndpointRouteBuilder` to help you.
 
 When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
 
 ```C#
-public class MyControllerComposer : IUserComposer
+public class MyControllerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
@@ -73,10 +72,10 @@ public static void MapUmbracoRoute<T>(
             this IEndpointRouteBuilder endpoints,
             string rootSegment,
             string areaName,
-            string prefixPathSegment,
+            string? prefixPathSegment,
             string defaultAction = "Index",
             bool includeControllerNameInRoute = true,
-            object constraints = null)
+            object? constraints = null)
 ```
 
 * The generic type argument is the contoller you wish to route, in this case `MyController`.

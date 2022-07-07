@@ -1,12 +1,12 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add a Blog Post Publication Date
 
 In [Part One](index.md) we added a new property to the *Blogpost* Document Type.
-Now in Part Two we're going to display that instead of the default creation date.
+Now in Part Two, we're going to display that instead of the default creation date.
 
 ## Steps - Part Two
 

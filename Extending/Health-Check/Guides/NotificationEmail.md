@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
+versionTo: 10.0.0
 ---
 
 # Health check: Notification Email Settings

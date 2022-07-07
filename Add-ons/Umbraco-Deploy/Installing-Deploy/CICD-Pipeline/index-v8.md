@@ -40,6 +40,6 @@ So while it may be possible to have the CI/CD step directly write the file or ca
 
 Details the setup of a CI/CD pipeline using Github Actions.
 
-## [Setting up CI/CD pipeline with Azure DevOps](ci-cd-azure-dev-ops.md)
+## [Setting up CI/CD pipeline with Azure DevOps](ci-cd-azure-dev-ops-v8.md)
 
 Details the setup of a CI/CD pipeline using Azure DevOps.

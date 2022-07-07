@@ -29,6 +29,15 @@ This configuration value expects a `True/False` value and can be used to toggle 
 ### DisableAutomaticAdditionOfDataConsentField
 This configuration value expects a `True/False` value and can be used to disable the feature where all new forms are provided with a default "Consent for storing submitted data" field on creation.
 
+### DisableFileUploadAccessProtection
+In Umbraco Forms 8.10.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
+
+If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
+
+### DefaultAccessToNewForms
+In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
+the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
+
 ### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
 
@@ -50,9 +59,17 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
 
 ### EnableAntiForgeryToken
-This setting needs to be a `True` or `False` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this and set this to `True`. Due to older versions of Umbraco Forms not containing this, it has become an optional config setting and due to upgrade reasons we do not automatically set this to `True` for you.
+This setting needs to be a `True` or `False` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this and set this to `True`.
 
-If you do set this to `True` then you need to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and should have `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
+If set to `True` then you need to ensure to add `@Html.AntiForgeryToken()` to your forms. The default template for Forms can be found in `~/Views/Partials/Forms/Form.cshtml` and has `@Html.AntiForgeryToken()` in the `@using (Html.BeginUmbracoForm [...]` block.
+
+In certain circumstances, including hosting pages with forms in IFRAMEs from other websites, this may need to be set to `False`.
+
+### AppendQueryStringOnRedirectAfterFormSubmission
+
+When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
+
+By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### StoreUmbracoFormsInDb
 This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.
@@ -76,6 +93,11 @@ Added in 8.7.0, this setting controls the maximum number of columns that can be 
 
 ### DefaultTheme
 Added in 8.8.0, this setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
+
+### DefaultEmailTemplate
+When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
+
+If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ## Default Settings
 There are several configuration keys that start with `Default`. This allows you to configure the values for when a new form is created.
@@ -116,5 +138,4 @@ This allows you to configure what text is displayed when a form is submitted and
 This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data will be stored in the Umbraco Forms database tables.  By default this is set to `True`.
 
 ### DefaultAutocompleteAttribute
-
 Added in 8.8.0, this setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.

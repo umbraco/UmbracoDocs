@@ -2,25 +2,28 @@
 versionFrom: 7.0.0
 ---
 
-## The Umbraco Cloud Portal
+# The Umbraco Cloud Portal
 
 An error in the Cloud Portal often looks like this:
 ![Portal error](images/portal-error.png)
 
 Errors in the Cloud Portal are shown as a colored indicator on an environment. An environment can have three colors:
-* __Green__ - this is the "healthy" state where everything is fine
-* __Yellow__ - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
-* __Red__ - this is the "error" state which normally has information about what went wrong
+
+* **Green** - this is the "healthy" state where everything is fine
+* **Yellow** - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
+* **Red** - this is the "error" state which normally has information about what went wrong
 
 :::note
 When your environment has an error and you try to deploy again it will not be able to. The error will **always** need to be resolved before another deployment can be started.
 :::
 
-### My environment is red. What do I do?
-The first thing to check is what type of error it is, you can do so by clicking the __**More info**__ button on the state:
+## My environment is red. What do I do?
+
+The first thing to check is what type of error it is, you can do so by clicking the **More info** button on the state:
 ![Portal error](images/portal-error2.png)
 
 We have some guides on how to fix the most common errors below:
+
 * [Some artifacts collide on unique identifiers](Deployments/Structure-Error)
 * [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items)
 * [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)

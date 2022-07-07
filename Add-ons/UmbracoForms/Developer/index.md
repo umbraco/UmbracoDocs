@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms Developer Documention"
 meta.Description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
 ---
@@ -23,7 +23,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 ## [Custom Markup](Custom-Markup/index.md)
 
-Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
+Customize your Forms your way. You have full control over your Form's HTML markup and styling.
 
 ## [Email Templates](Email-Templates/index.md)
 
@@ -45,6 +45,10 @@ Extend Umbraco Forms with your own custom providers.
 
 Look at some of the available configuration options to modify how Umbraco Forms works.
 
+## [Security](Security/index.md)
+
+Understand the security model of Umbraco Forms.
+
 ## [Magic Strings](Magic-Strings/index.md)
 
 Learn about the magic string formats that Umbraco Forms supports that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.
@@ -52,3 +56,11 @@ Learn about the magic string formats that Umbraco Forms supports that can retrie
 ## [Health Checks](Healthchecks/index.md)
 
 Introducing the health checks provided to confirm your Umbraco Forms installation is running as intended. Understand how to handle any issues reported.
+
+## [Localization](Localization/index.md)
+
+Discusses how the backoffice for Umbraco Forms is available translated into the language your editors like to work with.
+
+## [Content Apps](ContentApps/index.md)
+
+Adding an Umbraco content app to the Umbraco Forms backoffice section.

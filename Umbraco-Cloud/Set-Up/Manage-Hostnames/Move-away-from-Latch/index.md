@@ -44,6 +44,25 @@ To follow the steps below, ensure that you have access to the DNS configuration 
 6. Remove the hostname for which you've updated the DNS configuration.
 7. Add the hostname again.
 
+## How to move your custom certificates away from Umbraco Latch
+
+If you are using a custom certificate, that is set up through Umbraco Latch the certificate will need to be re-uploaded to ensure your hostname will work on the new and improved Umbraco Cloud infrastructure. This is a fairly straightforward process if you follow the steps mentioned here.
+
+:::note
+If you are unsure whether your custom certificate is uploaded through Umbraco Latch, you can reach out to our friendly support - they will be able to share the current state of your certificates with you.
+:::
+
+To follow the steps below, ensure that you have access to the DNS configuration for your hostname, a custom certificate that [meets the requirements](../Security-Certificates) as well as admin access to the Umbraco Cloud Portal.
+
+1. Access the DNS configuration for your hostname.
+2. Update the DNS entry to a **CNAME** record pointing to `dns.umbraco.io`.
+3. Save the new configuration settings.
+4. Access the Umbraco Cloud Portal.
+5. Open the **Hostnames** page for your project.
+6. Remove the hostname for which you've updated the DNS configuration.
+7. Add the hostname again.
+8. Upload and bind the certificate [following the documentation](../Security-Certificates)
+
 :::note
 If you for some reason cannot use a CNAME record, you can use an A-record which points to one of these IPs: `104.19.191.28` or `104.19.208.28`.
 

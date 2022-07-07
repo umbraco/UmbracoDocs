@@ -18,7 +18,7 @@ Learn more about the deployment model in the [Deployment workflow article](../De
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/x4UlI7J0u_4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/6MXuDqEMM70?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Manage environments
 
@@ -34,6 +34,11 @@ When you upgrade your Heartcore project from the Mini to the Starter plan, the D
 You can add and remove the environments any time you want, as long as you have multiple environments enabled.
 
 Adding and removing environments is done from the Project page in the Cloud Portal.
+
+:::note
+Please note you will need to restart environments after they have been set up or removed from your project. In order to update the configuration of Umbraco Deploy 
+:::
+
 
 ![Manage environments from here](images/button-to-manage.png)
 

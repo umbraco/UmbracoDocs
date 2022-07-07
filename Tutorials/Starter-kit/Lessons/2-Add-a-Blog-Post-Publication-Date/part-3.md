@@ -1,13 +1,13 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add a Blog Post Publication Date
 
-In [Part Two](part-2.md) we displayed a nicely formatted publication date on the blog post page.
+In [Part Two](part-2.md), we displayed a nicely formatted publication date on the blog post page.
 
-Finally in Part Three we shall change the blog listing.
+Finally, in Part Three we shall change the blog listing.
 
 ## Steps - Part Three
 
@@ -30,11 +30,11 @@ Finally in Part Three we shall change the blog listing.
 
     * Because we are sorting by a custom property we need to use the generic `Value` method.
 
-4. *Save* the partial view - a confirmation message should appear confirming that the Partial view has saved.
+4. *Save* the partial view - a confirmation message should appear confirming that the Partial view has been saved.
 5. Now view both the Blog overview and the blog posts themselves in the browser to confirm that all is working as expected.
 
 ## Summary
 
-Nice job! In this lesson you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
+Nice job! In this lesson, you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
 
 [Back to Lessons](../index.md)

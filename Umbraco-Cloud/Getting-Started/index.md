@@ -2,10 +2,11 @@
 meta.Title: "Get started working with Umbraco Cloud"
 meta.Description: "Here you can find information aboit getting started working with Umbraco Cloud"
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Umbraco Cloud
- 
+
 In this article, you can read about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started.
 
 ## Umbraco Cloud Overview
@@ -34,7 +35,9 @@ You can [learn more about quotas](Umbraco-cloud-plans) that are put in place in 
 
 The easiest way to get started with an Umbraco Cloud project is to take a [14-day free trial](https://umbraco.com/?product_tour_id=103162). The project is automatically created, and you are ready to get started within a few minutes.
 
-Since we set-up the entire project, we recommend that you get to know your project before you start building. Once the project has been set up, you can choose to either start with a blank slate or go for a *Starter kit*, which will install a full template site for you.
+<iframe width="800" height="450" src="https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+Since we set-up the entire project, we recommend that you get to know your project before you start building.
 
 To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](../Set-Up/Working-Locally) - for Mac users, see [Working with UaaS-Cli](../Set-Up/Working-With-UaaS-Cli).
 
@@ -63,9 +66,28 @@ When you create a:
 - Trial project for the first time - a unique project name will be generated for you.
 - Project from the Umbraco Cloud Portal - you will get to choose a name for the project.
 
-You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
+For version 9: To rename the project file and folder, see the [*Renaming the Project file and folder*](../Set-up/project-settings/index.md#renaming-and-deleting) article.
+For version 8 and below: You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/index-v8.md#renaming-and-deleting) option from the *Settings* menu.
 
 An Umbraco Cloud project name is unique, which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
+
+### Project Overview
+
+Once a project is created, you can view its overview in Umbraco Cloud Portal:
+
+1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
+2. Select your Project from the **Projects** dashboard.
+3. Go to the Project **Settings** and click **Overview**.
+    ![Project Overview](images/Cloud-Overview.png)
+
+The Overview Page consists of:
+
+- Name: The name of the project.
+- Alias - The alias of the project.
+- Your Plan - The plan selected for the project. Available plans are Starter, Standard, or Professional.
+- Payment status - The payment status of the project.
+- Created by - The name and email of the project creator.
+- Creation date - The date the project was created.
 
 ## Different ways to start an Umbraco Cloud project
 

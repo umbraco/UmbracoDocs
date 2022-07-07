@@ -1,5 +1,6 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 9.3.0
+versionTo: 10.0.0
 meta.Title: "Security in Umbraco"
 meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
 ---
@@ -30,16 +31,21 @@ Learn about how to can harden the security on your Umbraco website to secure it 
 
 When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
 
-## Backoffice users
+## Backoffice users and website members
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) which is a flexible and extendable framework for authentication.
+Authentication for backoffice users and website members in Umbraco uses [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) which is a flexible and extendable framework for authentication.
 
 Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
 ### [External login providers](external-login-providers/index.md)
 
-The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users.
+The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
 This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+
+### [Two-factor authentication](two-factor-authentication/index.md)
+
+The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
+This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
 
 ### [BackOfficeUserManager](backoffice-user-manager.md) and Notifications
 

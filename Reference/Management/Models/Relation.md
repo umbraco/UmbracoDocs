@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
 meta.Title: "Relation Model"
 meta.Description: "Represents a Relation between two items."
 ---

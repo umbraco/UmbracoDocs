@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding a type to the provider model"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a type to the provider model
@@ -11,7 +10,7 @@ To add a new type, no matter if it's a workflow, field, data source, etc, there 
 
 ## Preparations
 
-Create a new class library project in Visual Studio add references to the Umbraco.Forms.Core.dll (available via referencing the [NuGet package](https://www.nuget.org/packages/UmbracoForms.Core/)).
+Create a new class library project in Visual Studio add references to the `Umbraco.Forms.Core.dll` (available via referencing the [NuGet package](https://www.nuget.org/packages/Umbraco.Forms.Core/)).
 
 ## Adding the type to Forms
 

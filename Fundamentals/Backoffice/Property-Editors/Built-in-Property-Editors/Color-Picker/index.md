@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Color Picker
@@ -16,7 +17,7 @@ It's possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](images/Color-Picker-DataType-v8.png)
+![Color Picker Data Type Definition](images/Color-Picker-DataType-v10.png)
 
 ## Content Example
 
@@ -59,6 +60,7 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 @{
     // Get access to ContentService
     var contentService = Services;
@@ -91,6 +93,7 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@using Umbraco.Cms.Core.PublishedCache;
 @{
     // Set the value of the property with alias 'color'
     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Color).Alias, "38761d");

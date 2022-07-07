@@ -1,10 +1,10 @@
 ---
 versionFrom: 9.0.0
-state: complete
-verified-again: beta-1
+versionTo: 10.0.0
 ---
 
 # Adding a workflow type to Umbraco Forms
+
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, implement the class. For this sample we will focus on the execute method. This method process the current record (the data submitted by the form) and have the ability to change data and state.
@@ -17,7 +17,7 @@ using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Data.Storage;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Persistence.Dtos;
-using Umbraco.Core.Logging;
+using Microsoft.Extensions.Logging;
 using Umbraco.Core.Composing;
 
 namespace MyFormsExtensions
@@ -43,7 +43,7 @@ namespace MyFormsExtensions
             _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");            
 
             // we can then iterate through the fields
-            foreach (RecordField rf in record.RecordFields.Values)
+            foreach (RecordField rf in context.Record.RecordFields.Values)
             {
                 // and we can then do something with the collection of values on each field
                 List<object> vals = rf.Values;
@@ -53,10 +53,10 @@ namespace MyFormsExtensions
             }
                       
             //Change the state
-            record.State = FormState.Approved;
+            context.Record.State = FormState.Approved;
 
             _logger.LogDebug("The record with unique id {RecordId} that was submitted via the Form {FormName} with id {FormId} has been changed to {RecordState} state",
-               record.UniqueId, context.Form.Name, context.Form.Id, "approved");
+               context.Record.UniqueId, context.Form.Name, context.Form.Id, "approved");
 
             return WorkflowExecutionStatus.Completed;
         }
@@ -70,3 +70,22 @@ namespace MyFormsExtensions
 ```
 
 The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  Essentially, this parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides it's state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (e.g. the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
+
+You will then need to register this new workflow type as a dependency.
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Forms.Core.Providers;
+namespace MyFormsExtensions
+{
+    public class Startup : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+                .Add<TestWorkflow>();
+        }
+    }
+}
+```

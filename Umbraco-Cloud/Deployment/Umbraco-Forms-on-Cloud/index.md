@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Umbraco Forms on Cloud
@@ -45,7 +45,8 @@ Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will
 
 In this section you can find information about version specific changes that might affect the way Umbraco Forms works on your project.
 
-### Version 9.0.0
+### Version 9+
+
 In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database.
 
 If want to upgrading to Umbraco 9 and using Forms, you should first migrate the Forms to the database using Forms 8.

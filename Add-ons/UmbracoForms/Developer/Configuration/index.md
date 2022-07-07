@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms configuration"
 meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
-state: complete
-verified-against: beta-1
 ---
 
 # Configuration
@@ -41,6 +40,7 @@ For illustration purposes, the following structure represents the full set of op
       "DisableDefaultWorkflow": false,
       "MaxNumberOfColumnsInFormGroup": 12,
       "DefaultTheme": "default",
+      "DefaultEmailTemplate": "Forms/Emails/Example-Template.cshtml",
       "Defaults": {
         "ManualApproval": false,
         "DisableStylesheet": false,
@@ -55,15 +55,20 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": ""
       }
     },
-    "PackageOptions": {
+    "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false
+      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AppendQueryStringOnRedirectAfterFormSubmission": false,
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
       "EnableAntiForgeryToken": true,
-      "SavePlainTextPasswords": false
+      "SavePlainTextPasswords": false,
+      "DisableFileUploadAccessProtection": false,
+      "DefaultAccessToNewForms": "Grant",
+      "ManageSecurityWithUserGroups": false,
+      "GrantAccessToNewFormsForUserGroups": "admin,editor"
     },
     "FieldTypes": {
       "DatePicker": {
@@ -97,6 +102,11 @@ This setting controls the maximum number of columns that can be created by edito
 
 ### DefaultTheme
 This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
+
+### DefaultEmailTemplate
+When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
+
+If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### Form default settings configuration
 
@@ -166,9 +176,17 @@ This configuration key is *experimental* and will allow Workflows to be executed
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
+_Note:_ There is a typo in this setting where it has been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this will be corrected to `AllowEditableFormSubmissions`.
+
 :::warning
 Enable this feature ONLY if you understand the security implications.
 :::
+
+### AppendQueryStringOnRedirectAfterFormSubmission
+
+When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
+
+By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ## Security configuration
 
@@ -184,9 +202,26 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 
 This setting needs to be a `true` or `false` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this option. Defaults to `true`.
 
+In certain circumstances, including hosting pages with forms in IFRAMEs from other websites, this may need to be set to `false`.
+
 ### SavePlainTextPasswords
 
 This setting needs to be a `true` or `false` value and controls whether password fields provided in forms will be saved to the database. Defaults to `false`.
+
+### DisableFileUploadAccessProtection
+In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
+
+If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
+
+### DefaultAccessToNewForms
+In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
+the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
+
+### ManageSecurityWithUserGroups
+Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
+
+### GrantAccessToNewFormsForUserGroups
+Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
 ## Field type specific configuration
 
@@ -214,4 +249,4 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 ---
 
-Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Magic Strings](../Magic-Strings/index.md)
+Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Security](../Security/index.md)

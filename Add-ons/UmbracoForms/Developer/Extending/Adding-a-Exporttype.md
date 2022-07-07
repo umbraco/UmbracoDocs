@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding a Export type to Umbraco Forms"
-state: complete
-verified-against: beta001
 ---
 
 # Adding a Export type to Umbraco Forms

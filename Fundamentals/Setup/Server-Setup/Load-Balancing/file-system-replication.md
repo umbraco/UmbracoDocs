@@ -1,10 +1,12 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
-## Standalone File System
+# Standalone File System
+
 :::note
-(No file replication is configured, deployment handles updating files on the different servers)
+No file replication is configured, deployment handles updating files on the different servers.
 :::
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
@@ -12,8 +14,9 @@ If the file system on your servers isn't performing any file replication then no
 Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](../../../../Reference/Config/webconfig/index.md#umbracocorelocaltempstorage).
 
 ## Synchronised File System
+
 :::note
-(the servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers)
+The servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers.
 :::
 
 If the file system on your servers is performing file replication then the Umbraco temporary folder (`~/umbraco/Data/TEMP`) must be excluded from replication.
@@ -40,8 +43,11 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 
 :::tip
 Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options).
-Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
+
+Achieve this by changing the value of the `LuceneDirectoryFactory` setting to 'TempFileSystemDirectoryFactory' in the `appsettings.json`. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
+
 Below is shown how to do this in a Json configuration source.
+
 ```json
 {
     "Umbraco": {
@@ -54,11 +60,15 @@ Below is shown how to do this in a Json configuration source.
 }
 
 ```
-:::
-* `~/umbraco/Logs/*`
-	* This is **optional** and depends on how you want your logs configured (see below)
 
-If for some reason your file replication solution doesn't allow you to not replicate specific files folders (which it should!!) then you can use an alternative approach by using virtual directories. *This is not the recommended setup but it is a viable alternative:*
+:::
+
+* `~/umbraco/Logs/*`
+  * This is **optional** and depends on how you want your logs configured (see below)
+
+If for some reason your file replication solution doesn't allow you to not replicate specific files folders (which it should!!) then you can use an alternative approach by using virtual directories.
+
+The following is not the recommended setup but it is a viable alternative:
 
 * Copy the `~/umbraco/Data/TEMP` directory to each server, outside of any replication areas or to a unique folder for each server.
 * Create a virtual directory (not a virtual application) in the `~/umbraco/Data/` folder, and name it `TEMP`. Point the virtual directory to the folder you created in step 2.
@@ -76,7 +86,8 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 
 ## Examine Directory Factory Options
 
-- The `TempFileSystemDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
+* The `TempFileSystemDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
+
 ```json
 {
     "Umbraco": {
@@ -88,7 +99,9 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
     }
 }
 ```
-- The `SyncedTempFileSystemDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
+
+* The `SyncedTempFileSystemDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
+
 ```json
 {
     "Umbraco": {

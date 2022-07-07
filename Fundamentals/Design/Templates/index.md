@@ -2,33 +2,33 @@
 meta.Title: "Templates in Umbraco"
 meta.Description: "Templating in Umbraco including inheriting from master template"
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Templates
 
 _Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - if you already know this, then you are ready to create your first template - if not, this is a quick and handy guide._
 
-## Creating your first template
-By default all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
+## Creating your first Template
 
-Open the settings section inside the Umbraco backoffice and right-click the **templates** folder. then choose **create**. Enter a template name and click the create button. You will now see the default template markup in the backoffice template editor.
+By default, all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
+
+Open the **Settings** section inside the Umbraco backoffice and right-click the **Templates** folder. Choose **Create**. Enter a template name and click the **Save** button. You will now see the default template markup in the backoffice template editor.
 
 ![Created template](images/create-template-v8.png)
 
+## Allowing a Template on a Document Type
 
-## Allowing a template on a document type
-To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and select the template under "allowed templates".
+To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template, go to the Templates tab and select the template under the **Allowed Templates** section.
 
 ![Allowing template](images/allow-template-v8.png)
 
+## Inheriting a Master Template
 
-## Inheriting a master template
-A template can inherit content from a master template by using the ASP.NET views Layout feature. Lets say we have a template called **masterview**, containing the following html:
+A template can inherit content from a master template by using the ASP.NET views Layout feature. Let's say we have a template called **MasterView**, containing the following HTML:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -41,7 +41,7 @@ A template can inherit content from a master template by using the ASP.NET views
 </html>
 ```
 
-We then create a new template called **textpage** and in the template editor, under the properties tab, sets its master template to the template called masterview:
+We then create a new template called **textpage** and in the template editor, click on the **Master Template** button and set its master template to the template called **MasterView**:
 
 ![Inherit template](images/inherit-template-v8.png)
 
@@ -55,7 +55,7 @@ This changes the `Layout`value in the template markup, so **textpage** looks lik
 <p>My content</p>
 ```
 
-When a page using the textpage template renders, the final html will be merged together replacing the `@renderBody()` placeholder and produce the following:
+When a page using the textpage template renders, the final HTML will be merged replacing the `@renderBody()` placeholder, and produce the following:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -72,9 +72,10 @@ When a page using the textpage template renders, the final html will be merged t
 ```
 
 ## Template Sections
-What's good to know, is that you are not limited to a single section. Template sections allow child templates that inherit the master layout template to insert HTML code up into the main layout template. For example a child template inserting code into the `<head>` tag of the master template.
 
-You can do this by using [named sections](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/templating/advanced-features/).  Add named sections to your master template with the following code:
+What's good to know, is that you are not limited to a single section. Template sections allow child templates that inherit the master layout template to insert HTML code up into the main layout template. For example, a child template inserting code into the `<head>` tag of the master template.
+
+You can do this by using [named sections](https://www.youtube.com/watch?v=lrnJwglbGUA).  Add named sections to your master template with the following code:
 
 ```csharp
 @RenderSection("SectionName")
@@ -99,11 +100,13 @@ For instance, if you want to be able to add HTML to your `<head>` tags write:
 </html>
 ```
 
-By default, when defining a section it is required. To make the section optional add  `required:false`.
+By default, when rendering a named section, the section is not mandatory. To make the section mandatory, add `true` or enable **Section is mandatory** field in the **Sections** option.
 
 ```csharp
-@RenderSection("Head", required: false)
+@RenderSection("Head", true)
 ```
+
+![Create partial](images/render-named-sections-v10.png)
 
 On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
 
@@ -117,14 +120,15 @@ On your child page template call `@section Head {}` and then type your markup th
 }
 ```
 
-## Injecting partial template
-Another way to reuse html is to use partials - which are small reusable views which can be injected into another view.
+## Injecting Partial Views
 
-Like templates, create a partial, by clicking "partial views" and selecting create - you can then optionally use a pre-made template.
+Another way to reuse HTML is to use partial views - which are small reusable views that can be injected into another view.
+
+Like templates, create a partial view, by right-clicking **Partial Views** and selecting **Create**. You can then either create an empty partial view or create a partial view from a snippet.
 
 ![Create partial](images/create-partial-v8.png)
 
-the created partial can now be injected into any template by using the `@Html.Partial()` method like so:
+The created partial view can now be injected into any template by using the `@Html.Partial()` method like so:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -143,7 +147,9 @@ the created partial can now be injected into any template by using the `@Html.Pa
 - [Named Sections](named-sections.md)
 
 ### Tutorials
+
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
-### [Umbraco.TV](https://umbraco.tv)
-- [Series: Templating](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/templating/what-is-a-template/)
+### [Umbraco Learning Base](https://www.youtube.com/channel/UCbGfwSAPflebnadyhEPw-wA)
+
+- [Playlist: Templates in Umbraco](https://www.youtube.com/playlist?list=PLgX62vUaGZsFmzmm4iFKeL41CZ5YFw09z)

@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Viewing and Exporting Entries
@@ -23,6 +23,12 @@ Clicking on the first field for each record in the list will open the full set o
 
 ![Filter](images/Filter.png)
 
+### Editing the Entries
+
+If configured via the permissions model and supported by the version of Umbraco Forms you are running (8.11+/9.3+), entries may be editable via the back-office.  If available, click the _Edit_ button to switch the read-only view of an entry to an editable one and _Save_ to record the changes.  An audit trail will show who and when updates on the entry were made.
+
+Validation will operate as is configured for the form in terms of mandatory fields and those that must match a particular pattern.  Conditional display of fields is not supported.
+
 ## Exporting Entries
 
 To export all the entries from your Form:
@@ -31,9 +37,11 @@ To export all the entries from your Form:
 2. Navigate to the **Entries** you wish to export.
 3. Click **Export** in the top-right corner of the screen.
     ![Export button](images/Export.png)
-4. The Export dialog opens. Choose a format to export the Form records to.
+4. The Export dialog opens. Choose a format such as Microsoft Excel to export the Form records to.
     ![Export all dialog](images/ExportAllDialog.png)
 5. Click **Done**.
+
+If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files.  You can either download the files in the stucture that they are stored on the web server's disk.  Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
 ## Record Actions
 

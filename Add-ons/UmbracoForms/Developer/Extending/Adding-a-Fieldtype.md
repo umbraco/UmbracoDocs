@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding a field type to Umbraco Forms"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a field type to Umbraco Forms #
@@ -63,9 +62,29 @@ In the constructor, we specify the standard provider information (remember to se
 
 And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
 
+You will then need to register this new field as a dependency.
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Forms.Core.Providers;
+
+namespace MyFormsExtensions
+{
+    public class Startup : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.WithCollectionBuilder<FieldCollectionBuilder>()
+                .Add<MyCustomField>();
+        }
+    }
+}
+```
+
 ## Partial view
 
-Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 
+Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
@@ -80,7 +99,7 @@ This will be rendered when the default theme is used.
 
 ## Umbraco backoffice view
 
-The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
+The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look:
 
 ```html
 <input
@@ -88,4 +107,53 @@ The final step involves building the HTML view which will be rendered in Umbraco
     class="input-block-level"
     style="max-width: 100px"
 />
+```
+
+For built-in field types, Umbraco Forms look for this file in the folder:  `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
+
+As this location is cleared following a `dotnet clean` command, it's better to host the files for custom field types in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\FieldTypes\mycustomfield.html`.
+
+With a file in that location, you can apply the following override to the custom field type's C# representation:
+
+```csharp
+public override string GetDesignView() =>
+    "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/FieldTypes/mycustomfield.html";
+
+```
+
+## Field settings
+
+Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
+
+```csharp
+    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder=10)]
+    public string MySetting { get; set; }
+```
+
+The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer.  Umbraco Forms ships with a number of these, found in `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+
+Again though, as this location is cleared following a `dotnet clean` command, if you require a custom setting type view, it's better to host them in different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\SettingTypes\mycustomsettingfield.html`.
+
+To reference the file the setting should be configured with a full path to the view, e.g.:
+
+```csharp
+    [Setting("My Setting",
+        Description = "Help text for the setting",
+        View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
+        DisplayOrder=10)]
+    public string MySetting { get; set; }
+```
+
+## Backoffice entry rendering
+
+The third and final client-side view file used for settings is in the rendering of the submitted values for the field in the "Entries" section of the backoffice.
+
+These are defined by the `RenderView` property of a field type and are found in `App_Plugins\UmbracoForms\backoffice\Common\RenderTypes\`.
+
+As for the other files, if you require a custom render type view, it's better to host them in different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\RenderTypes\mycustomrenderfield.html`.
+
+To reference the file you should override the `RenderView` property, e.g.:
+
+```csharp
+public override string RenderView => "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/RenderTypes/mycustomrenderfield.html";
 ```

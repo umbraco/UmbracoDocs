@@ -1,11 +1,13 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # reCAPTCHA V3
 
 You need to configure your site keys by adding your public and private keys.
+
+When adding the field to your form, you can select whether or not to save the scores calculated by reCAPTCHA as a value in the form submission, using the _Save score_ setting.
 
 ## For version 9
 
@@ -18,7 +20,7 @@ You can configure the settings in the `appSettings.json` file:
         "SiteKey": "",
         "PrivateKey": ""
       }
-    }  
+    }
   }
 ```
 
@@ -36,5 +38,5 @@ You can configure your public and private keys in the `UmbracoForms.config` file
 You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
 
 :::note
-Ensure to select the **Mandatory** field while adding the **Recaptcha2** to your Form.
+Ensure to select the **Mandatory** field while adding the **Recaptcha3** to your Form.
 :::

@@ -1,14 +1,17 @@
 ---
 keywords: composing composers components runtime boot booting v9 version9 events registering
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Composers in Umbraco"
 meta.Description: "Customising the behaviour of an Umbraco Application at start up"
 ---
 
 # Composing
+
 Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to notifications.
 
 ## Overview
+
 An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
@@ -24,7 +27,7 @@ These default collections can be removed, reordered, replaced, etc. by implement
 
 ### Example - Creating a Composer to listen for ContentSavingNotification
 
-This example shows how to create a component and an notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
+This example shows how to create a component and a notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
 We create a new C# class that implements `IComposer` and use it register our notification handler.
 
@@ -43,7 +46,7 @@ namespace My.Website
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>()
+            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>();
         }
     }
 
@@ -69,6 +72,7 @@ that your composer that is doing the overriding, is 'composing', after the compo
 :::
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
+
 This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
 
 ```csharp
@@ -128,9 +132,11 @@ namespace My.Website
     }
 }
 ```
+
 See a list of collections below to determine which are 'type scanned' and which require explicit registration.
 
-### ComponentComposer&lt;T&gt;
+### ComponentComposer
+
 It's an implementation of `IComposer`, that provides a quicker way to add a custom component to the Component's collection. Creating a C# class that inherits from `ComponentComposer<YourComponentType>` will automatically add `YourComponentType` to the collection of Components. In the example above, the `SubscribeToContentServiceSavingComposer` for the `SubscribeToContentServiceSavingComponent` could have been written more conveniently as:
 
 ```csharp
@@ -139,6 +145,7 @@ public class SubscribeToContentServiceSavingComposer : ComponentComposer<Subscri
 ```
 
 ## Collections
+
 >"Collections of elements", for example, the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
@@ -166,21 +173,23 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | UrlSegmentProviders       | Ordered   | Explicit Registration                                             |
 | Validators                | Lazy      | Explicit Registration                                             |
 
-
 ### Types of Collections
 
-Set<br/>
+Set
+
 `SetCollectionBuilderBase` - The base class for collection builders that do not order their items explicitly.
 
-Ordered<br/>
+Ordered
+
 `OrderedCollectionBuilderBase` - The base class for collection builders that order their items explicitly.
 
-Weighted<br/>
+Weighted
+
 `WeightedCollectionBuilder` - The base class for collection builders that order their items by the `[Weight]` attribute.
 
-Lazy<br/>
-`LazyCollectionBuilderBase` - The base class for collection builders that resolve the types at the last moment, only when the collection is required.
+Lazy
 
+`LazyCollectionBuilderBase` - The base class for collection builders that resolve the types at the last moment, only when the collection is required.
 
 ### Example - Modifying Collections
 
@@ -209,11 +218,12 @@ namespace My.Website
 }
 ```
 
-
 ## Attributes
+
 Umbraco has some useful C# attributes to decorate your composer classes or Types used in collections, to give you further control on how and when your Composers will 'compose'.
 
 ### `[ComposeBefore]` and `[ComposeAfter]`
+
 A finer-grain mechanism can then be used to refine the order of composition. Each composer can specify that it should compose before or after another composer, using the ComposeBefore and ComposeAfter attributes. For instance:
 
 ```csharp
@@ -233,6 +243,7 @@ If you create a circular dependency then Umbraco will fail to boot and will repo
 :::
 
 ### [Weight]
+
 This attribute is used only for `WeightedCollectionBuilders` (see list above). It specifies an integer ordinal value for each item to be added to the weighted collection which controls their sort order. The weighting attribute is not applied to the Composers.
 
 ```csharp

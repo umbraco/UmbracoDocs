@@ -36,19 +36,12 @@ Should you at some point need to temporarily pause the webhook, you can disable 
 
 ## Outgoing IPs for webhooks
 
-Webhooks will be fired from either of the IPs below.
+Webhooks will be fired from either of the two static IPs listed below.
 
-When you are working with an external service that is behind a firewall and that service needs to communicate with your Umbraco Heartcore project in order to receive webhook data you need to make sure that the following IPs are allowed to bypass the firewall.
+When you are working with an external service that is behind a firewall and that service needs to communicate with your Umbraco Heartcore project in order to receive webhook data you need to make sure that the following IPs are allowed to pass through the firewall.
 
 ```
-13.69.68.63
-52.136.251.35
-51.144.177.200
-51.144.100.70
-51.144.127.200
-51.144.45.23
-52.232.102.225
-52.136.233.87
-52.136.247.194
-51.145.129.179
+20.86.53.156
+20.86.53.157
 ```
+If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `20.86.53.156/31`

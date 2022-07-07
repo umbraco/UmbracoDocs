@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Installing Umbraco Deploy on an existing Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on an existing Umbraco website"
-state: complete
-verified-again: beta-1
 ---
 
 # Installing Umbraco Deploy on an existing project
@@ -65,7 +64,7 @@ After the Umbraco files have been committed add the following lines to the .giti
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index-v9).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/).
 
 ### Set up CI/CD Pipeline
 

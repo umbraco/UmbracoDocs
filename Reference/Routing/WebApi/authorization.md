@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco WebApi Authorization"
 meta.Description: "How to secure your Umbraco Api controllers"
-state: complete
-verified-against: beta-4
-update-links: true
 ---
 
 

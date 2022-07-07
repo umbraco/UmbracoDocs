@@ -43,11 +43,9 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ```csharp
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{
-    if (!string.IsNullOrWhiteSpace(Model.MyFile))
-    {
-        <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
-    }
+@if (!Model.HasValue(Model.MyFile))
+{
+   <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
 }
 ```
 

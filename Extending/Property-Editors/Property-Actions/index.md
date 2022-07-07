@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
-state: partial
-updated-links: false
+versionTo: 10.0.0
 meta.Title: "Umbraco Property Editors - Property Actions"
 meta.Description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---

@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-1
-meta-title: Umbraco Route Hijacking
-meta.Description:  Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type
+versionTo: 10.0.0
+meta-title: "Umbraco Route Hijacking"
+meta.Description: "Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type"
 ---
 
 # Custom MVC controllers (Umbraco Route Hijacking)
@@ -149,10 +149,10 @@ or if you are using modelsbuilder:
 
 To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
-So for example, if your custom model is of type 'MyProductModel' then your `@inherits` directive will look like:
+So for example, if your custom model is of type 'MyProductViewModel' then your `@inherits` directive will look like:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductViewModel>
 ```
 
 :::note
@@ -160,11 +160,11 @@ Views will likely specify a master view to use as the common layout for the site
 Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown.
 To avoid this you could:
 
-* Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
+- Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
 or
-* Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
+- Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
 or
-* Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
+- Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
 :::
 
 In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
@@ -190,7 +190,7 @@ Using Modelsbuilder you will find that all the generated models have a construct
 ```csharp
 public class MyProductViewModel : ProductPage
 {
-    // The PublishedContentWrapped accepts an IPublishedContent item as a constructor
+    // The ProductPage model accepts an IPublishedContent item as a constructor
     public MyProductViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
     {
     }
@@ -257,7 +257,7 @@ namespace My.Website
 and in our template
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductViewModel>
 @{
 Layout = "Master";
 }

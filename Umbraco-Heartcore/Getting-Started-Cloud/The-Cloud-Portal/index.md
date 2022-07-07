@@ -4,7 +4,7 @@ In this article, you will learn more about the Umbraco Cloud Portal and what opt
 
 ## Video tour of the Portal
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/-wARG4wyk2c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/WmoovOIRQOo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Written tour of the Portal
 
@@ -65,7 +65,7 @@ Here you will be able to upgrade your trial to a plan that fits your needs.
 From here you can see the payment history for a certain project as well as download the latest invoices or for a specific month.
 
 :::note
-This only applies to new customers on Umbraco Cloud after the 28th of April, for old projects, the invoices and payment history is still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
+This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
 
 ### Rename project

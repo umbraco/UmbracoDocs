@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: partial
-updated-links: false
+versionTo: 10.0.0
 meta.Title: "Umbraco Package Types"
 meta.Description: "Types of packages in Umbraco"
 ---

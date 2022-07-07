@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
-keywords: whitelist allow list allowlist ip internal
+versionTo: 10.0.0
+keywords: whitelist allow list allowlist ip internal static outbound ips
 ---
 
 # Using external services with Umbraco Cloud
@@ -11,24 +12,38 @@ When you are working with an external service that is behind a firewall and that
 
 An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give your Umbraco Cloud project access to the external service you need to add the IPs used by the Umbraco Cloud servers to an allow list (other services may refer to it as a "whitelist").
 
-These are the IPs you will need to add:
+# Enabling static outbound IP addresses
+For projects on a Standard, Professional and Enterprise plan you can enable static outbound IP addresses.
 
-```
-52.166.147.129
-13.95.93.29
-40.68.36.142
-13.94.247.45
-52.157.96.229
-```
-:::note
-Above IPs only apply to websites created before H1 2021 or websites that haven't been migrated to the new platform.
-:::
-
-As part of the [migration to our new platform](https://umbraco.com/blog/the-future-of-umbraco-cloud/) the outgoing IPs of the new platform are changing. Please reach out to support in order to get the outgoing IPs for your project.
-These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we add new IPs they will be updated here.
+On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**, **Professional**, and **Enterprise** Cloud projects.
 
 :::note
-When new IPs are added we will also send the information directly to the [Technical Contacts](../Team-Members/Technical-Contact.md) for each Umbraco Cloud project.
+The enabling of static outbound IP addresses will have the effect that port 25 will be blocked. Port 25 is the default port for SMTP relay and is commonly abused to send spam from compromised parties. Accordingly, this port is often blocked by ISPs and cloud providers such as Microsoft and Google. For SMTP submissions, we advise you to use port 587 or alternatively, port 2525.
 :::
 
-If you are using an external service that is not behind a firewall, you do not need to include the Umbraco Cloud IPs in an allow list.
+![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
+
+The static outbound IPs for every environment are:
+```
+40.113.173.32
+40.113.173.33
+40.113.173.34
+40.113.173.35
+40.113.173.36
+40.113.173.37
+40.113.173.38
+40.113.173.39
+40.113.173.40
+40.113.173.41
+40.113.173.42
+40.113.173.43
+40.113.173.44
+40.113.173.45
+40.113.173.46
+40.113.173.47
+```
+If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
+
+:::note
+For projects on a Starter plan, you are able to see the current dynamic outbound IP addresses. The IP adresses shown for starter projects are dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
+:::

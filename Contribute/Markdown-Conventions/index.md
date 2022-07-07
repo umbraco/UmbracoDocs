@@ -5,14 +5,14 @@ meta.Description: "Explanation of how to use markdown and how we structure the f
 
 # Markdown conventions
 
-The Umbraco Documentation uses Markdown for all the articles - but more precisely we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
+The Umbraco Documentation uses Markdown for all the articles; more precisely, we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
 
 In this article you can learn how to use Markdown, as well as how we structure the files.
 
 ## Structure
 
 For the documentation project, each individual topic is contained in its own folder.
-Each folder must have an `index.md` file which links to the individual sub-pages, if images are used, these must be in `images` folders next to the .md file referencing them relatively.
+Each folder must have an `index.md` file which links to the individual sub-pages. If images are used, these must be in `images` folders next to the .md file referencing them relatively.
 
 * `topic`
   * `images`
@@ -25,7 +25,7 @@ Each folder must have an `index.md` file which links to the individual sub-pages
 
 ## Images
 
-Images are stored and linked relatively to .md pages, and should by convention always be in an `images` folder. So to add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
+Images are stored and linked relatively to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
 ```markdown
 ![My Image Alt Text](images/img.png)
@@ -71,7 +71,7 @@ or
 
 ### Internal links
 
-If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example if you need to provide hyperlink to an `index.md` file which is in the current folder then only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder then only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
+If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example if you need to provide hyperlink to an `index.md` file which is in the current folder, only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder, only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
 
 ```markdown
 [Umbraco.Helpers](Umbraco.Helpers)
@@ -85,7 +85,7 @@ or
 
 ### Styled links
 
-When you have multiple links that you want to add below an article we recommend using the styled links options. Let's say you've written a guide and want to direct the user to more related articles afterwards, you can do that by using the following formatting.
+When you have multiple links to add below an article, we recommend using the styled links options. For example, if you've written a guide and want to direct the user to related articles for further reading, you can do that by using the following formatting:
 
 ```markdown
 :::links
@@ -95,54 +95,54 @@ When you have multiple links that you want to add below an article we recommend 
 :::
 ```
 
-The example above, will render like the following:
+The example above will render as follows:
 
 :::links
 ### Related articles
-
-- [Styled links](#)
+* [Styled links](#)
 - [You can also add `inline code` to links](#)
 :::
 
 ## Formatting code
 
-Indent your sample with 4 spaces, which will cause it to be rendered as `<pre><code>` tags.
-For inline code, wrap in ` (backtick) chars.
+Indent your sample with 4 spaces, which will cause it to be rendered inside `<pre><code>` tags.
+For inline code, wrap in ` (backtick) characters.
 
-Use # for the headline, ## for sub headers and ### for parameters (on code reference pages)
+Use # for the headline, ## for sub headers and ### for parameters (on code reference pages).
 
-For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`
+For optional parameters wrap in _ (underscore) characters, e.g.:
+`###_optionalParameter_`
 
 ## Adding notes, warnings, tips
 
-The Markdown conversion library used in the documentation is called [Markdig](https://github.com/lunet-io/markdig). It has the possibility of adding classes to markdown that you can then target with CSS. There are a few custom Markdown classes that can be used:
+The Markdown conversion library used in the documentation is called [Markdig](https://github.com/lunet-io/markdig). It allows you to add classes to markdown that you can then target with CSS. There are a few custom Markdown classes that can be used:
 
 ```markdown
 :::note
-This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+This is a note. It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
 :::
 
 :::warning
-This is a warning, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+This is a warning. It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
 :::
 
 :::tip
-This is a tip, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+This is a tip: It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
 :::
 ```
 
-Will render like this:
+These examples will render like this:
 
 :::note
-This is a note, it contains useful information and also [a link](https://thisisalink.com/useful/resource), please make sure it looks nice on Our!
+This is a note. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
 :::
 
 :::warning
-This is a warning, it contains useful information and also [a link](https://thisisalink.com/useful/resource), please make sure it looks nice on Our!
+This is a warning. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
 :::
 
 :::tip
-This is a tip, it contains useful information and also [a link](https://thisisalink.com/useful/resource), please make sure it looks nice on Our!
+This is a tip. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
 :::
 
 ## Styled checklists
@@ -158,15 +158,11 @@ Instead of using the classic bullet for lists, the Umbraco documentation provide
 :::
 ```
 
-The list in the snippet above, will give the following checklist on the frontend:
+This list will render as:
 
 :::checklist
-
 * Item 1
 * Item 2
 * Item 3
 * Item 4
-
 :::
-
-

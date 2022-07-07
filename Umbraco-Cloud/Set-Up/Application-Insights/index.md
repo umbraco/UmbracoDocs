@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 10.0.0
 ---
 
 # Application Insights on Umbraco cloud
@@ -20,15 +20,33 @@ After that, you can go ahead and grab your `instrumentation key`, from the AI Re
 
 The next thing we need to look at is how to enable AI for your Umbraco solution.
 
-The easiest way is to open your favorite Visual Studio instance, go to Package Manager Console and go
+The easiest way is to open the command prompt of your choice and run the following command:
 
-`Install-Package Microsoft.ApplicationInsights.Web`
+`dotnet add package Microsoft.ApplicationInsights.AspNetCore`
 
-This will install Application Insights and all of its dependencies. It will also create an `ApplicationInsights.config` file.
+This will install Application Insights and all of its dependencies. Open the `appSettings.json` file and paste in your `instrumentation key` found in the previous section.
 
-Go ahead, open this file and paste in your `instrumentation key` found in the previous section.
+```json
+"ApplicationInsights": {
+    "InstrumentationKey": "your_key_here"
+  },
+```
 
-![alt text](images/02-Insert-Instrumentation-key.png "Insert Instrumentation Key")
+Last step is to enable Application Insights in your application. You can achieve this by updating the `Startup.cs` class.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .Build();
+
+    // The following line enables Application Insights telemetry collection.
+    services.AddApplicationInsightsTelemetry();
+}
+```
 
 Upload the changes to your solution and that is it!
 

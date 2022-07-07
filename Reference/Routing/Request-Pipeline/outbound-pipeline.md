@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Outbound request pipeline"
 meta.Description: "How the Umbraco outbound request pipeline works"
-state: complete
-verified-against: beta-4
-update-links: false
 ---
 # Outbound request pipeline
 
@@ -36,7 +34,7 @@ To create a new Url Segment Provider, implement the following interface:
 ```csharp
 public interface IUrlSegmentProvider
 {
-  string GetUrlSegment(IContentBase content, string culture = null);
+  string GetUrlSegment(IContentBase content, string? culture = null);
 }
 ```
 
@@ -63,7 +61,7 @@ namespace RoutingDocs.SegmentProviders
             _provider = new DefaultUrlSegmentProvider(stringHelper);
         }
         
-        public string GetUrlSegment(IContentBase content, string culture = null)
+        public string GetUrlSegment(IContentBase content, string? culture = null)
         {
             // Only apply this rule for product pages
             if (content.ContentType.Alias != "productPage")
@@ -91,7 +89,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace RoutingDocs.SegmentProviders
 {
-    public class RegisterCustomSegmentProviderComposer : IUserComposer
+    public class RegisterCustomSegmentProviderComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
@@ -111,25 +109,6 @@ First it looks (in this order) for:
 - The 'name' of the content item e.g. `content.Name`.
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
-
-```csharp
- public string GetUrlSegment(IContentBase content, string culture = null)
-{
-    return GetUrlSegmentSource(content, culture).ToUrlSegment(culture);
-}
-
-private static string GetUrlSegmentSource(IContentBase content, stringculture)
-{
-    string source = null;
-    if (content.HasProperty(Constants.Conventions.Content.UrlName))
-        source = (content.GetValue<string>(Constants.Conventions.Content.UrlName, culture) ?? string.Empty).Trim();
-
-    if (string.IsNullOrWhiteSpace(source))
-        source = content.GetCultureName(culture);
-
-    return source;
-}
-```
 
 ## 2. <a name="paths"></a>Create paths
 
@@ -202,7 +181,7 @@ Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for
 // This one is initialized by default
 public class DefaultUrlProvider : IUrlProvider
 {
-    public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string culture, Uri current)
+    public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {…}
 
     public virtual IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
@@ -240,7 +219,7 @@ Create a custom Url Provider by implementing `IUrlProvider` interface:
 ```csharp
 public interface IUrlProvider
 {
-    UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string culture, Uri current);
+    UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current);
 
     IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current);
 }
@@ -274,14 +253,14 @@ using Umbraco.Cms.Core.Web;
 
 namespace RoutingDocs.UrlProviders
 {
-    public class ProductPageUrlProvider : DefaultUrlProvider
+public class ProductPageUrlProvider : DefaultUrlProvider
     {
         public ProductPageUrlProvider(
-            IOptions<RequestHandlerSettings> requestSettings,
+            IOptionsMonitor<RequestHandlerSettings> requestSettings,
             ILogger<DefaultUrlProvider> logger,
             ISiteDomainMapper siteDomainMapper,
             IUmbracoContextAccessor umbracoContextAccessor,
-            UriUtility uriUtility) 
+            UriUtility uriUtility)
             : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility)
         {
         }
@@ -292,14 +271,24 @@ namespace RoutingDocs.UrlProviders
             return base.GetOtherUrls(id, current);
         }
 
-        public override UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string culture, Uri current)
+        public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
         {
+            if (content is null)
+            {
+                return null;
+            }
+            
             // Only apply this to product pages
-            if (content is not null && content.ContentType.Alias == "productPage")
+            if (content.ContentType.Alias == "productPage")
             {
                 // Get the original base url that the DefaultUrlProvider would have returned,
                 // it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
-                UrlInfo defaultUrlInfo = base.GetUrl(content, mode, culture, current);
+                UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
+                if (defaultUrlInfo is null)
+                {
+                    return null;
+                }
+                
                 if (!defaultUrlInfo.IsUrl)
                 {
                     // This is a message (eg published but not visible because the parent is unpublished or similar)
@@ -397,8 +386,8 @@ Create a custom SiteDomainMapper by implementing ISiteDomainMapper
 ```csharp
 public interface ISiteDomainMapper
 {
-    DomainAndUri MapDomain(IReadOnlyCollection<DomainAndUri> domainAndUris, Uri current, string culture, string defaultCulture);
-    IEnumerable<DomainAndUri> MapDomains(IReadOnlyCollection<DomainAndUri> domainAndUris, Uri current, bool excludeDefault, string culture, string defaultCulture);
+    DomainAndUri? MapDomain(IReadOnlyCollection<DomainAndUri> domainAndUris, Uri current, string? culture, string? defaultCulture);
+    IEnumerable<DomainAndUri> MapDomains(IReadOnlyCollection<DomainAndUri> domainAndUris, Uri current, bool excludeDefault, string? culture, string? defaultCulture);
 }
 ```
 
@@ -450,7 +439,7 @@ namespace RoutingDocs.SiteDomainMapping
 {
     public class SiteDomainMapperComponent : IComponent
     {
-        private readonly SiteDomainMapper _siteDomainMapper;
+        private readonly SiteDomainMapper? _siteDomainMapper;
 
         public SiteDomainMapperComponent(ISiteDomainMapper siteDomainMapper)
         {
@@ -462,9 +451,9 @@ namespace RoutingDocs.SiteDomainMapping
         }
         public void Initialize()
         {
-            _siteDomainMapper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-            _siteDomainMapper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-            _siteDomainMapper.AddSite("staging", "umbraco-v8-staging.localtest.me");
+            _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
+            _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
+            _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
         }
 
         public void Terminate()
@@ -502,10 +491,10 @@ The SiteDomainMapper contains a 'BindSites' method that enables different site g
 ```csharp
 public void Initialize()
 {
-    _siteDomainMapper.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-    _siteDomainMapper.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-    _siteDomainMapper.AddSite("staging", "umbraco-v8-staging.localtest.me");
-    _siteDomainMapper.BindSites("backoffice", "staging");
+    _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
+    _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
+    _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
+    _siteDomainMapper?.BindSites("backoffice", "staging");
 }
 ```
 

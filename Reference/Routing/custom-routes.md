@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Custom Umbraco Routes"
 meta.Description: "Setting up your own controllers and routes that exist alongside the Umbraco pipeline"
-state: complete
-verified-against: rc-1
-update-links: true
 ---
 
 # Custom MVC Routes
@@ -191,34 +189,42 @@ public ShopController(
 Now that we have our dependencies, and our action methods, we're finally ready to implement the `FindContent` method: 
 
 ```C#
-public IPublishedContent FindContent(ActionExecutingContextactionExecutingContext)
+public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
 {
-    var productRoot = _umbracoContextAccessor.UmbracoContext.Content.GetById(2074);
-
-    if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
-    {
-        // Check which action is executing
-        switch (controllerActionDescriptor.ActionName)
+   if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+   {
+        var productRoot = umbracoContext.Content.GetById(2074);
+        if (productRoot!=null)
         {
-            case nameof(Index):
-                return productRoot;
-            
-            case nameof(Product):
-                // Get the SKU/Id from the route values
-                if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+
+            if (actionExecutingContext.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+            {
+                // Check which action is executing
+                switch (controllerActionDescriptor.ActionName)
                 {
-                    return productRoot
-                        .Children
-                        .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
-                }
-                else
-                {
-                    return productRoot;
-                }
+                    case nameof(Index):
+                        return productRoot;
+
+                    case nameof(Product):
+                        // Get the SKU/Id from the route values
+                        if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))
+                        {
+                            return productRoot
+                                .Children
+                                .FirstOrDefault(c => c.Value<string>(_publishedValueFallback, "sku") == sku.ToString());
+                        }
+                        else
+                        {
+                            return productRoot;
+                        }
+                 }
+            }           
+
+            return productRoot;
         }
     }
 
-    return productRoot;
+    return null;
 }
 ```
 
@@ -290,6 +296,64 @@ namespace RoutingDocs.Controllers
 ```
 
 With that we have our controller with a custom route within an Umbraco context.
+
+#### Client-Side Requests
+If the endpoint of your custom route is considered a client-side request e.g. **/sitemap.xml**, you will need to make a few changes to get this to work.
+
+Define your route as before, specifying the correct client type route:
+
+```C#
+.WithEndpoints(u =>
+{
+    u.EndpointRouteBuilder.MapControllerRoute("Sitemap Xml", "/sitemap.xml",
+        new { Controller = "SitemapXml", Action = "Index" });
+});
+```
+
+You will need to configure your route request options within your **Startup.cs** class. For single routes:
+
+```C#
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");
+});
+```
+
+Or it can handle multiple routes:
+
+```C#
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    string[] allowList = new[] {"/sitemap.xml", ...};
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        foreach (string route in allowList)
+        {
+            if (httpRequest.Path.StartsWithSegments(route))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    };
+});
+```
+In your **FindContent** method you should still be able to access and use **IUmbracoContextAccessor** through standard DI:
+
+```
+public IPublishedContent? FindContent(ActionExecutingContext actionExecutingContext)
+{
+    IUmbracoContext context = _umbracoContextAccessor.GetRequiredUmbracoContext();
+    IPublishedContent? content = context.Content?.GetAtRoot().FirstOrDefault();
+
+    return content;
+}
+```
+
+:::note
+There is currently a bug in all versions below 9.5, where this fix won't work for mapping a client-side request to an Umbraco Controller. See [https://github.com/umbraco/Umbraco-CMS/issues/12083](https://github.com/umbraco/Umbraco-CMS/issues/12083) for more details. v9.5 fixes this issue and it's recommended to update to the latest version!
+:::
 
 #### Attribute routing with IVirtualPageController
 

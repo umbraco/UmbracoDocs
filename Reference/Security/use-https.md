@@ -1,7 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites."
-meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like "Man in the middle" and phising attacks."
+meta.Description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like 'Man in the middle' and phising attacks."
 ---
 
 # HTTPS
@@ -17,7 +18,7 @@ There are several benefits of HTTPS:
 
 Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
 
-## Set UseSSL configuration option
+## Set UseHttps configuration option
 
 Umbraco allows you to force HTTPS for all backoffice communications by using the following configuration:
 

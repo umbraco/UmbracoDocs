@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "BackOfficeUserManager and Notifications"
 meta.Description: "The BackOfficeUserManager is the ASP.NET Core Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Core Identity including password handling."
 ---
@@ -19,7 +20,7 @@ This may be required if you want to extend the functionality of the BackOfficeUs
 You can replace the BackOfficeUserManager in the startup class by using the `SetBackOfficeUserManager` extension on the `IUmbracoBuilder`.
 
 
-```cs
+```csharp
 public class Startup
 {
    ...
@@ -32,14 +33,14 @@ public class Startup
             .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
             .Build();
     }
-...
+  ...
 }
 ```
 
 You can then implement your custom `BackOfficeUserManager`, like this.
 Note the constructor minimum needs to inject what is required for the base `BackOfficeUserManager` class:
 
-```cs
+```csharp
  public class CustomBackOfficeUserManager : BackOfficeUserManager
 {
     public CustomBackOfficeUserManager(
@@ -52,11 +53,12 @@ Note the constructor minimum needs to inject what is required for the base `Back
         BackOfficeErrorDescriber errors,
         IServiceProvider services,
         IHttpContextAccessor httpContextAccessor,
-        ILogger<UserManager<BackOfficeIdentityUser>> logger,
+        ILogger<CustomBackOfficeUserManager> logger,
         IOptions<UserPasswordConfigurationSettings> passwordConfiguration,
         IEventAggregator eventAggregator,
         IBackOfficeUserPasswordChecker backOfficeUserPasswordChecker)
-        : base(ipResolver,
+        : base(
+            ipResolver,
             store,
             optionsAccessor,
             passwordHasher,
@@ -73,7 +75,7 @@ Note the constructor minimum needs to inject what is required for the base `Back
     }
 
     //Override whatever you need, e.g. SupportsUserTwoFactor.
-    public override bool SupportsUserTwoFactor => true;
+    public override bool SupportsUserTwoFactor => false;
 }
 ```
 

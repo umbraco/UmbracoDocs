@@ -1,16 +1,11 @@
 ---
-product: "CMS"
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
-updated-link: False
+versionTo: 10.0.0
 ---
 
 # Tutorial - Creating a Custom Dashboard
-
-_This tutorial was last tested on **Umbraco 8.13.0** and **Umbraco 9.0.0**_
 
 ## Overview
 
@@ -82,7 +77,7 @@ Similar to a property editor you will now register the dashboard in a package.ma
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,
@@ -109,13 +104,17 @@ You can specify multiple controls to appear on a particular tab, and multiple ta
 
 After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
+You will need to create a *Lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
+
+:::note
+The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
+:::
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
   <area alias="dashboardTabs">
-    <key alias="WelcomeDashboard">Welcome</key>
+    <key alias="welcomeDashboard">Welcome</key>
   </area>
 </language>
 ```
@@ -140,7 +139,7 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,
@@ -211,7 +210,7 @@ Finally, we need to update the package.manifest file to load the additional cont
 {
     "dashboards":  [
         {
-            "alias": "WelcomeDashboard",
+            "alias": "welcomeDashboard",
             "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
             "sections":  [ "content" ],
             "weight": -10,

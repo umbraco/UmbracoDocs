@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Using Azure Storage Explorer with Umbraco Cloud"
 meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
 ---
@@ -20,15 +21,9 @@ All media needs to be added through the Umbraco backoffice.
 
 ## Getting the credentials
 
-The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials in [Kudu (Power Tools)](../../Power-Tools) - under the "Environment" section.
+The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials under the connection details for your Umbraco Cloud project.
 
-In the environment section, we want to locate the "Environment Variables" and find the following three variables:
-
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__CONTAINERNAME`,
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__ENDPOINT`, and
-* `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__SHAREDACCESSSIGNATURE`.
-
-Note these down, as we will use them in the upcoming steps.
+![Blob storage connection details GIF](images/blob.gif)
 
 ## Installing Azure Storage Explorer
 
@@ -38,15 +33,15 @@ The next step is to have Azure Storage Explorer installed on your local computer
 
 Let's use the information you have gathered, and connect Azure Storage Explorer to the Blob storage container:
 
-1. Click the "Open connect dialogue" button to get the Connect dialogue.
+1. Click the **Open connect dialogue** button to get the Connect dialogue.
 
     ![Connect my machine](images/storage-explorer-connection.png)
 
-2. Select "Blob container" in the first prompt.
+2. Select **Blob container** in the first prompt.
 
     ![Blob container](images/select-resource.png)
 
-3. Select "Shared access signature URL (SAS)" in the second prompt.
+3. Select **Shared access signature URL (SAS)** in the second prompt.
 
     ![Shared access signature URL (SAS)](images/select-shared-access-signature.png)
 
@@ -58,9 +53,9 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 
     ![Attach with SAS URI](images/connection-info.png)
 
-5. Ensure that the credentials are correctly set in the "Connection Summary" prompt.
+5. Ensure that the credentials are correctly set in the **Connection Summary** prompt.
 
-6. Select "Connect".
+6. Select **Connect**.
 
 7. Open the media folder, and you now have access to the Azure Blob Storage container for your environment.
 

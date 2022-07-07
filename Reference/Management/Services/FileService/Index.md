@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: beta-3
-state: complete
-updated-links: true
 ---
 
 # FileService

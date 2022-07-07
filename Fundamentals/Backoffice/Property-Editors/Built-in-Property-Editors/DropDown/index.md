@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Dropdown
@@ -22,7 +23,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Data Type Definition Example
 
-![Dropdown Data Type Definition](images/Dropdown-DataType-v8.png)
+![Dropdown Data Type Definition](images/Dropdown-DataType-v10.png)
 
 ## Content Example
 
@@ -63,10 +64,11 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 ### Single item - with Modelsbuilder
 
 ```csharp
-@if (!string.IsNullOrWhiteSpace(Model.Category))
+@if (!Model.HasValue(Model.Category))
 {
-    <p>@Model.Category</p>
+   <p>@Model.Category</p>
 }
+
 ```
 
 ### Multiple items - with Modelsbuilder
@@ -88,6 +90,7 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @using Newtonsoft.Json
 @{
@@ -120,6 +123,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'categories'
