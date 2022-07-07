@@ -104,13 +104,15 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 Added in 8.7.0, this setting controls the maximum number of columns that can be created by editors when they configure groups within a form.  The default value used if the setting value is not provided is 12.
 
 ### CultureToUseWhenParsingDatesForBackOffice
-This setting has been added in 8.13, to help resolve an issue with multi-lingual setups. When Umbraco Forms stores data for a record, as well as storing the values submitted for each field into a dedicated table for each type (string, date etc.), it also saves a second copy of the record in a JSON structure. This is more suitable for fast look-up and display in the backoffice.  Date values are serialized using the culture used by the front-end website when the form entry is stored.
+This setting has been added in 8.13, to help resolve an issue with multi-lingual setups.
 
-When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, to that used when the value was stored.
+When Umbraco Forms stores data for a record, it saves the values submitted for each field into a dedicated table for each type (string, date etc.). It also saves a second copy of the record in a JSON structure which is more suitable for fast look-up and display in the backoffice. Date values are serialized using the culture used by the front-end website when the form entry is stored.
 
-From 8.13 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website and ensure the date fields in the backoffice are correctly presented.
+When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, than that used when the value was stored.
 
-In other words, if you have a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor may be using "en-GB" (which formats dates as of `d/m/y`), by setting the value of this configuration key to "en-US" you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
+From 8.13 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However, this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website. This ensures the date fields in the backoffice are correctly presented.
+
+Taking an example of a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor uses "en-GB" (which formats dates as of `d/m/y`). By setting the value of this configuration key to "en-US", you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
 
 If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
 

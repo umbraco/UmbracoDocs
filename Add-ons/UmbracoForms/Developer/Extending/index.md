@@ -12,7 +12,7 @@ For front-end extensions, specifically via theming, see the [Themes](../Themes/i
 
 ## Developing Custom Providers
 
-Although the Forms package comes with many field, workflow and other built-in types, if you have a requirement that isn't served by any of these, you can create develop your own.
+Although the Forms package comes with many field, workflow and other built-in types, if you have a requirement that isn't served by any of these, you can create and develop your own.
 
 ### [Provider model](Adding-a-Type.md)
 
@@ -20,7 +20,7 @@ Many features of Forms use a provider model, which makes it quicker to add new p
 
 The model uses the notion that everything must have a type to exist. The type defines the capabilities of the item. For instance a Textfield on a form has a FieldType, this particular field type enables it to render an input field and save text strings. The same goes for workflows, which have a workflow type, datasources which have a datasource type and so on. Using the model you can seamlessly add new types and thereby extend the application.
 
-It is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types and Workflow Types.
+It is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types, and Workflow Types.
 
 ### [Field types](Adding-a-Fieldtype.md)
 
@@ -62,11 +62,11 @@ In the course of submitting a form, Umbraco Forms will set various values in `Te
 
 ### Customizing Post-Submission Behavior
 
-Whether displaying a message or redirecting, a developer can customize the page viewed after the form is submitted on the basis of presence of `TempData` variables.
+Whether displaying a message or redirecting, a developer can customize the page viewed after the form is submitted based on the presence of `TempData` variables.
 
 One variable with a key of `UmbracoFormSubmitted` has a value containing the Guid identifier for the submitted form.
 
-A second variable containt the Guid identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
+A second variable contains the Guid identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
 
 In order to redirect to an external URL rather than a selected page on the Umbraco website, you will need to use a [custom workflow](../../Developer/Extending/Adding-a-Workflowtype.md). Within this workflow you can set the required redirect URL on the `HttpContext.Items` dictionary using the key `FormsRedirectAfterFormSubmitUrl` (defined in the constant `Umbraco.Forms.Core.Constants.ItemKeys.RedirectAfterFormSubmitUrl`).  This feature is available from versions 8.13 and 10.1.
 
