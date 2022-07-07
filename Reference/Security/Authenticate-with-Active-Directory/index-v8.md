@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.0
 versionTo: 8.18.4
 ---
 
@@ -57,6 +57,10 @@ namespace MyApp
 
 }
 ```
+
+:::note
+If you are using an Umbraco version before v8.0.3 you can't pass in an instance of `Mapper` in to the base create method. 
+:::
 
 The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
 
