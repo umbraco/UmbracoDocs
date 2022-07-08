@@ -1,64 +1,64 @@
 ---
 meta.Title: "Umbraco 8 FAQ"
-meta.Description: "Frequently asked questions on Umbraco 8"
+meta.Description: "Häufig gestellte Fragen zu Umbraco 8"
 ---
 
-# Umbraco 8 - Frequently Asked Questions
+# Umbraco 8 - Häufig gestellte Fragen
 
-In this article you can find answers to some of the most frequently asked questions about Umbraco 8.
+In diesem Artikel finden Sie Antworten auf einige der am häufigsten gestellten Fragen zu Umbraco 8.
 
-If you cannot find the answers you're looking for, reach out to contact@umbraco.com and our Support Warriors will help you out!
+Wenn Sie die gesuchten Antworten nicht finden können, wenden Sie sich an contact@umbraco.com und unsere Support Warriors werden Ihnen helfen!
 
-## Can I take a trial of Umbraco 8 on Umbraco Cloud?
+## Kann ich Umbraco 8 in der Umbraco Cloud testen?
 
-Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the official release date.
+Ja, du kannst! Alle kostenlosen Umbraco Cloud-Testversionen werden ab dem offiziellen Veröffentlichungsdatum auf Umbraco 8 verfügbar sein.
 
-## Can I still create Umbraco 7 projects on Umbraco Cloud and for how long?
+## Kann ich weiterhin Umbraco 7-Projekte in der Umbraco Cloud erstellen und wie lange?
 
-You will be able to create Umbraco 7 project on Umbraco Cloud up until July 2021.
+Sie können bis Juli 2021 Umbraco 7-Projekte in Umbraco Cloud erstellen.
 
-When creating a new paid Umbraco Cloud project, you’ll get the option to choose which major version of Umbraco to use.
+Wenn Sie ein neues kostenpflichtiges Umbraco Cloud-Projekt erstellen, können Sie auswählen, welche Hauptversion von Umbraco verwendet werden soll.
 
-From July 2021 you can no longer create new sites nor create baseline children based on Umbraco 7.
+Ab Juli 2021 können Sie basierend auf Umbraco 7 keine neuen Sites mehr erstellen oder Baseline-Children erstellen.
 
-## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
+## Wie lange werden Umbraco 7-Projekte in der Umbraco Cloud unterstützt?
 
-We will continue to support Umbraco 7 projects on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regards to security fixes.
+Wir werden Umbraco 7-Projekte in der Umbraco Cloud bis zum 30. September 2023 weiterhin unterstützen. Support bedeutet, Ihnen die notwendigen Updates in Bezug auf Sicherheitsfixes zur Verfügung zu stellen.
 
-From August 2023 Umbraco 7 will be considered End of Life (EOL), and we will therefor recommend that you make sure to migrate your project to a newer before then. 
+Ab August 2023 gilt Umbraco 7 als End of Life (EOL), und wir empfehlen Ihnen daher, Ihr Projekt bis dahin auf ein neueres zu migrieren.
 
-Learn more about the Support and Security phases as well as get all the dates related to the life-cycle of Umbraco 7 in the [Support, LTS and EOL blog post](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
+Erfahren Sie mehr über die Support- und Sicherheitsphasen sowie alle Daten zum Lebenszyklus von Umbraco 7 im [Blogbeitrag zu Support, LTS und EOL (Englisch)](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
 
-## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
+## Wird ein automatisches Upgrade von Umbraco 7 auf Umbraco 8 möglich sein?
 
-There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have added content migrations in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
+Es gibt keinen direkten Upgrade-Pfad von Umbraco 7 auf Umbraco 8, aber es ist möglich, Inhalte von Umbraco 7-Sites auf Umbraco 8-Sites zu migrieren. Wir haben Inhaltsmigrationen in Umbraco 8.1.0 hinzugefügt, mit denen Sie Ihre Inhalte (Inhalte/Medien/Mitglieder) von einer Umbraco 7-Site auf eine Umbraco 8-Site verschieben können.
 
-The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8.
+Der Grund, warum es nicht möglich ist, eine Umbraco 7-Site auf Umbraco 8 zu aktualisieren, ist, dass die Codebasis in Umbraco 8 grundlegend aktualisiert wurde. Viele veraltete Codes und Technologien wurden entfernt und stattdessen neue, schnellere und sicherere Technologien implementiert in Umbraco 8.
 
-### Migrating content from Umbraco 7 to Umbraco 8
+### Inhalte von Umbraco 7 auf Umbraco 8 migrieren
 
-If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content Migration guide](Getting-Started/Setup/Upgrading/migrating-to-v8).
+Wenn Sie eine Umbraco 7-Site haben, können Sie den Inhalt auf eine Umbraco 8.1+-Site migrieren. Lesen Sie, wie das geht, in unserem [Leitfaden zur Inhaltsmigration](Getting-Started/Setup/Upgrading/migrating-to-v8).
 
-:::tip
-If you are using Umbraco Cloud we have a [Cloud specific migration guide](Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) that will take you through the Cloud specific considerations.
+:::Tipp
+Wenn Sie Umbraco Cloud verwenden, haben wir einen [Cloud-spezifischen Migrationsleitfaden] (Umbraco-Cloud/Upgrades/Migrating-from-7-to-8), der Sie durch die Cloud-spezifischen Überlegungen führt.
 :::
 
-## For how long will Umbraco 7 be supported outside of Umbraco Cloud?
+## Wie lange wird Umbraco 7 außerhalb von Umbraco Cloud unterstützt?
 
-As Umbraco 7 is open source, you'll be able to use it, well, forever. You should though be aware that Umbraco HQ is only committed to supporting this version up until a specific date.
+Da Umbraco 7 Open Source ist, können Sie es für immer verwenden. Sie sollten sich jedoch darüber im Klaren sein, dass Umbraco HQ nur verpflichtet ist, diese Version bis zu einem bestimmten Datum zu unterstützen.
 
-New features will not be added to Umbraco 7 going forward, and the last planned minor release for Umbraco 7 was Umbraco 7.15.0 which was released on July 9th 2019.
+In Zukunft werden keine neuen Funktionen zu Umbraco 7 hinzugefügt, und die letzte geplante Nebenversion für Umbraco 7 war Umbraco 7.15.0, die am 9. Juli 2019 veröffentlicht wurde.
 
-Umbraco 7.15 will be supported till the end of June 2021, after which it will enter the Security phase. In this phase only security issues will be fixed. 
+Umbraco 7.15 wird bis Ende Juni 2021 unterstützt, danach tritt es in die Sicherheitsphase ein. In dieser Phase werden nur Sicherheitsprobleme behoben.
 
-By the end of September 2023 Umbraco 7 will be considered End Of Life (EOL), and we will no longer recommend using it.
+Bis Ende September 2023 gilt Umbraco 7 als End Of Life (EOL), und wir werden die Verwendung nicht mehr empfehlen.
 
-We will continue to provide necessary updates in regard to bug and security fixes for Umbraco 7 up until the September 2023.
+Wir werden bis September 2023 weiterhin notwendige Updates in Bezug auf Fehler- und Sicherheitskorrekturen für Umbraco 7 bereitstellen.
 
-Learn more about the Support and Security phases as well as get all the dates related to the life-cycle of Umbraco 7 in the [Support, LTS and EOL blog post](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
+Erfahren Sie mehr über die Support- und Sicherheitsphasen sowie alle Daten zum Lebenszyklus von Umbraco 7 im [Blogbeitrag zu Support, LTS und EOL (Englisch)](https://umbraco.com/blog/announcement-support-lts-and-eol-for-umbraco-cms-cloud-and-packages/).
 
-## What are the highlights of Umbraco 8?
+## Was sind die Highlights von Umbraco 8?
 
-The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco more enjoyable for everyone involved.
+Die Einführung von drei neuen Funktionen: Unendliche Bearbeitung, Inhalts-Apps und Sprachvarianten. Alles Funktionen, die hinzugefügt wurden, um die Arbeit mit Umbraco für alle Beteiligten angenehmer zu gestalten.
 
-Also, if you are a developer and currently have projects on Umbraco 7 (or previous versions) you will notice a big difference in the codebase. In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
+Auch wenn Sie ein Entwickler sind und derzeit Projekte auf Umbraco 7 (oder früheren Versionen) haben, werden Sie einen großen Unterschied in der Codebasis feststellen. In Umbraco 8 haben wir Verbesserungen hinzugefügt und Abhängigkeiten aktualisiert sowie eine gründliche Bereinigung vorgenommen, um Ihnen die Arbeit mit und die Erweiterung Ihres Umbraco-Projekts zu erleichtern.

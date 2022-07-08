@@ -1,3 +1,3 @@
-# Legacy Documentation
+# Legacy-Dokumentation
 
-The documentation on Our.Umbraco is for Umbraco 7. If you are looking for documentation for older versions of Umbraco or for deprecated or old unsupported APIs you can find them on [GitHub](https://github.com/umbraco/UmbracoDocs/blob/v7-documentation/index.md).
+Die Dokumentation auf Our.Umbraco ist für Umbraco 7. Wenn Sie nach Dokumentation für ältere Versionen von Umbraco oder für veraltete oder alte nicht unterstützte APIs suchen, finden Sie diese auf [GitHub](https://github.com/umbraco/UmbracoDocs/blob/v7-documentation/index.md).

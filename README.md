@@ -1,57 +1,57 @@
-# Umbraco Documentation project
+# Umbraco-Dokumentationsprojekt
  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 
-# Reading & using the docs
-This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
+# Lesen und Verwenden der Dokumente
+Dies ist das Dokumentationsprojekt für Umbraco. Der Umfang dieses Projekts besteht darin, Übersichten über Konzepte, Tutorials, Beispielcode und Links zu API-Referenzen bereitzustellen.
 
-# What's in the documentation
+# Was steht in der Dokumentation
 
-## Getting started
-[Getting started](Getting-Started/) is an introduction to Umbraco, containing explanations of basic concepts and short tutorials.
+## Einstieg
+[Erste Schritte](Erste-Schritte/) ist eine Einführung in Umbraco, die Erläuterungen zu grundlegenden Konzepten und kurze Tutorials enthält.
 
-## Implementation
-[Implementation](Implementation/) is an overview of Umbraco's structure and pipeline.
+## Implementierung
+[Implementierung](Implementation/) ist ein Überblick über die Struktur und Pipeline von Umbraco.
 
-## Developers Reference
-[Reference](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+## Entwicklerreferenz
+[Reference](Reference/index.md) ist eine Sammlung von API-Referenzen speziell für Entwickler, die mit Umbraco arbeiten und diese erweitern.
 
-## Extending
-[Extending](Extending/) is documentation on customizing and extending the backoffice.
+## Verlängerung
+[Extending](Extending/) ist eine Dokumentation zum Anpassen und Erweitern des Backoffice.
 
 ## Tutorials
-[Tutorials](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+[Tutorials](Tutorials/) ist eine Sammlung der umfangreicheren Tutorials, die in der Dokumentation verwendet werden.
 
-# Markdown conventions
-The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
+# Markdown-Konventionen
+Die Umbraco-Dokumentation verwendet Markdown für die gesamte Dokumentation; Bitte informieren Sie sich über unsere [Markdown-Konventionen](Contribute/Markdown-Conventions/).
 
-# Annotating a document
+# Ein Dokument kommentieren
 
-To add version information and extra keywords, [every document can be annotated using YAML](Contribute/Adding-Metadata/index.md).
+Um Versionsinformationen und zusätzliche Schlüsselwörter hinzuzufügen, [jedes Dokument kann mit YAML kommentiert werden] (Contribute/Adding-Metadata/index.md).
 
-# Multi version documentation
-Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
+# Dokumentation für mehrere Versionen
+Jede neue Version von Umbraco führt neue Funktionen ein. Dies bedeutet, dass möglicherweise nicht jedes Dokument für Ihre möglicherweise ältere Version funktioniert.
 
-Therefore we introduced 2 different mechanisms:
-1. The [YAML metadata describing](Contribute/Adding-Metadata/index.md) `versionFrom` and `versionTo`.
-2. The possibility [to add multiple files about the same topic](Contribute/File-Naming-Conventions/index.md).
+Daher haben wir 2 verschiedene Mechanismen eingeführt:
+1. Die [YAML-Metadaten beschreiben](Contribute/Adding-Metadata/index.md) „versionFrom“ und „versionTo“.
+2. Die Möglichkeit [mehrere Dateien zum selben Thema hinzuzufügen] (Contribute/File-Naming-Conventions/index.md).
 
-# Previewing rendered output locally
+# Lokale Vorschau der gerenderten Ausgabe
 
-There is an experimental project which supports rendering the documentation locally.
+Es gibt ein experimentelles Projekt, das das lokale Rendern der Dokumentation unterstützt.
 
-You can install the tool from [NuGet](https://www.nuget.org/packages/Umbraco.Docs.Preview.App/) by issuing the following command.
+Sie können das Tool von [NuGet](https://www.nuget.org/packages/Umbraco.Docs.Preview.App/) installieren, indem Sie den folgenden Befehl ausführen.
 
 ```bash
 $ dotnet tool install --global Umbraco.Docs.Preview.App
 ```
 
-Or check out the source at: [https://github.com/umbraco/UmbracoDocs.Preview](https://github.com/umbraco/UmbracoDocs.Preview).
+Oder schauen Sie sich die Quelle an unter: [https://github.com/umbraco/UmbracoDocs.Preview](https://github.com/umbraco/UmbracoDocs.Preview).
 
-Once installed, navigate to your local clone of the UmbracoDocs repository and run the command `umbracodocs`. This will start a local webserver that's listening on `http://localhost:5000` and `https://localhost:5001` by default (the actual URLs will be shown), which you can open in your browser to view the rendered documentation.
+Navigieren Sie nach der Installation zu Ihrem lokalen Klon des UmbracoDocs-Repositorys und führen Sie den Befehl „umbracodocs“ aus. Dadurch wird ein lokaler Webserver gestartet, der standardmäßig auf `http://localhost:5000` und `https://localhost:5001` lauscht (die tatsächlichen URLs werden angezeigt), die Sie in Ihrem Browser öffnen können, um das gerenderte anzuzeigen Dokumentation.
 
-# Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
-We :heart: valuable contributions from everyone who is willing to help. It does not matter to us if it's something trivial like correcting spelling mistakes, raising an issue or writing a tutorial! Every little bit of help counts and it all helps make Umbraco easier to use, for everyone.
-Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco are always appreciated.
-Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
-## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-This library is released under the [MIT License](LICENSE.md).
+# Beitragen [![Beiträge willkommen](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [ ![GitHub-Mitwirkende](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
+Wir :heart: wertvolle Beiträge von allen, die bereit sind zu helfen. Dabei spielt es für uns keine Rolle, ob es sich um etwas Triviales wie das Korrigieren von Rechtschreibfehlern, das Melden eines Problems oder das Schreiben eines Tutorials handelt! Jede noch so kleine Hilfe zählt und trägt dazu bei, Umbraco für alle benutzerfreundlicher zu machen.
+Ansonsten sind [Fehlerberichte](https://github.com/umbraco/UmbracoDocs/issues/), [Fehlerbehebungen](https://github.com/umbraco/UmbracoDocs/pulls) und jedes Feedback zu Umbraco immer willkommen .
+Sehen Sie sich die [Contributor Guidelines](CONTRIBUTING.md) an, um zu erfahren, wie Sie sich beteiligen und bei der Umbraco-Dokumentation helfen können.
+## Lizenz [![MIT lizenziert](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+Diese Bibliothek wird unter der [MIT-Lizenz](LICENSE.md) veröffentlicht.
