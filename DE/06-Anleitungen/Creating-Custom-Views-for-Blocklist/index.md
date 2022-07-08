@@ -67,7 +67,7 @@ To add blocks to our Block List editor:
     | Details        | details | Textarea    |
     | Image          | image   | Media Picker|
 
-4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#setup-block-types) section.
+4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../02-Grundlagen/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#setup-block-types) section.
 5. Similarly, I'll set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
 
@@ -217,6 +217,6 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 
 ## Rendering the Block List Content
 
-To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
+To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../02-Grundlagen/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

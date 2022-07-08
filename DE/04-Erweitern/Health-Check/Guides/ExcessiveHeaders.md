@@ -13,7 +13,7 @@ This health check can be fixed by removing headers before the response is starte
 
 Be aware these headers are often added by the server and not by the application.
 
-Unless you publicly expose the Kestrel server ([not recommended by Microsoft](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.1&tabs=aspnetcore2x#when-to-use-kestrel-with-a-reverse-proxy)), you can't handle this directly in middleware.
+Unless you publicly expose the Kestrel server ([not recommended by Microsoft](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/servers/kestrel?view=aspnetcore-2.1&tabs=aspnetcore2x#when-to-use-kestrel-with-a-reverse-proxy)), you can't handle this directly in middleware.
 
 ### Removing headers when hosted on IIS
 

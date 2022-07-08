@@ -127,4 +127,4 @@ If you set up everything correctly and the error pages are not showing correctly
 
 ## Handling errors in ASP.NET Core
 
-For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
+For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.

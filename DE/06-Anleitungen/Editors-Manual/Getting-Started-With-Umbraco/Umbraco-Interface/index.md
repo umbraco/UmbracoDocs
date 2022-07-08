@@ -34,8 +34,8 @@ The following sections are available in the backoffice:
 - **Media** - allows to manage images and other media files.
 - **Settings** - allows to handle your meta data such as document types.
 - **Packages** - allows to manage and install packages.
-- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../Fundamentals/Data/Users/) article.
-- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../../Fundamentals/Data/Members/) article.
+- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../02-Grundlagen/Data/Users/) article.
+- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../../02-Grundlagen/Data/Members/) article.
 - **Forms** - allows to create and manage your forms.
 - **Translation** - allows to manage dictionary items.  
 

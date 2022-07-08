@@ -5,6 +5,9 @@ VersionVon: 8.0.0
 ---
 
 # Verwaltung eines Umbraco-Projekts
+:::rechts
+[EN-Version](/Getting-Started/Managing-an-Umbraco-project/index.md)
+:::
 
 In diesem Abschnitt können Sie den Entwicklungsprozess, die kommerziellen Optionen und die beste Planung eines Umbraco-Projekts untersuchen.
 
@@ -18,9 +21,9 @@ In diesem Abschnitt finden Sie Informationen zu den wichtigsten Konzepten und An
 
 [Welche kommerziellen Optionen sind bei Umbraco erhältlich?](https://umbraco.com/products/)
 
-[Informationen zur Planung eines Umbraco-Projekts](../../Fundamentals/Setup/Requirements/)
+[Informationen zur Planung eines Umbraco-Projekts](../../02-Grundlagen/Setup/Requirements/)
 
-[Wie verwalte ich Benutzer mit Umbraco?](../../Fundamentals/Data/Users/)
+[Wie verwalte ich Benutzer mit Umbraco?](../../02-Grundlagen/Data/Users/)
 
 [Wie sieht der Bereitstellungsprozess für Umbraco aus?](../../Umbraco-Cloud/Deployment)
 

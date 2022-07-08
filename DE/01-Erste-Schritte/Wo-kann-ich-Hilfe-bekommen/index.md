@@ -4,7 +4,7 @@ meta.description: "In diesem Abschnitt erfahren Sie, wo Sie die Antworten auf Ih
 VersionVon: 8.0.0
 ---
 # Wo erhalte ich Hilfe?
-:::right
+:::en-link
 [EN-Version](/Getting-Started/Where-can-I-get-help/index.md)
 :::
 

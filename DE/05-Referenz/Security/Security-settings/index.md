@@ -17,7 +17,7 @@ Umbraco backend users can [reset their own password](../password-reset.md), or i
 
 To deactivate the User password reset look at the [Umbraco Settings Security](../../V9-Config/SecuritySettings/#allow-password-reset) section.
 
-To configure password reset verify the [Backoffice Login Password Reset](../../../Fundamentals/Backoffice/Login/index.md#password-reset) section.
+To configure password reset verify the [Backoffice Login Password Reset](../../../02-Grundlagen/Backoffice/Login/index.md#password-reset) section.
 
 ## Other security settings
 

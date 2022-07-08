@@ -1,40 +1,43 @@
 ---
-meta.Title: "Hosting an Umbraco infrastructure" 
-meta.description: "Here you will find details on Azure, Umbraco Cloud, upgrading Umbraco, server configuration and system requirements."
-versionFrom: 8.0.0
+meta.Title: "Hosting einer Umbraco-Infrastruktur"
+meta.description: "Hier finden Sie Details zu Azure, Umbraco Cloud, Upgrade von Umbraco, Serverkonfiguration und Systemanforderungen."
+VersionVon: 8.0.0
 ---
 
-# Hosting an Umbraco Infrastructure
+# Hosten einer Umbraco-Infrastruktur
+:::rechts
+[EN-Version](/Getting-Started/Hosting-an-Umbraco-infrastructure/index.md)
+:::
 
-You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](../../Umbraco-Cloud/) hosting service, how to upgrade Umbraco, and much more.
+Hier finden Sie Ressourcen, die Sie durch den Prozess der Installation und des Hostings verschiedener Arten von Umbraco-Projekten führen. Hier finden Sie Details zu Azure-Setups, unserem [Umbraco Cloud](../../08-Umbraco-Cloud/)-Hosting-Service, wie Sie Umbraco upgraden und vieles mehr.
 
-In this section you will also find information on areas such as load balancing, deployments and user management.
+In diesem Abschnitt finden Sie auch Informationen zu Bereichen wie Load Balancing, Deployments und User Management.
 
 :::center
 ![Umbraco Cloud](images/cloud.png)
 :::
 
-## How to install and configure an Umbraco installation
+## So installieren und konfigurieren Sie eine Umbraco-Installation
 
-- [Setup Umbraco](../../Fundamentals/Setup/)
+- [Setup Umbraco](../../02-Grundlagen/Setup/)
 
-- [Install Umbraco](../../Fundamentals/Setup/Install/)
+- [Umbraco installieren](../../02-Grundlagen/Setup/Install/)
 
-- [Upgrading Umbraco](../../Fundamentals/Setup/Upgrading/)
+- [Aktualisierung von Umbraco](../../02-Grundlagen/Setup/Upgrading/)
 
-## Server Requirements
+## Serveranforderungen
 
-- [Server setup](../../Fundamentals/Setup/Server-Setup/)
+- [Server-Setup](../../02-Grundlagen/Setup/Server-Setup/)
 
-- [Server setup requirements](../../Fundamentals/Setup/Requirements/)
+- [Server-Setup-Anforderungen](../../02-Grundlagen/Setup/Requirements/)
 
-- [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps.md)
+- [Auf Azure-Web-Apps ausgeführt](../../02-Grundlagen/Setup/Server-Setup/azure-web-apps.md)
 
 :::
 
-## Related links
+## Ähnliche Links
 
-- [External login providers](../../Reference/Security/external-login-providers/)
+- [Externe Login-Provider](../../05-Referenz/Security/External-login-providers/)
 
 :::
 

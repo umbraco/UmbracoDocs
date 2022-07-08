@@ -5,7 +5,7 @@ VersionVon: 8.0.0
 ---
 
 # Erstellen von Websites mit Umbraco
-:::right
+:::en-link
 [EN-Version](/Getting-Started/Creating-websites-with-Umbraco/index.md)
 :::
 
@@ -29,13 +29,13 @@ Sobald Sie Inhalte basierend auf den Dokumenttypen erstellt haben, werden diese 
 
 Hier gibt es viele Fachbegriffe! Lassen Sie uns diese Begriffe aufschlüsseln:
 
-[Definieren von Inhalten in Umbraco mithilfe von Dokumenttypen](../../Fundamentals/Data/Defining-content)
+[Definieren von Inhalten in Umbraco mithilfe von Dokumenttypen](../../02-Grundlagen/Data/Defining-content)
 
-[Was ist ein Datentyp?](../../Fundamentals/Data/Data-Types)
+[Was ist ein Datentyp?](../../02-Grundlagen/Data/Data-Types)
 
-[Was ist ein Property Editor?](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/)
+[Was ist ein Property Editor?](../../02-Grundlagen/Backoffice/Property-Editors/Built-in-Property-Editors/)
 
-[Arbeiten mit Vorlagen](../../Fundamentals/Design/Templates/)
+[Arbeiten mit Vorlagen](../../02-Grundlagen/Design/Templates/)
 
 ## Versuch es
 
@@ -45,4 +45,4 @@ Hier gibt es viele Fachbegriffe! Lassen Sie uns diese Begriffe aufschlüsseln:
 
 ## Andere Ressourcen
 
-[Wie können Übersetzungen mit Inhalten verwendet werden?](../../Fundamentals/Backoffice/Variants)
+[Wie können Übersetzungen mit Inhalten verwendet werden?](../../02-Grundlagen/Backoffice/Variants)

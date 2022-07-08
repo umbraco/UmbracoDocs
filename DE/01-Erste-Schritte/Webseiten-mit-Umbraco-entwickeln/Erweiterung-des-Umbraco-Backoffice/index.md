@@ -4,7 +4,7 @@ meta.description: "Das Umbraco-Backoffice selbst kann angepasst und erweitert we
 VersionVon: 8.0.0
 ---
 # Erweiterung des Umbraco Backoffice
-:::right
+:::en-link
 [EN-Version](/Getting-Started/Developing-websites-with-Umbraco/Extending-the-Umbraco-Backoffice/index.md)
 :::
 

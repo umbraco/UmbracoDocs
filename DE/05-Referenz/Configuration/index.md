@@ -13,7 +13,7 @@ In Umbraco 9+ (ASP.NET Core) configuration is JSON-based rather than XML - you c
 
 In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
 
-For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
+For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/configuration/?view=aspnetcore-6.0) article.
 
 ## Managing Configuration
 

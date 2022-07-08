@@ -134,7 +134,7 @@ namespace MyNamespace
 
 ## Using a notification handler
 
-If building a new solution in Umbraco V9, you can adopt a new pattern, where you create and run a similar migration but trigger it in response to a [notification handler](../../Fundamentals/Code/Subscribing-To-Notifications\index.md).
+If building a new solution in Umbraco V9, you can adopt a new pattern, where you create and run a similar migration but trigger it in response to a [notification handler](../../02-Grundlagen/Code/Subscribing-To-Notifications\index.md).
 
 The code for this approach is as follows:
 

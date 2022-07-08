@@ -11,7 +11,7 @@ In Umbraco 9 it is possible to run recurring code using a hosted service.
 Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes. 
 
 :::warning
-Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../../Fundamentals/Setup/Server-Setup/Load-Balancing/index.md) for more information
+Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../../02-Grundlagen/Setup/Server-Setup/Load-Balancing/index.md) for more information
 :::
 
 ## RecurringHostedService example
@@ -157,7 +157,7 @@ This class provides the base class for any hosted service.
 
 You can override the `PerformExecuteAsync` method to implement the class. Hosted services are always run asynchronously.
 
-The `RecurringHostedServiceBase` is a base class that implements the netcore interface `IHostedService` and makes the task recurring, if you don't need your task to run recurringly you can implement `IHostedService` yourself, and register your hosted service in the same way. For more information about hosted services, take a look at the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-5.0).
+The `RecurringHostedServiceBase` is a base class that implements the netcore interface `IHostedService` and makes the task recurring, if you don't need your task to run recurringly you can implement `IHostedService` yourself, and register your hosted service in the same way. For more information about hosted services, take a look at the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/host/hosted-services?view=aspnetcore-5.0).
 
 ## BackgroundTaskRunner Notifications
 

@@ -52,7 +52,7 @@ namespace UmbracoHelperDocs.Controllers
 }
 ```
 
-UmbracoHelper is registered with a scoped lifetime (see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information), as a service scope is created for each request you can resolve an instance directly in a controller.
+UmbracoHelper is registered with a scoped lifetime (see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information), as a service scope is created for each request you can resolve an instance directly in a controller.
 
 If you need to use an UmbracoHelper in a service with a singleton lifetime you would instead need to make use of the IUmbracoHelperAccessor interface to obtain a temporary reference to an instance.
 

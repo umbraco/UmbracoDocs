@@ -4,9 +4,10 @@ meta.Description: "Dieser Abschnitt zeigt Ihnen einige Einsteiger-Tools und Info
 VersionVon: 8.0.0
 ---
 # Webseiten mit Umbraco entwickeln
-:::right
+:::en-link
 [EN-Version](/Getting-Started/Developing-websites-with-Umbraco/index.md)
 :::
+
 Umbraco basiert auf einem Microsoft MVC-Framework. Sie können auf dieser Technologie aufbauen, um parallel zur Funktionalität von Umbraco zu arbeiten und diese zu erweitern. Es ist außerdem modular konzipiert, sodass Sie Schlüsselkomponenten bei Bedarf durch Ihre eigenen benutzerdefinierten Implementierungen ersetzen können.
 
 :::tip

@@ -27,5 +27,5 @@ Umbraco currently supports using either a Microsoft SQL Server, or a SQLite data
 * [SQLite connection strings](https://www.connectionstrings.com/sqlite/)
 
 ## Provider name
-Because Umbraco cannot determine the provider name from the connection string in all cases. To get the provider name Umbraco use the [convention suggested by Microsoft](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#connection-string-prefixes-1) to specify the provider name as a post fix of the connection string name.
+Because Umbraco cannot determine the provider name from the connection string in all cases. To get the provider name Umbraco use the [convention suggested by Microsoft](https://docs.microsoft.com/en-us/aspnet/core/02-Grundlagen/configuration/?view=aspnetcore-5.0#connection-string-prefixes-1) to specify the provider name as a post fix of the connection string name.
 

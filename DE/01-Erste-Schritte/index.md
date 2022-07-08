@@ -5,7 +5,7 @@ VersionVon: 8.0.0
 ---
 
 # Einstieg
-:::right
+:::en-link
 [EN-Version](/Getting-Started/index.md)
 :::
 

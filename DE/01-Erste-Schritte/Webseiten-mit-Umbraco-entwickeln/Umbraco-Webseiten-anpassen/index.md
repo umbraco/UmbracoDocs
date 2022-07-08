@@ -4,7 +4,7 @@ meta.Description: "Dieser Abschnitt zeigt Ihnen einige Einsteiger-Tools und Info
 VersionVon: 8.0.0
 ---
 # Umbraco-Webseiten anpassen
-:::right
+:::en-link
 [EN-Version](/Getting-Started/Developing-websites-with-Umbraco/Customizing-Umbraco-sites/index.md)
 :::
 
@@ -43,7 +43,7 @@ Erfahren Sie mehr über Composing und Komponenten im [Composing-Artikel](../../.
 
 Wenn Sie mit Umbraco entwickeln, können Sie manchmal auf einige Fehler und Probleme stoßen. Hier sind einige Anleitungen, die Ihnen beim Debuggen helfen:
 
-- [Allgemeines Debugging](../../../Fundamentals//Code/Debugging/)
+- [Allgemeines Debugging](../../../02-Grundlagen//Code/Debugging/)
 - [Debuggen mit SourceLink](../../../Reference/Debugging/)
 
 :::center

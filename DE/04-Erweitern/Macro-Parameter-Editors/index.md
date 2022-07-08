@@ -20,7 +20,7 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Single/Multiple Content Picker
 * ... and some 'others'
 
-Consult the [Backoffice documentation](../../Fundamentals/Backoffice) for general information on Macros.
+Consult the [Backoffice documentation](../../02-Grundlagen/Backoffice) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 

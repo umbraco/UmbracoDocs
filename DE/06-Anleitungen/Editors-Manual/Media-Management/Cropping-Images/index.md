@@ -11,7 +11,7 @@ If your system administrator has set up cropping for your images, you will see a
 
 The pink circle in the middle of the image is the default focal point. The focal point defines the primary area or focus of the image which will be the center point of any image re-sizing. You can move the focal point by clicking and dragging it to the desired part of the image.
 
-Next to the image, you may see specific crops of the image depending on your setup. In the above example, you can see that 2 crops have been set-up. To add or update the image crops, see [Adding properties](../../../../Fundamentals/Data/Creating-Media/index.md#adding-properties) section in the [Creating media](../../../../Fundamentals/Data/Creating-Media/index.md) article.
+Next to the image, you may see specific crops of the image depending on your setup. In the above example, you can see that 2 crops have been set-up. To add or update the image crops, see [Adding properties](../../../../02-Grundlagen/Data/Creating-Media/index.md#adding-properties) section in the [Creating media](../../../../02-Grundlagen/Data/Creating-Media/index.md) article.
 
 To manually alter the pre-defined crops:
 

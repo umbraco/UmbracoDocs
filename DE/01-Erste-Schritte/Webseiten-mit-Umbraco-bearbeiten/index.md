@@ -5,6 +5,9 @@ VersionVon: 8.0.0
 ---
 
 # Webseiten mit Umbraco bearbeiten
+:::en-link
+[EN-Version](/Getting-Started/Editing-websites-with-Umbraco/index.md)
+:::
 
 Das Erstellen, Bearbeiten und Veröffentlichen von Inhalten auf Ihrer Website mit Umbraco erfordert keine besonderen Fähigkeiten oder Vorkenntnisse - ehrlich!
 
@@ -12,7 +15,7 @@ Dieser Abschnitt hilft Ihnen dabei, sich schnell damit vertraut zu machen, wo Si
 
 Es gibt auch Informationen zur Verwendung von Funktionen wie Übersetzungen, Formularen und anderen Möglichkeiten zur Personalisierung Ihrer Website.
 
-[Lernen Sie das Umbraco Backoffice kennen](../../Fundamentals/Backoffice/)
+[Lernen Sie das Umbraco Backoffice kennen](../../02-Grundlagen/Backoffice/)
 
 [Das Editoren-Handbuch](../../Tutorials/Editors-Manual)
 

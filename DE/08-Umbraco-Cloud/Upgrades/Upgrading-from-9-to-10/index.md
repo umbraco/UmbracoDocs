@@ -180,7 +180,7 @@ They need to be removed through KUDU from both the `repository` and `wwwroot` fo
 
 ## Related Information
 
-* [Breaking changes in Umbraco 10](../../../Fundamentals/Setup/Upgrading/umbraco10-breaking-changes.md)
+* [Breaking changes in Umbraco 10](../../../02-Grundlagen/Setup/Upgrading/umbraco10-breaking-changes.md)
 * [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
 * [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
 

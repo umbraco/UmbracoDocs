@@ -17,7 +17,7 @@ To install a basic website in the Umbraco CMS, you need the following:
 
 ### Installing Umbraco
 
-To download the latest version of Umbraco, refer to the [Installation article](../../../Fundamentals/Setup/Install). On the installation wizard, follow the steps:
+To download the latest version of Umbraco, refer to the [Installation article](../../../02-Grundlagen/Setup/Install). On the installation wizard, follow the steps:
 
 1. Enter your **Name**, **Email**, and **Password**.
     ![Installing Umbraco](images/figure-7-installing-umbraco-v9.png)

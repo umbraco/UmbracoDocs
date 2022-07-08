@@ -11,7 +11,7 @@ We're now going to make a page where we'll put our contact details. For added fu
 
 Some potential solutions:
 
-* Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)
+* Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [https://umbraco.tv/videos/umbraco-v7/developer/02-Grundlagen/surface-controllers/](https://umbraco.tv/videos/umbraco-v7/developer/02-Grundlagen/surface-controllers/)
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. This has the added benefit editors can also create their own forms [https://umbraco.com/products-and-support/forms](https://umbraco.com/products-and-support/forms)
 
 ### Creating a Content-only Contact Page
