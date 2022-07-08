@@ -106,7 +106,7 @@ In most cases you need to ensure that the WAF and Umbraco Cloud are using the sa
 
 When configuring the hostname and certificate on Umbraco Cloud it will be necessary to validate the hostname using a TXT record. This is needed, because in most cases the WAF will hide that the website is running on Umbraco Cloud, which means that the usual domain ownership verification cannot be performed. This same approach can also be used to configure a hostname prior to updating the DNS for the hostname.
 
-So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it's removed. That means that you has 14 days to add a TXT record in your DNS settings. 
+So adding a hostname on a Cloud project is possible before a DNS change. It can take up to approx. 14 days before it's removed. That means that you have 14 days to add a TXT record in your DNS settings. 
 
 Reach out to support and they will assist you with the details that needs to be in the TXT record. We will first be able to see what you need to add in the TXT record when you have added the hostname.
 
