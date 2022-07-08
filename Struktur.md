@@ -13,7 +13,7 @@ Folgendes ist beim Übersetzen der Struktur und den entsprechenden Verlinkungen 
 ## Struktur
 ### English -> Deutsch
 
-#### Getting-Started -> Erste-Schritte
+#### Getting-Started -> 01-Erste-Schritte
 
     Managing-an-Umbraco-project -> Verwaltung-eines-Umbraco-Projekts
 
@@ -31,24 +31,28 @@ Folgendes ist beim Übersetzen der Struktur und den entsprechenden Verlinkungen 
 
     Where-can-I-get-help -> Wo-kann-ich-Hilfe-bekommen
 
-#### Fundamentals -> Grundlagen
+#### Fundamentals -> 02-Grundlagen
 
     Backoffice -> Verwaltung (Back-Office)
 
-#### Implementation -> Implementierung (Umsetzung)
+#### Implementation -> 03-Implementierung (Umsetzung)
 
     Default-Routing -> Standard-Routing
 
-#### Extending -> Erweitern
+#### Extending -> 04-Erweitern
 
-#### Reference -> Referenz
+#### Reference -> 05-Referenz
 
-#### Tutorials -> Anleitungen
+#### Tutorials -> 06-Anleitungen
 
-#### Add ons ->
+#### Add ons -> 07-Zugaben
 
-#### Umbraco Cloud -> Umbraco Cloud
+#### Umbraco Cloud -> 08-Umbraco Cloud
 
-#### Umbraco Heartcore -> Umbraco Heartcore
+#### Umbraco Heartcore -> 09-Umbraco Heartcore
 
-#### Cntribute -> Beitragen
+#### Contribute -> 10-Beitragen
+
+#### Development-Guidelines -> x-01-Entwicklungsrichtlinien
+
+#### Cheatsheets -> x-02-Cheatsheets
