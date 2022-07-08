@@ -64,24 +64,31 @@ Folgendes ist beim Übersetzen der Struktur und den entsprechenden Verlinkungen 
     3. Upgrading -> Upgrade-durchführen
     4. Server-Setup -> Server-Konfiguration
 
-#### Implementation -> 03-Implementierung (Umsetzung)
-
-    Default-Routing -> Standard-Routing
-
+#### Implementation -> 03-Implementierung
+1. Default-Routing -> Standard-Routing
+2. Custom-Routing -> Benutzerdefiniertes-Routing
+3. Controllers -> Controllers
+4. Data-Persistence -> Datenspeicherung
+5. Rest-API -> Rest-Api
+6. Composing -> Zusammenstellen
+7. Integration-Testing -> Integration-testen
+8. Nullable-Reference-Types -> Nullable-Reference-Types
+9. Services -> Dienste
+10. Unit-Testing -> Module testen
 #### Extending -> 04-Erweitern
-
+1. 
 #### Reference -> 05-Referenz
-
+1. 
 #### Tutorials -> 06-Anleitungen
-
+1. 
 #### Add ons -> 07-Zugaben
-
+1. 
 #### Umbraco Cloud -> 08-Umbraco Cloud
-
+1. 
 #### Umbraco Heartcore -> 09-Umbraco Heartcore
-
+1. 
 #### Contribute -> 10-Beitragen
-
+1. 
 #### Development-Guidelines -> x-01-Entwicklungsrichtlinien
-
+1. 
 #### Cheatsheets -> x-02-Cheatsheets
