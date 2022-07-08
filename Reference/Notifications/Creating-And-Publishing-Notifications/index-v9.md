@@ -1,5 +1,6 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
+versionTo: 9.0.0
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
 ---
@@ -8,7 +9,7 @@ meta.Description: How to create and publish your own custom notifications
 
 There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../../Scheduling/index.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
 
-For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
+For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
 
 ```C#
 using Umbraco.Cms.Core.Notifications;
@@ -22,7 +23,7 @@ namespace Umbraco.Cms.Web.UI.Notifications
 }
 ```
 
-This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](../MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
+This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](../MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification. However, since this is a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
 
 ```C#
 using Umbraco.Cms.Core.Notifications;
@@ -45,12 +46,12 @@ Now you can create a handler that receives the amount of items deleted through t
 
 # Sending notifications
 
-Just creating the notification classes is not enough, we also want to be able to publish them. There's two ways of publishing notifications:
+Creating the notification classes is not enough, we also want to be able to publish them. There's two ways of publishing notifications:
 
 * `IEventAggregator` - Notifications published with `IEventAggregator` will always be published immediately.
 * `IScope.Notifications` - Notifications published with a scope will only be published once the scope has been completed and disposed. 
 
-The method you use to publish notifications depends on what your needs are, the benefits of publishing notifications with a scope is that the notification will only be published if you complete the scope, and then only once the scope is disposed of. This can be useful if you access the database, or do some other operation that might fail causing you to do a rollback, disposing of the scope without completing it, in this case, you might not want to publish a notification that signals that the operation was a success, using scopes will handle this for you. On the other hand, you might want to publish the notification immediately no matter what, for instance with the `CleanYourRoomStartedNotification`, for this, the `IEventAggregator` is the right choice.
+The method you use to publish notifications depends on what your needs are. The benefits of publishing notifications with a scope is that the notification will only be published if you complete the scope, and then only once the scope is disposed of. This can be useful if you access the database, or do some other operation that might fail causing you to do a rollback, disposing of the scope without completing it. In this case, you might not want to publish a notification that signals that the operation was a success, using scopes will handle this for you. On the other hand, you might want to publish the notification immediately no matter what, for instance with the `CleanYourRoomStartedNotification`, for this, the `IEventAggregator` is the right choice.
 
 ## Example
 
@@ -69,19 +70,19 @@ namespace Umbraco.Cms.Web.UI
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
         private readonly IContentService _contentService;
-        private readonly ICoreScopeProvider _coreScopeProvider;
+        private readonly IScopeProvider _scopeProvider;
         private readonly IEventAggregator _eventAggregator;
         private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
         private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
 
         public CleanUpYourRoom(
             IContentService contentService,
-            ICoreScopeProvider coreScopeProvider,
+            IScopeProvider scopeProvider,
             IEventAggregator eventAggregator)
             : base(HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _contentService = contentService;
-            _coreScopeProvider = coreScopeProvider;
+            _scopeProvider = scopeProvider;
             _eventAggregator = eventAggregator;
         }
 
@@ -90,7 +91,7 @@ namespace Umbraco.Cms.Web.UI
             // This will be published immediately
             _eventAggregator.Publish(new CleanYourRoomStartedNotification());
 
-            using IScope scope = _coreScopeProvider.CreateScope();
+            using IScope scope = _scopeProvider.CreateScope();
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
 
             if (_contentService.RecycleBinSmells())

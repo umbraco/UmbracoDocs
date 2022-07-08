@@ -153,7 +153,7 @@ namespace Umbraco.Web.Controllers
         private readonly IMemberManager _memberManager;
         private readonly IMemberService _memberService;
         private readonly IMemberSignInManager _memberSignInManager;
-        private readonly ICoreScopeProvider _scopeProvider;
+        private readonly ICoreScopeProvider _coreScopeProvider;
 
         public UmbAlternativeRegisterController(
             IMemberManager memberManager,
@@ -165,13 +165,13 @@ namespace Umbraco.Web.Controllers
             IProfilingLogger profilingLogger,
             IPublishedUrlProvider publishedUrlProvider,
             IMemberSignInManager memberSignInManager,
-            ICoreScopeProvider scopeProvider)
+            ICoreScopeProvider coreScopeProvider)
             : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
             _memberManager = memberManager;
             _memberService = memberService;
             _memberSignInManager = memberSignInManager;
-            _scopeProvider = scopeProvider;
+            _coreScopeProvider = coreScopeProvider;
         }
 
         [HttpPost]
