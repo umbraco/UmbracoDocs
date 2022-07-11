@@ -11,7 +11,7 @@ Since this is a common task we've made this process a lot easier with an interfa
 
 Here are the steps to specify your own logic for validating a username and password for the backoffice:
 
-1. Create an implementation of `Umbraco.Cms.Core.Security.IBackOfficeUserPasswordChecker`:
+1. Create an implementation of `Umbraco.Cms.Core.Security.IBackOfficeUserPasswordChecker`
 
     * There is one method in this interface: `Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password);`
     * The result of this method can be 3 things:
