@@ -45,50 +45,45 @@ Important to note that the `Search` methods on the ExamineManager will call the 
 You can access any of the searchers by their name, for example:
 
 ```csharp
-var externalSearcher = ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+var canGetSearcher = _examineManager.TryGetSearcher("ExternalSearcher", out var searcher);
 ```
 
 For searching the method to use is:
 
 ```chsarp
-ISearchResults Search(string searchText, bool useWildcards);
+ISearchResults Search(string searchText);
 ```
 
 An example using this method is below:
 
 ```csharp
-using Examine.LuceneEngine.SearchCriteria;
-var query = Request.QueryString["query"];
-var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+@inherits UmbracoViewPage
+@using Examine
+@inject IExamineManager ExamineManager
+@{
+    var query = Context.Request.Query["query"];
+    var canGetSearcher = ExamineManager.TryGetSearcher("ExternalSearcher", out var searcher);
 
-// the boolean parameter is whether to use wildcards when searching.
-var searchResults = searcher.Search(query, true).OrderByDescending("createDate");
-if(searchResults.Any())
-{
-    <ul>
-        @foreach (var result in searchResults)
+    if (canGetSearcher)
+    {
+        var searchResults = searcher.Search(query.ToString());
+        if(searchResults.Any())
         {
-            <li>
-                <a href="@result.Url">@result.Name</a>
-            </li>
+            <ul>
+                @foreach (var result in searchResults)
+                {
+                    if (result.Id != null)
+                    {
+                        var node = Umbraco.Content(result.Id);
+                        <li>
+                            <a href="@node.Url()">@node.Name</a>
+                        </li>
+                    }
+                }
+            </ul>
         }
-    </ul>
+    }
 }
-```
-
-To create custom search criteria for advanced searching for use with the Fluent API there are 4 methods available:
-
-```csharp
-ISearchCriteria CreateSearchCriteria();
-ISearchCriteria CreateSearchCriteria(BooleanOperation defaultOperation);
-ISearchCriteria CreateSearchCriteria(string type);
-ISearchCriteria CreateSearchCriteria(string type, BooleanOperation defaultOperation);
-```
-
-Once you've customized the criteria with the Fluent API you can pass that criteria in to this method to get results:
-
-```csharp
-ISearchResults Search(ISearchCriteria searchParameters);
 ```
 
 ## Indexing
