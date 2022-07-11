@@ -38,7 +38,7 @@ Out of the box Umbraco ships with a custom ASP.NET Identity implementation which
 
 The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers/index-v7.md).
 
-### [External login providers](external-login-providers/index-v8.md)
+### [External login providers](external-login-providers/index-v7.md)
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
