@@ -49,7 +49,7 @@ namespace MyFormsExtensions
 }
 ```
 
-You will then need to register this new prevalue source type type as a dependency.
+You will then need to register this new prevalue source type as a dependency.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
