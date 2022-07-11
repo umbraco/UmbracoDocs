@@ -60,6 +60,8 @@ For illustration purposes, the following structure represents the full set of op
       "ExecuteWorkflowAsync": "False",
       "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
+      "CultureToUseWhenParsingDatesForBackOffice": "",
+      "TriggerConditionsCheckOn": "change"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -81,6 +83,9 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": ""
+      },
+      "RichText": {
+        "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
       }
     }
   }
@@ -188,6 +193,23 @@ When redirecting following a form submission, a `TempData` value is set that is 
 
 By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
+### CultureToUseWhenParsingDatesForBackOffice
+This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups.
+
+When Umbraco Forms stores data for a record, it saves the values submitted for each field into a dedicated table for each type (string, date etc.). It also saves a second copy of the record in a JSON structure which is more suitable for fast look-up and display in the backoffice. Date values are serialized using the culture used by the front-end website when the form entry is stored.
+
+When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, than that used when the value was stored.
+
+From 9.5 and 10.1 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However, this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website. This ensures the date fields in the backoffice are correctly presented.
+
+Taking an example of a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor uses "en-GB" (which formats dates as of `d/m/y`). By setting the value of this configuration key to "en-US", you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
+
+If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
+
+### TriggerConditionsCheckOn
+
+This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -223,6 +245,12 @@ Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms
 ### GrantAccessToNewFormsForUserGroups
 Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
+There are two "special" values that can be applied within or instead of the comma-separated list.
+
+A value of `all` will give access to the form to all user groups.
+
+A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
+
 ## Field type specific configuration
 
 ### Date picker field type configuration
@@ -246,6 +274,12 @@ Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicK
 Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google.
 
 You can obtain both of these values after signing up to create a ReCaptcha key here:  <https://www.google.com/recaptcha/admin>.
+
+### Rich text field type configuration
+
+#### DataTypeId
+
+Sets the data type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text data type created by Umbraco on a new install is used.
 
 ---
 
