@@ -91,17 +91,12 @@ An example using this method is below:
 When calling the index methods on the `ExamineManager` it will call the same methods on every Indexer that is registered. If for some reason you require to only call the index methods on a particular provider then you can access the provider by name, for example:
 
 ```csharp
-var externalIndexer = ExamineManager.Instance.IndexProviderCollection["ExternalIndexer"];
+var canGetIndex = ExamineManager.TryGetIndex("ExternalIndexer", out var index);
 ```
 
 The indexing methods available are:
 
 ```csharp
-void DeleteFromIndex(string nodeId);
-void DeleteFromIndex(string nodeId, IEnumerable<BaseIndexProvider> providers);
-void IndexAll(string type);
-bool IndexExists();
-void RebuildIndex();
-void ReIndexNode(XElement node, string type);
-void ReIndexNode(XElement node, string type, IEnumerable<BaseIndexProvider> providers);
+void DeleteFromIndex(IEnumerable<string> itemIds);
+void DeleteFromIndex(this IIndex index, string itemId);
 ```
