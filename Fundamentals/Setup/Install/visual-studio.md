@@ -34,7 +34,7 @@ For more information check the first 2 steps of [Install Umbraco with .NET CLI](
 Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.  
 :::
 
-![Make sure you verify that you are using a compatible version of Visual Studio](images/VS/visual-studio-version-v9.png)
+![Make sure you verify that you are using a compatible version of Visual Studio](images/VS/visual-studio-version-v10.png)
 
 ### Create project
 
