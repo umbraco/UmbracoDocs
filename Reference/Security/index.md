@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.3.0
+versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Security in Umbraco"
 meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
@@ -13,13 +13,13 @@ In this article, you will find everything you need regarding security within Umb
 
 On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-## [SSL/HTTPS](use-https.md)
+## [SSL/HTTPS](SSL-HTTPS/index.md)
 
 We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
-## [Password settings](Security-settings/index.md)
+## [Security Settings](Security-settings/index.md)
 
 Learn which password settings that can be configured in Umbraco.
 
@@ -29,9 +29,9 @@ Learn about how to can harden the security on your Umbraco website to secure it 
 
 ## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
 
-When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
+When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud FAQs section of the documentation.
 
-## Backoffice users and website members
+## [Backoffice users and website members](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) (Available from Umbraco version 9.3.0)
 
 Authentication for backoffice users and website members in Umbraco uses [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) which is a flexible and extendable framework for authentication.
 
@@ -42,36 +42,36 @@ Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation 
 The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
 This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-### [Two-factor authentication](two-factor-authentication/index.md)
+### [Two-factor authentication](two-factor-authentication/index.md) (Available from Umbraco version 9.3.0)
 
 The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
 This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
 
-### [BackOfficeUserManager](backoffice-user-manager.md) and Notifications
+### [BackOfficeUserManager and Notifications](BackOfficeUserManager-and-Notifications/index.md)
 
-The [`BackOfficeUserManager`](backoffice-user-manager.md) is the ASP.NET Core Identity [UserManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.usermanager-1) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Core Identity including password handling.
+The [`BackOfficeUserManager`](BackOfficeUserManager-and-Notifications/index.md) is the ASP.NET Core Identity [UserManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.usermanager-1) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Core Identity including password handling.
 
-### Custom password check
+### [Custom password check](Custom-password-check/index.md)
 
 In most cases [External login providers (OAuth)](external-login-providers/index.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
-You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](custom-password-checker.md).
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index.md).
 
-## Sensitive data on members
+## [Sensitive data on members](Sensitive-data-on-members/index.md)
 
 Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
 
-Learn more about this in the [Sensitive Data](sensitive-data.md) article.
+Learn more about this in the [Sensitive Data](Sensitive-data-on-members/index.md) article.
 
 ## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
-## [Reset admin password](reset-admin-password.md)
+## [Reset admin password](Reset-admin-password/index.md)
 
-Use this guide to [reset the password of the "admin" user](reset-admin-password.md).
+Use this guide to [reset the password of the "admin" user](Reset-admin-password/index.md).
 
 If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
 
