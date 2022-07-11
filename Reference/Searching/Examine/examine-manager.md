@@ -7,10 +7,29 @@ versionTo: 10.0.0
 
 _The Examine.ExamineManager is a singleton object which exposes all of the index and search providers which are registered in the configuration of the application. As with all singletons in Umbraco, we recommend reviewing the [Common Pitfalls & Anti-Patterns](../../Common-Pitfalls/index.md) page to ensure the correct usage._
 
-Accessing the singleton can be done like:
+Accessing the singleton can be done by using dependency injection. 
+
+In a class you can inject the IExamineManager interface:
 
 ```csharp
-ExamineManager.Instance
+using Examine;
+
+namespace MyCustomUmbracoSolution
+{
+    public class MyClass
+    {
+        private readonly IExamineManager _examineManager;
+        public MyClass(IExamineManager examineManager)
+        {
+            _examineManager = examineManager;
+        }
+    }
+}
+```
+In a view the IExamineManager can be injected as well: 
+
+```csharp
+@inject IExamineManager ExamineManager;
 ```
 
 This returns an active instance of the ExamineManager which exposes operations such as:
