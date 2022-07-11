@@ -55,11 +55,11 @@ If a workflow encounters an unexpected error, it will silently fail from the per
 
 From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
 
-![Workflow execution summary](images/workflow-summary.png)
+![Workflow execution summary](workflow-summary.png)
 
 For each entry, in the backoffice a table can be viewed that shows each of the workflows and the success, or otherwise, of the operation.
 
-![Workflow execution summary](images/workflow-audit.png)
+![Workflow execution summary](workflow-audit.png)
 
 For any workflows that did not complete successfully, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.
 
