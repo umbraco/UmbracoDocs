@@ -86,7 +86,7 @@ Organize properties with drag and drop. If multiple tabs exist it is possible to
 ![Members Tabs tab](images/Members-Tabs.jpg)
 A new tab is created by entering a name into the input field and pressing the __New tab__ button.
 
-##### Name and sort order
+#### Name and sort order
 
 Renaming a tab is done by changing the name in the input field and saving the Document Type. To change the order of the tabs use the drag and drop handle to the left or enter a numeric value in the second input field. Tabs will be displayed from left (lowest value) to right (highest value) in the content section.
 
