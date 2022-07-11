@@ -36,7 +36,7 @@ Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://w
 
 Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
-The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers).
+The Umbraco ASP.NET Identity implementation can be extended by using the [Umbraco Identity Extensions](https://github.com/umbraco/UmbracoIdentityExtensions) package. This package installs csharp files with some code snippets on how to customize the ASP.NET Identity implementation. Customization can include extending Umbraco's `UserManager` as well as implementing [External login providers (OAuth)](external-login-providers/index-v7.md).
 
 ### [External login providers](external-login-providers/index-v8.md)
 
@@ -54,7 +54,7 @@ This is typically a legacy approach to validating credentials with external reso
 
 You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index-v8.1.1.md).
 
-#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index.md)
+#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index-v8.md)
 
 If you are using a network based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-with-Active-Directory/index.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
