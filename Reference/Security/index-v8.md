@@ -30,7 +30,7 @@ Learn about how to can harden the security on your Umbraco website to secure it 
 
 When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
 
-## Backoffice users
+## [Backoffice users](https://www.asp.net/identity)
 
 Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a flexible and extendable framework for authentication.
 
@@ -42,7 +42,7 @@ The Umbraco ASP.NET Identity implementation can be extended by using the [Umbrac
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-### [BackOfficeUserManager](BackOfficeUserManager-and-Notifications/index-v8.9.md) and Events
+### [BackOfficeUserManager and Events](BackOfficeUserManager-and-Notifications/index-v8.9.md)
 
 The [`BackOfficeUserManager`](BackOfficeUserManager-and-Notifications/index-v8.9.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
 
@@ -54,11 +54,11 @@ This is typically a legacy approach to validating credentials with external reso
 
 You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index-v8.1.1.md).
 
-#### Authenticating with Active Directory credentials
+#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index.md)
 
 If you are using a network based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-with-Active-Directory/index.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
-## Sensitive data on members
+## [Sensitive data on members](Sensitive-data-on-members/index.md)
 
 Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
 

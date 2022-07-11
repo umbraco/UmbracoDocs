@@ -8,17 +8,17 @@ meta.Description: "This section includes information on Umbraco security, its va
 
 This section includes information on Umbraco security, its different security options and configuring how authentication & authorization works in Umbraco.
 
-## Umbraco Security overview
+## [Umbraco Security overview](https://umbraco.com/products/umbraco-cms/security/)
 
 We have a dedicated security page on our main site which provides most of the details you may need to know about security within the Umbraco CMS including how to report a vulnerability: [https://umbraco.com/products/umbraco-cms/security/](https://umbraco.com/products/umbraco-cms/security/)
 
-## SSL/HTTPS
+## [SSL/HTTPS](SSL-HTTPS/index.md)
 
 We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 Don't forget to [configure your Umbraco when using HTTPS](SSL-HTTPS/index.md).
 
-## Backoffice users
+## [Backoffice users](https://www.asp.net/identity)
 
 Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a flexible and extendable framework for authentication.
 
@@ -42,7 +42,7 @@ This is typically a legacy approach to validating credentials with external reso
 
 You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index-v7.3.0.md).
 
-#### Authenticating with Active Directory credentials
+#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index-vpre8.md)
 
 If you are using a network-based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-with-Active-Directory/index-vpre8.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
