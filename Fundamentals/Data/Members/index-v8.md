@@ -59,11 +59,11 @@ To assign a member to a specific group find the member you wish to assign and fi
 
 ![Assigning a Member Group](images/assign-member-group.png)
 
-## Sensitive data
+## [Sensitive data](../../../Reference/Security/Sensitive-data-on-members/index.md)
 
 You will have the option to mark member properties as sensitive. Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions.
 
-More information can be found under [security](../../../Reference/Security/#sensitive-data).
+More information can be found under [security](../../../Reference/Security/Sensitive-data-on-members/index.md).
 
 ## Technical
 

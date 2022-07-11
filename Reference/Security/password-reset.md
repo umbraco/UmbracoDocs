@@ -23,4 +23,4 @@ If a user is locked out, it is possible to do a password reset. After the e-mail
 
 ## Reset admin user password
 
-If you lost the admin user password and you need to reset it, [check this article](reset-admin-password.md).
+If you lost the admin user password and you need to reset it, [check this article](Reset-admin-password/index.md).

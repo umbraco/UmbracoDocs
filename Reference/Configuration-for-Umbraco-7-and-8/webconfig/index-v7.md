@@ -80,7 +80,7 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 ```
 
 :::memo
-Check out the [security documentation](../../security/use-https.md).
+Check out the [security documentation](../../security/SSL-HTTPS/index.md).
 :::
 
 ### umbracoCssDirectory

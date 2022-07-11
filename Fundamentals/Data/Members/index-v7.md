@@ -86,7 +86,7 @@ Organize properties with drag and drop. If multiple tabs exist it is possible to
 ![Members Tabs tab](images/Members-Tabs.jpg)
 A new tab is created by entering a name into the input field and pressing the __New tab__ button.
 
-##### Name and sort order
+#### Name and sort order
 
 Renaming a tab is done by changing the name in the input field and saving the Document Type. To change the order of the tabs use the drag and drop handle to the left or enter a numeric value in the second input field. Tabs will be displayed from left (lowest value) to right (highest value) in the content section.
 
@@ -108,11 +108,11 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is a part of. To remove the member from a group click it and it will move to the other column.
 
-## Sensitive data
+## [Sensitive data](../../../Reference/Security/Sensitive-data-on-members/index.md)
 
 Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to backoffice users unless they have appropriate permissions.
 
-More information can be found under [security](../../../Reference/Security/#sensitive-data).
+More information can be found under [security](../../../Reference/Security/Sensitive-data-on-members/index.md).
 
 ## Technical
 

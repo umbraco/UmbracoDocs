@@ -14,11 +14,9 @@ The `BackOfficeUserManager` is the ASP.NET Core Identity [UserManager](https://d
 The BackOfficeUserManager can be replaced during startup in order to use your own implementation.
 This may be required if you want to extend the functionality of the BackOfficeUserManager for things like supporting two-factor authentication(2FA).
 
-
 ### Example
 
 You can replace the BackOfficeUserManager in the startup class by using the `SetBackOfficeUserManager` extension on the `IUmbracoBuilder`.
-
 
 ```csharp
 public class Startup
@@ -79,14 +77,10 @@ Note the constructor minimum needs to inject what is required for the base `Back
 }
 ```
 
-
 ## Notifications
 
 There are [several notifications](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
 Internally these are mostly used for auditing but there are some that allow you to customize some workflows:
-
-
-
 
 [comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)
 

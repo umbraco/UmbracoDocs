@@ -19,38 +19,39 @@ Here are the steps to specify your own logic for validating a username and passw
         * InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
         * FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
 
-For example, to always allow login when the user enters the password `test` you could do:
+    For example, to always allow login when the user enters the password `test` you could do:
 
-```C#
-using System.Threading.Tasks;
-using Umbraco.Core.Models.Identity;
-using Umbraco.Core.Security;
+    ```C#
+    using System.Threading.Tasks;
+    using Umbraco.Core.Models.Identity;
+    using Umbraco.Core.Security;
 
-namespace MyNamespace
-{
-    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
+    namespace MyNamespace
     {
-        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
+        public class MyPasswordChecker : IBackOfficeUserPasswordChecker
         {
-            var result = (password == "test")
-                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
-                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
+            public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
+            {
+                var result = (password == "test")
+                    ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
+                    : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
 
-            return result;
+                return result;
+            }
         }
     }
-}
-```
+    ```
 
-2. Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method
-```C#
-public void ConfigureServices(IServiceCollection services)
-{
-    ...
+2. Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
 
-    services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
-}
-```
+    ```C#
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
+    }
+    ```
 
 :::note
 if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
