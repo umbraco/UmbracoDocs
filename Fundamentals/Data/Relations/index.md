@@ -74,7 +74,7 @@ Click Create, and you'll see your new Relation Type created in the Relation Type
 
 ## Viewing Relations
 
-If you examine one of the existing Relation Types, you will see the option to view Relations - this is just a long list of all the objects that have been related for this specific Relation Type, there is no backoffice functionality here to create, edit or delete a Relation.
+To view one of the existing Relation Types, go to the **Relations** tab. It displays a long list of all the objects that have been related for this specific Relation Type. 
 
 ![View Relations](images/relation-alias.png)
 
