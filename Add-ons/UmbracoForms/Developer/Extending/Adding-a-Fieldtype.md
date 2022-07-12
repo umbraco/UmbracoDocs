@@ -34,6 +34,7 @@ namespace MyFormsExtensions
             this.DataType = FieldDataType.String;
             this.SortOrder = 10;
             this.SupportsRegex = true;
+            this.FieldTypeViewName = "FieldType.MyCustomField.cshtml";
         }
 
         // You can do custom validation in here which will occur when the form is submitted.
@@ -84,7 +85,9 @@ namespace MyFormsExtensions
 
 ## Partial view
 
-Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`
+Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
+
+The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
