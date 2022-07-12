@@ -37,7 +37,7 @@ namespace MyFormsExtensions
                 }
 
                 // A sample validation
-                var email = GetPostFieldValue(notification.Form, "email");
+                var email = GetPostFieldValue(notification.Form, notification.Context, "email");
                 var emailConfirm = GetPostFieldValue(notification.Form, notification.Context, "verifyEmail");
 
                 // If the validation fails, return a ModelError
