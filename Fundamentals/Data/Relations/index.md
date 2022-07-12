@@ -54,7 +54,8 @@ Provide the Relation Type with a **Name** (this will generate it's alias).
 
 Choose the 'direction' of the relationship, eg usually Bidirectional to get the benefits of relations.
 
-Define the type of one object in the relation (confusingly this is called 'Parent' but that only defines which column in the database this value is stored in, for a bidirectional relationship it doesn't matter which type of entity is defined as the parent or the child, but if there is a natural 'one thing' will be related to lots of 'other things', then choose that thing as the parent. (really they should be Uncles/Aunts and Nephews/Nieces - but there isn't a common non-gendered term for this family relationship, although Piblings and Niblings has started to become popular).
+Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in. For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. 
+If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent. 
 
 Choose the different types for each entity (**Parent** and **child**) from the drop-down list.
 
