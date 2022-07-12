@@ -32,7 +32,7 @@ Umbraco Relations are 2-way, when you create a relation between two different ty
 
 ## Relation Types
 
-In order to create and use Relations in your Umbraco Website, you need to define a 'Relation Type' to specify what the two types of entities will be relatable, and to give the Relation Type an alias, so you can test if two items are related for a particular 'relation type'. Two items might be related under multiple different Relation Types, and you might be only interested in your 'Related Language Page' Relation Type.
+To create and use Relations in your Umbraco Website, you need to define a 'Relation Type' to specify what the two types of entities will be relatable and to give the Relation Type an alias. So, you can test if two items are related for a particular 'relation type'. Two items might be related under multiple different Relation Types, and you might be only interested in your 'Related Language Page' Relation Type.
 
 ### Create a Relation Type
 
