@@ -50,7 +50,7 @@ Right click the 'Relation Types' folder to create your new Relation Type
 
 ![Create Relation Type](images/create-relation-type.png)
 
-Provide the Relation Type with a name (this will generate it's alias).
+Provide the Relation Type with a **Name** (this will generate it's alias).
 
 Choose the 'direction' of the relationship, eg usually Bidirectional to get the benefits of relations.
 
