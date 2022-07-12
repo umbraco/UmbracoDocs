@@ -60,7 +60,7 @@ Choose the different types for each entity (**Parent** and **child**) from the d
 
 Currently the available types are:
 
-Document(Content), Media, Member, Document Type, Media Type, Member Type, Member Group, Data Type, Root, Recycle Bin
+Document(Content), Media, Member, Document Type, Media Type, Member Type, Member Group, Data Type, Root, and Recycle Bin
 
 Example: For relating Members to their uploaded Images, we might create a 'Member Images' relation
 
