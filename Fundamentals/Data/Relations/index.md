@@ -62,7 +62,7 @@ Currently the available types are:
 
 Document(Content), Media, Member, Document Type, Media Type, Member Type, Member Group, Data Type, Root, Recycle Bin
 
-eg. for relating Members to their uploaded Images, we might create a 'Member Images' relation
+Example: For relating Members to their uploaded Images, we might create a 'Member Images' relation
 
 ![Member Images](images/member-images.png)
 
