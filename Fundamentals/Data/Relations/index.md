@@ -36,7 +36,7 @@ In order to create and use Relations in your Umbraco Website, you need to define
 
 ### Create a Relation Type
 
-Visit the Settings section of the Umbraco backoffice and you'll find the 'Relation Type' tree
+Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
 
 ![Relation Types Tree](images/relation-types-tree.png)
 
