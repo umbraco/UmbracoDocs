@@ -47,7 +47,7 @@ Control who has access to the Umbraco backoffice and what permissions they have.
 
 ## [Relations] (Relations/)
 
-An introduction to Relations and Relation Types to create and manage relationships between different entities in Umbraco.
+An introduction to Relations and Relation Types, creating, and managing relationships between different entities in Umbraco.
 
 ## [Content Version Cleanup (v9.1.0+)](Content-Version-Cleanup/)
 
