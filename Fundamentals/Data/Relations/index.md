@@ -68,7 +68,7 @@ eg. for relating Members to their uploaded Images, we might create a 'Member Ima
 
 'Is Dependency' - in the functionality to prevent an item from being deleted if it's in use, some performance gains have been found when querying if a media item is a dependency - by adding an 'Is Dependency' field to the relationship, generally for your custom relations, you'll set this to false.
 
-Click Create, and you'll see your new Relation Type created in the Relation Types tree, and be able to see the all important 'Alias' that you'll need to make note of when working with Relations.
+Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
 
 ![Member Images](images/relation-alias.png)
 
