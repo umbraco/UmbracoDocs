@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# Repositories in an Umbraco cloud Project
+# Repositories in an Umbraco Cloud Project
 
 Each Umbraco Cloud project can have multiple environments: Development, Staging, and Live depending on your Cloud project plan. Each environment has it's own git repository that is hosted on Umbraco’s Cloud platform.
 
