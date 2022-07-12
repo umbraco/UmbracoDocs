@@ -17,7 +17,7 @@ There are methods in Umbraco to support querying content items by their relative
 
 What, for example, if there are no direct Parent/Child/Ancestor/Descendant relationships between two items in a tree, but they are still somehow notionally 'related' in the context of your website? eg the alternate language translation pages of a content page... 
 
-What if there is also a 'relation' between different types of Umbraco entities in your site, eg Content -> Member or Member -> MediaFolder, (perhaps you'd like to be able to retrieve and display the uploaded images from a specific logged in Member.)
+What if there is also a 'relation' between different types of Umbraco entities in your site, eg Content -> Member or Member -> MediaFolder? Perhaps, you'd like to be able to retrieve and display the uploaded images from a specific logged-in Member.
 
 These are the scenarios where the concept of **Umbraco Relations** provides a solution.
 
