@@ -11,7 +11,7 @@ Umbraco sections are built around the concept of 'trees' and there is an implici
 
 ![Parent, Siblings & Children](images/parent-siblings-children.png)
 
-We refer to these relationships in the manner of a 'Family Tree' - eg, One content item might be the 'Parent' of several content items, and those content items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item, depending if they are above or below them in the depth of the tree. 
+We refer to these relationships in the manner of a 'Family Tree' - eg, One content item might be the 'Parent' of some content items, and those content items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item, depending if they are above or below them in the depth of the tree. 
 
 There are methods in Umbraco to support querying content items by their relative position in the tree to the current page using these concepts, eg `Model.Ancestors()` or `Model.Children()` or `Model.Descendants()` - but what about 'Cousins'? 
 
