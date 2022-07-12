@@ -31,7 +31,7 @@ namespace MyFormsExtensions
             if (notification.Form.Name == "Form Name")
             {
                 // Check the ModelState
-                if (notification.ModelState.IsValid == false)
+                if (notification.ModelState.IsValid)
                 {
                     return;
                 }
