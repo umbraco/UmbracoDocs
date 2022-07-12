@@ -86,7 +86,7 @@ You can create Relations using the RelationService API via code.
 [Some examples are provided here in the RelationService Documentation Page](../../documentation/reference/management/services/relationservice/)
 
 ### Use cases
-Commonly you might create a 'Relation' between two objects either as 
+You might want to create a 'Relation' between two objects either as:
 
 -  a response to a backoffice event. For example, a content item being published that has picked several other content items. You can add a relationship between these items to make querying between them easier. 
 
