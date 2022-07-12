@@ -15,7 +15,7 @@ We refer to these relationships in the manner of a 'Family Tree' - eg, One conte
 
 There are methods in Umbraco to support querying content items by their relative position in the tree to the current page using these concepts, eg `Model.Ancestors()` or `Model.Children()` or `Model.Descendants()` - but what about 'Cousins'? 
 
-What, for example, if there are no direct Parent/Child/Ancestor/Descendant relationships between two items in a tree, but they are still somehow notionally 'related' in the context of your website? eg the alternate language translation pages of a content page... 
+What if there are no direct Parent/Child/Ancestor/Descendant relationships between two items in a tree, but they are still somehow 'related' in the context of your website? For example, the alternate language translation pages of a content page.
 
 What if there is also a 'relation' between different types of Umbraco entities in your site, eg Content -> Member or Member -> MediaFolder? Perhaps, you'd like to be able to retrieve and display the uploaded images from a specific logged-in Member.
 
