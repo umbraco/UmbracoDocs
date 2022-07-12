@@ -43,7 +43,7 @@ namespace MyFormsExtensions
                 // If the validation fails, return a ModelError
                 if (email.ToLower() != emailConfirm.ToLower())
                 {
-                    notification.ModelState.AddModelError(GetPostField(e, "verifyEmail").Id.ToString(), "Email does not match");
+                    notification.ModelState.AddModelError(GetPostField(notification.Form, "verifyEmail").Id.ToString(), "Email does not match");
                 }
             }
         }
