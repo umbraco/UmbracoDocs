@@ -46,7 +46,7 @@ If you expand the Relation Type tree, you can see that Umbraco 'ships' with some
 
 For example, there is a Relation Type that tracks when Media is picked in Content to be able to provide the functionality of warning an editor if they try to delete a Media Item that it is 'in use'. There is a Relation Type, to help 'restore' deleted content back to the place it was deleted from in the Recycle Bin.
 
-Right click the 'Relation Types' folder to create your new Relation Type
+Right-click the 'Relation Types' folder to create your new Relation Type.
 
 ![Create Relation Type](images/create-relation-type.png)
 
