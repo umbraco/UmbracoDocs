@@ -26,7 +26,7 @@ The external Git repository can be used to store the entire source code of your 
 
 ## A Git Umbraco Cloud source control repository with the locally cloned Umbraco project
 
-When you create a Cloud project you get two environments: a Development environment and a Live environment. To work with a local copy of your site, you clone down the Development environment using the **Clone project** option from the Cloud Portal and start building your website locally. This repository is different from your source control repository.
+We recommend creating a Cloud project with at least two environments: a Development environment and a Live environment. To work with a local copy of your site, you then clone down the Development environment using the **Clone project** option from the Cloud Portal and start building your website locally. This repository is different from your source control repository.
 
 Once you're happy with the results or wish to see how your website has progressed, you push the changes back to the Development environment. If everything is working as expected you then deploy your changes to the Live environment.
 
