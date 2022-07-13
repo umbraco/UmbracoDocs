@@ -4,7 +4,7 @@ versionTo: 10.0.0
 updatedLinks: true
 ---
 
-# Deploying from one Cloud environment to another
+# Deploying between Cloud environments
 
 When you are working directly on your Development environment, any changes you make through the Backoffice will automatically be identified and committed to the site's Git repository. This includes Umbraco-specific items like Document types and templates.
 
