@@ -50,7 +50,6 @@ To run the project and hot reload or recompile the project whenever changes are 
 Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
 :::note
-
 - Visual Studio Code (VSCode) requires you to have a launch configuration before `F5`will work.
 - The editor will prompt you to add a launch configuration if you have the `C#` extension installed in VSCode.
 :::
