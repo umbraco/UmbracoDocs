@@ -60,4 +60,4 @@ The local site should be running when you do this. The deploy marker will change
 
 Another way is to use the **Deploy** Dashboard in the **Settings** section of the Umbraco backoffice. Here, you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has been completed, or has failed.
 
-The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger various processes. Learn more about this dashboard in the [Deployment](../) article.
+The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes. Learn more about this dashboard in the [Deployment](../) article.
