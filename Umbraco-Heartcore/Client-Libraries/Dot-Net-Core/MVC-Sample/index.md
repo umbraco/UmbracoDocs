@@ -49,10 +49,9 @@ To run the project and hot reload or recompile the project whenever changes are 
 
 Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
-:::note
-- Visual Studio Code (VSCode) requires you to have a launch configuration before `F5`will work.
-- The editor will prompt you to add a launch configuration if you have the `C#` extension installed in VSCode.
-:::
+> **Note**
+> Visual Studio Code (VSCode) requires you to have a launch configuration before `F5`will work.
+> The editor will prompt you to add a launch configuration if you have the `C#` extension installed in VSCode.
 
 ## Show your content
 
@@ -60,9 +59,8 @@ For the following section, a Umbraco Heartcore project with the following conten
 
 ![Content structure](images/content-structure.png)
 
-:::note
-To connect to your project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](#run-the-sample-on-your-local-machine).
-:::
+> **Note**
+> To connect to your project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](#run-the-sample-on-your-local-machine).
 
 When you have connected the client project to your Umbraco project and run the client project, you will be presented with a default page. The page shows the properties and the data from the content node at the root of your website. This is because no view or controller has yet been defined for your content structure.
 
@@ -136,9 +134,8 @@ To render the data from the properties on our content, we need to use the `@Mode
 
 An example could be a text string property with the alias `heading`. To render the data from this property on the frontend, we will need to use `@Model.Heading`.
 
-:::note
-To render data from a property, the property must be defined in the view model (`@model`), and it must match an alias on the corresponding content node from your Umbraco project.
-:::
+> **Note**
+> To render data from a property, the property must be defined in the view model (`@model`), and it must match an alias on the corresponding content node from your Umbraco project.
 
 Below is a complete example of how a view for a root node could look.
 
