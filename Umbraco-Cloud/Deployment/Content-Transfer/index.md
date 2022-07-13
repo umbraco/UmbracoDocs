@@ -9,7 +9,7 @@ meta.Description: "How to restore content in Umbraco Deploy using the deployment
 
 After deploying changes to the metadata, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
 
-Content and media transfers are very flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time, or a single node.
+Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time, or a single node.
 
 Transferring content will overwrite any existing nodes on the target environment. Content transfers will transfer the items that you select in the "source" environment to the "target" environment the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
