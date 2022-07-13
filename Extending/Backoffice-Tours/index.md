@@ -196,7 +196,7 @@ Below is an explanation of each of the properties on the tour step object.
 
 - **eventElement**
 
-    A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
+    A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want the user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
 
     The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
