@@ -62,7 +62,7 @@ Some deployments can cause an Umbraco Cloud environment to restart. See the tabl
 |Action:                            |Application Restart? |
 |-----------------------------------|---------------------|
 |Config file change                 |Yes                  |
-|Meta data deployment               |No                   |
+|Metadata deployment                |No                   |
 |File change - Example: *css-file*  |No                   |
 |Content and/or Media transfer      |No                   |
 
