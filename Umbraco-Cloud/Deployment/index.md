@@ -34,7 +34,7 @@ Learn more about the deployment approach in this video, which will also show you
 
 ### Deploying Metadata
 
-To transfer content and media, the source environment and the target environment needs to have the same setup. They need to be completely in sync and have the same file structure. To achieve this you need to deploy your metadata changes to the target environment.
+To transfer content and media, the source environment and the target environment needs to have the same setup. They need to be in sync and have the same file structure. To achieve this you need to deploy your metadata changes to the target environment.
 
 - [Deploy changes from Local to Cloud](Local-to-Cloud)
 - [Deploy changes from one Cloud environment to another](Cloud-to-Cloud)
