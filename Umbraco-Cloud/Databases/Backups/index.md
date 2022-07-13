@@ -13,13 +13,13 @@ Sometimes you might need to have a backup of your Cloud database. This can be ac
 ## Backup with SQL Server Management Studio
 Follow these steps:
 - Log in to Umbraco Cloud, and visit your project page.
-- From the "Settings" drop down for the project, select "Connection Details".
+- From the "Settings" drop-down for the project, select "Connection Details".
 - If your IP address is not listed, click "Add now" next to "Your IP address is not on the list". It should then say "Your IP address is on the list".
 - Note the server name, login, password, and database listed on this screen for whichever environment you are backing up (e.g., development or live).
 - Open SQL Server Management Studio (SSMS).
-- Once the "Connect to Server" dialog appears, enter your server name, login, and password (you will also need to be sure the authentication drop down is set to "SQL Server Authentication" rather than "Windows Authentication").
+- Once the "Connect to Server" dialog appears, enter your server name, login, and password (you will also need to be sure the authentication drop-down is set to "SQL Server Authentication" rather than "Windows Authentication").
 - Click the "Options >>" button.
-- In the "Connect to database" field, type the name of your database (this was listed in the Umbraco Cloud connection details page).
+- In the "Connect to database" field, type your database name (this was listed on the Umbraco Cloud connection details page).
 - It is very important that you enter the database name. If you do not, the connection will fail.
-- Expand "Databases", right click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
+- Expand "Databases", right-click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
 - Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
