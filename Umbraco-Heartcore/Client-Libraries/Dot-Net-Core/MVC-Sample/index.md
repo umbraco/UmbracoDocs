@@ -6,7 +6,7 @@ The sample is built around a sample project with the alias `demo-headless`. You 
 
 ## Prerequisites
 
-- [.NET 6.0](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ## Run the sample on your local machine
 
@@ -37,7 +37,7 @@ dotnet restore
 dotnet run
 ```
 
-The first command will restore the packages, and the second will run the site. Alternatively, you can use the new hot-reload functionality:
+The first command will restore the packages and the second will run the site. Alternatively, you can use the new hot-reload functionality:
 
 ```bash
 dotnet watch run
@@ -49,9 +49,11 @@ To run the project and hot reload or recompile the project whenever changes are 
 
 Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
-> **Note**
-> Visual Studio Code (VSCode) requires you to have a launch configuration before `F5`will work.
-> The editor will prompt you to add a launch configuration if you have the `C#` extension installed in VSCode.
+:::note
+
+- Visual Studio Code (VSCode) requires you to have a launch configuration before `F5`will work.
+- The editor will prompt you to add a launch configuration if you have the `C#` extension installed in VSCode.
+:::
 
 ## Show your content
 
@@ -59,8 +61,9 @@ For the following section, a Umbraco Heartcore project with the following conten
 
 ![Content structure](images/content-structure.png)
 
-> **Note**
-> To connect to your own project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](#run-the-sample-on-your-local-machine).
+:::note
+To connect to your project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](#run-the-sample-on-your-local-machine).
+:::
 
 When you have connected the client project to your Umbraco project and run the client project, you will be presented with a default page. The page shows the properties and the data from the content node at the root of your website. This is because no view or controller has yet been defined for your content structure.
 
@@ -77,8 +80,8 @@ Each approach is explained in more detail below.
 
 1. Create a model class for the content type you want to render, e.g., `Models/HomePage.cs`. Make sure the model extends the abstract class `Content` and that the properties you want to render from the Umbraco content node are defined as public properties with PascalCasing. PascalCasing means that a content node property called `personName` will be mapped to the `PersonName` property in the model.
 2. Create a `homePage.cshtml` file in `Views/DefaultUmbraco` - the name of the file should be the alias of the Document Type the root content node is using.
-3. Set `HomePage` as the model
-4. Set layout to `null` - this can be used later on when you want to share one layout between more views
+3. Set `HomePage` as the model.
+4. Set layout to `null` - this can be used later on when you want to share one layout between more views.
 
 ```csharp
 @model Umbraco.Headless.Client.Net.Delivery.Models.Content
@@ -121,21 +124,22 @@ namespace Umbraco.Headless.Client.Samples.Web.Controllers
 }
 ```
 
-The controller is now in place, but to show our content, we also need to define a view.
+The controller is now in place but to show our content we also need to define a view.
 
-1. Create a folder in `/Views` using the alias of the Document Type, e.g. `/HomePage`
-2. Create an `Index.cshtml` file in the new folder
-3. Follow steps 2-3 from the ['Define a view file' section](#define-a-view-file).
-4. Build and run the solution
+1. Create a folder in `/Views` using the alias of the Document Type, e.g. `/HomePage`.
+2. Create an `Index.cshtml` file in the new folder.
+3. Follow steps 2-3 from the [Define a view file](#define-a-view-file) section.
+4. Build and run the solution.
 
 ## Building view files
 
-In order to render out the data from the properties on our content, we need to use the `@Model.PropertyName` approach, where the value value of the property you want to display data from.
+To render the data from the properties on our content, we need to use the `@Model.PropertyName` approach, where the value is the Name of the property you want to display the data from.
 
 An example could be a text string property with the alias `heading`. To render the data from this property on the frontend, we will need to use `@Model.Heading`.
 
-> **Note**
-> To render data from a property the property must be defined in the view model (`@model`), and it must match an alias on the corresponding content node from your Umbraco project.
+:::note
+To render data from a property, the property must be defined in the view model (`@model`), and it must match an alias on the corresponding content node from your Umbraco project.
+:::
 
 Below is a complete example of how a view for a root node could look.
 
