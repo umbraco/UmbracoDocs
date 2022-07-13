@@ -62,7 +62,7 @@ For the following section, a Umbraco Heartcore project with the following conten
 > **Note**
 > To connect to your own project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](#run-the-sample-on-your-local-machine).
 
-When you have connected the client project to your Umbraco project and ran it on your local machine, you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because no view or controller has been defined for your content structure yet.
+When you have connected the client project to your Umbraco project and run the client project, you will be presented with a default page. The page shows the properties and the data from the content node at the root of your website. This is because no view or controller has yet been defined for your content structure.
 
 We will need to define and build a view and/or an MVC controller for the content types (Document Types) in our client project in order for us to start rendering content.
 
