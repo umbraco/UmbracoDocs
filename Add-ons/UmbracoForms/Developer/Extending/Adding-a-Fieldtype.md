@@ -173,12 +173,12 @@ public class CompareField : Umbraco.Forms.Core.FieldType
     public CompareField()
     {
         this.Id = new Guid("b83dddc2-bdf3-4a0b-b9ad-f7bba83080df");
-        this.Name = "Compare Field";
+        this.Name = "Compare field";
         this.Description = "Compare input to another field.";
         this.Icon = "icon-legal";
         this.FieldTypeViewName = "FieldType.Compare.cshtml";
         this.DataType = FieldDataType.String;
-        this.SortOrder = 10;
+        this.SortOrder = 20;
         this.SupportsRegex = true;
     }
 
