@@ -160,3 +160,106 @@ To reference the file you should override the `RenderView` property, e.g.:
 ```csharp
 public override string RenderView => "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/RenderTypes/mycustomrenderfield.html";
 ```
+
+## Validation
+
+If using [jQuery validate](https://jqueryvalidation.org/) it is possible to use various methods in a custom field type, e.g. `equalTo`, `digits` or `remote`.
+
+For example a Compare field type to compare another field.
+
+```csharp
+public class CompareField : Umbraco.Forms.Core.FieldType
+{
+    public CompareField()
+    {
+        this.Id = new Guid("b83dddc2-bdf3-4a0b-b9ad-f7bba83080df");
+        this.Name = "Compare Field";
+        this.Description = "Compare input to another field.";
+        this.Icon = "icon-autofill";
+        this.FieldTypeViewName = "FieldType.Compare.cshtml";
+        this.DataType = FieldDataType.String;
+        this.SortOrder = 10;
+        this.SupportsRegex = true;
+    }
+
+    [Setting("Compare Field",
+        Description = "Compare field",
+        View = "textfield")]
+    public string CompareField { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the field label should be shown.
+    /// PreValues are a single element, a boolean indicating whether the default for the the checkbox is "checked".
+    /// </summary>
+    [Setting("Show Label", Description = "Indicate whether the the field's label should be shown when rendering the form.", View = "checkbox", PreValues = "true", DisplayOrder = 20)]
+    public string ShowLabel { get; set; } = string.Empty;
+
+    /// <inheritdoc/>
+    public override bool HideLabel => ShowLabel == "False"; // Checking explicitly for false so the backward compatible default is to show the label.
+
+    public override string GetDesignView() =>
+        "~/App_Plugins/UmbracoForms/backoffice/Common/FieldTypes/Textfield.html";
+
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService)
+    {
+        var baseValidation = base.ValidateField(form, field, postedValues, context, placeholderParsingService);
+        var value = postedValues.FirstOrDefault();
+
+        var compareField = GetPostFieldValue(form, context, CompareField);
+
+        if (compareField == null)
+            return baseValidation;
+
+        if (value != null && value.ToString() == compareField)
+        {
+            return baseValidation;
+        }
+
+        var custom = new List<string>();
+        custom.AddRange(baseValidation);
+        custom.Add("Email does not match.");
+
+        return custom;
+    }
+
+    private static string GetPostFieldValue(Form form, HttpContext context, string key)
+    {
+        Field? field = GetPostField(form, key);
+        if (field == null)
+        {
+            return string.Empty;
+        }
+
+        return context.Request.HasFormContentType && context.Request.Form.Keys.Contains(field.Id.ToString())
+            ? context.Request.Form[field.Id.ToString()].ToString().Trim()
+            : string.Empty;
+    }
+
+    private static Field? GetPostField(Form form, string key) => form.AllFields.SingleOrDefault(f => f.Alias == key);
+}
+```
+
+```csharp
+@using Umbraco.Forms.Web
+@model Umbraco.Forms.Web.Models.FieldViewModel
+
+@inject Umbraco.Forms.Web.Services.IFormRenderingService FormRenderingService
+
+@{
+    var maxLength = Model.GetSettingValue<int>("MaximumLength", 255);
+    var fieldType = Model.GetSettingValue<string>("FieldType", "text");
+    var autocompleteAttribute = Model.GetSettingValue<string>("AutocompleteAttribute", string.Empty);
+    var compareField = Model.GetSettingValue<string>("CompareField", string.Empty);
+    
+    var form = FormRenderingService.GetForm(Guid.Parse("0638c6f0-f6db-460d-b462-6dc393a8ae0c"));
+    var field = form?.AllFields.SingleOrDefault(x => x.Alias == compareField);
+}
+
+<input type="@fieldType" name="@Model.Name" id="@Model.Id" data-umb="@Model.Id" class="@Html.GetFormFieldClass(Model.FieldTypeName)" value="@Model.ValueAsHtmlString" maxlength="@maxLength"
+       @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
+       @{if (string.IsNullOrEmpty(autocompleteAttribute) == false) { <text> autocomplete="@autocompleteAttribute" </text> }}
+       @{if (string.IsNullOrEmpty(compareField) == false) { <text> data-val-equalto="Not equal to" data-val-equalto-other="@field?.Id" </text> }}
+       @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
+       @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
+       @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
+```
