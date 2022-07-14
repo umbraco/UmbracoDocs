@@ -97,6 +97,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `isReadOnly` Disables editing the value
 
 `valueType` sets the kind of data the editor will save in the database, its default setting is `string`. The available options are:
+
 * `STRING` Stores the value as an nvarchar in the database
 * `DATETIME` Stores the value as datetime in the database
 * `TEXT` Stores the value as ntext in the database
@@ -214,7 +215,7 @@ There are two approaches to registering a custom dashboard to appear in the Umbr
 ]
 ```
 
-See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards. 
+See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards.
 
 ## Sections
 
@@ -228,9 +229,11 @@ As with the custom dashboards, a custom section can be registered either with a 
     }
 ]
 ```
-See the [Sections](../Section-Trees/sections.md) for a full article on how to create custom sections.
+
+See the [Sections](../Section-Trees/Sections/index.md) for a full article on how to create custom sections.
 
 ## JavaScript
+
 `javascript` returns a string[] of JavaScript files to load on application start
 
 ```json
@@ -241,6 +244,7 @@ See the [Sections](../Section-Trees/sections.md) for a full article on how to cr
 ```
 
 ## CSS
+
 `css` returns a string[] of css files to load on application start
 
 ```json
@@ -251,6 +255,7 @@ See the [Sections](../Section-Trees/sections.md) for a full article on how to cr
 ```
 
 ## JSON Schema
+
 The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
 ### Schema Files

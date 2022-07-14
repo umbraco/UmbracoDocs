@@ -202,7 +202,7 @@ public class HomeControllerTests : UmbracoBaseTest
 
 ## Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](../../Reference/Routing/surface-controllers.md).
+See [Reference documentation on SurfaceControllers](../../Reference/Routing/Surface-Controllers/index.md).
 
 ```csharp
 public class MySurfaceController : SurfaceController

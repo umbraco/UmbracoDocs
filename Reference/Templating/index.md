@@ -19,6 +19,10 @@ Umbraco uses ASP.Net MVC Views for implementing templates.
 
 Describes how to work with MVC views, the razor syntax and APIs available. It also describes how to create forms, has some step-by-step guides and other advanced techniques.
 
+## [Masterpages](Masterpages/index.md)
+
+Master page is used to create a common layout for the web-based application. This article describes how to use Master page as a Content Place Holder, inherit template and so on.
+
 ## [Macros](Macros/index.md)
 
 Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage.

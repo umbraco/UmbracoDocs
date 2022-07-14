@@ -19,7 +19,7 @@ The tree type should reference the assembly qualified type of the tree, for exam
 You don't need to specify the assembly version, etc...
 :::
 
-# Trees v6 (and v4)
+## Trees v6 (and v4)
 
 This section describes how to work with and create trees with the v6 (and v4 APIs).
 
@@ -38,9 +38,3 @@ Even though the events are defined on this class, it is up to the tree implement
 The events are: `BeforeNodeRender`, `AfterNodeRender`, `BeforeTreeRender`, `AfterTreeRender`, `NodeActionsCreated`
 
 It is not recommended to use the events BeforeTreeRender or AfterTreeRender since this will cause much higher performance spikes.
-
-
-
-
-
-

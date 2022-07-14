@@ -5,7 +5,7 @@ meta.Description: "Information on various backoffice events in Umbraco"
 versionRemoved: 9.0.0
 ---
 
-# Using events
+# Using Events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
@@ -40,7 +40,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Tree events
 
-* See [Tree Events](../../Extending/Section-Trees/trees.md) for a listing of the tree events.
+* See [Tree Events](../../Extending/Section-Trees/Trees/index.md) for a listing of the tree events.
 
 ## Editor Model events
 

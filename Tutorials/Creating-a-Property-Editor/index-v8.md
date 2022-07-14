@@ -43,7 +43,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 `MarkDownEditor`
 
 Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
-[For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
+[For full package.manifest JSON documentation see here](../../Extending/Property-Editors/Package-Manifest/index.md)
 
 Inside this package manifest, we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 

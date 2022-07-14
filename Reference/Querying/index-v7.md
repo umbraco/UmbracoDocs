@@ -6,7 +6,8 @@ versionFrom: 7.0.0
 
 _Overview of various ways of querying, filtering and searching published content for use on your website._
 
-## [UDI identifiers](Udi.md)
+## [UDI identifiers](UDI-identifiers/index.md)
+
 **Umbraco 7.6.0+** Umbraco stores identifiers in UDI format for most Umbraco object types. This identifier stores all of the metadata required to retrieve an Umbraco object and is parse-able within text. Example: `umb://document/4fed18d8c5e34d5e88cfff3a5b457bf2`. UDI's can be used in many of the querying APIs.
 
 ## [IPublishedContent](IPublishedContent/index-v7.md)

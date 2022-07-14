@@ -148,6 +148,6 @@ Tip: If you don't see your new macro listed, right click __Macros__ and select _
 Now you can add the form to a page that has a rich text editor.
 
 ### More information
-- [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
-- [Custom controllers](../../../Reference/Routing/custom-controllers.md)
+- [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
+- [Custom controllers](../../../Reference/Routing/Custom-Controllers/index.md)
 - [Routing](../../../Reference/Routing/)

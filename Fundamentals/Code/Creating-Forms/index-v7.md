@@ -129,8 +129,8 @@ Select the expand the __Macros__ node and select the __Contact Form__ Macro. Che
 Now you can add the form to a page that has a rich text editor.
 
 ### More information
-- [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
-- [Custom controllers](../../../Reference/Routing/custom-controllers.md)
+- [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
+- [Custom controllers](../../../Reference/Routing/Custom-Controllers/index.md)
 - [Routing](../../../Reference/Routing/)
 
 ### Umbraco TV

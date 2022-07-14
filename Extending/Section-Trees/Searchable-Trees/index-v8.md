@@ -60,7 +60,7 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 #### Example implementation of ISearchableTree
 
-If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees-v7.md)) then we could implement searchability by creating the following c# class in our site:
+If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../Trees/index-v8.md)) then we could implement searchability by creating the following c# class in our site:
 
 ```csharp
   public class FavouriteThingsSearchableTree : ISearchableTree
@@ -113,6 +113,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 ```csharp
 public string TreeAlias => "member";
 ```
+
 To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
 
 ```csharp

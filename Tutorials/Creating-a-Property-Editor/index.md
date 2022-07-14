@@ -36,7 +36,7 @@ Next, we will create a Package Manifest file to describe what the plugin does. T
 
 Create the file `/App_Plugins/Suggestions/package.manifest`.
 
-For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/package-manifest.md) article.
+For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/Package-Manifest/index.md) article.
 
 Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
 

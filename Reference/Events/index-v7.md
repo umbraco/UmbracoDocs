@@ -37,9 +37,10 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Tree events
 
-* See [Tree Events](../../Extending/Section-Trees/trees.md) for a listing of the tree events.
+* See [Tree Events](../../Extending/Section-Trees/Trees/index.md) for a listing of the tree events.
 
 ## Editor Model events
+
 See [EditorModelEventManager Events](EditorModel-Events) for a listing of the EditorModel events
 
 :::tip
