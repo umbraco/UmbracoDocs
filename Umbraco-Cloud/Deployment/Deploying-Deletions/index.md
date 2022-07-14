@@ -9,7 +9,7 @@ On Umbraco Cloud, deletions are environment specific. To delete something entire
 
 In this article, you can read about the correct way of deleting files, schema, and content from your Umbraco Cloud project.
 
-When you have an Umbraco Cloud project, you might have several environments including a local clone of the project. Each of these environments have their own database. These databases contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates, etc).
+When you have an Umbraco Cloud project, you might have couple of environments including a local clone of the project. Each of these environments have their own database. These databases contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates, etc).
 
 The databases are environment specific. When you deploy from one environment to another, the engine behind Umbraco Cloud will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up, for example, there is a mismatch between the database references and the files deployed, you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting/Deployments).
 
@@ -34,7 +34,7 @@ Once the deployment is completed, you will notice the following:
 
 You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file and not the actual Document Type in the database.
 
-To completely delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the Backoffice of all the environments and no UDA file exists, you can consider it completely gone.
+To delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the Backoffice of all the environments and no UDA file exists, you can consider it gone.
 
 You should however keep in mind that if you at any point during the process, save your Document Type again, a UDA file will be regenerated and when you start deploying changes between environments, this will likely end up recreating your deleted Document Type.
 
