@@ -1,6 +1,6 @@
 # Migrating Umbraco 8 Cloud project to Umbraco 10
 
-This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 10.
+This article will provide steps on how to migrate a Umbraco 8 Cloud project to Umbraco 10.
 
 :::note
 The steps in this article can also be used to upgrade to Umbraco version 9, however, we do recommend always upgrading to the latest version whenever possible.
@@ -24,7 +24,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 ## Prerequisites
 
-* An Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
+* A Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
 
 * A clean Cloud project running the latest version of Umbraco 10 with **at least 2 environments**.
 
@@ -42,7 +42,7 @@ Should something fail during the migration, the Development environment can alwa
 
 * Import the database backup into SQL Server Management Studio.
 
-* Clone down the **Development** environment from the Umbraco 10 Cloud project, test the project and make sure to log in to the backoffice.
+* Clone down the **Development** environment from the Umbraco 10 Cloud project, test the project, and make sure to log in to the backoffice.
 
 * Update the connection string in the Umbraco 10 `appsettings.json` file so that it connects to the Umbraco 8 database:
 
@@ -147,7 +147,7 @@ Once the Umbraco 10 project runs without errors on the local setup, the next ste
 
 * Transfer Content and Media from the local clone to the **Development** environment.
 
-* Test **everything** on the **Development** environment.
+* Test **everything** in the **Development** environment.
 
 * Deploy to the **Live** environment.
 
