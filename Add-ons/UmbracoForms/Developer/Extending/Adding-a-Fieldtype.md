@@ -182,10 +182,10 @@ public class CompareField : Umbraco.Forms.Core.FieldType
         this.SupportsRegex = true;
     }
 
-    [Setting("Compare Field",
-        Description = "Compare field",
+    [Setting("Field to compare",
+        Description = "Alias of field to compare.",
         View = "textfield")]
-    public string CompareField { get; set; }
+    public string FieldToCompare { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the field label should be shown.
@@ -205,19 +205,19 @@ public class CompareField : Umbraco.Forms.Core.FieldType
         var baseValidation = base.ValidateField(form, field, postedValues, context, placeholderParsingService);
         var value = postedValues.FirstOrDefault();
 
-        var compareField = GetPostFieldValue(form, context, CompareField);
+        var fieldToCompare = GetPostFieldValue(form, context, FieldToCompare);
 
-        if (compareField == null)
+        if (fieldToCompare == null)
             return baseValidation;
 
-        if (value != null && value.ToString() == compareField)
+        if (value != null && value.ToString() == fieldToCompare)
         {
             return baseValidation;
         }
 
         var custom = new List<string>();
         custom.AddRange(baseValidation);
-        custom.Add("Email does not match.");
+        custom.Add("Not equal to.");
 
         return custom;
     }
@@ -249,7 +249,7 @@ public class CompareField : Umbraco.Forms.Core.FieldType
     var maxLength = Model.GetSettingValue<int>("MaximumLength", 255);
     var fieldType = Model.GetSettingValue<string>("FieldType", "text");
     var autocompleteAttribute = Model.GetSettingValue<string>("AutocompleteAttribute", string.Empty);
-    var compareField = Model.GetSettingValue<string>("CompareField", string.Empty);
+    var fieldToCompare = Model.GetSettingValue<string>("FieldToCompare", string.Empty);
     
     var form = FormRenderingService.GetForm(Guid.Parse("0638c6f0-f6db-460d-b462-6dc393a8ae0c"));
     var field = form?.AllFields.SingleOrDefault(x => x.Alias == compareField);
@@ -258,7 +258,7 @@ public class CompareField : Umbraco.Forms.Core.FieldType
 <input type="@fieldType" name="@Model.Name" id="@Model.Id" data-umb="@Model.Id" class="@Html.GetFormFieldClass(Model.FieldTypeName)" value="@Model.ValueAsHtmlString" maxlength="@maxLength"
        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
        @{if (string.IsNullOrEmpty(autocompleteAttribute) == false) { <text> autocomplete="@autocompleteAttribute" </text> }}
-       @{if (string.IsNullOrEmpty(compareField) == false) { <text> data-val-equalto="Not equal to @field?.Caption" data-val-equalto-other="@field?.Id" </text> }}
+       @{if (string.IsNullOrEmpty(fieldToCompare) == false) { <text> data-val-equalto="Not equal to @field?.Caption" data-val-equalto-other="@field?.Id" </text> }}
        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
