@@ -52,7 +52,7 @@ To create your new Relation Type, follow these steps:
 
 1. Right-click the **Relation Types** folder.
 
-2. Provide a **Name** for the Relation Type. Tthis will generate it's alias.
+2. Provide a **Name** for the Relation Type. This will generate it's alias.
 
 3. Choose the **Direction** of the relationship, for example, usually **Bidirectional** to get the benefits of relations.
 
@@ -91,10 +91,6 @@ You can create Relations using the RelationService API via code.
 You might want to create a 'Relation' between two objects either as:
 
 -  A response to a backoffice event. For example, a content item being published that has picked several other content items. Storing a relationship between these items would make querying between them easier. Perhaps show all the pages on which a particular 'banner' has been picked. 
-
-
-Or 
-
 - A logged-in member on the front end of an Umbraco website might have the facility to upload images. In response, the implementation could store the photos programmatically in the Media Section and at the same time, create a Relation to record the relationship between the member and their uploaded pictures. On an image gallery page, it would be possible to display all the gallery images for the current logged-in Member using the relations.
 
 ### Community Packages
