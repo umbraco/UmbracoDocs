@@ -258,7 +258,7 @@ public class CompareField : Umbraco.Forms.Core.FieldType
 <input type="@fieldType" name="@Model.Name" id="@Model.Id" data-umb="@Model.Id" class="@Html.GetFormFieldClass(Model.FieldTypeName)" value="@Model.ValueAsHtmlString" maxlength="@maxLength"
        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
        @{if (string.IsNullOrEmpty(autocompleteAttribute) == false) { <text> autocomplete="@autocompleteAttribute" </text> }}
-       @{if (string.IsNullOrEmpty(compareField) == false) { <text> data-val-equalto="Not equal to" data-val-equalto-other="@field?.Id" </text> }}
+       @{if (string.IsNullOrEmpty(compareField) == false) { <text> data-val-equalto="Not equal to @field?.Caption" data-val-equalto-other="@field?.Id" </text> }}
        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text> }} />
