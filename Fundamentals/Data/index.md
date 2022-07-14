@@ -45,7 +45,7 @@ Overview of how to add and reorder tabs, convert a group to a tab and manage the
 
 Control who has access to the Umbraco backoffice and what permissions they have.
 
-## [Relations] (Relations/)
+## [Relations](Relations/)
 
 An introduction to Relations and Relation Types, creating, and managing relationships between different entities in Umbraco.
 
