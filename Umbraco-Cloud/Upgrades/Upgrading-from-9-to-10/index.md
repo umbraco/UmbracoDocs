@@ -16,7 +16,7 @@ You will need to ensure the packages you are using are available in Umbraco 10 a
 
 An overview of what you will find throughout this guide.
 
-* [Preprequisites](#prerequisites)
+* [Prerequisites](#prerequisites)
 * [Video Tutorial](#video-tutorial)
 * [Step 1: Enable .NET 6](#step-1-enable-net-6)
 * [Step 2: Clone down your project](#step-2-clone-down-your-environment)
@@ -159,9 +159,9 @@ Once the Umbraco 10 project runs locally without any errors, the next step is to
 
 1. Remove the folders mentioned above on the **Development** environment using [KUDU](../../Set-Up/Power-Tools/index.md) from the `repository` and `wwwroot` folders.
 2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
-3. Test **everything** on the **Development** environment.
+3. Test **everything** in the **Development** environment.
 
-We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues on to your Live environment.
+We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
 
 ## Step 5: Going live
 
