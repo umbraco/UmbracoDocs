@@ -30,7 +30,7 @@ MembershipHelper is a helper class for accessing member data in the form of `IPu
 
 ## [IPublishedContentQuery](IPublishedContentQuery/index.md)
 
-`IPublishedContentQuery` interface contains various query methods for accessing strongly typed content in templates.
+`IPublishedContentQuery` interface contains query methods for accessing strongly typed content in templates.
 
 ## [ITagQuery](ITagQuery/index.md)
 

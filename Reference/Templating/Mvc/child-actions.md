@@ -47,7 +47,7 @@ MVC allows you to have the same overloaded action names on your controllers. How
 
 The same view locations apply to Partial Views returned from Child Actions as the ones listed here: [Partial Views](partial-views.md)
 
-Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the *~/App_Plugins* view location will work too. See  [SurfaceControllers](../../Routing/Surface-Controllers/index-v8.md) documentation under the heading *Plugin based controllers*.
+Also since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the *~/App_Plugins* view location will work too. See  [SurfaceControllers](../../Routing/Surface-Controllers/index-v8.md) documentation under the heading *Plugin based controllers*.
 
 ## Rendering a Child Action
 

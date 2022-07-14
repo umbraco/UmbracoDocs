@@ -64,7 +64,7 @@ How to debug your code with Visual Studio
 
 ## [Language Variation](Language-Variation/index.md)
 
-Language Variation allows you to have several different variations of content based on a language culture.
+Language Variation allows you to have different variations of content based on a language culture.
 
 ## [Mapping](Mapping/index.md)
 
