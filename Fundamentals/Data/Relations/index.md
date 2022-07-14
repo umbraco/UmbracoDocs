@@ -40,7 +40,7 @@ Navigate to the **Settings** section in the Umbraco backoffice and you'll find t
 
 ![Relation Types Tree](images/relation-types-tree.png)
 
-If you expand the Relation Type tree, you can see that Umbraco 'ships' with some default Relation Types, that helps the backoffice function:
+If you expand the Relation Type tree, you can see that Umbraco 'ships' with some default Relation Types. These are used by the Umbraco backoffice to help deliver some key backoffice functionality:
 
 ![Default Relation Types](images/default-relation-types.png)
 
@@ -67,7 +67,7 @@ Example: For relating Members to their uploaded Images, we might create a 'Membe
 
 ![Member Images](images/member-images.png)
 
-'Is Dependency' - in the functionality to prevent an item from being deleted if it's in use, some performance gains have been found when querying if a media item is a dependency - by adding an 'Is Dependency' field to the relationship, generally for your custom relations, you'll set this to false.
+Select **Is Dependency** as **Yes** if you wish this Relation Type to be used in Umbraco's 'tracking' functionality; that warns editors when trying to delete entities if they are 'used' in a Relation Type marked as 'Is Dependency'
 
 Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
 
@@ -89,16 +89,16 @@ You can create Relations using the RelationService API via code.
 ### Use cases
 You might want to create a 'Relation' between two objects either as:
 
--  a response to a backoffice event. For example, a content item being published that has picked several other content items. You can add a relationship between these items to make querying between them easier. 
+-  a response to a backoffice event. For example, a content item being published that has picked several other content items. Storing a relationship between these items would make querying between them easier. Perhaps show all the pages on which a particular 'banner' has been picked. 
 
 
 Or 
 
-in the front end of your site, a logged in member might upload images to your site, and you create them programatically in the Media Section and create a Relation between the Member and the Media Item, so you can retrieve the Members images to display in a gallery.
+A logged-in member on the front end of an Umbraco website might have the facility to upload images. In response, the implementation could store the photos programmatically in the Media Section and at the same time, create a Relation to record the relationship between the member and their uploaded pictures. On an image gallery page, it would be possible to display all the gallery images for the current logged-in Member using the relations.
 
 ### Community Packages
   
-There are several community packages that make use of Relations, eg 
+Some of the community packages that use Relations are listed below:
 
 * ['Relations Picker'](https://our.umbraco.com/packages/backoffice-extensions/relations-picker/) - a content picker that automatically creates Relations.
 * ['ContentRelations'](https://our.umbraco.com/packages/backoffice-extensions/contentrelations/) - allows you to relate two items via the Backoffice.
