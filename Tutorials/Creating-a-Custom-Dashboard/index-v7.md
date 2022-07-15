@@ -115,7 +115,7 @@ This file allows Umbraco to load other resources to use with your HTML view, nam
 
 When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view. Remember that the dashboard config points to the html view. Then Umbraco uses the manifest to load the additional resources, eg. CSS and JavaScript files.
 
-This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
+This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/Package-Manifest/index.md)
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 

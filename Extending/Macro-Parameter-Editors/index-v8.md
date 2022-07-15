@@ -21,10 +21,11 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 
 It is possible to create custom macro parameter types.
 
-## Creating a custom Macro Parameter Type ##
+## Creating a custom Macro Parameter Type
 
 ### isParameterEditor
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../../Extending/Property-Editors/index-v8.md) and in the corresponding [Package Manifest file](../../Extending/Property-Editors/package-manifest-v8.md) for the editor, set the `isParameterEditor` property to be true.
+
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../../Extending/Property-Editors/index-v8.md) and in the corresponding [Package Manifest file](../../Extending/Property-Editors/Package-Manifest/index.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
 propertyEditors: [
@@ -40,6 +41,7 @@ propertyEditors: [
 ```
 
 ### PreValues/Configuration/DefaultValues
+
 However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration options in the Macro Parameter tab when a particular type is chosen. However using the `defaultConfig` option enables the passing of 'one off' default set of configuration for the parameter editor to use:
 
 ```json
@@ -56,7 +58,7 @@ This is only a problem if you have a macro parameter type, that needs to be used
 
 We'll create an 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via an 'Insert Image' Macro into a Rich Text Editor.
 
-#### Package Manifest ####
+#### Package Manifest
 
 ```json
 {
@@ -172,9 +174,11 @@ The package manifest becomes:
 ```
 
 and in the ImagePosition.controller.js we can now read the 'options' values from the defaultConfig in the package.manifest configuration:
+
 ```javascript
  $scope.positions = $scope.model.config.options;
 ```
+
 ### Reading the parameter value in the Macro Partial View
 
 ```csharp

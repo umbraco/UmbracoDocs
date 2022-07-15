@@ -28,7 +28,7 @@ It is possible to create custom macro parameter types.
 
 ### isParameterEditor
 
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/Package-Manifest/index.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
 {

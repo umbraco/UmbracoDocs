@@ -64,7 +64,7 @@ C# API references for the Umbraco Core and Web libraries.
 
 #### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
 
-## [Rest APIs](Routing/WebApi/index.md)
+## [Rest APIs](Routing/Umbraco-API-Controllers/index.md)
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
 

@@ -19,11 +19,11 @@ In normal environments caching seems to be a pretty standard concept. If you are
 
 ## Retrieving and Adding items in the cache
 
-You can [update and insert items in the cache](updating-cache.md).
+You can [update and insert items in the cache](Updating-Cache/index.md).
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](cache-refresher.md)
+### [ICacheRefresher](ICacheRefresher/index.md)
 
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
@@ -90,9 +90,8 @@ To use the extensions add a using to `Umbraco.Extensions`;  You can then invoke 
 The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment.
 The server messenger ensures that the notification is processed on the local environment.
 
-
 ## Getting and clearing cached content
 
 [See our example on how to cache tags](examples/tags.md).
 
-## [ApplicationCache](applicationcache.md)
+## [ApplicationCache](Application-Cache/index.md)

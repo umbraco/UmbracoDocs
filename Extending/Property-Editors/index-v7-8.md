@@ -17,11 +17,11 @@ This section describes how to work with and create Property Editors. A property 
 * [Integrating services with a property editor](../../Tutorials/Creating-a-Property-Editor/part-3.md)
 * [Adding server side data to a property editor](../../Tutorials/Creating-a-Property-Editor/part-4.md)
 
-## [Package Manifest](package-manifest.md)
+## [Package Manifest](Package-Manifest/index.md)
 
 Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 
-## [Property Value Converters](value-converters.md)
+## [Property Value Converters](Property-Value-Converters/index.md)
 
 Convert the stored property data value to a useful object returned by the Published Content APIs.
 
@@ -29,7 +29,7 @@ Convert the stored property data value to a useful object returned by the Publis
 
 **Requires Umbraco 8.4+**. Use Property Actions to add additional functionaility to your custom property editors.
 
-## [Build a Block Editor](Build-a-Block-Editor.md)
+## [Build a Block Editor](Build-a-Block-Editor/index.md)
 
 **Required Umbraco 8.7+**. Learn how to build your own Block Editors.
 

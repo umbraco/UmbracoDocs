@@ -54,7 +54,7 @@ Content apps are almost like dashboards for content nodes that are intended to d
 
 This type of package can be a lot of things, and can include a lot of the other package types in it. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module for Umbraco.
 
-## [Types of Packages](package-types-v8.md)
+## [Types of Packages](Types-of-Packages/index-v8.md)
 
 There are two common types of package for Umbraco; Package zip files and NuGet Packages.
 

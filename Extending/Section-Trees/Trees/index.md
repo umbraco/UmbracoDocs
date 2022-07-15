@@ -54,7 +54,7 @@ The language file should contain the following XML:
 
 The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract *CreateRootNode* method.
 
-[See Also: How to create your own custom section](sections.md)
+[See Also: How to create your own custom section](../Sections/index.md)
 
 ### Implementing the Tree
 

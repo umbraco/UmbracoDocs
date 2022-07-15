@@ -5,9 +5,10 @@ needsV8Update: "true"
 
 # Cache & Distributed Cache
 
-_This section refers to how to implement caching features in the Umbraco application in a consistent way that will work in both single server environments and load balanced (multi-server) environments. The caching described in this section relates to application caching in the context of a web application only._
+*This section refers to how to implement caching features in the Umbraco application in a consistent way that will work in both single server environments and load balanced (multi-server) environments. The caching described in this section relates to application caching in the context of a web application only.*
 
 :::warning
+
 ## IF YOU ARE CACHING, PLEASE READ THIS
 
 Although caching is a pretty standard concept it is very important to make sure that caching is done correctly and consistently. It is always best to ensure performance is at its best before applying any cache and also beware of *over caching* as this can cause degraded performance in your application because of cache turnover.
@@ -19,11 +20,11 @@ In normal environments caching seems to be a pretty standard concept. If you are
 
 ## Retrieving and Adding items in the cache
 
-You can [update and insert items in the cache](updating-cache.md).
+You can [update and insert items in the cache](Updating-Cache/index.md).
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](cache-refresher.md)
+### [ICacheRefresher](ICacheRefresher/index.md))
 
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
@@ -36,7 +37,7 @@ The interface consists of the following methods:
 * `void Refresh(Guid Id);` - this would invalidate or refresh a single cache for an object with the provided GUID id.
 * `void Remove(int Id);` - this would invalidate a single cache for an object with the provided INT id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
 
- _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
+*Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic.*
 
 There are 2 other base types of `ICacheRefresher` which are:
 
@@ -62,7 +63,7 @@ To execute your `ICacheRefresher` you call these methods on the `DistributedCach
 
 **So when do you use these methods to invalidate your cache?**
 
-This really comes down to what you are caching and when it needs to be invalidated. _An example:_ In your web application you are using MVC Donut Caching and you want to make sure this cache is invalidated whenever content in Umbraco is published. To do this, you could create an `ICacheRefresher` and leave the logic for `Remove`, `Refresh` empty since it's not needed in this case. In the `RefreshAll` method, add the logic to clear the Donut Cache. Then add an event handler for `ContentService.Published`, check if there is anything being published and if so execute `DistributedCache.Instance.RefreshAll([The GUID of your ICacheRefresher]);`.
+This really comes down to what you are caching and when it needs to be invalidated. *An example:* In your web application you are using MVC Donut Caching and you want to make sure this cache is invalidated whenever content in Umbraco is published. To do this, you could create an `ICacheRefresher` and leave the logic for `Remove`, `Refresh` empty since it's not needed in this case. In the `RefreshAll` method, add the logic to clear the Donut Cache. Then add an event handler for `ContentService.Published`, check if there is anything being published and if so execute `DistributedCache.Instance.RefreshAll([The GUID of your ICacheRefresher]);`.
 
 ### What happens when an ICacheRefresher is executed?
 
@@ -77,6 +78,6 @@ To use the extensions add a using to `Umbraco.Web.Cache`;  You can then invoke t
 The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment.
 The server messenger ensures that the notification is processed on the local environment.
 
-## [ApplicationContext.Current.ApplicationCache](applicationcache-v7.md)
+## [ApplicationContext.Current.ApplicationCache](Application-Cache/index-v7.md)
 
 ApplicationCache is a container for the different cache types

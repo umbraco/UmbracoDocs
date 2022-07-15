@@ -5,9 +5,9 @@ versionRemoved: 8.0.0
 
 # trees.config
 
-The 'trees.config' file contains the configuration for [trees](../../../Extending/Section-Trees/trees.md) that are loaded within each [section](../../../Extending/Section-Trees/sections.md) of the Umbraco Backoffice.
+The 'trees.config' file contains the configuration for [trees](../../../Extending/Section-Trees/Trees/index.md) that are loaded within each [section](../../../Extending/Section-Trees/Sections/index.md) of the Umbraco Backoffice.
 
-[NB: Trees can also be configured in code](../../../Extending/Section-Trees/trees-v7#creating-trees) and will generate an entry in this file.
+[NB: Trees can also be configured in code](../../../Extending/Section-Trees/Trees/index-v7.md#creating-trees) and will generate an entry in this file.
 
 (**Troubleshooting Tip**: if you have problems loading a particular tree check that the trees.config or applications.config do not contain duplicate tree/section entries)
 
@@ -23,7 +23,6 @@ Each Tree element defined in trees.config requires the following attributes:
 * `sortOrder` - An integer used to determine the position of the tree in a section when multiple trees are defined.
 * `initialize` - Whether the tree should be initialized by default, eg when accessing the section in the backoffice
 * `type` - The type of the implementation of the tree in the format: *FullClassName, AssemblyName*
-
 
 ## Example trees.config file
 

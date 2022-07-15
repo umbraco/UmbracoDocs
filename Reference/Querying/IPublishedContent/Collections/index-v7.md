@@ -173,7 +173,7 @@ bool hasChildren =  Model.Content.Children.Any();
 ```
 
 ## [Filtering Conventions](#filtering-conventions)
-Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../Routing/routing-properties.md)
+Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../../Routing/Routing-Properties/index.md)
 
 ### .IsVisible()
 If you create a checkbox property on a document type with an alias *umbracoNaviHide* then the value of this property is used by the *IsVisible()* extension method when filtering.

@@ -63,7 +63,7 @@ eg:
 <add initialize="true" sortOrder="0" alias="favouriteThingsAlias" application="developer" title="Favourite Things Name" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Our.Umbraco.Controllers.FavouriteThingsTreeController, Our.Umbraco" />
 ```
 
-[See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md)
+[See Also: How to create your own custom section](../Sections/index.md)
 
 ### Implementing the Tree
 

@@ -48,7 +48,7 @@ routes.MapUmbracoRoute(
     new UmbracoVirtualNodeByIdRouteHandler(1234));
 ```
 
-See: [Custom routing documentation](../../Reference/Routing/custom-routes-v7.md)
+See: [Custom routing documentation](../../Reference/Routing/Custom-Routes/index-v7.md)
 
 ### PublishedContentRequest.Prepared event
 

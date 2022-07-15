@@ -13,24 +13,24 @@ Most of the set up can be accomplished by using the options from your project's 
 
 Articles about configuring various settings on your project, as well as managing members, domains and certificates.
 
- - [Going Live](Going-live/)
- - [Project Settings](Project-settings/)
- - [Adding Team Members](Team-Members/)
- - [SMTP Settings](SMTP-settings/)
- - [Manage Hostnames](Manage-Hostnames/)
- - [Manage Environments](Manage-Environments/)
- - [Manage Transport Security](Manage-Security/)
+- [Going Live](Going-live/)
+- [Project Settings](Project-settings/)
+- [Adding Team Members](Team-Members/)
+- [SMTP Settings](SMTP-settings/)
+- [Manage Hostnames](Manage-Hostnames/)
+- [Manage Environments](Manage-Environments/)
+- [Manage Transport Security](Manage-Security/)
 
 ## Working with your Umbraco Cloud project
 
 Articles about how to work locally with your Umbraco Cloud project.
 
- - [Working with your site locally](Working-Locally/)
- - [Working with Visual Studio](Working-With-Visual-Studio/)
- - [Working with a Mac](Working-with-UaaS-Cli/)
+- [Working with your site locally](Working-Locally/)
+- [Working with Visual Studio](Working-With-Visual-Studio/)
+- [Working with a Mac](Working-with-UaaS-Cli/)
 
 ## Other topics
 
- - [Additional media topics](Media/)
- - [Power Tools (Kudu)](Power-Tools/)
- - [Config transforms for each environment](Config-Transforms/)
+- [Additional media topics](Media/)
+- [Power Tools (Kudu)](Power-Tools/)
+- [Config transforms for each environment](Config-Transforms/)
