@@ -22,7 +22,7 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 ```none
 Templates                    Short Name               Language          Tags
 ------------------------------------------------------------------------------------------------------
-Umbraco Solution             umbraco                  [C#]              Web/CMS/Umbraco
+Umbraco Project              umbraco                  [C#]              Web/CMS/Umbraco
 Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
 ```
 :::note
