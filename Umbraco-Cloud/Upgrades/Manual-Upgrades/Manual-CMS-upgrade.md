@@ -9,9 +9,9 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-* When upgrading an Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../Set-Up/Working-Locally/) or pull down the latest changes for your development environment.
+* When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../Set-Up/Working-Locally/) or pull down the latest changes for your development environment.
 
-* navigate to the /src/UmbracoProject/ folder with the csproj with the CMS nuget  package installed.
+* navigate to the /src/UmbracoProject/ folder with the csproj with the CMS NuGet  package installed.
 
 * Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
@@ -40,7 +40,7 @@ When the command completes, open the **.csproj** file to make sure the package r
 
 ## Run the upgrade locally
 
-When you are done updating the nuget packages as mentioned above, follow these steps to complete the upgrade and verify that everything is working as expected before you push the changes to your Umbraco Cloud project
+When you are done updating the NuGet packages as mentioned above, follow these steps to complete the upgrade and verify that everything is working as expected before you push the changes to your Umbraco Cloud project
 
 * Run the project locally
 * When the project spins up, you'll be prompted to log in to verify the upgrade
