@@ -25,9 +25,9 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 2. Select **Queue for transfer**.
 3. Alternatively, if you are in the Home page editor, you can go to the **Actions** dropdown and select **Queue for transfer**.
 4. Choose if you want to **include all items below** the chosen page or only transfer the chosen node.
-   :::note
-   Right-click the **Content** tree and select **Queue for transfer** to transfer all your content at once.
-   :::
+:::note
+Right-click the **Content** tree and select **Queue for transfer** to transfer all your content at once.
+:::
 5. Click **Queue**.
 6. Select **Open transfer queue**. The **Workspaces** dashboard opens.
     * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've *queued for transfer*.
@@ -40,9 +40,9 @@ Once the transfer is completed, you will see the confirmation message stating th
 Media items are transferred the same way as content:
 
 1. Right-click the items in the **Media** section and select **Queue for transfer**.
-   :::note
-   Right-click the Media tree and select **Queue for transfer** to transfer all your media at once.
-   :::
+:::note
+Right-click the Media tree and select **Queue for transfer** to transfer all your media at once.
+:::
 2. Click **Queue**.
 3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
 4. Click **Transfer to Development**.
@@ -77,9 +77,9 @@ For Deploy to handle Forms data as content, you'll need to ensure the `TransferF
 Once the setting has been added to the source and target environment, Forms can be transferred the same way as content and media:
 
 1. Right-click the items in the Forms section and choose **Queue for transfer**.
-   :::note
-   Right-click the Forms tree and select **Queue for transfer** to transfer all your Forms at once.
-   :::
+:::note
+Right-click the Forms tree and select **Queue for transfer** to transfer all your Forms at once.
+:::
 2. Click **Queue**.
 3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
 4. Click **Transfer to Development**.
