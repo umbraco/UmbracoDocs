@@ -5,7 +5,7 @@ versionRemoved: 8.0.0
 
 # Trees
 
-Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
+Trees are also in a [config file located: `~/Config/trees.config`](../../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
 
 ```xml
 <add application="users" alias="users" title="Users"
@@ -55,7 +55,7 @@ You can also specify the icon to show for the tree, and 'sort order' if more tha
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name", iconClosed:"icon-folder", iconOpen:"icon-folder",sortOrder:8)]
 ```
 
-NB: An entry in the ['~/config/trees.config' file.](../../Reference/Config/trees/index.md) will be added for your custom tree.
+NB: An entry in the ['~/config/trees.config' file.](../../../Reference/Config/trees/index.md) will be added for your custom tree.
 
 eg:
 
@@ -182,7 +182,7 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 The section API in v7+ is found in the interface `Umbraco.Core.Services.IApplicationTreeService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/trees.config file.
 
 
-[See the tree service API reference here](../../Reference/Management/Services/TreeService/index.md)
+[See the tree service API reference here](../../../Reference/Management/Services/TreeService/index.md)
 
 ## Tree events v7
 
