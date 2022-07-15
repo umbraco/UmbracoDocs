@@ -174,7 +174,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 ]
 ```
 
-However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
+However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
 
@@ -184,7 +184,7 @@ The parameter editors array follows the same format as the property editors desc
 
 ## Content Apps
 
-Here is an example of adding a content app. See the [Content Apps](../Content-Apps/index.md) article for more information and a full guide on how to create Content Apps.
+Here is an example of adding a content app. See the [Content Apps](../../Content-Apps/index.md) article for more information and a full guide on how to create Content Apps.
 
 ```json
  "contentApps": [
@@ -215,7 +215,7 @@ There are two approaches to registering a custom dashboard to appear in the Umbr
 ]
 ```
 
-See the [Dashboards](../Dashboards/index.md) for a full article on how to create custom dashboards.
+See the [Dashboards](../../Dashboards/index.md) for a full article on how to create custom dashboards.
 
 ## Sections
 
@@ -230,7 +230,7 @@ As with the custom dashboards, a custom section can be registered either with a 
 ]
 ```
 
-See the [Sections](../Section-Trees/Sections/index.md) for a full article on how to create custom sections.
+See the [Sections](../../Section-Trees/Sections/index.md) for a full article on how to create custom sections.
 
 ## JavaScript
 
