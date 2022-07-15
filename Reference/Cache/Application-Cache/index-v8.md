@@ -53,4 +53,4 @@ IAppCache requestCache = Umbraco.Core.Composing.Current.AppCaches.RequestCache;
 IsolatedCaches isolatedCaches = Umbraco.Core.Composing.Current.AppCaches.IsolatedCaches;
 ```
 
-You can [access and update the cache items](updating-cache-v8.md), using the provided methods.
+You can [access and update the cache items](Updating-Cache/index-v8.md), using the provided methods.

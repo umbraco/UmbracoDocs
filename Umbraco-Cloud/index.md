@@ -44,10 +44,3 @@ Everything you need to know about the security on Umbraco Cloud.
 ## [Release notes](Release-Notes/)
 
 Get updates on new release of Umbraco Cloud Portal.
-
----
-
-## [Umbraco Heartcore](../Umbraco-Heartcore/)
-
-Documentation on Umbraco Heartcore.
-

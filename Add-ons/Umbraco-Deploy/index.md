@@ -29,6 +29,10 @@ The deployment process explained for Umbraco Deploy.
 
 How you can Upgrade Umbraco Deploy.
 
+## [Configuration for Umbraco Deploy](Deploy-Settings/)
+
+Find configuration Settings for Umbraco Deploy
+
 ## [Extending](Extending)
 
 Details how Umbraco Deploy can be extended for the purposes of deploying data related to custom data and property editors.
@@ -36,5 +40,3 @@ Details how Umbraco Deploy can be extended for the purposes of deploying data re
 ## [Troubleshooting](Troubleshooting)
 
 Tips on finding, identifying and resolving issues with Umbraco Deploy.
-
-

@@ -25,15 +25,15 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Content and Media events
 
-* See [ContentService Events](ContentService-Events.md) for a listing of the ContentService object events.
-* See [MediaService Events](MediaService-Events.md) for a listing of the MediaService object events.
+* See [ContentService Events](ContentService-Events/index.md) for a listing of the ContentService object events.
+* See [MediaService Events](MediaService-Events/index.md) for a listing of the MediaService object events.
 
 ## Other events
 
-* See [ContentTypeService Events](ContentTypeService-Events.md) for a listing of the ContentTypeService object events.
-* See [DataTypeService Events](DataTypeService-Events.md) for a listing of the DataTypeService object events.
-* See [FileService Events](FileService-Events.md) for a listing of the FileService object events.
-* See [LocalizationService Events](LocalizationService-Events.md) for a listing of the LocalizationService object events.
+* See [ContentTypeService Events](ContentTypeService-Events/index.md) for a listing of the ContentTypeService object events.
+* See [DataTypeService Events](DataTypeService-Events/index.md) for a listing of the DataTypeService object events.
+* See [FileService Events](FileService-Events/index.md) for a listing of the FileService object events.
+* See [LocalizationService Events](LocalizationService-Events/index.md) for a listing of the LocalizationService object events.
 
 ## Tree events
 
