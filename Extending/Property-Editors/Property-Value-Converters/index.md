@@ -190,4 +190,4 @@ public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedProp
 
 ## Sample
 
-[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](full-examples-value-converters.md)
+[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](../full-examples-value-converters.md)
