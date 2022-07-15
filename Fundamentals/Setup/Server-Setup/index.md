@@ -30,4 +30,4 @@ Best practices for running Umbraco on Azure Web Apps.
 
 ## [Runtime modes](runtime-modes.md)
 
-To ensure the best developing / edititing / production experience with Umbraco.
+The runtime mode setting optimizes Umbraco for the best development experience or optimal production environment.
