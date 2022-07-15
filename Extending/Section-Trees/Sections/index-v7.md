@@ -8,7 +8,7 @@ The Umbraco backoffice consists of Sections, also referred to as Applications, w
 
 Each section is identified by an icon in the left-hand side navigation ribbon of the Umbraco Backoffice.
 
-[Configuration for sections is defined in the `~/Config/applications.config` file.](../../Reference/Config/applications/index.md)
+[Configuration for sections is defined in the `~/Config/applications.config` file.](../../../Reference/Config/applications/index.md)
 
 ## Create a Custom Section
 
@@ -61,7 +61,7 @@ You will need to recycle the application pool, to see changes to the language tr
 
 The section API in v7+ is found in the interface `Umbraco.Core.Services.ISectionService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/applications.config file.
 
-[See the section service API reference here](../../Reference/Management/Services/SectionService/index.md)
+[See the section service API reference here](../../../Reference/Management/Services/SectionService/index.md)
 
 ## Section (Application) API v6
 
