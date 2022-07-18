@@ -18,7 +18,7 @@ In normal environments caching seems to be a pretty standard concept. If you are
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](cache-refresher.md)
+### [ICacheRefresher](ICacheRefresher/index.md)
 
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
