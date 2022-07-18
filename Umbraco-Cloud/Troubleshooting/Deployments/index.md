@@ -19,7 +19,6 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
 * [Colliding Data Types](Colliding-Datatypes)
-* [Type Not Found](Type-Not-Found)
 * [Language Mismatch](Language-Mismatch)
 * [Deployment Failed (with no error message)](Deployment-Failed)
 * [Changes not being applied](Changes-Not-Being-Applied)  
