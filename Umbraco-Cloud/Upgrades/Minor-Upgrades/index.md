@@ -9,7 +9,6 @@ When minor version upgrades are available, your Umbraco site will not be auto-up
 
 This workflow applies to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
 
-For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our
 
 For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
 
