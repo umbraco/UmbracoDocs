@@ -168,6 +168,6 @@ public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyTy
 
 ## Samples
 
-[Content Picker to `IPublishedContent` using attribute meta data](value-converters-full-example-attributes.md)
+[Content Picker to `IPublishedContent` using attribute meta data](../attributes-example.md)
 
-[Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-full-example-interface.md) (Umbraco v7.1.5+)
+[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](../full-examples-value-converters-v8.md) (Umbraco v7.1.5+)
