@@ -10,9 +10,9 @@ needsV8Update: "true"
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, ContentTypeService Events have been renamed to [**ContentTypeService Notifications**](../Notifications/ContentTypeService-Notifications/index.md).
+Note that in Umbraco 9, ContentTypeService Events have been renamed to [**ContentTypeService Notifications**](../../Notifications/ContentTypeService-Notifications/index.md).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType and IMediaType.
@@ -42,7 +42,7 @@ The ContentTypeService class implements IContentTypeService. It provides access 
         Raised when ContentTypeService.Save (IContentType overloads) is called in the API and after data has been persisted.<br />
         "sender" will be the current IContentTypeService object.<br />
         "e" will provide:
-        <br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
+        <br/>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContentType objects.</li>
             </ol>
@@ -67,7 +67,7 @@ The ContentTypeService class implements IContentTypeService. It provides access 
         Raised when ContentTypeService.Save (IMediaType overloads) is called in the API and after data has been persisted.<br />
         "sender" will be the current IContentTypeService object.<br />
         "e" will provide:
-        <br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
+        <br/>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IMediaType objects.</li>
             </ol>
