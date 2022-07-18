@@ -9,7 +9,7 @@ _This section describes how you should be getting/adding/updating/inserting item
 :::warning
 Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
 
-The documentation currently available around caching in the current Umbraco version can be found here: [Caching](../Cache)
+The documentation currently available around caching in the current Umbraco version can be found here: [Caching](../../Cache)
 :::
 
 ## Adding and retrieving items in the cache
