@@ -10,7 +10,7 @@ _This section describes what ICacheRefresher and ICacheRefresher&lt;T&gt; are an
 :::warning
 Please be aware that **this article has not yet been verified and updated against Umbraco 8**.
 
-The documentation available around caching in the current Umbraco version can be found here: [Caching](../Cache).
+The documentation available around caching in the current Umbraco version can be found here: [Caching](../../Cache).
 :::
 
 ## What is an ICacheRefresher
