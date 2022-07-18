@@ -210,4 +210,12 @@ For Umbraco 10, by default, a SQLite database is created.
 
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
-
+```json
+    "Umbraco": {
+        "Deploy": {
+            "Settings": {
+                "PreferLocalDbConnectionString": true
+            }
+        }
+    }
+```
