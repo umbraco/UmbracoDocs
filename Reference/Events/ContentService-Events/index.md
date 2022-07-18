@@ -13,9 +13,9 @@ The ContentService class is the most commonly used type when extending Umbraco u
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, ContentService Events have been renamed to [**ContentService Notifications**](../Notifications/ContentService-Notifications/index.md).
+Note that in Umbraco 9, ContentService Events have been renamed to [**ContentService Notifications**](../../Notifications/ContentService-Notifications/index.md).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 ## Usage
@@ -98,7 +98,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:<br/>
-        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContent objects.</li>
             </ol>
@@ -126,7 +126,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
         "sender" will be the current IPublishingStrategy object.<br />
         "e" will provide:<br/>
-        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>PublishedEntities: Gets the published collection of IContent objects.</li>
             </ol>
@@ -505,4 +505,4 @@ Further more, there's no reason to listen for the Creating/Created events. They 
 
 #### What do we use instead?
 
-The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
+The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](../determining-new-entity.md)

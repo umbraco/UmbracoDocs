@@ -34,10 +34,10 @@ How to specify your own custom MVC routes in your Umbraco application?
 
 Routing requirements for authenticated controllers for both front-end and the backoffice.
 
-## [URL Tracking](URL-Tracking/index-v8.md)
+## [URL Tracking](URL-Tracking/index-v7.md)
 
 Moving and renaming Umbraco documents will lead to URL redirects to be created.
 
-## [IIS Rewrite Rules](IISRewriteRules/index-v8.md)
+## [IIS Rewrite Rules](IISRewriteRules/index.md)
 
 How to create static or regex based rewrite rules with a config file?

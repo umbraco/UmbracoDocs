@@ -10,9 +10,9 @@ needsV8Update: "true"
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, FileService Events have been renamed to [**FileService Notifications**](../Notifications/FileService-Notifications/index.md).
+Note that in Umbraco 9, FileService Events have been renamed to [**FileService Notifications**](../../Notifications/FileService-Notifications/index.md).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 The FileService class implements IFileService. It provides access to operations involving IFile objects like scripts, stylesheets and templates.
@@ -42,7 +42,7 @@ The FileService class implements IFileService. It provides access to operations 
         Raised when FileService.SaveTemplate is called in the API and after data has been persisted.<br />
         "sender" will be the current IFileService object.<br />
         "e" will provide:
-        <br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
+        <br/>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of ITemplate objects.</li>
             </ol>

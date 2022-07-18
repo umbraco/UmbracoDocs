@@ -12,7 +12,7 @@ Related links:
 
 
 * [Umbraco api routes and Urls](routing-v8.md)
-* [Umbraco api authorization](authorization-v8.md)
+* [Umbraco api authorization](authorization.md)
 
 
 ## What is Web API?

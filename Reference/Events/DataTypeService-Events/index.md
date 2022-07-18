@@ -10,9 +10,9 @@ meta.Description: "Information on the various events available in the DataTypeSe
 
 ## Are you using Umbraco 9?
 
-Note that in Umbraco 9, DataTypeService Events have been renamed to [**DataTypeService Notifications**](../Notifications/DataTypeService-Notifications/index.md).
+Note that in Umbraco 9, DataTypeService Events have been renamed to [**DataTypeService Notifications**](../../Notifications/DataTypeService-Notifications/index.md).
 
-Find more information about notifications in Umbraco 9 in the [Notifications](../Notifications) section.
+Find more information about notifications in Umbraco 9 in the [Notifications](../../Notifications) section.
 :::
 
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
@@ -42,7 +42,7 @@ The DataTypeService class implements IDataTypeService. It provides access to ope
         Raised when DataTypeService.Save is called in the API and after data has been persisted.<br />
         "sender" will be the current IDataTypeService object.<br />
         "e" will provide:
-        <br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
+        <br/>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IDataType objects.</li>
             </ol>

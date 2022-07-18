@@ -246,7 +246,7 @@ public class ProductListingPageController : Umbraco.Web.Mvc.RenderMvcController
 }
 ```
 ## Controller Injection
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../Implementation/Services/index-v8.md#custom-services-and-helpers-1) for more info on this.
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../../Implementation/Services/index-v8.md#custom-services-and-helpers-1) for more info on this.
 
 For example:
 
@@ -286,7 +286,7 @@ To wire up a concrete instance of IMadeUpProductService, use a composer:
     }
 ```
 
-See [Composing](../../Implementation/Composing/index-v8.md) for further information.
+See [Composing](../../../Implementation/Composing/index-v8.md) for further information.
 
 ## Replace Umbraco's default `RenderMVCController`
 
