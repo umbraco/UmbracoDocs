@@ -445,7 +445,7 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 ## Scripting
 
-The [`<scripting>` section](index-vpre6.0.0.md) is about legacy scripting and is by default not present in new versions.
+The [`<scripting>` section](index-v7.md) is about legacy scripting and is by default not present in new versions.
 
 ## viewstateMoverModule
 
