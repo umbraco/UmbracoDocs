@@ -115,7 +115,7 @@ public class PageControllerTests
 
 ### Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](https://our.umbraco.com/Documentation/Reference/Routing/surface-controllers-actions).
+See [Reference documentation on SurfaceControllers](../../Reference/Routing/Surface-Controllers/index.md).
 
 ```csharp
 public class PageSurfaceController : SurfaceController
@@ -163,7 +163,7 @@ public class PageSurfaceControllerTests
 
 ## Testing an UmbracoApiController
 
-See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+See [Reference documentation on UmbracoApiControllers](../../Reference/Routing/Umbraco-API-Controllers/index.md#locally-declared-controller).
 
 ```csharp
 
