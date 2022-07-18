@@ -113,8 +113,8 @@ The `UmbracoMemberAuthorizeAttribute()` and `UmbracoMemberAuthorizeFilter()` con
 - `AllowGroup` - Comma delimited list of allowed member groups.
 - `AllowMembers` - Comma delimited list of allowed members.
 
-For more details, see the [Using MemberAuthorizeAttribute](../../Reference/Routing/WebApi/authorization.md#using-memberauthorizeattribute) section in the Umbraco API - Authorization article.
+For more details, see the [Using MemberAuthorizeAttribute](../../../Reference/Routing/WebApi/authorization.md#using-memberauthorizeattribute) section in the Umbraco API - Authorization article.
 
 ### Routing
 
-For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../../Reference/Routing/WebApi/authorization.md) article.
+For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../../../Reference/Routing/WebApi/authorization.md) article.
