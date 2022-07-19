@@ -15,7 +15,6 @@ There are some common errors associated with both of these, most of the time it 
 
 The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed below with guides on how to fix them:
 
-* [Duplicate Dictionary Items](Duplicate-Dictionary-Items)
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
 * [Colliding Data Types](Colliding-Datatypes)
