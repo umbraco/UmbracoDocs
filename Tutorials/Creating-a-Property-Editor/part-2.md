@@ -115,7 +115,7 @@ Save the file, rebuild the application and have a look at the Suggestions Data T
 
 The next step is to gain access to our new configuration options. For this, open the `suggestion.controller.js` file.
 
-Let's first add the default value functionality. When the `$scope.model.value` is empty or *undefined*, we want to use the default value. To do that, we add the following to the very beginning of the controller:
+Let's first add the default value functionality. When the `$scope.model.value` is empty or *undefined*, we want to use the default value. To do that, we add the following to the start of the controller:
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
