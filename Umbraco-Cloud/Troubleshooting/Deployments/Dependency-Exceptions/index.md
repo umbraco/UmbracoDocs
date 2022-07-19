@@ -9,7 +9,7 @@ if you delete a content node which might have a reference to another node and yo
 
 ![Dependecy exception](images/dependency-exception-updated.png)
 
-The error indicate that on the `Home page` a picker for example refers to another content item. This other content item has either been deleted or is in the recycle bin on the environment you're deploying from.
+The error indicates that on the `Home page`, a picker, for example, refers to another content item. This other content item has either been deleted or is in the recycle bin in the environment you're deploying from.
 
 :::tip
 If you try and delete a node that references another one, you will be warned in the backoffice that it has a reference and you might encounter issues if you delete it:
