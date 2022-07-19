@@ -59,6 +59,9 @@ One of the benefits of having the Live environment cloned down, is that you can 
 
 1. Run the Live repository through IIS
 2. Open _CMD_ and navigate to the `/umbraco/Deploy/Revision` folder in your Live repository.
+:::note
+In Umbraco version 8 and below, navigate to the `site/wwwroot/data/Revision` folder in your Live repository.
+::::
 3. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](../../../Set-up/Power-Tools) articles.
 4. The changes will now be reflected in the backoffice of your local Live environment.
 
