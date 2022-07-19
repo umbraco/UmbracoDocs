@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 
@@ -65,9 +64,11 @@ namespace Umbraco.Cms.Core.PropertyEditors
 {
      public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
     {
-        public SuggestionConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser)
-        { }
+        public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
+        {
+        }
     }
+
 }
 ```
 
@@ -75,8 +76,6 @@ Finally, edit the `Suggestion.cs` file from step one until it looks like the exa
 
 ```csharp
 using Umbraco.Cms.Core.IO;
-using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.Services;
 
 namespace Umbraco.Cms.Core.PropertyEditors
 {
@@ -89,16 +88,15 @@ namespace Umbraco.Cms.Core.PropertyEditors
     public class Suggestions : DataEditor
     {
         private readonly IIOHelper _ioHelper;
-        private readonly IEditorConfigurationParser _editorConfigurationParser;
-
         public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
-            IIOHelper ioHelper,
-            IEditorConfigurationParser editorConfigurationParser)
+            IIOHelper ioHelper)
             : base(dataValueEditorFactory)
+
         {
             _ioHelper = ioHelper;
         }
-        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper, _editorConfigurationParser); 
+        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
+        
     }
 }
 ```
