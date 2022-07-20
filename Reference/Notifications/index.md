@@ -16,7 +16,7 @@ Umbraco uses Notifications, very similar to the Observer pattern, to allow you t
 
 All notifications reside in the `Umbraco.Cms.Core.Notifications` namespace and are postfixed with Notification.
 
-Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and publishes notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
+Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and published notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
 
 Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications/index.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
