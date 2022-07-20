@@ -14,7 +14,7 @@ System.Net.WebException: The underlying connection was closed: An unexpected err
 System.Net.Http.HttpRequestException: An error occurred while sending the request.
 ```
 
-This error indicates that your local environment can not connect to your Umbraco Cloud environment due to a socket exception. Since all Umbraco Cloud connections runs on TLS 1.2, your project will have to support this as well. TLS 1.2 is only supported in the .Net Framework 4.6+.
+This error indicates that your local environment can not connect to your Umbraco Cloud environment due to a socket exception. Since all Umbraco Cloud connections run on TLS 1.2, your project will have to support this as well. TLS 1.2 is only supported in the .Net Framework 4.6+.
 
 ## How to fix your connection error
 
