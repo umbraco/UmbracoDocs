@@ -6,7 +6,7 @@ meta.Description: "Documentation for working in the backoffice in Umbraco Heartc
 
 # Working in the backoffice
 
-On this page you'll find articles about the backoffice that's specific to Heartcore.
+On this page, you'll find articles about the backoffice that are specific to Heartcore.
 
 ## [Custom Grid Editors](Grid-Editors/)
 An overview of how to create custom Grid Editors.
