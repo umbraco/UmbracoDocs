@@ -38,7 +38,7 @@ Any Umbraco Cloud project can be used as a Baseline project
 10. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
 11. Click **Create Project**.
 
-It might take several minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a *green* light next to the environment name.
+It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a *green* light next to the environment name.
 
 ![Creating a Baseline child project](images/create-baseline-child-project-v9-new.gif)
 
@@ -52,7 +52,7 @@ When you've created the Child project you can choose to restore content from you
 
 1. Go to the **Content** section.
 2. Right-click the top of the **Content** tree in the Umbraco backoffice.
-3. Choose **Restore**. 
+3. Choose **Restore**.
 4. The *Baseline project* should already be selected as the environment to restore from
 5. Click **Restore from Baseline**
 6. **Reload** the content tree once the restore is complete to see the content.
@@ -61,7 +61,7 @@ When you've created the Child project you can choose to restore content from you
 
 ## [Merge Conflicts](Baseline-Merge-Conflicts/)
 
-As with any Git repository-based development, it is not uncommon to have merge conflicts as the various repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
+As with any Git repository-based development, it is not uncommon to have merge conflicts as the repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 
 ## [Pushing upgrades to a Child Project](Upgrading-Child-Projects/)
 
