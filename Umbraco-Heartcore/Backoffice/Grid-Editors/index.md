@@ -47,7 +47,7 @@ export default class extends LitElement {
 }
 ```
 
-When importing libraries that registers variables or functions on the global object or custom elements it's advised to create a Module Alias and import that instead. By using a Module Alias when importing we can ensure that only one version of a library is imported.
+When importing libraries that registers variables or functions on the global object or custom elements it's advised to create a Module Alias and import that instead. By using Module Alias when importing we can ensure that only one version of a library is imported.
 
 A Module Alias can be configured under **Headless -> Custom Editors Configuration** in the **Settings** section.
 
