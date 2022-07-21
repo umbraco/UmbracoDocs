@@ -54,7 +54,7 @@ A Module Alias can be configured under **Headless -> Custom Editors Configuratio
 ![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
 
 :::tip
-Use a Module Alias when importing libraries to ensure only a single verson of that library is loaded.
+Use a Module Alias when importing libraries to ensure only a single version of that library is loaded.
 :::
 
 ## Accessing backoffice components
