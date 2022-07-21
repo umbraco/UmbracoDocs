@@ -468,15 +468,10 @@ We now have an array where each item has the URL to the picked media item.
 While it is not necessary to define all properties in the JSON Schema, it is highly recommended as the schema is also used for validating the editor data when saving.
 :::
 
-Besides the `uri-reference` format there's also `richtext`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `richtext` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
+Besides the `uri-reference` format there's also `rich-text`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `rich-text` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
-## Limitations and best practices
-
-Currently there are some functionality and components that does not work well in the preview pane. This includes integrations with the backoffice like pickers and the Rich Text Editor. They do however still work when inserted on a page.
-
-To make your custom editors less likely to break with future updates, do not use any of the backoffice javascript directly. Always use the [headless backoffice bridge](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
-
-If the library is missing any functionality raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
-
-Try to avoid relying on backoffice CSS-classes. Instead we recommend creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
+:::links
+## Related articles
+- [Custom Grid Editors](../../Backoffice/Grid-Editors/)
+:::
 
