@@ -15,7 +15,6 @@ In this tutorial, we will create a Custom Grid Editor using [custom elements](ht
 * [Create a custom grid editor](#create-a-custom-grid-editor)
 * [Using module aliases](#using-module-aliases)
 * [Describing the grid editor using JSON schema](#describing-the-grid-editor-using-json-schema)
-* [Limitations and best practices](#limitations-and-best-practices)
 
 ## Create a Document Type and grid configuration
 
