@@ -129,7 +129,9 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 
 **Reverse Proxy version (eg. Cloudflare)**
 
-When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `CF-Connecting-IP` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+
+If you want to read more about the HTTP request headers coming from Cloudflare, you can find it [right here](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
 ```xml
 <rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
@@ -145,7 +147,7 @@ When using Cloudflare, which is the default setup for all Cloud projects, the pr
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
     <!-- Custom IP list -->
-    <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
+    <add input="{HTTP_CF_Connecting_IP}" pattern="123.123.123.123" negate="true" />
   </conditions>
   <action type="CustomResponse" statusCode="403" />
 </rule>
