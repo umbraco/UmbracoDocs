@@ -60,6 +60,7 @@ Then create a `SuggestionConfigurationEditor.cs` file:
 
 ```csharp
 using Umbraco.Cms.Core.IO;
+using Umbraco.Cms.Core.Services;
 
 namespace Umbraco.Cms.Core.PropertyEditors
 {
