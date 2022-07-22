@@ -141,3 +141,48 @@ and then at the end we add a getState method:
 See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
 [Next - Integrating services with a property editor](part-3.md)
+
+### For version 9
+The snippets are slightly different in V9 as `IEditorConfigurationParser` isn't required yet.
+
+```csharp
+using Umbraco.Cms.Core.IO;
+
+namespace Umbraco.Cms.Core.PropertyEditors
+{
+     public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
+    {
+        public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
+        {
+        }
+    }
+
+}
+```
+
+```csharp
+using Umbraco.Cms.Core.IO;
+
+namespace Umbraco.Cms.Core.PropertyEditors
+{
+    [DataEditor(
+        alias: "Suggestions editor",
+        name: "Suggestions Editor",
+        view: "~/App_Plugins/Suggestions/suggestion.html",
+        Group = "Common",
+        Icon = "icon-list")]
+    public class Suggestions : DataEditor
+    {
+        private readonly IIOHelper _ioHelper;
+        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
+            IIOHelper ioHelper)
+            : base(dataValueEditorFactory)
+
+        {
+            _ioHelper = ioHelper;
+        }
+        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
+        
+    }
+}
+```
