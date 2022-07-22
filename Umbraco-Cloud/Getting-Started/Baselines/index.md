@@ -52,12 +52,13 @@ When you've created the Child project you can choose to restore content from you
 
 1. Go to the **Content** section.
 2. Right-click the top of the **Content** tree in the Umbraco backoffice.
-3. Choose **Restore**.
+3. Choose **Workspace Restore**.
 4. The *Baseline project* should already be selected as the environment to restore from
 5. Click **Restore from Baseline**
-6. **Reload** the content tree once the restore is complete to see the content.
 
-![Restore content from Baseline project](images/RestoreFromBaseline.gif)
+If you do not see the content, **Reload** the content tree once the restore is complete.
+
+![Restore content from Baseline project](images/RestoreFromBaseline_v10.gif)
 
 ## [Merge Conflicts](Baseline-Merge-Conflicts/)
 
