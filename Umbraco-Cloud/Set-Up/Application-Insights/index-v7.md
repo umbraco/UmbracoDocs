@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Application Insights on Umbraco cloud
