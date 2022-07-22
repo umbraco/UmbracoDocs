@@ -131,7 +131,7 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 
 When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `CF-Connecting-IP` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
 
-If you want to read more about the HTTP request headers coming from Cloudflare, you can find it [right here](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
+You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
 ```xml
 <rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
