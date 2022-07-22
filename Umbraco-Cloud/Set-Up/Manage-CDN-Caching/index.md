@@ -78,7 +78,7 @@ Cache purging is done per hostname and it can take up to 30 seconds before asset
 
 By default, all hostnames are selected, but you can choose to purge specific hostnames from the environments in your Umbraco Cloud project.
 
-Purging the cache is a heavy operation, so there is a constraint on how many purge requests can be done within 24 hours. The 24 hours starts from the moment you Purge, so if you have 2 Purge requests available and Purge twice with an hour, then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
+Purging the cache is a heavy operation, so there is a constraint on how many purge requests can be done within 24 hours. The 24 hours starts from the moment you Purge. So if you have 2 Purge requests available and Purge twice with an hour, then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
 
 In the Purge Cache section, you can see how many Purge requests you have available and when.
 
@@ -139,7 +139,7 @@ The number of Cache Purge requests within 24 hours:
 
 ## CDN Caching and Optimizations
 
-From your Umbraco Cloud Project, click **CDN Caching & Optimization** from the **Settings** dropdown to configure the various caching options. All settings are scoped per environment, so if you have multiple environments and add your hostnames to different environments you can select the environment at the top of the page.
+From your Umbraco Cloud Project, click **CDN Caching & Optimization** from the **Settings** dropdown to configure the caching options. All settings are scoped per environment, so if you have multiple environments and add your hostnames to different environments you can select the environment at the top of the page.
 
 Aside from environments, the CDN Caching & Optimization page is divided into two parts: **Default Settings** and **Hostname Specific Settings**.
 

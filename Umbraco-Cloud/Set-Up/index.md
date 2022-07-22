@@ -11,7 +11,7 @@ Most of the set up can be accomplished by using the options from your project's 
 
 ## Managing your project
 
-Articles about configuring various settings on your project, as well as managing members, domains, and certificates.
+Articles about configuring settings on your project, as well as managing members, domains, and certificates.
 
 - [Going Live](Going-live/)
 - [Project Settings](Project-settings/)
