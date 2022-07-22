@@ -143,7 +143,7 @@ See what's new? The `$scope.model.config` object. Also, because of this configur
 [Next - Integrating services with a property editor](part-3.md)
 
 ### For version 9
-The snippets are slightly different in V9 as `IEditorConfigurationParser` isn't required yet.
+The snippets are slightly different in V9 because `IEditorConfigurationParser` isn't required.
 
 ```csharp
 using Umbraco.Cms.Core.IO;
