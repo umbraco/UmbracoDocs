@@ -87,7 +87,7 @@ The Profile consists of the following information:
 
 ## Release Notes
 
-On the Umbraco Cloud portal, you can now find the link to the **Release Notes** in the **Profile** dropdown. Release notes are published multiple times every month and list the most relevant fixes and features added to the portal.
+On the Umbraco Cloud portal, you can now find the link to the **Release Notes** in the **Profile** dropdown. Release notes are published every month and list the most relevant fixes and features added to the portal.
 
 ## Environment error log
 
