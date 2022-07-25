@@ -18,7 +18,7 @@ Run an extraction following these steps:
 3. In the file structure, navigate to `site/wwwroot/umbraco/Deploy`.
 4. The `/Deploy` folder contains:
     * `Revision` folder containing all your project's UDA files.
-    * *deploy-marker* indicating the state of the latest extraction (`deploy-complete` or `deploy-failed`).
+    * `deploy-marker` indicating the state of the latest extraction (`deploy-complete` or `deploy-failed`).
     * `deploy.log` containing logs from the latest extraction.
 5. While in this folder, type the following command in the CMD console: `echo > deploy`. This will initiate extraction of the environment.
 6. While the extraction is running, the *deploy-marker* will change its name to `deploy-progress`.
