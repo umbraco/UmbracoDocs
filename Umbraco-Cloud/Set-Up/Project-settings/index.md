@@ -78,7 +78,7 @@ To rename your Umbraco Cloud project files and folder, do the following:
 
     ```csharp
     [project]
-    base = "src/MyAwesomeProject/MyAwesomeProject.Web"
+    base = "src/MyAwesomeProject.Web"
     csproj = "MyAwesomeProject.Web.csproj"
     ```
 
