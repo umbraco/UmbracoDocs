@@ -13,26 +13,26 @@ In this article, we will show how users work, as well as explain the different s
 
 ## Umbraco ID
 
-On Umbraco Cloud project we use Umbraco ID for new projects and projects on 8.9.1 and above.
-Umbraco ID is a centralised login for all users on Umbraco Cloud, both team members and Umbraco Backoffice users.
+On Umbraco Cloud project we use Umbraco ID.
+Umbraco ID is a centralized login for all users on Umbraco Cloud, both team members and Umbraco Backoffice users.
 It is used when you log in to the Umbraco Cloud Portal, projects, as well as when you clone down a project to your local machine.
 
-When working locally the initial login will go through Umbraco ID and the online login flow. After the intial login you can set a password on your user or create a new login for the backoffice, which can be used for local logins.
+When working locally the initial login will go through Umbraco ID and the online login flow. After the initial login, you can set a password on your user or create a new login for the backoffice, which can be used for local logins.
 
 ## Adding users on Umbraco Cloud
 
 There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
-You can add them as a [Team member](../Team-Members/) from the project portal on Umbraco Cloud.
+You can add them as a [team member](../Team-Members/) from the project portal on Umbraco Cloud.
 
-By default, when added to the project as a Team member, they will be added as users to the backoffice of all the environments as administrators.
+By default, when added to the project as a team member, they will be added as users to the backoffice of all the environments as administrators.
 
 Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
 Check out the [Users article](../../../Getting-Started/Data/Users/) for an in-depth explanation about Umbraco users in general.
 
 :::note
-Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment they will need to be added on the different environments on Umbraco Cloud.
+Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment they will need to be added to the different environments on Umbraco Cloud.
 :::
 
 ## Invite User through the Umbraco backoffice
@@ -43,27 +43,22 @@ To invite a User you need to do the following:
 
 1. Go to the backoffice of your Umbraco Cloud project.
 2. Go to the **Users** section in the backoffice.
-3. Click on **Invite User** button.
+3. Click on the **Invite User** button.
 4. Enter the **Name**, **Email**, add a User Group to assign access and permissions, and enter a new **Message** for the invitation.
 
 ![Invite User](images/invite_user.png)
 
 ### Accept invitation
 
-:::note
-This only applies on new projects on version 8.9.1 and above.
-Users invited to projects on lower versions will not need an Umbraco Cloud User.
-:::
-
 Once the User has been invited they will receive an invitation for the project.
 
-If the user being invited already has a User on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
+If the invited person already has a user on Umbraco Cloud they will be able to see the invitation in the project portal under "Project Invites".
 
 If the User being invited does not have a User on Umbraco Cloud, they will receive an email asking them to create one.
 
  ![New User Invitation](images/New_user.png)
 
- Once the User has been created, it is now possible for them to login to the Umbraco Cloud portal.
+ Once the User has been created, it is now possible for them to log in to the Umbraco Cloud portal.
 
  From here they will be able to see a pending invitation to the project they have been invited to.
 
