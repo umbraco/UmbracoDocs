@@ -9,9 +9,9 @@ versionTo: 10.0.0
 If you are running Deploy 4+, we recommend you generate Umbraco Deploy Artifact (UDA) files from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files).
 :::
 
-Sometimes our guides require you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
+Sometimes our guides require you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project, UDA files will be generated.
 
-Generating UDA files manually ensures that you have everything you need in order to deploy successfully from one environment to another.
+Generating UDA files manually ensures that you have everything you need to deploy successfully from one environment to another.
 
 ## What are UDA files?
 
@@ -98,7 +98,7 @@ Here's an example of what a UDA file looks like for a Blog Page:
 }
 ```
 
-This UDA file represents a Document Type with name **Blog**. All dependencies for the document type is listed in the file and also metadata like `AllowedAtRoot` and `Icon`.
+This UDA file represents a Document Type with the name **Blog**. All dependencies for the document type are listed in the file and metadata like `AllowedAtRoot` and `Icon`.
 
 UDA files are generated for the following types:
 
@@ -123,7 +123,7 @@ Follow these steps to generate UDA files:
 3. In the file structure, navigate to `site/wwwroot/umbraco/Deploy`.
 4. Type the following command in the CMD console: `echo > deploy-export`
 5. The Deploy engine will generate UDA files for all the types in your project.
-6. When it's done you'll end up with a `deploy-complete` marker.
+6. When it's done, you'll end up with a `deploy-complete` marker.
 7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](../Manual-extractions/index.md) article.
 
 Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../../Troubleshooting/Deployments/Structure-Error/) documentation.
