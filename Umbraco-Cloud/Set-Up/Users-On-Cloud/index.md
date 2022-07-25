@@ -13,7 +13,7 @@ In this article, we will show how users work, as well as explain the different s
 
 ## Umbraco ID
 
-On Umbraco Cloud project we use Umbraco ID for new projects and projects on 8.9.1 and above.
+On Umbraco Cloud project we use Umbraco ID.
 Umbraco ID is a centralised login for all users on Umbraco Cloud, both team members and Umbraco Backoffice users.
 It is used when you log in to the Umbraco Cloud Portal, projects, as well as when you clone down a project to your local machine.
 
@@ -49,11 +49,6 @@ To invite a User you need to do the following:
 ![Invite User](images/invite_user.png)
 
 ### Accept invitation
-
-:::note
-This only applies on new projects on version 8.9.1 and above.
-Users invited to projects on lower versions will not need an Umbraco Cloud User.
-:::
 
 Once the User has been invited they will receive an invitation for the project.
 
