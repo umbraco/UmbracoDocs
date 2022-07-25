@@ -30,9 +30,9 @@ When you are doing rewrite rules on Umbraco Cloud there are a few important thin
 
 ## Hiding the Default umbraco.io Url
 
-Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only one hostname.
+Once you've assigned a hostname to your Live environment, you may want to "hide" the project's default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only one hostname.
 
-One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.euwest01.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the project mysite.euwest01.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
 
 ```xml
 <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
@@ -50,12 +50,12 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
 ```
 
 :::note
-This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply on your local copy of the site running on `localhost`.
+This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply to your local copy of the site running on `localhost`.
 :::
 
 ## Running your site on HTTPS only
 
-Once you've applied a certificate to your site you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
+Once you've applied a certificate to your site, you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
 
 To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
@@ -74,7 +74,7 @@ For example, the following rule will redirect all requests for the site http://m
 ```
 
 :::note
-This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply on your local copy of the site running on `localhost`.
+This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply to your local copy of the site running on `localhost`.
 :::
 
 ## Adding a trailing slash to your URLs
@@ -102,7 +102,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
 ```
 
 :::note
-Take note of the negates in the rewrite rule. 
+Take note of the negates in the rewrite rule.
 
-It is especially important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
 :::

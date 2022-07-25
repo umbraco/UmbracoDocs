@@ -13,7 +13,7 @@ All projects on Starter, Standard, or Professional plans will automatically be a
 See the full list of features in the [Umbraco Cloud Pricing Plans](https://umbraco.com/umbraco-cloud-pricing/) on the Umbraco website.
 :::
 
-To manually upload your own certificate on the Umbraco Cloud Portal and assign it to one of the hostnames you've added:
+To manually upload your certificate on the Umbraco Cloud Portal and assign it to one of the hostnames you've added:
 
 1. Go to your project on the Umbraco Cloud portal.
 2. Click **Settings** -> **Certificates**. The **Manual Certificates** window opens.
@@ -30,31 +30,32 @@ The **`.pfx`** file can only contain one certificate. Each certificate can then 
 
 ## Add Manual certificate
 
-* Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
-* Enter the **Password** for your certificate.
+1. Click **Add New Certificate**.
+2. Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
+3. Enter the **Password** for your certificate.
 
     ![Add Manual Certificate](images/Add-Manual-Certificate.png)  
-* Click **Add**
+4. Click **Add**.
 
 ## Bind Certificate to a Hostname
 
-* Click **Add new binding**
-* Choose your hostname from the *Hostname* dropdown
-* Choose your newly uploaded certificate from the *Certificate* dropdown
-* Click **Add**
+1. Click **Add new binding**.
+2. Choose your hostname from the *Hostname* dropdown.
+3. Choose your newly uploaded certificate from the *Certificate* dropdown.
+4. Click **Add**.
 
 You've now successfully added your certificate to the Cloud project.
 
 ## From Custom Certificate to Automatic TLS (HTTPS)
 
-In some cases, you might want to switch from using your own custom certificate, to use the ones provided by the Umbraco Cloud service.
+In some cases, you might want to switch from using your custom certificate to using the ones provided by the Umbraco Cloud service.
 
-By removing your own certificate from your Cloud project, the Umbraco Cloud service will automatically assign a new TLS (HTTPS) certificate to the hostname.
+By removing your certificate from your Cloud project, the Umbraco Cloud service will automatically assign a new TLS (HTTPS) certificate to the hostname.
 
 :::note
 Did your manually uploaded security certificate expire?
 
-You will need to remove the expired certificate in order for Umbraco Cloud to assign a new certificate to your hostname(s).
+You will need to remove the expired certificate for Umbraco Cloud to assign a new certificate to your hostname(s).
 :::
 
 ## Read more

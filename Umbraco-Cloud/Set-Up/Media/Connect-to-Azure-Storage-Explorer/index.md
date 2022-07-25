@@ -2,17 +2,17 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Using Azure Storage Explorer with Umbraco Cloud"
-meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
+meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage containers. Each environment has a separate container linked to it."
 ---
 
 # Connect to Azure Storage Explorer to upload files manually
 
 In case, you want to manually upload files to the Azure Blob Storage container provided to your Umbraco Cloud environments, you can take advantage of the "Microsoft Azure Storage Explorer" software.
 
-This article provides the steps you need, in order to connect to your Azure Blob Storage containers using Azure Storage Explorer.
+This article provides the steps you need, to connect to your Azure Blob Storage containers using Azure Storage Explorer.
 
 :::warning
-We strongly recommend that you add all media items to your Cloud environments through the backoffice. Clone your environment to your local machine in order to manage the files of your media library.
+We strongly recommend that you add all the media items to your Cloud environments through the backoffice. Clone your environment to your local machine to manage the files of your media library.
 
 **Important**: If you upload your media files manually using this method, they will not be available in the backoffice.
 
@@ -21,7 +21,7 @@ All media needs to be added through the Umbraco backoffice.
 
 ## Getting the credentials
 
-The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials under the connection details for your Umbraco Cloud project.
+The first thing to sort out, if you want to connect to the Azure Blob Storage container of your environment is the credentials. You can find the credentials under the **Connection Details**`section from the **Settings** dropdown on the Umbraco Cloud portal for your Umbraco Cloud project.
 
 ![Blob storage connection details GIF](images/blob.gif)
 
@@ -57,6 +57,6 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 
 6. Select **Connect**.
 
-7. Open the media folder, and you now have access to the Azure Blob Storage container for your environment.
+7. Open the media folder. You now have access to the Azure Blob Storage container for your environment.
 
     ![Open media folder](images/storage-explorer-connected.png)
