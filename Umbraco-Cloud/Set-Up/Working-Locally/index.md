@@ -195,25 +195,35 @@ Once the Class library has been added, you can see the project(s) that have been
 
 ## Renaming the Project Files and Folders
 
-At the root of the project there is a `.Umbraco` file that contains the following:
+To rename your Umbraco Cloud project files and folder, do the following:
 
-```cs
-[project]
-base = "src/UmbracoProject"
-csproj = "UmbracoProject.csproj"
-```
+1. Navigate to the `.umbraco` file at the root of the project and view the following:
 
-These two properties provide the folder location of the application and the name of the .csproj file to build. You can rename the folder and .csproj file as per your wish. You can also update any C# code namespaces to reflect the name of your project.
+    ```csharp
+    [project]
+    base = "src/UmbracoProject"
+    csproj = "UmbracoProject.csproj"
+    ```
 
-Additionally, add additional Class Library projects that are referenced by the `.csproj` file, if you prefer to organize your code that way. For example: Rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
+    The `base` property provides the folder location which contains the application and the `csproj` property is the name of the .csproj file.
 
-```cs
-[project]
-base = "src/MyAwesomeProject/MyAwesomeProject.Web"
-csproj = "MyAwesomeProject.Web.csproj"
-```
+2. Rename the `UmbracoProject` directory and `.csproj` file.
 
-We recommend updating the Namespace in the `Program.cs`, `Startup.cs`, and the `_ViewImports.cshtml` files, so the naming is consistent throughout your project structure. Once updated, clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
+3. Update the `.umbraco` file with the new name and any C# code namespaces reflecting the name of your project.
+
+4. Additionally, if you prefer to organize your code, you can add additional Class Library projects that are referenced by the Umbraco application .csproj file.
+
+   For example: Rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
+
+    ```csharp
+    [project]
+    base = "src/MyAwesomeProject.Web"
+    csproj = "MyAwesomeProject.Web.csproj"
+    ```
+
+:::note
+It's a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
+:::
 
 If you have already built and run the project locally using the original project file and folder, make an update in your local .git repository to reflect the change that has been made. When a Cloud project first runs, a git hook is created to trigger a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
 
