@@ -54,37 +54,7 @@ You can rename your Umbraco Cloud project from the **Settings** menu.
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
 :::
 
-### Renaming the Project file and folder
-
-To rename your Umbraco Cloud project files and folder, do the following:
-
-1. Navigate to the `.umbraco` file at the root of the project and view the following:
-
-    ```csharp
-    [project]
-    base = "src/UmbracoProject"
-    csproj = "UmbracoProject.csproj"
-    ```
-
-    The `base` property provides the folder location which contains the application and the `csproj` property is the name of the .csproj file.
-
-2. Rename the `UmbracoProject` directory and `.csproj` file.
-
-3. Update the `.umbraco` file with the new name and any C# code namespaces reflecting the name of your project.
-
-4. Additionally, if you prefer to organize your code, you can add additional Class Library projects that are referenced by the Umbraco application .csproj file.
-
-   For example: Rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
-
-    ```csharp
-    [project]
-    base = "src/MyAwesomeProject.Web"
-    csproj = "MyAwesomeProject.Web.csproj"
-    ```
-
-:::note
-It's a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
-:::
+### [Renaming the Project file and folder](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/#renaming-the-project-files-and-folders)
 
 ## Advanced
 
