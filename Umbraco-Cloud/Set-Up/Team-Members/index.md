@@ -2,14 +2,14 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
-
+ 
 # Team Members in the Project Portal
 
 This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](../../../Fundamentals/Data/Users/). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
 
 ![Invite User](images/Invite-User-1.gif)
 
-Team members are users that you add to your project via the Invite User button in the Umbraco Cloud Portal. They are automatically added as users in the Backoffice of all environments for the project. These users are able to clone down the project locally and login using the same credentials they use for Umbraco Cloud.
+Team members are users that you add to your project via the Invite User button in the Umbraco Cloud Portal. They are automatically added as users in the Backoffice of all environments for the project. These users can clone down the project locally and log in using the same credentials they use for Umbraco Cloud.
 
 ![Add team member](images/add-team-member-v9-1.png)
 
@@ -24,7 +24,7 @@ User Permissions for each environment can be set in the **Edit Team** page avail
 
 * **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffices. They are not able to deploy or change anything on the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.
 
-* **Write**: A team member with Write permissions can do everything on a project except deleting it and editing the team. A user with Write permissions is able to deploy changes between environments through the portal. They have access to the git repositories and can push local changes to the environment.
+* **Write**: A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal. They have access to the git repositories and can push local changes to the environment.
 
 * **No Access**: A team member with No access permissions cannot restart the environment, deploy changes between environments, check error logs or log files, or access Kudo in the Project Portal. They can clone down the project, view the project in the portal, and access the backoffice.
 
@@ -32,13 +32,13 @@ User Permissions for each environment can be set in the **Edit Team** page avail
 
 You can view the user group memberships of the project’s backoffice users. Currently, you can manage the backoffice user groups of a user through the Umbraco backoffice. A backoffice user is only created once the user logs into the backoffice of the project for the first time.
 
-![Backoffice User Groups](images/Backoffice-User-Groups.png)
+![Backoffice User Groups](images/Umbraco-Backoffice-User-Groups.png)
 
 ## Team Members Pending Invitation
 
-You can see the details of your project invitation in the **Member(s) who still needs to accept project invitation** section of the **Edit Team** page. You can view the team member name, email, expiration date of the invitation, status of the invitation, copy the invitation link, resend the invitation, or delete the invitation.
+You can see the details of your project invitation in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You can view the team member's name, email, the expiration date of the invitation, the status of the invitation, copy the invitation link, resend the invitation, or delete the invitation.
 
-![Team Members Pending Invitation](images/Team-Members-Pending-Invitation.png)
+![Team Members Pending Invitation](images/Pending-Project-Invites.png)
 
 ## [Technical Contacts](Technical-Contact.md)
 
