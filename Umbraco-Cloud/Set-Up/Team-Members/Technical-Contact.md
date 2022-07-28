@@ -17,7 +17,7 @@ When you create a **New Project**, the user used to create the project will auto
 
 1. Go to the Project in the Umbraco Cloud Portal.
 2. Click **Settings** and go to **Edit Team**.
-3. In the **Technical Csontact** section, click Add **Technical Contact**.
+3. Click Add **Technical Contact** in the **Technical Contact** section.
 
     ![Add technical contact](images/add-technical-contact.png)
 4. In the **Add New Technical Contact** window, enter the **Name**, **Email**, and **Telephone Number**.
