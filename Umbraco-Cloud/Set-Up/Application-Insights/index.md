@@ -1,22 +1,23 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Application Insights on Umbraco cloud
 
-## Installing application Insights
+## Installing Application Insights
 
-This guide will instruct you how to install Application Insights (AI) for your cloud solution.
+This guide will instruct you on how to install Application Insights (AI) for your cloud solution.
 
-### Azure portal
+### Azure Portal
 
-First thing to have in place when installing AI is an AI resource on Azure, so go ahead and open your favorite browser and log onto the [Azure Portal](https://portal.azure.com) and spin up a new AI Resource.
+The first thing to have in place when installing AI is an AI resource on Azure, so go ahead and open your favorite browser and log onto the [Azure Portal](https://portal.azure.com) and spin up a new AI Resource.
 
 After that, you can go ahead and grab your `instrumentation key`, from the AI Resource overview
 
 ![alt text](images/01-Instrumentation-key.png "Instrumentation Key")
 
-### Cloud solution
+### Cloud Solution
 
 The next thing we need to look at is how to enable AI for your Umbraco solution.
 
@@ -32,7 +33,7 @@ This will install Application Insights and all of its dependencies. Open the `ap
   },
 ```
 
-Last step is to enable Application Insights in your application. You can achieve this by updating the `Startup.cs` class.
+The last step is to enable Application Insights in your application. You can achieve this by updating the `Startup.cs` class.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -48,12 +49,12 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Upload the changes to your solution and that is it!
+Upload the changes to your solution and that is it.
 
-## Application Insights limitations on Umbraco Cloud
+## Application Insights Limitations on Umbraco Cloud
 
-Unless you have a dedicated Umbraco Cloud server, you are sharing resources with other Umbraco Cloud users. By default Application Insights is configured to provide information about resources allocated and used by the system, do note however that these can be a misrepresentation!
+Unless you have a dedicated Umbraco Cloud server, you are sharing resources with other Umbraco Cloud users. By default, Application Insights is configured to provide information about resources allocated and used by the system, however this can be a misrepresentation.
 
-## Microsoft documentation
+## Microsoft Documentation
 
-For further information check out Microsoft's own documentation of [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
+For more information, check out Microsoft's documentation on [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
