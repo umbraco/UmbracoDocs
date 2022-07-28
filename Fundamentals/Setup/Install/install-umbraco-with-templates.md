@@ -8,7 +8,7 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/boK2cMXiI10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/U309rfT_4ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Install the template
 
