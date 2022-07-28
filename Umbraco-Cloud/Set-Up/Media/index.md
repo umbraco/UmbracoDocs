@@ -38,7 +38,7 @@ As an example, imagine that you are transferring new content changes from your D
 
 ## Media Folder
 
-You will notice that there is a Media (`/media`) folder at the root of your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with Azure Blob Storage, the media files are not in this media folder.
+You will notice that there is a Media (`wwwroot/media`) folder in your project files. This folder usually holds all media files associated with a Umbraco project. As your Umbraco Cloud environments are all configured with Azure Blob Storage, the media files are not in this media folder.
 
 Instead, you will find a `project.assets.json` file in the `obj` folder. This file is used to connect the Media library on your Cloud environment to an Azure Blob Storage container.
 
