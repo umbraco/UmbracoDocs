@@ -20,7 +20,7 @@ When you create a **New Project**, the user used to create the project will auto
 3. Click Add **Technical Contact** in the **Technical Contact** section.
 
     ![Add technical contact](images/add-technical-contact.png)
-4. In the **Add New Technical Contact** window, enter the **Name**, **Email**, and **Telephone Number**.
+4.  Enter the **Name**, **Email**, and **Telephone Number** in the **Add New Technical Contact** window.
 
     ![Add technical contact form](images/add-technical-contact-form.png)
 5. Click **Confirm**.
