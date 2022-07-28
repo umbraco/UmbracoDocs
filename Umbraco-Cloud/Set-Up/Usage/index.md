@@ -39,7 +39,7 @@ The second you will find, is a top 10 of the HTTP referers causing the most band
 
 It is also possible to see the top 50 media files on your live environment.
 
-The list shows the name of the file, its path, size, and whether it is a jpeg or a png.
+The list shows the name of the file, its path, size, and type (whether it is a jpeg or a png file).
 
 ![top 50 media files](images/Top-50-media.png)
 
