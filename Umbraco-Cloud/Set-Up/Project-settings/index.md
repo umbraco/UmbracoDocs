@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Project Settings
 
-When working with an Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
+When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
 
 ![settings](images/project-settings-v10.png)
 
@@ -31,13 +31,17 @@ Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** s
 
 Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
 
+## [CDN Caching and Optimization](../Manage-CDN-Caching/index.md)
+
+Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
+
 ## [Certificates](../Manage-Hostnames/Security-Certificates) (Only available on **Professional** or **Enterprise** plan)
 
-Used to upload and bind your own custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
+Used to upload and bind your custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
 
 ## [Webhooks](../../Deployment/Deployment-webhook)
 
-On Umbraco Cloud projects, it is possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
+It is possible to configure a deployment webhook on your environments on Umbraco Cloud projects. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
 
 ## Upgrade Plan
 
@@ -55,7 +59,9 @@ If you are working locally, you need to update the origin of your local git repo
 :::
 
 ### [Renaming the Project file and folder](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/#renaming-the-project-files-and-folders)
+
 You can rename your project from the **Rename Project** section in the **Settings** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
+
 ## Advanced
 
 Manage **Advanced** settings for your project from the **Settings** menu:
