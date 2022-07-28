@@ -6,11 +6,14 @@ meta.Description: "Documentation for Heartcore Redirect APIs"
 
 # Redirect API
 
-This is the read-only API for delivering redirects, caused by moving or renaming content in the umbraco backoffice, to any app, website, device or platform.
+This is the read-only API for delivering redirects, caused by moving or renaming content in the umbraco backoffice, to any app, website, device, or platform.
+
+### NOTE
+The redirect API is only available if your project is using the **Content Delivery Platform**. You can verify this in the umbraco backoffice, settings section in the headless overview panel.
 
 ## Cultures
 
-To request redirects in a specific language, a culture parameter can be specified. When no culture is specified its treated as invariant and the default language will be returned.
+To request redirects in a specific language, a culture parameter can be specified. When no culture is specified it's treated as invariant and the default language will be returned.
 
 ### Access via an Accept-Language header
 
@@ -35,7 +38,7 @@ Umb-Project-Alias: {project-alias}
 
 ## Errors
 
-If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
+If an error occours, you will receive a HTTP status code along with an API error code and an error message in the response body.
 
 | Status Code | Error Code                 | Message                                                                                                                                                       |
 | ----------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
