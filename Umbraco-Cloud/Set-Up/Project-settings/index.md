@@ -55,7 +55,7 @@ If you are working locally, you need to update the origin of your local git repo
 :::
 
 ### [Renaming the Project file and folder](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/#renaming-the-project-files-and-folders)
-
+You can rename your project from the **Rename Project** section in the **Settings** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
 ## Advanced
 
 Manage **Advanced** settings for your project from the **Settings** menu:
