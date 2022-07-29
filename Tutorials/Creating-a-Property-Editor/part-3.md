@@ -176,3 +176,5 @@ Over the 3 previous steps, we have:
 - Added configuration to the Property Editor.
 - Connected the editor with the Notification Service.
 - Looked at the notification dialog in action.
+
+[Next - Adding server-side data to a property editor](part-4.md)
