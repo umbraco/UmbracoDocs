@@ -46,6 +46,7 @@ For illustration purposes, the following structure represents the full set of op
             "DatabaseCommandTimeout": "0.0:20:00",
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
+            "DiskOperationsTimeout": "0.0:01:00",
             "IgnoreBrokenDependencies": false,
             "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
@@ -115,18 +116,26 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-There are four settings available:
+There are four settings available relating to backoffice deployment operations:
 
 - `SessionTimeout`
 - `SourceDeployTimeout`
 - `HttpClientTimeout`
 - `DatabaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
+
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maxmimum time allowed for disk operations such as schema updates.
+
+- `DiskOperationsTimeout`
+
+This setting defaults to 60 seconds.
+
+All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
 
 ## TransferFormsAsContent
 
