@@ -54,7 +54,7 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 
 ### Setup a Trial project
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Rujaw1VWUaQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to create a Heartcore Trial" src="https://www.youtube.com/embed/Rujaw1VWUaQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## [Client libraries](Client-Libraries)
 

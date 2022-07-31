@@ -86,4 +86,4 @@ To render the created partial view into any template, use any of these helper me
 
 ### Video Materials
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/RcYM_DJ-JnQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Getting started with Umbraco: Partial Views" src="https://www.youtube.com/embed/RcYM_DJ-JnQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -19,7 +19,7 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 
 ## Video
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/xM5QbF751SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Log Files on Umbraco Cloud" src="https://www.youtube.com/embed/xM5QbF751SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Accessing the logs
 

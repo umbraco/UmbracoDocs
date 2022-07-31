@@ -36,7 +36,7 @@ An overview of what you will find throughout this guide.
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Upgrading an Umbraco Cloud project from version 9 to version 10" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step 1: Enable .NET 6
 
