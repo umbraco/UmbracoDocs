@@ -109,36 +109,38 @@ Validation of the above-mentioned settings is done when determining the runtime 
 
 The following example removes the default `UmbracoApplicationUrlValidator` and adds a new custom `DisableElectionForSingleServerValidator`:
 
-    using System.Diagnostics.CodeAnalysis;
-    using Microsoft.Extensions.Options;
-    using Umbraco.Cms.Core.Composing;
-    using Umbraco.Cms.Core.Configuration.Models;
-    using Umbraco.Cms.Infrastructure.Runtime;
-    using Umbraco.Cms.Infrastructure.Runtime.RuntimeModeValidators;
-    
-    public class RuntimeModeValidatorComposer : IComposer
+```csharp
+using System.Diagnostics.CodeAnalysis;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Cms.Infrastructure.Runtime;
+using Umbraco.Cms.Infrastructure.Runtime.RuntimeModeValidators;
+
+public class RuntimeModeValidatorComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.RuntimeModeValidators()
+            .Remove<UmbracoApplicationUrlValidator>()
+            .Add<DisableElectionForSingleServerValidator>();
+}
+
+public class DisableElectionForSingleServerValidator : IRuntimeModeValidator
+{
+    private readonly IOptionsMonitor<GlobalSettings> _globalSettings;
+
+    public DisableElectionForSingleServerValidator(IOptionsMonitor<GlobalSettings> globalSettings) => _globalSettings = globalSettings;
+
+    public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
     {
-        public void Compose(IUmbracoBuilder builder)
-            => builder.RuntimeModeValidators()
-                .Remove<UmbracoApplicationUrlValidator>()
-                .Add<DisableElectionForSingleServerValidator>();
-    }
-    
-    public class DisableElectionForSingleServerValidator : IRuntimeModeValidator
-    {
-        private readonly IOptionsMonitor<GlobalSettings> _globalSettings;
-    
-        public DisableElectionForSingleServerValidator(IOptionsMonitor<GlobalSettings> globalSettings) => _globalSettings = globalSettings;
-    
-        public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
+        if (_globalSettings.CurrentValue.DisableElectionForSingleServer == false)
         {
-            if (_globalSettings.CurrentValue.DisableElectionForSingleServer == false)
-            {
-                validationErrorMessage = "Disable primary server election (and support for load balancing) to improve startup performance.";
-                return false;
-            }
-    
-            validationErrorMessage = null;
-            return true;
+            validationErrorMessage = "Disable primary server election (and support for load balancing) to improve startup performance.";
+            return false;
         }
+
+        validationErrorMessage = null;
+        return true;
     }
+}
+```
