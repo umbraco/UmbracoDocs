@@ -32,7 +32,7 @@ When you are manually upgrading your Umbraco Cloud project and you need to upgra
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/A0Kzgsb4EGQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to manually upgrade your Umbraco Cloud project" src="https://www.youtube.com/embed/A0Kzgsb4EGQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You can find the full playlist here: [Manually upgrade your Umbraco Cloud project](https://www.youtube.com/playlist?list=PLgX62vUaGZsFy6I695OINpxhddOe-lOIP)
 

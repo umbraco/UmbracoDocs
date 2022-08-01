@@ -15,7 +15,7 @@ When working with an Umbraco Cloud project, you can add or remove extra environm
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to add an additional Umbraco Cloud environment" src="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Adding or Removing Environments
 

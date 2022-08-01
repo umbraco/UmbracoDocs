@@ -171,7 +171,7 @@ body {
 h1{
     font-weight:900;
 }
-    
+
 .text-block{
     padding:20px;
 }
@@ -187,7 +187,7 @@ h1{
     border: 3px solid green;
     padding: 10px;
 }
-        
+
 .block-right{
     text-align: right;
     border: 3px solid green;
@@ -219,4 +219,4 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 
 To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Custom Views for Blocks" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

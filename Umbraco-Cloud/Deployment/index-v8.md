@@ -30,7 +30,7 @@ With this arrangement, you don't need to grant Umbraco Cloud portal access to yo
 
 Learn more about the deployment approach in this video, which will also show you how to deploy metadata as well as how to transfer content and media. Below you'll find links to articles containing step-by-step guides for each approach.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to manage deployments on Umbraco Cloud" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Deploying Metadata
 
