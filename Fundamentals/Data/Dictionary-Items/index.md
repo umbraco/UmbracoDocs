@@ -59,7 +59,7 @@ Alternatively, you can specify an `altText` which will be returned if the dictio
 
 ## Importing and exporting Dictionary Items
 
-In some cases you might want to use the same Dictionary Items on multiple Umbraco websites. For this you can use the export and import functionality to quickly copy the items from one website to another.
+In some cases, you might want to use the same Dictionary Items on multiple Umbraco websites. For this, you can use the export and import functionality to quickly copy the items from one website to another.
 
 ### Exporting Dictionary Items
 
@@ -67,7 +67,7 @@ In some cases you might want to use the same Dictionary Items on multiple Umbrac
 2. Locate the Dictionary Item (or group) you want to copy in the section tree.
 3. Right-click the item.
 4. Select **Export...**.
-5. Decide whether you want to also include decendants.
+5. Decide whether you want to also include descendants.
 6. Click **Export**.
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
