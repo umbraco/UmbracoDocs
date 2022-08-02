@@ -12,8 +12,8 @@ This article will cover how you can connect to the database of your project that
 
 When cloning down your project to work locally you might want to have a look in your database every now and then.
 
-With the release of Umbraco 10, LocalDB is no longer supported and instead in Umbraco 10 we use SQLite.
-When you clone down your Umbraco project and restores its content it will create a `Umbraco.sqlite.db` file.
+With the release of Umbraco 10, LocalDB is no longer supported, and instead, in Umbraco 10 we use SQLite.
+When you clone down your Umbraco project and restore its content it will create a `Umbraco.sqlite.db` file.
 
 To view your local database, you will need to use a program like [DB Browser for SQLite](https://sqlitebrowser.org/) which lets you view and query your local SQLite Database.
 
