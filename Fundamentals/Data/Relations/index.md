@@ -85,7 +85,7 @@ To view one of the existing Relation Types, go to the **Relations** tab. It disp
 
 You can create Relations using the RelationService API via code.
 
-[Some examples are provided here in the RelationService Documentation Page](../../documentation/reference/management/services/relationservice/)
+[Some examples are provided here in the RelationService Documentation Page](../Reference/Management/Services/RelationService/)
 
 ### Use cases
 You might want to create a 'Relation' between two objects either as:
