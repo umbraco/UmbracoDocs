@@ -129,12 +129,12 @@ With the packages and projects updated, it is time to make some changes to some 
     "$schema": "./appsettings-schema.json",
     ```
 
-3. Follow step 2 for the following files as well:
+Apply this change to the following files as well:
   - **appsettings.Development.json**
   - **appsettings.Production.json**
   - **appsettings.Staging.json**
 
-The final thing you need to do before testing the upgrade locally, is to remove a series of files no longer needed in your project.
+3. The final thing you need to do before testing the upgrade locally, is to remove a series of files no longer needed in your project.
 
 Remove the following files and folders *manually* from your local project:
 
