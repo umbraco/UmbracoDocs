@@ -144,7 +144,7 @@ With the packages and projects updated, it is time to make some changes to some 
     * `/umbraco/UmbracoWebsite`
     * `/umbraco/config/lang`
 
-4. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+4. Update the Umbraco Forms related files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
 5. By default, Umbraco Deploy will create an SQLite database. If you want to re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring).
 
