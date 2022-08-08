@@ -68,7 +68,7 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 Normally you would create a partial view by using the `@model MyModel` syntax.
 However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views
 like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`.
-The good news is that this is completely possible. Instead of using the `@model MyModel` syntax,
+The good news is that this is possible. Instead of using the `@model MyModel` syntax,
 you need to inherit from the correct view class, so do this instead:
 
 ```csharp
