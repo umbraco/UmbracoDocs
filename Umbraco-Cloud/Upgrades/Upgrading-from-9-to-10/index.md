@@ -134,7 +134,6 @@ With the packages and projects updated, it is time to make some changes to some 
     * **appsettings.Production.json**
     * **appsettings.Staging.json**
 
-3. The final thing you need to do before testing the upgrade locally, is to remove a series of files no longer needed in your project.
 
     Remove the following files and folders *manually* from your local project:
 
