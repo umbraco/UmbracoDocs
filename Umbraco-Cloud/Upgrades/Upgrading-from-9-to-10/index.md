@@ -129,29 +129,29 @@ With the packages and projects updated, it is time to make some changes to some 
     "$schema": "./appsettings-schema.json",
     ```
 
-Apply this change to the following files as well:
-  - **appsettings.Development.json**
-  - **appsettings.Production.json**
-  - **appsettings.Staging.json**
+    Apply this change to the following files as well:
+    * **appsettings.Development.json**
+    * **appsettings.Production.json**
+    * **appsettings.Staging.json**
 
-3. The final thing you need to do before testing the upgrade locally, is to remove a series of files no longer needed in your project.
+3. Remove the following files and folders *manually* from your local project:
 
-Remove the following files and folders *manually* from your local project:
+    * `/wwwroot/umbraco`
+    * `/umbraco/PartialViewMacros`
+    * `/umbraco/UmbracoBackOffice`
+    * `/umbraco/UmbracoInstall`
+    * `/umbraco/UmbracoWebsite`
+    * `/umbraco/config/lang`
 
-* `/wwwroot/umbraco`
-* `/umbraco/PartialViewMacros`
-* `/umbraco/UmbracoBackOffice`
-* `/umbraco/UmbracoInstall`
-* `/umbraco/UmbracoWebsite`
-* `/umbraco/config/lang`
+4. Update the Umbraco Forms related files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
-If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+5. Choose your Database configuration:
+    * To re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring).
+    * To use the default SQLite database, skip this step.
 
-By default, Umbraco Deploy will create an SQLite database. If you want to re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring).
+6. Build and run your project locally to verify the Umbraco 10 upgrade.
 
-Build and run your project locally to verify the Umbraco 10 upgrade.
-
-![Target Framework](images/verify-v10-upgrade-locally.png)
+    ![Target Framework](images/verify-v10-upgrade-locally.png)
 
 ## Step 4: Deploy and Test on Umbraco Cloud
 
