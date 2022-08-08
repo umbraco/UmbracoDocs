@@ -67,7 +67,7 @@ This mode disables both in-memory ModelsBuilder generation (see [Development mod
 - `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `Nothing`.
 
 :::note
-To compile your views at build/publish time, remove the `RazorCompileOnBuild` and `RazorCompileOnPublish` properties from your project file (see Development mode). If you don't, Umbraco can't find the templates and will return 404 (Page Not Found) responses.
+To compile your views at build/publish time, remove the `<RazorCompileOnBuild>` and `<RazorCompileOnPublish>` properties from your project file (see the [Development mode](#development-mode) section). If you don't, Umbraco can't find the templates and will return 404 (Page Not Found) errors.
 :::
 
 The recommended approach to enable `Production` mode is to update the `appsettings.Production.json` file (or create one) with the following settings:
