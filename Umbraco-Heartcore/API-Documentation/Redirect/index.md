@@ -62,7 +62,9 @@ If an error occours, you will receive a HTTP status code along with an API error
 
 ## Get all redirects
 
-Gets all published content at the root of the tree.
+Gets all redirect urls.
+
+The key is the url of the content and the values is the urls redirecting to the content.
 
 **URL**: `/redirect`
 
