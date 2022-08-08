@@ -15,7 +15,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
 
 ```json
 {
-  "Umbraco": {
+   "Umbraco": {
     "CMS": {
       "RequestHandler": {
         "AddTrailingSlash": true,
