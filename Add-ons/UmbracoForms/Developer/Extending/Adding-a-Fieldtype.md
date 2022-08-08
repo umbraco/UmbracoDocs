@@ -191,7 +191,7 @@ public class CompareField : Umbraco.Forms.Core.FieldType
     /// Gets or sets a value indicating whether the field label should be shown.
     /// PreValues are a single element, a boolean indicating whether the default for the the checkbox is "checked".
     /// </summary>
-    [Setting("Show Label", Description = "Indicate whether the the field's label should be shown when rendering the form.", View = "checkbox", PreValues = "true", DisplayOrder = 20)]
+    [Setting("Show Label", Description = "Indicate whether the field's label should be shown when rendering the form.", View = "checkbox", PreValues = "true", DisplayOrder = 20)]
     public string ShowLabel { get; set; } = string.Empty;
 
     /// <inheritdoc/>
