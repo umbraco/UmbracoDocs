@@ -135,7 +135,7 @@ With the packages and projects updated, it is time to make some changes to some 
     * **appsettings.Staging.json**
 
 
-    Remove the following files and folders *manually* from your local project:
+3. Remove the following files and folders *manually* from your local project:
 
     * `/wwwroot/umbraco`
     * `/umbraco/PartialViewMacros`
