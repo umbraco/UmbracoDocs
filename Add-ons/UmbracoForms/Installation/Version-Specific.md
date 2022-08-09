@@ -15,7 +15,7 @@ This page covers specific upgrade documentation for specific versions.
 
 - The default theme has been updated to render captions for field types that support prevalues. If you have created any custom themes, please review the default theme and ensure you make similar changes to make use of the new feature.
 - The method `PreValues` on the `FieldViewModel` type has been changed from a collection of strings to a collection of a `PrevalueViewModel` object that has a Value and Caption property.
-- In order to fix an issue with display and editing of values, we've found a need to ensure the property representing the fields a record entry used in the back-office is changed from a list of values to a structure containing the field Ids and values. Specifically, `EntrySearchResult.Fields` has changed type `IEnumerable<object?>` to `IEnumerable<EntrySearchResult.FieldData>`.  The only scenarios affected by this would be anyone handling the `EntrySearchResultFetchingNotification` notification or developing custom export types.
+- In order to fix an issue with display and editing of values, we've found a need to ensure the property representing the fields a record entry used in the backoffice is changed from a list of values to a structure containing the field Ids and values. Specifically, `EntrySearchResult.Fields` has changed type `IEnumerable<object?>` to `IEnumerable<EntrySearchResult.FieldData>`.  The only scenarios affected by this would be anyone handling the `EntrySearchResultFetchingNotification` notification or developing custom export types.
 
 ### 10.0
 
@@ -90,7 +90,7 @@ Additional methods have been added to the following interfaces:
 - Database migration classes inheriting from `FormsMigrationBase` now use the non-obsolete base constructor defined on `PackageMigrationBase`.
 - The methods on `IPlaceholderParsingService` have been combined into a single one with optional parameters.
 - The method `PostSave` on `FormSecurityController` has been renamed to `PostSaveForUser`.
-- The back-office model class `FormSecurity` has been renamed to `FormSecurityForUser`.
+- The backoffice model class `FormSecurity` has been renamed to `FormSecurityForUser`.
 - The unused class `NonSerialiazableTypeSurrogateSelector` was removed.
 - The unused method `ImportXmlNodeFromText` on `XmlHelper` was  removed.
 - `IFormService.FormExist` was renamed to `IFormService.FormExists`.
