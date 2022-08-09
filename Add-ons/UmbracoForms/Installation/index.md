@@ -7,16 +7,16 @@ versionTo: 10.0.0
 
 ## [Extending Umbraco with the Forms section](Install)
 
-Extend Umbraco with the form builder section in a few steps
+Extend Umbraco with the form builder section in a few steps.
 
 ## [Configuring a license](../../The-Licensing-model)
 
-Getting Forms out of trial mode
+Getting Forms out of trial mode.
 
 ## [Manually upgrading Forms](ManualUpgrade.md)
 
-Manual upgrade instructions
+Manual upgrade instructions.
 
-## [Upgrading - version specific](Version-Specific.md)
+## [Version specific upgrade notes](Version-Specific.md)
 
-This contains version specific upgrade documentation for when upgrading between major versions of Forms.
+Topics to be aware of when upgrading to specific versions of Forms.
