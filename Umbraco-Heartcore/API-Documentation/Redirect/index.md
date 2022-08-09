@@ -62,7 +62,7 @@ If an error occours, you will receive a HTTP status code along with an API error
 
 ## Get all redirects
 
-Gets all redirect urls.
+Gets all redirect URLs.
 
 The key is the url of the content and the values is the urls redirecting to the content.
 
