@@ -22,7 +22,7 @@ An example of a HealthChecks settings can look something like this:
       ],
       "Notification": {
         "Enabled": true,
-        "FirstRunTime": "5 * * * *",
+        "FirstRunTime": "* 4 * * *",
         "Period": "1.00:00:00",
         "NotificationMethods": {
           "email": {
@@ -62,7 +62,7 @@ Allows you to disable or enable all notifications methods, if set to false, the 
 
 ### First run time
 
-This will configure when you run the health checks for the first time, if the value is not configured the health checks will run immediately after the site boots for the first time. This value is specified as a string in crontab format, so in this example, the health checks will run 5 minutes after the site is first booted.
+This will configure when you run the health checks for the first time, if the value is not configured the health checks will run immediately after the site boots for the first time. This value is specified as a string in crontab format, so in this example, the health checks will first run at 4 a.m.
 
 ### Period
 
