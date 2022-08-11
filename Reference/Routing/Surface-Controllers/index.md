@@ -130,7 +130,7 @@ namespace SurfaceControllerPackage
 
 In the above, the surface controller will belong to the MVC area called 'SurfaceControllerPackage'. Perhaps it is obvious, but if you are creating a package that contains many surface controllers, then you should most definitely ensure that all of your controllers are routed through the same MVC area.
 
-#### Routing for plugin based controllers
+### Routing for plugin based controllers
 
 All plugin based controllers get routed to:
 
@@ -143,7 +143,7 @@ Since they get routed via an MVC area, your views should be placed in the follow
 
 Since you're only able to place static filese within your package's `App_Plugin` folder, it's highly recommend to ensure that the area you use is the same as your package name, since that allows your views to be found.
 
-The controller itself should not be placed in the App_Plugins folder, the App_Plugins folder is for static files only, compiled files like the controller will be included in the dlls used by the nuget package. 
+The controller itself should not be placed in the App_Plugins folder, the App_Plugins folder is for static files only, compiled files like the controller will be included in the dlls used by the nuget package.
 
 #### Protecting surface controller routes
 
@@ -184,11 +184,51 @@ Whenever you render an Umbraco form within your view using `Html.BeginUmbracoFor
 }
 ```
 
-
-
 ::: tip
 In Umbraco 9 the `__RequestVerificationToken` token is automatically added to forms for you, so you no longer need to add `@Html.AntiForgeryToken()` to your forms.
 :::
+
+### Preventing Cross-Site Request Forgery (XSRF/CSRF) Attacks
+
+Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated.
+
+:::note
+By default, `Html.BeginUmbracoForm` adds an antiforgery token.
+:::
+
+If you are not using `Html.BeginUmbracoForm`, explicitly add an antiforgery token in your view:
+
+```cs
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+  //code snippet
+}
+```
+
+Next, add the `[ValidateAntiForgeryToken]` attribute to the controller/action method:
+
+```cs
+[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult EditAction(FormViewModel formData)
+{
+    //code snippet
+}
+```
+
+Finally, add the following code to the AJAX call:
+
+```js
+$.ajax({
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader("RequestVerificationToken",
+        $('input:hidden[name="__RequestVerificationToken"]').val());
+    }
+});
+```
+
+For more information, see the [Antiforgery in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-6.0#antiforgery-in-aspnet-core-1) article.
 
 ### Surface Controller Actions
 
