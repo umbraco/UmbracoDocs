@@ -5,9 +5,9 @@ versionTo: 10.0.0
 
 # Installation and upgrading
 
-## [Extending Umbraco with the Forms section](Install)
+## [Installing Umbraco Forms](Install)
 
-Extend Umbraco with the form builder section in a few steps.
+Install Umbraco Forms in a few steps.
 
 ## [Configuring a license](../../The-Licensing-model)
 
