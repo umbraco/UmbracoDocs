@@ -17,6 +17,9 @@ These are the steps you need to go through to complete the migration successfull
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
 
+## Video tutorial
+<iframe width="800" height="450" title="Migrating an existing site to Umbraco Cloud" src="https://www.youtube.com/embed/w4VaUnBJ52s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 If you prefer following a written guide, continue to read below.
 
 ## 1. Requirements
