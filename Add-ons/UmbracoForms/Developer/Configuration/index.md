@@ -53,8 +53,8 @@ For illustration purposes, the following structure represents the full set of op
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
-        "DaysToRetainSubmittedRecordsFor": 32,
-        "DaysToRetainApprovedRecordsFor": 64
+        "DaysToRetainSubmittedRecordsFor": 0,
+        "DaysToRetainApprovedRecordsFor": 0
       }
     },
     "Options": {
