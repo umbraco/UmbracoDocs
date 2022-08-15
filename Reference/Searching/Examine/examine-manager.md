@@ -90,7 +90,10 @@ An example using this method is below:
 When calling the index methods on the `ExamineManager` it will call the same methods on every Indexer that is registered. If for some reason you require to only call the index methods on a particular provider then you can access the provider by name, for example:
 
 ```csharp
-var canGetIndex = ExamineManager.TryGetIndex("ExternalIndexer", out var index);
+if (_examineManager.TryGetIndex(Umbraco.Cms.Core.Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+{
+   // Use index here
+}
 ```
 
 The indexing methods available are:
