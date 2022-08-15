@@ -96,7 +96,7 @@ if (_examineManager.TryGetIndex(Umbraco.Cms.Core.Constants.UmbracoIndexes.Extern
 }
 ```
 
-The indexing methods available are:
+The indexing methods available on a single index are:
 
 ```csharp
 void DeleteFromIndex(IEnumerable<string> itemIds);
