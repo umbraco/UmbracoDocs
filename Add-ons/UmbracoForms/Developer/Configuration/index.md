@@ -52,7 +52,9 @@ For illustration purposes, the following structure represents the full set of op
         "HideFieldValidationLabels": false,
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true,
-        "AutocompleteAttribute": ""
+        "AutocompleteAttribute": "",
+        "DaysToRetainSubmittedRecordsFor": 32,
+        "DaysToRetainApprovedRecordsFor": 64
       }
     },
     "Options": {
@@ -61,7 +63,12 @@ For illustration purposes, the following structure represents the full set of op
       "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
-      "TriggerConditionsCheckOn": "change"
+      "TriggerConditionsCheckOn": "change",
+      "ScheduledRecordDeletion": {
+        "Enabled": true,
+        "FirstRunTime": "",
+        "Period": "1.00:00:00"
+      }
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -167,6 +174,16 @@ This setting needs to be a `True` or `False` value and will allow you to toggle 
 
 This setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.
 
+#### DaysToRetainSubmittedRecordsFor
+
+Introduced in 10.2, this setting controls the initial value of the number of days to retain form submission records for newly created forms. By default the value is 0, which means records will not be deleted at any time and are retained forever.
+
+If set to a positive number, records in the 'submitted' state, that are older than the date calculated by taking away the number of days configured from the current date, will be flagged for removal.
+
+#### DaysToRetainApprovedRecordsFor
+
+Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approved' state.
+
 ## Package options configuration
 
 ### IgnoreWorkFlowsOnEdit
@@ -209,6 +226,24 @@ If no value is set, and no culture value was stored alongside the form entry, th
 ### TriggerConditionsCheckOn
 
 This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.
+
+### ScheduledRecordDeletion
+
+Scheduled deletion of records older than a specified number of days was a feature introduced in Forms 10.2.  It uses a background task to run the cleanup operation, which can be customized with the following settings.
+
+#### Enabled
+
+By default this value is `false` and no data will be removed. A note will be displayed in the backoffice indicating that even if forms are configured to have submitted data cleaned up, no records will be removed until the service is enabled.
+
+Set to `true` to enabled the background task.
+
+#### FirstRunTime
+
+This will configure when the record deletion process will run for the first time. If the value is not configured the health checks will run after a short delay following the website start. The value is specified as a string in crontab format. For example, a value of `"* 4 * * *"` will first run the operation at 4 a.m.
+
+#### Period
+
+Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours.  Shorter or longer periods can be set using different datetime strings.
 
 ## Security configuration
 
