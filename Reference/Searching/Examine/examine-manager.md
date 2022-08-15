@@ -101,4 +101,6 @@ The indexing methods available on a single index are:
 ```csharp
 void DeleteFromIndex(IEnumerable<string> itemIds);
 void DeleteFromIndex(this IIndex index, string itemId);
+void IndexExists();
+void IndexItems(IEnumerable<ValueSet> values);
 ```
