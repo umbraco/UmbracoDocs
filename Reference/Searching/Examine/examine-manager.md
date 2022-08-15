@@ -87,7 +87,7 @@ An example using this method is below:
 
 ## Indexing
 
-When calling the index methods on the `ExamineManager` it will call the same methods on every Indexer that is registered. If for some reason you require to only call the index methods on a particular provider then you can access the provider by name, for example:
+When you wanna populate an index, you will need to use the `IExamineManager` and get the specific index. The build-in index names are all available as constants from the `Umbraco.Cms.Core.Constants.UmbracoIndexes` namespace
 
 ```csharp
 if (_examineManager.TryGetIndex(Umbraco.Cms.Core.Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
