@@ -106,7 +106,7 @@ Do not use this cache level unless you know exactly what you're doing.
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
 
-- For properties used at page level, the element is the entire page. 
+- For properties used at the page level, the element is the entire page. 
 - For properties contained within Block List items, the element is the individual Block List item.
 
 This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise. 
