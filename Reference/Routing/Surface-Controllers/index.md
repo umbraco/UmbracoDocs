@@ -205,7 +205,7 @@ If the token is not added automatically, for instance, if you don't use `Html.Be
   // Add your form fields here
 }
 
-Next, add the `[ValidateAntiForgeryToken]` attribute to the controller/action method:
+If you're using a SurfaceController the anti-forgery token wil automatically be validated, however if you're using a standard (non-umbraco) controller, you can manually specify it with the `ValidateAntiForgeryToken` attribute:
 
 ```cs
 [HttpPost]
