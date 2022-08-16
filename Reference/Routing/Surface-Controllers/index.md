@@ -193,19 +193,20 @@ In Umbraco 9 the `__RequestVerificationToken` token is automatically added to fo
 Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated.
 
 :::note
-By default, `Html.BeginUmbracoForm`, and `Html.BeginForm` adds an antiforgery token.
+By default, `Html.BeginUmbracoForm` and `Html.BeginForm` adds an antiforgery token.
 :::
 
-If the token is not added automatically, for instance, if you don't use `Html.BeginUmbracoForm` or use an overload to `Html.BeginForm`, where you've set the `antiForgery` parameter to false, you can add it manually like so:
+If the token is not added automatically, for instance, if you don't use `Html.BeginUmbracoForm` or use an overload to `Html.BeginForm` where you've set the `antiForgery` parameter to false, you can add it manually like so:
 
 ```cs
-@using (Html.BeginForm({...}))
+@using (Html.BeginForm(nameof(ContactFormController.Submit), "ContactForm", new object(), FormMethod.Post, false /* this is where you disable it */, new object()))
 {
   @Html.AntiForgeryToken()
   // Add your form fields here
 }
+```
 
-If you're using a SurfaceController the anti-forgery token wil automatically be validated, however if you're using a standard (non-umbraco) controller, you can manually specify it with the `ValidateAntiForgeryToken` attribute:
+If you are using a SurfaceController the antiforgery token will automatically be validated. However, if you are using a standard (non-umbraco) controller, you can manually specify it with the `ValidateAntiForgeryToken` attribute:
 
 ```cs
 [HttpPost]
@@ -216,9 +217,9 @@ public ActionResult EditAction(FormViewModel formData)
 }
 ```
 
-The `BeginUmbracoForm` and `BeginForm` will only add the anti-forgery token to the form as a hidden input, this means that you have to manually handle this yourself, if you're sending the request via javascript, for example, ajax. 
+The `BeginUmbracoForm` and `BeginForm` will only add the antiforgery token to the form as a hidden input. This means that you have to manually handle this if you're sending the request via javascript, for example, ajax.
 
-The routing expects the anti-forgery token to be in a header called `RequestVerificationToken`. You can use the `beforeSend` hook to read the anti-forgery token and set it as a header if you're using ajax: 
+The routing expects the antiforgery token to be in a header called `RequestVerificationToken`. You can use the `beforeSend` hook to read the antiforgery token and set it as a header if you're using ajax:
 
 ```js
 $.ajax({
