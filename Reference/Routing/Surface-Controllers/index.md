@@ -193,18 +193,17 @@ In Umbraco 9 the `__RequestVerificationToken` token is automatically added to fo
 Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated.
 
 :::note
-By default, `Html.BeginUmbracoForm` adds an antiforgery token.
+By default, `Html.BeginUmbracoForm`, and `Html.BeginForm` adds an antiforgery token.
 :::
 
-If you are not using `Html.BeginUmbracoForm`, explicitly add an antiforgery token in your view:
+If the token is not added automatically, for instance, if you don't use `Html.BeginUmbracoForm` or use an overload to `Html.BeginForm`, where you've set the `antiForgery` parameter to false, you can add it manually like so:
 
 ```cs
-@using (Html.BeginForm())
+@using (Html.BeginForm({...}))
 {
   @Html.AntiForgeryToken()
-  //code snippet
+  // Add your form fields here
 }
-```
 
 Next, add the `[ValidateAntiForgeryToken]` attribute to the controller/action method:
 
