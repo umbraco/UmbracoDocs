@@ -46,8 +46,8 @@ If you move your cloud project to a dedicated resource in the middle of the mont
 
 If you’d like to move from dedicated resources to shared, you can easily do this on the dedicated resource page.
 
+![Upgrade plan step 1](images/Downgrade.png)
 
+- By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has completed.
 
-- By hitting the "Upgrade" button on your dedicate plan of choice and confirming your choice, you will be redirected to the project page where you will be notified when the move to dedicated resource has completed.
-
-If you have any questions regarding this, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
+If you have any questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
