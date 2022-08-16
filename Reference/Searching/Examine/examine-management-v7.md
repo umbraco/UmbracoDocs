@@ -7,12 +7,6 @@ versionTo: 7.0.0
 
 _Provides an overview of the available Examine functionality available directly within the Umbraco backoffice_
 
-:::note
-This document has been verified for Umbraco 7.
-
-If you are using Umbraco 8 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
-:::
-
 ## Overview
 
 The Umbraco backoffice allows you to view details about your examine indexes and searches along with those that power the internal CMS search all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem and even test keywords to see what results would be returned.
