@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.1.0
+versionFrom: 7.0.0
+versionTo: 7.0.0
 ---
 
 # Examine Management
