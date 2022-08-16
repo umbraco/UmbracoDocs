@@ -113,7 +113,7 @@ This is the most commonly used cache level and should be your default, unless yo
 
 #### `PropertyCacheLevel.Elements`
 
-The property value will be cached until _any_ element (see above) is changed. This means that  any change to any page will clear the property value cache. 
+The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache. 
 
 This is particularly useful for property values that contain references to other content or elements. For example, the Content Picker uses this cache level, to ensure that Content Picker property values are cleared from cache whenever content is updated.
 
