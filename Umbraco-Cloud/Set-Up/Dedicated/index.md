@@ -29,4 +29,12 @@ The first step to move to a dedicated resource is to access your project in the 
 
 Under the project on the right side you have a dropdown menu called settings:
 
+![Upgrade plan step 1](images/step_1.png)
 
+- Clicking on the tab will direct you to the _Dedicated resource_ page that guide you on how to upgrade to a dedicated plan.
+
+- For a Umbraco Cloud project with a Shared Professional plan there are three dedidated plans for you to choose among.
+
+
+
+- From here you can see the different plans, the price per month, and the limitations between each of the plans.
