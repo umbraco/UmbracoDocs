@@ -37,7 +37,7 @@ The Searchers section is broken down into two sub-sections which provide configu
 
 ### Search tools
 
-![Search Tools within Examine Management](images/examine-management-search-tools.png)
+![Search Tools within Examine Management](images/examine-management-search-tools-v9.png)
 
 The search tools allows you to enter a search term and receive results back from the searcher in question, to confirm it is working as expected. Search terms can be entered either as plain text or as a lucene query. Matching results are returned in their raw format, with the score, document ID and values being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
 
