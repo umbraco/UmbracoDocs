@@ -216,7 +216,9 @@ public ActionResult EditAction(FormViewModel formData)
 }
 ```
 
-Finally, add the following code to the AJAX call:
+The `BeginUmbracoForm` and `BeginForm` will only add the anti-forgery token to the form as a hidden input, this means that you have to manually handle this yourself, if you're sending the request via javascript, for example, ajax. 
+
+The routing expects the anti-forgery token to be in a header called `RequestVerificationToken`. You can use the `beforeSend` hook to read the anti-forgery token and set it as a header if you're using ajax: 
 
 ```js
 $.ajax({
