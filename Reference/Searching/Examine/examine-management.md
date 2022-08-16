@@ -27,17 +27,9 @@ This section allows you to see the high level statistics about the index that yo
 
 This section also provides the ability to rebuild the index should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
 
-### System fields
+### Fields
 
-From here you can see the default system fields that are stored for each document within the search index, including whether sorting is enabled for each field and what datatype the data is stored as.
-
-### User fields
-
-This section is exactly the same as system fields, but with any custom fields being listed instead.
-
-### Provider properties
-
-The final section within Indexers displays the details for the index provider. This can be useful to confirm the configuration that Umbraco is using and to ensure it is working as expected. This section also displays the full file path of the index itself.
+From here you can see the default system and custom fields that are stored for each document within the search index, including whether sorting is enabled for each field and what datatype the data is stored as.
 
 ## Searchers
 
