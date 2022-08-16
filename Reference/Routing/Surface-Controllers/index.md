@@ -212,7 +212,7 @@ If you're using a SurfaceController the anti-forgery token wil automatically be 
 [ValidateAntiForgeryToken]
 public ActionResult EditAction(FormViewModel formData)
 {
-    //code snippet
+    // Handle your form submit here
 }
 ```
 
