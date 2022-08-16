@@ -11,9 +11,9 @@ _Provides an overview of the available Examine functionality available directly 
 
 The Umbraco backoffice allows you to view details about your examine indexes and searches along with those that power the internal CMS search all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem and even test keywords to see what results would be returned.
 
-![Examine Management within the Developer section](images/examine-management-home.png)
+![Examine Management within the Developer section](images/examine-management-home-v9.png)
 
-The Examine Management section, accessible from within the Developer area, is split into two sections: Indexers and Searchers.
+The Examine Management section, accessible from within the Settings area, is split into two sections: Indexers and Searchers.
 
 ## Indexers
 
