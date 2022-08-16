@@ -23,7 +23,7 @@ From the Indexers section, you can view details about each Examine index current
 
 This section allows you to see the high level statistics about the index that you selected, including how many documents and fields are currently being stored.
 
-![Rebuild Index within Examine Management](images/examine-management-rebuild-index.png)
+![Rebuild Index within Examine Management](images/examine-management-rebuild-index-v9.png)
 
 This section also provides the ability to rebuild the index should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
 
