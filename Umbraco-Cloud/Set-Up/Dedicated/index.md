@@ -24,9 +24,7 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 
 The first step in moving to a dedicated resource is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
-- In the project overview you can find all the projects that you have been invited to or have created.
-
-- From here you need to find the project that you want to move to dedicated.
+- Find and select the project that you want to move to dedicated resources.
 
 - Select *Dedicated Resources* from the *Settings* menu.
 
