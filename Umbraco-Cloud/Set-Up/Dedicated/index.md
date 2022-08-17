@@ -5,6 +5,8 @@ versionTo: 10.0.0
 
 # Move your Umbraco Cloud project to dedicated resources
 
+*Dedicated Resources* is a feature on Umbraco Cloud that gives you the option to move your project to a dedicated server. You can choose between a number of *dedicated plans* depending on the amount of resources you will need for your project.
+
 In this article, you can read about how you can move your Umbraco Cloud project to dedicated resources and what you need to be aware of before you do so.
 
 ## Before you move your project to dedicated resources
