@@ -15,10 +15,10 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 
 - In case you want to move a project on a Starter or Standard project plan to a dedicated server in Umbraco Cloud, please reach out to our support who will assist you in doing this.
 
-- Moving from a shared plan to a dedicated plan will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared plan to a dedicated resource. For more info on static lease visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/).
+- Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/).
 
 
-## How to upgrade your plan
+## How to move from shared to dedicated
 
 The first step in moving to a dedicated resource is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
@@ -30,17 +30,17 @@ The first step in moving to a dedicated resource is to access your project in th
 
 ![Upgrade plan step 1](images/Step1.png)
 
-- For a Umbraco Cloud project with a Shared Professional plan there are three dedicated plans for you to choose among. For each of the dedicated plans, you will find its name, the memory and CPU cores, and the price per month.
+- For a Umbraco Cloud project with a Shared Professional plan there are three dedicated options for you to choose among. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
 ![Upgrade plan step 1](images/Step2.png)
 
-- By hitting the "Upgrade" button on your dedicated plan of choice and confirming your choice, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
+- By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
 :::note Dedicated Resources are reserved on a per-month basis.
 The price of the dedicated resource will take effect from the next period of your subscription.
 If you move your cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice. :::
 
-## Move from dedicated to shared
+## How to move from dedicated to shared
 
 If you’d like to move from dedicated to shared resources, you can easily do this on the _Dedicated resource_ page.
 
