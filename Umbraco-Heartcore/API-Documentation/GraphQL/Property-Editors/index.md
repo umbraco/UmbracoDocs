@@ -35,7 +35,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 **Editor Alias**: `Umbraco.ContentPicker`<br>
 **GraphQL Type**: [`Content`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true
 
 ## Date/Time
 
@@ -110,11 +110,11 @@ This editor is not supported and will not be present in the generated schema
 
 **Pick Multiple items**: `true`<br>
 **GraphQL Type**: [`[Media]`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Pick Multiple items**: `false`<br>
 **GraphQL Type**: [`Media`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 ## Member Picker
 
@@ -147,22 +147,22 @@ This editor is not supported and will not be present in the generated schema
 **Node type**: `Content`<br>
 **Maximum number of items**: `1`<br>
 **GraphQL Type**: [`Content`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Content`<br>
 **Maximum number of items**: not `1`<br>
 **GraphQL Type**: [`[Content]`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Media`<br>
 **Maximum number of items**: `1`<br>
 **GraphQL Type**: [`Media`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Media`<br>
 **Maximum number of items**: not `1`<br>
 **GraphQL Type**: [`[Media]`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Member`<br>
 :::note
