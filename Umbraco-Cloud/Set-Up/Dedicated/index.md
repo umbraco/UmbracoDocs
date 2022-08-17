@@ -50,6 +50,6 @@ Moving away from dedicated resources and back to shared can be done from the *De
 
 - By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 
-- That's it! You cloud project is now back on a shared resource.
+- Your Cloud project is now back on a shared resource.
 
 If you have any questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
