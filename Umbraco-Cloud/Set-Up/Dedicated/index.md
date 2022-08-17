@@ -20,7 +20,7 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 
 ## How to upgrade your plan
 
-The first step moving to a dedicated resource is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
+The first step in moving to a dedicated resource is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
 - In the project overview you can find all the projects that you have been invited to or have created.
 
