@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Move your Umbraco Cloud project to dedicated resources
 
-In this article, you can read about how you enable your Umbraco Cloud project to run on dedicated resources and what you need to be aware of before you do so.
+In this article, you can read about how you can move your Umbraco Cloud project to dedicated resources and what you need to be aware of before you do so.
 
 ## Before you move your project to dedicated resources
 
