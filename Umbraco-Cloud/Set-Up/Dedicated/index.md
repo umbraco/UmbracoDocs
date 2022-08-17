@@ -38,9 +38,11 @@ The first step in moving to a dedicated resource is to access your project in th
 
 - By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
-:::note Dedicated Resources are reserved on a per-month basis.
+:::note 
+Dedicated resources are reserved on a per-month basis.
 The price of the dedicated resource will take effect from the next period of your subscription.
-If you move your cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice. :::
+If you move your Cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice. 
+:::
 
 ## How to move from dedicated to shared
 
