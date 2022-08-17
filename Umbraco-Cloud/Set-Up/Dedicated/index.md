@@ -44,7 +44,7 @@ If you move your cloud project to a dedicated resource in the middle of the mont
 
 ## How to move from dedicated to shared
 
-If you’d like to move from dedicated to shared resources, you can easily do this on the _Dedicated resource_ page.
+Moving away from dedicated resources and back to shared can be done from the *Dedicated Resources* page.
 
 ![Upgrade plan step 1](images/Downgrade.png)
 
