@@ -13,7 +13,7 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 
 - Currently, Umbraco Cloud offers dedicated resources for Professional plans only. We expect to include dedicated resources for Starter and Standard plans in the self-service feature in Umbraco Cloud portal later in 2022.
 
-- In case you want to move your Umbraco Cloud project with a Starter or Standard project plan to a dedicated server in Umbraco Cloud, please reach out to our support who will assist you in doing this.
+- In case you want to move a project on a Starter or Standard project plan to a dedicated server in Umbraco Cloud, please reach out to our support who will assist you in doing this.
 
 - Moving from a shared plan to a dedicated plan will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP of the project, we advise you to enable the static outbound IP feature for your cloud project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared plan to a dedicated resource. For more info on static lease visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/).
 
