@@ -11,7 +11,7 @@ In this article, you can read about how you can move your Umbraco Cloud project 
 
 Before you decide to move your Umbraco Cloud project, you need to consider a few things:
 
-- Currently, Umbraco Cloud offers dedicated resources for professional plans only. We expect to include dedicated resources for Starter and Standard plans in the self-service feature in Umbraco Cloud portal later in 2022.
+- Currently, Umbraco Cloud offers dedicated resources for Professional plans only. We expect to include dedicated resources for Starter and Standard plans in the self-service feature in Umbraco Cloud portal later in 2022.
 
 - In case you want to move your Umbraco Cloud project with a Starter or Standard project plan to a dedicated server in Umbraco Cloud, please reach out to our support who will assist you in doing this.
 
