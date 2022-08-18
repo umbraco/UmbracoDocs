@@ -11,7 +11,7 @@ This article will show how to manually upgrade Umbraco Forms to run the latest v
 
 To get the latest version of Umbraco Forms you will need to upgrade using NuGet.
 
-NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
+NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Forms` command unless you specify a package version:
 
 `dotnet add package Umbraco.Forms --version <VERSION>`
 
