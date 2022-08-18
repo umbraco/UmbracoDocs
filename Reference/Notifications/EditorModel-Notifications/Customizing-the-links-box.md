@@ -16,7 +16,7 @@ public void Handle(SendingContentNotification notification)
 {
     notification.Content.Urls = new[]
     {
-        new UrlInfo($"/products/?id={notification.Content.Id}", true, CultureInfo.CurrentCulture.Name)
+        new UrlInfo($"/products/?id={notification.Content.Id}", true, "en-US")
     };
 }
 ```
