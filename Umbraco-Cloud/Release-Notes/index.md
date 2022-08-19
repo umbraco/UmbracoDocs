@@ -3,6 +3,7 @@
 _View the latest updates for the Umbraco Cloud Portal_
 
 ---
+[**19/08/2022 Release Notes:**](2022-08-19-ReleaseNotes.md) Dedicated Resources + Projects Dashboard (beta)
 
 [**23/06/2022 Release Notes:**](2022-06-23-ReleaseNotes.md) Runtime setting for .NET version + New version of “Edit team” page + Various improvements
 
