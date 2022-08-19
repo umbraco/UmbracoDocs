@@ -94,7 +94,7 @@ Depending on your preferences, you can use any type of configuration to specify 
 #endif
 ```
 
-Having intellisense will help you to easily add your connection string and information needed for the unattended install.
+Having intellisense will help you to add your connection string and information needed for the unattended install.
 
 ```json
 {
