@@ -19,7 +19,7 @@ Dedicated Resources is currntly available for projects on **Professional** and *
 
 ## Projects Dashboard (beta)
 
-We are currently working on multiple initiatives to give Umbraco Cloud users a fantastic **developer-friendly experience**. One of these is the Projects Dashboard (as it’s known internally). Together with partners and Cloud users, we have worked to identify what would be the most useful features and tools to provide an overview of all your projects.
+We are currently working on multiple initiatives to give Umbraco Cloud users a fantastic **developer-friendly experience**. One of these is the Projects Dashboard. Together with partners and Cloud users, we have worked to identify what would be the most useful features and tools to provide an overview of all your projects.
 
 ![ProjectsDashboard](images/ProjectsDashboard.gif)
 
