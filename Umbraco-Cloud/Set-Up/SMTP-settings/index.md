@@ -71,8 +71,10 @@ Step 2 - Configure the service in the `Umbraco:CMS:Global:Smtp` section in your 
             "Smtp": {
                 "From": "person@umbraco.dk",
                 "Host": "127.0.0.0",
+                "Port": 587,
+                "SecureSocketOptions": "StartTls",
                 "Username": "person@umbraco.dk",
-                "Password":  "password123"      
+                "Password":  "password123/<API Key generated in your SMTP server account>"      
             }
          }
     }
@@ -83,11 +85,14 @@ Step 2 - Configure the service in the `Umbraco:CMS:Global:Smtp` section in your 
 
 To configure your SMTP service, enter the following details:
 
-* **Host**: IP address or hostname for your SMTP service
-* **Username**: Your username for the SMTP service
-* **Password**: The password you use to access your SMTP service
+* **From**: The default address emails will be sent from.
+* **Host**: IP address or hostname for your SMTP service.
+* **Port**: The port of the SMTP host.
+* **SecureSocketOptions**: Allows you to specify what security should be used for the connection sending the email.
+* **Username**: Your username for the SMTP service.
+* **Password**: The password you use to access your SMTP service.
 
-Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project.
+Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](../../../Reference/Configuration/GlobalSettings/index.md) article
 
 :::note
 You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/) from the Umbraco Backoffice.
