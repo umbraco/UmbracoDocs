@@ -1,10 +1,14 @@
 ---
 versionFrom: 8.0.0
-needsV9Update: "true"
+versionTo: 8.0.0
 ---
 # Creating and distributing a package
 
 This tutorial will take you through creating a brand new package in Umbraco, distributing it on the [package repository on Our Umbraco](https://our.umbraco.com/packages/), and finally automating the update flow and including it in CI/CD.
+
+:::note
+The content in this article is valid *only* for Umbraco 8. For Umbraco version 9 and above, see the [Creating a Package](../../Extending/Packages/Creating-a-Package/index.md) article.
+:::
 
 ## Overview
 
@@ -13,7 +17,7 @@ This tutorial will take you through creating a brand new package in Umbraco, dis
 - [Creating a package from the backoffice](#creating-a-package-from-the-backoffice)
 - [Creating a draft package on Our](#creating-a-draft-package-on-our)
 - [Pushing your package to Github](#pushing-your-package-to-github)
-- [Pack up your package locally using UmbPack ](#pack-up-your-package-locally-using-umbpack)
+- [Pack up your package locally using UmbPack](#pack-up-your-package-locally-using-umbpack)
 - [Pushing your package to Our using UmbPack](#pushing-your-package-to-our-using-umbpack)
 - [Deploy your package using Github Actions](#deploy-your-package-using-github-actions)
 - [Archive older versions on push](#archive-older-versions-on-push)
@@ -30,15 +34,15 @@ To run this tutorial you will need the following:
 
 To install UmbPack and the Umbraco Package templates you can type these commands in your command line:
 
-```
+```cs
 dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
 ```
 
-:::note 
+:::note
 If it says dotnet is an unknown command then you will need to install the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core) first.
 :::
 
-```
+```cs
 dotnet new --install Umbraco.Tools.Packages.Templates::0.2.5
 ```
 
@@ -50,13 +54,13 @@ The first step when trying to create a package would be to have an Umbraco site 
 
 If you open a command line tool and type in:
 
-```
+```cs
 dotnet new umbraco-v8-package -h
 ```
 
 It will show you all the options you have for creating a new Umbraco site + package. For now, you should navigate to the folder you want to add this package in and use this command:
 
-```
+```cs
 dotnet new umbraco-v8-package -n PackageWorkshop -d
 ```
 
@@ -82,7 +86,7 @@ You may have noticed earlier when you created the package site that you added a 
 
 However, since these files are not included in the .Site project you can't see the dashboard yet. If you navigate back to the root folder of the PackageWorkshop you will find a gulpfile.js file. If you run the following commands via a CMD prompt you will get a message that it is watching the App Plugins folder.
 
-```
+```cs
 npm install
 npm install gulp -g
 gulp
@@ -207,7 +211,7 @@ Let's take a look at how files are included:
 </umbPackage>
 ```
 
-So here you will notice that while we only added the top level folder in the backoffice, it went through that folder and added a `<file>` element for every file found within that folder. And each file has 3 properties - `guid`, `orgPath` & `orgName`. 
+So here you will notice that while we only added the top level folder in the backoffice, it went through that folder and added a `<file>` element for every file found within that folder. And each file has 3 properties - `guid`, `orgPath` & `orgName`.
 
 You don't have to worry too much about guid and orgName, they are references to the file name. Umbraco will automatically rename the file if there are conflicts, since they are stored in a flat structure it is quite likely, for example, lets say you had these two files in your package:
 
@@ -228,7 +232,7 @@ Once you log in you can go to your [package overview][member-package-overview] w
 
 Click the "Add package" button and fill out all the information, upload the package and save at the end.
 
-:::warning 
+:::warning
 If you don't intend for people to use the package (as in this tutorial), then please don't click the "Go live" button at the final step.
 :::
 
@@ -240,11 +244,11 @@ The next step is to make it a bit simpler to deploy updates to the package. It i
 
 If you are creating a package in order to share it with others it is a great idea to also share the source code. It is the open source way.
 
-To share it, and make it easier to manage and deploy updates we will set up a Github repository for the package. This tutorial assumes you know what Github is, and that you have an account. 
+To share it, and make it easier to manage and deploy updates we will set up a Github repository for the package. This tutorial assumes you know what Github is, and that you have an account.
 
 Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new Github repo, should look like this but with your own user in the link:
 
-```
+```cs
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
 git branch -M main
 git push -u origin main
@@ -252,7 +256,7 @@ git push -u origin main
 
 If you jump back to your command line in the folder that has the .sln file and the gitignore, you may notice that there is no git repo by default, so let's create one:
 
-```
+```cs
 git init
 git checkout -b main
 git add .
@@ -261,7 +265,7 @@ git commit -m "Initial commit, dashboard package"
 
 At this point you have your solution in a local git repository, and we can then use the command from Github to push it up:
 
-```
+```cs
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
 git branch -M main
 git push -u origin main
@@ -271,9 +275,9 @@ Now you have it all on Github:
 
 ![Github repo][github-repo]
 
-## Pack up your package locally using UmbPack 
+## Pack up your package locally using UmbPack
 
-At this point you know how to create a package from the backoffice, upload it to Our and push your changes to Github. That's what it takes to create and maintain a package. 
+At this point you know how to create a package from the backoffice, upload it to Our and push your changes to Github. That's what it takes to create and maintain a package.
 
 If you want to make changes and push a new version you can carry out the following steps:
 
@@ -287,7 +291,7 @@ However, whilst working this way is definitely possible, and will work for every
 
 Instead of going to the Backoffice and creating or updating your package from the package section each time, you can use the UmbPack tool to make smaller changes.
 
-:::note 
+:::note
 Any changes to Umbraco content and schema is a lot easier to do from the backoffice, but if it is file-based UmbPack is quicker.
 :::
 
@@ -345,7 +349,7 @@ So the XML above will turn into this, which is compatible with the Umbraco packa
 
 Before we try it out using UmbPack, try to run this command in the root of your site:
 
-```
+```cs
 umbpack pack -h
 ```
 
@@ -353,7 +357,7 @@ The commandline tool will tell you all the options you have when packing up your
 
 For now we don't need to worry about the output directory option, we will let UmbPack save it in the current folder. Likewise, with the name and version override, we will let UmbPack use the name and version we specified in the package.xml file. For the package.xml path we will specify the one in the root we used in the previous step, that points to both the dll file and the App_Plugins folder in the website project.
 
-```
+```cs
 umbpack pack .\package.xml
 ```
 
@@ -365,7 +369,7 @@ Next up - let's push this package update to Our from the commandline.
 
 To push a package update to Our with UmbPack we need to use the `push` command, so let's have a quick look at the options for that by running:
 
-```
+```cs
 umbpack push -h
 ```
 
@@ -379,7 +383,7 @@ So before we can try this out, let's go to Our and create an API key.
 
 ### Creating an Our API key
 
-If you head back to Our Umbraco and visit the [package overview][member-package-overview], then you will notice that there is a button under your package that says "API Keys". 
+If you head back to Our Umbraco and visit the [package overview][member-package-overview], then you will notice that there is a button under your package that says "API Keys".
 Each package api key is tied to that specific package, if you visit the page then you can create keys with a name you can use to differentiate the keys. Once you make a key it will show once, as soon as you refresh or navigate away the key will be gone and you'll have to make a new one if you lose it.
 
 Once you created your key, make sure to copy and paste it somewhere. We will need to use it a few times in the coming steps, remember if you lose it you will have to make a new one.
@@ -388,11 +392,11 @@ Once you created your key, make sure to copy and paste it somewhere. We will nee
 
 Now that we have an API key we can try to push our package update to Our Umbraco. This can be done like this:
 
-```
+```cs
 umbpack push .\PackageWorkshopDashboard_1.0.0.zip -k [Api key here]
 ```
 
-:::note 
+:::note
 If a package with the same name already exists it may give an error. In that case you can run `umbpack pack .\package.xml -v 1.0.1` to create a new version of the package then push it with the above command after editing the path to the new package.
 :::
 
@@ -408,13 +412,14 @@ Not easy enough for you? Let's try automating this entire thing with Github acti
 
 If you think back to the beginning when we set up our sites using the Package Templates you may remember that by default you get a Github action installed as well.
 
-If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file. 
+If you check out the `~/.github/workflows` folder in your solution, you will see there is a readme file and a build.yml file.
 
 The build.yml file is used by Github actions, which will perform some tasks for you when certain criteria are met. If you haven't worked with continuous integration and deployment (CI/CD) before, then this may seem like magic - but don't worry we will run through the commands.
 
 The build.yml file contains several things, let's have a quick overview:
 
 Line 14-17:
+
 ```yml
 on:
   push:
@@ -450,7 +455,7 @@ Ensure you have set a Github secret with the name `UMBRACO_DEPLOY_KEY` and the v
 
 Then make sure it is added and committed locally:
 
-```
+```cs
 git add .
 git commit -m "Enable umbpack push in GH action"
 git push
@@ -458,7 +463,7 @@ git push
 
 Your solution and Github repo are now in sync, and the umbpack commands in the Github action are enabled and ready to run. Final step is to create a release tag and push it to Github:
 
-```
+```cs
 git tag release/1.0.0
 git push origin release/1.0.0
 ```
@@ -471,19 +476,19 @@ If you want to ensure that older versions of your package are archived when you 
 
 Archiving only the previous current package:
 
-```
+```cs
 -a current
 ```
 
 Archiving all other packages before adding the new one
 
-```
+```cs
 -a *
 ```
 
 Archiving all packages named `DashboardPackage` with a version of 1.2.x and 2.2.x:
 
-```
+```cs
 -a DashboardPackage_1.2.*, DashboardPackage_2.2.*
 ```
 
@@ -493,8 +498,6 @@ In our case we don't expect there to ever be more than 1 "active" version at onc
 - name: Push to Our
   run: umbpack push -k ${{ secrets.UMBRACO_DEPLOY_KEY }} ${{ env.Output }}\PackageWorkshopDashboard_${{ steps.get_tag.outputs.VERSION }}.zip -a *
 ```
-
-
 
 <!-- Image and link sources -->
 [team-logo]: images/U_Package_team.png "Package team logo"
