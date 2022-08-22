@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
 ---
 
 # Media Picker
@@ -109,32 +109,61 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 }
 ```
 
-## Using crops
+## Using local crops
 
-Both local and global crops are retrieved using the method `GetCropUrl`. If crops with identical aliases are defined both locally and globally, the locally defined crops are always prioritized by `GetCropUrl`.
+Local image crops are stored and retrieved differently than global crops. Below are two examples of how to retrieve local crops.
 
-The following is an example of how to retrieve a crop from a `MediaWithCrops` entry:
+### Using GetLocalCropUrl
 
 ```csharp
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@entry.GetCropUrl("cropAlias")"/>
+        <img src="@entry.GetLocalCropUrl("cropAlias")"/>
     }
 }
 ```
 
-### Explicitly retrieving global crops
-
-You can retrieve globally defined crops explicitly by using `GetCropUrl` on the `UrlHelper`:
+### Using UrlHelper
 
 ```csharp
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@Url.GetCropUrl(entry, "cropAlias")"/>
+        <img src="@Url.GetCropUrl(entry.LocalCrops, "cropAlias")"/>
     }
 }
+```
+
+## Use global crops
+
+Global image croppings are crops stored on the Media Item, by the Property Editor `Image Cropper`, making it shared between all usages of the media Item.
+
+The global crops are configured on the DataType of the `umbracoFile` property on the Media Type `Image`
+
+[Read about the Image Cropper here](../Image-Cropper/index.md)
+
+### Using GetCropUrl
+
+```csharp
+@{
+    foreach (var entry in Model.Medias)
+    {
+        <img src="@entry.GetCropUrl("cropAlias")" />
+    }
+}
+```
+
+### Using UrlHelper
+
+```csharp
+@{
+    foreach (var entry in Model.Images)
+    {
+        <img src="@Url.GetCropUrl(entry, "cropAlias")" />
+    }
+}
+
 ```
 
 ### Add values programmatically
