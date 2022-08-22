@@ -69,7 +69,7 @@ By default, the following Field Types are available:
     ![Title and description](images/titleanddescription-v9.png)
 
 - **Rich Text**:
-    Displays read-only formatted text that can be used to provide additional copy within a form.
+    Displays read-only formatted text that can be used to provide additional information and links within a form.
 
     ![Rich text](images/richtext.png)
 
