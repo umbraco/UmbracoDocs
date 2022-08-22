@@ -34,7 +34,7 @@ To run this tutorial you will need the following:
 
 To install UmbPack and the Umbraco Package templates you can type these commands in your command line:
 
-```cs
+```none
 dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
 ```
 
@@ -42,7 +42,7 @@ dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
 If it says dotnet is an unknown command then you will need to install the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core) first.
 :::
 
-```cs
+```none
 dotnet new --install Umbraco.Tools.Packages.Templates::0.2.5
 ```
 
@@ -54,13 +54,13 @@ The first step when trying to create a package would be to have an Umbraco site 
 
 If you open a command line tool and type in:
 
-```cs
+```none
 dotnet new umbraco-v8-package -h
 ```
 
 It will show you all the options you have for creating a new Umbraco site + package. For now, you should navigate to the folder you want to add this package in and use this command:
 
-```cs
+```none
 dotnet new umbraco-v8-package -n PackageWorkshop -d
 ```
 
@@ -86,7 +86,7 @@ You may have noticed earlier when you created the package site that you added a 
 
 However, since these files are not included in the .Site project you can't see the dashboard yet. If you navigate back to the root folder of the PackageWorkshop you will find a gulpfile.js file. If you run the following commands via a CMD prompt you will get a message that it is watching the App Plugins folder.
 
-```cs
+```none
 npm install
 npm install gulp -g
 gulp
@@ -248,7 +248,7 @@ To share it, and make it easier to manage and deploy updates we will set up a Gi
 
 Create a fresh repo, with no readme, gitignore or license - do not choose a repository template (set to 'No Template'). On the second screen it will give you a command to push an existing repository to the new Github repo, should look like this but with your own user in the link:
 
-```cs
+```none
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
 git branch -M main
 git push -u origin main
@@ -256,7 +256,7 @@ git push -u origin main
 
 If you jump back to your command line in the folder that has the .sln file and the gitignore, you may notice that there is no git repo by default, so let's create one:
 
-```cs
+```none
 git init
 git checkout -b main
 git add .
@@ -265,7 +265,7 @@ git commit -m "Initial commit, dashboard package"
 
 At this point you have your solution in a local git repository, and we can then use the command from Github to push it up:
 
-```cs
+```none
 git remote add origin https://github.com/jmayntzhusen/package-workshop.git
 git branch -M main
 git push -u origin main
@@ -349,7 +349,7 @@ So the XML above will turn into this, which is compatible with the Umbraco packa
 
 Before we try it out using UmbPack, try to run this command in the root of your site:
 
-```cs
+```none
 umbpack pack -h
 ```
 
@@ -357,7 +357,7 @@ The commandline tool will tell you all the options you have when packing up your
 
 For now we don't need to worry about the output directory option, we will let UmbPack save it in the current folder. Likewise, with the name and version override, we will let UmbPack use the name and version we specified in the package.xml file. For the package.xml path we will specify the one in the root we used in the previous step, that points to both the dll file and the App_Plugins folder in the website project.
 
-```cs
+```none
 umbpack pack .\package.xml
 ```
 
@@ -369,7 +369,7 @@ Next up - let's push this package update to Our from the commandline.
 
 To push a package update to Our with UmbPack we need to use the `push` command, so let's have a quick look at the options for that by running:
 
-```cs
+```none
 umbpack push -h
 ```
 
@@ -392,7 +392,7 @@ Once you created your key, make sure to copy and paste it somewhere. We will nee
 
 Now that we have an API key we can try to push our package update to Our Umbraco. This can be done like this:
 
-```cs
+```none
 umbpack push .\PackageWorkshopDashboard_1.0.0.zip -k [Api key here]
 ```
 
@@ -455,7 +455,7 @@ Ensure you have set a Github secret with the name `UMBRACO_DEPLOY_KEY` and the v
 
 Then make sure it is added and committed locally:
 
-```cs
+```none
 git add .
 git commit -m "Enable umbpack push in GH action"
 git push
@@ -463,7 +463,7 @@ git push
 
 Your solution and Github repo are now in sync, and the umbpack commands in the Github action are enabled and ready to run. Final step is to create a release tag and push it to Github:
 
-```cs
+```none
 git tag release/1.0.0
 git push origin release/1.0.0
 ```
@@ -476,19 +476,19 @@ If you want to ensure that older versions of your package are archived when you 
 
 Archiving only the previous current package:
 
-```cs
+```none
 -a current
 ```
 
 Archiving all other packages before adding the new one
 
-```cs
+```none
 -a *
 ```
 
 Archiving all packages named `DashboardPackage` with a version of 1.2.x and 2.2.x:
 
-```cs
+```none
 -a DashboardPackage_1.2.*, DashboardPackage_2.2.*
 ```
 
