@@ -19,6 +19,6 @@ After entering a comment describing the nature of the changes, and submitting th
 
 Tasks can be approved (or cancelled or rejected) from the dashboard or from the content node button drawer.
 
-The workflow dashboard updates to reflect the state of each task, providing an easy overview of a user's submissions and tasks.
+The workflow dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks.
 
 Rejecting a task returns the workflow to the original author, who can update the content and resubmit. The resubmitted content does not restart the workflow, but returns to the stage at which it was rejected.
