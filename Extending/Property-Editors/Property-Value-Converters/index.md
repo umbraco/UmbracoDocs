@@ -100,7 +100,7 @@ A property value can be cached at the following levels:
 
 #### `PropertyCacheLevel.Unknown`
 
-Do not use this cache level unless you know exactly what you're doing.
+Do not use this cache level unless you know exactly what you're doing. We recommend using the `PropertyCacheLevel.Element` level.
 
 #### `PropertyCacheLevel.Element`
 
