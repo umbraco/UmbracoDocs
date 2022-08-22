@@ -7,7 +7,7 @@ versionTo: 8.0.0
 This tutorial will take you through creating a brand new package in Umbraco, distributing it on the [package repository on Our Umbraco](https://our.umbraco.com/packages/), and finally automating the update flow and including it in CI/CD.
 
 :::note
-The content in this article is valid *only* for Umbraco 8. For Umbraco version 9 and above, see the [Creating a Package](../../Extending/Packages/Creating-a-Package/index.md) article.
+The content in this article is valid *only* for Umbraco version 8. For Umbraco version 9 and above, see the [Creating a Package](../../Extending/Packages/Creating-a-Package/index.md) article.
 :::
 
 ## Overview
