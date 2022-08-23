@@ -26,7 +26,7 @@ The `HtmlEmailModel` looks like this:
 
 - {WorkflowType} WorkflowType: an enum value, either 1 or 2, for Publish and Unpublish respectively
 - {DateTime?} ScheduledDate: if a scheduled date exists for the workflow, it is found here
-- {IHtmlString} Summary: a pre-generated representation of the current workflow state (essentially the same data as found in the pre-v1.6.0 email content
+- {IHtmlString} Summary: a pre-generated representation of the current workflow state (the same data as found in the pre-v1.6.0 email content)
 - {WorkflowTaskViewModel} CurrentTask: the view model data for the current workflow task. Comes with a whole lot of useful data, best explored via Intellisense
 - {WorkflowInstanceViewModel} Instance: the view model data for the current workflow. Also best explored via Intellisense
 
