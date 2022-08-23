@@ -149,11 +149,11 @@ Before we can create a Text Page in the __Content__ section, we need to allow th
 
 ![Allowing child nodes](images/v8Screenshots/setPagePermissions.png)
 
-Go to the __Content__ section and click the menu icon (•••) next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a very basic content structure.
+Go to the __Content__ section and click the menu icon (•••) next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a basic content structure.
 
 ![Basic content structure](images/v8Screenshots/createAboutUs.png)
 
-Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
+Document Types are flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
 
 ### More information
 
