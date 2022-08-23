@@ -22,6 +22,10 @@ With Umbraco Deploy (on-premises) you can use the Umbraco Cloud Deployment techn
 
 Architectural overview, extension and configuration guides, the intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
 
+## [Umbraco Plumber](Umbraco-Plumber/index.md)
+
+Umbraco Plumber extends Umbraco's standard publishing model to allow creation of multi-stage approval workflows.
+
 ## [The Licensing Model](The-Licensing-model)
 
 Learn more about the licensing model we use for our licensed products, Umbraco Courier and Umbraco Forms.
