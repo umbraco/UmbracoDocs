@@ -1,18 +1,19 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.0.0
 ---
 
 # Quick start
 
-_This guide will help you get setup quickly using Examine with minimal configuration options. Umbraco ships Examine with 3 indexes: internal, external, and members. The internal index should not be used for searching when returning results on a public website because it includes content that has not been published yet. Instead you can use the external index to get up and running._
+_This guide will help you get set up quickly using Examine with minimal configuration options. Umbraco ships Examine with 3 indexes: internal, external, and members. The internal index should not be used for searching when returning results on a public website because it includes content that has not been published yet. Instead, you can use the external index to get up and running._
 
 ## Performing a search
 
 :::note
-In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
+In the coming examples, the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your existing site.
 :::
 
-The starter kit comes with some Templates, Document Types and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as much more complex searches are possible with Examine.
+The starter kit comes with some Templates, Document Types, and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as many more complex searches are possible with Examine.
 
 We will make it possible to 'search' on the _People_ page, by adding a search bar to the template page: `people.cshtml` - add the following form at the top of the template, but underneath the `<nav>` element:
 
@@ -51,17 +52,17 @@ Right below the form, add the following:
     }
 </div>
 ```
-Here we are getting the request query from the form. If the string is empty we ask them to submit a term, otherwise we will perform the search.
+Here we are getting the request query from the form. If the string is empty, we ask them to submit a term, otherwise, we will perform the search.
 
 ### Examine Search Index
-To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
+To perform the search, we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access its corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
 
 Umbraco ships with three indexes:
 * ExternalIndex - available to use for indexing published unprotected content.
 * InternalIndex - which Umbraco's backoffice search uses.
 * InternalMemberIndex - which Umbraco's Membership implementation uses.
 
-([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
+([You can create your indexes too](../indexing)) if you need to analyze text in a different language for example.
 
 You use a convenient service named the `ExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
 ```csharp
@@ -106,18 +107,18 @@ else
     return;
 }
 ```
-At this point we have chosen to use the External index and it's searcher. 
+At this point, we have chosen to use the External index and its searcher.
 
 :::tip
-We reference the External index by it's alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
+We reference the External index by its alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
 :::
 
-The `searcher` has a CreateQuery method, where you can choose to search content, media or members eg:
+The `searcher` has a CreateQuery method, where you can choose to search content, media, or members eg:
 ```csharp
 searcher.CreateQuery("content")
 ```
 
-From here you can see how we can chain together the logic to perform the search. In the example we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
+From here you can see how we can chain together the logic to perform the search. In the example, we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
 
 ```csharp
 searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm)
@@ -249,5 +250,5 @@ var results = searcher.CreateQuery("content").ParentId(1105).And().Field("bodyTe
 To search through **all descendants of a specific node** by their **bodyText property**, refer to [this article](../examine-events#Adding-the-path-of-the-node-as-a-searchable-field-into-the-index).
 
 :::tip
-If you are familiar with the MVC pattern of working with forms, then have a look at `SurfaceController` documentation. There you can learn how to create a strongly typed form that posts back to a SurfaceController, which then handles the validation of the form post with a custom ViewModel in an MVC-like pattern in Umbraco.
+If you are familiar with the MVC pattern of working with forms, then have a look at `SurfaceController` documentation. There you can learn how to create a strongly-typed form that posts back to a SurfaceController, which then handles the validation of the form post with a custom ViewModel in an MVC-like pattern in Umbraco.
 :::
