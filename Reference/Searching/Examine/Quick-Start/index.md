@@ -33,7 +33,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
 ### Using route hijacking
 
-Now that we can post to the people view, we actually want a bit more control, we probably want a custom ViewModel, with all the search results, when people try to search for something!
+Now that we can post to the people view, we want a bit more control, we probably want a custom ViewModel, with all the search results, when people try to search for something!
 We will use route hijacking by creating a render controller, for more information about route hijacking and render controllers, you can read our documentation: https://our.umbraco.com/documentation/reference/routing/custom-controllers/
 
 Lets start by creating a PeopleController, and letting it derive from `RenderController`, and then adding an Index method.
