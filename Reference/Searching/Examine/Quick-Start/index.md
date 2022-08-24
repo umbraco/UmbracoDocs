@@ -1,5 +1,5 @@
----
-versionFrom: 8.0.0
+﻿---
+versionFrom: 9.0.0
 ---
 
 # Quick start
@@ -22,7 +22,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 -->
 <div>
     <form action="@Model.Url()" method="get">
-        <input type="text" placeholder="Search" id="query" name="query" />
+        <input type="text" placeholder="Search" name="query"/>
         <button>Search</button>
     </form>
 </div>
@@ -30,28 +30,67 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 ...
 ```
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
-### Retrieving the Search Term
+### Using route hijacking
 
-Right below the form, add the following:
+Now that we can post to the people view, we actually want a bit more control, we probably want a custom ViewModel, with all the search results, when people try to search for something!
+We will use route hijacking by creating a render controller, for more information about route hijacking and render controllers, you can read our documentation: https://our.umbraco.com/documentation/reference/routing/custom-controllers/
+
+Lets start by creating a PeopleController, and letting it derive from `RenderController`, and then adding an Index method.
+:::note Its important to name our Controller by the convention `NameOfViewController` so in our case our view is named People, so we call it PeopleController
 ```csharp
-<div>
-    @{
-        var searchTerm = string.Empty;
-        searchTerm = string.IsNullOrEmpty(Request["query"])
-            ? string.Empty
-            : Request["query"];
-        if (searchTerm == string.Empty)
-        {
-            <p>Enter search term</p>
-        }
-        else
-        {
-            //perform the search
-        }
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.Controllers;
+
+
+public class PeopleController : RenderController
+{
+    public PeopleController(
+    ILogger<RenderController> logger,
+    ICompositeViewEngine compositeViewEngine,
+    IUmbracoContextAccessor umbracoContextAccessor)
+    : base(
+        logger,
+        compositeViewEngine,
+        umbracoContextAccessor)
+    {
     }
-</div>
+
+    public override IActionResult Index()
+    {
+        return CurrentTemplate(CurrentPage);
+    }
+}
 ```
-Here we are getting the request query from the form. If the string is empty we ask them to submit a term, otherwise we will perform the search.
+
+Now we have created our controller, and your code will now do the exact same thing as before you created the Controller!
+Lets change that and start adding logic to the index method.
+
+### Adding a Service that handles our search logic
+To search anything from our controller, we first need to create a service we can use, that handles the actual search logic, lets create an interface first.
+
+```csharp
+using Umbraco.Cms.Core.Models.PublishedContent;
+
+public interface ISearchService
+{
+    IEnumerable<IPublishedContent> SearchContentNames(string query);
+}
+
+```
+
+So this method can take in a query string, and then return content that matches!
+Lets create our service that uses this interface
+```csharp
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.UI.Services;
+
+public class SearchService : ISearchService
+{
+    public IEnumerable<IPublishedContent> SearchContentNames(string query) => throw new NotImplementedException();
+}
+```
+:::note Remember to register this service in your Startup.cs file!
 
 ### Examine Search Index
 To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
@@ -63,191 +102,162 @@ Umbraco ships with three indexes:
 
 ([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
 
-You use a convenient service named the `ExamineManager` to retrieve first the Index by its 'alias' and then use the Index to get a reference to the Searcher eg:
+You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index property so we can use the Searcher.
+Lets start by dependency injection this into our Service!
 ```csharp
- if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
-    {
-        var searcher = index.GetSearcher();
-```
-### Creating the Search Query
-With this in mind we begin to update the `else` condition with the following:
+private readonly IExamineManager _examineManager;
 
-```csharp
-else
+public SearchService(IExamineManager examineManager)
 {
-    //perform the search
-    //first we try to get the index, it is the ExternalIndex as we don't want to return unpublished things
-    //it returns the index in the var index
-    //be sure to add "@using Umbraco.Examine;" at the top of the view
-    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
-    {
-        var searcher = index.GetSearcher();
-        var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
-        if (results.Any())
-        {
-            <ul>
-                @foreach (var result in results)
-                {
-                    if (result.Id != null)
-                    {
-                        var node = Umbraco.Content(result.Id);
-                        <li>
-                            <a href="@node.Url()">@node.Name</a>
-                        </li>
-                    }
-                }
-            </ul>
-        }
-        else
-        {
-            <p>No results found for query @searchTerm</p>
-        }
-    }
-    return;
+    _examineManager = examineManager;
 }
 ```
-At this point we have chosen to use the External index and it's searcher. 
+### Creating the Search Query
+With this in mind we begin to update the `SearchContentNames` method with the following:
+
+```csharp
+IEnumerable<string> ids = Array.Empty<string>();
+if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex", out IIndex? index))
+{
+    ids = index.Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", query).Execute()
+        .Select(x => x.Id);
+}
+```
+At this point we have chosen to use the External index and it's searcher.
 
 :::tip
 We reference the External index by it's alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
 :::
 
-The `searcher` has a CreateQuery method, where you can choose to search content, media or members eg:
+The `Searcher` has a CreateQuery method, where you can choose to search content, media or members eg:
 ```csharp
-searcher.CreateQuery("content")
+Searcher.CreateQuery("content")
 ```
 
 From here you can see how we can chain together the logic to perform the search. In the example we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
 
 ```csharp
-searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm)
+Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm)
 ```
-### Execute the Search
 
-Finally calling `.Execute()` at the end of the query logic will trigger the search and return a set of matching search results that we can loop through.
-
-The final template looks like this:
+We are calling `.Execute()` at the end of the query logic will trigger the search and return a set of matching search results that we can loop through.
+We can then select the ids.
+## Using the umbraco helper to get content
+We want to use the UmbracoHelper, so we can use the id to get the actual content.
+Lets inject the umbraco helper into our service!
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
-@using Umbraco.Examine
-@using ContentModels = Umbraco.Web.PublishedModels;
-@{
-    Layout = "master.cshtml";
-}
-@helper SocialLink(string content, string service)
+private readonly IExamineManager _examineManager;
+private readonly UmbracoHelper _umbracoHelper;
+
+public SearchService(IExamineManager examineManager, UmbracoHelper umbracoHelper)
 {
-    if (!string.IsNullOrEmpty(content))
+    _examineManager = examineManager;
+    _umbracoHelper = umbracoHelper;
+}
+```
+
+The final method looks like this:
+```csharp
+public IEnumerable<IPublishedContent> SearchContentNames(string query)
+{
+    IEnumerable<string> ids = Array.Empty<string>();
+    if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex", out IIndex? index))
     {
-        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+        ids = index.Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", query).Execute()
+            .Select(x => x.Id);
+    }
+
+    foreach (var id in ids)
+    {
+        yield return _umbracoHelper.Content(id);
     }
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-<section class="section">
-    <div class="container">
-        <!-- todo: implement department filter -->
-        <!--
-        <nav class="nav-bar nav-bar--center nav-bar--air-bottom">
-            <a class="nav-link nav-link--black nav-link--active" href="">All</a>
-            <a class="nav-link nav-link--black" href="">Marketing</a>
-            <a class="nav-link nav-link--black" href="">Package People</a>
-            <a class="nav-link nav-link--black" href="">Designers</a>
-            <a class="nav-link nav-link--black" href="">Other</a>
-        </nav>
-        -->
-        <div>
-            <form action="@Model.Url()" method="get">
-                <input type="text" placeholder="Search" id="query" name="query" />
-                <button>Search</button>
-            </form>
-        </div>
-
-        <div>
-            @{
-                var searchTerm = string.Empty;
-                searchTerm = string.IsNullOrEmpty(Request["query"])
-                    ? string.Empty
-                    : Request["query"];
-
-                if (searchTerm == string.Empty)
-                {
-                    <p>Enter search term</p>
-                }
-                else
-                {
-                    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
-                    {
-                        var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
-                        if (results.Any())
-                        {
-                            <ul>
-                                @foreach (var result in results)
-                                {
-                                    if (result.Id != null)
-                                    {
-                                        var node = Umbraco.Content(result.Id);
-                                        <li>
-                                            <a href="@node.Url">@node.Name</a>
-                                        </li>
-                                    }
-                                }
-                            </ul>
-                        }
-                        else
-                        {
-                            <p>No results found for query @searchTerm</p>
-                        }
-                    }
-                    return;
-                }
-            }
-        </div>
-        <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Children)
-            {
-                <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
-                    <div class="employee-grid__item__details">
-                        <h3 class="employee-grid__item__name">@person.Name</h3>
-                        @if (!string.IsNullOrEmpty(person.Email))
-                        {
-                            <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
-                        }
-                        <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</section>
 ```
-## Different ways to query
+After getting the ids from our search, we then loop through the list, and return the content.
+
+# Creating a custom viewmodel
+We will now need a custom view model, so that we can pass it to the view.
+```csharp
+using Umbraco.Cms.Core.Models.PublishedContent;
+
+namespace Umbraco.Cms.Web.UI.Models;
+
+public class SearchViewModel : PublishedContentWrapped
+{
+    public SearchViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
+    {
+    }
+
+    public IEnumerable<IPublishedContent> SearchResults { get; set; } = Enumerable.Empty<IPublishedContent>();
+    public bool HasSearched { get; set; }
+}
+```
+
+## Using the service and view model in the controller
+Now that we've created our service that handles the actual search logic and ViewModel, lets look at using it in the controller.
+We will want to update the `Index()` method to get out the queryString from the request, then create a viewmodel and populate the `SearchResults` property by using our service
+```csharp
+public override IActionResult Index()
+{
+    // Get the queryString from the request
+    string queryString = _httpContextAccessor.HttpContext?.Request.Query["query"] ?? string.Empty;
+    // Create the viewModel and pass it to the view
+    SearchViewModel viewModel = new(CurrentPage!, new PublishedValueFallback(_serviceContext, _variationContextAccessor))
+    {
+        SearchResults = _searchService.SearchContentNames(queryString),
+        HasSearched = !string.IsNullOrEmpty(queryString),
+    };
+
+    return CurrentTemplate(viewModel);
+}
+```
+
+## Updating the view to use the viewmodel
+The final thing we need to do is update the view to use our brand new ViewModel, we can do so by changing the `@inherits` to:
+```csharp
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.UI.Models.SearchViewModel>
+```
+Lets now use the ViewModel to display the search results, directly under the form we created earlier, add this:
+```csharp
+<div>
+    @if (Model.SearchResults.Any())
+    {
+        <ul>
+            @foreach (var content in Model.SearchResults)
+            {
+                <li>
+                    <a href="@content.Url()">@content.Name</a>
+                </li>
+            }
+        </ul>
+    }
+    else if(Model.HasSearched)
+    {
+        <p>No results found</p>
+    }
+</div>
+```
+If the SearchResults have any, display all of them, if it does not, and we have used the search function, display `No results found`
+
+# Different ways to query
 Examine has a lot of different ways to query data. Building upon the example from before, here are a few other searches that can be done to get different data:
 ### Search through all nodes
 Let's say you want to search through **all content nodes** by their **file names**. You could amend the query from before like this:
 ```csharp
-var results = searcher.CreateQuery("content").Field("nodeName", searchTerm).Execute();
+Searcher.CreateQuery("content").Field("nodeName", searchTerm).Execute();
 ```
 ### Search using Lucene queries
 To do the search like above, but only use Lucene to query, amend the query from before like this:
 ```csharp
-var results = searcher.CreateQuery().NativeQuery("+__IndexType:content +nodeName:" + searchTerm).Execute();
+Searcher.CreateQuery().NativeQuery("+__IndexType:content +nodeName:" + searchTerm).Execute();
 ```
 ### Search children of a specific node
 To search through **all child nodes of a specific node** by their **bodyText property**, amend the query from before like this:
 ```csharp
-var results = searcher.CreateQuery("content").ParentId(1105).And().Field("bodyText", searchTerm).Execute();
+Searcher.CreateQuery("content").ParentId(1105).And().Field("bodyText", searchTerm).Execute();
 ```
 
 ### Search descendants of a specific home node
 
 To search through **all descendants of a specific node** by their **bodyText property**, refer to [this article](../examine-events#Adding-the-path-of-the-node-as-a-searchable-field-into-the-index).
 
-:::tip
-If you are familiar with the MVC pattern of working with forms, then have a look at `SurfaceController` documentation. There you can learn how to create a strongly typed form that posts back to a SurfaceController, which then handles the validation of the form post with a custom ViewModel in an MVC-like pattern in Umbraco.
-:::
