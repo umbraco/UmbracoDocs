@@ -1,6 +1,6 @@
-# Migrate Umbraco 7 Cloud project to Umbraco 8
+# Migrating Umbraco 7 Cloud project to Umbraco 8
 
-This article will provide detailed steps on how to migrate an Umbraco 7 Cloud project to Umbraco 8.
+This article will provide detailed steps on how to migrate a Umbraco 7 Cloud project to Umbraco 8.
 
 :::warning
 Due to [a known issue](https://github.com/umbraco/Umbraco-CMS/issues/7914), it is currently **not possible to perform a direct migration of your Umbraco 7 Cloud project to the latest Umbraco 8**.
@@ -19,13 +19,13 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/wNIDdgdAt8s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Migrate an Umbraco Cloud project from 7 to 8: Introduction" src="https://www.youtube.com/embed/wNIDdgdAt8s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to 8](https://www.youtube.com/playlist?list=PLgX62vUaGZsGceCXveMkprlDV5a3K94db)
 
 ## Prerequisites
 
-* An Umbraco 7 Cloud project running **the latest version of Umbraco 7**
+* A Umbraco 7 Cloud project running **the latest version of Umbraco 7**
 
 * Make sure Umbraco Forms data is not handled as content
     * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud/#did-you-create-your-project-before-june-2018) for more details on how to check the setting
@@ -58,7 +58,7 @@ Should something fail during the migration, the Development environment can alwa
 
 * Run the Umbraco 8 project locally
 
-* The migration will need to be authorized - Cloud credentials is used for this
+* The migration will need to be authorized - Cloud credentials are used for this
 
 :::note
 If your login doesn't seem to be working, try the following approach:
@@ -77,7 +77,7 @@ Below is an example of how the attribute can look.
 ![Authorize upgrade](images/upgrade-to-8_1.png)
 
 * Click **Continue** to start the migration
-* When the migration is done, login to the backoffice and verify that everything is there
+* When the migration is done, log in to the backoffice and verify that everything is there
 
 :::note
 Please be aware that this is **only a content migration**.
@@ -89,16 +89,16 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more de
 
 ## Step 2: Files migration
 
-* The following files / folders needs to be copied into the Umbraco 8 project
+* The following files/folders need to be copied into the Umbraco 8 project
     * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files, unless changes have been made to these
     * `~/Media`
-    * Any files / folders related to Stylesheets and JavaScripts
-    * Any custom files / folders the Umbraco 7 project uses, that isn't in the `~/Config` or `~/bin`
+    * Any files/folders related to Stylesheets and JavaScripts
+    * Any custom files/folders the Umbraco 7 project uses, that aren't in the `~/Config` or `~/bin`
 
 * If Umbraco Forms is used on the Umbraco 7 project:
     * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 project
 
-* Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
+* Config files need to be carefully merged, to ensure any custom settings are migrating while none of the default configurations for Umbraco 8 is changed
 
 * Run the Umbraco 8 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
@@ -111,7 +111,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more de
 
 * Check `~/data/revision` to ensure all the UDA files have been generated
 
-* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files that was generated
+* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files that were generated
 
 * This check will result in either of the two:
     * `deploy-failed`
@@ -122,7 +122,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more de
 
 ## Step 3: Setup custom code for Umbraco 8
 
-Umbraco 8 is different from Umbraco 7 in many ways. This means that in this step, all custom code, controllers and models needs to be reviewed and rewritten for Umbraco 8.
+Umbraco 8 is different from Umbraco 7 in many ways. This means that in this step, all custom code, controllers, and models need to be reviewed and rewritten for Umbraco 8.
 
 :::note
 Many of the changes have been documented, and the articles are listed here: [Umbraco 8 Documentation Status](../../../v8documentation).
@@ -130,9 +130,9 @@ Many of the changes have been documented, and the articles are listed here: [Umb
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
 :::
 
-### Example of changes that needs to be made
+### Example of changes that need to be made
 
-One of the changes made, is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
+One of the changes made is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
 
 Read more about these changes in the [IPublishedContent section of the Documentation](../../../Reference/Querying/IPublishedContent/).
 

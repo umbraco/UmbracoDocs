@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph - Step 2
@@ -14,7 +14,7 @@ This is done by using compositions to add the functionality in multiple places.
 3. Choose the `Open Graph` Document Type we created and *Submit*.
 4. **Save** the Document Type.
 
-This will add the group and properties from the Open Graph Document Type to the Home Document Type. Follow the same steps for the `Blogpost` Document Type.
+This will add the group and properties from the **Open Graph** Document Type to the **Home** Document Type. Follow the same steps for the `Blogpost` Document Type.
 
 ## Reviewing the changes
 

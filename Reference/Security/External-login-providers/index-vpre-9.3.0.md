@@ -21,7 +21,7 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
  * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
 To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index.md) section.
-An example of configuration for Google Authentication may look like:
+The code example below shows how the configuration for Google Authentication can be done. You can find an example for how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](../Authenticate-with-Active-Directory/index.md) article.
 
 ```Csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -85,3 +85,16 @@ Traditionally a backoffice user will need to exist first and then that user can 
 In this case, you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
 Read more about [auto linking](../auto-linking/index.md).
+
+## How to disable automatic redirection to the Umbraco identity login screen in Umbraco Cloud projects
+
+Since Umbraco Cloud uses Umbraco Identity by default and has automatic redirection to the login screen, you cannot use external login.
+You can disable it in umbraco-cloud.json using the configuration below:
+
+```json
+"Identity": {
+    "AutoRedirectLogin": false 
+  }
+```
+
+**Note:** Make sure that your ClientId, ClientSecret, EnvironmentId and LocalLoginRedirectUri are in place in Identity section, otherwise you may break Umbraco Identity authorization.

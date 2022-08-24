@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-2
-meta-title: Scheduling with hosted services in Umbraco
-meta.Description: Use hosted services to run a background task
-state: complete
-update-links: true
+versionTo: 10.0.0
+meta.title: "Scheduling with hosted services in Umbraco"
+meta.Description: "Use hosted services to run a background task"
 ---
 
 # Scheduling with RecurringHostedServiceBase
@@ -50,7 +48,7 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
             IProfilingLogger profilingLogger,
             ILogger<CleanUpYourRoom> logger,
             IScopeProvider scopeProvider)
-            : base(HowOftenWeRepeat, DelayBeforeWeStart)
+            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _runtimeState = runtimeState;
             _contentService = contentService;
@@ -93,6 +91,18 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 }
 
 ```
+:::note
+If you are using an Umbraco version before v9.4 you can't pass in an instance of `ILogger` in to the base constructor. See the code example below:
+
+```C#
+public CleanUpYourRoom(
+    ...)
+    : base(HowOftenWeRepeat, DelayBeforeWeStart)
+{
+    ...
+}
+```
+:::
 
 ### Registering with extension method
 

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Textarea
@@ -14,7 +15,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character limit
 
-![Textarea Data Type Definition](images/Textarea-Setup-v8.png)
+![Textarea Data Type Definition](images/Textarea-Setup-v10.png)
 
 ### With a character limit
 
@@ -58,6 +59,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 
 @{
@@ -74,5 +76,26 @@ See the example below to learn how a value can be added or changed programmatica
 
     // Save the change
     contentService.Save(content);
+}
+```
+
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234); 
+}
+```
+
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@using Umbraco.Cms.Core.PublishedCache;
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@{
+
+    // Set the value of the property with alias 'description'
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Description).Alias, "This is some text for the text area!");
 }
 ```

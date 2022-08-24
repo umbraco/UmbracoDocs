@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Copying a Page
@@ -14,7 +14,7 @@ You can copy a page in two ways:
 ## Option 1
 
 1. Go to **Content**.
-2. Right-click the page you wish to copy and select **Copy**. Alternatively, click **•••** next to the page and select **Copy**.
+2. Right-click the page you wish to copy and select **Copy**. Alternatively, click **•••** next to the page, select **Do something else** and click **Copy**.
 
     ![Copy Menu 1](images/Copy-menu-v9.png)
 3. A window appears next to the section tree. Here, you can choose where you want to copy the page in the tree structure.

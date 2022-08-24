@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.4.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # List View
@@ -21,8 +21,8 @@ If enabled, editors will be able to see multiple children from a list on a conte
 
 ## Settings
 
-![List view settings example](images/listview-settings.png)
-![List view settings example 2](images/listview-settings-2.png)
+![List view settings example](images/list-view-settings1-v10.png)
+![List view settings example 2](images/list-view-settings2-v10.png)
 
 ### Page Size
 

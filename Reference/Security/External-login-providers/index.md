@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.3.0
+versionTo: 10.0.0
 keywords: oauth, security
 meta.Title: "External login providers"
 meta.Description: "Umbraco supports supports external login providers (OAuth) for performing authentication of your users and members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook."
@@ -21,7 +22,7 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
  * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
 To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index.md) section.
-An example of configuration for Google Authentication for users may look like:
+The code example below shows how the configuration for Google Authentication can be done. You can find an example for how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](../Authenticate-with-Active-Directory/index.md) article.
 
 ```Csharp
 using Umbraco.Cms.Core.DependencyInjection;

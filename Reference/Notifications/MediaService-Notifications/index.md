@@ -1,10 +1,13 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/MediaService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+versionTo: 10.0.0
 ---
 
 # MediaService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [MediaService Events](../Events/MediaService-Events) article instead.
+:::
 
 The MediaService class implements IMediaService. It provides access to operations involving IMedia.
 
@@ -258,4 +261,4 @@ Furthermore, there was no reason to listen for the Creating/Created events becau
 
 #### What do we use instead?
 
-The MediaSavingNotification and MediaSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new with either of those notifications. With the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
+The MediaSavingNotification and MediaSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new with either of those notifications. With the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](/documentation/Reference/Notifications/determining-new-entity.md)

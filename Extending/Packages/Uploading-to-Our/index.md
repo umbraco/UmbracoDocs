@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
+versionTo: 10.0.0
 meta.Title: "Uploading an Umbraco package to Our"
 meta.Description: "Information on how to upload your Umbraco package on Our"
 ---
@@ -77,7 +75,7 @@ This is where you upload your package zip along with any other files you'd like 
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| File Upload | *File upload* | Select the file from your local computer |
+| File Upload | _File upload_ | Select the file from your local computer |
 | Type | Package | This determines where the file gets displayed within your package details page. |
 | Umbraco Version | _Multiple checks_ | It's important to only mark the versions that the file is applicable to. |
 | .NET Framework Version | 4.7.2 | Typically the framework you developed against. If your package doesn't have any code files then select the earliest framework. |

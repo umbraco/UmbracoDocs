@@ -59,7 +59,7 @@ Details on how to implement search capabilities for your Umbraco website using E
 
 Event model covering all major aspects of the system for triggering custom code or automation.
 
-## [Rest APIs](Routing/WebApi/index.md)
+## [Rest APIs](Routing/Umbraco-API-Controllers/index.md)
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
 

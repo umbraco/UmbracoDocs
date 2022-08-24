@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Creating content finders"
 meta.Description: "Information about creating your own content finders"
-state: complete
-verified-against: beta-4
-update-links: false
 ---
 
 # IContentFinder
@@ -14,16 +12,17 @@ To create a custom content finder, with custom logic to find an Umbraco document
 ```csharp
 public interface IContentFinder
 {
-  bool TryFindContent(IPublishedRequestBuilder contentRequest);
+  Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest);
 }
 ```
+
 and use either an Umbraco builder extension, or a composer to add it to it to the `ContentFindersCollection`.
 
 Umbraco runs all content finders in the collection 'in order', until one of the IContentFinders returns true, the request is then handled by that finder, and no further IContentFinders are executed. Therefore the order in which ContentFinders are added to the ContentFinderCollection is important.
 
 The ContentFinder can set the PublishedContent item for the request, or template or even execute a redirect.
 
-### Example
+## Example
 
 This IContentFinders will find a document with id 1234, when the Url begins with /woot.
 
@@ -37,18 +36,17 @@ public class MyContentFinder : IContentFinder
         _umbracoContextAccessor = umbracoContextAccessor;
     }
 
-    public bool TryFindContent(IPublishedRequestBuilder contentRequest)
+    public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
     {
-        // Handle all requests beginning with /woot
         var path = contentRequest.Uri.GetAbsolutePathDecoded();
         if (path.StartsWith("/woot") is false)
         {
-            return false; // Not found
+            return Task.FromResult(false); // Not found
         }
-        
-        if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+
+        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
         {
-            return false;
+            return Task.FromResult(false);
         }
 
         // Have we got a node with ID 1234
@@ -56,12 +54,12 @@ public class MyContentFinder : IContentFinder
         if (content is null)
         {
             // If not found, let another IContentFinder in the collection try.
-            return false;
+            return Task.FromResult(false);
         }
-        
+
         // If content is found, then render that node
         contentRequest.SetPublishedContent(content);
-        return true;
+        return Task.FromResult(true);
     }
 }
 ```
@@ -115,7 +113,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-
 #### Composer
 
 ```csharp
@@ -142,6 +139,7 @@ namespace RoutingDocs.ContentFinders
 }
 
 ```
+
 :::note
 In Umbraco 7 there existed an IContentFinder that would find content and display it with an 'alternative template' via a convention. This could be to avoid the ugly `?alttemplate=blogfullstory` appearing on the querystring of the url when using the alternative template mechanism. Instead the Url could follow the convention of `/urltocontent/altemplatealias`. 
 
@@ -150,7 +148,7 @@ Eg: `/blog/my-blog-post/blogfullstory` would 'find' the `/blog/my-blog-post` pag
 In Umbraco 9 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behavior by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IComposer`, or Umbraco builder extension (see above example).
 :::
 
-# NotFoundHandlers
+## NotFoundHandlers
 
 To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)
 
@@ -176,30 +174,34 @@ namespace RoutingDocs.ContentFinders
             _umbracoContextAccessor = umbracoContextAccessor;
         }
         
-        public bool TryFindContent(IPublishedRequestBuilder contentRequest)
+        public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
         {
             // Find the root node with a matching domain to the incoming request
             var allDomains = _domainService.GetAll(true).ToList();
             var domain = allDomains?
-                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority 
-                || f.DomainName == $"https://{contentRequest.Uri.Authority}"
-                || f.DomainName == $"http://{contentRequest.Uri.Authority}");
-                
+                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
+                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+
             var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
 
-            if(!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+            if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
             {
-                return false;
+                return Task.FromResult(false);
             }
+
+            if (umbracoContext.Content == null)
+                return new Task<bool>(() => contentRequest.PublishedContent is not null);
+
             var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
 
             if (siteRoot is null)
             {
-                return false;
+                return Task.FromResult(false);
             }
 
             // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            var notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode is not null)
             {
@@ -207,7 +209,7 @@ namespace RoutingDocs.ContentFinders
             }
 
             // Return true or false depending on whether our custom 404 page was found
-            return contentRequest.PublishedContent is not null;
+            return Task.FromResult(contentRequest.PublishedContent is not null);
         }
     }
 }
@@ -223,7 +225,7 @@ public void ConfigureServices(IServiceCollection services)
         .AddWebsite()
         .AddComposers()
         // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>();
+        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
         .Build();
 }
 ```

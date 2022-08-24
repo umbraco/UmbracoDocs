@@ -27,7 +27,7 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/j81pNEMMA8c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Contributing to Umbraco: Documentation and versioning" src="https://www.youtube.com/embed/j81pNEMMA8c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Prerequisites
 

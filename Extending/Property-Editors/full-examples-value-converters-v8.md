@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Content Picker Value Converter Example #
+# Content Picker Value Converter Example
 
 ```csharp
 using System;

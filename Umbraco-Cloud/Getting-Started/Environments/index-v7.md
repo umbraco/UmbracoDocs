@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Technical overview of an Umbraco Cloud environment

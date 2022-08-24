@@ -4,6 +4,12 @@ versionFrom: 7.0.0
 
 # Build your own editor
 
+:::note
+The samples in this section have not been verified against the latest version of Umbraco.
+
+A new Property Editor called the **Block based Grid editor** will soon be available as a substitute for the existing Grid Layout editor. For more information, see the [Block based Grid editor for Umbraco CMS](https://umbraco.com/products/roadmap/) in the Umbraco Roadmap.
+:::
+
 Create a file in `/App_Plugins/yourpackage/editor.html` and add the following to the editor.html file:
 
 ```html

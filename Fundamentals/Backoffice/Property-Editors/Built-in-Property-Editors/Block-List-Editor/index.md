@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Block List
@@ -167,7 +168,7 @@ With ModelsBuilder:
 
 ```
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/ltZTgfIoCtg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Working with Block List Editor" src="https://www.youtube.com/embed/ltZTgfIoCtg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### 2. Build your own rendering
 
@@ -279,7 +280,7 @@ If you'd like to display properties of `settings`, you can access these by `bloc
 
 To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
 ```html
-<button  type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)"  class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" > 
+<button  type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)"  class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
     <h2 ng-bind="block.data.headline"></h2>
     <p ng-bind="block.data.description"></p>
 </button>
@@ -463,7 +464,9 @@ public class Person
 After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
 
 ```csharp
-
+            @using Umbraco.Cms.Core.Services;
+            @using Umbraco.Cms.Core;
+            @using Umbraco.Cms.Core.Models;
             @inject IContentService Services;
             @inject IContentTypeService _contentTypeService;
 

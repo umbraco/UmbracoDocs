@@ -1,18 +1,20 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Dependency Exception
 
-Sometimes you will get an error that looks like this:
+if you delete a content node which might have a reference to another node and you delete the node you are referencing to, you will encounter the following error when trying to transfer the node:
 
-    The source environment has thrown a Umbraco.Deploy.Exceptions.DependencyException with message: Entity umb://document/f2820c7766654300bc7aebf34a24def1 ("Contact page" - nodeId 1234) depends on entity umb://document/051ad11bbd8a4c2c81629c1d01d604f8 ("About Us") which cannot be deployed, because it is in the recycle bin.
+![Dependecy exception](images/dependency-exception-updated.png)
 
-Or like this:
+The error indicates that on the `Home page`, a picker, for example, refers to another content item. This other content item has either been deleted or is in the recycle bin in the environment you're deploying from.
 
-    The source environment has thrown a Umbraco.Deploy.Exceptions.DependencyException with message: Entity umb://document/f2820c7766654300bc7aebf34a24def1 ("Contact page" - nodeId 1234) depends on entity umb://document/051ad11bbd8a4c2c81629c1d01d604f8 which cannot be deployed, because it does not exist.
-
-These errors indicate that on the `Contact page` has (for example) a picker on it that refers to another content item. This other content item has either been deleted or is in the recycle bin on the environment you're deploying from.
+:::tip
+If you try and delete a node that references another one, you will be warned in the backoffice that it has a reference and you might encounter issues if you delete it:
+![dependency warning](images/dependency-exception-warning.png)
+:::
 
 ## How to fix your dependency error
 

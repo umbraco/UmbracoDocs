@@ -1,11 +1,17 @@
 ---
 versionFrom: 8.0.0
-needsv9Update: "true"
+versionTo: 8.0.0
 ---
 
 # Examine Events
 
 _Examine events are ways to modify the data being indexed._
+
+:::note
+This document has been verified for Umbraco 8.
+
+If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+:::
 
 ## TransformingIndexValues
 

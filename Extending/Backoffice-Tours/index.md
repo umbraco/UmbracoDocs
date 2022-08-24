@@ -1,8 +1,6 @@
 ---
-updated-links: false
-state: partial
 versionFrom: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
@@ -17,13 +15,13 @@ They are managed in a JSON format and stored in files on disk. The filenames sho
 
 The tour functionality will load information from multiple locations.
 
-- **Core tours and custom tours**
+- **Core tours**
 
-    The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. This is also the recommended location for storing your own tour files.
+    The tour that ship with Umbraco are embedded into the CMS assemblies.
 
-- **Plugin tours**
+- **Custom tours**
 
-    When you want to include a tour with your custom plugin/package you can store the custom json tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are [creating a package](../Packages/Creating-a-Package/index.md).
+    Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](../Packages/Creating-a-Package/index.md).
 
 ## The JSON Format
 
@@ -198,7 +196,7 @@ Below is an explanation of each of the properties on the tour step object.
 
 - **eventElement**
 
-    A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
+    A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want the user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
 
     The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
@@ -213,6 +211,12 @@ Below is an explanation of each of the properties on the tour step object.
 It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection.
 
 Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
+
+:::note
+The option to filter tours based on the file names, `AddFilterByFile`, is currently not working.
+
+The [issue is reported](https://github.com/umbraco/Umbraco-CMS/issues/12667), and this document will be updated as soon as it has been resolved.
+:::
 
 ```c#
 using System.Text.RegularExpressions;
@@ -232,7 +236,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeTours
 
             // Filter any tours in the file that is custom-tours.json
             // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/
-            // OR at /Config/BackOfficeTours/
             builder.TourFilters()
                 .AddFilterByFile("custom-tours.json");
 

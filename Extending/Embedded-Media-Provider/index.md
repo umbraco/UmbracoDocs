@@ -1,13 +1,12 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
+versionTo: 10.0.0
 meta.Title: "Umbraco Embed Providers"
 meta.Description: "A guide to creating a custom embed providers in Umbraco"
 
 ---
 
-# Embed Providers
+# Embedded Media Providers
 
 The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel to enable editors to paste the Url of a third-party media resource to embed in content.
 
@@ -39,7 +38,7 @@ The list of available default Embed Providers in an Umbraco install are as follo
 * Hulu
 * Giphy
 
-You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://our.umbraco.com/apidocs/v9/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
+You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
 
 ## Configuring a new provider
 

@@ -97,15 +97,15 @@ namespace Umbraco8.Components
 }
 ```
 
-See: [Custom routing documentation](../../Reference/Routing/custom-routes-v8.md)
+See: [Custom routing documentation](../../Reference/Routing/Custom-Routes/index-v8.md)
 
 :::note
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers-v8.md). 
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/Custom-Controllers/index-v8.md).
 :::
 
 ### PublishedRequest.Prepared event
 
-You can subscribe to the 'Prepared' event which is triggered right after the point when the `PublishedRequest` is prepared - (but before it is ready to be processed). Here modify anything in the request before it is processed, eg. content, template, etc: 
+You can subscribe to the 'Prepared' event which is triggered right after the point when the `PublishedRequest` is prepared - (but before it is ready to be processed). Here modify anything in the request before it is processed, eg. content, template, etc:
 
 ```csharp
 using Umbraco.Core.Composing;

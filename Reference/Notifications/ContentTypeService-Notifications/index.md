@@ -1,10 +1,13 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events/ContentTypeService-Events"
 versionFrom: 9.0.0
-verified-against: beta-2
+versionTo: 10.0.0
 ---
 
 # ContentTypeService Notifications
+
+:::note
+If you are using Umbraco 8 or any lower version, please refer to the [ContentTypeService Events](../Events/ContentTypeService-Events) article instead.
+:::
 
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType
 
@@ -42,7 +45,7 @@ The ContentTypeService class implements IContentTypeService. It provides access 
     </td>
     <td>
     Published when ContentTypeService.Save is called in the API, after the entities has been saved.<br/>
-    NOTE: <em><a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br/>
+    NOTE: <em><a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em><br/>
     SavedEntities: Gets the collection of saved IContentType objects.
     </td>
   </tr>

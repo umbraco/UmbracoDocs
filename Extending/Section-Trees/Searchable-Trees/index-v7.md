@@ -61,7 +61,7 @@ A `SearchResultItem` consists of a Score (a Float value) identifying its relevan
 
 #### Example implementation of ISearchableTree
 
-If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees-v7.md)) then we could implement searchability by creating the following c# class in our site:
+If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../Trees/index-v7.md)) then we could implement searchability by creating the following c# class in our site:
 
 ```csharp
 public class FavouriteThingsSearchableTree : ISearchableTree

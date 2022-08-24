@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Manage Environments
@@ -15,7 +15,7 @@ When working with an Umbraco Cloud project, you can add or remove extra environm
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to add an additional Umbraco Cloud environment" src="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Adding or Removing Environments
 
@@ -25,14 +25,16 @@ __Important:__ *After* adding a Development environment, you need to do a fresh 
 
 You can find the interface for adding or removing environments from your project page here:
 
-![Adding and environments](images/Manage-environments.png)
+![Adding and environments](images/Manage-environments-v10.png)
 
-On the **Manage Environments** page you will be able to add or remove an environment. If you wish to remove an environment, you will be prompted to type in the environment alias.
+On the **Manage Environments** page, you can add or remove an environment. If you wish to remove an environment, you will be prompted to type in the environment alias.
 
-Be aware that there is a specific order that the environments are being added in. You will need to have a Development environment before you can have a Staging environment.
+:::note
+There is a specific order that the environments are being added. You will need to have a Development environment before you can have a Staging environment.
+:::
 
 If you have both a Development and a Staging environment and need to remove the Development environment, then you will first need to remove the Staging environment before you can remove the Development environment.
 
-![Environment overview](images/Environments.png)
+![Environment overview](images/Environments-v10.png)
 
-Once you have added or removed the environment, it will take a couple of minutes for the Cloud to set it all up, and then you will be ready to use it.
+Once you have added or removed an environment, it will take a couple of minutes for Cloud to set it all up, and then you will be ready to use it.

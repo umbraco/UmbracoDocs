@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Defining and Attaching Prevalue Sources
@@ -31,16 +31,30 @@ Depending on the **Type** you choose, you'll need to provide some additional set
     ![Type settings](images/typesettings.png)
 2. Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
-        example value 1
-        example value 2
-        example value 3
-        example value 4
-        example value 5
+```
+example value 1
+example value 2
+example value 3
+example value 4
+example value 5
+```
 
 3. Select **Pick File** and choose the text file you just created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
 5. If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
     ![Preview](images/preview.png)
+
+If you would like to have different values presented to your users from the value stored, you can provide two values per line, separated with a vertical bar (|), e.g.:
+
+```
+1|example value 1
+2|example value 2
+3|example value 3
+4|example value 4
+5|example value 5
+```
+
+In this case the user would pick from a list showing the descriptions, but the single integer values would be stored with the record.  This can be useful if the recorded entries are used in any subsequent workflows or business processes, where particular values, that aren't appropriate for the user to select from, are required.
 
 ## Attaching a Prevalue Source to a Field
 

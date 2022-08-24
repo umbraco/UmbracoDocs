@@ -40,4 +40,4 @@ You can override the `Index` method to perform any customisations that you requi
 ## Custom controller selection
 
 Custom controllers can be created to execute for different Umbraco Document Types and Templates. This is termed 'Hijacking Umbraco Routes'.
-For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md).
+For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/Custom-Controllers/index.md).

@@ -2,9 +2,10 @@
 meta.Title: "Hosting v9+ in IIS"
 meta.Description: "Information on hosting Umbraco v9+ on IIS"
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
-# Hosting v9+ in IIS
+# Hosting Umbraco 9+ in IIS
 
 ## Configuring IIS for .NET 5
 
@@ -17,7 +18,9 @@ versionFrom: 9.0.0
 
 You can use the dotnet CLI to compile and collate all files required for hosting
 
-    dotnet publish -o ../deployment-artefacts -f net5.0
+```none
+dotnet publish -o ../deployment-artefacts -f net5.0
+```
 
 Alternatively you can use folder or ftp publishing in Visual Studio to compile and collate all required files to for the application to run.
 
@@ -47,14 +50,14 @@ Find the line named *environmentVariables* and open the dialog to add environmen
 
 IIS can host .NET 5 applications using 2 different hosting models
 
-- In-process (default) - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0
-In-process hosting runs an .NET 5 app in the same process as its IIS worker process
-- Out-of-process - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/out-of-process-hosting?view=aspnetcore-5.0 - to enable this model you need to edit your .csproj file and add:
+- [In-process (default)](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0)
+- In-process hosting runs an .NET 5 app in the same process as its IIS worker process
+- [Out-of-process](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/out-of-process-hosting?view=aspnetcore-5.0) - to enable this model you need to edit your .csproj file and add:
 
-```
-    <PropertyGroup>
-      <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    </PropertyGroup>
+```js
+<PropertyGroup>
+  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+</PropertyGroup>
 ```
 
 Out-of-process .NET 5 apps run in a separate from the IIS worker process. The module controls the management of the Kestrel server and requests are proxied between them.

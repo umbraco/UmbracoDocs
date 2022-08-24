@@ -1,10 +1,8 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Partial View Macro Files"
 meta.Description: "Information on working with partial view macro files in Umbraco"
-verified-against: 9.3.1
-updated-links: true
 ---
 
 # Partial View Macro Files

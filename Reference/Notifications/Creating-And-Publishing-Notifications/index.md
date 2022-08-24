@@ -1,15 +1,12 @@
 ---
-versionFrom: 9.0.0
-verified-against: rc-2
+versionFrom: 10.0.0
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
-state: complete
-update-links: true
 ---
 
-# Creating a custom notification
+# Creating And Publishing Custom Notifications
 
-There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../Scheduling/index.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
+There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../../Scheduling/index.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
 
 For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
 
@@ -72,19 +69,19 @@ namespace Umbraco.Cms.Web.UI
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
         private readonly IContentService _contentService;
-        private readonly IScopeProvider _scopeProvider;
+        private readonly ICoreScopeProvider _coreScopeProvider;
         private readonly IEventAggregator _eventAggregator;
         private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
         private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
 
         public CleanUpYourRoom(
             IContentService contentService,
-            IScopeProvider scopeProvider,
+            ICoreScopeProvider coreScopeProvider,
             IEventAggregator eventAggregator)
             : base(HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _contentService = contentService;
-            _scopeProvider = scopeProvider;
+            _coreScopeProvider = coreScopeProvider;
             _eventAggregator = eventAggregator;
         }
 
@@ -93,7 +90,7 @@ namespace Umbraco.Cms.Web.UI
             // This will be published immediately
             _eventAggregator.Publish(new CleanYourRoomStartedNotification());
 
-            using IScope scope = _scopeProvider.CreateScope();
+            using IScope scope = _coreScopeProvider.CreateScope();
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
 
             if (_contentService.RecycleBinSmells())

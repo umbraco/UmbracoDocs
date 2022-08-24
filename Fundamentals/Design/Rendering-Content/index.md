@@ -2,6 +2,7 @@
 meta.Title: "Rendering content"
 keywords: content razor v9 version9
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Rendering Content
@@ -44,7 +45,7 @@ To render the content from the Grid, see the [Render Grid in Template](../../Bac
 
 ### Using fall-back methods
 
-The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content, when the property value does not exist on the current content item.
+The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content when the property value does not exist on the current content item.
 
 To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedContent;` directive.
 
@@ -66,7 +67,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
     @Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
     ```
 
-- We can also combine these options to create some more sophisticated scenarios.  For example we might want to fall-back via language first, and if that doesn't find any populated content, then try to find a value by traversing through the ancestors of the tree.  We can do that using the following syntax, with the order of the fall-back options provided determining the order that content will be attempted to be retrieved:
+- We can also combine these options to create some more sophisticated scenarios.  For example, we might want to fall-back via language first, and if that doesn't find any populated content, then try to find a value by traversing through the ancestors of the tree.  We can do that using the following syntax, with the order of the fall-back options provided determining the order that content will be attempted to be retrieved:
 
     ```csharp
     @Model.Value("pageTitle", "fr", fallback: Fallback.To(Fallback.Language, Fallback.Ancestors))
@@ -98,7 +99,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
 
 ## Query content
 
-In many cases you want to do more than display values from the current page, like creating a list of pages in a navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
+In many cases, you want to do more than display values from the current page, like creating a list of pages in the navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
 
 You can do this by querying content relative to your current page in template views:
 

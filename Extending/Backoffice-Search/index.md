@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: partial
-updated-links: false
-verified-against: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---
@@ -17,7 +15,7 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
 
-An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item. 
+An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item.
 
 ## Adding custom properties to backoffice search
 
@@ -54,7 +52,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch
     }
 }
 ```
-
 
 ```csharp
 using System.Collections.Generic;

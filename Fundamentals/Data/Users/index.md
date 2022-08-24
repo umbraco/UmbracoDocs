@@ -2,8 +2,7 @@
 meta.Title: "Users in Umbraco"
 meta.Description: "This guide will explain how to define, create, and manage users in the backoffice"
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 
 ---
 
@@ -41,12 +40,12 @@ By default, the User groups available to new users are **Administrators**, **Wri
 - **Editor**: Allowed to create and publish content items or nodes on website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
 - **Writer**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish** and **Update**).
 - **Translator**: Are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
-- **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-data/) article.
+- **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-data-on-members/index.md) article.
 
 ## Creating a User Group
 
 :::note
-When creating a custom user group, remember to set a start node for content for the user group. If you don't assign a start node then users assigned to the user group will not be able to login to the backoffice.
+When creating a custom user group, remember to set a start node for content for the User Group. If you don't assign a start node then users assigned to the User Group will not be able to login to the backoffice.
 :::
 
 You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.

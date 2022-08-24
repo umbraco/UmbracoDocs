@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "URL Redirect Management"
 meta.Description: "URL redirect management in Umbraco"
-state: complete
-verified-against: rc-1
-update-links: true
 ---
 
 # URL Redirect Management
@@ -13,7 +11,7 @@ update-links: true
 
 Whenever a document is published, and this causes changes to its URL (and any of its descendants' URLs), Umbraco makes a note of the old URLs. Whenever an incoming request is served and the default content finders cannot find a matching published document, Umbraco checks whether the URL matches one of these saved URLs. If a match is found, Umbraco returns a "301 Redirect" response pointing to the new URL of the document.
 
-The URL Redirect Management functionality does not support rewriting "rules" (e.g. regular expressions), nor complex scenarios (e.g. changing the culture and hostnames configuration). There are already powerful solutions to deal with these types of situations, such as Microsoft's own [Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) module for IIS. Since netcore is decoubled from the webserver hosting it, your approach for URL rewriting, outside what Umbraco provide out of the box, will depend on what you use to host your solutions, but for more info on the IIS Url Rewrite module have a look at the [official documentation](https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference).
+The URL Redirect Management functionality does not support rewriting "rules" (e.g. regular expressions), nor complex scenarios (e.g. changing the culture and hostnames configuration). There are already powerful solutions to deal with these types of situations, such as Microsoft's own [Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) module for IIS. Since netcore is decoupled from the webserver hosting it, your approach for URL rewriting, outside what Umbraco provide out of the box, will depend on what you use to host your solutions, but for more info on the IIS Url Rewrite module have a look at the [official documentation](https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference).
 
 ## Dashboard
 

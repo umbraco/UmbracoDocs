@@ -2,6 +2,7 @@
 meta.Title: "Information on server setup for Umbraco hosting"
 meta.Description: "This section describes different ways of setting up servers for use with Umbraco"
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Server setup
@@ -30,4 +31,4 @@ Best practices for running Umbraco on Azure Web Apps.
 
 ## [Runtime modes](runtime-modes.md)
 
-To ensure the best developing / edititing / production experience with Umbraco.
+The runtime mode setting optimizes Umbraco for the best development experience or optimal production environment.

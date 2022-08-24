@@ -1,7 +1,7 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 ---
- 
+
 # Migrating an Existing Site to Umbraco Cloud
 
 Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
@@ -16,6 +16,9 @@ These are the steps you need to go through to complete the migration successfull
 6. [Move and Merge files](#6-move-and-merge-files)
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
+
+## Video tutorial
+<iframe width="800" height="450" title="Migrating an existing site to Umbraco Cloud" src="https://www.youtube.com/embed/w4VaUnBJ52s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 If you prefer following a written guide, continue to read below.
 
@@ -56,7 +59,7 @@ After making sure that your existing site meets all the requirements for being m
 
 ### Upgrade to the latest Umbraco version
 
-The first order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco 9**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
+The first order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
@@ -109,7 +112,7 @@ If you on your existing site have been working with members and made changes to 
 
 ## 5. Clone down the Cloud project
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Cloning down your Umbraco Cloud project" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 With your Umbraco Cloud project ready for migration, it is time to clone down the project to your local machine.
 
@@ -131,9 +134,9 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 
 3. Merge your Program.cs and Startup.cs with the one from your existing site
 
-4. If you are using SQL Server Express (LocalDB)
-    * Make sure the SQL Server Express database from your project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
-    * You can find it in `/umbraco/Data/umbraco.sdf`
+4. If you are using SQLite
+    * Make sure the `Umbraco.sqlite.db`, `Umbraco.sqlite.db-shm` and `Umbraco.sqlite.db-wal` files from your project replaces the ones provided with your Umbraco Cloud project
+    * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
 5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
 That's it! Now that you've merged your existing site with the local clone of the Cloud project, you need to make sure the project runs and verify that

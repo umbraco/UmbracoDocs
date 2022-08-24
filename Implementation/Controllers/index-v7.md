@@ -26,7 +26,7 @@ SurfaceControllers are auto-routed meaning that you don't have to add/create you
 
 All implementations of SurfaceControllers inherit from the base class `Umbraco.Web.Mvc.SurfaceController`.
 
-See [Reference documentation on SurfaceControllers for full details](../../Reference/Routing/surface-controllers.md)
+See [Reference documentation on SurfaceControllers for full details](../../Reference/Routing/Surface-Controllers/index.md)
 
 ## Umbraco Api Controllers
 
@@ -34,7 +34,7 @@ An Umbraco API Controller is an ASP.NET WebApi controller that is used for creat
 
 All implementations of Umbraco Api Controllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
 
-See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/WebApi/index.md)
+See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/Umbraco-API-Controllers/index.md)
 
 ## Umbraco Authorized Controllers and Attributes
 
@@ -84,4 +84,4 @@ There are a few properties that exist for the attribute to give you more control
 
 ### Routing
 
-For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/WebApi/authorization).
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/Umbraco-API-Controllers/authorization.md).

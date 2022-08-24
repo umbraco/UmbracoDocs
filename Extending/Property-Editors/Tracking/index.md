@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Property Editors - Tracking References"
 meta.Description: "Guide on how to implement tracking entity references for Property Editors in Umbraco"
 ---
@@ -19,18 +20,29 @@ When a content node is saved it will save the entity references as relations.
 1. Go to the **Media** section.
 2. Select a media item and click the **Info** tab.
 
-    ![Viewing media references](media-references-v9.png)
+    ![Viewing media references](images/media-references-v9.png)
 
 ### For Content Nodes
 
 1. Go to the **Settings** section.
 2. Under the **Relation Types** folder, select **Related Document** relations and click **Relations**.
 
-    ![Viewing document references](document-references-v9.png)
+    ![Viewing document references](images/document-references-v9.png)
+
+### For Data Types
+
+1. Go to the **Settings** section.
+2. Expand the **Data Types** folder.
+3. Select the **Data Type** you wish to view the references
+4. Navigate to the **Info** tab.
+
+    ![Viewing Data Type references](images/data-types-references-v10.png)
 
 ## Example
 
 The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
+
+**Umbraco 9**
 
 ```csharp
 using System;
@@ -63,6 +75,58 @@ namespace Umbraco.Web.PropertyEditors
 
 
         public IEnumerable<UmbracoEntityReference> GetReferences(object value)
+        {
+            // Value contains the raw data that is being saved for a property editor
+            // You can then analyse this data be it a complex JSON structure or something more trivial
+            // To add the chosen entities as references (as any UDI type including custom ones)
+
+            // A very simple example
+            // This will always ADD a specific media reference to the collection list
+            // When it's a ContentPicker datatype
+            var references = new List<UmbracoEntityReference>();
+            var udiType = ObjectTypes.GetUdiType(UmbracoObjectTypes.Media);
+            var udi = Udi.Create(udiType, Guid.Parse("fbbaa38d-bd93-48b9-b1d5-724c46b6693e"));
+            var entityRef = new UmbracoEntityReference(udi);
+            references.Add(entityRef);
+            return references;
+        }
+    }
+}
+```
+
+**Umbraco 10**
+
+```csharp
+using System;
+using System.Collections.Generic;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.Editors;
+using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Extensions;
+
+namespace Umbraco.Web.PropertyEditors
+{
+
+     public class ExampleComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.DataValueReferenceFactories().Append<TrackingExample>();
+        }
+    }
+
+    public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
+    {
+        public IDataValueReference GetDataValueReference() => this;
+
+        // Which Data Editor (Data Type) does this apply to - in this example it is the built in content picker of Umbraco
+        public bool IsForEditor(IDataEditor? dataEditor) => dataEditor?.Alias == Constants.PropertyEditors.Aliases.ContentPicker;
+
+
+        public IEnumerable<UmbracoEntityReference> GetReferences(object? value)
         {
             // Value contains the raw data that is being saved for a property editor
             // You can then analyse this data be it a complex JSON structure or something more trivial

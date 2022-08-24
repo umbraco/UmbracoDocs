@@ -26,7 +26,7 @@ The standard MVC partial view locations will also work:
 
 The ~/Views/RenderMvc location is valid because the controller that performs the rendering in the Umbraco codebase is the: `Umbraco.Web.Mvc.RenderMvcController`
 
-If however you are [Hijacking an Umbraco route](../../Routing/custom-controllers.md) and specifying your own controller to do the execution, then your partial view location can also be:
+If however you are [Hijacking an Umbraco route](../../Routing/Custom-Controllers/index.md) and specifying your own controller to do the execution, then your partial view location can also be:
 
 ~/Views/{YourControllerName}
 

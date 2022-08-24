@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # reCAPTCHA V3
@@ -14,14 +14,16 @@ When adding the field to your form, you can select whether or not to save the sc
 You can configure the settings in the `appSettings.json` file:
 
 ```json
-"Forms": {
-  "FieldTypes": {
-    "Recaptcha3": {
-        "SiteKey": "",
-        "PrivateKey": ""
+"Umbraco"{
+    "Forms": {
+      "FieldTypes": {
+        "Recaptcha3": {
+            "SiteKey": "",
+            "PrivateKey": ""
+          }
+        }
       }
-    }
-  }
+   }
 ```
 
 ## For version 8.x and below

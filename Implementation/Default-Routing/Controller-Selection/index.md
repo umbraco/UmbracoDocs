@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Controller & Action Selection
@@ -65,4 +66,4 @@ Ensure that the controller inherits from the base controller `Umbraco.Cms.Web.Co
 
 ## Custom Controller Selection
 
-You can create Custom controllers for different Document Types and Templates. This is termed 'Hijacking Umbraco Routes'. For details on how this process works, see the [Custom MVC Controllers (Umbraco Route Hijacking)](../../../Reference/Routing/custom-controllers.md) article.
+You can create Custom controllers for different Document Types and Templates. This is termed 'Hijacking Umbraco Routes'. For details on how this process works, see the [Custom MVC Controllers (Umbraco Route Hijacking)](../../../Reference/Routing/Custom-Controllers/index.md) article.

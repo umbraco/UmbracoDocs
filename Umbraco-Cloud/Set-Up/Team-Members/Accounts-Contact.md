@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Account Contacts
@@ -34,4 +34,4 @@ To edit an account contact, do the following:
 
     ![Add account contact form](images/Edit-Account-Contact.gif)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/GnX4svXWE8U?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Adding an Account Contact to your Umbraco Cloud Project" src="https://www.youtube.com/embed/GnX4svXWE8U?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

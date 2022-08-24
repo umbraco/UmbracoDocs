@@ -1,7 +1,5 @@
 ---
-state: complete
-verified-against: 9.0.0
-versionFrom: 9.0.0
+versionFrom: 10.0.0
 meta.Title: "Using Azure Blob Storage for Media and ImageSharp Cache"
 meta.Description: "Setup your site to use Azure Blob storage for media and ImageSharp cache"
 ---
@@ -12,7 +10,7 @@ For Umbraco sites, there are some scenarios when you may want or need to conside
 
 The setup consists of adding a package to your site, setting the correct configuration, and adding the services and middleware. Before you begin you’ll need to create an Azure Storage Account and a container for your media and ImageSharp cache. In this example, we assume your container name is "mysitestorage" and has already been created.
 
-See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) for a quickstart guide on how to create a blob storage container. 
+See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) for a quickstart guide on how to create a blob storage container.
 
 ## Installing the package
 
@@ -25,12 +23,11 @@ Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` N
 
 Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
-```
+```none
 dotnet add package Umbraco.StorageProviders.AzureBlob
 ```
 
 The correct package will have be installed in your project.
-
 
 ## Configuring Blob storage
 
@@ -59,7 +56,9 @@ Open up your `appsettings.json` file and add the connection string and container
 
 Note that in this example, the container name is `mysitestorage`. 
 
-_Tip: You can get your connection string from your Azure Portal under "Access Keys"_
+:::tip
+You can get your connection string from your Azure Portal under "Access Keys".
+:::
 
 ## Setting the services and middleware
 
@@ -80,33 +79,6 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
 #pragma warning restore IDE0022 // Use expression body for methods
 
         }
-```
-
-Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
-
-```C#
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.UseBackOffice();
-            u.UseWebsite();
-            // This enables the Azure Blob storage middleware for media.
-            u.UseAzureBlobMediaFileSystem();
-        })
-        .WithEndpoints(u =>
-        {
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
 ```
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.

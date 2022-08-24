@@ -1,23 +1,24 @@
 ---
 versionFrom: 8.0.0
+versionTo: 10.0.0
 ---
 
-# Clearing cached signatures
+# Clearing Cached Signatures
 
-Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifacts in the database for each environment. The signature is a string based, hashed representation of the serialized artifact.
+Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifact in the database for each environment. The signature is a string-based, hashed representation of the serialized artifact.
 
-Sometimes you might see that Deploy is performing poorly, throwing unexpected issues or the like. In this case a good approach of solving these issues is to clear the cached signatures.
+Sometimes you might see that Deploy is performing poorly, throwing unexpected issues and so on. In this case, a good approach to solving these issues is to clear the cached signatures.
 
-## Clearing cached signatures manually
+## Clearing Cached Signatures Manually
 
-Follow these steps to clear the cached signatures
+Follow these steps to clear the cached signatures:
 
-1. Go to backoffice
-2. Navigate to the **Settings** section
-3. Select the **Deploy** dashboard
-4. In the dropdown under **Deploy Operations** select `Clear cached signatures`
-5. The Deploy engine will clear all cached signatures. The status will change to `Clear signatures pending`
-6. When it's done you'll see the status has changed to `Last deployment operation completed`
-7. Final step is to check that you can deploy the schema - see [**Deploy schema**](../Deploy-schema) article
+1. Go to the Backoffice.
+2. Navigate to the **Settings** section.
+3. Go to the **Deploy** dashboard.
+4. Select **Clear cached signatures** from the **Deploy Operations** dropdown.
+5. Click **Trigger Operation**. The Deploy engine will clear all the cached signatures.
 
-![Clear cached signatures](images/clear-cached-signatures.gif)
+The **Deploy Status** will change to *Clear signatures pending*. Once the operation is done, you'll see the status has changed to `Last deployment operation completed`. To check that you can deploy the schema, see the [**Deploying Schema from Data Files on your Cloud Environments**](../Deploy-schema) article.
+
+![Clear cached signatures](images/clear-cached-signatures-v10.gif)

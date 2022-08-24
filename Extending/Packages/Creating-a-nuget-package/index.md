@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 10.0.0
 meta.Title: "Creating a Nuget version of an Umbraco package"
 meta.Description: "A guide to creating a Nuget version of an Umbraco package"
 ---

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Markdown editor
@@ -12,12 +13,13 @@ This built-in editor allow the user to use the markdown formatting options, from
 
 ## Data Type Definition Example
 
-![Definition Example](images/definition-example.png)
+![Definition Example](images/definition-example-v10.png)
 
-There are two settings available for manipulating the **Markdown editor** property.
+There are three settings available for manipulating the **Markdown editor** property.
 
 * **Preview** toggles if a preview of the markdown should be displayed beneath the editor in the content view.
 * **Default value** is inserted if no content has been saved to the document type using this property editor.
+* **Overlay Size** is used to select the width of the link picker overlay in the content view.
 
 ## Content Example
 
@@ -67,6 +69,7 @@ paste      | Ctrl + V
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
@@ -101,6 +104,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'myMarkdownEditor'

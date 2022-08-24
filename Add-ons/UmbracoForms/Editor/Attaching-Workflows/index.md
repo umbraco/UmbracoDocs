@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Attaching Workflows
@@ -20,10 +20,6 @@ The behaviour to display a message to the user that submitted the form, or to re
 If a value is selected for **Go to page** it will be used to issue a redirect to that page once the form has been submitted.
 
 If no value is selected, the message provided in **Message on submit** will be displayed to the user on the same page, instead of the form fields.  From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
-
-For either method, a developer can customize the page viewed after the form is submitted on the basis of the presence of a `TempData` variable with a key of `UmbracoFormSubmitted` and a value containing the Guid identifier for the submitted form.
-
-A similar `TempData` value is also available containing the GUID identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
 
 ## Adding a Workflow
 
@@ -48,6 +44,24 @@ Once the Workflow Type has been selected, you will need to configure the workflo
 To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
 Fill in the settings and hit **Submit**. The workflow is added to your Form and it will be shown at the bottom of the page.
+
+## Workflow Processing
+
+When a form is submitted, any workflows associated with the "submit" stage of the form will run sequentially in the configured order. The record is stored after these workflows are completed, and as such they can make changes to the information recorded.
+
+Similarly, approval of a form entry, whether automatic or manual, will trigger the execution of the workflows associated with the "approve" stage.
+
+If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form, recording the exception and other details of the failed operation to the log.
+
+From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
+
+![Workflow execution summary](workflow-summary.png)
+
+For each entry, in the backoffice a table can be viewed that shows each of the workflows and the success, or otherwise, of the operation.
+
+![Workflow execution summary](workflow-audit.png)
+
+For any workflows that did not complete successfully, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.
 
 ---
 

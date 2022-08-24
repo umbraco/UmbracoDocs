@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Cool Things to do With Models"
 meta.Description: "Cool things you can do with models"
-state: complete
-verified-against: beta-3
-update-links: true
 ---
 # Cool things you can do with strongly-typed models
 
@@ -13,21 +11,21 @@ It's possible with Razor to define functions for rendering HTML, we can leverage
 ```csharp
 @functions
 {
-	// Declare how to render a news item
-	void RenderContent(NewsItem item)
-	{
-		<div>News! @item.Title</div>
-	}
+  // Declare how to render a news item
+  void RenderContent(NewsItem item)
+  {
+    <div>News! @item.Title</div>
+  }
 
-	// Declare how to render a product
-	void RenderContent(Product item)
-	{
-		<div>Product! @product.Name cheap at @product.Price</div>
-	}
+  // Declare how to render a product
+  void RenderContent(Product item)
+  {
+    <div>Product! @product.Name cheap at @product.Price</div>
+  }
 }
 
 @{
-	RenderContent((dynamic) Model);
+  RenderContent((dynamic) Model);
 }
 ```
 

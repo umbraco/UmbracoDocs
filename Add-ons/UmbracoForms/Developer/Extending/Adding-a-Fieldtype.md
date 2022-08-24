@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding a field type to Umbraco Forms"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a field type to Umbraco Forms #
@@ -35,6 +34,7 @@ namespace MyFormsExtensions
             this.DataType = FieldDataType.String;
             this.SortOrder = 10;
             this.SupportsRegex = true;
+            this.FieldTypeViewName = "FieldType.MyCustomField.cshtml";
         }
 
         // You can do custom validation in here which will occur when the form is submitted.
@@ -85,7 +85,9 @@ namespace MyFormsExtensions
 
 ## Partial view
 
-Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`
+Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
+
+The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
@@ -110,6 +112,8 @@ The final step involves building the HTML view which will be rendered in Umbraco
 />
 ```
 
+In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
+
 For built-in field types, Umbraco Forms look for this file in the folder:  `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
 
 As this location is cleared following a `dotnet clean` command, it's better to host the files for custom field types in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\FieldTypes\mycustomfield.html`.
@@ -127,7 +131,7 @@ public override string GetDesignView() =>
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder="10")]
+    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder=10)]
     public string MySetting { get; set; }
 ```
 
@@ -141,7 +145,7 @@ To reference the file the setting should be configured with a full path to the v
     [Setting("My Setting",
         Description = "Help text for the setting",
         View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-        DisplayOrder="10")]
+        DisplayOrder=10)]
     public string MySetting { get; set; }
 ```
 

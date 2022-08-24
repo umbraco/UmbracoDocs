@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph - Step 4
@@ -9,7 +9,7 @@ All done, great job! Now test out if it works. Try adding it to more document ty
 
 ## Summary
 
-In this lesson you have learned:
+In this lesson, you have learned:
 
 * To create a Document Type composition
 * How to create and render a Partial view

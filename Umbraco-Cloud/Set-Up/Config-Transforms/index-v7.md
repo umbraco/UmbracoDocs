@@ -1,15 +1,13 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
-needsV9Update: "false"
 ---
 
 # Config Transforms
 
 In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.
 
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to use config transforms on Umbraco Cloud" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What are Config Transforms?
 
@@ -114,8 +112,9 @@ On all other Cloud environments:
 - We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web`
 - We set the smtp `host=""` if the host was set to `127.0.0.1`
 
-
-Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::note
+For the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::
 
 ![Toggle debug mode](images/toggle-debug.png)
 

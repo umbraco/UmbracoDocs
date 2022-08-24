@@ -1,7 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
+versionTo: 10.0.0
 ---
 
 # Health check: Fixed Application Url

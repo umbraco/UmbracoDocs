@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Restoring content in Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy"
 ---
@@ -53,7 +53,7 @@ As well as content, media and any other entities configured for back-office tran
 To see the media, go to the Media section and *Reload* the tree.
 :::
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Deploy - Content transfer and restore" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Restore a single tree through the Umbraco backoffice
 

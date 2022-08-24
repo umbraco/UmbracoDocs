@@ -1,17 +1,21 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 
 meta.Title: "Installing Umbraco Forms"
 meta.Description: "Installing Umbraco Forms"
 ---
 
-# Extending Umbraco with the Forms Section
+# Installing Umbraco Forms
 
-Since Umbraco v7.2, Umbraco contains the **Forms** section, by default. You will see a similar interface, when you click on the **Forms** section in the **Umbraco Backoffice**.
+Umbraco contains the **Forms** section, by default. You will see a similar interface, when you click on the **Forms** section in the **Umbraco Backoffice**.
 
 ![Form section in backoffice](images/Forms_Section_Backoffice.png)
 
 ## Installing Umbraco Forms
+
+### Video tutorial
+<iframe width="800" height="450" title="Installing Umbraco Forms" src="https://www.youtube.com/embed/3Aojbp_1MPc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 

@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Overview of the Field Types
@@ -61,12 +61,17 @@ By default, the following Field Types are available:
 - **Single Choice**:
     Displays a list of items with a radio button for each item where the user can select a single option.
 
-    ![singlechoice](images/singlechoice-v9.png)
+    ![Single choice](images/singlechoice-v9.png)
 
 - **Title and Description**:
-    Displays a title and description that are set as default values.
+    Displays a read-only title and description for a set of form fields.
 
-    ![Radiobuttonlist](images/titleanddescription-v9.png)
+    ![Title and description](images/titleanddescription-v9.png)
+
+- **Rich Text**:
+    Displays read-only formatted text that can be used to provide additional information and links within a form.
+
+    ![Rich text](images/richtext.png)
 
 - **Hidden**:
     A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.

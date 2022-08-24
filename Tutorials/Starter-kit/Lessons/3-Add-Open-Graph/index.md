@@ -1,15 +1,15 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Add Open Graph
 
-With a few steps we can add Open Graph to our pages.
+With a few steps, we can add Open Graph to our pages.
 
 ## Outcome
 
-Open Graph support will be added to the Homepage and Blog posts. It will be the minimum implementation of Open Graph containing the sites' `title`, `type`, `url` and `image`.
+Open Graph support will be added to the Homepage and Blog posts. It will be the minimum implementation of Open Graph containing the sites' `title`, `type`, `URL`, and `image`.
 
 ## Takeaway
 

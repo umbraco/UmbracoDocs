@@ -1,21 +1,21 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Upgrade your Umbraco Cloud Plan
 
-In this article you can read about how you can upgrade your Umbraco Cloud plan and what you need to be aware of before you do so.
+In this article, you can read about how you can upgrade your Umbraco Cloud plan and what you need to be aware of before you do so.
 
 ## Before you upgrade your plan
 
 Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few things:
 
-- Changing a plan for a project on the new platform will change the outgoing IP of the project. If your solution have an external service that requires whitelisting the outgoing IP of the project, please visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/) prior to upgrade.
+- Changing a plan for a project on the new platform will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP of the project, please visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/) prior to upgrade.
 
 - If you are on the Starter plan, you can either upgrade your plan to a Standard or a Professional plan.
 
-- On the Standard plan you have the option to upgrade to a Profesional plan.
+- On the Standard plan you have the option to upgrade to a professional plan.
 
 - When you upgrade from the Starter plan to the Standard plan, the price will increase from €32 a month to €199.
 
@@ -27,7 +27,7 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 
 The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
-- In the project overview you can find all the project that you have been invited to or have created.
+- In the project overview you can find all the projects that you have been invited to or have created.
 
 - From here you need to find the project that you want to upgrade the plan for.
 
@@ -35,11 +35,11 @@ Under the project on the right side you have a dropdown menu called settings:
 
 ![Upgrade plan step 1](images/step_1.png)
 
-In the menu you can find a tab called *"Upgrade plan"*.
+In the menu, you can find a tab called *"Upgrade plan"*.
 
-- Clicking on the tab will directed you to the overview of the plans that you can upgrade to.
+- Clicking on the tab will direct you to the overview of the plans that you can upgrade to.
 
-- From here you can see the different plans, the price per month and the limitations between each of the plans.
+- From here you can see the different plans, the price per month, and the limitations between each of the plans.
 
 ![Upgrade plane step2](images/upgrade_plan.png)
 
@@ -52,7 +52,7 @@ To upgrade to the plan of your choosing, click on the green button for the plan 
 :::note
 The change in price will take effect from the next period of your subscription.
 
-If you change plan in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
+If you change the plan in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
 :::
 
 ## Automatic plan upgrades

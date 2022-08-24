@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
-updated-links: false
+versionFrom: 10.0.0
 ---
 
 # Unattended Installs
@@ -27,15 +24,30 @@ As you will not be running through the installation wizard when using the unatte
 :::tip
 Umbraco can create a SQL Server database for you during the unattended install process if the user specified by the credentials in your connection string has the `CREATE DATABASE` permission granted and the global setting [InstallMissingDatabase](/documentation/Reference/V9-Config/GlobalSettings/#install-missing-database) is set to `true`.
 
-If your connection string is for SQL CE or SQL Server Express LocalDB it is assumed that a database should be created when missing regardless of the value of the `InstallMissingDatabase` setting.
+If your connection string is for SQLite or SQL Server Express LocalDB it is assumed that a database should be created when missing regardless of the value of the `InstallMissingDatabase` setting.
 :::
 
-Example in appsettings.json
+### SQL Server Example in appsettings.json
 
 ```json
 {
   "ConnectionStrings": {
     "umbracoDbDSN": "server=localhost;database=UmbracoUnicore;user id=sa;password='P@ssw0rd'"
+  }
+}
+```
+
+### SQLite Example in appsettings.json
+
+A value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
+
+It is recommended that you make use of the values shown below for the `Cache`, `Foreign Keys` and `Pooling` keywords on your connection string.
+
+```json
+{
+  "ConnectionStrings": {
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
 ```
@@ -96,7 +108,7 @@ Depending on your preferences, you can use any type of configuration to specify 
 #endif
 ```
 
-Having intellisense will help you to easily add your connection string and information needed for the unattended install.
+Having intellisense will help you to add your connection string and information needed for the unattended install.
 
 ```json
 {
@@ -123,7 +135,7 @@ We have added support for unattended installs with Name, Email and Password, and
 ### CLI
 
 ```powershell
-dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@email.com --password password1234 --connection-string "Server=(localdb)\Umbraco;Database=MyDatabase;Integrated Security=true" --version 9.0.0
+dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@email.com --password password1234 --connection-string "Server=(localdb)\Umbraco;Database=MyDatabase;Integrated Security=true" --version 10.0.0
 ```
 
 ### Visual Studio
