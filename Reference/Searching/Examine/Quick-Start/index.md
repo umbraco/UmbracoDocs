@@ -68,8 +68,6 @@ public class PeopleController : RenderController
 }
 ```
 
-Now we have created our controller, and your code will now do the exact same thing as before you created the Controller!
-Lets change that and start adding logic to the index method.
 
 ### Adding a Service that handles our search logic
 To search anything from our controller, we first need to create a service that handles the actual search logic. We'll start by create an interface for our service.
