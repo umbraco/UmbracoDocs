@@ -10,7 +10,7 @@ _This guide will help you get set up quickly using Examine with minimal configur
 ## Performing a search
 
 :::note
-In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
+In the coming examples the [Umbraco Starter Kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
 :::
 
 The starter kit comes with some Templates, Document Types and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as much more complex searches are possible with Examine.
@@ -31,7 +31,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 ...
 ```
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
-### Using route hijacking
+### Handling the search request
 
 Now that we can post to the people view, we want a bit more control, we probably want a custom ViewModel, with all the search results, when people try to search for something!
 We will use route hijacking by creating a render controller, for more information about route hijacking and render controllers, you can read our documentation: https://our.umbraco.com/documentation/reference/routing/custom-controllers/
