@@ -7,11 +7,15 @@ versionTo: 10.0.0
 
 # Umbraco Plumber Documentation
 
-_Documents how to work with Umbraco Plumber. Here you can read all about how to set up and work with Umbraco Plumber._
+Welcome to the Umbraco Plumber documentation. Here you can read all about how to work with Umbraco Plumber. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that comes with Umbraco Plumber.
 
-## [Overview](Getting-Started/index.md)
+## [Getting Started](Getting-Started/index.md)
 
 Learn how to get started with Umbraco Plumber.
+
+## [Installing Umbraco Plumber](Installing-Plumber/index.md)
+
+Extending Umbraco with the Workflow section by installing Umbraco Plumber in a few steps.
 
 ## [Licensing](Licensing/index.md)
 
