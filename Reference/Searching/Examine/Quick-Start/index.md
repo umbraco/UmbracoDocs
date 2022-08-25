@@ -41,11 +41,13 @@ Lets start by creating a `PeopleController` that derives from `RenderController`
 It is important to name our controller by the convention `_NameOfViewController_`. In our case the view is named People, so the controller is named `PeopleController`.
 :::
 ```csharp
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
-
+namespace MyStarterKitSite.Controllers;
 public class PeopleController : RenderController
 {
     public PeopleController(
