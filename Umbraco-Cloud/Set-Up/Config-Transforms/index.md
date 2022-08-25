@@ -56,29 +56,31 @@ Here is an example of how that config transform would look:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-	<location>
-		<system.webServer>
-			<rewrite xdt:Transform="InsertIfMissing">
-				<rules>
-					<rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
-						<match url=".*" />
-						<conditions>
-							<add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
-							<add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-							<add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-							<add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
-							<add input="{REQUEST_URI}" negate="true" pattern="localhost" />
-						</conditions>
-						<action type="Redirect" url="http://swato.dk/{R:0}" appendQueryString="true" redirectType="Permanent" />
-					</rule>
-				</rules>
-			</rewrite>
-		</system.webServer>
-	</location>
+	<system.webServer>
+		<rewrite>
+			<rules>
+				<rule xdt:Transform="Insert" name="Redirects umbraco.io to actual domain" stopProcessing="true">
+					<match url=".*" />
+					<conditions>
+						<add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
+						<add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+						<add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+						<add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+						<add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+					</conditions>
+					<action type="Redirect" url="https://mycustomwebsite.com/{R:0}" appendQueryString="true" redirectType="Permanent" />
+				</rule>
+			</rules>
+		</rewrite>
+	</system.webServer>
 </configuration>
 ```
 
-This config transform will add a new `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. To be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
+:::note
+The above snippet requires your project to have a web.config file with a matching structure, otherwise the config transform (and subsequently, the deployment) might fail. 
+:::
+
+This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.
 
 :::note
 Keep in mind that a misconfigured config transform may [block Data Extraction on your project](../../Troubleshooting/Deployments/Changes-Not-Being-Applied).
