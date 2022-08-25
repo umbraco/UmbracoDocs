@@ -35,10 +35,10 @@ This will create a basic input field at the top of the page and make it post to 
 
 The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers/).
 
-Lets start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method.
+Let's start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method.
 
 :::note
-It is important to name our controller by the convention `_NameOfViewController_`. In our case the view is named People, so the controller is named `PeopleController`.
+It is important to name our controller by the convention _`NameOfViewController`_. In our case the view is named People, so the controller is named `PeopleController`.
 :::
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -174,38 +174,54 @@ Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", 
 
 Calling `.Execute()` at the end of the query logic triggers the search and returns a set of matching search results, which we can loop through to get the IDs of the resulting content items.
 ## Getting the content
-We want to retrieve the actual content from the IDs. For that we need the `UmbracoHelper`, so let's go ahead and inject that into our `SearchService`.
-```csharp
-private readonly IExamineManager _examineManager;
-private readonly UmbracoHelper _umbracoHelper;
+We want to retrieve the actual content from the IDs. For that we need the `UmbracoHelper`, which must be injected into our service as well. The final implementation of `SearchService` then looks like this.
 
-public SearchService(IExamineManager examineManager, UmbracoHelper umbracoHelper)
-{
-    _examineManager = examineManager;
-    _umbracoHelper = umbracoHelper;
-}
-```
-
-The final method looks like this:
 ```csharp
-public IEnumerable<IPublishedContent> SearchContentNames(string query)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Examine;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.Common;
+using Umbraco.Extensions;
+
+namespace MyStarterKitSite.Services;
+
+public class SearchService : ISearchService
 {
-    IEnumerable<string> ids = Array.Empty<string>();
-    if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex", out IIndex? index))
+    private readonly IExamineManager _examineManager;
+    private readonly UmbracoHelper _umbracoHelper;
+    
+    public SearchService(IExamineManager examineManager, UmbracoHelper umbracoHelper)
     {
-        ids = index.Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", query).Execute()
-            .Select(x => x.Id);
+        _examineManager = examineManager;
+        _umbracoHelper = umbracoHelper;
     }
 
-    foreach (var id in ids)
+    public IEnumerable<IPublishedContent> SearchContentNames(string query)
     {
-        yield return _umbracoHelper.Content(id);
+        IEnumerable<string> ids = Array.Empty<string>();
+        if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex", out IIndex? index))
+        {
+            ids = index
+                .Searcher
+                .CreateQuery("content")
+                .NodeTypeAlias("person")
+                .And()
+                .Field("nodeName", query)
+                .Execute()
+                .Select(x => x.Id);
+        }
+        
+        foreach (var id in ids)
+        {
+            yield return _umbracoHelper.Content(id);
+        }
     }
 }
-```
 After getting the ids from our search, we then loop through the list, and return the content.
 
-# Creating a custom viewmodel
+# Creating a custom view model
 We will now need a custom view model, so that we can pass our search results to the view.
 Our view model needs to inherit from `PublishedContentWrapped`, because our People view is expecting a model that is content.
 We then wrap the content and add the search data, all in a convenient view model.
