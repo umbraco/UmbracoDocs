@@ -33,11 +33,13 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
 ### Handling the search request
 
-Now that we can post to the people view, we want a bit more control, we probably want a custom ViewModel, with all the search results, when people try to search for something!
-We will use route hijacking by creating a render controller, for more information about route hijacking and render controllers, you can read our documentation: https://our.umbraco.com/documentation/reference/routing/custom-controllers/
+The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers/). 
 
-Lets start by creating a PeopleController, and letting it derive from `RenderController`, and then adding an Index method.
-:::note Its important to name our Controller by the convention `NameOfViewController` so in our case our view is named People, so we call it PeopleController
+Lets start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method. 
+
+:::note 
+It is important to name our controller by the convention `_NameOfViewController_`. In our case the view is named People, so the controller is named `PeopleController`.
+:::
 ```csharp
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Umbraco.Cms.Core.Web;
@@ -68,7 +70,7 @@ Now we have created our controller, and your code will now do the exact same thi
 Lets change that and start adding logic to the index method.
 
 ### Adding a Service that handles our search logic
-To search anything from our controller, we first need to create a service we can use, that handles the actual search logic, lets create an interface first.
+To search anything from our controller, we first need to create a service that handles the actual search logic. We'll start by create an interface for our service.
 
 ```csharp
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -91,10 +93,18 @@ public class SearchService : ISearchService
     public IEnumerable<IPublishedContent> SearchContentNames(string query) => throw new NotImplementedException();
 }
 ```
-:::note Remember to register this service in your Startup.cs file!
+
+And finally register the service in `Startup`.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // ... (removed for abbreviation)
+    services.AddTransient<ISearchService, SearchService>();
+}
 
 ### Examine Search Index
-To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access it's corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
+To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access its corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
 
 Umbraco ships with three indexes:
 * ExternalIndex - available to use for indexing published unprotected content.
@@ -103,8 +113,7 @@ Umbraco ships with three indexes:
 
 ([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
 
-You use a convenient service named the `IExamineManager` to retrieve first the Index by its 'alias' and then use the Index property so we can use the Searcher.
-Lets start by dependency injection this into our Service!
+The service `IExamineManager` is used to retrieve an Examine index by its 'alias', so we need to inject that service into our `SearchService`.
 ```csharp
 private readonly IExamineManager _examineManager;
 
@@ -120,7 +129,13 @@ With this in mind we begin to update the `SearchContentNames` method with the fo
 IEnumerable<string> ids = Array.Empty<string>();
 if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex", out IIndex? index))
 {
-    ids = index.Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", query).Execute()
+    ids = index
+        .Searcher
+        .CreateQuery("content")
+        .NodeTypeAlias("person")
+        .And()
+        .Field("nodeName", query)
+        .Execute()
         .Select(x => x.Id);
 }
 ```
@@ -141,11 +156,9 @@ From here you can see how we can chain together the logic to perform the search.
 Searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm)
 ```
 
-We are calling `.Execute()` at the end of the query logic will trigger the search and return a set of matching search results that we can loop through.
-We can then select the ids.
-## Using the umbraco helper to get content
-We want to use the UmbracoHelper, so we can use the id to get the actual content.
-Lets inject the umbraco helper into our service!
+Calling `.Execute()` at the end of the query logic triggers the search and returns a set of matching search results, which we can loop through to get the IDs of the resulting content items.
+## Getting the content
+We want to retrieve the actual content from the IDs. For that we need the `UmbracoHelper`, so let's go ahead and inject that into our `SearchService`.
 ```csharp
 private readonly IExamineManager _examineManager;
 private readonly UmbracoHelper _umbracoHelper;
@@ -177,15 +190,18 @@ public IEnumerable<IPublishedContent> SearchContentNames(string query)
 After getting the ids from our search, we then loop through the list, and return the content.
 
 # Creating a custom viewmodel
-We will now need a custom view model, so that we can pass it to the view.
+We will now need a custom view model, so that we can pass our search results to the view.
 ```csharp
+using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace Umbraco.Cms.Web.UI.Models;
+namespace MyStarterKitSite.Models;
 
 public class SearchViewModel : PublishedContentWrapped
 {
-    public SearchViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
+    public SearchViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) 
+        : base(content, publishedValueFallback)
     {
     }
 
@@ -195,30 +211,61 @@ public class SearchViewModel : PublishedContentWrapped
 ```
 
 ## Using the service and view model in the controller
-Now that we've created our service that handles the actual search logic and ViewModel, lets look at using it in the controller.
-We will want to update the `Index()` method to get out the queryString from the request, then create a viewmodel and populate the `SearchResults` property by using our service
+Now that we've created our service to handle the actual search logic, and our view model to pass the search results to the view, lets look at using them in the controller.
+We will want to update the `Index()` method to get out the query string from the request, then create a view model and populate the `SearchResults` property by using our service.
 ```csharp
-public override IActionResult Index()
-{
-    // Get the queryString from the request
-    string queryString = _httpContextAccessor.HttpContext?.Request.Query["query"] ?? string.Empty;
-    // Create the viewModel and pass it to the view
-    SearchViewModel viewModel = new(CurrentPage!, new PublishedValueFallback(_serviceContext, _variationContextAccessor))
-    {
-        SearchResults = _searchService.SearchContentNames(queryString),
-        HasSearched = !string.IsNullOrEmpty(queryString),
-    };
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.Extensions.Logging;
+using MyStarterKitSite.Models;
+using MyStarterKitSite.Services;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.Controllers;
 
-    return CurrentTemplate(viewModel);
+namespace MyStarterKitSite.Controllers;
+
+public class PeopleController : RenderController
+{
+    private readonly IPublishedValueFallback _publishedValueFallback;
+    private readonly ISearchService _searchService;
+    
+    public PeopleController(
+        ILogger<RenderController> logger,
+        ICompositeViewEngine compositeViewEngine,
+        IUmbracoContextAccessor umbracoContextAccessor, 
+        IPublishedValueFallback publishedValueFallback, 
+        ISearchService searchService)
+        : base(logger,
+            compositeViewEngine,
+            umbracoContextAccessor)
+    {
+        _publishedValueFallback = publishedValueFallback;
+        _searchService = searchService;
+    }
+
+    public override IActionResult Index()
+    {
+        // Get the queryString from the request
+        string queryString = HttpContext.Request.Query["query"];
+        
+        // Create the view model and pass it to the view
+        SearchViewModel viewModel = new(CurrentPage!, _publishedValueFallback)
+        {
+            SearchResults = _searchService.SearchContentNames(queryString),
+            HasSearched = !string.IsNullOrEmpty(queryString),
+        };
+
+        return CurrentTemplate(viewModel);
+    }
 }
-```
 
 ## Updating the view to use the viewmodel
-The final thing we need to do is update the view to use our brand new ViewModel, we can do so by changing the `@inherits` to:
+The final thing we need to do is update the view to use our new view model. We do that by changing the `@inherits` line in the view.
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.UI.Models.SearchViewModel>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyStarterKitSite.Models.SearchViewModel>
 ```
-Lets now use the ViewModel to display the search results, directly under the form we created earlier, add this:
+Lets now use the view model to display the search results. We'll place them directly under the form we created earlier.
 ```csharp
 <div>
     @if (Model.SearchResults.Any())
