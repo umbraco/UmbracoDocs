@@ -203,8 +203,8 @@ After getting the ids from our search, we then loop through the list, and return
 
 # Creating a custom viewmodel
 We will now need a custom view model, so that we can pass our search results to the view.
-Our view model needs to inherit from `PublishedContentWrapped`, as it is an abstract base class for `IPublishedContent`
-This is because Umbraco uses the convention `UmbracoViewPage<IPublishedContent>` in views.
+Our view model needs to inherit from `PublishedContentWrapped`, because our People view is expecting a model that is content.
+We then wrap the content and add the search data, all in a convenient view model.
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
