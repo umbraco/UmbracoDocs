@@ -48,6 +48,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
 namespace MyStarterKitSite.Controllers;
+
 public class PeopleController : RenderController
 {
     public PeopleController(
@@ -75,6 +76,7 @@ To search anything from our controller, we first need to create a service that h
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
+
 namespace MyStarterKitSite.Services;
 
 public interface ISearchService
@@ -89,6 +91,8 @@ Now create a default implementation of the service interface.
 ```csharp
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.UI.Services;
+
+namespace MyStarterKitSite.Services;
 
 public class SearchService : ISearchService
 {
