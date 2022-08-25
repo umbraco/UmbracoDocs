@@ -73,7 +73,9 @@ public class PeopleController : RenderController
 To search anything from our controller, we first need to create a service that handles the actual search logic. We'll start by create an interface for our service.
 
 ```csharp
+using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
+namespace MyStarterKitSite.Services;
 
 public interface ISearchService
 {
@@ -82,8 +84,8 @@ public interface ISearchService
 
 ```
 
-So this method can take in a query string, and then return content that matches!
-Lets create our service that uses this interface
+Now create a default implementation of the service interface.
+
 ```csharp
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.UI.Services;
@@ -123,7 +125,7 @@ public SearchService(IExamineManager examineManager)
 }
 ```
 ### Creating the Search Query
-With this in mind we begin to update the `SearchContentNames` method with the following:
+With the `IExamineManager` injected in our `SearchService`, we can implement the `SearchContentNames` method. We do this using the `Searcher` for the Examine index 'ExternalIndex'. 
 
 ```csharp
 IEnumerable<string> ids = Array.Empty<string>();
@@ -139,7 +141,6 @@ if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex",
         .Select(x => x.Id);
 }
 ```
-At this point we have chosen to use the External index and it's searcher.
 
 :::tip
 We reference the External index by it's alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
@@ -285,7 +286,6 @@ Lets now use the view model to display the search results. We'll place them dire
     }
 </div>
 ```
-If the SearchResults have any, display all of them, if it does not, and we have used the search function, display `No results found`
 
 # Different ways to query
 Examine has a lot of different ways to query data. Building upon the example from before, here are a few other searches that can be done to get different data:
