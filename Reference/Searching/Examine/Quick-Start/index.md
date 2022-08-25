@@ -33,11 +33,11 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
 ### Handling the search request
 
-The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers/). 
+The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers/).
 
-Lets start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method. 
+Lets start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method.
 
-:::note 
+:::note
 It is important to name our controller by the convention `_NameOfViewController_`. In our case the view is named People, so the controller is named `PeopleController`.
 :::
 ```csharp
@@ -104,6 +104,7 @@ public void ConfigureServices(IServiceCollection services)
     // ... (removed for abbreviation)
     services.AddTransient<ISearchService, SearchService>();
 }
+```
 
 ### Examine Search Index
 To perform the search we will first need to get a reference to the particular Examine index that we want to search. Then we will use this index to access its corresponding `Searcher`. We use the `Searcher` to construct the query logic to execute and search the index.
@@ -117,15 +118,25 @@ Umbraco ships with three indexes:
 
 The service `IExamineManager` is used to retrieve an Examine index by its 'alias', so we need to inject that service into our `SearchService`.
 ```csharp
-private readonly IExamineManager _examineManager;
+using System.Collections.Generic;
+using Examine;
+using Umbraco.Cms.Core.Models.PublishedContent;
 
-public SearchService(IExamineManager examineManager)
+namespace MyStarterKitSite.Services;
+
+public class SearchServices : ISearchService
 {
-    _examineManager = examineManager;
+    private readonly IExamineManager _examineManager;
+    public SearchServices(IExamineManager examineManager)
+    {
+        _examineManager = examineManager;
+    }
+    public IEnumerable<IPublishedContent> SearchContentNames(string query) => throw new NotImplementedException();
 }
 ```
+
 ### Creating the Search Query
-With the `IExamineManager` injected in our `SearchService`, we can implement the `SearchContentNames` method. We do this using the `Searcher` for the Examine index 'ExternalIndex'. 
+With the `IExamineManager` injected in our `SearchService`, we can implement the `SearchContentNames` method. We do this using the `Searcher` for the Examine index 'ExternalIndex'.
 
 ```csharp
 IEnumerable<string> ids = Array.Empty<string>();
@@ -192,6 +203,8 @@ After getting the ids from our search, we then loop through the list, and return
 
 # Creating a custom viewmodel
 We will now need a custom view model, so that we can pass our search results to the view.
+Our view model needs to inherit from `PublishedContentWrapped`, as it is an abstract base class for `IPublishedContent`
+This is because Umbraco uses the convention `UmbracoViewPage<IPublishedContent>` in views.
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -201,7 +214,7 @@ namespace MyStarterKitSite.Models;
 
 public class SearchViewModel : PublishedContentWrapped
 {
-    public SearchViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) 
+    public SearchViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
         : base(content, publishedValueFallback)
     {
     }
@@ -230,12 +243,12 @@ public class PeopleController : RenderController
 {
     private readonly IPublishedValueFallback _publishedValueFallback;
     private readonly ISearchService _searchService;
-    
+
     public PeopleController(
         ILogger<RenderController> logger,
         ICompositeViewEngine compositeViewEngine,
-        IUmbracoContextAccessor umbracoContextAccessor, 
-        IPublishedValueFallback publishedValueFallback, 
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IPublishedValueFallback publishedValueFallback,
         ISearchService searchService)
         : base(logger,
             compositeViewEngine,
@@ -249,7 +262,7 @@ public class PeopleController : RenderController
     {
         // Get the queryString from the request
         string queryString = HttpContext.Request.Query["query"];
-        
+
         // Create the view model and pass it to the view
         SearchViewModel viewModel = new(CurrentPage!, _publishedValueFallback)
         {
@@ -260,6 +273,7 @@ public class PeopleController : RenderController
         return CurrentTemplate(viewModel);
     }
 }
+```
 
 ## Updating the view to use the viewmodel
 The final thing we need to do is update the view to use our new view model. We do that by changing the `@inherits` line in the view.
