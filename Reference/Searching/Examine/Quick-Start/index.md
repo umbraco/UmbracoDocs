@@ -191,7 +191,7 @@ public class SearchService : ISearchService
 {
     private readonly IExamineManager _examineManager;
     private readonly UmbracoHelper _umbracoHelper;
-    
+
     public SearchService(IExamineManager examineManager, UmbracoHelper umbracoHelper)
     {
         _examineManager = examineManager;
@@ -212,13 +212,14 @@ public class SearchService : ISearchService
                 .Execute()
                 .Select(x => x.Id);
         }
-        
+
         foreach (var id in ids)
         {
             yield return _umbracoHelper.Content(id);
         }
     }
 }
+```
 After getting the ids from our search, we then loop through the list and return the content.
 
 # Creating a custom view model
