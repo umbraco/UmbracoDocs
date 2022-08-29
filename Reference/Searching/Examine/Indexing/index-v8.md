@@ -1,9 +1,18 @@
-﻿---
+---
 versionFrom: 8.0.0
-versionTo: 10.0.0
+versionTo: 8.0.0
 ---
 
 # Custom indexing
+
+:::note
+This document has been verified for Umbraco 8.
+
+If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](../index.md) for more details.
+:::
+
+Examine has changed quite a bit in Umbraco 8 (and by "a bit" we really mean a lot). In Umbraco 7 everything was configured in the two Examine config files - in Umbraco 8 everything happens through C#.
+
 ## Customizing the built in indexes
 
 You can modify the built in indexes in several ways:
@@ -19,59 +28,40 @@ By default Examine will store values into the Lucene index as "Full Text", meani
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
-The easiest way to modify how a field is configured is using the ConfigureNamedOptions pattern like so:
+The easiest way to modify how a field is configured is using a custom component, for example:
 
 ```c#
 using Examine;
-using Examine.Lucene;
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Configuration.Models;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
 
-namespace MySite
+// register the component
+public class CustomizeIndexComposer : ComponentComposer<CustomizeIndexComponent> { }
+
+public class CustomizeIndexComponent : IComponent
 {
-    public class ConfigureExamineOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    private readonly IExamineManager _examineManager;
+
+    public CustomizeIndexComponent(IExamineManager examineManager)
     {
-        private readonly IOptions<IndexCreatorSettings> _settings;
-
-        public ConfigureExamineOptions(IOptions<IndexCreatorSettings> settings)
-        {
-            _settings = settings;
-        }
-
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
-        {
-            if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
-            {
-                options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
-            }
-        }
-
-        // Part of the interface, but does not need to be implemented for this.
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
+        _examineManager = examineManager;
     }
-}
-```
-This will either add the `price` field to the index, or if the field already exists, update date its type to double.
 
-Remember to register this using a composer!
-
-```c#
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-
-namespace MySite
-{
-    public class ExamineComposer : IComposer
+    public void Initialize()
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.ConfigureOptions<ConfigureExamineOptions>();
-        }
+        // get the external index
+        if (!_examineManager.TryGetIndex(UmbracoIndexes.ExternalIndexName, out IIndex index))
+            return;
+
+        // add a custom field type
+        index.FieldDefinitionCollection.TryAdd(new FieldDefinition("price", FieldDefinitionTypes.Double));
+
+        // modify an existing field type (not recommended)
+        index.FieldDefinitionCollection.AddOrUpdate(new FieldDefinition("parentID", FieldDefinitionTypes.FullText));
+    }
+
+    public void Terminate()
+    {
     }
 }
 ```
