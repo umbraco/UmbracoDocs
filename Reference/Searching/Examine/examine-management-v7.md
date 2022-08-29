@@ -1,18 +1,25 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 7.0.0
+versionTo: 7.0.0
 ---
 
 # Examine Management
 
 _Provides an overview of the available Examine functionality available directly within the Umbraco backoffice_
 
+:::note
+This document has been verified for Umbraco 7.
+
+If you are using Umbraco 8 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
+:::
+
 ## Overview
 
 The Umbraco backoffice allows you to view details about your examine indexes and searches along with those that power the internal CMS search all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem and even test keywords to see what results would be returned.
 
-![Examine Management within the Developer section](images/overview-examine.png)
+![Examine Management within the Developer section](images/examine-management-home.png)
 
-The Examine Management section, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
+The Examine Management section, accessible from within the Developer area, is split into two sections: Indexers and Searchers.
 
 ## Indexers
 
@@ -22,7 +29,7 @@ From the Indexers section, you can view details about each Examine index current
 
 This section allows you to see the high level statistics about the index that you selected, including how many documents and fields are currently being stored.
 
-![Rebuild Index within Examine Management](images/External-indexes-v10.png)
+![Rebuild Index within Examine Management](images/examine-management-rebuild-index.png)
 
 This section also provides the ability to rebuild the index should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
 
