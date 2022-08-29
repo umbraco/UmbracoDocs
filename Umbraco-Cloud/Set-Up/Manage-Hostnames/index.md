@@ -64,10 +64,10 @@ You will need to **remove the old DNS entry** before the Cloudflare service gene
 Please note the following upcoming change in Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames.
 
 **Certificates for new custom hostnames:**
-On September 26th 2022 certificates will be issued using  'Google Trust Services' instead of 'DigiCert', and Certificate validity will be decreased from 1 year to 90 days.
+On September 26th, 2022 certificates will be issued using  'Google Trust Services' instead of 'DigiCert', and Certificate validity will be decreased from 1 year to 90 days.
 
 **Certificates for existing custom hostnames:**
-From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. The renewed certificate will instead by issued by 'Google Trust Services',  and Certificate validity will be decreased from 1 year to 90 days.
+From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. The renewed certificate will instead be issued by 'Google Trust Services',  and Certificate validity will be decreased from 1 year to 90 days.
 
 No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
 :::
