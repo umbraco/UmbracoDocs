@@ -1,75 +1,41 @@
----
-versionFrom: 8.0.0
-versionTo: 8.0.0
+﻿---
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # PDF indexes and multisearchers
-
-:::note
-This document has been verified for Umbraco 8.
-
-If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
-:::
 
 If you want to index PDF files and search for them you will need to use the [UmbracoExamine.Pdf extension package](https://github.com/umbraco/UmbracoExamine.PDF).
 
 ## Installation
 
 Install with Nuget:
-`Install-Package UmbracoCms.UmbracoExamine.PDF`
+`dotnet add package Umbraco.ExaminePDF`
 
 You will then have a new Examine index called "PDFIndex" available.
 
 ## Multi index searchers
 
-To use the multisearcher in Umbraco 8, you can instantiate it when needed like:
-
-```csharp
-using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
-    externalIndex,
-    pdfIndex
-}))
-{
- ...
-};
-```
-
-Or you can register a multi index searcher with the ExamineManager on startup like:
+You can register a multi index searcher with the ExamineManager on startup like:
 
 ```csharp
 using Examine;
-using Examine.LuceneEngine.Providers;
-using Umbraco.Core.Composing;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using UmbracoExamine.PDF;
 
-[ComposeAfter(typeof(ExaminePdfComposer))] //this must execute after the ExaminePdfComposer composer
-public class MyComposer : ComponentComposer<MyComponent>, IUserComposer
+namespace MySite.MyCustomIndex
 {
-}
-
-public class MyComponent : IComponent
-{
-    private readonly IExamineManager _examineManager;
-
-    public MyComponent(IExamineManager examineManager)
+    [ComposeAfter(typeof(ExaminePdfComposer))]
+    public class ExamineComposer : IComposer
     {
-        _examineManager = examineManager;
-    }
-
-    public void Initialize()
-    {
-        //Get both the external and pdf index
-        if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var externalIndex)
-            && _examineManager.TryGetIndex(PdfIndexConstants.PdfIndexName, out var pdfIndex))
+        public void Compose(IUmbracoBuilder builder)
         {
-            //register a multisearcher for both of them
-            var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] { externalIndex, pdfIndex });
-            _examineManager.AddSearcher(multiSearcher);
+            builder.Services.AddExamineLuceneMultiSearcher("MultiSearcher", new[] {Constants.UmbracoIndexes.ExternalIndexName, PdfIndexConstants.PdfIndexName});
         }
     }
-
-    public void Terminate() { }
-}
+}}
 ```
 
 With this approach, the multisearcher will show up in the Examine dashboard and it can be resolved from the ExamineManager like:
