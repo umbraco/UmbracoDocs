@@ -60,6 +60,17 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
 
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
+:::note
+Please note the following upcoming change in Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames.
+
+**Certificates for new custom hostnames:**
+On September 26th 2022 certificates will be issued using  'Google Trust Services' instead of 'DigiCert', and Certificate validity will be decreased from 1 year to 90 days.
+
+**Certificates for existing custom hostnames:**
+From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. The renewed certificate will instead by issued by 'Google Trust Services',  and Certificate validity will be decreased from 1 year to 90 days.
+
+No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
+:::
 
 ### Is your Domain hosted on your own Cloudflare account?
 
@@ -87,6 +98,24 @@ CAA records can be set on the subdomain, but it's not something that is commonly
 ```sql
 example.com. IN CAA 0 issuewild "digicert.com"
 ```
+
+:::note
+From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. This means that you need to update your CAA record to allow 'Google Trust Services' issuing certificates for your domain.
+
+The CAA record should be changed from:
+
+```sql
+example.com. IN CAA 0 issue "digicert.com"
+```
+
+to
+
+```sql
+example.com. IN CAA 0 issue "pki.goog"
+```
+
+Please make sure to update the CAA record prior to your current certificate expiring.
+:::
 
 ## [Upload certificates manually](Security-Certificates)
 
