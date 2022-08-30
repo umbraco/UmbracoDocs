@@ -9,7 +9,7 @@ meta.Description: "A guide to creating custom file systems in Umbraco"
 ## Media Filesystem
 
 :::note
-Before considering a custom media file system, be sure first to read about the configuration options for `UmbracoMediaPath` and `UmbracoMediaPhysicalRootPath` in the [configuration reference docs](../../Reference/Configuration/GlobalSettings/). These configurations may save you from creating your own media file system entirely.
+Before considering a custom media file system, be sure to first read about the configuration options for `UmbracoMediaPath` and `UmbracoMediaPhysicalRootPath` in the [configuration reference docs](../../Reference/Configuration/GlobalSettings/). These configurations may save you from creating your own media file system entirely.
 :::
 
 By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (wwwroot/media). This default location can be configured by composition:
