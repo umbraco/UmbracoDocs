@@ -20,7 +20,7 @@ From the Indexers section, you can view details about each Examine index current
 
 ### Index info
 
-This section allows you to see the list of properties about the index that you selected, including how many documents and fields are currently being stored.
+This section allows you to see the list of properties on the index that you selected, including how many documents and fields are currently being stored.
 
 ![Rebuild Index within Examine Management](images/External-indexes-v10.png)
 
