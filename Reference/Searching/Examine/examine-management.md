@@ -30,7 +30,7 @@ This can be useful to confirm the configuration that Umbraco is using and to ens
 
 This section also provides the ability to rebuild the index, should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
 
-### fields
+### Fields
 
 From here you can see the default system fields that are stored for each document within the search index, including the number of fields document, The score which is calculated by Examine depending on how closely the individual results matched the search term.
 
