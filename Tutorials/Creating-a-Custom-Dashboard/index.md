@@ -126,7 +126,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 ![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
 
-Looks much better now! We can apply the same workflow to elements inside the dashboard, not just the name/alias.
+We can apply the same workflow to elements inside the dashboard, not only the name/alias.
 Extend the translation file xml like so:
 
 ```xml
