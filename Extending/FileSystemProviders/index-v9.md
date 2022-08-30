@@ -69,7 +69,7 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted, filesystem path, using directory separator chars, not ending with a separator `//`, eg `c:`, `c:\path\to\site` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
+The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted filesystem path using directory separator chars not ending with a separator `//`, eg: `c:`, `c:\path\to\site` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
 
 You also have to specify the  **RequestPath** - the relative URL, where the media will be served, using URL separator chars, not ending with a separator `/`, eg "", `/Views` or `/Media`.
 
