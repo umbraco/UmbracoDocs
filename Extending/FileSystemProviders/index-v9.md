@@ -100,7 +100,7 @@ Our media is now stored in `C:\storage\umbracoMedia` and is served from the base
 
 ### IFileSystem
 
-`PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar. You replace the media filesystem using the `SetMediafileSystem` method in a composer like shown in the `MediaFileSystem` section, but instead of returning a `PhysicalFileSystem`, you return whatever implementation of `IFileSystem` you want.
+`PhysicalFileSystem` implements the `IFileSystem` interface and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar. You replace the media filesystem using the `SetMediafileSystem` method in a composer as shown in the `MediaFileSystem` section but instead of returning a `PhysicalFileSystem`, you return whatever implementation of `IFileSystem` you want.
 
 If you configure Umbraco to use a custom file system provider for media, you shouldn't access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
 
