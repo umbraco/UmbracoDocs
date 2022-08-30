@@ -123,7 +123,7 @@ You can then access the configured file system provider through `_mediaFileManag
 
 The MediaPath Scheme defines the current set of rules that decide the format of the Media Path when it is saved into the media archive wherever it is located.
 
-By default the MediaPath scheme used by Umbraco is the `UniqueMediaPathScheme` this generates a unique 'folder' to place the uploaded image in eg.
+By default, the MediaPath scheme used by Umbraco is the `UniqueMediaPathScheme`. This generates a unique 'folder' to place the uploaded image in eg.
 
 `/media/dozdrg2f/mylovelyimage.jpg`
 
