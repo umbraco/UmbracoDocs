@@ -143,7 +143,7 @@ Extend the translation file xml like so:
 </language>
 ```
 
-We are adding another area tag with a few keys. Let's adjust the dashboard html accordingly:
+We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
 
 ```html
 <div class="welcome-dashboard">
