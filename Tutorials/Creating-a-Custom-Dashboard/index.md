@@ -311,7 +311,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 ### Going further - Umbraco Angular Services and Directives
 
 Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](https://our.umbraco.com/documentation/Reference/API-Documentation/#backoffice-ui).
-For this example it would be nice to welcome the editor by name, to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
+For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 
