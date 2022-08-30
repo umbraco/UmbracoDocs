@@ -32,7 +32,7 @@ This section also provides the ability to rebuild the index, should this be requ
 
 ### Fields
 
-From here you can see the default system fields that are stored for each document within the search index, including the number of fields document, The score which is calculated by Examine depending on how closely the individual results matched the search term.
+From here you can see the default system fields that are stored for each document within the search index. That includes the number of fields document, and the score which is calculated by Examine depending on how closely the individual results matched the search term.
 
 ## Searchers
 
