@@ -15,6 +15,12 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 
+:::note
+Currently the baseline feature is only available on the west EU region only.
+
+At this point it is not possible to create baselines if you are hosting your site in the US East region.
+:::
+
 ## Video Tutorial
 
 <iframe width="800" height="450" title="How to work with baselines on Umbraco Cloud" src="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
