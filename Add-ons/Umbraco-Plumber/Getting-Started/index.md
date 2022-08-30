@@ -28,8 +28,8 @@ Placeholder - add an image depicting workflow.
 You can find some articles below to get started using Umbraco Plumber:
 
 - [Installing Umbraco Plumber](../Installing-Plumber/index.md)
-- [Workflow Dashboard](../Dashboards-and-Buttons/index.md)
-- [Active Workflows](../Content-App/index.md)
+- [Workflow Dashboard and Buttons](../Dashboards-and-Buttons/index.md)
+- [Workflow Content App](../Workflow-Content-App/index.md)
 - [Approval Groups](../Approval-Groups/index.md)
 - [Workflow History](../Workflow-History/index.md)
 - [Licensing](../Licensing/index.md)
