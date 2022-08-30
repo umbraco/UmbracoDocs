@@ -135,7 +135,7 @@ In Umbraco 7, the integer ids were used in the path and this approach is still p
 
 You can set the `MediaPathScheme` during composition, for example if you wanted to revert back to the V7 methodology in a migrated site:
 
-```c#
+```csharp
   builder.Services.AddUnique<IMediaPathScheme, OriginalMediaPathScheme>();
 ```
 
