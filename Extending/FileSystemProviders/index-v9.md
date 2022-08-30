@@ -71,7 +71,7 @@ public void Configure(IApplicationBuilder app)
 
 The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted filesystem path using directory separator chars not ending with a separator `//`, eg: `c:`, `c:\path\to\site` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
 
-You also have to specify the  **RequestPath** - the relative URL, where the media will be served, using URL separator chars, not ending with a separator `/`, eg "", `/Views` or `/Media`.
+You also have to specify the  **RequestPath** - the relative URL where the media will be served using URL separator chars not ending with a separator `/`, eg: '', `/Views` or `/Media`.
 
 Now you can use your newly registered static file location as if it was `wwwroot`. Notice how you no longer need to use `hostingEnvironment.MapPathWebRoot(folderLocation)`, since you're no longer trying to map the location to somewhere within `wwwroot`, but instead use your newly registered static file location.
 
