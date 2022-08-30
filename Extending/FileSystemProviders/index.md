@@ -118,7 +118,7 @@ For inspiration on building a custom file system, have a look at the [Azure Blob
 
 ### Accessing the media file system from code
 
-Since the default media file system can swapped with custom implementations, you should never access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
+Since the default media file system can be swapped with custom implementations, you should never access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
 
 ```csharp
 public class ImagesController : UmbracoAuthorizedApiController
