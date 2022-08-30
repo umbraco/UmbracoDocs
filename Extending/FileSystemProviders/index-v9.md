@@ -46,7 +46,7 @@ namespace UmbracoExamples.Composition
 }
 ```
 
-When creating a PhyscialFileSystem it takes some dependencies like IIOHelper, but the last two parameters are what we're interested in. The `rootPath` is where your media will be stored on the disk. Since netcore by default store files in the `wwwroot`, we must put our desired folder somewhere within `wwwroot`, to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`. The `~` will be mapped to your `wwwroot` folder, so the final `rootPath` will be `your/project/path/wwwroot/CustomMediaFolder`. The `~` is therefore important.
+When creating a PhyscialFileSystem it takes some dependencies like IIOHelper, but the last two parameters are what we're interested in. The `rootPath` is where your media will be stored on the disk. Since netcore by default stores files in the `wwwroot`, we must put our desired folder somewhere within `wwwroot` to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`. The `~` will be mapped to your `wwwroot` folder, so the final `rootPath` will be `your/project/path/wwwroot/CustomMediaFolder`. The `~` is therefore important.
 
 The other part of the puzzle is the `rootUrl`, which is the base URL your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important. Another thing worth mentioning with the `rootUrl` is that it must be the same as the folder location, otherwise, you will get 404's for your images.
 
