@@ -168,7 +168,11 @@ public class FileSystemLocations
 
 ### Stylesheet Filesystem
 
-Like with the media file system it is also possible to replace the stylesheet filesystem with your own implementation of `IFileSystem` in a composer. It's important to note here that, unlike media file system, you cannot replace the filesystem with a `PhysicalFileSystem` using a different root path or root URL, this will not work, and will cause issues since the root path is coupled to the virtual path, given by the frontend, e.g. `/css/MyBeautifulStyle.css`.
+Like with the media file system, it is also possible to replace the stylesheet filesystem with your own implementation of `IFileSystem` in a composer. 
+
+:::note 
+Unlike a media file system, you cannot replace the filesystem with a `PhysicalFileSystem` using a different root path or root URL. This will not work and will cause issues since the root path is coupled to the virtual path given by the frontend, e.g. `/css/MyBeautifulStyle.css`.
+:::
 
 When replacing the stylesheet filesystem, you don't need to register it, since it's only available through Filesystems, what you need to do instead is configure the `FileSystems` to use your implementation for the `StylesheetsFileSystem`.
 
