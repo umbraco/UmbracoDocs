@@ -96,7 +96,7 @@ public void Compose(IUmbracoBuilder builder)
 
 This is almost the same as when registering a location within the `wwwroot` folder. The only difference is that `rootPath` is now set to the path we gave the `PhysicalFileProvider` and the `rootUrl` is the same as we set as the `RequestPath` in the `StaticFileOption`.
 
-Our media is now stored in `C:\storage\umbracoMedia`, and is served from the base URL `/CustomPath`, so an image URL will look something like `mysite.com/CustomPath/MyAwesomePicture.png`.
+Our media is now stored in `C:\storage\umbracoMedia` and is served from the base URL `/CustomPath`, so an image URL will look something like `mysite.com/CustomPath/MyAwesomePicture.png`.
 
 ### IFileSystem
 
