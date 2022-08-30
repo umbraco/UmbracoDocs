@@ -178,7 +178,7 @@ When replacing the stylesheet filesystem, you don't need to register it, since i
 
 The IUmbracoBuilder has an extension method for configuring the `FileSystems`. You need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure. Configuring the `FileSystems` can look like this:
 
-```c#
+```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
