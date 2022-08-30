@@ -56,7 +56,7 @@ As mentioned, netcore stores static files such as media and CSS, in the `wwwroot
 
 In the `configure` method in `startup.cs`, register a new static file location like so:
 
-```c#
+```csharp
 public void Configure(IApplicationBuilder app)
 {
     ...
