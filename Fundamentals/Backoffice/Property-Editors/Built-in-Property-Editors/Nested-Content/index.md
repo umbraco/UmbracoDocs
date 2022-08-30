@@ -42,6 +42,7 @@ Once your data type has been configured, set-up a property on your page doc type
 ## Limitations
 
 There is a handful of editors that Nested Content does not support in its elements. These include:
+
 - [Tags](../../Built-in-Property-Editors/Tags/index.md)
 - [Blocklist Editor](../../Built-in-Property-Editors/Block-List-Editor/index.md)
 - [File upload](../../Built-in-Property-Editors/File-Upload/index.md)
