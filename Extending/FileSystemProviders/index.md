@@ -64,7 +64,7 @@ If you want to store the media files outside of `wwwroot` there is an extra step
 
 In the `Configure` method in `startup.cs`, register a new static file location like so:
 
-```c#
+```csharp
 public void Configure(IApplicationBuilder app)
 {
     ...
