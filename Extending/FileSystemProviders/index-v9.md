@@ -176,7 +176,7 @@ Unlike a media file system, you cannot replace the filesystem with a `PhysicalFi
 
 When replacing the stylesheet filesystem, you don't need to register it, since it's only available through Filesystems. What you need to do instead is, configure the `FileSystems` to use your implementation for the `StylesheetsFileSystem`.
 
-The IUmbracoBuilder has an extension method for configuring the `FileSystems`, you need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure, configuring the `FileSystems` can look like this:
+The IUmbracoBuilder has an extension method for configuring the `FileSystems`. You need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure. Configuring the `FileSystems` can look like this:
 
 ```c#
 using Microsoft.Extensions.DependencyInjection;
