@@ -174,7 +174,7 @@ Like with the media file system, it is also possible to replace the stylesheet f
 Unlike a media file system, you cannot replace the filesystem with a `PhysicalFileSystem` using a different root path or root URL. This will not work and will cause issues since the root path is coupled to the virtual path given by the frontend, e.g. `/css/MyBeautifulStyle.css`.
 :::
 
-When replacing the stylesheet filesystem, you don't need to register it, since it's only available through Filesystems, what you need to do instead is configure the `FileSystems` to use your implementation for the `StylesheetsFileSystem`.
+When replacing the stylesheet filesystem, you don't need to register it, since it's only available through Filesystems. What you need to do instead is, configure the `FileSystems` to use your implementation for the `StylesheetsFileSystem`.
 
 The IUmbracoBuilder has an extension method for configuring the `FileSystems`, you need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure, configuring the `FileSystems` can look like this:
 
