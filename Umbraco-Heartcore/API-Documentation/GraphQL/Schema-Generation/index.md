@@ -105,34 +105,62 @@ The `Query` type is the entry to the GraphQL API. By default it contains two fie
 
 ```graphql
 type Query {
-  # Get Content by its unique identifier or url. Either id or url must be specified but not both.
+  """
+  Get Content by its unique identifier or url. Either id or url must be specified but not both.
+  """
   content(
-    # The unique identifier of the content.
+    """
+    The unique identifier of the content.
+    """
     id: ID,
-    # The url of the content.
+    """
+    The url of the content.
+    """
     url: String,
-    # The culture to fetch the content in. If empty the default culture will be used.
+    """
+    The culture to fetch the content in. If empty the default culture will be used.
+    """
     culture: String
-    # Specifies if draft content should be returned. Requires the request to be authenticated.
+    """
+    Specifies if draft content should be returned. Requires the request to be authenticated.
+    """
     preview: Boolean
   ): Content
-  # Get all Content.
+  """
+  Get all Content.
+  """
   allContent(
-    # Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+    """
+    Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+    """
     first: Int,
-    # Only look at connected edges with cursors greater than the value of `after`.
+    """
+    Only look at connected edges with cursors greater than the value of `after`.
+    """
     after: String,
-    # Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+    """
+    Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+    """
     last: Int,
-    # Only look at connected edges with cursors smaller than the value of `before`.
+    """
+    Only look at connected edges with cursors smaller than the value of `before`.
+    """
     before: String,
-    # The culture to fetch the value in. If empty the default culture will be used.
+    """
+    The culture to fetch the value in. If empty the default culture will be used.
+    """
     culture: String,
-    # Specifies if draft content should be returned. Requires the request to be authenticated.
+    """
+    Specifies if draft content should be returned. Requires the request to be authenticated.
+    """
     preview: Boolean
-    # Filter the returned data.
+    """
+    Filter the returned data.
+    """
     where: ContentFilterInput,
-    # Sort the returned data.
+    """
+    Sort the returned data.
+    """
     orderBy: [ContentOrderByInput]
   ): ContentConnection!
 }
@@ -261,9 +289,13 @@ The [Property Editors](../Property-Editors/) page contains a list of all the Pro
 ```graphql
 # Represents a range of decimals.
 type DecimalRange {
-  # Maximum value of the range.
+  """
+  Maximum value of the range.
+  """
   maximum: Decimal!
-  # Minimum value of the range.
+  """
+  Minimum value of the range.
+  """
   minimum: Decimal!
 }
 ```
@@ -299,7 +331,9 @@ type DecimalRange {
 ### HTML
 
 ```graphql
-# A string containing HTML code.
+"""
+A string containing HTML code.
+"""
 scalar HTML
 ```
 
@@ -329,38 +363,70 @@ scalar HTML
 
 ```graphql
 type ImageCropper {
-  # The predefined crops.
+  """
+  The predefined crops.
+  """
   crops: [ImageCropperCrop]!
-  # The image url with crop parameters.
+  """
+  The image url with crop parameters.
+  """
   cropUrl(
-    # The crop alias.
+    """
+    The crop alias.
+    """
     alias: String
-    # Change background color of the image.
+    """
+    Change background color of the image.
+    """
     backgroundColor: String
-    # The width of the output image.
+    """
+    The width of the output image.
+    """
     width: Int
-    # The height of the output image.
+    """
+    The height of the output image.
+    """
     height: Int
-    # Quality percentage of the output image.
+    """
+    Quality percentage of the output image.
+    """
     quality: Int
-    # The image crop mode.
+    """
+    The image crop mode.
+    """
     cropMode: ImageCropMode
-    # The image crop anchor.
+    """
+    The image crop anchor.
+    """
     cropAnchor: ImageCropAnchor
-    # Use a dimension as a ratio.
+    """
+    Use a dimension as a ratio.
+    """
     ratioMode: ImageCropRatioMode
-    # The format of the output image.
+    """
+    The format of the output image.
+    """
     format: ImageCropFormat
-    # Use focal point to generate an output image using the focal point instead of the predefined crop if there is one.
+    """
+    Use focal point to generate an output image using the focal point instead of the predefined crop if there is one.
+    """
     preferFocalPoint: Boolean = false
-    # If the image should be upscaled to requested dimensions.
+    """
+    If the image should be upscaled to requested dimensions.
+    """
     upscale: Boolean = false
   ): String
-  # The focal point position.
+  """
+  The focal point position.
+  """
   focalPoint: ImageCropperFocalPoint!
-  # The focal point url template.
+  """
+  The focal point url template.
+   """
   focalPointUrlTemplate: String!
-  # The image url.
+  """
+  The image url.
+  """
   url: String!
 }
 ```
@@ -395,23 +461,41 @@ type ImageCropper {
 
 ```graphql
 enum ImageCropAnchor {
-  # Anchors the position of the image to the bottom of it's bounding container.
+  """
+  Anchors the position of the image to the bottom of it's bounding container.
+  """
   BOTTOM
-  # Anchors the position of the image to the bottom left side of it's bounding container.
+  """
+  Anchors the position of the image to the bottom left side of it's bounding container.
+  """
   BOTTOM_LEFT
-  # Anchors the position of the image to the bottom right side of it's bounding container.
+  """
+  Anchors the position of the image to the bottom right side of it's bounding container.
+  """
   BOTTOM_RIGHT
-  # Anchors the position of the image to the center of it's bounding container.
+  """
+  Anchors the position of the image to the center of it's bounding container.
+  """
   CENTER
-  # Anchors the position of the image to the left of it's bounding container.
+  """
+  Anchors the position of the image to the left of it's bounding container.
+  """
   LEFT
-  # Anchors the position of the image to the right of it's bounding container.
+  """
+  Anchors the position of the image to the right of it's bounding container.
+  """
   RIGHT
-  # Anchors the position of the image to the top of it's bounding container.
+  """
+  Anchors the position of the image to the top of it's bounding container.
+  """
   TOP
-  # Anchors the position of the image to the top left side of it's bounding container.
+  """
+  Anchors the position of the image to the top left side of it's bounding container.
+  """
   TOP_LEFT
-  # Anchors the position of the image to the top right side of it's bounding container.
+  """
+  Anchors the position of the image to the top right side of it's bounding container.
+  """
   TOP_RIGHT
 }
 ```
@@ -483,17 +567,29 @@ enum ImageCropFormat {
 
 ```graphql
 enum ImageCropMode {
-  # When upscaling an image the image pixels themselves are not resized, rather the image is padded to fit the given dimensions.
+  """
+  When upscaling an image the image pixels themselves are not resized, rather the image is padded to fit the given dimensions.
+  """
   BOX_PAD
-  # Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is cropped to match the new aspect ratio.
+  """
+  Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is cropped to match the new aspect ratio.
+  """
   CROP
-  # Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is resized to the maximum possible value in each direction while maintaining the original aspect ratio.
+  """
+  Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is resized to the maximum possible value in each direction while maintaining the original aspect ratio.
+  """
   MAX
-  # Resizes the image until the shortest side reaches the set given dimension. This will maintain the aspect ratio of the original image. Upscaling is disabled in this mode and the original image will be returned if attempted.
+  """
+  Resizes the image until the shortest side reaches the set given dimension. This will maintain the aspect ratio of the original image. Upscaling is disabled in this mode and the original image will be returned if attempted.
+  """
   MIN
-  # Passing a single dimension will automatically preserve the aspect ratio of the original image. If the requested aspect ratio is different then the image will be padded to fit.
+  """
+  Passing a single dimension will automatically preserve the aspect ratio of the original image. If the requested aspect ratio is different then the image will be padded to fit.
+  """
   PAD
-  # Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is stretched to match the new aspect ratio.
+  """
+  Resizes the image to the given dimensions. If the set dimensions do not match the aspect ratio of the original image then the output is stretched to match the new aspect ratio.
+  """
   STRETCH
 }
 ```
@@ -528,9 +624,13 @@ enum ImageCropMode {
 
 ```graphql
 enum ImageCropRatioMode {
-  # Calculate the image ratio based on the height.
+  """
+  Calculate the image ratio based on the height.
+  """
   HEIGHT
-  # Calculate the image ratio based on the width.
+  """
+  Calculate the image ratio based on the width.
+  """
   WIDTH
 }
 ```
@@ -566,13 +666,21 @@ enum ImageCropRatioMode {
 
 ```graphql
 type ImageCropperCrop {
-  # The crop alias.
+  """
+  The crop alias.
+  """
   alias: String!
-  # The crop coordinates.
+  """
+  The crop coordinates.
+  """
   coordinates: ImageCropperCropCoordinates
-  # The crop height.
+  """
+  The crop height.
+  """
   height: Int!
-  # The crop width.
+  """
+  The crop width.
+  """
   width: Int!
 }
 ```
@@ -666,9 +774,13 @@ type ImageCropperCropCoordinates {
 
 ```graphql
 type ImageCropperFocalPoint {
-  # The left position.
+  """
+  The left position.
+  """
   left: Decimal!
-  # The top position.
+  """
+  The top position.
+  """
   top: Decimal!
 }
 ```
@@ -708,8 +820,9 @@ type ImageCropperFocalPoint {
 ### JSON
 
 ```graphql
-# The `JSON` scalar type
- represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
 scalar JSON
 ```
 
@@ -742,15 +855,25 @@ scalar JSON
 
 ```graphql
 type Link {
-  # The name of the Link.
+  """
+  The name of the Link.
+  """
   name: String!
-  # The link target.
+  """
+  The link target.
+  """
   target: String
-  # The link type.
+  """
+  The link type.
+  """
   type: LintType!
-  # The link udi if type is CONTENT or MEDIA.
+  """
+  The link udi if type is CONTENT or MEDIA.
+  """
   udi: String
-  # The url.
+  """
+  The url.
+  """
   url: String!
 }
 ```
@@ -793,11 +916,17 @@ type Link {
 
 ```graphql
 enum LintType {
-  # The link is a Content link.
+  """
+  The link is a Content link.
+  """
   CONTENT
-  # The link is an external link.
+  """
+  The link is an external link.
+  """
   EXTERNAL
-  # The link is a media link.
+  """
+  The link is a media link.
+  """
   MEDIA
 }
 ```
@@ -831,15 +960,25 @@ enum LintType {
 ### Page Info
 
 ```graphql
-# Information about pagination in a connection.
+"""
+Information about pagination in a connection.
+"""
 type PageInfo {
-  # When paginating forwards, the cursor to continue.
+  """
+  When paginating forwards, the cursor to continue.
+  """
   endCursor: String
-  # When paginating forwards, are there more items?
+  """
+  When paginating forwards, are there more items?
+  """
   hasNextPage: Boolean!
-  # When paginating backwards, are there more items?
+  """
+  When paginating backwards, are there more items?
+  """
   hasPreviousPage: Boolean!
-  # When paginating backwards, the cursor to continue.
+  """
+  When paginating backwards, the cursor to continue.
+  """
   startCursor: String
 }
 ```
@@ -880,9 +1019,13 @@ type PageInfo {
 
 ```graphql
 type PickedColor {
-  # The color.
+  """
+  The color.
+  """
   color: String!
-  # The label.
+  """
+  The label.
+  """
   label: String!
 }
 ```
@@ -916,7 +1059,9 @@ type PickedColor {
 
 ```graphql
 interface Element {
-  #  The Content Type alias.
+  """
+  The Content Type alias.
+  """
   contentTypeAlias: String!
 }
 ```
@@ -950,105 +1095,187 @@ interface Element {
 ### Content
 
 ```graphql
-interface Content {
-  #  The ancestors.
-  ancestors(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
-    before: String
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-    # Filter the returned data.
-    where: ContentFilterInput,
-    # Sort the returned data.
-    orderBy: [ContentOrderByInput]
-  ): ContentConnection!
-  #  The children.
-  children(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
-    before: String
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-    # Filter the returned data.
-    where: ContentFilterInput,
-    # Sort the returned data.
-    orderBy: [ContentOrderByInput]
-  ): ContentConnection!
-  #  The Content Type alias.
-  contentTypeAlias: String!
-  #  The create date.
-  createDate: DateTime!
-  #  The descendants.
-  descendants(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
-    before: String
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-    # Filter the returned data.
-    where: ContentFilterInput,
-    # Sort the returned data.
-    orderBy: [ContentOrderByInput],
-  ): ContentConnection!
-  #  The unique identifier.
-  id: ID!
-  #  The level.
-  level: Int!
-  #  The name.
-  name(
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-  ): String
-  #  The parent Content, can be null if content is at root.
-  parent(
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-  ): Content
-  #  The sort order.
-  sortOrder: Int!
-  #  The update date.
-  updateDate(
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-  ): DateTime
-  #  The url.
-  url(
-    #  The culture to fetch the value in. If empty the contents culture will be used.
-    culture: String
-  ): String
+interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", uniqueKey: ["id"]) {
+    """
+    The ancestors.
+    """
+    ancestors(
+        """
+        Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+        """
+        first: Int,
+        """
+        Only look at connected edges with cursors greater than the value of `after`.
+        """
+        after: String,
+        """
+        Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+        """
+        last: Int,
+        """
+        Only look at connected edges with cursors smaller than the value of `before`.
+        """
+        before: String
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+        """
+        Filter the returned data.
+        """
+        where: ContentFilterInput,
+        """
+        Sort the returned data.
+        """
+        orderBy: [ContentOrderByInput],
+    ): ContentConnection! @sqlJoin(otherKey: "id", thisKey: "ancestors", type: "ArrayManyToMany", orderBy: "level", orderByType: "System.Int32", paginate: true, checkCulture: true)
+    """
+    The children.
+    """
+    children(
+        """
+        Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+        """
+        first: Int,
+        """
+        Only look at connected edges with cursors greater than the value of `after`.
+        """
+        after: String,
+        """
+        Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+        """
+        last: Int,
+        """
+        Only look at connected edges with cursors smaller than the value of `before`.
+        """
+        before: String
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+        """
+        Filter the returned data.
+        """
+        where: ContentFilterInput,
+        """
+        Sort the returned data.
+        """
+        orderBy: [ContentOrderByInput],
+    ): ContentConnection! @sqlJoin(otherKey: "parentId", thisKey: "id", type: "OneToMany" orderBy: "sortOrder", orderByType: "System.Int32",paginate: true, checkCulture: true)
+    """
+    The Content Type alias.
+    """
+    contentTypeAlias: String! @sqlColumn(column: "contentTypeAlias")
+    """
+    The create date.
+    """
+    createDate: DateTime! @sqlColumn(column: "createDate")
+    """
+    The descendants.
+    """
+    descendants(
+        """
+        Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+        """
+        first: Int,
+        """
+        Only look at connected edges with cursors greater than the value of `after`.
+        """
+        after: String,
+        """
+        Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+        """
+        last: Int,
+        """
+        Only look at connected edges with cursors smaller than the value of `before`.
+        """
+        before: String
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+        """
+        Filter the returned data.
+        """
+        where: ContentFilterInput,
+        """
+        Sort the returned data.
+        """
+        orderBy: [ContentOrderByInput],
+    ): ContentConnection! @sqlJoin(otherKey: "ancestors", thisKey: "id", type: "OneToManyArray", orderBy: "treePath", orderByType: "System.Int32[]", paginate: true, checkCulture: true)
+    """
+    The unique identifier.
+    """
+    id: ID! @sqlColumn(column: "id")
+    """
+    The level.
+    """
+    level: Int! @sqlColumn(column: "level")
+    """
+    The name.
+    """
+    name(
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+    ): String @sqlColumn(column: "data->'{culture}'->>'name'")
+    """
+    The parent Content, can be null if content is at root.
+    """
+    parent(
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+    ): Content @sqlJoin(otherKey: "id", thisKey: "parentId", checkCulture: false)
+    """
+    The sort order.
+    """
+    sortOrder: Int! @sqlColumn(column: "sortOrder")
+    """
+    The update date.
+    """
+    updateDate(
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+    ): DateTime @sqlColumn(column: "data->'{culture}'->>'updateDate'")
+    """
+    The url.
+    """
+    url(
+        """
+        The culture to fetch the value in. If empty the contents culture will be used.
+        """
+        culture: String
+    ): String @sqlColumn(column: "data->'{culture}'->>'url'")
 }
 ```
 
 ### Content Connection
 
 ```graphql
-#  A connection from an object to a list of objects of type `Content`.
-type ContentConnection {
-  #  A list of edges.
-  edges: [ContentEdge]!
-  # A list of all of the objects returned in the connection.
-  # This is a convenience field provided for quickly exploring the API;
-  # rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead.
-  # Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination,
-  # this shortcut cannot be used, "and the full \"{ edges { node } } \" version should be used instead.
+"""
+A connection from an object to a list of objects of type `Content`.
+"""
+type ContentConnection @connection {
+  """
+  A list of all of the objects returned in the connection.
+  This is a convenience field provided for quickly exploring the API;
+  rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead.
+  Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination,
+  this shortcut cannot be used, "and the full \"{ edges { node } } \" version should be used instead.
+  """
   items: [Content]!
-  #  Information to aid in pagination.
+  """
+  A list of edges.
+  """
+  edges: [ContentEdge]!
+  """
+  Information to aid in pagination.
+  """
   pageInfo: PageInfo!
 }
 ```
@@ -1056,11 +1283,17 @@ type ContentConnection {
 ### Content Edge
 
 ```graphql
-#  An edge in a connection from an object to another object of type `Content`
-type ContentEdge {
-  #  A cursor for use in pagination.
+"""
+An edge in a connection from an object to another object of type `Content`
+"""
+type ContentEdge @edge {
+  """
+  A cursor for use in pagination.
+  """
   cursor: String!
-  #  The item at the end of the edge.
+  """
+  The item at the end of the edge.
+  """
   node: Content
 }
 ```
@@ -1068,94 +1301,168 @@ type ContentEdge {
 ### Media
 
 ```graphql
-interface Media {
-  #  The ancestors.
+interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", uniqueKey: ["id"]) {
+  """
+  The ancestors.
+  """
   ancestors(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
-    before: String
-  ): MediaConnection!
-  #  The children.
+      """
+      Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+      """
+      first: Int,
+      """
+      Only look at connected edges with cursors greater than the value of `after`.
+      """
+      after: String,
+      """
+      Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+      """
+      last: Int,
+      """
+      Only look at connected edges with cursors smaller than the value of `before`.
+      """
+      before: String
+  ): MediaConnection! @sqlJoin(otherKey: "id", thisKey: "ancestors", type: "ArrayManyToMany", orderBy: "level", orderByType: "System.Int32", paginate: true)
+  """
+  The children.
+  """
   children(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
+    """
+    Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+    """
+    first: Int,
+    """
+    Only look at connected edges with cursors greater than the value of `after`.
+    """
+    after: String,
+    """
+    Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+    """
+    last: Int,
+    """
+    Only look at connected edges with cursors smaller than the value of `before`.
+    """
     before: String
-  ): MediaConnection!
-  #  The create date.
-  createDate: DateTime!
-  #  The descendants.
+  ): MediaConnection! @sqlJoin(otherKey: "parentId", thisKey: "id", type: "OneToMany", orderBy: "sortOrder", orderByType: "System.Int32", paginate: true)
+  """
+  The create date.
+  """
+  createDate: DateTime! @sqlColumn(column: "createDate")
+  """
+  The descendants.
+  """
   descendants(
-    #  Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
-    first: Int
-    #  Only look at connected edges with cursors greater than the value of `after`.
-    after: String
-    #  Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
-    last: Int
-    #  Only look at connected edges with cursors smaller than the value of `before`.
+    """
+    Specifies the number of edges to return starting from `after` or the first entry if `after` is not specified.
+    """
+    first: Int,
+    """
+    Only look at connected edges with cursors greater than the value of `after`.
+    """
+    after: String,
+    """
+    Specifies the number of edges to return counting reversely from `before`, or the last entry if `before` is not specified.
+    """
+    last: Int,
+    """
+    Only look at connected edges with cursors smaller than the value of `before`.
+    """
     before: String
-  ): MediaConnection!
-  #  The unique identifier.
-  id: ID!
-  #  The level.
-  level: Int!
-  #  The Media Type alias
-  mediaTypeAlias: String!
-  #  The name.
-  name: String!
-  #  The parent Content, can be null if content is at root.
-  parent: Media
-  #  The sort order.
-  sortOrder: Int!
-  #  The update date.
-  updateDate: DateTime
-  #  The url.
+  ): MediaConnection! @sqlJoin(otherKey: "ancestors", thisKey: "id", type: "OneToManyArray", orderBy: "treePath", orderByType: "System.Int32[]", paginate: true)
+  """
+  The unique identifier.
+  """
+  id: ID! @sqlColumn(column: "id")
+  """
+  The level.
+  """
+  level: Int! @sqlColumn(column: "level")
+  """
+  The Media Type alias
+  """
+  mediaTypeAlias: String! @sqlColumn(column: "mediaTypeAlias")
+  """
+  The name.
+  """
+  name: String! @sqlColumn(column: "name")
+  """
+  The parent Content, can be null if content is at root.
+  """
+  parent: Media @sqlJoin(otherKey: "id", thisKey: "parentId")
+  """
+  The sort order.
+  """
+  sortOrder: Int! @sqlColumn(column: "sortOrder")
+  """
+  The update date.
+  """
+  updateDate: DateTime @sqlColumn(column: "updateDate")
+  """
+  The url.
+  """
   url(
-    #  Change the background color of the image.
-    backgroundColor: String
-    #  The width of the output image.
-    width: Int
-    #  The height of the output image.
-    height: Int
-    #  Quality percentage of the output image.
-    quality: Int
-    #  The image crop mode.
-    cropMode: ImageCropMode
-    #  The image crop anchor.
-    cropAnchor: ImageCropAnchor
-    #  Use a dimension as a ratio.
-    ratioMode: ImageCropRatioMode
-    #  If the image should be upscaled to requested dimensions.
-    upscale: Boolean = false
-    #  Change the format of the output image.
+    """
+    Change the background color of the image.
+    """
+    backgroundColor: String,
+    """
+    The width of the output image.
+    """
+    width: Int,
+    """
+    The height of the output image.
+    """
+    height: Int,
+    """
+    Quality percentage of the output image.
+    """
+    quality: Int,
+    """
+    The image crop mode.
+    """
+    cropMode: ImageCropMode,
+    """
+    The image crop anchor.
+    """
+    cropAnchor: ImageCropAnchor,
+    """
+    Use a dimension as a ratio.
+    """
+    ratioMode: ImageCropRatioMode,
+    """
+    If the image should be upscaled to requested dimensions.
+    """
+    upscale: Boolean = false,
+    """
+    Change the format of the output image.
+    """
     format: ImageCropFormat
-  ): String
+  ): String @imageCropUrlResolver
 }
 ```
 
 ### Media Connection
 
 ```graphql
-#  A connection from an object to a list of objects of type `Media`.
-type MediaConnection {
-  #  A list of edges.
-  edges: [MediaEdge]!
-  # A list of all of the objects returned in the connection.
-  # This is a convenience field provided for quickly exploring the API;
-  # rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead.
-  # Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination,
-  # this shortcut cannot be used, "and the full \"{ edges { node } } \" version should be used instead.
+"""
+A connection from an object to a list of objects of type `Media`.
+"""
+type MediaConnection @connection {
+  """
+  A list of all of the objects returned in the connection.
+  This is a convenience field provided for quickly exploring the API;
+  rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead.
+  Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination,
+  this shortcut cannot be used, "and the full \"{ edges { node } } \" version should be used instead.
+  """
   items: [Media]!
-  #  Information to aid in pagination.
+  """
+  A list of edges.
+  """
+  edges: [MediaEdge]!
+  """
+  Information to aid in pagination.
+  """
   pageInfo: PageInfo!
 }
 ```
@@ -1163,11 +1470,17 @@ type MediaConnection {
 ### Media Edge
 
 ```graphql
-#  An edge in a connection from an object to another object of type `Media`
-type MediaEdge {
-  #  A cursor for use in pagination.
+"""
+An edge in a connection from an object to another object of type `Media`
+"""
+type MediaEdge @edge {
+  """
+  A cursor for use in pagination.
+  """
   cursor: String!
-  #  The item at the end of the edge.
+  """
+  The item at the end of the edge.
+  """
   node: Media
 }
 ```
@@ -1185,78 +1498,158 @@ All filter inputs for Content Types will also have the default fields.
 :::
 
 ```graphql
-# A filter input for the type `Content`.
+"""
+A filter input for the type `Content`.
+"""
 input ContentFilterInput {
-  # All of the filters must match.
-  AND: [ContentFilterInput]
-  # Some of the filters must match.
-  OR: [ContentFilterInput]
-  # None of the filters must match.
-  NOT: [ContentFilterInput]
-  # Field must equal value.
-  contentTypeAlias: String
-  # Field must match any of the values.
-  contentTypeAlias_any: [String]
-  # Field must start with the value.
-  contentTypeAlias_starts_with: String
-  # Field must end with the value.
-  contentTypeAlias_ends_with: String
-  # Field must contain the value.
-  contentTypeAlias_contains: String
-  # Field must equal value.
-  createDate: DateTime
-  # Field must be greater than the value.
-  createDate_gt: DateTime
-  # Field must be greater than or equal to the value.
-  createDate_gte: DateTime
-  # Field must be less than the value.
-  createDate_lt: DateTime
-  # Field must be less than or equal to the value.
-  createDate_lte: DateTime
-  # Field must equal value.
-  level: Int
-  # Field must be greater than the value.
-  level_gt: Int
-  # Field must be greater than or equal to the value.
-  level_gte: Int
-  # Field must be less than the value.
-  level_lt: Int
-  # Field must be less than or equal to the value.
-  level_lte: Int
-  # Field must match any of the values.
-  level_any: [Int]
-  # Field must equal value.
-  name: String
-  # Field must match any of the values.
-  name_any: [String]
-  # Field must start with the value.
-  name_starts_with: String
-  # Field must end with the value.
-  name_ends_with: String
-  # Field must contain the value.
-  name_contains: String
-  # Field must equal value.
-  sortOrder: Int
-  # Field must be greater than the value.
-  sortOrder_gt: Int
-  # Field must be greater than or equal to the value.
-  sortOrder_gte: Int
-  # Field must be less than the value.
-  sortOrder_lt: Int
-  # Field must be less than or equal to the value.
-  sortOrder_lte: Int
-  # Field must match any of the values.
-  sortOrder_any: [Int]
-  # Field must equal value.
-  updateDate: DateTime
-  # Field must be greater than the value.
-  updateDate_gt: DateTime
-  # Field must be greater than or equal to the value.
-  updateDate_gte: DateTime
-  # Field must be less than the value.
-  updateDate_lt: DateTime
-  # Field must be less than or equal to the value.
-  updateDate_lte: DateTime
+  """
+  All of the filters must match.
+  """
+  AND: [ContentFilterInput] @filter(type: "AND")
+  """
+  Some of the filters must match.
+  """
+  OR: [ContentFilterInput] @filter(type: "OR")
+  """
+  None of the filters must match.
+  """
+  NOT: [ContentFilterInput] @filter(type: "NOT")
+  """
+  Field must equal value.
+  """
+  contentTypeAlias: String @filter(column: "contentTypeAlias", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  contentTypeAlias_any: [String] @filter(column: "contentTypeAlias", op: "Any")
+  """
+  Field must start with the value.
+  """
+  contentTypeAlias_starts_with: String @filter(column: "contentTypeAlias", op: "StartsWith")
+  """
+  Field must end with the value.
+  """
+  contentTypeAlias_ends_with: String @filter(column: "contentTypeAlias", op: "EndsWith")
+  """
+  Field must contain the value.
+  """
+  contentTypeAlias_contains: String @filter(column: "contentTypeAlias", op: "Contains")
+  """
+  Field must equal value.
+  """
+  createDate: DateTime @filter(column: "createDate", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  createDate_gt: DateTime @filter(column: "createDate", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  createDate_gte: DateTime @filter(column: "createDate", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  createDate_lt: DateTime @filter(column: "createDate", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  createDate_lte: DateTime @filter(column: "createDate", op: "LessThanEqual")
+  """
+  Field must equal value.
+  """
+  id: ID @filter(column: "id", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  id_any: [ID] @filter(column: "id", op: "Any")
+  """
+  Field must equal value.
+  """
+  level: Int @filter(column: "level", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  level_gt: Int @filter(column: "level", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  level_gte: Int @filter(column: "level", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  level_lt: Int @filter(column: "level", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  level_lte: Int @filter(column: "level", op: "LessThanEqual")
+  """
+  Field must match any of the values.
+  """
+  level_any: [Int] @filter(column: "level", op: "Any")
+  """
+  Field must equal value.
+  """
+  name: String @filter(column: "data->'{culture}'->>'name'", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  name_any: [String] @filter(column: "data->'{culture}'->>'name'", op: "Any")
+  """
+  Field must start with the value.
+  """
+  name_starts_with: String @filter(column: "data->'{culture}'->>'name'", op: "StartsWith")
+  """
+  Field must end with the value.
+  """
+  name_ends_with: String @filter(column: "data->'{culture}'->>'name'", op: "EndsWith")
+  """
+  Field must contain the value.
+  """
+  name_contains: String @filter(column: "data->'{culture}'->>'name'", op: "Contains")
+  """
+  Field must equal value.
+  """
+  sortOrder: Int @filter(column: "sortOrder", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  sortOrder_gt: Int @filter(column: "sortOrder", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  sortOrder_gte: Int @filter(column: "sortOrder", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  sortOrder_lt: Int @filter(column: "sortOrder", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  sortOrder_lte: Int @filter(column: "sortOrder", op: "LessThanEqual")
+  """
+  Field must match any of the values.
+  """
+  sortOrder_any: [Int] @filter(column: "sortOrder", op: "Any")
+  """
+  Field must equal value.
+  """
+  updateDate: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "Equal", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be greater than the value.
+  """
+  updateDate_gt: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "GreaterThan", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be greater than or equal the value.
+  """
+  updateDate_gte: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "GreaterThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be less than the value.
+  """
+  updateDate_lt: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "LessThan", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be less than or equal the value.
+  """
+  updateDate_lte: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "LessThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
 }
 ```
 
@@ -1281,24 +1674,42 @@ Product implements Content {
 The following type will be generated, incl. the fields from the `ContentFilterInput`.
 
 ```graphql
-# A filter input for the type `Product`.
+"""
+A filter input for the type `Product`.
+"""
 input ProductFilterInput {
-  # All of the filters must match.
+  """
+  All of the filters must match.
+  """
   AND: [ProductFilterInput]
-  # Some of the filters must match.
+  """
+  Some of the filters must match.
+  """
   OR: [ProductFilterInput]
-  # None of the filters must match.
+  """
+  None of the filters must match.
+  """
   NOT: [ProductFilterInput]
 ...
-  # Field must equal value.
+  """
+  Field must equal value.
+  """
   sku: String
-  # Field must match any of the values.
+  """
+  Field must match any of the values.
+  """
   sku_any: [String]
-  # Field must start with the value.
+  """
+  Field must start with the value.
+  """
   sku_starts_with: String
-  # Field must end with the value.
+  """
+  Field must end with the value.
+  """
   sku_ends_with: String
-  # Field must contain the value.
+  """
+  Field must contain the value.
+  """
   sku_contains: String
 ...
 }
@@ -1325,26 +1736,46 @@ Product implements Content {
 The following type will be generated, incl. the fields from the `ContentFilterInput`.
 
 ```graphql
-# A filter input for the type `Product`.
+"""
+A filter input for the type `Product`.
+"""
 input ProductFilterInput {
-  # All of the filters must match.
+  """
+  All of the filters must match.
+  """
   AND: [ProductFilterInput]
-  # Some of the filters must match.
+  """
+  Some of the filters must match.
+  """
   OR: [ProductFilterInput]
-  # None of the filters must match.
+  """
+  None of the filters must match.
+  """
   NOT: [ProductFilterInput]
 ...
-  # Field must equal value.
+  """
+  Field must equal value.
+  """
   price: Decimal
-  # Field must be greater than the value.
+  """
+  Field must be greater than the value.
+  """
   price_gt: Decimal
-  # Field must be greater than or equal to the value.
+  """
+  Field must be greater than or equal to the value.
+  """
   price_gte: Decimal
-  # Field must be less than the value.
+  """
+  Field must be less than the value.
+  """
   price_lt: Decimal
-  # Field must be less than or equal to the value.
+  """
+  Field must be less than or equal to the value.
+  """
   price_lte: Decimal
-  # Field must match any of the values.
+  """
+  Field must match any of the values.
+  """
   price_any: [Decimal]
 ...
 }
@@ -1367,13 +1798,21 @@ Product implements Content {
 The following type will be generated, incl. the fields from the `ContentFilterInput`.
 
 ```graphql
-# A filter input for the type `Product`.
+"""
+A filter input for the type `Product`.
+"""
 input ProductFilterInput {
-  # All of the filters must match.
+  """
+  All of the filters must match.
+  """
   AND: [ProductFilterInput]
-  # Some of the filters must match.
+  """
+  Some of the filters must match.
+  """
   OR: [ProductFilterInput]
-  # None of the filters must match.
+  """
+  None of the filters must match.
+  """
   NOT: [ProductFilterInput]
 ....
   # Field must equal value.
@@ -1381,6 +1820,10 @@ input ProductFilterInput {
 ...
 }
 ```
+
+### Content
+
+For types returning `Content` the [ContentFilterInput](#default_filter_fields) is used.
 
 ### Dates
 
@@ -1390,13 +1833,6 @@ Given the following type:
 
 ```graphql
 Product implements Content {
-  # All of the filters must match.
-  AND: [ProductFilterInput]
-  # Some of the filters must match.
-  OR: [ProductFilterInput]
-  # None of the filters must match.
-  NOT: [ProductFilterInput]
-....
   availableDate: DateTime
 ...
 }
@@ -1405,26 +1841,204 @@ Product implements Content {
 The following type will be generated, incl. the fields from the `ContentFilterInput`.
 
 ```graphql
-# A filter input for the type `Product`.
+"""
+A filter input for the type `Product`.
+"""
 input ProductFilterInput {
-  # All of the filters must match.
+  """
+  All of the filters must match.
+  """
   AND: [ProductFilterInput]
-  # Some of the filters must match.
+  """
+  Some of the filters must match.
+  """
   OR: [ProductFilterInput]
-  # None of the filters must match.
+  """
+  None of the filters must match.
+  """
   NOT: [ProductFilterInput]
 ...
-  # Field must equal value.
+  """
+  Field must equal value.
+  """
   availableDate: DateTime
-  # Field must be greater than the value.
+  """
+  Field must be greater than the value.
+  """
   availableDate_gt: DateTime
-  # Field must be greater than or equal to the value.
+  """
+  Field must be greater than or equal to the value.
+  """
   availableDate_gte: DateTime
-  # Field must be less than the value.
+  """
+  Field must be less than the value.
+  """
   availableDate_lt: DateTime
-  # Field must be less than or equal to the value.
+  """
+  Field must be less than or equal to the value.
+  """
   availableDate_lte: DateTime
 ...
+}
+```
+
+### Media
+
+For types returning `Media` the `MediaFilterInput` is used.
+
+```graphql
+"""
+A filter input for the type `Media`.
+"""
+input MediaFilterInput {
+  """
+  All of the filters must match.
+  """
+  AND: [MediaFilterInput] @filter(type: "AND")
+  """
+  Some of the filters must match.
+  """
+  OR: [MediaFilterInput] @filter(type: "OR")
+  """
+  None of the filters must match.
+  """
+  NOT: [MediaFilterInput] @filter(type: "NOT")
+  """
+  Field must equal value.
+  """
+  mediaTypeAlias: String @filter(column: "mediaTypeAlias", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  mediaTypeAlias_any: [String] @filter(column: "mediaTypeAlias", op: "Any")
+  """
+  Field must start with the value.
+  """
+  mediaTypeAlias_starts_with: String @filter(column: "mediaTypeAlias", op: "StartsWith")
+  """
+  Field must end with the value.
+  """
+  mediaTypeAlias_ends_with: String @filter(column: "mediaTypeAlias", op: "EndsWith")
+  """
+  Field must contain the value.
+  """
+  mediaTypeAlias_contains: String @filter(column: "mediaTypeAlias", op: "Contains")
+  """
+  Field must equal value.
+  """
+  createDate: DateTime @filter(column: "createDate", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  createDate_gt: DateTime @filter(column: "createDate", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  createDate_gte: DateTime @filter(column: "createDate", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  createDate_lt: DateTime @filter(column: "createDate", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  createDate_lte: DateTime @filter(column: "createDate", op: "LessThanEqual")
+  """
+  Field must equal value.
+  """
+  id: ID @filter(column: "id", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  id_any: [ID] @filter(column: "id", op: "Any")
+  """
+  Field must equal value.
+  """
+  level: Int @filter(column: "level", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  level_gt: Int @filter(column: "level", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  level_gte: Int @filter(column: "level", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  level_lt: Int @filter(column: "level", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  level_lte: Int @filter(column: "level", op: "LessThanEqual")
+  """
+  Field must match any of the values.
+  """
+  level_any: [Int] @filter(column: "level", op: "Any")
+  """
+  Field must equal value.
+  """
+  name: String @filter(column: "name", op: "Equal")
+  """
+  Field must match any of the values.
+  """
+  name_any: [String] @filter(column: "name", op: "Any")
+  """
+  Field must start with the value.
+  """
+  name_starts_with: String @filter(column: "name", op: "StartsWith")
+  """
+  Field must end with the value.
+  """
+  name_ends_with: String @filter(column: "name", op: "EndsWith")
+  """
+  Field must contain the value.
+  """
+  name_contains: String @filter(column: "name", op: "Contains")
+  """
+  Field must equal value.
+  """
+  sortOrder: Int @filter(column: "sortOrder", op: "Equal")
+  """
+  Field must be greater than the value.
+  """
+  sortOrder_gt: Int @filter(column: "sortOrder", op: "GreaterThan")
+  """
+  Field must be greater than or equal the value.
+  """
+  sortOrder_gte: Int @filter(column: "sortOrder", op: "GreaterThanEqual")
+  """
+  Field must be less than the value.
+  """
+  sortOrder_lt: Int @filter(column: "sortOrder", op: "LessThan")
+  """
+  Field must be less than or equal the value.
+  """
+  sortOrder_lte: Int @filter(column: "sortOrder", op: "LessThanEqual")
+  """
+  Field must match any of the values.
+  """
+  sortOrder_any: [Int] @filter(column: "sortOrder", op: "Any")
+  """
+  Field must equal value.
+  """
+  updateDate: DateTime @filter(column: "updateDate", op: "Equal", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be greater than the value.
+  """
+  updateDate_gt: DateTime @filter(column: "updateDate", op: "GreaterThan", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be greater than or equal the value.
+  """
+  updateDate_gte: DateTime @filter(column: "updateDate", op: "GreaterThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be less than the value.
+  """
+  updateDate_lt: DateTime @filter(column: "updateDate", op: "LessThan", format: "YYYY-MM-DDTHH:MI:SS")
+  """
+  Field must be less than or equal the value.
+  """
+  updateDate_lte: DateTime @filter(column: "updateDate", op: "LessThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
 }
 ```
 
@@ -1451,16 +2065,26 @@ The following type will be generated, incl. the fields from the `ContentFilterIn
 ```graphql
 # A filter input for the type `Product`.
 input ProductFilterInput {
-  # All of the filters must match.
+  """
+  All of the filters must match.
+  """
   AND: [ProductFilterInput]
-  # Some of the filters must match.
+  """
+  Some of the filters must match.
+  """
   OR: [ProductFilterInput]
-  # None of the filters must match.
+  """
+  None of the filters must match.
+  """
   NOT: [ProductFilterInput]
 ...
-  # Field must match all of the values.
+  """
+  Field must match all of the values.
+  """
   tags_all: [String]
-  # Field must match any of the values.
+  """
+  Field must match any of the values.
+  """
   tags_some: [String]
 ...
 }
@@ -1483,38 +2107,67 @@ All order by inputs for Content Types will also have the default fields.
 :::
 
 ```graphql
-# An order input for the type `Content`.
+``"""
+An order input for the type `Content`.
+"""
 enum ContentOrderByInput {
-  # Order by `contentTypeAlias` in ascending order.
-  contentTypeAlias_ASC
-  # Order by `contentTypeAlias` in descending order.
-  contentTypeAlias_DESC
-  # Order by `createDate` in ascending order.
-  createDate_ASC
-  # Order by `createDate` in descending order.
-  createDate_DESC
-  # Order by `level` in ascending order.
-  level_ASC
-  # Order by `level` in descending order.
-  level_DESC
-  # Order by `name` in ascending order.
-  name_ASC
-  # Order by `name` in descending order.
-  name_DESC
-  # Order by `path` in ascending order.
-  path_ASC
-  # Order by `path` in descending order.
-  path_DESC
-  # Order by `sortOrder` in ascending order.
-  sortOrder_ASC
-  # Order by `sortOrder` in descending order.
-  sortOrder_DESC
-  # Order by `updateDate` in ascending order.
-  updateDate_ASC
-  # Order by `updateDate` in descending order.
-  updateDate_DESC
-}
-```
+  """
+  Order by `contentTypeAlias` in ascending order.
+  """
+  contentTypeAlias_ASC @orderBy(column: "contentTypeAlias", direction: "Ascending", type: "System.String")
+  """
+  Order by `contentTypeAlias` in descending order.
+  """
+  contentTypeAlias_DESC @orderBy(column: "contentTypeAlias", direction: "Descending", type: "System.String")
+  """
+  Order by `createDate` in ascending order.
+  """
+  createDate_ASC @orderBy(column: "createDate", direction: "Ascending", type: "System.DateTime")
+  """
+  Order by `createDate` in descending order.
+  """
+  createDate_DESC @orderBy(column: "createDate", direction: "Descending", type: "System.DateTime")
+  """
+  Order by `level` in ascending order.
+  """
+  level_ASC @orderBy(column: "level", direction: "Ascending", type: "System.Int32")
+  """
+  Order by `level` in descending order.
+  """
+  level_DESC @orderBy(column: "level", direction: "Descending", type: "System.Int32")
+  """
+  Order by `name` in ascending order.
+  """
+  name_ASC @orderBy(column: "data->'{culture}'->>'name'", direction: "Ascending", type: "System.String")
+  """
+  Order by `name` in descending order.
+  """
+  name_DESC @orderBy(column: "data->'{culture}'->>'name'", direction: "Descending", type: "System.String")
+  """
+  Order by `path` in ascending order.
+  """
+  path_ASC @orderBy(column: "treePath", direction: "Ascending", type: "System.Int32[]")
+  """
+  Order by `path` in descending order.
+  """
+  path_DESC @orderBy(column: "treePath", direction: "Descending", type: "System.Int32[]")
+  """
+  Order by `sortOrder` in ascending order.
+  """
+  sortOrder_ASC @orderBy(column: "sortOrder", direction: "Ascending", type: "System.Int32")
+  """
+  Order by `sortOrder` in descending order.
+  """
+  sortOrder_DESC @orderBy(column: "sortOrder", direction: "Descending", type: "System.Int32")
+  """
+  Order by `updateDate` in ascending order.
+  """
+  updateDate_ASC @orderBy(column: "data->'{culture}'->>'updateDate'", direction: "Ascending", type: "System.DateTime")
+  """
+  Order by `updateDate` in descending order.
+  """
+  updateDate_DESC @orderBy(column: "data->'{culture}'->>'updateDate'", direction: "Descending", type: "System.DateTime")
+}`
 
 ### Custom OrderBy Fields
 
@@ -1532,14 +2185,22 @@ Product implements Content {
 The following type will be generated, incl. the fields from the `ContentOrderByInput`.
 
 ```graphql
-# An order by input for the type `Product`.
+"""
+An order by input for the type `Product`.
+"""
 enum ProductOrderByInput {
 ...
-  # Order by `price` in ascending order.
+  """
+  Order by `price` in ascending order.
+  """
   price_ASC
-  # Order by `price` in descending order.
+  """
+  Order by `price` in descending order.
+  """
   price_DESC
-  # Order by `sku` in ascending order.
+  """
+  Order by `sku` in ascending order.
+  """
   sku_ASC
   # Order by `sku` in descending order.
   sku_DESC
