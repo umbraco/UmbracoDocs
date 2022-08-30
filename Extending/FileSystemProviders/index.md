@@ -79,7 +79,7 @@ public void Configure(IApplicationBuilder app)
 
 The PhysicalFileProvider takes a single parameter, the **`RootPath`**. This is the rooted filesystem path using directory separator chars and not ending with a directory separator, eg: `c:\storage\umbracoMedia` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
 
-You also have to specify the **`RequestPath`**. This is the relative URL, where the media will be served, using URL separator chars and not ending with a separator, eg `/CustomPath` or `/Media`.
+You also have to specify the **`RequestPath`**. This is the relative URL where the media will be served using URL separator chars and not ending with a separator, eg: `/CustomPath` or `/Media`.
 
 Now you can use your newly registered static file location as if it was `wwwroot`. Notice how you no longer need to use `hostingEnvironment.MapPathWebRoot(folderLocation)`, since you're no longer trying to map the location to somewhere within `wwwroot`, but instead use your newly registered static file location.
 
