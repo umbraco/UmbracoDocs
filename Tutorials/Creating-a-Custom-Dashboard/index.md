@@ -180,7 +180,7 @@ If you don't see the brackets disappearing - you may need to restart the website
 ### Different languages
 
 With the above steps completed, your dashboard is all set up to be translated across different backoffice languages.
-To test it out, you could, for example, add another language xml - da.xml for the Danish language.
+To test it out, you could, for example, add another language XML file, like `da.xml` for the Danish language.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
