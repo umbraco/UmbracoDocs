@@ -19,7 +19,7 @@ At the time of writing, .net 6.0.6 is out with an SDK version of 6.0.301.
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/075H_ekJBKI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Upgrading from Umbraco 9 to Umbraco 10" src="https://www.youtube.com/embed/075H_ekJBKI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 

@@ -3,11 +3,21 @@ versionFrom: 7.0.0
 versionTo: 10.0.0
 ---
 
-# Upgrading - version specific
+# Version specific upgrade notes
 
 This page covers specific upgrade documentation for specific versions.
 
 ## Version 10
+
+### 10.1
+
+#### Breaking changes
+
+- The default theme has been updated to render captions for field types that support prevalues. If you have created any custom themes, please review the default theme and ensure you make similar changes to make use of the new feature.
+- The method `PreValues` on the `FieldViewModel` type has been changed from a collection of strings to a collection of a `PrevalueViewModel` object that has a Value and Caption property.
+- In order to fix an issue with display and editing of values, we've found a need to ensure the property representing the fields a record entry used in the backoffice is changed from a list of values to a structure containing the field Ids and values. Specifically, `EntrySearchResult.Fields` has changed type `IEnumerable<object?>` to `IEnumerable<EntrySearchResult.FieldData>`.  The only scenarios affected by this would be anyone handling the `EntrySearchResultFetchingNotification` notification or developing custom export types.
+
+### 10.0
 
 Version 10 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
@@ -15,7 +25,7 @@ To migrate to version 10, you should first update to the latest minor release of
 
 Either way will ensure you have all the database schema changes in place.
 
-### Views and client-side files
+#### Views and client-side files
 
 Umbraco 10 distributes the views and client-side files as part of a Razor class library, distributed in the Umbraco.Forms.StaticAssets package.  This means these assets are no longer individual files available on disk. The advantage of this approach is that that avoids changes made to them by solution developers being inadvertently lost when the project is rebuilt.
 
@@ -33,15 +43,15 @@ For example, with a custom email template, remove the file `Example-Template.csh
 
 Similarly, if you have a custom theme, remove the `default` and `bootstrap3-horizontal` folders from the `/Views/Partials/Forms/Themes/` folder but keep any custom theme folders.
 
-### Breaking changes
+#### Breaking changes
 
 Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
 
-#### Configuration
+##### Configuration
 
 - Renamed the configuration option to allow editable form submissions on the front-end to `AllowEditableFormSubmisisons` (fixing the typo in the previous value of `AllowEditableFormSubmisisons`).
 
-#### Code
+##### Code
 
 - `DatabaseIntegrityHealthCheck` has an altered constructor taking an additional parameter.
 - The `EventExtensions` class is no longer used since V9 and has been removed.
@@ -80,7 +90,7 @@ Additional methods have been added to the following interfaces:
 - Database migration classes inheriting from `FormsMigrationBase` now use the non-obsolete base constructor defined on `PackageMigrationBase`.
 - The methods on `IPlaceholderParsingService` have been combined into a single one with optional parameters.
 - The method `PostSave` on `FormSecurityController` has been renamed to `PostSaveForUser`.
-- The back-office model class `FormSecurity` has been renamed to `FormSecurityForUser`.
+- The backoffice model class `FormSecurity` has been renamed to `FormSecurityForUser`.
 - The unused class `NonSerialiazableTypeSurrogateSelector` was removed.
 - The unused method `ImportXmlNodeFromText` on `XmlHelper` was  removed.
 - `IFormService.FormExist` was renamed to `IFormService.FormExists`.
@@ -95,12 +105,19 @@ Additional methods have been added to the following interfaces:
 
 Version 9 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `9.0.1` and runs on .NET 5.
 
+### 9.5
+
+See notes under 10.1.
+
 ## Version 8
 
 Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.0` and runs on .NET Framework 7.2.
-The reasoning behind this is due to some underlying changes in Umbraco CMS core.
 
 In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8 make sure you read the [Manual Upgrade instructions](ManualUpgrade).
+
+### 8.13
+
+See notes under 10.1.
 
 ## Version 4 to Version 6
 

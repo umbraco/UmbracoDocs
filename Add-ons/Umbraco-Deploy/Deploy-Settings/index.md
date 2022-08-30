@@ -36,6 +36,7 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
+            "Edition": "Default",
             "DefaultTimeoutSeconds": 60,
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
@@ -67,6 +68,18 @@ For illustration purposes, the following structure represents the full set of op
 ## ApiKey
 
 The API key is a 10 character random string applied with the same value to all environments in order to authenticate HTTP requests between them.
+
+## Edition
+
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+
+Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
+
+It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
+
+Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+
+However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
 ## ExcludedEntityTypes
 

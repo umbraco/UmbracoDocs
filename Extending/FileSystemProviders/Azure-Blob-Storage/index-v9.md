@@ -17,15 +17,15 @@ See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage
 
 Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` NuGet package. There are two approaches to installing the package:
 
-1. Use your favorite IDE and open up the NuGet Package Manager to search and install the package
-1. Use the command line to install the package
+1. Use your favorite IDE and open up the NuGet Package Manager to search and install version 1.1.1 of the package
+1. Use the command line to install the package using `Install-Package Umbraco.StorageProviders.AzureBlob -Version 1.1.1`
 
 ### Installing through command line
 
 Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
 ```none
-dotnet add package Umbraco.StorageProviders.AzureBlob
+dotnet add package Umbraco.StorageProviders.AzureBlob --version 1.1.1
 ```
 
 The correct package will have be installed in your project.

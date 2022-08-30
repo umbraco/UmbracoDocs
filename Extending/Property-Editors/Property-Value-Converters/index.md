@@ -98,11 +98,38 @@ Here you specify which level the property value is cached at.
 
 A property value can be cached at the following levels:
 
-- **Unknown** - Default value.
-- **Element** - It will be cached until the element itself is modified.
-- **Elements** - It will be cached until any element is modified.
-- **Snapshot** - It will be cached for the current snapshot - which in most cases is tied to a request, meaning it is for the lifetime of a request.
-- **None** - It will never be cached and will need conversion every time.
+#### `PropertyCacheLevel.Unknown`
+
+Do not use this cache level unless you know exactly what you're doing. We recommend using the `PropertyCacheLevel.Element` level.
+
+#### `PropertyCacheLevel.Element`
+
+The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
+
+- For properties used at the page level, the element is the entire page. 
+- For properties contained within Block List items, the element is the individual Block List item.
+
+This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise. 
+
+#### `PropertyCacheLevel.Elements`
+
+The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache. 
+
+This is particularly useful for property values that contain references to other content or elements. For example, the Content Picker uses this cache level to ensure that the Content Picker property values are cleared from the cache whenever the content is updated.
+
+#### `PropertyCacheLevel.Snapshot`
+
+The property value will only be cached for the duration of the current _snapshot_.
+
+A snapshot represents a point in time. For example, a snapshot is created for every content request from the frontend. Any property accessed within a snapshot using this cache level will be converted and cached for the duration of the snapshot, and then cleared from the cache again.
+
+For all intents and purposes, think of this cache level as "per request". If your property value should _only_ be cached per request, this is the cache level you should use. Use it with caution, as the added property conversions incur a performance penalty.
+
+#### `PropertyCacheLevel.None`
+
+The property value will _never_ be cached. Every time a property value is accessed (even within the same snapshot) property conversion is performed explicitly.
+
+Use this cache level with extreme caution, as it incurs a massive performance penalty.
 
 ```csharp
 public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)

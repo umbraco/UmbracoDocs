@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Getting Started with Umbraco Heartcore
 
 In this section, you can find articles about managing your Umbraco Heartcore project. You will also be able to find documentation that can help you get to know the platforms used for working with Umbraco Heartcore.
-<iframe width="800" height="450" src="https://www.youtube.com/embed/eFD3WHmCpNc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Heartcore: Getting started with Umbraco Cloud" src="https://www.youtube.com/embed/eFD3WHmCpNc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## [Create a basic Heartcore project](Creating-a-Heartcore-project)
 

@@ -24,6 +24,10 @@ This article is valid only for Umbraco 9 and later versions.
 - The final step to complete this dialog is to click **Create**.
 - Use CTRL+F5 to run the project and start the Umbraco installer.
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="How to install Umbraco using NuGet and Visual Studio" src="https://www.youtube.com/embed/CDeAYGu_-cI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## New project
 
 To install Umbraco we first need to install Umbraco's dotnet new templates.

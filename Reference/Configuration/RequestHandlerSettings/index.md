@@ -13,118 +13,116 @@ Let's have a further look at each option below.
 
 Here is a snippet containing all the default values of the `RequestHandler` section.
 
-```
-{
-	"Umbraco": {
-		"CMS": {
-			"RequestHandler": {
-				"AddTrailingSlash": true,
-				"ConvertUrlsToAscii": "try",
-				"CharCollection": [
-                    {
-						"Char": " ",
-						"Replacement": "-"
-					},
-					{
-						"Char": "\\",
-						"Replacement": ""
-					},
-					{
-						"Char": "'",
-						"Replacement": ""
-					},
-					{
-						"Char": "%",
-						"Replacement": ""
-					},
-					{
-						"Char": ".",
-						"Replacement": ""
-					},
-					{
-						"Char": ";",
-						"Replacement": ""
-					},
-					{
-						"Char": "/",
-						"Replacement": ""
-					},
-					{
-						"Char": "\\\\",
-						"Replacement": ""
-					},
-					{
-						"Char": ":",
-						"Replacement": ""
-					},
-					{
-						"Char": "#",
-						"Replacement": ""
-					},
-					{
-						"Char": "+",
-						"Replacement": "plus"
-					},
-					{
-						"Char": "*",
-						"Replacement": "star"
-					},
-					{
-						"Char": "&",
-						"Replacement": ""
-					},
-					{
-						"Char": "?",
-						"Replacement": ""
-					},
-					{
-						"Char": "æ",
-						"Replacement": "ae"
-					},
-					{
-						"Char": "ä",
-						"Replacement": "ae"
-					},
-					{
-						"Char": "ø",
-						"Replacement": "oe"
-					},
-					{
-						"Char": "ö",
-						"Replacement": "oe"
-					},
-					{
-						"Char": "å",
-						"Replacement": "aa"
-					},
-					{
-						"Char": "ü",
-						"Replacement": "ue"
-					},
-					{
-						"Char": "ß",
-						"Replacement": "ss"
-					},
-					{
-						"Char": "|",
-						"Replacement": "-"
-					},
-					{
-						"Char": "<",
-						"Replacement": ""
-					},
-					{
-						"Char": ">",
-						"Replacement": ""
-					}
-				]
-			}
-		}
-	}
+```js
+"Umbraco": {
+  "CMS": {
+    "RequestHandler": {
+      "AddTrailingSlash": true,
+      "ConvertUrlsToAscii": "try",
+      "CharCollection": [
+      {
+        "Char": " ",
+        "Replacement": "-"
+      },
+      {
+        "Char": "\\",
+        "Replacement": ""
+      },
+      {
+        "Char": "'",
+        "Replacement": ""
+      },
+      {
+        "Char": "%",
+        "Replacement": ""
+      },
+      {
+        "Char": ".",
+        "Replacement": ""
+      },
+      {
+        "Char": ";",
+        "Replacement": ""
+      },
+      {
+        "Char": "/",
+        "Replacement": ""
+      },
+      {
+        "Char": "\\\\",
+        "Replacement": ""
+      },
+      {
+        "Char": ":",
+        "Replacement": ""
+      },
+      {
+        "Char": "#",
+        "Replacement": ""
+      },
+      {
+        "Char": "+",
+        "Replacement": "plus"
+      },
+      {
+        "Char": "*",
+        "Replacement": "star"
+      },
+      {
+        "Char": "&",
+        "Replacement": ""
+      },
+      {
+        "Char": "?",
+        "Replacement": ""
+      },
+      {
+        "Char": "æ",
+        "Replacement": "ae"
+      },
+      {
+        "Char": "ä",
+        "Replacement": "ae"
+      },
+      {
+        "Char": "ø",
+        "Replacement": "oe"
+      },
+      {
+        "Char": "ö",
+        "Replacement": "oe"
+      },
+      {
+        "Char": "å",
+        "Replacement": "aa"
+      },
+      {
+        "Char": "ü",
+        "Replacement": "ue"
+      },
+      {
+        "Char": "ß",
+        "Replacement": "ss"
+      },
+      {
+        "Char": "|",
+        "Replacement": "-"
+      },
+      {
+        "Char": "<",
+        "Replacement": ""
+      },
+      {
+        "Char": ">",
+        "Replacement": ""
+      }
+      ]
+    }
+  }
 }
 ```
 
-### Add trailing slash
+## Add trailing slash
 
 This will add a trailing slash to the url when **`<addTrailingSlash>`** is set to "true".
 If you don't want to have a trailing slash, set the value to **false**.
