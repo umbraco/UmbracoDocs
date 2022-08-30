@@ -16,7 +16,7 @@ The Examine Management section, accessible from within the Settings section, is 
 
 ## Indexers
 
-From the Indexers section, you can view details about each Examine index currently configured within your Umbraco installation. Selecting any of these will expand to show you four additional options, each discussed below.
+From the Indexers section, you can view details about each Examine index currently configured within your Umbraco installation. Clicking any of these indexes will show you additional options, each discussed below.
 
 ### Index info
 
