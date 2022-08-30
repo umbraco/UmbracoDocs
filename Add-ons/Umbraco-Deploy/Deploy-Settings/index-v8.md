@@ -113,6 +113,21 @@ All of these times are in *seconds*:
 </settings>
 ```
 
+## Transfer Queue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 4.7, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the follwoing setting can be used.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy useDatabaseBackedTransferQueue="false" />
+</settings>
+```
+
 ## Transfer Forms data as content
 
 In order for Deploy to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.Settings.config`:

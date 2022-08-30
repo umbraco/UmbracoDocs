@@ -48,6 +48,7 @@ For illustration purposes, the following structure represents the full set of op
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
             "DiskOperationsTimeout": "0.0:01:00",
+            "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependencies": false,
             "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
@@ -149,6 +150,14 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 This setting defaults to 60 seconds.
 
 All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+
+## UseDatabaseBackedTransferQueue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 9.5 and 10.1, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
 ## TransferFormsAsContent
 
