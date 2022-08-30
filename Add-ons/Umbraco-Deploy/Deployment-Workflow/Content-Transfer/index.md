@@ -27,7 +27,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
     * If you’re currently editing the Home page you could also use the Actions dropdown to find  **Queue for transfer**.
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
     * If you wish to transfer all your content at once, *right-click* the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
-5. For content that exists in multiple languages, you can also select whether to add all language versions to the queue, or just an individual one.
+5. For content that exists in multiple languages, you can also select whether to add all language versions to the queue, or an individual one.
 6. By default the content will be transferred in it's current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
 7. Click **Queue** to add the content item to the transfer queue.
 
