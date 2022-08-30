@@ -10,7 +10,7 @@ versionTo: 10.0.0
 `Returns: IEnumerable<IPublishedElement>` (or `IPublishedElement` depending on configuration)
 
 
-**Nested Content** is a list editing property editor, using Element Types to define the list item schema. By using document-types, you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard data-types as field editors. This property editor returns either a single item or a collection of this document-type.
+**Nested Content** is a list editing property editor, using Element Types to define the list item schema. By using Document Types you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard Data Types as field editors. This property editor returns either a single item or a collection of this Document Type.
 
 The Element Types that Nested Content uses are specialized Document Types - they can be found in the same section as Document Types. However, it is not possible to create content directly in the content tree with an Element Type - it is meant to be used in complex editors like Nested Content or Blocklist.
 
