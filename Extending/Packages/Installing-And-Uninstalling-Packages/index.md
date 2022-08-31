@@ -89,7 +89,7 @@ No templates are available out of the box in a new installation. If cleaning up 
 ![Backoffice - removing templates](images/removing-templates.png)
 
 #### Removing Partial Views
-Out of the box, there are a few views available in *blocklist* and *grid* folders. Everything else can theoretically be removed
+Out of the box, there are a few views available in the *blocklist* and *grid* folders. Everything else can theoretically be removed.
 
 ![Backoffice - removing partial views](images/removing-partials.png)
 
