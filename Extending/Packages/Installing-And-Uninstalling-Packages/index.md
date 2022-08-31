@@ -95,7 +95,7 @@ Out of the box, there are a few views available in the *blocklist* and *grid* fo
 
 ### Cleaning leftover files on disk
 
-Some packages might reference other items. For example, installing The Starter Kit also adds Bergmania.OpenStreetMap to your project. That component will show up as installed in the backoffice even after uninstalling the NuGet package.
+Some packages might reference other items. For example, installing The Starter Kit also adds `Bergmania.OpenStreetMap` to your project. That component will show up as installed in the backoffice even after uninstalling the NuGet package.
 
 ![Backoffice - Packages section - leftover dependency](images/installed-package-leftovers-backoffice.png)
 
