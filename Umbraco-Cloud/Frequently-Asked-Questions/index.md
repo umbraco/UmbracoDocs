@@ -54,7 +54,7 @@ All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as 
 
 ### Can I choose which Azure Region my projects run in?
 
-Yes. you can choose between the regions West Europe and East US.
+Yes. You can choose between the regions West Europe and East US.
 
 ### How many resources do I have available for my website?
 
