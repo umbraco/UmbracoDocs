@@ -20,14 +20,34 @@ INSERT IMAGE HERE!
 
 The new project on the US region will run the latest version of Umbraco CMS, Umbraco Forms and Umbraco Deploy. You will need to ensure that the project you are migrating, are running the exact same versions of each product before initiating the migration process.
 
-1. In order to migrate a EU Cloud environment to a US Cloud environment, first of all you need to make sure that you are on the same versions (cms, deploy, forms) as the US env.
-2. Then clone the EU Cloud environment and restore content/media
-3. Replace the umbraco-cloud.json file (from the src -> UmbracoProject) with the one from the new US project.
-4. Commit the change (do not push)
-5. git remote rm origin
-6. git remote add origin https://scm.umbraco.io/useast01/name-of-us-live-site.git
-7. git fetch
-8. git branch --set-upstream-to=origin/master
-9. git push origin master -f
-10. then check the US Cloud environment and then from local EU Cloud environment queue for transfer the content/restore the content on US Cloud environment
+Find more details on how to upgrade your project in the [Upgrades](../../Upgrades/) documentation.
 
+## Migrate the project
+
+The following steps will guide you through the migration process.
+
+:::warning
+Make sure that your projects are [prepared for the migration](#prepare-your-projects) before continuing the process.
+:::
+
+1. Clone down the Cloud project that you want to migrate - the *EU project*.
+2. Restore content and media through the Umbraco backoffice.
+3. Clone down the new Cloud project created on the US region - the *US project*.
+4. Replace the `src/UmbracoProject/umbraco-cloud.json` file on the *EU project* with the one from the *US project*.
+5. Commit the change through git, but do not push it yet.
+6. Use the following git commands:
+
+   ```none
+   git remote rm origin
+
+   git remote add origin https://scm.umbraco.io/useast01/name-of-us-live-site.git
+
+   git fetch
+
+   git branch --set-upstream-to=origin/master
+
+   git push origin master -f
+   ```
+
+7. Check the *US project* [Why?]
+8. Transfer content and media from the local *EU project* to the *US project*.
