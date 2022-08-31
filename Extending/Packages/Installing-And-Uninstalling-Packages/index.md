@@ -54,7 +54,7 @@ in the CLI, or use the visual interface of NuGet Package Manager.
 
 ![Visual Studio - uninstalling via Package Manager](images/uninstalling-via-nuget-package-manager.png)
 
-It is recommended to clean the solution after removing any package - this can be done by right-clicking the project in Visual Studio and choosing the *Clean* option, or using `dotnet clean` command.
+It is recommended to clean the solution after removing any package. This can be done by right-clicking the project in Visual Studio and choosing the *Clean* option, or using the `dotnet clean` command.
 
 ![Visual Studio - clean solution](images/vs-cleaning-solution.png)
 
