@@ -44,7 +44,7 @@ In this section we will provide two examples on uninstalling a package - The Sta
 
 ## Uninstalling packages like The Starter Kit
 
-The Starter Kit provides you with a boilerplate solution to build upon - the package installs document types, templates, media, content, and everything else needed to set up a simple website. There's little custom code/functionality involved, and that is usually the case for such (starter kit/starter websites) packages.
+The Starter Kit provides you with a boilerplate solution to build upon. The package installs Document Types, Templates, media, content, and everything else needed to set up a small website. There is little custom code/functionality involved, and that is usually the case for such (starter kit/starter websites) packages.
 
 To uninstall a package, either run a command like
 
