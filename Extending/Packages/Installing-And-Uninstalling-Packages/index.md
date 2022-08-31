@@ -24,7 +24,7 @@ For example, to install TheStarterKit package for the CMS the command would be:
 
 `dotnet add package Umbraco.TheStarterKit`
 
-Navigating to the Package Manager in Visual Studio is more visual, and makes it easier to get an overview of already installed packages.
+Navigating to the Package Manager in Visual Studio is more visual, and gives you an overview of already installed packages.
 
 ![Visual Studio - nuget packages manager](images/nuget-installing-options.png)
 
