@@ -60,34 +60,34 @@ It is recommended to clean the solution after removing any package - this can be
 
 ### Removing package leftovers from the backoffice
 
-With packages like The Starter Kit, the process does not end there. While the package is gone, content - and everything else needed for the website - is still available in the backoffice. To fully remove this kind of package, additional steps are needed:
+With packages like The Starter Kit, the process does not end there. While the package is gone, content - and everything else needed for the website - is still available in the backoffice. To fully remove this kind of package, additional steps are needed.
 
-- remove Content provided by the package
+#### Remove Content provided by the package
 There is no universal way to tell what content comes from a package, and what content is custom-made. In the content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied)
 
 ![Backoffice - removing content](images/removing-content.png)
 
-- remove Media provided by the package
+#### Remove Media provided by the package
 Similarly to Content, Media also might have to be removed
 
 ![Backoffice - removing media](images/removing-media.png)
 
-- remove Document Types
+#### Remove Document Types
 Document types can be removed from the **Settings** section. If fully removing the package, all document types can be deleted, as there are no default Document Types in a clean-slate Umbraco installation.
 
 ![Backoffice - removing document types](images/removing-document-types.png)
 
-- removing Data Types
+#### Removing Data Types
 As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a document type prefix and includes multiple dashes - that is the default naming convention for new configurations of datatypes (e.g. Blog - How many posts should be shown - Slider)
 
 ![Backoffice - removing data types](images/removing-datatypes.png)
 
-- removing Templates
+#### Removing Templates
 No templates are available out of the box in a new installation. If cleaning up after a package, it would be okay to delete all that are present
 
 ![Backoffice - removing templates](images/removing-templates.png)
 
-- removing Partial Views
+#### Removing Partial Views
 Out of the box, there are a few views available in *blocklist* and *grid* folders. Everything else can theoretically be removed
 
 ![Backoffice - removing partial views](images/removing-partials.png)
