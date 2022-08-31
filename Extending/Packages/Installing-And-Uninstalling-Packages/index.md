@@ -79,7 +79,7 @@ Document Types can be removed from the **Settings** section. If fully removing t
 ![Backoffice - removing document types](images/removing-document-types.png)
 
 #### Removing Data Types
-As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a document type prefix and includes multiple dashes - that is the default naming convention for new configurations of datatypes (e.g. Blog - How many posts should be shown - Slider)
+As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a Document Type prefix and includes multiple dashes. That is the default naming convention for new configurations of Data Types (e.g. Blog - How many posts should be shown - Slider)
 
 ![Backoffice - removing data types](images/removing-datatypes.png)
 
