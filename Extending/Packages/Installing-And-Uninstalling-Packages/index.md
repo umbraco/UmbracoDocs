@@ -32,7 +32,7 @@ The Package Manager has an integrated search function that allows you to find an
 
 ![Visual Studio - finding The Starter Kit](images/nuget-package-in-manager.png)
 
-Once the package has been installed, it should show up under the **Packages** section in the backoffice, under **Installed** tab.
+Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
 ![Backoffice - installed packages](images/backoffice-installed-packages.png)
 
