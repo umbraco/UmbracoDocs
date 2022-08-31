@@ -99,7 +99,7 @@ Some packages might reference other items. For example, installing The Starter K
 
 ![Backoffice - Packages section - leftover dependency](images/installed-package-leftovers-backoffice.png)
 
-In many cases, custom dashboards, editors and scripts are left in the App_Plugins folder after a package has been uninstalled via NuGet. These files also have to be deleted manually.
+In many cases, custom dashboards, editors, and scripts are left in the `App_Plugins` folder after a package has been uninstalled via NuGet. These files also have to be deleted manually.
 
 ![Visual Studio - App Plugins leftover files](images/app-plugins-starterkit.png)
 
