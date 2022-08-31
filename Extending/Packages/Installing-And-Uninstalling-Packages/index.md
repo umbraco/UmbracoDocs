@@ -11,7 +11,7 @@ In the Umbraco Backoffice, there is a **Packages** section which can be used to 
 
 ![Backoffice - Packages section](images/backoffice-packages-section.png)
 
-Navigating to a specific package in the section will present you with an overview of the package, as well as a install snippet for NuGet CLI.
+Navigating to a specific package in the section will present you with an overview of the package, as well as an install snippet for NuGet CLI.
 
 ![Backoffice - Starter Kit package](images/backoffice-packages-section-package.png)
 
