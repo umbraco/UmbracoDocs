@@ -127,18 +127,18 @@ After that, cleaning the solution is recommended.
 
 ### Cleaning leftover files on disk
 
-While uninstalling the package would remove most of the custom code, App_Plugins folder has to be cleaned manually. 
+While uninstalling the package would remove most of the custom code, `App_Plugins` folder has to be cleaned manually. 
 
 ![SEO Checker files in App Plugins](images/seochecker-app-plugins.png)
 
-Removing *seochecker* folder from App_Plugins will clean up the leftover backoffice section and dashboards.
+Removing *seochecker* folder from `App_Plugins` will clean up the leftover backoffice section and dashboards.
 
 ### Consequences of removing packages
 
-If there is any content on the website that relies on having a custom property editor or a data source installed, those specific properties will fallback to using a `label` datatype with the previously saved content being converted to a string.
+If there is any content on the website that relies on having a custom Property Editor or a data source installed, those specific properties will fall back to using a `label` Data Type with the previously saved content being converted to a string.
 
 In the case of SEO Checker the custom property added from the package would look like this after all the package files have been removed:
 
 ![SEO Checker in Content after removing the package](images/seochecker-after-removal.png)
 
-Depending on the packages used and the implementation, frontend rendering of content coming from custom editors, or any frontend functionality dependant on external code, might not work correctly. It is recommended to inspect the frontend of the site after removing any packages.
+Depending on the packages used and the implementation, frontend rendering of content coming from custom editors, or any frontend functionality dependent on external code, might not work correctly. It is recommended to inspect the frontend of the site after removing any packages.
