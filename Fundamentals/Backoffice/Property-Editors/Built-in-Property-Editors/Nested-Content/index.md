@@ -10,7 +10,9 @@ versionTo: 10.0.0
 `Returns: IEnumerable<IPublishedElement>` (or `IPublishedElement` depending on configuration)
 
 
-**Nested Content** is a list editing property editor, using Document Types to define the list item schema. By using document-types, you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard data-types as field editors. This property editor returns either a single item or a collection of this document-type.
+**Nested Content** is a list editing property editor, using Element Types to define the list item schema. By using Document Types you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard Data Types as field editors. This property editor returns either a single item or a collection of this Document Type.
+
+The Element Types that Nested Content uses are specialized Document Types - they can be found in the same section as Document Types. However, it is not possible to create content directly in the content tree with an Element Type - it is meant to be used in complex editors like Nested Content or Blocklist.
 
 ## Configuring Nested Content
 
@@ -37,6 +39,16 @@ The data-type editor allows you to configure the following properties:
 
 Once your data type has been configured, set-up a property on your page doc type using your new data type and you are set to start editing.
 
+## Limitations
+
+There is a handful of editors that Nested Content does not support in its elements. These include:
+
+- [Tags](../../Built-in-Property-Editors/Tags/index.md)
+- [Blocklist Editor](../../Built-in-Property-Editors/Block-List-Editor/index.md)
+- [File upload](../../Built-in-Property-Editors/File-Upload/index.md)
+- [Image Cropper](../../Built-in-Property-Editors/Image-Cropper/index.md)
+
+![Editors that are not supported](images/NestedContent_NotSupported.png)
 
 ## Editing Nested Content
 

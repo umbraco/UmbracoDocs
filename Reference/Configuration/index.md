@@ -141,7 +141,6 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Serilog settings](Serilog/index.md)
 * [Tours settings](ToursSettings/index.md)
 * [Type finder settings](TypeFinderSettings/index.md)
-* [Umbraco settings](umbracoSettings/index.md)
 * [Unattended settings](UnattendedSettings/index.md)
 * [Web routing settings](WebRoutingSettings/index.md)
 
