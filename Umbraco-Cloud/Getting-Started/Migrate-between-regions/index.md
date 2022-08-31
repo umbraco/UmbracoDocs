@@ -45,11 +45,15 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
    git fetch
 
    git branch --set-upstream-to=origin/master
+   ```
 
+7. Push the schema and files from the *EU project* to the *US project* using the following git command:
+
+   ```none
    git push origin master -f
    ```
 
-7. Check the *US project* [Why?]
-8. Transfer content and media from the local *EU project* to the *US project*.
+8. Check the *US project* [Why?]
+9. Transfer content and media from the local *EU project* to the *US project*.
 
 
