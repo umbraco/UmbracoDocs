@@ -109,11 +109,12 @@ Please note this particular guide targets a specific package. There are many pac
 
 ## Uninstalling packages like SEO Checker
 
-More advanced packages that add functionality on top of Umbraco usually rely on providing custom, compiled code - that being said, many of such packages also implement custom sections, dashboards, editors and views.
+More advanced packages that add functionality on top of Umbraco usually rely on providing custom, compiled code. That being said, many of such packages also implement custom sections, dashboards, editors, and views.
 
-In this example we are using SEO Checker which is not a very invasive package out of the box - it allows the developers of the site to add custom properties to document types used to track good search engine optimization practices.
+In this example, we are using SEO Checker which is not a very invasive package out of the box. It allows the developers of the site to add custom properties to Document Types used to track good search engine optimization practices.
 
-An example use case of SEO Checker property on a document type, as presented in the content section:
+An example use case of SEO Checker property on a Document Type, as presented in the Content section:
+
 ![SEO Checker in content](images/seochecker-content-section.png)
 
 To uninstall SEO Checker from a website, the first step would be removing the package via a dotnet command (or Package Manager):
