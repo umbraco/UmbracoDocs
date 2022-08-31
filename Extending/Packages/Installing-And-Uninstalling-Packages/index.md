@@ -69,7 +69,7 @@ There is no universal way to tell what content comes from a package, and what co
 ![Backoffice - removing content](images/removing-content.png)
 
 #### Remove Media provided by the package
-Similarly to Content, Media also might have to be removed
+Similar to Content, Media also might have to be removed.
 
 ![Backoffice - removing media](images/removing-media.png)
 
