@@ -74,7 +74,7 @@ Similar to Content, Media also might have to be removed.
 ![Backoffice - removing media](images/removing-media.png)
 
 #### Remove Document Types
-Document types can be removed from the **Settings** section. If fully removing the package, all document types can be deleted, as there are no default Document Types in a clean-slate Umbraco installation.
+Document Types can be removed from the **Settings** section. If fully removing the package, all Document Types can be deleted, as there are no default Document Types in a clean-slate Umbraco installation.
 
 ![Backoffice - removing document types](images/removing-document-types.png)
 
