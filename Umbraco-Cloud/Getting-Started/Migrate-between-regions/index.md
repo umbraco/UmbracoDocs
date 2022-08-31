@@ -6,13 +6,13 @@ versionFrom: 8.0.0
 
 When you create an project on Umbraco Cloud, you can decide to host the project in one of two regions: EU or US.
 
-In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do just that.
+In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
 
 The guide will use an example where a Cloud project is moved from the EU region to the US region.
 
 ## Prepare your projects
 
-The very first step in this process, is to create a new Umbraco Cloud project on the region where you want to move your existing project to. In this case that will be the US region.
+The first step in this process, is to create a new Umbraco Cloud project on the region where you want to move your existing project to. In this case that will be the US region.
 
 This is done by selecting **East US** from the **Region** dropdown when setting up the Cloud project.
 
