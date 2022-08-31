@@ -63,7 +63,8 @@ It is recommended to clean the solution after removing any package. This can be 
 With packages like The Starter Kit, the process does not end there. While the package is gone, content - and everything else needed for the website - is still available in the backoffice. To fully remove this kind of package, additional steps are needed.
 
 #### Remove Content provided by the package
-There is no universal way to tell what content comes from a package, and what content is custom-made. In the content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied)
+
+There is no universal way to tell what content comes from a package, and what content is custom-made. In the content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied).
 
 ![Backoffice - removing content](images/removing-content.png)
 
