@@ -18,7 +18,7 @@ For some more in-depth information have a look at the [High-level Overview](High
 :::note
 Currently, the baseline feature is only available in the west EU region.
 
-At this point, it is not possible to create baselines if you are hosting your site in the US East region.
+At this point, it is not possible to create baselines if you are hosting your site in the East US region.
 :::
 
 ## Video Tutorial
