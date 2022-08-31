@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Examine
 
-_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast._
+_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be powerful and fast._
 
 ## What is Examine?
 
