@@ -2,17 +2,17 @@
 versionFrom: 8.0.0
 ---
 
-# Migrate between regions
+# Move between regions
 
 When you create an project on Umbraco Cloud, you can decide to host the project in one of two regions: EU or US.
 
-In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
+In some cases, you might want to move your project(s) from one region to another. This article will outline the steps to do this.
 
 The guide will use an example where a Cloud project is moved from the EU region to the US region.
 
 ## Prerequisites
 
-- Admin access and deployment rights on the project that is to be migrated.
+- Admin access and deployment rights on the project that is to be moved.
 - Git installed locally as well as a Git client like *Git Bash*.
 - A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../../Fundamentals/Setup/Requirements/) article.
 
@@ -32,7 +32,7 @@ The new project on the US region will run the latest version of Umbraco CMS, Umb
 
 Find more details on how to upgrade your project in the [Upgrades](../../Upgrades/) documentation.
 
-## Migrate the project
+## Move the project
 
 The following steps will guide you through the migration process.
 
@@ -40,7 +40,7 @@ The following steps will guide you through the migration process.
 Make sure that your projects are [prepared for the migration](#prepare-your-projects) before continuing the process.
 :::
 
-1. Clone down the Cloud project that you want to migrate - the *EU project*.
+1. Clone down the Cloud project that you want to move - the *EU project*.
 2. Restore content and media through the Umbraco backoffice.
 3. Clone down the new Cloud project created on the US region - the *US project*.
 4. Replace the `src/UmbracoProject/umbraco-cloud.json` file on the *EU project* with the one from the *US project*.
@@ -69,16 +69,20 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
 
 Once you have verified that all schema and files as well as content and media has successfully been deployed and transfered to your new *US project* the migration process is complete.
 
-It is highly recommended to thoroughly go through everything on the migrated site in order to ensure that everything works as expected.
+It is highly recommended to thoroughly go through everything on the moved site in order to ensure that everything works as expected.
 
-## Post migration checks and settings
+## Post migration tasks
 
-By following the steps above you have migrated your Umbraco project from one Cloud environment to another.
+By following the steps above you have moved your Umbraco project from one Cloud environment to another.
 
 The following will need to be reconfigured on the new project after the initial migration:
 
 - All **Team Members** added through the Cloud Portal on the *EU project* also needs to be invited to the *US project*.
 - **Hostnames**, **certificates** and other related settings needs to be re-added and reconfigured on the *US project*.
+
+Once everything has been configured and set up you can safely delete the *EU project* which will also cancel the running subscription on the project.
+
+Do you need help or have any questions regarding this process, please reach out to our support using [contact@umbraco.com](mailto:contact@umbraco.com).
 
 :::links
 Related articles
