@@ -135,7 +135,7 @@ Removing *seochecker* folder from `App_Plugins` will clean up the leftover backo
 
 ### Consequences of removing packages
 
-If there is any content on the website that relies on having a custom Property Editor or a data source installed, those specific properties will fall back to using a `label` Data Type with the previously saved content being converted to a string.
+If any content on the website relies on having a custom Property Editor or a data source installed, those specific properties will fall back to using a `label` Data Type with the previously saved content converted to a string.
 
 In the case of SEO Checker the custom property added from the package would look like this after all the package files have been removed:
 
