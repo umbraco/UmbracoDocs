@@ -101,7 +101,7 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 
 - `diskOperationsTimeout`
 
-This setting defaults to 60 seconds.
+This setting defaults to 5 minutes.
 
 All of these times are in *seconds*:
 

@@ -47,7 +47,7 @@ For illustration purposes, the following structure represents the full set of op
             "DatabaseCommandTimeout": "0.0:20:00",
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
-            "DiskOperationsTimeout": "0.0:01:00",
+            "DiskOperationsTimeout": "0.0:05:00",
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependencies": false,
             "IgnoreBrokenDependenciesBehavior": "All",
@@ -147,7 +147,7 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 
 - `DiskOperationsTimeout`
 
-This setting defaults to 60 seconds.
+This setting defaults to 5 minutes.
 
 All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
 
