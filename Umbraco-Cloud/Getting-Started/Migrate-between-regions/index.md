@@ -70,3 +70,21 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
 Once you have verified that all schema and files as well as content and media has successfully been deployed and transfered to your new *US project* the migration process is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site in order to ensure that everything works as expected.
+
+## Post migration checks and settings
+
+By following the steps above you have migrated your Umbraco project from one Cloud environment to another.
+
+The following will need to be reconfigured on the new project after the initial migration:
+
+- All **Team Members** added through the Cloud Portal on the *EU project* also needs to be invited to the *US project*.
+- **Hostnames**, **certificates** and other related settings needs to be re-added and reconfigured on the *US project*.
+
+:::links
+Related articles
+
+- [Manage hostnames](../../Set-Up/Manage-Hostnames/)
+- [Team Members](../../Set-Up/Team-Members/)
+- [Certificates](../../Set-Up/Manage-Hostnames/Security-Certificates/)
+
+:::
