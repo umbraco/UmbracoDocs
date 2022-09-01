@@ -10,6 +10,16 @@ In some cases, you might want to migrate your project(s) from one region to anot
 
 The guide will use an example where a Cloud project is moved from the EU region to the US region.
 
+## Prerequisites
+
+- Admin access and deployment rights on the project that is to be migrated.
+- Git installed locally as well as a Git client like *Git Bash*.
+- A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../../Fundamentals/Setup/Requirements/) article.
+
+:::note
+In order to follow this guide it is highly recommend that you have experience with Git and running git commands through a commandline tool.
+:::
+
 ## Prepare your projects
 
 The first step in this process, is to create a new Umbraco Cloud project on the region where you want to move your existing project to. In this case that will be the US region.
@@ -53,7 +63,10 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
    git push origin master -f
    ```
 
-8. Check the *US project* [Why?]
+8. Verify that the schema and files have been merged into the live environment on the *US project*.
 9. Transfer content and media from the local *EU project* to the *US project*.
+10. Verify that all the content and media has been transfered to the *US project*.
 
+Once you have verified that all schema and files as well as content and media has successfully been deployed and transfered to your new *US project* the migration process is complete.
 
+It is highly recommended to thoroughly go through everything on the migrated site in order to ensure that everything works as expected.
