@@ -43,7 +43,14 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
 1. Clone down the project that you want to migrate - the *EU project*.
 2. Restore content and media through the Umbraco backoffice.
 3. Clone down the new Cloud project created in the US region - the *US project*.
-4. Change the deployment target for the local *EU project* by replacing the `src/UmbracoProject/umbraco-cloud.json` file on the *EU project* with the one from the *US project*.
+4. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the *EU project* with the one from the *US project*.
+
+:::note
+The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
+
+By replacing the one on the *EU project* with the one from the *US project*, content and media transfers will point to the environments on the *US project* instead of the *EU project*.
+:::
+
 5. Commit the change through git, but do not push it yet.
 6. Use the following git commands to connect your local *EU project* to the live environment on the *US project*:
 
