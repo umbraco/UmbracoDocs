@@ -52,10 +52,6 @@ All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as 
 - 250 GB Disk space
 - 1,920 TCP connections
 
-### Can I choose which Azure Region my projects run in?
-
-Yes. You can choose between the regions West Europe and East US.
-
 ### How many resources do I have available for my website?
 
 In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
@@ -261,6 +257,49 @@ The code in the contrib project has plenty of code comments to help you understa
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
 
+---
+
+## Regions
+
+
+### Can I choose which region my projects run in?
+
+Yes, you can choose between the West Europe region and US East region.
+
+### Can I move my existing project created on Cloud in the EU region to the US region?
+
+Yes, you can move a project that was created on Umbraco Cloud in the EU region to the US region by following the [migrate between regions guide](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Migrate-between-regions/).
+
+### How do I select a region when creating projects on Cloud?
+
+You can choose a region when creating a project.
+
+### Can I have a Baseline master project in the EU and a Baseline child project in the US?
+
+No. Baseline-projects are bound to a region for now. 
+
+
+### Will my sites receive automatic patch-upgrades of CMS, Deploy, and Forms when new releases are available?
+
+Yes. The US region is no different than normal Cloud other than its regional location. That means that the patch-upgrade functionality will work in whichever region you choose.
+
+
+### Can you create Umbraco Heartcore projects in the US Region? 
+
+Not at the moment. 
+
+### Are all the features we have in Umbraco Cloud available in the US region?
+
+Baseline functionality is not supported in the US-region at the moment. Other than that, all features are fully supported.
+
+
+### Are you planning to add other regions in the future? 
+
+Yes. Once we have specific plans, we will announce them publicly.
+
+### Where can I see what region my project was created in?
+
+ EU region has “euwest” in the URL, while US has “useast” in the URL.
 ---
 
 ## Backups and data retention
