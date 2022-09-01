@@ -4,31 +4,31 @@ versionFrom: 8.0.0
 
 # Migrate between regions
 
-When you create an project on Umbraco Cloud, you can decide to host the project in one of two regions: EU or US.
+When you create a project on Umbraco Cloud, you can choose to host the project in one of two regions: *West EU* or *East US*.
 
 In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
 
-The guide will use an example where a Cloud project is moved from the EU region to the US region.
+The guide will use an example where a Cloud project is moved from the EU West region to the US East region.
 
 ## Prerequisites
 
 - Admin access and deployment rights on the project that is to be migrated.
-- Git installed locally as well as a Git client like *Git Bash*.
+- Git is installed locally as well as a Git client like *Git Bash*.
 - A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../../Fundamentals/Setup/Requirements/) article.
 
 :::note
-In order to follow this guide it is highly recommend that you have experience with Git and running git commands through a commandline tool.
+To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.
 :::
 
 ## Prepare your projects
 
-The first step in this process, is to create a new Umbraco Cloud project on the region where you want to move your existing project to. In this case that will be the US region.
+The first step in this process is to create a new Umbraco Cloud project in the region you want to migrate your existing project to. In this case that will be the US region.
 
-This is done by selecting **East US** from the **Region** dropdown when setting up the Cloud project.
+This is done by selecting **East US** from the **Region** dropdown when creating the Cloud project.
 
 INSERT IMAGE HERE!
 
-The new project on the US region will run the latest version of Umbraco CMS, Umbraco Forms and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
+The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
 Find more details on how to upgrade your project in the [Upgrades](../../Upgrades/) documentation.
 
@@ -40,9 +40,9 @@ The following steps will guide you through the migration process.
 Make sure that your projects are [prepared for the migration](#prepare-your-projects) before continuing the process.
 :::
 
-1. Clone down the Cloud project that you want to migrate - the *EU project*.
+1. Clone down the project that you want to migrate - the *EU project*.
 2. Restore content and media through the Umbraco backoffice.
-3. Clone down the new Cloud project created on the US region - the *US project*.
+3. Clone down the new Cloud project created in the US region - the *US project*.
 4. Replace the `src/UmbracoProject/umbraco-cloud.json` file on the *EU project* with the one from the *US project*.
 5. Commit the change through git, but do not push it yet.
 6. Use the following git commands to connect your local *EU project* to the live environment on the *US project*:
@@ -65,11 +65,11 @@ Make sure that your projects are [prepared for the migration](#prepare-your-proj
 
 8. Verify that the schema and files have been merged into the live environment on the *US project*.
 9. Transfer content and media from the local *EU project* to the *US project*.
-10. Verify that all the content and media has been transfered to the *US project*.
+10. Verify that all the content and media have been transfered to the *US project*.
 
-Once you have verified that all schema and files as well as content and media has successfully been deployed and transfered to your new *US project* the migration process is complete.
+Once you have verified that all schema and files as well as content and media has successfully been deployed and transferred to your new *US project* the migration process is complete.
 
-It is highly recommended to thoroughly go through everything on the migrated site in order to ensure that everything works as expected.
+It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
 ## Post migration checks and settings
 
@@ -77,8 +77,8 @@ By following the steps above you have migrated your Umbraco project from one Clo
 
 The following will need to be reconfigured on the new project after the initial migration:
 
-- All **Team Members** added through the Cloud Portal on the *EU project* also needs to be invited to the *US project*.
-- **Hostnames**, **certificates** and other related settings needs to be re-added and reconfigured on the *US project*.
+- All **Team Members** added through the Cloud Portal on the *EU project* also need to be invited to the *US project*.
+- **Hostnames**, **certificates**, and other related settings need to be re-added and reconfigured on the *US project*.
 
 :::links
 Related articles
