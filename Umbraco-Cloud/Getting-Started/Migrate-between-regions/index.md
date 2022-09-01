@@ -92,10 +92,8 @@ Once everything has been configured and set up you can safely delete the *EU pro
 Do you need help or have any questions regarding this process, please reach out to our support using [contact@umbraco.com](mailto:contact@umbraco.com).
 
 :::links
-Related articles
-
+## Related articles
 - [Manage hostnames](../../Set-Up/Manage-Hostnames/)
 - [Team Members](../../Set-Up/Team-Members/)
 - [Certificates](../../Set-Up/Manage-Hostnames/Security-Certificates/)
-
 :::
