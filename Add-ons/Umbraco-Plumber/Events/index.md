@@ -7,11 +7,11 @@ versionTo: 10.0.0
 
 # Events
 
-Umbraco Plumber raises events in a similar fashion to Umbraco - if you're familiar with Umbraco's events, Plumber won't have any surprises.
+Umbraco Plumber raises events in a similar fashion to Umbraco. If you are familiar with Umbracos events, Plumber will not have any surprises.
 
-Currently, events are raised by the Config, Group and Tasks services, and the DocumentPublish and DocumentUnpublish processes and can be subscribed to as follows:
+Currently, events are raised by the Config, Group and Tasks services, and the `DocumentPublish` and `DocumentUnpublish` processes and can be subscribed to.
 
-Events are not cancellable, and serve to provide an entry point for writing custom notification layers - Slack, SMS, whatever you choose.
+Events are not cancellable, and serve to provide an entry point for writing custom notification layers like Slack.
 
 ## ConfigService
 
