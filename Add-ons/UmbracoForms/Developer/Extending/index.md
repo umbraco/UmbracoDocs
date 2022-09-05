@@ -42,6 +42,10 @@ A workflow can be executed each time a form changes state (when it is submitted 
 
 Export types are responsible for turning form records into any other data format, which is then returned as a file.
 
+### [Magic String Format Fuctions](Adding-a-Magic-String-Format-Function.md)
+
+Custom magic string format functions to add to the [ones shipped with Umbraco Forms](../Magic-Strings/#formatting-magic-strings) can be created in code.
+
 ## Handling Forms Events
 
 Another option for extension via custom code is to hook into one of the many events available.
