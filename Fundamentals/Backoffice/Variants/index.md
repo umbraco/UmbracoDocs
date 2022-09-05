@@ -16,9 +16,9 @@ This article will cover the various aspects of enabling and working with languag
 * [Video tutorial](#video-tutorial)
 * [How to enable Language Variants](#how-to-enable-language-variants)
 * [Enabling Language Variants on Document Types](#enabling-language-variants-on-document-types)
-* [Control User Group permissions on language variants](#control-user-group-permissions-on-language-variants)
 * [Working with Language Variants on content](#working-with-language-variants-on-content)
 * [Test your language variants](#test-your-language-variants)
+* [Control User Group permissions on language variants](#control-user-group-permissions-on-language-variants)
 * [Read more](#read-more)
 
 ## Video tutorial
