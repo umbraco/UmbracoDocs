@@ -55,7 +55,8 @@ For illustration purposes, the following structure represents the full set of op
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
         "DaysToRetainApprovedRecordsFor": 0
-      }
+      },
+      "RemoveProvidedEmailTemplate": false
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -119,6 +120,9 @@ This setting allows you to configure the name of the theme to use when an editor
 When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
+
+### RemoveProvidedEmailTemplate
+Frosm Forms 10.2, if you have created custom email templates to use with the "send Razor email" workflow, the provided template can be removed from selection by setting this value to `true`.
 
 ### Form default settings configuration
 
