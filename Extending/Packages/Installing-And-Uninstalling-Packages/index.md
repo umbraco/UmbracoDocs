@@ -111,7 +111,7 @@ Please note this particular guide targets a specific package. There are many pac
 
 More advanced packages that add functionality on top of Umbraco usually rely on providing custom, compiled code. That being said, many of such packages also implement custom sections, dashboards, editors, and views.
 
-In this example, we are using SEO Checker which is not a very invasive package out of the box. It allows the developers of the site to add custom properties to Document Types used to track good search engine optimization practices.
+In this example, we will be using SEO Checker which allows developers of the site to add custom properties to Document Types used to track search engine optimization practices.
 
 An example use case of SEO Checker property on a Document Type, as presented in the Content section:
 
