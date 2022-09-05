@@ -9,7 +9,7 @@ versionTo: 10.0.0
 
 Language Variants allows you to vary content by culture, so you can allow a content node to exist in several languages.
 
-This article will cover the various aspects of enabling and working with language variants on your Umbraco website.
+This article will cover the different aspects of enabling and working with language variants on your Umbraco website.
 
 ## Contents
 
@@ -57,7 +57,9 @@ When you return to your content node you will notice two things:
 
     ![Allowing variance on properties](images/varying-content_v10.png)
 
-Each Property Editor that does not allow variants will be greyed out and have the content of the default language.
+Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages, as the value of the invariant properties are shared between all variants on the website.
+
+![How an invariant property looks when it is locked](images/invariant-property-locked.png)
 
 To read about how you render variant content in Templates, check out the [rendering content section](../../Design/Rendering-Content/).
 
