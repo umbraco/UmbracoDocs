@@ -64,7 +64,7 @@ Shows basic information about the User Group and settings for custom properties.
 
 - **Name**: The name of the User Group shown in the User Group tab.
 - **Alias**: Used to Reference the User Group in code - the alias will be auto-generated based on the name.
-- **Assign access**: Define which sections the users in the group will have access to, and if the users should have access to only some content / media that is also defined here.
+- **Assign access**: Define which sections and languages the users will have access to, and if the users should have access to only some or all content and media.
 - **Default Permissions**: Selects the default permissions granted to users of the User Group.
 - **Granular permissions**: Define a specific node the users in the group should have access to.
 - **Users**: Add users to the new group.

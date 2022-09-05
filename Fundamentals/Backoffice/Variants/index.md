@@ -9,6 +9,18 @@ versionTo: 10.0.0
 
 Language Variants allows you to vary content by culture, so you can allow a content node to exist in several languages.
 
+This article will cover the various aspects of enabling and working with language variants on your Umbraco website.
+
+## Contents
+
+* [Video tutorial](#video-tutorial)
+* [How to enable Language Variants](#how-to-enable-language-variants)
+* [Enabling Language Variants on Document Types](#enabling-language-variants-on-document-types)
+* [Control User Group permissions on language variants](#control-user-group-permissions-on-language-variants)
+* [Working with Language Variants on content](#working-with-language-variants-on-content)
+* [Test your language variants](#test-your-language-variants)
+* [Read more](#read-more)
+
 ## Video tutorial
 
 <iframe width="800" height="450" title="Language Variants" src="https://www.youtube.com/embed/TWLqt-jVdyQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -23,15 +35,16 @@ To work with Language Variants you need to have more than one language enabled. 
 You will always have one default language but each language can be set to mandatory.
 :::
 
-## Enabling Language Variants on doctypes
+## Enabling Language Variants on Document Types
 
-Now that there are two languages to vary the content with, it needs to be enabled on the document types. To do so:
+Now that there are two languages to vary the content with, it needs to be enabled on the Document Types. To do so:
 
 1. Go to the document type in the **Settings** section.
-2. In the top-right corner, go to **Permissions** and toggle **Allow vary by culture**.
+2. Open the **Permissions** page.
+3. Toggle **Allow vary by culture**.
     ![Allowing variance on doc types](images/allow-variance_v10.png)
 
-To allow a property on the doctype to be varied it will have to be enabled for the property:
+To allow a property on the Document Type to be varied it will have to be enabled for the property:
 
 ![Allowing variance on properties](images/varying-properties_v10.png)
 
@@ -39,14 +52,14 @@ To allow a property on the doctype to be varied it will have to be enabled for t
 
 When you return to your content node you will notice two things:
 
-1. At the top of the content tree there will now be a dropdown so you can show the content tree in the language of your choice.
+1. At the top of the Content tree there will now be a dropdown so you can show the Content tree in the language of your choice.
 2. To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
     ![Allowing variance on properties](images/varying-content_v10.png)
 
-Each property editor that does not allow variants will be greyed out and have the content of the default language.
+Each Property Editor that does not allow variants will be greyed out and have the content of the default language.
 
-To read about how you render variant content in templates, check out the [rendering content section](../../Design/Rendering-Content/).
+To read about how you render variant content in Templates, check out the [rendering content section](../../Design/Rendering-Content/).
 
 ## Test your language variants
 
@@ -57,8 +70,11 @@ Culture and hostnames must be added to your language sites before the content ca
     :::note
     In Umbraco v9, this option is called **Culture and Hostnames**.
     :::
-2. Add a specific url per language and save. For eg: An English language variant with English (United States) as the language can be given a specific url *<https://yourwebsite.com/en-us>* and a Danish language variant can be given a specific url *<https://yourwebsite.com/dk>*.
-3. The Info content app should now show specific urls for your language variants.
+2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL *<https://yourwebsite.com/en-us>* and a Danish language variant can be given a specific URL *<https://yourwebsite.com/dk>*.
+
+The Info content app should now show specific URLs for your language variants.
+
+## Control User Group permissions on language variants
 
 ## Read more
 
