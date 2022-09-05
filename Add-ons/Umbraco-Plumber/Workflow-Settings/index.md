@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
 
-# Settings
+# Workflow Settings
 
 Umbraco Plumber provides out-of the-box default settings but you should modify it to best suit your site:
 
