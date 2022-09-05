@@ -74,7 +74,7 @@ Configuration cannot be modified when a content node is in a workflow process.
 
 ## History
 
-The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the Page with the Language variant, Type of Publish, workflow requested by, date the workflow was requested on, comment, and status of the workflow.
+The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the Page name with the Language variant, Type of Publish, workflow requested by, date the workflow was requested on, comment, and status of the workflow.
 
 ![History sub-section](images/History-sub-section.png)
 
