@@ -7,56 +7,112 @@ versionTo: 10.0.0
 
 # Notifications and Reminders
 
-Umbraco Plumber uses a more mature and versatile notifications engine, allowing deep configuration of email notifications for all workflow activities.
+Umbraco Plumber uses Notifications to allow you to configure email notifications for all workflow activities for the backoffice.
 
-From the settings view in the Workflow backoffice section, the notifications dashboard provides access to the following:
+From the **Settings** view in the **Workflow** section, the **Notifications** tab provides access to the following:
 
-- **Send notifications:** if your users are active in the backoffice, email notifications might not be required. Turn them off here.
-- **Reminder delay:** set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable.
-- **Workflow email:** set a sender address for notification emails. MANDATORY
-- **Site URL:** the URL for the public website (including schema - http[s]). MANDATORY
-- **Edit site URL:** the URL for the editing environment (including schema - http[s]). MANDATORY
-- **Email templates:** configure which users receive emails for which workflow actions, and modify the templates for those emails
+- **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
+- **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
+- **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
+- **Edit site URL:** The URL for the editing environment (including schema - http[s]). This is a mandatory field.
+- **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
+- **Email templates:** Configure which users receive emails for which workflow actions and modify the templates for those emails. You can send an email to:
+  
+  ![Notifications tab in the Workflow Section](images/Notifications_tab.png)
 
 ## Notifications
 
-Notification emails use HTML templates, rendering information from the `HtmlEmailModel` type, which lives in the `Plumber.Core.Models.Email` namespace. While it's entirely possible to modify the email templates from the backoffice, it's recommended to make changes via your IDE of choice, to enjoy the helping hand that is Intellisense.
+Notification emails use HTML templates which render information from the `HtmlEmailModel` type which lives in the `Plumber.Core.Models.Email` namespace. While it is possible to modify the email templates from the backoffice, it is recommended to make changes via an IDE of your choice.
 
-The `HtmlEmailModel` looks like this:
+The `HtmlEmailModel` contains the following fields:
 
-- {WorkflowType} WorkflowType: an enum value, either 1 or 2, for Publish and Unpublish respectively
-- {DateTime?} ScheduledDate: if a scheduled date exists for the workflow, it is found here
-- {IHtmlString} Summary: a pre-generated representation of the current workflow state (the same data as found in the pre-v1.6.0 email content)
-- {WorkflowTaskViewModel} CurrentTask: the view model data for the current workflow task. Comes with a whole lot of useful data, best explored via Intellisense
-- {WorkflowInstanceViewModel} Instance: the view model data for the current workflow. Also best explored via Intellisense
+| Fields        | Data Type                 | Description                                                                                                    |
+|---------------|---------------------------|----------------------------------------------------------------------------------------------------------------|
+| WorkflowType  | WorkflowType              | An enum value containing either 1 or 2 for Publish and Unpublish respectively.                                 |
+| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                 |
+| Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                  |
+| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains lot of useful data, best explored via Intellisense.|
+| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                  |
 
-Base fields from `HtmlEmailBase`:
+The `HtmlEmailBase` contains the following fields:
 
-- {string} SiteUrl: the public URL for your site
-- {string} NodeName: the name of the node from the current workflow
-- {string} Type: the UI-friendly workflow type. Includes the scheduled date if one exists
-- {EmailType} EmailType: an enum value representing the current email type, which relates directly to the workflow task type
-- {EmailUserModel} To: the model defining who receives the email
-  - {string} Email: the email address (or group address if the group email is set)
-  - {string} Name: the user's name
-  - {string} Language: the user's language
-  - {int} Id: the user's ID (or group ID when sending to a group email address)
-  - {bool} IsGroupEmail: are we sending to a generic group email address?
+| Fields       | Data Type      | Description                                                                                         |
+|--------------|----------------|-----------------------------------------------------------------------------------------------------|
+| SiteUrl      | string         | The public URL of your site.                                                                        |
+| NodeName     | string         | The name of the node from the current workflow.                                                     |
+| Type         | string         | The workflow type including the scheduled date (if exists).                                         |
+| EmailType    | EmailType      | An enum value representing the current email type which relates directly to the workflow task type. |
+| To           | EmailUserModel | The model defining the receiver of the email.                                                       |
+| Email        | string         | The user's email address or group address (if a group email is being sent).                         |
+| Name         | Name           | The user's name.                                                                                    |
+| Language     | string         | The user's language.                                                                                |
+| Id           | int            | The user's ID or group ID (when sending to a group email address).                                  |
+| IsGroupEmail | bool           | Is the email being sent to a generic group email address?                                           |
 
-Umbraco Plumber provides settings for determining who receives emails at which stages of a workflow. While these are set to default values on install, it's advised that these are updated to better suit your install. Emails can be sent to:
+Umbraco Plumber provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it's recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
 
-- All: all participants in all workflow stages (previous and current)
-- Group: all members of the group assigned to the current task
-- Author: the user who initiated the workflow
-- Admin: the admin user
+- **All**: All the participants in all workflow stages (previous and current).
+- **Admin**: The admin user.
+- **Author**: The user who initiated the workflow.
+- **Group**: All members of the group assigned to the current task.
 
-By default, all emails are set to send to Group, but this isn't always the ideal - cancelled workflows would be best sent to the Author only, likewise with rejected. All would likely be most useful for notifying of completed workflows, but even this may be excessive. As said above, the best configuration will depend on your site, but most likely won't be the defaults.
+:::note
+Duplicate users are removed from email notifications.
+:::
+
+By default, all emails are sent to the **Group**. This might not always be an ideal situation. For example: cancelled workflows would be best sent to the **Author** only, likewise with rejected.
+
+It might be useful to notify **All** the participants of completed workflows but even this may be excessive. Depending on your website, you can adjust the best configuration.
+
+## Config, Group, and Tasks Notifications
+
+Currently, Notifications are raised by the Config, Group, and Tasks services. You can also subscribe to the `DocumentPublish` and `DocumentUnpublish` processes.
+
+You cannot cancel Notifications and serve to provide an entry point for writing custom notification layers like Slack.
+
+### ConfigService
+
+The ConfigService is responsible for managing workflow configuration for nodes and content types. This service raises notifications whenever a node or content type configuration is updated.
+
+## GroupService
+
+The GroupService is responsible for managing approval groups. This service raises notifications whenever an approval group is created, updated, or deleted.
+
+## TasksService
+
+The TasksService is responsible for all operations involving workflow tasks. This service raises notifications whenever a task is created or updated.
+
+## DocumentPublishProcess and DocumentUnpublishProcess
+
+These processes are the core of the workflow and manage instance/task creation and workflow progression. These processes raise notifications whenever a workflow instance is created or updated.
+
+### Notification Subscription
+
+You can subscribe to notifications by adding a handler in a Component:
+
+```csharp
+public class ContentEventsComponent : IComponent
+{
+  public void Initialize()
+  {
+    GroupService.Updated += GroupService_Updated;
+  }
+
+  private void GroupService_Updated(object sender, GroupEventArgs e) {
+    // do stuff whenever a group is updated
+  }
+}
+```
+
+where for all services, `e` will provide the object being created, updated, or deleted.
 
 ## Reminders
 
-v1.6.0 introduces a reminder email system, to prompt editors to complete pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the reminder delay value to 2 will allow pending workflows to sit for 2 days before sending reminder emails every 24 hours to all members of the group assigned to the pending workflow task.
+Umbraco Plumber uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days before sending reminder emails every 24 hours to all members of the group assigned to the pending workflow task.
 
 The emails use a similar model to the notification emails, also inheriting from `HtmlEmailBase`. In addition to the inherited fields, `HtmlReminderEmailModel` includes:
 
-- {IList<WorkflowTaskViewModel>}: OverdueTasks: a list containing all the overdue tasks assigned to the current user
-- {int} TaskCount: the count of overdue tasks assigned to he current user
+| Fields       | Data Type                     | Description                                                           |
+|--------------|-------------------------------|-----------------------------------------------------------------------|
+| OverdueTasks | IList<WorkflowTaskViewModel>  | A list containing all the overdue tasks assigned to the current user. |
+| TaskCount    | int                           | The count of overdue tasks assigned to the current user.              |
