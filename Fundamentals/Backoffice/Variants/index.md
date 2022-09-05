@@ -76,6 +76,26 @@ The Info content app should now show specific URLs for your language variants.
 
 ## Control User Group permissions on language variants
 
+:::note
+This feature is available from Umbraco version 10.2.
+:::
+
+When you are working with a multilingual site you might want to control who can edit the different variations of the content on the website.
+
+This can be controlled on a User Group level. All default User Groups, except the Sensitive data group, have access to all languages out of the box.
+
+When "Allow access to all languages" is not checked, languages can be added and/or removed in order to control which variations the users in the User Group have access to.
+
+![Assign access to all or individual languages on th User Group](images/Assign-Access-Languages.png)
+
+:::tip
+Even though a the language permissions have been set on a User Group, a user in that group will still be able to view and browse all the language variations in the allowed parts of the Content tree. The permission setting will ensure that only the added languages are editable by users of the User Group.
+:::
+
+:::links
 ## Read more
 
-- [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
+* [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
+* [Language variations](../../../Reference/Language-Variation/)
+* [Render varied content in Templates](../../Design/Rendering-Content/)
+:::
