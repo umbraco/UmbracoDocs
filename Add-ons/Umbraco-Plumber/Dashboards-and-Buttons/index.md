@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Dashboards and Buttons
 
-Umbraco Plumber has its own default Dashboards. By default, when you install Umbraco Plumber, you receive two Dashboards: the *User Dashboard* and the "Admin Dashboard*. Additionally, Umbraco Plumber replaces the default Umbraco button set in the editor drawer.
+Umbraco Plumber has its own default Dashboards. By default, when you install Umbraco Plumber, you receive two Dashboards: the *User Dashboard* and the *Admin Dashboard*. Additionally, Umbraco Plumber replaces the default Umbraco button set in the editor drawer.
 
 ## Dashboards
 

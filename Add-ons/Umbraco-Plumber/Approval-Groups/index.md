@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Approval Groups
 
-The **Approval groups** view in the **Workflow** section lists the Name of the active groups, Group members, their Permissions, and a quick link to Email the group. 
+The **Approval groups** view in the **Workflow** section lists the Name of the active groups, Group members, their Permissions, and a quick link to Email the group.
 
 ![Approval groups](images/Approval-groups.png)
 
@@ -20,7 +20,7 @@ To add an approval group, follow these steps:
 5. Enter a **Description** to remind you why the group exists.
 6. Enter the group's **Email** address in the Settings section to which the notifications will be sent.
 7. Select the **Language** from the drop-down list.
-8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice. 
+8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice.
 9. Click **Save Group**.
 
 ![Create Approval groups](images/Create-approval-group.png)
@@ -55,8 +55,8 @@ Offline approval requires a user to exist in the Backoffice and be assigned to a
 
 The **Roles** tab provides an overview of the current workflow roles for the Group:
 
-- **Node-based approvals**: This workflow applies only to the specified node. 
-- **Document-type approvals**: This workflow applies to all the nodes of a given document type. 
+- **Node-based approvals**: This workflow applies only to the specified node.
+- **Document-type approvals**: This workflow applies to all the nodes of a given document type.
 
 You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](../Workflow-Settings/index.md) article.
 
@@ -64,7 +64,7 @@ You can set these **Roles** in the Workflow **Settings** section. For more infor
 
 ## Members
 
-The **Members** tab manages the membership for the given user group. Add members to approval groups to determine which member will be responsible for approving content changes. Group Members can be explicitly added to the group or can inherit group membership from an existing Umbraco group. Ideally, group members are set explicitly to ensure changes made to Umbraco groups don't cause unexpected changes to workflow permissions. 
+The **Members** tab manages the membership for the given user group. Add members to approval groups to determine which member will be responsible for approving content changes. Group Members can be explicitly added to the group or can inherit group membership from an existing Umbraco group. Ideally, group members are set explicitly to ensure changes made to Umbraco groups do not cause unexpected changes to workflow permissions.
 
 ![Approval group Members](images/approval-group-members.png)
 
@@ -91,7 +91,6 @@ To inherit an existing Umbraco group membership, follow these steps:
 
    ![Inherited group membership](images/Inherited-group-membership.png)
 7. Click **Save Group**.
-
 
 ## History
 

@@ -12,8 +12,8 @@ Umbraco Plumber is a licensed product but doesn't require a purchase to use. New
 To impersonate the full license on a local site:
 
 1. Create an empty text file named `test.lic`.
-2. Copy the `test.lic` file  into `/App_plugins/Plumber`. 
-   ![Lic Placement](images/lic.png) 
+2. Copy the `test.lic` file  into `/App_plugins/Plumber`.
+   ![Lic Placement](images/lic.png)
 
 :::note
 The test license is restricted to naked localhost, localtest domains, or domains ending in `.test` or `.local`.
