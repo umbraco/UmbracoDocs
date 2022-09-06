@@ -7,14 +7,18 @@ versionTo: 10.0.0
 
 # Approval Flow Types
 
-Approval Flows are available in three types: explicit, inherited, and document-type.
+Approval Flows are available in three types: Content approval flow, Inherited approval flow, and Document-type approval flow.
 
 A given content node may have all three approval flow types applied but only one will be applied as per the following order of priority:
 
-- **Explicit:** set directly on a content node via the **Content** section. This type will take priority over all others.
-- **Document-type:** set in the **Settings** section. This approval flow will apply to all content of the selected Document Type, unless the node has an explicit flow set. This feature requires a license.
-- **Inherited:** if a node has no explicit approval flow, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with an explicit flow and will use this flow for the current change.
+- **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
+- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
+- **Document-type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type, unless the node has a Content approval flow set. This feature requires a license.
 
-Current responsibilites for Groups can be reviewed on the User group view for **Node-based approvals** and **Document-type approvals** only.
+![Approval Flow Types](images/approval-flow-types.png)
 
-Document Type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed.
+Current responsibilites for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document-type approvals** only. For more information see the [Roles](../Approval-Groups/index.md#roles) section in the [Approval Groups](../Approval-Groups/index.md) article.
+
+![Approval Groups Roles](images/approval-groups-roles.png)
+
+Document Type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document Type approval flows, see the [Document Type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
