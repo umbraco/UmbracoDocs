@@ -22,9 +22,9 @@ You can configure the **General** Settings from the **Workflow** section in the 
   - **Implicit** - All steps where the original change author is NOT a member of the group must be completed. Steps where the original change author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
   - **Exclude** - Similar to Explicit. All steps must be completed but the original change author is not included in the notifications or shown in the dashboard tasks.
 - **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
-- **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when intiating a workflow. This feature is useful when a workflow requires supporting documentation.
-- **Use workflow for unpublish** - Determines if unpublish actions require a workflow approval.
-- **Extend permissions** - Determines if Umbraco Plumber should extend or replace users save and publish permissions. By default, the behaviour is replace.
+- **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
+- **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
+- **Extend permissions** - Determines if Umbraco Plumber should extend or replace user's save and publish permissions. By default, the behavior is Replace user's permissions.
 
 ## New node approval flow
 
@@ -43,7 +43,7 @@ To add an approval group to the workflow:
 5. Click **Submit**.
 6. Click **Save Settings**.
 
-When you click on **Edit** approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](../Approval-Groups/index.md#settings) section in the [Approval Groups](../Approval-Groups/index.md) article.
+When you click on the **Edit** approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](../Approval-Groups/index.md#settings) section in the [Approval Groups](../Approval-Groups/index.md) article.
 
 ## Document type approval flows
 

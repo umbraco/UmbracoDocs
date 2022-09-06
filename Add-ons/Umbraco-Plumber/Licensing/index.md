@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Licensing"
-meta.Description: "Here you can find information about how to use license with Umbraco Plumber"
+meta.Description: "Here you can find information about how to use a license with Umbraco Plumber"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
@@ -13,8 +13,9 @@ To impersonate the full license on a local site:
 
 1. Create an empty text file named `test.lic`.
 2. Copy the `test.lic` file  into `/App_plugins/Plumber`.
+
    ![Lic Placement](images/lic.png)
 
 :::note
-The test license is restricted to naked localhost, localtest domains, or domains ending in `.test` or `.local`.
+The test license is restricted to naked localhost, local test domains, or domains ending in `.test` or `.local`.
 :::

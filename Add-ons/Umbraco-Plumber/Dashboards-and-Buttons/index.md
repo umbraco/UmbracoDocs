@@ -7,17 +7,17 @@ versionTo: 10.0.0
 
 # Dashboards and Buttons
 
-Umbraco Plumber has its own default Dashboards. By default, when you install Umbraco Plumber, you receive two Dashboards: the *User Dashboard* and the *Admin Dashboard*. Additionally, Umbraco Plumber replaces the default Umbraco button set in the editor drawer.
+Umbraco Plumber has its default Dashboards. By default, when you install Umbraco Plumber, you receive two Dashboards: the *User Dashboard* and the *Admin Dashboard*. Additionally, Umbraco Plumber replaces the default Umbraco button set in the editor drawer.
 
 ## Dashboards
 
 Umbraco Plumber adds two Dashboards to your Umbraco project:
 
-- **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the current users submissions and tasks requiring approval from the user.
+- **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the current user’s submissions and tasks requiring approval from the user.
 
   ![Workflow Dashboard in the Content Section](images/WorkflowDashboard_ContentSection.png)
 
-- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity and any relevant messages related to upgrades. You can also set number of days to view the workflow activity chart for the specified days range.
+- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity and any relevant messages related to upgrades. You can also set the number of days to view the workflow activity chart for the specified days range.
 
   ![Workflow Dashboard in the Workflow Section](images/WorkflowDashboard_WorkflowSection.png)
 
@@ -27,7 +27,7 @@ When a workflow is active on the current node, the **Publish** button is replace
 
 ![Disabled content edits](images/Buttons.png)
 
-When no workflow is active, the button state is determined by the current users permissions.
+When no workflow is active, the button state is determined by the current user's permissions.
 
 Umbraco Plumber overrides Umbracos User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Plumber shifts Umbraco from a centrally administered publishing model (i.e. controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
 

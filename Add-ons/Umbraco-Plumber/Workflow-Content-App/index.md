@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Content App"
-meta.Description: "Information about using Content app with Umbraco Plumber"
+meta.Description: "Information about using the Content app with Umbraco Plumber"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
@@ -13,7 +13,7 @@ Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) t
 
 ## Active Workflow
 
-The Active workflow sub-section provides an interface for managing workflows for the current content node. When you have to initiate a workflow on the current node, the**Active workflow** sub-section requires information such as:
+The Active workflow sub-section provides an interface for managing workflows for the current content node. When you initiate a workflow on the current node, the **Active workflow** sub-section requires information such as:
 
 - Change Description.
 - [Optional] Scheduled date to publish the changes requested in the node.
@@ -30,7 +30,7 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 
 ![Active Workflow sub-section](images/Active_Workflow_detailed_info.png)
 
-You can access Active Workflows from two places - Content section and the Workflow section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can action workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
+You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can action workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 
 In multi-lingual sites, variant content can be submitted in one of these workflows:
 
@@ -38,7 +38,7 @@ In multi-lingual sites, variant content can be submitted in one of these workflo
 - All variants for publishing in a single workflow process using the workflow applied to the default variant.
 - Each variant into a separate workflow.
 
-For example, you can have the German version of your content approved by groups of German speakers and the English version by English speakers group.
+For example, you can have the German version of your content approved by groups of German speakers and the English version by the English speaker's group.
 
 ## Configuration
 
@@ -54,19 +54,21 @@ You can add different groups for different stages of content approval flow. Cont
 
 ### Approval Flow Types
 
-There are three types of Approval Flow: Explicit, Inherited, and Document-type.
+Approval Flows are available in three types: Content approval flow, Inherited approval flow, and Document-type approval flow.
 
 A given content node may have all three approval flow types applied but only one will be applied as per the following order of priority:
 
-- **Explicit approval flow**: Set directly on a content node via the context menu. This type will take priority over all others.
-- **Inherited approval flow**: If a node has no explicit approval flow, nor a flow applied to its document-type, Umbraco Plumber will traverse the content tree until it finds a node with an explicit flow and will use this flow for the current change.
-- **Document-type approval flow**: Set in the Workflow **Settings** section. This approval flow will apply to all content of the selected document type, unless the node has an explicit flow set. This flow type requires a license.
+- **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
+- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
+- **Document-type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
 
-Current responsibilites for Groups can be reviewed on the user group view for Explicit and Document-type approval flows only. For more information on User Group view, see the [Approval Groups](../Approval-Groups/index.md) article.
+![Approval Flow Types](images/approval-flow-types.png)
 
-Document type approval flows can also include conditional groups i.e., only include Group B in the workflow when the meta-description property has changed.
+Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document-type approvals** only. For more information see the [Roles](../Approval-Groups/index.md#roles) section in the [Approval Groups](../Approval-Groups/index.md) article.
 
-![Approval flows](images/approval-flow-types.png)
+![Approval Groups Roles](images/approval-groups-roles.png)
+
+Document Type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document Type approval flows, see the [Document Type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
 
 :::note
 Configuration cannot be modified when a content node is in a workflow process.
@@ -74,7 +76,7 @@ Configuration cannot be modified when a content node is in a workflow process.
 
 ## History
 
-The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the Page name with the Language variant, Type of Publish, workflow requested by, date the workflow was requested on, comment, and status of the workflow.
+The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the Page name with the Language variant, Type of Publish, workflow requested by, the date the workflow was requested, comment, and status of the workflow.
 
 ![History sub-section](images/History-sub-section.png)
 

@@ -16,7 +16,7 @@ To add an approval group, follow these steps:
 1. Go to the **Workflow** section.
 2. Click on **Approval groups**.
 3. Click **Create Group**.
-4. Enter a **Name** for the approval Group. For example: Danish Editors.
+4. Enter a **Name** for the Approval Group. For example: Danish Editors.
 5. Enter a **Description** to remind you why the group exists.
 6. Enter the group's **Email** address in the Settings section to which the notifications will be sent.
 7. Select the **Language** from the drop-down list.
@@ -29,7 +29,7 @@ To add an approval group, follow these steps:
 You can create a total of 5 groups on unlicensed installations. The paid license removes this restriction.
 :::
 
-You can search for a specific group using the Search bar. Select a group from the list to edit it's Settings, Roles, Members, and view the group's History.
+You can search for a specific group using the Search bar. Select a group from the list to edit its Settings, Roles, Members, and view the group's History.
 
 ## Settings
 
@@ -72,7 +72,7 @@ To add a Group member, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Click on **Approval groups**.
-3. Select a group from the list to edit it's Members.
+3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Group members** section.
 6. Select the **Users** you want to add to the approval group.
@@ -84,7 +84,7 @@ To inherit an existing Umbraco group membership, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Click on **Approval groups**.
-3. Select a group from the list to edit it's Members.
+3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Inherited group membership** section.
 6. Select the **User groups** you want to add to the approval group.
@@ -94,7 +94,7 @@ To inherit an existing Umbraco group membership, follow these steps:
 
 ## History
 
-The History tab provides an overview of the workflow activity for the current group. It displays a table containing the Page name with the Language variant, Type of workflow roles (Node-based approvals or Document-type approvals), workflow requested by, date the workflow was requested on, comment, and status of the workflow.
+The History tab provides an overview of the workflow activity for the current group. It displays a table containing the Page name with the Language variant, Type of workflow roles (Node-based approvals or Document-type approvals), workflow requested by, the date the workflow was requested, comment, and status of the workflow.
 
 ![Approval group history](images/approval-group-history.png)
 

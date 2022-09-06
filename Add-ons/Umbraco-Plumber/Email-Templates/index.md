@@ -16,8 +16,8 @@ If you wish to have one or more email templates for different languages, you wil
 To add templates for other languages:
 
 1. Go to the `~/View/Partials/WorkflowEmails/` folder.
-2. Copy the required template and paste it in the same folder.
-3. Append the culture code to the file name prefixed with an underscorce.
+2. Copy the required template and paste it into the same folder.
+3. Append the culture code to the file name prefixed with an underscore.
 
 For example:
 

@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Umbraco Plumber Documentation
 
-Welcome to the Umbraco Plumber documentation. Here you can read all about how to work with Umbraco Plumber. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that comes with Umbraco Plumber.
+Welcome to the Umbraco Plumber documentation. Here you can read all about how to work with Umbraco Plumber. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Plumber.
 
 ## [Getting Started](Getting-Started/index.md)
 
@@ -21,42 +21,34 @@ Extending Umbraco with the Workflow section by installing Umbraco Plumber in a f
 
 Learn more about the licensing model used for Umbraco Plumber.
 
-## [Settings](Settings/index.md)
+## [Dashboards and Buttons](Dashboards-and-Buttons/index.md)
 
-Setting up Umbraco Plumber for your installation.
-
-## [Notifications and Reminders](Notifications-and-Reminders/index.md)
-
-Configure email notifications and reminders for all workflow activities.
-
-## [Email Templates](Email-Templates/index.md)
-
-Learn how to add email templates for other languages.
-
-## [Upgrading Umbraco Plumber](Upgrading-Plumber/index.md)
-
-Covers how to upgrade your Umbraco Plumber to a newer version.
+View the different dashboards added to your installation. Determine the button state by user's permissions.
 
 ## [Approval Groups](Approval-Groups/index.md)
 
 Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Plumber.
 
-## [Approval Flow Types](Approval-Flow-Types/index.md)
+## [Email Templates](Email-Templates/index.md)
 
-Complete overview of the approval flow types with their order of priority.
+Learn how to add email templates for other languages.
 
-## [Dashboards and Buttons](Dashboards-and-Buttons/index.md)
+## [Notifications and Reminders](Notifications-and-Reminders/index.md)
 
-View the different dashboards added to your installation. Determine the button state by user's permissions.
+Configure email notifications and reminders for all workflow activities.
 
-## [Content App](Content-App/index.md)
+## [Upgrading Umbraco Plumber](Upgrading-Plumber/index.md)
 
-Overview of content app added to nodes where workflow is enabled.
+Covers how to upgrade your Umbraco Plumber to a newer version.
 
-## [Offline Approval](Offline-Approval/index.md)
+## [Workflow Settings](Workflow-Settings/index.md)
 
-Learn how to set offline approval to groups without logging in to Umbraco. This feature requires a paid license.
+Setting up Umbraco Plumber for your installation.
 
-## [Events](Events/index.md)
+## [Workflow Content App](Workflow-Content-App/index.md)
 
-Learn how to raise events using different processes and subscribe to them.
+Overview of the content app added to nodes where workflow is enabled.
+
+## [Workflow History](Workflow-History/index.md)
+
+Overview of the workflow histroy displayed in a tabular format.

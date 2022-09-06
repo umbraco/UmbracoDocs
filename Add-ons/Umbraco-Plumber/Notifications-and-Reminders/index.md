@@ -26,13 +26,13 @@ Notification emails use HTML templates which render information from the `HtmlEm
 
 The `HtmlEmailModel` contains the following fields:
 
-| Fields        | Data Type                 | Description                                                                                                    |
-|---------------|---------------------------|----------------------------------------------------------------------------------------------------------------|
-| WorkflowType  | WorkflowType              | An enum value containing either 1 or 2 for Publish and Unpublish respectively.                                 |
-| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                 |
-| Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                  |
-| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains lot of useful data, best explored via Intellisense.|
-| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                  |
+| Fields        | Data Type                 | Description                                                                                                      |
+|---------------|---------------------------|------------------------------------------------------------------------------------------------------------------|
+| WorkflowType  | WorkflowType              | An enum value containing either 1 or 2 for Publish and Unpublish respectively.                                   |
+| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                   |
+| Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                    |
+| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense.|
+| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                    |
 
 The `HtmlEmailBase` contains the following fields:
 
@@ -41,9 +41,9 @@ The `HtmlEmailBase` contains the following fields:
 | SiteUrl      | string         | The public URL of your site.                                                                        |
 | NodeName     | string         | The name of the node from the current workflow.                                                     |
 | Type         | string         | The workflow type including the scheduled date (if exists).                                         |
-| EmailType    | EmailType      | An enum value representing the current email type which relates directly to the workflow task type. |
+| EmailType    | EmailType      | An enum value representing the current email type that relates directly to the workflow task type.  |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                       |
-| Email        | string         | The user's email address or group address (if a group email is being sent).                         |
+| Email        | string         | The user's email address or a group address (if a group email is being sent).                       |
 | Name         | Name           | The user's name.                                                                                    |
 | Language     | string         | The user's language.                                                                                |
 | Id           | int            | The user's ID or group ID (when sending to a group email address).                                  |
@@ -108,7 +108,7 @@ where for all services, `e` will provide the object being created, updated, or d
 
 ## Reminders
 
-Umbraco Plumber uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days. After which reminder emails will be sent every 24 hours to all members of the group assigned to the pending workflow task.
+Umbraco Plumber uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days. After that reminder emails will be sent every 24 hours to all members of the group assigned to the pending workflow task.
 
 The emails use a similar model to the notification emails, also inheriting from `HtmlEmailBase`. In addition to the inherited fields, `HtmlReminderEmailModel` includes:
 
