@@ -105,7 +105,6 @@ This setting defaults to 5 minutes.
 
 All of these times are in *seconds*:
 
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
