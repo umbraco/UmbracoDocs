@@ -29,9 +29,9 @@ Setting up Umbraco Plumber for your installation.
 
 Configure email notifications and reminders for all workflow activities.
 
-## [Localization](Localization/index.md)
+## [Email Templates](Email-Templates/index.md)
 
-Learn how to add templates for other languages.
+Learn how to add email templates for other languages.
 
 ## [Upgrading Umbraco Plumber](Upgrading-Plumber/index.md)
 

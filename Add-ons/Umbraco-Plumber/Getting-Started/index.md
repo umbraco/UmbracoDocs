@@ -32,5 +32,5 @@ You can find some articles below to get started using Umbraco Plumber:
 - [Workflow Content App](../Workflow-Content-App/index.md)
 - [Approval Groups](../Approval-Groups/index.md)
 - [Workflow History](../Workflow-History/index.md)
-- [Licensing](../Licensing/index.md)
+- [Email Templates](../Email-Templates/index.md)
 - [Workflow Settings](../Workflow-Settings/index.md)
