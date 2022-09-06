@@ -8,7 +8,7 @@ versionTo: 10.0.0
 `Alias: Umbraco.BlockGrid`
 
 `Returns: IEnumerable<BlockGridItem>`
-TODO: Check this with C#
+> TODO: Someone with C# knowledge correct this type ^^
 
 **Block Grid** enables the editor to layout their content. The content is made of blocks, which can contain simple or very complex data. By defining column span and row span, each Block gets a size, this makes them to appear next to together or even in formations.
 Additionally Blocks can nest other Blocks forming more complex or strict compositions.
@@ -19,12 +19,12 @@ The default provided layout mechanism is based on CSS Grid, this can be adjusted
 
 The Block Grid property editor is configured in the same way as any standard property editor, via the *Data Types* admin interface.
 
-To set up your Block List Editor property, create a new *Data Type* and select **Block Grid** from the list of available property editors.
+To set up your Block Grid Editor property, create a new *Data Type* and select **Block Grid** from the list of available property editors.
 
 Then you will see the configuration options for a Block Grid as shown below.
 
 ![Block Grid - Data Type Definition](images/BlockListEditor_DataType.jpg)
-TODO
+> TODO: screenshot
 
 The Data Type editor allows you to configure the following properties:
 
@@ -32,7 +32,8 @@ The Data Type editor allows you to configure the following properties:
 - **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the root of the layout.
 - **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
 - **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
-- **TODO**
+- **Grid Columns** - Define the number of columns in your grid layout. Default is 12 columns.
+- **Layout Stylesheet** - Replace the build-in Layout Stylesheet. Additionally you can retrieve the default layout stylesheet, to use as base for your own or inspiration for writhing your own.
 
 ## Setup Block Types
 
@@ -41,7 +42,7 @@ Block Types is based upon **Element Types**, these can be created beforehand or 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you will have the option to configure it further.
 
 ![Block List - Data Type Block Configuration](images/BlockListEditor_DataType_Blocks.png)
-TODO
+> TODO: screenshot
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -82,31 +83,24 @@ These properties are relevant when you work with custom views.
 When viewing a **Block Grid** editor in the Content section for the first time, you will be presented with the option to Add content.
 
 ![Block List - Add Content](images/BlockListEditor_AddContent.png)
-TODO
+> TODO: screenshot
 
 Clicking the Add content button brings up the Block Catalogue.
 
 ![Block List - Setup](images/BlockListEditor_BlockPicker_simplesetup.jpg)
-TODO
+> TODO: screenshot
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
 ![Block List - example setup from Umbraco.com](images/BlockListEditor_BlockPicker.jpg)
-TODO
+> TODO: screenshot
 
-Click the Block Type you wish to create and a new Block will appear in the list.
+Click the Block Type you wish to create and a new Block will appear in the layout.
 
-Depending on whether your Block List Editor is setup to use default or inline editing mode you will see one of the following things happening:
-
-In default mode you will enter the editing overlay of that Block:
-
-![Block List - Overlay editing](images/BlockListEditor_EditingOverlay.jpg)
-TODO
-
-More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
+More Blocks can be added to the layout by clicking the Add content button or using the inline Add content button that appears on hover between, besides or above existing Blocks.
 
 ![Block List - Add Content](images/BlockListEditor_AddContentInline.jpg)
-TODO
+> TODO: screenshot
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
@@ -114,9 +108,13 @@ To delete a Block click the trash-bin icon appearing on hover.
 
 ## Rendering Block Grid Content
 
+> TODO: have someone with C# expertise writting this part.
+
 Rendering the stored value of your **Block Grid** property can be done in two ways.
 
 ### 1. Default rendering
+
+> TODO: C# person should write this:
 
 You can choose to use the built-in rendering mechanism for rendering blocks via a Partial View for each block.
 
@@ -211,7 +209,7 @@ Example:
 }
 ```
 
-## Extract Block List Content data
+## Extract Block Grid Content data
 
 In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
 An example could be a product page with variants stored in a Block List Editor.
@@ -251,124 +249,28 @@ Example:
 }
 ```
 
-If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+If you know the Block Grid Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+
+
+## Write a Custom Layout Stylesheet
+
+The default layout is arranged by CSS Grid, this can be modified or completely replaced to fit your use case.
+
+### Adjusting Layout Stylesheet
+
+
+### Write a new Layout Stylesheet
 
 
 ## Build a Custom Backoffice View
 
-You can choose to customize your editing experience by implementing a custom view for each Block.
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors.
+[Read about building a Custom View for Blocks here](../Block-Editor/build-custom-view-for-blocks.md)
 
-By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated. Inline editing mode must be disabled for custom backoffice views to work.
 
-### Write Your Own HTML View
+## Creating Block Grid programmatically
 
-Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and therefore you can write any AngularJS logic.
-
-Your HTML can be anything, but if you like to use it as a representation of the content then you would also want the full view to be clickable, which then opens the default editor for editing of your content.
-
-The following example displays the property with the alias `headline` together with the `description` inside a button to edit your block.
-
-```html
-<button type="button" ng-click="block.edit()">
-  <h2 ng-bind="block.data.headline"></h2>
-  <p ng-bind="block.data.description"></p>
-</button>
-```
-
-If you'd like to display properties of `settings`, you can access these by `block.settingsData.myPropertyAlias`.
-
-### Adding custom implementation to your View
-
-To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
-```html
-<button  type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)"  class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
-    <h2 ng-bind="block.data.headline"></h2>
-    <p ng-bind="block.data.description"></p>
-</button>
-```
-
-:::note
-The class declaration is necessary to allow the block to behave like the default blocks (i.e. drag-to-sort etc.)
-:::
-
-Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
-
-Inside this folder create two files,. The first file should be called package.manifest that contain the following:
-```json
-{
-  "javascript": [
-    "~/App_Plugins/CustomBlockView/customBlock.controller.js"    
-  ]  
-}
-```
-Umbraco will parse all package.manifest files and load any resources they reference into the backoffice during startup.
-
-The second file should be a javascript file called
-
-**customBlock.controller.js**
-
-(to match the file referenced in your package.manifest file)
-
-This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
-
-```javascript
-angular.module("umbraco").controller("customBlockController", function ($scope) {
-// you can do your custom functionality here!
-});
-```
-
-#### Example: Displaying an image from a Media Picker
-
-Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
-
-We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
-
-With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
-
-```javascript
-angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
-
-    //your property is called image so the following will contain the udi:
-        var imageUdi = $scope.block.data.image;
-    //the mediaResource has a getById method:
-        mediaResource.getById(imageUdi)
-            .then(function (media) {
-                console.log(media);
-                //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
-                $scope.imageUrl = media.mediaLink;
-    });    
-});
-```
-
-Update the View to use the 'imageUrl' property to display the image:
-
-```html
-<div ng-controller="customBlockController" ng-click="block.edit()">
-    <h2 ng-bind="block.data.headline"></h2>
-    <img src="{{imageUrl}}" />
-    <p ng-bind="block.data.description"></p>
-</div>
-```
-
-If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
-
-```javascript
-angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
-
-    //your property is called image so the following will contain the udi:
-        var imageUdi = $scope.block.data.image;
-    //the mediaResource has a getById method:
-        mediaResource.getById(imageUdi)
-            .then(function (media) {
-                imageUrlGeneratorResource.getCropUrl(media.mediaLink, 150, 150).then(function (cropUrl) {
-                console.log(cropUrl);
-                $scope.imageUrl = cropUrl;
-            });
-    });    
-});
-```
-
-## Creating Blocklist programmatically
+> TODO: have someone with C# expertise writting this part.
 
 In this example, we will be creating some Block List objects under the `People` property in the `Home` Document Type. The `People` property implements a Block List Data Type where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
 
