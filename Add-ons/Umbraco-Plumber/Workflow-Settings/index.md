@@ -43,7 +43,7 @@ To add an approval group to the workflow:
 5. Click **Submit**.
 6. Click **Save Settings**.
 
-When you click on **Edit** approval group, you are presented with various configuration options for that group. For more information on the approval group settings, see the [Settings](../Approval-Groups/index.md#settings) section in the [Approval Groups](../Approval-Groups/index.md) article.
+When you click on **Edit** approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](../Approval-Groups/index.md#settings) section in the [Approval Groups](../Approval-Groups/index.md) article.
 
 ## Document type approval flows
 
