@@ -25,7 +25,7 @@ Learn which password settings that can be configured in Umbraco.
 
 ## [Security Hardening](Security-hardening/index.md)
 
-Learn about how to can harden the security on your Umbraco website to secure it even further.
+Learn about how to harden the security on your Umbraco website to secure it even further.
 
 ## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
 
