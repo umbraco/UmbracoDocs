@@ -17,7 +17,7 @@ In this overview you will also find the usage limitations for your Umbraco Cloud
 
 ![Usage on Cloud](images/Usage.png)
 
-The usage shown is for the Live environment of your project as it is the usage in this environment that is measured againt the plan usage limits.
+The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits.
 For _media storage_ it is the size of all files in the blob storage including the cache that is considered.
 
 ## Bandwidth Top 10's
