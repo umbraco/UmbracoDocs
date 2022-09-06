@@ -33,7 +33,7 @@ Configure email notifications and reminders for all workflow activities.
 
 Learn how to add templates for other languages.
 
-## [Upgrades](Upgrades/index.md)
+## [Upgrading Umbraco Plumber](Upgrading-Plumber/index.md)
 
 Covers how to upgrade your Umbraco Plumber to a newer version.
 

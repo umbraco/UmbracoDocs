@@ -5,10 +5,37 @@ versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
 
-# Upgrades
+# Upgrading Umbraco Plumber
 
-Umbraco Plumber will display a prompt on the Workflow section dashboard when a new version is available.
+This article shows how to manually upgrade Umbraco Plumber to run the latest version. Umbraco Plumber displays a prompt in the **Workflow** section when a new version is available.
 
-Displaying the prompt is determined by comparing the assembly version of the current installed version with the latest released version tagged in the GitHub repository.
+## Get the latest version of Umbraco Plumber
 
-If the remote version is newer than the installed package, the upgrade prompt displays the release notes and a link to the GitHub release. Updates should be installed via NuGet.
+To get the latest version of Umbraco Plumber, you can upgrade using:
+
+- [NuGet](#nuget)
+- [Visual Studio](#visual-studio)
+
+### NuGet
+
+- NuGet installs the latest version of the package when you use the `dotnet add package Plumber.Workflow` command unless you specify a package version:
+
+  `dotnet add package Plumber.Workflow --version <VERSION>`
+
+- After you have added a package reference to your project by executing the `dotnet add package Plumber.Workflow` command in the directory that contains your project file, run `dotnet restore` to install the package.
+
+### Visual Studio
+
+- Go to `Tools` -> `NuGet Package Manager` -> `Manage NuGet Packages for Solution...` in Visual Studio, to upgrade Umbraco Plumber:
+- Select **Plumber.Workflow**.
+- Select the latest version from the **Version** drop-down and click **Install**.
+
+  ![NuGet Package Manager](images/Manage_packages_v10.png)
+
+- When the command completes, open the **<project-name>.csproj** file to make sure the package reference is updated:
+
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Plumber.Workflow" Version="10.x.x" />
+  </ItemGroup>
+  ```
