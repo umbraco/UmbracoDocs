@@ -66,7 +66,7 @@ For example, to ensure a decimal value is serialized to a consistent number of d
 
 ### Service Connectors
 
-Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data required for the type of entity they correspond to, including figuring out what dependencies are needed (e.g. in Umbraco, how a document type will depend on a data type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
+Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data required for the type of entity they correspond to, including figuring out what dependencies are needed (e.g. in Umbraco, how a Document Type will depend on a data type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
 
 Service connectors inherit from `ServiceConnectorBase` and are constructed with the artifact and entity as generic type arguments.
 
