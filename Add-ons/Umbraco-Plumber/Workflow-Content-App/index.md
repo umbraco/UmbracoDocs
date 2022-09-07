@@ -59,8 +59,8 @@ Approval Flows are available in three types: Content approval flow, Inherited ap
 A given content node may have all three approval flow types applied but only one will be applied as per the following order of priority:
 
 - **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
-- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
 - **Document-type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
+- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
 
 ![Approval Flow Types](images/approval-flow-types.png)
 

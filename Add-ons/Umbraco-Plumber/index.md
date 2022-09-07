@@ -29,6 +29,10 @@ View the different dashboards added to your installation. Determine the button s
 
 Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Plumber.
 
+## [Events](Events/index.md)
+
+Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
+
 ## [Email Templates](Email-Templates/index.md)
 
 Learn how to add email templates for other languages.

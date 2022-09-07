@@ -11,17 +11,17 @@ All email templates are fully localized where translations exist. You can edit t
 
 ## Creating an Email Template
 
-If you wish to have one or more email templates for different languages, you will need to place all the email templates into the `~/View/Partials/WorkflowEmails/` folder.
+If you wish to have one or more email templates for different languages, you will need to place all the email templates into the `~/Views/Partials/WorkflowEmails/` folder.
 
 To add templates for other languages:
 
-1. Go to the `~/View/Partials/WorkflowEmails/` folder.
+1. Go to the `~/Views/Partials/WorkflowEmails/` folder.
 2. Copy the required template and paste it into the same folder.
 3. Append the culture code to the file name prefixed with an underscore.
 
 For example:
 
-- **Default approval request template:** `~/View/Partials/WorkflowEmails/ApprovalRequest.cshtml`
+- **Default approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest.cshtml`
 - **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest_da-DK.cshtml`
 
 ## Sample Email Template

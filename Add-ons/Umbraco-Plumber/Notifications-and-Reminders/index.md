@@ -64,48 +64,6 @@ By default, all emails are sent to the **Group**. This might not always be an id
 
 It might be useful to notify **All** the participants of completed workflows but even this may be excessive. Depending on your website, you can adjust the best configuration.
 
-## Config, Group, and Tasks Notifications
-
-Currently, Notifications are raised by the Config, Group, and Tasks services. You can also subscribe to the `DocumentPublish` and `DocumentUnpublish` processes.
-
-You cannot cancel Notifications and serve to provide an entry point for writing custom notification layers like Slack.
-
-### ConfigService
-
-The ConfigService is responsible for managing workflow configuration for nodes and content types. This service raises notifications whenever a node or content type configuration is updated.
-
-## GroupService
-
-The GroupService is responsible for managing approval groups. This service raises notifications whenever an approval group is created, updated, or deleted.
-
-## TasksService
-
-The TasksService is responsible for all operations involving workflow tasks. This service raises notifications whenever a task is created or updated.
-
-## DocumentPublishProcess and DocumentUnpublishProcess
-
-These processes are the core of the workflow and manage instance/task creation and workflow progression. These processes raise notifications whenever a workflow instance is created or updated.
-
-### Notification Subscription
-
-You can subscribe to notifications by adding a handler in a Component:
-
-```csharp
-public class ContentEventsComponent : IComponent
-{
-  public void Initialize()
-  {
-    GroupService.Updated += GroupService_Updated;
-  }
-
-  private void GroupService_Updated(object sender, GroupEventArgs e) {
-    // do stuff whenever a group is updated
-  }
-}
-```
-
-where for all services, `e` will provide the object being created, updated, or deleted.
-
 ## Reminders
 
 Umbraco Plumber uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days. After that reminder emails will be sent every 24 hours to all members of the group assigned to the pending workflow task.

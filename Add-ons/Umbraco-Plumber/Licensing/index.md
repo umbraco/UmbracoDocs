@@ -17,5 +17,5 @@ To impersonate the full license on a local site:
    ![Lic Placement](images/lic.png)
 
 :::note
-The test license is restricted to naked localhost, local test domains, or domains ending in `.test` or `.local`.
+The test license is restricted to sites running in a development environment, with a debugger attached (ie hitting F5 in Visual Studio, in Debug mode, will enable the test license).
 :::
