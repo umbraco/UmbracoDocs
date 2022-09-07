@@ -7,7 +7,7 @@ meta.Description: "How to restore content in Umbraco Deploy using the deployment
 
 # Transferring Content, Media and Forms
 
-Once all code and meta data is in sync between your environments, it's time to transfer your content and media. This is done from the Umbraco backoffice.
+Once all code and meta data is in sync between your environments, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
 
 Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer. You can transfer it all in one go, a few at a time or transfer only a single node.
 
