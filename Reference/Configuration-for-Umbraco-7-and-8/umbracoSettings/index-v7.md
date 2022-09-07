@@ -321,7 +321,7 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
 ## ScheduledTasks
 
 :::note
-This setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
+This setting is **obsolete** as of 7.2.7, use `umbracoApplicationUrl` instead. For more information on `umbracoApplicationUrl`, see the [Web.Routing](index.md#webrouting) section.
 :::
 
 In this section you can add multiple scheduled tasks that should run at certain intervals.
