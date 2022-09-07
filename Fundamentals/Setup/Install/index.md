@@ -46,3 +46,9 @@ Its built-in tools provide the ability to develop and execute applications for a
 ## [Install Umbraco unattended](Unattended-Install.md)
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.
+
+## Known issues when installing
+
+This is some issues.
+
+
