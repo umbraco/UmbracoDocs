@@ -8,7 +8,7 @@ versionFrom: 10.0.0
 
 `Returns: IEnumerable<MediaWithCrops>` or `MediaWithCrops`
 
-This property editors returns a single `MediaWithCrops` item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
+This property editors returns a single `MediaWithCrops` item if the "Pick multiple items" Data Type setting is disabled or a collection if it is enabled.
 
 ## Data Type Definition Example
 
