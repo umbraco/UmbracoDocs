@@ -279,7 +279,7 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 #### DataTypeId
 
-Sets the data type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text data type created by Umbraco on a new install is used.
+Sets the Data Type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text Data Type created by Umbraco on a new install is used.
 
 ---
 
