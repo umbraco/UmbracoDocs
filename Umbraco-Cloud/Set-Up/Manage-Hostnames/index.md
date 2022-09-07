@@ -92,9 +92,6 @@ CAA records can be set on the subdomain, but it's not something that is commonly
 example.com. IN CAA 0 issuewild "digicert.com"
 ```
 
-Please make sure to update the CAA record prior to your current certificate expiring.
-:::
-
 ## [Upload certificates manually](Security-Certificates)
 
 On the Professional and Enterprise plan, you can manually add your certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
