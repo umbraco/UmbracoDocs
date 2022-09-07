@@ -62,7 +62,7 @@ Each Property Editor that does not allow variants (an Invariant Property) will b
 ![How an invariant property looks when it is locked](images/invariant-property-locked.png)
 
 :::note
-Whether or not the lock is enabled on the invarient properties depend on the `AllowEditInvariantFromNonDefault`.
+Whether or not the lock is enabled on the invariant properties depends on the `AllowEditInvariantFromNonDefault` setting in the `appsettings.json` file.
 
 On projects starting on Umbraco 10.2 or later versions the setting is `true` by default. Was the project upgraded to 10.2 or later, the setting will be `false`.
 
