@@ -16,7 +16,7 @@ This in effect means that when a user navigates to this node, they will be redir
 
 ## umbracoInternalRedirectId
 
-Add this property alias to your document type with a Content Picker property editor and
+Add this property alias to your Document Type with a Content Picker property editor and
 Umbraco will load the selected page’s content transparently without performing any URL redirection.
 This essentially performs a rewrite.
 
