@@ -7,7 +7,7 @@ meta.Description: "Instructions on installing nightly builds of Umbraco."
 
 # Installing nightly builds
 
-Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to this.
+Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to do this.
 
 1. Adding the nightly feed as a NuGet source
 2. Finding the latest nightly version
