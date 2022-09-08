@@ -71,13 +71,6 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
 }
 ```
 
-:::tip
-**Add support for read-only mode**
-
-From Umbraco version 10.2 and later it is possible to add support for a read-only mode to the Property Editors.
-This can be done by adding the `supportsReadOnly` value to the `editor` section.
-:::
-
 ## Setting up a Property Editor with Csharp
 
 You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file in `/App_Code/` to register the editor this way.
