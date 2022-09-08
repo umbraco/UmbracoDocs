@@ -39,6 +39,22 @@ To group dictionary items:
     ![Display dictionary item](images/display-dictionary-item.png)
 9. Click **Save**.
 
+## Editing Dicionary Items
+
+To edit a dictionary item, follow these steps:
+
+1. Go to the **Translation** section.
+2. Use the **Dictionary** tree to locate the item you need to update/edit.
+   * Alternatively, you can use the *search field* in the top-right corner.
+3. Make the edits you need to make.
+4. Click **Save** to save the changes.
+
+:::note
+It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be *read-only*.
+
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../Users/index.md#creating-a-user-group) article.
+:::
+
 ## Fetching Dictionary Values
 
 To fetch dictionary values in the template, replace the text with the following snippet:
