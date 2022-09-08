@@ -56,7 +56,7 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
             /*the HTML file we will load for the editor*/
             "editor": {
                 "view": "~/App_Plugins/Suggestions/suggestion.html",
-                /*Add 'read-only' support. Available from Umbraco 10.2+*/
+                /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
                 "supportsReadOnly": true
             }
         }
