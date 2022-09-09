@@ -18,11 +18,11 @@ To get the latest version of Umbraco Plumber, you can upgrade using either of th
 
 ### NuGet
 
-- NuGet installs the latest version of the package when you use the `dotnet add package Plumber.Workflow` command unless you specify a package version:
+NuGet installs the latest version of the package when you use the `dotnet add package Plumber.Workflow` command unless you specify a package version:
 
   `dotnet add package Plumber.Workflow --version <VERSION>`
 
-- After you have added a package reference to your project by executing the `dotnet add package Plumber.Workflow` command in the directory that contains your project file, run `dotnet restore` to install the package.
+After you have added a package reference to your project by executing the `dotnet add package Plumber.Workflow` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
 ### Visual Studio
 
