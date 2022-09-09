@@ -22,7 +22,7 @@ The Active workflow sub-section provides an interface for managing workflows for
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
-- Approve, reject, or cancel pending workflow tasks.
+- Option to approve, reject, or cancel pending workflow tasks.
 - View change description and track differences across pending and completed workflows.
 - View the group responsible for approving the pending workflow.
 - View pending language variant(s) workflow.
