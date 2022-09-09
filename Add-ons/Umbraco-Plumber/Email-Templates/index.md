@@ -28,13 +28,11 @@ For example:
 
 Below is an example of the `ApprovalRequest.cshtml` email template from the `~/Views/Partials/WorkflowEmails/` folder:
 
-```none
+```csharp
 @model Umbraco.Workflow.Core.Models.Email.HtmlEmailModel
 
-@*
-    Refer to the documentation for Email templates for a full rundown on the available fields
-    or (better option), edit the template in Visual Studio where Intellisense will save you
-*@
+// Refer to the documentation for Email templates for a full rundown on the available fields
+// or (better option), edit the template in Visual Studio where Intellisense will save you
 
 <!DOCTYPE html>
 
