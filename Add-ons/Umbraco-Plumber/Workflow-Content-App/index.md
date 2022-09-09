@@ -30,7 +30,7 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 
 ![Active Workflow sub-section](images/Active_Workflow_detailed_info.png)
 
-You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can action workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
+You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 
 In multi-lingual sites, variant content can be submitted in one of these workflows:
 
