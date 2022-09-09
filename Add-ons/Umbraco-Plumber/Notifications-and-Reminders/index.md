@@ -41,7 +41,7 @@ The `HtmlEmailBase` contains the following fields:
 | SiteUrl      | string         | The public URL of your site.                                                                        |
 | NodeName     | string         | The name of the node from the current workflow.                                                     |
 | Type         | string         | The workflow type including the scheduled date (if exists).                                         |
-| EmailType    | EmailType      | An enum value representing the current email type that relates directly to the workflow task type.  |
+| EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type.  |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                       |
 | Email        | string         | The user's email address or a group address (if a group email is being sent).                       |
 | Name         | Name           | The user's name.                                                                                    |
