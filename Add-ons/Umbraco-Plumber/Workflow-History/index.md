@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Workflow History
 
-The Workflow History provides a chronological audit trail of workflow activity for all the nodes. 
+The Workflow History provides a chronological audit trail of workflow activity for all the nodes.
 
 It displays a table containing the following details:
 

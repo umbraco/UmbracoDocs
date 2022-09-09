@@ -7,7 +7,11 @@ versionTo: 10.0.0
 
 # Workflow Content App
 
-Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections: Active workflow, Configuration, and History.
+Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+
+- [Active workflow](#active-workflow)
+- [Configuration](#configuration)
+- [History](#history)
 
 ![Workflow content app](images/content-app.png)
 
@@ -42,7 +46,7 @@ For example, you can have the German version of your content approved by groups 
 
 ## Configuration
 
-The Configuration sub-section provides an interface for configuring the content approval flow for the current node and displays any inherited or document-type approval flows applied to the current content node.
+The Configuration sub-section provides an interface for configuring the content approval flow for the current node and displays any inherited or Document type approval flows applied to the current content node.
 
 ![Configuration sub-section](images/Configuration-sub-section.png)
 
@@ -54,21 +58,21 @@ You can add different groups for different stages of content approval flow. Cont
 
 ### Approval Flow Types
 
-Approval Flows are available in three types: Content approval flow, Inherited approval flow, and Document-type approval flow.
+Approval Flows are available in three types: Content approval flow, Inherited approval flow, and Document type approval flow.
 
 A given content node may have all three approval flow types applied but only one will be applied as per the following order of priority:
 
 - **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
-- **Document-type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
+- **Document type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
 - **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
 
 ![Approval Flow Types](images/approval-flow-types.png)
 
-Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document-type approvals** only. For more information see the [Roles](../Approval-Groups/index.md#roles) section in the [Approval Groups](../Approval-Groups/index.md) article.
+Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](../Approval-Groups/index.md#roles) section in the [Approval Groups](../Approval-Groups/index.md) article.
 
 ![Approval Groups Roles](images/approval-groups-roles.png)
 
-Document Type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document Type approval flows, see the [Document Type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
+Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document Type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
 
 :::note
 Configuration cannot be modified when a content node is in a workflow process.
@@ -76,11 +80,18 @@ Configuration cannot be modified when a content node is in a workflow process.
 
 ## History
 
-The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the Page name with the Language variant, Type of Publish, workflow requested by, the date the workflow was requested, comment, and status of the workflow.
+The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the following information:
+
+- Page name with the Language variant.
+- Type of Publish.
+- Who the workflow is requested by.
+- The date the workflow was requested.
+- Comments.
+- Status of the workflow.
 
 ![History sub-section](images/History-sub-section.png)
 
-You can also **Filter** the records based on Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
+You can also **Filter** the records based on the information listed abouve. Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the Active workflow sub-section.
 

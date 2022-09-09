@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Workflow Settings
 
-When working with Umbraco Plumber, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure general workflow settings, new node approval flows, Document Type approval flows, and exclude nodes.
+When working with Umbraco Plumber, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure general workflow settings, new node approval flows, Document type approval flows, and exclude nodes.
 
 ![Workflow settings](images/workflow-settings.png)
 
@@ -17,10 +17,10 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 ![General settings](images/general-settings.png)
 
-- **Flow type** - Determines the approval flow progress. These options manage how the change author is included in the workflow:
-  - **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the change author).
-  - **Implicit** - All steps where the original change author is NOT a member of the group must be completed. Steps where the original change author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
-  - **Exclude** - Similar to Explicit. All steps must be completed but the original change author is not included in the notifications or shown in the dashboard tasks.
+- **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
+  - **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
+  - **Implicit** - All steps where the original Change Author is NOT a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
+  - **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
 - **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
 - **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 - **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
@@ -47,9 +47,9 @@ When you click on the **Edit** approval group, you are presented with different 
 
 ## Document type approval flows
 
-Configure default workflows that should be applied to all content nodes of the selected document type. This feature requires a license.
+Configure default workflows that should be applied to all content nodes of the selected Document Type. This feature requires a license.
 
-To add a document type approval flow:
+To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
@@ -67,7 +67,7 @@ To add a document type approval flow:
 8. Click **Submit**.
 9. Click **Save Settings**.
 
-To edit a document type approval flow:
+To edit a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
