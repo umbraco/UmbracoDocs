@@ -57,7 +57,7 @@ To install via Visual Studio, follow these steps:
    ![VS Installation](images/VS_Installation.png)
 6. Once the package is installed, open the **.csproj** file to make sure the package reference is updated:
 
-   ```cli
+   ```none
    <ItemGroup>
     <PackageReference Include="Plumber.Workflow" Version="10.0.1" />
    </ItemGroup>
