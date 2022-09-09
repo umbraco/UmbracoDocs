@@ -9,7 +9,14 @@ versionTo: 10.0.0
 
 The Workflow History provides a chronological audit trail of workflow activity for all the nodes. 
 
-It displays a table containing the Page name/Node with the Language variant, Type of Publish, workflow requested by, the date the workflow was requested, the comment describing the changes, and status of the workflow.
+It displays a table containing the following details:
+
+- Page name/Node with the Language variant.
+- Type of Publish.
+- Who the workflow was requested by.
+- The date the workflow was requested.
+- The comment describing the changes.
+- Status of the workflow.
 
 ![Workflow history](images/workflow-history.png)
 
