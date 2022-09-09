@@ -90,7 +90,7 @@ In addition to the three mandatory parameters as shown above, you may also speci
 
 ### Creating a new media item from a stream
 
-Similar to specifying a `HttpPostedFileBase` as shown in the example above, you can instead specify a `Stream` for the contents of the file that should be created.
+You can specify a `Stream` for the contents of the file that should be created.
 
 As an example, if you have a file on disk, you can open a new stream for a file on the disk, and then create a new media for that file in Umbraco:
 

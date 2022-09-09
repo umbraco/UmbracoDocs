@@ -18,8 +18,8 @@ In this article, we will cover the steps required to install Umbraco Plumber on 
 
 There are different ways to install Umbraco Plumber:
 
-- [.Net CLI](#net-cli-installation)
-- [Visual Studio](#visual-studio-installation)
+- [.Net CLI Installation](#net-cli-installation)
+- [Visual Studio Installation](#visual-studio-installation)
 
 ### .Net CLI Installation
 

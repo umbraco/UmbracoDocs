@@ -11,7 +11,7 @@ In this article, you can read about [Umbraco Plumber](https://umbraco.com/produc
 
 ## Umbraco Plumber Overview
 
-Umbraco Plumber allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Plumber extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises multiple steps and multiple users assigned to the group responsible for providing approval at each step.
+Umbraco Plumber allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Plumber extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises of multiple steps and multiple users assigned to the group responsible for providing approval at each step.
 
 A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
 

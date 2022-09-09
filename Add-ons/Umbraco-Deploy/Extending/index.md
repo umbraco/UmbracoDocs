@@ -9,13 +9,13 @@ meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
 
 Umbraco Deploy supports the deployment of CMS schema information, definitions from the HQ's Forms package, along with managed content and media.  In addition it can be extended by package or custom solution developers to allow the deployment of custom data, such as that stored in your own database tables.
 
-As a package or solution developer, you can hook into the disk based serialization and deployment - similar to that used for Umbraco document types and data types.  It's also possible to provide the ability for editors to deploy custom data via the backoffice - in the same way that Umbraco content and media can be queued for transfer and restored.
+As a package or solution developer, you can hook into the disk based serialization and deployment - similar to that used for Umbraco Document Types and Data Types.  It's also possible to provide the ability for editors to deploy custom data via the Backoffice - in the same way that Umbraco content and media can be queued for transfer and restored.
 
 ## Concepts and Examples
 
 ### Entities
 
-*Entities* are what you may be looking to transfer between two websites using Deploy.  Within Umbraco, they are the document types, data type, documents etc.  In a custom solution or a package, they may be representations of some other data that's being stored separately from Umbraco content, whilst still managed in the backoffice using custom trees and editors.
+*Entities* are what you may be looking to transfer between two websites using Deploy.  Within Umbraco, they are the Document Types, Data Type, documents etc.  In a custom solution or a package, they may be representations of some other data that's being stored separately from Umbraco content, whilst still managed in the Backoffice using custom trees and editors.
 
 For the purposes of subsequent code samples, we'll consider an example entity as a POCO class with a few properties.  Note that the entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution.  The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
 
@@ -66,7 +66,7 @@ For example, to ensure a decimal value is serialized to a consistent number of d
 
 ### Service Connectors
 
-Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data required for the type of entity they correspond to, including figuring out what dependencies are needed (e.g. in Umbraco, how a document type will depend on a data type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
+Service connectors are responsible for knowing how to handle the mapping between artifacts and entities. They know how to gather all the data required for the type of entity they correspond to, including figuring out what dependencies are needed (e.g. in Umbraco, how a Document Type will depend on a Data Type). They are responsible for packaging an entity as an artifact and for knowing how to extract an entity from an artifact and persist it in a destination site.
 
 Service connectors inherit from `ServiceConnectorBase` and are constructed with the artifact and entity as generic type arguments.
 
@@ -348,7 +348,7 @@ In order to deploy the entity as schema, via disk based representations held in 
 
 In Umbraco Deploy 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
 
-All core Umbraco entities, such as document types and data types, will be shown.
+All core Umbraco entities, such as Document Types and Data Types, will be shown.
 
 To include entities from plugins, they need to be registered using an overload of the method shown above, that allows you to provide additional detail, e.g.:
 
@@ -375,7 +375,7 @@ An introduction to this feature can be found in the second half of [this recorde
 
 There's also a code sample, demonstrated in the video linked above, available [here](https://github.com/AndyButland/RaceData).
 
-The following code shows the registration of an entity for backoffice deployment, where we have the simplest case of a single tree for the entity.
+The following code shows the registration of an entity for Backoffice deployment, where we have the simplest case of a single tree for the entity.
 
 ```C#
     public class ExampleDataDeployComponent : IComponent

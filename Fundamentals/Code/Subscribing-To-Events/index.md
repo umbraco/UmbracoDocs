@@ -2,13 +2,14 @@
 meta.title: "Subscribing to events"
 meta.description: "Subscribing to events allows you to execute custom code on a number of events both before and after the event occurs"
 versionFrom: 8.0.0
+versionTo: 8.18.0
 versionRemoved: 9.0.0
 ---
 
 # Subscribing to events
 
 :::note
-This article is only relevant if you are using Umbraco 9+. For older versions see the [Subscribing to events article](../Subscribing-To-Events).
+This article is only relevant if you are using Umbraco 8. In Umbraco 9 and above, Events have been renamed to Notifications. For newer versions, see the [Subscribing to Notifications](../Subscribing-To-Notifications/index.md) article.
 :::
 
 Subscribing to events allows you to execute custom code on several events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.

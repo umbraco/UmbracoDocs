@@ -91,16 +91,39 @@ The defaults will cover most though. Changing the defaults by updating the `/Con
 - `httpClientTimeout`
 - `databaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
 
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maxmimum time allowed for disk operations such as schema updates.
+
+- `diskOperationsTimeout`
+
+This setting defaults to 5 minutes.
+
+All of these times are in *seconds*:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" diskOperationsTimeout="60" />
+</settings>
+```
+
+## Transfer Queue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 4.7, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the follwoing setting can be used.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy useDatabaseBackedTransferQueue="false" />
 </settings>
 ```
 

@@ -28,7 +28,7 @@ For example:
 
 Below is an example of the `ApprovalRequest.cshtml` email template from the `~/Views/Partials/WorkflowEmails/` folder:
 
-```cs
+```none
 @model Umbraco.Workflow.Core.Models.Email.HtmlEmailModel
 
 @*
