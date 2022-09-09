@@ -72,7 +72,7 @@ Current responsibilities for Approval Groups can be reviewed in the **Roles** ta
 
 ![Approval Groups Roles](images/approval-groups-roles.png)
 
-Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document Type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
+Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
 
 :::note
 Configuration cannot be modified when a content node is in a workflow process.

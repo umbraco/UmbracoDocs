@@ -56,7 +56,7 @@ Offline approval requires a user to exist in the Backoffice and be assigned to a
 The **Roles** tab provides an overview of the current workflow roles for the Group:
 
 - **Node-based approvals**: This workflow applies only to the specified node.
-- **Document-type approvals**: This workflow applies to all the nodes of a given document type.
+- **Document type approvals**: This workflow applies to all the nodes of a given Document Type.
 
 You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](../Workflow-Settings/index.md) article.
 
@@ -94,7 +94,7 @@ To inherit an existing Umbraco group membership, follow these steps:
 
 ## History
 
-The History tab provides an overview of the workflow activity for the current group. It displays a table containing the Page name with the Language variant, Type of workflow roles (Node-based approvals or Document-type approvals), workflow requested by, the date the workflow was requested, comment, and status of the workflow.
+The History tab provides an overview of the workflow activity for the current group. It displays a table containing the Page name with the Language variant, Type of workflow roles (Node-based approvals or Document type approvals), workflow requested by, the date the workflow was requested, comment, and status of the workflow.
 
 ![Approval group history](images/approval-group-history.png)
 

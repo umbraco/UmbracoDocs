@@ -11,17 +11,11 @@ In this article, you can read about [Umbraco Plumber](https://umbraco.com/produc
 
 ## Umbraco Plumber Overview
 
-Umbraco Plumber allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Plumber extends Umbraco's out-of-the-box publishing model with multi-stage, highly configurable approval workflows. A workflow process comprises multiple steps, with multiple users assigned to the group responsible for providing approval at each step.
+Umbraco Plumber allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Plumber extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises multiple steps and multiple users assigned to the group responsible for providing approval at each step.
 
 A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
 
-After entering a comment describing the nature of the changes and submitting the request, members of the approving group are notified via email. The task is also displayed in the Member's Workflow dashboard. The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks.
-
-When initiating a workflow, the user can choose to add a document attachment, for example: an email approving or requesting the change to be made.
-
-Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. Rejecting a task returns the workflow to the original author, who can update the content and resubmit. The resubmitted content does not restart the workflow but returns to the stage at which it was rejected.
-
-Placeholder - add an image depicting workflow.
+The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Dashboards and Buttons](../Dashboards-and-Buttons/index.md) article.
 
 ## Getting Started with Umbraco Plumber
 
