@@ -284,6 +284,59 @@ The Umbraco Heartcore GraphQL schema contains some default types, below you can 
 
 The [Property Editors](../Property-Editors/) page contains a list of all the Property Editors and which GraphQL types they return.
 
+### Block List Item
+
+```graphql
+type BlockListItem {
+    """
+    The content.
+    """
+    content: Element!
+
+    """
+    The settings.
+    """
+    settings: Element
+}
+```
+
+**Query**
+
+```graphql
+{
+  textPage {
+    elements {
+      content {
+        title
+      }
+      settings {
+        showLargeImage
+      }
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "textPage": {
+      "elements": [{
+        "content": {
+          "title": "Why use Umbraco Heartcore?"
+        },
+        "settings" {
+          "showLargeImage": true
+        }
+      }]
+    }
+  }
+}
+```
+
+
 ### Decimal Range
 
 ```graphql
@@ -954,6 +1007,313 @@ enum LintType {
       }
     }
   }
+}
+```
+
+### Media With Crops
+
+```graphql
+type MediaWithCrops {
+  """
+  The predefined crops.
+  """
+  crops: [ImageCropperCrop]!
+  """
+  The image url with crop parameters.
+  """
+  cropUrl(
+    """
+    The crop alias.
+    """
+    alias: String
+    """
+    Change background color of the image.
+    """
+    backgroundColor: String
+    """
+    The width of the output image.
+    """
+    width: Int
+    """
+    The height of the output image.
+    """
+    height: Int
+    """
+    Quality percentage of the output image.
+    """
+    quality: Int
+    """
+    The image crop mode.
+    """
+    cropMode: ImageCropMode
+    """
+    The image crop anchor.
+    """
+    cropAnchor: ImageCropAnchor
+    """
+    Use a dimension as a ratio.
+    """
+    ratioMode: ImageCropRatioMode
+    """
+    The format of the output image.
+    """
+    format: ImageCropFormat
+    """
+    Use focal point to generate an output image using the focal point instead of the predefined crop if there is one.
+    """
+    preferFocalPoint: Boolean = false
+    """
+    If the image should be upscaled to requested dimensions.
+    """
+    upscale: Boolean = false
+  ): String
+  """
+  The focal point position.
+  """
+  focalPoint: ImageCropperFocalPoint!
+  """
+  The focal point url template.
+  """
+  focalPointUrlTemplate: String!
+  """
+  The media
+  """
+  media: Media!
+  """
+  The image url.
+  """
+  url: String!
+}
+```
+
+**Query**:
+
+```graphql
+{
+  product {
+    photo {
+      cropUrl(width: 1980, height: 430)
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "product": {
+      "photo": {
+        "cropUrl": "https://media.umbraco.io/demo-headless/8d76d2e84a24637/new-color-umbraco-stickers-1.jpg?anchor=center&mode=crop&width=1980&height=430&upscale=false"
+      }
+    }
+  }
+}
+```
+
+### Our Umbraco GMaps
+
+```graphql
+type OurUmbracoGMaps {
+  address: OurUmbracoGMapsAddress
+  mapconfig: OurUmbracoGMapsMapConfig
+}
+```
+
+**Query**:
+
+```graphql
+{
+  frontpage {
+    location {
+      address {
+        coordinates {
+          lat
+          lng
+        }
+      }
+      mapconfig {
+        zoom
+      }
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "frontpage": {
+      "location": {
+        "address": {
+          "lat": 55.4063759,
+          "lng": 10.3887197
+        },
+        "mapconfig": {
+          "zoom": 19
+        }
+      }
+    }
+  }
+}
+```
+
+### Our Umbraco GMaps Address
+
+```graphql
+type OurUmbracoGMapsAddress {
+  coordinates: OurUmbracoGMapsCoordinate
+}
+```
+
+**Query**:
+
+```graphql
+{
+  frontpage {
+    location {
+      address {
+        coordinates {
+          lat
+          lng
+        }
+      }
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "frontpage": {
+      "location": {
+        "address": {
+          "lat": 55.4063759,
+          "lng": 10.3887197
+        }
+      }
+    }
+  }
+}
+```
+
+### Our Umbraco GMaps Config
+
+```graphql
+type OurUmbracoGMapsMapConfig {
+  apikey: String
+  zoom: Int
+  centerCoordinates: OurUmbracoGMapsCoordinate
+  maptype: OurUmbracoGMapsMapType
+  mapstyle: JSON
+}
+```
+
+**Query**:
+
+```graphql
+{
+  frontpage {
+    location {
+      mapconfig {
+        apikey
+        zoom
+        centerCoordinates {
+          lat
+          lng
+        }
+        maptype
+      }
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "frontpage": {
+      "location": {
+        "mapconfig": {
+          "apikey": "my-api-key",
+          "zoom": 19,
+          "centerCoordinates": {
+            "lat": 55.4063759,
+            "lng": 10.3887197
+          },
+          "maptype": "satellite"
+        }
+      }
+    }
+  }
+}
+```
+
+### Our Umbraco GMaps Coordinate
+```graphql
+type OurUmbracoGMapsCoordinate {
+  coordinates: String
+  lat: Decimal
+  lng: Decimal
+  isEmpty: Boolean
+}
+```
+
+**Query**:
+
+```graphql
+{
+  frontpage {
+    location {
+      address {
+        coordinates {
+          coordinates
+          lat
+          lng
+          isEmpty
+        }
+      }
+    }
+  }
+}
+```
+
+**Output**:
+
+```json
+{
+  "data": {
+    "frontpage": {
+      "location": {
+        "address": {
+          "coordinates": "55.4063759,10.3887197",
+          "lat": 55.4063759,
+          "lng": 10.3887197,
+          "isEmpty": false
+        }
+      }
+    }
+  }
+}
+```
+
+### Our Umbraco GMaps Map Type
+
+```graphql
+enum OurUmbracoGMapsMapType {
+  roadmap
+  satellite
+  hybrid
+  terrain
+  styled_map
 }
 ```
 
