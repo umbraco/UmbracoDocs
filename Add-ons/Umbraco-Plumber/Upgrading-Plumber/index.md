@@ -11,7 +11,7 @@ This article shows how to manually upgrade Umbraco Plumber to run the latest ver
 
 ## Get the latest version of Umbraco Plumber
 
-To get the latest version of Umbraco Plumber, you can upgrade using:
+To get the latest version of Umbraco Plumber, you can upgrade using either of the two options:
 
 - [NuGet](#nuget)
 - [Visual Studio](#visual-studio)
