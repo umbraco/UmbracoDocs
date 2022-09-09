@@ -1,3 +1,10 @@
+---
+versionFrom: 8.0.0
+versionTo: 10.0.0
+meta.Title: "2-factor authentication on Umbraco Cloud"
+meta.Description: "This article shows you how you can enable 2-factor authentication for when you log in to the Umbraco Cloud Portal."
+---
+
 # 2-factor authentication on Umbraco Cloud
 
 On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud account using either email, phone or a authenticator app when logging in to the Umbraco Cloud Portal.
@@ -16,6 +23,7 @@ To enable 2-factor-authentication follow these steps:
 ### Email authentication
 
 With email authentication you will get an email with a code that you need to enter when you log in to the Umbraco Cloud portal.
+
 ![Email authentication](images/email-auth.png)
 
 ### Authenticator App
@@ -23,6 +31,7 @@ With email authentication you will get an email with a code that you need to ent
 With authenticator app, you need to use a authenticator app when you log in to the Umbraco Cloud Portal.
 
 You can use the Microsoft authenticator app for both iOS and android or any other authenticator app of your choice.
+
 ![Authenticator app](images/auth-app.png)
 
 ### Phone Authentication
