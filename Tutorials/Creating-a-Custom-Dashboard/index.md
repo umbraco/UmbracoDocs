@@ -58,7 +58,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next we will create a HTML file inside this folder called 'WelcomeDashboard.html' the html file will contain a fragment of a html document and so does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
+Next, we will create a HTML file inside this folder called 'WelcomeDashboard.html'. The html file will contain a fragment of a html document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
 Add the following html to the WelcomeDashboard.html
 
