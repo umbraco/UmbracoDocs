@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Licensing
 
-Umbraco Plumber is a licensed product but doesn't require a purchase to use. New installs are defaulted to a trial license, while the paid license is available for purchase. The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
+Umbraco Plumber is a licensed product but does not require a purchase to use. New installs are defaulted to a trial license, while the paid license is available for purchase. The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
 
 To impersonate the full license on a local site:
 
