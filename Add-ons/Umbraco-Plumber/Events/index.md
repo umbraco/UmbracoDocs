@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
 
-# Config, Group, and Tasks Events
+# Events
 
 Currently, Events are raised by the Config, Group, and Tasks services. You can also subscribe to the `DocumentPublish` and `DocumentUnpublish` processes.
 

@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Umbraco Plumber
 
-In this article, you can read about [Umbraco Plumber](https://umbraco.com/products/umbraco-plumber/) and how to get started.
+In this article, you can read about [Umbraco Plumber](https://umbraco.com/products/) and how to get started.
 
 ## Umbraco Plumber Overview
 

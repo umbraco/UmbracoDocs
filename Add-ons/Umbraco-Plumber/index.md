@@ -7,6 +7,12 @@ versionTo: 10.0.0
 
 # Umbraco Plumber Documentation
 
+:::note
+Plumber is a product that was recently acquired by Umbraco. The commercial offering will change later during the year and the articles in this section are subject to change over the coming months.
+
+Learn more about the acquisition in the [Umbraco acquires Plumber](https://umbraco.com/blog/umbraco-acquires-plumber/) blogpost.
+:::
+
 Welcome to the Umbraco Plumber documentation. Here you can read all about how to work with Umbraco Plumber. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Plumber.
 
 ## [Getting Started](Getting-Started/index.md)
