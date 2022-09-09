@@ -32,7 +32,7 @@ To get the latest version of Umbraco Plumber, you can upgrade using either of th
 
   ![NuGet Package Manager](images/Manage_packages_v10.png)
 
-- When the command completes, open the **<project-name>.csproj** file to make sure the package reference is updated:
+- Open the **<project-name>.csproj** file to make sure the package reference is updated:
 
   ```xml
   <ItemGroup>
