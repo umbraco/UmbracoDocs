@@ -49,7 +49,7 @@ The `HtmlEmailBase` contains the following fields:
 | Id           | int            | The user's ID or group ID (when sending to a group email address).                                  |
 | IsGroupEmail | bool           | Is the email being sent to a generic group email address?                                           |
 
-Umbraco Plumber provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it's recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
+Umbraco Plumber provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it is recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
 
 - **All**: All the participants in all workflow stages (previous and current).
 - **Admin**: The admin user.
