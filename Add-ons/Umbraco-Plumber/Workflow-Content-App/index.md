@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Workflow Content App
 
-Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) to all content nodes in the **Content** section where the workflow is enabled. The Workflow content app includes three sub-sections: Active workflow, Configuration, and History.
+Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections: Active workflow, Configuration, and History.
 
 ![Workflow content app](images/content-app.png)
 
