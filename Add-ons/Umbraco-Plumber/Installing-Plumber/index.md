@@ -18,8 +18,8 @@ In this article, we will cover the steps required to install Umbraco Plumber on 
 
 There are different ways to install Umbraco Plumber:
 
-- [.Net CLI](#net-cli-installation)
-- [Visual Studio](#visual-studio-installation)
+- [.Net CLI Installation](#net-cli-installation)
+- [Visual Studio Installation](#visual-studio-installation)
 
 ### .Net CLI Installation
 
@@ -57,11 +57,11 @@ To install via Visual Studio, follow these steps:
    ![VS Installation](images/VS_Installation.png)
 6. Once the package is installed, open the **.csproj** file to make sure the package reference is updated:
 
-    ```cli
-    <ItemGroup>
-        <PackageReference Include="Plumber.Workflow" Version="10.0.1" />
-    </ItemGroup>
-    ```
+   ```cli
+   <ItemGroup>
+    <PackageReference Include="Plumber.Workflow" Version="10.0.1" />
+   </ItemGroup>
+   ```
 
 ## Using Umbraco Plumber
 
