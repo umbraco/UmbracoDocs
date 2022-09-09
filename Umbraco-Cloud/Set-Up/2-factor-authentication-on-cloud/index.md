@@ -36,6 +36,6 @@ You can use the Microsoft authenticator app for both iOS and android or any othe
 
 ### Phone Authentication
 
-With the phone authenticator, when you log in to the Umbraco Cloud portal, you can choose to either receive a SMS with a code to enter when login in or a call to log you in.
+With the phone authenticator, when you log in to the Umbraco Cloud portal, you can choose to either receive an SMS with a code to enter when login in or a call to log you in.
 
 ![Phone authentication](images/Phone-auth.png)
