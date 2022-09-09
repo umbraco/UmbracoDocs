@@ -17,7 +17,7 @@ Umbraco Plumber adds two Dashboards to your Umbraco project:
 
   ![Workflow Dashboard in the Content Section](images/WorkflowDashboard_ContentSection.png)
 
-- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity and any relevant messages related to upgrades. You can also set the number of days to view the workflow activity chart for the specified days range.
+- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity and any relevant upgrade-related messages. You can also set the days to view the workflow activity chart for the specified range of days.
 
   ![Workflow Dashboard in the Workflow Section](images/WorkflowDashboard_WorkflowSection.png)
 
