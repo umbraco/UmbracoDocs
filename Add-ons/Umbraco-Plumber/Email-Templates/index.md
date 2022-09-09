@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Email Templates
 
-All email templates are fully localized where translations exist. You can edit the email templates in the Backoffice or your IDE. By default, Umbraco Plumber's email templates are available in the default language.
+All email templates are fully localized where translations exist. You can edit the email templates in the Backoffice or in your IDE. By default, Umbraco Plumber's email templates are available in the default language.
 
 ## Creating an Email Template
 
