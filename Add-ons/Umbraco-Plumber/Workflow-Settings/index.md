@@ -24,7 +24,7 @@ You can configure the **General** Settings from the **Workflow** section in the 
 - **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
 - **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 - **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
-- **Extend permissions** - Determines if Umbraco Plumber should extend or replace user's save and publish permissions. By default, the behavior is Replace user's permissions.
+- **Extend permissions** - Determines if Umbraco Plumber should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
 
 ## New node approval flow
 
