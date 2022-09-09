@@ -26,7 +26,7 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 - View change description and track differences across pending and completed workflows.
 - View the group responsible for approving the pending workflow.
 - View pending language variant(s) workflow.
-- View the workflow activity (eg pending approval/task approvals/rejects) for the current workflow process.
+- View the workflow activity (eg. pending approval/task approvals/rejects) for the current workflow process.
 
 ![Active Workflow sub-section](images/Active_Workflow_detailed_info.png)
 
