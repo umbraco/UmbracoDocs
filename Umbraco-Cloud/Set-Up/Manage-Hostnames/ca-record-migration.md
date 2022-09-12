@@ -12,7 +12,7 @@ From October 31st Certificate renewals will no longer use 'DigiCert' as the issu
 
 No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
 
-From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. This means that you need to update your CAA record to allow 'Google Trust Services' issuing certificates for your domain.
+From October 31st 2022 Certificate renewals will no longer use 'DigiCert' as the issuing CA. This means that you need to update your CAA record to allow 'Google Trust Services' issuing certificates for your domain.
 
 The CAA record should be changed from:
 
