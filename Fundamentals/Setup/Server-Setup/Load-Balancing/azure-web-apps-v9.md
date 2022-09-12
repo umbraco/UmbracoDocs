@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.4.0
-versionTo: 10.0.0
+versionFrom: 9.0.0
+versionTo: 9.4.0
 ---
 
 # Load Balancing Azure Web Apps
@@ -45,7 +45,7 @@ Several file system based services in Umbraco such as the Published Cache and Lu
     "Umbraco": {
         "CMS": {
             "Global": {
-                "MainDomLock" : "FileSystemMainDomLock"
+                "MainDomLock" : "SqlMainDomLock"
             }
         }
     }
