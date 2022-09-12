@@ -16,9 +16,9 @@ To impersonate the full license on a local site:
 
    ![Lic Placement](images/lic.png)
    
-   
 # Getting an Umbraco Plumber License
-If you want to buy a Plumber license please reach out to the sales team on **suits@umbraco.com** 
+
+If you want to buy a Plumber license, please reach out to the sales team through **suits@umbraco.com**.
 
 :::note
 The test license is restricted to sites running in a development environment, with a debugger attached (ie hitting F5 in Visual Studio, in Debug mode, will enable the test license).
