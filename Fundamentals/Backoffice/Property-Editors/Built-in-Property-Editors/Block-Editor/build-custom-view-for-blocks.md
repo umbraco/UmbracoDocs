@@ -26,11 +26,23 @@ The following example displays the property with the alias `headline` together w
 
 If you'd like to display properties of `settings`, you can access these by `block.settingsData.myPropertyAlias`.
 
+
+### Add the Areas Container for Block Grid Editor
+
+Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Area Container should be inserted.
+This enables you to wrap and place the Areas as you need.
+
+The Area Container is inserted through a slot, insert the following snippet where you like the Area to appear in your Custom View:
+
+```html
+<slot name="areas" part="areas"></slot>
+```
+
 ### Adding custom implementation to your View
 
 To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
 ```html
-<button  type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)"  class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
+<button type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)" class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
     <h2 ng-bind="block.data.headline"></h2>
     <p ng-bind="block.data.description"></p>
 </button>
