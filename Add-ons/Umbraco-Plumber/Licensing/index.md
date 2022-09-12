@@ -16,7 +16,7 @@ To impersonate the full license on a local site:
 
    ![Lic Placement](images/lic.png)
    
-# Getting an Umbraco Plumber License
+## Getting an Umbraco Plumber License
 
 If you want to buy a Plumber license, please reach out to the sales team through **suits@umbraco.com**.
 
