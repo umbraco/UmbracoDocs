@@ -62,7 +62,9 @@ All hostnames added to an Umbraco Cloud project's environment will get a TLS (HT
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 
 :::note
-Please note that the Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames will change in [the coming months](ca-record-migration.md).
+Please note that the Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames will change for new and existing hostnames in [September and October 2022](ca-record-migration.md).
+
+No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
 :::
 
 ### Is your Domain hosted on your own Cloudflare account?
