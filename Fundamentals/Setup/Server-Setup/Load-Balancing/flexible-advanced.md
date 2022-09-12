@@ -87,6 +87,7 @@ SQL Server Replica databases cannot be used as they are read-only without replac
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 
 The configurations can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
+
 Below is shown how to do this from a JSON configuration source.
 
 ```json
@@ -113,3 +114,5 @@ Options:
 * `MaxProcessingInstructionCount` - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
 * `TimeBetweenSyncOperations` - The timespan to wait between each sync operations
 * `TimeBetweenPruneOperations` - The timespan to wait between each prune operation
+
+These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../Reference/Configuration/#managing-configuration).
