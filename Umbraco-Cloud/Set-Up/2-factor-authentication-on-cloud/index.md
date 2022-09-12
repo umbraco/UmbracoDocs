@@ -15,9 +15,9 @@ On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud acc
 
 To enable 2-factor-authentication follow these steps:
 
-1. Go to your profile on Umbraco Cloud
-2. In the profile settings section go to Edit profile
-3. Choose the desired 2-factor authentication
+1. Go to your profile on Umbraco Cloud.
+2. Choose **Edit Profile** in the Profile Settings section.
+3. Choose the desired 2-factor authentication.
 4. Follow the steps shown to enable 2-factor authentication.
 
 ### Email authentication
