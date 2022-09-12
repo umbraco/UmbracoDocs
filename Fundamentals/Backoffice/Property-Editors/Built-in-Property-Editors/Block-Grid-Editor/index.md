@@ -7,8 +7,7 @@ versionTo: 10.0.0
 
 `Alias: Umbraco.BlockGrid`
 
-`Returns: IEnumerable<BlockGridItem>`
-> TODO: Someone with C# knowledge correct this type ^^
+`Returns: BlockGridModel`
 
 **Block Grid** enables the editor to layout their content. The content is made of blocks, which can contain simple or very complex data. By defining column span and row span, each Block gets a size, this makes them to appear next to together or even in formations.
 Additionally Blocks can nest other Blocks forming more complex or strict compositions.
@@ -108,149 +107,133 @@ To delete a Block click the trash-bin icon appearing on hover.
 
 ## Rendering Block Grid Content
 
-> TODO: have someone with C# expertise writting this part.
-
 Rendering the stored value of your **Block Grid** property can be done in two ways.
 
 ### 1. Default rendering
 
-> TODO: C# person should write this:
+You can choose to use the built-in rendering mechanism for rendering blocks using a partial view for each block.
 
-You can choose to use the built-in rendering mechanism for rendering blocks via a Partial View for each block.
-
-The default rendering method is named `GetBlockListHtml()` and comes with a few options to go with it. The typical use could be:
+The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a few options to go with it. The typical use could be:
 
 ```csharp
-@Html.GetBlockListHtml(Model, "MyBlocks")
+@await Html.GetBlockGridHtmlAsync(Model, myGrid")
 ```
 
-"MyBlocks" above is the alias for the Block List editor.
+Where `"myGrid"` is the alias of the Block Grid editor.
 
-If using ModelsBuilder the example can be simplified:
+If you are using ModelsBuilder, the example can be simplified:
 
 Example:
 
 ```csharp
-@Html.GetBlockListHtml(Model.MyBlocks)
+@await Html.GetBlockGridHtmlAsync(Model.MyGrid)
 ```
 
-To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
+To make this work you will need to create a partial view for each block type. The partial view must be named by the alias of the Element Type that is being used as Content Model for the block type.
 
-These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
-Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`.
+These partial views must be placed in this folder: `Views/Partials/BlockGrid/Components/`.
+Example: `Views/Partials/BlockGrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
-A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
+The partial views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains the `Content` and `Settings` parts of your block, as well as the configured `RowSpan`, `ColumnSpan` and `Areas` of the block..
 
-In the following example of a Partial view for a Block Type, please note that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model in your case.
+#### Rendering the block areas
 
-Example:
+> TODO: align area semantics when the rest of the article is written
+
+The partial view for the block is responsible for rendering its own block areas. This is done using another built-in rendering mechanism:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@await Html.GetBlockGridItemAreasHtmlAsync(Model)
+```
+
+Once again you will need to create a partial view for each block type within the block area, named by the alias of the Element Type that is being used as Content Model for the block type.
+
+These partial views must be placed in the same folder as before (_Views/Partials/BlockGrid/Components/_), and will also receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
+
+#### Putting it all together
+
+The following is an example of a partial view for a block type. Please note that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type aliases for the given content and settings types in your block.
+
+```csharp
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
     var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
 }
 
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Render the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Value("heading")</h1>
 
+@* Render the block areas *@
+@await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
 
-With ModelsBuilder:
+Again you can simplify the property rendering using ModelsBuilder:
 
 ```csharp
-
-// Output the value of field with alias 'heading' from the Element Type selected as Content section
+@* Render the value of field with alias 'heading' from the Element Type selected as Content section *@
 <h1>@content.Heading</h1>
-
 ```
-
-<iframe width="800" height="450" title="Working with Block List Editor" src="https://www.youtube.com/embed/ltZTgfIoCtg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### 2. Build your own rendering
 
-A built-in value converter is available to use the data as you like. Call the `Value<T>` method with a generic type of `IEnumerable<BlockListItem>` and the stored value will be returned as a list of `BlockListItem` entities.
+The built-in value converter for Block Grid lets you use the block data as you like. Call the `Value<T>` method with a type of `BlockGridModel` to have the stored value will be returned as a `BlockGridModel` instance.
 
-Example:
+`BlockGridModel` contains the block grid configuration (i.e. number of columns as `GridColumns`) whilst also being an implementation of `IEnumerable<BlockGridItem>` (see details for `BlockGridItem` above).
+
+The following example mimics the built-in rendering mechanism for rendering blocks using partial views:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
-@using Umbraco.Cms.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.Blocks
 @{
-    var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
-    foreach (var block in blocks)
-    {
-        var content = block.Content;
+    var grid = Model.Value<BlockGridModel>("myGrid");
 
-        @Html.Partial("MyFolderOfBlocks/" + content.ContentType.Alias, block)
+    // get the number of columns defined for the grid
+    var gridColumns = grid.GridColumns;
+
+    // iterate the block items
+    foreach (var item in grid)
+    {
+        var content = item.Content;
+
+        @await Html.PartialAsync("PathToMyFolderOfPartialViews/" + content.ContentType.Alias, item);
     }
 }
 ```
 
-Each item is a `BlockListItem` entity that contains two main properties `Content` and `Settings`. Each of these is a `IPublishedElement` which means you can use all the value converters you are used to using.
-
-Example:
+If you don't want to use partial views, you can access the block item data directly within your rendering:
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@using Umbraco.Cms.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.Blocks
 @{
-    var blocks = Model.Value<IEnumerable<BlockListItem>>("myBlocksProperty");
-    foreach (var block in blocks)
-    {
-        var content = (ContentModels.MyAliasOfContentElementType)block.Content;
-        var settings = (ContentModels.MyAliasOfSettingsElementType)block.Settings;
+    var grid = Model.Value<BlockGridModel>("myGrid");
 
-        <h1>@content.MyExampleHeadlinePropertyAlias</h1>
+    // get the number of columns defined for the grid
+    var gridColumns = grid.GridColumns;
+
+    // iterate the block items
+    foreach (var item in grid)
+    {
+        // get the content and settings of the block
+        var content = item.Content;
+        var settings = item.Settings;
+        // get the areas of the block
+        var areas = item.Areas;
+        // get the dimensions of the block
+        var rowSpan = item.RowSpan;
+        var columnSpan = item.ColumnSpan;
+
+        // render the block data
+        <div style="background-color: #@(settings.Value<string>("color"))">
+            <h2>@(content.Value<string>("title"))</h2>
+            <span>This block is supposed to span <b>@rowSpan rows</b> and <b>@columnSpan columns</b></span>
+        </div>
     }
 }
 ```
-
-## Extract Block Grid Content data
-
-In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
-An example could be a product page with variants stored in a Block List Editor.
-
-In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
-
-Example:
-
-```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@using Umbraco.Cms.Core.Models.Blocks;
-@{
-    var variants = Model.Value<IEnumerable<BlockListItem>>("variants").Select(x => x.Content);
-    foreach (var variant in variants)
-    {
-        <h4>@variant.Value("variantName")</h4>
-        <p>@variant.Value("description")</p>
-    }
-}
-```
-
-If using ModelsBuilder the example can be simplified:
-
-Example:
-
-```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using ContentModels = Umbraco.Web.PublishedModels;
-@{
-    var variants = Model.Variants.Select(x => x.Content).OfType<ProductVariant>();
-    foreach (var variant in variants)
-    {
-        <h4>@variant.VariantName</h4>
-        <p>@variant.Description</h4>
-    }
-}
-```
-
-If you know the Block Grid Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
-
 
 ## Write a Custom Layout Stylesheet
 
@@ -270,187 +253,246 @@ Building Custom Views for Block representations in Backoffice is the same for al
 
 ## Creating Block Grid programmatically
 
-> TODO: have someone with C# expertise writting this part.
+In this example, we will be creating "spot" blocks in a Block Grid on a content item. The spot content consists of a _title_ and a _text_ field, while the spot settings contains a _featured_ checkbox.
 
-In this example, we will be creating some Block List objects under the `People` property in the `Home` Document Type. The `People` property implements a Block List Data Type where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
+The raw input data for the spots looks like this:
 
-The approach to saving Blocklist content programmatically is similar to Nested Content - though the JSON schema is a bit different.
+```csharp
+new[]
+{
+    new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1 },
+    new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2 }
+}
+```
 
-The JSON object we will pass into the `People` property will look like this:
+The resulting JSON object stored for the Block Grid will look like this:
 
 ```json
 {
-   "layout":{
-      "Umbraco.BlockList":[
-         {
-            "contentUdi":"umb://element/0da576e5fc7445bd9d789c5ee9fe9c54",
-            "settingsUdi":"umb://element/7073a102dbcc487986962a3d51820de7"
-         },
-         {
-            "contentUdi":"umb://element/c6e23e8137d24b409bb5ef41bdb705b9",
-            "settingsUdi":"umb://element/0467ceb158cc49a1acfd1516f63eccf6"
-         }
-      ]
-   },
-   "contentData":[
-      {
-         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
-         "udi":"umb://element/0da576e5fc7445bd9d789c5ee9fe9c54",
-         "user_name":"Janice",
-         "user_email":"janice@janiceindustries.com"
-      },
-      {
-         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
-         "udi":"umb://element/c6e23e8137d24b409bb5ef41bdb705b9",
-         "user_name":"John",
-         "user_email":"john@johnindustries.com"
-      }
-   ],
-   "settingsData":[
-      {
-         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
-         "udi":"umb://element/7073a102dbcc487986962a3d51820de7",
-         "role":"content editor"
-      },
-      {
-         "contentTypeKey":"aca1158a-bad0-49fc-af6e-365c40683a92",
-         "udi":"umb://element/0467ceb158cc49a1acfd1516f63eccf6",
-         "role":"admin"
-      }
-   ]
+    "layout": {
+        "Umbraco.BlockGrid": [{
+                "contentUdi": "umb://element/bb23fe28160941efa506da7aa314172d",
+                "settingsUdi": "umb://element/9b832ee528464456a8e9a658b47a9801",
+                "areas": [],
+                "columnSpan": 12,
+                "rowSpan": 1
+            }, {
+                "contentUdi": "umb://element/a11e06ca155d40b78189be0bdaf11c6d",
+                "settingsUdi": "umb://element/d182a0d807fc4518b741b77c18aa73a1",
+                "areas": [],
+                "columnSpan": 6,
+                "rowSpan": 2
+            }
+        ]
+    },
+    "contentData": [{
+            "contentTypeKey": "0e9f8609-1904-4fd1-9801-ad1880825ff3",
+            "udi": "umb://element/bb23fe28160941efa506da7aa314172d",
+            "title": "Item one",
+            "text": "This is item one"
+        }, {
+            "contentTypeKey": "0e9f8609-1904-4fd1-9801-ad1880825ff3",
+            "udi": "umb://element/a11e06ca155d40b78189be0bdaf11c6d",
+            "title": "Item two",
+            "text": "This is item two"
+        }
+    ],
+    "settingsData": [{
+            "contentTypeKey": "22be457c-8249-42b8-8685-d33262f7ce2a",
+            "udi": "umb://element/9b832ee528464456a8e9a658b47a9801",
+            "featured": "0"
+        }, {
+            "contentTypeKey": "22be457c-8249-42b8-8685-d33262f7ce2a",
+            "udi": "umb://element/d182a0d807fc4518b741b77c18aa73a1",
+            "featured": "1"
+        }
+    ]
 }
 ```
 
-We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
-The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
+In other words: For each item in the raw data we need to create:
 
-One of the approaches would be creating a basic model which we will later serialize into JSON:
+- One _contentData_ entry with the _title_ and _text_.
+- One _settingsData_ entry with the _featured_ value (note that checkbox expects `"0"` or `"1"` as data value).
+- One _layout_ entry with the desired column and row spans.
+
+All _contentData_ and _layoutData_ entry need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample we have only one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`), but in a real life scenario there could be any number of Element Type combinations.
+
+First and foremost we need models to transform the raw data into Block Grid compatible JSON:
 
 ```csharp
 using Newtonsoft.Json;
-using System.Collections.Generic;
-//this class is used to mock the correct JSON structure when the object is serialized
-public class Blocklist
+using Umbraco.Cms.Core;
+
+namespace My.Site.Models;
+
+// this is the "root" of the block grid data
+public class BlockGridData
 {
-    public BlockListUdi layout { get; set; }
-    public List<Dictionary<string, string>> contentData { get; set; }
-    public List<Dictionary<string, string>> settingsData { get; set; }
-}
-//this is a subclass which corresponds to the "Umbraco.BlockList" section in JSON
-public class BlockListUdi
-{
-    //we mock the Umbraco.BlockList name with JsonPropertyAttribute to match the requested JSON structure
-    [JsonProperty("Umbraco.BlockList")]
-    public List<Dictionary<string, string>> contentUdi { get; set; }
-    //we do not serialize settingsUdi
-    [JsonIgnore]
-    public List<Dictionary<string, string>> settingsUdi { get; set; }
-    public BlockListUdi(List<Dictionary<string, string>> items, List<Dictionary<string, string>> settings)
+    public BlockGridData(BlockGridLayout layout, BlockGridElementData[] contentData, BlockGridElementData[] settingsData)
     {
-        this.contentUdi = items;
-        this.settingsUdi = settings;
+        Layout = layout;
+        ContentData = contentData;
+        SettingsData = settingsData;
     }
+
+    [JsonProperty("layout")]
+    public BlockGridLayout Layout { get; }
+
+    [JsonProperty("contentData")]
+    public BlockGridElementData[] ContentData { get; }
+
+    [JsonProperty("settingsData")]
+    public BlockGridElementData[] SettingsData { get; }
 }
-//this is our Blocklist's allowed nested element. We make a model for it so we can create some dummy data
-public class Person
+
+// this is a wrapper for the block grid layout, purely required for correct serialization
+public class BlockGridLayout
 {
-    public string user_name { get; set; }
-    public string user_email { get; set; }
-    public Person(string user_name, string user_email)
+    public BlockGridLayout(BlockGridLayoutItem[] layoutItems) => LayoutItems = layoutItems;
+
+    [JsonProperty("Umbraco.BlockGrid")]
+    public BlockGridLayoutItem[] LayoutItems { get; }
+}
+
+// this represents an item in the block grid layout collection
+public class BlockGridLayoutItem
+{
+    public BlockGridLayoutItem(Udi contentUdi, Udi settingsUdi, int columnSpan, int rowSpan)
     {
-        this.user_name = user_name;
-        this.user_email = user_email;
+        ContentUdi = contentUdi;
+        SettingsUdi = settingsUdi;
+        ColumnSpan = columnSpan;
+        RowSpan = rowSpan;
     }
+
+    [JsonProperty("contentUdi")]
+    public Udi ContentUdi { get; }
+
+    [JsonProperty("settingsUdi")]
+    public Udi SettingsUdi { get; }
+
+    [JsonProperty("areas")]
+    // areas are omitted from this sample for abbreviation
+    public object[] Areas { get; } = { };
+
+    [JsonProperty("columnSpan")]
+    public int ColumnSpan { get; }
+
+    [JsonProperty("rowSpan")]
+    public int RowSpan { get; }
+}
+
+// this represents an item in the block grid content or settings data collection
+public class BlockGridElementData
+{
+    public BlockGridElementData(Guid contentTypeKey, Udi udi, Dictionary<string, object> data)
+    {
+        ContentTypeKey = contentTypeKey;
+        Udi = udi;
+        Data = data;
+    }
+
+    [JsonProperty("contentTypeKey")]
+    public Guid ContentTypeKey { get; }
+
+    [JsonProperty("udi")]
+    public Udi Udi { get; }
+
+    [JsonExtensionData]
+    public Dictionary<string, object> Data { get; }
 }
 ```
 
-After injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/), we can do the following:
+Now by injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform our raw data into Block Grid JSON and save it to our target content item:
 
 ```csharp
-            @using Umbraco.Cms.Core.Services;
-            @using Umbraco.Cms.Core;
-            @using Umbraco.Cms.Core.Models;
-            @inject IContentService Services;
-            @inject IContentTypeService _contentTypeService;
+using Microsoft.AspNetCore.Mvc;
+using My.Site.Models;
+using Newtonsoft.Json;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Web.Common.Controllers;
 
-           //if the class containing our code inherits SurfaceController, UmbracoApiController, or UmbracoAuthorizedApiController, we can get ContentService from Services namespace
-            var contentService = Services;
-            //not to be confused with ContentService, this service will be useful for getting some Document Type IDs
-            IContentTypeService contentTypeService = _contentTypeService;
-            //we are creating two people to be added to Blocklist, which means we need two new Guids
-            GuidUdi contentUdi1 = new GuidUdi("element", System.Guid.NewGuid());
-            //Since these will be BLock List objects the Guids need to mention the "element" keyword  
-            GuidUdi contentUdi2 = new GuidUdi("element", System.Guid.NewGuid());
-            //We need to do something similar for the settings data
-            GuidUdi settingsUdi1 = new GuidUdi("element", System.Guid.NewGuid());
-            GuidUdi settingsUdi2 = new GuidUdi("element", System.Guid.NewGuid());
-            //using Content Service, we create a new root node with the name Home and Document Type home
-            IContent request = contentService.Create(nodeName, -1, "home", -1);
-            //we create some dummy users
-            Person person1 = new Person("Janice", "janice@janiceindustries.com");
-            Person person2 = new Person("John", "john@johnindustries.com");
-            //initialize our new empty model to mimic proper JSON structure
-            Blocklist blocklistNew = new Blocklist();
-            //initialize empty person list where we will add our users
-            var personList = new List<Dictionary<string, string>>();
-            //initalize empty settings list as well
-            var settingsList = new List<Dictionary<string, string>>();
-            //we get the Content Types to later get the Person Document Type key from
-            var contentTypes = contentTypeService.GetAll();
-            //using the above types, we locate the one that corresponds to the Person Document Type
-            var personType = contentTypes.Where(n => n.Alias == "person").FirstOrDefault();
-            //the dictionaryUdi list here will be passed in the first section of our final JSON object
-            var dictionaryUdi = new List<Dictionary<string, string>>();
-            //we also initialize a List for settings configuration
-            var settingUdi = new List<Dictionary<string, string>>();
-            //add person1
-            personList.Add(new Dictionary<string, string>
-            {
-                //we need to pass the key of the Block List item type, we used ContentTypeService to obtain it
-                {"contentTypeKey", personType.Key.ToString()},  
-                //each item should also have a unique udi. We are passing the one we generated before
-                {"udi", contentUdi1.ToString()},  
-                //Document Type custom property
-                {"user_name", person1.user_name},  
-                //Document Type custom property
-                {"user_email", person1.user_email}
-            });
-            settingsList.Add(new Dictionary<string, string>
-            {
-                //in this case the settings is set to use the contentTypeKey as the content - Person document type
-                {"contentTypeKey", personType.Key.ToString()},
-                {"udi", settingsUdi1.ToString()},
-                //role is our setting for this blocklist - not a property for the actual content
-                {"role", "content editor"}
-            });
-            //with person 1 added to the contentData section of our JSON, we also add a reference to layout section
-            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi1.ToString() }, { "settingsUdi", settingsUdi1.ToString() } });
-            //add person2
-            personList.Add(new Dictionary<string, string>
-            {
-                {"contentTypeKey", personType.Key.ToString()},
-                {"udi", contentUdi2.ToString()},
-                {"user_name", person2.user_name},
-                {"user_email", person2.user_email}
-            });
-            settingsList.Add(new Dictionary<string, string>
-            {
-                {"contentTypeKey", personType.Key.ToString()},
-                {"udi", settingsUdi2.ToString()},
-                {"role", "admin"}
-            });
-            dictionaryUdi.Add(new Dictionary<string, string> { { "contentUdi", contentUdi2.ToString() }, { "settingsUdi", settingsUdi2.ToString() } });
+namespace My.Site.Controllers;
 
-            //first section of JSON must contain udi references to whatever is in contentData
-            blocklistNew.layout = new BlockListUdi(dictionaryUdi, settingUdi);
-            //contentData is a list of our Person objects
-            blocklistNew.contentData = personList;
-            //we bind the previously made settings list to our model to be serialized
-            blocklistNew.settingsData = settingsList;
-            //bind the serialized JSON data to our property alias, "people"
-            request.SetValue("people", JsonConvert.SerializeObject(blocklistNew));
-            //save and publish the node
-            contentService.SaveAndPublish(request);
+public class BlockGridTestController : UmbracoApiController
+{
+    private readonly IContentService _contentService;
+    private readonly IContentTypeService _contentTypeService;
+
+    public BlockGridTestController(IContentService contentService, IContentTypeService contentTypeService)
+    {
+        _contentService = contentService;
+        _contentTypeService = contentTypeService;
+    }
+
+    // POST: /umbraco/api/blockgridtest/create
+    [HttpPost]
+    public ActionResult Create()
+    {
+        // get the item content to modify
+        IContent? content = _contentService.GetById(1203);
+        if (content == null)
+        {
+            return NotFound("Could not find the content item to modify");
+        }
+
+        // get the element types for spot blocks (content and settings)
+        IContentType? spotContentType = _contentTypeService.Get("spotElement");
+        IContentType? spotSettingsType = _contentTypeService.Get("spotSettings");
+        if (spotContentType == null || spotSettingsType == null)
+        {
+            return NotFound("Could not find one or more content types for block data");
+        }
+
+        // this is the raw data to insert into the block grid
+        var rawData = new[]
+        {
+            new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1 },
+            new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2 }
+        };
+
+        // build the individual parts of the block grid data from the raw data
+        var layoutItems = new List<BlockGridLayoutItem>();
+        var spotContentData = new List<BlockGridElementData>();
+        var spotSettingsData = new List<BlockGridElementData>();
+        foreach (var data in rawData)
+        {
+            // generate new UDIs for block content and settings
+            var contentUdi = Udi.Create(Constants.UdiEntityType.Element, Guid.NewGuid());
+            var settingsUdi = Udi.Create(Constants.UdiEntityType.Element, Guid.NewGuid());
+
+            // create a new layout item
+            layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan));
+
+            // create new content data
+            spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi, new Dictionary<string, object>
+            {
+                { "title", data.Title },
+                { "text", data.Text },
+            }));
+
+            // create new settings data
+            spotSettingsData.Add(new BlockGridElementData(spotSettingsType.Key, settingsUdi, new Dictionary<string, object>
+            {
+                { "featured", data.Featured ? "1" : "0" },
+            }));
+        }
+
+        // construct the block grid data from layout, content and settings
+        var blockGridData = new BlockGridData(
+            new BlockGridLayout(layoutItems.ToArray()),
+            spotContentData.ToArray(),
+            spotSettingsData.ToArray());
+
+        // serialize the block grid data as JSON and save it to the "blockGrid" property on the content item
+        var propertyValue = JsonConvert.SerializeObject(blockGridData);
+        content.SetValue("blockGrid", propertyValue);
+        _contentService.Save(content);
+
+        return Ok("Saved");
+    }
+}
 ```
-
-When adding several items, it is important that each item added in `contentData` section has the corresponding Udi mentioned in the `layout` section as well - otherwise the item will not show.
