@@ -8,7 +8,7 @@ On September 26th, 2022 certificates will be issued using  'Google Trust Service
 
 ## Certificates for existing custom hostnames
 
-From October 31st Certificate renewals will no longer use 'DigiCert' as the issuing CA. The renewed certificate will instead be issued by 'Google Trust Services',  and Certificate validity will be decreased from 1 year to 90 days.
+From October 31st, 2022 Certificate renewals will no longer use 'DigiCert' as the issuing CA. The renewed certificate will instead be issued by 'Google Trust Services',  and Certificate validity will be decreased from 1 year to 90 days.
 
 No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
 
