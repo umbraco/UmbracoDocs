@@ -28,7 +28,7 @@ With email authentication, you will get an email with a code that you need to en
 
 ### Authenticator App
 
-With the authenticator app, you need to use an authenticator app when you log in to the Umbraco Cloud Portal.
+You have the option to use an Authenticator App when logging in to the Umbraco Cloud Portal.
 
 You can use the Microsoft Authenticator app for both iOS and android or any other authenticator app of your choice.
 
