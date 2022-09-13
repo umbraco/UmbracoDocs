@@ -18,7 +18,7 @@ This will create a new Examine index called "PDFIndex", which will appear in "Ex
 
 
 ## Multi index searchers
-
+A multi index searcher, is a searcher, than can search multiple indexes, this can be really helpful when you for example want to search both the external and internal indexes.
 You can register a multi index searcher with the ExamineManager on startup like:
 
 ```csharp
