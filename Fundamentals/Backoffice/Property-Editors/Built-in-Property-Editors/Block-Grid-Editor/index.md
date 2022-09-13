@@ -134,7 +134,7 @@ To make this work you will need to create a partial view for each block type. Th
 These partial views must be placed in this folder: `Views/Partials/BlockGrid/Components/`.
 Example: `Views/Partials/BlockGrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
-The partial views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains the `Content` and `Settings` parts of your block, as well as the configured `RowSpan`, `ColumnSpan` and `Areas` of the block..
+The partial views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains the `Content` and `Settings` parts of your block, as well as the configured `RowSpan`, `ColumnSpan`, `ForceLeft`, `ForceRight` and `Areas` of the block..
 
 #### Rendering the block areas
 
@@ -225,6 +225,9 @@ If you don't want to use partial views, you can access the block item data direc
         // get the dimensions of the block
         var rowSpan = item.RowSpan;
         var columnSpan = item.ColumnSpan;
+        // get forced placement of the block
+        var forceLeft = item.ForceLeft;
+        var forceRight = item.ForceRight;
 
         // render the block data
         <div style="background-color: #@(settings.Value<string>("color"))">
@@ -336,8 +339,8 @@ The raw input data for the spots looks like this:
 ```csharp
 new[]
 {
-    new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1 },
-    new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2 }
+    new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1, ForceLeft = false, ForceRight = false },
+    new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2, ForceLeft = false, ForceRight = false }
 }
 ```
 
@@ -351,13 +354,17 @@ The resulting JSON object stored for the Block Grid will look like this:
                 "settingsUdi": "umb://element/9b832ee528464456a8e9a658b47a9801",
                 "areas": [],
                 "columnSpan": 12,
-                "rowSpan": 1
+                "rowSpan": 1,
+                "forceLeft": false,
+                "forceRight": false
             }, {
                 "contentUdi": "umb://element/a11e06ca155d40b78189be0bdaf11c6d",
                 "settingsUdi": "umb://element/d182a0d807fc4518b741b77c18aa73a1",
                 "areas": [],
                 "columnSpan": 6,
-                "rowSpan": 2
+                "rowSpan": 2,
+                "forceLeft": false,
+                "forceRight": false
             }
         ]
     },
@@ -434,12 +441,14 @@ public class BlockGridLayout
 // this represents an item in the block grid layout collection
 public class BlockGridLayoutItem
 {
-    public BlockGridLayoutItem(Udi contentUdi, Udi settingsUdi, int columnSpan, int rowSpan)
+    public BlockGridLayoutItem(Udi contentUdi, Udi settingsUdi, int columnSpan, int rowSpan, bool forceLeft, bool forceRight)
     {
         ContentUdi = contentUdi;
         SettingsUdi = settingsUdi;
         ColumnSpan = columnSpan;
         RowSpan = rowSpan;
+        ForceLeft = forceLeft;
+        ForceRight = forceRight;
     }
 
     [JsonProperty("contentUdi")]
@@ -457,6 +466,12 @@ public class BlockGridLayoutItem
 
     [JsonProperty("rowSpan")]
     public int RowSpan { get; }
+
+    [JsonProperty("forceLeft")]
+    public bool ForceLeft { get; }
+
+    [JsonProperty("forceRight")]
+    public bool ForceRight { get; }
 
 }
 
@@ -527,8 +542,8 @@ public class BlockGridTestController : UmbracoApiController
         // this is the raw data to insert into the block grid
         var rawData = new[]
         {
-            new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1 },
-            new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2 }
+            new { Title = "Item one", Text = "This is item one", Featured = false, ColumnSpan = 12, RowSpan = 1, ForceLeft = false, ForceRight = false },
+            new { Title = "Item two", Text = "This is item two", Featured = true, ColumnSpan = 6, RowSpan = 2, ForceLeft = false, ForceRight = false }
         };
 
         // build the individual parts of the block grid data from the raw data
@@ -542,7 +557,7 @@ public class BlockGridTestController : UmbracoApiController
             var settingsUdi = Udi.Create(Constants.UdiEntityType.Element, Guid.NewGuid());
 
             // create a new layout item
-            layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan));
+            layoutItems.Add(new BlockGridLayoutItem(contentUdi, settingsUdi, data.ColumnSpan, data.RowSpan, data.ForceLeft, data.ForceRight));
 
             // create new content data
             spotContentData.Add(new BlockGridElementData(spotContentType.Key, contentUdi, new Dictionary<string, object>
