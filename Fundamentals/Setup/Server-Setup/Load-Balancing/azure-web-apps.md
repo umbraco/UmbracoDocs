@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 9.4.0
 versionTo: 10.0.0
 ---
 
@@ -45,7 +45,7 @@ Several file system based services in Umbraco such as the Published Cache and Lu
     "Umbraco": {
         "CMS": {
             "Global": {
-                "MainDomLock" : "SqlMainDomLock"
+                "MainDomLock" : "FileSystemMainDomLock"
             }
         }
     }
