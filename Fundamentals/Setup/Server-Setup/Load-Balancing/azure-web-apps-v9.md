@@ -59,7 +59,7 @@ Apply this setting to both the __SCHEDULINGPUBLISHER__ Administrative server and
 1. Create an Azure SQL database
 2. Install Umbraco on your backoffice administrative environment and ensure to use your Azure SQL Database
 3. Install Umbraco on your scalable public-facing environment and ensure to use your Azure SQL Database
-4. Test: Perform some content updates on the administrative environment, ensure they work successfully on that environment, then verify that those changes appear on the scalable public facing environment
+4. Test: Perform some content updates on the administrative environment, ensure they work successfully in that environment, then verify that those changes appear on the scalable public facing environment
 5. Fix the backoffice environment to be the SCHEDULINGPUBLISHER scheduling server and the scalable public facing environment to be SUBSCRIBERs - see [Setting Explicit Server Roles](flexible-advanced.md#explicit-schedulingpublisher-server)
 
 :::note
