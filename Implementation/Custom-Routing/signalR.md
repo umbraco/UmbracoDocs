@@ -40,7 +40,7 @@ public class TestHub : Hub<ITestHubEvents>
     public async Task Ping()
     {
         // we trigger the pong event on all clients
-        await Clients.All.Pong;
+        await Clients.All.Pong();
     }
 }
 ```
