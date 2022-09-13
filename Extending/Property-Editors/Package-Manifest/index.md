@@ -122,7 +122,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `hideLabel` Turn the label on or off by using `true` or `false`, respectively.
 * `valueType` Sets the database type the value is stored as, by default it's `string`.
 * `validation` Object describing required validators on the editor.
-* `supportsReadOnly` Decide whether or not the property should support the read-only mode, which determines if the value of a shared/invariant property is greyed out or accessible.
+* `supportsReadOnly` Sets whether the editor supports read-only mode, if set to true, the editor is expected to have its own implementation of the read-only mode.
 * `isReadOnly` Disables editing the value.
 
 `valueType` sets the kind of data the editor will save in the database, its default setting is `string`. The available options are:
