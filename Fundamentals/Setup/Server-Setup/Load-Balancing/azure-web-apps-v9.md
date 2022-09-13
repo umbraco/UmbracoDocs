@@ -70,7 +70,7 @@ Ensure all Azure resources are located in the same region to avoid connection la
 
 **Do not scale your backoffice administrative environment** this is not supported and can cause issues.
 
-The public facing subscriber Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
+The public-facing subscriber Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
 
 ## Deployment considerations
 
