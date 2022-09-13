@@ -12,7 +12,10 @@ If you want to index PDF files and search for them you will need to use the [Umb
 Install with Nuget:
 `dotnet add package Umbraco.ExaminePDF`
 
-You will then have a new Examine index called "PDFIndex" available.
+This will create a new Examine index called "PDFIndex", which will appear in "Examine Management" dashboard under the "Settings" section. Using this index you can start searching the contents of any PDF files uploaded to the media section.
+
+![image](https://user-images.githubusercontent.com/7405322/189886089-d23b45c7-814b-4101-b143-31c5cd9fa655.png)
+
 
 ## Multi index searchers
 
@@ -35,10 +38,14 @@ namespace MySite.MyCustomIndex
             builder.Services.AddExamineLuceneMultiSearcher("MultiSearcher", new[] {Constants.UmbracoIndexes.ExternalIndexName, PdfIndexConstants.PdfIndexName});
         }
     }
-}}
+}
 ```
 
-With this approach, the multisearcher will show up in the Examine dashboard and it can be resolved from the ExamineManager like:
+With this approach, the multi index searcher will show up in the "Examine Management" dashboard.
+
+![image](https://user-images.githubusercontent.com/7405322/189887744-af2d8e69-4807-4407-868d-b43e9fa9518d.png)
+
+The multi index searcher can be resolved in code from the ExamineManager like this:
 
 ```csharp
 if (_examineManager.TryGetSearcher("MultiSearcher", out var searcher))
