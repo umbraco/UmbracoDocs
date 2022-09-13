@@ -22,4 +22,4 @@ With Umbraco Deploy (on-premises) you can use the Umbraco Cloud Deployment techn
 
 ## [The Licensing Model](The-Licensing-model)
 
-Learn more about the licensing model we use for our licensed product Umbraco Forms.
+Learn more about the licensing model we use for our licensed products, Umbraco Forms, and Umbraco Deploy.
