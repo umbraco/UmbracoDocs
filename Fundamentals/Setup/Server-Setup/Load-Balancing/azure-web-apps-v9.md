@@ -74,7 +74,7 @@ The public-facing subscriber Azure Web Apps can be manually or automatically sca
 
 ## Deployment considerations
 
-Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are various automation techniques you can use to simplify the process. That is outside the scope of this article.
+Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are automation techniques you can use to simplify the process. That is outside the scope of this article.
 
 :::note
 This also means that you should not be editing templates or views on a live server as SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
