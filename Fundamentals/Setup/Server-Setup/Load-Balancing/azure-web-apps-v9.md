@@ -9,7 +9,7 @@ Ensure you read the [Load Balancing overview](index.md) and general [Azure Web A
 
 ## Azure Requirements
 
-* You will need to setup 2 x Azure Web Apps - one for the backoffice (Administrative) environment and another for your scalable public facing environment (Public)
+* You will need to setup 2 x Azure Web Apps - one for the backoffice (Administrative) environment and another for your scalable public-facing environment (Public)
 * You will need 1 x SQL server that is shared with these 2 web apps
 
 ## Lucene/Examine configuration
