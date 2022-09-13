@@ -26,4 +26,4 @@ Umbraco Plumber extends Umbraco's standard publishing model to allow creation of
 
 ## [The Licensing Model](The-Licensing-model)
 
-Learn more about the licensing model we use for our licensed products, Umbraco Courier and Umbraco Forms.
+Learn more about the licensing model we use for our licensed products, Umbraco Forms, and Umbraco Deploy.
