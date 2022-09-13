@@ -237,19 +237,95 @@ If you don't want to use partial views, you can access the block item data direc
 
 ## Write a Custom Layout Stylesheet
 
-The default layout is arranged by CSS Grid, this can be modified or completely replaced to fit your use case.
+The default layout stylesheet is using CSS Grid, this can be modified or completely replaced to fit your use case.
 
 ### Adjusting Layout Stylesheet
 
+If you like to make additions or overwrite parts of the default layout stylesheet, you can do so by importing the default stylesheet in the very top of your own file:
+```css
+@import '/umbraco/assets/css/blockgridlayout.css';
+
+...
+```
 
 ### Write a new Layout Stylesheet
+In this case you would have to write the layout from ground up.
+
+Technically you are free to pick any style, there is not a requirement to use CSS Grid but be aware that the editing experience in Backoffice might not be ideal in some cases.
+
+### CSS Class structure and available data
+When extending or writing your own layout, you would have to understand the structure and what data is available.
+
+This can be exemplified by writing out the HTML structure:
+
+```html
+<div class="umb-block-grid"
+     style="--umb-block-grid--grid-columns: 12;"
+>
+    
+    <!-- Notice this is the same markup used every time we will be printing a list of blocks: -->
+    <div class="umb-block-grid__layout-container">
+
+        <!-- repeated for each layout entry -->
+        <div
+            class="umb-block-grid__layout-item"
+            data-content-element-type-alias="MyElementTypeAlias"
+            data-content-element-type-key="00000000-0000-0000-0000-000000000000"
+            data-element-udi="00000000-0000-0000-0000-000000000000"
+            data-col-span="6"
+            data-row-span="1"
+            ?data-force-left
+            ?data-force-right
+            style="
+            --umb-block-grid--item-column-span: 6;
+            --umb-block-grid--item-row-span: 1;
+            "
+        >
+
+            <div class="umb-block-grid__block--view">
+                <!-- Here the Razor View or Custom View for this block will be rendered. -->
+                <!-- Each razor view/custom view must handle/inject where the 'area-container' should be printed.
+                Structure is as following: -->
+                <div class="umb-block-grid__area-container"
+                     style="--umb-block-grid--area-grid-columns: 9;"
+                >
+
+                    <!-- repeated for each area for this block type. -->
+                    <div
+                        class="umb-block-grid__area"
+                        data-area-col-span="3"
+                        data-area-row-span="1"
+                        data-area-alias="MyAreaAlias"
+                        style="
+                        --umb-block-grid--area-column-span: 3;
+                        --umb-block-grid--area-row-span: 1;
+                        ">
+
+                            <!-- Notice here we print the same markup as when we print a list of blocks(same as the one in the root of this structure..):
+                            <div class="umb-block-grid__layout-container">
+                                ...
+                            </div>
+                            End of notice.  -->
+                    </div>
+                    <!-- end of repeat -->
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end of repeat -->
+        
+    </div>
+
+</div>
+```
 
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors.
+Building Custom Views for Block representations in Backoffice is based on the same API for all Block Editors.
 [Read about building a Custom View for Blocks here](../Block-Editor/build-custom-view-for-blocks.md)
-
 
 ## Creating Block Grid programmatically
 
@@ -381,6 +457,7 @@ public class BlockGridLayoutItem
 
     [JsonProperty("rowSpan")]
     public int RowSpan { get; }
+
 }
 
 // this represents an item in the block grid content or settings data collection
