@@ -7,7 +7,7 @@ meta.Description: "Querying in views with IPublishedContentQuery in Umbraco"
 
 # IPublishedContentQuery
 
-The `IPublishedContentQuery` interface contains various query methods for accessing strongly typed content in services etc.
+The `IPublishedContentQuery` interface contains different query methods for accessing strongly typed content in services etc.
 
 ## How to inject IPublishedContentQuery
 
