@@ -1,5 +1,5 @@
 ﻿---
-versionFrom: 8.0.0
+versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
@@ -24,7 +24,7 @@ using Microsoft.Extensions.Options;
 
 namespace MySite
 {
-    public class ConfigureExamineOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
         public void Configure(string name, LuceneDirectoryIndexOptions options)
         {
@@ -40,7 +40,7 @@ namespace MySite
 ```
 
 :::note
-In this documentation we will use the `ConfigureExamineOptions` class for everything, it is recommended that you seperate this class out per filter for simplicity, for example if you do a lot of configuring for the ExternalIndex class, you would have a `ConfigureExternalIndex` class
+In this sample we are altering the external index and thus we name the class `ConfigureExternalIndexOptions`. If you are altering multiple indexes, it is recommended to have separate classes for each index - i.e. `ConfigureExternalIndexOptions` for the external index, `ConfigureInternalIndexOptions` for the internal index and so on.
 :::
 
 When using the `ConfigureNamedOptions` pattern, we have to register this in a composer for it to configure our indexes, this can be done like this:
@@ -56,14 +56,14 @@ namespace MySite
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.ConfigureOptions<ConfigureExamineOptions>();
+            builder.Services.ConfigureOptions<ConfigureExternalIndexOptions>();
         }
     }
 }
 ```
 ### Changing field value types
 
-By default Examine will store values into the Lucene index as "Full Text", meaning it will be indexed and analyzed for a textual search. However, if a value that you are storing in a field is numerical, a date/time or another specific value type then you might want to change how this is stored in the index. This way you will be able to take advantage of some features such as numerical range or date features, etc...
+By default Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type specific search features such as numerical or date range.
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
@@ -77,7 +77,7 @@ using Umbraco.Cms.Core;
 
 namespace MySite
 {
-    public class ConfigureExamineOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
         public void Configure(string name, LuceneDirectoryIndexOptions options)
         {
@@ -95,7 +95,7 @@ namespace MySite
     }
 }
 ```
-This will either add the `price` field to the index, or if the field already exists, update date its type to double.
+This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
 
 ## Changing IValueSetValidator
 
@@ -111,7 +111,7 @@ using Umbraco.Cms.Infrastructure.Examine;
 
 namespace MySite
 {
-    public class ConfigureExamineOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
         public void Configure(string name, LuceneDirectoryIndexOptions options)
         {
@@ -121,13 +121,18 @@ namespace MySite
             }
         }
 
+        // Part of the interface, but does not need to be implemented for this.
         public void Configure(LuceneDirectoryIndexOptions options)
         {
-            throw new System.NotImplementedException("This is never called and is just part of the interface");
+            throw new System.NotImplementedException();
         }
     }
 }
 ```
+
+:::note
+Remember to register `ConfigureMemberIndexOptions` in your composer.
+:::
 
 ## Creating your own index
 
@@ -141,11 +146,11 @@ Take a look at our [Examine Quick Start](../quick-start/index.md) to see some ex
 
 In order to create this index we need five things:
 
-1. A definition of the index
-2. A ConfigureNamedOptions to configure all the fields of the index
-3. A ValueSetBuilder to build the value sets for the index
-4. A IndexPopulator to populate the index with the value sets
-5. A composer to add all these services to the runtime.
+1. An `UmbracoExamineIndex` implementation that defines the index
+2. An `IConfigureNamedOptions` implementation that configures the fields of the index
+3. An `IValueSetBuilder` implementation that builds the value sets for the index
+4. An `IndexPopulator` implementation that populates the index with the value sets
+5. A composer that adds all these services to the runtime.
 
 
 ### ProductIndex
@@ -154,9 +159,9 @@ In order to create this index we need five things:
 using Examine.Lucene;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
+using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace MySite.MyCustomIndex
 {
@@ -178,7 +183,7 @@ namespace MySite.MyCustomIndex
 }
 ```
 
-### ConfigureCustomIndexOptions
+### ConfigureProductIndexOptions
 
 ```c#
 using Examine;
@@ -194,13 +199,13 @@ using Umbraco.Cms.Infrastructure.Examine;
 
 namespace MySite.MyCustomIndex
 {
-    public class ConfigureCustomIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
         private readonly IOptions<IndexCreatorSettings> _settings;
         private readonly IPublicAccessService _publicAccessService;
         private readonly IScopeProvider _scopeProvider;
 
-        public ConfigureCustomIndexOptions(
+        public ConfigureProductIndexOptions(
             IOptions<IndexCreatorSettings> settings,
             IPublicAccessService publicAccessService,
             IScopeProvider scopeProvider)
