@@ -575,7 +575,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
             // define an empty array "nodes we know about"
             var nodesWeKnowAbout = [];
 
-            // definde an empty array "filtered log entries"
+            // define an empty array "filtered log entries"
             var filteredLogEntries = [];
 
             // loop through the entries in the User Log History
