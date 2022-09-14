@@ -6,12 +6,12 @@ versionTo: 10.0.0
 # Custom indexing
 ## Customizing the built in indexes
 
-You can modify the built in indexes in several ways:
+You can modify the built-in indexes in the following ways:
 
 * Events - giving you control over exactly what data goes into them and how the fields are configured
 * Changing the field value types to change how values are stored in the index
 * Changing the `IValueSetValidator` to change what goes into the index
-* Take control of the entire index creation pipeline to completely change the implementation
+* Take control of the entire index creation pipeline to change the implementation
 
 We can do all this by using the `ConfigureNamedOptions` pattern.
 
@@ -63,7 +63,7 @@ namespace MySite
 ```
 ### Changing field value types
 
-By default Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type specific search features such as numerical or date range.
+By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
@@ -106,7 +106,7 @@ If a `ValueSet` was passed to the ExternalIndex and it did not pass this require
 The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
 
 
-The `IValueSetValidator` implementation for the built in indexes, can be changed like this:
+The `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
 ```c#
 using Examine.Lucene;
@@ -149,7 +149,7 @@ We always recommend that you use the existing built in ExternalIndex. You should
 Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search the ExternalIndex.
 :::
 
-In order to create this index we need five things:
+To create this index we need five things:
 
 1. An `UmbracoExamineIndex` implementation that defines the index
 2. An `IConfigureNamedOptions` implementation that configures the fields of the index

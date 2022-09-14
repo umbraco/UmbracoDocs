@@ -11,20 +11,20 @@ This document has been verified for Umbraco 8.
 If you are using Umbraco 9 or later versions, please refer to the note on the [Examine documentation landing page](../index.md) for more details.
 :::
 
-Examine has changed quite a bit in Umbraco 8 (and by "a bit" we really mean a lot). In Umbraco 7 everything was configured in the two Examine config files - in Umbraco 8 everything happens through C#.
+Examine has changed a bit in Umbraco 8 (and by "a bit" we mean a lot). In Umbraco 7 everything was configured in the two Examine config files - in Umbraco 8 everything happens through C#.
 
 ## Customizing the built in indexes
 
-You can modify the built in indexes in several ways:
+You can modify the built-in indexes in the following ways:
 
 * Events - giving you control over exactly what data goes into them and how the fields are configured
 * Changing the field value types to change how values are stored in the index
 * Changing the `IValueSetValidator` to change what goes into the index
-* Take control of the entire index creation pipeline to completely change the implementation
+* Take control of the entire index creation pipeline to change the implementation
 
 ### Changing field value types
 
-By default Examine will store values into the Lucene index as "Full Text", meaning it will be indexed and analyzed for a textual search. However, if a value that you are storing in a field is numerical, a date/time or another specific value type then you might want to change how this is stored in the index. This way you will be able to take advantage of some features such as numerical range or date features, etc...
+By default, Examine will store values into the Lucene index as "Full Text", meaning it will be indexed and analyzed for a textual search. However, if a value that you are storing in a field is numerical, a date/time, or another specific value type then you might want to change how this is stored in the index. This way you will be able to take advantage of some features such as numerical range or date features, etc...
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
@@ -70,7 +70,7 @@ public class CustomizeIndexComponent : IComponent
 
 An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index and/or filtering the data in the `ValueSet`. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
-Starting in Umbraco 8.4.0, the `IValueSetValidator` implementation for the built in indexes, can be changed like this:
+Starting in Umbraco 8.4.0, the `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
 ```c#
 using Examine;
@@ -116,7 +116,7 @@ If you are using a version of Umbraco before 8.4.0 then to do this you will need
 
 ### Overriding index creation
 
-You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`.
+You can take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`.
 
 A few examples of why you might want to override the index creation:
 
@@ -124,7 +124,7 @@ A few examples of why you might want to override the index creation:
 * Change the `IValueSetValidator`
 * Modify field definitions
 * Change the location of where the indexes are stored, or
-* Completely replace the indexes with your own entirely custom implementation
+* Replace the indexes with your own entirely custom implementation
 
 As an example, to change the `IValueSetValidator` for the MemberIndex in the above example:
 
@@ -232,16 +232,16 @@ public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
 The following example will show how to create an index that will only include nodes based on the document type _product_.
 
 :::note
-We always recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
+We always recommend that you use the existing built-in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
 Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search the ExternalIndex.
 :::
 
-In order to create this index we need three things:
+To create this index we need three things:
 
 1. An IndexCreator to create a definition for the configuration of the index(s)
 2. A Component to register the created index(s) with Examine
-3. A Composer to append this Component to the list of Components Umbraco initializes during start up and to register our IndexCreator service with the underlying dependency injection framework, so it can be injected into our Component constructor.
+3. A Composer to append this Component to the list of Components Umbraco initializes during start-up and to register our IndexCreator service with the underlying dependency injection framework, so it can be injected into our Component constructor.
 
 (Read more about [using Composition and Components to modify Umbraco's default behaviour](../../../../Implementation/Composing/) and [Registering dependencies with Umbraco's underlying IoC framework](../../../Using-Ioc/)).
 
