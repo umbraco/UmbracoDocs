@@ -23,7 +23,7 @@ GET https://cdn.umbraco.io/redirect
 Accept-Language: en-US
 ```
 
-### Acces via a Query String parameter
+### Access via a Query String parameter
 
 ```http
 GET https://cdn.umbraco.io/redirect?culture=en-US
