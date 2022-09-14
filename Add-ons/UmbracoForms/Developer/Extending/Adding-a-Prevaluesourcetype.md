@@ -31,7 +31,7 @@ namespace MyFormsExtensions
                 {
                     Id = 1,
                     Value = "item-one",
-                    Caption = "Item One
+                    Caption = "Item One"
                 },
                 new PreValue
                 {
