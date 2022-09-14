@@ -15,12 +15,12 @@ If you want to index PDF files and search for them you will need to use the [Umb
 
 ## Installation
 
-Install with Nuget:
+Install with NuGet:
 `Install-Package UmbracoCms.UmbracoExamine.PDF`
 
 You will then have a new Examine index called "PDFIndex" available.
 
-## Multi index searchers
+## Multi-index searchers
 
 To use the multisearcher in Umbraco 8, you can instantiate it when needed like:
 
@@ -34,7 +34,7 @@ using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
 };
 ```
 
-Or you can register a multi index searcher with the ExamineManager on startup like:
+Or you can register a multi-index searcher with the ExamineManager on startup like:
 
 ```csharp
 using Examine;
