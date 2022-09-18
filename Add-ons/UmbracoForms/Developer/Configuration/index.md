@@ -56,7 +56,8 @@ For illustration purposes, the following structure represents the full set of op
         "DaysToRetainSubmittedRecordsFor": 0,
         "DaysToRetainApprovedRecordsFor": 0
       },
-      "RemoveProvidedEmailTemplate": false
+      "RemoveProvidedEmailTemplate": false,
+      "FormElementHtmlIdPrefix": ""
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -122,7 +123,12 @@ When creating an empty form, a single workflow is added that will send an email 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### RemoveProvidedEmailTemplate
-Frosm Forms 10.2, if you have created custom email templates to use with the "send Razor email" workflow, the provided template can be removed from selection by setting this value to `true`.
+From Forms 10.2, if you have created custom email templates to use with the "send Razor email" workflow, the provided template can be removed from selection by setting this value to `true`.
+
+### FormElementHtmlIdPrefix
+By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, from Forms 10.2, the attribute values can be prefixed with the value provided in this configuration element.
+
+For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
 
 ### Form default settings configuration
 
