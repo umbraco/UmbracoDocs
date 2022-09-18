@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 10.0.0
 meta.Title: "Umbraco File System Providers"
 meta.Description: "A guide to creating custom file systems in Umbraco"
 ---
@@ -9,9 +8,11 @@ meta.Description: "A guide to creating custom file systems in Umbraco"
 
 ## Media Filesystem
 
-By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (wwwroot/media).
+:::note
+Before considering a custom media file system, be sure to first read about the configuration options for `UmbracoMediaPath` and `UmbracoMediaPhysicalRootPath` in the [configuration reference docs](../../Reference/Configuration/GlobalSettings/). These configurations may save you from creating your own media file system entirely.
+:::
 
-This can be configured during composition:
+By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (wwwroot/media). This default location can be configured by composition:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -47,32 +48,37 @@ namespace UmbracoExamples.Composition
 }
 ```
 
-When creating a PhyscialFileSystem it takes some dependencies like IIOHelper, but the last two parameters are what we're interested in. The `rootPath` is where your media will be stored on the disk. Since netcore by default store files in the `wwwroot`, we must put our desired folder somewhere within `wwwroot`, to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`. The `~` will be mapped to your `wwwroot` folder, so the final `rootPath` will be `your/project/path/wwwroot/CustomMediaFolder`. The `~` is therefore important.
+When creating a `PhysicalFileSystem` it takes some dependencies like `IIOHelper`, but the last two parameters are what we're interested in.
 
-The other part of the puzzle is the `rootUrl`, which is the base URL your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important. Another thing worth mentioning with the `rootUrl` is that it must be the same as the folder location, otherwise, you will get 404's for your images.
+The `rootPath` is where your media will be stored on the disk. Since netcore by default stores files in the `wwwroot`, we must put our desired folder somewhere within `wwwroot` to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`. The `~` will be mapped to your `wwwroot` folder, so the final `rootPath` will be `your/project/path/wwwroot/CustomMediaFolder`. The `~` is therefore important.
 
-This is all great if you want to change the location within the `wwwroot` folder of your project, but what if you want to store the media files outside `wwwroot`? This is possible but requires an extra step.
+The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important.
 
-As mentioned, netcore stores static files such as media and CSS, in the `wwwroot` folder by default, but we can register an additional location in the `configure` section of our startup.
+In the code sample above, the `rootUrl` must map to the the same physical location as `rootPath`, which again must be placed under `wwwroot`. If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
 
-In the `configure` method in `startup.cs`, register a new static file location like so:
 
-```c#
+The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important. With the code sample above, the `rootUrl` must map to the same physical location as `rootPath`, otherwise, you will get 404's for your images.
+
+If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
+
+In the `Configure` method in `startup.cs`, register a new static file location like so:
+
+```csharp
 public void Configure(IApplicationBuilder app)
 {
     ...
 
     app.UseStaticFiles(new StaticFileOptions
     {
-        FileProvider = new PhysicalFileProvider(Path.Combine("D:", "storage", "umbracoMedia")),
+        FileProvider = new PhysicalFileProvider(Path.Combine("C:", "storage", "umbracoMedia")),
         RequestPath = "/CustomPath"
     });
 }
 ```
 
-The PhysicalFileProvider takes a single parameter, the **RootPath** - the rooted, filesystem path, using directory separator chars, not ending with a separator `//`, eg `c:`, `c:\path\to\site` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
+The PhysicalFileProvider takes a single parameter, the **`RootPath`**. This is the rooted filesystem path using directory separator chars and not ending with a directory separator, eg: `c:\storage\umbracoMedia` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
 
-You also have to specify the  **RequestPath** - the relative URL, where the media will be served, using URL separator chars, not ending with a separator `/`, eg "", `/Views` or `/Media`.
+You also have to specify the **`RequestPath`**. This is the relative URL where the media will be served using URL separator chars and not ending with a separator, eg: `/CustomPath` or `/Media`.
 
 Now you can use your newly registered static file location as if it was `wwwroot`. Notice how you no longer need to use `hostingEnvironment.MapPathWebRoot(folderLocation)`, since you're no longer trying to map the location to somewhere within `wwwroot`, but instead use your newly registered static file location.
 
@@ -99,11 +105,19 @@ This is almost the same as when registering a location within the `wwwroot` fold
 
 Our media is now stored in `C:\storage\umbracoMedia`, and is served from the base URL `/CustomPath`, so an image URL will look something like `mysite.com/CustomPath/MyAwesomePicture.png`.
 
-### IFileSystem
+### Creating a custom file system
 
-`PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar. You replace the media filesystem using the `SetMediafileSystem` method in a composer like shown in the `MediaFileSystem` section, but instead of returning a `PhysicalFileSystem`, you return whatever implementation of `IFileSystem` you want.
+You can replace `PhysicalFileSystem` with a custom file system implementation - eg. if you want your media files stored on Amazon S3 or elsewhere outside your site.
 
-If you configure Umbraco to use a custom file system provider for media, you shouldn't access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
+To achieve this, you must first create your own file system by implementing the interfaces `IFileSystem` and `IFileProviderFactory` (the interfaces that are implemented by `PhysicalFileSystem`).
+
+You then replace the media filesystem by composition using `IUmbracoBuilder.SetMediaFileSystem(...)` (as is demonstrated in the paragraphs above), but instead of returning a `PhysicalFileSystem`, you return your own file system implementation.
+
+For inspiration on building a custom file system, have a look at the [Azure Blob Storage file system implementation](https://github.com/umbraco/Umbraco.StorageProviders#umbracostorageprovidersazureblob).
+
+### Accessing the media file system from code
+
+Since the default media file system can be swapped with custom implementations, you should never access the implementation directly. Umbraco uses a manager class called `MediaFileManager`. You can get a reference to this manager class via dependency injection in the constructor for your custom class or controller:
 
 ```csharp
 public class ImagesController : UmbracoAuthorizedApiController
@@ -155,14 +169,14 @@ Umbraco also registers instances of `PhysicalFileSystem` for the following parts
 These are accessible via dependency injection.
 
 ```csharp
-public class FileSystemLocations 
+public class FileSystemLocations
 {
     private readonly FileSystems _fileSystems;
     public FileSystemLocations(FileSystems fileSystems)
     {
         _fileSystems = fileSystems;
         var macroPartialsFileSystem = _fileSystems.MacroPartialsFileSystem;
-    }     
+    }
 ```
 
 `IFileSystem`, `MediaFileManager`, and `FileSystems` are located in the `Umbraco.Cms.Core.IO` namespace.

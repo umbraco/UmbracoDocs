@@ -102,6 +102,22 @@ query {
 }
 ```
 
+Filtering can also be applied to types returning `Content` and `Media`, e.g. if we want all content of type `Post` where the author name is `Rasmus`, we can write the following query.
+
+
+```graphql
+query {
+  allPosts(where: { author: { name: "Rasmus" } }) {
+    edges {
+      node {
+        name
+        url
+      }
+    }
+  }
+}
+```
+
 ## Previewing
 
 The collection can also return draft content by passing the `preview` argument with a boolean to the query. Draft content is always protected and requires an Api-Key.

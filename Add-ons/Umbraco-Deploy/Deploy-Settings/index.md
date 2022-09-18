@@ -36,6 +36,7 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
+            "Edition": "Default",
             "DefaultTimeoutSeconds": 60,
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
@@ -46,6 +47,8 @@ For illustration purposes, the following structure represents the full set of op
             "DatabaseCommandTimeout": "0.0:20:00",
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
+            "DiskOperationsTimeout": "0.0:05:00",
+            "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependencies": false,
             "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
@@ -66,6 +69,18 @@ For illustration purposes, the following structure represents the full set of op
 ## ApiKey
 
 The API key is a 10 character random string applied with the same value to all environments in order to authenticate HTTP requests between them.
+
+## Edition
+
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+
+Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
+
+It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
+
+Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+
+However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
 ## ExcludedEntityTypes
 
@@ -115,18 +130,34 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-There are four settings available:
+There are four settings available relating to backoffice deployment operations:
 
 - `SessionTimeout`
 - `SourceDeployTimeout`
 - `HttpClientTimeout`
 - `DatabaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
+
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maxmimum time allowed for disk operations such as schema updates.
+
+- `DiskOperationsTimeout`
+
+This setting defaults to 5 minutes.
+
+All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+
+## UseDatabaseBackedTransferQueue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 9.5 and 10.1, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
 ## TransferFormsAsContent
 

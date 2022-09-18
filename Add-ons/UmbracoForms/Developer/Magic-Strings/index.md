@@ -55,7 +55,7 @@ Some extra variables are:
 `{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.
 
 Some extra variables are:
-- `{record.id}`: The ID of the current record
+- `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
 - `{record.updated}`: The updated date/time of the current record
 - `{record.created}`: The created date/time of the current record
 - `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on

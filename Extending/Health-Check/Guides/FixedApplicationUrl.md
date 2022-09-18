@@ -38,7 +38,7 @@ One example that can be used in production
     "Umbraco": {
         "CMS": {
             "WebRouting": {
-                "UmbracoApplicationUrl": "https://www.my-custome-domain.com/"
+                "UmbracoApplicationUrl": "https://www.my-custom-domain.com/"
             }
         }
     }

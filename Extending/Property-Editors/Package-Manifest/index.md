@@ -28,7 +28,8 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
             "editor": {
                 "view": "/App_Plugins/SirTrevor/SirTrevor.html",
                 "hideLabel": true,
-                "valueType": "JSON"
+                "valueType": "JSON",
+                "supportsReadOnly": true
             }
         }
     ],
@@ -64,6 +65,7 @@ In version 9.2 some additional root elements was added, the purpose of these are
 * `allowPackageTelemetry` - Allows you to entirely disable telemetry for your package if set to false, defaults to true.
 
 Example package.manifest
+
 ```json
 {
     "name": "My Awesome Package",
@@ -91,14 +93,14 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 }
 ```
 
-* `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace"
+* `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace".
 * `name` The name visible to the user in the UI, should also be unique.
-* `editor` Object containing editor configuration (see below)
-* `isParameterEditor` enables the property editor as a macro parameter editor can be `true`/`false`
-* `prevalues` Configuration of editor prevalues (see below)
-* `defaultConfig` Default configuration values (see below)
-* `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: e.g. `icon-autofill`
-* `group` The group to place this editor in within the 'Select Editor' dialog. Use a new group name or alternatively use an existing one such as `Pickers`
+* `editor` Object containing editor configuration (see below).
+* `isParameterEditor` enables the property editor as a macro parameter editor can be `true`/`false`.
+* `prevalues` Configuration of editor prevalues (see below).
+* `defaultConfig` Default configuration values (see below).
+* `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: e.g. `icon-autofill`.
+* `group` The group to place this editor in within the 'Select Editor' dialog. Use a new group name or alternatively use an existing one such as `Pickers`.
 * `defaultConfig` Provides a collection of default configuration values, in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
 
 ### Editor
@@ -111,15 +113,17 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
     "hideLabel": true,
     "valueType": "TEXT",
     "validation": {},
+    "supportsReadOnly": true,
     "isReadOnly": false
 }
 ```
 
-* `view` Path to the HTML file to use for rendering the editor
+* `view` Path to the HTML file to use for rendering the editor.
 * `hideLabel` Turn the label on or off by using `true` or `false`, respectively.
-* `valueType` Sets the database type the value is stored as, by default it's `string`
-* `validation` Object describing required validators on the editor
-* `isReadOnly` Disables editing the value
+* `valueType` Sets the database type the value is stored as, by default it's `string`.
+* `validation` Object describing required validators on the editor.
+* `supportsReadOnly` Sets whether the editor supports read-only mode, if set to true, the editor is expected to have its own implementation of the read-only mode.
+* `isReadOnly` Disables editing the value.
 
 `valueType` sets the kind of data the editor will save in the database, its default setting is `string`. The available options are:
 

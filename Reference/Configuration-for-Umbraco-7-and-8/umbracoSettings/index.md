@@ -11,11 +11,11 @@ Here you will be able to find documentation on all the options you can modify in
 
 ## Backoffice
 
-Below you can see the settings that affect the Umbraco backoffice.
+Below you can see the settings that affect the Umbraco Backoffice.
 
 ### Tours
 
-The section is used for controlling the backoffice tours functionality.
+The section is used for controlling the Backoffice tours functionality.
 
 ```xml
 <backOffice>
@@ -26,7 +26,7 @@ The section is used for controlling the backoffice tours functionality.
 There is only one supported attribute on the tours element:
 
 **`enable`**
-By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+By default this is set to true. Set it to false to turn off [Backoffice tours](../../../Extending/Backoffice-Tours/index.md)
 
 ## Content
 
@@ -34,7 +34,7 @@ Below you can see settings that affects content in Umbraco.
 
 ### Cleanup policy (Available on Umbraco version 8.18)
 
-The global settings for the scheduled job which cleans up historic content versions. These settings can be overridden per document type.
+The global settings for the scheduled job which cleans up historic content versions. These settings can be overridden per Document Type.
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
@@ -57,14 +57,14 @@ If you don't wish to retain any content versions except for the current draft an
 
 ### Obsolete data types
 
-This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
+This section is used for controlling whether or not the Data Types marked as obsolete should be visible in the dropdown when creating new Data Types.
 
 ```xml
 <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
 ```
 
 **`enable`**
-By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**.
+By default this is set to false. To make the obsolete Data Types visible in the dropdown change the value to **true**.
 
 ### Imaging
 
@@ -94,7 +94,7 @@ As the comment above states, this is a comma separated list of accepted image fo
 **`<autoFillImageProperties>`**
 As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **`<heightFieldAlias>`** need to be updated with the new property aliases. This needs to happen in order to automatically populate the values when the image is being uploaded.
 
-If you need to create a custom media document type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
+If you need to create a custom media Document Type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
 **`<uploadField>`** element where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
 
 ```xml
@@ -326,7 +326,7 @@ Now IIS will ignore httpErrors and allow Umbraco to handle them.
 #### Handling multiple sites with the same culture
 
 If you have multiple sites with the same culture then you can't use the above error settings. Then you will need to have a look at the [uComponents Multi-Site Not Found handler](http://ucomponents.codeplex.com/wikipage?title=MultiSitePageNotFoundHandler).
-The benefit of using this handler is that you can choose the error page to be shown within the Umbraco backoffice.
+The benefit of using this handler is that you can choose the error page to be shown within the Umbraco Backoffice.
 
 ### Notifications
 
@@ -361,7 +361,7 @@ This setting is used when you're running Umbraco in virtual directories.
 
 ### `<DisallowedUploadFiles>`
 
-This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the backoffice.
+This setting consists of a list of file extensions that editors shouldn't be allowed to upload via the Backoffice.
 
 ```xml
 <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
@@ -370,7 +370,7 @@ This setting consists of a list of file extensions that editors shouldn't be all
 
 ### `<AllowedUploadFiles>`
 
-If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the Backoffice.
 
 ```xml
 <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
@@ -379,7 +379,7 @@ If greater control is required than available from the above, this setting can b
 
 ### `<loginBackgroundImage>`
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the `~/umbraco` path. The default location is: `/umbraco/assets/img/installer.jpg`.
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match Backoffice colors. This path is relative to the `~/umbraco` path. The default location is: `/umbraco/assets/img/installer.jpg`.
 
 ```xml
 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
@@ -387,7 +387,7 @@ You can specify your own background image for the login screen here. The image w
 
 ### `<hideBackofficeLogo>`
 
-This setting is used for controlling whether or not to show the Umbraco login inside backoffice. The default value is: `false`.
+This setting is used for controlling whether or not to show the Umbraco login inside Backoffice. The default value is: `false`.
 
 ```xml
 <hideBackofficeLogo>false</hideBackofficeLogo>
@@ -395,7 +395,7 @@ This setting is used for controlling whether or not to show the Umbraco login in
 
 ## Security
 
-In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**, **`<hideDisabledUsersInBackoffice>`**, **`<allowPasswordReset>`**, **`<authCookieName>`** and **`<authCookieDomain>`**. These settings deal with backoffice users and settings for the backoffice authentication cookies.
+In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**, **`<hideDisabledUsersInBackoffice>`**, **`<allowPasswordReset>`**, **`<authCookieName>`** and **`<authCookieDomain>`**. These settings deal with Backoffice users and settings for the Backoffice authentication cookies.
 
 ```xml
 <security>
@@ -404,20 +404,20 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
     <keepUserLoggedIn>true</keepUserLoggedIn>
 
     <!-- by default this is true and if not specified in config will be true.
-    Set to false to always show a separate username field in the backoffice user editor -->
+    Set to false to always show a separate username field in the Backoffice user editor -->
     <usernameIsEmail>true</usernameIsEmail>
     
     <!-- If you prefer not to display them set this to true -->
     <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
-    <!-- set to true to enable the UI and API to allow backoffice users to reset their passwords -->
+    <!-- set to true to enable the UI and API to allow Backoffice users to reset their passwords -->
     <allowPasswordReset>true</allowPasswordReset>
 
-    <!-- set to a different value if you require the authentication cookie for backoffice users to be renamed -->
+    <!-- set to a different value if you require the authentication cookie for Backoffice users to be renamed -->
     <authCookieName>UMB_UCONTEXT</authCookieName>
 
     <!-- set to a different value if you require the authentication cookie
-    for backoffice users to be set against a different domain -->
+    for Backoffice users to be set against a different domain -->
     <authCookieDomain></authCookieDomain>
 
 </security>
@@ -432,16 +432,16 @@ This setting specifies whether the username and email address are separate field
 
 **`<hideDisabledUsersInBackoffice>`**
 If this is set to "true" it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
+not possible to re-enable their access to the Backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 **`<allowPasswordReset>`**
 The feature to allow users to reset their passwords if they have forgotten them. The feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to "false".
 
 **`<authCookieName>`**
-The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
+The authentication cookie which is set in the browser when a Backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
 
 **`<authCookieDomain>`**
-The authentication cookie which is set in the browser when a backoffice user logs in is automatically set to the current domain. This setting is excluded from the configuration file but can be added in if a different domain is required.
+The authentication cookie which is set in the browser when a Backoffice user logs in is automatically set to the current domain. This setting is excluded from the configuration file but can be added in if a different domain is required.
 
 ## Scripting
 

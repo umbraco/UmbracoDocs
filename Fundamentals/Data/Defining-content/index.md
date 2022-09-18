@@ -1,13 +1,13 @@
 ---
 meta.Title: "Defining content"
 meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
-versionFrom: 8.0.0
+versionFrom: 9.2.0
 versionTo: 10.0.0
 ---
 
 # Defining content
 
-*Here you'll find an explanation of how content is defined in v8.*
+*Here you'll find an explanation of how content is defined in Umbraco.*
 
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed, and so forth. This blueprint or definition is called a Document Type.
 
@@ -135,6 +135,69 @@ When you are happy with the settings click __Submit__.
 Ticking the __Mandatory__ toggle makes the property mandatory and the content cannot be saved if no value is entered (into the Richtext editor in this case). You have the option to add additional validation by selecting a predefined validation method under the __Custom validation__ dropdown (such as email, number, or URL) or by selecting custom validation and adding a regular expression.
 
 Submit the property and save the Document Type. If you go to the __Content section__ and click on the Home node you will now see the Content group with the Body Text property.
+
+#### Property descriptions
+
+The description for the property is not always nessecary, but it will sometimes allow you to guide the editor to use the property the right way. The property description supports some markdown and one custom collapse syntax:
+
+**Bold**
+
+You can make text in the description bold by wrapping it with `**`
+
+```md
+This is **bold**
+```
+
+**Italic**
+
+You can make text in the description italic by wrapping it with `*`
+
+```md
+This is *italic*
+```
+
+**Links**
+
+You can make links by using the syntax:
+
+```md
+[This is an absolute link](https://google.com)
+[This is a relative link](/umbraco#/media)
+```
+
+:::note
+Links will always have `target="_blank"` set. This is currently not configureable.
+:::
+
+**Images**
+
+You can embed images by using this syntax:
+
+```md
+![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
+```
+
+**Collapsible description**
+
+You can make the description collapsible by adding `--` on its own line:
+
+```md
+This is initially shown
+--
+This is initially hidden
+```
+
+Now if we put it all together we get something like this:
+```md
+This is **bold**
+This is *italic*
+[This is an absolute link](https://google.com)
+[This is a relative link](/umbraco#/media)
+--
+![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
+```
+
+![Makrdown description example](images/md-description.gif)
 
 ### Defining child nodes
 

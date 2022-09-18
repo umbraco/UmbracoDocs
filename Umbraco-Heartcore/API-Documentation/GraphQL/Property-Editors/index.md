@@ -8,6 +8,28 @@ meta.Description: "Documentation for Umbraco Heartcore GraphQL property editors 
 
 This page contains a list of all the built-in Umbraco Property Editors and their GraphQL types. The type may depend on the configuration of the specific Property Editor.
 
+## [Contentment] Data List
+
+**Editor Alias**: `Umbraco.Community.Contentment.DataList`<br>
+
+**List editor**: `Checkbox List` or `Tags`<br>
+**GraphQL Type**: `[String]`<br>
+**Can be used for filtering**: `true`
+
+**Other editors configured with `Multiple selection`**: `true`<br>
+**GraphQL Type**: `[String]`<br>
+**Can be used for filtering**: `true`
+
+**Other editors and configuration**: `true`<br>
+**GraphQL Type**: `String`<br>
+**Can be used for filtering**: `true`
+
+## Block List
+
+**Editor Alias**: `Umbraco.BlockList`<br>
+**GraphQL Type**: [`BlockListItem`](../Schema-Generation/#block-list-item)
+**Can be used for filtering**: `false`
+
 ## Checkbox
 
 **Editor Alias**: `Umbraco.TrueFalse`<br>
@@ -35,7 +57,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 **Editor Alias**: `Umbraco.ContentPicker`<br>
 **GraphQL Type**: [`Content`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true
 
 ## Date/Time
 
@@ -73,6 +95,12 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **GraphQL Type**: [`JSON`](../Schema-Generation/#json)<br>
 **Can be used for filtering**: `false`
 
+## Google Maps Single Marker
+
+**Editor Alias**: `Our.Umbraco.GMaps`<br>
+**GraphQL Type**: [`OurUmbracoGMaps`](../Schema-Generation/#our-umbraco-gmaps)<br>
+**Can be used for filtering**: `false`
+
 ## Grid layout
 
 **Editor Alias**: `Umbraco.Grid`<br>
@@ -106,15 +134,27 @@ This editor is not supported and will not be present in the generated schema
 
 ## Media Picker
 
+**Editor Alias**: `Umbraco.MediaPicker3`
+
+**Pick Multiple items**: `true`<br>
+**GraphQL Type**: [`[MediaWithCrops]`](../Schema-Generation/#media-with-crops)<br>
+**Can be used for filtering**: `false`
+
+**Pick Multiple items**: `false`<br>
+**GraphQL Type**: [`MediaWithCrops`](../Schema-Generation/#media-with-crops)<br>
+**Can be used for filtering**: `false`
+
+## Media Picker (legacy)
+
 **Editor Alias**: `Umbraco.MediaPicker`
 
 **Pick Multiple items**: `true`<br>
 **GraphQL Type**: [`[Media]`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Pick Multiple items**: `false`<br>
 **GraphQL Type**: [`Media`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 ## Member Picker
 
@@ -136,9 +176,11 @@ This editor is not supported and will not be present in the generated schema
 
 **Maximum number of items**: `1`<br>
 **GraphQL Type**: [`Link`](../Schema-Generation/#link)
+**Can be used for filtering**: `false`
 
 **Maximum number of items**: not `1`<br>
 **GraphQL Type**: [`[Link]`](../Schema-Generation/#link)
+**Can be used for filtering**: `false`
 
 ## Multinode Treepicker
 
@@ -147,22 +189,22 @@ This editor is not supported and will not be present in the generated schema
 **Node type**: `Content`<br>
 **Maximum number of items**: `1`<br>
 **GraphQL Type**: [`Content`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Content`<br>
 **Maximum number of items**: not `1`<br>
 **GraphQL Type**: [`[Content]`](../Schema-Generation/#content)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Media`<br>
 **Maximum number of items**: `1`<br>
 **GraphQL Type**: [`Media`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Media`<br>
 **Maximum number of items**: not `1`<br>
 **GraphQL Type**: [`[Media]`](../Schema-Generation/#media)<br>
-**Can be used for filtering**: `false`
+**Can be used for filtering**: `true`
 
 **Node type**: `Member`<br>
 :::note
@@ -179,11 +221,13 @@ This editor configuration is not supported and will not be present in the genera
 
 **Editor Alias**: `Umbraco.Integer`<br>
 **GraphQL Type**: `Int`
+**Can be used for filtering**: `true`
 
 ## Radio button List
 
 **Editor Alias**: `Umbraco.RadioButtonList`<br>
 **GraphQL Type**: `[String]`
+**Can be used for filtering**: `true`
 
 ## Repeatable textstrings
 

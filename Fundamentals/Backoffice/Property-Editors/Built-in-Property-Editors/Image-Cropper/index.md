@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 10.0.0
 ---
 
 # Image Cropper
@@ -120,95 +119,119 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-:::note
-The samples in this section has not been verified against the latest version of Umbraco.
-:::
+To update a content property value you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
-See the example below which is using a API controller to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 
 ```csharp
-using System;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
 
-namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values
+namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values;
+
+public class CreateImageCropperValuesController : UmbracoApiController
 {
-    public class CreateImageCropperValuesController : UmbracoApiController
+    private readonly IContentService _contentService;
+    private readonly IMediaService _mediaService;
+    private readonly MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
+
+
+    public CreateImageCropperValuesController(
+        IContentService contentService,
+        IMediaService mediaService,
+        MediaUrlGeneratorCollection mediaUrlGeneratorCollection)
     {
-        private IContentService _contentService;
-        private IMediaService _mediaService;
-        private MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
+        _contentService = contentService;
+        _mediaService = mediaService;
+        _mediaUrlGeneratorCollection = mediaUrlGeneratorCollection;
+    }
 
+    // /Umbraco/Api/CreateImageCropperValues/CreateImageCropperValues
+    [HttpPost]
+    public ActionResult<bool> CreateImageCropperValues()
+    {
+        // Create a variable for the GUID of the page you want to update
+        var contentKey = Guid.Parse("89974f8b-e213-4c32-9f7a-40522d87aa2f");
 
-        public CreateImageCropperValuesController(IContentService contentService, IMediaService mediaService, MediaUrlGeneratorCollection mediaUrlGeneratorCollection)
+        // Get the page using the GUID you've defined
+        IContent? content = _contentService.GetById(contentKey);
+        if (content == null)
         {
-            _contentService = contentService;
-            _mediaService = mediaService;
-            _mediaUrlGeneratorCollection = mediaUrlGeneratorCollection;
+            return false;
         }
 
-        // /Umbraco/Api/CreateImageCropperValues/CreateImageCropperValues
-        [HttpGet]
-        public ActionResult<string> CreateImageCropperValues()
+        // Create a variable for the GUID of the media item you want to use
+        var mediaKey = Guid.Parse("b6d4e98a-07c0-45f9-bfcc-52994f2806b6");
+
+        // Get the desired media file
+        IMedia? media = _mediaService.GetById(mediaKey);
+        if (media == null)
         {
-            // Create a variable for the GUID of the page you want to update
-            var guid = Guid.Parse("4e96411a-b8e1-435f-9322-2faee30ef5f2");
-
-            // Get the page using the GUID you've defined
-            var content = _contentService.GetById(guid); // ID of your page
-
-            // Create a variable for the GUID of the media item you want to use
-            var mediaKey = Guid.Parse("cf1ab8dc-ad0f-4a8e-974b-87b84777b0d6");
-
-            // Get the desired media file
-            var media = _mediaService.GetById(mediaKey);
-
-            // Create a variable for the image cropper and set the source
-            var cropper = new ImageCropperValue {Src = media.GetUrl("umbracoFile", _mediaUrlGeneratorCollection)};
-
-            // Serialize the image cropper value
-            var cropperValue = JsonConvert.SerializeObject(cropper);
-
-            // Set the value of the property with alias 'cropper'
-            content.SetValue("testCropper", cropperValue, "en-US");
-
-            return _contentService.Save(content).Success.ToString();
+            return false;
         }
+
+        // Create a variable for the image cropper and set the source
+        var imageCropperValue = new ImageCropperValue
+        {
+            Src = media.GetUrl("umbracoFile", _mediaUrlGeneratorCollection)
+        };
+
+        // Serialize the image cropper value
+        var propertyValue = JsonConvert.SerializeObject(imageCropperValue);
+
+        // Set the value of the property with alias "cropper"
+        // - remember to add the "culture" parameter if "cropper" is set to vary by culture
+        content.SetValue("cropper", propertyValue);
+
+        return _contentService.Save(content).Success;
     }
 }
 ```
 
-Using Modelsbuilder you can get the alias of the desired property without using a magic string (you'll need to inject `IPublishedSnapshotAccessor`):
+:::tip
+If you use Models Builder to generate source code (modes `SourceCodeAuto` or `SourceCodeManual`), you can use `nameof([generated property name])` to access the desired property without using a magic string:
 
-```csharp
-@{
-    // Set the value of the property with alias 'cropper'
-    content.SetValue(Product.GetModelPropertyType(_publishedSnapshotAccessor, x => x.TestCropper).Alias, cropperValue, "en-US");
-}
+ ```csharp
+// Set the value of the "Cropper" property on content of type MyContentType
+// - remember to add the "culture" parameter if "cropper" is set to vary by culture
+content.SetValue(nameof(MyContentType.Cropper).ToFirstLowerInvariant(), propertyValue);
 ```
+
+:::
 
 ## Get all the crop urls for a specific image
 
-You can use the "GetCropUrl" method not only in the view. But for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops and get all the crop urls for a specific image, below you can find an example. 
+Crop urls are not limited to usage within a view. `IPublishedContent` has a `GetCropUrl` extension method, which can be used to access crop URLs anywhere. 
+
+The following sample demonstrates how to use `GetCropUrl` to retrieve URLs for all crops defined on a specific image:
 
 ```csharp
-internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
+public Dictionary<string, string> GetCropUrls(IPublishedContent image)
 {
-    //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
-    Dictionary<string, string> cropUrls = new Dictionary<string, string>();
-
-    if (image.HasValue("umbracoFile"))
+    // Get the Image Cropper property value for property with alias "umbracoFile"
+    ImageCropperValue? imageCropperValue = image.Value<ImageCropperValue>("umbracoFile");
+    if (imageCropperValue?.Crops == null)
     {
-        var imageCropper = image.Value<ImageCropperValue>("umbracoFile");
-        foreach (var crop in imageCropper.Crops)
+        return new Dictionary<string, string>();
+    }
+
+    // Return all crop aliases and their corresponding crop URLs as a dictionary
+    var cropUrls = new Dictionary<string, string>();
+    foreach (ImageCropperValue.ImageCropperCrop crop in imageCropperValue.Crops)
+    {
+        // Get the cropped URL and add it to the dictionary that I will return
+        var cropUrl = crop.Alias != null
+            ? image.GetCropUrl(crop.Alias)
+            : null;
+        if (cropUrl != null)
         {
-            //Get the cropped URL and add it to the dictionary that I will return
-            cropUrls.Add(crop.Alias, image.GetCropUrl(crop.Alias));
+            cropUrls.Add(crop.Alias!, cropUrl);
         }
     }
 
