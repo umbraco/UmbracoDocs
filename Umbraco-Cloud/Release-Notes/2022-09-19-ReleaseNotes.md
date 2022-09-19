@@ -10,7 +10,7 @@ _2FA authentication - US Region Hosting - Projects Dashboard_
 
 ## [2FA authentication](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/)
 
-On Umbraco Cloud, you can in a few steps add 2-factor authentication for your Umbraco Cloud account using either On Umbraco Cloud, you can in a few steps add 2-factor authentication for your Umbraco Cloud account using either **email**, **phone**, or an **authenticator app** when logging in to the Umbraco Cloud Portal., phone, or an authenticator app when logging in to the Umbraco Cloud Portal.
+On Umbraco Cloud, you can add 2-factor authentication in a few steps for your Umbraco Cloud account using either **email**, **phone**, or an **authenticator app** when logging in to the Umbraco Cloud Portal.
 
 All you have to do to enable 2FA for Umbraco Cloud is to go to your Profile, click **Edit Profile** and choose the 2FA option.
 
