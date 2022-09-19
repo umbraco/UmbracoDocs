@@ -27,4 +27,4 @@ An example of a configuration could look something like:
 
 `Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`.
 
-Read more about the details at: [Fundamentals > Setup > Server-Setup > Runtime modes](/documentation/Fundamentals/Setup/Server-Setup/runtime-modes)
+For more information, see the [Runtime modes](/documentation/Fundamentals/Setup/Server-Setup/runtime-modes) article.
