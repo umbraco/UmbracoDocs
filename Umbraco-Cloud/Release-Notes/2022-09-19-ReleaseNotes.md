@@ -30,7 +30,7 @@ Until now, Umbraco Cloud has been exclusively hosted in the West Europe region o
 
 You can easily select which region you would like to host your Umbraco Cloud project while creating a new Cloud project.
 
-![2FA-Registration](images/2FA-Registration.gif)
+![2FA-Registration](images/2FA-Registration.png)
 
 As excited as we are about making Umbraco Cloud available in the US, it is just as exciting to have the ability to expand to **new regions in the future**. If you have specific requests regarding the next region you want Umbraco Cloud to expand to, you’re welcome to let us know at product@umbraco.com.
 
