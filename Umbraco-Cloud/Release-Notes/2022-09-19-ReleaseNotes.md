@@ -42,7 +42,7 @@ Psst…have you tried the new Projects Dashboard yet? The first official version
 
 By clicking on “Edit groups”, you can sort projects into groups with the drag-drop functionality to organize your Cloud and Heartcore projects.
 
-After saving your projects, you will be able to choose between a detailed view with relevant information for your projects such as environments, product versions, and bandwidth/media storage usage, or a more compact view with less information (you decide by using the “Settings” option).
+After saving your projects, you can choose between a detailed view with relevant information for your projects such as environments, product versions, and bandwidth/media storage usage, or a more compact view with less information. You can decide by using the “Settings” option.
 
 ![ProjectsDashboardV1](images/ProjectsDashboardV1.gif)
 
