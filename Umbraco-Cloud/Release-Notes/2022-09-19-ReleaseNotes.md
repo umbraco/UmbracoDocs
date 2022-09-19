@@ -32,7 +32,7 @@ You can select which region you would like to host your Umbraco Cloud project wh
 
 ![USRegionRegistration](images/USRegionRegistration.gif)
 
-As excited as we are about making Umbraco Cloud available in the US, it is just as exciting to have the ability to expand to **new regions in the future**. If you have specific requests regarding the next region you want Umbraco Cloud to expand to, you’re welcome to let us know at product@umbraco.com.
+As excited as we are about making Umbraco Cloud available in the US, it is exciting to have the ability to expand to **new regions in the future**. If you have specific requests regarding the next region you want Umbraco Cloud to expand to, you’re welcome to let us know at product@umbraco.com.
 
 See the blog article [Umbraco Cloud expands with US regional hosting](https://umbraco.com/blog/umbraco-cloud-expands-with-us-regional-hosting/) for more information.
 
