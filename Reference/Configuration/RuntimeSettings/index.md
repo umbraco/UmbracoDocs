@@ -25,6 +25,6 @@ An example of a configuration could look something like:
 
 `MaxRequsetLength` is specified in kilobytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
 
-`Mode` could have three values: `BackofficeDevelopment` (default), `Development` and `Production`
+`Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`.
 
 Read more about the details at: [Fundamentals > Setup > Server-Setup > Runtime modes](/documentation/Fundamentals/Setup/Server-Setup/runtime-modes)
