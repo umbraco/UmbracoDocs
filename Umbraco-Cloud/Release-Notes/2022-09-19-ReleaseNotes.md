@@ -40,7 +40,7 @@ See the blog article [Umbraco Cloud expands with US regional hosting](https://um
 
 Psst…have you tried the new Projects Dashboard yet? The first official version of the dashboard has been released. Currently, you can find a link in the projects overview, but soon the Projects Dashboard will be the default landing page after logging into Umbraco Cloud Portal.
 
-By pressing the button “Edit groups” you are able to create project groups and with simple drag-drop functionality organize your cloud and Heartcore projects in project groups.
+By clicking on “Edit groups”, you can sort projects into groups with the drag-drop functionality to organize your Cloud and Heartcore projects.
 
 After saving your projects, you will be able to choose between a detailed view with relevant information for your projects such as environments, product versions, and bandwidth/media storage usage, or a more compact view with less information (you decide by using the “Settings” option).
 
