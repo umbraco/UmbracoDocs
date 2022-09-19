@@ -46,5 +46,5 @@ After saving your projects, you can choose between a detailed view with relevant
 
 ![ProjectsDashboardV1](images/ProjectsDashboardV1.gif)
 
-You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects of your preference.
+You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects as per your preference.
 We will add new features and functionality to the dashboard in future releases starting with a filtering system as one of the next new additions.
