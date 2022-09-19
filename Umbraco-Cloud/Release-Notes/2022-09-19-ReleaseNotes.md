@@ -26,7 +26,7 @@ See the [2-factor authentication on Umbraco Cloud documentation](https://our.umb
 
 ## US Region Hosting
 
-Until now, Umbraco Cloud has been exclusively hosted in the West Europe region on Azure. Including **East US** as an option and being able to offer regional hosting to agencies, partners, and end clients that are located or work in the US is a big milestone and enabler for Umbraco Cloud.
+Until now, Umbraco Cloud has been exclusively hosted in the West Europe region on Azure. Including **East US** as an option and offering regional hosting to agencies, partners, and end clients located or working in the US is a big milestone and enabler for Umbraco Cloud.
 
 You can easily select which region you would like to host your Umbraco Cloud project while creating a new Cloud project.
 
