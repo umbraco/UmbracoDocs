@@ -290,6 +290,7 @@ This can be exemplified by writing out the HTML structure:
                 <!-- Each razor view/custom view must handle/inject where the 'area-container' should be printed.
                 Structure is as following: -->
                 <div class="umb-block-grid__area-container"
+                     data-area-grid-columns="9"
                      style="--umb-block-grid--area-grid-columns: 9;"
                 >
 
@@ -300,6 +301,7 @@ This can be exemplified by writing out the HTML structure:
                         data-area-row-span="1"
                         data-area-alias="MyAreaAlias"
                         style="
+                        --umb-block-grid--grid-columns: 3;
                         --umb-block-grid--area-column-span: 3;
                         --umb-block-grid--area-row-span: 1;
                         ">
