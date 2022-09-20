@@ -53,7 +53,7 @@ If you now go to `/umbraco/` for example from a different IP address the login s
 ## Rename your Umbraco-folder
 
 :::Note
-*Important note*: Renaming your Umbraco folder is currently not supported on Umbraco Cloud.
+Renaming your Umbraco folder is currently not supported on Umbraco Cloud.
 
 *Important note 2*: Not all packages will keep working if you rename your Umbraco folder. Please be aware of this risk and test it at your local environment first.
 :::
