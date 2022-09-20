@@ -8,7 +8,7 @@ Here you find some tips and trick for hardening the security of your Umbraco ins
 
 ## Lock down access to your Umbraco folder (IIS)
 
-It’s considered a good practice to lock down the Umbraco folder to specific IP-addresses and/or IP-ranges to ensure this folder is not available to everyone.
+It’s considered a good practice to lock down the Umbraco folder to specific IP addresses and/or IP ranges to ensure this folder is not available to everyone.
 
 The prerequisite of this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md)
 
