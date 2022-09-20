@@ -21,7 +21,7 @@ The TransformingIndexValues event allows you to manipulate the data that will be
 
 In the [Quick Start](Quick-Start/index.md) documentation you can see how to perform a search with Examine. That is great if you want to search between node names or you know that you always want to search for a specific field - e.g. `bodyText`.
 
-However, what if you want to search through several different node types and search across many different fields, you will typically need to have a query that looks like this:
+However, what if you want to search through different node types and search across many different fields, you will typically need to have a query that looks like this:
 
 ```csharp
 var textFields = new[] { "title", "description",  "content", .... };
