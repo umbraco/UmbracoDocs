@@ -1,6 +1,6 @@
-message: "Write shorter sentences (less than 40 words)."
+message: "Write shorter sentences (less than 25 words)."
 extends: occurrence
 scope: sentence
 level: warning
-max: 40
+max: 25
 token: \b(\w+)\b
