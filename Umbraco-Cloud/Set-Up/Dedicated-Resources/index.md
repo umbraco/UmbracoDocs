@@ -26,7 +26,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 - Select *Dedicated Resources* from the *Settings* menu.
 
-![Upgrade plan step 1](images/Step1.png)
+![Upgrade plan step 1a](images/Step1a.png)
 
 - There are currently three dedicated options for you to choose among for the Professional plans. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
