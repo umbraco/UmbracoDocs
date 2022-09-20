@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 Here you can find some tips and tricks for hardening the security of your Umbraco installation.
 
-## Lock down access to your Umbraco-folders (IIS)
+## Lock down access to your Umbraco folders (IIS)
 
 By default, there are some folders in your Umbraco installation that should only be used by authenticated users. It’s considered a good practice to lock down these folders to specific IP addresses and/or IP ranges to make sure not everyone can access these.
 The folders we want to lock down are `App_Plugins`, `Config`, and `Umbraco`.
