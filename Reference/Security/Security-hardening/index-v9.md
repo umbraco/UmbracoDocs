@@ -23,7 +23,7 @@ If you’ve made sure that you’ve installed this on your server we can start l
 </rule>
 ```
 
-Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbalancing purposes. If you're loadbalancing you should also add umbraco/webservices to the rule.
+Some older versions of Umbraco also relied on `/umbraco/webservices/`  for load-balancing purposes. If you're load-balancing you should also add `umbraco/webservices`  to the rule.
 
 ```xml
 <rule name="Ignore" stopProcessing="true">
