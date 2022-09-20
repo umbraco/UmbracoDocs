@@ -111,12 +111,12 @@ This is explained in more detail below.
 
 ### The basic setup for a Block Editor
 
-Instantiate a Model Object and load dependencies. Provide the basic structure for the `layout` property when reciving the reference to it:
+Instantiate a Model Object and load dependencies. Provide the basic structure for the `layout` property when receiving the reference to it:
 
 ```js
 // We must get a scope that exists in all the lifetime of this data. Across variants and split-view.
 var scopeOfExistence = $scope;
-// Setup your component to require umbVariantContentEditors and vm.umbElementEditorContent. If one of them is avaiable use the method getScope to retrive a shared scope for multiple editors of this content.
+// Setup your component to require umbVariantContentEditors and vm.umbElementEditorContent. If one of them is avaiable use the method getScope to retrieve a shared scope for multiple editors of this content.
 if(vm.umbVariantContentEditors && vm.umbVariantContentEditors.getScope) {
     scopeOfExistence = vm.umbVariantContentEditors.getScope();
 } else if(vm.umbElementEditorContent && vm.umbElementEditorContent.getScope) {
