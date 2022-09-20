@@ -4,7 +4,7 @@ versionFrom: 9.0.0
 
 # Umbraco Security Hardening
 
-Here you find some tips and trick for hardening the security of your Umbraco installation.
+Here you can find some tips and tricks for hardening the security of your Umbraco installation.
 
 ## Lock down access to your Umbraco-folders (IIS)
 
