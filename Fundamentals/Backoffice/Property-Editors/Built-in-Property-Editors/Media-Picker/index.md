@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.1.0
-versionTo: 8.14.0
+versionTo: 8.13.0
 ---
 
 # Media Picker (Legacy)
