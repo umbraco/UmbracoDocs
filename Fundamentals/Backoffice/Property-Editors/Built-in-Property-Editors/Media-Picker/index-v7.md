@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Media Picker #
+# Media Picker
 
 `Alias: Umbraco.MediaPicker2`
 
@@ -29,7 +29,6 @@ This property editors returns a single item if the "Pick multiple items" data ty
     }
 }
 ```
-
 
 ## Typed Example (multiple disabled)
 
