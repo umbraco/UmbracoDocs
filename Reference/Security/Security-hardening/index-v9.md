@@ -14,7 +14,7 @@ The prerequisite for this to work is that you’re using [IISRewrite](../../Rout
 
 If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco folders. This can be done by following these three steps:
 
-1. We are going to lock down /Umbraco/, but because API-controllers and Surface-controller will use the path /umbraco/api/ and /umbraco/surface/ these will also be locked down. Our first rule in the IISRewrite.config will be used to make sure that these are not locked by IP-address.
+1. We are going to lock down `/Umbraco/`, but because API-controllers and Surface-controller will use the path `/umbraco/api/` and `/umbraco/surface/` these will also be locked down. Our first rule in the `IISRewrite.config` file will be used to make sure that these are not locked by IP address.
 
 ```xml
 <rule name="Ignore" stopProcessing="true">
