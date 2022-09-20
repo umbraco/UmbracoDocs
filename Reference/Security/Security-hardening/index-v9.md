@@ -12,7 +12,7 @@ By default, there are some folders in your Umbraco installation that should only
 The folders we want to lock down are `App_Plugins`, `Config`, and `Umbraco`.
 The prerequisite for this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md).
 
-If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco-folders. This can be down by following these three steps.
+If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco folders. This can be done by following these three steps:
 
 1. We are going to lock down /Umbraco/, but because API-controllers and Surface-controller will use the path /umbraco/api/ and /umbraco/surface/ these will also be locked down. Our first rule in the IISRewrite.config will be used to make sure that these are not locked by IP-address.
 
