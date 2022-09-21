@@ -30,7 +30,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 - There are currently three dedicated options for you to choose among for the Professional plans. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-![Upgrade plan step 1](images/Step2.png)
+![Upgrade plan step 2a](images/Step2a.png)
 
 - By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
