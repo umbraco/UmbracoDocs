@@ -38,4 +38,18 @@ You can use the Microsoft Authenticator App for both iOS and Android or any othe
 
 With the phone authenticator, when you log in to the Umbraco Cloud portal, you can choose to either receive an SMS with a code to enter when login in or a call to log you in.
 
+:::note
+If you need to change phone number, make sure that before deactivating the old number make sure to change to the new number before the old number is disabled.
+:::
+
 ![Phone authentication](images/Phone-auth.png)
+
+## Disabeling 2-factor authentication
+
+You can always disabel 2-factor authentication from your profile again after having it enabled.
+
+To disable 2-factor authentication for your user, you will need to use the authentication method that you had enabled to disable it again.
+
+If you had phone authentication enabled, it will then need to be use it to disabeling it again.
+
+The same is the case for email authentication.
