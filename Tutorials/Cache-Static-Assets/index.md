@@ -63,7 +63,7 @@ public class StaticFilesComposer : IComposer
                     var headers = ctx.Context.Response.GetTypedHeaders();
 
                     // Update or set Cache-Control header
-                    var cacheControl = headers.CacheControl ?? new CacheControlHeaderValue();
+                    CacheControlHeaderValue cacheControl = headers.CacheControl ?? new CacheControlHeaderValue();
                     cacheControl.Public = true;
                     cacheControl.MaxAge = TimeSpan.FromDays(365);
                     headers.CacheControl = cacheControl;
