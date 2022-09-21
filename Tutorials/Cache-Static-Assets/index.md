@@ -76,22 +76,3 @@ public class StaticFilesComposer : IComposer
 For setting `Cache-Control` max-age header for images processed by the ImageSharp middleware, you can set the `Umbraco:CMS:Imaging:Cache:BrowserMaxAge` setting.
 
 See the [Images Settings](https://our.umbraco.com/Documentation/Reference/Configuration/ImagingSettings/) article for more information.
-
-```json  
-"Umbraco": {
-    "CMS": {
-      "Imaging": {
-        "Cache": {
-          "BrowserMaxAge": "365.00:00:00",
-          "CacheMaxAge": "365.00:00:00",
-          "CachedNameLength": 8,
-          "CacheFolder": "~/umbraco/Data/TEMP/MediaCache"
-        },
-        "Resize": {
-          "MaxWidth": 5000,
-          "MaxHeight": 5000
-        }
-      }
-    }
-  }
-```
