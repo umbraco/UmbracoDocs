@@ -21,6 +21,8 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Hosting;
 using Umbraco.Extensions;
 
+namespace My.Site.Composers;
+
 public class StaticFilesComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
