@@ -23,7 +23,7 @@ The following snippet contains all the available options, with default values, a
       "VersionCheckPeriod": 7,
       "IconsPath": "~/umbraco/assets/icons",
       "UmbracoCssPath": "~/css",
-      "UmbracoScriptsPath": "~/css",
+      "UmbracoScriptsPath": "~/scripts",
       "UmbracoMediaPath": "~/media",
       "UmbracoMediaPhysicalRootPath": "X:/Shared/Media",
       "InstallMissingDatabase": false,
