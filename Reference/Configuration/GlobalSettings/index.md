@@ -18,7 +18,7 @@ The following snippet contains all the available options, with default values, a
       "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,",
       "TimeOut": "00:20:00",
       "DefaultUILanguage": "en-US",
-      "HideTopLevelNodeFromPath": false,
+      "HideTopLevelNodeFromPath": true,
       "UseHttps": false,
       "VersionCheckPeriod": 7,
       "IconsPath": "~/umbraco/assets/icons",
