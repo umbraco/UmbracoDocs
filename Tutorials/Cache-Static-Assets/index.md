@@ -28,9 +28,8 @@ public class StaticFilesComposer : IComposer
 
     private class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
-        private readonly GlobalSettings _globalSettings;
-        private static readonly HashSet<string> _fileExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        // These are the extensions of the file types we want to cache (add and remove as you see fit)
+        private static readonly HashSet<string> _cachedFileExtensions = new(StringComparer.OrdinalIgnoreCase)
         {
             ".ico",
             ".css",
@@ -38,6 +37,8 @@ public class StaticFilesComposer : IComposer
             ".svg",
             ".woff2"
         };
+
+        private readonly string _backOfficePath;
 
         public ConfigureStaticFileOptions(IOptions<GlobalSettings> globalSettings, IHostingEnvironment hostingEnvironment)
         {
