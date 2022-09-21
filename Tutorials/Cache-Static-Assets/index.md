@@ -61,7 +61,7 @@ public class StaticFilesComposer : IComposer
                 var fileExtension = Path.GetExtension(ctx.File.Name);
                 if (_cachedFileExtensions.Contains(fileExtension))
                 {
-                    var headers = ctx.Context.Response.GetTypedHeaders();
+                    ResponseHeaders headers = ctx.Context.Response.GetTypedHeaders();
 
                     // Update or set Cache-Control header
                     CacheControlHeaderValue cacheControl = headers.CacheControl ?? new CacheControlHeaderValue();
