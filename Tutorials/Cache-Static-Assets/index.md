@@ -46,8 +46,6 @@ public class StaticFilesComposer : IComposer
         public void Configure(StaticFileOptions options)
             => options.OnPrepareResponse = ctx =>
             {
-                string backOfficePath = _globalSettings.GetBackOfficePath(_hostingEnvironment);
-
                 // Exclude Umbraco backoffice assets
                 if (ctx.Context.Request.Path.StartsWithSegments(backOfficePath))
                 {
