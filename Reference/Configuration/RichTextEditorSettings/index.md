@@ -75,7 +75,7 @@ When specifying these, every object should contain:
 Allows you to specify custom key value pairs for the rich text editor.
 
 ### Examples
-Remove default ```<p>``` tag
+Remove default ```<p>``` tag.
 ```json
   "Umbraco": {
     "CMS": {
@@ -87,3 +87,21 @@ Remove default ```<p>``` tag
     }
   }
 ```
+
+Add custom styles to the formats dropdown list.
+:::tip
+Use a text editor to find and replace `\"` with `"`. This will allow you to edit the json file in an easier to read format. Don't forget to add the `\` back in when you are ready to paste the code back into your app settings.
+:::
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "RichTextEditor": {
+        "CustomConfig": {
+          "style_formats": "[{\"title\":\"Headers\",\"items\":[ {\"title\":\"Heading 1\",\"block\":\"h1\"}, {\"title\":\"Heading 2\",\"block\":\"h2\"}, {\"title\":\"Heading 3\",\"block\":\"h3\"}, {\"title\":\"Heading 4\",\"block\":\"h4\"}, {\"title\":\"Heading 5\",\"block\":\"h5\"} ]}]"
+        }
+      }
+    }
+  }
+```
+
