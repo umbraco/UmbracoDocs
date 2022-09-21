@@ -59,7 +59,7 @@ public class StaticFilesComposer : IComposer
 
                 // Set headers for specific file extensions
                 var fileExtension = Path.GetExtension(ctx.File.Name);
-                if (_fileExtensions.Contains(fileExtension))
+                if (_cachedFileExtensions.Contains(fileExtension))
                 {
                     var headers = ctx.Context.Response.GetTypedHeaders();
 
