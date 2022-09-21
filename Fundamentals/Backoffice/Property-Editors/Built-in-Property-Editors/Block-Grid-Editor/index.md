@@ -45,7 +45,7 @@ Once you have added an Element Type as a Block Type on your Block Grid Data Type
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
-### Editor Appearance
+### Block Appearance
 
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
@@ -53,13 +53,6 @@ By configuring the properties in the group you can customize the user experience
 - **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
 - **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
 - **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
-
-### Data Models
-
-It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
-
-- **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
-- **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
 
 ### Catalogue appearance
 
@@ -70,12 +63,25 @@ These properties refers to how the Block is presented in the Block catalogue, wh
 - **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+### Layout options
+
+**TO BE DONE**
+### Data Models
+
+It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
+
+- **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+- **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
+
+### Areas
+
+**TO BE DONE**
 
 ### Advanced
 
 These properties are relevant when you work with custom views.
 
-- **Force hide content editor** - If you made a custom view that enables you to edit the content part of a Block. Then you might want to hide the content-editor from the block editor overlay.
+- **Hide content editor** - If you made a custom view that enables you to edit the content part of a Block. Then you might want to hide the ability to edit the content in the block editor overlay.
 
 ## Editing Blocks
 
