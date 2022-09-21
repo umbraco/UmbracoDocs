@@ -28,7 +28,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 ![Upgrade plan step 1a](images/Step1a.png)
 
-- There are currently three dedicated options for you to choose among for the Professional plans. two for Standard plans and one for Starter. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
+- There are currently three dedicated options for you to choose from the Professional plan, two dedicated options from the Standard plan, and one dedicated option from the Starter plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
 ![Upgrade plan step 2a](images/Step2a.png)
 
