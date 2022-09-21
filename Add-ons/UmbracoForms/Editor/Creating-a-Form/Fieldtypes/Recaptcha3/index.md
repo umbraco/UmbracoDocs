@@ -30,7 +30,7 @@ Follow these step to enable reCAPTCHA V3 in Umbraco Form:
    }
 ```
 
-5. configure site keys by adding your public and private keys.
+5. Configure site keys by adding your public and private keys.
 
 You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
 
