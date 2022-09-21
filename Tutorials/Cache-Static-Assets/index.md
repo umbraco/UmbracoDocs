@@ -41,10 +41,7 @@ public class StaticFilesComposer : IComposer
         private readonly string _backOfficePath;
 
         public ConfigureStaticFileOptions(IOptions<GlobalSettings> globalSettings, IHostingEnvironment hostingEnvironment)
-        {
-            _globalSettings = globalSettings.Value;
-            _hostingEnvironment = hostingEnvironment;
-        }
+            => _backOfficePath = globalSettings.Value.GetBackOfficePath(hostingEnvironment);
 
         public void Configure(StaticFileOptions options)
             => options.OnPrepareResponse = ctx =>
