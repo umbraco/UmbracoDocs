@@ -49,7 +49,7 @@ public class StaticFilesComposer : IComposer
             => options.OnPrepareResponse = ctx =>
             {
                 // Exclude Umbraco backoffice assets
-                if (ctx.Context.Request.Path.StartsWithSegments(backOfficePath))
+                if (ctx.Context.Request.Path.StartsWithSegments(_backOfficePath))
                 {
                     return;
                 }
