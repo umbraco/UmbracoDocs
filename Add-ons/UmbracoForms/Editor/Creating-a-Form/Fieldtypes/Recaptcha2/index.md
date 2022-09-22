@@ -22,15 +22,13 @@ Follow these steps to enable reCAPTCHA V2 in Umbraco Forms:
     "Forms": {
       "FieldTypes": {
         "Recaptcha2": {
-            "SiteKey": "",
+            "PublicKey": "",
             "PrivateKey": ""
           }
         }
       }
    }
 ```
-
-5. Configure site keys by adding your public and private keys.
 
 You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
 
@@ -39,8 +37,8 @@ You can create your keys by logging into your [reCAPTCHA account](https://www.go
 You can configure your public and private keys in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
 
 ```xml
-<setting key="RecaptchaV3SiteKey" value="..." />
-<setting key="RecaptchaV3PrivateKey" value="..." />
+<setting key="RecaptchaPublicKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG" />
+<setting key="RecaptchaPrivateKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG-" />
 ```
 
 ![reCAPTCHA v2](images/recaptcha2-v9.png)

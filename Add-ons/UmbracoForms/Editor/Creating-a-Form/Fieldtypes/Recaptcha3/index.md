@@ -5,7 +5,9 @@ versionTo: 10.0.0
 
 # reCAPTCHA V3
 
-In Umbraco Forms reCAPTCHA V3 comes out-of-the-box to help you to protect your site from spam, malicious people and so on.
+In Umbraco Forms, reCAPTCHA V3 comes out of the box.
+
+reCAPTCHA v3 allows you to verify if an interaction is legitimate without any user interaction.
 
 ## Enabling reCAPTCHA V3
 
