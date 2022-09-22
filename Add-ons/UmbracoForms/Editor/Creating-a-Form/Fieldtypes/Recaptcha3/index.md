@@ -11,7 +11,7 @@ In Umbraco Forms reCAPTCHA V3 comes out-of-the-box to help you to protect your s
 
 Follow these steps to enable reCAPTCHA V3 in Umbraco Forms:
 
-1. Go to the forms section in the backoffice
+1. Go to the **Forms** section in the backoffice.
 2. Find the form that should have ReCAPTCHA  enabled
 3. Add a new question using **ReCAPTCHA v3 with Score**
 4. Make sure the field is set as  **Mandatory**.
