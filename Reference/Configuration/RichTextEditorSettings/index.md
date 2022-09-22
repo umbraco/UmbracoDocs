@@ -88,7 +88,7 @@ Remove default ```<p>``` tag.
   }
 ```
 
-Add custom styles to the formats dropdown list.
+Add custom styles to the **Formats** dropdown list in the Richtext Editor.
 :::tip
 Use a text editor to find and replace `\"` with `"`. This will allow you to edit the json file in an easier to read format. Don't forget to add the `\` back in when you are ready to paste the code back into your app settings.
 :::
