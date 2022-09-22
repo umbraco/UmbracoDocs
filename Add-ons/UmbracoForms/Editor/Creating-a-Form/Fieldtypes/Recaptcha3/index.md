@@ -9,7 +9,7 @@ In Umbraco Forms reCAPTCHA V3 comes out-of-the-box to help you to protect your s
 
 ## Enabling reCAPTCHA V3
 
-Follow these step to enable reCAPTCHA V3 in Umbraco Form:
+Follow these steps to enable reCAPTCHA V3 in Umbraco Forms:
 
 1. Go to the forms section in the backoffice
 2. Find the form that should have ReCAPTCHA  enabled
