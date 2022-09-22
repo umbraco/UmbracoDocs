@@ -45,4 +45,4 @@ You can configure your public and private keys in the `UmbracoForms.config` file
 
 ![reCAPTCHA v2](images/recaptcha2-v9.png)
 
-Once reCAPTCHA V2 has been enabled make sure to consult the [reCAPTCHA V2 Documentation](https://developers.google.com/recaptcha/docs/display) for how to leverage it in the best possible way on your website.
+For information on how to use reCAPTCHA in the best possible way on your website, see the [reCAPTCHA V2 Documentation](https://developers.google.com/recaptcha/docs/display).
