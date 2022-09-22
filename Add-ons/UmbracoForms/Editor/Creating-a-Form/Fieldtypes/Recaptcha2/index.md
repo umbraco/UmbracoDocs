@@ -12,7 +12,7 @@ In Umbraco Forms, reCAPTCHA V2 comes out of the box to help you to protect your 
 Follow these steps to enable reCAPTCHA V2 in Umbraco Forms:
 
 1. Go to the **Forms** section in the backoffice.
-2. Find the form that should have ReCAPTCHA  enabled
+2. Find the form that should have **ReCAPTCHA v2** enabled.
 3. Add a new question using **ReCAPTCHA v2**
 4. Make sure the field is set as  **Mandatory**.
 5. Configure ReCAPTCHA settings in the `appSettings.json` file:
