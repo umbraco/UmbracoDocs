@@ -102,16 +102,13 @@ The following rule can be added to your web.config file in the `system.webServer
 <rule name="RequestBlockByIP" patternSyntax="Wildcard" stopProcessing="true">
     <match url="*"/>
     <conditions>
-    <add input="{REMOTE_ADDR}" negate="false" pattern="123.123.123.123"/>
+    <add input="{HTTP_CF_Connecting_IP}" negate="false" pattern="123.123.123.123"/>
     </conditions>
     <action type="AbortRequest"/>
 </rule>
 ```
 For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
-:::note
-You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
-:::
 
 ## Restrict backoffice access using IP filtering
 
