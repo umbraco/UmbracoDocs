@@ -2,6 +2,12 @@
 
 The following changes in Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' for new and existing custom hostnames.
 
+:::tip
+**Not sure if your Cloud project is using a CAA record or not?**
+
+You can use this [CAA Test](https://caatest.co.uk/) to check whether a CAA record is configured on your hostname(s).
+:::
+
 ## Certificates for new custom hostnames
 
 From September 26, 2022, certificates are issued using  'Google Trust Services' instead of 'DigiCert', and Certificate validity will be decreased from 1 year to 90 days.
