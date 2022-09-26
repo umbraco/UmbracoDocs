@@ -261,7 +261,7 @@ In the same way that Umbraco entities often have dependencies on one another, th
 
 If the dependent entity is also deployable, it will be included in the transfer.  Or if not, the deployment will be blocked and the reason presented to the user.
 
-In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Exist` to ensure the dependent entity not only exists but also matches in all properties.
+In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
 
 ```C#
         private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
@@ -298,6 +298,7 @@ This is done via the following code, which can be triggered from a Umbraco compo
 
 ```C#
 UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
+```
 
 ### Disk Based Transfers
 
