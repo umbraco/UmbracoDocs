@@ -61,12 +61,6 @@ All hostnames added to an Umbraco Cloud project's environment will get a TLS (HT
 
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 
-:::note
-The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames will change for new and existing hostnames in [September and October 2022](ca-record-migration.md).
-
-No action is required unless you set a Certificate Authority Authorization (CAA) record on your domain.
-:::
-
 ### Is your Domain hosted on your own Cloudflare account?
 
 Cloudflare is a popular DNS provider, which offers a variety of different services to improve performance and security. We also use it for DNS and Hostnames on Umbraco Cloud.
@@ -83,7 +77,7 @@ When your domain is also hosted with Cloudflare, you need to enroll the hostname
 CAA is a [DNS resource record type](https://tools.ietf.org/html/rfc6844) defined in RFC 6844 that allows a domain owner to indicate which Certificate Authorities (CAs) are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
 
 ```sql
-example.com. IN CAA 0 issue "digicert.com"
+example.com. IN CAA 0 issue "pki.goog"
 ```
 
 This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
@@ -91,8 +85,14 @@ This is necessary because DigiCert is the Certificate Authority for the certific
 CAA records can be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need to remove or update it. If you want to use wildcards and allow certificates for any subdomain, the CAA record should look like this:
 
 ```sql
-example.com. IN CAA 0 issuewild "digicert.com"
+example.com. IN CAA 0 issuewild "pki.goog"
 ```
+
+:::note
+The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
+
+**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
+:::
 
 ## [Upload certificates manually](Security-Certificates)
 
