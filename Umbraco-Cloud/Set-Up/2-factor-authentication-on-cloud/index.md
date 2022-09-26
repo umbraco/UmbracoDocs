@@ -39,7 +39,7 @@ You can use the Microsoft Authenticator App for both iOS and Android or any othe
 With the phone authenticator, when you log in to the Umbraco Cloud portal, you can choose to either receive an SMS with a code to enter when login in or a call to log you in.
 
 :::note
-If you need to change phone number, make sure that before deactivating the old number make sure to change to the new number before the old number is disabled.
+If you need to change phone number, make sure that before deactivating the old number to change to the new number before the old number is disabled.
 :::
 
 ![Phone authentication](images/Phone-auth.png)
