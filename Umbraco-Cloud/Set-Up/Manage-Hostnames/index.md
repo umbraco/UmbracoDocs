@@ -91,7 +91,7 @@ example.com. IN CAA 0 issuewild "pki.goog"
 :::note
 The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
 
-**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
+**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
 :::
 
 ## [Upload certificates manually](Security-Certificates)
