@@ -80,7 +80,7 @@ CAA is a [DNS resource record type](https://tools.ietf.org/html/rfc6844) defined
 example.com. IN CAA 0 issue "pki.goog"
 ```
 
-This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
+This is necessary because Google Trust Services is the Certificate Authority for the certificates issued on Umbraco Cloud.
 
 CAA records can be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need to remove or update it. If you want to use wildcards and allow certificates for any subdomain, the CAA record should look like this:
 
