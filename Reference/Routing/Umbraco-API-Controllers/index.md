@@ -117,9 +117,27 @@ E.g.
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
-*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application. 
+*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application.
 
-To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance: 
+:::note
+To exclude any endpoint or folders in your directory from Umbraco's routing, add it to the `ReservedPaths` setting in the `appsettings.json` file.
+:::
+
+For example:
+
+```json
+"Umbraco": {
+ "CMS": {
+  "Global": {
+    "ReservedPaths": "~/api,~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,"
+      }
+   }
+}
+```
+
+For more information, see the [Global Settings](../../../Reference/Configuration/GlobalSettings/index.md) article.
+
+To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance:
 
 ```C#
 [Route("products/[action]")]

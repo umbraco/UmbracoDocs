@@ -212,12 +212,6 @@ It is possible to hide/disable tours using a C# composer by adding to the TourFi
 
 Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
 
-:::note
-The option to filter tours based on the file names, `AddFilterByFile`, is currently not working.
-
-The [issue is reported](https://github.com/umbraco/Umbraco-CMS/issues/12667), and this document will be updated as soon as it has been resolved.
-:::
-
 ```c#
 using System.Text.RegularExpressions;
 using Umbraco.Cms.Core.Composing;
@@ -237,7 +231,7 @@ namespace Umbraco.Docs.Samples.Web.BackofficeTours
             // Filter any tours in the file that is custom-tours.json
             // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/
             builder.TourFilters()
-                .AddFilterByFile("custom-tours.json");
+                .AddFilterByFile("custom-tours"); //Without extension
 
             // Filter out one or more tour JSON files from a specific plugin/package
             // Found in App_Plugins/MyCustomBackofficeTour/backoffice/tours/custom-tours.json

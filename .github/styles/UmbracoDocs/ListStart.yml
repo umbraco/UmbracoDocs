@@ -1,7 +1,7 @@
 extends: existence
 message: "Start each option with a capital letter."
 link: https://github.com/testthedocs/vale-styles/blob/master/OpenStack/ListStart.yml
-level: error
+level: warning
 scope: list
 nonword: true
 tokens:

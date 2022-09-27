@@ -84,52 +84,90 @@ If you are working locally, you can create CSS and JS files outside of the Backo
 
 ## Bundling & Minification for JavaScript and CSS
 
-You can use whichever tool you are comfortable with for bundling & minification by implementing the `IRuntimeMinifier` interface in your custom minifier class, though it is worth noting that Umbraco 9 ships with Smidge which offers lightweight runtime bundling and minification.
+You can use whichever tool you are comfortable with for bundling & minification by implementing the `IRuntimeMinifier` interface in your custom minifier class, though it is worth noting that Umbraco 9+ ships with Smidge which offers lightweight runtime bundling and minification.
 
 You can create various bundles of your site's CSS or JavaScript files in your code that can be rendered later in your views. There can be a single bundle for the entire site, or a common bundle for the files you want to be loaded on every page, as well as page-specific bundles, just by listing your resources in the order you like.
+
+**Step 1:** Create a `INotificationHandler<UmbracoApplicationStartingNotification>`
+
 ```csharp
-using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.WebAssets;
 
-namespace MyNamespace
+namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 {
-    public class MyComponent : IComponent
+    public class CreateBundlesNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
     {
         private readonly IRuntimeMinifier _runtimeMinifier;
+        private readonly IRuntimeState _runtimeState;
 
-        public MyComponent(IRuntimeMinifier runtimeMinifier) => _runtimeMinifier = runtimeMinifier;
-
-        public void Initialize()
-        {
-            _runtimeMinifier.CreateJsBundle("inline-js-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/scripts/myScript1.js", "~/scripts/myScript2.js" });
-
-            _runtimeMinifier.CreateCssBundle("inline-css-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/css/mystylesheet.css" });
+        public CreateBundlesNotificationHandler(IRuntimeMinifier runtimeMinifier, IRuntimeState runtimeState) {
+            _runtimeMinifier = runtimeMinifier;
+            _runtimeState = runtimeState;
         }
+        public void Handle(UmbracoApplicationStartingNotification notification)
+        {
+            if (_runtimeState.Level == RuntimeLevel.Run)
+            {
+                _runtimeMinifier.CreateJsBundle("registered-js-bundle",
+                BundlingOptions.NotOptimizedAndComposite,
+                new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
 
-        public void Terminate() { }
+                _runtimeMinifier.CreateCssBundle("registered-css-bundle",
+                    BundlingOptions.NotOptimizedAndComposite,
+                    new[] { "~/css/test-style.css" });
+            }
+        }
     }
-
-    public class MyComposer : ComponentComposer<MyComponent>
-    { }
+}
+```
+**Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
+        .Build();
 }
 ```
 
-Then, you can render the bundles by the bundle name in a view template file:
+**Step 3:** Render the bundles by the bundle name in a view template file using the Smidge TagHelper:
 
 ```csharp
 <html>
 <head>
-    <script src="inline-js-bundle" type="text/javascript"></script>
-    <link rel="stylesheet" href="inline-css-bundle"/>
+    <script src="registered-js-bundle"></script>
+    <link rel="stylesheet" href="registered-css-bundle"/>
 </head>
 </html>
 ```
 
-Or by using our `IRuntimeMinifier`:
+:::note
+The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
+
+If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
+
+```csharp
+@using Microsoft.Extensions.Options
+@using Umbraco.Cms.Core.Configuration.Models
+@inject IOptions<HostingSettings> hostingSettings
+@{
+    var debugMode = hostingSettings.Value.Debug;
+}
+```
+```csharp
+    <script src="registered-js-bundle" debug="@debugMode"></script>
+    <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
+```
+:::
+
+Or by using `IRuntimeMinifier`:
 
 :::note
 In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
@@ -141,39 +179,30 @@ In case you are in Debug mode, your bundles won't be minified or bundled, so you
 
 <html>
 <head>
-    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("inline-js-bundle"))
-    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("inline-css-bundle"))
+    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("registered-js-bundle"))
+    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("registered-css-bundle"))
 </head>
 </html>
 ```
 
-Another possibility is to declare bundles inline in your views using Smidge directly:
-
-:::note
-SmidgeHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. You will need to set the `debug` parameter in the SmidgeHelper method.
-:::
+Another possibility is to declare bundles inline in your views:
 
 ```csharp
-@using Smidge
+@using Umbraco.Cms.Core.WebAssets
+@inject IRuntimeMinifier runtimeMinifier
 @{
-    SmidgeHelper
-        .CreateJsBundle("inline-js-bundle")
-        .RequiresJs("~/scripts/myScript1.js", "~/scripts/myScript2.js");
+    runtimeMinifier.CreateJsBundle("inline-js-bundle",
+    BundlingOptions.NotOptimizedAndComposite,
+    new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
 
-    SmidgeHelper
-        .CreateCssBundle("inline-css-bundle")
-        .RequiresCss("~/css/mystylesheet.css");
+    runtimeMinifier.CreateCssBundle("inline-css-bundle",
+        BundlingOptions.NotOptimizedAndComposite,
+        new[] { "~/css/test-style.css" });
 }
 <html>
 <head>
-    <environment names="Development">
-        @await SmidgeHelper.CssHereAsync("inline-css-bundle", debug: true)
-        @await SmidgeHelper.JsHereAsync("inline-js-bundle", debug: true)
-    </environment>
-    <environment exclude="Development">
-        @await SmidgeHelper.CssHereAsync("inline-css-bundle", debug: false)
-        @await SmidgeHelper.JsHereAsync("inline-js-bundle", debug: false)
-    </environment>
+    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("inline-js-bundle"))
+    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("inline-css-bundle"))
 </head>
 </html>
 ```
