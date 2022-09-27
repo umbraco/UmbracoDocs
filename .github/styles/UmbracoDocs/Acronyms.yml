@@ -22,6 +22,7 @@ exceptions:
   - ASP
   - REST
   - HTTP
+  - HTTPS
   - CURL
   - BASE
   - UDA
@@ -36,3 +37,4 @@ exceptions:
   - HAL
   - LINK
   - DLL
+  - CMS
