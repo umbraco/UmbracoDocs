@@ -19,8 +19,9 @@ To ensure that the documentation is readable and has a similar style throughout 
   - [Umbraco Terms](#umbraco-terms)
   - [Names](#names)
   - [Brands](#brands)
-- [Use Vale locally](#using-vale-locally)
-- [Visual Studio Code Extension](#visual-studio-code-extension)
+- [Test the docs yourself](#test-the-docs-yourself)
+  - [Visual Studio Code Extension](#visual-studio-code-extension)
+  - [Use Vale locally](#using-vale-locally)
 
 ## Rules
 
@@ -97,9 +98,29 @@ In some cases throughout our documentation we refer to other software providers 
 
 The rule will, as an example, ensure that the names *Microsoft* and *Slack* are always capitalized.
 
-## Using Vale locally
+## Test the docs yourself
 
-One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR.
+One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR. Below are a couple of options for doing just that.
+
+### Visual Studio Code extension
+
+There is an extension for Visual Studio Code hiwch allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where the potential changes are needed.
+
+The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
+
+To use it, you will still have to install `Vale Server` on your computer. For more information, see the [official Vale installation](https://vale.sh/docs/vale-cli/installation/) article.
+
+Once the tools have been installed, a check of the complete repository of articles can be done using the terminal within Visual Studio Code.
+
+Run the following command:
+
+```vale --glob='*.md' .```
+
+The Vale extension will also run automatically when you are viewing Markdown files. It will present warnings directly in the document as you write, based on the style rules set for the project. It will look similar to this:
+
+![Example of the extension](images/extension.png)
+
+### Using Vale locally
 
 First step to running Vale locally is to install it following Vale's [Installation documentation](https://vale.sh/docs/vale-cli/installation/).
 
@@ -118,21 +139,3 @@ It will show you what file has issues. In the case above the `v8documentation.md
 - Line 64, column 12
 
 When the check has run you will get the total amount of errors, warnings and suggestions including how many files has been checked.
-
-## Visual Studio Code extension
-
-There is an extension for Visual Studio Code hiwch allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where the potential changes are needed.
-
-The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
-
-To use it, you will still have to install `Vale Server` on your computer. For more information, see the [official Vale installation](https://vale.sh/docs/vale-cli/installation/) article.
-
-Once the tools have been installed, a check of the complete repository of articles can be done using the terminal within Visual Studio Code.
-
-Run the following command:
-
-```vale --glob='*.md' .```
-
-The Vale extension will also run automatically when you are viewing Markdown files. It will present warnings directly in the document as you write, based on the style rules set for the project. It will look similar to this:
-
-![Example of the extension](images/extension.png)
