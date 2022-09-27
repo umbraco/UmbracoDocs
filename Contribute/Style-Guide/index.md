@@ -100,7 +100,7 @@ The rule will, as an example, ensure that the names *Microsoft* and *Slack* are 
 
 ## Test the docs yourself
 
-One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR. Below are a couple of options for doing just that.
+One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR. Below are a couple of options on how to test the documentation.
 
 ### Visual Studio Code extension
 
