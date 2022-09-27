@@ -121,7 +121,7 @@ When the check has run you will get the total amount of errors, warnings and sug
 
 ## Visual Studio Code extension
 
-There is an extension for Visual Studio Code hiwch allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where the potential changes are needed.
+There is an extension for Visual Studio Code which allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where potential changes are needed.
 
 The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
 
