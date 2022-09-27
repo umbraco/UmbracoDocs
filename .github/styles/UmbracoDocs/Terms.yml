@@ -1,14 +1,15 @@
 ---
 extends: substitution
-message: Prefer %s over '%s.'
+message: "We prefer %s over '%s.'"
 level: warning
 ignorecase: true
 swap:
-  back office: "'backoffice'"
-  back-office: "'backoffice'" 
   blacklist: "'deny list'"
   whitelist: "'allow list'"
   black list: "'deny list'"
   white list: "'allow list'"  
   master: "'primary'"
   slave: "'secondary'"
+  etc.: "'and so on'"
+  \b(?:eg|e\.g\.)[\s,]: "'for example'"
+  \b(?:ie|i\.e\.)[\s,]: "'that is'"
