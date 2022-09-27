@@ -125,6 +125,9 @@ If you have created a custom template and would like to use that as the default 
 ### RemoveProvidedEmailTemplate
 From Forms 10.2, if you have created custom email templates to use with the "send Razor email" workflow, the provided template can be removed from selection by setting this value to `true`.
 
+### RemoveProvidedFormsTemplates
+Similarly, from Forms 10.2, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
+
 ### FormElementHtmlIdPrefix
 By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, from Forms 10.2, the attribute values can be prefixed with the value provided in this configuration element.
 
