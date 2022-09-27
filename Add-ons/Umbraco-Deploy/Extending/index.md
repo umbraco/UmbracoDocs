@@ -74,14 +74,14 @@ The class is decorated with a `UdiDefinition` via which the name of the entity t
 
 The following example shows a service connector, responsible for handling the artifact shown above and it's related entity.  There are no dependencies to consider here.  More complex examples will involve collating the dependencies and potentially handling the extraction in more than one pass to ensure updates are made in the correct order.
 
-An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entiries.
+An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entities.
 
 :::note
 In Deploy 9.5/10.1, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter.  In order to introduce this without breaking changes, we created some new interfaces and base classes.
 
-In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we  would able to implement instead `IArtifact? IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
+In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact? IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
 
-There's no harm in what is listed below though.  It's just that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations.  The obsolete methods won't be removed until Deploy 11.  In that version we plan to return back to the original interface and class names and introduce the new method overloads (which will be a documented breaking change).
+There's no harm in what is listed below though.  It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations.  The obsolete methods won't be removed until Deploy 11.  In that version we plan to return back to the original interface and class names and introduce the new method overloads (which will be a documented breaking change).
 :::
 
 ```C#
