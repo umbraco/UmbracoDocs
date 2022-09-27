@@ -1,6 +1,6 @@
 ---
 extends: substitution
-message: Prefer %s over '%s.'
+message: "Prefer %s over '%s.'"
 level: warning
 ignorecase: true
 swap:
