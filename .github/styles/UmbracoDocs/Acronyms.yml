@@ -5,7 +5,7 @@ scope: text
 ignorecase: false
 # Ensures that the existence of 'first' implies the existence of 'second'.
 first: '\b([A-Z]{3,5})\b'
-second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
+second: '([A-Z]{3,5}): (?:\b[A-Z][a-z]+ )+|(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - ABC

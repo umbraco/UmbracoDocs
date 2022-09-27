@@ -10,7 +10,7 @@ An error in the Frontend often looks like this:
 
 Errors in the frontend are presented in three ways:
 
-* YSOD: Yellow Screen Of Death (.NET error page)
+* YSOD: Yellow Screen of Death, .NET error page
 * Blank / not loading
 * 404 (Page not found)
 
