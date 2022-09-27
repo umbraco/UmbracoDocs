@@ -10,6 +10,6 @@ swap:
   white list: "'allow list'"  
   master: "'primary'"
   slave: "'secondary'"
-  e.g.: "'for instance'"
-  eg.: "'for instance'"
   etc.: "'and so on'"
+  \b(?:eg|e\.g\.)[\s,]: "'for example'"
+  \b(?:ie|i\.e\.)[\s,]: "'that is'"
