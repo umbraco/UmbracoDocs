@@ -2,6 +2,8 @@
 
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.com/documentation](https://our.umbraco.com/documentation).
 
+Find detailed instructions on how to work with and contribute to the Umbraco Documentation in the [Contribution section](/Contribute/).
+
 ## Getting started with Git and GitHub
 
 * [Download GitHub Desktop](https://desktop.github.com)
