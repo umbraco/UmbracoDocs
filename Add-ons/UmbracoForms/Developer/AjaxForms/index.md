@@ -5,7 +5,7 @@ meta.Title: "Headless/AJAX Forms"
 
 # Headless/AJAX Forms
 
-From version 10.2, Umbraco Forms provides an API for client-side rendering and submission of forms, useful when you want to handle forms in a headless style scenario.
+From version 10.2, Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 
 ## API Definition
 
@@ -23,7 +23,7 @@ GET /umbraco/forms/api/definitions/{id}?contentId={contentId}
 
 The GET request requires the Guid identifying the form.
 
-An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on, such as parsing of ["magic string" placeholders](../Magic-Strings/index.md).
+An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](../Magic-Strings/index.md).
 
 If the requested form is not found, a 404 status code will be returned.
 
@@ -326,7 +326,9 @@ To submit a form entry, the following request can be made:
 POST /umbraco/forms/api/entries/{id}
 ```
 
-The POST endpoint requires a `Content-Type` header of `application/json` and accepts a body as per this example:
+The POST request requires the Guid identifying the form.
+
+It also requires a `Content-Type` header of `application/json` and accepts a body as per this example:
 
 ```json
 {
@@ -365,7 +367,7 @@ A successful response will return a 202 "Accepted" status code.
 
 ## Antiforgery Protection
 
-When posting forms in the traditional way, via a full page post back, unless specifically disabled in configuration an anti-forgery token is generated and validated.  This provides protection against cross-site request forgery (CSRF) attacks.
+When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against cross-site request forgery (CSRF) attacks.
 
 The same protection is available for forms submitted via AJAX techniques.
 
