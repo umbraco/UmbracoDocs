@@ -11,7 +11,7 @@ This article is no longer valid for Umbraco version 9 and later.
 
 Umbraco Forms available in version 4.4.0 and up to version 8 allows you to use an `IFileSystem` to abstract how and where the physical JSON files such as Forms, Workflows and PreValues.
 
-## What on earth is an IFileSystem
+## What is an IFileSystem?
 
 To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../../Extending/Custom-File-Systems.md)
 
@@ -62,7 +62,7 @@ The Azure Blob container cannot be called `forms` as this will give unexpected b
 This requires creating a C# class that inherits from the Umbraco Core CMS class `Umbraco.Core.IO.IFileSystem` and implementing methods such as `public IEnumerable<string> GetDirectories(string path)` and more.
 With your provider written to retrieve folders, files you will need to update the FileSystem config file with the `alias="forms"` to use your provider `type` in the format of `NameSpace, AssemblyName`
 
-For inspiration on creating a C# FileSystemProvider please take a look at the source code for [the Azure provider](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
+For inspiration on creating a C# FileSystemProvider please take a look at the source code for [the Azure provider](https://github.com/umbraco-community/UmbracoFileSystemProviders.Azure)
 
 ## Forms containing upload fields
 

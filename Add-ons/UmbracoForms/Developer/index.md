@@ -72,3 +72,6 @@ Umbraco Forms provides an API for client-side rendering and submission of forms,
 ## [Block List Filters](BlockListFilters/index.md)
 
 Customize the appearance of Umbraco's block list editor when adding a form to a block.
+
+## [Storing prevalue text files with IPreValueTextFileStorage](IPreValueTextFileStorage/index.md)
+Learn how you can implement a custom IPreValueTextFileStorage to store the prevalue text files to suit your needs.
