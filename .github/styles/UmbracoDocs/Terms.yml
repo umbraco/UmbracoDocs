@@ -4,8 +4,6 @@ message: "Prefer %s over '%s.'"
 level: warning
 ignorecase: true
 swap:
-  back office: "'backoffice'"
-  back-office: "'backoffice'" 
   blacklist: "'deny list'"
   whitelist: "'allow list'"
   black list: "'deny list'"

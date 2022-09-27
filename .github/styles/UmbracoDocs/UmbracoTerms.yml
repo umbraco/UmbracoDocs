@@ -16,3 +16,5 @@ swap:
   umbraco deploy: "'Umbraco Deploy'"
   umbraco heartcore: "'Umbraco Heartcore'"
   heartcore: "'Heartcore'"
+  back office: "'backoffice'"
+  back-office: "'backoffice'"
