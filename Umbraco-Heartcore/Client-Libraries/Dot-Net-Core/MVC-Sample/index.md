@@ -45,7 +45,7 @@ dotnet watch run
 
 To run the project and hot reload or recompile the project whenever changes are detected.
 
-### 2. Using an IDE
+### 2. Using an Integrated Development Environment (IDE)
 
 Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 

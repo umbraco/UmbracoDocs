@@ -383,7 +383,7 @@ Module aliases allows us to define a common name for a module that we can use in
 
 ![Defining custom module aliases](images/module-aliases.png)
 
-Here we have defined an alias `@headless-backoffice-bridge` pointing to a CDN URL of the [backoffice bridge library](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
+Here we have defined an alias `@headless-backoffice-bridge` pointing to a Content Delivery Network (CDN) URL of the [backoffice bridge library](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
 
 With this alias added we can update our import in our editor to:
 

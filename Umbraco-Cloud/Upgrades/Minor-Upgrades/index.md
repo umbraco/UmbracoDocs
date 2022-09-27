@@ -30,7 +30,7 @@ Symptoms, feedback given from the upgrade process: **Unable to run the Umbraco i
 The first step in the process, after having updated all the files, is to call the Umbraco install engine in order to get its  database updated to support the new version. As this step is the first time the site gets requested after the updated files are run, it may fail. The reason is often code that is incompatible with the upgraded files.
 
 It can be code that references APIs that have been deprecated, or code that has some strong references to specific versions.
-If the error is clear, then it will be shown on the screen, as it will be a typical ASP.NET error message (YSOD). You should request the site, and check the error it shows.
+If the error is clear, then it will be shown on the screen, as it will be a typical ASP.NET error message also called a Yellow Screen of Death (YSOD). You should request the site, and check the error it shows.
 If the error isn't descriptive, then it is time to clone the repository to your local machine, and fix the issue. The usual suspects would be:
 
 - The code you have running is referencing an API that has been changed, that is being modified, is obsolete, or removed.

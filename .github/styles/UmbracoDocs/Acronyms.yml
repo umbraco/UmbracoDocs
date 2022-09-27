@@ -16,6 +16,7 @@ exceptions:
   - API
   - URL
   - UDI
+  - URI
   - NET
   - MVC
   - GET
@@ -38,3 +39,7 @@ exceptions:
   - LINK
   - DLL
   - CMS
+  - ONLY
+  - IIS
+  - DNS
+  - DOM
