@@ -1,0 +1,19 @@
+---
+extends: substitution
+message: "We prefer %s over '%s.'"
+level: warning
+swap:
+  document type: "'Document Type'"
+  document-type: "'Document Type'"
+  doc type: "'Document Type'"
+  doc-type: "'Document Type'"
+  data-type: "'Data Type'"
+  data type: "'Data Type'"
+  umbraco: "'Umbraco'"
+  umbraco cloud: "'Umbraco Cloud'"
+  umbraco forms: "'Umbraco Forms'"
+  umbraco deploy: "'Umbraco Deploy'"
+  umbraco heartcore: "'Umbraco Heartcore'"
+  heartcore: "'Heartcore'"
+  back office: "'backoffice'"
+  back-office: "'backoffice'"

@@ -10,7 +10,11 @@ tokens:
   - basically
   - clearly
   - completely
+  - easy
+  - easily
   - essentially
+  - everybody knows
+  - everyone knows
   - exceedingly
   - excellent
   - extremely
@@ -21,6 +25,7 @@ tokens:
   - is a number
   - it is important to realize
   - it should be noted that
+  - just
   - largely
   - mostly
   - notably
@@ -32,6 +37,8 @@ tokens:
   - remarkably
   - several
   - significantly
+  - simple
+  - simply
   - substantially
   - surprisingly
   - tiny

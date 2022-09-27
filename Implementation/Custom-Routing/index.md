@@ -128,3 +128,8 @@ namespace CustomRoutes
 ```
 
 For more information on how to register and use notification handlers see [Notifications documentation](../../Reference/Notifications/index)
+
+:::links
+### Related articles
+- [Find out how to add your own hub(s) with SignalR to the existing setup](signalR.md))
+:::

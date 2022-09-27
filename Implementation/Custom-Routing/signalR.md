@@ -15,6 +15,7 @@ In this aticle, you will do the following:
 - [Create a hub and its interface](#create-a-hub-and-its-interface)
 - [Define a custom route](#define-a-custom-route)
 - [Add the routing to the umbraco Composer](#add-the-routing-to-the-umbraco-composer)
+- [Add the route in appsettings.json](#add-the-route-in-appsettingsjson-file)
 - [Test the setup](#test-the-setup)
 
 ## Create a hub and its interface
@@ -133,6 +134,24 @@ public class TestHubComposer : IComposer
     }
 }
 ```
+
+### Add the route in appsettings.json file
+
+When setting up SignalR routes, add the route to `ReservedPaths` in the `appsettings.json` file like:
+
+```cs
+"Umbraco": {
+    "CMS": {
+        "Global": {
+            "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/umbraco/testhub/,"
+        }
+    }
+}
+```
+
+:::note
+You need to provide the default reserved paths, else you'll run into an issue as mentioned on [GitHub](https://github.com/umbraco/Umbraco-CMS/issues/12965).
+:::
 
 ### Test the setup
 

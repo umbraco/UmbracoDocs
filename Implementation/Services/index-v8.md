@@ -182,21 +182,24 @@ namespace Umbraco8.Components
 
         private void ContentService_Unpublishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.PublishEventArgs<Umbraco.Core.Models.IContent> e)
         {
-            foreach (var item in e.PublishedEntities)
+            // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-                if (item.ContentType.Alias == "blogpost")
+                // the UmbracoContextReference provides access to the ContentCache
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
+
+                foreach (var item in e.PublishedEntities)
                 {
-                    // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
-                    using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+                    if (item.ContentType.Alias == "blogpost")
                     {
-                        // the UmbracoContextReference provides access to the ContentCache
-                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                         // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
                         IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+
                         if (soonToBeUnPublishedItem != null)
                         {
                             string previouslyPublishedUrl = soonToBeUnPublishedItem.Url;
-                            if (!String.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
+
+                            if (!string.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
                             {
                                 _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
                             }
@@ -205,6 +208,7 @@ namespace Umbraco8.Components
                 }
             }
         }
+
         public void Terminate()
         {
             // called when the Umbraco application shuts down.
