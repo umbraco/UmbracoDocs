@@ -17,6 +17,7 @@ There are many ways in which you can contribute to the Umbraco Documentation. Th
 * Request a quick / minor change to an article by submitting a [Pull Request](Pull-Requests/#option-1-creating-a-pr-directly-on-github)
 * Submit a more extensive update / change by [forking the Documentation repository](Pull-Requests/#options-2-creating-a-pr-through-a-fork)
 * Raise a question, start a discussion or report an issue on the [Issue Tracker](Issues/)
+* Help improve readability of the documentation by verifying articles against our [Style Guide](Style-Guide/#visual-studio-code-extension).
 
 ## [Style guide](Style-Guide/index.md)
 
