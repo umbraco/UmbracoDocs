@@ -9,18 +9,18 @@ To ensure that the documentation is readable and has a similar style throughout 
 
 ## Content
 
-* [Rules](#rules)
-  * [Punctuation in headings](#punctuation-in-headings)
-  * [Editorializing](#editorializing)
-  * [Start lists with capital letters](#start-lists-with-capital-letters)
-  * [Long sentences](#long-sentences)
-  * [Double spacing](#double-spacing)
-  * [Terms (general)](#terms-general)
-  * [Umbraco Terms](#umbraco-terms)
-  * [Names](#names)
-  * [Brands](#brands)
-* [Use Vale locally](#using-vale-locally)
-* [Visual Studio Code Extension](#visual-studio-code-extension)
+- [Rules](#rules)
+  - [Punctuation in headings](#punctuation-in-headings)
+  - [Editorializing](#editorializing)
+  - [Start lists with capital letters](#start-lists-with-capital-letters)
+  - [Long sentences](#long-sentences)
+  - [Double spacing](#double-spacing)
+  - [Terms (general)](#terms-general)
+  - [Umbraco Terms](#umbraco-terms)
+  - [Names](#names)
+  - [Brands](#brands)
+- [Use Vale locally](#using-vale-locally)
+- [Visual Studio Code Extension](#visual-studio-code-extension)
 
 ## Rules
 
