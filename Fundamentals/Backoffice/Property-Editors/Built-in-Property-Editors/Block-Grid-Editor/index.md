@@ -291,38 +291,47 @@ This can be exemplified by writing out the HTML structure:
             "
         >
 
-            <div class="umb-block-grid__block--view">
-                <!-- Here the Razor View or Custom View for this block will be rendered. -->
-                <!-- Each razor view/custom view must handle/inject where the 'area-container' should be printed.
-                Structure is as following: -->
-                <div class="umb-block-grid__area-container"
-                     data-area-grid-columns="9"
-                     style="--umb-block-grid--area-grid-columns: 9;"
-                >
+            <!-- Here the Razor View or Custom View for this block will be rendered. -->
+            
+            <!-- Each razor view must render the 'area-container' them self.
+            This can be done by the Razor helper method:
 
-                    <!-- repeated for each area for this block type. -->
-                    <div
-                        class="umb-block-grid__area"
-                        data-area-col-span="3"
-                        data-area-row-span="1"
-                        data-area-alias="MyAreaAlias"
-                        style="
-                        --umb-block-grid--grid-columns: 3;
-                        --umb-block-grid--area-column-span: 3;
-                        --umb-block-grid--area-row-span: 1;
-                        ">
+            @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 
-                            <!-- Notice here we print the same markup as when we print a list of blocks(same as the one in the root of this structure..):
-                            <div class="umb-block-grid__layout-container">
-                                ...
-                            </div>
-                            End of notice.  -->
-                    </div>
-                    <!-- end of repeat -->
+            The structure will be as printed below,
+            Do notice targeting the 'area-container' needs a double selector as markup will be different in Backoffice.
+            Here is an example of the CSS selector:
+                .umb-block-grid__area-container, .umb-block-grid__block--view::part(area-container) {
+                    position: relative;
+                }
+            -->
+            <div
+                class="umb-block-grid__area-container"
+                style="--umb-block-grid--area-grid-columns: 9;"
+            >
 
+                <!-- repeated for each area for this block type. -->
+                <div
+                    class="umb-block-grid__area"
+                    data-area-col-span="3"
+                    data-area-row-span="1"
+                    data-area-alias="MyAreaAlias"
+                    style="
+                    --umb-block-grid--grid-columns: 3;
+                    --umb-block-grid--area-column-span: 3;
+                    --umb-block-grid--area-row-span: 1;
+                    ">
+
+                        <!-- Notice here we print the same markup as when we print a list of blocks(same as the one in the root of this structure..):
+                        <div class="umb-block-grid__layout-container">
+                            ...
+                        </div>
+                        End of notice.  -->
                 </div>
+                <!-- end of repeat -->
 
             </div>
+
 
         </div>
         <!-- end of repeat -->
