@@ -1,0 +1,13 @@
+---
+extends: substitution
+message: "We prefer %s over '%s.'"
+level: warning
+ignorecase: false
+swap:
+  css: "'CSS'"
+  html: "'HTML'"
+  url: "'URL'"
+  js: "'JavaScript'"
+  .net: "'.NET'"
+  dot net: "'.NET'"
+  cms: "'CMS'"

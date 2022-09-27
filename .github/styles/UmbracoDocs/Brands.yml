@@ -1,0 +1,9 @@
+---
+extends: substitution
+message: "We prefer %s over '%s.'"
+level: warning
+ignorecase: false
+swap:
+  youtube: "'YouTube'"
+  microsoft: "'Microsoft'"
+  slack: "'Slack'"
