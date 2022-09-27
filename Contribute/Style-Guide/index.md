@@ -121,10 +121,18 @@ When the check has run you will get the total amount of errors, warnings and sug
 
 ## Visual Studio Code extension
 
-Taking it even further there is an extension for Visual Studio Code that allows you to use Vale as you are writing documentation. It is called `vale-vscode` and can be downloaded via the VS Code Marketplace in your editor.
+There is an extension for Visual Studio Code hiwch allows you to use Vale as you are writing documentation. It can also be used to run checks on existing articles and find where the potential changes are needed.
 
-To use it, you will still have to install `Vale Server` on your computer. For more information, see the [Vale + VS Code Integration](https://github.com/errata-ai/vale-vscode#vale--vs-code) article.
+The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
 
-The Vale extension will run automatically when you are viewing Markdown files in VS Code. It will present warnings directly in the document as you write, based on the style rules set for the project. It will look similar to this:
+To use it, you will still have to install `Vale Server` on your computer. For more information, see the [official Vale installation](https://vale.sh/docs/vale-cli/installation/) article.
+
+Once the tools have been installed, a check of the complete repository of articles can be done using the terminal within Visual Studio Code.
+
+Run the following command:
+
+```vale --glob='*.md' .```
+
+The Vale extension will also run automatically when you are viewing Markdown files. It will present warnings directly in the document as you write, based on the style rules set for the project. It will look similar to this:
 
 ![Example of the extension](images/extension.png)
