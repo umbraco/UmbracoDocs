@@ -61,7 +61,7 @@ namespace MyFormsExtensions
 
 In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
 
-And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
+And then we set the field type specific information. In this case, a preview Icon for the form builder UI and what kind of data it will return. This can either be string, longstring, integer, datetime, or boolean.
 
 You will then need to register this new field as a dependency.
 
@@ -85,7 +85,7 @@ namespace MyFormsExtensions
 
 ## Partial view
 
-Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
+Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
 
 The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
@@ -99,6 +99,10 @@ The file name for the partial view should match the value set on the `FieldTypeV
 ```
 
 This will be rendered when the default theme is used.
+
+If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files in there.
+
+For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../Installation/Version-Specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../../Developer/Themes/index.md) article.
 
 ## Umbraco backoffice view
 
