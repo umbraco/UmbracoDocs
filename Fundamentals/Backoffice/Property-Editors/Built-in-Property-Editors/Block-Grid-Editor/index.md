@@ -9,7 +9,7 @@ versionTo: 10.0.0
 
 `Returns: BlockGridModel`
 
-The **Block Grid** enables the editor to layout their content in the Umbraco backoffice. The content is made of blocks, which can contain simple or very complex data. By defining how many rows and columns the block spans, each Block gets a defined size. This will make them appear next to each other, together, or even in formations.
+The **Block Grid** enables the editor to layout their content in the Umbraco backoffice. The content is made of blocks, which can contain simple or complex data. By defining how many rows and columns the block spans, each Block gets a defined size. This will make them appear next to each other, together, or even in formations.
 
 Additionally, Blocks can nest other Blocks forming more complex or strict compositions.
 
@@ -44,7 +44,7 @@ The Data Type editor allows you to configure the following properties:
 
 Block Types are based on **Element Types**. These can be created beforehand or while setting up your Block Types.
 
-Once you have added an Element Type as a Block Type on your Block Grid Data Type you will have the option to configure it further.
+Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
 ![Block List - Data Type Block Configuration](images/BlockListEditor_DataType_Blocks.png)
 > TODO: screenshot
@@ -200,7 +200,7 @@ You can simplify the property rendering using ModelsBuilder by replacing `@conte
 
 The built-in value converter for the Block Grid lets you use the block data as you like. Call the `Value<T>` method with a type of `BlockGridModel` to have the stored value returned as a `BlockGridModel` instance.
 
-`BlockGridModel` contains the Block Grid configuration (i.e. number of columns as `GridColumns`) whilst also being an implementation of `IEnumerable<BlockGridItem>` (see details for `BlockGridItem` above).
+`BlockGridModel` contains the Block Grid configuration (like the number of columns as `GridColumns`) whilst also being an implementation of `IEnumerable<BlockGridItem>` (see details for `BlockGridItem` above).
 
 The following example mimics the built-in rendering mechanism for rendering blocks using Partial Views:
 
@@ -260,11 +260,11 @@ If you do not want to use Partial Views, you can access the block item data dire
 
 ## Write a Custom Layout Stylesheet
 
-The default layout stylesheet is using CSS Grid. This can be modified or completely replaced to fit your implementation.
+The default layout stylesheet is using CSS Grid. This can be modified or replaced to fit your implementation.
 
 ### Adjusting Layout Stylesheet
 
-To make additions or overwrite parts of the default layout stylesheet, importing the default stylesheet in the very top of your own file:
+To make additions or overwrite parts of the default layout stylesheet, importing the default stylesheet in the top of your own file:
 
 ```css
 @import '/umbraco/assets/css/blockgridlayout.css';
@@ -431,7 +431,7 @@ The resulting JSON object stored for the Block Grid will look like this:
 For each item in the raw data we need to create:
 
 - One `contentData` entry with the *title* and *text*.
-- One `settingsData` entry with the *featured* value (note that checkbox expects `"0"` or `"1"` as data value).
+- One `settingsData` entry with the *featured* value (the checkbox expects `"0"` or `"1"` as data value).
 - One `layout` entry with the desired column and row spans.
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample we have only one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario there could be any number of Element Type combinations.
@@ -531,7 +531,7 @@ public class BlockGridElementData
 }
 ```
 
-By injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform our raw data into Block Grid JSON and save it to our target content item:
+By injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be save to the target content item:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
