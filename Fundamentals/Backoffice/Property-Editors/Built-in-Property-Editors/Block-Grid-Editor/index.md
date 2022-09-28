@@ -19,60 +19,72 @@ The default provided layout mechanism is based on CSS Grids. This can be adjuste
 
 The Block Grid property editor is configured in the same way standard property editors, which is via the Data Types backoffice interface.
 
-To set up your Block Grid Editor property, create a new Data Type and select **Block Grid** from the list of available property editors.
+To set up your Block Grid Editor property, follow these steps:
 
-Then you will see the configuration options for a Block Grid as shown below.
+1. Navigate to the **Settings** section in the Umbraco backoffice.
+2. Locate and right-click the **Data Types** folder.
+3. **Create a new Data Type**.
+4. Select **Block Grid** from the list of available property editors.
+
+You will see the configuration options for a Block Grid as shown below.
 
 ![Block Grid - Data Type Definition](images/BlockListEditor_DataType.jpg)
 > TODO: screenshot
 
 The Data Type editor allows you to configure the following properties:
 
-- **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
+- **Available Blocks** - Define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
 - **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the root of the layout.
-- **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
-- **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
+- **Live editing mode** - Enabling this will enable you to see the changes you making as you are making them.
+- **Property editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width".
 - **Grid Columns** - Define the number of columns in your grid layout. Default is 12 columns.
-- **Layout Stylesheet** - Replace the build-in Layout Stylesheet. Additionally you can retrieve the default layout stylesheet, to use as base for your own or inspiration for writhing your own.
+- **Layout Stylesheet** - Replace the built-in Layout Stylesheet. Additionally you can retrieve the default layout stylesheet to use as base for your own or inspiration for writhing your own.
 
 ## Setup Block Types
 
-Block Types is based upon **Element Types**, these can be created beforehand or while setting up your Block Types.
+Block Types are based on **Element Types**. These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you will have the option to configure it further.
 
 ![Block List - Data Type Block Configuration](images/BlockListEditor_DataType_Blocks.png)
 > TODO: screenshot
 
-Each Block has a set of properties that are optional to configure. They are described below.
+Each Block has a set of properties that are optional to configure. These are described below.
 
 ### Block Appearance
 
-By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
+Customize the user experience for your content editors when they work with the blocks in the Content section.
 
-- **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar". You can also use more advanced expression using AngularJS filters, e.g. `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
-- **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
-- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
+- **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
+  :::tip
+  Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar". 
+  
+  You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
+  :::
+- **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or make your own editing experience by adding your own AngularJS controller to the view.
+- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. This means that the default backoffice styles are no longer present for the view of this block.
 - **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Catalogue appearance
 
-These properties refers to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
+These properties refer to how the Block is presented in the Block catalogue when editors choose which Blocks to use for their content.
 
-- **Background color** - Define a background color to be displayed beneath the icon or thumbnail.  Eg. `#424242`.
-- **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
+- **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Example: `#424242`.
+- **Icon color** - Change the color of the Element Type icon. Example: `#242424`.
 - **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+
 ### Layout options
 
 **TO BE DONE**
+
 ### Data Models
 
-It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
+It is possible to use two separate Element Types for your Block Types. It is required to have one for Content and optional to add one for Settings.
 
-- **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
-- **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
+- **Content model** - This presents the Element Type used as model for the Content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+- **Settings model** - Add a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
 
 ### Areas
 
@@ -82,7 +94,7 @@ It is possible to use two separate Element Types for your Block Types. Its requi
 
 These properties are relevant when you work with custom views.
 
-- **Hide content editor** - If you made a custom view that enables you to edit the content part of a Block. Then you might want to hide the ability to edit the content in the block editor overlay.
+- **Hide content editor** - Use this feature when you want to hide the ability to edit the content in a Block Editor. If you made a custom view that enables you to edit the content part of a Block, you might want to use this feature.
 
 ## Editing Blocks
 
@@ -91,7 +103,7 @@ When viewing a **Block Grid** editor in the Content section for the first time, 
 ![Block List - Add Content](images/BlockListEditor_AddContent.png)
 > TODO: screenshot
 
-Clicking the Add content button brings up the Block Catalogue.
+Clicking the Add content button brings up the **Block Catalogue**.
 
 ![Block List - Setup](images/BlockListEditor_BlockPicker_simplesetup.jpg)
 > TODO: screenshot
@@ -103,32 +115,37 @@ The Block Catalogue looks different depending on the amount of available Blocks 
 
 Click the Block Type you wish to create and a new Block will appear in the layout.
 
-More Blocks can be added to the layout by clicking the Add content button or using the inline Add content button that appears on hover between, besides or above existing Blocks.
+More Blocks can be added to the layout by clicking the Add content button. Alternatively, use the Add content button that appears on hover to add new blocks between, besides or above existing Blocks.
 
 ![Block List - Add Content](images/BlockListEditor_AddContentInline.jpg)
 > TODO: screenshot
 
-To reorder the Blocks, click and drag a Block up or down to place in the desired order.
+Blocks can be rearranged using the click and drag feature. Move them up or down to place them in the desired order.
 
-To delete a Block click the trash-bin icon appearing on hover.
+To delete a Block click the trashbin icon whichs appears on hover.
 
 ## Rendering Block Grid Content
 
-Rendering the stored value of your **Block Grid** property can be done in two ways.
+Rendering the stored value of your **Block Grid** property can be done in two ways: 
+
+1.  [Default rendering](#1-default-rendering)
+2.  [Build your own rendering](#2-build-your-own-rendering)
 
 ### 1. Default rendering
 
-You can choose to use the built-in rendering mechanism for rendering blocks using a partial view for each block.
+You can choose to use the built-in rendering mechanism for rendering blocks using a Partial View for each block.
 
-The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a few options to go with it. The typical use could be:
+The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a few options.
+
+Example use-case:
 
 ```csharp
 @await Html.GetBlockGridHtmlAsync(Model, myGrid")
 ```
 
-Where `"myGrid"` is the alias of the Block Grid editor.
+In the sample above `"myGrid"` is the alias of the Block Grid editor.
 
-If you are using ModelsBuilder, the example can be simplified:
+If you are using ModelsBuilder, the example will look like this:
 
 Example:
 
@@ -136,30 +153,31 @@ Example:
 @await Html.GetBlockGridHtmlAsync(Model.MyGrid)
 ```
 
-To make this work you will need to create a partial view for each block type. The partial view must be named by the alias of the Element Type that is being used as Content Model for the block type.
+To use the `GetBlockGridHtmlAsync()` method you will need to create a Partial View for each Block Type. The Partial View must be named using the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These partial views must be placed in this folder: `Views/Partials/BlockGrid/Components/`.
+These Partial View files need to go into the `Views/Partials/BlockGrid/Components/` folder.
+
 Example: `Views/Partials/BlockGrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
-The partial views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains the `Content` and `Settings` parts of your block, as well as the configured `RowSpan`, `ColumnSpan`, `ForceLeft`, `ForceRight` and `Areas` of the block..
+The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, `ForceLeft`, `ForceRight` and `Areas` of the block.
 
 #### Rendering the block areas
 
 > TODO: align area semantics when the rest of the article is written
 
-The partial view for the block is responsible for rendering its own block areas. This is done using another built-in rendering mechanism:
+The Partial View for the block is responsible for rendering its own block areas. This is done using another built-in rendering mechanism:
 
 ```csharp
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
 
-Once again you will need to create a partial view for each block type within the block area, named by the alias of the Element Type that is being used as Content Model for the block type.
+Here you will need to create a Partial View for each Block Type within the block area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These partial views must be placed in the same folder as before (_Views/Partials/BlockGrid/Components/_), and will also receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
+These Partial Views must be placed in the same folder as before, (`Views/Partials/BlockGrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
 
 #### Putting it all together
 
-The following is an example of a partial view for a block type. Please note that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type aliases for the given content and settings types in your block.
+The following is an example of a Partial View for a Block Type. It is important that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` corresponds with the selected Element Type aliases for the given Content and Settings in your block.
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
@@ -176,20 +194,15 @@ The following is an example of a partial view for a block type. Please note that
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
 
-Again you can simplify the property rendering using ModelsBuilder:
-
-```csharp
-@* Render the value of field with alias 'heading' from the Element Type selected as Content section *@
-<h1>@content.Heading</h1>
-```
+You can simplify the property rendering using ModelsBuilder by replacing `@content.Value("heading")` with `@content.Heading`.
 
 ### 2. Build your own rendering
 
-The built-in value converter for Block Grid lets you use the block data as you like. Call the `Value<T>` method with a type of `BlockGridModel` to have the stored value will be returned as a `BlockGridModel` instance.
+The built-in value converter for the Block Grid lets you use the block data as you like. Call the `Value<T>` method with a type of `BlockGridModel` to have the stored value returned as a `BlockGridModel` instance.
 
-`BlockGridModel` contains the block grid configuration (i.e. number of columns as `GridColumns`) whilst also being an implementation of `IEnumerable<BlockGridItem>` (see details for `BlockGridItem` above).
+`BlockGridModel` contains the Block Grid configuration (i.e. number of columns as `GridColumns`) whilst also being an implementation of `IEnumerable<BlockGridItem>` (see details for `BlockGridItem` above).
 
-The following example mimics the built-in rendering mechanism for rendering blocks using partial views:
+The following example mimics the built-in rendering mechanism for rendering blocks using Partial Views:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -210,7 +223,7 @@ The following example mimics the built-in rendering mechanism for rendering bloc
 }
 ```
 
-If you don't want to use partial views, you can access the block item data directly within your rendering:
+If you do not want to use Partial Views, you can access the block item data directly within your rendering:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -247,11 +260,12 @@ If you don't want to use partial views, you can access the block item data direc
 
 ## Write a Custom Layout Stylesheet
 
-The default layout stylesheet is using CSS Grid, this can be modified or completely replaced to fit your use case.
+The default layout stylesheet is using CSS Grid. This can be modified or completely replaced to fit your implementation.
 
 ### Adjusting Layout Stylesheet
 
-If you like to make additions or overwrite parts of the default layout stylesheet, you can do so by importing the default stylesheet in the very top of your own file:
+To make additions or overwrite parts of the default layout stylesheet, importing the default stylesheet in the very top of your own file:
+
 ```css
 @import '/umbraco/assets/css/blockgridlayout.css';
 
@@ -259,12 +273,14 @@ If you like to make additions or overwrite parts of the default layout styleshee
 ```
 
 ### Write a new Layout Stylesheet
-In this case you would have to write the layout from ground up.
 
-Technically you are free to pick any style, there is not a requirement to use CSS Grid but be aware that the editing experience in Backoffice might not be ideal in some cases.
+In this case you would have to write the layout from scratch.
+
+You are free to pick any style, meaning there is no requirement to use CSS Grid. It is, however, recommended to use CSS Grid to ensure complete compatibility with the Umbraco backoffice.
 
 ### CSS Class structure and available data
-When extending or writing your own layout, you would have to understand the structure and what data is available.
+
+When extending or writing your own layout, you need to know the structure and what data is available.
 
 This can be exemplified by writing out the HTML structure:
 
@@ -346,11 +362,12 @@ This can be exemplified by writing out the HTML structure:
 ## Build a Custom Backoffice View
 
 Building Custom Views for Block representations in Backoffice is based on the same API for all Block Editors.
+
 [Read about building a Custom View for Blocks here](../Block-Editor/build-custom-view-for-blocks.md)
 
-## Creating Block Grid programmatically
+## Creating a Block Grid programmatically
 
-In this example, we will be creating "spot" blocks in a Block Grid on a content item. The spot content consists of a _title_ and a _text_ field, while the spot settings contains a _featured_ checkbox.
+In this example, we will be creating "spot" blocks in a Block Grid on a content item. The spot content consists of a *titl* and a *text* field, while the spot settings contains a *featured* checkbox.
 
 The raw input data for the spots looks like this:
 
@@ -411,13 +428,13 @@ The resulting JSON object stored for the Block Grid will look like this:
 }
 ```
 
-In other words: For each item in the raw data we need to create:
+For each item in the raw data we need to create:
 
-- One _contentData_ entry with the _title_ and _text_.
-- One _settingsData_ entry with the _featured_ value (note that checkbox expects `"0"` or `"1"` as data value).
-- One _layout_ entry with the desired column and row spans.
+- One `contentData` entry with the *title* and *text*.
+- One `settingsData` entry with the *featured* value (note that checkbox expects `"0"` or `"1"` as data value).
+- One `layout` entry with the desired column and row spans.
 
-All _contentData_ and _layoutData_ entry need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample we have only one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`), but in a real life scenario there could be any number of Element Type combinations.
+All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample we have only one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario there could be any number of Element Type combinations.
 
 First and foremost we need models to transform the raw data into Block Grid compatible JSON:
 
@@ -514,7 +531,7 @@ public class BlockGridElementData
 }
 ```
 
-Now by injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform our raw data into Block Grid JSON and save it to our target content item:
+By injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform our raw data into Block Grid JSON and save it to our target content item:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
