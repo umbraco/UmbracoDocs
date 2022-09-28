@@ -13,12 +13,14 @@ The API supports two endpoints, one for rendering a form and one for submitting 
 
 As well as this docmentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
 
+The Open API specification is available from: `/umbraco/forms/api/openapi.json`
+
 ### Requesting a Form Definition
 
 To request the definition of a form, the following request can be made:
 
 ```
-GET /umbraco/forms/api/definitions/{id}?contentId={contentId}
+GET /umbraco/forms/api/v1.0/definitions/{id}?contentId={contentId}
 ```
 
 The GET request requires the Guid identifying the form.
@@ -323,7 +325,7 @@ A successful request will return a 200 status code.  An example response is as f
 To submit a form entry, the following request can be made:
 
 ```
-POST /umbraco/forms/api/entries/{id}
+POST /umbraco/forms/api/v1.0/entries/{id}
 ```
 
 The POST request requires the Guid identifying the form.
@@ -386,7 +388,7 @@ In order to generate the token and provide it in the form post, the following co
 When posting the form, the header value generated can be provided, where it will be validated server-side before accepting the request.
 
 ```javascript
-    let response = await fetch("/umbraco/forms/api/entries/" + formId, {
+    let response = await fetch("/umbraco/forms/api/v1.0/entries/" + formId, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
