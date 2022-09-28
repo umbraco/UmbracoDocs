@@ -9,16 +9,17 @@ versionTo: 10.0.0
 
 `Returns: BlockGridModel`
 
-**Block Grid** enables the editor to layout their content. The content is made of blocks, which can contain simple or very complex data. By defining column span and row span, each Block gets a size, this makes them to appear next to together or even in formations.
-Additionally Blocks can nest other Blocks forming more complex or strict compositions.
+The **Block Grid** enables the editor to layout their content in the Umbraco backoffice. The content is made of blocks, which can contain simple or very complex data. By defining how many rows and columns the block spans, each Block gets a defined size. This will make them appear next to each other, together, or even in formations.
 
-The default provided layout mechanism is based on CSS Grid, this can be adjusted or replaced to achieve the right layout for your project.
+Additionally, Blocks can nest other Blocks forming more complex or strict compositions.
 
-## Configure Block Grid
+The default provided layout mechanism is based on CSS Grids. This can be adjusted or replaced to achieve the right layout for your project.
 
-The Block Grid property editor is configured in the same way as any standard property editor, via the *Data Types* admin interface.
+## Configure the Block Grid
 
-To set up your Block Grid Editor property, create a new *Data Type* and select **Block Grid** from the list of available property editors.
+The Block Grid property editor is configured in the same way standard property editors, which is via the Data Types backoffice interface.
+
+To set up your Block Grid Editor property, create a new Data Type and select **Block Grid** from the list of available property editors.
 
 Then you will see the configuration options for a Block Grid as shown below.
 
