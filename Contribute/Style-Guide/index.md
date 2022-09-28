@@ -86,6 +86,20 @@ This rule is added in order to ensure that Umbraco specific terms and names are 
 
 The list of Umbraco Terms includes, but is not limited to *Umbraco*, *backoffice*, *Document Type* and *Umbraco Forms*.
 
+### Defined acronyms
+
+All first-time uses of an acronym in the documentation need to be accompanied by a definition of that acronym. If an acronym is not defined on its first use in an article, the checker will give a warning.
+
+Acronyms should be defined using either parenthesis or a colon followed by the definition.
+
+Examples of the use of acronyms:
+
+Do not do this: "Members will only have access to CDN endpoints."
+Do this instead: "Members will only have access to Content Delivery Network (CDN) endpoints."
+
+Do not do this: **YSOD** (.Net error page)
+Do this instead: **YSOD: Yellow Screen of Death**, .NET error page
+
 ### Names
 
 In order to ensure that markup languages and other names are capitalized correctly a rule has been added to check for this.
