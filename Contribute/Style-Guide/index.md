@@ -88,7 +88,7 @@ The list of Umbraco Terms includes, but is not limited to *Umbraco*, *backoffice
 
 ### Defined acronyms
 
-All first-time uses of an acronym in the documentation needs to be accompanied by a definition of that acronym. If an acronym is nto defined on its first use in an article, the checker will with a warning.
+All first-time uses of an acronym in the documentation need to be accompanied by a definition of that acronym. If an acronym is not defined on its first use in an article, the checker will give a warning.
 
 Acronyms should be defined using either parenthesis or a colon followed by the definition.
 
