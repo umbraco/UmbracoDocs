@@ -27,7 +27,7 @@ In the top-right corner of the Cloud Portal, you will find:
 
 To give a better overview over your projects it is possible to order your projects into **Groups**.
 
-This can be done by clicking the **Edit Group** button in the top left side.
+This can be done by clicking the **Edit Groups** button in the top left side.
 
 ![Edit Groups](images/edit-group.png)
 
