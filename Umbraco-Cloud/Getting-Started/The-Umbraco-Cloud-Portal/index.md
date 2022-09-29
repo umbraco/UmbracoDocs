@@ -31,7 +31,7 @@ This can be done by clicking the **Edit Group** button in the top left side.
 
 ![Edit Groups](images/edit-group.png)
 
-When clicking on **Edit Groups** you can create new Groups to sort your project in and create a better overview for yourself.
+After clicking on **Edit Groups**, you can create new Groups to sort your project in and create a better overview for yourself.
 
 ![Create Group](images/add-group.png)
 
