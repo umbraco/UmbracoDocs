@@ -11,9 +11,11 @@ The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here,
 
 When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/) you will be presented with a view of all the Umbraco Cloud projects you've created or have been added to as a team member.
 
-![View all projects](images/view-projects-v9.png)
+![View all projects](images/Umbraco-cloud-dashboard.png)
 
-By default, the projects are ordered by the latest updates - projects you've worked on recently will be shown on top and the ones you haven't worked on for a while are at the bottom. In the top-right corner of the Cloud Portal, you will find:
+With the project dashboard you get an overview of all your projects, the environments added, the usage for each of the project, which plan it is on and whether it is a baseline or baseline-child project.
+
+In the top-right corner of the Cloud Portal, you will find:
 
 - **Create New Project** - Allows you to create more projects using the plan you wish and a project will be ready for you within a few minutes.
 
@@ -21,7 +23,19 @@ By default, the projects are ordered by the latest updates - projects you've wor
 
 - **Profile** - Manage projects, subscriptions, pending invites, organization information, profile details, view release notes, and log out of the portal.
 
-For quick access, you can *favorite* the projects you are currently working on, to make them appear as the first projects in the view. You can also browse through the projects by using the Search field.
+### Project Groups
+
+To give a better overview over your projects it is possible to order your projects into **Groups**.
+
+This can be done by clicking the **Edit Group** button in the top left side.
+
+![Edit Groups](images/edit-group.png)
+
+When clicking on **Edit Groups** you can create new Groups to sort your project in and create a better overview for yourself.
+
+![Create Group](images/add-group.png)
+
+Once you click **Add Group** you can give it a name that fit the group, and then you can drag and drop your projects into the group of your choice.
 
 ## Chat Feature
 
