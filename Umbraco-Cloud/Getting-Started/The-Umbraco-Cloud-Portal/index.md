@@ -35,7 +35,7 @@ When clicking on **Edit Groups** you can create new Groups to sort your project 
 
 ![Create Group](images/add-group.png)
 
-Once you click **Add Group** you can give it a name that fit the group, and then you can drag and drop your projects into the group of your choice.
+Click **Add Group** to give it a name and then drag and drop your projects into the group of your choice.
 
 ## Chat Feature
 
