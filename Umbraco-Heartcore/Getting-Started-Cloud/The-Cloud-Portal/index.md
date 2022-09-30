@@ -10,9 +10,9 @@ In this article, you will learn more about the Umbraco Cloud Portal and what opt
 
 After you have logged into the [Umbraco Cloud Portal](https://www.umbraco.io), you are presented with the project list overview.
 
-![Portal Project Overview](images/portalOverview.png)
+![Portal Project Overview](images/Heartcore-dashboard.png)
 
-From here you can see a list of all your projects. If you have several projects, you can search for specific projects by using the search bar in the top right corner.
+From here you can see a list of all your projects. If you have several projects, you can sort specific projects in groups.
 
 Clicking on a project will take you to the project page where you will get an overview of your environment(s).
 
