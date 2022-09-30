@@ -13,7 +13,7 @@ When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/log
 
 ![View all projects](images/Umbraco-cloud-dashboard.png)
 
-With the project dashboard you get an overview of all your projects, the environments added, the usage for each of the project, which plan it is on and whether it is a baseline or baseline-child project.
+On the project dashboard, you get an overview of all your projects, the environments added, the usage for each of the project, which plan it is on, and whether it is a baseline or baseline-child project.
 
 In the top-right corner of the Cloud Portal, you will find:
 
