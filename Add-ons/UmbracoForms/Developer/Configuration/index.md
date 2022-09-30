@@ -57,7 +57,13 @@ For illustration purposes, the following structure represents the full set of op
         "DaysToRetainApprovedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
-      "FormElementHtmlIdPrefix": ""
+      "FormElementHtmlIdPrefix": "",
+      "SettingsCustomization": {
+        "DataSourceTypes": {},
+        "FieldTypes": {},
+        "PrevalueSourceTypes": {},
+        "WorkflowTypes": {},
+      }
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -132,6 +138,67 @@ Similarly, from Forms 10.2, the provided form templates available from the form 
 By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, from Forms 10.2, the attribute values can be prefixed with the value provided in this configuration element.
 
 For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
+
+### FormElementHtmlIdPrefix
+Forms 10.2 introduced the ability to configure settings for the various field, workflow, datasource and prevalue sources.  The default behaviour for Forms when a new field or workflow is added to to a form is for each setting to be empty, to be filled in by the editor.  All settings defined on the type are displayed for entry.
+
+In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
+
+It consists of four dictionaries, one for each type:
+
+- `DataSourceTypes`
+- `FieldTypes`
+- `PrevalueSourceTypes`
+- `WorkflowTypes`
+
+Each dictionary can be identified using the GUID or alias of the type as the key. The value is set to the following structure that contains three settings:
+
+```json
+{
+  "IsHidden": true|false,
+  "DefaultValue": "",
+  "IsReadOnly": true|false
+}
+```
+
+- `IsHidden` - if provided and set to true the setting will be hidden and will always have an empty value.
+- `DefaultValue` - if provided the value will be pre-filled when a type using it is created.
+- `IsReadOnly` - used in conjunction with the above, if set the field won't be editable and hence whatever is set as the `DefaultValue` won't be able to be changed. If set to false (or omitted) the editor can change the value from the default.
+
+In this example, the sender address field on a workflow for sending emails can be hidden, such that the system configured value is always used:
+
+```json
+  "SettingsCustomization": {
+    "WorkflowTypes": {
+      "sendEmailWithRazorTemplate": {
+        "SenderEmail": {
+          "IsHidden": true
+        }
+      }
+    },
+  }
+```
+
+Here an organisation approved reCAPTCHA score threshold is defined, that can't be changed by editors:
+
+```json
+  "SettingsCustomization": {
+    "FieldTypes": {
+      "recaptcha3": {
+        "ScoreThreshold": {
+          "DefaultValue": "0.8",
+          "IsReadOnly": true
+        }
+      }
+    },
+  }
+```
+
+In order to configure this setting, you will need to know the GUID or alias for the type, as well as the property name for each setting. You can find [these values for the built-in Forms types here](./type-details.md).
+
+Take care to not hide any settings that are required for the particular field or workflow type (e.g. the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
+
+Note that the default value and read-only settings apply for most setting types, with the exception of complex ones such as the field mapper (used in the Send to URL workflow) where a default string value isn't appropriate.
 
 ### Form default settings configuration
 
