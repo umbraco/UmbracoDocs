@@ -98,6 +98,11 @@ To:
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
 
+:::note
+If you are upgrading Umbraco in Production, you may want to consider stopping the site in IIS prior to deleting the old version of files (in step 9) and deploying the upgraded files. The new files will be re-created when you deploy, and this way there's little chance of the.
+:::
+
+
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
 
 Breaking changes going from Umbraco 9 to Umbraco 10.
