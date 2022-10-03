@@ -68,4 +68,4 @@ The quickest way to get to your logs is using the following URL template and rep
 
 `https://{app}.scm.azurewebsites.net/api/logstream`
 
-You can also find this in the KUDU console by clicking **Advanced Tools** and then **Log Stream** on the Web App in the Azure Portal.
+You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.
