@@ -62,14 +62,10 @@ It's important to know that Azure Web Apps may move your website between their '
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.
 
-## Creating a clean environment for an Azure Web App using slots
-
-If for any reason you need a clean fresh environment for your next release. Perhaps the Umbraco application is misbehaving and is unable to start in Azure App Service. You can achieve a fresh environment by creating a new slot and swapping this slot with your deployment slot. Your deployment slot becomes clean and any issues that were in the slot is moved to the copy and can be deleted.
-
 ### How to find the Linux App Service Logs
 
-The quickest way to get to your logs is using the following url template and replacing {app} with your Web App name:
+The quickest way to get to your logs is using the following URL template and replacing `{app}` with your Web App name:
 
-https://{app}.scm.azurewebsites.net/api/logstream
+`https://{app}.scm.azurewebsites.net/api/logstream`
 
 You can also find this in the KUDU console by clicking **Advanced Tools** and then **Log Stream** on the Web App in the Azure Portal.
