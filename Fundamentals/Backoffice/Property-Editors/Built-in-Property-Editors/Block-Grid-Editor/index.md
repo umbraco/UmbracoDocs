@@ -33,12 +33,12 @@ You will see the configuration options for a Block Grid as shown below.
 
 The Data Type editor allows you to configure the following properties:
 
-- **Available Blocks** - Define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
-- **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the root of the layout.
-- **Live editing mode** - Enabling this will enable you to see the changes you making as you are making them.
-- **Property editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width".
-- **Grid Columns** - Define the number of columns in your grid layout. Default is 12 columns.
-- **Layout Stylesheet** - Replace the built-in Layout Stylesheet. Additionally you can retrieve the default layout stylesheet to use as base for your own or inspiration for writhing your own.
+- **Blocks** - Define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
+- **Amount** - Sets the minimum and/or the maximum number of blocks that should be allowed at the root of the layout.
+- **Live editing mode** - Enabling this will enable you to see the changes you make as you are making them.
+- **Editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width".
+- **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
+- **Layout Stylesheet** - Replace the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own or inspiration for writing your own.
 
 ## Setup Block Types
 
