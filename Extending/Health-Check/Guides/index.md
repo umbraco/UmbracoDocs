@@ -11,6 +11,8 @@ Below is a list of guides for Health Checks in Umbraco.
 
 ## [Content sniffing protection](ContentSniffingProtection.md)
 
+## [Cross-site scription protection](CrossSiteScriptingProtection.md)
+
 ## [Debug compilation mode](DebugCompilationMode.md)
 
 ## [Excessive Headers](ExcessiveHeaders.md)
