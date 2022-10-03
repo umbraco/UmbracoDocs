@@ -11,7 +11,7 @@ In this article, we will cover the steps in order for you to install and configu
 
 ## Prerequisites
 
-Ensure you have read and followed the setup guide for [new](../New-site/index-v9) or [new](../Existing-site/index-v9) projects.
+Ensure you have read and followed the setup guide for [new](../New-site/index) or [Existing](../Existing-site/index) projects.
 
 ## Source Control Configuration
 
