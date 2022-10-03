@@ -80,7 +80,7 @@ ISearchResults Search(ISearchCriteria searchParameters);
 
 ## Indexing
 
-When calling the index methods on the `ExamineManager` it will call the same methods on every Indexer that is registered. If for some reason you require to only call the index methods on a particular provider then you can access the provider by name, for example:
+When calling the index methods on the `ExamineManager` it will call the same methods on every Indexer that is registered. If you require to only call the index methods on a particular provider then you can access the provider by name:
 
 ```csharp
 var externalIndexer = ExamineManager.Instance.IndexProviderCollection["ExternalIndexer"];
