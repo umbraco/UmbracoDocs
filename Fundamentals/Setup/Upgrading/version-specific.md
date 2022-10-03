@@ -100,7 +100,8 @@ To:
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
 
-:::note
+### Upgrade of any publicly hosted environment
+
 When the upgrade is completed and tested, and prior to deploying to any publicly accessible environment, you should consider the following:
 
 1. You will want to ensure you have backups for both the datbaase and the file system for rollback.
