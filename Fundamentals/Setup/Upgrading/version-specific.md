@@ -40,6 +40,8 @@ The following options may suit your needs:
 
 ### Steps to upgrade using Visual Studio
 
+It's recommended that you upgrade the site offline, and test the upgrade fully before deploying it to the production environment.
+
 1. Open your Umbraco 9 project in Visual Studio.
 2. Right-click on the project name in the Solution Explorer and select **Properties**.
 3. Select **.NET 6.0** from the **Target Framework** drop-down.
@@ -99,7 +101,21 @@ To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
 
 :::note
-If you are upgrading Umbraco in Production, you may want to consider stopping the site in IIS prior to deleting the old version of files (in step 9) and deploying the upgraded files. The new files will be re-created when you deploy, and this way there's little chance of the.
+When the upgrade is completed and tested, and prior to deploying to any publicly accessible environment, you should consider the following:
+
+1. You will want to ensure you have backups for both the datbaase and the file system for rollback.
+2. You should stop the site so it is not accessable during the upgrade process.
+3. You should delete the relevant folders from the filesystem prior to deploying.
+  - `/wwwroot/umbraco`
+  - `/umbraco/PartialViewMacros`
+  - `/umbraco/UmbracoBackOffice`
+  - `/umbraco/UmbracoInstall`
+  - `/umbraco/UmbracoWebsite`
+  - `/umbraco/config/lang`
+  - `/umbraco/config/appsettings-schema.json`
+4. Deploy the site how you normally would to your public facing environment 
+5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete. 
+6. Remember to check the logs for any errors which may have occurred during the upgrade process. 
 :::
 
 
