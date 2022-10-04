@@ -91,7 +91,7 @@ The History sub-section provides a chronological audit trail of workflow activit
 
 ![History sub-section](images/History-sub-section.png)
 
-You can also **Filter** the records based on the information listed abouve. Additionally, you can adjust the total number of records displayed on a page.
+You can also **Filter** the records based on the information listed above. Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the Active workflow sub-section.
 
