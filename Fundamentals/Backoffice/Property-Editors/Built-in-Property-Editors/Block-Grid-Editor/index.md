@@ -83,6 +83,8 @@ There are two ways a Block can become smaller:
 
 A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
 
+> TODO: Perhaps an animated gif showing a block being resized to different widths in an area can help explain this text more visually for the visual learners like myself
+
 Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other blocks.
 
 - **Available column spans i** - Define one or more columns this Block spans across. Example in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either be half width or full width.
