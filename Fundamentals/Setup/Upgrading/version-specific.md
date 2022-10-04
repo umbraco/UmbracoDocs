@@ -83,7 +83,7 @@ It's recommended that you upgrade the site offline, and test the upgrade fully b
 
 11. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
-12. Re-start your site in IIS, build and run your project to finish the installation of Umbraco 10.
+12. Restart your site in IIS, build and run your project to finish the installation of Umbraco 10.
 
 To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:
 
