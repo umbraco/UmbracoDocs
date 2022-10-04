@@ -1,0 +1,62 @@
+---
+meta.Title: "Migrating Users to Umbraco Cloud"
+meta.Description: "In this guide we show you how you can migrate users from your existing on-premise site to Umbraco Cloud and Umbraco ID."
+versionFrom: 8.0.0
+versionTo: 10.0.0
+---
+
+# Migrating Users to Umbraco Cloud
+
+In this guide we show you how you can migrate users from your on-premise site to Umbraco Cloud and Umbraco ID.
+
+We will use SQL Server Management Studio to generate a script of the user tables in your SQL Database.
+
+## Prerequisites
+
+* SQL database used on your on-prem-site.
+* SQL Server Management Studio.
+* A cloud site that you are migrating to.
+
+## Steps on how to migrate a user
+
+To migrate users to cloud we need to copy the tables beginning with umbracoUser to the cloud site from your on-premise database.
+
+This is done by generating a script by using SQL Server Management Studio that we can run on our Umbraco Cloud Database.
+
+### Generate SQL Script
+
+Below is the steps to generate a script with the umbracoUser database tables.
+
+1. Go to SQL Server Management Studio and connect to the database from which you want to migrate the users.
+2. Right-click on it and  go to **tasks > Generate script**
+3. Follow the Wizard and When prompted to **"select the database object to script"** choose **“Select specific tables”** and choose the following tables:
+
+```SQL
+dbo.umbracoUser
+dbo.umbracoUser2NodeNotify
+dbo.umbracoUser2UserGroup
+dbo.umbracoUserGroup
+dbo.umbracoUserGroup2App
+dbo.umbracoUserGroup2NodePermission
+dbo.umbracoUserLogin
+dbo.umbracoUserStartNode
+```
+
+4. Click next and then click advanced
+5. Find **“Type of data to script”** and choose **“Data only”**
+6. Choose where to save the script and then save it.
+7. Connect to your [Umbraco Cloud Database](https://our.umbraco.com/documentation/Umbraco-Cloud/Databases/)
+8. Run the script on your Umbraco Cloud Database
+9. Restart your Umbraco Cloud environment
+
+### Finishing the Migration
+
+Once the script has been run on your Umbraco Cloud Database it is now time for the users to login to the Cloud backoffice.
+
+The user will be promted to login, they should use the password from the on-premise installation.
+
+Once the user logs in they will be asked to enter their email to receive a token and verify their user in Umbraco ID.
+
+Enter the code to verify the user with Umbraco ID.
+
+Once the user has been verified they will be redirected to the backoffice and their user has been migrated to Umbraco ID.

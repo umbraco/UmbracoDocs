@@ -63,7 +63,7 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some excellent [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
@@ -81,6 +81,7 @@ While the site is running you need to:
 Now, shut down the project, and delete the following files and folders from `/Umbraco/Data`
 
 * `/TEMP`
+* `/Umbraco/Logs`
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
@@ -146,11 +147,11 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All Document Types, Templates, Stylesheets, etc, are in the backoffice
 
 :::note
-Umbraco Identity (Umbraco ID) is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
+Umbraco Identity (Umbraco ID) is the single sign-on (SSO) feature across all Umbraco Cloud services.
 
-Any users that you might have had on your existing Umbraco site will be migrated over to the local clone of the Cloud project along with the database. These users, however, will not be able to access the Cloud environments of the project or any of the backoffices associated with those environments.
+It is required to access any project pages as well as backoffices.
 
-For the users to continue having access to the project, they will need to be re-invited either as a [Team Member](../../Set-Up/Team-Members) on a project level or as a [User](../../Set-Up/Users-on-Cloud) to the backoffice of one or more Cloud environments.
+To migrate the users from your on-premise site to Umbraco Cloud and Umbraco ID follow the [Migrate Users to Cloud guide](/Umbraco-Cloud/Getting-Started/Migrate-Existing-Site/Migrating-Users-To-Umbraco-Cloud/index.md).
 :::
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
