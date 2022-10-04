@@ -42,7 +42,7 @@ The Data Type editor allows you to configure the following properties:
 - **Blocks** - Define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
 - **Amount** - Sets the minimum and/or the maximum number of blocks that should be allowed at the root of the layout.
 - **Live editing mode** - Enabling this will enable you to see the changes you make as you are making them.
-- **Editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width".
+- **Editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width". Like 100% or 800px.
 - **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
 - **Layout Stylesheet** - Replace the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own or inspiration for writing your own.
 - **Create Button Label** - Overwrite the label of the create button.
@@ -139,7 +139,7 @@ These properties are relevant when you working with custom views or complex proj
 
 - **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
-- **Hide content editor** - Use this feature when you want to hide the ability to edit the content in a Block Editor. If you made a custom view that enables you to edit the content part of a Block, you might want to use this feature.
+- **Hide content editor** - Hide the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
 
 ## Editing Blocks
 
@@ -165,9 +165,15 @@ More Blocks can be added to the layout by clicking the Add content button. Alter
 ![Block List - Add Content](images/BlockListEditor_AddContentInline.jpg)
 > TODO: screenshot
 
+To delete a Block click the trashbin icon whichs appears on hover.
+
+## Sorting Blocks
+
 Blocks can be rearranged using the click and drag feature. Move them up or down to place them in the desired order.
 
-To delete a Block click the trashbin icon whichs appears on hover.
+Moving a Block from one Area to another is done in the same way. If a Blocks is not allowed in the given position the area will display red and neglect the new position.
+
+> TODO: Screenshot of red overlay when trying to drop a Block in a disallowed area.
 
 ## Rendering Block Grid Content
 
@@ -185,7 +191,7 @@ The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a
 Example use-case:
 
 ```csharp
-@await Html.GetBlockGridHtmlAsync(Model, myGrid")
+@await Html.GetBlockGridHtmlAsync(Model, "myGrid")
 ```
 
 In the sample above `"myGrid"` is the alias of the Block Grid editor.
