@@ -3,17 +3,17 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-## Build a Custom View for a Block
+# Build a Custom View for a Block
 
 You can choose to customize your editing experience by implementing a custom view for each Block Type of a Block Editor.
 
-By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented, but can also include interactive elements and be a full custom solution to how data is manipulated. Notice: In the Block List Editor the Inline Editing Mode must be disabled for custom backoffice views to appear.
+By picking a custom view you overwrite the backoffice UI for the given block with your own. This enables you to define how a block should be presented. It can, however, also include interactive elements and be a full custom solution to how data is manipulated. In the Block List Editor the Inline Editing Mode must be disabled for custom backoffice views to appear.
 
-### Write Your Own HTML View
+## Write your own HTML view
 
-Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and therefore you can write any AngularJS logic.
+Currently you can only pick HTML files for a custom view. These views are powered by AngularJS and you can write any AngularJS logic.
 
-Your HTML can be anything, but if you like to use it as a representation of the content then you would also want the full view to be clickable, which then opens the default editor for editing of your content.
+Your HTML can be anything. If you use it as a representation of the content you would also want the full view to be clickable. This would then open the default editor for editing of your content.
 
 The following example displays the property with the alias `headline` together with the `description` inside a button to edit your block.
 
@@ -24,23 +24,24 @@ The following example displays the property with the alias `headline` together w
 </button>
 ```
 
-If you'd like to display properties of `settings`, you can access these by `block.settingsData.myPropertyAlias`.
+If you would like to display properties of `settings`, you can access these by using `block.settingsData.myPropertyAlias`.
 
-
-### Add the Areas Container for Block Grid Editor
+## Add the Areas Container for Block Grid Editor
 
 Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Area Container should be inserted.
+
 This enables you to wrap and place the Areas as you need.
 
-The Area Container is inserted through a slot, insert the following snippet where you like the Area to appear in your Custom View:
+The Area Container is inserted through a slot. Insert the following snippet where you would like the Area to appear in your Custom View:
 
 ```html
 <slot name="areas" part="areas"></slot>
 ```
 
-### Adding custom implementation to your View
+## Adding custom implementation to your View
 
-To achieve this you need to add a custom angularJS controller to your custom view, using the ng-controller attribute:
+To achieve this you need to add a custom AngularJS controller to your custom view, using the `ng-controller` attribute:
+
 ```html
 <button type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)" class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
     <h2 ng-bind="block.data.headline"></h2>
@@ -49,12 +50,15 @@ To achieve this you need to add a custom angularJS controller to your custom vie
 ```
 
 :::note
-The class declaration is necessary to allow the block to behave like the default blocks (i.e. drag-to-sort etc.)
+The class declaration is necessary to allow the block to behave like the default blocks, like the "drag-to-sort" feature.
 :::
 
-Create a folder inside the App_Plugins folder called 'CustomBlockView' or something more meaningful for your implementation.
+Create a folder inside the `App_Plugins` folder called 'CustomBlockView'.
 
-Inside this folder create two files,. The first file should be called package.manifest that contain the following:
+Create two files within the CustomBlockView file: `package.manifest` and `customBlock.controller.js`.
+ 
+Add the following JSON to the `package.manifest` file:
+
 ```json
 {
   "javascript": [
@@ -62,15 +66,14 @@ Inside this folder create two files,. The first file should be called package.ma
   ]  
 }
 ```
-Umbraco will parse all package.manifest files and load any resources they reference into the backoffice during startup.
 
-The second file should be a javascript file called
+:::note
+Umbraco will parse all `package.manifest` files and load any resources they reference into the backoffice during startup.
+:::
 
-**customBlock.controller.js**
+The second file, `customBlock.controller.js`, will be used to register the 'customBlockController' defined using the `ng-controller` attribute in your custom view.
 
-(to match the file referenced in your package.manifest file)
-
-This file then should register your 'customBlockController' mentioned in your view ng-controller attribute with Umbraco's angular module's controllers
+To register the controller, add the following lines of code:
 
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
@@ -78,13 +81,13 @@ angular.module("umbraco").controller("customBlockController", function ($scope) 
 });
 ```
 
-#### Example: Displaying an image from a Media Picker
+### Example: Displaying an image from a Media Picker
 
-Your block may enable you to 'pick' an image for use as the background for a particular block or to display as part of the block layout. If you try to display this image directly in the view from the property `block.data.image` you'll see the unique id and not the image.
+Your block may enable you to 'pick' an image for use as the background for a particular block. If you try to display this image directly in the view using `block.data.image`, you will see the unique ID and not the image.
 
-We'll need to use the Id in our custom angularJS controller to get the ImageUrl to display in our Backoffice Block Editor View.
+You will need to use the ID in our custom AngularJS controller in order to get the `ImageUrl` to display in our backoffice Block Editor View.
 
-With the setup of files above, we would amend our customBlock.controller.js file, injecting the mediaResource to retrieve the image from the id:
+With the setup of files above, you need to amend the `customBlock.controller.js` file, by injecting the `mediaResource` to retrieve the image from the ID:
 
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
@@ -101,7 +104,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
 });
 ```
 
-Update the View to use the 'imageUrl' property to display the image:
+Update the Custom View to use the `imageUrl` property to display the image:
 
 ```html
 <div ng-controller="customBlockController" ng-click="block.edit()">
