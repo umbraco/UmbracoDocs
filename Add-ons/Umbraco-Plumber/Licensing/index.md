@@ -22,4 +22,4 @@ The test license is restricted to sites running in a development environment, wi
 
 ## Getting an Umbraco Plumber License
 
-If you want to buy a Plumber license, please reach out to the sales team through **suits@umbraco.com**.
+If you want to buy an Umbraco Plumber license, reach out to the sales team at **suits@umbraco.com**.
