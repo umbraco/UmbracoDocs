@@ -28,8 +28,8 @@ This is done by generating a script by using SQL Server Management Studio that w
 Below is the steps to generate a script with the umbracoUser database tables.
 
 1. Go to SQL Server Management Studio and connect to the database from which you want to migrate the users.
-2. Right-click on it and  go to **tasks > Generate script**
-3. Follow the Wizard and When prompted to **"select the database object to script"** choose **“Select specific tables”** and choose the following tables:
+2. Right-click on it and  go to ***tasks > Generate script***
+3. Follow the Wizard and When prompted to ***"select the database object to script"*** choose ***“Select specific tables”*** and choose the following tables:
 
 ```SQL
 dbo.umbracoUser
@@ -42,10 +42,10 @@ dbo.umbracoUserLogin
 dbo.umbracoUserStartNode
 ```
 
-4. Click next and then click advanced
-5. Find **“Type of data to script”** and choose **“Data only”**
+4. Click ***next*** then click ***advanced***
+5. Find ***“Type of data to script”*** and choose ***“Data only”***
 6. Choose where to save the script and then save it.
-7. Connect to your [Umbraco Cloud Database](https://our.umbraco.com/documentation/Umbraco-Cloud/Databases/)
+7. Connect to your [Umbraco Cloud Database](/Umbraco-Cloud/Databases/Cloud-Database/index.md)
 8. Run the script on your Umbraco Cloud Database
 9. Restart your Umbraco Cloud environment
 
