@@ -107,8 +107,8 @@ To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 When the upgrade is completed and tested, and prior to deploying to any publicly accessible environment, you should consider the following:
 
 1. Ensure you have backups for both the database and the file system.
-2. You should stop the site so it is not accessable during the upgrade process.
-3. You should delete the relevant folders from the filesystem prior to deploying.
+2. Stop the site so it is not accessible during the upgrade process.
+3. Delete the relevant folders from the filesystem prior to deploying.
   - `/wwwroot/umbraco`
   - `/umbraco/PartialViewMacros`
   - `/umbraco/UmbracoBackOffice`
