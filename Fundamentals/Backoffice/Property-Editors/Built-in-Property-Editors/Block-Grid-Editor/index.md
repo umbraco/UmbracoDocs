@@ -46,9 +46,11 @@ Once you have added an Element Type as a Block Type on your Block Grid Data Type
 > TODO: screenshot
 
 ### Groups
+
 Blocks can also be grouped, this will be visible in the Block Catalogue. This can also be used to allow a group of Blocks in a Area.
 
 ## Block Configuration
+
 Each Block has a set of properties that are optional to configure. These are described below.
 
 ### General
@@ -56,16 +58,16 @@ Each Block has a set of properties that are optional to configure. These are des
 Customize the user experience for your content editors when they work with the blocks in the Content section.
 
 - **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
+
   :::tip
-  Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar". 
+  Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
   
   You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
   :::
 
-
 - **Content model** - This presents the Element Type used as model for the Content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
 - **Settings model** - Add a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
-    
+
 ### Size options
 
 Customize the Blocks size in the Grid, if you define multiple options the Block becomes scalable.
@@ -84,7 +86,6 @@ Additionally, Blocks can be configured to span rows, this enables one Block to b
 - **Available column spans i** - Define one or more columns this Block spans across. Example in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either be half width or full width.
 - **Available row spans i** - Define the amount of rows this Block spans across.
 
-
 ### Catalogue appearance
 
 These properties refer to how the Block is presented in the Block catalogue when editors choose which Blocks to use for their content.
@@ -97,10 +98,8 @@ The thumbnails for the catalogue are presented in the format of 16:10, and we re
 
 ### Allowance
 
-
 - **Allow in root color** - Determine wether this Block can be created in the root of your layout.
 - **Allow in area** - Determine wether this Block can be created inside Areas of other Blocks.
-
 
 ### Areas
 
@@ -181,8 +180,8 @@ Moving a Block from one Area to another is done in the same way. If a Blocks is 
 
 Rendering the stored value of your **Block Grid** property can be done in two ways: 
 
-1.  [Default rendering](#1-default-rendering)
-2.  [Build your own rendering](#2-build-your-own-rendering)
+1. [Default rendering](#1-default-rendering)
+2. [Build your own rendering](#2-build-your-own-rendering)
 
 ### 1. Default rendering
 
@@ -216,15 +215,13 @@ The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.Block
 
 #### Rendering the block areas
 
-> TODO: align area semantics when the rest of the article is written
-
-The Partial View for the block is responsible for rendering its own block areas. This is done using another built-in rendering mechanism:
+The Partial View for the block is responsible for rendering its own Block Areas. This is done using another built-in rendering mechanism:
 
 ```csharp
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
 
-Here you will need to create a Partial View for each Block Type within the block area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
+Here you will need to create a Partial View for each Block Type within the Block Area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
 
 These Partial Views must be placed in the same folder as before, (`Views/Partials/BlockGrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
 
@@ -410,7 +407,6 @@ This can be exemplified by writing out the HTML structure:
 
 </div>
 ```
-
 
 ## Build a Custom Backoffice View
 
