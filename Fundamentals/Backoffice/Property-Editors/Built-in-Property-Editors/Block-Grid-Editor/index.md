@@ -9,8 +9,15 @@ versionTo: 10.0.0
 
 `Returns: BlockGridModel`
 
-**Block Grid** enables the editor to layout their content. The content is made of blocks, which can contain simple or very complex data. By defining column span and row span, each Block gets a size, this makes them to appear next to together or even in formations.
-Additionally Blocks can nest other Blocks forming more complex or strict compositions.
+**Block Grid** enables the editor to layout their content. The content is made of blocks, which can contain simple or very complex data.
+
+A Block takes full width with the default setup.
+There is two ways a Block can become smaller. When a Block is placed in a Area it will fit to the Areas width, or a Block can have one or more Column Span Options defined, A single Column Span Option will be used to define the Blocks width. With multiple options the Content Editor can scale the Block to fit one of these options.
+
+Additionally Blocks can span rows, this enables one Block to be placed next to a few rows containing other blocks.
+
+Blocks can nest other Blocks forming more complex or strict compositions. These compositions can be used as layout for other Blocks.
+To achieve nesting a Block must have one or more Areas defined. Each Area can contain one or more Blocks.
 
 The default provided layout mechanism is based on CSS Grid, this can be adjusted or replaced to achieve the right layout for your project.
 
