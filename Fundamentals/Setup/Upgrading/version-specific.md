@@ -119,7 +119,6 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 4. Deploy the site how you normally would to your public facing environment 
 5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete. 
 6. Check the logs for any errors which may have occurred during the upgrade process. 
-:::
 
 
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
