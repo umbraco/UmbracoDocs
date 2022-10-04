@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 10.0.0
 ---
 
 # Block Grid
@@ -9,21 +8,11 @@ versionTo: 10.0.0
 
 `Returns: BlockGridModel`
 
-The **Block Grid** enables the editor to layout their content in the Umbraco backoffice. The content is made of blocks, which can contain simple or complex data.
-
-A Block takes full width with the default setup.
-There is two ways a Block can become smaller. When a Block is placed in a Area it will fit to the Areas width, or a Block can have one or more Column Span Options defined, A single Column Span Option will be used to define the Blocks width. With multiple options the Content Editor can scale the Block to fit one of these options.
-
-Additionally Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other blocks.
-
-Blocks can nest other Blocks forming more complex or strict compositions. These compositions can be used as layout for other Blocks.
-To achieve nesting a Block must have one or more Areas defined. Each Area can contain one or more Blocks.
-
-The default provided layout mechanism is based on CSS Grid. This can be adjusted or replaced to achieve the right layout for your project.
+The **Block Grid** enables the editor to layout their content in the Umbraco backoffice. The content is made of blocks, which can contain different types of data.
 
 ## Configure the Block Grid
 
-The Block Grid property editor is configured in the same way standard property editors, which is via the Data Types backoffice interface.
+The Block Grid property editor is configured via the Data Types backoffice interface.
 
 To set up your Block Grid Editor property, follow these steps:
 
@@ -81,6 +70,17 @@ Customize the user experience for your content editors when they work with the b
 
 Customize the Blocks size in the Grid, if you define multiple options the Block becomes scalable.
 
+By default a Block takes up the full-width of the content. 
+
+There are two ways a Block can become smaller:
+
+1: When a Block is placed in a Area it will fit to the Areas width. [Learn more about Areas below](#areas).
+2. A Block can have one or more Column Span options defined. 
+
+A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
+
+Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other blocks.
+
 - **Available column spans i** - Define one or more columns this Block spans across. Example in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either be half width or full width.
 - **Available row spans i** - Define the amount of rows this Block spans across.
 
@@ -91,7 +91,7 @@ These properties refer to how the Block is presented in the Block catalogue when
 
 - **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Example: `#424242`.
 - **Icon color** - Change the color of the Element Type icon. Example: `#242424`.
-- **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
+- **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
@@ -104,10 +104,13 @@ The thumbnails for the catalogue are presented in the format of 16:10, and we re
 
 ### Areas
 
-Block Areas enables for nesting of Blocks.
-The each area has a size, defined by column and rows spans.
-The grid for the Areas are based on the same amount of columns as your root grid, unless you choose to change it.
-To scale a Area drag the little scale-button in the bottom right corner with your mouse.
+Blocks can nest other Blocks to support specific compositions. These compositions can be used as layout for other Blocks.
+
+To achieve nesting, a Block must have one or more Areas defined. Each Area can contain one or more Blocks.
+
+The each area has a size, defined by column and rows spans. The grid for the Areas are based on the same amount of columns as your root grid, unless you choose to change it
+
+To scale an Area, click and drag the little scale-button in the bottom-right corner with your mouse.
 
 - **Grid Columns for Areas** - Overwrite the amount of columns used for the grid of Areas.
 - **Allow in area** - Determine wether this Block can be created inside Areas of other Blocks.
@@ -127,7 +130,6 @@ Mention that the alias can be used to target this Area via the Layout Stylesheet
 Mention that you can pick groups for allowance, in that case the required number is for Blocks of the group.
 Mention that you can pick individual Blocks, this Block can be picked and will be valid though its not allow for Areas.
 Individual Block validation(required number) is just for that block-type.
-
 
 ### Advanced
 
@@ -311,7 +313,7 @@ If you do not want to use Partial Views, you can access the block item data dire
 
 ## Write a Custom Layout Stylesheet
 
-The default layout stylesheet is using CSS Grid. This can be modified or replaced to fit your implementation.
+The default layout stylesheet and mechanism is using CSS Grid. This can be modified to fit your implementation and your project.
 
 ### Adjusting Layout Stylesheet
 
