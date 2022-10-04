@@ -32,10 +32,19 @@ Blocks of the Block Grid Editor can have Areas. These Blocks requires their Cust
 
 This enables you to wrap and place the Areas as you need.
 
-The Area Container is inserted through a slot. Insert the following snippet where you would like the Area to appear in your Custom View:
+The Areas is inserted through a slot, this slot will become the Area Container.
+
+Insert the following snippet where you would like the Area to appear in your Custom View:
 
 ```html
-<slot name="areas" part="areas"></slot>
+<slot name="area-container" part="area-container"></slot>
+```
+
+Example of a Custom View wrapping the area-container:
+```html
+<div style="border:green 1px solid; padding: 20px;">
+    <slot name="area-container" part="area-container"></slot>
+</div>
 ```
 
 ## Adding custom implementation to your View
