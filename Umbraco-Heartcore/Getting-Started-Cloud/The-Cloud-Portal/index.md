@@ -12,7 +12,7 @@ After you have logged into the [Umbraco Cloud Portal](https://www.umbraco.io), y
 
 ![Portal Project Overview](images/Heartcore-dashboard.png)
 
-From here you can see a list of all your projects. If you have several projects, you can sort specific projects in groups.
+From here you can see a list of all your projects. If you have multiple projects, you can sort specific projects into groups.
 
 Clicking on a project will take you to the project page where you will get an overview of your environment(s).
 
