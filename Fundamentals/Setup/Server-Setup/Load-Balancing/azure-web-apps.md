@@ -34,11 +34,13 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 }
 ```
 
-## AppDomain synchronization
+## Host synchronization
 
-Each application runs inside an [AppDomain](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/application-domains) which is like a subprocess within the web app process. When an ASP.Net application restarts, the current AppDomain 'winds down' while another AppDomain is started; meaning there can be more than 1 live AppDomain during a restart. Restarts can occur in many scenarios including when an Azure Web App auto transitions between hosts, you scale the instances or you utilize slot swapping.
+Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0)
 
-Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single AppDomain at once. Umbraco manages this synchronization by an object called `IMainDom`. 
+When an host restarts, the current host 'winds down' while another host is started; meaning there can be more than one live host during a restart. Restarts can occur in many scenarios including when an Azure Web App auto transitions between hosts, you scale the instances or you utilize slot swapping.
+
+Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single host at once. Umbraco manages this synchronization by an object called `IMainDom`. 
 
 By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism but this mechanism only works on Windows systems and doesn't work in Azure Web Apps so we need to swap it out for an alternative file system based locking mechanism by using the following appSetting.
 With **Umbraco v10+** `FileSystemMainDomLock` is the default setting.
