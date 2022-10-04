@@ -19,7 +19,7 @@ Additionally Blocks can be configured to span rows, this enables one Block to be
 Blocks can nest other Blocks forming more complex or strict compositions. These compositions can be used as layout for other Blocks.
 To achieve nesting a Block must have one or more Areas defined. Each Area can contain one or more Blocks.
 
-The default provided layout mechanism is based on CSS Grids. This can be adjusted or replaced to achieve the right layout for your project.
+The default provided layout mechanism is based on CSS Grid. This can be adjusted or replaced to achieve the right layout for your project.
 
 ## Configure the Block Grid
 
@@ -45,6 +45,7 @@ The Data Type editor allows you to configure the following properties:
 - **Editor width** - Overwrite the width of the property editor. This field takes any valid CSS value for "max-width".
 - **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
 - **Layout Stylesheet** - Replace the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own or inspiration for writing your own.
+- **Create Button Label** - Overwrite the label of the create button.
 
 ## Setup Block Types
 
@@ -55,9 +56,13 @@ Once you have added an Element Type as a Block Type on your Block Grid Data Type
 ![Block List - Data Type Block Configuration](images/BlockListEditor_DataType_Blocks.png)
 > TODO: screenshot
 
+### Groups
+Blocks can also be grouped, this will be visible in the Block Catalogue. This can also be used to allow a group of Blocks in a Area.
+
+## Block Configuration
 Each Block has a set of properties that are optional to configure. These are described below.
 
-### Block Appearance
+### General
 
 Customize the user experience for your content editors when they work with the blocks in the Content section.
 
@@ -67,9 +72,18 @@ Customize the user experience for your content editors when they work with the b
   
   You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
   :::
-- **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or make your own editing experience by adding your own AngularJS controller to the view.
-- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. This means that the default backoffice styles are no longer present for the view of this block.
-- **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
+
+
+- **Content model** - This presents the Element Type used as model for the Content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+- **Settings model** - Add a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
+    
+### Size options
+
+Customize the Blocks size in the Grid, if you define multiple options the Block becomes scalable.
+
+- **Available column spans i** - Define one or more columns this Block spans across. Example in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either be half width or full width.
+- **Available row spans i** - Define the amount of rows this Block spans across.
+
 
 ### Catalogue appearance
 
@@ -81,24 +95,49 @@ These properties refer to how the Block is presented in the Block catalogue when
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
-### Layout options
+### Allowance
 
-**TO BE DONE**
 
-### Data Models
+- **Allow in root color** - Determine wether this Block can be created in the root of your layout.
+- **Allow in area** - Determine wether this Block can be created inside Areas of other Blocks.
 
-It is possible to use two separate Element Types for your Block Types. It is required to have one for Content and optional to add one for Settings.
-
-- **Content model** - This presents the Element Type used as model for the Content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
-- **Settings model** - Add a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
 
 ### Areas
 
-**TO BE DONE**
+Block Areas enables for nesting of Blocks.
+The each area has a size, defined by column and rows spans.
+The grid for the Areas are based on the same amount of columns as your root grid, unless you choose to change it.
+To scale a Area drag the little scale-button in the bottom right corner with your mouse.
+
+- **Grid Columns for Areas** - Overwrite the amount of columns used for the grid of Areas.
+- **Allow in area** - Determine wether this Block can be created inside Areas of other Blocks.
+
+### Area configuration
+
+> Missing screenshot of Area configuration
+
+**MISSING DESCRIPTION OF AREA CONFIG**
+Mention that the alias can be used to target this Area via the Layout Stylesheet.
+
+**Create Button Label** is to overwrite the Create Button Label of that Area.
+
+**Number of blocks** is for the total amount of Blocks in the Area.
+
+**TODO...**
+Mention that you can pick groups for allowance, in that case the required number is for Blocks of the group.
+Mention that you can pick individual Blocks, this Block can be picked and will be valid though its not allow for Areas.
+Individual Block validation(required number) is just for that block-type.
+
 
 ### Advanced
 
-These properties are relevant when you work with custom views.
+These properties are relevant when you working with custom views or complex projects.
+
+- **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or make your own editing experience by adding your own AngularJS controller to the view.
+
+- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. This means that the default backoffice styles are no longer present for the view of this block.
+
+- **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 - **Hide content editor** - Use this feature when you want to hide the ability to edit the content in a Block Editor. If you made a custom view that enables you to edit the content part of a Block, you might want to use this feature.
 
