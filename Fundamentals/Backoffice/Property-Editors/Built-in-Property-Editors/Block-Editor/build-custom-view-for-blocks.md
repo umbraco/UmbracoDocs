@@ -26,6 +26,18 @@ The following example displays the property with the alias `headline` together w
 
 If you would like to display properties of `settings`, you can access these by using `block.settingsData.myPropertyAlias`.
 
+## Make Block List Editor custom view draggable
+
+A custom view of Block List Editor needs to have the 'blockelement__draggable-element' class presented to define which part of the Block that is draggable.
+
+Example:
+```html
+<button type="button" class="blockelement__draggable-element" ng-click="block.edit()">
+  <h2 ng-bind="block.data.headline"></h2>
+  <p ng-bind="block.data.description"></p>
+</button>
+```
+
 ## Add the Areas Container for Block Grid Editor
 
 Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Area Container should be inserted.
@@ -52,15 +64,13 @@ Example of a Custom View wrapping the area-container:
 To achieve this you need to add a custom AngularJS controller to your custom view, using the `ng-controller` attribute:
 
 ```html
-<button type="button" ng-controller="customBlockController" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)" class="btn-reset umb-outline blockelement-labelblock-editor blockelement__draggable-element ng-scope ui-sortable-handle" >
-    <h2 ng-bind="block.data.headline"></h2>
-    <p ng-bind="block.data.description"></p>
-</button>
+<div ng-controller="customBlockController">
+    <button type="button" ng-click="block.edit()" >
+        <h2 ng-bind="block.data.headline"></h2>
+        <p ng-bind="block.data.description"></p>
+    </button>
+</div>
 ```
-
-:::note
-The class declaration is necessary to allow the block to behave like the default blocks, like the "drag-to-sort" feature.
-:::
 
 Create a folder inside the `App_Plugins` folder called 'CustomBlockView'.
 
@@ -86,7 +96,7 @@ To register the controller, add the following lines of code:
 
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope) {
-// you can do your custom functionality here!
+    // you can do your custom functionality here!
 });
 ```
 
@@ -102,14 +112,13 @@ With the setup of files above, you need to amend the `customBlock.controller.js`
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
     //your property is called image so the following will contain the udi:
-        var imageUdi = $scope.block.data.image;
+    var imageUdi = $scope.block.data.image;
     //the mediaResource has a getById method:
-        mediaResource.getById(imageUdi)
-            .then(function (media) {
-                console.log(media);
-                //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
-                $scope.imageUrl = media.mediaLink;
-    });    
+    mediaResource.getById(imageUdi).then(function (media) {
+        console.log(media);
+        //set a property on the 'scope' called imageUrl for the returned media object's mediaLink
+        $scope.imageUrl = media.mediaLink;
+    });
 });
 ```
 
@@ -129,14 +138,13 @@ If you need to use a specific crop, you can inject the `imageUrlGeneratorResourc
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
 
     //your property is called image so the following will contain the udi:
-        var imageUdi = $scope.block.data.image;
+    var imageUdi = $scope.block.data.image;
     //the mediaResource has a getById method:
-        mediaResource.getById(imageUdi)
-            .then(function (media) {
-                imageUrlGeneratorResource.getCropUrl(media.mediaLink, 150, 150).then(function (cropUrl) {
-                console.log(cropUrl);
-                $scope.imageUrl = cropUrl;
-            });
+    mediaResource.getById(imageUdi).then(function (media) {
+        imageUrlGeneratorResource.getCropUrl(media.mediaLink, 150, 150).then(function (cropUrl) {
+            console.log(cropUrl);
+            $scope.imageUrl = cropUrl;
+        });
     });    
 });
 ```
