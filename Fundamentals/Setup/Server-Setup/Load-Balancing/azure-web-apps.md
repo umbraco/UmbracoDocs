@@ -36,9 +36,9 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 ## Host synchronization
 
-Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0)
+Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0).
 
-When a host restarts, the current host 'winds down' while another host is started. This means there can be more than one live host during a restart. Restarts can occur in many scenarios including when an Azure Web App auto transitions between hosts, you scale the instances or you utilize slot swapping.
+When a host restarts, the current host 'winds down' while another host is started. This means there can be more than one live host during a restart. Restarts can occur in many scenarios including when an Azure Web App auto-transitions between hosts, you scale the instances or you utilize slot swapping.
 
 Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single host at once. Umbraco manages this synchronization by an object called `IMainDom`. 
 
