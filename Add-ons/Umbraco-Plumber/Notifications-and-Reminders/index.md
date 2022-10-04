@@ -16,7 +16,7 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 - **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
 - **Edit site URL:** The URL for the editing environment (including schema - http[s]). This is a mandatory field.
 - **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
-- **Email templates:** Configure which users receive emails for which workflow actions and modify the templates for those emails. You can send an email to:
+- **Email templates:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
   
   ![Notifications tab in the Workflow Section](images/Notifications_tab.png)
 
