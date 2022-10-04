@@ -147,7 +147,7 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All Document Types, Templates, Stylesheets, etc, are in the backoffice
 
 :::note
-Umbraco Identity (Umbraco ID) is the single sign-on (SSO) feature across all Umbraco Cloud services.
+Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umbraco Cloud services.
 
 It is required to access any project pages as well as backoffices.
 
