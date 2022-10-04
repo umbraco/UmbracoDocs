@@ -63,6 +63,8 @@ Customize the user experience for your content editors when they work with the b
   Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
   
   You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
+
+  Get more tips on how to use AngularJS filters in Umbraco CMS in this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
   :::
 
 - **Content model** - This presents the Element Type used as model for the Content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
