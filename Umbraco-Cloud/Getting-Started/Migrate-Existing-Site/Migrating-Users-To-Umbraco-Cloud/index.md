@@ -42,7 +42,7 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
   dbo.umbracoUserGroup2NodePermission
   dbo.umbracoUserLogin
   dbo.umbracoUserStartNode
-    ```
+  ```
 
 6. Click **Next** and then click **Advanced**
 7. Find **Type of data to script** and choose **Data only**.
