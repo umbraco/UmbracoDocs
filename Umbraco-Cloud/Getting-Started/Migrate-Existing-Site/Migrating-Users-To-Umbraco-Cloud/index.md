@@ -51,7 +51,7 @@ dbo.umbracoUserStartNode
 
 ### Finishing the Migration
 
-Once the script has been run on your Umbraco Cloud Database it is now time for the users to login to the Cloud backoffice.
+Once the script has been run on your Umbraco Cloud Database, it is time for the users to log in to the Cloud backoffice.
 
 The user will be promted to login, they should use the password from the on-premise installation.
 
