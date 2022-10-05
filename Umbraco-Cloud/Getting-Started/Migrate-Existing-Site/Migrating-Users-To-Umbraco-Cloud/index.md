@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Migrating Users to Umbraco Cloud
 
-In this guide we show you how you can migrate users from your on-premise site to Umbraco Cloud and Umbraco ID.
+In this guide, we show you how you can migrate users from your on-premises site to Umbraco Cloud and Umbraco ID.
 
 We will use SQL Server Management Studio to generate a script of the user tables in your SQL Database.
 
