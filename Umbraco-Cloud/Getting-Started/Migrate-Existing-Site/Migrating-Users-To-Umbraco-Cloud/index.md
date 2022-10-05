@@ -53,7 +53,7 @@ dbo.umbracoUserStartNode
 
 Once the script has been run on your Umbraco Cloud Database, it is time for the users to log in to the Cloud backoffice.
 
-The user will be promted to login, they should use the password from the on-premise installation.
+The user will be prompted to log in and they should use the password from the on-premises installation.
 
 Once the user logs in they will be asked to enter their email to receive a token and verify their user in Umbraco ID.
 
