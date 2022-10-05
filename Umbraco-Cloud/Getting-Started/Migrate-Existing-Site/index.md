@@ -149,7 +149,7 @@ That's it! Now that you've merged your existing site with the local clone of the
 :::note
 Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umbraco Cloud services.
 
-It is required to access any project pages as well as backoffices.
+It is required to access any project pages as well as the backoffice.
 
 To migrate the users from your on-premise site to Umbraco Cloud and Umbraco ID follow the [Migrate Users to Cloud guide](/Umbraco-Cloud/Getting-Started/Migrate-Existing-Site/Migrating-Users-To-Umbraco-Cloud/index.md).
 :::
