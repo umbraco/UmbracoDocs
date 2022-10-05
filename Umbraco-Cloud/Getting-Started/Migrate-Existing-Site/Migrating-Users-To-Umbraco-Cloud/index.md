@@ -42,6 +42,8 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
   dbo.umbracoUserGroup2NodePermission
   dbo.umbracoUserLogin
   dbo.umbracoUserStartNode
+  dbo.umbracoUserGroup2Node
+  dbo.umbracoUserGroup2Language
   ```
 
 6. Click **Next** and then click **Advanced**
