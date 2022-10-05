@@ -256,7 +256,7 @@ If you know the Block List Editor only uses a single block, you can cast the col
 ## Build a Custom Backoffice View
 
 Building Custom Views for Block representations in Backoffice is the same for all Block Editors.
-[Read about building a Custom View for Blocks here](../Block-Editor/build-custom-view-for-blocks.md)
+[Read about building a Custom View for Blocks here](../build-custom-view-for-blocks.md)
 
 
 ## Creating Blocklist programmatically

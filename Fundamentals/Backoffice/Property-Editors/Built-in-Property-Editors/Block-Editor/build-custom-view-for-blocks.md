@@ -31,6 +31,7 @@ If you would like to display properties of `settings`, you can access these by u
 A custom view of Block List Editor needs to have the 'blockelement__draggable-element' class presented to define which part of the Block that is draggable.
 
 Example:
+
 ```html
 <button type="button" class="blockelement__draggable-element" ng-click="block.edit()">
   <h2 ng-bind="block.data.headline"></h2>
@@ -53,6 +54,7 @@ Insert the following snippet where you would like the Area to appear in your Cus
 ```
 
 Example of a Custom View wrapping the area-container:
+
 ```html
 <div style="border:green 1px solid; padding: 20px;">
     <slot name="area-container" part="area-container"></slot>

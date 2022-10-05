@@ -420,7 +420,7 @@ For example: You can use the below HTML structure:
 
 Building Custom Views for Block representations in Backoffice is based on the same API for all Block Editors.
 
-[Read about building a Custom View for Blocks here](../Block-Editor/build-custom-view-for-blocks.md)
+[Read about building a Custom View for Blocks here](../build-custom-view-for-blocks.md)
 
 ## Creating a Block Grid programmatically
 
