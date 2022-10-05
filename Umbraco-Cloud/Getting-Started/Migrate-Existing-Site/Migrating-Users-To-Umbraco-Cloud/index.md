@@ -13,7 +13,7 @@ We will use SQL Server Management Studio to generate a script of the user tables
 
 ## Prerequisites
 
-* SQL database used on your on-prem-site.
+* SQL database used on your on-prem site.
 * SQL Server Management Studio.
 * A cloud site that you are migrating to.
 
