@@ -13,12 +13,6 @@ This page contains a list of all the built-in Umbraco property editors and a sho
 
 Use Element Types to create a set of Blocks that your editors can use to create content.
 
-## [Block Grid Editor](Block-Grid-Editor/index.md)
-
-`Alias: Umbraco.BlockGrid`
-
-Allows content editors to layout their content in the Umbraco backoffice.
-
 ## [Toggle (True/False)](True-False)
 
 `Alias: Umbraco.TrueFalse`
