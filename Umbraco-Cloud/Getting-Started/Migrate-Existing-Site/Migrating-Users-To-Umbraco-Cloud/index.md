@@ -21,7 +21,7 @@ We will use SQL Server Management Studio to generate a script of the user tables
 
 To migrate users to Umbraco Cloud, we need to copy the tables beginning with `umbracoUser` to the Cloud site from your on-premises database.
 
-This is done by generating a script by using SQL Server Management Studio that we can run on our Umbraco Cloud Database.
+This is done by generating a script using SQL Server Management Studio that we can run on our Umbraco Cloud Database.
 
 ### Generate SQL Script
 
