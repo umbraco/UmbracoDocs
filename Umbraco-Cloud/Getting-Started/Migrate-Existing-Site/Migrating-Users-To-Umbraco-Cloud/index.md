@@ -43,12 +43,12 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
   dbo.umbracoUserLogin
   dbo.umbracoUserStartNode
 
-4. Click ***next*** then click ***advanced***
-5. Find ***“Type of data to script”*** and choose ***“Data only”***
-6. Choose where to save the script and then save it.
-7. Connect to your [Umbraco Cloud Database](/Umbraco-Cloud/Databases/Cloud-Database/index.md)
-8. Run the script on your Umbraco Cloud Database
-9. Restart your Umbraco Cloud environment
+6. Click **Next** and then click **Advanced**
+7. Find **Type of data to script** and choose **Data only**.
+8. Choose where to save the script and save it.
+9. Connect to your [Umbraco Cloud Database](/Umbraco-Cloud/Databases/Cloud-Database/index.md).
+10. Run the script on your Umbraco Cloud Database.
+11. Restart your Umbraco Cloud environment.
 
 ### Finishing the Migration
 
