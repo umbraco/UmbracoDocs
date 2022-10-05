@@ -136,7 +136,11 @@ These properties are relevant when working with custom views or complex projects
 
 - **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
-- **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor. By adding a stylesheet, the styling of the block will become scoped. This means that the default backoffice styles are no longer present for the view of this block.
+    :::tip
+    Notice that any styling of a Block is scoped. Which means that the default backoffice styles are not present for the view of this Block.
+    :::
+
+- **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
 
 - **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
 
@@ -318,17 +322,17 @@ If you do not want to use Partial Views, you can access the block item data dire
 
 ## Write a Custom Layout Stylesheet
 
-The default layout stylesheet and mechanism is using CSS Grid. This can be modified to fit your implementation and your project.
+The default layout stylesheet is using CSS Grid. This can be modified to fit your implementation and your project.
 
 ### Adjusting the Default Layout Stylesheet
 
 To make additions or overwrite parts of the default layout stylesheet, import the default stylesheet at the top of your own file.
 
-You need to copy the Default Layout Stylesheet to your frontend. Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`. You can edit the location and name of this file.
-
 ```css
 @import 'css/umbblockgridlayout.css';
 ```
+
+You need to copy the Default Layout Stylesheet to your frontend. Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`. You can edit the location and name of this file.
 
 ### Write a new Layout Stylesheet
 
