@@ -33,16 +33,15 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 4. Choose **Select specific tables** when prompted to **Select the database object to script**.
 5. Choose the following tables:
 
-```SQL
-dbo.umbracoUser
-dbo.umbracoUser2NodeNotify
-dbo.umbracoUser2UserGroup
-dbo.umbracoUserGroup
-dbo.umbracoUserGroup2App
-dbo.umbracoUserGroup2NodePermission
-dbo.umbracoUserLogin
-dbo.umbracoUserStartNode
-```
+  ```SQL
+  dbo.umbracoUser
+  dbo.umbracoUser2NodeNotify
+  dbo.umbracoUser2UserGroup
+  dbo.umbracoUserGroup
+  dbo.umbracoUserGroup2App
+  dbo.umbracoUserGroup2NodePermission
+  dbo.umbracoUserLogin
+  dbo.umbracoUserStartNode
 
 4. Click ***next*** then click ***advanced***
 5. Find ***“Type of data to script”*** and choose ***“Data only”***
