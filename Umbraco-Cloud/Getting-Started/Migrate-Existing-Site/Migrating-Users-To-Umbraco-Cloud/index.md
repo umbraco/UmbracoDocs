@@ -59,4 +59,4 @@ Once the user logs in they will be asked to enter their email to receive a token
 
 Enter the code to verify the user with Umbraco ID.
 
-Once the user has been verified they will be redirected to the backoffice and their user has been migrated to Umbraco ID.
+Once the user has been verified, they will be redirected to the backoffice and their user has been migrated to Umbraco ID.
