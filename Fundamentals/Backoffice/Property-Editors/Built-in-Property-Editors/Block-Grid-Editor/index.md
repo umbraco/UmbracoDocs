@@ -170,7 +170,7 @@ More Blocks can be added to the layout by clicking the Add content button. Alter
 ![Block List - Add Content](images/BlockListEditor_AddContentInline.jpg)
 > TODO: screenshot
 
-To delete a Block click the trashbin icon whichs appears on hover.
+To delete a Block click the trashbin icon which appears on hover.
 
 ## Sorting Blocks
 
@@ -216,6 +216,20 @@ These Partial View files need to go into the `Views/Partials/BlockGrid/Component
 Example: `Views/Partials/BlockGrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
 The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, `ForceLeft`, `ForceRight` and `Areas` of the block.
+
+#### Stylesheet
+
+> TODO: make sure this part about layout stylesheet fits into the story:
+
+Using the default rendering to together with the your layout stylesheet will provide what you need for rendering the layout.
+
+If you like to use the Default Layout Stylesheet, you must copy this to your front-end.
+Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`
+Location and name of this file is your own choice.
+
+```csharp
+<link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
+```
 
 #### Rendering the block areas
 
@@ -315,13 +329,19 @@ If you do not want to use Partial Views, you can access the block item data dire
 ## Write a Custom Layout Stylesheet
 
 The default layout stylesheet and mechanism is using CSS Grid. This can be modified to fit your implementation and your project.
-
+l
 ### Adjusting Layout Stylesheet
 
-To make additions or overwrite parts of the default layout stylesheet, importing the default stylesheet in the top of your own file:
+To make additions or overwrite parts of the default layout stylesheet, importing the default stylesheet in the top of your own file.
+
+> TODO: Check this about layout stylesheet
+
+Do notice that you need to copy the Default Layout Stylesheet to your front-end.
+Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`
+Location and name of this file is your own choice.
 
 ```css
-@import '/umbraco/assets/css/blockgridlayout.css';
+@import 'css/umbblockgridlayout.css';
 
 ...
 ```
