@@ -29,7 +29,9 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 
 1. Go to **SQL Server Management Studio** and connect to the database from which you want to migrate the users.
 2. Right-click on it and go to **Tasks > Generate script**.
-3. Follow the Wizard and When prompted to ***"select the database object to script"*** choose ***“Select specific tables”*** and choose the following tables:
+3. Follow the Wizard.
+4. Choose **Select specific tables** when prompted to **Select the database object to script**.
+5. Choose the following tables:
 
 ```SQL
 dbo.umbracoUser
