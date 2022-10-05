@@ -100,8 +100,8 @@ The thumbnails for the catalogue are presented in the format of 16:10. We recomm
 
 ### Allowance
 
-- **Allow in root** - Determines wether the Block can be created at the root of your layout.
-- **Allow in areas** - Determines wether the Block can be created inside Areas of other Blocks.
+- **Allow in root** - Determines wether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
+- **Allow in areas** - Determines wether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
 
 ## Areas
 
