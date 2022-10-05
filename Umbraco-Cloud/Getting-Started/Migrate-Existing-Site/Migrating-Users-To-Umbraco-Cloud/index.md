@@ -42,6 +42,7 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
   dbo.umbracoUserGroup2NodePermission
   dbo.umbracoUserLogin
   dbo.umbracoUserStartNode
+    ```
 
 6. Click **Next** and then click **Advanced**
 7. Find **Type of data to script** and choose **Data only**.
@@ -54,10 +55,10 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 
 Once the script has been run on your Umbraco Cloud Database, it is time for the users to log in to the Cloud backoffice.
 
-The user will be prompted to log in and they should use the password from the on-premises installation.
+The user will be prompted to log in and they should use the password they used on-premises installation.
 
 Once the user logs in they will be asked to enter their email to receive a token and verify their user in Umbraco ID.
 
 Enter the code to verify the user with Umbraco ID.
 
-Once the user has been verified, they will be redirected to the backoffice and their user has been migrated to Umbraco ID.
+Once the user has been verified, they will be redirected to the backoffice and their user has been migrated to Umbraco ID and Umbraco Cloud.
