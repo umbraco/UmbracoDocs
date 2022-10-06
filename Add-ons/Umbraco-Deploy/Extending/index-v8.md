@@ -80,7 +80,7 @@ In Deploy 4.7, to improve performance on deploy operations, we introduced a cach
 
 In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
 
-There's no harm in what is listed below though.  It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations.  The obsolete methods won't be removed until Deploy 11.  In that version we plan to return back to the original interface and class names and introduce the new method overloads (which will be a documented breaking change).
+There's no harm in what is listed below though. It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations. The obsolete methods won't be removed until Deploy 11. In that version we plan to return back to the original interface and class names. We also plan to introduce the new method overloads which will be a documented breaking change.
 :::
 
 ```C#
@@ -268,7 +268,7 @@ In the same way that Umbraco entities often have dependencies on one another, th
 
 If the dependent entity is also deployable, it will be included in the transfer.  Or if not, the deployment will be blocked and the reason presented to the user.
 
-In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
+In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added. This will indicate that it must exist to allow the transfer. We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
 
 ```C#
         private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
