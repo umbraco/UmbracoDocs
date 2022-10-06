@@ -10,6 +10,23 @@ versionFrom: 10.3.0
 
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
 
+:::note
+The Blog Grid is currently only available in the Release Candidate (RC) of Umbraco 10.3. Learn more about how to test out the version in the blog post on Umbraco.com.
+:::
+
+:::tip
+**Example Blocks**
+When you are testing out the RC, you will have the option to test the new Block Grid using a set of predefined and preconfigured Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+
+[Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
+
+- Create a new **Data Type**.
+- Select the **Block Grid** as the **Property editor**.
+- **Install** the "Sample Configuration".
+
+4 Blocks will be added to the property, ready for testing.
+:::
+
 ## Configuring the Block Grid
 
 The Block Grid property editor is configured via the **Data Types** backoffice interface.
