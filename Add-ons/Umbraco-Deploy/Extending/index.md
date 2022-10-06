@@ -442,7 +442,7 @@ We then have three functions, which are used to determine if the registered enti
 - Return `true` for all node Ids.
 - Return `true` and parse the Guid identity value from the provided string.
 
-For more complex cases, where a tree manages more than one entity type, we need a means of distinguishing which entity is being referenced by a particular route path or node Id. A common way to handle this is to prefix the Guid identifier with a different value for each entity. It can then be used to determine for which entity the value refers.
+For more complex cases we need the means to distinguish between entities. An example could be when a tree manages more than one entity type. Here we would need to identify whether the entity is being referenced by a particular route path or node ID. A common way to handle this is to prefix the GUID identifier with a different value for each entity. It can then be used to determine to which entity the value refers.
 
 For example, as shown in the linked sample and video, we have entities for "Team" and "Rider", both managed in the same tree.  When rendering the tree, a prefix of "team-" or "rider-" is added to the Guid identifier for the team or rider respectively.  We then register the following functions, firstly for the team entity registration:
 
