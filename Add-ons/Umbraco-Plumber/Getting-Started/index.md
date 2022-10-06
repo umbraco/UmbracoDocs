@@ -17,6 +17,10 @@ A user can be a member of multiple groups in the same workflow. To initiate an a
 
 The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Dashboards and Buttons](../Dashboards-and-Buttons/index.md) article.
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="Umbraco Plumber Overview" src="https://www.youtube.com/embed/5M1CtFVZCBo?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Getting Started with Umbraco Plumber
 
 You can find some articles below to get started using Umbraco Plumber:
