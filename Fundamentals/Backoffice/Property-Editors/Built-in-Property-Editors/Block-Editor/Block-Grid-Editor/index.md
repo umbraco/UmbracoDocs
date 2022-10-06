@@ -98,7 +98,7 @@ A Block can be resized in two ways:
 
 A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
 
-![Block Grid - Resizing Blocks](images/Resizing-Blocks.gif)
+![Block Grid - Resizing Blocks](images/resizing-block-block-grid.gif)
 
 Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other Blocks.
 
