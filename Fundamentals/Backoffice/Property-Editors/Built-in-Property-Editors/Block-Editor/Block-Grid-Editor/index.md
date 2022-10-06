@@ -269,7 +269,7 @@ You can simplify the property rendering using ModelsBuilder by replacing `@conte
 
 Using the default rendering together with your layout stylesheet will provide what you need for rendering the layout.
 
-If you like to use the Default Layout Stylesheet, you must copy the stylesheet to your frontend. Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`. You can edit the location and name of this file.
+If you like to use the Default Layout Stylesheet, you must copy the stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the css folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
 
 ```csharp
 <link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
@@ -349,7 +349,7 @@ To make additions or overwrite parts of the default layout stylesheet, import th
 @import 'css/umbblockgridlayout.css';
 ```
 
-You need to copy the Default Layout Stylesheet to your frontend. Copy `/umbraco/assets/css/umbraco-blockgridlayout.css` to `wwwroot/css/umbraco-blockgridlayout.css`. You can edit the location and name of this file.
+You need to copy the Default Layout Stylesheet to your frontend. You can download the default layout stylesheet from the link within the DataType, we recommend putting the file in the css folder, example: `wwwroot/css/umbraco-blockgridlayout.css`.
 
 ### Write a new Layout Stylesheet
 
