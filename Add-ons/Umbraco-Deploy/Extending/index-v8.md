@@ -73,7 +73,7 @@ The class is decorated with a `UdiDefinition` via which the name of the entity t
 
 The following example shows a service connector, responsible for handling the artifact shown above and it's related entity.  There are no dependencies to consider here.  More complex examples will involve collating the dependencies and potentially handling the extraction in more than one pass to ensure updates are made in the correct order.
 
-An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entities.
+An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for Create, Read, Update and Delete (CRUD) operations around reading and writing of entities.
 
 :::note
 In Deploy 4.7, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter.  In order to introduce this without breaking changes, we created some new interfaces and base classes.
