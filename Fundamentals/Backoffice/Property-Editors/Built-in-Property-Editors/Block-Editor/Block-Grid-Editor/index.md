@@ -27,6 +27,20 @@ When you are testing out the RC, you have the option to test the new Block Grid 
 4 Blocks will be added to the property, ready for testing.
 :::
 
+## Contents
+
+* [Configuring the Block Grid](#configuring-the-block-grid)
+* [Setup Block Types](#setup-block-types)
+* [Block Configuration Settings](#block-configuration-settings)
+* [Areas](#areas)
+* [Advanced](#advanced)
+* [Editing Blocks](#editing-blocks)
+* [Sorting Blocks](#sorting-blocks)
+* [Rendering Block Grid content](#rendering-block-grid-content)
+* [Write a Custom Layout Stylesheet](#write-a-custom-layout-stylesheet)
+* [Build a custom Backoffice View](#build-a-custom-backoffice-view)
+* [Creating a Block Grid programmatically](#creating-a-block-grid-programmatically)
+
 ## Configuring the Block Grid
 
 The Block Grid property editor is configured via the **Data Types** backoffice interface.
