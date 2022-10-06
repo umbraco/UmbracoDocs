@@ -18,7 +18,7 @@ The Blog Grid is currently only available in the Release Candidate (RC) of Umbra
 **Example Blocks**
 When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
-[Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
+![Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
 
 - Create a new **Data Type**.
 - Select the **Block Grid** as the **Property editor**.
