@@ -382,7 +382,7 @@ The parameters are as follows:
 
 ### Backoffice Integrated Transfers
 
-If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
+If the optimal deployment workflow for your entity is to have editors control the deployment operations, the transfer entity service should be used. This would be instead of registering with the disk entity service. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, we also need to be able to handle the situation where multiple entity types are managed within a single tree.
 
 An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
 
