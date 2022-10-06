@@ -137,7 +137,7 @@ These properties are relevant when working with custom views or complex projects
 - **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
     :::tip
-    Notice that any styling of a Block is scoped. Which means that the default backoffice styles are not present for the view of this Block.
+    Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
     :::
 
 - **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
