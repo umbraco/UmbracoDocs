@@ -17,7 +17,7 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 *Entities* are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are the Document Types, Data Type, documents etc. In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco content. These can still be managed in the Backoffice using custom trees and editors.
 
-For the purposes of subsequent code samples, we'll consider an example entity as a plain old class object (POCO) with a few properties.
+For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
 :::note
 The entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution.  The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
