@@ -332,7 +332,7 @@ namespace MySite.MyCustomIndex
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
             builder.Services.ConfigureOptions<ConfigureCustomIndexOptions>();
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
-            builder.Services.AddSingleton<ProductIndexPopulator>();
+            builder.Services.AddSingleton<IIndexPopulator, ProductIndexPopulator>();
         }
     }
 }
