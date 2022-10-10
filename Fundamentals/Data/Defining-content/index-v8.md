@@ -168,6 +168,14 @@ When you create an Element type, it automatically sets the **Is Element Typw** f
 
 ![Element Type](images/Element-Type.png)
 
+## Creating an Element Type
+
+An Element Type is created under Document Types in the __Settings__ section.
+
+Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here, choose __Element Type__. This will create an Element Type.
+
+![Creating an Element Type](images/Element-Type-create.png)
+
 ### More information
 
 * [Rendering Content](../../Design/Rendering-Content/)
