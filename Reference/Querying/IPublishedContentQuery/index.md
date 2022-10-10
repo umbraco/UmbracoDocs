@@ -16,7 +16,7 @@ In order to inject the `IPublishedContentQuery` into your services, you must add
 ```C#
 using Umbraco.Cms.Core;
 
-namespace MySite.Services
+namespace Umbraco.Docs.Samples.Web.Services
 {
     public class SearchService
     {
@@ -77,7 +77,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.Services
 {
     public class SearchService
     {
