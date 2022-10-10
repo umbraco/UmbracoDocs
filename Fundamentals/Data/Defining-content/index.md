@@ -9,19 +9,19 @@ versionTo: 10.0.0
 
 *Here you'll find an explanation of how content is defined in Umbraco.*
 
-Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed, and so forth. This blueprint or definition is called a Document Type.
+Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node or which editors are used. Additionally, it also needs information on how it is organized, where in the structure it is allowed, and so forth. This blueprint or definition is called a Document Type.
 
 ## What is a Document Type?
 
-In its most basic form, a document type is a form containing fieldsets (or groups) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icons, and so forth.
+A Document Type contains fieldsets (or groups) where you can apply rules about where the content can be created, allowed template(s), backoffice icons, etc.
 
-Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO group. This means that you are in complete control of what type of content can be created where.
+Document Types can define entire pages or more limited content that can be reused on other nodes ie. a Search Engine Optimization (SEO) group. This means that you are in complete control of what type of content can be created where.
 
-Document Types define what an end user sees and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" Document Type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will then give the end user the choice to fill in a thumbnail, author name, and an author image.
+Document Types define what an end user sees and can interact with when they are working in the Umbraco backoffice. For a "Blog post" Document Type containing a thumbnail, a name, and an author image, it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will allow the end user to fill in a thumbnail, author name, and an author image.
 
 ### Properties
 
-Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties contained in a template), and an editor. The editor determines what type of data the property will store and the input method. There is a wide range of editors available out of the box (textstring, Rich text, media picker, and so forth) and you can customize and add additional editors.
+Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties contained in a template), and an editor. The editor determines what type of data the property will store and the input method. There is a wide range of property editors available out-of-the box (Textstring, Richtext, Media Picker, and so forth) and you can customize additional editors.
 
 Some editors require configuration, a configured editor is saved as a Data Type and can be re-used for multiple properties and document types. These can be seen in the __Settings__ section under __Data Types__.
 
@@ -29,7 +29,7 @@ Some editors require configuration, a configured editor is saved as a Data Type 
 
 A Document Type is created using the Document Type editor in the __Settings__ section.
 
-Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here choose __Document Type with Template__. This will create a new Document Type with a template (Template can be found under __Templates__ in the __Settings__ sections) that will be assigned as the default template for the document type.
+Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here choose __Document Type with Template__. This will create a new Document Type with a template. The Template can be found under __Templates__ in the __Settings__ section that will be assigned as the default template for the Document Type.
 
 ![Creating a Document Type](images/v8Screenshots/createDoctype.png)
 
@@ -41,17 +41,17 @@ You can also use __Composition__ to create a new Document Type. Compositions all
 
 ### Exporting/Importing the Document Type
 
-You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __Document type__, and select __Export__. When you click on the __Export__ button, the document type is saved as *.udt file.
+You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __Document type__, and select __Export__. When you click on the __Export__ button, the Document Type is saved as *.udt file.
 
 ![Exporting a Document Type](images/v8Screenshots/export-document-type.png)
 
-To import a document type, go to the __Settings__ section, right-click the __Document type__, and select __Import Document Type__. Click on the __Import__ button and browse to the document type you exported. The __Name__ and __Alias__ of the document type are displayed. Click __Import__ to complete the process.
+To import a Document Type, go to the __Settings__ section, right-click the __Document type__, and select __Import Document Type__. Click on the __Import__ button and browse to the Document Type you exported. The __Name__ and __Alias__ of the Document Type are displayed. Click __Import__ to complete the process.
 
 ![Importing a Document Type](images/import-document-type.png)
 
 :::note
 
-1) If your document type contains compositions or inherits from another document type, then you need to export/import the composition/document type too.
+1) If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2) You cannot export/import document types on Umbraco Cloud.
 :::
 
@@ -61,11 +61,11 @@ First, we're prompted to give the Document Type a name. This first Document Type
 
 ![Naming a Document Type](images/v8Screenshots/homePage.png)
 
-_Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias click the "lock" icon._
+*Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias click the "lock" icon.*
 
 Having a root node lets you quickly query content as you know everything will be under the root node.
 
-To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
+To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for *Home* and select the icon. This icon will be used in the content tree. Choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
 ![Choosing an icon for the Document Type](images/v8Screenshots/docTypeIcon.png)
 
@@ -79,7 +79,7 @@ Now go to the __Content section__, click on the menu icon next to __Content__ an
 
 ![First content created](images/v8Screenshots/createHomepage.png)
 
-As we haven't created our properties all we can see on the "Home" node is the Properties tab which contains the default properties that are available on all content in Umbraco.
+As we haven't created our properties, all we can see on the "Home" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
 Let's add some properties of our own.
 
@@ -89,7 +89,7 @@ Go to the __Settings section__, expand __Document Types__ by clicking the arrow 
 
 #### Keyboard Shortcuts
 
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available, click **ALT + SHIFT + K**.
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available, click __ALT + SHIFT + K__.
 
 #### Adding groups
 
@@ -99,7 +99,7 @@ Click __Add group__ and name the group "Content".
 
 ![Creating groups](images/v8Screenshots/createGroup_new.png)
 
-_If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
+*If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__.*
 
 To convert a group to a tab, see the [Convert a group to a tab](../Adding-Tabs/index.md#convert-a-group-to-a-tab) section in the [Using Tabs](../Adding-Tabs/index.md) article.
 
@@ -107,7 +107,7 @@ To convert a group to a tab, see the [Convert a group to a tab](../Adding-Tabs/i
 
 Now that we have created a group we can start adding properties. Let's add a Rich Text editor to the Content group.
 
-Click the __Add property__ link in the Content group. This opens the property settings dialog. Here you can set the metadata for each property (name, alias, description), choose which data type/property editor to use, and add validation if needed.
+Click the __Add property__ link in the Content group. This opens the property settings dialog. Here you can set the metadata for each property (name, alias, description), choose which Data Type/property editor to use, and add validation if needed.
 
 Give the property a name, the name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
@@ -115,13 +115,19 @@ Give the property a name, the name will be shown to the editor to make it releva
 
 ##### Property editors
 
-Clicking __Select editor__ will open the Select editor dialog. Here you can choose between all the available editors on the __Create a new configuration__ tab (this will create a new configuration) or already configured editors in the __Available configurations__ tab. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under __Available configurations__) and all available editors under that.
+Clicking __Select editor__ will open the Select editor dialog. Here, you can choose between all the available editors on the __Create a new configuration__ tab. This will create a new configuration or already configured editors in the __Available configurations__ tab. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under __Available configurations__) and all available editors under that.
 
 Select the __Rich Text editor__ under __Create new__.
 
 ![Choosing the Rich Text editor](images/v8Screenshots/selectEditor_new.png)
 
-This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property, and the property editor. Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
+This will let you configure the editor settings - the Rich Text editor for this property.
+
+:::note
+The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: *Home - Body Text - Rich Text editor*.
+:::
+
+Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
 
 * `bold`
 * `italic`
@@ -132,13 +138,13 @@ This will let you configure the editor settings - the Rich Text editor for this 
 
 When you are happy with the settings click __Submit__.
 
-Ticking the __Mandatory__ toggle makes the property mandatory and the content cannot be saved if no value is entered (into the Richtext editor in this case). You have the option to add additional validation by selecting a predefined validation method under the __Custom validation__ dropdown (such as email, number, or URL) or by selecting custom validation and adding a regular expression.
+Selecting the __Mandatory__ toggle makes the property mandatory and the content cannot be saved if no value is entered (in this case, the Richtext editor). You have the option to add additional validation by selecting a predefined validation method under the __Custom validation__ dropdown (such as email, number, or URL). Or by selecting a custom validation and adding a regular expression.
 
 Submit the property and save the Document Type. If you go to the __Content section__ and click on the Home node you will now see the Content group with the Body Text property.
 
 #### Property descriptions
 
-The description for the property is not always nessecary, but it will sometimes allow you to guide the editor to use the property the right way. The property description supports some markdown and one custom collapse syntax:
+The description for the property is not always necessary, but it will sometimes allow to guide the editor to use the property the right way. The property description supports some markdown and one custom collapse syntax:
 
 **Bold**
 
@@ -208,15 +214,22 @@ and this time we'll add two properties. First, make a property called Summary us
 
 ### Creating child nodes
 
-Before we can create a Text Page in the __Content__ section, we need to allow the Text Page Document Type to be created as a child node to the Home node. Select the Home Document Type and go to the __Permissions__ group. Click __Add child__ and select Text Page.
+Before creating a Text Page in __Content__ section, allow the Text Page Document Type to be created as a child node to the Home node. Select the Home Document Type and go to the __Permissions__ group. Click __Add child__ and select Text Page.
 
 ![Allowing child nodes](images/v8Screenshots/setPagePermissions.png)
 
-Go to the __Content__ section and click the menu icon (•••) next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a very basic content structure.
+Go to the __Content__ section and click the menu icon (•••) next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a basic content structure.
 
 ![Basic content structure](images/v8Screenshots/createAboutUs.png)
 
-Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
+Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to acting as a container or repository.
+
+## What is an Element Type?
+
+Element Type is a Document Type without a template containing smaller schema configurations for repeating a set of properties. These can be used for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree.
+When you create an Element type, it automatically sets the **Is Element Typw** flag to **True** on the **Permissions** tab.
+
+![Element Type](images/Element-Type.png)
 
 ### More information
 
