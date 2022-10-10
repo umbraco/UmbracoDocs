@@ -59,6 +59,15 @@ public class ManifestFilter : IManifestFilter
 
 ```
 
+```csharp
+public class ManifestComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.ManifestFilters().Append<ManifestFilter>();
+    }
+}
+```
 
 ## Root elements
 
