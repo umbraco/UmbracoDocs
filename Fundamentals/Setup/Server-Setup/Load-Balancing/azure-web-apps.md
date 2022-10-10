@@ -9,7 +9,7 @@ Ensure you read the [Load Balancing overview](index.md) and general [Azure Web A
 
 ## Azure Requirements
 
-* You will need to setup 2 x App service plans with 1 x web app in each - one for the backoffice (Administrative) environment and another for your scalable public-facing environment (Public)
+* You will need to setup 2 x App service plans with 1 x web app in each - one for the backoffice (Administrative) environment and another for your scalable public-facing environment (Public).
 * This'll allow for for proper scaling of the (Administrative) and the (Public) web apps.
 * The App Service plan with the Administrative web app should only be scaled up. The reason for this is that the web app needs to stay as a single instance.
 * The App Service plan with the Public web app can be scaled both out and up.
