@@ -40,6 +40,8 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
 ```
 ## Sample Manifest with Csharp
 
+You can also register your files by implementing a `IManifestFilter` instead of creating a `package.manifest`. Create a `ManifestFilter.cs` file and implement the `IManifestFilter` interface.
+
 ```csharp
 public class ManifestFilter : IManifestFilter
 {
@@ -56,8 +58,9 @@ public class ManifestFilter : IManifestFilter
         });
     }
 }
-
 ```
+
+Then add the `ManifestFilter.cs` to the `CollectionBuilder`.
 
 ```csharp
 public class ManifestComposer : IComposer
