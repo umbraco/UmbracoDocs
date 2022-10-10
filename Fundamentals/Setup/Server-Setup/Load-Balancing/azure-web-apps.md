@@ -11,8 +11,8 @@ Ensure you read the [Load Balancing overview](index.md) and general [Azure Web A
 
 * You will need to setup 2 x App service plans with 1 x web app in each - one for the backoffice (Administrative) environment and another for your scalable public-facing environment (Public)
 * This'll allow for for proper scaling of the (Administrative) and the (Public) web apps.
-* The app service plan with the (Administrative) web app should never be scaled out but only up, as the web app needs to stay as a single instance.
-* The app service plan with the (Public) web app can be scaled both out and up and having multiple instanced of it is the exact conctept of load balancing.
+* The App Service plan with the Administrative web app should only be scaled up. The reason for this is that the web app needs to stay as a single instance.
+* The App Service plan with the Public web app can be scaled both out and up.
 * You will need 1 x SQL server that is shared with these 2 web apps
 
 ## Lucene/Examine configuration
