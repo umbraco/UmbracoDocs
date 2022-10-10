@@ -38,6 +38,27 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     ]
 }
 ```
+## Sample Manifest with Csharp
+
+```csharp
+public class ManifestFilter : IManifestFilter
+{
+    public void Filter(List<PackageManifest> manifests)
+    {
+        manifests.Add(new PackageManifest
+        {
+            PackageName = "Sir Trevor",
+            Scripts = new[]
+            {
+                "~/App_Plugins/SirTrevor/SirTrevor-config.html"
+            }, 
+            Version = "1.0.0"
+        });
+    }
+}
+
+```
+
 
 ## Root elements
 
