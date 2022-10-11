@@ -21,7 +21,7 @@ Document Types define what an end user sees and can interact with when they are 
 
 ### Properties
 
-Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties contained in a template), and an editor. The editor determines what type of data the property will store and the input method. There is a wide range of property editors available out-of-the box (Textstring, Richtext, Media Picker, and so forth) and you can customize additional editors.
+Each field on a Document Type is called a property. The property is given a name, an alias (used to output the properties contained in a template), and an editor. The editor determines what type of data the property will store and the input method. There is a wide range of default property editors available (Textstring, Richtext, Media Picker, and so forth) and you can customize additional editors.
 
 Some editors require configuration, a configured editor is saved as a Data Type and can be re-used for multiple properties and document types. These can be seen in the __Settings__ section under __Data Types__.
 
