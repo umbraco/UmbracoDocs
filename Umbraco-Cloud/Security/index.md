@@ -77,7 +77,8 @@ By default, all ports are closed to secure them against external attacks. This i
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 
 - Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only. 
-:::note Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
+:::note 
+Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
 :::
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
