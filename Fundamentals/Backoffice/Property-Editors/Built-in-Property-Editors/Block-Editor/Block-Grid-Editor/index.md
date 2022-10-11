@@ -288,7 +288,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 :::note
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
-1. Clone the views from <a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a> - you will find them under
+1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in 
    `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
 2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
 3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
