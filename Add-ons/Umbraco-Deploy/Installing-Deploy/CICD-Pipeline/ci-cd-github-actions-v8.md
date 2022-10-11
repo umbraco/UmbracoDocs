@@ -107,7 +107,6 @@ jobs:
 
 :::note
 This is only an example of how you can set up the CI/CD pipeline for Umbraco Deploy.
-There are many ways that this can be done.
 It is possible to set it up in a way that works for you and your preferred workflow.
 :::
 
