@@ -91,7 +91,7 @@ In addition to the three mandatory parameters as shown above, you may also speci
 
 You can specify a `Stream` for the contents of the file that should be created.
 
-As an example, if you have a image on disk named `unicorn.jpg` in the images folder of `wwwroot`, you can open a new stream for a file on the disk, and then create a new media for that file in Umbraco:
+As an example, if you have a image on disk named `unicorn.jpg` in the images folder of `wwwroot`. You can open a new stream for a file on the disk, and then create a new media item for that file in Umbraco:
 
 Note that you will need to inject the following services:
 - `MediaFileManager _mediaFileManager`
