@@ -147,7 +147,7 @@ Before the build can work, we will need to set up our generated API key to work 
 3. Go to the Secrets tab.
 4. Select "New repository secret".
 5. Call the new secret **"DEPLOYAPIKEY"**.
-6. Add the API key from the `appSetting` for Umbraco Deploy in the `appSettings.json` file.
+6. Add the API key from the `appSettings.json` file.
 7. Save the secret.
 
 We can now go ahead and commit the configured YAML file and push up all the files to the repository.
