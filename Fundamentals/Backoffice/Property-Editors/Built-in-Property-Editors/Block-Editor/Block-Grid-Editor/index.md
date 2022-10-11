@@ -286,7 +286,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 ```
 
 :::note
-Behind the scenes a set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a starting point:
+A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
 1. Clone the views from <a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a> - you will find them under
    `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
