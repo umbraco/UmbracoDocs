@@ -10,6 +10,7 @@ second: '([A-Z]{3,5}): (?:\b[A-Z][a-z]+ )+|(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 exceptions:
   - ABC
   - ADD
+  - ALT
   - HTML
   - JSON
   - CSS
@@ -32,6 +33,7 @@ exceptions:
   - XML
   - PATH
   - SQL
+  - SHIFT
   - POST
   - GUID
   - UWP
