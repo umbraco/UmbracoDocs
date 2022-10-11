@@ -54,6 +54,6 @@ You can always disable 2-factor authentication from your profile.
 
 To disable 2-factor authentication for your user, you will need to use the authentication method that you had enabled to disable it again.
 
-If you had phone authentication enabled, it will then need to be use it to disabeling it again.
+If you had phone authentication enabled, it will then need to be used to disable it again.
 
 The same is the case for email authentication.
