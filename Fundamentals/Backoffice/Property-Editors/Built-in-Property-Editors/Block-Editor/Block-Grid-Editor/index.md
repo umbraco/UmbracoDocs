@@ -131,8 +131,8 @@ The thumbnails for the catalogue are presented in the format of 16:10. We recomm
 
 ### Allowance
 
-- **Allow in root** - Determines wether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
-- **Allow in areas** - Determines wether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
+- **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
+- **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
 
 ## Areas
 
@@ -145,7 +145,7 @@ Each Area has a size, defined by column and rows spans. The grid for the Areas a
 To scale an Area, click and drag the scale-button in the bottom-right corner of an Area.
 
 - **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
-- **Areas** - Determines wether the Block can be created inside Areas of other Blocks.
+- **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
 ![Block Grid - Areas](images/BlockGridEditor_Areas.png)
 
@@ -205,7 +205,7 @@ To delete a Block, click the trash icon which appears on the mouse hover.
 
 Blocks can be rearranged using the click and drag feature. Move them up or down to place them in the desired order.
 
-Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and neglect the new position.
+Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
 ![Block Grid - Sorting Blocks](images/Sorting_BlockGrid_Blocks.gif)
 
