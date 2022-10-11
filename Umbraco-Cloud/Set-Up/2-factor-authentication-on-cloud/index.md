@@ -42,7 +42,8 @@ You have the option to use your phone when you log in to the Umbraco Cloud porta
 You can choose to receive an SMS with a code or a call to log you in.
 
 :::note
-If you need to change phone number, make sure before deactivating the old number to change to the new number before the old number is disabled.
+If you need to change your phone number.
+Make sure before deactivating the old number to change to the new number before the old number is disabled.
 :::
 
 ![Phone authentication](images/Phone-auth.png)
