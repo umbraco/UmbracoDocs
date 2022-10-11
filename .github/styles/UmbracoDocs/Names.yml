@@ -7,6 +7,8 @@ swap:
   html: "'HTML'"
   url: "'URL'"
   js: "'JavaScript'"
+  javascript: "'JavaScript'"
   .net: "'.NET'"
   dot net: "'.NET'"
   cms: "'CMS'"
+  azure: "'Azure'"
