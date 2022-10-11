@@ -39,6 +39,15 @@ You can also use __Composition__ to create a new Document Type. Compositions all
 
 ![Creating a Compositions](images/v8Screenshots/compositions.png)
 
+## What is an Element Type?
+
+An Element Type is a Document Type without a template containing schema configurations for repeating a set of properties. These are for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree.
+When you create an Element type, it automatically sets the **Is Element Type** flag to **True** on the **Permissions** tab.
+
+![Element Type](images/Element-Type.png)
+
+Element Types are created using the same workflow as regular Document Types but usually contain fewer properties. You can also create Element Types as part of configuring a Block Grid or Block List Data Type.
+
 ### Exporting/Importing the Document Type
 
 You can export document types from a project/installation and import them into another project/installation. Go to the __Settings__ section, right-click the __Document type__, and select __Export__. When you click on the __Export__ button, the Document Type is saved as *.udt file.
@@ -160,21 +169,6 @@ Go to the __Content__ section and click the menu icon (•••) next to the *H
 ![Basic content structure](images/v8Screenshots/createAboutUs.png)
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to acting as a container or repository.
-
-## What is an Element Type?
-
-Element Type is a Document Type without a template containing smaller schema configurations for repeating a set of properties. These can be used for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree.
-When you create an Element type, it automatically sets the **Is Element Typw** flag to **True** on the **Permissions** tab.
-
-![Element Type](images/Element-Type.png)
-
-## Creating an Element Type
-
-An Element Type is created under Document Types in the __Settings__ section.
-
-Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here, choose __Element Type__. This will create an Element Type.
-
-![Creating an Element Type](images/Element-Type-create.png)
 
 ### More information
 
