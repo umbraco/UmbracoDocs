@@ -20,7 +20,9 @@ Go to the Azure portal and find the empty website that we have set up and want t
 
 ![Azure deployments](images/Deployment-center.png)
 
-In the Deployment Center we can set up the CI/CD build server. In this example we are going to set up our build server by using Github Actions. You can set up the build server however you want as long as it supports executing powershell scripts.
+In the Deployment Center we can set up the CI/CD build server.
+With this example we are going to set up our build server by using Github Actions.
+It is possible to set up the build server however you want as long as it supports executing powershell scripts.
 
 2. Go to the Settings tab.
 3. Choose which source and build provider to use.
@@ -34,7 +36,7 @@ In the Deployment Center we can set up the CI/CD build server. In this example w
 
 We can also see which runtime stack and version we are running. In this example we are running .NET and ASP.NET Version 4.8.
 
-Once the information has been added we can go ahead and preview the file. We will get a YAML file that will be used for the build server:
+Once the information has been added we can go ahead and preview the YAML file that will be used for the build server:
 
 ![Workflow configuration](images/workflow-preview.png)
 
@@ -46,7 +48,8 @@ If we go back to the Github repository we can see that a new folder have been cr
 
 ![Workflows](images/workflows.png)
 
-Inside the folder, we find that a new YAML file has been created with the default settings that was added in the Azure Portal. In this case, this file will need to be configured so it fits into your set up.
+Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal.
+The file will need to be configured so it fits into your set up.
 
 8. Pull down the new file and folder, so you can work with the YAML file on your local machine.
 9. Configure it to work with our Umbraco Deploy installation.
@@ -126,8 +129,8 @@ Go to Github where you will now be able to see that the CI/CD build has started 
 
 ![Deployment build started](images/Deploying-meta-data.png)
 
-The build server that has been set up will go through the steps in the YAML file.
-once it is done we can see that the deployment have gone through succesfully:
+The build server will go through the steps in the YAML file,
+and once it is done the deployment have gone through succesfully:
 
 ![Deployment Complete](images/deployment-complete.png)
 
