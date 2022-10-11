@@ -288,7 +288,7 @@ This approach enables the grouping together of similar methods within a suitably
 Depending on where the custom service will be utilized, we will dictate the best practice approach to accessing the 'Published Content Cache'. If it is 100% guaranteed that the service will be called from a place with UmbracoContext then it is safe to inject `IPublishedContentQuery`. However, if the custom service is called in a location without UmbracoContext (for example an event handler) it will fail. The approach of accessing Published Content Cache via injecting IUmbracoContextFactory and calling `EnsureUmbracoContext()` provides consistency across custom services no matter where they are utilized.
 :::
 
-In this example, we create a custom service, that's responsible for finding key pages within a site, for example the News Section or the Contact Us page. These methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this service `SiteService`.
+In this example, we create a custom service, that is responsible for finding key pages within a site. This could be the News Section or the Contact Us page. These methods will commonly be called in different places throughout the site. It is great to encapsulate the logic to retrieve them in a single place. This service will be called `SiteService`.
 
 Create an interface to define the service:
 
