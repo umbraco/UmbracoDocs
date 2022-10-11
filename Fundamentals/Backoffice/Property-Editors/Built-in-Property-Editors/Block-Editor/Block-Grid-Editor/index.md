@@ -90,7 +90,7 @@ Customize the user experience for your content editors when they work with the B
 
   :::tip
   Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
-  
+
   You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
 
   Get more tips on how to use AngularJS filters in Umbraco CMS from this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
@@ -220,9 +220,7 @@ Rendering the stored value of your **Block Grid** property editor can be done in
 
 You can choose to use the built-in rendering mechanism for rendering Blocks using a Partial View for each block.
 
-The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a few options.
-
-Example use-case:
+The default rendering method is named `GetBlockGridHtmlAsync()` and comes with a few options - for example:
 
 ```csharp
 @await Html.GetBlockGridHtmlAsync(Model, "myGrid")
@@ -231,8 +229,6 @@ Example use-case:
 In the sample above `"myGrid"` is the alias of the Block Grid editor.
 
 If you are using ModelsBuilder, the example will look like this:
-
-Example:
 
 ```csharp
 @await Html.GetBlockGridHtmlAsync(Model.MyGrid)
@@ -288,6 +284,15 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 ```csharp
 <link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
 ```
+
+:::note
+Behind the scenes a set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a starting point:
+
+1. Clone the views from <a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a> - you will find them under
+   `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
+2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
+3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
+   :::
 
 ### 2. Build your own rendering
 
@@ -381,7 +386,7 @@ For example: You can use the below HTML structure:
 <div class="umb-block-grid"
      style="--umb-block-grid--grid-columns: 12;"
 >
-    
+
     <!-- Notice this is the same markup used every time we will be printing a list of blocks: -->
     <div class="umb-block-grid__layout-container">
 
@@ -402,7 +407,7 @@ For example: You can use the below HTML structure:
         >
 
             <!-- Here the Razor View or Custom View for this block will be rendered. -->
-            
+
             <!-- Each razor view must render the 'area-container' them self.
             This can be done by the Razor helper method:
 
@@ -445,7 +450,7 @@ For example: You can use the below HTML structure:
 
         </div>
         <!-- end of repeat -->
-        
+
     </div>
 
 </div>
