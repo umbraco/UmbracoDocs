@@ -167,5 +167,6 @@ Once you create something like a Document Type, the changes are getting picked u
 When you're done making changes, commit them and deploy them to Github.
 The build server will run and extract the changes into the website in Azure.
 
-This will only deploy the schema data for our local site to your website,
-to transfer content and media you will need to do so from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
+This will only deploy the schema data for our local site to your website.
+
+You will need to transfer content and media from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
