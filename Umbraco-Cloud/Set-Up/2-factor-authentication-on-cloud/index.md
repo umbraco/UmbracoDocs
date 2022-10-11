@@ -7,7 +7,9 @@ meta.Description: "This article shows you how you can enable 2-factor authentica
 
 # 2-factor authentication on Umbraco Cloud
 
-On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud account using either email, phone, or an authenticator app when logging in to the Umbraco Cloud Portal.
+On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud account.
+
+You can use email, phone, or an authenticator app when logging in to the Umbraco Cloud Portal.
 
 ## Enabling 2-factor authentication
 
@@ -36,10 +38,11 @@ You can use the Microsoft Authenticator App for both iOS and Android or any othe
 
 ### Phone Authentication
 
-With the phone authenticator, when you log in to the Umbraco Cloud portal, you can choose to either receive an SMS with a code to enter when login in or a call to log you in.
+You have the option to use your phone when you log in to the Umbraco Cloud portal.
+You can choose to receive an SMS with a code or a call to log you in.
 
 :::note
-If you need to change phone number, make sure that before deactivating the old number to change to the new number before the old number is disabled.
+If you need to change phone number, make sure before deactivating the old number to change to the new number before the old number is disabled.
 :::
 
 ![Phone authentication](images/Phone-auth.png)
