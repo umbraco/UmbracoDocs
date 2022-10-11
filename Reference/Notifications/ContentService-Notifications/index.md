@@ -19,7 +19,7 @@ Example usage of the ContentPublishingNotification:
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
     public class DontShout : INotificationHandler<ContentPublishingNotification>
     {
