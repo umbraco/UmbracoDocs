@@ -50,6 +50,8 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
                                     options.ClientId = "{your_client_id}";
                                     //Obtained from the AZURE AD B2C WEB APP
                                     options.ClientSecret = "{your_client_secret}";
+                                    //options.TokenEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token";
+                                    //options.AuthorizationEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize";                                    
                                 });
                         });
                 });
@@ -60,7 +62,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     ```
 
     :::note
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
+    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use only accounts in the organizational directory only (single tenant), you have to specify the Token and AuthorizationEndpoint as well.
     :::
 
 2. Update `ConfigureServices` method in the `Startup.cs` file:
