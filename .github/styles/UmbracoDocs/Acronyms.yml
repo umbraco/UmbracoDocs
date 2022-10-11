@@ -43,3 +43,4 @@ exceptions:
   - IIS
   - DNS
   - DOM
+  - TTL
