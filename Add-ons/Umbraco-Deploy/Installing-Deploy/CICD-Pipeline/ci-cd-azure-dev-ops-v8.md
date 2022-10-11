@@ -81,7 +81,7 @@ variables:
   # The name of the target Azure web application
   azureWebAppName: deploy-on-prem-live
 
-  # The azure subscription to deploy to
+  # The Azure subscription to deploy to
   azureSubscription: 'Microsoft Azure Sponsorship(5ffea398-7922-451b-bd72-fbe725185cbf)'
 
   # The upstream environment URL

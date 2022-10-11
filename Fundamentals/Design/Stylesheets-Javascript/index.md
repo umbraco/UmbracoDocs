@@ -23,7 +23,7 @@ In the Create menu, there are several options available:
 It is currently not possible to use any CSS preprocessor (such as SASS) in the backoffice.
 :::
 
-After creating a new stylesheet, you would work with it as you would with templates or javascript files - using the built-in backoffice text editor.
+After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor.
 When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
 ![Stylesheet RTE](images/2-rte-editor.png)
