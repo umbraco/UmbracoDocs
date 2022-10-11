@@ -13,7 +13,8 @@ In this example we will show how you can set up a CI/CD build server using Githu
 We will not cover how you can set up the site itself as this is beyond this documentation.
 :::
 
-To set up the build server in Azure Web Apps, we need to go to the Azure portal and find the empty website that we have set up and want to connect to.
+To set up the build server in Azure Web Apps.
+Go to the Azure portal and find the empty website that we have set up and want to connect to.
 
 1. Go to the Deployment Center.
 
@@ -110,7 +111,7 @@ There are many ways that this can be done.
 It is possible to set it up in a way that works for you and your preferred workflow.
 :::
 
-Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github Actions.
+Before the build can work, we will need to set up our generated API key to work with the build server in Github Actions.
 
 1. Open your Github repository.
 2. Navigate to Settings.
