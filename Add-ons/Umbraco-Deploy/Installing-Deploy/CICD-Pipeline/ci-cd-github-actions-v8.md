@@ -1,6 +1,6 @@
 ---
-versionFrom: 10.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
+versionTo: 8.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using GitHub Actions"
 meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using GitHub Actions"
 ---
@@ -13,8 +13,7 @@ In this example we will show how you can set up a CI/CD build server using Githu
 We will not cover how you can set up the site itself as this is beyond this documentation.
 :::
 
-To set up the build server in Azure Web Apps.
-Go to the Azure portal and find the empty website that we have set up and want to connect to.
+To set up the build server in Azure Web Apps, we need to go to the Azure portal and find the empty website that we have set up and want to connect to.
 
 1. Go to the Deployment Center.
 
@@ -26,13 +25,13 @@ In the Deployment Center we can set up the CI/CD build server. In this example w
 3. Choose which source and build provider to use.
     * In this case we want to choose Github.
 
-![Build server clean](images/Build-server-v10.png)
+![Build server clean](images/Build-server-clean.png)
 
 4. Choose the Organization which you created our Github repository under.
 5. Choose the repository that was set up earlier in this guide.
 6. Select which branch that we want the build server to build into.
 
-We can see which runtime stack and version we are running. In this example we are running .NET and Version 6.0.
+We can also see which runtime stack and version we are running. In this example we are running .NET and ASP.NET Version 4.8.
 
 Once the information has been added we can go ahead and preview the file. We will get a YAML file that will be used for the build server:
 
@@ -54,61 +53,55 @@ Inside the folder, we find that a new YAML file has been created with the defaul
 When it have been configured it will look something like this:
 
 ```yaml
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-name: Build and deploy ASP.Net Core app to Azure Web App - Jonathan-deploy-v10
+name: Build and deploy ASP app to Azure Web App - Jonathan-deploy-live
+
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
 jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout the git repository
-        uses: actions/checkout@v3
-      - name: Setup dotnet 6
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '6.0.x'
-      - name: Build with dotnet
-        working-directory: 'Jonathan-Deploy-V10'
-        run: dotnet build --configuration Release
-      - name: Publish with dotnet
-        working-directory: 'Jonathan-Deploy-V10'
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+  build-and-deploy:
+    runs-on: 'windows-latest'
+    
     env:
-      deployBaseUrl: https://jonathan-testing-deploy-v10.testsite.net
+      deployBaseUrl: https://helloworld.azurewebsites.net
       umbracoDeployReason:  DeployingMySite
+  
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: .net-app
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'Jonathan-Deploy-V10'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ABC78A5A9E9FG07F87E8R5G9H9J0J7J8 }}
-          package: .
-      - name:  Run Deploy Powershell - triggers deployment on remote env
-        shell: powershell
-        run: .\TriggerDeploy.ps1 -InformationAction:Continue -Action TriggerWithStatus -ApiKey ${{ secrets.deployApiKey }} -BaseUrl  ${{ env.deployBaseUrl }} -Reason  ${{ env.umbracoDeployReason }} -Verbose       
+    - uses: actions/checkout@master
+
+    - name: Setup MSBuild path
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore NuGet packages
+      run: nuget restore
+      working-directory: 'Deploy-testing'
+
+    - name: Publish to folder - two parent folders up back at root of our repo
+      working-directory: 'Deploy-testing'
+      run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="..\..\published\"
+      
+    - name: Copy License File
+      shell: powershell
+      run: xcopy /S /Q /Y /F ".\Deploy-testing\Deploy-testing\bin\umbracoDeploy.lic" ".\published\bin\"
+      
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'Jonathan-deploy'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_785990787859907878599078 }}
+        package: published
+        
+    - name:  Run Deploy Powershell - triggers deployment on remote env
+      working-directory: 'Deploy-testing\Deploy-testing'
+      shell: powershell
+      run: .\TriggerDeploy.ps1 -InformationAction:Continue -Action TriggerWithStatus -ApiKey ${{ secrets.deployApiKey }} -BaseUrl  ${{ env.deployBaseUrl }} -Reason  ${{ env.umbracoDeployReason }} -Verbose       
 ```
 
 :::note
@@ -117,35 +110,14 @@ There are many ways that this can be done.
 It is possible to set it up in a way that works for you and your preferred workflow.
 :::
 
-We also need to add the License file and TriggerDeploy.ps1 file in an item group in the csproj file:
-
-```csproj
-<ItemGroup>
-	<Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
-	<Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
-</ItemGroup>
-```
-
-As well as enabeling Unattended install so Umbraco installs automaticly:
-
-```JSON
-"Umbraco": {
-    "CMS": {
-      "Unattended": {
-        "InstallUnattended": true
-      }
-```
-
-Once the files has been deployed.
-
-Before the build can work, we will need to set up our generated API key to work with the build server in Github Actions.
+Before the build can work, we will need to set up the API key that we generated earlier to work with the build server in Github Actions.
 
 1. Open your Github repository.
 2. Navigate to Settings.
 3. Go to the Secrets tab.
 4. Select "New repository secret".
 5. Call the new secret **"DEPLOYAPIKEY"**.
-6. Add the API key from the `appSetting` for Umbraco Deploy in the `appSettings.json` file.
+6. Add the API key from the `appSetting` for Umbraco Deploy in the `web.config`.
 7. Save the secret.
 
 We can now go ahead and commit the configured YAML file and push up all the files to the repository.
