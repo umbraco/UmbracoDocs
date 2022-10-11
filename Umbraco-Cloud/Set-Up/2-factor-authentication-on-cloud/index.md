@@ -50,7 +50,7 @@ Make sure before deactivating the old number to change to the new number before 
 
 ## Disabeling 2-factor authentication
 
-You can always disabel 2-factor authentication from your profile again after having it enabled.
+You can always disable 2-factor authentication from your profile.
 
 To disable 2-factor authentication for your user, you will need to use the authentication method that you had enabled to disable it again.
 
