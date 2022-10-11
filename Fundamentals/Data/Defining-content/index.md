@@ -39,6 +39,8 @@ You can also use __Composition__ to create a new Document Type. Compositions all
 
 ![Creating a Compositions](images/v8Screenshots/compositions.png)
 
+Finally, you can create a Document Type as an __Element Type__, which can be used to build Block Grid and Block List editors. Learn more about [Element Types](#what-is-an-element-type) below.
+
 ## What is an Element Type?
 
 An Element Type is a Document Type without a template containing schema configurations for repeating a set of properties. These are for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree.
