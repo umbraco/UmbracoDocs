@@ -22,7 +22,7 @@ We will start by creating a ConfigureExamineOptions class, that derives from `IC
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -50,7 +50,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ExamineComposer : IComposer
     {
@@ -75,7 +75,7 @@ using Examine.Lucene;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -114,7 +114,7 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace MySite
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -164,23 +164,24 @@ To create this index we need five things:
 using Examine.Lucene;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
-using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ProductIndex : UmbracoExamineIndex
     {
         public ProductIndex(
-            ILoggerFactory loggerFactory,
-            string name,
-            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions,
-            IHostingEnvironment hostingEnvironment,
-            IRuntimeState runtimeState) : base(loggerFactory,
-            name,
-            indexOptions,
-            hostingEnvironment,
+            ILoggerFactory loggerFactory, 
+            string name, 
+            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions, 
+            IHostingEnvironment hostingEnvironment, 
+            IRuntimeState runtimeState)
+            : base(loggerFactory, 
+            name, 
+            indexOptions, 
+            hostingEnvironment, 
             runtimeState)
         {
         }
@@ -202,7 +203,7 @@ using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -225,12 +226,16 @@ namespace MySite.MyCustomIndex
             if (name.Equals("ProductIndex"))
             {
                 options.Analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
+
                 options.FieldDefinitions = new(
                     new("id", FieldDefinitionTypes.Integer),
                     new("name", FieldDefinitionTypes.FullText)
                     );
+
                 options.UnlockIndex = true;
-                options.Validator = new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new[] {"product"});
+
+                options.Validator = new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new[] { "product" });
+                
                 if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
                 {
                     // if this directory factory is enabled then a snapshot deletion policy is required
@@ -238,7 +243,7 @@ namespace MySite.MyCustomIndex
                 }
             }
         }
-
+        
         public void Configure(LuceneDirectoryIndexOptions options)
         {
             throw new System.NotImplementedException();
@@ -255,7 +260,7 @@ using Examine;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
     {
@@ -268,6 +273,7 @@ namespace MySite.MyCustomIndex
                     ["name"] = content.Name,
                     ["id"] = content.Id,
                 };
+
                 yield return new ValueSet(content.Id.ToString(), "content", indexValues);
             }
         }
@@ -283,7 +289,7 @@ using Examine;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ProductIndexPopulator : IndexPopulator
     {
@@ -301,12 +307,13 @@ namespace MySite.MyCustomIndex
             foreach (var index in indexes)
             {
                 var roots = _contentService.GetRootContent();
+
                 index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots.ToArray()));
 
                 foreach (var root in roots)
                 {
-                   var valueSets = _productIndexValueSetBuilder.GetValueSets(_contentService.GetPagedDescendants(root.Id, 0, Int32.MaxValue, out _).ToArray());
-                   index.IndexItems(valueSets);
+                    var valueSets = _productIndexValueSetBuilder.GetValueSets(_contentService.GetPagedDescendants(root.Id, 0, Int32.MaxValue, out _).ToArray());
+                    index.IndexItems(valueSets);
                 }
             }
 
@@ -323,16 +330,17 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace MySite.MyCustomIndex
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ExamineComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
-            builder.Services.ConfigureOptions<ConfigureCustomIndexOptions>();
+
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
-            builder.Services.AddSingleton<ProductIndexPopulator>();
+
+            builder.Services.AddSingleton<IIndexPopulator, ProductIndexPopulator>();
         }
     }
 }
