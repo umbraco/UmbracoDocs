@@ -13,7 +13,7 @@ In this example we will show how you can set up a CI/CD build server using Githu
 We will not cover how you can set up the site itself as this is beyond this documentation.
 :::
 
-To set up the build server in Azure Web Apps.
+The following steps will take you through setting up a build server in Azure Web Apps.
 Go to the Azure portal and find the empty website that we have set up and want to connect to.
 
 1. Go to the Deployment Center.
