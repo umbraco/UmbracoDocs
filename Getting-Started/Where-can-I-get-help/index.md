@@ -31,9 +31,9 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 ## Other resources
 
-[Found an issue in Umbraco? Report it on our Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
+[Found an issue in Umbraco? Report it on our CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
 
-[Found an issue with the Umbraco Documentation? Report it to the Documentation team](https://github.com/umbraco/UmbracoDocs)
+[Found an issue with the Umbraco Documentation? Report it on our Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs)
 
 [Find out how to suggest an improvement to the Umbraco Documentation](../../Contribute/)
 
