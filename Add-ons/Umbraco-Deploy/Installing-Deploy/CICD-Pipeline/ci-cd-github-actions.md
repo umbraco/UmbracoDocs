@@ -22,7 +22,7 @@ Go to the Azure portal and find the empty website that we have set up and want t
 
 In the Deployment Center we can set up the CI/CD build server.
 With this example we are going to set up our build server by using Github Actions.
-It is possible set up the build server however you want as long as it supports executing powershell scripts.
+It is possible to set up the build server however you want as long as it supports executing powershell scripts.
 
 2. Go to the Settings tab.
 3. Choose which source and build provider to use.
@@ -36,9 +36,9 @@ It is possible set up the build server however you want as long as it supports e
 
 We can see which runtime stack and version we are running, in this example we are running .NET and Version 6.0.
 
-Once the information has been added we can go ahead and preview YAML file that will be used for the build server:
+Once the information has been added we can go ahead and preview the YAML file that will be used for the build server:
 
-![Workflow configuration](images/workflow-preview.png)
+![Workflow configuration](images/workflow-preview-v10.png)
 
 7. Save the workflow.
 
