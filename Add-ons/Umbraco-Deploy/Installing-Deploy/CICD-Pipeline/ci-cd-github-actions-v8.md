@@ -34,7 +34,7 @@ It is possible to set up the build server however you want as long as it support
 5. Choose the repository that was set up earlier in this guide.
 6. Select which branch that we want the build server to build into.
 
-We can also see which runtime stack and version we are running. In this example we are running .NET and ASP.NET Version 4.8.
+We can see which runtime stack and version we are running, in this example we are running .NET and ASP.NET Version 4.8.
 
 Once the information has been added we can go ahead and preview the YAML file that will be used for the build server:
 
@@ -134,11 +134,12 @@ and once it is done the deployment have gone through succesfully:
 
 ![Deployment Complete](images/deployment-complete.png)
 
-You can now start creating content on the local machine. Once you create something like a Document Type, the changes are getting picked up in Git.
+You can now start creating content on the local machine.
+Once you create something like a Document Type, the changes will get picked up in Git.
 
 When you're done making changes. Commit them and deploy them to Github.
-It will run the build server and extract the changes into the website in Azure.
+The build server will run and extract the changes into the website in Azure.
 
 This will only deploy the schema data for our local site to your website.
 
-to transfer content and media you will need to do so from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
+You will need to transfer content and media from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
