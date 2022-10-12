@@ -103,7 +103,7 @@ The Dashboard will load one or more AngularJS views and display them as a series
 
 ## Update the Dashboard.config
 
-Once you have created the AngularJS View that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your View when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the views. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install.
+Once you have created the AngularJS View that you want to have loaded you must update the `Dashboard.config`. This is to tell Umbraco to load your View when a user enters a new section. If you are doing this for yourself all you need to do is edit the `Dashboard.config` on your site to add the views. Are you adding a section to go with a package, you will want to include a Package Action to update the `Dashboard.config` during install.
 
 See the [Packaging reference Actions](../../../Extending/Packages/package-actions.md) for more information.
 
