@@ -123,8 +123,8 @@ We also need to add the License file and `TriggerDeploy.ps1` file in an item gro
 
 ```
 <ItemGroup>
-	<Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
-	<Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
+<Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
+<Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
 </ItemGroup>
 ```
 
