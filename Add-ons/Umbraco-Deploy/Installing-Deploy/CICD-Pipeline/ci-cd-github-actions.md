@@ -162,7 +162,7 @@ and once it is done the deployment have gone through succesfully:
 ![Deployment Complete](images/deployment-complete.png)
 
 You can now start creating content on the local machine.
-Once you create something like a Document Type, the changes are getting picked up in Git.
+Once you create something like a Document Type, the changes will get picked up in Git.
 
 When you're done making changes, commit them and deploy them to Github.
 The build server will run and extract the changes into the website in Azure.
