@@ -1,6 +1,6 @@
 ---
 versionFrom: 10.0.0
-meta.Title: "Headless/AJAX Forms"
+meta.Title: "Headless/Asynchronous JavaScript and XML (AJAX)  Forms"
 ---
 
 # Headless/AJAX Forms
@@ -369,9 +369,9 @@ A successful response will return a 202 "Accepted" status code.
 
 ## Antiforgery Protection
 
-When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against CSRF (cross-site request forgery) attacks.
+When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against Cross-Site Request Forgery (CSRF) attacks.
 
-The same protection is available for forms submitted via AJAX (Asynchronous JavaScript and XML) techniques.
+The same protection is available for forms submitted via AJAX techniques.
 
 In order to generate the token and provide it in the form post, the following code can be applied to the .cshtml template:
 

@@ -5,7 +5,7 @@ meta.Title: "Add a Magic String Format Function"
 
 # Adding a Magic String Format Function
 
-Umbraco Forms [Magic Strings](../Magic-Strings/) can be used to replace placeholders within form elements with values from various sources. Sources include the HTTP request or the Umbraco page where the form is hosted.
+Umbraco Forms [Magic Strings](../Magic-Strings/) can be used to replace placeholders within form elements with values from different sources. Sources include the HTTP request or the Umbraco page where the form is hosted.
 
 These values can be formatted using [filter functions](../Magic-Strings/#formatting-magic-strings).
 

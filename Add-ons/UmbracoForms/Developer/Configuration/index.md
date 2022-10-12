@@ -129,7 +129,7 @@ When creating an empty form, a single workflow is added that will send an email 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### RemoveProvidedEmailTemplate
-From Forms 10.2, if you have created email templates to use with the "send Razor email" workflow, the provided template can be removed from selection. To do this, set this value to `true`.
+From Forms 10.2, the provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
 ### RemoveProvidedFormsTemplates
 Similarly, from Forms 10.2, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
@@ -198,7 +198,7 @@ In order to configure this setting, you will need to know the GUID or alias for 
 
 Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
-The default value and read-only settings apply for most setting types, with the exception of complex ones where a default string value isn't appropriate. An example of one of these is the field mapper used in the "Send to URL" workflow.
+The default value and read-only settings apply to most setting types. There is an exception for complex ones where a default string value isn't appropriate. An example of one of these is the field mapper used in the "Send to URL" workflow.
 
 ### Form default settings configuration
 
