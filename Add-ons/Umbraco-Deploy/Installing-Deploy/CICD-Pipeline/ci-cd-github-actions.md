@@ -119,7 +119,7 @@ This is only an example of how you can set up the CI/CD pipeline for Umbraco Dep
 It is possible to set it up in a way that works for you and your preferred workflow.
 :::
 
-We also need to add the License file and TriggerDeploy.ps1 file in an item group in the csproj file:
+We also need to add the License file and `TriggerDeploy.ps1` file in an item group in the `csproj` file:
 
 ```csproj
 <ItemGroup>
