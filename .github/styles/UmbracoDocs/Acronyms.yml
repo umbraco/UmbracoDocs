@@ -45,3 +45,5 @@ exceptions:
   - IIS
   - DNS
   - DOM
+  - XSLT
+  - AJAX
