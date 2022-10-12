@@ -52,7 +52,7 @@ First install [Umbraco.StorageProviders.AzureBlob](https://github.com/umbraco/Um
 }
 ```
 
-Next, add the following composer that adds the Forms storage container and moves the prevalue text files into the Azure Blob Storage (in `forms/PreValueTextFiles/{GUID}/{filename.txt}`):
+Next, add the following composer that adds the Forms storage container and stores the prevalue text files into Azure Blob Storage (in `forms/PreValueTextFiles/{GUID}/{filename.txt}`):
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -70,3 +70,5 @@ public class PreValueTextFileSystemStorageComposer : IComposer
                 "PreValueTextFiles"));
 }
 ```
+
+You need to manually move the existing files from `umbraco\Data\UmbracoForms\PreValueTextFiles` to your storage container. If you've disabled public access, the stored files are not accessible from the browser.
