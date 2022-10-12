@@ -23,7 +23,7 @@ In the Create menu, there are several options available:
 It is currently not possible to use any CSS preprocessor (such as SASS) in the backoffice.
 :::
 
-After creating a new stylesheet, you would work with it as you would with templates or javascript files - using the built-in backoffice text editor.
+After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor.
 When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
 ![Stylesheet RTE](images/2-rte-editor.png)
@@ -181,28 +181,6 @@ In case you are in Debug mode, your bundles won't be minified or bundled, so you
 <head>
     @Html.Raw(await runtimeMinifier.RenderJsHereAsync("registered-js-bundle"))
     @Html.Raw(await runtimeMinifier.RenderCssHereAsync("registered-css-bundle"))
-</head>
-</html>
-```
-
-Another possibility is to declare bundles inline in your views:
-
-```csharp
-@using Umbraco.Cms.Core.WebAssets
-@inject IRuntimeMinifier runtimeMinifier
-@{
-    runtimeMinifier.CreateJsBundle("inline-js-bundle",
-    BundlingOptions.NotOptimizedAndComposite,
-    new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
-
-    runtimeMinifier.CreateCssBundle("inline-css-bundle",
-        BundlingOptions.NotOptimizedAndComposite,
-        new[] { "~/css/test-style.css" });
-}
-<html>
-<head>
-    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("inline-js-bundle"))
-    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("inline-css-bundle"))
 </head>
 </html>
 ```

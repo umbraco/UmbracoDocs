@@ -55,7 +55,7 @@ By setting your SchedulingPublisher server to use your custom `SchedulingPublish
 ## Subscriber servers - Read-only database access
 
 :::note
-This description pertains ONLY to Umbraco database tables
+This description pertains only to Umbraco database tables
 :::
 
 In some cases infrastructure admins will not want their front-end servers to have write access to the database.

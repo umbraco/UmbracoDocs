@@ -19,3 +19,7 @@ To impersonate the full license on a local site:
 :::note
 The test license is restricted to sites running in a development environment, with a debugger attached (ie hitting F5 in Visual Studio, in Debug mode, will enable the test license).
 :::
+
+## Getting an Umbraco Plumber License
+
+If you want to buy an Umbraco Plumber license, reach out to the sales team at **suits@umbraco.com**.

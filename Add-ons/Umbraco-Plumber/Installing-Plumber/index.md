@@ -14,6 +14,10 @@ In this article, we will cover the steps required to install Umbraco Plumber on 
 - [Umbraco Installation](../../../Fundamentals/Setup/Install/index.md)
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="Installing Umbraco Plumber" src="https://www.youtube.com/embed/w2GnZrEpufg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Umbraco Plumber Installation
 
 There are different ways to install Umbraco Plumber:
@@ -55,7 +59,7 @@ To install via Visual Studio, follow these steps:
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5. Click Install.
    ![VS Installation](images/VS_Installation.png)
-6. Once the package is installed, open the **.csproj** file to make sure the package reference is updated:
+6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
 
   ```xml
   <ItemGroup>

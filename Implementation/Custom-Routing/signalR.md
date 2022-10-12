@@ -155,7 +155,7 @@ You need to provide the default reserved paths, else you'll run into an issue as
 
 ### Test the setup
 
-And lastly we can test the setup with some javascript in our view:
+And lastly we can test the setup with some JavaScript in our view:
 
 ```html
 <!-- We reference the signalR js file that comes with umbraco -->

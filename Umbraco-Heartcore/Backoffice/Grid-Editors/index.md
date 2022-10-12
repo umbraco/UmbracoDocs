@@ -139,7 +139,7 @@ Currently, the following combinations are supported:
 
 Currently, some functionality and components that do not work well in the preview pane. This includes integrations with the backoffice like Pickers and the Rich Text Editor. However, they still work when inserted on a page.
 
-To make your custom editors less likely to break with future updates, do not use any of the backoffice javascript directly. Always use the [headless backoffice bridge](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
+To make your custom editors less likely to break with future updates, do not use any of the backoffice JavaScript directly. Always use the [headless backoffice bridge](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
 
 If the library is missing any functionality, raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
 

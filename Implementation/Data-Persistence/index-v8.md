@@ -24,7 +24,7 @@ Umbraco.Core.Composing.Current.Services.ContentService.GetById(123);
 
 ## Services
 
-There are quite a few different services exposed on the ServiceContext such as: ContentService, MediaService, MemberService, etc...
+There are a few different services exposed on the ServiceContext such as: ContentService, MediaService, MemberService, etc...
 There is a service for each type of data in Umbraco.
 
 [See here For a full list of services available](../../Reference/Management/Services/)

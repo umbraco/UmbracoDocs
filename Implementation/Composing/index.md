@@ -8,7 +8,7 @@ meta.Description: "Customising the behaviour of an Umbraco Application at start 
 
 # Composing
 
-Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to notifications.
+Customising the behaviour of an Umbraco Application at 'start up'. for example adding, removing, or replacing the core functionality of Umbraco or registering custom code to subscribe to notifications.
 
 ## Overview
 

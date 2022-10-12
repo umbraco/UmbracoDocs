@@ -38,6 +38,39 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     ]
 }
 ```
+## Sample Manifest with Csharp
+
+You can also register your files by implementing a `IManifestFilter` instead of creating a `package.manifest`. Create a `ManifestFilter.cs` file and implement the `IManifestFilter` interface.
+
+```csharp
+public class ManifestFilter : IManifestFilter
+{
+    public void Filter(List<PackageManifest> manifests)
+    {
+        manifests.Add(new PackageManifest
+        {
+            PackageName = "Sir Trevor",
+            Scripts = new[]
+            {
+                "~/App_Plugins/SirTrevor/SirTrevor-config.html"
+            }, 
+            Version = "1.0.0"
+        });
+    }
+}
+```
+
+Then add the `ManifestFilter.cs` to the `CollectionBuilder`.
+
+```csharp
+public class ManifestComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.ManifestFilters().Append<ManifestFilter>();
+    }
+}
+```
 
 ## Root elements
 

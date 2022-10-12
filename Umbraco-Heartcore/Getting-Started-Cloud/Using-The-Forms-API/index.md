@@ -148,7 +148,7 @@ var contactForm = await managementService.Forms.GetById(new Guid("0134604b-f583-
 
 ### Retrieving a Form using the NodeJS Client Library
 
-If you are a javascript developer and work with NodeJS you can use the [NodeJS Client Library](../../Client-Libraries/Node-JS) in your own codebase to retrieve form definitions.
+If you are a JavaScript developer and work with NodeJS you can use the [NodeJS Client Library](../../Client-Libraries/Node-JS) in your own codebase to retrieve form definitions.
 
 First step is to install it through npm:
 

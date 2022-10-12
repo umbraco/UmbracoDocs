@@ -14,7 +14,7 @@ For a notification to be publishable there's only one requirement, it must imple
 ```C#
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Cms.Web.UI.Notifications
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
     public class CleanYourRoomStartedNotification : INotification
     {
@@ -28,7 +28,7 @@ This notification can now be published, and we can create a notification handler
 ```C#
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Cms.Web.UI.Notifications
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
     public class RoomCleanedNotification : INotification
     {
@@ -65,7 +65,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.HostedServices;
 using Umbraco.Cms.Web.UI.Notifications;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.Notifications
 {
     public class CleanUpYourRoom : RecurringHostedServiceBase
     {
@@ -92,17 +92,20 @@ namespace Umbraco.Cms.Web.UI
             _eventAggregator.Publish(new CleanYourRoomStartedNotification());
 
             using IScope scope = _scopeProvider.CreateScope();
+
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
 
             if (_contentService.RecycleBinSmells())
             {
                 _contentService.EmptyRecycleBin(userId: -1);
+                
                 // This will only be published when the scope is completed and disposed.
                 scope.Notifications.Publish(new RoomCleanedNotification(numberOfThingsInBin));
             }
 
             // Remember to complete the scope when done.
             scope.Complete();
+
             return Task.CompletedTask;
         }
     }
