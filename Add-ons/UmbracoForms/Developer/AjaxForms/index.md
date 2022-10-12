@@ -1,9 +1,9 @@
 ---
 versionFrom: 10.0.0
-meta.Title: "Headless/AJAX (Asynchronous JavaScript and XML) Forms"
+meta.Title: "Headless/AJAX Forms"
 ---
 
-# Headless/AJAX (Asynchronous JavaScript and XML) Forms
+# Headless/AJAX Forms
 
 From version 10.2, Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 

@@ -105,4 +105,4 @@ Finally, it needs to be registered via a composer:
 
 ---
 
-Prev: [Localization](../Localization/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Headless/AJAX (Asynchronous JavaScript and XML) Forms](../AjaxForms/index.md)
+Prev: [Localization](../Localization/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Headless/AJAX Forms](../AjaxForms/index.md)

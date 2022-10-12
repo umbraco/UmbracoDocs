@@ -5,7 +5,7 @@ meta.Title: "Block List Filters"
 
 # Block List Filters
 
-When working with Umbraco's block list editor, [the editor experience is enhanced](../../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#editor-appearance) by defining a label for the appearance of the block in the editor.
+When working with Umbraco's block list editor [the editor experience can be customized](../../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#editor-appearance). A label for the appearance of the block in the editor can be set.
 
 These labels can contain AngularJS filters.
 
