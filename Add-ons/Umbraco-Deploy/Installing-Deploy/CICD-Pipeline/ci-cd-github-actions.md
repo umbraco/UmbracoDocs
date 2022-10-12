@@ -128,7 +128,7 @@ We also need to add the License file and `TriggerDeploy.ps1` file in an item gro
 </ItemGroup>
 ```
 
-As well as enabeling Unattended install in the **appSettings.json** file so Umbraco installs automaticly:
+As well as enabling Unattended install in the **appSettings.json** file so Umbraco installs automatically:
 
 ```JSON
 "Umbraco": {
