@@ -260,8 +260,9 @@ public class ProductPageUrlProvider : DefaultUrlProvider
             ILogger<DefaultUrlProvider> logger,
             ISiteDomainMapper siteDomainMapper,
             IUmbracoContextAccessor umbracoContextAccessor,
-            UriUtility uriUtility)
-            : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility)
+            UriUtility uriUtility,
+            ILocalizationService localizationService)
+            : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility, localizationService)
         {
         }
 
