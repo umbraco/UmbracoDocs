@@ -35,7 +35,7 @@ You need to manually move the existing files from `umbraco\Data\UmbracoForms\Pre
 
 ## Move files to Azure Blob Storage (10.2 and up)
 
-First install [Umbraco.StorageProviders.AzureBlob](https://github.com/umbraco/Umbraco.StorageProviders) and configure the Forms storage container, e.g. by adding the following to your `appsettings.json`:
+First, install [Umbraco.StorageProviders.AzureBlob](https://github.com/umbraco/Umbraco.StorageProviders) and configure the Forms storage container, for example by adding the following to your `appsettings.json`:
 
 ```json
 {
