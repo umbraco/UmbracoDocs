@@ -121,7 +121,7 @@ It is possible to set it up in a way that works for you and your preferred workf
 
 We also need to add the License file and `TriggerDeploy.ps1` file in an item group in the `csproj` file:
 
-```
+```HTML
 <ItemGroup>
 <Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
 <Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
