@@ -15,7 +15,7 @@ Content Templates allows a content editor to create a blueprint for new content 
 
 Select a **Content node** from the **Content** menu:
 
-![Content Menu](images/v8-01-Content-Menu.png)
+![Content Menu](images/v8-01-Content-Menu.png) 
 
 Right-click the Content node and select the **Create Content Template** option. Alternatively, select the **Actions** dropdown of the content node and select the **Create Content Template** option:
 
