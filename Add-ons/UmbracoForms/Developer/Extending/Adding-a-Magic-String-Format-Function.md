@@ -5,11 +5,11 @@ meta.Title: "Add a Magic String Format Function"
 
 # Adding a Magic String Format Function
 
-Umbraco Forms [Magic Strings](../Magic-Strings/) can be used to replace placeholders within form elements with values from various sources, such as the HTTP request or the Umbraco page where the form is hosted.
+Umbraco Forms [Magic Strings](../Magic-Strings/) can be used to replace placeholders within form elements with values from various sources. Sources include the HTTP request or the Umbraco page where the form is hosted.
 
 These values can be formatted using [filter functions](../Magic-Strings/#formatting-magic-strings).
 
-Several filter functions for common operations such as truncating a string or formatting a date or number are provided.  It's also possible to create custom ones in code.
+Filter functions for common operations such as truncating a string or formatting a date or number are provided.  It's also possible to create custom ones in code.
 
 ## Creating a custom format function
 
@@ -19,7 +19,7 @@ The `FunctionName` property provides the name of the function that will be used 
 
 The `FormatValue` property parses the provided value and arguments and returns the formatted value as a string.
 
-The following example shows the implementation of a function that bounds an integer value.  It takes two arguments, a minimum and maximum value.  If the value read from the magic string source is numeric, and fits within the the two bounds, it is returned.  If it is outside the bounds, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
+The following example shows the implementation of a function that bounds an integer value.  It takes two arguments, a minimum and maximum value.  If the value read from the magic string source is numeric, and fits within the the two bounds, it is returned.  Otherwise, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
 
 ```csharp
 using System.Globalization;

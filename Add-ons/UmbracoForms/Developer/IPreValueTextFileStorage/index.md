@@ -13,7 +13,7 @@ Since Forms 10.2, you can also use/inherit from `PreValueTextFileSystemStorage` 
 
 ## Move files to Media file system (10.2 and up)
 
-You can use the following composer to move the prevalue text files into the media file system (and if that's using Azure Blob Storage, remove it from the local physical file system).
+You can use the following composer to move the prevalue text files into the media file system. If the media file system is using Azure Blob Storage, this will remove the files from the local physical file system.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;

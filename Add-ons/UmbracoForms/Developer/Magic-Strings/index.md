@@ -65,7 +65,7 @@ Some extra variables are:
 
 ### Member properties from a form submission
 
-`{member.FOO}` with the prefix of member, in the same syntax above will allow you to retrieve information about the submission if it was submitted by a logged in member.
+`{member.FOO}` with the prefix of member, the same syntaxwill allow you to retrieve information about the submission if it was submitted by a logged in member.
 
 ## Formatting magic strings
 

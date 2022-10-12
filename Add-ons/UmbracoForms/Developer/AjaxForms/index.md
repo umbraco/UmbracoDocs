@@ -1,9 +1,9 @@
 ---
 versionFrom: 10.0.0
-meta.Title: "Headless/AJAX Forms"
+meta.Title: "Headless/AJAX (Asynchronous JavaScript and XML) Forms"
 ---
 
-# Headless/AJAX Forms
+# Headless/AJAX (Asynchronous JavaScript and XML) Forms
 
 From version 10.2, Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 
@@ -346,7 +346,7 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 }
 ```
 
-The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field.  The value is the value of the submitted field, which can either be a string, or an array of strings (supporting fields that accept multiple values such as checkbox lists).
+The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field.  The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
 The `contentId` is optional, and if provided will be used to customize the response for the current page.
 
@@ -369,9 +369,9 @@ A successful response will return a 202 "Accepted" status code.
 
 ## Antiforgery Protection
 
-When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against cross-site request forgery (CSRF) attacks.
+When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against CSRF (cross-site request forgery) attacks.
 
-The same protection is available for forms submitted via AJAX techniques.
+The same protection is available for forms submitted via AJAX (Asynchronous JavaScript and XML) techniques.
 
 In order to generate the token and provide it in the form post, the following code can be applied to the .cshtml template:
 

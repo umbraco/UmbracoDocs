@@ -6,7 +6,7 @@ meta.Description: "Provides details of the built-in provider types available wit
 
 # Forms Provider Type Details
 
-This page provides some details of the various provider types available in Umbraco Forms.
+This page provides some details of the provider types available in Umbraco Forms.
 
 The intention is to be able to make available details such as IDs, aliases and property names, that may be necessary when configuring the product.
 
@@ -260,7 +260,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 - `RazorViewFilePath`
 - `Attachment`
 
-### Send Email With XSLT Template
+### Send Email With XSLT (Extensible Stylesheet Language Transformations) Template
 
 **ID:**    `616edfeb-badf-414b-89dc-d8655eb85998`
 

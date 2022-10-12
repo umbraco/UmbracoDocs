@@ -129,7 +129,7 @@ When creating an empty form, a single workflow is added that will send an email 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### RemoveProvidedEmailTemplate
-From Forms 10.2, if you have created custom email templates to use with the "send Razor email" workflow, the provided template can be removed from selection by setting this value to `true`.
+From Forms 10.2, if you have created email templates to use with the "send Razor email" workflow, the provided template can be removed from selection. To do this, set this value to `true`.
 
 ### RemoveProvidedFormsTemplates
 Similarly, from Forms 10.2, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
@@ -140,7 +140,7 @@ By default the value of HTML `id` attribute rendered for fieldsets and fields us
 For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
 
 ### FormElementHtmlIdPrefix
-Forms 10.2 introduced the ability to configure settings for the various field, workflow, datasource and prevalue sources.  The default behaviour for Forms when a new field or workflow is added to to a form is for each setting to be empty, to be filled in by the editor.  All settings defined on the type are displayed for entry.
+Forms 10.2 introduced the ability to configure settings for the field, workflow, datasource and prevalue sources.  The default behaviour for Forms when a new field or workflow is added to to a form is for each setting to be empty. The values are then completed in by the editor.  All settings defined on the type are displayed for entry.
 
 In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
 
@@ -194,11 +194,11 @@ Here an organisation approved reCAPTCHA score threshold is defined, that can't b
   }
 ```
 
-In order to configure this setting, you will need to know the GUID or alias for the type, as well as the property name for each setting. You can find [these values for the built-in Forms types here](./type-details.md).
+In order to configure this setting, you will need to know the GUID or alias for the type and the property name for each setting. You can find [these values for the built-in Forms types here](./type-details.md).
 
-Take care to not hide any settings that are required for the particular field or workflow type (e.g. the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
+Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
-Note that the default value and read-only settings apply for most setting types, with the exception of complex ones such as the field mapper (used in the Send to URL workflow) where a default string value isn't appropriate.
+The default value and read-only settings apply for most setting types, with the exception of complex ones where a default string value isn't appropriate. An example of one of these is the field mapper used in the "Send to URL" workflow.
 
 ### Form default settings configuration
 
@@ -258,7 +258,7 @@ This setting provides a value to be used for the `autocomplete` attribute for ne
 
 Introduced in 10.2, this setting controls the initial value of the number of days to retain form submission records for newly created forms. By default the value is 0, which means records will not be deleted at any time and are retained forever.
 
-If set to a positive number, records in the 'submitted' state, that are older than the date calculated by taking away the number of days configured from the current date, will be flagged for removal.
+If set to a positive number, a date value calculated by taking away the number of days configured from the current date is found. Records in the 'submitted' state, that are older than this date, will be flagged for removal.
 
 #### DaysToRetainApprovedRecordsFor
 
@@ -313,7 +313,7 @@ Scheduled deletion of records older than a specified number of days was a featur
 
 #### Enabled
 
-By default this value is `false` and no data will be removed. A note will be displayed in the backoffice indicating that even if forms are configured to have submitted data cleaned up, no records will be removed until the service is enabled.
+By default this value is `false` and no data will be removed. Even if forms are configured to have submitted data cleaned up, no records will be deleted. A note will be displayed in the backoffice indicating this status.
 
 Set to `true` to enabled the background task.
 
