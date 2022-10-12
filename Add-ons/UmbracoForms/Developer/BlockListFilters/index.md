@@ -13,7 +13,7 @@ From Forms 10.2, a filter `umbFormsFormName` is available for use.
 
 If you add a reference to a property containing a form to the block's label, it will render with the form's Id.
 
-For example, assuming a property containg a picked form with an alias of `contactForm`:
+For example, assuming a property containing a picked form with an alias of `contactForm`:
 
 ```
 {{contactForm}}

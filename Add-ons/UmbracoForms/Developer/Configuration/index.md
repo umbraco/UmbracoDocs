@@ -139,7 +139,7 @@ By default the value of HTML `id` attribute rendered for fieldsets and fields us
 
 For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
 
-### FormElementHtmlIdPrefix
+###
 Forms 10.2 introduced the ability to configure settings for the field, workflow, datasource and prevalue sources.  The default behaviour for Forms when a new field or workflow is added to to a form is for each setting to be empty. The values are then completed in by the editor.  All settings defined on the type are displayed for entry.
 
 In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
