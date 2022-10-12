@@ -138,9 +138,7 @@ As well as enabling Unattended install in the **appSettings.json** file so Umbra
       }
 ```
 
-Once the files has been deployed.
-
-Before the build can work, we will need to set up our generated API key to work with the build server in Github Actions.
+Before the build can work, we will need to set up our generated API key to work with the build server in GitHub Actions.
 
 1. Open your Github repository.
 2. Navigate to Settings.
