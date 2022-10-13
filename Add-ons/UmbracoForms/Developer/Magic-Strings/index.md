@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
 ---
 
 # Magic strings
@@ -28,7 +27,7 @@ The variables are not case-sensitive.
 
 ## Dictionary Items
 
-For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`.  When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
+For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as `#MyKey`.  When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
 
 ## Session & Cookies
 
@@ -53,7 +52,7 @@ Some extra variables are:
 `{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.
 
 Some extra variables are:
-- `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
+- `{record.id}`: The ID of the current record
 - `{record.updated}`: The updated date/time of the current record
 - `{record.created}`: The created date/time of the current record
 - `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on
@@ -67,21 +66,21 @@ Some extra variables are:
 
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 
-A service implemented by the `IPlaceholderParsingService` interface is available for use in custom code or views.  It's found in the `Umbraco.Forms.Core.Services` namespace.
-
-In a controller you can inject it via the constructor and it can also be injected into views via:
-
-```csharp
-@using Umbraco.Forms.Core.Services;
-@inject IPlaceholderParsingService PlaceholderParsingService
-```
-
-The interface implements a single method, `ParsePlaceHolders`, that can be used for parsing magic strings.  There are a few overloads available for use depending on the context.
+The `Umbraco.Forms.Data.StringHelpers` class contains a helper method `ParsePlaceHolders` that can be used for parsing magic strings.  There are a few overloads available for use depending on the context.  Some of these are obsoleted as of Forms 8.10.0, so the best options to use are listed below.
 
 If parameters for the `Record` or `Form` are omitted, magic strings relating to these objects will be removed.
+
+
+```csharp
+ParsePlaceHolders(string value, Record record = null, Form form = null, Hashtable pageElements = null) {} // will use HttpContext.Current
+
+ParsePlaceHolders(string value, HttpContext context, Record record = null, Form form = null, Hashtable pageElements = null) {}
+
+ParsePlaceHolders(string value, HttpContextBase context, Record record = null, Form form = null, Hashtable pageElements = null) {}
+```
 
 There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace, again available with some overloads allowing the provision of a `Form` or `Record` object if available.
 
 ---
 
-Prev: [Security](../Security/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Health Checks](../Healthchecks/index.md)
+Prev: [Configuration](../Configuration/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Health Checks](../Healthchecks/index.md)

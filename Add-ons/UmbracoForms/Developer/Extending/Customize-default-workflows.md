@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 meta.Title: "Customize default workflows"
 meta.Description: "How to amend the built-in behavior of associating workflows with new forms"
 ---
@@ -9,7 +8,7 @@ meta.Description: "How to amend the built-in behavior of associating workflows w
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-From versions 9.5/10.1 it's possible to amend this behavior and change it to fit your needs.
+From versions 8.13 it's possible to amend this behavior and change it to fit your needs.
 
 ## Implementing a Custom Behavior
 
@@ -32,17 +31,14 @@ namespace MyNamespace
 {
     public class TestWorkflow : WorkflowType
     {
-        public const string LogMessageWorkflowId = "7ca500a7-cb34-4a82-8ae9-2acac777382d";
-        private readonly ILogger<LogMessageWorkflow> _logger;
+        public const string TestWorkflowId = "7ca500a7-cb34-4a82-8ae9-2acac777382d";
 
-        public LogMessageWorkflow(ILogger<LogMessageWorkflow> logger)
+        public TestWorkflow()
         {
-            Id = new Guid(LogMessageWorkflowId);
+            Id = new Guid(TestWorkflowId);
             Name = "Test Workflow";
             Description = "A test workflow that writes a log line";
             Icon = "icon-edit";
-
-            _logger = logger;
         }
 
         [Setting("Message", Description = "The log message to write", View = "TextField")]
@@ -59,9 +55,9 @@ namespace MyNamespace
             return exs;
         }
 
-        public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
+        public override WorkflowExecutionStatus Execute(Record record, RecordEventArgs e)
         {
-            _logger.LogInformation($"'{Message}' written at {DateTime.Now}");
+            Current.Logger.Info<TestWorkflow>($"'{Message}' written at {DateTime.Now}"); ;
             return WorkflowExecutionStatus.Completed;
         }
     }
@@ -74,7 +70,7 @@ Secondly, the custom implementation of `IApplyDefaultWorkflowsBehavior`:
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Cms.Core.Hosting;
+using Umbraco.Core.IO;
 using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Providers;
@@ -86,19 +82,27 @@ namespace MyNamespace
     public class CustomApplyDefaultWorkflowsBehavior : IApplyDefaultWorkflowsBehavior
     {
         private readonly WorkflowCollection _workflowCollection;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IFacadeConfiguration _facadeConfiguration;
 
         public CustomApplyDefaultWorkflowsBehavior(
-            WorkflowCollection workflowCollection, IHostingEnvironment hostingEnvironment)
+            WorkflowCollection workflowCollection,
+            IFacadeConfiguration facadeConfiguration)
         {
             _workflowCollection = workflowCollection;
-            _hostingEnvironment = hostingEnvironment;
+            _facadeConfiguration = facadeConfiguration;
         }
+
 
         public void ApplyDefaultWorkflows(FormDesign form)
         {
+            // If default workflow addition is disabled in configuration, then exit.
+            if (_facadeConfiguration.GetSetting("DisableDefaultWorkflow").ToLower() == "true")
+            {
+                return;
+            }
+
             // Retrieve the type of the default workflow to add.
-            WorkflowType testWorkflowType = _workflowCollection[new Guid(LogMessageWorkflow.LogMessageWorkflowId)];
+            WorkflowType testWorkflowType = _workflowCollection[new Guid(TestWorkflow.TestWorkflowId)];
 
             // Create a workflow object based on the workflow type.
             var defaultWorkflow = new FormWorkflowWithTypeSettings
@@ -135,7 +139,7 @@ namespace MyNamespace
                     Alias = settingItem.Alias,
                     Description = settingItem.Description,
                     Prevalues = settingItem.GetPreValues(),
-                    View = _hostingEnvironment.ToAbsolute(settingItem.GetSettingView()),
+                    View = IOHelper.ResolveUrl(settingItem.GetSettingView()),
                     Value = string.Empty
                 };
 
@@ -162,27 +166,21 @@ namespace MyNamespace
 Finally, to register the custom implementation in place of the default one:
 
 ```C#
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-using Umbraco.Forms.Core.Providers;
-using Umbraco.Forms.Testsite.Business.Workflows;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
 using Umbraco.Forms.Web.Behaviors;
 
 namespace MyNamespace
 {
-    public class TestSiteComposer : IComposer
+    public class TestSiteComposer : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
-                .Add<LogMessageWorkflow>();
-
-            builder.Services.AddUnique<IApplyDefaultWorkflowsBehavior, CustomApplyDefaultWorkflowsBehavior>();
+            // Replace the default behavior for associating workflows with a custom implementation.
+            composition.RegisterUnique<IApplyDefaultWorkflowsBehavior, CustomApplyDefaultWorkflowsBehavior>();
         }
     }
 }
-
 ```
 
 ## Setting a Mandatory Default Workflow

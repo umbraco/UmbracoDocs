@@ -1,173 +1,227 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Adding Notification Handlers in Umbraco Forms"
+versionFrom: 8.0.0
+meta.Title: "Adding Event Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
 ---
 
-# Adding a server-side notification handlers to Umbraco Forms
+# Adding a server-side event handlers to Umbraco Forms
 
-## Form validation notification
+:::note
+The samples in this article applies to Umbraco Forms version 8 and later versions.
+:::
 
-Add a new class to your project as a handler for the `FormValidateNotification` notification:
+## Form validation event
+
+Add a new class to your project and have it inherit from `IUserComposer`, implement the `Compose()` method. This method will contain a handler for the `FormValidate` event.
 
 ```csharp
 using System.Linq;
-using Microsoft.AspNetCore.Http;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Forms.Core.Models;
-using Umbraco.Forms.Core.Services.Notifications;
+using System;
+using System.Collections.Generic;
+using Umbraco.Core.Composing;
 
-namespace MyFormsExtensions
+namespace Forms8.EventHandlers
 {
     /// <summary>
     /// Catch form submissions before being saved and perform custom validation.
     /// </summary>
-    public class FormValidateNotificationHandler : INotificationHandler<FormValidateNotification>
+    public class FormEventsComposer : IUserComposer
     {
-        public void Handle(FormValidateNotification notification)
+
+        public void Compose(Composition composition)
         {
-            // If needed, be selective about which form submissions you affect.
-            if (notification.Form.Name == "Form Name")
+            // Attach a handler to the `FormValidate` event of UmbracoForms
+            Umbraco.Forms.Web.Controllers.UmbracoFormsController.FormValidate += FormsController_FormValidate;
+        }
+
+        private void FormsController_FormValidate(object sender, Umbraco.Forms.Mvc.FormValidationEventArgs e)
+        {
+            // If needed, be selective about which form submissions you affect
+            if (e.Form.Name == "Form Name")
             {
+                // Access the Controller that handled the Request
+                var controller = sender as Umbraco.Forms.Web.Controllers.UmbracoFormsController;
+
                 // Check the ModelState
-                if (notification.ModelState.IsValid == false)
-                {
+                if (controller == null || !controller.ModelState.IsValid)
                     return;
-                }
 
                 // A sample validation
-                var email = GetPostFieldValue(notification.Form, notification.Context, "email");
-                var emailConfirm = GetPostFieldValue(notification.Form, notification.Context, "verifyEmail");
+                var email = GetPostFieldValue(e, "email");
+                var emailConfirm = GetPostFieldValue(e, "verifyEmail");
 
                 // If the validation fails, return a ModelError
                 if (email.ToLower() != emailConfirm.ToLower())
-                {
-                    notification.ModelState.AddModelError(GetPostField(notification.Form, "verifyEmail").Id.ToString(), "Email does not match");
-                }
+                    controller.ModelState.AddModelError(GetPostField(e, "verifyEmail").Id.ToString(), "Email does not match");
+
             }
         }
 
-        private static string GetPostFieldValue(Form form, HttpContext context, string key)
+        // Helper method
+        private static string GetPostFieldValue(Umbraco.Forms.Mvc.FormValidationEventArgs e, string key)
         {
-            Field field = GetPostField(form, key);
+            var field = GetPostField(e, key);
+
             if (field == null)
             {
                 return string.Empty;
             }
-
-
-            return context.Request.HasFormContentType &&  context.Request.Form.Keys.Contains(field.Id.ToString())
-                ? context.Request.Form[field.Id.ToString()].ToString().Trim()
-                : string.Empty;
+            
+            var value = e.Context.Request[field.Id.ToString()] ?? "";
+            return value.Trim();
         }
 
-        private static Field GetPostField(Form form, string key) => form.AllFields.SingleOrDefault(f => f.Alias == key);
+        // Helper method
+        private static Umbraco.Forms.Core.Models.Field GetPostField(Umbraco.Forms.Mvc.FormValidationEventArgs e, string key)
+        {
+            return e.Form.AllFields.SingleOrDefault(f => f.Alias == key);
+        }
+
     }
 }
-
 ```
 
-The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a ModelError.
+The `FormValidate` event will pass a reference to the Controller and Form objects. Use them to check ModelState and Form Field values. If validation fails, return a ModelError.
 
-To register the handler, add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+## Service events
 
-```csharp
-public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)
-{
-    builder.AddNotificationHandler<FormValidateNotification, FormValidateNotificationHandler>();
-}
-```
+The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` are used when forms definitions are stored within the Umbraco database. They expose the following events that are triggered just before or after an entity handled by the service is modified:
 
-## Service notifications
-
-The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` trigger following notifications just before or after an entity handled by the service is modified.
+- Creating
+- Created
+- Deleting
+- Deleted
+- Saving
+- Saved
+- Updating
+- Updated
 
 The "-ing" events allow for the entity being changed to be modified before the operation takes place, or to cancel the operation.  The "-ed" events fire after the update is complete.
 
 Both can be wired up using a composer and component:
 
 ```csharp
-    public class TestSiteComposer : IComposer
+    public class TestSiteComposer : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.AddNotificationHandler<FormSavingNotification, FormSavingNotificationHandler>();
+            composition.Components().Append<TestSiteComponent>();
         }
     }
 
-    public class FormSavingNotificationHandler : INotificationHandler<FormSavingNotification>
+    public class TestSiteComponent : IComponent
     {
-        public void Handle(FormSavingNotification notification)
+        private readonly IFormService _formService;
+
+        public TestSiteComponent(IFormService formService)
         {
-            foreach (Form form in notification.SavedEntities)
-            {
-                foreach (Page page in form.Pages)
-                {
-                    foreach (FieldSet fieldset in page.FieldSets)
-                    {
-                        foreach (FieldsetContainer fieldsetContainer in fieldset.Containers)
-                        {
-                            foreach (Field field in fieldsetContainer.Fields)
-                            {
-                                field.Caption += " (updated)";
-                            }
-                        }
-                    }
-                }
-            }
+            _formService = formService;
+        }
+
+        public void Initialize()
+        {
+            _formService.Saving += FormService_Saving;
+            _formService.Saved += FormService_Saved;
+        }
+
+        private void FormService_Saving(object sender, FormEventArgs e)
+        {
+            // Modify before saving.
+            e.Form.Name += " (updated)";
+
+            // Cancel the operation.
+            e.Cancel = true;
+        }
+
+        private void FormService_Saved(object sender, FormEventArgs e)
+        {
+        }
+
+        public void Terminate()
+        {
+            _formService.Saving -= FormService_Saving;
+            _formService.Saved -= FormService_Saved;
         }
     }
 ```
 
-When a form or folder is _moved_ there is no specific service event.  However information available in the `State` dictionary available on the notification object can be used to determine whether the item was moved, and if so, where from:
+When a form or folder is _moved_ there is no specific service event.  However information available in the `AdditionalData` dictionary available on the `FormEventArgs` or `FolderEventArgs` can be used to determine whether the item was moved, and if so, where from:
 
 ```csharp
-    public class TestSiteComposer : IComposer
+    public class TestSiteComposer : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.AddNotificationHandler<FormSavingNotification, FormSavingNotificationHandler>();
+            composition.Components().Append<TestSiteComponent>();
         }
     }
 
-    public class FormSavingNotificationHandler : INotificationHandler<FormSavingNotification>
+    public class TestSiteComponent : IComponent
     {
-        private readonly ILogger<FormSavingNotification> _logger;
+        private readonly IFormService _formService;
 
-        public FormSavingNotificationHandler(ILogger<FormSavingNotification> logger) => _logger = logger;
-
-        public void Handle(FormSavingNotification notification)
+        public TestSiteComponent(IFormService formService)
         {
-            foreach (Form savedEntity in notification.SavedEntities)
-            {
-                _logger.LogInformation($"Form updated. New parent: {savedEntity.FolderId}. Old parent: {notification.State["MovedFromFolderId"]}");
-            }
+            _formService = formService;
+        }
+
+        public void Initialize()
+        {
+            _formService.Updating += FormService_Updating;
+            _formService.Updated += FormService_Updated;
+        }
+
+        private void FormService_Updated(object sender, FormEventArgs e) =>
+            Current.Logger.Info(
+                typeof(TestSiteComponent),
+                $"Form updated. New parent: {e.Form.FolderId}. Old parent: {e.AdditionalData["MovedFromFolderId"]}");
+
+        private void FolderService_Updated(object sender, FolderEventArgs e) =>
+            Current.Logger.Info(
+                typeof(TestSiteComponent),
+                $"Folder updated. New parent: {e.Folder.ParentId}. Old parent: {e.AdditionalData["MovedFromFolderId"]}");
+
+        public void Terminate()
+        {
+            _formService.Updating -= FormService_Updating;
+            _formService.Updated -= FormService_Updated;
         }
     }
 ```
 
-If a folder is being moved, the key within the `State` dictionary is `"MovedFromParentId"`.
+If a folder is being moved, the key within the `AdditionalData` dictionary is `"MovedFromParentId"`.
 
 ## Backoffice entry rendering events
 
 When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user.  This is shown in the following example:
 
 ```csharp
-    public class TestSiteComposer : IComposer
+    public class TestSiteComposer : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.AddNotificationHandler<EntrySearchResultFetchingNotification, EntrySearchResultFetchingNotificationHandler>();
+            composition.Components().Append<TestSiteComponent>();
         }
     }
 
-    public class EntrySearchResultFetchingNotificationHandler : INotificationHandler<EntrySearchResultFetchingNotification>
+    public class TestSiteComponent : IComponent
     {
-        public void Handle(EntrySearchResultFetchingNotification notification)
+        private readonly IFormRecordSearcher _formRecordSearcher;
+
+        public TestSiteComponent(IFormRecordSearcher formRecordSearcher)
+        {
+            _formRecordSearcher = formRecordSearcher;
+        }
+
+        public void Initialize()
+        {
+            _formRecordSearcher.EntrySearchResultFetching += FormRecordSearcher_EntrySearchResultFetching;
+        }
+
+        public void FormRecordSearcher_EntrySearchResultFetching(object sender, EntrySearchResultEventArgs e)
         {
             var transformedFields = new List<object>();
-            foreach (var field in notification.EntrySearchResult.Fields)
+            foreach (var field in e.EntrySearchResult.Fields)
             {
                 if (field?.ToString() == "Test")
                 {
@@ -179,7 +233,28 @@ When an entry for a form is rendered in the backoffice, and event is available t
                 }
             }
 
-            notification.EntrySearchResult.Fields = transformedFields;
+            e.EntrySearchResult.Fields = transformedFields;
+        }
+
+        public void Terminate()
+        {
+            _formRecordSearcher.EntrySearchResultFetching -= FormRecordSearcher_EntrySearchResultFetching;
         }
     }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

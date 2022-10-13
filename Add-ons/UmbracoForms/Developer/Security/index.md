@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Forms security"
 meta.Description: "How to secure access to Umbraco Forms data and functionality."
 ---
@@ -25,7 +24,7 @@ As new forms are created, users will automatically be granted access to them, un
 
 ## Start folders
 
-Umbraco Forms 9, and Umbraco Forms 8 when form definitions are configured for storage in the database, allows for the creation of folders to group forms within.  It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
+Umbraco Forms 8 when form definitions are configured for storage in the database, allows for the creation of folders to group forms within.  It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
 
 If no start folders are selected, the user will be able to access all forms in the backoffice according to their permissions.
 

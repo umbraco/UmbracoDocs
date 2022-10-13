@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.5.4
-versionTo: 10.0.0
 ---
 
 # File upload
