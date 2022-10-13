@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Transfering content with Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
@@ -56,7 +55,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 8](../../Deploy-Settings/index-v8.md) article for when using Umbraco Deploy with Umbraco 8, and the [Deploy Settings for Umbraco 9](../../Deploy-Settings/index.md) article when using Umbraco 9 or later versions.
+In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 8](../../Deploy-Settings/index) article for when using Umbraco Deploy with Umbraco 8, and the [Deploy Settings for Umbraco 9](../../Deploy-Settings/index.md) article when using Umbraco 9 or later versions.
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 

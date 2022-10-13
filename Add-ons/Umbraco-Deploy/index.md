@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Deploy"
 meta.Description: "Documentation on how to work with Umbraco Deploy"
 ---

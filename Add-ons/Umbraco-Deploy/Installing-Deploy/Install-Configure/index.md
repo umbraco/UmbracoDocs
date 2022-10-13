@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
 meta.Description: "Steps to how to install and configure Umbraco Deploy"
 ---
@@ -11,17 +10,19 @@ In this article, we will cover the steps in order for you to install and configu
 
 ## Prerequisites
 
-Ensure you have read and followed the setup guide for [new](../New-site/index) or [Existing](../Existing-site/index) projects.
+Ensure you have read and followed the setup guide for [new](../New-site) or [new](../Existing-site) projects.
 
 ## Source Control Configuration
 
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
 ```none
+**/App_Data/*
+!**/App_Data/packages
 **/media/*
 
 # Umbraco deploy specific
-**/umbraco/Deploy/deploy*
+**/data/deploy*
 ```
 
 :::note
@@ -34,23 +35,32 @@ Make sure that the updates to the .gitignore file are also committed.
 
 When Umbraco has been installed in a repository, we can go ahead and install Umbraco Deploy in the project.
 
-To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
+To install Umbraco deploy in Visual Studio, you can either go to the NuGet Package Manager and search for ```UmbracoDeploy.OnPrem``` or run ```Install-Package UmbracoDeploy.OnPrem``` via the Package Manager.
 
 :::note
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  `Umbraco.Deploy.Forms` package as well.
+To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  ```UmbracoDeploy.Forms``` package as well.
+
+Umbraco Deploy supports Forms version 8.5 and up.
 :::
 
 :::note
-In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
+In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List Editor - there is one further NuGet package to install: ```UmbracoDeploy.Contrib```.
 :::
 
-When Umbraco Deploy has been installed, to be able to use it in the project you will need to create and add configuration for an API key.
+Once the installation has finished you might notice a new file in your `/config` folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to. It knows which environment you’re currently on (for example local or staging) and it will choose the next environment in the list to deploy to.
 
-The API key should be a random string of at least 10 characters.
+When Umbraco Deploy has been installed, to be able to use it in the project you will need to add the following `appSetting` to the `web.config` of the project:
+
+```xml
+<add key="Umbraco.Deploy.ApiKey" value="YourAPIKeyHere" />
+```
+
+The `Umbraco.Deploy.ApiKey` value needs to be replaced with your own Deploy API key.
 
 The following code snippet can be used to generate a random key, using a tool like LinqPad.
 
 ```C#
+
 public string GetRandomKey(int bytelength)
 {
    byte[] buff = new byte[bytelength];
@@ -61,6 +71,7 @@ public string GetRandomKey(int bytelength)
        sb.Append(string.Format("{0:X2}", buff[i]));
    return sb.ToString();
 }
+
 ```
 
 This same Deploy API key must be used on each environment for the same website.
@@ -69,56 +80,33 @@ This same Deploy API key must be used on each environment for the same website.
 We strongly recommend to generate different keys for different websites.
 :::
 
-The key should be applied in `appSettings.json`.
+Once the `appSetting` and API key have been added, it is now time to configure the environments in the `UmbracoDeploy.config` file.
 
-```json
-{
-  "Umbraco": {
-    "Deploy": {
-        "Settings": {
-            "ApiKey": "<your API key here>",
-        }
-    }
-  }
-}
+The config file will look like this:
+
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<environments xmlns="urn:umbracodeploy-environments">
+  <environment type="development"
+    name="Development"
+    id="00000000-0000-0000-0000-000000000000">
+      http://development/
+  </environment>
+  <environment type="staging"
+    name="Staging"
+    id="00000000-0000-0000-0000-000000000000">
+      http://staging/
+   </environment>
+  <environment type="live"
+    name="Live"
+    id="00000000-0000-0000-0000-000000000000">
+      http://live/
+  </environment>
+</environments>
+
+
 ```
-
-#### Configuring Environments
-
-Once the `appSetting` and API key have been added, it is now time to configure the environments, also in the `appSettings.json` file.
-
-An example configuration with a single upstream environment file will look like this:
-
-```json
-{
-   "Umbraco":{
-      "Deploy":{
-         "Settings":{
-            "ApiKey": "<your API key here>"
-         },
-         "Project":{
-            "CurrentWorkspaceName": "Live",
-            "Workspaces":[
-               {
-                  "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
-                  "Name": "Live",
-                  "Type": "live",
-                  "Url" :"https://localhost:44307"
-               }
-            ]
-         }
-      }
-   }
-}
-```
-
-The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
-
-:::note
-In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
-:::
-
-Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 
@@ -128,13 +116,27 @@ You will need to generate a unique GUID for each environment. This can be done i
 4. Copy the GUID into the `id` value.
 5. Generate a "New GUID" for each environment you will be adding to your setup.
 
-The URL configured for each environment should be the root URL for the website, and needs to be accessible by the other environments over **HTTPS**.
+The `type` value is for informational purposes in the backoffice but in most cases will be the same (lowercased) value of the Name.
 
-#### Validating Source Control
+The URLs for each environment needs to be accessible by the other environments over **HTTPS**.
 
-Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `/umbraco/Deploy` folder of our Umbraco project.
+When you have set up your environments in the `UmbracoDeploy.Config` the following `AppSetting` needs to be set on the different environments that you have set up with Umbraco Deploy:
 
-This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
+```xml
+<add key="Umbraco.Deploy.EnvironmentName" value="TheEnvironmentTypeHere" />
+```
+
+:::note
+You're free to update the `name` attribute to make it clearer in the interface where you're deploying to. So, if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
+:::
+
+Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `~/data` folder of our Umbraco project.
+
+This can be done by going to the `~/data/revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
+
+:::tip
+If you do not see a `/data` folder in the root of your project, you might need to start up the project first.
+:::
 
 ![Test UDA file](images/test-UDA.png)
 
@@ -144,8 +146,8 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 
 **Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our a repository.
 
-#### Include your Umbraco Deploy license file
+### Include your Umbraco Deploy license file
 
 Before moving on to setting up the build server, make sure that your license is included in your project.
 
-The file needs to be placed in the `/umbraco/Licenses` folder.
+The file needs to be placed in the `/bin` folder.

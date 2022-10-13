@@ -1,74 +1,12 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
 ---
 
-# Configuration for Umbraco Deploy
+# Configurations for Deployments
 
-All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
-
-The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Umbraco Deploy configuration follows this pattern, i.e.:
-
-```json
-{
-  ...
-  "Umbraco": {
-    "CMS": {
-        ...
-    },
-    "Deploy": {
-        ...
-    }
-  }
-}
-```
-
-There are some required settings but most configuration for Umbraco Deploy is optional. In other words, values have defaults that will be applied if no configuration is available for a particular key.
-
-For illustration purposes, the following structure represents the full set of options for configuration of Umbraco Deploy, along with the default values. This will help when you need to provide a different setting to understand where it should be applied.
-
-```json
-{
-  ...
-  "Umbraco": {
-    "Deploy": {
-        "Settings": {
-            "ApiKey": "<your API key here>",
-            "Edition": "Default",
-            "DefaultTimeoutSeconds": 60,
-            "ExcludedEntityTypes": [],
-            "RelationTypes" : [],
-            "ValueConnectors": [],
-            "Edition": "Default",
-            "SessionTimeout": "0.0:20:00",
-            "SourceDeployTimeout": "0.0:20:00",
-            "DatabaseCommandTimeout": "0.0:20:00",
-            "EnableSignatureCacheReads": true,
-            "HttpClientTimeout": "0.0:20:00",
-            "DiskOperationsTimeout": "0.0:05:00",
-            "UseDatabaseBackedTransferQueue": true,
-            "IgnoreBrokenDependencies": false,
-            "IgnoreBrokenDependenciesBehavior": "All",
-            "AcceptInvalidCertificates": false,
-            "TransferFormsAsContent": true,
-            "TransferDictionaryAsContent": false,
-            "AllowMembersDeploymentOperations": "None",
-            "TransferMemberGroupsAsContent": false,
-            "ExportMemberGroups": true,
-            "ReloadMemoryCacheFollowingDiskReadOperation": false,
-            "AllowDomainsDeploymentOperations": "None",
-            "PreferLocalDbConnectionString": false
-        }
-    }
-  }
-}
-```
-
-## ApiKey
-
-The API key is a 10 character random string applied with the same value to all environments in order to authenticate HTTP requests between them.
+The UmbracoDeploy.Settings.config file is empty by default, but there are some optional settings you can set in the file to ignore certain types of file, increase timeout limits, etc.
 
 ## Edition
 
@@ -82,12 +20,24 @@ Our recommended approach is to leave this setting as `Default` and use source co
 
 However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy edition="Default|BackOfficeOnly" />
+</settings>
+```
+
 ## ExcludedEntityTypes
 
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
-```json
-"ExcludedEntityTypes": ['media-file'],
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+  <excludedEntityTypes>
+    <add type="media-file" />
+  </excludedEntityTypes>
+</settings>
 ```
 
 ## RelationTypes
@@ -98,17 +48,14 @@ This setting allows you to manage how relations are deployed between environment
 - `Weak` - This causes the relation to be deployed if both content items are found on the target environment.
 - `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency.
 
-```json
-"RelationTypes": [
-    {
-        "Alias": "relateParentDocumentOnDelete",
-        "Mode": "Weak",
-    },
-    {
-        "Alias": "relateShopItemOnCreate",
-        "Mode": "Exclude",
-    }
-],
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <relationTypes>
+        <relationType alias="relateParentDocumentOnDelete" mode="Weak" />
+        <relationType alias="relateShopItemOnCreate" mode="Exclude" />
+    </relationTypes>
+</settings>
 ```
 
 ## ValueConnectors
@@ -117,25 +64,32 @@ This setting is used by package creators who wants their custom editors to work 
 
 Here is an example of how the setting can look:
 
-```json
-"ValueConnectors": [
-    {
-        "Alias": "nuPickers.DotNetCheckBoxPicker",
-        "TypeName": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors",
-    }
-],
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <valueConnectors>
+        <valueConnector alias="nuPickers.DotNetCheckBoxPicker"
+                        type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
+        <valueConnector alias="nuPickers.DotNetDropDownPicker"
+                        type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
+        <valueConnector alias="nuPickers.DotNetPrefetchListPicker"
+                        type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
+        <valueConnector alias="nuPickers.DotNetTypeaheadListPicker"
+                        type="Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors" />
+    </valueConnectors>
+</settings>
 ```
 
 ## Timeout settings
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-There are four settings available relating to backoffice deployment operations:
+The defaults will cover most though. Changing the defaults by updating the `/Config/UmbracoDeploy.settings.config`. There are four settings available:
 
-- `SessionTimeout`
-- `SourceDeployTimeout`
-- `HttpClientTimeout`
-- `DatabaseCommandTimeout`
+- `sessionTimeout`
+- `sourceDeployTimeout`
+- `httpClientTimeout`
+- `databaseCommandTimeout`
 
 These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
@@ -145,74 +99,130 @@ It's important that these settings are added to both the source and target envir
 
 A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maxmimum time allowed for disk operations such as schema updates.
 
-- `DiskOperationsTimeout`
+- `diskOperationsTimeout`
 
 This setting defaults to 5 minutes.
 
-All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+All of these times are in *seconds*:
 
-## UseDatabaseBackedTransferQueue
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" diskOperationsTimeout="60" />
+</settings>
+```
+
+## Transfer Queue
 
 In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
 
-From 9.5 and 10.1, a database backed queue was implemented and is used by default.
+From 4.7, a database backed queue was implemented and is used by default.
 
-If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
+If for any reason there was a need to revert to the previous implementation, the follwoing setting can be used.
 
-## TransferFormsAsContent
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy useDatabaseBackedTransferQueue="false" />
+</settings>
+```
 
-In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`.  To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
+## Transfer Forms data as content
 
-## TransferDictionaryAsContent
+In order for Deploy to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.Settings.config`:
 
-In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <forms transferFormsAsContent="true" />
+</settings>
+```
 
-## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
+## Transfer dictionary items as content
 
-As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
 
-To enable, you can add or amend the `AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent` settings.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <dictionary transferDictionaryAsContent="true" />
+</settings>
+```
 
-The `AllowMembersDeploymentOperations` setting can take four values:
+## Transfer members
+
+As of version 4.5.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+
+To enable, add the following setting to your `UmbracoDeploy.Settings.config` configuration file:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <members allowMembersDeploymentOperations="None|Restore|Transfer|All"
+             transferMemberGroupsAsContent="true|false" />
+</settings>
+```
+
+The `allowMembersDeploymentOperations` setting can take four values:
 
 - `None` - member deployment operations are not enabled (the default value if the setting is missing)
 - `Restore` - restore of members from upstream environments via the backoffice is enabled
 - `Transfer` - transfer of members to upstream environments via the backoffice is enabled
 - `All` - restore and transfer of members from upstream environments via the backoffice is enabled
 
-With `TransferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
+With `transferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
 
-## ExportMemberGroups
+Note that it's important to ensure a common machine key is setup for all environments, to ensure hashed passwords remain usable in the destination environment.
 
-This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
+## Exporting member groups
+
+This setting is to be defined and set to false only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
 Setting the `exportMemberGroups` to false will no longer export Member Groups to .uda files on disk. By default if this setting is not present, its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
-## IgnoreBrokenDependencies
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy exportMemberGroups="false" />
+</settings>
+```
+
+## Ignore broken dependencies
 
 When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
 
 For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, you'll get an error and the deploy won't complete until the issue is resolved (by removing the reference to the deleted media item).
 
-You can configure deploy to ignore these issues and proceed with the transfer operation without warning, by setting the value of this option to `true`.
+You can configure deploy to ignore these issues and proceed with the transfer operation without warning, with the following setting:
 
-## IgnoreBrokenDependenciesBehavior
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy ignoreBrokenDependencies="true" />
+</settings>
+```
 
-For finer control of the above setting you can amend this value from the default of `All` to either `Transfer` or `Restore`.
+For finer control of the above setting you can add a further attribute named `ignoreBrokenDependenciesBehavior` and set the value to either `All` (the default), `Transfer` or `Restore`.
 
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment.  It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
 
-```json
-    "IgnoreBrokenDependencies": true,
-    "IgnoreBrokenDependenciesBehavior": "Restore",
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy ignoreBrokenDependencies="true"
+            ignoreBrokenDependenciesBehavior="Restore" />
+</settings>
 ```
 
 ## Memory cache reload
 
 Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accomodate a cache clear after deployment, this workaround can be automated via the following setting:
 
-```json
-    "ReloadMemoryCacheFollowingDiskReadOperation": true,
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy reloadMemoryCacheFollowingDiskReadOperation="true" />
+</settings>
 ```
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
@@ -221,8 +231,11 @@ By upgrading to the most recent available version of the CMS major you are runni
 
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
 
-```json
-    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy allowDomainsDeploymentOperations="None|Culture|Absolute|Hostname|All" />
+</settings>
 ```
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
@@ -233,20 +246,4 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-## PreferLocalDbConnectionString
 
-When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
-
-For Umbraco 10, by default, a SQLite database is created.
-
-If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
-
-```json
-    "Umbraco": {
-        "Deploy": {
-            "Settings": {
-                "PreferLocalDbConnectionString": true
-            }
-        }
-    }
-```
