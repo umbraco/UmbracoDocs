@@ -152,6 +152,7 @@ public void ConfigureServices(IServiceCollection services)
 The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
 
 If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
+:::
 
 ```csharp
 @using Microsoft.Extensions.Options
@@ -162,10 +163,9 @@ If you do need to debug bundles you can inject `hostingSettings` and add the `de
 }
 ```
 ```csharp
-    <script src="registered-js-bundle" debug="@debugMode"></script>
-    <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
+<script src="registered-js-bundle" debug="@debugMode"></script>
+<link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
 ```
-:::
 
 Or by using `IRuntimeMinifier`:
 
