@@ -72,7 +72,9 @@ First, we're prompted to give the Document Type a name. This first Document Type
 
 ![Naming a Document Type](images/v8Screenshots/homePage.png)
 
-*Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias click the "lock" icon.*
+:::note
+The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: *homePage*.
+:::
 
 Having a root node lets you quickly query content as you know everything will be under the root node.
 
