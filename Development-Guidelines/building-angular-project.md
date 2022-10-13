@@ -1,10 +1,10 @@
 ---
 versionFrom: 7.0.0
-meta.Title: "Working with the backoffice UI AngularJs project"
-meta.Description: "Guidelines for working with backoffice UI AngularJs project"
+meta.Title: "Working with the backoffice UI AngularJS project"
+meta.Description: "Guidelines for working with backoffice UI AngularJS project"
 ---
 
-# Working with the backoffice UI AngularJs project
+# Working with the backoffice UI AngularJS project
 
 ## Overview
 Umbraco has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than the developers who know how to use Visual Studio.

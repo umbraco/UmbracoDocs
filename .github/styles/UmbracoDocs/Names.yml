@@ -11,3 +11,5 @@ swap:
   .net: "'.NET'"
   dot net: "'.NET'"
   cms: "'CMS'"
+  AngularJs: "'AngularJS'"
+  angularjs: "'AngularJS'"  
