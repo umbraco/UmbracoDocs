@@ -1,10 +1,10 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 8.7.0
 ---
 
 # Image Cropper
 
-`Returns: MediaWithCrops`
+`Returns: JSON`
 
 Returns a path to an image, along with information about focal point and available crops
 
@@ -24,11 +24,11 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
 
-![Image Cropper Data Type Definition](images/imageCropper-v9.png)
+![Image Cropper Data Type Definition](images/imageCropper-v8.png)
 
 ## Content Example
 
-The Image Cropper provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
+Provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
 By default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
 
 The cropper comes in 3 modes:
@@ -57,181 +57,171 @@ is shown for a specific crop.
 
 ![Image Cropper Crop](images/imageCropper-crop-v8.png)
 
-## Powered by ImageSharp.Web
+## Powered by ImageProcessor
 
-[ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET Core.
+[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
 
-We bundle this package with Umbraco 9.0+ and you can therefore take full advantage of all its features for resizing and format changing. Built in processing commands are documented [here](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
+We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
 ## Sample code
 
 Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
 dynamic object.
 
+The Url Helper method can be used to replace the IPublishedContent extension methods. It has a set of extensions for working with URLs.
+
 For rendering a cropped media item, the `.GetCropUrl` is used:
 
-```html
-<img src="@Url.GetCropUrl(Model.Photo,"square", true)" />
-
+```csharp
+@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true);
 ```
 
-The third parameter is `HtmlEncode` and by default set to true, which means you only need to define the parameter if you want to disable HTML encoding.
+`HtmlEncode` is by default set to true, which means you only need to define the parameter if you want to disable HTML encoding.
 
-### Example to output a "banner" crop from a cropper property with the property alias "customCropper"
-
-```html
-<img src="@Url.GetCropUrl(Model.SecondaryPhoto, "customCropper", "banner")" />
-```
-
-Or, alternatively using the `MediaWithCrops` extension method:
+### MVC View Example to output a "banner" crop from a cropper property with the alias "image"
 
 ```html
-<img src="@Model.SecondaryPhoto.GetCropUrl("customCropper", "banner")" />
+<img src="@(Url.GetCropUrl(Model.Image, "banner"))" />
 ```
 
-### Example to dynamically create a crop using the focal point - in this case 300 x 400px image
+Or, alternatively:
+
+```html
+<img src="@(Model.Image.GetCropUrl("banner", Current.ImageUrlGenerator))" />
+```
+
+### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
 
 ```csharp
-@if (Model.Photo is not null)
+@if (Model.HasValue("image"))
 {
-    <img src="@Url.GetCropUrl(Model.Photo, height: 300, width: 400)" alt="@Model.Photo.Name" />
+    <img src="@Model.Image.GetCropUrl(height: 300, width: 400, imageUrlGenerator: Current.ImageUrlGenerator)" />
 }
 ```
 
-### CSS background example to output a "banner" crop
+### CSS background example to output a "banner" crop from a cropper property with alias "image"
 
 Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ```csharp
-@if (Model.Photo is not null)
-{
-    var cropUrl = Url.GetCropUrl(Model.Photo, "square", false);
-    <style>
-        .myCssClass {
-            background-image: url("@cropUrl");
-            height: 400px;
-            width: 400px;
-        }
-    </style>
-    <div class="product-image-container myCssClass"></div>
+@{
+
+    if (Model.Image != null)
+    {
+        var cropUrl = Url.GetCropUrl(Model.Image, "banner", false);
+        <style>
+            .myCssClass {
+                background-image: url("@cropUrl");
+            }
+        </style>
+    }
 }
 ```
+
+### MVC View Example on how to blur a crop
+
+```csharp
+<img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias:
+"banner", useCropDimensions:true, furtherOptions:
+"&blur=11&sigma=1.5&threshold=10")" />
+```
+
+Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
+
+## Upload property replacement
+
+You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper
+applied. The old image will even be available in the cropper, so you can modify it if you ever need to.
+
+However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value,
+you will most likely see some errors in your templates / macros.
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
-
-The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Web.Common.Controllers;
-using Umbraco.Extensions;
+@using Umbraco.Core.PropertyEditors.ValueConverters
+@using Newtonsoft.Json
+@{
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
-namespace Umbraco.Docs.Samples.Web.Property_Editors_Add_Values;
+    // Create a variable for the GUID of the page you want to update
+    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-public class CreateImageCropperValuesController : UmbracoApiController
-{
-    private readonly IContentService _contentService;
-    private readonly IMediaService _mediaService;
-    private readonly MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
+    // Get the page using the GUID you've defined
+    var content = contentService.GetById(guid); // ID of your page
 
+    // Create a variable for the GUID of the media item you want to use
+    var mediaKey = Guid.Parse("8835014f-5f21-47b7-9f1a-31613fef447c");
 
-    public CreateImageCropperValuesController(
-        IContentService contentService,
-        IMediaService mediaService,
-        MediaUrlGeneratorCollection mediaUrlGeneratorCollection)
-    {
-        _contentService = contentService;
-        _mediaService = mediaService;
-        _mediaUrlGeneratorCollection = mediaUrlGeneratorCollection;
-    }
+    // Get the desired media file
+    var media = Umbraco.Media(mediaKey);
 
-    // /Umbraco/Api/CreateImageCropperValues/CreateImageCropperValues
-    [HttpPost]
-    public ActionResult<bool> CreateImageCropperValues()
-    {
-        // Create a variable for the GUID of the page you want to update
-        var contentKey = Guid.Parse("89974f8b-e213-4c32-9f7a-40522d87aa2f");
+    // Create a variable for the image cropper and set the source
+    var cropper = new ImageCropperValue {Src = media.Url()};
 
-        // Get the page using the GUID you've defined
-        IContent? content = _contentService.GetById(contentKey);
-        if (content == null)
-        {
-            return false;
-        }
+    // Serialize the image cropper value
+    var cropperValue = JsonConvert.SerializeObject(cropper);
 
-        // Create a variable for the GUID of the media item you want to use
-        var mediaKey = Guid.Parse("b6d4e98a-07c0-45f9-bfcc-52994f2806b6");
+    // Set the value of the property with alias 'cropper'
+    content.SetValue("cropper", cropperValue);
 
-        // Get the desired media file
-        IMedia? media = _mediaService.GetById(mediaKey);
-        if (media == null)
-        {
-            return false;
-        }
-
-        // Create a variable for the image cropper and set the source
-        var imageCropperValue = new ImageCropperValue
-        {
-            Src = media.GetUrl("umbracoFile", _mediaUrlGeneratorCollection)
-        };
-
-        // Serialize the image cropper value
-        var propertyValue = JsonConvert.SerializeObject(imageCropperValue);
-
-        // Set the value of the property with alias "cropper"
-        // - remember to add the "culture" parameter if "cropper" is set to vary by culture
-        content.SetValue("cropper", propertyValue);
-
-        return _contentService.Save(content).Success;
-    }
+    contentService.Save(content);
 }
 ```
 
-:::tip
-If you use Models Builder to generate source code (modes `SourceCodeAuto` or `SourceCodeManual`), you can use `nameof([generated property name])` to access the desired property without using a magic string:
+Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
 
- ```csharp
-// Set the value of the "Cropper" property on content of type MyContentType
-// - remember to add the "culture" parameter if "cropper" is set to vary by culture
-content.SetValue(nameof(MyContentType.Cropper).ToFirstLowerInvariant(), propertyValue);
+```csharp
+@{
+    // Get the page using it's id
+    var content = contentService.GetById(1234);
+}
 ```
 
-:::
+If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
+
+```csharp
+@{
+    // Set the value of the property with alias 'cropper'
+    content.SetValue(Home.GetModelPropertyType(x => x.Cropper).Alias, cropperValue);
+}
+```
+
+## Going further with the image cropper
+
+Umbraco's Image Cropping functionality is based on the opensource library [ImageProcessor.Web](https://imageprocessor.org/imageprocessor-web/) that has lots of additional options for transforming your images via query string parameters.
+Using the "GetCropUrl" method, specifying the crop alias:
+
+```html
+<img src="@(Model.Image.GetCropUrl("banner"))" />
+```
+
+it's possible to retrieve an URL with a series of query string parameters that represents your crop settings, here an example of the returned URL for a specific crop name:
+
+```
+https:{your-domain}/{image-name}.jpg?crop=0.10592105263157896,0.0061107012631250292,0.528981977613254,0&cropmode=percentage&width=690&height=719&rnd=132652178928630000
+```
 
 ## Get all the crop urls for a specific image
 
-Crop urls are not limited to usage within a view. `IPublishedContent` has a `GetCropUrl` extension method, which can be used to access crop URLs anywhere. 
-
-The following sample demonstrates how to use `GetCropUrl` to retrieve URLs for all crops defined on a specific image:
+You can use the "GetCropUrl" method not only in the view. But for example in a business class method, where you can pass an "IPublishedContent", to iterate all the available crops dynamically, and get all the crop urls for a specific image, below you can find an example. Later, you can manipulate every obtained URL with other query string parameters provided by "ImageProcessor" library.
 
 ```csharp
-public Dictionary<string, string> GetCropUrls(IPublishedContent image)
+internal Dictionary<string, string> GetCropUrls(IPublishedContent image)
 {
-    // Get the Image Cropper property value for property with alias "umbracoFile"
-    ImageCropperValue? imageCropperValue = image.Value<ImageCropperValue>("umbracoFile");
-    if (imageCropperValue?.Crops == null)
-    {
-        return new Dictionary<string, string>();
-    }
+    //Instantiate the dictionary that I will return with "Crop alias" and "Cropped URL"
+    Dictionary<string, string> cropUrls = new Dictionary<string, string>();
 
-    // Return all crop aliases and their corresponding crop URLs as a dictionary
-    var cropUrls = new Dictionary<string, string>();
-    foreach (ImageCropperValue.ImageCropperCrop crop in imageCropperValue.Crops)
+    if (image.HasValue("umbracoFile"))
     {
-        // Get the cropped URL and add it to the dictionary that I will return
-        var cropUrl = crop.Alias != null
-            ? image.GetCropUrl(crop.Alias)
-            : null;
-        if (cropUrl != null)
+        var imageCropper = image.Value<ImageCropperValue>("umbracoFile");
+        foreach (var crop in imageCropper.Crops)
         {
-            cropUrls.Add(crop.Alias!, cropUrl);
+            //Get the cropped URL and add it to the dictionary that I will return
+            cropUrls.Add(crop.Alias, image.GetCropUrl(crop.Alias));
         }
     }
 
@@ -239,10 +229,26 @@ public Dictionary<string, string> GetCropUrls(IPublishedContent image)
 }
 ```
 
-## Sample on how to change the format of the image
+## MVC view Example on how to set the background color
 
-Below the example to output a PNG using ImageSharp.Web [format](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html#format) command.
+Below the example to set the background color to white using the ImageProcessor [bgcolor](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/backgroundcolor/) property.
 
-```html
-<img src="@Url.GetCropUrl(Model.Photo, 500, 300, furtherOptions: "&format=png")" />
+```csharp
+<img src="@Url.GetCropUrl(Model.Image, propertyAlias: "image", cropAlias: "banner",
+useCropDimensions:true, furtherOptions: "&bgcolor=white")" />
 ```
+
+## List of the available parameters provided by the "ImageProcessor" library
+
+See the list of the available query string parameters provided by the "ImageProcessor" library. You can find all the examples in the official [reference guide](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/#methods)
+
+**Attention**: For security reasons **only the following essential processors are enabled by default**:
+
+-   AutoRotate
+-   BackgroundColor
+-   Crop
+-   Format
+-   Quality
+-   Resize
+
+You can find here [how to enable other methods](https://imageprocessor.org/imageprocessor-web/) (see the [Configuration section](https://imageprocessor.org/imageprocessor-web/configuration/)).

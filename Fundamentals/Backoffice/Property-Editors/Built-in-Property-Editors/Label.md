@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Label
@@ -54,10 +53,8 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @{
-    @inject IContentService Services;
-    
 	// Get access to ContentService
-	var contentService = Services;
+	var contentService = Services.ContentService;
 
 	// Create a variable for the GUID of the page you want to update
 	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -86,10 +83,8 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 
 ```csharp
 @{
-    @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor
-
     // Set the value of the property with alias 'pageLabel'
-     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyLabel).Alias, "A Preset string");
+    content.SetValue(Home.GetModelPropertyType(x => x.PageLabel).Alias, "A pre-set string value");
 }
 ```
 

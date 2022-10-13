@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
 ---
 
 # Multinode Treepicker
@@ -61,6 +60,18 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 }
 ```
 
+### Without Modelsbuilder (Maximum number of items set to 1)
+
+```csharp
+@{
+    var typedMultiNodeTreePicker = Model.Value<IPublishedContent>("featuredArticle");
+    if (typedMultiNodeTreePicker != null)
+    {
+        <p>@typedMultiNodeTreePicker.Name</p>
+    }
+}
+```
+
 ### With Modelsbuilder
 
 ```csharp
@@ -78,13 +89,9 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@inject IContentService Services;
-@using Umbraco.Cms.Core;
-@using Umbraco.Cms.Core.Services 
-
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -123,11 +130,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-@using Umbraco.Cms.Core.PublishedCache;
-
 @{
     // Set the value of the property with alias 'featuredArticles'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor ,x => x.FeaturedArticles).Alias, string.Join(",", udis));
+    content.SetValue(Home.GetModelPropertyType(x => x.FeaturedArticles).Alias, string.Join(",", udis));
 }
 ```

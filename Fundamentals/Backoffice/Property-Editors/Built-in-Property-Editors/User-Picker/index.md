@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # User Picker
@@ -26,13 +25,10 @@ Please note that getting the Value of the property will return the user ID - pro
 ### Without Modelsbuilder
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IUserService UserService;
 @{
-    
     if (Model.Value("userPicker") != null)
     {
-        var us = UserService;
+        var us = Services.UserService;
         var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
 
         <p>This is the chosen person: @username</p>
@@ -44,13 +40,11 @@ Please note that getting the Value of the property will return the user ID - pro
 ### With Modelsbuilder
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IUserService UserService;
 @{
     if (Model.UserPicker != null)
     {
 
-        var us = UserService;
+        var us = Services.UserService;
         var user = us.GetUserById((int)Model.UserPicker);
 
         <p>This is the chosen person: @user.Name</p>
@@ -64,10 +58,9 @@ Please note that getting the Value of the property will return the user ID - pro
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
@@ -95,9 +88,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'userPicker'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.UserPicker).Alias, "Umbraco Demo");
+    content.SetValue(Home.GetModelPropertyType(x => x.UserPicker).Alias, "Umbraco Demo");
 }
 ```

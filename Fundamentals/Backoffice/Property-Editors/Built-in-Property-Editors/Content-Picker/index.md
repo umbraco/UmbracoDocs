@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
 ---
 
 # Content Picker
@@ -13,11 +12,11 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker2-DataType-v10.png)
+![Content Picker Data Type Definition](images/Content-Picker-DataType-8_1.png)
 
 ## Content Example
 
-![Content Picker Content](images/Content-Picker-Content-v10.png)
+![Content Picker Content](images/Content-Picker-Content-v8.png)
 
 ## MVC View Example
 
@@ -50,12 +49,9 @@ The content picker opens a panel to pick a specific page from the content struct
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-
-@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -89,12 +85,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@using Umbraco.Cms.Core;
-
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'featurePicker'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturePicker).Alias, udi.ToString());
+    content.SetValue(Home.GetModelPropertyType(x => x.FeaturePicker).Alias, udi.ToString());
 }
 ```

@@ -1,50 +1,45 @@
 ---
-keywords: logging serilog messagetemplates logs v9 version9
-versionFrom: 9.0.0
-versionTo: 10.0.0
+keywords: logging serilog messagetemplates logs v8 version8
+versionFrom: 8.6.2
 ---
 
 # Logging
 
-In Umbraco we use the underlying logging framework of [Serilog](https://serilog.net/).
+In Umbraco v8.0+ we have changed the underlying logging framework from [Log4Net](https://logging.apache.org/log4net/) to [Serilog](https://serilog.net/).
 
-Out of the box we write a JSON log file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
+Out of the box for v8.0+ we will write a JSON log file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
 
-The default location of this file is written to `umbraco/Logs` and contains the Machine name, along with the date too:
+The default location of this file is written to `App_Data/Logs` and contains the Machine name, along with the date too:
 
-* `umbraco/Logs/UmbracoTraceLog.DELLBOOK.20210809.json`
+* `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.json`
 
 ## Structured logging
 
 Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
-```cs
-2021-08-10 09:33:23,677 [P25776/D1/T22] INFO   Umbraco.Cms.Core.Services.Implement.ContentService - Document Home (id=1062) has been published.
+```xml
+2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
 ```
 
 Here is an example of the same log message represented as JSON, you can see here we have much more information that would allow us to search & filter logs based on these properties with an appropriate logging system.
 
 ```json
 {
-  "@t":"2021-08-10T08:33:23.6778640Z",
-  "@mt":"Document {ContentName} (id={ContentId}) has been published.",
-  "ContentName":"Home",
-  "ContentId":1062,
-  "SourceContext":"Umbraco.Cms.Core.Services.Implement.ContentService",
-  "ActionId":"7726d745-d502-4b2d-b55e-97731308041b",
-  "ActionName":"Umbraco.Cms.Web.BackOffice.Controllers.ContentController.PostSave (Umbraco.Web.BackOffice)",
-  "RequestId":"8000000c-0012-fb00-b63f-84710c7967bb",
-  "RequestPath":"/umbraco/backoffice/umbracoapi/content/PostSave",
-  "ProcessId":25776,
-  "ProcessName":"iisexpress",
-  "ThreadId":22,
-  "AppDomainId":1,
-  "AppDomainAppId":"2f4961977e5c252fa708f7d83915c269b53a620c",
-  "MachineName":"DELLBOOK",
-  "Log4NetLevel":"INFO ",
-  "HttpRequestId":"318b6dd4-b127-4da3-8339-37701f4d1416",
-  "HttpRequestNumber":4,
-  "HttpSessionId":"0cea7395-ba29-e6c6-93ee-7c08a2fd7219"
+  "@t": "2018-11-12T08:34:50.4190399Z",
+  "@mt": "{EndMessage} ({Duration}ms) [Timing {TimingId}]",
+  "EndMessage": "Booted.",
+  "Duration": 4586,
+  "TimingId": "9e76e5f",
+  "SourceContext": "Umbraco.Core.Runtime.CoreRuntime",
+  "ProcessId": 27004,
+  "ProcessName": "iisexpress",
+  "ThreadId": 1,
+  "AppDomainId": 2,
+  "AppDomainAppId": "LMW3SVC2ROOT",
+  "MachineName": "DELLBOOK",
+  "Log4NetLevel": "INFO ",
+  "HttpRequestNumber": 1,
+  "HttpRequestId": "557f45ba-0888-4216-8723-e226d795a2f7"
 }
 ```
 
@@ -57,50 +52,73 @@ Umbraco writes log messages, but you are also able to use the Umbraco logger to 
 Here is an example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
 
 ```csharp
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Web.WebApi;
+using Umbraco.Core.Logging;
 
-namespace Umbraco.Cms.Web.UI.NetCore
+namespace MyNamespace
 {
     public class MyApiController : UmbracoApiController
     {
-        private readonly ILogger<MyApiController> _logger;
-
-        public MyApiController(ILogger<MyApiController> logger)
+        public string GetSayHello(string name)
         {
-            _logger = logger;
-        }
-
-        /// /umbraco/api/MyApi/SayHello?name=John
-        [HttpGet]
-        public string SayHello(string name)
-        {
-            _logger.LogInformation("We are saying hello to {Name}", name);
+            Logger.Info<MyApiController>("We are saying hello to {Name}", name);
             return $"Hello {name}";
         }
     }
 }
 ```
 
-:::note
-If you are Logging and using the MiniProfiler, you can inject `IProfilingLogger` that has a reference to both ILogger and IProfiler.
-:::
-
 The incorrect way to log the message would be use string interpolation or string concatenation such as
 
 ```csharp
 //GOOD - Do use :)
-_logger.LogInformation("We are saying hello to {Name}", name);
+Logger.Info<MyApiController>("We are saying hello to {Name}", name);
 
 //BAD - Do not use :(
-_logger.LogInformation($"We are saying hello to {name}");
+Logger.Info<MyApiController>($"We are saying hello to {name}");
 
 //BAD - Do not use :(
-_logger.LogInformation("We are saying hello to " + name);
+Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
 The bad examples above will write to the log file, but we will not get a separate property logged with the message. This means we can't find them by searching for log messages that use the message template `We are saying hello to {Name}`
+
+If you are writing classes that inherit from one of these special Umbraco base classes:
+
+* RenderMvcController
+* SurfaceController
+* UmbracoApiController
+* UmbracoAuthorizedApiController
+
+Then you can access the logging functionality via a special 'Logger' property included in those base classes and use the friendlier syntax of `Logger.Info<T>` to pass the type, if you add a reference to `Umbraco.Core.Logging` as a Using statement.
+
+Outside of these places, eg a ContentFinder or your own custom code, you can get a reference to the logger via Dependency Injection. While using Dependency Injection is the recommended way, it is possible to use Current.Logger instead, if DI is not an option.
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Web.Routing;
+
+namespace MyNamespace
+{
+    public class MyContentFinder : IContentFinder
+    {
+        private readonly ILogger _logger;
+
+        public MyContentFinder(ILogger logger)
+        {
+            _logger = logger;
+        }
+        public bool TryFindContent(PublishedRequest frequest)
+        {
+            _logger.Info<MyContentFinder>("Trying to find content for url {RequestUrl}", frequest.Uri);
+
+            //Do Content Finder Logic...
+        }
+    }
+}
+```
+
+You will need to register your ContentFinder [using a Composer](../../../../Implementation/Composing/index.md)
 
 ## Log Levels
 
@@ -113,10 +131,75 @@ Serilog uses levels as the primary means for assigning importance to log events.
 1. **Error** - indicating a failure within the application or connected system
 1. **Fatal** - critical errors causing complete failure of the application
 
+The default log levels we ship with in Umbraco v8.0+ are:
+
+* .txt file **Debug**
+* .json file **Verbose**
+
 ## Configuration
 
-Serilog can be configured and extended by using the .NETCore configuration such as the AppSetting.json files or environment variables.
-Info on the Serilog config [here](../../../../Reference/V9-Config/Serilog/index.md).
+Serilog can be configured and extended by using the two XML configuration files on disk.
+
+* `/config/serilog.config` is used to modify the main Umbraco logging pipeline
+* `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
+
+Info on the Serilog config [here](../../../../Reference/Config/Serilog/index.md).
+
+## Advanced
+
+### Full C# control over Serilog configuration
+
+If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example. This sets the minimum logging level from a web.config AppSetting, allowing you to set different minimum logging levels in different environments using web config transforms.
+
+```csharp
+using System;
+using System.Configuration;
+using Umbraco.Web;
+using Umbraco.Core;
+using Umbraco.Web.Runtime;
+using Umbraco.Core.Logging.Serilog;
+
+using Serilog;
+using Serilog.Core;
+using Serilog.Events;
+
+namespace MyNamespace
+{
+    public class FineTuneLoggingApplication : UmbracoApplication
+    {
+        protected override IRuntime GetRuntime()
+        {
+            var logLevelSetting = ConfigurationManager.AppSettings["YourMinimumLoggingLevel"]; //Warning, Debug, Information, etc
+
+            const bool ignoreCase = true; //this is to clarify the function of the boolean second parameter in the TryParse
+            if (!Enum.TryParse(logLevelSetting, ignoreCase, out LogEventLevel minimumLevel))
+            {
+                minimumLevel = LogEventLevel.Information;//set to this level if the config setting is missing or doesn't match a valid enumeration
+            }
+
+            var levelSwitch = new LoggingLevelSwitch { MinimumLevel = minimumLevel };
+
+            var loggerConfig = new LoggerConfiguration()
+                .MinimalConfiguration()
+                .ReadFromConfigFile()
+                .ReadFromUserConfigFile()
+                .MinimumLevel.ControlledBy(levelSwitch);
+
+            var logger = new SerilogLogger(loggerConfig);
+
+            var runtime = new WebRuntime(this, logger, GetMainDom(logger));
+
+            return runtime;
+        }
+    }
+}
+```
+
+You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
+
+```xml
+<%@ Application Inherits="MyNamespace.FineTuneLoggingApplication" Language="C#" %>
+```
 
 ## The logviewer dashboard
 
@@ -126,21 +209,18 @@ Learn more about the [logviewer dashboard](../../../Backoffice/LogViewer/) in th
 
 This is a tool for viewing & querying JSON log files from disk in the same way as the built in log viewer dashboard.
 
-<a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png' alt='English badge' style='height: 45px;'/></a>
+<a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
 
 ## Serilog project/references shipped
 
-Umbraco ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
+Umbraco v8.0+ ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
 
 * [Serilog](https://github.com/serilog/serilog)
-* [Serilog.AspNetCore](https://github.com/serilog/serilog-aspnetcore)
 * [Serilog.Enrichers.Process](https://github.com/serilog/serilog-enrichers-process)
 * [Serilog.Enrichers.Thread](https://github.com/serilog/serilog-enrichers-thread)
-* [Serilog.Expressions](https://github.com/serilog/serilog-expressions)
+* [Serilog.Filters.Expressions](https://github.com/serilog/serilog-filters-expressions)
 * [Serilog.Formatting.Compact](https://github.com/serilog/serilog-formatting-compact)
-* [Serilog.Formatting.Compact.Reader](https://github.com/serilog/serilog-formatting-compact-reader)
-* [Serilog.Settings.Configuration](https://github.com/serilog/serilog-settings-configuration)
-* [Serilog.Sinks.Console](https://github.com/serilog/serilog-sinks-console)
+* [Serilog.Settings.AppSettings](https://github.com/serilog/Serilog-Settings-AppSettings)
 * [Serilog.Sinks.File](https://github.com/serilog/serilog-sinks-file)
 
 ## Further Resources

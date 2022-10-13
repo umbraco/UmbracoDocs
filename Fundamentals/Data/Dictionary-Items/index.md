@@ -1,7 +1,8 @@
 ---
 meta.Title: "Creating Dictionary Items in Umbraco"
 meta.Description: "Creating Dictionary Items in Umbraco"
-versionFrom: 10.1.0
+versionFrom: 8.0.0
+versionTo: 10.0.0
 ---
 
 # Dictionary Items
@@ -39,22 +40,6 @@ To group dictionary items:
     ![Display dictionary item](images/display-dictionary-item.png)
 9. Click **Save**.
 
-## Editing Dicionary Items
-
-To edit a dictionary item, follow these steps:
-
-1. Go to the **Translation** section.
-2. Use the **Dictionary** tree to locate the item you need to update/edit.
-   * Alternatively, you can use the *search field* in the top-right corner.
-3. Make the edits you need to make.
-4. Click **Save** to save the changes.
-
-:::note
-It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be *read-only*.
-
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../Users/index.md#creating-a-user-group) article.
-:::
-
 ## Fetching Dictionary Values
 
 To fetch dictionary values in the template, replace the text with the following snippet:
@@ -72,39 +57,6 @@ Alternatively, you can specify an `altText` which will be returned if the dictio
 ```
 
 ![Rendering dictionary item](images/rendering-altvalue-dictionary-item.png)
-
-## Importing and exporting Dictionary Items
-
-In some cases, you might want to use the same Dictionary Items on multiple Umbraco websites. For this, you can use the export and import functionality to quickly copy the items from one website to another.
-
-### Exporting Dictionary Items
-
-1. Go to the **Translation** section in the Umbraco backoffice.
-2. Locate the Dictionary Item (or group) you want to copy in the section tree.
-3. Right-click the item.
-4. Select **Export...**.
-5. Decide whether you want to also include descendants.
-6. Click **Export**.
-
-This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
-
-![Right-click the Dictionary Item to open the options menu with the Export feature](images/export.png)
-
-### Importing Dictionary Items
-
-1. Go to the **Translation section in the Umbraco backoffice.
-2. Right-click on the top of the **Dictionary** tree.
-3. Select **Import...**.
-4. Click on **Import**.
-5. Find and select the `.udt` file containing the Dictionary Items.
-6. Click **Open** in the file browser.
-7. Review the Dictionary Items for import.
-8. Choose where to import the items.
-9. Click on **Import**.
-
-The Dictionary Items have now been added to your website.
-
-![Review the Dictionary Items for import before confirming](images/import.png)
 
 ## Using Dictionary Item in a Multilingual website
 

@@ -1,48 +1,42 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+meta.title: "Using Umbraco's service APIs"
+meta.description: "Using the Umbraco service APIs you can create, update and delete any of the core Umbraco entities directly from your custom code"
+versionFrom: 8.0.0
 ---
 
 # Using Umbraco's service APIs
 
-_Whenever you need to modify an entity that Umbraco stores in the database, there are a number of service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
+_Whenever you need to modify an entity that Umbraco stores in the database, there is a service API available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
 
 ## Accessing the Umbraco services
-Services are typically defined using interfaces. Umbraco has them in the `Umbraco.Cms.Core.Services` namespace, while the specific implementations can be found under the `Umbraco.Cms.Core.Services.Implement` namespace. To use the service APIs you must first access them. Owing to the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This can be achieved via injecting the specific service you require - the service type or an interface.
+The services live in the `Umbraco.Core.Services` namespace. To use the service APIs you must first access them. This can be achieved via what is known as the `ServiceContext` or by injecting the specific service you require using Umbraco's underlying dependency injection framework.
+
 
 ### Access via a Controller
-If you are accessing Umbraco services inside your own controller class, you can add the Umbraco services that you need as constructor parameters. An instance of every service will be provided at runtime from the service container and by saving each one to a local field, you can make use of them within the scope of your class:
+If you are accessing Umbraco services inside your own controller class and your controller inherits from one of the base Umbraco controller classes (eg RenderMvcController, SurfaceController etc) then you can access the `ServiceContext` and all services. This is done through a special `Services` property that is exposed on these base Umbraco controller classes:
 
 ```csharp
-public class CustomController
+public class EventController : Umbraco.Web.Mvc.SurfaceController
 {
-    private readonly IContentService _contentService;
-
-
-    public ContentController(IContentService contentService)
+    public Action PerformAction()
     {
-        _contentService = contentService;
-    }
-
-
-    public ActionResult PerformAction()
-    {
-        var someContent = _contentService.GetById(1234);
+        IContentService contentService = Services.ContentService;
+        var someContent = contentService.GetById(1234);
     }
 }
 ```
 
 ### Access via a Razor View Template
-Inside a Razor View template, you can make use of a service injection into a view using the `@inject` directive. It works similarly to adding a property to the view, and populating the property using DI:
+Inside a Razor View template, that inherits UmbracoViewPage (or similar eg PartialViewMacroPage), you can access the `ServiceContext` and therefore all services, through a special `Services` property that is exposed in the Umbraco base View models:
 
 ```csharp
-@using Umbraco.Cms.Core.Services
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@inject IPublicAccessService PublicAccessService
+@using Umbraco.Core.Services;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "master.cshtml";
-    bool isPageProtected = PublicAccessService.IsProtected(Model.Path);
+    IPublicAccessService publicAccessService = Services.PublicAccessService;
+    bool isPageProtected = publicAccessService.IsProtected(Model.Path);
 }
 @if (isPageProtected)
 {
@@ -52,50 +46,43 @@ Inside a Razor View template, you can make use of a service injection into a vie
 
 ### Access in a Custom Class via dependency injection
 
-If for instance we wish to subscribe to notifications on one of the services, we'd do so in a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's underlying dependency injection framework will do the rest.
+If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component C# class, where there is no `ServiceContext` available. Instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
 
 In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
 ```csharp
-public class CustomComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.AddNotificationHandler<ContentSavedNotification, CustomNotificationHandler>();
-    }
-}
-```
-
-```csharp
+using System;
 using System.Linq;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Services;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 
-namespace Umbraco.Cms.Core.Events
+namespace Umbraco8.Components
 {
-    public class CustomNotificationHandler : INotificationHandler<ContentSavedNotification>
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SubscribeToContentSavedEventComposer : ComponentComposer<SubscribeToContentSavedEventComponent>
+    {
+    }
+
+    public class SubscribeToContentSavedEventComponent : IComponent
     {
         // access to the MediaService by injection
         private readonly IMediaService _mediaService;
-        private readonly IRuntimeState _runtimeState;
-
-        public CustomNotificationHandler(IMediaService mediaService, IRuntimeState runtimeState)
+        public SubscribeToContentSavedEventComponent(IMediaService mediaService)
         {
             _mediaService = mediaService;
-            _runtimeState = runtimeState;
         }
 
-        public void Handle(ContentSavedNotification notification)
+        public void Initialize()
         {
-            if (_runtimeState.Level != RuntimeLevel.Run)
-            {
-                return;
-            }
+            ContentService.Saved += ContentService_Saved;
+        }
 
-            foreach (var contentItem in notification.SavedEntities)
+        private void ContentService_Saved(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentSavedEventArgs e)
+        {
+            foreach (var contentItem in e.SavedEntities)
             {
                 // if this is a new landing page create a folder for associated media in the media section
                 if (contentItem.ContentType.Alias == "landingPage")
@@ -111,109 +98,53 @@ namespace Umbraco.Cms.Core.Events
                 }
             }
         }
+
+        public void Terminate()
+        {
+            //unsubscribe during shutdown
+            ContentService.Saved -= ContentService_Saved;
+        }
     }
 }
 ```
-
 #### Custom Class example
-When you are creating your own custom class, in order to make use of the dependency injection framework, you need to register the `ICustomNewsArticleService` service with the concrete type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
-
-There are several different ways that you can achieve the same outcome:
-
-Register directly into the **Startup.cs** class.
-```csharp
-using Microsoft.Extensions.DependencyInjection;
-
-namespace DefaultNamespace
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {   
-            services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-        }
-    }
-}
-```
-
-Another approach is to create an extension method to `IUmbracoBuilder` and add it to the startup pipeline.
+It is the same approach if you are creating your own custom class, as long as your class is registered with the dependency injection framework (via a composer).
 
 ```csharp
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco8.Controllers;
+using Umbraco8.Services;
 
-namespace DefaultNamespace
+namespace Umbraco8.Composers
 {
-    public static class UmbracoBuilderServiceExtensions
+    public class RegisterCustomNewsArticleServiceComposer : IUserComposer
     {
-        public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-            
-            return builder;
+
+            composition.Register<ICustomNewsArticleService, CustomNewsArticleService>(Lifetime.Request);
         }
     }
 }
 ```
-
-```csharp
-using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace DefaultNamespace
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()             
-                .AddWebsite()
-                .AddComposers()
-                .AddCustomServices()
-                .Build();
-        }
-    }
-}
-```
-
-Especially recommended when creating Umbraco packages as you won't have access to the Startup class,  instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`. 
-
-```C#
-public class CustomComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-    }
-}
-```
-
-</br>
 
 Then your custom class eg. `CustomNewsArticleService` can take advantage of the same injection to access services eg:
 
 ```csharp
-using System.Linq;
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Cms.Core.PublishedCache;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Web;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Web;
 
-namespace Umbraco.Cms.Infrastructure.Services.Implement
+namespace Umbraco8.Services
 {
-    public class CustomNewsArticleService: ICustomNewsArticleService
+    public class CustomNewsArticleService : ICustomNewsArticleService
     {
         private readonly IMediaService _mediaService;
-        private readonly ILogger<CustomNewsArticleService> _logger;
+        private readonly ILogger _logger;
         private readonly IUmbracoContextFactory _contextFactory;
 
-        public CustomNewsArticleService(ILogger<CustomNewsArticleService> logger, IUmbracoContextFactory contextFactory, IMediaService mediaService)
+        public CustomNewsArticleService(ILogger logger, IUmbracoContextFactory contextFactory,IMediaService mediaService)
         {
             _logger = logger;
             _contextFactory = contextFactory;
@@ -226,9 +157,9 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
             {
                 IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
                 IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
-                if (newsSection == null)
+                if (newsSection== null)
                 {
-                    _logger.LogDebug("News Section Not Found");
+                    _logger.Debug<CustomNewsArticleService>("News Section Not Found");
                 }
             }
             // etc
@@ -240,22 +171,27 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
 ## Services available
 There is full API coverage of all Umbraco core entities:
 
-- [AuditService](../../../Reference/Management/Services/AuditService/index.md)
 - [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
 - [ContentService](../../../Reference/Management/Services/ContentService/index.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
+- [ApplicationTreeService](../../../Reference/Management/Services/TreeService/index.md)
 - [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
-- [EntityService](../../../Reference/Management/Services/EntityService/index.md)
+- EntityService
 - [FileService](../../../Reference/Management/Services/FileService/index.md)
 - [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
-- [MacroService](../../../Reference/Management/Services/MacroService/index.md)
+- MacroService
 - [MediaService](../../../Reference/Management/Services/MediaService/index.md)
 - [MemberService](../../../Reference/Management/Services/MemberService/index.md)
 - [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
 - [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
+- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
 
 
 ### More information
 - [Umbraco Services API reference](../../../Reference/Management/Services/)
-- [Umbraco Notifications reference](../../../Reference/Notifications/)
+- [Umbraco Events reference](../../../Reference/Events/)
 - [Routes and controllers](../../../Reference/Routing/)
+
+### Umbraco TV
+- [Chapter: Content API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/content-api/)
+- [Chapter: Media API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/media-api/)
+- [Chapter: Member API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/member-api/)

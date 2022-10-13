@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 8.14.0
 ---
 
 # Media Picker
@@ -8,11 +8,11 @@ versionFrom: 10.0.0
 
 `Returns: IEnumerable<MediaWithCrops>` or `MediaWithCrops`
 
-This property editors returns a single `MediaWithCrops` item if the "Pick multiple items" Data Type setting is disabled or a collection if it is enabled.
+This property editors returns a single `MediaWithCrops` item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/MediaPicker-DataType-v10.png)
+![Media Picker Data Type Definition](images/Media-Picker3-DataType.jpg)
 
 ### Accepted types
 
@@ -61,12 +61,11 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple enabled without Modelsbuilder
 
 ```csharp
-@using Umbraco.Cms.Core.Models
 @{
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaUrl()" style="width:200px" />
+        <img src="@entry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
@@ -78,7 +77,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Medias;
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaUrl()" style="width:200px" />
+        <img src="@entry.MediaItem.Url()" style="width:200px" />
     }
 }
 ```
@@ -86,12 +85,11 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled without Modelsbuilder
 
 ```csharp
-@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.MediaUrl()" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+        <img src="@typedMediaPickerSingle.MediaItem.Url()" style="width:200px" alt="@typedMediaPickerSingle.MediaItem.Value("alt")" />
     }
 }
 ```
@@ -99,94 +97,101 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 ### Multiple disabled with Modelsbuilder
 
 ```csharp
-@using Umbraco.Cms.Core.Models
 @{
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <img src="@mediaEntry.MediaUrl()" style="width:200px"/>
+        <img src="@mediaEntry.MediaItem.Url()" style="width:200px"/>
     }
 }
 ```
 
-## Using crops
+## Using local crops
 
-Both local and global crops are retrieved using the method `GetCropUrl`. If crops with identical aliases are defined both locally and globally, the locally defined crops are always prioritized by `GetCropUrl`.
+Local image crops are stored and retrieved differently than global crops. Below are two examples of how to retrieve local crops.
 
-The following is an example of how to retrieve a crop from a `MediaWithCrops` entry:
+### Using GetLocalCropUrl
 
 ```csharp
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@entry.GetCropUrl("cropAlias")"/>
+        <img src="@entry.GetLocalCropUrl("cropAlias")"/>
     }
 }
 ```
 
-### Explicitly retrieving global crops
-
-You can retrieve globally defined crops explicitly by using `GetCropUrl` on the `UrlHelper`:
+### Using UrlHelper
 
 ```csharp
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@Url.GetCropUrl(entry, "cropAlias")"/>
+        <img src="@Url.GetCropUrl(entry.LocalCrops, "cropAlias")"/>
     }
 }
+```
+
+## Use global crops
+
+Global image croppings are crops stored on the Media Item, by the Property Editor `Image Cropper`, making it shared between all usages of the media Item.
+
+The global crops are configured on the DataType of the `umbracoFile` property on the Media Type `Image`
+
+[Read about the Image Cropper here](../Image-Cropper/index.md)
+
+### Using GetCropUrl
+
+```csharp
+@{
+    foreach (var entry in Model.Medias)
+    {
+        <img src="@entry.MediaItem.GetCropUrl("cropAlias")"/>
+    }
+}
+```
+
+### Using UrlHelper
+
+```csharp
+@{
+    foreach (var entry in Model.Medias)
+    {
+        <img src="@Url.GetCropUrl(entry.MediaItem, "cropAlias")"/>
+    }
+}
+
 ```
 
 ### Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
-
-The following sample will update a single image in a Media Picker.
-
-```csharp
-@using Umbraco.Cms.Core;
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
-@{
-    // Get access to ContentService
-    var contentService = Services;
-
-    // Create a variable for the GUID of the page you want to update
-    var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
-
-    // Get the page using the GUID you've defined
-    var content = contentService.GetById(guid); // ID of your page
-
-    // Get the media you want to assign to the media picker 
-    var media = Umbraco.Media("bca8d5fa-de0a-4f2b-9520-02118d8329a8");
-
-    // Create an Udi of the media
-    var udi = Udi.Create(Constants.UdiEntityType.Media, media.Key);
-
-    // Set the value of the property with alias 'featuredBanner'. 
-    content.SetValue("featuredBanner", udi.ToString());
-
-    // Save the change
-    contentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
+This solution can be applied to both Media Picker 3 and Multi Media Picker 3
 
 ```csharp
 @{
-    // Get the page using it's id
-    var content = contentService.GetById(1234); 
-}
-```
+                        //Get media by Id
+                        var media = mediaService.GetById(1150);
+                        
+                        //Initialize new list of dictionaries
+                        var dictionary = new List<Dictionary<string, string>>
+                        {
+                            new Dictionary<string, string>()
+                        {
+                            //Create new GUID for "key"
+                            { "key", Guid.NewGuid().ToString() },
+                            
+                            //Reference our media in "mediaKey"
+                            { "mediaKey", media.Key.ToString() },
+                            { "crops", null },
+                            { "focalPoint", null }
+                        }
+                        };
 
-If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
-
-```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-@{
-    // Set the value of the property with alias 'featuredBanner'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FeaturedBanner).Alias, udi.ToString());
+                        //Serialize entire list of dictionaries
+                        var json = JsonConvert.SerializeObject(dictionary);
+                        
+                        //Assign JSON as the value of Media Picker 3 property
+                        content.SetValue("firstPic", json);
 }
+
 ```

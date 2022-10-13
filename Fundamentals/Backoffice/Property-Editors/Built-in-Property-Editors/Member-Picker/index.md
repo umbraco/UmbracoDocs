@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Member Picker
@@ -50,12 +49,9 @@ The member picker opens a panel to pick a specific member from the member sectio
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-
-@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -65,9 +61,12 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a variable for the GUID of the member ID
     var authorId = Guid.Parse("ed944097281e4492bcdf783355219450");
-
-    // Set the value of the property with alias 'author'. 
-    content.SetValue("author", authorId);
+    
+    // Create a variable for the UDI of the member
+    var authorUdi = Udi.Create(Umbraco.Core.Constants.UdiEntityType.Member, authorId);
+    
+    // Set the value of the property with alias 'author' to the memberUdi. 
+    content.SetValue("author", authorUdi);
 
     // Save the change
     contentService.Save(content);
@@ -86,14 +85,10 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@using Umbraco.Cms.Core;
-
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
-    var udi = Udi.Create(Constants.UdiEntityType.Member, authorId);
+    var udi = Udi.Create(Umbraco.Core.Constants.UdiEntityType.Member, authorId);
     
     // Set the value of the property with alias 'author'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Author).Alias, udi);
+    content.SetValue(Home.GetModelPropertyType(x => x.Author).Alias, udi);
 }
 ```

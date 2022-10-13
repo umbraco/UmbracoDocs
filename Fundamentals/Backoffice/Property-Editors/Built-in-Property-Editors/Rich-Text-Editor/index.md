@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Rich Text Editor
@@ -21,7 +20,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](images/rte-datatype.png)
 
 ## Content Example
 
@@ -55,11 +54,9 @@ Use CSS to define specific editor styles and add them to the RTE.
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -90,10 +87,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'richText'
-        content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.RichText).Alias, "Add some text <strong>here</strong>");
+    content.SetValue(Home.GetModelPropertyType(x => x.RichText).Alias, "Add some text <strong>here</strong>");
 }
 ```

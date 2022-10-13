@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # File upload
@@ -11,17 +10,9 @@ versionTo: 10.0.0
 
 Adds an upload field, which allows documents or images to be uploaded to Umbraco.
 
-You can define which file types should be accepted through the upload field.
-
-:::tip
-For uploading and adding files and images to your Umbraco project, we recommend using the Media Picker.
-
-Find the full documentation for the property in the [Media Picker](../Media-Picker-3) article.
-:::
-
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/definition-example-v10.png)
+![Data Type Definition Example](images/definition-example.png)
 
 ## Content Example
 
@@ -37,13 +28,12 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### Without Modelsbuilder
 
 ```csharp
-@using System.IO;
 @{
     if (Model.HasValue("myFile"))
     {
         var myFile = Model.Value<string>("myFile");
 
-        <a href="@myFile">@System.IO.Path.GetFileName(myFile)</a>
+        <a href="@myFile">@Path.GetFileName(myFile)</a>
     }
 
 }
@@ -52,40 +42,24 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 ### With Modelsbuilder
 
 ```csharp
+@using ContentModels = Umbraco.Web.PublishedModels;
 @if (!Model.HasValue(Model.MyFile))
 {
-   <a href="@Model.MyFile">@System.IO.Path.GetFileName(Model.MyFile)</a>
+   <a href="@Model.MyFile">@Path.GetFileName(Model.MyFile)</a>
 }
 ```
 
 ## Add values programmatically
 
-:::note
-The samples in this section have not been verified against the latest version of Umbraco.
-
-Instead, we recommend using the [Media Picker](../Media-Picker-3/) for uploading files to your Umbraco website.
-:::
-
 See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md) and the [Media Service](../../../../../Reference/Management/Services/MediaService/index.md).
 
 ```csharp
-
-@using Umbraco.Cms.Core.IO
-@using Umbraco.Cms.Core.Serialization
-@using Umbraco.Cms.Core.Strings
-@inject MediaFileManager _mediaFileManager;
-@inject IShortStringHelper _shortStringHelper;
-@inject IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider;
-@inject IContentService Services;
-@inject IJsonSerializer _serializer;
-@inject MediaUrlGeneratorCollection _mediaUrlGeneratorCollection;
-
 @{
-   // Get access to ContentService
-    var contentService = Services;
+    // Get access to ContentService
+    var contentService = Services.ContentService;
 
     // Get access to MediaService 
-    var mediaService = MediaService;
+    var mediaService = Services.MediaService;
 
     // Create a variable for the GUID of the parent where you want to add a child item
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -107,7 +81,8 @@ See the example below to see how a value can be added or changed programmaticall
 
     // Create a media file
     var media = mediaService.CreateMediaWithIdentity("myImage", -1, "File");
-    media.SetValue(_mediaFileManager, _mediaUrlGeneratorCollection, _shortStringHelper, _contentTypeBaseServiceProvider, Constants.Conventions.Media.File, filename, responseStream);
+    media.SetValue(Services.ContentTypeBaseServices, "umbracoFile", filename, responseStream);
+
     // Save the created media 
     mediaService.Save(media);
 
@@ -134,9 +109,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'myFile'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyFile).Alias, publishedMedia.Url();
+    content.SetValue(Home.GetModelPropertyType(x => x.MyFile).Alias, publishedMedia.Url();
 }
 ```

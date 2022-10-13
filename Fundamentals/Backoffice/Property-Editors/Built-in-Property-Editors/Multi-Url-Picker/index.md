@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
 ---
 
 # Multi Url Picker
@@ -13,7 +12,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-v10.png)
+![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8_1.png)
 
 ## Content Example
 
@@ -24,7 +23,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 ## Typed
 
 ```csharp
-@using Umbraco.Cms.Core.Models
+@using Umbraco.Web.Models
 @{
     var links = Model.Value<IEnumerable<Link>>("footerLinks");
     if (links.Any())
@@ -42,7 +41,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 If `Max number of items` is configured to `1`
 
 ```csharp
-@using Umbraco.Cms.Core.Models
+@using Umbraco.Web.Models
 @{
     var link = Model.Value<Link>("link");
     if (link != null)
@@ -57,14 +56,11 @@ If `Max number of items` is configured to `1`
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Cms.Core;
-@using Umbraco.Cms.Core.Services;
-@using Newtonsoft.Json;
-@using Umbraco.Cms.Core.Models;
-@inject IContentService Services;
+@using Newtonsoft.Json
+@using Umbraco.Web.Models
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of the page you want to update
     var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
@@ -139,10 +135,8 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
-@using Umbraco.Cms.Core.PublishedCache;
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'footerLinks'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.FooterLinks).Alias, links);
+    content.SetValue(Home.GetModelPropertyType(x => x.FooterLinks).Alias, links);
 }
 ```

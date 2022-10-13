@@ -1,8 +1,7 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Working with stylesheets and JavaScript in Umbraco"
 meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
+versionFrom: 7.0.0
 ---
 
 # Working with stylesheets and JavaScript
@@ -16,7 +15,7 @@ You can create and edit stylesheets in the Stylesheets folder in the Settings se
 In the Create menu, there are several options available:
 
 * Stylesheet file (for use in templates/views)
-* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/index.md))
+* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/))
 * Folder (for keeping stylesheets organized)
 
 :::note
@@ -35,22 +34,22 @@ The rules you create in the Rich Text Editor section will carry over to the Code
 
 To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (css files are usually referenced in the layout or home templates) and link to it with the `link` tag.
 
-![Linking CSS in template](images/4-link-css-v9.png)
+![Linking CSS in template](images/4-link-css.png)
 
-By default, the stylesheets will be saved in the `wwwroot/css` folder in the solution.
+By default, the stylesheets will be saved in the `css` folder in the solution.
 To reference them you can use either of the methods used in the above screenshot.
 
 ```html
-<link rel="stylesheet" href='@Url.Content("~/css/mystylesheet.css")' />
+<link rel="stylesheet" href='@Url.Content("~/css/mystylesheet.css")'>
 ```
 or
 ```html
-<link rel="stylesheet" href="/css/mystylesheet.css" />
+<link rel="stylesheet" href="/css/mystylesheet.css">
 ```
 
 With the stylesheet referenced, you will be able to style the template file with the rules and classes defined in the stylesheet.
 
-Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/RTE-Styles/index.md) documentation for more information.
+Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/RTE-Styles/) documentation for more information.
 
 :::note
 If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.
@@ -69,120 +68,49 @@ Add a new JavaScript file and write your code:
 ![Sample JS script](images/9-myscript.png)
 
 Then, navigate to the template where you would like to include your JS file.
-
 ```html
 <script src="/scripts/myScript.js"></script>
 ```
 
-![Reference the script in template](images/10-reference-script-v9.png)
+![Reference the script in template](images/10-reference-script.png)
 
-By default all JavaScript files will be stored in the `wwwroot/scripts` folder in the solution.
+By default all JavaScript files will be stored in the `scripts` folder in the solution.
 
 :::tip
-If you are working locally, you can create CSS and JS files outside of the Backoffice - as long as they are placed in appropriate folders (`css` and `scripts`), they will show up in the Backoffice when you right-click on the folder and then pick reload.
+If you are working locally, you can create CSS and JS files outside of the Backoffice - long as they are placed in appropiate folders (`css` and `scripts`), they will show up in the Backoffice.
 :::
 
 ## Bundling & Minification for JavaScript and CSS
 
-You can use whichever tool you are comfortable with for bundling & minification by implementing the `IRuntimeMinifier` interface in your custom minifier class, though it is worth noting that Umbraco 9+ ships with Smidge which offers lightweight runtime bundling and minification.
+You can use whichever tool you are comfortable with for bundling & minification, though it is worth noting that Umbraco ships with the ClientDependency Framework which offers runtime bundling & minification.
 
-You can create various bundles of your site's CSS or JavaScript files in your code that can be rendered later in your views. There can be a single bundle for the entire site, or a common bundle for the files you want to be loaded on every page, as well as page-specific bundles, just by listing your resources in the order you like.
-
-**Step 1:** Create a `INotificationHandler<UmbracoApplicationStartingNotification>`
+You can bundle and minify as follows in a view template file.
 
 ```csharp
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.WebAssets;
-
-namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
-{
-    public class CreateBundlesNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
-    {
-        private readonly IRuntimeMinifier _runtimeMinifier;
-        private readonly IRuntimeState _runtimeState;
-
-        public CreateBundlesNotificationHandler(IRuntimeMinifier runtimeMinifier, IRuntimeState runtimeState) {
-            _runtimeMinifier = runtimeMinifier;
-            _runtimeState = runtimeState;
-        }
-        public void Handle(UmbracoApplicationStartingNotification notification)
-        {
-            if (_runtimeState.Level == RuntimeLevel.Run)
-            {
-                _runtimeMinifier.CreateJsBundle("registered-js-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
-
-                _runtimeMinifier.CreateCssBundle("registered-css-bundle",
-                    BundlingOptions.NotOptimizedAndComposite,
-                    new[] { "~/css/test-style.css" });
-            }
-        }
-    }
-}
-```
-**Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
-        .Build();
-}
-```
-
-**Step 3:** Render the bundles by the bundle name in a view template file using the Smidge TagHelper:
-
-```csharp
-<html>
-<head>
-    <script src="registered-js-bundle"></script>
-    <link rel="stylesheet" href="registered-css-bundle"/>
-</head>
-</html>
-```
-
-:::note
-The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
-
-If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
-
-```csharp
-@using Microsoft.Extensions.Options
-@using Umbraco.Cms.Core.Configuration.Models
-@inject IOptions<HostingSettings> hostingSettings
+@using ClientDependency.Core.Mvc
+@using ClientDependency.Core
 @{
-    var debugMode = hostingSettings.Value.Debug;
+    Html.RequiresJs("~/scripts/Script1.js", 1);
+    Html.RequiresJs("~/scripts/Script2.js", 2);
+
+    Html.RequiresCss("~/css/style.css");
 }
-```
-```csharp
-    <script src="registered-js-bundle" debug="@debugMode"></script>
-    <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
-```
-:::
-
-Or by using `IRuntimeMinifier`:
-
-:::note
-In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
-:::
-
-```csharp
-@using Umbraco.Cms.Core.WebAssets
-@inject IRuntimeMinifier runtimeMinifier
-
 <html>
 <head>
-    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("registered-js-bundle"))
-    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("registered-css-bundle"))
+    @Html.RenderCssHere()
+    @Html.RenderJsHere()
 </head>
-</html>
 ```
 
-Full details about Smidge can be found here: [https://github.com/Shazwazza/Smidge](https://github.com/Shazwazza/Smidge)
+:::note
+If you are running your site locally and the compilation setting for debugging in your `web.config` is set to true, the Client Dependency Framework will not minify or combine your js/CSS. This is by design to help when debugging issues in a local environment. However, it also means if there is a problem minifying a file you will only encounter the issue when you deploy. To test minification and bundling locally, set the debug setting to false for compilation.
+:::
+
+:::note
+When adding stylesheet references to `Html.RequiresCss` there is no need to add `?v=1` to specify a specific version of the asset for cache-busting. Doing so will break the minification and combination of your files. The Client Dependency Framework uses the version number from `/config/clientdependency.config` on the querystring of the combined and minified resource. 
+
+To force your updated, minified and combined assets to be refreshed, increment this version number by 1 in the config file to bust any browser caching on the old version of your assets. See the [Healthcheck for Client Dependency Framework](https://our.umbraco.com/packages/developer-tools/health-check-for-client-dependency-framework/) package to do this from the backoffice, or you can automatically increment the version in your build and deploy process. 
+:::
+
+
+Full details of the ClientDependency Framework can be found here: [https://github.com/Shandem/ClientDependency](https://github.com/Shandem/ClientDependency)

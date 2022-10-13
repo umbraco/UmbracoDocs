@@ -1,8 +1,5 @@
 ---
-meta.Title: "Display an email address"
-meta.Description: "In this article you can learn how to use the build in email property editor"
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Email Address
@@ -15,13 +12,27 @@ Displays an email address.
 
 ## Settings
 
-The Email Address Property Editor does not come with any further configuration. The property can be configured once it has been added to a Document Type.
+### Enable required checkbox (8.7.0 and below)
 
-![Mandatory Checkbox Example](images/emailaddress-datatype-v10.png)
+If the property is set to mandatory, Umbraco will display a warning label under the property editor when you publish the page this editor is located on and clean the input. This functionality has been deprecated in `8.8.0` and above. Instead, you select the mandatory checkbox when adding the property editor to a Document Type.
+
+## Data Type Definition Example
+
+### 8.8.0 and higher
+
+![Email Data Type Definition 8.8.0](images/EmailAddress-DataType-v88.png)
+
+### Mandatory checkbox example
+
+![Mandatory Checkbox Example](images/mandatory-checkbox.png)
+
+### 8.0.0 - 8.7.0
+
+![Email Data Type Definition 8.0.0 - 8.7.0](images/EmailAddress-DataType-v8.png)
 
 ## Content Example
 
-![Single email address content example](images/EmailAddress-Content-v10.png)
+![Single email address content example](images/EmailAddress-DataType-Content.png)
 
 ## MVC View Example
 
@@ -51,12 +62,9 @@ The Email Address Property Editor does not come with any further configuration. 
 See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@using Umbraco.Cms.Core.Services;
-
-@inject IContentService Services;
 @{
     // Get access to ContentService
-    var contentService = Services;
+    var contentService = Services.ContentService;
 
     // Create a variable for the GUID of your page
     var guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
@@ -64,7 +72,7 @@ See the example below to learn how a value can be added or changed programmatica
     // Get the page using the GUID you've just defined
     var content = contentService.GetById(guid);
     // Set the value of the property with alias 'email'
-    content.SetValue("email", "jpk@umbraco.dk");
+    content.SetValue("email", "stk@umbraco.com");
 
     // Save the change
     contentService.Save(content);

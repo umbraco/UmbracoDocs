@@ -1,61 +1,82 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.2
 ---
 
 # Advanced techniques with Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_
 
-The election process that runs during the startup of an Umbraco instance determines the server role that instance will undertake.
+## Explicit Master Scheduling server
 
-There are two server roles to be aware of for flexible load balancing:
+It is recommended to configure an explicit master scheduling server since this reduces the amount
+complexity that the [master election](flexible.md#scheduling-and-master-election) process performs.
 
-* `SchedulingPublisher` - The Umbraco instance usually used for backoffice access, responsible for running scheduled tasks.
-* `Subscriber` - A scalable instance that subscribes to content updates from the SchedulingPublisher server, not recommended to be used for backoffice access.
-
-:::note
-These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
-:::
-
-## Explicit SchedulingPublisher server
-
-It is recommended to configure an explicit SchedulingPublisher server since this reduces the amount
-of complexity that the election process performs.
-
-The first thing to do is create a couple of small classes that implement `IServerRoleAccessor` one for each of the different server roles:
+The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 ```csharp
-public class SchedulingPublisherServerRoleAccessor : IServerRoleAccessor
+public class MasterServerRegistrar : IServerRegistrar
 {
-    public ServerRole CurrentServerRole => ServerRole.SchedulingPublisher;
+    public IEnumerable<IServerAddress> Registrations
+    {
+        get { return Enumerable.Empty<IServerAddress>(); }
+    }
+    public ServerRole GetCurrentServerRole()
+    {
+        return ServerRole.Master;
+    }
+    public string GetCurrentServerUmbracoApplicationUrl()
+    {
+        // NOTE: If you want to explicitly define the URL that your application is running on,
+        // this will be used for the server to communicate with itself, you can return the
+        // custom path here and it needs to be in this format:
+        // http://www.mysite.com/umbraco
+
+        return null;
+    }
 }
 
-public class SubscriberServerRoleAccessor : IServerRoleAccessor
+public class FrontEndReadOnlyServerRegistrar : IServerRegistrar
 {
-    public ServerRole CurrentServerRole => ServerRole.Subscriber;
+    public IEnumerable<IServerAddress> Registrations
+    {
+        get { return Enumerable.Empty<IServerAddress>(); }
+    }
+    public ServerRole GetCurrentServerRole()
+    {
+        return ServerRole.Replica;
+    }
+    public string GetCurrentServerUmbracoApplicationUrl()
+    {
+        return null;
+    }
 }
 ```
 
-then you'll need to replace the default `IServerRoleAccessor` for the your custom registrars.
-You'll can do this by using the `SetServerRegistrar()` extension method on `IUmbracoBuilder` from a [Composer](../../../../Implementation/Composing/index.md) or directly in your `startup.cs`.
+then you'll need to replace the default `DatabaseServerRegistrar` for the your custom registrars.
+You'll need to create an [Composer](../../../../Implementation/Composing/index.md) to set the server registrar
 
 ```csharp
-// This should be executed on your single `SchedulingPublisher` server
-builder.SetServerRegistrar<SchedulingPublisherServerRoleAccessor>();
+// This should be executed on your master server
+public void Compose(Composition composition)
+{
+    composition.SetServerRegistrar(new MasterServerRegistrar());
+}
 
-// This should be executed on your `Subscriber` servers
-builder.SetServerRegistrar<SubscriberServerRoleAccessor>();
+// This should be executed on your replica servers
+public void Compose(Composition composition)
+{
+    composition.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
+}
 ```
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling.
 
-By setting your SchedulingPublisher server to use your custom `SchedulingPublisherServerRoleAccessor` class, it will always be deemed the 'SchedulingPublisher' and will always be the one that executes all task scheduling.
+By setting your master server to use your custom `MasterServerRegistrar` class, it will always be deemed the 'Master' and will always be the one that executes all task scheduling.
 
-## Subscriber servers - Read-only database access
+## Front-end servers - Read-only database access
 
 :::note
-This description pertains only to Umbraco database tables
+This description pertains ONLY to Umbraco database tables
 :::
 
 In some cases infrastructure admins will not want their front-end servers to have write access to the database.
@@ -66,53 +87,47 @@ By default front-end servers will require write full access to the following tab
 
 This is because by default each server will inform the database that they are active and more importantly it is
 used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers
-to use a server role election process without the need for any configuration. So in the case that a subscriber
-server becomes the SchedulingPublisher task scheduler, **it will require write access to all of the Umbraco tables**.
+to use a master server election process without the need for any configuration. So in the case that a front-end
+server becomes the master task scheduler, **it will require write access to all of the Umbraco tables**.
 
 In order to have read-only database access configured for your front-end servers, you need to implement
-the [Explicit SchedulingPublisher server](#explicit-schedulingpublisher-server) configuration mentioned above.
+the [Explicit master scheduling server](#explicit-master-scheduling-server) configuration mentioned above.
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling.
-Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
 
 :::note
-If using [SqlMainDomLock](azure-web-apps.md#appdomain-synchronization) on Azure WebApps then write-permissions are required for the following tables for all server roles including 'Subscriber'.
+If using [SqlMainDomLock](azure-web-apps.md#appdomain-synchronization) on Azure WebApps then write-permissions are required for the following tables for all server roles including 'Replica'.
 
 * `umbracoLock`
 * `umbracoKeyValue`
 
-SQL Server Replica databases cannot be used as they are read-only without replacing the default MainDomLock with a custom provider.
+SQL Server Replica databases cannot be used as they are read-only without replacing the default MainDomLock with a custom provider. 
 :::
 
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 
-The configurations can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
+During start up the `DatabaseServerMessengerOptions` can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
 
-Below is shown how to do this from a JSON configuration source.
+You'll need to create an [Composer](../../../../Implementation/Composing/index.md) to set the messenger options
 
-```json
+```csharp
+public void Compose(Composition composition)
 {
-    "Umbraco": {
-        "CMS": {
-            "Global": {
-                "DatabaseServerMessenger": {
-                    "MaxProcessingInstructionCount": 1000,
-                    "TimeBetweenPruneOperations": "00:01:00",
-                    "TimeBetweenSyncOperations": "00:00:05",
-                    "TimeToRetainInstructions": "2.00:00:00"
-                }
-            }
-        }
-    }
+    composition.SetDatabaseServerMessengerOptions(factory =>
+    {
+        var options = DatabaseServerRegistrarAndMessengerComposer.GetDefaultOptions(factory);
+        options.DaysToRetainInstructions = 10;
+        options.MaxProcessingInstructionCount = 1000;
+        options.ThrottleSeconds = 25;
+        options.PruneThrottleSeconds = 60;
+        return options;
+    });
 }
-
 ```
 
 Options:
 
-* `TimeToRetainInstructions` - The timespan to keep instructions in the database; records older than this number will be pruned.
-* `MaxProcessingInstructionCount` - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
-* `TimeBetweenSyncOperations` - The timespan to wait between each sync operations
-* `TimeBetweenPruneOperations` - The timespan to wait between each prune operation
-
-These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../Reference/Configuration/#managing-configuration).
+* DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
+* MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
+* ThrottleSeconds - The number of seconds to wait between each sync operations
+* PruneThrottleSeconds - The number of seconds to wait between each prune operation

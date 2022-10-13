@@ -1,73 +1,61 @@
 ---
 meta.Title: "Debugging"
 meta.Description: "Debugging in Umbraco"
-versionFrom: 9.0.0
+versionFrom: 8.0.0
 ---
 
 # Debugging
 
 During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bugs/bottlenecks in your code or to help uncover what on earth is going wrong.
 
-To perform proper debugging on your site you need to set your application to have debug enabled.
-This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` e.g. in `appsettings.json`  file:
+To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `debug="true"` (found in `System.Web`) in your `web.config` file:
 
 :::warning
 Debug should always be set to false in production.
 :::
 
-```json
-{
-  "Umbraco": {
-    "CMS": {
-      "Hosting": {
-        "Debug": true
-      }
-    }
-  }
-}
+```xml
+<compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
 ```
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. In Umbraco 8 and before, it was possible to do explicit named tracing. This is not an option in ASP.NET Core and Umbraco 9.
-Instead, you need to configure what log messages you wanna log.
+Tracing enables you to view diagnostic information about a single request for a page on your site at runtime. The trace will show the flow of page level events and display any errors in code along with diagnostic information, such as server variables, cookies, form and querystring collections and application state.
 
-### Enabling Trace Logging
+### Enabling Trace
 
 :::warning
-Do not enable trace logging in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
+Do not enable trace in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
 :::
 
+Trace is disabled by default. To enable it look for `<trace` in `System.Web` and set `enabled="true"` in your `web.config` file:
 
-We recommend at least logging the following namespace at minimum (Verbose) level to enable valuable trace logging:
-
-```json
-{
-  "Serilog": {
-    "MinimumLevel": {
-      "Override": {
-        "Microsoft.AspNetCore.Mvc": "Verbose"
-      }
-    }
-  }
-}
-
+```xml
+<trace enabled="true" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true"/>
 ```
-The logged messages can as always be monitored in the log viewer in backoffice
 
+### Viewing Trace
+
+With trace enabled visit the url `/trace.axd`.
+
+Here you'll be able to see the requests to your application:
+
+![Application Trace](images/v8-trace.png)
+
+You can clear the trace by clicking on `clear current trace`.
+
+Click on 'View Details' for a particular request in the list to see the specific trace information for the page.
+
+![Trace Request Details](images/v8-trace-details.png)
 
 ## MiniProfiler
 
 Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details).
-The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries.
- It's great for tracking down performance issues in your site's implementation.
+The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` e.g. in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
-
-Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
-
+To display the profiler ensure that the debug attribute of the compilation element is set to true in your web.config and then add `?umbDebug=true` to the querystring of any request.
 
 ![?umbDebug=true](images/v8-miniprofiler-view.png)
 
@@ -88,30 +76,24 @@ If you feel like a part of your application is slow you can use the MiniProfiler
 All you have to do is inject the IProfiler interface and add a step around your logic:
 
 ```csharp
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.Logging;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
+using System.Web.Mvc;
+using Umbraco.Core.Logging;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
 
-namespace MyCustomUmbracoProject
+namespace OurUmbraco.Core.Controllers
 {
-    public class RootController : RenderController
+    public class ProductsController : RenderMvcController
     {
         private readonly IProfiler _profiler;
 
-        public RootController(
-            IProfiler profiler,
-            ILogger<RenderController> logger,
-            ICompositeViewEngine compositeViewEngine,
-            IUmbracoContextAccessor umbracoContextAccessor)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
+        // Inject IProfiler
+        public ProductsController(IProfiler profiler)
         {
             _profiler = profiler;
         }
 
-        public override IActionResult Index()
+        public ActionResult Products(IPublishedContent model)
         {
             // Perform a step
             using (_profiler.Step("Sleep"))
@@ -119,7 +101,7 @@ namespace MyCustomUmbracoProject
                 System.Threading.Thread.Sleep(1000);
             }
 
-            return base.Index();
+            return CurrentTemplate(model);
         }
     }
 }

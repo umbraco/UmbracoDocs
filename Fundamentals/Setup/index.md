@@ -1,34 +1,30 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "How to install and configure your Umbraco installation"
 meta.Description: "Information on the requirements to setup, install & upgrade Umbraco"
+versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Setup
 
 How to install and configure your Umbraco installation.
 
-## [Requirements](Requirements/index.md)
+## [Requirements](Requirements/)
 
 Defines the system requirements to run Umbraco.
 
-## [Install](Install/index.md)
+## [Install](Install/)
 
 Umbraco installation steps and guidelines.
 
-## [Upgrading](Upgrading/index.md)
+## [Upgrading](Upgrading/)
 
 Covers the steps to upgrade your copy of Umbraco to a newer version.
 
-## [Server Setup](Server-Setup/index.md)
+## [Server Setup](Server-Setup/)
 
 Information about server setup for Umbraco including information about permissions and load balancing.
 
-## [Config](../../Reference/Configuration/index.md)
+## [Config](../../Reference/Config/)
 
 How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.
-
-## [Installing the latest nightly builds](Install/installing-nightly-builds.md)
-
-How to install the latest nightly builds.

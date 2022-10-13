@@ -1,15 +1,18 @@
 ---
 meta.Title: "Umbraco Fundamentals"
 meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
-# Umbraco Fundamentals
-
+# Umbraco Fundamentals 
 *All the fundamentals of using Umbraco. From making a local installation to extending the backend.*
 
 Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
+
+## [Umbraco v8 Features](New-in-V8.md)
+
+Learn more about the features in Umbraco v8.
 
 ## Umbraco Documentation
 
@@ -60,7 +63,7 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
                 <small>How to upgrade your copy of Umbraco to a newer version?</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="../Reference/V9-Config/">Configuration</a></h5>
+                <h5><a href="Setup/Config/">Configuration</a></h5>
                 <small>Information about all of the different configuration files that control Umbraco.</small>
             </div>
         </div>
@@ -211,7 +214,7 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
                 <small>Create and update entities in Umbraco from code.</small>
             </div>
             <div class="col-sm-6">
-                <h5><a href="Code/Subscribing-To-Notifications/">Subscribing to events</a></h5>
+                <h5><a href="Code/Subscribing-To-Events/">Subscribing to events</a></h5>
                 <small>Using events to modify content or run custom code.</small>
             </div>
             <div class="col-sm-6">
