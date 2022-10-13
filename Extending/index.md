@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 product: "CMS"
 meta.Title: "Learn about extending the functionality of Umbraco"
 meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
@@ -26,29 +25,25 @@ This section will describe how to work with and create Property Editors.
 
 ## [Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
-A Parameter Editor is the editor used to insert values into a [Macro (only Umbraco 8)](../Reference/Templating/Macros/index.md).
+A Parameter Editor is the editor used to insert values into a [Macro](../Reference/Templating/Macros/index.md).
 
 This section will describe how to work with and create Parameter Editors.
-
-## [Health Check](Health-Check/index.md)
-
-Developers can create their own Umbraco Health Checks and Health Check notification methods.
 
 ## [Language Files](Language-Files/index.md)
 
 The Umbraco backoffice can be configured so that the user interface runs in the user's native language. This is made possible with community generated language files, if your language is not currently supported, why not help to add support?
 
-## [Backoffice Search](Backoffice-Search/index.md)
-
-Extending the Umbraco Backoffice search, customising the fields searched - replacing the searching mechanism.
-
-## [Backoffice Tours](Backoffice-Tours/index.md)
+## [Backoffice tours](Backoffice-Tours/index.md)
 
 Backoffice tours is the integrated and interactive help for the backoffice.
 
-## [Backoffice UI API Documentation](Backoffice-UI-API-Documentation/index.md)
+## [Backoffice UI API Documentation](Backoffice-UI-API-Documentation/)
 
 A library of API Reference documentation.
+
+## [Backoffice Search](Backoffice-Search/)
+
+Extending the Umbraco Backoffice search, customising the fields searched - replacing the searching mechanism.
 
 ## [Content Apps](Content-Apps/index.md)
 
@@ -56,7 +51,7 @@ Content Apps are a new concept in v8. Editors can switch from editing 'Content' 
 
 Content Apps encapsulate companion read-only information relating to the current content item in the Umbraco backoffice.
 
-## [Database](Database/index.md)
+## [Database](Database/)
 
 Create a custom Database table.
 
@@ -66,20 +61,12 @@ Details on how to create a custom Embedded Media Provider to enable editors to e
 
 ## [FileSystemProviders (IFileSystem)](Custom-File-Systems.md)
 
-:::note
-This section is currently only available for Umbraco 8 and 7.
-:::
-
 Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example).
 
-## [Azure Key Vault](Key-Vault/)
+## [Health Checks](Health-Check)
 
-Configure your application so that it's ready to use a Key Vault.
+Developers can create their own Umbraco Health Checks and Health Check notification methods.
 
-## [Packages](Packages/index.md)
+## [Packaging](Packages)
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
-
-## [UI Library](UI-Library/)
-
-With the UI Library, you get a collection of visual building blocks that consists of pieces to build any UI in Umbraco.

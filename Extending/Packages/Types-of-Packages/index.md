@@ -1,11 +1,12 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
+meta.Title: "Umbraco Package Types"
+meta.Description: "Types of packages in Umbraco"
 ---
 
 # Package Types
 
-There are two main ways to install packages in Umbraco: Package zip files and NuGet packages.
+There are two main ways to install packages in Umbraco; Package zip files and NuGet packages.
 Each of these has its own advantages.
 
 When developing a package you should attempt to provide both a zip file package and a NuGet package.
@@ -27,10 +28,9 @@ Packages zip files can contain:
 * Languages
 * Dictionary Items
 * Data Types
-* Media
 
 :::note
-If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
+Currently you cannot include media items in a Package Zip file. You will need a custom [package action](Package-Actions/custom-package-actions-v8.md) to install media as part of a package.
 :::
 
 A package zip file can also contain [Package Actions](../Package-Actions/index.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
@@ -43,21 +43,22 @@ Packages uploaded to our.umbraco.com are listed in the package directory and are
 
 Package zip files can add items to Umbraco and you can change Umbraco config and settings via package actions.
 
+
 ## NuGet Packages
 
-A NuGet package is a standard way of delivering compiled code and configuration to a .NET project. NuGet packages contain dlls and other files required for the solution. For more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
+A NuGet package is a standard way of delivering Compiled Code and configuration to a .NET project. NuGet packages contain dlls, and files required for the solution. For more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
 
-NuGet packages can be installed using NuGet.exe via the command line or through the [Package Manager Console](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell) within Visual Studio using a command similar to the one below:
+NuGet packages can be installed using NuGet.exe via the command line or through the [Package Manager Console](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell) within Visual Studio using a command similar to the one below: 
 
-```none
+```
 PM> Install-Package MyPackage -version 1.2
 ```
 
-NuGet packages can include any solution files, and can be configured to run powershell scripts after installation.
+NuGet packages can include any solutions files, and can be configured to run powershell scripts after installation. 
 
-As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation.
+As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation. 
 
-If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../../Database/index.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
+If you need to add items or change configuration of Umbraco as part of a NuGet package, then you will need to develop code to run as part of a [Migration](../../database/index.md). The Migration would then run the first time the Umbraco site starts after the package is installed.
 
 ### Advantages of NuGet packages
 

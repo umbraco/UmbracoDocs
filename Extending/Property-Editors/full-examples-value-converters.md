@@ -1,17 +1,15 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Content Picker Value Converter Example
 
 ```csharp
 using System;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.PublishedCache;
-using Umbraco.Extensions;
+using Umbraco.Core;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.PropertyEditors;
+using Umbraco.Web.PublishedCache;
 
 namespace MyConverters
 {
@@ -101,5 +99,4 @@ namespace MyConverters
         }
     }
 }
-
 ```

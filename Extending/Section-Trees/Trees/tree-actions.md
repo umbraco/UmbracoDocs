@@ -1,24 +1,24 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
 ---
 
 # Tree Actions
 
-Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.
+Items in an Umbraco Tree can have associated Actions, the actions visible to the currently logged in user can be controlled via User Permissions.
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
 If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
 
-For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
+For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor., but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
 
 ```csharp
 bool canCreateBlogs = false;
-var user = _userService.GetByEmail(email);
-var userPermissionsForBlog = _userService.GetPermissions(user, blogId);
+var us = Services.UserService;
+var user = us.GetByEmail(email);
+var userPermissionsForBlog = us.GetPermissions(user, blogId);
 foreach (var permission in userPermissionsForBlog)
 {
     if (permission.AssignedPermissions.Contains("C"))
@@ -60,25 +60,24 @@ If you have created a package using a custom tree action, please consider provid
 
 |Type|Alias|Letter|Can Be Permission Assigned|
 |-|-|-|-|
-|Umbraco.Cms.Core.Actions.ActionAssignDomain|assignDomain|I|True|
-|Umbraco.Cms.Core.Actions.ActionBrowse|browse|F|True|
-|Umbraco.Cms.Core.Actions.ActionCopy|copy|O|True|
-|Umbraco.Cms.Core.Actions.ActionCreateBlueprintFromContent|createblueprint|ï|True|
-|Umbraco.Cms.Core.Actions.ActionDelete|delete|D|True|
-|Umbraco.Cms.Core.Actions.ActionMove|move|M|True|
-|Umbraco.Cms.Core.Actions.ActionNew|create|C|True|
-|Umbraco.Cms.Core.Actions.ActionNotify|notify|N|True|
-|Umbraco.Cms.Core.Actions.ActionProtect|protect|P|True|
-|Umbraco.Cms.Core.Actions.ActionPublish|publish|U|True|
-|Umbraco.Cms.Core.Actions.ActionRestore|restore|V|False|
-|Umbraco.Cms.Core.Actions.ActionRights|rights|R|True|
-|Umbraco.Cms.Core.Actions.ActionRollback|rollback|K|True|
-|Umbraco.Cms.Core.Actions.ActionSort|sort|S|True|
-|Umbraco.Cms.Core.Actions.ActionToPublish|sendtopublish|H|True|
-|Umbraco.Cms.Core.Actions.ActionUnpublish|unpublish|Z|True|
-|Umbraco.Cms.Core.Actions.ActionUpdate|update|A|True|
-|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
+|Umbraco.Web.Actions.ActionAssignDomain|assignDomain|I|True|
+|Umbraco.Web.Actions.ActionBrowse|browse|F|True|
+|Umbraco.Web.Actions.ActionCopy|copy|O|True|
+|Umbraco.Web.Actions.ActionCreateBlueprintFromContent|createblueprint|ï|True|
+|Umbraco.Web.Actions.ActionDelete|delete|D|True|
+|Umbraco.Web.Actions.ActionMove|move|M|True|
+|Umbraco.Web.Actions.ActionNew|create|C|True|
+|Umbraco.Web.Actions.ActionProtect|protect|P|True|
+|Umbraco.Web.Actions.ActionPublish|publish|U|True|
+|Umbraco.Web.Actions.ActionRestore|restore|V|False|
+|Umbraco.Web.Actions.ActionRights|rights|R|True|
+|Umbraco.Web.Actions.ActionRollback|rollback|K|True|
+|Umbraco.Web.Actions.ActionSort|sort|S|True|
+|Umbraco.Web.Actions.ActionToPublish|sendtopublish|H|True|
+|Umbraco.Web.Actions.ActionUnpublish|unpublish|Z|True|
+|Umbraco.Web.Actions.ActionUpdate|update|A|True|
 |Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore|deployTreeRestore|Ψ|True|
+|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
 |Umbraco.Deploy.UI.Actions.ActionPartialRestore|deployPartialRestore|Ø|True|
 |Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|T|True|
 |Jumoo.TranslationManager.Core.Actions.ActionTranslate|translate|5|True|
@@ -88,4 +87,4 @@ If you have created a package using a custom tree action, please consider provid
 |uSync.Publisher.Action.PushButton|pushContentButton|^|True|
 |Our.Umbraco.LinkedPages.LinkedAction|linkPages|l|True|
 
-*Note: up until Umbraco Deploy 9.2.0, the letter "N" was used for the "Queue For Transfer" action.  In 9.2.1 it was changed to be "T", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*
+*Note: up until Umbraco Deploy 4.4.2, the letter "N" was used for the "Queue For Transfer" action.  In 4.4.3 it was changed to be "T", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*

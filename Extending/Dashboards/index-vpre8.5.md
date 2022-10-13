@@ -201,7 +201,7 @@ After registering your dashboard, it will appear in the backoffice - however, it
 
 If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml`. If the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation, you will need to create a *lang* folder in your custom dashboard folder. You also need to create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`.
 
-[Read more about language files](../Language-Files/index-v8.md)
+[Read more about language files](../Language-Files/index.md)
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>

@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
 meta.Title: "Language Files & Localization"
 meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
 ---
@@ -9,10 +8,9 @@ meta.Description: "Language files are used to translate the Umbraco backoffice u
 
 Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
-If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Language-Files-For-Packages/index.md).
+If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
 
 ## Supported Languages
-
 Current languages that are included in the core are:
 
 - English (UK)
@@ -40,62 +38,37 @@ Current languages that are included in the core are:
 ## Where to find the language files
 
 ### Core language files
-
 The core Umbraco language files are found at the following location within the Umbraco source:
 
-```xml
-Umbraco-CMS/src/Umbraco.Core/EmbeddedResources/Lang/
-```
+    Umbraco-CMS/src/Umbraco.Web.UI/Umbraco/Config/Lang/
 
 These language files are the ones shipped with Umbraco and should not be modified.
 
 ### Package language files
+If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
 
-If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Language-Files-For-Packages/index.md), package language files are located in:
-
-```xml
-/App_Plugins/mypackage/Lang/{language}.xml
-```
-
-:::note
-The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
-:::
+    ~/App_Plugins/mypackage/lang/{language}.xml
 
 ### User language files
-
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:
 
-```xml
-/config/lang/{language}.user.xml
-```
+    ~/config/lang/{language}.user.xml
 
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
-In order for these files to deploy when you do a `dotnet publish`, you need to add the following to your `.csproj` file:
-
-```xml
-<ItemGroup>
-    <Content Include="config/**" CopyToOutputDirectory="Always" />
-</ItemGroup>
-```
-
 ## Using the language keys
-
 Using core or custom language keys from your code:
 
-### From .NET
 
-`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format [area]/[key]:
+### From .NET
+`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use `TextService` to localize string with format [area]/[key]:
 
 ```csharp
-public MyClass(ILocalizedTextService textservice)
-{
-    var localizedLabel = textservice.Localize("dialog/mykey");
-}
+using Umbraco.Core.Services;
+var localizedLabel = Services.TextService.Localize("dialog/myKey");
 ```
 
 ### From Angular
-
 In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
 
 ```xml
@@ -126,9 +99,7 @@ As Umbraco is a continually evolving product it is inevitable that new text is a
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
-```xml
-[assignDomain]
-```
+    [assignDomain]
 
 The language files are XML files with a straight-forward layout as seen below.
 

@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionRemoved: 8.0.0
 ---
 
 # Searchable Trees (ISearchableTree)
