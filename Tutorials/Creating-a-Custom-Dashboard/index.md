@@ -58,7 +58,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next we will create a HTML file inside this folder called 'WelcomeDashboard.html' the html file will contain a fragment of a html document and so does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
+Next, we will create a HTML file inside this folder called 'WelcomeDashboard.html'. The html file will contain a fragment of a html document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
 Add the following html to the WelcomeDashboard.html
 
@@ -204,7 +204,7 @@ The backoffice language can be changed in the Users section, if you wish to test
 
 ## Adding a bit of style
 
-Congratulations! Job well done - no unfortunately not, this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+Congratulations! Job well done, however this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
@@ -434,52 +434,71 @@ The `getById` method is supported on the following entity types: Document (conte
 Putting this together:
 
 ```js
-logResource.getPagedUserLog(userLogOptions)
-    .then(function (response) {
-        console.log(response);
-        vm.UserLogHistory = response;
-        var filteredLogEntries = [];
-        // Define supported entity types
-        var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
-        // Loop through the response, and flter out save log entries we are not interested in
-        angular.forEach(response.items, function (item) {
-            // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
-            if (!supportedEntityTypes.includes(item.entityType)) 
-                {
-                    return;
-                }
-            // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
-            if (item.nodeId > 0) {
-                // check if we already grabbed this from the entityservice
-                var nodesWeKnowAbout = [];
-                if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
-                    return;
-                // find things the user saved and/or published
-                if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
-                    // check if it is media or content
-                    if (item.entityType === "Document") {
-                        item.editUrl = "content/content/edit/" + item.nodeId;
-                    }
-                    if (item.entityType === "Media") {
-                        item.editUrl = "media/media/edit/" + item.nodeId;
-                    }
+  logResource.getPagedUserLog(userLogOptions)
+        .then(function (response) {
+            console.log(response);
+            vm.UserLogHistory = response;
 
-                    if (typeof item.entityType !== 'undefined') {
-                        // use entityResource to retrieve details of the content/media item
-                        var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                            console.log(ent);
-                            item.Content = ent;
-                        });
+            // define the entity types that we care about, in this case only content and media
+            var supportedEntityTypes = ["Document", "Media"];
 
-                        nodesWeKnowAbout.push(ent.id);
-                        filteredLogEntries.push(item);
-                    }
-                }
-            }
+            // define an empty array "nodes we know about"
+            var nodesWeKnowAbout = [];
+
+            // define an empty array "filtered log entries"
+            var filteredLogEntries = [];
+
+            // loop through the entries in the User Log History
+            angular.forEach(response.items, function (item) {
+
+              // if the item is already in our "nodes we know about" array, skip to the next log entry
+              if (nodesWeKnowAbout.includes(item.nodeId)) {
+                return;
+              }
+
+              // if the log entry is not for an entity type that we care about, skip to the next log entry
+              if (!supportedEntityTypes.includes(item.entityType)) {
+                return;
+              }
+
+              // if the user did not save or publish, skip to the next log entry
+              if (item.logType !== "Save" && item.logType !== "Publish") {
+                return;
+              }
+
+              // if the item does not have a valid nodeId, skip to the next log entry
+              if (item.nodeId < 0) {
+                return;
+              }
+
+              // now, push the item's nodeId to our "nodes we know about" array
+              nodesWeKnowAbout.push(item.nodeId);
+
+              // use entityResource to retrieve details of the content/media item
+              var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                  console.log(ent);
+                  item.Content = ent;
+              });
+
+              // get the edit url
+              if (item.entityType === "Document") {
+                  item.editUrl = "content/content/edit/" + item.nodeId;
+              }
+              if (item.entityType === "Media") {
+                  item.editUrl = "media/media/edit/" + item.nodeId;
+              }
+
+              // push the item to our "filtered log entries" array
+              filteredLogEntries.push(item);
+
+            // end of loop
+            });
+
+            // populate the view with our "filtered log entries" array
+            vm.UserLogHistory.items = filteredLogEntries;
+
+        // end of function
         });
-        vm.UserLogHistory.items = filteredLogEntries;
-    });
-});
 ```
 
 Finally update our view to use the additional retrieved entity information:
@@ -544,50 +563,73 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
         orderDirection: "Descending",
         sinceDate: new Date(2018, 0, 1)
     };
-    logResource.getPagedUserLog(userLogOptions)
+    
+  logResource.getPagedUserLog(userLogOptions)
         .then(function (response) {
             console.log(response);
             vm.UserLogHistory = response;
+
+            // define the entity types that we care about, in this case only content and media
+            var supportedEntityTypes = ["Document", "Media"];
+
+            // define an empty array "nodes we know about"
+            var nodesWeKnowAbout = [];
+
+            // define an empty array "filtered log entries"
             var filteredLogEntries = [];
-            // Define supported entity types
-            var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
-            // Loop through the response, and flter out save log entries we are not interested in
+
+            // loop through the entries in the User Log History
             angular.forEach(response.items, function (item) {
-                // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
-                if (!supportedEntityTypes.includes(item.entityType)) {
-                    return;
-                }
-                // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
-                if (item.nodeId > 0) {
-                    // check if we already grabbed this from the entityservice
-                    var nodesWeKnowAbout = [];
-                    if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
-                        return;
-                    // find things the user saved and/or published
-                    if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
-                        // check if it is media or content
-                        if (item.entityType === "Document") {
-                            item.editUrl = "content/content/edit/" + item.nodeId;
-                        }
-                        if (item.entityType === "Media") {
-                            item.editUrl = "media/media/edit/" + item.nodeId;
-                        }
 
-                        if (typeof item.entityType !== 'undefined') {
-                            // use entityResource to retrieve details of the content/media item
-                            var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                                console.log(ent);
-                                item.Content = ent;
-                            });
+              // if the item is already in our "nodes we know about" array, skip to the next log entry
+              if (nodesWeKnowAbout.includes(item.nodeId)) {
+                return;
+              }
 
-                            nodesWeKnowAbout.push(ent.id);
-                            filteredLogEntries.push(item);
-                        }
-                    }
-                }
+              // if the log entry is not for an entity type that we care about, skip to the next log entry
+              if (!supportedEntityTypes.includes(item.entityType)) {
+                return;
+              }
+
+              // if the user did not save or publish, skip to the next log entry
+              if (item.logType !== "Save" && item.logType !== "Publish") {
+                return;
+              }
+
+              // if the item does not have a valid nodeId, skip to the next log entry
+              if (item.nodeId < 0) {
+                return;
+              }
+
+              // now, push the item's nodeId to our "nodes we know about" array
+              nodesWeKnowAbout.push(item.nodeId);
+
+              // use entityResource to retrieve details of the content/media item
+              var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                  console.log(ent);
+                  item.Content = ent;
+              });
+
+              // get the edit url
+              if (item.entityType === "Document") {
+                  item.editUrl = "content/content/edit/" + item.nodeId;
+              }
+              if (item.entityType === "Media") {
+                  item.editUrl = "media/media/edit/" + item.nodeId;
+              }
+
+              // push the item to our "filtered log entries" array
+              filteredLogEntries.push(item);
+
+            // end of loop
             });
+
+            // populate the view with our "filtered log entries" array
             vm.UserLogHistory.items = filteredLogEntries;
+
+        // end of function
         });
+
 });
 ```
 

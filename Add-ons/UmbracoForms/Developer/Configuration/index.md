@@ -58,7 +58,7 @@ For illustration purposes, the following structure represents the full set of op
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AllowEditableFormSubmissions": false,
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
       "TriggerConditionsCheckOn": "change"
@@ -181,7 +181,9 @@ This configuration key is *experimental* and will allow Workflows to be executed
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
-_Note:_ There is a typo in this setting where it has been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this will be corrected to `AllowEditableFormSubmissions`.
+:::note
+There was a typo in this setting where it had been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
+:::
 
 :::warning
 Enable this feature ONLY if you understand the security implications.
@@ -279,7 +281,7 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 #### DataTypeId
 
-Sets the data type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text data type created by Umbraco on a new install is used.
+Sets the Data Type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text Data Type created by Umbraco on a new install is used.
 
 ---
 

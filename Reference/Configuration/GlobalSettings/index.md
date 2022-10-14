@@ -18,13 +18,12 @@ The following snippet contains all the available options, with default values, a
       "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,",
       "TimeOut": "00:20:00",
       "DefaultUILanguage": "en-US",
-      "HideTopLevelNodeFromPath": false,
+      "HideTopLevelNodeFromPath": true,
       "UseHttps": false,
       "VersionCheckPeriod": 7,
-      "UmbracoPath": "~/umbraco",
       "IconsPath": "~/umbraco/assets/icons",
       "UmbracoCssPath": "~/css",
-      "UmbracoScriptsPath": "~/css",
+      "UmbracoScriptsPath": "~/scripts",
       "UmbracoMediaPath": "~/media",
       "UmbracoMediaPhysicalRootPath": "X:/Shared/Media",
       "InstallMissingDatabase": false,
@@ -94,10 +93,6 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 ### Version check period
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to 0 to never check for a new version.
-
-### Umbraco path
-
-The URL pointing to the Umbraco backoffice, if you change this value you also need to rename the `/umbraco` and `wwwroot/umbraco` folders to match this new name. Be aware that if you run your site on linux the casing needs to be identical.
 
 ### Icons path
 

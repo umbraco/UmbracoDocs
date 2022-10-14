@@ -122,7 +122,7 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 ```json
 {
     "javascript":[
-        /*javascript files listed here*/
+        /*JavaScript files listed here*/
     ],
     "css": [
         /*list of stylesheets appear here:*/

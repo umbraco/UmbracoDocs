@@ -56,7 +56,7 @@ For Deploy to handle Forms data as content, you'll need to add the following set
 
 #### Umbraco version 9 and above
 
-For Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true`:
+For Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true` in the `appsettings.json`file:
 
 ```json
 "Umbraco": {

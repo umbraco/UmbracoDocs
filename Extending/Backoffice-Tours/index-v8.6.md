@@ -11,7 +11,7 @@ Backoffice tours are a way to create helpful guides for how to work in the Umbra
 
 They are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
 
-### Enabling Tours 
+### Enabling Tours
 
 You can enable or disable the tours from within the [umbracoSettings](../../../Reference/Config/umbracoSettings/index.md#tours).
 
@@ -232,7 +232,7 @@ namespace Umbraco.Examples
             // Found in App_plugins/MyAwesomePlugin/backoffice/tours/
             // OR at /config/backofficetours/
             composition.TourFilters()
-                .AddFilterByFile("custom-tours.json");
+                .AddFilterByFile("custom-tours"); //Without extension
 
             // Filter out one or more tour JSON files from a specific plugin/package
             // Found in App_plugins/MyAwesomePlugin/backoffice/tours/tour-two.json

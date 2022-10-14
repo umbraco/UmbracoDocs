@@ -101,6 +101,8 @@ Finally, it needs to be registered via a composer:
        }
     }
 }
+```
+
 ---
 
 Prev: [Localization](../Localization/index.md)

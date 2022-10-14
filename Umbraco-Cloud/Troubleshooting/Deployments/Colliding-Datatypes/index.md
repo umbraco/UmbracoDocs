@@ -19,7 +19,7 @@ Since these 5 data types are part of the Umbraco CMS, these will be created by d
 
 The issue will present itself as an extraction error on your Development or Staging environment once you're created them.
 
-![Extraction error on Development environment](images/extraction-error.png)
+![Extraction error on Development environment](images/duplicate-dictionary-extraction-error.png)
 
 Open the error message by clicking **More info**.
 

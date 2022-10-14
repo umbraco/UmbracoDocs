@@ -11,7 +11,7 @@ In this article, we will cover the steps in order for you to install and configu
 
 ## Prerequisites
 
-Ensure you have read and followed the setup guide for [new](../New-site/index-v9) or [new](../Existing-site/index-v9) projects.
+Ensure you have read and followed the setup guide for [new](../New-site/index) or [Existing](../Existing-site/index) projects.
 
 ## Source Control Configuration
 
@@ -97,7 +97,7 @@ An example configuration with a single upstream environment file will look like 
             "ApiKey": "<your API key here>"
          },
          "Project":{
-            "CurrentEnvironmentName": "Live",
+            "CurrentWorkspaceName": "Live",
             "Workspaces":[
                {
                   "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
@@ -112,7 +112,7 @@ An example configuration with a single upstream environment file will look like 
 }
 ```
 
-The setting under _Project:CurrentEnvironmentName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
+The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
 
 :::note
 In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.

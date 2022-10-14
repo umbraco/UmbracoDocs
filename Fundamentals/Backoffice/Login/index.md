@@ -31,7 +31,7 @@ The login screen features a greeting which you can personalize by overriding the
     <key alias="greeting6">Happy Caturday</key>
 </area>
 ```
-You can customize other text in the login screen as well, grab the default values and keys from `~/umbraco/config/lang/en.xml` and copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
+You can customize other text on the login screen as well. First, grab the default values and keys from `~/umbraco/config/lang/en.xml`. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
 
 ## Password reset
 
@@ -49,7 +49,7 @@ The **Forgotten password?** link allows your backoffice users to reset their pas
 
 Set it to `true` to enable the password reset feature, and `false` to disable the feature.
 
-You will also need to configure an SMTP server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
+You will also need to configure an SMTP: Simple Mail Transfer Protocol, server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
 
 An example:
 
@@ -86,7 +86,7 @@ It is possible to customize the background image and the logo for the backoffice
 
 The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroot/umbraco/` folder.
 
-To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `css` folder, containing a css file, and a package.manifest file. An example structure might be:
+To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `CSS` folder, containing a CSS file, and a package.manifest file. An example structure might be:
 
 ```
 /App_Plugins
@@ -126,5 +126,3 @@ An example package.manifest might be:
         ]
     }
 ```
-
-

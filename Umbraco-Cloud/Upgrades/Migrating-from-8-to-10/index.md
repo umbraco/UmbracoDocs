@@ -82,7 +82,7 @@ You need to manually upgrade the view files and custom code implementation. For 
   * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8) article.
 
 * Run the Umbraco 10 project locally.
-  * It **will** give you a YSOD/error screen on the frontend as none of the Template files have been updated yet.
+  * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
 
 * Go to the backoffice of your project.
 

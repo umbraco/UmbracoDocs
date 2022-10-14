@@ -1,0 +1,15 @@
+---
+extends: substitution
+message: "We prefer %s over '%s.'"
+level: warning
+swap:
+  css: "'CSS'"
+  html: "'HTML'"
+  url: "'URL'"
+  js: "'JavaScript'"
+  javascript: "'JavaScript'"
+  .net: "'.NET'"
+  dot net: "'.NET'"
+  cms: "'CMS'"
+  AngularJs: "'AngularJS'"
+  angularjs: "'AngularJS'"  

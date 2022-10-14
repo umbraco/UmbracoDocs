@@ -13,9 +13,7 @@ In this article, you can read about how you can move your Umbraco Cloud project 
 
 Before you decide to move your Umbraco Cloud project, you need to consider a few things:
 
-- Currently, Umbraco Cloud offers dedicated resources for Professional plans only. We expect to include dedicated resources for Starter and Standard plans in the self-service feature in Umbraco Cloud portal later in 2022.
-
-- Projects on Starter and Standard plans can upgrade to Professional to take advantage of Dedicated Resources, or alternatively, contact support for additional options.
+- Umbraco Cloud offers dedicated resources for Starter, Standard, and Professional plans. You can choose among one dedicated option for projects on a Starter plan, two dedicated options for a Standard plan project, and three dedicated options for a Professional plan project.
 
 - Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/).
 
@@ -28,11 +26,11 @@ The first step in moving to a dedicated resource is to access your project in th
 
 - Select *Dedicated Resources* from the *Settings* menu.
 
-![Upgrade plan step 1](images/Step1.png)
+![Upgrade plan step 1a](images/Step1a.png)
 
-- There are currently three dedicated options for you to choose among for the Professional plans. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
+- There are currently three dedicated options for you to choose from the Professional plan, two dedicated options from the Standard plan, and one dedicated option from the Starter plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-![Upgrade plan step 1](images/Step2.png)
+![Upgrade plan step 2a](images/Step2a.png)
 
 - By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
@@ -46,7 +44,7 @@ If you move your Cloud project to a dedicated resource in the middle of the mont
 
 Moving away from dedicated resources and back to shared can be done from the *Dedicated Resources* page.
 
-![Upgrade plan step 1](images/Downgrade.png)
+![Downgrade](images/DowngradeA.png)
 
 - By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 

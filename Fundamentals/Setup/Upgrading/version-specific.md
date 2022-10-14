@@ -40,14 +40,17 @@ The following options may suit your needs:
 
 ### Steps to upgrade using Visual Studio
 
-1. Open your Umbraco 9 project in Visual Studio.
-2. Right-click on the project name in the Solution Explorer and select **Properties**.
-3. Select **.NET 6.0** from the **Target Framework** drop-down.
-4. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
-5. Go to the **Installed** tab in the NuGet Package manager.
-6. Choose **Umbraco.Cms**.
-7. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
-8. Update `Program.cs` to the following:
+It's recommended that you upgrade the site offline, and test the upgrade fully before deploying it to the production environment.
+
+1. Stop your site in IIS to prevent any changes being made to the database or filesystem while you are upgrading.
+2. Open your Umbraco 9 project in Visual Studio.
+3. Right-click on the project name in the Solution Explorer and select **Properties**.
+4. Select **.NET 6.0** from the **Target Framework** drop-down.
+5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
+6. Go to the **Installed** tab in the NuGet Package manager.
+7. Choose **Umbraco.Cms**.
+8. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
+9. Update `Program.cs` to the following:
 
     ```csharp
     public class Program
@@ -69,7 +72,7 @@ The following options may suit your needs:
     ```
     The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 
-9. Remove the following files and folders:
+10. Remove the following files and folders:
     - `/wwwroot/umbraco`
     - `/umbraco/PartialViewMacros`
     - `/umbraco/UmbracoBackOffice`
@@ -78,9 +81,9 @@ The following options may suit your needs:
     - `/umbraco/config/lang`
     - `/umbraco/config/appsettings-schema.json`
 
-10. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+11. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
 
-11. Build and run your project to finish the installation of Umbraco 10.
+12. Restart your site in IIS, build and run your project to finish the installation of Umbraco 10.
 
 To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:
 
@@ -94,9 +97,29 @@ To:
 "$schema": "./appsettings-schema.json",
 ```
 
+
 :::note
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 :::
+
+### Upgrade of any publicly hosted environment
+
+When the upgrade is completed and tested, and prior to deploying to any publicly accessible environment, you should consider the following:
+
+1. Ensure you have backups for both the database and the file system.
+2. Stop the site so it is not accessible during the upgrade process.
+3. Delete the relevant folders from the filesystem prior to deploying.
+  - `/wwwroot/umbraco`
+  - `/umbraco/PartialViewMacros`
+  - `/umbraco/UmbracoBackOffice`
+  - `/umbraco/UmbracoInstall`
+  - `/umbraco/UmbracoWebsite`
+  - `/umbraco/config/lang`
+  - `/umbraco/config/appsettings-schema.json`
+4. Deploy the site how you normally would to your public facing environment 
+5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete. 
+6. Check the logs for any errors which may have occurred during the upgrade process. 
+
 
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
 

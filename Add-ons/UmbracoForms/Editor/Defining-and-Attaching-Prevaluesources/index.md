@@ -31,7 +31,7 @@ Depending on the **Type** you choose, you'll need to provide some additional set
     ![Type settings](images/typesettings.png)
 2. Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
-```
+```Text
 example value 1
 example value 2
 example value 3
@@ -46,7 +46,7 @@ example value 5
 
 If you would like to have different values presented to your users from the value stored, you can provide two values per line, separated with a vertical bar (|), e.g.:
 
-```
+```Text
 1|example value 1
 2|example value 2
 3|example value 3
@@ -54,14 +54,20 @@ If you would like to have different values presented to your users from the valu
 5|example value 5
 ```
 
-In this case the user would pick from a list showing the descriptions, but the single integer values would be stored with the record.  This can be useful if the recorded entries are used in any subsequent workflows or business processes, where particular values, that aren't appropriate for the user to select from, are required.
+In this case the user would pick from a list showing the captions, but the single integer values would be stored with the record.
+
+This can be useful if the recorded entries are used in any subsequent workflows or business processes, where particular values, that aren't appropriate for the user to select from, are required.
+
+![Prevalues with captions](images/Prevalues-with-caption.png)
 
 ## Attaching a Prevalue Source to a Field
 
 Once a prevalue source has been created, it can be used while building Forms in the Forms designer.
 
 **Example:**
-Let's add a Multiple Choice field type in our Form. If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
+Let's add a Multiple Choice field type in our Form.
+
+If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
 ![Prevalue source](images/FieldPrevalueSource.png)
 

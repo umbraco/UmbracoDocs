@@ -18,14 +18,14 @@ The Element Types that Nested Content uses are specialized Document Types - they
 
 The **Nested Content** property editor is set-up/configured in the same way as any standard property editor, via the *Data Types* admin interface. To set-up your Nested Content property, create a new *Data Type* and select **Nested Content** from the list of available property editors.
 
-You should then be presented with the **Nested Content** property editors data-type editor as shown below.
+You should then be presented with the **Nested Content** property editors Data Type editor as shown below.
 
 ![Nested Content - Data Type Definition](images/NestedContent_DataType-v8.png)
 
-The data-type editor allows you to configure the following properties:
+The Data Type editor allows you to configure the following properties:
 
-- **Doc Types** - Defines a list of document-types to use as data blueprints for this **Nested Content** instance. For each document-type you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
-    - If you would like to include the document type name in the label, you can use `{{alias}}`.
+- **Doc Types** - Defines a list of Document Types to use as data blueprints for this **Nested Content** instance. For each Document Type, you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
+    - If you would like to include the Document Type name in the label, you can use `{{alias}}`.
     - If you would like to include the index position in the label, you can use `{{$index}}`.
     - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID.
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
@@ -37,7 +37,7 @@ The data-type editor allows you to configure the following properties:
 - **Show Icons** - Enabling this will display the item's doc type icon next to the name in the **Nested Content** list.
 - **Hide Label** - Enabling this will hide the property editor's label and expand the **Nested Content** property editor to the full width of the editor window.
 
-Once your data type has been configured, set-up a property on your page doc type using your new data type and you are set to start editing.
+Once your Data Type has been configured, set-up a property on your page doc type using your new Data Type and you are set to start editing.
 
 ## Limitations
 

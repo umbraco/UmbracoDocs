@@ -14,7 +14,7 @@ This error occurs when a language is deleted from the backoffice after you have 
 
 The issue will show up as an extraction error on your Umbraco Cloud environment with a red indicator.
 
-![Extraction error](images/error.png)
+![Extraction error](images/language-mismatch-error.png)
 
 Upon closer inspection, a more detailed error will reveal itself: `Languages in source and destination site do not match.`
 

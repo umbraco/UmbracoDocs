@@ -18,4 +18,4 @@ If you try and delete a node that references another one, you will be warned in 
 
 ## How to fix your dependency error
 
-To resolve the issue, find the Contact page (hint: the nodeId can be used in the search field in the top-left of the backoffice) and publish it again. This should remove the reference to the node that is no longer available. Transferring the Contact page node should now succeed.
+To resolve the issue, find the Contact page (hint: the nodeId can be used in the search field in the top-right of the backoffice) and publish it again. This should remove the reference to the node that is no longer available. Transferring the Contact page node should now succeed.

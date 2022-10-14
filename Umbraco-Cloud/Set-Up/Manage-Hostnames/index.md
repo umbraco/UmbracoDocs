@@ -77,16 +77,22 @@ When your domain is also hosted with Cloudflare, you need to enroll the hostname
 CAA is a [DNS resource record type](https://tools.ietf.org/html/rfc6844) defined in RFC 6844 that allows a domain owner to indicate which Certificate Authorities (CAs) are allowed to issue certificates for them. If you use CAA records on your domain, you will either need to remove CAA entirely or add the following through your DNS provider:
 
 ```sql
-example.com. IN CAA 0 issue "digicert.com"
+example.com. IN CAA 0 issue "pki.goog"
 ```
 
-This is necessary because DigiCert is the Certificate Authority for the certificates issued on Umbraco Cloud.
+This is necessary because Google Trust Services is the Certificate Authority for the certificates issued on Umbraco Cloud.
 
 CAA records can be set on the subdomain, but it's not something that is commonly used. If there’s a CAA record at, e.g., app.example.com, you’ll need to remove or update it. If you want to use wildcards and allow certificates for any subdomain, the CAA record should look like this:
 
 ```sql
-example.com. IN CAA 0 issuewild "digicert.com"
+example.com. IN CAA 0 issuewild "pki.goog"
 ```
+
+:::note
+The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
+
+**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
+:::
 
 ## [Upload certificates manually](Security-Certificates)
 
