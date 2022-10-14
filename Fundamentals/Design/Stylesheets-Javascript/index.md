@@ -126,7 +126,7 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 ```
 
 :::note
-See below for the different [Bundling Options](#bundling-options)
+See below for the different [Bundling Options](#bundling-options).
 :::
 
 **Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
