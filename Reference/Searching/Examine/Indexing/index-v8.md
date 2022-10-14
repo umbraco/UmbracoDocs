@@ -298,6 +298,9 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 }
 ```
 
+You can create an `IValueSetBuilder` implementation that builds the value sets for the index following the example [here](index.md/productindexvaluesetbuilder).
+You can also create an `IndexPopulator` implementation that populates the index with the value sets following the example [here](index.md/productindexpopulator).
+
 ### ProductComponent
 
 ```c#
@@ -341,6 +344,12 @@ public class ProductComposer : IUserComposer
     {
         composition.Components().Append<ProductComponent>();
         composition.RegisterUnique<ProductIndexCreator>();
+
+        //example of registering an IValueSetBuilder implementation
+        composition.RegisterUnique<ProductIndexValueSetBuilder>();
+
+        //example of registering an IIndexPopulator implementation
+        composition.Register<ProductIndexPopulator>(Lifetime.Singleton);
     }
 }
 ```
