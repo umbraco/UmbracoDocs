@@ -165,13 +165,13 @@ BundlingOptions.NotOptimizedNotComposite // The files will not be minified and w
 BundlingOptions.NotOptimizedAndComposite // The files will not be minified but will be bundled into an individual file
 ```
 
-## Smidge TagHelper
+## Debugging
 
-:::note
+### Using Smidge TagHelper
+
 The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
 
 If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
-:::
 
 ```csharp
 @using Microsoft.Extensions.Options
@@ -186,11 +186,9 @@ If you do need to debug bundles you can inject `hostingSettings` and add the `de
 <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
 ```
 
-Or by using `IRuntimeMinifier`:
+### Using IRuntimeMinifier
 
-:::note
 In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
-:::
 
 ```csharp
 @using Umbraco.Cms.Core.WebAssets
