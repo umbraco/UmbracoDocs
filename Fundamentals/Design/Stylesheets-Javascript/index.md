@@ -172,7 +172,7 @@ BundlingOptions.NotOptimizedAndComposite // The files will not be minified but w
 :::note
 The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
 
-If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
+If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below.
 :::
 
 ```csharp
@@ -183,6 +183,7 @@ If you do need to debug bundles you can inject `hostingSettings` and add the `de
     var debugMode = hostingSettings.Value.Debug;
 }
 ```
+
 ```csharp
 <script src="registered-js-bundle" debug="@debugMode"></script>
 <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
