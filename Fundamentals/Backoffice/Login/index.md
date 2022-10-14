@@ -31,7 +31,7 @@ The login screen features a greeting which you can personalize by overriding the
     <key alias="greeting6">Happy Caturday</key>
 </area>
 ```
-You can customize other text in the login screen as well, first grab the default values and keys from `~/umbraco/config/lang/en.xml`. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
+You can customize other text on the login screen as well. First, grab the default values and keys from `~/umbraco/config/lang/en.xml`. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
 
 ## Password reset
 
