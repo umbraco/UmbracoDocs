@@ -21,6 +21,8 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
  * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
  * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
+There is also a complete Umbraco solution with a SQLite database that demonstrates how OpenID Connect with Umbraco works: [https://github.com/jbreuer/Umbraco-OpenIdConnect-Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).
+
 To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index.md) section.
 The code example below shows how the configuration for Google Authentication can be done. You can find an example for how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](../Authenticate-with-Active-Directory/index.md) article.
 
