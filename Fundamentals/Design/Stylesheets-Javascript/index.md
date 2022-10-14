@@ -154,7 +154,7 @@ public void ConfigureServices(IServiceCollection services)
 </html>
 ```
 
-## Bundling Options
+### Bundling Options
 
 The following bundling options can be set when creating your bundles:
 
