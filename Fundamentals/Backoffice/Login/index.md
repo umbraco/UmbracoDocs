@@ -49,7 +49,7 @@ The **Forgotten password?** link allows your backoffice users to reset their pas
 
 Set it to `true` to enable the password reset feature, and `false` to disable the feature.
 
-You will also need to configure an SMTP server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
+You will also need to configure an SMTP: Simple Mail Transfer Protocol, server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
 
 An example:
 
