@@ -94,10 +94,12 @@ Acronyms should be defined using either parenthesis or a colon followed by the d
 
 Examples of the use of acronyms:
 
-Do not do this: "Members will only have access to CDN endpoints."
-Do this instead: "Members will only have access to Content Delivery Network (CDN) endpoints."
+Do not do this: "Members will only have access to **CDN** endpoints."
+
+Do this instead: "Members will only have access to **Content Delivery Network (CDN)** endpoints."
 
 Do not do this: **YSOD** (.Net error page)
+
 Do this instead: **YSOD: Yellow Screen of Death**, .NET error page
 
 ### Names
