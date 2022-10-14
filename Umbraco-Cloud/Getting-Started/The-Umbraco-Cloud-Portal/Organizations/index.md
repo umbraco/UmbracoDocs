@@ -53,4 +53,4 @@ In the **Payment History** section, you can see the payment history for your org
 
 ## Subscriptions
 
-In the **Subscriptions** section you can see the current active subscribtions that is running under the Umbraco Cloud organisation.
+In the **Subscriptions** section, you can see the current active subscriptions that are running under the Umbraco Cloud organization.
