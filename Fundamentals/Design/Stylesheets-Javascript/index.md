@@ -124,7 +124,13 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
     }
 }
 ```
+
+:::note
+See below for the various [Bundling Options](#bundling-options)
+:::
+
 **Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -147,6 +153,19 @@ public void ConfigureServices(IServiceCollection services)
 </head>
 </html>
 ```
+
+## Bundling Options
+
+The following bundling options can be set when creating your bundles:
+
+```csharp
+BundlingOptions.OptimizedAndComposite // The files will be minified and bundled into an individual file
+BundlingOptions.OptimizedNotComposite // The files will be minified but not bundled into an individual file
+BundlingOptions.NotOptimizedNotComposite // The files will not be minified and will not be bundled into an individual file
+BundlingOptions.NotOptimizedAndComposite // The files will not be minified but will be bundled into an individual file
+```
+
+## Smidge TagHelper
 
 :::note
 The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
