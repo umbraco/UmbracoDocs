@@ -124,7 +124,13 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
     }
 }
 ```
+
+:::note
+See below for the different [Bundling Options](#bundling-options).
+:::
+
 **Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -148,10 +154,26 @@ public void ConfigureServices(IServiceCollection services)
 </html>
 ```
 
+### Bundling Options
+
+The following bundling options can be set when creating your bundles:
+
+```csharp
+BundlingOptions.OptimizedAndComposite // The files will be minified and bundled into an individual file
+BundlingOptions.OptimizedNotComposite // The files will be minified but not bundled into an individual file
+BundlingOptions.NotOptimizedNotComposite // The files will not be minified and will not be bundled into an individual file
+BundlingOptions.NotOptimizedAndComposite // The files will not be minified but will be bundled into an individual file
+```
+
+## Rendering
+
+### Using Smidge TagHelper
+
 :::note
 The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
 
-If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below
+If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below.
+:::
 
 ```csharp
 @using Microsoft.Extensions.Options
@@ -161,13 +183,13 @@ If you do need to debug bundles you can inject `hostingSettings` and add the `de
     var debugMode = hostingSettings.Value.Debug;
 }
 ```
-```csharp
-    <script src="registered-js-bundle" debug="@debugMode"></script>
-    <link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
-```
-:::
 
-Or by using `IRuntimeMinifier`:
+```csharp
+<script src="registered-js-bundle" debug="@debugMode"></script>
+<link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
+```
+
+### Using IRuntimeMinifier
 
 :::note
 In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
