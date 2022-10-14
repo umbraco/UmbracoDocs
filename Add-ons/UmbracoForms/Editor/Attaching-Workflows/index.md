@@ -21,7 +21,7 @@ The behaviour to display a message to the user that submitted the form, or to re
 
 ![Submit message/Go to page](MessageOnSubmit.png)
 
-If a value is selected for **Go to page**, it is used to issue a redirect to that page once the form has been submitted.
+If a value is selected for **Go to page**, it will be used to redirect to that page once the form has been submitted.
 
 If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
@@ -55,7 +55,7 @@ When a form is submitted, any workflows associated with the "submit" stage of th
 
 Similarly, approval of a form entry, whether automatic or manual, will trigger the execution of the workflows associated with the "approve" stage.
 
-If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form. The exception alonwith the other details of the failed operation is recorded to the log.
+If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form. The exception alongwith the other details of the failed operation is recorded to the log.
 
 From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
 
