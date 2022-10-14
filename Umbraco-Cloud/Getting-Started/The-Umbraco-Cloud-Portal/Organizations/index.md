@@ -49,7 +49,7 @@ In the **Payment methods** section, you can view the payment methods for your or
 
 ## Payment History
 
-In the **Payment History** section, you can see the payment history for your organisation.
+In the **Payment History** section, you can see the payment history for your organization.
 
 ## Subscriptions
 
