@@ -196,7 +196,7 @@ If you have Members in your Umbraco database these were not transferred when you
     ORDER BY Alias
     ```
     
-    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above, and replace all the `{umbraco x id for alias xxx}` values with the results from your two queries just now. Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'.
+    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above, and replace all the `{umbraco x id for alias xxx}` values with the results from your two most recent queries. Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'.
     
     ```
     SELECT id + {umbracoPropertyData} AS id, versionid + {umbracoContentVersion} AS versionid,  
@@ -224,7 +224,7 @@ If you have Members in your Umbraco database these were not transferred when you
     DBCC CHECKIDENT(umbracoPropertyData)
     ```
     
-You should now be able to see your members and member groups in the Umbraco back office, and login using existing member accounts on your front-end website.
+You should now see your Members and Member Groups in the Umbraco backoffice, and login using existing Member accounts on your front-end website.
 
 ## Step 5: Deploy and Test on Umbraco Cloud
 
