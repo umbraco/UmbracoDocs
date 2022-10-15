@@ -144,36 +144,47 @@ If you have Members in your Umbraco database these were not transferred when you
    SELECT MAX(id) FROM umbracoContentVersion
    SELECT MAX(id) FROM umbracoPropertyData
    ```
-* Use the SQL Server Import and Export Wizard to query data from your Umbraco 8 database and insert it into your Umbraco 10 database. You can start the wizard by right-clicking any database and selecting Tasks > Import Data... Use the 'Microsoft OLE DB Driver for SQL Server' to connect first to your Umbraco 8 database as the data source, then your Umbraco 10 database.
+* Use the SQL Server Import and Export Wizard to query data from your Umbraco 8 database and insert it into your Umbraco 10 database. You can start the wizard by right-clicking any database and selecting Tasks > Import Data... 
+ 
+    Use the 'Microsoft OLE DB Driver for SQL Server' to connect first to your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Next, select 'Write a query to specify the data to transfer', and use the following queries. You will need to run this wizard again from the start for each query. 
 
-You will need to run this wizard once for each of the following queries. 
-
-Replace `{umbracoNode}` and `{umbracoContentVersion}` with the results from your previous query.
+    In this query replace `{umbracoNode}` and `{umbracoContentVersion}` with the results from your previous query. After you enter your query in the wizard you'll see the 'Select Source Tables and Views' page of the wizard. Change the destination from `[dbo].[Query]` to `[dbo].[umbracoNode]`. Click 'Edit Mappings...` and tick 'Enable identity insert'. You're now ready to complete the wizard.
 
    ```
-   -- Insert the results of this query on your Umbraco 8 database into the umbracoNode table on your Umbraco 10 database. This requires you to enable Identity Insert in the wizard options.
    SELECT id + {umbracoNode} AS id, uniqueid, parentid, level, path, sortOrder, trashed, -1 AS nodeUser, text, nodeObjectType, createDate 
    FROM umbracoNode 
    WHERE nodeObjectType IN ('39EB0F98-B348-42A1-8662-E7EB18487560', '366E63B9-880F-4E13-A61C-98069B029728')
+   ```	
+   
+* Run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoNode}` with the result from your earlier query. Change the destination to `[dbo].[umbracoContent]`, and this time you don't need to select 'Enable identity insert'.
+ 
+    ```
+    SELECT nodeId + {umbracoNode} AS nodeId, contentTypeId 
+    FROM umbracoContent 
+    WHERE nodeId IN (SELECT nodeId FROM cmsMember)
+	```
+    
+* Run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoNode}` with the result from your earlier query. Change the destination to `[dbo].[cmsMember]`, and this time you don't need to select 'Enable identity insert'.
+
+    ```
+    SELECT nodeId + {umbracoNode} AS nodeId, Email, LoginName, Password 
+    FROM cmsMember
+    ```
 	
-   -- Run the wizard again and insert the results of this query on your Umbraco 8 database into the umbracoContent table on your Umbraco 10 database.
-   SELECT nodeId + {umbracoNode} AS nodeId, contentTypeId 
-   FROM umbracoContent 
-   WHERE nodeId IN (SELECT nodeId FROM cmsMember)
+* Run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoContentVersion}` and `{umbracoNode}` with the results from your earlier queries. Change the destination to `[dbo].[umbracoContentVersion]`. This time you **do** need to select 'Enable identity insert'.
+
+    ```
+    SELECT id + {umbracoContentVersion} AS id, nodeId + {umbracoNode} AS nodeId, versionDate, userId, [current], [text] 
+    FROM umbracoContentVersion 
+    WHERE nodeId IN (SELECT nodeId FROM cmsMember) 
+    ```
 	
-   -- Run the wizard again and insert the results of this query on your Umbraco 8 database into the cmsMember table on your Umbraco 10 database.
-   SELECT nodeId + {umbracoNode} AS nodeId, Email, LoginName, Password 
-   FROM cmsMember
-	
-   -- Run the wizard again and insert the results of this query on your Umbraco 8 database into the umbracoContentVersion table on your Umbraco 10 database. This requires you to enable Identity Insert in the wizard options.
-   SELECT id + {umbracoContentVersion} AS id, nodeId + {umbracoNode} AS nodeId, versionDate, userId, [current], [text] 
-   FROM umbracoContentVersion 
-   WHERE nodeId IN (SELECT nodeId FROM cmsMember) 
-	
-   -- Run the wizard again and insert the results of this query on your Umbraco 8 database into the cmsMember2MemberGroup table on your Umbraco 10 database.
-   SELECT Member + {umbracoNode} As Member, MemberGroup + {umbracoNode} AS MemberGroup 
-   FROM cmsMember2MemberGroup
-   ```
+* Run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoNode}` with the result from your earlier query. Change the destination to `[dbo].[cmsMember2MemberGroup]`. This time you don't need to select 'Enable identity insert'.
+
+    ```
+    SELECT Member + {umbracoNode} As Member, MemberGroup + {umbracoNode} AS MemberGroup 
+    FROM cmsMember2MemberGroup
+    ```
    
 * Now you need to transfer the properties that belong to the Members. Run the following query on both your Umbraco 8 database and your Umbraco 10 database and note the results, which will probably be different between the two:
 
@@ -185,7 +196,7 @@ Replace `{umbracoNode}` and `{umbracoContentVersion}` with the results from your
     ORDER BY Alias
     ```
     
-    Using those results, run the wizard again and insert the results of this query on your Umbraco 8 database into the umbracoPropertyData table on your Umbraco 10 database. Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first query above, and replace all the id values with the results from your two queries just now. You must enable Identity Insert in the wizard options as well.
+    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above, and replace all the `{umbraco x id for alias xxx}` values with the results from your two queries just now. Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'.
     
     ```
     SELECT id + {umbracoPropertyData} AS id, versionid + {umbracoContentVersion} AS versionid,  
@@ -203,15 +214,17 @@ Replace `{umbracoNode}` and `{umbracoContentVersion}` with the results from your
       languageId, segment, intValue, decimalValue, dateValue, varcharValue, textValue
       FROM umbracoPropertyData
       WHERE versionid IN (SELECT id FROM umbracoContentVersion WHERE nodeId IN (SELECT nodeId FROM cmsMember))
-      ```
+    ```
 
 * On your Umbraco 10 database reset the identity seeds where you used Identity Insert:
 
     ```
-	DBCC CHECKIDENT(umbracoNode)
-	DBCC CHECKIDENT(umbracoContentVersion)
-	DBCC CHECKIDENT(umbracoPropertyData)
+    DBCC CHECKIDENT(umbracoNode)
+    DBCC CHECKIDENT(umbracoContentVersion)
+    DBCC CHECKIDENT(umbracoPropertyData)
     ```
+    
+You should now be able to see your members and member groups in the Umbraco back office, and login using existing member accounts on your front-end website.
 
 ## Step 5: Deploy and Test on Umbraco Cloud
 
