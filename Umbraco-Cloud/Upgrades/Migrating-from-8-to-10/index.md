@@ -146,7 +146,7 @@ If you have Members in your Umbraco database these were not transferred when you
    ```
 * Use the SQL Server Import and Export Wizard to query data from your Umbraco 8 database and insert it into your Umbraco 10 database. You can start the wizard by right-clicking any database and selecting Tasks > Import Data... 
  
-    Use the 'Microsoft OLE DB Driver for SQL Server' to connect first to your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Next, select 'Write a query to specify the data to transfer', and use the following queries. You will need to run this wizard again from the start for each query. 
+    Use the `Microsoft OLE DB Driver for SQL Server` to connect first to your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Next, select 'Write a query to specify the data to transfer', and use the following queries. You will need to run this wizard again from the start for each query. 
 
     In this query replace `{umbracoNode}` and `{umbracoContentVersion}` with the results from your previous query. After you enter your query in the wizard you'll see the 'Select Source Tables and Views' page of the wizard. Change the destination from `[dbo].[Query]` to `[dbo].[umbracoNode]`. Click 'Edit Mappings...` and tick 'Enable identity insert'. You're now ready to complete the wizard.
 
