@@ -74,6 +74,8 @@ Once you have added an Element Type as a Block Type on your Block Grid Data Type
 
 ![Block Grid - Data Type Block Configuration](images/BlockGridEditor_DataType_Blocks.png)
 
+[Examples and more details about configuring the Label property.](../label-property-configuration.md)
+
 ### Groups
 
 Blocks can also be grouped. This is visible in the Block Catalogue and can also be used to allow a group of Blocks in an Area.

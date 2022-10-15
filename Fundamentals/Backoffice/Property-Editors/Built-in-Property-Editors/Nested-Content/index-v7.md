@@ -25,6 +25,7 @@ The data-type editor allows you to configure the following properties:
     - If you would like to include the index position in the label, you can use `{{$index}}`.
     - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID.
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
+    - [Examples and more details about labels and AngularJS templates](../Block-Editor/label-property-configuration.md)
 - **Min Items** - Sets the minimum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will pre-populate your list with the minimum amount of allowed items and prevent deleting items below this level. Defaults to `0`.
 - **Max Items** - Sets the maximum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will prevent new items being added to the list above this threshold. Defaults to `0`.
 - **Confirm Deletes** - Enabling this will require item deletions to require a confirmation before being deleted. Defaults to `true`.
