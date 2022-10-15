@@ -13,15 +13,15 @@ It is also possible to use properties from the settings model by using `{{$setti
 
 As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the label field of block editors.
 
-| Filter                                                       | Description                     | Property type               | Parameters                                                   |
-| ------------------------------------------------------------ | ------------------------------- | --------------------------- | ------------------------------------------------------------ |
-| ncNodeName                                                   | Gets the name of a node         | Umbraco node                |                                                              |
-| ncRichText                                                   | Strips HTML                     | Richtext editor             |                                                              |
-| [limitTo](https://docs.angularjs.org/api/ng/filter/limitTo)  | Simple truncate                 | String                      | n: maximum length of the string                              |
-| [truncate](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:truncate) | Richer truncate function        | String                      | wordwise: boolean to indicaste whether to truncate a string mid-word or not<br />max: maximum length of the string<br />tail (optional): string to indicate a truncated string, "`…`" by default |
-| [umbWordLimit](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbWordLimit) | Truncates to a number of words  | String                      | n: maximum number of words in string                         |
-| [umbCmsTitleCase](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case | String                      |                                                              |
-| [umbCmsJoinArray](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string  | Array (of string or object) | separator: string used to join values together, e.g. "`, `"<br />prop (optional): string key indicating which property to join when used on an array of objects |
+| Filter                                                       | Description                                             | Property type               | Parameters                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------- | --------------------------- | ------------------------------------------------------------ |
+| ncNodeName                                                   | Gets the name of a node                                 | Umbraco node                |                                                              |
+| ncRichText                                                   | Strips HTML                                             | Richtext editor             |                                                              |
+| [limitTo](https://docs.angularjs.org/api/ng/filter/limitTo)  | AngularJS native truncate                               | String                      | n: maximum length of the string                              |
+| [truncate](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:truncate) | Umbraco's richer truncate function                      | String                      | wordwise: boolean to indicaste whether to truncate a string mid-word or not<br />max: maximum length of the string<br />tail (optional): string to indicate a truncated string, "`…`" by default |
+| [umbWordLimit](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbWordLimit) | Truncates to a number of words (rather than characters) | String                      | n: maximum number of words in string                         |
+| [umbCmsTitleCase](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case                         | String                      |                                                              |
+| [umbCmsJoinArray](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | separator: string used to join values together, e.g. "`, `"<br />prop (optional): string key indicating which property to join when used on an array of objects |
 
 ### Custom filters
 
