@@ -43,7 +43,7 @@ A new workflow can be of different types and Umbraco Forms ships with a few defa
 
 ### Update Type-specific Settings
 
-Once the Workflow Type has been selected, you will need to configure the workflow. There are settings depending on the type that has been selected.
+Once the Workflow Type has been selected, you will need to configure the workflow. There are different settings depending on the type that has been selected.
 
 To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
