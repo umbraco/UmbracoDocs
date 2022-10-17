@@ -79,7 +79,7 @@ Head over to your Azure Web App and find **Identity** under **Settings**:
 
 ![image](https://user-images.githubusercontent.com/11179749/196052374-cebcfbc3-848f-4866-8e0f-70a57e776f60.png)
 
-Under **System assigned** change the Status from Off to **On**
+Under **System assigned** change the Status from Off to **On**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052406-2205c1bc-504a-41be-86bf-81b1cabbc17f.png)
 
