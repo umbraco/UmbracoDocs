@@ -6,13 +6,13 @@ versionFrom: 7.7.0
 
 When configuring a block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: `My Block {{myPropertyAlias}}` will be shown as: `My Block FooBar`.
 
-You can also use more advanced expression using AngularJS filters, e.g. `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
+You can also use more advanced expressions using AngularJS filters. Example: `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
 
 It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
 
 ## Useful Angular filters
 
-As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the label field of block editors.
+As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the Label field of Block editors.
 
 | Filter                                                       | Description                                             | Property type               | Parameters                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------- | --------------------------- | ------------------------------------------------------------ |
@@ -26,7 +26,7 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 
 ### Custom filters
 
-If the above filters don't suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
+If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
 
 An example `package.manifest` file is:
 
