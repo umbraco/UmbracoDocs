@@ -136,7 +136,7 @@ Then paste in the following JSON Object inside the square brackets. Ensure you u
 ```
 The ID is optional but recommended as it enables you to control which version of the secret is used at your discretion. Leave it out if you always want the Web App to pull the latest version of the secret.
 
-Wait a moment and refresh the screen, you should see a Green tick. If you don't have a Green tick you need to review your Access Policies in the previous step.
+Wait a moment and refresh the screen. You should see a Green tick. If you do not have a Green tick you need to review your Access Policies in the previous step.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053419-f53feba2-b8ed-4b98-99f0-ee68f58ac8e4.png)
 
