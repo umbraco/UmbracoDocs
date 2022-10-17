@@ -298,6 +298,82 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 }
 ```
 
+You can create an `IValueSetBuilder` implementation that builds the value sets .
+
+
+### ProductIndexValueSetBuilder
+
+```c#
+using System.Collections.Generic;
+using Examine;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Infrastructure.Examine;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
+{
+    public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
+    {
+        public IEnumerable<ValueSet> GetValueSets(params IContent[] contents)
+        {
+            foreach (var content in contents)
+            {
+                var indexValues = new Dictionary<string, object>
+                {
+                    ["name"] = content.Name,
+                    ["id"] = content.Id,
+                };
+
+                yield return new ValueSet(content.Id.ToString(), "content", indexValues);
+            }
+        }
+    }
+}
+```
+
+You can also create an `IndexPopulator` implementation that populates the index with the value sets.
+
+### ProductIndexPopulator
+```c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Examine;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Infrastructure.Examine;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing
+{
+    public class ProductIndexPopulator : IndexPopulator
+    {
+        private readonly IContentService _contentService;
+        private readonly ProductIndexValueSetBuilder _productIndexValueSetBuilder;
+
+        public ProductIndexPopulator(IContentService contentService, ProductIndexValueSetBuilder productIndexValueSetBuilder)
+        {
+            _contentService = contentService;
+            _productIndexValueSetBuilder = productIndexValueSetBuilder;
+            RegisterIndex("ProductIndex");
+        }
+        protected override void PopulateIndexes(IReadOnlyList<IIndex> indexes)
+        {
+            foreach (var index in indexes)
+            {
+                var roots = _contentService.GetRootContent();
+
+                index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots.ToArray()));
+
+                foreach (var root in roots)
+                {
+                    var valueSets = _productIndexValueSetBuilder.GetValueSets(_contentService.GetPagedDescendants(root.Id, 0, Int32.MaxValue, out _).ToArray());
+                    index.IndexItems(valueSets);
+                }
+            }
+
+        }
+    }
+}
+```
+
 ### ProductComponent
 
 ```c#
@@ -341,6 +417,12 @@ public class ProductComposer : IUserComposer
     {
         composition.Components().Append<ProductComponent>();
         composition.RegisterUnique<ProductIndexCreator>();
+
+        //example of registering an IValueSetBuilder implementation
+        composition.RegisterUnique<ProductIndexValueSetBuilder>();
+
+        //example of registering an IIndexPopulator implementation
+        composition.Register<ProductIndexPopulator>(Lifetime.Singleton);
     }
 }
 ```

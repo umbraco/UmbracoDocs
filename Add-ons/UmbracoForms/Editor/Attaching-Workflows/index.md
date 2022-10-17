@@ -9,6 +9,10 @@ In this article, you can learn how to add extra functionality to your Form by at
 
 Workflows are a way of defining actions after your Form is submitted like sending an email or creating a content node.
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="Attaching Workflows to Umbraco Forms" src="https://www.youtube.com/embed/qJrf1drw1Bg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Default Workflow
 
 By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-Form/Form-Settings/index.md#settings-options) of the Forms settings.
@@ -17,13 +21,13 @@ The behaviour to display a message to the user that submitted the form, or to re
 
 ![Submit message/Go to page](MessageOnSubmit.png)
 
-If a value is selected for **Go to page** it will be used to issue a redirect to that page once the form has been submitted.
+If a value is selected for **Go to page**, it will be used to redirect to that page once the form has been submitted.
 
-If no value is selected, the message provided in **Message on submit** will be displayed to the user on the same page, instead of the form fields.  From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
+If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
 ## Adding a Workflow
 
-At the bottom of your Form, you can see which workflow is already attached to the Form, as well as an option to configure the workflows.
+At the bottom of your Form, a default workflow is already attached to the Form, as well as an option to configure the workflows.
 
 ![Button](images/configure-workflows.png)
 
@@ -39,7 +43,7 @@ A new workflow can be of different types and Umbraco Forms ships with a few defa
 
 ### Update Type-specific Settings
 
-Once the Workflow Type has been selected, you will need to configure the workflow. There are various settings depending on the type that has been selected.
+Once the Workflow Type has been selected, you will need to configure the workflow. There are different settings depending on the type that has been selected.
 
 To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
@@ -51,7 +55,7 @@ When a form is submitted, any workflows associated with the "submit" stage of th
 
 Similarly, approval of a form entry, whether automatic or manual, will trigger the execution of the workflows associated with the "approve" stage.
 
-If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form, recording the exception and other details of the failed operation to the log.
+If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form. The exception alongwith the other details of the failed operation is recorded to the log.
 
 From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
 
