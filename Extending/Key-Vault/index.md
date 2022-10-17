@@ -119,7 +119,7 @@ In your Azure Web App head to **Configuration** under **Settings**.
 
 Here we can add App Settings and Connection Strings to the environment. Let us start off with the Umbraco Database Connection String.
 
-Under Connection Strings, click **Advanced Edit**
+Under Connection Strings, select **Advanced Edit**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053130-8fb6c2b9-61c7-4c02-a419-8570174c6646.png)
 
