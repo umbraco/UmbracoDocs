@@ -38,5 +38,6 @@ To Enable Contained Database Authentication, run the following SQL against your 
 Once this is done you will be able to restore the database using the following steps:
 - Connect to your SQL Server using Sql Server Management Studio (SSMS).
 - Expand "Databases", right-click "Databases", select "Tasks", then select "Import Data-tier Application...".
-- Proceed through the dialog, setting the options appropriate to your situation, to restore the "bacpac" file. This is your database backup.
+- Proceed through the dialog, by browsing to the saved location of your bacpac file, and then setting the options appropriate to your coniguration
+- Complete the import dialog and the database will be restored.
 
