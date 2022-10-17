@@ -7,18 +7,27 @@ meta.Description: "In this article we list the breaking changes between Umbraco 
 # Breaking changes
 
 Most breaking changes are introduced due to updated dependencies. The breaking changes in .NET 7 and ASP.NET Core 7 are documented by [Microsoft](https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0).
+
 Besides the documented changes, we have also seen a few method signatures that are changed to support Nullable-Reference-Types.
 
 The breaking changes in TinyMCE are documented in the migration guides for [version 4 to 5](https://www.tiny.cloud/docs/migration-from-4x/) and from [version 5 to 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/).
 
-The breaking changes in Umbraco 11 are mainly the removal of classes, methods, etc. marked as obsolete in Umbraco 9.
-A few methods and classes have also been moved and changed namespace. Decoupled dependencies are documented on the [announcement repository](https://github.com/umbraco/Announcements/issues/5).
+The breaking changes in Umbraco 11 are mainly the removal of classes, methods, and to on, marked as obsolete in Umbraco 9.
+
+A few methods and classes have also been moved and changed namespace. Decoupled dependencies are documented on the [Umbraco Announcements repository](https://github.com/umbraco/Announcements/issues/5).
 
 The full list of API breaking changes can be found below:
 
-## Obsolete code removed
-The following have been removed after having been obsoleted since Umbraco 9.
+- [Obsolete code removed](#obsolete-code-removed)
+- [Code moved to new assemblies and namespaces](#code-moved-to-new-assemblies-and-namespaces)
+- [New interface methods](#new-interface-methods)
+- [No-Operation methods removed](#no-operation-methods)
+- [Classes that does not inherit from base type anymore](#classes-that-does-not-inherit-from-base-type-anymore)
+- [Changes due to models made immutable](#changes-due-to-models-made-immutable)
 
+## Obsolete code removed
+
+The following have been removed after having been obsoleted since Umbraco 9.
 
 - ```
   Umbraco.Extensions.ServiceCollectionExtensions.AddUnique<TImplementing>(Microsoft.Extensions.DependencyInjection.IServiceCollection)
@@ -465,8 +474,6 @@ The following have been removed after having been obsoleted since Umbraco 9.
   Umbraco.Cms.Tests.Common.Testing.TestOptionAttributeBase.ScanAssemblies
   ```
 
-
-
 ## Code moved to new assemblies and namespaces
 
 The following have been moved to new assemblies and their namespaces have been updated accordingly.
@@ -494,11 +501,10 @@ The following have been moved to new assemblies and their namespaces have been u
   Umbraco.Cms.Web.Common.DependencyInjection.ConfigurePhysicalFileSystemCacheOptions
   ```
 
-
-
-
 ## New interface methods
-A few interfaces have been merged, so the original interfaces have new members.
+
+A few interfaces have been merged, adding new members to the original interfaces.
+
 - ```
   Umbraco.Cms.Core.Services.IMacroService.GetAll(params string[])
   ```
@@ -522,13 +528,17 @@ A few interfaces have been merged, so the original interfaces have new members.
   ```
 
 ## No-Operation methods removed
-A method not doing anything for the last couple of major releases have been removed
+
+A method not doing anything for the last couple of major releases have been removed.
+
 - ```
   Umbraco.Cms.Core.Services.IMembershipMemberService<T>.SetLastLogin(string, System.DateTime)
   ```
 
 ## Changes due to models made immutable
-A single model have been made immutable, so the default constructor and the setters are not available anymore
+
+A single model have been made immutable, so the default constructor and the setters are not available anymore.
+
 - ```
   Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.ContentData()
   Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.Name.set
@@ -542,9 +552,10 @@ A single model have been made immutable, so the default constructor and the sett
   Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.CultureInfos.set
   ```
 
-
 ## Classes that does not inherit from base type anymore
-The following classes now directly inherit from OEmbedProviderBase instead of EmbedProviderBase
+
+The following classes now directly inherit from OEmbedProviderBase instead of EmbedProviderBase.
+
 - ```
   Umbraco.Cms.Core.Media.EmbedProviders.DailyMotion
   Umbraco.Cms.Core.Media.EmbedProviders.Flickr
