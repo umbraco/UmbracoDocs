@@ -25,7 +25,7 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 
 ### Custom filters
 
-If the above filters don't suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
+If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
 
 An example `package.manifest` file is:
 
