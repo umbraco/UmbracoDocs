@@ -11,7 +11,7 @@ It is also possible to use properties from the settings model by using `{{$setti
 
 ## Useful Angular filters
 
-As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the label field of block editors.
+As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the Label field of Block editors.
 
 | Filter                                                       | Description                                             | Property type               | Parameters                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------- | --------------------------- | ------------------------------------------------------------ |
