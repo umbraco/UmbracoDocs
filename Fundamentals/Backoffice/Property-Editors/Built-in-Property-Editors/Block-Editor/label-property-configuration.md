@@ -1,4 +1,5 @@
 ---
+versionFrom: 7.7.0
 ---
 
 # Configuring block editor label properties
