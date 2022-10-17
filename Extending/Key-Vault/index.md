@@ -71,7 +71,7 @@ There are different ways to access the Azure Key Vault. It is important that the
 
 ### Create a System Assigned Managed Identity
 
-To begin we first need to create a Managed Identity for your Azure Web App. This enables us to grant granualr permissions to an identity representing the Web App.
+To begin we first need to create a **Managed Identity** for the Azure Web App. This enables us to grant granular permissions to an identity representing the Web App.
 
 Head to your Azure Web App and find **Idenitiy** under **Settings**:
 
