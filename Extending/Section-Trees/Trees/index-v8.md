@@ -12,12 +12,12 @@ This section describes how to work with and create trees with the v8 APIs.
 
 To Create a Tree in a section of the Umbraco backoffice, you need to take several steps:
 
-Create a 'TreeController' class in C#. A new mvc controller which inherits from the abstract *Umbraco.Web.Trees.TreeController* class and provides an implementation for two abstract methods:
+Create a `TreeController` class in C#. A new mvc controller which inherits from the abstract `Umbraco.Web.Trees.TreeController` class and provides an implementation for two abstract methods:
 
-* GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure.
-* GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
+* GetTreeNodes (returns a `TreeNodeCollection`) - Responsible for rendering the content of the tree structure.
+* GetMenuForNode (returns a `MenuItemCollection`) - Responsible for returning the menu structure to use for a particular node within a tree.
 
-Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
+Decorate your `TreeController` with the `Tree` Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
 
 **For example**
@@ -30,7 +30,7 @@ public class FavouriteThingsTreeController : TreeController
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'
 
-The SortOrder controls the order of the custom tree within the Tree Group.
+The `SortOrder` controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
 Tree Groups are a new concept in V8, to enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
@@ -46,7 +46,7 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 
 ### Customising the Root Tree Node
 
-The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract *CreateRootNode* method.
+The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract `CreateRootNode` method.
 
 
 :::note
@@ -132,9 +132,9 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
 
 The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example clicking on one of the 'Favourite Things' in the custom tree example outlined above will trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
+For example clicking on one of the 'Favourite Things' in the custom tree example outlined above will trigger the loading of an 'edit.html' view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
 
-If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
+If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc `TreeController` with the `PluginController` attribute.
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
@@ -147,7 +147,7 @@ The edit view in the example would now be loaded from the location: `/App_Plugin
 
 #### Providing functionality in your Tree Action Views
 
-You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a *package.manifest* file in the same folder location as your views.
+You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a `package.manifest` file in the same folder location as your views.
 
 **For example**...
 
@@ -189,7 +189,7 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 It is possible to create 'trees' consisting of only a single node - perhaps to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
 (or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
 
-In both scenarios you need to override the *CreateRootNode* method for the custom tree.
+In both scenarios you need to override the `CreateRootNode` method for the custom tree.
 
 ```csharp
 [Tree("settings", "favouritistThingsAlias", TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
@@ -198,7 +198,7 @@ public class FavouritistThingsTreeController : TreeController
 { }
 ```
 
-Overriding the *CreateRootNode* method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
+Overriding the `CreateRootNode` method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
 
 ```csharp
 protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
