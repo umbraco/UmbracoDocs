@@ -4,7 +4,10 @@ versionFrom: 10.0.0
 
 # Migrating an Existing Site to Umbraco Cloud
 
-Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
+Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site.
+Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
+
+Migrating an existing site is not difficult, however it require some specific steps, and an understanding of how Umbraco Cloud deployments work, can be helpful.
 
 These are the steps you need to go through to complete the migration successfully:
 
@@ -93,7 +96,7 @@ In this next part, you are going to set up your Umbraco Cloud project and clone 
 
 Before the migration process can start, you will need to have a Umbraco Cloud project you can migrate your project into.
 
-![How to start a Umbraco Cloud trial](images/start-trial.gif)
+![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
 2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful
@@ -101,7 +104,9 @@ Before the migration process can start, you will need to have a Umbraco Cloud pr
 
 ![Manage environments](images/setup-dev-env.png)
 
-If you on your existing site have been working with members and made changes to the default Member Type, you must follow these steps on the Umbraco Cloud environments:
+Have you been working with members and made changes to the default Member Type on your existing site?
+
+Follow these steps on the Umbraco Cloud environment:
 
 1. Head to the backoffice of the Development environment
 2. Navigate to the *Settings* section
@@ -140,7 +145,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
     * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
 5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
-That's it! Now that you've merged your existing site with the local clone of the Cloud project, you need to make sure the project runs and verify that
+That's it! Now that you've merged your existing site with the local clone of the Cloud project, make sure the project runs and verify that
 
 * You can log in using your Umbraco ID user
 * All the content is there
@@ -215,4 +220,6 @@ Go to the backoffice of your Development environment and make sure all your meta
 
 **Voila!** You've now migrated your site to Umbraco Cloud.
 
-The very final step is to deploy the migration to the next environment - Staging or Live. You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice following the steps outlined above.
+The final step is to deploy the migration to the next environment - Staging or Live.
+
+You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice following the steps outlined above.
