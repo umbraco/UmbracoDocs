@@ -7,7 +7,7 @@ versionFrom: 10.0.0
 Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site.
 Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
 
-Migrating an existing site is not difficult, however it require some specific steps, and an understanding of how Umbraco Cloud deployments work, can be helpful.
+Migrating an existing site requires some specific steps and an understanding of how Umbraco Cloud deployments work can be helpful.
 
 These are the steps you need to go through to complete the migration successfully:
 
