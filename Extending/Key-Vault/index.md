@@ -127,7 +127,7 @@ You can obtain the Secret Uri by visitng the specific version of your secret and
 
 ![image](https://user-images.githubusercontent.com/11179749/196054001-cc215c04-d29c-435a-ae7b-6e8efb7f3faa.png)
 
-Then paste in the following JSON Object inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
+Paste in the following JSON Object inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
 ```json
 {
     "name": "umbracoDbDSN",
