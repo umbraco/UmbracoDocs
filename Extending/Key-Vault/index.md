@@ -87,7 +87,7 @@ A GUID will then be generated called **Object (principal) ID**. Take note of thi
 
 ### Update your Key Vault Access Policy
 
-It's assumed you already have a Key Vault set up with a few Umbraco secrets inside. In your Key Vault head to **Access Policies**.
+It is assumed you already have a Key Vault set up with a few Umbraco secrets inside. In your Key Vault head to **Access Policies**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052540-e1368016-ad7a-4b69-b05c-2875a4f11998.png)
 
