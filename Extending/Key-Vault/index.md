@@ -157,7 +157,7 @@ We will perform the same approach for our App Settings. We will be updating the 
 
 Due to the secrets being nested we need to use double underscore `__` to correctly reference the value on our Web App.
 
-On the Web App click **Advanced Edit** for Application Settings:
+On the Web App select **Advanced Edit** for Application Settings:
 ![image](https://user-images.githubusercontent.com/11179749/196053630-dd90f240-0116-4471-bf7e-73bdbcfcc28a.png)
 
 Then paste in the following JSON Objects inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
