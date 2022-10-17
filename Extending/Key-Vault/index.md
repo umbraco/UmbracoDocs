@@ -95,7 +95,7 @@ At the top select **+ Create**. We are now going to add the **System Managed Ide
 
 ![image](https://user-images.githubusercontent.com/11179749/196052612-e3b2041c-785f-46f5-b9b5-d8ad33b893ac.png)
 
-You will now be presented with various permissions to set for your Web App, we only need **Get** and **List** for **Secret Permissions** only. Click **Next** to continue:
+You will now be presented with different permissions to set for your Web App. You only need **Get** and **List** for **Secret Permissions** only. Click **Next** to continue:
 
 ![image](https://user-images.githubusercontent.com/11179749/196052668-124d1496-4486-4098-9198-eff809876c80.png)
 
