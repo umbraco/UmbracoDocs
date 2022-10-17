@@ -91,7 +91,7 @@ It's assumed you already have a Key Vault set up with a few Umbraco secrets insi
 
 ![image](https://user-images.githubusercontent.com/11179749/196052540-e1368016-ad7a-4b69-b05c-2875a4f11998.png)
 
-At the top click **+ Create** we are now going to add you System Managed Identity for our Web App to Key Vault.
+At the top select **+ Create**. We are now going to add the **System Managed Identity** for the Web App to Key Vault.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052612-e3b2041c-785f-46f5-b9b5-d8ad33b893ac.png)
 
