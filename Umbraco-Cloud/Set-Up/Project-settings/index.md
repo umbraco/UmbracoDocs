@@ -42,7 +42,7 @@ Used to upload and bind your custom security certificate to your hostnames inste
 ## Public access
 
 Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication.
-It require you to enter your Cloud credentials in order to view the frontend. 
+It requires you to enter your Cloud credentials in order to view the frontend. 
 
 You can disable/enable it with one click on the Public access page.
 
