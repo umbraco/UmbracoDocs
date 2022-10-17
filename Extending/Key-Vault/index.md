@@ -6,7 +6,9 @@ meta.Description: "A guide for configuring Azure Key Vault"
 
 # Configuring Azure Key Vault
 
-From a security perspective, it's always a good solution to store your application secrets (such as a connection string and others keys) in Azure Key Vault. This article tells you how to configure your application so that it's ready to use a Key Vault.
+From a security perspective, storing your application secrets in Azure Key Vault is always a good solution. This could be a connection string or other keys.
+
+This article tells you how to configure your application so it is ready to use a Key Vault.
 
 Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
