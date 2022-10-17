@@ -5,7 +5,7 @@
 
 When configuring a block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: `My Block {{myPropertyAlias}}` will be shown as: `My Block FooBar`.
 
-You can also use more advanced expression using AngularJS filters, e.g. `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
+You can also use more advanced expressions using AngularJS filters. Example: `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`.
 
 It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
 
