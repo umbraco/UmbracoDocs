@@ -83,7 +83,7 @@ Under **System assigned** change the Status from Off to **On**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052406-2205c1bc-504a-41be-86bf-81b1cabbc17f.png)
 
-A GUID will then be generated called **Object (principal) ID** take note of this ID. We will need it further on.
+A GUID will then be generated called **Object (principal) ID**. Take note of this ID as we will need it further on.
 
 ### Update your Key Vault Access Policy
 
