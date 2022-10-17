@@ -99,7 +99,7 @@ You will now be presented with different permissions to set for your Web App. Yo
 
 ![image](https://user-images.githubusercontent.com/11179749/196052668-124d1496-4486-4098-9198-eff809876c80.png)
 
-Enter the GUID we took note of earlier into the **Search Box**, you should see your Web App listed. 
+Enter the GUID you took note of earlier, into the **Search Box**. You will see your Web App listed. 
 
 ![image](https://user-images.githubusercontent.com/11179749/196052706-15431bf4-80ea-4bb7-b40e-ebda45264fb7.png)
 
