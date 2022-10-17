@@ -8,7 +8,7 @@ meta.Description: "A guide for configuring Azure Key Vault"
 
 From a security perspective, it's always a good solution to store your application secrets (such as a connection string and others keys) in Azure Key Vault. This article tells you how to configure your application so that it's ready to use a Key Vault.
 
-There are a few approaches to incorporate Azure Key Vault into your application, depending on your hosting situation.
+Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
 1. Install Key Vault via Nuget and retrieve your secrets directly in your Program.cs. (For most Hosting scenarios)
 2. Directly reference a secret in your Azure Web App Configuration Application Settings. (For Azure Web App Hosting)
