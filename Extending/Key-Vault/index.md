@@ -113,7 +113,7 @@ If you visit the **Access Policies** section again you should now see your web a
 
 ### Link our Key Vault Secret to an Azure Web App
 
-In your Azure Web App head to **Configuration** under **Settings**
+In your Azure Web App head to **Configuration** under **Settings**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053006-3a95fc5f-1038-4228-9ae4-467050ea5759.png)
 
