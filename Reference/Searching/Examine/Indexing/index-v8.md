@@ -298,8 +298,8 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
 }
 ```
 
-You can create an `IValueSetBuilder` implementation that builds the value sets for the index following the example [here](index.md/productindexvaluesetbuilder).
-You can also create an `IndexPopulator` implementation that populates the index with the value sets following the example [here](index.md/productindexpopulator).
+You can create an `IValueSetBuilder` implementation that builds the value sets for the index following the [example for Umbraco 9](index.md/#productindexvaluesetbuilder).
+You can also create an `IndexPopulator` implementation that populates the index with the value sets following the [example for Umbraco 9](index.md/#productindexpopulator).
 
 ### ProductComponent
 
