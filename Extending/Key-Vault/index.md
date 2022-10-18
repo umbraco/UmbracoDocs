@@ -12,8 +12,8 @@ This article tells you how to configure your application so it is ready to use a
 
 Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
-1. For most Hosting scenarios: Install Key Vault via Nuget and retrieve your secrets directly in your Program.cs.
-2. For Azure Web App Hosting: Directly reference a secret in your Azure Web App Configuration Application Settings.
+1. [For most Hosting scenarios: Install Key Vault via Nuget and retrieve your secrets directly in your Program.cs.](#installing-key-vault-via-nuget)
+2. [For Azure Web App Hosting: Directly reference a secret in your Azure Web App Configuration Application Settings.](#directly-reference-a-secret-in-azure-web-apps)
 
 ## Installing Key Vault via Nuget
 
