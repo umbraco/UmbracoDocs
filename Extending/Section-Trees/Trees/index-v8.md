@@ -17,20 +17,23 @@ Create a `TreeController` class in C#. A new mvc controller which inherits from 
 * GetTreeNodes (returns a `TreeNodeCollection`) - Responsible for rendering the content of the tree structure.
 * GetMenuForNode (returns a `MenuItemCollection`) - Responsible for returning the menu structure to use for a particular node within a tree.
 
-Decorate your `TreeController` with the `Tree` Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
+The `Tree` attribute used to decorate the `TreeController` has multiple properties.
 
+- `SectionAlias` - Alias of the section in which the tree appears
+- `TreeAlias` - Alias of the tree
+- `TreeTitle` - The title of the tree
+- `TreeGroup` - The tree group, the tree belongs to
+- `SortOrder` - Sort order of the tree
 
 **For example**
 
 ```csharp
-[Tree("settings", "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
+[Tree(SectionAlias = "settings", TreeAlias = "favouriteThingsAlias", TreeTitle = "Favourite Things Name", TreeGroup = "favouritesGroup", SortOrder = 5)]
 public class FavouriteThingsTreeController : TreeController
 { }
 ```
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'
-
-The `SortOrder` controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
 Tree Groups are a new concept in V8, to enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
@@ -46,7 +49,7 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 
 ### Customising the Root Tree Node
 
-The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract `CreateRootNode` method.
+The first node in the tree is referred to as the **Root Node**. You customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node.
 
 
 :::note

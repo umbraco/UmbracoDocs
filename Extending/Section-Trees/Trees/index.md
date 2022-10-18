@@ -20,7 +20,13 @@ Create a `TreeController` class in C#. A new controller which inherits from the 
 
 You will need to add a constructor as `TreeController` requires this. See full code snippet in the "Implementing the Tree" section below.
 
-Decorate your `TreeController` with the `Tree` Attribute, which is used to define the name of the section the Tree should be loaded in, which `Tree Group` it should belong to and also define an alias and title for your custom tree.
+The `Tree` attribute used to decorate the `TreeController` has multiple properties.
+
+- `SectionAlias` - Alias of the section in which the tree appears
+- `TreeAlias` - Alias of the tree
+- `TreeTitle` - The title of the tree
+- `TreeGroup` - The tree group, the tree belongs to
+- `SortOrder` - Sort order of the tree
 
 For example:
 
@@ -31,8 +37,6 @@ public class FavouriteThingsTreeController : TreeController
 ```
 
 The example above would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'.
-
-The `SortOrder` controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
 
