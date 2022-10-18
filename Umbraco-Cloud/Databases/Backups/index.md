@@ -36,7 +36,7 @@ Use the following steps:
 When you restore a bacpac to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true. If this is not set the import will fail.
 :::
 
-To Enable Contained Database Authentication, run the following SQL against your sql server on the Master database
+To Enable Contained Database Authentication, run the following SQL against your SQL server on the Master database.
 
     sp_configure 'contained database authentication', 1;  
     GO  
