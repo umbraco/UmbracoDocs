@@ -34,6 +34,7 @@ Use the following steps:
 
 :::note
 When you restore a bacpac to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true. If this is not set the import will fail.
+:::
 
 To Enable Contained Database Authentication, run the following SQL against your sql server on the Master database
 
@@ -43,7 +44,7 @@ To Enable Contained Database Authentication, run the following SQL against your 
     GO  
     
 For refrence please see [this article](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
-:::
+
 
 
 
