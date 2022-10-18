@@ -4,10 +4,12 @@ versionTo: 10.0.0
 ---
 
 # Sending Allowed Children Notification
-The `SendingAllowedChildrenNotification` enable you to manipulate the content types that will be shown in the create menu.
+
+The `SendingAllowedChildrenNotification` enables you to manipulate the content types that will be shown in the create menu when adding new content in the backoffice.
 
 ## Usage
-Example usage of the `SendingAllowedChildrenNotification` - for example show only the settings content type if none have been added yet.
+
+With the example below we can ensure that a content type cannot be selected if the type already exists in the Content tree.
 
 ```csharp
 using System.Linq;
