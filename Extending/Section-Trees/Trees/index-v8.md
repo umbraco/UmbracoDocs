@@ -49,7 +49,7 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 
 ### Customising the Root Tree Node
 
-The first node in the tree is referred to as the **Root Node**. You customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node.
+The first node in the tree is referred to as the **Root Node**. You customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node (single page app).
 
 
 :::note
@@ -200,8 +200,7 @@ In both scenarios you need to override the `CreateRootNode` method for the custo
 public class FavouritistThingsTreeController : TreeController
 { }
 ```
-
-Overriding the `CreateRootNode` method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
+You can override the `CreateRootNode` method to set the 'RoutePath' to where the single page application will live (or introduction page). Setting `HasChildren` to `false` will result in a Single Node Tree.
 
 ```csharp
 protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
