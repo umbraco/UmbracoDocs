@@ -134,7 +134,7 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
 
 The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example clicking on one of the 'Favourite Things' in the custom tree example outlined above will trigger the loading of an 'edit.html' view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
+Clicking on one of the 'Favourite Things' in the custom tree example will load an 'edit.html' view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
 
 If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the `App_Plugins` folder. You achieve this by decorating you mvc `TreeController` with the `PluginController` attribute.
 
