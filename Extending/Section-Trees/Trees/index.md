@@ -56,7 +56,7 @@ The language file should contain the following XML:
 
 ### Customising the Root Tree Node
 
-The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Node by overriding the abstract `CreateRootNode` method.
+The first node in the tree is referred to as the **Root Node**. You can customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node (single page app).
 
 [See Also: How to create your own custom section](../Sections/index.md)
 
