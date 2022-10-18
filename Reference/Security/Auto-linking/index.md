@@ -270,7 +270,7 @@ public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder
             memberAuthenticationBuilder =>
             {
                 memberAuthenticationBuilder.AddGoogle(
-                    // The scheme must be set with this method to work for the umbraco members
+                    // The scheme must be set with this method to work for the Umbraco members
                     memberAuthenticationBuilder.SchemeForMembers(GoogleMemberExternalLoginProviderOptions.SchemeName),
                     options =>
                     {

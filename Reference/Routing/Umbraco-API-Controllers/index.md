@@ -24,7 +24,7 @@ A great resource for getting started with creating web API's using .Net Core is 
 
 ## Web Api in Umbraco
 
-We've created a base api controller for developers to inherit from which will ensure that the api controller gets routed. Unlike V8, this does not expose any specific umbraco related services or objects, but does inherit from the .Net Core controller base, meaning you will have access to the same things you would from a regular .Net Core controller. Dependency injection is also available to controllers, so any Umbraco specific services or objects you might need can be injected in the constructor.
+We've created a base api controller for developers to inherit from which will ensure that the api controller gets routed. Unlike V8, this does not expose any specific Umbraco related services or objects, but does inherit from the .Net Core controller base, meaning you will have access to the same things you would from a regular .Net Core controller. Dependency injection is also available to controllers, so any Umbraco specific services or objects you might need can be injected in the constructor.
 
 The class to inherit from is: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`
 
