@@ -4,7 +4,8 @@ versionTo: 10.0.0
 ---
 
 # Sending Allowed Children Notification
-The `SendingAllowedChildrenNotification` enable you to manipulate the content types that will be shown in the create menu.
+
+The `SendingAllowedChildrenNotification` enables you to manipulate the content types that will be shown in the create menu when adding new content in the backoffice.
 
 ## Usage
 
