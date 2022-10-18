@@ -25,12 +25,14 @@ namespace Umbraco.Docs.Samples.Web.Notifications
             //try get the id from the content item in the back office 
             var queryStringCollection = HttpUtility.ParseQueryString(notification.UmbracoContext.OriginalRequestUrl.Query);
             
-            if (!queryStringCollection.ContainsKey("contentId"))
+            var contentIdKey = "contentId";
+
+            if (!queryStringCollection.ContainsKey(contentIdKey))
             {
                 return;
             }
 
-            var contentId = queryStringCollection["contentId"].TryConvertTo<int>().ResultOr(-1);
+            var contentId = queryStringCollection[contentIdKey].TryConvertTo<int>().ResultOr(-1);
 
             if (contentId == -1)
             {
