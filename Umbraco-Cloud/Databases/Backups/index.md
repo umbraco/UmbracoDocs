@@ -26,7 +26,14 @@ Follow these steps:
 
 ## Restoring a cloud backup to a SQL Server Database
 
-In order to restore a .bacpac file to a SQL Server database, you will need to first ensure that the SQL Server has has 'Contained Database Authentication' enabled. This is a security feature that is disabled by default, and without enabling it you will not be able to restore the database. For refrence please see [this article](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
+Use the following steps:
+- Connect to your SQL Server using Sql Server Management Studio (SSMS).
+- Expand "Databases", right-click "Databases", select "Tasks", then select "Import Data-tier Application...".
+- Proceed through the dialog, by browsing to the saved location of your bacpac file, and then setting the options appropriate to your coniguration
+- Complete the import dialog and the database will be restored.
+
+:::note
+When you restore a bacpac to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true. If this is not set the import will fail.
 
 To Enable Contained Database Authentication, run the following SQL against your sql server on the Master database
 
@@ -34,10 +41,9 @@ To Enable Contained Database Authentication, run the following SQL against your 
     GO  
     RECONFIGURE;  
     GO  
+    
+For refrence please see [this article](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
+:::
 
-Once this is done you will be able to restore the database using the following steps:
-- Connect to your SQL Server using Sql Server Management Studio (SSMS).
-- Expand "Databases", right-click "Databases", select "Tasks", then select "Import Data-tier Application...".
-- Proceed through the dialog, by browsing to the saved location of your bacpac file, and then setting the options appropriate to your coniguration
-- Complete the import dialog and the database will be restored.
+
 
