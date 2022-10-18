@@ -9,10 +9,6 @@ In this article, you can learn how to add extra functionality to your Form by at
 
 Workflows are a way of defining actions after your Form is submitted like sending an email or creating a content node.
 
-## Video Tutorial
-
-<iframe width="800" height="450" title="Attaching Workflows to Umbraco Forms" src="https://www.youtube.com/embed/qJrf1drw1Bg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Default Workflow
 
 By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-Form/Form-Settings/index.md#settings-options) of the Forms settings.
