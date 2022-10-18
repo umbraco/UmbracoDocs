@@ -24,7 +24,7 @@ Follow these steps:
 - Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
 
 
-## Restoring a cloud backup to a SQL Server Database
+## Restoring a Cloud backup to a SQL Server Database
 
 Use the following steps:
 - Connect to your SQL Server using Sql Server Management Studio (SSMS).
