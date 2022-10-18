@@ -7,7 +7,7 @@ versionTo: 9.0.0
 
 _Details of CRUD operations within Umbraco and how to interact with the data persisted in the database_
 
-The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .NET & C#.
+The intended audience for these reference pages are .NET developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .NET & C#.
 
 ## [Models](Models/index.md)
 Here you will find references for the models in the public api including the Content, ContentType, DataTypeDefinition, DictionaryItem, Language, Media, MediaType, Relation, RelationType, Task, TaskType and Template classes.
