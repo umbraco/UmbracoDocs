@@ -46,7 +46,7 @@ It requires you to enter your Cloud credentials in order to view the frontend.
 
 You can disable/enable it with one click on the Public access page.
 
-Access to disabling/enabling basic authentication requires your project to be on the Standard plan or higher.
+Access to manage the basic authentication requires your project to be on the Standard plan or higher.
 
 
 ## [Webhooks](../../Deployment/Deployment-webhook)
