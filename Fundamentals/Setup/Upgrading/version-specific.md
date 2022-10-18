@@ -12,7 +12,7 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 ## Version 9 to version 10
 
 :::warning
-**Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed SDK version is.
+**Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is.
 SDK version 6.0.300 is the one that includes .NET 6.0.5.
 At the time of writing, .NET 6.0.6 is out with an SDK version of 6.0.301.
 :::

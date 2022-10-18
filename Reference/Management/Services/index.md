@@ -13,7 +13,7 @@ Since the release of Umbraco 10, we will no longer be updating the articles in t
 You can find up-to-date code references for all Models in our [API Documentation](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Services.html).
 :::
 
-The intended audience for these reference pages are .NET developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .NET & C#.
+The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
 
 ## [AuditService](AuditService)
 
