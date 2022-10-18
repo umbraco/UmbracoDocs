@@ -71,6 +71,8 @@ There are different ways to access the Azure Key Vault. It is important that the
 
 ## Directly reference a secret in Azure Web Apps
 
+Azure Web Apps offers the ability to directly reference Key Vault secrets as App Settings. The benefit of this is you can securely store your secrets in Key Vault without any code changes required in your application.
+
 ### Create a System Assigned Managed Identity
 
 To begin we first need to create a **Managed Identity** for the Azure Web App. This enables us to grant granular permissions to an identity representing the Web App.
