@@ -45,7 +45,7 @@ To Enable Contained Database Authentication, run the following SQL against your 
     RECONFIGURE;  
     GO  
     
-For reference please see the [contained database authentication Server Configuration Option documentation](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
+For reference please see the [Microsoft documentation on the topic](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
 
 
 
