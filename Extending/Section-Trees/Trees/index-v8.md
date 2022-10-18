@@ -51,7 +51,6 @@ If you add your own alias, you'll need to add a translation key to `config/lang/
 
 The first node in the tree is referred to as the **Root Node**. You customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node (single page app).
 
-
 :::note
 In Umbraco 8 the `/config/trees.config` file has been removed.
 :::

@@ -209,7 +209,7 @@ You can instruct the Umbraco backoffice to load additional JavaScript resources 
 
 ...this manifest would load files for two controllers to work with the edit and delete views and a general resource file, perhaps containing code to retrieve, create, edit and delete 'favourite things' from some external non-Umbraco API.
 
-Our Tree Action View would then be wired to the loaded controller using the `ng-controller` attribute, perhaps the delete view would look a little bit like this:
+Our Tree Action View would then be wired to the loaded controller using the `ng-controller` attribute The delete view would perhaps the delete view look a little bit like this:
 
 ```csharp
 <div class="umb-dialog umb-pane" ng-controller="Our.Umbraco.FavouriteThings.DeleteController">
