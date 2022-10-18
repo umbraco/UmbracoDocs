@@ -64,7 +64,7 @@ This can be done by following these steps:
 1. Clean solution - This will delete the `wwwroot/umbraco` folder
 2. Add the following line into a property group element of your `csproj`-file
    - `<UmbracoWwwrootName>my-secret-loginpanel</UmbracoWwwrootName>`
-3. Build sulution - This will copy umbraco content into `wwwroot/my-secret-loginpanel`
+3. Build sulution - This will copy Umbraco content into `wwwroot/my-secret-loginpanel`
 4. Change the three keys in your configuration `Umbraco:CMS:Global:ReservedPaths`,`Umbraco:CMS:Global:UmbracoPath`, and `Umbraco:CMS:Global:IconsPath` to your new path:
 
 ```json

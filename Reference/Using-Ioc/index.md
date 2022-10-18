@@ -266,7 +266,7 @@ namespace IOCDocs.Services
         
         public IEnumerable<IPublishedContent> GetContentAtRoot()
         {
-            // Try and get the umbraco helper
+            // Try and get the Umbraco helper
             var success = _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
             if (success is false)
             {
@@ -274,7 +274,7 @@ namespace IOCDocs.Services
                 return null;
             }
             
-            // We got umbraco helper, now we can do something with it.
+            // We got Umbraco helper, now we can do something with it.
             return umbracoHelper.ContentAtRoot();
         }
     }
@@ -327,7 +327,7 @@ namespace IOCDocs.Services
             // Do stuff with the index
             if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
             {
-                throw new InvalidOperationException("Could not get umbraco context");
+                throw new InvalidOperationException("Could not get Umbraco context");
             }
 
             return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);

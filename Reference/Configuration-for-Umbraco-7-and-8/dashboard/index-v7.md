@@ -94,7 +94,7 @@ Example on permissions:
 In order to customize the dashboard in Umbraco, one needs to do a couple of things.
 
 :::note
-Older version can use a .net `UserControl`. See [creating dashboards with usercontrols](index-v6.md)
+Older version can use a .NET `UserControl`. See [creating dashboards with usercontrols](index-v6.md)
 :::
 
 ## Create an AngularJS View
