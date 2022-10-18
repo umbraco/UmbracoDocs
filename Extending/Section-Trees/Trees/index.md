@@ -176,7 +176,7 @@ public class FavouriteThingsTreeController : TreeController
 
 The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example clicking on one of the 'Favourite Things' in the custom tree example outlined above will trigger the loading of an `edit.html` view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
+Clicking on one of the 'Favourite Things' in the custom tree example will load an `edit.html` view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
 
 When creating a custom tree as part of a Umbraco package, it is recommended to change the location of the default folder. It should be changed to the `App_Plugins` folder. You achieve this by decorating your MVC `TreeController` with the `PluginController` attribute.
 
