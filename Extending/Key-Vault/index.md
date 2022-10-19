@@ -13,7 +13,7 @@ This article tells you how to configure your application so it is ready to use a
 Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
 1. [For most Hosting scenarios: Install Key Vault via Nuget and retrieve your secrets directly in your Program.cs.](#installing-key-vault-via-nuget)
-2. [For Azure Web App Hosting: Directly reference a secret in your Azure Web App Configuration Application Settings.](#directly-reference-a-secret-in-azure-web-apps)
+2. [For Azure Web App Hosting: Use Key Vault references for Azure App Service.](#use-key-vault-references-for-azure-app-service)
 
 ## Installing Key Vault via Nuget
 
@@ -69,7 +69,7 @@ There are different ways to access the Azure Key Vault. It is important that the
 1. Search for the user. 
 1. Click review + assign
 
-## Directly reference a secret in Azure Web Apps
+## Use Key Vault references for Azure App Service
 
 Azure Web Apps offers the ability to directly reference Key Vault secrets as App Settings. The benefit of this is you can securely store your secrets in Key Vault without any code changes required in your application.
 
@@ -191,4 +191,5 @@ Wait a moment and refresh the screen. You should see Green ticks for both values
 ### Staging/Production
 
 1. [Managed identities for Azure resources](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-6.0#use-managed-identities-for-azure-resources)
-1. [X.509 certificate for non-Azure-hosted apps](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-6.0#use-application-id-and-x509-certificate-for-non-azure-hosted-apps)
+2. [X.509 certificate for non-Azure-hosted apps](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-6.0#use-application-id-and-x509-certificate-for-non-azure-hosted-apps)
+3. [Use Key Vault references for App Service and Azure Functions](https://learn.microsoft.com/en-us/azure/app-service/app-service-key-vault-references)
