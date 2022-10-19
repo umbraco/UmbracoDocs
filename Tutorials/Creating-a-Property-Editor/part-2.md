@@ -140,4 +140,4 @@ Here we can use the configuration directly in our HTML instead, where we use it 
 <div id="wmd-preview-{{model.alias}}" ng-show="{{model.config.preview}}" class="wmd-panel wmd-preview"></div>
 ```
 
-[Next - Integrating services with a property editor](part-3-v8.md)
+[Next - Integrating services with a property editor](part-3.md)

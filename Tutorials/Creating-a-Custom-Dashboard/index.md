@@ -14,7 +14,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](images/whatisadashboard-v10.jpg)
+![Welcome dashboard](images/whatisadashboard-v8.PNG)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -241,7 +241,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
 
-![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v10.png)
+![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v8.png)
 
 :::note
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
@@ -342,7 +342,7 @@ Finally we can now update our view to incorporate the current user's name in our
 <h1><localize key="welcomeDashboard_heading">Default heading</localize> {{vm.UserName}}</h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v10.png)
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v1.png)
 
 ## I know what you did last Tuesday
 
@@ -513,7 +513,7 @@ Finally update our view to use the additional retrieved entity information:
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v10.png)
+![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v8.png)
 
 :::note
 The url /umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
@@ -540,7 +540,7 @@ Add the following to our view:
 
 Where 1065, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
+![Handy shortcut buttons](images/CreateNewBlogPost-v8.png)
 
 At this point we are done with the tutorial, your files should contain this:
 

@@ -20,13 +20,13 @@ To add a new language, follow these steps:
 3. Click **Add Language**. The **Add Language** window opens in the editor.
 4. Select a **Language** from the dropdown list. In this tutorial, we will pick *Danish*.
 
-   ![Adding the Danish language](images/adding-danish-language-v10.png)
+   ![Adding the Danish language](images/adding-danish-language.png)
 5. In **Settings**, select the following options to set the new language as the:
     - Default language for your site, toggle **Default Language**.
     - Mandatory language for your site, toggle **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
 
-    ![Adding a Fallback language](images/fallback-language-v10.png)
+    ![Adding a Fallback language](images/fallback-language.png)
 7. Click **Save**.
 
 ### Adding Multiple Languages
@@ -43,7 +43,7 @@ We can add multiple languages depending on our website requirements. In the prev
     - Select **Danish** from the **Fallback Language** drop-down list.
     - Click **Save**.
 
-   ![Adding a Fallback language](images/Language-variants-v10.png)
+   ![Adding a Fallback language](images/Language-variants.png)
 
 ### Changing the Default Language of a Website
 
@@ -52,7 +52,7 @@ To change the default language of a website:
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
 3. Toggle **Default Language**.
-    ![Change default language](images/change-default-language-v10.png)
+    ![Change default language](images/change-default-language.png)
 4. Click **Save**.
 
 ### Changing the Default Backoffice Language of a User

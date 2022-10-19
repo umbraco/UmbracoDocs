@@ -23,7 +23,7 @@ Learn how to:
 1. In the **Settings** section, expand **Document Types**.
 2. Click on *Blogpost*. This is the Document Type that defines the fields for this type of page.
 
-    ![Blogpost Document Type](images/Blogpost-Document-Type-v10.png)
+    ![Blogpost Document Type](images/Blogpost-Document-Type.png)
 
 3. The Document Type contains 2 groups: *Content* and *Navigation & SEO*.
     * At the bottom of the *Content* group select **Add property**.
@@ -40,7 +40,7 @@ Learn how to:
 7. In the validation section, enable the field to make it mandatory.
 8. Submit to close the dialog and save the property.
 
-    ![Property settings](images/property-settings-v10.png)
+    ![Property settings](images/property-settings.png)
 
 9. Select the **Reorder** option near the top-right of the window, then drag the new property to be after *Page Title*.
     * A logical order to your properties will make things easier for your editors.

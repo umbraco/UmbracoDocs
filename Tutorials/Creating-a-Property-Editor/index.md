@@ -221,4 +221,4 @@ When we save or publish, the value of the editor is automatically synced to the 
 
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
-[Next - Adding configuration to a property editor](part-2-v8.md)
+[Next - Adding configuration to a property editor](part-2.md)

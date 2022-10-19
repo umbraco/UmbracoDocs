@@ -32,7 +32,7 @@ Contact your system administrator for details regarding your editor.
 
 By default, the following editor styles are available. Your system administrator can determine the styles displayed in different templates. You might have access to more or fewer styles than those shown here.
 
-![Editor Bar](images/editorBar-v9.jpg)
+![Editor Bar](images/editorBar.jpg)
 
 ## Rich Text Editor Functionality
 

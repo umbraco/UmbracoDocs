@@ -44,7 +44,7 @@ At this point you should have several root nodes, where each is a separate websi
     In Umbraco 9 and below, this option is called **Culture and Hostnames**.
     :::
 
-    ![Culture and hostnames](images/2-culturehostnames-v10.png)
+    ![Culture and hostnames](images/2-culturehostnames.png)
 
 4. In the **Domains** pane, click **Add new Domain**.
 5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list.
@@ -53,7 +53,7 @@ At this point you should have several root nodes, where each is a separate websi
     If  you have a multilanguage solution, you can map different hostnames to specific languages.
     :::
 
-    ![Culture and hostnames](images/3-culturehostnamesp2-v10.png)
+    ![Culture and hostnames](images/3-culturehostnamesp2.png)
 
 6. Click Save, and that should do it!
 
