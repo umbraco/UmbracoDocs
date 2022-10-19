@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
 product: "UmbracoCms"
 complexity: "Intermediate"
 audience: "Developers"
@@ -10,111 +9,79 @@ meta.Description: "An Umbraco API Controller is an ASP.NET WebApi controller tha
 
 # Controllers in Umbraco
 
-Umbraco contains different types of controllers to perform different tasks:
-
-- [Render MVC Controllers](#render-mvc-controllers)
-- [Surface Controllers](#surface-controllers)
-- [Umbraco API Controllers](#umbraco-api-controllers)
-- [Umbraco Authorized Controllers and Attributes](#umbraco-authorized-controllers-and-attributes)
+_There are a few types of controllers in Umbraco that perform different tasks_.
 
 ## Render MVC Controllers
 
-When you make a page request to the MVC application, a controller is responsible for returning the response to that request. The controller can perform one or more actions.
+These are the controllers that get executed when rendering content during an Umbraco route.
 
-By default, all front-end requests to an Umbraco site are auto-routed via the *Index* action of a core Controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`.
+These controllers are of type `Umbraco.Web.MVC.RenderMvcController`.
 
-For details on using Render MVC Controllers, see the [Controller & Action Selection](../Default-Routing/Controller-Selection/) article.
+See [Controller & Action Selection for details on using these controllers](../Default-Routing/Controller-Selection/)
 
 ## Surface Controllers
 
-A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering view components and for handling Form data submissions.
-SurfaceControllers are auto-routed which means you don't have to add/create your own routes for these controllers to work.
+A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering MVC Child Actions and for handling form data submissions.
+SurfaceControllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work.
 
-All implementations of Surface Controllers inherit from the base class: `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
+All implementations of SurfaceControllers inherit from the base class `Umbraco.Web.Mvc.SurfaceController`.
 
-For details on using Surface Controllers, see the [Surface Controllers](../../Reference/Routing/Surface-Controllers/index.md) article.
+See [Reference documentation on SurfaceControllers for full details](../../Reference/Routing/Surface-Controllers/index.md)
 
-## Umbraco API Controllers
+## Umbraco Api Controllers
 
-An Umbraco API Controller is an ASP.NET WebAPI controller that is used for creating REST services. These controllers are auto-routed which means that you don't have to add/create your own routes for these controllers to work.
+An Umbraco API Controller is an ASP.NET WebApi controller that is used for creating REST services. These controllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work.
 
-All implementations of Umbraco API Controllers inherit from the base class: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`.
+All implementations of Umbraco Api Controllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
 
-For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../../Reference/Routing/Umbraco-API-Controllers/index.md) article.
+See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/Umbraco-API-Controllers/index.md)
 
 ## Umbraco Authorized Controllers and Attributes
 
-An Umbraco Authorized Controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the `authN` or `authZ` fail, the controller will return a `401 - unauthorized response`.
+An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."
 
 ### Backoffice Authorization
 
-The Umbraco Authorized controllers and attributes for Backoffice Users are:
+The Umbraco Authorized controllers and attributes for backoffice users are:
 
-- **MVC**
+#### MVC
 
-     A base class implementation for backoffice authorized controllers is inherited from: `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.
+Any MVC Controller or Action that is attributed with `Umbraco.Web.Mvc.UmbracoAuthorizeAttribute` will authenticate the request for a backoffice user. A base class implementation that already exists with this attribute is: `Umbraco.Web.Mvc.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.  See [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md) for more details on routing requirements.
 
-- **WebAPI**
+#### WebApi
 
-    A base class implementation for authorized auto-routed Umbraco API controllers is inherited from: `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This controller inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Cms.Web.Common.Attributes.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
+Any WebApi Controller or Action that is attributed with `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute` will authenticate the request for a backoffice user.
 
-    Another common base class implementation for the backoffice is `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
+A base class implementation that already exists with this attribute is: `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Since this controller inherits from `Umbraco.Web.WebApi.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Web.WebApi.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
-For more details on Routing requirements, see the [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md) article.
+Another common base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
 
 ### Members & Front-end Authorization
 
 Authorizing a controller for a front-end member is achieved with attributes:
 
-- `Umbraco.Cms.Web.Common.Filters.UmbracoMemberAuthorizeAttribute` - Ensures authorization is successful for a website user (member).
-- `Umbraco.Cms.Web.Common.Filters.UmbracoMemberAuthorizeFilter` - Ensures authorization is successful for a front-end member
+* `Umbraco.Web.Mvc.MemberAuthorizeAttribute` - for MVC controllers
+* `Umbraco.Web.WebApi.MemberAuthorizeAttribute` - for WebApi controllers
 
 You can attribute your controller or action with this attribute which will ensure that a member must be logged in to access the resource. An example:
 
 ```csharp
-using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Logging;
-using Umbraco.Cms.Core.Routing;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Infrastructure.Persistence;
-using Umbraco.Cms.Web.Common.Filters;
-using Umbraco.Cms.Web.Website.Controllers;
-
-namespace UmbracoProject.Controller
+[MemberAuthorize]
+public class AccountController : SurfaceController
 {
-    [UmbracoMemberAuthorize]
-    public class AccountController : SurfaceController
+    [HttpPost]
+    public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
     {
-        public AccountController(
-                IUmbracoContextAccessor umbracoContextAccessor,
-                IUmbracoDatabaseFactory databaseFactory,
-                ServiceContext services,
-                AppCaches appCaches,
-                IProfilingLogger profilingLogger,
-                IPublishedUrlProvider publishedUrlProvider)
-                : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-            {
-            }
-
-        [HttpPost]
-        public IActionResult UpdateAccountInfo(AccountInfo accountInfo)
-        {
-            // TODO: Update the account info for the current member
-        }
+        // TODO: Update the account info for the current member
     }
 }
 ```
 
-The `UmbracoMemberAuthorizeAttribute()` and `UmbracoMemberAuthorizeFilter()` contain the following properties to provide control over the authorization process for which members can access the resource:
+There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
 
-- `AllowType` - Comma delimited list of allowed member types.
-- `AllowGroup` - Comma delimited list of allowed member groups.
-- `AllowMembers` - Comma delimited list of allowed members.
-
-For more details, see the [Using MemberAuthorizeAttribute](../../Reference/Routing/Umbraco-API-Controllers/authorization.md#using-memberauthorizeattribute) section in the Umbraco API - Authorization article.
+* `AllowType` - Comma delimited list of allowed member types
+* `AllowGroup` - Comma delimited list of allowed member groups
 
 ### Routing
 
-For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../../Reference/Routing/Umbraco-API-Controllers/authorization.md) article.
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/Umbraco-API-Controllers/authorization.md).
