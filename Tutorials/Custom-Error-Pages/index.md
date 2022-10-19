@@ -104,14 +104,16 @@ In order to customize this error page it is recommend that you create a **new HT
 :::note
 The `BootFailed.html` page will only be shown if debugging is disabled in `appsettings.json` i.e.
 
-```json  
-"Umbraco": {
-    "CMS": {
-      "Hosting": {
-        "Debug": false
-      }
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Hosting": {
+                "Debug": false
+            }
+        }
     }
-  }
+}
 ```
 
 The full error can always be found in the log file.
