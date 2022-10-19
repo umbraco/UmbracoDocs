@@ -14,8 +14,6 @@ The **Block Grid** property editor enables editors to layout their content in th
 :::note
 The Blog Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
 
-[Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-11-release-candidate/).
-
 **Do you have some feedback after testing the feature?**
 
 Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to report your findings. We appreciate any help we get in making our products better.
