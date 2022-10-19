@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 # Setting the Navigation Menu
 
@@ -15,61 +14,25 @@ To create dynamic navigation links from published content nodes, follow these st
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Locate the `<!-- Navigation -->` tag (around line 22).
-4. Right below it, place the cursor on an empty line.
-5. Select **Query builder...** in the top-right side of the editor.
-6. Make sure it is set to say *"I want all content from my website"*.
-7. Click **Submit**.
+3. Go to the `<!-- Navigation -->` tag (around line 20) and use the following code:
 
-You now have the following snippet in your **Master** Template:
-
-```csharp
-@{
-	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-    .Children()
-    .Where(x => x.IsVisible());
-}
-<ul>
-	@foreach (var item in selection)
-	{
-		<li>
-			<a href="@item.Url()">@item.Name()</a>
-		</li>
-	}
-</ul>
-```
-
-This snippet will now need to be merged with the navigation above it.
-
-The `<ul>` tag needs to be wrapped inside the `<class>` and `<nav>` tags, and the classes need to be added to the correct tags as well.
-
-The final result will look like this:
-
-```csharp
-    @{
-        var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-        .Children()
-        .Where(x => x.IsVisible());
+    ```csharp
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage
+    @using Umbraco.Web;
+    @{ 
+        var site = Model.Root();
+        var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
     }
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="navbar navbar-expand navbar-light">
-            <a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
-            <!-- Links -->
-        <ul class="navbar-nav">
-            @foreach (var item in selection)
-            {
-                <li class="nav-item">
-                    <a href="@item.Url()" class="nav-link" >@item.Name()</a>
-                </li>
-            }
-        </ul>
 
-        </nav>
-    </div>
-```
+    <!-- uncomment this line if you want the site name to appear in the top navigation -->
+    <!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
 
-The final step is to **Save** the **Master** template.
+    @foreach (var item in selection)
+    {
+        <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    }
+    ```
+4. Click **Save**.
 
 ## Hardcode Navigation
 
@@ -77,7 +40,7 @@ To add a basic hardcoded navigation, follow these steps:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Go to the `<!-- Navigation -->` tag (around line 22), copy the content within the <div> tags (around line 23 to 45) and replace it with the following code:
+3. Go to the `<!-- Navigation -->` tag (around line 20) and update your code to look like:
 
     ```html
     <div class="container">

@@ -2,7 +2,6 @@
 meta.Title: "Editors Manual for Umbraco 8"
 meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Editor's Manual

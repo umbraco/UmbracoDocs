@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 # Displaying the Document Type Properties
 
@@ -18,21 +17,21 @@ To set the Document Type properties:
 
 1. Go to **Settings**.
 2. Select **Templates** in the **Templating** section, and open the **Homepage** template.
-3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 46) and highlight the text `“Welcome - UmbracoTV”` (around line 49).
-    ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v9.png)
+3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 48) and highlight the text `“Welcome - UmbracoTV”`.
+    ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v8.png)
 4. Click **Insert** and select **Value**.
 5. Select **pageTitle** field from the drop-down list.
-    ![Umbraco Page Field](images/figure-19-umbraco-page-field-v9.png)
+    ![Umbraco Page Field](images/figure-19-umbraco-page-field-v8.png)
 6. Click **Submit**.
-7. Repeat the same process for the content between the `<div class="container">` tags (around line 61 to 78):
+7. Repeat the same process for the content between the `<div class="container">` tags (around line 60 to 77):
     1. Highlight the content as shown in the figure.
-    ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v9.png)
+    ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field-v8.png)
     2. Click **Insert** and select **Value**.
     3. Select **bodyText** field from the drop-down list.
     4. Click **Submit**.
-8. Repeat the same process for the content in the `<div class="container-fluid footer">` tag (around line 149 to 182):
+8. Repeat the same process for the content in the `<div class="container-fluid footer">` tag (around line 147 to 180):
     1. Highlight the content between the `<div class="container">` tags.
-    ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v9.png)
+    ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text-v8.png)
     2. Click **Insert** and select **Value**.
     3. Select **footerText** field from the drop-down list.
     4. Click **Submit**.

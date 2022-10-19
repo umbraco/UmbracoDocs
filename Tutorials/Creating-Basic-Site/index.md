@@ -1,13 +1,10 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 product: "CMS"
 meta.Title: "Creating a Basic Website using Umbraco"
 meta.Description: "A guide to creating a Basic Website using Umbraco"
 ---
 # Creating a Basic Website using Umbraco
-
-_This tutorial was last tested on **Umbraco 10.0.0+**_
 
 ## Introduction
 

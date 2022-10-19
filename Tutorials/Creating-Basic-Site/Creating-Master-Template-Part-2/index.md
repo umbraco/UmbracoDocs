@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 # Creating Pages and Using the Master Template - Part 2
 
@@ -11,7 +10,7 @@ We are now going to create a page where we put our contact details. For added fu
 Some potential solutions:
 
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
-* Build your own contact form using [Surface Controllers](../../../Fundamentals/Code/Creating-Forms/index.md) or view the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
+* Build your own contact form using [Surface Controllers](../../../Reference/Templating/Mvc/Forms/index.md#creating-the-surfacecontroller-action) or view the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
 
 ### Creating the Document Type and Template
 
@@ -86,11 +85,11 @@ To add the Document Type properties:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Simple Content Page** template.
-3. Scroll to the `<!-- Jumbotron, w title -->` (around line 8) section and highlight the text `“Umbraco Support”` (around line 11).
+3. Scroll to the `<!-- Jumbotron, w title -->` (around line 7) section and highlight the text `“Umbraco Support”`.
 4. Click **Insert** and select **Value**.
 5. Select the **pageTitle** field from the drop-down list and click **Submit**.
 6. Repeat the same process for the `<div class="container">` tag:
-    1. Highlight the content from the `<p>` tag (around line 19) to the end of the `</p>` tag (around line 22).
+    1. Highlight the content from the `<p>` tag (around line 17) to the end of the `</p>` tag (around line 20).
     2. Click **Insert** and select **Value**.
     3. Select **bodyText** field from the drop-down list.
     4. Click **Submit**.
@@ -114,13 +113,13 @@ To use the Document Type properties from the homepage, do the following:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Highlight `@Model.Value("footerText")` in the footer (around line 52) and click **Insert**.
-4. Select **Value** and choose the **footerText** again from the **Choose field** dropdown.
+3. Highlight `@Model.Value("footerText")` in the footer (around line 51) and click **Insert**.
+4. Select **Value** and choose the footerText again from the **Choose field** dropdown.
 5. Select **Yes, make it recursive** checkbox. This notifies Umbraco to look up the content tree if the field doesn't exist at the node level for the page we're requesting.
 6. Click **Submit**.
 7. Click **Save**.
 
-Reload the *Contact Us* page to view the content with the footer.
+Reload the Contact Us page to view the content with the footer.
 
 ---
 

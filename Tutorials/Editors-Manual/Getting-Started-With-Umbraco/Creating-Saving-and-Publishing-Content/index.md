@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Creating, Saving and Publishing Content Options

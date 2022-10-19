@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 # Articles and Article Items - A Parent Page with Infinite Children
@@ -23,7 +22,7 @@ To create **Articles Main** Document Type, follow these steps:
 
     | Group | Field Name         | Alias            | Data Type        |
     |-------|--------------------|------------------|------------------|
-    | Intro | Articles Title     | articlesTitle    | Textstring       |
+    | Intro | Articles Title     | articlesTitle    | TextBox          |
     | Intro | Articles Body Text | articlesBodyText | Rich Text Editor |
 
     ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png)
@@ -41,7 +40,7 @@ To create **Articles Item** Document Type, follow these steps:
 
     | Group   | Field Name      | Alias          | Data Type        |
     |---------|-----------------|----------------|------------------|
-    | Content | Article Title   | articleTitle   | Textstring       |
+    | Content | Article Title   | articleTitle   | TextBox          |
     | Content | Article Content | articleContent | Rich Text Editor |
 
     ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png)
@@ -75,15 +74,15 @@ To add a content node:
 1. Go to **Content**.
 2. Select **...** next to the **HomePage** and select **Articles Main**.
 3. Enter the name for the article. We are going to call it _Articles_.
-4. Enter the **Article Title**, **Article Content**, and click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
+4. Enter the **Article Title**, **Article Content**, and click **Save**.
+   When you click on Save, you will notice an empty list view is created.
 
    We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
 
    :::tip
     If you do not see the list view, try refreshing the page.
    :::
-   
-5. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
+5. Let's add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
 
     ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
 
@@ -98,50 +97,47 @@ To update the **Articles Main** template, follow these steps:
 5. Copy the contents of **Blog.html** and paste the content into **Articles Main** below the closing curly brace "}".
 
     :::warning
-    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
+    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
-    
-6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
-7. Remove everything from the `<!-- Footer -->` tag (around line 84) to the end of the `</html>` tag (around line 131)
-8. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to **_articlesTitle_**.
-9. Replace the static text within the `<div>` tags (from line 24 to 30) with the Model.Value reference to **_articlesBodyText_**.
+6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
+7. Remove everything from the `<!-- Footer -->` tag (around line 92) to the end of the `</html>` tag (around line 139)
+8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articlesTitle_**.
+9. Replace the static text within the `<div>` tags (from line 22 to 28) with the Model.Value reference to **_articlesBodyText_**.
 
-    ![Articles Main Template](images/articles-main-template-v9.png)
-10. Define a query for all articles, just below the `<h3>` tag (around line 32) of the `<!-- Latest blog posts -->` section.
+    ![Articles Main Template](images/articles-main-template.png)
+10. Define a query for all articles, just below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
 
-    ![Query Builder](images/query-builder-v9.png)
+    ![Query Builder](images/query-builder.png)
 11. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
 
     ![Query parameters](images/query-parameters.png)
 12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template.
     It will look similar to this:
 
-```csharp
-
-@{
-    var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
-    .ChildrenOfType("articlesItem")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate);
-}
-<ul>
-    @foreach (var item in selection)
-    {
-        <li>
-            <a href="@item.Url()">@item.Name()</a>
-        </li>
+    ```csharp
+    @{
+        var selection = Umbraco.Content(Guid.Parse("c5ed4ea3-f9ea-4c37-a798-fe7892c98b95"))
+        .ChildrenOfType("articlesItem")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate);
     }
-</ul>
-
-```
+    <ul>
+        @foreach (var item in selection)
+        {
+            <li>
+                <a href="@item.Url">@item.Name</a>
+            </li>
+        }
+    </ul>
+    ```
 
 13. The above code will output a list of all the **_Article Items_** as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
     ```csharp
     <article class="special">
-        <div class="articledate" > @item.CreateDate </div>
-        <div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
-        <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
+            <div class="articledate" > @item.CreateDate </div>
+            <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+            <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url">Read More..</a></div>
     </article>
     ```
 
@@ -156,15 +152,14 @@ To update the **Articles Item** template, follow these steps:
 5. Copy the contents of **Blogpost.html** and paste the content into **Articles Item** below the closing curly brace "}".
 
     :::warning
-    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesItem>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
+    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
     :::
-    
-6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
-7. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
-8. Replace the static text within the `<h1>` tags (around line 14) with the Model.Value reference to **_articleTitle_**.
-9. Replace the static text within the `<div>` tags (from line 26 to 41) with the Model.Value reference to **_articleContent_**.
+6. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
+7. Remove everything from the `<!-- Footer -->` tag (around line 104) to the end of the `</html>` tag (around line 151)
+8. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to **_articleTitle_**.
+9. Replace the static text within the `<div>` tags (from line 23 to 38) with the Model.Value reference to **_articleContent_**.
 
-    ![Articles Item Template](images/articles-item-template-v9.png)
+    ![Articles Item Template](images/articles-item-template.png)
 10. Click **Save**.
 
 Check your browser, you should now see something similar to the screen below.

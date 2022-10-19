@@ -1,178 +1,131 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 
 
 # Integrating services with a property editor
 
 ## Overview
-
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `notificationsService` to show a dialog with a custom view when you click in a textbox and the content is longer than 35 characters.
+This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the `editorService` to hook into a Media picker and return image data to the markdown editor.
 
 ## Injecting the service
-
-First up, we need to get access to the service. This is done in the `suggestion.controller.js`, where we add it as a parameter:
+First up, we need to get access to the service. This is done in the constructor of the controller, where we add it as a parameter:
 
 ```javascript
 angular.module("umbraco")
-    .controller("SuggestionPluginController",
+    .controller("My.MarkdownEditorController",
     // inject Umbraco's assetsService and editor service
-    function ($scope, notificationsService) { ... }
+    function ($scope, assetsService, $timeout, editorService) { ... }
 ```
 
-## Hooking into Textbox
+This works the same way as with the `assetsService` we added in step 1.
 
-To hook the service with the textbox, we will use the `add` method of the notificationsService. This will be used to render our own view by setting the view property. We will also pass an `args` object which contains the Property Value and a callback function that we are going to call from our notification.
+## Hooking into pagedown
+The markdown editor we are using has a nice event system in place, so we can hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 
 ```javascript
-// function to show custom notification
-$scope.showNotification = function () {
-        if ($scope.model.value.length > 35) {
-            notificationsService.add({
-                // the path of our custom notification view
-                view: "/App_Plugins/Suggestions/notification.html",
-                // arguments object we want to pass to our custom notification
-                args: {
-                    value: $scope.model.value,
-                    callback: $scope.TrimText
-                }
-            });
-        }
-    };
+// Start the editor
+var converter2 = new Markdown.Converter();
+var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
+editor2.run();
+
+// subscribe to the image dialog clicks
+editor2.hooks.set("insertImageDialog", function (callback) {
+        // here we can intercept our own dialog handling
+
+        return true; // tell the editor that we'll take care of getting the image url
+    });
+});
 ```
 
-The callback is used to return data to the editor.
+Notice the callback, this callback is used to return whatever data we want to the editor.
 
-Now that we have access to the editor events, we will trim the text to a length of 35.
-
+So now that we have access to the editor events, we will trigger a media picker dialog, by using the `editorService`. We can inject whatever HTML we want with this service, but it also has a number of shorthands for things like a media picker. So at this point your controller should look like this:
 ```javascript
-   $scope.TrimText = function () {
-        $scope.model.value = $scope.model.value.substring(0, 35);
-    };
-   
+angular.module("umbraco")
+    .controller("My.MarkdownEditorController",
+        // inject umbracos assetsService
+        function ($scope, assetsService, $timeout, editorService) {
+
+            if ($scope.model.value === null || $scope.model.value === "") {
+                $scope.model.value = $scope.model.config.defaultValue;
+            }
+
+            // tell the assetsService to load the markdown.editor libs from the markdown editors
+            // plugin folder
+            assetsService
+                .load([
+                    "~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
+                    "~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
+                    "~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
+                ])
+                .then(function () {
+                    // this function will execute when all dependencies have loaded
+                    $timeout(function () {
+                        var converter2 = new Markdown.Converter();
+                        var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
+                        editor2.run();
+
+                        // subscribe to the image dialog clicks
+                        editor2.hooks.set("insertImageDialog", function (callback) {
+                            // here we can intercept our own dialog handling
+                            var mediaPicker = {
+                                disableFolderSelect: true,
+                                submit: function (model) {
+                                    var selectedImagePath = model.selection[0].image;
+                                    callback(selectedImagePath);
+                                    editorService.close();
+                                },
+                                close: function () {
+                                    editorService.close();
+                                }
+                            };
+                            editorService.mediaPicker(mediaPicker);
+
+                            return true; // tell the editor that we'll take care of getting the image url
+                        });
+                    });
+                });
+
+            // load the separate css for the editor to avoid it blocking our JavaScript loading
+            assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
+        });
 ```
 
-At this point your controller should look like this:
+Now when we run the markdown editor and click the image button, we are presented with a native Umbraco dialog, listing the standard media archive.
 
-```javascript
-angular.module('umbraco').controller('SuggestionPluginController', function ($scope, notificationsService) {
-    console.log($scope.model)
-       
-    if ($scope.model.value === null || $scope.model.value === "") {
-        $scope.model.value = $scope.model.config.defaultValue;
-    }
+Clicking an image and choosing select returns the image to the editor which then renders it as:
 
-    $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club?", "Are you hungry?"];
+    ![Koala picture][1]
 
-    $scope.getSuggestion = function () {
+    [1]: /media/1005/Koala.jpg
 
-        $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
+If you wish to render your markdown in a view, you first need to convert you markdown to html format:
 
-    }
-
-    $scope.getState = function () {
-        if ($scope.model.config.isEnabled === "1") {
-            return false;
-        }
-        return true;
-    }
-
-    // trial code
-
-    $scope.TrimText = function () {
-        $scope.model.value = $scope.model.value.substring(0, 35);
-    };
-   
-
-    $scope.showNotification = function () {
-        if ($scope.model.value.length > 35) {
-            notificationsService.add({
-                // the path of our custom notification view
-                view: "/App_Plugins/Suggestions/notification.html",
-                // arguments object we want to pass to our custom notification
-                args: {
-                    value: $scope.model.value,
-                    callback: $scope.TrimText
-                }
-            });
-        }
-    };
-
-  });
-```
-
-### Add the directive in the `suggestion.html`
-
-```html
-    <input type="text" ng-model="model.value" ng-click="showNotification()" />
-```
-
-### Add the Javascript file in `package.manifest`
-
-```json
-{
- "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js",
-        "~/App_Plugins/Suggestions/notification.controller.js"
-    ]
+```csharp
+@using HeyRed.MarkdownSharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var value = Model.Value<string>("myMarkdownPropertyAlias");
+    var html = new Markdown().Transform(value);
 }
+@Html.Raw(html)
 ```
 
-## Creating custom Notification View and Controller
-
-We will add 2 files to the /App_Plugins/Suggestions/ folder:
-
-- `notification.html`
-- `notification.controller.js`
-
-In the `notification.html`, we'll add:
-
-```html
-<div ng-controller="NotificationController">
-    <h4>Your Suggestion is too long.</h4>
-    <p>Do you want to trim the text ?</p>
-    <p>Trimmed text : {{trimmedtext}}</p>
-    <button class="btn umb-alert--warning" ng-click="cancel(notification)">No</button>
-    <button class="btn umb-alert--info" ng-click="trim(notification)">Yes</button>
-</div>
-```
-
-In the `notification.controller.js` we will add:
-
-```javascript
-angular.module('umbraco')
- .controller('NotificationController', function ($scope, notificationsService) {
-
-      // the notification is set on scope by umbraco, so we can access our args object passed in
-   $scope.trimmedtext = $scope.notification.args.value.substring(0, 35);
-
-   $scope.trim = function (not) {
-    // call our callback function set on the args object in our property editor controller
-    not.args.callback();
-    notificationsService.remove(not);
-   };
-
-   $scope.cancel = function (not) {
-    notificationsService.remove(not);
-   };
-  });
-```
-
-Restart the application and either enter a suggestion longer than 35 characters or click on the `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
-
-![Suggestion Notification](images/suggestion-notification.png)
-
-The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller which is executed in the scope of our Suggestions Property Editor.
+:::note
+Umbraco's built-in [Markdown editor](https://our.umbraco.com/Documentation/Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/#markdown-editor) will be interpreted by Models Builder, in which case you won't need to do the convertion mentioned above.
+:::
 
 ## Wrap up
+So over the 3 previous steps, we've:
 
-Over the 3 previous steps, we have:
+- Created a plugin
+- Defined an editor
+- Injected our own JavaScript libraries and 3rd party ones
+- Made the editor configurable
+- Connected the editor with native dialogs and services
+- Looked at koala pictures
+- Converted and rendered our markdown as html format
 
-- Created a plugin.
-- Defined an editor.
-- Registered the Data Type in Umbraco.
-- Added a `$scope` object to pass information from the controller to the view.
-- Added configuration to the Property Editor.
-- Connected the editor with the Notification Service.
-- Looked at the notification dialog in action.
+[Next - Adding server-side data to a property editor](part-4.md)

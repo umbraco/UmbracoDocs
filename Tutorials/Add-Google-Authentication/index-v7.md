@@ -1,10 +1,8 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
-needsV8Update: "false"
 meta.Title: "Add Google Authentication"
 meta.Description: "A guide to setup a Google login for the Umbraco backoffice."
-needsV9Update: "true"
 ---
 
 

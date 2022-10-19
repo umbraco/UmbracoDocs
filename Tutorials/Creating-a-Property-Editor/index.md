@@ -1,224 +1,224 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 meta.Title: "Creating a property editor"
 meta.Description: "A guide to creating a property editor in Umbraco"
 ---
 
-# Creating a Property Editor
+# Creating a property editor
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, AngularJS' modules, and its injector, and finally how we can test our property editor.
+_This tutorial was last tested on **Umbraco 8.11**_
 
-The steps we will go through in part 1 are:
+## Overview
 
-- [Setting up a Plugin](#setting-up-a-plugin)
-- [Writing basic HTML and JavaScript](#writing-basic-html-and-javascript)
-- [Registering the Data Type in Umbraco](#registering-the-data-type-in-umbraco)
-- [Implementing AngularJS Dependency Injection](#implementing-angularjs-dependency-injection)
+This guide explains how to set up a property editor, how to hook it into Umbraco's Data Types, how to hook it into AngularJS' modules and its injector, and finally how we can test our property editor.
+
+So all the steps we will go through in part 1 are:
+
+- [Setting up a plugin](#setting-up-a-plugin)
+- [Write some basic "Hello World" HTML + JavaScript](#writing-some-basic-html-and-javascript)
+- [Register the data type in Umbraco](#register-the-data-type-in-umbraco)
+- [Add external dependencies](#add-external-dependencies)
 
 ## Prerequisites
 
-This tutorial covers how to use AngularJS with Umbraco, so it does not cover AngularJS itself. To read about AngularJS, you can take a look at some of the resources here:
+This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here:
 
 - [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
 - [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
-## The End Result
+## The end result
 
-By the end of this tutorial, we will have a suggestion data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+By the end of this guide, we will have a markdown editor running inside of Umbraco
+registered as a Data Type in the backoffice, assigned to a Document Type, and the editor can
+create and modify data.
+
+:::note
+This tutorial is a good example of how to create your own property editor from start to finish, however you should know that Umbraco now has a built-in [Markdown editor](https://our.umbraco.com/Documentation/Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/#markdown-editor) which is the recommended option for markdown syntax editing.
+:::
 
 ## Setting up a plugin
 
-To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`.
+The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it
+`MarkDownEditor`
 
-Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application.
+Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
+[For full package.manifest JSON documentation see here](../../Extending/Property-Editors/Package-Manifest/index.md)
 
-Create the file `/App_Plugins/Suggestions/package.manifest`.
+Inside this package manifest, we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 
-For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/Package-Manifest/index.md) article.
-
-Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
-
-```json
+```javascript
 {
     // we can define multiple editors
-    "propertyEditors": [
+    propertyEditors: [
         {
             /*this must be a unique alias*/
-            "alias": "Suggestions editor",
+            alias: "My.MarkdownEditor",
             /*the name*/
-            "name": "Suggestions",
+            name: "My markdown editor",
             /*the icon*/
-            "icon": "icon-list",
+            icon: "icon-code",
             /*grouping for "Select editor" dialog*/
-            "group": "Common",
+            group: "Rich Content",
             /*the HTML file we will load for the editor*/
-            "editor": {
-                "view": "~/App_Plugins/Suggestions/suggestion.html",
-                /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
-                "supportsReadOnly": true
+            editor: {
+                view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
             }
         }
-    ],
-     // array of files we want to inject into the application on app_start
-    "css": [
-        "~/App_Plugins/Suggestions/suggestion.css"
-    ],
-    "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js"
+    ]
+    ,
+    // array of files we want to inject into the application on app_start
+    javascript: [
+        '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
     ]
 }
 ```
 
-## Setting up a Property Editor with Csharp
-
-You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file in `/App_Code/` to register the editor this way.
+## Setting up a property editor with C#
+You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `MarkdownEditor.cs` file in `/App_Code/` to register the editor this way.
 
 ```csharp
-using Umbraco.Cms.Core.IO;
+using Umbraco.Core.Logging;
+using Umbraco.Core.PropertyEditors;
 
-namespace Umbraco.Cms.Core.PropertyEditors
+namespace Umbraco.Web.UI
 {
     [DataEditor(
-        alias: "Suggestions editor",
-        name: "Suggestions",
-        view: "~/App_Plugins/Suggestions/suggestion.html",
-        Group = "Common",
-        Icon = "icon-list")]
-    public class Suggestions : DataEditor
+        alias:"My.MarkdownEditor",
+        name:"My markdown editor",
+        view:"~/App_Plugins/MarkDownEditor/markdowneditor.html",
+        Group = "Rich Content",
+        Icon = "icon-code")]
+    public class MarkdownEditor : DataEditor
     {
-        public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
-            : base(dataValueEditorFactory)
-        {            
-        }
+        public MarkdownEditor(ILogger logger)
+            : base(logger)
+        { }
+
     }
 }
 ```
 
 You will still need to add all of the files you added above but, because your `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
 
-```json
+```json5
 {
     // array of files we want to inject into the application on app_start
-    "css": [
-        "~/App_Plugins/Suggestions/suggestion.css"
-    ],
     "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js"
+        "~/App_Plugins/MarkDownEditor/markdowneditor.controller.js"
     ]
 }
 ```
 
-## Writing basic HTML and JavaScript
+## Writing some basic HTML and JavaScript
+Then we add 2 files to the /App_Plugins/markdowneditor/ folder:
+- `markdowneditor.html`
+- `markdowneditor.controller.js`
 
-Now, we will add 3 files to the /App_Plugins/Suggestions/ folder:
+These will be our main files for the editor, with the .html file handling the view and the .js
+part handling the functionality.
 
-- `suggestion.html`
-- `suggestion.controller.js`
-- `suggestion.css`
-
-These will be our main files for the editor, with the `.html` file handling the view, `.js` file handling the functionality and the `.css` file containing the stylesheet.
-
-In the `.html` file we'll add:
-
-```html
-<div class="suggestion" ng-controller="SuggestionPluginController">
-    <p>{{model.value}}</p>
-    <input type="text" ng-model="model.value" />
-    <button type="button"> Give me Suggestions!</button>
-</div>
-```
-
-:::tip
-**Optional**
-
-Add `ng-readonly="readonly"` to the `input` tag in order to make the property editor *read-only*.
-:::
-
-In the `.js` file, we'll add a basic AngularJS controller declaration
+In the .js file, we will add a basic AngularJS controller declaration
 
 ```javascript
-angular.module('umbraco').controller('SuggestionPluginController', function () {
+angular.module("umbraco")
+    .controller("My.MarkdownEditorController",
+    function () {
         alert("The controller has landed");
     });
 ```
 
-In the `.css` file, we'll add:
+And in the .html file we'll add:
 
-```css
-.suggestion {
-    cursor: pointer;
-    text-align: left;
-    font-size: 20px;
-    color: Highlight;
-}
-
+```html
+<div ng-controller="My.MarkdownEditorController">
+    <textarea ng-model="model.value"></textarea>
+</div>
 ```
 
 Now our basic parts of the editor are done, namely:
 
 - The package manifest, telling Umbraco what to load
 - The HTML view for the editor
-- The controller for wiring up the editor with angular
-- The stylesheet for defining our data type styles
+- The controller for wiring up the editor with angular.
 
-## Registering the Data Type in Umbraco
+## Register the Data Type in Umbraco
 
-We will now restart our application. In the Document Type, let's add our newly added property editor "Suggestions" and save it.
-
-![Suggestion Property Editor](images/suggestion-property-editor.png)
-
-Now open the content item of that Document Type and there will be an alert message saying "The controller has landed", which means all is well.
-
-![Controller Landed](images/Controller-landed.png)
+After the above edits are done and we've restarted our application, we may now create a new Data Type called "markdown" and select our newly added property editor "My markdown editor".
+Save the Data Type, and add it to any Document Type. Then open a content item of that Document type and we'll be greeted with an alert message saying "The controller has landed", which means all is well.
 
 We can now edit the assigned property's value with our new property editor.
 
-## Implementing AngularJS Dependency Injection
+## Add external dependencies
 
-Now, open the `suggestion.controller.js` file and edit it so it looks like this:
+Let's go a bit further, and load in a markdown editor JavaScript library. In this example we're using [pagedown][PagedownBootstrap], but this is optional.
+
+First of, we'll add some external files to our package folder, in `/App_Plugins/markdowneditor/lib`. These files come from the pagedown editor project found here:
+
+[Pagedown-bootstrap on github.com][PagedownBootstrap]
+
+[PagedownBootstrap]: https://github.com/samwillis/pagedown-bootstrap
+
+Then open the `markdowneditor.controller.js` file and edit it so it looks like this:
 
 ```javascript
 angular.module("umbraco")
-.controller("SuggestionPluginController",
-// Scope object is the main object which is used to pass information from the controller to the view.
-    function ($scope) {
+.controller("My.MarkdownEditorController",
+// inject umbracos assetsService
+    function ($scope,assetsService,$timeout) {
 
-    // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
-   $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
+    // tell the assetsService to load the markdown.editor libs from the markdown editors
+    // plugin folder
+    assetsService
+        .load([
+            "~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
+        ])
+        .then(function () {
+            // this function will execute when all dependencies have loaded
+            $timeout(function(){
+            alert("editor dependencies loaded");
+            });
+        });
 
-    // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
-    $scope.getSuggestion = function () {
-
-        // The getSuggestion method reads a random value from an array and provides a Suggestion. 
-        $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
-
-    }
-
+    // load the separate css for the editor to avoid it blocking our JavaScript loading
+    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
 });
 ```
 
-:::note
-Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more details about extending this service.
-:::
+This loads in our external dependency, but only when it's needed by the editor.
 
-and add that id to the button in the HTML:
+Note: Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more details about extending this service.
+
+Now let's replace that `alert()` with some code that can instantiate the pagedown editor:
+
+```javascript
+var converter2 = new Markdown.Converter();
+var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
+editor2.run();
+```
+
+and add that id to the textarea in the HTML. For more info on the HTML structure, see the pagedown demo [here](https://github.com/samwillis/pagedown-bootstrap/blob/master/demo/browser/demo.html):
 
 ```html
-<div class="suggestion" ng-controller="SuggestionPluginController">
-    <p>{{model.value}}</p>
-    <input type="text" ng-model="model.value" />
-    <button type="button" ng-disabled="getState()" ng-click="getSuggestion()"> Give me Suggestions!</button>
+<div ng-controller="My.MarkdownEditorController" class="wmd-panel">
+    <div id="wmd-button-bar-{{model.alias}}"></div>
+
+    <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
+        <!-- our content will be loaded here -->
+    </textarea>
+
+    <div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
 </div>
 ```
 
-Now, clear the cache, reload the document, and see the Suggestions Data Type running.
+Now, clear the cache, reload the document, and see the pagedown editor running:
 
-![Example of the Suggestions data type running](images/suggestion-editor-backoffice.png)
+![Example of the markdown editor running](images/markdown-editor-backoffice.png)
 
-When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
+When we save or publish, the value of the editor is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
 
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
-[Next - Adding configuration to a property editor](part-2.md)
+[Next - Adding configuration to a property editor](part-2-v8.md)

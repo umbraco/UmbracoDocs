@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
 ---
 # Creating a Master Template
 
@@ -14,7 +13,7 @@ To create a new master template:
 2. Select **Templates** from the **Templating** section.
 3. Select the **...** next to the **Templates** folder and click **Create**.
 4. A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
-   ![Master Template](images/figure-22-master-template-v9.png)
+   ![Master Template](images/figure-22-master-template-v8.png)
 5. Click **Save**.
 
 ## Using the Master Template
@@ -25,7 +24,7 @@ To use the master template:
 2. Select **Templates** from the **Templating** section and open the **Homepage** template.
 3. Select `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
 4. Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
-    ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v9.png)
+    ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
 5. Click **Save**.
 
 ## Updating Templates With the New Master Template
@@ -36,18 +35,18 @@ To update templates with the new master template, follow these steps:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section and open the **Homepage** template.
-3. For this tutorial, we will cut everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the master template.
-    ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v9.png)
+3. For this tutorial, we will cut everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
+    ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
 4. Click **Save**.
-5. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 9).
-    ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v9.png)
+5. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 8).
+    ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
 6. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code **_@RenderBody()_** at the end.
-    ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v9.png)
+    ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 7. Click **Save**.
 8. Repeat the same process for the footer content:
-    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 110) to the end of the `</html>` tag (around line 124) and click **Save**.
+    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
     2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
-        ![Completed Master Template](images/figure-27-master-template-complete-v9.png)
+        ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
     3. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
@@ -57,8 +56,7 @@ If you are missing any content (header or footer), check that the templates matc
 ### Master Template
 
 ```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
 	Layout = null;
 }
@@ -72,7 +70,7 @@ If you are missing any content (header or footer), check that the templates matc
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/wwwroot/media/css/main.css" />
+		<link rel="stylesheet" href="/css/main.css" />
 	</head>
 	
 	<body>
@@ -104,16 +102,15 @@ If you are missing any content (header or footer), check that the templates matc
 		
 		@RenderBody()
 		
-				<!-- Footer -->
+		<!-- Footer -->
 		<div class="container-fluid footer">
 			<div class="container">
 
-		    	@Model.Value("footerText")
-
+				@Model.Value("footerText")
 			</div>
 		</div>
-	
-	<!-- Scripts -->
+    
+    <!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
@@ -124,9 +121,8 @@ If you are missing any content (header or footer), check that the templates matc
 ### Homepage Template
 
 ```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
 	Layout = "Master.cshtml";
 }
@@ -149,8 +145,7 @@ If you are missing any content (header or footer), check that the templates matc
 			<div class="row section">
 				<div class="col-md-12">
 
-	            @Model.Value("bodyText")
-
+				@Model.Value("bodyText")
 				</div>				
 			</div>
 
