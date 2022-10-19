@@ -1,8 +1,7 @@
 ---
 meta.Title: "Get started working with Umbraco Cloud"
 meta.Description: "Here you can find information about getting started working with Umbraco Cloud"
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
 ---
 
 # Umbraco Cloud

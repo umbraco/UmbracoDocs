@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
 ---
 
 # Repositories in an Umbraco Cloud Project
@@ -22,7 +21,7 @@ Source control is a way to control changes to files and directories. You can kee
 
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), Mercurial, etc.
 
-The external Git repository can be used to store the entire source code of your project. Additionally, the Umbraco Cloud project must have all your source code too. You can no longer store dll files in your Umbraco Cloud project.
+You need to put your custom code in a different source control repository of your choice. You can use the source control repository to store the custom models, controllers, class libraries, CS code etc as the Umbraco Cloud Git repository can only store the dll files of your C# files.
 
 ## A Git Umbraco Cloud source control repository with the locally cloned Umbraco project
 
@@ -32,14 +31,14 @@ Once you're happy with the results or wish to see how your website has progresse
 
 ### Code Deployment Summary
 
-![Umbraco Cloud Overview](images/UCP_v9.png)
+![Umbraco Cloud Overview](images/UCP_v8.png)
 
-In the above diagram, the Umbraco Git repository contains the source code of a class library CS project.
+In the above diagram, the external git repository contains the source code of a class library CS project, if you had a class library project that was used in your Umbraco Cloud project.
 
-With this setup, once you commit your code in the Umbraco Cloud Git repository, your C# source code is built by Umbraco Cloud and then deployed to the `wwwroot` folder.
+With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud GIT repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud GIT Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
 
 ## Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 
 - We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 
-- You will need to commit your frontend artifacts as the build pipeline only builds dlls from your C# code.
+- You will always need to commit your dll files.

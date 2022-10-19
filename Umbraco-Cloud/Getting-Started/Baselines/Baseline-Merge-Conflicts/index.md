@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV9Update: "true"
 ---
 
 # Baseline Merge Conflicts

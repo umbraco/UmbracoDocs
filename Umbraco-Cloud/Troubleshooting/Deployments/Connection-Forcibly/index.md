@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionTo: 8.0.0
 ---
 
 # Error: "An existing connection was forcibly closed by the remote host"

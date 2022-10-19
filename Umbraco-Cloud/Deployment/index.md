@@ -1,8 +1,8 @@
 ---
 meta.Title: "A deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another"
 meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic 'left to right' deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment"
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 ---
 
 # Deployment
@@ -51,10 +51,6 @@ Moving your content and media between your environments is done through the Umbr
 Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
 :::
 
-## [Deploy Settings](../../Add-ons/Umbraco-Deploy/Deploy-Settings/)
-
-All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.
-
 ## Environment Restart
 
 Some deployments can cause an Umbraco Cloud environment to restart. See the table below to learn which actions initiate an application restart.
@@ -72,11 +68,11 @@ From the Umbraco Cloud Portal, you can manually restart your environments.
 
 ![Restart an environment](images/restart-environment_v10.gif)
 
-## Umbraco-cloud.json
+## UmbracoDeploy.config
 
-You might notice a file in your cloud project called `umbraco-cloud.json`. This file tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example, local or staging) and chooses the next environment in the list to deploy to.
+You might notice a new file in your config folder called `UmbracoDeploy.config`. This files tells the deployment engine where to deploy to, it knows which environment you’re currently on (for example, local or staging) and chooses the next environment in the list to deploy to.
 
-![clone dialog](images/umbraco-cloud-json.png)
+![clone dialog](images/umbraco-deploy-config.png)
 
 :::note
 You are free to update the `name` attribute in the `umbraco-cloud.json` file to make it clear in the **Workspaces** dashboard where you’re deploying to. So if you want to name the *Development* environment to “Everything goes here” then you can do that and the name will be displayed on the dashboard when deploying to that environment.

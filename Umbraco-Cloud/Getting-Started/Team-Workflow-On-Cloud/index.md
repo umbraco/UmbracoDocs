@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Best Practice for Working in Teams on Umbraco Cloud

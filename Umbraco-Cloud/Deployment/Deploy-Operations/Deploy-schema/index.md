@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Deploying Schema from Data Files on your Cloud Environments

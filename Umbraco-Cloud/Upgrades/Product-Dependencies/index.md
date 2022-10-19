@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Dependencies on Umbraco Cloud
@@ -19,8 +18,6 @@ In the table below you can see which version of Umbraco Forms and Deploy you sho
 |--------------|----------------|------------------
 |**8.0**       |8.x             |3.x              |
 |**8.1 <**     |8.x             |4.x              |
-|**9.0 <**     |9.0x            |9.x              |
-|**10.0 <**    |10.0x           |10.x             |
 
 ## [How to upgrade Umbraco CMS manually](../Manual-Upgrades/Manual-CMS-upgrade.md)
 

@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 7.0.0
+versionTo: 8.0.0
 meta.Title: "Deploying changes from a local machine to Umbraco Cloud"
 meta.Description: "How to Deploy changes between a local machine and an environment with Umbraco Deploy using either a Git GUI or CLI"
 ---
@@ -17,14 +17,14 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 - You've cloned a site to your local machine to work on.
 - You've made some changes to a Document Type.
-- The corresponding `.uda` file for this Document Type is now updated with the changes. The file is located in the `/umbraco/Deploy/Revision` folder.
-- You've also created a new Data Type that's used on the Document Type. This Data Type is also stored as a new file in the `/umbraco/Deploy/Revision` folder.
+- The corresponding `.uda` file for this Document Type is now updated with the changes. The file is located in the `/data/revision` folder.
+- You've also created a new data type that's used on the Document Type. This data type is also stored as a new file in the `/data/revision` folder.
 - Using Git, commit those two changed files to your local repository and push them to your Cloud repository.
 - A deployment kicks in and the Document Type is updated and the new Data Type you created locally is now automatically created on the remote environment as well.
 
-![Deploy from Local to Remote](images/stage-commit-deploy_v10.gif)
+![Deploy from Local to Remote](images/stage-commit-deploy.gif)
 
-In the above example, Git Bash is used to stage, commit, and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are welcome to use any Git client or command line interface of your choice.
+In the above example, GitKraken is used to stage, commit, and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are welcome to use any Git client or or command line interface of your choice.
 
 Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](../Cloud-to-Cloud) article.
 
@@ -42,22 +42,22 @@ git add -A
 # Commit staged files
 git commit -m "Adding updated schema changes"
 # Push to the environment
-git push
+git push origin master
 
 # If the push is rejected you will need to pull first
-git pull
+git pull origin master
 # Try to push again if there were no conflicts
-git push
+git push origin master
 ```
 
-If you have to pull down new commits, it is a good idea to see if any of these commits contain changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+If you have to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). To ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
 
 ```cs
-/UmbracoProject/umbraco/Deploy> echo > deploy
+/…mysite/data> echo > deploy`
 ```
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors, you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
-Another way is to use the **Deploy** Dashboard in the **Settings** section of the Umbraco backoffice. Here, you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has been completed, or has failed.
-
-The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes. Learn more about this dashboard in the [Deployment](../) article.
+:::tip
+Check the timestamp on the `deploy-complete` marker to see if it has been updated.
+:::
