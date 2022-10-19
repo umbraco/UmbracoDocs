@@ -1,96 +1,46 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Health Check Settings"
-meta.Description: "Information on the health check settings section"
+versionFrom: 7.0.0
 ---
 
-# Health checks
+# HealthChecks.config
 
-The health checks section allows you to disable certain health checks, and configure your own custom notification methods, that will automatically run the health checks every so often, and notify you if any health checks fails.
+The `HealthChecks.config` file contains the configuration for the health checks, allowing you to disable certain checks when not applicable and to manage the notifications.
 
-An example of a HealthChecks settings can look something like this:
+Currently there is no user interface for updating the contents of this file.
 
-```json
-"Umbraco": {
-  "CMS": {
-    "HealthChecks": {
-      "DisabledChecks": [
-        {
-          "Id": "D0F7599E-9B2A-4D9E-9883-81C7EDC5616F"
-        }
-      ],
-      "Notification": {
-        "Enabled": true,
-        "FirstRunTime": "* 4 * * *",
-        "Period": "1.00:00:00",
-        "NotificationMethods": {
-          "email": {
-            "Enabled": true,
-            "Verbosity": "Detailed",
-            "FailureOnly": true,
-            "Settings": {
-              "RecipientEmail": "alerts@mywebsite.tld"
-            }
-          }
-        }
-      }
-    }
-  }
-}
+The following is an example configuration installed with Umbraco.
+
+```xml
+<?xml version ="1.0" encoding="utf-8" ?>
+<HealthChecks>
+  <disabledChecks>
+    <!--<check id="1B5D221B-CE99-4193-97CB-5F3261EC73DF" disabledOn="" disabledBy="0" />-->
+  </disabledChecks>
+  <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
+    <notificationMethods>
+    <notificationMethod alias="email" enabled="true" verbosity="Summary">
+        <settings>
+        <add key="recipientEmail" value="alerts@mywebsite.tld" />
+        </settings>
+    </notificationMethod>
+    </notificationMethods>
+    <disabledChecks>
+    <!--<check id="EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7" disabledOn="" disabledBy="0" />-->
+    </disabledChecks>
+  </notificationSettings>
+</HealthChecks>
 ```
 
-This config will disable the macro errors check, and enable notifications to run the checks and notify via email if a check fails. The checks will run the first time five minutes after the site is booted, and then once every day.
+In the first `<disabledChecks>` section it's possible to mark certain checks as disabled. To do so, uncomment one of the examples and update `id` field with the Id of the test to disable. The `disabledOn` and `disabledBy` fields are not required, in place currently as placeholders for when this information is managed via a user interface. The Ids for each core tests can be found on the [Extending Health checks](../../../Extending/Healthcheck/#built-in-checks).
 
-The email notification method is built in, if you want to read more about creating you own notification methods, or see a list of the ID of every built in health check, then see [Extending health checks](../../../Extending/Health-Check/index.md)
+To enable notifications set the `enabled` attribute on `<notificationSettings>` to `true`.
 
-But let's go through the config one by one
+The timing for notifications can be modified by setting the `periodInHours` attribute to the number of hours that should elapse between tests.  If `firstRunTime` is empty, the tests will run for the first time right after the application is started.  To ensure the tests run at a later time - perhaps during low traffic hours, set the time in `hhmm` format (e.g. 2300) and the tests will not run until that time is reached.
 
-## Disabled checks
+The results of tests will always be written to the log files.
 
-A list of `DisabledHealthCheckSettings` objects, each of these objects represents a disabled health check. Only the Id key needs to be present and have a value, corosponding to the GUID of the health check to disable.
+Each notification method can separately be enabled or disabled. The attribute `verbosity` can be set to `Summary` or `Detailed` to get more or less information in the alerts, and the `failureOnly` can be set to `true` or `false` if you'd prefer to get notifications only if at least one potential problem is detected.
 
-There is also a `DisabledOn` key representing the date the health check was disabked and a `DisabledBy` key containing the ID of the user that disabled the health check, however these values are currently not used.
+An email notification method is built-in to Umbraco. The email method is configured within the `<settings>` section of `<notificationMethod alias="email">`, the email address to send the notification to must be provided as the `recipientEmail` value.
 
-## Notification
-
-Settings relating to running the health checks automatically and sending out notifications.
-
-### Enabled
-
-Allows you to disable or enable all notifications methods, if set to false, the health checks will not automatically run.
-
-### First run time
-
-This will configure when you run the health checks for the first time, if the value is not configured the health checks will run immediately after the site boots for the first time. This value is specified as a string in crontab format, so in this example, the health checks will first run at 4 a.m.
-
-### Period
-
-Specifies how often the health checks should run, as a DateTime string, in this example the checks will run every day (every 24 hours).
-
-### Notification methods
-
-A dictionary of all the notification methods that should be used.
-
-The key of the dictionary is the alias of the notification method, and the value is a `HealthChecksNotificationMethodSettings` configuration object, in this case it's the built in `email` notification method.
-
-Each object allows the following to be configured:
-
-#### Enabled
-
-Allows you to enable or disable specific checks.
-
-#### Verbosity
-
-Configures how verbose the reporting should be, the available options are:
-
-* Summary
-* Detailed
-
-#### Failure only
-
-If set to true, the notification method will only run if a check has failed.
-
-#### Settings
-
-Allows you to set custom settings for a given implementation of a notification method, which settings are available depends on the specific implementation.
+Please note that to use health check notifications you must ensure to set the `umbracoApplicationUrl` value in `umbracoSettings.config`.  Without this the checks will only work when requested via the developer section dashboard.  For more information on this setting, please see [Config > UmbracoSettings](../../../Reference/Config/umbracoSettings/#webrouting).

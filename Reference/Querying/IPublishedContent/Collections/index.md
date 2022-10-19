@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
 ---
 
 # IPublishedContent Collections
@@ -18,20 +17,20 @@ Returns a collection of child items available in the current culture, below the 
 <ul>
     @foreach(var item in Model.Children)
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
 
 ### .ChildrenForAllCultures
 
-Returns a collection of child items for all cultures, below the current content item, regardless of whether they are available for the current culture.
+Returns a collection of child items for all cultures, below the current content item.
 
 ```csharp
 <ul>
     @foreach(var item in Model.ChildrenForAllCultures)
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -42,9 +41,9 @@ Returns a collection of child items available in the specified culture with a de
 
 ```csharp
 <ul>
-    @foreach(var item in Model.Children("dk-dk"))
+    @foreach(var item in Model.Children())
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -58,7 +57,7 @@ Returns all ancestors of the current page (parent page, grandparent and so on)
     @*Order items by their Level*@
     @foreach(var item in Model.Ancestors().OrderBy(x => x.Level))
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -93,7 +92,7 @@ Returns all descendants of the current page (children, grandchildren etc)
     @* Filter collection by content that has a template assigned *@
     @foreach(var item in Model.Descendants().Where(x => x.TemplateId > 0))
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -107,7 +106,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
     @* Filter collection by content that has a template assigned *@
     @foreach(var item in Model.DescendantsOrSelf().Where(x => x.TemplateId > 0))
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -121,7 +120,7 @@ Filters a collection of content by content type alias
     @* Filter collection by content type alias (you can pass in any number of aliases) *@
     @foreach(var item in Model.DescendantsOrSelf().OfTypes("widget1", "widget2"))
     {
-        <li><a href="@item.Url()">@item.Name</a></li>
+        <li><a href="@item.Url">@item.Name</a></li>
     }
 </ul>
 ```
@@ -145,7 +144,7 @@ var nodes = Model.Descendants().Where(x => x.TemplateId > 0 && x.Name.StartsWith
 
 ```csharp
 @* Orders a collection by the property name "title" *@
-var nodes = Model.Children.OrderBy(x => x.GetProperty("title"))
+var nodes = Model.Children.OrderBy(x => x.GetPropertyValue<string>("title"))
 ```
 
 ### .GroupBy
@@ -154,10 +153,10 @@ Groups collection by content type alias
 
 ```csharp
 @{
-    var groupedItems = Model.Descendants().GroupBy(x => x.ContentType);
+    var groupedItems = Model.Descendants().GroupBy(x => x.DocumentTypeAlias);
     foreach (var group in groupedItems)
     {
-        <h2>@group.Key.Alias</h2>
+        <h2>@group.Key</h2>
         foreach(var item in group)
         {
             <h3>@item.Name</h3>

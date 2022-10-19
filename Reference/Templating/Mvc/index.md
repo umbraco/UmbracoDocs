@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Working with MVC in Umbraco

@@ -1,113 +1,91 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 6.0.0
+versionTo: 8.0.0
 ---
 
-# URL Rewrites in Umbraco
+# IIS Rewrite Rules
 
-With the release of Umbraco 9 and the change of the underlying web framework that is decoupled from the webserver, the way that you configure rewrites has changed as well.
+If you require static rewrites you should use IIS Rewrite rules. This is an IIS plugin that exists outside of Umbraco
+but should be installed by the vast majority of hosting providers. [There is a significant amount of documentation](https://www.iis.net/learn/extensions/url-rewrite-module)
+for doing static rewrites with IIS Rewrite rules. This documentation will list some basic examples with links to some reference sites.
 
-Instead of the URL Rewriting extension in IIS you can use the [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0), which needs to be added to your project startup code first.
+## Enabling the rules
 
-:::note
-If you are running Umbraco 9 on IIS you can still add a `web.config` file to configure IIS features such as URL rewrites.
-:::
-
-## When to use the URL Rewriting Middleware
-
-Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0#when-to-use-url-rewriting-middleware) documentation for more information about when you should or should not use the URL Rewriting Middleware.
-
-## Using the URL Rewriting Middleware
-
-To use rewrites with Umbraco 9 you have to register the middleware in your `Startup.cs` by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter?view=aspnetcore-5.0) extension method and then configure the rewrite options.
-
-### Example
-
-- Create an `IISUrlRewrite.xml` file in the root of your project (next to your `Startup.cs` file) containing:
+By default the web.config with Umbraco (7.6+) will contain a commented out section that looks like:
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<!--
+If you wish to use IIS rewrite rules, see the documentation here:
+https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
+-->
+<!--
 <rewrite>
-  <rules>
-    <rule name="Redirect umbraco.io to preferred domain" stopProcessing="true">
-      <match url=".*" />
-      <conditions>
-        <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
-        <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
-        <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-      </conditions>
-      <action type="Redirect" url="https://example.com/{R:0}" />
-    </rule>
-  </rules>
+  <rules></rules>
+</rewrite>
+-->
+```
+
+If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module)
+installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite module installed, you will get a Yellow Screen Of Death (YSOD).
+
+## Storing rules in an external file
+
+You can store the rules in an external file if you wish by using this syntax:
+
+```xml
+<rewrite>
+  <rules configSource="config\IISRewriteRules.config" />
 </rewrite>
 ```
 
-- In the `Startup.cs` file you can add the URL Rewriting Middleware just before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
-
-```csharp
-using Microsoft.AspNetCore.Rewrite;
-
-app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml"));
-
-```
-
-- In your csproj file add the XML file to a new item group and set `CopyToOutputDirectory` to `Always`:
+and creating a file at `~/Config/IISRewriteRules.config` with the content:
 
 ```xml
-<ItemGroup>
-  <Content Include="IISUrlRewrite.xml">
-    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-  </Content>
-</ItemGroup>
+<rules></rules>
 ```
 
-:::note
-On Umbraco Cloud the item group needs to be set to `<CopyToPublishDirectory>Always</CopyToPublishDirectory>` for the file to be published to your deployed site.
-:::
+## Examples
 
-## Examples of rewrite rules
-
+* Main documentation: [https://www.iis.net/learn/extensions/url-rewrite-module](https://www.iis.net/learn/extensions/url-rewrite-module)
 * A great site showing 10 very handy IIS Rewrite rules: [https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](https://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
 * Another site showing some handy examples of IIS Rewrite rules: [https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
-For example, to always remove a trailing slash from the URL (make sure Umbraco doesn't add a trailing slash to all generated URLs by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../../V9-Config/RequestHandlerSettings/index.md)):
+For example, to always remove trailing slash from the URL:
 
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
-  <match url="(.*)/+$" />
-  <conditions>
-    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
-  </conditions>
-  <action type="Redirect" url="{R:1}" />
+  <match url="(.*)/$" />
+    <conditions>      
+      <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+    </conditions>
+  <action type="Redirect" redirectType="Permanent" url="{R:1}" />
 </rule>
 ```
 
 Another example would be to enforce HTTPS only on your site:
 
 ```xml
-<rule name="Redirect to HTTPS" stopProcessing="true">
-  <match url=".*" />
+<rule name="HTTP to HTTPS redirect" stopProcessing="true">
+  <match url="(.*)" />
   <conditions>
-    <add input="{HTTPS}" pattern="^OFF$" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
+    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
   </conditions>
-  <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" />
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
 </rule>
 ```
 
-Another example would be to redirect from non-www to www (except for the Umbraco Cloud project hostname):
+Another example would be to redirect from non-www to www:
 
 ```xml
-<rule name="Redirect to www prefix" stopProcessing="true">
-  <match url=".*" />
+<rule name="Non WWW to WWW" stopProcessing="true">
+  <match url="(.*)" ignoreCase="true" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="^google\.com" />
   </conditions>
-  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
+  <action type="Redirect" url="https://www.google.com/{R:1}" redirectType="Permanent" />
 </rule>
 ```

@@ -1,219 +1,92 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.0.0
+versionTo: 8.18.4
 ---
 
-# Authenticating the Umbraco backoffice with Azure Active Directory credentials
+# Authenticating on the Umbraco backoffice with Active Directory credentials
 
-This article describes how to configure Azure Active Directory (Azure AD) with Umbraco Users and Members.
+You'll need to create a new file to override the existing OWIN configuration. Create a directory in your root folder called "App_Start" (if it doesn't already exist) and then create a startup configuration file (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
-## Configuring Azure AD
+```C#
+using Microsoft.Owin;
+using MyApp;
+using Owin;
+using Umbraco.Core.Models.Identity;
+using Umbraco.Core.Security;
+using Umbraco.Web;
+using Umbraco.Web.Security;
 
-Before your applications can interact with Azure AD B2C, they must be registered in a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
-
-## Installing the NuGet Package
-
-You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` NuGet package. There are two approaches to installing the packages:
-
-1. Use your favorite IDE and open up the **NuGet Package Manager** to search and install the packages.
-1. Use the command line to install the package.
-
-## Azure AD Authentication for Users
-
-1. Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
-
-    ```csharp
-    using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
-    using Microsoft.Extensions.DependencyInjection;
-
-    namespace MyApp
+[assembly: OwinStartup("MyOwinStartup", typeof(MyOwinStartup))]
+namespace MyApp
+{
+    public class MyOwinStartup : UmbracoDefaultOwinStartup
     {
-        public static class BackofficeAuthenticationExtensions
+        public override void Configuration(IAppBuilder app)
         {
-            public static IUmbracoBuilder ConfigureAuthentication(this IUmbracoBuilder builder)
-            {
-                builder.AddBackOfficeExternalLogins(logins =>
+            //ensure the default options are configured
+            base.Configuration(app);
+
+            // active directory authentication
+            ConfigureBackofficeActiveDirectoryPasswords(app);
+        }
+
+        private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
+        {
+            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+                RuntimeState,
+                GlobalSettings,
+                (options, context) =>
                 {
-                    const string schema = MicrosoftAccountDefaults.AuthenticationScheme;
-                    
-                    logins.AddBackOfficeLogin(
-                        backOfficeAuthenticationBuilder =>
-                        {
-                            backOfficeAuthenticationBuilder.AddMicrosoftAccount(
-                                // the scheme must be set with this method to work for the back office
-                                backOfficeAuthenticationBuilder.SchemeForBackOffice(schema) ?? string.Empty,
-                                options =>
-                                {
-                                    //By default this is '/signin-microsoft' but it needs to be changed to this
-                                    options.CallbackPath = "/umbraco-signin-microsoft/";
-                                    //Obtained from the AZURE AD B2C WEB APP
-                                    options.ClientId = "{your_client_id}";
-                                    //Obtained from the AZURE AD B2C WEB APP
-                                    options.ClientSecret = "{your_client_secret}";
-                                });
-                        });
+                    var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+                    var userManager = BackOfficeUserManager.Create(
+                        options,
+                        Services.UserService,
+                        Services.MemberTypeService,
+                        Services.EntityService,
+                        Services.ExternalLoginService,
+                        membershipProvider,
+                        Mapper,
+                        UmbracoSettings.Content,
+                        GlobalSettings
+                    );
+                    userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
+                    return userManager;
                 });
-                return builder;
-            }
-        }
-    }
-    ```
-
-    :::note
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
-    :::
-
-2. Update `ConfigureServices` method in the `Startup.cs` file:
-
-    ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            // Add ConfigureAuthentication
-            .ConfigureAuthentication()
-            .Build();
-    }
-    ```
-
-3. Build and run the website. You can now login with your Azure AD credentials.
-
-    ![AD Login Screen](images/AD_Login.png)
-
-## Azure AD Authentication for Members
-
-1. Create a Member login functionality, see the [Member registration and login](https://our.umbraco.com/documentation/Tutorials/Members-Registration-And-Logins/#member-registration-and-login) article.
-
-2. Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
-
-    ```csharp
-    using Microsoft.Extensions.DependencyInjection;
-
-    namespace MyApp
-    {
-        public static class MemberAuthenticationExtensions
-        {
-            public static IUmbracoBuilder ConfigureAuthenticationMembers(this IUmbracoBuilder builder)
-            {
-                builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
-                builder.AddMemberExternalLogins(logins =>
-                {
-                    logins.AddMemberLogin(
-                        membersAuthenticationBuilder =>
-                        {
-                            membersAuthenticationBuilder.AddMicrosoftAccount(
-                                // The scheme must be set with this method to work for members
-                                membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
-                                options =>
-                                {
-                                    //Callbackpath - Important! The CallbackPath represents the URL to which the browser should be redirected to and the default value is
-                                    // /signin-oidc This should be unique!.
-                                    options.CallbackPath = "/umbraco-b2c-members-signin";
-                                    //Obtained from the AZURE AD B2C WEB APP
-                                    options.ClientId = "YOURCLIENTID";
-                                    //Obtained from the AZURE AD B2C WEB APP
-                                    options.ClientSecret = "YOURCLIENTSECRET"; 
-                                    options.SaveTokens = true;
-                                });
-                        });
-                });
-                return builder;
-            }
-        }
-    }
-    ```
-
-    :::note
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
-    :::
-
-3. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
-
-    ```csharp
-    using Microsoft.Extensions.Options;
-    using Umbraco.Cms.Core;
-    using Umbraco.Cms.Web.Common.Security;
-
-    namespace MyApp
-    {
-        public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
-        {
-            public const string SchemeName = "OpenIdConnect";
-            public void Configure(string name, MemberExternalLoginProviderOptions options)
-            {
-                if (name != "Umbraco." + SchemeName)
-                {
-                    return;
-                }
-
-                Configure(options);
-            }
-
-            public void Configure(MemberExternalLoginProviderOptions options)
-            {
-
-                options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
-                    // must be true for auto-linking to be enabled
-                    autoLinkExternalAccount: true,
-
-                    // Optionally specify the default culture to create
-                    // the user as. If null it will use the default
-                    // culture defined in the web.config, or it can
-                    // be dynamically assigned in the OnAutoLinking
-                    // callback.
-
-                    defaultCulture: null,
-                    
-                    // Optionally specify the default "IsApprove" status. Must be true for auto-linking.
-                    defaultIsApproved: true,
-
-                    // Optionally specify the member type alias. Default is "Member"
-                    defaultMemberTypeAlias: "Member"
-
-                )
-                {
-                    // Optional callback
-                    OnAutoLinking = (autoLinkUser, loginInfo) =>
-                    {
-                        // You can customize the user before it's linked.
-                        // i.e. Modify the user's groups based on the Claims returned
-                        // in the externalLogin info
-                    },
-                    OnExternalLogin = (user, loginInfo) =>
-                    {
-                        // You can customize the user before it's saved whenever they have
-                        // logged in with the external provider.
-                        // i.e. Sync the user's name based on the Claims returned
-                        // in the externalLogin info
-
-                        return true; //returns a boolean indicating if sign-in should continue or not.
-                    }
-                };
-            }
         }
     }
 
-    ```
+}
+```
 
-4. Next, update `ConfigureServices` method in the `Startup.cs` file:
+:::note
+If you are using an Umbraco version before v8.0.3 you can't pass in an instance of `Mapper` in to the base `Create` method. 
+:::
 
-    ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            // Add ConfigureAuthentication
-            .ConfigureAuthentication()
-            //Add Members ConfigureAuthentication
-            .ConfigureAuthenticationMembers()
-            .Build();
-    }
-    ```
+The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
 
-5. Build and run the website. Your members can now login with their Azure AD credentials.
+```xml
+<appSettings>
+    <add key="ActiveDirectoryDomain" value="mydomain.local" />
+</appSettings>
+```
+:::tip
+One way to find your Active Directory Domain if you are logged into your domain is to open a command prompt and run `set logon` and use the value returned as the `LOGONSERVER` (not including any slashes).
+:::
 
-    ![AD Login Screen](images/AD_Login_Members.png)
+Finally, to use your `UmbracoStandardOwinStartup` class during startup, update this setting to Web.config:
+
+```xml
+<appSettings>
+    <add key="owin:appStartup" value="MyOwinStartup" />
+</appSettings>
+```
+
+If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco backoffice under a specific user in user management by setting the name and username to be the active directory username. Making username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
+
+```xml
+<usernameIsEmail>false</usernameIsEmail>
+```
+
+:::note
+If the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
+:::

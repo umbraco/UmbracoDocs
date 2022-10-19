@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 8.0.0
 ---
 
 # Retrieving languages
@@ -10,18 +10,18 @@ The localization service contains a number of methods for looking up languages. 
 
 ```C#
 // Get a reference to the language by its ID
-ILanguage language1 = _localizationService.GetLanguageById(1);
+ILanguage language1 = ls.GetLanguageById(1);
 ```
 Alternative, you can look up a language by its iso code via the `GetLanguageByIsoCode` method:
 
 ```C#
 // Get a reference to the language by its ISO code
-ILanguage language2 = _localizationService.GetLanguageByIsoCode("en-US");
+ILanguage language2 = ls.GetLanguageByIsoCode("en-US");
 ```
 
 The ISO code is a combination of the two-letter ISO 639-1 language code (lowercase) and two-letter ISO-3166 country code (uppercase). Eg. `en-US` for English in the United States, `en-GB` for English in the United Kingdom and `da-DK` for Danish in Denmark.
 
-Both methods will return an instance of the [ILanguage](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
+Both methods will return an instance of the [ILanguage](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
 
 ### Getting all languages
 
@@ -29,7 +29,7 @@ If you need instead need a list of all installed languages, you can use the `Get
 
 ```C#
 // Get a collection of all languages
-IEnumerable<ILanguage> languages = _localizationService.GetAllLanguages();
+IEnumerable<ILanguage> languages = ls.GetAllLanguages();
 
 // Iterate over the collection
 foreach (ILanguage language in languages)
@@ -54,14 +54,15 @@ Below you can see a full example of the examples shown above - including the nec
 
 ```C#
 @using System.Globalization
-@using Umbraco.Cms.Core.Models
-@using Umbraco.Cms.Core.Services
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@inject ILocalizationService LocalizationService
+@using Umbraco.Core.Services
+@inherits UmbracoViewPage
 
 @{
+    // Get a reference to the localization service
+    ILocalizationService ls = Services.LocalizationService;
+
     // Get a collection of all languages
-    IEnumerable<ILanguage> languages = LocalizationService.GetAllLanguages();
+    IEnumerable<ILanguage> languages = ls.GetAllLanguages();
 
     // Iterate over the collection
     foreach (ILanguage language in languages)
@@ -79,11 +80,12 @@ Below you can see a full example of the examples shown above - including the nec
 
     }
 
+
     // Get a reference to the language by its ID
-    ILanguage language1 = LocalizationService.GetLanguageById(1);
+    ILanguage language1 = ls.GetLanguageById(1);
 
     // Get a reference to the language by its ISO code
-    ILanguage language2 = LocalizationService.GetLanguageByIsoCode("en-US");
+    ILanguage language2 = ls.GetLanguageByIsoCode("en-US");
 
     <pre>@language1</pre>
     <pre>@language2</pre>

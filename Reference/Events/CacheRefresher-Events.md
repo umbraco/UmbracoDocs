@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionRemoved: 9.0.0
 meta.Title: "Umbraco CacheRefresher Events"
 meta.Description: "Information on the various CacheRefresher events available"
 ---

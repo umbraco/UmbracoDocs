@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 8.0.0
 meta.Title: "Working with the runtime cache in Umbraco"
 meta.Description: "Information on how to insert and delete from the runtime cache"
 ---
@@ -31,10 +31,9 @@ First we want to create our `CacheTagService`. In this example it's a basic clas
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.PublishedCache;
-using Umbraco.Extensions;
+using Umbraco.Core.Cache;
+using Umbraco.Web;
+using Umbraco.Web.Models;
 
 namespace Doccers.Core.Services.Implement
 {
@@ -72,7 +71,7 @@ As you can see we inherit from the `ICacheTagService` interface. All that has is
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Cms.Core.Models;
+using Umbraco.Web.Models;
 
 namespace Doccers.Core.Services
 {
@@ -91,17 +90,16 @@ The interface was created to better register it so we can use dependency injecti
 ```csharp
 using Doccers.Core.Services;
 using Doccers.Core.Services.Implement;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
 
 namespace Doccers.Core
 {
-    public class Composer : IComposer
+    public class Composer : IUserComposer
     {
-        public void Compose(IUmbracoBuilder builder)
+        public void Compose(Composition composition)
         {
-            builder.Services.AddScoped<ICacheTagService, CacheTagService>();
+            composition.Register<ICacheTagService, CacheTagService>();
         }
     }
 }
@@ -114,13 +112,12 @@ Now you can inject `ICacheTagService` in any constructor in your project - wohoo
 Now that we have our service it's time to create an endpoint where we can fetch the (cached) tags.
 
 ```csharp
+using Doccers.Core.Services;
 using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Doccers.Core.Services;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Web.Common.Controllers;
-
+using System.Web.Http;
+using Umbraco.Web.Models;
+using Umbraco.Web.WebApi;
 
 namespace Doccers.Core.Controllers.Api
 {
@@ -167,48 +164,61 @@ Everything should now work as expected when it comes to getting tags. However, i
 
 ### Clearing cache on publish
 
-To clear the cache we need a notification handler in which we register to the `ContentPublishedNotification` event on the `ContentService`. This allows us to run a piece of code whenever you publish a node.
+To clear the cache we need a component in which we register to the `Published` event on the `ContentService`. This allows us to run a piece of code whenever you publish a node.
 
 ```csharp
 using System.Linq;
-using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Notifications;
+using Umbraco.Core.Cache;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Events;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 
 namespace Doccers.Core
 {
-    public class Notification : INotificationHandler<ContentPublishedNotification>
+    public class Component : IComponent
     {
-
         private readonly IAppPolicyCache _runtimeCache;
 
-        public Notification(AppCaches appCaches)
+        public Component(AppCaches appCaches)
         {
+            // Again we can just grab RuntimeCache from AppCaches.
             _runtimeCache = appCaches.RuntimeCache;
         }
 
-        public void Handle(ContentPublishedNotification notification)
+        public void Initialize()
         {
+            ContentService.Published += ContentService_Published;
+        }
 
-            if (notification.PublishedEntities.Any(x => x.ContentType.Alias == "blogPost"))
+        private void ContentService_Published(IContentService sender,
+            ContentPublishedEventArgs e)
+        {
+            // We only want to clear the blogTags cache
+            // if we're publishing a blog post.
+            if (e.PublishedEntities
+                .Where(x => x.ContentType.Alias == "blogPost").Any())
             {
                 _runtimeCache.ClearByKey("blogTags");
             }
         }
+
+        public void Terminate() {
+            //unsubscribe during shutdown
+            ContentService.Published -= ContentService_Published;
+ }
     }
 }
 ```
 
-Now that we have our notification we also need to register it. Add `builder.AddNotificationHandler<ContentPublishedNotification, Notification>();` to the `Compose` method in the `Composer` class so it becomes:
+Now that we have our component we also need to register it. Add `composition.Components().Append<Component>();` to the `Compose` method in the `Composer` class so it becomes:
 
 ```csharp
-public void Compose(IUmbracoBuilder builder)
+public void Compose(Composition composition)
 {
-    builder.Services.AddScoped<ICacheTagService, CacheTagService>();
+    composition.Register<ICacheTagService, CacheTagService>();
 
-    builder.AddNotificationHandler<ContentPublishedNotification, Notification>();
-
+    composition.Components().Append<Component>();
 }
 ```
-
 Awesome! Now we have set up caching on our tags - making the site a bit faster. :)

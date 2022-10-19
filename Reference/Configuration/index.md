@@ -1,149 +1,109 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco configuration"
-meta.Description: "Information on configuring Umbraco"
+versionFrom: 8.0.0
+meta.Title: "Umbraco configuration files"
+meta.Description: "Information on the various configuration files in Umbraco"
 ---
-
-:::note
-In Umbraco 9+ (ASP.NET Core) configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
-:::
 
 # Configuration Files
 
-In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
+The release of V8 has moved many of the previous configuration options from XML configuration files in the usual /config folder to be configurable through code.
 
-For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
+## The following Configuration Files remain in Umbraco 8
 
-## Managing Configuration
+### [web.config](webconfig/)
 
-You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution. To achieve this, the `IConfiguration` pattern can be used for this.
+The heart of your web application that hosts many configuration settings required for your application.
 
-With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with:
+This file can be found at the following path: /web.config
 
-1. The `appsettings.json` file
-2. An `appsettings.{environment}.json` file
-3. UserSecrets (Only when in development)
-4. Environment variables
-5. Command line arguments
+### [tinyMceConfig.config](tinyMceConfig/index.md)
 
-This list is in order of precedence, so the values from `appsettings.json` will only be used if they're not also defined in the environment variables. If they are, then the environment variable will be used instead.
+The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice.
 
-There is one caveat, to this precedence though, the `appsettings.{environment}.json` file will only be used if the current environment matches the name of the config file, for instance, the `appsettings.Development.json` file will only be used when the environment is set to development.
+This file can be found at the following path: /config/tinyMceConfig.config
 
-### Using Environment Variables for Configuration
+### [umbracoSettings.config](umbracoSettings/index.md)
 
-It is not feasible to have an entire json file as an environment variable, and the `:` doesn't work with environment variables on all platforms, so instead a double underscore is used to create the hierachy.
+Contains many Umbraco options. Generally the default values work well in most installs; however, in some cases some of these options may need adjusting depending on each installation.
 
-As an example, if you want to set your unattended username, you would normally write it in the `appsettings.json` like so:
+This file can be found at the following path: /config/umbracoSettings.config
 
-```json
-"Umbraco": {
-  "CMS": {
-    "Unattended": {
-      "UnattendedUserName": "A.N. Other"
-    }
-  }
-}
-```
+### clientdependency.config
 
-As an environment variable it becomes a variable with the name `Umbraco__CMS__Unattended__UnattendedUserName` and a value of `A.N. Other`.
+The ClientDependency configuration options can be found on the [ClientDependency website](https://github.com/Shandem/ClientDependency/wiki/Configuration).
 
-### Using Command Line Arguments Configuration
+This file can be found at the following path: /config/ClientDependency.config
 
-Like with environment variables, it's not feasible to use an entire JSON file as a command line argument. However, with the command line the `:` will work without issues, so each section of the hierarchy is separated with a `:` character. If we use the same example as above, you can achieve the same result by using the following when starting the site via the command line:
+### healthchecks.config
 
-`dotnet run Umbraco:CMS:Unattended:UnattendedUserName="A.N Other"`
+The configuration for backoffice healthcheck notifications.
 
-### Using UserSecrets for Configuration
+This file can be found at the following path: /config/HealthChecks.config
 
-In the development environment it is possible to use UserSecrets for configuration, which is ideal for connection strings and similar settings that shouldn't be committed to source control. To use UserSecrets you need to first enable them for the project - this is done with the following command, issued within the directory that contains the `.csproj` file:
+### Image Processor
 
-`dotnet user-secrets init`
+The configuration for Image Processor, the library responsible for "on the fly processing" of images in Umbraco.
 
-Now it's possible to store the connection string with this command:
+There are three configuration files
+/imageprocessor/cache.config
+/imageprocessor/security.config
+/imageprocessor/processing.config
 
-`dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
+## Replaced by code
 
-The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+### [404handlers.config](404handlers/index.md)
 
-```json
-"ConnectionStrings": {
-    "umbracoDbDSN": "CONNECTION_STRING_IN_HERE"
-}
-```
+Configuration file for legacy NotFoundHandlers
 
-## IntelliSense
+### [applications.config](applications/index.md)
 
-A great thing about `appsettings.json` is that it allows for intellisense with a schema file. For most editors this should work out of the box, without having to configure anything, since the schema is specified in the top of the file like so: `"$schema": "https://json.schemastore.org/appsettings.json"`.
+Configuration options for setting up sections within the Umbraco Backoffice.
 
-## Reading Configuration in Code
+### [BaseRestExtensions.config](BaseRestExtensions/index.md)
 
-You might need to read the configuration from your code.
+The 'BaseRestExtension.config' contains the data necessary for the /Base system when exposing methods in your class library.
 
-When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or [`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
+### [dashboards.config](dashboard/index.md)
 
-```C#
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Configuration.Models;
+Configuration options for controlling which dashboards appear in which sections of the backoffice and who has the permissions to see them.
 
-namespace MySite
-{
-    public class SomeClass
-    {
-        private GlobalSettings _globalSettings;
+### [EmbeddedMedia.config](EmbeddedMedia/index.md)
 
-        public SomeClass(IOptions<GlobalSettings> globalSettings)
-        {
-            _globalSettings = globalSettings.Value;
+This configuration file lists the Embedded Media Providers configured for use in your Umbraco site.
 
-            var smtpHost = _globalSettings.Smtp.Host;
-        }
-    }
-}
-```
+### [ExamineIndex.config](ExamineIndex/index.md)
 
-First off `using Microsoft.Extensions.Options` is added, to gain access to the `IOptions` type, and `using Umbraco.Cms.Core.Configuration.Models;` is added to get access to the `GlobalSettings` type.
+The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
 
-`IOptions<GlobalSettings>` is then injected into the constructor of the class, where we can use the `Value` property to gain access to the actual settings object.
+### [ExamineSettings.config](ExamineSettings)
 
-Now we have a typed object containing our settings, so we can get the Host value by calling `_globalSettings.Smtp.Host`.
+The 'ExamineSettings.config' file shows all the configuration options for Examine.
 
-To see what setting types you can access see the complete list below, each document corresponds to a settings type.
+### [fileSystemProviders.config](fileSystemProviders/index.md)
 
-## Configuration Options
+The 'fileSystemProviders.config' file contains the configuration for the file system providers used by Umbraco to interact with file systems.
 
-A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
+### sections.config
 
-* [Basic authentication settings](BasicAuthSettings/index.md)
-* [Connection strings settings](ConnectionStringsSettings/index.md)
-* [Content settings](ContentSettings/index.md)
-* [Debug settings](DebugSettings/index.md)
-* [Examine settings](ExamineSettings/index.md)
-* [Exception filter settings](ExceptionFilterSettings/index.md)
-* [Global settings](GlobalSettings/index.md)
-* [Health checks settings](HealthChecks/index.md)
-* [Hosting settings](HostingSettings/index.md)
-* [Imaging settings](ImagingSettings/index.md)
-* [Install default data setting](InstallDefaultDataSettings/index.md)
-* [Keep alive settings](KeepAliveSettings/index.md)
-* [Logging settings](LoggingSettings/index.md)
-* [Maximum upload size settings](MaximumUploadSizeSettings/index.md)
-* [Models builder settings](ModelsBuilderSettings/index.md)
-* [NuCache settings](NuCacheSettings/index.md)
-* [Package migration settings](PackageMigrationSettings/index.md)
-* [Plugins settings](PluginsSettings/index.md)
-* [Request handler settings](RequestHandlerSettings/index.md)
-* [Rich text editor settings](RichTextEditorSettings/index.md)
-* [Runtime minification settins](RuntimeMinificationSettings/index.md)
-* [Runtime settings](RuntimeSettings/index.md)
-* [Security settings](SecuritySettings/index.md)
-* [Serilog settings](Serilog/index.md)
-* [Tours settings](ToursSettings/index.md)
-* [Type finder settings](TypeFinderSettings/index.md)
-* [Unattended settings](UnattendedSettings/index.md)
-* [Web routing settings](WebRoutingSettings/index.md)
+The 'sections.config' file contains the configuration for custom sections loaded in the Umbraco Backoffice.
 
-## Configured by code
+### [trees.config](trees/index.md)
 
-* [FileSystemProviders](filesystemProviders.md)
+The 'trees.config' file contains the configuration for trees that are loaded within each section of the Umbraco Backoffice.
+
+### UrlRewriting.config
+
+This is now obsolete and there are better ways to do UrlRewriting, such as within [IIS](https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module). However, the UrlRewriting documentation can be [downloaded in PDF format](https://github.com/aspnetde/UrlRewritingNet/blob/master/docs/UrlRewritingNet20_English.pdf) for legacy projects.
+
+## New to Umbraco 8
+
+### [SeriLog.config](Serilog/index.md)
+
+In v8 Serilog is used for logging, use these files to configure this:
+
+* `/config/serilog.config` is used to modify the main Umbraco logging pipeline
+* `/config/serilog.user.config` a sublogger that allows you to make modifications without affecting the main Umbraco logger
+
+### NuCache
+
+We have moved away from the traditional large XML file (`umbraco.config` file) and instead using a key value store (`NuCache.Content`) for caching. Content is now stored in a binary cache called NuCache. You can find the file at `/App_Data/TEMP/NuCache/NuCache.Content.db`.

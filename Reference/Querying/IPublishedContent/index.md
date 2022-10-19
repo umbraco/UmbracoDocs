@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
 ---
 
 # IPublishedContent
@@ -9,7 +8,7 @@ _`IPublishedContent` is a strongly typed model for content, media and members an
 
 ## Get started
 
-To access the current page in your templates, copy-paste the below Razor code.
+To access the current page in your macros or templates, copy-paste the below Razor code.
 
 ```csharp
 @{
@@ -20,14 +19,18 @@ To access the current page in your templates, copy-paste the below Razor code.
 <h1>@pageName</h1>
 ```
 
-## [Properties & Extension Methods](Properties/index.md)
+## [Properties](Properties/index-v8.md)
 
 Listing and explanation of IPublishedContent properties and standard helpers for Content and Media.
 
-## [Collections & Filtering](Collections/index.md)
+## [Collections & Filtering](Collections/index-v8.1.md)
 
 Methods for IPublishedContent collections and filtering.
 
-## [IsHelpers](IsHelpers/index.md)
+## [IsHelpers](IsHelpers/index-v8.md)
 
 A library of extension methods to simplify working with IPublishedContent in collections to modify your HTML output. Examples of using `IsHelpers` could be injecting CSS classes for alternating rows or to modify margins.
+
+## [Extension Methods](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.PublishedContentExtensions.html)
+
+Extension methods available for IPublishedContent.

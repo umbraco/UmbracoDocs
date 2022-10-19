@@ -2,18 +2,11 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco events"
 meta.Description: "Information on various backoffice events in Umbraco"
-versionRemoved: 9.0.0
 ---
 
 # Using Events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
-
-:::note
-Since Umbraco 9, Events are called Notifications. This means that the information and links in this article are only relevant to you, if you're using Umbraco 8.
-
-All available notifications are documented in the [Notifications](../Notifications) section.
-:::
 
 ## [Composing](../../Implementation/Composing/index-v8)
 

@@ -1,7 +1,6 @@
 ---
 versionFrom: 8.0.0
 versionTo: 8.18.0
-versionRemoved: 9.0.0
 ---
 
 :::warning

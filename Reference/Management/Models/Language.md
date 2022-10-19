@@ -1,14 +1,12 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Language Model"
-meta.Description: "Represents a Language. Installed languages can be found in the settings section."
+versionFrom: 8.0.0
 ---
 
 # Language
 
 Represents a Language. Installed languages can be found in the settings section.
 
-* **Namespace:** `Umbraco.Cms.Core.Models`
+* **Namespace:** `Umbraco.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -18,18 +16,14 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statement:
 
 ```csharp
-using Umbraco.Cms.Core.Models;
+using Umbraco.Core.Models;
 ```
 
 ## Constructors
 
-### new Language(GlobalSettings globalSettings, string isoCode)
+### new Language(string isoCode)
 
-Constructor for creating a new `Language` object where the necessary parameter are the global settings as `GlobalSettings` and the isoCode as a `string`.
-
-:::note
-To create a new Language the global setting parameter is necessary. You can find more info about how to use configuration in code in the [Config article](../../V9-Config/#reading-configuration-in-code).
-:::
+Constructor for creating a new `Language` object where the necessary parameter is a isoCode as a `string`.
 
 ## Properties
 
@@ -38,9 +32,8 @@ To create a new Language the global setting parameter is necessary. You can find
 Gets the CultureInfo object for the language.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
-CultureInfo cultureInfo = language.CultureInfo;
-return cultureInfo;
+var language = new Language("en-US");
+return language.CultureInfo;
 ```
 
 ### .CultureName
@@ -48,9 +41,8 @@ return cultureInfo;
 Gets or sets the culture name of the language.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
-string cultureName = language.CultureName;
-return cultureName;
+var language = new Language("en-US");
+return language.CultureName;
 ```
 
 ### .FallbackLanguageId
@@ -58,19 +50,16 @@ return cultureName;
 Gets or sets the identifier of a fallback language. The fallback language can be used in multi-lingual scenarios, to help define fallback strategies when a value does not exist for a requested language.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
-int? fallbackLanguageId = language.FallbackLanguageId;
-return fallbackLanguageId;
+var language = new Language("en-US");
+return language.FallbackLanguageId;
 ```
 
 ### .IsDefault
-
 Gets or sets a value indicating whether the language is the default language.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
-bool isDefault = language.IsDefault;
-return isDefault;
+var language = new Language("en-US");
+return language.IsDefault;
 ```
 
 ### .IsMandatory
@@ -78,9 +67,8 @@ return isDefault;
 Gets or sets a value indicating whether the language is mandatory. When a language is mandatory, a multi-lingual document cannot be published without that language being published, and unpublishing that language unpublishes the entire document.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
-bool isMandatory = language.IsMandatory;
-return isMandatory;
+var language = new Language("en-US");
+return language.IsMandatory;
 ```
 
 ### .IsoCode
@@ -88,6 +76,6 @@ return isMandatory;
 Gets or sets the ISO code of the language.
 
 ```csharp
-var language = new Language(globalSettings, "en-US");
+var language = new Language("en-US");
 return language.IsoCode;
 ```

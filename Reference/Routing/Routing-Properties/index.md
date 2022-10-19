@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Special Property Type Aliases for Routing"
-meta.Description: "Describes special property type aliases which can be used to customise routing"
+versionFrom: 7.0.0
 ---
 
 # Special Property Type aliases for routing
@@ -16,7 +13,7 @@ This in effect means that when a user navigates to this node, they will be redir
 
 ## umbracoInternalRedirectId
 
-Add this property alias to your Document Type with a Content Picker property editor and
+Add this property alias to your document type with a Content Picker property editor and
 Umbraco will load the selected page’s content transparently without performing any URL redirection.
 This essentially performs a rewrite.
 
@@ -34,4 +31,4 @@ The URL alias remains in the browser address bar as a 'mask' over the real URL. 
 
 ## Filtering
 
-[See Filtering Property Conventions](../../Querying/IPublishedContent/Collections/index.md#filtering-conventions)
+[See Filtering Property Conventions](../../Querying/IPublishedContent/Collections/index-v8.1.md#filtering-conventions)

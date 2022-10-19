@@ -1,10 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco WebApi Authorization"
-meta.Description: "How to secure your Umbraco Api controllers"
+versionFrom: 7.0.0
 ---
-
 
 # Umbraco Api - Authorization
 
@@ -14,39 +10,38 @@ _This section will describe how to secure your Umbraco Api controllers based on 
 
 ### Inheriting from UmbracoAuthorizedApiController
 
-Probably the easiest way to ensure your controller is secured for only backoffice users is to inherit from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController`. This is essentially the same as applying `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]` to your controller (see below).
+Probably the easiest way to ensure your controller is secured for only backoffice users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
 
-The `UmbracoAuthorizedApiController` is automatically routed. Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
+The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
 
-### Using the Authorize attribute
+### Using UmbracoAuthorizeAttribute
 
-To secure your controller based on backoffice membership use the attribute: `Microsoft.AspNetCore.Authorization.Authorize`, with the policy parameter set to `AuthorizationPolicies.BackOfficeAccess`, like so: `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]`.
+To secure your controller based on backoffice membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`.
 
-This attribute will ensure that a valid backoffice user is logged in, however it's very important to note that this only works if the controller is routed to `/umbraco/backoffice/*`.
+*It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
+
+This attribute has no parameters it ensures that a valid backoffice user is logged in.
 
 **Examples:**
 
 This will only allow a logged in backoffice user to access the GetAllProducts action:
 
 ```csharp
-public class ProductsController : UmbracoApiController
+public class ProductsApiController : UmbracoApiController
 {
-    [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-    [Route("umbraco/backoffice/product/{id?}")]
-    public string GetProduct(int? id)
+    [Umbraco.Web.WebApi.UmbracoAuthorize]
+    public IEnumerable<string> GetAllProducts()
     {
-        if (id is not null)
-        {
-            return $"Monitor model {id}";
-        }
-        return "Base model Monitor";
+        return new[] { "Table", "Chair", "Desk", "Computer" };
     }
 }
 ```
 
 ## Using MemberAuthorizeAttribute
 
-To secure your controller based on front-end membership use the attribute: `Umbraco.Cms.Web.Common.Filters.UmbracoMemberAuthorize`.
+To secure your controller based on front-end membership use the attribute: `Umbraco.Web.WebApi.MemberAuthorizeAttribute`.
+
+*It's important to note the namespace since we have another class called MemberAuthorizeAttribute in a different namespace that is used for MVC.*
 
 There are 3 parameters that can be supplied to control how the authorization works:
 
@@ -62,7 +57,7 @@ string AllowGroup
 string AllowMembers
 ```
 
-To allow all members, use the attribute without supplying any parameters. 
+To allow all members, you can use the ```[AllowAnonymous]``` attribute.
 
 You can apply these attributes at the controller level or at the action level.
 
@@ -71,25 +66,12 @@ You can apply these attributes at the controller level or at the action level.
 This will only allow logged in members of type "Retailers" to access the GetAllProducts action:
 
 ```csharp
-public class ProductsController : UmbracoApiController
+public class ProductsApiController : UmbracoApiController
 {
-    [UmbracoMemberAuthorize("Retailers", "", "")]
+    [Umbraco.Web.WebApi.MemberAuthorize(AllowType = "Retailers")]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
-    }
-}
-```
-
-This will only allow member's belonging to the group VIP to access any actions on the controller:
-
-```C#
-[UmbracoMemberAuthorize("", "VIP", "")]
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -97,12 +79,12 @@ public class ProductsController : UmbracoApiController
 This will only allow member's with Ids 1, 10 and 20 to access any actions on the controller:
 
 ```csharp
-[UmbracoMemberAuthorize("", "", "1,10,20")]
-public class ProductsController : UmbracoApiController
+[Umbraco.Web.WebApi.MemberAuthorize(AllowMembers = "1,10,20")]
+public class ProductsApiController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] {"Table", "Chair", "Desk", "Computer"};
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
