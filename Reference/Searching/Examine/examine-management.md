@@ -44,4 +44,4 @@ You can see an example here how to configure an Examine searcher in the [Examine
 
 ![Search field for custom searcher within Examine Management](images/examine-management-search-field.png)
 
-The search field allows you to enter a search term and receive results back from the searcher in question, to confirm it is working as expected. Matching results are returned in their raw format, with the score, document ID and Name being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
+The search field allows you to enter a search term and receive results back from the searcher in question. You can confirm if your query is working as expected. Matching results are returned in their raw format, with the score, document ID and Name being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
