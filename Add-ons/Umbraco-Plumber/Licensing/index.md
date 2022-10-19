@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Plumber Licensing"
 meta.Description: "Here you can find information about how to use a license with Umbraco Plumber"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Licensing

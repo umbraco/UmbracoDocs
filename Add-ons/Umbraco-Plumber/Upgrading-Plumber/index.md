@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Plumber Upgrades"
 meta.Description: "Information about upgrading with Umbraco Plumber"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Upgrading Umbraco Plumber

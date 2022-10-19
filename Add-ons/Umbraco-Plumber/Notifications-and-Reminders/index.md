@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Plumber Notifications and Reminders"
 meta.Description: "Information on Umbraco Plumber Notifications and Reminders"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Notifications and Reminders

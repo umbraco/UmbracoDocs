@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Plumber Settings"
 meta.Description: "Various settings for Umbraco Plumber"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Workflow Settings

@@ -2,7 +2,6 @@
 meta.Title: "Installing Umbraco Plumber"
 meta.Description: "Here you can find information about how to install Umbraco Plumber"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Installing Umbraco Plumber

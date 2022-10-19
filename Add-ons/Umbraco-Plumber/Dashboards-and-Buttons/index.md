@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Plumber Dashboards and buttons"
 meta.Description: "Information about Workflow Dashboard and buttons with Umbraco Plumber"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Dashboards and Buttons
