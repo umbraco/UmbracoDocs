@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Content Templates in Umbraco"
 meta.Description: "In this article you can learn about how to create and use Content Templates in Umbraco."
 ---
