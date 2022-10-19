@@ -14,10 +14,10 @@ Use the version-box to the right, if you need to find documentation for a differ
 
 The Models builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. Models are available in both controllers and views.
 
-* [Introduction](introduction-v8.5.md)
-* [Configuration](configuration-v8.5.md)
-* [Builder Modes](Builder-Modes-v8.5.md)
-* [Understand And Extend Models](Understand-And-Extend-v8.5.md)
-* [Using Interfaces](Using-Interfaces-v8.5.md)
-* [Cool things to do with models](CoolThingsWithModels-v8.5.md)
+* [Introduction](introduction.md)
+* [Configuration](configuration.md)
+* [Builder Modes](Builder-Modes.md)
+* [Understand And Extend Models](Understand-And-Extend.md)
+* [Using Interfaces](Using-Interfaces.md)
+* [Cool things to do with models](CoolThingsWithModels.md)
 * [Install the full version of Models Builder](install-models-builder.md)

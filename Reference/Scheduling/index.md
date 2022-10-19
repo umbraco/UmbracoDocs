@@ -6,7 +6,7 @@ keywords: ScheduledTasks, schedule
 # Scheduling with BackgroundTaskRunner
 
 In Umbraco 8+ it is possible to run recurring code using the `BackgroundTaskRunner`.
-Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index-v8.md) that will regularly empty out the recycle bin every five minutes.
+Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index.md) that will regularly empty out the recycle bin every five minutes.
 
 :::warning
 Be aware you may or may not want this background task code to run on all servers, if you are using Load Balancing with multiple servers - https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/
@@ -100,7 +100,7 @@ namespace Umbraco.Web.UI
 ```
 
 :::tip
-Trying to inject services or helpers that rely on `UmbracoContext` such as `UmbracoHelper` or `MembershipHelper` will trigger a boot failed error on startup. See the [Accessing Published Content outside of a Http Request](../../Implementation/Services/index-v8.md#accessing-published-content-outside-of-a-http-request) article to query the Umbraco Published Content using `UmbracoContextFactory`.
+Trying to inject services or helpers that rely on `UmbracoContext` such as `UmbracoHelper` or `MembershipHelper` will trigger a boot failed error on startup. See the [Accessing Published Content outside of a Http Request](../../Implementation/Services/index.md#accessing-published-content-outside-of-a-http-request) article to query the Umbraco Published Content using `UmbracoContextFactory`.
 :::
 
 ## RecurringTaskBase

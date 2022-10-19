@@ -10,7 +10,7 @@ Umbraco `Composition` represents only a minimalist DI abstraction defined by the
 
 ## Registering dependencies
 
-To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index-v8.md)) using the `Register` extension method from `Umbraco.Core`:
+To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index.md)) using the `Register` extension method from `Umbraco.Core`:
 
 ```csharp
 using Umbraco.Core;
@@ -159,11 +159,11 @@ namespace Example.Core.Services.Implement
 }
 ```
 :::note
-The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index-v8.md).
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
 :::
 ### ExamineManager
 
-[Read more about examine](../Searching/Examine/index-v8.md).
+[Read more about examine](../Searching/Examine/index.md).
 
 ```csharp
 using Examine;
@@ -217,7 +217,7 @@ container.Register<IFoo, Foo>();
 
 ### ILogger
 
-[Read more about logging](../../Getting-Started/Code/Debugging/Logging/index-v8.md)
+[Read more about logging](../../Getting-Started/Code/Debugging/Logging/index.md)
 
 ```csharp
 using System;
@@ -244,4 +244,4 @@ namespace Example.Core
 
 ## Using DI in Services and Helpers
 
-[Services and Helpers](../../Implementation/Services/index-v8.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.

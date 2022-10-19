@@ -11,7 +11,7 @@ _This section will describe how to work with Web Api in Umbraco to create REST s
 Related links:
 
 
-* [Umbraco api routes and Urls](routing-v8.md)
+* [Umbraco api routes and Urls](routing.md)
 * [Umbraco api authorization](authorization.md)
 
 
@@ -105,7 +105,7 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
 
 
-For more information about areas, Urls and routing see the [routing section](routing-v8.md)
+For more information about areas, Urls and routing see the [routing section](routing.md)
 
 
 ## Backoffice controllers
@@ -126,7 +126,7 @@ E.g
 ### More Information
 
 
-* [Authenticating & Authorizing controllers](../Authorized/index-v8.md)
+* [Authenticating & Authorizing controllers](../Authorized/index.md)
 
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers

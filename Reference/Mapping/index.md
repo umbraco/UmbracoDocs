@@ -60,7 +60,7 @@ Mappings are defined in `IMapDefinition` instances. This interface defines one m
 void DefineMaps(UmbracoMapper mapper);
 ```
 
-Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index-v8.md#Collections):
+Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index.md#Collections):
 
 ```csharp
 composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()

@@ -19,15 +19,15 @@ To access the current page in your macros or templates, copy-paste the below Raz
 <h1>@pageName</h1>
 ```
 
-## [Properties](Properties/index-v8.md)
+## [Properties](Properties/index.md)
 
 Listing and explanation of IPublishedContent properties and standard helpers for Content and Media.
 
-## [Collections & Filtering](Collections/index-v8.1.md)
+## [Collections & Filtering](Collections/index.md)
 
 Methods for IPublishedContent collections and filtering.
 
-## [IsHelpers](IsHelpers/index-v8.md)
+## [IsHelpers](IsHelpers/index.md)
 
 A library of extension methods to simplify working with IPublishedContent in collections to modify your HTML output. Examples of using `IsHelpers` could be injecting CSS classes for alternating rows or to modify margins.
 

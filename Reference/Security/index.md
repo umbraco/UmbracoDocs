@@ -12,17 +12,17 @@ In this article, you will find everything you need regarding security within Umb
 
 On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-## [SSL/HTTPS](SSL-HTTPS/index-v8.md)
+## [SSL/HTTPS](SSL-HTTPS/index.md)
 
 We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
 
-## [Security Settings](Security-settings/index-v8.md)
+## [Security Settings](Security-settings/index.md)
 
 Learn which password settings that can be configured in Umbraco.
 
-## [Security Hardening](Security-hardening/index-v8.md)
+## [Security Hardening](Security-hardening/index.md)
 
 Learn about how to can harden the security on your Umbraco website to secure it even further.
 
@@ -42,19 +42,19 @@ The Umbraco ASP.NET Identity implementation can be extended by using the [Umbrac
 
 The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-### [BackOfficeUserManager and Events](BackOfficeUserManager-and-Notifications/index-v8.9.md)
+### [BackOfficeUserManager and Events](BackOfficeUserManager-and-Notifications/index.md)
 
-The [`BackOfficeUserManager`](BackOfficeUserManager-and-Notifications/index-v8.9.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
+The [`BackOfficeUserManager`](BackOfficeUserManager-and-Notifications/index.md) is the ASP.NET Identity [UserManager](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn613290(v=vs.108)) implementation in Umbraco. It exposes APIs for working with Umbraco Users via the ASP.NET Identity including password handling.
 
-### [Custom password check](Custom-password-check/index-v8.1.1.md)
+### [Custom password check](Custom-password-check/index.md)
 
 In most cases [External login providers (OAuth)](external-login-providers) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
-You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index-v8.1.1.md).
+You are able to check the username and password against your own credentials store by implementing a [`IBackOfficeUserPasswordChecker`](Custom-password-check/index.md).
 
-#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index-v8.md)
+#### [Authenticating with Active Directory credentials](Authenticate-with-Active-Directory/index.md)
 
 If you are using a network based Azure Directory (not Azure Active Directory), we have set up a guide on how to [connect the backoffice to Active Directory](Authenticate-with-Active-Directory/index.md). It can be done using the  `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
@@ -64,18 +64,18 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](Sensitive-data-on-members/index.md) article.
 
-## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index-v8.md)
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
-## [Reset admin password](Reset-admin-password/index-v8.md)
+## [Reset admin password](Reset-admin-password/index.md)
 
-Use this guide to [reset the password of the "admin" user](Reset-admin-password/index-v8.md).
+Use this guide to [reset the password of the "admin" user](Reset-admin-password/index.md).
 
 If you need to reset accounts of every other user while you still have administrative action, check this "[reset normal user password](password-reset.md)" article.
 
 ## Other articles related to security
 
 * [Routing requirements for backoffice authentication](../Routing/Authorized-v8)
-* [Health Checks](../../Extending/Health-Check/index-v8.md)
-* [Consent Service](../Management/Services/ConsentService/index-v8.md)
+* [Health Checks](../../Extending/Health-Check/index.md)
+* [Consent Service](../Management/Services/ConsentService/index.md)

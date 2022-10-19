@@ -22,7 +22,7 @@ public class MyClass
 }
 
 ```
-[Read more about how to inject AppCaches](../Application-Cache/index-v8.md)).
+[Read more about how to inject AppCaches](../Application-Cache/index.md)).
 
 ## Adding and retrieving items in the cache
 

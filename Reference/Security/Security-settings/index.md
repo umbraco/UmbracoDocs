@@ -61,11 +61,11 @@ For both of these Membership Providers you can specify the following settings (i
 
 ## Password reset settings
 
-Umbraco backend users can [reset their own password](../password-reset-v8.md), or if they try too much, have a locked out account.
+Umbraco backend users can [reset their own password](../password-reset.md), or if they try too much, have a locked out account.
 
-To deactivate the User password reset look at the [Umbraco Settings Security](../../Config/umbracoSettings/index-v8.md#security) section.
+To deactivate the User password reset look at the [Umbraco Settings Security](../../Config/umbracoSettings/index.md#security) section.
 
-To configure password reset verify the [Backoffice Login Password Reset](../../../Getting-Started/Backoffice/Login/index-v8.md#password-reset) section.
+To configure password reset verify the [Backoffice Login Password Reset](../../../Getting-Started/Backoffice/Login/index.md#password-reset) section.
 
 ## Other security settings
 
