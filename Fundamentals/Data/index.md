@@ -2,7 +2,6 @@
 meta.Title: "Umbraco Data"
 meta.Description: "This section focuses on how to create data using the Umbraco backoffice"
 versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Data

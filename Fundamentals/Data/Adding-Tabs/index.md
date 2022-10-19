@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.17.0
-versionTo: 10.0.0
 ---
 
 # Using Tabs

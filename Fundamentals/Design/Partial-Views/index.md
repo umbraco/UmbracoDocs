@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionTo: 10.0.0
 meta.Title: "Partial Views"
 meta.Description: "Information on working with partial views in Umbraco"
 ---

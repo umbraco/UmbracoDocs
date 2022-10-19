@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.4.0
-versionTo: 10.0.0
 ---
 
 # List View

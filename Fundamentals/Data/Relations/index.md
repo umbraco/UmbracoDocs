@@ -2,7 +2,6 @@
 meta.Title: "Working with Relations in Umbraco"
 meta.Description: "What are relations, how to create and manage them"
 versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Relations

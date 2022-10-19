@@ -2,7 +2,6 @@
 meta.Title: "Users in Umbraco"
 meta.Description: "This guide will explain how to define, create, and manage users in the backoffice"
 versionFrom: 8.0.0
-versionTo: 10.0.0
 
 ---
 
