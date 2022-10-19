@@ -42,12 +42,6 @@ Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will
 
 In this section, you can find information about version-specific changes that might affect the way Umbraco Forms works on your project.
 
-### Version 9+
-
-In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database.
-
-If you want to upgrade to Umbraco 9 and are using Forms, you should first migrate the Forms to the database using Forms 8. See the [Umbraco Forms in the Database version 8.0.0](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8.md) article.
-
 #### Version 8.5.0
 
 Prior to Umbraco 8.5.0, all forms data was saved as `.json` files in the `App_Data/UmbracoForms` directory in the file system.
