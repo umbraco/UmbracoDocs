@@ -158,7 +158,7 @@ You need to provide the default reserved paths, else you'll run into an issue as
 And lastly we can test the setup with some JavaScript in our view:
 
 ```html
-<!-- We reference the signalR js file that comes with umbraco -->
+<!-- We reference the signalR js file that comes with Umbraco -->
 <script type="text/javascript" src="/umbraco/lib/signalr/signalr.min.js"></script>
 <script>
     var connection = new signalR.HubConnectionBuilder()

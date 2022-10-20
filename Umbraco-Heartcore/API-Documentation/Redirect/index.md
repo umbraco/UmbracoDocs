@@ -6,10 +6,10 @@ meta.Description: "Documentation for Heartcore Redirect APIs"
 
 # Redirect API
 
-This is the read-only API for delivering redirects, caused by moving or renaming content in the umbraco backoffice, to any app, website, device, or platform.
+This is the read-only API for delivering redirects, caused by moving or renaming content in the Umbraco backoffice, to any app, website, device, or platform.
 
 :::note
-The redirect API is only available if your project is using the **Content Delivery Platform**. You can verify this in the umbraco backoffice, settings section in the headless overview panel.
+The redirect API is only available if your project is using the **Content Delivery Platform**. You can verify this in the Umbraco backoffice, settings section in the headless overview panel.
 :::
 
 ## Cultures

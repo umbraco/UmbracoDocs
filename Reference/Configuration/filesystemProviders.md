@@ -168,7 +168,7 @@ namespace FilesystemProviders
 
         public IActionResult Index(string id, string file)
         {
-            var path = _hostingEnvironment.MapPathWebRoot($"~/media/{id}/{file}");
+            var path = _hostingEnvironment.MapPathWebRoot($"/media/{id}/{file}");
 
             if (_mediaFileManager.FileSystem.FileExists(path))
             {
