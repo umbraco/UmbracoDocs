@@ -81,10 +81,10 @@ In certain circumstances, including hosting pages with forms in IFRAMEs from oth
 
 When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
 
-By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### StoreUmbracoFormsInDb
-This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.
+This setting needs to be set to `True` if you want your form's data to be stored in the database instead of the .json files. The .json files are stored in the `App_Data/UmbracoForms` directory in the file system.
 
 For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
 

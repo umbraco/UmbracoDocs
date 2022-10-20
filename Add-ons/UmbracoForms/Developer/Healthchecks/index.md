@@ -22,7 +22,7 @@ With version 8.7, a health check was introduced to confirm the Umbraco Forms dat
 
 In most cases, you can expect them all to be in place without any developer intervention.  For new installs, the database schema is initialized with all the necessary integrity constraints.  And for upgrades, any new schema changes are automatically applied.
 
-There remains the possibility though that not all will be in place for a particular installation.  For exmaple, this could happen if a constraint is added in a new version, but it can't be added via an automated migration due to existing data integrity issues.
+There remains the possibility though that not all will be in place for a particular installation.  For example, this could happen if a constraint is added in a new version. It can't be added via an automated migration due to existing data integrity issues.
 
 In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area.  So we've added some primary key, foreign key and unique constraints with this version.  If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
 

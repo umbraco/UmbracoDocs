@@ -69,7 +69,7 @@ The view model for the partial view for a field is `FieldViewModel`. This define
 
 - `AdditionalSettings` - a dictionary of the settings keys and values populated for the form field. These can be retrieved in typed form by key using e.g. `Model.GetSettingValue<int>("MaximumLength", 255);`.
 
-The following are avaialble on the model but only populated for fields that support file upload:
+The following are available on the model but only populated for fields that support file upload:
 
 - `AllowAllUploadExtensions`- a boolean indicating whether all file extensions are permitted for upload.
 - `AllowedUploadExtensions`- a collection of strings indicating the file extensions that are permitted for upload.

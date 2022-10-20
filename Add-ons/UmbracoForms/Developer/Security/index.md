@@ -31,7 +31,7 @@ If no start folders are selected, the user will be able to access all forms in t
 
 If a single start folder is selected, that will act as the root of the tree view of forms.  The user will have access to all folders and forms below that selected folder.
 
-If more than one start folder is selected, they will appear underneath the root of the tree view of forms.  The user will have access to only those folders and their descendent folders and forms.
+If more than one start folder is selected, they will appear underneath the root of the tree view of forms.  The user will have access to only those folders and their descendant folders and forms.
 
 ![Start folders](images/user-start-folders.png)
 
@@ -52,7 +52,7 @@ With that in place the _Form Security_ tree divides into three sub-trees:
 
 - Under _User Permissions_, each user that has a specific user permission record is listed and can be managed.  Records for users can be created or deleted via the tree's action menu.
 
-As new forms are created, user groups with aliases listed in the `GrantAccessToNewFormsForUserGroups` configuration setting will be automatically given access.  For example, with a value of `admin,editor`, the built-in Adminstrators and Editors groups would have access.
+As new forms are created, user groups with aliases listed in the `GrantAccessToNewFormsForUserGroups` configuration setting will be automatically given access.  For example, with a value of `admin,editor`, the built-in Administrators and Editors groups would have access.
 
 ### Start folders for user groups
 
@@ -67,7 +67,7 @@ In Umbraco Forms 8.12.0 and 9.4.0, start folders are also enabled for User Group
 
 In introducing the user group based permissions we've taken care to ensure a migration path is available for those existing installations running on older versions of Umbraco Forms.  In that situation, we'd recommend the following approach.
 
-- Upgrate to Umbraco 8.11 or 9.3.
+- Upgrade to Umbraco 8.11 or 9.3.
 - At this stage nothing will have changed in terms of the permissions model in use.
 - Set the `ManageSecurityWithUserGroups` configuration value to `true` and the `GrantAccessToNewFormsForUserGroups` as appropriate for your setup.
 - Via the _Users > Form Security_ section, set the required permissions on each user group.
