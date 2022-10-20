@@ -6,18 +6,23 @@ versionTo: 10.0.0
 
 # Content Version Cleanup
 
-When you publish a document a lot of new records are created in the database. All of the property data for each culture variant of a document are duplicated and this can mount up fast taking disk space on your database server.
+Whenever you save and publish a content item in Umbraco, then a new 'version' is created. (This is how you can rollback to a previous version) - Every saved version stores a record in the database, not only for the version, but for also for each property of the content item for that particular version, and in a multi-lingual site, further rows for each and every culture variation. Over time this amount of data can build and swallow up capacity of your SQL Server, and also slow the performance of the Umbraco backoffice.
 
 Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspired by [Our.Umbraco.UnVersion](https://our.umbraco.com/packages/website-utilities/unversion/)).
 
 ## How it works
 
-The default cleanup policy is to remove all versions that are more than 4 days old except for the latest version which will be kept for 90 days.
+The default cleanup policy will:
+ - not delete any versions created over the previous 4 days, recent version history is preserved. (KeepAllVersionsNewerThanDays setting)
+ - versions created after 4 days will be 'pruned', the last version of a content item saved on a particular day will be kept, but earlier versions from that day will be deleted.
+ - delete all versions older than 90 days (KeepLatestVersionPerDayForDays setting)
+ - Never delete any 'published' versions!
+ - Never delete any specific versions marked as 'Prevent Cleanup' in the backoffice version history
 
 The feature is enabled by default via configuration for new installs starting from 9.1.0 but will require to opt in for 
 those upgrading from 9.0.0.
 
-The feature can be configured ni the `appSettings.json`:
+The feature can be configured in the `appSettings.json`:
 
 ```json
 {
@@ -27,7 +32,7 @@ The feature can be configured ni the `appSettings.json`:
         "ContentVersionCleanupPolicy": {
           "EnableCleanup": true,
           "KeepLatestVersionPerDayForDays": 90,
-          "KeepAllVersionsNewerThanDays": 7
+          "KeepAllVersionsNewerThanDays": 4
         }
       }
     }
@@ -35,8 +40,8 @@ The feature can be configured ni the `appSettings.json`:
 }
 ```
 
-For those sites with stricter requirements (or those who do not want the feature) it is possible to opt out both globally 
-(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and per Document Type.
+For those sites with stricter requirements (or those who do not want the feature) it is possible to opt out of both optoins globally 
+(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and also by Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
