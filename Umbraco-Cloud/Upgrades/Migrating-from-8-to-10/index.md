@@ -197,20 +197,21 @@ If you have Members in your Umbraco database these were not transferred when you
     ORDER BY cmsContentType.alias, cmsPropertyType.Alias
     ```
     
-    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Follow the template below to build up a query that gets all the custom property data for your Member Types, and updates the `propertyTypeId` to that used by your Umbraco 10 database. You need to:
+    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Follow the template below to build up a query that gets all the custom property data for your Member Types. Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'. 
+
+    Your query needs to update the `propertyTypeId` from the one used by your Umbraco 8 database to that used by your Umbraco 10 database. You need to:
     - Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above
-    - For each row returned by your most recent query on your Umbraco 8 database, make a copy of the line that starts with `WHEN`. Find the row with matching `MemberTypeAlias` and `CustomPropertyAlias` in your Umbraco 10 query results. Replace `{umbraco x id for CustomPropertyAlias result}` values with the values from the id columns in the Umbraco 8 result and the Umbraco 10 result.
+    - For each row returned by your most recent query on your Umbraco 8 database, make a copy of the line that starts with `WHEN`. Find the row with matching `MemberTypeAlias` and `CustomPropertyAlias` values in your Umbraco 10 query results. Replace `{umbraco x id}` with the values from the `id` columns in the Umbraco 8 result and the Umbraco 10 result.
      
-    ```
-    SELECT id + {umbracoPropertyData} AS id, versionid + {umbracoContentVersion} AS versionid,  
+        ```
+        SELECT id + {umbracoPropertyData} AS id, versionid + {umbracoContentVersion} AS versionid,  
     	CASE 
-        WHEN propertyTypeId = {umbraco 8 id for CustomPropertyAlias result} THEN {umbraco 10 id for CustomPropertyAlias result} 
+        WHEN propertyTypeId = {umbraco 8 id} THEN {umbraco 10 id} 
         ELSE propertyTypeId END AS propertyTypeId, 
-      languageId, segment, intValue, decimalValue, dateValue, varcharValue, textValue
-      FROM umbracoPropertyData
-      WHERE versionid IN (SELECT id FROM umbracoContentVersion WHERE nodeId IN (SELECT nodeId FROM cmsMember))
-    ```
-    Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'. Finish the wizard.
+        languageId, segment, intValue, decimalValue, dateValue, varcharValue, textValue
+        FROM umbracoPropertyData
+        WHERE versionid IN (SELECT id FROM umbracoContentVersion WHERE nodeId IN (SELECT nodeId FROM cmsMember))
+        ```
 
 * On your Umbraco 10 database reset the identity seeds where you used Identity Insert:
 
