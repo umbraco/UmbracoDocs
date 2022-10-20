@@ -140,9 +140,9 @@ If you have Members in your Umbraco database these were not transferred when you
 * In your Umbraco 10 database, run the following queries and make a note of the results as you will need them for later queries:
 
    ```
-   SELECT MAX(id) FROM umbracoNode
-   SELECT MAX(id) FROM umbracoContentVersion
-   SELECT MAX(id) FROM umbracoPropertyData
+   SELECT MAX(id) AS [{umbracoNode}] FROM umbracoNode
+   SELECT MAX(id) AS [{umbracoContentVersion}] FROM umbracoContentVersion
+   SELECT MAX(id) AS [{umbracoPropertyData}] FROM umbracoPropertyData
    ```
 * Use the SQL Server Import and Export Wizard to query data from your Umbraco 8 database and insert it into your Umbraco 10 database. You can start the wizard by right-clicking any database and selecting Tasks > Import Data... 
  
@@ -186,35 +186,31 @@ If you have Members in your Umbraco database these were not transferred when you
     FROM cmsMember2MemberGroup
     ```
    
-* Now you need to transfer the properties that belong to the Members. Run the following query on both your Umbraco 8 database and your Umbraco 10 database and note the results, which will probably be different between the two:
+* If you added custom properties to any Member Type, you need to transfer the data for those properties. Run the following query on both your Umbraco 8 database and your Umbraco 10 database and note the results, which will probably be different between the two. If there are no results, you haven't added any custom properties to Member Types and you can skip this part.
 
     ```
-    SELECT id, Alias
-    FROM cmsPropertyType
-    WHERE contentTypeId = (SELECT nodeId FROM cmsContentType WHERE alias = 'Member')  
-    AND Alias NOT LIKE 'umbracoMember%' 
-    ORDER BY Alias
+    SELECT cmsPropertyType.id, cmsContentType.alias AS MemberTypeAlias, cmsPropertyType.Alias AS CustomPropertyAlias
+    FROM cmsPropertyType INNER JOIN cmsContentType ON cmsPropertyType.contentTypeId = cmsContentType.nodeId
+    INNER JOIN umbracoNode ON cmsContentType.nodeId = umbracoNode.id 
+    WHERE nodeObjectType = '9B5416FB-E72F-45A9-A07B-5A9A2709CE43'
+    AND cmsPropertyType.Alias NOT LIKE 'umbracoMember%' 
+    ORDER BY cmsContentType.alias, cmsPropertyType.Alias
     ```
     
-    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Enter the query below. Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above, and replace all the `{umbraco x id for alias xxx}` values with the results from your two most recent queries. Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'.
-    
+    Using those results, run the wizard again and select your Umbraco 8 database as the data source, then your Umbraco 10 database as the destination. Follow the template below to build up a query that gets all the custom property data for your Member Types, and updates the `propertyTypeId` to that used by your Umbraco 10 database. You need to:
+    - Replace `{umbracoPropertyData}` and `{umbracoContentVersion}` with the results from your first queries above
+    - For each row returned by your most recent query on your Umbraco 8 database, make a copy of the line that starts with `WHEN`. Find the row with matching `MemberTypeAlias` and `CustomPropertyAlias` in your Umbraco 10 query results. Replace `{umbraco x id for CustomPropertyAlias result}` values with the values from the id columns in the Umbraco 8 result and the Umbraco 10 result.
+     
     ```
     SELECT id + {umbracoPropertyData} AS id, versionid + {umbracoContentVersion} AS versionid,  
-    	CASE WHEN propertyTypeId = {umbraco 8 id for alias approvalToken} THEN {umbraco 10 id for alias approvalToken} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias approvalTokenExpires} THEN {umbraco 10 id for alias approvalTokenExpires} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias blockLogin} THEN {umbraco 10 id for alias blockLogin} 
-             WHEN propertyTypeId = {umbraco 8 id for alias migratedMemberId} THEN {umbraco 10 id for alias migratedMemberId} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias passwordResetToken} THEN {umbraco 10 id for alias passwordResetToken} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias passwordResetTokenExpires} THEN {umbraco 10 id for alias passwordResetTokenExpires} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias requestedEmail} THEN {umbraco 10 id for alias requestedEmail} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias requestedEmailToken} THEN {umbraco 10 id for alias requestedEmailToken} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias requestedEmailTokenExpires} THEN {umbraco 10 id for alias requestedEmailTokenExpires} 
-    		 WHEN propertyTypeId = {umbraco 8 id for alias totalLogins} THEN {umbraco 10 id for alias totalLogins}
-      ELSE propertyTypeId END AS propertyTypeId, 
+    	CASE 
+        WHEN propertyTypeId = {umbraco 8 id for CustomPropertyAlias result} THEN {umbraco 10 id for CustomPropertyAlias result} 
+        ELSE propertyTypeId END AS propertyTypeId, 
       languageId, segment, intValue, decimalValue, dateValue, varcharValue, textValue
       FROM umbracoPropertyData
       WHERE versionid IN (SELECT id FROM umbracoContentVersion WHERE nodeId IN (SELECT nodeId FROM cmsMember))
     ```
+    Change the destination to `[dbo].[umbracoPropertyData]`. This time you **do** need to select 'Enable identity insert'. Finish the wizard.
 
 * On your Umbraco 10 database reset the identity seeds where you used Identity Insert:
 
