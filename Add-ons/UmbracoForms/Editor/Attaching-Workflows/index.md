@@ -21,6 +21,10 @@ If a value is selected for **Go to page**, it will be used to redirect to that p
 
 If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="Attaching Workflows to Umbraco Forms" src="https://www.youtube.com/embed/qJrf1drw1Bg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Adding a Workflow
 
 At the bottom of your Form, a default workflow is already attached to the Form, as well as an option to configure the workflows.
