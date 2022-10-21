@@ -4,9 +4,9 @@ versionFrom: 9.0.0
 
 # Implementing custom error pages
 
-Since Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET, you have several options when it comes to setting up custom error pages on your website.
+Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET. This provides a number of options when setting up custom error pages on your website.
 
-Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience - for example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
+Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience. An example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
 
 ## Contents
 
@@ -24,9 +24,9 @@ In this method we will use a 404 page created via the backoffice.
 
 ### Create a 404 page in the backoffice
 
-First, create a new document type (though you could also use a more generic document type if you already have one) called Page404.
+First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404.
 Make sure the permissions are set to create it under Content.
-Properties on this document type are optional - in most cases, the 404 not found page would be static.
+Properties on this Document Type are optional - in most cases, the 404 not found page would be static.
 Make sure to assign (and fill out) the template for your error page, and then create it in Content.
 
 ### Set a custom 404 page in appsettings.json
@@ -65,7 +65,7 @@ With this approach, you can set different 404 pages for different languages (cul
 :::
 
 :::warning
-If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement - since content IDs might differ across Cloud environments.
+If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement. This is because content IDs might differ across Cloud environments.
 :::
 
 XPath example:
