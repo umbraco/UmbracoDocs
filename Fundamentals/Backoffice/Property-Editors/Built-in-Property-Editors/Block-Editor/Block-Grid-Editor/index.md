@@ -12,7 +12,7 @@ versionTo: 11.0.0
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
 
 :::note
-The Blog Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
+The Block Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
 
 [Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-11-release-candidate/).
 
