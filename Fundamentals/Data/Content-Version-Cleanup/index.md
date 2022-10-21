@@ -13,7 +13,7 @@ Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspir
 ## How it works
 
 The default cleanup policy will:
- - not delete any versions created over the previous 4 days, recent version history is preserved. (KeepAllVersionsNewerThanDays setting)
+ - not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
  - versions created after 4 days will be 'pruned', the last version of a content item saved on a particular day will be kept, but earlier versions from that day will be deleted.
  - delete all versions older than 90 days (KeepLatestVersionPerDayForDays setting)
  - Never delete any 'published' versions!
