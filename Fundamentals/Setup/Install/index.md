@@ -18,7 +18,7 @@ The easiest way to get the latest version of Umbraco up and running is using the
 7. Open your browser and navigate to that url
 8. Follow instructions on the installer
 
-There are a number of other ways you can install Umbraco. Below you'll find some in-depth tutorials.
+There are numerous other ways to install Umbraco. Below, you'll find some in-depth tutorials.
 
 :::tip
 
