@@ -17,6 +17,10 @@ There are several built-in workflow types that can be used to extend the functio
 - [Send XSLT Transformed Email](#send-xslt-transformed-email)
 - [Slack](#slack)
 
+## Video Tutorial
+
+<iframe width="800" height="450" title="Workflow Types in Umbraco Forms" src="https://www.youtube.com/embed/L9k0yDbV6qo?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## **Change Record State**
 
 ![Change Record state](images/change-record-state.png)
