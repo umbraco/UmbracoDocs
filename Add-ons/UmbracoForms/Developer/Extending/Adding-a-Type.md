@@ -128,7 +128,7 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 }
 ```
 
-From Umbraco Forms 9.5 and 10.0, there are further convenience methods you can use for registering custom types. These are found in the namepsace `Umbraco.Forms.Core.Providers.Extensions`.
+From Umbraco Forms 9.5 and 10.0, there are further convenience methods you can use for registering custom types. These are found in the namespace `Umbraco.Forms.Core.Providers.Extensions`.
 
 For example, instead of the following:
 

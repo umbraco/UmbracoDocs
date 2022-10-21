@@ -155,7 +155,7 @@ Go to Github where you will now be able to see that the CI/CD build has started 
 ![Deployment build started](images/Deploying-meta-data.png)
 
 The build server will go through the steps in the YAML file,
-and once it is done the deployment have gone through succesfully:
+and once it is done the deployment have gone through successfully:
 
 ![Deployment Complete](images/deployment-complete.png)
 
