@@ -69,7 +69,7 @@ namespace MyFormsExtensions
 }
 ```
 
-The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  Essentially, this parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides it's state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (e.g. the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
+The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  This parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides its state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (For example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
 You will then need to register this new workflow type as a dependency.
 
