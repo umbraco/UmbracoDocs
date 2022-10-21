@@ -157,7 +157,7 @@ What's great about this is that we can use this model as a type argument when in
 
 ```
 
-Which makes the model typed, so we can access the available stores easily like so: 
+Which makes the model typed, so we can access the available stores like so: 
 
 ```html
 <ul>
