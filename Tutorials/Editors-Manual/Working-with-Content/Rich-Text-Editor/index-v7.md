@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Rich Text Editor
 
-The Umbraco Rich Text Editor is the field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or simply leave it the way it is. If you want to do more, you can insert images, create tables or create links to other pages or documents.
+The Umbraco Rich Text Editor is the field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is. If you want to do more, you can insert images, create tables or create links to other pages or documents.
 
 The functionality varies depending on how the editor is set up. Here we describe the default editor with all options enabled. Contact your system administrator for details regarding your editor.
 
