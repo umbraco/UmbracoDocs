@@ -21,7 +21,7 @@ A consent state registers the state of the consent (granted, revoked...).
 Consent can be given or revoked or changed via the `RegisterConsent` method, which creates a new `Consent` entity to track the consent.
 
 ## Get the current state
-Getter methods of this service return the current state of a consent, i.e. the latest [IConsent](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
+Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
 
 ## Revoking a consent
 Revoking a consent is performed by registering a revoked consent.
