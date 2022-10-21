@@ -1,64 +1,17 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.1.0
+versionTo: 10.0.0
 meta.Title: "Integration Testing Umbraco"
 meta.Description: "A guide to getting started with integration testing in Umbraco"
 ---
 
 # Integration Testing Umbraco
 
-These examples are for Umbraco 10 and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
-Beware that the Nuget package has an issue which was fixed with v10.3.1 of the package. So it is recommended to use tis version.
+These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
 
-## Getting started
+## Using the NuGet package and attributes in your class
 
-First you have to create a new UnitTest project based on NUnit and install the package into the project.
-
-```csharp
-//Create project
-dotnet new nunit
-//Install Umbraco.Tests.Integration package
-dotnet add package Umbraco.Tests.Integration
-```
-
-After the project is created and the package is added we have to create an ```appsettings.Tests.json``` file and a GlobalSetup class.
-
-The ```appsettings.Tests.json``` can be a bit tricky as a file with the same name is provided by the package but currently isn't picked up properly.
-So it can be that you have to create the file as appsettings.json and then rename the file.
-
-The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that the apsetting files are read into configuration so everything can be setup as needed.
-Here is a sample that can be used:
-
-```csharp
-[SetUpFixture]
-public class CustomGlobalSetupTeardown
-{
-    private static GlobalSetupTeardown _setupTearDown;
-
-    [OneTimeSetUp]
-    public void SetUp()
-    {
-        _setupTearDown = new GlobalSetupTeardown();
-        _setupTearDown.SetUp();
-    }
-
-    [OneTimeTearDown]
-    public void TearDown()
-    {
-        _setupTearDown.TearDown();
-    }
-}
-```
-
-Important: The class shouldn't have a namespace!
-
-## Creating a test
-
-To create a test you have to create a new class in your project. This class has to be derived from ```UmbracoIntegrationTest```. This gives you access to some helper methods that you can use.
-
-Second is the ```[UmbracoTest]```-attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
-
-The available options are:
-
+In your NUnit class, you need to use the NuGet package Umbraco.Cms.Tests.Integration, and then decorate your class with the TestFixture attribute & UmbracoTest attribute, with the UmbracoTest attributes there are multiple options:
 
 - None
 - NewEmptyPerFixture
@@ -66,7 +19,7 @@ The available options are:
 - NewSchemaPerFixture
 - NewSchemaPerTest
 
-Basic sample:
+Besides that you also need to derive from the UmbracoIntegrationTest class, with this you are now ready to start Integration Testing.
 
 ```csharp
 using Umbraco.Cms.Tests.Integration;
