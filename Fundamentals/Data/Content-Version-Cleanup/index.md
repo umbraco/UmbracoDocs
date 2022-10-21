@@ -40,7 +40,7 @@ The feature can be configured in the `appSettings.json`:
 }
 ```
 
-For those sites with stricter requirements (or those who do not want the feature) it is possible to opt out of both optoins globally 
+For sites with stricter requirements (or those who do not want the feature), it is possible to opt-out of both options globally 
 (see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and also by Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
