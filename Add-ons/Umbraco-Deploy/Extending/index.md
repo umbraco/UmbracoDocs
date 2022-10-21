@@ -522,7 +522,7 @@ public class ExternalDataSourcesTreeController : ExternalTreeControllerBase
 
 Most features that are available for the deployment of Umbraco entities will also be accessible to entities defined in custom solutions or packages. The "Transfer Now" option available from "Save and Publish" or "Save" button for content/media is only available to custom entities if requested client-side.
 
-You would do this in the custom angularjs controller responsible for handling the edit operations on your entity. Inject the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
+You would do this in the custom AngularJS controller responsible for handling the edit operations on your entity. Inject the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
 
 ```js
 (function () {

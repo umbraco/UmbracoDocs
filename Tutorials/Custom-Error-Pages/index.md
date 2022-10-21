@@ -99,23 +99,23 @@ When there is an error during boot you will presented with a generic error page.
 
 ![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png "Screen shot of generic BootFailed page")
 
-In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the wwwroot on the Physical file system.
+In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
 
-:::note
-The `BootFailed.html` page will only be shown if debugging is disabled in `appsettings.json` i.e.
+The `BootFailed.html` page will only be shown if debugging is disabled in the `appsettings.json` file i.e.
 
-```json  
-"Umbraco": {
-    "CMS": {
-      "Hosting": {
-        "Debug": false
-      }
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Hosting": {
+                "Debug": false
+            }
+        }
     }
-  }
+}
 ```
 
 The full error can always be found in the log file.
-:::
 
 ## Are the error pages not working?
 

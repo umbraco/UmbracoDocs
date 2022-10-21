@@ -85,7 +85,7 @@ Used mainly with container Media Types, the Folder Browser displays a list of th
 
 New to Umbraco 7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
-## [Image Cropper](Image-Cropper.md)
+## [Image Cropper](Image-Cropper/index-v7.md)
 `Alias: Umbraco.ImageCropper`
 
 Used to crop and resize images to predefined sizes. Available from Umbraco 7.1

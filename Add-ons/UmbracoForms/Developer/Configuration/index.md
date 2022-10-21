@@ -68,7 +68,7 @@ For illustration purposes, the following structure represents the full set of op
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AllowEditableFormSubmissions": false,
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
       "TriggerConditionsCheckOn": "change",
@@ -278,7 +278,9 @@ This configuration key is *experimental* and will allow Workflows to be executed
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
-_Note:_ There is a typo in this setting where it has been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this will be corrected to `AllowEditableFormSubmissions`.
+:::note
+There was a typo in this setting where it had been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
+:::
 
 :::warning
 Enable this feature ONLY if you understand the security implications.
@@ -288,7 +290,7 @@ Enable this feature ONLY if you understand the security implications.
 
 When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
 
-By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### CultureToUseWhenParsingDatesForBackOffice
 This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups.

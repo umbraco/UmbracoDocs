@@ -90,7 +90,7 @@ But these are not the only files in the Umbraco folder that you should not commi
 
 We've now covered most of the folders within the `/umbraco` folder, however, there are two left, the `/umbraco/models` folder, and the `/umbraco/PartialViewMacros`. The model's folder has its own section right below, but for the `PartialViewMacros` folder, the answer to "should I commit this to git" is that it depends. If you want to change the templates within the folder or add your own, then you should commit it to git, if you don't need to do that, you should not, the build will automatically create it and its content.
 
-##### The umbraco wwwroot folder
+##### The Umbraco wwwroot folder
 
 The `/wwwroot/umbraco` folder contains static assets for the backoffice, these files will be automatically created when you do a build, and should not be included in source control.
 

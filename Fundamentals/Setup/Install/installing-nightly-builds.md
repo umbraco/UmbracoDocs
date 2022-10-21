@@ -95,6 +95,6 @@ dotnet new -i Umbraco.Templates::9.4.0-preview20220228.85007
 
 The name and the versions are separated with two colons `::`, it's important that we specify the entire version including the `-preview20220228.85007`, otherwise the dotnet new command cannot find the package.
 
-With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new Umbraco -n MyAwesomeNightlySite`
+With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new umbraco -n MyAwesomeNightlySite`
 
 For more information about installing Umbraco see [the installation documentation](./index.md)
