@@ -61,7 +61,7 @@ Details on how to create a custom Embedded Media Provider to enable editors to e
 
 ## [FileSystemProviders (IFileSystem)](Custom-File-Systems.md)
 
-Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example).
+Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (Cloud based, for example).
 
 ## [Health Checks](Health-Check)
 
