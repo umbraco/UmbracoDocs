@@ -6,10 +6,8 @@ swap:
   css: "'CSS'"
   html: "'HTML'"
   url: "'URL'"
-  js: "'JavaScript'"
-  javascript: "'JavaScript'"
+  '(?:(?<!\.)js|[jJ]ava[sS]cript)' : JavaScript
   .net: "'.NET'"
   dot net: "'.NET'"
   cms: "'CMS'"
-  AngularJs: "'AngularJS'"
-  angularjs: "'AngularJS'"  
+  '[aA]ngular[jJ][sS]' : AngularJS

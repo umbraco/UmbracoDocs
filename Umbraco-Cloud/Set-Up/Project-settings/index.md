@@ -39,6 +39,16 @@ Manage CDN Cache settings for your project. You can modify default settings, whi
 
 Used to upload and bind your custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
 
+## Public access
+
+Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication.
+It requires you to enter your Cloud credentials in order to view the frontend. 
+
+You can disable/enable it with one click on the Public access page.
+
+Access to manage the basic authentication requires your project to be on the Standard plan or higher.
+
+
 ## [Webhooks](../../Deployment/Deployment-webhook)
 
 It is possible to configure a deployment webhook on your environments on Umbraco Cloud projects. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.

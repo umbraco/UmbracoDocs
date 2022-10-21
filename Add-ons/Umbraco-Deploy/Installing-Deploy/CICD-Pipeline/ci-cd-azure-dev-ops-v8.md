@@ -60,13 +60,13 @@ variables:
   # The Visual Studio .csproj Web App name
   vsProjectName: DeployOnPremSite
 
-  # The umbraco deploy trigger reason
+  # The Umbraco deploy trigger reason
   umbracoDeployReason: AzureDeployment
 
-  # The umbraco deploy data folder path
+  # The Umbraco deploy data folder path
   umbracoDeployData: $(Build.SourcesDirectory)\$(vsSolutionName)\data
 
-  # The umbraco deploy license folder path
+  # The Umbraco deploy license folder path
   deployLicense: $(Build.SourcesDirectory)\$(vsSolutionName)\bin
 
   # The TriggerDeploy.ps1 file path

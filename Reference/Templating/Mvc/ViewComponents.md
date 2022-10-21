@@ -44,27 +44,25 @@ A view component code consists of two parts:
 
 In this example, let's create a ViewComponent for a Product List and render it on the *HomePage* of the website.
 
-Create a folder named **ProductView**. In this folder, create a new class named **ProductViewComponent.cs** as below:
+Create a folder named **ProductView**. In this folder, create a new class named **ProductViewViewComponent.cs** as below:
 
 ```csharp
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ViewComponentSample.ViewComponents
+namespace Umbraco.Docs.Samples.Web.Components.ProductView
 {
-    [ViewComponent(Name = "ProductView")]
-    public class ProductViewComponent : ViewComponent
+    public class ProductViewViewComponent : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
             List<string> products = new List<string>() {
                 "Product 1", "Product 2", "Product 3", "Product 4", "Product 5"
             };
+
             return View(products);
         }
-
     }
-
 }
 
 ```

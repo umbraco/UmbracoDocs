@@ -1,5 +1,6 @@
 ---
-versionFrom: 10.3.0
+versionFrom: 11.0.0
+versionTo: 11.0.0
 ---
 
 # Block Grid
@@ -11,20 +12,13 @@ versionFrom: 10.3.0
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
 
 :::note
-The Blog Grid is currently only available in the Release Candidate (RC) of Umbraco 10.3. [Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-103-release-candidate/).
-:::
+The Block Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
 
-:::tip
-**Example Blocks**
-When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+[Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-11-release-candidate/).
 
-![Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
+**Do you have some feedback after testing the feature?**
 
-- Create a new **Data Type**.
-- Select the **Block Grid** as the **Property editor**.
-- **Install** the "Sample Configuration".
-
-4 Blocks will be added to the property, ready for testing.
+Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to report your findings. We appreciate any help we get in making our products better.
 :::
 
 ## Contents
@@ -40,6 +34,19 @@ When you are testing out the RC, you have the option to test the new Block Grid 
 * [Write a Custom Layout Stylesheet](#write-a-custom-layout-stylesheet)
 * [Build a custom Backoffice View](#build-a-custom-backoffice-view)
 * [Creating a Block Grid programmatically](#creating-a-block-grid-programmatically)
+
+:::tip
+**Example Blocks**
+When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+
+![Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
+
+* Create a new **Data Type**.
+* Select the **Block Grid** as the **Property editor**.
+* **Install** the "Sample Configuration".
+
+4 Blocks will be added to the property, ready for testing.
+:::
 
 ## Configuring the Block Grid
 
@@ -58,13 +65,13 @@ You will see the configuration options for a Block Grid property editor as shown
 
 The Data Type editor allows you to configure the following properties:
 
-- **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](#setup-block-types).
-- **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
-- **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
-- **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
-- **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
-- **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
-- **Create Button Label** - Overwrites the label on the Create button.
+* **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](#setup-block-types).
+* **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
+* **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
+* **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
+* **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
+* **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
+* **Create Button Label** - Overwrites the label on the Create button.
 
 ## Setup Block Types
 
@@ -86,7 +93,7 @@ Each Block has a set of properties that are optional to configure. These are des
 
 Customize the user experience for your content editors when they work with the Blocks in the Content section.
 
-- **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
+* **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
 
   :::tip
   Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
@@ -96,8 +103,8 @@ Customize the user experience for your content editors when they work with the B
   Get more tips on how to use AngularJS filters in Umbraco CMS from this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
   :::
 
-- **Content model** - Presents the Element Type used as model for the Content section of this Block. This cannot be changed but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
-- **Settings model** - Adds a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
+* **Content model** - Presents the Element Type used as model for the Content section of this Block. This cannot be changed but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+* **Settings model** - Adds a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
 
 ### Size options
 
@@ -116,23 +123,23 @@ A Column Span option is used to define the width of a Block. With multiple Colum
 
 Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other Blocks.
 
-- **Available column spans** - Defines one or more columns, the Block spans across. For example: in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either half width or full width.
-- **Available row spans** - Defines the amount of rows the Block spans across.
+* **Available column spans** - Defines one or more columns, the Block spans across. For example: in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either half width or full width.
+* **Available row spans** - Defines the amount of rows the Block spans across.
 
 ### Catalogue appearance
 
 These properties refer to how the Block is presented in the Block catalogue when editors choose which Blocks to use for their content.
 
-- **Background color** - Defines a background color to be displayed beneath the icon or thumbnail. Example: `#424242`.
-- **Icon color** - Changes the color of the Element Type icon. Example: `#242424`.
-- **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of the Block in the catalogue.
+* **Background color** - Defines a background color to be displayed beneath the icon or thumbnail. Example: `#424242`.
+* **Icon color** - Changes the color of the Element Type icon. Example: `#242424`.
+* **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of the Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10. We recommend a resolution of 400px width and 250px height.
 
 ### Allowance
 
-- **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
-- **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
+* **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
+* **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
 
 ## Areas
 
@@ -144,8 +151,8 @@ Each Area has a size, defined by column and rows spans. The grid for the Areas a
 
 To scale an Area, click and drag the scale-button in the bottom-right corner of an Area.
 
-- **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
-- **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
+* **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
+* **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
 ![Block Grid - Areas](images/BlockGridEditor_Areas.png)
 
@@ -153,29 +160,29 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 
 ![Block Grid - Area Configuration](images/BlockGridEditor_AreasConfiguration.png)
 
-- **Alias** - The alias is printed by `GetBlockGridHTML()`. Use the alias to target the Element representing the area.
+* **Alias** - The alias is printed by `GetBlockGridHTML()`. Use the alias to target the Element representing the area.
 
-- **Create Button Label** - Overwrites the Create Button Label of the Area.
+* **Create Button Label** - Overwrites the Create Button Label of the Area.
 
-- **Number of blocks** - Determines the total number of Blocks in an Area.
+* **Number of blocks** - Determines the total number of Blocks in an Area.
 
-- **Allowed block types** - Defines the types of Blocks or Groups of Blocks that are allowed in the Area. Optionally, you can also set how many Blocks of each type/group should be present. The Blocks can be limited for each specific Block Type in an Area.
+* **Allowed block types** - Defines the types of Blocks or Groups of Blocks that are allowed in the Area. Optionally, you can also set how many Blocks of each type/group should be present. The Blocks can be limited for each specific Block Type in an Area.
 
 ## Advanced
 
 These properties are relevant when working with custom views or complex projects.
 
-- **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
+* **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
     :::tip
     Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
     :::
 
-- **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
+* **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
 
-- **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
+* **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
 
-- **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
+* **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
 
 ## Editing Blocks
 
@@ -288,7 +295,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 :::note
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
-1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in 
+1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in
    `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
 2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
 3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
@@ -527,9 +534,9 @@ The resulting JSON object stored for the Block Grid will look like this:
 
 For each item in the raw data, we need to create:
 
-- One `contentData` entry with the *title* and *text*.
-- One `settingsData` entry with the *featured* value (the checkbox expects `"0"` or `"1"` as data value).
-- One `layout` entry with the desired column and row spans.
+* One `contentData` entry with the *title* and *text*.
+* One `settingsData` entry with the *featured* value (the checkbox expects `"0"` or `"1"` as data value).
+* One `layout` entry with the desired column and row spans.
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario, there could be any number of Element Type combinations.
 

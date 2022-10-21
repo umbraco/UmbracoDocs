@@ -32,7 +32,7 @@ dotnet add package Azure.Identity
 ```
 
 ### Configuration
-The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file. 
+The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file (or create as an Environment Variable). 
 
 ```json
 {
@@ -45,17 +45,21 @@ After adding the Key Vault endpoint you have to update the `CreateHostBuilder` m
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
     Host.CreateDefaultBuilder(args)
-        .ConfigureLogging(x => x.ClearProviders())
+        .ConfigureUmbracoDefaults()
         .ConfigureAppConfiguration((context, config) =>
         {
             var settings = config.Build();
-            var keyVaultEndpoint = settings[Constants.Azure.AzureKeyVaultEndpoint];
+            var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
             if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
             {
                 config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
             }
         })
-        .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStaticWebAssets();
+            webBuilder.UseStartup<Startup>();
+        });
 ```
 
 ### Authentication 
@@ -183,7 +187,7 @@ The ID is optional but recommended as it enables you to control which version of
 Wait a moment and refresh the screen. You should see Green ticks for both values. If you do not have a Green tick you need to review your Access Policies in the previous step.
 ![image](https://user-images.githubusercontent.com/11179749/196053743-e507f057-8fe7-4a68-9e2f-7229f1a340d7.png)
 
-### Local Developement 
+### Local Development 
 
 1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio) 
 1. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)

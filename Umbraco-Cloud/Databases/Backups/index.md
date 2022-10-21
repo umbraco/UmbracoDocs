@@ -22,3 +22,31 @@ Follow these steps:
 - It is very important that you enter the database name. If you do not, the connection will fail.
 - Expand "Databases", right-click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
 - Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
+
+
+## Restoring a Cloud backup to a SQL Server Database
+
+Use the following steps:
+- Connect to your SQL Server using Sql Server Management Studio (SSMS).
+- Expand "Databases", right-click "Databases", select "Tasks", then select "Import Data-tier Application...".
+- Proceed through the dialog, by browsing to the saved location of your `bacpac` file, and then setting the options appropriate to your configuration
+- Complete the import dialog and the database will be restored.
+
+:::note
+When restoring a `bacpac` to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true. 
+
+If it is not set the import will fail.
+:::
+
+To Enable Contained Database Authentication, run the following SQL against your SQL server on the Master database.
+
+    sp_configure 'contained database authentication', 1;  
+    GO  
+    RECONFIGURE;  
+    GO  
+    
+For reference please see the [Microsoft documentation on the topic](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-ver16).
+
+
+
+
