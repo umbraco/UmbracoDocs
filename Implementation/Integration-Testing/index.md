@@ -190,3 +190,37 @@ public void Ensure_No_Content_After_Doctype_Is_Deleted()
     Assert.AreEqual(0, contentTypeService.GetAll().Count());
 }
 ```
+
+## Testing from controller to database
+
+Sometimes we want to test from a controller action and down to the database. In this case, we use the built-in concept of a test server. All you need to do is to use the base class UmbracoTestServerTestBase. Let’s take an example:
+
+```csharp
+[TestFixture]
+public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
+{
+    [Test]
+    public async Task EnsureSuccessStatusCode()
+    {
+        // Arrange
+        var url = PrepareUrl<BackOfficeAssetsController>(x=>x.GetSupportedLocales());
+
+        // Act
+        var response = await Client.GetAsync(url);
+
+        // Assert
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+    }
+}
+```
+
+In this example you have to note two things:
+
+- The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested. 
+- The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
+
+Note that you can still use GetRequiredService to get the services required to seed data.
+
+Some of the most classic scenarios for integration testing are in general the Happy path of the method and some of the specific MVC concepts like Action filters.
+
+Keep in mind that integration tests require a lot of setup before the test executes. So, if input validation tests are created using the UmbracoIntegrationTest base class, these will still succeed, but the execution time will be many times longer compared to a unit test.
