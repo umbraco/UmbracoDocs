@@ -181,9 +181,9 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
         this.Name = "Long Answer with Limit";
     }
 
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context, IFormStorage formStorage)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, List<string> errors)
     {
-        var baseValidation = base.ValidateField(form, field, postedValues, context, formStorage);
+        var baseValidation = base.ValidateField(form, field, postedValues, context, placeholderParsingService, errors);
         var value = postedValues.FirstOrDefault();
 
         if (value != null && value.ToString().Length < int.Parse(MaxNumberOfChars))
@@ -199,3 +199,22 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
     }
 }
 ```
+
+In addition to the above, you must also register the extended field type within a composer and also create the backoffice field type view.
+
+**Composer:**
+```csharp
+public class UmbracoFormsCustomProvidersComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.FormsFields().Add<TextareaWithCount>();
+    }
+}
+```
+
+**Backoffice View:**
+
+Add a new HTML file as per the name of the field class (e.g. ```textareawithcount.html```) to ```\wwwroot\App_Plugins\umbracoforms\Backoffice\Common\FieldTypes\``` within your project. For this example we can just copy the original ```textarea.html``` file used by the standard 'Long Answer' field.
+
+If you do not have the original ```\wwwroot\App_Plugins\umbracoforms\``` folders/files (which are otherwise embedded within a RCL of the package) then you can download these from the 'Package Files' section of the [Umbraco Forms Package](https://our.umbraco.com/packages/developer-tools/umbraco-forms/#tab-package) typically named as ```UmbracoForms.Files.{version}.zip```. 
