@@ -30,7 +30,7 @@ I'm sure a lot of content editors and implementors of your Umbraco sites would l
 2. [Integrating Google Auth in Visual Studio](#integrating-google-auth-in-visual-studio)
 3. [Configuring the solution to allow Google logins](#configuring-the-solution-to-allow-google-logins)
 
-Does that sound way too advanced for you? Then this tutorial is just the right fit. Let's get started.
+Does that sound way too advanced for you? Then this tutorial could be exactly what you are looking for. Let's get started.
 
 ### Prerequisites
 
@@ -54,7 +54,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Enable Google+ API
 
-1. From the project dropdown list, select the project you just created and click **Enable APIs and Services**.
+1. From the project dropdown list, select the project you recently created and click **Enable APIs and Services**.
     ![Enable Apis](images/Enable_Apis.png)
 2. In the **Welcome to the API Library** window, type **Google+ API** in the search field.
 3. Click **Enable** to enable the API.
@@ -111,7 +111,7 @@ The NuGet Package Manager Console lets you use NuGet PowerShell commands to find
 
 #### Opton 2: NuGet Package Manager
 
-The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
+The NuGet Package Manager UI in Visual Studio on Windows allows you to install, uninstall, and update NuGet packages in projects and solutions.
 
 1. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
@@ -288,7 +288,7 @@ For more information on installing and managing packages in Visual Studio, see t
 6. In the **Choose an account** window, select the account you wish to link with the google console project.
     ![Choose Google Sign-in account](images/Link_Google-sign-in.png)
 
-7. For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice with just a click!
+7. For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice.
     ![Google login screen](images/GoogleLoginScreen_v9.png)
 
 ## Related Links
