@@ -38,7 +38,7 @@ The following json needs to be merged into one of you json sources. By default t
 }
 ```
 
-One example that can be used on localhost, if you have a (fake) SMTP server running during development. E.g. [Smtp4dev](https://github.com/rnwood/smtp4dev)
+An example that can be used on localhost, is if you have a local Simple Mail Transfer Protocol (SMTP) server running during development. This could be a tool like [Smtp4dev](https://github.com/rnwood/smtp4dev).
 
 ```json
 {
