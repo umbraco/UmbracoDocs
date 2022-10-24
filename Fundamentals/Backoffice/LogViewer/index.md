@@ -35,124 +35,94 @@ With the flexibility of Umbraco, we give you the power to implement your own `IL
 
 ### Create your own implementation
 To do this we can implement a base class `SerilogLogViewerSourceBase` from `Umbraco.Cms.Core.Logging.Viewer` like so.
-*Note:* This uses the `WindowsAzure.Storage` nuget package
+*Note:* This uses the `Azure.Data.Tables` nuget package
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
-using Serilog;
+using Azure;
+using Azure.Data.Tables;
 using Serilog.Events;
 using Serilog.Formatting.Compact.Reader;
-using Umbraco.Cms.Core.Logging.Viewer;
 using Serilog.Sinks.AzureTableStorage;
+using Umbraco.Cms.Core.Logging.Viewer;
+using ITableEntity = Azure.Data.Tables.ITableEntity;
 
-namespace My.Website
+namespace My.Website;
+
+public class AzureTableLogViewer : SerilogLogViewerSourceBase
 {
-    public class AzureTableLogViewer : SerilogLogViewerSourceBase
+    public AzureTableLogViewer(ILogViewerConfig logViewerConfig, Serilog.ILogger serilogLog, ILogLevelLoader logLevelLoader)
+        : base(logViewerConfig, logLevelLoader, serilogLog)
     {
-        public AzureTableLogViewer(ILogViewerConfig logViewerConfig, ILogger serilogLog)
-            : base(logViewerConfig, serilogLog)
-        {
-        }
-
-        public override bool CanHandleLargeLogs => true;
-
-        public override bool CheckCanOpenLogs(LogTimePeriod logTimePeriod)
-        {
-            // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
-            throw new NotImplementedException();
-        }
-        protected override IReadOnlyList<LogEvent> GetLogs(LogTimePeriod logTimePeriod, ILogFilter filter, int skip, int take)
-        {
-            var cloudStorage = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net");
-            var tableClient = cloudStorage.CreateCloudTableClient();
-            CloudTable table = tableClient.GetTableReference("LogEventEntity");
-
-            var logs = new List<LogEvent>();
-            var count = 0;
-
-            // Create the table query
-            // TODO: Use a range query to filter by start & end date on the Timestamp
-            TableContinuationToken token = null;
-            var results = new List<LogEventEntity>();
-            do
-            {
-                var queryResult = table.ExecuteQuerySegmentedAsync(new TableQuery<LogEventEntity>(), token).GetAwaiter().GetResult();
-                results.AddRange(queryResult.Results);
-                token = queryResult.ContinuationToken;
-            } while (token != null);
-
-            // Loop through the results, displaying information about the entity.
-            foreach (var entity in results.Skip(skip))
-            {
-                // Reads the compact JSON format stored in the 'Data' column back to a LogEvent
-                // Same as the JSON txt files does
-                var logItem = LogEventReader.ReadFromString(entity.Data);
-
-                if (count > skip + take)
-                {
-                    break;
-                }
-
-                if (count < skip)
-                {
-                    count++;
-                    continue;
-                }
-
-                if (filter.TakeLogEvent(logItem))
-                {
-                    logs.Add(logItem);
-                }
-
-                count++;
-            }
-
-            return logs;
-        }
-
-        public override IReadOnlyList<SavedLogSearch> GetSavedSearches()
-        {
-            //TODO: Fetch from Azure Table
-            return base.GetSavedSearches();
-        }
-
-        public override IReadOnlyList<SavedLogSearch> AddSavedSearch(string name, string query)
-        {
-            //TODO: Add to Azure Table
-            return base.AddSavedSearch(name, query);
-        }
-
-        public override IReadOnlyList<SavedLogSearch> DeleteSavedSearch(string name, string query)
-        {
-            //TODO: Remove from Azure Table
-            return base.DeleteSavedSearch(name, query);
-        }
     }
+
+    public override bool CanHandleLargeLogs => true;
+
+    // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
+    public override bool CheckCanOpenLogs(LogTimePeriod logTimePeriod) => throw new NotImplementedException();
+
+    protected override IReadOnlyList<LogEvent> GetLogs(LogTimePeriod logTimePeriod, ILogFilter filter, int skip, int take)
+    {
+        var client =
+            new TableClient(
+                "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net",
+                "Logs");
+
+        // Table storage does not support skip, only take, so the best we can do is to not fetch more entities than we need in total.
+        // See: https://learn.microsoft.com/en-us/rest/api/storageservices/writing-linq-queries-against-the-table-service#returning-the-top-n-entities for more info.
+        var requiredEntities = skip + take;
+        IEnumerable<AzureTableLogEntity> results = client.Query<AzureTableLogEntity>().Take(requiredEntities);
+
+        return results
+            .Skip(skip)
+            .Take(take)
+            .Select(x => LogEventReader.ReadFromString(x.Data))
+            .Where(filter.TakeLogEvent)
+            .ToList();
+    }
+
+    public override IReadOnlyList<SavedLogSearch>? GetSavedSearches()
+    {
+        //TODO: Fetch from Azure Table
+        return base.GetSavedSearches();
+    }
+
+    public override IReadOnlyList<SavedLogSearch>? AddSavedSearch(string? name, string? query)
+    {
+        //TODO: Add to Azure Table
+        return base.AddSavedSearch(name, query);
+    }
+
+    public override IReadOnlyList<SavedLogSearch>? DeleteSavedSearch(string? name, string? query)
+    {
+        //TODO: Remove from Azure Table
+        return base.DeleteSavedSearch(name, query);
+    }
+}
+
+public class AzureTableLogEntity : LogEventEntity, ITableEntity
+{
+    public DateTimeOffset? Timestamp { get; set; }
+
+    public ETag ETag { get; set; }
+}
 ```
+
+Do note that we have to implement our own version of a `LogEventEntity` this is beacuse the `TableClient` needs whatever it's fetching to implement the `ITableEntity` interface.  
 
 ### Register implementation
 Umbraco needs to be made aware that there is a new implementation of an `ILogViewer` to register and replace the default JSON LogViewer that we ship in the core of Umbraco.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 
-namespace My.Website
-{
+namespace My.Website;
 
-    public class LogViewerSavedSearches : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetLogViewer<AzureTableLogViewer>();
-        }
-    }
+public class LogViewerSavedSearches : IComposer
+{
+    public void Compose(IUmbracoBuilder builder) => builder.SetLogViewer<AzureTableLogViewer>();
 }
+
 ```
 
 ### Configure Umbraco to log to Azure Table Storage
