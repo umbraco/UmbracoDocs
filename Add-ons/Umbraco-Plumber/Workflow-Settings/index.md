@@ -91,7 +91,7 @@ To exclude a node from the workflow process:
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
 3. Click **Add** in the **Exclude nodes** section.
-  ![Excliude Nodes](images/exclude-nodes.png)
+  ![Exclude Nodes](images/exclude-nodes.png)
 
 4. Select the **Content node** from the Content tree.
   ![Select content node](images/select-content-from-tree.png)

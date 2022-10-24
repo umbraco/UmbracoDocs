@@ -64,3 +64,14 @@ Discusses how the backoffice for Umbraco Forms is available translated into the 
 ## [Content Apps](ContentApps/index.md)
 
 Adding an Umbraco content app to the Umbraco Forms backoffice section.
+
+## [Headless/AJAX Forms](AjaxForms/index.md)
+
+Umbraco Forms provides an API for client-side rendering and submission of forms, useful when you want to handle forms in a headless style scenario.
+
+## [Block List Filters](BlockListFilters/index.md)
+
+Customize the appearance of Umbraco's block list editor when adding a form to a block.
+
+## [Storing prevalue text files with IPreValueTextFileStorage](IPreValueTextFileStorage/index.md)
+Learn how you can implement a custom IPreValueTextFileStorage to store the prevalue text files to suit your needs.

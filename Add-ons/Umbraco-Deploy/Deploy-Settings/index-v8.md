@@ -97,7 +97,7 @@ These timeout settings default to 20 minutes, but if you are transferring a lot 
 It's important that these settings are added to both the source and target environments in order to work.
 :::
 
-A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maxmimum time allowed for disk operations such as schema updates.
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
 
 - `diskOperationsTimeout`
 
@@ -118,7 +118,7 @@ In earlier versions of Umbraco Deploy, the transfer queue was implemented using 
 
 From 4.7, a database backed queue was implemented and is used by default.
 
-If for any reason there was a need to revert to the previous implementation, the follwoing setting can be used.
+If for any reason there was a need to revert to the previous implementation, the following setting can be used.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,7 +216,7 @@ For example, using the following settings, you will have an installation that ig
 
 ## Memory cache reload
 
-Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accomodate a cache clear after deployment, this workaround can be automated via the following setting:
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -29,7 +29,7 @@ When a workflow is active on the current node, the **Publish** button is replace
 
 When no workflow is active, the button state is determined by the current user's permissions.
 
-Umbraco Plumber overrides Umbracos User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Plumber shifts Umbraco from a centrally administered publishing model (i.e. controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
+Umbraco Plumber overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Plumber shifts Umbraco from a centrally administered publishing model (i.e. controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
 
 In cases, where the content is already in a workflow, a notification is displayed at the top of the editor. Depending on the Workflow **Settings**, you can enable/disable editing access on a content node in a workflow.
 

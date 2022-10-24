@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 # Language Variants
 
-Language Variants allows you to vary content by culture, so you can allow a content node to exist in several languages.
+Language Variants allows you to vary content by culture, so you can allow a content node to exist in multiple languages.
 
 This article will cover the different aspects of enabling and working with language variants on your Umbraco website.
 
@@ -39,7 +39,7 @@ You will always have one default language but each language can be set to mandat
 
 Now that there are two languages to vary the content with, it needs to be enabled on the Document Types. To do so:
 
-1. Go to the document type in the **Settings** section.
+1. Go to the Document Type in the **Settings** section.
 2. Open the **Permissions** page.
 3. Toggle **Allow vary by culture**.
     ![Allowing variance on doc types](images/allow-variance_v10.png)
@@ -57,7 +57,7 @@ When you return to your content node you will notice two things:
 
     ![Allowing variance on properties](images/varying-content_v10.png)
 
-Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages, as the value of the invariant properties are shared between all variants on the website.
+Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages. Since the value of the invariant properties are shared between all variants on the website.
 
 ![How an invariant property looks when it is locked](images/invariant-property-locked.png)
 
@@ -94,12 +94,12 @@ When you are working with a multilingual site you might want to control who can 
 
 This can be controlled on a User Group level. All default User Groups, except the Sensitive data group, have access to all languages out of the box.
 
-When "Allow access to all languages" is not checked, languages can be added and/or removed in order to control which variations the users in the User Group have access to.
+When "Allow access to all languages" is not checked, languages can be added and/or removed. This is to determine which variants the users in the user group have access to.
 
 ![Assign access to all or individual languages on th User Group](images/Assign-Access-Languages.png)
 
 :::tip
-Even though a the language permissions have been set on a User Group, a user in that group will still be able to view and browse all the language variations in the allowed parts of the Content tree. The permission setting will ensure that only the added languages are editable by users of the User Group.
+Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.
 :::
 
 :::links

@@ -26,7 +26,7 @@ There remains the possibility though that not all will be in place for a particu
 
 In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area.  So we've added some primary key, foreign key and unique constraints with this version.  If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
 
-There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the ophaning of records, that aren't correct. This is the reason for the constraints to exist, and why we want to ensure they are in place.
+There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the orphaning of records, that aren't correct. This is the reason for the constraints to exist, and why we want to ensure they are in place.
 
 ### Running The Health Check
 

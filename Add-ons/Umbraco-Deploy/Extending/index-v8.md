@@ -299,7 +299,7 @@ With the artifact and connectors in place, the final step necessary is to regist
 
 ### Disk Based Transfers
 
-In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
+In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the entity to disk whenever one of them is saved.
 
 ```C#
     public class ExampleDataDeployComponent : IComponent

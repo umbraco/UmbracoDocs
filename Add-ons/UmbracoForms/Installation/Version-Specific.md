@@ -49,7 +49,7 @@ Version 10 contains a number of breaking changes but we won't expect many projec
 
 ##### Configuration
 
-- Renamed the configuration option to allow editable form submissions on the front-end to `AllowEditableFormSubmisisons` (fixing the typo in the previous value of `AllowEditableFormSubmisisons`).
+- Renamed the configuration option to allow editable form submissions on the front-end to `AllowEditableFormSubmissions` (fixing the typo in the previous value of `AllowEditableFormSubmissions`).
 
 ##### Code
 

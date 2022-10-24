@@ -80,7 +80,7 @@ If you need to build your own data resolvers for Courier there are some great ex
 
 ```xml
 <keyValuePrevalueEditors>
-    <!-- Prevalue editors that store values as a key value pair in the built-in umbracp prevalue storage, identified by their full class-name -->
+    <!-- Prevalue editors that store values as a key value pair in the built-in umbraco prevalue storage, identified by their full class-name -->
     <add key="KeyValuePrevalueEditor">umbraco.editorControls.KeyValuePrevalueEditor</add>
 </keyValuePrevalueEditors>
 ```
@@ -191,7 +191,7 @@ Configuring which macro property types contains references to other nodes
 
 ```xml
 <files>
-    <!-- add new datatype elements for data types that stores files as a path ex: /meda/223/file.png -->
+    <!-- add new datatype elements for data types that stores files as a path ex: /media/223/file.png -->
     <add key="Upload">5032a6e6-69e3-491d-bb28-cd31cd11086c</add>
     <add key="Ucomponents-Filepicker">318a9c2e-3966-4979-8c1d-575c5d5f669b</add>
 </files>
