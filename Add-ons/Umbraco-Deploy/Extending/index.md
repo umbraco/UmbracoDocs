@@ -314,7 +314,7 @@ UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
 
 ### Disk Based Transfers
 
-To deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a component, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
+To deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a component, where events are used to trigger a serialization of the entity to disk whenever one of them is saved.
 
 ```c#
 public class ExampleDataDeployComponent : IComponent

@@ -146,7 +146,7 @@ namespace MyNamespace
                 workflowSettings.Add(settingItemToAdd);
             }
 
-            // For each settting, provide a value for the workflow instance (in this example, we only have one).
+            // For each setting, provide a value for the workflow instance (in this example, we only have one).
             SettingWithValue messageSetting = workflowSettings.SingleOrDefault(x => x.Alias == "Message");
             if (messageSetting != null)
             {

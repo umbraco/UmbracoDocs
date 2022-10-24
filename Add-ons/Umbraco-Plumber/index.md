@@ -61,4 +61,4 @@ Overview of the content app added to nodes where workflow is enabled.
 
 ## [Workflow History](Workflow-History/index.md)
 
-Overview of the workflow histroy displayed in a tabular format.
+Overview of the workflow history displayed in a tabular format.

@@ -46,7 +46,7 @@ Moving your content and media between your environments is done through the Umbr
   - [Restore Content and / or Media](Restoring-content)
 
 :::note
-Transferring and restoring content and media is the same whether you are working locally and transfering between two environments.
+Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
 :::
 
 <iframe width="800" height="450" title="Umbraco Deploy - Content transfer and deploy" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
