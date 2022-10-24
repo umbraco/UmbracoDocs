@@ -122,7 +122,7 @@ public void MySetup()
 ```
 
 Now you're all set to start testing with your own site! Let's try and see how that would look!
-Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to set up our site!
+Here's an example test, where we test that content is deleted, if you delete the Document Types. As you can see, this time we do not have to use builder patterns to set up our site!
 
 ```csharp
 [Test]
