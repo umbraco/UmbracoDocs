@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 9.0.0
 ---
 
 # Examine Management
@@ -36,10 +36,12 @@ From here you can see the default system fields that are stored for each documen
 
 ## Searchers
 
-The Searchers section is broken down into two sub-sections which provide configuration details along with the ability to test how a search index is currently performing.
+From the Searchers section, you can view details about each Examine searcher currently configured within your Umbraco installation. Clicking any of these searchers will take you to a search page, where you can test out your search terms.
 
-### Search tools
+You can see an example here how to configure an Examine searcher in the [Examine Multisearcher documentation](./pdfindex-multisearcher.md#multi-index-searchers).
 
-![Search Tools within Examine Management](images/examine-management-search-tools.png)
+### Search field
 
-The search tools allows you to enter a search term and receive results back from the searcher in question, to confirm it is working as expected. Search terms can be entered either as plain text or as a lucene query. Matching results are returned in their raw format, with the score, document ID and values being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
+![Search field for custom searcher within Examine Management](images/examine-management-search-field.png)
+
+The search field allows you to enter a search term and receive results back from the searcher in question. You can confirm if your query is working as expected. Matching results are returned in their raw format, with the score, document ID and Name being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
