@@ -7,18 +7,18 @@ meta.Description: "Instructions on installing Umbraco on various platforms using
 
 # Installation
 
-The easiest way to get the latest version of Umbraco up and running is with the CLI.
+The easiest way to get the latest version of Umbraco up and running is using the command line (CLI).
 
 1. Open your command line
 2. Install the Umbraco templates with `dotnet new -i Umbraco.Templates`
 3. Run `dotnet new umbraco --name MyProject` to create a new project
-4. Enter the project folder, it will be the folder containing the `.csproj` file
+4. Enter the project folder. It will be the folder containing the `.csproj` file
 5. Run and build your project using `dotnet run`
 6. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
 7. Open your browser and navigate to that url
 8. Follow instructions on the installer
 
-Below you'll find some in-depth tutorials on the different ways to install Umbraco.
+There are numerous other ways to install Umbraco. Below, you'll find some in-depth tutorials.
 
 :::tip
 
