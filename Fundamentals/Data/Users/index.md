@@ -45,7 +45,7 @@ By default, the User Groups available to new users are **Administrators**, **Wri
 ## Creating a User Group
 
 :::note
-When creating a custom user group in V8, remember to set a start node for content and media for the User Group. This will not give the user group access to the content or media section unless those are added under sections. If you don't assign a start node then users assigned to the User Group will not be able to login to the backoffice.
+When creating a User Group in V8, remember to set a start node for content and media for the User Group. This will not give the User Group access to the content or media section unless those are added under sections. If you don't assign a start node then users assigned to the User Group will not be able to login to the backoffice.
 :::
 
 You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.
