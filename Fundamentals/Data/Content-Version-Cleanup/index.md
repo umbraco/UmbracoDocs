@@ -13,14 +13,13 @@ Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspir
 ## How it works
 
 The default cleanup policy will:
- - not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
- - versions created after 4 days will be 'pruned'. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
- - delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
+ - Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
+ - 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
+ - Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
  - Never delete any 'published' versions.
  - Never delete any specific versions marked as 'Prevent Cleanup' in the backoffice version history.
 
-The feature is enabled by default via configuration for new installs starting from 9.1.0 but will require to opt in for 
-those upgrading from 9.0.0.
+The feature is enabled by default via configuration for new installs starting from 9.1.0 but will require to opt in for those upgrading from 9.0.0.
 
 The feature can be configured in the `appSettings.json`:
 
@@ -40,8 +39,8 @@ The feature can be configured in the `appSettings.json`:
 }
 ```
 
-For sites with stricter requirements (or those who do not want the feature), it is possible to opt-out of both options globally 
-(see [v9-Config > ContentSettings](/documentation/Reference/v9-Config/ContentSettings/index.md#contentversioncleanuppolicy)) and also by Document Type.
+For sites with stricter requirements, it is possible to opt-out of both options globally 
+(see [ContentSettings](/documentation/Reference/Configuration/ContentSettings/index.md#contentversioncleanuppolicy)) and by Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
