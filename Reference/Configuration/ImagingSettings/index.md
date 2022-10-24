@@ -33,7 +33,8 @@ All these settings contain default values, so nothing needs to be explicitly con
 
 ## Cache
 
-Contains configuration for browser and server caching.
+Contains configuration for browser and server caching. 
+When changing these cache headers, it is recommended to clear your media cache. This is due to the data being stored in the cache and not updated when the configuration is changed.
 
 ### Browser max age
 

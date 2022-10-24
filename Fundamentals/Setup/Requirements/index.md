@@ -31,6 +31,8 @@ The Umbraco UI should work in all modern browsers:
 
 ### Recommendation
 
+For the best experience, we would recommend that you ensure your hosting environment has the following to run Umbraco CMS:
+
 * Windows Server 2019 and higher
 * IIS 10 and higher
 * SQL Server 2019 and higher
@@ -42,6 +44,8 @@ You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Clou
 :::
 
 ### Miminium requirements to run Umbraco
+
+Umbraco can run on an environment with the minimum requirements stated below:
 
 * Windows Server 2012 R2 and higher
 * IIS 8.5 and higher
