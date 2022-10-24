@@ -35,7 +35,7 @@ public class IntegrationTests : UmbracoIntegrationTest
 
 ## Testing a notification
 
-Start by making a NotificationHandler, this example will be of one canceling overwrites on content named "Root", so if you have some content named "Root" published, you cannot change it.
+Start by making a NotificationHandler. This example will be of one canceling overwrites on content named "Root". If you have some content named "Root" published, you cannot change it.
 
 ```csharp
 public class MyNotificationHandler : INotificationHandler<ContentSavingNotification>
@@ -54,9 +54,9 @@ public class MyNotificationHandler : INotificationHandler<ContentSavingNotificat
 }
 ```
 
-Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
+Then we can make an integration test. We do have to register our notification in the test like you would do with a composer. We can do this by overriding the `CustomTestSetupMethod` and adding the notification.
 After this, we can build our ContentType and Content with their respective builders.
-When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need.
+When we are saving both the ContentType & Content, we need the corresponding services to do so. We use the `GetRequiredService<IService>` method that can get the services we need.
 We can then use `Assert.Multiple()` to do multiple asserts
 
 ```csharp
@@ -103,10 +103,10 @@ public class Tests : UmbracoIntegrationTest
 
 ## Testing with a schema
 
-So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test.
-This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
+So one of the awesome things about integration tests is, to have consistant stae for every test. Meaning that you can set up a site, download the package for it, and use this state for every test.
+Allowing you to not have to set up your tests with data; like we do in the above example, with the builder pattern.
 
-To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`
+To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`.
 Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
 
 Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
