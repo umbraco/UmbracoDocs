@@ -14,6 +14,10 @@ Umbraco Deploy doesn't come with a 14-day free trial, which means you will need 
 
 Licenses for our products are sold per domain and will also work on all subdomains. With every license, you will also be able to configure two development/testing domains.
 
+:::note
+Each license will work on every version of the product it's intended for.
+:::
+
 ### Example
 
 Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
