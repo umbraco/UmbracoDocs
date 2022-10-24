@@ -341,7 +341,7 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
                 results.ResultsAsHtml(Verbosity)
             });
 
-            // Include the umbraco Application URL host in the message subject so that
+            // Include the Umbraco Application URL host in the message subject so that
             // you can identify the site that these results are for.
             var host = _runtimeState.ApplicationUrl;
 

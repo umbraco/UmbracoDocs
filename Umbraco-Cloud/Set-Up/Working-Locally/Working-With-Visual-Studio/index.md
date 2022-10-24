@@ -64,7 +64,7 @@ Before running the UaaS.cmd tool you will need the **git clone url** for your Um
 * Go to the Project in the Portal
 * Copy the url from "How to connect my machine"
 
-![](images/connect-my-machine.png)
+![](images/connect-my-machine-VS.png)
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and then prompt you to enter the git clone url for your Project.
 Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.

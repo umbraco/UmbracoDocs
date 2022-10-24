@@ -45,7 +45,7 @@ Umbraco will only automatically install if this is set to true, and if there is 
 
 ## Upgrade unattended
 
-If this is set to true, umbraco will automatically run the upgrade migrations once the site has been upgraded.
+If this is set to true, Umbraco will automatically run the upgrade migrations once the site has been upgraded.
 
 ## Unattended user name
 

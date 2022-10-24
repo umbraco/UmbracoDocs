@@ -41,7 +41,6 @@ For illustration purposes, the following structure represents the full set of op
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
-            "Edition": "Default",
             "SessionTimeout": "0.0:20:00",
             "SourceDeployTimeout": "0.0:20:00",
             "DatabaseCommandTimeout": "0.0:20:00",

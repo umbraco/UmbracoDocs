@@ -21,7 +21,6 @@ This settings section allows you to specify the block size of the BTree used by 
 
 This is how NuCache is configured by default. It is important to mention that the block size must be a power of two, at least 512, and at most 65536 (64K).
 
-
 ## Additional Settings
 
 It is possible to configure NuCache to work in memory only without reading/writing the NuCache database files.
@@ -43,3 +42,9 @@ public class DisableNuCacheDatabaseComposer : IComposer
     }
 }
 ```
+
+:::note
+The example above applies only to Umbraco 9+ sites.
+
+Are you using Umbraco 8, please refer to the article on [NuCache Settings for Umbraco 8](../../Configuration-for-Umbraco-7-and-8/nucache-settings.md).
+:::

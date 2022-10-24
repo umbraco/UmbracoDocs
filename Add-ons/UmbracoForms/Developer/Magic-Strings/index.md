@@ -65,13 +65,13 @@ Some extra variables are:
 
 ### Member properties from a form submission
 
-`{member.FOO}` with the prefix of member, the same syntaxwill allow you to retrieve information about the submission if it was submitted by a logged in member.
+`{member.FOO}` with the prefix of member, the same syntax will allow you to retrieve information about the submission if it was submitted by a logged-in member.
 
 ## Formatting magic strings
 
 Using a magic string such as in the examples above will output the values exactly as read from the source. From Forms 10.2, it's possible to apply a format string to customize the output.
 
-The syntax follows that of angularjs filters, i.e. `[<magic-string> | <formatFunction>: <arg1>: <arg2>]`.
+The syntax follows that of AngularJS filters, i.e. `[<magic-string> | <formatFunction>: <arg1>: <arg2>]`.
 
 For example, to truncate a string value read from an Umbraco page field with alias `title`, you would use:
 

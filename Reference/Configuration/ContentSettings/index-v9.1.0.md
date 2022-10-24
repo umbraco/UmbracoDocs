@@ -147,7 +147,7 @@ Umbraco can send out email notifications, set the sender email address for the n
 
 ## Imaging
 
-This section is used for managing how umbraco handles images, allowed attributes and, which properties of an image that should be automatically updated on upload.
+This section is used for managing how Umbraco handles images, allowed attributes and, which properties of an image that should be automatically updated on upload.
 
 ```json
 "Imaging": {

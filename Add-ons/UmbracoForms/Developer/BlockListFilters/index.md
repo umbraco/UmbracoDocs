@@ -5,7 +5,7 @@ meta.Title: "Block List Filters"
 
 # Block List Filters
 
-When working with the Block List list editor, [the editor experience is enhanced](../../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#editor-appearance) by defining a label for the appearance of the Block.
+When working with the Block List editor, [the editor experience is enhanced](../../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#editor-appearance) by defining a label for the appearance of the Block.
 
 These labels can contain AngularJS filters.
 

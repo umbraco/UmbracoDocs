@@ -13,7 +13,7 @@ If you are interested in getting an Organization, please reach out to our Suppor
 
 In the following sections, we will go through the different options that are available in an Organization:
 
-![Organization Overview](images/Organization-Overview-v10.png)
+![Organization Overview](images/Cloud-org-overview.png)
 
 ### Information
 
@@ -46,3 +46,11 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization.
 
 ![Payment methods](images/payment-methods-v10.png)
+
+## Payment History
+
+In the **Payment History** section, you can see the payment history for your organization.
+
+## Subscriptions
+
+In the **Subscriptions** section, you can see the current active subscriptions that are running under the Umbraco Cloud organization.

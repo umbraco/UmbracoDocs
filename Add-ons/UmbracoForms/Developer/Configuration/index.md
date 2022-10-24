@@ -68,7 +68,7 @@ For illustration purposes, the following structure represents the full set of op
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
       "ExecuteWorkflowAsync": "False",
-      "AllowEditableFormSubmisisons": false,     // Note the typo here (see below).
+      "AllowEditableFormSubmissions": false,
       "AppendQueryStringOnRedirectAfterFormSubmission": false,
       "CultureToUseWhenParsingDatesForBackOffice": "",
       "TriggerConditionsCheckOn": "change",
@@ -140,7 +140,7 @@ By default the value of HTML `id` attribute rendered for fieldsets and fields us
 For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
 
 ### SettingsCustomization
-Forms 10.2 introduced the ability to configure settings for the field, workflow, datasource and prevalue sources.  The default behaviour for Forms when a new field or workflow is added to to a form is for each setting to be empty. The values are then completed in by the editor.  All settings defined on the type are displayed for entry.
+Forms 10.2 introduced the ability to configure settings for the field, workflow, data source, and prevalue sources.  The default behavior, when a new field or workflow is added to a form, is for each setting to be empty. The values are then completed by the editor.  All settings defined on the type are displayed for entry.
 
 In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
 
@@ -179,7 +179,7 @@ In this example, the sender address field on a workflow for sending emails can b
   }
 ```
 
-Here an organisation approved reCAPTCHA score threshold is defined, that can't be changed by editors:
+Here an organization-approved reCAPTCHA score threshold is defined, that can't be changed by editors:
 
 ```json
   "SettingsCustomization": {
@@ -278,7 +278,9 @@ This configuration key is *experimental* and will allow Workflows to be executed
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
-_Note:_ There is a typo in this setting where it has been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this will be corrected to `AllowEditableFormSubmissions`.
+:::note
+There was a typo in this setting where it had been named as `AllowEditableFormSubmisisons`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
+:::
 
 :::warning
 Enable this feature ONLY if you understand the security implications.
@@ -288,7 +290,7 @@ Enable this feature ONLY if you understand the security implications.
 
 When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
 
-By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### CultureToUseWhenParsingDatesForBackOffice
 This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups.
