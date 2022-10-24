@@ -62,7 +62,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     ```
 
     :::note
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use only accounts in the organizational directory only (single tenant), you have to specify the Token and AuthorizationEndpoint as well.
+    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
     :::
 
 2. Update `ConfigureServices` method in the `Startup.cs` file:
