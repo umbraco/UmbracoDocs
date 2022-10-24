@@ -7,11 +7,12 @@ meta.Description: "A guide to getting started with integration testing in Umbrac
 
 # Integration Testing Umbraco
 
-These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
+These examples are for Umbraco 8+. They rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
 
 ## Using the NuGet package and attributes in your class
 
-In your NUnit class, you need to use the NuGet package Umbraco.Cms.Tests.Integration, and then decorate your class with the TestFixture attribute & UmbracoTest attribute, with the UmbracoTest attributes there are multiple options:
+In your NUnit class, you need to install the NuGet package Umbraco.Cms.Tests.Integration. This package provides you with base classes for your tests.
+To setup decorate your class with the TestFixture attribute & UmbracoTest attribute. The UmbracoTest attributes provide multiple options:
 
 - None
 - NewEmptyPerFixture

@@ -6,7 +6,8 @@ meta.Description: "A guide to getting started with integration testing in Umbrac
 
 # Integration Testing Umbraco
 
-These examples are for Umbraco 10 and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
+These examples are for Umbraco 10.
+They rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
 Beware that the Nuget package has an issue which was fixed with v10.3.1 of the package. So it is recommended to use tis version.
 
 ## Getting started
@@ -22,10 +23,10 @@ dotnet add package Umbraco.Tests.Integration
 
 After the project is created and the package is added we have to create an ```appsettings.Tests.json``` file and a GlobalSetup class.
 
-The ```appsettings.Tests.json``` can be a bit tricky as a file with the same name is provided by the package but currently isn't picked up properly.
-So it can be that you have to create the file as appsettings.json and then rename the file.
+The ```appsettings.Tests.json``` can be a bit tricky, as a file with the same name is provided by the package but currently isn't picked up properly.
+A workaround is to create the file as ```appsettings.json``` and then rename the file.
 
-The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that the apsetting files are read into configuration so everything can be setup as needed.
+The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that configuration is read and everything is setup as needed.
 Here is a sample that can be used:
 
 ```csharp
@@ -103,7 +104,7 @@ public class MyNotificationHandler : INotificationHandler<ContentSavingNotificat
 Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
 After this, we can build our ContentType and Content with their respective builders.
 When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need.
-We can then use `Assert.Multiple()` to do multiple asserts
+We can then use `Assert.Multiple()` to do multiple asserts.
 
 ```csharp
 [TestFixture]
@@ -152,7 +153,7 @@ public class Tests : UmbracoIntegrationTest
 So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test.
 This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
 
-To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`
+To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`.
 Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
 
 Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
@@ -221,6 +222,5 @@ In this example you have to note two things:
 
 Note that you can still use GetRequiredService to get the services required to seed data.
 
-Some of the most classic scenarios for integration testing are in general the Happy path of the method and some of the specific MVC concepts like Action filters.
-
-Keep in mind that integration tests require a lot of setup before the test executes. So, if input validation tests are created using the UmbracoIntegrationTest base class, these will still succeed, but the execution time will be many times longer compared to a unit test.
+Keep in mind that integration tests require a lot of setup before the test executes.
+So execution time will be many times longer compared to a unit test.
