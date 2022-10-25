@@ -19,8 +19,8 @@ A Dashboard is a tab on the right-hand side of a section eg. the Getting Started
 
 ### Why provide a Custom Dashboard for your editors?
 
-It is generally considered good practice when you build an Umbraco site to provide a custom dashboard to welcome your editors and provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
-This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS.
+It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
+This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using AngularJS.
 
 The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
 
@@ -42,10 +42,10 @@ Here's an overview of the steps that will be covered:
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
 - [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+- [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
-There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../Creating-a-Property-Editor/index.md)' is very much worth a read through too.
+There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../Creating-a-Property-Editor/index.md)' is worth a read through too.
 
 ### The end result
 
@@ -58,9 +58,9 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next, we will create a HTML file inside this folder called 'WelcomeDashboard.html'. The html file will contain a fragment of a html document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
+Next, we will create a HTML file inside this folder called 'WelcomeDashboard.html'. The HTML file will contain a fragment of a HTML document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
-Add the following html to the WelcomeDashboard.html
+Add the following HTML to the WelcomeDashboard.html
 
 ```html
 <div class="welcome-dashboard">
@@ -72,7 +72,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Similar to a property editor you will now register the dashboard in a package.manifest file, so add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
+Similar to a property editor you will now register the dashboard in a package.manifest file. Add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
 
 ```json
 {
@@ -96,7 +96,7 @@ The above configuration is effectively saying:
 > "Add a tab called 'WelcomeDashboard' to the 'Content' section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators', but do allow 'admins' to see it!"
 
 :::note
-The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see in the content section, make sure the weight is less than the default dashboards, [read more about the default weights](../../Extending/Dashboards).
+The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see, make sure the weight is less than the default dashboards. [Read more about the default weights](../../Extending/Dashboards).
 
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
 :::
@@ -153,7 +153,7 @@ We are adding another area tag with a few keys. Let us adjust the dashboard HTML
 </div>
 ```
 
-The `localize` tag will be replaced with the translated keywords. In the above example, we have some default text inside those tags, which might as well be removed - it would usually not be visible after the translation is applied.
+The `localize` tag will be replaced with the translated keywords. We have some default text inside the tags above, which can be removed. It would usually not be visible after the translation is applied.
 
 As for the `localize` tag syntax in HTML, the area alias is combined with the key alias - so if you want to translate:
 
@@ -204,7 +204,7 @@ The backoffice language can be changed in the Users section, if you wish to test
 
 ## Adding a bit of style
 
-Congratulations! Job well done, however this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+Congratulations! Job well done, however this is only the starting point. Dashboards can be styled with CSS, but there are a couple more steps to do so that you can apply a custom stylesheet:
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
@@ -240,7 +240,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 }
 ```
 
-This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
+This stylesheet will now be loaded and applied to your dashboard. Add images and HTML markup as required.
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v10.png)
 
@@ -252,9 +252,15 @@ One caveat is that the package.manifest file is loaded into memory when Umbraco 
 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](https://our.umbraco.com/Documentation/Fundamentals/Design/Stylesheets-Javascript/#bundling--minification-for-javascript-and-css) section.
 
-**For version 8 and below:** If the title doesn't change colour, you may be running the site without debugging and therefore [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. To clear the CDF cache and get it to load in the new JavaScript and CSS, you need to increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config) and press save. Now you can reload the page and see the colourful title.
+**For version 8 and below:** 
+If the title doesn't change colour, you may be running the site without debugging. This means [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. 
 
-Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
+To clear the CDF cache and load the new JavaScript and CSS, you need to:
+ - Increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config)
+ - Save the file
+ - Reload the page and see the colourful title
+
+Hopefully, now you can see the potential of what you can provide to an editor as a basic welcome dashboard.
 
 ## Adding functionality
 
@@ -271,7 +277,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 });
 ```
 
-In our html view, we update the outer div to wire up the controller to the view:
+In our HTML view, we update the outer div to wire up the controller to the view:
 
 ```html
 <div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
@@ -334,7 +340,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 ```
 
 :::tip
-Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.
+Notice you can use console.log() to write out to the browser console window what is being returned by the promise. This helps to debug, but also understand what properties are available to use.
 :::
 
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
@@ -347,9 +353,9 @@ Finally we can now update our view to incorporate the current user's name in our
 
 ## I know what you did last Tuesday
 
-A returning editor may find it useful to see a list of the last few articles they have been editing, with a handy link to load and continue editing. This could be instead of having to remember, and find the item again in the Umbraco Content Tree.
+An editor may find it useful to see a list of articles they have been editing along with a link to load and continue editing. This could be instead of having to remember and find the item again in the Umbraco Content Tree.
 
-We can make use of Umbraco's Angular resource for retrieving audit log information, the **logResource** using the **getPagedUserLog** method to return a list of activities the current user has performed recently.
+We can make use of Umbraco's Angular resource for retrieving audit log information. The **logResource** using the **getPagedUserLog** method to return a list of activities the current user has performed recently.
 
 We inject the logResource into our controller:
 
@@ -372,7 +378,7 @@ Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to
 </ul>
 ```
 
-Back in our controller we'll populate the array of entries using the **logResource**, the getPagedUserLog method expects to receive a JSON object containing information to filter the log by:
+In our controller we'll populate the array of entries using the **logResource**. The **getPagedUserLog** method expects to receive a JSON object containing information to filter the log by:
 
 ```js
 var userLogOptions = {
@@ -383,7 +389,7 @@ var userLogOptions = {
 };
 ```
 
-These options should retrieve the last ten activities for the current user in descending order since the start of 2018, we pass the options into the **getPagedUserLog** like so:
+These options should retrieve the last ten activities for the current user in descending order since the start of 2018. We pass the options into the **getPagedUserLog** like so:
 
 ```js
 logResource.getPagedUserLog(userLogOptions)
@@ -427,7 +433,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 
 We need to loop through the log items from the **logResource**. Since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves. Generally we need the entry in the log to have a `nodeId`, a 'logType' of 'save' and an entity type of Media or Content.
 
-The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
+The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity. For example, it's Name and Icon.
 
 The `getById` method is supported on the following entity types: Document (content), Media, Member Type, Member Group, Media Type, Document Type, Member and Data Type. This needs to be defined before we loop through the entries.
 
@@ -517,16 +523,16 @@ and we should have a list of recently saved content and media:
 ![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v10.png)
 
 :::note
-The url /umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
+The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
 
-The `logResource` has a few bugs prior to version 8.1.4, so if you are on a lower version this may not give the expected result.
+The `logResource` has a few bugs prior to version 8.1.4. If you are on a lower version this may not give the expected result.
 :::
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks?
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries, why not create them a handy shortcut to achieve this common task?
 
-We could add a shortcut to allow the users to add one of the most common type of pages they would be working with, like a blogpost.
+We could add a shortcut to allow the users to add a blogpost.
 
 Add the following to our view:
 
@@ -539,7 +545,7 @@ Add the following to our view:
 </div>
 ```
 
-Where 1065, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
+`1065` is the id of our blog section and BlogPost is the alias of the type of document we want to create.
 
 ![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
 
@@ -659,7 +665,9 @@ WelcomeDashboard.html:
 
 ## Custom External Data - creating your own angular resource
 
-You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
+You can create your own custom angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
+
+The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
 
 ## The end
 
