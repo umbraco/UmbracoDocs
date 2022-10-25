@@ -355,7 +355,7 @@ Finally we can now update our view to incorporate the current user's name in our
 
 An editor may find it useful to see a list of articles they have been editing along with a link to load and continue editing. This could be instead of having to remember and find the item again in the Umbraco Content Tree.
 
-We can make use of Umbraco's Angular resource for retrieving audit log information. The **logResource** using the **getPagedUserLog** method to return a list of activities the current user has performed recently.
+We can make use of Umbraco's Angular resource for retrieving audit log information. Add `logResource` to the method and use the `getPagedUserLog` method to return a list of activities the current user has performed recently.
 
 We inject the logResource into our controller:
 
