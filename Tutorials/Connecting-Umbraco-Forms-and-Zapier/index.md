@@ -14,7 +14,7 @@ This guide takes you through the steps of connecting your Umbraco Forms to Zapie
 
 ## Why use Zapier for your Umbraco Forms data
 
-Umbraco Forms stores entries in the backoffice and has a set of default workflow types that you can use when a new form entry is submitted. If you want to use this data in other applications, such as your CRM or marketing automation platform, you need integrations to those platforms. Integration with Zapier can be done using the default workflows in Umbraco Forms. All without having to write any additional code.
+Umbraco Forms stores entries in the backoffice. It has a set of default workflow types that you can use when a new form entry is submitted. To use this data in other applications, such as your Customer Relationship Management (CRM) or marketing automation platform, you need integrations to those platforms. Integration with Zapier can be done using the default workflows in Umbraco Forms. All without having to write any additional code.
 
 This enables marketers and editors to make automated workflows that pass data between the web apps they use without having to involve a developer.
 
@@ -81,7 +81,7 @@ Now your workflow is ready. Submit your changes and save your form.
 
 Now your form is ready to send data to Zapier and any entry submitted will be posted to the Zapier webhook URL.
 
-To set up field mapping and actions in Zapier your form needs an entry. If this is a completely new form, add it to a page and submit an entry ([guide to adding your form to a page](../../Add-ons/UmbracoForms/Editor/Creating-a-Form/index.md#adding-the-form-to-the-umbraco-site)).
+To set up field mapping and actions in Zapier your form needs an entry. If this is a new form, add it to a page and submit an entry ([guide to adding your form to a page](../../Add-ons/UmbracoForms/Editor/Creating-a-Form/index.md#adding-the-form-to-the-umbraco-site)).
 
 Here is the form and the fields that were submitted for this tutorial.
 
@@ -91,7 +91,7 @@ Once you have an entry in your form you are done in the Umbraco backoffice. Now 
 
 ## Find your form entry data in Zapier
 
-Now it’s time to go back to Zapier and to open up the Zap you started setting up in the first step of this guide.
+In Zapier, open up the Zap you started setting up in the first step of this guide.
 In that Zap we are now ready to continue the setup of our webhook trigger. Start by clicking continue and get to the “Find Data” step.
 
 ![Zapier Find Webhook Data](images/zapierFindWebhookData.png)
@@ -133,7 +133,10 @@ Now you can choose which Google Drive to use, find the spreadsheet and choose th
 
 ![Zapier Google Sheets Possible Fields](images/zapierGoogleSheetsPossibleFields.png)
 
-The fields showing are all columns in your spreadsheet that have a name in row 1. To map the input data to the different fields in the spreadsheet you now click on the “Type or insert…” field and choose which data to put in that field.
+The fields showing are all columns in your spreadsheet that have a name in row 1. To map the input data to the different fields in the spreadsheet follow these steps:
+
+* Select the “Type or insert…” field.
+* Choose which data to put in the field.
 
 ![Zapier Google Sheets Webhook Data](images/zapierGoogleSheetsWebhookData.png)
 
@@ -149,12 +152,12 @@ Click “Test & Continue” and wait for it to process. Once it is done, go to t
 
 ![Google Sheets Data](images/googleSheetsData.png)
 
-Tada! Now your Zap is ready and can be activated to automatically add form entries to Google Sheets. To activate the Zap you go back to your Zap and change the toggle from “OFF” to “ON”. Now it will be waiting for new form entries and be ready to send them to Google Sheets.
+Tada! Now your Zap is ready and can be activated to automatically add form entries to Google Sheets. To activate the Zap you go back to your Zap and change the toggle from “Off” to “On”. Now it will be waiting for new form entries and be ready to send them to Google Sheets.
 
 ## Connecting multiple Umbraco Forms to Zapier
 
 If you want to connect multiple forms to Zapier you can follow the above steps to do so.
-Be sure to add individual Zaps to each form if the data being sent is different or if you want to use different actions for the data.
+Remember to add individual Zaps to each form if the data being sent is different or you want to use different actions for the data.
 
 You can reuse the same Zap and webhook URL if all data sent to Zapier is formatted in the same way. Otherwise errors will occur.
 

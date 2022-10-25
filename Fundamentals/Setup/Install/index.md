@@ -15,7 +15,7 @@ The easiest way to get the latest version of Umbraco up and running is using the
 4. Enter the project folder. It will be the folder containing the `.csproj` file
 5. Run and build your project using `dotnet run`
 6. The console will output a message similar to: `[10:57:39 INF] Now listening on: https://localhost:44388`
-7. Open your browser and navigate to that url
+7. Open your browser and navigate to that URL
 8. Follow instructions on the installer
 
 There are numerous other ways to install Umbraco. Below, you'll find some in-depth tutorials.
@@ -36,7 +36,7 @@ Learn how to run an already installed local installation of Umbraco.
 
 ## [.NET CLI installation](install-umbraco-with-templates.md)
 
-.NET CLI, included with the .NET SDK, can be used to install or uninstall .NET templates from NuGet using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
+.NET CLI, included with the .NET Software Development Kit (SDK), can be used to install or uninstall .NET templates from NuGet. This can be done by using the `dotnet new` command on any OS. The underlying Template Engine enables the creation of custom templates which make new project bootstrapping much faster. With a few steps you can have an Umbraco project running without the need for a code editor.
 
 ## [Visual Studio installation](visual-studio.md)
 
