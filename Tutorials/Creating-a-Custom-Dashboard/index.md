@@ -72,7 +72,7 @@ Add the following HTML to the `WelcomeDashboard.html`.
 
 ## Configuring the dashboard to appear
 
-Similar to a property editor you will now register the dashboard in a package.manifest file. Add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
+Similar to a property editor you will now register the dashboard in a `package.manifest` file. Add a new file inside the `~/App_Plugins/CustomWelcomeDashboard` folder called `package.manifest`:
 
 ```json
 {
