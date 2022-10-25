@@ -91,19 +91,19 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
 
     public override IReadOnlyList<SavedLogSearch>? GetSavedSearches()
     {
-        //TODO: Fetch from Azure Table
+        // Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to fetch from the Azure Table.
         return base.GetSavedSearches();
     }
 
     public override IReadOnlyList<SavedLogSearch>? AddSavedSearch(string? name, string? query)
     {
-        //TODO: Add to Azure Table
+        //Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to add to the Azure Table.
         return base.AddSavedSearch(name, query);
     }
 
     public override IReadOnlyList<SavedLogSearch>? DeleteSavedSearch(string? name, string? query)
     {
-        //TODO: Remove from Azure Table
+        //Optional: If you want to store saved searches in the Azure Table Storage, implement here a method to remove from the Azure Table.
         return base.DeleteSavedSearch(name, query);
     }
 }
