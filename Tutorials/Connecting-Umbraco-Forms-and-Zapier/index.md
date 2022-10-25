@@ -133,7 +133,10 @@ Now you can choose which Google Drive to use, find the spreadsheet and choose th
 
 ![Zapier Google Sheets Possible Fields](images/zapierGoogleSheetsPossibleFields.png)
 
-The fields showing are all columns in your spreadsheet that have a name in row 1. To map the input data to the different fields in the spreadsheet, you click on the “Type or insert…” field and choose which data to put in that field.
+The fields showing are all columns in your spreadsheet that have a name in row 1. To map the input data to the different fields in the spreadsheet follow these steps:
+
+* Select the “Type or insert…” field.
+* Choose which data to put in the field.
 
 ![Zapier Google Sheets Webhook Data](images/zapierGoogleSheetsWebhookData.png)
 
