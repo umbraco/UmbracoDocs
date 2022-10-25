@@ -156,6 +156,7 @@ A ContentLastChanceFinder will always return a 404 status code. This example cre
 
 ```csharp
 using System.Linq;
+using System.Threading.Tasks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
