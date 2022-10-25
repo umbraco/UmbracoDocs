@@ -1,5 +1,5 @@
 ---
-versionFrom: 11.0.0
+versionFrom: 9.0.0
 meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
 ---
@@ -219,7 +219,7 @@ In some cases, this might be ok but many times we've seen bulk imports occur on 
 
 ## Processing during startup
 
-Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification`, however, great
+Umbraco allows you to run some initialization code during startup by using `UmbracoApplicationStartingNotification` or `UmbracoApplicationMainDomAcquiredNotification`, however, great
 care should be used to ensure that you are not slowing down application startup. You should be especially careful
 as a Package developer that you are not slowing down application startup since your package may end up being used for
 thousands of websites.
