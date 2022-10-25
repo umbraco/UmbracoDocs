@@ -378,7 +378,7 @@ Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to
 </ul>
 ```
 
-In our controller we'll populate the array of entries using the **logResource**. The **getPagedUserLog** method expects to receive a JSON object containing information to filter the log by:
+In our controller we will populate the array of entries using the `logResource`. The `getPagedUserLog` method expects to receive a JSON object containing information to filter the log by:
 
 ```js
 var userLogOptions = {
