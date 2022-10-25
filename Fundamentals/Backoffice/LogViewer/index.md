@@ -35,7 +35,9 @@ With the flexibility of Umbraco, we give you the power to implement your own `IL
 
 ### Create your own implementation
 To do this we can implement a base class `SerilogLogViewerSourceBase` from `Umbraco.Cms.Core.Logging.Viewer` like so.
-*Note:* This uses the `Azure.Data.Tables` nuget package
+:::note
+This uses the `Azure.Data.Tables` NuGet package.
+:::
 
 ```csharp
 using Azure;
@@ -107,10 +109,10 @@ public class AzureTableLogEntity : LogEventEntity, ITableEntity
 }
 ```
 
-Do note that we have to implement our own version of a `LogEventEntity` this is beacuse the `TableClient` needs whatever it's fetching to implement the `ITableEntity` interface.  
+Keep in mind that we have to implement our own version of a `LogEventEntity`. This is because the `TableClient` needs whatever it is fetching to implement the `ITableEntity` interface.  
 
 ### Register implementation
-Umbraco needs to be made aware that there is a new implementation of an `ILogViewer` to register and replace the default JSON LogViewer that we ship in the core of Umbraco.
+Umbraco needs to be made aware that there is a new implementation of an `ILogViewer` to register. We also need to replace the default JSON LogViewer that we ship in the core of Umbraco.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
