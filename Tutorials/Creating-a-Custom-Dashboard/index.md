@@ -389,7 +389,7 @@ var userLogOptions = {
 };
 ```
 
-These options should retrieve the last ten activities for the current user in descending order since the start of 2018. We pass the options into the **getPagedUserLog** like so:
+These options should retrieve the last ten activities for the current user in descending order since the start of 2018. We pass the options into the `getPagedUserLog` like so:
 
 ```js
 logResource.getPagedUserLog(userLogOptions)
