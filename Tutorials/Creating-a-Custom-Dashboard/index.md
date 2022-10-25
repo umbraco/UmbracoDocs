@@ -667,7 +667,7 @@ WelcomeDashboard.html:
 
 You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
 
-The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
+The [property editor tutorial](../Creating-a-Property-Editor/part-4.md) has a step explaining how to do this.
 
 ## The end
 
