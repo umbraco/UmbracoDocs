@@ -20,7 +20,7 @@ Supported meta data properties:
 - `versionFrom`: A property with semver notation to indicate the earliest version for which this article is valid
 - `versionTo`: A property with semver notation to indicate the last version for which this article is valid
 - `versionRemoved`: A property with semver notation to indicate that the topic has been removed from a given version
-- `meta.Title`: Used for SEO - [Meta Title](https://moz.com/learn/seo/title-tag)
+- `meta.Title`: Used for Search Engine Optimization (SEO) - [Meta Title](https://moz.com/learn/seo/title-tag)
 - `meta.Description`: Used for SEO - [Meta Description](https://moz.com/learn/seo/title-tag)
 
 We have also added other properties that you are welcome to use. They currently do not have any underlying functionality, as this is something we are still working on.

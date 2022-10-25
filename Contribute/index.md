@@ -6,9 +6,9 @@ meta.Description: "An explanation of how you can contribute to the Umbraco Docum
 
 The Umbraco Documentation is presented here on [Our Umbraco](https://our.umbraco.com/documentation), however it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS)!
 
-You can contribute to the documentation whenever you feel something is missing or out of date, and all you need to do it, is an account on GitHub.
+You can contribute to the documentation if something is missing or outdated, all you need to do it is a GitHub account.
 
-In this section you can learn more about the various ways of contributing.
+In this section you can learn more about how to contribute.
 
 ## How to get started
 
@@ -29,7 +29,7 @@ The Umbraco Documentation is written using the MarkDown markup language. We've p
 
 ## Multi version documentation
 
-Whenever a new version of Umbraco is released new features might introduced and the "old way" of doing one thing, might have changed. This means that there will have to be several articles about the same thing, but with different variations of information.
+Whenever a new version of Umbraco is released, the previous way of doing things may change. This means that there will have to be multiple articles on the same topic, but with different variations.
 
 Therefore we've introduced **versioned documentation**, which includes 2 different mechanisms:
 
@@ -42,7 +42,7 @@ You can add meta data to any article in the Umbraco Documentation. This includes
 
 ## Labels
 
-On both Issues and Pull Requests we use labels to categories the various requests and submissions.
+On both Issues and Pull Requests we use labels to categorize the requests and submissions.
 
 Here's a quick explanation of the labels groups (colors) we use:
 
@@ -60,9 +60,9 @@ All the work of adding labels, going through Issues & Pull Requests and managing
 
 ## Contribution badge
 
-If you make a Pull Request to any Umbraco repository that gets merged, you will receive a Contributor badge on your member profile on [Our Umbraco](https://our.umbraco.com):
+If your Pull Request to any Umbraco repository gets merged, you'll receive a Contributor badge on your profile on [Our Umbraco](https://our.umbraco.com):
 
 ![Contributor badge on Our](images/c-trib-badge.png)
 
 The Documentation Curators team will search for your profile when merging your Pull Request and add the badge.
-If after some time you have not received your Contributor badge, write a comment with the url to your profile on the closed/merged Pull Request and we will look into it as soon as possible!
+If you do not receive your badge, write a comment with your profile's URL on the Pull Request and we'll look into it.

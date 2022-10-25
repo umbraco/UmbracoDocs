@@ -41,7 +41,7 @@ For consistency, this rule will give a warning if you end headings with either o
 
 The words in the list below, will cause a warning when they are included in your contribution.
 
-Try not to use any of the mentioned words, as they are often opinionated. What may be 'easy' for you, might not be easy for another user reading the article.
+Try not to use any of the mentioned words, as they are often opinionated. What may not be difficult for you, might be for another user reading the article.
 
 In most cases, these words can be removed entirely whereas a rephrasing might be necessary in other cases.
 
@@ -94,19 +94,19 @@ Acronyms should be defined using either parenthesis or a colon followed by the d
 
 Examples of the use of acronyms:
 
+Do this: "Members will only have access to **Content Delivery Network (CDN)** endpoints."
+
 Do not do this: "Members will only have access to **CDN** endpoints."
 
-Do this instead: "Members will only have access to **Content Delivery Network (CDN)** endpoints."
+Do this: **YSOD: Yellow Screen of Death**, .NET error page
 
 Do not do this: **YSOD** (.Net error page)
-
-Do this instead: **YSOD: Yellow Screen of Death**, .NET error page
 
 ### Names
 
 In order to ensure that markup languages and other names are capitalized correctly a rule has been added to check for this.
 
-The rule will ensure that instances of *HTML* and *CSS* are always written using only capital letters. It will also check whether *JavaScript* is written in full or if the abbreviation, *js*.
+The rule will ensure that instances of *HTML* and *CSS* are always written using only capital letters. It will also check whether *JavaScript* is written in full.
 
 ### Brands
 
