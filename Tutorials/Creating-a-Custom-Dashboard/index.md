@@ -204,7 +204,7 @@ The backoffice language can be changed in the Users section, if you wish to test
 
 ## Adding a bit of style
 
-Congratulations! Job well done, however this is only the starting point. Dashboards can be styled with CSS, but there are a couple more steps to do so that you can apply a custom stylesheet:
+Congratulations! Job well done, however, this is only the starting point. Dashboards can be styled with CSS, but there are a couple more steps to follow to be able to apply a custom stylesheet:
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
