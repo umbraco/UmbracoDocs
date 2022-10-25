@@ -30,7 +30,7 @@ An uploaded image in the Media library is based on the Media Type `Image` which 
 
 These standard properties are pre-populated and set during the upload process. For example, this means that the width and height are calculated for you.
 
-If you want to add further properties to use with your Media Item, edit the Image MediaType under **Settings**. In this example, we are going to retrieve an image from the Media section. Then we will render out an `img` tag using the URL of the media item and use the Name as the value for the `alt` attribute.
+If you want to add further properties to use with your Media Item, edit the Image Media Type under **Settings**. In this example, we are going to retrieve an image from the Media section. Then we will render out an `img` tag using the URL of the media item and use the Name as the value for the `alt` attribute.
 
 :::note
 The Media item in the following sample will use a sample Guid (`55240594-b265-4fc2-b1c1-feffc5cf9571`). This example is **not using Models Builder**.
