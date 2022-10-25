@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Deploying changes from a local machine with Umbraco Deploy"
 meta.Description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without"
 ---

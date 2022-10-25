@@ -1,31 +1,40 @@
 ---
 versionFrom: 7.0.0
+versionTo: 8.0.0
 needsV9Update: "true"
 ---
 
 # Handling configuration files
 
+:::warning
+This is currently not possible on projects that run Umbraco 9 and above.
+
+We are working on making it available for Umbraco Cloud projects using version 9 and above.
+:::
+
 When you are doing your normal development process, you'd be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
 
 When you are deploying updates from the Baseline project to the Child projects, all solvable merge conflicts on configuration files will be solved by using the setting on the Child project.
 
-That also means that if a file has been changed in both the Baseline and in the Child project, the change from the Baseline won’t be applied on the Child. To have custom settings on the Child project, you should take advantage of the vendor specific transform files.
+That also means that if a file has been changed in both the Baseline and in the Child project, the change from the Baseline won’t be applied to the Child. To have custom settings on the Child project, you should take advantage of the vendor-specific transform files.
 
 On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../Set-Up/Config-Transforms/)). This should be used when a Child project needs different settings than the Baseline project.
 
-It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally, and push it directly to the Child project. Read the [Working locally](../../../Set-Up/Working-Locally) article to learn more about how this is done.
+It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally and pushing it directly to the Child project. Read the [Working locally](../../../Set-Up/Working-Locally) article to learn more about how this is done.
 
 Following this workflow will ensure that when the Child is updated from the Baseline, the settings won’t be overwritten.
 
 This practice is especially important when the Baseline project gets major new functionality, like new code that is dependent on the configuration files or when upgrades are applied.
 
 :::warning
-When you need specific configuration on Child projects, you should always use config transforms. Making changes directly to the default config files on the Child project might prevent you from being able to push changes from your Baseline project in the future.
+When you need a specific configuration on Child projects, you should always use config transforms. Making changes directly to the default config files on the Child project might prevent you from being able to push changes from your Baseline project in the future.
 :::
 
-# Examples
+## Examples
+
 Here is a few examples of what could be transformed in the child sites.
-## Adding, or updating app settings (i.e. child-appsettings.web.live.xdt.config)
+
+## Adding or updating appsettings (i.e. child-appsettings.web.live.xdt.config)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -42,7 +51,7 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-## Setting the smtp settings for the child project (i.e. child-smtpsettings.web.live.xdt.config)
+## Setting the SMTP settings for the child project (i.e. child-smtpsettings.web.live.xdt.config)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -83,11 +92,13 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-The above could either be added to its own config files, or be split up into one config file pr. setting changed. Umbraco Cloud will run through all config files for the project.
+The above could either be added to its config files or be split up into one config file per setting. Umbraco Cloud will run through all the config files for the project.
 i.e. in one file
+
 - child.web.live.xdt.config
 
 or having multiple files
+
 - child-appsettings.web.live.xdt.config
 - child-iisrewrite.web.live.xdt.config
 - child-smtpsettings.web.live.xdt.config

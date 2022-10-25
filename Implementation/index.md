@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Learn how to implement an Umbraco site"
 meta.Description: "Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco."
 Links-updated: partial
@@ -100,7 +101,7 @@ Links-updated: partial
  </div>
  <div class="row">
     <div class="col-xs-3">
-        <span class="dot big">
+        <span class="dot big icon-Mailbox">
             <span class="line v-line top"></span>
             <span class="line v-line"></span>
             <span class="line h-line"></span>
@@ -117,7 +118,7 @@ Links-updated: partial
 </div>
 <div class="row">
     <div class="col-xs-3">
-        <span class="dot big">
+        <span class="dot big icon-Server">
             <span class="line v-line top"></span>
             <span class="line v-line"></span>
             <span class="line h-line"></span>
@@ -134,8 +135,9 @@ Links-updated: partial
 </div>
 <div class="row">
     <div class="col-xs-3">
-        <span class="dot big">
+        <span class="dot big icon-Settings">
             <span class="line v-line top"></span>
+            <span class="line v-line"></span>
             <span class="line h-line"></span>
         </span>
     </div>
@@ -150,8 +152,9 @@ Links-updated: partial
 </div>
 <div class="row">
     <div class="col-xs-3">
-        <span class="dot big">
+        <span class="dot big icon-Infinity">
             <span class="line v-line top"></span>
+            <span class="line v-line"></span>
             <span class="line h-line"></span>
         </span>
     </div>
@@ -164,5 +167,19 @@ Links-updated: partial
         </div>
     </div>
 </div>
-
-
+<div class="row">
+    <div class="col-xs-3">
+        <span class="dot big icon-Navigation">
+            <span class="line v-line top"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Nullable-Reference-Types/">Nullable Reference Types</a></h4>
+                <small>Using Nullable reference types, it's possible to ignore warnings or intentionally use <code>null</code> as an argument to a method expecting a non nullable reference.</small>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding Notification Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a server-side notification handlers to Umbraco Forms
@@ -38,13 +37,13 @@ namespace MyFormsExtensions
                 }
 
                 // A sample validation
-                var email = GetPostFieldValue(notification.Form, "email");
+                var email = GetPostFieldValue(notification.Form, notification.Context, "email");
                 var emailConfirm = GetPostFieldValue(notification.Form, notification.Context, "verifyEmail");
 
                 // If the validation fails, return a ModelError
                 if (email.ToLower() != emailConfirm.ToLower())
                 {
-                    notification.ModelState.AddModelError(GetPostField(e, "verifyEmail").Id.ToString(), "Email does not match");
+                    notification.ModelState.AddModelError(GetPostField(notification.Form, "verifyEmail").Id.ToString(), "Email does not match");
                 }
             }
         }

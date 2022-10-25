@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Viewing and Exporting Entries
@@ -41,7 +41,7 @@ To export all the entries from your Form:
     ![Export all dialog](images/ExportAllDialog.png)
 5. Click **Done**.
 
-If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files.  You can either download the files in the stucture that they are stored on the web server's disk.  Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
+If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files.  You can either download the files in the structure that they are stored on the web server's disk.  Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
 ## Record Actions
 

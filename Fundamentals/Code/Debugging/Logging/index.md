@@ -1,6 +1,7 @@
 ---
 keywords: logging serilog messagetemplates logs v9 version9
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Logging
@@ -17,7 +18,7 @@ The default location of this file is written to `umbraco/Logs` and contains the 
 
 Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
-```
+```cs
 2021-08-10 09:33:23,677 [P25776/D1/T22] INFO   Umbraco.Cms.Core.Services.Implement.ContentService - Document Home (id=1062) has been published.
 ```
 
@@ -82,6 +83,10 @@ namespace Umbraco.Cms.Web.UI.NetCore
 }
 ```
 
+:::note
+If you are Logging and using the MiniProfiler, you can inject `IProfilingLogger` that has a reference to both ILogger and IProfiler.
+:::
+
 The incorrect way to log the message would be use string interpolation or string concatenation such as
 
 ```csharp
@@ -108,10 +113,9 @@ Serilog uses levels as the primary means for assigning importance to log events.
 1. **Error** - indicating a failure within the application or connected system
 1. **Fatal** - critical errors causing complete failure of the application
 
-
 ## Configuration
 
-Serilog can be configured and extended by using the .NETCore configuration such as the AppSetting.json files or environment variables.
+Serilog can be configured and extended by using the .NET Core configuration such as the AppSetting.json files or environment variables.
 Info on the Serilog config [here](../../../../Reference/V9-Config/Serilog/index.md).
 
 ## The logviewer dashboard
@@ -132,7 +136,7 @@ Umbraco ships with the following Serilog projects, where you can find further in
 * [Serilog.AspNetCore](https://github.com/serilog/serilog-aspnetcore)
 * [Serilog.Enrichers.Process](https://github.com/serilog/serilog-enrichers-process)
 * [Serilog.Enrichers.Thread](https://github.com/serilog/serilog-enrichers-thread)
-* [Serilog.Filters.Expressions](https://github.com/serilog/serilog-filters-expressions)
+* [Serilog.Expressions](https://github.com/serilog/serilog-expressions)
 * [Serilog.Formatting.Compact](https://github.com/serilog/serilog-formatting-compact)
 * [Serilog.Formatting.Compact.Reader](https://github.com/serilog/serilog-formatting-compact-reader)
 * [Serilog.Settings.Configuration](https://github.com/serilog/serilog-settings-configuration)

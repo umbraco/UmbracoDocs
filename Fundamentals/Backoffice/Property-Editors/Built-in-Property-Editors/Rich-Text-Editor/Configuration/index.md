@@ -1,3 +1,8 @@
+---
+versionFrom: 8.0.0
+versionTo: 10.0.0
+---
+
 # Rich Text Editor Configuration
 
 The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
@@ -32,17 +37,21 @@ If inserted images are larger than the dimensions defined here, the images will 
 
 The Rich Text Editor comes in two different modes: Classic and Distraction Free.
 
-### Classic
+- Classic
 
-The default mode, which displays the toolbar in the top.
+    The default mode, which displays the toolbar in the top.
 
-![RTE Mode: Classic](images/rte-mode-classic.png)
+    ![RTE Mode: Classic](images/rte-mode-classic.png)
 
-### Distraction Free
+- Distraction Free
 
-In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
+    In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
 
-![RTE Mode: Distraction Free](images/rte-mode-distractionfree.png)
+    ![RTE Mode: Distraction Free](images/rte-mode-distractionfree.png)
+
+## Overlay Size
+
+Select the width of the link picker overlay. The overlay size comes in three sizes: Small, Medium, and Large.
 
 ## Hide Label
 

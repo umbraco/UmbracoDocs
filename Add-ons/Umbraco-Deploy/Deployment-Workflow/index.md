@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Deployments in Umbraco Deploy"
 meta.Description: "A description of the proper workflow when working with Umbraco Deploy"
 ---
@@ -25,12 +25,12 @@ In summary:
 
 2. Content and Media items are **not** stored in the repository. These need to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
-<!-- need new video or need to be removed 
+<!-- need new video or need to be removed
 ### Video tutorial -->
 
 <!-- Learn more about the deployment approach in this video, which will also show you how to deploy meta data as well as how to transfer content and media. Below you'll find links to articles containing step-by-step guides for each approach. -->
 
-<!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+<!-- <iframe width="800" height="450" title="How to manage deployments on Umbraco Cloud" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 
 ### Deploying meta data
 
@@ -46,10 +46,10 @@ Moving your content and media between your environments is done through the Umbr
   - [Restore Content and / or Media](Restoring-content)
 
 :::note
-Transferring and restoring content and media is the same whether you are working locally and transfering between two environments.
+Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
 :::
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Deploy - Content transfer and deploy" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Deploy Dashboard
 
@@ -68,4 +68,4 @@ It is also possible to see which version of Umbraco Deploy you are running, when
 
 ![Deploy Dashboard](images/Deploy-dahsboard.png)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Deploy - Management dashboard" src="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

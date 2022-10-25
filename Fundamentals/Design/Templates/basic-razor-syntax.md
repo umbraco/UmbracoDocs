@@ -1,7 +1,8 @@
 ---
 meta.Title: "Razor Syntax with Umbraco"
 meta.Description: "How to perform common logical tasks in Razor like if/else, foreach loops, switch statements and using the @ character to separate code and markup"
-versionFrom: 8.0.0
+versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Basic Razor Syntax
@@ -18,17 +19,19 @@ The @ symbol is used in Razor to initiate code, and tell the compiler where to s
 <p>@Model.Name</p>
 
 @* Inside an attribute *@
-<a href="@Model.Url">@Model.Name</a>
+<a href="@Model.Url()">@Model.Name</a>
 
 @* Using it to start logical structures *@
-@if (somethingIsTrue)
+@if (selection?.Length > 0)
 {
-    <p>Write stuff</p>
-}
-
-@foreach (var item in Model.Children)
-{
-    <li>@item.Name</li>
+    <ul>
+        @foreach (var item in selection)
+        {
+            <li>
+                <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+            </li>
+        }
+    </ul>
 }
 ```
 

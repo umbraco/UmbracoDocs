@@ -1,9 +1,8 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Content Templates in Umbraco"
 meta.Description: "In this article you can learn about how to create and use Content Templates in Umbraco."
-verified-against: 9.0.0
 ---
 
 # Content Templates
@@ -16,7 +15,7 @@ Content Templates allows a content editor to create a blueprint for new content 
 
 Select a **Content node** from the **Content** menu:
 
-![Content Menu](images/v8-01-Content-Menu.png)
+![Content Menu](images/v8-01-Content-Menu.png) 
 
 Right-click the Content node and select the **Create Content Template** option. Alternatively, select the **Actions** dropdown of the content node and select the **Create Content Template** option:
 
@@ -48,7 +47,7 @@ Right-click on the **Content Templates** tree and select the **Create** menu ite
 
 ![Create Content Template](images/v8-08-Create-Content-Template.png)
 
-Select the document type you want to create a content template for:
+Select the Document Type you want to create a content template for:
 
 ![Select Content Type](images/v8-09-Select-Content-Type.png)
 
@@ -62,7 +61,7 @@ The new content template will be created in **Content Templates** folder of the 
 
 ## Edit
 
-To edit an existing content template, select a content template from the **Content Templates** folder of the **Settings** tree and click the **Save** button when you have finished editing:
+To edit an existing content template, select a content template from the **Content Templates** folder of the **Settings** tree. When you have finished editing click the **Save** button:
 
 ![Edit Content Template](images/v8-06-Edit-Content-Template.png)
 
@@ -72,6 +71,9 @@ Once you have created a content template, you can use the template to create new
 
 ![Create From Template](images/v8-12-Create-From-Template.png)
 
-When you click a document type that has content templates, Umbraco lets you choose to create a new node based on a content template or a blank one:
+When you click on a Document Type that has a content template you will see to options:
+
+- Create a new node based on a content template
+- Create a blank one
 
 ![Select Template](images/v8-13-Select-Template.png)

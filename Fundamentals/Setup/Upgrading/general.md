@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-4
-state: partial
-updated-links: false
+versionTo: 10.0.0
 ---
 
 # Upgrades in general
@@ -29,6 +27,7 @@ In this article you will find instruction on the following ways of upgrading an 
 
 * [Upgrade using NuGet](#upgrade-using-nuget)
 * [Run an unattended upgrade](#run-an-unattended-upgrade)
+
 ## Upgrade using NuGet
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
@@ -97,7 +96,7 @@ Follow the steps outlined below to use run unattended upgrades in a load balance
 
 1. Upgrade Umbraco via NuGet.
 2. Deploy to all environments.
-3. Set the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
+3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
 4. Boot the Main server and the upgrade will run automatically.
 5. Wait for the upgrade to complete.
 6. Boot the Read-Only servers and make sure they do not show the “upgrade required” screen.

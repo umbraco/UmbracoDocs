@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
-meta.Title: "Umbraco Forms Developer Documention"
+versionTo: 10.0.0
+meta.Title: "Umbraco Forms Developer Documentation"
 meta.Description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
 ---
 
@@ -23,7 +23,7 @@ Themes provide an easier and efficient way of rendering Form HTML markup replaci
 
 ## [Custom Markup](Custom-Markup/index.md)
 
-Custoimize your Forms your way. You have full control over your Form's HTML markup and styling.
+Customize your Forms your way. You have full control over your Form's HTML markup and styling.
 
 ## [Email Templates](Email-Templates/index.md)
 
@@ -64,3 +64,14 @@ Discusses how the backoffice for Umbraco Forms is available translated into the 
 ## [Content Apps](ContentApps/index.md)
 
 Adding an Umbraco content app to the Umbraco Forms backoffice section.
+
+## [Headless/AJAX Forms](AjaxForms/index.md)
+
+Umbraco Forms provides an API for client-side rendering and submission of forms, useful when you want to handle forms in a headless style scenario.
+
+## [Block List Filters](BlockListFilters/index.md)
+
+Customize the appearance of Umbraco's block list editor when adding a form to a block.
+
+## [Storing prevalue text files with IPreValueTextFileStorage](IPreValueTextFileStorage/index.md)
+Learn how you can implement a custom IPreValueTextFileStorage to store the prevalue text files to suit your needs.

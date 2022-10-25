@@ -1,23 +1,33 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco IPublishedContentQuery"
 meta.Description: "Querying in views with IPublishedContentQuery in Umbraco"
-state: complete
-verified-against: rc-003
-update-links: false
 ---
 
 # IPublishedContentQuery
 
-The `IPublishedContentQuery` interface contains various query methods for accessing strongly typed content in templates.
+The `IPublishedContentQuery` interface contains different query methods for accessing strongly typed content in services etc.
 
-## How to reference IPublishedContentQuery
+## How to inject IPublishedContentQuery
 
-In order to reference the `IPublishedContentQuery` in your views, you must add a using statement for `Umbraco.Core` and inject the service using the `@inject` keyword.
+In order to inject the `IPublishedContentQuery` into your services, you must add a using statement for `Umbraco.Cms.Core` and inject the service using the constructor.
 
 ```C#
-@using Umbraco.Cms.Core
-@inject IPublishedContentQuery _publishedContentQuery;
+using Umbraco.Cms.Core;
+
+namespace Umbraco.Docs.Samples.Web.Services
+{
+    public class SearchService
+    {
+        private readonly IPublishedContentQuery _publishedContentQuery;
+
+        public SearchService(IPublishedContentQuery publishedContentQuery)
+        {
+            _publishedContentQuery = publishedContentQuery;
+        }
+    }
+}
 ```
 
 Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
@@ -27,15 +37,16 @@ Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
 
 ### .Search(string term)
 
-By default, `IPublishedContentQuery` will search on Umbraco's 'External' search index for any published content matching the provided search term. 
+By default, `IPublishedContentQuery` will search on Umbraco's 'External' search index for any published content matching the provided search term.
 
 ```csharp
-<ul>
-	@foreach (var result in _publishedContentQuery.Search("ipsum"))
-	{
-		<li><a href="@result.Content.Url()">@result.Content.Name</a></li>
-	}
-</ul>
+public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+{
+    foreach (var result in _publishedContentQuery.Search(searchTerm))
+    {
+        yield return result;
+    }
+}
 ```
 
 ### .Search(string term, int skip, int take, out long totalRecords)
@@ -43,17 +54,13 @@ By default, `IPublishedContentQuery` will search on Umbraco's 'External' search 
 Specifying the number of records 'to skip', and the number of records 'to take' is more performant when there are lots of matching search results and there is a requirement to implement paging.
 
 ```csharp
-@{
-	var results = _publishedContentQuery.Search("ipsum", 5, 10, out long totalRecord);
+public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5, int take = 10)
+{
+    foreach (var result in _publishedContentQuery.Search(searchTerm, skip, take, out long totalRecords))
+    {
+        yield return result;
+    }
 }
-
-<p>Total results: @totalRecord</p>
-<ul>
-	@foreach (var result in results)
-	{
-		<li><a href="@result.Content.Url()">@result.Content.Name</a></li>
-	}
-</ul>
 ```
 
 ### .Search(IQueryExecutor queryExecutor)
@@ -62,27 +69,42 @@ For more complex searching you can construct an Examine QueryExecutor. In the ex
 [Further information on using Examine](../../Searching/Examine/Quick-Start/index.md#different-ways-to-query)
 
 ```csharp
-@using Umbraco.Cms.Core
-@using Examine
-@using Umbraco.Cms.Infrastructure.Examine
-@inject IPublishedContentQuery _publishedContentQuery;
-@inject IExamineManager _examineManager; 
+using System;
+using System.Collections.Generic;
+using Examine;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Extensions;
 
-@{
-	if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-	{
-		throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
-	}
-
-	var term = "ipsum";
-	var query = index.Searcher.CreateQuery(IndexTypes.Content);
-	var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
-}
-
-<ul>
-	@foreach (var result in _publishedContentQuery.Search(queryExecutor))
+namespace Umbraco.Docs.Samples.Web.Services
+{
+    public class SearchService
     {
-	    <li><a href="@result.Content.Url()">@result.Content.Name</a></li>
+        private readonly IPublishedContentQuery _publishedContentQuery;
+        private readonly IExamineManager _examineManager;
+
+        public SearchService(IPublishedContentQuery publishedContentQuery, IExamineManager examineManager)
+        {
+            _publishedContentQuery = publishedContentQuery;
+            _examineManager = examineManager;
+        }
+
+        public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+        {
+            if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+            {
+                throw new InvalidOperationException($"No index found by name{Constants.UmbracoIndexes.ExternalIndexName}");
+            }
+
+            var query = index.Searcher.CreateQuery(IndexTypes.Content);
+            var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(searchTerm);
+
+            foreach (var result in _publishedContentQuery.Search(queryExecutor))
+            {
+                yield return result;
+            }
+        }
     }
-</ul>
+}
 ```

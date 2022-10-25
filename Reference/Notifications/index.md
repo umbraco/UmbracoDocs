@@ -1,15 +1,14 @@
 ---
-v8-equivalent: "https://our.umbraco.com/documentation/Reference/Events"
 versionFrom: 9.0.0
-verified-against: 9.0.1
+versionTo: 10.0.0
 ---
 
+# Using notifications
+
 :::note
-In Umbraco 9 Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9.
+Since the release of Umbraco 9, Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9.
 For V8 equivalent see: [Events](../Events)
 :::
-
-# Using notifications
 
 Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that.
 
@@ -17,9 +16,9 @@ Umbraco uses Notifications, very similar to the Observer pattern, to allow you t
 
 All notifications reside in the `Umbraco.Cms.Core.Notifications` namespace and are postfixed with Notification.
 
-Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and publishes notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
+Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the ContentService class has the concept of publishing and published notifications when this occurs. In that case, there is both a ContentPublishingNotification and a ContentPublishedNotification notification.
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
+Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the `CancelOperation` method on the notification to cancel it. See the sample in [ContentService Notifications](ContentService-Notifications/index.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
 ### Notification handlers lifetime
 
@@ -71,7 +70,7 @@ The extension method takes two generic type parameters, the first `ContentPublis
 public class DontShout : INotificationHandler<ContentPublishingNotification>
 ```
 
-For the full handler implementation see [ContentService Notifications](ContentService-Notifications.md).
+For the full handler implementation see [ContentService Notifications](ContentService-Notifications/index.md).
 
 #### Registering notification handlers in a composer
 
@@ -133,22 +132,22 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Content, Media, and Member notifications
 
-* See [ContentService Notifications](ContentService-Notifications.md) for a listing of the ContentService object notifications.
-* See [MediaService Notifications](MediaService-Notifications.md) for a listing of the MediaService object notifications.
+* See [ContentService Notifications](ContentService-Notifications/index.md) for a listing of the ContentService object notifications.
+* See [MediaService Notifications](MediaService-Notifications/index.md) for a listing of the MediaService object notifications.
 * See [MemberService Notifications](MemberService-Notifications) for a listing of the MemberService object notifications.
 
 ## Other notifications
 
-* See [ContentTypeService Notifications](ContentTypeService-Notifications.md) for a listing of the ContentTypeService object notifications.
-* See [MediaTypeService Notifications](MediaTypeService-Notifications.md) for a listing of the MediaTypeService object notifications.
-* See [MemberTypeService Notifications](MemberTypeService-Notifications.md) for a listing of the MemberTypeService object notifications.
-* See [DataTypeService Notifications](DataTypeService-Notifications.md) for a listing of the DataTypeService object notifications
-* See [FileService Notifications](FileService-Notifications.md) for a listing of the FileService object notifications.
-* See [LocalizationService Notifications](LocalizationService-Notifications.md) for a listing of the LocalizationService object notifications.
+* See [ContentTypeService Notifications](ContentTypeService-Notifications/index.md) for a listing of the ContentTypeService object notifications.
+* See [MediaTypeService Notifications](MediaTypeService-Notifications/index.md) for a listing of the MediaTypeService object notifications.
+* See [MemberTypeService Notifications](MemberTypeService-Notifications/index.md) for a listing of the MemberTypeService object notifications.
+* See [DataTypeService Notifications](DataTypeService-Notifications/index.md) for a listing of the DataTypeService object notifications
+* See [FileService Notifications](FileService-Notifications/index.md) for a listing of the FileService object notifications.
+* See [LocalizationService Notifications](LocalizationService-Notifications/index.md) for a listing of the LocalizationService object notifications.
 
 ## Tree notifications
 
-See [Tree Notifications](../../Extending/Section-Trees/trees.md) for a listing of the tree notifications.
+See [Tree Notifications](../../Extending/Section-Trees/index.md) for a listing of the tree notifications.
 
 ## Editor Model Notifications
 
@@ -158,6 +157,6 @@ See [EditorModel Notifications](EditorModel-Notifications) for a listing of the 
 Useful for manipulating the model before it is sent to an editor in the backoffice - e.g. perhaps to set a default value of a property on a new document.
 :::
 
-# Creating and publishing your own custom notifications
+## Creating and publishing your own custom notifications
 
-Umbraco uses notifications to allow people to hook into various workflow processes. This notification pattern is extensible, allowing you to create and publish your own custom notifications, thus allowing other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications see the [creating and publishing notifications](Creating-And-Publishing-Notifications.md) article.
+Umbraco uses notifications to allow people to hook into various workflow processes. This notification pattern is extensible, allowing you to create and publish your own custom notifications, thus allowing other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications see the [creating and publishing notifications](Creating-And-Publishing-Notifications/index.md) article.

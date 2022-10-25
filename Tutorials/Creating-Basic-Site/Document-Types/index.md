@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 # Document Types
 
@@ -27,6 +27,10 @@ To create a Document Type:
     Using folders can help you organise your **Document Types**.
     :::
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
+
+    :::note
+    The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: *homePage*.
+    :::
 5. Enter the **Description**. For example: _This is our homepage template_. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
 6. Click **Save**. Our new Document Type is now visible as a new item under **Document Types**.
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Umbraco's request pipeline
@@ -18,9 +19,9 @@ What it does:
 - Routes the request with the request builder using the `PublishedRouter.RouteRequestAsync(…)`.
   - This will handle redirects, find domain, template, published content and so on.
   - Build the final `IPublishedRequest`.
-- Sets the routed request in the umbraco context, so it will be available to the controller.
+- Sets the routed request in the Umbraco context, so it will be available to the controller.
 - Create the route values with the `UmbracoRouteValuesFactory`.
-  - This is what actually routes your request to the correct controller and action, and allows you to hijack routes.
+  - This is what routes your request to the correct controller and action, and allows you to hijack routes.
 - Set the route values to the http context.
 - Handles posted form data.
 - Returns the route values to netcore so it routes your request correctly.

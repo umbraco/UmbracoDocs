@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
 meta.Description: "Steps to how to install and configure Umbraco Deploy"
-state: complete
-verified-against: beta-1
 ---
 
 # Installing Umbraco Deploy
@@ -12,7 +11,7 @@ In this article, we will cover the steps in order for you to install and configu
 
 ## Prerequisites
 
-Ensure you have read and followed the setup guide for [new](../New-site/index-v9) or [new](../Existing-site/index-v9) projects.
+Ensure you have read and followed the setup guide for [new](../New-site/index) or [Existing](../Existing-site/index) projects.
 
 ## Source Control Configuration
 
@@ -95,17 +94,16 @@ An example configuration with a single upstream environment file will look like 
    "Umbraco":{
       "Deploy":{
          "Settings":{
-            "ApiKey":"<your API key here>"
-         },
-         "Debug":{
-            "EnvironmentName":"Live"
+            "ApiKey": "<your API key here>"
          },
          "Project":{
+            "CurrentWorkspaceName": "Live",
             "Workspaces":[
                {
-                  "Id":"efef5e89-a19b-434b-b68a-26e022a0ad52",
-                  "Name":"Live",
-                  "Url":"https://localhost:44307"
+                  "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
+                  "Name": "Live",
+                  "Type": "live",
+                  "Url" :"https://localhost:44307"
                }
             ]
          }
@@ -114,9 +112,13 @@ An example configuration with a single upstream environment file will look like 
 }
 ```
 
-The setting under _Debug:EnvironmentName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
+The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
 
-_Note:_ Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). It will likely be moved to the "Project" section in Umbraco Deploy 10.
+:::note
+In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.
+:::
+
+Expected values for _Type_ are "development", "staging" or "live". These settings are required, though strictly only for the latter is it necessary to use the specific value of "live", so other values can be used if you have more than these three environments.
 
 You will need to generate a unique GUID for each environment. This can be done in Visual Studio:
 

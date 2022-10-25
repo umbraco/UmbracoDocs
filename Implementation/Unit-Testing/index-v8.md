@@ -202,7 +202,7 @@ public class HomeControllerTests : UmbracoBaseTest
 
 ## Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](../../Reference/Routing/surface-controllers.md).
+See [Reference documentation on SurfaceControllers](../../Reference/Routing/Surface-Controllers/index.md).
 
 ```csharp
 public class MySurfaceController : SurfaceController
@@ -247,7 +247,7 @@ public class MySurfaceControllerTests : UmbracoBaseTest
 
 ## Testing an UmbracoApiController
 
-See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+See [Reference documentation on UmbracoApiControllers](../../Reference/Routing/Umbraco-API-Controllers/index.md#locally-declared-controller).
 
 :::warning
 This requires **Umbraco version 8.4 or higher**, due to a resolved [issue](https://github.com/umbraco/Umbraco-CMS/pull/6764).

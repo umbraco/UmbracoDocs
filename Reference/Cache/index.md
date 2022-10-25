@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Cache & Distributed Cache
@@ -18,11 +19,11 @@ In normal environments caching seems to be a pretty standard concept. If you are
 
 ## Retrieving and Adding items in the cache
 
-You can [update and insert items in the cache](updating-cache.md).
+You can [update and insert items in the cache](Updating-Cache/index.md).
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](cache-refresher.md)
+### [ICacheRefresher](ICacheRefresher/index.md)
 
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
@@ -48,7 +49,7 @@ There are 2 other base types of `ICacheRefresher` which are:
 * `ICacheRefresher<T>` - this inherits from `ICacheRefresher` and provides a set of strongly typed methods for cache invalidation. This is useful when executing the method to invoke the cache refresher, when you have the instance of the object already since this avoids the overhead of retrieving the object again.
     * `void Refresh(T instance);` - this would invalidate/refresh a single cache for the specified object.
     * `void Remove(T instance);` - this would invalidate a single cache for the specified object.
-* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/dev/v9/src/Umbraco.Web/Cache/MemberGroupCacheRefresher.cs)).
+* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/v9/contrib/src/Umbraco.Core/Cache/MemberGroupCacheRefresher.cs)).
     * `void Refresh(string jsonPayload)` - Invalidates/refreshes any cache based on the information provided in the JSON. The JSON value is any value that is used when executing the method to invoke the cache refresher.
 
 There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/v9/dev/src/Umbraco.Core/Cache
@@ -89,9 +90,8 @@ To use the extensions add a using to `Umbraco.Extensions`;  You can then invoke 
 The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment.
 The server messenger ensures that the notification is processed on the local environment.
 
-
 ## Getting and clearing cached content
 
 [See our example on how to cache tags](examples/tags.md).
 
-## [ApplicationCache](applicationcache.md)
+## [ApplicationCache](Application-Cache/index.md)

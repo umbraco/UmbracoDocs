@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Workflow Types
@@ -143,6 +144,49 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 * Fields - map the needed fields
 - User
 - Password
+
+When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
+
+The receiving endpoint will be able to extract the form fields and values from the querystring or form collection when the method used is set to GET or POST respectively.
+
+As an illustrative example, the following code can be used to write the posted form information to a text file:
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.IO;
+
+namespace RequestSaver.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class SaveRequestController : ControllerBase
+    {
+        private const string _filePath = "c:\\temp\\request-save.txt";
+
+        private readonly ILogger<SaveRequestController> _logger;
+
+        public SaveRequestController(ILogger<SaveRequestController> logger)
+        {
+            _logger = logger;
+        }
+
+        [HttpPost]
+        public string Save()
+        {
+            using (StreamWriter outputFile = new StreamWriter(_filePath))
+            {
+                foreach (var key in Request.Form.Keys)
+                {
+                    outputFile.WriteLine($"{key}: {(Request.Form[key])}");
+                }
+            }
+
+            return "Done";
+        }
+    }
+}
+```
 
 ## **Send XSLT Transformed Email**
 

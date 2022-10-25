@@ -1,6 +1,8 @@
 ﻿---
-versionFrom: 9.0.0
+versionFrom: 9.4.0
+versionTo: 10.0.0
 ---
+
 
 # Running Umbraco on Azure Web Apps
 
@@ -25,7 +27,7 @@ You need to add these configuration values. E.g in a json configuration source l
     "Umbraco": {
         "CMS": {
             "Global": {
-                "MainDomLock" : "SqlMainDomLock"
+                "MainDomLock" : "FileSystemMainDomLock"
             },
             "Hosting": {
                 "LocalTempStorageLocation": "EnvironmentTemp"
@@ -47,6 +49,12 @@ __If you are load balancing or require the scaling ("scale out") ability of Azur
 
 It is important to know that Azure Web Apps uses a remote file share to host the files to run your website (i.e. the files running your website do not exist on the machine running your website). In many cases this isn't an issue but it can become one if you have a large amount of IO operations running over remote file share.
 
+## Issues with read-only filesystems
+
+Although Umbraco can be configured to use environmental storage it still requires its working-directory to be writable. If Umbraco is deployed to a read-only file system it will [fail to boot](https://github.com/umbraco/Umbraco-CMS/issues/12043).
+
+For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us/azure/app-service/deploy-run-package) is not supported by Umbraco. To check if your web app is using this feature you can check the `WEBSITE_RUN_FROM_PACKAGE` environment variable.
+
 ## Scaling
 
 If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult
@@ -61,3 +69,11 @@ It's important to know that Azure Web Apps may move your website between their '
 
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.
+
+### How to find the Linux App Service Logs
+
+The quickest way to get to your logs is using the following URL template and replacing `{app}` with your Web App name:
+
+`https://{app}.scm.azurewebsites.net/api/logstream`
+
+You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.

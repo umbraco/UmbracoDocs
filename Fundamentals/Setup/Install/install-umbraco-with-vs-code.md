@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-verified-against: rc-003
-state: complete
-updated-links: true
+versionTo: 10.0.0
 ---
 
 # Install Umbraco with Visual Studio Code
@@ -49,7 +47,7 @@ Now that we've told VS Code how to build your project, we need to tell it how to
 
 ![Creating launch.json file](images/VsCode/creatingLaunchFile.png)
 
-This will prompt a menu to appear, select the 
+This will prompt a menu to appear, select:
 
 ![Nectore launch task](images/VSCode/NetcoreTask.png)
 
@@ -61,15 +59,19 @@ With that, you're ready to run! Press F5, or click the little green play button 
 
 This section continues from where we left off but covers the installation and configuration of Umbraco inside your web browser when you run Umbraco for the first time.
 
-1. You will see the install screen. If you've installed the template with `-ce` flag, to enable SqlCE, you only need to fill out your information and click "Install", the installer will take care of the rest. If you've enabled SqlCE, but still want to change the database type, click "Customize". If you didn't enable SqlCE, you will see a "Next" button instead of "Install", which will take you to an extra step where you can configure your database.
+You will see the install screen where you will need to fill in some data before Umbraco can be installed.
 
-    ![Web Installer - Lets Get Started](images/VsCode/installer-v9.png)
+Depending on the database configuration you've chosen you will have the following options:
 
-2. When the installer is done you will automatically be logged into the backoffice.
+1. If you've installed the template with `-ce` flag, to enable SqlCE, you only need to fill out your information and click "Install". The installer will then take care of the rest.
+2. If you've enabled SqlCE, but still want to change the database type, click "Change Database".
+3. If you didn't enable SqlCE, you will see a "Next" button instead of "Install", which will take you to an extra step where you can configure your database.
 
-    ![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
+![Web Installer - Lets Get Started](images/installer.png)
 
-3. Celebrate - you're all done!
+When the installer is done you will automatically be logged into the backoffice.
+
+![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
 
 Congratulations, you have installed an Umbraco site!
 

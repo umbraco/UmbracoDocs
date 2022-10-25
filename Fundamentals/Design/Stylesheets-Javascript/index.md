@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Working with stylesheets and JavaScript in Umbraco"
 meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
-verified-against: rc-02
-state: complete
-updated-links: true
 ---
 
 # Working with stylesheets and JavaScript
@@ -25,7 +23,7 @@ In the Create menu, there are several options available:
 It is currently not possible to use any CSS preprocessor (such as SASS) in the backoffice.
 :::
 
-After creating a new stylesheet, you would work with it as you would with templates or javascript files - using the built-in backoffice text editor.
+After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor.
 When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
 ![Stylesheet RTE](images/2-rte-editor.png)
@@ -86,55 +84,115 @@ If you are working locally, you can create CSS and JS files outside of the Backo
 
 ## Bundling & Minification for JavaScript and CSS
 
-You can use whichever tool you are comfortable with for bundling & minification by implementing the `IRuntimeMinifier` interface in your custom minifier class, though it is worth noting that Umbraco 9 ships with Smidge which offers lightweight runtime bundling and minification.
+You can use whichever tool you are comfortable with for bundling & minification by implementing the `IRuntimeMinifier` interface in your custom minifier class, though it is worth noting that Umbraco 9+ ships with Smidge which offers lightweight runtime bundling and minification.
 
 You can create various bundles of your site's CSS or JavaScript files in your code that can be rendered later in your views. There can be a single bundle for the entire site, or a common bundle for the files you want to be loaded on every page, as well as page-specific bundles, just by listing your resources in the order you like.
+
+**Step 1:** Create a `INotificationHandler<UmbracoApplicationStartingNotification>`
+
 ```csharp
-using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.WebAssets;
 
-namespace MyNamespace
+namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 {
-    public class MyComponent : IComponent
+    public class CreateBundlesNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
     {
         private readonly IRuntimeMinifier _runtimeMinifier;
+        private readonly IRuntimeState _runtimeState;
 
-        public MyComponent(IRuntimeMinifier runtimeMinifier) => _runtimeMinifier = runtimeMinifier;
-
-        public void Initialize()
-        {
-            _runtimeMinifier.CreateJsBundle("inline-js-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/scripts/myScript1.js", "~/scripts/myScript2.js" });
-
-            _runtimeMinifier.CreateCssBundle("inline-css-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/css/mystylesheet.css" });
+        public CreateBundlesNotificationHandler(IRuntimeMinifier runtimeMinifier, IRuntimeState runtimeState) {
+            _runtimeMinifier = runtimeMinifier;
+            _runtimeState = runtimeState;
         }
+        public void Handle(UmbracoApplicationStartingNotification notification)
+        {
+            if (_runtimeState.Level == RuntimeLevel.Run)
+            {
+                _runtimeMinifier.CreateJsBundle("registered-js-bundle",
+                BundlingOptions.NotOptimizedAndComposite,
+                new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
 
-        public void Terminate() { }
+                _runtimeMinifier.CreateCssBundle("registered-css-bundle",
+                    BundlingOptions.NotOptimizedAndComposite,
+                    new[] { "~/css/test-style.css" });
+            }
+        }
     }
-
-    public class MyComposer : ComponentComposer<MyComponent>
-    { }
 }
 ```
 
-Then, you can render the bundles by the bundle name in a view template file:
+:::note
+See below for the different [Bundling Options](#bundling-options).
+:::
+
+**Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
+        .Build();
+}
+```
+
+**Step 3:** Render the bundles by the bundle name in a view template file using the Smidge TagHelper:
 
 ```csharp
 <html>
 <head>
-    <script src="inline-js-bundle" type="text/javascript"></script>
-    <link rel="stylesheet" href="inline-css-bundle"/>
+    <script src="registered-js-bundle"></script>
+    <link rel="stylesheet" href="registered-css-bundle"/>
 </head>
 </html>
 ```
 
-Or by using our `IRuntimeMinifier`:
+### Bundling Options
+
+The following bundling options can be set when creating your bundles:
+
+```csharp
+BundlingOptions.OptimizedAndComposite // The files will be minified and bundled into an individual file
+BundlingOptions.OptimizedNotComposite // The files will be minified but not bundled into an individual file
+BundlingOptions.NotOptimizedNotComposite // The files will not be minified and will not be bundled into an individual file
+BundlingOptions.NotOptimizedAndComposite // The files will not be minified but will be bundled into an individual file
+```
+
+## Rendering
+
+### Using Smidge TagHelper
 
 :::note
-In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `"Debug": false` in your appsettings file.
+The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
+
+If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below.
+:::
+
+```csharp
+@using Microsoft.Extensions.Options
+@using Umbraco.Cms.Core.Configuration.Models
+@inject IOptions<HostingSettings> hostingSettings
+@{
+    var debugMode = hostingSettings.Value.Debug;
+}
+```
+
+```csharp
+<script src="registered-js-bundle" debug="@debugMode"></script>
+<link rel="stylesheet" href="registered-css-bundle" debug="@debugMode" />
+```
+
+### Using IRuntimeMinifier
+
+:::note
+In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
 :::
 
 ```csharp
@@ -143,29 +201,8 @@ In case you are in Debug mode, your bundles won't be minified or bundled, so you
 
 <html>
 <head>
-    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("inline-js-bundle"))
-    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("inline-css-bundle"))
-</head>
-</html>
-```
-
-Another possibility is to declare bundles inline in your views using Smidge directly:
-
-```csharp
-@using Smidge
-@{
-    SmidgeHelper
-        .CreateJsBundle("inline-js-bundle")
-        .RequiresJs("~/scripts/myScript1.js", "~/scripts/myScript2.js");
-
-    SmidgeHelper
-        .CreateCssBundle("inline-css-bundle")
-        .RequiresCss("~/css/mystylesheet.css");
-}
-<html>
-<head>
-    @await SmidgeHelper.JsHereAsync("inline-js-bundle")
-    @await SmidgeHelper.CssHereAsync("inline-css-bundle")
+    @Html.Raw(await runtimeMinifier.RenderJsHereAsync("registered-js-bundle"))
+    @Html.Raw(await runtimeMinifier.RenderCssHereAsync("registered-css-bundle"))
 </head>
 </html>
 ```

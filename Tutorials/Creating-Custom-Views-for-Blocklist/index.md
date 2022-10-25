@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Custom Views for Block List
@@ -37,10 +37,10 @@ To create a Document Type:
 
 To create the Content Node:
 
-1. Go to the **Permissions** tab and select **Add Child** in the **Allowed child node types**. The **Choose Child Node** window appears.
+1. Go to the **Permissions** tab of the root content node and select **Add Child** in the **Allowed child node types**. The **Choose Child Node** window appears.
 2. Select the **Product** document type and click **Save**.
 3. Go to **Content**.
-4. Select **...** next to **Content** and select **Product**.
+4. Select **...** next to the root content node and select **Product**.
 5. **Enter the Name** for the article. We are going to call it _Product_.
 6. Fill the required details in the **Product** page and click **Save**.
 
@@ -63,7 +63,7 @@ To add blocks to our Block List editor:
 
     | Property Name  | Alias   | Editor      |
     |----------------|---------|-------------|
-    | Name           | name    | Textstring  |
+    | Name           | featureName | Textstring  |
     | Details        | details | Textarea    |
     | Image          | image   | Media Picker|
 
@@ -81,7 +81,7 @@ Let's create a `custom.html` file with the following configuration:
 <section id="banner" ng-click="block.edit()">
     <div class="content">
         <header>
-            <h1>{{block.data.name}}</h1>
+            <h1>{{block.data.featureName}}</h1>
         </header>
             <p>{{block.data.details}}</p>
     </div>
@@ -151,7 +151,7 @@ We need to update the `custom.html` file with the following configuration:
     <div class="text-block" ng-class="{'block-left': block.settingsData.blockAlignment[0] === 'left', 'block-center': block.settingsData.blockAlignment[0] === 'center', 'block-right': block.settingsData.blockAlignment[0] === 'right' }">
         <div class="content">
             <header>
-                <h1>{{block.data.name}}</h1>
+                <h1>{{block.data.featureName}}</h1>
             </header>
                 <p>{{block.data.details}}</p>
         </div>
@@ -171,7 +171,7 @@ body {
 h1{
     font-weight:900;
 }
-    
+
 .text-block{
     padding:20px;
 }
@@ -187,7 +187,7 @@ h1{
     border: 3px solid green;
     padding: 10px;
 }
-        
+
 .block-right{
     text-align: right;
     border: 3px solid green;
@@ -219,4 +219,4 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 
 To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Custom Views for Blocks" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

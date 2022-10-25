@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Toggle
@@ -10,7 +11,7 @@ Toggle is a standard checkbox which saves either 0 or 1, depending on the checkb
 
 ## Data Type Definition Example
 
-![True/False Data Type Definition](images/Checkbox-Data-Type.png)
+![True/False Data Type Definition](images/Checkbox-Data-Type-v10.png)
 
 The Toggle property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
 
@@ -49,6 +50,7 @@ It is also possible to define a label, that will be displayed next to the checkb
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
 @{
     // Get access to ContentService
@@ -80,9 +82,9 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
+@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
-    @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-
     // Set the value of the property with alias 'myCheckBox'
     content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor,x => x.MyCheckBox).Alias, true);
 

@@ -1,14 +1,13 @@
 ---
 versionFrom: 7.0.0
-needsV9Update: "false"
+versionTo: 8.0.0
 ---
 
 # Config Transforms
 
 In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.
 
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to use config transforms on Umbraco Cloud" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What are Config Transforms?
 
@@ -76,9 +75,21 @@ Here is an example of how that config transform would look:
         </rewrite>
     </system.webServer>
 </configuration>
-``` 
+```
 
 This config transform will add a new `<rule>` to `<configuration><system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case the value is `InsertIfMissing`, which means it will add the section if it's not already in the config file. In order to be able to identify the correct section the `xdt:Locator` attribute is used to *match* the value of the `name` attribute.
+
+## The default Umbraco Cloud config transform
+
+Umbraco Cloud projects Comes by default with a config transform called `https.web.live.xdt.config`.
+
+This config transform is used to ensure that the live site will be running via HTTPS and force redirects from HTTP to HTTPS.
+
+It does so by setting the "umbracoUseSSL" setting to true, which will tell the Umbraco Backoffice to serve URLs via HTTPS
+and it adds a redirect rule that will force the site to run via HTTPS, except for when running localhost.
+
+To disable the forced HTTPS, simply remove this file from your repository. This is not advised, as all domains
+on Umbraco Cloud will be running HTTPS, as a certificate will be issued for custom domains by the Automatic TLS feature, and all [alias].euwest01.umbraco.io domains will already be protected.
 
 ## Forced transforms
 
@@ -101,18 +112,18 @@ On all other Cloud environments:
 - We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web`
 - We set the smtp `host=""` if the host was set to `127.0.0.1`
 
-
-Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::note
+For the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::
 
 ![Toggle debug mode](images/toggle-debug.png)
 
-## Umbraco Latch transforms
-All sites created on Cloud since Umbraco v7.12 will contain a web.config transform called: `Latch.Web.live.xdt.config`. See the [Latch documentation](../Manage-Hostnames/Umbraco-Latch/index.md#https-by-default) for more information
-
 ## Baseline config transforms
+
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
 ## Including transforms in Umbraco packages
+
 For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor**. You want to set an AppSetting in `Web.config` to a different color in each environment. It could be be `red` for the Live environment, `orange` for Staging and `yellow` for Development.
 
 We need to create 3 transform files named after the package. A good convention is to use your company name and the package name to make sure that there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:

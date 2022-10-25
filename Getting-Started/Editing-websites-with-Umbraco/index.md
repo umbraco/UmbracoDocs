@@ -25,15 +25,3 @@ There is also information on how to use features such as translations, forms, an
 :::center
 ![Editing Umbraco](images/umbraco_8_2_A.png)
 :::
-
-Alternatively we have a "no-code/low-code" platform called Umbraco Uno which allows you customize your website from a wide range of pre-built widgets.
-
-[What is Umbraco Uno?](https://umbraco.com/products/umbraco-uno/)
-
-[Sounds interesting, but what can you build with Uno?](https://umbraco.com/products/umbraco-uno/what-can-you-build-with-umbraco-uno/)
-
-[I'd like to know more - where can I find documentation?](../../Umbraco-Uno/)
-
-:::center
-![Umbraco baseline](images/8_6_Email_hero_780x405px.png)
-:::

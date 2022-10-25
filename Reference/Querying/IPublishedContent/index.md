@@ -1,8 +1,6 @@
 ---
-state: complete
-updated-links: true
-verified-against: alpha-3
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # IPublishedContent

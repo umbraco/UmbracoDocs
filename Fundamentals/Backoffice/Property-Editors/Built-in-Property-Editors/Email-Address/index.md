@@ -2,6 +2,7 @@
 meta.Title: "Display an email address"
 meta.Description: "In this article you can learn how to use the build in email property editor"
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Email Address
@@ -14,13 +15,13 @@ Displays an email address.
 
 ## Settings
 
-### Mandatory checkbox example
+The Email Address Property Editor does not come with any further configuration. The property can be configured once it has been added to a Document Type.
 
-![Mandatory Checkbox Example](images/mandatory-checkbox.png)
+![Mandatory Checkbox Example](images/emailaddress-datatype-v10.png)
 
 ## Content Example
 
-![Single email address content example](images/EmailAddress-DataType-Content.png)
+![Single email address content example](images/EmailAddress-Content-v10.png)
 
 ## MVC View Example
 
@@ -50,8 +51,9 @@ Displays an email address.
 See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 
+@inject IContentService Services;
 @{
     // Get access to ContentService
     var contentService = Services;

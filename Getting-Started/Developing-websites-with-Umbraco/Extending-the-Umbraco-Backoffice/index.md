@@ -15,9 +15,9 @@ It is recommended that you have some knowledge and prior experience working with
 
 :::links
 
-## Resources for extending - TBD
+## Resources for extending
 
-- [Package manifest](../../../Extending/Property-Editors/package-manifest.md)
+- [Package manifest](../../../Extending/Property-Editors/Package-Manifest/index.md)
 - [Angular docs / Backoffice UI API](../../../Reference/Angular/)
 - [C# API Docs](../../../Reference/API-Documentation/)
 

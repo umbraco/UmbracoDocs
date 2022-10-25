@@ -54,7 +54,7 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 
 ### Setup a Trial project
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/VL87NCz5Dwg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to create a Heartcore Trial" src="https://www.youtube.com/embed/Rujaw1VWUaQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## [Client libraries](Client-Libraries)
 
@@ -64,6 +64,6 @@ In order to test your Umbraco Heartcore project against the REST API endpoints, 
 
 Learn more about how we handle versioning and updates of Heartcore projects.
 
-## [Frequently asked questions](https://umbraco.com/products/umbraco-heartcore/faq/)
+## [Frequently asked questions](https://umbraco.com/products/umbraco-heartcore/heartcore-faq/)
 
 Do you have questions that are not covered by this documentation? Please create an issue on our [Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) or get in touch with Umbraco Support using the chat in the portal or write a mail to support@umbraco.com.

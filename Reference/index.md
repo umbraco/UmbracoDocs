@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
@@ -8,9 +9,9 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
-## [Configuration](V9-Config/index.md)
+## [Configuration](Configuration/index.md)
 
-Information about all of Umbraco's configurations and options for Umbraco 9.
+Information about all of Umbraco's configurations and options.
 
 ## [Templates](Templating/index.md)
 
@@ -53,20 +54,24 @@ Information on Umbraco security, its various security options and configuring ho
 
 This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
 
-## [Rest APIs](Routing/WebApi/index.md)
+## [Rest APIs](Routing/Umbraco-API-Controllers/index.md)
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
 
 ## [Debugging](Debugging/index.md)
+
 How to debug your code with Visual Studio
 
 ## [Language Variation](Language-Variation/index.md)
-Language Variation allows you to have several different variations of content based on a language culture. 
+
+Language Variation allows you to have different variations of content based on a language culture.
 
 ## [Mapping](Mapping/index.md)
+
 Find out how to map one object's properties to another type of object.
 
 ## [Scheduling](Scheduling/index.md)
+
 Run recurring code using the RecurringHostedServiceBase.
 
 ## [IoC & Dependency Injection](using-ioc.md)
@@ -75,15 +80,17 @@ Information about setting up Inversion of Control / Dependency Injection to work
 
 ## API Documentation V9
 
-#### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
+### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)
 
-#### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
+### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Infrastructure.html)
 
-#### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
+### [Umbraco.Web](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.html)
 
-#### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
+### [Umbraco.Extensions](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Extensions.html)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+:::note
+These links open in a documentation browser that is different from the documentation section you're viewing now.
+:::
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 

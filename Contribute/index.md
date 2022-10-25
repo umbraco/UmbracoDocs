@@ -17,6 +17,7 @@ There are many ways in which you can contribute to the Umbraco Documentation. Th
 * Request a quick / minor change to an article by submitting a [Pull Request](Pull-Requests/#option-1-creating-a-pr-directly-on-github)
 * Submit a more extensive update / change by [forking the Documentation repository](Pull-Requests/#options-2-creating-a-pr-through-a-fork)
 * Raise a question, start a discussion or report an issue on the [Issue Tracker](Issues/)
+* Help improve readability of the documentation by verifying articles against our [Style Guide](Style-Guide/#test-the-docs-yourself).
 
 ## [Style guide](Style-Guide/index.md)
 
@@ -24,7 +25,7 @@ We have a few rules to follow when writing documentation and we have some tools 
 
 ## [Format, naming conventions and files](Markdown-Conventions)
 
-The Umbraco Documentation is written using the MarkDown markup language. We've put together an article where you can learn more about MarkDown [here](https://our.umbraco.com/Documentation/Contribute/Markdown-Conventions). You will also find an overview of the folder and file structure we use.
+The Umbraco Documentation is written using the MarkDown markup language. We've put together [an article where you can learn more about MarkDown](https://our.umbraco.com/Documentation/Contribute/Markdown-Conventions). You will also find an overview of the folder and file structure we use.
 
 ## Multi version documentation
 

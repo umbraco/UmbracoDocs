@@ -205,7 +205,7 @@ ALTER TABLE dbo.UFRecordDataLongString
 DROP CONSTRAINT IF EXISTS FK_UFRecordDataLongString_UFRecordFields_Key
 GO
 
--- Reverts adition of index on foreign key fields in UFREcordData* tables.
+-- Reverts addition of index on foreign key fields in UFREcordData* tables.
 DROP INDEX IF EXISTS IX_UFRecordDataBit_Key ON dbo.UFRecordDataBit
 GO
 

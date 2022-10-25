@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 ---
 
 # DateTime
@@ -43,7 +44,8 @@ The second setting is "Offset time". When enabling this setting the displayed ti
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
 
 ```csharp
-@inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+@inject IContentService Services;
+@using Umbraco.Cms.Core.Services;
 @{
     // Get access to ContentService
     var contentService = Services;
@@ -74,6 +76,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 If Modelsbuilder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
+@using Umbraco.Cms.Core.PublishedCache;
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
 

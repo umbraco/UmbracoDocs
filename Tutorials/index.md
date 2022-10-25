@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 product: "CMS"
 meta.Title: "Tutorials for beginners and master alike"
 meta.Description: "Here you can find tutorials covering things like creating a site from scratch, setting up multilingual sites and many more"
@@ -67,6 +67,10 @@ Learn how to implement a basic register/login functionality on your website, hid
 ## [Multisite Setup](Multisite-Setup/)
 
 This tutorial explains how to host multiple sites from one project/installation of Umbraco.
+
+## [Cache Static Assets](Cache-Static-Assets/)
+
+This sample shows how to cache static assets in Umbraco.
 
 ## [Porting Packages from Version 7 to Version 8](Porting-Packages-V8/index.md)
 

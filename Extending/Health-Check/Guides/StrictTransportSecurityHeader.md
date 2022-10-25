@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: complete
-updated-links: true
-verified-against: alpha-3
+versionTo: 10.0.0
 ---
 
 # Health check: Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS))
@@ -11,42 +9,30 @@ _Checks if your site, when running with HTTPS, contains the Strict-Transport-Sec
 
 ## How to fix this health check
 
-This health check can be fixed by adding a header before the response is started.
+This health check can be fixed by adding the `Strict-Transport-Security` header to responses. The header tells browsers that future requests should be made over HTTPS only.
 
-Preferable you use a security library like [NWebSec](https://docs.nwebsec.com/).
+:::warning
+Enabling HSTS on a domain will cause browsers to only use HTTPS (not HTTP) to communicate with your site. Only enable HSTS on domains that can, and should, use HTTPS exclusively.
+:::
 
-### Adding Protection using NWebSec
+### Using the UseHsts extension method
+ASP.NET Core implements HSTS with the `UseHsts` extension method.
 
-If you take a NuGet dependency on [NWebsec.AspNetCore.Middleware/](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/), you can use third extension methods on `IApplicationBuilder`.
-
+You can add `UseHsts` after the `env.IsDevelopment()` check in `Startup.cs`.
 ```csharp
-public class Startup
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
-    public void Configure(IApplicationBuilder app)
+    if (env.IsDevelopment())
     {
-        app.UseHsts(options => options.MaxAge(days: 365));
-
-        ...
+        app.UseDeveloperExceptionPage();
     }
+    else
+    {
+        app.UseHsts();
+    }
+    //...
 }
 ```
+This example only enables HSTS if the app is not running in development mode. `UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.
 
-### Adding Protection using manual middleware
-
-If you don't like to have a dependency on third party libraries. You can add the following custom middleware to the request pipeline.
-
-```csharp
-public class Startup
-{
-    public void Configure(IApplicationBuilder app)
-    {
-        app.Use(async (context, next) =>
-        {
-            context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
-            await next();
-        });
-
-       ...
-    }
-}
-```
+Full details of `UseHsts`, and additional configuration, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&tabs=visual-studio#http-strict-transport-security-protocol-hsts-1).

@@ -1,8 +1,5 @@
 ---
 versionFrom: 9.0.0
-verified-against: alpha-3
-state: complete
-updated-links: true
 meta.Title: "Umbraco Packages"
 meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
 ---
@@ -56,7 +53,7 @@ Content apps are almost like dashboards for content nodes that are intended to d
 
 This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module for Umbraco.
 
-## [Types of Packages](package-types.md)
+## [Types of Packages](Types-of-Packages/index.md)
 
 There are two common types of package for Umbraco: Package zip files and NuGet Packages.
 
@@ -71,6 +68,10 @@ This short tutorial will teach you how to create a NuGet package for your Umbrac
 ## [Package Actions](Package-Actions/index.md)
 
 Package actions are actions you want to trigger when your package gets installed.
+
+## [Language file for packages](Language-Files-For-Packages/index.md)
+
+Package authors who would like their UI to be multi-lingual can include their own set of language files as part of their package distribution.
 
 ## [Uploading a Package to Our](Uploading-to-Our/index.md)
 

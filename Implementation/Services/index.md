@@ -3,7 +3,6 @@ keywords: implementing services injecting di custom services service pattern Umb
 versionFrom: 9.0.0
 meta.Title: "Umbraco Services and Helpers"
 meta.Description: "Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site"
-Links-updated: false
 ---
 
 # Services and Helpers
@@ -11,7 +10,6 @@ Links-updated: false
 Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site.
 
 The general rule of thumb is that management Services provide access to allow the modification of Umbraco data (and therefore aren't optimised for displaying data). Helpers on the other hand provide access to readonly data with performance of displaying data taken into consideration.
-
 
 :::warning
 Although there is a management Service named the `IContentService` - only use this to modify content - do not use the `IContentService` in a View/Template to pull back data to display,
@@ -27,7 +25,6 @@ This article will also suggest how to follow a similar pattern to encapsulate cu
 
 Inside a view/template or partial view, access is also provided by the DI framework, by using the `@inject` keyword.
 
-
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Root>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
@@ -39,9 +36,9 @@ Inside a view/template or partial view, access is also provided by the DI framew
 @inject UmbracoHelper Umbraco
 
 @{
-	Layout = null;
+    Layout = null;
 
-	// retrieve an item from Umbraco's published cache with id 123
+    // retrieve an item from Umbraco's published cache with id 123
     IPublishedContent publishedContentItem = Umbraco.Content(123);
 }
 
@@ -49,7 +46,7 @@ Inside a view/template or partial view, access is also provided by the DI framew
 
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
+Inside a [custom Controller](../../Reference/Routing/Custom-Controllers/index.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -208,21 +205,24 @@ namespace Umbraco9.Components
 
         public void Handle(ContentUnpublishedNotification notification)
         {
-            foreach (var item in notification.UnpublishedEntities)
+            // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-                if (item.ContentType.Alias == "blogpost")
+                // the UmbracoContextReference provides access to the ContentCache
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
+
+                foreach (var item in notification.UnpublishedEntities)
                 {
-                    // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
-                    using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+                    if (item.ContentType.Alias == "blogpost")
                     {
-                        // the UmbracoContextReference provides access to the ContentCache
-                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                         // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
                         IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+
                         if (soonToBeUnPublishedItem != null)
                         {
                             string previouslyPublishedUrl = soonToBeUnPublishedItem.Url();
-                            if (!String.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
+
+                            if (!string.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
                             {
                                 _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
                             }
@@ -240,7 +240,7 @@ namespace Umbraco9.Components
 Inside a ContentFinder access to the content cache is possible by injecting `IUmbracoContextAccessor` into the constructor and  provided via the PublishedRequest object:
 
 ```csharp
-public bool TryFindContent(IPublishedRequestBuilder frequest)
+public Task<bool> TryFindContent(IPublishedRequestBuilder request)
 {
     if (!UmbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
     {
@@ -393,6 +393,7 @@ namespace Umbraco9.Services
 - "Transient" means that anytime this type is needed a brand new instance of this type will be created.
 
 **"Scope"** services can be injected into "Request"/"Scope" based lifetimes only
+
 - "Scope" means that a single instance of this type will be created for the duration of the current HttpRequest. The instance will be disposed of at the end of the current HttpRequest.
 
 **"Singleton"** services can be injected into "Singletons" and below ⤵.
@@ -596,4 +597,42 @@ To access the service directly from the view you would need to use the Razor `@i
 <section class="section">
     <div class="container">
         <article>
+```
+
+### Handle routes as server-side requests
+
+Sometimes you might want to request, for example "/sitemap.xml" from your server, but since this has a file extension it will be treated as a client-side request and will not work. You can configure routes to be handled as server-side requests in your startup.cs.
+
+**For a single route:**
+
+```csharp
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        return httpRequest.Path.StartsWithSegments("/sitemap.xml");
+    };
+});
+```
+
+**For multiple routes:**
+
+```csharp
+services.Configure<UmbracoRequestOptions>(options =>
+{
+    string[] allowList = new[] {"/sitemap.xml", "robots.txt", ...};
+    options.HandleAsServerSideRequest = httpRequest =>
+    {
+        foreach (string route in allowList)
+        {
+            if (httpRequest.Path.StartsWithSegments(route))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    };
+});
+
 ```

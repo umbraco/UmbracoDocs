@@ -11,9 +11,9 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Umbraco Forum](https://our.umbraco.com/forum/)
 
-[Umbraco Training](https://umbraco.com/training/)
+[Youtube: Umbraco Learning Base](https://www.youtube.com/c/UmbracoLearningBase)
 
-[Umbraco TV](https://umbraco.tv/)
+[Umbraco Training](https://umbraco.com/training/)
 
 [Contact Umbraco HQ](https://umbraco.com/contact-us/)
 
@@ -31,9 +31,9 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 ## Other resources
 
-[Found an issue in Umbraco? Report it on our Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
+[Found an issue in Umbraco? Report it on our CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
 
-[Found an issue with the Umbraco Documentation? Report it to the Documentation team](https://github.com/umbraco/UmbracoDocs)
+[Found an issue with the Umbraco Documentation? Report it on our Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues)
 
 [Find out how to suggest an improvement to the Umbraco Documentation](../../Contribute/)
 

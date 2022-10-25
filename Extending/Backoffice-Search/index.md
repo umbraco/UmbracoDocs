@@ -1,8 +1,6 @@
 ---
 versionFrom: 9.0.0
-state: partial
-updated-links: false
-verified-against: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Backoffice Search"
 meta.Description: "A guide to customization of Backoffice Search"
 ---
@@ -17,7 +15,7 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 | Media Nodes  | UmbracoFileFieldName   |
 | Member Nodes | email, loginName       |
 
-An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item. 
+An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item.
 
 ## Adding custom properties to backoffice search
 
@@ -55,7 +53,6 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch
 }
 ```
 
-
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Services;
@@ -75,29 +72,33 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch
         //Adding custom field to search in all nodes
         public new IEnumerable<string> GetBackOfficeFields()
         {
-            return new List<string>(base.GetBackOfficeFields()) { "parentID" };
+            return new List<string>(base.GetBackOfficeFields()) { "nodeType" };
         }
 
         //Adding custom field to search in document types
         public new IEnumerable<string> GetBackOfficeDocumentFields()
         {
-            return new List<string>(base.GetBackOfficeDocumentFields()) { "parentID" };
+            return new List<string>(base.GetBackOfficeDocumentFields()) { "nodeType" };
         }
 
         //Adding custom field to search in media
         public new IEnumerable<string> GetBackOfficeMediaFields()
         {
-            return new List<string>(base.GetBackOfficeMediaFields()) { "parentID" };
+            return new List<string>(base.GetBackOfficeMediaFields()) { "nodeType" };
         }
 
         //Adding custom field to search in members
         public new IEnumerable<string> GetBackOfficeMembersFields()
         {
-            return new List<string>(base.GetBackOfficeMembersFields()) { "parentID" };
+            return new List<string>(base.GetBackOfficeMembersFields()) { "nodeType" };
         }
     }
 }
 ```
+
+:::warning
+You cannot use this to search on integer types in the index, as an example `parentID` does not work.
+:::
 
 ## More advanced extensions
 

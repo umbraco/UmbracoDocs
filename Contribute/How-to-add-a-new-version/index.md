@@ -27,7 +27,7 @@ If you want to help out with **updating our documentation against Umbraco 9** yo
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/j81pNEMMA8c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Contributing to Umbraco: Documentation and versioning" src="https://www.youtube.com/embed/j81pNEMMA8c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ Check out the [File Naming Conventions](../File-Naming-Conventions/#target-a-spe
 ### Target the current major version
 
 1. Create a copy of the existing article, e.g. `index.md`.
-2. Place the new file in the same folder as the aricle you copied.
+2. Place the new file in the same folder as the article you copied.
 3. Rename the *old* article to target the version it was written for, e.g. `index-vX.md` - `X` being the *old* version, e.g. 7.
 4. Rename the new article `index.md`.
 
@@ -81,7 +81,7 @@ If you're unsure which Umbraco version to target the *old* article for, check th
 ### Target an upcoming version
 
 1. Create a copy of the existing article, e.g. `index.md`.
-2. Place the new file in the same folder as the aricle you copied.
+2. Place the new file in the same folder as the article you copied.
 3. Rename the new article based on the Umbraco version that you want to target, e.g. `index-vX.md` - `X` being the next major version, e.g. 9.
 
 You will now have (at least) two versions of the same article. One named `index` which is targetting the current major version, and one named `index-vX` which is targetting the upcoming Umbraco X version.

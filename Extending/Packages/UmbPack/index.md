@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
-versionTo: 9.0.0
+versionTo: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "UmbPack"
 meta.Description: "How to use the UmbPack tool to deploy package versions to Our"
 ---
@@ -10,10 +11,16 @@ meta.Description: "How to use the UmbPack tool to deploy package versions to Our
 UmbPack is an open source NuGet tool that can deploy packages to Our, and also help you pack your files into a package.
 
 :::note
-You still need to create the package on Our before the tool can be used. Once it has been set up you will then be able to add new versions of the package zip files using UmbPack
+**Are you using Umbraco 9+?**
+
+As of Umbraco 9, packages can only be installed using NuGet and it is no longer possible to install packages from package zip files.
+
+In order to make your packages available for sites using the latest version of Umbraco, follow our guide on [Creating a NuGet package](../Creating-a-nuget-package/).
 :::
 
 ## Creating an API key on Our.umbraco.com
+
+Before you can start using the UmbPack tool, you need to create the package on Our. Once it has been set up you will then be able to add new versions of the package zip files using UmbPack.
 
 To create an API key to use with the UmbPack tool you should first log in with your user and go to the [manage packages section](https://our.umbraco.com/member/profile/packages/).
 There you will find a button under each package to manage API keys:

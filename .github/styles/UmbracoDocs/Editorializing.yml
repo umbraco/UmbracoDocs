@@ -1,0 +1,52 @@
+---
+extends: existence
+message: "Consider removing '%s'"
+ignorecase: true
+level: warning
+tokens:
+  - actually
+  - aptly
+  - are a number
+  - basically
+  - clearly
+  - completely
+  - easy
+  - easily
+  - essentially
+  - everybody knows
+  - everyone knows
+  - exceedingly
+  - excellent
+  - extremely
+  - fairly
+  - fortunately
+  - huge
+  - interestingly
+  - is a number
+  - it is important to realize
+  - it should be noted that
+  - just
+  - largely
+  - mostly
+  - notably
+  - note that
+  - obviously
+  - of course
+  - quite
+  - relatively
+  - remarkably
+  - several
+  - significantly
+  - simple
+  - simply
+  - substantially
+  - surprisingly
+  - tiny
+  - totally
+  - tragically
+  - unfortunately
+  - untimely
+  - various
+  - vast
+  - very
+  - without a doubt

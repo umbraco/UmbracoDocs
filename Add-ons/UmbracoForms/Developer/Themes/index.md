@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Theming Umbraco Forms"
 meta.Description: "Documentation on how to apply custom themes to Umbraco Forms"
 ---
@@ -13,6 +14,8 @@ As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to b
 To create a theme, you need to create a folder at `/Views/Partials/Forms/Themes/`. The name of the folder is the name of theme that will be visible in the backoffice when choosing it.
 
 Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc.
+
+For Umbraco 9 and previous, it's straightforward to simply copy the files you need from the default theme folder.  Umbraco 10 distributes these files as part of a Razor class library, so you won't find them on disk. The easiest way to obtain copies of the files included in the default theme is to [download this zip file](https://our.umbraco.com/FileDownload?id=23911) and extract the ones you need.
 
 :::note
 Umbraco Forms conditional JavaScript logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.

@@ -1,16 +1,11 @@
 ---
-product: "CMS"
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
-updated-link: False
+versionTo: 10.0.0
 ---
 
 # Tutorial - Creating a Custom Dashboard
-
-_This tutorial was last tested on **Umbraco 8.13.0** and **Umbraco 9.0.0**_
 
 ## Overview
 
@@ -18,9 +13,9 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 ### What is a Dashboard?
 
-A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
+A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Redirect Url Management Dashboard](images/whatisadashboard.jpg)
+![Welcome dashboard](images/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -34,6 +29,7 @@ Here's an overview of the steps that will be covered:
 - Setting up the dashboard plugin
 - Writing a basic Welcome Message view
 - Configure the Custom Welcome Dashboard to be displayed
+- Adding translations
 - Adding styles
 - Adding an AngularJS controller
 - Display the current user's name in our welcome message
@@ -62,7 +58,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next we will create a HTML file inside this folder called 'WelcomeDashboard.html' the html file will contain a fragment of a html document and so does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
+Next, we will create a HTML file inside this folder called 'WelcomeDashboard.html'. The html file will contain a fragment of a html document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
 Add the following html to the WelcomeDashboard.html
 
@@ -130,13 +126,85 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 ![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
 
+We can apply the same workflow to elements inside the dashboard, not only the name/alias.
+Extend the translation file xml like so:
+
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+	<area alias="dashboardTabs">
+		<key alias="welcomeDashboard">Welcome</key>
+	</area>
+	<area alias="welcomeDashboard">
+		<key alias="heading">Welcome!</key>
+		<key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.<key>
+		<key alias="copyright">© Sample Company 20XX</key>
+	</area>
+</language>
+```
+
+We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
+
+```html
+<div class="welcome-dashboard">
+    <h1><localize key="welcomeDashboard_heading">Default heading</localize></h1>
+    <p><localize key="welcomeDashboard_bodytext">Default bodytext</localize></p>
+    <p><localize key="welcomeDashboard_copyright">Default copyright</localize></p>
+</div>
+```
+
+The `localize` tag will be replaced with the translated keywords. In the above example, we have some default text inside those tags, which might as well be removed - it would usually not be visible after the translation is applied.
+
+As for the `localize` tag syntax in HTML, the area alias is combined with the key alias - so if you want to translate:
+
+```html
+<localize key="welcomeDashboard_heading">Default heading</localize>
+```
+
+The xml for that specific key will look like this:
+
+```xml
+	<area alias="welcomeDashboard">
+		<key alias="heading">Welcome!</key>
+	</area>
+```
+
+The area and key aliases are combined and an underscore is added inbetween.
+
+![Dashboard with translation keys](images/dashboard-untranslated-v10.png)
+
 :::note
-If you don't see the brackets disappearing - you may need to recycle your app pool. Try adding a space at the end of a line in your web.config file and then reload.
+If you don't see the brackets disappearing - you may need to restart the website.
 :::
+
+### Different languages
+
+With the above steps completed, your dashboard is all set up to be translated across different backoffice languages.
+To test it out, you could, for example, add another language XML file, like `da.xml` for the Danish language.
+
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+	<area alias="dashboardTabs">
+		<key alias="welcomeDashboard">Velkommen</key>
+	</area>
+	<area alias="welcomeDashboard">
+		<key alias="heading">Velkommen!</key>
+		<key alias="bodytext">Dette er Backoffice. Herfra kan du ændre indholdet, medierne og indstillingerne på din hjemmeside.</key>
+		<key alias="copyright">© Sample Selskab 20XX</key>
+	</area>
+</language>
+```
+
+The backoffice language can be changed in the Users section, if you wish to test out the translations.
+
+![Changing backoffice language](images/changing-languages-v10.png)
+
+![Dashboard in danish](images/dashboard-translated-v10.png)
 
 ## Adding a bit of style
 
-Congratulations! Job well done - no unfortunately not, this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+Congratulations! Job well done, however this is only the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
@@ -174,13 +242,17 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
 
-![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v8.png)
+![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v10.png)
 
 :::note
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
 :::
 
-If the title doesn't change colour, you may be running the site without debugging and therefore [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. To clear the CDF cache and get it to load in the new JavaScript and CSS, you need to increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config) and press save. Now you can reload the page and see the colourful title.
+**For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](https://our.umbraco.com/documentation/Reference/Configuration/RuntimeMinificationSettings/#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
+
+For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](https://our.umbraco.com/Documentation/Fundamentals/Design/Stylesheets-Javascript/#bundling--minification-for-javascript-and-css) section.
+
+**For version 8 and below:** If the title doesn't change colour, you may be running the site without debugging and therefore [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. To clear the CDF cache and get it to load in the new JavaScript and CSS, you need to increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config) and press save. Now you can reload the page and see the colourful title.
 
 Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
@@ -234,13 +306,12 @@ Finally, we need to update the package.manifest file to load the additional cont
 }
 ```
 
-If all is setup fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco, not very helpful, yet.
+If all is setup fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco.
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/v8/ui/#/api
-
-For this example it would be nice to welcome the editor by name, to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
+Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](https://our.umbraco.com/documentation/Reference/API-Documentation/#backoffice-ui).
+For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 
@@ -269,10 +340,10 @@ Notice you can use console.log to write out to the browser console window what i
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
 
 ```html
-<h1>Welcome {{vm.UserName}} to Umbraco</h1>
+<h1><localize key="welcomeDashboard_heading">Default heading</localize> {{vm.UserName}}</h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v8.png)
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v10.png)
 
 ## I know what you did last Tuesday
 
@@ -283,7 +354,7 @@ We can make use of Umbraco's Angular resource for retrieving audit log informati
 We inject the logResource into our controller:
 
 ```js
-angular.Module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource) {
+angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource) {
 ```
 
 Add a property on our ViewModel to store the log information:
@@ -337,7 +408,7 @@ Take a look at the output of console.log of the response in your browser to see 
             timestamp: "2019-10-10T14:49:55.223Z"
             userAvatars: []
             userId: 1
-            userName: "Jesper Christensen Mayntzhusen"
+            userName: "Jakob N"
     pageNumber: 1
     pageSize: 10
     totalItems: 1
@@ -363,52 +434,71 @@ The `getById` method is supported on the following entity types: Document (conte
 Putting this together:
 
 ```js
-logResource.getPagedUserLog(userLogOptions)
-    .then(function (response) {
-        console.log(response);
-        vm.UserLogHistory = response;
-        var filteredLogEntries = [];
-        // Define supported entity types
-        var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
-        // Loop through the response, and flter out save log entries we are not interested in
-        angular.forEach(response.items, function (item) {
-            // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
-            if (!supportedEntityTypes.includes(item.entityType)) 
-                {
-                    return;
-                }
-            // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
-            if (item.nodeId > 0) {
-                // check if we already grabbed this from the entityservice
-                var nodesWeKnowAbout = [];
-                if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
-                    return;
-                // find things the user saved and/or published
-                if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
-                    // check if it is media or content
-                    if (item.entityType === "Document") {
-                        item.editUrl = "content/content/edit/" + item.nodeId;
-                    }
-                    if (item.entityType === "Media") {
-                        item.editUrl = "media/media/edit/" + item.nodeId;
-                    }
+  logResource.getPagedUserLog(userLogOptions)
+        .then(function (response) {
+            console.log(response);
+            vm.UserLogHistory = response;
 
-                    if (typeof item.entityType !== 'undefined') {
-                        // use entityResource to retrieve details of the content/media item
-                        var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                            console.log(ent);
-                            item.Content = ent;
-                        });
+            // define the entity types that we care about, in this case only content and media
+            var supportedEntityTypes = ["Document", "Media"];
 
-                        nodesWeKnowAbout.push(ent.id);
-                        filteredLogEntries.push(item);
-                    }
-                }
-            }
+            // define an empty array "nodes we know about"
+            var nodesWeKnowAbout = [];
+
+            // define an empty array "filtered log entries"
+            var filteredLogEntries = [];
+
+            // loop through the entries in the User Log History
+            angular.forEach(response.items, function (item) {
+
+              // if the item is already in our "nodes we know about" array, skip to the next log entry
+              if (nodesWeKnowAbout.includes(item.nodeId)) {
+                return;
+              }
+
+              // if the log entry is not for an entity type that we care about, skip to the next log entry
+              if (!supportedEntityTypes.includes(item.entityType)) {
+                return;
+              }
+
+              // if the user did not save or publish, skip to the next log entry
+              if (item.logType !== "Save" && item.logType !== "Publish") {
+                return;
+              }
+
+              // if the item does not have a valid nodeId, skip to the next log entry
+              if (item.nodeId < 0) {
+                return;
+              }
+
+              // now, push the item's nodeId to our "nodes we know about" array
+              nodesWeKnowAbout.push(item.nodeId);
+
+              // use entityResource to retrieve details of the content/media item
+              var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                  console.log(ent);
+                  item.Content = ent;
+              });
+
+              // get the edit url
+              if (item.entityType === "Document") {
+                  item.editUrl = "content/content/edit/" + item.nodeId;
+              }
+              if (item.entityType === "Media") {
+                  item.editUrl = "media/media/edit/" + item.nodeId;
+              }
+
+              // push the item to our "filtered log entries" array
+              filteredLogEntries.push(item);
+
+            // end of loop
+            });
+
+            // populate the view with our "filtered log entries" array
+            vm.UserLogHistory.items = filteredLogEntries;
+
+        // end of function
         });
-        vm.UserLogHistory.items = filteredLogEntries;
-    });
-});
 ```
 
 Finally update our view to use the additional retrieved entity information:
@@ -424,7 +514,7 @@ Finally update our view to use the additional retrieved entity information:
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v8.png)
+![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v10.png)
 
 :::note
 The url /umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
@@ -434,24 +524,24 @@ The `logResource` has a few bugs prior to version 8.1.4, so if you are on a lowe
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks?
 
-We can use the knowledge that by convention a link to 'edit a page' can be made to present the user with a brand new content item of the alias type to create within the section. The additional querystring parameters doctype=alias and create=true also needs to be passed.
+We could add a shortcut to allow the users to add one of the most common type of pages they would be working with, like a blogpost.
 
 Add the following to our view:
 
 ```html
 <div>
-    <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1075?doctype=BlogPost&create=true">
+    <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1065?doctype=BlogPost&create=true">
         <i class="icon-edit"></i>
         Create New Blog Post
     </a>
 </div>
 ```
 
-Where 1075, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
+Where 1065, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](images/CreateNewBlogPost-v8.png)
+![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
 
 At this point we are done with the tutorial, your files should contain this:
 
@@ -461,65 +551,85 @@ CustomWelcomeDashboardController:
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
     var vm = this;
     vm.UserName = "guest";
-    vm.UserLogHistory = [];
 
     var user = userService.getCurrentUser().then(function (user) {
         console.log(user);
+        vm.UserLogHistory = [];
         vm.UserName = user.name;
     });
-
     var userLogOptions = {
         pageSize: 10,
         pageNumber: 1,
         orderDirection: "Descending",
         sinceDate: new Date(2018, 0, 1)
     };
-
-    logResource.getPagedUserLog(userLogOptions)
+    
+  logResource.getPagedUserLog(userLogOptions)
         .then(function (response) {
             console.log(response);
             vm.UserLogHistory = response;
+
+            // define the entity types that we care about, in this case only content and media
+            var supportedEntityTypes = ["Document", "Media"];
+
+            // define an empty array "nodes we know about"
+            var nodesWeKnowAbout = [];
+
+            // define an empty array "filtered log entries"
             var filteredLogEntries = [];
-            // Define supported entity types
-            var supportedEntityTypes = ["Document", "Media", "MemberType", "MemberGroup", "MediaType", "DocumentType", "Member", "DataType"];
-            // Loop through the response, and flter out save log entries we are not interested in
+
+            // loop through the entries in the User Log History
             angular.forEach(response.items, function (item) {
-                // if the query finds a log entry for an entity type that isn't supported, nothing should done with that
-                if (!supportedEntityTypes.includes(item.entityType)) 
-                {
-                    return;
-                }
-                // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
-                if (item.nodeId > 0) {
-                    // check if we already grabbed this from the entityservice
-                    var nodesWeKnowAbout = [];
-                    if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
-                        return;
-                    // find things the user saved
-                    if (item.logType === "Save" || item.logType === "SaveVariant" || item.logType === "Publish") {
-                        // check if it is media or content
-                        if (item.entityType === "Document") {
-                            item.editUrl = "content/content/edit/" + item.nodeId;
-                        }
-                        if (item.entityType === "Media") {
-                            item.editUrl = "media/media/edit/" + item.nodeId;
-                        }
 
-                        if (typeof item.entityType !== 'undefined') {
-                            // use entityResource to retrieve details of the content/media item
-                            var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                                console.log(ent);
-                                item.Content = ent;
-                            });
+              // if the item is already in our "nodes we know about" array, skip to the next log entry
+              if (nodesWeKnowAbout.includes(item.nodeId)) {
+                return;
+              }
 
-                            nodesWeKnowAbout.push(ent.id);
-                            filteredLogEntries.push(item);
-                        }
-                    }
-                }
+              // if the log entry is not for an entity type that we care about, skip to the next log entry
+              if (!supportedEntityTypes.includes(item.entityType)) {
+                return;
+              }
+
+              // if the user did not save or publish, skip to the next log entry
+              if (item.logType !== "Save" && item.logType !== "Publish") {
+                return;
+              }
+
+              // if the item does not have a valid nodeId, skip to the next log entry
+              if (item.nodeId < 0) {
+                return;
+              }
+
+              // now, push the item's nodeId to our "nodes we know about" array
+              nodesWeKnowAbout.push(item.nodeId);
+
+              // use entityResource to retrieve details of the content/media item
+              var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                  console.log(ent);
+                  item.Content = ent;
+              });
+
+              // get the edit url
+              if (item.entityType === "Document") {
+                  item.editUrl = "content/content/edit/" + item.nodeId;
+              }
+              if (item.entityType === "Media") {
+                  item.editUrl = "media/media/edit/" + item.nodeId;
+              }
+
+              // push the item to our "filtered log entries" array
+              filteredLogEntries.push(item);
+
+            // end of loop
             });
+
+            // populate the view with our "filtered log entries" array
             vm.UserLogHistory.items = filteredLogEntries;
+
+        // end of function
         });
+
 });
 ```
 
@@ -527,18 +637,19 @@ WelcomeDashboard.html:
 
 ```html
 <div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
-    <h1>Welcome {{vm.UserName}} to Umbraco</h1>
-    <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
+    <h1><localize key="welcomeDashboard_heading">Default heading</localize> {{vm.UserName}}</h1>
+    <p><localize key="welcomeDashboard_bodytext">Default bodytext</localize></p>
+    <p><localize key="welcomeDashboard_copyright">Default copyright</localize></p>
 
-<h2>We know what you edited last week...</h2>
-<ul class="unstyled">
-    <li ng-repeat="logEntry in vm.UserLogHistory.items">
-        <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
-    </li>
-</ul>
+    <h2>We know what you edited last week...</h2>
+    <ul class="unstyled">
+        <li ng-repeat="logEntry in vm.UserLogHistory.items">
+            <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+        </li>
+    </ul>
 
     <div>
-        <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1075?doctype=BlogPost&create=true">
+        <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1065?doctype=BlogPost&create=true">
             <i class="icon-edit"></i>
             Create New Blog Post
         </a>
@@ -554,4 +665,4 @@ You can create your own custom angular services/resources, to interact with your
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
 
-Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/apidocs/v8/ui/#/api) for more info on all of the resources and services you can find for the backoffice!
+Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/documentation/Reference/API-Documentation/#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!

@@ -1,11 +1,11 @@
 ---
 versionFrom: 8.0.0
-needsv9Update: true
+versionTo: 10.0.0
 ---
 
 # Examine
 
-_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast._
+_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be powerful and fast._
 
 ## What is Examine?
 
@@ -23,7 +23,7 @@ Get up and running with Examine straight away with this quick start guide.
 
 Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco 8.
 
-## [PDF indexing and multisearchers](pdf-index.md)
+## [PDF indexing and multisearchers](pdfindex-multisearcher.md)
 
 Learn how to index PDF files in Examine and how to create a multisearcher that searches through both the External Index and the Pdf Index.
 

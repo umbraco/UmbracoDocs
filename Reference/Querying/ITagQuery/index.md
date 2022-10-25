@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Tag Query"
 meta.Description: "Working with tags in Umbraco"
-state: complete
-verified-against: rc-003
-update-links: true
 ---
 
 # ITagQuery

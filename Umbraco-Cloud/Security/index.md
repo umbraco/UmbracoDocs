@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Security on Umbraco Cloud
 
-In this article you can find information about security on Umbraco Cloud. 
+In this article you can find information about security on Umbraco Cloud.
 
 ## HTTPS & Certificates
 
@@ -20,7 +20,9 @@ As of April 2020, we've deprecated support for TLS 1.0 & TLS 1.1.
 
 TLS 1.2 is now the default supported TLS protocol going forward.
 
-Umbraco 8 sites are using the TLS 1.2 protocol by default. Umbraco 7 sites, due to running on an older .NET framework 4.5.2, have been updated to TLS 1.2.
+On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
+
+Learn more about how this in the [Manage Security](../Set-Up/Manage-Security/) article.
 
 ### TLS Ciphers support
 
@@ -64,7 +66,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
 
 ### Ports
 
@@ -73,15 +75,19 @@ By default, all ports are closed to secure them against external attacks. This i
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
-- Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users.
+
+- Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only. 
+:::note 
+Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
+:::
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
 
 ## Cookies and security
 
-On all Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.
+On Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.
 
-It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure App Service) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
 
@@ -99,16 +105,13 @@ The following rule can be added to your web.config file in the `system.webServer
 <rule name="RequestBlockByIP" patternSyntax="Wildcard" stopProcessing="true">
     <match url="*"/>
     <conditions>
-    <add input="{REMOTE_ADDR}" negate="false" pattern="123.123.123.123"/>
+    <add input="{HTTP_CF_Connecting_IP}" negate="false" pattern="123.123.123.123"/>
     </conditions>
     <action type="AbortRequest"/>
 </rule>
 ```
 For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
-:::note
-You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
-:::
 
 ## Restrict backoffice access using IP filtering
 
@@ -126,7 +129,9 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 
 **Reverse Proxy version (eg. Cloudflare)**
 
-When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `CF-Connecting-IP` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+
+You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
 ```xml
 <rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
@@ -142,7 +147,7 @@ When using Cloudflare, which is the default setup for all Cloud projects, the pr
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
     <!-- Custom IP list -->
-    <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
+    <add input="{HTTP_CF_Connecting_IP}" pattern="123.123.123.123" negate="true" />
   </conditions>
   <action type="CustomResponse" statusCode="403" />
 </rule>

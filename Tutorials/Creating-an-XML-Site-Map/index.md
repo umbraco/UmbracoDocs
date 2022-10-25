@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 product: "CMS"
 meta.Title: "Creating an XML sitemap"
 meta.Description: "A guide to creating an XML sitemap in Umbraco"

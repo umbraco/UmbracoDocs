@@ -2,8 +2,7 @@
 meta.Title: "Scheduled Publishing"
 meta.Description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Scheduled Publishing
@@ -20,7 +19,7 @@ This will open a **Schedule Publishing** dialog where you can specify dates and 
 
 ## Timezones
 
-Your server may be in a different timezone then where you are located. You are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
+Your server may be in a different timezone than where you are located. You are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
 ![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
 
@@ -42,7 +41,7 @@ If you are in a load balanced environment special care must be given to ensure y
 
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
-* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/Config/umbracoSettings/index.md#web-routing) for details)_
+* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/V9-Config/WebRoutingSettings/index.md) for details)_
 * Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base url of this request _(default)_
@@ -59,4 +58,4 @@ If your scheduled publishing/unpublishing is not working as you would expect it 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not.
 
-In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index-v8.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/V9-Config/WebRoutingSettings/index.md) setting to ensure that your server is communicating to itself on the correct base url.

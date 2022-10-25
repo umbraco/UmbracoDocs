@@ -21,7 +21,7 @@ A feature that is unique for Umbraco Heartcore is the option to create an API Ke
 
 ## API Keys
 
-By default, the Content Delivery API is public, if you would like to protect it you can do so in the "Settings" section and "Headless" tree. 
+By default, the Content Delivery API is public, if you would like to protect it you can do so in the "Settings" section and "Headless" tree.
 
 ![Protect API](images/heartcoreAPIprotect.png)
 
@@ -40,4 +40,4 @@ You are able to see a list of all your created API Keys and all relevant informa
 
 ![List of all APIs](images/listOfAPIs.png)
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/QHrFcEibYrE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Heartcote: API keys" src="https://www.youtube.com/embed/QHrFcEibYrE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -1,5 +1,6 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Forms Email Templates"
 meta.Description: "Creating an email template for Umbraco Forms."
 ---
@@ -191,7 +192,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
                                         <p style="margin-top: 0;">@dateStr</p>
                                         break;
 
-                                    case "FieldType.CheckboxList.cshtml":
+                                    case "FieldType.CheckBoxList.cshtml":
                                         <p style="margin-top: 0;">
                                             @foreach (var color in field.GetValues())
                                             {

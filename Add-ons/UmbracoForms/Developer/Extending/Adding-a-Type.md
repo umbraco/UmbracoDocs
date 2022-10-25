@@ -1,8 +1,7 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Adding a type to the provider model"
-state: complete
-verified-against: beta-1
 ---
 
 # Adding a type to the provider model
@@ -11,7 +10,7 @@ To add a new type, no matter if it's a workflow, field, data source, etc, there 
 
 ## Preparations
 
-Create a new class library project in Visual Studio add references to the `Umbraco.Forms.Core.dll` (available via referencing the [NuGet package](https://www.nuget.org/packages/UmbracoForms.Core/)).
+Create a new class library project in Visual Studio add references to the `Umbraco.Forms.Core.dll` (available via referencing the [NuGet package](https://www.nuget.org/packages/Umbraco.Forms.Core/)). You might also need to reference [Umbraco.Forms.Core.Providers](https://www.nuget.org/packages/Umbraco.Forms.Core.Providers/).
 
 ## Adding the type to Forms
 
@@ -127,6 +126,33 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
             .Add<LogWorkflow>();
     }
 }
+```
+
+From Umbraco Forms 9.5 and 10.0, there are further convenience methods you can use for registering custom types. These are found in the namespace `Umbraco.Forms.Core.Providers.Extensions`.
+
+For example, instead of the following:
+
+```csharp
+    builder.WithCollectionBuilder<WorkflowCollectionBuilder>()
+        .Add<LogWorkflow>();
+```
+
+Your workflow can be registered using:
+
+```csharp
+    builder.AddFormsWorkflow<LogWorkflow>():
+```
+
+Or:
+
+```csharp
+    builder.FormsWorkflows().Add<LogWorkflow>();
+```
+
+Existing items that are not required in a particular installation can be removed with:
+
+```csharp
+    builder.FormsWorkflows().Exclude<Slack>();
 ```
 
 Also look in the reference chapter for complete class implementations of workflows, fields and export types.

@@ -73,7 +73,15 @@ The class is decorated with a `UdiDefinition` via which the name of the entity t
 
 The following example shows a service connector, responsible for handling the artifact shown above and it's related entity.  There are no dependencies to consider here.  More complex examples will involve collating the dependencies and potentially handling the extraction in more than one pass to ensure updates are made in the correct order.
 
-Note that an illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entiries.
+An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for Create, Read, Update and Delete (CRUD) operations around reading and writing of entities.
+
+:::note
+In Deploy 4.7, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter.  In order to introduce this without breaking changes, we created some new interfaces and base classes.
+
+In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
+
+There's no harm in what is listed below though. It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations. The obsolete methods won't be removed until Deploy 11. In that version we plan to return back to the original interface and class names. We also plan to introduce the new method overloads which will be a documented breaking change.
+:::
 
 ```C#
     [UdiDefinition("mypackage-example", UdiType.GuidUdi)]
@@ -260,7 +268,7 @@ In the same way that Umbraco entities often have dependencies on one another, th
 
 If the dependent entity is also deployable, it will be included in the transfer.  Or if not, the deployment will be blocked and the reason presented to the user.
 
-In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Exist` to ensure the dependent entity not only exists but also matches in all properties.
+In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added. This will indicate that it must exist to allow the transfer. We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
 
 ```C#
         private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
@@ -291,7 +299,7 @@ With the artifact and connectors in place, the final step necessary is to regist
 
 ### Disk Based Transfers
 
-In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
+In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the entity to disk whenever one of them is saved.
 
 ```C#
     public class ExampleDataDeployComponent : IComponent
@@ -334,6 +342,29 @@ In order to deploy the entity as schema, via disk based representations held in 
     }
 ```
 
+#### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
+
+In Umbraco Deploy 4.6 a schema comparison feature was added to the dashboard available under _Settings > Deploy_.  This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+
+All core Umbraco entities, such as document types and data types, will be shown.
+
+To include entities from plugins, they need to be registered using an overload of the method shown above, that allows you to provide additional detail, e.g.:
+
+```C#
+_diskEntityService.RegisterDiskEntityType(
+    "mypackage-example",
+    "Examples",
+    false,
+    _exampleDataService.GetAll().Select(x => new DeployDiskRegisteredEntityTypeDetail.InstalledEntityDetail(x.GetUdi(), x.Name, x))));
+```
+
+The parameters are as follows:
+
+- The system name of the entity type (as used in the `UdiDefinition` attribute).
+- A human readable, pluralized name for display in the schema comparison dashboard user interface.
+- A flag indicating whether the entity is an Umbraco one, which should be set to `false`.
+- A function that returns all entities of the type installed in Umbraco, mapped to an object exposing the Udi and name of the entity.
+
 ### Backoffice Integrated Transfers
 
 If the optimal deployment workflow for your entity is to have editors control the deployment operations, instead of registering with the disk entity service, the transfer entity service should be used.  The process is similar, but a bit more involved, as there's a need to also register details of the tree that's being used for editing the entities.  In more complex cases, we also need to be able handle the situation where multiple entity types are managed within a single tree.
@@ -372,7 +403,8 @@ The following code shows the registration of an entity for backoffice deployment
                 "exampleTreeAlias",
                 (string routePath) => true,
                 (string nodeId) => true,
-                (string nodeId, out Guid entityId) => Guid.TryParse(nodeId, out entityId));
+                (string nodeId, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
+                new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"));
         }
 
         public void Terminate()
@@ -419,11 +451,50 @@ And then for the rider:
         (string nodeId, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
 ```
 
+Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+
+- A function responsible for returning a level of a tree.
+- The name of the entity (or entities) that can be restored from the remote tree.
+- The remote tree alias.
+
+An example function that returns a level of a remote tree may look like this:
+
+```C#
+    public static IEnumerable<RemoteTreeNode> GetExampleTree(string parentId)
+    {
+        var exampleDataService = Current.Factory.GetInstance<IExampleDataService>();
+        var items = exampleDataService.GetItems(parentId);
+        return items
+            .Select(x => new RemoteTreeNode
+            {
+                Id = x.Id,,
+                Title = x.Name,
+                Icon = "icon-box",
+                ParentId = parentId,
+                HasChildren = true,
+            })
+            .ToList();
+    }
+```
+
+To complete the setup for partial restore support, an external tree controller needs to be added, attributed to match the registered tree alias.  Using a base class available in `Umbraco.Deploy.Forms.Tree`, this can look like the following:
+
+```C#
+    [Tree(DeployConstants.SectionAlias, "externalExampleTree", TreeUse = TreeUse.Dialog)]
+    public class ExternalExampleTreeController : ExternalTreeControllerBase
+    {
+        public ExternalExampleTreeController(IExtractEnvironmentInfo environmentInfoExtractor)
+            : base(environmentInfoExtractor, "mypackage-example")
+        {
+        }
+    }
+```
+
 #### Client-Side Registration
 
 With the server-side registration discussed in the previous section, most features that are available for the deployment of Umbraco entities will also be accessible to entities defined in custom solutions or packages.  One feature though - the "Transfer Now" option available from the "Save and Publish" or "Save" button available for content or media - is only available to custom entities if requested client-side.
 
-You would do this in the custom angularjs controller responsible for handling the edit operations on your entity, injecting the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
+You would do this in the custom AngularJS controller responsible for handling the edit operations on your entity. Inject the `pluginEntityService` and call the `addInstantDeployButton` function as shown in the following stripped-down sample. For the full code, see the sample data repository linked above.
 
 ```JavaScript
 (function () {

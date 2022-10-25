@@ -82,7 +82,7 @@ There is a static servervariables file in /mocks which describes the urls used b
 
 ```javascript
 urlService.url("contentTypes", "GetAllowedChildren");
-// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+// would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
 ```
 
 But for now, they are set in the ServerVariables file.

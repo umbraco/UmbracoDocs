@@ -2,9 +2,7 @@
 meta.Title: "Sections in the Umbraco Backoffice"
 meta.Description: "In this article you can learn more about the various sections you can find within the Umbraco Backoffice."
 versionFrom: 8.0.0
-versionTo: 9.0.0
-verified-against: 9.0.0
-updated-links: False
+versionTo: 10.0.0
 ---
 
 # Sections
@@ -67,7 +65,7 @@ This is the section where you create and manage your dictionary items.
 ## Help sections
 In the top-right corner, you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
 
-Next to the search tool, there is a help section, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
+Next to the search tool, there is a help section. In the help section you can find Backoffice tours and links to Umbraco resources such as documentation and UmbracoTV.
 
 There is also a small 'user section' with shortcuts to edit the currently logged in user, and view their most recent activities.
 

@@ -1,10 +1,8 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Routing Requirements for Backoffice authentication"
 meta.Description: "Requirements for authenticating requests for the backoffice"
-state: complete
-verified-against: beta-4
-update-links: "true"
 ---
 
 # Routing requirements for backoffice authentication
@@ -34,6 +32,7 @@ If you are using MVC in the backoffice then you would normally inherit from `Umb
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
 
 ## Defining a route
+
 When you create a controller that inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard .NET Core MVC routing practices, however there is a handy extension method on the `IEndpointRouteBuilder` to help you.
 
@@ -73,10 +72,10 @@ public static void MapUmbracoRoute<T>(
             this IEndpointRouteBuilder endpoints,
             string rootSegment,
             string areaName,
-            string prefixPathSegment,
+            string? prefixPathSegment,
             string defaultAction = "Index",
             bool includeControllerNameInRoute = true,
-            object constraints = null)
+            object? constraints = null)
 ```
 
 * The generic type argument is the contoller you wish to route, in this case `MyController`.

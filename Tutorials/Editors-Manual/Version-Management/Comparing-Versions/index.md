@@ -1,11 +1,11 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Comparing Versions
 
-You will never lose changes on a page because all the old versions of the page are saved in **History**. 
+You will never lose changes on a page because all the old versions of the page are saved in **History**.
 
 To compare a page on the site with its previous versions:
 
@@ -14,11 +14,11 @@ To compare a page on the site with its previous versions:
 3. Click on the **Rollback** button in the **History** section.
 
     ![Rollback](images/Rollback-v9.png)
-4. The Rollback tree opens in the right-side of the screen. Select a version from the **Rollback To** drop-down list.
+4. The Rollback window opens. Select a version you wish to compare with.
 
     After selecting the version, a comparison of the current page with the version you selected is displayed. The text highlighted in red and striked-out will not appear in the selected version and the text highlighted in green means the text that will be added, should you choose to rollback to that version of the page.
 
-    ![Rollback Changes](images/Rollback-changes-v9.png)
+    ![Rollback Changes](images/Rollback-changes-v10.png)
 
 ---
 

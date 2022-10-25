@@ -1,14 +1,13 @@
 ---
 versionFrom: 9.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
-state: complete
-verified-against: beta-1
 ---
 
 # Configuration for Umbraco Deploy
 
-All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Umbraco Deploy configuration follows this pattern, i.e.:
 
@@ -37,24 +36,29 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
+            "Edition": "Default",
             "DefaultTimeoutSeconds": 60,
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
-            "Edition": "Default",
             "SessionTimeout": "0.0:20:00",
             "SourceDeployTimeout": "0.0:20:00",
             "DatabaseCommandTimeout": "0.0:20:00",
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
+            "DiskOperationsTimeout": "0.0:05:00",
+            "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependencies": false,
-            "IgnoreBrokenDependenciesBehavior": "IgnoreForAll",
+            "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
+            "ReloadMemoryCacheFollowingDiskReadOperation": false,
+            "AllowDomainsDeploymentOperations": "None",
+            "PreferLocalDbConnectionString": false
         }
     }
   }
@@ -64,6 +68,18 @@ For illustration purposes, the following structure represents the full set of op
 ## ApiKey
 
 The API key is a 10 character random string applied with the same value to all environments in order to authenticate HTTP requests between them.
+
+## Edition
+
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+
+Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
+
+It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
+
+Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+
+However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
 ## ExcludedEntityTypes
 
@@ -113,18 +129,34 @@ Here is an example of how the setting can look:
 
 Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 
-There are four settings available:
+There are four settings available relating to backoffice deployment operations:
 
 - `SessionTimeout`
 - `SourceDeployTimeout`
 - `HttpClientTimeout`
 - `DatabaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are configured using [standard timepsan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings):
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
+
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
+
+- `DiskOperationsTimeout`
+
+This setting defaults to 5 minutes.
+
+All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+
+## UseDatabaseBackedTransferQueue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 9.5 and 10.1, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
 ## TransferFormsAsContent
 
@@ -174,5 +206,46 @@ For example, using the following settings, you will have an installation that ig
     "IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
+## Memory cache reload
 
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
+```json
+    "ReloadMemoryCacheFollowingDiskReadOperation": true,
+```
+
+By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
+
+## Deployment of culture & hostnames settings
+
+Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
+
+```json
+    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
+```
+
+To enable this, set the configuration value as appropriate for the types of domains you want to allow:
+
+- *Culture* - the language setting for the content, defined under "Culture"
+- *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
+- *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+
+Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
+
+## PreferLocalDbConnectionString
+
+When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
+
+For Umbraco 10, by default, a SQLite database is created.
+
+If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
+
+```json
+    "Umbraco": {
+        "Deploy": {
+            "Settings": {
+                "PreferLocalDbConnectionString": true
+            }
+        }
+    }
+```

@@ -8,6 +8,25 @@ meta.Description: "Various settings for Umbraco Deploy"
 
 The UmbracoDeploy.Settings.config file is empty by default, but there are some optional settings you can set in the file to ignore certain types of file, increase timeout limits, etc.
 
+## Edition
+
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+
+Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
+
+It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
+
+Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+
+However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy edition="Default|BackOfficeOnly" />
+</settings>
+```
+
 ## ExcludedEntityTypes
 
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
@@ -72,16 +91,39 @@ The defaults will cover most though. Changing the defaults by updating the `/Con
 - `httpClientTimeout`
 - `databaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
 
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
+
+- `diskOperationsTimeout`
+
+This setting defaults to 5 minutes.
+
+All of these times are in *seconds*:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" diskOperationsTimeout="60" />
+</settings>
+```
+
+## Transfer Queue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 4.7, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the following setting can be used.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy useDatabaseBackedTransferQueue="false" />
 </settings>
 ```
 
@@ -171,5 +213,37 @@ For example, using the following settings, you will have an installation that ig
             ignoreBrokenDependenciesBehavior="Restore" />
 </settings>
 ```
+
+## Memory cache reload
+
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy reloadMemoryCacheFollowingDiskReadOperation="true" />
+</settings>
+```
+
+By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area.  That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
+
+## Deployment of culture & hostnames settings
+
+Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy allowDomainsDeploymentOperations="None|Culture|Absolute|Hostname|All" />
+</settings>
+```
+
+To enable this, set the configuration value as appropriate for the types of domains you want to allow:
+
+- *Culture* - the language setting for the content, defined under "Culture"
+- *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
+- *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+
+Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
 

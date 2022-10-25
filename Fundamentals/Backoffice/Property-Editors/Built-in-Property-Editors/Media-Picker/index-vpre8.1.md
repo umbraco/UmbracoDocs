@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 versionTo: 8.1.0
 ---
 
-# Media Picker #
+# Media Picker
 
 `Alias: Umbraco.MediaPicker`
 

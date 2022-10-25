@@ -1,0 +1,6 @@
+message: "Write shorter sentences (less than 25 words)."
+extends: occurrence
+scope: sentence
+level: warning
+max: 25
+token: \b(\w+)\b

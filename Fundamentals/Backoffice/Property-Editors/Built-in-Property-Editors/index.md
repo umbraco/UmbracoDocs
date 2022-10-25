@@ -1,17 +1,23 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Built-in Umbraco Property Editors
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Block List Editor](Block-List-Editor)
+## [Block List Editor](Block-Editor/Block-List-Editor/)
 
 `Alias: Umbraco.BlockList`
 
 Use Element Types to create a set of Blocks that your editors can use to create content.
+
+## [Block Grid Editor](Block-Editor/Block-Grid-Editor/)
+
+`Alias: Umbraco.BlockGrid`
+
+Use Document Types as Element Types to create a custom editing experience for your editors using grids.
 
 ## [Toggle (True/False)](True-False)
 
@@ -105,21 +111,21 @@ This control gives the same functionality as the standard listview, but allows y
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
-## [Media Picker 3 (Recommended)](Media-Picker-3/index.md)
+## [Media Picker](Media-Picker-3/index.md)
 
 `Alias: Umbraco.MediaPicker3`
 
-Media Picker 3 is the latest Media Picker, which enables you to select one or more media items from the Media Section. This Property Editor can be configured to only pick certain Media Types and it's possible to define Local Image Crops.
+Media Picker  enables you to select one or more media items from the Media Section. This Property Editor can be configured to only pick certain Media Types and it's possible to define Local Image Crops.
 
-## [Media Picker](Media-Picker/index.md)
+## [Media Picker (Legacy)](Media-Picker/index.md)
 
 `Alias: Umbraco.MediaPicker`
 
-The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
-
-:::note 
-As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
+:::note
+As of Umbraco 8.14, this Media Picker is legacy. Use the [Media Picker](Media-Picker-3) instead.
 :::
+
+The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## [Member Group Picker](Member-Group-Picker/index.md)
 

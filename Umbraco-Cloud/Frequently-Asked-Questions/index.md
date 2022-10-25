@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionTo: 10.0.0
 ---
 
 # Frequently asked questions
@@ -51,10 +52,6 @@ All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as 
 - 250 GB Disk space
 - 1,920 TCP connections
 
-### Can I choose which Azure Region my projects run in?
-
-No. All services currently run in the Azure West Europe region.
-
 ### How many resources do I have available for my website?
 
 In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
@@ -75,7 +72,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 projects runs on 4.7.2.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0 and Umbraco 10 projects on .NET 6.0.
 
 ---
 
@@ -108,7 +105,7 @@ You can find all the steps of the auto-upgrade process outlined in the [Upgrades
 
 Pending commits won't stop the auto-upgrade.
 
-### Is it OK to do manual updates? For example if a project on 7.4.3 is updated locally to 7.4.4, can we commit back to dev?
+### Is it OK to do manual updates? For example if a project on 9.4.3 is updated locally to 9.4.4, can we commit back to dev?
 
 Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
 
@@ -158,15 +155,13 @@ Yes. Pro and Enterprise Plans can add custom certificates for each of their cust
 
 Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
 
-### Does Umbraco Cloud support http/2?
+### Does Umbraco Cloud support HTTP/2?
 
-The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
-
-As a workaround, you could consider setting up a product like CloudFlare, which offers free support for http/2 (they call it "Opportunistic Encryption") out of the box.
+By default, Umbraco Cloud supports HTTP/2.
 
 ### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
 
-No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 You can learn much more about this in our [Security section](../Security/#cookies-and-security).
 
@@ -264,6 +259,49 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 ---
 
+## Regions
+
+
+### Can I choose which region my projects run in?
+
+Yes, you can choose between the West Europe region and US East region.
+
+### Can I move my existing project created on Cloud in the EU region to the US region?
+
+Yes, you can move a project that was created on Umbraco Cloud in the EU region to the US region by following the [migrate between regions guide](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Migrate-between-regions/).
+
+### How do I select a region when creating projects on Cloud?
+
+You can choose a region when creating a project.
+
+### Can I have a Baseline master project in the EU and a Baseline child project in the US?
+
+No. Baseline-projects are bound to a region for now. 
+
+
+### Will my sites receive automatic patch-upgrades of CMS, Deploy, and Forms when new releases are available?
+
+Yes. The US region is no different than normal Cloud other than its regional location. That means that the patch-upgrade functionality will work in whichever region you choose.
+
+
+### Can you create Umbraco Heartcore projects in the US Region? 
+
+Not at the moment. 
+
+### Are all the features we have in Umbraco Cloud available in the US region?
+
+Baseline functionality is not supported in the US-region at the moment. Other than that, all features are fully supported.
+
+
+### Are you planning to add other regions in the future? 
+
+Yes. Once we have specific plans, we will announce them publicly.
+
+### Where can I see what region my project was created in?
+
+ EU region has “euwest” in the URL, while US has “useast” in the URL.
+---
+
 ## Backups and data retention
 
 ### What backup and restore options are available on Umbraco Cloud?
@@ -277,3 +315,7 @@ You can read more about database backups and how to perform these on Umbraco Clo
 #### Filesystem
 
 Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
+
+#### Blob Storage containers
+
+Umbraco Cloud keeps 35 days of snapshots of the Blob Storage container for disaster recovery purposes.
