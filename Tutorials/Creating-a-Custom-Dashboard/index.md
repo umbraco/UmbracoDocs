@@ -253,7 +253,7 @@ One caveat is that the package.manifest file is loaded into memory when Umbraco 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](https://our.umbraco.com/Documentation/Fundamentals/Design/Stylesheets-Javascript/#bundling--minification-for-javascript-and-css) section.
 
 **For version 8 and below:** 
-If the title doesn't change colour, you may be running the site without debugging. This means [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. 
+If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. 
 
 To clear the CDF cache and load the new JavaScript and CSS, you need to:
  - Increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config)
