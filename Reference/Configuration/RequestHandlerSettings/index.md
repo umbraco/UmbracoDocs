@@ -19,6 +19,7 @@ Here is a snippet containing all the default values of the `RequestHandler` sect
     "RequestHandler": {
       "AddTrailingSlash": true,
       "ConvertUrlsToAscii": "try",
+      "EnableDefaultCharReplacements": true,
       "CharCollection": [
       {
         "Char": " ",
@@ -132,6 +133,9 @@ If you don't want to have a trailing slash, set the value to **false**.
 This setting tells Umbraco to convert all urls to ASCII, if set to false the urls will remain UTF-8.
 
 This setting can be set to **try** This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages don't have ASCII implementations, therefore the urls would end up being empty.
+
+### Enable default character replacements
+This setting tells umbraco to use the default character replacements. If you don't want the default character replacements, set this to false.
 
 ### Char collection
 
