@@ -340,7 +340,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 ```
 
 :::tip
-Notice you can use console.log() to write out to the browser console window what is being returned by the promise. This helps to debug, but also understand what properties are available to use.
+Notice you can use `console.log()` to write out to the browser console window what is being returned by the promise. This helps to debug, but also understand what properties are available to use.
 :::
 
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
