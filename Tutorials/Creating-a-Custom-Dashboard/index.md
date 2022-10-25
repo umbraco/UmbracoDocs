@@ -545,7 +545,7 @@ Add the following to our view:
 </div>
 ```
 
-`1065` is the id of our blog section and BlogPost is the alias of the type of document we want to create.
+`1065` is the ID of our blog section and `blogPost` is the alias of the type of document we want to create.
 
 ![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
 
