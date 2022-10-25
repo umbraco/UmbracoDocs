@@ -530,7 +530,7 @@ The `logResource` has a few bugs prior to version 8.1.4. If you are on a lower v
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries, why not create them a handy shortcut to achieve this common task?
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries, why not create a handy shortcut to help them achieve this common task?
 
 We could add a shortcut to allow the users to add a blogpost.
 
