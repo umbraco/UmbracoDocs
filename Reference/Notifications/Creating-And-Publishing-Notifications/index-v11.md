@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 11.0.0
 meta-title: Creating and Publishing Custom Notifications
 meta.Description: How to create and publish your own custom notifications
 ---
@@ -13,12 +13,11 @@ For a notification to be publishable there's only one requirement, it must imple
 ```C#
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Cms.Web.UI.Notifications
-{
-    public class CleanYourRoomStartedNotification : INotification
-    {
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
 
-    }
+public class CleanYourRoomStartedNotification : INotification
+{
+    
 }
 ```
 
@@ -27,16 +26,15 @@ This notification can now be published, and we can create a notification handler
 ```C#
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Cms.Web.UI.Notifications
-{
-    public class RoomCleanedNotification : INotification
-    {
-        public int ItemsDeleted { get; }
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
 
-        public RoomCleanedNotification(int itemsDeleted)
-        {
-            ItemsDeleted = itemsDeleted;
-        }
+public class RoomCleanedNotification : INotification
+{
+    public int ItemsDeleted { get; }
+
+    public RoomCleanedNotification(int itemsDeleted)
+    {
+        ItemsDeleted = itemsDeleted;
     }
 }
 ```
@@ -55,56 +53,53 @@ The method you use to publish notifications depends on what your needs are, the 
 ## Example
 
 ```C#
-using System;
-using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.HostedServices;
-using Umbraco.Cms.Web.UI.Notifications;
 
-namespace Umbraco.Cms.Web.UI
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+
+public class CleanUpYourRoom : RecurringHostedServiceBase
 {
-    public class CleanUpYourRoom : RecurringHostedServiceBase
+    private readonly IContentService _contentService;
+    private readonly ICoreScopeProvider _coreScopeProvider;
+    private readonly IEventAggregator _eventAggregator;
+        
+    private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
+    private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
+
+    public CleanUpYourRoom(
+        IContentService contentService,
+        ICoreScopeProvider coreScopeProvider,
+        IEventAggregator eventAggregator,
+        ILogger<CleanUpYourRoom> logger)
+        : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
     {
-        private readonly IContentService _contentService;
-        private readonly ICoreScopeProvider _coreScopeProvider;
-        private readonly IEventAggregator _eventAggregator;
-        private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
-        private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
+        _contentService = contentService;
+        _coreScopeProvider = coreScopeProvider;
+        _eventAggregator = eventAggregator;
+    }
 
-        public CleanUpYourRoom(
-            IContentService contentService,
-            ICoreScopeProvider coreScopeProvider,
-            IEventAggregator eventAggregator,
-            ILogger<CleanUpYourRoom> logger)
-            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
+    public override Task PerformExecuteAsync(object state)
+    {
+        // This will be published immediately
+        _eventAggregator.Publish(new CleanYourRoomStartedNotification());
+
+        using ICoreScope scope = _coreScopeProvider.CreateCoreScope();
+        int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
+
+        if (_contentService.RecycleBinSmells())
         {
-            _contentService = contentService;
-            _coreScopeProvider = coreScopeProvider;
-            _eventAggregator = eventAggregator;
+            _contentService.EmptyRecycleBin(userId: -1);
+            // This will only be published when the scope is completed and disposed.
+            scope.Notifications.Publish(new RoomCleanedNotification(numberOfThingsInBin));
         }
 
-        public override Task PerformExecuteAsync(object state)
-        {
-            // This will be published immediately
-            _eventAggregator.Publish(new CleanYourRoomStartedNotification());
-
-            using ICoreScope scope = _coreScopeProvider.CreateCoreScope();
-            int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
-
-            if (_contentService.RecycleBinSmells())
-            {
-                _contentService.EmptyRecycleBin(userId: -1);
-                // This will only be published when the scope is completed and disposed.
-                scope.Notifications.Publish(new RoomCleanedNotification(numberOfThingsInBin));
-            }
-
-            // Remember to complete the scope when done.
-            scope.Complete();
-            return Task.CompletedTask;
-        }
+        // Remember to complete the scope when done.
+        scope.Complete();
+        return Task.CompletedTask;
     }
 }
 ```
