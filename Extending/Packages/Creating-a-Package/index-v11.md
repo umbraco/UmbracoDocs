@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 11.0.0
 meta.Title: "Creating a package"
 meta.Description: "Tutorial to create a package in Umbraco"
 ---
@@ -230,21 +229,19 @@ Whenever the embedded package.xml file changes, the automatic package migration 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
 ```c#
-using System;
 using Umbraco.Cms.Core.Packaging;
 
-namespace CustomWelcomeDashboardProject.Migrations
-{
-    public class CustomPackageMigrationPlan : PackageMigrationPlan
-    {
-        public CustomPackageMigrationPlan() : base("Custom Welcome Dashboard")
-        {
-        }
+namespace CustomWelcomeDashboardProject.Migrations;
 
-        protected override void DefinePlan()
-        {
-            To<CustomPackageMigration>(new Guid("4FD681BE-E27E-4688-922B-29EDCDCB8A49"));
-        }
+public class CustomPackageMigrationPlan : PackageMigrationPlan
+{
+    public CustomPackageMigrationPlan() : base("Custom Welcome Dashboard")
+    {
+    }
+
+    protected override void DefinePlan()
+    {
+        To<CustomPackageMigration>(new Guid("4FD681BE-E27E-4688-922B-29EDCDCB8A49"));
     }
 }
 ```
@@ -252,6 +249,8 @@ namespace CustomWelcomeDashboardProject.Migrations
 The custom migrations can inherit from `PackageMigrationBase` where we can use helper methods to pick up the schema. But we can also use the regular `MigrationBase` class.
 
 ```c#
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
@@ -259,36 +258,36 @@ using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Packaging;
 
-namespace CustomWelcomeDashboardProject.Migrations
+namespace CustomWelcomeDashboardProject.Migrations;
+
+public class CustomPackageMigration : PackageMigrationBase
 {
-    public class CustomPackageMigration : PackageMigrationBase
+    public CustomPackageMigration(
+        IPackagingService packagingService,
+        IMediaService mediaService,
+        MediaFileManager mediaFileManager,
+        MediaUrlGeneratorCollection mediaUrlGenerators,
+        IShortStringHelper shortStringHelper,
+        IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
+        IMigrationContext context,
+        IOptions<PackageMigrationSettings> packageMigrationsSettings) 
+        : base(
+            packagingService,
+            mediaService,
+            mediaFileManager,
+            mediaUrlGenerators,
+            shortStringHelper,
+            contentTypeBaseServiceProvider,
+            context,
+            packageMigrationsSettings)
     {
-        public CustomPackageMigration(
-            IPackagingService packagingService,
-            IMediaService mediaService,
-            MediaFileManager mediaFileManager,
-            MediaUrlGeneratorCollection mediaUrlGenerators,
-            IShortStringHelper shortStringHelper,
-            IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
-            IMigrationContext context) : base(packagingService,
-                                              mediaService,
-                                              mediaFileManager,
-                                              mediaUrlGenerators,
-                                              shortStringHelper,
-                                              contentTypeBaseServiceProvider,
-                                              context)
-        {
-        }
+    }
 
-        protected override void Migrate()
-        {
-            ImportPackage.FromEmbeddedResource(GetType()).Do();
-
-            // Additional steps ...
-        }
+    protected override void Migrate()
+    {
+        ImportPackage.FromEmbeddedResource<CustomPackageMigration>().Do();
     }
 }
-
 ```
 
 Here we also added the ZIP file as an embedded resource to the package project.
