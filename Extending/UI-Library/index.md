@@ -6,7 +6,10 @@ meta.Description: "A guide for getting started working with the Umbraco UI Libra
 # UI Library
 
 :::note
-Please be aware that the topic covered in this document is currently only available in the Release Candidate (RC) of Umbraco 10.3.
+Please be aware that the topic covered in this document is currently only available in the following versions of Umbraco:
+
+* The latest version of Umbraco 10.
+* The Release Candidate (RC) for Umbraco 11.
 
 The new UI Library is currently *opt-in* and something we recommend Backoffice and package developers start getting familiar with.
 
