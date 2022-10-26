@@ -5,11 +5,11 @@ versionTo: 10.0.0
 
 # Sending Allowed Children Notification
 
-The `SendingAllowedChildrenNotification` enables you to manipulate the document types that will be shown in the create menu when adding new content in the backoffice.
+The `SendingAllowedChildrenNotification` enables you to manipulate the Document Types that will be shown in the create menu when adding new content in the backoffice.
 
 ## Usage
 
-With the example below we can ensure that a document type cannot be selected if the type already exists in the Content tree.
+With the example below we can ensure that a Document Type cannot be selected if the type already exists in the Content tree.
 
 ```csharp
 using System.Web;
