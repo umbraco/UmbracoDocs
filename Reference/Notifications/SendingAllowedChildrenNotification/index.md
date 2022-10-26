@@ -5,18 +5,16 @@ versionTo: 10.0.0
 
 # Sending Allowed Children Notification
 
-The `SendingAllowedChildrenNotification` enables you to manipulate the content types that will be shown in the create menu when adding new content in the backoffice.
+The `SendingAllowedChildrenNotification` enables you to manipulate the document types that will be shown in the create menu when adding new content in the backoffice.
 
 ## Usage
 
-With the example below we can ensure that a content type cannot be selected if the type already exists in the Content tree.
+With the example below we can ensure that a document type cannot be selected if the type already exists in the Content tree.
 
 ```csharp
-using System.Linq;
 using System.Web;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Extensions;
 
 namespace Umbraco.Docs.Samples.Web.Notifications
 {
@@ -24,10 +22,10 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     {
         public void Handle(SendingAllowedChildrenNotification notification)
         {
-            //try get the id from the content item in the back office 
+            const string contentIdKey = "contentId";
+
+            // Try get the id from the content item in the backoffice 
             var queryStringCollection = HttpUtility.ParseQueryString(notification.UmbracoContext.OriginalRequestUrl.Query);
-            
-            var contentIdKey = "contentId";
 
             if (!queryStringCollection.ContainsKey(contentIdKey))
             {
@@ -43,27 +41,27 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 
             var content = notification.UmbracoContext.Content?.GetById(true, contentId);
 
-            if (content == null)
+            if (content is null)
             {
                 return;
             }
 
-            // allowed children as configured in the backoffice
+            // Allowed children as configured in the backoffice
             var allowedChildren = notification.Children.ToList();
 
-            if (content.ChildrenForAllCultures != null)
+            if (content.ChildrenForAllCultures is not null)
             {
-                // get all children of current page.
+                // Get all children of current page
                 var childNodes = content.ChildrenForAllCultures.ToList();
 
-                // if there is a settings page already created, then don't allow it anymore
-                if (childNodes.Any(x => x.ContentType.Alias == Settings.ModelTypeAlias))
+                // If there is a Settings page already created, then don't allow it anymore
+                if (childNodes.Any(x => x.ContentType.Alias == "settings"))
                 {
-                    allowedChildren.RemoveAll(x => x.Alias == Settings.ModelTypeAlias);
+                    allowedChildren.RemoveAll(x => x.Alias == "settings");
                 }
             }
 
-            // update the allowed children.
+            // Update the allowed children
             notification.Children = allowedChildren;
         }
     }
