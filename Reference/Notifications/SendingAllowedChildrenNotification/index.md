@@ -86,8 +86,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-For more information av
-
 :::note
-The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).
+For more information about registering notifications read the [Registering notification handlers](../index.md/#registering-notification-handlers) article.
 :::
