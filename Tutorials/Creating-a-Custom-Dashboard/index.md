@@ -60,7 +60,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of a HTML document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
-Add the following HTML to the `WelcomeDashboard.html`. okay
+Add the following HTML to the `WelcomeDashboard.html`.
 
 ```html
 <div class="welcome-dashboard">
