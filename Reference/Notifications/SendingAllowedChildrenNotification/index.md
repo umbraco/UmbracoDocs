@@ -55,6 +55,8 @@ namespace Umbraco.Docs.Samples.Web.Notifications
                 var childNodes = content.ChildrenForAllCultures.ToList();
 
                 // If there is a Settings page already created, then don't allow it anymore
+                // You can also use the ModelTypeAlias property from your PublishedModel for comparison,
+                // like Settings.ModelTypeAlias if you have set models builder to generate SourceCode models
                 if (childNodes.Any(x => x.ContentType.Alias == "settings"))
                 {
                     allowedChildren.RemoveAll(x => x.Alias == "settings");
