@@ -75,14 +75,12 @@ You also need to register this notification handler. You can achieve this by upd
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-#pragma warning disable IDE0022 // Use expression body for methods
     services.AddUmbraco(_env, _config)
         .AddBackOffice()             
         .AddWebsite()
         .AddComposers()
         .AddNotificationHandler<SendingAllowedChildrenNotification, SendingAllowedChildrenNotificationHandler>()
         .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
 }
 ```
 
