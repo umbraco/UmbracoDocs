@@ -69,3 +69,25 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     }
 }
 ```
+
+You also need to register this notification handler. You can achieve this by updating the `Startup` class like:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+#pragma warning disable IDE0022 // Use expression body for methods
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()             
+        .AddWebsite()
+        .AddComposers()
+        .AddNotificationHandler<SendingAllowedChildrenNotification, SendingAllowedChildrenNotificationHandler>()
+        .Build();
+#pragma warning restore IDE0022 // Use expression body for methods
+}
+```
+
+For more information av
+
+:::note
+The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).
+:::
