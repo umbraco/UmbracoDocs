@@ -60,7 +60,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of a HTML document and does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
-Add the following HTML to the `WelcomeDashboard.html`.
+Add the following HTML to the `WelcomeDashboard.html`. okay
 
 ```html
 <div class="welcome-dashboard">
@@ -367,10 +367,8 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 Add a property on our ViewModel to store the log information:
 
 ```js
-vm.UserLogHistory = [];
+vm.UserLogHistory = []; 
 ```
-
-This is just for testing purposes.
 
 Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to display a list of these log entries:
 
