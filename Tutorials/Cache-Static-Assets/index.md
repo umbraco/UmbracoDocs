@@ -2,34 +2,29 @@
 versionFrom: 9.3.0
 ---
 
-# Cache static assets
+# Modify the `Cache-Control` header for Static Files
 
-Example to cache static assets by file extension, but excluding Umbraco BackOffice assets.
+Example class to allow the modification of the `Cache-Control` header for static assets by file extension, but excluding Umbraco BackOffice assets.
+
+
 
 ```csharp
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Headers;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.Net.Http.Headers;
+using System.IO;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using Umbraco.Cms.Core.Composing;
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http.Headers;
+using Microsoft.Net.Http.Headers;
+
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
-namespace My.Site.Composers;
-
-public class StaticFilesComposer : IComposer
+namespace Umbraco.Docs.Samples.Web.Tutorials
 {
-    public void Compose(IUmbracoBuilder builder)
-        => builder.Services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
-
-    private class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
+    public class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
     {
         // These are the extensions of the file types we want to cache (add and remove as you see fit)
         private static readonly HashSet<string> _cachedFileExtensions = new(StringComparer.OrdinalIgnoreCase)
@@ -38,7 +33,8 @@ public class StaticFilesComposer : IComposer
             ".css",
             ".js",
             ".svg",
-            ".woff2"
+            ".woff2",
+            ".jpg"
         };
 
         private readonly string _backOfficePath;
@@ -72,7 +68,18 @@ public class StaticFilesComposer : IComposer
 }
 ```
 
-## Cache images in ImageSharp
+Register the service in `Startup.cs`
+
+```csharp
+
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
+
+```
+
+
+## Modify the `Cache-Control` header for ImageSharp.Web
 
 For setting `Cache-Control` max-age header for images processed by the ImageSharp middleware, you can set the `Umbraco:CMS:Imaging:Cache:BrowserMaxAge` setting.
 
