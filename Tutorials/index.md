@@ -68,9 +68,9 @@ Learn how to implement a basic register/login functionality on your website, hid
 
 This tutorial explains how to host multiple sites from one project/installation of Umbraco.
 
-## [Cache Static Assets](Cache-Static-Assets/)
+## [Modify the `Cache-Control` header for Static Files](Cache-Static-Assets/)
 
-This sample shows how to cache static assets in Umbraco.
+This tutorial shows how to modify the `Cache-Control` header for Static Files.
 
 ## [Porting Packages from Version 7 to Version 8](Porting-Packages-V8/index.md)
 
