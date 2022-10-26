@@ -206,7 +206,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
       </ul>
     </td>
     <td>
-    Published right before the allowed children of a node are sent back. (whenever you click create on a node)<br>
+    Published right before the allowed children of the selected Content Type are sent back during content creation in the Content Section.<br>
     NOTE: Children is a collection of ContentTypeBasic, each object gives you access to Alias, Description, Thumbnail and more. You can remove or add new children to the list in the notification.
     </td>
   </tr>
