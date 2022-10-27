@@ -11,11 +11,11 @@ This page covers specific upgrade documentation for specific versions.
 
 ### 11.0
 
-Version 10 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
+Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
 
 #### Breaking changes
 
-Version 11 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
+Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
 ##### Presentation
 
@@ -24,7 +24,7 @@ Version 11 contains a number of breaking changes but we won't expect many projec
 ##### Code
 
 - The int `DeleteFormRecords(Form form, FormState formState, DateTime deleteRecordsCreatedEarlierThan)` method was added to `IRecordStorage`.
-- Name of` FormsUmbracoBuiderExtensions` was corrected to `FormsUmbracoBuilderExtensions`.
+- Name of `FormsUmbracoBuiderExtensions` was corrected to `FormsUmbracoBuilderExtensions`.
 - The method `RegenerateFormStructureIds` on Form was amended to return a response.
 - The method void `ExecuteWorkflows(List<IWorkflow> workflows, Record record, Form form, FormState state)` was added to `IWorkflowExecutionService`.
 - Obsolete constructor on `PlaceholderParsingService` removed.
@@ -33,7 +33,7 @@ Version 11 contains a number of breaking changes but we won't expect many projec
 - `DaysToRetainSubmittedRecordsFor` and `DaysToRetainApprovedRecordsForproperties` were added to the `IFormEntity` interface.
 - Obsolete constructor on the export type `ExportToExcel` removed.
 - Obsolete constructor on the workflow type `SendRazorEmail` removed.
-- Obsolete constructor on the controllers `UmbracoFormsController`, `ExportController`, `FieldController`, `FormController`, `RecordController` and  `EmailTemplateTreeController` removed.
+- Obsolete constructor on the controllers `UmbracoFormsController`, `ExportController`, `FieldController`, `FormController`, `RecordController`, and  `EmailTemplateTreeController` removed.
 - Duplicate method `GetAllDocumentTypesWithAlias` in `PickerController` was removed.
 - Obsolete overloads to the `Build` method on `FormViewModel` were removed.
 - Obsolete constructor on `FormRenderingService` was removed.

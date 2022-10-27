@@ -17,7 +17,7 @@ The forms deployment component has a minimum dependency on Umbraco Forms of `11.
 
 ### Breaking changes
 
-Version 11 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here.
+Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here:
 
 #### Code
 
@@ -27,14 +27,14 @@ Version 11 contains a number of breaking changes but we won't expect many projec
 parameter.
 - The `matchesRoutePath` and `matchesNodeId` parameters provided to `ITransferEntityService.RegisterTransferEntityType`, and which populate the `MatchesRoutePath` and `MatchesNodeId` properties on `DeployTransferRegisteredEntityTypeDetail`, now take an HttpContext argument.
 - The `MultiNodeTreePickerPreValueConnector` was removed (as the format for Umbraco 8+ is as UDIs, and hence there is no processing to do).
-- Obsolete constructors, properties and methods on `Manifest` were removed.
+- Obsolete constructors, properties, and methods on `Manifest` were removed.
 - Namespace of the `Package` class was adjusted and the obsolete property `Artifacts` was removed.  `ArtifactsWithOptions` was renamed to `Artifacts`.
 - The signature of `EnvironmentController.BeginCreateManifestForUdis` was changed.
 - The temporary interface `IUmbracoEnvironmentWithOptionsAwareManifest` was removed and elements added to `IUmbracoEnvironment`.
 - The signature of `IWorkItemFactory.CreateSourceDeplo`y was changed to accommodate culture and scheduled publishing options.
 - The obsolete constructor on `SourceDeployWorkItem` was removed.
-- The class `UmbracoFormsCompatibilit`y that is no longer required has been removed.
-- Obsolete constructors were removed on `NoNodesController`, `UiController` and `UiControllerBase`.
+- The class `UmbracoFormsCompatibility` that is no longer required has been removed.
+- Obsolete constructors were removed on `NoNodesController`, `UiController`, and `UiControllerBase`.
 - Temporary interfaces for connectors, introduced to avoid breaking changes with the introduction of the `IContextCache` in 10.2, were removed and the method overloads added to the original interfaces.
 
 ## Version 10
