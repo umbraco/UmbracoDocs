@@ -23,7 +23,7 @@ With Content Apps, editors can switch from editing 'Content' to accessing contex
 
 As an integrated part of Umbraco it is possible for you as a developer to create and provide your editors with helpful Content Apps.
 
-For example, you could create a Google Analytics integration within a Content App that displays to editors the current 'page views' for the content item they are editing.
+For example, you could create a Google Analytics integration within a Content App. This would then display to editors the current 'page views' for the content item they are editing.
 
 #### Controlling Appearance/Position
 
@@ -45,7 +45,7 @@ This guide explains how to set up a custom Content App in the following steps:
 * Limiting the Content App to appear for only specific content types
 * Limiting which user groups can see the Content App
 
-A basic understanding of how to use AngularJS with Umbraco is required.  If you have created a property value editor before, this will all feel very familiar.
+A basic understanding of how to use AngularJS with Umbraco is required.  If you have created a property value editor before, this will all feel familiar.
 
 ### Setting up the Plugin
 
@@ -151,7 +151,7 @@ After the above edits are done, restart your application. Go to any content node
 
 ### Limiting according to type
 
-You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
+You can set your Content App to only show for specific types by adding a 'show' directive in the `package.manifest` file.
 
 This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
 
@@ -205,7 +205,7 @@ When a role restriction is given in the manifest, it overrides any other restric
 
 ## C#: Creating a Content App
 
-This is an example of how to create a Content App with C# and perform your own custom logic to show a Content App. Create a `WordCounter.cs` file with the following implementation: 
+This is an example of how to create a Content App with C# and perform your own custom logic to show a Content App. Create a `WordCounter.cs` file with the following implementation:
 
 ```csharp
 using System.Collections.Generic;
@@ -280,7 +280,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-You will still need to add all of the files you added above but, because your C# code is adding the Content App, the `package.manifest` file can be simplified like this:
+You will still need to add all of the files you added above. However, because your C# code is adding the Content App, the `package.manifest` file can be simplified like this:
 
 ```json5
 {

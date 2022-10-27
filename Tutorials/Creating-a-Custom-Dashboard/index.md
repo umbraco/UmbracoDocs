@@ -132,14 +132,14 @@ Extend the translation file xml like so:
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
-	<area alias="dashboardTabs">
-		<key alias="welcomeDashboard">Welcome</key>
-	</area>
-	<area alias="welcomeDashboard">
-		<key alias="heading">Welcome!</key>
-		<key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.<key>
-		<key alias="copyright">© Sample Company 20XX</key>
-	</area>
+    <area alias="dashboardTabs">
+        <key alias="welcomeDashboard">Welcome</key>
+    </area>
+    <area alias="welcomeDashboard">
+        <key alias="heading">Welcome!</key>
+        <key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.<key>
+        <key alias="copyright">© Sample Company 20XX</key>
+    </area>
 </language>
 ```
 
@@ -164,9 +164,9 @@ As for the `localize` tag syntax in HTML, the area alias is combined with the ke
 The xml for that specific key will look like this:
 
 ```xml
-	<area alias="welcomeDashboard">
-		<key alias="heading">Welcome!</key>
-	</area>
+    <area alias="welcomeDashboard">
+        <key alias="heading">Welcome!</key>
+    </area>
 ```
 
 The area and key aliases are combined and an underscore is added inbetween.
@@ -185,14 +185,14 @@ To test it out, you could, for example, add another language XML file, like `da.
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
-	<area alias="dashboardTabs">
-		<key alias="welcomeDashboard">Velkommen</key>
-	</area>
-	<area alias="welcomeDashboard">
-		<key alias="heading">Velkommen!</key>
-		<key alias="bodytext">Dette er Backoffice. Herfra kan du ændre indholdet, medierne og indstillingerne på din hjemmeside.</key>
-		<key alias="copyright">© Sample Selskab 20XX</key>
-	</area>
+    <area alias="dashboardTabs">
+        <key alias="welcomeDashboard">Velkommen</key>
+    </area>
+    <area alias="welcomeDashboard">
+        <key alias="heading">Velkommen!</key>
+        <key alias="bodytext">Dette er Backoffice. Herfra kan du ændre indholdet, medierne og indstillingerne på din hjemmeside.</key>
+        <key alias="copyright">© Sample Selskab 20XX</key>
+    </area>
 </language>
 ```
 
@@ -222,7 +222,7 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
             ]
         }
     ],
-	"javascript": [
+    "javascript": [
         /*javascript files listed here*/
     ],
     "css": [
@@ -252,13 +252,14 @@ One caveat is that the package.manifest file is loaded into memory when Umbraco 
 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](https://our.umbraco.com/Documentation/Fundamentals/Design/Stylesheets-Javascript/#bundling--minification-for-javascript-and-css) section.
 
-**For version 8 and below:** 
-If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. 
+**For version 8 and below:**
+If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript.
 
 To clear the CDF cache and load the new JavaScript and CSS, you need to:
- - Increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config)
- - Save the file
- - Reload the page and see the colourful title
+
+- Increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config)
+- Save the file
+- Reload the page and see the colourful title
 
 Hopefully, now you can see the potential of what you can provide to an editor as a basic welcome dashboard.
 
@@ -303,7 +304,7 @@ Finally, we need to update the package.manifest file to load the additional cont
             ]
         }
     ],
-	"javascript": [
+    "javascript": [
         "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
     ],
     "css": [
@@ -366,7 +367,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 Add a property on our ViewModel to store the log information:
 
 ```js
-vm.UserLogHistory = [];
+vm.UserLogHistory = []; 
 ```
 
 Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to display a list of these log entries:

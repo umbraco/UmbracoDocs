@@ -136,6 +136,6 @@ Record GetRecordByUniqueId(Guid uniqueId, Form form);
 
 Returns a single record based on its unique Id and form.
 
-[This blog post](https://www.andybutland.dev/2022/04/getting-submitted-form-data-in-umbraco.html) shows an example where `TempData` values are used to retrieve the identifiers of the submitted form and created record. With those identifiers, the full details of the form and record can be retrieved and displayed on the page.
+[This blog post](https://www.andybutland.dev/2022/04/getting-submitted-form-data-in-umbraco.html)  shows an example where `TempData` values are used to retrieve the identifiers of the submitted form and created record. With those identifiers, the full details of the form and record can be retrieved and displayed on the page.
 
 
