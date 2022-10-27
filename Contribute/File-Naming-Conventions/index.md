@@ -13,11 +13,11 @@ Naming conventions for documentation files.
 
 The current version of a documentation article will be the normal existing filename format e.g. `ContentService-Events.md` or `index.md`
 
-When creating alternate versions of the article that apply in different Umbraco versions, we will append to the filename portion a `-v` followed by information which explains roughly to which version the documentation applies.
+When creating articles that apply in different Umbraco versions, append to the filename portion a `-v` followed by information which explains to which version it applies.
 
 ### Target a specific Umbraco version using file naming conventions
 
-When you're creating a new version of an existing article in the Umbraco Documentation, you will need to make sure that you target the correct Umbraco version. This is done by using a specific set of file naming conventions when creating a new article.
+Target the correct Umbraco version when you're creating a new version of an existing article. This is done by using a specific set of file naming conventions when creating a new article.
 
 In the table below are examples of how to name an article based on the Umbraco version you are targetting.
 
@@ -32,19 +32,20 @@ In the table below are examples of how to name an article based on the Umbraco v
 
 Documentation that only applies to a single Umbraco version would be `index-v7.7.7.md`.
 
-For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this, e.g.:
+For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this, for instance:
 
-`index-vpost7.6.md` would contain documentation to be used after version 7.6 but before the next documentation version
-and `index-vpre7.3.md` would contain the documentation for versions before version 7.3.
+* `index-vpost7.6.md` would contain documentation to be used after version 7.6 but before the next documentation version. 
+
+* `index-vpre7.3.md` would contain the documentation for versions before version 7.3.
 
 The `vpost` and `vpre` notations are not used to render to the user.
 
-For SEO reasons it is not necessary to change a file name when a feature becomes obsolete.
+For Search Engine Optimization (SEO) reasons it is not necessary to change a file name when a feature becomes obsolete.
 
 ## Adding meta data
 
-It is the [YAML meta data](../Adding-Metadata) in the document itself that will be used as the "point of truth" for when a version applies from and to.
-The YAML is added to an examine index, along with the filename, and is used for searching on a (major) version, or to show the information to the user.
+It is the [YAML metadata](../Adding-Metadata) that will be used as the "point of truth" for when a version applies from and to.
+The YAML is added to an examine index, and is used for searching on a (major) version, or to show the information to the user.
 
 For versioning we use 3 YAML attributes:
 
@@ -76,7 +77,7 @@ will return
 
 We will use the YAML for these files to display the alternate version options to the user.
 
-When searching the documentation articles on Our, there is an app setting that indicates the 'current' major Umbraco version: only versions of the documentation that have no end version specified will be returned for this major version in the initial search. However, we will explain in the search results that the user has searched the current documentation and present an option to 'search all versions'.
+When searching articles, there's a setting that indicates the 'current' major Umbraco version: only articles with no end version specified will be returned. However, we will explain in the search results that the user has searched the current documentation and present an option to 'search all versions'.
 
 ## Examples
 

@@ -6,15 +6,13 @@ versionFrom: 10.0.0
 
 `Returns: MediaWithCrops`
 
-Returns a path to an image, along with information about focal point and available crops
+Returns a path to an image, along with information about focal point and available crops.
 
-When image Cropper is used on a Media Type the crops are shared between all usages of a Media Item. This is called global crops.
+When the Image Cropper is used on a Media Type the crops are shared between all usages of a Media Item. This is called **global crops**.
 
-If Image Cropper is used on a Document Type, the file and crops will be local to the Document.
+If the Image Cropper is used on a Document Type, the file and crops will be **local** to the Document.
 
-Notice its possible make local crops on shared Media Items via the Media Picker 3 Property Editor.
-
-[Read about the Media Picker 3](../Media-Picker-3/index.md)
+Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](../Media-Picker-3/index.md).
 
 ## Settings
 
@@ -28,45 +26,45 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Content Example
 
-The Image Cropper provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
-By default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
+The Image Cropper provides a UI to upload an image, set a focal point on the image, and use predefined crops.
 
-The cropper comes in 3 modes:
+By default, images in the Image Cropper will be shown based on a set focal point and only use specific crops if they are available.
 
--   Uploading an image
--   Setting a focal point
--   Cropping the image to predefined crops
+The Image Cropper comes with 3 modes:
+
+- Uploading an image
+- Setting a focal point
+- Cropping the image to predefined crops
 
 ### Uploading images
 
-The editor exposes a drop area for files. Click it to upload an image.
+The editor exposes a drop area for files. Select it to upload an image.
+
 ![Image Cropper Upload](images/imageCropper-upload-v8.png)
 
 ### Set focal point
 
-By default, the cropper allows the editor to set a focal point on the uploaded image.
-Next to the image, all the preset crops are shown to give the editor a preview of what
-the image will look like to the end user.
+By default, the Image Cropper allows the editor to set a focal point on the uploaded image.
+
+All the preset crops are shown to give the editor a preview of what the image will look like on the frontend.
 
 ![Image Cropper Focal point](images/imageCropper-focalpoint-v8.png)
 
 ### Crop and resize
 
-If needed, the editor can crop the image to specific crop presets, to ensure the right part and size of the image
-is shown for a specific crop.
+The editor can fit the crop to the image to ensure that the image is presented as intended.
 
 ![Image Cropper Crop](images/imageCropper-crop-v8.png)
 
 ## Powered by ImageSharp.Web
 
-[ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET Core.
+[ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET.
 
-We bundle this package with Umbraco 9.0+ and you can therefore take full advantage of all its features for resizing and format changing. Built in processing commands are documented [here](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
+We bundle this package with Umbraco and you can therefore take full advantage of all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
 
 ## Sample code
 
-Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
-dynamic object.
+The Image Cropper comes with an API to generate crop URLs. You can also access the raw data directly as a dynamic object.
 
 For rendering a cropped media item, the `.GetCropUrl` is used:
 
@@ -75,7 +73,7 @@ For rendering a cropped media item, the `.GetCropUrl` is used:
 
 ```
 
-The third parameter is `HtmlEncode` and by default set to true, which means you only need to define the parameter if you want to disable HTML encoding.
+The third parameter is `HtmlEncode` and is by default set to true. This means you only need to define the parameter if you want to disable HTML encoding.
 
 ### Example to output a "banner" crop from a cropper property with the property alias "customCropper"
 
@@ -207,7 +205,7 @@ content.SetValue(nameof(MyContentType.Cropper).ToFirstLowerInvariant(), property
 
 ## Get all the crop urls for a specific image
 
-Crop urls are not limited to usage within a view. `IPublishedContent` has a `GetCropUrl` extension method, which can be used to access crop URLs anywhere. 
+Crop URLs are not limited to usage within a view. `IPublishedContent` has a `GetCropUrl` extension method, which can be used to access crop URLs anywhere.
 
 The following sample demonstrates how to use `GetCropUrl` to retrieve URLs for all crops defined on a specific image:
 

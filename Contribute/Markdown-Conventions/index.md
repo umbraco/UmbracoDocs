@@ -12,7 +12,7 @@ In this article you can learn how to use Markdown, as well as how we structure t
 ## Structure
 
 For the documentation project, each individual topic is contained in its own folder.
-Each folder must have an `index.md` file which links to the individual sub-pages. If images are used, these must be in `images` folders next to the .md file referencing them relatively.
+Each folder must have an `index.md` file which links to the individual sub-pages. If images are used, these must be in `images` folders next to the .md file referencing them using relative paths.
 
 * `topic`
   * `images`
@@ -25,7 +25,7 @@ Each folder must have an `index.md` file which links to the individual sub-pages
 
 ## Images
 
-Images are stored and linked relatively to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
+Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
 ```markdown
 ![My Image Alt Text](images/img.png)
@@ -71,7 +71,8 @@ or
 
 ### Internal links
 
-If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example if you need to provide hyperlink to an `index.md` file which is in the current folder, only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder, only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
+When linking between pages, link using relative paths and optionally include the .md extension. 
+For example if you need to provide hyperlink to an `index.md` file in the current folder, only the path including the folder name is required. If you want provide hyperlink to any file in the current folder, only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
 
 ```markdown
 [Umbraco.Helpers](Umbraco.Helpers)
@@ -85,7 +86,7 @@ or
 
 ### Styled links
 
-When you have multiple links to add below an article, we recommend using the styled links options. For example, if you've written a guide and want to direct the user to related articles for further reading, you can do that by using the following formatting:
+When you have multiple links to add below an article, we recommend using the styled links options. For example, if you've written a guide and want to direct the user to related articles, do that by using the following formatting:
 
 ```markdown
 :::links
