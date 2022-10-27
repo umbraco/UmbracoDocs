@@ -466,13 +466,13 @@ _transferEntityService.RegisterTransferEntityType(
     (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
 ```
 
-If access to any services is required when parsing the entity Id, where the `HttpContext` is provided as a parameter to the function. A service can be accessed from this, e.g.:
+If access to any services is required when parsing the entity Id, where the `HttpContext` is provided as a parameter to the function, a service can be retrieved, for example.:
 
 ```c#
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
 ```
 
-Note that the `HttpContext` parameter for the `matchesRoutePath` and `matchesNodeId` functions was added in Deploy 11. Before that version it's necessary to use the `StaticServiceProvider.Instance` to access registered services or the `HttpContext`.
+Note that the `HttpContext` parameter for the `matchesRoutePath` and `matchesNodeId` functions was added in Deploy 11. Before that version it is necessary to use the `StaticServiceProvider.Instance` to access registered services or the `HttpContext`.
 
 Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 
