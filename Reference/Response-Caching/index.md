@@ -1,8 +1,11 @@
 ---
 versionFrom: 9.3.0
 ---
+# Response Caching
 
-# Modify the `Cache-Control` header for Static Files
+Response caching reduces the number of requests a client or proxy makes to a web server. See the Microsoft documentation for details of [Response caching in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0) and how to implement the [Response Caching Middleware](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-6.0).
+
+## Modify the `Cache-Control` header for Static Files
 
 Example class to allow the modification of the `Cache-Control` header for static assets by file extension, but excluding Umbraco BackOffice assets.
 
@@ -84,3 +87,22 @@ public void ConfigureServices(IServiceCollection services)
 For setting `Cache-Control` max-age header for images processed by the ImageSharp middleware, you can set the `Umbraco:CMS:Imaging:Cache:BrowserMaxAge` setting.
 
 See the [Images Settings](https://our.umbraco.com/Documentation/Reference/Configuration/ImagingSettings/) article for more information.
+
+## Add the `Cache-Control` header for rendering using the [ResponseCache attribute](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0#responsecache-attribute)
+
+For example using a custom [Default Controller](https://our.umbraco.com/Documentation/Implementation/Default-Routing/Controller-Selection/#change-the-default-controllers) you can add the ResponseCache attribute to the `Index` method
+
+```csharp
+public class DefaultController : RenderController
+{
+    public DefaultController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) : base(logger, compositeViewEngine, umbracoContextAccessor)
+    {
+    }
+
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public override IActionResult Index()
+    {
+        return CurrentTemplate(new ContentModel(CurrentPage));
+    }
+}
+```
