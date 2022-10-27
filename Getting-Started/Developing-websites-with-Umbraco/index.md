@@ -8,12 +8,12 @@ versionFrom: 8.0.0
 Umbraco is built on top of a Microsoft MVC framework. You can build upon this technology to work alongside and extend the functionality in Umbraco. It is also designed to be pluggable so that you can replace key components with your own custom implementations if prefer.
 
 :::tip
-It is perfectly possible to build an Umbraco site without using Visual Studio and the techniques introduced on this page - see the [Creating websites with Umbraco](../Creating-websites-with-Umbraco) section.
+It is possible to build an Umbraco site without Visual Studio and the techniques on this page - see the [Creating websites with Umbraco](../Creating-websites-with-Umbraco) section.
 :::
 
-This section is dedicated to introducing techniques that will help you get started with developing with an Umbraco site. You will find information on how to develop with the underlying framework of an Umbraco project as well as details on how you can extend the Umbraco backoffice to customize the editing experience.
+This section is dedicated to introducing techniques that will help you get started with developing with an Umbraco site. You'll find out how to develop with the framework of an Umbraco project as well as how to extend and customize the Umbraco backoffice.
 
-The concepts detailed in this section will go beyond standard out-of-the-box templating methodologies, and introduce some Umbraco specific terms and helper functionality, e.g. such as SurfaceControllers and management service APIs. All of which is technology that you can take advantage of when developing with Umbraco.
+The concepts in this section go beyond standard templating methodologies, and introduce some Umbraco-specific terms and helpers, such as SurfaceControllers and management service APIs. All of which is technology that you can take advantage of when developing with Umbraco.
 
 You will also find information regarding Umbraco's underlying dependency injection framework.
 
@@ -31,7 +31,7 @@ From a frontend perspective, Umbraco does not dictate HTML, CSS, or JS in your w
 
 ## [Customizing Umbraco sites](Customizing-Umbraco-sites)
 
-Umbraco is highly customizable which means you can basically integrate it with anything and make it behave as you want. With Umbraco, you start out with a clean slate.
+Umbraco is highly customizable which means you can integrate it with anything and make it behave as you want. With Umbraco, you start out with a clean slate.
 
 Umbraco uses ASP.NET and MVC patterns and you can extend and write your own controllers using the approach outlined in this section.
 
@@ -39,14 +39,14 @@ Umbraco uses ASP.NET and MVC patterns and you can extend and write your own cont
 ![Umbraco on devices](images/Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png)
 :::
 
-## IDE recommendations
+## Integrated Development Environment (IDE) recommendations
 
 When you are customizing or extending your Umbraco website using C# we recommend using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
 
 You can also use a simpler tool like [Visual Studio Code](https://visualstudio.microsoft.com/free-developer-offers/) or any other text editor you prefer working with. However, this is only recommended when you're not working directly with the C# files.
 
 :::tip
-Whilst it's perfectly possible to use a tool like Notepad and put the code in the `App_code` folder of your site, and have it compiled when the site starts up, we do recommend using a tool like Visual Studio instead.
+While you can use a text editor, put changes in the `App_code` folder, and have it compiled on startup; we recommend using an IDE.
 
-The tool will give you a lot of support along the way, as it's built for working with C# files, ASP.NET and MVC frameworks.
+An IDE will give you a lot of support, as it's built for working with C# files, ASP.NET and MVC frameworks.
 :::

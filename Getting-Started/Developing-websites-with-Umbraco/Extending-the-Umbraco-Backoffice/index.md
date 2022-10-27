@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 
 The Umbraco backoffice itself can be customized and extended to fit the experience you want your editors to have when working with your website. This section is dedicated to getting started with these extension points.
 
-Umbraco gives you the opportunity to create and customize packages, Property Editors, content applications and even create your own Dashboard. You can also extend on things like the search functionality, Health Checks, and various configurations.
+Umbraco gives you the opportunity to create and customize packages, Property Editors, content applications and even create your own Dashboard. You can also extend on things like the search functionality, Health Checks, and configurations.
 
 In this section you will find some routes to how to do so and some tutorials to create your own personal packages and content applications.
 
