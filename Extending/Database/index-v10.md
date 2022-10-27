@@ -1,5 +1,6 @@
 ---
-versionFrom: 11.0.0
+versionFrom: 10.0.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Database"
 meta.Description: "A guide to creating a custom Database table in Umbraco"
 ---
@@ -30,7 +31,7 @@ using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
 namespace MyNamespace
 {
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
+    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IComposer
     {
     }
 
@@ -113,13 +114,13 @@ namespace MyNamespace
             public int BlogPostUmbracoId { get; set; }
 
             [Column("Name")]
-            public required string Name { get; set; }
+            public string Name { get; set; }
 
             [Column("Email")]
-            public required string Email { get; set; }
+            public string Email { get; set; }
 
             [Column("Website")]
-            public required string Website { get; set; }
+            public string Website { get; set; }
 
             [Column("Message")]
             [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
