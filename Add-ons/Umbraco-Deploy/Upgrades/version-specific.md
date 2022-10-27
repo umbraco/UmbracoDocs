@@ -9,6 +9,34 @@ meta.Description: "Version specific documentation for upgrading to new major ver
 
 This page covers specific upgrade documentation for when migrating to a new major of Umbraco Deploy.
 
+## Version 11
+
+Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
+
+The forms deployment component has a minimum dependency on Umbraco Forms of `11.0.0`.
+
+### Breaking changes
+
+Version 11 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here.
+
+#### Code
+
+- The property `PreValues` on `FormArtifact` was changed from an `IEnumerable<string>`  to an `IEnumerable<FieldPrevalue>`, where `FieldPrevalue` contains a `Value` and `Caption`.
+- Nullable checks were enabled in the `Umbraco.Deploy.Forms` project and issues resolved by applying appropriate nullable settings to various properties.
+- The `TreeNodeGetter` function set as a property on `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` now takes a non-nullable `HttpContext`
+parameter.
+- The `matchesRoutePath` and `matchesNodeId` parameters provided to `ITransferEntityService.RegisterTransferEntityType`, and which populate the `MatchesRoutePath` and `MatchesNodeId` properties on `DeployTransferRegisteredEntityTypeDetail`, now take an HttpContext argument.
+- The `MultiNodeTreePickerPreValueConnector` was removed (as the format for Umbraco 8+ is as UDIs, and hence there is no processing to do).
+- Obsolete constructors, properties and methods on `Manifest` were removed.
+- Namespace of the `Package` class was adjusted and the obsolete property `Artifacts` was removed.  `ArtifactsWithOptions` was renamed to `Artifacts`.
+- The signature of `EnvironmentController.BeginCreateManifestForUdis` was changed.
+- The temporary interface `IUmbracoEnvironmentWithOptionsAwareManifest` was removed and elements added to `IUmbracoEnvironment`.
+- The signature of `IWorkItemFactory.CreateSourceDeplo`y was changed to accommodate culture and scheduled publishing options.
+- The obsolete constructor on `SourceDeployWorkItem` was removed.
+- The class `UmbracoFormsCompatibilit`y that is no longer required has been removed.
+- Obsolete constructors were removed on `NoNodesController`, `UiController` and `UiControllerBase`.
+- Temporary interfaces for connectors, introduced to avoid breaking changes with the introduction of the `IContextCache` in 10.2, were removed and the method overloads added to the original interfaces.
+
 ## Version 10
 
 Version 10 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
