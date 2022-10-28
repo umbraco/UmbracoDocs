@@ -78,6 +78,10 @@ Run recurring code using the RecurringHostedServiceBase.
 
 Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
 
+## [Response Caching](Response-Caching/)
+
+Information about how to modify or add the `Cache-Control` header.
+
 ## API Documentation V9
 
 ### [Umbraco.Core](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.html)

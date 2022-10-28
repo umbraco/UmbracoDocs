@@ -1,35 +1,33 @@
 ---
 versionFrom: 9.3.0
 ---
+# Response Caching
 
-# Cache static assets
+Response caching reduces the number of requests a client or proxy makes to a web server. See the Microsoft documentation for details of [Response caching in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0) and how to implement the [Response Caching Middleware](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-6.0).
 
-Example to cache static assets by file extension, but excluding Umbraco BackOffice assets.
+## Modify the `Cache-Control` header for Static Files
+
+Example class to allow the modification of the `Cache-Control` header for static assets by file extension, but excluding Umbraco BackOffice assets.
+
+
 
 ```csharp
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Headers;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.Net.Http.Headers;
+using System.IO;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using Umbraco.Cms.Core.Composing;
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http.Headers;
+using Microsoft.Net.Http.Headers;
+
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
-namespace My.Site.Composers;
-
-public class StaticFilesComposer : IComposer
+namespace Umbraco.Docs.Samples.Web.Tutorials
 {
-    public void Compose(IUmbracoBuilder builder)
-        => builder.Services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
-
-    private class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
+    public class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
     {
         // These are the extensions of the file types we want to cache (add and remove as you see fit)
         private static readonly HashSet<string> _cachedFileExtensions = new(StringComparer.OrdinalIgnoreCase)
@@ -38,7 +36,8 @@ public class StaticFilesComposer : IComposer
             ".css",
             ".js",
             ".svg",
-            ".woff2"
+            ".woff2",
+            ".jpg"
         };
 
         private readonly string _backOfficePath;
@@ -72,8 +71,38 @@ public class StaticFilesComposer : IComposer
 }
 ```
 
-## Cache images in ImageSharp
+Register the service in `Startup.cs`
+
+```csharp
+
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
+
+```
+
+
+## Modify the `Cache-Control` header for ImageSharp.Web
 
 For setting `Cache-Control` max-age header for images processed by the ImageSharp middleware, you can set the `Umbraco:CMS:Imaging:Cache:BrowserMaxAge` setting.
 
 See the [Images Settings](https://our.umbraco.com/Documentation/Reference/Configuration/ImagingSettings/) article for more information.
+
+## Add the `Cache-Control` header for rendering using the [ResponseCache attribute](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0#responsecache-attribute)
+
+For example using a custom [Default Controller](https://our.umbraco.com/Documentation/Implementation/Default-Routing/Controller-Selection/#change-the-default-controllers) you can add the ResponseCache attribute to the `Index` method
+
+```csharp
+public class DefaultController : RenderController
+{
+    public DefaultController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) : base(logger, compositeViewEngine, umbracoContextAccessor)
+    {
+    }
+
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public override IActionResult Index()
+    {
+        return CurrentTemplate(new ContentModel(CurrentPage));
+    }
+}
+```
