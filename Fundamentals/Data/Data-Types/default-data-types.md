@@ -102,7 +102,7 @@ This Data type enables editors to choose from a list of radiobuttons.
 
 ## Richtext Editor
 
-The TinyMCE based WYSIWYG editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at `/config/tinyMce.config`.
+The TinyMCE based WYSIWYG editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
 In the default settings some tags such as bullet list can be used. If you want to use other tags like `h1` or `h2`, you need to add stylesheets.
 
