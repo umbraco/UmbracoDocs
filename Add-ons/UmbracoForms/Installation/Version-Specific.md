@@ -7,6 +7,45 @@ versionTo: 10.0.0
 
 This page covers specific upgrade documentation for specific versions.
 
+## Version 11
+
+### 11.0
+
+Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
+
+#### Breaking changes
+
+Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
+
+##### Presentation
+
+- A CSS class for each field is rendered out matching the caption of the form field.  This has been changed to use the alias of the form field, as this is considered less likely to change and potentially break custom styles.
+
+##### Code
+
+- The int `DeleteFormRecords(Form form, FormState formState, DateTime deleteRecordsCreatedEarlierThan)` method was added to `IRecordStorage`.
+- Name of `FormsUmbracoBuiderExtensions` was corrected to `FormsUmbracoBuilderExtensions`.
+- The method `RegenerateFormStructureIds` on Form was amended to return a response.
+- The method void `ExecuteWorkflows(List<IWorkflow> workflows, Record record, Form form, FormState state)` was added to `IWorkflowExecutionService`.
+- Obsolete constructor on `PlaceholderParsingService` removed.
+- Obsolete constructor on `ServerVariablesParsingHandler` removed.
+- `IsMandatory` and `Condition` properties were added to the `IWorkflow` and `IWorkflowEntity` interface.
+- `DaysToRetainSubmittedRecordsFor` and `DaysToRetainApprovedRecordsForproperties` were added to the `IFormEntity` interface.
+- Obsolete constructor on the export type `ExportToExcel` removed.
+- Obsolete constructor on the workflow type `SendRazorEmail` removed.
+- Obsolete constructor on the controllers `UmbracoFormsController`, `ExportController`, `FieldController`, `FormController`, `RecordController`, and  `EmailTemplateTreeController` removed.
+- Duplicate method `GetAllDocumentTypesWithAlias` in `PickerController` was removed.
+- Obsolete overloads to the `Build` method on `FormViewModel` were removed.
+- Obsolete constructor on `FormRenderingService` was removed.
+- Legacy storage of prevalues with captions using a single string with a separator was updated to store them as an object with a value and caption.
+    - A `JsonConverter` was added to `FormsJsonSerializerSettings` that will convert forms saved in older versions with the string storage into the new structure.
+    - The public field `Field.PrevalueCaptionSeparator` was removed.
+    - `Field.Prevalues` now returns `IEnumerable<FieldPrevalue>` instead of `IEnumerable<string>`, and the property `Field.ParsedPreValues` was removed.
+- The obsolete overload of the methods `Test` and `TestRule` in `FieldConditionEvaluation` was removed and the existing method made private.
+- The obsolete overload of the method `IsVisible` in `FieldConditionEvaluation` was removed.
+- The property `ConditionCheckFunctions` was added to the `IFieldType` interface.
+- The property `Alias` was added to the interfaces for all provider types inheriting from `ProviderBase`.
+
 ## Version 10
 
 ### 10.1
