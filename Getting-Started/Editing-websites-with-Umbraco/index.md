@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 Creating, editing and publishing content onto your website using Umbraco doesn't require any super special skills or prior knowledge - honestly!
 
-This section will help you get up to speed with where to start as content editor of an Umbraco site, introduce the Umbraco specific terminology involved in managing your content, and point you in the direction of getting further help if need be.
+This section will help you get started as content editor in Umbraco, introduce Umbraco-specific terminology, and lead you to finding further help.
 
 There is also information on how to use features such as translations, forms, and other ways to personalize your site.
 
