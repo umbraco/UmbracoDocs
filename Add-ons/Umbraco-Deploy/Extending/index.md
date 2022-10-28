@@ -466,7 +466,7 @@ _transferEntityService.RegisterTransferEntityType(
     (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
 ```
 
-If access to any services is required when parsing the entity Id, where the `HttpContext` is provided as a parameter to the function, a service can be retrieved. For example:
+If access to services is required when parsing the entity ID, where the `HttpContext` is provided as a parameter, a service can be retrieved. For example:
 
 ```c#
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
