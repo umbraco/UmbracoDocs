@@ -14,7 +14,7 @@ In this aticle, you will do the following:
 
 - [Create a hub and its interface](#create-a-hub-and-its-interface)
 - [Define a custom route](#define-a-custom-route)
-- [Add the routing to the umbraco Composer](#add-the-routing-to-the-umbraco-composer)
+- [Add the routing to the Umbraco Composer](#add-the-routing-to-the-umbraco-composer)
 - [Add the route in appsettings.json](#add-the-route-in-appsettingsjson-file)
 - [Test the setup](#test-the-setup)
 
