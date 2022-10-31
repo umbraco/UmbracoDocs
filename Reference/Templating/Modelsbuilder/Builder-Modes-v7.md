@@ -52,7 +52,7 @@ Corresponds to the `AppData` and `LiveAppData` setting values.
 
 With **AppData** models, models are generated in the `~/App_Data/Models` directory, and that is all. It is then up to you to decide how to compile the models (e.g. by including them in a Visual Studio solution).
 
-If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions (see [documentation for configuring and extending models](Control-Generation-v7.md)).
+If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions. It will also include them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
 
 Generation _can_ fail for various reasons, in which case no models are generated. Umbraco's log file should contain all details about what prevented the generation, but it is probably faster to check the Models Builder dashboard, which should report the last error that was encountered, if any.
 
