@@ -1,12 +1,14 @@
 # What is the difference between Umbraco Heartcore and the Umbraco CMS
 
-In this, article we are going to have a look at the differences between Umbraco Heartcore and Umbraco CMS is.
+In this, article we are going to have a look at the differences between Umbraco Heartcore and Umbraco CMS.
 
 Since Umbraco Heartcore is a software as a service(SaaS) there is a couple of differences between it and the Umbraco CMS.
 
 ## Differences between Heartcore and Umbraco CMS
 
 Two things that are missing in Umbraco Heartcore that are available in the CMS are the package section as well as the template section.
+
+There are also some special property aliases that is not available in Umbraco Heartcore.
 
 ### Package Section
 
@@ -23,4 +25,4 @@ It is not possible to create or edit templates in Umbraco Heartcore and therefor
 
 In the Umbraco CMS, some [special property aliases](/Reference/Routing/Routing-Properties/index.md) can manipulate the standard Umbraco routing pipeline.
 
-As the frontend and backend of Umbraco Heartcore are decoupled it is not possible to manipulate the routing pipeline and use these aliases.
+The frontend and backend of Umbraco Heartcore are decoupled therefore it's not possible to manipulate the routing pipeline and use these aliases in Umbraco Heartcore.
