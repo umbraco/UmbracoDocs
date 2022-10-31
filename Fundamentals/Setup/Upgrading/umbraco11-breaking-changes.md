@@ -12,17 +12,17 @@ Besides the documented changes, we have also seen a few method signatures that a
 
 The breaking changes in TinyMCE are documented in the migration guides for [version 4 to 5](https://www.tiny.cloud/docs/migration-from-4x/) and from [version 5 to 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/).
 
-The breaking changes in Umbraco 11 are mainly the removal of classes, methods, and to on, marked as obsolete in Umbraco 9.
+The breaking changes in Umbraco 11 are mainly the removal of classes, methods, and so on, marked as obsolete in Umbraco 9.
 
 A few methods and classes have also been moved and changed namespace. Decoupled dependencies are documented on the [Umbraco Announcements repository](https://github.com/umbraco/Announcements/issues/5).
 
-The full list of API breaking changes can be found below:
+The full list of API-breaking changes can be found below:
 
 - [Obsolete code removed](#obsolete-code-removed)
 - [Code moved to new assemblies and namespaces](#code-moved-to-new-assemblies-and-namespaces)
 - [New interface methods](#new-interface-methods)
 - [No-Operation methods removed](#no-operation-methods)
-- [Classes that does not inherit from base type anymore](#classes-that-does-not-inherit-from-base-type-anymore)
+- [Classes that do not inherit from base type anymore](#classes-that-does-not-inherit-from-base-type-anymore)
 - [Changes due to models made immutable](#changes-due-to-models-made-immutable)
 
 ## Obsolete code removed
