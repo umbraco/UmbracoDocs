@@ -146,7 +146,8 @@ Umbraco.Cms.Core.Services.ServiceContext.CreatePartial(
 Umbraco.Cms.Core.Services.TwoFactorLoginService.TwoFactorLoginService(
     Umbraco.Cms.Core.Persistence.Repositories.ITwoFactorLoginRepository,
     Umbraco.Cms.Core.Scoping.ICoreScopeProvider,
-    System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.ITwoFactorProvider>, Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions>,
+    System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.ITwoFactorProvider>,
+    Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions>,
     Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Security.BackOfficeIdentityOptions>)
 
 Umbraco.Cms.Core.Routing.DefaultUrlProvider.DefaultUrlProvider(
