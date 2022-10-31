@@ -43,7 +43,7 @@ Now select ".NET Core" as your template.
 
 After this VS Code will have created a folder called `.vscode` that contains a file called `tasks.json`, it's this file that tells VS Code how to build your project.
 
-Now that we've told VS Code how to build your project, we need to tell it how to launch it, luckily VS Code can also do this for you. First, click the little play button in the left side menu, and then click the "create a launch.json file" link.
+Now that we've told VS Code how to build your project, we need to tell it how to launch it. VS Code can do this for you. First, select the little play button in the left side menu, and then select the "create a launch.json file" link.
 
 ![Creating launch.json file](images/VsCode/creatingLaunchFile.png)
 
