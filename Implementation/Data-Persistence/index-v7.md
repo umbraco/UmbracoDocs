@@ -17,8 +17,7 @@ Services.ContentService.GetById(123);
 ```
 
 If you are not working with an Umbraco base class and the ServiceContext is not exposed, you can access the ServiceContext via the
-`ApplicationContext`. Like the ServiceContext, the ApplicationContext is exposed an all Umbraco base classes, but in the rare case
-that you are not using an Umbraco base class, you can access the ApplicationContext via a singleton. For example:
+`ApplicationContext`. Like ServiceContext, ApplicationContext is exposed on all base classes, but if you are not using a base class, you can access it via a singleton. For example:
 
 ```csharp
 ApplicationContext.Current.Services.ContentService.GetById(123);
@@ -26,7 +25,7 @@ ApplicationContext.Current.Services.ContentService.GetById(123);
 
 ## Services
 
-There are quite a few different services exposed on the ServiceContext such as: ContentService, MediaService, MemberService, etc...
+There are a few different services exposed on the ServiceContext such as: ContentService, MediaService, MemberService, etc...
 There is a service for each type of data in Umbraco.
 
 [See here For a full list of services available](../../Reference/Management/Services/)

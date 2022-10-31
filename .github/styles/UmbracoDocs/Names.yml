@@ -1,10 +1,9 @@
----
 extends: substitution
 message: "We prefer %s over '%s'"
 level: warning
 swap:
-  '(?:(?<!\.)css?:(`))' : CSS
-  '(?:(?<!\.)[hH]tml?:(`))' : HTML
+  '(?:(?<!\.)css)' : CSS
+  '(?:(?<!\.)[hH]tml)' : HTML
   url: "'URL'"
   '(?:(?<!\.)js|[jJ]ava[sS]cript)' : JavaScript
   .net: "'.NET'"

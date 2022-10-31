@@ -54,7 +54,7 @@ Any WebApi Controller or Action that is attributed with `Umbraco.Web.WebApi.Umbr
 
 A base class implementation that already exists with this attribute is: `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Since this controller inherits from `Umbraco.Web.WebApi.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Web.WebApi.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
-Another common base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
+Another base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController`, which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Still, it has some special filters to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
 
 ### Members & Front-end Authorization
 
@@ -77,7 +77,7 @@ public class AccountController : SurfaceController
 }
 ```
 
-There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
+There are a few properties for the attribute to give you more control over the authorization process for which members can access the resource:
 
 * `AllowType` - Comma delimited list of allowed member types
 * `AllowGroup` - Comma delimited list of allowed member groups

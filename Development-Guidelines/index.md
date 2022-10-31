@@ -19,9 +19,9 @@ Describes the process of creating new classes and where they should be stored in
 
 ## Unit testing
 
-There are plenty of unit tests in the core of Umbraco both for C# found in Umbraco.Tests project and for JavaScript found in the Umbraco.Web.UI.Client project.
+There are plenty of unit tests in the core of Umbraco. The tests for C# are found in Umbraco.Tests project, the JavaScript tests in the Umbraco.Web.UI.Client project.
 
-When submitting pull requests or working with the code we encourage all developers to make changes by writing unit tests, a PR will have a far higher chance of being pulled into the core quicker with passing unit tests.
+When submitting pull requests, we encourage all developers to write unit tests. A PR will have a far higher chance of being pulled into the core quicker with passing unit tests.
 
 ## [Breaking changes](breaking-changes.md)
 Defines what a breaking change is in regards to the Umbraco core codebase and describes how to deal with required breaking changes.

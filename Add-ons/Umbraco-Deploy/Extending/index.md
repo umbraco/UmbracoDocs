@@ -416,8 +416,8 @@ public class ExampleDataDeployComponent : IComponent
             },
             false,
             "exampleTreeAlias",
-            (string routePath) => true,
-            (string nodeId) => true,
+            (string routePath, HttpContext httpContext) => true,
+            (string nodeId, HttpContext httpContext) => true,
             (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
             new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"));
     }
@@ -450,8 +450,8 @@ For example, as shown in the linked sample and video, we have entities for "Team
 _transferEntityService.RegisterTransferEntityType(
     ...
     "teams",
-    (string routePath) => routePath.Contains($"/teamEdit/") || routePath.Contains($"/teamsOverview"),
-    (string nodeId) => nodeId == "-1" || nodeId.StartsWith("team-"),
+    (string routePath, HttpContext httpContext) => routePath.Contains($"/teamEdit/") || routePath.Contains($"/teamsOverview"),
+    (string nodeId, HttpContext httpContext) => nodeId == "-1" || nodeId.StartsWith("team-"),
     (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("team-".Length), out entityId);
 ```
 
@@ -466,11 +466,15 @@ _transferEntityService.RegisterTransferEntityType(
     (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
 ```
 
-If access to any services is required when parsing the entity Id, the `HttpContext` is provided as a parameter to the function. A service can be accessed from this, e.g.:
+If access to services is required when parsing the entity ID, where the `HttpContext` is provided as a parameter, a service can be retrieved. For example:
 
 ```c#
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
 ```
+
+:::note
+The `HttpContext` parameter for the `matchesRoutePath` and `matchesNodeId` functions was added in Deploy 11. Before that version, it is necessary to use the `StaticServiceProvider.Instance` to access registered services or the `HttpContext`.
+:::
 
 Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 

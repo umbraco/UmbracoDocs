@@ -196,6 +196,20 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     NOTE: Dashboards is a collection of IDashboardSlim, each object gives you access to Label, Alias, Properties, whether it's expanded, and whether it IsActive.
     </td>
   </tr>
+  
+  <tr>
+    <td>SendingAllowedChildrenNotification</td>
+    <td>
+      <ul>
+        <li>IEnumerable&ltContentTypeBasic&gt Children</li>
+        <li>IUmbracoContext UmbracoContext</li>
+      </ul>
+    </td>
+    <td>
+    Published right before the allowed children of the selected Content Type are sent back during content creation in the Content Section.<br>
+    NOTE: Children is a collection of ContentTypeBasic, each object gives you access to Alias, Description, Thumbnail and more. You can remove or add new children to the list in the notification.
+    </td>
+  </tr>
 </table>
 
 ### Display models

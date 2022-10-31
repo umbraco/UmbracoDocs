@@ -8,7 +8,7 @@ meta.Description: "A guide to coding in jQuery in Umbraco."
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As specified in the [JavaScript Guidelines](js-guidelines.md) document, method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._
 
-Like with other JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self-executing function if you want to use the dollar ($) operator.
+With JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self-executing function to use the dollar ($) operator.
 
 ## jQuery plugins
 jQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be vertically aligning something:
@@ -27,7 +27,7 @@ jQuery plugins don't require an internal class to perform the functionality and 
 ```
 
 ## Standard jQuery plugins
-Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
+Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not instantiating it. We'll need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
 
 ### Naming Conventions
 There are many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
@@ -35,7 +35,7 @@ There are many different ways to expose an API for a jQuery plugin, in Umbraco t
 * `$("#myId").myFirstJQueryPlugin();` - to instantiate the plugin
 * `var pluginApi = $("#myId").myFirstJQueryPluginApi();` - to retrieve the plugin API for that selector
 
-So essentially, we'll be creating 2 plugins, one to instantiate it and one to retrieve the API. The naming conventions are obvious, create your plugin name and then append the term *Api* to create your API plugin name.
+We will be creating 2 plugins, one to instantiate it and one to retrieve the API. The naming conventions are obvious, create your plugin name and then append the term *Api* to create your API plugin name.
 
 ### Creating the plugins
 
