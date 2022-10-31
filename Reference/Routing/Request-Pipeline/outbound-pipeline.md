@@ -318,7 +318,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace RoutingDocs.UrlProviders
 {
-    public class RegisterCustomUrlProviderComposer : IUserComposer
+    public class RegisterCustomUrlProviderComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
