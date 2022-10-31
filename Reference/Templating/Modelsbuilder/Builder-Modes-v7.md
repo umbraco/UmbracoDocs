@@ -19,7 +19,7 @@ Corresponds to the `PureLive` setting value.
 
 With **PureLive** models, models are generated and compiled on the fly, in memory, at runtime. They are available in views exclusively. This is for people who exclusively use the Umbraco backoffice, and probably do not write custom code such as controllers anyway. Whenever a content type is modified, models are updated without restarting Umbraco (in the same way .cshtml views are recompiled).
 
-If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions, and includes them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
+If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions. It will also include them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
 
 Generation _can_ fail for various reasons, in which case Umbraco will run without models (and front-end views probably fail to render). Umbraco's log file should contain all details about what prevented the generation, but it is probably faster to check the Models Builder dashboard, which should report the last error that was encountered, if any.
 
