@@ -21,7 +21,7 @@ The full list of API-breaking changes can be found below:
 - [Obsolete code removed](#obsolete-code-removed)
 - [Code moved to new assemblies and namespaces](#code-moved-to-new-assemblies-and-namespaces)
 - [New interface methods](#new-interface-methods)
-- [No-Operation methods removed](#no-operation-methods)
+- [No-Operation methods removed](#no-operation-methods-removed)
 - [Classes that do not inherit from base type anymore](#classes-that-does-not-inherit-from-base-type-anymore)
 - [Changes due to models made immutable](#changes-due-to-models-made-immutable)
 
@@ -29,15 +29,19 @@ The full list of API-breaking changes can be found below:
 
 The following have been removed after having been obsoleted since Umbraco 9.
 
-```
+### Umbraco.Extensions
+
+```none
 Umbraco.Extensions.ServiceCollectionExtensions.AddUnique<TImplementing>(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-```
 
-```
 Umbraco.Extensions.EnumExtensions.HasFlagAll<T>(T, T)
+
+Umbraco.Extensions.FriendlyImageCropperTemplateExtensions.GetLocalCropUrl(Umbraco.Cms.Core.Models.MediaWithCrops, string, string?)
 ```
 
-```
+### Umbraco.Cms.Core
+
+```none
 Umbraco.Cms.Core.Constants.Conventions.Member.IsApproved
 Umbraco.Cms.Core.Constants.Conventions.Member.IsApprovedLabel
 Umbraco.Cms.Core.Constants.Conventions.Member.IsLockedOut
@@ -50,61 +54,37 @@ Umbraco.Cms.Core.Constants.Conventions.Member.LastLockoutDate
 Umbraco.Cms.Core.Constants.Conventions.Member.LastLockoutDateLabel
 Umbraco.Cms.Core.Constants.Conventions.Member.FailedPasswordAttempts
 Umbraco.Cms.Core.Constants.Conventions.Member.FailedPasswordAttemptsLabel
-```
 
-```
 Umbraco.Cms.Core.WebAssets.IRuntimeMinifier.Reset()
-```
 
-```
 Umbraco.Cms.Core.Services.IExternalLoginService
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.ExternalLoginService(
     Umbraco.Cms.Core.Scoping.ICoreScopeProvider,
     Microsoft.Extensions.Logging.ILoggerFactory,
     Umbraco.Cms.Core.Events.IEventMessagesFactory,
     Umbraco.Cms.Core.Persistence.Repositories.IExternalLoginRepository)
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.GetExternalLogins(int)
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.GetExternalLoginTokens(int)
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.Save(int,
     System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.IExternalLogin>)
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.Save(int,
     System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.IExternalLoginToken>)
-```
 
-```
 Umbraco.Cms.Core.Services.ExternalLoginService.DeleteUserLogins(int)
-```
 
-```
 Umbraco.Cms.Core.Services.IMacroWithAliasService
-```
 
-```
 Umbraco.Cms.Core.Services.ITwoFactorLoginService2
-```
 
-```
 Umbraco.Cms.Core.Services.LocalizedTextService.LocalizedTextService(
     System.Collections.Generic.IDictionary<System.Globalization.CultureInfo, System.Collections.Generic.IDictionary<string, System.Collections.Generic.IDictionary<string, string>>>,
     Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Core.Services.LocalizedTextService>)
-```
 
-```
 Umbraco.Cms.Core.Services.ServiceContext.ServiceContext(
     System.Lazy<Umbraco.Cms.Core.Services.IPublicAccessService>?,
     System.Lazy<Umbraco.Cms.Core.Services.IDomainService>?,
@@ -162,66 +142,42 @@ Umbraco.Cms.Core.Services.ServiceContext.CreatePartial(
     Umbraco.Cms.Core.Services.IConsentService?,
     Umbraco.Cms.Core.Services.IKeyValueService?,
     Umbraco.Cms.Core.Services.IContentTypeBaseServiceProvider?)
-```
 
-```
 Umbraco.Cms.Core.Services.TwoFactorLoginService.TwoFactorLoginService(
     Umbraco.Cms.Core.Persistence.Repositories.ITwoFactorLoginRepository,
     Umbraco.Cms.Core.Scoping.ICoreScopeProvider,
-    System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.ITwoFactorProvider>, Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions>,
+    System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Security.ITwoFactorProvider>,
+    Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Identity.IdentityOptions>,
     Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Security.BackOfficeIdentityOptions>)
-```
 
-```
 Umbraco.Cms.Core.Routing.DefaultUrlProvider.DefaultUrlProvider(
     Microsoft.Extensions.Options.IOptionsMonitor<Umbraco.Cms.Core.Configuration.Models.RequestHandlerSettings>,
     Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Core.Routing.DefaultUrlProvider>,
     Umbraco.Cms.Core.Routing.ISiteDomainMapper,
     Umbraco.Cms.Core.Web.IUmbracoContextAccessor,
     Umbraco.Cms.Core.Routing.UriUtility)
-```
 
-```
 Umbraco.Cms.Core.Persistence.Repositories.IExternalLoginRepository
-```
 
-```
 Umbraco.Cms.Core.Persistence.Repositories.IMacroWithAliasRepository
-```
 
-```
 Umbraco.Cms.Core.Persistence.Repositories.IMemberRepository.SetLastLogin(string, System.DateTime)
-```
 
-```
 Umbraco.Cms.Core.Notifications.UmbracoApplicationComponentsInstallingNotification
-```
 
-```
 Umbraco.Cms.Core.Notifications.UmbracoApplicationMainDomAcquiredNotification
-```
 
-```
+
 Umbraco.Cms.Core.Notifications.UmbracoApplicationStartingNotification.UmbracoApplicationStartingNotification(Umbraco.Cms.Core.RuntimeLevel)
-```
 
-```
 Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppingNotification.UmbracoApplicationStoppingNotification()
-```
 
-```
 Umbraco.Cms.Core.Models.IContentTypeWithHistoryCleanup
-```
 
-```
 Umbraco.Cms.Core.Models.Language.Language(Umbraco.Cms.Core.Configuration.Models.GlobalSettings, string)
-```
 
-```
 Umbraco.Cms.Core.Models.RelationType.RelationType(string, string, bool, System.Nullable<System.Guid>, System.Nullable<System.Guid>)
-```
 
-```
 Umbraco.Cms.Core.Models.PublishedContent.PublishedContentType.PublishedContentType(int, string,
     Umbraco.Cms.Core.Models.PublishedContent.PublishedItemType,
     System.Collections.Generic.IEnumerable<string>,
@@ -235,9 +191,7 @@ Umbraco.Cms.Core.Models.PublishedContent.PublishedContentType.PublishedContentTy
     System.Collections.Generic.IEnumerable<Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType>>,
     Umbraco.Cms.Core.Models.ContentVariation,
     bool)
-```
 
-```
 Umbraco.Cms.Core.Models.Mapping.ContentTypeMapDefinition.ContentTypeMapDefinition(
     Umbraco.Cms.Core.Models.Mapping.CommonMapper,
     Umbraco.Cms.Core.PropertyEditors.PropertyEditorCollection,
@@ -250,24 +204,16 @@ Umbraco.Cms.Core.Models.Mapping.ContentTypeMapDefinition.ContentTypeMapDefinitio
     Umbraco.Cms.Core.Strings.IShortStringHelper,
     Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Configuration.Models.GlobalSettings>,
     Umbraco.Cms.Core.Hosting.IHostingEnvironment)
-```
 
-```
 Umbraco.Cms.Core.Models.ContentEditing.UserGroupPermissionsSave.Validate(System.ComponentModel.DataAnnotations.ValidationContext)
-```
 
-```
 Umbraco.Cms.Core.Install.InstallSteps.TelemetryIdentifierStep.TelemetryIdentifierStep(
     Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Core.Install.InstallSteps.TelemetryIdentifierStep>,
     Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Configuration.Models.GlobalSettings>,
     Umbraco.Cms.Core.Configuration.IConfigManipulator)
-```
 
-```
 Umbraco.Cms.Core.IO.ViewHelper.ViewHelper(Umbraco.Cms.Core.IO.IFileSystem)
-```
 
-```
 Umbraco.Cms.Core.HealthChecks.Checks.Security.BaseHttpHeaderCheck.BaseHttpHeaderCheck(
     Umbraco.Cms.Core.Hosting.IHostingEnvironment,
     Umbraco.Cms.Core.Services.ILocalizedTextService,
@@ -275,71 +221,16 @@ Umbraco.Cms.Core.HealthChecks.Checks.Security.BaseHttpHeaderCheck.BaseHttpHeader
     string,
     string,
     bool)
-```
 
-```
 Umbraco.Cms.Core.DependencyInjection.UmbracoBuilderExtensions.AddOEmbedProvider<T>(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
-```
 
-```
 Umbraco.Cms.Core.DependencyInjection.UmbracoBuilderExtensions.OEmbedProviders(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
-```
 
-```
 Umbraco.Cms.Core.Configuration.Models.RequestHandlerSettings.CharCollection.get
 Umbraco.Cms.Core.Configuration.Models.RequestHandlerSettings.CharCollection.set
-```
 
-```
 Umbraco.Cms.Core.Composing.IUserComposer
-```
 
-```
-Umbraco.Cms.Infrastructure.Persistence.Repositories.Implement.MemberRepository.SetLastLogin(string, System.DateTime)
-```
-
-```
-Umbraco.Cms.Infrastructure.Packaging.PackageMigrationBase.PackageMigrationBase(
-    Umbraco.Cms.Core.Services.IPackagingService,
-    Umbraco.Cms.Core.Services.IMediaService,
-    Umbraco.Cms.Core.IO.MediaFileManager,
-    Umbraco.Cms.Core.PropertyEditors.MediaUrlGeneratorCollection,
-    Umbraco.Cms.Core.Strings.IShortStringHelper,
-    Umbraco.Cms.Core.Services.IContentTypeBaseServiceProvider,
-    Umbraco.Cms.Infrastructure.Migrations.IMigrationContext)
-```
-
-```
-Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator.DatabaseSchemaCreator(
-    Umbraco.Cms.Infrastructure.Persistence.IUmbracoDatabase?,
-    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator>,
-    Microsoft.Extensions.Logging.ILoggerFactory,
-    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
-    Umbraco.Cms.Core.Events.IEventAggregator)
-```
-
-```
-Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreatorFactory.DatabaseSchemaCreatorFactory(
-    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator>,
-    Microsoft.Extensions.Logging.ILoggerFactory,
-    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
-    Umbraco.Cms.Core.Events.IEventAggregator)
-```
-
-```
-Umbraco.Cms.Infrastructure.HostedServices.RecurringHostedServiceBase.RecurringHostedServiceBase(
-    System.TimeSpan,
-    System.TimeSpan)
-```
-
-```
-Umbraco.Cms.Infrastructure.HostedServices.ReportSiteTask.ReportSiteTask(
-    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.HostedServices.ReportSiteTask>,
-    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
-    Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Configuration.Models.GlobalSettings>)
-```
-
-```
 Umbraco.Cms.Core.Security.BackOfficeUserStore.BackOfficeUserStore(
     Umbraco.Cms.Core.Scoping.ICoreScopeProvider,
     Umbraco.Cms.Core.Services.IUserService,
@@ -349,9 +240,7 @@ Umbraco.Cms.Core.Security.BackOfficeUserStore.BackOfficeUserStore(
     Umbraco.Cms.Core.Mapping.IUmbracoMapper,
     Umbraco.Cms.Core.Security.BackOfficeErrorDescriber,
     Umbraco.Cms.Core.Cache.AppCaches)
-```
 
-```
 Umbraco.Cms.Core.Security.MemberUserStore.MemberUserStore(
     Umbraco.Cms.Core.Services.IMemberService,
     Umbraco.Cms.Core.Mapping.IUmbracoMapper,
@@ -359,39 +248,62 @@ Umbraco.Cms.Core.Security.MemberUserStore.MemberUserStore(
     Microsoft.AspNetCore.Identity.IdentityErrorDescriber,
     Umbraco.Cms.Core.PublishedCache.IPublishedSnapshotAccessor,
     Umbraco.Cms.Core.Services.IExternalLoginService)
-```
 
-```
 Umbraco.Cms.Core.Logging.Viewer.ILogViewer.GetLogLevel()
-```
 
-```
 Umbraco.Cms.Core.Logging.Viewer.SerilogLogViewerSourceBase.SerilogLogViewerSourceBase(
     Umbraco.Cms.Core.Logging.Viewer.ILogViewerConfig,
     Serilog.ILogger)
-```
 
-```
 Umbraco.Cms.Core.Logging.Viewer.SerilogLogViewerSourceBase.GetLogLevel()
-```
 
-```
 Umbraco.Cms.Core.Configuration.JsonConfigManipulator.JsonConfigManipulator(Microsoft.Extensions.Configuration.IConfiguration)
 ```
 
-```
-Umbraco.Extensions.FriendlyImageCropperTemplateExtensions.GetLocalCropUrl(Umbraco.Cms.Core.Models.MediaWithCrops, string, string?)
+### Umbraco.Cms.Infrastructure
+
+```none
+Umbraco.Cms.Infrastructure.Persistence.Repositories.Implement.MemberRepository.SetLastLogin(string, System.DateTime)
+
+Umbraco.Cms.Infrastructure.Packaging.PackageMigrationBase.PackageMigrationBase(
+    Umbraco.Cms.Core.Services.IPackagingService,
+    Umbraco.Cms.Core.Services.IMediaService,
+    Umbraco.Cms.Core.IO.MediaFileManager,
+    Umbraco.Cms.Core.PropertyEditors.MediaUrlGeneratorCollection,
+    Umbraco.Cms.Core.Strings.IShortStringHelper,
+    Umbraco.Cms.Core.Services.IContentTypeBaseServiceProvider,
+    Umbraco.Cms.Infrastructure.Migrations.IMigrationContext)
+
+Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator.DatabaseSchemaCreator(
+    Umbraco.Cms.Infrastructure.Persistence.IUmbracoDatabase?,
+    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator>,
+    Microsoft.Extensions.Logging.ILoggerFactory,
+    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
+    Umbraco.Cms.Core.Events.IEventAggregator)
+
+Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreatorFactory.DatabaseSchemaCreatorFactory(
+    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.Migrations.Install.DatabaseSchemaCreator>,
+    Microsoft.Extensions.Logging.ILoggerFactory,
+    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
+    Umbraco.Cms.Core.Events.IEventAggregator)
+
+Umbraco.Cms.Infrastructure.HostedServices.RecurringHostedServiceBase.RecurringHostedServiceBase(
+    System.TimeSpan,
+    System.TimeSpan)
+
+Umbraco.Cms.Infrastructure.HostedServices.ReportSiteTask.ReportSiteTask(
+    Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Infrastructure.HostedServices.ReportSiteTask>,
+    Umbraco.Cms.Core.Configuration.IUmbracoVersion,
+    Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Configuration.Models.GlobalSettings>)
 ```
 
-```
+### Umbraco.Cms.Web
+
+```none
 Umbraco.Cms.Web.Common.Security.ConfigureIISServerOptions
-```
 
-```
 Umbraco.Cms.Web.Common.RuntimeMinification.SmidgeRuntimeMinifier.Reset()
-```
 
-```
 Umbraco.Cms.Web.Common.Middleware.UmbracoRequestMiddleware.UmbracoRequestMiddleware(
     Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Web.Common.Middleware.UmbracoRequestMiddleware>,
     Umbraco.Cms.Core.Web.IUmbracoContextFactory,
@@ -405,9 +317,7 @@ Umbraco.Cms.Web.Common.Middleware.UmbracoRequestMiddleware.UmbracoRequestMiddlew
     Umbraco.Cms.Core.Services.IRuntimeState,
     Umbraco.Cms.Core.Models.PublishedContent.IVariationContextAccessor,
     Umbraco.Cms.Core.PublishedCache.IDefaultCultureAccessor)
-```
 
-```
 Umbraco.Cms.Web.Website.Controllers.UmbLoginController.UmbLoginController(
     Umbraco.Cms.Core.Web.IUmbracoContextAccessor,
     Umbraco.Cms.Infrastructure.Persistence.IUmbracoDatabaseFactory,
@@ -416,18 +326,13 @@ Umbraco.Cms.Web.Website.Controllers.UmbLoginController.UmbLoginController(
     Umbraco.Cms.Core.Logging.IProfilingLogger,
     Umbraco.Cms.Core.Routing.IPublishedUrlProvider,
     Umbraco.Cms.Web.Common.Security.IMemberSignInManager)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Trees.MemberTypeAndGroupTreeControllerBase.MemberTypeAndGroupTreeControllerBase(
     Umbraco.Cms.Core.Services.ILocalizedTextService,
     Umbraco.Cms.Core.UmbracoApiControllerTypeCollection,
     Umbraco.Cms.Core.Trees.IMenuItemCollectionFactory,
     Umbraco.Cms.Core.Events.IEventAggregator)
-```
 
-
-```
 Umbraco.Cms.Web.BackOffice.Controllers.CurrentUserController.CurrentUserController(
     Umbraco.Cms.Core.IO.MediaFileManager,
     Microsoft.Extensions.Options.IOptions<Umbraco.Cms.Core.Configuration.Models.ContentSettings>,
@@ -442,44 +347,32 @@ Umbraco.Cms.Web.BackOffice.Controllers.CurrentUserController.CurrentUserControll
     Umbraco.Cms.Core.Cache.AppCaches,
     Umbraco.Cms.Core.Strings.IShortStringHelper,
     Umbraco.Cms.Web.Common.Security.IPasswordChanger<Umbraco.Cms.Core.Security.BackOfficeIdentityUser>)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.EntityController.GetUrlsByUdis(Umbraco.Cms.Core.Udi[], string?)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.HelpController.HelpController(Microsoft.Extensions.Logging.ILogger<Umbraco.Cms.Web.BackOffice.Controllers.HelpController>)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.LanguageController.LanguageController(
     Umbraco.Cms.Core.Services.ILocalizationService,
     Umbraco.Cms.Core.Mapping.IUmbracoMapper,
     Microsoft.Extensions.Options.IOptionsSnapshot<Umbraco.Cms.Core.Configuration.Models.GlobalSettings>)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.LogViewerController.LogViewerController(Umbraco.Cms.Core.Logging.Viewer.ILogViewer)
 Umbraco.Cms.Web.BackOffice.Controllers.LogViewerController.GetLogLevel()
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.MediaController.GetPagedReferences(int, string, int, int)
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.MemberTypeController.GetAllTypes()
-```
 
-```
 Umbraco.Cms.Web.BackOffice.Controllers.TemplateController.TemplateController(
     Umbraco.Cms.Core.Services.IFileService,
     Umbraco.Cms.Core.Mapping.IUmbracoMapper,
     Umbraco.Cms.Core.Strings.IShortStringHelper)
 ```
 
-```
+### Umbraco.Cms.Tests
+
+```none
 Umbraco.Cms.Tests.Common.Testing.TestOptionAttributeBase.ScanAssemblies
 ```
 
@@ -487,11 +380,28 @@ Umbraco.Cms.Tests.Common.Testing.TestOptionAttributeBase.ScanAssemblies
 
 The following have been moved to new assemblies and their namespaces have been updated accordingly.
 
-```
+### Umbraco.Extensions
+
+```none
 Umbraco.Extensions.NPocoDatabaseExtensions.ConfigureNPocoBulkExtensions()
+
+Umbraco.Extensions.UmbracoBuilderExtensions.AddUmbracoImageSharp(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
 ```
 
+### Umbraco.Cms.Web
+
+```none
+Umbraco.Cms.Web.Common.Media.ImageSharpImageUrlGenerator
+
+Umbraco.Cms.Web.Common.ImageProcessors.CropWebProcessor
+
+Umbraco.Cms.Web.Common.DependencyInjection.ConfigureImageSharpMiddlewareOptions
+Umbraco.Cms.Web.Common.DependencyInjection.ConfigurePhysicalFileSystemCacheOptions
 ```
+
+### Umbraco.Cms.Infrastructure
+
+```none
 Umbraco.Cms.Infrastructure.Persistence.LocalDb
 Umbraco.Cms.Infrastructure.Persistence.FaultHandling.RetryPolicyFactory
 Umbraco.Cms.Infrastructure.Persistence.FaultHandling.ThrottlingMode
@@ -502,37 +412,23 @@ Umbraco.Cms.Infrastructure.Persistence.FaultHandling.Strategies.NetworkConnectiv
 Umbraco.Cms.Infrastructure.Persistence.FaultHandling.Strategies.SqlAzureTransientErrorDetectionStrategy
 ```
 
-```
-Umbraco.Extensions.UmbracoBuilderExtensions.AddUmbracoImageSharp(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
-Umbraco.Cms.Web.Common.Media.ImageSharpImageUrlGenerator
-Umbraco.Cms.Web.Common.ImageProcessors.CropWebProcessor
-Umbraco.Cms.Web.Common.DependencyInjection.ConfigureImageSharpMiddlewareOptions
-Umbraco.Cms.Web.Common.DependencyInjection.ConfigurePhysicalFileSystemCacheOptions
-```
-
 ## New interface methods
 
 A few interfaces have been merged, adding new members to the original interfaces.
 
-```
-Umbraco.Cms.Core.Services.IMacroService.GetAll(params string[])
-```
+### Umbraco.Cms.Core
 
-```
+```none
+Umbraco.Cms.Core.Services.IMacroService.GetAll(params string[])
+
 Umbraco.Cms.Core.Persistence.Repositories.IMacroRepository.GetByAlias(string)
 Umbraco.Cms.Core.Persistence.Repositories.IMacroRepository.GetAllByAlias(string[])
-```
 
-```
 Umbraco.Cms.Core.Services.ITwoFactorLoginService.DisableWithCodeAsync(string, System.Guid, string)
 Umbraco.Cms.Core.Services.ITwoFactorLoginService.ValidateAndSaveAsync(string, System.Guid, string, string)
-```
 
-```
 Umbraco.Cms.Core.Models.IContentType.HistoryCleanup
-```
 
-```
 Umbraco.Cms.Core.Media.IImageDimensionExtractor.SupportedImageFileTypes
 ```
 
@@ -540,7 +436,9 @@ Umbraco.Cms.Core.Media.IImageDimensionExtractor.SupportedImageFileTypes
 
 A method not doing anything for the last couple of major releases have been removed.
 
-```
+### Umbraco.Cms.Core
+
+```none
 Umbraco.Cms.Core.Services.IMembershipMemberService<T>.SetLastLogin(string, System.DateTime)
 ```
 
@@ -548,7 +446,9 @@ Umbraco.Cms.Core.Services.IMembershipMemberService<T>.SetLastLogin(string, Syste
 
 A single model have been made immutable, so the default constructor and the setters are not available anymore.
 
-```
+### Umbraco.Cms.Infrastructure
+
+```none
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.ContentData()
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.Name.set
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.UrlSegment.set
@@ -565,7 +465,9 @@ Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.CultureInfos.se
 
 The following classes now directly inherit from OEmbedProviderBase instead of EmbedProviderBase.
 
-```
+### Umbraco.Cms.Core
+
+```none
 Umbraco.Cms.Core.Media.EmbedProviders.DailyMotion
 Umbraco.Cms.Core.Media.EmbedProviders.Flickr
 Umbraco.Cms.Core.Media.EmbedProviders.GettyImages
