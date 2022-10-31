@@ -11,7 +11,7 @@ _Checks that valid settings for sending emails are in place._
 
 This health check can be fixed by providing configuration on the following path: `Umbraco:CMS:Global:Smtp`
 
-This configuration can be setup in a configuration source of your choice, but this guide only shows how to setup in one of the JSON file sources.
+This configuration can be setup in a configuration source of your choice. This guide shows how to set it up in one of the JSON file sources.
 
 ### Updating the JSON configuration
 
