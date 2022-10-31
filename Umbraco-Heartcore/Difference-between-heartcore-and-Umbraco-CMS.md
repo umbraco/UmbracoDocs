@@ -14,7 +14,7 @@ Also, some special property aliases available in the CMS are not available in Um
 
 As a SaaS, it is not possible to install packages in Umbraco Heartcore as the code base is Closed source.
 
-Instead, other features like GraphQL, an out-of-the-box Content Delivery network (CDN) by Cloudflare and a Preview API are available to use.
+Instead, other features like GraphQL, an out-of-the-box Content Delivery Network (CDN) by Cloudflare and a Preview API are available to use.
 
 ### Template section
 
