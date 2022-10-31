@@ -31,7 +31,7 @@ An example of a web routing config with default values, and a placeholder for ap
 
 ## Try matching endpoints for all pages
 
-If this is set to `true` Umbraco will check if any routed endpoints match a front-end request before the Umbraco dynamic router tries to map the request to an Umbraco content item. This setting should not be nececary as long as the Umbraco catch-all route is registered last.
+When set to `true` Umbraco will check if any routed endpoints match a front-end request. This happens before the Umbraco dynamic router tries to map the request to a Umbraco content item. This setting should not be necessary as long as the Umbraco catch-all route is registered last.
 
 ## Try skip IIS custom errors
 
