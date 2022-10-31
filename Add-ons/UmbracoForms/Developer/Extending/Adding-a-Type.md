@@ -200,7 +200,7 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
 }
 ```
 
-In addition to the above, you must also register the extended field type within a composer and also create the backoffice field type view.
+As discussed in the previous section, you must also register the extended field type within a composer.  You also need to create the the backoffice field type view.
 
 **Composer:**
 ```csharp
