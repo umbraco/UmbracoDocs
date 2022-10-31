@@ -5,13 +5,13 @@ versionTo: 10.0.0
 
 # Using Tabs
 
-In this section, you will get an overview of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab.
+In this section, an overview is given of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab.
 
 ## Adding a tab
 
-Using tabs, you can organize properties in the back-office to provide a tailored and efficient workflow for editors creating and maintaining Content, Media and Members.
+Using tabs, you can organize properties in the backoffice to provide a tailored and efficient workflow for editors creating and maintaining Content, Media and Members.
 
-Tabs allow you to add horizontal organization in your Document Types, Media Types and Member Types and is quite handy for types that need a more defined hierarchy or have many properties and groups.
+Tabs allow you to add horizontal organization in your Document Types, Media Types and Member Types. This is handy for types that need a more defined hierarchy or have many properties and groups.
 
 To add a tab, follow these steps:
 
@@ -33,7 +33,7 @@ To reorder tabs, follow these steps:
 3. Select **Reorder**.
 4. You can drag the tab where you want, manually add a numeric value next to the tab name or use the arrows to set a value.
 
-    This is important when using compositions, as you might want to always display a tab/group at a certain position by setting a manual numeric value.
+    This is important when using compositions, as you want to always display a tab/group at a certain position by setting a manual numeric value.
 
     ![Reorder tabs](images/Reorder-tabs.gif)
 
