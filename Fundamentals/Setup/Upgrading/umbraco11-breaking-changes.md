@@ -282,7 +282,7 @@ Umbraco.Cms.Core.DependencyInjection.UmbracoBuilderExtensions.AddOEmbedProvider<
 ```
 
 ```
-mbraco.Cms.Core.DependencyInjection.UmbracoBuilderExtensions.OEmbedProviders(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
+Umbraco.Cms.Core.DependencyInjection.UmbracoBuilderExtensions.OEmbedProviders(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
 ```
 
 ```
