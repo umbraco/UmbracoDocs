@@ -2,19 +2,19 @@
 
 In this, article we are going to have a look at the differences between Umbraco Heartcore and Umbraco CMS.
 
-Since Umbraco Heartcore is a software as a service(SaaS) there is a couple of differences between it and the Umbraco CMS.
+Since Umbraco Heartcore is a software As A Service (SaaS) there is a couple of differences between it and the Umbraco CMS.
 
 ## Differences between Heartcore and Umbraco CMS
 
 Two things that are missing in Umbraco Heartcore that are available in the CMS are the package section as well as the template section.
 
-There are also some special property aliases that is not available in Umbraco Heartcore.
+Also, some special property aliases available in the CMS are not available in Umbraco Heartcore.
 
 ### Package Section
 
 As a SaaS, it is not possible to install packages in Umbraco Heartcore as the code base is Closed source.
 
-Instead, other features like GraphQL, an out-of-the-box Content delivery network(CDN) by Cloudflare and a Preview API are available to use.
+Instead, other features like GraphQL, an out-of-the-box Content Delivery network (CDN) by Cloudflare and a Preview API are available to use.
 
 ### Template section
 
