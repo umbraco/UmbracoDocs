@@ -114,7 +114,7 @@ All of these times are in *seconds*:
 
 ## Batch settings
 
-Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the Azure app service or other hosting environment. For Azure, this is around 4 minutes. This will normally only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
+Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
 An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
 

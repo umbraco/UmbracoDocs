@@ -153,11 +153,11 @@ All of these times are configured using [standard timespan format strings](https
 
 ## Batch settings
 
-Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the Azure app service or other hosting environment. For Azure, this is around 4 minutes. This will normally only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
+Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
 An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
 
-If encountering this issue, the `SourceDeployBatchSize` setting can be applied with an integer value (e.g. 1000).  This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+If encountering this issue, the `SourceDeployBatchSize` setting can be applied with an integer value (for example 1000).  This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
 
 ## UseDatabaseBackedTransferQueue
 
