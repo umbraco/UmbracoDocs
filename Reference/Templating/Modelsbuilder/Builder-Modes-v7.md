@@ -38,7 +38,7 @@ Corresponds to the `Dll` and `LiveDll` setting values.
 
 With **Dll** models, models are generated in the `~/App_Data/Models` directory, then compiled into a Dll that is copied into `~/bin`, thus restarting the application. Models must be generated explicitly from the dashboard or the content type editor.
 
-If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions, and includes them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
+If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions. It will also include them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
 
 Because models are in a Dll, they become visible to custom code, controllers, etc. and can even be referenced in Visual Studio to benefit from Intellisense.
 
