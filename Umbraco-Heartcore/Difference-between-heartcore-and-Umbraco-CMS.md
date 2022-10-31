@@ -25,4 +25,4 @@ It is not possible to create or edit templates in Umbraco Heartcore and therefor
 
 In the Umbraco CMS, some [special property aliases](/Reference/Routing/Routing-Properties/index.md) can manipulate the standard Umbraco routing pipeline.
 
-The frontend and backend of Umbraco Heartcore are decoupled therefore it's not possible to manipulate the routing pipeline and use these aliases in Umbraco Heartcore.
+The frontend and backend of Umbraco Heartcore are decoupled therefore it's not possible to use these aliases in Umbraco Heartcore.
