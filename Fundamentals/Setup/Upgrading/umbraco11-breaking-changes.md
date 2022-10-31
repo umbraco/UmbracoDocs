@@ -473,7 +473,10 @@ Umbraco.Cms.Web.BackOffice.Controllers.MemberTypeController.GetAllTypes()
 ```
 
 ```
-    Umbraco.Cms.Web.BackOffice.Controllers.TemplateController.TemplateController(Umbraco.Cms.Core.Services.IFileService, Umbraco.Cms.Core.Mapping.IUmbracoMapper, Umbraco.Cms.Core.Strings.IShortStringHelper)
+Umbraco.Cms.Web.BackOffice.Controllers.TemplateController.TemplateController(
+    Umbraco.Cms.Core.Services.IFileService,
+    Umbraco.Cms.Core.Mapping.IUmbracoMapper,
+    Umbraco.Cms.Core.Strings.IShortStringHelper)
 ```
 
 ```
