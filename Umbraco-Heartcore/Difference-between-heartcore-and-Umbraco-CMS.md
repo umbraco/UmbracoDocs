@@ -12,7 +12,7 @@ Two things that are missing in Umbraco Heartcore that are available in the CMS a
 
 As a SaaS, it is not possible to install packages in Umbraco Heartcore as the code base is Closed source.
 
-Instead, other features like a GraphQL API, an out-of-the-box Content delivery network (CDN) by Cloudflare and a Preview API are available to use.
+Instead, other features like a GraphQL API, an out-of-the-box Content delivery network(CDN) by Cloudflare and a Preview API are available to use.
 
 ### Template section
 
