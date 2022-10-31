@@ -117,7 +117,7 @@ When the Visual Studio extension is installed:
 
 The files you'll now find under the `UmbracoModels.mb` container file are the generated models. They are automatically added to the Visual Studio project and will be compiled alongside the rest of your project. Anytime you need to refresh the models you can run the **Build models** action again.
 
-If there are some non-generated C# files (that is `*.cs` but not `*.generated.cs`) in the folder, Models Builder will parse them for instructions (see [documentation for configuring and extending models](Control-Generation-v7.md)) and Visual Studio will compile them too.
+If the `~/App_Data/Models` directory contains any non-generated C# files (that is `*.cs` but not `*.generated.cs`), Models Builder parses these files for instructions. It will also include them in the compilation (see [documentation for configuring and extending models](Control-Generation-v7.md)).
 
 In order for Visual Studio to compile the project successfully, it needs to reference the Models Builder Dll, so you probably want to install the [Models Builder NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) in the project.
 
