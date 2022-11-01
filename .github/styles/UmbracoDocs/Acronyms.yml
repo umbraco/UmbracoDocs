@@ -33,6 +33,8 @@ exceptions:
   - XML
   - PATH
   - SQL
+  - SSL
+  - TLS
   - SHIFT
   - POST
   - GUID
