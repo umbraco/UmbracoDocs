@@ -6,7 +6,7 @@ Since Umbraco Heartcore is a software As A Service (SaaS) there is a couple of d
 
 ## Differences between Heartcore and Umbraco CMS
 
-Two things that are missing in Umbraco Heartcore that are available in the CMS are the package section as well as the template section.
+Two things that are missing in Umbraco Heartcore that are available in the CMS are the package section and the template section.
 
 Also, some special property aliases available in the CMS are not available in Umbraco Heartcore.
 
@@ -14,15 +14,15 @@ Also, some special property aliases available in the CMS are not available in Um
 
 As a SaaS, it is not possible to install packages in Umbraco Heartcore as the code base is Closed source.
 
-Instead, other features like GraphQL, an out-of-the-box Content Delivery Network (CDN) by Cloudflare and a Preview API are available to use.
+Instead, other features like **GraphQL**, an **out-of-the-box Content Delivery Network** (CDN) by Cloudflare and a **Preview API** are available in Umbraco Heartcore.
 
 ### Template section
 
 Since Umbraco Heartcore is a headless offering, meaning the frontend is decoupled from the backend.
-It is not possible to create or edit templates in Umbraco Heartcore and therefore the section is not available.
+Therefore it is not possible to create templates in Umbraco Heartcore and the section is not available.
 
 ### Special property aliases
 
-In the Umbraco CMS, some [special property aliases](/Reference/Routing/Routing-Properties/index.md) can manipulate the standard Umbraco routing pipeline.
+In the Umbraco CMS, some [**special property aliases**](/Reference/Routing/Routing-Properties/index.md) can manipulate the standard Umbraco routing pipeline.
 
-The frontend and backend of Umbraco Heartcore are decoupled therefore it's not possible to use these aliases in Umbraco Heartcore.
+Since the frontend and backend of Umbraco Heartcore are decoupled it's not possible to use these aliases in Umbraco Heartcore.
