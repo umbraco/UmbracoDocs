@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # Determining if an entity is new
 
-:::note
-If you're using Umbraco 8 or any version below, please refer to the [Reference > Events](https://our.umbraco.com/documentation/reference/events/determining-new-entity) article instead.
-:::
-
 Many of the Umbraco services publishes a 'Saved' notification (or similar). In some cases, it is beneficial to know if this entity is a brand new entity that has been persisted in the database. This is how you can determine this.
 
 ## Checking if it's new

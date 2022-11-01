@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # ContentTypeService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [ContentTypeService Events](../Events/ContentTypeService-Events) article instead.
-:::
-
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType
 
 <table>

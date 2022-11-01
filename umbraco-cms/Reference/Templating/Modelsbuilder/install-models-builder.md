@@ -11,10 +11,6 @@ The full version can be installed with the following NuGet packages.
 
 ## Umbraco.ModelsBuilder
 
-:::note
-Version 8.x of the `Umbraco.ModelsBuilder` package is for Umbraco 8.  Version 3.x is for Umbraco 7.
-:::
-
 [Umbraco.ModelsBuilder](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) - this is the core package for the full version of Models Builder and will disable the Umbraco version of Models Builder, and will remove the Umbraco version of the "Models Builder" dashboard UI from the "Settings" section.
 
 ```xml

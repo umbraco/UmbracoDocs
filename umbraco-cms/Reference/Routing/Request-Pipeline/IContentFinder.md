@@ -140,14 +140,6 @@ namespace RoutingDocs.ContentFinders
 
 ```
 
-:::note
-In Umbraco 7 there existed an IContentFinder that would find content and display it with an 'alternative template' via a convention. This could be to avoid the ugly `?alttemplate=blogfullstory` appearing on the querystring of the url when using the alternative template mechanism. Instead the Url could follow the convention of `/urltocontent/altemplatealias`. 
-
-Eg: `/blog/my-blog-post/blogfullstory` would 'find' the `/blog/my-blog-post` page and display using the `blogfullstory` template. 
-
-In Umbraco 9 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behavior by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IComposer`, or Umbraco builder extension (see above example).
-:::
-
 ## NotFoundHandlers
 
 To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)

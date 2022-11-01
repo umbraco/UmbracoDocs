@@ -21,21 +21,15 @@ Get up and running with Examine straight away with this quick start guide.
 
 ## [Customizing indexes](indexing/index.md)
 
-Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco 8.
+Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco.
 
 ## [PDF indexing and multisearchers](pdfindex-multisearcher.md)
 
 Learn how to index PDF files in Examine and how to create a multisearcher that searches through both the External Index and the Pdf Index.
 
-## [Terminology](terminology.md)
-
-Describes the different terms and objects used in Examine such as Indexers, Searchers, Index Set, etc...
-
 ## [Examine Management in the backoffice](examine-management.md)
 
 Provides an overview of the available Examine functionality available directly within the Umbraco backoffice.
-
-## [Examine events](examine-events.md)
 
 Details about subscribing to Examine events which can provide a way to modify the data being indexed.
 

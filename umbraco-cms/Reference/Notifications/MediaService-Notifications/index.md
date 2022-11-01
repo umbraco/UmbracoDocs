@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # MediaService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [MediaService Events](../Events/MediaService-Events) article instead.
-:::
-
 The MediaService class implements IMediaService. It provides access to operations involving IMedia.
 
 ## Usage

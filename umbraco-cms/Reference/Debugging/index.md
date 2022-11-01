@@ -7,7 +7,7 @@ meta.Description: "Information on SourceLink and how to use it to debug the Umbr
 
 # Debugging with SourceLink
 
-Microsoft and Visual Studio have introduced a new debugging technology called 'SourceLink' that enables source code debugging of certain .NET assemblies from NuGet. In version Umbraco 8.1+, this feature has been enabled to allow developers to step into the native Umbraco CMS source code.
+Microsoft and Visual Studio have introduced a new debugging technology called 'SourceLink' that enables source code debugging of certain .NET assemblies from NuGet. This feature has been enabled to allow developers to step into the native Umbraco CMS source code.
 
 ## Enabling SourceLink in Visual Studio 2017 & 2019
 

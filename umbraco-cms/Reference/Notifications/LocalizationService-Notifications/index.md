@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # LocalizationService Events
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [LocalizationService Events](../Events/LocalizationService-Events) article instead.
-:::
-
 The LocalizationService class implements ILocalizationService. It provides access to operations involving Language and DictionaryItem.
 
 <table>

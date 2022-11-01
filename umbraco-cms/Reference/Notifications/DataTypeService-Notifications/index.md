@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # DataTypeService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [DataTypeSercive Events](../Events/DataTypeService-Events) article instead.
-:::
-
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 
 <table>

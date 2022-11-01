@@ -42,9 +42,3 @@ public class DisableNuCacheDatabaseComposer : IComposer
     }
 }
 ```
-
-:::note
-The example above applies only to Umbraco 9+ sites.
-
-Are you using Umbraco 8, please refer to the article on [NuCache Settings for Umbraco 8](../../Configuration-for-Umbraco-7-and-8/nucache-settings.md).
-:::

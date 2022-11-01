@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # ContentService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [ContentService Events](../Events/ContentService-Events) article instead.
-:::
-
 The ContentService class is the most commonly used type when extending Umbraco using notifications. ContentService implements IContentService. It provides access to operations involving IContent.
 
 ## Usage

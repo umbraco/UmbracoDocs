@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Language Variation
 
-Introduced in Umbraco 8, Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
+Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
 
 - [Getting started with Language Variants](../../Fundamentals/Backoffice/Variants/index.md)
 - [Rendering variant values](../../Fundamentals/Design/Rendering-Content/index.md)

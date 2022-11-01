@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # MemberTypeService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [MemberTypeService Events](../Events/MemberTypeService-Events) article instead.
-:::
-
 The MemberTypeService class implements IMemberTypeService. It provides access to operations involving IMemberType
 
 <table>

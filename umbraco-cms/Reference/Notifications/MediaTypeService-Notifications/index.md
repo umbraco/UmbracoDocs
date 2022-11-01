@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # MediaTypeService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [MediaTypeService Events](../Events/MediaTypeService-Events) article instead.
-:::
-
 The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.
 
 <table>

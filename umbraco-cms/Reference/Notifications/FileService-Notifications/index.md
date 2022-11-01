@@ -5,10 +5,6 @@ versionTo: 10.0.0
 
 # FileService Notifications
 
-:::note
-If you are using Umbraco 8 or any lower version, please refer to the [FileService Events](../Events/FileService-Events) article instead.
-:::
-
 The FileService class implements IFileService. It provides access to operations involving IFile objects like scripts, stylesheets and templates.
 
 <table>
