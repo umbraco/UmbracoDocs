@@ -86,7 +86,9 @@ In the [Settings](../../Set-Up/Project-settings) section, you will find a lot mo
 
 ### Manage Subscriptions
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [Umbraco.com](https://umbraco.com). You can also click on the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/Manage-Subscriptions) article.
+For customers who have joined Umbraco Cloud before the 5th of May, 2021, can manage their subscriptions from Umbraco Shop. Umbraco Shop can be accessed through [Umbraco.com](https://umbraco.com). You can also click on the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/Manage-Subscriptions/) article.
+
+For customers who have joined Umbraco Cloud after the 5th of May, 2021, can manage their subscriptions directly through Umbraco Cloud. Find out more in the [Payments on Umbraco Cloud](../../Set-Up/Manage-Subscriptions/new-shop.md) article.
 
 ### Pending Invites
 
