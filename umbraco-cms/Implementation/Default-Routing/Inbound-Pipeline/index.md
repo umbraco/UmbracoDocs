@@ -34,7 +34,7 @@ This information is also used during the [Controller & Action selection](../Cont
 
 ## Rendering engine
 
-Umbraco 8 and above only supports MVC.
+Umbraco 9 and above only supports MVC.
 
 ### Related Information
 

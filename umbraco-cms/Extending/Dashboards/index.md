@@ -282,7 +282,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
 
 In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboard you would amend the `config/dashboards.config` file on disk.
 
-Since Umbraco 8 the configuration file approach has been removed and you need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organize and customize your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
+You need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organize and customize your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;

@@ -8,12 +8,6 @@ meta.Description: "Through a very detailed tutorial learn all the steps involved
 
 This tutorial will guide you through the steps it takes to add a new version of an existing article in the Umbraco Documentation.
 
-:::tip
-The **current major version** on the Umbraco Documentation is currently set to Umbraco 8 (v8). This means that any content that isn't targetting a specific version will be recognized as v8 content.
-
-If you want to help out with **updating our documentation against Umbraco 9** you can find more details in the [Umbraco 9 Documentation](#umbraco-9-documentation) section below.
-:::
-
 ## Contents
 
 * [Prerequisites](#prerequisites)

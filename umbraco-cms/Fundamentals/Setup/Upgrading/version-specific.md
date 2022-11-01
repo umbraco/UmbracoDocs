@@ -124,13 +124,3 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 ## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes)
 
 Breaking changes going from Umbraco 9 to Umbraco 10.
-
-## Version 8 to version 9
-
-There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
-
-You can reuse your content if you take a backup of your Umbraco 8 database and restore it into a new database used for a Umbraco 9 site.
-You will need to ensure packages you are using is available in Umbraco 9, and you will need to reimplement your custom code and templates.
-
-The reason why it is not possible to upgrade an Umbraco 8 site to Umbraco 9 is is that the codebase has been fundamentally updated in Umbraco 9 and the underlying web framework updated from ASP.NET to ASP.NET Core.
-It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 8.

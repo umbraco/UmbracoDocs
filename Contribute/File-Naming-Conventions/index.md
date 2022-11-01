@@ -25,8 +25,6 @@ In the table below are examples of how to name an article based on the Umbraco v
 |-------------------------|-------------------|
 |Current major version    |`index.md`         |
 |Umbraco 9                |`index-v9.md`      |
-|Umbraco 7                |`index-v7.md`      |
-|Umbraco 8.10             |`index-v8.10.md`   |
 
 ### Indicating ranges on file naming
 

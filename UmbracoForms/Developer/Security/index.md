@@ -67,7 +67,7 @@ Start folders are enabled for User Groups. They work in a similar way as the gro
 
 In introducing the user group based permissions we've taken care to ensure a migration path is available for those existing installations running on older versions of Umbraco Forms.  In that situation, we'd recommend the following approach.
 
-- Upgrade to Umbraco 8.11 or 9.3.
+- Upgrade to Umbraco 9.3.
 - At this stage nothing will have changed in terms of the permissions model in use.
 - Set the `ManageSecurityWithUserGroups` configuration value to `true` and the `GrantAccessToNewFormsForUserGroups` as appropriate for your setup.
 - Via the _Users > Form Security_ section, set the required permissions on each user group.
