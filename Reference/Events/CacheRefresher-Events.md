@@ -53,7 +53,7 @@ namespace Test.Composers {
                     var content = _contentService.GetById(payload.Id);
 
                     if(content.ContentType.Alias == "productCollection") {
-                        // May need to do smaller pages for larger sites, but for smaller simple sites we can just get all children like this
+                        // May need to do smaller pages for larger sites, but for smaller sites we can just get all children like this
                         var children = _contentService.GetPagedChildren(payload.Id, 0, 999, out long totalRecords);
 
                         IContent[] childArray = children.Cast<IContent>().ToArray();

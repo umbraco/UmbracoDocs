@@ -31,7 +31,7 @@ An example of a web routing config with default values, and a placeholder for ap
 
 ## Try matching endpoints for all pages
 
-If this is set to `true` Umbaco will check if any routed endpoints match a front-end request before the Umbraco dynamic router tries to map the request to an Umbraco content item. This setting should not be nececary as long as the Umbraco catch-all route is registered last.
+When set to `true` Umbraco will check if any routed endpoints match a front-end request. This happens before the Umbraco dynamic router tries to map the request to a Umbraco content item. This setting should not be necessary as long as the Umbraco catch-all route is registered last.
 
 ## Try skip IIS custom errors
 
@@ -71,4 +71,4 @@ Will set the URL provider mode, options are:
 
 ## Umbraco application URL
 
-Defines the Umbraco application URL, i.e. how the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: `http://www.mysite.com/` i.e. it needs to contain the scheme (http/https) and complete hostname.
+Defines the Umbraco application URL that the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: `http://www.mysite.com/`, ensure to contain the scheme (http/https) and complete hostname.
