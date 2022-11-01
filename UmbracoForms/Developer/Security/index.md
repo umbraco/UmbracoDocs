@@ -25,7 +25,7 @@ As new forms are created, users will automatically be granted access to them, un
 
 ## Start folders
 
-Umbraco Forms 9, and Umbraco Forms 8 when form definitions are configured for storage in the database, allows for the creation of folders to group forms within.  It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
+Umbraco Forms 9, when form definitions are configured for storage in the database, allows for the creation of folders to group forms within.  It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
 
 If no start folders are selected, the user will be able to access all forms in the backoffice according to their permissions.
 
@@ -37,7 +37,7 @@ If more than one start folder is selected, they will appear underneath the root 
 
 ## User group based permissions
 
-With Umbraco Forms 8.11.0 and 9.3.0, a new model was introduced allowing for the management of permissions at the level of user groups.  Particularly for installations with a large number of users, we expect this to be a more useful setup and require less ongoing administration.
+With Umbraco Forms 9.3.0, a new model was introduced allowing for the management of permissions at the level of user groups.  Particularly for installations with a large number of users, we expect this to be a more useful setup and require less ongoing administration.
 
 When user groups are involved in permissions, access to a particular resource or feature is determined by the following:
 
@@ -56,7 +56,7 @@ As new forms are created, user groups with aliases listed in the `GrantAccessToN
 
 ### Start folders for user groups
 
-In Umbraco Forms 8.12.0 and 9.4.0, start folders are also enabled for User Groups. They work in a similar way as the group based permissions described above:
+Start folders are enabled for User Groups. They work in a similar way as the group based permissions described above:
 
 - If the user has a specific user permission set, it is used in preference to anything set on the user groups they are a part of.
     - This means if the user has no start folders defined and the groups they are part of do, they will have access to the root of the Forms tree and be able to access all folders and Forms.

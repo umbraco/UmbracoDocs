@@ -31,11 +31,6 @@ To create a Form, follow these steps:
     ![Forms designer](images/FormDesignerStartV8.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
 
-    :::note
-    In Umbraco Forms version 7 or higher, unless the feature has been disabled via configuration, there will be a predefined *Consent for storing submitted data* field added to all new Forms.
-    See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https://umbraco.com/blog/umbraco-version-79-and-forms-70-is-out/)
-    :::
-
 6. Enter the **Name** for the Form. Let's call it _Our first form_.
     ![Forms designer Set Name](images/FormDesignerFormNameV8.png)
 7. **[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
@@ -83,7 +78,7 @@ Once you are satisfied with the Form, you can save the design by clicking the **
 
 ## Organizing Forms in Folders
 
-If you are running Umbraco Forms 8.8.0 or above, and installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders.  If you are planning to create a number of them, this may help with organization and locating them once created for modification.
+If installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders.  If you are planning to create a number of them, this may help with organization and locating them once created for modification.
 
 To create a folder, from the same dialog as you use to create a form, you'll have the option to create a folder, for which you need to provide a name.
 

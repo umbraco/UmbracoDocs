@@ -25,9 +25,7 @@ Most tasks in the pipeline are standard steps that will be used in any .NET web 
 
 Additional steps can be added as required, for example for running automated tests.
 
-The Umbraco Deploy license file and the schema data files will automatically be included within the build output. 
-
-There's no need for custom steps to include these as there was in Umbraco 8.
+The Umbraco Deploy license file and the schema data files will automatically be included within the build output.
 
 The deployment part of the pipeline stage consists of two steps. 
 
