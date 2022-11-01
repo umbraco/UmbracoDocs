@@ -7,7 +7,7 @@ meta.Description: "A guide to getting started with integration testing in Umbrac
 
 # Integration Testing Umbraco
 
-These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
+These examples are for Umbraco 9.1+ and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
 
 ## Using the NuGet package and attributes in your class
 

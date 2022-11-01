@@ -34,7 +34,7 @@ This information is also used during the [Controller & Action selection](../Cont
 
 ## Rendering engine
 
-Umbraco 8 and above only supports MVC. Umbraco 7 was the last major version of Umbraco to support both Webforms and MVC.
+Umbraco 8 and above only supports MVC.
 
 ### Related Information
 

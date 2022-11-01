@@ -145,7 +145,7 @@ Links-updated: partial
         <div class="row explain">
             <div class="col-xs-12">
                 <h4 class="text-right"><a href="Unit-Testing/">Unit Testing</a></h4>
-                <small>Examples of how to setup Unit Tests with Umbraco 8</small>
+                <small>Examples of how to setup Unit Tests with Umbraco</small>
             </div>
         </div>
     </div>
