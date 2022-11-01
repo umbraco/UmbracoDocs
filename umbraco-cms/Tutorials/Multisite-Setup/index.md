@@ -15,7 +15,7 @@ For practical reasons, we recommend using [Baselines](../../Umbraco-Cloud/Gettin
 When using Baselines on Umbraco Cloud for a multisite solution, you would not need to worry about [Usage](../../Umbraco-Cloud/Set-up/Usage/) limits, and could see better performance compared to having multiple websites in one project.
 :::
 
-If you are planning to create a multilingual site in Umbraco 8, please take a look at the [Multilanguage Setup](../Multilanguage-Setup/) tutorial instead.
+If you are planning to create a multilingual site, please take a look at the [Multilanguage Setup](../Multilanguage-Setup/) tutorial instead.
 
 ## Structuring your website
 
