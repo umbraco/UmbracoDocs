@@ -85,7 +85,7 @@ public abstract class UmbracoBaseTest
 ```
 
 :::tip
-```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
+```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
 :::
 
 ## Testing a ContentModel

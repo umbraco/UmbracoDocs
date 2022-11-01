@@ -47,30 +47,6 @@ Umbraco Cloud Professional plan
 - RAM - 2000 MB
 - Disk - 10400 MB
 
-## Soft quotas for shared Umbraco Cloud Plans
-
-Sites are monitored for hitting soft quotas every minute. (Evaluation frequency). A quota is evaluated for a window of 5 minutes. In case a site reaches the soft quota, it will be restarted. After multiple restarts, due to exceeding the soft quota, the site will be isolated to protect the rest of the sites in the pool. The number of restarts depends on the Cloud plan, details for each plan can be found below.
-
-These are soft quotas because peaks are allowed and the evaluation period is 5 minutes.
-
-Umbraco Cloud Starter plan
-
-- CPU - 120 CPU seconds total in the past 5 minutes - equivalent to 20 % average CPU
-- RAM - 524 MB average in the past 5 minutes
-- Restarted 5 times before isolated
-
-Umbraco Cloud Standard plan
-
-- CPU - 210 seconds total - equivalent to 35 % CPU
-- RAM - 786 MB
-- Restarted 3 times before isolated
-
-Umbraco Cloud Professional plan
-
-- CPU - 300 seconds total - equivalent to 50 % CPU
-- RAM - 1048 MB
-- Restarted 2 times before isolated
-
 ## Quotas for the shared pool
 
 Whenever a pool hits above 95% usage of any resource disk, the busiest staging or development environment, that hasn't been moved previously will be moved to a different pool.
