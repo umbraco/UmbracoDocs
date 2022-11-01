@@ -75,7 +75,7 @@ Alternatively you can also pass in a path to a custom view like "/App_Plugins/gr
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
-**In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and string prevalues in the same configuration:
+Prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and string prevalues in the same configuration:
 
 ```json
 "prevalues": [
@@ -95,7 +95,7 @@ and will translate in to three different options where each string will become a
 
 **applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string.
 
-**In Umbraco 7.5.4 & newer** a JSON object can also be used if you need a more specific configuration. A JSON configuration could look like this:
+A JSON object can also be used if you need a more specific configuration. A JSON configuration could look like this:
 
 ```json
 "applyTo": {

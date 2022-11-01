@@ -44,10 +44,6 @@ By default, the User Groups available to new users are **Administrators**, **Wri
 
 ## Creating a User Group
 
-:::note
-When creating a User Group in Umbraco 8, remember to set a start node for content and media for the User Group. If you do not assign a start node then users assigned to the User Group will not be able to login into the backoffice. Assigning a start node will not give the User Group access to the Content or Media sections unless those are added under sections.
-:::
-
 You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.
 
 Go to the **Users** section and select the **Groups** tab in the top-right corner.

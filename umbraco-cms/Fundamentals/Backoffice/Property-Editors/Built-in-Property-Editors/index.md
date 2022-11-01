@@ -117,16 +117,6 @@ The markdown editor will be interpreted by the Models Builder. Behind the scenes
 
 Media Picker  enables you to select one or more media items from the Media Section. This Property Editor can be configured to only pick certain Media Types and it's possible to define Local Image Crops.
 
-## [Media Picker (Legacy)](Media-Picker/index.md)
-
-`Alias: Umbraco.MediaPicker`
-
-:::note
-As of Umbraco 8.14, this Media Picker is legacy. Use the [Media Picker](Media-Picker-3) instead.
-:::
-
-The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
-
 ## [Member Group Picker](Member-Group-Picker/index.md)
 
 `Alias: Umbraco.MemberGroupPicker`
@@ -139,7 +129,7 @@ The media picker displays the current selected media and provides the option to 
 
 `Alias: Umbraco.MultiUrlPicker`
 
-New in Umbraco 8, used to be a package called RJP Multi Url Picker. Replaced Related Links.
+Used to be a package called RJP Multi Url Picker. Replaced Related Links.
 
 ## [Multinode Treepicker](Multinode-Treepicker/index.md)
 

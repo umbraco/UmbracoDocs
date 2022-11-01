@@ -43,10 +43,6 @@ Starter kits are, as the name suggests, a package that helps you set up a starte
 
 #### Content Apps
 
-:::note
-Content Apps are only available from Umbraco 8.
-:::
-
 Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://our.umbraco.com/packages/backoffice-extensions/preflight-content-health-checks-for-umbraco-8/) content app. It shows you readability scores for your written content, directly on each content node.
 
 #### Integration extensions

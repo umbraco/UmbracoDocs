@@ -87,17 +87,6 @@ Follow the steps outlined below **for each environment** for the migration to ru
 
 Then your Umbraco Forms data might still be handled as metadata.
 
-:::note
-
-If you are migrating an Umbraco Cloud project from Umbraco 7 to Umbraco 8, make sure that your Umbraco Forms data is **not** handled as content.
-
-In this case, follow these steps before initiating the migration:
-
-* Set `transferFormsAsContent` to `false` in the `UmbracoDeploy.settings.config` file.
-* Run an [`export` command from the `/data` folder](../../Set-up/Power-tools/generating-uda-files/#generate-uda-files-manually) to extract UDA files for your forms.
-
-:::
-
 You will need to follow the steps below to persist Umbraco Forms data in the Umbraco database.
 
 1. Find and open `Config\UmbracoDeploy.settings.config` on your local machine.

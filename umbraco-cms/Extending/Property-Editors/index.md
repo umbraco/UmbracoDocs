@@ -9,13 +9,9 @@ meta.Description: "Guide on how to work with and create Property Editors in Umbr
 
 # Property Editors
 
-This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition (only Umbraco 8).](../../Fundamentals/Backoffice/Property-Editors/index.md)
+This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition](../../Fundamentals/Backoffice/Property-Editors/index.md)
 
 ## Tutorials - Creating a property editor
-
-:::note
-Please note that the Property Editor Tutorial is **currently only available for Umbraco 8**.
-:::
 
 * [Creating a property editor](../../Tutorials/Creating-a-Property-Editor/)
 * [Adding configuration to a property editor](../../Tutorials/Creating-a-Property-Editor/part-2.md)
@@ -45,8 +41,3 @@ Learn how to extend Property editors to track entity references inside the prope
 ## More information
 
 * [Built in Property Editors](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/)
-* The full [Umbraco Backoffice UI API documentation (Umbraco 8)](https://our.umbraco.com/apidocs/v8/ui/#/api) for all the angular services, directives and resources.
-
-## Umbraco TV
-
-* Chapter: [Property Editors (currently only available for Umbraco 7)](https://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)

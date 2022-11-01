@@ -24,7 +24,7 @@ If for example, the CPU performance issues started when you are building your se
 Be aware that some errors may appear due to maxing out your resources, they may not be related to the cause!
 
 :::note
-If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/wwwroot/App_Data/logs` in Umbraco 8 and in the `~/Umbraco/logs`then typing in:
+If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/Umbraco/logs`then typing in:
 
 `ls -t | head -5`
 
@@ -48,8 +48,7 @@ Please be aware that using any Umbraco Service will also include the database, a
 
 Scheduled jobs can be very nice, but you have to think about how often they should run and how taxing they are on your site's performance. If for example you want to rebuild your cache every 5 minutes but it takes 6 minutes to do so you will run into a lot of trouble!
 
-- [Reference Umbraco 7](https://our.umbraco.com/documentation/Reference/Config/umbracoSettings/#scheduledtasks)
-- [Reference Umbraco 8](https://our.umbraco.com/documentation/Reference/Scheduling/)
+- [Reference](https://our.umbraco.com/documentation/Reference/Scheduling/)
 
 ### Other resources
 

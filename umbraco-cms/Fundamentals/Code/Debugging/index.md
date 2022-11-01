@@ -29,8 +29,7 @@ Debug should always be set to false in production.
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. In Umbraco 8 and before, it was possible to do explicit named tracing. This is not an option in ASP.NET Core and Umbraco 9.
-Instead, you need to configure what log messages you wanna log.
+Logging and tracing are really two names for the same technique. You need to configure what log messages you wanna log.
 
 ### Enabling Trace Logging
 

@@ -6,8 +6,6 @@ versionTo: 8.13.0
 # Media Picker (Legacy)
 
 :::note
-**Are you using Umbraco 8.14 or a newer version?**
-
 We highly recommend that you use the [Media Picker](../Media-Picker-3/) instead.
 
 This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.

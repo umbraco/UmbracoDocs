@@ -17,7 +17,7 @@ In the example showcased above, prevalues are being added to a Data Type, withou
 
 ## Customize
 
-Infinite editing is a feature that comes out of the box with Umbraco 8. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
+Infinite editing is a feature that comes out of the box with Umbraco. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
 
 ## Read more
 

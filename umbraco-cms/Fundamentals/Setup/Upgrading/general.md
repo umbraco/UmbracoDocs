@@ -8,7 +8,7 @@ versionTo: 10.0.0
 _This is the guide for upgrading in general._
 
 :::warning
-**Important**: If you are upgrading to a new major version, like from Umbraco 8 to Umbraco 9, make sure to check out the **[version-specific documentation.](version-specific.md)**
+**Important**: If you are upgrading to a new major version, like from Umbraco 10 to 11, make sure to check out the **[version-specific documentation.](version-specific.md)**
 
 Things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
 

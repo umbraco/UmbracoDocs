@@ -5,6 +5,10 @@ versionTo: 8.0.0
 
 # The Frontend
 
+:::note
+**This article needs to be updated.**
+:::
+
 An error in the Frontend often looks like this:
 ![Frontend error](images/frontend-error.png)
 

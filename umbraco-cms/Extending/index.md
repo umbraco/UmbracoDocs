@@ -26,8 +26,6 @@ This section will describe how to work with and create Property Editors.
 
 ## [Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
-A Parameter Editor is the editor used to insert values into a [Macro (only Umbraco 8)](../Reference/Templating/Macros/index.md).
-
 This section will describe how to work with and create Parameter Editors.
 
 ## [Health Check](Health-Check/index.md)
@@ -65,10 +63,6 @@ Create a custom Database table.
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.
 
 ## [FileSystemProviders (IFileSystem)](Custom-File-Systems.md)
-
-:::note
-This section is currently only available for Umbraco 8 and 7.
-:::
 
 Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example).
 

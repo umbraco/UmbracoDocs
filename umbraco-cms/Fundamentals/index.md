@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Fundamentals"
-meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
+meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
@@ -262,10 +262,6 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
         <div class="row explain">
             <div class="col-xs-12">
                 <h4 class="text-right">Tutorials</h4>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="../Tutorials/Porting-Packages-V8">Porting packages to V8</a></h5>
-                <small>Learn how to convert your Umbraco 7 packages to Umbraco 8.</small>
             </div>
             <div class="col-sm-6">
                 <h5><a href="../Tutorials/Creating-Basic-Site">Create a basic Umbraco site</a></h5>
