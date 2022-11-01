@@ -45,19 +45,19 @@ For sites with stricter requirements, it is possible to opt-out of both options 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
 It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot
-of history you may wish to perform these tasks, if they are not part of your regular database maintenance plan already.
+of history you may wish to perform these tasks. If they are not part of your regular database maintenance plan already.
 
 ## Overriding global settings
 
 It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions"
 Content App for each Document Type.
 
-![Content Version Cleanup - document type overrides](images/per-doctype-override.png)
+![Content Version Cleanup - Document Type overrides](images/per-doctype-override.png)
 
 ## Prevent cleanup of important versions
 
-It is possible to mark important content versions as "prevent cleanup" to ensure they are never removed via the new and improved 
-rollback modal which can be found on the "info" content app for each document.
+It is possible to mark important content versions as "prevent cleanup". This is to ensure they are never removed via the new and improved 
+rollback modal. This view can be found on the "info" content app for each document.
 
 1. Open rollback modal.
 ![Content Version Cleanup - prevent cleanup part 1](images/prevent-cleanup-part-1.png)
