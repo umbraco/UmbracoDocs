@@ -1,7 +1,7 @@
 ---
 state: partial
 updated-links: false
-versionFrom: 9.2.0
+versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
@@ -38,6 +38,7 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     ]
 }
 ```
+
 ## Sample Manifest with Csharp
 
 You can also register your files by implementing a `IManifestFilter` instead of creating a `package.manifest`. Create a `ManifestFilter.cs` file and implement the `IManifestFilter` interface.

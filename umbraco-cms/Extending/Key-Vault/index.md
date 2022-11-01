@@ -12,10 +12,10 @@ This article tells you how to configure your application so it is ready to use a
 
 Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
-1. [For most Hosting scenarios: Install Key Vault via Nuget and retrieve your secrets directly in your Program.cs.](#installing-key-vault-via-nuget)
-2. [For Azure Web App Hosting: Use Key Vault references for Azure App Service.](#use-key-vault-references-for-azure-app-service)
+1. [Install Key Vault via Nuget (for most Hosting scenarios)](#install-key-vault-via-nuget)
+2. [Use Key Vault references for Azure App Service (For Azure Web App Hosting) - **Only available in Umbraco 10**](#use-key-vault-references-for-azure-app-service)
 
-## Installing Key Vault via Nuget
+## Install Key Vault via Nuget
 
 Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
 
@@ -40,8 +40,10 @@ The next step is to add the Azure Key Vault endpoint to the `appsettings.json` f
 }
 ```
 
-After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` file. 
+After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` file.
 
+{% tabs %}
+{% tab title="Latest version" %}
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
     Host.CreateDefaultBuilder(args)
@@ -61,6 +63,29 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
             webBuilder.UseStartup<Startup>();
         });
 ```
+{% endtab %}
+
+{% tab title="Umbraco 9" %}
+```csharp
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureLogging(x => x.ClearProviders())
+        .ConfigureAppConfiguration((context, config) =>
+        {
+            var settings = config.Build();
+            var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
+            if (!string.IsNullOrWhiteSpace(keyVaultEndpoint))
+            {
+                if (!string.IsNullOrWhiteSpace(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
+                {
+                    config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
+                }
+            }
+        })
+        .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+```
+{% endtab %}
+{% endtabs %}
 
 ### Authentication 
 
@@ -74,6 +99,10 @@ There are different ways to access the Azure Key Vault. It is important that the
 1. Click review + assign
 
 ## Use Key Vault references for Azure App Service
+
+:::note
+This option is only recommended for Umbraco 10.
+:::
 
 Azure Web Apps offers the ability to directly reference Key Vault secrets as App Settings. The benefit of this is you can securely store your secrets in Key Vault without any code changes required in your application.
 

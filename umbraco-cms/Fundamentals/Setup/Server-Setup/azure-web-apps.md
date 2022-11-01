@@ -22,6 +22,8 @@ Umbraco will run on Azure Web Apps but there are some configuration options and 
 
 You need to add these configuration values. E.g in a json configuration source like `appSettings.json`:
 
+{% tabs %}
+{% tab title="Latest version" %}
 ```json
 {
     "Umbraco": {
@@ -39,6 +41,27 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
+{% endtab %}
+{% tab title="9.0.0 - 9.3.0" %}
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Global": {
+                "MainDomLock" : "SqlMainDomLock"
+            },
+            "Hosting": {
+                "LocalTempStorageLocation": "EnvironmentTemp"
+            },
+            "Examine": {
+                "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
+            }
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
 

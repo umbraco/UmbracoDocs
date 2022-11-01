@@ -23,9 +23,20 @@ Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` N
 
 Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
+{% tabs %}
+{% tab title="Latest version" %}
 ```none
 dotnet add package Umbraco.StorageProviders.AzureBlob
 ```
+{% endtab %}
+
+{% tab title="Umbraco 9" %}
+```none
+dotnet add package Umbraco.StorageProviders.AzureBlob --version 1.1.1
+```
+{% endtab %}
+{% endtabs %}
+
 
 The correct package will have be installed in your project.
 
@@ -80,6 +91,37 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
 
         }
 ```
+
+:::note
+**If you are using Umbraco 9, follow this step before moving on**:
+
+Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
+
+```C#
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseUmbraco()
+        .WithMiddleware(u =>
+        {
+            u.UseBackOffice();
+            u.UseWebsite();
+            // This enables the Azure Blob storage middleware for media.
+            u.UseAzureBlobMediaFileSystem();
+        })
+        .WithEndpoints(u =>
+        {
+            u.UseInstallerEndpoints();
+            u.UseBackOfficeEndpoints();
+            u.UseWebsiteEndpoints();
+        });
+}
+```
+:::
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
 

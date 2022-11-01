@@ -15,6 +15,22 @@ The Umbraco UI should work in all modern browsers:
 
 ## Local Development
 
+{% tabs %}
+{% tab title="Umbraco 10" %}
+* Either OS:
+  * Microsoft Windows 7 SP1, 8.1, 10 and 11
+  * MacOS High Sierra 10.13
+  * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
+* One of the following .NET Tools or Editors:
+  * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
+  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
+  * .NET Core CLI
+* .NET 5.0
+* SQL connection string (SQL Server)
+{% endtab %}
+
+{% tab title="Umbraco 9" %}
 * Either OS:
   * Microsoft Windows 7 SP1, 8.1, 10 and 11
   * MacOS High Sierra 10.13
@@ -26,6 +42,8 @@ The Umbraco UI should work in all modern browsers:
   * .NET Core CLI
 * .NET 6.0.5+
 * SQL connection string (SQL Server)
+{% endtab %}
+{% endtabs %}
 
 ## Hosting
 
@@ -33,11 +51,23 @@ The Umbraco UI should work in all modern browsers:
 
 For the best experience, we would recommend that you ensure your hosting environment has the following to run Umbraco CMS:
 
+{% tabs %}
+{% tab title="Umbraco 10" %}
+* Windows Server 2019 and higher
+* IIS 10 and higher
+* SQL Server 2019 and higher
+* .NET 5.0
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+{% endtab %}
+
+{% tab title="Umbraco 9" %}
 * Windows Server 2019 and higher
 * IIS 10 and higher
 * SQL Server 2019 and higher
 * .NET 6.0.5+
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+{% endtab %}
+{% endtabs %}
 
 :::tip
 You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
@@ -46,6 +76,24 @@ You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Clou
 ### Miminium requirements to run Umbraco
 
 Umbraco can run on an environment with the minimum requirements stated below:
+
+{% tabs %}
+{% tab title="Umbraco 10" %}
+* Windows Server 2012 R2 and higher
+* IIS 8.5 and higher
+* SQL Server 2012 and higher
+* .NET 6.0.5+
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+{% endtab %}
+
+{% tab title="Umbraco 9" %}
+* Windows Server 2012 R2 and higher
+* IIS 8.5 and higher
+* SQL Server 2012 and higher
+* .NET 5.0
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+{% endtab %}
+{% endtabs %}
 
 * Windows Server 2012 R2 and higher
 * IIS 8.5 and higher

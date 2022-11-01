@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.2.0
+versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Sections & Trees"
 meta.Description: "An explanation on sections and trees in Umbraco"
@@ -58,7 +58,11 @@ namespace My.Website.Sections
 }
 ```
 
-For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`. You can achieve this by updating the `ConfigureServices` method in the `Startup.cs` class: 
+For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`.
+
+{% tabs %}
+{% tab title="Latest version" %}
+You can achieve this by updating the `ConfigureServices` method in the `Startup.cs` class:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -72,6 +76,32 @@ public void ConfigureServices(IServiceCollection services)
         .Build();
 }
 ```
+{% endtab %}
+
+{% tab title="9.0.0 - 9.2.0" %}
+You can achieve this by using a C# class which implements `IComposer` as shown below.
+
+```csharp
+using My.Website.Sections;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Sections;
+
+namespace My.Website.Composers
+{
+    public class SectionComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.Sections().Append<MyFavouriteThingsSection>();
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+
 
 This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
 
