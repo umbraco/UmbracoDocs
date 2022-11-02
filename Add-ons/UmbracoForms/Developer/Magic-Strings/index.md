@@ -34,7 +34,7 @@ For multi-lingual websites, rather than hard-coding labels like form field capti
 
 In most cases, the field must contain only the magic string for the replacement to be carried out. This makes sense for translated values, as you will want the whole phrase replaced when, for example, using one for a field's placeholder.
 
-We also though translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag.  So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
+We also translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag.  So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
 
 ### Session & Cookies
 
