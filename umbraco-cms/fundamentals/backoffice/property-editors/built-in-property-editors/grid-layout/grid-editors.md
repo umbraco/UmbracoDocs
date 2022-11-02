@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionFrom: 10.0.0
----
-
 # Grid Editors
 
 A grid editor is the component responsible for getting data into the grid - that could be a text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
@@ -136,7 +131,6 @@ You can also add a name template for generating grid item labels using the synta
 - If your editor links to a content, media or member node, you can use the Angular filter `{{ value.udi | ncNodeName }}` to show the node name rather than the node ID.
 - If your editor is a rich text editor, you can use the Angular filter `{{ value | ncRichText }}` to show the unformatted text.
 :::
-
 
 The built-in views you can use are:
 
