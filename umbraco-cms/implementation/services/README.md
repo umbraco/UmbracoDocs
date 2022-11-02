@@ -11,11 +11,11 @@ Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Um
 
 The general rule of thumb is that management Services provide access to allow the modification of Umbraco data (and therefore aren't optimised for displaying data). Helpers on the other hand provide access to readonly data with performance of displaying data taken into consideration.
 
-:::warning
+{% hint style="warning" %}
 Although there is a management Service named the `IContentService` - only use this to modify content - do not use the `IContentService` in a View/Template to pull back data to display,
 this will make requests to the database and be slow - here instead inject the `IPublishedContentQueryAccessor` interface and get the `IPublishedContentQuery` that operate against a
 cache of published content items, and are significantly quicker.
-:::
+{% endhint %}
 
 The management Services and Helpers are all registered with Umbraco's underlying DI framework. This article aims to show examples of gaining access to utilise these resources in multiple different scenarios. There are subtle differences to be aware of depending on what part of Umbraco is being extended.
 
@@ -100,9 +100,9 @@ namespace Umbraco9.Controllers
 
 Controllers and Views can access an `IUmbracoContext` by injecting the `IUmbracoContextAccessor`, however this is not always the case 'everywhere in Umbraco', for example common extension points: Components,ContentFinders or Custom C# Classes.
 
-:::Warning
+{% hint style="warning" %}
 IUmbracoContext, UmbracoHelper, IPublishedContentQuery - are all based on an HttpRequest - their lifetime is controlled by an HttpRequest. So if you are not operating within an actual request, you cannot inject these parameters and if you try to ...  Umbraco will report an error on startup.
-:::
+{% endhint %}
 
 ### Injecting Services into a Component
 
@@ -272,9 +272,9 @@ public override UrlInfo GetUrl(IPublishedContent content, UrlMode mode = UrlMode
 }
 ```
 
-:::Note
-It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but the example is showing you do not 'need to' in order to access the Published Content Cache!
-:::
+{% hint style="info" %}
+It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but the example is showing you do not 'need to' in order to access the Published Content Cache.
+{% endhint %}
 
 ## Customizing Services and Helpers
 
@@ -318,11 +318,11 @@ Another option, is to make use of the underlying DI framework, and create custom
 
 This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of Controllers and Views.
 
-:::warning
+{% hint style="warning" %}
 Depending on where the custom service will be utilised, we will dictate the best practice approach to accessing the 'Published Content Cache'. If it is 100% guaranteed that the service will only be called from a place with an UmbracoContext, eg a controller or view, then it is safe to inject `IPublishedContentQuery` etc for simplicity.
 However if the custom service is called in a location without UmbracoContext (eg an notification handler) it will fail.
 Therefore the approach of accessing the Published Content Cache via injecting IUmbracoContextFactory and calling `EnsureUmbracoContext()` will provide consistency across any custom services no matter where they are utilised.
-:::
+{% endhint %}
 
 In this example, we create a custom service, that's responsible for finding key pages within a site, eg the News Section or the Contact Us page. These methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this service `SiteService`.
 
@@ -482,11 +482,11 @@ namespace Umbraco9.Services
 The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different...
 it enables the registering of the service in Singleton Scope, and its use outside of controllers and views.
 
-:::tip
+{% hint style="info" %}
 Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
 
 See the [Circular Dependencies](Circular-Dependencies) article for an example on how to get around this.
-:::
+{% endhint %}
 
 ###### Aside: What is the IUmbracoContextAccessor then?
 
@@ -566,11 +566,11 @@ namespace Umbraco9.Controllers
 }
 ```
 
-:::tip
+{% hint style="info" %}
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
 ![Generate DI constructor parameters in Visual Studio](images/vs-di-constructor-generation-tip.gif)
-:::
+{% endhint %}
 
 #### Using the SiteService inside a View
 

@@ -11,19 +11,19 @@ These examples are for Umbraco 9.x and 10.x and they rely on [NUnit](https://nun
 
 When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](https://our.umbraco.com/documentation/reference/using-ioc/). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
-:::note
+{% hint style="info" %}
 When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
-:::
+{% endhint %}
 
 ## Mocking
 These tests follows an approach thats based on isolating your tests from Umbraco and mock as much of Umbraco’s dependencies as possible. Think of it like you’re not testing Umbraco, you’re testing how your implementation code interacts with Umbraco’s behavior.
 
 Once you get familiar with these underlying dependencies you might want to start looking in to replacing them with actual implementations (leaning more towards integration or E2E testing) but that’s completely up to you. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
 
-:::tip
+{% hint style="info" %}
 If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. 
 For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
-:::
+{% endhint %}
 
 ### Testing a ContentModel
 
@@ -158,9 +158,9 @@ public class PageSurfaceControllerTests
 }
 ```
 
-:::tip
+{% hint style="info" %}
 ```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
-:::
+{% endhint %}
 
 ## Testing an UmbracoApiController
 

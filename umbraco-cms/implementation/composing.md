@@ -66,10 +66,10 @@ namespace My.Website
 
 ```
 
-:::warning
+{% hint style="warning" %}
 Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding,
 that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
-:::
+{% endhint %}
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
 
@@ -238,9 +238,9 @@ public class ThisComposer : IComposer
 
 `ThisComposer` will 'compose' before `ThatOtherComposer`.
 
-:::warning
+{% hint style="warning" %}
 If you create a circular dependency then Umbraco will fail to boot and will report the conflicting/circular dependency.
-:::
+{% endhint %}
 
 ### [Weight]
 
@@ -301,9 +301,10 @@ But maybe they want to swap our two "something" implementations? In this case, a
 [assembly:EnableComposer(typeof(Way2Composer))]
 ```
 
-:::tip
+{% hint style="info" %}
 Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
-:::
+{% endhint %}
+
 
 ## Runtime Levels
 
@@ -428,10 +429,10 @@ namespace TestCollections.Code
 
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 
-:::warning
+{% hint style="warning" %}
 Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco.
 If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
-:::
+{% endhint %}
 
 ```csharp
 using System;
