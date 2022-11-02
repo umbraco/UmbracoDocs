@@ -1,7 +1,6 @@
 ---
 meta.Title: "Extending the Umbraco Backoffice" 
 meta.description: "The Umbraco backoffice itself can be customised and extended, this section is dedicated to getting started with these extension points."
-versionFrom: 8.0.0
 ---
 # Extending the Umbraco Backoffice
 

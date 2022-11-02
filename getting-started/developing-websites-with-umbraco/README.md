@@ -1,14 +1,13 @@
 ---
 meta.Title: "Developing websites with Umbraco"
 meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
-versionFrom: 8.0.0
 ---
 # Developing websites with Umbraco
 
 Umbraco is built on top of a Microsoft MVC framework. You can build upon this technology to work alongside and extend the functionality in Umbraco. It is also designed to be pluggable so that you can replace key components with your own custom implementations if prefer.
 
 {% hint style="info" %}
-It is possible to build an Umbraco site without Visual Studio and the techniques on this page - see the [Creating websites with Umbraco](../Creating-websites-with-Umbraco) section.
+It is possible to build an Umbraco site without Visual Studio and the techniques on this page - see the [Creating websites with Umbraco](../creating-websites-with-umbraco.md) section.
 {% endhint %}
 
 This section is dedicated to introducing techniques that will help you get started with developing with an Umbraco site. You'll find out how to develop with the framework of an Umbraco project as well as how to extend and customize the Umbraco backoffice.
@@ -19,17 +18,17 @@ You will also find information regarding Umbraco's underlying dependency injecti
 
 This will break into two sections: Extending the Umbraco backoffice and Developing custom websites.
 
-## [Extending the Umbraco backoffice](Extending-the-Umbraco-Backoffice)
+## [Extending the Umbraco backoffice](extending-the-umbraco-backoffice)
 
 The Umbraco backoffice can be extended using AngularJS and C#. Customizing the Umbraco backoffice and editing experience includes creating your own Property Editors, Dashboards, and packages. You will also find information about how to customize things like Health Checks and the built-in search functionality.
 
-[Checkout the Extending section of these docs](../../Extending/) for a good place to start.
+[Checkout the Extending section of these docs](../../umbraco-cms/extending/) for a good place to start.
 
 {% hint style="info" %}
 From a frontend perspective, Umbraco does not dictate HTML, CSS, or JS in your website build. There is nothing Umbraco specific about it.
 {% endhint %}
 
-## [Customizing Umbraco sites](Customizing-Umbraco-sites)
+## [Customizing Umbraco sites](customizing-umbraco-sites)
 
 Umbraco is highly customizable which means you can integrate it with anything and make it behave as you want. With Umbraco, you start out with a clean slate.
 
