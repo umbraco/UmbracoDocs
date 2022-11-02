@@ -1,7 +1,6 @@
 ---
 meta.Title: "Hosting an Umbraco infrastructure" 
 meta.description: "Here you will find details on Azure, Umbraco Cloud, upgrading Umbraco, server configuration and system requirements."
-versionFrom: 8.0.0
 ---
 
 # Hosting an Umbraco Infrastructure
@@ -10,34 +9,26 @@ You can find resources to guide you through the process of installing and hostin
 
 In this section you will also find information on areas such as load balancing, deployments and user management.
 
-:::center
 ![Umbraco Cloud](images/cloud.png)
-:::
 
 ## How to install and configure an Umbraco installation
 
-- [Setup Umbraco](../../Fundamentals/Setup/)
+- [Setup Umbraco](../umbraco-cms/fundamentals/setup/)
 
-- [Install Umbraco](../../Fundamentals/Setup/Install/)
+- [Install Umbraco](../umbraco-cms/fundamentals/setup/install)
 
-- [Upgrading Umbraco](../../Fundamentals/Setup/Upgrading/)
+- [Upgrading Umbraco](../umbraco-cms/fundamentals/setup/upgrading/)
 
 ## Server Requirements
 
-- [Server setup](../../Fundamentals/Setup/Server-Setup/)
+- [Server setup](../umbraco-cms/fundamentals/setup/server-setup/)
 
-- [Server setup requirements](../../Fundamentals/Setup/Requirements/)
+- [Server setup requirements](../umbraco-cms/fundamentals/setup/requirements.md)
 
-- [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps.md)
-
-:::
+- [Running on Azure web apps](../umbraco-cms/fundamentals/setup/server-setup/azure-web-apps.md)
 
 ## Related links
 
-- [External login providers](../../Reference/Security/external-login-providers/)
+- [External login providers](../umbraco-cms/reference/security/external-login-providers.md)
 
-:::
-
-:::center
 ![Umbraco Cloud](images/umbraco_free_way_01.png)
-:::
