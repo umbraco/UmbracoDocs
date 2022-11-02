@@ -1,12 +1,7 @@
 # Table of contents
 
 * [README](README.md)
-* [Contributing Guidelines](contribs.md)
-* [The MIT License (MIT)](LICENSE.md)
 * [The Licensing Model](the-licensing-model.md)
-* [.github](.github/README.md)
-  * [ISSUE\_TEMPLATE](.github/issue\_template/README.md)
-    * [issue-template](.github/ISSUE\_TEMPLATE/issue-template.md)
 
 ## Contribute
 
