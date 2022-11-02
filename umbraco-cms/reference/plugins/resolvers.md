@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "false"
-needsV9Update: "false"
+needsV8Update: 'false'
+needsV9Update: 'false'
 ---
 
 # Resolvers
@@ -22,7 +22,7 @@ As an example, to set a different IContentStore, we would execute this code:
 
 `ContentStoreResolver.Current.SetContentStore(new CustomContentStore("12355"));`
 
-**All single object resolvers return an object that will exist as a *singleton* and one instance will exist for the lifetime of the application.**
+**All single object resolvers return an object that will exist as a **_**singleton**_** and one instance will exist for the lifetime of the application.**
 
 ## Multiple object resolver
 

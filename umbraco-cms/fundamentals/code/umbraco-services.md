@@ -7,11 +7,12 @@ versionTo: 10.0.0
 
 _Whenever you need to modify an entity that Umbraco stores in the database, there are a number of service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
-
 ## Accessing the Umbraco services
+
 Services are typically defined using interfaces. Umbraco has them in the `Umbraco.Cms.Core.Services` namespace, while the specific implementations can be found under the `Umbraco.Cms.Core.Services.Implement` namespace. To use the service APIs you must first access them. Owing to the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This can be achieved via injecting the specific service you require - the service type or an interface.
 
 ### Access via a Controller
+
 If you are accessing Umbraco services inside your own controller class, you can add the Umbraco services that you need as constructor parameters. An instance of every service will be provided at runtime from the service container and by saving each one to a local field, you can make use of them within the scope of your class:
 
 ```csharp
@@ -34,6 +35,7 @@ public class CustomController
 ```
 
 ### Access via a Razor View Template
+
 Inside a Razor View template, you can make use of a service injection into a view using the `@inject` directive. It works similarly to adding a property to the view, and populating the property using DI:
 
 ```csharp
@@ -116,11 +118,13 @@ namespace Umbraco.Cms.Core.Events
 ```
 
 #### Custom Class example
+
 When you are creating your own custom class, in order to make use of the dependency injection framework, you need to register the `ICustomNewsArticleService` service with the concrete type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
 
 There are several different ways that you can achieve the same outcome:
 
 Register directly into the **Startup.cs** class.
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 
@@ -181,9 +185,9 @@ namespace DefaultNamespace
 }
 ```
 
-Especially recommended when creating Umbraco packages as you won't have access to the Startup class,  instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`. 
+Especially recommended when creating Umbraco packages as you won't have access to the Startup class, instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`.
 
-```C#
+```
 public class CustomComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -193,7 +197,8 @@ public class CustomComposer : IComposer
 }
 ```
 
-</br>
+\
+
 
 Then your custom class eg. `CustomNewsArticleService` can take advantage of the same injection to access services eg:
 
@@ -238,24 +243,25 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
 ```
 
 ## Services available
+
 There is full API coverage of all Umbraco core entities:
 
-- [AuditService](../../../Reference/Management/Services/AuditService/index.md)
-- [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
-- [ContentService](../../../Reference/Management/Services/ContentService/index.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
-- [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
-- [EntityService](../../../Reference/Management/Services/EntityService/index.md)
-- [FileService](../../../Reference/Management/Services/FileService/index.md)
-- [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
-- [MacroService](../../../Reference/Management/Services/MacroService/index.md)
-- [MediaService](../../../Reference/Management/Services/MediaService/index.md)
-- [MemberService](../../../Reference/Management/Services/MemberService/index.md)
-- [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
-- [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
-
+* [AuditService](../../../Reference/Management/Services/AuditService/index.md)
+* [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
+* [ContentService](../../../Reference/Management/Services/ContentService/index.md)
+* [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
+* [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
+* [EntityService](../../../Reference/Management/Services/EntityService/index.md)
+* [FileService](../../../Reference/Management/Services/FileService/index.md)
+* [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
+* [MacroService](../../../Reference/Management/Services/MacroService/index.md)
+* [MediaService](../../../Reference/Management/Services/MediaService/index.md)
+* [MemberService](../../../Reference/Management/Services/MemberService/index.md)
+* [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
+* [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
 
 ### More information
-- [Umbraco Services API reference](../../../Reference/Management/Services/)
-- [Umbraco Notifications reference](../../../Reference/Notifications/)
-- [Routes and controllers](../../../Reference/Routing/)
+
+* [Umbraco Services API reference](../../../Reference/Management/Services/)
+* [Umbraco Notifications reference](../../../Reference/Notifications/)
+* [Routes and controllers](../../../Reference/Routing/)

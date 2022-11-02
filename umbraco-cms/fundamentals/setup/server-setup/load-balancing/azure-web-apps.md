@@ -20,7 +20,6 @@ The App Service plan with the Administrative web app should only be scaled up. T
 
 The App Service plan with the Public web app can be scaled both out and up.
 
-
 ## Lucene/Examine configuration
 
 The single instance Backoffice Administrative Web App should be set to use [SyncedTempFileSystemDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
@@ -45,16 +44,15 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 {% tabs %}
 {% tab title="Latest version" %}
-## Host synchronization
+### Host synchronization
 
 Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0).
 
 When a host restarts, the current host 'winds down' while another host is started. This means there can be more than one live host during a restart. Restarts can occur in many scenarios including when an Azure Web App auto-transitions between hosts, you scale the instances or you utilize slot swapping.
 
-Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single host at once. Umbraco manages this synchronization by an object called `IMainDom`. 
+Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single host at once. Umbraco manages this synchronization by an object called `IMainDom`.
 
-By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism. This mechanism only works on Windows systems and doesn't work with multi-instance Azure Web Apps. We need to swap it out for an alternative file system based locking mechanism by using the following appSetting.
-With **Umbraco v10+** `FileSystemMainDomLock` is the default setting.
+By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism. This mechanism only works on Windows systems and doesn't work with multi-instance Azure Web Apps. We need to swap it out for an alternative file system based locking mechanism by using the following appSetting. With **Umbraco v10+** `FileSystemMainDomLock` is the default setting.
 
 ```json
 {
@@ -68,11 +66,11 @@ With **Umbraco v10+** `FileSystemMainDomLock` is the default setting.
 }
 ```
 
-Apply this setting to both the __SCHEDULINGPUBLISHER__ Administrative server and the __SUBSCRIBER__ scalable public-facing servers.
+Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
 {% endtab %}
 
 {% tab title="9.0.0 - 9.4.0" %}
-## AppDomain synchronization
+### AppDomain synchronization
 
 Each application runs inside an [AppDomain](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/application-domains) which is like a subprocess within the web app process. When an ASP.Net application restarts, the current AppDomain 'winds down' while another AppDomain is started; meaning there can be more than 1 live AppDomain during a restart. Restarts can occur in many scenarios including when an Azure Web App auto transitions between hosts, you scale the instances or you utilize slot swapping.
 
@@ -90,10 +88,9 @@ Some file system based services in Umbraco such as the Published Cache and Lucen
 }
 ```
 
-Apply this setting to both the __SCHEDULINGPUBLISHER__ Administrative server and the __SUBSCRIBER__ scalable public-facing servers.
+Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
 {% endtab %}
 {% endtabs %}
-
 
 ## Steps to set-up an environment
 
@@ -103,9 +100,7 @@ Apply this setting to both the __SCHEDULINGPUBLISHER__ Administrative server and
 4. Test: Perform some content updates on the administrative environment, ensure they work successfully in that environment, then verify that those changes appear on the scalable public-facing environment
 5. Fix the backoffice environment to be the SCHEDULINGPUBLISHER scheduling server and the scalable public-facing environment to be SUBSCRIBERs - see [Setting Explicit Server Roles](flexible-advanced.md#explicit-schedulingpublisher-server)
 
-:::note
-Ensure all Azure resources are in the same region to avoid connection lag.
-:::
+:::note Ensure all Azure resources are in the same region to avoid connection lag. :::
 
 ## Scaling
 
@@ -117,6 +112,4 @@ The public-facing subscriber Azure Web Apps can be manually or automatically sca
 
 Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are various automation techniques you can use to simplify the process. That is outside the scope of this article.
 
-:::note
-This also means that you should not be editing templates or views on a live server as SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
-:::
+:::note This also means that you should not be editing templates or views on a live server as SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment. :::

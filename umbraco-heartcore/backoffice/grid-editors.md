@@ -1,12 +1,12 @@
 ---
 versionFrom: 8.0.0
-meta.Title: "Custom Grid Editors in Umbraco Heartcore"
-meta.Description: "Documentation for Custom Grid Editors in Umbraco Heartcore"
+meta.Title: Custom Grid Editors in Umbraco Heartcore
+meta.Description: Documentation for Custom Grid Editors in Umbraco Heartcore
 ---
 
 # Custom Grid Editors
 
-A custom Grid Editor in Heartcore is built using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
+A custom Grid Editor in Heartcore is built using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements).
 
 Custom Grid Editors can be created under the **Grid Editors** tree in the **Settings** section.
 
@@ -29,7 +29,7 @@ set value(value) { this.#value = value }
 
 The `set value()` is called when the editor is loaded and when the value is changed outside of the editor.
 
-The `get value()` is called when the grid is saving and when the editor raises an [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
+The `get value()` is called when the grid is saving and when the editor raises an [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input\_event).
 
 ## Using external libraries
 
@@ -53,9 +53,7 @@ A Module Alias can be configured under **Headless -> Custom Editors Configuratio
 
 ![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
 
-:::tip
-Use a Module Alias when importing libraries to ensure only a single version of that library is loaded.
-:::
+:::tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. :::
 
 ## Accessing backoffice components
 
@@ -65,9 +63,7 @@ Using this library reduces breaking changes in the exposed API that would otherw
 
 Currently, the library is exposing only a few components but Feature Requests and Pull Requests are more than welcome.
 
-:::note
-The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias
-:::
+:::note The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias :::
 
 ## JSON Schema
 
@@ -82,7 +78,6 @@ The default Schema looks like this:
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "string"
 }
-
 ```
 
 Since it has `"type": "string"` the different APIs will return the stored value as a string.
@@ -125,15 +120,17 @@ Notice how there's a `"format":·"uri-reference"` to the `url` property in the s
 
 Currently, the following combinations are supported:
 
-**type**: `string`<br>
-**format**: `uri-reference`<br>
-**value**: Content or Media `UDI`<br>
-**returned**: A URL to the item if exists.<br>
+**type**: `string`\
+**format**: `uri-reference`\
+**value**: Content or Media `UDI`\
+**returned**: A URL to the item if exists.\
 
-**type**: `string`<br>
-**format**: `rich-text`<br>
-**value**: Rich Text, for example from the TinyMCE editor<br>
-**returned**: The value where all `a` tags with a `locallink` href and `img` tags with a `data-udi` attribute is replaced with the correct links to the items.<br>
+
+**type**: `string`\
+**format**: `rich-text`\
+**value**: Rich Text, for example from the TinyMCE editor\
+**returned**: The value where all `a` tags with a `locallink` href and `img` tags with a `data-udi` attribute is replaced with the correct links to the items.\
+
 
 ## Limitations and best practices
 
@@ -143,9 +140,10 @@ To make your custom editors less likely to break with future updates, do not use
 
 If the library is missing any functionality, raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
 
-Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
+Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_shadow\_DOM).
 
 :::links
+
 ## Related articles
-- [Creating a Custom Grid Editor](../../Tutorials/Creating-A-Custom-Grid-Editor/)
-:::
+
+* [Creating a Custom Grid Editor](../../Tutorials/Creating-A-Custom-Grid-Editor/) :::
