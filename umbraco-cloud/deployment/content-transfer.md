@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Transfering content with Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
@@ -13,7 +11,7 @@ Content and media transfers are flexible which means you have complete control o
 
 Transferring content will overwrite any existing nodes on the target environment. Content transfers will transfer the items that you select in the "source" environment to the "target" environment the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your metadata beforehand. Please refer to our documentation on how to deploy metadata from either [Local to Cloud](../Local-to-Cloud) or [Cloud to Cloud](../Cloud-to-Cloud).
+**Important**: Content and Media transfers will only work if you've deployed all changes to your metadata beforehand. Please refer to our documentation on how to deploy metadata from either [Local to Cloud](Local-to-Cloud) or [Cloud to Cloud](Cloud-to-Cloud).
 
 ## Step-by-step
 
@@ -85,4 +83,4 @@ Sometimes a content transfer might not be possible. For example, if you add a ne
 
 ![clone dialog](images/schema-mismatch_v10.png)
 
-If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../../Troubleshooting/Deployments/Schema-Mismatches/index.md) article, where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../troubleshooting/deployments/schema-mismatches.md) article, where you can read about how to resolve the issues.

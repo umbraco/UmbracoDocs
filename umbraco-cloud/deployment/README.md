@@ -1,8 +1,6 @@
 ---
 meta.Title: "A deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another"
 meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic 'left to right' deployment model, meaning that changes are first made in the Development or local environment and then deployed to the Live environment"
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Deployment
@@ -30,7 +28,7 @@ With this arrangement, you don't need to grant Umbraco Cloud portal access to yo
 
 Learn more about the deployment approach in this video, which will also show you how to deploy metadata as well as how to transfer content and media. Below you'll find links to articles containing step-by-step guides for each approach.
 
-<iframe width="800" height="450" title="How to manage deployments on Umbraco Cloud" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### [insert video here](https://www.youtube.com/embed/sjId_hN1ba0?rel=0)
 
 ### Deploying Metadata
 
@@ -51,7 +49,7 @@ Moving your content and media between your environments is done through the Umbr
 Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
 :::
 
-## [Deploy Settings](../../Add-ons/Umbraco-Deploy/Deploy-Settings/)
+## [Deploy Settings](/umbraco-deploy/deploy-settings.md)
 
 All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.
 

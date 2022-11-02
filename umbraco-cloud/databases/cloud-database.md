@@ -26,7 +26,7 @@ Once the firewall is open, it's time to fire up SQL Management Studio and connec
 
 To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" shortcut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type. Remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field (otherwise, security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short video:
 
-<iframe width="800" height="450" title="How to connect to an Umbraco Cloud database" src="https://www.youtube.com/embed/yrCNsW-8_nU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### [Insert video here, use the link](https://www.youtube.com/embed/yrCNsW-8_nU?rel=0)
 
 ### Moving on
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Remember to let Umbraco Cloud do the work when it comes to the Umbraco-related tables (`Umbraco*` and `CMS*` tables).
@@ -63,4 +63,5 @@ If you're using Visual Studio 2015+ check this path:
 
 In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). (source: MSDN forum)
 
-Now that you are all set and ready you can continue to work with your [database locally](../Local-Database).
+Now that you are all set and ready you can continue to work with your [database locally](../databases/local-database.md).
+).

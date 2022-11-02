@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
+
 ---
 
 # Restoring Content
@@ -54,7 +53,7 @@ To see the media, go to the **Media** section and **reload** the tree.
 
 ![Workspace Restore](images/Workspace_Restore.gif)
 
-<iframe width="800" height="450" title="Restoring Content: Workspace Restore" src="https://www.youtube.com/embed/0jIhKZOSeLc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### [Insert video here](https://www.youtube.com/embed/0jIhKZOSeLc?rel=0)
 
 ### Tree Restore
 
@@ -71,7 +70,7 @@ The Tree restore option restores all the entities available for the selected tre
 
 ![Tree Restore](images/Tree-Restore.gif)
 
-<iframe width="800" height="450" title="Restoring Content: Tree Restore" src="https://www.youtube.com/embed/X7m3FzhRHp0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### [Insert video here](https://www.youtube.com/embed/X7m3FzhRHp0?rel=0)
 
 ### [Partial Restore](Partial-Restore)
 

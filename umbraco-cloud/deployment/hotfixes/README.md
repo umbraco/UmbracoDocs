@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # How to handle hotfixes on Umbraco Cloud projects
@@ -11,13 +9,13 @@ Let's say you have 2 environments, a Live environment and a Development environm
 
 Normally you would do this, by making the hotfix locally, pushing it to the Development environment, and then deploying it to the Live environment. In this scenario that's not possible, as you do not want to deploy the other pending changes you are still working on.
 
-Following the workflow of Umbraco Cloud, you should never make changes directly to your Live environment. You should only make changes to the Live environment if that's the only environment you have. Read the [Project overview](../../Getting-Started/Project-overview/) article to learn more about environments on Umbraco Cloud.
+Following the workflow of Umbraco Cloud, you should never make changes directly to your Live environment. You should only make changes to the Live environment if that's the only environment you have. Read the [Project overview](/umbraco-cloud/getting-started/project-overview.md) article to learn more about environments on Umbraco Cloud.
 
 With that said, it **is** possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud.
 
 There are two approaches you can use:
 
-## [1. Deploy hotfix with Git branching](Using-Git/)
+## [1. Deploy hotfix with Git branching](using-git.md)
 
 One way to apply a hotfix to a Live environment on Cloud is to clone down the Development environment and then use Git to push selected changes to the Live environment. The advantage of using this approach is that your Git history is more accurate and you only work with one local repository. It does require some knowledge of how to use Git, using a client can make this a lot easier, and you should only go with this guide if you feel comfortable working with Git.
 
@@ -25,10 +23,10 @@ One way to apply a hotfix to a Live environment on Cloud is to clone down the De
 
 Read the guide here: [Deploy hotfix with Git](Using-Git/)
 
-## [2. Move files manually](Move-files-manually/)
+## [2. Move files manually](Move-files-manually.md)
 
 Another way to apply a hotfix to a Live environment would be to clone down both your Development and your Live environment to your local machine. Take the changed and/or updated files from the cloned Development environment, copy them into the cloned Live environment, and push them to the Live environment on Cloud. Using this guide will also allow you to test the changes on a cloned version of your Live environment before pushing it to the Cloud.
 
 ![Manual move](images/hotfix-manual-move.gif)
 
-Read the guide here: [Move files manually](Move-files-manually/)
+Read the guide here: [Move files manually](move-files-manually.md)

@@ -62,7 +62,7 @@ One of the benefits of having the Live environment cloned down, is that you can 
 :::note
 In Umbraco version 8 and below, navigate to the `site/wwwroot/data/Revision` folder in your Live repository.
 ::::
-3. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](../../../Set-up/Power-Tools) articles.
+3. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](/umbraco-cloud/set-up/power-tools/README.md) articles.
 4. The changes will now be reflected in the backoffice of your local Live environment.
 
 Once you've checked that everything works locally, you are ready to push to the Live environment.
@@ -73,7 +73,7 @@ Once you've checked that everything works locally, you are ready to push to the 
 :::note
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site.
 :::
-2. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article
+2. Find a guide on how to extract the files, in the [Manual Extraction](../../set-up/power-tools/manual-extractions.md) article
 
 You have now applied a hotfix to the Live environment.
 

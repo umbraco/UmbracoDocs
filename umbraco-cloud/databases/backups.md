@@ -7,7 +7,8 @@ versionTo: 10.0.0
 Sometimes you might need to have a backup of your Cloud database. This can be accomplished in at least two ways. This article will go through two of those options.
 
 - [Backup with SQL Server Management Studio](#backup-with-sql-server-management-studio).
-- [Backup and data retention policy](https://our.umbraco.com/documentation/Umbraco-Cloud/Frequently-Asked-Questions/#backups-and-data-retention)
+- [Backup and data retention policy](/umbraco-cloud/frequently-asked-questions.md/#backups-and-data-retention)
+#backups-and-data-retention
 
 ## Backup with SQL Server Management Studio
 Follow these steps:
