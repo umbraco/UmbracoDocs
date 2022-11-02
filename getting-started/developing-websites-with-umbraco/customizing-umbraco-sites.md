@@ -19,16 +19,12 @@ You can implement your own MVC controllers to work alongside Umbraco.
 
 - [Different types of Controllers](../../../Implementation/Controllers)
 
-:::links
-
 ## Umbraco specific MVC concepts
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
 - [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
 - [Default routing](../../../Implementation/Default-Routing/Controller-Selection)
-
-:::
 
 ## Dependency Injection and Umbraco's Composition
 
@@ -43,6 +39,4 @@ When you're developing with Umbraco you might sometimes run into some errors and
 - [General debugging](../../../Fundamentals//Code/Debugging/)
 - [Debugging with SourceLink](../../../Reference/Debugging/)
 
-:::center
 ![Umbraco packages](images/corona_blogpost_05SoMe_768x432px.png)
-:::

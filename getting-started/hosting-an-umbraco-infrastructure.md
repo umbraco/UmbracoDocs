@@ -10,9 +10,7 @@ You can find resources to guide you through the process of installing and hostin
 
 In this section you will also find information on areas such as load balancing, deployments and user management.
 
-:::center
 ![Umbraco Cloud](images/cloud.png)
-:::
 
 ## How to install and configure an Umbraco installation
 
@@ -30,14 +28,8 @@ In this section you will also find information on areas such as load balancing, 
 
 - [Running on Azure web apps](../../Fundamentals/Setup/Server-Setup/azure-web-apps.md)
 
-:::
-
 ## Related links
 
 - [External login providers](../../Reference/Security/external-login-providers/)
 
-:::
-
-:::center
 ![Umbraco Cloud](images/umbraco_free_way_01.png)
-:::

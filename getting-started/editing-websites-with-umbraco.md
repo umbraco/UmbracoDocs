@@ -22,6 +22,4 @@ There is also information on how to use features such as translations, forms, an
 
 [What are the options for managing forms?](../../Add-ons/UmbracoForms/Editor/)
 
-:::center
 ![Editing Umbraco](images/umbraco_8_2_A.png)
-:::

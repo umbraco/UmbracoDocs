@@ -26,6 +26,4 @@ In this section you will find information on the key concepts and requirements o
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
-:::centre
 ![Umbraco business](images/Documentation_blogpost_styleguide_b.png)
-:::

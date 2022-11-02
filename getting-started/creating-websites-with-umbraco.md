@@ -10,9 +10,7 @@ In this section you will find information on which frameworks, languages and pla
 
 There is a set of key concepts that you will need to familiarize yourself with. This section will give you the details you need as well as introduce you to how you can work with them in the Umbraco backoffice.
 
-:::center
 ![Umbraco tree image](images/flexible_Email_hero_780x405px.png)
-:::
 
 We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
 

@@ -13,15 +13,11 @@ In this section you will find some routes to how to do so and some tutorials to 
 
 It is recommended that you have some knowledge and prior experience working with AngularJS, to follow the tutorials presented in this section.
 
-:::links
-
 ## Resources for extending
 
 - [Package manifest](../../../Extending/Property-Editors/Package-Manifest/index.md)
 - [Angular docs / Backoffice UI API](../../../Reference/Angular/)
 - [C# API Docs](../../../Reference/API-Documentation/)
-
-:::
 
 ## What can be extended?
 
@@ -57,6 +53,4 @@ If you're in a creative mood then why not experiment with some of our tutorials:
 
 [Creating a Package](../../../Extending/Packages/Creating-a-Package/)
 
-:::center
 ![Extending Umbraco](images/Headless_Email_hero_780x405px.png)
-:::
