@@ -12,7 +12,7 @@ This article will give you the details you need to install Umbraco unattended.
 
 ## Get clean install of Umbraco
 
-In order to get a clean instance of Umbraco either follow our installation guide for how to [Install an Umbraco project template](./install-umbraco-with-templates.md/#InstallUmbracowith.NETCLI) or download a zip file directly from [Downloads](https://our.umbraco.com/download).
+In order to get a clean instance of Umbraco either follow our installation guide for how to [Install an Umbraco project template](./install-umbraco-with-templates.md/#InstallUmbracowith.NETCLI).
 
 ## Configure your database
 
