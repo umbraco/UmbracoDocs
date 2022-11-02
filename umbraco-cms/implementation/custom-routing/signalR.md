@@ -149,9 +149,9 @@ When setting up SignalR routes, add the route to `ReservedPaths` in the `appsett
 }
 ```
 
-:::note
+{% hint style="info" %}
 You need to provide the default reserved paths, else you'll run into an issue as mentioned on [GitHub](https://github.com/umbraco/Umbraco-CMS/issues/12965).
-:::
+{% endhint %}
 
 ### Test the setup
 
