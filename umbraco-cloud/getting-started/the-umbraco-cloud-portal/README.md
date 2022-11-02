@@ -19,11 +19,9 @@ You can see environments, usage for each project, which plans it's on, and wheth
 
 In the top-right corner of the Cloud Portal, you will find:
 
-- **Create New Project** - Allows you to create more projects using the plan you wish and a project will be ready for you within a few minutes.
-
-- **Notifications** - You can also see notifications for your different projects. For example: if your project has been automatically updated or if an upgrade has failed.
-
-- **Profile** - Manage projects, subscriptions, pending invites, organization information, profile details, view release notes, and log out of the portal.
+* **Create New Project** - Allows you to create more projects using the plan you wish and a project will be ready for you within a few minutes.
+* **Notifications** - You can also see notifications for your different projects. For example: if your project has been automatically updated or if an upgrade has failed.
+* **Profile** - Manage projects, subscriptions, pending invites, organization information, profile details, view release notes, and log out of the portal.
 
 ### Project Groups
 
@@ -43,7 +41,7 @@ Click **Add Group** to give it a name and then drag and drop your projects into 
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
 
-![Chat Feature](images/Chat.png)
+![Chat Feature](../The-umbraco-cloud-portal/images/Chat.png)
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -57,20 +55,20 @@ Managing your projects has been made even simpler with Umbraco Cloud. If you go 
 
 ![Project Overview](images/project-overview-v10.png)
 
-- Project Name along with the options to **Manage environments**, **Invite User**, or **Settings** section.
-- Environment name along with the option to **Restart environment**, view **Error Logs** and **Logs**, **Clone project**, and access to **Power Tools (Kudu)**.
-- Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
-- Option to view change details.
+* Project Name along with the options to **Manage environments**, **Invite User**, or **Settings** section.
+* Environment name along with the option to **Restart environment**, view **Error Logs** and **Logs**, **Clone project**, and access to **Power Tools (Kudu)**.
+* Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
+* Option to view change details.
 
-While managing the environments on your project, Click on **Manage environments** at the top of the page, and you can add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project overview](../Project-Overview) article.
+While managing the environments on your project, Click on **Manage environments** at the top of the page, and you can add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project overview](../Project-Overview/) article.
 
-Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/Cloud-to-Cloud) article.
+Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/Cloud-to-Cloud/) article.
 
-In the [Settings](../../Set-Up/Project-settings) section, you will find a lot more options to configure your project.
+In the [Settings](../../Set-Up/Project-settings/) section, you will find a lot more options to configure your project.
 
 ### Manage Subscriptions
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/Manage-Subscriptions) article.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/Manage-Subscriptions/) article.
 
 ### Pending Invites
 
@@ -80,7 +78,7 @@ On Umbraco Cloud, you can receive an invitation from different projects. These p
 
 ### Organizations
 
-On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](Organizations) article.
+On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](../The-umbraco-cloud-portal/Organizations/) article.
 
 ### Profile
 
@@ -88,18 +86,11 @@ The Profile consists of the following information:
 
 ![settings](images/profile.png)
 
-- Name: The name that is displayed on Umbraco Cloud.
-- Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
-  :::note
-    It is not possible to change this email address at a later point.
-  :::
-
-- Telephone: The contact number of the user.
-- Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile.
-  ![Edit profile](images/change-profile-info.png)
-
-- Change Password: Change the password for your Umbraco Cloud account from here.
-  ![change password](images/change-password.png)
+* Name: The name that is displayed on Umbraco Cloud.
+* Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal. :::note It is not possible to change this email address at a later point. :::
+* Telephone: The contact number of the user.
+* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile. ![Edit profile](images/change-profile-info.png)
+* Change Password: Change the password for your Umbraco Cloud account from here. ![change password](images/change-password.png)
 
 ## Release Notes
 
@@ -111,7 +102,7 @@ Each environment has an error log that appears only if you have any unread error
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
-During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../Databases/Cloud-Database).
+During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../Databases/Cloud-Database/).
 
 Environment errors are stored in the `UCErrorLog` table.
 
