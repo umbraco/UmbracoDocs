@@ -18,7 +18,7 @@ There are two ways to create a pull request:
 
 GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on every article at the top that links you directly to GitHub in order to edit that specific file:
 
-![Our edit button](images/edit-this-page.png)
+![Our edit button](images/PR-edit-this-page.png)
 
 This is helpful to fix typing errors or adding small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. You'd be better off creating a fork.
 
