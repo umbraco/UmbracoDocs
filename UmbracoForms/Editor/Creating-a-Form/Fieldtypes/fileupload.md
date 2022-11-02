@@ -9,7 +9,7 @@ The File Upload field allows the users to upload a file along with the Form on y
 
 In this article, you will find details about the configuration options you have for the File Upload field.
 
-![fileupload](images/fileupload-v9.png)
+![fileupload](images/fileupload-types.png)
 
 ## Predefined allowed File Types
 
