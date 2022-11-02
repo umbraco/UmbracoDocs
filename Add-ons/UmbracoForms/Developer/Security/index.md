@@ -21,7 +21,7 @@ Within the _Form Security_ tree, each user with a backoffice account is listed. 
 
 For further control, each form is listed and the user can be granted or denied access to each as appropriate.
 
-As new forms are created, users will automatically be granted access to them, unless the configuration setting `DefaultAccessToNewForms` has been set to a value of `Deny`.
+As new forms are created, users will automatically be granted access to them, unless the configuration setting `DefaultUserAccessToNewForms` has been set to a value of `Deny`.
 
 ## Start folders
 
