@@ -9,7 +9,7 @@ Umbraco's request pipeline is the process of building-up the URL for a node, res
 
 ## Published Request Preparation
 
-The inbound process is triggered by `UmbracoRouteValueTransformer` and then handled with the Published router. The [Published Content Request Preparation](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md) process kicks in and creates a `PublishedRequestBuilder` which will be used to create a `PublishedContentRequest`.
+The inbound process is triggered by `UmbracoRouteValueTransformer` and then handled with the Published router. The [Published Content Request Preparation](../../reference/routing/request-pipeline/published-content-request-preparation.md) process kicks in and creates a `PublishedRequestBuilder` which will be used to create a `PublishedContentRequest`.
 
 What it does:
 
@@ -28,9 +28,9 @@ What it does:
 
 ## Published Content Request Instance
 
-When finding published content the [PublishedRouter](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRouter.html) will first check if the [PublishedRequestBuilder](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRequestBuilder.html) already has content, if it doesn't the content finders will kick in. For more information, see the [Find published content](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md#find-published-content) section in the [Published Content Request Preparation](../../../Reference/Routing/Request-Pipeline/published-content-request-preparation.md) article.
+When finding published content the [PublishedRouter](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRouter.html) will first check if the [PublishedRequestBuilder](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Routing.PublishedRequestBuilder.html) already has content, if it doesn't the content finders will kick in. For more information, see the [Find published content](../../reference/routing/request-pipeline/published-content-request-preparation.md#find-published-content) section in the [Published Content Request Preparation](../../reference/routing/request-pipeline/published-content-request-preparation.md) article.
 
-This information is also used during the [Controller & Action selection](../Controller-Selection/index.md) process.
+This information is also used during the [Controller & Action selection](controller-selection.md) process.
 
 ## Rendering engine
 
@@ -38,4 +38,4 @@ Umbraco 9 and above only supports MVC.
 
 ### Related Information
 
-- [Routing in Umbraco](../../../Reference/Routing/Request-Pipeline/index.md)
+- [Routing in Umbraco](../../reference/routing/request-pipeline/)

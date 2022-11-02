@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.1.0
 meta.Title: "Unit Testing Umbraco"
 meta.Description: "A guide to getting started with unit testing in Umbraco"
 ---
@@ -9,13 +7,14 @@ meta.Description: "A guide to getting started with unit testing in Umbraco"
 
 These examples are for Umbraco 9.x and 10.x and they rely on [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4) and [AutoFixture](https://github.com/AutoFixture/AutoFixture) and they should be considered inspiration of how to get started with Unit Testing in Umbraco. There are many ways of testing Umbraco and there’s no right or wrong way.
 
-When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](https://our.umbraco.com/documentation/reference/using-ioc/). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
+When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
 {% hint style="info" %}
 When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
 {% endhint %}
 
 ## Mocking
+
 These tests follows an approach thats based on isolating your tests from Umbraco and mock as much of Umbraco’s dependencies as possible. Think of it like you’re not testing Umbraco, you’re testing how your implementation code interacts with Umbraco’s behavior.
 
 Once you get familiar with these underlying dependencies you might want to start looking in to replacing them with actual implementations (leaning more towards integration or E2E testing) but that’s completely up to you. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
@@ -27,7 +26,7 @@ For more inspiration and other ways of how to write tests in Umbraco there's a b
 
 ### Testing a ContentModel
 
-See [Reference documentation on Executing an Umbraco request](https://our.umbraco.com/Documentation/Implementation/Default-Routing/Execute-Request/#executing-an-umbraco-request).
+See [Reference documentation on Executing an Umbraco request](default-routing/execute-request.md#executing-an-umbraco-request).
 
 ```csharp
 public class PageViewModel : ContentModel
@@ -61,7 +60,7 @@ public class PageViewModelTests
 
 ### Testing a RenderController
 
-See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](https://our.umbraco.com/documentation/reference/routing/custom-controllers#creating-a-custom-controller).
+See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](../reference/routing/custom-controllers.md#creating-a-custom-controller).
 
 ```csharp
 public class PageController : RenderController
@@ -116,7 +115,7 @@ public class PageControllerTests
 
 ### Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](../../Reference/Routing/Surface-Controllers/index.md).
+See [Reference documentation on SurfaceControllers](../reference/routing/surface-controllers/).
 
 ```csharp
 public class PageSurfaceController : SurfaceController
@@ -164,7 +163,7 @@ public class PageSurfaceControllerTests
 
 ## Testing an UmbracoApiController
 
-See [Reference documentation on UmbracoApiControllers](../../Reference/Routing/Umbraco-API-Controllers/index.md#locally-declared-controller).
+See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
 ```csharp
 

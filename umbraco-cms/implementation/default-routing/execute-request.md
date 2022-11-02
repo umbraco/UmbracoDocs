@@ -21,14 +21,14 @@ When you are working in a View of type `UmbracoViewPage` (which is the default v
 
 All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to be `IPublishedContent` you can change your view type to `UmbracoViewPage` and the view will still render without issue even though the controller is passing it a model of type ContentModel.
 
-## [IPublishedContent](../../../Reference/Querying/IPublishedContent/)
+## [IPublishedContent](../../reference/querying/ipublishedcontent/)
 
 IPublishedContent is a strongly typed model used for all published content, media, and members. It is used to render content in your views for your website.
 
-## [UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index.md)
+## [UmbracoHelper](../../reference/querying/umbracohelper.md)
 
 UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data.
 
-## [IMemberManager](../../../Reference/Querying/IMemberManager/index.md)
+## [IMemberManager](../../reference/querying/imembermanager.md)
 
 IMemberManager is an user manager interface for accessing member data in the form of IPublishedContent. IMemberManager has a variety of methods that are useful in views, controllers, and webforms classes.

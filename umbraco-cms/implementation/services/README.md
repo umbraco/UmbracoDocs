@@ -1,6 +1,4 @@
 ﻿---
-keywords: implementing services injecting di custom services service pattern UmbracoHelper reusing dry
-versionFrom: 9.0.0
 meta.Title: "Umbraco Services and Helpers"
 meta.Description: "Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site"
 ---
@@ -46,7 +44,7 @@ Inside a view/template or partial view, access is also provided by the DI framew
 
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/Custom-Controllers/index.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
+Inside a [custom Controller](../../reference/routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../reference/management/services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../reference/querying/umbracohelper.md)).
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -159,7 +157,7 @@ namespace Umbraco9.Components
 }
 ```
 
-See documentation on [Composing](../Composing/) for further examples and information on Components and Composition.
+See documentation on [Composing](../composing.md) for further examples and information on Components and Composition.
 
 ### Accessing Published Content outside of a Http Request
 
@@ -170,7 +168,7 @@ In this example, when a page is unpublished, instead of a 404 occurring for the 
 we might want to serve a 410 'page gone' status code instead.
 We handle the Unpublishing notification of the ContentService, access the Published Content Cache, determine it's 'published url' and then store for later use in any 'serving the 410' mechanism.
 
-An [IContentFinder](../../Reference/Routing/Request-Pipeline/IContentFinder.md) could be placed in the ContentFinder ordered collection, right before a 404 is served. This could be done to lookup the incoming request against the stored location of 410 urls, and serve the 410 status request code if a match is found for the previously published item.
+An [IContentFinder](../../reference/routing/request-pipeline/icontentfinder.md) could be placed in the ContentFinder ordered collection, right before a 404 is served. This could be done to lookup the incoming request against the stored location of 410 urls, and serve the 410 status request code if a match is found for the previously published item.
 
 ```csharp
 using System;
@@ -485,7 +483,7 @@ it enables the registering of the service in Singleton Scope, and its use outsid
 {% hint style="info" %}
 Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`.  This can happen if your service interacts with third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
 
-See the [Circular Dependencies](Circular-Dependencies) article for an example on how to get around this.
+See the [Circular Dependencies](circular-dependencies.md) article for an example on how to get around this.
 {% endhint %}
 
 ###### Aside: What is the IUmbracoContextAccessor then?

@@ -365,7 +365,7 @@ namespace TestCollections.Code
     }
 
     // OrderedCollection - use when order of items is important (You may want to execute them in order)
-    // Different types of collections - https://our.umbraco.com/Documentation/Implementation/Composing/#types-of-collections
+    // Different types of collections.
     public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
     {
         protected override MyThingsCollectionBuilder This => this;
