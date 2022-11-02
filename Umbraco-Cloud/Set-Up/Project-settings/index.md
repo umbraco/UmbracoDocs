@@ -5,7 +5,22 @@ versionTo: 10.0.0
 
 # Project Settings
 
-When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, Secure Sockets Layer (SSL) certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
+When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the **Settings** dropdown:
+
+- View Project Overview
+- Team Members
+- Database Connection Details
+- Hostnames/Domains
+- Security Settings
+- Content Delivery Network (CDN) Caching and Optimizations
+- Deployment Webhooks
+- Secure Sockets Layer (SSL) certificates
+- Upgrade Plan
+- Rename Project
+- Advanced Settings
+- Project Usage
+- Dedicated Resources
+- Delete the project.
 
 ![settings](images/project-settings-v10.png)
 
@@ -33,7 +48,7 @@ Manage transport security settings for your project. You can configure certain t
 
 ## [CDN Caching and Optimization](../Manage-CDN-Caching/index.md)
 
-Manage Content Delivery Network (CDN) Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
+Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates) (Only available on **Professional** or **Enterprise** plan)
 
