@@ -8,7 +8,7 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../set-up/manage-hostnames/security-certificates.).
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](set-up/manage-hostnames/security-certificates.md).
 
 ### TLS support
 
