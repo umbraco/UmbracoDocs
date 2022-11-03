@@ -75,7 +75,7 @@ Clone down your Development environment. If you only have a Live environment, th
 
 Step 2.
 Add a global.json to root of the project. Your structure should look like this:
-
+```html
 .git
 src/
 .dockerignore
@@ -86,14 +86,18 @@ src/
 global.json
 NuGet.config
 Readme.md
+```
 
 Step 3.
+```json
 Open the global.json file and add the following:
+
 {
     "sdk": {
       "version": "6.0.401"
     }
 }
+```
 
 And save the file.
 
