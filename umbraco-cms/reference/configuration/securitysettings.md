@@ -51,7 +51,7 @@ At the root level of security you can configure the following
 
 ### Keep user logged in
 
-If set to false a user will be logged out after a specific amount of time has passed with no activity, you can specify this time span in the [global settings](../GlobalSettings/index.md) with the `TimeOut` key.
+If set to false a user will be logged out after a specific amount of time has passed with no activity, you can specify this time span in the [global settings](globalsettings.md) with the `TimeOut` key.
 
 ### Hide disabled users in backoffice
 

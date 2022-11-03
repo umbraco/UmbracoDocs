@@ -7,7 +7,7 @@ meta.Description: "Information on the imaging settings section"
 
 # Imaging settings
 
-The imaging settings section lets you configure the cache and resize settings for processed images on your project (using [ImageSharp.Web](https://docs.sixlabors.com/articles/imagesharp.web/) as default implementation). If you need to configure allowed image file types or auto fill image properties, you want to use [content settings](../ContentSettings/index.md) instead.
+The imaging settings section lets you configure the cache and resize settings for processed images on your project (using [ImageSharp.Web](https://docs.sixlabors.com/articles/imagesharp.web/) as default implementation). If you need to configure allowed image file types or auto fill image properties, you want to use [content settings](contentsettings.md) instead.
 
 All these settings contain default values, so nothing needs to be explicitly configured. A complete settings section for imaging can be seen here with all the default values:
 

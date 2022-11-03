@@ -157,19 +157,19 @@ By adding this value you can specify a new/different folder for storing your ico
 
 ### Umbraco CSS path
 
-By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your CSS files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco scripts path
 
-By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your script/js files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media path
 
-By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your media files, and still be able to edit them within Umbraco. It's also important to be aware of NetCores limitations regarding serving static file content here as well, by default, static content will only be served from the wwwroot folder. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Umbraco media physical root path
 
-By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../../Extending/FileSystemProviders/index.md)
+By adding this you can specify a new/different folder for storing your media files elsewhere on the server. Unlike `UmbracoMediaPath`, this does not change the relative path that media is served from (e.g. /media) but allows for files to be stored **outside** of the wwwroot folder. Both relative paths (../../Shared/Media) and absolute server paths (X:/Shared/Media) are supported. For more info see [Extending filesystem](../../extending/filesystemproviders/)
 
 ### Install missing database
 
@@ -181,7 +181,7 @@ If enabled Umbraco will try to automatically install the database when it's miss
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/file-system-replication.md) occurs. This will save 1 database call during startup.
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](../../fundamentals/setup/server-setup/load-balancing/file-system-replication.md) occurs. This will save 1 database call during startup.
 
 ### Database factory version
 

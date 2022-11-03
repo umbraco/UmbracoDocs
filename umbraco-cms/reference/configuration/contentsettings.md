@@ -206,7 +206,7 @@ The global settings for the scheduled job which cleans up historic content versi
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
+See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md) for more details on overriding configuration and preventing cleanup of specific versions.
 
 ```json
 "ContentVersionCleanupPolicy": {
@@ -291,5 +291,5 @@ If you need to create a custom Media Document Type to handle images called somet
 ```
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/) for more information.
+Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](globalsettings/) for more information.
 

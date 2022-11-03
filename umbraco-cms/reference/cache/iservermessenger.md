@@ -8,7 +8,7 @@ needsV8Update: "true"
 Broadcasts distributed cache notifications to all servers of a load balanced environment.
 Also ensures that the notification is processed on the local environment.
 
-For a specified [ICacheRefresher](ICacheRefresher/index.md), the implemented methods will:
+For a specified [ICacheRefresher](icacherefresher.md), the implemented methods will:
 
 * Notify the distributed cache
 * Invalidate specified items
