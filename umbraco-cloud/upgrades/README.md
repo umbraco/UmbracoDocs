@@ -10,7 +10,7 @@ _This document describes when & what product updates are rolled out on Umbraco C
 * Deploy
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases, if they do we will notify Umbraco Cloud users via the status page)
 
-When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](Minor-Upgrades) article for more details.
+When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](minor-upgrades.md) article for more details.
 
 ## When do upgrades happen?
 

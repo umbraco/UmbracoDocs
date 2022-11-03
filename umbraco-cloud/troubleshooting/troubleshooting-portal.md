@@ -22,11 +22,11 @@ The first thing to check is what type of error it is, you can do so by clicking 
 We have some guides on how to fix the most common errors below:
 
 * [Some artifacts collide on unique identifiers](deployments/structure-error.md)
-* [Duplicate dictionary](deployments/duplicate-dictionary-Items.md)
+* [Duplicate dictionary](deployments/duplicate-dictionary-items.md)
 * [Baseline merge issues](../getting-started/baselines/baseline-merge-conflicts.md)
 * [Colliding Data Types](deployments/colliding-datatypes.md)
 * [Type not found](deployments/type-not-found.md)
-* [Deployment fails instantly with no message](Deployments/deployment-failed.md)
+* [Deployment fails instantly with no message](deployments/deployment-failed.md)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 

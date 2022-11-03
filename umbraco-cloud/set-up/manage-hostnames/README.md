@@ -37,7 +37,9 @@ Check with your DNS host or hostname registrar regarding configuration details f
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
 {% endhint %}
 
-## [Insert video](https://www.youtube.com/embed/UQ4Sn40YipA?rel=0)
+{% embed url="https://www.youtube.com/embed/UQ4Sn40YipA?rel=0" %}
+Video example.
+{% endembed %}
 
 To specify the hostname for each root node using a multisite setup, follow these steps:
 

@@ -26,8 +26,8 @@ You can work with Forms in an environment of your choice. When you need to test 
 
 For more information on how to handle content transfer/restores on Umbraco Cloud, check out the following articles:
 
-* [Transfer content, media and forms](/content-transfer)
-* [Restoring content](/restoring-content)
+* [Transfer content, media and forms](content-transfer.md)
+* [Restoring content](restoring-content/README.md)
 
 ## Upgrades
 

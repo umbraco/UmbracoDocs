@@ -20,7 +20,7 @@ To get a technical overview of your Cloud environments, see the [Environments](.
 
 ## Team Members/Invite Users
 
-Another major component of your Umbraco Cloud project is *Team Members*. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as *Admins*, *Writers*, or *Readers*. Refer to the [Team Members](../set-up/Team-members/README.md) article to learn more about these roles.
+Another major component of your Umbraco Cloud project is *Team Members*. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as *Admins*, *Writers*, or *Readers*. Refer to the [Team Members](../set-up/team-members/README.md) article to learn more about these roles.
 
 ## Settings
 

@@ -72,7 +72,7 @@ When changes are pushed directly to a Live environment and you have more than on
 
 You have now applied a hotfix to the Live environment.
 
-When you are done with development on your Development environment, follow the normal workflow of [Deploying the changes between Cloud environments](../../../deployment/cloud-to-cloud/). The hotfix which now exists in both environments should automatically be merged upon deployment.
+When you are done with development on your Development environment, follow the normal workflow of [Deploying the changes between Cloud environments](../cloud-to-cloud.md). The hotfix which now exists in both environments should automatically be merged upon deployment.
 
 ## Important Notes
 

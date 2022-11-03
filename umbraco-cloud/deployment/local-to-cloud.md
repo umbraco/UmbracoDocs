@@ -24,7 +24,7 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 In the above example, Git Bash is used to stage, commit, and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are welcome to use any Git client or command line interface of your choice.
 
-Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](cloud-to-cloud) article.
+Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](cloud-to-cloud.md) article.
 
 ## Deploying without using a Git client
 
@@ -58,4 +58,4 @@ The local site should be running when you do this. The deploy marker will change
 
 Another way is to use the **Deploy** Dashboard in the **Settings** section of the Umbraco backoffice. Here, you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has been completed, or has failed.
 
-The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes. Learn more about this dashboard in the [Deployment](../) article.
+The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the **Deploy** Dashboard, it is also possible to trigger different processes. Learn more about this dashboard in the [Deployment](../deployment/README.md) article.

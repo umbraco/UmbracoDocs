@@ -40,4 +40,4 @@ See the steps below on how to resolve the issue.
 
 When you've followed these steps, go through your Development / Staging environment and make sure everything has been created as expected.
 
-The final step you need to take before your Development / Staging environment is completely in sync with your Live environment is to [restore the content](../../deployment/Restoring-content/README.md).
+The final step you need to take before your Development / Staging environment is completely in sync with your Live environment is to [restore the content](../../deployment/restoring-content/README.md).

@@ -15,9 +15,9 @@ You can view the **Overview** of your Umbraco Cloud project from the **Settings*
 
 ![Project Overview](images/project-overview-1.png)
 
-## [Edit team](../set-up/team-members/README.mdr)
+## [Edit team](../set-up/team-members/README.md)
 
-Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../team-members/technical-contact.md), or add an [Account contacts](../team-members/accounts-contact.md) for your project.
+Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../set-up/team-members/technical-contact.md), or add an [Account contacts](../set-upt/team-members/accounts-contact.md) for your project.
 
 ## [Connection details](../databases/README.md)
 
@@ -31,7 +31,7 @@ Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** s
 
 Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
 
-## [CDN Caching and Optimization](manage-cdn-caching.mdmd)
+## [CDN Caching and Optimization](manage-cdn-caching.md)
 
 Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
 
@@ -76,7 +76,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 
 Manage **Advanced** settings for your project from the **Settings** menu:
 
-- [Enable static outbound IP addresses](../external-Services) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
+- [Enable static outbound IP addresses](../set-up/external-Services.md) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 - Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 
     {% hint style="info" %}
@@ -85,7 +85,7 @@ Manage **Advanced** settings for your project from the **Settings** menu:
 
 ![Advanced Settings](images/Advanced-Settings.png)
 
-## [Payment](Manage-subscriptions/new-shop.md)
+## [Payment](manage-subscriptions/new-shop.md)
 
 From here, you can see the payment history for your project, change the credit card, as well as download the latest invoices for your project.
 

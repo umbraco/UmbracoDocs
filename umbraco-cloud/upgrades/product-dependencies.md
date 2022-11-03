@@ -22,4 +22,4 @@ In the table below you can see which version of Umbraco Forms and Deploy you sho
 
 ## [How to upgrade Umbraco Forms manually](../../umbraco-forms/installation/manualupgrade.md)
 
-## [How to upgrade Deploy manually](Manual-upgrades/manual-upgrade-deploy.md)
+## [How to upgrade Deploy manually](manual-upgrades/manual-upgrade-deploy.md)

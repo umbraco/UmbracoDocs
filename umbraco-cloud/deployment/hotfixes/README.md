@@ -1,6 +1,3 @@
----
----
-
 # How to handle hotfixes on Umbraco Cloud projects
 
 When you have an Umbraco Cloud project with multiple environments, you might run into a situation where you need to push a hotfix to your Live environment but have pending changes elsewhere that are not ready for the Live site.
@@ -21,7 +18,7 @@ One way to apply a hotfix to a Live environment on Cloud is to clone down the De
 
 ![Use Git](images/hotfix-using-git.gif)
 
-Read the guide here: [Deploy hotfix with Git](Using-Git/)
+Read the guide here: [Deploy hotfix with Git](using-git.md)
 
 ## [2. Move files manually](move-files-manually.md)
 

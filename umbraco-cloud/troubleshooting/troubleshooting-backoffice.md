@@ -15,14 +15,14 @@ Start by clicking "View more details", often it will give you a link to a specif
 
 * [Schema mismatch](deployments/schema-mismatches.md)
 * [Dependency Exception](deployments/dependency-exceptions.md)
-* [SQL Timeouts](deployments/deploy-Settings.md)
+* [SQL Timeouts](../../umbraco-deploy/deploy-settings.md)
 * [Media path too long](deployments/path-too-long-exception.md)
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
 
 The first thing to ensure is that any schema changes have been pushed through Git or deployed between environments so the environments are in sync.
 
-Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs) for both the source and target environments, so make sure to check both.
+Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](log-files.md#umbraco-logs) for both the source and target environments, so make sure to check both.
 
 If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../set-up/smtp-settings.md)
 

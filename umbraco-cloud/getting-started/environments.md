@@ -36,7 +36,7 @@ The live site (`/site/wwwroot/`) contains the files used to show your website to
 
 All the team members you add through the Umbraco Cloud Portal will be added as backoffice users in your environments as well. As with any other Umbraco CMS installation, you can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
 
-Read more about this and team member roles in the [Team Members](../../set-up/team-members) article.
+Read more about this and team member roles in the [Team Members](../set-up/team-members/README.md) article.
 
 ## SQL Database
 

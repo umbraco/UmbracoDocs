@@ -78,7 +78,7 @@ You need to manually upgrade the view files and custom code implementation. For 
   * `~/Media`
   * Any files/folders related to Stylesheets and JavaScript.
 
-* In Umbraco 10, config files no longer live in the `Web.Config` file and is instead in the `appsettings.json` file. You will need to make sure that you update the `appsettings.json` file with any custom settings that you had in your Umbraco 8 project to match with the [Configuration Files](../../../reference/configuration/index.md).
+* In Umbraco 10, config files no longer live in the `Web.Config` file and is instead in the `appsettings.json` file. You will need to make sure that you update the `appsettings.json` file with any custom settings that you had in your Umbraco 8 project to match with the [Configuration Files](../../umbraco-cms/reference/configuration/README.md).
 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
   * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../umbraco-forms/developer/forms-in-the-database.md) article.

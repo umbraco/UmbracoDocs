@@ -28,7 +28,7 @@ An overview of what you will find throughout this guide.
 * **At least 2 environments** on your Cloud project.
 
 * A backup of your project database.
-  * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article,
+  * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down and restore the project, and take a backup of the local database.
 
 ## Video Tutorial

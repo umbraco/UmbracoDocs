@@ -25,7 +25,7 @@ Umbraco Cloud offers shared hosting in 3 different plans:
 - Standard
 - Professional
 
-You can [learn more about quotas](umbraco-cloud-plans) that are put in place to ensure the stability of your website.
+You can [learn more about quotas](umbraco-cloud-plans.md) that are put in place to ensure the stability of your website.
 
 ## Umbraco Cloud Project
 
@@ -90,6 +90,6 @@ The Overview Page consists of:
 
 ## Different ways to start an Umbraco Cloud project
 
-You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](Migrate-Existing-Site/README.md) that you can follow to successfully move your project to Umbraco Cloud.
+You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](migrate-existing-site/README.md) that you can follow to successfully move your project to Umbraco Cloud.
 
-If you are creating several similar projects, we have a feature called [Baselines](Baselines) that lets you create new projects based on existing Umbraco Cloud projects.
+If you are creating several similar projects, we have a feature called [Baselines](baselines/README.md) that lets you create new projects based on existing Umbraco Cloud projects.

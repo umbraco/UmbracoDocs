@@ -22,6 +22,6 @@ A **blank or not loading page** is likely due to bad rewrite rules - often it wi
 * ^/App_Plugins
 * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/manage-hostnames//rewrites-on-cloud.md) article.
 
-You should also check your console log in your browser to see if something is failing to load. Finally, you can check the [umbracoTraceLogs](Log-Files/#umbraco-logs) and see if any errors are thrown!
+You should also check your console log in your browser to see if something is failing to load. Finally, you can check the [umbracoTraceLogs](log-files.md#umbraco-logs) and see if any errors are thrown!
 
 A **404 page** could also be rewrite rules - look above what to check for. Other than that make sure your site and content structure is set up correctly - if you try to access a content node with no template related to it will throw this error!
