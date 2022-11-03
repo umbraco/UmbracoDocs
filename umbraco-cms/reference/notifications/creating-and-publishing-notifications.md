@@ -6,7 +6,7 @@ meta.Description: How to create and publish your own custom notifications
 
 # Creating And Publishing Custom Notifications
 
-There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../../Scheduling/index.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
+There may be many reasons why you would like to create your own custom notifications, in this article we'll use the CleanUpYourRoom [recurring hosted service](../scheduling.md) as an example, which empties the recycle bin every 5 minutes. You might want to publish a notification once the task has started, and maybe once the task has successfully cleared the recycle bin.
 
 For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
 
@@ -40,7 +40,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 {% endtab %}
 {% endtabs %}
 
-This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](../MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
+This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](mediaservice-notifications.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
 
 {% tabs %}
 {% tab title="Latest version" %}
