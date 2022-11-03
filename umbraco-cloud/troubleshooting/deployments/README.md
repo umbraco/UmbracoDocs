@@ -12,19 +12,19 @@ There are some common errors associated with both of these, most of the time it 
 
 The most common [Deployment](../../deployment/cloud-to-cloud.md) issues are listed below with guides on how to fix them:
 
-* [Collision Errors](Structure-Error.md)
-* [Dependency Exception](Dependency-Exceptions.md)
-* [Colliding Data Types](Colliding-Datatypes.md)
-* [Language Mismatch](Language-Mismatch.md)
-* [Deployment Failed (with no error message)](Deployment-Failed.md)
-* [Changes not being applied](Changes-Not-Being-Applied.md)
+* [Collision Errors](structure-rrror.md)
+* [Dependency Exception](dependency-exceptions.md)
+* [Colliding Data Types](colliding-datatypes.md)
+* [Language Mismatch](language-mismatch.md)
+* [Deployment Failed (with no error message)](deployment-failed.md)
+* [Changes not being applied](changes-not-being-applied.md)
 
 The most common Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/Restoring-content/README.md) issues are listed below:
 
 * [Schema mismatch](schema-mismatches.md)
 * [SQL Timeouts](../../../umbraco-deploy/deploy-settings.md#timeout-issues)
-* [Dependency Exception](Dependency-Exceptions.md)
-* [Media path too long](Path-too-long-exception.md)
+* [Dependency Exception](dependency-exceptions.md)
+* [Media path too long](path-too-long-exception.md)
 
 ## Issues when using third-party packages
 

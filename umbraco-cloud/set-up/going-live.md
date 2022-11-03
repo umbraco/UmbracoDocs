@@ -1,6 +1,3 @@
----
----
-
 # Going Live
 
 When you are about to go live with your website on Umbraco Cloud, there are a few things you might want to consider beforehand.

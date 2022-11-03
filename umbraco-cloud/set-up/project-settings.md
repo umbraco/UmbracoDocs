@@ -17,7 +17,7 @@ You can view the **Overview** of your Umbraco Cloud project from the **Settings*
 
 ## [Edit team](../set-up/team-members/README.mdr)
 
-Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../team-members/Technical-Contact.md), or add an [Account contacts](../team-members/Accounts-Contact.md) for your project.
+Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../team-members/technical-contact.md), or add an [Account contacts](../team-members/accounts-contact.md) for your project.
 
 ## [Connection details](../databases/README.md)
 
@@ -76,7 +76,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 
 Manage **Advanced** settings for your project from the **Settings** menu:
 
-- [Enable static outbound IP addresses](../External-Services) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
+- [Enable static outbound IP addresses](../external-Services) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 - Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 
     {% hint style="info" %}

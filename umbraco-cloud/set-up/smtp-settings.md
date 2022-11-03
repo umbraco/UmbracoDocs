@@ -54,7 +54,9 @@ As Umbraco Cloud doesn't provide SMTP servers, you will need to find hosting els
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side.
 * [Rapidmail](https://www.rapidmail.com/) - EU based and GDPR compliant.
 
-## [insert video here](https://www.youtube.com/embed/CFYuF7eNTF4?rel=0)
+{% embed url="https://www.youtube.com/embed/CFYuF7eNTF4?rel=0" %}
+Video example.
+{% endembed %}
 
 
 Step 1 - Set up the SMTP server.

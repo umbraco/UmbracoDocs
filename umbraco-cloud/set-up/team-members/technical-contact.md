@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Technical Contact
 
 One of the biggest benefits of having a Umbraco Cloud project is that you do not need to worry about the hosting. We handle it for you.
@@ -27,4 +22,6 @@ When you create a **New Project**, the user used to create the project will auto
 
     ![Add technical contact form](images/Technical-Contact.gif)
 
-## [insert video here](https://www.youtube.com/embed/sjugjnHz3bo?rel=0)
+{% embed url="https://www.youtube.com/embed/sjugjnHz3bo?rel=0" %}
+Video example.
+{% endembed %}

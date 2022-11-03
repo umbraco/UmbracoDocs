@@ -14,7 +14,9 @@ To work with a local copy of your site, you'll need to use Windows with a local 
 
 ## Video Tutorial
 
-## [insert video here](https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0)
+{% embed url="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" %}
+Video example.
+{% endembed %}
 
 ## Tools
 

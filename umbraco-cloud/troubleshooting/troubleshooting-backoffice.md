@@ -13,10 +13,10 @@ Errors in the backoffice can be presented in many different ways, the most commo
 
 Start by clicking "View more details", often it will give you a link to a specific article with a guide on how to fix it. We have some guides on how to fix the most common errors below:
 
-* [Schema mismatch](Deployments/schema-mismatches.md)
-* [Dependency Exception](Deployments/Dependency-Exceptions.md)
-* [SQL Timeouts](Deployments/Deploy-Settings.md)
-* [Media path too long](Deployments/Path-too-long-exception.md)
+* [Schema mismatch](deployments/schema-mismatches.md)
+* [Dependency Exception](deployments/dependency-exceptions.md)
+* [SQL Timeouts](deployments/deploy-Settings.md)
+* [Media path too long](deployments/path-too-long-exception.md)
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
 

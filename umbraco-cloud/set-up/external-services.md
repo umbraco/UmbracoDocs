@@ -47,4 +47,4 @@ If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `4
 
 {% hint style="info" %}
 For projects on a Starter plan, you can see the current dynamic outbound IP addresses. The IP addresses shown for starter projects are dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
-:::
+{% endhint %}

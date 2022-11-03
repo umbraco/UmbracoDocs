@@ -21,6 +21,6 @@ Start by determining where this error is reported and what causes the error. The
 
 ## Is your issue related to something else?
 
-- [Minor upgrades issues](../Upgrades/minor-upgrades.md)
+- [Minor upgrades issues](../upgrades/minor-upgrades.md)
 - [Baseline merge conflicts](../getting-started/baselines/baseline-merge-conflicts.md)
 - [How Umbraco Forms are handled on Cloud](../deployment/umbraco-forms-on-cloud.md)

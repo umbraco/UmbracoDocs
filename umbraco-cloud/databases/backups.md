@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Database backups
 Sometimes you might need to have a backup of your Cloud database. This can be accomplished in at least two ways. This article will go through two of those options.
 

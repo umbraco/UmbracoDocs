@@ -18,7 +18,7 @@ In the table below you can see which version of Umbraco Forms and Deploy you sho
 |**9.0 <**     |9.0x            |9.x              |
 |**10.0 <**    |10.0x           |10.x             |
 
-## [How to upgrade Umbraco CMS manually](Manual-Upgrades/Manual-CMS-upgrade.md)
+## [How to upgrade Umbraco CMS manually](manual-upgrades/manual-cms-upgrade.md)
 
 ## [How to upgrade Umbraco Forms manually](../../umbraco-forms/installation/manualupgrade.md)
 

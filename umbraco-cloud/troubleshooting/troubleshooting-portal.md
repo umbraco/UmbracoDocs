@@ -21,11 +21,11 @@ The first thing to check is what type of error it is, you can do so by clicking 
 
 We have some guides on how to fix the most common errors below:
 
-* [Some artifacts collide on unique identifiers](Deployments/Structure-Error.md)
-* [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items.md)
-* [Baseline merge issues](../Getting-Started/Baselines/baseline-merge-conflicts.md)
-* [Colliding Data Types](Deployments/colliding-datatypes.md)
-* [Type not found](Deployments/type-not-found.md)
+* [Some artifacts collide on unique identifiers](deployments/structure-error.md)
+* [Duplicate dictionary](deployments/duplicate-dictionary-Items.md)
+* [Baseline merge issues](../getting-started/baselines/baseline-merge-conflicts.md)
+* [Colliding Data Types](deployments/colliding-datatypes.md)
+* [Type not found](deployments/type-not-found.md)
 * [Deployment fails instantly with no message](Deployments/deployment-failed.md)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
@@ -36,4 +36,4 @@ Sometimes a deployment will fail due to another deployment in progress. You'll n
 
 Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases, you will need to have a look at the log files.
 
-You can check both the regular [umbracoTraceLogs](Log-Files/#umbraco-logs) and the [deploy logs](Log-Files/#deploy-logs).
+You can check both the regular [umbracoTraceLogs](log-files.md#umbraco-logs) and the [deploy logs](log-files.md#deploy-logs).

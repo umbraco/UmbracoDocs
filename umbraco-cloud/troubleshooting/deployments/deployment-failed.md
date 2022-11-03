@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Troubleshooting deployments failing with no error message
 
 This error might pop up if your project's files were recently upgraded/updated to the latest version. Any deployment you try will end up failing instantly.

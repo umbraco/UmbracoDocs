@@ -47,7 +47,7 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 6. Click **Next** and then click **Advanced**
 7. Find **Type of data to script** and choose **Data only**.
 8. Choose where to save the script and save it.
-9. Connect to your [Umbraco Cloud Database](../../Databases/Cloud-Database.md).
+9. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).
 10. Run the script on your Umbraco Cloud Database.
 11. Restart your Umbraco Cloud environment.
 

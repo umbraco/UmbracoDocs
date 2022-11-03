@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Account Contacts
 
 To ensure we notify the billing information to the right people, you need to add an **Account Contacts** to your project. This contact is our primary source of contact for project payment communications.
@@ -34,4 +29,6 @@ To edit an account contact, do the following:
 
     ![Add account contact form](images/Edit-Account-Contact.gif)
 
-## [insert video here](https://www.youtube.com/embed/GnX4svXWE8U?rel=0)
+{% embed url="https://www.youtube.com/embed/GnX4svXWE8U?rel=0" %}
+Video example.
+{% endembed %}

@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 8.0.0
----
-
 # The Frontend
 
 {% hint style="info" %}

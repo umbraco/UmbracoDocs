@@ -35,7 +35,9 @@ When you have two or more Cloud environments, we recommend that you never create
 
 ## Video tutorial
 
-## [insert video here](https://www.youtube.com/embed/HPmatVIt0bY)
+{% embed url="https://www.youtube.com/embed/HPmatVIt0bY" %}
+Fixing collision errors tutorial
+{% endembed %}
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLgX62vUaGZsHAKusJRjVyquIV47eJgjDq).
 
@@ -63,7 +65,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../../Databases/Cloud-Database#connecting-to-your-cloud-database-locally)
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../../databases/cloud-database#connecting-to-your-cloud-database-locally)
 2. Run one of the following queries on the database, depending on the type you see the error with
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
     ```sql

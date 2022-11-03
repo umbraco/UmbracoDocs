@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Security on Umbraco Cloud
 
 In this article you can find information about security on Umbraco Cloud.
