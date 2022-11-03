@@ -39,7 +39,8 @@ To see a list of packages covered look [here](https://github.com/umbraco/Umbraco
 
 ## Issues with .net 7 deployments between local and envs
 
-If you are experiencing an issue where in your deployment output you are seeing build errors targeting a preview / RC version of .net 7. Then you can follow these steps to mitigate the issue. 
+If you are experiencing an issue where your deployment output has build errors targeting a preview / RC version of .NET 7, you can follow these steps to mitigate the issue. 
+
 Here is an example of the error:
 
 ```json
@@ -71,6 +72,11 @@ Here is an example of the error:
 	2022-11-02T08:51:16.1821221Z,You must install or update .NET to run this application.\r\n\r\nApp: C:\Program Files (x86)\dotnet\sdk\7.0.100-rc.1.22431.12\dotnet.dll\r\nArchitecture: x86\r\nFramework: 'Microsoft.NETCore.App'&comma; version '7.0.0-rc.1.22426.10' (x86)\r\n.NET location: C:\Program Files (x86)\dotnet\\r\n\r\nThe following frameworks were found:\r\n  1.0.16 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  1.1.13 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  2.0.9 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  2.1.30 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  2.2.14 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  3.0.3 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  3.1.28 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  3.1.29 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  5.0.15 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  5.0.17 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  6.0.8 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n  6.0.9 at [C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App]\r\n\r\nLearn about framework resolution:\r\nhttps://aka.ms/dotnet/app-launch-failed\r\n\r\nTo install missing framework&comma; download:\r\nhttps://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=7.0.0-rc.1.22426.10&arch=x86&rid=win10-x86\r\nC:\Program Files (x86)\SiteExtensions\Kudu\98.40824.5897\bin\Scripts\starter.cmd C:\home\SiteExtensions\Umbraco.Cloud.Deployment.SiteExtension.Artifacts.Core\deploy.cmd,,2
 2022-11-02T08:51:16.9321330Z,Deployment Failed.,133sa799-q231-c92a-a244-afa18e1c2b1f,0
 ```
+
+:::note
+	A future release will mitigate this issue.
+:::
+
 ### steps to fix the issue
 1. Clone down your Development environment. If you only have a Live environment, then proceed with that  
 
@@ -105,4 +111,4 @@ And save the file.
 This will force the Azure build service to target version 6.0.401 of the .net sdk for your project and your env will function again.
 You will not need to add the same file to your other environments. As source control will take care of adding it in when you deploy it between your development, staging or live environments.
 
-When you have done the above steps you should no longer see deployment issues with .net 7-preview or rc.
+When you have done the above steps you will no longer see deployment issues with .net 7-preview or rc.
