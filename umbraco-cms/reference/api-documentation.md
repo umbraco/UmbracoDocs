@@ -20,9 +20,9 @@ C# API references for the Umbraco Core, Infrastructure, Extensions and Web libra
 
 ### [Umbraco.Extensions](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Extensions.html)
 
-:::note
+{% hint style="info" %}
 opens a documentation browser that is different from the documentation section you're viewing now.
-:::
+{% endhint %}
 
 ## Backoffice UI API Documentation
 
@@ -34,6 +34,6 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 
 ### [Backoffice UI](https://apidocs.umbraco.com/v10/ui)
 
-:::note
+{% hint style="info" %}
 opens a documentation browser that is different from the documentation section you're viewing now.
-:::
+{% endhint %}

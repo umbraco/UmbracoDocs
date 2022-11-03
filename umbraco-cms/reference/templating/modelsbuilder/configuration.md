@@ -42,9 +42,9 @@ The example below shows an example configuration using the SourceCodeManual mode
 }
 ```
 
-:::note
+{% hint style="info" %}
 It is recommended to generate models in your development environment only and change the ModelsMode to `Nothing` for your staging and production environments.
-:::
+{% endhint %}
 
 ## Models Builder Dashboard
 

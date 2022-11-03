@@ -9,9 +9,9 @@ With the release of Umbraco 9 and the change of the underlying web framework tha
 
 Instead of the URL Rewriting extension in IIS you can use the [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0), which needs to be added to your project startup code first.
 
-:::note
+{% hint style="info" %}
 If you are running Umbraco 9 on IIS you can still add a `web.config` file to configure IIS features such as URL rewrites.
-:::
+{% endhint %}
 
 ## When to use the URL Rewriting Middleware
 
@@ -61,9 +61,9 @@ app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvide
 </ItemGroup>
 ```
 
-:::note
+{% hint style="info" %}
 On Umbraco Cloud the item group needs to be set to `<CopyToPublishDirectory>Always</CopyToPublishDirectory>` for the file to be published to your deployed site.
-:::
+{% endhint %}
 
 ## Examples of rewrite rules
 

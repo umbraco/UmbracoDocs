@@ -94,9 +94,9 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 </rule>
 ```
 
-:::note
+{% hint style="info" %}
 The rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
-:::
+{% endhint %}
 
 ## SSL versus TLS
 

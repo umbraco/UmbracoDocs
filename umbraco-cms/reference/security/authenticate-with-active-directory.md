@@ -61,9 +61,9 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     }
     ```
 
-    :::note
+    {% hint style="info" %}
     Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
-    :::
+    {% endhint %}
 
 2. Update `ConfigureServices` method in the `Startup.cs` file:
 
@@ -127,9 +127,9 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     }
     ```
 
-    :::note
+    {% hint style="info" %}
     Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
-    :::
+    {% endhint %}
 
 3. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
 

@@ -9,9 +9,9 @@ meta.Description: "Use hosted services to run a background task"
 In Umbraco 9+ it is possible to run recurring code using a hosted service.
 Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes. 
 
-:::warning
-Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../../Fundamentals/Setup/Server-Setup/Load-Balancing/index.md) for more information
-:::
+{% hint style="warning" %}
+Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
+{% endhint %}
 
 ## RecurringHostedService example
 
@@ -147,7 +147,7 @@ The `RecurringHostedServiceBase` is a base class that implements the netcore int
 
 ## BackgroundTaskRunner Notifications
 
-In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](../Notifications/Creating-And-Publishing-Notifications/index.md)
+In earlier versions of Umbraco, there were a series of events triggered by background tasks, with the switch to notifications this no longer exists, however, fear not, because you can publish any custom notification you desire from within your background task. For more information about creating and publishing your own custom notifications see: [Creating and Publishing Custom Notifications](notifications/creating-and-publishing-notifications.md)
 
 ## Using ServerRoleAccessor
 

@@ -168,9 +168,9 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or c
 
 Returns `IEnumerable<IRelation>`.
 
-:::note
+{% hint style="info" %}
 Using this method will get you all relations regards of it being a child or parent relation.
-:::
+{% endhint %}
 
 ### GetByParentOrChildId(int id)
 
@@ -178,9 +178,9 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or c
 
 Returns `IEnumerable<IRelation>`.
 
-:::note
+{% hint style="info" %}
 Using this method will get you all relations regards of it being a child or parent relation.
-:::
+{% endhint %}
 
 ### GetByRelationTypeAlias(string relationTypeAlias)
 
@@ -455,8 +455,8 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 
 ![Relations](images/relations-api.PNG)
 
-:::note
+{% hint style="info" %}
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
 
 [See an example of caching in V8](../../../cache/examples/tags.md)
-:::
+{% endhint %}

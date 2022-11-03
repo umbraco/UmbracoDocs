@@ -8,11 +8,11 @@ meta.Title: "UmbracoMapper"
 
 Often in code there is a need to 'map' one object's properties to another type of object, and the 'type of objects' are not related by inheritance or interface. (Think database layer object, passing information to a presentation layer ViewModel etc). In these circumstances, it can save time and provide consistency to consolidate the logic to map between the options into one set of 'Mapping' rules.
 
-:::tip
+{% hint style="info" %}
 UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, i.e. mappings need to be hand-written.
 
 This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
-:::
+{% endhint %}
 
 UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is totally fine for anyone to use in their custom site implementations or packages as they wish.
 
@@ -21,10 +21,6 @@ UmbracoMapper was originally introduced to solve some issues in the Umbraco core
 The IUmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected into constructors of controllers, custom classes etc, wherever DI is used. 
 
 ## Mapping
-
-:::tip
-If you would like to see some more examples you can check out [this unit test from the CMS](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Tests/Mapping/MappingTests.cs).
-:::
 
 Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
 
@@ -62,7 +58,7 @@ Mappings are defined in `IMapDefinition` instances. This interface defines one m
 void DefineMaps(IUmbracoMapper mapper);
 ```
 
-Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index.md#Collections):
+Mappings are registered (and must be registered) via a [collection builder](../implementation/composing.md#collections):
 
 ```csharp
 builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
@@ -117,9 +113,9 @@ Both constructor functions and map actions presented above expose a context para
 - An `Items` dictionary which can store any type of object, using string keys, and can be used to carry some context along mappings;
 - Some Map and MapEnumerable functions that can be used in mapping functions, to recursively map nested elements, while propagating the context.
 
-:::note
+{% hint style="info" %}
 The context provides a `HasItem` property. To check whether the context has items, without allocating an extra empty dictionary, use this property.
-:::
+{% endhint %}
 
 The context is used, for instance, to carry the culture when mapping content items with variants. See the `MapperContextExtensions` class, which contains methods such as:
 

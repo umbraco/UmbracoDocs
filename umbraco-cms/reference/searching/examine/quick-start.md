@@ -9,9 +9,9 @@ _This guide will help you get set up quickly using Examine with minimal configur
 
 ## Performing a search
 
-:::note
+{% hint style="info" %}
 In the coming examples, the [Umbraco Starter Kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/) has been used, as it provides some example content that can be searched. Therefore, some of the examples below may require 'the setting up of templates, etc' if you follow the guide on your existing site.
-:::
+{% endhint %}
 
 The starter kit comes with some Templates, Document Types, and content nodes created already. We will use some of these to set up a basic search system. This is a 'Quick Start' guide, as many more complex searches are possible with Examine.
 
@@ -37,9 +37,9 @@ The best practice for POST requests is to encapsulate the request handling in a 
 
 Let's start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method.
 
-:::note
+{% hint style="info" %}
 It is important to name our controller by the convention _`NameOfViewController`_. In our case the view is named People, so the controller is named `PeopleController`.
-:::
+{% endhint %}
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
@@ -157,9 +157,9 @@ if (!string.IsNullOrEmpty(query) && _examineManager.TryGetIndex("ExternalIndex",
 }
 ```
 
-:::tip
+{% hint style="info" %}
 We reference the External index by its alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
-:::
+{% endhint %}
 
 The `Searcher` has a CreateQuery method, where you can choose to search content, media or members eg:
 ```csharp

@@ -33,7 +33,7 @@ You can also retrieve content using the `Guid` Id. In the example "ca4249ed-2b23
 @Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"))
 ```
 
-You can also pass a [Udi](../querying/Udi) to retrieve the content.
+You can also pass a [Udi](../../querying/udi-identifiers.md) to retrieve the content.
 
 ```csharp
 // to return the Umbraco.Core.Models.IPublishedContent
@@ -100,11 +100,11 @@ With the `IPublishedContent` model we support strongly typed LINQ queries out of
 ```csharp
 var items = @Model.Children.Where(x => x.IsVisible() && x.Level <= 4)
 ```
-:::note
+{% hint style="info" %}
 The two examples below have not been verified for Umbraco 9 and 10 yet.
 
 therefore they might not work on the latest versions of Umbraco.
-:::
+{% endhint %}
 
 #### Content sub menu
 

@@ -60,9 +60,9 @@ ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-p
 
 Creating a multiple object resolver is similar. As an example we'll create a LanguageConvertersResolver.
 
-:::note
+{% hint style="info" %}
 The naming convention for multiple objects resolvers are plural: We've named this LanguageConverter**s**Resolver with a pluralized 'Converters' to denote that this resolver returns multiple objects
-:::
+{% endhint %}
 
 ```csharp
 public sealed class LanguageConvertersResolver : ManyObjectsResolverBase<LanguageConvertersResolver, ILanguageConverter>

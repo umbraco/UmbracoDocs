@@ -119,11 +119,11 @@ For more information see [Extending FileSystemProviders](../../Extending/FileSys
 
 To store media files in different systems, the type of provider must be changed. You can learn [how to build a custom filesystem provider](../../Extending/FileSystemProviders/index.md#ifilesystem) in the Extending Umbraco section.
 
-:::note
+{% hint style="info" %}
 At the moment when a file is saved, its full url is stored as node property, so a configuration change will not apply to pre-existing media files but only to the ones saved after that.
 
 If you want all your media files in the same location you have to copy all pre-existing files to the new path, and update the `path` property of the media item to the new url. This can be either directly inside the database or by using the `MediaService`.
-:::
+{% endhint %}
 
 ## Get the contents of a file as a stream
 

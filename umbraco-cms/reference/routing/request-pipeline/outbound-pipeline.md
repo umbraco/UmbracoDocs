@@ -208,9 +208,9 @@ If the URL provider encounters collisions when generating content URLs, it will 
 The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL.
 This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
 
-:::warning
+{% hint style="warning" %}
 This means publishing an unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
-:::
+{% endhint %}
 
 ### Custom Url Provider
 
@@ -233,9 +233,9 @@ If implementing a custom Url Provider, consider following things:
 - Be sure to know how to handle schema's (http vs https) and hostnames.
 - Inbound might require rewriting.
 
-:::tip
+{% hint style="info" %}
 If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
-:::
+{% endhint %}
 
 #### Example
 

@@ -7,10 +7,10 @@ versionTo: 10.0.0
 
 Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
 
-- [Getting started with Language Variants](../../Fundamentals/Backoffice/Variants/index.md)
-- [Rendering variant values](../../Fundamentals/Design/Rendering-Content/index.md)
+- [Getting started with Language Variants](../fundamentals/backoffice/variants.md)
+- [Rendering variant values](../fundamentals/design/rendering-content.md)
 
-[`IPublishedContent`](../Querying/IPublishedContent/index.md) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
+[`IPublishedContent`](querying/ipublishedcontent/) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
 
 ```csharp
 @Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
@@ -18,7 +18,7 @@ Language Variation allows you to have several different variations of content ba
 
 Here we would attempt to render the `pageTitle` property in the French variant and fallback to the current culture language if it can't find it in French.
 
-The problem here comes if you want to output all values of an IPublishedContent model in a specific culture in something that has no access to the "current culture", such as a [Surface Controller](../Routing/Surface-Controllers/index.md).
+The problem here comes if you want to output all values of an IPublishedContent model in a specific culture in something that has no access to the "current culture", such as a [Surface Controller](routing/surface-controllers/).
 
 If you do something like this:
 
