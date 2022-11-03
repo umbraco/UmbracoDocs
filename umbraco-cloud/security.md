@@ -18,7 +18,7 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](../set-up/manage-security/) article.
+Learn more about how this in the [Manage Security](set-up/manage-security.md) article.
 
 ### TLS Ciphers support
 
@@ -62,7 +62,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../set-up/manage-hostnames/rewrites-on-cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
 
 ### Ports
 
