@@ -38,7 +38,7 @@ From here you can see the default system fields that are stored for each documen
 
 From the Searchers section, you can view details about each Examine searcher currently configured within your Umbraco installation. Clicking any of these searchers will take you to a search page, where you can test out your search terms.
 
-You can see an example here how to configure an Examine searcher in the [Examine Multisearcher documentation](./pdfindex-multisearcher.md#multi-index-searchers).
+You can see an example here how to configure an Examine searcher in the [Examine Multisearcher documentation](pdfindex-multisearcher.md#multi-index-searchers).
 
 ### Search field
 
