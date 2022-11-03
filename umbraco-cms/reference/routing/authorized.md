@@ -29,7 +29,7 @@ The {area} specified by the [PluginController] attribute replaces the /api/ area
 
 If you are using MVC in the backoffice then you would normally inherit from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController`. This type of controller is not auto-routed like Umbraco Api controllers or surface controllers, so will require a custom route declaration and be registered with the Umbraco DI container to make it work.
 
-For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
+For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../implementation/controllers.md).
 
 ## Defining a route
 

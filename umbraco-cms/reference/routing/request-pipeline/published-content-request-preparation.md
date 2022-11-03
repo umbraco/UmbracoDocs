@@ -62,7 +62,7 @@ The FindDomain method looks for a domain matching the request Uri
 
 When finding published content the `PublishedRouter` will first check if the ` PublishedRequestBuilder` already has content, if it doesn't the content finders will kick in. There a many different types of content finders, such as find by url, by id path, and more. If none of the content finders manages to find any content, the request will be set as 404, and the `ContentLastChanceFinder` will run, this will try to find a page to handle a 404, if it can't find one, the ugly 404 will be used.
 
-You can also implement your own content finders and last chance finder, for more information, see [IContentFinder](IContentFinder-v9.md)
+You can also implement your own content finders and last chance finder, for more information, see [IContentFinder](icontentfinder.md)
 
 The `PublishedRouter` will also follow any internal redirects there might be, it is however limited, as to not spiral out of control if there is an infite loop of redirects.
 

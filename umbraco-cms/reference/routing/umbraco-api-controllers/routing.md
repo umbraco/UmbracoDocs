@@ -21,7 +21,7 @@ All plugin based Umbraco api controllers will be routed under the url path of:
 
 ~/Umbraco/[YourAreaName]/[YourControllerName]
 
-* See [here](index.md) for more information on implementing these controllers.
+* See [here](README.md) for more information on implementing these controllers.
 
 ## Urls
 
