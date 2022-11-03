@@ -103,9 +103,9 @@ In many cases, custom dashboards, editors, and scripts are left in the `App_Plug
 
 ![Visual Studio - App Plugins leftover files](images/app-plugins-starterkit.png)
 
-:::note
+{% hint style="info" %}
 Please note this particular guide targets a specific package. There are many packages out there, and each one is different. The exact steps presented here might not work the exact same way for all the packages, though the general approach should still apply.
-:::
+{% endhint %}
 
 ## Uninstalling packages like SEO Checker
 

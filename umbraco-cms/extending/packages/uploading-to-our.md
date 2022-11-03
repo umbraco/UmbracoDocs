@@ -11,9 +11,9 @@ This document shows you how to upload your package to Our and share it with the 
 
 To get started you first need to have an account on Our. Don't have an account? Head on over to the site and [register](https://our.umbraco.com/member/Signup).
 
-:::note
+{% hint style="info" %}
 Our uses a karma system where you get positive karma for answering forum posts, etc. To limit spam you will need to earn a little bit of karma before you can upload a package. Otherwise you can reach out to the [Umbraco support team](https://umbraco.com/contact-us/), who can help you out.
-:::
+{% endhint %}
 
 ## Creating your package
 
@@ -84,9 +84,9 @@ This is where you upload your package zip along with any other files you'd like 
 
 Images really show off your package and let people see what it can do at a glance. Select the image to upload. Marking an image as the current image will make it the icon for the package and display on the list as well as on the details page.
 
-:::warning
+{% hint style="warning" %}
 Setting an image to current will overwrite the setting that was made in Umbraco when creating the package zip.
-:::
+{% endhint %}
 
 ### Creation Complete
 

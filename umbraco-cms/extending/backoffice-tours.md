@@ -21,7 +21,7 @@ The tour functionality will load information from multiple locations.
 
 - **Custom tours**
 
-    Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](../Packages/Creating-a-Package/index.md).
+    Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](packages/creating-a-package.md).
 
 ## The JSON Format
 
@@ -166,9 +166,9 @@ Below is an explanation of each of the properties on the tour step object.
     [data-element='section-content']
     ```
 
-    :::tip
+    {% hint style="info" %}
      Use the developer tools from your browser to find the id, class and data-attribute.
-    :::
+    {% endhint %}
 
     ![Step element example highlighting content section](images/element-v8.png)
 

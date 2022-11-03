@@ -123,7 +123,7 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 #### Example implementation of ISearchableTree
 
-If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the [custom tree example](../Trees/index.md)) then we could implement searchability by creating the following C# class in our site:
+If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the [custom tree example](trees/)) then we could implement searchability by creating the following C# class in our site:
 
 {% tabs %}
 {% tab title="Latest version" %}

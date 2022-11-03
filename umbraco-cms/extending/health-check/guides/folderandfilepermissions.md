@@ -26,6 +26,6 @@ To fix this, we find the specified folder, from the report and choose `Propertie
 
 From here you can edit the permissions for a specific user or user group.
 
-:::note
+{% hint style="info" %}
 For security reasons we recommend only giving write access to the required users or groups.
-:::
+{% endhint %}

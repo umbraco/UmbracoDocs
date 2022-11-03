@@ -7,26 +7,26 @@ versionTo: 10.0.0
 
 Below is a list of guides for Health Checks in Umbraco.
 
-## [Click jack protection](ClickJackingProtection.md)
+## [Click jack protection](clickjackingprotection.md)
 
-## [Content sniffing protection](ContentSniffingProtection.md)
+## [Content sniffing protection](contentsniffingprotection.md)
 
-## [Cross-site scription protection](CrossSiteScriptingProtection.md)
+## [Cross-site scription protection](crosssitescriptingprotection.md)
 
-## [Debug compilation mode](DebugCompilationMode.md)
+## [Debug compilation mode](debugcompilationmode.md)
 
-## [Excessive Headers](ExcessiveHeaders.md)
+## [Excessive Headers](excessiveheaders.md)
 
-## [Folders and File Permissions](FolderAndFilePermissions.md)
+## [Folders and File Permissions](folderandfilepermissions.md)
 
-## [HTTPS configuration](HttpsConfiguration.md)
+## [HTTPS configuration](httpsconfiguration.md)
 
-## [Macro errors](MacroErrors.md)
+## [Macro errors](macroerrors.md)
 
-## [Notification Email](NotificationEmail.md)
+## [Notification Email](notificationemail.md)
 
-## [SMTP](SMTP.md)
+## [Simple Mail Transfer Protocol (SMTP)](smtp.md)
 
-## [Strict transport security header](StrictTransportSecurityHeader.md)
+## [Strict transport security header](stricttransportsecurityheader.md)
 
-## [Fixed Application Url](FixedApplicationUrl.md)
+## [Fixed Application Url](fixedapplicationurl.md)

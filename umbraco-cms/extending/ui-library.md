@@ -5,7 +5,7 @@ meta.Description: "A guide for getting started working with the Umbraco UI Libra
 
 # UI Library
 
-:::note
+{% hint style="info" %}
 Please be aware that the topic covered in this document is currently only available in the following versions of Umbraco:
 
 * The latest version of Umbraco 10.
@@ -13,8 +13,8 @@ Please be aware that the topic covered in this document is currently only availa
 
 The new UI Library is currently *opt-in* and something we recommend Backoffice and package developers start getting familiar with.
 
-In the [Backoffice UI API Documentation](../Backoffice-UI-API-Documentation/) article you can find links to relevant resources for working with the Umbraco backoffice.
-:::
+In the [Backoffice UI API Documentation](backoffice-ui-api-documentation.md) article you can find links to relevant resources for working with the Umbraco backoffice.
+{% endhint %}
 
 The Umbraco UI Library is a set of web components that can be used to build Umbraco User Interfaces. The UI Library separates the user interface from Umbraco’s business logic and creates a unified user experience. This is done with coherent styling and naming, across all the Umbraco platforms and projects including the ones developed by you.
 

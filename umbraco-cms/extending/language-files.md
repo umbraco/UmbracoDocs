@@ -9,7 +9,7 @@ meta.Description: "Language files are used to translate the Umbraco backoffice u
 
 Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
-If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Language-Files-For-Packages/index.md).
+If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md).
 
 ## Supported Languages
 
@@ -51,15 +51,15 @@ These language files are the ones shipped with Umbraco and should not be modifie
 
 ### Package language files
 
-If you are a package developer, [see here for docs on how to include translations for your own package](../Packages/Language-Files-For-Packages/index.md), package language files are located in:
+If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md), package language files are located in:
 
 ```xml
 /App_Plugins/mypackage/Lang/{language}.xml
 ```
 
-:::note
+{% hint style="info" %}
 The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
-:::
+{% endhint %}
 
 ### User language files
 
@@ -166,4 +166,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../Contribute/index.md) so that your changes are merged into the core.
+If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../contribute/) so that your changes are merged into the core.

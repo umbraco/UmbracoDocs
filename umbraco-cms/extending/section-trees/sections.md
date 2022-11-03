@@ -160,4 +160,4 @@ To provide translations in other languages, duplicate the en-us.xml file in the 
 
 You will need to recycle the application pool, to see changes to the language translation files reflected in the backoffice.
 
-[Now create a custom tree to load in your custom section!](../Trees/index.md)
+[Now create a custom tree to load in your custom section!](trees/)

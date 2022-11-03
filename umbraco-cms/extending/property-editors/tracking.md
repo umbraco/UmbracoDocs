@@ -42,8 +42,8 @@ When a content node is saved it will save the entity references as relations.
 
 The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
 
-**Umbraco 9**
-
+{% tabs %}
+{% tab title="Latest version" %}
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -93,9 +93,9 @@ namespace Umbraco.Web.PropertyEditors
     }
 }
 ```
+{% endtab %}
 
-**Umbraco 10**
-
+{% tab title="Umbraco 9" %}
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -145,3 +145,5 @@ namespace Umbraco.Web.PropertyEditors
     }
 }
 ```
+{% endtab %}
+{% endtabs %}

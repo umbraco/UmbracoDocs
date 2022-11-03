@@ -18,7 +18,7 @@ To create a package, you first need to create a package schema through the Umbra
 
     ![Buttons to select for creating a package schema in the backoffice](images/creating-package-menu-v9.png)
 4. On the `Create package` page, there are fields that you can use to construct the contents of your package that are based on items from the backoffice.
-5. Enter the package name at the top - we will call our dashboard the same as in the mentioned [Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
+5. Enter the package name at the top - we will call our dashboard the same as in the mentioned [Tutorial](../../tutorials/creating-a-custom-dashboard.md): `Custom Welcome Dashboard`.
 
 We will now take a look at the different information that can be filled in:
 
@@ -51,7 +51,7 @@ If your package doesn't include backoffice specific items, the result from downl
 
 Additionally to the `package.xml`, there is a folder containing the media items for your package. The rest of the information is recorded in the XML schema document.
 
-The files that we created from the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md) will be discussed at a later point. Now, let's take a look at the `package.xml` file:
+The files that we created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard.md) will be discussed at a later point. Now, let's take a look at the `package.xml` file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,9 +92,9 @@ Assuming you have already installed the Umbraco templates, you can execute the f
 dotnet new umbracopackage --name CustomWelcomeDashboard
 ```
 
-:::note
-For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](../../../Fundamentals/Setup/Install/install-umbraco-with-templates.md#install-the-template).
-:::
+{% hint style="info" %}
+For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](../../fundamentals/setup/install/install-umbraco-with-templates.md#install-the-template).
+{% endhint %}
 
 The outcome is the files generated below:
 
@@ -104,9 +104,9 @@ Apart from the project file, you can find an empty `package.manifest` inside the
 
 This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on build. This is required for having Umbraco packages in a NuGet package format.
 
-:::note
+{% hint style="info" %}
 If you are planning to overwrite the contents of the **App_Plugins** folder, make sure that the subfolder containing your package contents has the same name as the one you specified after the `--name` flag and that the `package.manifest` has the correct path references to your files.
-:::
+{% endhint %}
 
 You can also add your custom C# files in the root of the package folder which will be part of the DLL of the package, but for our example, this won't be necessary.
 
@@ -155,7 +155,7 @@ The `Title`, `Description`, `PackageTags` came with the template and we added so
 
 It is time to create the actual NuGet package (that is, a _.nupkg_ file). Executing the `dotnet pack` command in the package directory will take care of building the project and outputing the generated NuGet package in the `bin` folder (_the output on the CLI shows the full path to the `.nupkg` file_).
 
-:::note
+{% hint style="info" %}
 If you want to specify the output location, just execute the following command instead:
 
 ```none
@@ -163,7 +163,7 @@ dotnet pack --output MyNugetPackages
 ```
 
 It will pack the project in the current directory and place the resulting package into the `MyNugetPackages` folder.
-:::
+{% endhint %}
 
 ### Publish it
 
@@ -220,9 +220,9 @@ namespace CustomWelcomeDashboardProject.Migrations
 
 ![Automatic package migration](images/embeded-resource.png)
 
-:::note
+{% hint style="info" %}
 Whenever the embedded package.xml file changes, the automatic package migration plan is executed again. This is due to the fact that the migration state is based on the file hash. Existing schema or content will not be overwritten in this process.
-:::
+{% endhint %}
 
 #### Custom Package Migration
 

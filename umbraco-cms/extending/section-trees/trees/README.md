@@ -58,7 +58,7 @@ The language file should contain the following XML:
 
 The first node in the tree is referred to as the **Root Node**. You can customise the Root Node by overriding the abstract `CreateRootNode` method. You can assign a custom icon to the Root Node. You can also specify a custom URL route path in the backoffice to use with your custom tree. The method can be useful if your section has a single node (single page app).
 
-[See Also: How to create your own custom section](../Sections/index.md)
+[See Also: How to create your own custom section](../sections.md)
 
 ### Implementing the Tree
 
@@ -289,7 +289,7 @@ public class FavouritistThingsTreeController : TreeController
 
 All tree notications are defined in the namespace `Umbraco.Cms.Core.Notifications`.
 
-For more information about registering and using notifications see [Notifications](../../../Reference/Notifications/index.md)
+For more information about registering and using notifications see [Notifications](../../../reference/notifications/)
 
 ### RootNodeRenderingNotification
 
