@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Image Cropper
 
 `Returns: MediaWithCrops`
@@ -12,7 +8,7 @@ When the Image Cropper is used on a Media Type the crops are shared between all 
 
 If the Image Cropper is used on a Document Type, the file and crops will be **local** to the Document.
 
-Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](../Media-Picker-3/index.md).
+Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](media-picker-3.md).
 
 ## Settings
 
@@ -117,7 +113,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+To update a content property value you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 

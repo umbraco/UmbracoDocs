@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Markdown editor
 
 `Alias: Umbraco.MarkdownEditor`
@@ -18,7 +13,7 @@ This built-in editor allow the user to use the markdown formatting options, from
 There are three settings available for manipulating the **Markdown editor** property.
 
 * **Preview** toggles if a preview of the markdown should be displayed beneath the editor in the content view.
-* **Default value** is inserted if no content has been saved to the document type using this property editor.
+* **Default value** is inserted if no content has been saved to the Document Type using this property editor.
 * **Overlay Size** is used to select the width of the link picker overlay in the content view.
 
 ## Content Example
@@ -66,7 +61,7 @@ paste      | Ctrl + V
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Label
 
 `Alias: Umbraco.Label`
@@ -17,9 +12,9 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ### Value type
 
-If you want to set a value other than a String, you can define the data using one of the other available Data Types: Decimal, Date/time, Time, Integer and Big integer.
+If you want to set a value other than a String, you can define the data using one of the other available Data Types: Decimal, Date/time, Time, Integer, and Big integer.
 
-There is also a Value Type: Long string if you need to set a very long string value for your Label.
+There is also a Value Type: Long string if you need to set a long string value for your Label.
 
 ## Content Example
 
@@ -50,7 +45,7 @@ There is also a Value Type: Long string if you need to set a very long string va
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @{
@@ -92,5 +87,3 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
      content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.MyLabel).Alias, "A Preset string");
 }
 ```
-
-

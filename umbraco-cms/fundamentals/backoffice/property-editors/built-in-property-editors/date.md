@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Date
 
 `Returns: Date`
@@ -28,9 +24,9 @@ The only setting that is available for manipulating the Date property is to set 
 
 ### Dynamic (Obsolete)
 
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
+{% hint style="warning" %}
+See [Common pitfalls](../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+{% endhint %}
 
 ```csharp
 @{
