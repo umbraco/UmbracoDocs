@@ -20,7 +20,3 @@ To rollback to a previous version of the page:
 
 5. Click **Rollback** to proceed with the changes. Your content has now been rolled back to the selected version of the page and is saved as a **Draft** version.
 6. To publish the draft version, click **Save and publish**.
-
----
-
-Prev: [Comparing Versions](../Comparing-Versions/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Media Management](../../Media-Management/index.md)

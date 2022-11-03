@@ -46,5 +46,3 @@ Learn how to:
 9. Select the **Reorder** option near the top-right of the window, then drag the new property to be after *Page Title*.
     * A logical order to your properties will make things easier for your editors.
 10. Click **I am done reordering** near the top-right of the window and select **Save** the Document Type - a confirmation message should appear confirming that the Document Type was saved.
-
-[Proceed to Part Two](part-2.md)

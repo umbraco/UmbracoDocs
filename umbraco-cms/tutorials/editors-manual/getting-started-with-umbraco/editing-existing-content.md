@@ -18,7 +18,7 @@ To edit existing content, follow these steps:
 3. Edit the contents of the page.
 4. Click **Save** to save the edits without publishing it.
 5. Click **Save and preview** to preview the changes.
-6. Click **Save and publish** to publish the changes. For more information, see the [Save and Publishing Pages](../Creating-Saving-and-Publishing-Content/index.md#saving-and-publishing-pages) article.
+6. Click **Save and publish** to publish the changes. For more information, see the [Save and Publishing Pages](creating-saving-and-publishing-content.md#saving-and-publishing-pages) article.
 
 ## View Page Layout
 
@@ -51,7 +51,3 @@ You can view Page layouts in three ways:
     You can switch between list view and tiles view by clicking the view icon in the top-right of the screen:
 
     ![Tiles View.](images/Tiles-View-v9.png)
-
----
-
-Prev: [Finding Content](../Finding-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Sorting Pages](../Ordering-Pages/index.md)

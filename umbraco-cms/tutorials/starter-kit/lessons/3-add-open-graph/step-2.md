@@ -19,5 +19,3 @@ This will add the group and properties from the **Open Graph** Document Type to 
 ## Reviewing the changes
 
 If you go to the content section and select Home you can now see your changes (the same goes for the blog posts).
-
-[Previous](step-1.md) - [Next](step-3.md)

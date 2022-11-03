@@ -16,7 +16,7 @@ This article contains guides on how to create custom error pages for the followi
 
 ## In-code error page handling
 
-One way is to watch for error events and serve corresponding pages via C# code. Please refer to the [Custom 404 handlers](../../Reference/Config/404handlers/) article for an example.
+One way is to watch for error events and serve corresponding pages via C# code.
 
 ## 404 errors
 
@@ -60,13 +60,13 @@ That is where the value you grabbed earlier comes in. Fill it out like so:
 
 The above sample uses a GUID value.
 
-:::note
+{% hint style="info" %}
 With this approach, you can set different 404 pages for different languages (cultures) - such as `en-us`, `it` etc.
-:::
+{% endhint %}
 
-:::warning
+{% hint style="warning" %}
 If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement. This is because content IDs might differ across Cloud environments.
-:::
+{% endhint %}
 
 XPath example:
 
@@ -87,9 +87,9 @@ XPath example:
 }
 ```
 
-:::note
+{% hint style="info" %}
 In the above XPath example `//errorPages` is the DocTypeAlias
-:::
+{% endhint %}
 
 ## Errors with booting a project
 
@@ -121,7 +121,7 @@ The full error can always be found in the log file.
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
 
-- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
 - Any packages that allow you to customize redirects, or
 - Rewrite rules in web.config that might interefere with custom error handling.
 

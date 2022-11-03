@@ -88,15 +88,15 @@ These styles often incorporate more advanced formatting functionality which can 
 
 #### Copying Content from Other Programs
 
-:::note
+{% hint style="info" %}
 When you write content in another editor to be copied into a rich text editor, you may encounter style issues on your website.
-:::
+{% endhint %}
 
 While pasting content, the original text styles is preserved which can lead to different font faces, sizes, and colours displaying on the website when viewed.
 
-:::tip
+{% hint style="info" %}
 To prevent formatting issues, we recommended pasting the content first into a markdown editor such as notepad, then copy and paste it into your rich text editor.
-:::
+{% endhint %}
 
 #### Remove Formatting
 
@@ -293,9 +293,9 @@ The macros available to you differ from system to system. Contact your system ad
 
    ![Macro Editor](images/Select-a-macro-v9.png)
 
-:::note
-If there are no macros, you can [Create Macros](../../../Reference/Templating/Macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
-:::
+{% hint style="info" %}
+If there are no macros, you can [Create Macros](../../../reference/templating/macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
+{% endhint %}
 
 #### Editing macros
 
@@ -331,7 +331,3 @@ To edit an existing table:
 **Table Properties** provides several options for modifying the table’s appearance. However the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
 ![Table Properties](images/Table-properties-v8.png)
-
----
-
-Prev: [Deleting and Restoring Pages](../Getting-Started-With-Umbraco/Deleting-and-Restoring-Pages/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Version Management](../Version-Management/index.md)

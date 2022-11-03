@@ -80,9 +80,9 @@ Create the XmlSiteMapSettings composition (Document Type Without Template) with 
 At this point your composition should look similar to this:
 ![The XmlSiteMap composition](images/v8/create-sitemap-settings-composition.png)
 
-:::tip
-(Using pink for composition icons make them easier to spot in the list when you are curating your document types)
-:::
+{% hint style="info" %}
+Using pink for composition icons make them easier to spot in the list when you are curating your Document Types.
+{% endhint %}
 
 Add this composition to all of the document types on your site!
 ![The XmlSiteMap composition](images/v8/create-sitemap-add-composition.png)
@@ -136,9 +136,9 @@ You can include HTML markup in the body of a method declared in a code block. Th
 }
 ```
 
-:::note
+{% hint style="info" %}
 We're using `IPublishedContent` in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `Value` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
-:::
+{% endhint %}
 
 #### Xml Sitemap for the homepage
 

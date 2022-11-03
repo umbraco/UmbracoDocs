@@ -98,13 +98,10 @@ To add a basic hardcoded navigation, follow these steps:
 
 4. Click **Save**.
 
-:::tip The IsVisible() helper method
+{% hint style="info" %} 
+The IsVisible() helper method
 
 If you add a checkbox property to a Document Type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
-:::
+{% endhint %}
 
 Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
-
----
-
-Prev: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)

@@ -46,11 +46,7 @@ To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Home Page** content node and select **Allow access to assign culture and hostnames**.
-
-    :::note
-    In Umbraco 9 this menu is called **Culture and Hostnames**.
-    :::
-
+    * In Umbraco 9 this menu is called **Culture and Hostnames**.
 3. Add a domain for each hostname, like it's done here:
 
     ![Culture and Hostnames](images/culture-and-hostnames.png)
@@ -95,7 +91,3 @@ To view the language variant on the browser, follow these steps:
      ![Viewing the Language Variant Link](images/viewing-langvariant-browser.png)
 5. Click on the link to view the new language varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: <http://localhost:xxxx/dk/>
-
----
-
-Prev: [Articles Parent and Article Items](../Articles-Parent-and-Article-Items) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Conclusions and Where Next?](../Conclusions-Where-Next)

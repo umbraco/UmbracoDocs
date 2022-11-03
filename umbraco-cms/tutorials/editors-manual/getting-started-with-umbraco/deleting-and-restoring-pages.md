@@ -66,17 +66,17 @@ To restore deleted pages from the Recycle Bin:
 3. Click **Restore**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
-:::note
+{% hint style="info" %}
 To display the page on the website, click **Save and publish**.
-:::
+{% endhint %}
 
 ## Emptying the Recycle Bin
 
 If you are confident you no longer require any pages in the **Recycle Bin**, you can permanently delete it. You can delete pages one by one or empty the Recycle Bin in one go.
 
-:::note
+{% hint style="info" %}
 After deleting the pages from the **Recycle Bin**, you will **not** be able to retrieve any data associated with that page.
-:::
+{% endhint %}
 
 To empty the Recycle Bin:
 
@@ -103,7 +103,3 @@ To delete individual pages from the Recycle Bin:
      ![Delete Warning](images/Delete-warning1-v9.png)
 3. Click **OK**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
-
----
-
-Prev: [Copying a Page](../Copying-a-Page/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working With Rich Text Editor](../../Working-with-Content/index.md)

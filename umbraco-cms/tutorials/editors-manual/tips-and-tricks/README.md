@@ -7,12 +7,12 @@ versionTo: 9.0.0
 
 This section provides a few handy tips to work with your Content using Umbraco:
 
-  - [Refreshing the Tree View](Tips-when-Working-with-Folders/index.md)
+  - [Refreshing the Tree View](working-with-folders.md)
 
-  - [Audit Trail](Audit-Trail/index.md)
+  - [Audit Trail](audit-trail.md)
 
-  - [Notifications](Notifications/index.md)
+  - [Notifications](notifications.md)
 
-  - [Preview Pane Responsive View](Preview-Pane-Responsive-View/index.md)
+  - [Preview Pane Responsive View](preview-pane-responsive-view.md)
 
-  - [Session Timeout](Session-Timeout/index.md)
+  - [Session Timeout](session-timeout.md)

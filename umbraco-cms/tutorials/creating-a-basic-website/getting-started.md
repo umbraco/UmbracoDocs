@@ -17,7 +17,7 @@ To install a basic website in the Umbraco CMS, you need the following:
 
 ### Installing Umbraco
 
-To download the latest version of Umbraco, refer to the [Installation article](../../../Fundamentals/Setup/Install). On the installation wizard, follow the steps:
+To download the latest version of Umbraco, refer to the [Installation article](../../fundamentals/setup/install/). On the installation wizard, follow the steps:
 
 1. Enter your **Name**, **Email**, and **Password**.
     ![Installing Umbraco](images/figure-7-installing-umbraco-v9.png)
@@ -41,7 +41,3 @@ You can login to Umbraco in two ways:
 2. Run localhost in your browser, you will see the **Login** screen:
     1. Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:
     ![An empty Umbraco installation backoffice](images/figure-6-umbraco-empty-v8.png)
-
----
-
-## Next: [Creating Your First Document Type](../Document-Types)

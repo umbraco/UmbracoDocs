@@ -15,11 +15,8 @@ To create a Document Type:
 
 1. Go to **Settings**.
 2. Select the **...** next to the **Document Types** in the **Settings** tree.
-3. Select **Document Type with Template**.
-
-    :::tip
-    Using folders can help you organize your **Document Types**.
-    :::
+3. Select **Document Type with Template**.    
+    * Using folders can help you organize your **Document Types**.
 4. Enter a **Name** for the **Document Type**. Let's call it _Product_. You'll notice that an **Alias** is automatically created.
 5. Click **Add Group** and **Enter a Name** for the group. Let's call it _Product Details_.
 6. Add the following properties:
@@ -67,7 +64,7 @@ To add blocks to our Block List editor:
     | Details        | details | Textarea    |
     | Image          | image   | Media Picker|
 
-4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#setup-block-types) section.
+4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/block-list-editor.md#setup-block-types) section.
 5. Similarly, I'll set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
 
@@ -89,9 +86,9 @@ Let's create a `custom.html` file with the following configuration:
 </section>
 ```
 
-:::note
+{% hint style="info" %}
 Once the HTML file is updated, make sure that you restart your application.
-:::
+{% endhint %}
 
 ### Assigning the View to the Block
 
@@ -217,6 +214,8 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 
 ## Rendering the Block List Content
 
-To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/Block-List-Editor/index.md#rendering-block-list-content) section.
+To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/block-list-editor.md#rendering-block-list-content) section.
 
-<iframe width="800" height="450" title="Custom Views for Blocks" src="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" %}
+Custom Views for Blocks
+{% endembed %}

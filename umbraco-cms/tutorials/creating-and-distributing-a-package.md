@@ -6,9 +6,9 @@ versionTo: 8.0.0
 
 This tutorial will take you through creating a brand new package in Umbraco, distributing it on the [package repository on Our Umbraco](https://our.umbraco.com/packages/), and finally automating the update flow and including it in CI/CD.
 
-:::note
-The content in this article is valid *only* for Umbraco version 8. For Umbraco version 9 and above, see the [Creating a Package](../../Extending/Packages/Creating-a-Package/index.md) article.
-:::
+{% hint style="info" %}
+The content in this article is valid *only* for Umbraco version 8. For Umbraco version 9 and above, see the [Creating a Package](../../umbraco-cms/extending/packages/creating-a-package.md) article.
+{% endhint %}
 
 ## Overview
 
@@ -38,9 +38,9 @@ To install UmbPack and the Umbraco Package templates you can type these commands
 dotnet tool install --global Umbraco.Tools.Packages --version "0.9.*"
 ```
 
-:::note
+{% hint style="info" %}
 If it says dotnet is an unknown command then you will need to install the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core) first.
-:::
+{% endhint %}
 
 ```none
 dotnet new --install Umbraco.Tools.Packages.Templates::0.2.5
@@ -232,9 +232,9 @@ Once you log in you can go to your [package overview][member-package-overview] w
 
 Click the "Add package" button and fill out all the information, upload the package and save at the end.
 
-:::warning
+{% hint style="warning" %}
 If you don't intend for people to use the package (as in this tutorial), then please don't click the "Go live" button at the final step.
-:::
+{% endhint %}
 
 Now your package is on Our, and if the "Go live" button is clicked it is visible for all to see.
 
@@ -291,9 +291,9 @@ However, whilst working this way is definitely possible, and will work for every
 
 Instead of going to the Backoffice and creating or updating your package from the package section each time, you can use the UmbPack tool to make smaller changes.
 
-:::note
+{% hint style="info" %}
 Any changes to Umbraco content and schema is a lot easier to do from the backoffice, but if it is file-based UmbPack is quicker.
-:::
+{% endhint %}
 
 If you have a look back in your solution you will notice there is an almost empty package.xml file in the root:
 
@@ -396,9 +396,9 @@ Now that we have an API key we can try to push our package update to Our Umbraco
 umbpack push .\PackageWorkshopDashboard_1.0.0.zip -k [Api key here]
 ```
 
-:::note
+{% hint style="info" %}
 If a package with the same name already exists it may give an error. In that case you can run `umbpack pack .\package.xml -v 1.0.1` to create a new version of the package then push it with the above command after editing the path to the new package.
-:::
+{% endhint %}
 
 An important thing to note with the push command here is that it sets some default values. If these values are not explicitly set it will default to saying your package is compatible with Umbraco v8.5.0, Dotnet 4.7.2 and it's to be set as the new "current" package on Our.
 
@@ -436,9 +436,9 @@ The action that it performs is what is under `jobs:build:steps`. There is a step
   run: UmbPack pack ./package.xml -o ${{ env.OUTPUT }} -v ${{ steps.get_version.outputs.VERSION }}
 ```
 
-:::note
+{% hint style="info" %}
 It sets the version of the package to be what we've set in the release tag based on a previous step.
-:::
+{% endhint %}
 
 Below this there is another step to push the package to Our, which again is like our approach locally - except now we add the API key as a Github secret so it's not public to everyone.
 

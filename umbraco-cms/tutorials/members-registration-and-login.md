@@ -101,9 +101,9 @@ Almost there. Save the member, move to the Content section and find the page you
 You will be able to restrict access to a specific member, or a specific group. Choose the latter option.
 On this menu, you will be able to select the group that will have access to the page, the page with the login form, and the page that would be displayed if selected content would be inaccessible to the chosen group.
 
-:::note
+{% hint style="info" %}
 To restrict access you need to have made a member group, and a page containing the login partial. Having a "No access"/error page is recommended, as well - though you can use any content page you have.
-:::
+{% endhint %}
 
 ![Restrict public access details](images/v8-15-Restrict-Public-Access-Details.png)
 
@@ -113,9 +113,9 @@ In the navigation, you will be able to tell the content node is restricted - the
 
 ![Protected content](images/v8-16-Protected-node.png)
 
-:::note
+{% hint style="info" %}
 The above approach relies on two Macro partial views and a non-macro partial view. It is also possible to achieve the same result by working entirely with plain Partial Views, three Macros, and even plain HTML/Razor code copied from the Snippets into your Templates.
-:::
+{% endhint %}
 
 However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
 
@@ -429,11 +429,11 @@ For an easier implementation, you can copy the above code to a new .cs file and 
 
 With the above controller in place, it is time to adjust the macro/view files as well.
 
-:::note
+{% hint style="info" %}
 In the example above we have only hardcoded the Member group, which we are assigning to someone who is registering in our example.
 
 To be able to add the Member Group that we automatically assign from the backoffice you will need to extend the controller further, which we won't cover in this tutorial.
-:::
+{% endhint %}
 
 ### Adjusting the Registration partial to use the new controller
 
@@ -491,8 +491,8 @@ we have to instead use the custom controller we added, as well as include an ant
 {% endtab %}
 {% endtabs %}
 
-:::note
+{% hint style="info" %}
 Make sure to replace `UmbRegisterController` with the name of the controller you created in the earlier step - in our example, that is `UmbAlternativeRegisterController`.
-:::
+{% endhint %}
 
 We are also passing a member group as a parameter - people who register with this form will be automatically assigned to the "Professionals" member group, assuming it already exists in the Backoffice.

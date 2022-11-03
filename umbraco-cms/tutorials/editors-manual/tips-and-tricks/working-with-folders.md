@@ -16,6 +16,3 @@ To reload a section of the content tree:
 
     ![Reload Tree](images/Reload.png)
 
----
-
-Prev: [Tips and Tricks](../../Tips-and-Tricks/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Audit Trail](../Audit-Trail/index.md)

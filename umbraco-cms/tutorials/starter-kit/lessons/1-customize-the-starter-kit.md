@@ -1,6 +1,5 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
+
 ---
 
 # Customise the Starter Kit
@@ -54,4 +53,4 @@ To see the changes you've made go to the **Info** tab and click on the link.
 
 Nice job! In this lesson, you've learned to navigate and edit properties on a page. You've also learned the difference between the **Save**, **Preview**, and **Save and Publish** actions and how to use them.
 
-[Back to Lessons](../index.md)
+[Back to Lessons](README.md)

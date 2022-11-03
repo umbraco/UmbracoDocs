@@ -13,9 +13,9 @@ To access the Umbraco Backoffice:
 2. Enter your **Email** and **Password** provided by your system administrator.
 3. Click **Login**.
 
-:::note
+{% hint style="info" %}
 The address at which you access Umbraco may vary so check with your system administrator.
-:::
+{% endhint %}
 
 ![Login Screen](images/login8.png)
 
@@ -27,7 +27,3 @@ To log out of the Umbraco Backoffice:
 2. Click **Logout**.
 
 ![Logout Screen](images/logout-v9.png)
-
----
-
-Prev: [Getting Started With Umbraco](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Interface](../Umbraco-Interface/index.md)

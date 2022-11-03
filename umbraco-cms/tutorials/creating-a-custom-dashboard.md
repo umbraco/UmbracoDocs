@@ -45,7 +45,7 @@ This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself
 - [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
-There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../Creating-a-Property-Editor/index.md)' is worth a read through too.
+There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read through too.
 
 ### The end result
 
@@ -95,11 +95,11 @@ The above configuration is effectively saying:
 
 > "Add a tab called 'WelcomeDashboard' to the 'Content' section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators', but do allow 'admins' to see it!"
 
-:::note
-The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see, make sure the weight is less than the default dashboards. [Read more about the default weights](../../Extending/Dashboards).
+{% hint style="info" %}
+The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see, make sure the weight is less than the default dashboards. [Read more about the default weights](../../umbraco-cms/extending/dashboards.md).
 
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
-:::
+{% endhint %}
 
 ### Add Language Keys
 
@@ -107,9 +107,9 @@ After registering your dashboard, it will appear in the backoffice - however it 
 
 You will need to create a *Lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
 
-:::note
+{% hint style="info" %}
 The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
-:::
+{% endhint %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -120,7 +120,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 </language>
 ```
 
-[Read more about language files](../../Extending/Language-Files/index.md)
+[Read more about language files](../../umbraco-cms/extending/language-files.md)
 
 ### The Result
 
@@ -173,9 +173,9 @@ The area and key aliases are combined and an underscore is added inbetween.
 
 ![Dashboard with translation keys](images/dashboard-untranslated-v10.png)
 
-:::note
+{% hint style="info" %}
 If you don't see the brackets disappearing - you may need to restart the website.
-:::
+{% endhint %}
 
 ### Different languages
 
@@ -244,13 +244,13 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v10.png)
 
-:::note
+{% hint style="info" %}
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
-:::
+{% endhint %}
 
-**For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](https://our.umbraco.com/documentation/Reference/Configuration/RuntimeMinificationSettings/#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
+**For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../../umbraco-cms/reference/configuration/runtimeminificationsettings.md#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
 
-For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](https://our.umbraco.com/Documentation/Fundamentals/Design/Stylesheets-Javascript/#bundling--minification-for-javascript-and-css) section.
+For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../../umbraco-cms/fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
 
 **For version 8 and below:**
 If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript.
@@ -284,9 +284,9 @@ In our HTML view, we update the outer div to wire up the controller to the view:
 <div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
 ```
 
-:::note
+{% hint style="info" %}
 The use of vm (short for view model) is to enable communication between the view and the controller.
-:::
+{% endhint %}
 
 Finally, we need to update the package.manifest file to load the additional controller JavaScript file when the dashboard is displayed:
 
@@ -317,7 +317,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](https://our.umbraco.com/documentation/Reference/API-Documentation/#backoffice-ui).
+Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](../../umbraco-cms/reference/api-documentation.md#backoffice-ui).
 For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
@@ -340,9 +340,9 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 });
 ```
 
-:::tip
+{% hint style="info" %}
 Notice you can use `console.log()` to write out to the browser console window what is being returned by the promise. This helps to debug, but also understand what properties are available to use.
-:::
+{% endhint %}
 
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
 
@@ -523,11 +523,11 @@ and we should have a list of recently saved content and media:
 
 ![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v10.png)
 
-:::note
+{% hint style="info" %}
 The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
 
 The `logResource` has a few bugs prior to version 8.1.4. If you are on a lower version this may not give the expected result.
-:::
+{% endhint %}
 
 ## I know what you want to do today
 
@@ -668,10 +668,10 @@ WelcomeDashboard.html:
 
 You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
 
-The [property editor tutorial](../Creating-a-Property-Editor/part-4.md) has a step explaining how to do this.
+The [property editor tutorial](creating-a-property-dditor/part-4.md) has a step explaining how to do this.
 
 ## The end
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
 
-Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](https://our.umbraco.com/documentation/Reference/API-Documentation/#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
+Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../../umbraco-cms/reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
