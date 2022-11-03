@@ -142,16 +142,16 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 ## Working with Tags
 
-Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](../ITagQuery/index.md).
+Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](itagquery.md).
 
 
 ## Working with Members
 
-Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](../IMemberManager/index.md) for more information
+Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](imembermanager.md) for more information
 
 ## Searching
 
-Previously the `UmbracoHelper` could be used to run queries on your content, this has been moved out of `UmbracoHelper` and is now available from `IPublishedContentQuery`, see [IPublishedContentQuery](../IPublishedContentQuery/index.md) for more information.
+Previously the `UmbracoHelper` could be used to run queries on your content, this has been moved out of `UmbracoHelper` and is now available from `IPublishedContentQuery`, see [IPublishedContentQuery](ipublishedcontentquery.md) for more information.
 
 ## Fetching Dictionary Values
 
