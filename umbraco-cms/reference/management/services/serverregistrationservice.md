@@ -6,8 +6,6 @@ versionFrom: 9.0.0
 
 The ServerRegistrationService manages server registrations in the database.
 
-[Browse the API documentation for IServerRegistrationService interface](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IServerRegistrationService.html).
-
  * **Namespace:** `Umbraco.Cms.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

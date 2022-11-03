@@ -6,7 +6,7 @@ meta.Description: "The Media class represents a single item in the media tree."
 
 # Media
 
-The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the `IUmbracoContext.IPublishedMediaCache` to get the media. Then one would use [LINQ to query and filter the collection](https://our.umbraco.com/documentation/Reference/Querying/IPublishedContent/Collections/index-v9).
+The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the `IUmbracoContext.IPublishedMediaCache` to get the media. Then one would use [LINQ to query and filter the collection](../../querying/ipublishedcontent/collections.md).
 
 * **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`

@@ -6,8 +6,6 @@ versionFrom: 9.0.0
 
 The MemberTypeService acts as a "gateway" to Umbraco data for operations which are related to MemberTypes.
 
-[Browse the API documentation for IMemberTypeService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IMemberTypeService.html).
-
  * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 

@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
-[Browse the API documentation for IUserService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IUserService.html).
-
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
@@ -62,8 +60,4 @@ IUserService userService = Umbraco.Core.Composing.Current.Services.UserService;
 
 ## Samples
 
-* [**Create a new user**](Create-a-new-user.md)<br />Quick sample showing how to create a new backoffice user; including setting a password, assigning the user to a user group, and setting the name of the user.
-
-* [**Get a reference to a user**](Get-a-reference-to-a-user.md)<br />See the different ways to lookup a backoffice user.
-
-* [**Update user information**](Update-user-information.md)<br />See how you can update user information such as names and avatars.
+* [**Create a new user**](create-a-new-user.md)<br />Quick sample showing how to create a new backoffice user; including setting a password, assigning the user to a user group, and setting the name of the user.

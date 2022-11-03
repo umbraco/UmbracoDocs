@@ -15,35 +15,35 @@ The intended audience for these reference pages are .NET developers. It is assum
 
 The links listed below are api references for Umbraco's public model.
 
-## [Content](Content.md)
+## [Content](content.md)
 API reference for the Content class.
 
-## [ContentType](ContentType.md)
+## [ContentType](contenttype.md)
 API reference for the ContentType class.
 
-## [DataType](DataType.md)
+## [DataType](datatype.md)
 API reference for the DataType class.
 
-## [DictionaryItem](DictionaryItem.md)
+## [DictionaryItem](dictionaryitem.md)
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
-## [Language](Language.md)
+## [Language](language.md)
 API reference for the Language class.
 
-## [Media](Media.md)
+## [Media](media.md)
 API reference for the Media class.
 
-## [MediaType](MediaType.md)
+## [MediaType](mediatype.md)
 API reference for the MediaType class.
 
-## [Relation](Relation.md)
+## [Relation](relation.md)
 API reference for the Relation class.
 
-## [RelationType](RelationType.md)
+## [RelationType](relationtype.md)
 API reference for the RelationType class.
 
-## [ServerRegistration](ServerRegistration.md)
+## [ServerRegistration](serverregistration.md)
 Represents a registered server in a multiple-servers environment.
 
-## [Template](Template.md)
+## [Template](template.md)
 API reference for the Template class.

@@ -294,7 +294,6 @@
       * [PublicAccessService](umbraco-cms/reference/management/services/publicaccessservice.md)
       * [RedirectUrlService](umbraco-cms/reference/management/services/redirecturlservice.md)
       * [RelationService](umbraco-cms/reference/management/services/relationservice.md)
-      * [SectionService](umbraco-cms/reference/management/services/sectionservice.md)
       * [ServerRegistrationService](umbraco-cms/reference/management/services/serverregistrationservice.md)
       * [TagService](umbraco-cms/reference/management/services/tagservice.md)
       * [TextService](umbraco-cms/reference/management/services/textservice.md)

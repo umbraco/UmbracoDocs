@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The ExternalLoginService is used to store the external login info and can be replaced with your own implementation.
 
-[Browse the API documentation for IExternalLoginService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IExternalLoginService.html).
-
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

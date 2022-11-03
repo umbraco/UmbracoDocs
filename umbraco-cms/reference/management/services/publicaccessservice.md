@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 Service to handle public access.
 
-[Browse the API documentation for IPublicAccessService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IPublicAccessService.html).
-
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

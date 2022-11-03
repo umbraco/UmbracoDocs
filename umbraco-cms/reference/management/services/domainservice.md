@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The domain service acts as a "gateway" to Umbraco data for operations which are related to domains.
 
-[Browse the API documentation for IDomainService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IDomainService.html).
-
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 

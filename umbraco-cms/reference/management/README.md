@@ -9,8 +9,8 @@ _Details of CRUD operations within Umbraco and how to interact with the data per
 
 The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
 
-## [Models](Models/index.md)
+## [Models](models/)
 Here you will find references for the models in the public api including the Content, ContentType, DataTypeDefinition, DictionaryItem, Language, Media, MediaType, Relation, RelationType, Task, TaskType and Template classes.
 
-## [Services](Services/index.md)
+## [Services](services/)
 Here you will find references for the various services which are available for performing CRUD operations for the models mentioned above.

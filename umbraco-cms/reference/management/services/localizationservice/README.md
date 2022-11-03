@@ -52,4 +52,4 @@ In Razor views, you can access the localization service through the `@inject` di
 
 ## Samples
 
-* [**Retrieving languages**](Retrieving-languages.md)<br />See examples on how to retrieve languages via the localization service - either individually or as a collection.
+* [**Retrieving languages**](retrieving-languages.md)<br />See examples on how to retrieve languages via the localization service - either individually or as a collection.
