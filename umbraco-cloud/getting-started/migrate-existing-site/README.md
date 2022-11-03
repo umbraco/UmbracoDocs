@@ -20,8 +20,7 @@ These are the steps you need to go through to complete the migration successfull
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
 
-## Video tutorial
-<iframe width="800" height="450" title="Migrating an existing site to Umbraco Cloud" src="https://www.youtube.com/embed/w4VaUnBJ52s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [Video tutorial](https://www.youtube.com/embed/w4VaUnBJ52s)
 
 If you prefer following a written guide, continue to read below.
 
@@ -66,9 +65,9 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](../../../umbraco-cms/fundamentals/setup/upgrading/general.md) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
-If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
+If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](../../../umbraco-forms/installation/manualupgrade.md).
 
 After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
 
@@ -118,7 +117,8 @@ Follow these steps on the Umbraco Cloud environment:
 
 ## 5. Clone down the Cloud project
 
-<iframe width="800" height="450" title="Cloning down your Umbraco Cloud project" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### [Insert video here](https://www.youtube.com/embed/e3spd6Nqrf8)
+
 
 With your Umbraco Cloud project ready for migration, it is time to clone down the project to your local machine.
 
@@ -156,7 +156,7 @@ Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umb
 
 It is required to access any project pages as well as the backoffice.
 
-To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](Migrating-Users-To-Umbraco-Cloud) article.
+To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](migrating-users-to-umbraco-cloud.md) article.
 :::
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
@@ -167,7 +167,7 @@ You have now moved and merged the files from your existing site into the Umbraco
 
 In this next part, it is time to generate the so-called UDA-files for all your project's meta data.
 
-For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/Generating-UDA-files/#what-are-uda-files) article.
+For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/generating-uda-files.md#what-are-uda-files) article.
 
 * Make sure the folder `/Umbraco/Deploy/Revision` on your Umbraco Cloud project is empty
   * If you have any files in the folder, you can safely remove those at this point
@@ -209,7 +209,7 @@ Go to the backoffice of your Development environment and make sure all your meta
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose *'Queue for transfer'*
     * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
-    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/Media/).
+    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/media/README.md).
 
     :::note
     Records from the Redirect URL Management are not transferred by deploy.

@@ -60,15 +60,15 @@ Managing your projects has been made even simpler with Umbraco Cloud. If you go 
 * Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
 * Option to view change details.
 
-While managing the environments on your project, Click on **Manage environments** at the top of the page, and you can add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project overview](../Project-Overview/) article.
+While managing the environments on your project, Click on **Manage environments** at the top of the page, and you can add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project overview](../project-overview.md) article.
 
-Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/Cloud-to-Cloud/) article.
+Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/cloud-to-cloud.md) article.
 
-In the [Settings](../../Set-Up/Project-settings/) section, you will find a lot more options to configure your project.
+In the [Settings](../../Set-Up/project-settings.md) section, you will find a lot more options to configure your project.
 
 ### Manage Subscriptions
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/Manage-Subscriptions/) article.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../Set-Up/manage-subscriptions/README.md) article.
 
 ### Pending Invites
 
@@ -78,7 +78,7 @@ On Umbraco Cloud, you can receive an invitation from different projects. These p
 
 ### Organizations
 
-On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](../The-umbraco-cloud-portal/Organizations/) article.
+On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](../The-umbraco-cloud-portal/organizations.md) article.
 
 ### Profile
 
@@ -102,7 +102,7 @@ Each environment has an error log that appears only if you have any unread error
 
 Once you're there, you can manually mark each error as read which will move it from the "New" section to the "Read" section. Errors marked as read will be permanently deleted after 30 days.
 
-During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../Databases/Cloud-Database/).
+During development, you can happen to gather a large number of errors which might cause the error page to load very slowly. A fix for that would be to locally connect to the database for that specific environment and delete the errors. You can read more about connecting to the environment database locally in the section about [Database on Umbraco Cloud](../../Databases/cloud-database.md).
 
 Environment errors are stored in the `UCErrorLog` table.
 

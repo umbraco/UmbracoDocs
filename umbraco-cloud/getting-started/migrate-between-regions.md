@@ -14,11 +14,11 @@ The guide will use an example where a Cloud project is migrated from the West EU
 
 - Admin access and deployment rights on the project that is to be migrated.
 - Git is installed locally as well as a Git client like *Git Bash*.
-- A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../../Fundamentals/Setup/Requirements/) article.
+- A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../umbraco-cms/Fundamentals/Setup/requirements.md) article.
 
-:::note
+{% hint style="info" %}
 To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.
-:::
+{% endhint %}
 
 ## Prepare your projects
 
@@ -30,7 +30,7 @@ This is done by selecting **East US** from the **Region** dropdown when creating
 
 The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
-Find more details on how to upgrade your project in the [Upgrades](../../Upgrades/) documentation.
+Find more details on how to upgrade your project in the [Upgrades](../upgrades/README.md) documentation.
 
 ## Migrate the project
 
@@ -93,7 +93,7 @@ Do you need help or have any questions regarding this process, please reach out 
 
 :::links
 ## Related articles
-- [Manage hostnames](../../Set-Up/Manage-Hostnames/)
-- [Team Members](../../Set-Up/Team-Members/)
-- [Certificates](../../Set-Up/Manage-Hostnames/Security-Certificates/)
+- [Manage hostnames](../Set-Up/Manage-Hostnames/README.md)
+- [Team Members](../Set-Up/Team-Members/README.md)
+- [Certificates](../Set-Up/Manage-Hostnames/security-certificates.md)
 :::

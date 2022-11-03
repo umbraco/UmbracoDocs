@@ -21,12 +21,12 @@ The number of *Environments* in your project is dependent on which plan you are 
 
 * With the **Enterprise Plan**, you get a *Development*, a *Staging*, and a *Live* environment - as with the Professional Plan you can add/remove environments as needed.
 
-To get a technical overview of your Cloud environments, see the [Environments](../Environments) article. For more information on how to add or remove environments, see the [Manage Environments](../../Set-Up/Manage-Environments) article.
+To get a technical overview of your Cloud environments, see the [Environments](../Environments) article. For more information on how to add or remove environments, see the [Manage Environments](../Set-Up/manage-environments.md) article.
 
 ## Team Members/Invite Users
 
-Another major component of your Umbraco Cloud project is *Team Members*. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as *Admins*, *Writers*, or *Readers*. Refer to the [Team Members](../../Set-Up/Team-Members) article to learn more about these roles.
+Another major component of your Umbraco Cloud project is *Team Members*. When you add team members to a project, they will automatically be added as backoffice users in all the environments. Team members can be added as *Admins*, *Writers*, or *Readers*. Refer to the [Team Members](../Set-Up/Team-Members/README.md) article to learn more about these roles.
 
 ## Settings
 
-In the *Settings* section, you can manage and configure your project to fit your needs. Learn more about the different settings in the [Project Settings](../../Set-Up/Project-settings) article.
+In the *Settings* section, you can manage and configure your project to fit your needs. Learn more about the different settings in the [Project Settings](../Set-Up/project-settings.md) article.

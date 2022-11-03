@@ -27,7 +27,7 @@ Both the Development and the Staging environments are protected with **basic aut
 
     The Live environment is included in the Standard and Professional plans on Umbraco Cloud.
 
-For more information about the workflow on Umbraco Cloud, see the [Deployments](../../Deployment) article. Below you will find a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
+For more information about the workflow on Umbraco Cloud, see the [Deployments](../deployment/README.md) article. Below you will find a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
 
 ![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
 
@@ -47,7 +47,7 @@ Read more about this and team member roles in the [Team Members](../../Set-Up/Te
 
 Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables as you'd expect from any other hosting provider.
 
-Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../Databases) article.
+Learn more about how to connect to your Umbraco Cloud databases in the [Database](../databases/README.md) article.
 
 ## Power Tools (Kudu)
 
@@ -55,7 +55,7 @@ Aside from viewing the files on your Umbraco Cloud environments when cloning dow
 
 This is a dashboard that allows you to browse, view, and edit all the files in your Umbraco Cloud environment. We recommend using the tool *only* when you are following one of our guides in the Troubleshooting section.
 
-In the [Power Tools](../../Set-Up/Power-Tools) article, you can read more about how to access the dashboard, and how we recommend using it.
+In the [Power Tools](../set-up/power-tools/README.md) article, you can read more about how to access the dashboard, and how we recommend using it.
 
 ## Environment History
 
