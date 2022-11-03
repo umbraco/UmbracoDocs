@@ -28,22 +28,25 @@ With this arrangement, you don't need to grant Umbraco Cloud portal access to yo
 
 Learn more about the deployment approach in this video, which will also show you how to deploy metadata as well as how to transfer content and media. Below you'll find links to articles containing step-by-step guides for each approach.
 
-### [insert video here](https://www.youtube.com/embed/sjId_hN1ba0?rel=0)
+{% embed url="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" %}
+Video example.
+{% endembed %}
+
 
 ### Deploying Metadata
 
 To transfer content and media, the source environment and the target environment needs to have the same setup. They need to be in sync and have the same file structure. To achieve this you need to deploy your metadata changes to the target environment.
 
-- [Deploy changes from Local to Cloud](local-to-cloud)
-- [Deploy changes from one Cloud environment to another](cloud-to-cloud)
-- [How Forms are handled on Cloud](umbraco-forms-on-cloud)
+- [Deploy changes from Local to Cloud](local-to-cloud.md)
+- [Deploy changes from one Cloud environment to another](cloud-to-cloud.md)
+- [How Forms are handled on Cloud](umbraco-forms-on-cloud.md)
 
 ### Transfer Content and Media
 
 Moving your content and media between your environments is done through the Umbraco Backoffice. You can transfer content from one environment to another, e.g. from Local to your Development environment. You also have the option to restore content and media to your Local or Development environment from your Live or Staging environment.
 
-- [Transfer Content and Media](content-transfer)
-- [Restore Content and / or Media](restoring-content)
+- [Transfer Content and Media](content-transfer.md)
+- [Restore Content and / or Media](restoring-content/README.md)
 
 {% hint style="info" %}
 Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
