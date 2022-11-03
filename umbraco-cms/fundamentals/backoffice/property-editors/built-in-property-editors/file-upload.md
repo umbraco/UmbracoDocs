@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # File upload
 
 `Alias: Umbraco.UploadField`
@@ -13,11 +8,11 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
 You can define which file types should be accepted through the upload field.
 
-:::tip
+{% hint style="info" %}
 For uploading and adding files and images to your Umbraco project, we recommend using the Media Picker.
 
-Find the full documentation for the property in the [Media Picker](../Media-Picker-3) article.
-:::
+Find the full documentation for the property in the [Media Picker](media-picker-3.md) article.
+{% endhint %}
 
 ## Data Type Definition Example
 
@@ -60,13 +55,13 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 
 ## Add values programmatically
 
-:::note
+{% hint style="info" %}
 The samples in this section have not been verified against the latest version of Umbraco.
 
-Instead, we recommend using the [Media Picker](../Media-Picker-3/) for uploading files to your Umbraco website.
-:::
+Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading files to your Umbraco website.
+{% endhint %}
 
-See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md) and the [Media Service](../../../../../Reference/Management/Services/MediaService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md) and the [Media Service](../../../../reference/management/services/mediaservice.md).
 
 ```csharp
 

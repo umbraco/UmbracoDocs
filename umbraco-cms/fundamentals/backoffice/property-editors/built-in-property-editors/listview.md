@@ -1,8 +1,3 @@
----
-versionFrom: 8.4.0
-versionTo: 10.0.0
----
-
 # List View
 
 `Alias: Umbraco.Listview`
@@ -58,9 +53,9 @@ The template section is where you define what kind of value you want to display.
 The list view comes with two layouts by default. A list and a grid view.
 These views can be disabled if you are not interested in any of them.
 
-:::note
+{% hint style="info" %}
 A minimum of one layout needs to be enabled for the list view to work.
-:::
+{% endhint %}
 
 You can also make your own layout and add it to the settings. For example, if you wanted to change the width or length of the grid, you will be able to do so.
 
