@@ -39,7 +39,7 @@ To see a list of packages covered look [here](https://github.com/umbraco/Umbraco
 
 ## Issues with .net 7 deployments between local and envs.
 
-If you are experience an issue where in your deployment output are seeing build errors targeting a preview / RC version of .net 7 then you can follow these steps to mitigate the issue. 
+If you are experiencing an issue where in your deployment output you are seeing build errors targeting a preview / RC version of .net 7 then you can follow these steps to mitigate the issue. 
 Here is an example of the error:
 
 ```json
