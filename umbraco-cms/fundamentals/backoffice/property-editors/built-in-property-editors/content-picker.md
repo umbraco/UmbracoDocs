@@ -1,15 +1,10 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Content Picker
 
 `Alias: Umbraco.ContentPicker`
 
 `Returns: IPublishedContent`
 
-The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../../Reference/Querying/UDI-identifiers/index.md "Learn more about UDI's")
+The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md "Learn more about UDI's")
 
 ## Data Type Definition Example
 
@@ -47,7 +42,7 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

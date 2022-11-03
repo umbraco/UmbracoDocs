@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Rich Text Editor
 
 `Alias: Umbraco.TinyMCE`
@@ -11,11 +6,11 @@ versionTo: 10.0.0
 
 The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depdending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
 
-## [Configuration options](Configuration)
+## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [RTE Styles](RTE-Styles)
+## [RTE Styles](rte-styles.md)
 
 Use CSS to define specific editor styles and add them to the RTE.
 
@@ -52,7 +47,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

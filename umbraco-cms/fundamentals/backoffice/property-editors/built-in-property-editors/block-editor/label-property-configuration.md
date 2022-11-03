@@ -1,7 +1,3 @@
----
-versionFrom: 7.7.0
----
-
 # Configuring block editor label properties
 
 When configuring a block, the label property allows you to define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. Example: `My Block {{myPropertyAlias}}` will be shown as: `My Block FooBar`.
@@ -51,8 +47,6 @@ angular.module("umbraco.filters").filter("myFilter", function () {
   }
 });
 ```
-
-
 
 ## Special variables
 

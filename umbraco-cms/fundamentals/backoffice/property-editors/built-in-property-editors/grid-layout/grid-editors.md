@@ -8,18 +8,17 @@ A grid editor is the component responsible for getting data into the grid - that
 
 The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
 
-### Default configuration
+## Default configuration
 
-Grid editors are specified in `/config/grid.editors.config.js`. By default this file doesn't exist, so before you attempt to extend the configuration, make sure to create it first. 
+Grid editors are specified in `/config/grid.editors.config.js`. By default this file doesn't exist, so before you attempt to extend the configuration, make sure to create it first.
 
-The default items in the config file are as follows below. It is recommended that you copy all of editors below before you add more, in case some of them are already in use. 
+The default items in the config file are as follows below. It is recommended that you copy all of editors below before you add more, in case some of them are already in use.
 
 If you don't add the editors below to this config file then they won't be available in your grid editors, even if there are existing grid datatypes already using these editors.
 
-:::tip
+{% hint style="info" %}
 You will need to restart your site before any new customizations become available to use.
-:::
-
+{% endhint %}
 
 ```json
 [
@@ -91,7 +90,7 @@ Grid editor are created in the JSON format and each editor is an object like so:
 
 You can customize the built-in editors to tailor the grid to your need.
 
-##### package.manifest
+#### package.manifest
 
 It is recommended that you define custom editors in a `package.manifest` file (not in the config file described above) like so:
 
@@ -113,7 +112,7 @@ While the root JSON element of `/config/grid.editors.config.js` is an array of g
 
 The package manifest should be placed in a folder inside the `/App_Plugins/` folder - for instance `/App_Plugins/{YourPackageName}/package.manifest`. You can define as many grid editors you want and it can be done over multiple manifests so you can use grid editors from packages etc. With the `package.manifest` file in place, Umbraco will automatically pick it up during startup.
 
-You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../Extending/Property-Editors/Package-Manifest/index.md) page.
+You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../extending/property-editors/package-manifest.md) page.
 
 ##### Grid editor configuration
 
@@ -124,13 +123,13 @@ For a grid editor, the required values are:
 - `icon`: Icon shown to the editor, uses same icon classes as the rest of
 - `view` the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
 
-:::tip
+{% hint style="info" %}
 You can also add a name template for generating grid item labels using the syntax `{{ value.propertyAlias }}`.
 
 - If you would like to include the index position in the label, you can use `{{$index}}`.
 - If your editor links to a content, media or member node, you can use the Angular filter `{{ value.udi | ncNodeName }}` to show the node name rather than the node ID.
 - If your editor is a rich text editor, you can use the Angular filter `{{ value | ncRichText }}` to show the unformatted text.
-:::
+{% endhint %}
 
 The built-in views you can use are:
 

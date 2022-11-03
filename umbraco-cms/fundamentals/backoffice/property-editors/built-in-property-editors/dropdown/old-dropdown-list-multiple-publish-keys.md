@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # (Obsolete) Dropdown list multiple, publish keys
 
 `Returns: Comma Separated String`
@@ -45,9 +41,9 @@ Displays a list of preset values as a list where multiple values can be selected
 
 ### Dynamic
 
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
+{% hint style="warning" %}
+See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+{% endhint %}
 
 ```csharp
 @{

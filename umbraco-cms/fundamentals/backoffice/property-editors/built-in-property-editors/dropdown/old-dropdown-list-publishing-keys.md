@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # (Obsolete) Dropdown List, Publishing Keys
 
 `Returns: Int`
@@ -36,9 +32,9 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ### Dynamic example
 
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
+{% hint style="warning" %}
+See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+{% endhint %}
 
 ```csharp
 @if (CurrentPage.HasValue("character"))
@@ -76,9 +72,9 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
 
 ### Dynamic
 
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
+{% hint style="warning" %}
+See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+{% endhint %}
 
 ```csharp
 @{

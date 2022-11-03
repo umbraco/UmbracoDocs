@@ -1,16 +1,13 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Settings and styling
+
 A grid layout can also expose custom settings - such as data-attributes or styling options - on each cell or row. This allows editors to use a friendly UI to add configuration values to grid elements. When custom settings and styles are applied, they will by default be included in the grid html as either html attributes or inline styles.
 
 ![Grid layouts](images/settings.png)
 
 These settings and styles must be configured by developers when setting up the grid layout data type.
 
-### Configuring a custom setting or style
+## Configuring a custom setting or style
+
 To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if it's valid JSON.
 
 The settings data could look like this, with an object for each setting:
@@ -107,9 +104,10 @@ A JSON object can also be used if you need a more specific configuration. A JSON
 This would ensure the setting can only be used on rows named **Article** or **Headline**, or on cells sized: **4**, **8** or **6**. If it should only apply to cells you can remove the row property. If it should apply to all rows you can specify it by having the row property with null or an empty string as value.
 
 ### Sample settings
+
 There are many ways to combine these, here are some samples:
 
-**Set a background image style**
+#### Set a background image style
 
 ```json
 {
@@ -121,8 +119,7 @@ There are many ways to combine these, here are some samples:
 }
 ```
 
-
-**Set a title setting**
+#### Set a title setting
 
 ```json
 {
@@ -133,8 +130,7 @@ There are many ways to combine these, here are some samples:
 }
 ```
 
-
-**Set a data-custom setting**
+#### Set a data-custom setting
 
 ```json
 {
@@ -151,9 +147,10 @@ There are many ways to combine these, here are some samples:
 ```
 
 ### Multiple settings and styles
+
 You can add multiple settings and styles configurations on a data type. This is done by creating a new setting or style object. Remember to separate the objects with a comma.
 
-**Adding multiple settings**
+#### Adding multiple settings
 
 ```json
 [
@@ -178,6 +175,6 @@ You can add multiple settings and styles configurations on a data type. This is 
 ]
 ```
 
-
 ### Full-width settings and styles
+
 It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Make sure the surrounding *section* is full-width (12 columns by default) and the *rows* inside it will automatically become full-width.

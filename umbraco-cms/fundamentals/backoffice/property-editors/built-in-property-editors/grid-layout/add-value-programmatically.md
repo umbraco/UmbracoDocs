@@ -1,19 +1,14 @@
----
-versionFrom: 9.0.0
-versionTO: 10.0.0
----
-
 # Add values programmatically
 
-## 	Configuration
+## Configuration
 
 For this example, the default grid configuration has been used.
 
 ![Grid configuration](Images/Grid-configuration.jpg)
 
-
 ## Set value
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../../Reference/Management/Services/ContentService/index.md).
+
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Newtonsoft.Json
