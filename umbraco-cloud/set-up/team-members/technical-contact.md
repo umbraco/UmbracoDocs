@@ -9,9 +9,9 @@ One of the biggest benefits of having a Umbraco Cloud project is that you do not
 
 When we do maintenance on our Umbraco Cloud servers, we send out information to all our Umbraco Cloud customers. For us to reach out to the correct person, you need to add a **Technical Contact** to your project.
 
-:::note
+{% hint style="info" %}
 If you have more than one project on Umbraco Cloud, you will need to add a technical contact to each of the projects manually.
-:::
+{% endhint %}
 
 When you create a **New Project**, the user used to create the project will automatically be added as the technical contact. To update the technical contact or add more than one technical contact, do the following:
 
@@ -27,4 +27,4 @@ When you create a **New Project**, the user used to create the project will auto
 
     ![Add technical contact form](images/Technical-Contact.gif)
 
-<iframe width="800" height="450" title="How to add a Technical Contact to your Umbraco Cloud project" src="https://www.youtube.com/embed/sjugjnHz3bo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [insert video here](https://www.youtube.com/embed/sjugjnHz3bo?rel=0)

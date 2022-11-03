@@ -5,7 +5,7 @@ versionTo: 10.0.0
  
 # Team Members in the Project Portal
 
-This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](../../../Fundamentals/Data/Users/). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
+This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](/umbraco-cms/fundamentals/data/users.md). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
 
 ![Invite User](images/Invite-User-1.gif)
 

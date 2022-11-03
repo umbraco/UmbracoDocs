@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Managing CDN Caching and Optimizations
@@ -48,9 +46,9 @@ The following example adds a cache-control header with 'no-cache' as the value w
 </rewrite>
 ```
 
-:::note
+{% hint style="info" %}
 The webpage itself is not cached when CDN Caching is enabled.
-:::
+{% endhint %}
 
 ## Cache Everything
 
@@ -58,15 +56,15 @@ The webpage itself is not cached when CDN Caching is enabled.
 
 When **Cache Everything** is enabled, everything including the webpage is cached in the CDN. So, in addition to static assets, the webpage will also be cached and served from the CDN instead of loading from the origin.
 
-:::note
+{% hint style="info" %}
 When a webpage is cached, it will be stripped of any cookies that are otherwise part of the request. If you are utilizing cookies as part of the website, be aware of the implications of using Cache Everything.
-:::
+{% endhint %}
 
 When using Cache Everything you should use a Cache TTL, which matches the Editor's expectations of when the webpage is refreshed with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours and then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, then they will have to wait at least two hours until they can see the changes on the website.
 
-:::warning
+{% hint style="warning" %}
 We recommend using Cache Everything with caution.
-:::
+{% endhint %}
 
 ## Purge Caching
 
@@ -82,9 +80,9 @@ Purging the cache is a heavy operation, so there is a constraint on how many pur
 
 In the Purge Cache section, you can see how many Purge requests you have available and when.
 
-:::note
+{% hint style="info" %}
 The available number of Purge requests varies depending on your Cloud Plan. For more information, see the [Plan specific features](#plan-specific-features).
-:::
+{% endhint %}
 
 ## Minification
 
@@ -92,9 +90,9 @@ The available number of Purge requests varies depending on your Cloud Plan. For 
 
 Minification can be enabled for CSS, JS, and HTML, and is done through the CDN as part of serving the request. Minification strips whitespace from the CSS, JS, and HTML files, so the request is smaller and thus faster to download for the end-user.
 
-:::note
+{% hint style="info" %}
 Using minification through CDN can affect Content Security Policies, as the files are being changed after they leave the origin. If you are using Content Security Policies, we recommend doing minification within the Umbraco site.
-:::
+{% endhint %}
 
 ## Plan specific features
 

@@ -15,27 +15,27 @@ You can view the **Overview** of your Umbraco Cloud project from the **Settings*
 
 ![Project Overview](images/project-overview-1.png)
 
-## [Edit team](../Team-Members)
+## [Edit team](../set-up/team-members/README.mdr)
 
 Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../Team-Members/Technical-Contact.md), or add an [Account contacts](../Team-Members/Accounts-Contact.md) for your project.
 
-## [Connection details](../../Databases)
+## [Connection details](../databases/README.md)
 
 Find connection details to your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
 
-## [Hostnames](../Manage-Hostnames)
+## [Hostnames](Manage-Hostnames/README.md)
 
 Binding hostnames to your Umbraco Cloud project is done from the **Hostnames** section in the **Settings** menu on the Umbraco Cloud Portal.
 
-## [Security](../Manage-Security)
+## [Security](manage-security.md)
 
 Manage transport security settings for your project. You can configure certain transport security options for all hostnames or specific hostnames within your project.
 
-## [CDN Caching and Optimization](../Manage-CDN-Caching/index.md)
+## [CDN Caching and Optimization](manage-cdn-caching.mdmd)
 
 Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
 
-## [Certificates](../Manage-Hostnames/Security-Certificates) (Only available on **Professional** or **Enterprise** plan)
+## [Certificates](Manage-Hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
 Used to upload and bind your custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
 
@@ -49,7 +49,7 @@ You can disable/enable it with one click on the Public access page.
 Access to manage the basic authentication requires your project to be on the Standard plan or higher.
 
 
-## [Webhooks](../../Deployment/Deployment-webhook)
+## [Webhooks](../Deployment/deployment-webhook.md)
 
 It is possible to configure a deployment webhook on your environments on Umbraco Cloud projects. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
 
@@ -64,11 +64,11 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 You can rename your Umbraco Cloud project from the **Settings** menu.
 ![settings](images/renaming-project-v10.png)
 
-:::note
+{% hint style="info" %}
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
-:::
+{% endhint %}
 
-### [Renaming the Project file and folder](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/#renaming-the-project-files-and-folders)
+### [Renaming the Project file and folder](../Set-Up/working-locally.md#renaming-the-project-files-and-folders)
 
 You can rename your project from the **Rename Project** section in the **Settings** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
 
@@ -85,7 +85,7 @@ Manage **Advanced** settings for your project from the **Settings** menu:
 
 ![Advanced Settings](images/Advanced-Settings.png)
 
-## [Payment](../Manage-Subscriptions/new-shop.md)
+## [Payment](Manage-Subscriptions/new-shop.md)
 
 From here, you can see the payment history for your project, change the credit card, as well as download the latest invoices for your project.
 
@@ -93,7 +93,7 @@ From here, you can see the payment history for your project, change the credit c
 This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
 
-## [Usage](../Usage/)
+## [Usage](usage.md)
 
 On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
@@ -101,6 +101,6 @@ On your Umbraco Cloud project, it is possible to see the usage of Custom Domains
 
 You can delete your Umbraco Cloud project from the **Settings** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 
-:::note
+{% hint style="info" %}
 Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
-:::
+{% endhint %}

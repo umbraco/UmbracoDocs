@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Working with Mac
 
@@ -39,9 +35,9 @@ To work with Mac:
     }
     ```
 
-:::note
+{% hint style="info" %}
 The UserName, Email, and Password are optional properties and *only* needed if you want to set up a local backoffice user. You can use your Umbraco Id to sign in to the backoffice.
-:::
+{% endhint %}
 
 4. On the terminal, navigate to `src/UmbracoProject` folder and run the following commands to start the project:
 

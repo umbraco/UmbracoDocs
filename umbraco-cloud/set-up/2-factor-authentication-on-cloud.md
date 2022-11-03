@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "2-factor authentication on Umbraco Cloud"
 meta.Description: "This article shows you how you can enable 2-factor authentication for when you log in to the Umbraco Cloud Portal."
 ---

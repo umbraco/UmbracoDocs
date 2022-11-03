@@ -17,8 +17,8 @@ The three highlighted folders are used the most when visiting Kudu:
 * The **repository** folder: This is your Git repository. You'll find a clone of your site's structure files in the`/wwwroot` folder. Changes are pushed to and pulled from the `/repository/` folder when working locally.
 * The **wwwroot** folder: This folder contains your site's structure files. These are the files used to run the site in the environment.
 
-:::note
+{% hint style="info" %}
 `/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes successfully the changes are copied into the live site.
-:::
+{% endhint %}
 
-Find general information about Kudu and how to access the tool in the [Power tools](../) article.
+Find general information about Kudu and how to access the tool in the [Power tools](../power-tools/README.md) article.

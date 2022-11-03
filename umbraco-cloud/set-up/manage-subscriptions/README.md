@@ -5,9 +5,8 @@ versionTo: 10.0.0
 
 # Manage Subscriptions
 
-:::note
+{% hint style="info" %}
 This article is only for customers managing their subscriptions through Umbraco Shop. For customers who have joined Umbraco Cloud after the 5th of May, 2021, and are managing their subscriptions through Umbraco Cloud, see the [Manage Subscriptions on Umbraco Cloud](new-shop.md) article.
-:::
 
 In this article, you can find information on how to manage your Umbraco Cloud subscriptions from the Umbraco Shop. You can also find information on how to change ownership of your projects.
 
@@ -59,16 +58,17 @@ When you have registered your user. You will need to log in to your [profile](ht
 - Country
 - VAT number (if within the EU)
 
-:::note
+{% hint style="info" %}
 The owner of the subscription must reach out when changing the owner.
-:::
+{% endhint %}
 
 ### Projects
 
-Handing over a project to someone else can be done by adding them to the project as a [Team Member](../Team-Members) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
+Handing over a project to someone else can be done by adding them to the project as a [Team Member](../team-members/README.md) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
 
-:::note
-Remember to change the [technical contact details](../Team-Members/Technical-Contact) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whoever is listed under technical contact.
+{% hint style="info" %}
+Remember to change the [technical contact details](../team-members/technical-contact.md) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whoever is listed under technical contact.
 
 You can change the technical contact details under the **Edit team** section in the Backoffice.
-:::
+{% endhint %}
+

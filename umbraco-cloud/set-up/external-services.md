@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 keywords: whitelist allow list allowlist IP internal static outbound ips
 ---
 

@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Set Up
 
@@ -13,24 +9,24 @@ Most of the set up can be accomplished by using the options from your project's 
 
 Articles about configuring settings on your project, as well as managing members, domains, and certificates.
 
-* [Going Live](Going-live/)
-* [Project Settings](Project-settings/)
-* [Adding Team Members](Team-Members/)
-* [SMTP Settings](SMTP-settings/)
-* [Manage Hostnames](Manage-Hostnames/)
-* [Manage Environments](Manage-Environments/)
-* [Manage Transport Security](Manage-Security/)
+* [Going Live](going-live.md)
+* [Project Settings](Project-settings.md)
+* [Adding Team Members](Team-Members.md)
+* [SMTP Settings](SMTP-settings.md)
+* [Manage Hostnames](Manage-Hostnames.md)
+* [Manage Environments](Manage-Environments.md)
+* [Manage Transport Security](Manage-Security.md)
 
 ## Working with your Umbraco Cloud project
 
 Articles about how to work locally with your Umbraco Cloud project.
 
-* [Working with your site locally](Working-Locally/)
-* [Working with Visual Studio](Working-With-Visual-Studio/)
-* [Working with a Mac](Working-with-UaaS-Cli/)
+* [Working with your site locally](working-locally.md)
+* [Working with Visual Studio](Working-With-Visual-Studio.md)
+* [Working with a Mac](working-with-mac.md)
 
 ## Related topics
 
-* [Media on Umbraco Cloud](media/)
-* [Power Tools (Kudu)](Power-Tools/)
-* [Config transforms for each environment](Config-Transforms/)
+* [Media on Umbraco Cloud](media/README.md)
+* [Power Tools (Kudu)](Power-Tools/README.md)
+* [Config transforms for each environment](config-transforms.md)
