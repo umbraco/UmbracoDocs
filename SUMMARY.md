@@ -327,8 +327,6 @@
   * [Plugins](umbraco-cms/reference/plugins/README.md)
     * [Creating Resolvers](umbraco-cms/reference/plugins/creating-resolvers.md)
     * [Finding types](umbraco-cms/reference/plugins/finding-types.md)
-    * [Initializing Resolvers](umbraco-cms/reference/plugins/initializing-resolvers.md)
-    * [Resolvers](umbraco-cms/reference/plugins/resolvers.md)
   * [Querying & Models](umbraco-cms/reference/querying/README.md)
     * [IMemberManager](umbraco-cms/reference/querying/imembermanager.md)
     * [IPublishedContentQuery](umbraco-cms/reference/querying/ipublishedcontentquery.md)
