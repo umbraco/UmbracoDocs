@@ -47,7 +47,7 @@ Therefore, all files will contain the header (which is done automatically for yo
 
 ## Accessing Content
 
-The syntax in Partial View Macros is similar to the **[MVC View](../../Mvc/views.md)** syntax. In fact, they are driven by the exact same engine as MVC Views.
+The syntax in Partial View Macros is similar to the **[MVC View](../mvc/views.md)** syntax. In fact, they are driven by the exact same engine as MVC Views.
 
 You can use @CurrentPage, @Model.Content, @Umbraco, ...
 

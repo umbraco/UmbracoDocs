@@ -53,6 +53,6 @@ Here are the steps to specify your own logic for validating a username and passw
     }
     ```
 
-:::note
+{% hint style="info" %}
 if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
-:::
+{% endhint %}

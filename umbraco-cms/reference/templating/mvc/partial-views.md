@@ -6,7 +6,7 @@ versionTo: 10.0.0
 
 # Using MVC Partial Views in Umbraco
 
-_This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../Macros/Partial-View-Macros/index.md)'_
+_This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../macros/partial-view-macros.md)'_
 
 ## Overview
 
@@ -27,7 +27,7 @@ The standard MVC partial view locations will also work:
 
 The `~/Views/Render` location is valid because the controller that performs the rendering in the Umbraco codebase is the: `Umbraco.Cms.Web.Common.Controllers.RenderController`
 
-If however you are [Hijacking an Umbraco route](../../Routing/Custom-Controllers/index.md) and specifying your own controller to do the execution, then your partial view location can also be:
+If however you are [Hijacking an Umbraco route](../../routing/custom-controllers.md) and specifying your own controller to do the execution, then your partial view location can also be:
 
     ~/Views/{YourControllerName}
 

@@ -15,7 +15,7 @@ If you do this, you probably aren't using [Singletons](https://en.wikipedia.org/
 
 Dependency injection is available everywhere, and you can register your own services as well, additionally, some resources are available through properties on certain base classes. For example, all Razor views that Umbraco creates expose an `UmbracoHelper` property you can access through `@Umbraco`, as well as a `SmidgeHelper` property. The other base classes that expose some things you might need like `UmbracoContext` are things like `SurfaceController`, but even here the services are initially gotten through DI, and you can inject further Umbraco and custom services that you might need.
 
-For more information about consuming and registering your own dependencies have a look at the [Dependency Injection](../../Reference/Using-Ioc/index) documentation
+For more information about consuming and registering your own dependencies have a look at the [Dependency Injection](using-ioc.md) documentation
 
 
 __Example of using base class properties gotten through DI:__

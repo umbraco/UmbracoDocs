@@ -13,7 +13,7 @@ _Working with MVC Views and Razor syntax in Umbraco_
 All Umbraco views inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NameOfYourDocType>` along with the using statement `@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;`. This exposes many properties that are available in razor. The properties on the Document Type can be accessed in a number of ways:
 
 * @Model (of type `Umbraco.Web.Mvc.ContentModel`) -> the model for the view which contains the standard list of IPublishedContent properties but also gives you access to the typed current page (of type whatever type you have added in the angled brackets).
-* @Umbraco (of type `UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retrieving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
+* @Umbraco (of type `UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retrieving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../querying/umbracohelper.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
 * @UmbracoContext (of type `Umbraco.Cms.Web.Common.UmbracoContext`)
 
@@ -83,11 +83,11 @@ This renders a macro with some parameters using a dictionary
 @await Umbraco.RenderMacroAsync("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 ```
 
-[UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
+[UmbracoHelper Documentation](../../querying/umbracohelper.md)
 
 ## Accessing Member data
 
-`IMemberManager` is the gateway to everything related to members when templating your site. [IMemberManager Documentation](../../Querying/IMemberManager/index.md)
+`IMemberManager` is the gateway to everything related to members when templating your site. [IMemberManager Documentation](../../querying/imembermanager.md)
 
 ```csharp
 @using Umbraco.Cms.Core.Security;
@@ -114,4 +114,4 @@ Properties created on your document types can be accessed with this syntax:
 
 When Models Builder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models. This allows you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
 
-[Models Builder documentation](../Modelsbuilder/)
+[Models Builder documentation](../modelsbuilder/)

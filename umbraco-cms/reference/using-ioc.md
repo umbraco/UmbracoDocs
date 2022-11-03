@@ -41,7 +41,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Registering dependencies in packages
 
-When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../../implementation/Composing/index.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`: 
+When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`: 
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -64,9 +64,9 @@ namespace IOCDocs
 }
 ```
 
-:::tip
+{% hint style="info" %}
 Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions.DependencyInjection` as 'using' statements where you register your services, to gain access to the `IUmbracoBuilder`, its extension methods, and the Microsoft `IServiceProvider.
-:::
+{% endhint %}
 
 ### Builder extension methods
 
@@ -107,12 +107,12 @@ namespace IOCDocs
 }
 ```
 
-:::note
+{% hint style="info" %}
 It is not required to have an interface for your dependency:
 ```csharp
 services.AddSingleton<Foobar>();
 ```
-:::
+{% endhint %}
 
 Now you can call your `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
 
@@ -280,9 +280,9 @@ namespace IOCDocs.Services
     }
 }
 ```
-:::note
+{% hint style="info" %}
 The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
-:::
+{% endhint %}
 
 ### ExamineManager
 

@@ -40,7 +40,7 @@ The same implementation logic can be used in lots of different places on your si
 
 ## Implementing a Macro
 
-Macros can be implemented using an MVC Partial View - [Partial View Macros](Partial-View-Macros/index.md). It uses the exact same syntax and objects as [MVC views](../Mvc/index.md).
+Macros can be implemented using an MVC Partial View - [Partial View Macros](partial-view-macros.md). It uses the exact same syntax and objects as [MVC views](../mvc/).
 
 ## Rendering Macros
 

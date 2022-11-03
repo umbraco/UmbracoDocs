@@ -48,9 +48,9 @@ namespace UmbracoHelperDocs.Controllers
 }
 ```
 
-:::warning
+{% hint style="warning" %}
 `ITagQuery` is a scoped service, meaning that it should only be injected into scoped or transient services, for more information see the official [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped)
-:::
+{% endhint %}
 
 ## Examples
 

@@ -54,8 +54,8 @@ in the HTML link thus: ```<link href='/sb/umbraco-backoffice-init-css.css.v7a71f
 
 So if you increased the Version in the configuration by 1 to 1235, all you would see is a different hash!
 
-:::note
+{% hint style="info" %}
 For production environments, it's recommended to set Cache Buster to 'Version' (you don't actually need to supply a version number, but if you do, you can control when the cache breaks, eg if a package has installed new assets) or to 'AppDomain'.
-:::
+{% endhint %}
 
 Another configuration option (of Smidge) is the `"dataFolder`" setting, this setting specifies what folder Smidge will use for its temporary data, it should not be necessary to change this either, it will only be used if UseInMemoryCache is set to false.

@@ -5,9 +5,9 @@ meta.Title: "Umbraco configuration"
 meta.Description: "Information on configuring Umbraco"
 ---
 
-:::note
+{% hint style="info" %}
 In Umbraco 9+ (ASP.NET Core) configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
-:::
+{% endhint %}
 
 # Configuration Files
 

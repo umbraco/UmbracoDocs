@@ -27,9 +27,9 @@ using Umbraco.Cms.Core.Models;
 
 Constructor for creating a new `Language` object where the necessary parameter are the global settings as `GlobalSettings` and the isoCode as a `string`.
 
-:::note
+{% hint style="info" %}
 To create a new Language the global setting parameter is necessary. You can find more info about how to use configuration in code in the [Config article](../../V9-Config/#reading-configuration-in-code).
-:::
+{% endhint %}
 
 ## Properties
 

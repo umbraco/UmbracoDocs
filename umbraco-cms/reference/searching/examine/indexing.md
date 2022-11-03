@@ -39,9 +39,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 
-:::note
+{% hint style="info" %}
 In this sample we are altering the external index and thus we name the class `ConfigureExternalIndexOptions`. If you are altering multiple indexes, it is recommended to have separate classes for each index - i.e. `ConfigureExternalIndexOptions` for the external index, `ConfigureInternalIndexOptions` for the internal index and so on.
-:::
+{% endhint %}
 
 When using the `ConfigureNamedOptions` pattern, we have to register this in a composer for it to configure our indexes, this can be done like this:
 
@@ -135,19 +135,19 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 
-:::note
+{% hint style="info" %}
 Remember to register `ConfigureMemberIndexOptions` in your composer.
-:::
+{% endhint %}
 
 ## Creating your own index
 
 The following example will show how to create an index that will only include nodes based on the document type _product_.
 
-:::note
+{% hint style="info" %}
 We always recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
 Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search the ExternalIndex.
-:::
+{% endhint %}
 
 To create this index we need five things:
 

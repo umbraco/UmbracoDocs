@@ -119,9 +119,9 @@ E.g.
 
 *Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application.
 
-:::note
+{% hint style="info" %}
 To exclude any endpoint or folders in your directory from Umbraco's routing, add it to the `ReservedPaths` setting in the `appsettings.json` file.
-:::
+{% endhint %}
 
 For example:
 

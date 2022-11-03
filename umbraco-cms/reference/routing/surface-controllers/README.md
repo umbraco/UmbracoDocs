@@ -85,9 +85,9 @@ They do not get routed via an MVC area, so any views must exist in the following
 * `/Views/Shared/`
 * `/Views/`
 
-:::tip
+{% hint style="info" %}
 If you get a 404 error when trying to access your surface controller, you may have forgotten to add a namespace to it!
-:::
+{% endhint %}
 
 ## Plugin based controllers
 
@@ -184,17 +184,17 @@ Whenever you render an Umbraco form within your view using `Html.BeginUmbracoFor
 }
 ```
 
-::: tip
+{% hint style="info" %}
 In Umbraco 9 the `__RequestVerificationToken` token is automatically added to forms for you, so you no longer need to add `@Html.AntiForgeryToken()` to your forms.
-:::
+{% endhint %}
 
 ### Preventing Cross-Site Request Forgery (XSRF/CSRF) Attacks
 
 Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated.
 
-:::note
+{% hint style="info" %}
 By default, `Html.BeginUmbracoForm` and `Html.BeginForm` adds an antiforgery token.
-:::
+{% endhint %}
 
 If the token is not added automatically, for instance, if you don't use `Html.BeginUmbracoForm` or use an overload to `Html.BeginForm` where you've set the `antiForgery` parameter to false, you can add it manually like so:
 

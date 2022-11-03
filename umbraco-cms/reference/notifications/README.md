@@ -5,10 +5,10 @@ versionTo: 10.0.0
 
 # Using notifications
 
-:::note
+{% hint style="info" %}
 Since the release of Umbraco 9, Events has been renamed to Notifications. This article is only relevant if you are using Umbraco 9.
 For V8 equivalent see: [Events](../Events)
-:::
+{% endhint %}
 
 Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that.
 
@@ -153,9 +153,9 @@ See [Tree Notifications](../../Extending/Section-Trees/index.md) for a listing o
 
 See [EditorModel Notifications](EditorModel-Notifications) for a listing of the EditorModel events
 
-:::tip
+{% hint style="info" %}
 Useful for manipulating the model before it is sent to an editor in the backoffice - e.g. perhaps to set a default value of a property on a new document.
-:::
+{% endhint %}
 
 ## Creating and publishing your own custom notifications
 

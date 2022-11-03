@@ -84,6 +84,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-:::note
+{% hint style="info" %}
 For more information about registering notifications read the [Registering notification handlers](../index.md/#registering-notification-handlers) article.
-:::
+{% endhint %}

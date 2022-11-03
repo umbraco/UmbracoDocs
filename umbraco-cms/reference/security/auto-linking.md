@@ -172,9 +172,9 @@ services.AddUmbraco(_env, _config)
    .AddOpenIdConnectAuthentication()
    .Build();
 ```
-:::note
+{% hint style="info" %}
 For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
-:::
+{% endhint %}
 
 ### Example for members
 The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members.
@@ -293,9 +293,9 @@ services.AddUmbraco(_env, _config)
    .AddMemberGoogleAuthentication()
    .Build();
 ```
-:::note
+{% hint style="info" %}
 Auto-linking only makes sense if you have a public member registration anyway or the external provider does not have public account creation.
-:::
+{% endhint %}
 
 ## Local logins
 
@@ -309,9 +309,9 @@ In some cases you may want to flow a Claim returned in your external login provi
 
 Reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
 
-:::warning
+{% hint style="warning" %}
 Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
-:::
+{% endhint %}
 
 ### Example
 
@@ -357,6 +357,6 @@ The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` ov
 This is a blob text column so can store any arbitrary data for the external login provider.
 
 
-:::note
+{% hint style="info" %}
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the backoffice user isn't yet created, you will most likely need to store this data in memory. First, during auto-linking and then persist this data to the service once the user is linked and created.
-:::
+{% endhint %}

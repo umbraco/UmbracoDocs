@@ -40,7 +40,7 @@ Test whether the specified `templateId` is an allowed template for the current n
 
 Test whether the specified `templateAlias` is an allowed template for the current node.
 
-:::note
+{% hint style="info" %}
 By default the above template methods are disabled. To enable them, make sure to modify your appsettings.json to include the following JSON config keys inside Umbraco.CMS section:
 
 ```json
@@ -50,7 +50,7 @@ By default the above template methods are disabled. To enable them, make sure to
  }
 ```
 
-:::
+{% endhint %}
 
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
