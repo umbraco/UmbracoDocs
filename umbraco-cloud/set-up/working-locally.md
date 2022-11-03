@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Working with a Local Clone of a Umbraco Cloud Site
 

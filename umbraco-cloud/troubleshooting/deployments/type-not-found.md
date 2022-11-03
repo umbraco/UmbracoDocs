@@ -1,6 +1,3 @@
----
-versionFrom: 7.0.0
----
 
 # Extraction error: "Type not found! "
 

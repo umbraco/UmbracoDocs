@@ -1,11 +1,7 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Log files on Umbraco Cloud
 
-You can access the different types of log files on Umbraco Cloud or through [Kudu](../../Set-Up/Power-Tools). You have access to different types of logs:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../Set-Up/Power-Tools/README.md). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
@@ -13,13 +9,13 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 * Site Extension logs
 * IIS logs
 
-:::note
+{% hint style="info" %}
  Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
-:::
+{% endhint %}
 
 ## Video
 
-<iframe width="800" height="450" title="Log Files on Umbraco Cloud" src="https://www.youtube.com/embed/xM5QbF751SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [insert video here](https://www.youtube.com/embed/xM5QbF751SI)
 
 ## Accessing the logs
 
@@ -34,11 +30,11 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 
 ### On Kudu
 
-To access logs through Kudu, see [Power tools (Kudu)](../../Set-Up/Power-Tools) article.
+To access logs through Kudu, see [Power tools (Kudu)](../Set-Up/Power-Tools/README.md) article.
 
 ## Umbraco logs
 
-Umbraco logs on Cloud work almost the same as on a [normal installation](../../../Getting-Started/Code/Debugging/#logging), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+Umbraco logs on Cloud work almost the same as on a [normal installation](../../umbraco-cms/fundamentals/code/debugging/logging.md), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
 ## Deploy logs
 

@@ -1,6 +1,3 @@
----
-versionFrom: 7.0.0
----
 
 # The Umbraco Cloud Portal
 
@@ -24,18 +21,18 @@ The first thing to check is what type of error it is, you can do so by clicking 
 
 We have some guides on how to fix the most common errors below:
 
-* [Some artifacts collide on unique identifiers](Deployments/Structure-Error)
-* [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items)
-* [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
-* [Colliding Data Types](Deployments/Colliding-Datatypes)
-* [Type not found](Deployments/Type-Not-Found)
-* [Deployment fails instantly with no message](Deployments/Deployment-Failed)
+* [Some artifacts collide on unique identifiers](Deployments/Structure-Error.md)
+* [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items.md)
+* [Baseline merge issues](../Getting-Started/Baselines/baseline-merge-conflicts.md)
+* [Colliding Data Types](Deployments/colliding-datatypes.md)
+* [Type not found](Deployments/type-not-found.md)
+* [Deployment fails instantly with no message](Deployments/deployment-failed.md)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
 An environment is in an error state because the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions).
+Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/manual-extractions.md).
 
 Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases, you will need to have a look at the log files.
 

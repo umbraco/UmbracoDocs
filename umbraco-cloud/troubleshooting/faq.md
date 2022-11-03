@@ -1,6 +1,3 @@
----
-versionFrom: 7.0.0
----
 
 # Troubleshooting FAQ
 We have gathered a list of frequently asked questions below that have something to do with troubleshooting on Umbraco Cloud. These are not covered by the other sections.
