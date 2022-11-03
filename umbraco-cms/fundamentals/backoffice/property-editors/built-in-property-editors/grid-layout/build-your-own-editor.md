@@ -1,14 +1,10 @@
----
-versionFrom: 7.0.0
----
-
 # Build your own editor
 
-:::note
+{% hint style="info" %}
 The samples in this section have not been verified against the latest version of Umbraco.
 
 A new Property Editor called the **Block based Grid editor** will soon be available as a substitute for the existing Grid Layout editor. For more information, see the [Block based Grid editor for Umbraco CMS](https://umbraco.com/products/roadmap/) in the Umbraco Roadmap.
-:::
+{% endhint %}
 
 Create a file in `/App_Plugins/yourpackage/editor.html` and add the following to the editor.html file:
 
@@ -51,7 +47,8 @@ If you wish to use something entirely different you can give the editor a separa
 }
 ```
 
-### Grid editor controller
+## Grid editor controller
+
 If you are building something slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works like building a property editor:
 
 ```html
@@ -99,8 +96,8 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 
 This process tries to be as close to building property editors as currently possible.
 
-
 ### Rendering grid editor content
+
 Next add this c# to the .cshtml file:
 
 ```csharp

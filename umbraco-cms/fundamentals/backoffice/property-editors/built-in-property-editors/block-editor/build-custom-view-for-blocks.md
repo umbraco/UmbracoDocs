@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Build a Custom View for a Block
 
 You can choose to customize your editing experience by implementing a custom view for each Block Type of a Block Editor.
@@ -77,7 +72,7 @@ To achieve this you need to add a custom AngularJS controller to your custom vie
 Create a folder inside the `App_Plugins` folder called 'CustomBlockView'.
 
 Create two files within the CustomBlockView file: `package.manifest` and `customBlock.controller.js`.
- 
+
 Add the following JSON to the `package.manifest` file:
 
 ```json
@@ -88,9 +83,9 @@ Add the following JSON to the `package.manifest` file:
 }
 ```
 
-:::note
+{% hint style="info" %}
 Umbraco will parse all `package.manifest` files and load any resources they reference into the backoffice during startup.
-:::
+{% endhint %}
 
 The second file, `customBlock.controller.js`, will be used to register the 'customBlockController' defined using the `ng-controller` attribute in your custom view.
 

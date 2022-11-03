@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Checkbox List
 
 `Alias: Umbraco.CheckBoxList`
@@ -11,9 +6,9 @@ versionTo: 10.0.0
 
 Displays a list of preset values as a list of checkbox controls. The text saved is a IEnumerable collection of the text values.
 
-:::note
+{% hint style="info" %}
 Unlike other property editors, the Prevalue IDs are not directly accessible in Razor.
-:::
+{% endhint %}
 
 ## Data Type Definition Example
 
@@ -59,7 +54,7 @@ Unlike other property editors, the Prevalue IDs are not directly accessible in R
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @inject IContentService Services;

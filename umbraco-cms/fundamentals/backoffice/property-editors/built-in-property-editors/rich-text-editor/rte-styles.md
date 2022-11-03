@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Rich Text Editor Styles
 
 It is possible to define specific styles and fonts for the Rich Text Editor (RTE). Once you've defined the styles, and enabled them on the RTE Data Type, the styles can be accessed directly in the content section.
@@ -33,7 +28,7 @@ In order for your editors to be able to use the styles when working with content
 
 The styles will be accessed by the editors using the "Formats" dropdown in the toolbar of the RTE. In order the enable the dropdown, the "Style select" toolbar option needs to be checked.
 
-This can be done through the Content section using infinite editing, or by finding and editing the RTE Data Type in the Settings section of the backoffice. Learn more about the configuration options in the [RTE Config](../Configuration) article.
+This can be done through the Content section using infinite editing, or by finding and editing the RTE Data Type in the Settings section of the backoffice. Learn more about the configuration options in the [RTE Config](configuration.md) article.
 
 ### 2. Select the styles
 

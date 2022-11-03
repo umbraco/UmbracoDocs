@@ -1,8 +1,3 @@
----
-versionFrom: 11.0.0
-versionTo: 11.0.0
----
-
 # Block Grid
 
 `Alias: Umbraco.BlockGrid`
@@ -11,7 +6,7 @@ versionTo: 11.0.0
 
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
 
-:::note
+{% hint style="info" %}
 The Block Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
 
 [Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-11-release-candidate/).
@@ -19,7 +14,7 @@ The Block Grid is currently only available in the Release Candidate (RC) of Umbr
 **Do you have some feedback after testing the feature?**
 
 Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to report your findings. We appreciate any help we get in making our products better.
-:::
+{% endhint %}
 
 ## Contents
 
@@ -35,7 +30,7 @@ Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to re
 * [Build a custom Backoffice View](#build-a-custom-backoffice-view)
 * [Creating a Block Grid programmatically](#creating-a-block-grid-programmatically)
 
-:::tip
+{% hint style="info" %}
 **Example Blocks**
 When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
@@ -46,7 +41,7 @@ When you are testing out the RC, you have the option to test the new Block Grid 
 * **Install** the "Sample Configuration".
 
 4 Blocks will be added to the property, ready for testing.
-:::
+{% endhint %}
 
 ## Configuring the Block Grid
 
@@ -75,13 +70,13 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are based on **[Element Types](../../../../../Data/Defining-content/index.md#what-is-an-element-type)**. These can be created beforehand or while setting up your Block Types.
+Block Types are based on **[Element Types](../../../../data/defining-content.md#what-is-an-element-type)**. These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
 ![Block Grid - Data Type Block Configuration](images/BlockGridEditor_DataType_Blocks.png)
 
-[Examples and more details about configuring the Label property.](../label-property-configuration.md)
+[Examples and more details about configuring the Label property](label-property-configuration.md)
 
 ### Groups
 
@@ -97,13 +92,13 @@ Customize the user experience for your content editors when they work with the B
 
 * **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
 
-  :::tip
+  {% hint style="info" %}
   Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
 
   You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
 
   Get more tips on how to use AngularJS filters in Umbraco CMS from this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
-  :::
+  {% endhint %}
 
 * **Content model** - Presents the Element Type used as model for the Content section of this Block. This cannot be changed but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
 * **Settings model** - Adds a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
@@ -176,9 +171,9 @@ These properties are relevant when working with custom views or complex projects
 
 * **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
-    :::tip
+    {% hint style="info" %}
     Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
-    :::
+    {% endhint %}
 
 * **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
 
@@ -294,14 +289,14 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 <link rel="stylesheet" href="@Url.Content("~/css/blockgridlayout.css")" />
 ```
 
-:::note
+{% hint style="info" %}
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
 1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in
    `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
 2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
 3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
-   :::
+{% endhint %}
 
 ### 2. Build your own rendering
 
@@ -469,7 +464,7 @@ For example: You can use the below HTML structure:
 
 Building Custom Views for Block representations in Backoffice is based on the same API for all Block Editors.
 
-[Read about building a Custom View for Blocks here](../build-custom-view-for-blocks.md)
+[Read about building a Custom View for Blocks here](build-custom-view-for-blocks.md)
 
 ## Creating a Block Grid programmatically
 
@@ -637,7 +632,7 @@ public class BlockGridElementData
 }
 ```
 
-By injecting [ContentService](../../../../../Reference/Management/Services/ContentService/) and [ContentTypeService](../../../../../Reference/Management/Services/ContentTypeService/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
+By injecting [ContentService](../../../../../reference/management/services/contentservice/README.md) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/README.md) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

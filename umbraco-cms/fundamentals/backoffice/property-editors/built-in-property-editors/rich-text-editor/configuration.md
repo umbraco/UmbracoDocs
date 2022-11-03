@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Rich Text Editor Configuration
 
 The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
@@ -11,7 +6,7 @@ In this article you can learn about the various ways you can configure the RTE.
 
 ## Toolbar
 
-You have full control over which options should be available on the RTE. 
+You have full control over which options should be available on the RTE.
 
 ![Toolbar: All options enabled](images/toolbar-full.png)
 
@@ -21,7 +16,7 @@ In the examble above, all 34 options have been enabled. The options include copy
 
 It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE as you want.
 
-The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](../RTE-Styles) article to learn more about this feature.
+The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](rte-styles.md) article to learn more about this feature.
 
 ## Dimensions
 
