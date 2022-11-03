@@ -37,9 +37,9 @@ If you experience problems when using third-party packages on Umbraco Cloud ther
 
 To see a list of packages covered look [here](https://github.com/umbraco/Umbraco.Deploy.Contrib).
 
-## Issues with .net 7 deployments between local and envs.
+## Issues with .net 7 deployments between local and envs
 
-If you are experiencing an issue where in your deployment output you are seeing build errors targeting a preview / RC version of .net 7 then you can follow these steps to mitigate the issue. 
+If you are experiencing an issue where in your deployment output you are seeing build errors targeting a preview / RC version of .net 7. Then you can follow these steps to mitigate the issue. 
 Here is an example of the error:
 
 ```json
@@ -102,7 +102,7 @@ And save the file.
 
 4. Add, commit the file and push it to the env.
 
-This will force the Azure build service to target version 6.0.401 of the .net SDK for your project and your env will function again.
-You will not need to add the same file to your other environments as source control will take care of adding it in when you deploy it between your development, staging or live environments.
+This will force the Azure build service to target version 6.0.401 of the .net sdk for your project and your env will function again.
+You will not need to add the same file to your other environments. As source control will take care of adding it in when you deploy it between your development, staging or live environments.
 
 When you have done the above steps you should no longer see deployment issues with .net 7-preview or rc.
