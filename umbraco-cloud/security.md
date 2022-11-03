@@ -12,7 +12,7 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../Set-Up/Manage-Hostnames/Security-Certificates).
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](Set-Up/Manage-Hostnames/security-certificates.md).
 
 ### TLS support
 
@@ -22,7 +22,7 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](../Set-Up/Manage-Security/) article.
+Learn more about how this in the [Manage Security](Set-Up/manage-security.md) article.
 
 ### TLS Ciphers support
 
@@ -66,7 +66,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](Set-Up/Manage-Hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
 
 ### Ports
 
@@ -152,9 +152,10 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
   <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
-:::note
+
+{% hint style="info" %}
 In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
-:::
+{% endhint %}
 
 **Non-Reverse Proxy (eg. non-Cloudflare)**
 
@@ -190,6 +191,7 @@ The Autoupgrader on Umbraco Cloud needs to have access to the site to succesfull
 
 The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
 
-:::note
+
+{% hint style="info" %}
 It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
-:::
+{% endhint %}

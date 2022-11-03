@@ -2,9 +2,9 @@
 
 This article will provide steps on how to migrate a Umbraco 8 Cloud project to Umbraco 10.
 
-:::note
+{% hint style="info" %}
 The steps in this article can also be used to upgrade to Umbraco version 9, however, we do recommend always upgrading to the latest version whenever possible.
-:::
+{% endhint %}
 
 Since the underlying framework going from Umbraco 8 to 10 has changed there is no direct upgrade path. However, there have been a few changes to the Database schema. You can re-use the database from your Umbraco 8 project on your new Umbraco 10 Cloud project so that you have your content from Umbraco 8.
 
@@ -19,7 +19,9 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 <!--Needs V9 update
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/videoseries?list=PLG_nqaT-rbpxrVkhlMedRKL9frAVIHlve" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/videoseries?list=PLG_nqaT-rbpxrVkhlMedRKL9frAVIHlve" %}
+Video example.
+{% endembed %}
 -->
 
 ## Prerequisites
@@ -30,15 +32,15 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 * A backup of your Umbraco 8 project database.
 
-:::note
+{% hint style="info" %}
 We strongly recommend having at least **2 environments** on the Umbraco 10 project.
 
 Should something fail during the migration, the Development environment can always be removed and re-added to start over on a clean slate.
-:::
+{% endhint %}
 
 ## Step 1: Content Migration
 
-* Create a backup of the database from your Umbraco 8 project using the [database backup guide](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) *OR* clone down the V8 project and take a backup of the local Database. Make sure to restore the content from your cloud environment.
+* Create a backup of the database from your Umbraco 8 project using the [database backup guide](../Databases/README.md) *OR* clone down the V8 project and take a backup of the local Database. Make sure to restore the content from your cloud environment.
 
 * Import the database backup into SQL Server Management Studio.
 
@@ -52,7 +54,7 @@ Should something fail during the migration, the Development environment can alwa
     }
     ```
 
-* To authorize the database upgrade, enable [Unattended Upgrades](https://our.umbraco.com/Documentation/Reference/V9-Config/UnattendedSettings/#upgrade-unattended).
+* To authorize the database upgrade, enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended).
 
 * Run the Umbraco 10 project locally.
 
@@ -79,7 +81,7 @@ You need to manually upgrade the view files and custom code implementation. For 
 * In Umbraco 10, config files no longer live in the `Web.Config` file and is instead in the `appsettings.json` file. You will need to make sure that you update the `appsettings.json` file with any custom settings that you had in your Umbraco 8 project to match with the [Configuration Files](../../../Reference/Configuration/index.md).
 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
-  * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8) article.
+  * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../umbraco-forms/developer/forms-in-the-database.md) article.
 
 * Run the Umbraco 10 project locally.
   * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
@@ -104,15 +106,15 @@ You need to manually upgrade the view files and custom code implementation. For 
 
 Umbraco 10 is different from Umbraco 8 in many ways. This means that in this step, all custom code, controllers, and models need to be rewritten for Umbraco 10.
 
-:::note
+{% hint style="info" %}
 Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
-:::
+{% endhint %}
 
 ### Examples of changes
 
 One of the changes is how published content is rendered through Template files. Due to this, it will be necessary to update **all** the Template files (`.cshtml`) to reflect these changes.
 
-Read more about these changes in the [IPublishedContent section of the Documentation](../../../Reference/Querying/IPublishedContent/).
+Read more about these changes in the [IPublishedContent section of the Documentation](../../umbraco-cms/reference/querying/ipublishedcontent/README.md).
 
 * Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 
@@ -155,16 +157,16 @@ Once the Umbraco 10 project runs without errors on the local setup, the next ste
 
 * Test **everything** in the **Development** environment.
 * Once the migration is completed, and the **Live** environment is running without errors, the site is ready for launch.
-* Setup [rewrites](../../../Reference\Routing\IISRewriteRules) on the Umbraco 10 site.
+* Setup [rewrites](../../umbraco-cms/reference/routing/iisrewriterules.md) on the Umbraco 10 site.
 * Assign hostnames to the project.
 
-    :::note
+{% hint style="info" %}
     Hostnames are unique and can only be added to one Cloud project at a time.
-    :::
+{% endhint %}
 
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../../Deployment/Umbraco-Forms-on-Cloud)
-* [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
-* [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
+* [Forms on Umbraco Cloud](../Deployment/umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../Set-Up/working-locally.md)
+* [KUDU on Umbraco Cloud](../Set-Up/Power-Tools/README.md)

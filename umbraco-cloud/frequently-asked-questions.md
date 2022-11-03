@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Frequently asked questions
 
@@ -37,7 +33,7 @@ Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can down
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](../umbraco-cloud/getting-started/migrate-existing-site/README.md).
 
 ---
 
@@ -54,7 +50,7 @@ All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as 
 
 ### How many resources do I have available for my website?
 
-In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../Getting-Started/Umbraco-cloud-plans)
+In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](../umbraco-cloud/getting-started/umbraco-cloud-plans.md)
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
@@ -99,7 +95,7 @@ Other reasons why you didn't receive the auto-upgrade:
  - If you are doing a deployment at the time we tried to run the auto-upgrader on your project
  - If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
 
-You can find all the steps of the auto-upgrade process outlined in the [Upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
+You can find all the steps of the auto-upgrade process outlined in the [Upgrades](../Umbraco-Cloud/upgrades/README.md#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
 
 ### Does leaving pending commits (dev to live) derail the upgrade process?
 
@@ -114,8 +110,6 @@ Do note, however that you will need to step through the upgrade installer manual
 ### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
-
-As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.com/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco DLL files.
 
 ---
 
@@ -143,7 +137,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
-Haven't found an answer to your question? Many security related questions are answered in the [Security section](../Security) of the documentation.
+Haven't found an answer to your question? Many security related questions are answered in the [Security section](security.md) of the documentation.
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
@@ -153,7 +147,7 @@ Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL h
 
 Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
-Learn more about how to use your own certificates in the [Custom certificates](../Set-up/Manage-Hostnames/Security-certificates) article.
+Learn more about how to use your own certificates in the [Custom certificates](Set-up/Manage-Hostnames/security-certificates.md) article.
 
 ### Does Umbraco Cloud support HTTP/2?
 
@@ -163,7 +157,7 @@ By default, Umbraco Cloud supports HTTP/2.
 
 No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
-You can learn much more about this in our [Security section](../Security/#cookies-and-security).
+You can learn much more about this in our [Security section](security.md#cookies-and-security).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
 
@@ -177,7 +171,7 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
 
-Learn more about this and how to set it up in our [Security section](../Security/#restrict-backoffice-access-using-ip-filtering).
+Learn more about this and how to set it up in our [Security section](security.md#restrict-backoffice-access-using-ip-filtering).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
@@ -193,7 +187,7 @@ No, you should not use a shared database for your team. Umbraco Cloud is made so
 
 Not only does this promote working in small increments it also prevents two problems:
 
- 1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
+ 1. If you share a database between multiple developers, [Umbraco's flexible load balancing](../umbraco-cms/fundamentals/setup/server-setup/load-balancing/flexible.md) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
  2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
 ### Can I use custom .NET code?
@@ -226,7 +220,7 @@ This is intended behaviour.
 
 We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
 
-You can read much more about these deletions in the [Deploying Deletions](../Deployment/Deploying-Deletions) article.
+You can read much more about these deletions in the [Deploying Deletions](Deployment/deploying-deletions.md) article.
 
 ---
 
@@ -268,7 +262,7 @@ Yes, you can choose between the West Europe region and US East region.
 
 ### Can I move my existing project created on Cloud in the EU region to the US region?
 
-Yes, you can move a project that was created on Umbraco Cloud in the EU region to the US region by following the [migrate between regions guide](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Migrate-between-regions/).
+Yes, you can move a project that was created on Umbraco Cloud in the EU region to the US region by following the [migrate between regions guide](/umbraco-cloud/getting-started/migrate-between-regions.md).
 
 ### How do I select a region when creating projects on Cloud?
 
@@ -310,7 +304,7 @@ Yes. Once we have specific plans, we will announce them publicly.
 
 Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
 
-You can read more about database backups and how to perform these on Umbraco Cloud in the [Databases/Backups section](../Databases/Backups)
+You can read more about database backups and how to perform these on Umbraco Cloud in the [Databases/Backups section](Databases/backups.md)
 
 #### Filesystem
 
