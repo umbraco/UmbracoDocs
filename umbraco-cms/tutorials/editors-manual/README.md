@@ -27,14 +27,14 @@ Showing you the ropes on getting started with Umbraco. A walkthrough on how to l
 
 How to use the Rich Text Editor.
 
-## [Version Management](#version-management)
+## [Version Management](version-management/)
 
 How to compare versions and roll back different versions of content.
 
-## [Media Management](#media-management)
+## [Media Management](media-management/)
 
 How to work with media, organize folders, and do image editing.
 
-## [Tips and Tricks](#tips-and-tricks)
+## [Tips and Tricks](tips-and-tricks/)
 
 Providing a few tips and tricks on how to work with Content using Umbraco.
