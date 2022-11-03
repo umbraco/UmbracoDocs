@@ -9,35 +9,35 @@ meta.Description: "Guide on how to work with and create Property Editors in Umbr
 
 # Property Editors
 
-This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition](../../Fundamentals/Backoffice/Property-Editors/index.md)
+This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition](../../fundamentals/backoffice/property-editors/)
 
 ## Tutorials - Creating a property editor
 
-* [Creating a property editor](../../Tutorials/Creating-a-Property-Editor/)
-* [Adding configuration to a property editor](../../Tutorials/Creating-a-Property-Editor/part-2.md)
-* [Integrating services with a property editor](../../Tutorials/Creating-a-Property-Editor/part-3.md)
-* [Adding server side data to a property editor](../../Tutorials/Creating-a-Property-Editor/part-4.md)
+* [Creating a property editor](../../tutorials/creating-a-property-editor/)
+* [Adding configuration to a property editor](../../tutorials/creating-a-property-editor/part-2.md)
+* [Integrating services with a property editor](../../tutorials/creating-a-property-editor/part-3.md)
+* [Adding server side data to a property editor](../../tutorials/creating-a-property-editor/part-4.md)
 
-## [Package Manifest](Package-Manifest/index.md)
+## [Package Manifest](package-manifest.md)
 
 Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 
-## [Property Value Converters](Property-Value-Converters/index.md)
+## [Property Value Converters](property-value-converters.md)
 
 Convert the stored property data value to a useful object returned by the Published Content APIs.
 
-## [Property Actions](Property-Actions/index.md)
+## [Property Actions](property-actions.md)
 
 Use Property Actions to add additional functionaility to your custom property editors.
 
-## [Build a Block Editor](Build-a-Block-Editor/index.md)
+## [Build a Block Editor](build-a-block-editor.md)
 
 Learn how to build your own Block Editors.
 
-## [Tracking References](Tracking/index.md)
+## [Tracking References](tracking.md)
 
 Learn how to extend Property editors to track entity references inside the property editor.
 
 ## More information
 
-* [Built in Property Editors](../../Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/)
+* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-property-editors/)

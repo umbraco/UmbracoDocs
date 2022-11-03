@@ -9,7 +9,7 @@ meta.Description: "The Settings section of the Umbraco backoffice holds a dashbo
 
 The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
-For inspiration when building your checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/Checks), as well as our [guides](Guides). Some examples will follow in this document.
+For inspiration when building your checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/Checks), as well as our [guides](guides/). Some examples will follow in this document.
 
 ## Built-in checks
 
@@ -44,7 +44,7 @@ Some of them can also be rectified via the dashboard, by clicking the **Fix** bu
 
 As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
-For more information, see the [Reference > Configuration > Health checks](../../Reference/Configuration/HealthChecks/) article.
+For more information, see the [Reference > Configuration > Health checks](../../reference/configuration/healthchecks.md) article.
 
 ## Custom checks
 

@@ -11,9 +11,9 @@ _Checks if your site, when running with HTTPS, contains the Strict-Transport-Sec
 
 This health check can be fixed by adding the `Strict-Transport-Security` header to responses. The header tells browsers that future requests should be made over HTTPS only.
 
-:::warning
+{% hint style="warning" %}
 Enabling HSTS on a domain will cause browsers to only use HTTPS (not HTTP) to communicate with your site. Only enable HSTS on domains that can, and should, use HTTPS exclusively.
-:::
+{% endhint %}
 
 ### Using the UseHsts extension method
 ASP.NET Core implements HSTS with the `UseHsts` extension method.

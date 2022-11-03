@@ -6,9 +6,9 @@ meta.Description: "A guide to creating macro property editors in Umbraco"
 
 # Macro Parameter Editors
 
-:::note
+{% hint style="info" %}
 The samples in this article has not been verified against the latest version of Umbraco.
-:::
+{% endhint %}
 
 Every macro can contain parameters. Options for the Editor to set when they insert the Macro to customise the output. There are some useful default types.  For example:
 
@@ -20,7 +20,7 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Single/Multiple Content Picker
 * ... and some 'others'
 
-Consult the [Backoffice documentation](../../Fundamentals/Backoffice) for general information on Macros.
+Consult the [Backoffice documentation](../fundamentals/backoffice/) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 
@@ -28,7 +28,7 @@ It is possible to create custom macro parameter types.
 
 ### isParameterEditor
 
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/Package-Manifest/index.md) for the editor, set the `isParameterEditor` property to be true.
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](property-editors/) and in the corresponding [Package Manifest file](property-editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
 {

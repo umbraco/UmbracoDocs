@@ -100,9 +100,9 @@ There are different ways to access the Azure Key Vault. It is important that the
 
 ## Use Key Vault references for Azure App Service
 
-:::note
+{% hint style="info" %}
 This option is only recommended for Umbraco 10.
-:::
+{% endhint %}
 
 Azure Web Apps offers the ability to directly reference Key Vault secrets as App Settings. The benefit of this is you can securely store your secrets in Key Vault without any code changes required in your application.
 

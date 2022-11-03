@@ -8,9 +8,9 @@ meta.Description: "A guide to creating custom file systems in Umbraco"
 
 ## Media Filesystem
 
-:::note
-Before considering a custom media file system, be sure to first read about the configuration options for `UmbracoMediaPath` and `UmbracoMediaPhysicalRootPath` in the [configuration reference docs](../../Reference/Configuration/GlobalSettings/). These configurations may save you from creating your own media file system entirely.
-:::
+{% hint style="info" %}
+Before considering a custom media file system, be sure to first read about the configuration options for `UmbracoMediaPath` and `UmbracoMediaPhysicalRootPath` in the [configuration reference docs](../../reference/configuration/globalsettings.md). These configurations may save you from creating your own media file system entirely.
+{% endhint %}
 
 By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (wwwroot/media).
 
@@ -230,4 +230,4 @@ After the `SetStylesheetFileSystem` method has run, `FileSystems.StylesheetsFile
 
 There is an Azure Blob Storage provider:
 
-- [Azure Blob Storage](Azure-Blob-Storage/index.md)
+- [Azure Blob Storage](azure-blob-storage.md)

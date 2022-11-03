@@ -77,9 +77,9 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 }
 ```
 
-:::note
+{% hint style="info" %}
 Umbraco backoffice uses the Helveticons icon pack by default.
-:::
+{% endhint %}
 
 ### Creating the View and the Controller
 
@@ -175,13 +175,13 @@ Here is an example where all types are taken intro consideration when limiting a
 }
 ```
 
-:::tip
+{% hint style="info" %}
 When the 'show' directive is omitted then the app will be shown for all types.
 
 Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
 
 In this case the WordCounter app is only usable within the Content section so you have to exclude from all other types.
-:::
+{% endhint %}
 
 ### Limiting according to User Role
 
@@ -199,9 +199,9 @@ In a similar way, you can limit your Content App according to user roles (groups
 }
 ```
 
-:::tip
+{% hint style="info" %}
 When a role restriction is given in the manifest, it overrides any other restrictions based on type.
-:::
+{% endhint %}
 
 ## C#: Creating a Content App
 
@@ -291,9 +291,9 @@ You will still need to add all of the files you added above. However, because yo
 }
 ```
 
-:::tip
+{% hint style="info" %}
 You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as  `"icon-calculator color-indigo"` in your Content App C# class or *package.manifest* .
-:::
+{% endhint %}
 
 ## Notification badges
 

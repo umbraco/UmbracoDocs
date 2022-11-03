@@ -96,10 +96,10 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch
 }
 ```
 
-:::warning
+{% hint style="warning" %}
 You cannot use this to search on integer types in the index, as an example `parentID` does not work.
-:::
+{% endhint %}
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../Section-Trees/Searchable-Trees/index.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index.md")
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index.md")

@@ -14,14 +14,14 @@ For example, when you load the backoffice you'll see that the 'Content' section 
 
 You can create your own sections and trees to extend Umbraco.
 
-## [Sections](Sections/index.md)
+## [Sections](sections.md)
 
 Describes Umbraco Sections, configuration and APIs.
 
-## [Trees](Trees/index.md)
+## [Trees](trees/)
 
 Describes Umbraco Trees, configuration, APIs and events.
 
-## [Searchable Trees (ISearchableTree)](Searchable-Trees/index.md)
+## [Searchable Trees (ISearchableTree)](searchable-trees.md)
 
 Explains how to customise the backoffice search of a Section Tree.

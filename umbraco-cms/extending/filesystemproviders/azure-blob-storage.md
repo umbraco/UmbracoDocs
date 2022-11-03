@@ -67,9 +67,9 @@ Open up your `appsettings.json` file and add the connection string and container
 
 Note that in this example, the container name is `mysitestorage`. 
 
-:::tip
+{% hint style="info" %}
 You can get your connection string from your Azure Portal under "Access Keys".
-:::
+{% endhint %}
 
 ## Setting the services and middleware
 
@@ -92,7 +92,7 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
         }
 ```
 
-:::note
+{% hint style="info" %}
 **If you are using Umbraco 9, follow this step before moving on**:
 
 Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
@@ -121,7 +121,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         });
 }
 ```
-:::
+{% endhint %}
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
 

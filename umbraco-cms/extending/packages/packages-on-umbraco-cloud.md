@@ -23,28 +23,23 @@ When you develop a package for Umbraco Cloud there are a few things to be aware 
 
 Let's take a look at the most common ways of storing data in packages - and what to watch out for on Cloud.
 
-### Package actions
-
-A [package action](../Package-Actions/custom-package-actions.md) is used to run some commands on package install and uninstall. One thing to watch out for with regards to package actions is that whatever code you run will only be executed on the environment you install the package on. So if you for example set up a database table in a package action that table will not be generated in each environment.
-If you need a database table in each environment you will probably need to look at migrations below instead.
-
 ### Migrations
 
-A [migration](../../Database/index.md) is some code that you run as part of a migration plan. That migration plan has an ID that is stored in the database (in the KeyValue table). This means that when you add new migrations Umbraco will only execute the ones that came after the one with the stored ID. The most important difference between a migration and a package action is when they are initialized. A package action runs on package install and uninstall, whereas a migration will run whenever you want it to run, see below for common examples.
+A [migration](../database.md) is some code that you run as part of a migration plan. That migration plan has an ID that is stored in the database (in the KeyValue table). This means that when you add new migrations Umbraco will only execute the ones that came after the one with the stored ID. The most important difference between a migration and a package action is when they are initialized. A package action runs on package install and uninstall, whereas a migration will run whenever you want it to run, see below for common examples.
 
-As migration runs are stored in the database of the site it also means that they will run on each environment you trigger them on. The most common way to trigger a migration is to include them in a [composer](../../../Implementation/Composing/index.md), which will ensure they run on site startup. This means any commands you have in your migration will automatically run when the site starts up. When your package code is pushed to a new environment it will run them from the beginning on that environment as no ID is saved in the database.
+As migration runs are stored in the database of the site it also means that they will run on each environment you trigger them on. The most common way to trigger a migration is to include them in a [composer](../../implementation/composing.md), which will ensure they run on site startup. This means any commands you have in your migration will automatically run when the site starts up. When your package code is pushed to a new environment it will run them from the beginning on that environment as no ID is saved in the database.
 
-This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](../../../Umbraco-Cloud/Set-Up/Power-Tools/Generating-UDA-files/index.md#what-are-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
+This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](../../../umbraco-cloud/set-up/power-tools/generating-uda-files.md#what-are-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
 
 You could consider creating Umbraco schema only during a package action, and then running things like creating database tables in migrations. Another good workaround could be to not run the migrations in a composer, but rather create a dashboard for the package where the user can choose which migrations to run themselves. The [Articulate package](https://github.com/Shazwazza/Articulate/blob/master/build/packageManifest.xml#L613) has an example of this.
 
 ### Creating files
 
-You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md) to add an app setting to the web.config.
+You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](../../../umbraco-cloud/set-up/config-transforms.md) to add an app setting to the web.config.
 If you do this be aware of two things:
 
 1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/33) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
-2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
+2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](../../../umbraco-cloud/set-up/config-transforms.md).
 
 ## ValueConnectors
 
@@ -184,12 +179,12 @@ You may have realised at this point that the flow is something like this:
 
 So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
 
-:::warning
+{% hint style="warning" %}
 
 In this example there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
 
 That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`.
-:::
+{% endhint %}
 
 In order to add the image as a dependency for the item being transferred, we will update the code in the `ToArtifact` method:
 
@@ -238,9 +233,9 @@ When stepping through the code we can see that everything seems to work fine:
 
 ![Stepped through code](images/steppingThroughCode.png)
 
-:::note
+{% hint style="info" %}
 Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) .
-:::
+{% endhint %}
 
 By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a33367c3561a4"` all that is left to do is convert back to an `int`.
 

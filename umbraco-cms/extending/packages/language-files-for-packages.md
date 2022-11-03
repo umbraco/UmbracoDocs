@@ -16,9 +16,9 @@ For each language your package supports, you include an .xml file in the same fo
 - English keys: `/App_Plugins/mypackage/Lang/en-US.xml`
 - Danish keys: `/App_Plugins/mypackage/Lang/da-DK.xml`
 
-:::note
+{% hint style="info" %}
 The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
-:::
+{% endhint %}
 
 ## Language file format
 

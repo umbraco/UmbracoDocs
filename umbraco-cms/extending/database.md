@@ -8,9 +8,9 @@ meta.Description: "A guide to creating a custom Database table in Umbraco"
 
 It is possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
 
-:::note
-If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../../Implementation/Composing/) article.
-:::
+{% hint style="info" %}
+If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../implementation/composing.md) article.
+{% endhint %}
 
 The end result looks like this:
 
@@ -258,7 +258,7 @@ namespace MyNamespace
 
 ## Using a Notification Handler
 
-If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../../Fundamentals/Code/Subscribing-To-Notifications\index.md).
+If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
 
 The code for this approach is as follows:
 

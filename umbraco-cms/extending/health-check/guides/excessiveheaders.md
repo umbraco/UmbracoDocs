@@ -19,9 +19,9 @@ Unless you publicly expose the Kestrel server ([not recommended by Microsoft](ht
 
 For IIS you will need to manipulate `web.config` (If you don't have `web.config` already in your project you will need to add it at the root). Ensure to remove the custom `X-Powered-By` and `Server` header as shown in the following example.
 
-:::note
+{% hint style="info" %}
 The `removeServerHeader` attribute is added in IIS 10.0 and does not work in versions of Windows prior to Windows Server version 1709 or Windows 10 version 1709.
-:::
+{% endhint %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
