@@ -7,9 +7,9 @@ versionTo: 10.0.0
 
 To ensure we notify the billing information to the right people, you need to add an **Account Contacts** to your project. This contact is our primary source of contact for project payment communications.
 
-:::note
+{% hint style="info" %}
 If you have more than one project on Umbraco Cloud, you will need to add an account contact to each of the projects manually.
-:::
+{% endhint %}
 
 To add an account contact, do the following:
 

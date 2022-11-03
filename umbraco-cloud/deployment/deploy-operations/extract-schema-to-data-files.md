@@ -1,6 +1,3 @@
----
-
----
 
 # Extract Schema to Data Files
 

@@ -12,14 +12,14 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../Deployment/Deploy-Operations/extract-schema-to-data-files.md#what-are-uda-files)).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../deployment/deploy-operations/extract-schema-to-data-files.md#what-are-uda-files)).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
-:::note
+{% hint style="info" %}
 Does the collision error involve **Dictionary items**?
 Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
-:::
+{% endhint %}
 
 You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
@@ -121,6 +121,6 @@ When the push from local to the Development environment has been completed, refr
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../Deployment/Deploy-Operations/deploy-schema.md).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-operations/deploy-schema.md).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

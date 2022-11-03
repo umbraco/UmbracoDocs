@@ -23,7 +23,7 @@ One way to apply a hotfix to a Live environment on Cloud is to clone down the De
 
 Read the guide here: [Deploy hotfix with Git](Using-Git/)
 
-## [2. Move files manually](Move-files-manually.md)
+## [2. Move files manually](move-files-manually.md)
 
 Another way to apply a hotfix to a Live environment would be to clone down both your Development and your Live environment to your local machine. Take the changed and/or updated files from the cloned Development environment, copy them into the cloned Live environment, and push them to the Live environment on Cloud. Using this guide will also allow you to test the changes on a cloned version of your Live environment before pushing it to the Cloud.
 

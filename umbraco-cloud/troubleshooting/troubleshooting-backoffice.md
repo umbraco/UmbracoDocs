@@ -24,7 +24,7 @@ The first thing to ensure is that any schema changes have been pushed through Gi
 
 Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs) for both the source and target environments, so make sure to check both.
 
-If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../Set-Up/smtp-settings.md)
+If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../set-up/smtp-settings.md)
 
 ## If the error is something not loading in the backoffice
 
@@ -34,7 +34,7 @@ This can have many different causes, and as such we don't have specific guides o
   * ^/umbraco
   * ^/DependencyHandler.axd
   * ^/App_Plugins
-  * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../Set-Up/manage-hostnames/rewrites-on-cloud.md) article.
+  * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/manage-hostnames/rewrites-on-cloud.md) article.
 * Do you get any errors in your browser console that may help you figure it out?
 * Do you get any errors in your umbracoTraceLog?
 * If something isn't loading after a package was installed it could be because the package overwrites something like the dashboard.config file - try to turn the package off and see if that helps.

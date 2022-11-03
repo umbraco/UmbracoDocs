@@ -10,9 +10,9 @@ Errors in the Cloud Portal are shown as a colored indicator of an environment. A
 * **Yellow** - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
 * **Red** - this is the "error" state which normally has information about what went wrong
 
-:::note
+{% hint style="info" %}
 When your environment has an error and you try to deploy again it will not be able to. The error will **always** need to be resolved before another deployment can be started.
-:::
+{% endhint %}
 
 ## My environment is red. What do I do?
 
@@ -32,7 +32,7 @@ If your issue is not covered above here are some general guidelines on what you 
 
 An environment is in an error state because the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/manual-extractions.md).
+Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../set-up/power-tools/manual-extractions.md).
 
 Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases, you will need to have a look at the log files.
 

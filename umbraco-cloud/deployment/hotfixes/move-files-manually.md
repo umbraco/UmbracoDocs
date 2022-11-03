@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Apply hotfix by manually moving files
 
 In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment by manually moving the changed, updated, and/or new files from one local clone to another.
@@ -12,9 +7,9 @@ The following tools have been used to create this guide:
 * Visual Studio Code
 * GitKraken
 
-:::note
+{% hint style="info" %}
 In GitKraken version 6.5.3, it is no longer possible to open private repositories with the free version - This affects all Umbraco Cloud repositories as well. 
-:::
+{% endhint %}
 
 ## The Scenario
 
@@ -59,9 +54,9 @@ One of the benefits of having the Live environment cloned down, is that you can 
 
 1. Run the Live repository through IIS
 2. Open _CMD_ and navigate to the `/umbraco/Deploy/Revision` folder in your Live repository.
-:::note
+{% hint style="info" %}
 In Umbraco version 8 and below, navigate to the `site/wwwroot/data/Revision` folder in your Live repository.
-::::
+{% endhint %}:
 3. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](/umbraco-cloud/set-up/power-tools/README.md) articles.
 4. The changes will now be reflected in the backoffice of your local Live environment.
 
@@ -70,14 +65,14 @@ Once you've checked that everything works locally, you are ready to push to the 
 ### Push to Live
 
 1. Push the committed changes to the Live environment using Git.
-:::note
+{% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site.
-:::
+{% endhint %}
 2. Find a guide on how to extract the files, in the [Manual Extraction](../../set-up/power-tools/manual-extractions.md) article
 
 You have now applied a hotfix to the Live environment.
 
-When you are done with development on your Development environment, follow the normal workflow of [Deploying the changes between Cloud environments](../../../Deployment/Cloud-to-Cloud/). The hotfix which now exists in both environments should automatically be merged upon deployment.
+When you are done with development on your Development environment, follow the normal workflow of [Deploying the changes between Cloud environments](../../../deployment/cloud-to-cloud/). The hotfix which now exists in both environments should automatically be merged upon deployment.
 
 ## Important Notes
 

@@ -64,11 +64,11 @@ Should something fail during the migration, the Development environment can alwa
 
 * Run the site and log in using Umbraco ID.
 
-:::note
+{% hint style="info" %}
 This is **only content migration** and the database will be migrated.
 
 You need to manually upgrade the view files and custom code implementation. For more information, see [Step 3](#Step-3-setup-custom-code-for-umbraco-9) of this guide.
-:::
+{% endhint %}
 
 ## Step 2: File Migration
 
@@ -128,9 +128,9 @@ Once the Umbraco 10 project runs without errors on the local setup, the next ste
 
 * Push the migration and changes to the Umbraco Cloud **Development** environment.
 
-    :::note
+    {% hint style="info" %}
     The deployment might take a bit longer than normal.
-    :::
+    {% endhint %}
 
 * Once everything has been pushed, go to the backoffice of the **Development** environment.
 
@@ -167,6 +167,6 @@ Once the Umbraco 10 project runs without errors on the local setup, the next ste
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../Deployment/umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../Set-Up/working-locally.md)
-* [KUDU on Umbraco Cloud](../Set-Up/Power-Tools/README.md)
+* [Forms on Umbraco Cloud](../deployment/umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../set-up/working-locally.md)
+* [KUDU on Umbraco Cloud](../set-up/power-tools/README.md)

@@ -27,15 +27,15 @@ We recommend:
 * Setting a CNAME record for your hostname using **dns.umbraco.io** or
 * An A record using an IP, either `104.19.191.28` or `104.19.208.28`.
 
-:::note
+{% hint style="info" %}
 Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
-:::
+{% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
 
-:::warning
+{% hint style="warning" %}
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
-:::
+{% endhint %}
 
 ## [Insert video](https://www.youtube.com/embed/UQ4Sn40YipA?rel=0)
 
@@ -84,11 +84,11 @@ CAA records can be set on the subdomain, but it's not something that is commonly
 example.com. IN CAA 0 issuewild "pki.goog"
 ```
 
-:::note
+{% hint style="info" %}
 The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
 
 **No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
-:::
+{% endhint %}
 
 ## [Upload certificates manually](security-certificates.md)
 
@@ -98,9 +98,9 @@ On the Professional and Enterprise plan, you can manually add your certificate t
 
 If you need to use your Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configurations needed.
 
-:::note
+{% hint style="info" %}
 Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
-:::
+{% endhint %}
 
 In most cases, you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates are a plan-specific feature on Umbraco Cloud, so make sure that you have access to upload certificates.
 

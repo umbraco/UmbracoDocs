@@ -7,9 +7,9 @@ meta.Description: "Umbraco Cloud uses a deployment model that relies on Git, Kud
 
 Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Cloud uses a classic "left to right" deployment model - changes are first made in the Development or local environment and then deployed to the Live environment.
 
-:::note
+{% hint style="info" %}
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
-:::
+{% endhint %}
 
 ![Left to right model](images/left-to-right.png)
 
@@ -34,20 +34,20 @@ Learn more about the deployment approach in this video, which will also show you
 
 To transfer content and media, the source environment and the target environment needs to have the same setup. They need to be in sync and have the same file structure. To achieve this you need to deploy your metadata changes to the target environment.
 
-- [Deploy changes from Local to Cloud](Local-to-Cloud)
-- [Deploy changes from one Cloud environment to another](Cloud-to-Cloud)
-- [How Forms are handled on Cloud](Umbraco-Forms-on-Cloud)
+- [Deploy changes from Local to Cloud](local-to-cloud)
+- [Deploy changes from one Cloud environment to another](cloud-to-cloud)
+- [How Forms are handled on Cloud](umbraco-forms-on-cloud)
 
 ### Transfer Content and Media
 
 Moving your content and media between your environments is done through the Umbraco Backoffice. You can transfer content from one environment to another, e.g. from Local to your Development environment. You also have the option to restore content and media to your Local or Development environment from your Live or Staging environment.
 
-- [Transfer Content and Media](Content-Transfer)
-- [Restore Content and / or Media](Restoring-content)
+- [Transfer Content and Media](content-transfer)
+- [Restore Content and / or Media](restoring-content)
 
-:::note
+{% hint style="info" %}
 Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
-:::
+{% endhint %}
 
 ## [Deploy Settings](/umbraco-deploy/deploy-settings.md)
 
@@ -76,8 +76,8 @@ You might notice a file in your cloud project called `umbraco-cloud.json`. This 
 
 ![clone dialog](images/umbraco-cloud-json.png)
 
-:::note
+{% hint style="info" %}
 You are free to update the `name` attribute in the `umbraco-cloud.json` file to make it clear in the **Workspaces** dashboard where you’re deploying to. So if you want to name the *Development* environment to “Everything goes here” then you can do that and the name will be displayed on the dashboard when deploying to that environment.
-:::
+{% endhint %}
 
 ![clone dialog](images/change-env-name-v8.png)

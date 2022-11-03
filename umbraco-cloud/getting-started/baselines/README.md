@@ -1,7 +1,4 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
+
 
 # Baselines
 
@@ -15,15 +12,17 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](high-level-overview.md) article.
 
-:::note
+{% hint style="info" %}
 Currently, the baseline feature is only available in the west EU region.
 
 At this point, it is not possible to create baselines if you are hosting your site in the East US region.
-:::
+{% endhint %}
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="How to work with baselines on Umbraco Cloud" src="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" %}
+How to work with baselines on Umbraco Cloud
+{% endembed %}
 
 ## Creating a Child Project
 
@@ -36,9 +35,9 @@ To create a child project:
 5. In the **Project Information** window, enter the **Project Name**.
 6. [Optional] Select **Create from Baseline**.
 7. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
-:::note
+{% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
-:::
+{% endhint %}
 8. **Choose an Owner** from the drop-down list.
 9. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
 10. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.

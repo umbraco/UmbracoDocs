@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Deploying Schema from Data Files on your Cloud Environments
 
 When you deploy from one environment to another on your Umbraco Cloud project, the files from the Git repository are merged into the files used on the site. The Deploy engine then deploys your schema from your data files. This means that the files on the disk will be deserialized into the database in the Cloud environment.

@@ -2,11 +2,11 @@
 
 The following changes in Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' for new and existing custom hostnames.
 
-:::tip
+{% hint style="info" %}
 **Not sure if your Cloud project is using a CAA record or not?**
 
 You can use this [CAA Test](https://caatest.co.uk/) to check whether a CAA record is configured on your hostname(s).
-:::
+{% endhint %}
 
 ## Certificates for new custom hostnames
 

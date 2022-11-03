@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Pushing Upgrades to a Child Project
 
 When a project has one or more Child Projects it will appear on the Project page and the user can click to get an overview of all the Child Projects based on the current project.
@@ -27,7 +22,7 @@ If the upgrade has been completed successfully, the Child Projects will be displ
 
 To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the Baseline project itself. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync.
 
-Following [Minor upgrades](../../Upgrades/minor-upgrades.md) guide and the process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
+Following [Minor upgrades](../../upgrades/minor-upgrades.md) guide and the process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
 
 Once the upgrade has been verified on the Baseline project, and you've made sure everything works as expected, you should go to the **Manage child projects** page on the Baseline.
 
@@ -37,11 +32,11 @@ At first, any pending changes made on the Baseline will be deployed to the child
 
 ![Minor upgrade labels](images/minor-upgrades.png)
 
-:::note
+{% hint style="info" %}
 We recommend that you set up a Development environment on your Child project before deploying the upgrade. That way you'll have an environment to test on and verify that everything has been deployed correctly.
 
 Once you are happy with the Development environment, you can go ahead and deploy to the Live environment as well.
-:::
+{% endhint %}
 
 The upgrade itself will happen once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place, we also run the upgrade process, making sure that the children are fully upgraded.
 
@@ -53,6 +48,6 @@ If the upgrade of a Child project fails, or the Child project is left in a bad s
 
 When updating Child projects from a Baseline project, a configuration from the Child project will take precedence over the Baseline project configuration. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed.
 
-To fix this, it is important to follow the flow shown in [Handling configuration files](Configuration-files.md). It prevents the child will update configuration files and will ensure the best flow between the baseline and the child.
+To fix this, it is important to follow the flow shown in [Handling configuration files](configuration-files.md). It prevents the child will update configuration files and will ensure the best flow between the baseline and the child.
 
 If the flow isn't used, then the repository will be in a state where the code has been updated, but the configuration files haven’t been updated. The solution is to manually fix the configuration files on the child project. Do a comparison of the configuration files on the baseline and the child, and make sure that all changes have been added to the child’s configuration files.

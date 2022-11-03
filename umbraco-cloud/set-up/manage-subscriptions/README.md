@@ -7,6 +7,7 @@ versionTo: 10.0.0
 
 {% hint style="info" %}
 This article is only for customers managing their subscriptions through Umbraco Shop. For customers who have joined Umbraco Cloud after the 5th of May, 2021, and are managing their subscriptions through Umbraco Cloud, see the [Manage Subscriptions on Umbraco Cloud](new-shop.md) article.
+{% endhint %}
 
 In this article, you can find information on how to manage your Umbraco Cloud subscriptions from the Umbraco Shop. You can also find information on how to change ownership of your projects.
 
@@ -33,9 +34,9 @@ Under the Order History, you can get an overview of all your invoices. The overv
 
 ![Order History](images/order-history.png)
 
-:::note
+{% hint style="info" %}
 If you have not yet paid for your invoice, the download link will change to a payment link.
-:::
+{% endhint %}
 
 ## Changing your Credit Card information
 

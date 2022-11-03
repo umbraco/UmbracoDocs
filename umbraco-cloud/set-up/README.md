@@ -11,22 +11,22 @@ Articles about configuring settings on your project, as well as managing members
 
 * [Going Live](going-live.md)
 * [Project Settings](Project-settings.md)
-* [Adding Team Members](Team-Members.md)
-* [SMTP Settings](SMTP-settings.md)
-* [Manage Hostnames](Manage-Hostnames.md)
-* [Manage Environments](Manage-Environments.md)
-* [Manage Transport Security](Manage-Security.md)
+* [Adding Team Members](team-members.md)
+* [SMTP Settings](smtp-settings.md)
+* [Manage Hostnames](manage-hostnames.md)
+* [Manage Environments](manage-environments.md)
+* [Manage Transport Security](manage-security.md)
 
 ## Working with your Umbraco Cloud project
 
 Articles about how to work locally with your Umbraco Cloud project.
 
 * [Working with your site locally](working-locally.md)
-* [Working with Visual Studio](Working-With-Visual-Studio.md)
+* [Working with Visual Studio](working-With-Visual-Studio.md)
 * [Working with a Mac](working-with-mac.md)
 
 ## Related topics
 
 * [Media on Umbraco Cloud](media/README.md)
-* [Power Tools (Kudu)](Power-Tools/README.md)
+* [Power Tools (Kudu)](power-tools/README.md)
 * [Config transforms for each environment](config-transforms.md)

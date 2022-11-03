@@ -56,9 +56,9 @@ We also have a limitation for hostnames on the different plans on Umbraco Cloud.
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
-:::note
+{% hint style="info" %}
 If you have questions about how many resources your site is using, then please reach out to our friendly support team.
-:::
+{% endhint %}
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
@@ -147,7 +147,7 @@ Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL h
 
 Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
-Learn more about how to use your own certificates in the [Custom certificates](Set-up/Manage-Hostnames/security-certificates.md) article.
+Learn more about how to use your own certificates in the [Custom certificates](set-up/manage-hostnames/security-certificates.md) article.
 
 ### Does Umbraco Cloud support HTTP/2?
 
@@ -220,7 +220,7 @@ This is intended behaviour.
 
 We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
 
-You can read much more about these deletions in the [Deploying Deletions](Deployment/deploying-deletions.md) article.
+You can read much more about these deletions in the [Deploying Deletions](team-membersdeploying-deletions.md) article.
 
 ---
 

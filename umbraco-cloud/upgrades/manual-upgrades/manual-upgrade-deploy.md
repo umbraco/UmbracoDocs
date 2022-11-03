@@ -5,7 +5,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-When upgrading an Umbraco Cloud project manually, the very first step is to [clone down your Cloud Development environment to your local machine](../../Set-Up/working-locally.md).
+When upgrading an Umbraco Cloud project manually, the very first step is to [clone down your Cloud Development environment to your local machine](../../set-up/working-locally.md).
 
 Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 

@@ -26,7 +26,7 @@ You can learn more about Azure Blob Storage in the [Microsoft Documentation](htt
 
 When you clone one of your Cloud environments to your local machine, you will need to run a content restore from the backoffice to get a copy of all the media files from the Azure Blob Storage container connected to that environment.
 
-You can learn more about how this works in the [Restoring content](../../Deployment/restoring-content/README.md) article.
+You can learn more about how this works in the [Restoring content](../../deployment/restoring-content/README.md) article.
 
 When you add new media files to your project while working on a local clone, the files will automatically be added to the Azure Blob Storage container connected to the environment you deploy to.
 
@@ -67,9 +67,9 @@ There are 4 variables related to the Azure Blob Storage container in your enviro
 * `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__ENDPOINT`
 * `APPSETTING_UMBRACO__CLOUD__STORAGE__AZUREBLOB__SHAREDACCESSSIGNATURE`
 
-Once you have the variables, use the ["Connect to Azure Storage Explorer"](../Media/connect-to-azure-storage-explorer.md) guide to connect to your storage container.
+Once you have the variables, use the ["Connect to Azure Storage Explorer"](../media/connect-to-azure-storage-explorer.md) guide to connect to your storage container.
 
 ## Related Articles
 
-* [Rewrites will impact your media rendering as well - read about the best practices](../../Set-Up/Manage-Hostnames/rewrites-on-cloud.md)
-* [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface](../../../umbraco-cms/Reference/configuration/filesystemproviders.md#get-the-contents-of-a-file-as-a-stream)
+* [Rewrites will impact your media rendering as well - read about the best practices](../../set-up/manage-hostnames/rewrites-on-cloud.md)
+* [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface](../../../umbraco-cms/reference/configuration/filesystemproviders.md#get-the-contents-of-a-file-as-a-stream)

@@ -11,34 +11,34 @@ Welcome to the Umbraco Cloud documentation. Here you can read all about how to s
 
 Learn how to set up your very first Umbraco Cloud project and all about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
 
-## [Set up a Project](Set-Up/README.md)
+## [Set up a Project](set-up/README.md)
 
 How to manage your Umbraco Cloud project, set it up for development on your local machine, and much more.
 
-## [Deployment](Deployment/README.md)
+## [Deployment](deployment/README.md)
 
 The deployment process is explained with best practices and a little Git mixed in.
 
-## [Databases](Databases/README.md)
+## [Databases](databases/README.md)
 
 How Umbraco Cloud manages databases between the different environments.
 
-## [Upgrades](Upgrades/README.md)
+## [Upgrades](upgrades/README.md)
 
 An explanation of the Umbraco Cloud product upgrade process.
 
-## [Troubleshooting](Troubleshooting/README.md)
+## [Troubleshooting](troubleshooting/README.md)
 
 Tips on finding, identifying, and resolving issues.
 
-## [Frequently Asked Questions](Frequently-Asked-Questions/README.md)
+## [Frequently Asked Questions](frequently-asked-questions/README.md)
 
 Anything else not covered above.
 
-## [Security](Security/README.md)
+## [Security](security/README.md)
 
 Everything you need to know about the security on Umbraco Cloud.
 
-## [Release notes](Release-Notes/README.md)
+## [Release notes](release-notes/README.md)
 
 Get updates on the new release of Umbraco Cloud Portal.

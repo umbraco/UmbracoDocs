@@ -3,11 +3,11 @@
 
 This article will provide steps on how to upgrade your Umbraco 9 project to Umbraco 10.
 
-:::tip
+{% endhint %}tip
 **Are you using any custom packages or code on your Umbraco Cloud project?**
 
 You will need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
-:::
+{% endhint %}
 
 ## Content
 
@@ -156,8 +156,8 @@ With the packages and projects updated, it is time to make some changes to some 
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
-1. Remove the folders mentioned above on the **Development** environment using [KUDU](../Set-Up/Power-Tools/README.md) from the `repository` and `wwwroot` folders.
-2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../Deployment/local-to-cloud.md) article.
+1. Remove the folders mentioned above on the **Development** environment using [KUDU](../set-up/power-tools/README.md) from the `repository` and `wwwroot` folders.
+2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
 3. Test **everything** in the **Development** environment.
 
 We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
@@ -180,5 +180,5 @@ They need to be removed through KUDU from both the `repository` and `wwwroot` fo
 ## Related Information
 
 * [Breaking changes in Umbraco 10](../../umbraco-cms/fundamentals/setup/upgrading/umbraco10-breaking-changes.md)
-* [Working locally with Umbraco Cloud](../Set-Up/working-locally.md)
-* [KUDU on Umbraco Cloud](../Set-Up/Power-Tools/README.md)
+* [Working locally with Umbraco Cloud](../set-up/working-locally.md)
+* [KUDU on Umbraco Cloud](../set-up/power-tools/README.md)

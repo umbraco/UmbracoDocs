@@ -107,11 +107,11 @@ Once the project has been cloned down, you will get a folder with files for your
 
 3. Build and run your solution in Visual studio.
 
-You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../Deployment/README.md) documentation.
+You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment/README.md) documentation.
 
-:::note
+{% hint style="info" %}
 If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](media/README.md).
-:::
+{% endhint %}
 
 ### Adding a Solution File to your Cloud Project
 
@@ -144,15 +144,15 @@ dotnet new sln --name <MyAwesomeSolution>
 
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
-:::note
+{% hint style="info" %}
 When creating a solution file, we recommend placing it at the root of the git repository.
-:::
+{% endhint %}
 
 ### Adding Additional Projects to your Solution
 
-:::note
+{% hint style="info" %}
 When creating new projects alongside the default Umbraco project, we recommend adding the projects to the `src` folder in the git repository.
-:::
+{% endhint %}
 
 If you want to add additional projects to your solution, you can do it either through the:
 

@@ -1,7 +1,7 @@
 
 # Log files on Umbraco Cloud
 
-You can access the different types of log files on Umbraco Cloud or through [Kudu](../Set-Up/Power-Tools/README.md). You have access to different types of logs:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/README.md). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
@@ -30,7 +30,7 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 
 ### On Kudu
 
-To access logs through Kudu, see [Power tools (Kudu)](../Set-Up/Power-Tools/README.md) article.
+To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/README.md) article.
 
 ## Umbraco logs
 
@@ -71,9 +71,9 @@ This will delete 90% of the oldest logs that are unread and leave you with 10% o
 
 It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
-:::note
+{% hint style="info" %}
 Do note that the IIS logging will be automatically turned off after 12 hours. It's not possible to have them enabled for longer at once due to possible performance degradation while the logging is enabled.
-:::
+{% endhint %}
 
 You can enable the logging from the **Advanced** menu found under *Settings* in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
@@ -81,8 +81,8 @@ After enabling IIS logging for the environment, the site will have to restart.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
-:::note
+{% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.
 
 See our [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/) for more details on various tiers.
-:::
+{% endhint %}

@@ -26,14 +26,14 @@ You can work with Forms in an environment of your choice. When you need to test 
 
 For more information on how to handle content transfer/restores on Umbraco Cloud, check out the following articles:
 
-* [Transfer content, media and forms](/Content-Transfer)
-* [Restoring content](/Restoring-content)
+* [Transfer content, media and forms](/content-transfer)
+* [Restoring content](/restoring-content)
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../Upgrades/README.md). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../upgrades/README.md). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
 
-To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../Set-Up/Config-Transforms) when you need custom configuration and [Themes](/umbraco-forms/developer/themes.md) when you need to customize your forms.
+To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration and [Themes](/umbraco-forms/developer/themes.md) when you need to customize your forms.
 
 Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "*Upgrade available!*" label on your Development environment.
 
@@ -45,7 +45,7 @@ In this section, you can find information about version-specific changes that mi
 
 In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database.
 
-If you want to upgrade to Umbraco 9 and are using Forms, you should first migrate the Forms to the database using Forms 8. See the [Umbraco Forms in the Database version 8.0.0](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8.md) article.
+If you want to upgrade to Umbraco 9 and are using Forms, you should first migrate the Forms to the database using Forms 8. See the [Umbraco Forms in the Database version 8.0.0](../../umbraco-forms/developer/forms-in-the-database.md) article.
 
 #### Version 8.5.0
 

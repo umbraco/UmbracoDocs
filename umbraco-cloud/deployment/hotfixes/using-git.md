@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Apply hotfix by using Git
 
 In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment using only Git.
@@ -74,9 +69,9 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 8. Hit **Submit** and the push will start.
 
-:::note
+{% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
-:::
+{% endhint %}
 
 Find a guide on how to extract the files in the [Manual Extraction](../../set-up/power-tools/manual-extractions.md) article.
 

@@ -34,12 +34,12 @@ This number can be increased by doing the following:
 5. Navigate back into the folder you want to view the files in.
 6. You should now be able to view the folders/files up to the limit you've set it to.
 
-:::note
+{% hint style="info" %}
 If you refresh the page, the limit will go back to the standard 299.
-:::
+{% endhint %}
 
 ## Important notes
 
-Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git ([Local to Cloud](../../Deployment/local-to-cloud.md)) and the Deploy engine([Cloud to Cloud](../../Deployment/cloud-to-cloud.md)).
+Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git ([Local to Cloud](../../Deployment/local-to-cloud.md)) and the Deploy engine([Cloud to Cloud](../../deployment/cloud-to-cloud.md)).
 
 We recommend that you **only** use Kudu when you are following one of our guides.

@@ -21,9 +21,9 @@ You can restore the content in the following ways:
 
 The first time you run your project locally you will have the option to restore your content and media before going to the Umbraco Backoffice.
 
-:::note
+{% hint style="info" %} style="info" %}
 This will restore **all** the content nodes and any media dependencies.
-:::
+{% endhint %}
 
 1. When your site is done spinning up, click the green **Restore** button to restore all the content nodes and media files.
 2. Wait till the process completes. This might take a while depending on the amount of content and media you have on your project.
@@ -40,16 +40,16 @@ Use this option when setting up new Cloud environments. The Workspace restore op
 2. Click **...** and select **Do something else** or Right-click the **Content** Tree in the Content section.
 3. Choose **Workspace Restore**.
 4. Select the environment from the **Restore this workspace from** dropdown.
-5. To ensure the restore succeeds, make sure that your environments have the [same metadata and structure files](../Cloud-to-Cloud).
+5. To ensure the restore succeeds, make sure that your environments have the [same metadata and structure files](../cloud-to-cloud).
 6. Click **Restore from <environment_name>** and wait till the process completes. This might take a while depending on the amount of content and media you have on your project.
 7. Once the content restore is completed, you will get a notification with a timestamp. Click **Okay** to complete the process.
 8. Right-click the **Content** tree and choose **Reload** to see your content in the tree.
 
-:::note
+{% hint style="info" %}
 If any of your content nodes depends on media items, these will also be restored in the process.
 
 To see the media, go to the **Media** section and **reload** the tree.
-:::
+{% endhint %}
 
 ![Workspace Restore](images/Workspace_Restore.gif)
 
@@ -63,7 +63,7 @@ The Tree restore option restores all the entities available for the selected tre
 2. Click **...** and select **Do something else** or Right-click the **Content** Tree in the Content section.
 3. Choose **Tree Restore**.
 4. Select the environment from the **Restore this tree from** dropdown.
-5. To ensure the restore succeeds, make sure that your environments have the [same metadata and structure files](../Cloud-to-Cloud).
+5. To ensure the restore succeeds, make sure that your environments have the [same metadata and structure files](../cloud-to-cloud).
 6. Click **Restore from <environment_name>** and wait till the process completes. This might take a while depending on the amount of content and media you have on your project.
 7. Once the content restore is completed, you will get a notification with a timestamp. Click **Okay** to complete the process.
 8. Right-click the **Content** tree and choose **Reload** to see your content in the tree.
@@ -72,6 +72,6 @@ The Tree restore option restores all the entities available for the selected tre
 
 ### [Insert video here](https://www.youtube.com/embed/X7m3FzhRHp0?rel=0)
 
-### [Partial Restore](Partial-Restore)
+### [Partial Restore](partial-restore)
 
 Using the Partial Restore option, you can restore only a single node from a tree (optionally with descendants) that you need to work with.

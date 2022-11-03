@@ -17,6 +17,6 @@ Umbraco Deploy is the deployment engine of Umbraco Cloud. With Umbraco Deploy yo
 
 With Umbraco Deploy, you can run different operations:
 
-* [Deploying Schema from Data Files on your Cloud Environments](Deploy-schema)
-* [Extract Schema to Data Files](Extract-schema-to-data-files)
-* [Clearing Cached Signatures](Clearing-cached-signatures)
+* [Deploying Schema from Data Files on your Cloud Environments](deploy-schema)
+* [Extract Schema to Data Files](extract-schema-to-data-files)
+* [Clearing Cached Signatures](clearing-cached-signatures)

@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 8.0.0
 needsV9Update: "true"
 ---
 
@@ -18,7 +16,7 @@ When you are deploying updates from the Baseline project to the Child projects, 
 
 That also means that if a file has been changed in both the Baseline and in the Child project, the change from the Baseline won’t be applied to the Child. To have custom settings on the Child project, you should take advantage of the vendor-specific transform files.
 
-On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../Set-Up/config-transforms.md)). This should be used when a Child project needs different settings than the Baseline project.
+On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../set-up/config-transforms.md)). This should be used when a Child project needs different settings than the Baseline project.
 
 It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally and pushing it directly to the Child project. Read the [Working locally](../../set-up/working-locally.md) article to learn more about how this is done.
 

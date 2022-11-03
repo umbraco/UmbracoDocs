@@ -8,7 +8,7 @@ _2FA authentication - US Region Hosting - Projects Dashboard_
 - **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
 - **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
-## [2FA authentication](../Set-Up/2-factor-authentication-on-cloud.md)
+## [2FA authentication](../set-up/2-factor-authentication-on-cloud.md)
 
 On Umbraco Cloud, you can add 2-factor authentication in a few steps for your Umbraco Cloud account using either **email**, **phone**, or an **authenticator app** when logging in to the Umbraco Cloud Portal.
 
@@ -22,7 +22,7 @@ To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
 
-See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/) for details. 
+See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/set-up/2-factor-authentication-on-cloud/) for details. 
 
 ## US Region Hosting
 

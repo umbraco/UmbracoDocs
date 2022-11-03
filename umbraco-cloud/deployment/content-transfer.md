@@ -11,7 +11,7 @@ Content and media transfers are flexible which means you have complete control o
 
 Transferring content will overwrite any existing nodes on the target environment. Content transfers will transfer the items that you select in the "source" environment to the "target" environment the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your metadata beforehand. Please refer to our documentation on how to deploy metadata from either [Local to Cloud](Local-to-Cloud) or [Cloud to Cloud](Cloud-to-Cloud).
+**Important**: Content and Media transfers will only work if you've deployed all changes to your metadata beforehand. Please refer to our documentation on how to deploy metadata from either [Local to Cloud](local-to-cloud) or [Cloud to Cloud](cloud-to-cloud).
 
 ## Step-by-step
 
@@ -73,9 +73,9 @@ Once the setting has been added to the source and target environment, Forms can 
 3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
 4. Click **Transfer to Development**.
 
-:::note
+{% hint style="info" %}
 This does not include entries submitted via the forms.
-:::
+{% endhint %}
 
 ## Schema Mismatches
 

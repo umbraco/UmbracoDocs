@@ -16,9 +16,9 @@ For projects on a Standard, Professional, and Enterprise plan you can enable sta
 
 On the **Settings** -> **Advanced** page of your project, you can turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for **Standard**, **Professional**, and **Enterprise** Cloud projects.
 
-:::note
+{% hint style="info" %} style="info" %}
 The enabling of static outbound IP addresses will have the effect that port 25 will be blocked. Port 25 is the default port for SMTP relay and is commonly abused to send spam from compromised parties. Accordingly, this port is often blocked by ISPs and cloud providers such as Microsoft and Google. For SMTP submissions, we advise you to use port 587 or port 2525.
-:::
+{% endhint %}
 
 ![StaticOutboundIps](https://user-images.githubusercontent.com/93588665/158338313-c433c994-71a5-40f5-a947-4947df23a0cf.gif)
 
@@ -45,6 +45,6 @@ The static outbound IPs for every environment are:
 
 If you need to use a CIDR (Classless Inter-Domain Routing) Range for the IPs: `40.113.173.32/28`
 
-:::note
+{% hint style="info" %}
 For projects on a Starter plan, you can see the current dynamic outbound IP addresses. The IP addresses shown for starter projects are dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 :::

@@ -1,6 +1,3 @@
----
-versionFrom: 10.0.0
----
 
 # Migrating an Existing Site to Umbraco Cloud
 
@@ -20,7 +17,11 @@ These are the steps you need to go through to complete the migration successfull
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
 
-## [Video tutorial](https://www.youtube.com/embed/w4VaUnBJ52s)
+## Video tutorial
+
+{% embed url="https://www.youtube.com/embed/w4VaUnBJ52s" %}
+Video tutorial.
+{% endembed %}
 
 If you prefer following a written guide, continue to read below.
 
@@ -117,8 +118,9 @@ Follow these steps on the Umbraco Cloud environment:
 
 ## 5. Clone down the Cloud project
 
-### [Insert video here](https://www.youtube.com/embed/e3spd6Nqrf8)
-
+{% embed url="https://www.youtube.com/embed/e3spd6Nqrf8" %}
+Cloning down
+{% endembed %}
 
 With your Umbraco Cloud project ready for migration, it is time to clone down the project to your local machine.
 
@@ -151,13 +153,13 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All the content is there
 * All Document Types, Templates, Stylesheets, etc, are in the backoffice
 
-:::note
+{% hint style="info" %}
 Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umbraco Cloud services.
 
 It is required to access any project pages as well as the backoffice.
 
 To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](migrating-users-to-umbraco-cloud.md) article.
-:::
+{% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
 
@@ -167,7 +169,7 @@ You have now moved and merged the files from your existing site into the Umbraco
 
 In this next part, it is time to generate the so-called UDA-files for all your project's meta data.
 
-For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/generating-uda-files.md#what-are-uda-files) article.
+For more details about UDA files, read the [UDA Files](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files) article.
 
 * Make sure the folder `/Umbraco/Deploy/Revision` on your Umbraco Cloud project is empty
   * If you have any files in the folder, you can safely remove those at this point
@@ -209,12 +211,12 @@ Go to the backoffice of your Development environment and make sure all your meta
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose *'Queue for transfer'*
     * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
-    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/media/README.md).
+    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../set-up/media/README.md).
 
-    :::note
+    {% hint style="info" %}
     Records from the Redirect URL Management are not transferred by deploy.
     You will need to manually migrate them using SQL.
-    :::
+    {% endhint %}
 
 ![Queue for transfer](images/transfer-v9.gif)
 

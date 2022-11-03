@@ -32,10 +32,10 @@ To connect, choose "Connect Database Engine" and copy the values from the Connec
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Remember to let Umbraco Cloud do the work when it comes to the Umbraco-related tables (`Umbraco*` and `CMS*` tables).
 
 ## LocalDB
-:::note
+{% hint style="info" %} style="info" %} style="info" %}
 LocalDB is no longer supported in the latest major version of Umbraco.
 The documentation below is only relevant if you are on Umbraco 9 and below.
-:::
+{% endhint %}
 
 When you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify anything before starting up your site locally, it'll be a SQL CE database that lives in the `umbraco/Data`folder in Umbraco 9. If you wish to use a local SQL Server instead, you can update the connection string in the web.config or appSettings.json file, but it's important that you do so before your site starts up the first time.
 
@@ -47,9 +47,9 @@ By default when Umbraco Cloud restores a local database it will be a Umbraco.sdf
 </add>
 ```
 
-:::note
+{% hint style="info" %}
 If you don´t see the lines in the `applicationHost.config`, you can add them manually to the `<applicationPools>` section.
-:::
+{% endhint %}
 
 Usually `applicationHost.config` is located in this folder for IIS:
 `C:\Windows\System32\inetsrv\config`
