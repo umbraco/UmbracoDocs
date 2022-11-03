@@ -42,3 +42,4 @@ Everything you need to know about the security on Umbraco Cloud.
 ## [Release notes](release-notes/README.md)
 
 Get updates on the new release of Umbraco Cloud Portal.
+
