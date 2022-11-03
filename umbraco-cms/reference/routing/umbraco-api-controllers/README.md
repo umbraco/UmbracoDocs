@@ -113,7 +113,7 @@ E.g.
 
 ### More Information
 
-* [Authenticating & Authorizing controllers](../Authorized/index.md)
+* [Authenticating & Authorizing controllers](../authorized.md)
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
@@ -135,7 +135,7 @@ For example:
 }
 ```
 
-For more information, see the [Global Settings](../../../Reference/Configuration/GlobalSettings/index.md) article.
+For more information, see the [Global Settings](../../configuration/globalsettings.md) article.
 
 To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance:
 

@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 Tag service to query for tags in the tags db table.
 
-[Browse the API documentation for ITagService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.ITagService.html).
-
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

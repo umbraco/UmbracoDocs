@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The `RelationService` is pretty awesome as it allows you to create relations between objects that would otherwise have no obvious connection.
 
-[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IRelationService.html).
-
 * **Namespace:** `Umbraco.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 

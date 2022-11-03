@@ -15,11 +15,11 @@ Examine allows you to index and search data quickly. Examine is a library that s
 
 Examine is provider based so it is extensible and allows you to configure your own custom indexes if required. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
 
-## [Quick start](quick-start/index.md)
+## [Quick start](quick-start.md)
 
 Get up and running with Examine straight away with this quick start guide.
 
-## [Customizing indexes](indexing/index.md)
+## [Customizing indexes](indexing.mdmd)
 
 Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco.
 

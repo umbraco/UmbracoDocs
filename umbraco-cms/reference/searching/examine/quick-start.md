@@ -33,7 +33,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
 ### Handling the search request
 
-The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](https://our.umbraco.com/documentation/reference/routing/custom-controllers/).
+The best practice for POST requests is to encapsulate the request handling in a controller. To do this we will leverage the concept of [route hijacking](../../routing/custom-controllers.md).
 
 Let's start by creating a `PeopleController` that derives from `RenderController` and add an `Index` method.
 
@@ -118,7 +118,7 @@ Umbraco ships with three indexes:
 * InternalIndex - which Umbraco's backoffice search uses.
 * InternalMemberIndex - which Umbraco's Membership implementation uses.
 
-([You can create your own indexes too](../indexing)) if you need to analyse text in a different language for example.
+([You can create your own indexes too](indexing.md)) if you need to analyse text in a different language for example.
 
 The service `IExamineManager` is used to retrieve an Examine index by its 'alias', so we need to inject that service into our `SearchService`.
 ```csharp
@@ -339,8 +339,3 @@ To search through **all child nodes of a specific node** by their **bodyText pro
 ```csharp
 Searcher.CreateQuery("content").ParentId(1105).And().Field("bodyText", searchTerm).Execute();
 ```
-
-### Search descendants of a specific home node
-
-To search through **all descendants of a specific node** by their **bodyText property**, refer to [this article](../examine-events#Adding-the-path-of-the-node-as-a-searchable-field-into-the-index).
-

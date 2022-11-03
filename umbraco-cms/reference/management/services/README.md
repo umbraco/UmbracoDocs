@@ -15,106 +15,98 @@ You can find up-to-date code references for all Models in our [API Documentation
 
 The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
 
-## [AuditService](AuditService)
+## [AuditService](auditservice.md)
 
 A service for handling audit.
 
-## [ApplicationTreeService](TreeService)
-
-The ApplicationTreeService is used to control/query the storage for tree registrations.
-
-## [ConsentService](ConsentService)
+## [ConsentService](consentservice.md)
 
 A service for handling lawful data processing requirements.
 
-## [ContentService](ContentService)
+## [ContentService](contentservice/)
 
 Service for doing CRUD type operations, as well as publishing for `Content` objects.
 
-## [ContentTypeService](ContentTypeService)
+## [ContentTypeService](contenttypeservice/)
 
 Service for doing CRUD type operations against `ContentType` and `MediaType` objects.
 
-## [DataTypeService](DataTypeService)
+## [DataTypeService](datatypeservice.md)
 
 Service for doing CRUD type operations for `DataTypeDefinition` and `DataType` objects.
 
-## [DomainService](DomainService)
+## [DomainService](domainservice.md)
 
 Service for doing CRUD type operations for domains.
 
-## [EntityService](EntityService)
+## [EntityService](entityservice.md)
 
 Service for doing CRUD type operations for entities.
 
-## [ExternalLoginService](ExternalLoginService)
+## [ExternalLoginService](externalloginservice.md)
 
 Service used to store the external login info.
 
-## [FileService](FileService)
+## [FileService](fileservice.md)
 
 Service for doing CRUD type operations for `Script`, `Stylesheet` and `Template` objects.
 
-## [LocalizationService](LocalizationService)
+## [LocalizationService](localizationservice/)
 
 Service for doing CRUD type operations for `Dictionary` and `Language` objects.
 
-## [MacroService](MacroService)
+## [MacroService](macroservice.md)
 
 Defines the MacroService, which is a way to access operations involving `IMacro`.
 
-## [MediaService](MediaService)
+## [MediaService](mediaservice.md)
 
 Service for doing CRUD type operations for `Media` objects.
 
-## [MemberService](MemberService)
+## [MemberService](memberservice.md)
 
 Service for doing CRUD type operations for `Member` objects.
 
-## [MemberTypeService](MemberTypeService)
+## [MemberTypeService](membertypeservice.md)
 
 Service for doing CRUD type operations for `MemberType` objects.
 
-## [MemberGroupService](MemberGroupService)
+## [MemberGroupService](membergroupservice.md)
 
 Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 
-## [NotificationService](NotificationService)
+## [NotificationService](notificationservice.md)
 
 The NotificationServices is used to perform operations related to backoffice notifications.
 
-## [PackagingService](PackagingService)
+## [PackagingService](packagingservice.md)
 
 The PackagingService provides import/export functionality for the Core models of the API.
 
-## [PublicAccessService](PublicAccessService)
+## [PublicAccessService](publicaccessservice.md)
 
 Service to handle public access.
 
-## [RedirectUrlService](RedirectUrlService)
+## [RedirectUrlService](redirecturlservice.md)
 
 The RedirectUrlService is used for CRUD operations related to Redirects.
 
-## [RelationService](RelationService)
+## [RelationService](relationservice.md)
 
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
-## [SectionService](SectionService)
-
-Service for doing CRUD type operations for `Section` objects
-
-## [ServerRegistrationService](ServerRegistrationService)
+## [ServerRegistrationService](serverregistrationservice.md)
 
 The ServerRegistrationService manages server registrations in the database.
 
-## [TagService](TagService)
+## [TagService](tagservice.md)
 
 Tag service to query for tags in the tags db table.
 
-## [TextService](TextService)
+## [TextService](textservice.md)
 
 The TextService is the entry point to localize any key in the text storage source for a given culture.
 
-## [UserService](UserService)
+## [UserService](userservice/)
 
 Service for managing users, user groups and permissions.

@@ -52,6 +52,6 @@ In Razor views, you can access the content type service through the `@inject` di
 
 ## Samples
 
-* [**Retrieving content types**](Retrieving-content-types.md)<br />See examples on how to retrieve content types via the service - either individually or as a collection.
+* [**Retrieving content types**](retrieving-content-types.md)<br />See examples on how to retrieve content types via the service - either individually or as a collection.
 
-* [**Retrieving content type containers**](Retrieving-content-type-containers.md)<br />See examples on how to retrieve content type containers (folders) via the service - either individually or as a collection.
+* [**Retrieving content type containers**](retrieving-content-type-containers.md)<br />See examples on how to retrieve content type containers (folders) via the service - either individually or as a collection.

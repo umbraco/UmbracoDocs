@@ -211,7 +211,7 @@ bool hasChildren =  Model.Children.Any();
 
 ## [Filtering Conventions](#filtering-conventions)
 
-Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../../Routing/Routing-Properties/index.md)
+Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../routing/routing-properties.md)
 
 ### .IsVisible()
 

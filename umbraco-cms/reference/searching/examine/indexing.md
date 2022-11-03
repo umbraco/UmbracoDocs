@@ -146,7 +146,7 @@ The following example will show how to create an index that will only include no
 {% hint style="info" %}
 We always recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
-Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search the ExternalIndex.
+Take a look at our [Examine Quick Start](quick-start.md) to see some examples of how to search the ExternalIndex.
 {% endhint %}
 
 To create this index we need five things:

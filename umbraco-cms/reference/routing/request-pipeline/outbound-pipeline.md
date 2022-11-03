@@ -17,7 +17,7 @@ To explain things we will use the following content tree:
 
 ## 1. <a name="segments"></a> Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../../Reference/Management/Models/Content) item has a corresponding url segment.
+When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding url segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -239,7 +239,7 @@ If there is only a small change to the logic around Url generation, then a smart
 
 #### Example
 
-Add /fish on the end of every url. It's important to note here that since we're changing the outbound url, but not how we handle urls inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](IContentFinder-v9.md) for more information on how to do that.
+Add /fish on the end of every url. It's important to note here that since we're changing the outbound url, but not how we handle urls inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](icontentfinder.md) for more information on how to do that.
 
 ```csharp
 using System;
@@ -375,7 +375,7 @@ Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsett
 }
 ```
 
-See [WebRouting config reference documentation](../../V9-Config/WebRoutingSettings/index.md) for more information on routing settings.
+See [WebRouting config reference documentation](../../configuration/webroutingsettings.md) for more information on routing settings.
 
 
 ### Site Domain Mapper

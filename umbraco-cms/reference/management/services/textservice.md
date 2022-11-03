@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The TextService is the entry point to localize any key in the text storage source for a given culture.
 
-[Browse the API documentation for ILocalizedTextService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.ILocalizedTextService.html).
-
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

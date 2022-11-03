@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 The RedirectUrlService is used for CRUD operations related to Redirects.
 
-[Browse the API documentation for IRedirectUrlService interface](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IRedirectUrlService.html).
-
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

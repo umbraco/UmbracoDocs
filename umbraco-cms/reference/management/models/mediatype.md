@@ -6,7 +6,7 @@ meta.Description: "A MediaType is almost the same as a ContentType. I.e. a model
 
 # MediaType
 
-A MediaType is almost the same as a [ContentType](ContentType.md). I.e. a model / data definition for your media nodes.
+A MediaType is almost the same as a [ContentType](contenttype.md). I.e. a model / data definition for your media nodes.
 
 You can set icon, thumbnail and description. It is also possible to add groups and properties.
 

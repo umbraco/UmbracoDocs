@@ -86,7 +86,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 
 ## Azure AD Authentication for Members
 
-1. Create a Member login functionality, see the [Member registration and login](https://our.umbraco.com/documentation/Tutorials/Members-Registration-And-Logins/#member-registration-and-login) article.
+1. Create a Member login functionality, see the [Member registration and login](../../tutorials/members-registration-and-login.md#member-registration-and-login) article.
 
 2. Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
 
