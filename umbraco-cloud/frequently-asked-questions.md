@@ -220,7 +220,7 @@ This is intended behaviour.
 
 We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
 
-You can read much more about these deletions in the [Deploying Deletions](team-membersdeploying-deletions.md) article.
+You can read much more about these deletions in the [Deploying Deletions](../umbraco-cloud/deployment/deploying-deletions.md) article.
 
 ---
 
