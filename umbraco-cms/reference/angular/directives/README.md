@@ -5,6 +5,6 @@ versionTo: 9.0.0
 
 # Directives
 
-- [Layout selector](umbLayoutSelector/) (`<umbLayoutSelector />`)
-- [Load indicator](umbLoadIndicator/) (`<umbLoadIndicator />`)
-- [Property](umbProperty/) (`<umbProperty />`)
+- [Layout selector](umblayoutselector.md) (`<umbLayoutSelector />`)
+- [Load indicator](umbloadindicator.md) (`<umbLoadIndicator />`)
+- [Property](umbproperty.md) (`<umbProperty />`)

@@ -5,8 +5,8 @@ versionTo: 9.0.0
 
 # Services
 
-- [**Editor service**](editorService/)  
+- [**Editor service**](editorservice.md)  
   Service for opening and working with editors and overlays.
 
-- [**Events service**](eventsService/)  
+- [**Events service**](eventsservice/)  
   Service for listening and sending broadcasts.

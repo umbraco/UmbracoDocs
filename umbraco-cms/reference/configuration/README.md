@@ -5,10 +5,6 @@ meta.Title: "Umbraco configuration"
 meta.Description: "Information on configuring Umbraco"
 ---
 
-{% hint style="info" %}
-In Umbraco 9+ (ASP.NET Core) configuration is JSON-based rather than XML - you can view the v8 config documentation [here](../Config/index.md)
-{% endhint %}
-
 # Configuration Files
 
 In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
@@ -115,34 +111,34 @@ To see what setting types you can access see the complete list below, each docum
 
 A complete list of all the configuration sections included in Umbraco, by default, can be seen here along with any keys they contain:
 
-* [Basic authentication settings](BasicAuthSettings/index.md)
-* [Connection strings settings](ConnectionStringsSettings/index.md)
-* [Content settings](ContentSettings/index.md)
-* [Debug settings](DebugSettings/index.md)
-* [Examine settings](ExamineSettings/index.md)
-* [Exception filter settings](ExceptionFilterSettings/index.md)
-* [Global settings](GlobalSettings/index.md)
-* [Health checks settings](HealthChecks/index.md)
-* [Hosting settings](HostingSettings/index.md)
-* [Imaging settings](ImagingSettings/index.md)
-* [Install default data setting](InstallDefaultDataSettings/index.md)
-* [Keep alive settings](KeepAliveSettings/index.md)
-* [Logging settings](LoggingSettings/index.md)
-* [Maximum upload size settings](MaximumUploadSizeSettings/index.md)
-* [Models builder settings](ModelsBuilderSettings/index.md)
-* [NuCache settings](NuCacheSettings/index.md)
-* [Package migration settings](PackageMigrationSettings/index.md)
-* [Plugins settings](PluginsSettings/index.md)
-* [Request handler settings](RequestHandlerSettings/index.md)
-* [Rich text editor settings](RichTextEditorSettings/index.md)
-* [Runtime minification settins](RuntimeMinificationSettings/index.md)
-* [Runtime settings](RuntimeSettings/index.md)
-* [Security settings](SecuritySettings/index.md)
-* [Serilog settings](Serilog/index.md)
-* [Tours settings](ToursSettings/index.md)
-* [Type finder settings](TypeFinderSettings/index.md)
-* [Unattended settings](UnattendedSettings/index.md)
-* [Web routing settings](WebRoutingSettings/index.md)
+* [Basic authentication settings](basicauthsettings.md)
+* [Connection strings settings](connectionstringssettings.md)
+* [Content settings](contentsettings.md)
+* [Debug settings](debugsettings.md)
+* [Examine settings](examinesettings.md)
+* [Exception filter settings](exceptionfiltersettings.md)
+* [Global settings](globalsettings.md)
+* [Health checks settings](healthchecks.md)
+* [Hosting settings](hostingsettings.md)
+* [Imaging settings](imagingsettings.md)
+* [Install default data setting](installdefaultdatasettings.md)
+* [Keep alive settings](keepalivesettings.md)
+* [Logging settings](loggingsettings.md)
+* [Maximum upload size settings](maximumuploadsizesettings.md)
+* [Models builder settings](modelsbuildersettings.md)
+* [NuCache settings](nucachesettings.md)
+* [Package migration settings](packagemigrationsettings.md)
+* [Plugins settings](pluginssettings.md)
+* [Request handler settings](requesthandlersettings.md)
+* [Rich text editor settings](richtexteditorsettings.md)
+* [Runtime minification settins](runtimeminificationsettings.md)
+* [Runtime settings](runtimesettings.md)
+* [Security settings](securitysettings.md)
+* [Serilog settings](serilog.md)
+* [Tours settings](tourssettings.md)
+* [Type finder settings](typefindersettings.md)
+* [Unattended settings](unattendedsettings.md)
+* [Web routing settings](webroutingsettings.md)
 
 ## Configured by code
 

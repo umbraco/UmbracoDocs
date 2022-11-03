@@ -19,7 +19,7 @@ Examine is provider based so it is extensible and allows you to configure your o
 
 Get up and running with Examine straight away with this quick start guide.
 
-## [Customizing indexes](indexing.mdmd)
+## [Customizing indexes](indexing.md)
 
 Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco.
 
