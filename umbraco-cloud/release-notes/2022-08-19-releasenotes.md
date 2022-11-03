@@ -7,7 +7,7 @@ _Dedicated Resources - Projects Dashboard (beta)_
 - **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
 - **Projects Dashboard (beta)** - The beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
 
-## [Dedicated Resources](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/)
+## [Dedicated Resources](../Set-Up/dedicated-resources.md)
 
 With Dedicated Resources for Umbraco Cloud, you can now choose when to **scale up and down on the resources available for a project**. On top of that, the project is moved from shared to **dedicated hosting**. 
 

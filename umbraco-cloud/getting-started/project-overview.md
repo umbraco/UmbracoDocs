@@ -21,7 +21,7 @@ The number of *Environments* in your project is dependent on which plan you are 
 
 * With the **Enterprise Plan**, you get a *Development*, a *Staging*, and a *Live* environment - as with the Professional Plan you can add/remove environments as needed.
 
-To get a technical overview of your Cloud environments, see the [Environments](../Environments) article. For more information on how to add or remove environments, see the [Manage Environments](../Set-Up/manage-environments.md) article.
+To get a technical overview of your Cloud environments, see the [Environments](../getting-started/environments.md) article. For more information on how to add or remove environments, see the [Manage Environments](../Set-Up/manage-environments.md) article.
 
 ## Team Members/Invite Users
 

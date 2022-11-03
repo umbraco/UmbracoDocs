@@ -16,7 +16,7 @@ On the _Advanced_ page of your project, you are now able to turn on the static o
 
 For Starter projects, there is likewise a new addition. On the Advanced page, you can see the current outbound IP addresses of your project. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 
-### [Managing Transport Security](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Security/)
+### [Managing Transport Security](../Set-Up/manage-security.md)
 Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain **transport security options** for all or for specific hostnames within your project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
 This can be done on the new _Security_ page.

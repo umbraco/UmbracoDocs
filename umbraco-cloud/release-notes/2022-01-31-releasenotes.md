@@ -8,7 +8,7 @@ _Blob storage connection info + Copy project invitation link + Release notes lin
 * **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
 * **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
 
-### [Blob storage connection info](../Set-Up/Media/Connect-to-Azure-Storage-Explorer)
+### [Blob storage connection info](../set-up/media/connect-to-azure-storage-explorer.md)
 
 The blob storage connection info for a project was previously only displayed in Kudu which was not very convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 

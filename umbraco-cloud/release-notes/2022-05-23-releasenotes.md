@@ -7,7 +7,7 @@ _CDN Caching and Optimization settings + Improved Organization Invite Flow + Med
 - **Improved Organization Invite flow** - When you invite a new user to your organization, the Umbraco Cloud portal now ensures a more intuitive and secure handling of the invitation workflow.
 - **Media Storage Files Top 50** - The Umbraco Cloud portal now offers greater transparency for which media files take up the most space in your cloud project's media storage.
 
-## [CDN Caching and Optimization settings](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-CDN-Caching/)
+## [CDN Caching and Optimization settings](../Set-Up/manage-cdn-caching.md)
 In the Umbraco Cloud portal, you can now enable **caching**. This will ensure that static resources such as JavaScript, CSS, and images are cached in the **Content Delivery Network** (CDN) used by Umbraco Cloud.
 
 The feature enables you to set default settings for caching, cache Time To Live (TTL), minification of CSS, JavaScript, and HTML for your Cloud projects. If you prefer an alternative caching strategy to the default this can be done in **CDN Caching and Optimization** in the project's **Setting** menu.
