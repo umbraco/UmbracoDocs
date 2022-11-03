@@ -18,14 +18,14 @@ Generally, you can find information about these via the [Backoffice UI API docum
 
 ## Directives
 
-- [Layout selector](Directives/umbLayoutSelector/) (`<umbLayoutSelector />`)
-- [Load indicator](Directives/umbLoadIndicator/) (`<umbLoadIndicator />`)
-- [Property](Directives/umbProperty/) (`<umbProperty />`)
+- [Layout selector](directives/umblayoutselector.md) (`<umbLayoutSelector />`)
+- [Load indicator](directives/umbloadindicator.md) (`<umbLoadIndicator />`)
+- [Property](directives/umbproperty.md) (`<umbProperty />`)
 
 ## Services
 
-- [Editor service](Services/editorService/)
-- [Events service](Services/eventsService/)
+- [Editor service](services/editorservice.md)
+- [Events service](services/eventsservice/)
 
 ## [UI Examples](https://our.umbraco.com/packages/developer-tools/ui-examples/)
 
