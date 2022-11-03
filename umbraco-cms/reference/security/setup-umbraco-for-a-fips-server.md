@@ -37,4 +37,4 @@ Installing to the FIPS server may not work.  It's best to deploy an existing kno
 
 [1]:https://csrc.nist.gov/publications/PubsFIPS.html#140-2
 [2]:https://www.howtogeek.com/245859/why-you-shouldnt-enable-fips-compliant-encryption-on-windows/
-[3]:../../../Getting-Started/Setup/Upgrading/
+[3]:../../fundamentals/setup/upgrading/

@@ -29,8 +29,8 @@ This community-created package with a complete Umbraco solution incl. an SQLite 
 It is great for testing and for trying out the implementation before building it into your own project.
 {% endhint %}
 
-To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](../auto-linking/index.md) section.
-The code example below shows how the configuration for Google Authentication can be done. You can find an example for how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](../Authenticate-with-Active-Directory/index.md) article.
+To configure the provider create a new static extension class for your provider and configure a custom named options like `GoogleBackOfficeExternalLoginProviderOptions` described in details in the [auto linking](auto-linking) section.
+The code example below shows how the configuration for Google Authentication can be done. You can find an example for how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](authenticate-with-active-directory.md) article.
 
 ```Csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -133,4 +133,4 @@ In this case, you would want to be able to create user accounts in your external
 This could also be the case for members if your website allows public creation of members.
 In this case, the creation process can be simplified by allowing auto-linking the external account. E.g. using Facebook, Twitter or Google.
 
-Read more about [auto linking](../auto-linking/index.md).
+Read more about [auto linking](auto-linking).
