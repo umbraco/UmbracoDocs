@@ -1,21 +1,16 @@
----
-versionFrom: 8.1.0
-versionTo: 8.13.0
----
-
 # Media Picker (Legacy)
 
-:::note
-We highly recommend that you use the [Media Picker](../Media-Picker-3/) instead.
+{% hint style="info" %}
+We highly recommend that you use the [Media Picker](media-picker-3.md) instead.
 
 This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
-:::
+{% endhint %}
 
 `Alias: Umbraco.MediaPicker`
 
 `Returns: IEnumerable<IPublishedContent>` or `IPublishedContent`
 
-This property editors returns a single item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
+This property editors returns a single item if the "Pick multiple items" Data Type setting is disabled or a collection if it is enabled.
 
 ## Data Type Definition Example
 
@@ -85,7 +80,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core;

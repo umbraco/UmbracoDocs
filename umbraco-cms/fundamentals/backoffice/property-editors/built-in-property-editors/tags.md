@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Tags
 
 `Alias: Umbraco.Tags`
@@ -21,9 +16,9 @@ The **Tag group** setting provides a way to categorize your tags in groups. So f
 
 ### Storage type
 
-Data can be saved in either CSV format or in JSON format. By default data is saved in JSON format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma separated values.
+Data can be saved in either Comma-Separated Values (CSV) format or in JSON format. By default data is saved in JSON format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma separated values.
 
-There are built-in property value converters, which means you don't need to worry about writing them yourself or parse the JSON output when choosing "JSON" in the storage type field. Therefore [the last code example](index.md#mvc-view-example---displays-a-list-of-tags) on this page will work out of the box without further ado.
+There are built-in property value converters, which means you don't need to worry about writing them yourself or parse the JSON output when choosing "JSON" in the storage type field. Therefore [the last code example](#mvc-view-example---displays-a-list-of-tags) on this page will work out of the box without further ado.
 
 ## Content Examples
 
@@ -118,4 +113,4 @@ If Modelsbuilder is enabled, you can get the alias of the desired property witho
 
 ### More on working with Tags
 
-More on working with Tags (i.e. query all of them) can be found at the [UmbracoHelper reference page](../../../../../Reference/Querying/UmbracoHelper/#working-with-tags)
+More on working with Tags (query all of them) can be found at the [UmbracoHelper reference page](../../../../reference/querying/umbracohelper.md#working-with-tags)

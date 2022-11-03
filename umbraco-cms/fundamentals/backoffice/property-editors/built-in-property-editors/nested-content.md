@@ -1,14 +1,8 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Nested Content
 
 `Alias: Umbraco.NestedContent`
 
 `Returns: IEnumerable<IPublishedElement>` (or `IPublishedElement` depending on configuration)
-
 
 **Nested Content** is a list editing property editor, using Element Types to define the list item schema. By using Document Types you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard Data Types as field editors. This property editor returns either a single item or a collection of this Document Type.
 
@@ -31,23 +25,23 @@ The Data Type editor allows you to configure the following properties:
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
     - You can use conditional logic to show text instead of 1 or 0 for a true/false property: `{{checkboxPickerAlias == 1 ? 'Yes' : 'No'}}`.
     - For more complex property types, you can display specific attributes by referencing the JSON attribute. For example, if using the MultiUrlPicker, show the name of the first link using `{{urlPickerAlias[0]["name"]}}`.
-    - [Examples and more details about labels and AngularJS templates](../Block-Editor/label-property-configuration.md)
+    - [Examples and more details about labels and AngularJS templates](block-editor/label-property-configuration.md)
 - **Min Items** - Sets the minimum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will pre-populate your list with the minimum amount of allowed items and prevent deleting items below this level. Defaults to `0`.
 - **Max Items** - Sets the maximum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will prevent new items being added to the list above this threshold. Defaults to `0`.
 - **Confirm Deletes** - Enabling this will demand item deletions to require a confirmation before being deleted. Defaults to `true`.
-- **Show Icons** - Enabling this will display the item's doc type icon next to the name in the **Nested Content** list.
+- **Show Icons** - Enabling this will display the item's Document Type icon next to the name in the **Nested Content** list.
 - **Hide Label** - Enabling this will hide the property editor's label and expand the **Nested Content** property editor to the full width of the editor window.
 
-Once your Data Type has been configured, set-up a property on your page doc type using your new Data Type and you are set to start editing.
+Once your Data Type has been configured, set-up a property on your page Document Type using your new Data Type and you are set to start editing.
 
 ## Limitations
 
 There is a handful of editors that Nested Content does not support in its elements. These include:
 
-- [Tags](../../Built-in-Property-Editors/Tags/index.md)
-- [Blocklist Editor](../../Built-in-Property-Editors/Block-List-Editor/index.md)
-- [File upload](../../Built-in-Property-Editors/File-Upload/index.md)
-- [Image Cropper](../../Built-in-Property-Editors/Image-Cropper/index.md)
+- [Tags](../built-in-property-editors/tags.md)
+- [Blocklist Editor](../built-in-property-editors/block-editor/block-list-editor.md)
+- [File upload](../built-in-property-editors/file-upload.md)
+- [Image Cropper](../built-in-property-editors/image-cropper.md)
 
 ![Editors that are not supported](images/NestedContent_NotSupported.png)
 
@@ -59,13 +53,13 @@ When viewing a **Nested Content** editor for the first time, you'll be presented
 
 Click the plus icon to start creating a new item in the list.
 
-If your **Nested Content** editor is configured with multiple document-types you will be presented with a dialog window to select which document-type you would like to use.
+If your **Nested Content** editor is configured with multiple document-types you will be presented with a dialog window to select which Document Type you would like to use.
 
 ![Nested Content - Select Schema](images/NestedContent_SelectSchema-v8.png)
 
-Click the icon of the document-type you wish to use and a new item will be created in the list using that document-type.
+Click the icon of the Document Type you wish to use and a new item will be created in the list using that Document Type.
 
-If you only have one document-type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
+If you only have one Document Type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
 
 ![Nested Content - New Item](images/NestedContent_NewItem-v8.png)
 
@@ -79,7 +73,6 @@ To reorder the list, click and drag the move icon up and down to place the items
 
 To delete an item click the delete icon. If the minimum number of items is reached, then the delete icon will appear greyed out to prevent going below the minimum allowed number of items.
 
-
 ### Single Item Mode
 
 If **Nested Content** is configured with a minimum and maximum item of 1, then it goes into single item mode.
@@ -89,8 +82,6 @@ In single item mode, there is no icon displayed to add new items, and the single
 In this mode, **Nested Content** works more like a fieldset than a list editor.
 
 ![Nested Content - Single Item Mode](images/NestedContent_SingleItemMode-v8.png)
-
-
 
 ## Rendering Nested Content
 
@@ -141,7 +132,7 @@ Example:
 }
 ```
 
-#### Single Item Mode
+### Single Item Mode
 
 If your **Nested Content** property editor is configured in single item mode, then the value converter will automatically know this and return a single `IPublishedElement` entity rather than an `IEnumerable<IPublishedElement>` list. Therefore, when using **Nested Content** in single item mode, you can call `Value<T>` with a generic type of `IPublishedElement` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
 

@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Media Picker
 
 `Alias: Umbraco.MediaPicker3`
@@ -26,7 +22,11 @@ You can still set the maximum amount to 1. Do so when you want to retrieve a col
 
 ### Amount
 
-Use this setting to enforce a minimum and/or maximum amount of selected Media Items. Note that it is not possible to set a maximum when the "Pick multiple items" feature is disabled.
+Use this setting to enforce a minimum and/or maximum amount of selected Media Items.
+
+{% hint style="info" %}
+It is not possible to set a maximum amount when the "Pick multiple items" feature is disabled.
+{% endhint %}
 
 ### Start node
 
@@ -50,7 +50,7 @@ This is different from Global crops as they are defined on the Media Item, makin
 
 Global crops are configured on the Image Cropper property of the Image Media Type
 
-[Read about the Image Cropper here](../Image-Cropper/index.md)
+[Read about the Image Cropper here](image-cropper.md)
 
 ## Content Example
 
@@ -139,7 +139,7 @@ You can retrieve globally defined crops explicitly by using `GetCropUrl` on the 
 
 ### Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 The following sample will update a single image in a Media Picker.
 

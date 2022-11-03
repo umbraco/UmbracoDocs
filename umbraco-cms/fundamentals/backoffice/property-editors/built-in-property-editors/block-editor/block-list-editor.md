@@ -163,9 +163,9 @@ With ModelsBuilder:
 
 ```
 
-### [Insert video here]
-
-(https://www.youtube.com/embed/ltZTgfIoCtg?rel=0)
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=ltZTgfIoCtg" %}
+Working with Block List Editor in Umbraco
+{% endembed %}
 
 ### 2. Build your own rendering
 

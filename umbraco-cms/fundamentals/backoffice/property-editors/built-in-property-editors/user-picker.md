@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # User Picker
 
 `Alias: Umbraco.UserPicker`
@@ -21,7 +16,9 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## MVC View Example
 
-Please note that getting the Value of the property will return the user ID - properties of the User can be accessed by referencing UserService.
+{% hint style="info" %}
+Getting the Value of the property will return the user ID - properties of the User can be accessed by referencing UserService.
+{% endhint %}
 
 ### Without Modelsbuilder
 
@@ -61,7 +58,7 @@ Please note that getting the Value of the property will return the user ID - pro
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @inject IContentService Services;
