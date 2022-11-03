@@ -103,7 +103,6 @@
         * [Nested Content](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/nested-content.md)
         * [Numeric](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/numeric.md)
         * [Radiobutton List](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/radiobutton-list.md)
-        * [(Obsolete) Related Links](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/related-links.md)
         * [Slider](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/slider.md)
         * [Tags](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/tags.md)
         * [Textarea](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/textarea.md)

@@ -1,15 +1,10 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Multi Url Picker
 
 `Alias: Umbraco.MultiUrlPicker`
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" data type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
+Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" Data Type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
 
 ## Data Type Definition Example
 
@@ -19,7 +14,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 
 ![Media Picker Content](images/Multy-Url-Picker-Content-v8.png)
 
-## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - value converters enabled
 
 ## Typed
 
@@ -54,7 +49,7 @@ If `Max number of items` is configured to `1`
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core;

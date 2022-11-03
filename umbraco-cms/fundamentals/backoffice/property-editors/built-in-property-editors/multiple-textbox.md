@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Repeatable textstrings
 
 `Alias: Umbraco.MultipleTextstring`
@@ -55,7 +50,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../Reference/Management/Services/ContentService/index.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;
@@ -78,9 +73,9 @@ See the example below to see how a value can be added or changed programmaticall
 }
 ```
 
-:::note
+{% hint style="info" %}
 To add multiple values to the repeatable text strings property editor you have to put each value on a new line. This can be achieved using either `\r\n\` or `Environment.NewLine`.
-:::
+{% endhint %}
 
 Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
 
