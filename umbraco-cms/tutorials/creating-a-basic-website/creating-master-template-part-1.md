@@ -233,7 +233,3 @@ If you are missing any content (header or footer), check that the templates matc
 			</div>
 		</div>
 ```
-
----
-
-Prev: [Displaying the Document Type Properties](../Displaying-the-Document-Type-Properties) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Master Template Part 2](../Creating-Master-Template-Part-2)

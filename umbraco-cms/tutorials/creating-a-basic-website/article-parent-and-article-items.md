@@ -79,9 +79,9 @@ To add a content node:
 
    We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
 
-   :::tip
+   {% hint style="info" %}
     If you do not see the list view, try refreshing the page.
-   :::
+   {% endhint %}
    
 5. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
 
@@ -96,11 +96,7 @@ To update the **Articles Main** template, follow these steps:
 3. Select **Master** in the **Master template** and click **Save**.
 4. Open the **Custom Umbraco Template** folder.
 5. Copy the contents of **Blog.html** and paste the content into **Articles Main** below the closing curly brace "}".
-
-    :::warning
-    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
-    :::
-    
+    * Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesMain>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 84) to the end of the `</html>` tag (around line 131)
 8. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to **_articlesTitle_**.
@@ -154,11 +150,7 @@ To update the **Articles Item** template, follow these steps:
 3. Select **Master** in the **Master template** and click **Save**.
 4. Open the **Custom Umbraco Template** folder.
 5. Copy the contents of **Blogpost.html** and paste the content into **Articles Item** below the closing curly brace "}".
-
-    :::warning
-    Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesItem>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.
-    :::
-    
+    * Take care when pasting the template not to overwrite the first line `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesItem>`. If you get an error when loading the page ensure the last part in <> brackets matches your Document Type alias.    
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
 8. Replace the static text within the `<h1>` tags (around line 14) with the Model.Value reference to **_articleTitle_**.
@@ -170,7 +162,3 @@ To update the **Articles Item** template, follow these steps:
 Check your browser, you should now see something similar to the screen below.
 
 ![Finished Articles section](images/article-main-frontend.png)
-
----
-
-Prev: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Adding Language Variants](../Adding-Language-Variants)

@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Add a Blog Post Publication Date
 
-In [Part One](index.md) we added a new property to the *Blogpost* Document Type.
+In [Part One](README.md) we added a new property to the *Blogpost* Document Type.
 Now in Part Two, we're going to display that instead of the default creation date.
 
 ## Steps - Part Two
@@ -29,5 +29,3 @@ Now in Part Two, we're going to display that instead of the default creation dat
 
 6. *Save* the Template - a confirmation message should appear confirming that the Template was saved.
 7. View the blog post page in the browser (find the page in the Content tree, then select the link on the Info tab).
-
-[Proceed to Part Three](part-3.md)

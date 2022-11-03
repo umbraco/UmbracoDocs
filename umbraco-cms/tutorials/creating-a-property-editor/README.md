@@ -36,7 +36,7 @@ Next, we will create a Package Manifest file to describe what the plugin does. T
 
 Create the file `/App_Plugins/Suggestions/package.manifest`.
 
-For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/Package-Manifest/index.md) article.
+For more information about the package.manifest file, see the [Package Manifest](../../extending/property-editors/package-manifest.md) article.
 
 Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
 
@@ -130,11 +130,11 @@ In the `.html` file we'll add:
 </div>
 ```
 
-:::tip
+{% hint style="info" %}
 **Optional**
 
 Add `ng-readonly="readonly"` to the `input` tag in order to make the property editor *read-only*.
-:::
+{% endhint %}
 
 In the `.js` file, we'll add a basic AngularJS controller declaration
 
@@ -199,9 +199,9 @@ angular.module("umbraco")
 });
 ```
 
-:::note
-Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more details about extending this service.
-:::
+{% hint style="info" %}
+Visit the [Property Editors page](../../extending/property-editors/) for more details about extending this service.
+{% endhint %}
 
 and add that id to the button in the HTML:
 
@@ -219,6 +219,4 @@ Now, clear the cache, reload the document, and see the Suggestions Data Type run
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
-Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
-
-[Next - Adding configuration to a property editor](part-2.md)
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).

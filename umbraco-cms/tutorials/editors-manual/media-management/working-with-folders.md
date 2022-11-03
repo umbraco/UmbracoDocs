@@ -19,9 +19,9 @@ To create a folder:
     ![Create Folder](images/create-folder-v9.png)
 3. Enter a **Name** for your folder and click **Save**.
 
-:::note
+{% hint style="info" %}
 Folders are only used for sorting media items within the media section. Folders will not be part of the image URL nor be created on the server with the given name.
-:::
+{% endhint %}
 
 ## Editing a Folder
 
@@ -46,9 +46,9 @@ To delete a folder:
     ![Delete Folder](images/Delete-folder-v9.png)
 3. Click **OK**.
 
-:::note
+{% hint style="info" %}
 The contents of the folder are also moved to the Recycle Bin. You can restore items from the Recycle Bin in the same way as in the Content section.
-:::
+{% endhint %}
 
 ## Restoring a Folder from the Recycle Bin
 
@@ -92,7 +92,3 @@ To sort the order of the items in a folder:
 
     ![Sort Items](images/sort-items-v9.png)
 4. Click **Save.**
-
----
-
-Prev: [Media Management](../../Media-Management/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Working with Media Items](../Working-with-Images-and-Files/index.md)

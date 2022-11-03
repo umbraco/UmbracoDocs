@@ -37,4 +37,4 @@ Finally, in Part Three we shall change the blog listing.
 
 Nice job! In this lesson, you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
 
-[Back to Lessons](../index.md)
+[Back to Lessons](../README.md)

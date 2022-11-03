@@ -14,7 +14,3 @@ A quicker way to search across all the content, files, or folders in Umbraco is 
 Using the search bar, you can enter a search term and Umbraco will search for pages and media containing the term.
 
 ![search.jpg](images/search-bar-v9.png)
-
----
-
-Prev: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Editing Existing Content](../Editing-Existing-Content/index.md)

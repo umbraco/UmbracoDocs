@@ -31,5 +31,3 @@ In this lesson, we'll only add Open Graph Content of the type "website", so we d
 7. Select **Choose editor**, search for *textstring* and add this to the tab.
 8. Add another property named *Open Graph Image* and use the **Media Picker** editor.
 9. **Save** the Document Type.
-
-[Previous](index.md) - [Next](step-2.md)

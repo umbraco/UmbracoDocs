@@ -11,7 +11,7 @@ We are now going to create a page where we put our contact details. For added fu
 Some potential solutions:
 
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
-* Build your own contact form using [Surface Controllers](../../../Fundamentals/Code/Creating-Forms/index.md) or view the [Surface Controller chapter](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/) on UmbracoTV.
+* Build your own contact form using [Surface Controllers](../../fundamentals/code/creating-forms.md).
 
 ### Creating the Document Type and Template
 
@@ -121,7 +121,3 @@ To use the Document Type properties from the homepage, do the following:
 7. Click **Save**.
 
 Reload the *Contact Us* page to view the content with the footer.
-
----
-
-Prev: [Creating Master Template Part 1](../Creating-Master-Template-Part-1) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Setting The Navigation Menu](../Setting-The-Navigation-Menu)

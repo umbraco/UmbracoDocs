@@ -25,4 +25,4 @@ Maybe you have even signed up to attend a local meetup!
 
 Welcome, you are now a valued member of the Umbraco community!
 
-[Back to Lessons](../index.md)
+[Back to Lessons](README.md)

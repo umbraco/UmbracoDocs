@@ -37,7 +37,3 @@ You can move a page in two ways:
 
 6. Click **Move**.
 7. A confirmation message appears. Click **OK** to dismiss the confirmation message.
-
----
-
-Prev: [Sorting Pages](../Ordering-Pages/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Copying a Page](../Copying-a-Page/index.md)

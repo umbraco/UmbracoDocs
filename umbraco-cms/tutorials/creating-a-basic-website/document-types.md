@@ -22,15 +22,9 @@ To create a Document Type:
 2. Select the **...** next to the **Document Types** in the **Settings** tree.
     ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 3. Select **Document Type with Template**.
-
-    :::tip
-    Using folders can help you organise your **Document Types**.
-    :::
+    * Using folders can help you organise your **Document Types**.
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
-
-    :::note
-    The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: *homePage*.
-    :::
+    * The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: *homePage*.
 5. Enter the **Description**. For example: _This is our homepage template_. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
 6. Click **Save**. Our new Document Type is now visible as a new item under **Document Types**.
     ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
@@ -52,11 +46,8 @@ To create a Document Type at the root of the **Content Tree**:
 
 1. Go to the **Permissions** tab.
     ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
-2. Toggle the **Allow as root** button.  
-
-    :::note
-    If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
-    :::
+2. Toggle the **Allow as root** button.
+    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
 3. Click **Save**.
 
 ### Adding Properties
@@ -73,10 +64,7 @@ To add properties to your Document Type, follow these steps:
 6. Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
     ![Selecting Textstring Data Type](images/figure-11a-selecting-textstring-data-type-v8.png)
 7. Click **Submit**.
-
-    :::tip
-    Remember to come back and explore the list of **_Data Types_** later.
-    :::
+    * Remember to come back and explore the list of **_Data Types_** later.
 8. Repeat Steps 3 to 7 using the specification below:
 
     | Name        | Body Text                     |
@@ -100,7 +88,3 @@ To add properties to your Document Type, follow these steps:
 11. Click **Save**.
 
 We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the **_Document Type_** (also called as **_Content Node_**) and merges it with a **_Template_** – we’ll create our template next.
-
----
-
-Prev: [Getting Started](../Getting-Started) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)

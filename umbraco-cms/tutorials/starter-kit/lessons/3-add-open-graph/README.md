@@ -18,5 +18,3 @@ You will learn:
 * How to create a reusable set of properties (called Document Type compositions)
 * Add features based on where the composition is implemented
 * Get the URL for content items and media items
-
-[Next](step-1.md)

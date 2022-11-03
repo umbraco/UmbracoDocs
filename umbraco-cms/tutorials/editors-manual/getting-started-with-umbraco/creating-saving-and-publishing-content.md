@@ -100,9 +100,9 @@ To set up scheduled unpublishing, follow these steps:
 
 ## Comparing Content between environments
 
-:::note
+{% hint style="info" %}
 **Compare** content is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
-:::
+{% endhint %}
 
 Compare Content allows previewing content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
 
@@ -126,9 +126,9 @@ To compare content between environments, follow these steps:
 
 ## Transferring content
 
-:::note
+{% hint style="info" %}
 **Transfer now** is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
-:::
+{% endhint %}
 
 You can transfer a specific content node directly to the higher environment without adding it to the **Queue for transfer**.
 
@@ -142,7 +142,3 @@ To transfer content between environments, follow these steps:
 4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
     ![Transfer Content](images/Transfer_Content.png)
 5. Click **Transfer now**.
-
----
-
-Prev: [Umbraco Interface](../Umbraco-Interface/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Finding Content](../Finding-Content/index.md)

@@ -114,9 +114,9 @@ To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Contact Us** content node and select **Allow access to assign culture and hostnames**.
-    :::note
+    {% hint style="info" %}
     In Umbraco 9, this option is called **Culture and Hostnames...**.
-    :::
+    {% endhint %}
 3. In the **Allow access to assign culture and hostnames** pane, let's add a domain for each hostname, like it's done here:
 
     ![Culture and Hostnames](images/culture-and-hostnames.png)
@@ -167,7 +167,7 @@ To display a value for a different language, if the language we are requesting d
 @Model.Value("pageTitle", "en-Us", fallback: Fallback.ToLanguage)
 ```
 
-For more information, see the [Using fall-back methods](../../Fundamentals/Design/Rendering-Content/#using-fall-back-methods) article.
+For more information, see the [Using fall-back methods](../../umbraco-cms/fundamentals/design/rendering-content.md#using-fall-back-methods) article.
 
 ## Using Dictionary Items
 
@@ -198,7 +198,7 @@ To render dictionary items in the template, replace the text with the following 
 
 You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
 
-Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning accesss or User permissions, see the [Users](../../Fundamentals/Data/Users/index.md) article.
+Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning accesss or User permissions, see the [Users](../../umbraco-cms/fundamentals/data/users.md) article.
 
 ## Viewing the Language Variant on the Browser
 

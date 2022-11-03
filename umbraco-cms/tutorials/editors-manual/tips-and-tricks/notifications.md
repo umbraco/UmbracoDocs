@@ -18,14 +18,10 @@ To set up notifications for a content item:
     ![notifications.jpg](images/notifications-v9.png)
 4. Click **Save**.
 
-:::note
+{% hint style="info" %}
 The notification settings apply to the chosen content item as well as any child items that appear below the item in the content tree.
-:::
+{% endhint %}
 
-:::note
+{% hint style="info" %}
 If the notifications option does not appear, the SMTP settings are probably incorrect. In this case please contact the administrator of your website.
-:::
-
----
-
-Prev: [Audit Trail](../Audit-Trail/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Preview Pane Responsive View](../Preview-Pane-Responsive-View/index.md)
+{% endhint %}

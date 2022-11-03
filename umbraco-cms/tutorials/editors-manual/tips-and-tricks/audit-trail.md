@@ -18,7 +18,3 @@ To view the audit trail:
 3. Go to the **Info** tab.
 
     ![View audit Trail](images/view-audit-v9.png)
-
----
-
-Prev: [Refreshing the Tree View](../Tips-when-Working-with-Folders/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Notifications](../Notifications/index.md)

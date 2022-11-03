@@ -38,7 +38,3 @@ You can sort pages in two ways:
      ![Sort Option 1](images/Sort-options-v9.png)
 
 6. Click **Save** and then **Close**.
-
----
-
-Prev: [Editing Existing Content](../Editing-Existing-Content/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Moving a Page](../Moving-a-Page/index.md)

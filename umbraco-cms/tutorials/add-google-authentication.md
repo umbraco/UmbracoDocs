@@ -37,7 +37,7 @@ For this tutorial, you need:
 
 * [Visual Studio](https://visualstudio.microsoft.com/) installed
 * A [Google](https://myaccount.google.com/) account
-* A working [Umbraco solution](../../Fundamentals/Setup/index.md)
+* A working [Umbraco solution](../../umbraco-cms/fundamentals/setup/)
 
 ## Setting up a Google OAuth API
 
@@ -68,11 +68,13 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
 
-:::note The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in **APIs & Services** menu. :::
+{% hint style="info" %}
+The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in **APIs & Services** menu.
+{% endhint %}
 
 ## Integrating Google Auth in Visual Studio
 
-Now that you have the Google API set up, open your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working with Visual Studio](../../Umbraco-Cloud/Set-Up/Working-with-Visual-Studio/) article.
+Now that you have the Google API set up, open your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working locally](../../umbraco-cloud/set-up/working-locally.md) article.
 
 ### Installing a Nuget Package
 
@@ -221,8 +223,7 @@ For more information on installing and managing packages in Visual Studio, see t
         }
     }
     ```
-
-    :::note Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window. :::
+    * Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
 3.  Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
     #### Umbraco 9
@@ -263,6 +264,6 @@ For more information on installing and managing packages in Visual Studio, see t
 
 ## Related Links
 
-* [External login providers](https://our.umbraco.com/documentation/Reference/Security/External-login-providers/)
-* [Linking External Login Provider accounts](https://our.umbraco.com/Documentation/Reference/Security/auto-linking/)
-* [Two-factor authentication](https://our.umbraco.com/documentation/Reference/Security/Two-factor-authentication/)
+* [External login providers](../../umbraco-cms/reference/security/external-login-providers.md)
+* [Linking External Login Provider accounts](../../umbraco-cms/reference/security/auto-linking.md)
+* [Two-factor authentication](../../umbraco-cms/reference/security/two-factor-authentication.md)

@@ -12,7 +12,3 @@ When viewing page content in preview mode you have the option to scale the previ
 
     ![responsivePreview.png](images/responsivePreview-v9.png)
 3. Select the device you would like to scale the preview pane to.
-
----
-
-Prev: [Notifications](../Notifications/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Session Timeout](../Session-Timeout/index.md)

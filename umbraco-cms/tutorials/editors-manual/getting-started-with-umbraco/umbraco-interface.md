@@ -34,8 +34,8 @@ The following sections are available in the backoffice:
 - **Media** - allows to manage images and other media files.
 - **Settings** - allows to handle your meta data such as document types.
 - **Packages** - allows to manage and install packages.
-- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../../Fundamentals/Data/Users/) article.
-- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../../Fundamentals/Data/Members/) article.
+- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../fundamentals/data/users.md) article.
+- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../fundamentals/data/members.md) article.
 - **Forms** - allows to create and manage your forms.
 - **Translation** - allows to manage dictionary items.  
 
@@ -53,7 +53,3 @@ In this example, you are looking at the content section.
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or right-click to view additional options.
 
 The **Recycle Bin** contains the deleted content and is available only in the **Content** and the **Media** section.
-
----
-
-Prev: [Logging In and Out](../Logging-In-and-Out/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Creating, Saving and Publishing Content](../Creating-Saving-and-Publishing-Content/index.md)

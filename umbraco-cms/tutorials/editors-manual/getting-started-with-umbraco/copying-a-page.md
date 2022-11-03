@@ -44,10 +44,6 @@ You can copy a page in two ways:
 8. Click **Copy**.
 9. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
-:::note
+{% hint style="info" %}
 When you select **Relate to original**, Umbraco will create a relationship between the original and copied page. This relationship can be used to programmatically link the pages - For example, linking two pages in a multilingual setup. This relationship **does not** sync the content between the original and copied page.
-:::
-
----
-
-Prev: [Moving a Page](../Moving-a-Page/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Deleting and Restoring Pages](../Deleting-and-Restoring-Pages/index.md)
+{% endhint %}

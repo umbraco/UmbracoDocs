@@ -42,7 +42,3 @@ Reload your homepage to view the content. You should see something similar like 
 ![Displaying the Document Type Properties](images/figure-22-displaying-document-type-properties.png)
 
 Now, you can go back and add additional fields or update existing fields in the Document Type, fill them out in the content node and then add them in the template to display the data in the website.
-
----
-
-Prev: [CSS and Images](../CSS-And-Images) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  Next: [Creating Master Template Part 1](../Creating-Master-Template-Part-1)

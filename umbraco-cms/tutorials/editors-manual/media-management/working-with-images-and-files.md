@@ -24,9 +24,9 @@ In the Media Library, there are multiple ways to upload media items. The two mos
 
     ![mediaUpload.jpg](images/upload-images-v9.png)
 
-:::note
+{% hint style="info" %}
 We recommend using folders to organize your media items if you are going to add a lot of media to your website.
-:::
+{% endhint %}
 
 ## Deleting a Media Item
 
@@ -68,7 +68,3 @@ To move Media Items within the Media section:
     ![Move Media.png](images/Move-media-location-v9.png)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.
-
----
-
-Prev: [Working with Folders](../Working-with-Folders/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Cropping Images](../Cropping-Images/index.md)
