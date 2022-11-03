@@ -7,7 +7,7 @@ meta.Description: "Welcome to the Umbraco Cloud documentation. Here you can read
 
 Welcome to the Umbraco Cloud documentation. Here you can read all about how to set up and work with Umbraco Cloud. You can find articles about the deployment workflow, how to work locally, and all the features that comes with your Umbraco Cloud project. You can also find articles about troubleshooting various issues.
 
-## [Getting Started](Getting-Started/README.md)
+## [Getting Started](getting-started/README.md)
 
 Learn how to set up your very first Umbraco Cloud project and all about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
 
