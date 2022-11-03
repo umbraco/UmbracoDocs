@@ -9,9 +9,9 @@ Umbraco Cloud Portal offers a powerful baseline-child relationship between proje
 
 If at some point, you want to break this connection between the baseline and one of its child projects it is possible to do so with admin privileges.
 
-:::warning
+{% hint style="warning" %}
 Kindly be aware that this action cannot be undone.
-:::
+{% endhint %}
 
 ![Baseline child project](images/Baseline-child-project.png)
 
