@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Manual upgrade of Umbraco Forms
 
 This article shows how to manually upgrade Umbraco Forms to run the latest version.

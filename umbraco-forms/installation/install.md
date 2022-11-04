@@ -1,7 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-
 meta.Title: "Installing Umbraco Forms"
 meta.Description: "Installing Umbraco Forms"
 ---
@@ -15,7 +12,10 @@ Umbraco contains the **Forms** section, by default. You will see a similar inter
 ## Installing Umbraco Forms
 
 ### Video tutorial
-<iframe width="800" height="450" title="Installing Umbraco Forms" src="https://www.youtube.com/embed/3Aojbp_1MPc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=3Aojbp_1MPc" %}
+Installing Umbraco Forms
+{% endembed %}
 
 To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
@@ -39,4 +39,4 @@ Once the installation is successful, you will see a similar screen in the Forms 
 
 ## Using Forms
 
-For details on using Forms, see the [Editor Documentation](../../Editor).
+For details on using Forms, see the [Editor Documentation](../../umbraco-forms/editor/README.md).
