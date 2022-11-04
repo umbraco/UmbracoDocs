@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Adding a Prevalue Source Type to Umbraco Forms
 
-*This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
+*This builds on the "[Adding a type to the provider model](Adding-a-Type.md)" article*
 
 Add a new class to your project - inherit it from `Umbraco.Forms.Core.FieldPreValueSourceType` and implement the class. 
 
