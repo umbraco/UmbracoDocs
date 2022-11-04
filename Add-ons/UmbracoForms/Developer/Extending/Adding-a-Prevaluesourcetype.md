@@ -80,7 +80,7 @@ namespace MyFormsExtensions
 ```
 
 :::note
-The PreValue model was updated in Umbraco Forms Versions: 8.13.0, 9.5.0, & 10.1.0 to include a `.Caption` property which can be set separately from the `.Value` property. In previous versions, the `Value` would generally be used as the caption when rendered on the form.
+The `PreValue` model in Umbraco Forms Versions 8.13.0, 9.5.0, 10.1.0, and above includes a `.Caption` property which is set separately from the `.Value` property. In the previous versions, the `Value` is generally used as the caption when rendered on the form.
 :::
 
 
