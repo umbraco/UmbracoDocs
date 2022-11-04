@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Umbraco Cloud Product Upgrades
 
@@ -14,7 +10,7 @@ _This document describes when & what product updates are rolled out on Umbraco C
 * Deploy
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases, if they do we will notify Umbraco Cloud users via the status page)
 
-When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](Minor-Upgrades) article for more details.
+When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](minor-upgrades.md) article for more details.
 
 ## When do upgrades happen?
 
@@ -28,9 +24,9 @@ When minor upgrades are available, you will need a Development environment on yo
   * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
 
-:::note
+{% hint style="info" %}
 Your project will not be auto-upgraded if your environments aren't running the same **minor version**. E.g. if you are in the middle of upgrading to a new minor version, and one environment is running 8.6.x while another environment on the same project is running 8.7.x.
-:::
+{% endhint %}
 
 ## The auto upgrade rollout process
 

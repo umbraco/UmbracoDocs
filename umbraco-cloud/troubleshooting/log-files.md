@@ -1,11 +1,7 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Log files on Umbraco Cloud
 
-You can access the different types of log files on Umbraco Cloud or through [Kudu](../../Set-Up/Power-Tools). You have access to different types of logs:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/README.md). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
@@ -13,13 +9,15 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 * Site Extension logs
 * IIS logs
 
-:::note
+{% hint style="info" %}
  Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
-:::
+{% endhint %}
 
 ## Video
 
-<iframe width="800" height="450" title="Log Files on Umbraco Cloud" src="https://www.youtube.com/embed/xM5QbF751SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/xM5QbF751SI" %}
+Video example.
+{% endembed %}
 
 ## Accessing the logs
 
@@ -34,11 +32,11 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 
 ### On Kudu
 
-To access logs through Kudu, see [Power tools (Kudu)](../../Set-Up/Power-Tools) article.
+To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/README.md) article.
 
 ## Umbraco logs
 
-Umbraco logs on Cloud work almost the same as on a [normal installation](../../../Getting-Started/Code/Debugging/#logging), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+Umbraco logs on Cloud work almost the same as on a [normal installation](../../umbraco-cms/fundamentals/code/debugging/logging.md), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
 ## Deploy logs
 
@@ -59,7 +57,7 @@ When you're in Kudu, you can go up to the `site` folder and then the `deployment
 
 On Cloud environments, all errors are logged to a database table in the portal under each environment. If you leave too many unread log messages it can cause timeouts when you go to see your errors.
 
-Since the errors are stored in your database, it is possible to clean them up. To do this, start by [accessing the database](../../Databases/Cloud-Database) for the environment where you want to run the cleanup.
+Since the errors are stored in your database, it is possible to clean them up. To do this, start by [accessing the database](../databases/cloud-database.md) for the environment where you want to run the cleanup.
 
 If you want to delete logs from one of your environments' log viewers then you will have to connect to the environment DB and run the following query:
 
@@ -75,9 +73,9 @@ This will delete 90% of the oldest logs that are unread and leave you with 10% o
 
 It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
-:::note
+{% hint style="info" %}
 Do note that the IIS logging will be automatically turned off after 12 hours. It's not possible to have them enabled for longer at once due to possible performance degradation while the logging is enabled.
-:::
+{% endhint %}
 
 You can enable the logging from the **Advanced** menu found under *Settings* in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
@@ -85,8 +83,8 @@ After enabling IIS logging for the environment, the site will have to restart.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
-:::note
+{% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.
 
 See our [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/) for more details on various tiers.
-:::
+{% endhint %}

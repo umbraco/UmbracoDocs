@@ -1,8 +1,6 @@
 ---
 meta.Title: "Migrating Users to Umbraco Cloud"
 meta.Description: "In this guide we show you how you can migrate users from your existing on-premise site to Umbraco Cloud and Umbraco ID."
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Migrating Users to Umbraco Cloud
@@ -49,7 +47,7 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 6. Click **Next** and then click **Advanced**
 7. Find **Type of data to script** and choose **Data only**.
 8. Choose where to save the script and save it.
-9. Connect to your [Umbraco Cloud Database](/Umbraco-Cloud/Databases/Cloud-Database/index.md).
+9. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).
 10. Run the script on your Umbraco Cloud Database.
 11. Restart your Umbraco Cloud environment.
 

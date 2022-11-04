@@ -1,7 +1,3 @@
----
-
-versionFrom: 9.0.0
----
 
 # Manual upgrade of Umbraco CMS on Cloud
 
@@ -9,7 +5,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 ## Prepare for the upgrade
 
-* When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../Set-Up/Working-Locally/) or pull down the latest changes for your development environment.
+* When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../set-up/working-locally.md) or pull down the latest changes for your development environment.
 
 * navigate to the /src/UmbracoProject/ folder with the csproj with the CMS NuGet  package installed.
 
@@ -54,7 +50,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 ## Push upgrade to Cloud
 
-Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../Product-Dependencies) on the new Umbraco version.
+Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../product-dependencies.md) on the new Umbraco version.
 
 If updates are available for Umbraco Forms or Umbraco Deploy then you can upgrade those locally as well, before moving on.
 

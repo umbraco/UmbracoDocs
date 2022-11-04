@@ -1,6 +1,3 @@
----
-versionFrom: 7.0.0
----
 
 # Troubleshooting
 
@@ -12,18 +9,18 @@ Start by determining where this error is reported and what causes the error. The
 
 ### [Umbraco Cloud Status page](https://status.umbraco.io/)
 
-### [Site Performance checklist](troubleshooting-siteperformance)
+### [Site Performance checklist](troubleshooting-siteperformance.md)
 
 ## Where do you see the issue
 
-### [Umbraco Cloud Portal](troubleshooting-portal)
+### [Umbraco Cloud Portal](troubleshooting-portal.md)
 
-### [Umbraco Backoffice](troubleshooting-backoffice)
+### [Umbraco Backoffice](troubleshooting-backoffice.md)
 
-### [Frontend](troubleshooting-frontend)
+### [Frontend](troubleshooting-frontend.md)
 
 ## Is your issue related to something else?
 
-- [Minor upgrades issues](../Upgrades/Minor-Upgrades/)
-- [Baseline merge conflicts](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
-- [How Umbraco Forms are handled on Cloud](../Deployment/Umbraco-Forms-on-Cloud)
+- [Minor upgrades issues](../upgrades/minor-upgrades.md)
+- [Baseline merge conflicts](../getting-started/baselines/baseline-merge-conflicts.md)
+- [How Umbraco Forms are handled on Cloud](../deployment/umbraco-forms-on-cloud.md)

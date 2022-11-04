@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Usage on your Umbraco Cloud project
 
@@ -53,8 +49,8 @@ On Umbraco Cloud, you can always upgrade your project to a higher plan if you ha
 
 You can see the prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when you are upgrading your plan.
 
-:::warning
+{% hint style="warning" %}
 When one of the limits reaches 90%, you’ll see a warning banner in the portal and an email is sent to the project owner and the technical contact(s) of the project, notifying you that you’re getting close to your limit(s).
 
 ![USage Warning](images/warnings_usage.png)
-:::
+{% endhint %}

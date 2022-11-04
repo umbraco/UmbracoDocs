@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Troubleshooting deployments failing with no error message
 
 This error might pop up if your project's files were recently upgraded/updated to the latest version. Any deployment you try will end up failing instantly.
@@ -15,7 +11,7 @@ This might happen if your environment was restarted during the upgrade, or the u
 
 ## Fixing
 
-In order to fix this issue, you would need to use [KUDU](../../../Set-up/Power-Tools/index) to remove the leftover marker files.
+In order to fix this issue, you would need to use [KUDU](../../set-up/power-tools/README.md) to remove the leftover marker files.
 
 1. Access KUDU on the source environment (the one you are deploying from)
 

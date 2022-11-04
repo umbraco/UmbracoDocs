@@ -1,11 +1,7 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Working with a Local Clone of a Umbraco Cloud Site
 
-To work with a local copy of your site, you'll need to use Windows with a local web server installed (like WebMatrix/IIS). If you're using Mac, see the [Working with Mac](../Working-With-UaaS-Cli/) article. In this article, you will find:
+To work with a local copy of your site, you'll need to use Windows with a local web server installed (like WebMatrix/IIS). If you're using Mac, see the [Working with Mac](working-with-mac.md) article. In this article, you will find:
 
 - [Video Tutorial](#video-tutorial)
 - [Tools](#tools)
@@ -18,7 +14,9 @@ To work with a local copy of your site, you'll need to use Windows with a local 
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Working with a local clone of a Umbraco Cloud Site" src="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" %}
+Video example.
+{% endembed %}
 
 ## Tools
 
@@ -80,14 +78,14 @@ The terminal output will show the application starting up and will include local
 
 ![Terminal Output](images/terminal-output.png)
 
-:::tip
+{% hint style="info" %}
 We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
 
 ```cs
 dotnet dev-certs https --trust
 ```
 
-:::
+{% endhint %}
 
 The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the environment you have cloned already contains Umbraco Deploy metadata files (such as Document Types, Templates, etc), these are automatically extracted with the option to restore content from the Cloud environment into the local installation.
 
@@ -111,11 +109,11 @@ Once the project has been cloned down, you will get a folder with files for your
 
 3. Build and run your solution in Visual studio.
 
-You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../../Deployment/index.md) documentation.
+You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment/README.md) documentation.
 
-:::note
-If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](../Media/index.md).
-:::
+{% hint style="info" %}
+If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](media/README.md).
+{% endhint %}
 
 ### Adding a Solution File to your Cloud Project
 
@@ -148,15 +146,15 @@ dotnet new sln --name <MyAwesomeSolution>
 
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
-:::note
+{% hint style="info" %}
 When creating a solution file, we recommend placing it at the root of the git repository.
-:::
+{% endhint %}
 
 ### Adding Additional Projects to your Solution
 
-:::note
+{% hint style="info" %}
 When creating new projects alongside the default Umbraco project, we recommend adding the projects to the `src` folder in the git repository.
-:::
+{% endhint %}
 
 If you want to add additional projects to your solution, you can do it either through the:
 
@@ -221,9 +219,9 @@ To rename your Umbraco Cloud project files and folder, do the following:
     csproj = "MyAwesomeProject.Web.csproj"
     ```
 
-:::note
+{% hint style="info" %}
 It's a good idea to update the namespace used in the `Program.cs`, `Startup.cs` and `_ViewImports.cshtml` files so the naming is consistent throughout your project structure. Once updated, you will need to clear out the `bin` and `obj` folders locally to avoid build errors. When you are done, commit the changes and push them to Cloud.
-:::
+{% endhint %}
 
 If you have already built and run the project locally using the original project file and folder, make an update in your local .git repository to reflect the change that has been made. When a Cloud project first runs, a git hook is created to trigger a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
 

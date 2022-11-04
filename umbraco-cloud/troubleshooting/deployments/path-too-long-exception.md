@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Path too long Exception
 
@@ -47,7 +43,7 @@ This is a known issue with Microsoft servers, that limits the amounts of charact
 
 ## Solution
 
-In order to fix this error, you will need to use [Power-tools Kudu](../../../Set-up/Power-tools/)
+In order to fix this error, you will need to use [Power-tools Kudu](../../set-up/power-tools/README.md)
 
 1. Go to Kudu and navigate to CMD under the Debug console menu. Here you'll be presented with a navigable file structure
 2. Navigate to site/wwwroot/media

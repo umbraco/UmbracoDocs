@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Migrate between regions
 
 When you create a project on Umbraco Cloud, you can choose to host the project in one of two regions: *West EU* or *East US".
@@ -14,11 +10,11 @@ The guide will use an example where a Cloud project is migrated from the West EU
 
 - Admin access and deployment rights on the project that is to be migrated.
 - Git is installed locally as well as a Git client like *Git Bash*.
-- A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../../Fundamentals/Setup/Requirements/) article.
+- A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../umbraco-cms/fundamentals/setup/requirements.md) article.
 
-:::note
+{% hint style="info" %}
 To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.
-:::
+{% endhint %}
 
 ## Prepare your projects
 
@@ -30,26 +26,26 @@ This is done by selecting **East US** from the **Region** dropdown when creating
 
 The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
-Find more details on how to upgrade your project in the [Upgrades](../../Upgrades/) documentation.
+Find more details on how to upgrade your project in the [Upgrades](../upgrades/README.md) documentation.
 
 ## Migrate the project
 
 The following steps will guide you through the migration process.
 
-:::warning
+{% hint style="warning" %}
 Make sure that your projects are [prepared for the migration](#prepare-your-projects) before continuing the process.
-:::
+{% endhint %}
 
 1. Clone down the project that you want to migrate - the *EU project*.
 2. Restore content and media through the Umbraco backoffice.
 3. Clone down the new Cloud project created in the US region - the *US project*.
 4. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the *EU project* with the one from the *US project*.
 
-   :::note
+   {% hint style="info" %}
    The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
 
    By replacing the one on the *EU project* with the one from the *US project*, content and media transfers will point to the environments on the *US project* instead of the *EU project*.
-   :::
+   {% endhint %}
 
 5. Commit the change through git, but do not push it yet.
 6. Use the following git commands to connect your local *EU project* to the live environment on the *US project*:
@@ -91,9 +87,7 @@ Once everything has been configured and set up you can safely delete the *EU pro
 
 Do you need help or have any questions regarding this process, please reach out to our support using [contact@umbraco.com](mailto:contact@umbraco.com).
 
-:::links
 ## Related articles
-- [Manage hostnames](../../Set-Up/Manage-Hostnames/)
-- [Team Members](../../Set-Up/Team-Members/)
-- [Certificates](../../Set-Up/Manage-Hostnames/Security-Certificates/)
-:::
+- [Manage hostnames](../set-up/manage-hostnames/README.md)
+- [Team Members](../set-up/team-members/README.md)
+- [Certificates](../set-up/manage-hostnames/security-certificates.md)

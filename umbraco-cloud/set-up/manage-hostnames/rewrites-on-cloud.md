@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
+
 ---
 
 # Rewrite rules on Umbraco Cloud
@@ -9,9 +8,9 @@ To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed 
 
 The rewrite rules should be added to the `<system.webServer><rewrite>` module in your projects `Web.config` file.
 
-:::note
-If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco 9](https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules) article.
-:::
+{% hint style="info" %}
+If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](../../../umbraco-cms/reference/routing/iisrewriterules.md) article.
+{% endhint %}
 
 ```xml
 <!--
@@ -49,9 +48,9 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
 </rule>
 ```
 
-:::note
+{% hint style="info" %}
 This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply to your local copy of the site running on `localhost`.
-:::
+{% endhint %}
 
 ## Running your site on HTTPS only
 
@@ -73,9 +72,9 @@ For example, the following rule will redirect all requests for the site http://m
 </rule>
 ```
 
-:::note
+{% hint style="info" %}
 This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply to your local copy of the site running on `localhost`.
-:::
+{% endhint %}
 
 ## Adding a trailing slash to your URLs
 
@@ -100,9 +99,10 @@ For example, the following rule will redirect all requests for `https://mysite.c
   <action type="Redirect" url="{R:1}/" />
 </rule>
 ```
-
-:::note
+{% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Media/).
-:::
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../media/README.md).
+{% endhint %}
+
+

@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Move your Umbraco Cloud project to dedicated resources
@@ -15,7 +13,7 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 
 - Umbraco Cloud offers dedicated resources for Starter, Standard, and Professional plans. You can choose among one dedicated option for projects on a Starter plan, two dedicated options for a Standard plan project, and three dedicated options for a Professional plan project.
 
-- Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/External-Services/).
+- Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](../set-up/external-services.md).
 
 
 ## How to move from shared to dedicated
@@ -34,11 +32,10 @@ The first step in moving to a dedicated resource is to access your project in th
 
 - By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
-:::note 
+{% hint style="info" %}
 Dedicated resources are reserved on a per-month basis.
 The price of the dedicated resource will take effect from the next period of your subscription.
-If you move your Cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice. 
-:::
+If you move your Cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice. {% endhint %}
 
 ## How to move from dedicated to shared
 

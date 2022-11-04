@@ -1,13 +1,4 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # How to resolve collision errors
-
-:::note
-If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
-:::
 
 This guide is for solving collision errors on your Umbraco Cloud project. Use this guide when you encounter an error like this:
 
@@ -21,14 +12,14 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files/#what-are-uda-files)).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../deployment/deploy-operations/extract-schema-to-data-files.md#what-are-uda-files)).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
-:::note
+{% hint style="info" %}
 Does the collision error involve **Dictionary items**?
-Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
-:::
+Use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
+{% endhint %}
 
 You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
@@ -39,13 +30,14 @@ You can run into an error like this on all of your Cloud environments. Sometimes
 * [Deciding which file you want to use](#deciding-which-file-you-want-to-use)
 * [Getting your environments in sync](#getting-your-environments-in-sync)
 
-:::tip
-When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
-:::
+{% hint style="info" %}
+When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.{% endhint %}
 
 ## Video tutorial
 
-<iframe width="800" height="450" title="Collision Errors on Umbraco Cloud" src="https://www.youtube.com/embed/HPmatVIt0bY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/HPmatVIt0bY" %}
+Fixing collision errors tutorial
+{% endembed %}
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLgX62vUaGZsHAKusJRjVyquIV47eJgjDq).
 
@@ -73,7 +65,7 @@ For this example, it’s decided that the Document Type currently used on the Li
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../../Databases/Cloud-Database#connecting-to-your-cloud-database-locally)
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database.md#connecting-to-your-cloud-database-locally)
 2. Run one of the following queries on the database, depending on the type you see the error with
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
     ```sql
@@ -105,9 +97,9 @@ You now know which `.uda` file you want.
 
 ## Removing the unused file
 
-:::warning
+{% hint style="warning" %}
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories. Otherwise, you may end up having the same problem next time you deploy.
-:::
+{% endhint %}
 
 1. Clone down the Development environment to your local machine
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
@@ -117,10 +109,9 @@ We strongly recommend that you resolve this locally since this will ensure that 
 5. Select `Schema deployment from data files` in the dropdown.
 6. You will now see a `deploy-complete` marker in your local `/data` folder
 
-:::note
+{% hint style="info" %}
 **Does the error mention Templates?**
-You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.
-:::
+You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.{% endhint %}
 
 ## Getting your environments in sync
 
@@ -132,6 +123,6 @@ When the push from local to the Development environment has been completed, refr
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../../Deployment/Deploy-Operations/Deploy-schema/).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-operations/deploy-schema.md).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

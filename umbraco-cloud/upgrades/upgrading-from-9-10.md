@@ -1,16 +1,13 @@
----
-versionFrom: 9.0.0
----
 
 # Upgrading Umbraco 9 Cloud project to Umbraco 10
 
 This article will provide steps on how to upgrade your Umbraco 9 project to Umbraco 10.
 
-:::tip
+{% endhint %}tip
 **Are you using any custom packages or code on your Umbraco Cloud project?**
 
 You will need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
-:::
+{% endhint %}
 
 ## Content
 
@@ -31,12 +28,14 @@ An overview of what you will find throughout this guide.
 * **At least 2 environments** on your Cloud project.
 
 * A backup of your project database.
-  * Directly from your environment. See the [Database backups](https://our.umbraco.com/documentation/umbraco-cloud/Databases/Backups/) article,
+  * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down and restore the project, and take a backup of the local database.
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Upgrading an Umbraco Cloud project from version 9 to version 10" src="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" %}
+Video example.
+{% endembed %}
 
 ## Step 1: Enable .NET 6
 
@@ -88,9 +87,9 @@ Follow the steps 9-12 to update the following packages as well:
 |Umbraco.Cloud.Identity.Cms               |10.0.2          |
 |Umbraco.Cloud.StorageProviders.AzureBlob |10.0.0          |
 
-:::note
+{% hint style="info" %}
 If you have more projects in your solution or other packages, make sure that these are also updated to support .NET 6 framework.
-:::
+{% endhint %}
 
 With the packages and projects updated, it is time to make some changes to some of the default files.
 
@@ -143,10 +142,10 @@ With the packages and projects updated, it is time to make some changes to some 
     * `/umbraco/UmbracoWebsite`
     * `/umbraco/config/lang`
 
-4. Update the Umbraco Forms related files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
+4. Update the Umbraco Forms related files and folders according to the [Upgrading - version specific](../../umbraco-forms/installation/version-specific.md) for version 10 article.
 
 5. Choose your Database configuration:
-    * To re-use the existing LocalDB database, configure the [ConnectionStrings](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Upgrades/version-specific#database-initialization) or use the [`PreferLocalDbConnectionString` setting](https://our.umbraco.com/documentation/Add-ons/Umbraco-Deploy/Deploy-Settings/#preferlocaldbconnectionstring).
+    * To re-use the existing LocalDB database, configure the [ConnectionStrings](../../umbraco-deploy/upgrades/version-specific.md#database-initialization) or use the [`PreferLocalDbConnectionString` setting](../../umbraco-deploy/deploy-settings.md#preferlocaldbconnectionstring).
     * To use the default SQLite database, skip this step.
 
 6. Build and run your project locally to verify the Umbraco 10 upgrade.
@@ -157,8 +156,8 @@ With the packages and projects updated, it is time to make some changes to some 
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
-1. Remove the folders mentioned above on the **Development** environment using [KUDU](../../Set-Up/Power-Tools/index.md) from the `repository` and `wwwroot` folders.
-2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../../Deployment/Local-to-Cloud/index.md) article.
+1. Remove the folders mentioned above on the **Development** environment using [KUDU](../set-up/power-tools/README.md) from the `repository` and `wwwroot` folders.
+2. Push the changes to the **Development** environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
 3. Test **everything** in the **Development** environment.
 
 We highly recommend that you go through everything on your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
@@ -176,16 +175,10 @@ The files are:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../Add-ons/UmbracoForms/Installation/Version-Specific.md) for version 10 article.
-
 They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
-
-:::links
 
 ## Related Information
 
-* [Breaking changes in Umbraco 10](../../../Fundamentals/Setup/Upgrading/umbraco10-breaking-changes.md)
-* [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
-* [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
-
-:::
+* [Breaking changes in Umbraco 10](../../umbraco-cms/fundamentals/setup/upgrading/umbraco10-breaking-changes.md)
+* [Working locally with Umbraco Cloud](../set-up/working-locally.md)
+* [KUDU on Umbraco Cloud](../set-up/power-tools/README.md)

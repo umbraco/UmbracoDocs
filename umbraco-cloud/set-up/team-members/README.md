@@ -1,11 +1,6 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
- 
 # Team Members in the Project Portal
 
-This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](../../../Fundamentals/Data/Users/). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
+This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](/umbraco-cms/fundamentals/data/users.md). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
 
 ![Invite User](images/Invite-User-1.gif)
 
@@ -40,6 +35,6 @@ You can see the details of your project invitation in the **Member(s) who still 
 
 ![Team Members Pending Invitation](images/Pending-Project-Invites.png)
 
-## [Technical Contacts](Technical-Contact.md)
+## [Technical Contacts](technical-contact.md)
 
 For us to reach the correct person when sending out information about server maintenance, you need to add a technical contact to your Umbraco Cloud project.

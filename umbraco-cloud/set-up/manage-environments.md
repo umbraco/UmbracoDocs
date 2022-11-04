@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Manage Environments
 
@@ -15,7 +11,10 @@ When working with an Umbraco Cloud project, you can add or remove extra environm
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
-<iframe width="800" height="450" title="How to add an additional Umbraco Cloud environment" src="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" %}
+Video example.
+{% endembed %}
+
 
 ## Adding or Removing Environments
 
@@ -29,9 +28,9 @@ You can find the interface for adding or removing environments from your project
 
 On the **Manage Environments** page, you can add or remove an environment. If you wish to remove an environment, you will be prompted to type in the environment alias.
 
-:::note
+{% hint style="info" %}
 There is a specific order that the environments are being added. You will need to have a Development environment before you can have a Staging environment.
-:::
+{% endhint %}
 
 If you have both a Development and a Staging environment and need to remove the Development environment, then you will first need to remove the Staging environment before you can remove the Development environment.
 

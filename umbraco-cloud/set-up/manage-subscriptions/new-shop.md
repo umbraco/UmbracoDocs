@@ -1,12 +1,11 @@
 ---
-versionFrom: 7.0.0
 ---
 # Payments on Umbraco Cloud
 
-:::note
+{% hint style="info" %}
 This article is only for customers in the payment system released on the 5th of May, 2021.
 For customers on Umbraco Cloud before the 5th of May, 2021 handling subscriptions is done through [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
-:::
+{% endhint %}
 
 In this article, you will be able to find information on how to manage your subscriptions, download and pay invoices, and change your credit card on Umbraco Cloud.
 

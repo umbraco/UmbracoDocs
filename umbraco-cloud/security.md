@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Security on Umbraco Cloud
 
 In this article you can find information about security on Umbraco Cloud.
@@ -12,7 +8,7 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../Set-Up/Manage-Hostnames/Security-Certificates).
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](set-up/manage-hostnames/security-certificates.md).
 
 ### TLS support
 
@@ -22,7 +18,7 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](../Set-Up/Manage-Security/) article.
+Learn more about how this in the [Manage Security](set-up/manage-security.md) article.
 
 ### TLS Ciphers support
 
@@ -66,7 +62,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](../Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
 
 ### Ports
 
@@ -77,9 +73,9 @@ By default, all ports are closed to secure them against external attacks. This i
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 
 - Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only. 
-:::note 
+{% hint style="info" %} 
 Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
-:::
+{% endhint %}
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
 
@@ -121,11 +117,10 @@ The following rule can be added to your web.config file in the `system.webServer
 
 Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website.
 
-:::note
+{% hint style="info" %}
 Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the Reverse Proxy version.
 
-If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
-:::
+If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.{% endhint %}
 
 **Reverse Proxy version (eg. Cloudflare)**
 
@@ -152,9 +147,10 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
   <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
-:::note
+
+{% hint style="info" %}
 In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
-:::
+{% endhint %}
 
 **Non-Reverse Proxy (eg. non-Cloudflare)**
 
@@ -190,6 +186,6 @@ The Autoupgrader on Umbraco Cloud needs to have access to the site to succesfull
 
 The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
 
-:::note
+{% hint style="info" %}
 It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
-:::
+{% endhint %}

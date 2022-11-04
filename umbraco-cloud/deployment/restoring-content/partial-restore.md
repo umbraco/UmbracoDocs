@@ -14,15 +14,15 @@ You can use Partial Restore on:
 
 ## Empty Environment
 
-:::note
+{% hint style="info" %}
 This feature is only available with Umbraco Deploy 3.3+
-:::
+{% endhint %}
 
 In this scenario, you've cloned down your Cloud environment to your local machine or set up a new Cloud environment. In both cases, the new environment will have an empty Content section as well as an empty Media section.
 
-:::note
+{% hint style="info" %}
 This feature will also restore all dependencies of the selected content. For example, when you restore a content node that references media items as well as other content nodes, these will all be restored, including any parent nodes that these nodes depend on.
-:::
+{% endhint %}
 
 To partially restore the parts you need:
 
@@ -36,9 +36,9 @@ To partially restore the parts you need:
 8. Click **Restore**.
 9. Once the restore is completed, right-click the Content tree and select **Reload**.
 
-:::note
+{% hint style="info" %}
 If you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
-:::
+{% endhint %}
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
@@ -60,4 +60,6 @@ Imagine that you are working with your Umbraco Cloud project locally. One of you
 
 ![Partial restore](images/partialRestore-onEnvWithContent.png)
 
-<iframe width="800" height="450" title="Restoring Content: Partial Restore" src="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" %}
+Video example.
+{% endembed %}

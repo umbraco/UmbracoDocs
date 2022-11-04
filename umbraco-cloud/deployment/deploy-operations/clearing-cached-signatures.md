@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Clearing Cached Signatures
 
 Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifact in the database for each environment. The signature is a string-based, hashed representation of the serialized artifact.
@@ -19,6 +14,6 @@ Follow these steps to clear the cached signatures:
 4. Select **Clear cached signatures** from the **Deploy Operations** dropdown.
 5. Click **Trigger Operation**. The Deploy engine will clear all the cached signatures.
 
-The **Deploy Status** will change to *Clear signatures pending*. Once the operation is done, you'll see the status has changed to `Last deployment operation completed`. To check that you can deploy the schema, see the [**Deploying Schema from Data Files on your Cloud Environments**](../Deploy-schema) article.
+The **Deploy Status** will change to *Clear signatures pending*. Once the operation is done, you'll see the status has changed to `Last deployment operation completed`. To check that you can deploy the schema, see the [**Deploying Schema from Data Files on your Cloud Environments**](/umbraco-cloud/deployment/deploy-operations/deploy-schema.md) article.
 
 ![Clear cached signatures](images/clear-cached-signatures-v10.gif)

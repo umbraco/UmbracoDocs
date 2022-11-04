@@ -1,17 +1,16 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
+
 ---
 
 # Upload Custom Certificates Manually
 
-:::note
+{% hint style="info" %}
 This feature is *only* available for Umbraco Cloud projects on a **Professional** or **Enterprise** plan.
 
-All projects on Starter, Standard, or Professional plans will automatically be assigned a TLS (HTTPS) certificate.
+All projects on Starter, Standard, or Professional plans will automatically be assigned a Transport Layer Security (HTTPS) certificate.
 
 See the full list of features in the [Umbraco Cloud Pricing Plans](https://umbraco.com/umbraco-cloud-pricing/) on the Umbraco website.
-:::
+{% endhint %}
 
 To manually upload your certificate on the Umbraco Cloud Portal and assign it to one of the hostnames you've added:
 
@@ -52,12 +51,12 @@ In some cases, you might want to switch from using your custom certificate to us
 
 By removing your certificate from your Cloud project, the Umbraco Cloud service will automatically assign a new TLS (HTTPS) certificate to the hostname.
 
-:::note
+{% hint style="info" %}
 Did your manually uploaded security certificate expire?
 
 You will need to remove the expired certificate for Umbraco Cloud to assign a new certificate to your hostname(s).
-:::
+{% endhint %}
 
 ## Read more
 
-* [Redirect from HTTP to HTTPS](../Rewrites-on-Cloud#running-your-site-on-https-only)
+* [Redirect from HTTP to HTTPS](rewrites-on-cloud.md#running-your-site-on-https-only)

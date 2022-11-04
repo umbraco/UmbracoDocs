@@ -1,8 +1,6 @@
----
-versionFrom: 7.0.0
----
 
 # Troubleshooting FAQ
+
 We have gathered a list of frequently asked questions below that have something to do with troubleshooting on Umbraco Cloud. These are not covered by the other sections.
 
 ## I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own data types - do I need to do anything special?

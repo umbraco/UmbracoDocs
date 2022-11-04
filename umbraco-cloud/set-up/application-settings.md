@@ -1,13 +1,9 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
 
 # Custom Application Settings
 
-:::note
+{% hint style="info" %}
 This feature is *only* available for Umbraco Cloud projects on a **Standard** or **Professional** plan.
-:::
+{% endhint %}
 
 Umbraco Cloud enables you to toggle a selection of predefined settings for each of the project's environments.
 A change of an application setting enables you to change one specific behavior of the app service that an environment is running in. The objective of application settings is to empower you with features or functionality that aren't available by default.
@@ -23,6 +19,6 @@ By turning this feature on for an environment, you will be able to load a client
 
 For more information on loading a certificate from a file, see the [Load certificate from file](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
 
-:::note
+{% hint style="info" %}
 When toggling the setting, a confirmation prompt is displayed. Enabling/disabling this feature enforces a restart of the environment.
-:::
+{% endhint %}

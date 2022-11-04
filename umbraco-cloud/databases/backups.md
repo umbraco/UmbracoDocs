@@ -1,13 +1,9 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Database backups
 Sometimes you might need to have a backup of your Cloud database. This can be accomplished in at least two ways. This article will go through two of those options.
 
 - [Backup with SQL Server Management Studio](#backup-with-sql-server-management-studio).
-- [Backup and data retention policy](https://our.umbraco.com/documentation/Umbraco-Cloud/Frequently-Asked-Questions/#backups-and-data-retention)
+- [Backup and data retention policy](/umbraco-cloud/frequently-asked-questions.md/#backups-and-data-retention)
+
 
 ## Backup with SQL Server Management Studio
 Follow these steps:
@@ -32,11 +28,11 @@ Use the following steps:
 - Proceed through the dialog, by browsing to the saved location of your `bacpac` file, and then setting the options appropriate to your configuration
 - Complete the import dialog and the database will be restored.
 
-:::note
+{% hint style="info" %}
 When restoring a `bacpac` to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true. 
 
 If it is not set the import will fail.
-:::
+{% endhint %}
 
 To Enable Contained Database Authentication, run the following SQL against your SQL server on the Master database.
 

@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Apply hotfix by using Git
 
 In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment using only Git.
@@ -11,11 +6,11 @@ Tools used:
 
 * GitKraken
 
-:::note
+{% hint style="info" %}
 You can use whichever Git client or command line interface you prefer.
 
 If you've never worked with cherry-picking before, we recommend that you use a Git client with a UI that gives you a visual overview of your commits.
-:::
+{% endhint %}
 
 ## The scenario
 
@@ -74,15 +69,15 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 8. Hit **Submit** and the push will start.
 
-:::note
+{% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
-:::
+{% endhint %}
 
-Find a guide on how to extract the files in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article.
+Find a guide on how to extract the files in the [Manual Extraction](../../set-up/power-tools/manual-extractions.md) article.
 
 You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the Development repository before pushing it to the Development environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
 
-When you are ready to build on your Development environment, follow the [normal workflow of Cloud](../../) to deploy the changes to the Live environment.
+When you are ready to build on your Development environment, follow the [normal workflow of Cloud](/umbraco-cloud/deployment/README.md) to deploy the changes to the Live environment.
 
 ## Important notes
 

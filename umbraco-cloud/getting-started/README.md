@@ -1,8 +1,6 @@
 ---
 meta.Title: "Get started working with Umbraco Cloud"
 meta.Description: "Here you can find information about getting started working with Umbraco Cloud"
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Umbraco Cloud
@@ -27,7 +25,7 @@ Umbraco Cloud offers shared hosting in 3 different plans:
 - Standard
 - Professional
 
-You can [learn more about quotas](Umbraco-cloud-plans) that are put in place to ensure the stability of your website.
+You can [learn more about quotas](umbraco-cloud-plans.md) that are put in place to ensure the stability of your website.
 
 ## Umbraco Cloud Project
 
@@ -35,11 +33,11 @@ You can [learn more about quotas](Umbraco-cloud-plans) that are put in place to 
 
 The easiest way to get started with an Umbraco Cloud project is to take a [14-day free trial](https://umbraco.com/?product_tour_id=103162). The project is automatically created and you are ready to get started within a few minutes.
 
-<iframe width="800" height="450" title="Creating a Trial Project on Umbraco Cloud" src="https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [Insert video](https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0)
 
 Since we set up the entire project, we recommend that you get to know your project before you start building.
 
-To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](../Set-Up/Working-Locally). For Mac users, see [Working with Mac](../Set-Up/Working-With-UaaS-Cli).
+To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](../set-up/working-locally.md). For Mac users, see [Working with Mac](../set-up/working-with-mac.md).
 
 ### Umbraco Cloud Portal Project
 
@@ -66,7 +64,7 @@ When you create a:
 - Trial project for the first time - a unique project name will be generated for you.
 - Project from the Umbraco Cloud Portal - you will get to choose a name for the project.
 
-To rename the project file and folder, see the [Renaming the Project file and folder](../Set-up/project-settings/index.md#renaming-the-project-file-and-folder) article.
+To rename the project file and folder, see the [Renaming the Project file and folder](../set-up/project-settings.md#renaming-the-project-file-and-folder) article.
 
 An Umbraco Cloud project name is unique, which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
 
@@ -92,6 +90,6 @@ The Overview Page consists of:
 
 ## Different ways to start an Umbraco Cloud project
 
-You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](Migrate-Existing-Site) that you can follow to successfully move your project to Umbraco Cloud.
+You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](migrate-existing-site/README.md) that you can follow to successfully move your project to Umbraco Cloud.
 
-If you are creating several similar projects, we have a feature called [Baselines](Baselines) that lets you create new projects based on existing Umbraco Cloud projects.
+If you are creating several similar projects, we have a feature called [Baselines](baselines/README.md) that lets you create new projects based on existing Umbraco Cloud projects.

@@ -11,15 +11,15 @@ To access Kudu, you will have to be an admin on the project.
 
 Kudu is available for each environment on your Umbraco Cloud project. You can find the link by clicking the environment name in the Umbraco Cloud portal. When you are prompted to log in, use your Umbraco Cloud credentials.
 
-<iframe width="800" height="450" title="Using Kudu on Umbraco Cloud" src="https://www.youtube.com/embed/vy6fRXMA9mE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [Insert Video here](https://www.youtube.com/embed/vy6fRXMA9mE?rel=0)
 
 ## What can you do from Kudu?
 
 The power tools can be used for various things, we often refer to the tools in our troubleshooting guides.
 
-* [The file structure](File-structure-on-Cloud)
-* [Run an extraction manually](Manual-extractions)
-* [Generate UDA files](Generating-UDA-files)
+* [The file structure](file-structure-on-cloud.md)
+* [Run an extraction manually](manual-extractions.md)
+* [Generate UDA files](generating-uda-files.md)
 
 ## Showing more than 299 items in Kudu
 
@@ -34,12 +34,12 @@ This number can be increased by doing the following:
 5. Navigate back into the folder you want to view the files in.
 6. You should now be able to view the folders/files up to the limit you've set it to.
 
-:::note
+{% hint style="info" %}
 If you refresh the page, the limit will go back to the standard 299.
-:::
+{% endhint %}
 
 ## Important notes
 
-Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git ([Local to Cloud](../../Deployment/Local-to-Cloud)) and the Deploy engine([Cloud to Cloud](../../Deployment/Cloud-to-Cloud)).
+Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git ([Local to Cloud](../../Deployment/local-to-cloud.md)) and the Deploy engine([Cloud to Cloud](../../deployment/cloud-to-cloud.md)).
 
 We recommend that you **only** use Kudu when you are following one of our guides.

@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Minor version upgrades
 
 When minor version upgrades are available, your Umbraco site will not be auto-upgraded to this version. You will need to press the Upgrade button in the Umbraco Cloud portal to perform the upgrade. This will upgrade your Development environment so you can test how everything works on a Cloud environment before pushing the upgrade to your Live site.
@@ -12,7 +7,9 @@ This workflow applies to all products on Umbraco Cloud: Umbraco CMS, Umbraco For
 
 For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
 
-<iframe width="800" height="450" title="How to upgrade an Umbraco Cloud environment to a new minor version" src="https://www.youtube.com/embed/mMk2VM_5N-I?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/mMk2VM_5N-I?rel=0" %}
+How to upgrade an Umbraco Cloud environment to a new minor version
+{% endembed %}
 
 ## Troubleshooting Automated minor upgrades
 

@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Schema Mismatches
 
 When transferring or restoring content between two Umbraco Cloud environments, you might run into **Schema mismatch** errors. These usually occur when the schema (this includes Document Types, Media Types, Data Types, Templates, Macros, and Dictionary items) isn't in sync between the *source environment* and the *target environment*.
@@ -11,7 +6,9 @@ In this article, you can learn how to resolve schema mismatch issues and how you
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Handling Schema Mismatches on Umbraco Cloud" src="https://www.youtube.com/embed/MLJzV8ASWm4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/MLJzV8ASWm4?rel=0" %}
+How to fix Schema mismatches
+{% endembed %}
 
 ## Step-by-step
 
@@ -30,7 +27,3 @@ If there are no pending deployments in your source environment, there are two wa
     * This will update your schema in the target environment and ensure it is in sync with the source environment
 
 If the mismatches involve differences in the `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content.
-
-:::note
-If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
-:::

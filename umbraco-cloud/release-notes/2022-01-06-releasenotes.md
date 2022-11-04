@@ -7,14 +7,15 @@ _Break baseline reference + See project information + Various improvements_
 - **New Project Overview Page** - See project information such as plan, payment status for your project on the new project overview page.
 - **Various tweaks and improvements** - Since December we have provided a lot of small changes and improvements.
 
-### [Break reference between baseline and child project](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Break-baseline/)
+### [Break reference between baseline and child project](../getting-started/baselines/break-baseline.md)
+
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 
 If you at some point **want to break this connection**, between the baseline and one a child project, it is now really easy for a user with the role of admin to do so. Please be aware that the action **cannot be undone**.
 
 ![Break reference between baseline and child project (1)](https://user-images.githubusercontent.com/93588665/149168277-e7ffb2e1-34c3-411f-9962-e834150f62d1.gif)
 
-### [New Project Overview Page](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/#project-overview)
+### [New Project Overview Page](../Getting-Started/README.md#project-overview)
 You are now able to access a simple project overview page for each of your projects. Initially are able to see basic information such as name, alias, **plan and project status**. In the future, we are likely to add more project related information that currently isn’t presented in the portal.
 
 ![New Project Overview Page](https://user-images.githubusercontent.com/93588665/149168523-088b58f1-5a04-43ff-9ac5-f30b62c74e4e.gif)

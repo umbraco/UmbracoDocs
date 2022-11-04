@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Config Transforms
 
@@ -31,9 +27,9 @@ When the file is deployed to the Live environment, the transforms will be applie
 
 For each deployment, the Umbraco Cloud engine searches for all of the `.{environment}.config` files in your site and applies the transforms.
 
-:::note
+{% hint style="info" %}
 Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
-:::
+{% endhint %}
 
 ## Syntax and testing
 
@@ -76,15 +72,15 @@ Here is an example of how that config transform would look:
 </configuration>
 ```
 
-:::note
+{% hint style="info" %}
 The above snippet requires your project to have a web.config file with a matching structure, otherwise the config transform (and subsequently, the deployment) might fail. 
-:::
+{% endhint %}
 
 This config transform will add a `<rule>` to `<system.webServer><rewrite><rules>`. The `xdt:Transform` attribute is used to tell the system what to transform. In this case, the value is `Insert`, which means it will add the section if it's not already in the config file.
 
-:::note
-Keep in mind that a misconfigured config transform may [block Data Extraction on your project](../../Troubleshooting/Deployments/Changes-Not-Being-Applied).
-:::
+{% hint style="info" %}
+Keep in mind that a misconfigured config transform may [block Data Extraction on your project](../troubleshooting/deployments/changes-not-being-applied.md).
+{% endhint %}
 
 ## appsettings.json transforms
 

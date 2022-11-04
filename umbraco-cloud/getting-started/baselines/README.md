@@ -1,7 +1,4 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
+
 
 # Baselines
 
@@ -13,17 +10,19 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 ![Baseline workflow](images/baseline-workflow.gif)
 
-For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
+For some more in-depth information have a look at the [High-level Overview](high-level-overview.md) article.
 
-:::note
+{% hint style="info" %}
 Currently, the baseline feature is only available in the west EU region.
 
 At this point, it is not possible to create baselines if you are hosting your site in the East US region.
-:::
+{% endhint %}
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="How to work with baselines on Umbraco Cloud" src="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" %}
+How to work with baselines on Umbraco Cloud
+{% endembed %}
 
 ## Creating a Child Project
 
@@ -36,9 +35,9 @@ To create a child project:
 5. In the **Project Information** window, enter the **Project Name**.
 6. [Optional] Select **Create from Baseline**.
 7. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
-:::note
+{% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
-:::
+{% endhint %}
 8. **Choose an Owner** from the drop-down list.
 9. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
 10. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
@@ -48,9 +47,9 @@ It might take couple of minutes for the project to spin up before your environme
 
 ![Creating a Baseline child project](images/create-baseline-child-project-v9-new.gif)
 
-:::note
+{% hint style="info" %}
 Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
-:::
+{% endhint %}
 
 ### Restore content from the Baseline project
 
@@ -66,18 +65,18 @@ If you do not see the content, **Reload** the content tree once the restore is c
 
 ![Restore content from Baseline project](images/RestoreFromBaseline_v10.gif)
 
-## [Merge Conflicts](Baseline-Merge-Conflicts/)
+## [Merge Conflicts](baseline-merge-conflicts.md)
 
 As with any Git repository-based development, it is not uncommon to have merge conflicts as the repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 
-## [Pushing upgrades to a Child Project](Upgrading-Child-Projects/)
+## [Pushing upgrades to a Child Project](upgrading-child-projects.md)
 
 In this article, you'll find a guide on how to upgrade your Child project with changes from your Baseline project.
 
-## [Handling configuration files](Configuration-files/)
+## [Handling configuration files](configuration-files.md)
 
 When you are working with Baseline Child projects you might sometimes want to have an individual configuration for each project - this can be handled using config transforms.
 
-## [Break reference between baseline and child project](Break-baseline/)
+## [Break reference between baseline and child project](break-baseline.md)
 
 In this article, we will look at how to break the connection between the baseline and one of its child projects.

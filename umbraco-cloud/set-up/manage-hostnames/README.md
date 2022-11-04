@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 
 # Managing Hostnames
 
@@ -31,17 +27,19 @@ We recommend:
 * Setting a CNAME record for your hostname using **dns.umbraco.io** or
 * An A record using an IP, either `104.19.191.28` or `104.19.208.28`.
 
-:::note
+{% hint style="info" %}
 Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
-:::
+{% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
 
-:::warning
+{% hint style="warning" %}
 Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
-:::
+{% endhint %}
 
-<iframe width="800" height="450" title="How to add a hostname on Umbraco Cloud" src="https://www.youtube.com/embed/UQ4Sn40YipA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/UQ4Sn40YipA?rel=0" %}
+Video example.
+{% endembed %}
 
 To specify the hostname for each root node using a multisite setup, follow these steps:
 
@@ -53,7 +51,7 @@ To specify the hostname for each root node using a multisite setup, follow these
     ![Culture and Hostnames](images/culture-and-hostnames-v10.png)
 6. Click **Save**.
 
-Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. *snoopy.euwest01.umbraco.io*). To do so, see the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbracoio-url) article.
+Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. *snoopy.euwest01.umbraco.io*). To do so, see the [Rewrites on Cloud](rewrites-on-cloud.md#hiding-the-default-umbracoio-url) article.
 
 ### Automatic TLS (HTTPS)
 
@@ -88,13 +86,13 @@ CAA records can be set on the subdomain, but it's not something that is commonly
 example.com. IN CAA 0 issuewild "pki.goog"
 ```
 
-:::note
+{% hint style="info" %}
 The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
 
 **No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
-:::
+{% endhint %}
 
-## [Upload certificates manually](Security-Certificates)
+## [Upload certificates manually](security-certificates.md)
 
 On the Professional and Enterprise plan, you can manually add your certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
@@ -102,9 +100,9 @@ On the Professional and Enterprise plan, you can manually add your certificate t
 
 If you need to use your Web Application Firewall (WAF) in front of your Umbraco Cloud website then this section will highlight some of the most common configurations needed.
 
-:::note
+{% hint style="info" %}
 Configuration may vary depending on which WAF you are using, so you should always consult your vendor for best practices and recommendations.
-:::
+{% endhint %}
 
 In most cases, you need to ensure that the WAF and Umbraco Cloud are using the same certificate on the specific hostname. Custom certificates are a plan-specific feature on Umbraco Cloud, so make sure that you have access to upload certificates.
 
@@ -120,6 +118,6 @@ Reach out to support and they will assist you with the details that need to be i
 
 When that is added it should work immediately.
 
-## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
+## [Rewrites on Umbraco Cloud](rewrites-on-cloud.md)
 
 Learn more about best practices for working with rewrite rules on Umbraco Cloud projects.
