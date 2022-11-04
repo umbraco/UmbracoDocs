@@ -31,7 +31,7 @@ An explanation of the Umbraco Cloud product upgrade process.
 
 Tips on finding, identifying, and resolving issues.
 
-## [Frequently Asked Questions](frequently-asked-questions/README.md)
+## [Frequently Asked Questions](frequently-asked-questions.md)
 
 Anything else not covered above.
 
