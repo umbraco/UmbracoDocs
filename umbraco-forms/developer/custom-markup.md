@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Forms custom markup"
 meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
 ---
@@ -9,10 +7,10 @@ meta.Description: "With Umbraco Forms it's possible to customize the outputted m
 
 With Umbraco Forms, it is possible to customize the output markup of a Form, which means you have complete control over what Forms will display.
 
-:::warning
-When using Forms version 6 or higher, we recommend that you use [Themes](../Themes) to customize your Forms.
+{% hint style="warning" %}
+When using Forms version 6 or higher, we recommend that you use [Themes](themes.md) to customize your Forms.
 This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
-:::
+{% endhint %}
 
 ## Customizing the Default Views
 
@@ -65,7 +63,7 @@ Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attribute
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
 
-The view model for the partial view for a field is `FieldViewModel`. This defined various properties that may be useful when creating new themes or custom fields, some of which are shown in the code samples above.  Others include:
+The view model for the partial view for a field is `FieldViewModel`. This defines properties that may be useful when creating new themes or custom fields, some of which are shown in the code samples above.  Others include:
 
 - `AdditionalSettings` - a dictionary of the settings keys and values populated for the form field. These can be retrieved in typed form by key using e.g. `Model.GetSettingValue<int>("MaximumLength", 255);`.
 
@@ -86,7 +84,3 @@ You will need to create folder using the ID of the Form: `~\Views\Partials\Forms
 As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 
 You can also overwrite views for one or more fieldtypes by adding the views to the folder: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml`.
-
----
-
-Prev: [Themes](../Themes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Email Templates](../Email-Templates/index.md)

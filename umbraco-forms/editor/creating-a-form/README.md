@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Creating a Form - The Basics
 
 In this article, we'll take a look at the basic steps of creating a Form and adding the Form to your Umbraco site.
@@ -56,7 +51,7 @@ To create a Form, follow these steps:
 15. Select if the field is **Mandatory** and customize the message.
 16. Add a **Validation** to the field. There are some predefined validations available but it is possible to add your own custom validation as well.
 17. Some form fields allow you to show or hide the label that's associated with the field when it is rendered within the form on the website.  The default is always to show the field, but if you prefer to hide it, untick the **Show label** option.
-18. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](Conditional-Logic) article.
+18. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](conditional-logic.md) article.
 
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected *Short Answer* as our answer type we got two additional settings (Default Value and Placeholder).
 19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
@@ -104,7 +99,3 @@ To add the Form, follow these steps:
 8. The Form is inserted on to your page. Click the **Save and publish** button.
 
     ![Content page with form](images/ContentExamplesWithForm.png)
-
----
-
-Prev: [Editor Documentation](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Form Settings](../Creating-a-Form/Form-Settings/index.md)

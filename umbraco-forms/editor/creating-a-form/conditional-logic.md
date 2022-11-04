@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Setting-up Conditional Logic on Fields
 
 Sometimes you might have a field in your Form, that you want to show *only* if the user has entered a specific value in another field.
@@ -62,12 +57,8 @@ In this example, we have only selected **Phone** but it is possible to choose bo
 
 As well as showing or hiding a field based on conditions, you can also apply conditions to groups of fields (known as fieldsets) or to pages. The process is the same as described above.
 
-When applying a condition to a page, effectively you are controlling the display of the submit button (for a single-page form) or the next/previous buttons (available on multi-page forms).  In this way you can ensure that the entry so far is complete before accepting it or allowing the user to move onto the next page.
+When applying a condition to a page, effectively you are controlling the display of the submit button (for a single-page form) or the next/previous buttons (available on multi-page forms). In this way you can ensure that the entry so far is complete before accepting it or allowing the user to move onto the next page.
 
 ## Conditions for Dates
 
 You can apply conditions to dates as well as strings. When you use the date picker field, you can set a condition if a submitted date is greater/less than a specific date.
-
----
-
-Prev: [Overview of the Field Types](../Fieldtypes/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Attaching Workflows](../../Attaching-Workflows/index.md)

@@ -1,18 +1,22 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Adding a Export type to Umbraco Forms"
 ---
 
 # Adding a Export type to Umbraco Forms
-*This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
+
+*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
 
 ## Basic Example
+
 When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up a comma separated string for a CSV file in the `ExportRecords` method.
 
-In the constructor of your provider, note that you will need a further two properties, `FileExtension` and `Icon`. The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
+{% hint style="info" %}
+In the constructor of your provider, you will need a further two properties, `FileExtension` and `Icon`.
+{% endhint %}
+
+The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
 
 In this example below we will create a single HTML file which takes all the submissions/entries to be displayed as a HTML report. We will do this in conjunction with a Razor partial view to help build up our HTML and thus merge it with the form submission data to generate a string of HTML.
 
@@ -81,6 +85,7 @@ namespace MyFormsExtensions
 ```
 
 ## Advanced Example
+
 This approach gives us more flexibility in creating the file we wish to serve as the exported file. We do this for the export to Excel file export provider we ship in Umbraco Forms. With this we can use a library to create the Excel file and store it in a temporary location before we send back the filepath for the browser to stream down the export file.
 
 In this example we will create a collection of text files, one for each submission which is then zipped up into a single file and served as the export file.

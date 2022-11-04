@@ -1,12 +1,10 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Content Apps"
 ---
 
 # Content Apps
 
-From versions 9.2, [Umbraco Content Apps](../../../../Extending/Content-Apps/index.md) can be configured to appear alongside forms in the Umbraco Forms backoffice section.
+From versions 9.2, [Umbraco Content Apps](../../umbraco-cms/extending/content-apps.md) can be configured to appear alongside forms in the Umbraco Forms backoffice section.
 
 They will appear after the default "Design" and "Settings" apps when editing a form in the back-office:
 
@@ -37,7 +35,7 @@ A content app such as the following would display only in the forms section:
     }
 ```
 
-Within the `/App_Plugins/TestFormsContentApp/` folder we need the client-side files, for which a simple example is shown below:
+Within the `/App_Plugins/TestFormsContentApp/` folder we need the client-side files, for which an example is shown below:
 
 `package.manifest`:
 
@@ -102,7 +100,3 @@ Finally, it needs to be registered via a composer:
     }
 }
 ```
-
----
-
-Prev: [Localization](../Localization/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Headless/AJAX Forms](../AjaxForms/index.md)

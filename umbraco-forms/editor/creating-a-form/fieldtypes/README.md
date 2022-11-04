@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Overview of the Field Types
 
 Umbraco Forms comes with a bunch of default Field Types (also known as **Answer Types**) you can choose from when adding new fields to your Forms.
@@ -15,13 +10,13 @@ By default, the following Field Types are available:
 *   **Long Answer**: A bigger text field that allows multiline text and more than 250 characters.
 
     ![Textarea](images/longanswer-v9.png)
-*   [Date](../Fieldtypes/Date/): Displays a picker that allows the user to select a date.
+*   [Date](../fieldtypes/date.md): Displays a picker that allows the user to select a date.
 
     ![Datepicker](images/date-v9.png)
 *   **Checkbox**: Displays a single checkbox that can be checked or not.
 
     ![Checkbox](images/CheckBox-v9.png)
-*   [File Upload](../Fieldtypes/FileUpload/): Allows user to select and upload a local file.
+*   [File Upload](../fieldtypes/fileupload.md): Allows user to select and upload a local file.
 
     ![File upload](images/fileupload-v9.png)
 *   **Password**: Allows to type a password. The input is not visible when typing.
@@ -50,13 +45,9 @@ By default, the following Field Types are available:
 *   **Hidden**: A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.
 
     ![Hidden](images/hidden-v9.png)
-*   [Recaptcha V2](../Fieldtypes/Recaptcha2/): The field displays a single checkbox for the user to select in order to validate the Form.
+*   [Recaptcha V2](../fieldtypes/recaptcha2.md): The field displays a single checkbox for the user to select in order to validate the Form.
 
     ![reCAPTCHA v2](images/recaptcha2-v9.png)
-*   [Recaptcha V3 with Score](../Fieldtypes/Recaptcha3/): Available in Umbraco Forms from v8.7.0. This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
+*   [Recaptcha V3 with Score](../fieldtypes/recaptcha3.md): Available in Umbraco Forms from v8.7.0. This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
 
     ![reCAPTCHA v3](images/recaptcha3-v9.png)
-
-***
-
-Prev: [Form settings](../Form-Settings/index.md)                 Next: [Setting-up Conditional Logic on Fields](../Conditional-Logic/index.md)

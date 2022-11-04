@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Defining and Attaching Prevalue Sources
 
 Prevalue sources are a way to pre-define and/or retrieve a list of items from a certain source. They can be added in any field types that include some kind of list like Dropdown and Multiple/Single Choice lists.
@@ -19,7 +14,7 @@ To set a prevalue source:
 2. Right-click the **Prevalue sources** folder and select **Create**.
 3. A new page opens in the right-side of the editor where you'll need to setup and configure your prevalue source.
 4. Enter a **Name**.
-5. Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](Prevalue-source-types) article.
+5. Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
     ![Choose type](images/choosetype.png)
 
@@ -39,7 +34,7 @@ example value 4
 example value 5
 ```
 
-3. Select **Pick File** and choose the text file you just created.
+3. Select **Pick File** and choose the text file you created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
 5. If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
     ![Preview](images/preview.png)
@@ -74,7 +69,3 @@ If there is at least one prevalue source defined in the project, the Prevalues s
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 
 ![Preview](images/fieldpreview.png)
-
----
-
-Prev: [Viewing and Exporting Entries](../Viewing-and-Exporting-Entries/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Overview of the Prevalue Source Types](../Defining-and-Attaching-Prevaluesources/Prevalue-source-types/index.md)

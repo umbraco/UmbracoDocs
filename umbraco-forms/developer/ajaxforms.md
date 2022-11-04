@@ -1,5 +1,4 @@
 ---
-versionFrom: 10.0.0
 meta.Title: "Headless/Asynchronous JavaScript and XML (AJAX)  Forms"
 ---
 
@@ -19,13 +18,13 @@ The Open API specification is available from: `/umbraco/forms/api/openapi.json`
 
 To request the definition of a form, the following request can be made:
 
-```
+```none
 GET /umbraco/forms/api/v1.0/definitions/{id}?contentId={contentId}
 ```
 
 The GET request requires the Guid identifying the form.
 
-An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](../Magic-Strings/index.md).
+An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](magic-strings.md).
 
 If the requested form is not found, a 404 status code will be returned.
 
@@ -324,7 +323,7 @@ A successful request will return a 200 status code.  An example response is as f
 
 To submit a form entry, the following request can be made:
 
-```
+```none
 POST /umbraco/forms/api/v1.0/entries/{id}
 ```
 
@@ -402,6 +401,3 @@ When posting the form, the header value generated can be provided, where it will
 
 For an illustrative example showing how a form can be rendered, validated and submitted using the API and vanilla JavaScript, please [see this gist](https://gist.github.com/AndyButland/9371175d6acf24a5307b053398f08448).
 
----
-
-Prev: [Content Apps](../ContentApps/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Block List Filters](../BlockListFilters/index.md)

@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Healthchecks"
 ---
 
@@ -8,7 +6,7 @@ meta.Title: "Healthchecks"
 
 In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly.
 
-Read the [Health Check](../../../../Extending/Health-Check/index.md) article to learn more about the feature in general.
+Read the [Health Check](../../../umbraco-cms/extending/health-check/README.md) article to learn more about the feature in general.
 
 ## Database Integrity Health Check
 
@@ -51,14 +49,14 @@ As well as in the log files, such issues will be visible via the health check an
 
 To support this, we provide the following SQL scripts:
 
-- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](scripts/Apply-keys.md)
-- Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](scripts/Forms-in-the-database-apply-keys.md)
+- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](apply-keys.md)
+- Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](forms-in-the-database-apply-keys.md)
 
 The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
 
-:::note
+{% hint style="info" %}
 Before running any scripts or queries, please be sure to have a database backup in place.
-:::
+{% endhint %}
 
 To take an example, let's say that via the health check results you can see that the _"Unique constraint on table 'UFForms', column 'Key' is missing."_
 
@@ -115,9 +113,5 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 
 To support this, we provide the following SQL scripts:
 
-- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](scripts/Apply-keys.md#revert-application-of-keys-and-indexes)
-- Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](scripts/Forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
-
----
-
-Prev: [Magic Strings](../Magic-Strings/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Localization](../Localization/index.md)
+- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](apply-keys.md#revert-application-of-keys-and-indexes)
+- Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)

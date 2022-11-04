@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Working with Umbraco Forms data"
 meta.Description: "Developer documentation on working with Forms record data."
 ---
@@ -114,7 +112,3 @@ Sample script that is outputting comments using a Form created with the default 
     }
 </ul>
 ```
-
----
-
-Prev: [Email Templates](../Email-Templates/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Umbraco Forms in the Database](../Forms-in-the-Database/index.md)

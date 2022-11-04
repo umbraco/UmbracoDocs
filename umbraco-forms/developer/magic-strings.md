@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Magic strings
 
 Umbraco Forms has some magic strings that enable you to render values from various sources, such as session, cookies and Umbraco page fields.
@@ -43,18 +38,20 @@ If the item cannot be found in the collection of session keys, it will then try 
 `[#myUmbracoField]` this allows you to insert a property of that page and is based on the alias of the field. If your page has a property with the alias 'title', you can use `[#title]` in your form.
 
 Some extra variables are:
+
 - `[#pageName]`: The nodename of the current page
 - `[#pageID]`: The node ID of the current page
 
 ### Recursive Umbraco Page field
 
-`[$myRecursiveItem]` this allows you to parse the Umbraco document-type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
+`[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
 
 ### Umbraco Form field
 
 `{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.
 
 Some extra variables are:
+
 - `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
 - `{record.updated}`: The updated date/time of the current record
 - `{record.created}`: The created date/time of the current record
@@ -75,7 +72,7 @@ The syntax follows that of AngularJS filters, i.e. `[<magic-string> | <formatFun
 
 For example, to truncate a string value read from an Umbraco page field with alias `title`, you would use:
 
-```
+```none
 [#title | truncate: 10]
 ```
 
@@ -93,7 +90,7 @@ Umbraco Forms ships with the following filters:
 
 The format strings used for fomrmatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 
-Further magic string format functions can be [created in code](../Extending/Adding-a-Magic-String-Format-Function.md) for use in forms.
+Further magic string format functions can be [created in code](extending/adding-a-magic-string-format-function.md) for use in forms.
 
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 
@@ -111,8 +108,3 @@ The interface implements a single method, `ParsePlaceHolders`, that can be used 
 If parameters for the `Record` or `Form` are omitted, magic strings relating to these objects will be removed.
 
 There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace, again available with some overloads allowing the provision of a `Form` or `Record` object if available.
-
----
-
-Prev: [Security](../Security/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Health Checks](../Healthchecks/index.md)
-

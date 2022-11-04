@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Customize default workflows"
 meta.Description: "How to amend the built-in behavior of associating workflows with new forms"
 ---
@@ -190,4 +188,3 @@ namespace MyNamespace
 When adding a default workflow in code, it's possible to make it mandatory, which will prevent editors from removing it from a form.
 
 You can see this in the example above, where the `IsMandatory` property of the created `FormWorkflowWithTypeSettings` instance is set to `true`.
-

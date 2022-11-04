@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # reCAPTCHA V3
 
 In Umbraco Forms, reCAPTCHA V3 comes out of the box.

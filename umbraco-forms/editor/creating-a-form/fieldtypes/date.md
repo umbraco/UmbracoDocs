@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Date
 
 The date picker uses a front-end library called [Pikaday](https://github.com/dbushell/Pikaday) to display a UI to pick dates.
@@ -35,7 +30,7 @@ You can configure the settings in the `appSettings.json` file:
         }
 ```
 
-Update `DatePickerYearRange` to a higher number (e.g. 100) to increase the numbers of years available in the Date picker.
+Update `DatePickerYearRange` to a higher number (for example: 100) to increase the numbers of years available in the Date picker.
 
 ### For version 8.x and below
 
@@ -45,4 +40,4 @@ You can find the settings for changing this configuration in `~/App_Data/Umbraco
 <setting key="DatePickerYearRange" value="10" />
 ```
 
-Update `value` to a higher number (e.g. 100) to increase the numbers of years available in the Date picker.
+Update `value` to a higher number (for example: 100) to increase the numbers of years available in the Date picker.

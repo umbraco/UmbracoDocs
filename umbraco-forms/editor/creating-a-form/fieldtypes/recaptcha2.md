@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # reCAPTCHA V2
 
 In Umbraco Forms, reCAPTCHA V2 comes out of the box to help you to protect your site from spam, malicious people, and so on.

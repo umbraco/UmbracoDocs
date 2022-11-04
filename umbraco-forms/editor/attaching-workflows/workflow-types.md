@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Workflow Types
 
 There are several built-in workflow types that can be used to extend the functionality of your Form.
@@ -19,7 +14,9 @@ There are several built-in workflow types that can be used to extend the functio
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Workflow Types in Umbraco Forms" src="https://www.youtube.com/embed/L9k0yDbV6qo?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=L9k0yDbV6qo" %}
+Workflow Types in Umbraco Forms
+{% endembed %}
 
 ## **Change Record State**
 
@@ -84,7 +81,7 @@ Sends the result of the Form to the specified email address. The following confi
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
     "Umbraco": {
@@ -107,7 +104,7 @@ Sends the result of the Form to the specified email address. The following confi
 
 Uses a template to send the results of the Form to a specified email address.
 
-You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
+You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../umbraco-forms/developer/email-templates.md) article.
 
 The following configuration can be set:
 
@@ -117,19 +114,18 @@ The following configuration can be set:
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
-
-    "Umbraco": {
-         "CMS": {
-            "Global": {
-                "Smtp": {
-                    "From": "person@umbraco.dk"
-                        }
+"Umbraco": {
+    "CMS": {
+        "Global": {
+            "Smtp": {
+                "From": "person@umbraco.dk"
                     }
                 }
-            }
+           }
+       }
 ```
 
 - Reply To Email
@@ -203,19 +199,18 @@ Sends the result of the Form to an email address with full control over the emai
 - Recipient Email (required)
 - CC Email
 - BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../../../Reference/V9-Config/GlobalSettings/index.md) article.
+- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
-
-    "Umbraco": {
-         "CMS": {
-            "Global": {
-                "Smtp": {
-                    "From": "person@umbraco.dk"
-                        }
+"Umbraco": {
+    "CMS": {
+        "Global": {
+            "Smtp": {
+                "From": "person@umbraco.dk"
                     }
                 }
             }
+        }
 ```
 
 - Reply To Email
@@ -229,7 +224,3 @@ Allows to post the Form data to a specific channel on Slack. The following confi
 
 - Workflow Name
 - Webhook URL (required)
-
----
-
-Prev: [Attaching Workflows](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Viewing and Exporting Entries](../../Viewing-and-Exporting-Entries/index.md)
