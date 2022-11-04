@@ -1,7 +1,5 @@
 ---
 keywords: logging serilog messagetemplates logs v9 version9
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Logging
@@ -83,9 +81,9 @@ namespace Umbraco.Cms.Web.UI.NetCore
 }
 ```
 
-:::note
+{% hint style="info" %}
 If you are Logging and using the MiniProfiler, you can inject `IProfilingLogger` that has a reference to both ILogger and IProfiler.
-:::
+{% endhint %}
 
 The incorrect way to log the message would be use string interpolation or string concatenation such as
 
@@ -116,11 +114,11 @@ Serilog uses levels as the primary means for assigning importance to log events.
 ## Configuration
 
 Serilog can be configured and extended by using the .NET Core configuration such as the AppSetting.json files or environment variables.
-Info on the Serilog config [here](../../../../Reference/V9-Config/Serilog/index.md).
+For more information, see the [Serilog config](../../../reference/configuration/serilog.md) article.
 
 ## The logviewer dashboard
 
-Learn more about the [logviewer dashboard](../../../Backoffice/LogViewer/) in the backoffice and how it can be extended.
+Learn more about the [logviewer dashboard](../../backoffice/logviewer.md) in the backoffice and how it can be extended.
 
 ## The logviewer desktop app
 

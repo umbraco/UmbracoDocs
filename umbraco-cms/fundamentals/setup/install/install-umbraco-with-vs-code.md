@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Install Umbraco with Visual Studio Code
 
 Follow these steps to set up an Umbraco project with VS Code. The benefit of using VS Code is that it is super quick to get up and running.
@@ -37,7 +32,7 @@ Select "Create task.json from template"
 
 ![Create task from template](images/VsCode/TaskJsonFromTemplate.png)
 
-Now select ".NET Core" as your template. 
+Now select ".NET Core" as your template.
 
 ![Create .NET Core Template](images/VsCode/NetcoreTemplate.png)
 
@@ -75,6 +70,6 @@ When the installer is done you will automatically be logged into the backoffice.
 
 Congratulations, you have installed an Umbraco site!
 
-:::note
+{% hint style="info" %}
 You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/.
-:::
+{% endhint %}

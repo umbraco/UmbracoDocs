@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Using Umbraco's service APIs
 
 _Whenever you need to modify an entity that Umbraco stores in the database, there are a number of service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
@@ -187,7 +182,7 @@ namespace DefaultNamespace
 
 Especially recommended when creating Umbraco packages as you won't have access to the Startup class, instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`.
 
-```
+```csharp
 public class CustomComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -196,9 +191,6 @@ public class CustomComposer : IComposer
     }
 }
 ```
-
-\
-
 
 Then your custom class eg. `CustomNewsArticleService` can take advantage of the same injection to access services eg:
 
@@ -246,22 +238,22 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
 
 There is full API coverage of all Umbraco core entities:
 
-* [AuditService](../../../Reference/Management/Services/AuditService/index.md)
-* [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
-* [ContentService](../../../Reference/Management/Services/ContentService/index.md)
-* [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
-* [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
-* [EntityService](../../../Reference/Management/Services/EntityService/index.md)
-* [FileService](../../../Reference/Management/Services/FileService/index.md)
-* [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
-* [MacroService](../../../Reference/Management/Services/MacroService/index.md)
-* [MediaService](../../../Reference/Management/Services/MediaService/index.md)
-* [MemberService](../../../Reference/Management/Services/MemberService/index.md)
-* [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
-* [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
+* [AuditService](../../reference/management/services/auditservice.md)
+* [ConsentService](../../reference/management/services/consentservice.md)
+* [ContentService](../../reference/management/services/contentservice/README.md)
+* [ContentTypeService](../../reference/management/services/contenttypeservice/README.md)
+* [DataTypeService](../../reference/management/services/datatypeservice.md)
+* [EntityService](../../reference/management/services/entityservice.md)
+* [FileService](../../reference/management/services/fileservice.md)
+* [LocalizationService](../../reference/management/services/localizationservice/README.md)
+* [MacroService](../../reference/management/services/macroservice.md)
+* [MediaService](../../reference/management/services/mediaservice.md)
+* [MemberService](../../reference/management/services/memberservice.md)
+* [MemberTypeService](../../reference/management/services/membertypeservice.md)
+* [MemberGroupService](../../reference/management/services/membergroupservice.md)
 
 ### More information
 
-* [Umbraco Services API reference](../../../Reference/Management/Services/)
-* [Umbraco Notifications reference](../../../Reference/Notifications/)
-* [Routes and controllers](../../../Reference/Routing/)
+* [Umbraco Services API reference](../../reference/management/services/)
+* [Umbraco Notifications reference](../../reference/notifications/)
+* [Routes and controllers](../../reference/routing/)

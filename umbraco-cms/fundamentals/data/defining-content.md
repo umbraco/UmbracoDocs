@@ -1,8 +1,6 @@
 ---
 meta.Title: "Defining content"
 meta.Description: "Here you'll find an explanation of how content is defined in Umbraco"
-versionFrom: 9.2.0
-versionTo: 10.0.0
 ---
 
 # Defining content
@@ -60,11 +58,11 @@ To import a Document Type, go to the __Settings__ section, right-click the __Doc
 
 ![Importing a Document Type](images/import-document-type.png)
 
-:::note
+{% hint style="info" %}
 
 1) If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2) You cannot export/import document types on Umbraco Cloud.
-:::
+{% endhint %}
 
 ### Defining the root node
 
@@ -72,9 +70,9 @@ First, we're prompted to give the Document Type a name. This first Document Type
 
 ![Naming a Document Type](images/v8Screenshots/homePage.png)
 
-:::note
+{% hint style="info" %}
 The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: *homePage*.
-:::
+{% endhint %}
 
 Having a root node lets you quickly query content as you know everything will be under the root node.
 
@@ -114,7 +112,7 @@ Click __Add group__ and name the group "Content".
 
 *If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__.*
 
-To convert a group to a tab, see the [Convert a group to a tab](../Adding-Tabs/index.md#convert-a-group-to-a-tab) section in the [Using Tabs](../Adding-Tabs/index.md) article.
+To convert a group to a tab, see the [Convert a group to a tab](adding-tabs.md#convert-a-group-to-a-tab) section in the [Using Tabs](adding-tabs.md) article.
 
 #### Adding properties
 
@@ -136,9 +134,9 @@ Select the __Rich Text editor__ under __Create new__.
 
 This will let you configure the editor settings - the Rich Text editor for this property.
 
-:::note
+{% hint style="info" %}
 The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: *Home - Body Text - Rich Text editor*.
-:::
+{% endhint %}
 
 Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
 
@@ -184,9 +182,9 @@ You can make links by using the syntax:
 [This is a relative link](/umbraco#/media)
 ```
 
-:::note
+{% hint style="info" %}
 Links will always have `target="_blank"` set. This is currently not configureable.
-:::
+{% endhint %}
 
 **Images**
 
@@ -207,6 +205,7 @@ This is initially hidden
 ```
 
 Now if we put it all together we get something like this:
+
 ```md
 This is **bold**
 This is *italic*
@@ -239,18 +238,20 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 
 ### More information
 
-* [Rendering Content](../../Design/Rendering-Content/)
-* [Customizing Data Types](../Data-Types/index.md)
+* [Rendering Content](../design/rendering-content.md)
+* [Customizing Data Types](data-types/README.md)
 
 ### Related Services
 
-* [ContentService](../../../Reference/Management/Services/ContentService/index.md)
-* [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
+* [ContentService](../../reference/management/services/contentservice/README.md)
+* [ContentTypeService](../../reference/management/services/contenttypeservice/README.md)
 
 ### Tutorials
 
-* [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
+* [Creating a basic website with Umbraco](../../tutorials/creating-a-basic-website/README.md)
 
-### [Umbraco Learning Base Channel](https://www.youtube.com/channel/UCbGfwSAPflebnadyhEPw-wA)
+### Umbraco Learning Base Channel
 
-* [Playlist: Document Types in Umbraco](https://www.youtube.com/playlist?list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK)
+{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK" %}
+Playlist: Document Types in Umbraco
+{% endembed %}

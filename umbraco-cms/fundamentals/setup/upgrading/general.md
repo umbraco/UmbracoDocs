@@ -1,25 +1,20 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Upgrades in general
 
 _This is the guide for upgrading in general._
 
-:::warning
+{% hint style="warning" %}
 **Important**: If you are upgrading to a new major version, like from Umbraco 10 to 11, make sure to check out the **[version-specific documentation.](version-specific.md)**
 
 Things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
 
 Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
-:::
+{% endhint %}
 
 Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**.
 
-## Note
-
+{% hint style="info" %}
 It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
+{% endhint %}
 
 ## Contents
 
@@ -36,9 +31,9 @@ NuGet installs the latest version of the package when you use the `dotnet add pa
 
 After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
-:::warning
+{% hint style="warning" %}
 If you're using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
-:::
+{% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
@@ -54,11 +49,11 @@ When upgrading your Umbraco project it is possible to enable the upgrade to run 
 
 Below you will find the steps you need to take in order to upgrade your project unattended.
 
-:::tip
+{% hint style="info" %}
 Are you running a load balanced setup with multiple servers and environments?
 
 Check out the section about [Unattended upgrades in a load balanced setup](#unattended-upgrades-in-a-load-balanced-setup).
-:::
+{% endhint %}
 
 ### Enable the unattended upgrade feature
 
@@ -66,6 +61,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](#unat
 2. Set the value of the key to `true`.
 
 #### Example from an appsettings json configuration file
+
 ```json
 {
     "Umbraco": {
@@ -86,9 +82,9 @@ With the correct configuration applied, the project will be upgraded on the next
 
 The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run, instead of initiating the otherwise required restart.
 
-:::note
+{% hint style="info" %}
 The upgrade is run after Composers but before Components and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers and Components requires that Umbraco and the database is ready.
-:::
+{% endhint %}
 
 ### Unattended upgrades in a load balanced setup
 

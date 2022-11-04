@@ -1,10 +1,4 @@
-﻿---
-versionFrom: 9.4.0
-versionTo: 10.0.0
----
-
-
-# Running Umbraco on Azure Web Apps
+﻿# Running Umbraco on Azure Web Apps
 
 _This section describes best practices with running Umbraco on Azure Web Apps_
 
@@ -66,7 +60,7 @@ You need to add these configuration values. E.g in a json configuration source l
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
 
 __If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](Load-Balancing/index.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
+[Load Balancing documentation](load-balancing/README.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
 
 ## Storage
 
@@ -80,9 +74,7 @@ For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us
 
 ## Scaling
 
-If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult
-the [Load Balancing documentation](Load-Balancing/index.md) since there is a lot more that needs
-to be configured to support scaling/auto-scaling.
+If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult the [Load Balancing documentation](load-balancing/README.md) since there is a lot more that needs to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 
@@ -90,8 +82,7 @@ It's important to know that Azure Web Apps may move your website between their '
 
 * `Environment.MachineName` (or equivalent)
 
-When your site is migrated to another worker, these variables will change.
-You cannot rely on these variables remaining static for the lifetime of your website.
+When your site is migrated to another worker, these variables will change. You cannot rely on these variables remaining static for the lifetime of your website.
 
 ### How to find the Linux App Service Logs
 

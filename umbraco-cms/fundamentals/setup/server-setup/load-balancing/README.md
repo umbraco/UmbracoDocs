@@ -1,8 +1,6 @@
 ---
 meta.Title: "Umbraco in Load Balanced Environments"
 meta.Description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Umbraco in Load Balanced Environments
@@ -21,9 +19,9 @@ This document assumes that you have a fair amount of knowledge about:
 * Windows Server
 * .NET5+
 
-:::note
+{% hint style="info" %}
 It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.
-:::
+{% endhint %}
 
 ## Design
 
@@ -68,17 +66,16 @@ In Umbraco there can only be a single scheduling server which performs the follo
 
 ### Automatic Server Role Election
 
-Umbraco will automatically elect a "Scheduling server" to perform the above services. This means
-that all of the servers will need to be able to resolve the URL of either: itself, the Backoffice server, the internal load balancer or the public address.
+Umbraco will automatically elect a "Scheduling server" to perform the above services. This means that all of the servers will need to be able to resolve the URL of either: itself, the Backoffice server, the internal load balancer, or the public address.
 
 There are two server roles:
 
 * `SchedulingPublisher` - Usually this is the backoffice instance.
 * `Subscriber` - These are the scalable front-end instances - not recommended to be used for backoffice access.
 
-:::note
+{% hint style="info" %}
 These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
-:::
+{% endhint %}
 
 Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
 
@@ -96,7 +93,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * **Recommended**: [set your front-end(s) (non-admin server) to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRegistrar`, this means the front-end servers will never be used as the SchedulingPublisher server role.
-* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../Reference/V9-Config/WebRoutingSettings/index.md)
+* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../reference/configuration/webroutingsettings.md)
 
 ## Common load balancing setup information
 
@@ -104,7 +101,7 @@ _The below section applies to all ASP.NET load balancing configurations._
 
 ## Server Configuration
 
-This section describes the various configuration options depending on your hosting setup:
+This section describes the configuration options depending on your hosting setup:
 
 1. [Azure Web Apps](file-system-replication.md#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)_
 2. [File Replication](file-system-replication.md#synchronised-file-system) - _Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date_
@@ -145,7 +142,7 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../Upgrading/general-v9#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/general.md#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 
@@ -157,11 +154,10 @@ _TL:DR_ You must not load balance the Umbraco backoffice, you will end up with d
 
 The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption.
 
-Additionally the order in which cache instructions are written to the cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
+Additionally, the order in which cache instructions are written to the cache instructions table is important for LB, this order is guaranteed by having a single admin server.
 
 **Question>** _Can my SchedulingPublisher backoffice admin server also serve front-end requests?_
 
 Yes. There are no problems with having your SchedulingPublisher backoffice admin server also serve front-end request.
 
-However, if you wish to have different security policies for your front-end servers and your back
-office servers, you may choose to not do this.
+However, if you wish to have different security policies for your front-end servers and your back office servers, you may choose to not do this.

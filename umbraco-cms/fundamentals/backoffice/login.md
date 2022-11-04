@@ -1,7 +1,6 @@
 ---
 meta.Title: "Configure and customize the Login screen"
 meta.Description: "In this article you can learn the various ways of customizing the Umbraco backoffice login screen and form."
-versionFrom: 9.0.0
 ---
 
 # Login screen
@@ -31,6 +30,7 @@ The login screen features a greeting which you can personalize by overriding the
     <key alias="greeting6">Happy Caturday</key>
 </area>
 ```
+
 You can customize other text on the login screen as well. First, grab the default values and keys from `~/umbraco/config/lang/en.xml`. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
 
 ## Password reset
@@ -49,7 +49,7 @@ The **Forgotten password?** link allows your backoffice users to reset their pas
 
 Set it to `true` to enable the password reset feature, and `false` to disable the feature.
 
-You will also need to configure an SMTP: Simple Mail Transfer Protocol, server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
+You will also need to configure an Simple Mail Transfer Protocol (SMTP) server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
 
 An example:
 
@@ -116,7 +116,7 @@ An example stylesheet might be:
     	width: 10%;
     }
  ```
- 
+
 An example package.manifest might be:
 
 ```json

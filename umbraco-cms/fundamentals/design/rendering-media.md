@@ -2,13 +2,11 @@
 meta.Title: "Rendering Media in Umbraco"
 meta.Description: "Info on rendering media items and imaging cropping"
 keywords: rendering media imagecropper
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Rendering media
 
-_Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_.
+_Templates (Views) can access items in the [Media library](../data/creating-media/README.md) to assist in displaying rich content like galleries_.
 
 In the following examples, we will be looking at rendering an `Image`.
 
@@ -32,9 +30,9 @@ These standard properties are pre-populated and set during the upload process. F
 
 If you want to add further properties to use with your Media Item, edit the Image Media Type under **Settings**. In this example, we are going to retrieve an image from the Media section. Then we will render out an `img` tag using the URL of the media item and use the Name as the value for the `alt` attribute.
 
-:::note
+{% hint style="info" %}
 The Media item in the following sample will use a sample Guid (`55240594-b265-4fc2-b1c1-feffc5cf9571`). This example is **not using Models Builder**.
-:::
+{% endhint %}
 
 ```csharp
 @{
@@ -56,7 +54,7 @@ The Media item in the following sample will use a sample Guid (`55240594-b265-4f
 }
 ```
 
-But wait a second, Umbraco comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
+But wait a second, Umbraco comes with [Models Builder](../../reference/templating/modelsbuilder/README.md). This means that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
 
 ### Example 2: Accessing a Media Image ModelsBuilder item based on the ID
 
@@ -76,9 +74,9 @@ As with example one, we are accessing a MediaType `image` using the same Guid as
 }
 ```
 
-:::note
+{% hint style="info" %}
 It is always worth having null-checks around your code when retrieving media in case the conversion fails or Media() returns null. This makes your code more robust.
-:::
+{% endhint %}
 
 ### Other Media Items such as `File`
 
@@ -88,7 +86,7 @@ Accessing other media items can be performed in the same way. The techniques are
 
 The Image Cropper can be used with `Image` Media Types and is the default option for the `umbracoFile` property on an `Image` Media Type.
 
-When working with the Image Cropper for an image the `GetCropUrl` extension method is used to retrieve cropped versions of the image. Details of the Image Cropper property editor and other examples of using it can be found in the [Image Cropper article](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md). The following is an example to help you get started with the Image Cropper.
+When working with the Image Cropper for an image the `GetCropUrl` extension method is used to retrieve cropped versions of the image. Details of the Image Cropper property editor and other examples of using it can be found in the [Image Cropper article](../backoffice/property-editors/built-in-property-editors/image-cropper.md). The following is an example to help you get started with the Image Cropper.
 
 ### Example of using Image Cropper
 
@@ -112,6 +110,6 @@ If you want the original, uncropped image, you can ignore the GetCropUrl extensi
 
 ### More information
 
-- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker/index.md)
-- [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper/index.md)
-- [Creating a Media Type](../../Data/Creating-Media/index.md#creating-a-media-type)
+- [Media Picker](../backoffice/property-editors/built-in-property-editors/media-picker-3.md)
+- [Image Cropper](../backoffice/property-editors/built-in-property-editors/image-cropper.md)
+- [Creating a Media Type](../data/creating-media/README.md#creating-a-media-type)

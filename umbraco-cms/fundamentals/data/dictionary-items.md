@@ -1,7 +1,6 @@
 ---
 meta.Title: "Creating Dictionary Items in Umbraco"
 meta.Description: "Creating Dictionary Items in Umbraco"
-versionFrom: 10.1.0
 ---
 
 # Dictionary Items
@@ -49,11 +48,11 @@ To edit a dictionary item, follow these steps:
 3. Make the edits you need to make.
 4. Click **Save** to save the changes.
 
-:::note
+{% hint style="info" %}
 It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be *read-only*.
 
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../Users/index.md#creating-a-user-group) article.
-:::
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users.md#creating-a-user-group) article.
+{% endhint %}
 
 ## Fetching Dictionary Values
 
@@ -108,10 +107,10 @@ The Dictionary Items have now been added to your website.
 
 ## Using Dictionary Item in a Multilingual website
 
-To use Dictionary Items in a multilingual website, see the [Creating a Multilingual Site](../../../Tutorials/Multilanguage-Setup/index.md) article.
+To use Dictionary Items in a multilingual website, see the [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md) article.
 
 ## Related Links
 
-- [API reference for the DictionaryItem](../../../Reference/Management/Models/DictionaryItem.md)
-- [Localization Service](../../../Reference/Management/Services/LocalizationService/index.md)
-- [Creating a Multilingual Site](../../../Tutorials/Multilanguage-Setup/index.md)
+* [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
+* [Localization Service](../../reference/management/services/localizationservice/README.md)
+* [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

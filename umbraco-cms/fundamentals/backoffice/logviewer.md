@@ -2,8 +2,6 @@
 meta.Title: Log Viewer
 meta.Description: Information on using the Umbraco log viewer in version 8
 keywords: logging logviewer logs serilog messagetemplates logs v8 version8
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Log Viewer
@@ -12,7 +10,7 @@ Umbraco ships with a built-in Log Viewer feature. This allows you to filter and 
 
 ## Benefits
 
-Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms? With the power of structured logging and a query language we are able to search and find log items for very specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
+Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms? With the power of structured logging and a query language we are able to search and find log items for specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
 
 ## Example queries
 
@@ -21,14 +19,11 @@ Here are a handful example queries to get you started, however the saved searche
 **Find all logs that are from the namespace 'Umbraco.Core'**\
 `StartsWith(SourceContext, 'Umbraco.Core')`\
 
-
 **Find all logs that have the property 'Duration' and the duration is greater than 1000ms**\
 `Has(Duration) and Duration > 1000`\
 
-
 **Find all logs where the message has localhost in it with SQL like**\
 `@Message like '%localhost%'`\
-
 
 ## Saved Searches
 
@@ -40,7 +35,11 @@ With the flexibility of Umbraco, we give you the power to implement your own `IL
 
 ### Create your own implementation
 
-To do this we can implement a base class `SerilogLogViewerSourceBase` from `Umbraco.Cms.Core.Logging.Viewer` like so. :::note This uses the `Azure.Data.Tables` NuGet package. :::
+To do this we can implement a base class `SerilogLogViewerSourceBase` from `Umbraco.Cms.Core.Logging.Viewer` like so.
+
+{% hint style="info" %}
+This uses the `Azure.Data.Tables` NuGet package.
+{% endhint %}
 
 ```csharp
 using Azure;
@@ -149,10 +148,10 @@ The following sink needs to be added to the array [`Serilog:WriteTo`](https://gi
 }
 ```
 
-For more in depth information about logging and how to configure it, please read the [logging documentation](../../Code/Debugging/Logging/).
+For more in depth information about logging and how to configure it, please read the [logging documentation](../code/debugging/logging.md).
 
 ### Compact Log Viewer - Desktop App
 
 This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco.
 
-[![English badge](images/English\_get.png)](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
+[![English badge](images/English/_get.png)](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)

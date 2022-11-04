@@ -1,8 +1,6 @@
 ---
 meta.Title: "Language Variants in Umbraco"
 meta.Description: "Language Variants allow you to vary content by culture, so you can allow a content node to exist in several languages."
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Language Variants
@@ -19,11 +17,13 @@ This article will cover the different aspects of enabling and working with langu
 * [Working with Language Variants on content](#working-with-language-variants-on-content)
 * [Test your language variants](#test-your-language-variants)
 * [Control User Group permissions on language variants](#control-user-group-permissions-on-language-variants)
-* [Read more](#read-more)
+* [Related Links](#related-links)
 
 ## Video tutorial
 
-<iframe width="800" height="450" title="Language Variants" src="https://www.youtube.com/embed/TWLqt-jVdyQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=TWLqt-jVdyQ" %}
+How to use Language Variants in Umbraco
+{% endembed %}
 
 ## How to enable Language Variants
 
@@ -31,9 +31,9 @@ To work with Language Variants you need to have more than one language enabled. 
 
 ![Adding a language](images/languages_v10.png)
 
-:::note
+{% hint style="info" %}
 You will always have one default language but each language can be set to mandatory.
-:::
+{% endhint %}
 
 ## Enabling Language Variants on Document Types
 
@@ -61,15 +61,15 @@ Each Property Editor that does not allow variants (an Invariant Property) will b
 
 ![How an invariant property looks when it is locked](images/invariant-property-locked.png)
 
-:::note
+{% hint style="info" %}
 Whether or not the lock is enabled on the invariant properties depends on the `AllowEditInvariantFromNonDefault` setting in the `appsettings.json` file.
 
 For projects created on Umbraco version 10.2 or later, the setting is `true`, by default. If the project is upgraded to version 10.2 or later, the setting will by default be `false`.
 
-Learn more about the `AllowEditInvariantFromNonDefault` setting in the [Security Settings](../../../Reference/Configuration/SecuritySettings/) article.
-:::
+Learn more about the `AllowEditInvariantFromNonDefault` setting in the [Security Settings](../../reference/configuration/securitysettings.md) article.
+{% endhint %}
 
-To read about how you render variant content in Templates, check out the [rendering content section](../../Design/Rendering-Content/).
+To read about how you render variant content in Templates, check out the [rendering content section](../design/rendering-content.md).
 
 ## Test your language variants
 
@@ -77,18 +77,18 @@ Culture and hostnames must be added to your language sites before the content ca
 
 1. Right-click the Home node and select **Allow access to assign culture and hostnames...**.
 
-    :::note
+    {% hint style="info" %}
     In Umbraco v9, this option is called **Culture and Hostnames**.
-    :::
+    {% endhint %}
 2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL *<https://yourwebsite.com/en-us>* and a Danish language variant can be given a specific URL *<https://yourwebsite.com/dk>*.
 
 The Info content app should now show specific URLs for your language variants.
 
 ## Control User Group permissions on language variants
 
-:::note
+{% hint style="info" %}
 This feature is available from Umbraco version 10.2.
-:::
+{% endhint %}
 
 When you are working with a multilingual site you might want to control who can edit the different variations of the content on the website.
 
@@ -98,14 +98,12 @@ When "Allow access to all languages" is not checked, languages can be added and/
 
 ![Assign access to all or individual languages on th User Group](images/Assign-Access-Languages.png)
 
-:::tip
+{% hint style="info" %}
 Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.
-:::
+{% endhint %}
 
-:::links
-## Read more
+## Related Links
 
 * [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
-* [Language variations](../../../Reference/Language-Variation/)
-* [Render varied content in Templates](../../Design/Rendering-Content/)
-:::
+* [Language variations](../../reference/language-variation.md)
+* [Render varied content in Templates](../design/rendering-content.md)

@@ -1,8 +1,6 @@
 ---
 meta.Title: "Umbraco Data"
 meta.Description: "This section focuses on how to create data using the Umbraco backoffice"
-versionFrom: 7.0.0
-versionTo: 10.0.0
 ---
 
 # Data
@@ -17,42 +15,42 @@ There are three kinds of content in Umbraco:
 
 A fundamental principle in Umbraco is that all content types have a definition (Document Types, Media Types, Member Types). These definitions are highly customizable, meaning you can add properties and have complete control over how the data is organized.
 
-## [Defining Content](Defining-content)
+## [Defining Content](defining-content.md)
 
 Defining Documents Types, adding properties and creating content.
 
-## [Creating Media](Creating-Media)
+## [Creating Media](creating-media/README.md)
 
 Defining Media Types and uploading files to the media section, using upload fields and image cropper.
 
-## [Creating Members](Members/)
+## [Creating Members](members.md)
 
 Defining Member Types and creating members for authentication and user profiles.
 
-## [Customizing Data Types](Data-Types/)
+## [Customizing Data Types](data-types/README.md)
 
 Creating and editing Data Types.
 
-## [Scheduled Publishing](Scheduled-Publishing/)
+## [Scheduled Publishing](scheduled-publishing.md)
 
 Schedule when content should be published / unpublished automatically.
 
-## [Adding Tabs](Adding-Tabs/)
+## [Adding Tabs](adding-tabs.md)
 
 Overview of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab
 
-## [Users](Users/)
+## [Users](users.md)
 
 Control who has access to the Umbraco backoffice and what permissions they have.
 
-## [Relations](Relations/)
+## [Relations](relations.md)
 
 An introduction to Relations and Relation Types, creating, and managing relationships between different entities in Umbraco.
 
-## [Dictionary Items](Dictionary-Items/)
+## [Dictionary Items](dictionary-items.md)
 
 Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key which is used to fetch the value of the Dictionary Item.
 
-## [Content Version Cleanup (v9.1.0+)](Content-Version-Cleanup/)
+## [Content Version Cleanup (v9.1.0+)](content-version-cleanup.md)
 
 How to keep the noise down whilst ensuring your important content versions stick around indefinitely.

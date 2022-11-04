@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 meta.Title: "Partial Views"
 meta.Description: "Information on working with partial views in Umbraco"
 ---
@@ -82,8 +80,10 @@ To render the created partial view into any template, use any of these helper me
 
 ### Related Articles
 
-* [Using MVC Partial Views in Umbraco](../../../Reference/Templating/Mvc/partial-views.md)
+* [Using MVC Partial Views in Umbraco](../../reference/templating/mvc/partial-views.md)
 
 ### Video Materials
 
-<iframe width="800" height="450" title="Getting started with Umbraco: Partial Views" src="https://www.youtube.com/embed/RcYM_DJ-JnQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=RcYM_DJ-JnQ" %}
+Getting started with Umbraco: Partial Views
+{% endembed %}

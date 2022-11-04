@@ -1,8 +1,6 @@
 ---
 meta.Title: "Rendering content"
 keywords: content razor v9 version9
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Rendering Content
@@ -11,7 +9,7 @@ _The primary task of any template in Umbraco is to render the values of the curr
 
 ## Display a value in your template view
 
-Each property in your [document type](../../Data/Defining-Content/index.md#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
+Each property in your [document type](../data/defining-content.md#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
 
 ```html
 <h1>@Model.Value("pageTitle")</h1>
@@ -41,7 +39,7 @@ To use the `<IHtmlContent>` as the data return type, add the `@using Microsoft.A
 
 ### Working with the grid
 
-To render the content from the Grid, see the [Render Grid in Template](../../Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Render-Grid-In-Template.md#render-grid-in-template) article.
+To render the content from the Grid, see the [Render Grid in Template](../backoffice/property-editors/built-in-property-editors/grid-layout/render-grid-in-template.md#render-grid-in-template) article.
 
 ### Using fall-back methods
 
@@ -119,5 +117,5 @@ You can use the Query Builder in the template editor to build more advanced quer
 
 ### More information
 
-- [Razor examples](../../../Reference/Templating/Mvc/examples.md)
-- [Querying](../../../Reference/Templating/Mvc/querying.md)
+- [Razor examples](../../reference/templating/mvc/examples.md)
+- [Querying](../../reference/templating/mvc/querying.md)

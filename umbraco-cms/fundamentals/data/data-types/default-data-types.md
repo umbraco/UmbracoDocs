@@ -1,13 +1,11 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Default data types in Umbraco"
 meta.Description: "Learn about the default data types in Umbraco."
 ---
 
 # Default Data Types
 
-Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../Backoffice/Property-Editors/index.md).
+Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../backoffice/property-editors/README.md).
 
 ![Umbraco 9 Data Type List](images/default-data-types-9.png)
 
@@ -106,7 +104,7 @@ The TinyMCE based WYSIWYG editor. This is the standard editor used to edit large
 
 In the default settings some tags such as bullet list can be used. If you want to use other tags like `h1` or `h2`, you need to add stylesheets.
 
-Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/).
+Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-property-editors/rich-text-editor/README.md).
 
 The "Style select" options need to be enabled in the toolbar section.
 

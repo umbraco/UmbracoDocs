@@ -1,8 +1,6 @@
 ---
 meta.Title: "Hosting v9+ in IIS"
 meta.Description: "Information on hosting Umbraco v9+ on IIS"
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Hosting Umbraco 9+ in IIS

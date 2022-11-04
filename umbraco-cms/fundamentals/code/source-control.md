@@ -1,5 +1,4 @@
 ---
-versionFrom: 10.0.0
 meta.Title: "Source Control with Umbraco"
 meta.Description: "In this article you can learn more about how to effectively source control your Umbraco site."
 ---
@@ -8,7 +7,7 @@ meta.Description: "In this article you can learn more about how to effectively s
 
 ## Umbraco Cloud
 
-When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../Umbraco-Cloud/Getting-Started/Environments/) and the information on ['Working with your Umbraco Cloud project'](../../../Umbraco-Cloud/Set-Up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../umbraco-cloud/getting-started/environments.md) and the information on ['Working with your Umbraco Cloud project'](../../../umbraco-cloud/set-up/README.md#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 
@@ -23,7 +22,7 @@ There are lots of different possible variations within your working environment 
 - Working with a team of developers.
 - How your development environment is set up.
 - Source control repository.
-- And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old FTP, etc).
+- And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old File Transfer Protocol (FTP), etc).
 
 However, Umbraco ships with a `.gitignore` file with a custom Umbraco section, which will make git ignore the files for you. The Umbraco specific section looks like this:
 
@@ -94,7 +93,6 @@ appsettings-schema.json
 {% endtab %}
 {% endtabs %}
 
-
 For most projects, this gitignore will be enough, and this article will not be an exhaustive list of how to version control Umbraco in all possible scenarios.
 
 However, we will go through the different files in order to give you an insight into the anatomy of an Umbraco website and therefore which parts to include in version control and which parts not to.
@@ -115,7 +113,7 @@ Below are a set of general recommendations regarding the files within the `/umbr
 
 - `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
 - `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
-- `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, e.g. to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../../Reference/Configuration/ImagingSettings/index.md) allows you to determine where this cache is stored)
+- `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
 {% endtab %}
 
 {% tab title="Umbraco 9" %}
@@ -131,14 +129,14 @@ From the gitignore above we can see that the content that will change when you u
 * `umbraco/config/lang`
 * `umbraco/config/appsettings-schema.json`
 
-None of these folders should be committed to github since they will automatically be added on build. If you're working with an IDE and a Build Server, it's NuGet's and MSBuild's job to restore the correct versions of these folders for you. If you don't use an IDE and prefer the command line you can use `dotnet restore` to manually restore the NuGet packages.
+None of these folders should be committed to github since they will automatically be added on build. If you're working with an Integrated Development Environment (IDE) and a Build Server, it's NuGet's and MSBuild's job to restore the correct versions of these folders for you. If you don't use an IDE and prefer the command line you can use `dotnet restore` to manually restore the NuGet packages.
 
 But these are not the only files in the Umbraco folder that you should not commit to your git, some files are generated during runtime and should not be committed either, these are:
 
 * `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
-  * `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
+  * `Umbraco.sdf` - If you are using SQL CE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 * `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
-* `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, e.g. to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../../Reference/V9-Config/ImagingSettings/index.md) allows you to determine where this cache is stored)
+* `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
 
 We've now covered most of the folders within the `/umbraco` folder, however, there are two left, the `/umbraco/models` folder, and the `/umbraco/PartialViewMacros`. The model's folder has its own section right below, but for the `PartialViewMacros` folder, the answer to "should I commit this to git" is that it depends. If you want to change the templates within the folder or add your own, then you should commit it to git, if you don't need to do that, you should not, the build will automatically create it and its content.
 
@@ -150,7 +148,7 @@ The `/wwwroot/umbraco` folder contains static assets for the backoffice, these f
 
 #### Umbraco Models Builder
 
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../../Reference/Templating/Modelsbuilder/index.md) you have opted to work with.
+The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../reference/templating/modelsbuilder/README.md) you have opted to work with.
 
 - **InMemoryAuto** (default), The models are generated in memory, no source control is required.
 - **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
@@ -169,15 +167,15 @@ Depending on how you installed the plugin it will affect how you choose to versi
 
 Since plugins are installed via NuGet the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
 
-:::note
+{% hint style="info" %}
 Each plugin could be different depending on its implementation and functionality. It may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
-:::
+{% endhint %}
 
 ### What folders and files should I **include** in my source control repository?
 
 #### Front-end build
 
-A lot depends on how you maintain the front-end build of your website, e.g. are you using CSS preprocessors such as SCSS/LESS etc - gulp/grunt tasks to combine and minify script resources.
+A lot depends on how you maintain the front-end build of your website, e.g. are you using CSS preprocessors such as Sassy Cascading Style Sheets (SCSS)/ Leaner CSS (LESS) etc - gulp/grunt tasks to combine and minify script resources.
 
 But generally, you will need to source control all your website's static assets: JavaScript, CSS, Fonts, Page Furniture Images, etc.
 
