@@ -5,7 +5,22 @@ versionTo: 10.0.0
 
 # Project Settings
 
-When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
+When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the **Settings** dropdown:
+
+- View Project Overview
+- Team Members
+- Database Connection Details
+- Hostnames/Domains
+- Security Settings
+- Content Delivery Network (CDN) Caching and Optimizations
+- Deployment Webhooks
+- Secure Sockets Layer (SSL) certificates
+- Upgrade Plan
+- Rename Project
+- Advanced Settings
+- Project Usage
+- Dedicated Resources
+- Delete the project.
 
 ![settings](images/project-settings-v10.png)
 
@@ -17,7 +32,7 @@ You can view the **Overview** of your Umbraco Cloud project from the **Settings*
 
 ## [Edit team](../Team-Members)
 
-Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../Team-Members/Technical-Contact.md), or add an [Account contacts](../Team-Members/Accounts-Contact.md) for your project.
+Manage the team members and user permissions on your project. You can also view the backoffice user groups for each team member, view pending project invites, and manage [Technical contacts](../Team-Members/Technical-Contact.md) for your project.
 
 ## [Connection details](../../Databases)
 
@@ -37,17 +52,15 @@ Manage CDN Cache settings for your project. You can modify default settings, whi
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates) (Only available on **Professional** or **Enterprise** plan)
 
-Used to upload and bind your custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
+If you have your own custom certificate, you can upload and bind it to your custom hostnames. Instead of using the Transport Layer Security (TLS)/HTTPS certificates provided by the Umbraco Cloud service.
 
 ## Public access
 
-Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication.
-It requires you to enter your Cloud credentials in order to view the frontend. 
+Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication. It requires you to enter your Cloud credentials in order to view the frontend.
 
 You can disable/enable it with one click on the Public access page.
 
 Access to manage the basic authentication requires your project to be on the Standard plan or higher.
-
 
 ## [Webhooks](../../Deployment/Deployment-webhook)
 
@@ -83,7 +96,18 @@ Manage **Advanced** settings for your project from the **Settings** menu:
     When enabling IIS logging, the site will have to restart. For more information about IIS logging, look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
     :::
 
+- [Enable loading of a client certificate from the file system](../Application-Settings/index.md#enable-client-certificate-loaded-from-file-system-explained).
+- Change .NET framework runtime for your Umbraco installation for each environment of your cloud project.
+
 ![Advanced Settings](images/Advanced-Settings.png)
+
+## [Dedicated Resources](../Dedicated-Resources/index.md)
+
+You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between the different dedicated options depending on the number of resources you will need for your project.
+
+## [Usage](../Usage/)
+
+On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ## [Payment](../Manage-Subscriptions/new-shop.md)
 
@@ -92,10 +116,6 @@ From here, you can see the payment history for your project, change the credit c
 :::note
 This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 :::
-
-## [Usage](../Usage/)
-
-On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ### Delete Project
 
