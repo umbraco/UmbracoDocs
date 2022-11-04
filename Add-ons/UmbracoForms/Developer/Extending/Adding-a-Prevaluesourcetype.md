@@ -7,7 +7,7 @@ versionTo: 10.0.0
 
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.FieldPreValueSourceType`, implement the class. 
+Add a new class to your project - inherit it from `Umbraco.Forms.Core.FieldPreValueSourceType` and implement the class. 
 
 The following example shows an illustrative custom prevalue source type that returns a hard-coded list of values. It can be extended for your needs via injection of services via the constructor. (See additional example at the bottom.) 
 
