@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
 meta.Description: "Steps to how to install and configure Umbraco Deploy"
 ---
@@ -11,7 +9,7 @@ In this article, we will cover the steps in order for you to install and configu
 
 ## Prerequisites
 
-Ensure you have read and followed the setup guide for [new](../New-site/index) or [Existing](../Existing-site/index) projects.
+Ensure you have read and followed the setup guide for [new](new-site.md) or [Existing](existing-site.md) projects.
 
 ## Source Control Configuration
 

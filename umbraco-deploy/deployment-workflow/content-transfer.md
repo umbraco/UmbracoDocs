@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Transferring content with Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
@@ -13,7 +11,7 @@ Content and media transfers are flexible which means you have complete control o
 
 Transferring content will overwrite any existing nodes on the target environment - content transfers will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from [Deploying Content](../Deploying-Changes).
+**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from [Deploying Content](deploying-changes.md).
 
 ## Step-by-step
 
@@ -56,7 +54,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9](../../Deploy-Settings/index.md) article.
+In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9](../deploy-settings.md) article.
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 
@@ -74,4 +72,4 @@ Sometimes a content transfer might not be possible. For example if you add a new
 
 ![clone dialog](images/schema-mismatch.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../../Troubleshooting), where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

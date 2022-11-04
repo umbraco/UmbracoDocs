@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Partial restore of content in Umbraco Deploy"
 meta.Description: "How to partially restore content in Umbraco Deploy"
 ---

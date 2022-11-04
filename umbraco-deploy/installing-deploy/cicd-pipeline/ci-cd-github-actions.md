@@ -1,6 +1,4 @@
 ---
-versionFrom: 10.0.0
-versionTo: 10.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using GitHub Actions"
 meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using GitHub Actions"
 ---
@@ -167,4 +165,4 @@ The build server will run and extract the changes into the website in Azure.
 
 This will only deploy the schema data for our local site to your website.
 
-You will need to transfer content and media from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/Content-Transfer).
+You will need to transfer content and media from the backoffice on your local project using the [queue for transfer feature](../../deployment-workflow/content-transfer.md).

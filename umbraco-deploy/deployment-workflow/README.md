@@ -25,31 +25,26 @@ In summary:
 
 2. Content and Media items are **not** stored in the repository. These need to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
-<!-- need new video or need to be removed
-### Video tutorial -->
-
-<!-- Learn more about the deployment approach in this video, which will also show you how to deploy meta data as well as how to transfer content and media. Below you'll find links to articles containing step-by-step guides for each approach. -->
-
-<!-- <iframe width="800" height="450" title="How to manage deployments on Umbraco Cloud" src="https://www.youtube.com/embed/sjId_hN1ba0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
 ### Deploying meta data
 
 In order to be able to transfer content and media, the source environment and the target environment needs to have the same setup - meaning they need to be completely in sync and have the same file structure. To achieve this you need to deploy your meta data changes to the target environment.
 
- - [Deploying from your local machine to your environments](Deploying-Changes)
+ - [Deploying from your local machine to your environments](deploying-changes.md)
 
 ### Transfer Content and Media
 
 Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, e.g. from local to your development environment. You also have the option to restore content and media to your local or development environment from your production or staging environment.
 
-  - [Transfer Content and Media](Content-Transfer)
-  - [Restore Content and / or Media](Restoring-content)
+  - [Transfer Content and Media](content-transfer.md)
+  - [Restore Content and / or Media](restoring-content/README.md)
 
 :::note
 Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
 :::
 
-<iframe width="800" height="450" title="Umbraco Deploy - Content transfer and deploy" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/poRzuBB11pc?rel=0" %}
+Umbraco Deploy - Content transfer and deploy
+{% endembed %}
 
 ## Deploy Dashboard
 
@@ -68,4 +63,6 @@ It is also possible to see which version of Umbraco Deploy you are running, when
 
 ![Deploy Dashboard](images/Deploy-dahsboard.png)
 
-<iframe width="800" height="450" title="Umbraco Deploy - Management dashboard" src="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" %}
+Umbraco Deploy - Content transfer and deploy
+{% endembed %}

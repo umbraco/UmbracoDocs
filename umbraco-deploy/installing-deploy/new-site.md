@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Installing Umbraco Deploy on new Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
 ---
@@ -63,12 +61,12 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/index).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](install-configure.md).
 
 ### Set up CI/CD Pipeline
 
-At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICD-Pipeline).
+At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](cicd-Pipeline/README.md).
 
-Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployment-Workflow).
+Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../deployment-workflow/README.md).
 
-This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
+This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../deployment-workflow/content-transfer.md).

@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Restoring content in Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy"
 ---
@@ -18,7 +16,7 @@ There are four options when it comes to restoring content.
 1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
 2. [Restore everything through the Umbraco backoffice](#restore-everything-through-the-umbraco-backoffice)
 3. [Restore a single tree through the Umbraco backoffice](#restore-a-single-tree-through-the-umbraco-backoffice)
-4. [Partial Restores](Partial-Restore)
+4. [Partial Restores](partial-restore.md)
 
 ### Restore when starting up the project locally
 
@@ -43,7 +41,7 @@ The second option for restoring your content and media is found in the Umbraco b
 2. Click the three dots an select *Do something else*, or *Right-click* the Content Tree.
 3. Choose *Workspace restore...* from the menu.
 4. You will now have the option to restore content from any environment that's *to the right of* the current environment in the deployment workflow.
-5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Deploying-Changes).
+5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../deploying-changes.md).
 6. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
 7. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree.
 
@@ -61,6 +59,6 @@ The operation is triggered in the same way as when restoring everything, but ins
 
 For example, if triggered from the content tree, only content entities will be restored.  This will also restore any media that’s referenced in that content, but it won’t attempt to restore the full media library, nor any other entities.
 
-### [Partial Restore](Partial-Restore)
+### [Partial Restore](partial-restore.md)
 
 By using the Partial Restore option, you can make sure that you only restore the part of the content that you need to work with.  You can either restore a single item, or include all the descendents of that item too.

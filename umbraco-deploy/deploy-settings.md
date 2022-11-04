@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
 ---

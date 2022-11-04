@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Deploying deletions in Umbraco Deploy"
 meta.Description: "How deleting meta data and files work in Umbraco Deploy"
 ---
@@ -13,7 +11,7 @@ In this article you can read about the correct way of deleting files, schema and
 
 When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
 
-The databases are environment specific. When you deploy from one environment to another, Umbraco Deploy will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting).
+The databases are environment specific. When you deploy from one environment to another, Umbraco Deploy will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../troubleshooting.md).
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and/or schema on all your environments, in order to fully complete the deletion.
 
