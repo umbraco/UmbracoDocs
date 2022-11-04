@@ -87,7 +87,7 @@ The PreValue model was updated in Umbraco Forms Versions: 8.13.0, 9.5.0, & 10.1.
 
 ### Another Example Using Dependency Injection to Access Additional Services
 
-This example will take a user-provided Content Node and create a custom Prevalue list from property data on that node. Your own `FieldPreValueSourceType` can get its data from wherever you like - an API call, custom functions, etc.
+This example will take a user-provided Content Node and create a custom Prevalue list from the property data on that node. Your own `FieldPreValueSourceType` can get its data from wherever you like - an API call, custom functions, etc.
 
 ```csharp
 using System;
