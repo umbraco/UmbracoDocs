@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Deploy settings"
 meta.Description: "Various settings for Umbraco Deploy"
 ---
@@ -138,9 +136,9 @@ There are four settings available relating to backoffice deployment operations:
 
 These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
-:::note
+{% hint style="info" %}
 It's important that these settings are added to both the source and target environments in order to work.
-:::
+{% endhint %}
 
 A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
 

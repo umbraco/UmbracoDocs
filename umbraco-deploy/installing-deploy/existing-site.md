@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Installing Umbraco Deploy on an existing Umbraco website"
 meta.Description: "Steps to how Umbraco Deploy can be set up on an existing Umbraco website"
 ---
@@ -47,7 +45,7 @@ The next step to get Umbraco Deploy up and running is to set up a repository and
 
 1. Set up a repository with a .gitignore file using the Visual Studio template.
 2. Clone down the repository to your local machine.
-3. [Create a new Umbraco V9 project](https://our.umbraco.com/documentation/UmbracoNetCoreUpdates).
+3. Create a new Umbraco project.
 4. Use the copy of your production Database when setting up the database for the empty project.
 5. Add the `/Views` folder as well as the folders holding your css files and scripts.
 6. Commit the files so they are ready to be pushed up once you have set up the build server.
@@ -64,12 +62,12 @@ After the Umbraco files have been committed add the following lines to the .giti
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](../Install-Configure/).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](install-configure.md).
 
 ### Set up CI/CD Pipeline
 
-At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](../CICD-Pipeline).
+At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](cicd-Pipeline/README.md).
 
-Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../Deployment-Workflow).
+Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../deployment-workflow/README.md).
 
-This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer).
+This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../deployment-workflow/content-transfer.md).

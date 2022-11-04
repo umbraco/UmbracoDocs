@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Getting started with Umbraco Deploy"
 meta.Description: "What is Umbraco Deploy, how does it work and how to get started using Umbraco Deploy "
 ---
@@ -17,13 +15,13 @@ In this article you can learn more about what it takes to get started using Umbr
 
 There are three main steps you need to go through in order to start using Umbraco Deploy on your website.
 
-1. [Set up Git repository and new Umbraco project](../installing-deploy/new-site#set-up-git-repository-and-umbraco-project)
+1. [Set up Git repository and new Umbraco project](installing-deploy/new-site.md#set-up-git-repository-and-umbraco-project)
     - Set up a repository and then install a new Umbraco project inside it.
 
-2. [Install Umbraco Deploy via NuGet](../installing-deploy/new-site#installing-and-setting-up-umbraco-deploy)
+2. [Install Umbraco Deploy via NuGet](installing-deploy/new-site.md#installing-and-setting-up-umbraco-deploy)
     - Umbraco Deploy can be installed via NuGet.
 
-3. [Configure CI/CD build server](../installing-deploy/new-site#set-up-cicd-pipeline)
+3. [Configure CI/CD build server](installing-deploy/new-site.md#set-up-cicd-pipeline)
     - Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment
 
 ## How Umbraco Deploy works

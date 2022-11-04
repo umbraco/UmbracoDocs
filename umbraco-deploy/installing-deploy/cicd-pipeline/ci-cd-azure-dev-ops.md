@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using Azure DevOps"
 meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using Azure DevOps"
 ---
