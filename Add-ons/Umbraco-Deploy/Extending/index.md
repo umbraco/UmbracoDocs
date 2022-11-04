@@ -306,7 +306,7 @@ Umbraco Deploy comes with connectors for the built-in editors such as for media 
 
 It's also possible to create your own, as in this example.
 
-The following grid editor is an illustrative example for a very rudimentary custom image picker.  It contains a package mamifest file:
+The following grid editor is an illustrative example for a rudimentary custom image picker.  It contains a package mamifest file:
 
 ```json
 {
