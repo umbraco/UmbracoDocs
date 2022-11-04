@@ -83,7 +83,7 @@ For illustration purposes, the following structure represents the full set of op
       "EnableAntiForgeryToken": true,
       "SavePlainTextPasswords": false,
       "DisableFileUploadAccessProtection": false,
-      "DefaultAccessToNewForms": "Grant",
+      "DefaultUserAccessToNewForms": "Grant",
       "ManageSecurityWithUserGroups": false,
       "GrantAccessToNewFormsForUserGroups": "admin,editor"
     },
@@ -352,9 +352,8 @@ In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users 
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
-### DefaultAccessToNewForms
-In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
-the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
+### DefaultUserAccessToNewForms
+In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access, the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
 
 ### ManageSecurityWithUserGroups
 Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
