@@ -17,9 +17,9 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
-:::note
+{% hint style="info" %}
 The entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution.  The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
-:::
+{% endhint %}
 
 ```c#
 public class Example
@@ -78,13 +78,13 @@ The following example shows a service connector, responsible for handling the ar
 
 An illustrative data service is provided via dependency injection. This will be whatever is appropriate for to use for Create, Read, Update and Delete (CRUD) operations around reading and writing of entities.
 
-:::note
+{% hint style="info" %}
 In Deploy 9.5/10.1, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter. In order to introduce this without breaking changes, we created some new interfaces and base classes.
 
 In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact? IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
 
 There's no harm in what is listed below though.  It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations.  The obsolete methods won't be removed until Deploy 11.  In that version we plan to return back to the original interface and class names. We also plan to introduce the new method overloads which will be a documented breaking change.
-:::
+{% endhint %}
 
 ```c#
 [UdiDefinition("mypackage-example", UdiType.GuidUdi)]
@@ -470,9 +470,9 @@ If access to services is required when parsing the entity ID, where the `HttpCon
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
 ```
 
-:::note
+{% hint style="info" %}
 The `HttpContext` parameter for the `matchesRoutePath` and `matchesNodeId` functions was added in Deploy 11. Before that version, it is necessary to use the `StaticServiceProvider.Instance` to access registered services or the `HttpContext`.
-:::
+{% endhint %}
 
 Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature.  This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment.  The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 

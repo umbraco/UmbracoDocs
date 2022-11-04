@@ -5,11 +5,11 @@ meta.Description: "Steps and examples on how to setup a build and deployment pip
 
 # Setting up CI/CD build server with Github actions
 
-:::note
+{% hint style="info" %}
 In this example we will show how you can set up a CI/CD build server using Github Actions in Azure Web Apps.
 
 We will not cover how you can set up the site itself as this is beyond this documentation.
-:::
+{% endhint %}
 
 The following steps will take you through setting up a build server in Azure Web Apps.
 Go to the Azure portal and find the empty website that we have set up and want to connect to.
@@ -112,10 +112,10 @@ jobs:
         run: .\TriggerDeploy.ps1 -InformationAction:Continue -Action TriggerWithStatus -ApiKey ${{ secrets.deployApiKey }} -BaseUrl  ${{ env.deployBaseUrl }} -Reason  ${{ env.umbracoDeployReason }} -Verbose       
 ```
 
-:::note
+{% hint style="info" %}
 This is only an example of how you can set up the CI/CD pipeline for Umbraco Deploy.
 It is possible to set it up in a way that works for you and your preferred workflow.
-:::
+{% endhint %}
 
 We also need to add the License file and `TriggerDeploy.ps1` file in an item group in the `csproj` file:
 

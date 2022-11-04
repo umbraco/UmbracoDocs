@@ -9,9 +9,9 @@ meta.Description: "A description of the proper workflow when working with Umbrac
 
 Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy core technology to move your changes from one environment to another. Umbraco Deploy uses a classic "left to right" deployment model, meaning that changes are first made in the Development or local environment and then deployed to the production environment.
 
-:::note
+{% hint style="info" %}
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
-:::
+{% endhint %}
 
 ![Left to right model](images/left-to-right.png)
 
@@ -38,9 +38,9 @@ Moving your content and media between your environments is done through the Umbr
   - [Transfer Content and Media](content-transfer.md)
   - [Restore Content and / or Media](restoring-content/README.md)
 
-:::note
+{% hint style="info" %}
 Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
-:::
+{% endhint %}
 
 {% embed url="https://www.youtube.com/embed/poRzuBB11pc?rel=0" %}
 Umbraco Deploy - Content transfer and deploy

@@ -28,9 +28,9 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 5. Select the language versions that you want to queue for transfer.
 6. Set the publish date and time if you want to change when the transferred content should be published.
 
-    :::note
+    {% hint style="info" %}
     By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
-    :::
+    {% endhint %}
 
 7. Click **Queue** to add the content item to the transfer queue.
 
@@ -62,9 +62,9 @@ Once the setting have been added to the source and target environment forms can 
     * Or *right-click* the top of the Forms section to transfer all your Forms at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
 
-:::note
+{% hint style="info" %}
 This does not include entries submitted via the forms.
-:::
+{% endhint %}
 
 ## Schema Mismatches
 

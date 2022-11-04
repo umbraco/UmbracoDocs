@@ -16,11 +16,11 @@ You can use Partial Restore on
 
 In this scenario you've cloned down your environment to your local machine or setup a new environment. In both cases the new environment will have an empty Content section as well as an empty Media section.
 
-:::note
+{% hint style="info" %}
 Be aware that this feature will also restore all dependencies on the selected content.
 
 E.g. when you restore a content node which references media items as well as other content nodes, these will all be restored as well, including any parent nodes that these nodes depend on.
-:::
+{% endhint %}
 
 Follow these steps to perform a partial restore to get only the parts you need:
 
@@ -34,9 +34,9 @@ Follow these steps to perform a partial restore to get only the parts you need:
 8. Start the restore by clicking *Restore*.
 9. To see the restored content, *reload* the content tree - *right-click* the Content tree to find this option.
 
-:::tip
+{% hint style="info" %}
 Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
-:::
+{% endhint %}
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty-v9.gif)
 

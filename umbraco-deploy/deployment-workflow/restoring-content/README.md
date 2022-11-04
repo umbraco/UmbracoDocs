@@ -22,9 +22,9 @@ There are four options when it comes to restoring content.
 
 The first time you run your project locally you will have the option to restore your content and media before going to the Umbraco backoffice.
 
-:::note
+{% hint style="info" %}
 This will restore **all** content and media, plus any other entities configured for back-office transfer.
-:::
+{% endhint %}
 
 1. When your site is done spinning up, click the green *Restore* button - this will restore all content and media.
 2. Wait till the process completes - this might take a while, depending on the amount of content and media you have on your Umbraco site.
@@ -45,13 +45,15 @@ The second option for restoring your content and media is found in the Umbraco b
 6. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
 7. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree.
 
-:::note
+{% hint style="info" %}
 As well as content, media and any other entities configured for back-office transfer, will also be restored in the process.
 
 To see the media, go to the Media section and *Reload* the tree.
-:::
+{% endhint %}
 
-<iframe width="800" height="450" title="Umbraco Deploy - Content transfer and restore" src="https://www.youtube.com/embed/poRzuBB11pc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/embed/poRzuBB11pc?rel=0" %}
+Umbraco Deploy - Content transfer and restore
+{% endembed %}
 
 ### Restore a single tree through the Umbraco backoffice
 
