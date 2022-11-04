@@ -1,7 +1,6 @@
 ---
 meta.Title: "Debugging"
 meta.Description: "Debugging in Umbraco"
-versionFrom: 9.0.0
 ---
 
 # Debugging
@@ -9,11 +8,11 @@ versionFrom: 9.0.0
 During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bugs/bottlenecks in your code or to help uncover what on earth is going wrong.
 
 To perform proper debugging on your site you need to set your application to have debug enabled.
-This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` e.g. in `appsettings.json`  file:
+This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` For example: In `appsettings.json`  file:
 
-:::warning
+{% hint style="warning" %}
 Debug should always be set to false in production.
-:::
+{% endhint %}
 
 ```json
 {
@@ -33,10 +32,9 @@ Logging and tracing are really two names for the same technique. You need to con
 
 ### Enabling Trace Logging
 
-:::warning
+{% hint style="warning" %}
 Do not enable trace logging in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
-:::
-
+{% endhint %}
 
 We recommend at least logging the following namespace at minimum (Verbose) level to enable valuable trace logging:
 
@@ -50,10 +48,9 @@ We recommend at least logging the following namespace at minimum (Verbose) level
     }
   }
 }
-
 ```
-The logged messages can as always be monitored in the log viewer in backoffice
 
+The logged messages can as always be monitored in the log viewer in backoffice
 
 ## MiniProfiler
 
@@ -63,10 +60,9 @@ The MiniProfiler profiles your code method calls, giving you a greater insight i
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` e.g. in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
+To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true`. For example, in the `appSettings.json` file add `?umbDebug=true` to the query string of any request.
 
 Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
-
 
 ![?umbDebug=true](images/v8-miniprofiler-view.png)
 
@@ -136,6 +132,6 @@ This will allow you to quickly switch between debugging with the MiniProfiler, T
 
 ![Umbraco Productivity Tool](images/chrome-tool.png)
 
-## [Logging](Logging/)
+## [Logging](logging.md)
 
 Learn how Umbraco writes log files and how you can write to them.

@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Working with stylesheets and JavaScript in Umbraco"
 meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
 ---
@@ -13,20 +11,20 @@ You can create and edit stylesheets in the Stylesheets folder in the Settings se
 
 ![Creating a new stylesheet](images/1-creating-stylesheet.png)
 
-In the Create menu, there are several options available:
+In the Create menu, these options are available:
 
 * Stylesheet file (for use in templates/views)
-* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/index.md))
+* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../backoffice/property-editors/built-in-property-editors/rich-text-editor/README.md))
 * Folder (for keeping stylesheets organized)
 
-:::note
-It is currently not possible to use any CSS preprocessor (such as SASS) in the backoffice.
-:::
+{% hint style="info" %}
+It is currently not possible to use any CSS preprocessor (such as Syntactically Awesome Style Sheets (SASS)) in the backoffice.
+{% endhint %}
 
 After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor.
 When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
-![Stylesheet RTE](images/2-rte-editor.png)
+![Stylesheet Rich Text Editor (RTE)](images/2-rte-editor.png)
 
 The rules you create in the Rich Text Editor section will carry over to the Code tab.
 
@@ -43,7 +41,9 @@ To reference them you can use either of the methods used in the above screenshot
 ```html
 <link rel="stylesheet" href='@Url.Content("~/css/mystylesheet.css")' />
 ```
+
 or
+
 ```html
 <link rel="stylesheet" href="/css/mystylesheet.css" />
 ```
@@ -52,9 +52,9 @@ With the stylesheet referenced, you will be able to style the template file with
 
 Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/RTE-Styles/index.md) documentation for more information.
 
-:::note
+{% hint style="info" %}
 If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.
-:::
+{% endhint %}
 
 ## JavaScript files in the Backoffice
 
@@ -78,9 +78,9 @@ Then, navigate to the template where you would like to include your JS file.
 
 By default all JavaScript files will be stored in the `wwwroot/scripts` folder in the solution.
 
-:::tip
+{% hint style="info" %}
 If you are working locally, you can create CSS and JS files outside of the Backoffice - as long as they are placed in appropriate folders (`css` and `scripts`), they will show up in the Backoffice when you right-click on the folder and then pick reload.
-:::
+{% endhint %}
 
 ## Bundling & Minification for JavaScript and CSS
 
@@ -125,9 +125,9 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 }
 ```
 
-:::note
+{% hint style="info" %}
 See below for the different [Bundling Options](#bundling-options).
-:::
+{% endhint %}
 
 **Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
 
@@ -169,11 +169,11 @@ BundlingOptions.NotOptimizedAndComposite // The files will not be minified but w
 
 ### Using Smidge TagHelper
 
-:::note
-The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file. 
+{% hint style="info" %}
+The Smidge TagHelper does not consider the value of `Umbraco:CMS:Hosting:Debug` set in your appsettings file.
 
 If you do need to debug bundles you can inject `hostingSettings` and add the `debug` attribute as shown below.
-:::
+{% endhint %}
 
 ```csharp
 @using Microsoft.Extensions.Options
@@ -191,9 +191,9 @@ If you do need to debug bundles you can inject `hostingSettings` and add the `de
 
 ### Using IRuntimeMinifier
 
-:::note
+{% hint style="info" %}
 In case you are in Debug mode, your bundles won't be minified or bundled, so you would need to set `Umbraco:CMS:Hosting:Debug: false` in your appsettings file.
-:::
+{% endhint %}
 
 ```csharp
 @using Umbraco.Cms.Core.WebAssets

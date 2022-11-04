@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Installing Umbraco"
 meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
@@ -20,11 +18,9 @@ The easiest way to get the latest version of Umbraco up and running is using the
 
 There are numerous other ways to install Umbraco. Below, you'll find some in-depth tutorials.
 
-:::tip
-
+{% hint style="info" %}
 Members of the Umbraco Community have created a website which you can find at [https://psw.codeshare.co.uk](https://psw.codeshare.co.uk). The website makes the installation of Umbraco a lot easier for you. On the website you can configure your options to generate the required script to run. Click on the Install Script tab to get the commands you need to paste into the terminal. This tab also includes the commands for adding a starter kit or unattended install which creates the database for you.
-
-:::
+{% endhint %}
 
 ## [VS Code installation](install-umbraco-with-vs-code.md)
 
@@ -43,6 +39,6 @@ Learn how to run an already installed local installation of Umbraco.
 Visual Studio is used to write native code and managed code supported by .NET and many others.
 Its built-in tools provide the ability to develop and execute applications for any platform. Developers will be able to install Umbraco without ever having to leave Visual Studio.
 
-## [Install Umbraco unattended](Unattended-Install.md)
+## [Install Umbraco unattended](unattended-install.md)
 
 Use the Unattended installs when spinning up Umbraco instances on something like Azure Web Apps to avoid having to run through the installation wizard.

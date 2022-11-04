@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Minimum System Requirements
 
 ## Browsers
@@ -69,9 +65,9 @@ For the best experience, we would recommend that you ensure your hosting environ
 {% endtab %}
 {% endtabs %}
 
-:::tip
+{% hint style="info" %}
 You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
-:::
+{% endhint %}
 
 ### Miminium requirements to run Umbraco
 

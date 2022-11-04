@@ -1,6 +1,4 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
 meta.Title: "Partial View Macro Files"
 meta.Description: "Information on working with partial view macro files in Umbraco"
 ---
@@ -83,7 +81,7 @@ To render the created Partial View Macro File in any template, use the `RenderMa
 
 ### Related Articles
 
-* [Macros](../../../Reference/Templating/Macros/index.md)
-* [Managing Macros](../../../Reference/Templating/Macros/managing-macros.md)
-* [Partial View Macros](../../../Reference/Templating/Macros/Partial-View-Macros/index.md)
-* [Macro Parameter Editors](../../../Extending/Macro-Parameter-Editors/index.md)
+* [Macros](../../reference/templating/macros/README.md)
+* [Managing Macros](../../reference/templating/macros/managing-macros.md)
+* [Partial View Macros](../../reference/templating/macros/partial-view-macros.md)
+* [Macro Parameter Editors](../../extending/macro-parameter-editors.md)

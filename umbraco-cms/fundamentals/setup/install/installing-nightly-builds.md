@@ -1,6 +1,4 @@
 ﻿---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Installing Umbraco Nightly Builds"
 meta.Description: "Instructions on installing nightly builds of Umbraco."
 ---
@@ -97,4 +95,4 @@ The name and the versions are separated with two colons `::`, it's important tha
 
 With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new umbraco -n MyAwesomeNightlySite`
 
-For more information about installing Umbraco see [the installation documentation](./index.md)
+For more information about installing Umbraco see [the installation documentation](README.md)

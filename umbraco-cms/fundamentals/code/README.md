@@ -1,30 +1,21 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Code
 
-## [Using Umbraco's Service APIs](Umbraco-Services/)
+## [Using Umbraco's Service APIs](umbraco-services.md)
 
 Create and update entities in Umbraco from code.
 
-## [Subscribing to events](Subscribing-To-Events/)
+## [Subscribing to Notifications](subscribing-to-notifications.md)
 
-Using events to modify content or run custom code.
+Subscribe to notifications to execute custom code on a number of operations.
 
-## [Creating Forms](Creating-Forms/)
+## [Creating Forms](creating-forms.md)
 
 Create, submit and handle HTML forms with controllers.
 
-## [Debugging your Umbraco site](Debugging/)
+## [Debugging your Umbraco site](debugging/README.md)
 
 Using Tracing and MiniProfiler to debug your code.
 
-## [Source/Version Control](Source-Control/)
+## [Source/Version Control](source-control.md)
 
 General advice on source controlling your Umbraco implementation.
-
-## [Subscribing To Notifications](Subscribing-To-Notifications/)
-
-Subscribe to notifications to execute custom code on a number of operations.

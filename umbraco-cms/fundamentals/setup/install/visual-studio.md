@@ -1,15 +1,10 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Install Umbraco with Visual Studio
 
 *Follow these steps to do a full install of Umbraco using Visual Studio.*
 
-:::note
+{% hint style="info" %}
 This article is valid only for Umbraco 9 and later versions.
-:::
+{% endhint %}
 
 ## Abbreviated version
 
@@ -26,17 +21,19 @@ This article is valid only for Umbraco 9 and later versions.
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="How to install Umbraco using NuGet and Visual Studio" src="https://www.youtube.com/embed/CDeAYGu_-cI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=CDeAYGu_-cI" %}
+How to install Umbraco using NuGet and Visual Studio
+{% endembed %}
 
 ## New project
 
 To install Umbraco we first need to install Umbraco's dotnet new templates.
 
-For more information check the first 2 steps of [Install Umbraco with .NET CLI](install-umbraco-with-templates.md#Install-the-template).
+For more information check the first 2 steps of [Install Umbraco with .NET CLI](install-umbraco-with-templates.md#install-the-template).
 
-:::note  
+{% hint style="info" %}
 Check that your Visual Studio version is at least 16.8 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.  
-:::
+{% endhint %}
 
 ![Make sure you verify that you are using a compatible version of Visual Studio](images/VS/visual-studio-version-v10.png)
 
@@ -54,9 +51,9 @@ In this step, you will be able to give your project and solution a name.
 
 ![Configure the new project](images/VS/configure-project.png)
 
-:::note  
+{% hint style="info" %}
 Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.  
-:::
+{% endhint %}
 
 ### Additional information
 

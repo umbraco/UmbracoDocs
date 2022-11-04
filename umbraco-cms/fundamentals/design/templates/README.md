@@ -1,8 +1,6 @@
 ---
 meta.Title: "Templates in Umbraco"
 meta.Description: "Templating in Umbraco including inheriting from master template"
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Templates
@@ -19,7 +17,7 @@ Open the **Settings** section inside the Umbraco backoffice and right-click the 
 
 ## Allowing a Template on a Document Type
 
-To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template, go to the Templates tab and select the template under the **Allowed Templates** section.
+To use a template on a document, you must first allow it on the content's type. Open the Document Type you want to use the template, go to the Templates tab and select the template under the **Allowed Templates** section.
 
 ![Allowing template](images/allow-template-v8.png)
 
@@ -143,13 +141,15 @@ The created partial view can now be injected into any template by using the `@Ht
 ### Related Articles
 
 - [Basic Razor syntax](basic-razor-syntax.md)
-- [Rendering content](../Rendering-Content/)
+- [Rendering content](../rendering-content.md)
 - [Named Sections](named-sections.md)
 
 ### Tutorials
 
-- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
+- [Creating a basic website with Umbraco](../../../tutorials/creating-a-basic-website/README.md)
 
-### [Umbraco Learning Base](https://www.youtube.com/channel/UCbGfwSAPflebnadyhEPw-wA)
+### Umbraco Learning Base
 
-- [Playlist: Templates in Umbraco](https://www.youtube.com/playlist?list=PLgX62vUaGZsFmzmm4iFKeL41CZ5YFw09z)
+{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsFmzmm4iFKeL41CZ5YFw09z" %}
+Playlist: Templates in Umbraco
+{% endembed %}

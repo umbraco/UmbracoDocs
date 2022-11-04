@@ -1,5 +1,4 @@
 ---
-versionFrom: 11.0.0
 meta.Title: "Breaking changes going from Umbraco 10 to 11"
 meta.Description: "In this article we list the breaking changes between Umbraco 10 and 11"
 ---
@@ -31,7 +30,7 @@ The following have been removed after having been obsoleted since Umbraco 9.
 
 ### Umbraco.Extensions
 
-```none
+```csharp
 Umbraco.Extensions.ServiceCollectionExtensions.AddUnique<TImplementing>(Microsoft.Extensions.DependencyInjection.IServiceCollection)
 
 Umbraco.Extensions.EnumExtensions.HasFlagAll<T>(T, T)
@@ -41,7 +40,7 @@ Umbraco.Extensions.FriendlyImageCropperTemplateExtensions.GetLocalCropUrl(Umbrac
 
 ### Umbraco.Cms.Core
 
-```none
+```csharp
 Umbraco.Cms.Core.Constants.Conventions.Member.IsApproved
 Umbraco.Cms.Core.Constants.Conventions.Member.IsApprovedLabel
 Umbraco.Cms.Core.Constants.Conventions.Member.IsLockedOut
@@ -262,7 +261,7 @@ Umbraco.Cms.Core.Configuration.JsonConfigManipulator.JsonConfigManipulator(Micro
 
 ### Umbraco.Cms.Infrastructure
 
-```none
+```csharp
 Umbraco.Cms.Infrastructure.Persistence.Repositories.Implement.MemberRepository.SetLastLogin(string, System.DateTime)
 
 Umbraco.Cms.Infrastructure.Packaging.PackageMigrationBase.PackageMigrationBase(
@@ -299,7 +298,7 @@ Umbraco.Cms.Infrastructure.HostedServices.ReportSiteTask.ReportSiteTask(
 
 ### Umbraco.Cms.Web
 
-```none
+```csharp
 Umbraco.Cms.Web.Common.Security.ConfigureIISServerOptions
 
 Umbraco.Cms.Web.Common.RuntimeMinification.SmidgeRuntimeMinifier.Reset()
@@ -372,7 +371,7 @@ Umbraco.Cms.Web.BackOffice.Controllers.TemplateController.TemplateController(
 
 ### Umbraco.Cms.Tests
 
-```none
+```csharp
 Umbraco.Cms.Tests.Common.Testing.TestOptionAttributeBase.ScanAssemblies
 ```
 
@@ -382,7 +381,7 @@ The following have been moved to new assemblies and their namespaces have been u
 
 ### Umbraco.Extensions
 
-```none
+```csharp
 Umbraco.Extensions.NPocoDatabaseExtensions.ConfigureNPocoBulkExtensions()
 
 Umbraco.Extensions.UmbracoBuilderExtensions.AddUmbracoImageSharp(Umbraco.Cms.Core.DependencyInjection.IUmbracoBuilder)
@@ -390,7 +389,7 @@ Umbraco.Extensions.UmbracoBuilderExtensions.AddUmbracoImageSharp(Umbraco.Cms.Cor
 
 ### Umbraco.Cms.Web
 
-```none
+```csharp
 Umbraco.Cms.Web.Common.Media.ImageSharpImageUrlGenerator
 
 Umbraco.Cms.Web.Common.ImageProcessors.CropWebProcessor
@@ -401,7 +400,7 @@ Umbraco.Cms.Web.Common.DependencyInjection.ConfigurePhysicalFileSystemCacheOptio
 
 ### Umbraco.Cms.Infrastructure
 
-```none
+```csharp
 Umbraco.Cms.Infrastructure.Persistence.LocalDb
 Umbraco.Cms.Infrastructure.Persistence.FaultHandling.RetryPolicyFactory
 Umbraco.Cms.Infrastructure.Persistence.FaultHandling.ThrottlingMode
@@ -418,7 +417,7 @@ A few interfaces have been merged, adding new members to the original interfaces
 
 ### Umbraco.Cms.Core
 
-```none
+```csharp
 Umbraco.Cms.Core.Services.IMacroService.GetAll(params string[])
 
 Umbraco.Cms.Core.Persistence.Repositories.IMacroRepository.GetByAlias(string)
@@ -438,7 +437,7 @@ A method not doing anything for the last couple of major releases have been remo
 
 ### Umbraco.Cms.Core
 
-```none
+```csharp
 Umbraco.Cms.Core.Services.IMembershipMemberService<T>.SetLastLogin(string, System.DateTime)
 ```
 
@@ -448,7 +447,7 @@ A single model have been made immutable, so the default constructor and the sett
 
 ### Umbraco.Cms.Infrastructure
 
-```none
+```csharp
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.ContentData()
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.Name.set
 Umbraco.Cms.Infrastructure.PublishedCache.DataSource.ContentData.UrlSegment.set
@@ -467,7 +466,7 @@ The following classes now directly inherit from OEmbedProviderBase instead of Em
 
 ### Umbraco.Cms.Core
 
-```none
+```csharp
 Umbraco.Cms.Core.Media.EmbedProviders.DailyMotion
 Umbraco.Cms.Core.Media.EmbedProviders.Flickr
 Umbraco.Cms.Core.Media.EmbedProviders.GettyImages

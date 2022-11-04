@@ -1,8 +1,3 @@
----
-versionFrom: 8.17.0
-versionTo: 10.0.0
----
-
 # Using Tabs
 
 In this section, an overview is given of how to add and reorder tabs, convert a group to a tab and manage the “Generic” tab.
@@ -20,9 +15,9 @@ To add a tab, follow these steps:
 
     ![Add tab](images/Add-tab.png)
 
-:::note
+{% hint style="info" %}
 When adding the first tab, all existing groups are automatically added to the tab.
-:::
+{% endhint %}
 
 ## Reordering tabs
 
@@ -51,9 +46,9 @@ To convert a group to a tab, follow these steps:
 5. Select **I am done reordering**.
 6. Click **Save**.
 
-:::note
+{% hint style="info" %}
 It is not possible to convert a tab back into a group, because tabs can contain groups and nested groups are not supported. You need to create a new group, move all the properties from the tab into the new group and finally delete the empty tab.
-:::
+{% endhint %}
 
 ## Managing the “Generic” tab
 
@@ -68,5 +63,3 @@ To manage the **Generic** tab on a **Document Type/Media Type**:
 3. Go to the **Document Type/Media Type**, the **Generic** tab will now be replaced by the tab from the composition.
 
     ![Composition Add Tab](images/Composition-add-tab.gif)
-
----

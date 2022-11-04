@@ -1,23 +1,18 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Standalone File System
 
-:::note
+{% hint style="info" %}
 No file replication is configured, deployment handles updating files on the different servers.
-:::
+{% endhint %}
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
 
-Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](../../../../Reference/Config/webconfig/index.md#umbracocorelocaltempstorage).
+Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/webconfig/#umbracocorelocaltempstorage).
 
 ## Synchronised File System
 
-:::note
+{% hint style="info" %}
 The servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers.
-:::
+{% endhint %}
 
 If the file system on your servers is performing file replication then the Umbraco temporary folder (`~/umbraco/Data/TEMP`) must be excluded from replication.
 
@@ -41,7 +36,7 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 
 * `~/umbraco/Data/TEMP/*`
 
-:::tip
+{% hint style="info" %}
 Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options).
 
 Achieve this by changing the value of the `LuceneDirectoryFactory` setting to 'TempFileSystemDirectoryFactory' in the `appsettings.json`. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
@@ -61,7 +56,7 @@ Below is shown how to do this in a Json configuration source.
 
 ```
 
-:::
+{% endhint %}
 
 * `~/umbraco/Logs/*`
   * This is **optional** and depends on how you want your logs configured (see below)
@@ -114,9 +109,9 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 }
 ```
 
-:::tip
+{% hint style="info" %}
 If you are load balancing with [Azure Web Apps](azure-web-apps.md) make sure to check out the article we have for that specific set-up.
-:::
+{% endhint %}
 
 ## Advanced techniques
 

@@ -1,8 +1,6 @@
 ---
 meta.Title: "Creating Forms"
 meta.Description: "Information on creating forms in Umbraco"
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 
@@ -10,15 +8,15 @@ versionTo: 10.0.0
 
 Creating forms requires that you know your way around .NET Core MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
-:::note
+{% hint style="info" %}
 You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, extendable and supported by Umbraco HQ.
-:::
+{% endhint %}
 
 In this example we'll create a basic contact form containing a name, email and message field.
 
-### Creating the view model
+## Creating the view model
 
-First, we're going to create the model for the contact form by adding a new class to the `/Models` folder (if the folder doesn't already exist, create it at the root of your website). Let's call it `ContactFormViewModel.cs`
+First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. If the folder doesn't already exist, create it at the root of your website. Let's call it `ContactFormViewModel.cs`
 
 ```csharp
 namespace MyFirstForm.Models
@@ -35,6 +33,7 @@ namespace MyFirstForm.Models
 Build your solution after adding the model.
 
 ### Creating the view
+
 Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
 Name your view "ContactForm".
@@ -65,6 +64,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
+
 Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder (if the folder doesn't already exist, create it at the root of the website). Name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
 
 ```csharp
@@ -108,9 +108,10 @@ namespace MyFirstForm.Controllers
 }
 ```
 
-If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
+If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, for example, sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
 ## Adding the form to a template
+
 You can add the form to a template by rendering the partial view:
 
 ```csharp
@@ -122,9 +123,11 @@ You can add the form to a template by rendering the partial view:
 ```
 
 ## Adding the form through the backoffice
+
 To add the form to your site we'll make a macro. This also makes it possible to let editors add the form to a page using the rich text editor.
 
-#### Creating a macro
+### Creating a macro
+
 Go to the Settings section and right-click the __Partial Views Macro Files__ node. Choose "Create" and select __New partial view macro__. Name the macro *Contact Form*.
 
 In the partial view, we're going to render our contact form using the view model we created earlier.
@@ -139,15 +142,18 @@ In the partial view, we're going to render our contact form using the view model
 }
 ```
 
-
 #### Adding the macro
-The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**. Expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
 
-Tip: If you don't see your new macro listed, right click __Macros__ and select __Reload__
+The last thing to do before we can add the form to a page is to __allow the Macro in a rich text editor__. Expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
+
+{% hint style="info" %}
+If you don't see your new macro listed, right click __Macros__ and select __Reload__.
+{% endhint %}
 
 Now you can add the form to a page that has a rich text editor.
 
 ### More information
-- [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
-- [Custom controllers](../../../Reference/Routing/Custom-Controllers/index.md)
-- [Routing](../../../Reference/Routing/)
+
+- [Surface Controllers](../../reference/routing/surface-controllers/README.md)
+- [Custom controllers](../../reference/routing/custom-controllers.md)
+- [Routing](../../reference/routing/README.md)

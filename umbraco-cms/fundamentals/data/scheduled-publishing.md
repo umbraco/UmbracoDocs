@@ -1,8 +1,6 @@
 ---
 meta.Title: "Scheduled Publishing"
 meta.Description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Scheduled Publishing
@@ -25,9 +23,9 @@ Your server may be in a different timezone than where you are located. You are a
 
 If you are in the same timezone as the server, this message will not appear under the date picker.
 
-:::note
+{% hint style="info" %}
 In Umbraco versions lower than 7.5, the time you select has to be the time on the server, these older versions of Umbraco do not detect your local timezone.
-:::
+{% endhint %}
 
 ## Permissions
 
@@ -37,14 +35,14 @@ All users with access to the Content section in the Umbraco backoffice are able 
 
 In some cases you will need to adjust your configuration to ensure that scheduled publishing/unpublishing works. The schedule works by the server sending an HTTP(S) request to itself.
 
-If you are in a load balanced environment special care must be given to ensure you've configured this correctly, [see the docs here](../../Setup/Server-Setup/Load-Balancing/flexible.md#scheduling-and-master-election)
+If you are in a load balanced environment special care must be given to ensure you've configured this correctly, [see the docs here](../setup/server-setup/load-balancing/file-system-replication.md)
 
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
-* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/V9-Config/WebRoutingSettings/index.md) for details)_
+* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../reference/configuration/webroutingsettings.md) for details)_
 * Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
-* Else it's based on the first request that the website receives and uses the base url of this request _(default)_
+* Else it's based on the first request that the website receives and uses the base URL of this request _(default)_
 
 If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https). However if any of the other options are used and the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint.
 
@@ -58,4 +56,4 @@ If your scheduled publishing/unpublishing is not working as you would expect it 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not.
 
-In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/V9-Config/WebRoutingSettings/index.md) setting to ensure that your server is communicating to itself on the correct base url.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../reference/configuration/webroutingsettings.md) setting to ensure that your server is communicating to itself on the correct base URL.

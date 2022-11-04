@@ -1,5 +1,4 @@
 ---
-versionFrom: 10.0.0
 meta.Title: "Breaking changes going from Umbraco 9 to 10"
 meta.Description: "In this article we list the breaking changes between Umbraco 9 and 10"
 ---

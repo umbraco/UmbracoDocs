@@ -1,17 +1,15 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Data types in Umbraco"
 meta.Description: "Learn about the data types in Umbraco."
 ---
 
 # Data Types
 
-*A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) and selecting the Type you are selecting a Data Type. There are a number of preconfigured Data Types available in Umbraco and more can be added in the Settings section.*
+*A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) and selecting the Type you are selecting a Data Type. There are preconfigured Data Types available in Umbraco and more can be added in the Settings section.*
 
 ## What is a Data Type?
 
-A Data Type can be something very basic (textstring, number, true/false,...) or it can be more complex (multi node tree picker, image cropper, Grid Layout).
+A Data Type can be something basic (textstring, number, true/false,...) or it can be more complex (multi node tree picker, image cropper, Grid Layout).
 
 The Data Type references a Property Editor and if the Property Editor has settings these are configured on the Data Type. This means you can have multiple Data Types referencing the same Property Editor.
 
@@ -45,17 +43,19 @@ To view the Data Type reference, go to the __Settings__ section and expand the _
 
 This gives you an overview of the Types that currently use the Data Type.
 
-Learn more about viewing references or implementing tracking in the [Tracking References](../../../Extending/Property-Editors/Tracking/) article.
+Learn more about viewing references or implementing tracking in the [Tracking References](../../../extending/property-editors/tracking.md) article.
 
 ### More information
 
 * [List of available Data Types](default-data-types.md)
-* [Property Editors](../../Backoffice/Property-Editors/index.md)
+* [Property Editors](../../backoffice/property-editors/README.md)
 
 ### Related Services
 
-* [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
+* [DataTypeService](../../../reference/management/services/datatypeservice.md)
 
 ### Umbraco Learning Base Channel
 
-* [Defining Properties, Data Types and Property Editors](https://www.youtube.com/watch?v=OW9pCHWebGE)
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=OW9pCHWebGE" %}
+Document Types in Umbraco: Defining Properties, Data Types and Property Editors
+{% endembed %}

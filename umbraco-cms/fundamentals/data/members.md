@@ -1,8 +1,6 @@
 ---
 meta.Title: "Creating Members in Umbraco"
 meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
-versionFrom: 9.0.0
-versionTo: 10.0.0
 ---
 
 # Members
@@ -59,11 +57,11 @@ To assign a member to a specific group find the member you wish to assign and fi
 
 ![Assigning a Member Group](images/assign-member-group.png)
 
-## [Sensitive data](../../../Reference/Security/Sensitive-data-on-members/index.md)
+## [Sensitive data](../../reference/security/sensitive-data-on-members.md)
 
 You will have the option to mark member properties as sensitive. Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions.
 
-More information can be found under [security](../../../Reference/Security/Sensitive-data-on-members/index.md).
+More information can be found under [security](../../reference/security/sensitive-data-on-members.md).
 
 ## Technical
 
@@ -103,14 +101,16 @@ You can find out more about the services methods in the reference section of the
 
 ### More information
 
-- [Customizing Data Types](../Data-Types/)
+- [Customizing Data Types](data-types/)
 
 ### Related Services
 
-- [MemberService](../../../Reference/Management/Services/MemberService/index.md)
-- [MemberType Service](../../../Reference/Management/Services/MemberTypeService/index.md)
-- [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService/index.md)
+- [MemberService](../../reference/management/services/memberservice.md)
+- [MemberType Service](../../reference/management/services/membertypeservice.md)
+- [MemberGroup Service](../../reference/management/services/membergroupservice.md)
 
-### [Video tutorials](https://www.youtube.com/c/UmbracoLearningBase)
+### Video tutorials
 
-- [Chapter: Members](https://www.youtube.com/playlist?list=PLgX62vUaGZsHYlNtXGSolK5_Tg0AMkQBA)
+{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsHYlNtXGSolK5_Tg0AMkQBA" %}
+Playlist: Members in Umbraco
+{% endembed %}

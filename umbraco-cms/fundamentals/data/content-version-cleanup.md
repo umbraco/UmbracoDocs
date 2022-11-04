@@ -1,7 +1,5 @@
 ---
 meta.Title: "Content version cleanup"
-versionFrom: 9.1.0
-versionTo: 10.0.0
 ---
 
 # Content Version Cleanup
@@ -13,11 +11,12 @@ Umbraco 9.1.0 introduced a feature to clean up historic content versions (inspir
 ## How it works
 
 The default cleanup policy will:
- - Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
- - 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
- - Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
- - Never delete any 'published' versions.
- - Never delete any specific versions marked as 'Prevent Cleanup' in the backoffice version history.
+
+- Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
+- 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
+- Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
+- Never delete any 'published' versions.
+- Never delete any specific versions marked as 'Prevent Cleanup' in the backoffice version history.
 
 The feature is enabled by default via configuration for new installs starting from 9.1.0. It will require to opt-in for those upgrading from 9.0.0.
 
@@ -39,8 +38,7 @@ The feature can be configured in the `appSettings.json`:
 }
 ```
 
-For sites with stricter requirements, it is possible to opt-out of both options globally 
-(see [ContentSettings](/documentation/Reference/Configuration/ContentSettings/index.md#contentversioncleanuppolicy)) and by Document Type.
+For sites with stricter requirements, it is possible to opt-out of both options globally, see [ContentSettings](../../reference/configuration/contentsettings.md#contentversioncleanuppolicy) and by Document Type.
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
@@ -52,7 +50,7 @@ of history you may wish to perform these tasks, if they are not part of your reg
 It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions"
 Content App for each Document Type.
 
-![Content Version Cleanup - document type overrides](images/per-doctype-override.png)
+![Content Version Cleanup - Document Type overrides](images/per-doctype-override.png)
 
 ## Prevent cleanup of important versions
 

@@ -1,14 +1,12 @@
----
-versionFrom: 10.0.0
----
-
 # Install Umbraco with .NET CLI
 
 We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET templates.
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Installing Umbraco using the .NET CLI" src="https://www.youtube.com/embed/U309rfT_4ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=U309rfT_4ns" %}
+Installing Umbraco using the .NET CLI
+{% endembed %}
 
 ## Install the template
 
@@ -39,9 +37,9 @@ Umbraco Package              umbracopackage           [C#]              Web/CMS/
 {% endtab %}
 {% endtabs %}
 
-:::note
+{% hint style="info" %}
 In some cases the templates may silently fail to install (usually this is an issue with NuGet sources). If this occurs you can try specifying the NuGet source in the command by running `dotnet new -i Umbraco.Templates --nuget-source "https://api.nuget.org/v3/index.json"`.
-:::
+{% endhint %}
 
 To get **help** on a project template with `dotnet new` run the following command:
 
@@ -162,11 +160,11 @@ Options:
 You will now have a new project with the name *MyCustomUmbracoProject*, or the name you chose to use.
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
-:::note
+{% hint style="info" %}
 If you want to create a solution file as well you can run the commands below.
 `dotnet new sln`  
 `dotnet sln add MyCustomUmbracoProject `
-:::
+{% endhint %}
 
 ## Run Umbraco
 
