@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Attaching Workflows
 
 In this article, you can learn how to add extra functionality to your Form by attaching **workflows**.
@@ -11,7 +6,7 @@ Workflows are a way of defining actions after your Form is submitted like sendin
 
 ## Default Workflow
 
-By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../Creating-a-Form/Form-Settings/index.md#settings-options) of the Forms settings.
+By default, when a Form is submitted the record data is stored in the database. This can be configured in the [Store records](../creating-a-form/form-settings.md#settings-options) of the Forms settings.
 
 The behaviour to display a message to the user that submitted the form, or to redirect to another page, can be configured by clicking on the built-in first workflow step, labelled **Submit message/Go to page**.
 
@@ -23,7 +18,9 @@ If no value is selected, the message in **Message on submit** is displayed to th
 
 ## Video Tutorial
 
-<iframe width="800" height="450" title="Attaching Workflows to Umbraco Forms" src="https://www.youtube.com/embed/qJrf1drw1Bg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=qJrf1drw1Bg" %}
+Attaching Workflows to Umbraco Forms
+{% endembed %}
 
 ## Adding a Workflow
 
@@ -37,7 +34,7 @@ Clicking **Configure workflow** will give you the option to configure existing w
 
 ### Choose a Workflow
 
-A new workflow can be of different types and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](Workflow-Types) article.
+A new workflow can be of different types and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](workflow-types.md) article.
 
 ![Workflow add modal](images/WorkflowsAddModel.png)
 
@@ -45,7 +42,7 @@ A new workflow can be of different types and Umbraco Forms ships with a few defa
 
 Once the Workflow Type has been selected, you will need to configure the workflow. There are different settings depending on the type that has been selected.
 
-To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
+To use data from the submitted Form in your workflow, head over to the [Magic Strings](../../developer/magic-strings.md) article and learn more about how that's done.
 
 Fill in the settings and hit **Submit**. The workflow is added to your Form and it will be shown at the bottom of the page.
 
@@ -66,7 +63,3 @@ For each entry, in the backoffice a table can be viewed that shows each of the w
 ![Workflow execution summary](images/workflow-audit.png)
 
 For any workflows that did not complete successfully, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.
-
----
-
-Prev: [Setting-up Conditional Logic on Fields](../Creating-a-Form/Conditional-Logic/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md)

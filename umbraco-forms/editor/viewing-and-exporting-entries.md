@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Viewing and Exporting Entries
 
 Expand the Form in the tree to view the Entries for each Form.
@@ -47,9 +42,9 @@ If you have fields that allow the user to upload files within your form, you wil
 
 When selecting entries, it is possible to execute Actions. To select an entry, click anywhere on the entry.
 
-:::note
+{% hint style="info" %}
 Clicking on the *Name* opens a view where you can see the entire entry details.
-:::
+{% endhint %}
 
 ![Record bulk actions](images/BulkActions.png)
 
@@ -57,7 +52,3 @@ Select at least 1 record to see the available actions in the top-right corner. B
 
 - Approve
 - Delete
-
----
-
-Prev: [Workflow Types](../Attaching-Workflows/Workflow-Types/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Defining and Attaching Prevalue Sources](../Defining-and-Attaching-Prevaluesources/index.md)

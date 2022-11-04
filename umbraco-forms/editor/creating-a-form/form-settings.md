@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Form Settings
 
 In this article, you will find information about accessing the Forms Settings and the validations available to customize your Form.
@@ -59,7 +54,3 @@ The following options are available in Forms Settings:
     Enabling this feature allows the moderator to approve or deny a Form before its published. Most Forms contain publicly shown entries such as blog post comments or submissions for a social campaign and you can decide what's being published online with the help of this option.
 
     ![Form settings validation](images/FormSettingsModeration.png)
-
----
-
-Prev: [Creating a Form - The Basics](../index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Overview of the Field Types](../Fieldtypes/index.md)

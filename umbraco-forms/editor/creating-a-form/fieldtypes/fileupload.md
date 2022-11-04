@@ -1,8 +1,3 @@
----
-versionFrom: 8.5.4
-versionTo: 10.0.0
----
-
 # File upload
 
 The File Upload field allows the users to upload a file along with the Form on your website.
@@ -20,9 +15,9 @@ To allow only specific files:
 1. Select the File Type checkbox the user should be able to upload.
 2. Click **Submit**.  
 
-:::note
+{% hint style="info" %}
 We recommend selecting **Allow only specified files**, to limit malicious code to be uploaded, whenever the user is submitting the Form.
-:::
+{% endhint %}
 
 ## User Defined Allowed File Types
 
