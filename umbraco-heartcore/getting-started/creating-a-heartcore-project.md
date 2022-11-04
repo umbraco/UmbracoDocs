@@ -10,9 +10,9 @@ In this article you can learn how to get started with your Umbraco Heartcore pro
 
 It will cover everything you need to know, in order to create your first piece of content in the Umbraco backoffice.
 
-:::note
+{% hint style="info" %}
 This guide will assume that you have already [setup an Umbraco Heartcore project](../../../Umbraco-Heartcore) without any content.
-:::
+{% endhint %}
 
 ## Introduction
 
@@ -22,13 +22,13 @@ Content in Umbraco is based on **Document Types** which will define what type of
 
 As we go through this tutorial and start building the content for our Umbraco Heartcore project, you will learn more about each of these concepts and how they all work together.
 
-:::note
+{% hint style="info" %}
 **New to Umbraco?**
 
 If you are completely new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
 
 ![Take the Backoffice Tour](images/Backoffice-tour.png)
-:::
+{% endhint %}
 
 ## Overview of tutorial
 
@@ -62,13 +62,13 @@ We have now created our very first Document Type. It's currently a blank slate, 
 
 Before we can start adding properties to the Document Type, we need to add a **Group**.
 
-:::tip
+{% hint style="info" %}
 **Property Groups**
 
 Groups are a way to group certain properties together. It can help content editors getting an overview of content nodes with many properties.
 
 Groups also serves as a way to navigate a content node in the Content section.
-:::
+{% endhint %}
 
 1. Select **Add Group** in the middle of the Document Type editor area.
 2. Give the group a name like *Content*.
@@ -80,7 +80,7 @@ Now, let's add our first property to the Document Type.
 5. (Optional) Give the Property a description
 6. Select **Add Editor**
 
-:::tip
+{% hint style="info" %}
 **Select Editor**
 
 ![Select an Editor](images/DocType-Select-Editor.png)
@@ -89,7 +89,7 @@ In this dialog you choose which editor to add to the Property. The editor you ch
 
 **Create New** lets you create your own Data Types based on the editors in Umbraco.
 **Use existing** provides you with the option to select on the pre-defined Data Types.
-:::
+{% endhint %}
 
 7. Use the search field to find and select the pre-defined *Textstring* Data Type.
 8. **Submit** the Property settings
@@ -103,11 +103,11 @@ Following the same steps, let's add a few more properties to the *Content* group
 | Intro Text | *Textarea* Data Type     |
 | PromoImage | *Media Picker* Data Type |
 
-:::tip
+{% hint style="info" %}
 **Media Picker**
 
 This editor lets you upload or select an existing media item from the Media section and add it to your content.
-:::
+{% endhint %}
 
 With these properties added our Document Type now looks something like this:
 
@@ -127,7 +127,7 @@ We will now expand on our site by adding a **Document Type Collection**.
     * Or select the three elipses on the right, when hovering the folder.
 2. Choose the second option: **Document Type Collection...**.
 
-:::tip
+{% hint style="info" %}
 **Document Type Collections**
 
 When working with content you might want to be able to relate certain types of nodes to each other. This could be articles you would like to nest under a News section, or it could be a Blog where it should be possible to create blog posts.
@@ -139,7 +139,7 @@ Example:
 **Item Document Type**: News Article
 
 In the Content section, you will with this setup be able to create a News Area content node, and then create your News Articles under that node. 
-:::
+{% endhint %}
 
 For our Umbraco Heartcore project, we will want it to be possible to create blog posts under a blog area.
 
@@ -204,13 +204,13 @@ We now have the option to create a content item based on our Home Page Document 
     * Drag an image directly into the dialog.
 8. Once you've chosen an image, select it from the dialog and select the green **Select** button at the bottom of the dialog.
 
-:::tip
+{% hint style="info" %}
 **Media items and images**
 
 When you add media and images to your content using the default Media Picker Data Type, the items will automatically be added to the media library you can find in the **Media** section of the backoffice.
 
 Select the **Media** section in the top navigation bar, and you can browse all the media items that have been uploaded to the project.
-:::
+{% endhint %}
 
 9. When you're happy with the content in the properties, select the **Save and publish** button in the bottom right.
 
@@ -227,7 +227,7 @@ So far, our Content section should look like this:
 15. Choose to **Create...** a new item based on the *Blog Post* Document Type.
 16. Give the blog post a name and add some text to the *Subtitle* and *MainContent* properties.
 
-:::tip
+{% hint style="info" %}
 **Rich Text Editor**
 
 The editor we chose for the *MainContent* property is a **Rich Text Editor**.
@@ -235,7 +235,7 @@ The editor we chose for the *MainContent* property is a **Rich Text Editor**.
 ![the Rich Text Editor](images/Rich-Text-Editor.png)
 
 It gives us a lot of flexibility when writing text, as there are multiple formatting options.
-:::
+{% endhint %}
 
 17. Once you're happy with how your blog post looks, select **Save and publish**.
 18. To go back to the Blog Area, select the **arrow** next to the title of the blog post

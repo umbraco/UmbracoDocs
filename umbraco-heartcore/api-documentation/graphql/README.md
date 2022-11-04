@@ -46,9 +46,9 @@ Api-Key: {api-key}
 
 The GraphQL API supports fetching draft content, this can be done by passing a `preview` argument to the root query fields.
 
-:::note
+{% hint style="info" %}
 Fetching draft content requires an API Key to be passed with the request.
-:::
+{% endhint %}
 
 ```graphql
 query {

@@ -525,9 +525,9 @@ Get a list of children (content items) by parent GUID ID. Includes all language 
 
 Create a new content item with one or more language variations.
 
-:::note
+{% hint style="info" %}
 All newly created content will be `DRAFT` by default. If you want to publish it you will need to issue a publish request as well.
-:::
+{% endhint %}
 
 **URL**: `/content`
 
@@ -655,9 +655,9 @@ When content contains an upload field it is possible to send a file along with t
 
 If the content item doesn't include files then you can send a standard reqeust with a JSON payload to create a new content item.
 
-:::note
+{% hint style="info" %}
 All newly created content will be `DRAFT` by default. If you want to publish it you will need to issue a publish request as well.
-:::
+{% endhint %}
 
 **URL**: `/content`
 

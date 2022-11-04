@@ -46,11 +46,11 @@ It is also here, that you are able to add or edit the Technical Contact informat
 
 ![Edit Team Members page](images/editTeam.png)
 
-:::note
+{% hint style="info" %} style="info" %} style="info" %} style="info" %}
 When you invite a Team Member to your Heartcore project, they will automatically get access to the backoffice of the project as well.
 
 You can add as many members to your project as you want.
-:::
+{% endhint %}
 
 ### Webhooks
 
@@ -64,9 +64,9 @@ Here you will be able to upgrade your trial to a plan that fits your needs.
 
 From here you can see the payment history for a certain project as well as download the latest invoices or for a specific month.
 
-:::note
+{% hint style="info" %}
 This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
-:::
+{% endhint %}
 
 ### Rename project
 

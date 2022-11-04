@@ -8,9 +8,9 @@ In this article, you can read more about the .NET Core Console Application.
 
 We will go through the process of setting the application up, explore what you can do with the application and how you can connect to your Heartcore project on Umbraco Cloud.
 
-:::note
+{% hint style="info" %}
 In order to use this console application, you will need to have the .NET Core SDK2.2. Older or newer versions will __not work__ with the application.
-:::
+{% endhint %}
 
 ## Installing the Console Application
 
@@ -33,9 +33,9 @@ By using the command line, you will need to run the following commands from the 
 
 In order to use this application to its fullest, you will need a Heartcore Project on Umbraco Cloud. If you do not have a project yet, you can [create a trial](https://umbraco.com/try-umbraco-heartcore/). It is recommended that you have a project with both content and media items.
 
-:::note
+{% hint style="info" %}
 If you are connecting to a Heartcore Project with multiple environments you will have to use the alias for the __Development environment__.
-:::
+{% endhint %}
 
 If you do not have a project or trial you can also connect to `demo-headless`.
 

@@ -186,9 +186,9 @@ The same applies to Properties. If a Property alias is a reserved one it will al
 
 List of reserved type names, these cannot be used as an `alias` for Content Types.
 
-:::note
+{% hint style="info" %}
 The GraphQL type name is the Content Type `alias` converted to Pascal Case.
-:::
+{% endhint %}
 
 * BigInt
 * BlockListItem
@@ -1852,9 +1852,9 @@ For all Document Types a `FilterInput` type is generated. The name is the type n
 
 To filter the `allContent` field, `ancestors`, `children` and `descendants` connections the `ContentFilterInput` is used.
 
-:::note
+{% hint style="info" %}
 All filter inputs for Content Types will also have the default fields.
-:::
+{% endhint %}
 
 ```graphql
 """
@@ -2012,9 +2012,9 @@ input ContentFilterInput {
 }
 ```
 
-:::note
+{% hint style="info" %}
 Filtering is possible only on non-complex Property Editors like Text Area and Label. Filtering on more complex types like Content Picker and Multi-node Tree Picker has to be done client-side.
-:::
+{% endhint %}
 
 ### Strings
 
@@ -2078,9 +2078,9 @@ input ProductFilterInput {
 
 For fields returning `Int` or `Decimal` the following filters are generated.
 
-:::note
+{% hint style="info" %}
 The type is either `Int` or `Decimal` depending on the output type.
-:::
+{% endhint %}
 
 Given the following type:
 
@@ -2405,9 +2405,9 @@ input MediaFilterInput {
 
 For types returning `[Decimal]`, `[Int]` or `[String]` the following filters are generated.
 
-:::note
+{% hint style="info" %}
 The type is `[Decimal]`, `[Int]` or `[String]` depending on the output type
-:::
+{% endhint %}
 
 Given the following type:
 
@@ -2461,9 +2461,9 @@ Fields returning `DateTime`, `Decimal`, `Boolean`, `Int` or `String` can be used
 
 To filter the `allContent` field, `ancestors`, `children` and `descendants` connections the `ContentOrderBy` is used.
 
-:::note
+{% hint style="info" %}
 All order by inputs for Content Types will also have the default fields.
-:::
+{% endhint %}
 
 ```graphql
 ``"""

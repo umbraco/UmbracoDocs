@@ -6,11 +6,11 @@ versionFrom: 8.0.0
 
 While structure changes are deployed between environments using the Cloud Portal, content and media transfers and restores are handled through the Umbraco Backoffice.
 
-:::note
+{% hint style="info" %}
 In order to be able to transfer/restore content and media, you need to make sure that the environments you're transferring between are in sync.
 
 Learn more about how to do that, in the [Structure deployments](../Structure-deployment) article.
-:::
+{% endhint %}
 
 Another difference between the two steps, is that content and media can be restored *against* the left-to-right flow. This means that when you have a lot of content on a Live environment, it is possible to restore all this content on a Development and/or Staging environment.
 

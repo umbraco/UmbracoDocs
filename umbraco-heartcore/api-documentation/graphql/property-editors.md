@@ -121,7 +121,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## List view
 
 **Editor Alias**: `Umbraco.ListView`\
-:::note This editor is not supported and will not be present in the generated schema :::
+{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Markdown Editor
 
@@ -156,12 +156,12 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Member Picker
 
 **Editor Alias**: `Umbraco.MemberPicker`\
-:::note This editor is not supported and will not be present in the generated schema :::
+{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Member Group Picker
 
 **Editor Alias**: `Umbraco.MemberGroupPicker`\
-:::note This editor is not supported and will not be present in the generated schema :::
+{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Multi Url Picker
 
@@ -199,7 +199,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Can be used for filtering**: `true`
 
 **Node type**: `Member`\
-:::note This editor configuration is not supported and will not be present in the generated schema :::
+{% hint style="info" %} This editor configuration is not supported and will not be present in the generated schema {% endhint %}
 
 ## Nested Content
 
@@ -262,4 +262,4 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## User Picker
 
 **Editor Alias**: `Umbraco.UserPicker`\
-:::note This editor is not supported and will not be present in the generated schema :::
+{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}

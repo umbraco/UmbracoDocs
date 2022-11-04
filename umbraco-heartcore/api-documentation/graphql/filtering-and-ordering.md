@@ -200,11 +200,11 @@ query {
 
 We can then use the `cursor` from the last item to get items that appear after that one. We can also request the `PageInfo` object which holds information on the start and end cursors and if there are more pages.
 
-:::note
+{% hint style="info" %}
 `first` can only be used in combination with `after`, and `last` can only used with `before`.
 
 Also `hasNextPage` is only populated when doing forward paging and `hasPreviousPage` is populated when doing backward paging.
-:::
+{% endhint %}
 
 ```graphql
 query {

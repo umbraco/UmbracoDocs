@@ -6,11 +6,11 @@ Umbraco HQ will regularly be adding new features to the CMS and new capabilities
 
 We follow semver in terms of versioning, which means you can be sure that existing APIs will continue to work as expected without breaking. If a breaking change is required then the major version will be incremented, but the previous major version will continue to work.
 
-:::note
+{% hint style="info" %}
 When making calls to the API, we recommend that you **use the `api-version` header to specify which version of the API you will be using**. If no version is specified the latest vesrion of the API will be used.
 
 Learn more about which versions of the API is available as well as what version each endpoint uses in the [Umbraco Heartcore API Documentation](https://our.umbraco.com/documentation/Umbraco-Heartcore/API-Documentation/).
-:::
+{% endhint %}
 
 When using our [Client Libraries](client-libraries/README.md), the `api-version` is handled as part of the library and generally not something you need to worry about.
 

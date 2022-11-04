@@ -52,7 +52,7 @@ A Module Alias can be configured under **Headless -> Custom Editors Configuratio
 
 ![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
 
-:::tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. :::
+{% endhint %}tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. {% endhint %}
 
 ## Accessing backoffice components
 
@@ -62,7 +62,7 @@ Using this library reduces breaking changes in the exposed API that would otherw
 
 Currently, the library is exposing only a few components but Feature Requests and Pull Requests are more than welcome.
 
-:::note The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias :::
+{% hint style="info" %} style="info" %} The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias {% endhint %}
 
 ## JSON Schema
 
@@ -144,4 +144,4 @@ Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creati
 
 ## Related articles
 
-* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md/) :::
+* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md/) {% endhint %}
