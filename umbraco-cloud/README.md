@@ -35,7 +35,7 @@ Tips on finding, identifying, and resolving issues.
 
 Anything else not covered above.
 
-## [Security](security/README.md)
+## [Security](security.md)
 
 Everything you need to know about the security on Umbraco Cloud.
 
