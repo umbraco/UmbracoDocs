@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: Umbraco Heartcore GraphQL Property Editors
 meta.Description: Documentation for Umbraco Heartcore GraphQL property editors and their types
 ---
@@ -28,7 +27,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Block List
 
 **Editor Alias**: `Umbraco.BlockList`\
-**GraphQL Type**: [`BlockListItem`](../Schema-Generation/#block-list-item) **Can be used for filtering**: `false`
+**GraphQL Type**: [`BlockListItem`](schema-generation.md#block-list-item) **Can be used for filtering**: `false`
 
 ## Checkbox
 
@@ -47,7 +46,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Editor Alias**: `Umbraco.ColorPicker`
 
 **Include labels?**: `true`\
-**GraphQL Type**: [`PickedColor`](../Schema-Generation/#picked-color)
+**GraphQL Type**: [`PickedColor`](schema-generation.md#picked-color)
 
 **Include labels?**: `false`\
 **GraphQL Type**: `String`\
@@ -56,7 +55,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Content Picker
 
 **Editor Alias**: `Umbraco.ContentPicker`\
-**GraphQL Type**: [`Content`](../Schema-Generation/#content)\
+**GraphQL Type**: [`Content`](schema-generation.md#content)\
 **Can be used for filtering**: \`true
 
 ## Date/Time
@@ -92,25 +91,25 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Form Picker
 
 **Editor Alias**: `UmbracoForms.FormPicker`\
-**GraphQL Type**: [`JSON`](../Schema-Generation/#json)\
+**GraphQL Type**: [`JSON`](schema-generation.md#json)\
 **Can be used for filtering**: `false`
 
 ## Google Maps Single Marker
 
 **Editor Alias**: `Our.Umbraco.GMaps`\
-**GraphQL Type**: [`OurUmbracoGMaps`](../Schema-Generation/#our-umbraco-gmaps)\
+**GraphQL Type**: [`OurUmbracoGMaps`](schema-generation.md#our-umbraco-gmaps)\
 **Can be used for filtering**: `false`
 
 ## Grid layout
 
 **Editor Alias**: `Umbraco.Grid`\
-**GraphQL Type**: [`JSON`](../Schema-Generation/#json)\
+**GraphQL Type**: [`JSON`](schema-generation.md#json)\
 **Can be used for filtering**: `false`
 
 ## Image Cropper
 
 **Editor Alias**: `Umbraco.ImageCropper`\
-**GraphQL Type**: [`ImageCropper`](../Schema-Generation/#image-cropper)\
+**GraphQL Type**: [`ImageCropper`](schema-generation.md#image-cropper)\
 **Can be used for filtering**: `false`
 
 ## Label
@@ -127,7 +126,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Markdown Editor
 
 **Editor Alias**: `Umbraco.MarkdownEditor`\
-**GraphQL Type**: [`HTML`](../Schema-Generation/#html)\
+**GraphQL Type**: [`HTML`](schema-generation.md#html)\
 **Can be used for filtering**: `false`
 
 ## Media Picker
@@ -135,11 +134,11 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Editor Alias**: `Umbraco.MediaPicker3`
 
 **Pick Multiple items**: `true`\
-**GraphQL Type**: [`[MediaWithCrops]`](../Schema-Generation/#media-with-crops)\
+**GraphQL Type**: [`[MediaWithCrops]`](schema-generation.md#media-with-crops)\
 **Can be used for filtering**: `false`
 
 **Pick Multiple items**: `false`\
-**GraphQL Type**: [`MediaWithCrops`](../Schema-Generation/#media-with-crops)\
+**GraphQL Type**: [`MediaWithCrops`](schema-generation.md#media-with-crops)\
 **Can be used for filtering**: `false`
 
 ## Media Picker (legacy)
@@ -147,11 +146,11 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Editor Alias**: `Umbraco.MediaPicker`
 
 **Pick Multiple items**: `true`\
-**GraphQL Type**: [`[Media]`](../Schema-Generation/#media)\
+**GraphQL Type**: [`[Media]`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
 **Pick Multiple items**: `false`\
-**GraphQL Type**: [`Media`](../Schema-Generation/#media)\
+**GraphQL Type**: [`Media`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
 ## Member Picker
@@ -170,10 +169,10 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 
 **Maximum number of items**: `1`\
-**GraphQL Type**: [`Link`](../Schema-Generation/#link) **Can be used for filtering**: `false`
+**GraphQL Type**: [`Link`](schema-generation.md#link) **Can be used for filtering**: `false`
 
 **Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Link]`](../Schema-Generation/#link) **Can be used for filtering**: `false`
+**GraphQL Type**: [`[Link]`](schema-generation.md#link) **Can be used for filtering**: `false`
 
 ## Multinode Treepicker
 
@@ -181,22 +180,22 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 **Node type**: `Content`\
 **Maximum number of items**: `1`\
-**GraphQL Type**: [`Content`](../Schema-Generation/#content)\
+**GraphQL Type**: [`Content`](schema-generation.md#content)\
 **Can be used for filtering**: `true`
 
 **Node type**: `Content`\
 **Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Content]`](../Schema-Generation/#content)\
+**GraphQL Type**: [`[Content]`](schema-generation.md#content)\
 **Can be used for filtering**: `true`
 
 **Node type**: `Media`\
 **Maximum number of items**: `1`\
-**GraphQL Type**: [`Media`](../Schema-Generation/#media)\
+**GraphQL Type**: [`Media`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
 **Node type**: `Media`\
 **Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Media]`](../Schema-Generation/#media)\
+**GraphQL Type**: [`[Media]`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
 **Node type**: `Member`\
@@ -205,7 +204,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Nested Content
 
 **Editor Alias**: `Umbraco.NestedContent`\
-**GraphQL Type**: [`[Element]`](../Schema-Generation/#element)\
+**GraphQL Type**: [`[Element]`](schema-generation.md#element)\
 **Can be used for filtering**: `false`
 
 ## Numeric
@@ -227,7 +226,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 ## Rich Text Editor
 
 **Editor Alias**: `Umbraco.TinyMCE`\
-**GraphQL Type**: [`HTML`](../Schema-Generation/#html)\
+**GraphQL Type**: [`HTML`](schema-generation.md#html)\
 **Can be used for filtering**: `false`
 
 ## Slider
@@ -235,7 +234,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Editor Alias**: `Umbraco.Slider`
 
 **Enable Range**: `true`\
-**GraphQL Type** [`DecimalRange`](../Schema-Generation/#decimal-range)\
+**GraphQL Type** [`DecimalRange`](schema-generation.md#decimal-range)\
 **Can be used for filtering**: `false`
 
 **Enable Range**: `false`\

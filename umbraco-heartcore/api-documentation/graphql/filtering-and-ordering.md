@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Filtering content in Umbraco Heartcore with GraphQL"
 meta.Description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 ---
@@ -8,7 +7,7 @@ meta.Description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 
 The GraphQL API allows for filtering and ordering root and traversion collections (ancestors, children and descendants).
 
-For information on the different filters available and how the filter ad order types are generated see [Schema Generation](../Schema-Generation#filtering).
+For information on the different filters available and how the filter ad order types are generated see [Schema Generation](schema-generation.md#filtering).
 
 ## Using filters
 

@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore Redirect"
 meta.Description: "Documentation for Heartcore Redirect APIs"
 ---

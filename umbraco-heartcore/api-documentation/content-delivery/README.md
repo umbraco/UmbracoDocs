@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore Content Delivery"
 meta.Description: "Documentation for Heartcore Content Delivery APIs"
 ---
@@ -29,10 +28,10 @@ Accept-Language: en-US
 GET https://cdn.umbraco.io/content?culture=en-US
 ```
 
-## [Content endpoints](content/)
+## [Content endpoints](content.md)
 
 Content endpoints for retrieving specific content by ID or URL. It is also possible to retrieve children, descendants and ancestors structured according to the Content tree structure.
 
-## [Media endpoints](media/)
+## [Media endpoints](media.md)
 
 Media endpoints for retrieving specific media by id. It is also possible getting children of a media folder structured according to the Media tree structure.

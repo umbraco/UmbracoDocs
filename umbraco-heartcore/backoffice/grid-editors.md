@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: Custom Grid Editors in Umbraco Heartcore
 meta.Description: Documentation for Custom Grid Editors in Umbraco Heartcore
 ---
@@ -69,7 +68,7 @@ Currently, the library is exposing only a few components but Feature Requests an
 
 A [JSON Schema](https://json-schema.org/) is used to describe how the value is stored and returned by the REST and GraphQL API.
 
-This allows for advanced configurations where, for example, an [UDI](https://our.umbraco.com/Documentation/Reference/Querying/UDI-identifiers/) is converted to a URL.
+This allows for advanced configurations where, for example, an [UDI](../../umbraco-cms/reference/querying/udi-identifiers.md) is converted to a URL.
 
 The default Schema looks like this:
 
@@ -142,8 +141,7 @@ If the library is missing any functionality, raise an issue on the [Heartcore is
 
 Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_shadow\_DOM).
 
-:::links
 
 ## Related articles
 
-* [Creating a Custom Grid Editor](../../Tutorials/Creating-A-Custom-Grid-Editor/) :::
+* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md/) :::

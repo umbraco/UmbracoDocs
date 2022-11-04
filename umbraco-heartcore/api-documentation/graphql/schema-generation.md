@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore GraphQL Schema Generation"
 meta.Description: "Documentation for Umbraco Heartcore GraphQL schema generation"
 ---
@@ -24,7 +23,7 @@ The type name is the Content Type's alias in Pascal Case, e.g. if a Content Type
 
 The types generated depends on how the Content Types are configured.
 
-If a Content Type is used as a [Composition](../../../../Getting-Started/Data/Defining-content/#creating-a-document-type) it will be generated as an interface
+If a Content Type is used as a [Composition](../../../umbraco-cms/fundamentals/data/defining-content.md#creating-a-document-type) it will be generated as an interface
 
 ```graphql
 interface NavigationBase {
@@ -87,9 +86,9 @@ type ProductEdge {
 
 ## Fields
 
-All properties on a Content Type is generated as a field on the GraphQL type. See the [Property Editors](../Property-Editors) page for which types the editors are returning.
+All properties on a Content Type is generated as a field on the GraphQL type. See the [Property Editors](property-editors.md) page for which types the editors are returning.
 
-If a property is marked as [Allow varying by culture](../../../../Getting-Started/Backoffice/Variants/), a `culture` argument is added to that field. The argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
+If a property is marked as [Allow varying by culture](../../../umbraco-cms/fundamentals/backoffice/variants.md), a `culture` argument is added to that field. The argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
 
 ```graphql
 type Product implements Content & NavigationBase {
@@ -282,7 +281,7 @@ List of reserved Media Type Property names, these cannot be used as a Property `
 
 The Umbraco Heartcore GraphQL schema contains some default types, below you can find a list of these types.
 
-The [Property Editors](../Property-Editors/) page contains a list of all the Property Editors and which GraphQL types they return.
+The [Property Editors](property-editors.md) page contains a list of all the Property Editors and which GraphQL types they return.
 
 ### Block List Item
 

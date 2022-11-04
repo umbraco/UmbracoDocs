@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Creating a Custom Grid Editor"
 meta.Description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 ---
@@ -403,7 +402,7 @@ Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 * Go to the **Settings** section.
 * Exapnd the **Headless** node.
-* Open the [API Browser](../../Getting-Started-Cloud/API-Browser/)
+* Open the [API Browser](../getting-started/api-browser.md/)
 * Type in `https://cdn.umbraco.io/content/<CONTENT_ID>` in the Explorer URL bar, replacing `<CONTENT-ID>` with the id we copied before.
 * Click **Go!**.
 
@@ -471,6 +470,6 @@ Besides the `uri-reference` format there's also `rich-text`. This is useful when
 
 :::links
 ## Related articles
-- [Custom Grid Editors](../../Backoffice/Grid-Editors/)
+- [Custom Grid Editors](../Backoffice/grid-editors.md)
 :::
 
