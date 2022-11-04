@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Forms configuration"
 meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
 ---
@@ -121,25 +119,31 @@ This configuration value expects a `true` or `false` value and can be used to to
 This setting controls the maximum number of columns that can be created by editors when they configure groups within a form. The default value used if the setting value is not provided is 12.
 
 ### DefaultTheme
+
 This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
 ### DefaultEmailTemplate
+
 When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
 If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
 
 ### RemoveProvidedEmailTemplate
+
 From Forms 10.2, the provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
 ### RemoveProvidedFormsTemplates
+
 Similarly, from Forms 10.2, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
 
 ### FormElementHtmlIdPrefix
+
 By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, from Forms 10.2, the attribute values can be prefixed with the value provided in this configuration element.
 
 For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
 
 ### SettingsCustomization
+
 Forms 10.2 introduced the ability to configure settings for the field, workflow, data source, and prevalue sources.  The default behavior, when a new field or workflow is added to a form, is for each setting to be empty. The values are then completed by the editor.  All settings defined on the type are displayed for entry.
 
 In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
@@ -194,7 +198,7 @@ Here an organization-approved reCAPTCHA score threshold is defined, that can't b
   }
 ```
 
-In order to configure this setting, you will need to know the GUID or alias for the type and the property name for each setting. You can find [these values for the built-in Forms types here](./type-details.md).
+In order to configure this setting, you will need to know the GUID or alias for the type and the property name for each setting. You can find [these values for the built-in Forms types here](type-details.md).
 
 Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
@@ -278,13 +282,13 @@ This configuration key is *experimental* and will allow Workflows to be executed
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
-:::note
+{% hint style="info" %}
 There was a typo in this setting where it had been named as `AllowEditableFormSubmissions`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
-:::
+{% endhint %}
 
-:::warning
+{% hint style="warning" %}
 Enable this feature ONLY if you understand the security implications.
-:::
+{% endhint %}
 
 ### AppendQueryStringOnRedirectAfterFormSubmission
 
@@ -293,6 +297,7 @@ When redirecting following a form submission, a `TempData` value is set that is 
 By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### CultureToUseWhenParsingDatesForBackOffice
+
 This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups.
 
 When Umbraco Forms stores data for a record, it saves the values submitted for each field into a dedicated table for each type (string, date etc.). It also saves a second copy of the record in a JSON structure which is more suitable for fast look-up and display in the backoffice. Date values are serialized using the culture used by the front-end website when the form entry is stored.
@@ -348,18 +353,22 @@ In certain circumstances, including hosting pages with forms in IFRAMEs from oth
 This setting needs to be a `true` or `false` value and controls whether password fields provided in forms will be saved to the database. Defaults to `false`.
 
 ### DisableFileUploadAccessProtection
+
 In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
 ### DefaultAccessToNewForms
+
 In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
 the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
 
 ### ManageSecurityWithUserGroups
+
 Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
 
 ### GrantAccessToNewFormsForUserGroups
+
 Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
 There are two "special" values that can be applied within or instead of the comma-separated list.
@@ -397,7 +406,3 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 #### DataTypeId
 
 Sets the Data Type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text Data Type created by Umbraco on a new install is used.
-
----
-
-Prev: [Extending](../Extending/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Security](../Security/index.md)

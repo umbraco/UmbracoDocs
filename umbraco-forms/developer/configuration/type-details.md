@@ -1,5 +1,4 @@
 ---
-versionFrom: 10.0.0
 meta.Title: "Forms Provider Type Details"
 meta.Description: "Provides details of the built-in provider types available with Umbraco Forms"
 ---
@@ -98,7 +97,6 @@ The intention is to be able to make available details such as IDs, aliases and p
 **Settings:**
 
 - `Placeholder`
-
 
 ### reCAPTCHA 2
 

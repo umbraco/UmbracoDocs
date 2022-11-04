@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Adding a Prevalue Source Type to Umbraco Forms
 
 The following example shows an illustrative custom prevalue source type that returns a hard-coded list of values. It can be extended for your needs via injection of services via the constructor. Dynamic settings can be applied and validated as shown in the [Validate type settings with ValidateSettings()](adding-a-type#validate-type-settings-with-validatesettings) article.

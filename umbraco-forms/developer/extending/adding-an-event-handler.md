@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Adding Notification Handlers in Umbraco Forms"
 meta.Description: "See an example of validating a form server-side"
 ---
@@ -81,7 +79,7 @@ public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder 
 
 ## Service notifications
 
-The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` trigger following notifications just before or after an entity handled by the service is modified.
+The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` trigger following notifications before or after an entity handled by the service is modified.
 
 The "-ing" events allow for the entity being changed to be modified before the operation takes place, or to cancel the operation.  The "-ed" events fire after the update is complete.
 

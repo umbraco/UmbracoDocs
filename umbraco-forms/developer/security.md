@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
 meta.Title: "Umbraco Forms security"
 meta.Description: "How to secure access to Umbraco Forms data and functionality."
 ---
@@ -77,7 +75,3 @@ In introducing the user group based permissions we've taken care to ensure a mig
 - If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
 
 ![User group permissions](images/user-group-permissions.png)
-
----
-
-Prev: [Configuration](../Configuration/index.md) &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Next: [Magic Strings](../Magic-Strings/index.md)

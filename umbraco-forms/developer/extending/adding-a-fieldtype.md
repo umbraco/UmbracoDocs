@@ -1,12 +1,10 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Adding a field type to Umbraco Forms"
 ---
 
 # Adding a field type to Umbraco Forms #
 
-*This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
+*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
 
 ## C#
 
@@ -102,7 +100,7 @@ This will be rendered when the default theme is used.
 
 If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files in there.
 
-For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../Installation/Version-Specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../../Developer/Themes/index.md) article.
+For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../installation/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../../developer/themes.md) article.
 
 ## Umbraco backoffice view
 
