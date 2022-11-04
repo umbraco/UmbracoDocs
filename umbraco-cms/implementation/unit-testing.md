@@ -1,13 +1,13 @@
 ---
-meta.Title: "Unit Testing Umbraco"
-meta.Description: "A guide to getting started with unit testing in Umbraco"
+meta.Title: Unit Testing Umbraco
+meta.Description: A guide to getting started with unit testing in Umbraco
 ---
 
 # Unit Testing Umbraco
 
 These examples are for Umbraco 9.x and 10.x and they rely on [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4) and [AutoFixture](https://github.com/AutoFixture/AutoFixture) and they should be considered inspiration of how to get started with Unit Testing in Umbraco. There are many ways of testing Umbraco and there’s no right or wrong way.
 
-When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
+When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](broken-reference). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
 {% hint style="info" %}
 When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
@@ -20,8 +20,7 @@ These tests follows an approach thats based on isolating your tests from Umbraco
 Once you get familiar with these underlying dependencies you might want to start looking in to replacing them with actual implementations (leaning more towards integration or E2E testing) but that’s completely up to you. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
 
 {% hint style="info" %}
-If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. 
-For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
+If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
 {% endhint %}
 
 ### Testing a ContentModel
@@ -60,7 +59,7 @@ public class PageViewModelTests
 
 ### Testing a RenderController
 
-See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](../reference/routing/custom-controllers.md#creating-a-custom-controller).
+See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](broken-reference).
 
 ```csharp
 public class PageController : RenderController
@@ -115,7 +114,7 @@ public class PageControllerTests
 
 ### Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](../reference/routing/surface-controllers/).
+See [Reference documentation on SurfaceControllers](broken-reference).
 
 ```csharp
 public class PageSurfaceController : SurfaceController
@@ -158,15 +157,14 @@ public class PageSurfaceControllerTests
 ```
 
 {% hint style="info" %}
-```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
+`ServiceContext.CreatePartial()` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
 ## Testing an UmbracoApiController
 
-See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
+See [Reference documentation on UmbracoApiControllers](broken-reference).
 
 ```csharp
-
 public class ProductsController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()
@@ -209,10 +207,10 @@ public class ProductsControllerTests
         Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
     }
 }
-
 ```
 
 ## Testing ICultureDictionary using the UmbracoHelper
+
 See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp

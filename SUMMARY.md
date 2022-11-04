@@ -1,8 +1,8 @@
 # Table of contents
 
-* [Format Tests](README.md)
-* [README](<README (1).md>)
+* [Umbraco Documentation](README.md)
 * [The Licensing Model](the-licensing-model.md)
+* [Format Tests](<README (1).md>)
 
 ## Getting Started
 
@@ -70,7 +70,7 @@
     * [Sections](umbraco-cms/extending/section-trees/sections.md)
     * [Trees](umbraco-cms/extending/section-trees/trees/README.md)
       * [Tree Actions](umbraco-cms/extending/section-trees/trees/tree-actions.md)
-* [Umbraco Fundamentals](umbraco-cms/fundamentals/README.md)
+* [Umbraco Fundamentals](umbraco-cms/umbraco-fundamentals/README.md)
   * [Backoffice overview](umbraco-cms/fundamentals/backoffice/README.md)
     * [Content Templates](umbraco-cms/fundamentals/backoffice/content-templates.md)
     * [Infinite Editing](umbraco-cms/fundamentals/backoffice/infinite-editing.md)
@@ -79,7 +79,7 @@
     * [Sections](umbraco-cms/fundamentals/backoffice/sections.md)
     * [Language Variants](umbraco-cms/fundamentals/backoffice/variants.md)
     * [Property Editors](umbraco-cms/fundamentals/backoffice/property-editors/README.md)
-      * [Built-in Umbraco Property Editors](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/README.md)
+      * [Built-in Umbraco Property Editors](umbraco-cms/umbraco-fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
         * [Checkbox List](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/checkBox-list.md)
         * [Color Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/color-picker.md)
         * [Content Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/content-picker.md)
@@ -200,7 +200,7 @@
     * [Umbraco's request pipeline](umbraco-cms/implementation/default-routing/inbound-pipeline.md)
   * [Services and Helpers](umbraco-cms/implementation/services/README.md)
     * [Circular Dependencies](umbraco-cms/implementation/services/circular-dependencies.md)
-* [Developers' Reference](umbraco-cms/reference/README.md)
+* [Developers' Reference](umbraco-cms/developers-reference/README.md)
   * [API Documentation](umbraco-cms/reference/api-documentation.md)
   * [Common Pitfalls & Anti-Patterns](umbraco-cms/reference/common-pitfalls-v11.md)
   * [Common Pitfalls & Anti-Patterns](umbraco-cms/reference/common-pitfalls.md)

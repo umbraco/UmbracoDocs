@@ -63,7 +63,7 @@ In the [Settings](../../set-up/project-settings.md) section, you will find a lot
 
 ### Manage Subscriptions
 
-Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../set-up/manage-subscriptions/README.md) article.
+Umbraco Cloud subscriptions are managed from the Umbraco Shop, which can be accessed through [umbraco.com](https://umbraco.com) or by following the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subcriptions](../../set-up/manage-subscriptions/) article.
 
 ### Pending Invites
 
@@ -73,7 +73,7 @@ On Umbraco Cloud, you can receive an invitation from different projects. These p
 
 ### Organizations
 
-On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](../the-umbraco-cloud-portal/organizations.md) article.
+On Umbraco Cloud, it is possible to get an organization to manage the projects that you and members of your company create to get an overview of all your projects. Find out more in the [Organization](organizations.md) article.
 
 ### Profile
 
@@ -82,7 +82,11 @@ The Profile consists of the following information:
 ![settings](images/profile.png)
 
 * Name: The name that is displayed on Umbraco Cloud.
-* Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal. {% hint style="info" %} It is not possible to change this email address at a later point. {% endhint %}
+*   Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
+
+    {% hint style="info" %}
+    It is not possible to change this email address at a later point.
+    {% endhint %}
 * Telephone: The contact number of the user.
 * Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile. ![Edit profile](images/change-profile-info.png)
 * Change Password: Change the password for your Umbraco Cloud account from here. ![change password](images/change-password.png)

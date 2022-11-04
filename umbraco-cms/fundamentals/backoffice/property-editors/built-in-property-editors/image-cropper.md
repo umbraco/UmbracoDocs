@@ -8,7 +8,7 @@ When the Image Cropper is used on a Media Type the crops are shared between all 
 
 If the Image Cropper is used on a Document Type, the file and crops will be **local** to the Document.
 
-Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](media-picker-3.md).
+Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](broken-reference).
 
 ## Settings
 
@@ -28,9 +28,9 @@ By default, images in the Image Cropper will be shown based on a set focal point
 
 The Image Cropper comes with 3 modes:
 
-- Uploading an image
-- Setting a focal point
-- Cropping the image to predefined crops
+* Uploading an image
+* Setting a focal point
+* Cropping the image to predefined crops
 
 ### Uploading images
 
@@ -66,7 +66,6 @@ For rendering a cropped media item, the `.GetCropUrl` is used:
 
 ```html
 <img src="@Url.GetCropUrl(Model.Photo,"square", true)" />
-
 ```
 
 The third parameter is `HtmlEncode` and is by default set to true. This means you only need to define the parameter if you want to disable HTML encoding.
@@ -113,7 +112,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](../../../../reference/management/services/contentservice/README.md).
+To update a content property value you need the [Content Service](../../../../reference/management/services/contentservice/).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 
@@ -307,7 +306,6 @@ public Dictionary<string, string> GetCropUrls(IPublishedContent image)
     return cropUrls;
 }
 ```
-
 {% endtab %}
 
 {% tab title="Umbraco 9" %}

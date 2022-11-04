@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.4.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Content Settings"
-meta.Description: "Information on the content settings section"
+meta.Title: Umbraco Content Settings
+meta.Description: Information on the content settings section
 ---
 
 # Content Settings
@@ -106,11 +106,11 @@ If greater control is required than available from the above, this setting can b
 
 ### Disable delete when referenced
 
-This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the _Delete_ button.
 
 ### Disable unpublish when referenced
 
-This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.
+This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the _Unpublish_ button.
 
 ### Disallowed upload files
 
@@ -128,6 +128,7 @@ In case of a 404 error (page not found) Umbraco can return a default page instea
   }
 ]
 ```
+
 The above example shows what you need to do if you only have a single site that needs to show a custom 404 page. You specify which node that should be shown when a request for a non-existing page is being made. You can specify the node in three ways:
 
 1. Enter the nodes **id** (`"ContentId": 1`)
@@ -135,11 +136,9 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter the XPath to find the node (`"ContentXPath": "/root/Home//TextPage[@urlName = 'error404'"`)
 
 {% hint style="info" %}
-
-- Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
-- GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
-- When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
-
+* Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
+* GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
+* When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
 {% endhint %}
 
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
@@ -175,11 +174,11 @@ You can specify your own image for the small logo in the top left corner of the 
 This setting allows you to specify how errors in macros should be handled.
 
 Options:
+
 * Inline - Default Umbraco behavior, show an inline error within the macro but allow the page to continue rendering.
 * Silent - Silently suppress the error and do not display the offending macro.
 * Throw - Throw an exception.
 * Content - Silently suppress the error, and display custom content reported in the error event args.
-
 
 ### Preview badge
 
@@ -199,14 +198,13 @@ This setting is used for controlling whether or not the data types marked as obs
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
 
-
 ## ContentVersionCleanupPolicy
 
 The global settings for the scheduled job which cleans up historic content versions, these settings can be overridden per document type.
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md) for more details on overriding configuration and preventing cleanup of specific versions.
+See [Content Version Cleanup](broken-reference) for more details on overriding configuration and preventing cleanup of specific versions.
 
 ```json
 "ContentVersionCleanupPolicy": {
@@ -235,7 +233,6 @@ All versions that fall in this period will be kept.
 For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
-
 
 ## Imaging
 
@@ -289,7 +286,7 @@ If you need to create a custom Media Document Type to handle images called somet
   ]
 }
 ```
+
 ## Notifications
 
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](globalsettings/) for more information.
-

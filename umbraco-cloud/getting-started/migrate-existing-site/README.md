@@ -1,21 +1,19 @@
-
 # Migrating an Existing Site to Umbraco Cloud
 
-Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site.
-Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
+Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
 
 Migrating an existing site requires some specific steps and an understanding of how Umbraco Cloud deployments work can be helpful.
 
 These are the steps you need to go through to complete the migration successfully:
 
-1. [Requirements](#1-requirements)
-2. [Tools](#2-tools)
-3. [Prepare your site](#3-prepare-your-site)
-4. [Prepare your Cloud project](#4-prepare-your-cloud-project)
-5. [Clone down the Cloud project](#5-clone-down-the-cloud-project)
-6. [Move and Merge files](#6-move-and-merge-files)
-7. [Generate meta data](#7-generate-meta-data)
-8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
+1. [Requirements](./#1-requirements)
+2. [Tools](./#2-tools)
+3. [Prepare your site](./#3-prepare-your-site)
+4. [Prepare your Cloud project](./#4-prepare-your-cloud-project)
+5. [Clone down the Cloud project](./#5-clone-down-the-cloud-project)
+6. [Move and Merge files](./#6-move-and-merge-files)
+7. [Generate meta data](./#7-generate-meta-data)
+8. [Deploy to Umbraco Cloud](./#8-deploy-to-umbraco-cloud)
 
 ## Video tutorial
 
@@ -66,11 +64,11 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some [Upgrade instructions](../../../umbraco-cms/fundamentals/setup/upgrading/general.md) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](broken-reference) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](../../../umbraco-forms/installation/manualupgrade.md).
 
-After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
+After upgrading your project make sure it runs without any errors. _Hint: Check the umbracoTraceLog.txt log file._
 
 ### Cleaning your project
 
@@ -99,7 +97,7 @@ Before the migration process can start, you will need to have a Umbraco Cloud pr
 ![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
-2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful
+2. When your project is starting choose to start with a _clean slate_ - you need to have an empty Cloud project for the migration to be successful
 3. We recommend that you set up your project with at least two environments.
 
 ![Manage environments](images/setup-dev-env.png)
@@ -109,8 +107,8 @@ Have you been working with members and made changes to the default Member Type o
 Follow these steps on the Umbraco Cloud environment:
 
 1. Head to the backoffice of the Development environment
-2. Navigate to the *Settings* section
-3. Open the *Member types* folder
+2. Navigate to the _Settings_ section
+3. Open the _Member types_ folder
 4. Delete **Member**
 5. Repeat these steps on all the Cloud environments
 
@@ -131,20 +129,16 @@ Run the site locally and verify your project and the cloned Umbraco Cloud projec
 Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlined below you mustn't overwrite any settings and configurations related to Umbraco Deploy.
 
 1. Copy and replace the following folders from your project with the Umbraco Cloud project
-
-    * `/wwwroot`
-    * `/Views`
-    * `/Umbraco
-    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
+   * `/wwwroot`
+   * `/Views`
+   * \`/Umbraco
+   * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
 2. Merge Appsettings.JSON files from your existing site with the cloud site.
-
-    * Make sure that you merge your Appsetting.JSON files with the ones from your existing site so that the settings you used are moved over to your Cloud project
-
+   * Make sure that you merge your Appsetting.JSON files with the ones from your existing site so that the settings you used are moved over to your Cloud project
 3. Merge your Program.cs and Startup.cs with the one from your existing site
-
 4. If you are using SQLite
-    * Make sure the `Umbraco.sqlite.db`, `Umbraco.sqlite.db-shm` and `Umbraco.sqlite.db-wal` files from your project replaces the ones provided with your Umbraco Cloud project
-    * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
+   * Make sure the `Umbraco.sqlite.db`, `Umbraco.sqlite.db-shm` and `Umbraco.sqlite.db-wal` files from your project replaces the ones provided with your Umbraco Cloud project
+   * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
 5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
 That's it! Now that you've merged your existing site with the local clone of the Cloud project, make sure the project runs and verify that
@@ -194,12 +188,12 @@ All project files have been merged and we've generated UDA files for all the met
 
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
-3. Do a *pull* to ensure everything is in sync
-4. **Push** your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
-    * If you have a very large commit to push, you may need to configure your Git client for this
-    * Use: git config http.postBuffer 524288000
+3. Do a _pull_ to ensure everything is in sync
+4. **Push** your migrated project to the Umbraco Cloud environment - check that the _'Deploy Complete'_ message is displayed
+   * If you have a very large commit to push, you may need to configure your Git client for this
+   * Use: git config http.postBuffer 524288000
 
-When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*.
+When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still _green_.
 
 Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 
@@ -209,14 +203,16 @@ Go to the backoffice of your Development environment and make sure all your meta
 
 1. With all your metadata in place, it's time to transfer your content and media as well
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
-3. Right-click the top of the Content tree and choose *'Queue for transfer'*
-    * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
-    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../set-up/media/README.md).
+3. Right-click the top of the Content tree and choose _'Queue for transfer'_
+   * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
+   * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../set-up/media/).
 
-    {% hint style="info" %}
-    Records from the Redirect URL Management are not transferred by deploy.
-    You will need to manually migrate them using SQL.
-    {% endhint %}
+{% hint style="info" %}
+```
+Records from the Redirect URL Management are not transferred by deploy.
+You will need to manually migrate them using SQL.
+```
+{% endhint %}
 
 ![Queue for transfer](images/transfer-v9.gif)
 
@@ -224,4 +220,4 @@ Go to the backoffice of your Development environment and make sure all your meta
 
 The final step is to deploy the migration to the next environment - Staging or Live.
 
-You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice following the steps outlined above.
+You do this from the Umbraco Cloud Portal, using the green button on your Development environment _'Deploy changes to Staging/Live'_. Transfer content and media from the backoffice following the steps outlined above.

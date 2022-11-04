@@ -1,6 +1,8 @@
 ---
-meta.Title: "Property editors"
-meta.Description: "A Property editor is the editor that a Data Type references, and it's defined in a JSON manifest file and an associated JavaScript file."
+meta.Title: Property editors
+meta.Description: >-
+  A Property editor is the editor that a Data Type references, and it's defined
+  in a JSON manifest file and an associated JavaScript file.
 ---
 
 # Property Editors
@@ -17,8 +19,8 @@ Umbraco comes pre-installed with many useful property editors.
 
 ## More information
 
-- [Customizing Data Types](../../data/data-types/)
+* [Customizing Data Types](broken-reference)
 
 ## Tutorials
 
-- [How to create a custom Property Editor](../../../tutorials/creating-a-property-editor/)
+* [How to create a custom Property Editor](../../../tutorials/creating-a-property-editor/)

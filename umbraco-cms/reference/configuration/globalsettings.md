@@ -1,7 +1,7 @@
 ---
 versionFrom: 10.0.0
-meta.Title: "Umbraco Global Settings"
-meta.Description: "Information on the global settings section"
+meta.Title: Umbraco Global Settings
+meta.Description: Information on the global settings section
 ---
 
 # Global Settings
@@ -181,7 +181,7 @@ If enabled Umbraco will try to automatically install the database when it's miss
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](../../fundamentals/setup/server-setup/load-balancing/file-system-replication.md) occurs. This will save 1 database call during startup.
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](broken-reference) occurs. This will save 1 database call during startup.
 
 ### Database factory version
 
@@ -197,9 +197,9 @@ Specifies the implementation of IMainDomLock to be used.
 
 Available options:
 
-+ `"FileSystemMainDomLock"`- Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
-+ `"MainDomSemaphoreLock"` - Windows only, uses a named system Semaphore with a `maximumCount` of 1 to control acquisition of MainDom status.
-+ `"SqlMainDomLock"` - Available cross-platform, uses the database to control acquisition of MainDom status.
+* `"FileSystemMainDomLock"`- Available cross-platform, uses lock files written to LocalTempPath to control acquisition of MainDom status.
+* `"MainDomSemaphoreLock"` - Windows only, uses a named system Semaphore with a `maximumCount` of 1 to control acquisition of MainDom status.
+* `"SqlMainDomLock"` - Available cross-platform, uses the database to control acquisition of MainDom status.
 
 The default implementation unless configured otherwise is `FileSystemMainDomLock`.
 
@@ -213,19 +213,15 @@ The MainDomKey is by default comprised of the server's machine name & the applic
 
 This is generally all that is required to control MainDom status as starting a new process for the same application on the same server will result in a matching MainDomKey. This will then require that an existing instance yields MainDom status to the new process.
 
-Deployment slots for a given Azure App Service share the same machine name. Without additional configuration, they will share a MainDomKey and therefore compete for MainDom status. This can be undesirable if attempting to deploy to a deployment slot followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots and can re-acquire MainDom status.
-See [What happens during a swap](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#what-happens-during-a-swap).
+Deployment slots for a given Azure App Service share the same machine name. Without additional configuration, they will share a MainDomKey and therefore compete for MainDom status. This can be undesirable if attempting to deploy to a deployment slot followed by a swap with the production slot as once traffic has switched to the new instance the old production instance reboots and can re-acquire MainDom status. See [What happens during a swap](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#what-happens-during-a-swap).
 
-To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as a slot-specific configuration
-to prevent the slots from competing for MainDom status.
+To prevent this from occurring you can specify a MainDomKeyDiscriminator which should be set as a slot-specific configuration to prevent the slots from competing for MainDom status.
 
-It's worth noting that during the swap operation there is a period where both instances will share the same
-configuration and at this point, the old instance will yield MainDom status to the new instance.
+It's worth noting that during the swap operation there is a period where both instances will share the same configuration and at this point, the old instance will yield MainDom status to the new instance.
 
 ### Main dom release signal polling interval
 
-Gets or sets the duration (in milliseconds) for which the MainDomLock release signal polling task should sleep.
-The default value is 2000ms.
+Gets or sets the duration (in milliseconds) for which the MainDomLock release signal polling task should sleep. The default value is 2000ms.
 
 ### Id
 
@@ -327,8 +323,8 @@ Gets or sets a value representing the DistributedLockingMechanism to use.
 
 Valid values:
 
-- `"SqlServerDistributedLockingMechanism"`
-- `"SqliteDistributedLockingMechanism"`
+* `"SqlServerDistributedLockingMechanism"`
+* `"SqliteDistributedLockingMechanism"`
 
 ### Distributed Read Lock DefaultTimeout
 

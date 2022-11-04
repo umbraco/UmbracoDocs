@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Runtime Settings"
-meta.Description: "Information on the runtime settings section"
+meta.Title: Umbraco Runtime Settings
+meta.Description: Information on the runtime settings section
 ---
 
 # Runtime settings
@@ -27,4 +27,4 @@ An example of a configuration could look something like:
 
 `Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`.
 
-For more information, see the [Runtime modes](../../fundamentals/setup/server-setup/runtime-modes.md) article.
+For more information, see the [Runtime modes](broken-reference) article.

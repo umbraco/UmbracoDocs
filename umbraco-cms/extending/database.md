@@ -1,7 +1,7 @@
 ---
 versionFrom: 10.0.0
-meta.Title: "Umbraco Database"
-meta.Description: "A guide to creating a custom Database table in Umbraco"
+meta.Title: Umbraco Database
+meta.Description: A guide to creating a custom Database table in Umbraco
 ---
 
 # Creating a Custom Database Table
@@ -9,7 +9,7 @@ meta.Description: "A guide to creating a custom Database table in Umbraco"
 It is possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
 
 {% hint style="info" %}
-If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method as was available in that version.  You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../implementation/composing.md) article.
+If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method as was available in that version. You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../implementation/composing.md) article.
 {% endhint %}
 
 The end result looks like this:
@@ -254,17 +254,15 @@ namespace MyNamespace
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Using a Notification Handler
 
-If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
+If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](broken-reference).
 
 The code for this approach is as follows:
 
 {% tabs %}
 {% tab title="Latest version" %}
-```C#
+```
 using Microsoft.Extensions.Logging;
 using NPoco;
 using Umbraco.Cms.Core;
@@ -330,7 +328,7 @@ namespace MyNamespace
 {% endtab %}
 
 {% tab title="Umbraco 9" %}
-```C#
+```
 using Microsoft.Extensions.Logging;
 using NPoco;
 using Umbraco.Cms.Core;
@@ -398,7 +396,7 @@ namespace MyNamespace
 
 The notification handler can either be registered in a composer:
 
-```C#
+```
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -417,7 +415,7 @@ namespace TableMigrationTest
 
 Or in an extension method called from `StartUp.cs` as is preferred:
 
-```C#
+```
 using System.Linq;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -435,7 +433,7 @@ namespace MyNamespace
 }
 ```
 
-```C#
+```
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -465,14 +463,13 @@ namespace MyNamespace
         ...
     }
 }
-
 ```
 
 ## Which to use?
 
-In short, it's up to you.  If you are migrating from version 8 and want the quickest route to getting running with the latest version, then using a component makes sense.
+In short, it's up to you. If you are migrating from version 8 and want the quickest route to getting running with the latest version, then using a component makes sense.
 
-You will be using the notification pattern elsewhere. This could be when responding to Umbraco events that run many times in the lifetime of the application, like when content is saved.  And so you may also prefer to align with that pattern for start-up events.
+You will be using the notification pattern elsewhere. This could be when responding to Umbraco events that run many times in the lifetime of the application, like when content is saved. And so you may also prefer to align with that pattern for start-up events.
 
 It is also worth noting that components offer both `Initialize` and `Terminate` methods. With these you will need to handle two notifications to do the same with the notification handler approach (`UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`). A single handler class can be used for both notifications though.
 

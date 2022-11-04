@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
-meta.Title: "Macro Parameter Editors"
-meta.Description: "A guide to creating macro property editors in Umbraco"
+meta.Title: Macro Parameter Editors
+meta.Description: A guide to creating macro property editors in Umbraco
 ---
 
 # Macro Parameter Editors
@@ -10,7 +10,7 @@ meta.Description: "A guide to creating macro property editors in Umbraco"
 The samples in this article has not been verified against the latest version of Umbraco.
 {% endhint %}
 
-Every macro can contain parameters. Options for the Editor to set when they insert the Macro to customise the output. There are some useful default types.  For example:
+Every macro can contain parameters. Options for the Editor to set when they insert the Macro to customise the output. There are some useful default types. For example:
 
 * True/False
 * TextBox
@@ -20,7 +20,7 @@ Every macro can contain parameters. Options for the Editor to set when they inse
 * Single/Multiple Content Picker
 * ... and some 'others'
 
-Consult the [Backoffice documentation](../fundamentals/backoffice/) for general information on Macros.
+Consult the [Backoffice documentation](broken-reference) for general information on Macros.
 
 It is possible to create custom macro parameter types.
 
@@ -63,7 +63,6 @@ However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues'
     }
   ]
 }
-
 ```
 
 This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configurations in each instance.

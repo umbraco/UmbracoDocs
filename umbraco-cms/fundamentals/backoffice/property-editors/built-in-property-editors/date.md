@@ -25,7 +25,7 @@ The only setting that is available for manipulating the Date property is to set 
 ### Dynamic (Obsolete)
 
 {% hint style="warning" %}
-See [Common pitfalls](../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](broken-reference) for more information about why the dynamic approach is obsolete.
 {% endhint %}
 
 ```csharp

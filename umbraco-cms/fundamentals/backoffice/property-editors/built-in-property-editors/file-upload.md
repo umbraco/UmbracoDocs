@@ -11,7 +11,7 @@ You can define which file types should be accepted through the upload field.
 {% hint style="info" %}
 For uploading and adding files and images to your Umbraco project, we recommend using the Media Picker.
 
-Find the full documentation for the property in the [Media Picker](media-picker-3.md) article.
+Find the full documentation for the property in the [Media Picker](broken-reference) article.
 {% endhint %}
 
 ## Data Type Definition Example
@@ -20,8 +20,7 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Content Example
 
-![Content Example Empty](images/content-example-empty.png)
-![Content Example](images/File-Upload-content-example.png)
+![Content Example Empty](images/content-example-empty.png) ![Content Example](images/File-Upload-content-example.png)
 
 In code, the property is a string, which references the location of the file.
 
@@ -58,13 +57,12 @@ Example: `"/media/o01axaqu/guidelines-on-remote-working.pdf"`
 {% hint style="info" %}
 The samples in this section have not been verified against the latest version of Umbraco.
 
-Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading files to your Umbraco website.
+Instead, we recommend using the [Media Picker](broken-reference) for uploading files to your Umbraco website.
 {% endhint %}
 
-See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/contentservice/README.md) and the [Media Service](../../../../reference/management/services/mediaservice.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/contentservice/) and the [Media Service](../../../../reference/management/services/mediaservice.md).
 
 ```csharp
-
 @using Umbraco.Cms.Core.IO
 @using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Strings

@@ -1,22 +1,21 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.title: "Scheduling with hosted services in Umbraco"
-meta.Description: "Use hosted services to run a background task"
+meta.title: Scheduling with hosted services in Umbraco
+meta.Description: Use hosted services to run a background task
 ---
 
 # Scheduling with RecurringHostedServiceBase
 
-In Umbraco 9 it is possible to run recurring code using a hosted service.
-Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes. 
+In Umbraco 9 it is possible to run recurring code using a hosted service. Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes.
 
 {% hint style="warning" %}
-Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
+Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](broken-reference) for more information
 {% endhint %}
 
 ## RecurringHostedService example
 
-```C#
+```
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -89,12 +88,12 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
         }
     }
 }
-
 ```
+
 {% hint style="info" %}
 If you are using an Umbraco version before v9.4 you can't pass in an instance of `ILogger` in to the base constructor. See the code example below:
 
-```C#
+```
 public CleanUpYourRoom(
     ...)
     : base(HowOftenWeRepeat, DelayBeforeWeStart)
@@ -108,7 +107,7 @@ public CleanUpYourRoom(
 
 First we need to create our extension method where we register the hosted service with `AddHostedService`:
 
-```C#
+```
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
@@ -127,7 +126,7 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
 
 Now we can invoke it in the `ConfigureServices` method in `Startup.cs`:
 
-```C#
+```
 public void ConfigureServices(IServiceCollection services)
 {
 #pragma warning disable IDE0022 // Use expression body for methods
@@ -145,7 +144,7 @@ public void ConfigureServices(IServiceCollection services)
 
 All we need to do here is to create the composer where we register the hosted service with `AddHostedService`, which will be run automatically:
 
-```C#
+```
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -160,12 +159,11 @@ namespace Umbraco.Docs.Samples.Web.RecurringHostedService
         }
     }
 }
-
 ```
 
 ## RecurringHostedServiceBase
 
-This class provides the base class for any hosted service. 
+This class provides the base class for any hosted service.
 
 You can override the `PerformExecuteAsync` method to implement the class. Hosted services are always run asynchronously.
 
@@ -179,7 +177,7 @@ In earlier versions of Umbraco, there were a series of events triggered by backg
 
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server you can exit out early.
 
-```C#
+```
 // Do not run the code on subscribers or unknown role servers
 // ONLY run for SchedulingPublisher server or Single server roles
 switch (_serverRoleAccessor.CurrentServerRole)

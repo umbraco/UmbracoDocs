@@ -2,6 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
+
 # Creating Pages and Using the Master Template - Part 2
 
 ## Creating a Contact Us Page
@@ -11,7 +12,7 @@ We are now going to create a page where we put our contact details. For added fu
 Some potential solutions:
 
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. Umbraco Forms has the added benefit that editors can also create their own forms. Find more information and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
-* Build your own contact form using [Surface Controllers](../../fundamentals/code/creating-forms.md).
+* Build your own contact form using [Surface Controllers](broken-reference).
 
 ### Creating the Document Type and Template
 
@@ -22,17 +23,17 @@ Let's create a content-only contact page where we can provide a title and some r
 3. Select **Document Type with Template**. The Document Type opens in the content editor.
 4. Select an **Icon** from the list of icons.
 5. Enter a **Name**. Let's call it _Simple Content Page_.
-6. Enter a Description.  
-7. Let's add two fields with the following specifications:
+6. Enter a Description.
+7.  Let's add two fields with the following specifications:
 
     | Group   | Field Name | Alias     | Data Type        |
-    |---------|------------|-----------|------------------|
+    | ------- | ---------- | --------- | ---------------- |
     | Content | Page Title | pageTitle | Textstring       |
     | Content | Body Text  | bodyText  | Rich Text Editor |
 
     ![Simple Content Page Template with Data Fields](images/figure-35-contact-us-template-with-data-fields-v8.png)
 8. Click **Save**.
-9. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.  
+9. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.
 10. Select the **Simple Content Page** template and then select **Master** as the **Master template**.
 11. Add the following HTML to the **Simple Content Page** template and click **Save**.
 
@@ -55,7 +56,6 @@ Let's create a content-only contact page where we can provide a title and some r
         </div>
     </section>        
     ```
-
 12. Click **Save**.
 
 ### Updating the Document Type Permissions
@@ -67,8 +67,7 @@ To update the Document Type permissions:
 1. Go to **Settings**.
 2. Open the **Homepage** Document Type and go to the **Permissions** tab.
 3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
-4. Select **Simple Content Page** and click **Save**.
-    ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child-v8.png)
+4. Select **Simple Content Page** and click **Save**. ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child-v8.png)
 
 ### Creating the content node
 
@@ -90,10 +89,10 @@ To add the Document Type properties:
 4. Click **Insert** and select **Value**.
 5. Select the **pageTitle** field from the drop-down list and click **Submit**.
 6. Repeat the same process for the `<div class="container">` tag:
-    1. Highlight the content from the `<p>` tag (around line 19) to the end of the `</p>` tag (around line 22).
-    2. Click **Insert** and select **Value**.
-    3. Select **bodyText** field from the drop-down list.
-    4. Click **Submit**.
+   1. Highlight the content from the `<p>` tag (around line 19) to the end of the `</p>` tag (around line 22).
+   2. Click **Insert** and select **Value**.
+   3. Select **bodyText** field from the drop-down list.
+   4. Click **Submit**.
 7. Click **Save**.
 
 ### Viewing the Contact Us Page
@@ -103,8 +102,7 @@ To view the **Contact Us** Page:
 1. Go to **Content**.
 2. Select the **Contact Us** page.
 3. Go to the **Info** tab.
-4. Click the link to view the page.
-    ![Viewing the Contact Us Page](images/figure-37-viewing-contact-us.png)
+4. Click the link to view the page. ![Viewing the Contact Us Page](images/figure-37-viewing-contact-us.png)
 
 ## Using Document Type Properties from the Homepage
 
@@ -120,4 +118,4 @@ To use the Document Type properties from the homepage, do the following:
 6. Click **Submit**.
 7. Click **Save**.
 
-Reload the *Contact Us* page to view the content with the footer.
+Reload the _Contact Us_ page to view the content with the footer.

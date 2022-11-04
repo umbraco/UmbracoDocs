@@ -7,8 +7,8 @@ versionTo: 10.0.0
 
 Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
 
-- [Getting started with Language Variants](../fundamentals/backoffice/variants.md)
-- [Rendering variant values](../fundamentals/design/rendering-content.md)
+* [Getting started with Language Variants](broken-reference)
+* [Rendering variant values](broken-reference)
 
 [`IPublishedContent`](querying/ipublishedcontent/) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
 

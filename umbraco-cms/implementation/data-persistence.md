@@ -4,8 +4,7 @@ _The Umbraco Services layer is used to query and manipulate Umbraco stored in th
 
 ## Dependency injection
 
-All services are available using their interfaces in the dependency injection container.
-ASP.NET Core supports dependency injection in almost every scenario.
+All services are available using their interfaces in the dependency injection container. ASP.NET Core supports dependency injection in almost every scenario.
 
 ### Constructors in classes
 
@@ -31,4 +30,4 @@ ASP.NET Core supports dependency injection in almost every scenario.
 
 There is a service for each type of data in Umbraco.
 
-[See here For a full list of services available](../reference/management/services/)
+[See here For a full list of services available](broken-reference)

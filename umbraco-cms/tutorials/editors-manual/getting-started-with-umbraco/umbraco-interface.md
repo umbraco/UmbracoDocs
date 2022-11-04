@@ -30,14 +30,14 @@ By default, there are two dashboards available:
 
 The following sections are available in the backoffice:
 
-- **Content** - allows to manage your content.
-- **Media** - allows to manage images and other media files.
-- **Settings** - allows to handle your meta data such as document types.
-- **Packages** - allows to manage and install packages.
-- **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../fundamentals/data/users.md) article.
-- **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../fundamentals/data/members.md) article.
-- **Forms** - allows to create and manage your forms.
-- **Translation** - allows to manage dictionary items.  
+* **Content** - allows to manage your content.
+* **Media** - allows to manage images and other media files.
+* **Settings** - allows to handle your meta data such as document types.
+* **Packages** - allows to manage and install packages.
+* **Users** - allows to manage the users on the project. To learn more about users, see the [Users](broken-reference) article.
+* **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](broken-reference) article.
+* **Forms** - allows to create and manage your forms.
+* **Translation** - allows to manage dictionary items.
 
 ![The Sections Menu.](images/The-Section-Menu-v9.png)
 
@@ -47,8 +47,7 @@ The menu list will differ depending on your permissions for the project. For exa
 
 The section tree is different depending on the section you are in. The section provides an overview of the nodes contained in the tree.
 
-In this example, you are looking at the content section.
-![This is an arrow that points to the section tree on the left.](images/The-Section-Tree-v9.png)
+In this example, you are looking at the content section. ![This is an arrow that points to the section tree on the left.](images/The-Section-Tree-v9.png)
 
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or right-click to view additional options.
 

@@ -4,31 +4,31 @@
 
 `Returns: IEnumerable<BlockListItem>`
 
-**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content.md#what-is-an-element-type) to define the list item schema.
+**Block List** is a list editing property editor, using [Element Types](broken-reference) to define the list item schema.
 
 {% hint style="info" %}
-A default Umbraco CMS installation does not ship with a defined *Data Type* using the Block List editor. In order to start using the property, follow the steps outlined below.
+A default Umbraco CMS installation does not ship with a defined _Data Type_ using the Block List editor. In order to start using the property, follow the steps outlined below.
 
 [Click here for an overview with a worked example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
 {% endhint %}
 
 ## Configure Block List
 
-The Block List property editor is configured in the same way as any standard property editor, via the *Data Types* admin interface.
+The Block List property editor is configured in the same way as any standard property editor, via the _Data Types_ admin interface.
 
-To set up your Block List Editor property, create a new *Data Type* and select **Block List** from the list of available property editors.
+To set up your Block List Editor property, create a new _Data Type_ and select **Block List** from the list of available property editors.
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](images/BlockListEditor_DataType.jpg)
+![Block List - Data Type Definition](images/BlockListEditor\_DataType.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
-- **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
-- **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the list.
-- **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
-- **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
-- **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
+* **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
+* **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the list.
+* **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
+* **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
+* **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
 
 ## Setup Block Types
 
@@ -36,7 +36,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](images/BlockListEditor_DataType_Blocks.png)
+![Block List - Data Type Block Configuration](images/BlockListEditor\_DataType\_Blocks.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -44,25 +44,25 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
-- **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](label-property-configuration.md)
-- **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
-- **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
-- **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
+* **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](label-property-configuration.md)
+* **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
+* **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
+* **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Data Models
 
 It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
 
-- **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
-- **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
+* **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+* **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
 
 ### Catalogue appearance
 
 These properties refers to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
 
-- **Background color** - Define a background color to be displayed beneath the icon or thumbnail.  Eg. `#424242`.
-- **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
-- **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
+* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
+* **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
+* **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
@@ -70,21 +70,21 @@ The thumbnails for the catalogue are presented in the format of 16:10, and we re
 
 These properties are relevant when you work with custom views.
 
-- **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
+* **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
 
 ## Editing Blocks
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
 
-![Block List - Add Content](images/BlockListEditor_AddContent.png)
+![Block List - Add Content](images/BlockListEditor\_AddContent.png)
 
 Clicking the Add content button brings up the Block Catalogue.
 
-![Block List - Setup](images/BlockListEditor_BlockPicker_simplesetup.jpg)
+![Block List - Setup](images/BlockListEditor\_BlockPicker\_simplesetup.jpg)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](images/BlockListEditor_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](images/BlockListEditor\_BlockPicker.jpg)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -92,15 +92,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](images/BlockListEditor_EditingOverlay.jpg)
+![Block List - Overlay editing](images/BlockListEditor\_EditingOverlay.jpg)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](images/BlockListEditor_InlineEditing.jpg)
+![Block List - Inline editing](images/BlockListEditor\_InlineEditing.jpg)
 
 More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](images/BlockListEditor_AddContentInline.jpg)
+![Block List - Add Content](images/BlockListEditor\_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
@@ -132,8 +132,7 @@ Example:
 
 To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
 
-These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`.
-Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`.
+These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`. Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`.
 
 A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
 
@@ -151,16 +150,13 @@ Example:
 
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Value("heading")</h1>
-
 ```
 
 With ModelsBuilder:
 
 ```csharp
-
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Heading</h1>
-
 ```
 
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=ltZTgfIoCtg" %}
@@ -209,8 +205,7 @@ Example:
 
 ## Extract Block List Content data
 
-In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page.
-An example could be a product page with variants stored in a Block List Editor.
+In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page. An example could be a product page with variants stored in a Block List Editor.
 
 In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
 
@@ -251,8 +246,7 @@ If you know the Block List Editor only uses a single block, you can cast the col
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors.
-[Read about building a Custom View for Blocks here](build-custom-view-for-blocks.md)
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](build-custom-view-for-blocks.md)
 
 ## Creating Blocklist programmatically
 
@@ -305,8 +299,7 @@ The JSON object we will pass into the `People` property will look like this:
 }
 ```
 
-We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above.
-The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
+We will be adding two people in `contentData` , whose `udi` values have to be referenced in the `layout` up above. The `contentTypeKey` is in this context the Key value of the Document Type we are using in the Block List (`Person`), and the `udi` we will generate manually.
 
 One of the approaches would be creating a basic model which we will later serialize into JSON:
 
@@ -348,7 +341,7 @@ public class Person
 }
 ```
 
-After injecting [ContentService](../../../../../reference/management/services/contentservice/README.md) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/README.md), we can do the following:
+After injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/), we can do the following:
 
 ```csharp
             @using Umbraco.Cms.Core.Services;

@@ -1,4 +1,3 @@
-
 # Manual upgrade of Umbraco Deploy on Cloud
 
 This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project to run the latest version of Umbraco Deploy for Umbraco Deploy 9.
@@ -17,14 +16,13 @@ If using Umbraco Forms in your installation, you should also update the Umbraco.
 
 NuGet installs the latest version of the package when you use the dotnet add package command unless you specify a package version:
 
-`dotnet add package Umbraco.Deploy.Cloud --version <VERSION>`
-`dotnet add package Umbraco.Deploy.Forms --version <VERSION>`
+`dotnet add package Umbraco.Deploy.Cloud --version <VERSION>` `dotnet add package Umbraco.Deploy.Forms --version <VERSION>`
 
 After you have added a package reference to your project by executing the commands above in the directory that contains your project file, run `dotnet restore` to install the packages.
 
 You can also update the Umbraco Deploy through the NuGet Package Manager in Visual studio:
 
-![NuGet Package Manager](images/Manage_packages.png)
+![NuGet Package Manager](../../../umbraco-forms/installation/images/Manage\_packages.png)
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 

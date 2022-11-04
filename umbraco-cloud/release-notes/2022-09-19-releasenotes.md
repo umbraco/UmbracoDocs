@@ -4,9 +4,9 @@ _2FA authentication - US Region Hosting - Projects Dashboard_
 
 ## Key Takeaways
 
-- **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.
-- **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
-- **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
+* **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.
+* **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
+* **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
 ## [2FA authentication](../set-up/2-factor-authentication-on-cloud.md)
 
@@ -18,11 +18,11 @@ To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 2FA code can be sent either to your email or as an SMS to your phone, or you can use an authentication app such as Google Authenticator, Authy, or similar.
 
-![Phone-auth](images/Phone-auth.png)
+![Phone-auth](../set-up/images/Phone-auth.png)
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
 
-See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/set-up/2-factor-authentication-on-cloud/) for details. 
+See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/set-up/2-factor-authentication-on-cloud/) for details.
 
 ## US Region Hosting
 
@@ -46,5 +46,4 @@ After saving your projects, you can choose between a detailed view with relevant
 
 ![ProjectsDashboardV1](images/ProjectsDashboardV1.gif)
 
-You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects as per your preference.
-We will add new features and functionality to the dashboard in future releases starting with a filtering system as one of the next new additions.
+You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects as per your preference. We will add new features and functionality to the dashboard in future releases starting with a filtering system as one of the next new additions.

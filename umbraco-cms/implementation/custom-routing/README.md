@@ -1,8 +1,10 @@
 ---
-product: "CMS"
-meta.Title: "Custom routing in Umbraco"
-meta.Description: "There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline finds content & creating custom MVC routes that integrate within the Umbraco pipeline"
-
+product: CMS
+meta.Title: Custom routing in Umbraco
+meta.Description: >-
+  There are a couple of ways of controlling the routing behavior in Umbraco:
+  customizing how the inbound request pipeline finds content & creating custom
+  MVC routes that integrate within the Umbraco pipeline
 ---
 
 # Custom routing in Umbraco
@@ -21,7 +23,7 @@ See: [IContentFinder documentation](../../reference/routing/request-pipeline/ico
 
 ### Last Chance IContentFinder
 
-A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched a Umbraco content node. 
+A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched a Umbraco content node.
 
 {% hint style="info" %}
 When creating packages or using class libraries, the `SetContentLastChanceFinder` is a part of the `Umbraco.Cms.Web.Website` NuGet package.
@@ -51,7 +53,7 @@ For more detailed information see: [IContentFinder documentation](../../referenc
 
 ## Custom MVC routes
 
-You can specify your own custom MVC routes to work within the Umbraco pipeline. It requires your controller to inherit from `UmbracoPageController` and either implement `IVirtualPageController` or use `.ForUmbracoPage` when registering your route, for more information and a complete example of both approaches see [Custom routing documentation](../../reference/routing/custom-routes.md#custom-routes-within-the-umbraco-pipeline)
+You can specify your own custom MVC routes to work within the Umbraco pipeline. It requires your controller to inherit from `UmbracoPageController` and either implement `IVirtualPageController` or use `.ForUmbracoPage` when registering your route, for more information and a complete example of both approaches see [Custom routing documentation](broken-reference)
 
 An example of registering a `UmbracoPageController` using `.ForUmbracoPage`:
 
@@ -101,7 +103,7 @@ namespace CustomRoutes
 ```
 
 {% hint style="info" %}
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../reference/routing/custom-controllers.md).
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](broken-reference).
 {% endhint %}
 
 ### RoutingRequestNotification
@@ -125,8 +127,8 @@ namespace CustomRoutes
 }
 ```
 
-For more information on how to register and use notification handlers see [Notifications documentation](../../reference/notifications/)
+For more information on how to register and use notification handlers see [Notifications documentation](broken-reference)
 
 ### Related articles
 
-- [Find out how to add your own hub(s) with SignalR to the existing setup](signalR.md))
+* [Find out how to add your own hub(s) with SignalR to the existing setup](signalR.md))

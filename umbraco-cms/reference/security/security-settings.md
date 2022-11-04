@@ -17,11 +17,11 @@ Umbraco backend users can [reset their own password](../password-reset.md), or i
 
 To deactivate the User password reset look at the [Umbraco Settings Security](../configuration/securitysettings.md#allow-password-reset) section.
 
-To configure password reset verify the [Backoffice Login Password Reset](../../fundamentals/backoffice/login.md#password-reset) section.
+To configure password reset verify the [Backoffice Login Password Reset](broken-reference) section.
 
 ## Other security settings
 
-- [The Umbraco timeout in minutes](../configuration/globalsettings.md#timeout)
-- [disableAlternativeTemplates](../configuration/webroutingsettings.md#disable-alternative-templates) If set to false this can be used to try to render pages in a way that they are not supposed to
-- [disableFindContentByIdPath](../configuration/webroutingsettings.md#disable-find-content-by-id-path) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
-- Umbraco Forms: [AntiForgeryToken](../../../umbraco-forms/developer/configuration/README.md#enableantiforgerytoken) and DisableFormCaching
+* [The Umbraco timeout in minutes](../configuration/globalsettings.md#timeout)
+* [disableAlternativeTemplates](../configuration/webroutingsettings.md#disable-alternative-templates) If set to false this can be used to try to render pages in a way that they are not supposed to
+* [disableFindContentByIdPath](../configuration/webroutingsettings.md#disable-find-content-by-id-path) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
+* Umbraco Forms: [AntiForgeryToken](../../../umbraco-forms/developer/configuration/#enableantiforgerytoken) and DisableFormCaching

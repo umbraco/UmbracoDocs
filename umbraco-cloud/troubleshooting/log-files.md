@@ -1,7 +1,6 @@
-
 # Log files on Umbraco Cloud
 
-You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/README.md). You have access to different types of logs:
+You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/). You have access to different types of logs:
 
 * Umbraco logs
 * Deploy logs
@@ -10,7 +9,7 @@ You can access the different types of log files on Umbraco Cloud or through [Kud
 * IIS logs
 
 {% hint style="info" %}
- Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
+Remember that the timestamps in all logs are in UTC so they might be a few or many hours off from the time your actual problem occurred.
 {% endhint %}
 
 ## Video
@@ -21,27 +20,22 @@ Video example.
 
 ## Accessing the logs
 
-
 ### On Umbraco Cloud Portal
 
-1. Go to your project and click on the arrow next to the environment name.
-    ![Logs on Cloud](images/logs.png)
-
-2. Click **Logs** to view the log details.
-    ![Logs on Cloud](images/logs-table.png)
+1. Go to your project and click on the arrow next to the environment name. ![Logs on Cloud](images/logs.png)
+2. Click **Logs** to view the log details. ![Logs on Cloud](images/logs-table.png)
 
 ### On Kudu
 
-To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/README.md) article.
+To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/) article.
 
 ## Umbraco logs
 
-Umbraco logs on Cloud work almost the same as on a [normal installation](../../umbraco-cms/fundamentals/code/debugging/logging.md), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+Umbraco logs on Cloud work almost the same as on a [normal installation](broken-reference), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
 ## Deploy logs
 
-It is possible that a deployment failed so it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry here is the newest attempted deployment.
-You can also find some information in `~/site/wwwroot/umbraco/Deploy` if there are for example extraction errors.
+It is possible that a deployment failed so it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry here is the newest attempted deployment. You can also find some information in `~/site/wwwroot/umbraco/Deploy` if there are for example extraction errors.
 
 ## Environment logs
 
@@ -77,7 +71,7 @@ It is possible to enable IIS Logging on each of your Umbraco Cloud environments.
 Do note that the IIS logging will be automatically turned off after 12 hours. It's not possible to have them enabled for longer at once due to possible performance degradation while the logging is enabled.
 {% endhint %}
 
-You can enable the logging from the **Advanced** menu found under *Settings* in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
+You can enable the logging from the **Advanced** menu found under _Settings_ in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
 After enabling IIS logging for the environment, the site will have to restart.
 

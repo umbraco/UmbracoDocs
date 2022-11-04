@@ -1,7 +1,7 @@
 ---
 versionFrom: 11.0.0
-meta.Title: "Creating a package"
-meta.Description: "Tutorial to create a package in Umbraco"
+meta.Title: Creating a package
+meta.Description: Tutorial to create a package in Umbraco
 ---
 
 # Creating a Package
@@ -14,7 +14,7 @@ To create a package, you first need to create a package schema through the Umbra
 
 1. Go to the `Packages` section.
 2. Select `Created` in the top-right corner of the screen.
-3. Select the `Create package` button.
+3.  Select the `Create package` button.
 
     ![Buttons to select for creating a package schema in the backoffice](images/creating-package-menu-v9.png)
 4. On the `Create package` page, there are fields that you can use to construct the contents of your package that are based on items from the backoffice.
@@ -26,20 +26,20 @@ We will now take a look at the different information that can be filled in:
 
 These values are used to determine which backoffice items the package should contain. We will fill in the following things:
 
-| Property | Value | Note |
-| -------- | ----- | ---- |
-| Content | _Empty_ | Here, you can include content - e.g. if you want to create a starter kit. Not relevant for this package though. |
-| Media | _Empty_ | Here, you can include media - e.g. if you want to add media to the starter kit. Not relevant for this package though. |
+| Property       | Value   | Note                                                                                                                                                                                                   |
+| -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Content        | _Empty_ | Here, you can include content - e.g. if you want to create a starter kit. Not relevant for this package though.                                                                                        |
+| Media          | _Empty_ | Here, you can include media - e.g. if you want to add media to the starter kit. Not relevant for this package though.                                                                                  |
 | Document Types | _Empty_ | Similar to the Content picker above. It is important to note that if you include content, you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
-| Media Types | _Empty_ | Similar to the Media picker above. It is important to note that if you include media, you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
-| Macros | _Empty_ | See `Document Types` above |
-| Languages | _Empty_ | See `Document Types` above - all text is hardcoded or within our own lang folder in this package, so this is not needed. |
-| Dictionary | _Empty_ | See `Document Types` above |
-| Data Types | _Empty_ | See `Document Types` above |
-| Templates | _Empty_ | See `Document Types` above |
-| Stylesheets | _Empty_ | These will come from the **wwwroot/css** folder. If you have stylesheets you want to include from other locations (_like App_Plugins folder_) you can do so at a later step. |
-| Scripts | _Empty_ | These will come from the **wwwroot/scripts** folder. If you have scripts you want to include from other locations (_like App_Plugins folder_) you can do so at a later step. |
-| Partial Views | _Empty_ | See `Document Types` above |
+| Media Types    | _Empty_ | Similar to the Media picker above. It is important to note that if you include media, you will need to also pick all its dependencies in this and the next steps for them to be packaged together!     |
+| Macros         | _Empty_ | See `Document Types` above                                                                                                                                                                             |
+| Languages      | _Empty_ | See `Document Types` above - all text is hardcoded or within our own lang folder in this package, so this is not needed.                                                                               |
+| Dictionary     | _Empty_ | See `Document Types` above                                                                                                                                                                             |
+| Data Types     | _Empty_ | See `Document Types` above                                                                                                                                                                             |
+| Templates      | _Empty_ | See `Document Types` above                                                                                                                                                                             |
+| Stylesheets    | _Empty_ | These will come from the **wwwroot/css** folder. If you have stylesheets you want to include from other locations (_like App\_Plugins folder_) you can do so at a later step.                          |
+| Scripts        | _Empty_ | These will come from the **wwwroot/scripts** folder. If you have scripts you want to include from other locations (_like App\_Plugins folder_) you can do so at a later step.                          |
+| Partial Views  | _Empty_ | See `Document Types` above                                                                                                                                                                             |
 
 After filling out all the information, we can select **Create** to create the package schema. We will download it and take a closer look at what it contains.
 
@@ -88,33 +88,33 @@ NuGet is the standard package manager for .NET projects. More information about 
 
 Assuming you have already installed the Umbraco templates, you can execute the following command in the .NET CLI to create a package project, that will include the necessary configuration for packing and installing your client-side assets:
 
-```none
+```
 dotnet new umbracopackage --name CustomWelcomeDashboard
 ```
 
 {% hint style="info" %}
-For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](../../fundamentals/setup/install/install-umbraco-with-templates.md#install-the-template).
+For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](broken-reference).
 {% endhint %}
 
 The outcome is the files generated below:
 
 ![Content of an empty package](images/empty-package-from-template.png)
 
-Apart from the project file, you can find an empty `package.manifest` inside the **App_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard.md). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
+Apart from the project file, you can find an empty `package.manifest` inside the **App\_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard.md). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
 This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on build. This is required for having Umbraco packages in a NuGet package format.
 
 {% hint style="info" %}
-If you are planning to overwrite the contents of the **App_Plugins** folder, make sure that the subfolder containing your package contents has the same name as the one you specified after the `--name` flag and that the `package.manifest` has the correct path references to your files.
+If you are planning to overwrite the contents of the **App\_Plugins** folder, make sure that the subfolder containing your package contents has the same name as the one you specified after the `--name` flag and that the `package.manifest` has the correct path references to your files.
 {% endhint %}
 
 You can also add your custom C# files in the root of the package folder which will be part of the DLL of the package, but for our example, this won't be necessary.
 
 ### Transfer files
 
-As mentioned previously, let's navigate to the **App_Plugins** folder and replace its contents with the custom files we created for our new dashboard.
+As mentioned previously, let's navigate to the **App\_Plugins** folder and replace its contents with the custom files we created for our new dashboard.
 
-![App_Plugins with dashboard files](images/app-pligins-contents.png)
+![App\_Plugins with dashboard files](images/app-pligins-contents.png)
 
 ### Specify package properties
 
@@ -144,12 +144,12 @@ Here is an example of some basic properties that you can specify in your project
 
 The `Title`, `Description`, `PackageTags` came with the template and we added some further information like `Version`, `Authors`, `PackageProjectUrl` and `PackageLicenseExpression` that we elaborate on below:
 
-| Property | Value | Note |
-| -------- | ----- | ---- |
-| Version | 1.0.0 | This is automatically set to 1.0.0 but can be changed as appropriate. |
-| Authors | Your name | Here you get to take credit for your awesome work! |
-| PackageProjectUrl | https://umbraco.com | This URL will be shown as the package's URL when others install it. It will likely be a Github repository, or similar. |
-| PackageLicenseExpression | MIT | The license is set to MIT. Please consider how you want your package licensed. If in doubt when deciding an open-source license there are [good resources available](https://choosealicense.com/licenses/). |
+| Property                 | Value               | Note                                                                                                                                                                                                        |
+| ------------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version                  | 1.0.0               | This is automatically set to 1.0.0 but can be changed as appropriate.                                                                                                                                       |
+| Authors                  | Your name           | Here you get to take credit for your awesome work!                                                                                                                                                          |
+| PackageProjectUrl        | https://umbraco.com | This URL will be shown as the package's URL when others install it. It will likely be a Github repository, or similar.                                                                                      |
+| PackageLicenseExpression | MIT                 | The license is set to MIT. Please consider how you want your package licensed. If in doubt when deciding an open-source license there are [good resources available](https://choosealicense.com/licenses/). |
 
 ### Pack it
 
@@ -158,7 +158,7 @@ It is time to create the actual NuGet package (that is, a _.nupkg_ file). Execut
 {% hint style="info" %}
 If you want to specify the output location, just execute the following command instead:
 
-```none
+```
 dotnet pack --output MyNugetPackages
 ```
 
@@ -167,7 +167,7 @@ It will pack the project in the current directory and place the resulting packag
 
 ### Publish it
 
-To allow other people to use your package you will need to publish it to a public NuGet repository. The most common repository is at <https://nuget.org>.
+To allow other people to use your package you will need to publish it to a public NuGet repository. The most common repository is at [https://nuget.org](https://nuget.org).
 
 There is comprehensive documentation on how to [Publish a NuGet package to NuGet.org](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package) in the official NuGet documentation, as well as how to [Publish to a private feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) while developing.
 
@@ -177,20 +177,20 @@ You can install your newly created NuGet package using Visual Studio, Rider, Com
 
 We will continue using the CLI and first create a Umbraco project, and then add the package reference to it:
 
-```none
+```
 dotnet new umbraco -n CustomWelcomeDashboardProject
 cd CustomWelcomeDashboardProject
 dotnet add package CustomWelcomeDashboard.1.0.0
 dotnet run
 ```
 
-You can check that the NuGet package was referenced in your solution and that the **App_Plugins** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
+You can check that the NuGet package was referenced in your solution and that the **App\_Plugins** assets were restored successfully. Our simple package is now installed and you can see the custom dashboard in the backoffice. No further actions are required for our example. However, we will go ahead and mention a few more steps necessary for the more complex packages.
 
-A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our ``dotnet new umbraco`` template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
+A **different approach** when you want to test it locally without publishing it anywhere is to create a test site of the package. You can use our `dotnet new umbraco` template, this time with a special flag `-p` which will add a project dependency to our package and import the target file from that project. So when you build the new project, it will also copy the **App\_Plugins** folder from the package project into the test project. In the same way, as if it was a NuGet reference.
 
 This is the full command:
 
-```none
+```
 dotnet new umbraco -n CustomWelcomeDashboardProject -p CustomWelcomeDashboard
 ```
 
@@ -204,7 +204,7 @@ We can run a migration plan for each package that contains Umbraco content (_ref
 
 If you just want to ship a package that only installs the schema and the content you chose, then you can inherit from the `AutomaticPackageMigrationPlan` as seen below, and specify the package name that will be displayed under the packages _Installed_ tab in the backoffice. You will also need to embed the schema file in the same namespace.
 
-```c#
+```
 using Umbraco.Cms.Infrastructure.Packaging;
 
 namespace CustomWelcomeDashboardProject.Migrations
@@ -228,7 +228,7 @@ Whenever the embedded package.xml file changes, the automatic package migration 
 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
-```c#
+```
 using Umbraco.Cms.Core.Packaging;
 
 namespace CustomWelcomeDashboardProject.Migrations;
@@ -248,7 +248,7 @@ public class CustomPackageMigrationPlan : PackageMigrationPlan
 
 The custom migrations can inherit from `PackageMigrationBase` where we can use helper methods to pick up the schema. But we can also use the regular `MigrationBase` class.
 
-```c#
+```
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.IO;

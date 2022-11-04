@@ -37,7 +37,7 @@ For this tutorial, you need:
 
 * [Visual Studio](https://visualstudio.microsoft.com/) installed
 * A [Google](https://myaccount.google.com/) account
-* A working [Umbraco solution](../../umbraco-cms/fundamentals/setup/)
+* A working [Umbraco solution](broken-reference)
 
 ## Setting up a Google OAuth API
 
@@ -223,10 +223,11 @@ For more information on installing and managing packages in Visual Studio, see t
         }
     }
     ```
+
     * Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
 3.  Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
-    #### Umbraco 9
+    **Umbraco 9**
 
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;
@@ -242,7 +243,7 @@ For more information on installing and managing packages in Visual Studio, see t
     }
     ```
 
-    #### Umbraco 10
+    **Umbraco 10**
 
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;
@@ -264,6 +265,6 @@ For more information on installing and managing packages in Visual Studio, see t
 
 ## Related Links
 
-* [External login providers](../../umbraco-cms/reference/security/external-login-providers.md)
-* [Linking External Login Provider accounts](../../umbraco-cms/reference/security/auto-linking.md)
-* [Two-factor authentication](../../umbraco-cms/reference/security/two-factor-authentication.md)
+* [External login providers](broken-reference)
+* [Linking External Login Provider accounts](broken-reference)
+* [Two-factor authentication](../reference/security/two-factor-authentication.md)

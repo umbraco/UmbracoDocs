@@ -1,6 +1,8 @@
 ---
-meta.Title: "Creating websites with Umbraco" 
-meta.description: "This section shows you some beginner tools and information to get you started with Umbraco. From making a local installation to extending the backoffice."
+meta.Title: Creating websites with Umbraco
+meta.description: >-
+  This section shows you some beginner tools and information to get you started
+  with Umbraco. From making a local installation to extending the backoffice.
 ---
 
 # Creating websites with Umbraco
@@ -9,7 +11,7 @@ In this section you will find information on which frameworks, languages and pla
 
 There is a set of key concepts that you will need to familiarize yourself with. This section will give you the details you need as well as introduce you to how you can work with them in the Umbraco backoffice.
 
-![Umbraco tree image](images/flexible_Email_hero_780x405px.png)
+![Umbraco tree image](images/flexible\_Email\_hero\_780x405px.png)
 
 We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
 
@@ -23,20 +25,20 @@ Once you've created content based on the Document Types, they will be published 
 
 There a lot of terminology here! Let's look at breaking those terms down:
 
-[Defining content in Umbraco using Document Types](../umbraco-cms/fundamentals/data/defining-content.md)
+[Defining content in Umbraco using Document Types](broken-reference)
 
-[What is a Data Type?](../umbraco-cms/fundamentals/data/data-types/)
+[What is a Data Type?](broken-reference)
 
-[What is a Property Editor?](../umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/)
+[What is a Property Editor?](broken-reference)
 
-[Working with Templates](../umbraco-cms/fundamentals/design/templates/)
+[Working with Templates](broken-reference)
 
 ## Try it out
 
 [Learn how to create a website with Umbraco](../umbraco-cms/tutorials/creating-a-basic-website/)
 
-[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI&list=PLgX62vUaGZsFBcq9eSJ_178rXgn82sJ-T)
+[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI\&list=PLgX62vUaGZsFBcq9eSJ\_178rXgn82sJ-T)
 
 ## Other resources
 
-[How can translations be used with content?](../umbraco-cms/fundamentals/backoffice/variants.md)
+[How can translations be used with content?](broken-reference)

@@ -18,23 +18,22 @@ Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to re
 
 ## Contents
 
-* [Configuring the Block Grid](#configuring-the-block-grid)
-* [Setup Block Types](#setup-block-types)
-* [Block Configuration Settings](#block-configuration-settings)
-* [Areas](#areas)
-* [Advanced](#advanced)
-* [Editing Blocks](#editing-blocks)
-* [Sorting Blocks](#sorting-blocks)
-* [Rendering Block Grid content](#rendering-block-grid-content)
-* [Write a Custom Layout Stylesheet](#write-a-custom-layout-stylesheet)
-* [Build a custom Backoffice View](#build-a-custom-backoffice-view)
-* [Creating a Block Grid programmatically](#creating-a-block-grid-programmatically)
+* [Configuring the Block Grid](block-grid-editor.md#configuring-the-block-grid)
+* [Setup Block Types](block-grid-editor.md#setup-block-types)
+* [Block Configuration Settings](block-grid-editor.md#block-configuration-settings)
+* [Areas](block-grid-editor.md#areas)
+* [Advanced](block-grid-editor.md#advanced)
+* [Editing Blocks](block-grid-editor.md#editing-blocks)
+* [Sorting Blocks](block-grid-editor.md#sorting-blocks)
+* [Rendering Block Grid content](block-grid-editor.md#rendering-block-grid-content)
+* [Write a Custom Layout Stylesheet](block-grid-editor.md#write-a-custom-layout-stylesheet)
+* [Build a custom Backoffice View](block-grid-editor.md#build-a-custom-backoffice-view)
+* [Creating a Block Grid programmatically](block-grid-editor.md#creating-a-block-grid-programmatically)
 
 {% hint style="info" %}
-**Example Blocks**
-When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+**Example Blocks** When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
-![Option to install Sample Configuration on the new Block Grid Editor](images/Install-Sample-Configuration.png)
+<img src="images/Install-Sample-Configuration.png" alt="Option to install Sample Configuration on the new Block Grid Editor" data-size="original">
 
 * Create a new **Data Type**.
 * Select the **Block Grid** as the **Property editor**.
@@ -56,11 +55,11 @@ To set up the Block Grid property editor, follow these steps:
 
 You will see the configuration options for a Block Grid property editor as shown below:
 
-![Block Grid - Data Type Configuration](images/BlockGridEditor_Configuration.png)
+![Block Grid - Data Type Configuration](images/BlockGridEditor\_Configuration.png)
 
 The Data Type editor allows you to configure the following properties:
 
-* **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](#setup-block-types).
+* **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](block-grid-editor.md#setup-block-types).
 * **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
@@ -70,11 +69,11 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are based on **[Element Types](../../../../data/defining-content.md#what-is-an-element-type)**. These can be created beforehand or while setting up your Block Types.
+Block Types are based on [**Element Types**](broken-reference). These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
-![Block Grid - Data Type Block Configuration](images/BlockGridEditor_DataType_Blocks.png)
+![Block Grid - Data Type Block Configuration](images/BlockGridEditor\_DataType\_Blocks.png)
 
 [Examples and more details about configuring the Label property](label-property-configuration.md)
 
@@ -92,13 +91,13 @@ Customize the user experience for your content editors when they work with the B
 
 * **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties.
 
-  {% hint style="info" %}
-  Label example: "My Block {{myPropertyAlias}}" will be shown as: "My Block FooBar".
+{% hint style="info" %}
+Label example: "My Block \{{myPropertyAlias\}}" will be shown as: "My Block FooBar".
 
-  You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
+You can also use more advanced expression using AngularJS filters, like `{{myPropertyAlias | limitTo:100}}` or for a property using Richtext editor `{{myPropertyAlias | ncRichText | truncate:true:100}}`. It is also possible to use properties from the Settings model by using `{{$settings.propertyAlias}}`.
 
-  Get more tips on how to use AngularJS filters in Umbraco CMS from this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
-  {% endhint %}
+Get more tips on how to use AngularJS filters in Umbraco CMS from this community-made [Umbraco AngularJS filter cheat sheet](https://joe.gl/ombek/blog/umbraco-angularjs-filter-cheat-sheet/).
+{% endhint %}
 
 * **Content model** - Presents the Element Type used as model for the Content section of this Block. This cannot be changed but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
 * **Settings model** - Adds a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
@@ -111,7 +110,7 @@ By default, a Block takes up the full-width of the content.
 
 A Block can be resized in two ways:
 
-1. When a Block is placed in an Area, it will fit to the Areas width. Learn more about [Areas](#areas).
+1. When a Block is placed in an Area, it will fit to the Areas width. Learn more about [Areas](block-grid-editor.md#areas).
 2. A Block can have one or more Column Span options defined.
 
 A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
@@ -151,18 +150,15 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
 * **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
-![Block Grid - Areas](images/BlockGridEditor_Areas.png)
+![Block Grid - Areas](images/BlockGridEditor\_Areas.png)
 
 ### Area configuration
 
-![Block Grid - Area Configuration](images/BlockGridEditor_AreasConfiguration.png)
+![Block Grid - Area Configuration](images/BlockGridEditor\_AreasConfiguration.png)
 
 * **Alias** - The alias is printed by `GetBlockGridHTML()`. Use the alias to target the Element representing the area.
-
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
-
 * **Number of blocks** - Determines the total number of Blocks in an Area.
-
 * **Allowed block types** - Defines the types of Blocks or Groups of Blocks that are allowed in the Area. Optionally, you can also set how many Blocks of each type/group should be present. The Blocks can be limited for each specific Block Type in an Area.
 
 ## Advanced
@@ -171,39 +167,39 @@ These properties are relevant when working with custom views or complex projects
 
 * **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
-    {% hint style="info" %}
-    Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
-    {% endhint %}
+{% hint style="info" %}
+```
+Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
+```
+{% endhint %}
 
 * **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
-
 * **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
-
 * **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
 
 ## Editing Blocks
 
 When viewing a **Block Grid** property editor in the **Content** section for the first time, you will be presented with the option to **Add content**.
 
-![Block Grid - Add Content](images/BlockGridEditor_AddContent.png)
+![Block Grid - Add Content](images/BlockGridEditor\_AddContent.png)
 
 Clicking the **Add content** button opens up the **Block Catalogue**.
 
-![Block Grid - Setup](images/BlockGridEditor_BlockPicker.png)
+![Block Grid - Setup](images/BlockGridEditor\_BlockPicker.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block Grid - example setup](images/BlockGridEditor_BlockPicker_exsetup.png)
+![Block Grid - example setup](images/BlockGridEditor\_BlockPicker\_exsetup.png)
 
 Click the Block Type you wish to create and a new Block will appear in the layout.
 
 More Blocks can be added to the layout by clicking the Add content button. Alternatively, use the Add content button that appears on hover to add new Blocks between, besides, or above the existing Blocks.
 
-![Block Grid - Add Content Inline](images/BlockGridEditor_AddContentInline.png)
+![Block Grid - Add Content Inline](images/BlockGridEditor\_AddContentInline.png)
 
 To delete a Block, click the trash icon which appears on the mouse hover.
 
-![Block Grid - Delete Content](images/BlockGridEditor_DeleteContent.png)
+![Block Grid - Delete Content](images/BlockGridEditor\_DeleteContent.png)
 
 ## Sorting Blocks
 
@@ -211,14 +207,14 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
-![Block Grid - Sorting Blocks](images/Sorting_BlockGrid_Blocks.gif)
+![Block Grid - Sorting Blocks](images/Sorting\_BlockGrid\_Blocks.gif)
 
 ## Rendering Block Grid Content
 
 Rendering the stored value of your **Block Grid** property editor can be done in two ways:
 
-1. [Default rendering](#1-default-rendering)
-2. [Build your own rendering](#2-build-your-own-rendering)
+1. [Default rendering](block-grid-editor.md#1-default-rendering)
+2. [Build your own rendering](block-grid-editor.md#2-build-your-own-rendering)
 
 ### 1. Default rendering
 
@@ -292,8 +288,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 {% hint style="info" %}
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
-1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in
-   `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
+1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
 2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
 3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
 {% endhint %}
@@ -468,7 +463,7 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 ## Creating a Block Grid programmatically
 
-In this example, we will be creating "spot" Blocks in a Block Grid on a content item. The spot content consists of a *title* and a *text* field, while the spot settings contains a *featured* checkbox.
+In this example, we will be creating "spot" Blocks in a Block Grid on a content item. The spot content consists of a _title_ and a _text_ field, while the spot settings contains a _featured_ checkbox.
 
 The raw input data for the spots looks like this:
 
@@ -531,8 +526,8 @@ The resulting JSON object stored for the Block Grid will look like this:
 
 For each item in the raw data, we need to create:
 
-* One `contentData` entry with the *title* and *text*.
-* One `settingsData` entry with the *featured* value (the checkbox expects `"0"` or `"1"` as data value).
+* One `contentData` entry with the _title_ and _text_.
+* One `settingsData` entry with the _featured_ value (the checkbox expects `"0"` or `"1"` as data value).
 * One `layout` entry with the desired column and row spans.
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario, there could be any number of Element Type combinations.
@@ -632,7 +627,7 @@ public class BlockGridElementData
 }
 ```
 
-By injecting [ContentService](../../../../../reference/management/services/contentservice/README.md) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/README.md) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
+By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

@@ -33,7 +33,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 ### Dynamic example
 
 {% hint style="warning" %}
-See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](broken-reference) for more information about why the dynamic approach is obsolete.
 {% endhint %}
 
 ```csharp
@@ -73,7 +73,7 @@ See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more info
 ### Dynamic
 
 {% hint style="warning" %}
-See [Common pitfalls](../../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](broken-reference) for more information about why the dynamic approach is obsolete.
 {% endhint %}
 
 ```csharp
