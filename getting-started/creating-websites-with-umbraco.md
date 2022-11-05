@@ -25,13 +25,13 @@ Once you've created content based on the Document Types, they will be published 
 
 There a lot of terminology here! Let's look at breaking those terms down:
 
-[Defining content in Umbraco using Document Types](broken-reference)
+[Defining content in Umbraco using Document Types](../umbraco-cms/umbraco-fundamentals/data/defining-content.md)
 
-[What is a Data Type?](broken-reference)
+[What is a Data Type?](../umbraco-cms/umbraco-fundamentals/data/data-types/)
 
-[What is a Property Editor?](broken-reference)
+[What is a Property Editor?](../umbraco-cms/umbraco-fundamentals/backoffice/property-editors/built-in-property-editors/)
 
-[Working with Templates](broken-reference)
+[Working with Templates](../umbraco-cms/umbraco-fundamentals/design/templates/)
 
 ## Try it out
 
@@ -41,4 +41,4 @@ There a lot of terminology here! Let's look at breaking those terms down:
 
 ## Other resources
 
-[How can translations be used with content?](broken-reference)
+[How can translations be used with content?](../umbraco-cms/umbraco-fundamentals/backoffice/variants.md)
