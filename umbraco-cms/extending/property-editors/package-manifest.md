@@ -5,7 +5,6 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-
 # Package Manifest
 
 The `package.manifest` JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
@@ -239,7 +238,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 }
 ```
 
-However the default grid editors are already configured. You can see the [Grid Editors page](../../fundamentals/backoffice/property-editors/built-in-property-editors/grid-layout/grid-editors.md) for more information on grid editors.
+However the default grid editors are already configured. You can see the [Grid Editors page](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors.md) for more information on grid editors.
 
 ## Parameter Editors
 
@@ -249,7 +248,7 @@ The parameter editors array follows the same format as the property editors desc
 
 ## JavaScript
 
-`javascript` returns a string[] of JavaScript files to load on application start
+`javascript` returns a string\[] of JavaScript files to load on application start
 
 ```json
 {
@@ -262,7 +261,7 @@ The parameter editors array follows the same format as the property editors desc
 
 ## CSS
 
-`css` returns a string[] of css files to load on application start
+`css` returns a string\[] of css files to load on application start
 
 ```json
 {
@@ -274,6 +273,7 @@ The parameter editors array follows the same format as the property editors desc
 ```
 
 ## Bundling
+
 `bundleOptions` is an enumerable type that expects one of the following values:
 
 * `Default` - The default bundling behavior for assets in the package folder where the assets will be bundled with the typical packages bundle.
@@ -313,10 +313,9 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
 * File -> Preferences -> Settings. The **Settings** window opens.
-* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.
-  ![JSON Schemas](images/JSON-schema.png)
+* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**. ![JSON Schemas](images/JSON-schema.png)
 * Select **Edit in settings.json** from the **Schemas** section.
-* Add the following snippet in the `settings.json` file:
+*   Add the following snippet in the `settings.json` file:
 
     ```json
     {

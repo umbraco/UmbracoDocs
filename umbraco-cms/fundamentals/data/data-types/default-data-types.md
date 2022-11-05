@@ -1,11 +1,11 @@
 ---
-meta.Title: "Default data types in Umbraco"
-meta.Description: "Learn about the default data types in Umbraco."
+meta.Title: Default data types in Umbraco
+meta.Description: Learn about the default data types in Umbraco.
 ---
 
 # Default Data Types
 
-Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../backoffice/property-editors/README.md).
+Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../backoffice/property-editors/).
 
 ![Umbraco 9 Data Type List](images/default-data-types-9.png)
 
@@ -47,16 +47,16 @@ The Image Media Picker opens a modal to pick images from the **Media** tree or i
 
 ## Label
 
-Is a non-editable control and can be used to *only* display the value. It can also be used in the **Media** section to load in values related to the node, such as width, height and file size.
+Is a non-editable control and can be used to _only_ display the value. It can also be used in the **Media** section to load in values related to the node, such as width, height and file size.
 
 There are six Label Data Types:
 
-- Label (bigint) - Allows to save a big integer value for a Label.
-- Label (datetime) - Allows to set a DateTime value for a Label.
-- Label (decimal) - Allows to set a decimal value for a Label.
-- Label (integer) - Allows to set an integer value for a Label.
-- Label (string) - Allows to set a long string value for a Label.
-- Label (time) - Allows to set time for a Label
+* Label (bigint) - Allows to save a big integer value for a Label.
+* Label (datetime) - Allows to set a DateTime value for a Label.
+* Label (decimal) - Allows to set a decimal value for a Label.
+* Label (integer) - Allows to set an integer value for a Label.
+* Label (string) - Allows to set a long string value for a Label.
+* Label (time) - Allows to set time for a Label
 
 ## List View - Content
 
@@ -104,14 +104,13 @@ The TinyMCE based WYSIWYG editor. This is the standard editor used to edit large
 
 In the default settings some tags such as bullet list can be used. If you want to use other tags like `h1` or `h2`, you need to add stylesheets.
 
-Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-property-editors/rich-text-editor/README.md).
+Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/).
 
 The "Style select" options need to be enabled in the toolbar section.
 
 An example of the stylesheet tree is as follows:
 
 ```json
-
 Stylesheets
 -IE7
 -IE8
@@ -135,7 +134,7 @@ A normal HTML input text field.
 
 ## True/False
 
-A checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use is to create a property with the 'umbracoNaviHide' alias and the Data Type True/False. This will provide editors with the option to hide nodes in  the navigation menu on the website.
+A checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use is to create a property with the 'umbracoNaviHide' alias and the Data Type True/False. This will provide editors with the option to hide nodes in the navigation menu on the website.
 
 ## Upload
 
@@ -143,8 +142,8 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
 There are five Upload Data Types:
 
-- Upload Article - Used for uploading and storing documents.
-- Upload Audio - Used for uploading and storing digital audio files.
-- Upload File - Used for uploading and storing different types of files in the Media section
-- Upload Vector Graphics - Used for uploading and storing Scalable Vector Graphics (svg) files which are text files containing source code to draw the desired image.
-- Upload Video - Used for uploading and storing video files.
+* Upload Article - Used for uploading and storing documents.
+* Upload Audio - Used for uploading and storing digital audio files.
+* Upload File - Used for uploading and storing different types of files in the Media section
+* Upload Vector Graphics - Used for uploading and storing Scalable Vector Graphics (svg) files which are text files containing source code to draw the desired image.
+* Upload Video - Used for uploading and storing video files.

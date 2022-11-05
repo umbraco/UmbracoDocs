@@ -1,6 +1,8 @@
 ---
-meta.Title: "Working with stylesheets and JavaScript in Umbraco"
-meta.Description: "Information on working with stylesheets and JavaScript in Umbraco, including bundling & minification"
+meta.Title: Working with stylesheets and JavaScript in Umbraco
+meta.Description: >-
+  Information on working with stylesheets and JavaScript in Umbraco, including
+  bundling & minification
 ---
 
 # Working with stylesheets and JavaScript
@@ -14,29 +16,26 @@ You can create and edit stylesheets in the Stylesheets folder in the Settings se
 In the Create menu, these options are available:
 
 * Stylesheet file (for use in templates/views)
-* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../backoffice/property-editors/built-in-property-editors/rich-text-editor/README.md))
+* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/))
 * Folder (for keeping stylesheets organized)
 
 {% hint style="info" %}
 It is currently not possible to use any CSS preprocessor (such as Syntactically Awesome Style Sheets (SASS)) in the backoffice.
 {% endhint %}
 
-After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor.
-When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
+After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor. When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
 ![Stylesheet Rich Text Editor (RTE)](images/2-rte-editor.png)
 
 The rules you create in the Rich Text Editor section will carry over to the Code tab.
 
-![Stylesheet RTE tab](images/3-rte-editor-p2.png)
-![Stylesheet Code tab](images/3-rte-editor-p3.png)
+![Stylesheet RTE tab](images/3-rte-editor-p2.png) ![Stylesheet Code tab](images/3-rte-editor-p3.png)
 
 To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (css files are usually referenced in the layout or home templates) and link to it with the `link` tag.
 
 ![Linking CSS in template](images/4-link-css-v9.png)
 
-By default, the stylesheets will be saved in the `wwwroot/css` folder in the solution.
-To reference them you can use either of the methods used in the above screenshot.
+By default, the stylesheets will be saved in the `wwwroot/css` folder in the solution. To reference them you can use either of the methods used in the above screenshot.
 
 ```html
 <link rel="stylesheet" href='@Url.Content("~/css/mystylesheet.css")' />
@@ -126,7 +125,7 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 ```
 
 {% hint style="info" %}
-See below for the different [Bundling Options](#bundling-options).
+See below for the different [Bundling Options](stylesheets-javascript.md#bundling-options).
 {% endhint %}
 
 **Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
