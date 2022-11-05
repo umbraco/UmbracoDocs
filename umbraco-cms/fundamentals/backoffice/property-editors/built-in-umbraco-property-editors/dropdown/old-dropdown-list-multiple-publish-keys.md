@@ -42,7 +42,7 @@ Displays a list of preset values as a list where multiple values can be selected
 ### Dynamic
 
 {% hint style="warning" %}
-See [Common pitfalls](broken-reference) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](../) for more information about why the dynamic approach is obsolete.
 {% endhint %}
 
 ```csharp

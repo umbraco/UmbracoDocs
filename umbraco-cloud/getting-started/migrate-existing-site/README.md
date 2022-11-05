@@ -64,7 +64,7 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some [Upgrade instructions](broken-reference) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](../../../umbraco-cms/fundamentals/setup/upgrading/) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](../../../umbraco-forms/installation/manualupgrade.md).
 

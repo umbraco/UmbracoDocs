@@ -4,7 +4,7 @@
 
 `Returns: IPublishedContent`
 
-The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](broken-reference)
+The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes [UDI](../../../../reference/querying/udi-identifiers.md)
 
 ## Data Type Definition Example
 

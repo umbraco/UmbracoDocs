@@ -31,7 +31,7 @@ To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/) ar
 
 ## Umbraco logs
 
-Umbraco logs on Cloud work almost the same as on a [normal installation](broken-reference), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+Umbraco logs on Cloud work almost the same as on a [normal installation](../../umbraco-cms/fundamentals/code/debugging/logging.md), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
 ## Deploy logs
 
