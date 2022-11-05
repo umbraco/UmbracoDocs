@@ -15,18 +15,18 @@ In this section you will also find information on areas such as load balancing, 
 
 ## How to install and configure an Umbraco installation
 
-* [Setup Umbraco](broken-reference)
-* [Install Umbraco](broken-reference)
-* [Upgrading Umbraco](broken-reference)
+* [Setup Umbraco](../umbraco-cms/fundamentals/setup/)
+* [Install Umbraco](../umbraco-cms/fundamentals/setup/install/)
+* [Upgrading Umbraco](../umbraco-cms/fundamentals/setup/upgrading/)
 
 ## Server Requirements
 
-* [Server setup](broken-reference)
-* [Server setup requirements](broken-reference)
-* [Running on Azure web apps](broken-reference)
+* [Server setup](../umbraco-cms/fundamentals/setup/server-setup/)
+* [Server setup requirements](../umbraco-cms/fundamentals/setup/requirements.md)
+* [Running on Azure web apps](../umbraco-cms/fundamentals/setup/server-setup/azure-web-apps.md)
 
 ## Related links
 
-* [External login providers](broken-reference)
+* [External login providers](../umbraco-cms/reference/security/external-login-providers.md)
 
 ![Umbraco Cloud](images/umbraco\_free\_way\_01.png)
