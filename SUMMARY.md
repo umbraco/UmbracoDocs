@@ -7,14 +7,14 @@
 ## Getting Started
 
 * [Getting Started](getting-started/README.md)
-* [Creating websites with Umbraco](getting-started/creating-websites-with-umbraco.md)
-* [Editing websites with Umbraco](getting-started/editing-websites-with-umbraco.md)
-* [Hosting an Umbraco Infrastructure](getting-started/hosting-an-umbraco-infrastructure.md)
-* [Managing an Umbraco project](getting-started/managing-an-umbraco-project.md)
-* [Where can I get help?](getting-started/where-can-i-get-help.md)
-* [Developing websites with Umbraco](getting-started/developing-websites-with-umbraco/README.md)
-  * [Customizing Umbraco website](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
+* [Managing a project](getting-started/managing-an-umbraco-project.md)
+* [Editing websites](getting-started/editing-websites-with-umbraco.md)
+* [Creating websites](getting-started/creating-websites-with-umbraco.md)
+* [Developing websites](getting-started/developing-websites-with-umbraco/README.md)
+  * [Customizing Umbraco](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
   * [Extending the Umbraco Backoffice](getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
+* [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
+* [Where can I get help?](getting-started/where-can-i-get-help.md)
 
 ## Umbraco CMS
 

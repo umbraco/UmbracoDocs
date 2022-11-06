@@ -3,9 +3,10 @@ meta.Title: Editing websites with Umbraco
 meta.Description: >-
   This section shows you some beginner tools and information to get you started
   with editor content in Umbraco.
+description: All the resources you need when editing content on your Umbraco website.
 ---
 
-# Editing websites with Umbraco
+# Editing websites
 
 Creating, editing and publishing content onto your website using Umbraco doesn't require any super special skills or prior knowledge - honestly!
 
