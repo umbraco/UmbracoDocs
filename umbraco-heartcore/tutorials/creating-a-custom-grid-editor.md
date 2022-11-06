@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Creating a Custom Grid Editor"
 meta.Description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 ---
@@ -124,9 +123,9 @@ For this tutorial we will create an image gallery editor using [Lit](https://lit
 * Name it **Image Gallery**.
 * Change the alias to `my-image-gallery`.
 
-:::note
+{% hint style="info" %}
 The alias is used as the custom element tag name and must be unique. By choosing a prefix that is less likely to used by any other HTML element, in this case `my-`, there is less chance for running into conflicts.
-:::
+{% endhint %}
 
 ![A custom grid editor for creating an image gallery](images/create-new-grid-editor.png)
 
@@ -327,9 +326,9 @@ We will also need to add a `click` event to the button so it will show the dialo
 <button type="button" class="btn-reset placeholder" @click=${() => this.showPicker()}>
 ```
 
-:::note
+{% hint style="info" %}
 Clicking the button in preview mode does nothing. This is because of a limitation when previewing where we do not have access to the full backoffice. Saving and testing on a Content item should work.
-:::
+{% endhint %}
 
 * Click **Save**.
 * Go back to the content page.
@@ -403,7 +402,7 @@ Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 * Go to the **Settings** section.
 * Exapnd the **Headless** node.
-* Open the [API Browser](../../Getting-Started-Cloud/API-Browser/)
+* Open the [API Browser](../getting-started/api-browser.md/)
 * Type in `https://cdn.umbraco.io/content/<CONTENT_ID>` in the Explorer URL bar, replacing `<CONTENT-ID>` with the id we copied before.
 * Click **Go!**.
 
@@ -463,14 +462,14 @@ With the JSON above we are adding a `properties` object containing a `url` prope
 
 We now have an array where each item has the URL to the picked media item.
 
-:::note
+{% hint style="info" %}
 While it is not necessary to define all properties in the JSON Schema, it is highly recommended as the schema is also used for validating the editor data when saving.
-:::
+{% endhint %}
 
 Besides the `uri-reference` format there's also `rich-text`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `rich-text` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
-:::links
+{% hint style="info" %}
 ## Related articles
-- [Custom Grid Editors](../../Backoffice/Grid-Editors/)
-:::
+- [Custom Grid Editors](../Backoffice/grid-editors.md)
+{% endhint %}
 

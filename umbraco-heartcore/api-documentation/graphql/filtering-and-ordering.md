@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Filtering content in Umbraco Heartcore with GraphQL"
 meta.Description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 ---
@@ -8,7 +7,7 @@ meta.Description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 
 The GraphQL API allows for filtering and ordering root and traversion collections (ancestors, children and descendants).
 
-For information on the different filters available and how the filter ad order types are generated see [Schema Generation](../Schema-Generation#filtering).
+For information on the different filters available and how the filter ad order types are generated see [Schema Generation](schema-generation.md#filtering).
 
 ## Using filters
 
@@ -201,11 +200,11 @@ query {
 
 We can then use the `cursor` from the last item to get items that appear after that one. We can also request the `PageInfo` object which holds information on the start and end cursors and if there are more pages.
 
-:::note
+{% hint style="info" %}
 `first` can only be used in combination with `after`, and `last` can only used with `before`.
 
 Also `hasNextPage` is only populated when doing forward paging and `hasPreviousPage` is populated when doing backward paging.
-:::
+{% endhint %}
 
 ```graphql
 query {

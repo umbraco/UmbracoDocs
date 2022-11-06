@@ -35,9 +35,9 @@ You can add and remove the environments any time you want, as long as you have m
 
 Adding and removing environments is done from the Project page in the Cloud Portal.
 
-:::note
+{% hint style="info" %}
 Please note you will need to restart environments after they have been set up or removed from your project. In order to update the configuration of Umbraco Deploy
-:::
+{% endhint %}
 
 
 ![Manage environments from here](images/button-to-manage.png)

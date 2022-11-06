@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: Custom Grid Editors in Umbraco Heartcore
 meta.Description: Documentation for Custom Grid Editors in Umbraco Heartcore
 ---
@@ -53,7 +52,7 @@ A Module Alias can be configured under **Headless -> Custom Editors Configuratio
 
 ![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
 
-:::tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. :::
+{% endhint %}tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. {% endhint %}
 
 ## Accessing backoffice components
 
@@ -63,13 +62,13 @@ Using this library reduces breaking changes in the exposed API that would otherw
 
 Currently, the library is exposing only a few components but Feature Requests and Pull Requests are more than welcome.
 
-:::note The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias :::
+{% hint style="info" %} style="info" %} The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias {% endhint %}
 
 ## JSON Schema
 
 A [JSON Schema](https://json-schema.org/) is used to describe how the value is stored and returned by the REST and GraphQL API.
 
-This allows for advanced configurations where, for example, an [UDI](https://our.umbraco.com/Documentation/Reference/Querying/UDI-identifiers/) is converted to a URL.
+This allows for advanced configurations where, for example, an [UDI](../../umbraco-cms/reference/querying/udi-identifiers.md) is converted to a URL.
 
 The default Schema looks like this:
 
@@ -142,8 +141,7 @@ If the library is missing any functionality, raise an issue on the [Heartcore is
 
 Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_shadow\_DOM).
 
-:::links
 
 ## Related articles
 
-* [Creating a Custom Grid Editor](../../Tutorials/Creating-A-Custom-Grid-Editor/) :::
+* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md/) {% endhint %}

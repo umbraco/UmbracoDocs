@@ -161,9 +161,9 @@ Get a specific langauge by its ISO code.
 
 Create a new language for use on content.
 
-:::note
+{% hint style="info" %}
 Please note that the number of languages that can be created is defined by the [pricing tier](LINK TO pricing tiers!).
-:::
+{% endhint %}
 
 **URL**: `/language`
 
@@ -259,9 +259,9 @@ Updates an existing language.
 
 Deletes an existing language.
 
-:::note
+{% hint style="info" %}
 Please note that deleting a language, which is in use means that content based on this language will be set to `invariant`.
-:::
+{% endhint %}
 
 **URL**: `/language/{id}`
 

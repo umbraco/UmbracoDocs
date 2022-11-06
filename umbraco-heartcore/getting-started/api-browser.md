@@ -18,11 +18,11 @@ In the top-right corner you can switch between browsing in the Content Delivery 
 
 The first thing you'll notice on the API browser, is an already defined URL. This is to define which area of the API you will be browsing; `https://cdn.umbraco.io` for the Content Delivery API and `https://api.umbraco.io` for the Content Management API.
 
-:::tip
+{% hint style="info" %}
 You can also use the this field to manually add query strings to the URL and search the API endpoints that way. 
 
 The URL will be updated automatically as you browse the API using the links in the bottom of the Explorer section.
-:::
+{% endhint %}
 
 In the **Custom Request Headers** you can define which headers to use when browsing the API endpoints. The `umb-project-alias` header will have been added for you already, and in the content section the `Accept-Language` is also set by default.
 

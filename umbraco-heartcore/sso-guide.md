@@ -21,9 +21,9 @@ If you have saved your password in your browser, make sure to find it by using t
 
 - [Safari](https://support.apple.com/en-us/HT211145)
 
-:::warning
+{% hint style="info" %}
 It is not possible to reset your password when going through the verification process - this is why it is key that you know the password beforehand.
-:::
+{% endhint %}
 
 ### Steps on how to log in the first time
 

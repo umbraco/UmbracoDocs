@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore GraphQL API"
 meta.Description: "Documentation for Umbraco Heartcore GraphQL API"
 ---
@@ -47,9 +46,9 @@ Api-Key: {api-key}
 
 The GraphQL API supports fetching draft content, this can be done by passing a `preview` argument to the root query fields.
 
-:::note
+{% hint style="info" %}
 Fetching draft content requires an API Key to be passed with the request.
-:::
+{% endhint %}
 
 ```graphql
 query {
@@ -59,14 +58,14 @@ query {
 }
 ```
 
-## [Schema Generation](Schema-Generation/)
+## [Schema Generation](schema-generation.md)
 
 Information on how the GraphQL schema is generated, reserved names and built-in custom types.
 
-## [Property Editors](Property-Editors/)
+## [Property Editors](property-editors.md)
 
 A list of all the built-in Umbraco Property Editors and their GraphQL types.
 
-## [Filtering and Ordering](Filtering-and-Ordering/)
+## [Filtering and Ordering](filtering-and-ordering.md)
 
 Documentation on how to filter and order collections with the GraphQL API.

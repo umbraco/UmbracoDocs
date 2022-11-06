@@ -1,5 +1,4 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore API Documentation"
 meta.Description: "Documentation for Umbraco Heartcore REST APIs"
 ---
@@ -8,13 +7,13 @@ meta.Description: "Documentation for Umbraco Heartcore REST APIs"
 
 This page contains documentation for the available API endpoints for Umbraco Heartcore. It includes endpoints for the GraphQL API as well as for the REST API which is divided into two main areas: Content Delivery and Content Management.
 
-[The GraphQL API](GraphQL) can be used to query the read-only Content that you would normally retrieve to show the published content in your apps, websites, or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
+[The GraphQL API](graphql/README.md) can be used to query the read-only Content that you would normally retrieve to show the published content in your apps, websites, or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
 
-[The Content Delivery API](Content-Delivery) is a read-only Content and Media API that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
+[The Content Delivery API](content-delivery/README.md) is a read-only Content and Media API that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
-[The Content Management API](Content-Management) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members, and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
+[The Content Management API](content-management/README.md) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members, and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
 
-[The Redirect API](Redirect) can be used to query redirects setup in the Umbraco backoffice when moving or renaming content. Use it to create Redirect maps for your website, app, etc. The API is available on `https://cdn.umbraco.io/redirect`.
+[The Redirect API](redirect.md) can be used to query redirects setup in the Umbraco backoffice when moving or renaming content. Use it to create Redirect maps for your website, app, etc. The API is available on `https://cdn.umbraco.io/redirect`.
 
 The Preview API is the read-only Content and Media that you would retrieve to show the draft content in your apps, websites, or other platforms. The API is available on `https://preview.umbraco.io`. The Preview API is always protected and requires an `Api-Key`. The endpoints are the same as the Content Delivery API.
 
@@ -136,9 +135,9 @@ A member login can be used to access the Content Delivery API if it's protected.
 
 Content can be restricted further by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
 
-:::note
+{% hint style="info" %}
 Do note that you will need an API key header if the Content Delivery API `cdn.umbraco.io` is set to protected via the backoffice.
-:::
+{% endhint %}
 
 ### Member Bearer token
 

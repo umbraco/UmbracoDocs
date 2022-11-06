@@ -8,9 +8,9 @@ In this article you will be able to read about our Node.js Client library. You w
 
 If you are unfamiliar with Node.js you can read more in [the official Node.js documentation](https://nodejs.org/en/docs/).
 
-:::note
+{% hint style="info" %}
 You will have to have Node.js version 10 or above to be able to work with this client library.
-:::
+{% endhint %}
 
 ## Download and install
 

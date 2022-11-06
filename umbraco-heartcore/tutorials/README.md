@@ -1,16 +1,15 @@
 ---
-versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore Tutorials"
 meta.Description: "Here you can find tutorials for Umbraco Heartcore"
 ---
 
 # Umbraco Heartcore Tutorials
 
-## [Creating a Custom Grid Editor](Creating-A-Custom-Grid-Editor/)
+## [Creating a Custom Grid Editor](creating-a-custom-grid-editor.md)
 
 Step by step tutorial on creating custom grid editors in Umbraco Heartcore.
 
-## [Querying with GraphQL](Querying-With-GraphQL/)
+## [Querying with GraphQL](querying-with-graphql.md)
 
 Step by step tutorial on setting up an Umbraco Heartcore site and querying it with GraphQL.
 

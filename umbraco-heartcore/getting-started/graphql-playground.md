@@ -63,9 +63,9 @@ To run a query use the left side of the GraphQL Playground to type in your query
 
 To learn more about querying, visit our [API documentation for GraphQL](../../API-Documentation/GraphQL/index.md).
 
-:::note
+{% hint style="info" %}
 The Heartcore GraphQL endpoint only supports queries - other operation types, that is mutations and subscriptions, are not supported.
-:::
+{% endhint %}
 
 After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section.
 
