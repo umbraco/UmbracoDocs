@@ -61,7 +61,7 @@ To add blocks to our Block List editor:
     | Name          | featureName | Textstring   |
     | Details       | details     | Textarea     |
     | Image         | image       | Media Picker |
-4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](broken-reference) section.
+4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/block-list-editor.md#setup-block-types) section.
 5. Similarly, I'll set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
 
@@ -195,7 +195,7 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 
 ## Rendering the Block List Content
 
-To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](broken-reference) section.
+To render the stored value of your Block List editor on the frontend, see the [Rendering Block List Content](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/block-list-editor.md#rendering-block-list-content) section.
 
 {% embed url="https://www.youtube.com/embed/Gp_ek2-FJNY?rel=0" %}
 Custom Views for Blocks

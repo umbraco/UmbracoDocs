@@ -33,7 +33,7 @@ A SurfaceController is an MVC controller that interacts with the front-end rende
 
 All implementations of Surface Controllers inherit from the base class: `Umbraco.Cms.Web.Website.Controllers.SurfaceController`.
 
-For details on using Surface Controllers, see the [Surface Controllers](broken-reference) article.
+For details on using Surface Controllers, see the [Surface Controllers](../reference/routing/surface-controllers/) article.
 
 ## Umbraco API Controllers
 
@@ -41,7 +41,7 @@ An Umbraco API Controller is an ASP.NET WebAPI controller that is used for creat
 
 All implementations of Umbraco API Controllers inherit from the base class: `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController`.
 
-For details on using Umbraco API Controllers, see the [Umbraco API Controllers](broken-reference) article.
+For details on using Umbraco API Controllers, see the [Umbraco API Controllers](../reference/routing/umbraco-api-controllers/) article.
 
 ## Umbraco Authorized Controllers and Attributes
 
@@ -60,7 +60,7 @@ The Umbraco Authorized controllers and attributes for Backoffice Users are:
 
     Another base class implementation for the backoffice is `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedJsonController`. It inherits from `Umbraco.Cms.Web.BackOffice.Controllers.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
 
-For more details on Routing requirements, see the [Routing requirements for backoffice authentication](broken-reference) article.
+For more details on Routing requirements, see the [Routing requirements for backoffice authentication](../reference/routing/authorized.md) article.
 
 ### Members & Front-end Authorization
 
@@ -117,4 +117,4 @@ For more details, see the [Using MemberAuthorizeAttribute](../reference/routing/
 
 ### Routing
 
-For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](broken-reference). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../reference/routing/umbraco-api-controllers/authorization.md) article.
+For Umbraco to authenticate a request for the backoffice, the routing needs to be specific. For details on the routes and route requirements, see the [Routing requirements for backoffice authentication](../reference/routing/authorized.md). To secure your Umbraco API controllers based on a users membership, see the [Umbraco API - Authorization](../reference/routing/umbraco-api-controllers/authorization.md) article.

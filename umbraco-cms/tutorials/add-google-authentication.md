@@ -37,7 +37,7 @@ For this tutorial, you need:
 
 * [Visual Studio](https://visualstudio.microsoft.com/) installed
 * A [Google](https://myaccount.google.com/) account
-* A working [Umbraco solution](broken-reference)
+* A working [Umbraco solution](../../umbraco-cms/fundamentals/setup/)
 
 ## Setting up a Google OAuth API
 
@@ -265,6 +265,6 @@ For more information on installing and managing packages in Visual Studio, see t
 
 ## Related Links
 
-* [External login providers](broken-reference)
-* [Linking External Login Provider accounts](broken-reference)
+* [External login providers](../../umbraco-cms/reference/security/external-login-providers.md)
+* [Linking External Login Provider accounts](../../umbraco-cms/reference/security/auto-linking.md)
 * [Two-factor authentication](../reference/security/two-factor-authentication.md)

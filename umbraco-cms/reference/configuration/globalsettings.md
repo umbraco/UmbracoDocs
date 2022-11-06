@@ -181,7 +181,7 @@ If enabled Umbraco will try to automatically install the database when it's miss
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](broken-reference) occurs. This will save 1 database call during startup.
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'primary' server for scheduling so no [primary election](../../fundamentals/setup/server-setup/load-balancing/file-system-replication.md) occurs. This will save 1 database call during startup.
 
 ### Database factory version
 

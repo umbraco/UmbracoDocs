@@ -7,7 +7,7 @@ meta.Description: A guide to getting started with unit testing in Umbraco
 
 These examples are for Umbraco 9.x and 10.x and they rely on [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4) and [AutoFixture](https://github.com/AutoFixture/AutoFixture) and they should be considered inspiration of how to get started with Unit Testing in Umbraco. There are many ways of testing Umbraco and there’s no right or wrong way.
 
-When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](broken-reference). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
+When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
 {% hint style="info" %}
 When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
@@ -59,7 +59,7 @@ public class PageViewModelTests
 
 ### Testing a RenderController
 
-See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](broken-reference).
+See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](../reference/routing/custom-controllers.md#creating-a-custom-controller).
 
 ```csharp
 public class PageController : RenderController
@@ -114,7 +114,7 @@ public class PageControllerTests
 
 ### Testing a SurfaceController
 
-See [Reference documentation on SurfaceControllers](broken-reference).
+See [Reference documentation on SurfaceControllers](../reference/routing/surface-controllers/).
 
 ```csharp
 public class PageSurfaceController : SurfaceController
@@ -162,7 +162,7 @@ public class PageSurfaceControllerTests
 
 ## Testing an UmbracoApiController
 
-See [Reference documentation on UmbracoApiControllers](broken-reference).
+See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
 ```csharp
 public class ProductsController : UmbracoApiController
