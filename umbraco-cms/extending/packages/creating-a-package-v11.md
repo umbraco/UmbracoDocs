@@ -93,7 +93,7 @@ dotnet new umbracopackage --name CustomWelcomeDashboard
 ```
 
 {% hint style="info" %}
-For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](broken-reference).
+For a guide on how to install the project templates, follow the 2 steps listed in the [Install the template section](../../fundamentals/setup/install/install-umbraco-with-templates.md).
 {% endhint %}
 
 The outcome is the files generated below:

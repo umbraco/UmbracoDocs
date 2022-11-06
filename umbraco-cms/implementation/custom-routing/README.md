@@ -53,7 +53,7 @@ For more detailed information see: [IContentFinder documentation](../../referenc
 
 ## Custom MVC routes
 
-You can specify your own custom MVC routes to work within the Umbraco pipeline. It requires your controller to inherit from `UmbracoPageController` and either implement `IVirtualPageController` or use `.ForUmbracoPage` when registering your route, for more information and a complete example of both approaches see [Custom routing documentation](broken-reference)
+You can specify your own custom MVC routes to work within the Umbraco pipeline. It requires your controller to inherit from `UmbracoPageController` and either implement `IVirtualPageController` or use `.ForUmbracoPage` when registering your route, for more information and a complete example of both approaches see [Custom routing documentation](../../reference/routing/custom-routes.md#custom-routes-within-the-umbraco-pipeline)
 
 An example of registering a `UmbracoPageController` using `.ForUmbracoPage`:
 
@@ -103,7 +103,7 @@ namespace CustomRoutes
 ```
 
 {% hint style="info" %}
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](broken-reference).
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../reference/routing/custom-controllers.md).
 {% endhint %}
 
 ### RoutingRequestNotification

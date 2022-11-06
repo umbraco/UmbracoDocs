@@ -19,7 +19,7 @@ Umbraco comes pre-installed with many useful property editors.
 
 ## More information
 
-* [Customizing Data Types](broken-reference)
+* [Customizing Data Types](../../data/data-types/)
 
 ## Tutorials
 

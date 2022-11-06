@@ -167,6 +167,6 @@ They need to be removed through KUDU from both the `repository` and `wwwroot` fo
 
 ## Related Information
 
-* [Breaking changes in Umbraco 10](broken-reference)
+* [Breaking changes in Umbraco 10](../../umbraco-cms/fundamentals/setup/upgrading/umbraco10-breaking-changes.md)
 * [Working locally with Umbraco Cloud](../set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](../set-up/power-tools/)

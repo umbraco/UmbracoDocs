@@ -204,7 +204,7 @@ The global settings for the scheduled job which cleans up historic content versi
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-See [Content Version Cleanup](broken-reference) for more details on overriding configuration and preventing cleanup of specific versions.
+See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md) for more details on overriding configuration and preventing cleanup of specific versions.
 
 ```json
 "ContentVersionCleanupPolicy": {

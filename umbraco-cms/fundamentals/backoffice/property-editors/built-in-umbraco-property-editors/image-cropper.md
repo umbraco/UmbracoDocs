@@ -8,7 +8,7 @@ When the Image Cropper is used on a Media Type the crops are shared between all 
 
 If the Image Cropper is used on a Document Type, the file and crops will be **local** to the Document.
 
-Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](broken-reference).
+Notice that it is possible make local crops on shared Media Items via the [Media Picker Property Editor](media-picker-3.md).
 
 ## Settings
 

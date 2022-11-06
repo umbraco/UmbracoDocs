@@ -133,7 +133,7 @@ namespace MyNamespace
 
 ## Using a Notification Handler
 
-If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](broken-reference).
+If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
 
 The code for this approach is as follows:
 

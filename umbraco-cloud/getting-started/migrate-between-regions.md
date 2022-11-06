@@ -10,7 +10,7 @@ The guide will use an example where a Cloud project is migrated from the West EU
 
 * Admin access and deployment rights on the project that is to be migrated.
 * Git is installed locally as well as a Git client like _Git Bash_.
-* A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](broken-reference) article.
+* A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../umbraco-cms/fundamentals/setup/requirements.md) article.
 
 {% hint style="info" %}
 To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.

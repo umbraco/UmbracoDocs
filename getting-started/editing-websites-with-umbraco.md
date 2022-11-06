@@ -13,7 +13,7 @@ This section will help you get started as content editor in Umbraco, introduce U
 
 There is also information on how to use features such as translations, forms, and other ways to personalize your site.
 
-[Get to know the Umbraco Backoffice](broken-reference)
+[Get to know the Umbraco Backoffice](../umbraco-cms/fundamentals/backoffice/)
 
 [The Editors Manual](../umbraco-cms/tutorials/editors-manual/)
 

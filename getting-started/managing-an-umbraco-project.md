@@ -19,9 +19,9 @@ In this section you will find information on the key concepts and requirements o
 
 [What commerical options are available from Umbraco?](https://umbraco.com/products/)
 
-[Information on planning an Umbraco project](broken-reference)
+[Information on planning an Umbraco project](../umbraco-cms/fundamentals/setup/requirements.md)
 
-[How do I manage users with Umbraco?](broken-reference)
+[How do I manage users with Umbraco?](../umbraco-cms/fundamentals/data/users.md)
 
 [What is the deployment process for Umbraco?](../umbraco-cloud/deployment/)
 
