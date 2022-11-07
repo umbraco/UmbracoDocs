@@ -8,7 +8,7 @@ _Dedicated for Starter and Standard - Projects Dashboard Quicklinks- Other Umbra
 - **Projects Dashboard Quick links** - When hovering an environment in the Projects Dashboard two quick links are shown for easy access to the backoffice and page, respectively.
 - **Other Umbraco Cloud Portal updates** - The Portal has been updated with a few other features and updates worth mentioning. These includes a quick invite for organization members, improved deployment messaging, region and dedicated info on the project information page, and a few fixes.
 
-## [Dedicated for Starter and Standard plan]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/)
+## [Dedicated for Starter and Standard plan]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/))
 
 When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. But since October, it has also been possible to add a dedicated option to a **Starter** or **Standard plan**, so that all projects now have the option of being executed on **dedicated resources** with the benefits included therein.
 
