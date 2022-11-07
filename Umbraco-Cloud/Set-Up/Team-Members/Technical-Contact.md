@@ -27,4 +27,3 @@ When you create a **New Project**, the user used to create the project will auto
 
     ![Add technical contact form](images/Technical-Contact.gif)
 
-<iframe width="800" height="450" title="How to add a Technical Contact to your Umbraco Cloud project" src="https://www.youtube.com/embed/sjugjnHz3bo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
