@@ -8,41 +8,29 @@ _Dedicated for Starter and Standard - Projects Dashboard Quicklinks- Other Umbra
 - **Projects Dashboard Quick links** - When hovering an environment in the Projects Dashboard two quick links are shown for easy access to the backoffice and page, respectively.
 - **Other Umbraco Cloud Portal updates** - The Portal has been updated with a few other features and updates worth mentioning. These includes a quick invite for organization members, improved deployment messaging, region and dedicated info on the project information page, and a few fixes.
 
-## [Dedicated for Starter and Standard plan](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/)
+## [Dedicated for Starter and Standard plan]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/)
 
-When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. But since October, it has also been possible to add a dedicated option to a Starter or Standard plan, so that all projects now have the option of being executed on dedicated resources with the benefits included therein.
+When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. But since October, it has also been possible to add a dedicated option to a **Starter** or **Standard plan**, so that all projects now have the option of being executed on **dedicated resources** with the benefits included therein.
 
-![DedicatedStandard](images/2FA-Registration.gif)
+![DedicatedStandard](images/DedicatedStarter.png)
 
-2FA code can be sent either to your email or as an SMS to your phone, or you can use an authentication app such as Google Authenticator, Authy, or similar.
-
-![Phone-auth](images/Phone-auth.png)
-
-As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
-
-See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/) for details. 
+See the documentation section [Dedicated Resources](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/) for more information.
 
 ## Projects Dashboard Quick links
 
-Until now, Umbraco Cloud has been exclusively hosted in the West Europe region on Azure. Including **East US** as an option and offering regional hosting to agencies, partners, and end clients located or working in the US is a big milestone and enabler for Umbraco Cloud.
+When hovering an environment in the Projects Dashboard you will see a link to the **backoffice** and **front page** of that Umbraco Cloud Project. By pressing one of these links you are navigated to the specific page - simple and easy.
 
-You can select which region you would like to host your Umbraco Cloud project while creating a new Cloud project.
+![ProjectsDashboardHoverEnvironment](images/ProjectsDashboardHoverEnvironment.gif)
 
-![USRegionRegistration](images/USRegionRegistration.gif)
-
-As excited as we are about making Umbraco Cloud available in the US, it is exciting to have the ability to expand to **new regions in the future**. If you have specific requests regarding the next region you want Umbraco Cloud to expand to, you’re welcome to let us know at product@umbraco.com.
-
-See the blog article [Umbraco Cloud expands with US regional hosting](https://umbraco.com/blog/umbraco-cloud-expands-with-us-regional-hosting/) for more information.
+Note that accessibility is a central consideration in the realization of the Projects Dashboard, whereby it is easy to navigate between projects and links using only the keyboard.
 
 ## Other Umbraco Cloud Portal updates
 
-Have you tried the new Projects Dashboard yet? The first official version of the dashboard has been released. Currently, you can find a link in the project's overview, but soon the Projects Dashboard will be the default landing page after logging into Umbraco Cloud Portal.
-
-By clicking on “Edit groups”, you can sort projects into groups with the drag-drop functionality to organize your Cloud and Heartcore projects.
-
-After saving your projects, you can choose between a detailed view with relevant information for your projects such as environments, product versions, and bandwidth/media storage usage, or a more compact view with less information. You can decide by using the “Settings” option.
-
-![ProjectsDashboardV1](images/ProjectsDashboardV1.gif)
-
-You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects as per your preference.
-We will add new features and functionality to the dashboard in future releases starting with a filtering system as one of the next new additions.
+During October and November, we provided several small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights.
+- When inviting a user to a cloud project, an Admin of an organization in Umbraco Cloud will have the opportunity to choose between all the organization's members for quick selection.
+- Display of hosting region and dedicated option on the project information page.
+- Display the dedication option on the Projects Dashboard.
+- Improve messages to users while certain deployment is taking place.
+- Ensure that breaking a reference between a baseline and a child project is always depicted in the Projects Dashboard.
+- Fix for displaying duplicate project information data when moving back from the project page to Projects Dashboard.
+- Fix for Heartcore mini project plan displayed as Starter.
