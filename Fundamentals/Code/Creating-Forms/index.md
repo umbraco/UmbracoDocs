@@ -18,7 +18,7 @@ In this example we'll create a basic contact form containing a name, email and m
 
 ### Creating the view model
 
-First, we're going to create the model for the contact form by adding a new class to the `/Models` folder (if the folder doesn't already exist, create it at the root of your website). Let's call it `ContactFormViewModel.cs`
+First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. (If the folder doesn't already exist, create it at the root of your website). Let's call it `ContactFormViewModel.cs`
 
 ```csharp
 namespace MyFirstForm.Models
@@ -65,13 +65,13 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder (if the folder doesn't already exist, create it at the root of the website). Name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's can do this automatically for you.
+Finally, we're going to add the controller. Create a new empty class in the `/Controllers` folder (if the folder doesn't already exist, create it at the root of the website). Name it `ContactFormController` and make it inherit from `SurfaceController`. Inheriting from `SurfaceController` requires that you call its base constructor, most IDE's: Integrated Development Environments, can do this automatically for you.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using MyFirstForm.Models;
 using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Logging; 
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
@@ -108,7 +108,7 @@ namespace MyFirstForm.Controllers
 }
 ```
 
-If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
+If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, for example sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
 ## Adding the form to a template
 You can add the form to a template by rendering the partial view:
