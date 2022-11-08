@@ -236,9 +236,9 @@ If you are using ModelsBuilder, the example will look like this:
 
 To use the `GetBlockGridHtmlAsync()` method, you will need to create a Partial View for each Block Type. The Partial View must be named using the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These Partial View files need to go into the `Views/Partials/BlockGrid/Components/` folder.
+These Partial View files need to go into the `Views/Partials/blockgrid/Components/` folder.
 
-Example: `Views/Partials/BlockGrid/Components/MyElementTypeAliasOfContent.cshtml`.
+Example: `Views/Partials/blockgrid/Components/MyElementTypeAliasOfContent.cshtml`.
 
 The Partial Views will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`. This model contains `Content` and `Settings` from your block, as well as the configured `RowSpan`, `ColumnSpan`, `ForceLeft`, `ForceRight`, and `Areas` of the Block.
 
@@ -252,7 +252,7 @@ The Partial View for the Block is responsible for rendering its own Block Areas.
 
 Here you will need to create a Partial View for each Block Type within the Block Area. For the name, use the alias of the Element Type that is being used as Content Model for the Block Type.
 
-These Partial Views must be placed in the same folder as before, (`Views/Partials/BlockGrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
+These Partial Views must be placed in the same folder as before, (`Views/Partials/blockgrid/Components/`), and will receive a model of type `Umbraco.Core.Models.Blocks.BlockGridItem`.
 
 #### Putting it all together
 
@@ -289,7 +289,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
 
 1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
-2. Copy the cloned views to the local folder `Views/Partials/BlockGrid/`
+2. Copy the cloned views to the local folder `Views/Partials/blockgrid/`
 3. Make changes to your copied views. The entry point for `GetBlockGridHtmlAsync()` is the view `default.cshtml`
 {% endhint %}
 

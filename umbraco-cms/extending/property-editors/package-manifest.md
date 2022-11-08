@@ -52,7 +52,7 @@ public class ManifestFilter : IManifestFilter
             PackageName = "Sir Trevor",
             Scripts = new[]
             {
-                "~/App_Plugins/SirTrevor/SirTrevor-config.html"
+                "~/App_Plugins/SirTrevor/SirTrevor.controller.js"
             }, 
             Version = "1.0.0"
         });

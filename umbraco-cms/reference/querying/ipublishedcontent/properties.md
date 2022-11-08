@@ -108,7 +108,7 @@ Returns the index the page is on, compared to its siblings
 @Model.SortOrder
 ```
 
-### .Url(IPublishedUrlProvider, culture = null, UrlMode mode = UrlMode.Default) - (Extension method)
+### .Url(PublishedUrlProvider, culture = null, UrlMode mode = UrlMode.Default) - (Extension method)
 
 Returns the Url to the page.
 
