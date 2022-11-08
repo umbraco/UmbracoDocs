@@ -158,7 +158,7 @@ With the packages and projects updated, it is time to make some changes to some 
 If `global.json` does not exist in the root of your repository, you can read about the `global.json` [Microsoft docs](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json)
 :::
 
-Upgrade your `global.json` to target the runtime sdk for the latest version of [.net 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+Upgrade your `global.json` to target the runtime sdk for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ```json
 {
