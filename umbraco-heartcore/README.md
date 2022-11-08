@@ -29,7 +29,7 @@ Reference documentation and tutorials for the GraphQL API.
 
 - [Querying With GraphQL](tutorials/querying-with-graphql.md) - Learn how to query Umbraco Heartcore with GraphQL
 
-## What is Umbraco Heartcore?
+## What is Umbraco Heartcore? 
 
 Umbraco Heartcore is a headless SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content.
 
