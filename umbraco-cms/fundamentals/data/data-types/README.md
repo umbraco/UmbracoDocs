@@ -17,7 +17,7 @@ An example of this could be to have two dropdown Data Types both referencing the
 
 ## Creating a new Data Type
 
-To create a new Data Type, go to the **Settings** section within the backoffice and click the menu icon to the right of the __Data Types__ folder and select __Create__->__New data type__. Name the Data Type - we'll call it _Dropdown Cities_.
+To create a new Data Type, go to the **Settings** section within the backoffice. Thereafter click the menu icon to the right of the __Data Types__ folder and select __Create__->__New Data Type__. Name the Data Type - we'll call it _Dropdown Cities_.
 
 ![Dropdown List](images/creating-a-data-type-v10.png)
 
@@ -33,7 +33,7 @@ When you're happy with the list press **Save**. It is now possible to select thi
 
 To customize an existing Data Type go to the __Settings__ section, expand the __Data Types__ folder and select the **Data Type** you want to edit.
 
-Besides the Data Types that are available out of the box there are some additional **Property Editors** to choose from such as the __Slider__ and __Nested Content__.
+Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the __Slider__ and __Nested Content__.
 
 ## Viewing Data Type References
 
