@@ -10,7 +10,8 @@ _Dedicated for Starter and Standard - Projects Dashboard Quick links- Other Umbr
 
 ## [Dedicated for Starter and Standard plan]([https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/2-factor-authentication-on-cloud/](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Dedicated-Resources/))
 
-When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. But since October, it has also been possible to add a dedicated option to a **Starter** or **Standard plan**, so that all projects now have the option of being executed on **dedicated resources** with the benefits included therein.
+When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. 
+Since October, it has also been possible to add a dedicated option for **Starter** and **Standard** plans with the benefits included therein.
 
 ![DedicatedStandard](images/DedicatedStarter.png)
 
