@@ -19,7 +19,7 @@ See the documentation section [Dedicated Resources](https://our.umbraco.com/docu
 
 ## Projects Dashboard Quick links
 
-When hovering an environment in the Projects Dashboard you will see a link to the **backoffice** and **front page** of that Umbraco Cloud Project. By pressing one of these links you are navigated to the specific page - simple and easy.
+When hovering an environment in the Projects Dashboard you will see a link to the **backoffice** and **front page** of that Umbraco Cloud Project. By pressing one of these links you are navigated to the specific page.
 
 ![ProjectsDashboardHoverEnvironment](images/ProjectsDashboardHoverEnvironment.gif)
 
