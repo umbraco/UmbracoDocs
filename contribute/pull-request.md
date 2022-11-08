@@ -52,7 +52,7 @@ When you are satisfied with the changes you have made, you can submit a pull req
 ![Fork of documentation](images/example-of-fork.png)
 
 {% hint style="info" %}
-When you have had your fork for a longer period of time, you need to sync it with the original repository before making new changes. This is called a rebase.
+When you have had your fork for some time, you need to sync with the original repository before making new changes. This is called a rebase.
 
 1. Set the original repository (UmbracoDocs) as an upstream to sync from.
 2. Fetch the updates.

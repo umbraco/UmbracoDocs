@@ -21,7 +21,11 @@ We have a few guidelines to follow when writing documentation and we have some t
 
 ## [Format, naming conventions and files](markdown-conventions.md)
 
-The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](markdown-conventions.md). You will also find an overview of the folder and file structure we use.
+The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](markdown-conventions.md).
+
+## [File structure](structure.md)
+
+Learn how we structure and name files in the Umbraco documentation.
 
 ## Multi version documentation
 
@@ -30,7 +34,7 @@ Whenever a new version of an Umbraco product is released, the previous way of do
 We do this by having a Git branch for each of the major versions of Umbraco CMS.
 
 {% hint style="info" %}
-We are currently testing how best to handle the versions in terms of the add-on products as well as Umbraco Cloud and Heartcore.
+We are currently testing how best to handle the versions in terms of all products including Cloud, Heartcore, Forms and Deploy.
 
 For now all documentation will follow the Umbraco CMS major versions. We will add warnings and notes whenever the versions to not match.
 {% endhint %}
