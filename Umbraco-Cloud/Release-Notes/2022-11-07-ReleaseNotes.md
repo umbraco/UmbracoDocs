@@ -23,7 +23,9 @@ When hovering an environment in the Projects Dashboard you will see a link to th
 
 ![ProjectsDashboardHoverEnvironment](images/ProjectsDashboardHoverEnvironment.gif)
 
-Note that accessibility is a central consideration in the realization of the Projects Dashboard, whereby it is easy to navigate between projects and links using only the keyboard.
+:::note
+Accessibility is a central consideration in realizing the Projects Dashboard, whereby it is easy to navigate between projects and links using only the keyboard.
+:::
 
 ## Other Umbraco Cloud Portal updates
 
