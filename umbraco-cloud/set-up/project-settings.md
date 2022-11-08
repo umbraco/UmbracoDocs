@@ -1,11 +1,21 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Project Settings
 
-When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage team members, database connections, hostnames/domains, security settings, SSL certificates, deployment webhooks, upgrade plan, project usage, advanced settings, rename, or delete the project.
+When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the **Settings** dropdown:
+
+- View Project Overview
+- Team Members
+- Database Connection Details
+- Hostnames/Domains
+- Security Settings
+- Content Delivery Network (CDN) Caching and Optimizations
+- Deployment Webhooks
+- Secure Sockets Layer (SSL) certificates
+- Upgrade Plan
+- Rename Project
+- Advanced Settings
+- Project Usage
+- Dedicated Resources
+- Delete the project.
 
 ![settings](images/project-settings-v10.png)
 
@@ -17,7 +27,7 @@ You can view the **Overview** of your Umbraco Cloud project from the **Settings*
 
 ## [Edit team](../set-up/team-members/README.md)
 
-Manage the team members on your project. You can also view the backoffice user groups for each team member, add a [Technical contact](../set-up/team-members/technical-contact.md), or add an [Account contacts](../set-upt/team-members/accounts-contact.md) for your project.
+Manage the team members and user permissions on your project. You can also view the backoffice user groups for each team member, view pending project invites, and manage [Technical contacts](team-members/technical-contact.md) for your project.
 
 ## [Connection details](../databases/README.md)
 
@@ -37,17 +47,15 @@ Manage CDN Cache settings for your project. You can modify default settings, whi
 
 ## [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
-Used to upload and bind your custom security certificate to your hostnames instead of using the TLS (HTTPS) certificates provided by the Umbraco Cloud service.
+If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
 ## Public access
 
-Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication.
-It requires you to enter your Cloud credentials in order to view the frontend. 
+Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication. It requires you to enter your Cloud credentials in order to view the frontend.
 
 You can disable/enable it with one click on the Public access page.
 
 Access to manage the basic authentication requires your project to be on the Standard plan or higher.
-
 
 ## [Webhooks](../deployment/deployment-webhook.md)
 
@@ -78,12 +86,22 @@ Manage **Advanced** settings for your project from the **Settings** menu:
 
 - [Enable static outbound IP addresses](../set-up/external-Services.md) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 - Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
+- [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
+- Change .NET framework runtime for your Umbraco installation for each environment of your cloud project.
 
-    {% hint style="info" %}
-    When enabling IIS logging, the site will have to restart. For more information about IIS logging, look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
-    {% endhint %}
+{% hint style="info" %}
+When enabling IIS logging, the site will have to restart. For more information about IIS logging, look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+{% endhint %}
 
-![Advanced Settings](images/Advanced-Settings.png)
+![Advanced Settings](images/Advanced-Settings-new.png)
+
+## [Dedicated Resources](dedicated-resources.md)
+
+You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between the different dedicated options depending on the number of resources you will need for your project.
+
+## [Usage](usage.md)
+
+On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ## [Payment](manage-subscriptions/new-shop.md)
 
@@ -92,10 +110,6 @@ From here, you can see the payment history for your project, change the credit c
 {% hint style="info" %}
 This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
 {% endhint %}
-
-## [Usage](usage.md)
-
-On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ### Delete Project
 
