@@ -6,6 +6,8 @@ This is the documentation project for Umbraco. The scope of this project is to p
 
 # What's in the documentation
 
+Just a little test.
+
 ## Getting started
 [Getting started](Getting-Started/) is an introduction to Umbraco, containing explanations of basic concepts and short tutorials.
 
