@@ -75,25 +75,3 @@ We follow [GitBooks conventions for adding code blocks](https://docs.gitbook.com
 Four types of hints can be added to our documentation: info, success, warning and danger.
 
 [Learn more about how to use hints in the GitBook Docs](https://docs.gitbook.com/tour/editor/blocks/hint).
-
-## Styled checklists
-
-Instead of using the classic bullet for lists, the Umbraco documentation provides an option to use checkmarks for lists.
-
-```markdown
-:::checklist
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-:::
-```
-
-This list will render as:
-
-:::checklist
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-:::
