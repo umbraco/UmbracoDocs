@@ -1,6 +1,6 @@
 # Unattended Installs
 
-In some cases, you might need to install one or multiple Umbraco instances automatically without having to run through the installation wizard to configure the instance.
+In some cases, you might need to install Umbraco instances automatically without having to run through the installation wizard to configure the instance.
 
 You can use the **Unattended installs** feature to allow for quick installation and set up of Umbraco instances on something like Azure Web Apps.
 
@@ -8,19 +8,19 @@ This article will give you the details you need to install Umbraco unattended.
 
 ## Get clean install of Umbraco
 
-In order to get a clean instance of Umbraco either follow our installation guide for how to [Install an Umbraco project template](install-umbraco-with-templates.md#install-umbraco-with-net-cli) or download a zip file directly from [Downloads](https://our.umbraco.com/download).
+In order to get a clean instance of Umbraco, follow our installation guide for how to [Install an Umbraco project template](install-umbraco-with-templates.md#install-umbraco-with-net-cli).
 
 ## Configure your database
 
-As you will not be running through the installation wizard when using the unattended installs feature, you need to manually tell Umbraco which database to use.
+As you will not be running through the installation wizard when using this feature, you need to manually tell Umbraco which database to use.
 
 * Set up and configure a new database - see [Requirements](../requirements.md#hosting) for details.
 * Add the connection string using configuration.
 
 {% hint style="info" %}
-Umbraco can create a SQL Server database for you during the unattended install process if the user specified by the credentials in your connection string has the `CREATE DATABASE` permission granted and the global setting [InstallMissingDatabase](../../../reference/configuration/globalsettings.md#install-missing-database) is set to `true`.
+Umbraco can create an SQL Server database for you during the unattended install process. The user specified by the credentials in your connection string needs to have the `CREATE DATABASE` permission granted and the global setting [InstallMissingDatabase](../../../reference/configuration/globalsettings.md#install-missing-database) is set to `true`.
 
-If your connection string is for SQLite or SQL Server Express LocalDB it is assumed that a database should be created when missing regardless of the value of the `InstallMissingDatabase` setting.
+If your connection string is for SQLite or SQL Server Express LocalDB it is assumed that a database should be created when missing. This is regardless of the value of the `InstallMissingDatabase` setting.
 {% endhint %}
 
 ### SQL Server Example in appsettings.json
@@ -50,7 +50,7 @@ It is recommended that you make use of the values shown below for the `Cache`, `
 
 ## Enable the unattended installs feature
 
-The unattended installs feature is disabled by default and in order to enable it, you need to add the following JSON object to a JSON configuration source.
+The unattended installs feature is disabled by default. In order to enable it, you need to add the following JSON object to a JSON configuration source.
 
 ```json
 {
