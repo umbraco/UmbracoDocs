@@ -55,10 +55,6 @@ Now it's time to create the new article. Depending on the article and the versio
 
 Each scenario involves a different set of steps, which are explained below.
 
-:::tip
-Check out the [File Naming Conventions](../File-Naming-Conventions/#target-a-specific-umbraco-version-using-file-naming-conventions) to learn more about how to use file names to target a specific version of Umbraco.
-:::
-
 ### Target the current major version
 
 1. Create a copy of the existing article, for instance, `index.md`.
