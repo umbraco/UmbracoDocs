@@ -153,6 +153,23 @@ With the packages and projects updated, it is time to make some changes to some 
 
     ![Target Framework](images/verify-v10-upgrade-locally.png)
 
+7. Update the `global.json` in root repository folder
+:::note
+If `global.json` does not exist in the root of your repository, you can read about the `global.json` [Microsoft docs](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json)
+:::
+
+Upgrade your `global.json` to target the runtime sdk for the latest version of [.net 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+```json
+{
+  "sdk": {
+    "allowPrerelease": false,
+    "version": "6.0.402",
+    "rollForward": "minor"
+  }
+}
+```
+
 ## Step 4: Deploy and Test on Umbraco Cloud
 
 Once the Umbraco 10 project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
