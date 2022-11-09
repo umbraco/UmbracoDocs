@@ -708,7 +708,7 @@
 * [Contribute to the Umbraco Documentation](contribute/README.md)
 * [Code samples](contribute/code-samples.md)
 * [How to add a new version of an article](contribute/how-do-add-a-new-version.md)
-* [What is an Issue?](contribute/issues.md)
+* [Submit feedback](contribute/issues.md)
 * [Markdown conventions](contribute/markdown-conventions.md)
 * [What is a pull request](contribute/pull-request.md)
 * [Style Guide](contribute/style-guide.md)
