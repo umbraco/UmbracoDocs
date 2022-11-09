@@ -1,8 +1,3 @@
----
-meta.Title: Installing and Configuring Umbraco Deploy
-meta.Description: Steps to how to install and configure Umbraco Deploy
----
-
 # Installing Umbraco Deploy
 
 In this article, we will cover the steps in order for you to install and configure Umbraco Deploy on a new or existing website.
@@ -134,7 +129,7 @@ Once the configuration has been set up with the correct information we can now g
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
-![Test UDA file](../images/test-UDA.png)
+![Test UDA file](images/test-UDA.png)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 
