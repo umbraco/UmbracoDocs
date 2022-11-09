@@ -17,7 +17,7 @@ Each folder must have an `index.md` file which links to the individual sub-pages
   * `index.md`
   * `other-page.md`
 
-  ## Images
+## Images
 
 Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
