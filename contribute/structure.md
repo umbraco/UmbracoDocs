@@ -4,22 +4,34 @@ When you a contributing to the Umbraco documentation it can be useful to know ho
 
 In this article you will get an overview of the file structure as well as a few best-practices for naming files.
 
-For the Umbraco documentation project, each individual topic is contained in its own folder.
+## By product and topic
 
-Each folder must have an `index.md` file which links to the individual sub-pages. If images are used, these must be in `images` folders next to the .md file referencing them using relative paths.
+The overall structure of the Umbraco documenation is divided by product. Each Umbraco product has its own directories with articles and images.
 
-* `topic`
-  * `images`
+Diving one step deeper, each individual topic is contained in its own directory.
+
+Each directory must have a `README.md` file which will act as a landing page for that directory. If images are used, these must be in an `images` directory next to the `.md` file referencing them using relative paths.
+
+* `/topic` *(directory)*
+  * `README.md`
+  * `another-page.md`
+  * `/images` *(directory)*
     * `images.png`
-  * `Subtopic`
-    * `images`
-    * `index.md`
-  * `index.md`
-  * `other-page.md`
+  * `/subtopic` *(directory)*
+    * `README.md`
+    * `topic.md`
+    * `another-topic.md`
+    * `/images` *(directory)*
+
+## File names
+
+All file and directory names need to be small-caps in order to be synced properly with GitBook.
+
+If an article is not a landing page, we recommend using the title of the article as the file name.
 
 ## Images
 
-Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
+Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` directory. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
 ```markdown
 ![My Image Alt Text](images/img.png)
