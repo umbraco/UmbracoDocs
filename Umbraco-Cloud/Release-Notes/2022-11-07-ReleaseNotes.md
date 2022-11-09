@@ -29,7 +29,7 @@ Accessibility is a central consideration in realizing the Projects Dashboard, wh
 
 ## Other Umbraco Cloud Portal updates
 
-During October and November, we provided various small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights.
+During October and November, we provided different small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights.
 - When inviting a user to a cloud project, an Admin of an organization in Umbraco Cloud will have the opportunity to choose between all the organization's members for quick selection.
 - Display of hosting region and dedicated option on the project information page.
 - Display the dedication option on the Projects Dashboard.
