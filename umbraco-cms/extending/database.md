@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+versionFrom: 11.0.0
 meta.Title: Umbraco Database
 meta.Description: A guide to creating a custom Database table in Umbraco
 ---
@@ -7,10 +7,6 @@ meta.Description: A guide to creating a custom Database table in Umbraco
 # Creating a Custom Database Table
 
 It is possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
-
-{% hint style="info" %}
-If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method as was available in that version. You register a component in a composer, create a migration plan and run the plan to add the database table to the database. Learn more about composers in the [Composing](../implementation/composing.md) article.
-{% endhint %}
 
 The end result looks like this:
 
@@ -22,8 +18,6 @@ The following code sample shows how this is done using a composer and component.
 
 When migrating from verison 8 there are a few changes to be aware of. The first change is that namespace updates are dependencies that need to be passed to the `Upgrader.Execute()` method. Another is a change to the access modifier of the `Migrate()` method.
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```csharp
 using Microsoft.Extensions.Logging;
 using NPoco;
@@ -38,7 +32,7 @@ using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
 namespace MyNamespace
 {
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IComposer
+    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
     {
     }
 
@@ -121,13 +115,13 @@ namespace MyNamespace
             public int BlogPostUmbracoId { get; set; }
 
             [Column("Name")]
-            public string Name { get; set; }
+            public required string Name { get; set; }
 
             [Column("Email")]
-            public string Email { get; set; }
+            public required string Email { get; set; }
 
             [Column("Website")]
-            public string Website { get; set; }
+            public required string Website { get; set; }
 
             [Column("Message")]
             [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
@@ -136,123 +130,6 @@ namespace MyNamespace
     }
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```csharp
-using Microsoft.Extensions.Logging;
-using NPoco;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Migrations;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
-using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
-
-namespace MyNamespace
-{
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>, IComposer
-    {
-    }
-
-    public class BlogCommentsComponent : IComponent
-    {
-        private readonly IScopeProvider _scopeProvider;
-        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly IKeyValueService _keyValueService;
-        private readonly IRuntimeState _runtimeState;
-
-        public BlogCommentsComponent(
-            IScopeProvider scopeProvider,
-            IMigrationPlanExecutor migrationPlanExecutor,
-            IKeyValueService keyValueService,
-            IRuntimeState runtimeState)
-        {
-            _scopeProvider = scopeProvider;
-            _migrationPlanExecutor = migrationPlanExecutor;
-            _keyValueService = keyValueService;
-            _runtimeState = runtimeState;
-        }
-
-        public void Initialize()
-        {
-            if (_runtimeState.Level < RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            // Create a migration plan for a specific project/feature
-            // We can then track that latest migration state/step for this project/feature
-            var migrationPlan = new MigrationPlan("BlogComments");
-
-            // This is the steps we need to take
-            // Each step in the migration adds a unique value
-            migrationPlan.From(string.Empty)
-                .To<AddCommentsTable>("blogcomments-db");
-
-            // Go and upgrade our site (Will check if it needs to do the work or not)
-            // Based on the current/latest step
-            var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(_migrationPlanExecutor, _scopeProvider, _keyValueService);
-        }
-
-        public void Terminate()
-        {
-        }
-    }
-
-    public class AddCommentsTable : MigrationBase
-    {
-        public AddCommentsTable(IMigrationContext context) : base(context)
-        {
-        }
-        protected override void Migrate()
-        {
-            Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
-
-            // Lots of methods available in the MigrationBase class - discover with this.
-            if (TableExists("BlogComments") == false)
-            {
-                Create.Table<BlogCommentSchema>().Do();
-            }
-            else
-            {
-                Logger.LogDebug("The database table {DbTable} already exists, skipping", "BlogComments");
-            }
-        }
-
-        [TableName("BlogComments")]
-        [PrimaryKey("Id", AutoIncrement = true)]
-        [ExplicitColumns]
-        public class BlogCommentSchema
-        {
-            [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
-            [Column("Id")]
-            public int Id { get; set; }
-
-            [Column("BlogPostUmbracoId")]
-            public int BlogPostUmbracoId { get; set; }
-
-            [Column("Name")]
-            public string Name { get; set; }
-
-            [Column("Email")]
-            public string Email { get; set; }
-
-            [Column("Website")]
-            public string Website { get; set; }
-
-            [Column("Message")]
-            [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
-            public string Message { get; set; }
-        }
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ## Using a Notification Handler
 
@@ -260,8 +137,6 @@ If building a new solution, you can adopt a new pattern. With this pattern you c
 
 The code for this approach is as follows:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```
 using Microsoft.Extensions.Logging;
 using NPoco;
@@ -325,74 +200,6 @@ namespace MyNamespace
     // Migration and schema defined as in the previous code sample.
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```
-using Microsoft.Extensions.Logging;
-using NPoco;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Migrations;
-using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
-using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
-
-namespace MyNamespace
-{
-    public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
-    {
-        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly IScopeProvider _scopeProvider;
-        private readonly IKeyValueService _keyValueService;
-        private readonly IRuntimeState _runtimeState;
-
-        public RunBlogCommentsMigration(
-            IScopeProvider scopeProvider,
-            IMigrationPlanExecutor migrationPlanExecutor,
-            IKeyValueService keyValueService,
-            IRuntimeState runtimeState)
-        {
-            _migrationPlanExecutor = migrationPlanExecutor;
-            _scopeProvider = scopeProvider;
-            _keyValueService = keyValueService;
-            _runtimeState = runtimeState;
-        }
-
-        public void Handle(UmbracoApplicationStartingNotification notification)
-        {
-            if (_runtimeState.Level < RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            // Create a migration plan for a specific project/feature
-            // We can then track that latest migration state/step for this project/feature
-            var migrationPlan = new MigrationPlan("BlogComments");
-
-            // This is the steps we need to take
-            // Each step in the migration adds a unique value
-            migrationPlan.From(string.Empty)
-                .To<AddCommentsTable>("blogcomments-db");
-
-            // Go and upgrade our site (Will check if it needs to do the work or not)
-            // Based on the current/latest step
-            var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(
-                _migrationPlanExecutor,
-                _scopeProvider,
-                _keyValueService);
-        }
-    }
-
-    // Migration and schema defined as in the previous code sample.
-}
-```
-{% endtab %}
-{% endtabs %}
 
 The notification handler can either be registered in a composer:
 

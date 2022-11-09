@@ -1,12 +1,12 @@
 ---
-versionFrom: 9.0.0
+versionFrom: 11.0.0
 meta.Title: Creating a package
 meta.Description: Tutorial to create a package in Umbraco
 ---
 
 # Creating a Package
 
-The goal of this tutorial is to extend Umbraco and create a package. The tutorial's starting point is to create a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process is the same for most packages so feel free to follow along with something else.
+The goal of this tutorial is to extend Umbraco and create a package. The tutorial's starting point is to create a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../../tutorials/creating-a-custom-dashboard.md). The process is the same for most packages so feel free to follow along with something else.
 
 ## Creating a package schema in the backoffice
 
@@ -100,7 +100,7 @@ The outcome is the files generated below:
 
 ![Content of an empty package](images/empty-package-from-template.png)
 
-Apart from the project file, you can find an empty `package.manifest` inside the **App\_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
+Apart from the project file, you can find an empty `package.manifest` inside the **App\_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard.md). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
 This file contains an `msbuild` target that is executed when a project has a dependency on this package. It copies the `App_Plugins` folder into the project on build. This is required for having Umbraco packages in a NuGet package format.
 
@@ -229,21 +229,19 @@ Whenever the embedded package.xml file changes, the automatic package migration 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
 ```
-using System;
 using Umbraco.Cms.Core.Packaging;
 
-namespace CustomWelcomeDashboardProject.Migrations
-{
-    public class CustomPackageMigrationPlan : PackageMigrationPlan
-    {
-        public CustomPackageMigrationPlan() : base("Custom Welcome Dashboard")
-        {
-        }
+namespace CustomWelcomeDashboardProject.Migrations;
 
-        protected override void DefinePlan()
-        {
-            To<CustomPackageMigration>(new Guid("4FD681BE-E27E-4688-922B-29EDCDCB8A49"));
-        }
+public class CustomPackageMigrationPlan : PackageMigrationPlan
+{
+    public CustomPackageMigrationPlan() : base("Custom Welcome Dashboard")
+    {
+    }
+
+    protected override void DefinePlan()
+    {
+        To<CustomPackageMigration>(new Guid("4FD681BE-E27E-4688-922B-29EDCDCB8A49"));
     }
 }
 ```
@@ -251,6 +249,8 @@ namespace CustomWelcomeDashboardProject.Migrations
 The custom migrations can inherit from `PackageMigrationBase` where we can use helper methods to pick up the schema. But we can also use the regular `MigrationBase` class.
 
 ```
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
@@ -258,33 +258,34 @@ using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Packaging;
 
-namespace CustomWelcomeDashboardProject.Migrations
+namespace CustomWelcomeDashboardProject.Migrations;
+
+public class CustomPackageMigration : PackageMigrationBase
 {
-    public class CustomPackageMigration : PackageMigrationBase
+    public CustomPackageMigration(
+        IPackagingService packagingService,
+        IMediaService mediaService,
+        MediaFileManager mediaFileManager,
+        MediaUrlGeneratorCollection mediaUrlGenerators,
+        IShortStringHelper shortStringHelper,
+        IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
+        IMigrationContext context,
+        IOptions<PackageMigrationSettings> packageMigrationsSettings) 
+        : base(
+            packagingService,
+            mediaService,
+            mediaFileManager,
+            mediaUrlGenerators,
+            shortStringHelper,
+            contentTypeBaseServiceProvider,
+            context,
+            packageMigrationsSettings)
     {
-        public CustomPackageMigration(
-            IPackagingService packagingService,
-            IMediaService mediaService,
-            MediaFileManager mediaFileManager,
-            MediaUrlGeneratorCollection mediaUrlGenerators,
-            IShortStringHelper shortStringHelper,
-            IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
-            IMigrationContext context) : base(packagingService,
-                                              mediaService,
-                                              mediaFileManager,
-                                              mediaUrlGenerators,
-                                              shortStringHelper,
-                                              contentTypeBaseServiceProvider,
-                                              context)
-        {
-        }
+    }
 
-        protected override void Migrate()
-        {
-            ImportPackage.FromEmbeddedResource(GetType()).Do();
-
-            // Additional steps ...
-        }
+    protected override void Migrate()
+    {
+        ImportPackage.FromEmbeddedResource<CustomPackageMigration>().Do();
     }
 }
 ```

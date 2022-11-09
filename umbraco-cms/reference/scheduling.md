@@ -1,13 +1,12 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 11.0.0
 meta.title: Scheduling with hosted services in Umbraco
 meta.Description: Use hosted services to run a background task
 ---
 
 # Scheduling with RecurringHostedServiceBase
 
-In Umbraco 9 it is possible to run recurring code using a hosted service. Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes.
+In Umbraco 9+ it is possible to run recurring code using a hosted service. Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes.
 
 {% hint style="warning" %}
 Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
@@ -16,9 +15,6 @@ Be aware you may or may not want this hosted service code to run on all servers,
 ## RecurringHostedService example
 
 ```
-using System;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Scoping;
@@ -26,100 +22,82 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Sync;
 using Umbraco.Cms.Infrastructure.HostedServices;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+
+public class CleanUpYourRoom : RecurringHostedServiceBase
 {
-    public class CleanUpYourRoom : RecurringHostedServiceBase
+    private readonly IRuntimeState _runtimeState;
+    private readonly IContentService _contentService;
+    private readonly IServerRoleAccessor _serverRoleAccessor;
+    private readonly IProfilingLogger _profilingLogger;
+    private readonly ILogger<CleanUpYourRoom> _logger;
+    private readonly ICoreScopeProvider _scopeProvider;
+
+    private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
+    private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
+
+    public CleanUpYourRoom(
+        IRuntimeState runtimeState,
+        IContentService contentService,
+        IServerRoleAccessor serverRoleAccessor,
+        IProfilingLogger profilingLogger,
+        ILogger<CleanUpYourRoom> logger,
+        ICoreScopeProvider scopeProvider)
+        : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
     {
-        private readonly IRuntimeState _runtimeState;
-        private readonly IContentService _contentService;
-        private readonly IServerRoleAccessor _serverRoleAccessor;
-        private readonly IProfilingLogger _profilingLogger;
-        private readonly ILogger<CleanUpYourRoom> _logger;
-        private readonly IScopeProvider _scopeProvider;
+        _runtimeState = runtimeState;
+        _contentService = contentService;
+        _serverRoleAccessor = serverRoleAccessor;
+        _profilingLogger = profilingLogger;
+        _logger = logger;
+        _scopeProvider = scopeProvider;
+    }
 
-        private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
-        private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
-
-        public CleanUpYourRoom(
-            IRuntimeState runtimeState,
-            IContentService contentService,
-            IServerRoleAccessor serverRoleAccessor,
-            IProfilingLogger profilingLogger,
-            ILogger<CleanUpYourRoom> logger,
-            IScopeProvider scopeProvider)
-            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
+    public override Task PerformExecuteAsync(object? state)
+    {
+        // Don't do anything if the site is not running.
+        if (_runtimeState.Level is not RuntimeLevel.Run)
         {
-            _runtimeState = runtimeState;
-            _contentService = contentService;
-            _serverRoleAccessor = serverRoleAccessor;
-            _profilingLogger = profilingLogger;
-            _logger = logger;
-            _scopeProvider = scopeProvider;
-        }
-
-        public override Task PerformExecuteAsync(object state)
-        {
-            // Don't do anything if the site is not running.
-            if (_runtimeState.Level != RuntimeLevel.Run)
-            {
-                return Task.CompletedTask;
-            }
-
-            // Wrap the three content service calls in a scope to do it all in one transaction.
-            using IScope scope = _scopeProvider.CreateScope();
-            
-            int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
-            _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
-            _logger.LogInformation("You have {NumberOfThingsInTheBin} items to clean", numberOfThingsInBin);
-
-            if (_contentService.RecycleBinSmells())
-            {
-                // Take out the trash
-                using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bin",
-                    "It's all clean now"))
-                {
-                    _contentService.EmptyRecycleBin(userId: -1);
-                }
-            }
-
-            // Remember to complete the scope when done.
-            scope.Complete();
             return Task.CompletedTask;
         }
+
+        // Wrap the three content service calls in a scope to do it all in one transaction.
+        using ICoreScope scope = _scopeProvider.CreateCoreScope();
+            
+        int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
+        _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
+        _logger.LogInformation("You have {NumberOfThingsInTheBin} items to clean", numberOfThingsInBin);
+
+        if (_contentService.RecycleBinSmells())
+        {
+            // Take out the trash
+            using (_profilingLogger.TraceDuration<CleanUpYourRoom>("Mum, I am emptying out the bin",
+                       "It's all clean now"))
+            {
+                _contentService.EmptyRecycleBin(userId: -1);
+            }
+        }
+
+        // Remember to complete the scope when done.
+        scope.Complete();
+        return Task.CompletedTask;
     }
 }
 ```
-
-{% hint style="info" %}
-If you are using an Umbraco version before v9.4 you can't pass in an instance of `ILogger` in to the base constructor. See the code example below:
-
-```
-public CleanUpYourRoom(
-    ...)
-    : base(HowOftenWeRepeat, DelayBeforeWeStart)
-{
-    ...
-}
-```
-{% endhint %}
 
 ### Registering with extension method
 
 First we need to create our extension method where we register the hosted service with `AddHostedService`:
 
 ```
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.DependencyInjection;
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService
+public static class UmbracoBuilderHostedServiceExtensions
 {
-    public static class UmbracoBuilderHostedServiceExtensions
+    public static IUmbracoBuilder AddCustomHostedServices(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddCustomHostedServices(this IUmbracoBuilder builder)
-        {
-            builder.Services.AddHostedService<CleanUpYourRoom>();
-            return builder;
-        }
+        builder.Services.AddHostedService<CleanUpYourRoom>();
+        return builder;
     }
 }
 ```
@@ -145,18 +123,15 @@ public void ConfigureServices(IServiceCollection services)
 All we need to do here is to create the composer where we register the hosted service with `AddHostedService`, which will be run automatically:
 
 ```
-using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService
+namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+
+public class CleanUpYourRoomComposer : IComposer
 {
-    public class CleanUpYourRoomComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddHostedService<CleanUpYourRoom>();
-        }
+        builder.Services.AddHostedService<CleanUpYourRoom>();
     }
 }
 ```
