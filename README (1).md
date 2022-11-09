@@ -7,3 +7,4 @@ This is a hint.
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=gYItthbfHTs" %}
 Video example.
 {% endembed %}
+.
