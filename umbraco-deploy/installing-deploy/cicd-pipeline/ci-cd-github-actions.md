@@ -1,6 +1,8 @@
 ---
-meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using GitHub Actions"
-meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using GitHub Actions"
+meta.Title: Setting up a CI/CD Build and Deployment Pipeline Using GitHub Actions
+meta.Description: >-
+  Steps and examples on how to setup a build and deployment pipeline for Umbraco
+  Deploy using GitHub Actions
 ---
 
 # Setting up CI/CD build server with Github actions
@@ -11,26 +13,23 @@ In this example we will show how you can set up a CI/CD build server using Githu
 We will not cover how you can set up the site itself as this is beyond this documentation.
 {% endhint %}
 
-The following steps will take you through setting up a build server in Azure Web Apps.
-Go to the Azure portal and find the empty website that we have set up and want to connect to.
+The following steps will take you through setting up a build server in Azure Web Apps. Go to the Azure portal and find the empty website that we have set up and want to connect to.
 
 1. Go to the Deployment Center.
 
-![Azure deployments](images/Deployment-center.png)
+![Azure deployments](../images/Deployment-center.png)
 
-In the Deployment Center we can set up the CI/CD build server.
-With this example we are going to set up our build server by using Github Actions.
-It is possible to set up the build server however you want as long as it supports executing powershell scripts.
+In the Deployment Center we can set up the CI/CD build server. With this example we are going to set up our build server by using Github Actions. It is possible to set up the build server however you want as long as it supports executing powershell scripts.
 
-2. Go to the Settings tab.
-3. Choose which source and build provider to use.
-    * In this case we want to choose Github.
+1. Go to the Settings tab.
+2. Choose which source and build provider to use.
+   * In this case we want to choose Github.
 
 ![Build server clean](images/Build-server-v10.png)
 
-4. Choose the Organization which you created our Github repository under.
-5. Choose the repository that was set up earlier in this guide.
-6. Select which branch that we want the build server to build into.
+1. Choose the Organization which you created our Github repository under.
+2. Choose the repository that was set up earlier in this guide.
+3. Select which branch that we want the build server to build into.
 
 We can see which runtime stack and version we are running, in this example we are running .NET and Version 6.0.
 
@@ -38,19 +37,18 @@ Once the information has been added we can go ahead and preview the YAML file th
 
 ![Workflow configuration](images/workflow-preview-v10.png)
 
-7. Save the workflow.
+1. Save the workflow.
 
 The website and the Github repository are now connected.
 
 If we go back to the Github repository we can see that a new folder have been created called Workflows:
 
-![Workflows](images/workflows.png)
+![Workflows](../images/workflows.png)
 
-Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal.
-The file will need to be configured so it fits into your set up.
+Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal. The file will need to be configured so it fits into your set up.
 
-8. Pull down the new file and folder, so you can work with the YAML file on your local machine.
-9. Configure it to work with our Umbraco Deploy installation.
+1. Pull down the new file and folder, so you can work with the YAML file on your local machine.
+2. Configure it to work with our Umbraco Deploy installation.
 
 When it have been configured it will look something like this:
 
@@ -113,13 +111,12 @@ jobs:
 ```
 
 {% hint style="info" %}
-This is only an example of how you can set up the CI/CD pipeline for Umbraco Deploy.
-It is possible to set it up in a way that works for you and your preferred workflow.
+This is only an example of how you can set up the CI/CD pipeline for Umbraco Deploy. It is possible to set it up in a way that works for you and your preferred workflow.
 {% endhint %}
 
 We also need to add the License file and `TriggerDeploy.ps1` file in an item group in the `csproj` file:
 
-```HTML
+```
 <ItemGroup>
 <Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
 <Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
@@ -128,7 +125,7 @@ We also need to add the License file and `TriggerDeploy.ps1` file in an item gro
 
 As well as enabling Unattended install in the **appSettings.json** file so Umbraco installs automatically:
 
-```JSON
+```
 "Umbraco": {
     "CMS": {
       "Unattended": {
@@ -150,18 +147,15 @@ We can now go ahead and commit the configured YAML file and push up all the file
 
 Go to Github where you will now be able to see that the CI/CD build has started running:
 
-![Deployment build started](images/Deploying-meta-data.png)
+![Deployment build started](../images/Deploying-meta-data.png)
 
-The build server will go through the steps in the YAML file,
-and once it is done the deployment have gone through successfully:
+The build server will go through the steps in the YAML file, and once it is done the deployment have gone through successfully:
 
-![Deployment Complete](images/deployment-complete.png)
+![Deployment Complete](../images/deployment-complete.png)
 
-You can now start creating content on the local machine.
-Once you create something like a Document Type, the changes will get picked up in Git.
+You can now start creating content on the local machine. Once you create something like a Document Type, the changes will get picked up in Git.
 
-When you're done making changes, commit them and deploy them to Github.
-The build server will run and extract the changes into the website in Azure.
+When you're done making changes, commit them and deploy them to Github. The build server will run and extract the changes into the website in Azure.
 
 This will only deploy the schema data for our local site to your website.
 

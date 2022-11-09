@@ -5,7 +5,7 @@ meta.Description: >-
   log in to the Umbraco Cloud Portal.
 ---
 
-# 2-factor authentication on Umbraco Cloud
+# 2-factor authentication
 
 On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud account.
 
@@ -44,7 +44,7 @@ You have the option to use your phone when you log in to the Umbraco Cloud porta
 Before deactivating your old phone number, please make sure to update the phone number used for your 2-factor-authentication. Changing the phone number used for 2FA will require verification through the old number.
 {% endhint %}
 
-![Phone authentication](../release-notes/images/Phone-auth.png)
+![Phone authentication](images/Phone-auth.png)
 
 ## Disabeling 2-factor authentication
 
