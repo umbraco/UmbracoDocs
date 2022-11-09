@@ -1,4 +1,4 @@
-# What is a pull request
+# Submit a Pull Request
 
 A Pull Request (PR) is a way of submitting changes to an open source project like the Umbraco documentation.
 
@@ -47,6 +47,10 @@ When you make a fork, you get a copy of the entire repository on your own GitHub
 
 Once the fork has been created you will have your own copy of the Umbraco documentation. If you clone your fork, you will have the files locally which means you can make changes and sync them back up to your fork.
 
+{% hint style="warning" %}
+Are you adding a new article to the documentation? Add it to the `SUMMARY.md` file as well to ensure it is added to the navigation.
+{% endhint %}
+
 When you are satisfied with the changes you have made, you can submit a pull request to sync your copy with the original repository:
 
 ![Fork of documentation](images/example-of-fork.png)
@@ -58,7 +62,7 @@ When you have had your fork for some time, you need to sync with the original re
 2. Fetch the updates.
 3. Update your own fork.
 
-```none
+```
 git remote add upstream https://github.com/umbraco/UmbracoDocs/
 git fetch upstream
 git rebase upstream/master
@@ -66,7 +70,7 @@ git rebase upstream/master
 
 This can also be done by using the **Sync fork** option, which will be present once your fork is behind the original repository.
 
-![Highlight the Sync fork option available on a fork that is behind the original repository](images/sync-fork.png)
+<img src="images/sync-fork.png" alt="Highlight the Sync fork option available on a fork that is behind the original repository" data-size="original">
 {% endhint %}
 
 ### Step 2: Creating a pull request
@@ -74,10 +78,9 @@ This can also be done by using the **Sync fork** option, which will be present o
 Once you have made some changes and you are happy with the result, you can create a pull request.
 
 1. Navigate to the **Code** section on your fork.
-2. Select **Contribute** and then **Open pull request** to get started.
+2.  Select **Contribute** and then **Open pull request** to get started.
 
     ![Highlight option to contribute directly from fork to original repository.](images/contribute.png)
-
 3. Add a title and description explaining what changes you have made and why you made them.
 4. Select **Create pull request** to create the pull request on the original repository.
 

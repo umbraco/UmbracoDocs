@@ -1,6 +1,6 @@
-# Contribute to the Umbraco Documentation
+# Contribute to Documentation
 
-The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS)!
+The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS).
 
 You can contribute to the documentation if something is missing or outdated. All you need to do it is a GitHub account and a fork of the UmbracoDocs GitHub repository.
 

@@ -1,4 +1,4 @@
-# Markdown conventions
+# Markdown Conventions
 
 The Umbraco Documentation uses Markdown for all articles.
 
@@ -47,14 +47,20 @@ Link to an article in a different directory than the current article:
 ```
 
 {% hint style="info" %}
-Use the title of the article that is linked to, as the *link text*. This is done in order to tell the reader what the will find on the other end.
+Use the title of the article that is linked to, as the _link text_. This is done in order to tell the reader what the will find on the other end.
 
 Do not use **here** or **link** as the link text, as this provides little to no information about the destination.
 {% endhint %}
 
 ### Page Links
 
-[To do.]
+It is possible to add a page link that spans the entire width of the page. This is generally used for linking to a new subject related to the article at hand.
+
+The following is a page link that links to the "Submit Feedback" article.
+
+{% content-ref url="issues.md" %}
+[issues.md](issues.md)
+{% endcontent-ref %}
 
 ## Formatting code
 
@@ -64,7 +70,7 @@ Code formatting comes in 2 variants: inline code and code blocks.
 
 Use inline code when referencing file names and paths as well as actual code the does not extend over multiple lines.
 
-Inline code should be wrapped in ` (backtick) characters.
+Inline code should be wrapped in \` (backtick) characters.
 
 ### Code Blocks
 

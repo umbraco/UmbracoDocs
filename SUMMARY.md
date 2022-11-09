@@ -489,7 +489,7 @@
   * [Managing Transport Security](umbraco-cloud/set-up/manage-security.md)
   * [Project Settings](umbraco-cloud/set-up/project-settings.md)
   * [SMTP Settings](umbraco-cloud/set-up/smtp-settings.md)
-  * [Upgrade your  Plan](umbraco-cloud/set-up/upgrade-umbraco-cloud-plan.md)
+  * [Upgrade your Plan](umbraco-cloud/set-up/upgrade-umbraco-cloud-plan.md)
   * [Usage](umbraco-cloud/set-up/usage.md)
   * [Users](umbraco-cloud/set-up/users-on-cloud.md)
   * [Working with a Local Clone](umbraco-cloud/set-up/working-locally.md)
@@ -700,10 +700,10 @@
 
 ## Contribute
 
-* [Contribute to the Umbraco Documentation](contribute/README.md)
-* [Code samples](contribute/code-samples.md)
+* [Contribute to Documentation](contribute/README.md)
+* [Submit a Pull Request](contribute/pull-request.md)
+* [Submit Feedback](contribute/issues.md)
+* [Code Blocks](contribute/code-samples.md)
 * [Create a new version of an article](contribute/how-do-add-a-new-version.md)
-* [Submit feedback](contribute/issues.md)
-* [Markdown conventions](contribute/markdown-conventions.md)
-* [What is a pull request](contribute/pull-request.md)
+* [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
