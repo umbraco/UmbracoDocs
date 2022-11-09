@@ -1,19 +1,19 @@
 ---
-meta.Title: "Creating a Custom Grid Editor"
-meta.Description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
+meta.Title: Creating a Custom Grid Editor
+meta.Description: Learn how to create a Custom Grid Editor in Umbraco Heartcore.
 ---
 
-# Custom Grid Editors in Umbraco Heartcore
+# Custom Grid Editors
 
-In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
+In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
 
 ## Content
 
-* [Create a Document Type and Grid configuration](#create-a-document-type-and-grid-configuration)
-* [A look at a default grid editor](#a-look-at-a-default-grid-editor)
-* [Create a custom grid editor](#create-a-custom-grid-editor)
-* [Using module aliases](#using-module-aliases)
-* [Describing the grid editor using JSON schema](#describing-the-grid-editor-using-json-schema)
+* [Create a Document Type and Grid configuration](creating-a-custom-grid-editor.md#create-a-document-type-and-grid-configuration)
+* [A look at a default grid editor](creating-a-custom-grid-editor.md#a-look-at-a-default-grid-editor)
+* [Create a custom grid editor](creating-a-custom-grid-editor.md#create-a-custom-grid-editor)
+* [Using module aliases](creating-a-custom-grid-editor.md#using-module-aliases)
+* [Describing the grid editor using JSON schema](creating-a-custom-grid-editor.md#describing-the-grid-editor-using-json-schema)
 
 ## Create a Document Type and grid configuration
 
@@ -69,7 +69,7 @@ A custom editor inherits from `HTMLElement` and must be the default export.
 export default class extends HTMLElement {
 ```
 
-A couple of [private fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields) are defined. One for storing a reference to the `textarea` field and one for the HTML template.
+A couple of [private fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private\_class\_fields) are defined. One for storing a reference to the `textarea` field and one for the HTML template.
 
 ```javascript
   #textarea
@@ -188,7 +188,6 @@ export default class extends LitElement {
     </div>`
   }
 }
-
 ```
 
 The preview should now look like this:
@@ -208,7 +207,6 @@ export default class extends LitElement {
 ```
 
 We're exporting a default class inheriting from `LitElement`.
-
 
 ```javascript
   static properties = {
@@ -259,7 +257,6 @@ We tell Lit that we have a `value` property which we expect to be an `Array`.
 
 We define the styles in a static field called `styles`. This will make Lit automatically inject a stylesheet into our custom element. The text returned needs to use the `css` tag from `Lit`. For more info see the [Lit styles documentation](https://lit.dev/docs/components/styles/).
 
-
 ```javascript
   render() {
     return html`<div class="container">
@@ -272,7 +269,6 @@ We define the styles in a static field called `styles`. This will make Lit autom
     </div>`
   }
 }
-
 ```
 
 The render method returns the HTML we want to show. It needs to be tagged with `html`. For more info see the [Lit templates documentation](https://lit.dev/docs/templates/overview/).
@@ -358,8 +354,7 @@ render() {
 }
 ```
 
-We assign the editor value to a local variable `items`, if `this.value` is `null` or `undefined` we assign an empty array.
-Then in the HTML we are now looping over the items and returning an `umbh-image` for each item. `umbh-image` is a custom element included with the backoffice bridge, it takes an `udi` and renders an images based on that.
+We assign the editor value to a local variable `items`, if `this.value` is `null` or `undefined` we assign an empty array. Then in the HTML we are now looping over the items and returning an `umbh-image` for each item. `umbh-image` is a custom element included with the backoffice bridge, it takes an `udi` and renders an images based on that.
 
 Go back to the **Content** section try to add some images to a page using the editor.
 
@@ -402,7 +397,7 @@ Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 * Go to the **Settings** section.
 * Exapnd the **Headless** node.
-* Open the [API Browser](../getting-started/api-browser.md/)
+* Open the [API Browser](../getting-started/api-browser.md)
 * Type in `https://cdn.umbraco.io/content/<CONTENT_ID>` in the Explorer URL bar, replacing `<CONTENT-ID>` with the id we copied before.
 * Click **Go!**.
 
@@ -455,7 +450,6 @@ Remember the `url` property stored earlier? Let's make it return a URL instead o
 }
 ```
 
-
 With the JSON above we are adding a `properties` object containing a `url` property. This property has its `type` set to `string`, and most importantly, `format` set to `uri-reference`. By specifying the `format` as `uri-reference` Heartcore will try to parse the value as a UDI and if the UDI is for either a document or media, the URL of that item will be returned instead. We can see that if we go back to the API Browser.
 
 ![Final response from the API](images/api-browser-final-output.png)
@@ -469,7 +463,7 @@ While it is not necessary to define all properties in the JSON Schema, it is hig
 Besides the `uri-reference` format there's also `rich-text`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `rich-text` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
 {% hint style="info" %}
-## Related articles
-- [Custom Grid Editors](../Backoffice/grid-editors.md)
-{% endhint %}
+### Related articles
 
+* [Custom Grid Editors](../Backoffice/grid-editors.md)
+{% endhint %}
