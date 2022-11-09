@@ -1,9 +1,9 @@
 ---
-meta.Title: "Installing Umbraco Deploy on new Umbraco website"
-meta.Description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
+meta.Title: Installing Umbraco Deploy on new Umbraco website
+meta.Description: Steps to how Umbraco Deploy can be set up on a new Umbraco website
 ---
 
-# Installing Umbraco Deploy
+# New site
 
 In this article, we will cover the steps in order for you to install Umbraco deploy on a brand new website.
 
@@ -12,9 +12,7 @@ We will cover how to install Umbraco deploy and set up Umbraco deploy on your we
 ## Prerequisites
 
 * Visual studio 2017 v15.9.6 or later
-
 * Umbraco Deploy license
-
 * SQL Server Database
 
 ## How to install Umbraco Deploy
@@ -29,9 +27,9 @@ However you are free to choose the hosting provider and CI/CD pipeline that you 
 
 ## Installation steps
 
-1. [Set up Git repository and new Umbraco project](#set-up-git-repository-and-umbraco-project)
-2. [Install Umbraco Deploy via NuGet](#installing-and-setting-up-umbraco-deploy)
-3. [Configure CI/CD pipeline](#set-up-cicd-pipeline)
+1. [Set up Git repository and new Umbraco project](new-site.md#set-up-git-repository-and-umbraco-project)
+2. [Install Umbraco Deploy via NuGet](new-site.md#installing-and-setting-up-umbraco-deploy)
+3. [Configure CI/CD pipeline](new-site.md#set-up-cicd-pipeline)
 
 ### Set up Git repository and Umbraco project
 
@@ -46,7 +44,7 @@ The first step to get Umbraco Deploy up and running is to set up a Github reposi
 
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
-```none
+```
 **/media/*
 
 # Umbraco deploy specific
@@ -61,12 +59,12 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ### Installing and setting up Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](install-configure.md).
+When Umbraco has been installed in a repository, we can go ahead to [install and configure Umbraco Deploy in the project](./).
 
 ### Set up CI/CD Pipeline
 
-At this stage your new website is prepared for use with Umbraco Deploy.  You should now move on to the setup of your [CI/CD build and deployment pipeline](cicd-Pipeline/README.md).
+At this stage your new website is prepared for use with Umbraco Deploy. You should now move on to the setup of your [CI/CD build and deployment pipeline](../cicd-Pipeline/).
 
-Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../deployment-workflow/README.md).
+Once the build server has been set up you can start creating content and sync it between your environments. Make sure to follow the proper [deployment workflow](../../deployment-workflow/).
 
-This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../deployment-workflow/content-transfer.md).
+This will only deploy the schema data. To transfer content and media you will need to do it from the backoffice of your project using the [queue for transfer feature](../../deployment-workflow/content-transfer.md).
