@@ -79,7 +79,7 @@
     * [Sections](umbraco-cms/fundamentals/backoffice/sections.md)
     * [Language Variants](umbraco-cms/fundamentals/backoffice/variants.md)
     * [Property Editors](umbraco-cms/fundamentals/backoffice/property-editors/README.md)
-      * [Built-in Umbraco Property Editors](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
+      * [Built-in Property Editors](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
         * [Checkbox List](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
         * [Color Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/color-picker.md)
         * [Content Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md)
