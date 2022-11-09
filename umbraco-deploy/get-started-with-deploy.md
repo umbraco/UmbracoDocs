@@ -1,11 +1,9 @@
 ---
-meta.Title: Getting started with Umbraco Deploy
-meta.Description: >-
-  What is Umbraco Deploy, how does it work and how to get started using Umbraco
-  Deploy
+meta.Title: "Getting started with Umbraco Deploy"
+meta.Description: "What is Umbraco Deploy, how does it work and how to get started using Umbraco Deploy "
 ---
 
-# Getting started
+# Getting started with Umbraco Deploy
 
 Umbraco Deploy is the engine that runs behind the scenes on Umbraco Cloud and takes care of all the deployment processes of both code, schema and content on projects.
 
@@ -18,11 +16,13 @@ In this article you can learn more about what it takes to get started using Umbr
 There are three main steps you need to go through in order to start using Umbraco Deploy on your website.
 
 1. [Set up Git repository and new Umbraco project](installing-deploy/new-site.md#set-up-git-repository-and-umbraco-project)
-   * Set up a repository and then install a new Umbraco project inside it.
+    - Set up a repository and then install a new Umbraco project inside it.
+
 2. [Install Umbraco Deploy via NuGet](installing-deploy/new-site.md#installing-and-setting-up-umbraco-deploy)
-   * Umbraco Deploy can be installed via NuGet.
+    - Umbraco Deploy can be installed via NuGet.
+
 3. [Configure CI/CD build server](installing-deploy/new-site.md#set-up-cicd-pipeline)
-   * Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment
+    - Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment
 
 ## How Umbraco Deploy works
 
@@ -34,4 +34,4 @@ For example, when working locally you might create a new Document Type. This wil
 
 When you want this deployed to your next upstream environment (i.e. staging), you would trigger your CI/CD process or Build Server (e.g. Azure DevOps or Github Actions). This will then push the changes to your development environment and once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
 
-![Deploy workflow](images/Deploy\_concept.png)
+![Deploy workflow](images/Deploy_concept.png)
