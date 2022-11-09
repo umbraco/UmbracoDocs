@@ -1,44 +1,45 @@
----
-meta.Title: "Contribute to Umbraco CMS"
-meta.Description: "An explanation of how you can contribute to the Umbraco Documentation, what the process is and what things to keep in mind when contributing."
----
 # Contribute to the Umbraco Documentation
 
-The Umbraco Documentation is presented here on [Our Umbraco](https://our.umbraco.com/documentation), however it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS)!
+The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS)!
 
-You can contribute to the documentation if something is missing or outdated, all you need to do it is a GitHub account.
+You can contribute to the documentation if something is missing or outdated. All you need to do it is a GitHub account and a fork of the UmbracoDocs GitHub repository.
 
-In this section you can learn more about how to contribute.
+In this section you can learn about the different ways to contribute. You can also find guidelines for writing good documentation.
 
 ## How to get started
 
 There are many ways in which you can contribute to the Umbraco Documentation. The approach you choose to take, depends on what you want to achieve with your contribution.
 
-* Request a quick / minor change to an article by submitting a [Pull Request](Pull-Requests/#option-1-creating-a-pr-directly-on-github)
-* Submit a more extensive update / change by [forking the Documentation repository](Pull-Requests/#options-2-creating-a-pr-through-a-fork)
-* Raise a question, start a discussion or report an issue on the [Issue Tracker](Issues/)
-* Help improve readability of the documentation by verifying articles against our [Style Guide](Style-Guide/#test-the-docs-yourself).
+* Request a quick / minor change to an article by submitting a [Pull Request](pull-request.md#option-1-creating-a-pr-directly-on-github)
+* Submit a more extensive update / change by [forking the Documentation repository](pull-request.md#options-2-creating-a-pr-through-a-fork)
+* Raise a question, start a discussion or report an issue on the [Issue Tracker](issues.md)
+* Help improve readability of the documentation by verifying articles against our [Style Guide](style-guide.md#test-the-docs-yourself).
 
-## [Style guide](Style-Guide/index.md)
+## [Style guide](style-guide.md)
 
-We have a few rules to follow when writing documentation and we have some tools you can use to help.
+We have a few guidelines to follow when writing documentation and we have some tools you can use for it.
 
-## [Format, naming conventions and files](Markdown-Conventions)
+## [Format, naming conventions and files](markdown-conventions.md)
 
-The Umbraco Documentation is written using the MarkDown markup language. We've put together [an article where you can learn more about MarkDown](https://our.umbraco.com/Documentation/Contribute/Markdown-Conventions). You will also find an overview of the folder and file structure we use.
+The Umbraco Documentation is written using the MarkDown markup language. We have put together [an article where you can learn more about MarkDown](markdown-conventions.md).
+
+## [File structure](structure.md)
+
+Learn how we structure and name files in the Umbraco documentation.
 
 ## Multi version documentation
 
-Whenever a new version of Umbraco is released, the previous way of doing things may change. This means that there will have to be multiple articles on the same topic, but with different variations.
+Whenever a new version of an Umbraco product is released, the previous way of doing things may change. This means that there needs to be mutliple version of our documentation.
 
-Therefore we've introduced **versioned documentation**, which includes 2 different mechanisms:
+We do this by having a Git branch for each of the major versions of Umbraco CMS.
 
-1. The [YAML meta data](Adding-Metadata/index.md) describing `versionFrom` and `versionTo`.
-2. The possibility to [add multiple files about the same topic](File-Naming-Conventions/index.md)
+{% hint style="info" %}
+We are currently testing how best to handle the versions in terms of all products including Cloud, Heartcore, Forms and Deploy.
 
-## [Adding meta data](Adding-Metadata/index.md)
+For now all documentation will follow the Umbraco CMS major versions. We will add warnings and notes whenever the versions to not match.
+{% endhint %}
 
-You can add meta data to any article in the Umbraco Documentation. This includes `meta title` and `meta description` as well as information on the versioning of the article.
+Learn more about how we handle the multiple version of our documentation in the [documenting multiple versions and products](../documentation-and-versions.md) article.
 
 ## Labels
 
@@ -54,15 +55,8 @@ Here's a quick explanation of the labels groups (colors) we use:
 
 Labels will be added to your Pull Request or Issue once it has been reviewed.
 
-## Documentation Curators
-
-All the work of adding labels, going through Issues & Pull Requests and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is more information about them here: https://our.umbraco.com/get-involved/the-documentation-curators/
-
 ## Contribution badge
 
-If your Pull Request to any Umbraco repository gets merged, you'll receive a Contributor badge on your profile on [Our Umbraco](https://our.umbraco.com):
+If your Pull Request to any Umbraco repository gets merged, you will receive a Contributor badge on your profile on [Our Umbraco](https://our.umbraco.com):
 
 ![Contributor badge on Our](images/c-trib-badge.png)
-
-The Documentation Curators team will search for your profile when merging your Pull Request and add the badge.
-If you do not receive your badge, write a comment with your profile's URL on the Pull Request and we'll look into it.
