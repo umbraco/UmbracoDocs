@@ -56,7 +56,13 @@ Do not use **here** or **link** as the link text, as this provides little to no 
 
 It is possible to add a page link that spans the entire width of the page. This is generally used for linking to a new subject related to the article at hand.
 
-The following is a page link that links to the "Submit Feedback" article.
+The following is a page link that links to the "Submit Feedback" article:
+
+```markdown
+{% content-ref url="issues.md" %}
+[issues.md](issues.md)
+{% endcontent-ref %}
+```
 
 {% content-ref url="issues.md" %}
 [issues.md](issues.md)
