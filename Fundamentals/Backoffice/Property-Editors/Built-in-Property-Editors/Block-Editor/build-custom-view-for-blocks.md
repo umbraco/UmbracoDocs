@@ -39,26 +39,37 @@ Example:
 </button>
 ```
 
-## Add the Areas Container for Block Grid Editor
+## Add the Areas for Block Grid Editor
 
-Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Area Container should be inserted.
+Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Areas should be inserted.
 
 This enables you to wrap and place the Areas as you need.
 
-The Areas is inserted through a slot, this slot will become the Area Container.
+The Areas is inserted through [Web Component Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots), A slot is a native HTML tag.
 
-Insert the following snippet where you would like the Area to appear in your Custom View:
+These Area slots can be generated automatically via this AngularJS Directive:
 
 ```html
-<slot name="area-container" part="area-container"></slot>
+    <umb-block-grid-render-area-slots></umb-block-grid-render-area-slots>
 ```
 
-Example of a Custom View wrapping the area-container:
+Example of a Custom View wrapping the Areas within a green border:
 
 ```html
 <div style="border:green 1px solid; padding: 20px;">
-    <slot name="area-container" part="area-container"></slot>
+    <umb-block-grid-render-area-slots></umb-block-grid-render-area-slots>
 </div>
+```
+
+You can also specifically define where each Area should be inserted, this is relevant if you like the Areas to appear differently than the provided grid setup of Areas.
+
+As a reference here is an example of the HTML output of the `umb-block-grid-render-area-slots` AngularJS Directive:
+
+```html
+    <div part="area-container">
+        <slot name="myAreasAlias1"></slot>
+        <slot name="myAreasAlias2"></slot>
+    </div>
 ```
 
 ## Adding custom implementation to your View
