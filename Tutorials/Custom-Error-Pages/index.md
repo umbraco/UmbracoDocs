@@ -131,7 +131,7 @@ For common approaches to handling errors in ASP.NET Core web apps, see the [Hand
 
 ### Basic Example
 
-A simple solution in four steps:
+A basic solution in four steps:
 
 #### First Step
 
@@ -172,7 +172,7 @@ A simple solution in four steps:
         ...
     ```
 
-3. Create the redirect pages from 1. step as regular content nodes in the back office. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+3. Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
 4. Update the `Configure`method in file `Startup.cs` 
 
     ```csharp
