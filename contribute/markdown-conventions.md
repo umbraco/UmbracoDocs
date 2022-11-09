@@ -58,10 +58,14 @@ It is possible to add a page link that spans the entire width of the page. This 
 
 The following is a page link that links to the "Submit Feedback" article:
 
-```markdown
+```markup
+{% raw %}
 {% content-ref url="issues.md" %}
+
 [issues.md](issues.md)
+
 {% endcontent-ref %}
+{% endraw %}
 ```
 
 {% content-ref url="issues.md" %}
