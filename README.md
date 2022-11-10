@@ -1,31 +1,61 @@
 ---
 meta.Title: Umbraco Documentation
-description: Learn everything you need to know about all Umbraco products.
+description: >-
+  Examples, tutorials, references, and best practices—everything you need to
+  build future-proof applications with Umbraco.
 layout: landing
 ---
 
 # Umbraco Documentation
 
-## Documentation for Umbraco
+{% hint style="info" %}
+### **Test and feedback**
+
+This platform is currently only available through a direct link as we want to ensure a proper test phase before publishing worldwide.
+
+The plan is to launch this documentation platform with the release of Umbraco 11 on December 1st, 2022.
+
+**Do you have feedback on the platform?** Please send it to [docs@umbraco.com](mailto:docs@umbraco.com) or create an [Issue on the GitHub repository](https://github.com/umbraco/UmbracoDocs/issues).
+{% endhint %}
+
+{% hint style="warning" %}
+### **Documentation for Umbraco 10+**
+
+This documentation covers the following major versions of Umbraco CMS:
+
+* Umbraco 9 (until it is End of Life (EOL) on December 1st)
+* Umbraco 10
+* Umbraco 11 (RC)
+
+If you are looking for documentation for older versions like Umbraco 7 and 8, you can find it on [our.umbraco.com](https://our.umbraco.com/Documentation).
+
+Read the Documentation and versions article to learn more about how we support and document multiple major versions.
+{% endhint %}
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/_roadmapSoMe_768x432px (1).png">_roadmapSoMe_768x432px (1).png</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
 
-#### [Tutorials](Tutorials/index.md)
+### Add on products
 
-Step by step tutorials.
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>How to build and add forms to your Umbraco website.</td><td></td><td><a href="umbraco-forms/">umbraco-forms</a></td><td><a href=".gitbook/assets/9.0RC_Email_hero_780x405px_1@2x-80.jpg">9.0RC_Email_hero_780x405px_1@2x-80.jpg</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Ensure smooth file and content deployments between your Umbraco instaces.</td><td></td><td><a href="umbraco-deploy/">umbraco-deploy</a></td><td><a href=".gitbook/assets/_roadmap-transparent_bg_for_blog_1500x500px.png">_roadmap-transparent_bg_for_blog_1500x500px.png</a></td></tr></tbody></table>
 
-#### [Development Guidelines](Development-Guidelines/index.md)
+## Contributing
 
-How to work with the Umbraco codebase.
+The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation, suggest a change or let us know.
 
-#### [Cheatsheets](Cheatsheets/index.md)
+Head over to the [Contribute section](contribute/) to start contributing to the Umbraco Documentation.
 
-Cheatsheets for overview of different areas like the Razor API and Views syntax.
+## Quick links
 
-#### Contributing
+{% content-ref url="umbraco-cms/fundamentals/setup/install/" %}
+[install](umbraco-cms/fundamentals/setup/install/)
+{% endcontent-ref %}
 
-\*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request.
+{% content-ref url="umbraco-cms/tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](umbraco-cms/tutorials/creating-a-basic-website/)
+{% endcontent-ref %}
 
-[Getting Started](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) contributing to the documentation. [Guidelines](https://our.umbraco.com/documentation/Contribute/) for Umbraco documentation\*
+{% content-ref url="umbraco-cms/tutorials/" %}
+[tutorials](umbraco-cms/tutorials/)
+{% endcontent-ref %}
 
 ***

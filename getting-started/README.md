@@ -10,4 +10,4 @@ How to get started with Umbraco depends a lot on what you're going to be using U
 
 In this section you'll find resources to help you get started with exactly the things you're looking to use Umbraco for.
 
-[![](images/calendar\_marked.png)](Managing-an-Umbraco-project/)[![](images/editor.png)](Editing-websites-with-Umbraco/)[![](images/tree.png)](Creating-websites-with-Umbraco/)[![](images/code.png)](Developing-websites-with-Umbraco/)[![](images/globe.png)](Hosting-an-Umbraco-infrastructure/)[![](images/support.png)](Where-can-I-get-help/)
+[![](images/calendar\_marked.png)](Managing-an-Umbraco-project/)[![](images/editor.png)](Editing-websites-with-Umbraco/)[![](images/tree.png)](Creating-websites-with-Umbraco/)[![](../images/code.png)](Developing-websites-with-Umbraco/)[![](images/globe.png)](Hosting-an-Umbraco-infrastructure/)[![](images/support.png)](Where-can-I-get-help/)
