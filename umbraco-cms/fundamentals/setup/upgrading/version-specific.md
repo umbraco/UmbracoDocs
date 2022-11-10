@@ -1,8 +1,8 @@
 # Version specific upgrades
 
-*This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version.*
+*This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. An cases you will be able to upgrade directly from your current version to the latest version.*
 
-Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
+Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions.
 
 ## Version 9 to version 10
 
