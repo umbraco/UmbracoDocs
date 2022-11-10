@@ -142,7 +142,7 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/general.md#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/README.md#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 
