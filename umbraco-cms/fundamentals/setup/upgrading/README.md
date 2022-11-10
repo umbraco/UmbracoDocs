@@ -1,10 +1,10 @@
 # Upgrade your project
 
-_This is the guide for upgrading in general._
+_This is the guide for upgrading existing installations in general._
 
-In this article you will find everything you need in order to upgrade your Umbraco CMS project.
+In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
-You will find instructions on how to upgrade to a new minor or major version, as well as how to run upgrades unattended.
+You will find instructions on how to upgrade to a new minor or major version as well as how to run upgrades unattended.
 
 * [Before you upgrade](#before-you-upgrade)
 * [Upgrade to a new Major](#upgrade-to-a-new-major)
@@ -15,11 +15,11 @@ You will find instructions on how to upgrade to a new minor or major version, as
 
 The following lists a few things to be aware of before initiating an upgrade of your Umbraco CMS project.
 
-* Sometimes there are exceptions to general upgrade guidelines. These are listed in the **[version-specific guide](version-specific.md)**. Be sure to consult this article before moving on.
+* Sometimes there are exceptions to general upgrade guidelines. These are listed in the **[version-specific guide](version-specific.md)**. Be sure to read this article before moving on.
 
-* Things may go wrong for different reasons. Be sure to **ALWAYS** make a backup of both your site's files and the database. This way you can always return to a version that you know works.
+* Things may go wrong for different reasons. Be sure to **ALWAYS** keep a backup of both your site's files and the database. This way you can always return to a version that you know works.
 
-* Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the Project compatibility area, click View details to check version-specific compatibility.
+* Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
 
 {% hint style="info" %}
 It is necessary to run the upgrade installer on each environment of your Umbraco site. This means that you need to repeat the steps below on each of your environments in order to complete the upgrade.
@@ -41,7 +41,7 @@ TABLE WITH THE VERSIONS
 
 ### Upgrade your project using Visual Studio
 
-It's recommended that you upgrade the site offline, and test the upgrade fully before deploying it to the production environment.
+It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
 1. Stop your site in IIS to prevent any changes being while you are upgrading.
 2. Open your Umbraco project in Visual Studio.
@@ -50,10 +50,10 @@ It's recommended that you upgrade the site offline, and test the upgrade fully b
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
 7. Choose **Umbraco.Cms**.
-8. Select thecorrect version from the **Version** drop-down.
+8. Select the correct version from the **Version** drop-down.
 9. Click **Install** to upgrade your project.
 10. Consult the [version specific upgrade notes for Umbraco Forms](../../../../umbraco-forms/installation/version-specific.md) if relevant.
-11. Restart your site in IIS, build and run your project to finish the installation.
+11. Restart your site in IIS, build, and run your project to finish the installation.
 
 ## Upgrade to a new Minor
 
@@ -79,7 +79,7 @@ When the command completes, open the **.csproj** file to make sure the package r
 
 ## Run an unattended upgrade
 
-When upgrading your Umbraco project it is possible to enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
+When upgrading your Umbraco project, it is possible to enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
 
 Below you will find the steps you need to take in order to upgrade your project unattended.
 
@@ -114,10 +114,10 @@ With the correct configuration applied, the project will be upgraded on the next
 
 #### Boot order
 
-The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run. This happens instead of initiating the otherwise required restart.
+The Runtime level will use `Run` instead of `Upgrade` to allow the website to continue to boot up directly after the migration is run. This happens instead of initiating the otherwise required restart.
 
 {% hint style="info" %}
-The upgrade is run after Composers but before Components and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers and Components requires that Umbraco and the database is ready.
+The upgrade is run after Composers but before Components and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers and Components require that Umbraco and the database are ready.
 {% endhint %}
 
 ### Unattended upgrades in a load balanced setup
