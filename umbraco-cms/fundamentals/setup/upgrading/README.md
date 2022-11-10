@@ -22,7 +22,7 @@ The following lists a few things to be aware of before initiating an upgrade of 
 * Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the Project compatibility area, click View details to check version-specific compatibility.
 
 {% hint style="info" %}
-It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
+It is necessary to run the upgrade installer on each environment of your Umbraco site. This means that you need to repeat the steps below on each of your environments in order to complete the upgrade.
 {% endhint %}
 
 ## Upgrade to a new Major
