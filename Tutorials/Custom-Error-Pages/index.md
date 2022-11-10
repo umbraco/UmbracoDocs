@@ -129,13 +129,15 @@ If you set up everything correctly and the error pages are not showing correctly
 
 For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
 
-### Basic Example
+## 500 errors
 
-A basic solution in four steps:
+The following steps guides you through setting up a page for internal server errors (500 errors).
 
 #### First Step
 
-1. In your Umbraco web project create a folder `~/controllers` containing a file called `ErrorController.cs` with this content
+1. Create a `~/controllers` folder in your Umbraco web project.
+2. Create a file in this folder, called `ErrorController.cs`.
+3. Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -173,7 +175,7 @@ A basic solution in four steps:
     ```
 
 3. Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
-4. Update the `Configure`method in file `Startup.cs` 
+4. Update the `Configure` method in file `Startup.cs` 
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
