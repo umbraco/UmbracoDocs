@@ -1,45 +1,79 @@
-# Upgrades in general
+# Upgrade your Umbraco CMS project
 
 _This is the guide for upgrading in general._
 
-{% hint style="warning" %}
-**Important**: If you are upgrading to a new major version, like from Umbraco 10 to 11, make sure to check out the **[version-specific documentation.](version-specific.md)**
+In this article you will find everything you need in order to upgrade your Umbraco CMS project.
 
-Things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
+You will find instructions on how to upgrade to a new minor or major version, as well as how to run upgrades unattended.
 
-Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
-{% endhint %}
+* [Before you upgrade](#before-you-upgrade)
+* [Upgrade to a new Major](#upgrade-to-a-new-major)
+* [Upgrade to a new Minor](#upgrade-to-a-new-minor)
+* [Run an unattended upgrade](#run-an-unattended-upgrade)
 
-Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**.
+## Before you upgrade
+
+The following lists a few things to be aware of before initiating an upgrade of your Umbraco CMS project.
+
+* Sometimes there are exceptions to general upgrade guidelines. These are listed in the **[version-specific guide](version-specific.md)**. Be sure to consult this article before moving on.
+
+* Things may go wrong for different reasons. Be sure to **ALWAYS** make a backup of both your site's files and the database. This way you can always return to a version that you know works.
+
+* Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the Project compatibility area, click View details to check version-specific compatibility.
 
 {% hint style="info" %}
 It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
 {% endhint %}
 
-## Contents
+## Upgrade to a new Major
 
-In this article you will find instruction on the following ways of upgrading an Umbraco project:
+You can upgrade to a new major of Umbraco CMS directly by using NuGet.
 
-* [Upgrade using NuGet](#upgrade-using-nuget)
-* [Run an unattended upgrade](#run-an-unattended-upgrade)
+{% hint style="warning" %}
+Switching to a new major of Umbraco CMS also means switching to a new .NET version. You need to make sure that any packages used on your site are compatible with this version before upgrading.
 
-## Upgrade using NuGet
+The package compatibility can be checked on the package's download page. Locate the **Project compatibility** area and select **View details** to check version-specific compatibility.
+{% endhint %}
+
+### Choose the correct .NET version
+
+TABLE WITH THE VERSIONS
+
+### Upgrade your project using Visual Studio
+
+It's recommended that you upgrade the site offline, and test the upgrade fully before deploying it to the production environment.
+
+1. Stop your site in IIS to prevent any changes being while you are upgrading.
+2. Open your Umbraco project in Visual Studio.
+3. Right-click on the project name in the Solution Explorer and select **Properties**.
+4. Select the **.NET** version from the **Target Framework** drop-down.
+5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
+6. Go to the **Installed** tab in the NuGet Package manager.
+7. Choose **Umbraco.Cms**.
+8. Select thecorrect version from the **Version** drop-down.
+9. Click **Install** to upgrade your project.
+10. Consult the [version specific upgrade notes for Umbraco Forms](../../../../umbraco-forms/installation/version-specific.md) if relevant.
+11. Restart your site in IIS, build and run your project to finish the installation.
+
+## Upgrade to a new Minor
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:
 
 `dotnet add package Umbraco.Cms --version <VERSION>`
 
-After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
+Add a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file.
+
+Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-If you're using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
+If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
 {% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Umbraco.Cms" Version="9.0.1" />
+  <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
 
@@ -60,8 +94,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](#unat
 1. Add the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key.
 2. Set the value of the key to `true`.
 
-#### Example from an appsettings json configuration file
-
+{% code title="appsettings.json" %}
 ```json
 {
     "Umbraco": {
@@ -73,6 +106,7 @@ Check out the section about [Unattended upgrades in a load balanced setup](#unat
     }
 }
 ```
+{% endcode %}
 
 ### Run the upgrade
 
@@ -80,7 +114,7 @@ With the correct configuration applied, the project will be upgraded on the next
 
 #### Boot order
 
-The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run, instead of initiating the otherwise required restart.
+The Runtime level will use `Run` instead of `Upgrade` in order to allow the website to continue to boot up directly after the migration is run. This happens instead of initiating the otherwise required restart.
 
 {% hint style="info" %}
 The upgrade is run after Composers but before Components and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers and Components requires that Umbraco and the database is ready.
@@ -88,9 +122,9 @@ The upgrade is run after Composers but before Components and the `UmbracoApplica
 
 ### Unattended upgrades in a load balanced setup
 
-Follow the steps outlined below to use run unattended upgrades in a load balanced setup.
+Follow the steps outlined below to use unattended upgrades in a load balanced setup.
 
-1. Upgrade Umbraco via NuGet.
+1. Upgrade Umbraco via NuGet ([see instructions above](#upgrade-to-a-new-major))
 2. Deploy to all environments.
 3. Set the `Umbraco:CMS:Unattended:UpgradeUnattended` configuration key to `true` for **the Main server only**.
 4. Boot the Main server and the upgrade will run automatically.
