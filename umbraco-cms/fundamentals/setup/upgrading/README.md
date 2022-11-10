@@ -43,7 +43,7 @@ TABLE WITH THE VERSIONS
 
 It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
-1. Stop your site in IIS to prevent any changes being while you are upgrading.
+1. Stop your site in IIS to prevent any changes being made while you are upgrading.
 2. Open your Umbraco project in Visual Studio.
 3. Right-click on the project name in the Solution Explorer and select **Properties**.
 4. Select the **.NET** version from the **Target Framework** drop-down.
