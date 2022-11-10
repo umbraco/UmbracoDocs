@@ -52,7 +52,7 @@ For the best experience, we would recommend that you ensure your hosting environ
 * Windows Server 2019 and higher
 * IIS 10 and higher
 * SQL Server 2019 and higher
-* .NET 5.0
+* .NET 6.0.5+
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 {% endtab %}
 
@@ -60,7 +60,7 @@ For the best experience, we would recommend that you ensure your hosting environ
 * Windows Server 2019 and higher
 * IIS 10 and higher
 * SQL Server 2019 and higher
-* .NET 6.0.5+
+* .NET 5.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 {% endtab %}
 {% endtabs %}
@@ -90,12 +90,6 @@ Umbraco can run on an environment with the minimum requirements stated below:
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 {% endtab %}
 {% endtabs %}
-
-* Windows Server 2012 R2 and higher
-* IIS 8.5 and higher
-* SQL Server 2012 and higher
-* .NET 6.0.5+
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
 _For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-6.0) _article in the Microsoft documentation._
 
