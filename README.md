@@ -9,7 +9,7 @@ layout: landing
 # Umbraco Documentation
 
 {% hint style="info" %}
-### **Test and feedback**
+#### **Test and feedback**
 
 This platform is currently only available through a direct link as we want to ensure a proper test phase before publishing worldwide.
 
@@ -19,7 +19,7 @@ The plan is to launch this documentation platform with the release of Umbraco 11
 {% endhint %}
 
 {% hint style="warning" %}
-### **Documentation for Umbraco 10+**
+#### **Documentation for Umbraco 10+**
 
 This documentation covers the following major versions of Umbraco CMS:
 

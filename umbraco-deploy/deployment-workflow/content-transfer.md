@@ -1,6 +1,6 @@
 ---
-meta.Title: "Transferring content with Umbraco Deploy"
-meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
+meta.Title: Transferring content with Umbraco Deploy
+meta.Description: How to restore content in Umbraco Deploy using the deployment dashboard
 ---
 
 # Transferring Content, Media and Forms
@@ -22,23 +22,21 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 1. Click on the ellipsis next to the `Home` node in the Content tree.
 2. Choose "Do something else".
 3. There you get the choice of **Queue for transfer**.
-    * If you’re currently editing the Home page you could also use the Actions dropdown to find  **Queue for transfer**.
+   * If you’re currently editing the Home page you could also use the Actions dropdown to find **Queue for transfer**.
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
-    * If you wish to transfer all your content at once, *right-click* the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
+   * If you wish to transfer all your content at once, _right-click_ the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
 5. Select the language versions that you want to queue for transfer.
-6. Set the publish date and time if you want to change when the transferred content should be published.
+6.  Set the publish date and time if you want to change when the transferred content should be published.
 
     {% hint style="info" %}
     By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
     {% endhint %}
-
-7. Click **Queue** to add the content item to the transfer queue.
+7.  Click **Queue** to add the content item to the transfer queue.
 
     ![Queue for transfer window](images/queue-for-transfer-dialog.png)
-
 8. Go to the Deployment dashboard by clicking on the Content section header.
-    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've *queued for transfer*.
-9. Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
+   * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
+9.  Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
 
     ![Transfer queue](images/transfer-queue.png)
 
@@ -48,8 +46,8 @@ If everything went well, you will see the confirmation screen saying that the tr
 
 Media items are transferred the same way as content:
 
-1. In the Media section *Right-click* the items you want to transfer and choose **Queue for transfer**.
-    * Or *right-click* the top of the Media section to transfer all you media at once.
+1. In the Media section _Right-click_ the items you want to transfer and choose **Queue for transfer**.
+   * Or _right-click_ the top of the Media section to transfer all you media at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
 
 ### Umbraco Forms
@@ -58,8 +56,8 @@ In order for Deploy to handle Forms data as content, you will need to ensure tha
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 
-1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer**.
-    * Or *right-click* the top of the Forms section to transfer all your Forms at once.
+1. In the Forms section _Right-click_ the items you want to transfer and choose **Queue for transfer**.
+   * Or _right-click_ the top of the Forms section to transfer all your Forms at once.
 2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
 
 {% hint style="info" %}
@@ -70,6 +68,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![clone dialog](images/schema-mismatch.png)
+![clone dialog](../../umbraco-cloud/deployment/images/schema-mismatch.png)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
