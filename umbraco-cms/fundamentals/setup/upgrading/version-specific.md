@@ -1,6 +1,6 @@
 # Version specific upgrades
 
-*This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. An cases you will be able to upgrade directly from your current version to the latest version.*
+*This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. In most cases you will be able to upgrade directly from your current version to the latest version.*
 
 Follow the steps in the [general upgrade guide](README.md), then these additional instructions for the specific versions.
 
@@ -29,7 +29,7 @@ There is no official migration path from SQL CE to another database engine.
 
 The following options may suit your needs:
 
-+ Follow a community guide to migrate from a SQL CE database to SQL Server e.g. [article by Jan Reilink](https://www.saotn.org/convert-sqlce-database-to-sql-server/)
++ Follow a community guide to migrate from a SQL CE database to SQL Server, like the [article by Jan Reilink](https://www.saotn.org/convert-sqlce-database-to-sql-server/)
 + Setup a new database for v10 and use [uSync](https://jumoo.co.uk/usync/) to transfer document types and content across.
 + Setup a new database for v10 and use a premium tool such as [redgate SQL Data Compare](https://www.red-gate.com/products/sql-development/sql-data-compare/) to copy database contents across.
 + Setup a new database for v10 and use a premium tool such as [Umbraco Deploy](https://umbraco.com/products/umbraco-deploy) to transfer document types and content across.
