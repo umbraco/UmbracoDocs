@@ -133,36 +133,36 @@ For common approaches to handling errors in ASP.NET Core web apps, see the [Hand
 
 The following steps guides you through setting up a page for internal server errors (500 errors).
 
-#### First Step
+1. First Step
 
-1. Create a `~/controllers` folder in your Umbraco web project.
-2. Create a file in this folder, called `ErrorController.cs`.
-3. Add the following code to the file:
+    * Create a `~/controllers` folder in your Umbraco web project.
+    * Create a file in this folder, called `ErrorController.cs`.
+    * Add the following code to the file:
 
-    ```csharp
-    using Microsoft.AspNetCore.Mvc;
+        ```csharp
+        using Microsoft.AspNetCore.Mvc;
 
-    namespace UmbracoProject.Web.Controllers
-    {
-        public class ErrorController : Controller
+        namespace UmbracoProject.Web.Controllers
         {
-            [Route("Error")]
-            public IActionResult Index()
+            public class ErrorController : Controller
             {
-                if (Response.StatusCode == StatusCodes.Status500InternalServerError)
+                [Route("Error")]
+                public IActionResult Index()
                 {
-                    return Redirect("/statuscodes/500");
-                }
-                else if (Response.StatusCode != StatusCodes.Status200OK)
-                {
-                    return Redirect("/statuscodes");
-                }
+                    if (Response.StatusCode == StatusCodes.Status500InternalServerError)
+                    {
+                        return Redirect("/statuscodes/500");
+                    }
+                    else if (Response.StatusCode != StatusCodes.Status200OK)
+                    {
+                        return Redirect("/statuscodes");
+                    }
 
-                return Redirect("/");
+                    return Redirect("/");
+                }
             }
         }
-    }
-    ```
+        ```
 
 2. Add an entry in `appSettings.json` for the new route "Error" like so
 
