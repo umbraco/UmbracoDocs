@@ -9,7 +9,7 @@ layout: landing
 # Umbraco Documentation
 
 {% hint style="info" %}
-#### **Test and feedback**
+**Test and feedback**
 
 This platform is currently only available through a direct link as we want to ensure a proper test phase before publishing worldwide.
 
@@ -18,8 +18,10 @@ The plan is to launch this documentation platform with the release of Umbraco 11
 **Do you have feedback on the platform?** Please send it to [docs@umbraco.com](mailto:docs@umbraco.com) or create an [Issue on the GitHub repository](https://github.com/umbraco/UmbracoDocs/issues).
 {% endhint %}
 
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/_roadmapSoMe_768x432px (1).png">_roadmapSoMe_768x432px (1).png</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
+
 {% hint style="warning" %}
-#### **Documentation for Umbraco 10+**
+**Documentation for Umbraco 10+**
 
 This documentation covers the following major versions of Umbraco CMS:
 
@@ -31,8 +33,6 @@ If you are looking for documentation for older versions like Umbraco 7 and 8, yo
 
 Read the Documentation and versions article to learn more about how we support and document multiple major versions.
 {% endhint %}
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/flexible_Email_hero_780x405px.png">_roadmapSoMe_768x432px (1).png</a></td><td><a href="umbraco-cms/">Umbraco CMS</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/_roadmapSoMe_768x432px (1).png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cloud/getting-started/">Umbraco Cloud</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
 
 ### Add on products
 
