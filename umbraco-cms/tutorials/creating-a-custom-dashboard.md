@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 versionTo: 10.0.0
 ---
 
-# Tutorial - Creating a Custom Dashboard
+# Creating a Custom Dashboard
 
 ## Overview
 
@@ -15,7 +15,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](images/whatisadashboardv10.jpg)
+![Welcome dashboard](images/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -244,9 +244,9 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
-**For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../../umbraco-cms/reference/configuration/runtimeminificationsettings.md#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
+**For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../reference/configuration/runtimeminificationsettings.md#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
 
-For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../../umbraco-cms/fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
+For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
 
 **For version 8 and below:** If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript.
 
@@ -312,7 +312,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](../../umbraco-cms/reference/api-documentation.md#backoffice-ui). For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness:
+Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards. The details are here: [Backoffice UI](../reference/api-documentation.md#backoffice-ui). For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 
@@ -668,4 +668,4 @@ The [property editor tutorial](creating-a-property-dditor/part-4.md) has a step 
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
 
-Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../../umbraco-cms/reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
+Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!

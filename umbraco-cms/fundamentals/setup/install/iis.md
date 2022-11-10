@@ -1,11 +1,11 @@
 ---
-meta.Title: "Local IIS with Umbraco 9"
-meta.Description: "This article describes how to run an Umbraco 9 site on a local IIS server."
+meta.Title: Local IIS with Umbraco 9
+meta.Description: This article describes how to run an Umbraco 9 site on a local IIS server.
 ---
 
-# Local IIS with Umbraco 9+
+# Local IIS With Umbraco
 
-This is a quick guide on getting your Umbraco 9+ website running locally on IIS.
+This is a quick guide on getting your Umbraco website running locally on IIS.
 
 The guide will assume you already have IIS configured and know your way around it, as well as having a local website you wish to host.
 
@@ -25,7 +25,7 @@ For the path you want to point it at the root of your site - where the `.csproj`
 
 ## Add permissions to NuGet cache folder
 
-You might need to change permissions for the NuGet cache folder - `C:\users\<username>\.nuget\packages`. The user or group (IIS_IUSRS) that the IIS site is running on requires Read permissions on this folder because this is where some of the files for Umbraco and Umbraco packages are being served from during development. If the IIS user or group does not have permission to read from the NuGet cache folder, you could run into a `DirectoryNotFoundException` while running the site.
+You might need to change permissions for the NuGet cache folder - `C:\users\<username>\.nuget\packages`. The user or group (IIS\_IUSRS) that the IIS site is running on requires Read permissions on this folder because this is where some of the files for Umbraco and Umbraco packages are being served from during development. If the IIS user or group does not have permission to read from the NuGet cache folder, you could run into a `DirectoryNotFoundException` while running the site.
 
 When the site is published these files are copied from the NuGet cache folder to `wwwroot/umbraco` and `wwwroot/App_Plugins` and these folders will typically have the correct permissions. For more information on setting permissions, see the [File and folder permissions](../server-setup/permissions.md) article.
 
