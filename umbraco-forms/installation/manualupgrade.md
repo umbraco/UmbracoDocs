@@ -29,6 +29,6 @@ To get the latest version of Umbraco Forms, you can upgrade using:
 
   ```xml
   <ItemGroup>
-    <PackageReference Include="Umbraco.Forms" Version="10.x.x" />
+    <PackageReference Include="Umbraco.Forms" Version="xx.x.x" />
   </ItemGroup>
   ```
