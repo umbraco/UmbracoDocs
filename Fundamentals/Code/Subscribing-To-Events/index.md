@@ -12,13 +12,13 @@ versionRemoved: 9.0.0
 This article is only relevant if you are using Umbraco 8. In Umbraco 9 and above, Events have been renamed to Notifications. For newer versions, see the [Subscribing to Notifications](../Subscribing-To-Notifications/index.md) article.
 :::
 
-Subscribing to events allows you to execute custom code on several events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
+Subscribing to events allows you to execute custom code on events before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, for example the Umbraco starter kit.
 
 ## Subscribing to an event
 
 Let's add a string of text to the log when a document is published. The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings, and errors to the log.
 
-We subscribe to events in Umbraco inside a Component, let's create one, add a new c# class to our project - call it *LogWhenPublishedComponent*. and use `: IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file and because the events that you can subscribe to in Umbraco are found in the core services namespace we'll also need to add a using statement for that too: `using Umbraco.Core;` and `using Umbraco.Core.Services.Implement;`.
+We subscribe to events in Umbraco inside a Component. First we add a new c# class to the project and call it *LogWhenPublishedComponent* and use `: IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file. Because the events that you can subscribe to in Umbraco are found in the core services namespace we need to add two more usings. Add using statements for `using Umbraco.Core;` and `using Umbraco.Core.Services.Implement;`.
 
 ```csharp
 using System;
@@ -38,7 +38,7 @@ namespace MyProjectName.Web.Components
 }
 ```
 
-When you create a Component in Umbraco you need to implement two methods, one to run when the Umbraco application is initialized and one to run when the Umbraco application terminates:
+When you create a Component in Umbraco you need to implement two methods. One method that runs when the Umbraco application is initialized and one when the Umbraco application terminates:
 
 ```csharp
 using System;
@@ -100,12 +100,12 @@ public void Terminate()
 ```
 
 :::note
-When you subscribe to static events you should also unsubscribe from them when Umbraco shuts down, see the Terminate() method in the example using the -= syntax to achieve the unsubscribing.
+When you subscribe to static events you should also unsubscribe from them when Umbraco shuts down. See the Terminate() method in the example using the -= syntax to achieve the unsubscribing.
 :::
 
 Let's check if this works by adding a message to the log every time the publish event occurs.
 
-We'll need to inject the Umbraco Core Logging service into our Component, by adding the Umbraco.Core.Logging namespace and creating a 'constructor' for our component that allows Umbraco to inject in the service:
+We'll need to inject the Umbraco Core Logging service into our Component. We can achieve this by adding the Umbraco.Core.Logging namespace and creating a 'constructor' that allows Umbraco to inject in the service:
 
 ```csharp
 using System;
