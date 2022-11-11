@@ -66,7 +66,7 @@ namespace My.Website
 
 ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
 
-If you perfer to use a async controller your need to overide both the sync and the async Index()-methods to disable the default behavior from the base controller.
+If you prefer to use an async controller your need to override both the sync and the async Index()-methods. This is done to disable the default behavior from the base controller.
 
 ```csharp
 public class ProductPageController : RenderController
