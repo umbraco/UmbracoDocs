@@ -692,6 +692,12 @@
   * [Version Specific Upgrade Details](umbraco-deploy/upgrades/version-specific.md)
 * [Troubleshooting](umbraco-deploy/troubleshooting.md)
 
+## Other resources
+
+* [Legacy Documentation](other-resources/legacy-documentation/README.md)
+  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
+  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+
 ## Contribute
 
 * [Contribute to Documentation](contribute/README.md)
