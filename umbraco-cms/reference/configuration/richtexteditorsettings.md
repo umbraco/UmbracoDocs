@@ -1,16 +1,19 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Rich Text Editor Settings"
-meta.Description: "Information on the Rich text editor settings section"
----
-
 # Rich text editor settings
 
 This settings section allows you to configure the behaviour of the rich text editor, everything from plugins to commands. Everything has a default value, so it's not required to configure any of this yourself.
 
-A config with all the values can be seen underneath. Since there is a lot of defaults configured, some of these have been omited for the sake of readability, anywhere something has been omitted it's shown with `{...}`.
+{% hint style="info" %}
+**Are you using custom configuration or plugins with TinyMCE?**
 
+In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
+
+If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
+
+* [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/migration-from-4x/)
+* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
+{% endhint %}
+
+A config with all the values can be seen underneath. Since there is a lot of defaults configured, some of these have been omited for the sake of readability. Anywhere something has been omitted it is shown with `{...}`.
 
 ```json
 "Umbraco": {
@@ -51,7 +54,7 @@ Allows you to specify what plugins should be enabled for the rich text editor as
 
 ## Valid elements
 
-Allows you to specify the valid HTML elements for the rich text editor as well as the allowed properties, for instance, in the config above the `a` element is allowed, and it's allowed to have `onclick`, `href`, and many more attributes.
+Allows you to specify the valid HTML elements for the rich text editor as well as the allowed properties. For instance, in the config above the `a` element is allowed, and it's allowed to have `onclick`, `href`, and many more attributes.
 
 ## Invalid elements
 
@@ -75,7 +78,9 @@ When specifying these, every object should contain:
 Allows you to specify custom key value pairs for the rich text editor.
 
 ### Examples
+
 Remove default ```<p>``` tag.
+
 ```json
   "Umbraco": {
     "CMS": {
@@ -105,4 +110,3 @@ Use a text editor to find and replace `\"` with `"`. This will allow you to edit
     }
   }
 ```
-
