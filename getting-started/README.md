@@ -1,0 +1,13 @@
+---
+meta.Title: Getting Started
+meta.description: ''
+versionFrom: 8.0.0
+---
+
+# Getting Started
+
+How to get started with Umbraco depends a lot on what you're going to be using Umbraco for. Are you a content editor looking to learn how to start working with content in Umbraco? Are you an experienced .NET developer looking to take your first shot at building a custom Umbraco solution? Or perhaps you're a project manager looking to find out whether Umbraco would be a good fit for your next project.
+
+In this section, you'll find resources to help you get started with exactly the things you're looking to use Umbraco for.
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Choosing Umbraco</strong></td><td>Investigate the development process, the commercial options, and how to best plan out a Umbraco project.</td><td><a href="images/calendar_marked.png">calendar_marked.png</a></td><td><a href="managing-an-umbraco-project.md">managing-an-umbraco-project.md</a></td></tr><tr><td><strong>Editing websites</strong></td><td>Creating, editing, and publishing content onto your website using Umbraco doesn't require any super special skills or prior knowledge.</td><td><a href="images/editor.png">editor.png</a></td><td><a href="editing-websites-with-umbraco.md">editing-websites-with-umbraco.md</a></td></tr><tr><td><strong>Creating websites</strong></td><td>Get the details you need as well as an introduction to how you can work in the Umbraco backoffice.</td><td><a href="images/tree.png">tree.png</a></td><td><a href="creating-websites-with-umbraco.md">creating-websites-with-umbraco.md</a></td></tr><tr><td><strong>Developing websites</strong></td><td>You can build upon the underlying technology to work alongside and extend the functionality in Umbraco.</td><td><a href="images/code.png">code.png</a></td><td><a href="developing-websites-with-umbraco/">developing-websites-with-umbraco</a></td></tr><tr><td><strong>Hosting Umbraco</strong></td><td>Resources to guide you through the process of installing and hosting different types of Umbraco projects.</td><td><a href="images/globe.png">globe.png</a></td><td><a href="hosting-an-umbraco-infrastructure.md">hosting-an-umbraco-infrastructure.md</a></td></tr><tr><td><strong>Where can I get help?</strong></td><td>If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.</td><td><a href="images/support.png">support.png</a></td><td><a href="../where-can-i-get-help.md">where-can-i-get-help.md</a></td></tr></tbody></table>

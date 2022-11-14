@@ -6,7 +6,7 @@ meta.Description: >-
 description: Find all the resources you need in order to manage your Umbraco project.
 ---
 
-# Managing a project
+# Choosing Umbraco
 
 This section allows you to investigate the development process, the commercial options and how to best plan out an Umbraco project.
 
@@ -20,12 +20,12 @@ In this section you will find information on the key concepts and requirements o
 
 [What commerical options are available from Umbraco?](https://umbraco.com/products/)
 
-[Information on planning an Umbraco project](umbraco-cms/fundamentals/setup/requirements.md)
+[Information on planning an Umbraco project](../umbraco-cms/fundamentals/setup/requirements.md)
 
-[How do I manage users with Umbraco?](umbraco-cms/fundamentals/data/users.md)
+[How do I manage users with Umbraco?](../umbraco-cms/fundamentals/data/users.md)
 
-[What is the deployment process for Umbraco?](umbraco-cloud/deployment/)
+[What is the deployment process for Umbraco?](../umbraco-cloud/deployment/)
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
-![Umbraco business](getting-started/images/Documentation\_blogpost\_styleguide\_b.png)
+![Umbraco business](images/Documentation\_blogpost\_styleguide\_b.png)
