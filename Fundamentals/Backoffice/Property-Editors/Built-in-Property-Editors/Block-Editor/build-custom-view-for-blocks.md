@@ -61,7 +61,7 @@ Example of a Custom View wrapping the Areas within a green border:
 </div>
 ```
 
-You can also specifically define where each Area should be inserted, this is relevant if you like the Areas to appear differently than the provided grid setup of Areas.
+You can also define where each Area should be inserted. This is relevant if you like the Areas to appear differently than the provided grid setup of Areas.
 
 As a reference here is an example of the HTML output of the `umb-block-grid-render-area-slots` AngularJS Directive:
 
