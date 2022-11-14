@@ -45,7 +45,7 @@ Blocks of the Block Grid Editor can have Areas. These Blocks requires their Cust
 
 This enables you to wrap and place the Areas as you need.
 
-The Areas is inserted through [Web Component Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots), A slot is a native HTML tag.
+The Areas is inserted through [Web Component Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots). A slot is a native HTML tag.
 
 These Area slots can be generated automatically via this AngularJS Directive:
 
