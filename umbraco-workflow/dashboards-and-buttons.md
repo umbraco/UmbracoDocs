@@ -1,17 +1,10 @@
----
-meta.Title: "Umbraco Plumber Dashboards and buttons"
-meta.Description: "Information about Workflow Dashboard and buttons with Umbraco Plumber"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Dashboards and Buttons
 
-Umbraco Plumber has its default Dashboards. By default, when you install Umbraco Plumber, you receive two Dashboards: the *User Dashboard* and the *Admin Dashboard*. Additionally, Umbraco Plumber replaces the default Umbraco button set in the editor drawer.
+Umbraco Workflow has its default Dashboards. By default, when you install Umbraco Workflow, you receive two Dashboards: the *User Dashboard* and the *Admin Dashboard*. Additionally, Umbraco Workflow replaces the default Umbraco button set in the editor drawer.
 
 ## Dashboards
 
-Umbraco Plumber adds two Dashboards to your Umbraco project:
+Umbraco Workflow adds two Dashboards to your Umbraco project:
 
 - **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the current user’s submissions and tasks requiring approval from the user.
 
@@ -29,7 +22,7 @@ When a workflow is active on the current node, the **Publish** button is replace
 
 When no workflow is active, the button state is determined by the current user's permissions.
 
-Umbraco Plumber overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Plumber shifts Umbraco from a centrally administered publishing model (i.e. controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
+Umbraco Workflow overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Workflow shifts Umbraco from a centrally administered publishing model (that is controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
 
 In cases, where the content is already in a workflow, a notification is displayed at the top of the editor. Depending on the Workflow **Settings**, you can enable/disable editing access on a content node in a workflow.
 

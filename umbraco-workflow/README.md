@@ -1,64 +1,57 @@
----
-meta.Title: "Umbraco Plumber"
-meta.Description: "Documentation on how to work with Umbraco Plumber"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
+# Umbraco Workflow Documentation
 
-# Umbraco Plumber Documentation
-
-:::note
-Plumber is a product that was recently acquired by Umbraco. The commercial offering will change later during the year and the articles in this section are subject to change over the coming months.
+{% hint style="info" %}
+Umbraco Workflow is a product that was recently acquired by Umbraco. The commercial offering will change later during the year and the articles in this section are subject to change over the coming months.
 
 Learn more about the acquisition in the [Umbraco acquires Plumber](https://umbraco.com/blog/umbraco-acquires-plumber/) blogpost.
-:::
+{% endhint %}
 
-Welcome to the Umbraco Plumber documentation. Here you can read all about how to work with Umbraco Plumber. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Plumber.
+Welcome to the Umbraco Workflow documentation. Here you can read all about how to work with Umbraco Workflow. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Workflow.
 
-## [Getting Started](Getting-Started/index.md)
+## [Getting Started](getting-started.md)
 
-Learn how to get started with Umbraco Plumber.
+Learn how to get started with Umbraco Workflow.
 
-## [Installing Umbraco Plumber](Installing-Plumber/index.md)
+## [Installing Umbraco Workflow](installing-workflow.md)
 
-Extending Umbraco with the Workflow section by installing Umbraco Plumber in a few steps.
+Extending Umbraco with the Workflow section by installing Umbraco Workflow in a few steps.
 
-## [Licensing](Licensing/index.md)
+## [Licensing](licensing.md)
 
-Learn more about the licensing model used for Umbraco Plumber.
+Learn more about the licensing model used for Umbraco Workflow.
 
-## [Dashboards and Buttons](Dashboards-and-Buttons/index.md)
+## [Dashboards and Buttons](dashboards-and-buttons.md)
 
 View the different dashboards added to your installation. Determine the button state by user's permissions.
 
-## [Approval Groups](Approval-Groups/index.md)
+## [Approval Groups](approval-groups.md)
 
-Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Plumber.
+Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Workflow.
 
-## [Events](Events/index.md)
+## [Events](events.md)
 
 Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
 
-## [Email Templates](Email-Templates/index.md)
+## [Email Templates](email-templates.md)
 
 Learn how to add email templates for other languages.
 
-## [Notifications and Reminders](Notifications-and-Reminders/index.md)
+## [Notifications and Reminders](notifications-and-reminders.md)
 
 Configure email notifications and reminders for all workflow activities.
 
-## [Upgrading Umbraco Plumber](Upgrading-Plumber/index.md)
+## [Upgrading Umbraco Workflow](upgrading-workflow.md)
 
-Covers how to upgrade your Umbraco Plumber to a newer version.
+Covers how to upgrade your Umbraco Workflow to a newer version.
 
-## [Workflow Settings](Workflow-Settings/index.md)
+## [Workflow Settings](workflow-settings.md)
 
-Setting up Umbraco Plumber for your installation.
+Setting up Umbraco Workflow for your installation.
 
-## [Workflow Content App](Workflow-Content-App/index.md)
+## [Workflow Content App](workflow-content-app.md)
 
 Overview of the content app added to nodes where workflow is enabled.
 
-## [Workflow History](Workflow-History/index.md)
+## [Workflow History](workflow-history.md)
 
 Overview of the workflow history displayed in a tabular format.

@@ -1,13 +1,6 @@
----
-meta.Title: "Umbraco Plumber Content App"
-meta.Description: "Information about using the Content app with Umbraco Plumber"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
+# Umbraco Workflow Content App
 
-# Workflow Content App
-
-Umbraco Plumber adds a [Content App](../../../Extending/Content-Apps/index.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+Umbraco Workflow adds a [Content App](workflow-content-app.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
 
 - [Active workflow](#active-workflow)
 - [Configuration](#configuration)
@@ -64,19 +57,19 @@ A given content node may have all three approval flow types applied but only one
 
 - **Content approval flow:** set directly on a content node via the **Configuration** section in the **Workflow** tab . This type will take priority over all others.
 - **Document type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
-- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Plumber will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
+- **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Workflow will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
 
 ![Approval Flow Types](images/approval-flow-types.png)
 
-Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](../Approval-Groups/index.md#roles) section in the [Approval Groups](../Approval-Groups/index.md) article.
+Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](approval-groups.md#roles) section in the [Approval Groups](approval-groups.md) article.
 
 ![Approval Groups Roles](images/approval-groups-roles.png)
 
-Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../Workflow-Settings/index.md#document-type-approval-flows) section in the [Workflow Settings](../Workflow-Settings/index.md) article.
+Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](workflow-settings.md) article.
 
-:::note
+{% hint style="info" %}
 Configuration cannot be modified when a content node is in a workflow process.
-:::
+{% endhint %}
 
 ## History
 

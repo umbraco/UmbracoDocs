@@ -1,10 +1,3 @@
----
-meta.Title: "Umbraco Plumber Events"
-meta.Description: "Information on Umbraco Plumber Events"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Events
 
 Currently, Events are raised by the Config, Group, and Tasks services. You can also subscribe to the `DocumentPublish` and `DocumentUnpublish` processes.

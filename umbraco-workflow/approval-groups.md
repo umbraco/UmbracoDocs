@@ -1,13 +1,6 @@
----
-meta.Title: "Umbraco Plumber Approval Groups"
-meta.Description: "Umbraco Plumber's Approval groups and their settings"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Approval Groups
 
-The **Approval groups** view in the **Workflow** section lists the Name of the active groups, Group members, their Permissions, and a quick link to Email the group.
+The **Approval groups** view in the **Workflow** section lists the name of the active groups, group members, their permissions, and a quick link to email the group.
 
 ![Approval groups](images/Approval-groups.png)
 
@@ -25,9 +18,9 @@ To add an approval group, follow these steps:
 
 ![Create Approval groups](images/Create-approval-group.png)
 
-:::note
+{% hint style="info" %}
 You can create a total of 5 groups on unlicensed installations. The paid license removes this restriction.
-:::
+{% endhint %}
 
 You can search for a specific group using the Search bar. Select a group from the list to edit its Settings, Roles, Members, and view the group's History.
 

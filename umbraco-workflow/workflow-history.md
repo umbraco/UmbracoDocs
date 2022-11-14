@@ -1,13 +1,6 @@
----
-meta.Title: "Umbraco Plumber Workflow History"
-meta.Description: "Umbraco Plumber's Workflow History"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
+# Umbraco Workflow History
 
-# Workflow History
-
-The Workflow History provides a chronological audit trail of workflow activity for all the nodes.
+The Umbraco Workflow History provides a chronological audit trail of workflow activity for all the nodes.
 
 It displays a table containing the following details:
 

@@ -1,13 +1,6 @@
----
-meta.Title: "Umbraco Plumber Notifications and Reminders"
-meta.Description: "Information on Umbraco Plumber Notifications and Reminders"
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Notifications and Reminders
 
-Umbraco Plumber uses Notifications to allow you to configure email notifications for all workflow activities for the backoffice.
+Umbraco Workflow uses Notifications to allow you to configure email notifications for all workflow activities for the backoffice.
 
 From the **Settings** view in the **Workflow** section, the **Notifications** tab provides access to the following:
 
@@ -49,7 +42,7 @@ The `HtmlEmailBase` contains the following fields:
 | Id           | int            | The user's ID or group ID (when sending to a group email address).                                  |
 | IsGroupEmail | bool           | Is the email being sent to a generic group email address?                                           |
 
-Umbraco Plumber provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it is recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
+Umbraco Workflow provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it is recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
 
 - **All**: All the participants in all workflow stages (previous and current).
 - **Admin**: The admin user.
@@ -66,7 +59,7 @@ It might be useful to notify **All** the participants of completed workflows but
 
 ## Reminders
 
-Umbraco Plumber uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days. After that reminder emails will be sent every 24 hours to all members of the group assigned to the pending workflow task.
+Umbraco Workflow uses a reminder email system to prompt editors to complete the pending workflows. Reminders are sent using Umbraco's internal task scheduler, every 24 hours after an initial delay. For example, setting the **Reminder delay (days)** value to 2 in the Workflow **Settings** section will allow pending workflows to sit for 2 days. After that reminder emails will be sent every 24 hours to all members of the group assigned to the pending workflow task.
 
 The emails use a similar model to the notification emails, also inheriting from `HtmlEmailBase`. In addition to the inherited fields, `HtmlReminderEmailModel` includes:
 
