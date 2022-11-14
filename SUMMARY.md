@@ -1,15 +1,18 @@
 # Table of contents
 
 * [Umbraco Documentation](README.md)
-* [Getting Started](getting-started.md)
-* [Managing a project](managing-an-umbraco-project.md)
-* [Editing websites](editing-websites-with-umbraco.md)
-* [Creating websites](creating-websites-with-umbraco.md)
-* [Developing websites](developing-websites-with-umbraco/README.md)
-  * [Customizing Umbraco](developing-websites-with-umbraco/customizing-umbraco-sites.md)
-  * [Extending the Umbraco Backoffice](developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
-* [Hosting an Umbraco project](hosting-an-umbraco-infrastructure.md)
+* [Getting Started](getting-started/README.md)
+  * [Choosing Umbraco](getting-started/managing-an-umbraco-project.md)
+  * [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
+  * [Creating websites](getting-started/creating-websites-with-umbraco.md)
+  * [Editing websites](getting-started/editing-websites-with-umbraco.md)
+  * [Developing websites](getting-started/developing-websites-with-umbraco/README.md)
+    * [Customizing Umbraco](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
+    * [Extending the Umbraco Backoffice](getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
 * [Where can I get help?](where-can-i-get-help.md)
+* [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
+  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 
 ## Umbraco CMS
 
@@ -690,9 +693,6 @@
 
 ## Other resources
 
-* [Legacy Documentation](other-resources/legacy-documentation/README.md)
-  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
-  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [The Licensing Model](other-resources/the-licensing-model.md)
 
 ## Contribute
