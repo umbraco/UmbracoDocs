@@ -22,7 +22,7 @@ Despite the name, this package works for both Google and Microsoft authenticator
 ```Csharp
 using System;
 using System.Threading.Tasks;
-using Google.Authenticator;
+using GoogleAuthenticatorService.Core;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
@@ -83,7 +83,7 @@ namespace Umbraco9
             var member = _memberService.GetByKey(userOrMemberKey);
 
             var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", member.Username, secret, false);
+            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", secret, 200,200  );
             return Task.FromResult<object>(new QrCodeSetupData()
             {
                 SetupCode = setupInfo,
@@ -207,7 +207,7 @@ Despite the name, this package works for both Google and Microsoft authenticator
 using System;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using Google.Authenticator;
+using GoogleAuthenticatorService.Core;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
@@ -264,7 +264,7 @@ namespace Umbraco9
             var user = _userService.GetByKey(userOrMemberKey);
 
             var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);
+            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name",  secret, 200,200  );
             return Task.FromResult<object>(new TwoFactorAuthInfo()
             {
                 QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
