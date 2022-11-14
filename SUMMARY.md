@@ -564,6 +564,7 @@
   * [Release Notes, June 23, 2022](umbraco-cloud/release-notes/2022-06-23-releasenotes.md)
   * [Release Notes, August 19, 2022](umbraco-cloud/release-notes/2022-08-19-releasenotes.md)
   * [Release Notes, September 19, 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
+  * [Release Notes, November 7, 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
 
 ## Umbraco Heartcore
 
