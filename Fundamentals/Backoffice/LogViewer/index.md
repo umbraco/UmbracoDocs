@@ -14,7 +14,7 @@ You can find the log viewer in the settings section.
 ## Benefits
 
 Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms?
-With the power of structured logging and a query language we are able to search and find log items for very specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
+With the power of structured logging and a query language we are able to search and find log items for specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
 
 ## Example queries
 
