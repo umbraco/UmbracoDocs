@@ -1,8 +1,11 @@
 ---
-meta.Title: "Customizing Umbraco websites"
-meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
+meta.Title: Customizing Umbraco websites
+meta.Description: >-
+  This section shows you some beginner tools and information to get your started
+  with Umbraco. From making a local installation to extending the backoffice.
 ---
-# Customizing Umbraco website
+
+# Customizing Umbraco
 
 Looking to create a website with custom styling and tools? As a backend developer you can follow our instructions to create a fully customizable website. You will learn things like how to set up your environments and how to implement your custom templates. You will find all the tools that you're going to need to install Umbraco and start developing immediately.
 
@@ -12,30 +15,28 @@ There are tutorials on how to inject dependencies, information about how the Umb
 
 You can implement your own MVC controllers to work alongside Umbraco.
 
-- [Working with generated Models](../../../Reference/Templating/Modelsbuilder/)
-
-- [Concerns when working with Views](../../../Reference/Templating/Mvc)
-
-- [Different types of Controllers](../../../Implementation/Controllers)
+* [Working with generated Models](../Reference/Templating/Modelsbuilder/)
+* [Concerns when working with Views](../Reference/Templating/Mvc/)
+* [Different types of Controllers](../Implementation/Controllers/)
 
 ## Umbraco specific MVC concepts
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
-- [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
-- [Default routing](../../../Implementation/Default-Routing/Controller-Selection)
+* [Surface Controllers](../Reference/Routing/Surface-Controllers/index.md)
+* [Default routing](../Implementation/Default-Routing/Controller-Selection/)
 
 ## Dependency Injection and Umbraco's Composition
 
 Umbraco is composed of components. Programmatically you can add your own components and customize Umbraco at application startup.
 
-Learn more about composing and components in the [Composing article](../../../Implementation/Composing).
+Learn more about composing and components in the [Composing article](../Implementation/Composing/).
 
 ## Debugging
 
 When you're developing with Umbraco you might sometimes run into some errors and issues. Here are some guides to help you with the debugging:
 
-- [General debugging](../../../Fundamentals//Code/Debugging/)
-- [Debugging with SourceLink](../../../Reference/Debugging/)
+* [General debugging](../Fundamentals/Code/Debugging/)
+* [Debugging with SourceLink](../Reference/Debugging/)
 
-![Umbraco packages](images/corona_blogpost_05SoMe_768x432px.png)
+![Umbraco packages](../getting-started/developing-websites-with-umbraco/images/corona\_blogpost\_05SoMe\_768x432px.png)

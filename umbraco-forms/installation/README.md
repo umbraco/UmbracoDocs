@@ -1,10 +1,10 @@
-# Installation and upgrading
+# Installation And Upgrades
 
 ## [Installing Umbraco Forms](install.md)
 
 Install Umbraco Forms in a few steps.
 
-## [Configuring a license](../../the-licensing-model.md)
+## [Configuring a license](../../other-resources/the-licensing-model.md)
 
 Getting Forms out of trial mode.
 

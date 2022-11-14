@@ -24,23 +24,23 @@ You will also find information regarding Umbraco's underlying dependency injecti
 
 This will break into two sections: Extending the Umbraco backoffice and Developing custom websites.
 
-## [Extending the Umbraco backoffice](extending-the-umbraco-backoffice/)
+## [Extending the Umbraco backoffice](../getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice/)
 
 The Umbraco backoffice can be extended using AngularJS and C#. Customizing the Umbraco backoffice and editing experience includes creating your own Property Editors, Dashboards, and packages. You will also find information about how to customize things like Health Checks and the built-in search functionality.
 
-[Checkout the Extending section of these docs](../../umbraco-cms/extending/) for a good place to start.
+[Checkout the Extending section of these docs](../umbraco-cms/extending/) for a good place to start.
 
 {% hint style="info" %}
 From a frontend perspective, Umbraco does not dictate HTML, CSS, or JS in your website build. There is nothing Umbraco specific about it.
 {% endhint %}
 
-## [Customizing Umbraco sites](customizing-umbraco-sites/)
+## [Customizing Umbraco sites](../getting-started/developing-websites-with-umbraco/customizing-umbraco-sites/)
 
 Umbraco is highly customizable which means you can integrate it with anything and make it behave as you want. With Umbraco, you start out with a clean slate.
 
 Umbraco uses ASP.NET and MVC patterns and you can extend and write your own controllers using the approach outlined in this section.
 
-![Umbraco on devices](images/Umbraco\_Brand\_Guidelines\_2020\_30\_Illustrationbuilding.png)
+![Umbraco on devices](../getting-started/developing-websites-with-umbraco/images/Umbraco\_Brand\_Guidelines\_2020\_30\_Illustrationbuilding.png)
 
 ## Integrated Development Environment (IDE) recommendations
 
