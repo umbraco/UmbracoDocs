@@ -166,15 +166,16 @@ An area
 ![Block Grid - Area Configuration](images/BlockGridEditor_AreasConfiguration.png)
 
 * **Alias** - The alias is used to identify this Area.
-It begin printed by `GetBlockGridHTML()` And used as name for the Area slot in Custom Views.
-The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
+  It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views.
+  The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
 
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 
-* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks.
-Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
+* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. 
+  This can be overwritten by specifying the allowed Blocks.
+  Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
 
 When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well and set the requirements.
 
