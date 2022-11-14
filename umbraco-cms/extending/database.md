@@ -305,9 +305,9 @@ To create, read, update or delete data from your custom database tables, you can
 
 The following example creates an `UmbracoApiController` to be able to fetch and insert blog comments.
 
-:::note
+{% hint style="info" %}
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
-:::
+{% endhint %}
 
 ```C#
 using Microsoft.AspNetCore.Mvc;
