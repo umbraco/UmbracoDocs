@@ -30,6 +30,7 @@ Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to re
 * [Advanced](#advanced)
 * [Editing Blocks](#editing-blocks)
 * [Sorting Blocks](#sorting-blocks)
+* [Scaling Blocks](#scaling-blocks)
 * [Rendering Block Grid content](#rendering-block-grid-content)
 * [Write a Custom Layout Stylesheet](#write-a-custom-layout-stylesheet)
 * [Build a custom Backoffice View](#build-a-custom-backoffice-view)
@@ -112,7 +113,7 @@ Customize the user experience for your content editors when they work with the B
 
 Customize the Blocks size in the Grid. If you define multiple options, the Block becomes scalable.
 
-By default, a Block takes up the full-width of the content.
+By default, a Block takes up the available width.
 
 A Block can be resized in two ways:
 
@@ -138,7 +139,7 @@ These properties refer to how the Block is presented in the Block catalogue when
 
 The thumbnails for the catalogue are presented in the format of 16:10. We recommend a resolution of 400px width and 250px height.
 
-### Allowance
+### Permissions
 
 * **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
 * **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
@@ -160,15 +161,23 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 
 ### Area configuration
 
+An area 
+
 ![Block Grid - Area Configuration](images/BlockGridEditor_AreasConfiguration.png)
 
-* **Alias** - The alias is printed by `GetBlockGridHTML()`. Use the alias to target the Element representing the area.
+* **Alias** - The alias is used to identify this Area.
+  It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views.
+  The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
 
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 
-* **Allowed block types** - Defines the types of Blocks or Groups of Blocks that are allowed in the Area. Optionally, you can also set how many Blocks of each type/group should be present. The Blocks can be limited for each specific Block Type in an Area.
+* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. 
+  This can be overwritten by specifying the allowed Blocks.
+  Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
+
+When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well and set the requirements.
 
 ## Advanced
 
@@ -217,6 +226,12 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
 ![Block Grid - Sorting Blocks](images/Sorting_BlockGrid_Blocks.gif)
+
+## Scaling Blocks
+
+If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
+
+The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
 ## Rendering Block Grid Content
 

@@ -112,6 +112,21 @@ All of these times are in *seconds*:
 </settings>
 ```
 
+## Batch settings
+
+Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
+
+An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
+
+If encountering this issue, the following setting can be applied to cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy sourceDeployBatchSize="1000" />
+</settings>
+```
+
 ## Transfer Queue
 
 In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
