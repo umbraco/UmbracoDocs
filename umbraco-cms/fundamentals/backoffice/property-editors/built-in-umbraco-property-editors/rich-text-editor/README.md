@@ -9,7 +9,7 @@ The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and i
 {% hint style="info" %}
 **Are you using custom configuration or plugins with TinyMCE?**
 
-In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6.
+In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
 
 If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
 
