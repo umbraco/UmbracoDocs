@@ -9,7 +9,7 @@ versionFrom: 9.0.0
 During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bugs/bottlenecks in your code or to help uncover what on earth is going wrong.
 
 To perform proper debugging on your site you need to set your application to have debug enabled.
-This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` e.g. in `appsettings.json`  file:
+This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` for example in `appsettings.json`  file:
 
 :::warning
 Debug should always be set to false in production.
@@ -64,7 +64,7 @@ The MiniProfiler profiles your code method calls, giving you a greater insight i
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` e.g. in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
+To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` for example in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
 
 Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
 
