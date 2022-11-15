@@ -1,13 +1,22 @@
 # Getting Started with Umbraco Workflow
 
-After installing Umbraco Workflow, you will notice a **Workflow** Dashboard in the **Content** section and a **Workflow** section at the end of the section bar.
+In this article, you can read about [Umbraco Workflow](https://umbraco.com/products/umbraco-workflow/) and how to get started.
 
-![Getting Started with Workflow](images/Getting-Started-workflow.png)
+## Umbraco Workflow Overview
 
-Umbraco Workflow adds the following in the Umbraco Backoffice
+Umbraco Workflow allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Workflow extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises of multiple steps and multiple users assigned to the group responsible for providing approval at each step.
 
-- [Workflow Dashboards and Buttons](#workflow-dashboards-and-buttons)
-- [Workflow Content App](#workflow-content-app)
+Umbraco Workflow adds a [Content App](../umbraco-cms/extending/content-apps.md) to all content nodes in the **Content** section where a workflow is enabled. For more information, see the [Workflow Content App](#workflow-content-app) section.
+
+A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
+
+The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Workflow Dashboards and Buttons](#workflow-dashboards-and-buttons) section.
+
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=5M1CtFVZCBo" %}
+Umbraco Workflow Overview
+{% endembed %}
 
 ## Workflow Dashboards and Buttons
 

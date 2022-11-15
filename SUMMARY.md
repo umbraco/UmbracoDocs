@@ -692,6 +692,20 @@
   * [Version Specific Upgrade Details](umbraco-deploy/upgrades/version-specific.md)
 * [Troubleshooting](umbraco-deploy/troubleshooting.md)
 
+## Umbraco Workflow
+
+* [What is Umbraco Workflow?](umbraco-workflow/README.md)
+* [Getting started](umbraco-workflow/getting-started.md)
+* [Installing Umbraco Workflow](umbraco-workflow/installing-workflow.md)
+* [Licensing](umbraco-workflow/licensing.md)
+* [Upgrading Umbraco Workflow](umbraco-workflow/upgrading-workflow.md)
+* [Workflow Section](umbraco-workflow/workflow-section.md)
+  * [Approval Groups](umbraco-workflow/approval-groups.md)
+  * [Content Reviews](umbraco-workflow/content-reviews.md)
+  * [Workflow History](umbraco-workflow/workflow-history.md)
+  * [Workflow Settings](umbraco-workflow/workflow-settings.md)
+  * [Events](umbraco-workflow/events.md)
+
 ## Other resources
 
 * [Legacy Documentation](other-resources/legacy-documentation/README.md)

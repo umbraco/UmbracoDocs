@@ -16,10 +16,6 @@ Extending Umbraco with the Workflow section by installing Umbraco Workflow in a 
 
 Learn more about the licensing model used for Umbraco Workflow.
 
-## [Umbraco Workflow Overview](umbraco-workflow-overview.md)
-
-Provides a quick overview of Umbraco Workflow.
-
 ## [Getting Started](getting-started.md)
 
 Learn how to get started with Umbraco Plumber.
