@@ -1,4 +1,4 @@
-# Installing Umbraco Workflow
+# Installation
 
 In this article, we will cover the steps required to install Umbraco Workflow on your website.
 

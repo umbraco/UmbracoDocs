@@ -17,7 +17,7 @@ To impersonate the full license on a local site:
    ```
 
 {% hint style="info" %}
-The test license is restricted to sites running in a development environment, with a debugger attached (that is hitting F5 in Visual Studio, in Debug mode, will enable the test license).
+The test license is restricted to sites running in a development environment with a debugger attached. Hit F5 in Visual Studio, in Debug mode to enable the test license.
 {% endhint %}
 
 ## Purchasing an Umbraco Workflow License

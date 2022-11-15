@@ -1,4 +1,4 @@
-# Getting Started with Umbraco Workflow
+# Getting Started
 
 In this article, you can read about [Umbraco Workflow](https://umbraco.com/products/umbraco-workflow/) and how to get started.
 

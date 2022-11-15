@@ -1,3 +1,3 @@
-# Workflow Dashboard
+# Workflow Section
 
 TBD

@@ -1,4 +1,4 @@
-# Umbraco Workflow Settings
+# Settings
 
 When working with Umbraco Workflow, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure the following from the Workflow Settings section:
 
@@ -19,7 +19,7 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 - **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   - **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
-  - **Implicit** - All steps where the original Change Author is NOT a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
+  - **Implicit** - All steps where the original Change Author is *not* a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
   - **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
 - **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
 - **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
@@ -119,7 +119,7 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 
 ## Notifications Overview
 
-Notification emails use HTML templates which render information from the `HtmlEmailModel` type which lives in the `Umbraco.Workflow.Core.Models.Email` namespace. While it is possible to modify the email templates from the backoffice, it is recommended to make changes via an IDE of your choice.
+Notification emails use HTML templates which render information from the `HtmlEmailModel` type which lives in the `Umbraco.Workflow.Core.Models.Email` namespace. While it is possible to modify the email templates from the backoffice, we recommend making changes via an Integrated Development Environment (IDE) of your choice.
 
 The `HtmlEmailModel` contains the following fields:
 

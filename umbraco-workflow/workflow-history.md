@@ -1,4 +1,4 @@
-# Umbraco Workflow History
+# History
 
 The Umbraco Workflow History provides a chronological audit trail of workflow activity for all the nodes.
 

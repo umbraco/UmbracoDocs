@@ -1,4 +1,4 @@
-# Umbraco Workflow Documentation
+# What is Umbraco Workflow?
 
 {% hint style="info" %}
 Umbraco Workflow is a product that was recently acquired by Umbraco. The commercial offering will change later during the year and the articles in this section are subject to change over the coming months.

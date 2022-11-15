@@ -2,7 +2,7 @@
 
 Currently, Events are raised by the Config, Group, and Tasks services. You can also subscribe to the `DocumentPublish` and `DocumentUnpublish` processes.
 
-You cannot cancel Events. They serve as an entry point for writing custom notification layers like Slack, SMS etc.
+You cannot cancel Events. They serve as an entry point for writing custom notification layers like Slack, Short Messaging Service (SMS) etc.
 
 ## ConfigService
 
