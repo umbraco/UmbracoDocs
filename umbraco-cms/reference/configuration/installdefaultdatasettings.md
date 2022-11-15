@@ -73,7 +73,7 @@ As an example, the following configuration would omit the default "English (Unit
     }
   }
 }
-```
+``` 
 
 ## Reference
 
