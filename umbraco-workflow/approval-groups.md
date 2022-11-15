@@ -1,6 +1,6 @@
 # Approval Groups
 
-The **Approval groups** view in the **Workflow** section lists the name of the active groups, group members, their permissions, and a quick link to email the group.
+The **Approval groups** view in the **Workflow** section lists the active groups name, group members, their permissions, and a quick link to email the group.
 
 ![Approval groups](images/Approval-groups.png)
 
@@ -37,7 +37,7 @@ The **Settings** tab consists of the following fields:
 
 ### Enable Offline Approval
 
-You can optionally provide Groups permission to action workflow tasks without logging in to Umbraco. This feature requires a paid license. By enabling Offline Approval, on the **Edit group** view, all email notifications sent to members of the group will include a personalized link to a preview page.
+You can optionally provide Groups permission to action workflow tasks without logging in to Umbraco. This feature requires a paid license. By Enabling Offline Approval, all email notifications sent to the group members will include a personalized link to a preview page.
 
 The preview page exposes the current saved page with the options to approve or reject the change. It is not possible to edit the content from the offline approval view.
 

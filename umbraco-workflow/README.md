@@ -6,7 +6,7 @@ Umbraco Workflow is a product that was recently acquired by Umbraco. The commerc
 Learn more about the acquisition in the [Umbraco acquires Plumber](https://umbraco.com/blog/umbraco-acquires-plumber/) blogpost.
 {% endhint %}
 
-Welcome to the Umbraco Workflow documentation. Here you can read all about how to work with Umbraco Workflow. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Workflow.
+Welcome to the Umbraco Workflow documentation. Here you can read articles about how to work with Umbraco Workflow.
 
 ## [Installing Umbraco Workflow](installing-workflow.md)
 
@@ -26,7 +26,7 @@ Get a full overview of the approval groups along with their settings, roles, mem
 
 ## [Content Reviews](content-reviews.md)
 
-Provides an overview of all content pending for review, expired content, and a range of settings for configuring who reviews which pages (or Document Types), and how frequently.
+Provides an overview of all content pending for review, expired content, settings for configuring who reviews which pages (or Document Types), and so on.
 
 ## [Workflow History](workflow-history.md)
 

@@ -42,7 +42,7 @@ When a workflow is active on the current node, the **Publish** button is replace
 
 When no workflow is active, the button state is determined by the current user's permissions.
 
-Umbraco Workflow overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Workflow shifts Umbraco from a centrally administered publishing model (that is controlled by a site administrator) to a distributed model, where editors publish content based on their responsibilities assigned during the workflows.
+Umbraco Workflow overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Workflow shifts Umbraco from a centrally administered publishing model (controlled by a site administrator) to a distributed model. In this model, editors publish content based on their responsibilities assigned during the workflows.
 
 In cases, where the content is already in a workflow, a notification is displayed at the top of the editor. Depending on the Workflow **Settings**, you can enable/disable editing access on a content node in a workflow.
 
@@ -89,15 +89,15 @@ In multi-lingual sites, variant content can be submitted in one of these workflo
 - All variants for publishing in a single workflow process using the workflow applied to the default variant.
 - Each variant into a separate workflow.
 
-For example, you can have the German version of your content approved by groups of German speakers and the English version by the English speaker's group.
+For example, the German version of your content can be approved by German speaker's group and the English version by the English speaker's group.
 
 #### Approve, Reject, or Cancel pending workflow tasks
 
-TBD
+<TBD>
 
 ### Configuration
 
-The Configuration sub-section provides an interface for configuring the content approval flow for the current node and displays any inherited or Document type approval flows applied to the current content node.
+The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any inherited or Document type approval flows applied to the current content node.
 
 ![Configuration sub-section](images/Configuration-sub-section.png)
 
@@ -119,7 +119,7 @@ A given content node may have all three approval flow types applied but only one
 
 ![Approval Flow Types](images/approval-flow-types.png)
 
-Current responsibilities for Approval Groups can be reviewed in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](approval-groups.md#roles) section in the [Approval Groups](approval-groups.md) article.
+Review the current responsibilities for Approval Groups in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](approval-groups.md#roles) section in the [Approval Groups](approval-groups.md) article.
 
 ![Approval Groups Roles](images/approval-groups-roles.png)
 
