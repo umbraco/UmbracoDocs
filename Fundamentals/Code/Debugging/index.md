@@ -64,7 +64,7 @@ The MiniProfiler profiles your code method calls, giving you a greater insight i
 
 ### Displaying the MiniProfiler
 
-To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` for example in you appSettings.json and then add `?umbDebug=true` to the query string of any request.
+To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug` is set to `true` in the appSettings.json file. Thereafter you can add `?umbDebug=true` to the query string of any request.
 
 Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
 
