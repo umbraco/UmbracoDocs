@@ -1,8 +1,11 @@
 ---
-meta.Title: "Where can I get help" 
-meta.description: "This section will guide you on where to find the answers for any questions you may have."
+meta.Title: Where can I get help
+meta.description: >-
+  This section will guide you on where to find the answers for any questions you
+  may have.
 versionFrom: 8.0.0
 ---
+
 # Where can I get help?
 
 If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.
@@ -25,7 +28,7 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Umbraco Discord](https://discord.gg/umbraco)
 
-![Umbraco support](images/U_PRs.png)
+![Umbraco support](getting-started/images/U\_PRs.png)
 
 ## Other resources
 
@@ -33,7 +36,7 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Found an issue with the Umbraco Documentation? Report it on our Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues)
 
-[Find out how to suggest an improvement to the Umbraco Documentation](../contribute/README.md)
+[Find out how to suggest an improvement to the Umbraco Documentation](contribute/)
 
 ## Community Resources
 
@@ -47,4 +50,4 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Umbraco Community's Blog](https://umbraco.com/blog/category/community)
 
-![Umbraco community](images/U_Docs.png)
+![Umbraco community](getting-started/images/U\_Docs.png)
