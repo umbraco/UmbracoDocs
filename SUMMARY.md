@@ -14,4 +14,3 @@
   * [Workflow History](umbraco-workflow/workflow-history.md)
   * [Workflow Settings](umbraco-workflow/workflow-settings.md)
   * [Events](umbraco-workflow/events.md)
-  

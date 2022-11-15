@@ -6,7 +6,7 @@ meta.Description: >-
 description: Find all the resources you need in order to manage your Umbraco project.
 ---
 
-# Managing a project
+# Choosing Umbraco
 
 This section allows you to investigate the development process, the commercial options and how to best plan out an Umbraco project.
 
