@@ -173,15 +173,15 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     public class ProductIndex : UmbracoExamineIndex
     {
         public ProductIndex(
-            ILoggerFactory loggerFactory, 
-            string name, 
-            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions, 
-            IHostingEnvironment hostingEnvironment, 
+            ILoggerFactory loggerFactory,
+            string name,
+            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions,
+            IHostingEnvironment hostingEnvironment,
             IRuntimeState runtimeState)
-            : base(loggerFactory, 
-            name, 
-            indexOptions, 
-            hostingEnvironment, 
+            : base(loggerFactory,
+            name,
+            indexOptions,
+            hostingEnvironment,
             runtimeState)
         {
         }
@@ -235,7 +235,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                 options.UnlockIndex = true;
 
                 options.Validator = new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new[] { "product" });
-                
+
                 if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
                 {
                     // if this directory factory is enabled then a snapshot deletion policy is required
@@ -243,7 +243,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                 }
             }
         }
-        
+
         public void Configure(LuceneDirectoryIndexOptions options)
         {
             throw new System.NotImplementedException();
@@ -274,7 +274,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                     ["id"] = content.Id,
                 };
 
-                yield return new ValueSet(content.Id.ToString(), "content", indexValues);
+                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
             }
         }
     }
@@ -336,6 +336,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     {
         public void Compose(IUmbracoBuilder builder)
         {
+            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
+
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
