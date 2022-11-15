@@ -2,7 +2,7 @@
 
 * [Umbraco Documentation](README.md)
 * [The Licensing Model](the-licensing-model.md)
-* [Format Tests](<README (1).md>)
+* [Format Tests](format-tests.md)
 
 ## Getting Started
 
@@ -696,9 +696,9 @@
 
 * [What is Umbraco Workflow?](umbraco-workflow/README.md)
 * [Getting started](umbraco-workflow/getting-started.md)
-* [Installing Umbraco Workflow](umbraco-workflow/installing-workflow.md)
+* [Installation](umbraco-workflow/installing-workflow.md)
 * [Licensing](umbraco-workflow/licensing.md)
-* [Upgrading Umbraco Workflow](umbraco-workflow/upgrading-workflow.md)
+* [Upgrading](umbraco-workflow/upgrading-workflow.md)
   * [Migration from Plumber to Umbraco Workflow](umbraco-workflow/migrating-workflow.md)
 * [Workflow Section](umbraco-workflow/workflow-section.md)
   * [Approval Groups](umbraco-workflow/approval-groups.md)
@@ -722,4 +722,3 @@
 * [Create a new version of an article](contribute/how-do-add-a-new-version.md)
 * [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
-  

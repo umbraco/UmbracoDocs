@@ -1,20 +1,22 @@
 # Licensing
 
-Umbraco Workflow is a licensed product but does not require a purchase to use. New installs are defaulted to a trial license, while the paid license is available for purchase. The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
+Umbraco Workflow is a licensed product but does not require a purchase to use. New installations are defaulted to a trial license while the paid license is available for purchase.&#x20;
+
+The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
 
 To impersonate the full license on a local site:
 
-1. Set `EnableTestLicense` to `true` in the `appSettings.json` file:
+1.  Set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
-   ```json
-   {
-    “Umbraco”: {
-      “Workflow”: {
-        “EnableTestLicense”: true
+    ```json
+    {
+     “Umbraco”: {
+       “Workflow”: {
+         “EnableTestLicense”: true
+       }
       }
-     }
-   }
-   ```
+    }
+    ```
 
 {% hint style="info" %}
 The test license is restricted to sites running in a development environment with a debugger attached. Hit F5 in Visual Studio, in Debug mode to enable the test license.
@@ -24,7 +26,7 @@ The test license is restricted to sites running in a development environment wit
 
 If you want to buy an Umbraco Workflow license, reach out to the sales team at **suits@umbraco.com**. Existing Plumber license holders who wish to update to Workflow should contact **suits@umbraco.com**.
 
-To add the license to your site, update the `appSettings.json` file to add the following:
+To add the license to your site, update the `appSettings.json` file:
 
 ```json
 {
