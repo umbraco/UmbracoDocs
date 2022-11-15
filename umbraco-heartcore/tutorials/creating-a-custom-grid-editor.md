@@ -319,7 +319,7 @@ Since we add to the array and do not set the `value` property we need to tell Li
 We will also need to add a `click` event to the button so it will show the dialog:
 
 ```html
-<button type="button" class="btn-reset placeholder" @click=${() => this.showPicker()}>
+<button type="button" class="add-button" @click=${() => this.showPicker()}>
 ```
 
 {% hint style="info" %}

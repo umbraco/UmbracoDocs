@@ -21,23 +21,24 @@ The following example configuration shows how this default data installation can
 "Umbraco": {
   "CMS": {
   "InstallDefaultData": {
-    "Languages": {
-      "InstallData": "Values",
-      "Values": [
-        "en-US"
-      ]
-    },
-    "DataTypes": {
-      "InstallData": "ExceptValues",
-      "Values": [
-        "0225af17-b302-49cb-9176-b9f35cab9c17"
-      ]
-    },
-    "MediaTypes": {
-      "InstallData": "All",
-    },
-    "MemberTypes": {
-      "InstallData": "None"
+      "Languages": {
+        "InstallData": "Values",
+        "Values": [
+          "en-US"
+        ]
+      },
+      "DataTypes": {
+        "InstallData": "ExceptValues",
+        "Values": [
+          "0225af17-b302-49cb-9176-b9f35cab9c17"
+        ]
+      },
+      "MediaTypes": {
+        "InstallData": "All",
+      },
+      "MemberTypes": {
+        "InstallData": "None"
+      }
     }
   }
 }
@@ -49,6 +50,32 @@ Each `InstallData` setting can be one of the following values:
 - `Values` - only the default data specified will be installed.  For languages, the values are the ISO codes for the language. For all other types, the Guid for the type should be listed.
 - `ExceptValues` - all default data except those specified will be installed.
 - `None` - no default data of the type will be installed.
+
+## Data Identifiers
+
+For `DataTypes`, `MediaTypes` and `MemberTypes` the Guid identifiers for the default data items need to be provided in the `Values` collection.
+
+For `Languages`, the `Values` collection expects the standard language ISO codes to be provided. Given this code is enough to fully specify a language, it's possible to use this collection to install additional default data.
+
+As an example, the following configuration would omit the default "English (United States)" language and instead install the "English (United Kingdom)" and "Italian" languages.  As "English (United Kingdom)" is provided first, it would be created as Umbraco's default language for content creation.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "InstallDefaultData": {
+      "Languages": {
+        "InstallData": "Values",
+        "Values": [
+          "en",
+          "it"
+        ]
+      }
+    }
+  }
+}
+``` 
+
+## Reference
 
 The Guid values representing the default Data, Media, and Member Types installed are as follows.
 
