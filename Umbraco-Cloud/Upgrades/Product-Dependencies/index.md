@@ -26,4 +26,4 @@ In the table below you can see which version of Umbraco Forms and Deploy you sho
 
 ## [How to upgrade Umbraco Forms manually](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade)
 
-## [How to upgrade Deploy manually](../Manual-upgrades/Manual-Deploy-and-Courier-Upgrade)
+## [How to upgrade Deploy manually](../Manual-upgrades/Manual-Upgrade-Deploy)
