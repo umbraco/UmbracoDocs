@@ -24,17 +24,6 @@ This is the documentation project for Umbraco. The scope of this project is to p
 # Markdown conventions
 The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
 
-# Annotating a document
-
-To add version information and extra keywords, [every document can be annotated using YAML](Contribute/Adding-Metadata/index.md).
-
-# Multi version documentation
-Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
-
-Therefore we introduced 2 different mechanisms:
-1. The [YAML metadata describing](Contribute/Adding-Metadata/index.md) `versionFrom` and `versionTo`.
-2. The possibility [to add multiple files about the same topic](Contribute/File-Naming-Conventions/index.md).
-
 # Previewing rendered output locally
 
 There is an experimental project which supports rendering the documentation locally.

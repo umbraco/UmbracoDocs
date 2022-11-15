@@ -8,7 +8,7 @@ In this article you can learn about the various ways you can configure the RTE.
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full.png)
+![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-all-options.png)
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
@@ -36,7 +36,7 @@ The Rich Text Editor comes in two different modes: Classic and Distraction Free.
 
     The default mode, which displays the toolbar in the top.
 
-    ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic.png)
+    ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-new.png)
 *   Distraction Free
 
     In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.

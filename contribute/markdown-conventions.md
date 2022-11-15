@@ -1,69 +1,30 @@
----
-meta.Title: "Markdown conventions"
-meta.Description: "Explanation of how to use markdown and how we structure the files."
----
+# Markdown Conventions
 
-# Markdown conventions
+The Umbraco Documentation uses Markdown for all articles.
 
-The Umbraco Documentation uses Markdown for all the articles; more precisely, we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
-
-In this article you can learn how to use Markdown, as well as how we structure the files.
-
-## Structure
-
-For the documentation project, each individual topic is contained in its own folder.
-Each folder must have an `index.md` file which links to the individual sub-pages. If images are used, these must be in `images` folders next to the .md file referencing them using relative paths.
-
-* `topic`
-  * `images`
-    * `images.png`
-  * `Subtopic`
-    * `images`
-    * `index.md`
-  * `index.md`
-  * `other-page.md`
+In this article you can learn how we Markdown for different elements on our documentation.
 
 ## Images
 
-Images are stored and linked using relative paths to .md pages, and should by convention always be in an `images` folder. To add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
+Images are linked using relative paths to `.md` pages.
+
+The following sample adds an image, `img.png`, located in an `images` folder:
 
 ```markdown
 ![My Image Alt Text](images/img.png)
 ```
 
-And store the image as `/documentation/reference/partials/images/img.png`
-
-Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif` or `png`. No `bmp`, `tiff` or `swf` (Flash).
-
-### Center images
-
-By default, all images added to an article in the documentation will be left-aligned. If you want to ensure that the image you add to an article will be center-aligned, use the following formatting:
-
-```markdown
-:::center
-![Example of the load indicator](images/arm_with_u_logo-SMALL.png)
-:::
-```
-
-The example above will render the image in the center of the page.
-
-:::center
-![Example of the load indicator](images/arm_with_u_logo-SMALL.png)
-:::
+{% hint style="info" %}
+Make sure to add a descriptive image text that presents the user with the same information as the image provides.
+{% endhint %}
 
 ## Links
 
-In the following you'll find a few examples of different links.
+In the following you will find a few examples of different links.
 
 ### External links
 
-Include either the complete URL, or link using a specific syntax:
-
-```markdown
-https://yahoo.com/something
-```
-
-or
+Include either the complete URL, or link using the following syntax:
 
 ```markdown
 [yahoo something](https://yahoo.com/something)
@@ -71,99 +32,62 @@ or
 
 ### Internal links
 
-When linking between pages, link using relative paths and optionally include the .md extension. 
-For example if you need to provide hyperlink to an `index.md` file in the current folder, only the path including the folder name is required. If you want provide hyperlink to any file in the current folder, only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
+When linking between pages in the documentation, link using relative paths. The following are examples of linking to an article.
+
+Link to an article in the same directory as the current article:
 
 ```markdown
-[Umbraco.Helpers](Umbraco.Helpers)
+[Article Title](article.md)
 ```
 
-or
+Link to an article in a different directory than the current article:
 
 ```markdown
-[Umbraco.Helpers](../../Reference/Umbraco.Helpers)
+[Article Title](../../reference/article.md)
 ```
 
-### Styled links
+{% hint style="info" %}
+Use the title of the article that is linked to, as the _link text_. This is done in order to tell the reader what the will find on the other end.
 
-When you have multiple links to add below an article, we recommend using the styled links options. For example, if you've written a guide and want to direct the user to related articles, do that by using the following formatting:
+Do not use **here** or **link** as the link text, as this provides little to no information about the destination.
+{% endhint %}
 
-```markdown
-:::links
-## Related articles
-- [Styled links](/)
-- [You can also add `inline code` to links](/)
-:::
+### Page Links
+
+It is possible to add a page link that spans the entire width of the page. This is generally used for linking to a new subject related to the article at hand.
+
+The following is a page link that links to the "Submit Feedback" article:
+
+```markup
+{% raw %}
+{% content-ref url="issues.md" %}
+
+[issues.md](issues.md)
+
+{% endcontent-ref %}
+{% endraw %}
 ```
 
-The example above will render as follows:
-
-:::links
-### Related articles
-* [Styled links](#)
-- [You can also add `inline code` to links](#)
-:::
+{% content-ref url="issues.md" %}
+[issues.md](issues.md)
+{% endcontent-ref %}
 
 ## Formatting code
 
-Indent your sample with 4 spaces, which will cause it to be rendered inside `<pre><code>` tags.
-For inline code, wrap in ` (backtick) characters.
+Code formatting comes in 2 variants: inline code and code blocks.
 
-Use # for the headline, ## for sub headers and ### for parameters (on code reference pages).
+### Inline code
 
-For optional parameters wrap in _ (underscore) characters, e.g.:
-`###_optionalParameter_`
+Use inline code when referencing file names and paths as well as actual code the does not extend over multiple lines.
 
-## Adding notes, warnings, tips
+Inline code should be wrapped in \` (backtick) characters.
 
-The Markdown conversion library used in the documentation is called [Markdig](https://github.com/lunet-io/markdig). It allows you to add classes to markdown that you can then target with CSS. There are a few custom Markdown classes that can be used:
+### Code Blocks
 
-```markdown
-:::note
-This is a note. It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
-:::
+We follow [GitBooks conventions for adding code blocks](https://docs.gitbook.com/tour/editor/blocks/code-block) to our articles.
 
-:::warning
-This is a warning. It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
-:::
+## Adding tips and warnings
 
-:::tip
-This is a tip: It contains useful information and a link: https://thisisalink.com/useful/resource. Please make sure it looks nice on Our!
-:::
-```
+Four types of hints can be added to our documentation: info, success, warning and danger.
 
-These examples will render like this:
-
-:::note
-This is a note. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
-:::
-
-:::warning
-This is a warning. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
-:::
-
-:::tip
-This is a tip. It contains useful information and [a link](https://thisisalink.com/useful/resource). Please make sure it looks nice on Our!
-:::
-
-## Styled checklists
-
-Instead of using the classic bullet for lists, the Umbraco documentation provides an option to use checkmarks for lists.
-
-```markdown
-:::checklist
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-:::
-```
-
-This list will render as:
-
-:::checklist
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-:::
+[Learn more about how to use hints in the GitBook Docs](https://docs.gitbook.com/tour/editor/blocks/hint).

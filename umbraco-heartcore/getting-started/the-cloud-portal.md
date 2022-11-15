@@ -4,8 +4,6 @@ In this article, you will learn more about the Umbraco Cloud Portal and what opt
 
 ## Video tour of the Portal
 
-<iframe width="800" height="450" title="Tour of the Heartcore Portal" src="https://www.youtube.com/embed/WmoovOIRQOo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Written tour of the Portal
 
 After you have logged into the [Umbraco Cloud Portal](https://www.umbraco.io), you are presented with the project list overview.
@@ -46,7 +44,7 @@ It is also here, that you are able to add or edit the Technical Contact informat
 
 ![Edit Team Members page](images/editTeam.png)
 
-{% hint style="info" %} style="info" %} style="info" %} style="info" %}
+{% hint style="info" %}
 When you invite a Team Member to your Heartcore project, they will automatically get access to the backoffice of the project as well.
 
 You can add as many members to your project as you want.
@@ -82,7 +80,7 @@ From this page, you can delete your project. When deleting the project your subs
 
 ## Go to backoffice
 
-Clicking on the 'Go to backoffice' link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the [Heartcore Backoffice](../The-Umbraco-Backoffice).
+Clicking on the 'Go to backoffice' link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the [Heartcore Backoffice](../The-Umbraco-Backoffice/).
 
 ## Environment history
 

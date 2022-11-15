@@ -1,2 +1,2 @@
-# Built-in Umbraco Property Editors
+# Built-in Property Editors
 
