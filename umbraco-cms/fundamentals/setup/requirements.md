@@ -35,9 +35,9 @@ For the best experience, we would recommend that you ensure your hosting environ
 * .NET 7.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-:::tip
+{% hint style="success" %}
 You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
-:::
+{% endhint %}
 
 ### Miminium requirements to run Umbraco
 
