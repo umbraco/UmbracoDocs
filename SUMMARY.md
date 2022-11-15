@@ -699,6 +699,7 @@
 * [Installing Umbraco Workflow](umbraco-workflow/installing-workflow.md)
 * [Licensing](umbraco-workflow/licensing.md)
 * [Upgrading Umbraco Workflow](umbraco-workflow/upgrading-workflow.md)
+  * [Migration from Plumber to Umbraco Workflow](umbraco-workflow/migrating-workflow.md)
 * [Workflow Section](umbraco-workflow/workflow-section.md)
   * [Approval Groups](umbraco-workflow/approval-groups.md)
   * [Content Reviews](umbraco-workflow/content-reviews.md)
