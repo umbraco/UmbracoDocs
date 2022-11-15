@@ -1,20 +1,18 @@
 # Table of contents
 
 * [Umbraco Documentation](README.md)
-* [The Licensing Model](the-licensing-model.md)
-* [Format Tests](<README (1).md>)
-
-## Getting Started
-
 * [Getting Started](getting-started/README.md)
-* [Managing a project](getting-started/managing-an-umbraco-project.md)
-* [Editing websites](getting-started/editing-websites-with-umbraco.md)
-* [Creating websites](getting-started/creating-websites-with-umbraco.md)
-* [Developing websites](getting-started/developing-websites-with-umbraco/README.md)
-  * [Customizing Umbraco](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
-  * [Extending the Umbraco Backoffice](getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
-* [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
-* [Where can I get help?](getting-started/where-can-i-get-help.md)
+  * [Choosing Umbraco](getting-started/managing-an-umbraco-project.md)
+  * [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
+  * [Creating websites](getting-started/creating-websites-with-umbraco.md)
+  * [Editing websites](getting-started/editing-websites-with-umbraco.md)
+  * [Developing websites](getting-started/developing-websites-with-umbraco/README.md)
+    * [Customizing Umbraco](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
+    * [Extending the Umbraco Backoffice](getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
+* [Where can I get help?](where-can-i-get-help.md)
+* [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
+  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 
 ## Umbraco CMS
 
@@ -564,6 +562,7 @@
   * [Release Notes, June 23, 2022](umbraco-cloud/release-notes/2022-06-23-releasenotes.md)
   * [Release Notes, August 19, 2022](umbraco-cloud/release-notes/2022-08-19-releasenotes.md)
   * [Release Notes, September 19, 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
+  * [Release Notes, November 7, 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
 
 ## Umbraco Heartcore
 
@@ -694,9 +693,7 @@
 
 ## Other resources
 
-* [Legacy Documentation](other-resources/legacy-documentation/README.md)
-  * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
-  * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+* [The Licensing Model](other-resources/the-licensing-model.md)
 
 ## Contribute
 

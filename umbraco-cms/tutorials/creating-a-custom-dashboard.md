@@ -60,6 +60,7 @@ Next, we will create an HTML file inside this folder called `WelcomeDashboard.ht
 
 Add the following HTML to the `WelcomeDashboard.html`.
 
+{% code title="WelcomeDashboard.html" lineNumbers="true" %}
 ```html
 <div class="welcome-dashboard">
     <h1>Welcome to Umbraco</h1>
@@ -67,11 +68,13 @@ Add the following HTML to the `WelcomeDashboard.html`.
     <p>You can put anything here...</p>
 </div>
 ```
+{% endcode %}
 
 ## Configuring the dashboard to appear
 
 Similar to a property editor you will now register the dashboard in a `package.manifest` file. Add a new file inside the `~/App_Plugins/CustomWelcomeDashboard` folder called `package.manifest`:
 
+{% code title="package.manifest" lineNumbers="true" %}
 ```json
 {
     "dashboards":  [
@@ -88,6 +91,7 @@ Similar to a property editor you will now register the dashboard in a `package.m
     ]
 }
 ```
+{% endcode %}
 
 The above configuration is effectively saying:
 
@@ -109,6 +113,7 @@ You will need to create a _Lang_ folder in your custom dashboard folder and crea
 The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
 {% endhint %}
 
+{% code title="en-US.xml" lineNumbers="true" %}
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
@@ -117,6 +122,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
   </area>
 </language>
 ```
+{% endcode %}
 
 [Read more about language files](../extending/language-files.md)
 
@@ -126,6 +132,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 We can apply the same workflow to elements inside the dashboard, not only the name/alias. Extend the translation file xml like so:
 
+{% code title="en-US.xml" lineNumbers="true" %}
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
@@ -139,9 +146,11 @@ We can apply the same workflow to elements inside the dashboard, not only the na
     </area>
 </language>
 ```
+{% endcode %}
 
 We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
 
+{% code title="en-US.xml" lineNumbers="true" %}
 ```html
 <div class="welcome-dashboard">
     <h1><localize key="welcomeDashboard_heading">Default heading</localize></h1>
@@ -149,6 +158,7 @@ We are adding another area tag with a few keys. Let us adjust the dashboard HTML
     <p><localize key="welcomeDashboard_copyright">Default copyright</localize></p>
 </div>
 ```
+{% endcode %}
 
 The `localize` tag will be replaced with the translated keywords. We have some default text inside the tags above, which can be removed. It would usually not be visible after the translation is applied.
 

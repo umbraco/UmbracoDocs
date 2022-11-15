@@ -8,7 +8,7 @@ In this article you can learn about the various ways you can configure the RTE.
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png)
+![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
