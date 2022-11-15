@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # Implementing custom error pages
 
 Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET. This provides a number of options when setting up custom error pages on your website.
@@ -124,6 +120,10 @@ If you set up everything correctly and the error pages are not showing correctly
 - Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
 - Any packages that allow you to customize redirects, or
 - Rewrite rules in web.config that might interefere with custom error handling.
+
+{% hint style="warning" %}
+If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+{% endhint %}
 
 ## Handling errors in ASP.NET Core
 
