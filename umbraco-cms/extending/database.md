@@ -491,14 +491,13 @@ This also means that if you do need to edit or display this data, you need to im
 
 Figuring out how to manage data across multiple environments can be different between individual sites and there is not one solution that fits all. Some sites may have automated database synchronization set up to ensure specific tables in multiple databases are always kept in sync. Other sites may be better off with scripts moving data around manually on demand.
 
-
 ## Working with data in Custom Database Tables
 
 To create, read, update or delete data from your custom database tables, you can use the `IScopeProvider` to get access to the database operations.
 
 The following example creates an `UmbracoApiController` to be able to fetch and insert blog comments.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
