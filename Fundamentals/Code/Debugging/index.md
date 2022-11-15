@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 # Debugging
 
-During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bugs/bottlenecks in your code or to help uncover what on earth is going wrong.
+During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bottlenecks in your code. 
 
 To perform proper debugging on your site you need to set your application to have debug enabled.
 This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` for example in `appsettings.json`  file:
@@ -83,7 +83,7 @@ and any underlying SQL Statements that are being executed for a part of the exec
 
 ### Writing to the MiniProfiler
 
-If you feel like a part of your application is slow you can use the MiniProfiler in your own code to test the speed of it.
+If you feel like a part of your application is slow you can use the MiniProfiler in your code to test the speed of it.
 
 All you have to do is inject the IProfiler interface and add a step around your logic:
 
