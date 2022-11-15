@@ -121,9 +121,13 @@ The full error can always be found in the log file.
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
 
-- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution,
+- Custom [ContentFinders](../../Reference/routing/request-pipeline/IContentFinder/) in your solution
 - Any packages that allow you to customize redirects, or
 - Rewrite rules in web.config that might interefere with custom error handling.
+
+:::warning
+If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+:::
 
 ## Handling errors in ASP.NET Core
 
