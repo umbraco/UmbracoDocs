@@ -8,10 +8,6 @@ Learn more about the acquisition in the [Umbraco acquires Plumber](https://umbra
 
 Welcome to the Umbraco Workflow documentation. Here you can read all about how to work with Umbraco Workflow. You can find articles about the multiple workflow types, configure workflows for different languages, initiate and process workflows from the content app, and the different features that come with Umbraco Workflow.
 
-## [Getting Started](getting-started.md)
-
-Learn how to get started with Umbraco Workflow.
-
 ## [Installing Umbraco Workflow](installing-workflow.md)
 
 Extending Umbraco with the Workflow section by installing Umbraco Workflow in a few steps.
@@ -20,38 +16,34 @@ Extending Umbraco with the Workflow section by installing Umbraco Workflow in a 
 
 Learn more about the licensing model used for Umbraco Workflow.
 
-## [Dashboards and Buttons](dashboards-and-buttons.md)
+## [Umbraco Workflow Overview](umbraco-workflow-overview.md)
 
-View the different dashboards added to your installation. Determine the button state by user's permissions.
+Provides a quick overview of Umbraco Workflow.
+
+## [Getting Started](getting-started.md)
+
+Learn how to get started with Umbraco Plumber.
 
 ## [Approval Groups](approval-groups.md)
 
 Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Workflow.
 
-## [Events](events.md)
+## [Content Reviews](content-reviews.md)
 
-Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
+Provides an overview of all content pending for review, expired content, and a range of settings for configuring who reviews which pages (or Document Types), and how frequently.
 
-## [Email Templates](email-templates.md)
+## [Workflow History](workflow-history.md)
 
-Learn how to add email templates for other languages.
-
-## [Notifications and Reminders](notifications-and-reminders.md)
-
-Configure email notifications and reminders for all workflow activities.
-
-## [Upgrading Umbraco Workflow](upgrading-workflow.md)
-
-Covers how to upgrade your Umbraco Workflow to a newer version.
+Overview of the workflow history displayed in a tabular format.
 
 ## [Workflow Settings](workflow-settings.md)
 
 Setting up Umbraco Workflow for your installation.
 
-## [Workflow Content App](workflow-content-app.md)
+## [Events](events.md)
 
-Overview of the content app added to nodes where workflow is enabled.
+Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
 
-## [Workflow History](workflow-history.md)
+## [Upgrading Umbraco Workflow](upgrading-workflow.md)
 
-Overview of the workflow history displayed in a tabular format.
+Covers how to upgrade your Umbraco Workflow to a newer version.

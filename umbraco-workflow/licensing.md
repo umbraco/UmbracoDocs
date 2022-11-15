@@ -4,18 +4,13 @@ Umbraco Workflow is a licensed product but does not require a purchase to use. N
 
 To impersonate the full license on a local site:
 
-1. Create an empty text file named `test.lic`.
-2. Copy the `test.lic` file  into `/App_plugins/UmbracoWorkflow`.
-
-   ![Lic Placement](images/lic.png)
-3. Set `EnableTestLicense` to `true` in the `appSettings.json` file:
+1. Set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
    ```json
    {
     “Umbraco”: {
-      …
       “Workflow”: {
-       “EnableTestLicense”: true
+        “EnableTestLicense”: true
       }
      }
    }
@@ -25,7 +20,7 @@ To impersonate the full license on a local site:
 The test license is restricted to sites running in a development environment, with a debugger attached (that is hitting F5 in Visual Studio, in Debug mode, will enable the test license).
 {% endhint %}
 
-## Getting an Umbraco Workflow License
+## Purchasing an Umbraco Workflow License
 
 If you want to buy an Umbraco Workflow license, reach out to the sales team at **suits@umbraco.com**. Existing Plumber license holders who wish to update to Workflow should contact **suits@umbraco.com**.
 
