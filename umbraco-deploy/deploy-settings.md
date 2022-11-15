@@ -45,6 +45,7 @@ For illustration purposes, the following structure represents the full set of op
             "EnableSignatureCacheReads": true,
             "HttpClientTimeout": "0.0:20:00",
             "DiskOperationsTimeout": "0.0:05:00",
+            "SourceDeployBatchSize": null,
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependencies": false,
             "IgnoreBrokenDependenciesBehavior": "All",
@@ -147,6 +148,14 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 This setting defaults to 5 minutes.
 
 All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+
+## Batch settings
+
+Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
+
+An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
+
+If encountering this issue, the `SourceDeployBatchSize` setting can be applied with an integer value (for example 1000).  This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
 
 ## UseDatabaseBackedTransferQueue
 
