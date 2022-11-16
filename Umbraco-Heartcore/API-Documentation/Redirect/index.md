@@ -77,6 +77,10 @@ The key is the URL of the content and the values are the URLs redirecting to the
 ?pageSize={integer=10}
 ```
 
+:::note
+The maximum page size is 1000.
+:::
+
 ### Success Response
 
 **Code**: 200
