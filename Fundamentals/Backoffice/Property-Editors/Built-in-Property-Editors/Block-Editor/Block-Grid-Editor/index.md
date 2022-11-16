@@ -122,12 +122,12 @@ A Block can be resized in two ways:
 
 A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
 
-![Block Grid - Resizing Blocks](images/resizing-block-block-grid.gif)
-
 Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other Blocks.
 
 * **Available column spans** - Defines one or more columns, the Block spans across. For example: in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either half width or full width.
 * **Available row spans** - Defines the amount of rows the Block spans across.
+
+See the [#scaling-blocks] section of this article for an example of how scaling works.
 
 ### Catalogue appearance
 
@@ -232,6 +232,8 @@ Moving a Block from one Area to another is done in the same way. If a Block is n
 If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
 
 The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
+
+![Block Grid - Resizing Blocks](images/resizing-block-block-grid.gif)
 
 ## Rendering Block Grid Content
 
