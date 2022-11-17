@@ -210,7 +210,7 @@ If a Block has multiple size options it can be scaled via the UI. This appears i
 
 The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-![Block Grid - Resizing Blocks](../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif)
+ADD GIF
 
 ## Rendering Block Grid Content
 
