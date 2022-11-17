@@ -6,7 +6,7 @@ The trial license introduces some restrictions around advanced features but is o
 
 To impersonate the full license on a local site:
 
-1.  Set `EnableTestLicense` to `true` in the `appSettings.json` file:
+1. Set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
     ```json
     {
@@ -24,18 +24,41 @@ The test license is restricted to sites running in a development environment wit
 
 ## Purchasing an Umbraco Workflow License
 
-If you want to buy an Umbraco Workflow license, reach out to the sales team at **suits@umbraco.com**. Existing Plumber license holders who wish to update to Workflow should contact **suits@umbraco.com**.
+If you want to buy an Umbraco Workflow license, reach out to the sales team at **suits@umbraco.com**. Existing Plumber license holders who wish to update to Umbraco Workflow should contact **suits@umbraco.com**.
 
-To add the license to your site, update the `appSettings.json` file:
+To add the license to your site, follow these steps:
 
-```json
-{
-  “Umbraco”: {
-    “CMS”: {
-      “Licenses”: {
-        “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
+1. Update the `appSettings.json` file:
+
+  ```json
+  {
+    “Umbraco”: {
+      “CMS”: {
+        “Licenses”: {
+          “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
+        }
       }
     }
   }
-}
-```
+  ```
+
+2. Create a class in your website that implements the `IServerRoleAccessor` for the `SinlgeServerRoleAccessor` server role:
+
+  ```cs
+  public class SiteComposer : IComposer
+  {
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.SetServerRegistrar<SinlgeServerRoleAccessor>();
+    }
+  }
+
+  public class SinlgeServerRoleAccessor : IServerRoleAccessor
+  {
+    public ServerRole CurrentServerRole => ServerRole.Single;
+  }
+  ```
+
+  {% hint style="info" %}
+  License validation only runs on `Single` or `SchedulingPublisher` servers.
+  {% endhint %}
