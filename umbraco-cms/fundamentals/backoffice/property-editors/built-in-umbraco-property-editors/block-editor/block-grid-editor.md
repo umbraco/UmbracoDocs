@@ -6,16 +6,6 @@
 
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
 
-{% hint style="info" %}
-The Block Grid is currently only available in the Release Candidate (RC) of Umbraco 11.
-
-[Learn more about how to test out the version in the blog post on Umbraco.com](https://umbraco.com/blog/umbraco-11-release-candidate/).
-
-**Do you have some feedback after testing the feature?**
-
-Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to report your findings. We appreciate any help we get in making our products better.
-{% endhint %}
-
 ## Contents
 
 * [Configuring the Block Grid](block-grid-editor.md#configuring-the-block-grid)
@@ -25,6 +15,7 @@ Use the [CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues) to re
 * [Advanced](block-grid-editor.md#advanced)
 * [Editing Blocks](block-grid-editor.md#editing-blocks)
 * [Sorting Blocks](block-grid-editor.md#sorting-blocks)
+* [Scaling Blocks](#scaling-blocks)
 * [Rendering Block Grid content](block-grid-editor.md#rendering-block-grid-content)
 * [Write a Custom Layout Stylesheet](block-grid-editor.md#write-a-custom-layout-stylesheet)
 * [Build a custom Backoffice View](block-grid-editor.md#build-a-custom-backoffice-view)
@@ -106,7 +97,7 @@ Get more tips on how to use AngularJS filters in Umbraco CMS from this community
 
 Customize the Blocks size in the Grid. If you define multiple options, the Block becomes scalable.
 
-By default, a Block takes up the full-width of the content.
+By default, a Block takes up the available width.
 
 A Block can be resized in two ways:
 
@@ -115,12 +106,12 @@ A Block can be resized in two ways:
 
 A Column Span option is used to define the width of a Block. With multiple Column Span options defined, the Content Editor can scale the Block to fit specific needs.
 
-![Block Grid - Resizing Blocks](../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif)
-
 Additionally, Blocks can be configured to span rows, this enables one Block to be placed next to a few rows containing other Blocks.
 
 * **Available column spans** - Defines one or more columns, the Block spans across. For example: in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either half width or full width.
 * **Available row spans** - Defines the amount of rows the Block spans across.
+
+See the [scaling blocks](#scaling-blocks) section of this article for an example of how scaling works.
 
 ### Catalogue appearance
 
@@ -132,7 +123,7 @@ These properties refer to how the Block is presented in the Block catalogue when
 
 The thumbnails for the catalogue are presented in the format of 16:10. We recommend a resolution of 400px width and 250px height.
 
-### Allowance
+### Permissions
 
 * **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
 * **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
@@ -156,10 +147,16 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 
 ![Block Grid - Area Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AreasConfiguration.png)
 
-* **Alias** - The alias is printed by `GetBlockGridHTML()`. Use the alias to target the Element representing the area.
+* **Alias** - The alias is used to identify this Area.
+  It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views.
+  The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 * **Number of blocks** - Determines the total number of Blocks in an Area.
-* **Allowed block types** - Defines the types of Blocks or Groups of Blocks that are allowed in the Area. Optionally, you can also set how many Blocks of each type/group should be present. The Blocks can be limited for each specific Block Type in an Area.
+* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. 
+  This can be overwritten by specifying the allowed Blocks.
+  Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
+
+When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well and set the requirements.
 
 ## Advanced
 
@@ -168,9 +165,7 @@ These properties are relevant when working with custom views or complex projects
 * **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
 
 {% hint style="info" %}
-```
 Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
-```
 {% endhint %}
 
 * **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
@@ -208,6 +203,14 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
 ![Block Grid - Sorting Blocks](../../built-in-property-editors/block-editor/images/Sorting\_BlockGrid\_Blocks.gif)
+
+## Scaling Blocks
+
+If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
+
+The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
+
+ADD GIF
 
 ## Rendering Block Grid Content
 
