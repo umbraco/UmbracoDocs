@@ -705,6 +705,7 @@
   * [Content Reviews](umbraco-workflow/content-reviews.md)
   * [Workflow History](umbraco-workflow/workflow-history.md)
   * [Workflow Settings](umbraco-workflow/workflow-settings.md)
+  * [Configuration](umbraco-workflow/configuration.md)
   * [Events](umbraco-workflow/events.md)
 
 ## Other resources
