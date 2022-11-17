@@ -50,6 +50,20 @@ namespace MyFormsExtensions
 
                 // or get it as a string
                 rf.ValuesAsString();
+
+                // set or replace values against a field in the current form submission
+                if(rf.Alias.Equals("myField", StringComparison.InvariantCulture))
+                {
+                    rf.Values.Clear();
+                    rf.Values.Add("My new value");
+                }
+
+                // Update the form submission via the UpdateRecord method, but only when the Workflow is in an Approval chain. If not in an Approval chain, the values are still saved against the RecordField.
+                if (context.State.Equals(FormState.Approved))
+                {
+                    _recordStorage.UpdateRecord(context.Record, context.Form);
+                }
+
             }
 
             //Change the state
