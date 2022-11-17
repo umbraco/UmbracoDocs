@@ -136,27 +136,28 @@ With the packages and projects updated, it is time to make some changes to some 
 5. Choose your Database configuration:
    * To re-use the existing LocalDB database, configure the [ConnectionStrings](../../umbraco-deploy/upgrades/version-specific.md#database-initialization) or use the [`PreferLocalDbConnectionString` setting](../../umbraco-deploy/deploy-settings.md#preferlocaldbconnectionstring).
    * To use the default SQLite database, skip this step.
-6. Build and run your project locally to verify the Umbraco 10 upgrade.
+6.  Build and run your project locally to verify the Umbraco 10 upgrade.
 
     ![Target Framework](images/verify-v10-upgrade-locally.png)
-
 7. Update the `global.json` in the root repository folder to target the runtime Software Development Kit (SDK) for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
 
-  ```json
-    {
-    "sdk": {
-        "allowPrerelease": false,
-        "version": "6.0.402",
-        "rollForward": "minor"
-    }
-    }
-    ```
+````json
+  {
+  "sdk": {
+      "allowPrerelease": false,
+      "version": "6.0.402",
+      "rollForward": "minor"
+  }
+  }
+  ```
 
-{% hint style="info" %}
+<div data-gb-custom-block data-tag="hint" data-style='info'></div>
 If `global.json` does not exist in the root of your repository, you need to add it manually.
 
 Learn more about the `global.json` in the offical [Microsoft docs](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json).
+{% raw %}
 {% %}
+{% endraw %}
 
 ## Step 4: Deploy and Test on Umbraco Cloud
 
@@ -188,3 +189,4 @@ They need to be removed through KUDU from both the `repository` and `wwwroot` fo
 * [Breaking changes in Umbraco 10](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes.md)
 * [Working locally with Umbraco Cloud](../set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](../set-up/power-tools/)
+````
