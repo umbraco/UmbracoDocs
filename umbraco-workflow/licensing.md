@@ -42,7 +42,7 @@ To add the license to your site, follow these steps:
   }
   ```
 
-2. Create a class in your website that implements the `IServerRoleAccessor` for the `SinlgeServerRoleAccessor` server role:
+2. Create a class in your website that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role:
 
   ```cs
   public class SiteComposer : IComposer
