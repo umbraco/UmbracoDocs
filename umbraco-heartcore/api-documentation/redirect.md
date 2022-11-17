@@ -1,8 +1,3 @@
----
-meta.Title: "Umbraco Heartcore Redirect"
-meta.Description: "Documentation for Heartcore Redirect APIs"
----
-
 # Redirect API
 
 This is the read-only API for delivering redirects, caused by moving or renaming content in the Umbraco backoffice, to any app, website, device, or platform.
@@ -45,8 +40,7 @@ If an error occours, you will receive a HTTP status code along with an API error
 | 400         | AmbiguousCulture           | The following cultures were requested: {cultures}. At most, only a single culture may be specified. Please update the intended culture and retry the request. |
 | 400         | LanguageForCultureNotFound | Could not find a language for culture {culture}.                                                                                                              |
 | 401         | Unauthorized               | Authorization has been denied for this request.                                                                                                               |
-| 500         | InternalServerError        | Internal server error.       
-
+| 500         | InternalServerError        | Internal server error.
 
 **JSON example**:
 
@@ -75,6 +69,10 @@ The key is the URL of the content and the values are the URLs redirecting to the
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
+
+{% hint style="info" %}
+The maximum page size is 1000.
+{% endhint %}
 
 ### Success Response
 
