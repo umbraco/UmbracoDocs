@@ -153,9 +153,9 @@ Umbraco Workflow provides **Settings** for determining who receives emails at wh
 - **Author**: The user who initiated the workflow.
 - **Group**: All members of the group assigned to the current task.
 
-:::note
+{% hint style="info" %}
 Duplicate users are removed from email notifications.
-:::
+{% endhint %}
 
 By default, all emails are sent to the **Group**. This might not always be an ideal situation. For example: cancelled workflows would be best sent to the **Author** only, likewise with rejected.
 

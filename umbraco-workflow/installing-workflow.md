@@ -24,16 +24,17 @@ There are different ways to install Umbraco Workflow:
 
 To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 
-1.  Run the following command to add a package reference to your Umbraco project:
+1. Run the following command to add a package reference to your Umbraco project:
 
-    ```
-    dotnet add package Umbraco.Workflow --version 11.0.0
-    ```
-2.  Restart the web application using the following command:
+   ```none
+   dotnet add package Umbraco.Workflow --version 11.0.0
+   ```
 
-    ```
-    dotnet run
-    ```
+2. Restart the web application using the following command:
+
+   ```none
+   dotnet run
+   ```
 
 ### Visual Studio Installation
 
@@ -43,22 +44,23 @@ To install via Visual Studio, follow these steps:
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**.
 3. Browse for **Umbraco.Workflow**.
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
-5. Click Install. ![VS Installation](images/VS\_Installation.png)
+5. Click Install. ![VS Installation](images/VS_Installation.png)
 6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
 
-```xml
-<ItemGroup>
-  <PackageReference Include="Umbraco.Workflow" Version="11.0.0" />
-</ItemGroup>
-```
+    ```xml
+    <ItemGroup>
+    <PackageReference Include="Umbraco.Workflow" Version="11.0.0" />
+    </ItemGroup>
+    ```
 
 ## Using Umbraco Workflow
 
 Once the installation is completed, you will see the following in the Umbraco Backoffice:
 
-*   A Workflow Dashboard:
+* A Workflow Dashboard:
 
-    ![Workflow dashboard](images/Workflow\_dashboard.png)
-*   A Workflow section:
+  ![Workflow dashboard](images/WorkflowDashboard_ContentSection.png)
 
-    ![Workflow section](images/Workflow\_section.png)
+* A Workflow section:
+
+  ![Workflow section](images/workflow-section.png)

@@ -26,7 +26,7 @@ Umbraco Workflow has its default Dashboards. By default, when you install Umbrac
 
 Umbraco Workflow adds two Dashboards to your Umbraco project:
 
-- **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the tasks requiring approval from the user, current user’s submissions, and stale content.
+- **User Dashboard** - This Workflow Dashboard is added in the **Content** section. It displays the tasks requiring approval from the user, current user’s submissions, and stale content (content that needs to be reviewed).
 
   ![Workflow Dashboard in the Content Section](images/WorkflowDashboard_ContentSection.png)
 
@@ -93,7 +93,7 @@ For example, the German version of your content can be approved by German speake
 
 #### Approve, Reject, or Cancel pending workflow tasks
 
-**Approve workflow Tasks**
+**Approve Workflow Tasks**
 
 To approve a Workflow task, click on the **Approve** button in the Action section.
 
@@ -111,7 +111,7 @@ To cancel a pending Workflow task, click on the **Cancel** button in the Action 
 
 ### Configuration
 
-The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any inherited or Document type approval flows applied to the current content node.
+The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any Inherited or Document type approval flows applied to the current content node.
 
 ![Configuration sub-section](images/Configuration-sub-section.png)
 
@@ -143,11 +143,14 @@ Document type approval flows can also include conditional stages i.e., only incl
 Configuration cannot be modified when a content node is in a workflow process.
 {% endhint %}
 
+#### Content reviews
+
+Content reviews is a tool that allows content editors to keep their content up-to-date. For more information, see the [Content reviews](content-reviews.md) section.
+
 ### History
 
 The History sub-section provides a chronological audit trail of workflow activity for the current node. It displays a table containing the following information:
 
-- Page name with the Language variant.
 - Type of Publish.
 - Who the workflow is requested by.
 - The date the workflow was requested.

@@ -9,18 +9,18 @@ Content reviews is a tool that allows content editors to keep their content up-t
 Content reviews Dashboard provides an overview of the expired content. The dashboard displays a table containing the following details:
 
 - Page name/Node with the Language variant
-- Next review date
+- Next review due date
 - Last reviewed date
 - Review period in days
 - Review group
 
 ![Content Reviews Dashboard](images/Content-review-dashboard.png)
 
-Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review banner. Content nodes display a banner when the node has passed its review date. The review banner is only displayed to users assigned as reviewers for the node (refer to permissions for more information).
+Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](#content-review-permissions) section
 
 ![Content Review Message Banner](images/content-review-message-banner.png)
 
-Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the content reviews settings.
+Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the **Content Reviews Settings**.
 
 ![Content Review Date](images/content-review-date.png)
 
@@ -34,7 +34,7 @@ Additionally, you can adjust the total number of records displayed on a page.
 
 ## Content Reviews Settings
 
-Content reviews Settings tab provides a range of settings for configuring email notifications, review period days, reminder days and so on. Using Content reviews, all content has a default review period.
+Content reviews Settings tab provides a range of settings for configuring email notifications, review period days, reminder days, and so on. Using Content reviews, all content has a default review period.
 
 ### General Settings
 
@@ -44,7 +44,7 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 - **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 - **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
-- **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the global default. If disabled, content must be explicitly reviewed via the review banner displayed on the content item.
+- **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the default Review period value. If disabled, content must be explicitly reviewed via the review banner displayed on the content item.
 - **Review period (days)** - The default number of days between content reviews.
 - **Reminder threshold (days)** - Determines how many days prior to the review date the Workflow should notify editors of required reviews. By default, the number of days is set to 1.
 
@@ -69,7 +69,7 @@ You can configure content reviews for individual content nodes or for all nodes 
 - **Review group** - The group responsible for reviewing the content node. Can contain more than one group.
 
 {% hint style="info" %}
-When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status of all the content needing review. It provides that data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
+When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status of all the content needing review. It provides this data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
 {% endhint %}
 
 #### Content Item Reviews

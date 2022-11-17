@@ -31,7 +31,6 @@ The **Settings** tab consists of the following fields:
 - **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
 - **Language:** Select a language variant for the email.
 - **Enable Offline approval:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](#enable-offline-approval) section. This feature requires a paid license.
-- **Workflow activity** - Displays the workflow activity performed by the group for a given number of days.
 
 ![Approval group Settings](images/Approval-group-settings.png)
 
