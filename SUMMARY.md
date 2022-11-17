@@ -523,7 +523,7 @@
   * [Database](umbraco-cloud/databases/cloud-database.md)
   * [Working with a Cloud database locally](umbraco-cloud/databases/local-database.md)
 * [Product Upgrades](umbraco-cloud/upgrades/README.md)
-  * [Major Upgrades](umbraco-cloud/upgrades/upgrading-from-9-10.md)
+  * [Major Upgrades](umbraco-cloud/upgrades/major-upgrades.md)
   * [Minor Upgrades](umbraco-cloud/upgrades/minor-upgrades.md)
   * [Upgrade your projects manually](umbraco-cloud/upgrades/manual-upgrades/README.md)
     * [Manual upgrade of Umbraco CMS](umbraco-cloud/upgrades/manual-upgrades/manual-cms-upgrade.md)

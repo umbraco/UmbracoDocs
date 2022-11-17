@@ -28,7 +28,7 @@ Upgrading from Umbraco 9 to Umbraco 10
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/upgrading-from-9-10.md) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/major-upgrades.md) instead, as it requires a few steps specific to Umbraco Cloud.
 
 {% hint style="warning" %}
 **Important**: SQL CE is no longer a supported database engine.
