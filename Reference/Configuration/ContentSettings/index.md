@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.4.0
-versionTo: 10.0.0
+versionFrom: 11.0.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
 ---
@@ -20,10 +19,10 @@ To get an overview of the keys and values in the global section, the following s
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
       },
-      "AllowedUploadFiles": [],
+      "AllowedUploadedFileExtensions": [],
       "DisableDeleteWhenReferenced": false,
       "DisableUnpublishWhenReferenced": false,
-      "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
+      "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
       "HideBackOfficeLogo": false,
       "Imaging": {
