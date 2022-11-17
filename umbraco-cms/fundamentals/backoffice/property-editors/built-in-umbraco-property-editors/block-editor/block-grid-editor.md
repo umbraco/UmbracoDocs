@@ -8,6 +8,7 @@ The **Block Grid** property editor enables editors to layout their content in th
 
 ## Contents
 
+* [Sample Configuration](block-grid-editor.md#undefined)
 * [Configuring the Block Grid](block-grid-editor.md#configuring-the-block-grid)
 * [Setup Block Types](block-grid-editor.md#setup-block-types)
 * [Block Configuration Settings](block-grid-editor.md#block-configuration-settings)
@@ -15,23 +16,23 @@ The **Block Grid** property editor enables editors to layout their content in th
 * [Advanced](block-grid-editor.md#advanced)
 * [Editing Blocks](block-grid-editor.md#editing-blocks)
 * [Sorting Blocks](block-grid-editor.md#sorting-blocks)
-* [Scaling Blocks](#scaling-blocks)
+* [Scaling Blocks](block-grid-editor.md#scaling-blocks)
 * [Rendering Block Grid content](block-grid-editor.md#rendering-block-grid-content)
 * [Write a Custom Layout Stylesheet](block-grid-editor.md#write-a-custom-layout-stylesheet)
 * [Build a custom Backoffice View](block-grid-editor.md#build-a-custom-backoffice-view)
 * [Creating a Block Grid programmatically](block-grid-editor.md#creating-a-block-grid-programmatically)
 
-{% hint style="info" %}
-**Example Blocks** When you are testing out the RC, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+## Sample configuration
 
-<img src="../../built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt="Option to install Sample Configuration on the new Block Grid Editor" data-size="original">
+When you are testing out the property editor, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+
+<figure><img src="../../built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
 
 * Create a new **Data Type**.
 * Select the **Block Grid** as the **Property editor**.
 * **Install** the "Sample Configuration".
 
 4 Blocks will be added to the property, ready for testing.
-{% endhint %}
 
 ## Configuring the Block Grid
 
@@ -111,7 +112,7 @@ Additionally, Blocks can be configured to span rows, this enables one Block to b
 * **Available column spans** - Defines one or more columns, the Block spans across. For example: in a 12 columns grid, 6 columns is equivalent to half width. By enabling 6 columns and 12 columns, the Block can be scaled to either half width or full width.
 * **Available row spans** - Defines the amount of rows the Block spans across.
 
-See the [scaling blocks](#scaling-blocks) section of this article for an example of how scaling works.
+See the [scaling blocks](block-grid-editor.md#scaling-blocks) section of this article for an example of how scaling works.
 
 ### Catalogue appearance
 
@@ -147,14 +148,10 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 
 ![Block Grid - Area Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AreasConfiguration.png)
 
-* **Alias** - The alias is used to identify this Area.
-  It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views.
-  The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
+* **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 * **Number of blocks** - Determines the total number of Blocks in an Area.
-* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. 
-  This can be overwritten by specifying the allowed Blocks.
-  Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
+* **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks. Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
 
 When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well and set the requirements.
 
@@ -208,9 +205,9 @@ Moving a Block from one Area to another is done in the same way. If a Block is n
 
 If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
 
-The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
+The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-ADD GIF
+<figure><img src="../../../../../../.gitbook/assets/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
 ## Rendering Block Grid Content
 
