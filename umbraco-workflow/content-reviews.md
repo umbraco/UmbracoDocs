@@ -16,7 +16,15 @@ Content reviews Dashboard provides an overview of the expired content. The dashb
 
 ![Content Reviews Dashboard](images/Content-review-dashboard.png)
 
-You can also **Filter** the records based on the Node, Group Email, Next review due date, Last reviewed date, and Expired review Status.
+Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review message banner.
+
+![Content Review Message Banner](images/content-review-message-banner.png)
+
+Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node.
+
+![Content Review Date](images/content-review-date.png)
+
+You can also **Filter** the Dashboard records based on the Node, Group Email, Next review due date, Last reviewed date, and Expired review Status.
 
 ![Content Reviews Filters](images/content-reviews-filter.png)
 
@@ -44,7 +52,7 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 You can configure content reviews for individual content nodes or for all nodes of a given Document Type.
 
-Additionally, you can configure which review group reviews which content nodes or Document Types. The group responsible for reviewing content is derived from the workflow configuration but can be overridden per content item or Document Type. A member of the review group can mark the content as reviewed and optionally set the next review date on the content node.
+Additionally, you can configure which review group reviews which content nodes or Document Types. The group responsible for reviewing content is derived from the workflow configuration. This means a site with workflow already configured can leverage that permissions model for assigning content review responsibilities. The default workflow configuration can be overridden per content item or Document Type.
 
 #### Content Item Reviews
 
