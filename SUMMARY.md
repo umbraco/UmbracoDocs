@@ -565,7 +565,7 @@
 
 ## Umbraco Heartcore
 
-* [What is Umbraco Heartcore?](umbraco-heartcore/README.md)
+* [What is Umbraco Heartcore?](umbraco-heartcore/umbraco-heartcore/README.md)
   * [Compare with Umbraco CMS](umbraco-heartcore/umbraco-heartcore/compare-with-umbraco-cms.md)
 * [Getting Started](umbraco-heartcore/getting-started/README.md)
   * [API Browser](umbraco-heartcore/getting-started/api-browser.md)
@@ -610,7 +610,6 @@
   * [.NET Client library](umbraco-heartcore/client-libraries/dot-net-core/README.md)
     * [MVC Sample](umbraco-heartcore/client-libraries/dot-net-core/mvc-samples.md)
 * [Versions and updates](umbraco-heartcore/versions-and-updates.md)
-* [Single Sign-On](umbraco-heartcore/sso-guide.md)
 * [Tutorials](umbraco-heartcore/tutorials/README.md)
   * [Custom Grid Editors](umbraco-heartcore/tutorials/creating-a-custom-grid-editor.md)
   * [Querying with GraphQL](umbraco-heartcore/tutorials/querying-with-graphql.md)
