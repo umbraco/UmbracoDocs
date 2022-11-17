@@ -77,3 +77,7 @@ The quickest way to get to your logs is using the following URL template and rep
 `https://{app}.scm.azurewebsites.net/api/logstream`
 
 You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.
+
+## Web App secret management
+
+Consult the [Azure Key Vault documentation](https://our.umbraco.com/Documentation/Extending/Key-Vault/#use-key-vault-references-for-azure-app-service) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.
