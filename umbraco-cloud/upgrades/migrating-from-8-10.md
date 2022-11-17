@@ -83,6 +83,26 @@ You need to manually upgrade the view files and custom code implementation. For 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
   * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../umbraco-forms/developer/forms-in-the-database.md) article.
 
+* Add the `global.json` in root repository folder
+
+{% hint style="info" %}
+If `global.json` does not exist in the root of your repository, you need to add it manually.
+
+Learn more about the `global.json` in the offical [Microsoft docs](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json).
+{% endhint %}
+
+* Upgrade your `global.json` to target the runtime Software Development Kit (SDK) for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+  ```json
+  {
+    "sdk": {
+      "allowPrerelease": false,
+      "version": "6.0.402",
+      "rollForward": "minor"
+    }
+  }
+  ```
+
 * Run the Umbraco 10 project locally.
   * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
 
