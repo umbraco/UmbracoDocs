@@ -1,6 +1,6 @@
 # Content Reviews
 
-Content reviews allows content editors to keep their content up-to-date. **Content reviews** adds a new dashboard to the **Workflow** section. By default, Content reviews are disabled and can be enabled from **Content reviews Settings** in the **Workflow** section.
+Content reviews is a tool that allows content editors to keep their content up-to-date. **Content reviews** adds a new dashboard to the **Workflow** section. By default, Content reviews are disabled and can be enabled from **Content reviews Settings** in the **Workflow** section.
 
 ![Enable Content Reviews](images/Enable-content-reviews.png)
 
@@ -16,11 +16,11 @@ Content reviews Dashboard provides an overview of the expired content. The dashb
 
 ![Content Reviews Dashboard](images/Content-review-dashboard.png)
 
-Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review message banner.
+Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review banner. Content nodes display a banner when the node has passed its review date. The review banner is only displayed to users assigned as reviewers for the node (refer to permissions for more information).
 
 ![Content Review Message Banner](images/content-review-message-banner.png)
 
-Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node.
+Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the content reviews settings.
 
 ![Content Review Date](images/content-review-date.png)
 
@@ -43,16 +43,34 @@ You can configure the **General** Settings from the **Workflow** section in the 
 ![General settings](images/content-reviews-general-settings.png)
 
 - **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
-- **Send notifications** - Provides an option to send email notification to approval groups.
-- **Treat saving as a review?** - Determines if a saved content should be treated as review or should the save content require an explicit review.
-- **Review period (days)** - Number of days between content reviews.
-- **Reminder threshold (days)** - Determines the number of days the review email notifications must be sent before the review date. By default, the number of days is set to 1.
+- **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
+- **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the global default. If disabled, content must be explicitly reviewed via the review banner displayed on the content item.
+- **Review period (days)** - The default number of days between content reviews.
+- **Reminder threshold (days)** - Determines how many days prior to the review date the Workflow should notify editors of required reviews. By default, the number of days is set to 1.
+
+### Content Review Permissions
+
+You can configure which review group reviews which content nodes or Document Types. The group responsible for reviewing content is derived from the workflow configuration. This means a site with workflow already configured can leverage that permissions model for assigning content review responsibilities. By default, content reviews are assigned to the approval group in the first workflow approval stage.
+
+Content review permissions can be set at the node or Document Type level, both of which take precedence over any existing Workflow permissions. 
+
+![Content review permissions](images/Content-review-permissions.png)
+
+The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
+
+![Workflow Content App - Configuration tab](images/workflow-content-app-configuration.png)
 
 ### Content Item and Document Type Reviews
 
-You can configure content reviews for individual content nodes or for all nodes of a given Document Type.
+You can configure content reviews for individual content nodes or for all nodes of a given Document Type. For both Content Item and Document Type Reviews, the following Settings are available:
 
-Additionally, you can configure which review group reviews which content nodes or Document Types. The group responsible for reviewing content is derived from the workflow configuration. This means a site with workflow already configured can leverage that permissions model for assigning content review responsibilities. The default workflow configuration can be overridden per content item or Document Type.
+- **Exclude from review** - Enable this setting to ignore the specific content node (or all content nodes of this Document Type) when determining nodes to review.
+- **Review period (days)** - The review period in days between required reviews.
+- **Review group** - The group responsible for reviewing the content node. Can contain more than one group.
+
+{% hint style="info" %}
+When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status of all the content needing review. It provides that data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
+{% endhint %}
 
 #### Content Item Reviews
 
@@ -107,3 +125,18 @@ To add a Document Type review, follow these steps:
 To Edit a Document-type review, click **Edit** and update the settings as per your requirement.
 
 To remove a Document-type review, click **Remove**.
+
+## Content Review Notifications
+
+Content review notifications use the email template available at `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`, which can be customized as required. For example to add a corporate branding or send customized messages.
+
+To add templates for other languages:
+
+1. Go to the `~/Views/Partials/WorkflowEmails/` folder.
+2. Copy the required template and paste it into the same folder.
+3. Append the culture code to the file name prefixed with an underscore.
+
+For example:
+
+- **Default approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`
+- **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews_da-DK.cshtml`
