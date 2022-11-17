@@ -76,7 +76,6 @@
         * [Toggle](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/true-false.md)
         * [User Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/user-picker.md)
         * [Block Editors](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md)
-          * [Block Grid](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
           * [Block List](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md)
           * [Build a Custom View for a Block](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-custom-view-for-blocks.md)
           * [Configuring Block Editor Label Properties](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md)
@@ -566,7 +565,7 @@
 
 ## Umbraco Heartcore
 
-* [What is Umbraco Heartcore?](umbraco-heartcore/umbraco-heartcore/README.md)
+* [What is Umbraco Heartcore?](umbraco-heartcore/README.md)
   * [Compare with Umbraco CMS](umbraco-heartcore/umbraco-heartcore/compare-with-umbraco-cms.md)
 * [Getting Started](umbraco-heartcore/getting-started/README.md)
   * [API Browser](umbraco-heartcore/getting-started/api-browser.md)

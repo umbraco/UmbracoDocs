@@ -23,7 +23,7 @@ If you would like to display properties of `settings`, you can access these by u
 
 ## Make Block List Editor custom view draggable
 
-A custom view of Block List Editor needs to have the 'blockelement__draggable-element' class presented to define which part of the Block that is draggable.
+A custom view of Block List Editor needs to have the 'blockelement\_\_draggable-element' class presented to define which part of the Block that is draggable.
 
 Example:
 
@@ -32,28 +32,6 @@ Example:
   <h2 ng-bind="block.data.headline"></h2>
   <p ng-bind="block.data.description"></p>
 </button>
-```
-
-## Add the Areas Container for Block Grid Editor
-
-Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Area Container should be inserted.
-
-This enables you to wrap and place the Areas as you need.
-
-The Areas is inserted through a slot, this slot will become the Area Container.
-
-Insert the following snippet where you would like the Area to appear in your Custom View:
-
-```html
-<slot name="area-container" part="area-container"></slot>
-```
-
-Example of a Custom View wrapping the area-container:
-
-```html
-<div style="border:green 1px solid; padding: 20px;">
-    <slot name="area-container" part="area-container"></slot>
-</div>
 ```
 
 ## Adding custom implementation to your View
