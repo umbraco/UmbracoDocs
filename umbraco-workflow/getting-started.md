@@ -30,9 +30,9 @@ Umbraco Workflow adds two Dashboards to your Umbraco project:
 
   ![Workflow Dashboard in the Content Section](images/WorkflowDashboard_ContentSection.png)
 
-- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity and any relevant upgrade-related messages. You can also set the days to view the workflow activity chart for the specified range of days.
+- **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity, chart of content review activity, licensing details, and any relevant upgrade-related messages. You can also view the workflow and content review activity chart for the specified range of days.
 
-  ![Workflow Dashboard in the Workflow Section](images/WorkflowDashboard_WorkflowSection.png)
+  ![Workflow Dashboard in the Workflow Section](images/workflow-section.png)
 
 ### Buttons
 
@@ -93,7 +93,21 @@ For example, the German version of your content can be approved by German speake
 
 #### Approve, Reject, or Cancel pending workflow tasks
 
-<TBD>
+**Approve workflow Tasks**
+
+To approve a Workflow task, click on the **Approve** button in the Action section.
+
+**Reject Workflow Tasks**
+
+To reject a Workflow task, click on the **Reject** button in the Action section. Depending on the approval stage, the reviewer can decide where to send the rejected task.
+
+For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
+
+![Reject Workflow Tasks](images/assign-rejected-task.png)
+
+**Cancel pending Workflow Tasks**
+
+To cancel a pending Workflow task, click on the **Cancel** button in the Action section.
 
 ### Configuration
 
