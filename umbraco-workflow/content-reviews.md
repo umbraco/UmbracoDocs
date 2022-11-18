@@ -34,7 +34,7 @@ Additionally, you can adjust the total number of records displayed on a page.
 
 ## Content Reviews Settings
 
-Content reviews Settings tab provides a range of settings for configuring email notifications, review period days, reminder days, and so on. Using Content reviews, all content has a default review period.
+The Content reviews Settings tab provides a range of settings for configuring email notifications, review period days, reminder days, and so on. Using Content reviews, all content has a default review period.
 
 ### General Settings
 
