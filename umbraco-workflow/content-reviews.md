@@ -16,7 +16,7 @@ The Content reviews Dashboard provides an overview of the expired content. The d
 
 ![Content Reviews Dashboard](images/Content-review-dashboard.png)
 
-Clicking on the content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](#content-review-permissions) section
+Selecting a content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](#content-review-permissions) section
 
 ![Content Review Message Banner](images/content-review-message-banner.png)
 
