@@ -6,7 +6,7 @@ Content reviews is a tool that allows content editors to keep their content up-t
 
 ## Content Reviews Dashboard
 
-Content reviews Dashboard provides an overview of the expired content. The dashboard displays a table containing the following details:
+The Content reviews Dashboard provides an overview of the expired content. The dashboard displays a table containing the following details:
 
 - Page name/Node with the Language variant
 - Next review due date
