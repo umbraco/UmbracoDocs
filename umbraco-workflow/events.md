@@ -38,4 +38,4 @@ public class ContentEventsComponent : IComponent
 }
 ```
 
-where for all services, `e` will provide the object being created, updated, or deleted.
+For all services, `e` will provide the object being created, updated, or deleted.
