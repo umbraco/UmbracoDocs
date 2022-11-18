@@ -45,7 +45,7 @@ To install via Visual Studio, follow these steps:
 3. Browse for **Umbraco.Workflow**.
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5. Click Install. ![VS Installation](images/VS_Installation.png)
-6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
+6. Once the package is installed, open the `.csproj` file to make sure the package reference is added:
 
     ```xml
     <ItemGroup>
