@@ -11,7 +11,7 @@ In this section we discuss some additional steps you can carry out to streamline
 
 ## Creating Git Hooks
 
-When working in a project team, it's common for a developer pulling the code from source control to want to update their local environment with the latest Umbraco schema.
+Working in a team, it's common for developers to pull code from source control to update their local environment with the latest Umbraco schema.
 
 They can do this by starting up the website, navigating to the _Settings > Deploy_ dashboard and triggering a data extraction.
 
