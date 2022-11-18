@@ -6,9 +6,9 @@ meta.Description: "Information on the content settings section"
 
 # Content Settings
 
-Content settings contains various settings regarding content in the CMS, such as allowed upload files, image settings, and much more. All the values in the content settings has default values, so all configuration is optional.
+Content settings contains a handful of settings related to the content in the CMS. It includes settings such as allowed upload files, image settings, and much more. All the values in the content settings has default values, so all configuration is optional.
 
-To get an overview of the keys and values in the global section, the following snippet will contain all available options, along with their default values:
+The following snippet will give an overview of the keys and values in the global section including the default values:
 
 ```json
 "Umbraco": {
@@ -66,7 +66,7 @@ This setting allows you to specify whether or not users can delete content or me
 
 ### Disable unpublish when referenced
 
-This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.
+This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
 
 ### Disallowed upload files
 
@@ -94,7 +94,7 @@ The above example shows what you need to do if you only have a single site that 
 
 - Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
-- When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
+- When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
 
 :::
 
@@ -112,7 +112,7 @@ If you have multiple sites, with different cultures, setup in your tree then you
   }]
 ```
 
-If you have more than two sites and for some reason forget to update the above section with a 404 page and a culture then the default page will act as a fallback. Same happens if you for some reason forget to define a hostname on a site.
+If you have more than two sites and forget to add a 404 page and a culture, the default page will act as fallback. Same happens if you for some reason forget to define a hostname on a site.
 
 ### Hide backoffice logo
 
@@ -147,18 +147,18 @@ This allows you to customize the preview badge being shown when you're previewin
 
 ### Resolve urls from text string
 
-This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links, however, this is required if Umbraco is running in a virtual directory.
+This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links. However, this is required if Umbraco is running in a virtual directory.
 
 ### Show deprecated property editors
 
-This setting is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new Data Types.
+This setting is used for controlling whether or not the Data Types marked as obsolete should be visible when creating new Data Types.
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
 
 
 ## ContentVersionCleanupPolicy
 
-The global settings for the scheduled job which cleans up historic content versions, these settings can be overridden per document type.
+The global settings for the scheduled job which cleans historic content versions. These settings can be overridden per Document Type.
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
@@ -188,7 +188,7 @@ All versions that fall in this period will be kept.
 
 ### KeepLatestVersionPerDayForDays
 
-For content versions that fall in this period, the most recent version for each day is kept but all previous versions for that day are removed unless marked as preventCleanup.
+For content versions that fall in this period, the most recent version for each day is kept. All previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
 
@@ -218,11 +218,11 @@ This is a separated list of accepted image formats
 
 ### AutoFillImageProperties
 
-You can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`"WidthFieldAlias"`** and **`"HeightFieldAlias"`** need to be updated with the new property aliases. This needs to happen in order to automatically populate the values when the image is being uploaded.
+You can define what properties should be automatically updated when an image is being uploaded. This means that if you decide to rename the default **umbracoWidth** and **umbracoHeight** properties the values in **`"WidthFieldAlias"`** and **`"HeightFieldAlias"`** need to be updated. This needs to happen in order to automatically populate the values when the image is being uploaded.
 
 ### Custom media document
 
-If you need to create a custom Media Document Type to handle images called something like "Custom Image" with an alias of **customImage** then you need to add another object where the **alias** is set to **customImage**. Like below. Note that the width and height attributes have also been changed in this example.
+If you need to create a custom Media Type to handle images you need to add another object using the custom Media Type alias. Like below. Keep in mind that the width and height attributes have also been changed in this example.
 
 ```json
 "Imaging": {
@@ -247,5 +247,5 @@ If you need to create a custom Media Document Type to handle images called somet
 ```
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard SMTP section in the global section, see [global settings](../GlobalSettings/) for more information.
+Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](../GlobalSettings/) for more information.
 
