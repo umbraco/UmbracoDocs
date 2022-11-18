@@ -18,9 +18,11 @@ An connection strings config can look like this:
   }
 }
 ```
+
 :::note
-We recommend private cache for Sqlite, you can read more on why shared cache is discouraged here: https://sqlite.org/sharedcache.html
+We recommend using private cache for SQLite. You can read more on why shared cache is discouraged in [the official SQLite documentation](https://sqlite.org/sharedcache.html). 
 :::
+
 The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
 
 Umbraco currently supports using either a Microsoft SQL Server, or a SQLite database, both of these will look different for more information about the specific connection strings see:
