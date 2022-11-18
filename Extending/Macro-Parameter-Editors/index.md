@@ -215,7 +215,7 @@ If your custom property editor doesn't load when your project is deployed, you m
   "Umbraco": {
     "CMS": {
       "RuntimeMinification": {
-        "cacheBuster": "AppDomain"
+        "CacheBuster": "AppDomain"
       }
     }
   }
