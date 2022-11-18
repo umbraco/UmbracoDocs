@@ -14,13 +14,13 @@ When you create a **New Project**, the user used to create the project will auto
 2. Click **Settings** and go to **Edit Team**.
 3.  Click Add **Technical Contact** in the **Technical Contact** section.
 
-    ![Add technical contact](images/add-technical-contact.png)
+    ![Add technical contact](../../team-members/images/add-technical-contact.png)
 4.  Enter the **Name**, **Email**, and **Telephone Number** in the **Add New Technical Contact** window.
 
-    ![Add technical contact form](images/add-technical-contact-form.png)
+    ![Add technical contact form](../../team-members/images/add-technical-contact-form.png)
 5.  Click **Confirm**.
 
-    ![Add technical contact fo](images/Technical-Contact.gif)
+    ![Add technical contact fo](../../team-members/images/Technical-Contact.gif)
 
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=BUiiphvcrsE" %}
 Learn how to manage technical contacts on your Umbraco Cloud project.

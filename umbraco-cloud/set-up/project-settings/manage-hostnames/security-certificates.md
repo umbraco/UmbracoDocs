@@ -1,11 +1,7 @@
----
-
----
-
-# Upload Custom Certificates Manually
+# Custom Certificates
 
 {% hint style="info" %}
-This feature is *only* available for Umbraco Cloud projects on a **Professional** or **Enterprise** plan.
+This feature is _only_ available for Umbraco Cloud projects on a **Professional** or **Enterprise** plan.
 
 All projects on Starter, Standard, or Professional plans will automatically be assigned a Transport Layer Security (HTTPS) certificate.
 
@@ -15,8 +11,7 @@ See the full list of features in the [Umbraco Cloud Pricing Plans](https://umbra
 To manually upload your certificate on the Umbraco Cloud Portal and assign it to one of the hostnames you've added:
 
 1. Go to your project on the Umbraco Cloud portal.
-2. Click **Settings** -> **Certificates**. The **Manual Certificates** window opens.
-    ![Custom Certificates](images/Manual-certificate.png)
+2. Click **Settings** -> **Certificates**. The **Manual Certificates** window opens. ![Custom Certificates](../../manage-hostnames/images/Manual-certificate.png)
 
 Your certificates need to be:
 
@@ -31,16 +26,16 @@ The **`.pfx`** file can only contain one certificate. Each certificate can then 
 
 1. Click **Add New Certificate**.
 2. Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
-3. Enter the **Password** for your certificate.
+3.  Enter the **Password** for your certificate.
 
-    ![Add Manual Certificate](images/Add-Manual-Certificate.png)  
+    ![Add Manual Certificate](../../manage-hostnames/images/Add-Manual-Certificate.png)
 4. Click **Add**.
 
 ## Bind Certificate to a Hostname
 
 1. Click **Add new binding**.
-2. Choose your hostname from the *Hostname* dropdown.
-3. Choose your newly uploaded certificate from the *Certificate* dropdown.
+2. Choose your hostname from the _Hostname_ dropdown.
+3. Choose your newly uploaded certificate from the _Certificate_ dropdown.
 4. Click **Add**.
 
 You've now successfully added your certificate to the Cloud project.

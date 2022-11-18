@@ -10,7 +10,7 @@ While you get a lot of fantastic features with Umbraco Cloud, SMTP server is not
 
 Working with Umbraco Forms, allows you to set up email workflows that enable you to send emails through Forms - This requires an SMTP service. Another great use of SMTP service is if you want to add users to your project's Backoffice. The service requires SMTP to send the invitation from the project to the new user. This also applies to sending emails to users who have requested a password reset.
 
-## [Manage Hostnames](manage-hostnames/README.md)
+## [Manage Hostnames](project-settings/manage-hostnames/)
 
 When you create a project on Umbraco Cloud, the generated project URL is based on the project's name and that might not be the preferred URL for your website. Therefore, you have the option to add your hostname.
 
@@ -23,7 +23,8 @@ Before adding a hostname, you need to update your DNS host domain registrar DNS 
 The last step before your website goes live and is accessible to the public is to deploy it to the Live environment. When everything has been tested in your development environment or locally, you are ready to deploy the site to your live environment and make it public.
 
 {% hint style="info" %}
-If you would like to keep track of what goes on with your website after it has gone live, you can set up a [Deployment Webhook](../deployment/deployment-webhook.md). This is a great way to keep an eye on your project and it works great with [Slack](https://slack.com/).{% endhint %}
+If you would like to keep track of what goes on with your website after it has gone live, you can set up a [Deployment Webhook](../deployment/deployment-webhook.md). This is a great way to keep an eye on your project and it works great with [Slack](https://slack.com/).
+{% endhint %}
 
 {% hint style="info" %}
 In Trial mode, by default, Public Access is disabled on all environments and cannot be enabled. As soon as a subscription is purchased, Public Access is enabled on the Live environment with the option to disable it again.

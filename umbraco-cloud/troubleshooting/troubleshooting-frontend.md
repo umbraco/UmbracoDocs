@@ -4,8 +4,7 @@
 **This article needs to be updated.**
 {% endhint %}
 
-An error in the Frontend often looks like this:
-![Frontend error](images/frontend-error.png)
+An error in the Frontend often looks like this: ![Frontend error](images/frontend-error.png)
 
 Errors in the frontend are presented in three ways:
 
@@ -19,8 +18,8 @@ A **blank or not loading page** is likely due to bad rewrite rules - often it wi
 
 * ^/umbraco
 * ^/DependencyHandler.axd
-* ^/App_Plugins
-* You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/manage-hostnames//rewrites-on-cloud.md) article.
+* ^/App\_Plugins
+* You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md) article.
 
 You should also check your console log in your browser to see if something is failing to load. Finally, you can check the [umbracoTraceLogs](log-files.md#umbraco-logs) and see if any errors are thrown!
 

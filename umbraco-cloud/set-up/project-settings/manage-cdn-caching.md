@@ -1,7 +1,4 @@
----
----
-
-# Managing CDN Caching and Optimizations
+# CDN Caching and Optimizations
 
 Once you have added your hostnames to your Umbraco Cloud project, it's possible to configure certain CDN Caching and minification options for all or specific hostnames within your project.
 
@@ -9,14 +6,14 @@ These caching options all relate to the traffic that goes through your hostname 
 
 The options that are currently available are:
 
-- Enable Cache (default: off)
-- Cache TTL (default: 120 minutes)
-- Cache Everything (default: off)
-- Minify CSS (default: off)
-- Minify JS (default: off)
-- Minify HTML (default: off)
+* Enable Cache (default: off)
+* Cache TTL (default: 120 minutes)
+* Cache Everything (default: off)
+* Minify CSS (default: off)
+* Minify JS (default: off)
+* Minify HTML (default: off)
 
-![Default Options](images/Caching-default-options.png)
+![Default Options](../images/Caching-default-options.png)
 
 When a new hostname is added to a Project, it will have the default settings applied. However, you can change the default settings for your project, so that the new hostnames will get the settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
 
@@ -32,7 +29,7 @@ If you want to disable caching on certain types of static assets, you can use a 
 
 The following example adds a cache-control header with 'no-cache' as the value when the requested Url contains a PDF file:
 
-```XML
+```
 <rewrite>
     <outboundRules>
         <rule name="Set Cache-Control - No-Cache PDF">
@@ -52,7 +49,7 @@ The webpage itself is not cached when CDN Caching is enabled.
 
 ## Cache Everything
 
-![Cache Everything](images/cache-everything.png)
+![Cache Everything](../images/cache-everything.png)
 
 When **Cache Everything** is enabled, everything including the webpage is cached in the CDN. So, in addition to static assets, the webpage will also be cached and served from the CDN instead of loading from the origin.
 
@@ -68,7 +65,7 @@ We recommend using Cache Everything with caution.
 
 ## Purge Caching
 
-![Purge Cache](images/purge-cache-v10.png)
+![Purge Cache](../images/purge-cache-v10.png)
 
 When assets are cached for a long time and you need to refresh them, you can choose to purge the CDN cache to remove everything from the cache and force a refresh. This can be useful after having deployed changes to JS and CSS files, which are cached in the CDN. If you have caching enabled, you can purge the cache in the Purge Cache section at the bottom of the page.
 
@@ -81,12 +78,12 @@ Purging the cache is a heavy operation, so there is a constraint on how many pur
 In the Purge Cache section, you can see how many Purge requests you have available and when.
 
 {% hint style="info" %}
-The available number of Purge requests varies depending on your Cloud Plan. For more information, see the [Plan specific features](#plan-specific-features).
+The available number of Purge requests varies depending on your Cloud Plan. For more information, see the [Plan specific features](manage-cdn-caching.md#plan-specific-features).
 {% endhint %}
 
 ## Minification
 
-![Minification](images/minification.png)
+![Minification](../images/minification.png)
 
 Minification can be enabled for CSS, JS, and HTML, and is done through the CDN as part of serving the request. Minification strips whitespace from the CSS, JS, and HTML files, so the request is smaller and thus faster to download for the end-user.
 
@@ -98,42 +95,37 @@ Using minification through CDN can affect Content Security Policies, as the file
 
 Access to the different options varies depending on the Umbraco Cloud Plan your project is on. Currently, the features available are as follows:
 
-- Starter:
-
-  - Enable Cache
-  - Cache TTL (see below for minimum TTL)
-  - Minify CSS
-  - Minify JS
-
-- Standard:
-
-  - Enable Cache
-  - Cache TTL (see below for minimum TTL)
-  - Cache Everything
-  - Minify CSS
-  - Minify JS
-  - Minify HTML
-
-- Professional:
-
-  - Enable Cache
-  - Cache TTL (see below for minimum TTL)
-  - Cache Everything
-  - Minify CSS
-  - Minify JS
-  - Minify HTML
+* Starter:
+  * Enable Cache
+  * Cache TTL (see below for minimum TTL)
+  * Minify CSS
+  * Minify JS
+* Standard:
+  * Enable Cache
+  * Cache TTL (see below for minimum TTL)
+  * Cache Everything
+  * Minify CSS
+  * Minify JS
+  * Minify HTML
+* Professional:
+  * Enable Cache
+  * Cache TTL (see below for minimum TTL)
+  * Cache Everything
+  * Minify CSS
+  * Minify JS
+  * Minify HTML
 
 The minimum Cache TTL varies as follows:
 
-- Starter: 2 hours/120 minutes
-- Standard: 30 minutes
-- Professional: 2 minutes
+* Starter: 2 hours/120 minutes
+* Standard: 30 minutes
+* Professional: 2 minutes
 
 The number of Cache Purge requests within 24 hours:
 
-- Starter: 2
-- Standard: 10
-- Professional: 20
+* Starter: 2
+* Standard: 10
+* Professional: 20
 
 ## CDN Caching and Optimizations
 
@@ -141,9 +133,8 @@ From your Umbraco Cloud Project, click **CDN Caching & Optimization** from the *
 
 Aside from environments, the CDN Caching & Optimization page is divided into two parts: **Default Settings** and **Hostname Specific Settings**.
 
-![Default Settings](images/caching-subpage-v10.png)
+![Default Settings](../images/caching-subpage-v10.png)
 
 Use the **Default settings** to configure default settings that should be applied to new and existing hostnames.
 
-If you want to have different caching options for different hostnames, then select the hostname under **Hostname specific settings** and adjust the options for that specific hostname.
-This might be useful if you want to test the different options on another hostname than your primary hostname.
+If you want to have different caching options for different hostnames, then select the hostname under **Hostname specific settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another hostname than your primary hostname.

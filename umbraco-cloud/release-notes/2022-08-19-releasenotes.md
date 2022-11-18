@@ -4,18 +4,18 @@ _Dedicated Resources - Projects Dashboard (beta)_
 
 ## Key Takeaways
 
-- **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
-- **Projects Dashboard (beta)** - The beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
+* **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
+* **Projects Dashboard (beta)** - The beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
 
-## [Dedicated Resources](../set-up/dedicated-resources.md)
+## [Dedicated Resources](../set-up/project-settings/dedicated-resources.md)
 
-With Dedicated Resources for Umbraco Cloud, you can now choose when to **scale up and down on the resources available for a project**. On top of that, the project is moved from shared to **dedicated hosting**. 
+With Dedicated Resources for Umbraco Cloud, you can now choose when to **scale up and down on the resources available for a project**. On top of that, the project is moved from shared to **dedicated hosting**.
 
 You can access Dedicated Resources from the Settings menu on your Cloud project. Here you’ll find 3 different dedicated options (CPU and memory configurations) to choose from bringing flexibility in how requirements are met, and how much extra compute power is added. As soon as you select and confirm an option the process of migrating to dedicated resources begins. If the extra resources are no longer needed, the project can be moved back to shared resources in the same way.
 
 ![ProjectsDashboard](images/DedicatedResourceMvp.gif)
 
-Dedicated Resources is currntly available for projects on **Professional** and **Enterprise** plans. More options will be added later in the year to make the feature available for Starter and Standard plans as well. 
+Dedicated Resources is currntly available for projects on **Professional** and **Enterprise** plans. More options will be added later in the year to make the feature available for Starter and Standard plans as well.
 
 ## Projects Dashboard (beta)
 
