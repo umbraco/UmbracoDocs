@@ -1,12 +1,10 @@
 # What is Umbraco Workflow?
 
-{% hint style="info" %}
-Umbraco Workflow is a product that was recently acquired by Umbraco. The commercial offering will change later during the year and the articles in this section are subject to change over the coming months.
-
-Learn more about the acquisition in the [Umbraco acquires Plumber](https://umbraco.com/blog/umbraco-acquires-plumber/) blogpost.
-{% endhint %}
-
 Welcome to the Umbraco Workflow documentation. Here you can read articles about how to work with Umbraco Workflow.
+
+## [Getting Started](getting-started.md)
+
+Learn how to get started with Umbraco Plumber.
 
 ## [Installing Umbraco Workflow](installing-workflow.md)
 
@@ -16,9 +14,17 @@ Extending Umbraco with the Workflow section by installing Umbraco Workflow in a 
 
 Learn more about the licensing model used for Umbraco Workflow.
 
-## [Getting Started](getting-started.md)
+## [Upgrading Umbraco Workflow](upgrading-workflow.md)
 
-Learn how to get started with Umbraco Plumber.
+Covers how to upgrade your Umbraco Workflow to a newer version.
+
+### [Migration from Plumber to Umbraco Workflow](migrating-workflow.md)
+
+Covers how to migrate from existing Plumber installation to Workflow installation.
+
+## [Configuration](configuration.md)
+
+Customize the Workflow functionality with different configuration values.
 
 ## [Approval Groups](approval-groups.md)
 
@@ -39,7 +45,3 @@ Setting up Umbraco Workflow for your installation.
 ## [Events](events.md)
 
 Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
-
-## [Upgrading Umbraco Workflow](upgrading-workflow.md)
-
-Covers how to upgrade your Umbraco Workflow to a newer version.
