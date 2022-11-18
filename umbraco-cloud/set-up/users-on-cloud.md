@@ -3,7 +3,7 @@ meta.Title: Users on Umbraco Cloud
 meta.Description: An article explaining how Umbraco Users are working on Umbraco Cloud.
 ---
 
-# Users on Umbraco Cloud
+# Users
 
 On Umbraco Cloud, users work in almost the same way as on a normal installation of Umbraco. However, there are a few more settings available for the backoffice users on Umbraco Cloud.
 
@@ -19,7 +19,7 @@ When working locally the initial login will go through Umbraco ID and the online
 
 There are two ways of adding a user to your backoffice on Umbraco Cloud.
 
-You can add them as a [team member](team-members/)) from the project portal on Umbraco Cloud.
+You can add them as a [team member](project-settings/team-members/)) from the project portal on Umbraco Cloud.
 
 By default, when added to the project as a team member, they will be added as users to the backoffice of all the environments as administrators.
 

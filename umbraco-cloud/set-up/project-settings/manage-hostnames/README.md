@@ -1,4 +1,3 @@
-
 # Managing Hostnames
 
 When you create an Umbraco Cloud project, the project URLs are based on the name of your project.
@@ -16,7 +15,7 @@ To access the backoffice add `/umbraco` at the end of the Live, Development, or 
 
 Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This is where you bind Hostnames to your Cloud environments.
 
-![Hostnames](images/manage-hostnames-v9.png)
+![Hostnames](../../manage-hostnames/images/manage-hostnames-v9.png)
 
 You can bind any hostname to your project environments. Ensure that the hostname has a DNS entry so that it resolves to the Umbraco Cloud service.
 
@@ -47,11 +46,10 @@ To specify the hostname for each root node using a multisite setup, follow these
 2. Right-click the root content node.
 3. Select **Culture and Hostnames**.
 4. In the **Culture and Hostnames** window, click **Add New Domain**.
-5. Enter your **Domain** name and select the **Language** from the drop-down list.
-    ![Culture and Hostnames](images/culture-and-hostnames-v10.png)
+5. Enter your **Domain** name and select the **Language** from the drop-down list. ![Culture and Hostnames](../../manage-hostnames/images/culture-and-hostnames-v10.png)
 6. Click **Save**.
 
-Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. *snoopy.euwest01.umbraco.io*). To do so, see the [Rewrites on Cloud](rewrites-on-cloud.md#hiding-the-default-umbracoio-url) article.
+Once you've assigned a Hostname to your Umbraco Cloud environment, you may want to hide the default `umbraco.io` URL (e.g. _snoopy.euwest01.umbraco.io_). To do so, see the [Rewrites on Cloud](rewrites-on-cloud.md#hiding-the-default-umbracoio-url) article.
 
 ### Automatic TLS (HTTPS)
 
@@ -89,7 +87,7 @@ example.com. IN CAA 0 issuewild "pki.goog"
 {% hint style="info" %}
 The Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' custom hostnames was changed on September 26, 2022. From October 31, 2022, certificate renewals for existing hostnames will also be updated to use the new CA.
 
-**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation. 
+**No action is required unless you set a Certificate Authority Authorization (CAA) record** on your domain in which case you will need to update the CAA record prior to renewal. Please follow the [Migrate to new Certificate Authority for custom hostnames](ca-record-migration.md) documentation.
 {% endhint %}
 
 ## [Upload certificates manually](security-certificates.md)

@@ -1,4 +1,4 @@
-# The Umbraco Cloud Portal
+# Portal Overview
 
 The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here, you can view and manage all your Cloud projects in one place.
 
@@ -52,13 +52,13 @@ With the Starter and Standard plan, you are only entitled to support regarding s
 
 When you click on the User Profile link, you will find the following options:
 
-- Projects
-- Manage Subscriptions
-- Pending Invites
-- Organizations
-- Profile
-- Release Notes
-- Logout
+* Projects
+* Manage Subscriptions
+* Pending Invites
+* Organizations
+* Profile
+* Release Notes
+* Logout
 
 ### Project Management
 
@@ -75,7 +75,7 @@ While managing the environments on your project, click on **Manage environments*
 
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another. Find out more in the [Cloud-to-Cloud](../../deployment/cloud-to-cloud.md) article.
 
-In the [Settings](../../set-up/project-settings.md) section, you will find a lot more options to configure your project.
+In the [Settings](../../set-up/project-settings/) section, you will find a lot more options to configure your project.
 
 ### Manage Subscriptions
 
@@ -87,11 +87,11 @@ Customers who have joined Umbraco Cloud after the 5th of May, 2021, can manage t
 
 On Umbraco Cloud, you can receive an invitation from different projects. These project details are available in the **Pending Invites** tab. On the **Pending Invites** page, as a user, you will see the following details:
 
-- Project Name
-- Invited by
-- The expiration date of the invite
-- Invitation status
-- Otions to approve, reject, or delete the invitations that have expired.
+* Project Name
+* Invited by
+* The expiration date of the invite
+* Invitation status
+* Otions to approve, reject, or delete the invitations that have expired.
 
 ![Project Invites](images/project-invites.png)
 
@@ -106,14 +106,13 @@ The Profile consists of the following information:
 ![Edit profile](images/change-profile-info-new.png)
 
 * Name: The name that is displayed on Umbraco Cloud.
-* Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
+*   Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
 
     {% hint style="info" %}
     It is not possible to change this email address at a later point.
     {% endhint %}
-* Telephone: The contact number of the user.
-* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile.
-* Change Password: Change the password for your Umbraco Cloud account from here. 
+
+\* Telephone: The contact number of the user. \* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile. \* Change Password: Change the password for your Umbraco Cloud account from here.
 
 ![change password](images/change-password.png)
 

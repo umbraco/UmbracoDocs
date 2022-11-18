@@ -1,15 +1,11 @@
----
-
----
-
-# Rewrite rules on Umbraco Cloud
+# Rewrite rules
 
 To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed the [IIS Rewrite Module](https://our.umbraco.com/Documentation/Reference/Routing/IISRewriteRules/) on all our Umbraco Cloud servers.
 
 The rewrite rules should be added to the `<system.webServer><rewrite>` module in your projects `Web.config` file.
 
 {% hint style="info" %}
-If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](../../../umbraco-cms/reference/routing/iisrewriterules.md) article.
+If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](../../../../umbraco-cms/reference/routing/iisrewriterules.md) article.
 {% endhint %}
 
 ```xml
@@ -24,8 +20,8 @@ If you are running Umbraco 9 and above on IIS, you can still add a `web.config` 
 
 When you are doing rewrite rules on Umbraco Cloud there are a few important things to keep in mind:
 
-- Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise you will not be able to do deployments to/from the environment
-- To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
+* Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise you will not be able to do deployments to/from the environment
+* To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
 
 ## Hiding the Default umbraco.io Url
 
@@ -99,10 +95,9 @@ For example, the following rule will redirect all requests for `https://mysite.c
   <action type="Redirect" url="{R:1}/" />
 </rule>
 ```
+
 {% hint style="info" %}
 Take note of the negates in the rewrite rule.
 
-It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../media/README.md).
+It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
 {% endhint %}
-
-
