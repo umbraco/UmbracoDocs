@@ -678,6 +678,7 @@
   * [CI/CD Build and Deployment Pipeline](umbraco-deploy/installing-deploy/cicd-pipeline/README.md)
     * [Azure DevOps](umbraco-deploy/installing-deploy/cicd-pipeline/ci-cd-azure-dev-ops.md)
     * [Github actions](umbraco-deploy/installing-deploy/cicd-pipeline/ci-cd-github-actions.md)
+  * [Streamlining Local Development](umbraco-deploy/installing-deploy/streamlining-local-development.md)
 * [Deployment](umbraco-deploy/deployment-workflow/README.md)
   * [Transferring Content, Media and Forms](umbraco-deploy/deployment-workflow/content-transfer.md)
   * [Deploying Changes](umbraco-deploy/deployment-workflow/deploying-changes.md)
