@@ -11,6 +11,7 @@
   * [Migrate from Plumber to Workflow](umbraco-workflow/migrating-workflow.md)
 * [Workflow in the Content Section](umbraco-workflow/workflow-content-section.md)
 * [Workflow Section](umbraco-workflow/workflow-section.md)
+  * [Active Workflows](umbraco-workflow/active-workflows.md)
   * [Approval Groups](umbraco-workflow/approval-groups.md)
   * [Content Reviews](umbraco-workflow/content-reviews.md)
   * [Workflow History](umbraco-workflow/workflow-history.md)
