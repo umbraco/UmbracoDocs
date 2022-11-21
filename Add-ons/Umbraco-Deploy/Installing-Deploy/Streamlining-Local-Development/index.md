@@ -19,7 +19,11 @@ We can automate this step using a [git hook](https://www.atlassian.com/git/tutor
 
 When working with Umbraco Cloud, this step is configured automatically for you when you clone and run your project the first time. If working with Umbraco Deploy On-Premise, you can set it up yourself.
 
-The process works by making use of the marker file Umbraco Deploy uses to trigger an update of the Umbraco schema from the `.uda` files retrieved from source control.  If a file by the name of `deploy-on-start` is found in the `/umbraco/Deploy` folder, an update will be run automatically when the site starts up. As such, if we ensure that file is created everytime the source code is pulled from the remote repository, we can automate the update.
+The process works by using the marker file Umbraco Deploy uses to trigger an update of the Umbraco schema from the `.uda` files from source control.  
+
+If a file named `deploy-on-start` is found in the `/umbraco/Deploy` folder, an update will run automatically when the site starts up. 
+
+Therefore, if we ensure that the file is created everytime the source code is pulled from the remote repository, we can automate the update.
 
 To do this, carry out the following steps:
 
