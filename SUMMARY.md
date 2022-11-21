@@ -8,7 +8,6 @@
 * [Licensing](umbraco-workflow/licensing.md)
 * [Upgrading](umbraco-workflow/upgrading-workflow.md)
   * [Migration from Plumber to Umbraco Workflow](umbraco-workflow/migrating-workflow.md)
-* [Configuration](umbraco-workflow/configuration.md)
 * [Workflow Section](umbraco-workflow/workflow-section.md)
   * [Approval Groups](umbraco-workflow/approval-groups.md)
   * [Content Reviews](umbraco-workflow/content-reviews.md)
