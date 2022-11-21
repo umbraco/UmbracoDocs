@@ -6,7 +6,7 @@ The trial license introduces some restrictions around advanced features but is o
 
 To impersonate the full license on a local site:
 
-1.  Set `EnableTestLicense` to `true` in the `appSettings.json` file:
+*   Set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
     ```json
     {
