@@ -1,47 +1,15 @@
 # What is Umbraco Workflow?
 
-Welcome to the Umbraco Workflow documentation. Here you can read articles about how to work with Umbraco Workflow.
+Umbraco Workflow allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Workflow extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises of multiple steps and multiple users assigned to the group responsible for providing approval at each step.
 
-## [Getting Started](getting-started.md)
+Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. For more information, see the [Workflow Content App](workflow-content-section.md#workflow-content-app) section.
 
-Learn how to get started with Umbraco Plumber.
+A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
 
-## [Installing Umbraco Workflow](installing-workflow.md)
+The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Workflow Dashboards and Buttons](workflow-content-section.md#workflow-dashboards-and-buttons) section.
 
-Extending Umbraco with the Workflow section by installing Umbraco Workflow in a few steps.
+## Video Tutorial
 
-## [Licensing](licensing.md)
-
-Learn more about the licensing model used for Umbraco Workflow.
-
-## [Upgrading Umbraco Workflow](upgrading-workflow.md)
-
-Covers how to upgrade your Umbraco Workflow to a newer version.
-
-### [Migration from Plumber to Umbraco Workflow](migrating-workflow.md)
-
-Covers how to migrate from existing Plumber installation to Workflow installation.
-
-## [Configuration](configuration.md)
-
-Customize the Workflow functionality with different configuration values.
-
-## [Approval Groups](approval-groups.md)
-
-Get a full overview of the approval groups along with their settings, roles, members, and history available on Umbraco Workflow.
-
-## [Content Reviews](content-reviews.md)
-
-Provides an overview of all content pending for review, expired content, settings for configuring who reviews which pages (or Document Types), and so on.
-
-## [Workflow History](workflow-history.md)
-
-Overview of the workflow history displayed in a tabular format.
-
-## [Workflow Settings](workflow-settings.md)
-
-Setting up Umbraco Workflow for your installation.
-
-## [Events](events.md)
-
-Get an overview of the events that allow you to hook into the workflow processes for the Backoffice.
+{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=5M1CtFVZCBo" %}
+Umbraco Plumber Overview
+{% endembed %}

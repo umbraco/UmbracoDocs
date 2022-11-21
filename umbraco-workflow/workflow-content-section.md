@@ -1,22 +1,6 @@
-# Getting Started
+# Workflow in the Content section
 
-In this article, you can read about [Umbraco Workflow](https://umbraco.com/products/umbraco-workflow/) and how to get started.
-
-## Umbraco Workflow Overview
-
-Umbraco Workflow allows the creation of multi-stage approval workflows when writing and publishing content. Umbraco Workflow extends Umbraco's out-of-the-box publishing model with multi-stage and configurable approval workflows. A workflow process comprises of multiple steps and multiple users assigned to the group responsible for providing approval at each step.
-
-Umbraco Workflow adds a [Content App](../umbraco-cms/extending/content-apps.md) to all content nodes in the **Content** section where a workflow is enabled. For more information, see the [Workflow Content App](#workflow-content-app) section.
-
-A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
-
-The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Workflow Dashboards and Buttons](#workflow-dashboards-and-buttons) section.
-
-## Video Tutorial
-
-{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=5M1CtFVZCBo" %}
-Umbraco Workflow Overview
-{% endembed %}
+Once you install Workflow, you will notice a **Workflow dashboard**  in the **Content** section and a **Workflow Content App** in the content nodes. In this article, we will look at how these features work.
 
 ## Workflow Dashboards and Buttons
 
@@ -54,7 +38,7 @@ For nodes where the workflow has been disabled, the default Umbraco options are 
 
 ## Workflow Content App
 
-Umbraco Workflow adds a [Content App](../umbraco-cms/extending/content-apps.md) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
 
 - [Active workflow](#active-workflow)
 - [Configuration](#configuration)
