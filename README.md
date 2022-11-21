@@ -41,11 +41,3 @@ Head over to the [Umbraco Docs Github](https://github.com/umbraco/UmbracoDocs/pu
 {% content-ref url="umbraco-workflow/migrating-workflow.md" %}
 [migrating-workflow.md](umbraco-workflow/migrating-workflow.md)
 {% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FkOsRIQZMVHZkdsZyZGi/" %}
-[10.x (LTS)](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FkOsRIQZMVHZkdsZyZGi/)
-{% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/VbZgtRsxoMurjq4OqT4q/" %}
-[11.x (RC)](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/VbZgtRsxoMurjq4OqT4q/)
-{% endcontent-ref %}
