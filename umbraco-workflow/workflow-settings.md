@@ -1,13 +1,13 @@
-# Settings
+# Workflow Settings
 
 When working with Umbraco Workflow, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure the following from the Workflow Settings section:
 
-- [General settings](#general-settings)
-  - [New node approval flow](#new-node-approval-flow)
-  - [Document type approval flows](#document-type-approval-flows)
-  - [Exclude nodes](#exclude-nodes)
-- [Notification Settings](#notifications-settings)
-  - [Email templates](#email-templates)
+* [General settings](workflow-settings.md#general-settings)
+  * [New node approval flow](workflow-settings.md#new-node-approval-flow)
+  * [Document type approval flows](workflow-settings.md#document-type-approval-flows)
+  * [Exclude nodes](workflow-settings.md#exclude-nodes)
+* [Notification Settings](workflow-settings.md#notifications-settings)
+  * [Email templates](workflow-settings.md#email-templates)
 
 ![Workflow settings](images/workflow-settings.png)
 
@@ -17,15 +17,15 @@ You can configure the **General** Settings from the **Workflow** section in the 
 
 ![General settings](images/general-settings.png)
 
-- **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
-  - **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
-  - **Implicit** - All steps where the original Change Author is *not* a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
-  - **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
-- **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
-- **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
-- **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
-- **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
-- **Extend permissions** - Determines if Umbraco Workflow should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
+* **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
+  * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
+  * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
+  * **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
+* **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
+* **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
+* **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
+* **Use workflow for unpublish** - Determines if unpublish actions require workflow approval.
+* **Extend permissions** - Determines if Umbraco Workflow should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
 
 ### New node approval flow
 
@@ -35,12 +35,14 @@ To add an approval group to the workflow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **New node approval flow** section.
-  ![New-node-approval-flow](images/new-node-approval-flow.png)
+3.  Click **Add** in the **New node approval flow** section.\
+    &#x20;
 
-4. Select an **approval group** to add to the workflow.
-  ![Add New-node-approval-flow](images/add-approval-flow.png)
+    <figure><img src="images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
+4.  Select an **approval group** to add to the workflow.\
+    &#x20;
 
+    <figure><img src="images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -56,17 +58,20 @@ To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **Document type approval flows** section.
-  ![Doc-Type-approval-flow](images/doc-type-approval-flows.png)
+3.  Click **Add** in the **Document type approval flows** section. \
 
-4. Select a **Document type** from the drop-down list.
-  ![Add New-node-approval-flow](images/add-doc-type-approval-flows.png)
 
+    <figure><img src="images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
+4.  Select a **Document type** from the drop-down list.\
+    &#x20;
+
+    <figure><img src="images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
 5. Select a **Language** from the drop-down list.
 6. **Add workflow approval groups** in the **Current flow** process.
-7. Click **Add condition** to add a condition to the workflow process.
-  ![Add Doc-Type-approval-flow settings](images/add-doc-type-approval-flows-settings.png)
+7.  Click **Add condition** to add a condition to the workflow process. \
 
+
+    <figure><img src="images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
 8. Click **Submit**.
 9. Click **Save Settings**.
 
@@ -74,14 +79,14 @@ To edit a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Edit** next to the content node in the **Document type approval flows** section.
-  ![Edit Doc-Type-approval-flow](images/edit-doc-type-approval-flows.png)
+3.  Click **Edit** next to the content node in the **Document type approval flows** section.&#x20;
 
+    <figure><img src="images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
 4. Select a **Language** from the drop-down list.
 5. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
-6. Click **Add condition** to add a condition to the workflow process.
-  ![Edit Doc-Type-approval-flow settings](images/edit-doc-type-approval-flows-settings.png)
+6.  Click **Add condition** to add a condition to the workflow process.&#x20;
 
+    <figure><img src="images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
 7. Click **Submit**.
 8. Click **Save Settings**.
 
@@ -93,12 +98,14 @@ To exclude a node from the workflow process:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add** in the **Exclude nodes** section.
-  ![Exclude Nodes](images/exclude-nodes.png)
+3.  Click **Add** in the **Exclude nodes** section.\
+    &#x20;
 
-4. Select the **Content node** from the Content tree.
-  ![Select content node](images/select-content-from-tree.png)
+    <figure><img src="images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
+4.  Select the **Content node** from the Content tree.\
+    &#x20;
 
+    <figure><img src="images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -108,14 +115,15 @@ Umbraco Workflow uses Notifications to allow you to configure email notification
 
 From the **Settings** view in the **Workflow** section, the **Notifications** tab provides access to the following:
 
-- **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
-- **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
-- **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
-- **Edit site URL:** The URL for the editing environment (including schema - http[s]). This is a mandatory field.
-- **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
-- **[Email templates](#email-templates):** Configure which users receive emails for which workflow actions and modify the templates for those emails.
-  
-  ![Notifications tab in the Workflow Section](images/Notifications_tab.png)
+* **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
+* **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
+* **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
+* **Edit site URL:** The URL for the editing environment (including schema - http\[s]). This is a mandatory field.
+* **Site URL:** The URL for the public website (including schema - http\[s]). This is a mandatory field.
+*   [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.\
+
+
+    ![Notifications tab in the Workflow Section](images/Notifications\_tab.png)
 
 ## Notifications Overview
 
@@ -123,35 +131,35 @@ Notification emails use HTML templates which render information from the `HtmlEm
 
 The `HtmlEmailModel` contains the following fields:
 
-| Fields        | Data Type                 | Description                                                                                                      |
-|---------------|---------------------------|------------------------------------------------------------------------------------------------------------------|
-| WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish respectively.                                   |
-| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                   |
-| Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                    |
-| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense.|
-| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                    |
+| Fields        | Data Type                 | Description                                                                                                       |
+| ------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish respectively.                                  |
+| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                    |
+| Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                     |
+| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense. |
+| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                     |
 
 The `HtmlEmailBase` contains the following fields:
 
-| Fields       | Data Type      | Description                                                                                         |
-|--------------|----------------|-----------------------------------------------------------------------------------------------------|
-| SiteUrl      | string         | The public URL of your site.                                                                        |
-| NodeName     | string         | The name of the node from the current workflow.                                                     |
-| Type         | string         | The workflow type including the scheduled date (if exists).                                         |
-| EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type.  |
-| To           | EmailUserModel | The model defining the receiver of the email.                                                       |
-| Email        | string         | The user's email address or a group address (if a group email is being sent).                       |
-| Name         | Name           | The user's name.                                                                                    |
-| Language     | string         | The user's language.                                                                                |
-| Id           | int            | The user's ID or group ID (when sending to a group email address).                                  |
-| IsGroupEmail | bool           | Is the email being sent to a generic group email address?                                           |
+| Fields       | Data Type      | Description                                                                                          |
+| ------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
+| SiteUrl      | string         | The public URL of your site.                                                                         |
+| NodeName     | string         | The name of the node from the current workflow.                                                      |
+| Type         | string         | The workflow type including the scheduled date (if exists).                                          |
+| EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type. |
+| To           | EmailUserModel | The model defining the receiver of the email.                                                        |
+| Email        | string         | The user's email address or a group address (if a group email is being sent).                        |
+| Name         | Name           | The user's name.                                                                                     |
+| Language     | string         | The user's language.                                                                                 |
+| Id           | int            | The user's ID or group ID (when sending to a group email address).                                   |
+| IsGroupEmail | bool           | Is the email being sent to a generic group email address?                                            |
 
 Umbraco Workflow provides **Settings** for determining who receives emails at which stages of a workflow. While these are set to default values during installation, it is recommended to update your Notifications Settings to better suit your installation needs. Emails can be sent to:
 
-- **All**: All the participants in all workflow stages (previous and current).
-- **Admin**: The admin user.
-- **Author**: The user who initiated the workflow.
-- **Group**: All members of the group assigned to the current task.
+* **All**: All the participants in all workflow stages (previous and current).
+* **Admin**: The admin user.
+* **Author**: The user who initiated the workflow.
+* **Group**: All members of the group assigned to the current task.
 
 {% hint style="info" %}
 Duplicate users are removed from email notifications.
@@ -167,10 +175,10 @@ Umbraco Workflow uses a reminder email system to prompt editors to complete the 
 
 The emails use a similar model to the notification emails, also inheriting from `HtmlEmailBase`. In addition to the inherited fields, `HtmlReminderEmailModel` includes:
 
-| Fields       | Data Type                     | Description                                                           |
-|--------------|-------------------------------|-----------------------------------------------------------------------|
-| OverdueTasks | IList<WorkflowTaskViewModel>  | A list containing all the overdue tasks assigned to the current user. |
-| TaskCount    | int                           | The count of overdue tasks assigned to the current user.              |
+| Fields       | Data Type | Description                                                           |
+| ------------ | --------- | --------------------------------------------------------------------- |
+| OverdueTasks | IList     | A list containing all the overdue tasks assigned to the current user. |
+| TaskCount    | int       | The count of overdue tasks assigned to the current user.              |
 
 ## Email Templates
 
@@ -188,8 +196,8 @@ To add templates for other languages:
 
 For example:
 
-- **Default approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest.cshtml`
-- **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest_da-DK.cshtml`
+* **Default approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest.cshtml`
+* **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ApprovalRequest_da-DK.cshtml`
 
 ## Sample Email Template
 

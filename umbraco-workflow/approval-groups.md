@@ -14,9 +14,10 @@ To add an approval group, follow these steps:
 6. Enter the group's **Email** address in the Settings section to which the notifications will be sent.
 7. Select the **Language** from the drop-down list.
 8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice.
-9. Click **Save Group**.
+9.  Click **Save Group**.\
+    &#x20;
 
-![Create Approval groups](images/Create-approval-group.png)
+    <figure><img src="images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
 
 {% hint style="info" %}
 You can create a total of 5 groups on unlicensed installations. The paid license removes this restriction.
@@ -28,9 +29,9 @@ You can search for a specific group using the Search bar. Select a group from th
 
 The **Settings** tab consists of the following fields:
 
-- **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
-- **Language:** Select a language variant for the email.
-- **Enable Offline approval:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](#enable-offline-approval) section. This feature requires a paid license.
+* **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
+* **Language:** Select a language variant for the email.
+* **Enable Offline approval:** Allow the users of this group to approve changes without logging in to the Backoffice. For more information, see the [Enable Offline approval](approval-groups.md#enable-offline-approval) section. This feature requires a paid license.
 
 ![Approval group Settings](images/Approval-group-settings.png)
 
@@ -48,8 +49,8 @@ Offline approval requires a user to exist in the Backoffice and be assigned to a
 
 The **Roles** tab provides an overview of the current workflow roles for the Group:
 
-- **Node-based approvals**: This workflow applies only to the specified node.
-- **Document-type approvals**: This workflow applies to all the nodes of a given Document Type.
+* **Node-based approvals**: This workflow applies only to the specified node.
+* **Document-type approvals**: This workflow applies to all the nodes of a given Document Type.
 
 You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](workflow-settings.md) article.
 
@@ -68,9 +69,9 @@ To add a Group member, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Group members** section.
-6. Select the **Users** you want to add to the approval group.
+6.  Select the **Users** you want to add to the approval group.
 
-   ![Add group Members](images/add-group-member.png)
+    ![Add group Members](images/add-group-member.png)
 7. Click **Save Group**.
 
 To remove a Group member, click **Remove**.
@@ -82,9 +83,9 @@ To inherit an existing Umbraco group membership, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Add** in the **Inherited group membership** section.
-6. Select the **User groups** you want to add to the approval group.
+6.  Select the **User groups** you want to add to the approval group.
 
-   ![Inherited group membership](images/Inherited-group-membership.png)
+    ![Inherited group membership](images/Inherited-group-membership.png)
 7. Click **Save Group**.
 
 To remove a Group membership, click **Remove**.
@@ -93,12 +94,12 @@ To remove a Group membership, click **Remove**.
 
 The History tab provides an overview of the workflow activity for the current group. It displays a table containing the following details:
 
-- Page name with the Language variant
-- Type of workflow roles (Node-based approvals or Document type approvals)
-- Workflow requested by
-- Date the workflow was requested on
-- Comment describing the changes
-- Status of the workflow
+* Page name with the Language variant
+* Type of workflow roles (Node-based approvals or Document type approvals)
+* Workflow requested by
+* Date the workflow was requested on
+* Comment describing the changes
+* Status of the workflow
 
 ![Approval group history](images/approval-group-history.png)
 

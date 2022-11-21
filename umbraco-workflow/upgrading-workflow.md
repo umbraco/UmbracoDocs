@@ -10,29 +10,28 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migration from P
 
 To get the latest version of Umbraco Workflow, you can upgrade using either of the two options:
 
-- [NuGet](#nuget)
-- [Visual Studio](#visual-studio)
+* [NuGet](upgrading-workflow.md#nuget)
+* [Visual Studio](upgrading-workflow.md#visual-studio)
 
 ### NuGet
 
-- NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Workflow` command unless you specify a package version:
+*   NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Workflow` command unless you specify a package version:
 
-  `dotnet add package Umbraco.Workflow --version <VERSION>`
-
-- Run `dotnet restore` to install the package.
+    `dotnet add package Umbraco.Workflow --version <VERSION>`
+* Run `dotnet restore` to install the package.
 
 ### Visual Studio
 
-- Go to `Tools` -> `NuGet Package Manager` -> `Manage NuGet Packages for Solution...` in Visual Studio, to upgrade Umbraco Workflow:
-- Select **Umbraco.Workflow**.
-- Select the latest version from the **Version** drop-down and click **Install**.
+* Go to `Tools` -> `NuGet Package Manager` -> `Manage NuGet Packages for Solution...` in Visual Studio, to upgrade Umbraco Workflow:
+* Select **Umbraco.Workflow**.
+*   Select the latest version from the **Version** drop-down and click **Install**.\
 
-  ![NuGet Package Manager](images/Manage_packages_v11.png)
 
-- Open the **<project-name>.csproj** file to make sure the package reference is updated:
+    ![NuGet Package Manager](images/Manage\_packages\_v11.png)
+*   Open the **.csproj** file to make sure the package reference is updated:
 
-  ```xml
-  <ItemGroup>
-    <PackageReference Include="Umbraco.Workflow" Version="11.x.x" />
-  </ItemGroup>
-  ```
+    ```xml
+    <ItemGroup>
+      <PackageReference Include="Umbraco.Workflow" Version="11.x.x" />
+    </ItemGroup>
+    ```

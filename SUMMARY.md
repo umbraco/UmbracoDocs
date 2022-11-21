@@ -1,5 +1,7 @@
 # Table of contents
 
+* [README](README.md)
+
 ## Umbraco Workflow
 
 * [What is Umbraco Workflow?](umbraco-workflow/README.md)

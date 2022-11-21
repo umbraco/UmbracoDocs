@@ -1,12 +1,12 @@
 # Licensing
 
-Umbraco Workflow is a licensed product but does not require a purchase to use. New installations are defaulted to a trial license while the paid license is available for purchase.&#x20;
+Umbraco Workflow is a licensed product but does not require a purchase to use. New installations are defaulted to a trial license while the paid license is available for purchase.
 
 The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
 
 To impersonate the full license on a local site:
 
-1. Set `EnableTestLicense` to `true` in the `appSettings.json` file:
+1.  Set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
     ```json
     {
@@ -28,37 +28,36 @@ If you want to buy an Umbraco Workflow license, reach out to the sales team at *
 
 To add the license to your site, follow these steps:
 
-1. Update the `appSettings.json` file:
+1.  Update the `appSettings.json` file:\
 
-  ```json
-  {
-    “Umbraco”: {
-      “CMS”: {
-        “Licenses”: {
-          “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
+
+    ```
+    {
+     “Umbraco”: {
+        “CMS”: {
+          “Licenses”: {
+            “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
+          }
         }
       }
     }
-  }
-  ```
+    ```
+2.  Create a class in your website that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role:\
 
-2. Create a class in your website that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role:
 
-  ```cs
-  public class SiteComposer : IComposer
-  {
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.SetServerRegistrar<SinlgeServerRoleAccessor>();
+    <pre><code>public class SiteComposer : IComposer
+    <strong>{
+    </strong>  public void Compose(IUmbracoBuilder builder)
+      {
+          builder.SetServerRegistrar&#x3C;SinlgeServerRoleAccessor>();
+      }
     }
-  }
 
-  public class SinlgeServerRoleAccessor : IServerRoleAccessor
-  {
-    public ServerRole CurrentServerRole => ServerRole.Single;
-  }
-  ```
+    public class SinlgeServerRoleAccessor : IServerRoleAccessor
+    {
+      public ServerRole CurrentServerRole => ServerRole.Single;
+    }</code></pre>
 
-  {% hint style="info" %}
-  License validation only runs on `Single` or `SchedulingPublisher` servers.
-  {% endhint %}
+{% hint style="info" %}
+License validation only runs on `Single` or `SchedulingPublisher` servers.
+{% endhint %}
