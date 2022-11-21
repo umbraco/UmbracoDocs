@@ -3,7 +3,7 @@
 This article shows how to manually upgrade Umbraco Workflow to run the latest version. Umbraco Workflow displays a prompt in the **Workflow** section when a new version is available.
 
 {% hint style="info" %}
-If you are migrating from Plumber to Umbraco Workflow, see the [Migration from Plumber to Umbraco Workflow](migrating-workflow.md) article.
+If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plumber to Workflow](migrating-workflow.md) article.
 {% endhint %}
 
 ## Get the latest version of Umbraco Workflow
