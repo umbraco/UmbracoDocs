@@ -24,3 +24,7 @@ The guide goes through some additional steps that you need to go through to make
 In this guide you can learn how to get up and running with Umbraco Deploy on an Umbraco website that you already have running.
 
 The guide goes through some additional steps that you need to go through to make sure that you can run your project with Umbraco Deploy.
+
+## [Streamlining Local Development](streamlining-local-development.md)
+
+In this section we discuss some additional steps you can carry out to streamline your local development workflow.
