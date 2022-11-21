@@ -46,10 +46,10 @@ The following snippet will give an overview of the keys and values in the global
 }
 ```
 
-:::note
+{% hint style="info" %}
 From 10.4, `AllowedUploadFiles` & `DisallowedUploadFiles` is deprecated, they will still work, but will be removed in a future version!
 You can use `AllowedUploadedFileExtensions` & `DisallowedUploadedFileExtensions` instead!
-:::
+{% endhint %}
 
 ## Root level settings
 
@@ -90,13 +90,13 @@ The above example shows what you need to do if you only have a single site that 
 2. Enter the node's **GUID** (`"ContentKey": "4f96ffdd-b969-46a8-949e-7935c41fabc0"`)
 3. Enter the XPath to find the node (`"ContentXPath": "/root/Home//TextPage[@urlName = 'error404'"`)
 
-:::note
+{% hint style="info" %}
 
 - Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 - GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 - When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
 
-:::
+{% endhint %}
 
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
 
@@ -190,7 +190,6 @@ All versions that fall in this period will be kept.
 For content versions that fall in this period, the most recent version for each day is kept. All previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
-
 
 ## Imaging
 
