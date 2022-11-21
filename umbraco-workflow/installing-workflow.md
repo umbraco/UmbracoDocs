@@ -4,14 +4,7 @@ In this article, we will cover the steps required to install Umbraco Workflow on
 
 ## Prerequisites
 
-* [Umbraco Installation](../umbraco-cms/fundamentals/setup/install/)
 * [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
-
-## Video Tutorial
-
-{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=w2GnZrEpufg" %}
-Installing Umbraco Plumber
-{% endembed %}
 
 ## Umbraco Workflow Installation
 
@@ -59,9 +52,10 @@ To install via Visual Studio, follow these steps:
 
 Once the installation is completed, you will see the following in the Umbraco Backoffice:
 
-*   A Workflow Dashboard:
+#### A Workflow Dashboard:
 
-    ![Workflow dashboard](images/WorkflowDashboard\_ContentSection.png)
-*   A Workflow section:
+![Workflow dashboard](images/WorkflowDashboard\_ContentSection.png)
 
-    ![Workflow section](images/workflow-section.png)
+#### A Workflow section:
+
+![Workflow section](images/workflow-section.png)
