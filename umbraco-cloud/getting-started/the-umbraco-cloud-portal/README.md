@@ -44,7 +44,7 @@ Click **Add Group** to give the group a name and then drag and drop your project
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
 
-![Chat Feature](../The-umbraco-cloud-portal/images/Chat.png)
+![Chat Feature](../the-umbraco-cloud-portal/images/chat.png)
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 

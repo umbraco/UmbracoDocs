@@ -69,7 +69,7 @@ The Tree restore option restores all the entities available for the selected tre
 ![Tree Restore](images/Tree-Restore.gif)
 
 {% embed url="https://www.youtube.com/embed/X7m3FzhRHp0?rel=0" %}
-Video example.
+Workspace restore
 {% endembed %}
 
 ### [Partial Restore](partial-restore.md)
