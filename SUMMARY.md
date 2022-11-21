@@ -1,6 +1,6 @@
 # Table of contents
 
-* [README](README.md)
+* [Workflow Documentation](README.md)
 
 ## Umbraco Workflow
 
