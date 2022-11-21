@@ -1,5 +1,6 @@
 ---
-versionFrom: 11.0.0
+versionFrom: 9.4.0
+versionTo: 10.0.0
 meta.Title: "Umbraco Content Settings"
 meta.Description: "Information on the content settings section"
 ---
@@ -19,10 +20,10 @@ The following snippet will give an overview of the keys and values in the global
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
       },
-      "AllowedUploadedFileExtensions": [],
+      "AllowedUploadFiles": [],
       "DisableDeleteWhenReferenced": false,
       "DisableUnpublishWhenReferenced": false,
-      "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
+      "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
       "HideBackOfficeLogo": false,
       "Imaging": {
@@ -52,6 +53,11 @@ The following snippet will give an overview of the keys and values in the global
 }
 ```
 
+:::note
+From 10.4, `AllowedUploadFiles` & `DisallowedUploadFiles` is deprecated, they will still work, but will be removed in a future version!
+You can use `AllowedUploadedFileExtensions` & `DisallowedUploadedFileExtensions` instead!
+:::
+
 ## Root level settings
 
 In the root level section, that is those without a seperate sub section like Imaging, you can configure:
@@ -62,11 +68,11 @@ If greater control is required than available from the above, this setting can b
 
 ### Disable delete when referenced
 
-This setting allows you to specify whether or not users can delete content or media items that depend on other items or have descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
 
 ### Disable unpublish when referenced
 
-This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.
 
 ### Disallowed upload files
 
@@ -172,7 +178,7 @@ See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup
 }
 ```
 
-If you don't wish to retain any content versions except for the current draft and currently published you can set both of the "keep" settings values to 0. After doing this, the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
+If you don't wish to retain content versions except for the current ones, you can set both of the "keep" settings values to 0. After doing this, the next time the scheduled job runs (hourly) all non-current versions (except those marked "prevent cleanup") will be removed.
 
 ### EnableCleanup
 
