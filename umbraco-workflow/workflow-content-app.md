@@ -1,10 +1,10 @@
-# Workflow Content App
+# Content App
 
 Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
 
-* [Active Workflow](#active-workflow)
-* [Configuration](#configuration)
-* [History](#history)
+* [Active Workflow](workflow-content-app.md#active-workflow)
+* [Configuration](workflow-content-app.md#configuration)
+* [History](workflow-content-app.md#history)
 
 ![Workflow content app](images/content-app.png)
 
@@ -13,19 +13,19 @@ Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Exte
 The Active workflow sub-section provides an interface for managing workflows for the current content node. When you initiate a workflow on the current node, the **Active workflow** sub-section requires information such as:
 
 * Change Description.
-* [Optional] Scheduled date to publish the changes requested in the node.
+* \[Optional] Scheduled date to publish the changes requested in the node.
 
 ![Active workflow initiate request](images/Active-workflow-initiate-request.png)
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
-* Option to [approve, reject, or cancel pending workflow tasks](workflow-content-section.md#approve-reject-or-cancel-pending-workflow-tasks).
+* Option to [approve, reject, or cancel pending workflow tasks](workflow-content-app.md#approve-reject-or-cancel-pending-workflow-tasks).
 * View change description and track differences across pending and completed workflows.
 * View the group responsible for approving the pending workflow.
 * View pending language variant(s) workflow.
 * View the workflow activity (eg. pending approval/task approvals/rejects) for the current workflow process.
 
-![Active Workflow sub-section](images/Active_Workflow_detailed_info.png)
+![Active Workflow sub-section](images/Active\_Workflow\_detailed\_info.png)
 
 You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 

@@ -25,18 +25,24 @@ To add the license to your site, follow these steps:
 2.  Create a class in your website, for example, `lic.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role:\
 
 
-    <pre><code>public class SiteComposer : IComposer
-    <strong>{
-    </strong>  public void Compose(IUmbracoBuilder builder)
-      {
-          builder.SetServerRegistrar&#x3C;SinlgeServerRoleAccessor>();
-      }
+    ```
+    using Umbraco.Cms.Core.Composing;
+    using Umbraco.Cms.Core.Sync;
+    using Umbraco.Cms.Infrastructure.DependencyInjection;
+
+    public class SiteComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.SetServerRegistrar<SinlgeServerRoleAccessor>();
+        }
     }
 
     public class SinlgeServerRoleAccessor : IServerRoleAccessor
     {
-      public ServerRole CurrentServerRole => ServerRole.Single;
-    }</code></pre>
+        public ServerRole CurrentServerRole => ServerRole.Single;
+    }
+    ```
 
 {% hint style="info" %}
 License validation only runs on `Single` or `SchedulingPublisher` servers.
