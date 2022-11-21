@@ -10,7 +10,7 @@ In this article, we will cover the steps required to install Umbraco Workflow on
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=w2GnZrEpufg" %}
-Installing Umbraco Workflow
+Installing Umbraco Plumber
 {% endembed %}
 
 ## Umbraco Workflow Installation
