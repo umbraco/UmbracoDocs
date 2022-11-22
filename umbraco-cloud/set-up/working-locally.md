@@ -26,9 +26,9 @@ We recommend using the following tools to work with a local clone of your Umbrac
 In the root of your local project, there is a REAMDE file containing information about the project structure and the build process on Umbraco Cloud.&#x20;
 {% endhint %}
 
-## Cloning a Umbraco Cloud Project
+## Cloning an Umbraco Cloud Project
 
-To clone a Umbraco Cloud project, follow these steps:
+To clone an Umbraco Cloud project, follow these steps:
 
 1. Open the project you wish to clone in the Umbraco Cloud Portal.
 2. Click on the arrow next to the **Development** environment.
@@ -111,7 +111,7 @@ If you have more than "a few" media items, see our recommendations for working w
 
 ### Adding a Solution File to your Cloud Project
 
-Working with Visual Studio, you will likely want a solution file, so you and your team can work with a Umbraco Cloud project and have the option to add additional projects.
+Working with Visual Studio, you will likely want a solution file, so you and your team can work with an Umbraco Cloud project and have the option to add additional projects.
 
 If you want to add a solution file for your Cloud project, you can do it either:
 
