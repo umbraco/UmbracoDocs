@@ -12,7 +12,9 @@ When adding a user, the default permission is _Read_ for each environment. You c
 
 ## Team Member User Permissions
 
-User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the Development environment and Read access on the Live environment. ![Edit team member roles](../../team-members/images/Edit-Team.png)
+User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the Development environment and Read access on the Live environment.&#x20;
+
+<figure><img src="../../team-members/images/Edit-Team.png" alt=""><figcaption></figcaption></figure>
 
 * **Admin**: Has access to everything on a project. An admin can delete a project and edit the team. An admin can deploy changes between environments in the Project Portal and has access to git, as well as the Power Tools Kudu.
 * **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffices. They are not able to deploy or change anything on the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.

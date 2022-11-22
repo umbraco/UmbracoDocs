@@ -18,7 +18,9 @@ You will find a couple of top 10 for the bandwidth in the project's live environ
 
 ### Top 10 - Bandwidth Usage Paths
 
-The first is displaying the 10 resources that are contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth. ![top 10 bandwidth](../images/Top10BandwidthPaths2.png)
+The first is displaying the 10 resources that are contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
+
+<figure><img src="../images/Top10BandwidthPaths2.png" alt=""><figcaption></figcaption></figure>
 
 ### Top 10 - Bandwidth Usage Referers
 
